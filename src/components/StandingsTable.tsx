@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { StandingItem } from "@/types/fixture";
 import { Trophy, HelpCircle } from "lucide-react";
+import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 
 interface StandingsTableProps {
   standingsData: {
@@ -216,7 +217,10 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
 
                     {/* Takım Adı */}
                     <td className="py-3 px-4 font-bold text-slate-900 whitespace-nowrap text-sm">
-                      {row.team}
+                      <span className="inline-flex items-center">
+                        <span>{row.team}</span>
+                        <TeamVolleyboxLink teamName={row.team} category={selectedLeague} />
+                      </span>
                     </td>
 
                     {/* O */}

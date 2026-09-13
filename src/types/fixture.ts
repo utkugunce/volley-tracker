@@ -69,3 +69,20 @@ export interface CityInfo {
   standings_count: number;
   data_file?: string | null;
 }
+
+export type VolleyboxConfidence = "verified" | "club_level_only" | "broken";
+
+export interface VolleyboxMapping {
+  internal_name: string;
+  internal_category: string;
+  matched_as: string;
+  volleybox_url: string;
+  age_category: "U18" | "U16" | null;
+  confidence: VolleyboxConfidence;
+  note?: string | null;
+  verified_at?: string;
+}
+
+export interface VolleyboxMappingsFile {
+  mappings: VolleyboxMapping[];
+}
