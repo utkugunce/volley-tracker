@@ -1,0 +1,39 @@
+name: Verify Volleybox Links
+
+on:
+  schedule:
+    # Her Pazartesi sabahı 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Volleybox link verification
+        id: verify
+        run: |
+          python scripts/verify_volleybox_links.py --delay 2.0 --report-file report.md
+
+      - name: Create GitHub Issue if broken links detected
+        if: failure() && steps.verify.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f report.md ]; then
+            gh issue create \
+              --title "⚠️ Kırık Volleybox Profil Bağlantıları Tespit Edildi" \
+              --body-file report.md || true
+          fi
