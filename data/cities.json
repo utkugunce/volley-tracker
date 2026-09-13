@@ -69,7 +69,7 @@
       "name": "Antalya",
       "slug": "antalya",
       "url": "https://antalya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var",
+      "status": "Puan Durumu Var (4 Tablo)",
       "matches_count": 0,
       "standings_count": 4,
       "data_file": "data/cities/antalya.json"
@@ -159,7 +159,7 @@
       "name": "Bursa",
       "slug": "bursa",
       "url": "https://bursa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var",
+      "status": "Puan Durumu Var (9 Tablo)",
       "matches_count": 0,
       "standings_count": 9,
       "data_file": "data/cities/bursa.json"
@@ -299,7 +299,7 @@
       "name": "Hakkari",
       "slug": "hakkari",
       "url": "https://hakkari.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "HTTP 500",
+      "status": "Fikstür Açıklanmadı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -336,23 +336,23 @@
     },
     {
       "ilid": "34",
-      "name": "İstanbul",
-      "slug": "istanbul",
-      "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
+      "name": "İİstanbul",
+      "slug": "iİstanbul",
+      "url": "https://iİstanbul.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (24 Maç Mevcut)",
       "matches_count": 24,
       "standings_count": 5,
-      "data_file": "data/cities/istanbul.json"
+      "data_file": "data/cities/iİstanbul.json"
     },
     {
       "ilid": "35",
-      "name": "İzmir",
-      "slug": "izmir",
-      "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
+      "name": "İİzmir",
+      "slug": "iİzmir",
+      "url": "https://iİzmir.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (Maçlar Mevcut)",
       "matches_count": 22,
       "standings_count": 9,
-      "data_file": "data/cities/izmir.json"
+      "data_file": "data/cities/iİzmir.json"
     },
     {
       "ilid": "36",
@@ -499,7 +499,7 @@
       "name": "Nevşehir",
       "slug": "nevsehir",
       "url": "https://nevsehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "HTTP 500",
+      "status": "Fikstür Açıklanmadı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -769,7 +769,7 @@
       "name": "Yalova",
       "slug": "yalova",
       "url": "https://yalova.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (Maçlar Mevcut)",
+      "status": "Aktif (20 Maç Mevcut)",
       "matches_count": 20,
       "standings_count": 1,
       "data_file": "data/cities/yalova.json"
@@ -809,7 +809,7 @@
       "name": "Düzce",
       "slug": "duzce",
       "url": "https://duzce.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var",
+      "status": "Puan Durumu Var (3 Tablo)",
       "matches_count": 0,
       "standings_count": 3,
       "data_file": "data/cities/duzce.json"

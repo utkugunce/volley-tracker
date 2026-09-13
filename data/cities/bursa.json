@@ -2,18 +2,18 @@
   "updated_at": "2026-09-13T18:26:30.010535",
   "city": "Bursa",
   "slug": "bursa",
-  "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
+  "title": "TVF Bursa Gençç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
   "source": "https://bursa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Genç Kızlar Süper Lig",
+      "Gençç Kızlar Süper Lig",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
-      "Genç",
+      "Gençç",
       "Yıldız"
     ],
     "genders": [
@@ -24,10 +24,10 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - A Grubu": [
+    "Gençç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Bursa 23 Nisan Spor KulÃ¼bÃ¼",
+        "team": "Bursa 23 Nisan Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -38,7 +38,7 @@
       },
       {
         "rank": 2,
-        "team": "Bursa AyyÄ±ldÄ±z Spor KulÃ¼bÃ¼",
+        "team": "Bursa Ayyıldız Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -49,7 +49,7 @@
       },
       {
         "rank": 3,
-        "team": "Bursa Fethiye 1973 Spor KulÃ¼bÃ¼",
+        "team": "Bursa Fethiye 1973 Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -60,7 +60,7 @@
       },
       {
         "rank": 4,
-        "team": "Bursa KoÃ§ Spor KulÃ¼bÃ¼ (B)",
+        "team": "Bursa Koç Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -71,7 +71,7 @@
       },
       {
         "rank": 5,
-        "team": "Oksijen Spor KulÃ¼bÃ¼",
+        "team": "Oksijen Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -81,10 +81,10 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - B Grubu": [
+    "Gençç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Dsi NilÃ¼fer Spor KulÃ¼bÃ¼",
+        "team": "Dsi Nilüfer Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -95,7 +95,7 @@
       },
       {
         "rank": 2,
-        "team": "Eker Spor KulÃ¼bÃ¼",
+        "team": "Eker Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -106,7 +106,7 @@
       },
       {
         "rank": 3,
-        "team": "GÃ¼ner Karakaya Spor KulÃ¼bÃ¼",
+        "team": "Güner Karakaya Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -117,7 +117,7 @@
       },
       {
         "rank": 4,
-        "team": "Kestel Belediye 1952 Spor KulÃ¼bÃ¼",
+        "team": "Kestel Belediye 1952 Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -128,7 +128,7 @@
       },
       {
         "rank": 5,
-        "team": "Mg Spor KulÃ¼bÃ¼",
+        "team": "Mg Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -138,10 +138,10 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç KÄ±zlar Süper Lig - C": [
+    "Gençç Kızlar Süper Lig - Gençç Kızlar Süper Lig - C": [
       {
         "rank": 1,
-        "team": "Bursa BÃ¼yÃ¼kÅŸehir Belediye Spor KulÃ¼bÃ¼",
+        "team": "Bursa Büyükşehir Belediye Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -152,7 +152,7 @@
       },
       {
         "rank": 2,
-        "team": "Bursa GenÃ§ Saray Spor KulÃ¼bÃ¼",
+        "team": "Bursa Gençç Saray Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -163,7 +163,7 @@
       },
       {
         "rank": 3,
-        "team": "Bursa KoÃ§ Spor KulÃ¼bÃ¼ (A)",
+        "team": "Bursa Koç Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -174,7 +174,7 @@
       },
       {
         "rank": 4,
-        "team": "Mehmet Ege Ä°nÅŸaat Ä°negÃ¶l Orhaniye Voleybol S.K",
+        "team": "Mehmet Ege İnşaat İnegöl Orhaniye Voleybol S.K",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -185,7 +185,7 @@
       },
       {
         "rank": 5,
-        "team": "NilÃ¼fer Olimpik Spor KulÃ¼bÃ¼",
+        "team": "Nilüfer Olimpik Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -195,10 +195,10 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç KÄ±zlar Süper Lig - D": [
+    "Gençç Kızlar Süper Lig - Gençç Kızlar Süper Lig - D": [
       {
         "rank": 1,
-        "team": "Doruk Voleybol Spor KulÃ¼bÃ¼",
+        "team": "Doruk Voleybol Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -209,7 +209,7 @@
       },
       {
         "rank": 2,
-        "team": "Metin KÃ¼Ã§Ã¼kkenar FÄ±rtÄ±na16 Spor KulÃ¼bÃ¼",
+        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -220,7 +220,7 @@
       },
       {
         "rank": 3,
-        "team": "NilÃ¼fer Belediye Spor KulÃ¼bÃ¼",
+        "team": "Nilüfer Belediye Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -244,7 +244,7 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Aktif Nesil Spor KulubÃ¼",
+        "team": "Aktif Nesil Spor Kulubü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -255,7 +255,7 @@
       },
       {
         "rank": 2,
-        "team": "Bursa KoÃ§ Spor KulÃ¼bÃ¼",
+        "team": "Bursa Koç Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -266,7 +266,7 @@
       },
       {
         "rank": 3,
-        "team": "Eker Spor KulÃ¼bÃ¼ (A)",
+        "team": "Eker Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -277,7 +277,7 @@
       },
       {
         "rank": 4,
-        "team": "GÃ¼ner Karakaya Spor KulÃ¼bÃ¼",
+        "team": "Güner Karakaya Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -288,7 +288,7 @@
       },
       {
         "rank": 5,
-        "team": "Mg Spor KulÃ¼bÃ¼",
+        "team": "Mg Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -299,7 +299,7 @@
       },
       {
         "rank": 6,
-        "team": "Orhangazi Voleybol Ve DaÄŸcÄ±lÄ±k Spor KulÃ¼bÃ¼",
+        "team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -312,7 +312,7 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Bursa 23 Nisan Spor KulÃ¼bÃ¼",
+        "team": "Bursa 23 Nisan Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -323,7 +323,7 @@
       },
       {
         "rank": 2,
-        "team": "Bursa Fethiye 1973 Spor KulÃ¼bÃ¼ (B)",
+        "team": "Bursa Fethiye 1973 Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -334,7 +334,7 @@
       },
       {
         "rank": 3,
-        "team": "Bursa GenÃ§ Saray Spor KulÃ¼bÃ¼",
+        "team": "Bursa Gençç Saray Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -345,7 +345,7 @@
       },
       {
         "rank": 4,
-        "team": "Doruk Voleybol Spor KulÃ¼bÃ¼",
+        "team": "Doruk Voleybol Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -356,7 +356,7 @@
       },
       {
         "rank": 5,
-        "team": "Eker Spor KulÃ¼bÃ¼ (B)",
+        "team": "Eker Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -367,7 +367,7 @@
       },
       {
         "rank": 6,
-        "team": "Ã–ncÃ¼ YÄ±ldÄ±z Spor KulÃ¼bÃ¼",
+        "team": "Öncü Yıldız Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -377,10 +377,10 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - YÄ±ldÄ±z KÄ±zlar Süper Lig - C": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig - C": [
       {
         "rank": 1,
-        "team": "Bursa AyyÄ±ldÄ±z Spor KulÃ¼bÃ¼",
+        "team": "Bursa Ayyıldız Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -391,7 +391,7 @@
       },
       {
         "rank": 2,
-        "team": "Hk Volleyball Academy Spor KulÃ¼bÃ¼",
+        "team": "Hk Volleyball Academy Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -402,7 +402,7 @@
       },
       {
         "rank": 3,
-        "team": "Mesut KÃ¶kel Spor KulÃ¼bÃ¼",
+        "team": "Mesut Kökel Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -413,7 +413,7 @@
       },
       {
         "rank": 4,
-        "team": "NilÃ¼fer Belediye Spor KulÃ¼bÃ¼ (B)",
+        "team": "Nilüfer Belediye Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -424,7 +424,7 @@
       },
       {
         "rank": 5,
-        "team": "Oksijen Spor KulÃ¼bÃ¼",
+        "team": "Oksijen Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -445,10 +445,10 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - YÄ±ldÄ±z KÄ±zlar Süper Lig - D": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig - D": [
       {
         "rank": 1,
-        "team": "Akademi16 Spor KulÃ¼bÃ¼",
+        "team": "Akademi16 Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -459,7 +459,7 @@
       },
       {
         "rank": 2,
-        "team": "Bursa Fethiye 1973 Spor KulÃ¼bÃ¼ (A)",
+        "team": "Bursa Fethiye 1973 Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -470,7 +470,7 @@
       },
       {
         "rank": 3,
-        "team": "Dsi NilÃ¼fer Spor KulÃ¼bÃ¼",
+        "team": "Dsi Nilüfer Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -481,7 +481,7 @@
       },
       {
         "rank": 4,
-        "team": "NilÃ¼fer BeÅŸevler Spor KulÃ¼bÃ¼",
+        "team": "Nilüfer Beşevler Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -492,7 +492,7 @@
       },
       {
         "rank": 5,
-        "team": "NilÃ¼fer Olimpik Spor KulÃ¼bÃ¼",
+        "team": "Nilüfer Olimpik Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -502,10 +502,10 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - YÄ±ldÄ±z KÄ±zlar Süper Lig - E": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig - E": [
       {
         "rank": 1,
-        "team": "Bursa BÃ¼yÃ¼kÅŸehir Belediye Spor KulÃ¼bÃ¼",
+        "team": "Bursa Büyükşehir Belediye Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -516,7 +516,7 @@
       },
       {
         "rank": 2,
-        "team": "HÃ¼rriyet Spor KulubÃ¼",
+        "team": "Hürriyet Spor Kulubü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -527,7 +527,7 @@
       },
       {
         "rank": 3,
-        "team": "Kestel Belediye 1952 Spor KulÃ¼bÃ¼",
+        "team": "Kestel Belediye 1952 Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -538,7 +538,7 @@
       },
       {
         "rank": 4,
-        "team": "Metin KÃ¼Ã§Ã¼kkenar FÄ±rtÄ±na16 Spor KulÃ¼bÃ¼",
+        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -549,7 +549,7 @@
       },
       {
         "rank": 5,
-        "team": "NilÃ¼fer Belediye Spor KulÃ¼bÃ¼ (A)",
+        "team": "Nilüfer Belediye Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,

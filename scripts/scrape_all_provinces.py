@@ -73,10 +73,10 @@ def clean_str(s: str) -> str:
 
 def decode_html(resp: httpx.Response) -> str:
     try:
-        return resp.content.decode("windows-1254")
-    except Exception:
+        return resp.content.decode("utf-8")
+    except UnicodeDecodeError:
         try:
-            return resp.content.decode("utf-8")
+            return resp.content.decode("windows-1254")
         except Exception:
             return resp.text
 

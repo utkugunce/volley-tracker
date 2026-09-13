@@ -2,18 +2,18 @@
   "updated_at": "2026-09-13T20:55:00.000000",
   "city": "Niğde",
   "slug": "nigde",
-  "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
+  "title": "TVF Niğde Gençç & Yıldız Kızlar Süper Lig",
   "total_matches": 4,
   "source": "https://nigde.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Genç Kızlar Süper Lig",
+      "Gençç Kızlar Süper Lig",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
-      "Genç",
+      "Gençç",
       "Yıldız"
     ],
     "genders": [
@@ -27,7 +27,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
+    "Gençç Kızlar Süper Lig - Gençç Kızlar İl Birinciliği": [
       {
         "rank": 1,
         "team": "Bor Belediye Spor Kulübü",
@@ -52,7 +52,7 @@
       },
       {
         "rank": 3,
-        "team": "Odtü Gv Niğde Okulları Spor Kulübü",
+        "team": "ODTÜ GV Niğde Okulları Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -75,8 +75,8 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar İl Birinciliği",
       "match_no": "1",
-      "home_team": "Odtü Gv Niğde Okulları Spor Kulübü",
-      "away_team": "Niğde Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+      "home_team": "ODTÜ GV Niğde Okulları Spor Kulübü",
+      "away_team": "Niğde Genççlik ve Spor İl Müdürlüğü Spor Kulübü",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -94,13 +94,13 @@
       "date": "2026-09-11",
       "time": "19:00",
       "hall": "Merkez S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
+      "category": "Gençç Kızlar Süper Lig",
+      "age_group": "Gençç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "Gençç Kızlar İl Birinciliği",
       "match_no": "2",
       "home_team": "Niğde Sev Spor Kulübü",
-      "away_team": "Odtü Gv Niğde Okulları Spor Kulübü",
+      "away_team": "ODTÜ GV Niğde Okulları Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -138,7 +138,7 @@
       "group": "Yıldız Kızlar İl Birinciliği",
       "match_no": "4",
       "home_team": "Niğde Volley Akademi Spor Kulübü",
-      "away_team": "Odtü Gv Niğde Okulları Spor Kulübü",
+      "away_team": "ODTÜ GV Niğde Okulları Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
