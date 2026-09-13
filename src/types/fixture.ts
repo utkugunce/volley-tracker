@@ -79,6 +79,8 @@ export interface VolleyboxMapping {
   volleybox_url: string;
   age_category: "U18" | "U16" | null;
   confidence: VolleyboxConfidence;
+  logo_url?: string | null;
+  local_logo?: string | null;
   note?: string | null;
   verified_at?: string;
 }

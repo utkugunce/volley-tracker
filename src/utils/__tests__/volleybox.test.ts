@@ -22,6 +22,8 @@ describe("volleybox utility", () => {
       expect(mapping?.volleybox_url).toContain("pegasus-spor-kulubu-u18-t54139");
       expect(mapping?.confidence).toBe("verified");
       expect(mapping?.age_category).toBe("U18");
+      expect(mapping?.local_logo).toBeDefined();
+      expect(mapping?.local_logo).toContain("/logos/");
     });
 
     it("returns correct mapping for verified team (Pegasus U16)", () => {

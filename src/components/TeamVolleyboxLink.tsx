@@ -1,12 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 
 interface TeamVolleyboxLinkProps {
   teamName: string;
   category?: string;
   className?: string;
+  showLogo?: boolean;
+  logoClassName?: string;
   children?: React.ReactNode;
 }
 
@@ -14,13 +16,37 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   teamName,
   category,
   className = "",
+  showLogo = true,
+  logoClassName = "",
   children,
 }) => {
   const mapping = getVolleyboxMapping(teamName, category);
   const content = children ?? teamName;
+  const [imgFailed, setImgFailed] = useState(false);
+
+  // Logo source: prefer local_logo, fallback to logo_url
+  const logoSrc = showLogo && !imgFailed ? (mapping?.local_logo || mapping?.logo_url) : null;
+
+  const logoElement = logoSrc ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={logoSrc}
+      alt={`${teamName} logosu`}
+      className={`w-4 h-4 sm:w-5 sm:h-5 object-contain rounded-full bg-white p-0.5 border border-slate-200/90 shadow-xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
+      loading="lazy"
+      onError={() => {
+        setImgFailed(true);
+      }}
+    />
+  ) : null;
 
   if (!mapping || !mapping.volleybox_url) {
-    return <span className={className}>{content}</span>;
+    return (
+      <span className={`inline-flex items-center ${className}`}>
+        {logoElement}
+        <span>{content}</span>
+      </span>
+    );
   }
 
   const isClubLevelOnly = mapping.confidence === "club_level_only";
@@ -33,11 +59,12 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       href={mapping.volleybox_url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`hover:underline hover:text-primary transition-colors cursor-pointer ${className}`}
+      className={`group inline-flex items-center hover:underline hover:text-primary transition-colors cursor-pointer ${className}`}
       title={title}
       onClick={(e) => e.stopPropagation()}
     >
-      {content}
+      {logoElement}
+      <span>{content}</span>
     </a>
   );
 };

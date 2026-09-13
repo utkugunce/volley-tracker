@@ -60,6 +60,10 @@ describe("FixtureTable Component", () => {
 
     expect(fbLink).toBeDefined();
     expect(fbLink).toHaveAttribute("target", "_blank");
+
+    const vakifImg = screen.getByAltText("VakıfBank logosu");
+    expect(vakifImg).toBeInTheDocument();
+    expect(vakifImg).toHaveAttribute("src", expect.stringContaining("logos/vakfbank-u18"));
   });
 
   it("eşleşmeyen takımlar için hiçbir link veya ikon render etmez", () => {
