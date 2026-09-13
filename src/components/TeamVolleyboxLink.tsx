@@ -21,7 +21,9 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   children,
 }) => {
   const mapping = getVolleyboxMapping(teamName, category);
-  const displayName = mapping?.matched_as || teamName;
+  // Yaş kategorisi (U16/U18 vb.) zaten lig başlığından belli — takım adından kaldır
+  const rawName = mapping?.matched_as || teamName;
+  const displayName = rawName.replace(/\s+U\d{2}$/, "").trim();
   const content = children ?? displayName;
   const [imgFailed, setImgFailed] = useState(false);
 
