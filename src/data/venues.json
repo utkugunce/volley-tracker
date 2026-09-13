@@ -1,0 +1,82 @@
+[
+  {
+    "id": "50-yil-deniz-esinduy",
+    "name": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+    "city": "İstanbul",
+    "district": "Üsküdar / Kadıköy",
+    "address": "Barbaros Mah. Alaeddin Sok. No:9/1 Üsküdar / İstanbul",
+    "capacity": "1.200 Seyirci",
+    "transit_info": "Metrobüs Altunizade durağına veya M5 Üsküdar-Çekmeköy Bağlarbaşı metro istasyonuna 10 dk yürüme mesafesinde.",
+    "maps_query": "TVF 50. Yıl Deniz Esinduy Spor Salonu"
+  },
+  {
+    "id": "tozkoparan",
+    "name": "Tozkoparan Spor Salonu",
+    "city": "İstanbul",
+    "district": "Güngören / Merter",
+    "address": "Tozkoparan Mah. Cevat Açıkalın Cad. Güngören / İstanbul",
+    "capacity": "1.500 Seyirci",
+    "transit_info": "M1A Yenikapı-Atatürk Havalimanı Merter metro istasyonu veya T1 Tramvay Merter durağı.",
+    "maps_query": "Tozkoparan Spor Salonu Güngören"
+  },
+  {
+    "id": "sehit-mustafa-ozel",
+    "name": "Şehit Mustafa Özel Spor Kompleksi",
+    "city": "İstanbul",
+    "district": "Bahçelievler",
+    "address": "Yenibosna Merkez Mah. 29 Ekim Cad. Bahçelievler / İstanbul",
+    "capacity": "2.100 Seyirci",
+    "transit_info": "M9 Ataköy-Olimpiyat Yenibosna istasyonuna yakın; Metrobüs Yenibosna durağından otobüs/minibüs bağlantısı.",
+    "maps_query": "Şehit Mustafa Özel Spor Kompleksi Bahçelievler"
+  },
+  {
+    "id": "yakacikito",
+    "name": "Yakacıkito Spor Salonu",
+    "city": "İstanbul",
+    "district": "Kartal / Yakacık",
+    "address": "Yakacık Yeni Mah. Samandıra Cad. Kartal / İstanbul",
+    "capacity": "800 Seyirci",
+    "transit_info": "M4 Kadıköy-Sabiha Gökçen Kartal metro istasyonundan Yakacık minibüsleri veya 16S, 132C otobüsleri.",
+    "maps_query": "Yakacık Spor Salonu Kartal"
+  },
+  {
+    "id": "mimar-sinan",
+    "name": "Mimar Sinan Spor Kompleksi",
+    "city": "İstanbul",
+    "district": "Fatih",
+    "address": "Mimar Sinan Mah. Akşemsettin Cad. Fatih / İstanbul",
+    "capacity": "1.000 Seyirci",
+    "transit_info": "M1A/M1B Emniyet-Fatih istasyonuna 5 dk yürüme mesafesinde.",
+    "maps_query": "Mimar Sinan Spor Kompleksi Fatih"
+  },
+  {
+    "id": "baskent-voleybol",
+    "name": "Başkent Voleybol Salonu",
+    "city": "Ankara",
+    "district": "Yenimahalle",
+    "address": "Emniyet Mah. Milas Sok. No:9 Yenimahalle / Ankara (TVF Kampüsü)",
+    "capacity": "7.600 Seyirci",
+    "transit_info": "Ankaray Beşevler durağına veya Başkentray Hipodrom istasyonuna yürüme mesafesinde.",
+    "maps_query": "TVF Başkent Voleybol Salonu Ankara"
+  },
+  {
+    "id": "bestepe-voleybol",
+    "name": "Beştepe Voleybol Salonu",
+    "city": "Ankara",
+    "district": "Yenimahalle / Beştepe",
+    "address": "Beştepe Mah. 32. Sok. Yenimahalle / Ankara",
+    "capacity": "1.000 Seyirci",
+    "transit_info": "M2 Kızılay-Çayyolu Milli Kütüphane veya Söğütözü istasyonundan ring/yürüme mesafesi.",
+    "maps_query": "Beştepe Voleybol Salonu Ankara"
+  },
+  {
+    "id": "selim-sirri-tarcan",
+    "name": "Selim Sırrı Tarcan Spor Salonu",
+    "city": "Ankara",
+    "district": "Altındağ / Sıhhiye",
+    "address": "Talatpaşa Bulvarı Ankara Garı Yanı Altındağ / Ankara",
+    "capacity": "2.500 Seyirci",
+    "transit_info": "Ankara Garı yanında; M1-M4 Ulus/Gar metro istasyonuna 3 dk yürüme mesafesinde.",
+    "maps_query": "Selim Sırrı Tarcan Spor Salonu Ankara"
+  }
+]

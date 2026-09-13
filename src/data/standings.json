@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ist-gksl-a",
+    "title": "Genç Kız Süper Lig - A Grubu",
+    "city": "İstanbul",
+    "category": "Genç",
+    "group": "A",
+    "table": [
+      { "rank": 1, "team": "Eczacıbaşı", "played": 2, "won": 2, "lost": 0, "points": 6, "sets_won": 6, "sets_lost": 0, "form": ["W", "W"] },
+      { "rank": 2, "team": "Galatasaray", "played": 2, "won": 2, "lost": 0, "points": 5, "sets_won": 6, "sets_lost": 2, "form": ["W", "W"] },
+      { "rank": 3, "team": "Bahçelievler Bld.", "played": 2, "won": 1, "lost": 1, "points": 3, "sets_won": 4, "sets_lost": 3, "form": ["L", "W"] },
+      { "rank": 4, "team": "Milan Atletik", "played": 2, "won": 1, "lost": 1, "points": 3, "sets_won": 3, "sets_lost": 4, "form": ["W", "L"] },
+      { "rank": 5, "team": "Beşiktaş", "played": 2, "won": 0, "lost": 2, "points": 1, "sets_won": 2, "sets_lost": 6, "form": ["L", "L"] },
+      { "rank": 6, "team": "Ümraniye Belediyesi", "played": 2, "won": 0, "lost": 2, "points": 0, "sets_won": 0, "sets_lost": 6, "form": ["L", "L"] }
+    ]
+  },
+  {
+    "id": "ist-gksl-b",
+    "title": "Genç Kız Süper Lig - B Grubu",
+    "city": "İstanbul",
+    "category": "Genç",
+    "group": "B",
+    "table": [
+      { "rank": 1, "team": "Vakıfbank", "played": 2, "won": 2, "lost": 0, "points": 6, "sets_won": 6, "sets_lost": 1, "form": ["W", "W"] },
+      { "rank": 2, "team": "Fenerbahçe A", "played": 2, "won": 2, "lost": 0, "points": 6, "sets_won": 6, "sets_lost": 0, "form": ["W", "W"] },
+      { "rank": 3, "team": "Yeşilyurt", "played": 2, "won": 1, "lost": 1, "points": 3, "sets_won": 3, "sets_lost": 3, "form": ["W", "L"] },
+      { "rank": 4, "team": "Thy A", "played": 2, "won": 1, "lost": 1, "points": 2, "sets_won": 3, "sets_lost": 5, "form": ["L", "W"] },
+      { "rank": 5, "team": "Bizimkent SK", "played": 2, "won": 0, "lost": 2, "points": 1, "sets_won": 2, "sets_lost": 6, "form": ["L", "L"] },
+      { "rank": 6, "team": "İbb", "played": 2, "won": 0, "lost": 2, "points": 0, "sets_won": 1, "sets_lost": 6, "form": ["L", "L"] }
+    ]
+  },
+  {
+    "id": "ist-yksl-a",
+    "title": "Yıldız Kız Süper Lig - A Grubu",
+    "city": "İstanbul",
+    "category": "Yıldız",
+    "group": "A",
+    "table": [
+      { "rank": 1, "team": "Eczacıbaşı A", "played": 2, "won": 2, "lost": 0, "points": 6, "sets_won": 6, "sets_lost": 0, "form": ["W", "W"] },
+      { "rank": 2, "team": "Galatasaray", "played": 2, "won": 2, "lost": 0, "points": 6, "sets_won": 6, "sets_lost": 1, "form": ["W", "W"] },
+      { "rank": 3, "team": "Milan Atletik", "played": 2, "won": 1, "lost": 1, "points": 3, "sets_won": 4, "sets_lost": 3, "form": ["W", "L"] },
+      { "rank": 4, "team": "Beşiktaş", "played": 2, "won": 1, "lost": 1, "points": 3, "sets_won": 3, "sets_lost": 4, "form": ["L", "W"] },
+      { "rank": 5, "team": "Silivri Çağrıbey", "played": 2, "won": 0, "lost": 2, "points": 0, "sets_won": 1, "sets_lost": 6, "form": ["L", "L"] },
+      { "rank": 6, "team": "Bahçelievler Bld.", "played": 2, "won": 0, "lost": 2, "points": 0, "sets_won": 0, "sets_lost": 6, "form": ["L", "L"] }
+    ]
+  },
+  {
+    "id": "ank-gksl-a",
+    "title": "Ankara Genç Kız Süper Lig",
+    "city": "Ankara",
+    "category": "Genç",
+    "group": "A",
+    "table": [
+      { "rank": 1, "team": "İlbank A", "played": 1, "won": 1, "lost": 0, "points": 3, "sets_won": 3, "sets_lost": 0, "form": ["W"] },
+      { "rank": 2, "team": "TED Ankara Kolejliler", "played": 1, "won": 1, "lost": 0, "points": 3, "sets_won": 3, "sets_lost": 1, "form": ["W"] },
+      { "rank": 3, "team": "Karayolları", "played": 1, "won": 1, "lost": 0, "points": 2, "sets_won": 3, "sets_lost": 2, "form": ["W"] },
+      { "rank": 4, "team": "Halkbank", "played": 1, "won": 0, "lost": 1, "points": 1, "sets_won": 2, "sets_lost": 3, "form": ["L"] },
+      { "rank": 5, "team": "TVF Spor Lisesi", "played": 1, "won": 0, "lost": 1, "points": 0, "sets_won": 1, "sets_lost": 3, "form": ["L"] },
+      { "rank": 6, "team": "DSİ Spor", "played": 1, "won": 0, "lost": 1, "points": 0, "sets_won": 0, "sets_lost": 3, "form": ["L"] }
+    ]
+  }
+]

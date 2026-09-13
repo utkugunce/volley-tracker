@@ -1,0 +1,147 @@
+"use client";
+
+import React from "react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, UploadCloud } from "lucide-react";
+
+interface HeaderProps {
+  city?: string;
+  title?: string;
+  updatedAt?: string;
+  totalMatches: number;
+  favoritesCount: number;
+  showOnlyFavorites: boolean;
+  onToggleFavoritesOnly: () => void;
+  activeTab: "fixtures" | "standings";
+  onSelectTab: (tab: "fixtures" | "standings") => void;
+  onRefresh: () => void;
+  isLoading: boolean;
+}
+
+export const Header: React.FC<HeaderProps> = ({
+  city = "İstanbul",
+  updatedAt,
+  totalMatches,
+  favoritesCount,
+  showOnlyFavorites,
+  onToggleFavoritesOnly,
+  activeTab,
+  onSelectTab,
+  onRefresh,
+  isLoading,
+}) => {
+  const formattedTime = updatedAt
+    ? new Date(updatedAt).toLocaleTimeString("tr-TR", {
+        hour: "2-digit",
+        minute: "2-digit",
+      })
+    : "--:--";
+
+  return (
+    <header className="bg-[#0b1325] text-white sticky top-0 z-30 shadow-lg border-b border-slate-800">
+      {/* 1. Üst Flashscore Bar */}
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-between border-b border-slate-800/80">
+        {/* Logo & Brand */}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 font-mono font-black text-lg tracking-tighter">
+            <span className="bg-primary text-white px-2 py-0.5 rounded font-black">
+              TVF
+            </span>
+            <span className="text-white">SCORE</span>
+          </div>
+
+          <div className="h-4 w-px bg-slate-700 hidden sm:block" />
+
+          <div className="hidden sm:flex items-center gap-2 text-xs text-slate-300">
+            <span className="font-semibold text-white">{city.toUpperCase()}</span>
+            <span>•</span>
+            <span className="text-amber-400 font-medium">Genç & Yıldız Kızlar Süper Lig</span>
+          </div>
+        </div>
+
+        {/* Sağ Taraf: Favoriler, Yazdır, Canlı Yenile */}
+        <div className="flex items-center gap-2">
+
+          {/* Favoriler Butonu (Yalnızca Fikstür sekmesinde göster) */}
+          {activeTab === "fixtures" && (
+            <button
+              onClick={onToggleFavoritesOnly}
+              className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all ${
+                showOnlyFavorites
+                  ? "bg-amber-400 text-black shadow-sm font-bold"
+                  : "bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700"
+              }`}
+              title="Sadece Favori Maçları Göster"
+            >
+              <Star
+                size={13}
+                className={showOnlyFavorites ? "fill-black text-black" : "text-amber-400"}
+              />
+              <span className="hidden sm:inline">Favoriler</span>
+              {favoritesCount > 0 && (
+                <span
+                  className={`text-[10px] px-1 rounded-full ${
+                    showOnlyFavorites ? "bg-black text-white" : "bg-slate-700 text-white"
+                  }`}
+                >
+                  {favoritesCount}
+                </span>
+              )}
+            </button>
+          )}
+
+          {/* Yazdır Butonu */}
+          <button
+            onClick={() => window.print()}
+            className="p-1.5 rounded bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors no-print border border-slate-700"
+            title="Yazdır"
+          >
+            <Printer size={14} />
+          </button>
+
+          {/* Yenile Butonu */}
+          <button
+            onClick={onRefresh}
+            disabled={isLoading}
+            className="flex items-center gap-1 text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-2 py-1.5 rounded transition-colors disabled:opacity-50 border border-slate-700"
+            title="Verileri Yenile"
+          >
+            <RefreshCw size={13} className={isLoading ? "animate-spin text-primary" : ""} />
+            <span className="hidden sm:inline font-mono">{formattedTime}</span>
+          </button>
+        </div>
+      </div>
+
+      {/* 2. SADECE FİKSTÜR VE PUAN DURUMU SEKMELERİ */}
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 flex items-center gap-2 text-xs font-bold">
+        {/* Fikstür Sekmesi */}
+        <button
+          onClick={() => onSelectTab("fixtures")}
+          className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer ${
+            activeTab === "fixtures"
+              ? "border-primary text-white bg-slate-800/40"
+              : "border-transparent text-slate-400 hover:text-slate-200"
+          }`}
+        >
+          <Calendar size={14} className={activeTab === "fixtures" ? "text-primary" : ""} />
+          <span>FİKSTÜR</span>
+          <span className="text-[10px] bg-slate-800 text-slate-300 px-1.5 py-0.2 rounded-full font-normal">
+            {totalMatches}
+          </span>
+        </button>
+
+        {/* Puan Durumu Sekmesi */}
+        <button
+          onClick={() => onSelectTab("standings")}
+          className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer ${
+            activeTab === "standings"
+              ? "border-primary text-white bg-slate-800/40"
+              : "border-transparent text-slate-400 hover:text-slate-200"
+          }`}
+        >
+          <Trophy size={14} className={activeTab === "standings" ? "text-amber-400" : ""} />
+          <span>PUAN DURUMU</span>
+        </button>
+      </div>
+    </header>
+  );
+};
