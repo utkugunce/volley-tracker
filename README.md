@@ -96,8 +96,15 @@ Projede yönetim ve bülten yükleme güvenliği için ortam değişkenleri kull
 | `ADMIN_TOKEN` | `/api/fixtures/upload` endpoint'ine bülten yükleme isteklerini yetkilendirmek için kullanılan gizli anahtar. Tanımlanmadığında endpoint güvenlik amacıyla 503 Service Unavailable döner. | Evet (Upload özelliği için) |
 
 > [!IMPORTANT]
-> `ADMIN_TOKEN` için asla tahmin edilebilir veya varsayılan değerler kullanmayın. Güçlü ve rastgele bir token üretmek için şu komutu çalıştırabilirsiniz:
+> `ADMIN_TOKEN` için asla tahmin edilebilir veya varsayılan değerler kullanmayın. Güçlü ve rastgele bir token üretmek için şu komutlardan birini çalıştırabilirsiniz:
 > ```bash
+> # Node.js ile:
+> node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+>
+> # veya Python ile:
+> python -c "import secrets; print(secrets.token_hex(32))"
+>
+> # veya Linux/macOS OpenSSL ile:
 > openssl rand -hex 32
 > ```
 > Değeri yerel geliştirmede `.env.local` dosyasına, bulut ortamında ise Vercel Dashboard (`Settings > Environment Variables`) üzerinden ekleyin.
