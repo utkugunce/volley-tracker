@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { CityInfo } from "@/types/fixture";
 
@@ -20,6 +20,11 @@ interface HeaderProps {
   onSelectTab: (tab: "fixtures" | "standings") => void;
   onRefresh: () => void;
   isLoading: boolean;
+  syncFeedback?: {
+    type: "success" | "warning" | "error";
+    message: string;
+  } | null;
+  onDismissSyncFeedback?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -36,6 +41,8 @@ export const Header: React.FC<HeaderProps> = ({
   onSelectTab,
   onRefresh,
   isLoading,
+  syncFeedback,
+  onDismissSyncFeedback,
 }) => {
   const formattedTime = updatedAt
     ? new Date(updatedAt).toLocaleTimeString("tr-TR", {
@@ -126,6 +133,43 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
         </div>
       </div>
+
+      {/* Canlı Senkronizasyon Durum Bildirimi */}
+      {syncFeedback && (
+        <div
+          className={`px-3 py-1.5 text-xs font-medium border-b animate-in fade-in slide-in-from-top-1 duration-150 ${
+            syncFeedback.type === "success"
+              ? "bg-emerald-950/90 text-emerald-300 border-emerald-800"
+              : syncFeedback.type === "warning"
+              ? "bg-amber-950/90 text-amber-300 border-amber-800"
+              : "bg-rose-950/90 text-rose-300 border-rose-800"
+          }`}
+        >
+          <div className="max-w-6xl mx-auto w-full flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              {syncFeedback.type === "success" && (
+                <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+              )}
+              {syncFeedback.type === "warning" && (
+                <AlertTriangle size={14} className="text-amber-400 shrink-0" />
+              )}
+              {syncFeedback.type === "error" && (
+                <AlertCircle size={14} className="text-rose-400 shrink-0" />
+              )}
+              <span>{syncFeedback.message}</span>
+            </div>
+            {onDismissSyncFeedback && (
+              <button
+                onClick={onDismissSyncFeedback}
+                className="text-xs opacity-70 hover:opacity-100 transition-opacity ml-2 px-1"
+                title="Bildirimi Kapat"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* 2. SADECE FİKSTÜR VE PUAN DURUMU SEKMELERİ */}
       <div className="max-w-6xl mx-auto px-3 sm:px-4 flex items-center gap-2 text-xs font-bold">

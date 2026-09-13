@@ -38,15 +38,43 @@ export async function GET(request: Request) {
     const status = searchParams.get("status");
     const date = searchParams.get("date");
 
+    let syncMeta:
+      | { attempted: boolean; success: boolean; mode: string; message: string }
+      | undefined;
+
     if (refresh === "1") {
-      try {
-        execFileSync("python", ["scripts/scrape_all_provinces.py"], {
-          cwd: process.cwd(),
-          timeout: 45000,
-          stdio: "ignore",
-        });
-      } catch (err) {
-        console.warn("Live scraper refresh warning (falling back to cached data):", err);
+      if (process.env.VERCEL) {
+        // Vercel Serverless Function ortamında Python interpreter bulunmamaktadır (status 127).
+        // Veri senkronizasyonu GitHub Actions zamanlanmış görevi (cron) ile sağlanmaktadır.
+        syncMeta = {
+          attempted: true,
+          success: false,
+          mode: "github_actions_cron",
+          message:
+            "Bulut ortamında canlı Python motoru desteklenmemektedir. Güncel fikstür verileri GitHub Actions zamanlanmış görevi ile periyodik senkronize edilmektedir.",
+        };
+      } else {
+        try {
+          execFileSync("python", ["scripts/scrape_all_provinces.py"], {
+            cwd: process.cwd(),
+            timeout: 45000,
+            stdio: "ignore",
+          });
+          syncMeta = {
+            attempted: true,
+            success: true,
+            mode: "local_python",
+            message: "Fikstür ve puan durumu yerel tarayıcı üzerinden başarıyla güncellendi.",
+          };
+        } catch (err: any) {
+          syncMeta = {
+            attempted: true,
+            success: false,
+            mode: "local_python",
+            message: `Yerel tarayıcı çalıştırılamadı: ${err.message}`,
+          };
+          console.warn("Live scraper refresh warning (falling back to cached data):", err);
+        }
       }
     }
 
@@ -91,6 +119,7 @@ export async function GET(request: Request) {
           matches: [],
           standings: {},
           note: "Bu ilin TVF temsilciliği yeni sezon bültenini henüz girmemiştir.",
+          sync: syncMeta,
         });
       }
     }
@@ -160,6 +189,7 @@ export async function GET(request: Request) {
       filters: data.filters,
       matches,
       standings: data.standings || {},
+      sync: syncMeta,
     });
   } catch (error) {
     console.error("API Error:", error);

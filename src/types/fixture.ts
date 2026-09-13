@@ -51,6 +51,12 @@ export interface FixturesData {
   standings?: {
     [category: string]: StandingItem[];
   };
+  sync?: {
+    attempted?: boolean;
+    success?: boolean;
+    mode?: string;
+    message?: string;
+  };
 }
 
 export interface CityInfo {
