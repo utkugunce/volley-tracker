@@ -1,0 +1,704 @@
+{
+  "mappings": [
+    {
+      "internal_name": "VakıfBank",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "VakıfBank U18",
+      "volleybox_url": "https://women.volleybox.net/vakfbank-u18-t19499",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Fenerbahçe",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Fenerbahçe U18",
+      "volleybox_url": "https://women.volleybox.net/fenerbahce-u18-t27716",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eczacıbaşı",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Eczacıbaşı U18",
+      "volleybox_url": "https://women.volleybox.net/eczacbas-u18-t10844",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Galatasaray",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Galatasaray U18",
+      "volleybox_url": "https://women.volleybox.net/galatasaray-u18-t36341",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Beşiktaş",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Beşiktaş U18",
+      "volleybox_url": "https://women.volleybox.net/besiktas-u18-t12698",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "THY",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Türk Hava Yolları SK U18",
+      "volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-u18-t41166",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Bahçelievler Bld",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Bahçelievler Belediyespor U18",
+      "volleybox_url": "https://women.volleybox.net/bahcelievler-belediyespor-u18-t41163",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Beylikdüzü 2021",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Beylikdüzü Voleybol 2021 U18",
+      "volleybox_url": "https://women.volleybox.net/beylikduzu-voleybol-2021-u18-t41225",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eyüpsultan Bld",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Eyüpsultan Belediyesi SK U18",
+      "volleybox_url": "https://women.volleybox.net/eyupsultan-belediyesi-sk-u18-t41164",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Yeşilyurt",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Yeşilyurt Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/yesilyurt-u18-t25963",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Ümraniye Bld",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Ümraniye Belediyesi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/umraniye-belediyesi-spor-kulubu-u18-t54140",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "İbb",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "İBB Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/bb-spor-u18-t30200",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "İBB",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "İBB Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/bb-spor-u18-t30200",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Es Voleybol",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "ES Voleybol U18",
+      "volleybox_url": "https://women.volleybox.net/es-voleybol-u18-t30461",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Marmara Akademi",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Marmara Akademi Atletik Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/mehmet-erdem-marmara-akademi-spor-kulubu-u18-t41165",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Silivri Çağrıbey",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Silivri Çağrıbey SK U18",
+      "volleybox_url": "https://women.volleybox.net/silivri-cagrbey-sk-u18-t54138",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Güngören Voleybol",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Güngören Voleybol Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/gungoren-voleybol-kulubu-u18-t54141",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Bizimkent Voleybol",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Bizimkent Voleybol Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/bizimkent-voleybol-spor-kulubu-u18-t41227",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Milan Atletik",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Milan Atletik U18",
+      "volleybox_url": "https://women.volleybox.net/milan-atletik-u18-t41178",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Pegasus",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Pegasus Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/pegasus-spor-kulubu-u18-t54139",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Ünsped",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Ünsped Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/unsped-spor-kulubu-u18-t41214",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "VakıfBank",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "VakıfBank U16",
+      "volleybox_url": "https://women.volleybox.net/vakfbank-u17-t37362",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "VakıfBank A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "VakıfBank U16",
+      "volleybox_url": "https://women.volleybox.net/vakfbank-u17-t37362",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "VakıfBank B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "VakıfBank U16",
+      "volleybox_url": "https://women.volleybox.net/vakfbank-u17-t37362",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Fenerbahçe",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Fenerbahçe U16",
+      "volleybox_url": "https://women.volleybox.net/fenerbahce-u16-t41423",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Fenerbahçe A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Fenerbahçe U16",
+      "volleybox_url": "https://women.volleybox.net/fenerbahce-u16-t41423",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Fenerbahçe B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Fenerbahçe U16",
+      "volleybox_url": "https://women.volleybox.net/fenerbahce-u16-t41423",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eczacıbaşı",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Eczacıbaşı U16",
+      "volleybox_url": "https://women.volleybox.net/eczacbas-u17-t39199",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eczacıbaşı A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Eczacıbaşı U16",
+      "volleybox_url": "https://women.volleybox.net/eczacbas-u17-t39199",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eczacıbaşı B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Eczacıbaşı U16",
+      "volleybox_url": "https://women.volleybox.net/eczacbas-u17-t39199",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Galatasaray",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Galatasaray U16",
+      "volleybox_url": "https://women.volleybox.net/galatasaray-u16-t41437",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Beşiktaş",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Beşiktaş U16",
+      "volleybox_url": "https://women.volleybox.net/besiktas-u16-t41475",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "THY",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Türk Hava Yolları SK U16",
+      "volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-u16-t41413",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "THY A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Türk Hava Yolları SK U16",
+      "volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-u16-t41413",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "THY B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Türk Hava Yolları SK - B U16",
+      "volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-u16-t54151",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Bahçelievler Bld",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Bahçelievler Belediyespor U16",
+      "volleybox_url": "https://women.volleybox.net/bahcelievler-belediyespor-u16-t41433",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eyüpsultan Bld",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Eyüpsultan Belediyesi SK U16",
+      "volleybox_url": "https://women.volleybox.net/eyupsultan-belediyesi-sk-u16-t41639",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eyüpsultan Bld A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Eyüpsultan Belediyesi SK U16",
+      "volleybox_url": "https://women.volleybox.net/eyupsultan-belediyesi-sk-u16-t41639",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Eyüpsultan Bld B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Eyüpsultan Belediyesi SK - B U16",
+      "volleybox_url": "https://women.volleybox.net/eyupsultan-belediyesi-sk-u16-t54149",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Sarıyer Bld",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Sarıyer Belediyesi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/saryer-belediyesi-u16-t41441",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Yeşilyurt",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Yeşilyurt Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/yesilyurt-spor-kulubu-u16-t41646",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Ümraniye Bld",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ümraniye Belediyesi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/umraniye-belediyesi-spor-kulubu-u15-t41050",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "İBB",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "İBB Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/bb-spor-kulubu-u16-t41641",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "İbb",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "İBB Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/bb-spor-kulubu-u16-t41641",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Es Voleybol",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "ES Voleybol U16",
+      "volleybox_url": "https://women.volleybox.net/es-voleybol-u16-t41476",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Marmara Akademi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Marmara Akademi Atletik Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/mehmet-erdem-marmara-akademi-spor-kulubu-u16-t41445",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Silivri Çağrıbey",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Silivri Çağrıbey SK U16",
+      "volleybox_url": "https://women.volleybox.net/silivri-cagrbey-sk-u16-t41644",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Bizimkent Voleybol",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Bizimkent Voleybol Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/bizimkent-voleybol-spor-kulubu-u16-t41638",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Bizimkent Sk",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Bizimkent Voleybol Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/bizimkent-voleybol-spor-kulubu-u16-t41638",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Milan Atletik",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Milan Atletik U16",
+      "volleybox_url": "https://women.volleybox.net/milan-atletik-u16-t41642",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Başakşehir Bld",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Başakşehir Belediyesi SK U16",
+      "volleybox_url": "https://women.volleybox.net/basaksehir-belediyesi-sk-u16-t54146",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Olimpia 2017",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Olimpia 2017 Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/olimpia-2017-spor-kulubu-u16-t54144",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Roberteam",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Robert Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/robert-spor-kulubu-u16-t54142",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Smaç",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Smaç SK U16",
+      "volleybox_url": "https://women.volleybox.net/smac-sk-u16-t41645",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Tuzla Rekor",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Tuzla Rekor Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tuzla-rekor-spor-kulubu-u16-t54143",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Konak",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Sarıyer Konak Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/saryer-konak-spor-kulubu-u16-t41643",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Pegasus",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Pegasus Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tr/pegasus-spor-kulubu-u16-t54150",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Ünsped",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ünsped Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/unsped-spor-kulubu-u16-t54152",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Nilüfer Belediyespor",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Nilüfer Belediyespor U18",
+      "volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-u18-t40626",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Nilüfer Belediyespor",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Nilüfer Belediyespor U16",
+      "volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-u18-t37357",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Karayolları",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Karayolları Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/karayollar-u18-t30474",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Karayolları",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Karayolları Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/karayollar-spor-kulubu-u16-t41435",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "İlbank",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "İlbank U18",
+      "volleybox_url": "https://women.volleybox.net/lbank-u18-t41291",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "İlbank",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "İlbank U16",
+      "volleybox_url": "https://women.volleybox.net/lbank-u15-t35575",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "PTT",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "PTT Spor U18",
+      "volleybox_url": "https://women.volleybox.net/ptt-spor-u18-t41376",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "PTT",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "PTT Spor U16",
+      "volleybox_url": "https://women.volleybox.net/ptt-spor-u16-t41422",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Aydın B.Ş.B.",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Aydın Büyükşehir Belediyespor U18",
+      "volleybox_url": "https://women.volleybox.net/aydn-buyuksehir-belediyespor-u18-t21589",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Aydın B.Ş.B.",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Aydın Büyükşehir Belediyespor - A U16",
+      "volleybox_url": "https://women.volleybox.net/aydn-buyuksehir-belediyespor-a-u16-t41831",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Kuzeyboru",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Kuzeyboru U18",
+      "volleybox_url": "https://women.volleybox.net/kuzeyboru-u18-t42920",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Kuzeyboru",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Kuzeyboru U16",
+      "volleybox_url": "https://women.volleybox.net/kuzeyboru-u16-t44711",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    }
+  ]
+}
