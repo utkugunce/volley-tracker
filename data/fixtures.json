@@ -1,18 +1,18 @@
 {
   "updated_at": "2026-09-13T18:26:33.332997",
-  "city": "İİstanbul",
-  "title": "TVF İİstanbul Gençç & Yıldız Kızlar Süper Lig",
+  "city": "İstanbul",
+  "title": "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 24,
-  "source": "https://iİstanbul.voleyboliltemsilciligi.com",
+  "source": "https://istanbul.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Gençç Kızlar Süper Lig",
+      "Genç Kızlar Süper Lig",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
-      "Gençç",
+      "Genç",
       "Yıldız"
     ],
     "genders": [
@@ -30,7 +30,7 @@
     ]
   },
   "standings": {
-    "Gençç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "Beşiktaş",
@@ -169,7 +169,7 @@
       },
       {
         "rank": 9,
-        "team": "ÜÜmraniye Bld",
+        "team": "Ümraniye Bld",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -202,7 +202,7 @@
         ]
       }
     ],
-    "Gençç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "VakıfBank",
@@ -630,7 +630,7 @@
       },
       {
         "rank": 8,
-        "team": "ÜÜmraniye Bld",
+        "team": "Ümraniye Bld",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -737,7 +737,7 @@
       },
       {
         "rank": 5,
-        "team": "İİBB",
+        "team": "İBB",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -782,7 +782,7 @@
       },
       {
         "rank": 8,
-        "team": "Smaçç",
+        "team": "Smaç",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -845,17 +845,17 @@
   "matches": [
     {
       "id": "ist-20260911-001",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-11",
       "time": "18:00",
       "hall": "50. Yıl Deniz Esinduy",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "1",
       "home_team": "Eczacıbaşı",
-      "away_team": "ÜÜmraniye Bld",
+      "away_team": "Ümraniye Bld",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -868,12 +868,12 @@
     },
     {
       "id": "ist-20260911-002",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-11",
       "time": "18:00",
       "hall": "Halkalı Ata 2. Salon",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "2",
@@ -892,12 +892,12 @@
     },
     {
       "id": "ist-20260911-006",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-11",
       "time": "18:00",
       "hall": "Tozkoparan Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "1",
@@ -915,12 +915,12 @@
     },
     {
       "id": "ist-20260911-007",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
       "hall": "50. Yıl Deniz Esinduy",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "2",
@@ -938,12 +938,12 @@
     },
     {
       "id": "ist-20260911-008",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
       "hall": "Halkalı Ata 2. Salon",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "3",
@@ -962,12 +962,12 @@
     },
     {
       "id": "ist-20260911-009",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
       "hall": "Tozkoparan Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "4",
@@ -985,12 +985,12 @@
     },
     {
       "id": "ist-20260912-003",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-12",
       "time": "13:30",
       "hall": "50. Yıl Deniz Esinduy",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "3",
@@ -1008,12 +1008,12 @@
     },
     {
       "id": "ist-20260912-004",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-12",
       "time": "16:00",
       "hall": "Halkalı Ata 3. Salon",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "4",
@@ -1031,12 +1031,12 @@
     },
     {
       "id": "ist-20260912-005",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-12",
       "time": "18:00",
       "hall": "Halkalı Ata 3. Salon",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "5",
@@ -1054,7 +1054,7 @@
     },
     {
       "id": "ist-20260914-010",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1073,7 +1073,7 @@
     },
     {
       "id": "ist-20260914-011",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
       "hall": "Yakacık İTO Spor Salonu",
@@ -1092,7 +1092,7 @@
     },
     {
       "id": "ist-20260914-020",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
       "hall": "Tozkoparan Spor Salonu",
@@ -1101,7 +1101,7 @@
       "gender": "Kız",
       "group": "C Grubu",
       "match_no": "1",
-      "home_team": "İİBB",
+      "home_team": "İBB",
       "away_team": "Pegasus",
       "score": "- : -",
       "home_score": null,
@@ -1111,7 +1111,7 @@
     },
     {
       "id": "ist-20260914-012",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:00",
       "hall": "Şehit Mustafa Özel Spor Salonu",
@@ -1130,7 +1130,7 @@
     },
     {
       "id": "ist-20260914-013",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1149,7 +1149,7 @@
     },
     {
       "id": "ist-20260914-015",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
       "hall": "Tozkoparan Spor Salonu",
@@ -1168,7 +1168,7 @@
     },
     {
       "id": "ist-20260915-021",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-15",
       "time": "18:00",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1187,7 +1187,7 @@
     },
     {
       "id": "ist-20260915-022",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:00",
       "hall": "Şehit Mustafa Özel Spor Salonu",
@@ -1206,7 +1206,7 @@
     },
     {
       "id": "ist-20260915-014",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:30",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1225,7 +1225,7 @@
     },
     {
       "id": "ist-20260915-016",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-15",
       "time": "20:30",
       "hall": "Şehit Mustafa Özel Spor Salonu",
@@ -1235,7 +1235,7 @@
       "group": "B Grubu",
       "match_no": "2",
       "home_team": "Olimpia 2017",
-      "away_team": "ÜÜmraniye Bld",
+      "away_team": "Ümraniye Bld",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1244,7 +1244,7 @@
     },
     {
       "id": "ist-20260916-017",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
       "hall": "Tozkoparan Spor Salonu",
@@ -1263,7 +1263,7 @@
     },
     {
       "id": "ist-20260916-023",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1282,7 +1282,7 @@
     },
     {
       "id": "ist-20260916-018",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-16",
       "time": "19:30",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1301,7 +1301,7 @@
     },
     {
       "id": "ist-20260917-019",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1320,7 +1320,7 @@
     },
     {
       "id": "ist-20260917-024",
-      "city": "İİstanbul",
+      "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
       "hall": "TVF 50. Yıl Deniz Esinduy",
@@ -1330,12 +1330,13 @@
       "group": "C Grubu",
       "match_no": "5",
       "home_team": "VakıfBank A",
-      "away_team": "Smaçç",
+      "away_team": "Smaç",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
       "status": "upcoming"
     }
-  ]
+  ],
+  "slug": "istanbul"
 }

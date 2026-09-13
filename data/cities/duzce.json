@@ -2,18 +2,18 @@
   "updated_at": "2026-09-13T18:26:43.476686",
   "city": "Düzce",
   "slug": "duzce",
-  "title": "TVF Düzce Gençç & Yıldız Kızlar Süper Lig",
+  "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
   "source": "https://duzce.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Gençç Kızlar Süper Lig",
+      "Genç Kızlar Süper Lig",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
-      "Gençç",
+      "Genç",
       "Yıldız"
     ],
     "genders": [
@@ -24,7 +24,7 @@
     ]
   },
   "standings": {
-    "Gençç Kızlar Süper Lig - Gençç Kızlar İl Birinciliği": [
+    "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
       {
         "rank": 1,
         "team": "Düzce 1907 Spor Kulübü",
@@ -141,7 +141,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Genççlik Ve Spor Kulübü",
+        "team": "Düzce Gençlik Ve Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,

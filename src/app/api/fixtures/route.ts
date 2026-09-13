@@ -3,10 +3,32 @@ import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
 
+function normalizeCitySlug(str: string): string {
+  return str
+    .replace(/İ/g, "i")
+    .replace(/I/g, "i")
+    .replace(/ı/g, "i")
+    .replace(/Ş/g, "s")
+    .replace(/ş/g, "s")
+    .replace(/Ğ/g, "g")
+    .replace(/ğ/g, "g")
+    .replace(/Ü/g, "u")
+    .replace(/ü/g, "u")
+    .replace(/Ö/g, "o")
+    .replace(/ö/g, "o")
+    .replace(/Ç/g, "c")
+    .replace(/ç/g, "c")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const cityParam = searchParams.get("city")?.toLowerCase() || "istanbul";
+    const rawCity = searchParams.get("city") || "istanbul";
+    const citySlug = normalizeCitySlug(rawCity);
     const refresh = searchParams.get("refresh");
     const category = searchParams.get("category");
     const ageGroup = searchParams.get("age_group");
@@ -28,20 +50,38 @@ export async function GET(request: Request) {
       }
     }
 
+    // Doğru resmi il ismini bul (cities.json üzerinden)
+    let officialCityName = citySlug;
+    try {
+      const citiesIndexPath = path.join(process.cwd(), "data", "cities.json");
+      if (fs.existsSync(citiesIndexPath)) {
+        const citiesData = JSON.parse(fs.readFileSync(citiesIndexPath, "utf-8"));
+        const found = (citiesData.cities || []).find(
+          (c: any) => c.slug === citySlug || c.ilid === rawCity || c.slug === rawCity.toLowerCase()
+        );
+        if (found) {
+          officialCityName = found.name;
+        }
+      }
+    } catch {
+      // fallback
+    }
+
     let filePath = path.join(process.cwd(), "data", "fixtures.json");
-    if (cityParam && cityParam !== "istanbul") {
-      const citySpecificPath = path.join(process.cwd(), "data", "cities", `${cityParam}.json`);
+    if (citySlug && citySlug !== "istanbul") {
+      const citySpecificPath = path.join(process.cwd(), "data", "cities", `${citySlug}.json`);
       if (fs.existsSync(citySpecificPath)) {
         filePath = citySpecificPath;
       } else {
         // İlgili ilde henüz fikstür açıklanmamış
         return NextResponse.json({
-          city: cityParam.toUpperCase(),
-          title: `TVF ${cityParam.toUpperCase()} Genç & Yıldız Kızlar Süper Lig`,
+          city: officialCityName,
+          slug: citySlug,
+          title: `TVF ${officialCityName} Genç & Yıldız Kızlar Süper Lig`,
           updated_at: new Date().toISOString(),
           total_matches: 0,
           unfiltered_total: 0,
-          source: `https://${cityParam}.voleyboliltemsilciligi.com`,
+          source: `https://${citySlug}.voleyboliltemsilciligi.com`,
           filters: {
             categories: ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"],
             age_groups: ["Tümü", "Genç", "Yıldız"],

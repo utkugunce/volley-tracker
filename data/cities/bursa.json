@@ -2,18 +2,18 @@
   "updated_at": "2026-09-13T18:26:30.010535",
   "city": "Bursa",
   "slug": "bursa",
-  "title": "TVF Bursa Gençç & Yıldız Kızlar Süper Lig",
+  "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
   "source": "https://bursa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Gençç Kızlar Süper Lig",
+      "Genç Kızlar Süper Lig",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
-      "Gençç",
+      "Genç",
       "Yıldız"
     ],
     "genders": [
@@ -24,7 +24,7 @@
     ]
   },
   "standings": {
-    "Gençç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "Bursa 23 Nisan Spor Kulübü",
@@ -81,7 +81,7 @@
         "form": []
       }
     ],
-    "Gençç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Dsi Nilüfer Spor Kulübü",
@@ -138,7 +138,7 @@
         "form": []
       }
     ],
-    "Gençç Kızlar Süper Lig - Gençç Kızlar Süper Lig - C": [
+    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig - C": [
       {
         "rank": 1,
         "team": "Bursa Büyükşehir Belediye Spor Kulübü",
@@ -152,7 +152,7 @@
       },
       {
         "rank": 2,
-        "team": "Bursa Gençç Saray Spor Kulübü",
+        "team": "Bursa Genç Saray Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -195,7 +195,7 @@
         "form": []
       }
     ],
-    "Gençç Kızlar Süper Lig - Gençç Kızlar Süper Lig - D": [
+    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig - D": [
       {
         "rank": 1,
         "team": "Doruk Voleybol Spor Kulübü",
@@ -334,7 +334,7 @@
       },
       {
         "rank": 3,
-        "team": "Bursa Gençç Saray Spor Kulübü",
+        "team": "Bursa Genç Saray Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,

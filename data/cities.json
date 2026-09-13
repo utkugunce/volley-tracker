@@ -336,23 +336,23 @@
     },
     {
       "ilid": "34",
-      "name": "İİstanbul",
-      "slug": "iİstanbul",
-      "url": "https://iİstanbul.voleyboliltemsilciligi.com/PuanDurumu",
+      "name": "İstanbul",
+      "slug": "istanbul",
+      "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (24 Maç Mevcut)",
       "matches_count": 24,
       "standings_count": 5,
-      "data_file": "data/cities/iİstanbul.json"
+      "data_file": "data/cities/istanbul.json"
     },
     {
       "ilid": "35",
-      "name": "İİzmir",
-      "slug": "iİzmir",
-      "url": "https://iİzmir.voleyboliltemsilciligi.com/PuanDurumu",
+      "name": "İzmir",
+      "slug": "izmir",
+      "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (Maçlar Mevcut)",
       "matches_count": 22,
       "standings_count": 9,
-      "data_file": "data/cities/iİzmir.json"
+      "data_file": "data/cities/izmir.json"
     },
     {
       "ilid": "36",

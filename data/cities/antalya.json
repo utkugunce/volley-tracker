@@ -2,18 +2,18 @@
   "updated_at": "2026-09-13T18:26:27.066559",
   "city": "Antalya",
   "slug": "antalya",
-  "title": "TVF Antalya Gençç & Yıldız Kızlar Süper Lig",
+  "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
   "source": "https://antalya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Gençç Kızlar Süper Lig",
+      "Genç Kızlar Süper Lig",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
-      "Gençç",
+      "Genç",
       "Yıldız"
     ],
     "genders": [
@@ -24,7 +24,7 @@
     ]
   },
   "standings": {
-    "Gençç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "07 Zenit S.K.",
@@ -60,7 +60,7 @@
       },
       {
         "rank": 4,
-        "team": "Gazipaşa Genççler Birliği S.K.",
+        "team": "Gazipaşa Gençler Birliği S.K.",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -103,7 +103,7 @@
         "form": []
       }
     ],
-    "Gençç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "07 Mega S.K.",

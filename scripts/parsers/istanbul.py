@@ -345,6 +345,7 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
     result = {
         "updated_at": datetime.now().isoformat(),
         "city": "İstanbul",
+        "slug": "istanbul",
         "title": "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
         "total_matches": len(all_matches),
         "source": "https://istanbul.voleyboliltemsilciligi.com",
