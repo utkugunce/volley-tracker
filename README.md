@@ -87,5 +87,22 @@ volley-tracker/
 
 ---
 
+## 🔐 Ortam Değişkenleri (Environment Variables)
+
+Projede yönetim ve bülten yükleme güvenliği için ortam değişkenleri kullanılır:
+
+| Değişken | Açıklama | Zorunlu mu? |
+|---|---|---|
+| `ADMIN_TOKEN` | `/api/fixtures/upload` endpoint'ine bülten yükleme isteklerini yetkilendirmek için kullanılan gizli anahtar. Tanımlanmadığında endpoint güvenlik amacıyla 503 Service Unavailable döner. | Evet (Upload özelliği için) |
+
+> [!IMPORTANT]
+> `ADMIN_TOKEN` için asla tahmin edilebilir veya varsayılan değerler kullanmayın. Güçlü ve rastgele bir token üretmek için şu komutu çalıştırabilirsiniz:
+> ```bash
+> openssl rand -hex 32
+> ```
+> Değeri yerel geliştirmede `.env.local` dosyasına, bulut ortamında ise Vercel Dashboard (`Settings > Environment Variables`) üzerinden ekleyin.
+
+---
+
 ## 📄 Lisans
 MIT

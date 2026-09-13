@@ -3,8 +3,16 @@ import fs from "fs";
 import path from "path";
 import { execFile } from "child_process";
 import { promisify } from "util";
+import { timingSafeEqual } from "crypto";
 
 const execFileAsync = promisify(execFile);
+
+function safeCompare(a: string, b: string): boolean {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  if (bufA.length !== bufB.length) return false;
+  return timingSafeEqual(bufA, bufB);
+}
 
 // Maksimum dosya boyutu: 10MB
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
@@ -46,11 +54,18 @@ function isValidAllowedUrl(urlString: string): boolean {
 export async function POST(request: Request) {
   try {
     // 1. Admin Token Doğrulaması (x-admin-token header)
-    const expectedToken =
-      process.env.ADMIN_TOKEN || process.env.UPLOAD_SECRET || "volley-admin-secret-2026";
-    const providedToken = request.headers.get("x-admin-token");
+    const expectedToken = process.env.ADMIN_TOKEN;
 
-    if (!providedToken || providedToken !== expectedToken) {
+    if (!expectedToken) {
+      console.error("ADMIN_TOKEN ortam değişkeni tanımlı değil — upload endpoint devre dışı.");
+      return NextResponse.json(
+        { error: "Sunucu yapılandırma hatası: yükleme özelliği şu anda kullanılamıyor." },
+        { status: 503 }
+      );
+    }
+
+    const providedToken = request.headers.get("x-admin-token");
+    if (!providedToken || !safeCompare(providedToken, expectedToken)) {
       return NextResponse.json(
         { error: "Yetkisiz erişim: Geçersiz veya eksik admin token." },
         { status: 401 }
