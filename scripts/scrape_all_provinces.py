@@ -274,6 +274,8 @@ def scrape_single_city(city_info):
                             tds = [clean_str(td.text) for td in tr.find_all("td")]
                             if len(tds) >= 8:
                                 t_name = tds[1]
+                                if "deneme" in t_name.lower() or "test" in t_name.lower():
+                                    continue
                                 try:
                                     played = int(tds[2]) if tds[2].isdigit() else 0
                                     won = int(tds[3]) if tds[3].isdigit() else 0
@@ -314,6 +316,9 @@ def scrape_single_city(city_info):
                                 score_a = tds[6]
                                 away = tds[7]
                                 raw_sets = tds[8] if len(tds) > 8 else ""
+
+                                if "deneme" in home.lower() or "deneme" in away.lower() or "test" in home.lower() or "test" in away.lower():
+                                    continue
 
                                 if raw_hall and raw_hall != "Açıklanacak":
                                     halls_set.add(raw_hall)

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-13T18:26:36.660221",
+  "updated_at": "2026-09-13T20:55:00.000000",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 6,
+  "total_matches": 4,
   "source": "https://nigde.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,7 +22,6 @@
     "halls": [
       "Tümü",
       "5 Şubat S.S.",
-      "Bor S.S.",
       "Bor Salon",
       "Merkez S.S."
     ]
@@ -42,17 +41,6 @@
       },
       {
         "rank": 2,
-        "team": "Deneme Kulüp1",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
         "team": "Niğde Sev Spor Kulübü",
         "played": 0,
         "won": 0,
@@ -63,7 +51,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 3,
         "team": "Odtü Gv Niğde Okulları Spor Kulübü",
         "played": 0,
         "won": 0,
@@ -77,45 +65,7 @@
   },
   "matches": [
     {
-      "id": "nigde-20260910-001",
-      "city": "Niğde",
-      "date": "2026-09-10",
-      "time": "17:00",
-      "hall": "Bor S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
-      "match_no": "1",
-      "home_team": "Bor Belediye Spor Kulübü",
-      "away_team": "Deneme Kulüp1",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming"
-    },
-    {
-      "id": "nigde-20260911-002",
-      "city": "Niğde",
-      "date": "2026-09-11",
-      "time": "19:00",
-      "hall": "Merkez S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
-      "match_no": "2",
-      "home_team": "Niğde Sev Spor Kulübü",
-      "away_team": "Odtü Gv Niğde Okulları Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming"
-    },
-    {
-      "id": "nigde-20260909-003",
+      "id": "nigde-20260909-001",
       "city": "Niğde",
       "date": "2026-09-09",
       "time": "12:00",
@@ -139,18 +89,18 @@
       "status": "finished"
     },
     {
-      "id": "nigde-20260909-004",
+      "id": "nigde-20260911-002",
       "city": "Niğde",
-      "date": "2026-09-09",
-      "time": "22:00",
-      "hall": "5 Şubat S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
+      "date": "2026-09-11",
+      "time": "19:00",
+      "hall": "Merkez S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
-      "group": "Yıldız Kızlar İl Birinciliği",
+      "group": "Genç Kızlar İl Birinciliği",
       "match_no": "2",
-      "home_team": "Bor Belediye Spor Kulübü",
-      "away_team": "Deneme Kulüp1",
+      "home_team": "Niğde Sev Spor Kulübü",
+      "away_team": "Odtü Gv Niğde Okulları Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -158,7 +108,7 @@
       "status": "upcoming"
     },
     {
-      "id": "nigde-20260912-005",
+      "id": "nigde-20260912-003",
       "city": "Niğde",
       "date": "2026-09-12",
       "time": "10:00",
@@ -177,7 +127,7 @@
       "status": "upcoming"
     },
     {
-      "id": "nigde-20260915-006",
+      "id": "nigde-20260915-004",
       "city": "Niğde",
       "date": "2026-09-15",
       "time": "17:00",
