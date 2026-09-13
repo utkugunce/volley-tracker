@@ -1,0 +1,82 @@
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import { FixtureTable } from "../FixtureTable";
+import { Match } from "@/types/fixture";
+
+describe("FixtureTable Component", () => {
+  const mockMatchMapped: Match = {
+    id: "m-1",
+    date: "2026-10-15",
+    time: "14:00",
+    hall: "TVF 50. Yıl Deniz Esinduy",
+    category: "Genç Kızlar Süper Lig",
+    age_group: "Genç",
+    gender: "Kız",
+    group: "A Grubu",
+    match_no: "101",
+    home_team: "VakıfBank",
+    away_team: "Fenerbahçe",
+    status: "upcoming",
+  };
+
+  const mockMatchUnmapped: Match = {
+    id: "m-2",
+    date: "2026-10-16",
+    time: "16:00",
+    hall: "Burhan Felek",
+    category: "Genç Kızlar Süper Lig",
+    age_group: "Genç",
+    gender: "Kız",
+    group: "B Grubu",
+    match_no: "102",
+    home_team: "Bilinmeyen Spor Kulübü A",
+    away_team: "Bilinmeyen Spor Kulübü B",
+    status: "upcoming",
+  };
+
+  it("render ederken eşleşen takımlar için Volleybox profil bağlantılarını gösterir", () => {
+    render(
+      <FixtureTable
+        title="Genç Kızlar Fikstür"
+        matches={[mockMatchMapped]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText("VakıfBank")).toBeInTheDocument();
+    expect(screen.getByText("Fenerbahçe")).toBeInTheDocument();
+
+    const links = screen.getAllByRole("link");
+    expect(links.length).toBeGreaterThanOrEqual(2);
+
+    const vakifLink = links.find((l) => l.getAttribute("href")?.includes("vakfbank-u18"));
+    const fbLink = links.find((l) => l.getAttribute("href")?.includes("fenerbahce-u18"));
+
+    expect(vakifLink).toBeDefined();
+    expect(vakifLink).toHaveAttribute("target", "_blank");
+    expect(vakifLink).toHaveAttribute("rel", "noopener noreferrer");
+
+    expect(fbLink).toBeDefined();
+    expect(fbLink).toHaveAttribute("target", "_blank");
+  });
+
+  it("eşleşmeyen takımlar için hiçbir link veya ikon render etmez", () => {
+    render(
+      <FixtureTable
+        title="Genç Kızlar Fikstür"
+        matches={[mockMatchUnmapped]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText("Bilinmeyen Spor Kulübü A")).toBeInTheDocument();
+    expect(screen.getByText("Bilinmeyen Spor Kulübü B")).toBeInTheDocument();
+
+    // Takım isimlerinin yanında link olmamalı
+    const links = screen.queryAllByRole("link");
+    expect(links).toHaveLength(0);
+  });
+});

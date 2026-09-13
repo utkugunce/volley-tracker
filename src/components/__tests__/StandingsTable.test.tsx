@@ -106,4 +106,41 @@ describe('StandingsTable Component', () => {
       screen.getByRole('heading', { level: 2, name: /GENÇ KIZLAR İL BİRİNCİLİĞİ/ })
     ).toBeInTheDocument();
   });
+
+  it('(d) eşleşen takım için Volleybox profil bağlantısı ve ikonu render ediliyor', () => {
+    const standingsData = {
+      'Genç Kızlar Süper Lig - A Grubu': [
+        { ...mockItemA, team: 'Pegasus' },
+      ],
+    };
+
+    render(<StandingsTable standingsData={standingsData} />);
+
+    expect(screen.getByText('Pegasus')).toBeInTheDocument();
+
+    // Volleybox linki bulunmalı
+    const link = screen.getByRole('link', { name: /pegasus/i });
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', expect.stringContaining('pegasus-spor-kulubu-u18-t54139'));
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  it('(e) eşleşmeyen takım için bağlantı ikonu render edilmiyor', () => {
+    const unmappedItem: StandingItem = {
+      ...mockItemA,
+      team: 'Bilinmeyen Mahalle Voleybol SK',
+    };
+
+    const standingsData = {
+      'Genç Kızlar Süper Lig - A Grubu': [unmappedItem],
+    };
+
+    render(<StandingsTable standingsData={standingsData} />);
+
+    expect(screen.getByText('Bilinmeyen Mahalle Voleybol SK')).toBeInTheDocument();
+    // Herhangi bir link render edilmemeli
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+  });
 });
+
