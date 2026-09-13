@@ -4,14 +4,16 @@ import React, { useState, useMemo } from "react";
 import { StandingItem } from "@/types/fixture";
 import { Trophy, HelpCircle } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
+import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 
 interface StandingsTableProps {
   standingsData: {
     [category: string]: StandingItem[];
   };
+  city?: string;
 }
 
-export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData }) => {
+export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city }) => {
   const allKeys = Object.keys(standingsData);
 
   // Benzersiz Ligleri ve Grupları tespit et
@@ -154,7 +156,10 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
           <div className="flex items-center gap-2">
             <Trophy size={16} className="text-amber-400" />
             <h2 className="text-sm font-bold tracking-tight">
-              {selectedLeague.toLocaleUpperCase("tr-TR")} • {selectedGroup.toLocaleUpperCase("tr-TR")} - PUAN DURUMU
+              <LeagueVolleyboxLink league={selectedLeague} city={city}>
+                {selectedLeague.toLocaleUpperCase("tr-TR")}
+              </LeagueVolleyboxLink>
+              {selectedGroup ? ` • ${selectedGroup.toLocaleUpperCase("tr-TR")}` : ""} - PUAN DURUMU
             </h2>
           </div>
           <span className="text-xs text-slate-400 font-mono">

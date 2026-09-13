@@ -139,8 +139,21 @@ describe('StandingsTable Component', () => {
     render(<StandingsTable standingsData={standingsData} />);
 
     expect(screen.getByText('Bilinmeyen Mahalle Voleybol SK')).toBeInTheDocument();
-    // Herhangi bir link render edilmemeli
-    expect(screen.queryByRole('link')).not.toBeInTheDocument();
+    // Takım adı link olmamalı
+    expect(screen.queryByRole('link', { name: /bilinmeyen/i })).not.toBeInTheDocument();
+  });
+
+  it('(f) lig başlığına tıklandığında Volleybox turnuva sayfasına yönlendiren link render ediliyor', () => {
+    const standingsData = {
+      'Genç Kızlar Süper Lig - A Grubu': [mockItemA],
+    };
+
+    render(<StandingsTable standingsData={standingsData} city="İstanbul" />);
+
+    const leagueLink = screen.getByRole('link', { name: /GENÇ KIZLAR SÜPER LİG/i });
+    expect(leagueLink).toBeInTheDocument();
+    expect(leagueLink).toHaveAttribute('href', expect.stringContaining('women-stanbul-super-ligi-u18-2026-27-o50864'));
+    expect(leagueLink).toHaveAttribute('target', '_blank');
   });
 });
 

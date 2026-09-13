@@ -75,8 +75,24 @@ describe("FixtureTable Component", () => {
     expect(screen.getByText("Bilinmeyen Spor Kulübü A")).toBeInTheDocument();
     expect(screen.getByText("Bilinmeyen Spor Kulübü B")).toBeInTheDocument();
 
-    // Takım isimlerinin yanında link olmamalı
-    const links = screen.queryAllByRole("link");
-    expect(links).toHaveLength(0);
+    // Takım isimleri link olmamalı
+    expect(screen.queryByRole("link", { name: /Bilinmeyen Spor Kulübü A/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /Bilinmeyen Spor Kulübü B/i })).not.toBeInTheDocument();
+  });
+
+  it("lig başlığı için Volleybox turnuva linki render eder", () => {
+    render(
+      <FixtureTable
+        title="Genç Kızlar Süper Lig"
+        matches={[mockMatchMapped]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+        city="İstanbul"
+      />
+    );
+
+    const leagueLink = screen.getByRole("link", { name: "Genç Kızlar Süper Lig" });
+    expect(leagueLink).toBeInTheDocument();
+    expect(leagueLink).toHaveAttribute("href", expect.stringContaining("women-stanbul-super-ligi-u18-2026-27-o50864"));
   });
 });

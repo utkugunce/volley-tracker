@@ -336,6 +336,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     matches={sec.matches}
                     favorites={favorites}
                     onToggleFavorite={toggleFavorite}
+                    city={data?.city}
                   />
                 ))}
               </div>
@@ -394,7 +395,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
           /* ==================== PUAN DURUMU SEKMESİ ==================== */
           <div>
             {data?.standings && Object.keys(data.standings).length > 0 ? (
-              <StandingsTable standingsData={data.standings} />
+              <StandingsTable standingsData={data.standings} city={data?.city} />
             ) : (
               <div className="text-center py-12 bg-white border border-slate-200 rounded-xl p-6 max-w-md mx-auto my-8 shadow-sm">
                 <p className="text-sm font-semibold text-slate-700">

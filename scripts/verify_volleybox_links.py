@@ -66,11 +66,13 @@ def verify_mappings(
         data: Dict[str, Any] = json.load(f)
 
     mappings: List[Dict[str, Any]] = data.get("mappings", [])
-    print(f"Toplam eşleştirme kaydı: {len(mappings)}")
+    leagues: List[Dict[str, Any]] = data.get("leagues", [])
+    print(f"Toplam takım eşleştirme kaydı: {len(mappings)}")
+    print(f"Toplam lig eşleştirme kaydı: {len(leagues)}")
 
     # Benzersiz URL'leri topla
     unique_urls: Set[str] = set()
-    for m in mappings:
+    for m in mappings + leagues:
         url = m.get("volleybox_url")
         if url:
             unique_urls.add(url.strip())

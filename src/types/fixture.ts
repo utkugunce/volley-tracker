@@ -83,6 +83,20 @@ export interface VolleyboxMapping {
   verified_at?: string;
 }
 
+export interface VolleyboxLeagueMapping {
+  internal_name: string;
+  city?: string;
+  city_slug?: string;
+  matched_as: string;
+  volleybox_url: string;
+  age_category: "U18" | "U16" | null;
+  confidence: VolleyboxConfidence;
+  season?: string;
+  note?: string | null;
+  verified_at?: string;
+}
+
 export interface VolleyboxMappingsFile {
   mappings: VolleyboxMapping[];
+  leagues?: VolleyboxLeagueMapping[];
 }

@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   getVolleyboxMapping,
+  getVolleyboxLeagueMapping,
   buildVolleyboxMap,
   normalizeKey,
 } from "../volleybox";
@@ -107,4 +108,50 @@ describe("volleybox utility", () => {
       expect(res).toBeUndefined();
     });
   });
+
+  describe("getVolleyboxLeagueMapping with live league mappings", () => {
+    it("returns correct tournament mapping for Istanbul U18", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "İstanbul");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-stanbul-super-ligi-u18-2026-27-o50864");
+      expect(mapping?.age_category).toBe("U18");
+    });
+
+    it("returns correct tournament mapping for Istanbul U16", () => {
+      const mapping = getVolleyboxLeagueMapping("Yıldız Kızlar Süper Lig", "istanbul");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-stanbul-super-ligi-u16-2026-27-o50865");
+      expect(mapping?.age_category).toBe("U16");
+    });
+
+    it("resolves city-specific leagues such as İzmir U18", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "İzmir");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-zmir-super-ligi-u18-2026-27-o49401");
+    });
+
+    it("resolves city-specific leagues such as Bursa U18", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Bursa");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-bursa-super-ligi-u18-2026-27-o50939");
+    });
+
+    it("resolves category with group suffix (e.g. 'Genç Kızlar Süper Lig - A Grubu')", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig - A Grubu", "İstanbul");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-stanbul-super-ligi-u18-2026-27-o50864");
+    });
+
+    it("falls back to default Istanbul tournament if city is not specified", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-stanbul-super-ligi-u18-2026-27-o50864");
+    });
+
+    it("returns undefined for an unknown/empty league name", () => {
+      expect(getVolleyboxLeagueMapping("")).toBeUndefined();
+      expect(getVolleyboxLeagueMapping("Bilinmeyen Bölgesel Turnuva")).toBeUndefined();
+    });
+  });
 });
+

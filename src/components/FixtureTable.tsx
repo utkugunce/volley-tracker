@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Match } from "@/types/fixture";
 import { Star, MapPin, CalendarPlus, Copy, Check, Trophy } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
+import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 
 interface FixtureTableProps {
   title: string;
@@ -11,6 +12,7 @@ interface FixtureTableProps {
   matches: Match[];
   favorites: string[];
   onToggleFavorite: (matchId: string) => void;
+  city?: string;
 }
 
 export const FixtureTable: React.FC<FixtureTableProps> = ({
@@ -19,6 +21,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   matches,
   favorites,
   onToggleFavorite,
+  city,
 }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -83,7 +86,10 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             <Trophy size={13} className="text-amber-400" />
           </div>
           <h3 className="font-bold text-xs sm:text-sm tracking-tight text-white uppercase">
-            {title} {subTitle ? `• ${subTitle}` : ""}
+            <LeagueVolleyboxLink league={title} city={city || matches[0]?.city}>
+              {title}
+            </LeagueVolleyboxLink>
+            {subTitle ? ` • ${subTitle}` : ""}
           </h3>
         </div>
         <span className="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
