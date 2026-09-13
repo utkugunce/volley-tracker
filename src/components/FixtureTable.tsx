@@ -170,38 +170,32 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
                   {/* 4. A Takımı */}
                   <td className="py-2.5 px-3 whitespace-nowrap">
-                    <span className="inline-flex items-center">
-                      <span
-                        className={`text-xs sm:text-[13px] ${
-                          homeWon
-                            ? "font-black text-slate-900"
-                            : isFinished
-                            ? "font-normal text-slate-500"
-                            : "font-bold text-slate-800"
-                        }`}
-                      >
-                        {match.home_team}
-                      </span>
-                      <TeamVolleyboxLink teamName={match.home_team} category={match.category || match.age_group} />
-                    </span>
+                    <TeamVolleyboxLink
+                      teamName={match.home_team}
+                      category={match.category || match.age_group}
+                      className={`text-xs sm:text-[13px] ${
+                        homeWon
+                          ? "font-black text-slate-900"
+                          : isFinished
+                          ? "font-normal text-slate-500"
+                          : "font-bold text-slate-800"
+                      }`}
+                    />
                   </td>
 
                   {/* 5. B Takımı */}
                   <td className="py-2.5 px-3 whitespace-nowrap">
-                    <span className="inline-flex items-center">
-                      <span
-                        className={`text-xs sm:text-[13px] ${
-                          awayWon
-                            ? "font-black text-slate-900"
-                            : isFinished
-                            ? "font-normal text-slate-500"
-                            : "font-bold text-slate-800"
-                        }`}
-                      >
-                        {match.away_team}
-                      </span>
-                      <TeamVolleyboxLink teamName={match.away_team} category={match.category || match.age_group} />
-                    </span>
+                    <TeamVolleyboxLink
+                      teamName={match.away_team}
+                      category={match.category || match.age_group}
+                      className={`text-xs sm:text-[13px] ${
+                        awayWon
+                          ? "font-black text-slate-900"
+                          : isFinished
+                          ? "font-normal text-slate-500"
+                          : "font-bold text-slate-800"
+                      }`}
+                    />
                   </td>
 
                   {/* 6. Skor */}

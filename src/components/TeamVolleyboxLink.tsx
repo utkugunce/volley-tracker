@@ -1,24 +1,26 @@
 "use client";
 
 import React from "react";
-import { ExternalLink } from "lucide-react";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 
 interface TeamVolleyboxLinkProps {
   teamName: string;
   category?: string;
   className?: string;
+  children?: React.ReactNode;
 }
 
 export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   teamName,
   category,
   className = "",
+  children,
 }) => {
   const mapping = getVolleyboxMapping(teamName, category);
+  const content = children ?? teamName;
 
   if (!mapping || !mapping.volleybox_url) {
-    return null;
+    return <span className={className}>{content}</span>;
   }
 
   const isClubLevelOnly = mapping.confidence === "club_level_only";
@@ -31,12 +33,11 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       href={mapping.volleybox_url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center ml-1.5 text-slate-400 hover:text-primary transition-colors align-middle no-print ${className}`}
+      className={`hover:underline hover:text-primary transition-colors cursor-pointer ${className}`}
       title={title}
-      aria-label={title}
       onClick={(e) => e.stopPropagation()}
     >
-      <ExternalLink size={12} className="shrink-0 stroke-[2.2]" />
+      {content}
     </a>
   );
 };

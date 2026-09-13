@@ -217,10 +217,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
 
                     {/* Takım Adı */}
                     <td className="py-3 px-4 font-bold text-slate-900 whitespace-nowrap text-sm">
-                      <span className="inline-flex items-center">
-                        <span>{row.team}</span>
-                        <TeamVolleyboxLink teamName={row.team} category={selectedLeague} />
-                      </span>
+                      <TeamVolleyboxLink teamName={row.team} category={selectedLeague} />
                     </td>
 
                     {/* O */}
