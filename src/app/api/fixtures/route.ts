@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import { execSync } from "child_process";
+import { execFileSync } from "child_process";
 
 function normalizeCitySlug(str: string): string {
   return str
@@ -40,7 +40,7 @@ export async function GET(request: Request) {
 
     if (refresh === "1") {
       try {
-        execSync("python scripts/scrape_all_provinces.py", {
+        execFileSync("python", ["scripts/scrape_all_provinces.py"], {
           cwd: process.cwd(),
           timeout: 45000,
           stdio: "ignore",

@@ -40,7 +40,7 @@ export const VenueGuide: React.FC<VenueGuideProps> = ({ initialCity = "all" }) =
             <span>Voleybol Salonları & Yol Tarifi Rehberi</span>
           </h2>
           <p className="text-xs text-slate-400 font-medium mt-0.5">
-            İstanbul ve Ankara'da maçların oynandığı tesisler, ulaşım bilgileri ve navigasyon
+            İstanbul ve Ankara&apos;da maçların oynandığı tesisler, ulaşım bilgileri ve navigasyon
           </p>
         </div>
 

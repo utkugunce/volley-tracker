@@ -23,7 +23,7 @@ export const AnkaraNotice: React.FC = () => {
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
               Ankara Voleybol İl Temsilciliği henüz 2026-2027 sezonu resmi maç bültenlerini web sitesinde yayımlamamıştır.
               Veri boru hattımız hazır olup (Ankara modülü entegre), bülten sisteme yüklendiği anda sıfır gecikmeyle gerçek maçlar çekilecektir.
-              Şu an gösterilen maçlar dashboard'u test edebilmeniz için örnek Ankara takımlarıdır.
+              Şu an gösterilen maçlar dashboard&apos;u test edebilmeniz için örnek Ankara takımlarıdır.
             </p>
           </div>
         </div>

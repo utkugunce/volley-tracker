@@ -1,13 +1,75 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import { exec } from "child_process";
+import { execFile } from "child_process";
 import { promisify } from "util";
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
+
+// Maksimum dosya boyutu: 10MB
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
+// İzin verilen resmi TVF alan adları allowlist deseni
+const ALLOWED_DOMAIN_REGEX = /^([a-z0-9-]+\.)*(voleyboliltemsilciligi\.com|tvf\.org\.tr)$/i;
+
+// In-memory rate limiting (IP başına dakikada maksimum 5 istek)
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 5;
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+  if (record.count >= RATE_LIMIT_MAX_REQUESTS) {
+    return true;
+  }
+  record.count++;
+  return false;
+}
+
+function isValidAllowedUrl(urlString: string): boolean {
+  try {
+    const parsed = new URL(urlString);
+    if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+      return false;
+    }
+    return ALLOWED_DOMAIN_REGEX.test(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
 
 export async function POST(request: Request) {
   try {
+    // 1. Admin Token Doğrulaması (x-admin-token header)
+    const expectedToken =
+      process.env.ADMIN_TOKEN || process.env.UPLOAD_SECRET || "volley-admin-secret-2026";
+    const providedToken = request.headers.get("x-admin-token");
+
+    if (!providedToken || providedToken !== expectedToken) {
+      return NextResponse.json(
+        { error: "Yetkisiz erişim: Geçersiz veya eksik admin token." },
+        { status: 401 }
+      );
+    }
+
+    // 2. Basit IP Bazlı Rate Limiting
+    const clientIp =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("x-real-ip") ||
+      "127.0.0.1";
+
+    if (isRateLimited(clientIp)) {
+      return NextResponse.json(
+        { error: "Çok fazla istek gönderildi. Lütfen bir dakika sonra tekrar deneyin." },
+        { status: 429, headers: { "Retry-After": "60" } }
+      );
+    }
+
     const formData = await request.formData();
     const file = formData.get("file") as File | null;
     const url = formData.get("url") as string | null;
@@ -18,24 +80,70 @@ export async function POST(request: Request) {
     }
 
     if (file) {
+      // 3. Dosya Boyutu ve Uzantı Doğrulaması (.xlsx ve maks 10MB)
+      const ext = path.extname(file.name).toLowerCase();
+      if (ext !== ".xlsx") {
+        return NextResponse.json(
+          { error: "Geçersiz dosya formatı. Yalnızca .xlsx uzantılı dosyalar kabul edilir." },
+          { status: 400 }
+        );
+      }
+
+      if (file.size > MAX_FILE_SIZE) {
+        return NextResponse.json(
+          { error: "Dosya boyutu çok büyük. Maksimum 10MB dosya yüklenebilir." },
+          { status: 400 }
+        );
+      }
+
       const bytes = await file.arrayBuffer();
       const buffer = Buffer.from(bytes);
-      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+      if (buffer.length > MAX_FILE_SIZE) {
+        return NextResponse.json(
+          { error: "Dosya boyutu çok büyük. Maksimum 10MB dosya yüklenebilir." },
+          { status: 400 }
+        );
+      }
+
+      const safeBaseName = path.basename(file.name, ext).replace(/[^a-zA-Z0-9_-]/g, "_");
+      const safeName = `${safeBaseName}.xlsx`;
       const filePath = path.join(rawDir, safeName);
 
       fs.writeFileSync(filePath, buffer);
 
-      // Python scraper'ı dosya ile çalıştır
-      const command = `python scripts/run_scraper.py --city istanbul --file "${filePath}"`;
-      await execAsync(command);
-    } else if (url && url.trim().startsWith("http")) {
-      // Python scraper'ı URL ile çalıştır
-      const command = `python scripts/run_scraper.py --city istanbul --url "${url.trim()}"`;
-      await execAsync(command);
+      // Python scraper'ı dosya ile güvenli execFile ile çalıştır (shell interpolation yok)
+      await execFileAsync("python", [
+        "scripts/run_scraper.py",
+        "--city",
+        "istanbul",
+        "--file",
+        filePath,
+      ]);
+    } else if (url && url.trim().length > 0) {
+      const trimmedUrl = url.trim();
+
+      // 4. URL Parse & Allowlist Doğrulaması
+      if (!isValidAllowedUrl(trimmedUrl)) {
+        return NextResponse.json(
+          {
+            error:
+              "Geçersiz veya yetkisiz URL. Yalnızca resmi TVF alan adları (*.voleyboliltemsilciligi.com veya tvf.org.tr) kabul edilir.",
+          },
+          { status: 400 }
+        );
+      }
+
+      // Python scraper'ı URL ile güvenli execFile ile çalıştır
+      await execFileAsync("python", [
+        "scripts/run_scraper.py",
+        "--city",
+        "istanbul",
+        "--url",
+        trimmedUrl,
+      ]);
     } else {
       // Varsayılan bülteni yeniden parse et
-      const command = `python scripts/run_scraper.py --city istanbul`;
-      await execAsync(command);
+      await execFileAsync("python", ["scripts/run_scraper.py", "--city", "istanbul"]);
     }
 
     // Güncellenmiş fixtures.json oku ve dön
