@@ -9,7 +9,7 @@ import {
  * Normalizes a string for dictionary indexing (lowercased and trimmed).
  */
 export function normalizeKey(text: string): string {
-  return text.trim().toLowerCase();
+  return text.trim().toLocaleLowerCase("tr-TR");
 }
 
 /**

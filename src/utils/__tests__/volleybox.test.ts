@@ -38,6 +38,42 @@ describe("volleybox utility", () => {
       expect(mapping?.volleybox_url).toContain("fenerbahce-u18-t27716");
     });
 
+    it("returns correct mapping for other cities (Bursa, İzmir, Antalya, Yalova, Düzce, Niğde)", () => {
+      // Bursa
+      const bursa23Nisan = getVolleyboxMapping("Bursa 23 Nisan Spor Kulübü", "Genç Kızlar Süper Lig");
+      expect(bursa23Nisan).toBeDefined();
+      expect(bursa23Nisan?.volleybox_url).toContain("23-nisan-spor-kulubu-u18-t42339");
+
+      // İzmir (case insensitivity with Turkish İ)
+      const izmirArkas = getVolleyboxMapping("ARKAS", "Genç Kızlar Süper Lig");
+      expect(izmirArkas).toBeDefined();
+      expect(izmirArkas?.volleybox_url).toContain("arkas-spor-kadn-altyap-takmlar-u18-t31879");
+
+      const izmirspor = getVolleyboxMapping("İZMİRSPOR", "Genç Kızlar Süper Lig");
+      expect(izmirspor).toBeDefined();
+      expect(izmirspor?.volleybox_url).toContain("zmirspor-u18-t41248");
+
+      // Antalya
+      const zenit = getVolleyboxMapping("07 Zenit S.K.", "Genç Kızlar Süper Lig");
+      expect(zenit).toBeDefined();
+      expect(zenit?.volleybox_url).toContain("07-zenit-spor-kulubu-u18-t54208");
+
+      // Yalova
+      const atakent = getVolleyboxMapping("Atakent Spor Kulübü (A)", "Genç Kızlar Süper Lig");
+      expect(atakent).toBeDefined();
+      expect(atakent?.volleybox_url).toContain("yalova-atakent-spor-kulubu-u18-t41959");
+
+      // Düzce
+      const duzce1907 = getVolleyboxMapping("Düzce 1907 Spor Kulübü", "Genç Kızlar Süper Lig");
+      expect(duzce1907).toBeDefined();
+      expect(duzce1907?.volleybox_url).toContain("duzce-1907-spor-kulubu-u18-t48245");
+
+      // Niğde
+      const bor = getVolleyboxMapping("Bor Belediye Spor Kulübü", "Genç Kızlar Süper Lig");
+      expect(bor).toBeDefined();
+      expect(bor?.volleybox_url).toContain("bor-belediyespor-u18-t48235");
+    });
+
     it("returns undefined for an unknown/unmapped team", () => {
       const mapping = getVolleyboxMapping("Bilinmeyen Mahalle Spor Kulübü");
       expect(mapping).toBeUndefined();
