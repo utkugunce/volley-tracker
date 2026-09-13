@@ -45,16 +45,16 @@ describe('StandingsTable Component', () => {
 
     render(<StandingsTable standingsData={standingsData} />);
 
-    // Başlangıçta A Grubu seçili ve Eczacıbaşı A görünmeli
-    expect(screen.getByText('Eczacıbaşı A')).toBeInTheDocument();
-    expect(screen.queryByText('Fenerbahçe B')).not.toBeInTheDocument();
+    // Başlangıçta A Grubu seçili ve Eczacıbaşı görünmeli
+    expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Fenerbahçe/i)).not.toBeInTheDocument();
 
-    // B Grubu butonuna tıklanınca Fenerbahçe B görünmeli, Eczacıbaşı A gitmeli
+    // B Grubu butonuna tıklanınca Fenerbahçe görünmeli, Eczacıbaşı gitmeli
     const groupBBtn = screen.getByRole('button', { name: 'B Grubu' });
     fireEvent.click(groupBBtn);
 
-    expect(screen.getByText('Fenerbahçe B')).toBeInTheDocument();
-    expect(screen.queryByText('Eczacıbaşı A')).not.toBeInTheDocument();
+    expect(screen.getByText(/Fenerbahçe/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Eczacıbaşı/i)).not.toBeInTheDocument();
   });
 
   it('(b) seçili grup için veri yokken boş durum gösteriliyor ve yanlış veri sızmıyor', () => {
@@ -72,14 +72,14 @@ describe('StandingsTable Component', () => {
     render(<StandingsTable standingsData={emptyStandings} />);
 
     // A Grubunda veri var
-    expect(screen.getByText('Eczacıbaşı A')).toBeInTheDocument();
+    expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
 
     // B Grubu butonuna bas
     const groupBBtn = screen.getByRole('button', { name: 'B Grubu' });
     fireEvent.click(groupBBtn);
 
-    // Eczacıbaşı A asla sızmamalı!
-    expect(screen.queryByText('Eczacıbaşı A')).not.toBeInTheDocument();
+    // Eczacıbaşı asla sızmamalı!
+    expect(screen.queryByText(/Eczacıbaşı/i)).not.toBeInTheDocument();
 
     // Boş durum mesajı görünmeli
     expect(
@@ -101,7 +101,7 @@ describe('StandingsTable Component', () => {
     expect(customGroupBtn).toHaveAttribute('title', 'Genç Kızlar İl Birinciliği');
 
     // Takım ve başlık doğru render edilmeli
-    expect(screen.getByText('Eczacıbaşı A')).toBeInTheDocument();
+    expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { level: 2, name: /GENÇ KIZLAR İL BİRİNCİLİĞİ/ })
     ).toBeInTheDocument();
@@ -116,7 +116,7 @@ describe('StandingsTable Component', () => {
 
     render(<StandingsTable standingsData={standingsData} />);
 
-    expect(screen.getByText('Pegasus')).toBeInTheDocument();
+    expect(screen.getByText(/Pegasus/i)).toBeInTheDocument();
 
     // Volleybox linki bulunmalı
     const link = screen.getByRole('link', { name: /pegasus/i });

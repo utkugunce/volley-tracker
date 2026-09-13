@@ -45,8 +45,8 @@ describe("FixtureTable Component", () => {
       />
     );
 
-    expect(screen.getByText("VakıfBank")).toBeInTheDocument();
-    expect(screen.getByText("Fenerbahçe")).toBeInTheDocument();
+    expect(screen.getByText("VakıfBank U18")).toBeInTheDocument();
+    expect(screen.getByText("Fenerbahçe U18")).toBeInTheDocument();
 
     const links = screen.getAllByRole("link");
     expect(links.length).toBeGreaterThanOrEqual(2);
@@ -61,7 +61,7 @@ describe("FixtureTable Component", () => {
     expect(fbLink).toBeDefined();
     expect(fbLink).toHaveAttribute("target", "_blank");
 
-    const vakifImg = screen.getByAltText("VakıfBank logosu");
+    const vakifImg = screen.getByAltText("VakıfBank U18 logosu");
     expect(vakifImg).toBeInTheDocument();
     expect(vakifImg).toHaveAttribute("src", expect.stringContaining("logos/vakfbank-u18"));
   });

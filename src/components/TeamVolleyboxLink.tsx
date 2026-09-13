@@ -21,7 +21,8 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   children,
 }) => {
   const mapping = getVolleyboxMapping(teamName, category);
-  const content = children ?? teamName;
+  const displayName = mapping?.matched_as || teamName;
+  const content = children ?? displayName;
   const [imgFailed, setImgFailed] = useState(false);
 
   // Logo source: prefer local_logo, fallback to logo_url
@@ -31,7 +32,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={logoSrc}
-      alt={`${teamName} logosu`}
+      alt={`${displayName} logosu`}
       className={`w-4 h-4 sm:w-5 sm:h-5 object-contain rounded-full bg-white p-0.5 border border-slate-200/90 shadow-xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
       loading="lazy"
       onError={() => {
@@ -52,7 +53,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   const isClubLevelOnly = mapping.confidence === "club_level_only";
   const title = isClubLevelOnly
     ? mapping.note || "Bu bağlantı kulübün profesyonel takımına gider, bu genç takımın kendi profili değildir"
-    : `${mapping.matched_as || teamName} — Volleybox Takım Profili`;
+    : `${displayName} — Volleybox Takım Profili`;
 
   return (
     <a
