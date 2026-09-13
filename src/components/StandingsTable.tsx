@@ -17,8 +17,9 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
   const leagues = useMemo(() => {
     const set = new Set<string>();
     allKeys.forEach((k) => {
-      const parts = k.split(" - ");
-      set.add(parts[0]);
+      const idx = k.indexOf(" - ");
+      const leagueName = idx !== -1 ? k.slice(0, idx).trim() : k.trim();
+      if (leagueName) set.add(leagueName);
     });
     return Array.from(set);
   }, [allKeys]);
@@ -29,12 +30,20 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
 
   // Seçili lige ait gruplar
   const groupsInLeague = useMemo(() => {
-    return allKeys
-      .filter((k) => k.startsWith(selectedLeague))
-      .map((k) => {
-        const parts = k.split(" - ");
-        return parts[1] || parts[0];
-      });
+    const groups: string[] = [];
+    allKeys.forEach((k) => {
+      if (k.startsWith(selectedLeague + " - ")) {
+        const groupPart = k.slice(selectedLeague.length + 3).trim();
+        if (groupPart && !groups.includes(groupPart)) {
+          groups.push(groupPart);
+        }
+      } else if (k === selectedLeague) {
+        if (!groups.includes("Genel")) {
+          groups.push("Genel");
+        }
+      }
+    });
+    return groups.length > 0 ? groups : ["A Grubu"];
   }, [allKeys, selectedLeague]);
 
   const [selectedGroup, setSelectedGroup] = useState<string>(
@@ -43,17 +52,48 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
 
   // Lig değiştiğinde varsayılan grubu güncelle
   React.useEffect(() => {
-    if (!groupsInLeague.includes(selectedGroup)) {
-      setSelectedGroup(groupsInLeague[0] || "A Grubu");
+    if (groupsInLeague.length > 0 && !groupsInLeague.includes(selectedGroup)) {
+      setSelectedGroup(groupsInLeague[0]);
     }
   }, [selectedLeague, groupsInLeague, selectedGroup]);
 
-  const currentKey = `${selectedLeague} - ${selectedGroup}`;
-  const items = standingsData[currentKey] || standingsData[allKeys[0]] || [];
+  // Seçili lig ve gruba ait kesin anahtarı bul (sessiz fallback yok!)
+  const currentKey = useMemo(() => {
+    if (selectedGroup === "Genel" && standingsData[selectedLeague]) {
+      return selectedLeague;
+    }
+    const combinedKey = `${selectedLeague} - ${selectedGroup}`;
+    if (standingsData[combinedKey]) {
+      return combinedKey;
+    }
+    if (standingsData[selectedGroup]) {
+      return selectedGroup;
+    }
+    return combinedKey;
+  }, [selectedLeague, selectedGroup, standingsData]);
+
+  // Sadece seçili lig ve gruba ait veri alınır, alakasız grupların verisi asla gösterilmez
+  const items = standingsData[currentKey] || [];
+
+  if (allKeys.length === 0) {
+    return (
+      <div className="bg-white border border-slate-200 rounded-lg p-8 text-center shadow-sm">
+        <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3 text-slate-400">
+          <HelpCircle size={22} />
+        </div>
+        <h3 className="text-sm font-bold text-slate-800 mb-1">
+          Puan Durumu Verisi Henüz Açıklanmadı
+        </h3>
+        <p className="text-xs text-slate-500 max-w-sm mx-auto">
+          Bu il veya kategori için resmi puan cetveli TVF tarafından sisteme girildiğinde burada görüntülenecektir.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">
-      {/* 1. Lig & Grup Seçici Barı (Basit, Temiz ve Hızlı) */}
+      {/* 1. Lig & Grup Seçici Barı */}
       <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm no-print space-y-2.5">
         {/* Lig Seçimi (Genç Kızlar / Yıldız Kızlar) */}
         <div className="flex flex-wrap items-center gap-2">
@@ -66,6 +106,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
               <button
                 key={lg}
                 onClick={() => setSelectedLeague(lg)}
+                title={lg}
                 className={`px-3.5 py-1.5 rounded text-xs font-bold transition-all ${
                   isActive
                     ? "bg-[#0b1325] text-white shadow-sm"
@@ -78,7 +119,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
           })}
         </div>
 
-        {/* Grup Seçimi (A Grubu, B Grubu, C Grubu) */}
+        {/* Grup Seçimi */}
         {groupsInLeague.length > 1 && (
           <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
             <span className="text-xs font-bold text-slate-500 uppercase min-w-[50px]">
@@ -90,7 +131,8 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
                 <button
                   key={grp}
                   onClick={() => setSelectedGroup(grp)}
-                  className={`px-3 py-1 rounded text-xs font-semibold transition-all ${
+                  title={grp}
+                  className={`px-3 py-1 rounded text-xs font-semibold transition-all max-w-[240px] truncate sm:max-w-none ${
                     isActive
                       ? "bg-primary text-white shadow-sm font-bold"
                       : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
@@ -104,14 +146,14 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
         )}
       </div>
 
-      {/* 2. Puan Durumu Tablosu (Flashscore & TVF Tarzı) */}
+      {/* 2. Puan Durumu Tablosu veya Boş Durum */}
       <div className="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden">
         {/* Başlık Şeridi */}
         <div className="bg-[#1b2438] text-white px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Trophy size={16} className="text-amber-400" />
             <h2 className="text-sm font-bold tracking-tight">
-              {selectedLeague.toUpperCase()} • {selectedGroup.toUpperCase()} - PUAN DURUMU
+              {selectedLeague.toLocaleUpperCase("tr-TR")} • {selectedGroup.toLocaleUpperCase("tr-TR")} - PUAN DURUMU
             </h2>
           </div>
           <span className="text-xs text-slate-400 font-mono">
@@ -119,9 +161,22 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
           </span>
         </div>
 
-        {/* Tablo */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs">
+        {/* Tablo veya Boş Durum (Empty State) */}
+        {items.length === 0 ? (
+          <div className="py-12 px-4 text-center">
+            <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3 text-slate-400">
+              <HelpCircle size={22} />
+            </div>
+            <h3 className="text-sm font-bold text-slate-800 mb-1">
+              Bu grup için puan durumu verisi henüz mevcut değil.
+            </h3>
+            <p className="text-xs text-slate-500 max-w-sm mx-auto">
+              Seçtiğiniz {selectedLeague} - {selectedGroup} kategorisine ait resmi puan cetveli TVF il temsilciliği tarafından sisteme girildiğinde burada görüntülenecektir.
+            </p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-xs">
             <thead>
               <tr className="bg-slate-50 text-slate-500 font-bold border-b border-slate-200 uppercase text-[11px] tracking-wider">
                 <th className="py-2.5 px-3 text-center w-12">#</th>
@@ -225,6 +280,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData })
             </tbody>
           </table>
         </div>
+        )}
 
         {/* Alt Açıklama / Legend (Flashscore Tarzı) */}
         <div className="bg-slate-50 border-t border-slate-200 px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-600">
