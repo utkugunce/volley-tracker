@@ -8,12 +8,12 @@
   "filters": {
     "categories": [
       "Tümü",
-      "Gençç Kızlar Süper Lig",
+      "Genç Kızlar Süper Lig",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
-      "Gençç",
+      "Genç",
       "Yıldız"
     ],
     "genders": [
@@ -30,7 +30,7 @@
     ]
   },
   "standings": {
-    "Gençç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "BAYRAKLI BELEDİYESİ",
@@ -87,7 +87,7 @@
         "form": []
       }
     ],
-    "Gençç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "ALTINORDU",
@@ -144,7 +144,7 @@
         "form": []
       }
     ],
-    "Gençç Kızlar Süper Lig - Süper Lig Gençç Kız - C Gr": [
+    "Genç Kızlar Süper Lig - Süper Lig Genç Kızlar - C Gr": [
       {
         "rank": 1,
         "team": "D.S.İ.",
@@ -201,7 +201,7 @@
         "form": []
       }
     ],
-    "Gençç Kızlar Süper Lig - Süper Lig Gençç Kız - D Gr": [
+    "Genç Kızlar Süper Lig - Süper Lig Genç Kızlar - D Gr": [
       {
         "rank": 1,
         "team": "ALTINAY",
@@ -595,8 +595,8 @@
       "date": "2026-09-19",
       "time": "16:00",
       "hall": "Vali Hüseyin Öğütcen Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "1",
@@ -614,8 +614,8 @@
       "date": "2026-09-20",
       "time": "17:30",
       "hall": "Vali Hüseyin Öğütcen Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "2",
@@ -633,8 +633,8 @@
       "date": "2026-09-17",
       "time": "20:00",
       "hall": "Vali Hüseyin Öğütcen Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "1",
@@ -652,8 +652,8 @@
       "date": "2026-09-18",
       "time": "18:30",
       "hall": "Gaziemir Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "2",
@@ -671,10 +671,10 @@
       "date": "2026-09-15",
       "time": "20:00",
       "hall": "Gaziemir Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
-      "group": "Süper Lig Gençç Kız - C Grubu",
+      "group": "Süper Lig Genç Kızlar - C Grubu",
       "match_no": "1",
       "home_team": "ÖÖzay",
       "away_team": "Venüs",
@@ -690,10 +690,10 @@
       "date": "2026-09-17",
       "time": "18:30",
       "hall": "Vali Hüseyin Öğütcen Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
-      "group": "Süper Lig Gençç Kız - C Grubu",
+      "group": "Süper Lig Genç Kızlar - C Grubu",
       "match_no": "2",
       "home_team": "Göksu Atletik",
       "away_team": "D.S.İ.",
@@ -709,10 +709,10 @@
       "date": "2026-09-15",
       "time": "18:30",
       "hall": "Gaziemir Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
-      "group": "Süper Lig Gençç Kız - D Grubu",
+      "group": "Süper Lig Genç Kızlar - D Grubu",
       "match_no": "1",
       "home_team": "Altınay",
       "away_team": "Arkas",
@@ -728,10 +728,10 @@
       "date": "2026-09-19",
       "time": "17:30",
       "hall": "Vali Hüseyin Öğütcen Spor Salonu",
-      "category": "Gençç Kızlar Süper Lig",
-      "age_group": "Gençç",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
-      "group": "Süper Lig Gençç Kız - D Grubu",
+      "group": "Süper Lig Genç Kızlar - D Grubu",
       "match_no": "2",
       "home_team": "Mavişehir",
       "away_team": "Dost",
