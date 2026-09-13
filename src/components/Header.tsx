@@ -1,10 +1,15 @@
 "use client";
 
 import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, UploadCloud } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy } from "lucide-react";
+import { CitySelector } from "@/components/CitySelector";
+import { CityInfo } from "@/types/fixture";
 
 interface HeaderProps {
   city?: string;
+  currentCitySlug?: string;
+  onSelectCity?: (slug: string) => void;
+  cities?: CityInfo[];
   title?: string;
   updatedAt?: string;
   totalMatches: number;
@@ -19,6 +24,9 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   city = "İstanbul",
+  currentCitySlug = "istanbul",
+  onSelectCity,
+  cities = [],
   updatedAt,
   totalMatches,
   favoritesCount,
@@ -39,9 +47,9 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="bg-[#0b1325] text-white sticky top-0 z-30 shadow-lg border-b border-slate-800">
       {/* 1. Üst Flashscore Bar */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2.5 flex items-center justify-between border-b border-slate-800/80">
-        {/* Logo & Brand */}
-        <div className="flex items-center gap-3">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/80 gap-2">
+        {/* Logo & Brand & İl Seçici */}
+        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
           <div className="flex items-center gap-1.5 font-mono font-black text-lg tracking-tighter">
             <span className="bg-primary text-white px-2 py-0.5 rounded font-black">
               TVF
@@ -51,8 +59,16 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="h-4 w-px bg-slate-700 hidden sm:block" />
 
-          <div className="hidden sm:flex items-center gap-2 text-xs text-slate-300">
-            <span className="font-semibold text-white">{city.toUpperCase()}</span>
+          {/* 81 İl Seçici Açılır Menü */}
+          {onSelectCity && (
+            <CitySelector
+              currentCitySlug={currentCitySlug}
+              onSelectCity={onSelectCity}
+              cities={cities}
+            />
+          )}
+
+          <div className="hidden md:flex items-center gap-2 text-xs text-slate-400">
             <span>•</span>
             <span className="text-amber-400 font-medium">Genç & Yıldız Kızlar Süper Lig</span>
           </div>

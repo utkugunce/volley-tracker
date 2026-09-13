@@ -102,6 +102,12 @@ def update_state(state: Dict[str, str], delta_text: str) -> None:
         if tokens[i] == "hiddenField" and i + 2 < len(tokens):
             state[tokens[i+1]] = tokens[i+2]
 
+def decode_html(resp: httpx.Response) -> str:
+    try:
+        return resp.content.decode("windows-1254")
+    except Exception:
+        return resp.text
+
 def fetch_istanbul_live_data() -> Dict[str, Any]:
     """
     Resmi istanbul.voleyboliltemsilciligi.com sitesinden
@@ -124,7 +130,7 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
     if res.status_code != 200:
         raise RuntimeError(f"PuanDurumu sayfasına erişilemedi: HTTP {res.status_code}")
 
-    soup = BeautifulSoup(res.text, "html.parser")
+    soup = BeautifulSoup(decode_html(res), "html.parser")
     state = extract_form_state(soup)
 
     # Post Kadın (B)
@@ -134,7 +140,7 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
     p["__ASYNCPOST"] = "true"
     p["ctl00$icerik$ddlsbe"] = "B"
     r = client.post(puan_url, data=p, headers=headers)
-    update_state(state, r.text)
+    update_state(state, decode_html(r))
 
     all_matches = []
     all_standings = {}
@@ -150,9 +156,10 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
         p["ctl00$icerik$ddlsbe"] = "B"
         p["ctl00$icerik$ddlskume"] = kume_code
         r = client.post(puan_url, data=p, headers=headers)
-        update_state(state, r.text)
+        r_text = decode_html(r)
+        update_state(state, r_text)
 
-        tokens = r.text.split("|")
+        tokens = r_text.split("|")
         comps = []
         for i in range(len(tokens)):
             if tokens[i] == "updatePanel":
@@ -185,9 +192,10 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
             p_c["ctl00$icerik$ddlskume"] = kume_code
             p_c["ctl00$icerik$ddlSyarismaadi"] = c_val
             r_c = client.post(puan_url, data=p_c, headers=headers)
-            update_state(state, r_c.text)
+            r_c_text = decode_html(r_c)
+            update_state(state, r_c_text)
 
-            tokens_c = r_c.text.split("|")
+            tokens_c = r_c_text.split("|")
             for k in range(len(tokens_c)):
                 if tokens_c[k] == "updatePanel":
                     soup_c = BeautifulSoup(tokens_c[k+2], "html.parser")

@@ -1,0 +1,167 @@
+{
+  "updated_at": "2026-09-13T18:26:43.476686",
+  "city": "Düzce",
+  "slug": "duzce",
+  "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 0,
+  "source": "https://duzce.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü"
+    ]
+  },
+  "standings": {
+    "Genç Kızlar Süper Lig - Genç KÄ±zlar Ä°l BirinciliÄŸi": [
+      {
+        "rank": 1,
+        "team": "DÃ¼zce 1907 Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "DÃ¼zce Atletik Spor KulubÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "DÃ¼zce Ultraslan Spor KulubÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "DÃ¼zce Voleybol Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - A Grubu": [
+      {
+        "rank": 1,
+        "team": "AkÃ§akoca Orhan Ã–zdemir Fen Lisesi Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "DÃ¼zce Ay Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "DÃ¼zce Can Sportif Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "DÃ¼zce Ultraslan Spor KulubÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - B Grubu": [
+      {
+        "rank": 1,
+        "team": "DÃ¼zce 1907 Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "DÃ¼zce Atletik Spor KulubÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "DÃ¼zce GenÃ§lik Ve Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "DÃ¼zce Voleybol Spor KulÃ¼bÃ¼",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": []
+}

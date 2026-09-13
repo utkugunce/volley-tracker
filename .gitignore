@@ -64,3 +64,4 @@ ENV/
 Thumbs.db
 
 data/raw/*.html
+.vercel

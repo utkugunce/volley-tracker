@@ -28,6 +28,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [selectedHall, setSelectedHall] = useState("Tümü");
   const [searchQuery, setSearchQuery] = useState("");
 
+  // 81 İl Desteği
+  const [currentCitySlug, setCurrentCitySlug] = useState("istanbul");
+  const [citiesList, setCitiesList] = useState<any[]>([]);
+
   // Favoriler (Flashscore Yıldız İmzası - LocalStorage ile kaydedilir)
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
@@ -41,6 +45,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     } catch (e) {
       // ignore
     }
+
+    // 81 İl listesini yükle
+    fetch("/api/cities")
+      .then((res) => res.json())
+      .then((json) => {
+        if (json?.cities) {
+          setCitiesList(json.cities);
+        }
+      })
+      .catch((err) => console.warn("Cities fetch error:", err));
   }, []);
 
   const toggleFavorite = (matchId: string) => {
@@ -61,7 +75,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/fixtures?refresh=1");
+      const res = await fetch(`/api/fixtures?city=${currentCitySlug}&refresh=1`);
       if (!res.ok) {
         throw new Error("Bülten verisi yüklenemedi.");
       }
@@ -69,6 +83,27 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       setData(json);
     } catch (err: any) {
       setError(err.message || "Bilinmeyen bir hata oluştu.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSelectCity = async (slug: string) => {
+    setCurrentCitySlug(slug);
+    setLoading(true);
+    setError(null);
+    setSelectedCategory("Tümü");
+    setSelectedDate("all");
+    setSelectedHall("Tümü");
+    setStatusFilter("all");
+    setSearchQuery("");
+    try {
+      const res = await fetch(`/api/fixtures?city=${slug}`);
+      if (!res.ok) throw new Error("İl verisi alınamadı.");
+      const json: FixturesData = await res.json();
+      setData(json);
+    } catch (err: any) {
+      setError(err.message || "İl fikstürü yüklenirken hata oluştu.");
     } finally {
       setLoading(false);
     }
@@ -197,9 +232,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f0f2f5] text-slate-900 font-sans">
-      {/* 1. Header (FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
+      {/* 1. Header (FİKSTÜR ve PUAN DURUMU Sekmeleriyle + 81 İl Seçici) */}
       <Header
         city={data?.city}
+        currentCitySlug={currentCitySlug}
+        onSelectCity={handleSelectCity}
+        cities={citiesList}
         title={data?.title}
         updatedAt={data?.updated_at}
         totalMatches={data?.total_matches || 0}
@@ -269,27 +307,51 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
               </div>
             )}
 
-            {/* Sonuç Bulunamadı */}
+            {/* Sonuç Bulunamadı / İl Sezon Takvimi Bekleniyor */}
             {groupedSections.length === 0 && (
-              <div className="text-center py-12 bg-white border border-slate-200 rounded-lg p-6 max-w-md mx-auto my-8">
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3 text-slate-400">
-                  {showOnlyFavorites ? <Star size={20} className="text-amber-400" /> : <SearchX size={20} />}
+              <div className="text-center py-12 bg-white border border-slate-200 rounded-xl p-6 max-w-lg mx-auto my-8 shadow-sm">
+                <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3 text-slate-400">
+                  {showOnlyFavorites ? (
+                    <Star size={22} className="text-amber-400" />
+                  ) : (
+                    <SearchX size={22} />
+                  )}
                 </div>
-                <h3 className="text-sm font-bold text-slate-900 mb-1">
-                  {showOnlyFavorites ? "Favori Maçınız Bulunmuyor" : "Kriterlere Uygun Maç Bulunamadı"}
-                </h3>
-                <p className="text-xs text-slate-500 mb-4">
-                  {showOnlyFavorites
-                    ? "Maçların yanındaki yıldız ikonuna basarak favorilerinize ekleyebilirsiniz."
-                    : "Seçtiğiniz tarih, lig veya filtreye ait bültende maç kaydı bulunmamaktadır."}
-                </p>
-                {isFiltered && (
-                  <button
-                    onClick={resetFilters}
-                    className="px-3.5 py-1.5 rounded bg-primary text-white text-xs font-semibold hover:bg-primary-hover transition-colors"
-                  >
-                    Filtreleri Sıfırla
-                  </button>
+
+                {(data?.matches || []).length === 0 ? (
+                  <>
+                    <h3 className="text-sm font-bold text-slate-900 mb-1">
+                      TVF {data?.city || "Bu İl"} Fikstür Takvimi Henüz Açıklanmadı
+                    </h3>
+                    <p className="text-xs text-slate-500 mb-4 max-w-sm mx-auto">
+                      TVF {data?.city} İl Temsilciliği 2026-2027 sezonu için Genç ve Yıldız Kızlar Süper Lig bültenini sisteme girdiğinde maçlar otomatik olarak burada listelenecektir.
+                    </p>
+                    <button
+                      onClick={() => handleSelectCity("istanbul")}
+                      className="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary-hover transition-colors shadow-sm"
+                    >
+                      İstanbul Fikstürünü Görüntüle (24 Maç)
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="text-sm font-bold text-slate-900 mb-1">
+                      {showOnlyFavorites ? "Favori Maçınız Bulunmuyor" : "Kriterlere Uygun Maç Bulunamadı"}
+                    </h3>
+                    <p className="text-xs text-slate-500 mb-4">
+                      {showOnlyFavorites
+                        ? "Maçların yanındaki yıldız ikonuna basarak favorilerinize ekleyebilirsiniz."
+                        : "Seçtiğiniz tarih, lig veya filtreye ait bültende maç kaydı bulunmamaktadır."}
+                    </p>
+                    {isFiltered && (
+                      <button
+                        onClick={resetFilters}
+                        className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary-hover transition-colors"
+                      >
+                        Filtreleri Sıfırla
+                      </button>
+                    )}
+                  </>
                 )}
               </div>
             )}
@@ -297,7 +359,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         ) : (
           /* ==================== PUAN DURUMU SEKMESİ ==================== */
           <div>
-            {data?.standings && <StandingsTable standingsData={data.standings} />}
+            {data?.standings && Object.keys(data.standings).length > 0 ? (
+              <StandingsTable standingsData={data.standings} />
+            ) : (
+              <div className="text-center py-12 bg-white border border-slate-200 rounded-xl p-6 max-w-md mx-auto my-8 shadow-sm">
+                <p className="text-sm font-semibold text-slate-700">
+                  TVF {data?.city || "Bu İl"} için henüz puan durumu tablosu oluşturulmamıştır.
+                </p>
+              </div>
+            )}
           </div>
         )}
       </main>
@@ -306,7 +376,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       <footer className="border-t border-slate-200 bg-white mt-auto py-4 text-center text-xs text-slate-500 no-print">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-semibold text-slate-700">
-            TVFSCORE • İstanbul Genç & Yıldız Kızlar Süper Lig
+            TVFSCORE • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
           </p>
           <div className="flex items-center gap-3 text-[11px] text-slate-400">
             <span>Fikstür & Puan Durumu</span>

@@ -6,6 +6,7 @@ import { execSync } from "child_process";
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
+    const cityParam = searchParams.get("city")?.toLowerCase() || "istanbul";
     const refresh = searchParams.get("refresh");
     const category = searchParams.get("category");
     const ageGroup = searchParams.get("age_group");
@@ -15,17 +16,42 @@ export async function GET(request: Request) {
     const status = searchParams.get("status");
     const date = searchParams.get("date");
 
-    const filePath = path.join(process.cwd(), "data", "fixtures.json");
-
     if (refresh === "1") {
       try {
-        execSync("python scripts/run_scraper.py", {
+        execSync("python scripts/scrape_all_provinces.py", {
           cwd: process.cwd(),
-          timeout: 15000,
+          timeout: 45000,
           stdio: "ignore",
         });
       } catch (err) {
         console.warn("Live scraper refresh warning (falling back to cached data):", err);
+      }
+    }
+
+    let filePath = path.join(process.cwd(), "data", "fixtures.json");
+    if (cityParam && cityParam !== "istanbul") {
+      const citySpecificPath = path.join(process.cwd(), "data", "cities", `${cityParam}.json`);
+      if (fs.existsSync(citySpecificPath)) {
+        filePath = citySpecificPath;
+      } else {
+        // İlgili ilde henüz fikstür açıklanmamış
+        return NextResponse.json({
+          city: cityParam.toUpperCase(),
+          title: `TVF ${cityParam.toUpperCase()} Genç & Yıldız Kızlar Süper Lig`,
+          updated_at: new Date().toISOString(),
+          total_matches: 0,
+          unfiltered_total: 0,
+          source: `https://${cityParam}.voleyboliltemsilciligi.com`,
+          filters: {
+            categories: ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"],
+            age_groups: ["Tümü", "Genç", "Yıldız"],
+            genders: ["Kız"],
+            halls: ["Tümü"],
+          },
+          matches: [],
+          standings: {},
+          note: "Bu ilin TVF temsilciliği yeni sezon bültenini henüz girmemiştir.",
+        });
       }
     }
 
