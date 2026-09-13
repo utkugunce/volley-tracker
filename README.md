@@ -23,7 +23,7 @@ Türkiye Voleybol Federasyonu (TVF) İstanbul yerel liglerindeki **Genç Kızlar
   - Kulüp ve salon bazlı canlı arama.
   - Favori maç/kulüp takibi (⭐).
 - **Veri Senkronizasyonu & Önbellek Mimarisi:**
-  - **Otomatik Zamanlanmış Görev (Cron):** GitHub Actions (`.github/workflows/scrape-sync.yml`) üzerinden günde 3 kez (06:00, 12:00, 18:00 UTC) TVF 81 il temsilciliği taranarak bültenler otomatik güncellenir ve depoya commit edilir.
+  - **Otomatik Zamanlanmış Görev (Cron):** GitHub Actions (`.github/workflows/scrape-sync.yml`) üzerinden her saat başı (`0 * * * *`) TVF 81 il temsilciliği taranarak bültenler otomatik güncellenir ve depoya commit edilir.
   - **Arayüzden Senkronizasyon Durumu:** Web arayüzündeki yenileme butonuna basıldığında sunucu önbelleğindeki en son veriler anında çekilir, son güncelleme zamanı ve senkronizasyon durumu (başarı / önbellek / uyarı) görsel bildirim olarak gösterilir.
   - **Yerel Geliştirme (Local Python):** Yerel ortamda çalışırken `GET /api/fixtures?refresh=1` doğrudan yerel Python tarayıcısını tetikleyebilir. Vercel sunucusuz (serverless) ortamında ise güvenli ve yüksek hızlı CDN/build önbelleği kullanılır.
 
