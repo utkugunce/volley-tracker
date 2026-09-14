@@ -220,6 +220,7 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
             r_soup = BeautifulSoup(r_resp.text, "html.parser")
             boxes = r_soup.find_all("div", class_=lambda c: c and "match_box" in str(c))
             all_match_boxes.extend(boxes)
+            time.sleep(1.0)
         except Exception as ex:
             print(f"  [UYARI] Round {rid} maçları çekilemedi ({round_url}): {ex}")
 
@@ -626,13 +627,20 @@ def main():
         time.sleep(0.8)
 
     # 3. data/fixtures.json senkronizasyonu
-    print("\n🔄 data/fixtures.json senkronize ediliyor...")
-    ist_synced, ist_total = sync_fixtures_file(FIXTURES_FILE, vb_tournaments, team_alias_map)
-    print(f"✅ İstanbul Bülteni: {ist_synced} / {ist_total} maç Volleybox ile eşleşti!")
+    if not args.city or args.city.lower() == "istanbul":
+        print("\n🔄 data/fixtures.json senkronize ediliyor...")
+        ist_synced, ist_total = sync_fixtures_file(FIXTURES_FILE, vb_tournaments, team_alias_map)
+        print(f"✅ İstanbul Bülteni: {ist_synced} / {ist_total} maç Volleybox ile eşleşti!")
 
     # 4. data/cities/*.json dosyalarının senkronizasyonu
     if CITIES_DIR.exists():
         for city_json in CITIES_DIR.glob("*.json"):
+            if args.city:
+                stem = city_json.stem.lower()
+                c_norm = normalize_name(stem)
+                arg_norm = normalize_name(args.city.lower())
+                if stem != args.city.lower() and c_norm != arg_norm:
+                    continue
             c_synced, c_total = sync_fixtures_file(city_json, vb_tournaments, team_alias_map)
             if c_total > 0:
                 print(f"✅ {city_json.name:<18} : {c_synced} / {c_total} maç Volleybox ile eşleşti.")
