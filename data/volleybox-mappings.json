@@ -4149,6 +4149,56 @@
       "verified_at": "2026-09-14",
       "local_logo": "/logos/nigde-genclik-spor-kulubu-a-u16-t48709.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_177462102435fxL.png"
+    },
+    {
+      "internal_name": "Odtü Gv Niğde Okulları Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "ODTÜ GV Niğde Okulları Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/odtu-gv-nigde-okullar-spor-kulubu-u16-t54400",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Odtü Gv Niğde Okulları Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/odtu-gv-nigde-okullar-spor-kulubu-u18-t54403",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Niğde Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Niğde Gençlik Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/nigde-genclik-spor-kulubu-a-u16-t48709",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Niğde Sev Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Niğde Sev Voleybol Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/nigde-sev-voleybol-kulubu-u18-t54402",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Niğde Volley Akademi Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Niğde Volley Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/nigde-volley-akademi-spor-kulubu-u16-t54401",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14"
     }
   ],
   "leagues": [

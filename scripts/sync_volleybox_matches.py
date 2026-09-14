@@ -53,6 +53,12 @@ HEADERS = {
     "Upgrade-Insecure-Requests": "1",
 }
 
+CITY_STOPWORDS = {
+    "istanbul", "izmir", "ankara", "bursa", "nigde", "yalova", "antalya", "duzce", 
+    "adana", "konya", "samsun", "trabzon", "kocaeli", "sakarya", "tekirdag", 
+    "mersin", "gaziantep", "kayseri", "denizli", "eskisehir", "turkiye"
+}
+
 
 def normalize_name(name: str) -> str:
     if not name:
@@ -138,11 +144,13 @@ def is_team_compatible(tvf_name: str, vb_name: str, synonyms: set) -> bool:
     if tvf_compact == vb_compact:
         return True
 
-    if (len(tvf_compact) >= 4 and tvf_compact in vb_compact) or (len(vb_compact) >= 4 and vb_compact in tvf_compact):
+    if tvf_compact in CITY_STOPWORDS or vb_compact in CITY_STOPWORDS:
+        pass
+    elif (len(tvf_compact) >= 4 and tvf_compact in vb_compact) or (len(vb_compact) >= 4 and vb_compact in tvf_compact):
         return True
 
-    tvf_words = [w for w in tvf_base.split() if len(w) >= 4]
-    vb_words = [w for w in vb_base.split() if len(w) >= 4]
+    tvf_words = [w for w in tvf_base.split() if len(w) >= 4 and w not in CITY_STOPWORDS]
+    vb_words = [w for w in vb_base.split() if len(w) >= 4 and w not in CITY_STOPWORDS]
     if any(w in vb_words for w in tvf_words):
         return True
 
