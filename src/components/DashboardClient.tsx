@@ -27,6 +27,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [statusFilter, setStatusFilter] = useState("all"); // "all" | "upcoming" | "finished"
   const [selectedHall, setSelectedHall] = useState("Tümü");
   const [searchQuery, setSearchQuery] = useState("");
+  const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "unsynced">("all");
 
   // 81 İl Desteği
   const [currentCitySlug, setCurrentCitySlug] = useState("istanbul");
@@ -128,6 +129,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     setSelectedDate("all");
     setSelectedHall("Tümü");
     setStatusFilter("all");
+    setVolleyboxFilter("all");
     setSearchQuery("");
     try {
       const res = await fetch(`/api/fixtures?city=${slug}`);
@@ -170,6 +172,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     const upcoming = validMatches.filter((m) => m.status === "upcoming").length;
     const finished = validMatches.filter((m) => m.status === "finished").length;
     return { all, upcoming, finished };
+  }, [data]);
+
+  // Volleybox senkronizasyon istatistikleri
+  const volleyboxStats = useMemo(() => {
+    const validMatches = (data?.matches || []).filter((m) => m.date && m.date !== "TBD");
+    const total = validMatches.length;
+    const synced = validMatches.filter((m) => m.volleybox?.synced).length;
+    const unsynced = total - synced;
+    const percent = total > 0 ? Math.round((synced / total) * 100) : 0;
+    return { total, synced, unsynced, percent };
   }, [data]);
 
   // Filtrelenmiş maçlar
@@ -216,9 +228,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         }
       }
 
+      // 7. Volleybox Senkronizasyon Filtresi
+      if (volleyboxFilter === "synced" && !m.volleybox?.synced) {
+        return false;
+      }
+      if (volleyboxFilter === "unsynced" && m.volleybox?.synced) {
+        return false;
+      }
+
       return true;
     });
-  }, [data, showOnlyFavorites, favorites, selectedCategory, selectedDate, statusFilter, selectedHall, searchQuery]);
+  }, [data, showOnlyFavorites, favorites, selectedCategory, selectedDate, statusFilter, selectedHall, searchQuery, volleyboxFilter]);
 
   // Lig & Gruba göre grupla (Genç Kızlar Süper Lig - A Grubu, B Grubu vb.)
   const groupedSections = useMemo(() => {
@@ -250,6 +270,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     setSelectedDate("all");
     setStatusFilter("all");
     setSelectedHall("Tümü");
+    setVolleyboxFilter("all");
     setSearchQuery("");
     setShowOnlyFavorites(false);
   };
@@ -260,6 +281,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     statusFilter !== "all" ||
     selectedHall !== "Tümü" ||
     searchQuery.trim().length > 0 ||
+    volleyboxFilter !== "all" ||
     showOnlyFavorites;
 
   return (
@@ -320,6 +342,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                 onSelectHall={setSelectedHall}
                 searchQuery={searchQuery}
                 onSearchChange={setSearchQuery}
+                volleyboxFilter={volleyboxFilter}
+                onSelectVolleyboxFilter={setVolleyboxFilter}
+                volleyboxStats={volleyboxStats}
                 onReset={resetFilters}
                 isFiltered={isFiltered}
               />

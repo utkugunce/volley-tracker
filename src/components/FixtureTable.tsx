@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 
@@ -110,6 +110,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               <th className="py-2.5 px-3 min-w-[150px]">B Takımı</th>
               <th className="py-2.5 px-2 text-center w-20">Skor</th>
               <th className="py-2.5 px-3 min-w-[180px]">Set Skorları</th>
+              <th className="py-2.5 px-2 text-center min-w-[95px]" title="Volleybox maç kaydı durumu">Volleybox</th>
               <th className="py-2.5 px-2 text-center w-14 no-print">İşlem</th>
             </tr>
           </thead>
@@ -234,6 +235,31 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       </div>
                     ) : (
                       <span className="text-slate-400 text-xs font-mono">-</span>
+                    )}
+                  </td>
+
+                  {/* Volleybox Senkronizasyon Rozeti */}
+                  <td className="py-2.5 px-2 text-center whitespace-nowrap">
+                    {match.volleybox?.synced ? (
+                      <a
+                        href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 transition-all shadow-2xs group"
+                        title={`Volleybox'ta Kayıtlı (Maç ID: #${match.volleybox.match_id}) - Tıklayarak profili açın`}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Volleybox</span>
+                        <ExternalLink size={10} className="text-emerald-500 group-hover:translate-x-0.5 transition-transform" />
+                      </a>
+                    ) : (
+                      <span
+                        className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] text-slate-400 bg-slate-50 border border-slate-200/60 font-medium"
+                        title="Bu maç henüz Volleybox veritabanına girilmemiş"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                        <span>Girilmedi</span>
+                      </span>
                     )}
                   </td>
 

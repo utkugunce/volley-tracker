@@ -24,6 +24,16 @@ interface FilterBarProps {
   searchQuery: string;
   onSearchChange: (q: string) => void;
 
+  // Volleybox filtreleri & istatistikleri
+  volleyboxFilter?: "all" | "synced" | "unsynced";
+  onSelectVolleyboxFilter?: (val: "all" | "synced" | "unsynced") => void;
+  volleyboxStats?: {
+    total: number;
+    synced: number;
+    unsynced: number;
+    percent: number;
+  };
+
   onReset: () => void;
   isFiltered: boolean;
 }
@@ -40,6 +50,9 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onSelectHall,
   searchQuery,
   onSearchChange,
+  volleyboxFilter = "all",
+  onSelectVolleyboxFilter,
+  volleyboxStats,
   onReset,
   isFiltered,
 }) => {
@@ -101,11 +114,11 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         </div>
       </div>
 
-      {/* 2. Salon ve Takım Arama */}
-      <div className="flex items-center justify-between gap-2 pt-0.5">
-        <div className="flex items-center gap-2 flex-1">
+      {/* 2. Salon, Takım Arama ve Volleybox Filtreleri */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-0.5">
+        <div className="flex flex-wrap items-center gap-2 flex-1">
           {/* Arama Input */}
-          <div className="relative flex-1 sm:w-64">
+          <div className="relative flex-1 sm:w-60 min-w-[170px]">
             <Search
               size={13}
               className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400"
@@ -146,13 +159,68 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
             />
           </div>
+
+          {/* Volleybox Durumu Filtresi */}
+          {onSelectVolleyboxFilter && (
+            <div className="flex items-center bg-slate-100/80 border border-slate-200/80 rounded p-0.5 text-xs">
+              <span className="text-[11px] font-bold text-slate-500 px-2 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Volleybox:
+              </span>
+              <button
+                type="button"
+                onClick={() => onSelectVolleyboxFilter("all")}
+                className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all ${
+                  volleyboxFilter === "all"
+                    ? "bg-white text-slate-800 shadow-xs font-bold"
+                    : "text-slate-500 hover:text-slate-800"
+                }`}
+              >
+                Tümü
+              </button>
+              <button
+                type="button"
+                onClick={() => onSelectVolleyboxFilter("synced")}
+                className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
+                  volleyboxFilter === "synced"
+                    ? "bg-emerald-600 text-white shadow-xs font-bold"
+                    : "text-emerald-700 hover:bg-emerald-50"
+                }`}
+                title="Volleybox'ta Kayıtlı Maçlar"
+              >
+                <span>Girilmiş</span>
+                {volleyboxStats && (
+                  <span className={`text-[10px] ${volleyboxFilter === "synced" ? "text-emerald-100" : "text-emerald-600 font-bold"}`}>
+                    ({volleyboxStats.synced})
+                  </span>
+                )}
+              </button>
+              <button
+                type="button"
+                onClick={() => onSelectVolleyboxFilter("unsynced")}
+                className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
+                  volleyboxFilter === "unsynced"
+                    ? "bg-amber-600 text-white shadow-xs font-bold"
+                    : "text-slate-600 hover:bg-slate-200"
+                }`}
+                title="Volleybox'a Henüz Girilmemiş Maçlar"
+              >
+                <span>Girilmemiş</span>
+                {volleyboxStats && (
+                  <span className={`text-[10px] ${volleyboxFilter === "unsynced" ? "text-amber-100" : "text-slate-500"}`}>
+                    ({volleyboxStats.unsynced})
+                  </span>
+                )}
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Filtreleri Sıfırla */}
         {isFiltered && (
           <button
             onClick={onReset}
-            className="px-2 py-1 rounded text-xs text-slate-500 hover:text-primary hover:bg-slate-100 font-medium flex items-center gap-1 transition-colors"
+            className="px-2 py-1 rounded text-xs text-slate-500 hover:text-primary hover:bg-slate-100 font-medium flex items-center gap-1 transition-colors shrink-0"
           >
             <X size={12} />
             <span className="hidden sm:inline">Temizle</span>

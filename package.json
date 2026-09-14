@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "scrape": "python scripts/run_scraper.py"
+    "scrape": "python scripts/run_scraper.py",
+    "sync:volleybox": "python scripts/sync_volleybox_matches.py"
   },
   "dependencies": {
     "clsx": "^2.1.1",

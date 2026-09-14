@@ -485,5 +485,12 @@ def main():
             print(f"  * [{int(ac['ilid']):02d}] {ac['name']:<14} : {ac['matches_count']} Maç | {ac['standings_count']} Puan Tablosu ({ac['status']})")
     print("=" * 80 + "\n")
 
+    # Volleybox maç senkronizasyonunu otomatik çalıştır
+    try:
+        from scripts.sync_volleybox_matches import main as sync_vb_main
+        sync_vb_main()
+    except Exception as vb_ex:
+        print(f"Volleybox maç senkronizasyonu atlandı: {vb_ex}")
+
 if __name__ == "__main__":
     main()

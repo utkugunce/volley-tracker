@@ -86,6 +86,14 @@ def main():
     try:
         data = fetch_istanbul_live_data()
         save_fixtures_to_json(data, output_path)
+        
+        # Volleybox maç senkronizasyonunu çalıştır
+        try:
+            from scripts.sync_volleybox_matches import main as sync_vb_main
+            sync_vb_main()
+        except Exception as vb_ex:
+            logger.warning(f"Volleybox maç senkronizasyonu atlandı: {vb_ex}")
+
         print_summary_banner(data, output_path)
     except Exception as e:
         logger.error(f"Veri çekme sırasında hata: {e}")

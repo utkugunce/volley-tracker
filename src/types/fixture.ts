@@ -1,3 +1,12 @@
+export interface VolleyboxMatchInfo {
+  synced: boolean;
+  match_id?: number | string | null;
+  url?: string | null;
+  host_name?: string | null;
+  guest_name?: string | null;
+  score?: string | null;
+}
+
 export interface Match {
   id: string;
   city?: string;
@@ -16,6 +25,7 @@ export interface Match {
   away_score?: number | null;
   set_scores?: string[];
   status: "upcoming" | "finished" | "postponed" | "live";
+  volleybox?: VolleyboxMatchInfo | null;
 }
 
 export interface StandingItem {
