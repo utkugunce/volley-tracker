@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-14T10:01:52.971902",
+  "updated_at": "2026-09-14T10:13:07.612300",
   "total_cities": 81,
-  "active_cities": 3,
-  "total_matches": 50,
+  "active_cities": 2,
+  "total_matches": 46,
   "cities": [
     {
       "ilid": "1",
@@ -509,10 +509,10 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (Maçlar Mevcut)",
-      "matches_count": 4,
-      "standings_count": 1,
-      "data_file": "data/cities/nigde.json"
+      "status": "Fikstür Açıklanmadı",
+      "matches_count": 0,
+      "standings_count": 0,
+      "data_file": null
     },
     {
       "ilid": "52",
