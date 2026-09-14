@@ -35,7 +35,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
     <img
       src={logoSrc}
       alt={`${displayName} logosu`}
-      className={`w-4 h-4 sm:w-5 sm:h-5 object-contain rounded-full bg-white p-0.5 border border-slate-200/90 shadow-xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
+      className={`w-4 h-4 object-contain rounded-full bg-white p-0.5 border border-slate-200/90 shadow-2xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
       loading="lazy"
       onError={() => {
         setImgFailed(true);

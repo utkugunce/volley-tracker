@@ -78,40 +78,40 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden mb-6">
+    <div className="bg-white rounded-lg shadow-2xs border border-slate-200/90 overflow-hidden mb-3.5">
       {/* 1. Grup Başlığı */}
-      <div className="bg-[#111827] text-white px-4 py-2.5 flex items-center justify-between border-b border-slate-800 select-none">
-        <div className="flex items-center gap-2">
-          <div className="w-5 h-5 rounded bg-primary/20 flex items-center justify-center text-primary">
-            <Trophy size={13} className="text-amber-400" />
+      <div className="bg-[#111827] text-white px-3.5 py-1.5 flex items-center justify-between border-b border-slate-800 select-none">
+        <div className="flex items-center gap-1.5">
+          <div className="w-4 h-4 rounded bg-primary/20 flex items-center justify-center text-primary">
+            <Trophy size={11} className="text-amber-400" />
           </div>
-          <h3 className="font-bold text-xs sm:text-sm tracking-tight text-white uppercase">
+          <h3 className="font-bold text-xs tracking-tight text-white uppercase">
             <LeagueVolleyboxLink league={title} city={city || matches[0]?.city}>
               {title}
             </LeagueVolleyboxLink>
             {subTitle && subTitle.toLowerCase() !== title.toLowerCase() && subTitle !== "Tek Grup" ? ` • ${subTitle}` : ""}
           </h3>
         </div>
-        <span className="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
+        <span className="text-[10px] font-mono text-slate-400 bg-slate-800/80 px-1.5 py-0.5 rounded border border-slate-700">
           {matches.length} Maç
         </span>
       </div>
 
-      {/* 2. Resmi TVF / Fikstür Tablosu: Tarih - Saat - Yer - A Takımı - B Takımı - Skor - Set Skorları */}
+      {/* 2. Resmi TVF / Fikstür Tablosu */}
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse text-xs">
           <thead>
-            <tr className="bg-slate-100/90 text-slate-600 font-bold border-b border-slate-200 uppercase text-[11px] tracking-wider">
-              <th className="py-2.5 px-2 text-center w-8" title="Favorilere Ekle">⭐</th>
-              <th className="py-2.5 px-3 w-28 whitespace-nowrap">Tarih</th>
-              <th className="py-2.5 px-2 text-center w-14">Saat</th>
-              <th className="py-2.5 px-3 min-w-[160px]">Yer</th>
-              <th className="py-2.5 px-3 min-w-[150px]">A Takımı</th>
-              <th className="py-2.5 px-3 min-w-[150px]">B Takımı</th>
-              <th className="py-2.5 px-2 text-center w-20">Skor</th>
-              <th className="py-2.5 px-3 min-w-[180px]">Set Skorları</th>
-              <th className="py-2.5 px-2 text-center min-w-[95px]" title="Volleybox maç kaydı durumu">Volleybox</th>
-              <th className="py-2.5 px-2 text-center w-14 no-print">İşlem</th>
+            <tr className="bg-slate-100/90 text-slate-600 font-bold border-b border-slate-200 uppercase text-[10px] tracking-wider">
+              <th className="py-1.5 px-1.5 text-center w-7" title="Favorilere Ekle">⭐</th>
+              <th className="py-1.5 px-2.5 w-28 whitespace-nowrap">Tarih</th>
+              <th className="py-1.5 px-1.5 text-center w-12">Saat</th>
+              <th className="py-1.5 px-2.5 min-w-[130px]">Yer</th>
+              <th className="py-1.5 px-2.5 min-w-[140px]">A Takımı</th>
+              <th className="py-1.5 px-2.5 min-w-[140px]">B Takımı</th>
+              <th className="py-1.5 px-1.5 text-center w-16">Skor</th>
+              <th className="py-1.5 px-2.5 min-w-[160px]">Set Skorları</th>
+              <th className="py-1.5 px-1.5 text-center min-w-[85px]" title="Volleybox maç kaydı durumu">Volleybox</th>
+              <th className="py-1.5 px-1.5 text-center w-12 no-print">İşlem</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
@@ -135,52 +135,52 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   }`}
                 >
                   {/* ⭐ Favori */}
-                  <td className="py-2.5 px-2 text-center">
+                  <td className="py-1.5 px-1.5 text-center">
                     <button
                       onClick={() => onToggleFavorite(match.id)}
-                      className="p-1 rounded text-slate-300 hover:text-amber-400 transition-colors"
+                      className="p-0.5 rounded text-slate-300 hover:text-amber-400 transition-colors"
                       title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
                     >
                       <Star
-                        size={15}
+                        size={13}
                         className={isFav ? "fill-amber-400 text-amber-400" : ""}
                       />
                     </button>
                   </td>
 
                   {/* 1. Tarih */}
-                  <td className="py-2.5 px-3 font-mono font-medium whitespace-nowrap text-slate-800">
+                  <td className="py-1.5 px-2.5 font-mono font-medium whitespace-nowrap text-slate-800 text-[11px]">
                     <span>{date}</span>
                     {day && (
-                      <span className="text-[10px] text-slate-400 ml-1 font-sans">
+                      <span className="text-[9px] text-slate-400 ml-1 font-sans">
                         ({day})
                       </span>
                     )}
                   </td>
 
                   {/* 2. Saat */}
-                  <td className="py-2.5 px-2 text-center font-mono font-bold text-slate-700 whitespace-nowrap">
+                  <td className="py-1.5 px-1.5 text-center font-mono font-bold text-slate-700 whitespace-nowrap text-[11px]">
                     {match.time === "--:--" ? (
-                      <span className="text-slate-400 text-[11px]">-</span>
+                      <span className="text-slate-400 text-[10px]">-</span>
                     ) : (
                       <span>{match.time}</span>
                     )}
                   </td>
 
                   {/* 3. Yer */}
-                  <td className="py-2.5 px-3 text-slate-600 whitespace-nowrap" title={match.hall}>
+                  <td className="py-1.5 px-2.5 text-slate-600 whitespace-nowrap text-[11px]" title={match.hall}>
                     <div className="flex items-center gap-1">
-                      <MapPin size={11} className="text-slate-400 shrink-0" />
-                      <span className="truncate max-w-[180px]">{match.hall}</span>
+                      <MapPin size={10} className="text-slate-400 shrink-0" />
+                      <span className="truncate max-w-[150px]">{match.hall}</span>
                     </div>
                   </td>
 
                   {/* 4. A Takımı */}
-                  <td className="py-2.5 px-3 whitespace-nowrap">
+                  <td className="py-1.5 px-2.5 whitespace-nowrap">
                     <TeamVolleyboxLink
                       teamName={match.home_team}
                       category={match.category || match.age_group}
-                      className={`text-xs sm:text-[13px] ${
+                      className={`text-xs ${
                         homeWon
                           ? "font-black text-slate-900"
                           : isFinished
@@ -191,11 +191,11 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 5. B Takımı */}
-                  <td className="py-2.5 px-3 whitespace-nowrap">
+                  <td className="py-1.5 px-2.5 whitespace-nowrap">
                     <TeamVolleyboxLink
                       teamName={match.away_team}
                       category={match.category || match.age_group}
-                      className={`text-xs sm:text-[13px] ${
+                      className={`text-xs ${
                         awayWon
                           ? "font-black text-slate-900"
                           : isFinished
@@ -206,99 +206,99 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 6. Skor */}
-                  <td className="py-2.5 px-2 text-center whitespace-nowrap">
+                  <td className="py-1.5 px-1.5 text-center whitespace-nowrap">
                     {isFinished ? (
-                      <span className="inline-block px-2 py-0.5 rounded font-mono font-black text-xs bg-[#0b1325] text-white shadow-xs">
+                      <span className="inline-block px-1.5 py-0.5 rounded font-mono font-black text-[11px] bg-[#0b1325] text-white shadow-2xs">
                         {match.home_score} - {match.away_score}
                       </span>
                     ) : match.date !== "TBD" ? (
-                      <span className="inline-block px-2 py-0.5 rounded font-mono text-[11px] font-semibold bg-slate-100 text-slate-500 border border-slate-200">
+                      <span className="inline-block px-1.5 py-0.5 rounded font-mono text-[10px] font-semibold bg-slate-100 text-slate-500 border border-slate-200">
                         vs
                       </span>
                     ) : (
-                      <span className="text-slate-400 font-mono text-xs">-</span>
+                      <span className="text-slate-400 font-mono text-[11px]">-</span>
                     )}
                   </td>
 
                   {/* 7. Set Skorları */}
-                  <td className="py-2.5 px-3 text-left whitespace-nowrap">
+                  <td className="py-1.5 px-2.5 text-left whitespace-nowrap">
                     {isFinished && match.set_scores && match.set_scores.length > 0 ? (
-                      <div className="flex flex-wrap items-center gap-1">
+                      <div className="flex items-center gap-1 flex-nowrap">
                         {match.set_scores.map((set, sIdx) => (
                           <span
                             key={sIdx}
-                            className="font-mono text-[11px] bg-slate-100 text-slate-800 px-1.5 py-0.5 rounded border border-slate-200/80 font-medium"
+                            className="font-mono text-[10px] bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded border border-slate-200/80 font-medium"
                           >
                             {set}
                           </span>
                         ))}
                       </div>
                     ) : (
-                      <span className="text-slate-400 text-xs font-mono">-</span>
+                      <span className="text-slate-400 text-[11px] font-mono">-</span>
                     )}
                   </td>
 
                   {/* Volleybox Senkronizasyon ve Skor Durumu Rozeti */}
-                  <td className="py-2.5 px-2 text-center whitespace-nowrap">
+                  <td className="py-1.5 px-1.5 text-center whitespace-nowrap">
                     {match.volleybox?.synced ? (
                       match.volleybox.has_score ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 transition-all shadow-2xs group"
+                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 transition-all shadow-2xs group"
                           title={`Volleybox'ta Kayıtlı ve Skoru Girilmiş (Maç ID: #${match.volleybox.match_id} | Skor: ${match.volleybox.score}) - Tıklayarak profili açın`}
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                           <span>VB: {match.volleybox.score || "Skorlu"}</span>
-                          <ExternalLink size={10} className="text-emerald-500 group-hover:translate-x-0.5 transition-transform" />
+                          <ExternalLink size={9} className="text-emerald-500 group-hover:translate-x-0.5 transition-transform" />
                         </a>
                       ) : isFinished ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 hover:border-amber-400 transition-all shadow-2xs group"
+                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 hover:border-amber-400 transition-all shadow-2xs group"
                           title={`TVF'de Bitti Ancak Volleybox'a Skoru Henüz Girilmemiş! (Maç ID: #${match.volleybox.match_id}) - Skoru girmek için tıklayın`}
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
                           <span>VB: Skor Eksik</span>
-                          <ExternalLink size={10} className="text-amber-600 group-hover:translate-x-0.5 transition-transform" />
+                          <ExternalLink size={9} className="text-amber-600 group-hover:translate-x-0.5 transition-transform" />
                         </a>
                       ) : (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-amber-50/70 text-amber-800 border border-amber-200 hover:bg-amber-100 transition-all group"
+                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-amber-50/70 text-amber-800 border border-amber-200 hover:bg-amber-100 transition-all group"
                           title={`Volleybox'ta Kayıtlı Ancak Skoru Henüz Girilmemiş (Maç ID: #${match.volleybox.match_id}) - Maç sayfasını açmak için tıklayın`}
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
                           <span>VB: Skorsuz</span>
-                          <ExternalLink size={10} className="text-amber-500 group-hover:translate-x-0.5 transition-transform" />
+                          <ExternalLink size={9} className="text-amber-500 group-hover:translate-x-0.5 transition-transform" />
                         </a>
                       )
                     ) : (
                       <span
-                        className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] text-slate-400 bg-slate-50 border border-slate-200/60 font-medium"
+                        className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] text-slate-400 bg-slate-50 border border-slate-200/60 font-medium"
                         title="Bu maç henüz Volleybox veritabanına girilmemiş"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                        <span className="w-1 h-1 rounded-full bg-slate-300"></span>
                         <span>Girilmedi</span>
                       </span>
                     )}
                   </td>
 
                   {/* İşlemler (Kopyala / Takvim) */}
-                  <td className="py-2.5 px-2 text-center whitespace-nowrap no-print">
-                    <div className="flex items-center justify-center gap-1">
+                  <td className="py-1.5 px-1.5 text-center whitespace-nowrap no-print">
+                    <div className="flex items-center justify-center gap-0.5">
                       {!isFinished && match.date !== "TBD" && (
                         <button
                           onClick={(e) => handleDownloadIcs(e, match)}
                           className="p-1 rounded hover:bg-slate-200 text-slate-500 hover:text-primary transition-colors"
                           title="Takvime Ekle (.ics)"
                         >
-                          <CalendarPlus size={13} />
+                          <CalendarPlus size={12} />
                         </button>
                       )}
                       <button
@@ -307,9 +307,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         title="Maç Detayını Kopyala"
                       >
                         {isCopied ? (
-                          <Check size={13} className="text-emerald-600" />
+                          <Check size={12} className="text-emerald-600" />
                         ) : (
-                          <Copy size={13} />
+                          <Copy size={12} />
                         )}
                       </button>
                     </div>
