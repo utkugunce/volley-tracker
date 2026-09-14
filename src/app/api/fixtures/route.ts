@@ -44,7 +44,8 @@ export async function GET(request: Request) {
 
     if (refresh === "1") {
       if (process.env.VERCEL) {
-        const ghToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+        const rawToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+        const ghToken = rawToken?.trim();
         if (ghToken) {
           try {
             const dispatchRes = await fetch(
@@ -54,6 +55,7 @@ export async function GET(request: Request) {
                 headers: {
                   Authorization: `Bearer ${ghToken}`,
                   Accept: "application/vnd.github+json",
+                  "X-GitHub-Api-Version": "2022-11-28",
                   "User-Agent": "VolleyTracker-App",
                 },
                 body: JSON.stringify({ ref: "main" }),
