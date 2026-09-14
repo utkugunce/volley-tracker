@@ -6,6 +6,8 @@ import { DateRibbon } from "@/components/DateRibbon";
 import { FilterBar } from "@/components/FilterBar";
 import { FixtureTable } from "@/components/FixtureTable";
 import { StandingsTable } from "@/components/StandingsTable";
+import { CityTabBar } from "@/components/CityTabBar";
+import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star } from "lucide-react";
 import { isMatchPassed } from "@/utils/calendar";
@@ -19,8 +21,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Ana Sekmeler: Yalnızca "fixtures" (Fikstür) ve "standings" (Puan Durumu)
-  const [activeMainTab, setActiveMainTab] = useState<"fixtures" | "standings">("fixtures");
+  // Ana Sekmeler: "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür) ve "standings" (Puan Durumu)
+  const [activeMainTab, setActiveMainTab] = useState<"home" | "fixtures" | "standings">("home");
 
   // Fikstür Filtre Durumları
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
@@ -269,6 +271,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     return d.toISOString().split("T")[0];
   }, []);
 
+  // Bugün oynanacak maç sayısı (Header rozeti için)
+  const todayMatchesCount = useMemo(() => {
+    return (data?.matches || []).filter((m) => m.date === todayStr).length;
+  }, [data, todayStr]);
+
+  // Türkiye genelindeki toplam maç sayısı
+  const totalMatchesAcrossAll = useMemo(() => {
+    return citiesList.reduce((acc, c) => acc + (c.matches_count || 0), 0);
+  }, [citiesList]);
+
   // Tüm benzersiz takvim tarihleri (TBD hariç)
   const uniqueDates = useMemo(() => {
     if (!data?.matches) return [];
@@ -450,7 +462,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f0f2f5] text-slate-900 font-sans">
-      {/* 1. Header (FİKSTÜR ve PUAN DURUMU Sekmeleriyle + 81 İl Seçici) */}
+      {/* 1. Header (GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
       <Header
         city={data?.city}
         currentCitySlug={currentCitySlug}
@@ -459,6 +471,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         title={data?.title}
         updatedAt={data?.updated_at}
         totalMatches={data?.total_matches || 0}
+        todayMatchesCount={todayMatchesCount}
         favoritesCount={favorites.length}
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
@@ -472,6 +485,14 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         onDismissSyncFeedback={() => setSyncFeedback(null)}
       />
 
+      {/* 2. Üst İl Sekmeleri (CityTabBar: Tüm İller, İstanbul, İzmir, Yalova, Niğde vb.) */}
+      <CityTabBar
+        currentCitySlug={currentCitySlug}
+        onSelectCity={handleSelectCity}
+        cities={citiesList}
+        totalMatchesAcrossAll={totalMatchesAcrossAll}
+      />
+
       <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4">
         {/* Hata Durumu */}
         {error && (
@@ -481,8 +502,19 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
           </div>
         )}
 
-        {/* 2. SEÇİLEN SEKME GÖRÜNÜMÜ */}
-        {activeMainTab === "fixtures" ? (
+        {/* 3. SEÇİLEN SEKME GÖRÜNÜMÜ */}
+        {activeMainTab === "home" ? (
+          /* ==================== GÜNÜN MAÇLARI (ANASAYFA) ==================== */
+          <TodayMatchesView
+            matches={data?.matches || []}
+            city={data?.city}
+            todayStr={todayStr}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+            splitScreenMode={splitScreenMode}
+            onNavigateToFullFixtures={() => setActiveMainTab("fixtures")}
+          />
+        ) : activeMainTab === "fixtures" ? (
           /* ==================== FİKSTÜR SEKMESİ ==================== */
           <div>
             {/* Flashscore Yatay Tarih Şeridi (Date Ribbon) */}

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2, ExternalLink, Clock } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2, ExternalLink, Clock, Flame } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { CityInfo } from "@/types/fixture";
 
@@ -13,13 +13,14 @@ interface HeaderProps {
   title?: string;
   updatedAt?: string;
   totalMatches: number;
+  todayMatchesCount?: number;
   favoritesCount: number;
   showOnlyFavorites: boolean;
   onToggleFavoritesOnly: () => void;
   splitScreenMode?: boolean;
   onToggleSplitScreen?: () => void;
-  activeTab: "fixtures" | "standings";
-  onSelectTab: (tab: "fixtures" | "standings") => void;
+  activeTab: "home" | "fixtures" | "standings";
+  onSelectTab: (tab: "home" | "fixtures" | "standings") => void;
   onRefresh: () => void;
   isLoading: boolean;
   syncFeedback?: {
@@ -40,6 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
   cities = [],
   updatedAt,
   totalMatches,
+  todayMatchesCount = 0,
   favoritesCount,
   showOnlyFavorites,
   onToggleFavoritesOnly,
@@ -65,7 +67,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/80 gap-2">
         {/* Logo & Brand & İl Seçici */}
         <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
-          <div className="flex items-center gap-1.5 font-mono font-black text-lg tracking-tighter">
+          <div className="flex items-center gap-1.5 font-mono font-black text-lg tracking-tighter cursor-pointer" onClick={() => onSelectTab("home")}>
             <span className="bg-primary text-white px-2 py-0.5 rounded font-black">
               TVF
             </span>
@@ -93,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2">
 
           {/* Çift Ekran / Maç Giriş Modu Butonu */}
-          {activeTab === "fixtures" && onToggleSplitScreen && (
+          {(activeTab === "fixtures" || activeTab === "home") && onToggleSplitScreen && (
             <button
               onClick={onToggleSplitScreen}
               className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all border ${
@@ -112,8 +114,8 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
-          {/* Favoriler Butonu (Yalnızca Fikstür sekmesinde göster) */}
-          {activeTab === "fixtures" && (
+          {/* Favoriler Butonu */}
+          {(activeTab === "fixtures" || activeTab === "home") && (
             <button
               onClick={onToggleFavoritesOnly}
               className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all ${
@@ -242,12 +244,30 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       )}
 
-      {/* 2. SADECE FİKSTÜR VE PUAN DURUMU SEKMELERİ */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 flex items-center gap-2 text-xs font-bold">
+      {/* 2. ANA SEKMELER: GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU */}
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-xs font-bold overflow-x-auto no-scrollbar">
+        {/* Günün Maçları (Anasayfa) Sekmesi */}
+        <button
+          onClick={() => onSelectTab("home")}
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
+            activeTab === "home"
+              ? "border-primary text-white bg-slate-800/40"
+              : "border-transparent text-slate-400 hover:text-slate-200"
+          }`}
+        >
+          <Flame size={14} className={activeTab === "home" ? "text-primary fill-primary/20" : "text-slate-400"} />
+          <span>GÜNÜN MAÇLARI</span>
+          {todayMatchesCount > 0 && (
+            <span className="text-[10px] bg-primary text-white px-1.5 py-0.2 rounded-full font-mono font-bold">
+              {todayMatchesCount}
+            </span>
+          )}
+        </button>
+
         {/* Fikstür Sekmesi */}
         <button
           onClick={() => onSelectTab("fixtures")}
-          className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
             activeTab === "fixtures"
               ? "border-primary text-white bg-slate-800/40"
               : "border-transparent text-slate-400 hover:text-slate-200"
@@ -263,7 +283,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Puan Durumu Sekmesi */}
         <button
           onClick={() => onSelectTab("standings")}
-          className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
             activeTab === "standings"
               ? "border-primary text-white bg-slate-800/40"
               : "border-transparent text-slate-400 hover:text-slate-200"

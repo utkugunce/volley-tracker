@@ -69,3 +69,24 @@ export function isMatchPassed(dateStr?: string, timeStr?: string, status?: strin
   return false;
 }
 
+/**
+ * ISO veya YYYY-MM-DD formatındaki tarihi Türkçe okunaklı formata çevirir.
+ * Örn: '2026-09-14' -> '14 Eylül 2026 Pazartesi'
+ */
+export function formatDateTurkish(dateStr?: string): string {
+  if (!dateStr || dateStr === "TBD") return dateStr || "";
+  try {
+    const parts = dateStr.split("-");
+    if (parts.length === 3) {
+      const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      return d.toLocaleDateString("tr-TR", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        weekday: "long",
+      });
+    }
+  } catch {}
+  return dateStr;
+}
+

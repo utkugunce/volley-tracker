@@ -146,48 +146,107 @@ export async function GET(request: Request) {
       // fallback
     }
 
-    let filePath = path.join(process.cwd(), "data", "fixtures.json");
-    if (citySlug && citySlug !== "istanbul") {
-      const citySpecificPath = path.join(process.cwd(), "data", "cities", `${citySlug}.json`);
-      if (fs.existsSync(citySpecificPath)) {
-        filePath = citySpecificPath;
-      } else {
-        // İlgili ilde henüz fikstür açıklanmamış
-        return NextResponse.json({
-          city: officialCityName,
-          slug: citySlug,
-          title: `TVF ${officialCityName} Genç & Yıldız Kızlar Süper Lig`,
-          updated_at: new Date().toISOString(),
-          total_matches: 0,
-          unfiltered_total: 0,
-          source: `https://${citySlug}.voleyboliltemsilciligi.com`,
-          filters: {
-            categories: ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"],
-            age_groups: ["Tümü", "Genç", "Yıldız"],
-            genders: ["Kız"],
-            halls: ["Tümü"],
-          },
-          matches: [],
-          standings: {},
-          note: "Bu ilin TVF temsilciliği yeni sezon bültenini henüz girmemiştir.",
-          sync: syncMeta,
-        });
+    let data: any;
+
+    if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
+      const citiesDir = path.join(process.cwd(), "data", "cities");
+      const allMatches: any[] = [];
+      const allStandings: Record<string, any[]> = {};
+      const categoriesSet = new Set<string>(["Tümü"]);
+      const hallsSet = new Set<string>(["Tümü"]);
+      let latestUpdated = new Date(0).toISOString();
+
+      if (fs.existsSync(citiesDir)) {
+        const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
+        for (const file of files) {
+          try {
+            const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
+            const parsed = JSON.parse(content);
+            const cityName = parsed.city || file.replace(".json", "");
+            if (parsed.updated_at && parsed.updated_at > latestUpdated) {
+              latestUpdated = parsed.updated_at;
+            }
+            if (Array.isArray(parsed.matches)) {
+              for (const m of parsed.matches) {
+                allMatches.push({
+                  ...m,
+                  city: m.city || cityName,
+                });
+                if (m.category) categoriesSet.add(m.category);
+                if (m.hall) hallsSet.add(m.hall);
+              }
+            }
+            if (parsed.standings && typeof parsed.standings === "object") {
+              for (const [k, v] of Object.entries(parsed.standings)) {
+                allStandings[`${cityName} - ${k}`] = v as any[];
+              }
+            }
+          } catch (e) {
+            console.warn(`Error reading city file ${file}:`, e);
+          }
+        }
       }
-    }
 
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json(
-        {
-          error: "fixtures.json bulunamadı. Lütfen önce scraper'ı çalıştırın.",
-          matches: [],
-          total_matches: 0,
+      data = {
+        city: "Tüm İller",
+        slug: "all",
+        title: "TVF Tüm İller Genç & Yıldız Kızlar Süper Lig",
+        updated_at: latestUpdated > new Date(0).toISOString() ? latestUpdated : new Date().toISOString(),
+        total_matches: allMatches.length,
+        source: "TVF İl Temsilcilikleri",
+        filters: {
+          categories: Array.from(categoriesSet),
+          age_groups: ["Tümü", "Genç", "Yıldız"],
+          genders: ["Kız"],
+          halls: Array.from(hallsSet),
         },
-        { status: 404 }
-      );
-    }
+        matches: allMatches,
+        standings: allStandings,
+      };
+    } else {
+      let filePath = path.join(process.cwd(), "data", "fixtures.json");
+      if (citySlug && citySlug !== "istanbul") {
+        const citySpecificPath = path.join(process.cwd(), "data", "cities", `${citySlug}.json`);
+        if (fs.existsSync(citySpecificPath)) {
+          filePath = citySpecificPath;
+        } else {
+          // İlgili ilde henüz fikstür açıklanmamış
+          return NextResponse.json({
+            city: officialCityName,
+            slug: citySlug,
+            title: `TVF ${officialCityName} Genç & Yıldız Kızlar Süper Lig`,
+            updated_at: new Date().toISOString(),
+            total_matches: 0,
+            unfiltered_total: 0,
+            source: `https://${citySlug}.voleyboliltemsilciligi.com`,
+            filters: {
+              categories: ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"],
+              age_groups: ["Tümü", "Genç", "Yıldız"],
+              genders: ["Kız"],
+              halls: ["Tümü"],
+            },
+            matches: [],
+            standings: {},
+            note: "Bu ilin TVF temsilciliği yeni sezon bültenini henüz girmemiştir.",
+            sync: syncMeta,
+          });
+        }
+      }
 
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const data = JSON.parse(fileContent);
+      if (!fs.existsSync(filePath)) {
+        return NextResponse.json(
+          {
+            error: "fixtures.json bulunamadı. Lütfen önce scraper'ı çalıştırın.",
+            matches: [],
+            total_matches: 0,
+          },
+          { status: 404 }
+        );
+      }
+
+      const fileContent = fs.readFileSync(filePath, "utf-8");
+      data = JSON.parse(fileContent);
+    }
 
     let matches = data.matches || [];
 

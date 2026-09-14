@@ -242,7 +242,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   <td className="py-1.5 px-1 text-center whitespace-nowrap w-14">
                     {isFinished ? (
                       <span className="inline-block px-1.5 py-0.5 rounded font-mono font-black text-[11px] bg-[#0b1325] text-white shadow-2xs">
-                        {match.home_score} - {match.away_score}
+                        {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
+                          ? `${match.home_score} - ${match.away_score}`
+                          : match.score || "- : -"}
                       </span>
                     ) : match.date !== "TBD" ? (
                       <span className="inline-block px-1.5 py-0.5 rounded font-mono text-[10px] font-semibold bg-slate-100 text-slate-500 border border-slate-200">
