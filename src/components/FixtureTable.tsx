@@ -101,35 +101,24 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
         </span>
       </div>
 
-      {/* 2. Resmi TVF / Fikstür Tablosu */}
+      {/* 2. Resmi TVF / Fikstür Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları - Volleybox - İşlem */}
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse text-xs">
           <thead>
-            {splitScreenMode ? (
-              /* ÇİFT EKRAN MODU: Skorları ve takımları öne çıkaran 6 sütunlu süper kompakt başlık */
-              <tr className="bg-slate-100/90 text-slate-600 font-bold border-b border-slate-200 uppercase text-[10px] tracking-wider">
-                <th className="py-1.5 px-2 w-28 whitespace-nowrap">Tarih / Salon</th>
-                <th className="py-1.5 px-2 min-w-[120px] max-w-[160px]">A Takımı</th>
-                <th className="py-1.5 px-2 min-w-[120px] max-w-[160px]">B Takımı</th>
-                <th className="py-1.5 px-1.5 text-center w-14">Skor</th>
-                <th className="py-1.5 px-2 min-w-[140px]">Set Skorları</th>
-                <th className="py-1.5 px-1.5 text-center min-w-[80px]" title="Volleybox durumu">Volleybox</th>
-              </tr>
-            ) : (
-              /* STANDART MOD: Skorları Yer'den önceye alan, yatay kaydırmayı önleyen başlık */
-              <tr className="bg-slate-100/90 text-slate-600 font-bold border-b border-slate-200 uppercase text-[10px] tracking-wider">
-                <th className="py-1.5 px-1.5 text-center w-7" title="Favorilere Ekle">⭐</th>
-                <th className="py-1.5 px-2 w-24 whitespace-nowrap">Tarih</th>
-                <th className="py-1.5 px-1.5 text-center w-12">Saat</th>
-                <th className="py-1.5 px-2 min-w-[130px] max-w-[170px]">A Takımı</th>
-                <th className="py-1.5 px-2 min-w-[130px] max-w-[170px]">B Takımı</th>
-                <th className="py-1.5 px-1.5 text-center w-16">Skor</th>
-                <th className="py-1.5 px-2 min-w-[150px]">Set Skorları</th>
-                <th className="py-1.5 px-2 min-w-[120px] max-w-[160px]">Yer</th>
-                <th className="py-1.5 px-1.5 text-center min-w-[85px]" title="Volleybox maç kaydı durumu">Volleybox</th>
+            <tr className="bg-slate-100/90 text-slate-600 font-bold border-b border-slate-200 uppercase text-[10px] tracking-wider">
+              <th className="py-1.5 px-1 text-center w-7" title="Favorilere Ekle">⭐</th>
+              <th className="py-1.5 px-2 w-24 whitespace-nowrap">Tarih</th>
+              <th className="py-1.5 px-2 min-w-[110px] max-w-[150px]">Yer</th>
+              <th className="py-1.5 px-1.5 text-center w-12">Saat</th>
+              <th className="py-1.5 px-2 min-w-[120px] max-w-[160px]">A Takımı</th>
+              <th className="py-1.5 px-2 min-w-[120px] max-w-[160px]">B Takımı</th>
+              <th className="py-1.5 px-1.5 text-center w-14">Skor</th>
+              <th className="py-1.5 px-2 min-w-[140px]">Set Skorları</th>
+              <th className="py-1.5 px-1.5 text-center min-w-[80px]" title="Volleybox maç kaydı durumu">Volleybox</th>
+              {!splitScreenMode && (
                 <th className="py-1.5 px-1.5 text-center w-12 no-print">İşlem</th>
-              </tr>
-            )}
+              )}
+            </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
             {matches.map((match, idx) => {
@@ -151,56 +140,48 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       : "bg-white hover:bg-slate-50"
                   }`}
                 >
-                  {/* Tarih / Yer Sütunları */}
-                  {splitScreenMode ? (
-                    <td className="py-1.5 px-2 whitespace-nowrap text-[11px] leading-tight">
-                      <div className="font-bold text-slate-800 font-mono">
-                        {date} <span className="text-[9px] text-slate-400 font-sans font-normal">({day})</span>
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-sans flex items-center gap-1 mt-0.5" title={match.hall}>
-                        <span className="font-mono font-bold text-slate-700">{match.time}</span>
-                        <span>•</span>
-                        <span className="truncate max-w-[110px]">{match.hall}</span>
-                      </div>
-                    </td>
-                  ) : (
-                    <>
-                      {/* ⭐ Favori */}
-                      <td className="py-1.5 px-1.5 text-center">
-                        <button
-                          onClick={() => onToggleFavorite(match.id)}
-                          className="p-0.5 rounded text-slate-300 hover:text-amber-400 transition-colors"
-                          title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
-                        >
-                          <Star
-                            size={13}
-                            className={isFav ? "fill-amber-400 text-amber-400" : ""}
-                          />
-                        </button>
-                      </td>
+                  {/* ⭐ Favori */}
+                  <td className="py-1.5 px-1 text-center">
+                    <button
+                      onClick={() => onToggleFavorite(match.id)}
+                      className="p-0.5 rounded text-slate-300 hover:text-amber-400 transition-colors"
+                      title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+                    >
+                      <Star
+                        size={13}
+                        className={isFav ? "fill-amber-400 text-amber-400" : ""}
+                      />
+                    </button>
+                  </td>
 
-                      {/* 1. Tarih */}
-                      <td className="py-1.5 px-2 font-mono font-medium whitespace-nowrap text-slate-800 text-[11px]">
-                        <span>{date}</span>
-                        {day && (
-                          <span className="text-[9px] text-slate-400 ml-1 font-sans">
-                            ({day})
-                          </span>
-                        )}
-                      </td>
+                  {/* 1. Tarih */}
+                  <td className="py-1.5 px-2 font-mono font-medium whitespace-nowrap text-slate-800 text-[11px]">
+                    <span>{date}</span>
+                    {day && (
+                      <span className="text-[9px] text-slate-400 ml-1 font-sans">
+                        ({day})
+                      </span>
+                    )}
+                  </td>
 
-                      {/* 2. Saat */}
-                      <td className="py-1.5 px-1.5 text-center font-mono font-bold text-slate-700 whitespace-nowrap text-[11px]">
-                        {match.time === "--:--" ? (
-                          <span className="text-slate-400 text-[10px]">-</span>
-                        ) : (
-                          <span>{match.time}</span>
-                        )}
-                      </td>
-                    </>
-                  )}
+                  {/* 2. Yer */}
+                  <td className="py-1.5 px-2 text-slate-600 whitespace-nowrap text-[11px]" title={match.hall}>
+                    <div className="flex items-center gap-1">
+                      <MapPin size={10} className="text-slate-400 shrink-0" />
+                      <span className="truncate max-w-[110px] sm:max-w-[140px]">{match.hall}</span>
+                    </div>
+                  </td>
 
-                  {/* 3. A Takımı */}
+                  {/* 3. Saat */}
+                  <td className="py-1.5 px-1.5 text-center font-mono font-bold text-slate-700 whitespace-nowrap text-[11px]">
+                    {match.time === "--:--" ? (
+                      <span className="text-slate-400 text-[10px]">-</span>
+                    ) : (
+                      <span>{match.time}</span>
+                    )}
+                  </td>
+
+                  {/* 4. A Takımı */}
                   <td className="py-1.5 px-2 whitespace-nowrap">
                     <TeamVolleyboxLink
                       teamName={match.home_team}
@@ -215,7 +196,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     />
                   </td>
 
-                  {/* 4. B Takımı */}
+                  {/* 5. B Takımı */}
                   <td className="py-1.5 px-2 whitespace-nowrap">
                     <TeamVolleyboxLink
                       teamName={match.away_team}
@@ -230,7 +211,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     />
                   </td>
 
-                  {/* 5. Skor (Takımlardan hemen sonra gelir!) */}
+                  {/* 6. Skor */}
                   <td className="py-1.5 px-1.5 text-center whitespace-nowrap">
                     {isFinished ? (
                       <span className="inline-block px-1.5 py-0.5 rounded font-mono font-black text-[11px] bg-[#0b1325] text-white shadow-2xs">
@@ -245,7 +226,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     )}
                   </td>
 
-                  {/* 6. Set Skorları (Skorun hemen yanında yer alır!) */}
+                  {/* 7. Set Skorları */}
                   <td className="py-1.5 px-2 text-left whitespace-nowrap">
                     {isFinished && match.set_scores && match.set_scores.length > 0 ? (
                       <div className="flex items-center gap-1 flex-nowrap">
@@ -262,16 +243,6 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       <span className="text-slate-400 text-[11px] font-mono">-</span>
                     )}
                   </td>
-
-                  {/* 7. Yer (Standart modda gösterilir) */}
-                  {!splitScreenMode && (
-                    <td className="py-1.5 px-2 text-slate-600 whitespace-nowrap text-[11px]" title={match.hall}>
-                      <div className="flex items-center gap-1">
-                        <MapPin size={10} className="text-slate-400 shrink-0" />
-                        <span className="truncate max-w-[140px]">{match.hall}</span>
-                      </div>
-                    </td>
-                  )}
 
                   {/* 8. Volleybox Senkronizasyon ve Skor Durumu Rozeti */}
                   <td className="py-1.5 px-1.5 text-center whitespace-nowrap">
@@ -324,7 +295,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     )}
                   </td>
 
-                  {/* 9. İşlemler (Standart modda gösterilir) */}
+                  {/* 9. İşlemler */}
                   {!splitScreenMode && (
                     <td className="py-1.5 px-1.5 text-center whitespace-nowrap no-print">
                       <div className="flex items-center justify-center gap-0.5">
