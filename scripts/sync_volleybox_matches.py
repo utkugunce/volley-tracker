@@ -244,9 +244,17 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
         cat = m.get("category", "")
         city = m.get("city", "İstanbul")
         
-        # Uygun Volleybox turnuvasını bul
+        # Uygun Volleybox turnuvasını bul (Kategori, İl ve Yaş Grubu esnekliğiyle)
+        age_group = m.get("age_group", "")
+        age_code = (
+            "u18" if "genç" in age_group.lower() or "genc" in age_group.lower() or "u18" in cat.lower() or "genç" in cat.lower()
+            else ("u16" if "yıldız" in age_group.lower() or "yildiz" in age_group.lower() or "u16" in cat.lower() or "yıldız" in cat.lower() else "")
+        )
+
         tourn_key = f"{cat}::{city}".lower()
         vb_m_list = vb_tournaments.get(tourn_key)
+        if not vb_m_list and age_code:
+            vb_m_list = vb_tournaments.get(f"{city}::{age_code}".lower()) or vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
         if not vb_m_list:
             # Kategori bazlı fallback
             tourn_key_alt = cat.lower()
@@ -361,8 +369,12 @@ def main():
         vb_matches = fetch_volleybox_tournament_matches(url)
         print(f"   -> {len(vb_matches)} maç tespit edildi.")
 
+        age_cat = l.get("age_category", "").lower()
         if city:
             vb_tournaments[f"{internal_name}::{city}".lower()] = vb_matches
+            if age_cat:
+                vb_tournaments[f"{city}::{age_cat}".lower()] = vb_matches
+                vb_tournaments[f"{normalize_name(city)}::{age_cat}".lower()] = vb_matches
         vb_tournaments[internal_name.lower()] = vb_matches
         time.sleep(0.3)
 

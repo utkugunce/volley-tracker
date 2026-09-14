@@ -89,7 +89,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             <LeagueVolleyboxLink league={title} city={city || matches[0]?.city}>
               {title}
             </LeagueVolleyboxLink>
-            {subTitle ? ` • ${subTitle}` : ""}
+            {subTitle && subTitle.toLowerCase() !== title.toLowerCase() && subTitle !== "Tek Grup" ? ` • ${subTitle}` : ""}
           </h3>
         </div>
         <span className="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
