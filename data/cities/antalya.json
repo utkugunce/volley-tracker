@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-14T11:44:36.322708",
+  "updated_at": "2026-09-14T16:52:44.925575",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 1,
   "source": "https://antalya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -20,7 +20,8 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "Kepez Ç.A.S.S."
     ]
   },
   "standings": {
@@ -172,7 +173,42 @@
       }
     ]
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "antalya-20260919-001",
+      "city": "Antalya",
+      "date": "2026-09-19",
+      "time": "14:30",
+      "hall": "Kepez Ç.A.S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Şimşek S.K.",
+      "away_team": "Luna S.K.",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-14T15:57:13.248559"
+  "volleybox_sync_updated_at": "2026-09-14T16:54:23.549685"
 }

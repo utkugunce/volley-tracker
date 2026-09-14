@@ -4586,6 +4586,50 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "Antalya Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-antalya-super-ligi-u18-2026-27-o50896",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "Antalya Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-antalya-super-ligi-u16-2026-27-o50897",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Düzce",
+      "city_slug": "duzce",
+      "matched_as": "Düzce Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-duzce-super-ligi-u18-2026-27-o50994",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Düzce",
+      "city_slug": "duzce",
+      "matched_as": "Düzce Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-duzce-super-ligi-u16-2026-27-o50995",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-14"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T11:44:59.477882",
+  "updated_at": "2026-09-14T16:53:08.077182",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1394,18 +1394,18 @@
         "guest_name": "Karşıyaka SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-22",
+        "vb_date": "2026-09-25",
         "vb_time": null,
         "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-09-22",
+          "vb_date": "2026-09-25",
           "vb_time": null,
           "vb_hall": "Menemen Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-25 / VB: 2026-09-22)"
+          "details": null
         }
       }
     },
@@ -2395,5 +2395,5 @@
     }
   ],
   "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-09-14T15:57:13.322552"
+  "volleybox_sync_updated_at": "2026-09-14T16:54:23.617054"
 }
