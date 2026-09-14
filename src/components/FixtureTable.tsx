@@ -5,6 +5,7 @@ import { Match } from "@/types/fixture";
 import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
+import { isMatchPassed } from "@/utils/calendar";
 
 interface FixtureTableProps {
   title: string;
@@ -259,16 +260,16 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           <span>VB: {match.volleybox.score || "Skorlu"}</span>
                           <ExternalLink size={9} className="text-emerald-500 group-hover:translate-x-0.5 transition-transform" />
                         </a>
-                      ) : isFinished ? (
+                      ) : isMatchPassed(match.date, match.time, match.status) ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 hover:border-amber-400 transition-all shadow-2xs group"
-                          title={`TVF'de Bitti Ancak Volleybox'a Skoru Henüz Girilmemiş! (Maç ID: #${match.volleybox.match_id}) - Skoru girmek için tıklayın`}
+                          title={`Maç tarihi geçmesine rağmen Volleybox'a skor henüz girilmemiş! (Maç ID: #${match.volleybox.match_id}) - Skoru girmek için tıklayın`}
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
-                          <span>VB: Skor Eksik</span>
+                          <span>VB: Skorsuz</span>
                           <ExternalLink size={9} className="text-amber-600 group-hover:translate-x-0.5 transition-transform" />
                         </a>
                       ) : (
@@ -276,12 +277,12 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-amber-50/70 text-amber-800 border border-amber-200 hover:bg-amber-100 transition-all group"
-                          title={`Volleybox'ta Kayıtlı Ancak Skoru Henüz Girilmemiş (Maç ID: #${match.volleybox.match_id}) - Maç sayfasını açmak için tıklayın`}
+                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200 transition-all group"
+                          title={`Volleybox'ta Kayıtlı Gelecek Maç (Maç ID: #${match.volleybox.match_id}) - Maç sayfasını açmak için tıklayın`}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                          <span>VB: Skorsuz</span>
-                          <ExternalLink size={9} className="text-amber-500 group-hover:translate-x-0.5 transition-transform" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                          <span>VB: Kayıtlı</span>
+                          <ExternalLink size={9} className="text-slate-400 group-hover:translate-x-0.5 transition-transform" />
                         </a>
                       )
                     ) : (

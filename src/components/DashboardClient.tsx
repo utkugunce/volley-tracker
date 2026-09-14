@@ -8,6 +8,7 @@ import { FixtureTable } from "@/components/FixtureTable";
 import { StandingsTable } from "@/components/StandingsTable";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star } from "lucide-react";
+import { isMatchPassed } from "@/utils/calendar";
 
 interface DashboardClientProps {
   initialData: FixturesData;
@@ -203,7 +204,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     const syncedMatches = validMatches.filter((m) => m.volleybox?.synced);
     const synced = syncedMatches.length;
     const scored = syncedMatches.filter((m) => m.volleybox?.has_score).length;
-    const unscored = synced - scored;
+    // Skorsuz: SADECE maç tarihi geçmesine rağmen Volleybox'a skoru henüz girilmemiş olanlar!
+    const unscored = syncedMatches.filter(
+      (m) => !m.volleybox?.has_score && isMatchPassed(m.date, m.time, m.status)
+    ).length;
     const unsynced = total - synced;
     const percent = total > 0 ? Math.round((synced / total) * 100) : 0;
     return { total, synced, scored, unscored, unsynced, percent };
@@ -260,7 +264,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       if (volleyboxFilter === "scored" && (!m.volleybox?.synced || !m.volleybox?.has_score)) {
         return false;
       }
-      if (volleyboxFilter === "unscored" && (!m.volleybox?.synced || m.volleybox?.has_score)) {
+      // Skorsuz: Maç tarihi geçmesine rağmen Volleybox'a skor girilmemiş olanlar
+      if (
+        volleyboxFilter === "unscored" &&
+        (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchPassed(m.date, m.time, m.status))
+      ) {
         return false;
       }
       if (volleyboxFilter === "unsynced" && m.volleybox?.synced) {

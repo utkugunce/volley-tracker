@@ -36,3 +36,36 @@ export function getCalendarIsoTimes(dateStr?: string, timeStr?: string): { start
     endIso: `${cleanDate}T${endH}${startM}00`,
   };
 }
+
+/**
+ * Bir maçın tarihinin ve saatinin geçip geçmediğini kontrol eder.
+ * Maç durumu "finished" ise veya maç tarihi/saati geride kalmışsa true döner.
+ */
+export function isMatchPassed(dateStr?: string, timeStr?: string, status?: string): boolean {
+  if (status === "finished") return true;
+  if (!dateStr || dateStr === "TBD") return false;
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  const today = `${year}-${month}-${day}`;
+
+  if (dateStr < today) return true;
+  if (dateStr > today) return false;
+
+  // Bugün ise saat kontrolü yap
+  if (timeStr && timeStr !== "--:--") {
+    const parts = timeStr.trim().split(/[:.]/);
+    const h = parseInt(parts[0], 10);
+    const m = parseInt(parts[1] || "0", 10);
+    if (!isNaN(h)) {
+      const currentMinutes = now.getHours() * 60 + now.getMinutes();
+      const matchMinutes = h * 60 + m;
+      return currentMinutes >= matchMinutes;
+    }
+  }
+
+  return false;
+}
+
