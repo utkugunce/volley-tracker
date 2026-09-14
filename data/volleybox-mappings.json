@@ -4158,7 +4158,9 @@
       "age_category": "U16",
       "confidence": "verified",
       "note": null,
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/odtu-gv-nigde-okullar-spor-kulubu-u16-t54400.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17893762611QQBM.png"
     },
     {
       "internal_name": "Odtü Gv Niğde Okulları Spor Kulübü",
@@ -4168,7 +4170,9 @@
       "age_category": "U18",
       "confidence": "verified",
       "note": null,
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/odtu-gv-nigde-okullar-spor-kulubu-u18-t54403.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789391530B6pom.png"
     },
     {
       "internal_name": "Niğde Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
@@ -4178,7 +4182,9 @@
       "age_category": "U16",
       "confidence": "verified",
       "note": null,
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/nigde-genclik-spor-kulubu-a-u16-t48709.png",
+      "logo_url": null
     },
     {
       "internal_name": "Niğde Sev Spor Kulübü",
@@ -4188,7 +4194,9 @@
       "age_category": "U18",
       "confidence": "verified",
       "note": null,
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/nigde-sev-voleybol-kulubu-u18-t54402.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789391522Nfvs8.png"
     },
     {
       "internal_name": "Niğde Volley Akademi Spor Kulübü",
@@ -4198,7 +4206,260 @@
       "age_category": "U16",
       "confidence": "verified",
       "note": null,
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/nigde-volley-akademi-spor-kulubu-u16-t54401.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17893759984JWfE.png"
+    },
+    {
+      "internal_name": "Koru Akademi Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Koru Akademi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/koru-akademi-spor-kulubu-u18-t41961",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/koru-akademi-spor-kulubu-u18-t41961.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Koru Akademi Spor Kulübü - B",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Koru Akademi Spor Kulübü - B U18",
+      "volleybox_url": "https://women.volleybox.net/koru-akademi-spor-kulubu-u18-t54223",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/koru-akademi-spor-kulubu-u18-t54223.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Yalova Voleybol Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Yalova Voleybol Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/yalova-voleybol-spor-kulubu-u18-t41962",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/yalova-voleybol-spor-kulubu-u18-t41962.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Yalova Voleybol Spor Kulübü - B",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Yalova Voleybol Spor Kulübü - B U18",
+      "volleybox_url": "https://women.volleybox.net/yalova-voleybol-spor-kulubu-u18-t54224",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/yalova-voleybol-spor-kulubu-u18-t54224.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Atakent Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Yalova Atakent Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/yalova-atakent-spor-kulubu-u18-t41959",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/yalova-atakent-spor-kulubu-u18-t41959.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Düzce Atletik Spor Kulubü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Düzce Atletik Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/duzce-atletik-spor-kulubu-u18-t54407",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-atletik-spor-kulubu-u18-t54407.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789381901q6kuR.png"
+    },
+    {
+      "internal_name": "Düzce Atletik Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Düzce Atletik Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/duzce-atletik-spor-kulubu-u18-t54407",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-atletik-spor-kulubu-u18-t54407.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789381901q6kuR.png"
+    },
+    {
+      "internal_name": "Düzce Ultraslan Spor Kulubü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Düzce UltrAslan Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/duzce-ultraslan-spor-kulubu-u18-t54408",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-ultraslan-spor-kulubu-u18-t54408.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789381909oe4vm.png"
+    },
+    {
+      "internal_name": "Düzce UltrAslan Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Düzce UltrAslan Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/duzce-ultraslan-spor-kulubu-u18-t54408",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-ultraslan-spor-kulubu-u18-t54408.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789381909oe4vm.png"
+    },
+    {
+      "internal_name": "Düzce Voleybol Gençlik Ve Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Düzce Voleybol SK U18",
+      "volleybox_url": "https://women.volleybox.net/duzce-voleybol-sk-a-u18-t48243",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-voleybol-sk-a-u18-t48243.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/akcakoca-orhan-ozdemir-fen-lisesi-spor-kulubu-u16-t54409",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/akcakoca-orhan-ozdemir-fen-lisesi-spor-kulubu-u16-t54409.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17893826291zm8O.png"
+    },
+    {
+      "internal_name": "Düzce Atletik Spor Kulubü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce Atletik Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-atletik-spor-kulubu-u16-t54412",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-atletik-spor-kulubu-u16-t54412.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789382641qEvy6.png"
+    },
+    {
+      "internal_name": "Düzce Atletik Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce Atletik Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-atletik-spor-kulubu-u16-t54412",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-atletik-spor-kulubu-u16-t54412.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789382641qEvy6.png"
+    },
+    {
+      "internal_name": "Düzce Ay Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce Ay Spor U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-ay-spor-u16-t54410",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-ay-spor-u16-t54410.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17893826494IFVF.png"
+    },
+    {
+      "internal_name": "Düzce Can Sportif Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce Can Sportif Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-can-sportif-spor-kulubu-u16-t54411",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Düzce Gençlik Ve Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce Gençlik Spor U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-genclik-spor-u16-t54413",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-genclik-spor-u16-t54413.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789383006s8xxO.png"
+    },
+    {
+      "internal_name": "Düzce Ultraslan Spor Kulubü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce UltrAslan Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-ultraslan-spor-kulubu-u15-t53550",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-ultraslan-spor-kulubu-u15-t53550.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17866134935AdMI.png"
+    },
+    {
+      "internal_name": "Düzce UltrAslan Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce UltrAslan Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-ultraslan-spor-kulubu-u15-t53550",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-ultraslan-spor-kulubu-u15-t53550.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17866134935AdMI.png"
+    },
+    {
+      "internal_name": "Düzce Voleybol Gençlik Ve Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Düzce Voleybol SK U16",
+      "volleybox_url": "https://women.volleybox.net/duzce-voleybol-sk-a-u16-t48688",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/duzce-voleybol-sk-a-u16-t48688.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Kzy",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "KZY Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/kzy-spor-kulubu-u16-t42689",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/kzy-spor-kulubu-u16-t42689.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1760530671hz0S3.png"
+    },
+    {
+      "internal_name": "KZY Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "KZY Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/kzy-spor-kulubu-u16-t42689",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "local_logo": "/logos/kzy-spor-kulubu-u16-t42689.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1760530671hz0S3.png"
     }
   ],
   "leagues": [
