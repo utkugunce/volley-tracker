@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T09:30:02.862481",
+  "updated_at": "2026-09-14T10:43:34.244985",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1328,48 +1328,7 @@
       }
     },
     {
-      "id": "izmir-20260922-019",
-      "city": "İzmir",
-      "date": "2026-09-22",
-      "time": "--:--",
-      "hall": "Menemen",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "3",
-      "home_team": "Vakıfbank",
-      "away_team": "Karşıyaka",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "398201",
-        "url": "https://women.volleybox.net/tr/vakfbank-zmir-u16-karsyaka-sk-u16-c398201",
-        "host_name": "Vakıfbank İzmir U16",
-        "guest_name": "Karşıyaka SK U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-09-22",
-        "vb_time": null,
-        "vb_hall": "Menemen Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-22",
-          "vb_time": null,
-          "vb_hall": "Menemen Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "izmir-20260923-020",
+      "id": "izmir-20260923-019",
       "city": "İzmir",
       "date": "2026-09-23",
       "time": "--:--",
@@ -1378,7 +1337,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "4",
+      "match_no": "3",
       "home_team": "Kzy",
       "away_team": "AB VOLEYBOL AKADEMİ",
       "score": "- : -",
@@ -1406,6 +1365,40 @@
           "vb_time": null,
           "vb_hall": "Halkapınar Spor Salonu",
           "details": null
+        }
+      }
+    },
+    {
+      "id": "izmir-20260925-020",
+      "city": "İzmir",
+      "date": "2026-09-25",
+      "time": "--:--",
+      "hall": "Menemen",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Vakıfbank",
+      "away_team": "Karşıyaka",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
         }
       }
     },
@@ -2387,6 +2380,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 43,
-  "volleybox_sync_updated_at": "2026-09-14T13:31:28.084742"
+  "volleybox_synced_matches": 42,
+  "volleybox_sync_updated_at": "2026-09-14T10:44:10.541637"
 }
