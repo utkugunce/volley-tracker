@@ -5238,23 +5238,6 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_17890479990RyDV.png"
     },
     {
-      "internal_name": "Genia Öz Akademi",
-      "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Genia Turkey Kavak Spor Kulübü",
-      "volleybox_url": "https://women.volleybox.net/kavak-spor-kulubu-t20536",
-      "age_category": "U16",
-      "confidence": "verified",
-      "note": "Genia Turkey Kavak Spor Kulübü",
-      "verified_at": "2026-09-14",
-      "aliases": [
-        "Genia Öz Akademi Spor Kulübü",
-        "Genia",
-        "Kavak Spor Kulübü"
-      ],
-      "local_logo": "/logos/kavak-spor-kulubu-t20536.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1675629104vQ3jh.png"
-    },
-    {
       "internal_name": "First Spor",
       "internal_category": "Yıldız Kızlar Süper Lig",
       "matched_as": "Akyurt First Spor Kulübü",
@@ -5288,20 +5271,40 @@
     {
       "internal_name": "Genia İz Akademi",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Genia Turkey Kavak Spor Kulübü",
-      "volleybox_url": "https://women.volleybox.net/kavak-spor-kulubu-t20536",
+      "matched_as": "Genia İz Akademi Spor Kulübü",
+      "volleybox_url": null,
       "age_category": "U16",
-      "confidence": "verified",
-      "note": "Genia Turkey Kavak Spor Kulübü (TVF fikstüründe İz Akademi olarak yazılmış)",
+      "confidence": "unmatched",
+      "note": "Genia İz Akademi Spor Kulübü (Batıkent / Ankara) - Henüz Volleybox profili bulunmuyor",
       "verified_at": "2026-09-14",
       "aliases": [
         "Genia Öz Akademi",
         "Genia Öz Akademi Spor Kulübü",
+        "Genia İz Akademi Spor Kulübü",
         "Genia",
-        "Kavak Spor Kulübü"
+        "İz Akademi"
       ],
-      "local_logo": "/logos/kavak-spor-kulubu-t20536.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1675629104vQ3jh.png"
+      "local_logo": null,
+      "logo_url": null
+    },
+    {
+      "internal_name": "Genia Öz Akademi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Genia İz Akademi Spor Kulübü",
+      "volleybox_url": null,
+      "age_category": "U16",
+      "confidence": "unmatched",
+      "note": "Genia İz Akademi Spor Kulübü (Batıkent / Ankara) - Henüz Volleybox profili bulunmuyor",
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Genia İz Akademi",
+        "Genia Öz Akademi Spor Kulübü",
+        "Genia İz Akademi Spor Kulübü",
+        "Genia",
+        "İz Akademi"
+      ],
+      "local_logo": null,
+      "logo_url": null
     }
   ],
   "leagues": [
