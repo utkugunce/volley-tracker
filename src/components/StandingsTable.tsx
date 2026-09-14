@@ -24,7 +24,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
       const leagueName = idx !== -1 ? k.slice(0, idx).trim() : k.trim();
       if (leagueName) set.add(leagueName);
     });
-    return Array.from(set);
+    return Array.from(set).sort((a, b) => a.localeCompare(b, "tr", { numeric: true }));
   }, [allKeys]);
 
   const [selectedLeague, setSelectedLeague] = useState<string>(
@@ -46,7 +46,8 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         }
       }
     });
-    return groups.length > 0 ? groups : ["A Grubu"];
+    const sorted = groups.sort((a, b) => a.localeCompare(b, "tr", { numeric: true }));
+    return sorted.length > 0 ? sorted : ["A Grubu"];
   }, [allKeys, selectedLeague]);
 
   const [selectedGroup, setSelectedGroup] = useState<string>(

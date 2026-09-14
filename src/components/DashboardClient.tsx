@@ -272,6 +272,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   }, [data, showOnlyFavorites, favorites, selectedCategory, selectedDate, statusFilter, selectedHall, searchQuery, volleyboxFilter]);
 
   // Lig & Gruba göre grupla (Genç Kızlar Süper Lig - A Grubu, B Grubu vb.)
+  // Grup sıralaması her zaman alfabetik (A, B, C...) olarak garanti edilir
   const groupedSections = useMemo(() => {
     const sections: {
       [key: string]: {
@@ -293,7 +294,23 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       sections[groupKey].matches.push(m);
     });
 
-    return Object.values(sections);
+    // Her bölümün maçlarını tarih ve saat sırasına göre diz
+    Object.values(sections).forEach((sec) => {
+      sec.matches.sort((m1, m2) => {
+        if (m1.date !== m2.date) return (m1.date || "").localeCompare(m2.date || "");
+        return (m1.time || "").localeCompare(m2.time || "");
+      });
+    });
+
+    // Grupları her zaman kesin alfabetik olarak sırala: A Grubu, B Grubu, C Grubu...
+    return Object.values(sections).sort((a, b) => {
+      // 1. Kategori / Lig sıralaması
+      const catComp = (a.title || "").localeCompare(b.title || "", "tr", { numeric: true });
+      if (catComp !== 0) return catComp;
+
+      // 2. Grup adı sıralaması: A Grubu, B Grubu, C Grubu... (Türkçe ve nümerik duyarlı)
+      return (a.subTitle || "").localeCompare(b.subTitle || "", "tr", { numeric: true });
+    });
   }, [filteredMatches]);
 
   const resetFilters = () => {
