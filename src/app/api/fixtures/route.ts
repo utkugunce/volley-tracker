@@ -44,15 +44,56 @@ export async function GET(request: Request) {
 
     if (refresh === "1") {
       if (process.env.VERCEL) {
-        // Vercel Serverless Function ortamında Python interpreter bulunmamaktadır (status 127).
-        // Veri senkronizasyonu GitHub Actions zamanlanmış görevi (cron) ile sağlanmaktadır.
-        syncMeta = {
-          attempted: true,
-          success: false,
-          mode: "github_actions_cron",
-          message:
-            "Bulut ortamında canlı Python motoru desteklenmemektedir. Güncel fikstür verileri GitHub Actions zamanlanmış görevi ile periyodik senkronize edilmektedir.",
-        };
+        const ghToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+        if (ghToken) {
+          try {
+            const dispatchRes = await fetch(
+              "https://api.github.com/repos/utkugunce/volley-tracker/actions/workflows/scrape-sync.yml/dispatches",
+              {
+                method: "POST",
+                headers: {
+                  Authorization: `Bearer ${ghToken}`,
+                  Accept: "application/vnd.github+json",
+                  "User-Agent": "VolleyTracker-App",
+                },
+                body: JSON.stringify({ ref: "main" }),
+              }
+            );
+
+            if (dispatchRes.ok || dispatchRes.status === 204) {
+              syncMeta = {
+                attempted: true,
+                success: true,
+                mode: "github_actions_dispatch",
+                message:
+                  "Canlı tarama GitHub Actions üzerinde başlatıldı! Yaklaşık 1-2 dakika içinde bülten ve Volleybox verileri güncellenecektir.",
+              };
+            } else {
+              const errBody = await dispatchRes.text();
+              syncMeta = {
+                attempted: true,
+                success: false,
+                mode: "github_actions_dispatch",
+                message: `GitHub Actions tetiklenemedi (${dispatchRes.status}): ${errBody}`,
+              };
+            }
+          } catch (e: any) {
+            syncMeta = {
+              attempted: true,
+              success: false,
+              mode: "github_actions_dispatch",
+              message: `İşlem hatası: ${e.message}`,
+            };
+          }
+        } else {
+          syncMeta = {
+            attempted: true,
+            success: false,
+            mode: "github_actions_cron",
+            message:
+              "Bulut ortamında canlı fikstür ve Volleybox taraması GitHub Actions ile periyodik (her 30 dk) çalışmaktadır. Dilerseniz Vercel'e GITHUB_TOKEN tanımlayarak bu butondan anlık tetikleme sağlayabilirsiniz.",
+          };
+        }
       } else {
         try {
           const venvPyWin = path.join(process.cwd(), ".venv", "Scripts", "python.exe");

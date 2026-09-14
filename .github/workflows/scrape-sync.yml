@@ -2,7 +2,7 @@ name: TVF Scraper Sync
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -29,6 +29,10 @@ jobs:
       - name: Run TVF 81 provinces scraper
         run: |
           python scripts/scrape_all_provinces.py
+
+      - name: Sync Volleybox matches & scores
+        run: |
+          python scripts/sync_volleybox_matches.py
 
       - name: Commit and push changes
         run: |
