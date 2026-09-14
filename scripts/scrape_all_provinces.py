@@ -110,7 +110,8 @@ def scrape_single_city(city_info):
     name = OFFICIAL_CITIES.get(ilid_int, clean_str(city_info.get("name") or "Bilinmeyen"))
     url_raw = city_info.get("url", "")
     
-    subdomain = url_raw.replace(".voleyboliltemsilciligi.com", "").replace("https://", "").replace("http://", "").strip().lower()
+    clean_url = url_raw.replace("https://", "").replace("http://", "").split("/")[0]
+    subdomain = clean_url.replace(".voleyboliltemsilciligi.com", "").strip().lower()
     if not subdomain:
         return {
             "ilid": ilid,
@@ -118,6 +119,43 @@ def scrape_single_city(city_info):
             "slug": "unknown",
             "url": url_raw,
             "status": "URL Tanımlı Değil",
+            "matches_count": 0,
+            "standings_count": 0,
+            "data_file": None
+        }
+
+    puan_url = f"https://{subdomain}.voleyboliltemsilciligi.com/PuanDurumu"
+
+    def get_fallback_result(fallback_status):
+        city_file = CITIES_DIR / f"{subdomain}.json"
+        if city_file.exists():
+            try:
+                with open(city_file, "r", encoding="utf-8") as f:
+                    cached_data = json.load(f)
+                cached_matches = cached_data.get("matches", [])
+                cached_standings = cached_data.get("standings", {})
+                m_count = len(cached_matches)
+                s_count = len(cached_standings)
+                if m_count > 0 or s_count > 0:
+                    status_lbl = f"Aktif ({m_count} Maç Mevcut)" if m_count > 0 else f"Puan Durumu Var ({s_count} Tablo)"
+                    return {
+                        "ilid": ilid,
+                        "name": name,
+                        "slug": subdomain,
+                        "url": puan_url,
+                        "status": status_lbl,
+                        "matches_count": m_count,
+                        "standings_count": s_count,
+                        "data_file": f"data/cities/{subdomain}.json"
+                    }
+            except Exception:
+                pass
+        return {
+            "ilid": ilid,
+            "name": name,
+            "slug": subdomain,
+            "url": puan_url,
+            "status": fallback_status,
             "matches_count": 0,
             "standings_count": 0,
             "data_file": None
@@ -148,45 +186,17 @@ def scrape_single_city(city_info):
                 "data_file": "data/cities/istanbul.json"
             }
         except Exception as ex:
-            return {
-                "ilid": "34",
-                "name": "İstanbul",
-                "slug": "istanbul",
-                "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-                "status": f"Hata: {ex}",
-                "matches_count": 0,
-                "standings_count": 0,
-                "data_file": None
-            }
+            return get_fallback_result(f"Hata: {ex}")
 
     # Diğer iller
-    puan_url = f"https://{subdomain}.voleyboliltemsilciligi.com/PuanDurumu"
     client = httpx.Client(headers={"User-Agent": HEADERS["User-Agent"]}, timeout=7.0, follow_redirects=True)
     
     try:
         r0 = client.get(puan_url)
         if r0.status_code != 200:
-            return {
-                "ilid": ilid,
-                "name": name,
-                "slug": subdomain,
-                "url": puan_url,
-                "status": f"HTTP {r0.status_code}",
-                "matches_count": 0,
-                "standings_count": 0,
-                "data_file": None
-            }
+            return get_fallback_result(f"HTTP {r0.status_code}")
     except Exception:
-        return {
-            "ilid": ilid,
-            "name": name,
-            "slug": subdomain,
-            "url": puan_url,
-            "status": "Bağlantı Zaman Aşımı",
-            "matches_count": 0,
-            "standings_count": 0,
-            "data_file": None
-        }
+        return get_fallback_result("Bağlantı Zaman Aşımı")
 
     soup = BeautifulSoup(decode_html(r0), "html.parser")
     state = {inp.get("name"): inp.get("value", "") for inp in soup.find_all("input") if inp.get("name")}
@@ -382,8 +392,27 @@ def scrape_single_city(city_info):
         with open(city_file, "w", encoding="utf-8") as f:
             json.dump(city_payload, f, ensure_ascii=False, indent=2)
         data_file_rel = f"data/cities/{subdomain}.json"
+    else:
+        # Eğer bu taramada yeni maç bulunamadıysa ama diskte önceden kaydedilmiş aktif veri varsa koru
+        city_file = CITIES_DIR / f"{subdomain}.json"
+        if city_file.exists():
+            try:
+                with open(city_file, "r", encoding="utf-8") as f:
+                    cached_data = json.load(f)
+                cached_matches = cached_data.get("matches", [])
+                cached_standings = cached_data.get("standings", {})
+                if cached_matches or cached_standings:
+                    city_matches = cached_matches
+                    city_standings = cached_standings
+                    data_file_rel = f"data/cities/{subdomain}.json"
+            except Exception:
+                pass
 
-    status_label = "Aktif (Maçlar Mevcut)" if city_matches else ("Puan Durumu Var" if city_standings else "Fikstür Açıklanmadı")
+    status_label = (
+        f"Aktif ({len(city_matches)} Maç Mevcut)"
+        if city_matches
+        else (f"Puan Durumu Var ({len(city_standings)} Tablo)" if city_standings else "Fikstür Açıklanmadı")
+    )
     return {
         "ilid": ilid,
         "name": name,
