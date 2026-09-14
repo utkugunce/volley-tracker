@@ -17,8 +17,6 @@ import sys
 import re
 import json
 import time
-import urllib.request
-import urllib.parse
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, List, Optional, Tuple
@@ -26,9 +24,10 @@ from typing import Dict, Any, List, Optional, Tuple
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
-# Eğer mevcut ortamda bs4 yoksa ve .venv mevcutsa otomatik .venv python ile çalıştır
+# Eğer mevcut ortamda bs4/httpx yoksa ve .venv mevcutsa otomatik .venv python ile çalıştır
 try:
     from bs4 import BeautifulSoup
+    import httpx
 except ImportError:
     venv_py = BASE_DIR / ".venv" / ("Scripts" if sys.platform == "win32" else "bin") / ("python.exe" if sys.platform == "win32" else "python")
     if venv_py.exists():
@@ -48,10 +47,10 @@ if sys.platform == "win32":
         pass
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "tr,en-US;q=0.9,en;q=0.8",
-    "X-Requested-With": "XMLHttpRequest",
+    "Accept-Language": "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Upgrade-Insecure-Requests": "1",
 }
 
 
@@ -168,11 +167,12 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
         return []
 
     matches_url = tournament_url.rstrip("/") + "/matches"
-    req = urllib.request.Request(matches_url, headers=HEADERS)
 
     try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            html = resp.read().decode("utf-8", errors="ignore")
+        client = httpx.Client(headers=HEADERS, timeout=15.0, follow_redirects=True)
+        resp = client.get(matches_url)
+        resp.raise_for_status()
+        html = resp.text
     except Exception as e:
         print(f"  [UYARI] Turnuva sayfası okunamadı ({tournament_url}): {e}")
         return []
@@ -198,15 +198,16 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
     # 2. Her round için maçları topla (GET matches_url?round_id=X)
     for rid in sorted(round_ids, key=lambda x: int(x) if x.isdigit() else 0):
         round_url = f"{matches_url}?round_id={rid}"
-        round_req = urllib.request.Request(round_url, headers=HEADERS)
         try:
-            with urllib.request.urlopen(round_req, timeout=15) as resp:
-                r_html = resp.read().decode("utf-8", errors="ignore")
-                r_soup = BeautifulSoup(r_html, "html.parser")
-                boxes = r_soup.find_all("div", class_=lambda c: c and "match_box" in str(c))
-                all_match_boxes.extend(boxes)
+            r_resp = client.get(round_url)
+            r_resp.raise_for_status()
+            r_soup = BeautifulSoup(r_resp.text, "html.parser")
+            boxes = r_soup.find_all("div", class_=lambda c: c and "match_box" in str(c))
+            all_match_boxes.extend(boxes)
         except Exception as ex:
             print(f"  [UYARI] Round {rid} maçları çekilemedi ({round_url}): {ex}")
+
+    client.close()
 
     # Eğer round'lardan hiç maç gelmediyse ana sayfadaki match_box'ları al
     if not all_match_boxes:
@@ -476,21 +477,27 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
             }
             synced_count += 1
         else:
-            m["volleybox"] = {
-                "synced": False,
-                "match_id": None,
-                "url": None,
-                "host_name": None,
-                "guest_name": None,
-                "score": None,
-                "has_score": False,
-                "vb_date": None,
-                "vb_time": None,
-                "vb_hall": None,
-                "discrepancy": {
-                    "has_diff": False
+            # Mevcut synced volleybox verisini koru (scraper yeniden yazsa bile)
+            existing_vb = m.get("volleybox")
+            if existing_vb and existing_vb.get("synced"):
+                # Zaten eşleşmiş veri var, üzerine yazma!
+                synced_count += 1
+            else:
+                m["volleybox"] = {
+                    "synced": False,
+                    "match_id": None,
+                    "url": None,
+                    "host_name": None,
+                    "guest_name": None,
+                    "score": None,
+                    "has_score": False,
+                    "vb_date": None,
+                    "vb_time": None,
+                    "vb_hall": None,
+                    "discrepancy": {
+                        "has_diff": False
+                    }
                 }
-            }
 
 
     data["matches"] = matches

@@ -366,6 +366,34 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
 
 def save_fixtures_to_json(data: Dict[str, Any], output_path: Path = OUTPUT_JSON) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    # Mevcut dosyadaki volleybox verilerini koru
+    if output_path.exists():
+        try:
+            with open(output_path, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+            existing_matches = existing_data.get("matches", [])
+            vb_lookup: Dict[str, Any] = {}
+            for em in existing_matches:
+                vb = em.get("volleybox")
+                if vb and vb.get("synced"):
+                    key = f"{em.get('home_team','').strip()}|{em.get('away_team','').strip()}|{em.get('date','')}"
+                    vb_lookup[key] = vb
+                    if em.get("id"):
+                        vb_lookup[em["id"]] = vb
+            if vb_lookup:
+                merged = 0
+                for nm in data.get("matches", []):
+                    if nm.get("volleybox", {}).get("synced"):
+                        continue
+                    key = f"{nm.get('home_team','').strip()}|{nm.get('away_team','').strip()}|{nm.get('date','')}"
+                    vb = vb_lookup.get(key) or vb_lookup.get(nm.get("id"))
+                    if vb:
+                        nm["volleybox"] = vb
+                        merged += 1
+                if merged:
+                    logger.info(f"{merged} maçın mevcut Volleybox verisi korundu.")
+        except Exception as e:
+            logger.warning(f"Volleybox veri koruma sırasında hata (devam ediliyor): {e}")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     logger.info(f"Veriler başarıyla yazıldı: {output_path} (Toplam {data['total_matches']} maç)")

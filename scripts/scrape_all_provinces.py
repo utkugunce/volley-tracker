@@ -98,11 +98,54 @@ def render_progress(current: int, total: int, plate: str, city_name: str, status
     line = f"[{current:2d}/{total}] [{bar}] {percent:5.1f}% | {plate_str} {city_name:<14} : {status_msg}"
     
     if sys.stdout.isatty():
-        sys.stdout.write(f"\r{line[:92].ljust(92)}")
+        sys.stdout.write(f"\r{line}")
         sys.stdout.flush()
     else:
         print(line)
         sys.stdout.flush()
+
+def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
+    """Mevcut dosyadaki volleybox verilerini yeni taranan mac listesine aktar.
+    Boylece scraper calistiktan sonra synced volleybox bilgileri kaybolmaz."""
+    if not existing_file.exists():
+        return new_matches
+    try:
+        with open(existing_file, "r", encoding="utf-8") as f:
+            existing_data = json.load(f)
+    except Exception:
+        return new_matches
+
+    existing_matches = existing_data.get("matches", [])
+    if not existing_matches:
+        return new_matches
+
+    # Anahtar: (home_team, away_team, date) -> volleybox bilgisi
+    vb_lookup = {}
+    for em in existing_matches:
+        vb = em.get("volleybox")
+        if vb and vb.get("synced"):
+            key = (em.get("home_team", "").strip(), em.get("away_team", "").strip(), em.get("date", ""))
+            vb_lookup[key] = vb
+            # id bazli yedek anahtar
+            if em.get("id"):
+                vb_lookup[em["id"]] = vb
+
+    if not vb_lookup:
+        return new_matches
+
+    merged_count = 0
+    for nm in new_matches:
+        if nm.get("volleybox", {}).get("synced"):
+            continue  # Zaten synced, dokunma
+        key = (nm.get("home_team", "").strip(), nm.get("away_team", "").strip(), nm.get("date", ""))
+        vb = vb_lookup.get(key) or vb_lookup.get(nm.get("id"))
+        if vb:
+            nm["volleybox"] = vb
+            merged_count += 1
+
+    if merged_count > 0:
+        print(f"  \u2728 {merged_count} macin mevcut Volleybox verisi korundu.")
+    return new_matches
 
 def scrape_single_city(city_info):
     ilid = str(city_info.get("ilid", "")).strip()
@@ -161,14 +204,17 @@ def scrape_single_city(city_info):
             "data_file": None
         }
 
-    # İstanbul özel durumu: Test edilmiş canlı motoru çalıştır
+    # Istanbul ozel durumu: Test edilmis canli motoru calistir
     if subdomain == "istanbul" and fetch_istanbul_live_data:
         try:
             ist_data = fetch_istanbul_live_data()
             matches = ist_data.get("matches", [])
             standings = ist_data.get("standings", {})
             
+            # Mevcut volleybox verilerini koru
             city_file = CITIES_DIR / "istanbul.json"
+            ist_data["matches"] = merge_volleybox_data(matches, city_file)
+            
             with open(city_file, "w", encoding="utf-8") as f:
                 json.dump(ist_data, f, ensure_ascii=False, indent=2)
                 
@@ -389,6 +435,8 @@ def scrape_single_city(city_info):
             "matches": city_matches,
         }
         city_file = CITIES_DIR / f"{subdomain}.json"
+        # Mevcut volleybox verilerini koru
+        city_payload["matches"] = merge_volleybox_data(city_matches, city_file)
         with open(city_file, "w", encoding="utf-8") as f:
             json.dump(city_payload, f, ensure_ascii=False, indent=2)
         data_file_rel = f"data/cities/{subdomain}.json"
