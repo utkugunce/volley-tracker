@@ -1,3 +1,14 @@
+export interface DiscrepancyInfo {
+  has_diff: boolean;
+  date_diff?: boolean;
+  time_diff?: boolean;
+  hall_diff?: boolean;
+  vb_date?: string | null;
+  vb_time?: string | null;
+  vb_hall?: string | null;
+  details?: string | null;
+}
+
 export interface VolleyboxMatchInfo {
   synced: boolean;
   match_id?: number | string | null;
@@ -6,6 +17,10 @@ export interface VolleyboxMatchInfo {
   guest_name?: string | null;
   score?: string | null;
   has_score?: boolean;
+  vb_date?: string | null;
+  vb_time?: string | null;
+  vb_hall?: string | null;
+  discrepancy?: DiscrepancyInfo | null;
 }
 
 export interface Match {

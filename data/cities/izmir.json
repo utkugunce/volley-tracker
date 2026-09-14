@@ -614,7 +614,13 @@
         "host_name": null,
         "guest_name": null,
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
       }
     },
     {
@@ -636,13 +642,26 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397110",
+        "url": "https://women.volleybox.net/tr/dalton-koleji-spor-kulubu-u18-parla-voleybol-kulubu-u18-c397110",
+        "host_name": "Dalton Koleji Spor Kulübü U18",
+        "guest_name": "Parla Voleybol Kulübü U18",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-20",
+        "vb_time": "17:30",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "17:30",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -670,7 +689,20 @@
         "host_name": "Gelişim Koleji SK U18",
         "guest_name": "Göztepe SK - B U18",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-17",
+        "vb_time": "20:00",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "20:00",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -698,7 +730,20 @@
         "host_name": "KZY Bornova Spor Kulübü U18",
         "guest_name": "Forza Spor Kulübü U18",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-18",
+        "vb_time": "18:30",
+        "vb_hall": "Gaziemir Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-18",
+          "vb_time": "18:30",
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -726,7 +771,20 @@
         "host_name": "Özay Voleybol Spor Kulübü U18",
         "guest_name": "Venüs Spor Kulübü U18",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-15",
+        "vb_time": "20:00",
+        "vb_hall": "Gaziemir Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-15",
+          "vb_time": "20:00",
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -748,13 +806,26 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397115",
+        "url": "https://women.volleybox.net/tr/goxu-atletik-spor-kulubu-u18-zmir-ds-spor-u18-c397115",
+        "host_name": "Göksu Atletik Spor Kulübü U18",
+        "guest_name": "İzmir DSİ Spor U18",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-17",
+        "vb_time": "18:30",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "18:30",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -782,7 +853,20 @@
         "host_name": "İzmir Altınay Spor Kulübü U18",
         "guest_name": "Arkas Spor Kulübü U18",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-15",
+        "vb_time": "18:30",
+        "vb_hall": "Gaziemir Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-15",
+          "vb_time": "18:30",
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -810,7 +894,20 @@
         "host_name": "Mavişehir Spor Kulübü U18",
         "guest_name": "Dost Spor U18",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-19",
+        "vb_time": "18:00",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "18:00",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": "Saat Değişti (TVF: 17:30 / VB: 18:00)"
+        }
       }
     },
     {
@@ -838,7 +935,20 @@
         "host_name": "AB Voleybol Akademi U16",
         "guest_name": "Vakıfbank İzmir U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-19",
+        "vb_time": "17:00",
+        "vb_hall": "Gaziemir Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "17:00",
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -866,7 +976,20 @@
         "host_name": "Karşıyaka SK U16",
         "guest_name": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-20",
+        "vb_time": "12:00",
+        "vb_hall": "Menemen Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "12:00",
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -894,7 +1017,20 @@
         "host_name": "KZY Bornova Spor Kulübü U16",
         "guest_name": "İzmirspor U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-15",
+        "vb_time": "20:00",
+        "vb_hall": "Halkapınar Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-15",
+          "vb_time": "20:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -922,7 +1058,13 @@
         "host_name": null,
         "guest_name": null,
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
       }
     },
     {
@@ -950,7 +1092,20 @@
         "host_name": "Göztepe SK - B U16",
         "guest_name": "Venüs Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-20",
+        "vb_time": "16:00",
+        "vb_hall": "Balçova Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "16:00",
+          "vb_hall": "Balçova Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -978,7 +1133,20 @@
         "host_name": "Forza Spor Kulübü U16",
         "guest_name": "Volkan Güç Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-16",
+        "vb_time": "18:30",
+        "vb_hall": "Halkapınar Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-16",
+          "vb_time": "18:30",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -1000,13 +1168,26 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397160",
+        "url": "https://women.volleybox.net/tr/parla-voleybol-kulubu-b-u16-goxu-atletik-spor-kulubu-u16-c397160",
+        "host_name": "Parla Voleybol Kulübü - B U16",
+        "guest_name": "Göksu Atletik Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-19",
+        "vb_time": "20:00",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "20:00",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": "Saat Değişti (TVF: 12:00 / VB: 20:00)"
+        }
       }
     },
     {
@@ -1028,13 +1209,26 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397124",
+        "url": "https://women.volleybox.net/tr/mavisehir-spor-kulubu-u16-arkas-spor-kulubu-u16-c397124",
+        "host_name": "Mavişehir Spor Kulübü U16",
+        "guest_name": "Arkas Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-21",
+        "vb_time": null,
+        "vb_hall": "Menemen Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-21",
+          "vb_time": null,
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -1062,7 +1256,20 @@
         "host_name": "İzmir DSİ Spor U16",
         "guest_name": "Altınordu Voleybol U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-15",
+        "vb_time": "18:30",
+        "vb_hall": "Halkapınar Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-15",
+          "vb_time": "18:30",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -1090,7 +1297,20 @@
         "host_name": "Narlıdere Belediyesi Spor Kulübü U16",
         "guest_name": "Bayraklı Belediyesi Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-16",
+        "vb_time": "18:30",
+        "vb_hall": "Gaziemir Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-16",
+          "vb_time": "18:30",
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -1118,7 +1338,20 @@
         "host_name": "Monza Spor Kulübü U16",
         "guest_name": "İzmir Altınay Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-16",
+        "vb_time": "20:00",
+        "vb_hall": "Halkapınar Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-16",
+          "vb_time": "20:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -1146,7 +1379,20 @@
         "host_name": "Dokuz Eylül Voleybol U16",
         "guest_name": "Torbalı Gelişim Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-17",
+        "vb_time": "20:00",
+        "vb_hall": "Karabağlar İzmir Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "20:00",
+          "vb_hall": "Karabağlar İzmir Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -1174,7 +1420,20 @@
         "host_name": "Dost Spor U16",
         "guest_name": "Özay Voleybol Spor Kulübü U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-18",
+        "vb_time": "20:00",
+        "vb_hall": "Gaziemir Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-18",
+          "vb_time": "20:00",
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
+        }
       }
     },
     {
@@ -1202,10 +1461,23 @@
         "host_name": "Dalton Koleji Spor Kulübü U16",
         "guest_name": "Gelişim Koleji SK U16",
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": "2026-09-18",
+        "vb_time": "20:00",
+        "vb_hall": "Menemen Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-18",
+          "vb_time": "20:00",
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
+        }
       }
     }
   ],
-  "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-09-14T11:02:36.139234"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-09-14T11:55:55.677365"
 }

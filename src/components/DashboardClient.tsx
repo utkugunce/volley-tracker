@@ -28,7 +28,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [statusFilter, setStatusFilter] = useState("all"); // "all" | "upcoming" | "finished"
   const [selectedHall, setSelectedHall] = useState("Tümü");
   const [searchQuery, setSearchQuery] = useState("");
-  const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced">("all");
+  const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy">("all");
 
   // 81 İl Desteği
   const [currentCitySlug, setCurrentCitySlug] = useState("istanbul");
@@ -208,9 +208,13 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     const unscored = syncedMatches.filter(
       (m) => !m.volleybox?.has_score && isMatchPassed(m.date, m.time, m.status)
     ).length;
+    // Değişenler: İl bülteninde tarihi, saati veya salonu değişen maçlar
+    const discrepancy = syncedMatches.filter(
+      (m) => m.volleybox?.discrepancy?.has_diff
+    ).length;
     const unsynced = total - synced;
     const percent = total > 0 ? Math.round((synced / total) * 100) : 0;
-    return { total, synced, scored, unscored, unsynced, percent };
+    return { total, synced, scored, unscored, unsynced, discrepancy, percent };
   }, [data]);
 
   // Filtrelenmiş maçlar
@@ -268,6 +272,13 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       if (
         volleyboxFilter === "unscored" &&
         (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchPassed(m.date, m.time, m.status))
+      ) {
+        return false;
+      }
+      // Değişenler: İl temsilciliği bülteninde tarih, saat veya salonu değişenler
+      if (
+        volleyboxFilter === "discrepancy" &&
+        (!m.volleybox?.synced || !m.volleybox?.discrepancy?.has_diff)
       ) {
         return false;
       }

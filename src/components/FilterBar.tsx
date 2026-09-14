@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search, X, MapPin } from "lucide-react";
+import { Search, X, MapPin, AlertTriangle } from "lucide-react";
 
 interface FilterBarProps {
   categories: string[];
@@ -25,14 +25,15 @@ interface FilterBarProps {
   onSearchChange: (q: string) => void;
 
   // Volleybox filtreleri & istatistikleri
-  volleyboxFilter?: "all" | "synced" | "scored" | "unscored" | "unsynced";
-  onSelectVolleyboxFilter?: (val: "all" | "synced" | "scored" | "unscored" | "unsynced") => void;
+  volleyboxFilter?: "all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy";
+  onSelectVolleyboxFilter?: (val: "all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy") => void;
   volleyboxStats?: {
     total: number;
     synced: number;
     scored: number;
     unscored: number;
     unsynced: number;
+    discrepancy?: number;
     percent?: number;
   };
 
@@ -231,6 +232,26 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                   </span>
                 )}
               </button>
+
+              {/* Değişenler: Tarihi, saati veya salonu il bülteninde değişen maçlar */}
+              {volleyboxStats && (volleyboxStats.discrepancy ?? 0) > 0 && (
+                <button
+                  type="button"
+                  onClick={() => onSelectVolleyboxFilter("discrepancy")}
+                  className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
+                    volleyboxFilter === "discrepancy"
+                      ? "bg-amber-600 text-white shadow-xs font-bold"
+                      : "text-amber-900 bg-amber-100/90 hover:bg-amber-200 border border-amber-300 font-bold"
+                  }`}
+                  title="Volleybox'a girildikten sonra il temsilciliğinde tarihi, saati veya salonu değişen maçlar"
+                >
+                  <AlertTriangle size={10} className={volleyboxFilter === "discrepancy" ? "text-white" : "text-amber-700"} />
+                  <span>Değişenler</span>
+                  <span className={`text-[10px] ${volleyboxFilter === "discrepancy" ? "text-amber-100" : "text-amber-800 font-bold"}`}>
+                    ({volleyboxStats.discrepancy})
+                  </span>
+                </button>
+              )}
             </div>
           )}
         </div>

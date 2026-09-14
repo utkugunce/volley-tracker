@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { isMatchPassed } from "@/utils/calendar";
@@ -129,12 +129,16 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               const awayWon = isFinished && (match.away_score ?? 0) > (match.home_score ?? 0);
               const { date, day } = formatRowDate(match.date);
               const isCopied = copiedId === match.id;
+              const disc = match.volleybox?.discrepancy;
+              const hasDiff = Boolean(disc?.has_diff);
 
               return (
                 <tr
                   key={match.id}
                   className={`transition-colors ${
-                    isFav
+                    hasDiff
+                      ? "bg-amber-50/75 border-l-4 border-l-amber-500 hover:bg-amber-100/70"
+                      : isFav
                       ? "bg-amber-50/50 hover:bg-amber-50/80"
                       : idx % 2 === 1
                       ? "bg-slate-50/40 hover:bg-slate-100/60"
@@ -157,20 +161,42 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
                   {/* 1. Tarih */}
                   <td className="py-1.5 px-2 font-mono font-medium whitespace-nowrap text-slate-800 text-[11px]">
-                    <span>{date}</span>
-                    {day && (
-                      <span className="text-[9px] text-slate-400 ml-1 font-sans">
-                        ({day})
-                      </span>
+                    <div className="flex items-center gap-1">
+                      <span className={disc?.date_diff ? "text-amber-950 font-bold bg-amber-200/70 px-1 rounded" : ""}>{date}</span>
+                      {day && (
+                        <span className="text-[9px] text-slate-400 font-sans">
+                          ({day})
+                        </span>
+                      )}
+                    </div>
+                    {disc?.date_diff && disc.vb_date && (
+                      <div
+                        className="text-[9px] font-sans font-bold text-amber-800 bg-amber-100/90 border border-amber-300 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5"
+                        title={`İl bülteninde tarih değişti! Volleybox'taki eski tarih: ${disc.vb_date}`}
+                      >
+                        <AlertTriangle size={8} className="text-amber-600 shrink-0" />
+                        <span>VB: {formatRowDate(disc.vb_date).date}</span>
+                      </div>
                     )}
                   </td>
 
                   {/* 2. Yer */}
                   <td className="py-1.5 px-2 text-slate-600 whitespace-nowrap text-[11px]" title={match.hall}>
                     <div className="flex items-center gap-1">
-                      <MapPin size={10} className="text-slate-400 shrink-0" />
-                      <span className="truncate max-w-[110px] sm:max-w-[140px]">{match.hall}</span>
+                      <MapPin size={10} className={disc?.hall_diff ? "text-amber-600 shrink-0" : "text-slate-400 shrink-0"} />
+                      <span className={`truncate max-w-[110px] sm:max-w-[140px] ${disc?.hall_diff ? "text-amber-950 font-bold bg-amber-200/70 px-1 rounded" : ""}`}>
+                        {match.hall}
+                      </span>
                     </div>
+                    {disc?.hall_diff && disc.vb_hall && (
+                      <div
+                        className="text-[9px] font-sans font-bold text-amber-800 bg-amber-100/90 border border-amber-300 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 truncate max-w-[130px]"
+                        title={`İl bülteninde salon değişti! Volleybox'taki salon: ${disc.vb_hall}`}
+                      >
+                        <AlertTriangle size={8} className="text-amber-600 shrink-0" />
+                        <span className="truncate">VB: {disc.vb_hall}</span>
+                      </div>
+                    )}
                   </td>
 
                   {/* 3. Saat */}
@@ -178,7 +204,16 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     {match.time === "--:--" ? (
                       <span className="text-slate-400 text-[10px]">-</span>
                     ) : (
-                      <span>{match.time}</span>
+                      <span className={disc?.time_diff ? "text-amber-950 bg-amber-200/70 px-1 rounded" : ""}>{match.time}</span>
+                    )}
+                    {disc?.time_diff && disc.vb_time && (
+                      <div
+                        className="text-[9px] font-sans font-bold text-amber-800 bg-amber-100/90 border border-amber-300 px-1 py-0.5 rounded inline-flex items-center justify-center gap-0.5 mt-0.5"
+                        title={`İl bülteninde saat değişti! Volleybox'taki eski saat: ${disc.vb_time}`}
+                      >
+                        <AlertTriangle size={8} className="text-amber-600 shrink-0" />
+                        <span>VB: {disc.vb_time}</span>
+                      </div>
                     )}
                   </td>
 
@@ -248,7 +283,19 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   {/* 8. Volleybox Senkronizasyon ve Skor Durumu Rozeti */}
                   <td className="py-1.5 px-1.5 text-center whitespace-nowrap">
                     {match.volleybox?.synced ? (
-                      match.volleybox.has_score ? (
+                      hasDiff ? (
+                        <a
+                          href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-400 hover:bg-amber-200 hover:border-amber-500 transition-all shadow-xs group"
+                          title={`DİKKAT: İl bülteninde değişiklik var! (${disc?.details || "Tarih/Saat/Yer farklı"}) - Volleybox'ta güncellemek için tıklayın`}
+                        >
+                          <AlertTriangle size={10} className="text-amber-700 shrink-0 animate-bounce" />
+                          <span>VB: Değişti</span>
+                          <ExternalLink size={9} className="text-amber-700 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+                      ) : match.volleybox.has_score ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
@@ -295,6 +342,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       </span>
                     )}
                   </td>
+
 
                   {/* 9. İşlemler */}
                   {!splitScreenMode && (

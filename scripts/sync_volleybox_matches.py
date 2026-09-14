@@ -20,7 +20,7 @@ import time
 import urllib.request
 import urllib.parse
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from typing import Dict, Any, List, Optional, Tuple
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -146,11 +146,34 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
         host_sets = b.get("data-hid_host_sets")
         guest_sets = b.get("data-hid_guest_sets")
         round_name = b.get("data-hid_round_name", "")
-        
-        # Tarih
-        time_tag = b.find("time", class_="date")
-        dt_iso = time_tag.get("datetime", "") if time_tag else ""
-        match_date = dt_iso.split("T")[0] if "T" in dt_iso else ""
+        arena_name = b.get("data-hid_arena_name") or ""
+        hour_time = b.get("data-hid_hour_time")
+        date_val = b.get("data-hid_date")
+
+        # Tarih ve Saat (Türkiye saati UTC+3)
+        tr_tz = timezone(timedelta(hours=3))
+        match_date = ""
+        match_time = None
+
+        if hour_time and hour_time.isdigit():
+            try:
+                dt = datetime.fromtimestamp(int(hour_time), tz=tr_tz)
+                match_date = dt.strftime("%Y-%m-%d")
+                match_time = dt.strftime("%H:%M")
+            except Exception:
+                pass
+        elif date_val and date_val.isdigit():
+            try:
+                dt = datetime.fromtimestamp(int(date_val), tz=tr_tz)
+                match_date = dt.strftime("%Y-%m-%d")
+                match_time = dt.strftime("%H:%M")
+            except Exception:
+                pass
+
+        if not match_date:
+            time_tag = b.find("time", class_="date")
+            dt_iso = time_tag.get("datetime", "") if time_tag else ""
+            match_date = dt_iso.split("T")[0] if "T" in dt_iso else ""
 
         # Volleybox Maç Bağlantısı
         m_link = None
@@ -180,6 +203,8 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
             "host_name": host,
             "guest_name": guest,
             "date": match_date,
+            "time": match_time,
+            "arena": arena_name.strip() if arena_name else "",
             "score": score_str,
             "has_score": has_score,
             "url": m_link,
@@ -187,6 +212,87 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
         })
 
     return parsed_matches
+
+
+def normalize_hall_name(hall: str) -> str:
+    if not hall:
+        return ""
+    s = hall.strip().lower()
+    s = (
+        s.replace("ı", "i")
+        .replace("ğ", "g")
+        .replace("ü", "u")
+        .replace("ş", "s")
+        .replace("ö", "o")
+        .replace("ç", "c")
+        .replace("İ", "i")
+    )
+    s = re.sub(r"\b(spor|salonu|kompleksi|merkezi|sahasi|tesisleri|kucuk|buyuk)\b", " ", s)
+    s = re.sub(r"[^a-z0-9\s]", " ", s)
+    return " ".join(s.split())
+
+
+def halls_match(tvf_hall: str, vb_hall: str) -> bool:
+    if not tvf_hall or not vb_hall:
+        return True
+    
+    t_clean = normalize_hall_name(tvf_hall)
+    v_clean = normalize_hall_name(vb_hall)
+    if not t_clean or not v_clean:
+        return True
+
+    # 4 karakter ve üzeri kelimelerin kontrolü
+    t_words = [w for w in t_clean.split() if len(w) >= 4]
+    if not t_words:
+        t_words = [w for w in t_clean.split() if len(w) >= 3]
+
+    if not t_words:
+        return True
+
+    return any(w in v_clean for w in t_words)
+
+
+def check_discrepancy(tvf_match: Dict[str, Any], vb_match: Dict[str, Any]) -> Dict[str, Any]:
+    tvf_date = tvf_match.get("date", "")
+    tvf_time = tvf_match.get("time", "")
+    tvf_hall = tvf_match.get("hall", "")
+
+    vb_date = vb_match.get("date", "")
+    vb_time = vb_match.get("time")
+    vb_hall = vb_match.get("arena", "")
+
+    date_diff = False
+    time_diff = False
+    hall_diff = False
+    details_list = []
+
+    # 1. Tarih farkı
+    if tvf_date and tvf_date != "TBD" and vb_date and tvf_date != vb_date:
+        date_diff = True
+        details_list.append(f"Tarih Değişti (TVF: {tvf_date} / VB: {vb_date})")
+
+    # 2. Saat farkı (vb_time "00:00" veya None ise saat henüz girilmemiş demektir, fark sayılmaz)
+    if tvf_time and tvf_time != "--:--" and vb_time and vb_time != "00:00" and tvf_time != vb_time:
+        time_diff = True
+        details_list.append(f"Saat Değişti (TVF: {tvf_time} / VB: {vb_time})")
+
+    # 3. Salon / Yer farkı
+    if tvf_hall and tvf_hall not in ("TBD", "Belirtilmedi", "-") and vb_hall:
+        if not halls_match(tvf_hall, vb_hall):
+            hall_diff = True
+            details_list.append(f"Salon Değişti (TVF: {tvf_hall} / VB: {vb_hall})")
+
+    has_diff = date_diff or time_diff or hall_diff
+    return {
+        "has_diff": has_diff,
+        "date_diff": date_diff,
+        "time_diff": time_diff,
+        "hall_diff": hall_diff,
+        "vb_date": vb_date or None,
+        "vb_time": vb_time if vb_time != "00:00" else None,
+        "vb_hall": vb_hall or None,
+        "details": " | ".join(details_list) if details_list else None
+    }
 
 
 def match_tvf_with_vb(tvf_match: Dict[str, Any], vb_matches: List[Dict[str, Any]], team_alias_map: Dict[str, set]) -> Optional[Dict[str, Any]]:
@@ -200,28 +306,12 @@ def match_tvf_with_vb(tvf_match: Dict[str, Any], vb_matches: List[Dict[str, Any]
     home_synonyms = team_alias_map.get(tvf_home.lower().strip(), {tvf_home_norm}) | {tvf_home_norm}
     away_synonyms = team_alias_map.get(tvf_away.lower().strip(), {tvf_away_norm}) | {tvf_away_norm}
 
+    candidate_vb = None
+
     for vb in vb_matches:
         vb_host_norm = normalize_name(vb["host_name"])
         vb_guest_norm = normalize_name(vb["guest_name"])
         vb_date = vb.get("date", "")
-
-        # Tarih kontrolü (Eğer TVF tarihi açıklanmışsa)
-        date_matches = False
-        if tvf_date and tvf_date != "TBD" and vb_date:
-            # Tarihler aynı gün veya saat dilimi farkı nedeniyle +/- 1 gün tolerans
-            if tvf_date == vb_date:
-                date_matches = True
-            else:
-                try:
-                    d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
-                    d2 = datetime.strptime(vb_date, "%Y-%m-%d")
-                    if abs((d1 - d2).days) <= 1:
-                        date_matches = True
-                except Exception:
-                    pass
-        elif not tvf_date or tvf_date == "TBD":
-            # Tarih henüz açıklanmamışsa sadece takımlardan eşleştir
-            date_matches = True
 
         # Takım kontrolü: Doğrudan veya çapraz eşleşme
         teams_direct = (
@@ -233,10 +323,31 @@ def match_tvf_with_vb(tvf_match: Dict[str, Any], vb_matches: List[Dict[str, Any]
             (vb_guest_norm in home_synonyms or any(s in vb_guest_norm for s in home_synonyms if len(s) > 3))
         )
 
-        if (teams_direct or teams_reversed) and date_matches:
+        if not (teams_direct or teams_reversed):
+            continue
+
+        # Tarih kontrolü
+        if not tvf_date or tvf_date == "TBD" or not vb_date:
             return vb
 
-    return None
+        if tvf_date == vb_date:
+            # Tam tarih ve takım eşleşmesi (en güçlü eşleşme)
+            return vb
+
+        try:
+            d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
+            d2 = datetime.strptime(vb_date, "%Y-%m-%d")
+            if abs((d1 - d2).days) <= 1:
+                # 1 gün toleranslı eşleşme
+                return vb
+        except Exception:
+            pass
+
+        # Tarihler farklı ama takımlar eşleşiyor -> Tarih değişmiş / ertelenmiş maç adayı!
+        candidate_vb = vb
+
+    # Eğer tam tarih eşleşmesi bulunamadıysa ama aynı lig/gruptaki takımlar eşleştiyse adayı döndür
+    return candidate_vb
 
 
 def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[str, Any]]], team_alias_map: Dict[str, set]) -> Tuple[int, int]:
@@ -272,6 +383,7 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
 
         matched_vb = match_tvf_with_vb(m, vb_m_list, team_alias_map)
         if matched_vb:
+            discrepancy = check_discrepancy(m, matched_vb)
             m["volleybox"] = {
                 "synced": True,
                 "match_id": matched_vb["match_id"],
@@ -279,7 +391,11 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
                 "host_name": matched_vb["host_name"],
                 "guest_name": matched_vb["guest_name"],
                 "score": matched_vb.get("score"),
-                "has_score": matched_vb.get("has_score", False)
+                "has_score": matched_vb.get("has_score", False),
+                "vb_date": matched_vb.get("date"),
+                "vb_time": matched_vb.get("time") if matched_vb.get("time") != "00:00" else None,
+                "vb_hall": matched_vb.get("arena") or None,
+                "discrepancy": discrepancy
             }
             synced_count += 1
         else:
@@ -290,8 +406,15 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
                 "host_name": None,
                 "guest_name": None,
                 "score": None,
-                "has_score": False
+                "has_score": False,
+                "vb_date": None,
+                "vb_time": None,
+                "vb_hall": None,
+                "discrepancy": {
+                    "has_diff": False
+                }
             }
+
 
     data["matches"] = matches
     data["volleybox_synced_matches"] = synced_count

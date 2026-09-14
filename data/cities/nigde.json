@@ -88,7 +88,13 @@
         "host_name": null,
         "guest_name": null,
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
       }
     },
     {
@@ -121,7 +127,13 @@
         "host_name": null,
         "guest_name": null,
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
       }
     },
     {
@@ -149,7 +161,13 @@
         "host_name": null,
         "guest_name": null,
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
       }
     },
     {
@@ -177,10 +195,16 @@
         "host_name": null,
         "guest_name": null,
         "score": null,
-        "has_score": false
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
       }
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-14T11:02:36.173059"
+  "volleybox_sync_updated_at": "2026-09-14T11:55:55.704899"
 }
