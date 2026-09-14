@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2 } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { CityInfo } from "@/types/fixture";
 
@@ -16,6 +16,8 @@ interface HeaderProps {
   favoritesCount: number;
   showOnlyFavorites: boolean;
   onToggleFavoritesOnly: () => void;
+  splitScreenMode?: boolean;
+  onToggleSplitScreen?: () => void;
   activeTab: "fixtures" | "standings";
   onSelectTab: (tab: "fixtures" | "standings") => void;
   onRefresh: () => void;
@@ -37,6 +39,8 @@ export const Header: React.FC<HeaderProps> = ({
   favoritesCount,
   showOnlyFavorites,
   onToggleFavoritesOnly,
+  splitScreenMode = false,
+  onToggleSplitScreen,
   activeTab,
   onSelectTab,
   onRefresh,
@@ -83,6 +87,26 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Sağ Taraf: Favoriler, Yazdır, Canlı Yenile */}
         <div className="flex items-center gap-2">
+
+          {/* Çift Ekran / Maç Giriş Modu Butonu */}
+          {activeTab === "fixtures" && onToggleSplitScreen && (
+            <button
+              onClick={onToggleSplitScreen}
+              className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all border ${
+                splitScreenMode
+                  ? "bg-indigo-600 text-white border-indigo-500 shadow-sm font-bold animate-pulse"
+                  : "bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border-slate-700"
+              }`}
+              title={
+                splitScreenMode
+                  ? "Çift Ekran Modundan Çık (Geniş Tablo)"
+                  : "Çift Ekran / Maç Giriş Modu: Skorları ve takımları öne çıkarır, yatay kaydırmayı tamamen kaldırır"
+              }
+            >
+              <Columns2 size={13} className={splitScreenMode ? "text-white" : "text-slate-400"} />
+              <span className="inline">Çift Ekran</span>
+            </button>
+          )}
 
           {/* Favoriler Butonu (Yalnızca Fikstür sekmesinde göster) */}
           {activeTab === "fixtures" && (

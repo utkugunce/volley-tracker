@@ -37,6 +37,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
+  // Çift Ekran / Maç Giriş Modu (Volleybox'a maç girerken skorları ve takımları öne çıkarır)
+  const [splitScreenMode, setSplitScreenMode] = useState<boolean>(false);
+
   // Canlı Senkronizasyon Durum Bildirimi
   const [syncFeedback, setSyncFeedback] = useState<{
     type: "success" | "warning" | "error";
@@ -53,6 +56,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       // ignore
     }
 
+    try {
+      const savedSplit = localStorage.getItem("tvf_split_screen");
+      if (savedSplit !== null) {
+        setSplitScreenMode(savedSplit === "true");
+      }
+    } catch (e) {
+      // ignore
+    }
+
     // 81 İl listesini yükle
     fetch("/api/cities")
       .then((res) => res.json())
@@ -63,6 +75,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       })
       .catch((err) => console.warn("Cities fetch error:", err));
   }, []);
+
+  const toggleSplitScreen = () => {
+    setSplitScreenMode((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem("tvf_split_screen", String(next));
+      } catch (e) {}
+      return next;
+    });
+  };
 
   const toggleFavorite = (matchId: string) => {
     setFavorites((prev) => {
@@ -307,6 +329,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         favoritesCount={favorites.length}
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
+        splitScreenMode={splitScreenMode}
+        onToggleSplitScreen={toggleSplitScreen}
         activeTab={activeMainTab}
         onSelectTab={setActiveMainTab}
         onRefresh={fetchData}
@@ -359,7 +383,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
               />
             )}
 
-            {/* Resmi Fikstür Tablosu: Tarih - Saat - Yer - A Takımı - B Takımı - Skor - Set Skorları */}
+            {/* Resmi Fikstür Tablosu: Tarih - Saat - A Takımı - B Takımı - Skor - Set Skorları - Yer */}
             {groupedSections.length > 0 && (
               <div className="space-y-4">
                 {groupedSections.map((sec, idx) => (
@@ -371,6 +395,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     favorites={favorites}
                     onToggleFavorite={toggleFavorite}
                     city={data?.city}
+                    splitScreenMode={splitScreenMode}
                   />
                 ))}
               </div>
