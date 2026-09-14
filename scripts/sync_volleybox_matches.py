@@ -71,9 +71,89 @@ def normalize_name(name: str) -> str:
     )
     # Yaş kategorilerini ve kulüp eklerini temizle
     s = re.sub(r"\s+u\d+", "", s)
+    s = re.sub(r"\bthy\b", "turk hava yollari", s)
     s = re.sub(r"\b(sk|kulubu|kulub|spor|bld|belediyesi|belediyespor|voleybol|atletik|akademi)\b", "", s)
     s = re.sub(r"[^a-z0-9]", "", s)
     return s.strip()
+
+
+def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
+    """
+    Takım isminden ana kök ismi ve varsa takım harfini ('a', 'b') ayıklar.
+    Örn: 'Eczacıbaşı A' -> ('eczacibasi', 'a')
+         'VakıfBank - B U16' -> ('vakifbank', 'b')
+         'THY A' -> ('turk hava yollari', 'a')
+         'Sarıyer Konak Spor Kulübü U16' -> ('sariyer konak', None)
+    """
+    if not name:
+        return "", None
+    s = name.strip().lower()
+    s = (
+        s.replace("ı", "i")
+        .replace("ğ", "g")
+        .replace("ü", "u")
+        .replace("ş", "s")
+        .replace("ö", "o")
+        .replace("ç", "c")
+        .replace("İ", "i")
+    )
+    s = re.sub(r"\s+u\d+", "", s)
+    s = re.sub(r"\bthy\b", "turk hava yollari", s)
+
+    # Takım harfi (A veya B) tespiti: ' a', ' b', ' - a', ' - b'
+    letter = None
+    m_letter = re.search(r"[\s\-_]+([ab])(?:\s+|$)", s)
+    if m_letter:
+        letter = m_letter.group(1).lower()
+        s = s[:m_letter.start()] + s[m_letter.end():]
+
+    s = re.sub(r"\b(sk|kulubu|kulub|spor|bld|belediyesi|belediyespor|voleybol|atletik|akademi)\b", " ", s)
+    s = re.sub(r"[^a-z0-9\s]", " ", s)
+    base = " ".join(s.split())
+    return base, letter
+
+
+def is_team_compatible(tvf_name: str, vb_name: str, synonyms: set) -> bool:
+    tvf_base, tvf_letter = extract_team_meta(tvf_name)
+    vb_base, vb_letter = extract_team_meta(vb_name)
+
+    if not tvf_base or not vb_base:
+        return False
+
+    # 1. Harf (A / B) uyumu kontrolü:
+    if tvf_letter == "b":
+        if vb_letter != "b":
+            return False
+    elif tvf_letter == "a":
+        if vb_letter == "b":
+            return False
+    else:
+        if vb_letter == "b":
+            return False
+
+    # 2. İsim kökü kontrolü:
+    tvf_compact = tvf_base.replace(" ", "")
+    vb_compact = vb_base.replace(" ", "")
+
+    if tvf_compact == vb_compact:
+        return True
+
+    if (len(tvf_compact) >= 4 and tvf_compact in vb_compact) or (len(vb_compact) >= 4 and vb_compact in tvf_compact):
+        return True
+
+    tvf_words = [w for w in tvf_base.split() if len(w) >= 4]
+    vb_words = [w for w in vb_base.split() if len(w) >= 4]
+    if any(w in vb_words for w in tvf_words):
+        return True
+
+    for syn in synonyms:
+        s_base, _ = extract_team_meta(syn)
+        s_compact = s_base.replace(" ", "")
+        if s_compact and len(s_compact) >= 4:
+            if s_compact in vb_compact or vb_compact in s_compact:
+                return True
+
+    return False
 
 
 def extract_tournament_id(url: str) -> Optional[str]:
@@ -300,27 +380,24 @@ def match_tvf_with_vb(tvf_match: Dict[str, Any], vb_matches: List[Dict[str, Any]
     tvf_away = tvf_match.get("away_team", "")
     tvf_date = tvf_match.get("date", "")
 
-    tvf_home_norm = normalize_name(tvf_home)
-    tvf_away_norm = normalize_name(tvf_away)
-
-    home_synonyms = team_alias_map.get(tvf_home.lower().strip(), {tvf_home_norm}) | {tvf_home_norm}
-    away_synonyms = team_alias_map.get(tvf_away.lower().strip(), {tvf_away_norm}) | {tvf_away_norm}
+    home_synonyms = team_alias_map.get(tvf_home.lower().strip(), set())
+    away_synonyms = team_alias_map.get(tvf_away.lower().strip(), set())
 
     candidate_vb = None
 
     for vb in vb_matches:
-        vb_host_norm = normalize_name(vb["host_name"])
-        vb_guest_norm = normalize_name(vb["guest_name"])
+        vb_host = vb["host_name"]
+        vb_guest = vb["guest_name"]
         vb_date = vb.get("date", "")
 
-        # Takım kontrolü: Doğrudan veya çapraz eşleşme
+        # Takım kontrolü: Doğrudan veya çapraz eşleşme (is_team_compatible ile A/B ve kök uyumu)
         teams_direct = (
-            (vb_host_norm in home_synonyms or any(s in vb_host_norm for s in home_synonyms if len(s) > 3)) and
-            (vb_guest_norm in away_synonyms or any(s in vb_guest_norm for s in away_synonyms if len(s) > 3))
+            is_team_compatible(tvf_home, vb_host, home_synonyms) and
+            is_team_compatible(tvf_away, vb_guest, away_synonyms)
         )
         teams_reversed = (
-            (vb_host_norm in away_synonyms or any(s in vb_host_norm for s in away_synonyms if len(s) > 3)) and
-            (vb_guest_norm in home_synonyms or any(s in vb_guest_norm for s in home_synonyms if len(s) > 3))
+            is_team_compatible(tvf_home, vb_guest, home_synonyms) and
+            is_team_compatible(tvf_away, vb_host, away_synonyms)
         )
 
         if not (teams_direct or teams_reversed):
