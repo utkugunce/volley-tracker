@@ -64,6 +64,15 @@ export async function GET() {
       }
     }
 
+    const nowMs = Date.now();
+    const createdMs = new Date(latestRun.created_at).getTime();
+    const elapsedSeconds = Math.max(0, Math.floor((nowMs - createdMs) / 1000));
+    const TOTAL_ESTIMATED_SECONDS = 75;
+    const remainingSeconds =
+      latestRun.status === "completed"
+        ? 0
+        : Math.max(5, TOTAL_ESTIMATED_SECONDS - elapsedSeconds);
+
     return NextResponse.json({
       available: true,
       runId: latestRun.id,
@@ -73,6 +82,9 @@ export async function GET() {
       createdAt: latestRun.created_at,
       updatedAt: latestRun.updated_at,
       activeStep,
+      elapsedSeconds,
+      remainingSeconds,
+      totalEstimatedSeconds: TOTAL_ESTIMATED_SECONDS,
     });
   } catch (err: any) {
     return NextResponse.json({

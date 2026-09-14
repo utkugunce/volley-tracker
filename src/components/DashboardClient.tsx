@@ -48,6 +48,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     link?: { url: string; label: string };
     inProgress?: boolean;
     step?: string;
+    remainingSeconds?: number;
   } | null>(null);
 
   useEffect(() => {
@@ -117,6 +118,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       setData(json);
 
       if (json.sync?.mode === "github_actions_dispatch") {
+        let currentRemaining = 75;
+
         setSyncFeedback({
           type: "info",
           message: "Canlı tarama GitHub Actions üzerinde başlatıldı! TVF bülteni ve Volleybox taranıyor...",
@@ -125,9 +128,24 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
             label: "GitHub'da Canlı İzle ↗",
           },
           inProgress: true,
+          remainingSeconds: currentRemaining,
         });
 
-        // Canlı durum takibi (Polling)
+        // 1 saniyelik pürüzsüz geri sayım sayacı
+        const countdownTimer = setInterval(() => {
+          setSyncFeedback((prev) => {
+            if (!prev || !prev.inProgress || typeof prev.remainingSeconds !== "number") {
+              return prev;
+            }
+            const nextSec = Math.max(5, prev.remainingSeconds - 1);
+            return {
+              ...prev,
+              remainingSeconds: nextSec,
+            };
+          });
+        }, 1000);
+
+        // Canlı durum takibi (Polling - her 4 saniyede bir GitHub'dan senkronize et)
         let pollCount = 0;
         const maxPolls = 35; // ~2.5 dakika
         const intervalId = setInterval(async () => {
@@ -140,20 +158,27 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                 const runUrl = sData.htmlUrl || "https://github.com/utkugunce/volley-tracker/actions";
                 if (sData.status === "in_progress" || sData.status === "queued") {
                   const stepText = sData.activeStep ? `: ${sData.activeStep}` : "...";
-                  setSyncFeedback({
+                  const serverRemaining =
+                    typeof sData.remainingSeconds === "number"
+                      ? sData.remainingSeconds
+                      : currentRemaining;
+                  setSyncFeedback((prev) => ({
                     type: "info",
                     message: `Canlı tarama devam ediyor${stepText}`,
                     link: { url: runUrl, label: "GitHub'da Canlı İzle ↗" },
                     inProgress: true,
-                  });
+                    remainingSeconds: serverRemaining,
+                  }));
                 } else if (sData.status === "completed") {
                   clearInterval(intervalId);
+                  clearInterval(countdownTimer);
                   if (sData.conclusion === "success") {
                     setSyncFeedback({
                       type: "success",
                       message: "Canlı senkronizasyon tamamlandı! Güncel fikstür ve skorlar yüklendi.",
                       link: { url: runUrl, label: "İşlem Özeti ↗" },
                       inProgress: false,
+                      remainingSeconds: 0,
                     });
                     // Verileri otomatik olarak ekrana yeniden çek
                     try {
@@ -178,6 +203,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
           if (pollCount >= maxPolls) {
             clearInterval(intervalId);
+            clearInterval(countdownTimer);
           }
         }, 4000);
       } else if (json.sync?.attempted) {

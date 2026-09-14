@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2, ExternalLink } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2, ExternalLink, Clock } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { CityInfo } from "@/types/fixture";
 
@@ -28,6 +28,7 @@ interface HeaderProps {
     link?: { url: string; label: string };
     inProgress?: boolean;
     step?: string;
+    remainingSeconds?: number;
   } | null;
   onDismissSyncFeedback?: () => void;
 }
@@ -174,40 +175,68 @@ export const Header: React.FC<HeaderProps> = ({
               : "bg-rose-950/90 text-rose-300 border-rose-800"
           }`}
         >
-          <div className="max-w-6xl mx-auto w-full flex items-center justify-between gap-2">
-            <div className="flex items-center gap-2 flex-wrap">
-              {syncFeedback.inProgress ? (
-                <RefreshCw size={13} className="animate-spin text-sky-400 shrink-0" />
-              ) : syncFeedback.type === "success" ? (
-                <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
-              ) : syncFeedback.type === "info" ? (
-                <RefreshCw size={13} className="animate-spin text-sky-400 shrink-0" />
-              ) : syncFeedback.type === "warning" ? (
-                <AlertTriangle size={14} className="text-amber-400 shrink-0" />
-              ) : (
-                <AlertCircle size={14} className="text-rose-400 shrink-0" />
-              )}
-              <span>{syncFeedback.message}</span>
-              {syncFeedback.link && (
-                <a
-                  href={syncFeedback.link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-bold underline hover:text-white transition-colors bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded ml-1"
+          <div className="max-w-6xl mx-auto w-full">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                {syncFeedback.inProgress ? (
+                  <RefreshCw size={13} className="animate-spin text-sky-400 shrink-0" />
+                ) : syncFeedback.type === "success" ? (
+                  <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+                ) : syncFeedback.type === "info" ? (
+                  <RefreshCw size={13} className="animate-spin text-sky-400 shrink-0" />
+                ) : syncFeedback.type === "warning" ? (
+                  <AlertTriangle size={14} className="text-amber-400 shrink-0" />
+                ) : (
+                  <AlertCircle size={14} className="text-rose-400 shrink-0" />
+                )}
+                <span>{syncFeedback.message}</span>
+                {syncFeedback.inProgress && typeof syncFeedback.remainingSeconds === "number" && (
+                  <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold bg-sky-500/20 text-sky-200 border border-sky-400/40 px-2 py-0.5 rounded-full shadow-xs">
+                    <Clock size={10} className="text-sky-300 shrink-0" />
+                    <span>
+                      {syncFeedback.remainingSeconds <= 5
+                        ? "Tamamlanmak üzere..."
+                        : syncFeedback.remainingSeconds < 60
+                        ? `~${syncFeedback.remainingSeconds} sn kaldı`
+                        : `~${Math.floor(syncFeedback.remainingSeconds / 60)} dk ${
+                            syncFeedback.remainingSeconds % 60 > 0
+                              ? `${syncFeedback.remainingSeconds % 60} sn `
+                              : ""
+                          }kaldı`}
+                    </span>
+                  </span>
+                )}
+                {syncFeedback.link && (
+                  <a
+                    href={syncFeedback.link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-bold underline hover:text-white transition-colors bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded ml-1 text-[11px]"
+                  >
+                    <span>{syncFeedback.link.label}</span>
+                    <ExternalLink size={11} />
+                  </a>
+                )}
+              </div>
+              {onDismissSyncFeedback && (
+                <button
+                  onClick={onDismissSyncFeedback}
+                  className="text-xs opacity-70 hover:opacity-100 transition-opacity ml-2 px-1 cursor-pointer"
+                  title="Bildirimi Kapat"
                 >
-                  <span>{syncFeedback.link.label}</span>
-                  <ExternalLink size={11} />
-                </a>
+                  ✕
+                </button>
               )}
             </div>
-            {onDismissSyncFeedback && (
-              <button
-                onClick={onDismissSyncFeedback}
-                className="text-xs opacity-70 hover:opacity-100 transition-opacity ml-2 px-1 cursor-pointer"
-                title="Bildirimi Kapat"
-              >
-                ✕
-              </button>
+            {syncFeedback.inProgress && typeof syncFeedback.remainingSeconds === "number" && (
+              <div className="w-full bg-sky-950/80 h-1 mt-1.5 overflow-hidden rounded-full border border-sky-800/40">
+                <div
+                  className="bg-gradient-to-r from-sky-500 to-teal-400 h-full transition-all duration-1000 ease-linear rounded-full"
+                  style={{
+                    width: `${Math.min(96, Math.max(6, Math.round(((75 - syncFeedback.remainingSeconds) / 75) * 100)))}%`,
+                  }}
+                />
+              </div>
             )}
           </div>
         </div>
