@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-14T12:20:54.391404",
-  "city": "Antalya",
-  "slug": "antalya",
-  "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
+  "updated_at": "2026-09-14T12:20:51.297445",
+  "city": "Ankara",
+  "slug": "ankara",
+  "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
-  "source": "https://antalya.voleyboliltemsilciligi.com",
+  "source": "https://ankara.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -24,10 +24,10 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 2.Grup": [
       {
         "rank": 1,
-        "team": "07 Zenit S.K.",
+        "team": "Ankara Dsi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -38,7 +38,7 @@
       },
       {
         "rank": 2,
-        "team": "Akdeniz Bilgi S.K.",
+        "team": "Başkent Arma",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -49,7 +49,7 @@
       },
       {
         "rank": 3,
-        "team": "Antalya 1907 S.K.",
+        "team": "Çaba",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -60,7 +60,7 @@
       },
       {
         "rank": 4,
-        "team": "Gazipaşa Gençler Birliği S.K.",
+        "team": "Yedidağ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -71,29 +71,7 @@
       },
       {
         "rank": 5,
-        "team": "Luna S.K.",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Murat Akar S.K.",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Şimşek S.K.",
+        "team": "Zeren",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -103,10 +81,10 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 3.Grup": [
       {
         "rank": 1,
-        "team": "07 Mega S.K.",
+        "team": "Ankara Büyükşehir Belediyesi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -117,7 +95,7 @@
       },
       {
         "rank": 2,
-        "team": "Antalya Açı Koleji S.K.",
+        "team": "Maç Akademi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -128,7 +106,7 @@
       },
       {
         "rank": 3,
-        "team": "Antalyaspor Kulübü",
+        "team": "Set Up",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -139,7 +117,7 @@
       },
       {
         "rank": 4,
-        "team": "Elit Akdeniz S.K",
+        "team": "Ted Ankara",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -150,7 +128,20 @@
       },
       {
         "rank": 5,
-        "team": "Erdem Serdar Alanya S.K.",
+        "team": "Tvf Spor Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 4.Grup": [
+      {
+        "rank": 1,
+        "team": "Ahmet Hamdi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -160,8 +151,41 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Nova S.K.",
+        "rank": 2,
+        "team": "Eryaman Gelişim",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İlbank",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "PTT",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Temiz Enerji Birliği",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -174,5 +198,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-14T12:22:39.187608"
+  "volleybox_sync_updated_at": "2026-09-14T12:22:39.183613"
 }
