@@ -21,9 +21,9 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   children,
 }) => {
   const mapping = getVolleyboxMapping(teamName, category);
-  // Yaş kategorisi (U16/U18 vb.) zaten lig başlığından belli — takım adından kaldır
-  const rawName = mapping?.matched_as || teamName;
-  const displayName = rawName.replace(/\s+U\d{2}$/, "").trim();
+  
+  // Takım adı HER ZAMAN tam ve orijinal haliyle yazılır (A / B takımı ayrımlarını korumak için)
+  const displayName = teamName?.trim() || "";
   const content = children ?? displayName;
   const [imgFailed, setImgFailed] = useState(false);
 
@@ -45,7 +45,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 
   if (!mapping || !mapping.volleybox_url) {
     return (
-      <span className={`inline-flex items-center max-w-[105px] sm:max-w-[125px] md:max-w-[150px] lg:max-w-[220px] ${className}`} title={displayName}>
+      <span className={`inline-flex items-center max-w-[180px] sm:max-w-[220px] md:max-w-[280px] lg:max-w-[340px] ${className}`} title={displayName}>
         {logoElement}
         <span className="truncate">{content}</span>
       </span>
@@ -54,7 +54,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 
   const isClubLevelOnly = mapping.confidence === "club_level_only";
   const title = isClubLevelOnly
-    ? mapping.note || "Bu bağlantı kulübün profesyonel takımına gider, bu genç takımın kendi profili değildir"
+    ? mapping.note || `${displayName} (Kulüp Düzeyi Volleybox Profili)`
     : `${displayName} — Volleybox Takım Profili`;
 
   return (
@@ -62,7 +62,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       href={mapping.volleybox_url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center max-w-[105px] sm:max-w-[125px] md:max-w-[150px] lg:max-w-[220px] hover:underline hover:text-primary transition-colors cursor-pointer ${className}`}
+      className={`group inline-flex items-center max-w-[180px] sm:max-w-[220px] md:max-w-[280px] lg:max-w-[340px] hover:underline hover:text-primary transition-colors cursor-pointer ${className}`}
       title={title}
       onClick={(e) => e.stopPropagation()}
     >

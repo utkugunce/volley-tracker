@@ -99,4 +99,34 @@ describe("FixtureTable Component", () => {
     expect(leagueLink).toBeInTheDocument();
     expect(leagueLink).toHaveAttribute("href", expect.stringContaining("women-stanbul-super-ligi-u18-2026-27-o50864"));
   });
+
+  it("takım adının sonundaki A ve B harflerini her zaman tam olarak korur", () => {
+    const mockABMatch: Match = {
+      id: "m-ab",
+      date: "2026-10-17",
+      time: "15:00",
+      hall: "TVF 50. Yıl",
+      category: "Genç Kızlar Süper Lig",
+      age_group: "Genç",
+      gender: "Kız",
+      group: "A Grubu",
+      match_no: "103",
+      home_team: "Eczacıbaşı A",
+      away_team: "VakıfBank B",
+      status: "upcoming",
+    };
+
+    render(
+      <FixtureTable
+        title="Genç Kızlar Fikstür"
+        matches={[mockABMatch]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText("Eczacıbaşı A")).toBeInTheDocument();
+    expect(screen.getByText("VakıfBank B")).toBeInTheDocument();
+  });
 });
+

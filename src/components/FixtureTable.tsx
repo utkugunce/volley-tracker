@@ -107,8 +107,8 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               <th className="py-1.5 px-1.5 w-[76px] whitespace-nowrap">Tarih</th>
               <th className="py-1.5 px-1.5 min-w-[70px] max-w-[95px] lg:max-w-[130px]">Yer</th>
               <th className="py-1.5 px-1 text-center w-11">Saat</th>
-              <th className="py-1.5 px-1.5 min-w-[90px] max-w-[125px] lg:max-w-[155px]">A Takımı</th>
-              <th className="py-1.5 px-1.5 min-w-[90px] max-w-[125px] lg:max-w-[155px]">B Takımı</th>
+              <th className="py-1.5 px-1.5 min-w-[120px] max-w-[200px] lg:max-w-[260px]">A Takımı</th>
+              <th className="py-1.5 px-1.5 min-w-[120px] max-w-[200px] lg:max-w-[260px]">B Takımı</th>
               <th className="py-1.5 px-1 text-center w-14 whitespace-nowrap">Skor</th>
               <th className={`py-1.5 px-1.5 min-w-[110px] max-w-[145px] ${splitScreenMode ? "hidden" : ""}`}>Set Skorları</th>
               <th className="py-1.5 px-1 text-center min-w-[75px]" title="Volleybox maç kaydı durumu">Volleybox</th>
