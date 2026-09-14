@@ -45,7 +45,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 
   if (!mapping || !mapping.volleybox_url) {
     return (
-      <span className={`inline-flex items-center max-w-[140px] sm:max-w-[180px] lg:max-w-[240px] ${className}`} title={displayName}>
+      <span className={`inline-flex items-center max-w-[105px] sm:max-w-[125px] md:max-w-[150px] lg:max-w-[220px] ${className}`} title={displayName}>
         {logoElement}
         <span className="truncate">{content}</span>
       </span>
@@ -62,7 +62,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       href={mapping.volleybox_url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center max-w-[140px] sm:max-w-[180px] lg:max-w-[240px] hover:underline hover:text-primary transition-colors cursor-pointer ${className}`}
+      className={`group inline-flex items-center max-w-[105px] sm:max-w-[125px] md:max-w-[150px] lg:max-w-[220px] hover:underline hover:text-primary transition-colors cursor-pointer ${className}`}
       title={title}
       onClick={(e) => e.stopPropagation()}
     >

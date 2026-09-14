@@ -103,17 +103,17 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
         <table className="w-full text-left border-collapse text-xs">
           <thead>
             <tr className="bg-slate-100/90 text-slate-600 font-bold border-b border-slate-200 uppercase text-[10px] tracking-wider">
-              <th className="py-1.5 px-1 text-center w-7" title="Favorilere Ekle">⭐</th>
-              <th className="py-1.5 px-2 w-24 whitespace-nowrap">Tarih</th>
-              <th className="py-1.5 px-2 min-w-[110px] max-w-[150px]">Yer</th>
-              <th className="py-1.5 px-1.5 text-center w-12">Saat</th>
-              <th className="py-1.5 px-2 min-w-[120px] max-w-[160px]">A Takımı</th>
-              <th className="py-1.5 px-2 min-w-[120px] max-w-[160px]">B Takımı</th>
-              <th className="py-1.5 px-1.5 text-center w-14">Skor</th>
-              <th className="py-1.5 px-2 min-w-[140px]">Set Skorları</th>
-              <th className="py-1.5 px-1.5 text-center min-w-[80px]" title="Volleybox maç kaydı durumu">Volleybox</th>
+              <th className="py-1.5 px-1 text-center w-6" title="Favorilere Ekle">⭐</th>
+              <th className="py-1.5 px-1.5 w-[76px] whitespace-nowrap">Tarih</th>
+              <th className="py-1.5 px-1.5 min-w-[70px] max-w-[95px] lg:max-w-[130px]">Yer</th>
+              <th className="py-1.5 px-1 text-center w-11">Saat</th>
+              <th className="py-1.5 px-1.5 min-w-[90px] max-w-[125px] lg:max-w-[155px]">A Takımı</th>
+              <th className="py-1.5 px-1.5 min-w-[90px] max-w-[125px] lg:max-w-[155px]">B Takımı</th>
+              <th className="py-1.5 px-1 text-center w-14 whitespace-nowrap">Skor</th>
+              <th className={`py-1.5 px-1.5 min-w-[110px] max-w-[145px] ${splitScreenMode ? "hidden" : ""}`}>Set Skorları</th>
+              <th className="py-1.5 px-1 text-center min-w-[75px]" title="Volleybox maç kaydı durumu">Volleybox</th>
               {!splitScreenMode && (
-                <th className="py-1.5 px-1.5 text-center w-12 no-print">İşlem</th>
+                <th className="py-1.5 px-1 text-center w-10 no-print">İşlem</th>
               )}
             </tr>
           </thead>
@@ -142,7 +142,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   }`}
                 >
                   {/* ⭐ Favori */}
-                  <td className="py-1.5 px-1 text-center">
+                  <td className="py-1.5 px-1 text-center w-6">
                     <button
                       onClick={() => onToggleFavorite(match.id)}
                       className="p-0.5 rounded text-slate-300 hover:text-amber-400 transition-colors"
@@ -156,7 +156,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 1. Tarih */}
-                  <td className="py-1.5 px-2 font-mono font-medium whitespace-nowrap text-slate-800 text-[11px]">
+                  <td className="py-1.5 px-1.5 font-mono font-medium whitespace-nowrap text-slate-800 text-[11px] w-[76px]">
                     <span className={disc?.date_diff ? "text-amber-950 font-bold bg-amber-200/70 px-1 rounded" : ""}>
                       {formattedDate}
                     </span>
@@ -172,16 +172,16 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 2. Yer */}
-                  <td className="py-1.5 px-2 text-slate-600 whitespace-nowrap text-[11px]" title={match.hall}>
+                  <td className="py-1.5 px-1.5 text-slate-600 whitespace-nowrap text-[11px]" title={match.hall}>
                     <div className="flex items-center gap-1">
                       <MapPin size={10} className={disc?.hall_diff ? "text-amber-600 shrink-0" : "text-slate-400 shrink-0"} />
-                      <span className={`truncate max-w-[110px] sm:max-w-[140px] ${disc?.hall_diff ? "text-amber-950 font-bold bg-amber-200/70 px-1 rounded" : ""}`}>
+                      <span className={`truncate max-w-[70px] sm:max-w-[95px] lg:max-w-[130px] ${disc?.hall_diff ? "text-amber-950 font-bold bg-amber-200/70 px-1 rounded" : ""}`}>
                         {match.hall}
                       </span>
                     </div>
                     {disc?.hall_diff && disc.vb_hall && (
                       <div
-                        className="text-[9px] font-sans font-bold text-amber-800 bg-amber-100/90 border border-amber-300 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 truncate max-w-[130px]"
+                        className="text-[9px] font-sans font-bold text-amber-800 bg-amber-100/90 border border-amber-300 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 truncate max-w-[110px]"
                         title={`İl bülteninde salon değişti! Volleybox'taki salon: ${disc.vb_hall}`}
                       >
                         <AlertTriangle size={8} className="text-amber-600 shrink-0" />
@@ -191,7 +191,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 3. Saat */}
-                  <td className="py-1.5 px-1.5 text-center font-mono font-bold text-slate-700 whitespace-nowrap text-[11px]">
+                  <td className="py-1.5 px-1 text-center font-mono font-bold text-slate-700 whitespace-nowrap text-[11px] w-11">
                     {match.time === "--:--" ? (
                       <span className="text-slate-400 text-[10px]">-</span>
                     ) : (
@@ -209,7 +209,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 4. A Takımı */}
-                  <td className="py-1.5 px-2 whitespace-nowrap">
+                  <td className="py-1.5 px-1.5 whitespace-nowrap">
                     <TeamVolleyboxLink
                       teamName={match.home_team}
                       category={match.category || match.age_group}
@@ -224,7 +224,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 5. B Takımı */}
-                  <td className="py-1.5 px-2 whitespace-nowrap">
+                  <td className="py-1.5 px-1.5 whitespace-nowrap">
                     <TeamVolleyboxLink
                       teamName={match.away_team}
                       category={match.category || match.age_group}
@@ -239,7 +239,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 6. Skor */}
-                  <td className="py-1.5 px-1.5 text-center whitespace-nowrap">
+                  <td className="py-1.5 px-1 text-center whitespace-nowrap w-14">
                     {isFinished ? (
                       <span className="inline-block px-1.5 py-0.5 rounded font-mono font-black text-[11px] bg-[#0b1325] text-white shadow-2xs">
                         {match.home_score} - {match.away_score}
@@ -254,7 +254,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 7. Set Skorları */}
-                  <td className="py-1.5 px-2 text-left whitespace-nowrap">
+                  <td className={`py-1.5 px-1.5 text-left whitespace-nowrap ${splitScreenMode ? "hidden" : ""}`}>
                     {isFinished && match.set_scores && match.set_scores.length > 0 ? (
                       <div className="flex items-center gap-1 flex-nowrap">
                         {match.set_scores.map((set, sIdx) => (
@@ -270,6 +270,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       <span className="text-slate-400 text-[11px] font-mono">-</span>
                     )}
                   </td>
+
 
                   {/* 8. Volleybox Senkronizasyon ve Skor Durumu Rozeti */}
                   <td className="py-1.5 px-1.5 text-center whitespace-nowrap">

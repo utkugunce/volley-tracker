@@ -375,7 +375,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         onDismissSyncFeedback={() => setSyncFeedback(null)}
       />
 
-      <main className="flex-1 max-w-6xl w-full mx-auto px-2 sm:px-4 py-4">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4">
         {/* Hata Durumu */}
         {error && (
           <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 flex items-center gap-2 mb-4 text-xs font-semibold">
