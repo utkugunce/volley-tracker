@@ -27,7 +27,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [statusFilter, setStatusFilter] = useState("all"); // "all" | "upcoming" | "finished"
   const [selectedHall, setSelectedHall] = useState("Tümü");
   const [searchQuery, setSearchQuery] = useState("");
-  const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "unsynced">("all");
+  const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced">("all");
 
   // 81 İl Desteği
   const [currentCitySlug, setCurrentCitySlug] = useState("istanbul");
@@ -174,14 +174,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     return { all, upcoming, finished };
   }, [data]);
 
-  // Volleybox senkronizasyon istatistikleri
+  // Volleybox senkronizasyon ve skor istatistikleri
   const volleyboxStats = useMemo(() => {
     const validMatches = (data?.matches || []).filter((m) => m.date && m.date !== "TBD");
     const total = validMatches.length;
-    const synced = validMatches.filter((m) => m.volleybox?.synced).length;
+    const syncedMatches = validMatches.filter((m) => m.volleybox?.synced);
+    const synced = syncedMatches.length;
+    const scored = syncedMatches.filter((m) => m.volleybox?.has_score).length;
+    const unscored = synced - scored;
     const unsynced = total - synced;
     const percent = total > 0 ? Math.round((synced / total) * 100) : 0;
-    return { total, synced, unsynced, percent };
+    return { total, synced, scored, unscored, unsynced, percent };
   }, [data]);
 
   // Filtrelenmiş maçlar
@@ -228,8 +231,14 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         }
       }
 
-      // 7. Volleybox Senkronizasyon Filtresi
+      // 7. Volleybox Senkronizasyon ve Skor Filtresi
       if (volleyboxFilter === "synced" && !m.volleybox?.synced) {
+        return false;
+      }
+      if (volleyboxFilter === "scored" && (!m.volleybox?.synced || !m.volleybox?.has_score)) {
+        return false;
+      }
+      if (volleyboxFilter === "unscored" && (!m.volleybox?.synced || m.volleybox?.has_score)) {
         return false;
       }
       if (volleyboxFilter === "unsynced" && m.volleybox?.synced) {

@@ -5,6 +5,7 @@ export interface VolleyboxMatchInfo {
   host_name?: string | null;
   guest_name?: string | null;
   score?: string | null;
+  has_score?: boolean;
 }
 
 export interface Match {

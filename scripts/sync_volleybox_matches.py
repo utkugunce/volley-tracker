@@ -162,9 +162,18 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
         if not m_link:
             m_link = f"https://women.volleybox.net/m{m_id}"
 
+        has_score = False
         score_str = None
-        if host_sets is not None and guest_sets is not None and (host_sets != "" or guest_sets != ""):
-            score_str = f"{host_sets} - {guest_sets}"
+        if host_sets is not None and guest_sets is not None:
+            try:
+                h_sets = int(host_sets)
+                g_sets = int(guest_sets)
+                # Voleybolda maç skoru 0-0 olamaz; bir takım en az 1 set almışsa skor girilmiştir
+                if h_sets > 0 or g_sets > 0:
+                    has_score = True
+                    score_str = f"{h_sets} - {g_sets}"
+            except (ValueError, TypeError):
+                pass
 
         parsed_matches.append({
             "match_id": m_id,
@@ -172,6 +181,7 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
             "guest_name": guest,
             "date": match_date,
             "score": score_str,
+            "has_score": has_score,
             "url": m_link,
             "round": round_name
         })
@@ -268,7 +278,8 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
                 "url": matched_vb["url"],
                 "host_name": matched_vb["host_name"],
                 "guest_name": matched_vb["guest_name"],
-                "score": matched_vb["score"]
+                "score": matched_vb.get("score"),
+                "has_score": matched_vb.get("has_score", False)
             }
             synced_count += 1
         else:
@@ -278,7 +289,8 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
                 "url": None,
                 "host_name": None,
                 "guest_name": None,
-                "score": None
+                "score": None,
+                "has_score": False
             }
 
     data["matches"] = matches

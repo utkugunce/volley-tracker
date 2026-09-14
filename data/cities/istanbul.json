@@ -871,7 +871,8 @@
         "url": "https://women.volleybox.net/tr/eczacbas-u18-umraniye-belediyesi-spor-kulubu-u18-c396974",
         "host_name": "Eczacıbaşı U18",
         "guest_name": "Ümraniye Belediyesi Spor Kulübü U18",
-        "score": "3 - 0"
+        "score": "3 - 0",
+        "has_score": true
       }
     },
     {
@@ -903,7 +904,8 @@
         "url": "https://women.volleybox.net/tr/beylikduzu-voleybol-2021-u18-yesilyurt-spor-kulubu-u18-c396975",
         "host_name": "Beylikdüzü Voleybol 2021 U18",
         "guest_name": "Yeşilyurt Spor Kulübü U18",
-        "score": "1 - 3"
+        "score": "1 - 3",
+        "has_score": true
       }
     },
     {
@@ -934,7 +936,8 @@
         "url": "https://women.volleybox.net/tr/gungoren-voleybol-kulubu-u18-vakfbank-u18-c396979",
         "host_name": "Güngören Voleybol Kulübü U18",
         "guest_name": "VakıfBank U18",
-        "score": "0 - 3"
+        "score": "0 - 3",
+        "has_score": true
       }
     },
     {
@@ -965,7 +968,8 @@
         "url": "https://women.volleybox.net/tr/fenerbahce-u18-marmara-akademi-atletik-spor-kulubu-u18-c396980",
         "host_name": "Fenerbahçe U18",
         "guest_name": "Marmara Akademi Atletik Spor Kulübü U18",
-        "score": "3 - 0"
+        "score": "3 - 0",
+        "has_score": true
       }
     },
     {
@@ -997,7 +1001,8 @@
         "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-u18-bb-spor-kulubu-u18-c396981",
         "host_name": "Türk Hava Yolları SK U18",
         "guest_name": "İBB Spor Kulübü U18",
-        "score": "1 - 3"
+        "score": "1 - 3",
+        "has_score": true
       }
     },
     {
@@ -1028,7 +1033,8 @@
         "url": "https://women.volleybox.net/tr/eyupsultan-belediyesi-sk-u18-bahcelievler-belediyespor-u18-c396982",
         "host_name": "Eyüpsultan Belediyesi SK U18",
         "guest_name": "Bahçelievler Belediyespor U18",
-        "score": "3 - 0"
+        "score": "3 - 0",
+        "has_score": true
       }
     },
     {
@@ -1059,7 +1065,8 @@
         "url": "https://women.volleybox.net/tr/besiktas-u18-pegasus-spor-kulubu-u18-c396976",
         "host_name": "Beşiktaş U18",
         "guest_name": "Pegasus Spor Kulübü U18",
-        "score": "3 - 0"
+        "score": "3 - 0",
+        "has_score": true
       }
     },
     {
@@ -1090,7 +1097,8 @@
         "url": "https://women.volleybox.net/tr/silivri-cagrbey-sk-u18-es-voleybol-u18-c396977",
         "host_name": "Silivri Çağrıbey SK U18",
         "guest_name": "ES Voleybol U18",
-        "score": "0 - 3"
+        "score": "0 - 3",
+        "has_score": true
       }
     },
     {
@@ -1121,7 +1129,8 @@
         "url": "https://women.volleybox.net/tr/bizimkent-voleybol-spor-kulubu-u18-milan-atletik-u18-c396978",
         "host_name": "Bizimkent Voleybol Spor Kulübü U18",
         "guest_name": "Milan Atletik U18",
-        "score": "0 - 3"
+        "score": "0 - 3",
+        "has_score": true
       }
     },
     {
@@ -1148,7 +1157,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1175,7 +1185,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1202,7 +1213,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1229,7 +1241,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1256,7 +1269,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1283,7 +1297,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1310,7 +1325,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1337,7 +1353,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1364,7 +1381,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1391,7 +1409,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1418,7 +1437,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1445,7 +1465,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1472,7 +1493,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1499,7 +1521,8 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     },
     {
@@ -1526,10 +1549,11 @@
         "url": null,
         "host_name": null,
         "guest_name": null,
-        "score": null
+        "score": null,
+        "has_score": false
       }
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-09-14T10:58:34.027298"
+  "volleybox_sync_updated_at": "2026-09-14T11:02:36.128161"
 }

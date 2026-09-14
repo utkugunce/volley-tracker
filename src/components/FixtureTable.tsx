@@ -238,20 +238,46 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     )}
                   </td>
 
-                  {/* Volleybox Senkronizasyon Rozeti */}
+                  {/* Volleybox Senkronizasyon ve Skor Durumu Rozeti */}
                   <td className="py-2.5 px-2 text-center whitespace-nowrap">
                     {match.volleybox?.synced ? (
-                      <a
-                        href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 transition-all shadow-2xs group"
-                        title={`Volleybox'ta Kayıtlı (Maç ID: #${match.volleybox.match_id}) - Tıklayarak profili açın`}
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>Volleybox</span>
-                        <ExternalLink size={10} className="text-emerald-500 group-hover:translate-x-0.5 transition-transform" />
-                      </a>
+                      match.volleybox.has_score ? (
+                        <a
+                          href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 hover:border-emerald-300 transition-all shadow-2xs group"
+                          title={`Volleybox'ta Kayıtlı ve Skoru Girilmiş (Maç ID: #${match.volleybox.match_id} | Skor: ${match.volleybox.score}) - Tıklayarak profili açın`}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                          <span>VB: {match.volleybox.score || "Skorlu"}</span>
+                          <ExternalLink size={10} className="text-emerald-500 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+                      ) : isFinished ? (
+                        <a
+                          href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 hover:border-amber-400 transition-all shadow-2xs group"
+                          title={`TVF'de Bitti Ancak Volleybox'a Skoru Henüz Girilmemiş! (Maç ID: #${match.volleybox.match_id}) - Skoru girmek için tıklayın`}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                          <span>VB: Skor Eksik</span>
+                          <ExternalLink size={10} className="text-amber-600 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+                      ) : (
+                        <a
+                          href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-medium bg-amber-50/70 text-amber-800 border border-amber-200 hover:bg-amber-100 transition-all group"
+                          title={`Volleybox'ta Kayıtlı Ancak Skoru Henüz Girilmemiş (Maç ID: #${match.volleybox.match_id}) - Maç sayfasını açmak için tıklayın`}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                          <span>VB: Skorsuz</span>
+                          <ExternalLink size={10} className="text-amber-500 group-hover:translate-x-0.5 transition-transform" />
+                        </a>
+                      )
                     ) : (
                       <span
                         className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[10px] text-slate-400 bg-slate-50 border border-slate-200/60 font-medium"
