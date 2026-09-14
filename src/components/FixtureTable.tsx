@@ -29,15 +29,11 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const formatRowDate = (dateStr: string) => {
-    if (!dateStr || dateStr === "TBD") return { date: "Açıklanacak", day: "" };
+    if (!dateStr || dateStr === "TBD") return "Açıklanacak";
     const parts = dateStr.split("-");
-    if (parts.length !== 3) return { date: dateStr, day: "" };
+    if (parts.length !== 3) return dateStr;
     const [y, m, d] = parts;
-    const dateObj = new Date(Number(y), Number(m) - 1, Number(d));
-    const day = !isNaN(dateObj.getTime())
-      ? dateObj.toLocaleDateString("tr-TR", { weekday: "short" })
-      : "";
-    return { date: `${d}.${m}.${y}`, day };
+    return `${d}.${m}.${y}`;
   };
 
   const handleCopy = (e: React.MouseEvent, match: Match) => {
@@ -127,7 +123,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               const isFinished = match.status === "finished";
               const homeWon = isFinished && (match.home_score ?? 0) > (match.away_score ?? 0);
               const awayWon = isFinished && (match.away_score ?? 0) > (match.home_score ?? 0);
-              const { date, day } = formatRowDate(match.date);
+              const formattedDate = formatRowDate(match.date);
               const isCopied = copiedId === match.id;
               const disc = match.volleybox?.discrepancy;
               const hasDiff = Boolean(disc?.has_diff);
@@ -161,21 +157,16 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
                   {/* 1. Tarih */}
                   <td className="py-1.5 px-2 font-mono font-medium whitespace-nowrap text-slate-800 text-[11px]">
-                    <div className="flex items-center gap-1">
-                      <span className={disc?.date_diff ? "text-amber-950 font-bold bg-amber-200/70 px-1 rounded" : ""}>{date}</span>
-                      {day && (
-                        <span className="text-[9px] text-slate-400 font-sans">
-                          ({day})
-                        </span>
-                      )}
-                    </div>
+                    <span className={disc?.date_diff ? "text-amber-950 font-bold bg-amber-200/70 px-1 rounded" : ""}>
+                      {formattedDate}
+                    </span>
                     {disc?.date_diff && disc.vb_date && (
                       <div
                         className="text-[9px] font-sans font-bold text-amber-800 bg-amber-100/90 border border-amber-300 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5"
                         title={`İl bülteninde tarih değişti! Volleybox'taki eski tarih: ${disc.vb_date}`}
                       >
                         <AlertTriangle size={8} className="text-amber-600 shrink-0" />
-                        <span>VB: {formatRowDate(disc.vb_date).date}</span>
+                        <span>VB: {formatRowDate(disc.vb_date)}</span>
                       </div>
                     )}
                   </td>
