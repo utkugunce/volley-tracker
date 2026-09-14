@@ -315,7 +315,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     const scored = syncedMatches.filter((m) => m.volleybox?.has_score).length;
     // Skorsuz: SADECE maç tarihi geçmesine rağmen Volleybox'a skoru henüz girilmemiş olanlar!
     const unscored = syncedMatches.filter(
-      (m) => !m.volleybox?.has_score && isMatchPassed(m.date, m.time, m.status)
+      (m) => !m.volleybox?.has_score && isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status)
     ).length;
     // Değişenler: İl bülteninde tarihi, saati veya salonu değişen maçlar
     const discrepancy = syncedMatches.filter(
@@ -380,7 +380,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       // Skorsuz: Maç tarihi geçmesine rağmen Volleybox'a skor girilmemiş olanlar
       if (
         volleyboxFilter === "unscored" &&
-        (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchPassed(m.date, m.time, m.status))
+        (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status))
       ) {
         return false;
       }

@@ -301,7 +301,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           <span>VB: {match.volleybox.score || "Skorlu"}</span>
                           <ExternalLink size={9} className="text-emerald-500 group-hover:translate-x-0.5 transition-transform" />
                         </a>
-                      ) : isMatchPassed(match.date, match.time, match.status) ? (
+                      ) : isMatchPassed(match.volleybox?.vb_date || match.date, match.time, match.status) ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"

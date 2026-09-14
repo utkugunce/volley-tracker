@@ -81,7 +81,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
     const scoredCount = syncedMatches.filter((m) => m.volleybox?.has_score).length;
     const unscoredPassed = syncedMatches.filter(
-      (m) => !m.volleybox?.has_score && isMatchPassed(m.date, m.time, m.status)
+      (m) => !m.volleybox?.has_score && isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status)
     ).length;
 
     // Aktif il sayısı
