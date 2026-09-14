@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2 } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2, ExternalLink } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { CityInfo } from "@/types/fixture";
 
@@ -23,8 +23,11 @@ interface HeaderProps {
   onRefresh: () => void;
   isLoading: boolean;
   syncFeedback?: {
-    type: "success" | "warning" | "error";
+    type: "success" | "warning" | "error" | "info";
     message: string;
+    link?: { url: string; label: string };
+    inProgress?: boolean;
+    step?: string;
   } | null;
   onDismissSyncFeedback?: () => void;
 }
@@ -164,28 +167,43 @@ export const Header: React.FC<HeaderProps> = ({
           className={`px-3 py-1.5 text-xs font-medium border-b animate-in fade-in slide-in-from-top-1 duration-150 ${
             syncFeedback.type === "success"
               ? "bg-emerald-950/90 text-emerald-300 border-emerald-800"
+              : syncFeedback.type === "info"
+              ? "bg-sky-950/90 text-sky-300 border-sky-800"
               : syncFeedback.type === "warning"
               ? "bg-amber-950/90 text-amber-300 border-amber-800"
               : "bg-rose-950/90 text-rose-300 border-rose-800"
           }`}
         >
           <div className="max-w-6xl mx-auto w-full flex items-center justify-between gap-2">
-            <div className="flex items-center gap-2">
-              {syncFeedback.type === "success" && (
+            <div className="flex items-center gap-2 flex-wrap">
+              {syncFeedback.inProgress ? (
+                <RefreshCw size={13} className="animate-spin text-sky-400 shrink-0" />
+              ) : syncFeedback.type === "success" ? (
                 <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
-              )}
-              {syncFeedback.type === "warning" && (
+              ) : syncFeedback.type === "info" ? (
+                <RefreshCw size={13} className="animate-spin text-sky-400 shrink-0" />
+              ) : syncFeedback.type === "warning" ? (
                 <AlertTriangle size={14} className="text-amber-400 shrink-0" />
-              )}
-              {syncFeedback.type === "error" && (
+              ) : (
                 <AlertCircle size={14} className="text-rose-400 shrink-0" />
               )}
               <span>{syncFeedback.message}</span>
+              {syncFeedback.link && (
+                <a
+                  href={syncFeedback.link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-bold underline hover:text-white transition-colors bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded ml-1"
+                >
+                  <span>{syncFeedback.link.label}</span>
+                  <ExternalLink size={11} />
+                </a>
+              )}
             </div>
             {onDismissSyncFeedback && (
               <button
                 onClick={onDismissSyncFeedback}
-                className="text-xs opacity-70 hover:opacity-100 transition-opacity ml-2 px-1"
+                className="text-xs opacity-70 hover:opacity-100 transition-opacity ml-2 px-1 cursor-pointer"
                 title="Bildirimi Kapat"
               >
                 ✕

@@ -43,8 +43,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
   // Canlı Senkronizasyon Durum Bildirimi
   const [syncFeedback, setSyncFeedback] = useState<{
-    type: "success" | "warning" | "error";
+    type: "success" | "warning" | "error" | "info";
     message: string;
+    link?: { url: string; label: string };
+    inProgress?: boolean;
+    step?: string;
   } | null>(null);
 
   useEffect(() => {
@@ -74,7 +77,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
           setCitiesList(json.cities);
         }
       })
-      .catch((err) => console.warn("Cities fetch error:", err));
+      .catch((e) => console.error("Cities load error:", e));
   }, []);
 
   const toggleSplitScreen = () => {
@@ -113,7 +116,71 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       const json: FixturesData = await res.json();
       setData(json);
 
-      if (json.sync?.attempted) {
+      if (json.sync?.mode === "github_actions_dispatch") {
+        setSyncFeedback({
+          type: "info",
+          message: "Canlı tarama GitHub Actions üzerinde başlatıldı! TVF bülteni ve Volleybox taranıyor...",
+          link: {
+            url: "https://github.com/utkugunce/volley-tracker/actions",
+            label: "GitHub'da Canlı İzle ↗",
+          },
+          inProgress: true,
+        });
+
+        // Canlı durum takibi (Polling)
+        let pollCount = 0;
+        const maxPolls = 35; // ~2.5 dakika
+        const intervalId = setInterval(async () => {
+          pollCount++;
+          try {
+            const sRes = await fetch("/api/sync/status");
+            if (sRes.ok) {
+              const sData = await sRes.json();
+              if (sData.available) {
+                const runUrl = sData.htmlUrl || "https://github.com/utkugunce/volley-tracker/actions";
+                if (sData.status === "in_progress" || sData.status === "queued") {
+                  const stepText = sData.activeStep ? `: ${sData.activeStep}` : "...";
+                  setSyncFeedback({
+                    type: "info",
+                    message: `Canlı tarama devam ediyor${stepText}`,
+                    link: { url: runUrl, label: "GitHub'da Canlı İzle ↗" },
+                    inProgress: true,
+                  });
+                } else if (sData.status === "completed") {
+                  clearInterval(intervalId);
+                  if (sData.conclusion === "success") {
+                    setSyncFeedback({
+                      type: "success",
+                      message: "Canlı senkronizasyon tamamlandı! Güncel fikstür ve skorlar yüklendi.",
+                      link: { url: runUrl, label: "İşlem Özeti ↗" },
+                      inProgress: false,
+                    });
+                    // Verileri otomatik olarak ekrana yeniden çek
+                    try {
+                      const reloadRes = await fetch(`/api/fixtures?city=${currentCitySlug}`);
+                      if (reloadRes.ok) {
+                        const reloadJson = await reloadRes.json();
+                        setData(reloadJson);
+                      }
+                    } catch {}
+                  } else {
+                    setSyncFeedback({
+                      type: "error",
+                      message: "Canlı tarama sırasında bir hata oluştu.",
+                      link: { url: runUrl, label: "Hata Günlüğünü Gör ↗" },
+                      inProgress: false,
+                    });
+                  }
+                }
+              }
+            }
+          } catch {}
+
+          if (pollCount >= maxPolls) {
+            clearInterval(intervalId);
+          }
+        }, 4000);
+      } else if (json.sync?.attempted) {
         if (json.sync.success) {
           setSyncFeedback({
             type: "success",
@@ -125,6 +192,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
             message:
               json.sync.message ||
               "Bulut ortamında Python motoru bulunmadığı için en güncel önbellek sunulmuştur. Fikstürler periyodik GitHub Actions cron ile taranmaktadır.",
+            link: {
+              url: "https://github.com/utkugunce/volley-tracker/actions",
+              label: "GitHub Actions ↗",
+            },
           });
         }
       } else {
