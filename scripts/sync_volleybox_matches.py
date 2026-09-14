@@ -99,12 +99,13 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
     s = re.sub(r"\s+u\d+", "", s)
     s = re.sub(r"\bthy\b", "turk hava yollari", s)
 
-    # Takım harfi (A veya B) tespiti: ' a', ' b', ' - a', ' - b'
+    # Takım harfi (A veya B) tespiti:
+    # Hem parantezli (a)/(b), hem tireli - a/- b, hem de boşluklu a/b formatlarını yakala
     letter = None
-    m_letter = re.search(r"[\s\-_]+([ab])(?:\s+|$)", s)
+    m_letter = re.search(r"(?:[\s\-_]+|\()([ab])(?:\s*[\)]|\s+|$)", s)
     if m_letter:
         letter = m_letter.group(1).lower()
-        s = s[:m_letter.start()] + s[m_letter.end():]
+        s = s[:m_letter.start()] + " " + s[m_letter.end():]
 
     s = re.sub(r"\b(sk|kulubu|kulub|spor|bld|belediyesi|belediyespor|voleybol|atletik|akademi)\b", " ", s)
     s = re.sub(r"[^a-z0-9\s]", " ", s)
@@ -171,6 +172,10 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
     try:
         client = httpx.Client(headers=HEADERS, timeout=15.0, follow_redirects=True)
         resp = client.get(matches_url)
+        if resp.status_code == 429:
+            print(f"  [UYARI] Volleybox hız sınırına (429) ulaşıldı ({tournament_url.split('/')[-1]}). Mevcut veriler korunuyor.")
+            client.close()
+            return []
         resp.raise_for_status()
         html = resp.text
     except Exception as e:
@@ -200,6 +205,9 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
         round_url = f"{matches_url}?round_id={rid}"
         try:
             r_resp = client.get(round_url)
+            if r_resp.status_code == 429:
+                print(f"  [UYARI] Round {rid} için hız sınırına (429) ulaşıldı, ana sayfadaki maçlar kullanılıyor.")
+                break
             r_resp.raise_for_status()
             r_soup = BeautifulSoup(r_resp.text, "html.parser")
             boxes = r_soup.find_all("div", class_=lambda c: c and "match_box" in str(c))
@@ -540,7 +548,7 @@ def main():
                 team_alias_map[key].add(normalize_name(matched))
 
     # Aktif şehirleri belirle
-    active_city_names = {"istanbul", "izmir"}
+    active_city_names = {"istanbul", "izmir", "yalova", "nigde"}
     if FIXTURES_FILE.exists():
         active_city_names.add("istanbul")
     cities_index = DATA_DIR / "cities.json"
@@ -554,6 +562,18 @@ def main():
                         active_city_names.add(c.get("slug", "").lower())
         except Exception:
             pass
+    if CITIES_DIR.exists():
+        for cj in CITIES_DIR.glob("*.json"):
+            try:
+                with open(cj, "r", encoding="utf-8") as f:
+                    cdata = json.load(f)
+                    if len(cdata.get("matches", [])) > 0:
+                        active_city_names.add(cj.stem.lower())
+                        if "city" in cdata:
+                            active_city_names.add(normalize_name(cdata["city"]))
+                            active_city_names.add(cdata["city"].lower())
+            except Exception:
+                pass
 
     # 2. Kayıtlı lig turnuva sayfalarından maçları çek
     leagues = mappings_data.get("leagues", [])
@@ -595,7 +615,7 @@ def main():
                 vb_tournaments[f"{city}::{age_cat}".lower()] = vb_matches
                 vb_tournaments[f"{normalize_name(city)}::{age_cat}".lower()] = vb_matches
         vb_tournaments[internal_name.lower()] = vb_matches
-        time.sleep(0.3)
+        time.sleep(0.8)
 
     # 3. data/fixtures.json senkronizasyonu
     print("\n🔄 data/fixtures.json senkronize ediliyor...")

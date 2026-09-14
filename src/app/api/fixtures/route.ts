@@ -108,6 +108,11 @@ export async function GET(request: Request) {
 
           execFileSync(pythonBin, ["scripts/scrape_all_provinces.py"], {
             cwd: process.cwd(),
+            timeout: 90000,
+            stdio: "ignore",
+          });
+          execFileSync(pythonBin, ["scripts/sync_volleybox_matches.py"], {
+            cwd: process.cwd(),
             timeout: 60000,
             stdio: "ignore",
           });
@@ -115,7 +120,7 @@ export async function GET(request: Request) {
             attempted: true,
             success: true,
             mode: "local_python",
-            message: "Fikstür ve puan durumu yerel tarayıcı üzerinden başarıyla güncellendi.",
+            message: "Fikstür ve Volleybox verileri başarıyla senkronize edildi.",
           };
         } catch (err: any) {
           syncMeta = {

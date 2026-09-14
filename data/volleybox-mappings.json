@@ -4503,6 +4503,39 @@
       "confidence": "verified",
       "season": "2025/26",
       "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Yalova",
+      "city_slug": "yalova",
+      "matched_as": "Yalova Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-yalova-super-ligi-u18-2026-27-o50898",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Niğde",
+      "city_slug": "nigde",
+      "matched_as": "Niğde Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-nigde-super-ligi-u18-2026-27-o50992",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Niğde",
+      "city_slug": "nigde",
+      "matched_as": "Niğde Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-nigde-super-ligi-u16-2026-27-o50991",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-14"
     }
   ]
 }

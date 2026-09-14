@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T12:21:31.689839",
+  "updated_at": "2026-09-14T11:44:59.477882",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1149,17 +1149,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-19",
-        "vb_time": "18:00",
+        "vb_time": "17:30",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-19",
-          "vb_time": "18:00",
+          "vb_time": "17:30",
           "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
-          "details": "Saat Değişti (TVF: 17:30 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -1387,18 +1387,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398201",
+        "url": "https://women.volleybox.net/tr/vakfbank-zmir-u16-karsyaka-sk-u16-c398201",
+        "host_name": "Vakıfbank İzmir U16",
+        "guest_name": "Karşıyaka SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-22",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": null,
+          "vb_hall": "Menemen Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-09-25 / VB: 2026-09-22)"
         }
       }
     },
@@ -1585,18 +1592,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398256",
+        "url": "https://women.volleybox.net/tr/kzy-bornova-spor-kulubu-u16-goztepe-sk-b-u16-c398256",
+        "host_name": "KZY Bornova Spor Kulübü U16",
+        "guest_name": "Göztepe SK - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-24",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-24",
+          "vb_time": null,
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1620,24 +1634,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "397120",
-        "url": "https://women.volleybox.net/tr/kzy-bornova-spor-kulubu-u16-zmirspor-u16-c397120",
-        "host_name": "KZY Bornova Spor Kulübü U16",
-        "guest_name": "İzmirspor U16",
+        "match_id": "398257",
+        "url": "https://women.volleybox.net/tr/zmirspor-u16-parla-voleybol-kulubu-u16-c398257",
+        "host_name": "İzmirspor U16",
+        "guest_name": "Parla Voleybol Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-15",
-        "vb_time": "20:00",
-        "vb_hall": "Halkapınar Spor Salonu",
+        "vb_date": "2026-09-26",
+        "vb_time": null,
+        "vb_hall": "Karabağlar İzmir Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-09-15",
-          "vb_time": "20:00",
-          "vb_hall": "Halkapınar Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-26 / VB: 2026-09-15) | Salon Değişti (TVF: Karabağlar / VB: Halkapınar Spor Salonu)"
+          "hall_diff": false,
+          "vb_date": "2026-09-26",
+          "vb_time": null,
+          "vb_hall": "Karabağlar İzmir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1709,17 +1723,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-19",
-        "vb_time": "20:00",
+        "vb_time": "12:00",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-19",
-          "vb_time": "20:00",
+          "vb_time": "12:00",
           "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
-          "details": "Saat Değişti (TVF: 12:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -2358,28 +2372,28 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "397166",
-        "url": "https://women.volleybox.net/tr/dalton-koleji-spor-kulubu-u16-gelisim-koleji-sk-u16-c397166",
-        "host_name": "Dalton Koleji Spor Kulübü U16",
-        "guest_name": "Gelişim Koleji SK U16",
+        "match_id": "398258",
+        "url": "https://women.volleybox.net/tr/torbal-gelisim-spor-kulubu-u16-dalton-koleji-spor-kulubu-u16-c398258",
+        "host_name": "Torbalı Gelişim Spor Kulübü U16",
+        "guest_name": "Dalton Koleji Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-18",
-        "vb_time": "20:00",
-        "vb_hall": "Menemen Spor Salonu",
+        "vb_date": "2026-09-25",
+        "vb_time": null,
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-09-18",
-          "vb_time": "20:00",
-          "vb_hall": "Menemen Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-25 / VB: 2026-09-18) | Salon Değişti (TVF: Halkapınar Küçük / VB: Menemen Spor Salonu)"
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": null,
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 42,
-  "volleybox_sync_updated_at": "2026-09-14T12:22:39.184324"
+  "volleybox_synced_matches": 44,
+  "volleybox_sync_updated_at": "2026-09-14T15:32:02.487503"
 }
