@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T09:30:00.670619",
+  "updated_at": "2026-09-14T10:05:00.470530",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
@@ -866,25 +866,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396974",
-        "url": "https://women.volleybox.net/tr/eczacbas-u18-umraniye-belediyesi-spor-kulubu-u18-c396974",
-        "host_name": "Eczacıbaşı U18",
-        "guest_name": "Ümraniye Belediyesi Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-11",
-        "vb_time": "18:00",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-11",
-          "vb_time": "18:00",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -912,25 +905,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396975",
-        "url": "https://women.volleybox.net/tr/beylikduzu-voleybol-2021-u18-yesilyurt-spor-kulubu-u18-c396975",
-        "host_name": "Beylikdüzü Voleybol 2021 U18",
-        "guest_name": "Yeşilyurt Spor Kulübü U18",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-09-11",
-        "vb_time": "18:00",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-11",
-          "vb_time": "18:00",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -957,25 +943,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396979",
-        "url": "https://women.volleybox.net/tr/gungoren-voleybol-kulubu-u18-vakfbank-u18-c396979",
-        "host_name": "Güngören Voleybol Kulübü U18",
-        "guest_name": "VakıfBank U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-09-11",
-        "vb_time": "18:00",
-        "vb_hall": "Tozkoparan Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-11",
-          "vb_time": "18:00",
-          "vb_hall": "Tozkoparan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1002,25 +981,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396980",
-        "url": "https://women.volleybox.net/tr/fenerbahce-u18-marmara-akademi-atletik-spor-kulubu-u18-c396980",
-        "host_name": "Fenerbahçe U18",
-        "guest_name": "Marmara Akademi Atletik Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-11",
-        "vb_time": "19:30",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-11",
-          "vb_time": "19:30",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1048,25 +1020,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396981",
-        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-u18-bb-spor-kulubu-u18-c396981",
-        "host_name": "Türk Hava Yolları SK U18",
-        "guest_name": "İBB Spor Kulübü U18",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-09-11",
-        "vb_time": "19:30",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-11",
-          "vb_time": "19:30",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1093,25 +1058,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396982",
-        "url": "https://women.volleybox.net/tr/eyupsultan-belediyesi-sk-u18-bahcelievler-belediyespor-u18-c396982",
-        "host_name": "Eyüpsultan Belediyesi SK U18",
-        "guest_name": "Bahçelievler Belediyespor U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-11",
-        "vb_time": "19:30",
-        "vb_hall": "Tozkoparan Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-11",
-          "vb_time": "19:30",
-          "vb_hall": "Tozkoparan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1138,25 +1096,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396976",
-        "url": "https://women.volleybox.net/tr/besiktas-u18-pegasus-spor-kulubu-u18-c396976",
-        "host_name": "Beşiktaş U18",
-        "guest_name": "Pegasus Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-12",
-        "vb_time": "13:30",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-12",
-          "vb_time": "13:30",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1183,25 +1134,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396977",
-        "url": "https://women.volleybox.net/tr/silivri-cagrbey-sk-u18-es-voleybol-u18-c396977",
-        "host_name": "Silivri Çağrıbey SK U18",
-        "guest_name": "ES Voleybol U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-09-12",
-        "vb_time": "16:00",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-12",
-          "vb_time": "16:00",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1228,25 +1172,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "396978",
-        "url": "https://women.volleybox.net/tr/bizimkent-voleybol-spor-kulubu-u18-milan-atletik-u18-c396978",
-        "host_name": "Bizimkent Voleybol Spor Kulübü U18",
-        "guest_name": "Milan Atletik U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-09-12",
-        "vb_time": "18:00",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-12",
-          "vb_time": "18:00",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1269,25 +1206,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398137",
-        "url": "https://women.volleybox.net/tr/milan-atletik-u16-besiktas-u16-c398137",
-        "host_name": "Milan Atletik U16",
-        "guest_name": "Beşiktaş U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-14",
-        "vb_time": "18:00",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-14",
-          "vb_time": "18:00",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1310,25 +1240,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398139",
-        "url": "https://women.volleybox.net/tr/tuzla-rekor-spor-kulubu-u16-robert-spor-kulubu-u16-c398139",
-        "host_name": "Tuzla Rekor Spor Kulübü U16",
-        "guest_name": "Roberteam Spor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-14",
-        "vb_time": "18:00",
-        "vb_hall": "Yakacık İTO Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-14",
-          "vb_time": "18:00",
-          "vb_hall": "Yakacık İTO Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1351,25 +1274,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398150",
-        "url": "https://women.volleybox.net/tr/bb-spor-kulubu-u16-pegasus-spor-kulubu-u16-c398150",
-        "host_name": "İBB Spor Kulübü U16",
-        "guest_name": "Pegasus Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-14",
-        "vb_time": "18:00",
-        "vb_hall": "Tozkoparan Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-14",
-          "vb_time": "18:00",
-          "vb_hall": "Tozkoparan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1392,25 +1308,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398140",
-        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-u16-saryer-konak-spor-kulubu-u16-c398140",
-        "host_name": "Türk Hava Yolları SK U16",
-        "guest_name": "Sarıyer Konak Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-14",
-        "vb_time": "19:00",
-        "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-14",
-          "vb_time": "19:00",
-          "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1433,25 +1342,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398143",
-        "url": "https://women.volleybox.net/tr/galatasaray-u16-bahcelievler-belediyespor-u16-c398143",
-        "host_name": "Galatasaray U16",
-        "guest_name": "Bahçelievler Belediyespor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-14",
-        "vb_time": "19:30",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-14",
-          "vb_time": "19:30",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1474,25 +1376,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398156",
-        "url": "https://women.volleybox.net/tr/yesilyurt-spor-kulubu-u16-bizimkent-voleybol-spor-kulubu-u16-c398156",
-        "host_name": "Yeşilyurt Spor Kulübü U16",
-        "guest_name": "Bizimkent Voleybol Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-14",
-        "vb_time": "19:30",
-        "vb_hall": "Tozkoparan Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-14",
-          "vb_time": "19:30",
-          "vb_hall": "Tozkoparan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1515,25 +1410,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398151",
-        "url": "https://women.volleybox.net/tr/eczacbas-b-u16-marmara-akademi-atletik-spor-kulubu-u16-c398151",
-        "host_name": "Eczacıbaşı - B U16",
-        "guest_name": "Marmara Akademi Atletik Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-15",
-        "vb_time": "18:00",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-15",
-          "vb_time": "18:00",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1556,25 +1444,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398152",
-        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-b-u16-eyupsultan-belediyesi-sk-b-u16-c398152",
-        "host_name": "Türk Hava Yolları SK - B U16",
-        "guest_name": "Eyüpsultan Belediyesi SK - B U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-15",
-        "vb_time": "19:00",
-        "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-15",
-          "vb_time": "19:00",
-          "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1597,25 +1478,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398146",
-        "url": "https://women.volleybox.net/tr/eczacbas-u16-silivri-cagrbey-sk-u16-c398146",
-        "host_name": "Eczacıbaşı U16",
-        "guest_name": "Silivri Çağrıbey SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-15",
-        "vb_time": "19:30",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-15",
-          "vb_time": "19:30",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1638,25 +1512,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398157",
-        "url": "https://women.volleybox.net/tr/olimpia-2017-spor-kulubu-u16-umraniye-belediyesi-spor-kulubu-u16-c398157",
-        "host_name": "Olimpia 2017 Spor Kulübü U16",
-        "guest_name": "Ümraniye Belediyesi Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-15",
-        "vb_time": "20:30",
-        "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-15",
-          "vb_time": "20:30",
-          "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1679,25 +1546,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398159",
-        "url": "https://women.volleybox.net/tr/saryer-belediyesi-spor-kulubu-u16-bizimkent-voleybol-spor-kulubu-u16-c398159",
-        "host_name": "Sarıyer Belediyesi Spor Kulübü U16",
-        "guest_name": "Bizimkent Voleybol Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-16",
-        "vb_time": "18:00",
-        "vb_hall": "Tozkoparan Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-16",
-          "vb_time": "18:00",
-          "vb_hall": "Tozkoparan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1720,25 +1580,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398153",
-        "url": "https://women.volleybox.net/tr/fenerbahce-b-u16-es-voleybol-u16-c398153",
-        "host_name": "Fenerbahçe - B U16",
-        "guest_name": "ES Voleybol U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-16",
-        "vb_time": "18:00",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-16",
-          "vb_time": "18:00",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1761,25 +1614,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398160",
-        "url": "https://women.volleybox.net/tr/fenerbahce-u16-basaksehir-belediyesi-sk-u16-c398160",
-        "host_name": "Fenerbahçe U16",
-        "guest_name": "Başakşehir Belediyesi SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-16",
-        "vb_time": "19:30",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-16",
-          "vb_time": "19:30",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1802,25 +1648,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398161",
-        "url": "https://women.volleybox.net/tr/vakfbank-b-u16-eyupsultan-belediyesi-sk-u16-c398161",
-        "host_name": "VakıfBank - B U16",
-        "guest_name": "Eyüpsultan Belediyesi SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-17",
-        "vb_time": "18:00",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-17",
-          "vb_time": "18:00",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1843,29 +1682,22 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398154",
-        "url": "https://women.volleybox.net/tr/vakfbank-u16-smac-sk-u16-c398154",
-        "host_name": "VakıfBank U16",
-        "guest_name": "Smaç SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-17",
-        "vb_time": "19:30",
-        "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-17",
-          "vb_time": "19:30",
-          "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     }
   ],
-  "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-09-14T12:43:33.482589"
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-14T10:05:47.089072"
 }
