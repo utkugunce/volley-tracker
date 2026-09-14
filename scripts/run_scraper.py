@@ -1,4 +1,4 @@
-﻿"""
+"""
 scripts/run_scraper.py
 Terminalden çalıştırılan ana TVF Voleybol bülteni tetikleyicisi.
 Resmi İstanbul Voleybol İl Temsilciliği (https://istanbul.voleyboliltemsilciligi.com)
@@ -20,6 +20,16 @@ from datetime import datetime
 # scripts/ modül yolunu ekle
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
+
+# Eğer mevcut ortamda httpx yoksa ve .venv mevcutsa otomatik .venv python ile çalıştır
+try:
+    import httpx
+except ImportError:
+    venv_py = BASE_DIR / ".venv" / ("Scripts" if sys.platform == "win32" else "bin") / ("python.exe" if sys.platform == "win32" else "python")
+    if venv_py.exists():
+        import subprocess
+        sys.exit(subprocess.call([str(venv_py)] + sys.argv))
+    raise
 
 from scripts.parsers.istanbul import fetch_istanbul_live_data, save_fixtures_to_json, logger
 

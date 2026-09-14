@@ -14,10 +14,18 @@ from pathlib import Path
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-import httpx
-from bs4 import BeautifulSoup
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Eğer mevcut ortamda httpx yoksa ve .venv mevcutsa otomatik .venv python ile çalıştır
+try:
+    import httpx
+    from bs4 import BeautifulSoup
+except ImportError:
+    venv_py = BASE_DIR / ".venv" / ("Scripts" if sys.platform == "win32" else "bin") / ("python.exe" if sys.platform == "win32" else "python")
+    if venv_py.exists():
+        import subprocess
+        sys.exit(subprocess.call([str(venv_py)] + sys.argv))
+    raise
 DATA_DIR = BASE_DIR / "data"
 CITIES_DIR = DATA_DIR / "cities"
 CITIES_INDEX_JSON = DATA_DIR / "cities.json"

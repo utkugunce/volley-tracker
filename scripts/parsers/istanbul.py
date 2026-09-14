@@ -104,9 +104,12 @@ def update_state(state: Dict[str, str], delta_text: str) -> None:
 
 def decode_html(resp: httpx.Response) -> str:
     try:
-        return resp.content.decode("windows-1254")
-    except Exception:
-        return resp.text
+        return resp.content.decode("utf-8")
+    except UnicodeDecodeError:
+        try:
+            return resp.content.decode("windows-1254")
+        except Exception:
+            return resp.text
 
 def fetch_istanbul_live_data() -> Dict[str, Any]:
     """

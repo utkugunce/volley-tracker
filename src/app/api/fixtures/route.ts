@@ -55,9 +55,17 @@ export async function GET(request: Request) {
         };
       } else {
         try {
-          execFileSync("python", ["scripts/scrape_all_provinces.py"], {
+          const venvPyWin = path.join(process.cwd(), ".venv", "Scripts", "python.exe");
+          const venvPyNix = path.join(process.cwd(), ".venv", "bin", "python");
+          const pythonBin = fs.existsSync(venvPyWin)
+            ? venvPyWin
+            : fs.existsSync(venvPyNix)
+            ? venvPyNix
+            : "python";
+
+          execFileSync(pythonBin, ["scripts/scrape_all_provinces.py"], {
             cwd: process.cwd(),
-            timeout: 45000,
+            timeout: 60000,
             stdio: "ignore",
           });
           syncMeta = {

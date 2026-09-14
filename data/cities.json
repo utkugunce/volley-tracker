@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-13T18:26:43.478573",
+  "updated_at": "2026-09-14T10:01:52.971902",
   "total_cities": 81,
-  "active_cities": 4,
-  "total_matches": 70,
+  "active_cities": 3,
+  "total_matches": 50,
   "cities": [
     {
       "ilid": "1",
@@ -69,9 +69,9 @@
       "name": "Antalya",
       "slug": "antalya",
       "url": "https://antalya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (4 Tablo)",
+      "status": "Puan Durumu Var",
       "matches_count": 0,
-      "standings_count": 4,
+      "standings_count": 2,
       "data_file": "data/cities/antalya.json"
     },
     {
@@ -159,7 +159,7 @@
       "name": "Bursa",
       "slug": "bursa",
       "url": "https://bursa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (9 Tablo)",
+      "status": "Puan Durumu Var",
       "matches_count": 0,
       "standings_count": 9,
       "data_file": "data/cities/bursa.json"
@@ -299,7 +299,7 @@
       "name": "Hakkari",
       "slug": "hakkari",
       "url": "https://hakkari.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -499,7 +499,7 @@
       "name": "Nevşehir",
       "slug": "nevsehir",
       "url": "https://nevsehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -509,7 +509,7 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (4 Maç Mevcut)",
+      "status": "Aktif (Maçlar Mevcut)",
       "matches_count": 4,
       "standings_count": 1,
       "data_file": "data/cities/nigde.json"
@@ -769,10 +769,10 @@
       "name": "Yalova",
       "slug": "yalova",
       "url": "https://yalova.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (20 Maç Mevcut)",
-      "matches_count": 20,
-      "standings_count": 1,
-      "data_file": "data/cities/yalova.json"
+      "status": "Fikstür Açıklanmadı",
+      "matches_count": 0,
+      "standings_count": 0,
+      "data_file": null
     },
     {
       "ilid": "78",
@@ -809,10 +809,10 @@
       "name": "Düzce",
       "slug": "duzce",
       "url": "https://duzce.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (3 Tablo)",
+      "status": "Fikstür Açıklanmadı",
       "matches_count": 0,
-      "standings_count": 3,
-      "data_file": "data/cities/duzce.json"
+      "standings_count": 0,
+      "data_file": null
     }
   ]
 }
