@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { Match } from "@/types/fixture";
+import { Match, CityInfo } from "@/types/fixture";
 import { FixtureTable } from "@/components/FixtureTable";
+import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import {
   Calendar,
   Clock,
@@ -14,12 +15,23 @@ import {
   SearchX,
   History,
   CalendarDays,
+  LayoutGrid,
+  Table as TableIcon,
+  Globe,
+  Trophy,
+  ExternalLink,
+  Star,
+  Activity,
+  AlertTriangle,
 } from "lucide-react";
 import { formatDateTurkish, isMatchPassed } from "@/utils/calendar";
 
 interface TodayMatchesViewProps {
   matches: Match[];
   city?: string;
+  currentCitySlug?: string;
+  onSelectCity?: (slug: string) => void;
+  citiesList?: CityInfo[];
   todayStr: string;
   favorites: string[];
   onToggleFavorite: (matchId: string) => void;
@@ -29,7 +41,10 @@ interface TodayMatchesViewProps {
 
 export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   matches = [],
-  city = "İstanbul",
+  city = "Tüm İller",
+  currentCitySlug = "all",
+  onSelectCity,
+  citiesList = [],
   todayStr,
   favorites,
   onToggleFavorite,
@@ -37,6 +52,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   onNavigateToFullFixtures,
 }) => {
   const [quickStatus, setQuickStatus] = useState<"all" | "upcoming" | "finished">("all");
+  const [displayMode, setDisplayMode] = useState<"cards" | "table">("cards");
 
   // Bugünün tüm maçları
   const todayMatches = useMemo(() => {
@@ -49,14 +65,40 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     return todayMatches.filter((m) => m.status === quickStatus);
   }, [todayMatches, quickStatus]);
 
-  // Sayılar
-  const stats = useMemo(() => {
-    const total = todayMatches.length;
-    const upcoming = todayMatches.filter((m) => m.status === "upcoming").length;
-    const finished = todayMatches.filter((m) => m.status === "finished").length;
-    const scored = todayMatches.filter((m) => m.volleybox?.has_score).length;
-    return { total, upcoming, finished, scored };
-  }, [todayMatches]);
+  // Dashboard KPI Sayıları
+  const dashboardKpis = useMemo(() => {
+    const validMatches = matches.filter((m) => m.date && m.date !== "TBD");
+    const totalMatchesCount = validMatches.length;
+
+    const todayTotal = todayMatches.length;
+    const todayUpcoming = todayMatches.filter((m) => m.status === "upcoming").length;
+    const todayFinished = todayMatches.filter((m) => m.status === "finished").length;
+
+    const syncedMatches = validMatches.filter((m) => m.volleybox?.synced);
+    const syncedCount = syncedMatches.length;
+    const syncedPercent =
+      totalMatchesCount > 0 ? Math.round((syncedCount / totalMatchesCount) * 100) : 0;
+
+    const scoredCount = syncedMatches.filter((m) => m.volleybox?.has_score).length;
+    const unscoredPassed = syncedMatches.filter(
+      (m) => !m.volleybox?.has_score && isMatchPassed(m.date, m.time, m.status)
+    ).length;
+
+    // Aktif il sayısı
+    const activeCities = new Set(validMatches.map((m) => m.city).filter(Boolean)).size;
+
+    return {
+      totalMatchesCount,
+      activeCities: activeCities || 4,
+      todayTotal,
+      todayUpcoming,
+      todayFinished,
+      syncedCount,
+      syncedPercent,
+      scoredCount,
+      unscoredPassed,
+    };
+  }, [matches, todayMatches]);
 
   // Eğer bugün maç yoksa: Sıradaki en yakın maç tarihini ve maçlarını bul
   const nextMatchDay = useMemo(() => {
@@ -71,7 +113,6 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     ).sort();
 
     if (futureDates.length === 0) {
-      // Eğer ileri tarih yoksa genel ilk tarihi bul
       const allDates = Array.from(
         new Set(matches.filter((m) => m.date && m.date !== "TBD").map((m) => m.date))
       ).sort();
@@ -102,7 +143,9 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
           .filter((m) => m.date && m.date !== "TBD" && m.date < todayStr && m.status === "finished")
           .map((m) => m.date)
       )
-    ).sort().reverse();
+    )
+      .sort()
+      .reverse();
 
     if (pastDates.length === 0) return null;
 
@@ -113,7 +156,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     };
   }, [matches, todayMatches.length, todayStr]);
 
-  // Bugünün maçlarını lig/bölüme göre grupla
+  // Bugünün maçlarını grupla (Tablo modu için)
   const groupedSections = useMemo(() => {
     const sections: {
       [key: string]: {
@@ -124,7 +167,6 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     } = {};
 
     filteredTodayMatches.forEach((m) => {
-      // Eğer Tüm İller seçiliyse başlıkta il ismini de göster
       const prefix = city === "Tüm İller" && m.city ? `${m.city} • ` : "";
       const groupKey = `${prefix}${m.category} - ${m.group}`;
       if (!sections[groupKey]) {
@@ -142,7 +184,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     );
   }, [filteredTodayMatches, city]);
 
-  // Sıradaki maç günü maçlarını grupla
+  // Sıradaki maç günü grupları (Tablo modu için)
   const nextGroupedSections = useMemo(() => {
     if (!nextMatchDay) return [];
     const sections: {
@@ -173,31 +215,352 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
   // Bugünün Türkçe tarihi
   const formattedToday = useMemo(() => {
-    try {
-      const parts = todayStr.split("-");
-      if (parts.length === 3) {
-        const d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
-        return d.toLocaleDateString("tr-TR", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-          weekday: "long",
-        });
-      }
-    } catch {}
-    return todayStr;
+    return formatDateTurkish(todayStr);
   }, [todayStr]);
 
+  // Aktif iller listesi (Hızlı Dashboard Kartları için)
+  const activeCityCards = useMemo(() => {
+    const defaultList = [
+      { slug: "all", name: "Tüm İller", count: dashboardKpis.totalMatchesCount, icon: Globe },
+      { slug: "istanbul", name: "İstanbul", count: 24, icon: MapPin },
+      { slug: "izmir", name: "İzmir", count: 44, icon: MapPin },
+      { slug: "yalova", name: "Yalova", count: 20, icon: MapPin },
+      { slug: "nigde", name: "Niğde", count: 4, icon: MapPin },
+    ];
+
+    if (citiesList && citiesList.length > 0) {
+      return defaultList.map((item) => {
+        if (item.slug === "all") return item;
+        const found = citiesList.find((c) => c.slug === item.slug);
+        return {
+          ...item,
+          count: found?.matches_count || item.count,
+        };
+      });
+    }
+    return defaultList;
+  }, [dashboardKpis.totalMatchesCount, citiesList]);
+
+  // Tekil bir maç kartı bileşeni (Dashboard Match Card)
+  const renderDashboardMatchCard = (m: Match) => {
+    const isFav = favorites.includes(m.id);
+    const isFinished = m.status === "finished";
+    const homeWon = isFinished && (m.home_score ?? 0) > (m.away_score ?? 0);
+    const awayWon = isFinished && (m.away_score ?? 0) > (m.home_score ?? 0);
+    const disc = m.volleybox?.discrepancy;
+
+    const homeScoreText =
+      m.home_score !== null && m.home_score !== undefined
+        ? String(m.home_score)
+        : m.score && m.score.includes("-")
+        ? m.score.split("-")[0]?.trim() || "-"
+        : "-";
+
+    const awayScoreText =
+      m.away_score !== null && m.away_score !== undefined
+        ? String(m.away_score)
+        : m.score && m.score.includes("-")
+        ? m.score.split("-")[1]?.trim() || "-"
+        : "-";
+
+    return (
+      <div
+        key={m.id}
+        className={`bg-white rounded-xl border transition-all duration-200 shadow-xs hover:shadow-md flex flex-col justify-between overflow-hidden ${
+          disc?.has_diff
+            ? "border-amber-400/90 ring-1 ring-amber-300/40 bg-amber-50/20"
+            : isFav
+            ? "border-amber-400/80 ring-1 ring-amber-300/40"
+            : "border-slate-200 hover:border-slate-300"
+        }`}
+      >
+        {/* Kart Üst Bilgi Başlığı */}
+        <div className="px-3.5 py-2 bg-slate-50/90 border-b border-slate-100 flex items-center justify-between text-xs gap-2">
+          <div className="flex items-center gap-1.5 flex-wrap min-w-0">
+            {m.city && city === "Tüm İller" && (
+              <span className="font-bold px-1.5 py-0.2 rounded bg-slate-200 text-slate-800 text-[10px]">
+                {m.city}
+              </span>
+            )}
+            <span className="font-semibold text-slate-700 truncate text-[11px]">
+              {m.category}
+            </span>
+            <span className="text-slate-400 text-[10px]">•</span>
+            <span className="text-slate-500 text-[10px]">{m.group}</span>
+          </div>
+
+          <div className="flex items-center gap-1.5 shrink-0">
+            {isFinished ? (
+              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+                BİTTİ
+              </span>
+            ) : (
+              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 border border-sky-300 flex items-center gap-1">
+                <Clock size={10} />
+                <span>{m.time}</span>
+              </span>
+            )}
+            <button
+              onClick={() => onToggleFavorite(m.id)}
+              className="p-1 rounded text-slate-400 hover:text-amber-400 transition-colors"
+              title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+            >
+              <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
+            </button>
+          </div>
+        </div>
+
+        {/* Skorboard / Takım Alanı */}
+        <div className="p-3.5 space-y-2.5">
+          {/* Ev Sahibi Takım */}
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 min-w-0 flex-1">
+              <TeamVolleyboxLink
+                teamName={m.home_team}
+                category={m.category || m.age_group}
+                className={`text-sm ${
+                  homeWon
+                    ? "font-black text-slate-900"
+                    : isFinished
+                    ? "font-normal text-slate-500"
+                    : "font-bold text-slate-800"
+                }`}
+              />
+            </div>
+            <div className="shrink-0 font-mono text-base font-black">
+              {isFinished ? (
+                <span
+                  className={`px-2 py-0.5 rounded ${
+                    homeWon
+                      ? "bg-[#0b1325] text-white shadow-2xs"
+                      : "bg-slate-100 text-slate-600"
+                  }`}
+                >
+                  {homeScoreText}
+                </span>
+              ) : (
+                <span className="text-slate-300 text-xs font-normal">--</span>
+              )}
+            </div>
+          </div>
+
+          {/* Deplasman Takımı */}
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 min-w-0 flex-1">
+              <TeamVolleyboxLink
+                teamName={m.away_team}
+                category={m.category || m.age_group}
+                className={`text-sm ${
+                  awayWon
+                    ? "font-black text-slate-900"
+                    : isFinished
+                    ? "font-normal text-slate-500"
+                    : "font-bold text-slate-800"
+                }`}
+              />
+            </div>
+            <div className="shrink-0 font-mono text-base font-black">
+              {isFinished ? (
+                <span
+                  className={`px-2 py-0.5 rounded ${
+                    awayWon
+                      ? "bg-[#0b1325] text-white shadow-2xs"
+                      : "bg-slate-100 text-slate-600"
+                  }`}
+                >
+                  {awayScoreText}
+                </span>
+              ) : (
+                <span className="text-slate-300 text-xs font-normal">--</span>
+              )}
+            </div>
+          </div>
+
+          {/* Set Skorları */}
+          {isFinished && m.set_scores && m.set_scores.length > 0 && (
+            <div className="pt-2 border-t border-slate-100 flex items-center gap-1.5 flex-wrap">
+              <span className="text-[10px] text-slate-400 font-medium">Setler:</span>
+              {m.set_scores.map((set, sIdx) => (
+                <span
+                  key={sIdx}
+                  className="px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-mono font-medium border border-slate-200/80"
+                >
+                  {set}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Kart Alt Bilgi: Salon & Volleybox */}
+        <div className="px-3.5 py-2 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 gap-2">
+          <div className="flex items-center gap-1 min-w-0 truncate" title={m.hall}>
+            <MapPin size={11} className="text-slate-400 shrink-0" />
+            <span className="truncate">{m.hall}</span>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            {disc?.has_diff && (
+              <span
+                className="inline-flex items-center gap-0.5 text-[10px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded"
+                title={`Bülten değişikliği tespit edildi! (${disc.details || "Saat/Salon farklı"})`}
+              >
+                <AlertTriangle size={9} />
+                <span>Değişti</span>
+              </span>
+            )}
+            {m.volleybox?.url ? (
+              <a
+                href={m.volleybox.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-bold text-indigo-600 hover:text-indigo-800 hover:underline text-[10px]"
+                title="Volleybox maç kaydına git"
+              >
+                <span>Volleybox</span>
+                <ExternalLink size={10} />
+              </a>
+            ) : (
+              <span className="text-[10px] text-slate-400">VB Girişi Yok</span>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
-    <div className="space-y-4">
-      {/* 1. Üst Günün Maçları Başlık Kartı */}
-      <div className="bg-gradient-to-r from-[#0b1325] via-slate-900 to-[#0b1325] border border-slate-800 rounded-xl p-3 sm:p-4 text-white shadow-md">
+    <div className="space-y-4 sm:space-y-5">
+      {/* 1. DASHBOARD KPI METRİK KARTLARI */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+        {/* KPI 1: Toplam Fikstür */}
+        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+              {city === "Tüm İller" ? "Toplam Fikstür" : `${city} Fikstürü`}
+            </span>
+            <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+              {dashboardKpis.totalMatchesCount}
+            </span>
+            <span className="text-[10px] text-slate-400 block mt-0.5">
+              {city === "Tüm İller" ? `${dashboardKpis.activeCities} Aktif İl Bütünü` : "Sezon Maçları"}
+            </span>
+          </div>
+          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+            <Trophy size={20} />
+          </div>
+        </div>
+
+        {/* KPI 2: Günün Programı */}
+        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+              Günün Maçları
+            </span>
+            <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+              {dashboardKpis.todayTotal}
+            </span>
+            <span className="text-[10px] text-slate-400 block mt-0.5">
+              {dashboardKpis.todayTotal > 0
+                ? `${dashboardKpis.todayUpcoming} bekliyor • ${dashboardKpis.todayFinished} bitti`
+                : nextMatchDay
+                ? `Sıradaki: ${formatDateTurkish(nextMatchDay.date).split(" ")[0]} ${formatDateTurkish(nextMatchDay.date).split(" ")[1]}`
+                : "Bugün maç yok"}
+            </span>
+          </div>
+          <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+            <Flame size={20} />
+          </div>
+        </div>
+
+        {/* KPI 3: Volleybox Eşleşmesi */}
+        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+              VB Eşleşme
+            </span>
+            <span className="text-xl sm:text-2xl font-black text-emerald-600 font-mono">
+              %{dashboardKpis.syncedPercent}
+            </span>
+            <span className="text-[10px] text-slate-400 block mt-0.5">
+              {dashboardKpis.syncedCount} / {dashboardKpis.totalMatchesCount} Maç Eşleşti
+            </span>
+          </div>
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+            <CheckCircle2 size={20} />
+          </div>
+        </div>
+
+        {/* KPI 4: Skor Giriş Durumu */}
+        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+              Skor Durumu
+            </span>
+            <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+              {dashboardKpis.scoredCount}
+            </span>
+            <span className="text-[10px] text-slate-400 block mt-0.5">
+              {dashboardKpis.unscoredPassed > 0 ? (
+                <span className="text-rose-600 font-bold">
+                  {dashboardKpis.unscoredPassed} Maç Skorsuz!
+                </span>
+              ) : (
+                <span className="text-emerald-600 font-medium">Tüm skorlar güncel</span>
+              )}
+            </span>
+          </div>
+          <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+            <Activity size={20} />
+          </div>
+        </div>
+      </div>
+
+      {/* 2. AKTİF İL HIZLI KARTLARI (Tüm İller, İstanbul, İzmir, Yalova, Niğde) */}
+      {onSelectCity && (
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1">
+          {activeCityCards.map((item) => {
+            const isSelected = currentCitySlug === item.slug;
+            const IconComponent = item.icon;
+
+            return (
+              <button
+                key={item.slug}
+                onClick={() => onSelectCity(item.slug)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border ${
+                  isSelected
+                    ? "bg-[#0b1325] text-white border-primary shadow-sm ring-2 ring-primary/40 font-bold"
+                    : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200"
+                }`}
+              >
+                <IconComponent
+                  size={14}
+                  className={isSelected ? "text-primary" : "text-slate-400"}
+                />
+                <span>{item.name}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                    isSelected
+                      ? "bg-primary text-white"
+                      : "bg-slate-100 text-slate-700"
+                  }`}
+                >
+                  {item.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {/* 3. ANA GÜNÜN MAÇLARI / PROGRAM BAŞLIK ÇUBUĞU */}
+      <div className="bg-gradient-to-r from-[#0b1325] via-slate-900 to-[#0b1325] border border-slate-800 rounded-xl p-3.5 sm:p-4 text-white shadow-md">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/40 uppercase tracking-wider">
                 <Flame size={12} className="text-primary animate-pulse" />
-                Günün Maçları
+                Günün Maçları & Canlı Skor
               </span>
               <span className="text-xs text-slate-400 font-medium">
                 {city === "Tüm İller" ? "Türkiye Geneli" : city}
@@ -209,27 +572,39 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
             </h1>
           </div>
 
-          {/* İstatistik Rozetleri */}
+          {/* Sağ Kontroller: Görünüm Değiştirici (Kart / Tablo) & Tüm Fikstür */}
           <div className="flex items-center gap-2 flex-wrap text-xs">
-            <div className="bg-slate-800/80 px-2.5 py-1.5 rounded-lg border border-slate-700/80 flex items-center gap-1.5">
-              <span className="text-slate-400">Toplam:</span>
-              <span className="font-mono font-bold text-white">{stats.total} Maç</span>
+            {/* Kart vs Tablo Görünümü */}
+            <div className="bg-slate-800 p-0.5 rounded-lg border border-slate-700 flex items-center gap-0.5">
+              <button
+                onClick={() => setDisplayMode("cards")}
+                className={`px-2 py-1 rounded text-xs font-semibold flex items-center gap-1 transition-colors ${
+                  displayMode === "cards"
+                    ? "bg-primary text-white shadow-xs"
+                    : "text-slate-400 hover:text-white"
+                }`}
+                title="Dashboard Kart Görünümü"
+              >
+                <LayoutGrid size={13} />
+                <span className="hidden sm:inline">Kartlar</span>
+              </button>
+              <button
+                onClick={() => setDisplayMode("table")}
+                className={`px-2 py-1 rounded text-xs font-semibold flex items-center gap-1 transition-colors ${
+                  displayMode === "table"
+                    ? "bg-primary text-white shadow-xs"
+                    : "text-slate-400 hover:text-white"
+                }`}
+                title="Detaylı Tablo Görünümü"
+              >
+                <TableIcon size={13} />
+                <span className="hidden sm:inline">Tablo</span>
+              </button>
             </div>
-            {stats.total > 0 && (
-              <>
-                <div className="bg-sky-950/80 px-2.5 py-1.5 rounded-lg border border-sky-800/60 flex items-center gap-1.5 text-sky-300">
-                  <Clock size={12} />
-                  <span>{stats.upcoming} Oynanacak</span>
-                </div>
-                <div className="bg-emerald-950/80 px-2.5 py-1.5 rounded-lg border border-emerald-800/60 flex items-center gap-1.5 text-emerald-300">
-                  <CheckCircle2 size={12} />
-                  <span>{stats.finished} Bitti</span>
-                </div>
-              </>
-            )}
+
             <button
               onClick={onNavigateToFullFixtures}
-              className="inline-flex items-center gap-1 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-2.5 py-1.5 rounded-lg border border-slate-700 transition-colors ml-auto sm:ml-0"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-2.5 py-1.5 rounded-lg border border-slate-700 transition-colors"
               title="Tüm sezon takvimini ve tarih şeridini görüntüle"
             >
               <span>Tüm Fikstür</span>
@@ -238,10 +613,10 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
           </div>
         </div>
 
-        {/* Bugün Maç Varsa Hızlı Filtre Butonları */}
-        {stats.total > 0 && (
+        {/* Hızlı Filtre Butonları */}
+        {todayMatches.length > 0 && (
           <div className="mt-3 pt-3 border-t border-slate-800 flex items-center gap-1.5">
-            <span className="text-[11px] text-slate-400 font-medium mr-1">Filtrele:</span>
+            <span className="text-[11px] text-slate-400 font-medium mr-1">Durum:</span>
             <button
               onClick={() => setQuickStatus("all")}
               className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
@@ -250,7 +625,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
               }`}
             >
-              Tümü ({stats.total})
+              Tümü ({dashboardKpis.todayTotal})
             </button>
             <button
               onClick={() => setQuickStatus("upcoming")}
@@ -260,7 +635,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
               }`}
             >
-              Oynanacak ({stats.upcoming})
+              Oynanacak ({dashboardKpis.todayUpcoming})
             </button>
             <button
               onClick={() => setQuickStatus("finished")}
@@ -270,32 +645,38 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
               }`}
             >
-              Bitenler ({stats.finished})
+              Bitenler ({dashboardKpis.todayFinished})
             </button>
           </div>
         )}
       </div>
 
-      {/* 2. BUGÜNÜN MAÇLARI LİSTESİ */}
-      {groupedSections.length > 0 && (
-        <div className="space-y-4">
-          {groupedSections.map((sec, idx) => (
-            <FixtureTable
-              key={idx}
-              title={sec.title}
-              subTitle={sec.subTitle}
-              matches={sec.matches}
-              favorites={favorites}
-              onToggleFavorite={onToggleFavorite}
-              city={city}
-              splitScreenMode={splitScreenMode}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* 3. BUGÜN MAÇ YOKSA VEYA FİLTREDE BULUNAMADIYSA */}
-      {groupedSections.length === 0 && (
+      {/* 4. BUGÜNÜN MAÇLARI GÖRÜNÜMÜ */}
+      {filteredTodayMatches.length > 0 ? (
+        displayMode === "cards" ? (
+          /* Kart Görünümü (Dashboard Grid) */
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+            {filteredTodayMatches.map((m) => renderDashboardMatchCard(m))}
+          </div>
+        ) : (
+          /* Tablo Görünümü */
+          <div className="space-y-4">
+            {groupedSections.map((sec, idx) => (
+              <FixtureTable
+                key={idx}
+                title={sec.title}
+                subTitle={sec.subTitle}
+                matches={sec.matches}
+                favorites={favorites}
+                onToggleFavorite={onToggleFavorite}
+                city={city}
+                splitScreenMode={splitScreenMode}
+              />
+            ))}
+          </div>
+        )
+      ) : (
+        /* 5. BUGÜN MAÇ YOKSA VEYA FİLTREDE BULUNAMADIYSA */
         <div className="space-y-6">
           {todayMatches.length === 0 ? (
             /* Bugün Maç Yok Bilgilendirmesi */
@@ -307,18 +688,17 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 Bugün ({formattedToday}) İçin Planlanmış Maç Bulunmuyor
               </h2>
               <p className="text-xs text-slate-500 max-w-md mx-auto mb-4">
-                TVF bülteninde {city === "Tüm İller" ? "iller genelinde" : `${city} ilinde`} bugün oynanacak karşılaşma yer almamaktadır.
+                TVF bülteninde {city === "Tüm İller" ? "Türkiye genelinde" : `${city} ilinde`} bugün oynanacak karşılaşma bulunmamaktadır.
               </p>
               <button
                 onClick={onNavigateToFullFixtures}
                 className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors shadow-xs"
               >
-                <span>Tüm Fikstür Takvimine Git</span>
+                <span>Tüm Sezon Fikstürüne Git</span>
                 <ArrowRight size={14} />
               </button>
             </div>
           ) : (
-            /* Filtre Sonucu Bulunamadı */
             <div className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-xs">
               <SearchX size={24} className="text-slate-400 mx-auto mb-2" />
               <p className="text-xs font-bold text-slate-700 mb-2">
@@ -334,11 +714,11 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
           )}
 
           {/* Akıllı Yedek Görünüm 1: Sıradaki En Yakın Maç Günü */}
-          {nextMatchDay && nextGroupedSections.length > 0 && (
+          {nextMatchDay && nextMatchDay.matches.length > 0 && (
             <div className="space-y-3">
               <div className="flex items-center justify-between px-1">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-sky-500" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-sky-500 animate-pulse" />
                   <h3 className="text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                     <Clock size={14} className="text-sky-600" />
                     <span>Sıradaki Maç Günü:</span>
@@ -352,20 +732,26 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 </span>
               </div>
 
-              <div className="space-y-4">
-                {nextGroupedSections.map((sec, idx) => (
-                  <FixtureTable
-                    key={idx}
-                    title={sec.title}
-                    subTitle={sec.subTitle}
-                    matches={sec.matches}
-                    favorites={favorites}
-                    onToggleFavorite={onToggleFavorite}
-                    city={city}
-                    splitScreenMode={splitScreenMode}
-                  />
-                ))}
-              </div>
+              {displayMode === "cards" ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                  {nextMatchDay.matches.map((m) => renderDashboardMatchCard(m))}
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {nextGroupedSections.map((sec, idx) => (
+                    <FixtureTable
+                      key={idx}
+                      title={sec.title}
+                      subTitle={sec.subTitle}
+                      matches={sec.matches}
+                      favorites={favorites}
+                      onToggleFavorite={onToggleFavorite}
+                      city={city}
+                      splitScreenMode={splitScreenMode}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
@@ -376,7 +762,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 <div className="flex items-center gap-2">
                   <History size={14} className="text-slate-500" />
                   <h3 className="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider">
-                    Son Oynanan Maçlar:{" "}
+                    Son Tamamlanan Maçlar:{" "}
                     <span className="text-slate-900 font-extrabold">
                       {formatDateTurkish(recentFinishedDay.date)}
                     </span>
@@ -387,52 +773,8 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 </span>
               </div>
 
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-xs divide-y divide-slate-100">
-                {recentFinishedDay.matches.map((m) => (
-                  <div
-                    key={m.id}
-                    className="p-2.5 sm:p-3 flex items-center justify-between gap-2 hover:bg-slate-50/80 transition-colors text-xs"
-                  >
-                    <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-[11px] font-mono text-slate-500 shrink-0">
-                        {m.time}
-                      </span>
-                      {m.city && city === "Tüm İller" && (
-                        <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-100 text-slate-600 font-bold shrink-0">
-                          {m.city}
-                        </span>
-                      )}
-                      <span className="font-semibold text-slate-800 truncate">
-                        {m.home_team}
-                      </span>
-                      <span className="text-slate-400 font-bold shrink-0">vs</span>
-                      <span className="font-semibold text-slate-800 truncate">
-                        {m.away_team}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2 shrink-0">
-                      {m.score ? (
-                        <span className="font-mono font-black text-sm px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
-                          {m.score}
-                        </span>
-                      ) : (
-                        <span className="text-slate-400 font-mono">- : -</span>
-                      )}
-                      {m.volleybox?.url && (
-                        <a
-                          href={m.volleybox.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[10px] font-bold text-indigo-600 hover:underline shrink-0"
-                          title="Volleybox'ta Görüntüle"
-                        >
-                          VB ↗
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
+                {recentFinishedDay.matches.map((m) => renderDashboardMatchCard(m))}
               </div>
             </div>
           )}

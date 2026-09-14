@@ -60,7 +60,8 @@ describe("TodayMatchesView Component", () => {
     expect(screen.getByText("Günün Maçları")).toBeInTheDocument();
     expect(screen.getByText("Eczacıbaşı")).toBeInTheDocument();
     expect(screen.getByText("Fenerbahçe")).toBeInTheDocument();
-    expect(screen.getByText("3 - 1")).toBeInTheDocument();
+    expect(screen.getByText("3")).toBeInTheDocument();
+    expect(screen.getAllByText("1").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders next match day when no matches exist for today", () => {

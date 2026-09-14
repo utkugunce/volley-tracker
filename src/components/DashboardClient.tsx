@@ -32,8 +32,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [searchQuery, setSearchQuery] = useState("");
   const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy">("all");
 
-  // 81 İl Desteği
-  const [currentCitySlug, setCurrentCitySlug] = useState("istanbul");
+  // 81 İl Desteği - Varsayılan olarak "all" (Tüm İller) seçili başlar
+  const [currentCitySlug, setCurrentCitySlug] = useState("all");
   const [citiesList, setCitiesList] = useState<any[]>([]);
 
   // Favoriler (Flashscore Yıldız İmzası - LocalStorage ile kaydedilir)
@@ -504,10 +504,13 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
         {/* 3. SEÇİLEN SEKME GÖRÜNÜMÜ */}
         {activeMainTab === "home" ? (
-          /* ==================== GÜNÜN MAÇLARI (ANASAYFA) ==================== */
+          /* ==================== GÜNÜN MAÇLARI (ANASAYFA DASHBOARD) ==================== */
           <TodayMatchesView
             matches={data?.matches || []}
             city={data?.city}
+            currentCitySlug={currentCitySlug}
+            onSelectCity={handleSelectCity}
+            citiesList={citiesList}
             todayStr={todayStr}
             favorites={favorites}
             onToggleFavorite={toggleFavorite}
