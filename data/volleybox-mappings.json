@@ -4460,6 +4460,848 @@
       "verified_at": "2026-09-14",
       "local_logo": "/logos/kzy-spor-kulubu-u16-t42689.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1760530671hz0S3.png"
+    },
+    {
+      "internal_name": "Zeren",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Zeren Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-u18-t41279",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Zeren Spor",
+        "Zeren Spor Kulübü",
+        "Zeren SK"
+      ],
+      "local_logo": "/logos/zeren-spor-kulubu-u18-t41279.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17576595907oexz.png"
+    },
+    {
+      "internal_name": "Ankara Karayolları",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Karayolları Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/karayollar-u18-t30474",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Karayolları",
+        "Karayolları U18",
+        "Karayolları Spor Kulübü"
+      ],
+      "local_logo": "/logos/karayollar-u18-t30474.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Ted Ankara",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "TED Ankara Kolejliler U18",
+      "volleybox_url": "https://women.volleybox.net/ted-ankara-kolejliler-u18-t41590",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "TED Ankara Kolejliler",
+        "Ted Kolejliler",
+        "Ted Ankara U18"
+      ],
+      "local_logo": "/logos/ted-ankara-kolejliler-u18-t41590.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1763561277wd4OC.png"
+    },
+    {
+      "internal_name": "Tvf Spor Lisesi",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "TVF Spor Lisesi U18",
+      "volleybox_url": "https://women.volleybox.net/tvf-spor-lisesi-u18-t41290",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "TVF Spor Lisesi",
+        "Spor Lisesi",
+        "Tvf Spor Lisesi U18"
+      ],
+      "local_logo": "/logos/tvf-spor-lisesi-u18-t41290.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758024341jI3Yw.png"
+    },
+    {
+      "internal_name": "Ankara Dsi",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Ankara DSİ GSK U18",
+      "volleybox_url": "https://women.volleybox.net/ankara-ds-gsk-u18-t41490",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ankara DSİ",
+        "DSİ",
+        "Ankara DSİ GSK"
+      ],
+      "local_logo": "/logos/ankara-ds-gsk-u18-t41490.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17857603886kpAw.png"
+    },
+    {
+      "internal_name": "Ankara Büyükşehir Belediyesi",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/ankara-buyuksehir-belediyesi-spor-kulubu-u18-t49194",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ankara BB",
+        "Ankara B.Ş.B.",
+        "ABB Spor Kulübü"
+      ],
+      "local_logo": "/logos/ankara-buyuksehir-belediyesi-spor-kulubu-u18-t49194.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1775731977WpoC0.png"
+    },
+    {
+      "internal_name": "Başkent Arma",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Başkent Arma Spor",
+      "volleybox_url": "https://women.volleybox.net/arma-voleybol-t32331",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Arma Voleybol",
+        "Başkent Arma Spor"
+      ],
+      "local_logo": "/logos/arma-voleybol-t32331.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1754312568NvSm6.png"
+    },
+    {
+      "internal_name": "Eryaman Gelişim",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Eryaman Gelişim SK - A U18",
+      "volleybox_url": "https://women.volleybox.net/eryaman-gelisim-sk-u18-t41596",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Eryaman Gelişim SK",
+        "Eryaman Gelişim U18"
+      ],
+      "local_logo": "/logos/eryaman-gelisim-sk-u18-t41596.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758193168xj5Jf.png"
+    },
+    {
+      "internal_name": "Hakan Akışık",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Hakan Akışık Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/hakan-aksk-spor-kulubu-u18-t41593",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Hakan Akışık SK",
+        "Hakan Akışık Spor Kulübü"
+      ],
+      "local_logo": "/logos/hakan-aksk-spor-kulubu-u18-t41593.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758193213UwjZ9.png"
+    },
+    {
+      "internal_name": "Anadolu Birlik",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Anadolu Birlik Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/anadolu-birlik-spor-kulubu-t36083",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Anadolu Birlik SK",
+        "Anadolu Birlik Spor Kulübü"
+      ],
+      "local_logo": "/logos/anadolu-birlik-spor-kulubu-t36083.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1738071487tLX8q.png"
+    },
+    {
+      "internal_name": "Akademi Atletik",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Akademi Atletik Spor U18",
+      "volleybox_url": "https://women.volleybox.net/akademi-atletik-spor-u18-t41762",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Akademi Atletik Spor",
+        "Akademi Atletik SK"
+      ],
+      "local_logo": "/logos/akademi-atletik-spor-u18-t41762.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1768563819hwxo7.png"
+    },
+    {
+      "internal_name": "Maç Akademi",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Maç Akademi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/mac-akademi-spor-kulubu-u18-t41594",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Maç Akademi SK",
+        "Maç Akademi Spor Kulübü"
+      ],
+      "local_logo": "/logos/mac-akademi-spor-kulubu-u18-t41594.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17888647995sXVQ.png"
+    },
+    {
+      "internal_name": "Ahmet Hamdi",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
+      "volleybox_url": "https://women.volleybox.net/ahmet-hamdi-tanpnar-ortaokulu-sk-u18-t41599",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ahmet Hamdi Tanpınar",
+        "AHTO SK",
+        "Ahmet Hamdi Tanpınar Ortaokulu SK"
+      ],
+      "local_logo": "/logos/ahmet-hamdi-tanpnar-ortaokulu-sk-u18-t41599.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758192951NUyB3.png"
+    },
+    {
+      "internal_name": "Temiz Enerji Birliği",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Temiz Enerji Birliği Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/temiz-enerji-birligi-spor-kulubu-u18-t41597",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Temiz Enerji Birliği SK",
+        "Temiz Enerji Birliği Spor Kulübü"
+      ],
+      "local_logo": "/logos/temiz-enerji-birligi-spor-kulubu-u18-t41597.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17581937091AIVi.png"
+    },
+    {
+      "internal_name": "Çaba",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Çaba Spor Kulübü - A U18",
+      "volleybox_url": "https://women.volleybox.net/caba-spor-kulubu-u18-t41595",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Çaba Spor",
+        "Çaba Spor Kulübü",
+        "Çaba SK"
+      ],
+      "local_logo": "/logos/caba-spor-kulubu-u18-t41595.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758193142CU6yW.png"
+    },
+    {
+      "internal_name": "Yedidağ",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Yedidağspor - A U18",
+      "volleybox_url": "https://women.volleybox.net/yedidagspor-u18-t41738",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Yedidağ Spor Kulübü",
+        "Yedidağspor",
+        "Yedidağ SK"
+      ],
+      "local_logo": "/logos/yedidagspor-u18-t41738.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1759472624Dc1Lt.png"
+    },
+    {
+      "internal_name": "blue wolves",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Blue Wolves Volleyball U18",
+      "volleybox_url": "https://women.volleybox.net/mavi-kurtlar-gsk-t41592",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Blue Wolves",
+        "Mavi Kurtlar GSK",
+        "Blue Wolves Volleyball"
+      ],
+      "local_logo": "/logos/mavi-kurtlar-gsk-t41592.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758192646fh4l5.png"
+    },
+    {
+      "internal_name": "Set Up",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "SET UP Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/set-up-spor-kulubu-u18-t54230",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "SET UP Spor Kulübü",
+        "Set Up Spor",
+        "Set Up SK"
+      ],
+      "local_logo": "/logos/set-up-spor-kulubu-u18-t54230.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17889448376L98r.png"
+    },
+    {
+      "internal_name": "Zeren",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Zeren Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-u16-t41421",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Zeren Spor",
+        "Zeren Spor Kulübü",
+        "Zeren SK"
+      ],
+      "local_logo": "/logos/zeren-spor-kulubu-u16-t41421.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758024375KWB3Z.png"
+    },
+    {
+      "internal_name": "Ankara Karayolları",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Karayolları Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/karayollar-spor-kulubu-u16-t41435",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Karayolları",
+        "Karayolları U16",
+        "Karayolları Spor Kulübü"
+      ],
+      "local_logo": "/logos/karayollar-spor-kulubu-u16-t41435.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "İlbank A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "İlbank U16",
+      "volleybox_url": "https://women.volleybox.net/lbank-u15-t35575",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "İlbank A"
+      ],
+      "local_logo": "/logos/lbank-u15-t35575.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "İlbank B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "İlbank U16",
+      "volleybox_url": "https://women.volleybox.net/lbank-u15-t35575",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "İlbank B"
+      ],
+      "local_logo": "/logos/lbank-u15-t35575.png",
+      "logo_url": null
+    },
+    {
+      "internal_name": "Ted Ankara",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "TED Ankara Kolejliler U16",
+      "volleybox_url": "https://women.volleybox.net/ted-ankara-kolejliler-u16-t41600",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "TED Ankara Kolejliler",
+        "Ted Kolejliler",
+        "Ted Ankara U16"
+      ],
+      "local_logo": "/logos/ted-ankara-kolejliler-u16-t41600.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17635612867YtIQ.png"
+    },
+    {
+      "internal_name": "Ted Ankara A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "TED Ankara Kolejliler U16",
+      "volleybox_url": "https://women.volleybox.net/ted-ankara-kolejliler-u16-t41600",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ted Ankara A",
+        "TED Ankara Kolejliler A"
+      ],
+      "local_logo": "/logos/ted-ankara-kolejliler-u16-t41600.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17635612867YtIQ.png"
+    },
+    {
+      "internal_name": "Ted Ankara B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "TED Ankara Kolejliler U16",
+      "volleybox_url": "https://women.volleybox.net/ted-ankara-kolejliler-u16-t41600",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ted Ankara B",
+        "TED Ankara Kolejliler B"
+      ],
+      "local_logo": "/logos/ted-ankara-kolejliler-u16-t41600.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17635612867YtIQ.png"
+    },
+    {
+      "internal_name": "Tvf Spor Lisesi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "TVF Spor Lisesi U16",
+      "volleybox_url": "https://women.volleybox.net/tvf-spor-lisesi-u16-t41428",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "TVF Spor Lisesi",
+        "Spor Lisesi",
+        "Tvf Spor Lisesi U16"
+      ],
+      "local_logo": "/logos/tvf-spor-lisesi-u16-t41428.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758024351E3tHp.png"
+    },
+    {
+      "internal_name": "Tvf Spor Lisesi A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "TVF Spor Lisesi U16",
+      "volleybox_url": "https://women.volleybox.net/tvf-spor-lisesi-u16-t41428",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Tvf Spor Lisesi A",
+        "TVF Spor Lisesi A"
+      ],
+      "local_logo": "/logos/tvf-spor-lisesi-u16-t41428.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758024351E3tHp.png"
+    },
+    {
+      "internal_name": "Tvf Spor Lisesi B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "TVF Spor Lisesi - B U16",
+      "volleybox_url": "https://women.volleybox.net/tvf-spor-lisesi-ii-u16-t41614",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Tvf Spor Lisesi B",
+        "TVF Spor Lisesi B",
+        "TVF Spor Lisesi II"
+      ],
+      "local_logo": "/logos/tvf-spor-lisesi-ii-u16-t41614.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17581948775pBID.png"
+    },
+    {
+      "internal_name": "Ankara Dsi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ankara DSİ GSK U16",
+      "volleybox_url": "https://women.volleybox.net/ankara-ds-gsk-u16-t41608",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ankara DSİ",
+        "DSİ",
+        "Ankara DSİ GSK"
+      ],
+      "local_logo": "/logos/ankara-ds-gsk-u16-t41608.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1785760393vExr9.png"
+    },
+    {
+      "internal_name": "Ankara Büyükşehir Belediyesi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/ankara-buyuksehir-belediyesi-spor-kulubu-u16-t41586",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ankara BB",
+        "Ankara B.Ş.B.",
+        "ABB Spor Kulübü"
+      ],
+      "local_logo": "/logos/ankara-buyuksehir-belediyesi-spor-kulubu-u16-t41586.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758189986odR3P.png"
+    },
+    {
+      "internal_name": "Başkent Arma",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Başkent Arma Spor U16",
+      "volleybox_url": "https://women.volleybox.net/baskent-arma-spor-u16-t41618",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Arma Voleybol",
+        "Başkent Arma Spor"
+      ],
+      "local_logo": "/logos/baskent-arma-spor-u16-t41618.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758194560Ak3rP.png"
+    },
+    {
+      "internal_name": "Başkent Arma A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Başkent Arma Spor U16",
+      "volleybox_url": "https://women.volleybox.net/baskent-arma-spor-u16-t41618",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Başkent Arma A",
+        "Başkent Arma Spor A"
+      ],
+      "local_logo": "/logos/baskent-arma-spor-u16-t41618.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758194560Ak3rP.png"
+    },
+    {
+      "internal_name": "Başkent Arma B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Başkent Arma Spor B",
+      "volleybox_url": "https://women.volleybox.net/baskent-arma-spor-u16-t41618",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Başkent Arma B",
+        "Başkent Arma Spor B"
+      ],
+      "local_logo": "/logos/baskent-arma-spor-u16-t41618.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758194560Ak3rP.png"
+    },
+    {
+      "internal_name": "Eryaman Gelişim",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Eryaman Gelişim SK U16",
+      "volleybox_url": "https://women.volleybox.net/eryaman-gelisim-sk-u16-t41617",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Eryaman Gelişim SK",
+        "Eryaman Gelişim U16"
+      ],
+      "local_logo": "/logos/eryaman-gelisim-sk-u16-t41617.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758194605H7KUW.png"
+    },
+    {
+      "internal_name": "Hakan Akışık",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Hakan Akışık Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/hakan-aksk-spor-kulubu-u16-t41605",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Hakan Akışık SK",
+        "Hakan Akışık Spor Kulübü"
+      ],
+      "local_logo": "/logos/hakan-aksk-spor-kulubu-u16-t41605.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758194620fxx7V.png"
+    },
+    {
+      "internal_name": "Anadolu Birlik",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Anadolu Birlik Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/anadolu-birlik-spor-kulubu-u16-t41609",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Anadolu Birlik SK",
+        "Anadolu Birlik Spor Kulübü"
+      ],
+      "local_logo": "/logos/anadolu-birlik-spor-kulubu-u16-t41609.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758194492Hg93D.png"
+    },
+    {
+      "internal_name": "Akademi Atletik",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Akademi Atletik Spor",
+      "volleybox_url": "https://women.volleybox.net/akademi-atletik-spor-t36067",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Akademi Atletik Spor",
+        "Akademi Atletik SK"
+      ],
+      "local_logo": "/logos/akademi-atletik-spor-t36067.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1768563586uxG8l.png"
+    },
+    {
+      "internal_name": "Maç Akademi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Maç Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/mac-akademi-spor-kulubu-u16-t41610",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Maç Akademi SK",
+        "Maç Akademi Spor Kulübü"
+      ],
+      "local_logo": "/logos/mac-akademi-spor-kulubu-u16-t41610.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1788864803Iky8i.png"
+    },
+    {
+      "internal_name": "Ahmet Hamdi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+      "volleybox_url": "https://women.volleybox.net/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t41606",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ahmet Hamdi Tanpınar",
+        "AHTO SK",
+        "Ahmet Hamdi Tanpınar Ortaokulu SK"
+      ],
+      "local_logo": "/logos/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t41606.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17581944695zePT.png"
+    },
+    {
+      "internal_name": "Ahmet Hamdi A",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+      "volleybox_url": "https://women.volleybox.net/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t41606",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ahmet Hamdi A",
+        "Ahmet Hamdi Tanpınar A"
+      ],
+      "local_logo": "/logos/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t41606.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17581944695zePT.png"
+    },
+    {
+      "internal_name": "Ahmet Hamdi B",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ahmet Hamdi Tanpınar Ortaokulu SK U16 B",
+      "volleybox_url": "https://women.volleybox.net/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t41606",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ahmet Hamdi B",
+        "Ahmet Hamdi Tanpınar B"
+      ],
+      "local_logo": "/logos/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t41606.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17581944695zePT.png"
+    },
+    {
+      "internal_name": "Çaba",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Çaba Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/caba-spor-kulubu-u16-t41602",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Çaba Spor",
+        "Çaba Spor Kulübü",
+        "Çaba SK"
+      ],
+      "local_logo": "/logos/caba-spor-kulubu-u16-t41602.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758194591dvm7i.png"
+    },
+    {
+      "internal_name": "Ufuk Üniversitesi Üç Pas",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Ufuk Üniversitesi Üç Pas Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/ufuk-universitesi-uc-pas-spor-kulubu-u16-t41613",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Ufuk Üniversitesi",
+        "Üç Pas",
+        "Ufuk Üniversitesi Çaba Pas",
+        "Ufuk Üniversitesi Üç Pas Spor Kulübü"
+      ],
+      "local_logo": "/logos/ufuk-universitesi-uc-pas-spor-kulubu-u16-t41613.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1770285413V0GEY.png"
+    },
+    {
+      "internal_name": "Yedidağ",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Yedidağ Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/yedidagspor-t23365",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Yedidağ Spor Kulübü",
+        "Yedidağspor",
+        "Yedidağ SK"
+      ],
+      "local_logo": "/logos/yedidagspor-t23365.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1759472613v141X.png"
+    },
+    {
+      "internal_name": "Blue Wolves",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Mavi Kurtlar GSK - A U16",
+      "volleybox_url": "https://women.volleybox.net/mavi-kurtlar-gsk-u16-t41603",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "blue wolves",
+        "Blue Wolves Volleyball",
+        "Mavi Kurtlar GSK"
+      ],
+      "local_logo": "/logos/mavi-kurtlar-gsk-u16-t41603.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17581946657UdG5.png"
+    },
+    {
+      "internal_name": "Dhmi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "DHMİ Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/devlet-hava-meydanlar-sk-t23906",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "DHMİ",
+        "Devlet Hava Meydanları",
+        "DHMİ Spor Kulübü"
+      ],
+      "local_logo": "/logos/devlet-hava-meydanlar-sk-t23906.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758092441O7YsE.png"
+    },
+    {
+      "internal_name": "Teiaş",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "TEİAŞ Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/teas-spor-kulubu-u16-t54266",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "TEİAŞ",
+        "TEİAŞ Spor Kulübü",
+        "Teiaş Spor"
+      ],
+      "local_logo": "/logos/teas-spor-kulubu-u16-t54266.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17890479990RyDV.png"
+    },
+    {
+      "internal_name": "Genia Öz Akademi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Genia Turkey Kavak Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/kavak-spor-kulubu-t20536",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Genia Turkey Kavak Spor Kulübü",
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Genia Öz Akademi Spor Kulübü",
+        "Genia",
+        "Kavak Spor Kulübü"
+      ],
+      "local_logo": "/logos/kavak-spor-kulubu-t20536.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1675629104vQ3jh.png"
+    },
+    {
+      "internal_name": "First Spor",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Akyurt First Spor Kulübü",
+      "volleybox_url": null,
+      "age_category": "U16",
+      "confidence": "unmatched",
+      "note": "Akyurt First Spor Kulübü - Henüz Volleybox profili bulunmuyor",
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "First Spor Kulübü",
+        "Akyurt First Spor Kulübü"
+      ]
+    },
+    {
+      "internal_name": "Set Up",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "SET UP Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/set-up-spor-kulubu-u18-t54230",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "SET UP Spor Kulübü",
+        "Set Up Spor",
+        "Set Up SK"
+      ],
+      "local_logo": "/logos/set-up-spor-kulubu-u18-t54230.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17889448376L98r.png"
+    },
+    {
+      "internal_name": "Genia İz Akademi",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Genia Turkey Kavak Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/kavak-spor-kulubu-t20536",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Genia Turkey Kavak Spor Kulübü (TVF fikstüründe İz Akademi olarak yazılmış)",
+      "verified_at": "2026-09-14",
+      "aliases": [
+        "Genia Öz Akademi",
+        "Genia Öz Akademi Spor Kulübü",
+        "Genia",
+        "Kavak Spor Kulübü"
+      ],
+      "local_logo": "/logos/kavak-spor-kulubu-t20536.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1675629104vQ3jh.png"
     }
   ],
   "leagues": [
