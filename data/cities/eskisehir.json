@@ -1,0 +1,651 @@
+{
+  "updated_at": "2026-09-15T22:59:12.002562",
+  "city": "Eskişehir",
+  "slug": "eskisehir",
+  "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 11,
+  "source": "https://eskisehir.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü",
+      "Kemal Unakıtan",
+      "Şehit Anıl Gül"
+    ]
+  },
+  "standings": {
+    "Genç Kızlar Süper Lig - Genç Kızlar Süper Ligi - C Gr": [
+      {
+        "rank": 1,
+        "team": "Es Voleybol Akademi Spor Kulübü (B)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Şehir Koleji Eğitim Kültür Ve Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - B Grubu": [
+      {
+        "rank": 1,
+        "team": "Anadolu Kolej Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Es Voleybol Akademi Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Eskişehir Yıldız Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Meryem Boz Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - A Grubu": [
+      {
+        "rank": 1,
+        "team": "Anadolu Kolej Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "D.S.İ. Bentspor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Es Voleybol Akademi Spor Kulübü (B)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - B Grubu": [
+      {
+        "rank": 1,
+        "team": "Eskişehir Ata Spor Kulübü (B)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Eskişehir Türktelekom Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Esnova Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Şehir Koleji Eğitim Kültür Ve Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Ligi - C Gr": [
+      {
+        "rank": 1,
+        "team": "Es Güneş Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Eskişehir Ata Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Eskişehir Türktelekom Spor Kulübü (B)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Esnova Spor Kulübü (B)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Ligi - D Gr": [
+      {
+        "rank": 1,
+        "team": "Anadolu Üniversitesi Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Es Voleybol Akademi Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Eskişehir Peyman Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Eskişehir Voleybol Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "eskisehir-20260923-001",
+      "city": "Eskişehir",
+      "date": "2026-09-23",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Süper Ligi - C Gr",
+      "match_no": "1",
+      "home_team": "Es Voleybol Akademi Spor Kulübü (B)",
+      "away_team": "Şehir Koleji Eğitim Kültür Ve Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260923-002",
+      "city": "Eskişehir",
+      "date": "2026-09-23",
+      "time": "18:30",
+      "hall": "Şehit Anıl Gül",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Es Voleybol Akademi Spor Kulübü (A)",
+      "away_team": "Anadolu Kolej Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260923-003",
+      "city": "Eskişehir",
+      "date": "2026-09-23",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
+      "home_team": "Meryem Boz Spor Kulübü",
+      "away_team": "Eskişehir Yıldız Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-004",
+      "city": "Eskişehir",
+      "date": "2026-09-21",
+      "time": "18:30",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Es Voleybol Akademi Spor Kulübü (B)",
+      "away_team": "D.S.İ. Bentspor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260926-005",
+      "city": "Eskişehir",
+      "date": "2026-09-26",
+      "time": "18:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Anadolu Kolej Spor Kulübü",
+      "away_team": "Es Voleybol Akademi Spor Kulübü (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-006",
+      "city": "Eskişehir",
+      "date": "2026-09-21",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Eskişehir Ata Spor Kulübü (B)",
+      "away_team": "Eskişehir Türktelekom Spor Kulübü (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260925-007",
+      "city": "Eskişehir",
+      "date": "2026-09-25",
+      "time": "18:30",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
+      "home_team": "Şehir Koleji Eğitim Kültür Ve Spor Kulübü",
+      "away_team": "Esnova Spor Kulübü (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-008",
+      "city": "Eskişehir",
+      "date": "2026-09-21",
+      "time": "18:30",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kızlar Süper Ligi - C Gr",
+      "match_no": "1",
+      "home_team": "Eskişehir Ata Spor Kulübü (A)",
+      "away_team": "Eskişehir Türktelekom Spor Kulübü (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260925-009",
+      "city": "Eskişehir",
+      "date": "2026-09-25",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kızlar Süper Ligi - C Gr",
+      "match_no": "2",
+      "home_team": "Es Güneş Spor Kulübü",
+      "away_team": "Esnova Spor Kulübü (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-010",
+      "city": "Eskişehir",
+      "date": "2026-09-21",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kızlar Süper Ligi - D Gr",
+      "match_no": "1",
+      "home_team": "Anadolu Üniversitesi Spor Kulübü",
+      "away_team": "Es Voleybol Akademi Spor Kulübü (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260922-011",
+      "city": "Eskişehir",
+      "date": "2026-09-22",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kızlar Süper Ligi - D Gr",
+      "match_no": "2",
+      "home_team": "Eskişehir Peyman Spor Kulübü",
+      "away_team": "Eskişehir Voleybol Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-15T23:00:19.914704"
+}

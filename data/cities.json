@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-15T20:20:35.292848",
+  "updated_at": "2026-09-15T23:00:01.074668",
   "total_cities": 81,
-  "active_cities": 5,
-  "total_matches": 111,
+  "active_cities": 6,
+  "total_matches": 122,
   "cities": [
     {
       "ilid": "1",
@@ -259,10 +259,10 @@
       "name": "Eskişehir",
       "slug": "eskisehir",
       "url": "https://eskisehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (11 Maç Mevcut)",
+      "matches_count": 11,
+      "standings_count": 6,
+      "data_file": "data/cities/eskisehir.json"
     },
     {
       "ilid": "27",
