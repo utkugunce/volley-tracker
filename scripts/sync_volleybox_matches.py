@@ -517,6 +517,29 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
                 }
 
 
+    # Manuel düzeltmeleri (manual overrides) koru - scrape işlemi elle girilen skorları ezemez
+    overrides_file = DATA_DIR / "manual-overrides.json"
+    if overrides_file.exists():
+        try:
+            with open(overrides_file, "r", encoding="utf-8") as f:
+                ov_data = json.load(f)
+                manual_overrides = ov_data.get("overrides", {})
+                for m in matches:
+                    m_id = m.get("id")
+                    if m_id in manual_overrides:
+                        ov = manual_overrides[m_id]
+                        if ov.get("home_score") is not None:
+                            m["home_score"] = ov["home_score"]
+                        if ov.get("away_score") is not None:
+                            m["away_score"] = ov["away_score"]
+                        if ov.get("set_scores"):
+                            m["set_scores"] = ov["set_scores"]
+                        if ov.get("status"):
+                            m["status"] = ov["status"]
+                        m["manual_override"] = True
+        except Exception as e:
+            print(f"⚠️ Manuel overrides yüklenirken hata: {e}")
+
     data["matches"] = matches
     data["volleybox_synced_matches"] = synced_count
     data["volleybox_sync_updated_at"] = datetime.now().isoformat()

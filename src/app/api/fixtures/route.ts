@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
+import { applyOverridesToMatches } from "@/utils/overrides";
 
 function normalizeCitySlug(str: string): string {
   return str
@@ -253,7 +254,8 @@ export async function GET(request: Request) {
       data = JSON.parse(fileContent);
     }
 
-    let matches = data.matches || [];
+    let rawMatches = data.matches || [];
+    let matches = applyOverridesToMatches(rawMatches);
 
     if (category && category !== "Tümü") {
       matches = matches.filter((m: any) => m.category === category);

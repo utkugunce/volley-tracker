@@ -4,6 +4,7 @@ import { Match, StandingItem } from "@/types/fixture";
 import { slugify } from "./slugify";
 import { getVolleyboxMapping } from "./volleybox";
 import { VolleyboxMapping } from "@/types/fixture";
+import { applyOverridesToMatches } from "./overrides";
 
 export interface TeamStandingContext {
   groupName: string;
@@ -88,7 +89,7 @@ function loadAllCityData() {
   }
 
   cachedAllData = {
-    matches: allMatches,
+    matches: applyOverridesToMatches(allMatches),
     standingsByCity,
     timestamp: now,
   };
