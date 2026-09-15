@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T12:16:37.240451",
+  "updated_at": "2026-09-15T17:10:03.710208",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
@@ -714,6 +714,40 @@
       },
       {
         "rank": 2,
+        "team": "THY B",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 42,
+        "point_ratio": "1.786",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
+        "team": "Eyüpsultan Bld B",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 42,
+        "points_lost": 75,
+        "point_ratio": "0.560",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Pegasus",
         "played": 1,
         "won": 0,
@@ -730,7 +764,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "Eczacıbaşı B",
         "played": 0,
         "won": 0,
@@ -745,7 +779,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Es Voleybol",
         "played": 0,
         "won": 0,
@@ -760,22 +794,7 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Eyüpsultan Bld B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 6,
+        "rank": 7,
         "team": "Fenerbahçe B",
         "played": 0,
         "won": 0,
@@ -790,7 +809,7 @@
         "form": []
       },
       {
-        "rank": 7,
+        "rank": 8,
         "team": "Marmara Akademi",
         "played": 0,
         "won": 0,
@@ -805,23 +824,8 @@
         "form": []
       },
       {
-        "rank": 8,
-        "team": "Smaç",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 9,
-        "team": "THY B",
+        "team": "Smaç",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1601,11 +1605,15 @@
       "match_no": "3",
       "home_team": "THY B",
       "away_team": "Eyüpsultan Bld B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-12",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398152",
@@ -1918,5 +1926,5 @@
     }
   ],
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-09-15T12:17:31.525801"
+  "volleybox_sync_updated_at": "2026-09-15T17:11:04.216695"
 }
