@@ -63,7 +63,7 @@ describe("FixtureTable Component", () => {
 
     const vakifImg = screen.getByAltText("VakıfBank logosu");
     expect(vakifImg).toBeInTheDocument();
-    expect(vakifImg).toHaveAttribute("src", expect.stringContaining("logos/vakfbank-u18"));
+    expect(vakifImg).toHaveAttribute("src", expect.stringContaining("vakfbank-u18"));
   });
 
   it("eşleşmeyen takımlar için hiçbir Volleybox linki render etmez ama takım sayfasına yönlendirir", () => {

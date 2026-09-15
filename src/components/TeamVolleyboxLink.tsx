@@ -6,6 +6,8 @@ import { getVolleyboxMapping } from "@/utils/volleybox";
 import { slugify } from "@/utils/slugify";
 import { ExternalLink } from "lucide-react";
 
+import Image from "next/image";
+
 interface TeamVolleyboxLinkProps {
   teamName: string;
   category?: string;
@@ -36,12 +38,13 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   const logoSrc = showLogo && !imgFailed ? (mapping?.local_logo || mapping?.logo_url) : null;
 
   const logoElement = logoSrc ? (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={logoSrc}
       alt={`${displayName} logosu`}
+      width={16}
+      height={16}
       className={`w-4 h-4 object-contain rounded-full bg-white p-0.5 border border-slate-200/90 shadow-2xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
-      loading="lazy"
+      unoptimized={logoSrc.startsWith("http")}
       onError={() => {
         setImgFailed(true);
       }}

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   CalendarPlus,
   Calendar,
@@ -101,11 +102,13 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
             {/* Logo */}
             <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/10 p-2 border border-slate-700/80 shadow-inner flex items-center justify-center shrink-0">
               {logoSrc ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
+                <Image
                   src={logoSrc}
                   alt={`${team.teamName} logosu`}
+                  width={96}
+                  height={96}
                   className="w-full h-full object-contain rounded-xl"
+                  unoptimized={logoSrc.startsWith("http")}
                 />
               ) : (
                 <Trophy size={40} className="text-primary/70" />
