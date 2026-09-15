@@ -6,6 +6,7 @@ import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTri
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { isMatchPassed } from "@/utils/calendar";
+import { generateMatchIcs, generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 
 interface FixtureTableProps {
   title: string;
@@ -23,7 +24,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   matches,
   favorites,
   onToggleFavorite,
-  city,
+  city = "İstanbul",
   splitScreenMode = false,
 }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -40,7 +41,8 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
     e.stopPropagation();
     const dateText = match.date === "TBD" ? "Tarih Açıklanacak" : `${match.date} ${match.time}`;
     const scoreText = match.status === "finished" ? `\nSkor: ${match.score} (${(match.set_scores || []).join(", ")})` : "";
-    const text = `TVF İstanbul ${match.category} (${match.group}):\n${match.home_team} vs ${match.away_team}\n🗓 ${dateText}\n📍 ${match.hall}${scoreText}\nMaç No: #${match.match_no}`;
+    const cityName = match.city || city;
+    const text = `TVF ${cityName} ${match.category} (${match.group}):\n${match.home_team} vs ${match.away_team}\n🗓 ${dateText}\n📍 ${match.hall}${scoreText}\nMaç No: #${match.match_no}`;
     navigator.clipboard.writeText(text);
     setCopiedId(match.id);
     setTimeout(() => setCopiedId(null), 2000);
@@ -48,34 +50,25 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
   const handleDownloadIcs = (e: React.MouseEvent, match: Match) => {
     e.stopPropagation();
-    if (!match.date || match.date === "TBD" || !match.time || match.time === "--:--") {
-      alert("Bu maçın tarihi ve saati henüz TVF tarafından açıklanmadığı için takvime eklenemez.");
+    if (!match.date || match.date === "TBD") {
+      alert("Bu maçın tarihi henüz TVF tarafından açıklanmadığı için takvime eklenemez.");
       return;
     }
-    const startIso = match.date.replace(/-/g, "") + "T" + match.time.replace(":", "") + "00";
-    const icsData = [
-      "BEGIN:VCALENDAR",
-      "VERSION:2.0",
-      "BEGIN:VEVENT",
-      `SUMMARY:${match.home_team} vs ${match.away_team}`,
-      `DESCRIPTION:${match.category} - ${match.group}\\nSalon: ${match.hall}`,
-      `LOCATION:${match.hall}`,
-      `DTSTART:${startIso}`,
-      `DTEND:${startIso}`,
-      "STATUS:CONFIRMED",
-      "END:VEVENT",
-      "END:VCALENDAR",
-    ].join("\r\n");
+    const ics = generateMatchIcs(match);
+    if (ics) {
+      downloadIcsFile(`mac-${match.home_team}-${match.away_team}-${match.date}.ics`, ics);
+    }
+  };
 
-    const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.setAttribute("download", `${match.home_team}_vs_${match.away_team}.ics`);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+  const handleDownloadFavoritesIcs = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const favMatches = matches.filter((m) => favorites.includes(m.id) && m.date && m.date !== "TBD");
+    if (favMatches.length === 0) {
+      alert("Takvime eklenebilecek favori maç bulunamadı.");
+      return;
+    }
+    const ics = generateSeasonIcs(favMatches, "Favori Maçlarım Takvimi");
+    downloadIcsFile("favori-maclarim.ics", ics);
   };
 
   return (
@@ -93,9 +86,21 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             {subTitle && subTitle.toLowerCase() !== title.toLowerCase() && subTitle !== "Tek Grup" ? ` • ${subTitle}` : ""}
           </h3>
         </div>
-        <span className="text-[10px] font-mono text-slate-400 bg-slate-800/80 px-1.5 py-0.5 rounded border border-slate-700">
-          {matches.length} Maç
-        </span>
+        <div className="flex items-center gap-2">
+          {matches.some((m) => favorites.includes(m.id) && m.date && m.date !== "TBD") && (
+            <button
+              onClick={handleDownloadFavoritesIcs}
+              className="inline-flex items-center gap-1 text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 px-2 py-0.5 rounded transition-colors cursor-pointer"
+              title="Bu tablodaki favori maçlarınızı .ics olarak takvime ekleyin"
+            >
+              <CalendarPlus size={11} />
+              <span className="hidden sm:inline">Favorileri Takvime Ekle</span>
+            </button>
+          )}
+          <span className="text-[10px] font-mono text-slate-400 bg-slate-800/80 px-1.5 py-0.5 rounded border border-slate-700">
+            {matches.length} Maç
+          </span>
+        </div>
       </div>
 
       {/* 2. Resmi TVF / Fikstür Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları - Volleybox - İşlem */}

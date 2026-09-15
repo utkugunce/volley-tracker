@@ -66,7 +66,7 @@ describe("FixtureTable Component", () => {
     expect(vakifImg).toHaveAttribute("src", expect.stringContaining("logos/vakfbank-u18"));
   });
 
-  it("eşleşmeyen takımlar için hiçbir link veya ikon render etmez", () => {
+  it("eşleşmeyen takımlar için hiçbir Volleybox linki render etmez ama takım sayfasına yönlendirir", () => {
     render(
       <FixtureTable
         title="Genç Kızlar Fikstür"
@@ -79,9 +79,18 @@ describe("FixtureTable Component", () => {
     expect(screen.getByText("Bilinmeyen Spor Kulübü A")).toBeInTheDocument();
     expect(screen.getByText("Bilinmeyen Spor Kulübü B")).toBeInTheDocument();
 
-    // Takım isimleri link olmamalı
-    expect(screen.queryByRole("link", { name: /Bilinmeyen Spor Kulübü A/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: /Bilinmeyen Spor Kulübü B/i })).not.toBeInTheDocument();
+    // Volleybox harici linki render edilmemeli
+    expect(screen.queryByRole("link", { name: /volleybox/i })).not.toBeInTheDocument();
+
+    // Takım detay sayfası iç linkleri bulunmalı
+    expect(screen.getByRole("link", { name: "Bilinmeyen Spor Kulübü A" })).toHaveAttribute(
+      "href",
+      "/takim/bilinmeyen-spor-kulubu-a"
+    );
+    expect(screen.getByRole("link", { name: "Bilinmeyen Spor Kulübü B" })).toHaveAttribute(
+      "href",
+      "/takim/bilinmeyen-spor-kulubu-b"
+    );
   });
 
   it("lig başlığı için Volleybox turnuva linki render eder", () => {

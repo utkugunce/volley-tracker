@@ -118,12 +118,16 @@ describe('StandingsTable Component', () => {
 
     expect(screen.getByText(/Pegasus/i)).toBeInTheDocument();
 
-    // Volleybox linki bulunmalı
-    const link = screen.getByRole('link', { name: /pegasus/i });
-    expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute('href', expect.stringContaining('pegasus-spor-kulubu-u18-t54139'));
-    expect(link).toHaveAttribute('target', '_blank');
-    expect(link).toHaveAttribute('rel', 'noopener noreferrer');
+    // Volleybox harici linki bulunmalı
+    const vbLink = screen.getByRole('link', { name: /volleybox takım profili/i });
+    expect(vbLink).toBeInTheDocument();
+    expect(vbLink).toHaveAttribute('href', expect.stringContaining('pegasus-spor-kulubu-u18-t54139'));
+    expect(vbLink).toHaveAttribute('target', '_blank');
+    expect(vbLink).toHaveAttribute('rel', 'noopener noreferrer');
+
+    // Takım detay sayfası iç linki de bulunmalı
+    const detailLink = screen.getByRole('link', { name: 'Pegasus' });
+    expect(detailLink).toHaveAttribute('href', '/takim/pegasus');
   });
 
   it('(e) eşleşmeyen takım için bağlantı ikonu render edilmiyor', () => {
@@ -139,8 +143,11 @@ describe('StandingsTable Component', () => {
     render(<StandingsTable standingsData={standingsData} />);
 
     expect(screen.getByText('Bilinmeyen Mahalle Voleybol SK')).toBeInTheDocument();
-    // Takım adı link olmamalı
-    expect(screen.queryByRole('link', { name: /bilinmeyen/i })).not.toBeInTheDocument();
+    // Volleybox harici linki olmamalı
+    expect(screen.queryByRole('link', { name: /volleybox/i })).not.toBeInTheDocument();
+    // Takım detay sayfası iç linki bulunmalı
+    const teamLink = screen.getByRole('link', { name: 'Bilinmeyen Mahalle Voleybol SK' });
+    expect(teamLink).toHaveAttribute('href', '/takim/bilinmeyen-mahalle-voleybol-sk');
   });
 
   it('(f) lig başlığına tıklandığında Volleybox turnuva sayfasına yönlendiren link render ediliyor', () => {
