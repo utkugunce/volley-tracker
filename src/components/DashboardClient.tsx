@@ -8,9 +8,11 @@ import { FixtureTable } from "@/components/FixtureTable";
 import { StandingsTable } from "@/components/StandingsTable";
 import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
+import { NotificationBanner } from "@/components/NotificationBanner";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star } from "lucide-react";
 import { isMatchPassed } from "@/utils/calendar";
+import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 
 interface DashboardClientProps {
   initialData: FixturesData;
@@ -82,6 +84,21 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       })
       .catch((e) => console.error("Cities load error:", e));
   }, []);
+
+  // Favori maçlar için 30 dakika kala tarayıcı hatırlatma kontrolü (GÖREV 2)
+  useEffect(() => {
+    if (favorites.length === 0 || !data?.matches || data.matches.length === 0) return;
+
+    // Sayfa açıldığında veya favori değiştiğinde hemen kontrol et
+    checkAndTriggerMatchReminders(data.matches, favorites);
+
+    // Sekme açıkken her 60 saniyede bir düzenli kontrol et
+    const timer = setInterval(() => {
+      checkAndTriggerMatchReminders(data.matches, favorites);
+    }, 60000);
+
+    return () => clearInterval(timer);
+  }, [favorites, data?.matches]);
 
   const toggleSplitScreen = () => {
     setSplitScreenMode((prev) => {
@@ -462,6 +479,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f0f2f5] text-slate-900 font-sans">
+      {/* 0. Favori Maç Hatırlatma Banner'ı (GÖREV 2) */}
+      <NotificationBanner favoritesCount={favorites.length} />
+
       {/* 1. Header (GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
       <Header
         city={data?.city}
