@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T17:10:04.572977",
+  "updated_at": "2026-09-15T19:59:13.191290",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -147,6 +147,28 @@
     "Genç Kızlar Süper Lig - Süper Lig Genç Kız - C Gr": [
       {
         "rank": 1,
+        "team": "Özay",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Venüs",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "D.S.İ.",
         "played": 0,
         "won": 0,
@@ -157,7 +179,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "GÖKSU ATLETİK",
         "played": 0,
         "won": 0,
@@ -168,30 +190,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Monza",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Özay",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Venüs",
+        "team": "Monza",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -205,23 +205,23 @@
       {
         "rank": 1,
         "team": "ALTINAY",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "ARKAS",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -454,6 +454,28 @@
     "Yıldız Kızlar Süper Lig - Süper Lig Yıldız Kızlar - D Gr": [
       {
         "rank": 1,
+        "team": "D.S.İ.",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "ALTINORDU",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "ALTINAY",
         "played": 0,
         "won": 0,
@@ -464,30 +486,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "ALTINORDU",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "BAYRAKLI BELEDİYESİ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "D.S.İ.",
+        "team": "BAYRAKLI BELEDİYESİ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -930,11 +930,15 @@
       "match_no": "1",
       "home_team": "Özay",
       "away_team": "Venüs",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-22",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397114",
@@ -1094,11 +1098,16 @@
       "match_no": "1",
       "home_team": "ALTINAY",
       "away_team": "ARKAS",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-21",
+        "26-24",
+        "24-26",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397116",
@@ -1914,11 +1923,16 @@
       "match_no": "1",
       "home_team": "D.S.İ.",
       "away_team": "ALTINORDU",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "14-25",
+        "25-16",
+        "25-20",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397161",
@@ -2395,5 +2409,5 @@
     }
   ],
   "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-09-15T17:11:04.213975"
+  "volleybox_sync_updated_at": "2026-09-15T20:00:13.366247"
 }
