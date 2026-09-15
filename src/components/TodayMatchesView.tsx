@@ -89,7 +89,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
     return {
       totalMatchesCount,
-      activeCities: activeCities || 4,
+      activeCities: activeCities,
       todayTotal,
       todayUpcoming,
       todayFinished,
@@ -220,25 +220,32 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
   // Aktif iller listesi (Hızlı Dashboard Kartları için)
   const activeCityCards = useMemo(() => {
-    const defaultList = [
+    if (!citiesList || citiesList.length === 0) {
+      return [];
+    }
+
+    const cards: {
+      slug: string;
+      name: string;
+      count: number;
+      icon: React.ComponentType<{ size?: number; className?: string }>;
+    }[] = [
       { slug: "all", name: "Tüm İller", count: dashboardKpis.totalMatchesCount, icon: Globe },
-      { slug: "istanbul", name: "İstanbul", count: 24, icon: MapPin },
-      { slug: "izmir", name: "İzmir", count: 44, icon: MapPin },
-      { slug: "yalova", name: "Yalova", count: 20, icon: MapPin },
-      { slug: "nigde", name: "Niğde", count: 4, icon: MapPin },
     ];
 
-    if (citiesList && citiesList.length > 0) {
-      return defaultList.map((item) => {
-        if (item.slug === "all") return item;
-        const found = citiesList.find((c) => c.slug === item.slug);
-        return {
-          ...item,
-          count: found?.matches_count || item.count,
-        };
+    const active = citiesList.filter((c) => (c.matches_count || 0) > 0);
+    active.sort((a, b) => (b.matches_count || 0) - (a.matches_count || 0));
+
+    for (const c of active) {
+      cards.push({
+        slug: c.slug,
+        name: c.name,
+        count: c.matches_count || 0,
+        icon: MapPin,
       });
     }
-    return defaultList;
+
+    return cards;
   }, [dashboardKpis.totalMatchesCount, citiesList]);
 
   // Tekil bir maç kartı bileşeni (Dashboard Match Card)
@@ -516,40 +523,48 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
         </div>
       </div>
 
-      {/* 2. AKTİF İL HIZLI KARTLARI (Tüm İller, İstanbul, İzmir, Yalova, Niğde) */}
+      {/* 2. AKTİF İL HIZLI KARTLARI */}
       {onSelectCity && (
         <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1">
-          {activeCityCards.map((item) => {
-            const isSelected = currentCitySlug === item.slug;
-            const IconComponent = item.icon;
+          {citiesList === undefined ? (
+            <div className="flex items-center gap-2 py-1">
+              <div className="h-8 w-24 bg-slate-200 animate-pulse rounded-xl" />
+              <div className="h-8 w-24 bg-slate-200 animate-pulse rounded-xl" />
+              <div className="h-8 w-24 bg-slate-200 animate-pulse rounded-xl" />
+            </div>
+          ) : (
+            activeCityCards.map((item) => {
+              const isSelected = currentCitySlug === item.slug;
+              const IconComponent = item.icon;
 
-            return (
-              <button
-                key={item.slug}
-                onClick={() => onSelectCity(item.slug)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border ${
-                  isSelected
-                    ? "bg-[#0b1325] text-white border-primary shadow-sm ring-2 ring-primary/40 font-bold"
-                    : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200"
-                }`}
-              >
-                <IconComponent
-                  size={14}
-                  className={isSelected ? "text-primary" : "text-slate-400"}
-                />
-                <span>{item.name}</span>
-                <span
-                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+              return (
+                <button
+                  key={item.slug}
+                  onClick={() => onSelectCity(item.slug)}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border ${
                     isSelected
-                      ? "bg-primary text-white"
-                      : "bg-slate-100 text-slate-700"
+                      ? "bg-[#0b1325] text-white border-primary shadow-sm ring-2 ring-primary/40 font-bold"
+                      : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200"
                   }`}
                 >
-                  {item.count}
-                </span>
-              </button>
-            );
-          })}
+                  <IconComponent
+                    size={14}
+                    className={isSelected ? "text-primary" : "text-slate-400"}
+                  />
+                  <span>{item.name}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                      isSelected
+                        ? "bg-primary text-white"
+                        : "bg-slate-100 text-slate-700"
+                    }`}
+                  >
+                    {item.count}
+                  </span>
+                </button>
+              );
+            })
+          )}
         </div>
       )}
 

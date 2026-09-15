@@ -32,13 +32,24 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
   }, []);
 
   const currentCity = useMemo(() => {
-    return cities.find((c) => c.slug === currentCitySlug) || {
-      ilid: "34",
-      name: "İstanbul",
-      slug: "istanbul",
-      matches_count: 24,
-      status: "Aktif",
-    };
+    if (currentCitySlug === "all") {
+      return {
+        ilid: "TR",
+        name: "Tüm İller",
+        slug: "all",
+        matches_count: 0,
+        status: "Aktif",
+      };
+    }
+    return (
+      cities.find((c) => c.slug === currentCitySlug) || {
+        ilid: "--",
+        name: currentCitySlug ? currentCitySlug.toUpperCase() : "İl Seçin",
+        slug: currentCitySlug,
+        matches_count: 0,
+        status: "",
+      }
+    );
   }, [cities, currentCitySlug]);
 
   const filteredCities = useMemo(() => {
@@ -107,7 +118,7 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
                     : "text-slate-400 hover:text-white"
                 }`}
               >
-                Tüm İller ({cities.length || 81})
+                Tüm İller ({cities.length})
               </button>
               <button
                 onClick={() => setFilterTab("active")}
