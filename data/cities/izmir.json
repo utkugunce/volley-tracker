@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T19:59:13.191290",
+  "updated_at": "2026-09-15T20:19:59.618001",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -318,6 +318,28 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Kzy Bornova",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "İZMİRSPOR",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "ALFA GAZİEMİR",
         "played": 0,
         "won": 0,
@@ -328,30 +350,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Göztepe - B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "İZMİRSPOR",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Kzy Bornova",
+        "team": "Göztepe - B",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1431,11 +1431,16 @@
       "match_no": "1",
       "home_team": "Kzy Bornova",
       "away_team": "İZMİRSPOR",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-14",
+        "21-25",
+        "25-15",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397120",
@@ -2409,5 +2414,5 @@
     }
   ],
   "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-09-15T20:00:13.366247"
+  "volleybox_sync_updated_at": "2026-09-15T20:20:50.735829"
 }
