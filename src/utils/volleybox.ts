@@ -62,13 +62,24 @@ export function buildVolleyboxMap(
 
     const teamKey = normalizeKey(item.internal_name);
     const catKey = normalizeKey(item.internal_category);
-
-    // Tam eşleşme: "vakıfbank::genç kızlar süper lig"
-    map.set(`${teamKey}::${catKey}`, item);
-
-    // Yaş grubu bazlı indeks: "vakıfbank::u18"
+    const citySlug = normalizeCitySlug(item.city || item.city_slug);
     const age = extractAgeGroup(item.internal_category) || (item.age_category?.toLowerCase() as "u18" | "u16");
-    if (age) {
+
+    // Şehir spesifik indeksler
+    if (citySlug) {
+      map.set(`${teamKey}::${catKey}::${citySlug}`, item);
+      if (age) {
+        map.set(`${teamKey}::${age}::${citySlug}`, item);
+      }
+      map.set(`${teamKey}::${citySlug}`, item);
+    }
+
+    // Genel indeksler (şehir verilmediğinde veya genel fallback)
+    if (!map.has(`${teamKey}::${catKey}`)) {
+      map.set(`${teamKey}::${catKey}`, item);
+    }
+
+    if (age && !map.has(`${teamKey}::${age}`)) {
       map.set(`${teamKey}::${age}`, item);
     }
 
@@ -92,13 +103,14 @@ export function getDefaultVolleyboxMap(): Map<string, VolleyboxMapping> {
 }
 
 /**
- * Retrieves the Volleybox profile mapping for a given team name and category.
+ * Retrieves the Volleybox profile mapping for a given team name, category and optional city.
  * Returns undefined if no mapping exists or if marked broken.
  */
 export function getVolleyboxMapping(
   teamName: string,
   category?: string,
-  customMap?: Map<string, VolleyboxMapping>
+  customMap?: Map<string, VolleyboxMapping>,
+  city?: string
 ): VolleyboxMapping | undefined {
   if (!teamName || !teamName.trim()) {
     return undefined;
@@ -106,30 +118,51 @@ export function getVolleyboxMapping(
 
   const map = customMap || getDefaultVolleyboxMap();
   const teamKey = normalizeKey(teamName);
+  const citySlug = normalizeCitySlug(city);
 
   if (category) {
     const rawCat = normalizeKey(category);
+    const leaguePart = rawCat.split(" - ")[0].trim();
+    const age = extractAgeGroup(category);
 
-    // 1. Doğrudan takım ve kategori string eşleşmesi
+    // 1. Şehir + Kategori / Yaş grubu spesifik eşleşmeler
+    if (citySlug) {
+      const matchCityCat = map.get(`${teamKey}::${rawCat}::${citySlug}`);
+      if (matchCityCat) return matchCityCat;
+
+      if (leaguePart) {
+        const matchCityLeague = map.get(`${teamKey}::${leaguePart}::${citySlug}`);
+        if (matchCityLeague) return matchCityLeague;
+      }
+
+      if (age) {
+        const matchCityAge = map.get(`${teamKey}::${age}::${citySlug}`);
+        if (matchCityAge) return matchCityAge;
+      }
+
+      const matchCity = map.get(`${teamKey}::${citySlug}`);
+      if (matchCity) return matchCity;
+    }
+
+    // 2. Kategori bazlı genel eşleşmeler
     const directMatch = map.get(`${teamKey}::${rawCat}`);
     if (directMatch) return directMatch;
 
-    // 2. Kategori " - " içeriyorsa lig kısmını ayırıp dene ("Genç Kızlar Süper Lig - A Grubu" -> "Genç Kızlar Süper Lig")
-    const leaguePart = rawCat.split(" - ")[0].trim();
     if (leaguePart) {
       const leagueMatch = map.get(`${teamKey}::${leaguePart}`);
       if (leagueMatch) return leagueMatch;
     }
 
-    // 3. Yaş grubu etiketi ile dene (u18 veya u16)
-    const age = extractAgeGroup(category);
     if (age) {
       const ageMatch = map.get(`${teamKey}::${age}`);
       if (ageMatch) return ageMatch;
     }
+  } else if (citySlug) {
+    const matchCity = map.get(`${teamKey}::${citySlug}`);
+    if (matchCity) return matchCity;
   }
 
-  // 4. Takım adıyla genel eşleşme fallback
+  // 3. Takım adıyla genel eşleşme fallback
   return map.get(teamKey);
 }
 

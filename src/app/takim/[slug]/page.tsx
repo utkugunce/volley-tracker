@@ -7,11 +7,19 @@ import { TeamDetailClient } from "@/components/TeamDetailClient";
 
 interface TeamPageProps {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ sehir?: string; city?: string }>;
 }
 
-export async function generateMetadata({ params }: TeamPageProps): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: TeamPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const team = getTeamDetailsBySlug(slug);
+  const sParams = searchParams ? await searchParams : undefined;
+  const cityFilter =
+    typeof sParams?.sehir === "string"
+      ? sParams.sehir
+      : typeof sParams?.city === "string"
+      ? sParams.city
+      : undefined;
+  const team = getTeamDetailsBySlug(slug, cityFilter);
 
   if (!team) {
     return {
@@ -33,9 +41,16 @@ export async function generateMetadata({ params }: TeamPageProps): Promise<Metad
   };
 }
 
-export default async function TeamDetailPage({ params }: TeamPageProps) {
+export default async function TeamDetailPage({ params, searchParams }: TeamPageProps) {
   const { slug } = await params;
-  const team = getTeamDetailsBySlug(slug);
+  const sParams = searchParams ? await searchParams : undefined;
+  const cityFilter =
+    typeof sParams?.sehir === "string"
+      ? sParams.sehir
+      : typeof sParams?.city === "string"
+      ? sParams.city
+      : undefined;
+  const team = getTeamDetailsBySlug(slug, cityFilter);
 
   if (!team) {
     return (

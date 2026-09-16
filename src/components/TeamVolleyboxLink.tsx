@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { getVolleyboxMapping } from "@/utils/volleybox";
+import { getVolleyboxMapping, normalizeCitySlug } from "@/utils/volleybox";
 import { slugify } from "@/utils/slugify";
 import { ExternalLink } from "lucide-react";
 
@@ -11,6 +11,7 @@ import Image from "next/image";
 interface TeamVolleyboxLinkProps {
   teamName: string;
   category?: string;
+  city?: string;
   className?: string;
   showLogo?: boolean;
   logoClassName?: string;
@@ -21,13 +22,14 @@ interface TeamVolleyboxLinkProps {
 export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   teamName,
   category,
+  city,
   className = "",
   showLogo = true,
   logoClassName = "",
   children,
   disableTeamPageLink = false,
 }) => {
-  const mapping = getVolleyboxMapping(teamName, category);
+  const mapping = getVolleyboxMapping(teamName, category, undefined, city);
   
   // Takım adı HER ZAMAN tam ve orijinal haliyle yazılır (A / B takımı ayrımlarını korumak için)
   const displayName = teamName?.trim() || "";
@@ -52,6 +54,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   ) : null;
 
   const teamSlug = slugify(displayName);
+  const cityQuery = city ? `?sehir=${normalizeCitySlug(city)}` : "";
 
   const isClubLevelOnly = mapping?.confidence === "club_level_only";
   const vbTitle = isClubLevelOnly
@@ -88,7 +91,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
     >
       {logoElement}
       <Link
-        href={`/takim/${teamSlug}`}
+        href={`/takim/${teamSlug}${cityQuery}`}
         className="truncate hover:underline hover:text-primary transition-colors cursor-pointer"
         title={`${displayName} Detay Sayfası`}
         onClick={(e) => e.stopPropagation()}

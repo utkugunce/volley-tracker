@@ -83,14 +83,12 @@ describe("FixtureTable Component", () => {
     expect(screen.queryByRole("link", { name: /volleybox/i })).not.toBeInTheDocument();
 
     // Takım detay sayfası iç linkleri bulunmalı
-    expect(screen.getByRole("link", { name: "Bilinmeyen Spor Kulübü A" })).toHaveAttribute(
-      "href",
-      "/takim/bilinmeyen-spor-kulubu-a"
-    );
-    expect(screen.getByRole("link", { name: "Bilinmeyen Spor Kulübü B" })).toHaveAttribute(
-      "href",
-      "/takim/bilinmeyen-spor-kulubu-b"
-    );
+    expect(
+      screen.getByRole("link", { name: "Bilinmeyen Spor Kulübü A" }).getAttribute("href")
+    ).toContain("/takim/bilinmeyen-spor-kulubu-a");
+    expect(
+      screen.getByRole("link", { name: "Bilinmeyen Spor Kulübü B" }).getAttribute("href")
+    ).toContain("/takim/bilinmeyen-spor-kulubu-b");
   });
 
   it("lig başlığı için Volleybox turnuva linki render eder", () => {

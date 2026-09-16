@@ -148,6 +148,22 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                   <strong className="text-slate-200">{team.mapping.matched_as}</strong>
                 </p>
               )}
+
+              {team.otherCities && team.otherCities.length > 0 && (
+                <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-slate-400 font-medium">Bu kulübün diğer illerdeki takımları:</span>
+                  {team.otherCities.map((oc) => (
+                    <Link
+                      key={oc.citySlug}
+                      href={oc.path}
+                      className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 transition-colors"
+                    >
+                      <MapPin size={11} className="text-primary" />
+                      <span>{oc.city} Takımı</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 

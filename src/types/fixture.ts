@@ -101,6 +101,8 @@ export type VolleyboxConfidence = "verified" | "club_level_only" | "broken";
 export interface VolleyboxMapping {
   internal_name: string;
   internal_category: string;
+  city?: string;
+  city_slug?: string;
   matched_as: string;
   volleybox_url: string;
   age_category: "U18" | "U16" | null;

@@ -3,6 +3,8 @@
     {
       "internal_name": "VakıfBank",
       "internal_category": "Genç Kızlar Süper Lig",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
       "matched_as": "VakıfBank U18",
       "volleybox_url": "https://women.volleybox.net/vakfbank-u18-t19499",
       "age_category": "U18",
@@ -255,6 +257,8 @@
     {
       "internal_name": "VakıfBank",
       "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
       "matched_as": "VakıfBank U16",
       "volleybox_url": "https://women.volleybox.net/vakfbank-u17-t37362",
       "age_category": "U16",
@@ -267,6 +271,8 @@
     {
       "internal_name": "VakıfBank A",
       "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
       "matched_as": "VakıfBank - A U16",
       "volleybox_url": "https://women.volleybox.net/vakfbank-u17-t37362",
       "age_category": "U16",
@@ -279,6 +285,8 @@
     {
       "internal_name": "VakıfBank B",
       "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
       "matched_as": "VakıfBank - B U16",
       "volleybox_url": "https://women.volleybox.net/vakfbank-u17-t37362",
       "age_category": "U16",
@@ -5343,6 +5351,25 @@
       ],
       "local_logo": null,
       "logo_url": null
+    },
+    {
+      "internal_name": "Vakıfbank",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Vakıfbank İzmir U16",
+      "volleybox_url": null,
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Vakıfbank İzmir U16 (İzmir Yıldız Kızlar Süper Lig)",
+      "verified_at": "2026-09-16",
+      "aliases": [
+        "Vakıfbank",
+        "Vakıfbank İzmir",
+        "Vakıfbank İzmir U16"
+      ],
+      "local_logo": "/logos/vakfbank-u17-t37362.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1742222665a4rUz.png"
     }
   ],
   "leagues": [

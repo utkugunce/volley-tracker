@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { Match, StandingItem } from "@/types/fixture";
 import { slugify } from "./slugify";
-import { getVolleyboxMapping } from "./volleybox";
+import { getVolleyboxMapping, normalizeCitySlug } from "./volleybox";
 import { VolleyboxMapping } from "@/types/fixture";
 import { applyOverridesToMatches } from "./overrides";
 
@@ -22,9 +22,16 @@ export interface TeamMatchDetail extends Match {
   result?: "win" | "loss" | "upcoming";
 }
 
+export interface OtherCityTeam {
+  city: string;
+  citySlug: string;
+  path: string;
+}
+
 export interface TeamDetails {
   teamName: string;
   slug: string;
+  city: string;
   cities: string[];
   categories: string[];
   mapping?: VolleyboxMapping;
@@ -38,6 +45,7 @@ export interface TeamDetails {
     losses: number;
     upcoming: number;
   };
+  otherCities?: OtherCityTeam[];
 }
 
 let cachedAllData: {
@@ -97,32 +105,110 @@ function loadAllCityData() {
   return cachedAllData;
 }
 
-export function getTeamDetailsBySlug(targetSlug: string): TeamDetails | null {
+export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): TeamDetails | null {
   if (!targetSlug) return null;
 
-  const normalizedTargetSlug = slugify(targetSlug);
   const { matches: allMatches, standingsByCity } = loadAllCityData();
 
-  let officialTeamName: string | null = null;
-  const teamMatches: TeamMatchDetail[] = [];
-  const standingsContexts: TeamStandingContext[] = [];
-  const citiesSet = new Set<string>();
-  const categoriesSet = new Set<string>();
+  // Şehir öneki kontrolü (örn: izmir-vakifbank -> citySlug: izmir, cleanSlug: vakifbank)
+  let cleanSlug = slugify(targetSlug);
+  let requestedCitySlug = cityFilter ? normalizeCitySlug(cityFilter) : "";
 
-  // 1. Taramada maçları eşleştir
+  if (!requestedCitySlug) {
+    const knownCitySlugs = new Set<string>();
+    for (const m of allMatches) {
+      if (m.city) knownCitySlugs.add(normalizeCitySlug(m.city));
+    }
+    for (const cityName of Object.keys(standingsByCity)) {
+      knownCitySlugs.add(normalizeCitySlug(cityName));
+    }
+
+    for (const cSlug of knownCitySlugs) {
+      if (cleanSlug.startsWith(`${cSlug}-`)) {
+        requestedCitySlug = cSlug;
+        cleanSlug = cleanSlug.slice(cSlug.length + 1);
+        break;
+      }
+    }
+  }
+
+  // 1. Önce bu takımın yer aldığı tüm şehirleri tespit et
+  const teamCitiesMap = new Map<string, { officialName: string; count: number }>();
+
   for (const m of allMatches) {
     const homeSlug = slugify(m.home_team);
     const awaySlug = slugify(m.away_team);
+    const mCity = m.city || "İstanbul";
 
-    const isHome = homeSlug === normalizedTargetSlug;
-    const isAway = awaySlug === normalizedTargetSlug;
+    if (homeSlug === cleanSlug) {
+      const entry = teamCitiesMap.get(mCity) || { officialName: m.home_team, count: 0 };
+      entry.count++;
+      teamCitiesMap.set(mCity, entry);
+    }
+    if (awaySlug === cleanSlug) {
+      const entry = teamCitiesMap.get(mCity) || { officialName: m.away_team, count: 0 };
+      entry.count++;
+      teamCitiesMap.set(mCity, entry);
+    }
+  }
+
+  for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
+    const standings = cityGroup.standings;
+    for (const groupData of Object.values(standings)) {
+      const table: StandingItem[] = Array.isArray(groupData)
+        ? groupData
+        : (groupData as any)?.table || [];
+
+      const foundRow = table.find((item) => slugify(item.team) === cleanSlug);
+      if (foundRow) {
+        const entry = teamCitiesMap.get(cityName) || { officialName: foundRow.team, count: 0 };
+        entry.count++;
+        teamCitiesMap.set(cityName, entry);
+      }
+    }
+  }
+
+  if (teamCitiesMap.size === 0) {
+    return null;
+  }
+
+  const allAvailableCities = Array.from(teamCitiesMap.keys());
+
+  // Hedef şehri belirle:
+  let selectedCity = "";
+  if (requestedCitySlug) {
+    selectedCity = allAvailableCities.find(
+      (c) => normalizeCitySlug(c) === requestedCitySlug
+    ) || "";
+  }
+
+  if (!selectedCity) {
+    const ist = allAvailableCities.find((c) => normalizeCitySlug(c) === "istanbul");
+    selectedCity = ist || allAvailableCities[0];
+  }
+
+  const selectedCitySlug = normalizeCitySlug(selectedCity);
+  const officialTeamName = teamCitiesMap.get(selectedCity)?.officialName || targetSlug;
+
+  // 2. YALNIZCA SEÇİLİ ŞEHİRDEKİ MAÇLARI VE PUAN DURUMLARINI TOPLA
+  const teamMatches: TeamMatchDetail[] = [];
+  const standingsContexts: TeamStandingContext[] = [];
+  const categoriesSet = new Set<string>();
+
+  for (const m of allMatches) {
+    const homeSlug = slugify(m.home_team);
+    const awaySlug = slugify(m.away_team);
+    const mCity = m.city || "İstanbul";
+
+    // Şehir izolasyonu: Takım profilinde SADECE o ilin maçları gösterilir
+    if (normalizeCitySlug(mCity) !== selectedCitySlug) {
+      continue;
+    }
+
+    const isHome = homeSlug === cleanSlug;
+    const isAway = awaySlug === cleanSlug;
 
     if (isHome || isAway) {
-      if (!officialTeamName) {
-        officialTeamName = isHome ? m.home_team : m.away_team;
-      }
-
-      if (m.city) citiesSet.add(m.city);
       if (m.category) categoriesSet.add(m.category);
 
       let result: "win" | "loss" | "upcoming" = "upcoming";
@@ -149,25 +235,20 @@ export function getTeamDetailsBySlug(targetSlug: string): TeamDetails | null {
     }
   }
 
-  // 2. Puan durumlarını eşleştir
+  // Puan durumları (SADECE seçili şehir)
   for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
+    if (normalizeCitySlug(cityName) !== selectedCitySlug) {
+      continue;
+    }
+
     const standings = cityGroup.standings;
     for (const [groupName, groupData] of Object.entries(standings)) {
       const table: StandingItem[] = Array.isArray(groupData)
         ? groupData
         : (groupData as any)?.table || [];
 
-      const foundRow = table.find((item) => {
-        const itemSlug = slugify(item.team);
-        return itemSlug === normalizedTargetSlug;
-      });
-
+      const foundRow = table.find((item) => slugify(item.team) === cleanSlug);
       if (foundRow) {
-        if (!officialTeamName) {
-          officialTeamName = foundRow.team;
-        }
-        citiesSet.add(cityName);
-
         const cat = groupName.includes("Genç") || groupName.includes("U18")
           ? "Genç Kızlar Süper Lig"
           : groupName.includes("Yıldız") || groupName.includes("U16")
@@ -178,19 +259,13 @@ export function getTeamDetailsBySlug(targetSlug: string): TeamDetails | null {
         standingsContexts.push({
           groupName,
           category: cat,
-          city: cityName,
+          city: selectedCity,
           standingRow: foundRow,
           fullGroupTable: table,
         });
       }
     }
   }
-
-  if (!officialTeamName && teamMatches.length === 0 && standingsContexts.length === 0) {
-    return null;
-  }
-
-  const teamName = officialTeamName || targetSlug;
 
   // Maçları tarihe göre sırala (TBD sona)
   teamMatches.sort((a, b) => {
@@ -217,14 +292,24 @@ export function getTeamDetailsBySlug(targetSlug: string): TeamDetails | null {
   const losses = finishedMatches.filter((m) => m.result === "loss").length;
   const upcoming = teamMatches.filter((m) => m.status !== "finished").length;
 
-  // Volleybox profili
+  // Volleybox profili - o ilin takımına özel eşleme
   const firstCat = Array.from(categoriesSet)[0];
-  const mapping = getVolleyboxMapping(teamName, firstCat);
+  const mapping = getVolleyboxMapping(officialTeamName, firstCat, undefined, selectedCity);
+
+  // Bu kulübün diğer illerdeki takımları
+  const otherCities: OtherCityTeam[] = allAvailableCities
+    .filter((c) => normalizeCitySlug(c) !== selectedCitySlug)
+    .map((c) => ({
+      city: c,
+      citySlug: normalizeCitySlug(c),
+      path: `/takim/${cleanSlug}?sehir=${normalizeCitySlug(c)}`,
+    }));
 
   return {
-    teamName,
-    slug: normalizedTargetSlug,
-    cities: Array.from(citiesSet),
+    teamName: officialTeamName,
+    slug: cleanSlug,
+    city: selectedCity,
+    cities: [selectedCity],
     categories: Array.from(categoriesSet),
     mapping,
     matches: teamMatches,
@@ -237,25 +322,52 @@ export function getTeamDetailsBySlug(targetSlug: string): TeamDetails | null {
       losses,
       upcoming,
     },
+    otherCities,
   };
 }
 
 export function getAllTeamSlugs(): string[] {
   const { matches, standingsByCity } = loadAllCityData();
   const slugs = new Set<string>();
+  const teamCities = new Map<string, Set<string>>();
 
   for (const m of matches) {
-    if (m.home_team) slugs.add(slugify(m.home_team));
-    if (m.away_team) slugs.add(slugify(m.away_team));
+    const mCity = m.city || "İstanbul";
+    if (m.home_team) {
+      const s = slugify(m.home_team);
+      slugs.add(s);
+      if (!teamCities.has(s)) teamCities.set(s, new Set());
+      teamCities.get(s)!.add(mCity);
+    }
+    if (m.away_team) {
+      const s = slugify(m.away_team);
+      slugs.add(s);
+      if (!teamCities.has(s)) teamCities.set(s, new Set());
+      teamCities.get(s)!.add(mCity);
+    }
   }
 
-  for (const cityGroup of Object.values(standingsByCity)) {
+  for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
     for (const groupData of Object.values(cityGroup.standings)) {
       const table: StandingItem[] = Array.isArray(groupData)
         ? groupData
         : (groupData as any)?.table || [];
       for (const item of table) {
-        if (item.team) slugs.add(slugify(item.team));
+        if (item.team) {
+          const s = slugify(item.team);
+          slugs.add(s);
+          if (!teamCities.has(s)) teamCities.set(s, new Set());
+          teamCities.get(s)!.add(cityName);
+        }
+      }
+    }
+  }
+
+  // Çoklu şehirde oynayan takımlar için şehir önekli slug'ları da ekle (örn: izmir-vakifbank)
+  for (const [s, cities] of teamCities.entries()) {
+    if (cities.size > 1) {
+      for (const c of cities) {
+        slugs.add(`${normalizeCitySlug(c)}-${s}`);
       }
     }
   }

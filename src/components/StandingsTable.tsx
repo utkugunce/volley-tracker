@@ -223,7 +223,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
                     {/* Takım Adı */}
                     <td className="py-3 px-4 font-bold text-white whitespace-nowrap text-sm">
-                      <TeamVolleyboxLink teamName={row.team} category={selectedLeague} />
+                      <TeamVolleyboxLink teamName={row.team} category={selectedLeague} city={city} />
                     </td>
 
                     {/* O */}

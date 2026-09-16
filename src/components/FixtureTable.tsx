@@ -218,6 +218,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     <TeamVolleyboxLink
                       teamName={match.home_team}
                       category={match.category || match.age_group}
+                      city={match.city || city}
                       className={`text-xs ${
                         homeWon
                           ? "font-black text-white"
@@ -233,6 +234,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     <TeamVolleyboxLink
                       teamName={match.away_team}
                       category={match.category || match.age_group}
+                      city={match.city || city}
                       className={`text-xs ${
                         awayWon
                           ? "font-black text-white"

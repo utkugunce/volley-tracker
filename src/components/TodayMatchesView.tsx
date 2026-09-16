@@ -325,6 +325,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               <TeamVolleyboxLink
                 teamName={m.home_team}
                 category={m.category || m.age_group}
+                city={m.city || (city === "Tüm İller" ? undefined : city)}
                 className={`text-sm ${
                   homeWon
                     ? "font-black text-white"
@@ -357,6 +358,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               <TeamVolleyboxLink
                 teamName={m.away_team}
                 category={m.category || m.age_group}
+                city={m.city || (city === "Tüm İller" ? undefined : city)}
                 className={`text-sm ${
                   awayWon
                     ? "font-black text-white"
