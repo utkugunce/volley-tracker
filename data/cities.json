@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-16T01:04:10.861143",
+  "updated_at": "2026-09-16T06:13:24.560975",
   "total_cities": 81,
-  "active_cities": 5,
-  "total_matches": 98,
+  "active_cities": 6,
+  "total_matches": 122,
   "cities": [
     {
       "ilid": "1",
@@ -339,9 +339,9 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (0 Maç Mevcut)",
-      "matches_count": 0,
-      "standings_count": 38,
+      "status": "Aktif (24 Maç Mevcut)",
+      "matches_count": 24,
+      "standings_count": 5,
       "data_file": "data/cities/istanbul.json"
     },
     {
