@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T06:49:23.412928",
+  "updated_at": "2026-09-16T10:38:09.617436",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -945,8 +945,8 @@
         "url": "https://women.volleybox.net/tr/ozay-voleybol-spor-kulubu-u18-venus-spor-kulubu-u18-c397114",
         "host_name": "Özay Voleybol Spor Kulübü U18",
         "guest_name": "Venüs Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-15",
         "vb_time": "20:00",
         "vb_hall": "Gaziemir Spor Salonu",
@@ -1114,8 +1114,8 @@
         "url": "https://women.volleybox.net/tr/zmir-altnay-spor-kulubu-a-u18-arkas-spor-kulubu-u18-c397116",
         "host_name": "İzmir Altınay Spor Kulübü U18",
         "guest_name": "Arkas Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-09-15",
         "vb_time": "18:30",
         "vb_hall": "Gaziemir Spor Salonu",
@@ -1447,8 +1447,8 @@
         "url": "https://women.volleybox.net/tr/kzy-bornova-spor-kulubu-u16-zmirspor-u16-c397120",
         "host_name": "KZY Bornova Spor Kulübü U16",
         "guest_name": "İzmirspor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-09-15",
         "vb_time": "20:00",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -1944,8 +1944,8 @@
         "url": "https://women.volleybox.net/tr/zmir-ds-spor-u16-altnordu-voleybol-u16-c397161",
         "host_name": "İzmir DSİ Spor U16",
         "guest_name": "Altınordu Voleybol U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-09-15",
         "vb_time": "18:30",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -2414,5 +2414,5 @@
     }
   ],
   "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-09-16T06:50:21.540801"
+  "volleybox_sync_updated_at": "2026-09-16T10:40:20.982059"
 }
