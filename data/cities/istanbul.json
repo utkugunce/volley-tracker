@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T15:37:28.515367",
+  "updated_at": "2026-09-16T19:09:18.495819",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
@@ -545,6 +545,23 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Fenerbahçe A",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 28,
+        "point_ratio": "2.679",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Ümraniye Bld",
         "played": 1,
         "won": 1,
@@ -561,7 +578,24 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
+        "team": "Sarıyer Bld",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 77,
+        "points_lost": 59,
+        "point_ratio": "1.305",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Yeşilyurt",
         "played": 1,
         "won": 1,
@@ -578,7 +612,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "Bizimkent Sk",
         "played": 1,
         "won": 0,
@@ -595,7 +629,24 @@
         ]
       },
       {
-        "rank": 4,
+        "rank": 6,
+        "team": "Bizimkent Voleybol",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 59,
+        "points_lost": 77,
+        "point_ratio": "0.766",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 7,
         "team": "Olimpia 2017",
         "played": 1,
         "won": 0,
@@ -612,68 +663,25 @@
         ]
       },
       {
-        "rank": 5,
-        "team": "Başakşehir Bld",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Bizimkent Voleybol",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Eyüpsultan Bld A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Fenerbahçe A",
-        "played": 0,
+        "team": "Başakşehir Bld",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 28,
+        "points_lost": 75,
+        "point_ratio": "0.373",
+        "form": [
+          "L"
+        ]
       },
       {
         "rank": 9,
-        "team": "Sarıyer Bld",
+        "team": "Eyüpsultan Bld A",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -739,6 +747,23 @@
       },
       {
         "rank": 3,
+        "team": "Es Voleybol",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 49,
+        "point_ratio": "1.531",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Eczacıbaşı B",
         "played": 1,
         "won": 1,
@@ -755,7 +780,7 @@
         ]
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Marmara Akademi",
         "played": 1,
         "won": 0,
@@ -772,7 +797,24 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 6,
+        "team": "Fenerbahçe B",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 49,
+        "points_lost": 75,
+        "point_ratio": "0.653",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 7,
         "team": "Eyüpsultan Bld B",
         "played": 1,
         "won": 0,
@@ -789,7 +831,7 @@
         ]
       },
       {
-        "rank": 6,
+        "rank": 8,
         "team": "Pegasus",
         "played": 1,
         "won": 0,
@@ -804,36 +846,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 7,
-        "team": "Es Voleybol",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Fenerbahçe B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       },
       {
         "rank": 9,
@@ -1625,11 +1637,15 @@
       "match_no": "3",
       "home_team": "Sarıyer Bld",
       "away_team": "Bizimkent Voleybol",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "27-25",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1659,11 +1675,15 @@
       "match_no": "4",
       "home_team": "Fenerbahçe B",
       "away_team": "Es Voleybol",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "15-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1693,11 +1713,15 @@
       "match_no": "4",
       "home_team": "Fenerbahçe A",
       "away_team": "Başakşehir Bld",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-13",
+        "25-6"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1784,5 +1808,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-16T15:38:35.430807"
+  "volleybox_sync_updated_at": "2026-09-16T19:10:34.581315"
 }
