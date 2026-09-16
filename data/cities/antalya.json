@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T11:50:46.069226",
+  "updated_at": "2026-09-16T17:06:12.939573",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -423,18 +423,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398685",
+        "url": "https://women.volleybox.net/tr/antalya-simsek-gsk-u18-luna-spor-kulubu-u18-c398685",
+        "host_name": "Antalya Şimşek GSK U18",
+        "guest_name": "Luna Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-19",
+        "vb_time": "14:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "14:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -457,18 +464,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398688",
+        "url": "https://women.volleybox.net/tr/antalya-simsek-gsk-u18-gazipasa-genclerbirligi-spor-kulubu-u18-c398688",
+        "host_name": "Antalya Şimşek GSK U18",
+        "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-20",
+        "vb_time": "13:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "13:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -491,18 +505,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398869",
+        "url": "https://women.volleybox.net/tr/07-zenit-spor-kulubu-u18-antalya-1907-spor-kulubu-u18-c398869",
+        "host_name": "07 Zenit Spor Kulübü U18",
+        "guest_name": "Antalya 1907 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-20",
+        "vb_time": "15:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "15:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -525,18 +546,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398870",
+        "url": "https://women.volleybox.net/tr/erse-spor-kulubu-u18-antalyaspor-u18-c398870",
+        "host_name": "Erse Spor Kulübü U18",
+        "guest_name": "Antalyaspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-20",
+        "vb_time": "15:00",
+        "vb_hall": "Alanya Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "15:00",
+          "vb_hall": "Alanya Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -559,18 +587,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398871",
+        "url": "https://women.volleybox.net/tr/07-mega-spor-kulubu-u18-nova-spor-kulubu-u18-c398871",
+        "host_name": "07 Mega Spor Kulübü U18",
+        "guest_name": "Nova Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-24",
+        "vb_time": "18:30",
+        "vb_hall": "Kepez Turgut Özal Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-24",
+          "vb_time": "18:30",
+          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "details": null
         }
       }
     },
@@ -593,18 +628,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398872",
+        "url": "https://women.volleybox.net/tr/antalyaspor-u18-elit-akdeniz-spor-kulubu-u18-c398872",
+        "host_name": "Antalyaspor U18",
+        "guest_name": "Elit Akdeniz Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-24",
+        "vb_time": "20:00",
+        "vb_hall": "Kepez Turgut Özal Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-24",
+          "vb_time": "20:00",
+          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "details": null
         }
       }
     },
@@ -627,18 +669,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398873",
+        "url": "https://women.volleybox.net/tr/vera-spor-kulubu-u16-antalya-simsek-gsk-u16-c398873",
+        "host_name": "Vera Spor Kulübü U16",
+        "guest_name": "Antalya Şimşek GSK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-22",
+        "vb_time": "18:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": "18:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -661,18 +710,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398874",
+        "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u16-antalya-ac-koleji-spor-kulubu-u16-c398874",
+        "host_name": "Nova Spor Kulübü U16",
+        "guest_name": "Antalya Açı Koleji Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-22",
+        "vb_time": "18:30",
+        "vb_hall": "Kepez Turgut Özal Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": "18:30",
+          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "details": null
         }
       }
     },
@@ -695,18 +751,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398875",
+        "url": "https://women.volleybox.net/tr/07-mega-spor-kulubu-u16-sistem-egitim-spor-kulubu-u16-c398875",
+        "host_name": "07 Mega Spor Kulübü U16",
+        "guest_name": "Sistem Eğitim Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-22",
+        "vb_time": "20:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": "20:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -729,18 +792,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398876",
+        "url": "https://women.volleybox.net/tr/elit-akdeniz-spor-kulubu-u16-kemer-sarp-spor-kulubu-u16-c398876",
+        "host_name": "Elit Akdeniz Spor Kulübü U16",
+        "guest_name": "Kemer Sarp Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-22",
+        "vb_time": "20:00",
+        "vb_hall": "Kepez Turgut Özal Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": "20:00",
+          "vb_hall": "Kepez Turgut Özal Spor Salonu",
+          "details": null
         }
       }
     },
@@ -763,18 +833,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398877",
+        "url": "https://women.volleybox.net/tr/antalya-ds-spor-kulubu-u16-07-zenit-spor-kulubu-u16-c398877",
+        "host_name": "Antalya DSİ Spor Kulübü U16",
+        "guest_name": "07 Zenit Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-19",
+        "vb_time": "13:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "13:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -797,18 +874,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398878",
+        "url": "https://women.volleybox.net/tr/luna-spor-kulubu-u16-antalyaspor-u16-c398878",
+        "host_name": "Luna Spor Kulübü U16",
+        "guest_name": "Antalyaspor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-25",
+        "vb_time": "18:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": "18:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -831,18 +915,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398879",
+        "url": "https://women.volleybox.net/tr/antalya-1907-spor-kulubu-u16-07-alya-spor-u16-c398879",
+        "host_name": "Antalya 1907 Spor Kulübü U16",
+        "guest_name": "07 Alya Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-25",
+        "vb_time": "19:00",
+        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": "19:00",
+          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+          "details": null
         }
       }
     },
@@ -865,18 +956,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398880",
+        "url": "https://women.volleybox.net/tr/akdeniz-bilgi-spor-kulubu-u16-antalya-ds-spor-kulubu-u16-c398880",
+        "host_name": "Akdeniz Bilgi Spor Kulübü U16",
+        "guest_name": "Antalya DSİ Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-25",
+        "vb_time": "20:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": "20:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -899,18 +997,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398881",
+        "url": "https://women.volleybox.net/tr/07-anka-spor-kulubu-u16-07-zenit-spor-kulubu-u16-c398881",
+        "host_name": "07 Anka Spor Kulübü U16",
+        "guest_name": "07 Zenit Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-25",
+        "vb_time": "20:30",
+        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": "20:30",
+          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+          "details": null
         }
       }
     },
@@ -933,18 +1038,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398882",
+        "url": "https://women.volleybox.net/tr/manavgat-belediyespor-u16-alanya-mask-spor-kulubu-u16-c398882",
+        "host_name": "Manavgat Belediyespor U16",
+        "guest_name": "Alanya MASK Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-19",
+        "vb_time": "10:30",
+        "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "10:30",
+          "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -967,18 +1079,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398883",
+        "url": "https://women.volleybox.net/tr/net-voleybol-akademi-spor-kulubu-u16-alanya-belediyespor-u16-c398883",
+        "host_name": "Net Voleybol Akademi Spor Kulübü U16",
+        "guest_name": "Alanya Belediyespor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-19",
+        "vb_time": "12:00",
+        "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "12:00",
+          "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1001,18 +1120,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398884",
+        "url": "https://women.volleybox.net/tr/alanya-mask-spor-kulubu-u16-net-voleybol-akademi-spor-kulubu-u16-c398884",
+        "host_name": "Alanya MASK Spor Kulübü U16",
+        "guest_name": "Net Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-20",
+        "vb_time": "10:30",
+        "vb_hall": "Alanya Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "10:30",
+          "vb_hall": "Alanya Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1035,22 +1161,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398885",
+        "url": "https://women.volleybox.net/tr/alanya-belediyespor-u16-manavgat-belediyespor-u16-c398885",
+        "host_name": "Alanya Belediyespor U16",
+        "guest_name": "Manavgat Belediyespor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-20",
+        "vb_time": "12:00",
+        "vb_hall": "Alanya Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "12:00",
+          "vb_hall": "Alanya Atatürk Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-16T11:52:08.066615"
+  "volleybox_synced_matches": 19,
+  "volleybox_sync_updated_at": "2026-09-16T17:08:32.481374"
 }

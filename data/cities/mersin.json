@@ -1,0 +1,259 @@
+{
+  "updated_at": "2026-09-16T17:06:40.650764",
+  "city": "Mersin",
+  "slug": "mersin",
+  "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 4,
+  "source": "https://mersin.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü",
+      "Mersinli Ahmet S.S."
+    ]
+  },
+  "standings": {
+    "Genç Kızlar Süper Lig - A Grubu": [
+      {
+        "rank": 1,
+        "team": "ALSANCAK SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "MERSİN İHTİSAS SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "MEV TOROS SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "MEZİTLİ BELEDİYE SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "TAC SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "TARSUS GELECEK SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "TOROSLAR BELEDİYE SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "YENİŞEHİR GENÇLERBİRLİĞİ SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "mersin-20260926-001",
+      "city": "Mersin",
+      "date": "2026-09-26",
+      "time": "11:00",
+      "hall": "Mersinli Ahmet S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "TARSUS GELECEK SK",
+      "away_team": "MEV TOROS SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mersin-20260926-002",
+      "city": "Mersin",
+      "date": "2026-09-26",
+      "time": "13:00",
+      "hall": "Mersinli Ahmet S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "YENİŞEHİR GENÇLERBİRLİĞİ SK",
+      "away_team": "TAC SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mersin-20260926-003",
+      "city": "Mersin",
+      "date": "2026-09-26",
+      "time": "15:00",
+      "hall": "Mersinli Ahmet S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "TOROSLAR BELEDİYE SK",
+      "away_team": "MERSİN İHTİSAS SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mersin-20260926-004",
+      "city": "Mersin",
+      "date": "2026-09-26",
+      "time": "17:00",
+      "hall": "Mersinli Ahmet S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "ALSANCAK SK",
+      "away_team": "MEZİTLİ BELEDİYE SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-16T17:08:32.690513"
+}

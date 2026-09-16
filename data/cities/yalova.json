@@ -103,18 +103,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398307",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u18-yalova-voleybol-spor-kulubu-b-u18-c398307",
+        "host_name": "Koru Akademi Spor Kulübü U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -137,18 +144,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398308",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-b-u18-yalova-atakent-spor-kulubu-u18-c398308",
+        "host_name": "Koru Akademi Spor Kulübü - B U18",
+        "guest_name": "Yalova Atakent Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -171,18 +185,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398309",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u18-koru-akademi-spor-kulubu-b-u18-c398309",
+        "host_name": "Yalova Voleybol Spor Kulübü U18",
+        "guest_name": "Koru Akademi Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-16",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -205,18 +226,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398310",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u18-koru-akademi-spor-kulubu-u18-c398310",
+        "host_name": "Yalova Atakent Spor Kulübü U18",
+        "guest_name": "Koru Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-16",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -239,18 +267,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398311",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-b-u18-yalova-atakent-spor-kulubu-u18-c398311",
+        "host_name": "Yalova Voleybol Spor Kulübü - B U18",
+        "guest_name": "Yalova Atakent Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-23",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-23",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -273,18 +308,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398312",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u18-yalova-voleybol-spor-kulubu-u18-c398312",
+        "host_name": "Koru Akademi Spor Kulübü U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-23",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-23",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -307,18 +349,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398313",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-b-u18-koru-akademi-spor-kulubu-u18-c398313",
+        "host_name": "Koru Akademi Spor Kulübü - B U18",
+        "guest_name": "Koru Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-30",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-30",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -341,18 +390,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398314",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u18-yalova-voleybol-spor-kulubu-b-u18-c398314",
+        "host_name": "Yalova Voleybol Spor Kulübü U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-30",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-30",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -375,18 +431,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398315",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u18-yalova-voleybol-spor-kulubu-u18-c398315",
+        "host_name": "Yalova Atakent Spor Kulübü U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-06",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-06",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -409,18 +472,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398316",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-b-u18-koru-akademi-spor-kulubu-b-u18-c398316",
+        "host_name": "Yalova Voleybol Spor Kulübü - B U18",
+        "guest_name": "Koru Akademi Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-06",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-06",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -443,18 +513,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398317",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-b-u18-koru-akademi-spor-kulubu-u18-c398317",
+        "host_name": "Yalova Voleybol Spor Kulübü - B U18",
+        "guest_name": "Koru Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-13",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-13",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -477,18 +554,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398318",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u18-koru-akademi-spor-kulubu-b-u18-c398318",
+        "host_name": "Yalova Atakent Spor Kulübü U18",
+        "guest_name": "Koru Akademi Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-13",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-13",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -511,18 +595,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398319",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-b-u18-yalova-voleybol-spor-kulubu-u18-c398319",
+        "host_name": "Koru Akademi Spor Kulübü - B U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-20",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-20",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -545,18 +636,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398320",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u18-yalova-atakent-spor-kulubu-u18-c398320",
+        "host_name": "Koru Akademi Spor Kulübü U18",
+        "guest_name": "Yalova Atakent Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-20",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-20",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -579,18 +677,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398321",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u18-yalova-voleybol-spor-kulubu-b-u18-c398321",
+        "host_name": "Yalova Atakent Spor Kulübü U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-27",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-27",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -613,18 +718,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398322",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u18-koru-akademi-spor-kulubu-u18-c398322",
+        "host_name": "Yalova Voleybol Spor Kulübü U18",
+        "guest_name": "Koru Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-27",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-27",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -647,18 +759,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398323",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u18-koru-akademi-spor-kulubu-b-u18-c398323",
+        "host_name": "Koru Akademi Spor Kulübü U18",
+        "guest_name": "Koru Akademi Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-04",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-04",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -681,18 +800,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398324",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-b-u18-yalova-voleybol-spor-kulubu-u18-c398324",
+        "host_name": "Yalova Voleybol Spor Kulübü - B U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-04",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-04",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -715,18 +841,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398325",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-b-u18-yalova-voleybol-spor-kulubu-b-u18-c398325",
+        "host_name": "Koru Akademi Spor Kulübü - B U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-11",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-11",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -749,22 +882,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398326",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u18-yalova-atakent-spor-kulubu-u18-c398326",
+        "host_name": "Yalova Voleybol Spor Kulübü U18",
+        "guest_name": "Yalova Atakent Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-11",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-11",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-16T11:52:08.068938"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-09-16T17:08:32.736181"
 }

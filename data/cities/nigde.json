@@ -82,18 +82,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398345",
+        "url": "https://women.volleybox.net/tr/nigde-sev-voleybol-kulubu-u18-odtu-gv-nigde-okullar-spor-kulubu-u18-c398345",
+        "host_name": "Niğde Sev Voleybol Kulübü U18",
+        "guest_name": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-15",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Niğde Merkez Spor Kompleksı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-15",
+          "vb_time": null,
+          "vb_hall": "Niğde Merkez Spor Kompleksı",
+          "details": "Tarih Değişti (TVF: 2026-09-11 / VB: 2026-09-15)"
         }
       }
     },
@@ -121,18 +128,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "398180",
+        "url": "https://women.volleybox.net/tr/odtu-gv-nigde-okullar-spor-kulubu-u16-nigde-genclik-spor-kulubu-u16-c398180",
+        "host_name": "ODTÜ GV Niğde Okulları Spor Kulübü U16",
+        "guest_name": "Niğde Gençlik Spor Kulübü U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-09-09",
+        "vb_time": "12:00",
+        "vb_hall": "Niğde Merkez Spor Kompleksı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-09",
+          "vb_time": "12:00",
+          "vb_hall": "Niğde Merkez Spor Kompleksı",
+          "details": null
         }
       }
     },
@@ -155,18 +169,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398184",
+        "url": "https://women.volleybox.net/tr/nahita-spor-kulubu-u16-nigde-sev-voleybol-kulubu-u16-c398184",
+        "host_name": "Nahita Spor Kulübü U16",
+        "guest_name": "Niğde Sev Voleybol Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-14",
+        "vb_time": "10:00",
+        "vb_hall": "Niğde Merkez Spor Kompleksı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-14",
+          "vb_time": "10:00",
+          "vb_hall": "Niğde Merkez Spor Kompleksı",
+          "details": "Tarih Değişti (TVF: 2026-09-12 / VB: 2026-09-14)"
         }
       }
     },
@@ -189,22 +210,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398186",
+        "url": "https://women.volleybox.net/tr/nigde-volley-akademi-spor-kulubu-u16-odtu-gv-nigde-okullar-spor-kulubu-u16-c398186",
+        "host_name": "Niğde Volley Akademi Spor Kulübü U16",
+        "guest_name": "ODTÜ GV Niğde Okulları Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-15",
+        "vb_time": "17:00",
+        "vb_hall": "Bor Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-09-15",
+          "vb_time": "17:00",
+          "vb_hall": "Bor Spor Salonu",
+          "details": "Salon Değişti (TVF: Bor Salon / VB: Bor Spor Salonu)"
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-16T11:52:08.068267"
+  "volleybox_synced_matches": 4,
+  "volleybox_sync_updated_at": "2026-09-16T17:08:32.696700"
 }

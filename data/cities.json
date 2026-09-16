@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-16T11:51:49.360679",
+  "updated_at": "2026-09-16T17:07:27.519713",
   "total_cities": 81,
-  "active_cities": 6,
-  "total_matches": 123,
+  "active_cities": 7,
+  "total_matches": 127,
   "cities": [
     {
       "ilid": "1",
@@ -329,10 +329,10 @@
       "name": "Mersin",
       "slug": "mersin",
       "url": "https://mersin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (4 Maç Mevcut)",
+      "matches_count": 4,
+      "standings_count": 1,
+      "data_file": "data/cities/mersin.json"
     },
     {
       "ilid": "34",
