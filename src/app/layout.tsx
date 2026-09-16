@@ -29,7 +29,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="min-h-screen bg-background text-navy font-sans antialiased selection:bg-primary selection:text-white">
+      <body className="min-h-screen bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
         {children}
       </body>
     </html>

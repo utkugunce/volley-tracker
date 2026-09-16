@@ -478,7 +478,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     showOnlyFavorites;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f0f2f5] text-slate-900 font-sans">
+    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100 font-sans">
       {/* 0. Favori Maç Hatırlatma Banner'ı (GÖREV 2) */}
       <NotificationBanner favoritesCount={favorites.length} />
 
@@ -516,8 +516,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4">
         {/* Hata Durumu */}
         {error && (
-          <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 flex items-center gap-2 mb-4 text-xs font-semibold">
-            <AlertCircle size={15} className="text-primary shrink-0" />
+          <div className="p-3 rounded-xl bg-rose-950/60 border border-rose-800 text-rose-300 flex items-center gap-2 mb-4 text-xs font-semibold shadow-md">
+            <AlertCircle size={15} className="text-rose-400 shrink-0" />
             <span>{error}</span>
           </div>
         )}
@@ -591,8 +591,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
             {/* Sonuç Bulunamadı / İl Sezon Takvimi Bekleniyor */}
             {groupedSections.length === 0 && (
-              <div className="text-center py-12 bg-white border border-slate-200 rounded-xl p-6 max-w-lg mx-auto my-8 shadow-sm">
-                <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3 text-slate-400">
+              <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
+                <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-slate-400 border border-slate-700">
                   {showOnlyFavorites ? (
                     <Star size={22} className="text-amber-400" />
                   ) : (
@@ -602,25 +602,25 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
                 {(data?.matches || []).length === 0 ? (
                   <>
-                    <h3 className="text-sm font-bold text-slate-900 mb-1">
+                    <h3 className="text-sm font-bold text-white mb-1">
                       TVF {data?.city || "Bu İl"} Fikstür Takvimi Henüz Açıklanmadı
                     </h3>
-                    <p className="text-xs text-slate-500 mb-4 max-w-sm mx-auto">
+                    <p className="text-xs text-slate-400 mb-4 max-w-sm mx-auto">
                       TVF {data?.city} İl Temsilciliği 2026-2027 sezonu için Genç ve Yıldız Kızlar Süper Lig bültenini sisteme girdiğinde maçlar otomatik olarak burada listelenecektir.
                     </p>
                     <button
                       onClick={() => handleSelectCity("istanbul")}
-                      className="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary-hover transition-colors shadow-sm"
+                      className="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
                     >
                       İstanbul Fikstürünü Görüntüle (24 Maç)
                     </button>
                   </>
                 ) : (
                   <>
-                    <h3 className="text-sm font-bold text-slate-900 mb-1">
+                    <h3 className="text-sm font-bold text-white mb-1">
                       {showOnlyFavorites ? "Favori Maçınız Bulunmuyor" : "Kriterlere Uygun Maç Bulunamadı"}
                     </h3>
-                    <p className="text-xs text-slate-500 mb-4">
+                    <p className="text-xs text-slate-400 mb-4">
                       {showOnlyFavorites
                         ? "Maçların yanındaki yıldız ikonuna basarak favorilerinize ekleyebilirsiniz."
                         : "Seçtiğiniz tarih, lig veya filtreye ait bültende maç kaydı bulunmamaktadır."}
@@ -628,7 +628,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     {isFiltered && (
                       <button
                         onClick={resetFilters}
-                        className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary-hover transition-colors"
+                        className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
                       >
                         Filtreleri Sıfırla
                       </button>
@@ -644,8 +644,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
             {data?.standings && Object.keys(data.standings).length > 0 ? (
               <StandingsTable standingsData={data.standings} city={data?.city} />
             ) : (
-              <div className="text-center py-12 bg-white border border-slate-200 rounded-xl p-6 max-w-md mx-auto my-8 shadow-sm">
-                <p className="text-sm font-semibold text-slate-700">
+              <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-md mx-auto my-8 shadow-xl">
+                <p className="text-sm font-semibold text-slate-300">
                   TVF {data?.city || "Bu İl"} için henüz puan durumu tablosu oluşturulmamıştır.
                 </p>
               </div>
@@ -655,12 +655,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       </main>
 
       {/* Altbilgi */}
-      <footer className="border-t border-slate-200 bg-white mt-auto py-4 text-center text-xs text-slate-500 no-print">
+      <footer className="border-t border-slate-800 bg-[#0b1325] mt-auto py-4 text-center text-xs text-slate-500 no-print">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="font-semibold text-slate-700">
+          <p className="font-semibold text-slate-300">
             TVFSCORE • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
           </p>
-          <div className="flex items-center gap-3 text-[11px] text-slate-400">
+          <div className="flex items-center gap-3 text-[11px] text-slate-500">
             <span>Fikstür & Puan Durumu</span>
             <span>•</span>
             <span>Resmi TVF Bülten Sistemi</span>

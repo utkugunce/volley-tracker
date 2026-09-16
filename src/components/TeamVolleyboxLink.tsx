@@ -43,7 +43,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       alt={`${displayName} logosu`}
       width={16}
       height={16}
-      className={`w-4 h-4 object-contain rounded-full bg-white p-0.5 border border-slate-200/90 shadow-2xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
+      className={`w-4 h-4 object-contain rounded-full bg-white p-0.5 border border-slate-700 shadow-2xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
       unoptimized={logoSrc.startsWith("http")}
       onError={() => {
         setImgFailed(true);
@@ -63,7 +63,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       href={mapping.volleybox_url}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-slate-400 hover:text-emerald-600 transition-colors p-0.5 rounded shrink-0 inline-flex items-center ml-1 opacity-70 hover:opacity-100"
+      className="text-slate-400 hover:text-emerald-400 transition-colors p-0.5 rounded shrink-0 inline-flex items-center ml-1 opacity-70 hover:opacity-100"
       title={vbTitle}
       onClick={(e) => e.stopPropagation()}
     >

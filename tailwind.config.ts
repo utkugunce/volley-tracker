@@ -9,20 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#F8FAFC",
-        surface: "#FFFFFF",
-        "surface-muted": "#F1F5F9",
-        border: "#E2E8F0",
-        "border-dark": "#CBD5E1",
+        background: "#0F172A",
+        surface: "#1E293B",
+        "surface-muted": "#0B1325",
+        border: "#334155",
+        "border-dark": "#1E293B",
         primary: {
           DEFAULT: "#DC2626", // TVF Kırmızı
           hover: "#B91C1C",
           light: "#FEE2E2",
         },
         navy: {
-          DEFAULT: "#0F172A",
-          light: "#1E293B",
-          muted: "#475569",
+          DEFAULT: "#F8FAFC",
+          light: "#E2E8F0",
+          muted: "#94A3B8",
         },
       },
       fontFamily: {

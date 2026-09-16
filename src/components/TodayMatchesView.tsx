@@ -273,43 +273,43 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     return (
       <div
         key={m.id}
-        className={`bg-white rounded-xl border transition-all duration-200 shadow-xs hover:shadow-md flex flex-col justify-between overflow-hidden ${
+        className={`bg-slate-800/60 rounded-xl border transition-all duration-200 shadow-md hover:shadow-lg flex flex-col justify-between overflow-hidden ${
           disc?.has_diff
-            ? "border-amber-400/90 ring-1 ring-amber-300/40 bg-amber-50/20"
+            ? "border-amber-500/60 ring-1 ring-amber-400/30"
             : isFav
-            ? "border-amber-400/80 ring-1 ring-amber-300/40"
-            : "border-slate-200 hover:border-slate-300"
+            ? "border-amber-500/50 ring-1 ring-amber-400/30"
+            : "border-slate-700/80 hover:border-slate-600"
         }`}
       >
         {/* Kart Üst Bilgi Başlığı */}
-        <div className="px-3.5 py-2 bg-slate-50/90 border-b border-slate-100 flex items-center justify-between text-xs gap-2">
+        <div className="px-3.5 py-2 bg-slate-900/60 border-b border-slate-700/50 flex items-center justify-between text-xs gap-2">
           <div className="flex items-center gap-1.5 flex-wrap min-w-0">
             {m.city && city === "Tüm İller" && (
-              <span className="font-bold px-1.5 py-0.2 rounded bg-slate-200 text-slate-800 text-[10px]">
+              <span className="font-bold px-1.5 py-0.2 rounded bg-slate-700 text-slate-200 text-[10px]">
                 {m.city}
               </span>
             )}
-            <span className="font-semibold text-slate-700 truncate text-[11px]">
+            <span className="font-semibold text-slate-200 truncate text-[11px]">
               {m.category}
             </span>
-            <span className="text-slate-400 text-[10px]">•</span>
-            <span className="text-slate-500 text-[10px]">{m.group}</span>
+            <span className="text-slate-500 text-[10px]">•</span>
+            <span className="text-slate-400 text-[10px]">{m.group}</span>
           </div>
 
           <div className="flex items-center gap-1.5 shrink-0">
             {isFinished ? (
-              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700">
                 BİTTİ
               </span>
             ) : (
-              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 border border-sky-300 flex items-center gap-1">
+              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-950/80 text-sky-300 border border-sky-700 flex items-center gap-1">
                 <Clock size={10} />
                 <span>{m.time}</span>
               </span>
             )}
             <button
               onClick={() => onToggleFavorite(m.id)}
-              className="p-1 rounded text-slate-400 hover:text-amber-400 transition-colors"
+              className="p-1 rounded text-slate-500 hover:text-amber-400 transition-colors"
               title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
             >
               <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
@@ -327,10 +327,10 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 category={m.category || m.age_group}
                 className={`text-sm ${
                   homeWon
-                    ? "font-black text-slate-900"
+                    ? "font-black text-white"
                     : isFinished
-                    ? "font-normal text-slate-500"
-                    : "font-bold text-slate-800"
+                    ? "font-normal text-slate-400"
+                    : "font-bold text-slate-200"
                 }`}
               />
             </div>
@@ -339,14 +339,14 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 <span
                   className={`px-2 py-0.5 rounded ${
                     homeWon
-                      ? "bg-[#0b1325] text-white shadow-2xs"
-                      : "bg-slate-100 text-slate-600"
+                      ? "bg-primary text-white shadow-sm"
+                      : "bg-slate-700 text-slate-300"
                   }`}
                 >
                   {homeScoreText}
                 </span>
               ) : (
-                <span className="text-slate-300 text-xs font-normal">--</span>
+                <span className="text-slate-500 text-xs font-normal">--</span>
               )}
             </div>
           </div>
@@ -359,10 +359,10 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 category={m.category || m.age_group}
                 className={`text-sm ${
                   awayWon
-                    ? "font-black text-slate-900"
+                    ? "font-black text-white"
                     : isFinished
-                    ? "font-normal text-slate-500"
-                    : "font-bold text-slate-800"
+                    ? "font-normal text-slate-400"
+                    : "font-bold text-slate-200"
                 }`}
               />
             </div>
@@ -371,26 +371,26 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 <span
                   className={`px-2 py-0.5 rounded ${
                     awayWon
-                      ? "bg-[#0b1325] text-white shadow-2xs"
-                      : "bg-slate-100 text-slate-600"
+                      ? "bg-primary text-white shadow-sm"
+                      : "bg-slate-700 text-slate-300"
                   }`}
                 >
                   {awayScoreText}
                 </span>
               ) : (
-                <span className="text-slate-300 text-xs font-normal">--</span>
+                <span className="text-slate-500 text-xs font-normal">--</span>
               )}
             </div>
           </div>
 
           {/* Set Skorları */}
           {isFinished && m.set_scores && m.set_scores.length > 0 && (
-            <div className="pt-2 border-t border-slate-100 flex items-center gap-1.5 flex-wrap">
-              <span className="text-[10px] text-slate-400 font-medium">Setler:</span>
+            <div className="pt-2 border-t border-slate-700/50 flex items-center gap-1.5 flex-wrap">
+              <span className="text-[10px] text-slate-500 font-medium">Setler:</span>
               {m.set_scores.map((set, sIdx) => (
                 <span
                   key={sIdx}
-                  className="px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-mono font-medium border border-slate-200/80"
+                  className="px-1.5 py-0.5 rounded bg-slate-700/80 text-slate-200 text-[10px] font-mono font-medium border border-slate-600/60"
                 >
                   {set}
                 </span>
@@ -400,16 +400,16 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
         </div>
 
         {/* Kart Alt Bilgi: Salon & Volleybox */}
-        <div className="px-3.5 py-2 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 gap-2">
+        <div className="px-3.5 py-2 bg-slate-900/50 border-t border-slate-700/50 flex items-center justify-between text-[11px] text-slate-400 gap-2">
           <div className="flex items-center gap-1 min-w-0 truncate" title={m.hall}>
-            <MapPin size={11} className="text-slate-400 shrink-0" />
+            <MapPin size={11} className="text-slate-500 shrink-0" />
             <span className="truncate">{m.hall}</span>
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
             {disc?.has_diff && (
               <span
-                className="inline-flex items-center gap-0.5 text-[10px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded"
+                className="inline-flex items-center gap-0.5 text-[10px] font-bold text-amber-300 bg-amber-950/60 px-1.5 py-0.5 rounded border border-amber-700/50"
                 title={`Bülten değişikliği tespit edildi! (${disc.details || "Saat/Salon farklı"})`}
               >
                 <AlertTriangle size={9} />
@@ -421,14 +421,14 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 href={m.volleybox.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-bold text-indigo-600 hover:text-indigo-800 hover:underline text-[10px]"
+                className="inline-flex items-center gap-1 font-bold text-indigo-400 hover:text-indigo-300 hover:underline text-[10px]"
                 title="Volleybox maç kaydına git"
               >
                 <span>Volleybox</span>
                 <ExternalLink size={10} />
               </a>
             ) : (
-              <span className="text-[10px] text-slate-400">VB Girişi Yok</span>
+              <span className="text-[10px] text-slate-500">VB Girişi Yok</span>
             )}
           </div>
         </div>
@@ -441,33 +441,33 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
       {/* 1. DASHBOARD KPI METRİK KARTLARI */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
         {/* KPI 1: Toplam Fikstür */}
-        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+        <div className="bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 sm:p-3.5 flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">
               {city === "Tüm İller" ? "Toplam Fikstür" : `${city} Fikstürü`}
             </span>
-            <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+            <span className="text-xl sm:text-2xl font-black text-white font-mono mt-0.5 block">
               {dashboardKpis.totalMatchesCount}
             </span>
-            <span className="text-[10px] text-slate-400 block mt-0.5">
+            <span className="text-[10px] text-slate-500 block mt-0.5">
               {city === "Tüm İller" ? `${dashboardKpis.activeCities} Aktif İl Bütünü` : "Sezon Maçları"}
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-indigo-950/60 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-800/40">
             <Trophy size={20} />
           </div>
         </div>
 
         {/* KPI 2: Günün Programı */}
-        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+        <div className="bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 sm:p-3.5 flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">
               Günün Maçları
             </span>
-            <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+            <span className="text-xl sm:text-2xl font-black text-white font-mono mt-0.5 block">
               {dashboardKpis.todayTotal}
             </span>
-            <span className="text-[10px] text-slate-400 block mt-0.5">
+            <span className="text-[10px] text-slate-500 block mt-0.5">
               {dashboardKpis.todayTotal > 0
                 ? `${dashboardKpis.todayUpcoming} bekliyor • ${dashboardKpis.todayFinished} bitti`
                 : nextMatchDay
@@ -475,49 +475,49 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 : "Bugün maç yok"}
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-amber-950/60 text-amber-400 flex items-center justify-center shrink-0 border border-amber-800/40">
             <Flame size={20} />
           </div>
         </div>
 
         {/* KPI 3: Volleybox Eşleşmesi */}
-        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+        <div className="bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 sm:p-3.5 flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">
               VB Eşleşme
             </span>
-            <span className="text-xl sm:text-2xl font-black text-emerald-600 font-mono">
+            <span className="text-xl sm:text-2xl font-black text-emerald-400 font-mono mt-0.5 block">
               %{dashboardKpis.syncedPercent}
             </span>
-            <span className="text-[10px] text-slate-400 block mt-0.5">
+            <span className="text-[10px] text-slate-500 block mt-0.5">
               {dashboardKpis.syncedCount} / {dashboardKpis.totalMatchesCount} Maç Eşleşti
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-emerald-950/60 text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-800/40">
             <CheckCircle2 size={20} />
           </div>
         </div>
 
         {/* KPI 4: Skor Giriş Durumu */}
-        <div className="bg-white rounded-xl p-3 sm:p-3.5 border border-slate-200 shadow-xs flex items-center justify-between">
+        <div className="bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 sm:p-3.5 flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-semibold text-slate-500 block uppercase tracking-wider">
+            <span className="text-[10px] font-bold text-slate-400 block uppercase tracking-wider">
               Skor Durumu
             </span>
-            <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+            <span className="text-xl sm:text-2xl font-black text-white font-mono mt-0.5 block">
               {dashboardKpis.scoredCount}
             </span>
-            <span className="text-[10px] text-slate-400 block mt-0.5">
+            <span className="text-[10px] text-slate-500 block mt-0.5">
               {dashboardKpis.unscoredPassed > 0 ? (
-                <span className="text-rose-600 font-bold">
+                <span className="text-rose-400 font-bold">
                   {dashboardKpis.unscoredPassed} Maç Skorsuz!
                 </span>
               ) : (
-                <span className="text-emerald-600 font-medium">Tüm skorlar güncel</span>
+                <span className="text-emerald-400 font-medium">Tüm skorlar güncel</span>
               )}
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-sky-950/60 text-sky-400 flex items-center justify-center shrink-0 border border-sky-800/40">
             <Activity size={20} />
           </div>
         </div>
@@ -543,8 +543,8 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                   onClick={() => onSelectCity(item.slug)}
                   className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border ${
                     isSelected
-                      ? "bg-[#0b1325] text-white border-primary shadow-sm ring-2 ring-primary/40 font-bold"
-                      : "bg-white text-slate-700 hover:bg-slate-50 border-slate-200"
+                      ? "bg-slate-800 text-white border-primary shadow-sm ring-2 ring-primary/40 font-bold"
+                      : "bg-slate-800/40 text-slate-300 hover:bg-slate-800/70 border-slate-700"
                   }`}
                 >
                   <IconComponent
@@ -556,7 +556,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                     className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
                       isSelected
                         ? "bg-primary text-white"
-                        : "bg-slate-100 text-slate-700"
+                        : "bg-slate-700 text-slate-300"
                     }`}
                   >
                     {item.count}
@@ -695,28 +695,28 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
         <div className="space-y-6">
           {todayMatches.length === 0 ? (
             /* Bugün Maç Yok Bilgilendirmesi */
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-xs">
-              <div className="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-3">
+            <div className="bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 text-center shadow-xl">
+              <div className="w-12 h-12 rounded-full bg-amber-950/60 text-amber-400 flex items-center justify-center mx-auto mb-3 border border-amber-800/40">
                 <CalendarDays size={22} />
               </div>
-              <h2 className="text-sm sm:text-base font-bold text-slate-900 mb-1">
+              <h2 className="text-sm sm:text-base font-bold text-white mb-1">
                 Bugün ({formattedToday}) İçin Planlanmış Maç Bulunmuyor
               </h2>
-              <p className="text-xs text-slate-500 max-w-md mx-auto mb-4">
+              <p className="text-xs text-slate-400 max-w-md mx-auto mb-4">
                 TVF bülteninde {city === "Tüm İller" ? "Türkiye genelinde" : `${city} ilinde`} bugün oynanacak karşılaşma bulunmamaktadır.
               </p>
               <button
                 onClick={onNavigateToFullFixtures}
-                className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-hover transition-colors shadow-xs"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary/90 transition-colors shadow-md"
               >
                 <span>Tüm Sezon Fikstürüne Git</span>
                 <ArrowRight size={14} />
               </button>
             </div>
           ) : (
-            <div className="bg-white border border-slate-200 rounded-xl p-6 text-center shadow-xs">
-              <SearchX size={24} className="text-slate-400 mx-auto mb-2" />
-              <p className="text-xs font-bold text-slate-700 mb-2">
+            <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-6 text-center shadow-md">
+              <SearchX size={24} className="text-slate-500 mx-auto mb-2" />
+              <p className="text-xs font-bold text-slate-300 mb-2">
                 Seçtiğiniz duruma uygun maç bulunamadı.
               </p>
               <button
@@ -734,15 +734,15 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               <div className="flex items-center justify-between px-1">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-sky-500 animate-pulse" />
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                    <Clock size={14} className="text-sky-600" />
+                  <h3 className="text-xs sm:text-sm font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+                    <Clock size={14} className="text-sky-400" />
                     <span>Sıradaki Maç Günü:</span>
                     <span className="text-primary font-black">
                       {formatDateTurkish(nextMatchDay.date)}
                     </span>
                   </h3>
                 </div>
-                <span className="text-xs text-slate-500 font-medium">
+                <span className="text-xs text-slate-400 font-medium">
                   {nextMatchDay.matches.length} Karşılaşma
                 </span>
               </div>
@@ -773,12 +773,12 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
           {/* Akıllı Yedek Görünüm 2: Son Tamamlanan Karşılaşmalar */}
           {recentFinishedDay && recentFinishedDay.matches.length > 0 && (
             <div className="space-y-3 pt-2">
-              <div className="flex items-center justify-between px-1 border-t border-slate-200/80 pt-4">
+              <div className="flex items-center justify-between px-1 border-t border-slate-700/50 pt-4">
                 <div className="flex items-center gap-2">
                   <History size={14} className="text-slate-500" />
-                  <h3 className="text-xs sm:text-sm font-bold text-slate-700 uppercase tracking-wider">
+                  <h3 className="text-xs sm:text-sm font-bold text-slate-300 uppercase tracking-wider">
                     Son Tamamlanan Maçlar:{" "}
-                    <span className="text-slate-900 font-extrabold">
+                    <span className="text-white font-extrabold">
                       {formatDateTurkish(recentFinishedDay.date)}
                     </span>
                   </h3>

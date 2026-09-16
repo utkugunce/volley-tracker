@@ -66,9 +66,9 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   ];
 
   return (
-    <div className="bg-white border border-slate-200 rounded-lg p-2.5 sm:p-3 mb-4 shadow-sm max-w-6xl mx-auto space-y-2.5 no-print">
+    <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-2.5 sm:p-3 mb-4 shadow-md max-w-6xl mx-auto space-y-2.5 no-print">
       {/* 1. Flashscore Durum Sekmeleri & Lig Filtreleri */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-700/50 pb-2.5">
         {/* HEPSİ / OYNANACAK / BİTENLER */}
         <div className="flex items-center gap-1">
           {statusTabs.map((tab) => {
@@ -79,14 +79,14 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => onSelectStatusFilter(tab.id)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold transition-all ${
                   isActive
-                    ? "bg-[#0b1325] text-white shadow-sm"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-primary text-white shadow-sm"
+                    : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
                 }`}
               >
                 <span>{tab.label}</span>
                 <span
                   className={`text-[10px] px-1 rounded-full ${
-                    isActive ? "bg-primary text-white" : "bg-slate-200 text-slate-600"
+                    isActive ? "bg-white/20 text-white" : "bg-slate-600 text-slate-300"
                   }`}
                 >
                   {tab.count}
@@ -107,7 +107,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 className={`px-2.5 py-1 rounded text-xs font-semibold whitespace-nowrap transition-all ${
                   isActive
                     ? "bg-primary text-white"
-                    : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                    : "bg-slate-700/50 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-600/50"
                 }`}
               >
                 {cat}
@@ -124,19 +124,19 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <div className="relative flex-1 sm:w-60 min-w-[170px]">
             <Search
               size={13}
-              className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-500"
             />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Kulüp veya salon ara..."
-              className="w-full bg-slate-50 border border-slate-200 rounded pl-8 pr-7 py-1 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-primary font-medium"
+              className="w-full bg-slate-900/80 border border-slate-700 rounded-lg pl-8 pr-7 py-1.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-primary font-medium"
             />
             {searchQuery && (
               <button
                 onClick={() => onSearchChange("")}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
               >
                 <X size={12} />
               </button>
@@ -148,7 +148,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             <select
               value={selectedHall}
               onChange={(e) => onSelectHall(e.target.value)}
-              className="bg-slate-50 border border-slate-200 text-slate-700 text-xs rounded px-2.5 py-1 pr-7 appearance-none focus:outline-none focus:border-primary cursor-pointer font-medium"
+              className="bg-slate-900/80 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 pr-7 appearance-none focus:outline-none focus:border-primary cursor-pointer font-medium"
             >
               <option value="Tümü">Tüm Salonlar</option>
               {halls.map((h) => (
@@ -159,14 +159,14 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             </select>
             <MapPin
               size={11}
-              className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
             />
           </div>
 
           {/* Volleybox Durumu Filtresi (Skorlu / Skorsuz / Girilmedi) */}
           {onSelectVolleyboxFilter && (
-            <div className="flex items-center bg-slate-100/80 border border-slate-200/80 rounded p-0.5 text-xs">
-              <span className="text-[11px] font-bold text-slate-500 px-2 flex items-center gap-1">
+            <div className="flex items-center bg-slate-900/50 border border-slate-700/60 rounded-lg p-0.5 text-xs">
+              <span className="text-[11px] font-bold text-slate-400 px-2 flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                 Volleybox:
               </span>
@@ -175,8 +175,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => onSelectVolleyboxFilter("all")}
                 className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all ${
                   volleyboxFilter === "all"
-                    ? "bg-white text-slate-800 shadow-xs font-bold"
-                    : "text-slate-500 hover:text-slate-800"
+                    ? "bg-slate-700 text-white shadow-xs font-bold"
+                    : "text-slate-400 hover:text-white"
                 }`}
               >
                 Tümü
@@ -187,13 +187,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
                   volleyboxFilter === "scored"
                     ? "bg-emerald-600 text-white shadow-xs font-bold"
-                    : "text-emerald-700 hover:bg-emerald-50"
+                    : "text-emerald-400 hover:bg-emerald-950/60"
                 }`}
                 title="Volleybox'ta skoru girilmiş maçlar"
               >
                 <span>Skorlu</span>
                 {volleyboxStats && (
-                  <span className={`text-[10px] ${volleyboxFilter === "scored" ? "text-emerald-100" : "text-emerald-600 font-bold"}`}>
+                  <span className={`text-[10px] ${volleyboxFilter === "scored" ? "text-emerald-100" : "text-emerald-500 font-bold"}`}>
                     ({volleyboxStats.scored})
                   </span>
                 )}
@@ -204,13 +204,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
                   volleyboxFilter === "unscored"
                     ? "bg-amber-600 text-white shadow-xs font-bold"
-                    : "text-amber-800 hover:bg-amber-50"
+                    : "text-amber-400 hover:bg-amber-950/60"
                 }`}
                 title="Volleybox'ta kayıtlı ancak skoru henüz girilmemiş maçlar"
               >
                 <span>Skorsuz</span>
                 {volleyboxStats && (
-                  <span className={`text-[10px] ${volleyboxFilter === "unscored" ? "text-amber-100" : "text-amber-700 font-bold"}`}>
+                  <span className={`text-[10px] ${volleyboxFilter === "unscored" ? "text-amber-100" : "text-amber-500 font-bold"}`}>
                     ({volleyboxStats.unscored})
                   </span>
                 )}
@@ -220,8 +220,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => onSelectVolleyboxFilter("unsynced")}
                 className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
                   volleyboxFilter === "unsynced"
-                    ? "bg-slate-700 text-white shadow-xs font-bold"
-                    : "text-slate-600 hover:bg-slate-200"
+                    ? "bg-slate-600 text-white shadow-xs font-bold"
+                    : "text-slate-400 hover:bg-slate-700/60"
                 }`}
                 title="Volleybox'a henüz girilmemiş maçlar"
               >
@@ -241,13 +241,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                   className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 ${
                     volleyboxFilter === "discrepancy"
                       ? "bg-amber-600 text-white shadow-xs font-bold"
-                      : "text-amber-900 bg-amber-100/90 hover:bg-amber-200 border border-amber-300 font-bold"
+                      : "text-amber-300 bg-amber-950/60 hover:bg-amber-900/60 border border-amber-700/50 font-bold"
                   }`}
                   title="Volleybox'a girildikten sonra il temsilciliğinde tarihi, saati veya salonu değişen maçlar"
                 >
-                  <AlertTriangle size={10} className={volleyboxFilter === "discrepancy" ? "text-white" : "text-amber-700"} />
+                  <AlertTriangle size={10} className={volleyboxFilter === "discrepancy" ? "text-white" : "text-amber-400"} />
                   <span>Değişenler</span>
-                  <span className={`text-[10px] ${volleyboxFilter === "discrepancy" ? "text-amber-100" : "text-amber-800 font-bold"}`}>
+                  <span className={`text-[10px] ${volleyboxFilter === "discrepancy" ? "text-amber-100" : "text-amber-400 font-bold"}`}>
                     ({volleyboxStats.discrepancy})
                   </span>
                 </button>
@@ -260,7 +260,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         {isFiltered && (
           <button
             onClick={onReset}
-            className="px-2 py-1 rounded text-xs text-slate-500 hover:text-primary hover:bg-slate-100 font-medium flex items-center gap-1 transition-colors shrink-0"
+            className="px-2 py-1 rounded text-xs text-slate-400 hover:text-primary hover:bg-slate-700/60 font-medium flex items-center gap-1 transition-colors shrink-0"
           >
             <X size={12} />
             <span className="hidden sm:inline">Temizle</span>

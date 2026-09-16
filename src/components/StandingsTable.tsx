@@ -81,14 +81,14 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
   if (allKeys.length === 0) {
     return (
-      <div className="bg-white border border-slate-200 rounded-lg p-8 text-center shadow-sm">
-        <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3 text-slate-400">
+      <div className="bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-8 text-center shadow-xl">
+        <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-slate-500 border border-slate-700">
           <HelpCircle size={22} />
         </div>
-        <h3 className="text-sm font-bold text-slate-800 mb-1">
+        <h3 className="text-sm font-bold text-white mb-1">
           Puan Durumu Verisi Henüz Açıklanmadı
         </h3>
-        <p className="text-xs text-slate-500 max-w-sm mx-auto">
+        <p className="text-xs text-slate-400 max-w-sm mx-auto">
           Bu il veya kategori için resmi puan cetveli TVF tarafından sisteme girildiğinde burada görüntülenecektir.
         </p>
       </div>
@@ -98,10 +98,10 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
   return (
     <div className="space-y-4">
       {/* 1. Lig & Grup Seçici Barı */}
-      <div className="bg-white p-3 rounded-lg border border-slate-200 shadow-sm no-print space-y-2.5">
+      <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/80 shadow-md no-print space-y-2.5">
         {/* Lig Seçimi (Genç Kızlar / Yıldız Kızlar) */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-bold text-slate-500 uppercase min-w-[50px]">
+          <span className="text-xs font-bold text-slate-400 uppercase min-w-[50px]">
             Lig:
           </span>
           {leagues.map((lg) => {
@@ -113,8 +113,8 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                 title={lg}
                 className={`px-3.5 py-1.5 rounded text-xs font-bold transition-all ${
                   isActive
-                    ? "bg-[#0b1325] text-white shadow-sm"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-primary text-white shadow-sm"
+                    : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
                 }`}
               >
                 {lg}
@@ -125,8 +125,8 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
         {/* Grup Seçimi */}
         {groupsInLeague.length > 1 && (
-          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100">
-            <span className="text-xs font-bold text-slate-500 uppercase min-w-[50px]">
+          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-700/50">
+            <span className="text-xs font-bold text-slate-400 uppercase min-w-[50px]">
               Grup:
             </span>
             {groupsInLeague.map((grp) => {
@@ -139,7 +139,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                   className={`px-3 py-1 rounded text-xs font-semibold transition-all max-w-[240px] truncate sm:max-w-none ${
                     isActive
                       ? "bg-primary text-white shadow-sm font-bold"
-                      : "bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200"
+                      : "bg-slate-700/50 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-600/50"
                   }`}
                 >
                   {grp}
@@ -151,9 +151,9 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
       </div>
 
       {/* 2. Puan Durumu Tablosu veya Boş Durum */}
-      <div className="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden">
+      <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl shadow-md overflow-hidden">
         {/* Başlık Şeridi */}
-        <div className="bg-[#1b2438] text-white px-4 py-2.5 flex items-center justify-between">
+        <div className="bg-[#111827] text-white px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Trophy size={16} className="text-amber-400" />
             <h2 className="text-sm font-bold tracking-tight">
@@ -171,13 +171,13 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         {/* Tablo veya Boş Durum (Empty State) */}
         {items.length === 0 ? (
           <div className="py-12 px-4 text-center">
-            <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3 text-slate-400">
+            <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-slate-500 border border-slate-700">
               <HelpCircle size={22} />
             </div>
-            <h3 className="text-sm font-bold text-slate-800 mb-1">
+            <h3 className="text-sm font-bold text-white mb-1">
               Bu grup için puan durumu verisi henüz mevcut değil.
             </h3>
-            <p className="text-xs text-slate-500 max-w-sm mx-auto">
+            <p className="text-xs text-slate-400 max-w-sm mx-auto">
               Seçtiğiniz {selectedLeague} - {selectedGroup} kategorisine ait resmi puan cetveli TVF il temsilciliği tarafından sisteme girildiğinde burada görüntülenecektir.
             </p>
           </div>
@@ -185,7 +185,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-slate-50 text-slate-500 font-bold border-b border-slate-200 uppercase text-[11px] tracking-wider">
+              <tr className="bg-slate-900/60 text-slate-400 font-bold border-b border-slate-700 uppercase text-[11px] tracking-wider">
                 <th className="py-2.5 px-3 text-center w-12">#</th>
                 <th className="py-2.5 px-4">Takım</th>
                 <th className="py-2.5 px-2 text-center w-12" title="Oynanan Maç">O</th>
@@ -194,19 +194,19 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                 <th className="py-2.5 px-3 text-center w-24" title="Aldığı Set - Verdiği Set">Setler</th>
                 <th className="py-2.5 px-2 text-center w-16 hidden md:table-cell" title="Set Oranı">Set Oran</th>
                 <th className="py-2.5 px-3 text-center w-28 hidden lg:table-cell" title="Aldığı Sayı - Verdiği Sayı">Sayılar</th>
-                <th className="py-2.5 px-3 text-center w-16 bg-slate-100 font-black text-slate-800" title="Puan">P</th>
+                <th className="py-2.5 px-3 text-center w-16 bg-slate-800/60 font-black text-white" title="Puan">P</th>
                 <th className="py-2.5 px-4 text-center w-36 hidden sm:table-cell" title="Son 5 Maç Formu">Form</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-slate-700/50">
               {items.map((row) => {
                 const isTop4 = row.rank <= 4;
 
                 return (
                   <tr
                     key={row.rank}
-                    className={`hover:bg-slate-50/80 transition-colors ${
-                      row.rank % 2 === 1 ? "bg-white" : "bg-slate-50/30"
+                    className={`hover:bg-slate-800/50 transition-colors ${
+                      row.rank % 2 === 1 ? "bg-transparent" : "bg-slate-900/20"
                     }`}
                   >
                     {/* Sıra & Final Etabı Çizgisi */}
@@ -216,50 +216,50 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                           isTop4 ? "bg-emerald-500" : "bg-transparent"
                         }`}
                       />
-                      <span className={isTop4 ? "text-emerald-700 font-black" : "text-slate-500"}>
+                      <span className={isTop4 ? "text-emerald-400 font-black" : "text-slate-500"}>
                         {row.rank}
                       </span>
                     </td>
 
                     {/* Takım Adı */}
-                    <td className="py-3 px-4 font-bold text-slate-900 whitespace-nowrap text-sm">
+                    <td className="py-3 px-4 font-bold text-white whitespace-nowrap text-sm">
                       <TeamVolleyboxLink teamName={row.team} category={selectedLeague} />
                     </td>
 
                     {/* O */}
-                    <td className="py-3 px-2 text-center text-slate-700 font-medium">
+                    <td className="py-3 px-2 text-center text-slate-300 font-medium">
                       {row.played}
                     </td>
 
                     {/* G */}
-                    <td className="py-3 px-2 text-center text-emerald-700 font-bold">
+                    <td className="py-3 px-2 text-center text-emerald-400 font-bold">
                       {row.won}
                     </td>
 
                     {/* M */}
-                    <td className="py-3 px-2 text-center text-red-600 font-medium">
+                    <td className="py-3 px-2 text-center text-rose-400 font-medium">
                       {row.lost}
                     </td>
 
                     {/* Setler (AS - VS) */}
-                    <td className="py-3 px-3 text-center font-mono text-slate-800 whitespace-nowrap">
+                    <td className="py-3 px-3 text-center font-mono text-slate-200 whitespace-nowrap">
                       <span className="font-bold">{row.sets_won}</span>
-                      <span className="text-slate-400 mx-1">:</span>
-                      <span className="text-slate-600">{row.sets_lost}</span>
+                      <span className="text-slate-500 mx-1">:</span>
+                      <span className="text-slate-400">{row.sets_lost}</span>
                     </td>
 
                     {/* Set Oranı */}
-                    <td className="py-3 px-2 text-center font-mono text-slate-500 hidden md:table-cell">
+                    <td className="py-3 px-2 text-center font-mono text-slate-400 hidden md:table-cell">
                       {row.set_ratio}
                     </td>
 
                     {/* Sayılar (AP - VP) */}
-                    <td className="py-3 px-3 text-center font-mono text-slate-500 text-[11px] hidden lg:table-cell whitespace-nowrap">
+                    <td className="py-3 px-3 text-center font-mono text-slate-400 text-[11px] hidden lg:table-cell whitespace-nowrap">
                       {row.points_won}:{row.points_lost}
                     </td>
 
                     {/* Puan (P) */}
-                    <td className="py-3 px-3 text-center bg-slate-100/80 font-mono font-black text-sm text-slate-900">
+                    <td className="py-3 px-3 text-center bg-slate-800/60 font-mono font-black text-sm text-white">
                       {row.points}
                     </td>
 
@@ -290,14 +290,14 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         )}
 
         {/* Alt Açıklama / Legend (Flashscore Tarzı) */}
-        <div className="bg-slate-50 border-t border-slate-200 px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-600">
+        <div className="bg-slate-900/60 border-t border-slate-700 px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-400">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded bg-emerald-500" />
-              <span className="font-semibold text-slate-700">1 - 4: Final Etabı (Play-Off)</span>
+              <span className="font-semibold text-slate-300">1 - 4: Final Etabı (Play-Off)</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded bg-slate-300" />
+              <span className="w-2.5 h-2.5 rounded bg-slate-600" />
               <span>5 - 8: Klasman Etabı</span>
             </div>
           </div>
