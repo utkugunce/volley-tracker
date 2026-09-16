@@ -1038,18 +1038,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398882",
+        "url": "https://women.volleybox.net/tr/manavgat-belediyespor-u16-alanya-mask-spor-kulubu-u16-c398882",
+        "host_name": "Manavgat Belediyespor U16",
+        "guest_name": "Alanya MASK Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-19",
+        "vb_time": "10:30",
+        "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "10:30",
+          "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1072,18 +1079,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398883",
+        "url": "https://women.volleybox.net/tr/net-voleybol-akademi-spor-kulubu-u16-alanya-belediyespor-u16-c398883",
+        "host_name": "Net Voleybol Akademi Spor Kulübü U16",
+        "guest_name": "Alanya Belediyespor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-19",
+        "vb_time": "12:00",
+        "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "12:00",
+          "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1106,18 +1120,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398884",
+        "url": "https://women.volleybox.net/tr/alanya-mask-spor-kulubu-u16-net-voleybol-akademi-spor-kulubu-u16-c398884",
+        "host_name": "Alanya MASK Spor Kulübü U16",
+        "guest_name": "Net Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-20",
+        "vb_time": "10:30",
+        "vb_hall": "Alanya Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "10:30",
+          "vb_hall": "Alanya Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1141,28 +1162,28 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "398882",
-        "url": "https://women.volleybox.net/tr/manavgat-belediyespor-u16-alanya-mask-spor-kulubu-u16-c398882",
-        "host_name": "Manavgat Belediyespor U16",
-        "guest_name": "Alanya MASK Spor Kulübü U16",
+        "match_id": "398885",
+        "url": "https://women.volleybox.net/tr/alanya-belediyespor-u16-manavgat-belediyespor-u16-c398885",
+        "host_name": "Alanya Belediyespor U16",
+        "guest_name": "Manavgat Belediyespor U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-19",
-        "vb_time": "10:30",
-        "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
+        "vb_date": "2026-09-20",
+        "vb_time": "12:00",
+        "vb_hall": "Alanya Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-09-19",
-          "vb_time": "10:30",
-          "vb_hall": "Manavgat Mehmet Akif Ersoy Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-20 / VB: 2026-09-19) | Saat Değişti (TVF: 12:00 / VB: 10:30) | Salon Değişti (TVF: Alanya Atatürk S.S. / VB: Manavgat Mehmet Akif Ersoy Spor Salonu)"
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "12:00",
+          "vb_hall": "Alanya Atatürk Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-09-16T10:40:20.905702"
+  "volleybox_synced_matches": 19,
+  "volleybox_sync_updated_at": "2026-09-16T11:19:13.975504"
 }

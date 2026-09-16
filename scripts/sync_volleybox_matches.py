@@ -56,7 +56,14 @@ HEADERS = {
 CITY_STOPWORDS = {
     "istanbul", "izmir", "ankara", "bursa", "nigde", "yalova", "antalya", "duzce", 
     "adana", "konya", "samsun", "trabzon", "kocaeli", "sakarya", "tekirdag", 
-    "mersin", "gaziantep", "kayseri", "denizli", "eskisehir", "turkiye"
+    "mersin", "gaziantep", "kayseri", "denizli", "eskisehir", "turkiye",
+    "alanya", "manavgat", "kepez", "kemer", "gazipasa"
+}
+
+GENERIC_WORDS = {
+    "sk", "gsk", "kulubu", "kulub", "spor", "bld", "belediyesi", 
+    "belediyespor", "belediye", "voleybol", "atletik", "akademi",
+    "koleji", "kolej", "okullari", "okulu"
 }
 
 
@@ -74,10 +81,12 @@ def normalize_name(name: str) -> str:
         .replace("ç", "c")
         .replace("İ", "i")
     )
+    s = s.replace(".", "")
     # Yaş kategorilerini ve kulüp eklerini temizle
     s = re.sub(r"\s+u\d+", "", s)
     s = re.sub(r"\bthy\b", "turk hava yollari", s)
-    s = re.sub(r"\b(sk|kulubu|kulub|spor|bld|belediyesi|belediyespor|voleybol|atletik|akademi)\b", "", s)
+    pattern = r"\b(" + "|".join(GENERIC_WORDS) + r")\b"
+    s = re.sub(pattern, "", s)
     s = re.sub(r"[^a-z0-9]", "", s)
     return s.strip()
 
@@ -102,6 +111,7 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
         .replace("ç", "c")
         .replace("İ", "i")
     )
+    s = s.replace(".", "")
     s = re.sub(r"\s+u\d+", "", s)
     s = re.sub(r"\bthy\b", "turk hava yollari", s)
 
@@ -113,55 +123,61 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
         letter = m_letter.group(1).lower()
         s = s[:m_letter.start()] + " " + s[m_letter.end():]
 
-    s = re.sub(r"\b(sk|kulubu|kulub|spor|bld|belediyesi|belediyespor|voleybol|atletik|akademi)\b", " ", s)
+    pattern = r"\b(" + "|".join(GENERIC_WORDS) + r")\b"
+    s = re.sub(pattern, " ", s)
     s = re.sub(r"[^a-z0-9\s]", " ", s)
     base = " ".join(s.split())
     return base, letter
 
 
-def is_team_compatible(tvf_name: str, vb_name: str, synonyms: set) -> bool:
+def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
     tvf_base, tvf_letter = extract_team_meta(tvf_name)
     vb_base, vb_letter = extract_team_meta(vb_name)
 
     if not tvf_base or not vb_base:
-        return False
+        return 0
 
     # 1. Harf (A / B) uyumu kontrolü:
     if tvf_letter == "b":
         if vb_letter != "b":
-            return False
+            return 0
     elif tvf_letter == "a":
         if vb_letter == "b":
-            return False
+            return 0
     else:
         if vb_letter == "b":
-            return False
+            return 0
 
     # 2. İsim kökü kontrolü:
     tvf_compact = tvf_base.replace(" ", "")
     vb_compact = vb_base.replace(" ", "")
 
     if tvf_compact == vb_compact:
-        return True
+        return 100
 
-    if tvf_compact in CITY_STOPWORDS or vb_compact in CITY_STOPWORDS:
-        pass
-    elif (len(tvf_compact) >= 4 and tvf_compact in vb_compact) or (len(vb_compact) >= 4 and vb_compact in tvf_compact):
-        return True
-
-    tvf_words = [w for w in tvf_base.split() if len(w) >= 4 and w not in CITY_STOPWORDS]
-    vb_words = [w for w in vb_base.split() if len(w) >= 4 and w not in CITY_STOPWORDS]
-    if any(w in vb_words for w in tvf_words):
-        return True
-
+    # 3. Synonyms kontrolü:
     for syn in synonyms:
         s_base, _ = extract_team_meta(syn)
         s_compact = s_base.replace(" ", "")
-        if s_compact and len(s_compact) >= 4:
-            if s_compact in vb_compact or vb_compact in s_compact:
-                return True
+        if s_compact and (s_compact == vb_compact or (len(s_compact) >= 4 and s_compact in vb_compact)):
+            return 90
 
-    return False
+    # 4. Alt kelime (substring) kontrolü:
+    if tvf_compact not in CITY_STOPWORDS and vb_compact not in CITY_STOPWORDS:
+        if (len(tvf_compact) >= 4 and tvf_compact in vb_compact) or (len(vb_compact) >= 4 and vb_compact in tvf_compact):
+            return 70
+
+    # 5. Kelime bazlı eşleşme (en az 3 harfli kelimeler):
+    tvf_words = [w for w in tvf_base.split() if len(w) >= 3 and w not in CITY_STOPWORDS]
+    vb_words = [w for w in vb_base.split() if len(w) >= 3 and w not in CITY_STOPWORDS]
+    if any(w in vb_words for w in tvf_words):
+        return 50
+
+    return 0
+
+
+def is_team_compatible(tvf_name: str, vb_name: str, synonyms: set) -> bool:
+    return team_match_score(tvf_name, vb_name, synonyms) > 0
 
 
 def extract_tournament_id(url: str) -> Optional[str]:
@@ -393,7 +409,12 @@ def check_discrepancy(tvf_match: Dict[str, Any], vb_match: Dict[str, Any]) -> Di
     }
 
 
-def match_tvf_with_vb(tvf_match: Dict[str, Any], vb_matches: List[Dict[str, Any]], team_alias_map: Dict[str, set]) -> Optional[Dict[str, Any]]:
+def match_tvf_with_vb(
+    tvf_match: Dict[str, Any], 
+    vb_matches: List[Dict[str, Any]], 
+    team_alias_map: Dict[str, set],
+    used_vb_ids: Optional[set] = None
+) -> Optional[Dict[str, Any]]:
     tvf_home = tvf_match.get("home_team", "")
     tvf_away = tvf_match.get("away_team", "")
     tvf_date = tvf_match.get("date", "")
@@ -401,48 +422,62 @@ def match_tvf_with_vb(tvf_match: Dict[str, Any], vb_matches: List[Dict[str, Any]
     home_synonyms = team_alias_map.get(tvf_home.lower().strip(), set())
     away_synonyms = team_alias_map.get(tvf_away.lower().strip(), set())
 
-    candidate_vb = None
+    best_vb = None
+    best_score = -1
 
     for vb in vb_matches:
+        if used_vb_ids and vb["match_id"] in used_vb_ids:
+            continue
+
         vb_host = vb["host_name"]
         vb_guest = vb["guest_name"]
         vb_date = vb.get("date", "")
 
-        # Takım kontrolü: Doğrudan veya çapraz eşleşme (is_team_compatible ile A/B ve kök uyumu)
-        teams_direct = (
-            is_team_compatible(tvf_home, vb_host, home_synonyms) and
-            is_team_compatible(tvf_away, vb_guest, away_synonyms)
-        )
-        teams_reversed = (
-            is_team_compatible(tvf_home, vb_guest, home_synonyms) and
-            is_team_compatible(tvf_away, vb_host, away_synonyms)
-        )
+        s_dir_h = team_match_score(tvf_home, vb_host, home_synonyms)
+        s_dir_a = team_match_score(tvf_away, vb_guest, away_synonyms)
+        direct_compatible = (s_dir_h > 0 and s_dir_a > 0)
 
-        if not (teams_direct or teams_reversed):
+        s_rev_h = team_match_score(tvf_home, vb_guest, home_synonyms)
+        s_rev_a = team_match_score(tvf_away, vb_host, away_synonyms)
+        rev_compatible = (s_rev_h > 0 and s_rev_a > 0)
+
+        if not (direct_compatible or rev_compatible):
             continue
 
-        # Tarih kontrolü
-        if not tvf_date or tvf_date == "TBD" or not vb_date:
-            return vb
+        if direct_compatible:
+            base_team_score = s_dir_h + s_dir_a + 5
+        else:
+            base_team_score = s_rev_h + s_rev_a
 
-        if tvf_date == vb_date:
-            # Tam tarih ve takım eşleşmesi (en güçlü eşleşme)
-            return vb
+        date_score = 0
+        if tvf_date and vb_date and tvf_date != "TBD":
+            if tvf_date == vb_date:
+                date_score = 100
+            else:
+                try:
+                    d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
+                    d2 = datetime.strptime(vb_date, "%Y-%m-%d")
+                    diff = abs((d1 - d2).days)
+                    if diff == 1:
+                        date_score = 50
+                    elif diff <= 7:
+                        date_score = 20
+                    else:
+                        date_score = 5
+                except Exception:
+                    pass
+        else:
+            date_score = 30
 
-        try:
-            d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
-            d2 = datetime.strptime(vb_date, "%Y-%m-%d")
-            if abs((d1 - d2).days) <= 1:
-                # 1 gün toleranslı eşleşme
-                return vb
-        except Exception:
-            pass
+        total_score = base_team_score + date_score
+        if total_score > best_score:
+            best_score = total_score
+            best_vb = vb
 
-        # Tarihler farklı ama takımlar eşleşiyor -> Tarih değişmiş / ertelenmiş maç adayı!
-        candidate_vb = vb
+    if best_vb and used_vb_ids is not None:
+        used_vb_ids.add(best_vb["match_id"])
 
-    # Eğer tam tarih eşleşmesi bulunamadıysa ama aynı lig/gruptaki takımlar eşleştiyse adayı döndür
-    return candidate_vb
+    return best_vb
 
 
 def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[str, Any]]], team_alias_map: Dict[str, set]) -> Tuple[int, int]:
@@ -455,10 +490,11 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
     matches = data.get("matches", [])
     synced_count = 0
     total_count = len(matches)
+    used_vb_ids = set()
 
     for m in matches:
         cat = m.get("category", "")
-        city = m.get("city", "İstanbul")
+        city = m.get("city") or ("İstanbul" if fixtures_path.name == "fixtures.json" else fixtures_path.stem)
         
         # Uygun Volleybox turnuvasını bul (Kategori, İl ve Yaş Grubu esnekliğiyle)
         age_group = m.get("age_group", "")
@@ -470,13 +506,14 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
         tourn_key = f"{cat}::{city}".lower()
         vb_m_list = vb_tournaments.get(tourn_key)
         if not vb_m_list and age_code:
-            vb_m_list = vb_tournaments.get(f"{city}::{age_code}".lower()) or vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
+            vb_m_list = (
+                vb_tournaments.get(f"{city}::{age_code}".lower()) 
+                or vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
+            )
         if not vb_m_list:
-            # Kategori bazlı fallback
-            tourn_key_alt = cat.lower()
-            vb_m_list = vb_tournaments.get(tourn_key_alt, [])
+            vb_m_list = []
 
-        matched_vb = match_tvf_with_vb(m, vb_m_list, team_alias_map)
+        matched_vb = match_tvf_with_vb(m, vb_m_list, team_alias_map, used_vb_ids)
         if matched_vb:
             discrepancy = check_discrepancy(m, matched_vb)
             m["volleybox"] = {
@@ -494,27 +531,21 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
             }
             synced_count += 1
         else:
-            # Mevcut synced volleybox verisini koru (scraper yeniden yazsa bile)
-            existing_vb = m.get("volleybox")
-            if existing_vb and existing_vb.get("synced"):
-                # Zaten eşleşmiş veri var, üzerine yazma!
-                synced_count += 1
-            else:
-                m["volleybox"] = {
-                    "synced": False,
-                    "match_id": None,
-                    "url": None,
-                    "host_name": None,
-                    "guest_name": None,
-                    "score": None,
-                    "has_score": False,
-                    "vb_date": None,
-                    "vb_time": None,
-                    "vb_hall": None,
-                    "discrepancy": {
-                        "has_diff": False
-                    }
+            m["volleybox"] = {
+                "synced": False,
+                "match_id": None,
+                "url": None,
+                "host_name": None,
+                "guest_name": None,
+                "score": None,
+                "has_score": False,
+                "vb_date": None,
+                "vb_time": None,
+                "vb_hall": None,
+                "discrepancy": {
+                    "has_diff": False
                 }
+            }
 
 
     # Manuel düzeltmeleri (manual overrides) koru - scrape işlemi elle girilen skorları ezemez
@@ -568,16 +599,20 @@ def main():
     with open(MAPPINGS_FILE, "r", encoding="utf-8") as f:
         mappings_data = json.load(f)
 
-    # 1. Takım takma adları (synonyms) haritasını oluştur
+    # 1. Takım takma adları (aliases / synonyms) haritasını oluştur
     team_alias_map = {}
     for item in mappings_data.get("mappings", []):
         in_name = item.get("internal_name", "").strip()
         matched = item.get("matched_as", "").strip()
-        if in_name:
-            key = in_name.lower()
-            team_alias_map.setdefault(key, set()).add(normalize_name(in_name))
-            if matched:
-                team_alias_map[key].add(normalize_name(matched))
+        aliases = item.get("aliases", []) or []
+        synonyms = item.get("synonyms", []) or []
+        all_names = [in_name, matched] + aliases + synonyms
+        for n in all_names:
+            if n:
+                k = n.strip().lower()
+                for target in all_names:
+                    if target:
+                        team_alias_map.setdefault(k, set()).add(target.strip())
 
     # Aktif şehirleri belirle
     active_city_names = {"istanbul", "izmir", "yalova", "nigde"}
@@ -646,7 +681,6 @@ def main():
             if age_cat:
                 vb_tournaments[f"{city}::{age_cat}".lower()] = vb_matches
                 vb_tournaments[f"{normalize_name(city)}::{age_cat}".lower()] = vb_matches
-        vb_tournaments[internal_name.lower()] = vb_matches
         time.sleep(0.8)
 
     # 3. data/fixtures.json senkronizasyonu

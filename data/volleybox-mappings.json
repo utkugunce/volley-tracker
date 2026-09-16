@@ -5305,6 +5305,44 @@
       ],
       "local_logo": null,
       "logo_url": null
+    },
+    {
+      "internal_name": "Murat Akar S.K.",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "matched_as": "Alanya MASK Spor Kulübü",
+      "volleybox_url": null,
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Kullanıcı eşleştirmesi: Murat Akar = Alanya MASK Spor Kulübü",
+      "verified_at": "2026-09-16",
+      "aliases": [
+        "Murat Akar",
+        "Murat Akar S.K.",
+        "Alanya MASK Spor Kulübü",
+        "Alanya MASK",
+        "Alanya MASK Spor Kulübü U16"
+      ],
+      "local_logo": null,
+      "logo_url": null
+    },
+    {
+      "internal_name": "Erdem Serdar Alanya S.K.",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "matched_as": "Erse Spor Kulübü",
+      "volleybox_url": null,
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Kullanıcı eşleştirmesi: Erdem Serdar / Ersem Serder = Erse Spor Kulübü",
+      "verified_at": "2026-09-16",
+      "aliases": [
+        "Erdem Serdar Alanya S.K.",
+        "Erdem Serdar",
+        "Ersem Serder",
+        "Erse Spor Kulübü",
+        "Erse Spor Kulübü U18"
+      ],
+      "local_logo": null,
+      "logo_url": null
     }
   ],
   "leagues": [

@@ -494,25 +494,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "398874",
-        "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u16-antalya-ac-koleji-spor-kulubu-u16-c398874",
-        "host_name": "Nova Spor Kulübü U16",
-        "guest_name": "Antalya Açı Koleji Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-22",
-        "vb_time": "18:30",
-        "vb_hall": "Kepez Turgut Özal Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-09-22",
-          "vb_time": "18:30",
-          "vb_hall": "Kepez Turgut Özal Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-25 / VB: 2026-09-22) | Salon Değişti (TVF: Şehit Anıl Gül / VB: Kepez Turgut Özal Spor Salonu)"
+          "has_diff": false
         }
       }
     },
@@ -653,6 +646,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 1,
-  "volleybox_sync_updated_at": "2026-09-16T10:40:20.928947"
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-16T11:19:27.521272"
 }
