@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T05:33:13.152249",
+  "updated_at": "2026-09-17T19:08:08.760604",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
@@ -9,6 +9,7 @@
     "categories": [
       "Tümü",
       "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
@@ -234,5 +235,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-17T15:22:35.612963"
+  "volleybox_sync_updated_at": "2026-09-17T19:09:12.043639"
 }

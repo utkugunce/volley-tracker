@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T15:21:12.772203",
+  "updated_at": "2026-09-17T19:07:56.618705",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -668,51 +668,142 @@
     "Genç Kızlar 1. Ligi - Genç Kızlar 1. Lig 5. Bölge": [
       {
         "rank": 1,
-        "team": "Atayıldız",
-        "played": 0,
-        "won": 0,
+        "team": "Haliç Akademi",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 43,
+        "point_ratio": "1.744",
+        "form": [
+          "W"
+        ]
       },
       {
         "rank": 2,
-        "team": "Avcılar Yankı",
-        "played": 0,
-        "won": 0,
+        "team": "Bağcılar Evren",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 57,
+        "point_ratio": "1.316",
+        "form": [
+          "W"
+        ]
       },
       {
         "rank": 3,
-        "team": "Bağcılar Evren",
-        "played": 0,
-        "won": 0,
+        "team": "Kuzey Işıkları",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "set_ratio": "3.000",
+        "points_won": 96,
+        "points_lost": 80,
+        "point_ratio": "1.200",
+        "form": [
+          "W"
+        ]
       },
       {
         "rank": 4,
+        "team": "Konak",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "set_ratio": "1.500",
+        "points_won": 110,
+        "points_lost": 95,
+        "point_ratio": "1.158",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
+        "team": "Avcılar Yankı",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "set_ratio": "0.667",
+        "points_won": 95,
+        "points_lost": 110,
+        "point_ratio": "0.864",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 6,
+        "team": "Bizimkent İlkokulu",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "set_ratio": "0.333",
+        "points_won": 80,
+        "points_lost": 96,
+        "point_ratio": "0.833",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 7,
+        "team": "İtü Gvo",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 57,
+        "points_lost": 75,
+        "point_ratio": "0.760",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 8,
+        "team": "Atayıldız",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 43,
+        "points_lost": 75,
+        "point_ratio": "0.573",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 9,
         "team": "Beylikdüzü Beykent",
         "played": 0,
         "won": 0,
@@ -727,83 +818,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Bizimkent İlkokulu",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Fmv Işık",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Haliç Akademi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "İtü Gvo",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "Konak",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 10,
-        "team": "Kuzey Işıkları",
+        "team": "Fmv Işık",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1026,6 +1042,23 @@
       },
       {
         "rank": 3,
+        "team": "VakıfBank B",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 51,
+        "point_ratio": "1.471",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Sarıyer Bld",
         "played": 1,
         "won": 1,
@@ -1042,7 +1075,7 @@
         ]
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Yeşilyurt",
         "played": 1,
         "won": 1,
@@ -1059,7 +1092,7 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Bizimkent Sk",
         "played": 1,
         "won": 0,
@@ -1076,7 +1109,7 @@
         ]
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Bizimkent Voleybol",
         "played": 1,
         "won": 0,
@@ -1093,7 +1126,24 @@
         ]
       },
       {
-        "rank": 7,
+        "rank": 8,
+        "team": "Eyüpsultan Bld A",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 51,
+        "points_lost": 75,
+        "point_ratio": "0.680",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 9,
         "team": "Olimpia 2017",
         "played": 1,
         "won": 0,
@@ -1110,7 +1160,7 @@
         ]
       },
       {
-        "rank": 8,
+        "rank": 10,
         "team": "Başakşehir Bld",
         "played": 1,
         "won": 0,
@@ -1125,36 +1175,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 9,
-        "team": "Eyüpsultan Bld A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 10,
-        "team": "VakıfBank B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - C Grubu": [
@@ -1211,6 +1231,23 @@
       },
       {
         "rank": 4,
+        "team": "VakıfBank A",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "set_ratio": "3.000",
+        "points_won": 98,
+        "points_lost": 74,
+        "point_ratio": "1.324",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
         "team": "Eczacıbaşı B",
         "played": 1,
         "won": 1,
@@ -1227,7 +1264,7 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Marmara Akademi",
         "played": 1,
         "won": 0,
@@ -1244,7 +1281,24 @@
         ]
       },
       {
-        "rank": 6,
+        "rank": 7,
+        "team": "Smaç",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "set_ratio": "0.333",
+        "points_won": 74,
+        "points_lost": 98,
+        "point_ratio": "0.755",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 8,
         "team": "Fenerbahçe B",
         "played": 1,
         "won": 0,
@@ -1261,7 +1315,7 @@
         ]
       },
       {
-        "rank": 7,
+        "rank": 9,
         "team": "Eyüpsultan Bld B",
         "played": 1,
         "won": 0,
@@ -1278,7 +1332,7 @@
         ]
       },
       {
-        "rank": 8,
+        "rank": 10,
         "team": "Pegasus",
         "played": 1,
         "won": 0,
@@ -1295,38 +1349,8 @@
         ]
       },
       {
-        "rank": 9,
-        "team": "Smaç",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 10,
-        "team": "Ünsped",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 11,
-        "team": "VakıfBank A",
+        "team": "Ünsped",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2352,11 +2376,15 @@
       "match_no": "1",
       "home_team": "Atayıldız",
       "away_team": "Haliç Akademi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "18-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397105",
@@ -2393,11 +2421,16 @@
       "match_no": "2",
       "home_team": "Kuzey Işıkları",
       "away_team": "Bizimkent İlkokulu",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "21-25",
+        "25-15",
+        "25-22",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397106",
@@ -2434,11 +2467,15 @@
       "match_no": "5",
       "home_team": "VakıfBank B",
       "away_team": "Eyüpsultan Bld A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-16",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398161",
@@ -2475,11 +2512,17 @@
       "match_no": "3",
       "home_team": "Avcılar Yankı",
       "away_team": "Konak",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "25-21",
+        "16-25",
+        "25-23",
+        "14-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397107",
@@ -2516,11 +2559,15 @@
       "match_no": "4",
       "home_team": "Bağcılar Evren",
       "away_team": "İtü Gvo",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-20",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397108",
@@ -2598,11 +2645,16 @@
       "match_no": "5",
       "home_team": "VakıfBank A",
       "away_team": "Smaç",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-17",
+        "23-25",
+        "25-20",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398154",
@@ -3240,5 +3292,5 @@
     }
   ],
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-09-17T15:22:35.591931"
+  "volleybox_sync_updated_at": "2026-09-17T19:09:12.017650"
 }
