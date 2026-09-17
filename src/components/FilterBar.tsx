@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search, X, MapPin, AlertTriangle } from "lucide-react";
+import { Search, X, MapPin, AlertTriangle, CheckCircle2 } from "lucide-react";
 
 interface FilterBarProps {
   categories: string[];
@@ -39,6 +39,7 @@ interface FilterBarProps {
 
   onReset: () => void;
   isFiltered: boolean;
+  isResultsTab?: boolean;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
@@ -58,6 +59,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   volleyboxStats,
   onReset,
   isFiltered,
+  isResultsTab = false,
 }) => {
   const statusTabs = [
     { id: "all", label: "HEPSİ", count: counts.all },
@@ -69,32 +71,44 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-2.5 sm:p-3 mb-4 shadow-md max-w-6xl mx-auto space-y-2.5 no-print">
       {/* 1. Flashscore Durum Sekmeleri & Lig Filtreleri */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-700/50 pb-2.5">
-        {/* HEPSİ / OYNANACAK / BİTENLER */}
-        <div className="flex items-center gap-1">
-          {statusTabs.map((tab) => {
-            const isActive = statusFilter === tab.id;
-            return (
-              <button
-                key={tab.id}
-                onClick={() => onSelectStatusFilter(tab.id)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold transition-all ${
-                  isActive
-                    ? "bg-primary text-white shadow-sm"
-                    : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
-                }`}
-              >
-                <span>{tab.label}</span>
-                <span
-                  className={`text-[10px] px-1 rounded-full ${
-                    isActive ? "bg-white/20 text-white" : "bg-slate-600 text-slate-300"
+        {/* HEPSİ / OYNANACAK / BİTENLER VEYA SONUÇLAR ROZETİ */}
+        {isResultsTab ? (
+          <div className="flex items-center gap-1.5">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold bg-emerald-600 text-white shadow-sm">
+              <CheckCircle2 size={13} className="text-white" />
+              <span>SONUÇLAR</span>
+              <span className="text-[10px] bg-white/20 text-white px-1.5 rounded-full font-mono font-bold">
+                {counts.finished}
+              </span>
+            </div>
+          </div>
+        ) : (
+          <div className="flex items-center gap-1">
+            {statusTabs.map((tab) => {
+              const isActive = statusFilter === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => onSelectStatusFilter(tab.id)}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold transition-all ${
+                    isActive
+                      ? "bg-primary text-white shadow-sm"
+                      : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
                   }`}
                 >
-                  {tab.count}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+                  <span>{tab.label}</span>
+                  <span
+                    className={`text-[10px] px-1 rounded-full ${
+                      isActive ? "bg-white/20 text-white" : "bg-slate-600 text-slate-300"
+                    }`}
+                  >
+                    {tab.count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Lig Sekmeleri: Genç Kızlar Süper Lig / Yıldız Kızlar Süper Lig */}
         <div className="flex items-center gap-1 overflow-x-auto">

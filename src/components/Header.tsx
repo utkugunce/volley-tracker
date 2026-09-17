@@ -14,13 +14,14 @@ interface HeaderProps {
   updatedAt?: string;
   totalMatches: number;
   todayMatchesCount?: number;
+  resultsCount?: number;
   favoritesCount: number;
   showOnlyFavorites: boolean;
   onToggleFavoritesOnly: () => void;
   splitScreenMode?: boolean;
   onToggleSplitScreen?: () => void;
-  activeTab: "home" | "fixtures" | "standings";
-  onSelectTab: (tab: "home" | "fixtures" | "standings") => void;
+  activeTab: "results" | "home" | "fixtures" | "standings";
+  onSelectTab: (tab: "results" | "home" | "fixtures" | "standings") => void;
   onRefresh: () => void;
   isLoading: boolean;
   syncFeedback?: {
@@ -42,6 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
   updatedAt,
   totalMatches,
   todayMatchesCount = 0,
+  resultsCount = 0,
   favoritesCount,
   showOnlyFavorites,
   onToggleFavoritesOnly,
@@ -95,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-2">
 
           {/* Çift Ekran / Maç Giriş Modu Butonu */}
-          {(activeTab === "fixtures" || activeTab === "home") && onToggleSplitScreen && (
+          {(activeTab === "fixtures" || activeTab === "home" || activeTab === "results") && onToggleSplitScreen && (
             <button
               onClick={onToggleSplitScreen}
               className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all border ${
@@ -115,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           {/* Favoriler Butonu */}
-          {(activeTab === "fixtures" || activeTab === "home") && (
+          {(activeTab === "fixtures" || activeTab === "home" || activeTab === "results") && (
             <button
               onClick={onToggleFavoritesOnly}
               className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all ${
@@ -244,8 +246,32 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       )}
 
-      {/* 2. ANA SEKMELER: GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU */}
+      {/* 2. ANA SEKMELER: SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU */}
       <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-xs font-bold overflow-x-auto no-scrollbar">
+        {/* Sonuçlar Sekmesi */}
+        <button
+          onClick={() => onSelectTab("results")}
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
+            activeTab === "results"
+              ? "border-primary text-white bg-slate-800/40"
+              : "border-transparent text-slate-400 hover:text-slate-200"
+          }`}
+        >
+          <CheckCircle2 size={14} className={activeTab === "results" ? "text-emerald-400" : "text-slate-400"} />
+          <span>SONUÇLAR</span>
+          {typeof resultsCount === "number" && (
+            <span
+              className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                activeTab === "results"
+                  ? "bg-emerald-500 text-white"
+                  : "bg-slate-800 text-slate-300"
+              }`}
+            >
+              {resultsCount}
+            </span>
+          )}
+        </button>
+
         {/* Günün Maçları (Anasayfa) Sekmesi */}
         <button
           onClick={() => onSelectTab("home")}

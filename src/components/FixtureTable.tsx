@@ -12,9 +12,10 @@ interface FixtureTableProps {
   title: string;
   subTitle?: string;
   matches: Match[];
-  favorites: string[];
-  onToggleFavorite: (matchId: string) => void;
+  favorites?: string[];
+  onToggleFavorite?: (id: string) => void;
   city?: string;
+  showCityBadge?: boolean;
   splitScreenMode?: boolean;
 }
 
@@ -22,12 +23,15 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   title,
   subTitle,
   matches,
-  favorites,
+  favorites = [],
   onToggleFavorite,
   city = "İstanbul",
+  showCityBadge = false,
   splitScreenMode = false,
 }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const effectiveCity = city && city !== "Tüm İller" ? city : matches[0]?.city;
 
   const formatRowDate = (dateStr: string) => {
     if (!dateStr || dateStr === "TBD") return "Açıklanacak";
@@ -41,7 +45,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
     e.stopPropagation();
     const dateText = match.date === "TBD" ? "Tarih Açıklanacak" : `${match.date} ${match.time}`;
     const scoreText = match.status === "finished" ? `\nSkor: ${match.score} (${(match.set_scores || []).join(", ")})` : "";
-    const cityName = match.city || city;
+    const cityName = match.city || effectiveCity || city;
     const text = `TVF ${cityName} ${match.category} (${match.group}):\n${match.home_team} vs ${match.away_team}\n🗓 ${dateText}\n📍 ${match.hall}${scoreText}\nMaç No: #${match.match_no}`;
     navigator.clipboard.writeText(text);
     setCopiedId(match.id);
@@ -76,11 +80,17 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       {/* 1. Grup Başlığı */}
       <div className="bg-[#111827] text-white px-3.5 py-1.5 flex items-center justify-between border-b border-slate-700 select-none">
         <div className="flex items-center gap-1.5">
-          <div className="w-4 h-4 rounded bg-primary/20 flex items-center justify-center text-primary">
+          <div className="w-4 h-4 rounded bg-primary/20 flex items-center justify-center text-primary shrink-0">
             <Trophy size={11} className="text-amber-400" />
           </div>
-          <h3 className="font-bold text-xs tracking-tight text-white uppercase">
-            <LeagueVolleyboxLink league={title} city={city || matches[0]?.city}>
+          <h3 className="font-bold text-xs tracking-tight text-white uppercase flex items-center gap-1.5">
+            {/* Şehir Başlığı: Tüm İller seçildiğinde görseldeki yere hangi il olduğu yazılır */}
+            {showCityBadge && effectiveCity && !title.toLowerCase().startsWith(effectiveCity.toLowerCase()) && (
+              <span className="text-sky-400 font-extrabold tracking-wide">
+                {effectiveCity.toUpperCase()} •
+              </span>
+            )}
+            <LeagueVolleyboxLink league={title} city={effectiveCity}>
               {title}
             </LeagueVolleyboxLink>
             {subTitle && subTitle.toLowerCase() !== title.toLowerCase() && subTitle !== "Tek Grup" ? ` • ${subTitle}` : ""}
@@ -149,7 +159,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   {/* ⭐ Favori */}
                   <td className="py-1.5 px-1 text-center w-6">
                     <button
-                      onClick={() => onToggleFavorite(match.id)}
+                      onClick={() => onToggleFavorite?.(match.id)}
                       className="p-0.5 rounded text-slate-500 hover:text-amber-400 transition-colors"
                       title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
                     >

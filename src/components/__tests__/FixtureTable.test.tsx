@@ -135,5 +135,25 @@ describe("FixtureTable Component", () => {
     expect(screen.getByText("Eczacıbaşı A")).toBeInTheDocument();
     expect(screen.getByText("VakıfBank B")).toBeInTheDocument();
   });
+
+  it("Tüm İller modunda (showCityBadge=true) grup başlığında ilgili il adını gösterir", () => {
+    render(
+      <FixtureTable
+        title="Genç Kızlar Süper Lig"
+        subTitle="A Grubu"
+        city="İstanbul"
+        showCityBadge={true}
+        matches={[mockMatchMapped]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+      />
+    );
+
+    // Başlıkta "İSTANBUL •" şehir öneki görünmeli
+    expect(screen.getByText("İSTANBUL •")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Genç Kızlar Süper Lig" })).toBeInTheDocument();
+    expect(screen.getByText(/• A Grubu/)).toBeInTheDocument();
+  });
 });
+
 

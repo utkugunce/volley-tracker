@@ -10,9 +10,18 @@ import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { NotificationBanner } from "@/components/NotificationBanner";
 import { Match, FixturesData } from "@/types/fixture";
-import { SearchX, AlertCircle, Star } from "lucide-react";
+import { SearchX, AlertCircle, Star, CheckCircle2 } from "lucide-react";
 import { isMatchPassed } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
+
+// Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
+export const isMatchScored = (m: Match): boolean => {
+  if (m.status === "finished") return true;
+  if (m.home_score !== null && m.home_score !== undefined && m.away_score !== null && m.away_score !== undefined) return true;
+  if (m.score && m.score.trim() !== "" && m.score.trim() !== "- : -" && m.score.toLowerCase() !== "vs") return true;
+  if (m.volleybox?.has_score && m.volleybox?.score) return true;
+  return false;
+};
 
 interface DashboardClientProps {
   initialData: FixturesData;
@@ -23,8 +32,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Ana Sekmeler: "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür) ve "standings" (Puan Durumu)
-  const [activeMainTab, setActiveMainTab] = useState<"home" | "fixtures" | "standings">("home");
+  // Ana Sekmeler: "results" (Sonuçlar), "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür) ve "standings" (Puan Durumu)
+  const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings">("home");
 
   // Fikstür Filtre Durumları
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
@@ -323,6 +332,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     return { all, upcoming, finished };
   }, [data]);
 
+  // Sonuçlanan maç sayısı (Header rozeti ve Sonuçlar sekmesi için)
+  const resultsCount = useMemo(() => {
+    return (data?.matches || []).filter(isMatchScored).length;
+  }, [data]);
+
+  // Tüm İller seçili mi?
+  const isAllCities = currentCitySlug === "all" || data?.city === "Tüm İller";
+
+  // Türkiye genelindeki toplam biten / sonuçlanan maç sayısı
+  const totalResultsAcrossAll = useMemo(() => {
+    if (currentCitySlug === "all") return resultsCount;
+    return citiesList.reduce((acc, c) => acc + (c.finished_count || c.scored_matches || 0), resultsCount);
+  }, [citiesList, currentCitySlug, resultsCount]);
+
   // Volleybox senkronizasyon ve skor istatistikleri
   const volleyboxStats = useMemo(() => {
     const validMatches = (data?.matches || []).filter((m) => m.date && m.date !== "TBD");
@@ -343,24 +366,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     return { total, synced, scored, unscored, unsynced, discrepancy, percent };
   }, [data]);
 
-  // Filtrelenmiş maçlar
+  // Filtrelenmiş Maç Listesi
   const filteredMatches = useMemo(() => {
-    if (!data?.matches) return [];
-
-    return data.matches.filter((m) => {
-      // 0. Sadece tarihi açıklanan maçlar gözüksün
-      if (!m.date || m.date === "TBD") {
-        return false;
-      }
-
-      // 1. Favoriler modu
+    return (data?.matches || []).filter((m) => {
+      // 1. Favoriler
       if (showOnlyFavorites && !favorites.includes(m.id)) {
         return false;
       }
 
-      // 2. Kategori
-      if (selectedCategory !== "Tümü" && m.category !== selectedCategory) {
-        return false;
+      // 2. Kategori / Lig
+      if (selectedCategory !== "Tümü") {
+        const cat = m.category || m.age_group || "";
+        if (!cat.toLowerCase().includes(selectedCategory.toLowerCase())) {
+          return false;
+        }
       }
 
       // 3. Tarih
@@ -368,10 +387,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         return false;
       }
 
-      // 4. Durum (upcoming / finished)
-      if (statusFilter !== "all" && m.status !== statusFilter) {
-        return false;
-      }
+      // 4. Durum (HEPSİ / OYNANACAK / BİTENLER)
+      if (statusFilter === "upcoming" && m.status === "finished") return false;
+      if (statusFilter === "finished" && m.status !== "finished") return false;
 
       // 5. Salon
       if (selectedHall !== "Tümü" && m.hall !== selectedHall) {
@@ -381,7 +399,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       // 6. Arama
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
-        const matchText = `${m.home_team} ${m.away_team} ${m.hall} ${m.category} ${m.match_no}`.toLowerCase();
+        const matchText = `${m.home_team} ${m.away_team} ${m.hall} ${m.category} ${m.match_no} ${m.city || ""}`.toLowerCase();
         if (!matchText.includes(q)) {
           return false;
         }
@@ -417,22 +435,28 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   }, [data, showOnlyFavorites, favorites, selectedCategory, selectedDate, statusFilter, selectedHall, searchQuery, volleyboxFilter]);
 
   // Lig & Gruba göre grupla (Genç Kızlar Süper Lig - A Grubu, B Grubu vb.)
-  // Grup sıralaması her zaman alfabetik (A, B, C...) olarak garanti edilir
+  // Tüm İller seçildiğinde görseldeki yere il adı yazılır ve iller ayrılır
   const groupedSections = useMemo(() => {
     const sections: {
       [key: string]: {
         title: string;
         subTitle: string;
+        city?: string;
         matches: Match[];
       };
     } = {};
 
     filteredMatches.forEach((m) => {
-      const groupKey = `${m.category} - ${m.group}`;
+      const matchCity = m.city || data?.city || "Genel";
+      const groupKey = isAllCities
+        ? `${matchCity}::${m.category} - ${m.group}`
+        : `${m.category} - ${m.group}`;
+
       if (!sections[groupKey]) {
         sections[groupKey] = {
           title: m.category,
           subTitle: m.group,
+          city: matchCity,
           matches: [],
         };
       }
@@ -447,8 +471,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       });
     });
 
-    // Grupları her zaman kesin alfabetik olarak sırala: A Grubu, B Grubu, C Grubu...
+    // Grupları her zaman kesin sırala: Tüm iller modunda önce Şehir, sonra Kategori ve Grup
     return Object.values(sections).sort((a, b) => {
+      if (isAllCities) {
+        const cityComp = (a.city || "").localeCompare(b.city || "", "tr");
+        if (cityComp !== 0) return cityComp;
+      }
       // 1. Kategori / Lig sıralaması
       const catComp = (a.title || "").localeCompare(b.title || "", "tr", { numeric: true });
       if (catComp !== 0) return catComp;
@@ -456,7 +484,100 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       // 2. Grup adı sıralaması: A Grubu, B Grubu, C Grubu... (Türkçe ve nümerik duyarlı)
       return (a.subTitle || "").localeCompare(b.subTitle || "", "tr", { numeric: true });
     });
-  }, [filteredMatches]);
+  }, [filteredMatches, isAllCities, data?.city]);
+
+  // Sadece skoru/sonucu olan maçlar için filtrelenmiş liste
+  const filteredResultMatches = useMemo(() => {
+    return (data?.matches || []).filter((m) => {
+      if (!isMatchScored(m)) return false;
+
+      if (showOnlyFavorites && !favorites.includes(m.id)) {
+        return false;
+      }
+
+      if (selectedCategory !== "Tümü") {
+        const cat = m.category || m.age_group || "";
+        if (!cat.toLowerCase().includes(selectedCategory.toLowerCase())) {
+          return false;
+        }
+      }
+
+      if (selectedHall !== "Tümü" && m.hall !== selectedHall) {
+        return false;
+      }
+
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const matchText = `${m.home_team} ${m.away_team} ${m.hall} ${m.category} ${m.match_no} ${m.city || ""}`.toLowerCase();
+        if (!matchText.includes(q)) {
+          return false;
+        }
+      }
+
+      if (volleyboxFilter === "synced" && !m.volleybox?.synced) {
+        return false;
+      }
+      if (volleyboxFilter === "scored" && (!m.volleybox?.synced || !m.volleybox?.has_score)) {
+        return false;
+      }
+      if (volleyboxFilter === "unsynced" && m.volleybox?.synced) {
+        return false;
+      }
+      if (volleyboxFilter === "discrepancy" && (!m.volleybox?.synced || !m.volleybox?.discrepancy?.has_diff)) {
+        return false;
+      }
+
+      return true;
+    });
+  }, [data, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
+
+  // Sonuçlar için gruplama: En son oynanan maçlar en üstte (tarihe göre azalan sıralama)
+  const resultsGroupedSections = useMemo(() => {
+    const sections: {
+      [key: string]: {
+        title: string;
+        subTitle: string;
+        city?: string;
+        matches: Match[];
+      };
+    } = {};
+
+    filteredResultMatches.forEach((m) => {
+      const matchCity = m.city || data?.city || "Genel";
+      const groupKey = isAllCities
+        ? `${matchCity}::${m.category} - ${m.group}`
+        : `${m.category} - ${m.group}`;
+
+      if (!sections[groupKey]) {
+        sections[groupKey] = {
+          title: m.category,
+          subTitle: m.group,
+          city: matchCity,
+          matches: [],
+        };
+      }
+      sections[groupKey].matches.push(m);
+    });
+
+    // Sonuçlarda en son oynanan maçları en üstte göster (tarihe ve saate göre ters sırala)
+    Object.values(sections).forEach((sec) => {
+      sec.matches.sort((m1, m2) => {
+        if (m1.date !== m2.date) return (m2.date || "").localeCompare(m1.date || "");
+        return (m2.time || "").localeCompare(m1.time || "");
+      });
+    });
+
+    // Grupları sırala: Tüm iller modunda önce Şehir, sonra Kategori ve Grup
+    return Object.values(sections).sort((a, b) => {
+      if (isAllCities) {
+        const cityComp = (a.city || "").localeCompare(b.city || "", "tr");
+        if (cityComp !== 0) return cityComp;
+      }
+      const catComp = (a.title || "").localeCompare(b.title || "", "tr", { numeric: true });
+      if (catComp !== 0) return catComp;
+      return (a.subTitle || "").localeCompare(b.subTitle || "", "tr", { numeric: true });
+    });
+  }, [filteredResultMatches, isAllCities, data?.city]);
 
   const resetFilters = () => {
     setSelectedCategory("Tümü");
@@ -482,7 +603,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       {/* 0. Favori Maç Hatırlatma Banner'ı (GÖREV 2) */}
       <NotificationBanner favoritesCount={favorites.length} />
 
-      {/* 1. Header (GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
+      {/* 1. Header (SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
       <Header
         city={data?.city}
         currentCitySlug={currentCitySlug}
@@ -492,6 +613,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         updatedAt={data?.updated_at}
         totalMatches={data?.total_matches || 0}
         todayMatchesCount={todayMatchesCount}
+        resultsCount={resultsCount}
         favoritesCount={favorites.length}
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
@@ -523,7 +645,115 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         )}
 
         {/* 3. SEÇİLEN SEKME GÖRÜNÜMÜ */}
-        {activeMainTab === "home" ? (
+        {activeMainTab === "results" ? (
+          /* ==================== SONUÇLAR SEKMESİ (SADECE BİTEN / SKORLU MAÇLAR) ==================== */
+          <div>
+            {/* Flashscore Filtre Barı (Sonuçlar Modunda) */}
+            {data?.filters && (
+              <FilterBar
+                categories={data.filters.categories}
+                selectedCategory={selectedCategory}
+                onSelectCategory={setSelectedCategory}
+                statusFilter="finished"
+                onSelectStatusFilter={() => {}}
+                counts={{
+                  all: resultsCount,
+                  upcoming: 0,
+                  finished: resultsCount,
+                }}
+                halls={data.filters.halls}
+                selectedHall={selectedHall}
+                onSelectHall={setSelectedHall}
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
+                volleyboxFilter={volleyboxFilter}
+                onSelectVolleyboxFilter={setVolleyboxFilter}
+                volleyboxStats={volleyboxStats}
+                onReset={resetFilters}
+                isFiltered={isFiltered}
+                isResultsTab={true}
+              />
+            )}
+
+            {/* Sonuçlar Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları */}
+            {resultsGroupedSections.length > 0 && (
+              <div className="space-y-4">
+                {resultsGroupedSections.map((sec, idx) => (
+                  <FixtureTable
+                    key={idx}
+                    title={sec.title}
+                    subTitle={sec.subTitle}
+                    matches={sec.matches}
+                    favorites={favorites}
+                    onToggleFavorite={toggleFavorite}
+                    city={sec.city || data?.city}
+                    showCityBadge={isAllCities}
+                    splitScreenMode={splitScreenMode}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Sonuç Bulunamadı */}
+            {resultsGroupedSections.length === 0 && (
+              <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
+                <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-emerald-400 border border-slate-700">
+                  <CheckCircle2 size={22} />
+                </div>
+
+                {filteredResultMatches.length === 0 && !isFiltered ? (
+                  <>
+                    <h3 className="text-sm font-bold text-white mb-1">
+                      {data?.city && data?.city !== "Tüm İller"
+                        ? `TVF ${data.city} İçin Henüz Biten Maç Bulunmuyor`
+                        : "Henüz Tamamlanan Maç Kaydı Bulunmuyor"}
+                    </h3>
+                    <p className="text-xs text-slate-400 mb-4 max-w-sm mx-auto">
+                      {data?.city && data?.city !== "Tüm İller"
+                        ? `TVF ${data.city} fikstüründeki maçlar oynanıp skorlar açıklandığında sonuçlar anında burada listelenecektir.`
+                        : "Fikstür maçları oynandıkça skor ve set sonuçları otomatik olarak burada listelenir."}
+                    </p>
+                    <div className="flex items-center justify-center gap-2">
+                      <button
+                        onClick={() => setActiveMainTab("fixtures")}
+                        className="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
+                      >
+                        Fikstürü Görüntüle
+                      </button>
+                      {data?.city !== "Tüm İller" && (
+                        <button
+                          onClick={() => handleSelectCity("all")}
+                          className="px-4 py-2 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold hover:bg-slate-700 transition-colors shadow-md"
+                        >
+                          Tüm İllerin Sonuçlarını Gör ({totalResultsAcrossAll})
+                        </button>
+                      )}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="text-sm font-bold text-white mb-1">
+                      {showOnlyFavorites ? "Favori Maçlarınız Arasında Biten Maç Bulunmuyor" : "Kriterlere Uygun Sonuçlanan Maç Bulunamadı"}
+                    </h3>
+                    <p className="text-xs text-slate-400 mb-4">
+                      {showOnlyFavorites
+                        ? "Favoriye aldığınız maçlar tamamlandığında skorları burada görüntülenecektir."
+                        : "Seçtiğiniz lig veya arama filtresine uygun sonuçlanan maç kaydı bulunmamaktadır."}
+                    </p>
+                    {isFiltered && (
+                      <button
+                        onClick={resetFilters}
+                        className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
+                      >
+                        Filtreleri Sıfırla
+                      </button>
+                    )}
+                  </>
+                )}
+              </div>
+            )}
+          </div>
+        ) : activeMainTab === "home" ? (
           /* ==================== GÜNÜN MAÇLARI (ANASAYFA DASHBOARD) ==================== */
           <TodayMatchesView
             matches={data?.matches || []}
@@ -582,7 +812,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     matches={sec.matches}
                     favorites={favorites}
                     onToggleFavorite={toggleFavorite}
-                    city={data?.city}
+                    city={sec.city || data?.city}
+                    showCityBadge={isAllCities}
                     splitScreenMode={splitScreenMode}
                   />
                 ))}
