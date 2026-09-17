@@ -16,7 +16,11 @@ export async function GET() {
     const fileContent = fs.readFileSync(filePath, "utf-8");
     const data = JSON.parse(fileContent);
 
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=1800",
+      },
+    });
   } catch (error) {
     console.error("Cities API Error:", error);
     return NextResponse.json(

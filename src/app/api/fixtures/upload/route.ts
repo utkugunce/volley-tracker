@@ -4,6 +4,7 @@ import path from "path";
 import { execFile } from "child_process";
 import { promisify } from "util";
 import { timingSafeEqual } from "crypto";
+import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 
 const execFileAsync = promisify(execFile);
 
@@ -21,23 +22,10 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_DOMAIN_REGEX = /^([a-z0-9-]+\.)*(voleyboliltemsilciligi\.com|tvf\.org\.tr)$/i;
 
 // In-memory rate limiting (IP başına dakikada maksimum 5 istek)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW_MS = 60 * 1000;
-const RATE_LIMIT_MAX_REQUESTS = 5;
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
-  if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS });
-    return false;
-  }
-  if (record.count >= RATE_LIMIT_MAX_REQUESTS) {
-    return true;
-  }
-  record.count++;
-  return false;
-}
+const uploadLimiter = new RateLimiter({
+  windowMs: 60 * 1000,
+  maxRequests: 5,
+});
 
 function isValidAllowedUrl(urlString: string): boolean {
   try {
@@ -73,15 +61,12 @@ export async function POST(request: Request) {
     }
 
     // 2. Basit IP Bazlı Rate Limiting
-    const clientIp =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
-      request.headers.get("x-real-ip") ||
-      "127.0.0.1";
-
-    if (isRateLimited(clientIp)) {
+    const clientIp = getClientIp(request);
+    const limitCheck = uploadLimiter.check(clientIp);
+    if (!limitCheck.allowed) {
       return NextResponse.json(
         { error: "Çok fazla istek gönderildi. Lütfen bir dakika sonra tekrar deneyin." },
-        { status: 429, headers: { "Retry-After": "60" } }
+        { status: 429, headers: { "Retry-After": String(limitCheck.retryAfterSeconds || 60) } }
       );
     }
 

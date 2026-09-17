@@ -7,7 +7,7 @@ export interface MatchOverride {
   home_score: number | null;
   away_score: number | null;
   set_scores?: string[];
-  status?: "upcoming" | "finished" | "live";
+  status?: Match["status"];
   updated_at: string;
   updated_by: string;
   reason: string;

@@ -3,6 +3,13 @@ import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
 import { applyOverridesToMatches } from "@/utils/overrides";
+import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+
+// Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
+const refreshLimiter = new RateLimiter({
+  windowMs: 120 * 1000,
+  maxRequests: 2,
+});
 
 function normalizeCitySlug(str: string): string {
   return str
@@ -44,7 +51,17 @@ export async function GET(request: Request) {
       | undefined;
 
     if (refresh === "1") {
-      if (process.env.VERCEL) {
+      const clientIp = getClientIp(request);
+      const limitCheck = refreshLimiter.check(clientIp);
+
+      if (!limitCheck.allowed) {
+        syncMeta = {
+          attempted: false,
+          success: true,
+          mode: "rate_limited",
+          message: `Fikstür yenileme isteği yakın zamanda tetiklendi. Lütfen ${limitCheck.retryAfterSeconds || 60} saniye sonra tekrar deneyin. Önbellekteki güncel veriler gösteriliyor.`,
+        };
+      } else if (process.env.VERCEL) {
         const rawToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
         const ghToken = rawToken?.trim();
         if (ghToken) {
@@ -296,18 +313,28 @@ export async function GET(request: Request) {
       });
     }
 
-    return NextResponse.json({
-      city: data.city || "İstanbul",
-      title: data.title || "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
-      updated_at: data.updated_at,
-      total_matches: matches.length,
-      unfiltered_total: data.total_matches,
-      source: data.source,
-      filters: data.filters,
-      matches,
-      standings: data.standings || {},
-      sync: syncMeta,
-    });
+    const headers: Record<string, string> = {};
+    if (refresh === "1") {
+      headers["Cache-Control"] = "no-store, no-cache, must-revalidate";
+    } else {
+      headers["Cache-Control"] = "public, s-maxage=60, stale-while-revalidate=300";
+    }
+
+    return NextResponse.json(
+      {
+        city: data.city || "İstanbul",
+        title: data.title || "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
+        updated_at: data.updated_at,
+        total_matches: matches.length,
+        unfiltered_total: data.total_matches,
+        source: data.source,
+        filters: data.filters,
+        matches,
+        standings: data.standings || {},
+        sync: syncMeta,
+      },
+      { headers }
+    );
   } catch (error) {
     console.error("API Error:", error);
     return NextResponse.json(

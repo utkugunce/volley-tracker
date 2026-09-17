@@ -6,6 +6,26 @@ import {
   MatchOverride,
   AuditLogEntry,
 } from "@/utils/overrides";
+import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import {
+  sanitizeString,
+  sanitizeMatchId,
+  sanitizeSetScores,
+  sanitizeStatus,
+} from "@/utils/sanitize";
+
+// Brute-force koruması: 5 dakika içinde 10 hatalı token denemesi -> 15 dakika blok
+const adminAuthLimiter = new RateLimiter({
+  windowMs: 5 * 60 * 1000,
+  maxRequests: 10,
+  blockDurationMs: 15 * 60 * 1000,
+});
+
+// Genel istek hız sınırı: dakikada 60 istek
+const adminGeneralLimiter = new RateLimiter({
+  windowMs: 60 * 1000,
+  maxRequests: 60,
+});
 
 function safeCompare(a: string, b: string): boolean {
   const bufA = Buffer.from(a);
@@ -15,6 +35,32 @@ function safeCompare(a: string, b: string): boolean {
 }
 
 function verifyAdminToken(request: Request): { authorized: boolean; response?: NextResponse } {
+  const clientIp = getClientIp(request);
+
+  // 1. Genel hız sınırı kontrolü
+  const generalCheck = adminGeneralLimiter.check(clientIp);
+  if (!generalCheck.allowed) {
+    return {
+      authorized: false,
+      response: NextResponse.json(
+        { error: "Çok fazla istek gönderildi. Lütfen bir süre bekleyin." },
+        { status: 429, headers: { "Retry-After": String(generalCheck.retryAfterSeconds || 60) } }
+      ),
+    };
+  }
+
+  // 2. Brute-force blok kontrolü
+  const authCheck = adminAuthLimiter.check(clientIp);
+  if (!authCheck.allowed) {
+    return {
+      authorized: false,
+      response: NextResponse.json(
+        { error: "Güvenlik uyarısı: Çok fazla hatalı token denemesi nedeniyle IP adresiniz geçici olarak kilitlendi." },
+        { status: 429, headers: { "Retry-After": String(authCheck.retryAfterSeconds || 900) } }
+      ),
+    };
+  }
+
   const expectedToken = process.env.ADMIN_TOKEN;
 
   if (!expectedToken) {
@@ -42,6 +88,9 @@ function verifyAdminToken(request: Request): { authorized: boolean; response?: N
     };
   }
 
+  // Başarılı giriş yapıldığında bu IP için hatalı giriş sayacını sıfırla
+  adminAuthLimiter.reset(clientIp);
+
   return { authorized: true };
 }
 
@@ -66,37 +115,67 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { match_id, home_score, away_score, set_scores, status, reason, updated_by } = body;
 
-    if (!match_id || typeof match_id !== "string") {
-      return NextResponse.json({ error: "match_id alanı zorunludur." }, { status: 400 });
+    // Girdi Doğrulama ve Sanitization
+    const safeMatchId = sanitizeMatchId(match_id);
+    if (!safeMatchId) {
+      return NextResponse.json(
+        { error: "match_id alanı geçersiz veya eksik. Yalnızca harf, rakam, tire ve alt çizgi içerebilir." },
+        { status: 400 }
+      );
     }
 
-    if (!reason || typeof reason !== "string" || reason.trim().length === 0) {
+    const safeReason = sanitizeString(reason, 500);
+    if (!safeReason || safeReason.length === 0) {
       return NextResponse.json(
         { error: "Düzeltme gerekçesi (reason) belirtilmelidir." },
         { status: 400 }
       );
     }
 
+    const safeUpdatedBy = sanitizeString(updated_by || "admin", 50) || "admin";
+    const safeSetScores = sanitizeSetScores(set_scores);
+    const safeStatus = sanitizeStatus(status || (home_score !== null && away_score !== null ? "finished" : "upcoming"));
+
+    // Skor sayı kontrolü (0 - 3 arası voleybol set skoru)
+    let parsedHomeScore: number | null = null;
+    let parsedAwayScore: number | null = null;
+
+    if (home_score !== undefined && home_score !== null && home_score !== "") {
+      const num = Number(home_score);
+      if (isNaN(num) || num < 0 || num > 3) {
+        return NextResponse.json({ error: "Ev sahibi set skoru 0 ile 3 arasında bir sayı olmalıdır." }, { status: 400 });
+      }
+      parsedHomeScore = num;
+    }
+
+    if (away_score !== undefined && away_score !== null && away_score !== "") {
+      const num = Number(away_score);
+      if (isNaN(num) || num < 0 || num > 3) {
+        return NextResponse.json({ error: "Deplasman set skoru 0 ile 3 arasında bir sayı olmalıdır." }, { status: 400 });
+      }
+      parsedAwayScore = num;
+    }
+
     const currentData = getOverridesData();
-    const existingOverride = currentData.overrides[match_id];
+    const existingOverride = currentData.overrides[safeMatchId];
     const isUpdate = !!existingOverride;
 
     const newOverride: MatchOverride = {
-      match_id,
-      home_score: home_score !== undefined && home_score !== null ? Number(home_score) : null,
-      away_score: away_score !== undefined && away_score !== null ? Number(away_score) : null,
-      set_scores: Array.isArray(set_scores) ? set_scores : undefined,
-      status: status || (home_score !== null && away_score !== null ? "finished" : "upcoming"),
+      match_id: safeMatchId,
+      home_score: parsedHomeScore,
+      away_score: parsedAwayScore,
+      set_scores: safeSetScores,
+      status: safeStatus,
       updated_at: new Date().toISOString(),
-      updated_by: updated_by?.trim() || "admin",
-      reason: reason.trim(),
+      updated_by: safeUpdatedBy,
+      reason: safeReason,
     };
 
-    currentData.overrides[match_id] = newOverride;
+    currentData.overrides[safeMatchId] = newOverride;
 
     const auditEntry: AuditLogEntry = {
       id: `audit-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
-      match_id,
+      match_id: safeMatchId,
       action: isUpdate ? "update" : "create",
       timestamp: new Date().toISOString(),
       updated_by: newOverride.updated_by,
@@ -117,7 +196,7 @@ export async function POST(request: Request) {
       success: true,
       override: newOverride,
       audit_entry: auditEntry,
-      message: `Maç (#${match_id}) skoru başarıyla güncellendi.`,
+      message: `Maç (#${safeMatchId}) skoru başarıyla güncellendi.`,
     });
   } catch (e: any) {
     console.error("POST override error:", e);
@@ -134,16 +213,17 @@ export async function DELETE(request: Request) {
 
   try {
     const { searchParams } = new URL(request.url);
-    const match_id = searchParams.get("match_id");
-    const reason = searchParams.get("reason") || "Manuel override kaldırıldı";
-    const updated_by = searchParams.get("updated_by") || "admin";
+    const rawMatchId = searchParams.get("match_id");
+    const safeMatchId = sanitizeMatchId(rawMatchId);
+    const safeReason = sanitizeString(searchParams.get("reason") || "Manuel override kaldırıldı", 255);
+    const safeUpdatedBy = sanitizeString(searchParams.get("updated_by") || "admin", 50);
 
-    if (!match_id) {
-      return NextResponse.json({ error: "match_id parametresi gereklidir." }, { status: 400 });
+    if (!safeMatchId) {
+      return NextResponse.json({ error: "Geçerli bir match_id parametresi gereklidir." }, { status: 400 });
     }
 
     const currentData = getOverridesData();
-    const existing = currentData.overrides[match_id];
+    const existing = currentData.overrides[safeMatchId];
 
     if (!existing) {
       return NextResponse.json(
@@ -152,15 +232,15 @@ export async function DELETE(request: Request) {
       );
     }
 
-    delete currentData.overrides[match_id];
+    delete currentData.overrides[safeMatchId];
 
     const auditEntry: AuditLogEntry = {
       id: `audit-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
-      match_id,
+      match_id: safeMatchId,
       action: "delete",
       timestamp: new Date().toISOString(),
-      updated_by,
-      reason,
+      updated_by: safeUpdatedBy,
+      reason: safeReason,
       old_value: existing,
       new_value: null,
     };
@@ -170,8 +250,8 @@ export async function DELETE(request: Request) {
 
     return NextResponse.json({
       success: true,
-      match_id,
-      message: `Maç (#${match_id}) üzerindeki manuel override kaldırıldı.`,
+      match_id: safeMatchId,
+      message: `Maç (#${safeMatchId}) üzerindeki manuel override kaldırıldı.`,
     });
   } catch (e: any) {
     console.error("DELETE override error:", e);
