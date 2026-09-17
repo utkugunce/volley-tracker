@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T19:07:56.618705",
+  "updated_at": "2026-09-17T22:17:56.844645",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -719,6 +719,23 @@
       },
       {
         "rank": 4,
+        "team": "Beylikdüzü Beykent",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "set_ratio": "3.000",
+        "points_won": 100,
+        "points_lost": 87,
+        "point_ratio": "1.149",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
         "team": "Konak",
         "played": 1,
         "won": 1,
@@ -735,7 +752,7 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Avcılar Yankı",
         "played": 1,
         "won": 0,
@@ -752,7 +769,24 @@
         ]
       },
       {
-        "rank": 6,
+        "rank": 7,
+        "team": "Fmv Işık",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "set_ratio": "0.333",
+        "points_won": 87,
+        "points_lost": 100,
+        "point_ratio": "0.870",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 8,
         "team": "Bizimkent İlkokulu",
         "played": 1,
         "won": 0,
@@ -769,7 +803,7 @@
         ]
       },
       {
-        "rank": 7,
+        "rank": 9,
         "team": "İtü Gvo",
         "played": 1,
         "won": 0,
@@ -786,7 +820,7 @@
         ]
       },
       {
-        "rank": 8,
+        "rank": 10,
         "team": "Atayıldız",
         "played": 1,
         "won": 0,
@@ -801,36 +835,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 9,
-        "team": "Beylikdüzü Beykent",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 10,
-        "team": "Fmv Işık",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - A Grubu": [
@@ -2604,11 +2608,16 @@
       "match_no": "5",
       "home_team": "Beylikdüzü Beykent",
       "away_team": "Fmv Işık",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-19",
+        "25-23",
+        "25-27",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397109",
@@ -3292,5 +3301,5 @@
     }
   ],
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-09-17T19:09:12.037182"
+  "volleybox_sync_updated_at": "2026-09-17T22:19:29.945374"
 }
