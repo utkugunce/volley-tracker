@@ -15,6 +15,8 @@ logging.basicConfig(level=logging.INFO, format="[%(asctime)s] [%(levelname)s] %(
 logger = logging.getLogger("AnkaraParser")
 
 VALID_CATEGORIES = {
+    "GENÇ KIZ 1. LİG": ("Genç", "Kız"),
+    "GENC KIZ 1. LIG": ("Genç", "Kız"),
     "GENÇ KIZ": ("Genç", "Kız"),
     "GENC KIZ": ("Genç", "Kız"),
     "GENÇ ERKEK": ("Genç", "Erkek"),
@@ -65,7 +67,13 @@ def normalize_category(raw_cat: str):
     elif "KLASMAN" in upper_cat:
         group = "Klasman Etabı"
 
-    category_label = f"{age_group} {gender}"
+    if ("1. LİG" in upper_cat or "1.LİG" in upper_cat or "1. LİGİ" in upper_cat or "1.LİGİ" in upper_cat) and age_group == "Genç" and gender == "Kız":
+        category_label = "Genç Kızlar 1. Ligi"
+    elif ("SÜPER LİG" in upper_cat or "SUPER LIG" in upper_cat) and age_group == "Genç" and gender == "Kız":
+        category_label = "Genç Kızlar Süper Lig"
+    else:
+        category_label = f"{age_group} {gender}"
+
     return category_label, age_group, gender, group
 
 def parse_text_bulletin(content: str) -> List[Dict[str, Any]]:
@@ -241,7 +249,7 @@ def save_fixtures_to_json(fixtures: List[Dict[str, Any]], target_path: str):
         "total_matches": len(sorted_fixtures),
         "source": "TVF Ankara Voleybol İl Temsilciliği Bülteni",
         "filters": {
-            "categories": ["Tümü", "Genç Kız", "Genç Erkek", "Yıldız Kız", "Yıldız Erkek"],
+            "categories": ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig", "Genç Kız", "Genç Erkek", "Yıldız Kız", "Yıldız Erkek"],
             "age_groups": ["Tümü", "Genç", "Yıldız"],
             "genders": ["Tümü", "Kız", "Erkek"],
             "halls": sorted(list({f["hall"] for f in sorted_fixtures if f.get("hall")}))

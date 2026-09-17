@@ -1,14 +1,15 @@
 {
-  "updated_at": "2026-09-17T09:21:31.305889",
+  "updated_at": "2026-09-17T11:39:33.726197",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 44,
+  "total_matches": 56,
   "source": "https://izmir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
       "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
@@ -249,6 +250,276 @@
       {
         "rank": 5,
         "team": "Mavişehir",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - A Grubu": [
+      {
+        "rank": 1,
+        "team": "Arkas",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Bergama Belediyesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Bornova Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "İzege",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Karşıyaka",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Monza",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Uzay 35",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Volkan Güç",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - B Grubu": [
+      {
+        "rank": 1,
+        "team": "Altekma",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Altınay",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Altınordu",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Dokuz Eylül Voleybol",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Dost - B",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Kzy Bornova",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Özateş",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Smyrna Yıldızı - B",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - 1.Lig Genç Kız - C Gr": [
+      {
+        "rank": 1,
+        "team": "35 Yıldız",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Anka",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Dost - A",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Efor",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Güzelyalı",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Mavişehir Koleji",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Smyrna Yıldızı - A",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Zirve35",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1255,7 +1526,415 @@
       }
     },
     {
-      "id": "izmir-20260919-017",
+      "id": "izmir-20260922-017",
+      "city": "İzmir",
+      "date": "2026-09-22",
+      "time": "--:--",
+      "hall": "Menemen",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Arkas",
+      "away_team": "Volkan Güç",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260925-018",
+      "city": "İzmir",
+      "date": "2026-09-25",
+      "time": "--:--",
+      "hall": "Vali Hüseyin Öğütcen",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Uzay 35",
+      "away_team": "Bornova Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260927-019",
+      "city": "İzmir",
+      "date": "2026-09-27",
+      "time": "--:--",
+      "hall": "Menemen",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "Monza",
+      "away_team": "Bergama Belediyesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260927-020",
+      "city": "İzmir",
+      "date": "2026-09-27",
+      "time": "--:--",
+      "hall": "Menemen",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Karşıyaka",
+      "away_team": "İzege",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260926-021",
+      "city": "İzmir",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Gaziemir",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Özateş",
+      "away_team": "Altınay",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260926-022",
+      "city": "İzmir",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Gaziemir",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
+      "home_team": "Dost - B",
+      "away_team": "Kzy Bornova",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260926-023",
+      "city": "İzmir",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Gaziemir",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "3",
+      "home_team": "Altekma",
+      "away_team": "Dokuz Eylül Voleybol",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260926-024",
+      "city": "İzmir",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Vali Hüseyin Öğütcen",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "4",
+      "home_team": "Altınordu",
+      "away_team": "Smyrna Yıldızı - B",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260922-025",
+      "city": "İzmir",
+      "date": "2026-09-22",
+      "time": "--:--",
+      "hall": "Balçova",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1.Lig Genç Kız - C Gr",
+      "match_no": "1",
+      "home_team": "Güzelyalı",
+      "away_team": "Efor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260927-026",
+      "city": "İzmir",
+      "date": "2026-09-27",
+      "time": "--:--",
+      "hall": "Balçova",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1.Lig Genç Kız - C Gr",
+      "match_no": "2",
+      "home_team": "35 Yıldız",
+      "away_team": "Mavişehir Koleji",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260927-027",
+      "city": "İzmir",
+      "date": "2026-09-27",
+      "time": "--:--",
+      "hall": "Gaziemir",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1.Lig Genç Kız - C Gr",
+      "match_no": "3",
+      "home_team": "Zirve35",
+      "away_team": "Anka",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260928-028",
+      "city": "İzmir",
+      "date": "2026-09-28",
+      "time": "--:--",
+      "hall": "Balçova",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1.Lig Genç Kız - C Gr",
+      "match_no": "4",
+      "home_team": "Dost - A",
+      "away_team": "Smyrna Yıldızı - A",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260919-029",
       "city": "İzmir",
       "date": "2026-09-19",
       "time": "17:00",
@@ -1296,7 +1975,7 @@
       }
     },
     {
-      "id": "izmir-20260920-018",
+      "id": "izmir-20260920-030",
       "city": "İzmir",
       "date": "2026-09-20",
       "time": "12:00",
@@ -1337,7 +2016,7 @@
       }
     },
     {
-      "id": "izmir-20260923-019",
+      "id": "izmir-20260923-031",
       "city": "İzmir",
       "date": "2026-09-23",
       "time": "--:--",
@@ -1378,7 +2057,7 @@
       }
     },
     {
-      "id": "izmir-20260925-020",
+      "id": "izmir-20260925-032",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "--:--",
@@ -1419,7 +2098,7 @@
       }
     },
     {
-      "id": "izmir-20260915-021",
+      "id": "izmir-20260915-033",
       "city": "İzmir",
       "date": "2026-09-15",
       "time": "20:00",
@@ -1465,7 +2144,7 @@
       }
     },
     {
-      "id": "izmir-20260917-022",
+      "id": "izmir-20260917-034",
       "city": "İzmir",
       "date": "2026-09-17",
       "time": "20:00",
@@ -1506,7 +2185,7 @@
       }
     },
     {
-      "id": "izmir-20260920-023",
+      "id": "izmir-20260920-035",
       "city": "İzmir",
       "date": "2026-09-20",
       "time": "16:00",
@@ -1547,7 +2226,7 @@
       }
     },
     {
-      "id": "izmir-20260924-024",
+      "id": "izmir-20260924-036",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "--:--",
@@ -1588,7 +2267,7 @@
       }
     },
     {
-      "id": "izmir-20260924-025",
+      "id": "izmir-20260924-037",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "--:--",
@@ -1629,7 +2308,7 @@
       }
     },
     {
-      "id": "izmir-20260926-026",
+      "id": "izmir-20260926-038",
       "city": "İzmir",
       "date": "2026-09-26",
       "time": "--:--",
@@ -1670,7 +2349,7 @@
       }
     },
     {
-      "id": "izmir-20260916-027",
+      "id": "izmir-20260916-039",
       "city": "İzmir",
       "date": "2026-09-16",
       "time": "18:30",
@@ -1697,8 +2376,8 @@
         "url": "https://women.volleybox.net/tr/forza-spor-kulubu-u16-volkan-guc-spor-kulubu-u16-c397123",
         "host_name": "Forza Spor Kulübü U16",
         "guest_name": "Volkan Güç Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-16",
         "vb_time": "18:30",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -1715,7 +2394,7 @@
       }
     },
     {
-      "id": "izmir-20260919-028",
+      "id": "izmir-20260919-040",
       "city": "İzmir",
       "date": "2026-09-19",
       "time": "12:00",
@@ -1756,7 +2435,7 @@
       }
     },
     {
-      "id": "izmir-20260921-029",
+      "id": "izmir-20260921-041",
       "city": "İzmir",
       "date": "2026-09-21",
       "time": "--:--",
@@ -1797,7 +2476,7 @@
       }
     },
     {
-      "id": "izmir-20260924-030",
+      "id": "izmir-20260924-042",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "--:--",
@@ -1838,7 +2517,7 @@
       }
     },
     {
-      "id": "izmir-20260924-031",
+      "id": "izmir-20260924-043",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "--:--",
@@ -1879,7 +2558,7 @@
       }
     },
     {
-      "id": "izmir-20260925-032",
+      "id": "izmir-20260925-044",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "--:--",
@@ -1920,7 +2599,7 @@
       }
     },
     {
-      "id": "izmir-20260915-033",
+      "id": "izmir-20260915-045",
       "city": "İzmir",
       "date": "2026-09-15",
       "time": "18:30",
@@ -1966,7 +2645,7 @@
       }
     },
     {
-      "id": "izmir-20260916-034",
+      "id": "izmir-20260916-046",
       "city": "İzmir",
       "date": "2026-09-16",
       "time": "18:30",
@@ -1993,8 +2672,8 @@
         "url": "https://women.volleybox.net/tr/narldere-belediyesi-spor-kulubu-u16-bayrakl-belediyesi-spor-kulubu-u16-c397162",
         "host_name": "Narlıdere Belediyesi Spor Kulübü U16",
         "guest_name": "Bayraklı Belediyesi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-16",
         "vb_time": "18:30",
         "vb_hall": "Gaziemir Spor Salonu",
@@ -2011,7 +2690,7 @@
       }
     },
     {
-      "id": "izmir-20260921-035",
+      "id": "izmir-20260921-047",
       "city": "İzmir",
       "date": "2026-09-21",
       "time": "--:--",
@@ -2052,7 +2731,7 @@
       }
     },
     {
-      "id": "izmir-20260924-036",
+      "id": "izmir-20260924-048",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "--:--",
@@ -2093,7 +2772,7 @@
       }
     },
     {
-      "id": "izmir-20260925-037",
+      "id": "izmir-20260925-049",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "--:--",
@@ -2134,7 +2813,7 @@
       }
     },
     {
-      "id": "izmir-20260929-038",
+      "id": "izmir-20260929-050",
       "city": "İzmir",
       "date": "2026-09-29",
       "time": "--:--",
@@ -2175,7 +2854,7 @@
       }
     },
     {
-      "id": "izmir-20260917-039",
+      "id": "izmir-20260917-051",
       "city": "İzmir",
       "date": "2026-09-17",
       "time": "20:00",
@@ -2216,7 +2895,7 @@
       }
     },
     {
-      "id": "izmir-20260918-040",
+      "id": "izmir-20260918-052",
       "city": "İzmir",
       "date": "2026-09-18",
       "time": "20:00",
@@ -2257,7 +2936,7 @@
       }
     },
     {
-      "id": "izmir-20260918-041",
+      "id": "izmir-20260918-053",
       "city": "İzmir",
       "date": "2026-09-18",
       "time": "20:00",
@@ -2298,7 +2977,7 @@
       }
     },
     {
-      "id": "izmir-20260921-042",
+      "id": "izmir-20260921-054",
       "city": "İzmir",
       "date": "2026-09-21",
       "time": "--:--",
@@ -2339,7 +3018,7 @@
       }
     },
     {
-      "id": "izmir-20260925-043",
+      "id": "izmir-20260925-055",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "--:--",
@@ -2380,7 +3059,7 @@
       }
     },
     {
-      "id": "izmir-20260925-044",
+      "id": "izmir-20260925-056",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "--:--",
@@ -2422,5 +3101,5 @@
     }
   ],
   "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-09-17T09:23:34.759641"
+  "volleybox_sync_updated_at": "2026-09-17T11:41:01.256117"
 }

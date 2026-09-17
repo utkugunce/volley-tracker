@@ -30,6 +30,7 @@ OUTPUT_JSON = DATA_DIR / "fixtures.json"
 
 CATEGORIES_CONFIG = [
     ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
+    ("GK1L", "Genç Kızlar 1. Ligi", "Genç"),
     ("YKSL", "Yıldız Kızlar Süper Lig", "Yıldız"),
 ]
 
@@ -349,11 +350,11 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
         "updated_at": datetime.now().isoformat(),
         "city": "İstanbul",
         "slug": "istanbul",
-        "title": "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
+        "title": "TVF İstanbul Genç & Yıldız Ligleri",
         "total_matches": len(all_matches),
         "source": "https://istanbul.voleyboliltemsilciligi.com",
         "filters": {
-            "categories": ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"],
+            "categories": ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
             "age_groups": ["Tümü", "Genç", "Yıldız"],
             "genders": ["Kız"],
             "halls": ["Tümü"] + halls_list,
@@ -397,6 +398,12 @@ def save_fixtures_to_json(data: Dict[str, Any], output_path: Path = OUTPUT_JSON)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     logger.info(f"Veriler başarıyla yazıldı: {output_path} (Toplam {data['total_matches']} maç)")
+
+    city_path = DATA_DIR / "cities" / "istanbul.json"
+    city_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(city_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    logger.info(f"Şehir dosyası güncellendi: {city_path}")
 
 if __name__ == "__main__":
     data = fetch_istanbul_live_data()

@@ -339,9 +339,9 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (24 Maç Mevcut)",
-      "matches_count": 24,
-      "standings_count": 5,
+      "status": "Aktif (29 Maç Mevcut)",
+      "matches_count": 29,
+      "standings_count": 9,
       "data_file": "data/cities/istanbul.json"
     },
     {
@@ -349,9 +349,9 @@
       "name": "İzmir",
       "slug": "izmir",
       "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (44 Maç Mevcut)",
-      "matches_count": 44,
-      "standings_count": 9,
+      "status": "Aktif (56 Maç Mevcut)",
+      "matches_count": 56,
+      "standings_count": 12,
       "data_file": "data/cities/izmir.json"
     },
     {

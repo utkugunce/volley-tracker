@@ -249,8 +249,10 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
 
       const foundRow = table.find((item) => slugify(item.team) === cleanSlug);
       if (foundRow) {
-        const cat = groupName.includes("Genç") || groupName.includes("U18")
-          ? "Genç Kızlar Süper Lig"
+        const isGenc = groupName.includes("Genç") || groupName.includes("U18");
+        const is1Lig = groupName.includes("1. Lig") || groupName.includes("1.Lig") || groupName.includes("1. Ligi");
+        const cat = isGenc
+          ? (is1Lig ? "Genç Kızlar 1. Ligi" : "Genç Kızlar Süper Lig")
           : groupName.includes("Yıldız") || groupName.includes("U16")
           ? "Yıldız Kızlar Süper Lig"
           : groupName.split(" - ")[0];

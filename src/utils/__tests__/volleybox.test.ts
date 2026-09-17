@@ -168,6 +168,20 @@ describe("volleybox utility", () => {
       expect(mapping?.volleybox_url).toContain("women-zmir-super-ligi-u18-2026-27-o49401");
     });
 
+    it("returns correct tournament mapping for Istanbul Genç Kızlar 1. Ligi (U18 1. Lig)", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar 1. Ligi", "İstanbul");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-stanbul-1-ligi-u18-2026-27-o50866");
+      expect(mapping?.age_category).toBe("U18");
+    });
+
+    it("returns correct tournament mapping for İzmir Genç Kızlar 1. Ligi (U18 1. Lig)", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar 1. Ligi", "İzmir");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-zmir-1-ligi-u18-2026-27-o49400");
+      expect(mapping?.age_category).toBe("U18");
+    });
+
     it("resolves city-specific leagues such as Bursa U18", () => {
       const mapping = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Bursa");
       expect(mapping).toBeDefined();
@@ -195,6 +209,9 @@ describe("volleybox utility", () => {
       // Ankara in volleybox-mappings.json has only 2025/26 tournament entries, which must NOT be returned for 2026/27
       const ankaraU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Ankara");
       expect(ankaraU18).toBeUndefined();
+
+      const ankaraU18Lig1 = getVolleyboxLeagueMapping("Genç Kızlar 1. Ligi", "Ankara");
+      expect(ankaraU18Lig1).toBeUndefined();
 
       const ankaraU16 = getVolleyboxLeagueMapping("Yıldız Kızlar Süper Lig", "Ankara");
       expect(ankaraU16).toBeUndefined();

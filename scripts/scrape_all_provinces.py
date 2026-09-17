@@ -276,6 +276,7 @@ def scrape_single_city(city_info):
 
     target_kumes = [
         ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
+        ("GK1L", "Genç Kızlar 1. Ligi", "Genç"),
         ("YKSL", "Yıldız Kızlar Süper Lig", "Yıldız"),
     ]
 
@@ -426,7 +427,7 @@ def scrape_single_city(city_info):
             "total_matches": len(city_matches),
             "source": f"https://{subdomain}.voleyboliltemsilciligi.com",
             "filters": {
-                "categories": ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"],
+                "categories": ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
                 "age_groups": ["Tümü", "Genç", "Yıldız"],
                 "genders": ["Kız"],
                 "halls": ["Tümü"] + sorted(list(halls_set)),

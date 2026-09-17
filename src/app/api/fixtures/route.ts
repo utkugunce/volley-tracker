@@ -226,7 +226,7 @@ export async function GET(request: Request) {
             unfiltered_total: 0,
             source: `https://${citySlug}.voleyboliltemsilciligi.com`,
             filters: {
-              categories: ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"],
+              categories: ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
               age_groups: ["Tümü", "Genç", "Yıldız"],
               genders: ["Kız"],
               halls: ["Tümü"],

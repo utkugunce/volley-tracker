@@ -5801,6 +5801,39 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-09-14"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İstanbul 1. Lig 1. Bölge U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-stanbul-1-ligi-u18-2026-27-o50866",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "İzmir 1. Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-zmir-1-ligi-u18-2026-27-o49400",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Ankara 1. Lig U18 2025/26",
+      "volleybox_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2025-26-o42460",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2025/26",
+      "verified_at": "2026-09-17"
     }
   ]
 }
