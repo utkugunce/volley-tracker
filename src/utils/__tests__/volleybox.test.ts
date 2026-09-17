@@ -274,10 +274,16 @@ describe("volleybox utility", () => {
       expect(ankaraU16).toBeUndefined();
     });
 
+    it("returns correct tournament mapping for Eskişehir Genç Kızlar Süper Lig (U18)", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Eskişehir");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toContain("women-eskisehir-super-ligi-u18-2026-27-o51045");
+      expect(mapping?.age_category).toBe("U18");
+    });
+
     it("does not silently fall back to Istanbul if a specified city has no active 2026/27 tournament", () => {
-      // Eskişehir U18 only has a 2025/26 entry in mappings, so it must be undefined
-      const eskisehirU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Eskişehir");
-      expect(eskisehirU18).toBeUndefined();
+      const diyarbakirU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Diyarbakır");
+      expect(diyarbakirU18).toBeUndefined();
     });
   });
 });
