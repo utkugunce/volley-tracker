@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T09:21:13.022662",
+  "updated_at": "2026-09-17T12:58:27.291855",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -9,6 +9,7 @@
     "categories": [
       "Tümü",
       "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
@@ -1185,5 +1186,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-09-17T11:41:01.159597"
+  "volleybox_sync_updated_at": "2026-09-17T13:00:33.506582"
 }

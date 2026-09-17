@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-17T09:22:01.411500",
+  "updated_at": "2026-09-17T12:59:28.052509",
   "total_cities": 81,
-  "active_cities": 8,
-  "total_matches": 151,
+  "active_cities": 9,
+  "total_matches": 174,
   "cities": [
     {
       "ilid": "1",
@@ -89,10 +89,10 @@
       "name": "Aydın",
       "slug": "aydin",
       "url": "https://aydin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (6 Maç Mevcut)",
+      "matches_count": 6,
+      "standings_count": 1,
+      "data_file": "data/cities/aydin.json"
     },
     {
       "ilid": "10",

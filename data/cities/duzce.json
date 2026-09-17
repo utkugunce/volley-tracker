@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T17:07:25.121353",
+  "updated_at": "2026-09-17T12:59:23.350150",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -9,6 +9,7 @@
     "categories": [
       "Tümü",
       "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
@@ -165,5 +166,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-17T11:41:01.166563"
+  "volleybox_sync_updated_at": "2026-09-17T13:00:33.515383"
 }

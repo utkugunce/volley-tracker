@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T11:39:33.726197",
+  "updated_at": "2026-09-17T12:58:45.685502",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1963,16 +1963,16 @@
         "has_score": false,
         "vb_date": "2026-09-27",
         "vb_time": null,
-        "vb_hall": "Balçova Spor Salonu",
+        "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-09-27",
           "vb_time": null,
-          "vb_hall": "Balçova Spor Salonu",
-          "details": "Salon Değişti (TVF: Gaziemir / VB: Balçova Spor Salonu)"
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3185,5 +3185,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-17T12:55:30.758162"
+  "volleybox_sync_updated_at": "2026-09-17T13:00:33.961755"
 }

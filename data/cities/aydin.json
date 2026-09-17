@@ -1,0 +1,296 @@
+{
+  "updated_at": "2026-09-17T12:58:24.242707",
+  "city": "Aydın",
+  "slug": "aydin",
+  "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 6,
+  "source": "https://aydin.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü",
+      "Sks",
+      "Söke S.S."
+    ]
+  },
+  "standings": {
+    "Genç Kızlar 1. Ligi - 2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi": [
+      {
+        "rank": 1,
+        "team": "Aydın Bbsk",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Dsi Spor",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Efeler Altın Smaç Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Söke Voleybol Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "aydin-20260922-001",
+      "city": "Aydın",
+      "date": "2026-09-22",
+      "time": "20:30",
+      "hall": "Sks",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
+      "match_no": "1",
+      "home_team": "Aydın Bbsk",
+      "away_team": "Söke Voleybol Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "aydin-20260925-002",
+      "city": "Aydın",
+      "date": "2026-09-25",
+      "time": "20:30",
+      "hall": "Sks",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
+      "match_no": "2",
+      "home_team": "Dsi Spor",
+      "away_team": "Efeler Altın Smaç Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "aydin-20260928-003",
+      "city": "Aydın",
+      "date": "2026-09-28",
+      "time": "19:00",
+      "hall": "Söke S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
+      "match_no": "3",
+      "home_team": "Söke Voleybol Spor Kulübü",
+      "away_team": "Dsi Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "aydin-20260930-004",
+      "city": "Aydın",
+      "date": "2026-09-30",
+      "time": "19:00",
+      "hall": "Sks",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
+      "match_no": "4",
+      "home_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+      "away_team": "Aydın Bbsk",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "aydin-20261005-005",
+      "city": "Aydın",
+      "date": "2026-10-05",
+      "time": "20:30",
+      "hall": "Söke S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
+      "match_no": "5",
+      "home_team": "Söke Voleybol Spor Kulübü",
+      "away_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "aydin-20261009-006",
+      "city": "Aydın",
+      "date": "2026-10-09",
+      "time": "19:00",
+      "hall": "Sks",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
+      "match_no": "6",
+      "home_team": "Aydın Bbsk",
+      "away_team": "Efeler Altın Smaç Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-17T13:00:33.510043"
+}
