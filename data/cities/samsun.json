@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-17T12:59:23.350150",
-  "city": "Düzce",
-  "slug": "duzce",
-  "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
+  "updated_at": "2026-09-17T15:21:37.679574",
+  "city": "Samsun",
+  "slug": "samsun",
+  "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
-  "source": "https://duzce.voleyboliltemsilciligi.com",
+  "source": "https://samsun.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -25,10 +25,10 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
+    "Genç Kızlar 1. Ligi - A Grubu": [
       {
         "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
+        "team": "19 Mayıs Voleybol Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
+        "team": "55 Matasyon Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Ultraslan Spor Kulubü",
+        "team": "Anadolu Voleybol Akademi Sk (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -61,7 +61,62 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
+        "team": "Atakum Atılım Sk (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Bafra Akademi Sk",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Bafra Vera Sk",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Gülizar Hasan Yılmaz Spor Lisesi Sk",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Samsun Büyükşehir Sk",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 9,
+        "team": "Samsun Volley Team",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -71,10 +126,10 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar 1. Ligi - B Grubu": [
       {
         "rank": 1,
-        "team": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü",
+        "team": "Anadolu Voleybol Akademi Sk (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -85,7 +140,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Ay Spor Kulübü",
+        "team": "Atakum Atılım Sk (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -96,7 +151,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Can Sportif Spor Kulübü",
+        "team": "İlkkıvılcım Havza Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -107,20 +162,7 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Ultraslan Spor Kulubü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - B Grubu": [
-      {
-        "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
+        "team": "Nova Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -130,8 +172,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
+        "rank": 5,
+        "team": "Sam55 Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -141,8 +183,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Düzce Gençlik Ve Spor Kulübü",
+        "rank": 6,
+        "team": "Samsunspor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -152,8 +194,19 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
+        "rank": 7,
+        "team": "Terme Gsim Sk",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Vezirköprü Voleybol Akademi Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -166,5 +219,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-17T15:22:35.612179"
+  "volleybox_sync_updated_at": "2026-09-17T15:22:35.600478"
 }

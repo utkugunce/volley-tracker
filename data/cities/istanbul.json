@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-17T10:31:06.325848",
+  "updated_at": "2026-09-17T15:21:12.772203",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
-  "total_matches": 29,
+  "total_matches": 47,
   "source": "https://istanbul.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -24,9 +24,12 @@
       "Tümü",
       "Halkalı Ata 2. Spor Salonu",
       "Halkalı Ata 3. Spor Salonu",
+      "Sancaktepe Taha Akgül",
       "TVF 50. Yıl Deniz Esinduy",
       "Tozkoparan Spor Salonu",
       "Yakacık İTO Spor Salonu",
+      "Yeşilyurt Sk Kapalı Spor",
+      "Ünsped Kapalı Spor Salonu",
       "Şehit Mustafa Özel Spor Salonu"
     ]
   },
@@ -1431,7 +1434,7 @@
       }
     },
     {
-      "id": "ist-20260911-006",
+      "id": "ist-20260911-009",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "18:00",
@@ -1476,7 +1479,7 @@
       }
     },
     {
-      "id": "ist-20260911-007",
+      "id": "ist-20260911-010",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
@@ -1521,7 +1524,7 @@
       }
     },
     {
-      "id": "ist-20260911-008",
+      "id": "ist-20260911-011",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
@@ -1567,7 +1570,7 @@
       }
     },
     {
-      "id": "ist-20260911-009",
+      "id": "ist-20260911-012",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
@@ -1747,7 +1750,7 @@
       }
     },
     {
-      "id": "ist-20260914-015",
+      "id": "ist-20260914-033",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -1793,7 +1796,7 @@
       }
     },
     {
-      "id": "ist-20260914-016",
+      "id": "ist-20260914-034",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -1838,7 +1841,7 @@
       }
     },
     {
-      "id": "ist-20260914-025",
+      "id": "ist-20260914-043",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -1883,7 +1886,7 @@
       }
     },
     {
-      "id": "ist-20260914-017",
+      "id": "ist-20260914-035",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:00",
@@ -1928,7 +1931,7 @@
       }
     },
     {
-      "id": "ist-20260914-018",
+      "id": "ist-20260914-036",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
@@ -1973,7 +1976,7 @@
       }
     },
     {
-      "id": "ist-20260914-020",
+      "id": "ist-20260914-038",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
@@ -2020,7 +2023,7 @@
       }
     },
     {
-      "id": "ist-20260915-026",
+      "id": "ist-20260915-044",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "18:00",
@@ -2067,7 +2070,7 @@
       }
     },
     {
-      "id": "ist-20260915-027",
+      "id": "ist-20260915-045",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:00",
@@ -2112,7 +2115,7 @@
       }
     },
     {
-      "id": "ist-20260915-019",
+      "id": "ist-20260915-037",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:30",
@@ -2157,7 +2160,7 @@
       }
     },
     {
-      "id": "ist-20260915-021",
+      "id": "ist-20260915-039",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "20:30",
@@ -2202,7 +2205,7 @@
       }
     },
     {
-      "id": "ist-20260916-022",
+      "id": "ist-20260916-040",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
@@ -2247,7 +2250,7 @@
       }
     },
     {
-      "id": "ist-20260916-028",
+      "id": "ist-20260916-046",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
@@ -2292,7 +2295,7 @@
       }
     },
     {
-      "id": "ist-20260916-023",
+      "id": "ist-20260916-041",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "19:30",
@@ -2337,7 +2340,7 @@
       }
     },
     {
-      "id": "ist-20260917-010",
+      "id": "ist-20260917-028",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -2378,7 +2381,7 @@
       }
     },
     {
-      "id": "ist-20260917-011",
+      "id": "ist-20260917-029",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -2419,7 +2422,7 @@
       }
     },
     {
-      "id": "ist-20260917-024",
+      "id": "ist-20260917-042",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -2460,7 +2463,7 @@
       }
     },
     {
-      "id": "ist-20260917-012",
+      "id": "ist-20260917-030",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -2501,7 +2504,7 @@
       }
     },
     {
-      "id": "ist-20260917-013",
+      "id": "ist-20260917-031",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -2542,7 +2545,7 @@
       }
     },
     {
-      "id": "ist-20260917-014",
+      "id": "ist-20260917-032",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -2583,7 +2586,7 @@
       }
     },
     {
-      "id": "ist-20260917-029",
+      "id": "ist-20260917-047",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -2622,8 +2625,620 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "ist-20260921-013",
+      "city": "İstanbul",
+      "date": "2026-09-21",
+      "time": "18:00",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "5",
+      "home_team": "Galatasaray",
+      "away_team": "Ünsped",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260921-006",
+      "city": "İstanbul",
+      "date": "2026-09-21",
+      "time": "19:30",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "6",
+      "home_team": "Milan Atletik",
+      "away_team": "Beylikdüzü 2021",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260921-014",
+      "city": "İstanbul",
+      "date": "2026-09-21",
+      "time": "20:00",
+      "hall": "Şehit Mustafa Özel Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "6",
+      "home_team": "Bahçelievler Bld",
+      "away_team": "Güngören Voleybol",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260922-007",
+      "city": "İstanbul",
+      "date": "2026-09-22",
+      "time": "18:00",
+      "hall": "Şehit Mustafa Özel Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "7",
+      "home_team": "Pegasus",
+      "away_team": "Eczacıbaşı",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260922-020",
+      "city": "İstanbul",
+      "date": "2026-09-22",
+      "time": "18:00",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Dinamo",
+      "away_team": "Blok Akademi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260922-022",
+      "city": "İstanbul",
+      "date": "2026-09-22",
+      "time": "18:00",
+      "hall": "Halkalı Ata 2. Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Avrupa Voleybol Gelişim B",
+      "away_team": "Bahçelievler Bld",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260922-023",
+      "city": "İstanbul",
+      "date": "2026-09-22",
+      "time": "18:00",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Set Voleybol A",
+      "away_team": "Avcılar Demirordu",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260922-019",
+      "city": "İstanbul",
+      "date": "2026-09-22",
+      "time": "19:30",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Beylerbeyi",
+      "away_team": "Alp",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260922-024",
+      "city": "İstanbul",
+      "date": "2026-09-22",
+      "time": "19:30",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "Küçükçekmece Voleybol B",
+      "away_team": "Ulus Spor Akademi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260922-025",
+      "city": "İstanbul",
+      "date": "2026-09-22",
+      "time": "19:30",
+      "hall": "Halkalı Ata 2. Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Avrupa Voleybol Gelişim A",
+      "away_team": "Başakşehir Voleybol",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260923-026",
+      "city": "İstanbul",
+      "date": "2026-09-23",
+      "time": "18:00",
+      "hall": "Tozkoparan Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
+      "home_team": "Başakşehir Bld",
+      "away_team": "Yıldızlar Arena",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260923-015",
+      "city": "İstanbul",
+      "date": "2026-09-23",
+      "time": "19:30",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "7",
+      "home_team": "VakıfBank",
+      "away_team": "THY",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260924-016",
+      "city": "İstanbul",
+      "date": "2026-09-24",
+      "time": "18:00",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "8",
+      "home_team": "Marmara Akademi",
+      "away_team": "Eyüpsultan Bld",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260925-008",
+      "city": "İstanbul",
+      "date": "2026-09-25",
+      "time": "19:30",
+      "hall": "Yeşilyurt Sk Kapalı Spor",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "8",
+      "home_team": "Yeşilyurt",
+      "away_team": "Silivri Çağrıbey",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260925-017",
+      "city": "İstanbul",
+      "date": "2026-09-25",
+      "time": "20:30",
+      "hall": "Şehit Mustafa Özel Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "9",
+      "home_team": "İBB",
+      "away_team": "Galatasaray",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260926-021",
+      "city": "İstanbul",
+      "date": "2026-09-26",
+      "time": "18:30",
+      "hall": "Sancaktepe Taha Akgül",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Tuzla New",
+      "away_team": "Anadolu Olimpik",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260926-018",
+      "city": "İstanbul",
+      "date": "2026-09-26",
+      "time": "19:00",
+      "hall": "Ünsped Kapalı Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "10",
+      "home_team": "Ünsped",
+      "away_team": "Fenerbahçe",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260927-027",
+      "city": "İstanbul",
+      "date": "2026-09-27",
+      "time": "11:30",
+      "hall": "Halkalı Ata 2. Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "3",
+      "home_team": "Set Voleybol B",
+      "away_team": "Bahçeşehir Avrupa Gelişim",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-09-17T13:56:07.272298"
+  "volleybox_sync_updated_at": "2026-09-17T15:22:35.607908"
 }

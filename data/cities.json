@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-17T10:31:53.680332",
+  "updated_at": "2026-09-17T15:22:01.725048",
   "total_cities": 81,
   "active_cities": 9,
-  "total_matches": 174,
+  "total_matches": 192,
   "cities": [
     {
       "ilid": "1",
@@ -339,8 +339,8 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (29 Maç Mevcut)",
-      "matches_count": 29,
+      "status": "Aktif (47 Maç Mevcut)",
+      "matches_count": 47,
       "standings_count": 9,
       "data_file": "data/cities/istanbul.json"
     },
@@ -549,10 +549,10 @@
       "name": "Samsun",
       "slug": "samsun",
       "url": "https://samsun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Puan Durumu Var (2 Tablo)",
       "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "standings_count": 2,
+      "data_file": "data/cities/samsun.json"
     },
     {
       "ilid": "56",
