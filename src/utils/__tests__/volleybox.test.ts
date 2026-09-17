@@ -190,6 +190,21 @@ describe("volleybox utility", () => {
       expect(getVolleyboxLeagueMapping("")).toBeUndefined();
       expect(getVolleyboxLeagueMapping("Bilinmeyen Bölgesel Turnuva")).toBeUndefined();
     });
+
+    it("never returns past season (2025/26) tournament links for current season tracker (e.g. Ankara)", () => {
+      // Ankara in volleybox-mappings.json has only 2025/26 tournament entries, which must NOT be returned for 2026/27
+      const ankaraU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Ankara");
+      expect(ankaraU18).toBeUndefined();
+
+      const ankaraU16 = getVolleyboxLeagueMapping("Yıldız Kızlar Süper Lig", "Ankara");
+      expect(ankaraU16).toBeUndefined();
+    });
+
+    it("does not silently fall back to Istanbul if a specified city has no active 2026/27 tournament", () => {
+      // Eskişehir U18 only has a 2025/26 entry in mappings, so it must be undefined
+      const eskisehirU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Eskişehir");
+      expect(eskisehirU18).toBeUndefined();
+    });
   });
 });
 

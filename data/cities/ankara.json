@@ -980,25 +980,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "336685",
-        "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-a-u16-baskent-arma-spor-u16-c336685",
-        "host_name": "TVF Spor Lisesi U16",
-        "guest_name": "Başkent Arma Spor U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2025-12-18",
-        "vb_time": "18:00",
-        "vb_hall": "Mamak Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2025-12-18",
-          "vb_time": "18:00",
-          "vb_hall": "Mamak Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-21 / VB: 2025-12-18) | Salon Değişti (TVF: Batıkent S.S. / VB: Mamak Spor Salonu)"
+          "has_diff": false
         }
       }
     },
@@ -1241,6 +1234,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 1,
+  "volleybox_synced_matches": 0,
   "volleybox_sync_updated_at": "2026-09-17T09:23:34.549857"
 }

@@ -444,6 +444,30 @@ def match_tvf_with_vb(
         if not (direct_compatible or rev_compatible):
             continue
 
+        # Sezon yılı ve tarih uyumluluğu kontrolü:
+        # TVF fikstürleri 2026/27 sezonuna aittir (Ağustos 2026 - Temmuz 2027).
+        # Volleybox'taki 2025 veya daha eski tarihli maçlar ASLA 2026/27 maçlarıyla eşleşemez!
+        if vb_date:
+            try:
+                d_vb = datetime.strptime(vb_date, "%Y-%m-%d")
+                if d_vb.year < 2026 or (d_vb.year == 2026 and d_vb.month < 8):
+                    continue
+            except Exception:
+                if str(vb_date).startswith("2025") or str(vb_date).startswith("2024") or str(vb_date).startswith("2023"):
+                    continue
+
+        if tvf_date and vb_date and tvf_date != "TBD":
+            try:
+                d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
+                d2 = datetime.strptime(vb_date, "%Y-%m-%d")
+                diff = abs((d1 - d2).days)
+                if diff > 30:
+                    continue
+                if d1.year >= 2026 and d2.year < 2026:
+                    continue
+            except Exception:
+                pass
+
         if direct_compatible:
             base_team_score = s_dir_h + s_dir_a + 5
         else:
@@ -461,13 +485,17 @@ def match_tvf_with_vb(
                     if diff == 1:
                         date_score = 50
                     elif diff <= 7:
-                        date_score = 20
+                        date_score = 25
+                    elif diff <= 14:
+                        date_score = 10
+                    elif diff <= 30:
+                        date_score = 2
                     else:
-                        date_score = 5
+                        continue
                 except Exception:
                     pass
         else:
-            date_score = 30
+            date_score = 20
 
         total_score = base_team_score + date_score
         if total_score > best_score:
@@ -511,7 +539,43 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
                 or vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
             )
         if not vb_m_list:
-            vb_m_list = []
+            old_vb = m.get("volleybox", {})
+            if old_vb.get("synced"):
+                vb_d = str(old_vb.get("vb_date") or "")
+                vb_url = str(old_vb.get("url") or "")
+                # Eski sezona (2025/26) ait hatalı eşleşmeleri temizle
+                if vb_d.startswith("2025") or vb_d.startswith("2024") or "-2025-26-" in vb_url:
+                    m["volleybox"] = {
+                        "synced": False,
+                        "match_id": None,
+                        "url": None,
+                        "host_name": None,
+                        "guest_name": None,
+                        "score": None,
+                        "has_score": False,
+                        "vb_date": None,
+                        "vb_time": None,
+                        "vb_hall": None,
+                        "discrepancy": {"has_diff": False}
+                    }
+                else:
+                    # Mevcut doğrulanmış 2026/27 eşleşmesini koru
+                    synced_count += 1
+            else:
+                m["volleybox"] = {
+                    "synced": False,
+                    "match_id": None,
+                    "url": None,
+                    "host_name": None,
+                    "guest_name": None,
+                    "score": None,
+                    "has_score": False,
+                    "vb_date": None,
+                    "vb_time": None,
+                    "vb_hall": None,
+                    "discrepancy": {"has_diff": False}
+                }
+            continue
 
         matched_vb = match_tvf_with_vb(m, vb_m_list, team_alias_map, used_vb_ids)
         if matched_vb:
@@ -644,10 +708,19 @@ def main():
 
     # 2. Kayıtlı lig turnuva sayfalarından maçları çek
     leagues = mappings_data.get("leagues", [])
+    CURRENT_SEASON = "2026/27"
     
-    # Filtrele: args.city veya aktif iller
+    # Filtrele: args.city veya aktif iller (SADECE 2026/27 sezonu!)
     target_leagues = []
     for l in leagues:
+        # Sezon kontrolü: Eski sezonlara (örn. 2025/26) ait turnuvalar asla 2026/27 fikstürüne bağlanamaz
+        season = (l.get("season") or "").strip()
+        url = (l.get("volleybox_url") or "").strip()
+        if season and season != CURRENT_SEASON:
+            continue
+        if "-2025-26-" in url or "-2024-25-" in url or "-2023-24-" in url:
+            continue
+
         c_name = l.get("city", "")
         c_slug = l.get("city_slug", "")
         c_norm = normalize_name(c_name)
@@ -660,7 +733,7 @@ def main():
             if c_slug.lower() in active_city_names or c_norm in active_city_names:
                 target_leagues.append(l)
 
-    print(f"📋 Toplam {len(target_leagues)} aktif turnuva taranıyor...")
+    print(f"📋 Toplam {len(target_leagues)} aktif ({CURRENT_SEASON} sezonu) turnuva taranıyor...")
 
     vb_tournaments: Dict[str, List[Dict[str, Any]]] = {}
 

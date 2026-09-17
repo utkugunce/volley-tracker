@@ -181,6 +181,8 @@ export function buildVolleyboxLeagueMap(
 
   for (const item of data.leagues || []) {
     if (item.confidence === "broken") continue;
+    // Sezon kontrolü: Sadece güncel sezona (2026/27) ait turnuva profilleri indekslenir
+    if (item.season && item.season !== "2026/27") continue;
 
     const leagueKey = normalizeKey(item.internal_name);
     const citySlug = normalizeCitySlug(item.city_slug || item.city);
@@ -242,9 +244,13 @@ export function getVolleyboxLeagueMapping(
       const ageCityMatch = map.get(`${age}::${citySlug}`);
       if (ageCityMatch) return ageCityMatch;
     }
+
+    // Belirli bir il belirtildiyse ve o ilde turnuva bulunamadıysa (veya eski sezonsa),
+    // asla başka bir ilin (örn. İstanbul) turnuvasına sessizce fallback yapma!
+    return undefined;
   }
 
-  // 2. Şehirsiz genel lig adı veya yaş grubu
+  // 2. Şehir belirtilmediyse genel lig adı veya yaş grubu
   const directMatch = map.get(leagueClean);
   if (directMatch) return directMatch;
 
