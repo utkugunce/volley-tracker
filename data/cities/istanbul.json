@@ -2355,18 +2355,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397105",
+        "url": "https://women.volleybox.net/tr/atayldz-spor-u18-halic-akademi-sk-u18-c397105",
+        "host_name": "Atayıldız Spor U18",
+        "guest_name": "Haliç Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-17",
+        "vb_time": "18:00",
+        "vb_hall": "Halkalı Ata Sporları Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "18:00",
+          "vb_hall": "Halkalı Ata Sporları Merkezi",
+          "details": null
         }
       }
     },
@@ -2389,18 +2396,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397106",
+        "url": "https://women.volleybox.net/tr/kuzey-isklar-sk-u18-bizimkent-lkokulu-spor-kulubu-u18-c397106",
+        "host_name": "Kuzey Işıkları SK U18",
+        "guest_name": "Bizimkent İlkokulu Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-17",
+        "vb_time": "18:00",
+        "vb_hall": "Tozkoparan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "18:00",
+          "vb_hall": "Tozkoparan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2464,18 +2478,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397107",
+        "url": "https://women.volleybox.net/tr/avclar-yank-spor-kulubu-u18-saryer-konak-spor-kulubu-u18-c397107",
+        "host_name": "Avcılar Yankı Spor Kulübü U18",
+        "guest_name": "Sarıyer Konak Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-17",
+        "vb_time": "19:30",
+        "vb_hall": "Halkalı Ata Sporları Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "19:30",
+          "vb_hall": "Halkalı Ata Sporları Merkezi",
+          "details": null
         }
       }
     },
@@ -2498,18 +2519,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397108",
+        "url": "https://women.volleybox.net/tr/bagclar-evren-spor-u18-tu-gelistirme-vakf-okullar-sk-u18-c397108",
+        "host_name": "Bağcılar Evren Spor U18",
+        "guest_name": "İTÜ Geliştirme Vakfı Okulları SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-17",
+        "vb_time": "19:30",
+        "vb_hall": "Halkalı Ata Sporları Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "19:30",
+          "vb_hall": "Halkalı Ata Sporları Merkezi",
+          "details": null
         }
       }
     },
@@ -2532,18 +2560,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "397109",
+        "url": "https://women.volleybox.net/tr/beylikduzu-beykent-spor-kulubu-u18-fmv-isk-spor-kulubu-u18-c397109",
+        "host_name": "Beylikdüzü Beykent Spor Kulübü U18",
+        "guest_name": "FMV Işık Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-17",
+        "vb_time": "19:30",
+        "vb_hall": "Tozkoparan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-17",
+          "vb_time": "19:30",
+          "vb_hall": "Tozkoparan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2589,6 +2624,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-09-17T10:32:16.021615"
+  "volleybox_synced_matches": 29,
+  "volleybox_sync_updated_at": "2026-09-17T13:36:49.076564"
 }

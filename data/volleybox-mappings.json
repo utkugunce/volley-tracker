@@ -6194,6 +6194,207 @@
       ],
       "confidence": "verified",
       "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Atayyıldız",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Atayıldız Spor U18",
+      "volleybox_url": "https://women.volleybox.net/atayldz-spor-u18-t54200",
+      "age_category": "U18",
+      "aliases": [
+        "Atayyıldız",
+        "Atayıldız",
+        "Atayıldız Spor",
+        "Atayıldız Spor U18"
+      ],
+      "synonyms": [
+        "Atayıldız Spor U18",
+        "Atayıldız Spor",
+        "Atayıldız"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Haliç Akademi",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Haliç Akademi SK U18",
+      "volleybox_url": "https://women.volleybox.net/halic-akademi-sk-u18-t54204",
+      "age_category": "U18",
+      "aliases": [
+        "Haliç Akademi",
+        "Haliç Akademi SK",
+        "Haliç Akademi Spor Kulübü"
+      ],
+      "synonyms": [
+        "Haliç Akademi SK U18",
+        "Haliç Akademi SK"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Kuzey Işıkları",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Kuzey Işıkları SK U18",
+      "volleybox_url": "https://women.volleybox.net/kuzey-isklar-sk-u18-t54201",
+      "age_category": "U18",
+      "aliases": [
+        "Kuzey Işıkları",
+        "Kuzey Işıkları SK",
+        "Kuzey Işıkları Spor Kulübü"
+      ],
+      "synonyms": [
+        "Kuzey Işıkları SK U18",
+        "Kuzey Işıkları SK"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Bizimkent İlkokulu",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Bizimkent İlkokulu Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/bizimkent-lkokulu-spor-kulubu-u18-t47013",
+      "age_category": "U18",
+      "aliases": [
+        "Bizimkent İlkokulu",
+        "Bizimkent İlkokulu Spor Kulübü"
+      ],
+      "synonyms": [
+        "Bizimkent İlkokulu Spor Kulübü U18"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Avcılar Yankı",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Avcılar Yankı Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/avclar-yank-spor-kulubu-u18-t54205",
+      "age_category": "U18",
+      "aliases": [
+        "Avcılar Yankı",
+        "Avcılar Yankı Spor Kulübü",
+        "Avcılar Yankı SK"
+      ],
+      "synonyms": [
+        "Avcılar Yankı Spor Kulübü U18"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Konak",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Sarıyer Konak Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/saryer-konak-spor-kulubu-a-u18-t41222",
+      "age_category": "U18",
+      "aliases": [
+        "Konak",
+        "Sarıyer Konak",
+        "Sarıyer Konak Spor Kulübü",
+        "Sarıyer Konak SK"
+      ],
+      "synonyms": [
+        "Sarıyer Konak Spor Kulübü U18",
+        "Sarıyer Konak"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Bağcılar Evren",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Bağcılar Evren Spor U18",
+      "volleybox_url": "https://women.volleybox.net/bagclar-evren-spor-u18-t54203",
+      "age_category": "U18",
+      "aliases": [
+        "Bağcılar Evren",
+        "Bağcılar Evren Spor",
+        "Bağcılar Evren Spor Kulübü"
+      ],
+      "synonyms": [
+        "Bağcılar Evren Spor U18"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "İtü Gvo",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İTÜ Geliştirme Vakfı Okulları SK U18",
+      "volleybox_url": "https://women.volleybox.net/tu-gelistirme-vakf-okullar-sk-u18-t41218",
+      "age_category": "U18",
+      "aliases": [
+        "İtü Gvo",
+        "İTÜ GVO",
+        "İTÜ Geliştirme Vakfı Okulları",
+        "İTÜ Geliştirme Vakfı Okulları SK"
+      ],
+      "synonyms": [
+        "İTÜ Geliştirme Vakfı Okulları SK U18",
+        "İTÜ GVO"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Beylikdüzü Beykent",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Beylikdüzü Beykent Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/beylikduzu-beykent-spor-kulubu-u18-t54202",
+      "age_category": "U18",
+      "aliases": [
+        "Beylikdüzü Beykent",
+        "Beylikdüzü Beykent Spor Kulübü",
+        "Beylikdüzü Beykent SK"
+      ],
+      "synonyms": [
+        "Beylikdüzü Beykent Spor Kulübü U18"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Fmv Işık",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "FMV Işık Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/isik-spor-u18-t21286",
+      "age_category": "U18",
+      "aliases": [
+        "Fmv Işık",
+        "FMV Işık",
+        "FMV Işık Spor",
+        "FMV Işık Spor Kulübü",
+        "Işık Spor"
+      ],
+      "synonyms": [
+        "FMV Işık Spor Kulübü U18",
+        "FMV Işık"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
     }
   ],
   "leagues": [
@@ -6657,6 +6858,61 @@
       "age_category": "U18",
       "confidence": "verified",
       "season": "2025/26",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Lig 5. Bölge",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İstanbul 1. Lig 5. Bölge U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-stanbul-ligi-5-bolge-u18-2026-27-o50894",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Lig 1. Bölge",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İstanbul 1. Lig 1. Bölge U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-stanbul-1-ligi-u18-2026-27-o50866",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Lig 2. Bölge",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İstanbul 1. Lig 2. Bölge U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-stanbul-ligi-2-bolge-u18-2026-27-o50867",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Lig 3. Bölge",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İstanbul 1. Lig 3. Bölge U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-stanbul-ligi-3-bolge-u18-2026-27-o50868",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Lig 4. Bölge",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İstanbul 1. Lig 4. Bölge U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-stanbul-ligi-4-bolge-u18-2026-27-o50869",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
       "verified_at": "2026-09-17"
     }
   ]

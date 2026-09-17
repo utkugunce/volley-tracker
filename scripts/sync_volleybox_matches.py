@@ -540,8 +540,15 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
             else ("u16" if "yıldız" in age_group.lower() or "yildiz" in age_group.lower() or "u16" in cat.lower() or "yıldız" in cat.lower() else "")
         )
 
-        tourn_key = normalize_tourn_key(cat, city)
-        vb_m_list = vb_tournaments.get(tourn_key) or vb_tournaments.get(f"{cat}::{city}".lower())
+        grp = m.get("group", "")
+        vb_m_list = None
+        if grp:
+            vb_m_list = vb_tournaments.get(normalize_tourn_key(grp, city)) or vb_tournaments.get(f"{grp}::{city}".lower())
+
+        if not vb_m_list:
+            tourn_key = normalize_tourn_key(cat, city)
+            vb_m_list = vb_tournaments.get(tourn_key) or vb_tournaments.get(f"{cat}::{city}".lower())
+
         if not vb_m_list and age_code:
             vb_m_list = (
                 vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
