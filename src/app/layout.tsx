@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TVF Voleybol İl Temsilciliği | Kızlar Süper Lig Bülteni",
-  description: "Türkiye Voleybol Federasyonu 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig Haftalık Maç Programı ve Fikstür",
+  title: "Altyapı Voleybol | TVF 81 İl Fikstür ve Sonuç Platformu",
+  description: "Türkiye Voleybol Federasyonu (TVF) 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig ile 1. Lig haftalık maç programı, canlı sonuçlar ve puan durumu.",
+  metadataBase: new URL("https://altyapivoleybol.com.tr"),
 };
 
 export default function RootLayout({

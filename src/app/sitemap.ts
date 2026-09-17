@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getAllTeamSlugs } from "@/utils/teamData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://tvfscore.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://altyapivoleybol.com.tr";
   const now = new Date();
 
   // Ana sayfa
