@@ -1585,18 +1585,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399270",
+        "url": "https://women.volleybox.net/tr/uzay-35-voleybol-kulubu-b-u18-bal-spor-kulubu-u18-c399270",
+        "host_name": "Uzay 35 Voleybol Kulübü - B U18",
+        "guest_name": "Bal Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-25",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": null,
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1619,18 +1626,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399274",
+        "url": "https://women.volleybox.net/tr/monza-spor-kulubu-b-u18-bergama-belediyesi-spor-kulubu-u18-c399274",
+        "host_name": "Monza Spor Kulübü - B U18",
+        "guest_name": "Bergama Belediyesi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-27",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-27",
+          "vb_time": null,
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1653,18 +1667,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399276",
+        "url": "https://women.volleybox.net/tr/karsyaka-sk-b-u18-zege-spor-kulubu-u18-c399276",
+        "host_name": "Karşıyaka SK - B U18",
+        "guest_name": "İZEGE Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-27",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-27",
+          "vb_time": null,
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1687,18 +1708,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399278",
+        "url": "https://women.volleybox.net/tr/ozates-sk-u18-zmir-altnay-spor-kulubu-b-u18-c399278",
+        "host_name": "Özateş SK U18",
+        "guest_name": "İzmir Altınay Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-26",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-26",
+          "vb_time": null,
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1721,18 +1749,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399279",
+        "url": "https://women.volleybox.net/tr/dost-spor-c-u18-kzy-bornova-spor-kulubu-b-u18-c399279",
+        "host_name": "Dost Spor - C U18",
+        "guest_name": "KZY Bornova Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-26",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-26",
+          "vb_time": null,
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1755,18 +1790,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399280",
+        "url": "https://women.volleybox.net/tr/altekma-sk-u18-dokuz-eylul-voleybol-u18-c399280",
+        "host_name": "Altekma SK U18",
+        "guest_name": "Dokuz Eylül Voleybol U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-26",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-26",
+          "vb_time": null,
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1789,18 +1831,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399281",
+        "url": "https://women.volleybox.net/tr/altnordu-voleybol-b-u18-smyrna-voleybol-kulubu-b-u18-c399281",
+        "host_name": "Altınordu Voleybol - B U18",
+        "guest_name": "Smyrna Voleybol Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-26",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-26",
+          "vb_time": null,
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2873,18 +2922,18 @@
         "guest_name": "İzmir Altınay Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-16",
+        "vb_date": "2026-09-29",
         "vb_time": "20:00",
-        "vb_hall": "Halkapınar Spor Salonu",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-09-16",
+          "hall_diff": false,
+          "vb_date": "2026-09-29",
           "vb_time": "20:00",
-          "vb_hall": "Halkapınar Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-29 / VB: 2026-09-16) | Salon Değişti (TVF: Vali Hüseyin Öğütcen / VB: Halkapınar Spor Salonu)"
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3135,6 +3184,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-09-17T12:38:59.326456"
+  "volleybox_synced_matches": 56,
+  "volleybox_sync_updated_at": "2026-09-17T12:55:30.758162"
 }

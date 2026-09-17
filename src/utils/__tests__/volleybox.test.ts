@@ -76,6 +76,42 @@ describe("volleybox utility", () => {
       expect(dostU16?.matched_as).toBe("Dost Spor U16");
       expect(dostU16?.volleybox_url).toContain("dost-spor-u16-t41415");
 
+      // İzmir 1. Ligi B Takımları (Arkas, Volkan Güç, Monza, Karşıyaka, Altınay, Kzy Bornova, Altınordu)
+      const arkas1Lig = getVolleyboxMapping("Arkas", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(arkas1Lig).toBeDefined();
+      expect(arkas1Lig?.matched_as).toBe("Arkas Spor Kulübü - B U18");
+      expect(arkas1Lig?.volleybox_url).toContain("arkas-spor-u18-t53580");
+
+      const volkan1Lig = getVolleyboxMapping("Volkan Güç", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(volkan1Lig).toBeDefined();
+      expect(volkan1Lig?.matched_as).toBe("Volkan Güç Spor Kulübü - B U18");
+      expect(volkan1Lig?.volleybox_url).toContain("volkan-guc-spor-kulubu-u18-t53592");
+
+      const monza1Lig = getVolleyboxMapping("Monza", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(monza1Lig).toBeDefined();
+      expect(monza1Lig?.matched_as).toBe("Monza Spor Kulübü - B U18");
+      expect(monza1Lig?.volleybox_url).toContain("monza-spor-kulubu-u18-t53589");
+
+      const karsiyaka1Lig = getVolleyboxMapping("Karşıyaka", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(karsiyaka1Lig).toBeDefined();
+      expect(karsiyaka1Lig?.matched_as).toBe("Karşıyaka SK - B U18");
+      expect(karsiyaka1Lig?.volleybox_url).toContain("karsyaka-sk-u18-t53586");
+
+      const altinay1Lig = getVolleyboxMapping("Altınay", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(altinay1Lig).toBeDefined();
+      expect(altinay1Lig?.matched_as).toBe("İzmir Altınay Spor Kulübü - B U18");
+      expect(altinay1Lig?.volleybox_url).toContain("zmir-altnay-spor-kulubu-b-u18-t41258");
+
+      const kzy1Lig = getVolleyboxMapping("Kzy Bornova", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(kzy1Lig).toBeDefined();
+      expect(kzy1Lig?.matched_as).toBe("KZY Bornova Spor Kulübü - B U18");
+      expect(kzy1Lig?.volleybox_url).toContain("kzy-bornova-spor-kulubu-u18-t54521");
+
+      const altinordu1Lig = getVolleyboxMapping("Altınordu", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(altinordu1Lig).toBeDefined();
+      expect(altinordu1Lig?.matched_as).toBe("Altınordu Voleybol - B U18");
+      expect(altinordu1Lig?.volleybox_url).toContain("altnordu-voleybol-b-u18-t41259");
+
       // Antalya
       const zenit = getVolleyboxMapping("07 Zenit S.K.", "Genç Kızlar Süper Lig");
       expect(zenit).toBeDefined();
