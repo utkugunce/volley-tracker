@@ -118,7 +118,7 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
     # Takım harfi (A veya B) tespiti:
     # Hem parantezli (a)/(b), hem tireli - a/- b, hem de boşluklu a/b formatlarını yakala
     letter = None
-    m_letter = re.search(r"(?:[\s\-_]+|\()([ab])(?:\s*[\)]|\s+|$)", s)
+    m_letter = re.search(r"(?:[\s\-_]+|\()([abc])(?:\s*[\)]|\s+|$)", s)
     if m_letter:
         letter = m_letter.group(1).lower()
         s = s[:m_letter.start()] + " " + s[m_letter.end():]
@@ -131,22 +131,32 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
 
 
 def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
+    # 0. Doğrudan veya Synonym / Alias Eşleşmesi (En Yüksek Öncelik):
+    # Özel harf dönüşümleri (örn: Dost A = Dost Spor - B U18, Dost B = Dost Spor - C U18)
+    for syn in synonyms:
+        s_norm = normalize_name(syn)
+        v_norm = normalize_name(vb_name)
+        if s_norm and v_norm and (s_norm == v_norm or s_norm in v_norm or v_norm in s_norm):
+            return 100
+        s_base, s_letter = extract_team_meta(syn)
+        vb_base, vb_letter = extract_team_meta(vb_name)
+        if s_base and vb_base and (s_base == vb_base or s_base.replace(" ", "") == vb_base.replace(" ", "")):
+            if s_letter is not None and s_letter == vb_letter:
+                return 100
+
     tvf_base, tvf_letter = extract_team_meta(tvf_name)
     vb_base, vb_letter = extract_team_meta(vb_name)
 
     if not tvf_base or not vb_base:
         return 0
 
-    # 1. Harf (A / B) uyumu kontrolü:
-    if tvf_letter == "b":
-        if vb_letter != "b":
-            return 0
-    elif tvf_letter == "a":
-        if vb_letter == "b":
-            return 0
-    else:
-        if vb_letter == "b":
-            return 0
+    # 1. Harf (A / B / C) uyumu kontrolü:
+    if tvf_letter and vb_letter and tvf_letter != vb_letter:
+        return 0
+    if tvf_letter in ("b", "c") and vb_letter != tvf_letter:
+        return 0
+    if vb_letter in ("b", "c") and tvf_letter != vb_letter:
+        return 0
 
     # 2. İsim kökü kontrolü:
     tvf_compact = tvf_base.replace(" ", "")
@@ -155,19 +165,12 @@ def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
     if tvf_compact == vb_compact:
         return 100
 
-    # 3. Synonyms kontrolü:
-    for syn in synonyms:
-        s_base, _ = extract_team_meta(syn)
-        s_compact = s_base.replace(" ", "")
-        if s_compact and (s_compact == vb_compact or (len(s_compact) >= 4 and s_compact in vb_compact)):
-            return 90
-
-    # 4. Alt kelime (substring) kontrolü:
+    # 3. Alt kelime (substring) kontrolü:
     if tvf_compact not in CITY_STOPWORDS and vb_compact not in CITY_STOPWORDS:
         if (len(tvf_compact) >= 4 and tvf_compact in vb_compact) or (len(vb_compact) >= 4 and vb_compact in tvf_compact):
             return 70
 
-    # 5. Kelime bazlı eşleşme (en az 3 harfli kelimeler):
+    # 4. Kelime bazlı eşleşme (en az 3 harfli kelimeler):
     tvf_words = [w for w in tvf_base.split() if len(w) >= 3 and w not in CITY_STOPWORDS]
     vb_words = [w for w in vb_base.split() if len(w) >= 3 and w not in CITY_STOPWORDS]
     if any(w in vb_words for w in tvf_words):
@@ -508,6 +511,12 @@ def match_tvf_with_vb(
     return best_vb
 
 
+def normalize_tourn_key(cat: str, city: str) -> str:
+    c = (city or "").replace("İ", "i").replace("I", "i").lower().replace("\u0307", "").strip()
+    k = (cat or "").replace("İ", "i").replace("I", "i").lower().replace("\u0307", "").strip()
+    return f"{k}::{c}"
+
+
 def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[str, Any]]], team_alias_map: Dict[str, set]) -> Tuple[int, int]:
     if not fixtures_path.exists():
         return 0, 0
@@ -531,12 +540,12 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
             else ("u16" if "yıldız" in age_group.lower() or "yildiz" in age_group.lower() or "u16" in cat.lower() or "yıldız" in cat.lower() else "")
         )
 
-        tourn_key = f"{cat}::{city}".lower()
-        vb_m_list = vb_tournaments.get(tourn_key)
+        tourn_key = normalize_tourn_key(cat, city)
+        vb_m_list = vb_tournaments.get(tourn_key) or vb_tournaments.get(f"{cat}::{city}".lower())
         if not vb_m_list and age_code:
             vb_m_list = (
-                vb_tournaments.get(f"{city}::{age_code}".lower()) 
-                or vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
+                vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
+                or vb_tournaments.get(f"{city}::{age_code}".lower()) 
             )
         if not vb_m_list:
             old_vb = m.get("volleybox", {})
@@ -750,6 +759,7 @@ def main():
 
         age_cat = l.get("age_category", "").lower()
         if city:
+            vb_tournaments[normalize_tourn_key(internal_name, city)] = vb_matches
             vb_tournaments[f"{internal_name}::{city}".lower()] = vb_matches
             if age_cat:
                 vb_tournaments[f"{city}::{age_cat}".lower()] = vb_matches

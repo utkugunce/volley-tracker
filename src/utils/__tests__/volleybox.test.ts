@@ -55,6 +55,27 @@ describe("volleybox utility", () => {
       expect(izmirspor).toBeDefined();
       expect(izmirspor?.volleybox_url).toContain("zmirspor-u18-t41248");
 
+      // İzmir Dost Kulübü (1. Lig ve Süper Lig özel eşleşmeleri)
+      const dost1LigA = getVolleyboxMapping("Dost - A", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(dost1LigA).toBeDefined();
+      expect(dost1LigA?.matched_as).toBe("Dost Spor - B U18");
+      expect(dost1LigA?.volleybox_url).toContain("dost-spor-u18-t53583");
+
+      const dost1LigB = getVolleyboxMapping("Dost - B", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(dost1LigB).toBeDefined();
+      expect(dost1LigB?.matched_as).toBe("Dost Spor - C U18");
+      expect(dost1LigB?.volleybox_url).toContain("dost-spor-u18-t53584");
+
+      const dostSuperLig = getVolleyboxMapping("DOST", "Genç Kızlar Süper Lig", undefined, "İzmir");
+      expect(dostSuperLig).toBeDefined();
+      expect(dostSuperLig?.matched_as).toBe("Dost Spor U18");
+      expect(dostSuperLig?.volleybox_url).toContain("dost-spor-u18-t53574");
+
+      const dostU16 = getVolleyboxMapping("DOST", "Yıldız Kızlar Süper Lig", undefined, "İzmir");
+      expect(dostU16).toBeDefined();
+      expect(dostU16?.matched_as).toBe("Dost Spor U16");
+      expect(dostU16?.volleybox_url).toContain("dost-spor-u16-t41415");
+
       // Antalya
       const zenit = getVolleyboxMapping("07 Zenit S.K.", "Genç Kızlar Süper Lig");
       expect(zenit).toBeDefined();

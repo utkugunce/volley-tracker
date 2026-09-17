@@ -60,32 +60,37 @@ export function buildVolleyboxMap(
     // Kırık linkler kullanıcıya gösterilmez
     if (item.confidence === "broken") continue;
 
-    const teamKey = normalizeKey(item.internal_name);
     const catKey = normalizeKey(item.internal_category);
     const citySlug = normalizeCitySlug(item.city || item.city_slug);
     const age = extractAgeGroup(item.internal_category) || (item.age_category?.toLowerCase() as "u18" | "u16");
 
-    // Şehir spesifik indeksler
-    if (citySlug) {
-      map.set(`${teamKey}::${catKey}::${citySlug}`, item);
-      if (age) {
-        map.set(`${teamKey}::${age}::${citySlug}`, item);
+    const allNames = [item.internal_name, ...(item.aliases || []), ...(item.synonyms || [])];
+    for (const name of allNames) {
+      if (!name) continue;
+      const teamKey = normalizeKey(name);
+
+      // Şehir spesifik indeksler
+      if (citySlug) {
+        map.set(`${teamKey}::${catKey}::${citySlug}`, item);
+        if (age) {
+          map.set(`${teamKey}::${age}::${citySlug}`, item);
+        }
+        map.set(`${teamKey}::${citySlug}`, item);
       }
-      map.set(`${teamKey}::${citySlug}`, item);
-    }
 
-    // Genel indeksler (şehir verilmediğinde veya genel fallback)
-    if (!map.has(`${teamKey}::${catKey}`)) {
-      map.set(`${teamKey}::${catKey}`, item);
-    }
+      // Genel indeksler (şehir verilmediğinde veya genel fallback)
+      if (!map.has(`${teamKey}::${catKey}`)) {
+        map.set(`${teamKey}::${catKey}`, item);
+      }
 
-    if (age && !map.has(`${teamKey}::${age}`)) {
-      map.set(`${teamKey}::${age}`, item);
-    }
+      if (age && !map.has(`${teamKey}::${age}`)) {
+        map.set(`${teamKey}::${age}`, item);
+      }
 
-    // Genel takım adı fallback (verified olan önceliklidir)
-    if (!map.has(teamKey) || map.get(teamKey)?.confidence !== "verified") {
-      map.set(teamKey, item);
+      // Genel takım adı fallback (verified olan önceliklidir)
+      if (!map.has(teamKey) || map.get(teamKey)?.confidence !== "verified") {
+        map.set(teamKey, item);
+      }
     }
   }
 
@@ -139,9 +144,6 @@ export function getVolleyboxMapping(
         const matchCityAge = map.get(`${teamKey}::${age}::${citySlug}`);
         if (matchCityAge) return matchCityAge;
       }
-
-      const matchCity = map.get(`${teamKey}::${citySlug}`);
-      if (matchCity) return matchCity;
     }
 
     // 2. Kategori bazlı genel eşleşmeler
@@ -157,12 +159,18 @@ export function getVolleyboxMapping(
       const ageMatch = map.get(`${teamKey}::${age}`);
       if (ageMatch) return ageMatch;
     }
+
+    // 3. Şehir bazlı genel eşleşme fallback
+    if (citySlug) {
+      const matchCity = map.get(`${teamKey}::${citySlug}`);
+      if (matchCity) return matchCity;
+    }
   } else if (citySlug) {
     const matchCity = map.get(`${teamKey}::${citySlug}`);
     if (matchCity) return matchCity;
   }
 
-  // 3. Takım adıyla genel eşleşme fallback
+  // 4. Takım adıyla genel eşleşme fallback
   return map.get(teamKey);
 }
 

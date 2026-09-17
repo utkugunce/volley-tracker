@@ -2859,10 +2859,22 @@
       "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53574",
       "age_category": "U18",
       "confidence": "verified",
-      "note": null,
+      "note": "İzmir Süper Ligi Dost = Dost A",
       "verified_at": "2026-09-14",
       "local_logo": "/logos/dost-spor-u18-t53574.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "aliases": [
+        "Dost A",
+        "Dost - A",
+        "Dost Spor",
+        "Dost Spor U18"
+      ],
+      "synonyms": [
+        "Dost Spor",
+        "Dost Spor U18"
+      ]
     },
     {
       "internal_name": "DOST",
@@ -2874,7 +2886,18 @@
       "note": null,
       "verified_at": "2026-09-14",
       "local_logo": "/logos/dost-spor-u16-t41415.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1770214620rFV0d.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1770214620rFV0d.png",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "aliases": [
+        "Dost",
+        "Dost Spor",
+        "Dost Spor U16"
+      ],
+      "synonyms": [
+        "Dost Spor",
+        "Dost Spor U16"
+      ]
     },
     {
       "internal_name": "İZMİRSPOR",
@@ -5370,6 +5393,176 @@
       ],
       "local_logo": "/logos/vakfbank-u17-t37362.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1742222665a4rUz.png"
+    },
+    {
+      "internal_name": "Dost - A",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Dost Spor - B U18",
+      "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53583",
+      "age_category": "U18",
+      "aliases": [
+        "Dost A",
+        "Dost Spor - B U18",
+        "Dost Spor B",
+        "Dost B"
+      ],
+      "synonyms": [
+        "Dost Spor - B U18",
+        "Dost Spor B",
+        "Dost B"
+      ],
+      "confidence": "verified",
+      "note": "İzmir 1. Liginde Dost A = Volleybox Dost B",
+      "verified_at": "2026-09-17",
+      "local_logo": "/logos/dost-spor-u18-t53574.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png"
+    },
+    {
+      "internal_name": "Dost A",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Dost Spor - B U18",
+      "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53583",
+      "age_category": "U18",
+      "aliases": [
+        "Dost - A",
+        "Dost Spor - B U18",
+        "Dost Spor B",
+        "Dost B"
+      ],
+      "synonyms": [
+        "Dost Spor - B U18",
+        "Dost Spor B",
+        "Dost B"
+      ],
+      "confidence": "verified",
+      "note": "İzmir 1. Liginde Dost A = Volleybox Dost B",
+      "verified_at": "2026-09-17",
+      "local_logo": "/logos/dost-spor-u18-t53574.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png"
+    },
+    {
+      "internal_name": "Dost - B",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Dost Spor - C U18",
+      "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53584",
+      "age_category": "U18",
+      "aliases": [
+        "Dost B",
+        "Dost Spor - C U18",
+        "Dost Spor C",
+        "Dost C"
+      ],
+      "synonyms": [
+        "Dost Spor - C U18",
+        "Dost Spor C",
+        "Dost C"
+      ],
+      "confidence": "verified",
+      "note": "İzmir 1. Liginde Dost B = Volleybox Dost C",
+      "verified_at": "2026-09-17",
+      "local_logo": "/logos/dost-spor-u18-t53574.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png"
+    },
+    {
+      "internal_name": "Dost B",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Dost Spor - C U18",
+      "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53584",
+      "age_category": "U18",
+      "aliases": [
+        "Dost - B",
+        "Dost Spor - C U18",
+        "Dost Spor C",
+        "Dost C"
+      ],
+      "synonyms": [
+        "Dost Spor - C U18",
+        "Dost Spor C",
+        "Dost C"
+      ],
+      "confidence": "verified",
+      "note": "İzmir 1. Liginde Dost B = Volleybox Dost C",
+      "verified_at": "2026-09-17",
+      "local_logo": "/logos/dost-spor-u18-t53574.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png"
+    },
+    {
+      "internal_name": "Dost - A",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Dost Spor U18",
+      "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53574",
+      "age_category": "U18",
+      "aliases": [
+        "DOST",
+        "Dost A",
+        "Dost Spor",
+        "Dost Spor U18"
+      ],
+      "synonyms": [
+        "Dost Spor",
+        "Dost Spor U18"
+      ],
+      "confidence": "verified",
+      "note": "İzmir Süper Ligi Dost = Dost A",
+      "verified_at": "2026-09-17",
+      "local_logo": "/logos/dost-spor-u18-t53574.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png"
+    },
+    {
+      "internal_name": "Dost A",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Dost Spor U18",
+      "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53574",
+      "age_category": "U18",
+      "aliases": [
+        "DOST",
+        "Dost - A",
+        "Dost Spor",
+        "Dost Spor U18"
+      ],
+      "synonyms": [
+        "Dost Spor",
+        "Dost Spor U18"
+      ],
+      "confidence": "verified",
+      "note": "İzmir Süper Ligi Dost = Dost A",
+      "verified_at": "2026-09-17",
+      "local_logo": "/logos/dost-spor-u18-t53574.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1786606454zEc1K.png"
+    },
+    {
+      "internal_name": "Smyrna Yıldızı - A",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Smyrna Voleybol Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/smyrna-voleybol-u18-t41252",
+      "age_category": "U18",
+      "aliases": [
+        "Smyrna",
+        "Smyrna Voleybol",
+        "Smyrna Voleybol Kulübü",
+        "Smyrna Voleybol Kulübü U18",
+        "Smyrna Yıldızı A"
+      ],
+      "synonyms": [
+        "Smyrna Voleybol Kulübü U18",
+        "Smyrna Voleybol Kulübü"
+      ],
+      "confidence": "verified",
+      "verified_at": "2026-09-17"
     }
   ],
   "leagues": [

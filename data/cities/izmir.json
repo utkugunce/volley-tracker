@@ -1544,18 +1544,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399269",
+        "url": "https://women.volleybox.net/tr/arkas-spor-kulubu-b-u18-volkan-guc-spor-kulubu-b-u18-c399269",
+        "host_name": "Arkas Spor Kulübü - B U18",
+        "guest_name": "Volkan Güç Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-22",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": null,
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1816,18 +1823,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399262",
+        "url": "https://women.volleybox.net/tr/guzelyal-spor-kulubu-u18-efor-genclik-spor-kulubu-u18-c399262",
+        "host_name": "Güzelyalı Spor Kulübü U18",
+        "guest_name": "Efor Gençlik Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-22",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": null,
+          "vb_hall": "Balçova Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1850,18 +1864,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399263",
+        "url": "https://women.volleybox.net/tr/35-yldz-spor-kulubu-a-u18-mavisehir-koleji-spor-kulubu-u18-c399263",
+        "host_name": "35 Yıldız Spor Kulübü U18",
+        "guest_name": "Mavişehir Koleji Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-27",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-27",
+          "vb_time": null,
+          "vb_hall": "Balçova Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1884,18 +1905,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399264",
+        "url": "https://women.volleybox.net/tr/zirve-35-spor-kulubu-u18-anka-spor-kulubu-u18-c399264",
+        "host_name": "Zirve 35 Spor Kulübü U18",
+        "guest_name": "Anka Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-27",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-09-27",
+          "vb_time": null,
+          "vb_hall": "Balçova Spor Salonu",
+          "details": "Salon Değişti (TVF: Gaziemir / VB: Balçova Spor Salonu)"
         }
       }
     },
@@ -1918,18 +1946,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399265",
+        "url": "https://women.volleybox.net/tr/dost-spor-b-u18-smyrna-voleybol-kulubu-u18-c399265",
+        "host_name": "Dost Spor - B U18",
+        "guest_name": "Smyrna Voleybol Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-09-28",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-28",
+          "vb_time": null,
+          "vb_hall": "Balçova Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3100,6 +3135,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-09-17T11:41:01.256117"
+  "volleybox_synced_matches": 49,
+  "volleybox_sync_updated_at": "2026-09-17T12:38:59.326456"
 }
