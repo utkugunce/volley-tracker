@@ -36,7 +36,7 @@ interface TodayMatchesViewProps {
   favorites: string[];
   onToggleFavorite: (matchId: string) => void;
   splitScreenMode?: boolean;
-  onNavigateToFullFixtures: () => void;
+  onNavigateToFullFixtures?: () => void;
 }
 
 export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
@@ -49,7 +49,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   favorites,
   onToggleFavorite,
   splitScreenMode = false,
-  onNavigateToFullFixtures,
+  onNavigateToFullFixtures = () => {},
 }) => {
   const [quickStatus, setQuickStatus] = useState<"all" | "upcoming" | "finished">("all");
   const [displayMode, setDisplayMode] = useState<"cards" | "table">("cards");

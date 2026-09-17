@@ -15,6 +15,7 @@ describe("No Silent Fallbacks Regression Tests", () => {
         todayStr="2026-09-15"
         favorites={[]}
         onToggleFavorite={vi.fn()}
+        onNavigateToFullFixtures={vi.fn()}
       />
     );
 
@@ -34,6 +35,7 @@ describe("No Silent Fallbacks Regression Tests", () => {
         todayStr="2026-09-15"
         favorites={[]}
         onToggleFavorite={vi.fn()}
+        onNavigateToFullFixtures={vi.fn()}
       />
     );
 
