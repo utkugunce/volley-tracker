@@ -31,8 +31,9 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 }) => {
   const mapping = getVolleyboxMapping(teamName, category, undefined, city);
   
-  // Takım adı HER ZAMAN tam ve orijinal haliyle yazılır (A / B takımı ayrımlarını korumak için)
-  const displayName = teamName?.trim() || "";
+  // Sitede yer alan tüm takım isimleri Volleybox'taki resmi profiliyle (matched_as) aynı gösterilir
+  const volleyboxName = mapping?.matched_as?.trim();
+  const displayName = volleyboxName || teamName?.trim() || "";
   const content = children ?? displayName;
   const [imgFailed, setImgFailed] = useState(false);
 

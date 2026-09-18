@@ -58,8 +58,8 @@ describe("TodayMatchesView Component", () => {
     );
 
     expect(screen.getByText("Günün Maçları")).toBeInTheDocument();
-    expect(screen.getByText("Eczacıbaşı")).toBeInTheDocument();
-    expect(screen.getByText("Fenerbahçe")).toBeInTheDocument();
+    expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
+    expect(screen.getByText(/Fenerbahçe/i)).toBeInTheDocument();
     expect(screen.getByText("3")).toBeInTheDocument();
     expect(screen.getAllByText("1").length).toBeGreaterThanOrEqual(1);
   });

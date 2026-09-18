@@ -64,7 +64,12 @@ export function buildVolleyboxMap(
     const citySlug = normalizeCitySlug(item.city || item.city_slug);
     const age = extractAgeGroup(item.internal_category) || (item.age_category?.toLowerCase() as "u18" | "u16");
 
-    const allNames = [item.internal_name, ...(item.aliases || []), ...(item.synonyms || [])];
+    const allNames = [
+      item.internal_name,
+      item.matched_as,
+      ...(item.aliases || []),
+      ...(item.synonyms || []),
+    ].filter(Boolean);
     for (const name of allNames) {
       if (!name) continue;
       const teamKey = normalizeKey(name);
@@ -172,6 +177,21 @@ export function getVolleyboxMapping(
 
   // 4. Takım adıyla genel eşleşme fallback
   return map.get(teamKey);
+}
+
+/**
+ * Resolves a team name to its official Volleybox team name (matched_as).
+ * Returns the matched_as name if mapped, or the original team name if unmapped.
+ */
+export function getVolleyboxTeamName(
+  teamName: string,
+  category?: string,
+  customMap?: Map<string, VolleyboxMapping>,
+  city?: string
+): string {
+  if (!teamName || !teamName.trim()) return "";
+  const mapping = getVolleyboxMapping(teamName, category, customMap, city);
+  return mapping?.matched_as?.trim() || teamName.trim();
 }
 
 /**

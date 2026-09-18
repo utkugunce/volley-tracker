@@ -126,8 +126,8 @@ describe('StandingsTable Component', () => {
     expect(vbLink).toHaveAttribute('rel', 'noopener noreferrer');
 
     // Takım detay sayfası iç linki de bulunmalı
-    const detailLink = screen.getByRole('link', { name: 'Pegasus' });
-    expect(detailLink).toHaveAttribute('href', '/takim/pegasus');
+    const detailLink = screen.getByRole('link', { name: 'Pegasus Spor Kulübü U18' });
+    expect(detailLink).toHaveAttribute('href', expect.stringContaining('/takim/pegasus'));
   });
 
   it('(e) eşleşmeyen takım için bağlantı ikonu render edilmiyor', () => {

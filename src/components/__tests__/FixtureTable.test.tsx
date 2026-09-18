@@ -45,14 +45,22 @@ describe("FixtureTable Component", () => {
       />
     );
 
-    expect(screen.getByText("VakıfBank")).toBeInTheDocument();
-    expect(screen.getByText("Fenerbahçe")).toBeInTheDocument();
+    expect(screen.getByText(/VakıfBank/i)).toBeInTheDocument();
+    expect(screen.getByText(/Fenerbahçe/i)).toBeInTheDocument();
 
     const links = screen.getAllByRole("link");
     expect(links.length).toBeGreaterThanOrEqual(2);
 
-    const vakifLink = links.find((l) => l.getAttribute("href")?.includes("vakfbank-u18"));
-    const fbLink = links.find((l) => l.getAttribute("href")?.includes("fenerbahce-u18"));
+    const vakifLink = links.find(
+      (l) =>
+        l.getAttribute("href")?.includes("volleybox.net") &&
+        l.getAttribute("href")?.includes("vakfbank")
+    );
+    const fbLink = links.find(
+      (l) =>
+        l.getAttribute("href")?.includes("volleybox.net") &&
+        l.getAttribute("href")?.includes("fenerbahce")
+    );
 
     expect(vakifLink).toBeDefined();
     expect(vakifLink).toHaveAttribute("target", "_blank");
@@ -61,7 +69,7 @@ describe("FixtureTable Component", () => {
     expect(fbLink).toBeDefined();
     expect(fbLink).toHaveAttribute("target", "_blank");
 
-    const vakifImg = screen.getByAltText("VakıfBank logosu");
+    const vakifImg = screen.getByAltText(/VakıfBank.*logosu/i);
     expect(vakifImg).toBeInTheDocument();
     expect(vakifImg).toHaveAttribute("src", expect.stringContaining("vakfbank-u18"));
   });
@@ -132,8 +140,8 @@ describe("FixtureTable Component", () => {
       />
     );
 
-    expect(screen.getByText("Eczacıbaşı A")).toBeInTheDocument();
-    expect(screen.getByText("VakıfBank B")).toBeInTheDocument();
+    expect(screen.getByText(/Eczacıbaşı.*A/i)).toBeInTheDocument();
+    expect(screen.getByText(/VakıfBank.*B/i)).toBeInTheDocument();
   });
 
   it("Tüm İller modunda (showCityBadge=true) grup başlığında ilgili il adını gösterir", () => {

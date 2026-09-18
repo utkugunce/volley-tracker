@@ -140,14 +140,30 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     const homeSlug = slugify(m.home_team);
     const awaySlug = slugify(m.away_team);
     const mCity = m.city || "İstanbul";
+    const homeMapping = getVolleyboxMapping(m.home_team, m.category, undefined, mCity);
+    const awayMapping = getVolleyboxMapping(m.away_team, m.category, undefined, mCity);
 
-    if (homeSlug === cleanSlug) {
-      const entry = teamCitiesMap.get(mCity) || { officialName: m.home_team, count: 0 };
+    const isHomeSlugMatch = Boolean(
+      homeSlug === cleanSlug ||
+      (homeMapping?.matched_as && slugify(homeMapping.matched_as) === cleanSlug) ||
+      (homeMapping?.internal_name && slugify(homeMapping.internal_name) === cleanSlug)
+    );
+
+    const isAwaySlugMatch = Boolean(
+      awaySlug === cleanSlug ||
+      (awayMapping?.matched_as && slugify(awayMapping.matched_as) === cleanSlug) ||
+      (awayMapping?.internal_name && slugify(awayMapping.internal_name) === cleanSlug)
+    );
+
+    if (isHomeSlugMatch) {
+      const resolvedName = homeMapping?.matched_as || m.home_team;
+      const entry = teamCitiesMap.get(mCity) || { officialName: resolvedName, count: 0 };
       entry.count++;
       teamCitiesMap.set(mCity, entry);
     }
-    if (awaySlug === cleanSlug) {
-      const entry = teamCitiesMap.get(mCity) || { officialName: m.away_team, count: 0 };
+    if (isAwaySlugMatch) {
+      const resolvedName = awayMapping?.matched_as || m.away_team;
+      const entry = teamCitiesMap.get(mCity) || { officialName: resolvedName, count: 0 };
       entry.count++;
       teamCitiesMap.set(mCity, entry);
     }
@@ -160,9 +176,19 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
         ? groupData
         : (groupData as any)?.table || [];
 
-      const foundRow = table.find((item) => slugify(item.team) === cleanSlug);
+      const foundRow = table.find((item) => {
+        const rowSlug = slugify(item.team);
+        const rowMapping = getVolleyboxMapping(item.team, undefined, undefined, cityName);
+        return (
+          rowSlug === cleanSlug ||
+          (rowMapping?.matched_as && slugify(rowMapping.matched_as) === cleanSlug) ||
+          (rowMapping?.internal_name && slugify(rowMapping.internal_name) === cleanSlug)
+        );
+      });
       if (foundRow) {
-        const entry = teamCitiesMap.get(cityName) || { officialName: foundRow.team, count: 0 };
+        const rowMapping = getVolleyboxMapping(foundRow.team, undefined, undefined, cityName);
+        const resolvedName = rowMapping?.matched_as || foundRow.team;
+        const entry = teamCitiesMap.get(cityName) || { officialName: resolvedName, count: 0 };
         entry.count++;
         teamCitiesMap.set(cityName, entry);
       }
@@ -206,8 +232,20 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
       continue;
     }
 
-    const isHome = homeSlug === cleanSlug;
-    const isAway = awaySlug === cleanSlug;
+    const homeMapping = getVolleyboxMapping(m.home_team, m.category, undefined, mCity);
+    const awayMapping = getVolleyboxMapping(m.away_team, m.category, undefined, mCity);
+
+    const isHome: boolean = Boolean(
+      homeSlug === cleanSlug ||
+      (homeMapping?.matched_as && slugify(homeMapping.matched_as) === cleanSlug) ||
+      (homeMapping?.internal_name && slugify(homeMapping.internal_name) === cleanSlug)
+    );
+
+    const isAway: boolean = Boolean(
+      awaySlug === cleanSlug ||
+      (awayMapping?.matched_as && slugify(awayMapping.matched_as) === cleanSlug) ||
+      (awayMapping?.internal_name && slugify(awayMapping.internal_name) === cleanSlug)
+    );
 
     if (isHome || isAway) {
       if (m.category) categoriesSet.add(m.category);
@@ -248,7 +286,15 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
         ? groupData
         : (groupData as any)?.table || [];
 
-      const foundRow = table.find((item) => slugify(item.team) === cleanSlug);
+      const foundRow = table.find((item) => {
+        const rowSlug = slugify(item.team);
+        const rowMapping = getVolleyboxMapping(item.team, undefined, undefined, cityName);
+        return (
+          rowSlug === cleanSlug ||
+          (rowMapping?.matched_as && slugify(rowMapping.matched_as) === cleanSlug) ||
+          (rowMapping?.internal_name && slugify(rowMapping.internal_name) === cleanSlug)
+        );
+      });
       if (foundRow) {
         const isGenc = groupName.includes("Genç") || groupName.includes("U18");
         const is1Lig = groupName.includes("1. Lig") || groupName.includes("1.Lig") || groupName.includes("1. Ligi");
@@ -328,19 +374,35 @@ export function getAllTeamSlugs(): string[] {
   const slugs = new Set<string>();
   const teamCities = new Map<string, Set<string>>();
 
+  const addTeamWithAliases = (name: string, city: string, category?: string) => {
+    if (!name) return;
+    const s = slugify(name);
+    slugs.add(s);
+    if (!teamCities.has(s)) teamCities.set(s, new Set());
+    teamCities.get(s)!.add(city);
+
+    const map = getVolleyboxMapping(name, category, undefined, city);
+    if (map?.matched_as) {
+      const ms = slugify(map.matched_as);
+      slugs.add(ms);
+      if (!teamCities.has(ms)) teamCities.set(ms, new Set());
+      teamCities.get(ms)!.add(city);
+    }
+    if (map?.internal_name) {
+      const is = slugify(map.internal_name);
+      slugs.add(is);
+      if (!teamCities.has(is)) teamCities.set(is, new Set());
+      teamCities.get(is)!.add(city);
+    }
+  };
+
   for (const m of matches) {
     const mCity = m.city || "İstanbul";
     if (m.home_team) {
-      const s = slugify(m.home_team);
-      slugs.add(s);
-      if (!teamCities.has(s)) teamCities.set(s, new Set());
-      teamCities.get(s)!.add(mCity);
+      addTeamWithAliases(m.home_team, mCity, m.category);
     }
     if (m.away_team) {
-      const s = slugify(m.away_team);
-      slugs.add(s);
-      if (!teamCities.has(s)) teamCities.set(s, new Set());
-      teamCities.get(s)!.add(mCity);
+      addTeamWithAliases(m.away_team, mCity, m.category);
     }
   }
 
@@ -351,10 +413,7 @@ export function getAllTeamSlugs(): string[] {
         : (groupData as any)?.table || [];
       for (const item of table) {
         if (item.team) {
-          const s = slugify(item.team);
-          slugs.add(s);
-          if (!teamCities.has(s)) teamCities.set(s, new Set());
-          teamCities.get(s)!.add(cityName);
+          addTeamWithAliases(item.team, cityName);
         }
       }
     }
