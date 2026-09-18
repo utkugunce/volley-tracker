@@ -207,7 +207,14 @@ export function buildVolleyboxLeagueMap(
 ): Map<string, VolleyboxLeagueMapping> {
   const map = new Map<string, VolleyboxLeagueMapping>();
 
-  for (const item of data.leagues || []) {
+  const leagueItems: VolleyboxLeagueMapping[] = [
+    ...(data.leagues || []),
+    ...((data.mappings || []).filter(
+      (m: any) => m.volleybox_url && m.volleybox_url.includes("-o")
+    ) as unknown as VolleyboxLeagueMapping[]),
+  ];
+
+  for (const item of leagueItems) {
     if (item.confidence === "broken") continue;
     // Sezon kontrolü: Sadece güncel sezona (2026/27) ait turnuva profilleri indekslenir
     if (item.season && item.season !== "2026/27") continue;

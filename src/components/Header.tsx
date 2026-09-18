@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, Columns2, ExternalLink, Clock, Flame } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, AlertTriangle, AlertCircle, ExternalLink, Clock, Flame } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
+import { BrandLogo } from "@/components/BrandLogo";
 import { CityInfo } from "@/types/fixture";
 
 interface HeaderProps {
@@ -18,8 +19,6 @@ interface HeaderProps {
   favoritesCount: number;
   showOnlyFavorites: boolean;
   onToggleFavoritesOnly: () => void;
-  splitScreenMode?: boolean;
-  onToggleSplitScreen?: () => void;
   activeTab: "results" | "home" | "fixtures" | "standings";
   onSelectTab: (tab: "results" | "home" | "fixtures" | "standings") => void;
   onRefresh: () => void;
@@ -47,8 +46,6 @@ export const Header: React.FC<HeaderProps> = ({
   favoritesCount,
   showOnlyFavorites,
   onToggleFavoritesOnly,
-  splitScreenMode = false,
-  onToggleSplitScreen,
   activeTab,
   onSelectTab,
   onRefresh,
@@ -69,12 +66,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/80 gap-2">
         {/* Logo & Brand & İl Seçici */}
         <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
-          <div className="flex items-center gap-1.5 font-black text-lg tracking-tight cursor-pointer" onClick={() => onSelectTab("home")}>
-            <span className="bg-primary text-white px-2 py-0.5 rounded font-black">
-              Altyapı
-            </span>
-            <span className="text-white font-black tracking-tight">Voleybol</span>
-          </div>
+          <BrandLogo onClick={() => onSelectTab("home")} />
 
           <div className="h-4 w-px bg-slate-700 hidden sm:block" />
 
@@ -95,26 +87,6 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Sağ Taraf: Favoriler, Yazdır, Canlı Yenile */}
         <div className="flex items-center gap-2">
-
-          {/* Çift Ekran / Maç Giriş Modu Butonu */}
-          {(activeTab === "fixtures" || activeTab === "home" || activeTab === "results") && onToggleSplitScreen && (
-            <button
-              onClick={onToggleSplitScreen}
-              className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all border ${
-                splitScreenMode
-                  ? "bg-indigo-600 text-white border-indigo-500 shadow-sm font-bold animate-pulse"
-                  : "bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border-slate-700"
-              }`}
-              title={
-                splitScreenMode
-                  ? "Çift Ekran Modundan Çık (Geniş Tablo)"
-                  : "Çift Ekran / Maç Giriş Modu: Skorları ve takımları öne çıkarır, yatay kaydırmayı tamamen kaldırır"
-              }
-            >
-              <Columns2 size={13} className={splitScreenMode ? "text-white" : "text-slate-400"} />
-              <span className="inline">Çift Ekran</span>
-            </button>
-          )}
 
           {/* Favoriler Butonu */}
           {(activeTab === "fixtures" || activeTab === "home" || activeTab === "results") && (

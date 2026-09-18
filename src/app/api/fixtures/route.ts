@@ -124,28 +124,38 @@ export async function GET(request: Request) {
             ? venvPyNix
             : "python";
 
-          execFileSync(pythonBin, ["scripts/scrape_all_provinces.py"], {
-            cwd: process.cwd(),
-            timeout: 90000,
-            stdio: "ignore",
-          });
-          execFileSync(pythonBin, ["scripts/sync_volleybox_matches.py"], {
-            cwd: process.cwd(),
-            timeout: 60000,
-            stdio: "ignore",
-          });
+          if (citySlug === "istanbul") {
+            execFileSync(pythonBin, ["scripts/run_scraper.py"], {
+              cwd: process.cwd(),
+              timeout: 25000,
+              stdio: "ignore",
+            });
+          } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
+            execFileSync(pythonBin, ["scripts/scrape_all_provinces.py"], {
+              cwd: process.cwd(),
+              timeout: 60000,
+              stdio: "ignore",
+            });
+          } else {
+            execFileSync(pythonBin, ["scripts/scrape_all_provinces.py", "--city", citySlug], {
+              cwd: process.cwd(),
+              timeout: 25000,
+              stdio: "ignore",
+            });
+          }
+
           syncMeta = {
             attempted: true,
             success: true,
             mode: "local_python",
-            message: "Fikstür ve Volleybox verileri başarıyla senkronize edildi.",
+            message: "Fikstür ve maç skorları başarıyla güncellendi.",
           };
         } catch (err: any) {
           syncMeta = {
             attempted: true,
             success: false,
             mode: "local_python",
-            message: `Yerel tarayıcı çalıştırılamadı: ${err.message}`,
+            message: "Canlı bağlantı kurulamadığı için mevcut en güncel veriler sunuluyor.",
           };
           console.warn("Live scraper refresh warning (falling back to cached data):", err);
         }

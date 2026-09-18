@@ -79,6 +79,12 @@ def clean_str(s: str) -> str:
     text = html.unescape(s).strip()
     return re.sub(r"\s+", " ", text)
 
+def extract_group_name(c_text: str) -> str:
+    cleaned = clean_str(c_text)
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+Kızlar\s+(?:1\.\s*Lig(?:i)?|Süper\s*Lig(?:i)?)\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Süper|1\.)\s*Lig\s*", "", cleaned, flags=re.I).strip()
+    return cleaned or clean_str(c_text)
+
 def decode_html(resp: httpx.Response) -> str:
     try:
         return resp.content.decode("utf-8")
@@ -388,7 +394,7 @@ def scrape_single_city(city_info):
                             comps.append((val, txt))
 
         for c_val, c_text in comps:
-            group_name = "A Grubu" if " A " in c_text or "- A" in c_text else ("B Grubu" if " B " in c_text or "- B" in c_text else c_text)
+            group_name = extract_group_name(c_text)
             standings_key = f"{cat_name} - {group_name}"
 
             p_c = state.copy()
@@ -555,6 +561,11 @@ def scrape_single_city(city_info):
     }
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="TVF İl Temsilcilikleri Canlı Veri Çekici")
+    parser.add_argument("--city", default=None, help="Yalnızca belirli bir ili tara (ör: istanbul, izmir)")
+    args = parser.parse_args()
+
     print("=" * 80)
     print("🏆 TVF 81 İL VOLEYBOL İL TEMSİLCİLİĞİ CANLI TARAMA VE VERİ MOTORU")
     print("=" * 80)
@@ -568,12 +579,17 @@ def main():
         return
 
     cities = []
+    target_city = args.city.lower().strip() if args.city else None
     for c in cities_raw:
         ilid = str(c.get("ilid", "")).strip()
         ilid_num = int(ilid) if ilid.isdigit() else 999
         name = OFFICIAL_CITIES.get(ilid_num, clean_str(c.get("name") or ""))
         url = c.get("url", "")
         if name:
+            subdomain = url.replace("https://", "").replace("http://", "").split("/")[0].replace(".voleyboliltemsilciligi.com", "").strip().lower()
+            if target_city:
+                if target_city not in [subdomain, ilid, name.lower()]:
+                    continue
             cities.append({"name": name, "ilid": ilid, "url": url})
 
     def get_id(x):

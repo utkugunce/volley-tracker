@@ -54,9 +54,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
-  // Çift Ekran / Maç Giriş Modu (Volleybox'a maç girerken skorları ve takımları öne çıkarır)
-  const [splitScreenMode, setSplitScreenMode] = useState<boolean>(false);
-
   // Canlı Senkronizasyon Durum Bildirimi
   const [syncFeedback, setSyncFeedback] = useState<{
     type: "success" | "warning" | "error" | "info";
@@ -72,15 +69,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       const saved = localStorage.getItem("tvf_favorites");
       if (saved) {
         setFavorites(JSON.parse(saved));
-      }
-    } catch (e) {
-      // ignore
-    }
-
-    try {
-      const savedSplit = localStorage.getItem("tvf_split_screen");
-      if (savedSplit !== null) {
-        setSplitScreenMode(savedSplit === "true");
       }
     } catch (e) {
       // ignore
@@ -111,16 +99,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
     return () => clearInterval(timer);
   }, [favorites, data?.matches]);
-
-  const toggleSplitScreen = () => {
-    setSplitScreenMode((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem("tvf_split_screen", String(next));
-      } catch (e) {}
-      return next;
-    });
-  };
 
   const toggleFavorite = (matchId: string) => {
     setFavorites((prev) => {
@@ -639,8 +617,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         favoritesCount={favorites.length}
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
-        splitScreenMode={splitScreenMode}
-        onToggleSplitScreen={toggleSplitScreen}
         activeTab={activeMainTab}
         onSelectTab={setActiveMainTab}
         onRefresh={fetchData}
@@ -735,7 +711,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     onToggleFavorite={toggleFavorite}
                     city={sec.city || data?.city}
                     showCityBadge={isAllCities}
-                    splitScreenMode={splitScreenMode}
                   />
                 ))}
               </div>
@@ -841,7 +816,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
             todayStr={todayStr}
             favorites={favorites}
             onToggleFavorite={toggleFavorite}
-            splitScreenMode={splitScreenMode}
             onNavigateToFullFixtures={() => setActiveMainTab("fixtures")}
           />
         ) : activeMainTab === "fixtures" ? (
@@ -891,7 +865,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     onToggleFavorite={toggleFavorite}
                     city={sec.city || data?.city}
                     showCityBadge={isAllCities}
-                    splitScreenMode={splitScreenMode}
                   />
                 ))}
               </div>

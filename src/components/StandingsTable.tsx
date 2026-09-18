@@ -217,11 +217,11 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
       return true;
     });
 
-    // Grupları sırala: Sayısal (1. Grup, 2. Grup) veya Alfabetik (A Grubu, B Grubu)
+    // Grupları sırala: Sayısal (1. Bölge A Grubu, 1. Bölge B Grubu...) veya Alfabetik (A Grubu, B Grubu)
     return filtered.sort((a, b) => {
       const numA = parseInt(a.displayGroup);
       const numB = parseInt(b.displayGroup);
-      if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+      if (!isNaN(numA) && !isNaN(numB) && numA !== numB) return numA - numB;
       return a.displayGroup.localeCompare(b.displayGroup, "tr", { numeric: true });
     });
   }, [ageFilteredContexts, availableLeagues, selectedLeagueTier]);

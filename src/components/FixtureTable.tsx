@@ -16,7 +16,6 @@ interface FixtureTableProps {
   onToggleFavorite?: (id: string) => void;
   city?: string;
   showCityBadge?: boolean;
-  splitScreenMode?: boolean;
 }
 
 export const FixtureTable: React.FC<FixtureTableProps> = ({
@@ -27,7 +26,6 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   onToggleFavorite,
   city = "İstanbul",
   showCityBadge = false,
-  splitScreenMode = false,
 }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -125,11 +123,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               <th className="py-1.5 px-1.5 min-w-[120px] max-w-[200px] lg:max-w-[260px]">A Takımı</th>
               <th className="py-1.5 px-1.5 min-w-[120px] max-w-[200px] lg:max-w-[260px]">B Takımı</th>
               <th className="py-1.5 px-1 text-center w-14 whitespace-nowrap">Skor</th>
-              <th className={`py-1.5 px-1.5 min-w-[110px] max-w-[145px] ${splitScreenMode ? "hidden" : ""}`}>Set Skorları</th>
+              <th className="py-1.5 px-1.5 min-w-[110px] max-w-[145px]">Set Skorları</th>
               <th className="py-1.5 px-1 text-center min-w-[75px]" title="Volleybox maç kaydı durumu">Volleybox</th>
-              {!splitScreenMode && (
-                <th className="py-1.5 px-1 text-center w-10 no-print">İşlem</th>
-              )}
+              <th className="py-1.5 px-1 text-center w-10 no-print">İşlem</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-700/50">
@@ -273,7 +269,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 7. Set Skorları */}
-                  <td className={`py-1.5 px-1.5 text-left whitespace-nowrap ${splitScreenMode ? "hidden" : ""}`}>
+                  <td className="py-1.5 px-1.5 text-left whitespace-nowrap">
                     {isFinished && match.set_scores && match.set_scores.length > 0 ? (
                       <div className="flex items-center gap-1 flex-nowrap">
                         {match.set_scores.map((set, sIdx) => (
@@ -356,8 +352,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
 
                   {/* 9. İşlemler */}
-                  {!splitScreenMode && (
-                    <td className="py-1.5 px-1.5 text-center whitespace-nowrap no-print">
+                  <td className="py-1.5 px-1.5 text-center whitespace-nowrap no-print">
                       <div className="flex items-center justify-center gap-0.5">
                         {!isFinished && match.date !== "TBD" && (
                           <button
@@ -381,7 +376,6 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         </button>
                       </div>
                     </td>
-                  )}
                 </tr>
               );
             })}

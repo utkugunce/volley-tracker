@@ -112,10 +112,16 @@ def decode_html(resp: httpx.Response) -> str:
         except Exception:
             return resp.text
 
+def extract_group_name(c_text: str) -> str:
+    cleaned = clean_str(c_text)
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+Kızlar\s+(?:1\.\s*Lig(?:i)?|Süper\s*Lig(?:i)?)\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Süper|1\.)\s*Lig\s*", "", cleaned, flags=re.I).strip()
+    return cleaned or clean_str(c_text)
+
 def fetch_istanbul_live_data() -> Dict[str, Any]:
     """
     Resmi istanbul.voleyboliltemsilciligi.com sitesinden
-    Genç Kızlar Süper Lig ve Yıldız Kızlar Süper Lig için
+    Genç Kızlar Süper Lig, Genç Kızlar 1. Ligi ve Yıldız Kızlar Süper Lig için
     bütün fikstür maçlarını ve puan durumu tablolarını çeker.
     """
     logger.info("Resmi TVF İstanbul sitesine bağlanılıyor...")
@@ -179,12 +185,7 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
         logger.info(f"{cat_name} altında {len(comps)} grup bulundu.")
 
         for c_val, c_text in comps:
-            group_label = c_text
-            if " A Grubu" in c_text: group_name = "A Grubu"
-            elif " B Grubu" in c_text: group_name = "B Grubu"
-            elif " C Grubu" in c_text: group_name = "C Grubu"
-            else: group_name = c_text
-
+            group_name = extract_group_name(c_text)
             standings_key = f"{cat_name} - {group_name}"
             logger.info(f"Grup verileri çekiliyor: {standings_key}")
 
@@ -346,8 +347,14 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
     if "TVF 50. Yıl Deniz Esinduy" not in halls_list:
         halls_list.insert(0, "TVF 50. Yıl Deniz Esinduy")
 
+    try:
+        from scripts.scrape_all_provinces import apply_volleybox_names
+        apply_volleybox_names(all_matches, all_standings, "İstanbul")
+    except Exception as vb_ex:
+        logger.warning(f"Volleybox isim eşleme atlandı: {vb_ex}")
+
     result = {
-        "updated_at": datetime.now().isoformat(),
+        "updated_at": datetime.now().astimezone().isoformat(),
         "city": "İstanbul",
         "slug": "istanbul",
         "title": "TVF İstanbul Genç & Yıldız Ligleri",
