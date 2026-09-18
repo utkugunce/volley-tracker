@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T05:00:50.646436",
+  "updated_at": "2026-09-18T09:45:12.496009",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1052,8 +1052,8 @@
         "url": "https://women.volleybox.net/tr/gelisim-koleji-sk-u18-goztepe-sk-b-u18-c397112",
         "host_name": "Gelişim Koleji SK U18",
         "guest_name": "Göztepe SK - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-17",
         "vb_time": "20:00",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
@@ -1265,8 +1265,8 @@
         "url": "https://women.volleybox.net/tr/goxu-atletik-spor-kulubu-u18-zmir-ds-spor-u18-c397115",
         "host_name": "Göksu Atletik Spor Kulübü U18",
         "guest_name": "İzmir DSİ Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-17",
         "vb_time": "18:30",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
@@ -2265,8 +2265,8 @@
         "url": "https://women.volleybox.net/tr/parla-voleybol-kulubu-u16-alfa-gaziemir-voleybol-spor-kulubu-u16-c397121",
         "host_name": "Parla Voleybol Kulübü U16",
         "guest_name": "Alfa Gaziemir Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-09-17",
         "vb_time": "20:00",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -2979,8 +2979,8 @@
         "url": "https://women.volleybox.net/tr/dokuz-eylul-voleybol-u16-torbal-gelisim-spor-kulubu-u16-c397164",
         "host_name": "Dokuz Eylül Voleybol U16",
         "guest_name": "Torbalı Gelişim Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-17",
         "vb_time": "20:00",
         "vb_hall": "Karabağlar İzmir Spor Salonu",
@@ -3203,5 +3203,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-18T05:02:13.369684"
+  "volleybox_sync_updated_at": "2026-09-18T09:46:49.446182"
 }

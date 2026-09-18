@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-18T09:45:18.700781",
-  "city": "Düzce",
-  "slug": "duzce",
-  "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
+  "updated_at": "2026-09-18T09:45:15.649361",
+  "city": "Kahramanmaraş",
+  "slug": "kahramanmaras",
+  "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
-  "source": "https://duzce.voleyboliltemsilciligi.com",
+  "source": "https://kahramanmaras.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -25,10 +25,10 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
+    "Genç Kızlar 1. Ligi - Genç Kızlar Grup A": [
       {
         "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
+        "team": "Büyükşehir Belediye Sk (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
+        "team": "ELBİSTAN ALTINIŞIK SK",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Ultraslan Spor Kulubü",
+        "team": "GENÇLİK SK",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -61,7 +61,18 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
+        "team": "TÜRKOĞLU 20 NİSAN SK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Vesta SK (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -71,10 +82,10 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar 1. Ligi - Genç Kızlar Grup B": [
       {
         "rank": 1,
-        "team": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü",
+        "team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -85,7 +96,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Ay Spor Kulübü",
+        "team": "ÇAĞLAYANCERİT GENÇLİK SK",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -96,7 +107,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Can Sportif Spor Kulübü",
+        "team": "GAZİ SK",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -107,53 +118,7 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Ultraslan Spor Kulubü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - B Grubu": [
-      {
-        "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Düzce Gençlik Ve Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
+        "team": "Vesta SK (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -166,5 +131,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T09:46:48.887944"
+  "volleybox_sync_updated_at": "2026-09-18T09:46:49.455180"
 }

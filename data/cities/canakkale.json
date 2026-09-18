@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-18T09:45:18.700781",
-  "city": "Düzce",
-  "slug": "duzce",
-  "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
+  "updated_at": "2026-09-18T09:45:05.154991",
+  "city": "Çanakkale",
+  "slug": "canakkale",
+  "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
-  "source": "https://duzce.voleyboliltemsilciligi.com",
+  "source": "https://canakkale.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -25,56 +25,10 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
-      {
-        "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Düzce Ultraslan Spor Kulubü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü",
+        "team": "AS SPOR KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -85,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Ay Spor Kulübü",
+        "team": "Barbaros Spor KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -96,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Can Sportif Spor Kulübü",
+        "team": "BİGA ADA SPOR KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -107,7 +61,18 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Ultraslan Spor Kulubü",
+        "team": "Çomü Spor Kulübü (B)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Kepez Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -120,7 +85,7 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
+        "team": "Çanakkale Belediye Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -131,7 +96,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
+        "team": "Çanakkale Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -142,7 +107,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Gençlik Ve Spor Kulübü",
+        "team": "Eceabat Spor KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -153,7 +118,110 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
+        "team": "Uvm Akademi Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Yeşil Bayramiç Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği C Grubu": [
+      {
+        "rank": 1,
+        "team": "Biga Çiçeklidede Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Çomü Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Nehir Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Parion Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği D Grubu": [
+      {
+        "rank": 1,
+        "team": "Biga Gelişim Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Çan Kale Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Çanakkale Belediye Spor Kulübü(A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Gökçeada Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -166,5 +234,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T09:46:48.887944"
+  "volleybox_sync_updated_at": "2026-09-18T09:46:48.885097"
 }

@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-18T05:01:40.165286",
+  "updated_at": "2026-09-18T09:45:18.736577",
   "total_cities": 81,
   "active_cities": 9,
-  "total_matches": 192,
+  "total_matches": 222,
   "cities": [
     {
       "ilid": "1",
@@ -169,10 +169,10 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Puan Durumu Var (4 Tablo)",
       "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "standings_count": 4,
+      "data_file": "data/cities/canakkale.json"
     },
     {
       "ilid": "18",
@@ -459,10 +459,10 @@
       "name": "Kahramanmaraş",
       "slug": "kahramanmaras",
       "url": "https://kahramanmaras.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Puan Durumu Var (2 Tablo)",
       "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "standings_count": 2,
+      "data_file": "data/cities/kahramanmaras.json"
     },
     {
       "ilid": "47",
@@ -769,9 +769,9 @@
       "name": "Yalova",
       "slug": "yalova",
       "url": "https://yalova.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (20 Maç Mevcut)",
-      "matches_count": 20,
-      "standings_count": 1,
+      "status": "Aktif (50 Maç Mevcut)",
+      "matches_count": 50,
+      "standings_count": 2,
       "data_file": "data/cities/yalova.json"
     },
     {
