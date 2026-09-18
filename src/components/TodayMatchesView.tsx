@@ -24,7 +24,7 @@ import {
   Activity,
   AlertTriangle,
 } from "lucide-react";
-import { formatDateTurkish, isMatchPassed } from "@/utils/calendar";
+import { formatDateTurkish, isMatchPassed, compareMatchTimes } from "@/utils/calendar";
 
 interface TodayMatchesViewProps {
   matches: Match[];
@@ -59,10 +59,10 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     return matches.filter((m) => m.date === todayStr);
   }, [matches, todayStr]);
 
-  // Durum filtrelemesi
+  // Durum filtrelemesi (Her zaman erken saatteki maç ilk gösterilecek şekilde saat sıralamalı)
   const filteredTodayMatches = useMemo(() => {
-    if (quickStatus === "all") return todayMatches;
-    return todayMatches.filter((m) => m.status === quickStatus);
+    const base = quickStatus === "all" ? todayMatches : todayMatches.filter((m) => m.status === quickStatus);
+    return [...base].sort((m1, m2) => compareMatchTimes(m1.time, m2.time));
   }, [todayMatches, quickStatus]);
 
   // Dashboard KPI Sayıları
@@ -179,6 +179,11 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
       sections[groupKey].matches.push(m);
     });
 
+    // Her bölümün maçlarını saat sırasına göre diz (Erken saat ilk)
+    Object.values(sections).forEach((sec) => {
+      sec.matches.sort((m1, m2) => compareMatchTimes(m1.time, m2.time));
+    });
+
     return Object.values(sections).sort((a, b) =>
       (a.title || "").localeCompare(b.title || "", "tr")
     );
@@ -206,6 +211,11 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
         };
       }
       sections[groupKey].matches.push(m);
+    });
+
+    // Sıradaki maç günü maçlarını saat sırasına göre diz (Erken saat ilk)
+    Object.values(sections).forEach((sec) => {
+      sec.matches.sort((m1, m2) => compareMatchTimes(m1.time, m2.time));
     });
 
     return Object.values(sections).sort((a, b) =>

@@ -5,6 +5,7 @@ import { slugify } from "./slugify";
 import { getVolleyboxMapping, normalizeCitySlug } from "./volleybox";
 import { VolleyboxMapping } from "@/types/fixture";
 import { applyOverridesToMatches } from "./overrides";
+import { compareMatchDateTime } from "./calendar";
 
 export interface TeamStandingContext {
   groupName: string;
@@ -269,14 +270,8 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     }
   }
 
-  // Maçları tarihe göre sırala (TBD sona)
-  teamMatches.sort((a, b) => {
-    if (a.date === "TBD") return 1;
-    if (b.date === "TBD") return -1;
-    const dateComp = a.date.localeCompare(b.date);
-    if (dateComp !== 0) return dateComp;
-    return (a.time || "").localeCompare(b.time || "");
-  });
+  // Maçları tarihe ve erken saate göre sırala (TBD sona, erken saat ilk)
+  teamMatches.sort((a, b) => compareMatchDateTime(a, b, "asc"));
 
   // Form (son 5 tamamlanmış maç)
   const finishedMatches = teamMatches.filter((m) => m.status === "finished" && m.result !== "upcoming");

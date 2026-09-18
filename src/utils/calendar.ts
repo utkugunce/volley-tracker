@@ -90,3 +90,51 @@ export function formatDateTurkish(dateStr?: string): string {
   return dateStr;
 }
 
+/**
+ * İki maç saatini kronolojik olarak karşılaştırır.
+ * Erken saatteki maç her zaman önce gelir.
+ * Örn: '10:00' < '14:30', '09:00' < '18:00'
+ * Belirtilmemiş veya '--:--' olan saatler en sona atılır.
+ */
+export function compareMatchTimes(t1?: string | null, t2?: string | null): number {
+  const time1 = (t1 || "").trim();
+  const time2 = (t2 || "").trim();
+
+  const isInvalid1 = !time1 || time1 === "--:--" || time1 === "TBD";
+  const isInvalid2 = !time2 || time2 === "--:--" || time2 === "TBD";
+
+  if (isInvalid1 && isInvalid2) return 0;
+  if (isInvalid1) return 1;
+  if (isInvalid2) return -1;
+
+  return time1.localeCompare(time2);
+}
+
+/**
+ * İki maçı tarih ve saatine göre sıralar.
+ * Aynı gün içindeki maçlar her zaman erken saat ilk olacak şekilde sıralanır.
+ * dateOrder 'asc' ise eski tarihten yeni tarihe, 'desc' ise yeni tarihten eski tarihe dizer.
+ */
+export function compareMatchDateTime(
+  m1: { date?: string | null; time?: string | null },
+  m2: { date?: string | null; time?: string | null },
+  dateOrder: "asc" | "desc" = "asc"
+): number {
+  const d1 = (m1.date || "").trim();
+  const d2 = (m2.date || "").trim();
+
+  const isTbd1 = !d1 || d1 === "TBD";
+  const isTbd2 = !d2 || d2 === "TBD";
+
+  if (isTbd1 && isTbd2) return compareMatchTimes(m1.time, m2.time);
+  if (isTbd1) return 1;
+  if (isTbd2) return -1;
+
+  if (d1 !== d2) {
+    return dateOrder === "desc" ? d2.localeCompare(d1) : d1.localeCompare(d2);
+  }
+
+  // Aynı tarihte her zaman erken saatteki maç ilk gösterilir!
+  return compareMatchTimes(m1.time, m2.time);
+}
+

@@ -11,7 +11,7 @@ import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { NotificationBanner } from "@/components/NotificationBanner";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History } from "lucide-react";
-import { isMatchPassed, formatDateTurkish } from "@/utils/calendar";
+import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 
 // Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
@@ -484,12 +484,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       sections[groupKey].matches.push(m);
     });
 
-    // Her bölümün maçlarını tarih ve saat sırasına göre diz
+    // Her bölümün maçlarını tarih ve saat sırasına göre diz (Erken saatteki maç her zaman ilk)
     Object.values(sections).forEach((sec) => {
-      sec.matches.sort((m1, m2) => {
-        if (m1.date !== m2.date) return (m1.date || "").localeCompare(m2.date || "");
-        return (m1.time || "").localeCompare(m2.time || "");
-      });
+      sec.matches.sort((m1, m2) => compareMatchDateTime(m1, m2, "asc"));
     });
 
     // Grupları her zaman kesin sırala: Tüm iller modunda önce Şehir, sonra Kategori ve Grup
@@ -585,12 +582,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       sections[groupKey].matches.push(m);
     });
 
-    // Sonuçlarda en son oynanan maçları en üstte göster (tarihe ve saate göre ters sırala)
+    // Sonuçlarda en son oynanan maç günleri en üstte, aynı gün içinde ERKEN SAAT İLK
     Object.values(sections).forEach((sec) => {
-      sec.matches.sort((m1, m2) => {
-        if (m1.date !== m2.date) return (m2.date || "").localeCompare(m1.date || "");
-        return (m2.time || "").localeCompare(m1.time || "");
-      });
+      sec.matches.sort((m1, m2) => compareMatchDateTime(m1, m2, "desc"));
     });
 
     // Grupları sırala: Tüm iller modunda önce Şehir, sonra Kategori ve Grup

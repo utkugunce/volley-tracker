@@ -18,6 +18,7 @@ import {
   ChevronLeft,
   ArrowRight,
 } from "lucide-react";
+import { compareMatchDateTime } from "@/utils/calendar";
 import { Match } from "@/types/fixture";
 import { MatchOverride, AuditLogEntry } from "@/utils/overrides";
 
@@ -279,7 +280,7 @@ export default function AdminPage() {
         return home.includes(q) || away.includes(q) || id.includes(q) || cat.includes(q) || hall.includes(q);
       }
       return true;
-    });
+    }).sort((a, b) => compareMatchDateTime(a, b, "asc"));
   }, [matches, overrides, filterOverriddenOnly, selectedCity, searchQuery]);
 
   // 1. Giriş Yapılmamışsa Token Formunu Göster
