@@ -2,9 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Altyapı Voleybol | TVF 81 İl Fikstür ve Sonuç Platformu",
+  title: {
+    default: "Altyapı Voleybol — TVF Fikstür ve Puan Durumu",
+    template: "%s | Altyapı Voleybol",
+  },
   description: "Türkiye Voleybol Federasyonu (TVF) 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig ile 1. Lig haftalık maç programı, canlı sonuçlar ve puan durumu.",
   metadataBase: new URL("https://altyapivoleybol.com.tr"),
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
+    apple: [
+      { url: "/apple-icon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({

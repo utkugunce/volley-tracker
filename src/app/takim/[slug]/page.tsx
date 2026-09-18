@@ -32,7 +32,7 @@ export async function generateMetadata({ params, searchParams }: TeamPageProps):
   const catStr = team.categories.join(", ");
 
   return {
-    title: `${team.teamName} — 2026/27 Sezon Fikstürü & Puan Durumu | Altyapı Voleybol`,
+    title: `${team.teamName} | Altyapı Voleybol`,
     description: `${team.teamName} (${citiesStr}) voleybol takımı ${catStr} sezon fikstürü, güncel puan durumu, maç sonuçları ve Volleybox profili.`,
     openGraph: {
       title: `${team.teamName} — Sezon Fikstürü ve Puan Durumu`,
