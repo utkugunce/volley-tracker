@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T16:40:10.885763",
+  "updated_at": "2026-09-18T17:39:19.378842",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -25,7 +25,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - - A": [
       {
         "rank": 1,
         "team": "23 Nisan Spor Kulübü U18",
@@ -82,7 +82,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - - B": [
       {
         "rank": 1,
         "team": "DSİ Nilüfer Spor Kulübü U18",
@@ -139,7 +139,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig - C": [
+    "Genç Kızlar Süper Lig - - C": [
       {
         "rank": 1,
         "team": "Bursa Büyükşehir Belediyespor U18",
@@ -196,7 +196,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig - D": [
+    "Genç Kızlar Süper Lig - - D": [
       {
         "rank": 1,
         "team": "Doruk Voleybol Spor Kulübü U18",
@@ -242,7 +242,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - A Grubu": [
+    "Yıldız Kızlar Süper Lig - - A": [
       {
         "rank": 1,
         "team": "Aktif Nesil Spor Kulübü U16",
@@ -310,7 +310,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - B Grubu": [
+    "Yıldız Kızlar Süper Lig - - B": [
       {
         "rank": 1,
         "team": "23 Nisan Spor Kulübü U16",
@@ -378,7 +378,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig - C": [
+    "Yıldız Kızlar Süper Lig - - C": [
       {
         "rank": 1,
         "team": "Bursa Ayyıldız Spor Kulübü U16",
@@ -446,7 +446,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig - D": [
+    "Yıldız Kızlar Süper Lig - - D": [
       {
         "rank": 1,
         "team": "Akademi16 Spor Kulübü U16",
@@ -503,7 +503,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig - E": [
+    "Yıldız Kızlar Süper Lig - - E": [
       {
         "rank": 1,
         "team": "Bursa Büyükşehir Belediyespor U16",
@@ -563,5 +563,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T17:06:07.994922"
+  "volleybox_sync_updated_at": "2026-09-18T17:42:01.021143"
 }

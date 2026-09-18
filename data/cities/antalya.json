@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T16:40:18.709627",
+  "updated_at": "2026-09-18T17:39:17.598565",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -30,7 +30,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - Genç Kızlar A Grubu": [
       {
         "rank": 1,
         "team": "07 Zenit Spor Kulübü U18",
@@ -109,7 +109,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - Genç Kızlar B Grubu": [
       {
         "rank": 1,
         "team": "07 Mega Spor Kulübü U18",
@@ -177,7 +177,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - A Grubu": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar A Grubu": [
       {
         "rank": 1,
         "team": "07 Mega Spor Kulübü U16",
@@ -267,7 +267,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - B Grubu": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar B Grubu": [
       {
         "rank": 1,
         "team": "07 Alya Spor U16",
@@ -357,7 +357,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Süper Lig Yıldız Kızlar Doğu Grubu": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Doğu Grubu": [
       {
         "rank": 1,
         "team": "Alanya Belediyespor U16",
@@ -414,7 +414,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "Genç Kızlar A Grubu",
       "match_no": "1",
       "home_team": "Antalya Şimşek GSK U18",
       "away_team": "Luna Spor Kulübü U18",
@@ -455,7 +455,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "Genç Kızlar A Grubu",
       "match_no": "2",
       "home_team": "Antalya Şimşek GSK U18",
       "away_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
@@ -496,7 +496,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "Genç Kızlar A Grubu",
       "match_no": "3",
       "home_team": "07 Zenit Spor Kulübü U18",
       "away_team": "Antalya 1907 Spor Kulübü U18",
@@ -537,7 +537,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Genç Kızlar B Grubu",
       "match_no": "1",
       "home_team": "Erse Spor Kulübü U18",
       "away_team": "Antalyaspor U18",
@@ -578,7 +578,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Genç Kızlar B Grubu",
       "match_no": "2",
       "home_team": "07 Mega Spor Kulübü U18",
       "away_team": "Nova Spor Kulübü U18",
@@ -619,7 +619,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Genç Kızlar B Grubu",
       "match_no": "3",
       "home_team": "Antalyaspor U18",
       "away_team": "Elit Akdeniz Spor Kulübü U18",
@@ -660,7 +660,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "Yıldız Kızlar A Grubu",
       "match_no": "1",
       "home_team": "Vera Spor Kulübü U16",
       "away_team": "Antalya Şimşek GSK U16",
@@ -701,7 +701,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "Yıldız Kızlar A Grubu",
       "match_no": "2",
       "home_team": "Nova Spor U15",
       "away_team": "Antalya Açı Koleji Spor Kulübü U16",
@@ -742,7 +742,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "Yıldız Kızlar A Grubu",
       "match_no": "3",
       "home_team": "07 Mega Spor Kulübü U16",
       "away_team": "Sistem Eğitim Spor Kulübü U16",
@@ -783,7 +783,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "Yıldız Kızlar A Grubu",
       "match_no": "4",
       "home_team": "Elit Akdeniz Spor Kulübü U16",
       "away_team": "Kemer Sarp Spor Kulübü U16",
@@ -824,7 +824,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Yıldız Kızlar B Grubu",
       "match_no": "1",
       "home_team": "Antalya DSİ Spor Kulübü U16",
       "away_team": "07 Zenit Spor Kulübü U16",
@@ -865,7 +865,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Yıldız Kızlar B Grubu",
       "match_no": "2",
       "home_team": "Luna Spor Kulübü U16",
       "away_team": "Antalyaspor U16",
@@ -906,7 +906,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Yıldız Kızlar B Grubu",
       "match_no": "3",
       "home_team": "Antalya 1907 Spor Kulübü U16",
       "away_team": "07 Alya Spor U16",
@@ -947,7 +947,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Yıldız Kızlar B Grubu",
       "match_no": "4",
       "home_team": "Akdeniz Bilgi Spor Kulübü U16",
       "away_team": "Antalya DSİ Spor Kulübü U16",
@@ -988,7 +988,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "Yıldız Kızlar B Grubu",
       "match_no": "5",
       "home_team": "07 Anka Spor Kulübü U16",
       "away_team": "07 Zenit Spor Kulübü U16",
@@ -1029,7 +1029,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Süper Lig Yıldız Kızlar Doğu Grubu",
+      "group": "Yıldız Kızlar Doğu Grubu",
       "match_no": "1",
       "home_team": "Manavgat Belediyespor U16",
       "away_team": "Alanya MASK Spor Kulübü",
@@ -1070,7 +1070,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Süper Lig Yıldız Kızlar Doğu Grubu",
+      "group": "Yıldız Kızlar Doğu Grubu",
       "match_no": "2",
       "home_team": "Net Voleybol Akademi Spor Kulübü U16",
       "away_team": "Alanya Belediyespor U16",
@@ -1111,7 +1111,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Süper Lig Yıldız Kızlar Doğu Grubu",
+      "group": "Yıldız Kızlar Doğu Grubu",
       "match_no": "3",
       "home_team": "Alanya MASK Spor Kulübü",
       "away_team": "Net Voleybol Akademi Spor Kulübü U16",
@@ -1152,7 +1152,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Süper Lig Yıldız Kızlar Doğu Grubu",
+      "group": "Yıldız Kızlar Doğu Grubu",
       "match_no": "4",
       "home_team": "Alanya Belediyespor U16",
       "away_team": "Manavgat Belediyespor U16",
@@ -1186,5 +1186,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-09-18T17:06:07.984275"
+  "volleybox_sync_updated_at": "2026-09-18T17:42:01.003504"
 }

@@ -321,7 +321,11 @@ def scrape_single_city(city_info):
             return get_fallback_result(f"Hata: {ex}")
 
     # Diğer iller
-    client = httpx.Client(headers={"User-Agent": HEADERS["User-Agent"]}, timeout=7.0, follow_redirects=True)
+    client = httpx.Client(
+        headers={"User-Agent": HEADERS["User-Agent"]},
+        timeout=httpx.Timeout(connect=3.0, read=5.0, write=5.0, pool=5.0),
+        follow_redirects=True,
+    )
     
     try:
         r0 = client.get(puan_url)
@@ -605,7 +609,7 @@ def main():
     active_count = 0
     total_matches_all = 0
 
-    with ThreadPoolExecutor(max_workers=6) as executor:
+    with ThreadPoolExecutor(max_workers=16) as executor:
         future_to_city = {executor.submit(scrape_single_city, c): c for c in cities}
         for future in as_completed(future_to_city):
             completed_count += 1
@@ -638,7 +642,7 @@ def main():
     results.sort(key=lambda x: int(x["ilid"]) if str(x["ilid"]).isdigit() else 999)
     
     master_payload = {
-        "updated_at": datetime.now().isoformat(),
+        "updated_at": datetime.now().astimezone().isoformat(),
         "total_cities": len(results),
         "active_cities": active_count,
         "total_matches": total_matches_all,

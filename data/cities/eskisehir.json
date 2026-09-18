@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T16:40:20.133499",
+  "updated_at": "2026-09-18T17:39:23.131401",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -27,7 +27,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar Süper Ligi - C Gr": [
+    "Genç Kızlar Süper Lig - - C Gr": [
       {
         "rank": 1,
         "team": "Anadolu Üniversitesi GSK U18",
@@ -73,7 +73,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - A Grubu": [
+    "Genç Kızlar Süper Lig - - A Gr": [
       {
         "rank": 1,
         "team": "Eskişehir DSİ Bentspor U18",
@@ -119,7 +119,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - B Grubu": [
+    "Genç Kızlar Süper Lig - - B Gr": [
       {
         "rank": 1,
         "team": "Anadolu Kolej Spor Kulübü U18",
@@ -165,7 +165,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - A Grubu": [
+    "Yıldız Kızlar Süper Lig - - A Gr": [
       {
         "rank": 1,
         "team": "Anadolu Kolej Spor Kulübü U18",
@@ -200,7 +200,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - B Grubu": [
+    "Yıldız Kızlar Süper Lig - - B Gr": [
       {
         "rank": 1,
         "team": "Eskişehir Ata Spor Kulübü - B U16",
@@ -257,7 +257,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Ligi - C Gr": [
+    "Yıldız Kızlar Süper Lig - - C Gr": [
       {
         "rank": 1,
         "team": "Es Güneş Spor Kulübü U16",
@@ -303,7 +303,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Ligi - D Gr": [
+    "Yıldız Kızlar Süper Lig - - D Gr": [
       {
         "rank": 1,
         "team": "Anadolu Üniversitesi GSK U18",
@@ -360,7 +360,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Ligi - C Gr",
+      "group": "- C Gr",
       "match_no": "1",
       "home_team": "Es Voleybol Akademi Spor Kulübü - B U18",
       "away_team": "Şehir Koleji Eğitim Kültür SK U18",
@@ -401,7 +401,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Ligi - C Gr",
+      "group": "- C Gr",
       "match_no": "2",
       "home_team": "Eskişehir Peyman SK U18",
       "away_team": "Anadolu Üniversitesi GSK U18",
@@ -442,7 +442,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "- A Gr",
       "match_no": "1",
       "home_team": "Eskişehir Türk Telekom Spor Kulübü U18",
       "away_team": "Eskişehir Ata Spor Kulübü U18",
@@ -483,7 +483,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "- A Gr",
       "match_no": "2",
       "home_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
       "away_team": "Eskişehir DSİ Bentspor U18",
@@ -524,7 +524,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "- B Gr",
       "match_no": "1",
       "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
       "away_team": "Anadolu Kolej Spor Kulübü U18",
@@ -565,7 +565,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "- B Gr",
       "match_no": "2",
       "home_team": "Meryem Boz Spor Kulübü U18",
       "away_team": "Eskişehir Yıldız Spor Kulübü U18",
@@ -606,7 +606,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "- A Gr",
       "match_no": "1",
       "home_team": "Es Voleybol Akademi Spor Kulübü - B U18",
       "away_team": "Eskişehir DSİ Bentspor U18",
@@ -647,7 +647,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "A Grubu",
+      "group": "- A Gr",
       "match_no": "2",
       "home_team": "Anadolu Kolej Spor Kulübü U18",
       "away_team": "Es Voleybol Akademi Spor Kulübü - B U18",
@@ -688,7 +688,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "- B Gr",
       "match_no": "1",
       "home_team": "Eskişehir Ata Spor Kulübü - B U16",
       "away_team": "Eskişehir Türk Telekom Spor Kulübü U16",
@@ -729,7 +729,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "- B Gr",
       "match_no": "2",
       "home_team": "Şehir Koleji Eğitim Kültür SK U18",
       "away_team": "Esnova Spor Kulübü U16",
@@ -770,7 +770,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "B Grubu",
+      "group": "- B Gr",
       "match_no": "3",
       "home_team": "Eskişehir Ata Spor Kulübü - B U16",
       "away_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
@@ -811,7 +811,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Ligi - C Gr",
+      "group": "- C Gr",
       "match_no": "1",
       "home_team": "Eskişehir Ata Spor Kulübü U16",
       "away_team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
@@ -852,7 +852,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Ligi - C Gr",
+      "group": "- C Gr",
       "match_no": "2",
       "home_team": "Es Güneş Spor Kulübü U16",
       "away_team": "Esnova Spor Kulübü - B U16",
@@ -893,7 +893,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Ligi - C Gr",
+      "group": "- C Gr",
       "match_no": "3",
       "home_team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
       "away_team": "Esnova Spor Kulübü - B U16",
@@ -934,7 +934,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Ligi - D Gr",
+      "group": "- D Gr",
       "match_no": "1",
       "home_team": "Anadolu Üniversitesi GSK U18",
       "away_team": "Es Voleybol Akademi Spor Kulübü - A U18",
@@ -975,7 +975,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Ligi - D Gr",
+      "group": "- D Gr",
       "match_no": "2",
       "home_team": "Eskişehir Peyman SK U16",
       "away_team": "Eskişehir Voleybol Spor Kulübü U16",
@@ -1016,7 +1016,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Ligi - D Gr",
+      "group": "- D Gr",
       "match_no": "3",
       "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
       "away_team": "Eskişehir Voleybol Spor Kulübü U16",
@@ -1050,5 +1050,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-09-18T17:06:08.027495"
+  "volleybox_sync_updated_at": "2026-09-18T17:42:01.057679"
 }

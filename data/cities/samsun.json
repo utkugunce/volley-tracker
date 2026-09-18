@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T16:40:39.478715",
+  "updated_at": "2026-09-18T17:39:34.668409",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -25,7 +25,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar 1. Ligi - A Grubu": [
+    "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği A Grubu": [
       {
         "rank": 1,
         "team": "19 Mayıs Voleybol Sk",
@@ -126,7 +126,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar 1. Ligi - B Grubu": [
+    "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği B Grubu": [
       {
         "rank": 1,
         "team": "Anadolu Voleybol Akademi Sk (A)",
@@ -219,5 +219,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T17:06:08.265683"
+  "volleybox_sync_updated_at": "2026-09-18T17:42:01.428870"
 }

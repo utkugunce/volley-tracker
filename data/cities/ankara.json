@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T16:40:24.612555",
+  "updated_at": "2026-09-18T17:39:21.089979",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -27,7 +27,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 1. Grup": [
+    "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
         "team": "Akademi Atletik Spor U18",
@@ -84,7 +84,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 2.Grup": [
+    "Genç Kızlar Süper Lig - 2.Grup": [
       {
         "rank": 1,
         "team": "Ankara DSİ GSK U18",
@@ -141,7 +141,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 3.Grup": [
+    "Genç Kızlar Süper Lig - 3.Grup": [
       {
         "rank": 1,
         "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
@@ -198,7 +198,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 4.Grup": [
+    "Genç Kızlar Süper Lig - 4.Grup": [
       {
         "rank": 1,
         "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
@@ -255,7 +255,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 1. Grup": [
+    "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
         "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16 B",
@@ -312,7 +312,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 2. Grup": [
+    "Yıldız Kızlar Süper Lig - 2. Grup": [
       {
         "rank": 1,
         "team": "Başkent Arma Spor B",
@@ -369,7 +369,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 3. Grup": [
+    "Yıldız Kızlar Süper Lig - 3. Grup": [
       {
         "rank": 1,
         "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
@@ -426,7 +426,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 4. Grup": [
+    "Yıldız Kızlar Süper Lig - 4. Grup": [
       {
         "rank": 1,
         "team": "Ankara DSİ GSK U16",
@@ -472,7 +472,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 5. Grup": [
+    "Yıldız Kızlar Süper Lig - 5. Grup": [
       {
         "rank": 1,
         "team": "DHMİ Spor Kulübü U16",
@@ -529,7 +529,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 6. Grup": [
+    "Yıldız Kızlar Süper Lig - 6. Grup": [
       {
         "rank": 1,
         "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
@@ -597,7 +597,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Lig 1. Grup",
+      "group": "1. Grup",
       "match_no": "1",
       "home_team": "Hakan Akışık Spor Kulübü U18",
       "away_team": "Akademi Atletik Spor U18",
@@ -638,7 +638,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Lig 2.Grup",
+      "group": "2.Grup",
       "match_no": "1",
       "home_team": "Yedidağspor - A U18",
       "away_team": "Ankara DSİ GSK U18",
@@ -679,7 +679,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Lig 2.Grup",
+      "group": "2.Grup",
       "match_no": "2",
       "home_team": "Zeren Spor Kulübü U18",
       "away_team": "Başkent Arma Spor",
@@ -720,7 +720,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Lig 3.Grup",
+      "group": "3.Grup",
       "match_no": "1",
       "home_team": "TVF Spor Lisesi U18",
       "away_team": "SET UP Spor Kulübü U18",
@@ -761,7 +761,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Lig 3.Grup",
+      "group": "3.Grup",
       "match_no": "2",
       "home_team": "Maç Akademi Spor Kulübü U18",
       "away_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
@@ -802,7 +802,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Lig 4.Grup",
+      "group": "4.Grup",
       "match_no": "1",
       "home_team": "İlbank U18",
       "away_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
@@ -843,7 +843,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Süper Lig 4.Grup",
+      "group": "4.Grup",
       "match_no": "2",
       "home_team": "PTT Spor U18",
       "away_team": "Eryaman Gelişim SK - A U18",
@@ -877,7 +877,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 1. Grup",
+      "group": "1. Grup",
       "match_no": "1",
       "home_team": "İlbank U16",
       "away_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16 B",
@@ -918,7 +918,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 1. Grup",
+      "group": "1. Grup",
       "match_no": "2",
       "home_team": "Ufuk Üniversitesi Üç Pas Spor Kulübü U16",
       "away_team": "Karayolları Spor Kulübü U16",
@@ -959,7 +959,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 2. Grup",
+      "group": "2. Grup",
       "match_no": "1",
       "home_team": "Başkent Arma Spor B",
       "away_team": "Eryaman Gelişim SK U16",
@@ -1000,7 +1000,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 2. Grup",
+      "group": "2. Grup",
       "match_no": "2",
       "home_team": "PTT Spor U16",
       "away_team": "Çaba Spor Kulübü U16",
@@ -1041,7 +1041,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 3. Grup",
+      "group": "3. Grup",
       "match_no": "1",
       "home_team": "TVF Spor Lisesi U16",
       "away_team": "Başkent Arma Spor U16",
@@ -1082,7 +1082,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 3. Grup",
+      "group": "3. Grup",
       "match_no": "2",
       "home_team": "Yedidağ Spor Kulübü",
       "away_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
@@ -1123,7 +1123,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 4. Grup",
+      "group": "4. Grup",
       "match_no": "1",
       "home_team": "Ankara DSİ GSK U16",
       "away_team": "Genia İz Akademi Spor Kulübü",
@@ -1164,7 +1164,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 4. Grup",
+      "group": "4. Grup",
       "match_no": "2",
       "home_team": "Zeren Spor Kulübü U16",
       "away_team": "İlbank U16",
@@ -1205,7 +1205,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 5. Grup",
+      "group": "5. Grup",
       "match_no": "1",
       "home_team": "TED Ankara Kolejliler U16",
       "away_team": "SET UP Spor Kulübü",
@@ -1246,7 +1246,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 5. Grup",
+      "group": "5. Grup",
       "match_no": "2",
       "home_team": "Akyurt First Spor Kulübü",
       "away_team": "DHMİ Spor Kulübü U16",
@@ -1287,7 +1287,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 6. Grup",
+      "group": "6. Grup",
       "match_no": "1",
       "home_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
       "away_team": "Hakan Akışık Spor Kulübü U16",
@@ -1328,7 +1328,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar Süper Lig 6. Grup",
+      "group": "6. Grup",
       "match_no": "2",
       "home_team": "Akademi Atletik Spor",
       "away_team": "Maç Akademi Spor Kulübü U16",
@@ -1362,5 +1362,5 @@
     }
   ],
   "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-09-18T17:06:07.949926"
+  "volleybox_sync_updated_at": "2026-09-18T17:42:00.956028"
 }

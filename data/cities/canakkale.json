@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T16:40:15.991885",
+  "updated_at": "2026-09-18T17:39:16.869921",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -25,7 +25,7 @@
     ]
   },
   "standings": {
-    "Yıldız Kızlar Süper Lig - A Grubu": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
       {
         "rank": 1,
         "team": "AS SPOR KULÜBÜ",
@@ -82,7 +82,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - B Grubu": [
+    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği B Grubu": [
       {
         "rank": 1,
         "team": "Çanakkale Belediye Spor Kulübü (B)",
@@ -234,5 +234,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T17:06:07.996651"
+  "volleybox_sync_updated_at": "2026-09-18T17:42:01.022528"
 }

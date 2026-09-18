@@ -124,38 +124,25 @@ export async function GET(request: Request) {
             ? venvPyNix
             : "python";
 
-          if (citySlug === "istanbul") {
-            execFileSync(pythonBin, ["scripts/run_scraper.py"], {
-              cwd: process.cwd(),
-              timeout: 25000,
-              stdio: "ignore",
-            });
-          } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
-            execFileSync(pythonBin, ["scripts/scrape_all_provinces.py"], {
-              cwd: process.cwd(),
-              timeout: 60000,
-              stdio: "ignore",
-            });
-          } else {
-            execFileSync(pythonBin, ["scripts/scrape_all_provinces.py", "--city", citySlug], {
-              cwd: process.cwd(),
-              timeout: 25000,
-              stdio: "ignore",
-            });
-          }
+          // Kullanıcı tam tarama talep ettiği için her yenilemede 81 ilin tamamı ve Volleybox tam taranır
+          execFileSync(pythonBin, ["scripts/scrape_all_provinces.py"], {
+            cwd: process.cwd(),
+            timeout: 120000,
+            stdio: "ignore",
+          });
 
           syncMeta = {
             attempted: true,
             success: true,
             mode: "local_python",
-            message: "Fikstür ve maç skorları başarıyla güncellendi.",
+            message: "81 ilin bülteni ve Volleybox verileri tam tarama ile başarıyla senkronize edildi.",
           };
         } catch (err: any) {
           syncMeta = {
             attempted: true,
             success: false,
             mode: "local_python",
-            message: "Canlı bağlantı kurulamadığı için mevcut en güncel veriler sunuluyor.",
+            message: "Tam tarama sırasında bağlantı hatası oluştu, önbellekteki veriler gösteriliyor.",
           };
           console.warn("Live scraper refresh warning (falling back to cached data):", err);
         }
