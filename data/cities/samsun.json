@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T09:25:40.729896",
+  "updated_at": "2026-09-18T13:42:04.591311",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -162,7 +162,7 @@
       },
       {
         "rank": 4,
-        "team": "Nova Spor Kulübü U18",
+        "team": "Nova Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -219,5 +219,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T09:26:46.719856"
+  "volleybox_sync_updated_at": "2026-09-18T13:42:51.512752"
 }
