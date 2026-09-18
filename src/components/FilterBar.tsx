@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search, X, MapPin, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { Search, X, MapPin, AlertTriangle, CheckCircle2, History } from "lucide-react";
 
 interface FilterBarProps {
   categories: string[];
@@ -25,8 +25,8 @@ interface FilterBarProps {
   onSearchChange: (q: string) => void;
 
   // Volleybox filtreleri & istatistikleri
-  volleyboxFilter?: "all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy";
-  onSelectVolleyboxFilter?: (val: "all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy") => void;
+  volleyboxFilter?: "all" | "synced" | "scored" | "unscored" | "discrepancy" | "unsynced";
+  onSelectVolleyboxFilter?: (filter: "all" | "synced" | "scored" | "unscored" | "discrepancy" | "unsynced") => void;
   volleyboxStats?: {
     total: number;
     synced: number;
@@ -40,6 +40,9 @@ interface FilterBarProps {
   onReset: () => void;
   isFiltered: boolean;
   isResultsTab?: boolean;
+  resultsSubTab?: "all" | "yesterday";
+  onSelectResultsSubTab?: (subTab: "all" | "yesterday") => void;
+  yesterdayCount?: number;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
@@ -60,6 +63,9 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onReset,
   isFiltered,
   isResultsTab = false,
+  resultsSubTab = "all",
+  onSelectResultsSubTab,
+  yesterdayCount = 0,
 }) => {
   const statusTabs = [
     { id: "all", label: "HEPSİ", count: counts.all },
@@ -71,16 +77,48 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-2.5 sm:p-3 mb-4 shadow-md max-w-6xl mx-auto space-y-2.5 no-print">
       {/* 1. Flashscore Durum Sekmeleri & Lig Filtreleri */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-700/50 pb-2.5">
-        {/* HEPSİ / OYNANACAK / BİTENLER VEYA SONUÇLAR ROZETİ */}
+        {/* HEPSİ / OYNANACAK / BİTENLER VEYA SONUÇLAR ALT SEKME DÜĞMELERİ */}
         {isResultsTab ? (
-          <div className="flex items-center gap-1.5">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold bg-emerald-600 text-white shadow-sm">
-              <CheckCircle2 size={13} className="text-white" />
+          <div className="flex items-center gap-1.5 overflow-x-auto">
+            <button
+              type="button"
+              onClick={() => onSelectResultsSubTab?.("all")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold transition-all ${
+                resultsSubTab === "all"
+                  ? "bg-emerald-600 text-white shadow-sm"
+                  : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
+              }`}
+            >
+              <CheckCircle2 size={13} className={resultsSubTab === "all" ? "text-white" : "text-emerald-400"} />
               <span>SONUÇLAR</span>
-              <span className="text-[10px] bg-white/20 text-white px-1.5 rounded-full font-mono font-bold">
-                {counts.finished}
+              <span
+                className={`text-[10px] px-1.5 rounded-full font-mono font-bold ${
+                  resultsSubTab === "all" ? "bg-white/20 text-white" : "bg-slate-600 text-slate-300"
+                }`}
+              >
+                {counts.all}
               </span>
-            </div>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => onSelectResultsSubTab?.("yesterday")}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-bold transition-all ${
+                resultsSubTab === "yesterday"
+                  ? "bg-emerald-600 text-white shadow-sm ring-1 ring-emerald-400/50"
+                  : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
+              }`}
+            >
+              <History size={13} className={resultsSubTab === "yesterday" ? "text-white" : "text-slate-400"} />
+              <span>DÜNÜN SONUÇLARI</span>
+              <span
+                className={`text-[10px] px-1.5 rounded-full font-mono font-bold ${
+                  resultsSubTab === "yesterday" ? "bg-white/20 text-white" : "bg-slate-600 text-slate-300"
+                }`}
+              >
+                {yesterdayCount}
+              </span>
+            </button>
           </div>
         ) : (
           <div className="flex items-center gap-1">

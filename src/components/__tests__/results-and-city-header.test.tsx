@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { isMatchScored } from "../DashboardClient";
 import { FilterBar } from "../FilterBar";
@@ -108,5 +108,39 @@ describe("Results and City Header enhancements", () => {
     // SONUÇLAR rozeti ve 29 sayısı bulunmalı
     expect(screen.getByText("SONUÇLAR")).toBeInTheDocument();
     expect(screen.getByText("29")).toBeInTheDocument();
+  });
+
+  it("FilterBar renders DÜNÜN SONUÇLARI sub-tab and triggers onSelectResultsSubTab when clicked", () => {
+    const handleSelectSubTab = vi.fn();
+    render(
+      <FilterBar
+        categories={["Genç Kızlar Süper Lig"]}
+        selectedCategory="Tümü"
+        onSelectCategory={vi.fn()}
+        statusFilter="finished"
+        onSelectStatusFilter={vi.fn()}
+        counts={{ all: 29, upcoming: 0, finished: 29 }}
+        halls={["50. Yıl"]}
+        selectedHall="Tümü"
+        onSelectHall={vi.fn()}
+        searchQuery=""
+        onSearchChange={vi.fn()}
+        onReset={vi.fn()}
+        isFiltered={false}
+        isResultsTab={true}
+        resultsSubTab="all"
+        onSelectResultsSubTab={handleSelectSubTab}
+        yesterdayCount={7}
+      />
+    );
+
+    // DÜNÜN SONUÇLARI butonu ve 7 sayısı görünmeli
+    const yesterdayBtn = screen.getByText("DÜNÜN SONUÇLARI").closest("button")!;
+    expect(yesterdayBtn).toBeInTheDocument();
+    expect(screen.getByText("7")).toBeInTheDocument();
+
+    // Tıklanınca onSelectResultsSubTab("yesterday") çağrılmalı
+    fireEvent.click(yesterdayBtn);
+    expect(handleSelectSubTab).toHaveBeenCalledWith("yesterday");
   });
 });

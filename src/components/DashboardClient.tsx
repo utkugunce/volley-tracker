@@ -10,8 +10,8 @@ import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { NotificationBanner } from "@/components/NotificationBanner";
 import { Match, FixturesData } from "@/types/fixture";
-import { SearchX, AlertCircle, Star, CheckCircle2 } from "lucide-react";
-import { isMatchPassed } from "@/utils/calendar";
+import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History } from "lucide-react";
+import { isMatchPassed, formatDateTurkish } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 
 // Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
@@ -34,6 +34,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
   // Ana Sekmeler: "results" (Sonuçlar), "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür) ve "standings" (Puan Durumu)
   const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings">("home");
+
+  // Sonuçlar Alt Sekmesi: "all" (Tüm Sonuçlar) veya "yesterday" (Dünün Sonuçları)
+  const [resultsSubTab, setResultsSubTab] = useState<"all" | "yesterday">("all");
 
   // Fikstür Filtre Durumları
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
@@ -294,7 +297,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   // Bugün tarihi
   const todayStr = useMemo(() => {
     const d = new Date();
-    return d.toISOString().split("T")[0];
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }, []);
+
+  // Dün tarihi
+  const yesterdayStr = useMemo(() => {
+    const d = new Date();
+    d.setDate(d.getDate() - 1);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const day = String(d.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   }, []);
 
   // Bugün oynanacak maç sayısı (Header rozeti için)
@@ -332,10 +348,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     return { all, upcoming, finished };
   }, [data]);
 
-  // Sonuçlanan maç sayısı (Header rozeti ve Sonuçlar sekmesi için)
+  // Sonuçlanan toplam maç sayısı (Header rozeti ve Sonuçlar sekmesi için)
   const resultsCount = useMemo(() => {
     return (data?.matches || []).filter(isMatchScored).length;
   }, [data]);
+
+  // Dünün sonuçlanan maç sayısı
+  const yesterdayResultsCount = useMemo(() => {
+    return (data?.matches || []).filter((m) => isMatchScored(m) && m.date === yesterdayStr).length;
+  }, [data, yesterdayStr]);
 
   // Tüm İller seçili mi?
   const isAllCities = currentCitySlug === "all" || data?.city === "Tüm İller";
@@ -491,6 +512,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     return (data?.matches || []).filter((m) => {
       if (!isMatchScored(m)) return false;
 
+      // Sonuçlar alt sekme filtresi: "yesterday" seçildiyse sadece dünün maçlarını göster
+      if (resultsSubTab === "yesterday" && m.date !== yesterdayStr) {
+        return false;
+      }
+
       if (showOnlyFavorites && !favorites.includes(m.id)) {
         return false;
       }
@@ -529,7 +555,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
 
       return true;
     });
-  }, [data, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
+  }, [data, resultsSubTab, yesterdayStr, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
 
   // Sonuçlar için gruplama: En son oynanan maçlar en üstte (tarihe göre azalan sıralama)
   const resultsGroupedSections = useMemo(() => {
@@ -587,6 +613,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     setVolleyboxFilter("all");
     setSearchQuery("");
     setShowOnlyFavorites(false);
+    setResultsSubTab("all");
   };
 
   const isFiltered =
@@ -596,7 +623,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
     selectedHall !== "Tümü" ||
     searchQuery.trim().length > 0 ||
     volleyboxFilter !== "all" ||
-    showOnlyFavorites;
+    showOnlyFavorites ||
+    resultsSubTab !== "all";
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100 font-sans">
@@ -672,7 +700,32 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                 onReset={resetFilters}
                 isFiltered={isFiltered}
                 isResultsTab={true}
+                resultsSubTab={resultsSubTab}
+                onSelectResultsSubTab={setResultsSubTab}
+                yesterdayCount={yesterdayResultsCount}
               />
+            )}
+
+            {/* Dünün Sonuçları Bilgi ve Kolay Geçiş Rozeti */}
+            {resultsSubTab === "yesterday" && (
+              <div className="flex items-center justify-between bg-emerald-950/40 border border-emerald-800/60 rounded-xl px-3.5 py-2.5 mb-4 text-xs text-emerald-300 shadow-sm max-w-6xl mx-auto flex-wrap gap-2">
+                <div className="flex items-center gap-2">
+                  <Calendar size={15} className="text-emerald-400 shrink-0" />
+                  <span>
+                    <strong>Dünün Sonuçları:</strong> {formatDateTurkish(yesterdayStr)}
+                  </span>
+                  <span className="text-[11px] bg-emerald-500/20 text-emerald-200 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold font-mono">
+                    {filteredResultMatches.length} Maç
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setResultsSubTab("all")}
+                  className="text-xs text-emerald-400 hover:text-emerald-200 font-semibold underline underline-offset-2 transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Tüm Sonuçları Göster ({resultsCount})</span>
+                </button>
+              </div>
             )}
 
             {/* Sonuçlar Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları */}
@@ -698,10 +751,40 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
             {resultsGroupedSections.length === 0 && (
               <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
                 <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-emerald-400 border border-slate-700">
-                  <CheckCircle2 size={22} />
+                  {resultsSubTab === "yesterday" ? <History size={22} /> : <CheckCircle2 size={22} />}
                 </div>
 
-                {filteredResultMatches.length === 0 && !isFiltered ? (
+                {resultsSubTab === "yesterday" ? (
+                  <>
+                    <h3 className="text-sm font-bold text-white mb-1">
+                      {data?.city && data?.city !== "Tüm İller"
+                        ? `TVF ${data.city} İçin Dün (${formatDateTurkish(yesterdayStr)}) Oynanan Maç Bulunmuyor`
+                        : `Dün (${formatDateTurkish(yesterdayStr)}) Oynanan Maç Bulunmuyor`}
+                    </h3>
+                    <p className="text-xs text-slate-400 mb-4 max-w-sm mx-auto">
+                      Dün bu ilde oynanmış maç kaydı bulunmuyor. Önceki tüm maç sonuçlarını görüntülemek için Tüm Sonuçlar sekmesine geçebilirsiniz.
+                    </p>
+                    <div className="flex items-center justify-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setResultsSubTab("all")}
+                        className="px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition-colors shadow-md inline-flex items-center gap-1.5"
+                      >
+                        <CheckCircle2 size={14} />
+                        <span>Tüm Sonuçları Görüntüle ({resultsCount})</span>
+                      </button>
+                      {data?.city !== "Tüm İller" && (
+                        <button
+                          type="button"
+                          onClick={() => handleSelectCity("all")}
+                          className="px-4 py-2 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold hover:bg-slate-700 transition-colors shadow-md"
+                        >
+                          Tüm İllerin Dünkü Sonuçları
+                        </button>
+                      )}
+                    </div>
+                  </>
+                ) : filteredResultMatches.length === 0 && !isFiltered ? (
                   <>
                     <h3 className="text-sm font-bold text-white mb-1">
                       {data?.city && data?.city !== "Tüm İller"
