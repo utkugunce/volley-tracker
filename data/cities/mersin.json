@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-17T09:21:29.683005",
+  "updated_at": "2026-09-18T00:30:34.943925",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -9,6 +9,7 @@
     "categories": [
       "Tümü",
       "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
@@ -255,5 +256,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-17T22:19:29.950221"
+  "volleybox_sync_updated_at": "2026-09-18T00:31:59.068996"
 }
