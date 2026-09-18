@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T21:58:33.631145",
+  "updated_at": "2026-09-18T23:49:30.212426",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -815,6 +815,28 @@
       },
       {
         "rank": 3,
+        "team": "Özay Voleybol Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Dost Spor U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Dalton Koleji Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -825,7 +847,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Torbalı Gelişim Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -833,28 +855,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Dost Spor U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Özay Voleybol Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ]
@@ -3015,11 +3015,17 @@
       "match_no": "2",
       "home_team": "Dost Spor U16",
       "away_team": "Özay Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "25-21",
+        "15-25",
+        "19-25",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397165",
@@ -3213,5 +3219,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-18T21:59:43.486882"
+  "volleybox_sync_updated_at": "2026-09-18T23:50:37.112441"
 }
