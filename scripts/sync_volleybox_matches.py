@@ -57,7 +57,7 @@ CITY_STOPWORDS = {
     "istanbul", "izmir", "ankara", "bursa", "nigde", "yalova", "antalya", "duzce", 
     "adana", "konya", "samsun", "trabzon", "kocaeli", "sakarya", "tekirdag", 
     "mersin", "gaziantep", "kayseri", "denizli", "eskisehir", "turkiye",
-    "alanya", "manavgat", "kepez", "kemer", "gazipasa"
+    "alanya", "manavgat", "kepez", "kemer", "gazipasa", "aydin"
 }
 
 GENERIC_WORDS = {
@@ -86,9 +86,12 @@ def normalize_name(name: str) -> str:
     s = re.sub(r"\s+u\d+", "", s)
     s = re.sub(r"\bthy\b", "turk hava yollari", s)
     pattern = r"\b(" + "|".join(GENERIC_WORDS) + r")\b"
-    s = re.sub(pattern, "", s)
-    s = re.sub(r"[^a-z0-9]", "", s)
-    return s.strip()
+    filtered = re.sub(pattern, "", s)
+    res = re.sub(r"[^a-z0-9]", "", filtered)
+    if not res:
+        # Eğer generic words çıkarılınca hiçbir şey kalmıyorsa (örn: 'Akademi Atletik')
+        res = re.sub(r"[^a-z0-9]", "", s)
+    return res.strip()
 
 
 def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
@@ -124,9 +127,13 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
         s = s[:m_letter.start()] + " " + s[m_letter.end():]
 
     pattern = r"\b(" + "|".join(GENERIC_WORDS) + r")\b"
-    s = re.sub(pattern, " ", s)
-    s = re.sub(r"[^a-z0-9\s]", " ", s)
-    base = " ".join(s.split())
+    filtered = re.sub(pattern, " ", s)
+    filtered = re.sub(r"[^a-z0-9\s]", " ", filtered)
+    base = " ".join(filtered.split())
+    if not base:
+        # Eğer generic words çıkarılınca kök kalmıyorsa (örn: 'Akademi Atletik')
+        s_clean = re.sub(r"[^a-z0-9\s]", " ", s)
+        base = " ".join(s_clean.split())
     return base, letter
 
 
@@ -753,6 +760,18 @@ def main():
 
     vb_tournaments: Dict[str, List[Dict[str, Any]]] = {}
 
+    def add_vb_matches(dict_obj: Dict[str, List[Dict[str, Any]]], key: str, matches: List[Dict[str, Any]]):
+        if not key:
+            return
+        k = key.lower().strip()
+        if k not in dict_obj:
+            dict_obj[k] = []
+        existing = {m["match_id"] for m in dict_obj[k]}
+        for m in matches:
+            if m["match_id"] not in existing:
+                dict_obj[k].append(m)
+                existing.add(m["match_id"])
+
     for l in target_leagues:
         url = l.get("volleybox_url")
         internal_name = l.get("internal_name", "")
@@ -766,11 +785,22 @@ def main():
 
         age_cat = l.get("age_category", "").lower()
         if city:
-            vb_tournaments[normalize_tourn_key(internal_name, city)] = vb_matches
-            vb_tournaments[f"{internal_name}::{city}".lower()] = vb_matches
+            add_vb_matches(vb_tournaments, normalize_tourn_key(internal_name, city), vb_matches)
+            add_vb_matches(vb_tournaments, f"{internal_name}::{city}", vb_matches)
+
+            # İstanbul 1. Ligi bölgeleri (1-5. Bölge) ana 1. Lig havuzuna da dahil edilir
+            if "1. lig" in internal_name.lower() and ("bölge" in internal_name.lower() or "bolge" in internal_name.lower()):
+                add_vb_matches(vb_tournaments, normalize_tourn_key("Genç Kızlar 1. Ligi", city), vb_matches)
+                add_vb_matches(vb_tournaments, f"genç kızlar 1. ligi::{city}", vb_matches)
+
+            # Aydın için Süper Lig ve 1. Ligi eşleştirmesi
+            if normalize_name(city) == "aydin" and age_cat == "u18":
+                add_vb_matches(vb_tournaments, normalize_tourn_key("Genç Kızlar 1. Ligi", city), vb_matches)
+                add_vb_matches(vb_tournaments, normalize_tourn_key("Genç Kızlar Süper Lig", city), vb_matches)
+
             if age_cat:
-                vb_tournaments[f"{city}::{age_cat}".lower()] = vb_matches
-                vb_tournaments[f"{normalize_name(city)}::{age_cat}".lower()] = vb_matches
+                add_vb_matches(vb_tournaments, f"{city}::{age_cat}", vb_matches)
+                add_vb_matches(vb_tournaments, f"{normalize_name(city)}::{age_cat}", vb_matches)
         time.sleep(0.8)
 
     # 3. data/fixtures.json senkronizasyonu

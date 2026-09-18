@@ -199,7 +199,10 @@ export function buildVolleyboxLeagueMap(
     if (citySlug) {
       map.set(`${leagueKey}::${citySlug}`, item);
       if (age) {
-        map.set(`${age}::${citySlug}`, item);
+        const ageCityKey = `${age}::${citySlug}`;
+        if (!map.has(ageCityKey) || leagueKey.includes("süper")) {
+          map.set(ageCityKey, item);
+        }
       }
     }
 

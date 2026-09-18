@@ -105,18 +105,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399629",
+        "url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-u18-soke-voleybol-spor-kulubu-u18-c399629",
+        "host_name": "Aydın Büyükşehir Belediyespor U18",
+        "guest_name": "Söke Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-22",
+        "vb_time": "20:30",
+        "vb_hall": "SKS Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-22",
+          "vb_time": "20:30",
+          "vb_hall": "SKS Spor Salonu",
+          "details": null
         }
       }
     },
@@ -139,18 +146,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399630",
+        "url": "https://women.volleybox.net/tr/aydn-ds-spor-kulubu-u18-efeler-altn-smac-spor-kulubu-u18-c399630",
+        "host_name": "Aydın DSİ Spor Kulübü U18",
+        "guest_name": "Efeler Altın Smaç Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-25",
+        "vb_time": "20:30",
+        "vb_hall": "SKS Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": "20:30",
+          "vb_hall": "SKS Spor Salonu",
+          "details": null
         }
       }
     },
@@ -173,18 +187,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399631",
+        "url": "https://women.volleybox.net/tr/soke-voleybol-spor-kulubu-u18-aydn-ds-spor-kulubu-u18-c399631",
+        "host_name": "Söke Voleybol Spor Kulübü U18",
+        "guest_name": "Aydın DSİ Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-28",
+        "vb_time": "19:00",
+        "vb_hall": "Söke TAYEM Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-28",
+          "vb_time": "19:00",
+          "vb_hall": "Söke TAYEM Spor Salonu",
+          "details": null
         }
       }
     },
@@ -207,18 +228,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399632",
+        "url": "https://women.volleybox.net/tr/aydn-genclik-ve-spor-l-mudurlugu-spor-kulubu-u18-aydn-buyuksehir-belediyespor-u18-c399632",
+        "host_name": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
+        "guest_name": "Aydın Büyükşehir Belediyespor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-30",
+        "vb_time": "19:00",
+        "vb_hall": "SKS Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-30",
+          "vb_time": "19:00",
+          "vb_hall": "SKS Spor Salonu",
+          "details": null
         }
       }
     },
@@ -241,18 +269,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399633",
+        "url": "https://women.volleybox.net/tr/soke-voleybol-spor-kulubu-u18-aydn-genclik-ve-spor-l-mudurlugu-spor-kulubu-u18-c399633",
+        "host_name": "Söke Voleybol Spor Kulübü U18",
+        "guest_name": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-05",
+        "vb_time": "20:30",
+        "vb_hall": "Söke TAYEM Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "20:30",
+          "vb_hall": "Söke TAYEM Spor Salonu",
+          "details": null
         }
       }
     },
@@ -275,22 +310,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399634",
+        "url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-u18-efeler-altn-smac-spor-kulubu-u18-c399634",
+        "host_name": "Aydın Büyükşehir Belediyespor U18",
+        "guest_name": "Efeler Altın Smaç Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "19:00",
+        "vb_hall": "SKS Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "19:00",
+          "vb_hall": "SKS Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T09:46:48.877081"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-09-18T11:48:05.085624"
 }

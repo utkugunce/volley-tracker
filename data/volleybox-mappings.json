@@ -7257,23 +7257,6 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_1763559889aE6qD.png"
     },
     {
-      "internal_name": "MERSİN İHTİSAS SK",
-      "internal_category": "Genç Kızlar Süper Lig",
-      "city": "Mersin",
-      "city_slug": "mersin",
-      "matched_as": "Mersin İhtisas Spor Kulübü U18",
-      "volleybox_url": "https://women.volleybox.net/mersin-htisas-spor-kulubu-u18-t41944",
-      "age_category": "U18",
-      "confidence": "verified",
-      "aliases": [
-        "Mersin İhtisas",
-        "Mersin İhtisas SK"
-      ],
-      "verified_at": "2026-09-17",
-      "local_logo": "/logos/mersin-htisas-spor-kulubu-u18-t41944.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1759134646IxP4F.png"
-    },
-    {
       "internal_name": "MEV TOROS SK",
       "internal_category": "Genç Kızlar Süper Lig",
       "city": "Mersin",
@@ -7376,6 +7359,212 @@
       "verified_at": "2026-09-17",
       "local_logo": "/logos/yenisehir-genclerbirligi-spor-kulubu-u18-t41949.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1759134821u2lkK.png"
+    },
+    {
+      "internal_name": "TARSUS GELECEK SK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Mersin",
+      "city_slug": "mersin",
+      "matched_as": "Tarsus Gelecek Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tarsus-gelecek-spor-kulubu-u18-t54551",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Tarsus Gelecek",
+        "Tarsus Gelecek SK",
+        "Tarsus Gelecek Spor Kulübü"
+      ],
+      "synonyms": [
+        "Tarsus Gelecek Spor Kulübü U18",
+        "Tarsus Gelecek U18"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "ALSANCAK SK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Mersin",
+      "city_slug": "mersin",
+      "matched_as": "Alsancak Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/alsancak-spor-kulubu-u18-t54553",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Alsancak",
+        "Alsancak SK",
+        "Alsancak Spor Kulübü"
+      ],
+      "synonyms": [
+        "Alsancak Spor Kulübü U18",
+        "Alsancak U18"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "MEZİTLİ BELEDİYE SK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Mersin",
+      "city_slug": "mersin",
+      "matched_as": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/mezitli-belediyesi-genclik-ve-spor-kulubu-u18-t54554",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Mezitli Belediye",
+        "Mezitli Belediyesi",
+        "Mezitli Belediye SK",
+        "Mezitli Belediyesi GSK"
+      ],
+      "synonyms": [
+        "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
+        "Mezitli Belediyesi GSK U18",
+        "Mezitli Belediyesi U18"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "MERSİN İHTİSAS SK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Mersin",
+      "city_slug": "mersin",
+      "matched_as": "Mersin İhtisas Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/mersin-htisas-spor-kulubu-u18-t41944",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Mersin İhtisas",
+        "Mersin İhtisas SK",
+        "Mersin İhtisas Spor Kulübü"
+      ],
+      "synonyms": [
+        "Mersin İhtisas Spor Kulübü U18",
+        "Mersin İhtisas U18"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "TOROSLAR BELEDİYE SK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Mersin",
+      "city_slug": "mersin",
+      "matched_as": "Toroslar Belediye Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/toroslar-belediye-spor-kulubu-u18-t54552",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Toroslar Belediye",
+        "Toroslar Belediyespor",
+        "Toroslar Belediye SK"
+      ],
+      "synonyms": [
+        "Toroslar Belediye Spor Kulübü U18",
+        "Toroslar Belediye U18"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "MEV TOROS SK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Mersin",
+      "city_slug": "mersin",
+      "matched_as": "MEV Toros Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/volgem-spor-kulubu-u18-t41948",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "MEV Toros",
+        "Mev Toros",
+        "MEV Toros Spor Kulübü"
+      ],
+      "synonyms": [
+        "MEV Toros Spor Kulübü U18",
+        "MEV Toros U18"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "Altın Manşet Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Yalova",
+      "city_slug": "yalova",
+      "matched_as": "Altın Manşet Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/altn-manset-spor-kulubu-u16-t54555",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Altın Manşet",
+        "Altın Manşet SK",
+        "Altn Manset Spor Kulubu",
+        "Altn Manset SK"
+      ],
+      "synonyms": [
+        "Altın Manşet Spor Kulübü U16",
+        "Altın Manşet U16"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "Elit Akademi Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Yalova",
+      "city_slug": "yalova",
+      "matched_as": "Yalova Elit Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/yalova-elit-akademi-spor-kulubu-u16-t54556",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Elit Akademi",
+        "Elit Akademi SK",
+        "Yalova Elit Akademi",
+        "Yalova Elit Akademi SK"
+      ],
+      "synonyms": [
+        "Yalova Elit Akademi Spor Kulübü U16",
+        "Yalova Elit Akademi U16"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "Gençlik Ve Spor İl Müdürlü Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Yalova",
+      "city_slug": "yalova",
+      "matched_as": "Yalova Gençlik Ve Spor İl Müdürlü SK U16",
+      "volleybox_url": "https://women.volleybox.net/yalova-genclik-ve-spor-l-mudurlugu-sk-u16-t54557",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Yalova Gençlik İl Müdürlüğü",
+        "Gençlik Ve Spor İl Müdürlüğü",
+        "Yalova Gençlik Ve Spor İl Müdürlüğü",
+        "Gençlik Ve Spor İl Müdürlü",
+        "GSİM Yalova"
+      ],
+      "synonyms": [
+        "Yalova Gençlik Ve Spor İl Müdürlü SK U16",
+        "Yalova Gençlik SK U16"
+      ],
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "Koru Akademi Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Yalova",
+      "city_slug": "yalova",
+      "matched_as": "Koru Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/koru-akademi-spor-kulubu-u16-t42091",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Koru Akademi",
+        "Koru Akademi SK",
+        "Yalova Koru Akademi"
+      ],
+      "synonyms": [
+        "Koru Akademi Spor Kulübü U16",
+        "Koru Akademi U16"
+      ],
+      "verified_at": "2026-09-18"
     }
   ],
   "leagues": [
@@ -7449,22 +7638,22 @@
       "internal_name": "Genç Kızlar Süper Lig",
       "city": "Ankara",
       "city_slug": "ankara",
-      "matched_as": "Ankara Süper Ligi U18",
-      "volleybox_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2025-26-o42444",
+      "matched_as": "Ankara Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021",
       "age_category": "U18",
       "confidence": "verified",
-      "season": "2025/26",
+      "season": "2026/27",
       "verified_at": "2026-09-14"
     },
     {
       "internal_name": "Yıldız Kızlar Süper Lig",
       "city": "Ankara",
       "city_slug": "ankara",
-      "matched_as": "Ankara Süper Ligi U16",
-      "volleybox_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2025-26-o42445",
+      "matched_as": "Ankara Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-ankara-super-ligi-u16-2026-27-o51022",
       "age_category": "U16",
       "confidence": "verified",
-      "season": "2025/26",
+      "season": "2026/27",
       "verified_at": "2026-09-14"
     },
     {
@@ -7647,11 +7836,11 @@
       "internal_name": "Genç Kızlar Süper Lig",
       "city": "Mersin",
       "city_slug": "mersin",
-      "matched_as": "Mersin Süper Ligi U18",
-      "volleybox_url": "https://women.volleybox.net/women-mersin-super-ligi-u18-2025-26-o42637",
+      "matched_as": "Mersin Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-mersin-super-ligi-u18-2026-27-o51071",
       "age_category": "U18",
       "confidence": "verified",
-      "season": "2025/26",
+      "season": "2026/27",
       "verified_at": "2026-09-14"
     },
     {
@@ -7809,7 +7998,7 @@
       "verified_at": "2026-09-14"
     },
     {
-      "internal_name": "Genç Kızlar 1. Ligi",
+      "internal_name": "Genç Kızlar 1. Lig 1. Bölge",
       "city": "İstanbul",
       "city_slug": "istanbul",
       "matched_as": "İstanbul 1. Lig 1. Bölge U18 2026/27",
@@ -7834,11 +8023,11 @@
       "internal_name": "Genç Kızlar 1. Ligi",
       "city": "Ankara",
       "city_slug": "ankara",
-      "matched_as": "Ankara 1. Lig U18 2025/26",
-      "volleybox_url": "https://women.volleybox.net/women-ankara-1-lig-u18-2025-26-o42460",
+      "matched_as": "Ankara Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-ankara-super-ligi-u18-2026-27-o51021",
       "age_category": "U18",
       "confidence": "verified",
-      "season": "2025/26",
+      "season": "2026/27",
       "verified_at": "2026-09-17"
     },
     {
@@ -7906,6 +8095,39 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-09-17"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Yalova",
+      "city_slug": "yalova",
+      "matched_as": "Yalova Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-yalova-super-ligi-u16-2026-27-o51072",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Aydın",
+      "city_slug": "aydin",
+      "matched_as": "Aydın Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-aydn-ligi-u18-2026-27-o50895",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-18"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "İstanbul 1. Lig 1. Bölge U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-stanbul-1-ligi-u18-2026-27-o50866",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-18"
     }
   ]
 }

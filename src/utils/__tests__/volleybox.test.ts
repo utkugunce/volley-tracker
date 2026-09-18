@@ -122,6 +122,37 @@ describe("volleybox utility", () => {
       expect(atakent).toBeDefined();
       expect(atakent?.volleybox_url).toContain("yalova-atakent-spor-kulubu-u18-t41959");
 
+      const altinManset = getVolleyboxMapping("Altın Manşet Spor Kulübü", "Yıldız Kızlar Süper Lig", undefined, "Yalova");
+      expect(altinManset).toBeDefined();
+      expect(altinManset?.volleybox_url).toContain("altn-manset-spor-kulubu-u16-t54555");
+      expect(altinManset?.age_category).toBe("U16");
+
+      const elitAkademi = getVolleyboxMapping("Elit Akademi Spor Kulübü", "Yıldız Kızlar Süper Lig", undefined, "Yalova");
+      expect(elitAkademi).toBeDefined();
+      expect(elitAkademi?.volleybox_url).toContain("yalova-elit-akademi-spor-kulubu-u16-t54556");
+      expect(elitAkademi?.age_category).toBe("U16");
+
+      const yalovaGenclik = getVolleyboxMapping("Gençlik Ve Spor İl Müdürlü Spor Kulübü", "Yıldız Kızlar Süper Lig", undefined, "Yalova");
+      expect(yalovaGenclik).toBeDefined();
+      expect(yalovaGenclik?.volleybox_url).toContain("yalova-genclik-ve-spor-l-mudurlugu-sk-u16-t54557");
+      expect(yalovaGenclik?.age_category).toBe("U16");
+
+      // Mersin
+      const tarsusGelecek = getVolleyboxMapping("TARSUS GELECEK SK", "Genç Kızlar Süper Lig", undefined, "Mersin");
+      expect(tarsusGelecek).toBeDefined();
+      expect(tarsusGelecek?.volleybox_url).toContain("tarsus-gelecek-spor-kulubu-u18-t54551");
+      expect(tarsusGelecek?.age_category).toBe("U18");
+
+      const alsancakSk = getVolleyboxMapping("ALSANCAK SK", "Genç Kızlar Süper Lig", undefined, "Mersin");
+      expect(alsancakSk).toBeDefined();
+      expect(alsancakSk?.volleybox_url).toContain("alsancak-spor-kulubu-u18-t54553");
+      expect(alsancakSk?.age_category).toBe("U18");
+
+      const mezitliBld = getVolleyboxMapping("MEZİTLİ BELEDİYE SK", "Genç Kızlar Süper Lig", undefined, "Mersin");
+      expect(mezitliBld).toBeDefined();
+      expect(mezitliBld?.volleybox_url).toContain("mezitli-belediyesi-genclik-ve-spor-kulubu-u18-t54554");
+      expect(mezitliBld?.age_category).toBe("U18");
+
       // Düzce
       const duzce1907 = getVolleyboxMapping("Düzce 1907 Spor Kulübü", "Genç Kızlar Süper Lig");
       expect(duzce1907).toBeDefined();
@@ -262,16 +293,48 @@ describe("volleybox utility", () => {
       expect(getVolleyboxLeagueMapping("Bilinmeyen Bölgesel Turnuva")).toBeUndefined();
     });
 
-    it("never returns past season (2025/26) tournament links for current season tracker (e.g. Ankara)", () => {
-      // Ankara in volleybox-mappings.json has only 2025/26 tournament entries, which must NOT be returned for 2026/27
-      const ankaraU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Ankara");
-      expect(ankaraU18).toBeUndefined();
+    it("never returns past season (2025/26) tournament links for current season tracker (e.g. Adana)", () => {
+      // Adana in volleybox-mappings.json has only 2025/26 tournament entries, which must NOT be returned for 2026/27
+      const adanaU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Adana");
+      expect(adanaU18).toBeUndefined();
 
-      const ankaraU18Lig1 = getVolleyboxLeagueMapping("Genç Kızlar 1. Ligi", "Ankara");
-      expect(ankaraU18Lig1).toBeUndefined();
+      const adanaU16 = getVolleyboxLeagueMapping("Yıldız Kızlar Süper Lig", "Adana");
+      expect(adanaU16).toBeUndefined();
+    });
+
+    it("returns correct tournament mapping for Ankara U18 and U16 2026/27", () => {
+      const ankaraU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Ankara");
+      expect(ankaraU18).toBeDefined();
+      expect(ankaraU18?.volleybox_url).toContain("women-ankara-super-ligi-u18-2026-27-o51021");
+      expect(ankaraU18?.age_category).toBe("U18");
 
       const ankaraU16 = getVolleyboxLeagueMapping("Yıldız Kızlar Süper Lig", "Ankara");
-      expect(ankaraU16).toBeUndefined();
+      expect(ankaraU16).toBeDefined();
+      expect(ankaraU16?.volleybox_url).toContain("women-ankara-super-ligi-u16-2026-27-o51022");
+      expect(ankaraU16?.age_category).toBe("U16");
+    });
+
+    it("returns correct tournament mapping for Aydın U18 2026/27", () => {
+      const aydinU18 = getVolleyboxLeagueMapping("Genç Kızlar 1. Ligi", "Aydın");
+      expect(aydinU18).toBeDefined();
+      expect(aydinU18?.volleybox_url).toContain("women-aydn-ligi-u18-2026-27-o50895");
+      expect(aydinU18?.age_category).toBe("U18");
+    });
+
+    it("returns correct tournament mapping for Mersin U18 and Yalova U16 2026/27", () => {
+      const mersinU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Mersin");
+      expect(mersinU18).toBeDefined();
+      expect(mersinU18?.volleybox_url).toContain("women-mersin-super-ligi-u18-2026-27-o51071");
+
+      const yalovaU16 = getVolleyboxLeagueMapping("Yıldız Kızlar Süper Lig", "Yalova");
+      expect(yalovaU16).toBeDefined();
+      expect(yalovaU16?.volleybox_url).toContain("women-yalova-super-ligi-u16-2026-27-o51072");
+    });
+
+    it("returns correct tournament mapping for Istanbul 1. Lig regions", () => {
+      const istRegion5 = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 5. Bölge", "İstanbul");
+      expect(istRegion5).toBeDefined();
+      expect(istRegion5?.volleybox_url).toContain("women-stanbul-ligi-5-bolge-u18-2026-27-o50894");
     });
 
     it("returns correct tournament mapping for Eskişehir Genç Kızlar Süper Lig (U18)", () => {
