@@ -85,6 +85,11 @@ def main():
 
     try:
         data = fetch_istanbul_live_data()
+        try:
+            from scripts.scrape_all_provinces import apply_volleybox_names
+            apply_volleybox_names(data.get("matches", []), data.get("standings", {}), "İstanbul")
+        except Exception as vb_ex:
+            logger.warning(f"Volleybox isim eşleme atlandı: {vb_ex}")
         save_fixtures_to_json(data, output_path)
         
         # Volleybox maç senkronizasyonunu çalıştır

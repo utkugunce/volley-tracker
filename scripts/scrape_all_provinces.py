@@ -104,6 +104,85 @@ def render_progress(current: int, total: int, plate: str, city_name: str, status
         print(line)
         sys.stdout.flush()
 
+def build_volleybox_name_resolver():
+    mappings_file = DATA_DIR / "volleybox-mappings.json"
+    if not mappings_file.exists():
+        return lambda name, cat="", city="": name
+    try:
+        with open(mappings_file, "r", encoding="utf-8") as f:
+            d = json.load(f)
+        mappings = d.get("mappings", [])
+    except Exception:
+        return lambda name, cat="", city="": name
+
+    def norm(s):
+        if not s: return ""
+        return s.strip().lower().replace("ı", "i").replace("ğ", "g").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ç", "c")
+
+    def extract_age(cat):
+        c = norm(cat)
+        if "genc" in c or "u18" in c: return "u18"
+        if "yildiz" in c or "u16" in c: return "u16"
+        return ""
+
+    lookup_exact = {}
+    lookup_age_city = {}
+    lookup_cat = {}
+    lookup_age = {}
+    lookup_city = {}
+    lookup_general = {}
+
+    for m in mappings:
+        matched_as = m.get("matched_as")
+        if not matched_as:
+            continue
+        names = [m.get("internal_name"), *(m.get("aliases") or []), *(m.get("synonyms") or [])]
+        city = norm(m.get("city") or m.get("city_slug"))
+        cat = norm(m.get("internal_category"))
+        age = extract_age(m.get("internal_category") or m.get("age_category"))
+
+        for n in names:
+            if not n: continue
+            nn = norm(n)
+            if city and cat: lookup_exact[(nn, cat, city)] = matched_as
+            if city and age: lookup_age_city[(nn, age, city)] = matched_as
+            if cat: lookup_cat[(nn, cat)] = matched_as
+            if age: lookup_age[(nn, age)] = matched_as
+            if city: lookup_city[(nn, city)] = matched_as
+            if nn not in lookup_general: lookup_general[nn] = matched_as
+
+    def resolve(team_name, category="", city=""):
+        if not team_name: return team_name
+        nn = norm(team_name)
+        c = norm(category)
+        ct = norm(city)
+        age = extract_age(category)
+
+        if ct and c and (nn, c, ct) in lookup_exact: return lookup_exact[(nn, c, ct)]
+        if ct and age and (nn, age, ct) in lookup_age_city: return lookup_age_city[(nn, age, ct)]
+        if c and (nn, c) in lookup_cat: return lookup_cat[(nn, c)]
+        if age and (nn, age) in lookup_age: return lookup_age[(nn, age)]
+        if ct and (nn, ct) in lookup_city: return lookup_city[(nn, ct)]
+        if nn in lookup_general: return lookup_general[nn]
+        return team_name
+
+    return resolve
+
+RESOLVE_TEAM_NAME = build_volleybox_name_resolver()
+
+def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
+    """Tüm maç ve puan durumu takımlarını Volleybox'taki resmi adıyla günceller."""
+    for m in matches:
+        cat = m.get("category", "")
+        m_city = m.get("city") or city_name
+        m["home_team"] = RESOLVE_TEAM_NAME(m.get("home_team", ""), cat, m_city)
+        m["away_team"] = RESOLVE_TEAM_NAME(m.get("away_team", ""), cat, m_city)
+    for grp, table in standings.items():
+        if isinstance(table, list):
+            for row in table:
+                if isinstance(row, dict) and "team" in row:
+                    row["team"] = RESOLVE_TEAM_NAME(row["team"], grp, city_name)
+
 def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
     """Mevcut dosyadaki volleybox verilerini yeni taranan mac listesine aktar.
     Boylece scraper calistiktan sonra synced volleybox bilgileri kaybolmaz."""
@@ -144,7 +223,7 @@ def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
             merged_count += 1
 
     if merged_count > 0:
-        print(f"  \u2728 {merged_count} macin mevcut Volleybox verisi korundu.")
+        print(f"  ✨ {merged_count} macin mevcut Volleybox verisi korundu.")
     return new_matches
 
 def scrape_single_city(city_info):
@@ -210,6 +289,7 @@ def scrape_single_city(city_info):
             ist_data = fetch_istanbul_live_data()
             matches = ist_data.get("matches", [])
             standings = ist_data.get("standings", {})
+            apply_volleybox_names(matches, standings, "İstanbul")
             
             # Mevcut volleybox verilerini koru
             city_file = CITIES_DIR / "istanbul.json"
@@ -419,6 +499,7 @@ def scrape_single_city(city_info):
 
     data_file_rel = None
     if city_matches or city_standings:
+        apply_volleybox_names(city_matches, city_standings, name)
         city_payload = {
             "updated_at": datetime.now().isoformat(),
             "city": name,

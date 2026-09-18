@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T13:42:07.995535",
+  "updated_at": "2026-09-18T16:40:49.585176",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -28,7 +28,7 @@
     "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
       {
         "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
+        "team": "Düzce 1907 Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
+        "team": "Düzce Atletik Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Ultraslan Spor Kulubü",
+        "team": "Düzce UltrAslan Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -61,7 +61,7 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
+        "team": "Düzce Voleybol SK - A U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -74,7 +74,7 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü",
+        "team": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -85,7 +85,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Ay Spor Kulübü",
+        "team": "Düzce Ay Spor U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -96,7 +96,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Can Sportif Spor Kulübü",
+        "team": "Düzce Can Sportif Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -107,7 +107,7 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Ultraslan Spor Kulubü",
+        "team": "Düzce UltrAslan Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -120,7 +120,7 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü",
+        "team": "Düzce 1907 Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -131,7 +131,7 @@
       },
       {
         "rank": 2,
-        "team": "Düzce Atletik Spor Kulubü",
+        "team": "Düzce Atletik Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -142,7 +142,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Gençlik Ve Spor Kulübü",
+        "team": "Düzce Gençlik Spor U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -153,7 +153,7 @@
       },
       {
         "rank": 4,
-        "team": "Düzce Voleybol Spor Kulübü",
+        "team": "Düzce Voleybol SK - A U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -166,5 +166,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-18T13:42:51.525121"
+  "volleybox_sync_updated_at": "2026-09-18T16:42:58.788411"
 }
