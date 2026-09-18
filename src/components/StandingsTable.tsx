@@ -1,10 +1,116 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { StandingItem } from "@/types/fixture";
-import { Trophy, HelpCircle } from "lucide-react";
+import { Trophy, HelpCircle, MapPin, Layers } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
+
+const TURKISH_CITIES = [
+  "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
+  "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale",
+  "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum",
+  "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin",
+  "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli",
+  "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş",
+  "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas",
+  "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat",
+  "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak",
+  "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
+];
+
+interface ParsedStandingContext {
+  rawKey: string;
+  city: string;
+  ageGroup: string; // "Genç (U18)", "Yıldız (U16)", "Küçük (U14)", "Genel"
+  leagueTier: string; // "Süper Lig", "1. Lig", etc.
+  leagueFullName: string; // e.g. "Genç Kızlar Süper Lig"
+  rawGroup: string; // e.g. "Genç Kızlar Süper Lig 1. Grup" or "A Grubu"
+  displayGroup: string; // e.g. "1. Grup" or "A Grubu"
+}
+
+function parseStandingKey(rawKey: string, defaultCity?: string): ParsedStandingContext {
+  let rem = rawKey.trim();
+  let city = defaultCity && defaultCity !== "Tüm İller" ? defaultCity : "";
+
+  // 1. İl Tespiti
+  for (const c of TURKISH_CITIES) {
+    const prefix = `${c} - `;
+    if (rem.startsWith(prefix)) {
+      city = c;
+      rem = rem.slice(prefix.length).trim();
+      break;
+    }
+  }
+
+  // 2. Yaş Grubu / Kategori Tespiti (Genç U18, Yıldız U16, vb.)
+  const lowerRem = rem.toLocaleLowerCase("tr-TR");
+  let ageGroup = "Genel";
+  if (lowerRem.includes("genç") || lowerRem.includes("genc") || lowerRem.includes("u18")) {
+    ageGroup = "Genç (U18)";
+  } else if (lowerRem.includes("yıldız") || lowerRem.includes("yildiz") || lowerRem.includes("u16")) {
+    ageGroup = "Yıldız (U16)";
+  } else if (lowerRem.includes("küçük") || lowerRem.includes("kucuk") || lowerRem.includes("u14")) {
+    ageGroup = "Küçük (U14)";
+  } else if (lowerRem.includes("midi") || lowerRem.includes("u12")) {
+    ageGroup = "Midi (U12)";
+  }
+
+  // 3. Lig ve Grup Ayrımı
+  const dashIdx = rem.indexOf(" - ");
+  let leaguePart = "";
+  let groupPart = "";
+
+  if (dashIdx !== -1) {
+    leaguePart = rem.slice(0, dashIdx).trim();
+    groupPart = rem.slice(dashIdx + 3).trim();
+  } else {
+    leaguePart = rem.trim();
+    groupPart = "Genel";
+  }
+
+  // 4. Lig Seviyesi (Süper Lig / 1. Lig)
+  let leagueTier = "Süper Lig";
+  if (/1\.\s*Lig/i.test(leaguePart)) {
+    leagueTier = "1. Lig";
+  } else if (/Süper\s*Lig/i.test(leaguePart)) {
+    leagueTier = "Süper Lig";
+  } else {
+    leagueTier = leaguePart;
+  }
+
+  // 5. Temiz Grup Adı
+  let displayGroup = groupPart;
+  const stripPrefixRegex = /^(?:(?:Genç|Yıldız)\s+Kızlar\s+(?:Süper\s+Lig[iıİI]?|1\.\s*Lig[iıİI]?)|(?:Süper\s+Lig|1\.\s*Lig)\s+(?:Genç|Yıldız)\s+Kız(?:lar)?)\s*[-–—:\s]*/i;
+  let cleaned = displayGroup.replace(stripPrefixRegex, "").trim();
+
+  if (/^[A-Z]$/i.test(cleaned)) {
+    cleaned = `${cleaned.toUpperCase()} Grubu`;
+  } else if (/\b[A-Z]\s+Gr\b/i.test(cleaned)) {
+    cleaned = cleaned.replace(/\b([A-Z])\s+Gr\b/i, "$1 Grubu");
+  } else if (/^\d+\.?(?:\s*Grup)?$/i.test(cleaned)) {
+    const numMatch = cleaned.match(/^(\d+)/);
+    if (numMatch) {
+      cleaned = `${numMatch[1]}. Grup`;
+    }
+  }
+
+  if (!cleaned || cleaned.toLocaleLowerCase("tr-TR") === leaguePart.toLocaleLowerCase("tr-TR")) {
+    cleaned = groupPart === "Genel" ? "Genel" : groupPart;
+  } else {
+    displayGroup = cleaned;
+  }
+
+  return {
+    rawKey,
+    city,
+    ageGroup,
+    leagueTier,
+    leagueFullName: leaguePart || rem,
+    rawGroup: groupPart,
+    displayGroup,
+  };
+}
 
 interface StandingsTableProps {
   standingsData: {
@@ -16,68 +122,134 @@ interface StandingsTableProps {
 export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city }) => {
   const allKeys = Object.keys(standingsData);
 
-  // Benzersiz Ligleri ve Grupları tespit et
-  const leagues = useMemo(() => {
+  // Tüm anahtarları ayrıştır
+  const parsedContexts = useMemo(() => {
+    return allKeys.map((k) => parseStandingKey(k, city));
+  }, [allKeys, city]);
+
+  // 1. İller Listesi (Eğer birden fazla il varsa İL seçici gösterilir)
+  const distinctCities = useMemo(() => {
     const set = new Set<string>();
-    allKeys.forEach((k) => {
-      const idx = k.indexOf(" - ");
-      const leagueName = idx !== -1 ? k.slice(0, idx).trim() : k.trim();
-      if (leagueName) set.add(leagueName);
+    parsedContexts.forEach((ctx) => {
+      if (ctx.city) set.add(ctx.city);
     });
     return Array.from(set).sort((a, b) => a.localeCompare(b, "tr", { numeric: true }));
-  }, [allKeys]);
+  }, [parsedContexts]);
 
-  const [selectedLeague, setSelectedLeague] = useState<string>(
-    leagues[0] || "Genç Kızlar Süper Lig"
-  );
+  const [selectedCity, setSelectedCity] = useState<string>(() => {
+    if (city && distinctCities.includes(city)) return city;
+    return distinctCities[0] || "";
+  });
 
-  // Seçili lige ait gruplar
-  const groupsInLeague = useMemo(() => {
-    const groups: string[] = [];
-    allKeys.forEach((k) => {
-      if (k.startsWith(selectedLeague + " - ")) {
-        const groupPart = k.slice(selectedLeague.length + 3).trim();
-        if (groupPart && !groups.includes(groupPart)) {
-          groups.push(groupPart);
-        }
-      } else if (k === selectedLeague) {
-        if (!groups.includes("Genel")) {
-          groups.push("Genel");
-        }
-      }
+  useEffect(() => {
+    if (city && distinctCities.includes(city)) {
+      setSelectedCity(city);
+    } else if (distinctCities.length > 0 && !distinctCities.includes(selectedCity)) {
+      setSelectedCity(distinctCities[0]);
+    }
+  }, [city, distinctCities, selectedCity]);
+
+  // Seçili ile ait bağlamlar (Eğer il seçici yoksa hepsi)
+  const cityFilteredContexts = useMemo(() => {
+    if (distinctCities.length <= 1 || !selectedCity) {
+      return parsedContexts;
+    }
+    return parsedContexts.filter((ctx) => ctx.city === selectedCity);
+  }, [parsedContexts, distinctCities, selectedCity]);
+
+  // 2. Yaş Grubu / Kategori Seçimi (Genç U18, Yıldız U16)
+  const availableAgeGroups = useMemo(() => {
+    const set = new Set<string>();
+    cityFilteredContexts.forEach((ctx) => {
+      set.add(ctx.ageGroup);
     });
-    const sorted = groups.sort((a, b) => a.localeCompare(b, "tr", { numeric: true }));
-    return sorted.length > 0 ? sorted : ["A Grubu"];
-  }, [allKeys, selectedLeague]);
+    const order = ["Genç (U18)", "Yıldız (U16)", "Küçük (U14)", "Genel"];
+    return Array.from(set).sort((a, b) => {
+      const idxA = order.indexOf(a);
+      const idxB = order.indexOf(b);
+      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      if (idxA !== -1) return -1;
+      if (idxB !== -1) return 1;
+      return a.localeCompare(b, "tr");
+    });
+  }, [cityFilteredContexts]);
 
-  const [selectedGroup, setSelectedGroup] = useState<string>(
-    groupsInLeague[0] || "A Grubu"
+  const [selectedAgeGroup, setSelectedAgeGroup] = useState<string>(
+    availableAgeGroups[0] || "Genç (U18)"
   );
 
-  // Lig değiştiğinde varsayılan grubu güncelle
-  React.useEffect(() => {
-    if (groupsInLeague.length > 0 && !groupsInLeague.includes(selectedGroup)) {
-      setSelectedGroup(groupsInLeague[0]);
+  useEffect(() => {
+    if (availableAgeGroups.length > 0 && !availableAgeGroups.includes(selectedAgeGroup)) {
+      setSelectedAgeGroup(availableAgeGroups[0]);
     }
-  }, [selectedLeague, groupsInLeague, selectedGroup]);
+  }, [availableAgeGroups, selectedAgeGroup]);
 
-  // Seçili lig ve gruba ait kesin anahtarı bul (sessiz fallback yok!)
-  const currentKey = useMemo(() => {
-    if (selectedGroup === "Genel" && standingsData[selectedLeague]) {
-      return selectedLeague;
-    }
-    const combinedKey = `${selectedLeague} - ${selectedGroup}`;
-    if (standingsData[combinedKey]) {
-      return combinedKey;
-    }
-    if (standingsData[selectedGroup]) {
-      return selectedGroup;
-    }
-    return combinedKey;
-  }, [selectedLeague, selectedGroup, standingsData]);
+  // Seçili yaş grubuna ait bağlamlar
+  const ageFilteredContexts = useMemo(() => {
+    return cityFilteredContexts.filter((ctx) => ctx.ageGroup === selectedAgeGroup);
+  }, [cityFilteredContexts, selectedAgeGroup]);
 
-  // Sadece seçili lig ve gruba ait veri alınır, alakasız grupların verisi asla gösterilmez
-  const items = standingsData[currentKey] || [];
+  // 3. Lig Kademesi (Süper Lig / 1. Lig) - Birden fazla varsa lig seçici gösterilir
+  const availableLeagues = useMemo(() => {
+    const set = new Set<string>();
+    ageFilteredContexts.forEach((ctx) => {
+      set.add(ctx.leagueTier);
+    });
+    return Array.from(set).sort((a, b) => a.localeCompare(b, "tr"));
+  }, [ageFilteredContexts]);
+
+  const [selectedLeagueTier, setSelectedLeagueTier] = useState<string>(
+    availableLeagues[0] || "Süper Lig"
+  );
+
+  useEffect(() => {
+    if (availableLeagues.length > 0 && !availableLeagues.includes(selectedLeagueTier)) {
+      setSelectedLeagueTier(availableLeagues[0]);
+    }
+  }, [availableLeagues, selectedLeagueTier]);
+
+  // 4. Grup Seçimi
+  const availableGroups = useMemo(() => {
+    const filtered = ageFilteredContexts.filter((ctx) => {
+      if (availableLeagues.length > 1) {
+        return ctx.leagueTier === selectedLeagueTier;
+      }
+      return true;
+    });
+
+    // Grupları sırala: Sayısal (1. Grup, 2. Grup) veya Alfabetik (A Grubu, B Grubu)
+    return filtered.sort((a, b) => {
+      const numA = parseInt(a.displayGroup);
+      const numB = parseInt(b.displayGroup);
+      if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
+      return a.displayGroup.localeCompare(b.displayGroup, "tr", { numeric: true });
+    });
+  }, [ageFilteredContexts, availableLeagues, selectedLeagueTier]);
+
+  const [selectedGroupKey, setSelectedGroupKey] = useState<string>(
+    availableGroups[0]?.rawKey || allKeys[0] || ""
+  );
+
+  useEffect(() => {
+    if (availableGroups.length > 0) {
+      const exists = availableGroups.some((g) => g.rawKey === selectedGroupKey);
+      if (!exists) {
+        setSelectedGroupKey(availableGroups[0].rawKey);
+      }
+    }
+  }, [availableGroups, selectedGroupKey]);
+
+  // Seçili bağlam ve kesin puan tablosu verisi (sessiz fallback yok!)
+  const activeContext = useMemo(() => {
+    return parsedContexts.find((c) => c.rawKey === selectedGroupKey) || parsedContexts[0];
+  }, [parsedContexts, selectedGroupKey]);
+
+  const items = useMemo(() => {
+    if (selectedGroupKey && standingsData[selectedGroupKey]) {
+      return standingsData[selectedGroupKey];
+    }
+    return [];
+  }, [selectedGroupKey, standingsData]);
 
   if (allKeys.length === 0) {
     return (
@@ -97,52 +269,109 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
   return (
     <div className="space-y-4">
-      {/* 1. Lig & Grup Seçici Barı */}
-      <div className="bg-slate-800/60 p-3 rounded-xl border border-slate-700/80 shadow-md no-print space-y-2.5">
-        {/* Lig Seçimi (Genç Kızlar / Yıldız Kızlar) */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-bold text-slate-400 uppercase min-w-[50px]">
-            Lig:
-          </span>
-          {leagues.map((lg) => {
-            const isActive = selectedLeague === lg;
-            return (
-              <button
-                key={lg}
-                onClick={() => setSelectedLeague(lg)}
-                title={lg}
-                className={`px-3.5 py-1.5 rounded text-xs font-bold transition-all ${
-                  isActive
-                    ? "bg-primary text-white shadow-sm"
-                    : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
-                }`}
-              >
-                {lg}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Grup Seçimi */}
-        {groupsInLeague.length > 1 && (
-          <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-700/50">
-            <span className="text-xs font-bold text-slate-400 uppercase min-w-[50px]">
-              Grup:
+      {/* Kategori, Lig ve Grup Seçici Barı */}
+      <div className="bg-slate-800/70 p-3.5 rounded-xl border border-slate-700/80 shadow-md no-print space-y-2.5">
+        
+        {/* 1. İL SEÇİMİ (Yalnızca "Tüm İller" modunda veya birden fazla il varsa gösterilir) */}
+        {distinctCities.length > 1 && (
+          <div className="flex flex-wrap items-center gap-1.5 pb-2.5 border-b border-slate-700/50">
+            <span className="text-[11px] font-bold text-slate-400 uppercase min-w-[65px] flex items-center gap-1">
+              <MapPin size={13} className="text-rose-400" />
+              İL:
             </span>
-            {groupsInLeague.map((grp) => {
-              const isActive = selectedGroup === grp;
+            {distinctCities.map((cityName) => {
+              const isActive = selectedCity === cityName;
               return (
                 <button
-                  key={grp}
-                  onClick={() => setSelectedGroup(grp)}
-                  title={grp}
-                  className={`px-3 py-1 rounded text-xs font-semibold transition-all max-w-[240px] truncate sm:max-w-none ${
+                  key={cityName}
+                  onClick={() => setSelectedCity(cityName)}
+                  title={cityName}
+                  className={`px-3 py-1 rounded text-xs font-bold transition-all ${
                     isActive
-                      ? "bg-primary text-white shadow-sm font-bold"
+                      ? "bg-primary text-white shadow-sm ring-1 ring-primary/40"
+                      : "bg-slate-700/60 text-slate-300 hover:bg-slate-700 hover:text-white"
+                  }`}
+                >
+                  {cityName}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {/* 2. KATEGORİ / YAŞ GRUBU SEÇİMİ (Genç / Yıldız vb.) */}
+        {availableAgeGroups.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-[11px] font-bold text-slate-400 uppercase min-w-[65px] flex items-center gap-1">
+              <Layers size={13} className="text-amber-400" />
+              Kategori:
+            </span>
+            {availableAgeGroups.map((age) => {
+              const isActive = selectedAgeGroup === age;
+              return (
+                <button
+                  key={age}
+                  onClick={() => setSelectedAgeGroup(age)}
+                  title={age}
+                  className={`px-3.5 py-1.5 rounded-md text-xs font-bold transition-all flex items-center gap-1.5 ${
+                    isActive
+                      ? "bg-primary text-white shadow-md ring-2 ring-primary/50"
+                      : "bg-slate-700/70 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-600/40"
+                  }`}
+                >
+                  <span>{age}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {/* 3. LİG SEÇİMİ (Yalnızca o kategoride birden çok lig varsa, örn: Süper Lig vs 1. Lig) */}
+        {availableLeagues.length > 1 && (
+          <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-700/50">
+            <span className="text-[11px] font-bold text-slate-400 uppercase min-w-[65px]">
+              Lig:
+            </span>
+            {availableLeagues.map((lg) => {
+              const isActive = selectedLeagueTier === lg;
+              return (
+                <button
+                  key={lg}
+                  onClick={() => setSelectedLeagueTier(lg)}
+                  title={lg}
+                  className={`px-3 py-1 rounded text-xs font-semibold transition-all ${
+                    isActive
+                      ? "bg-indigo-600 text-white shadow-sm font-bold"
+                      : "bg-slate-700/50 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-600/40"
+                  }`}
+                >
+                  {lg}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {/* 4. GRUP SEÇİMİ */}
+        {availableGroups.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-700/50">
+            <span className="text-[11px] font-bold text-slate-400 uppercase min-w-[65px]">
+              Grup:
+            </span>
+            {availableGroups.map((grp) => {
+              const isActive = selectedGroupKey === grp.rawKey;
+              return (
+                <button
+                  key={grp.rawKey}
+                  onClick={() => setSelectedGroupKey(grp.rawKey)}
+                  title={grp.rawGroup || grp.displayGroup}
+                  className={`px-3 py-1 rounded text-xs font-semibold transition-all ${
+                    isActive
+                      ? "bg-primary text-white shadow-sm font-bold ring-1 ring-primary/40"
                       : "bg-slate-700/50 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-600/50"
                   }`}
                 >
-                  {grp}
+                  {grp.displayGroup}
                 </button>
               );
             })}
@@ -150,17 +379,21 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         )}
       </div>
 
-      {/* 2. Puan Durumu Tablosu veya Boş Durum */}
+      {/* Puan Durumu Tablosu veya Boş Durum */}
       <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl shadow-md overflow-hidden">
         {/* Başlık Şeridi */}
         <div className="bg-[#111827] text-white px-4 py-2.5 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Trophy size={16} className="text-amber-400" />
             <h2 className="text-sm font-bold tracking-tight">
-              <LeagueVolleyboxLink league={selectedLeague} city={city}>
-                {selectedLeague.toLocaleUpperCase("tr-TR")}
+              <LeagueVolleyboxLink
+                league={activeContext?.leagueFullName || ""}
+                city={activeContext?.city || city}
+              >
+                {activeContext?.city ? `${activeContext.city.toLocaleUpperCase("tr-TR")} • ` : ""}
+                {(activeContext?.leagueFullName || "").toLocaleUpperCase("tr-TR")}
               </LeagueVolleyboxLink>
-              {selectedGroup ? ` • ${selectedGroup.toLocaleUpperCase("tr-TR")}` : ""} - PUAN DURUMU
+              {activeContext?.rawGroup ? ` • ${activeContext.rawGroup.toLocaleUpperCase("tr-TR")}` : ""} - PUAN DURUMU
             </h2>
           </div>
           <span className="text-xs text-slate-400 font-mono">
@@ -178,118 +411,122 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
               Bu grup için puan durumu verisi henüz mevcut değil.
             </h3>
             <p className="text-xs text-slate-400 max-w-sm mx-auto">
-              Seçtiğiniz {selectedLeague} - {selectedGroup} kategorisine ait resmi puan cetveli TVF il temsilciliği tarafından sisteme girildiğinde burada görüntülenecektir.
+              Seçtiğiniz {activeContext?.leagueFullName} - {activeContext?.displayGroup} kategorisine ait resmi puan cetveli TVF il temsilciliği tarafından sisteme girildiğinde burada görüntülenecektir.
             </p>
           </div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
-            <thead>
-              <tr className="bg-slate-900/60 text-slate-400 font-bold border-b border-slate-700 uppercase text-[11px] tracking-wider">
-                <th className="py-2.5 px-3 text-center w-12">#</th>
-                <th className="py-2.5 px-4">Takım</th>
-                <th className="py-2.5 px-2 text-center w-12" title="Oynanan Maç">O</th>
-                <th className="py-2.5 px-2 text-center w-12" title="Galibiyet">G</th>
-                <th className="py-2.5 px-2 text-center w-12" title="Mağlubiyet">M</th>
-                <th className="py-2.5 px-3 text-center w-24" title="Aldığı Set - Verdiği Set">Setler</th>
-                <th className="py-2.5 px-2 text-center w-16 hidden md:table-cell" title="Set Oranı">Set Oran</th>
-                <th className="py-2.5 px-3 text-center w-28 hidden lg:table-cell" title="Aldığı Sayı - Verdiği Sayı">Sayılar</th>
-                <th className="py-2.5 px-3 text-center w-16 bg-slate-800/60 font-black text-white" title="Puan">P</th>
-                <th className="py-2.5 px-4 text-center w-36 hidden sm:table-cell" title="Son 5 Maç Formu">Form</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-700/50">
-              {items.map((row) => {
-                const isTop4 = row.rank <= 4;
+              <thead>
+                <tr className="bg-slate-900/60 text-slate-400 font-bold border-b border-slate-700 uppercase text-[11px] tracking-wider">
+                  <th className="py-2.5 px-3 text-center w-12">#</th>
+                  <th className="py-2.5 px-4">Takım</th>
+                  <th className="py-2.5 px-2 text-center w-12" title="Oynanan Maç">O</th>
+                  <th className="py-2.5 px-2 text-center w-12" title="Galibiyet">G</th>
+                  <th className="py-2.5 px-2 text-center w-12" title="Mağlubiyet">M</th>
+                  <th className="py-2.5 px-3 text-center w-24" title="Aldığı Set - Verdiği Set">Setler</th>
+                  <th className="py-2.5 px-2 text-center w-16 hidden md:table-cell" title="Set Oranı">Set Oran</th>
+                  <th className="py-2.5 px-3 text-center w-28 hidden lg:table-cell" title="Aldığı Sayı - Verdiği Sayı">Sayılar</th>
+                  <th className="py-2.5 px-3 text-center w-16 bg-slate-800/60 font-black text-white" title="Puan">P</th>
+                  <th className="py-2.5 px-4 text-center w-36 hidden sm:table-cell" title="Son 5 Maç Formu">Form</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-700/50">
+                {items.map((row) => {
+                  const isTop4 = row.rank <= 4;
 
-                return (
-                  <tr
-                    key={row.rank}
-                    className={`hover:bg-slate-800/50 transition-colors ${
-                      row.rank % 2 === 1 ? "bg-transparent" : "bg-slate-900/20"
-                    }`}
-                  >
-                    {/* Sıra & Final Etabı Çizgisi */}
-                    <td className="py-3 px-3 text-center font-bold text-xs relative">
-                      <span
-                        className={`absolute left-0 top-1 bottom-1 w-1 rounded-r ${
-                          isTop4 ? "bg-emerald-500" : "bg-transparent"
-                        }`}
-                      />
-                      <span className={isTop4 ? "text-emerald-400 font-black" : "text-slate-500"}>
-                        {row.rank}
-                      </span>
-                    </td>
+                  return (
+                    <tr
+                      key={row.rank}
+                      className={`hover:bg-slate-800/50 transition-colors ${
+                        row.rank % 2 === 1 ? "bg-transparent" : "bg-slate-900/20"
+                      }`}
+                    >
+                      {/* Sıra & Final Etabı Çizgisi */}
+                      <td className="py-3 px-3 text-center font-bold text-xs relative">
+                        <span
+                          className={`absolute left-0 top-1 bottom-1 w-1 rounded-r ${
+                            isTop4 ? "bg-emerald-500" : "bg-transparent"
+                          }`}
+                        />
+                        <span className={isTop4 ? "text-emerald-400 font-black" : "text-slate-500"}>
+                          {row.rank}
+                        </span>
+                      </td>
 
-                    {/* Takım Adı */}
-                    <td className="py-3 px-4 font-bold text-white whitespace-nowrap text-sm">
-                      <TeamVolleyboxLink teamName={row.team} category={selectedLeague} city={city} />
-                    </td>
+                      {/* Takım Adı */}
+                      <td className="py-3 px-4 font-bold text-white whitespace-nowrap text-sm">
+                        <TeamVolleyboxLink
+                          teamName={row.team}
+                          category={activeContext?.leagueFullName}
+                          city={activeContext?.city || city}
+                        />
+                      </td>
 
-                    {/* O */}
-                    <td className="py-3 px-2 text-center text-slate-300 font-medium">
-                      {row.played}
-                    </td>
+                      {/* O */}
+                      <td className="py-3 px-2 text-center text-slate-300 font-medium">
+                        {row.played}
+                      </td>
 
-                    {/* G */}
-                    <td className="py-3 px-2 text-center text-emerald-400 font-bold">
-                      {row.won}
-                    </td>
+                      {/* G */}
+                      <td className="py-3 px-2 text-center text-emerald-400 font-bold">
+                        {row.won}
+                      </td>
 
-                    {/* M */}
-                    <td className="py-3 px-2 text-center text-rose-400 font-medium">
-                      {row.lost}
-                    </td>
+                      {/* M */}
+                      <td className="py-3 px-2 text-center text-rose-400 font-medium">
+                        {row.lost}
+                      </td>
 
-                    {/* Setler (AS - VS) */}
-                    <td className="py-3 px-3 text-center font-mono text-slate-200 whitespace-nowrap">
-                      <span className="font-bold">{row.sets_won}</span>
-                      <span className="text-slate-500 mx-1">:</span>
-                      <span className="text-slate-400">{row.sets_lost}</span>
-                    </td>
+                      {/* Setler (AS - VS) */}
+                      <td className="py-3 px-3 text-center font-mono text-slate-200 whitespace-nowrap">
+                        <span className="font-bold">{row.sets_won}</span>
+                        <span className="text-slate-500 mx-1">:</span>
+                        <span className="text-slate-400">{row.sets_lost}</span>
+                      </td>
 
-                    {/* Set Oranı */}
-                    <td className="py-3 px-2 text-center font-mono text-slate-400 hidden md:table-cell">
-                      {row.set_ratio}
-                    </td>
+                      {/* Set Oranı */}
+                      <td className="py-3 px-2 text-center font-mono text-slate-400 hidden md:table-cell">
+                        {row.set_ratio}
+                      </td>
 
-                    {/* Sayılar (AP - VP) */}
-                    <td className="py-3 px-3 text-center font-mono text-slate-400 text-[11px] hidden lg:table-cell whitespace-nowrap">
-                      {row.points_won}:{row.points_lost}
-                    </td>
+                      {/* Sayılar (AP - VP) */}
+                      <td className="py-3 px-3 text-center font-mono text-slate-400 text-[11px] hidden lg:table-cell whitespace-nowrap">
+                        {row.points_won}:{row.points_lost}
+                      </td>
 
-                    {/* Puan (P) */}
-                    <td className="py-3 px-3 text-center bg-slate-800/60 font-mono font-black text-sm text-white">
-                      {row.points}
-                    </td>
+                      {/* Puan (P) */}
+                      <td className="py-3 px-3 text-center bg-slate-800/60 font-mono font-black text-sm text-white">
+                        {row.points}
+                      </td>
 
-                    {/* Form (Flashscore İmzası: Yeşil G ve Kırmızı M rozetleri) */}
-                    <td className="py-3 px-4 text-center hidden sm:table-cell">
-                      <div className="flex items-center justify-center gap-1">
-                        {row.form.map((f, fIdx) => (
-                          <span
-                            key={fIdx}
-                            className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white leading-none ${
-                              f === "W"
-                                ? "bg-emerald-500 shadow-sm"
-                                : "bg-red-500 shadow-sm"
-                            }`}
-                            title={f === "W" ? "Galibiyet (3 veya 2 puan)" : "Mağlubiyet"}
-                          >
-                            {f === "W" ? "G" : "M"}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                      {/* Form */}
+                      <td className="py-3 px-4 text-center hidden sm:table-cell">
+                        <div className="flex items-center justify-center gap-1">
+                          {(row.form || []).map((f, fIdx) => (
+                            <span
+                              key={fIdx}
+                              className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white leading-none ${
+                                f === "W"
+                                  ? "bg-emerald-500 shadow-sm"
+                                  : "bg-red-500 shadow-sm"
+                              }`}
+                              title={f === "W" ? "Galibiyet (3 veya 2 puan)" : "Mağlubiyet"}
+                            >
+                              {f === "W" ? "G" : "M"}
+                            </span>
+                          ))}
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         )}
 
-        {/* Alt Açıklama / Legend (Flashscore Tarzı) */}
+        {/* Alt Açıklama / Legend */}
         <div className="bg-slate-900/60 border-t border-slate-700 px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-400">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1.5">

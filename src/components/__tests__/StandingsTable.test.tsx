@@ -162,5 +162,72 @@ describe('StandingsTable Component', () => {
     expect(leagueLink).toHaveAttribute('href', expect.stringContaining('women-stanbul-super-ligi-u18-2026-27-o50864'));
     expect(leagueLink).toHaveAttribute('target', '_blank');
   });
+
+  it('(g) Genç ve Yıldız yaş grubu seçici butonları grupları ve verileri ayrıştırır', () => {
+    const mixedStandings = {
+      'Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 1. Grup': [mockItemA],
+      'Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 2.Grup': [mockItemB],
+      'Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 1. Grup': [
+        { ...mockItemA, team: 'VakıfBank Yıldız' },
+      ],
+      'Yıldız Kızlar Süper Lig - Yıldız Kızlar Süper Lig 2. Grup': [
+        { ...mockItemB, team: 'Galatasaray Yıldız' },
+      ],
+    };
+
+    render(<StandingsTable standingsData={mixedStandings} city="Ankara" />);
+
+    // Kategori butonları Genç (U18) ve Yıldız (U16) görünmeli
+    const gencCategoryBtn = screen.getByRole('button', { name: /Genç \(U18\)/i });
+    const yildizCategoryBtn = screen.getByRole('button', { name: /Yıldız \(U16\)/i });
+    expect(gencCategoryBtn).toBeInTheDocument();
+    expect(yildizCategoryBtn).toBeInTheDocument();
+
+    // Genç seçiliyken temiz "1. Grup" ve "2. Grup" butonları görünmeli
+    expect(screen.getByRole('button', { name: '1. Grup' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '2. Grup' })).toBeInTheDocument();
+    expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
+    expect(screen.queryByText(/VakıfBank Yıldız/i)).not.toBeInTheDocument();
+
+    // Yıldız (U16) butonuna basıldığında
+    fireEvent.click(yildizCategoryBtn);
+
+    // Yıldız verisi görünmeli, Genç verisi gitmeli
+    expect(screen.getByText(/VakıfBank Yıldız/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Eczacıbaşı/i)).not.toBeInTheDocument();
+
+    // Yıldız 2. Grup butonuna basılınca Galatasaray Yıldız görünmeli
+    const yildizGroup2Btn = screen.getByRole('button', { name: '2. Grup' });
+    fireEvent.click(yildizGroup2Btn);
+    expect(screen.getByText(/Galatasaray Yıldız/i)).toBeInTheDocument();
+  });
+
+  it('(h) Tüm İller modunda birden fazla il varken İL seçici butonları gösterilir ve şehirler arası geçiş yapılır', () => {
+    const multiCityStandings = {
+      'Ankara - Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 1. Grup': [mockItemA],
+      'İstanbul - Genç Kızlar Süper Lig - A Grubu': [
+        { ...mockItemB, team: 'THY İstanbul' },
+      ],
+    };
+
+    render(<StandingsTable standingsData={multiCityStandings} />);
+
+    // İl butonları görünmeli
+    const ankaraBtn = screen.getByRole('button', { name: 'Ankara' });
+    const istanbulBtn = screen.getByRole('button', { name: 'İstanbul' });
+    expect(ankaraBtn).toBeInTheDocument();
+    expect(istanbulBtn).toBeInTheDocument();
+
+    // Başlangıçta Ankara ve Eczacıbaşı aktif
+    expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
+
+    // İstanbul'a tıkla
+    fireEvent.click(istanbulBtn);
+
+    // THY İstanbul görünmeli
+    expect(screen.getByText(/THY İstanbul/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Eczacıbaşı/i)).not.toBeInTheDocument();
+  });
 });
+
 
