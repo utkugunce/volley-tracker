@@ -39,10 +39,10 @@ Bu rapor, `utkugunce/volley-tracker` uygulamasının performans, erişilebilirli
 
 ### B. Dinamik SEO & Metadata (`generateMetadata`)
 - **Ana Sayfa (`/`)**: Seçili şehir ve lig parametrelerine göre otomatik başlık ve açıklama:
-  - Örn: `"İstanbul Genç Kızlar Süper Lig Fikstürü ve Puan Durumu — TVFSCORE"`
+  - Örn: `"İstanbul Genç Kızlar Süper Lig Fikstürü ve Puan Durumu — Altyapı Voleybol"`
   - Açıklama, OpenGraph ve Twitter Card meta etiketleri eksiksiz üretilir.
 - **Takım Sayfaları (`/takim/[slug]`)**:
-  - Örn: `"Zeren Spor Kulübü U18 — 2026/27 Sezon Fikstürü & Puan Durumu | TVFSCORE"`
+  - Örn: `"Zeren Spor Kulübü U18 — 2026/27 Sezon Fikstürü & Puan Durumu | Altyapı Voleybol"`
   - Kulübün şehirleri, ligleri ve takım adı meta etiketlerinde Google ve sosyal medya botlarına tam semantik olarak sunulur.
 
 ### C. Arama Motoru İndeksleme (`robots.txt` & `sitemap.xml`)

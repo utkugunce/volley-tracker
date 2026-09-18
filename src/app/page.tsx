@@ -97,17 +97,17 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<imp
   const city = typeof params?.city === "string" && params.city !== "Tümü" && params.city !== "Tüm İller" ? params.city : undefined;
   const category = typeof params?.category === "string" && params.category !== "Tümü" ? params.category : undefined;
 
-  let title = "TVF Voleybol İl Temsilciliği — Fikstür ve Puan Durumu | TVFSCORE";
+  let title = "TVF Voleybol İl Temsilciliği — Fikstür ve Puan Durumu | Altyapı Voleybol";
   let description = "Türkiye Voleybol Federasyonu 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig haftalık maç bülteni, puan durumu ve fikstür.";
 
   if (city && category) {
-    title = `${city} ${category} Fikstürü ve Puan Durumu — TVFSCORE`;
+    title = `${city} ${category} Fikstürü ve Puan Durumu — Altyapı Voleybol`;
     description = `${city} ili ${category} ligi güncel haftalık maç bülteni, canlı puan durumu, maç sonuçları ve takvimi.`;
   } else if (city) {
-    title = `${city} Voleybol Fikstürü ve Maç Sonuçları — TVFSCORE`;
+    title = `${city} Voleybol Fikstürü ve Maç Sonuçları — Altyapı Voleybol`;
     description = `${city} ili voleybol ligleri güncel maç bülteni, puan durumu ve fikstürü.`;
   } else if (category) {
-    title = `${category} Fikstürü ve Puan Durumu — TVFSCORE`;
+    title = `${category} Fikstürü ve Puan Durumu — Altyapı Voleybol`;
     description = `Türkiye geneli ${category} ligleri maç programı, canlı puan durumu ve sonuçları.`;
   }
 

@@ -1,4 +1,4 @@
-# 🏐 TVFSCORE - TVF İstanbul Voleybol Takip Dashboard'u
+# 🏐 Altyapı Voleybol - TVF Voleybol Takip Platformu
 
 Türkiye Voleybol Federasyonu (TVF) İstanbul yerel liglerindeki **Genç Kızlar Süper Lig** ve **Yıldız Kızlar Süper Lig** maçlarını ve resmi puan cetvellerini takip edebileceğiniz, doğrudan resmi web sitesinden veri çeken modern, hafif ve hızlı bir web uygulaması.
 

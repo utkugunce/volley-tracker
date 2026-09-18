@@ -69,11 +69,11 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/80 gap-2">
         {/* Logo & Brand & İl Seçici */}
         <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
-          <div className="flex items-center gap-1.5 font-mono font-black text-lg tracking-tighter cursor-pointer" onClick={() => onSelectTab("home")}>
+          <div className="flex items-center gap-1.5 font-black text-lg tracking-tight cursor-pointer" onClick={() => onSelectTab("home")}>
             <span className="bg-primary text-white px-2 py-0.5 rounded font-black">
-              TVF
+              Altyapı
             </span>
-            <span className="text-white">SCORE</span>
+            <span className="text-white font-black tracking-tight">Voleybol</span>
           </div>
 
           <div className="h-4 w-px bg-slate-700 hidden sm:block" />

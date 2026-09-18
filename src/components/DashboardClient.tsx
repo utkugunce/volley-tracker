@@ -966,7 +966,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
       <footer className="border-t border-slate-800 bg-[#0b1325] mt-auto py-4 text-center text-xs text-slate-500 no-print">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="font-semibold text-slate-300">
-            TVFSCORE • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
+            Altyapı Voleybol • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
           </p>
           <div className="flex items-center gap-3 text-[11px] text-slate-500">
             <span>Fikstür & Puan Durumu</span>

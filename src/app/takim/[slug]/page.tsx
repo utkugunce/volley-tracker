@@ -23,7 +23,7 @@ export async function generateMetadata({ params, searchParams }: TeamPageProps):
 
   if (!team) {
     return {
-      title: "Takım Bulunamadı — TVFSCORE",
+      title: "Takım Bulunamadı — Altyapı Voleybol",
       description: "Aranan voleybol takımı için henüz fikstür veya puan durumu kaydı bulunamadı.",
     };
   }
@@ -32,7 +32,7 @@ export async function generateMetadata({ params, searchParams }: TeamPageProps):
   const catStr = team.categories.join(", ");
 
   return {
-    title: `${team.teamName} — 2026/27 Sezon Fikstürü & Puan Durumu | TVFSCORE`,
+    title: `${team.teamName} — 2026/27 Sezon Fikstürü & Puan Durumu | Altyapı Voleybol`,
     description: `${team.teamName} (${citiesStr}) voleybol takımı ${catStr} sezon fikstürü, güncel puan durumu, maç sonuçları ve Volleybox profili.`,
     openGraph: {
       title: `${team.teamName} — Sezon Fikstürü ve Puan Durumu`,

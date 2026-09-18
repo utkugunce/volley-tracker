@@ -61,7 +61,7 @@ function generateVEvent(match: Match): string | null {
     `${match.category || "TVF Voleybol Ligi"} - ${match.group || ""}`.trim(),
     match.score && match.score !== "- : -" ? `Skor: ${match.score}` : "",
     match.match_no ? `Maç No: ${match.match_no}` : "",
-    "Kaynak: TVFSCORE (Volley-Tracker)",
+    "Kaynak: Altyapı Voleybol",
   ].filter(Boolean);
 
   const desc = escapeIcsText(descLines.join("\n"));
