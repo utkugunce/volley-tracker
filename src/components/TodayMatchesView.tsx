@@ -334,11 +334,12 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
           <div className={`flex items-center justify-between gap-3 p-1 rounded-xl transition-all ${
             homeWon ? "bg-white/[0.03] border-l-2 border-primary pl-2.5" : ""
           }`}>
-            <div className="flex items-center gap-2 min-w-0 flex-1">
+            <div className="flex items-center gap-2.5 min-w-0 flex-1">
               <TeamVolleyboxLink
                 teamName={m.home_team}
                 category={m.category || m.age_group}
                 city={m.city || (city === "Tüm İller" ? undefined : city)}
+                logoClassName="!w-9 !h-9 sm:!w-10 sm:!h-10 rounded-xl p-1 shadow-md"
                 className={`text-sm transition-colors group-hover:text-white ${
                   homeWon
                     ? "font-black text-white"
@@ -369,11 +370,12 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
           <div className={`flex items-center justify-between gap-3 p-1 rounded-xl transition-all ${
             awayWon ? "bg-white/[0.03] border-l-2 border-primary pl-2.5" : ""
           }`}>
-            <div className="flex items-center gap-2 min-w-0 flex-1">
+            <div className="flex items-center gap-2.5 min-w-0 flex-1">
               <TeamVolleyboxLink
                 teamName={m.away_team}
                 category={m.category || m.age_group}
                 city={m.city || (city === "Tüm İller" ? undefined : city)}
+                logoClassName="!w-9 !h-9 sm:!w-10 sm:!h-10 rounded-xl p-1 shadow-md"
                 className={`text-sm transition-colors group-hover:text-white ${
                   awayWon
                     ? "font-black text-white"

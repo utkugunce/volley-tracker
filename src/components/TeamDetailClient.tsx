@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
+import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 
 interface TeamDetailClientProps {
   team: TeamDetails;
@@ -112,18 +113,18 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
         <section className="bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
             {/* Logo */}
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/10 p-2 border border-slate-700/80 shadow-inner flex items-center justify-center shrink-0">
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-white/95 p-3 border border-slate-700/80 shadow-xl flex items-center justify-center shrink-0">
               {logoSrc ? (
                 <Image
                   src={logoSrc}
                   alt={`${team.teamName} logosu`}
-                  width={96}
-                  height={96}
+                  width={128}
+                  height={128}
                   className="w-full h-full object-contain rounded-xl"
                   unoptimized={logoSrc.startsWith("http")}
                 />
               ) : (
-                <Trophy size={40} className="text-primary/70" />
+                <Trophy size={56} className="text-primary/70" />
               )}
             </div>
 
@@ -349,13 +350,20 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                             }`}
                           >
                             <td className="py-1.5 px-2 text-center font-mono">{row.rank}</td>
-                            <td className="py-1.5 px-2 flex items-center gap-1.5">
-                              <span>{row.team}</span>
-                              {isThisTeam && (
-                                <span className="text-[9px] bg-primary text-white px-1.5 py-0.2 rounded font-semibold">
-                                  Bu Takım
-                                </span>
-                              )}
+                            <td className="py-2 px-2">
+                              <div className="flex items-center gap-1.5">
+                                <TeamVolleyboxLink
+                                  teamName={row.team}
+                                  category={ctx.category}
+                                  city={ctx.city}
+                                  className={isThisTeam ? "font-bold text-white" : "text-slate-300 font-medium"}
+                                />
+                                {isThisTeam && (
+                                  <span className="text-[9px] bg-primary text-white px-1.5 py-0.2 rounded font-semibold shrink-0">
+                                    Bu Takım
+                                  </span>
+                                )}
+                              </div>
                             </td>
                             <td className="py-1.5 px-2 text-center font-mono">{row.played}</td>
                             <td className="py-1.5 px-2 text-center font-mono text-emerald-400">{row.won}</td>
@@ -454,12 +462,17 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
 
                     {/* Maç Eşleşmesi (Home vs Away) */}
                     <div className="flex-1 flex items-center justify-center gap-3 text-sm">
-                      <div className={`flex-1 text-right truncate ${m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
-                        {m.home_team}
+                      <div className={`flex-1 flex justify-end items-center ${m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
+                        <TeamVolleyboxLink
+                          teamName={m.home_team}
+                          category={team.categories[0]}
+                          city={m.city || (team.cities.length === 1 ? team.cities[0] : undefined)}
+                          className="justify-end text-right"
+                        />
                       </div>
 
                       {/* Skor Rozeti */}
-                      <div className="shrink-0 text-center px-3 py-1 rounded-lg bg-slate-900 border border-slate-700">
+                      <div className="shrink-0 text-center px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 shadow-inner">
                         {isFinished ? (
                           <span className={`font-mono font-black text-sm ${isWon ? "text-emerald-400" : isLoss ? "text-rose-400" : "text-white"}`}>
                             {m.home_score} - {m.away_score}
@@ -469,8 +482,13 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                         )}
                       </div>
 
-                      <div className={`flex-1 text-left truncate ${!m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
-                        {m.away_team}
+                      <div className={`flex-1 flex justify-start items-center ${!m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
+                        <TeamVolleyboxLink
+                          teamName={m.away_team}
+                          category={team.categories[0]}
+                          city={m.city || (team.cities.length === 1 ? team.cities[0] : undefined)}
+                          className="justify-start text-left"
+                        />
                       </div>
                     </div>
 

@@ -213,18 +213,18 @@ export const CompareClient: React.FC<CompareClientProps> = ({
               <div className="grid grid-cols-1 sm:grid-cols-[1fr,auto,1fr] items-center gap-6 text-center">
                 {/* 1. Takım */}
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 p-2 border border-slate-700 shadow-inner flex items-center justify-center mb-3">
+                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl bg-white/95 p-2.5 border border-slate-700/80 shadow-md flex items-center justify-center mb-3">
                     {comparison.team1.mapping?.local_logo || comparison.team1.mapping?.logo_url ? (
                       <Image
                         src={comparison.team1.mapping?.local_logo || comparison.team1.mapping?.logo_url || ""}
                         alt={comparison.team1.teamName}
-                        width={64}
-                        height={64}
+                        width={112}
+                        height={112}
                         className="w-full h-full object-contain rounded-xl"
                         unoptimized
                       />
                     ) : (
-                      <Trophy size={32} className="text-primary/70" />
+                      <Trophy size={44} className="text-primary/70" />
                     )}
                   </div>
                   <Link
@@ -254,18 +254,18 @@ export const CompareClient: React.FC<CompareClientProps> = ({
 
                 {/* 2. Takım */}
                 <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 p-2 border border-slate-700 shadow-inner flex items-center justify-center mb-3">
+                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-2xl bg-white/95 p-2.5 border border-slate-700/80 shadow-md flex items-center justify-center mb-3">
                     {comparison.team2.mapping?.local_logo || comparison.team2.mapping?.logo_url ? (
                       <Image
                         src={comparison.team2.mapping?.local_logo || comparison.team2.mapping?.logo_url || ""}
                         alt={comparison.team2.teamName}
-                        width={64}
-                        height={64}
+                        width={112}
+                        height={112}
                         className="w-full h-full object-contain rounded-xl"
                         unoptimized
                       />
                     ) : (
-                      <Trophy size={32} className="text-indigo-400/70" />
+                      <Trophy size={44} className="text-indigo-400/70" />
                     )}
                   </div>
                   <Link

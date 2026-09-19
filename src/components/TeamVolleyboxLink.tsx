@@ -44,9 +44,9 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
     <Image
       src={logoSrc}
       alt={`${displayName} logosu`}
-      width={16}
-      height={16}
-      className={`w-4 h-4 object-contain rounded-full bg-white p-0.5 border border-slate-700 shadow-2xs shrink-0 inline-block align-middle mr-1.5 transition-transform group-hover:scale-110 ${logoClassName}`}
+      width={36}
+      height={36}
+      className={`w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-lg bg-white/95 p-1 border border-slate-700/80 shadow-xs shrink-0 inline-block align-middle mr-2.5 transition-transform duration-200 group-hover:scale-110 ${logoClassName}`}
       unoptimized={logoSrc.startsWith("http")}
       onError={() => {
         setImgFailed(true);
