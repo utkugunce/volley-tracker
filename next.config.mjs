@@ -42,6 +42,15 @@ const securityHeaders = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Vercel build süresini önemli ölçüde hızlandıran optimizasyonlar:
+  eslint: {
+    // Derleme esnasında ESLint kontrolünü atlar (ESLint yerel olarak 'npm run lint' ile çalıştırılabilir)
+    ignoreDuringBuilds: true,
+  },
+  experimental: {
+    // Lucide ikonlarının tüm paketi yerine yalnızca kullanılan ikonların import edilmesini sağlayarak derleme süresini ve bundle boyutunu düşürür
+    optimizePackageImports: ["lucide-react"],
+  },
   images: {
     remotePatterns: [
       {

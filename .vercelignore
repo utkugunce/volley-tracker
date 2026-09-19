@@ -1,0 +1,13 @@
+# Vercel Deployment Ignore
+# Python scraping scripts and dependencies (only run locally)
+scripts/
+*.py
+requirements.txt
+
+# Documentation & Scratch files
+docs/
+
+# Tests (vitest & testing-library only needed locally or in CI)
+src/**/__tests__/
+vitest.config.ts
+vitest.setup.ts
