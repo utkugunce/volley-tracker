@@ -107,12 +107,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const fetchData = async () => {
     setLoading(true);
     setError(null);
+    const startTime = Date.now();
     try {
       const res = await fetch(`/api/fixtures?city=${currentCitySlug}`);
       if (!res.ok) {
         throw new Error("Bülten verisi yüklenemedi.");
       }
       const json: FixturesData = await res.json();
+      const elapsed = Date.now() - startTime;
+      if (elapsed < 400) {
+        await new Promise((resolve) => setTimeout(resolve, 400 - elapsed));
+      }
       setData(json);
     } catch (err: any) {
       setError(err.message || "Bilinmeyen bir hata oluştu.");

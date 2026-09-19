@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -49,6 +49,20 @@ export const Header: React.FC<HeaderProps> = ({
         minute: "2-digit",
       })
     : "--:--";
+
+  const [justUpdated, setJustUpdated] = useState(false);
+  const prevLoadingRef = useRef(isLoading);
+
+  useEffect(() => {
+    if (prevLoadingRef.current && !isLoading) {
+      setJustUpdated(true);
+      const timer = setTimeout(() => {
+        setJustUpdated(false);
+      }, 2500);
+      return () => clearTimeout(timer);
+    }
+    prevLoadingRef.current = isLoading;
+  }, [isLoading]);
 
   return (
     <header className="bg-[#080c14]/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80">
@@ -121,14 +135,44 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onRefresh}
             disabled={isLoading}
-            className="flex items-center gap-1.5 text-xs bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white px-2.5 py-1.5 rounded-lg transition-all active:scale-95 disabled:opacity-50 border border-slate-700/60 hover:border-slate-600"
-            title="Verileri Yenile"
+            className={`flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg transition-all active:scale-95 disabled:opacity-75 border cursor-pointer ${
+              isLoading
+                ? "bg-amber-950/40 text-amber-300 border-amber-500/60 shadow-xs"
+                : justUpdated
+                ? "bg-emerald-950/90 text-emerald-300 border-emerald-500/80 shadow-glow-emerald font-bold"
+                : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border-slate-700/60 hover:border-slate-600"
+            }`}
+            title="Fikstür ve canlı sonuçları yenile"
+            aria-label="Verileri Yenile"
           >
-            <RefreshCw size={13} className={isLoading ? "animate-spin text-primary" : "text-slate-400 group-hover:text-white"} />
-            <span className="hidden sm:inline font-mono text-[11px] text-slate-300">{formattedTime}</span>
+            {isLoading ? (
+              <>
+                <RefreshCw size={13} className="animate-spin text-amber-400" />
+                <span className="font-bold text-[11px] text-amber-300">Yenileniyor...</span>
+              </>
+            ) : justUpdated ? (
+              <>
+                <Check size={13} className="text-emerald-400 stroke-[3] animate-in zoom-in-75 duration-200" />
+                <span className="font-bold text-[11px] text-emerald-300">Güncellendi!</span>
+              </>
+            ) : (
+              <>
+                <RefreshCw size={13} className="text-slate-400 group-hover:text-white" />
+                <span className="hidden sm:inline font-medium text-[11px] text-slate-300">Yenile</span>
+                <span className="font-mono text-[11px] text-slate-400">({formattedTime})</span>
+              </>
+            )}
           </button>
         </div>
       </div>
+
+      {/* Canlı Yenileme Başarılı Toast Bildirimi */}
+      {justUpdated && (
+        <div className="fixed top-14 right-4 z-50 bg-emerald-950/95 border border-emerald-500/80 text-emerald-200 px-3.5 py-2 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2 animate-in fade-in slide-in-from-top-2 duration-300 text-xs font-semibold">
+          <Check size={15} className="text-emerald-400 stroke-[3]" />
+          <span>Fikstür ve sonuçlar güncellendi ({formattedTime})</span>
+        </div>
+      )}
 
       {/* 2. ANA SEKMELER: SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU */}
       <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-xs font-bold overflow-x-auto no-scrollbar">
