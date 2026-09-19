@@ -74,4 +74,33 @@ describe("teamData utility", () => {
     expect(izmirSlugTeam?.city).toBe("İzmir");
     expect(izmirSlugTeam?.mapping?.matched_as).toBe("Vakıfbank İzmir U16");
   });
+
+  it("finds sister club teams across U18 and U16 categories (e.g. Eryaman Gelişim)", () => {
+    const eryamanU18 = getTeamDetailsBySlug("eryaman-gelisim-sk-u18", "ankara");
+    expect(eryamanU18).not.toBeNull();
+    expect(eryamanU18?.clubTeams).toBeDefined();
+    expect(eryamanU18?.clubTeams?.length).toBeGreaterThanOrEqual(2);
+
+    // Should include both U18 and U16
+    const hasU18 = eryamanU18?.clubTeams?.some((t) => t.teamName.includes("U18"));
+    const hasU16 = eryamanU18?.clubTeams?.some((t) => t.teamName.includes("U16"));
+    expect(hasU18).toBe(true);
+    expect(hasU16).toBe(true);
+
+    // The current team should be marked as isCurrent: true
+    const currentTeam = eryamanU18?.clubTeams?.find((t) => t.isCurrent);
+    expect(currentTeam).toBeDefined();
+    expect(currentTeam?.teamName).toContain("U18");
+  });
+
+  it("finds sister club teams with B team variations (e.g. Başkent Arma Spor)", () => {
+    const armaTeam = getTeamDetailsBySlug("baskent-arma-spor-b", "ankara");
+    expect(armaTeam).not.toBeNull();
+    expect(armaTeam?.clubTeams).toBeDefined();
+    expect(armaTeam?.clubTeams?.length).toBeGreaterThanOrEqual(2);
+
+    // Should contain B Takımı
+    const hasBTeam = armaTeam?.clubTeams?.some((t) => t.teamBranch?.includes("B") || t.teamName.includes("B"));
+    expect(hasBTeam).toBe(true);
+  });
 });

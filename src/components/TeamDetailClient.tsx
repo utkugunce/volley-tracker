@@ -17,6 +17,7 @@ import {
   Sparkles,
   Download,
   Swords,
+  Layers,
 } from "lucide-react";
 import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
@@ -158,6 +159,64 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                   <span>Volleybox Eşleşmesi:</span>
                   <strong className="text-slate-200">{team.mapping.matched_as}</strong>
                 </p>
+              )}
+
+              {/* KULÜP TAKIMLARI (U18, U16, B, C vb.) */}
+              {team.clubTeams && team.clubTeams.length > 1 && (
+                <div className="mt-4 pt-3.5 border-t border-slate-800/80 space-y-2">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300">
+                    <Layers size={14} className="text-primary" />
+                    <span>Kulübün Diğer Takımları & Yaş Grupları ({team.clubTeams.length}):</span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    {team.clubTeams.map((ct) =>
+                      ct.isCurrent ? (
+                        <div
+                          key={ct.slug + ct.city}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/40"
+                          title="Şu an bu takımı görüntülüyorsunuz"
+                        >
+                          <span>{ct.teamName}</span>
+                          {ct.ageCategory && (
+                            <span className="bg-black/30 text-white text-[10px] px-1.5 py-0.2 rounded-md font-mono font-bold">
+                              {ct.ageCategory}
+                            </span>
+                          )}
+                          {ct.teamBranch && (
+                            <span className="bg-white/20 text-white text-[10px] px-1.5 py-0.2 rounded-md font-bold">
+                              {ct.teamBranch}
+                            </span>
+                          )}
+                          <span className="text-[10px] bg-white/20 px-1 rounded text-white font-medium">Mevcut</span>
+                        </div>
+                      ) : (
+                        <Link
+                          key={ct.slug + ct.city}
+                          href={ct.path}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold glass-panel text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all shadow-xs active:scale-95 cursor-pointer"
+                          title={`${ct.teamName} detay sayfasını aç`}
+                        >
+                          <span>{ct.teamName}</span>
+                          {ct.ageCategory && (
+                            <span className="bg-sky-500/20 text-sky-300 border border-sky-500/40 text-[10px] px-1.5 py-0.2 rounded-md font-mono font-bold">
+                              {ct.ageCategory}
+                            </span>
+                          )}
+                          {ct.teamBranch && (
+                            <span className="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] px-1.5 py-0.2 rounded-md font-bold">
+                              {ct.teamBranch}
+                            </span>
+                          )}
+                          {ct.city !== team.city && (
+                            <span className="text-[10px] text-slate-400 font-normal">
+                              ({ct.city})
+                            </span>
+                          )}
+                        </Link>
+                      )
+                    )}
+                  </div>
+                </div>
               )}
 
               {team.otherCities && team.otherCities.length > 0 && (
