@@ -85,15 +85,15 @@ body {
 @layer utilities {
   .glass-panel {
     background: rgba(15, 23, 42, 0.72);
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .glass-card {
     background: rgba(30, 41, 59, 0.55);
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.07);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -118,11 +118,13 @@ body {
   }
 
   .no-scrollbar {
-    scrollbar-width: none;
     -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
+    width: 0;
+    height: 0;
   }
 }
 
