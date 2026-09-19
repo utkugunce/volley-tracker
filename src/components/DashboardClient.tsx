@@ -11,6 +11,9 @@ import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { NotificationBanner } from "@/components/NotificationBanner";
+import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
+import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
+import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History } from "lucide-react";
 import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
@@ -55,6 +58,32 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   // Favoriler (Flashscore Yıldız İmzası - LocalStorage ile kaydedilir)
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
+
+  // Premium Özellikler: Maç Detay Çekmecesi & Spotlight Arama
+  const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Ctrl+K / Cmd+K ile hızlı arama açma
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // Tüm benzersiz takım isimleri (Spotlight Arama ve Kulübüm widget'ı için)
+  const allTeamNames = useMemo(() => {
+    const set = new Set<string>();
+    (data?.matches || []).forEach((m) => {
+      if (m.home_team) set.add(m.home_team);
+      if (m.away_team) set.add(m.away_team);
+    });
+    return Array.from(set).sort((a, b) => a.localeCompare(b, "tr"));
+  }, [data?.matches]);
 
   useEffect(() => {
     try {
@@ -499,6 +528,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         onSelectTab={setActiveMainTab}
         onRefresh={fetchData}
         isLoading={loading}
+        onOpenSearch={() => setIsSearchOpen(true)}
       />
 
       {/* 2. Üst İl Sekmeleri (CityTabBar: Tüm İller, İstanbul, İzmir, Yalova, Niğde vb.) */}
@@ -509,7 +539,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         totalMatchesAcrossAll={totalMatchesAcrossAll}
       />
 
-      <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4 space-y-4">
+        {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
+        <PrimaryTeamWidget
+          matches={data?.matches || []}
+          city={data?.city}
+          onSelectMatch={setSelectedMatch}
+          availableTeams={allTeamNames}
+        />
+
         {/* Hata Durumu */}
         {error && (
           <div className="p-3 rounded-xl bg-rose-950/60 border border-rose-800 text-rose-300 flex items-center gap-2 mb-4 text-xs font-semibold shadow-md">
@@ -600,6 +638,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     onToggleFavorite={toggleFavorite}
                     city={sec.city || data?.city}
                     showCityBadge={isAllCities}
+                    onSelectMatch={setSelectedMatch}
                   />
                 ))}
               </div>
@@ -703,6 +742,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                 city={data?.city}
                 favorites={favorites}
                 onToggleFavorite={toggleFavorite}
+                onSelectMatch={setSelectedMatch}
               />
             )}
             <TodayMatchesView
@@ -715,6 +755,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
               favorites={favorites}
               onToggleFavorite={toggleFavorite}
               onNavigateToFullFixtures={() => setActiveMainTab("fixtures")}
+              onSelectMatch={setSelectedMatch}
             />
           </div>
         ) : activeMainTab === "fixtures" ? (
@@ -764,6 +805,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
                     onToggleFavorite={toggleFavorite}
                     city={sec.city || data?.city}
                     showCityBadge={isAllCities}
+                    onSelectMatch={setSelectedMatch}
                   />
                 ))}
               </div>
@@ -881,6 +923,28 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         }}
         favoriteCount={favorites.length}
         todayMatchesCount={todayMatchesCount}
+      />
+
+      {/* 5. Maç Detay Çekmecesi (Match Center Drawer) */}
+      <MatchCenterDrawer
+        match={selectedMatch}
+        onClose={() => setSelectedMatch(null)}
+        city={data?.city}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
+      />
+
+      {/* 6. Spotlight Hızlı Arama Modalı (Cmd + K) */}
+      <SpotlightSearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        teams={allTeamNames}
+        halls={data?.filters?.halls || []}
+        cities={citiesList}
+        categories={data?.filters?.categories || []}
+        onSelectCity={handleSelectCity}
+        onSelectCategory={setSelectedCategory}
+        onSelectHall={setSelectedHall}
       />
     </div>
   );

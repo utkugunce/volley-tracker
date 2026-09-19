@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { isMatchPassed } from "@/utils/calendar";
@@ -18,6 +18,7 @@ interface FixtureTableProps {
   onToggleFavorite?: (id: string) => void;
   city?: string;
   showCityBadge?: boolean;
+  onSelectMatch?: (match: Match) => void;
 }
 
 export const FixtureTable: React.FC<FixtureTableProps> = ({
@@ -28,6 +29,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   onToggleFavorite,
   city = "İstanbul",
   showCityBadge = false,
+  onSelectMatch,
 }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -176,7 +178,10 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               return (
                 <tr
                   key={match.id}
+                  onClick={() => onSelectMatch?.(match)}
                   className={`transition-colors duration-150 ${
+                    onSelectMatch ? "cursor-pointer" : ""
+                  } ${
                     hasDiff
                       ? "bg-amber-950/30 border-l-4 border-l-amber-500 hover:bg-amber-950/50"
                       : isFav
@@ -429,6 +434,19 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                             <Copy size={12} />
                           )}
                         </button>
+                        {onSelectMatch && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onSelectMatch(match);
+                            }}
+                            className="p-1 rounded hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+                            title="Maç Merkezi & Setler"
+                            aria-label="Maç Detayı"
+                          >
+                            <ChevronRight size={13} />
+                          </button>
+                        )}
                       </div>
                     </td>
                 </tr>
@@ -651,6 +669,16 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     <span className="text-[9px] text-slate-500">VB: Girilmedi</span>
                   )}
                 </div>
+
+                {onSelectMatch && (
+                  <button
+                    onClick={() => onSelectMatch(match)}
+                    className="w-full py-2 px-3 rounded-b-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white text-[11px] font-bold border-t border-slate-800/80 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                  >
+                    <span>Maç Merkezi & Setler</span>
+                    <ChevronRight size={13} className="text-red-400" />
+                  </button>
+                )}
               </div>
             );
           })}

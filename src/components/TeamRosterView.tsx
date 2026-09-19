@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useMemo } from "react";
-import { ExternalLink, Shield } from "lucide-react";
+import React, { useMemo, useState } from "react";
+import { ExternalLink, Shield, LayoutGrid, List, Ruler, Calendar, Users } from "lucide-react";
 import { TeamRosterRecord, RosterPlayer, TeamRosterSeason } from "@/types/roster";
 import { Player } from "@/utils/teamData";
+import { VolleyballCourtView } from "./VolleyballCourtView";
 
 interface TeamRosterViewProps {
   teamName: string;
@@ -88,6 +89,21 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
     return currentSeason?.staff || [];
   }, [currentSeason]);
 
+  const [viewMode, setViewMode] = useState<"table" | "court">("table");
+
+  const heightStats = useMemo(() => {
+    const valid = players.filter((p) => typeof p.height_cm === "number" && p.height_cm > 0);
+    if (valid.length === 0) return null;
+    const avg = valid.reduce((acc, p) => acc + (p.height_cm || 0), 0) / valid.length;
+    return Math.round(avg);
+  }, [players]);
+
+  const ageStats = useMemo(() => {
+    const valid = players.filter((p) => typeof p.age === "number" && p.age > 0);
+    if (valid.length === 0) return null;
+    const avg = valid.reduce((acc, p) => acc + (p.age || 0), 0) / valid.length;
+    return avg.toFixed(1);
+  }, [players]);
 
   return (
     <div className="w-full rounded-2xl bg-[#080f24] border border-[#172547] p-4 sm:p-6 text-slate-100 shadow-xl space-y-4">
@@ -127,9 +143,71 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
         )}
       </div>
 
+      {/* 2. KADRO KPI İSTATİSTİKLERİ */}
+      <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-1">
+        <div className="bg-[#0c1630] border border-[#1b2b52] rounded-xl p-2.5 sm:p-3 text-center">
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+            Toplam Kadro
+          </span>
+          <span className="text-base sm:text-lg font-black text-white font-mono mt-0.5 block">
+            {players.length} <span className="text-xs text-slate-400 font-sans font-normal">Oyuncu</span>
+          </span>
+        </div>
 
-      {/* 3. OYUNCULAR BÖLÜMÜ */}
-      <div className="space-y-2">
+        <div className="bg-[#0c1630] border border-[#1b2b52] rounded-xl p-2.5 sm:p-3 text-center">
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+            Boy Ortalaması
+          </span>
+          <span className="text-base sm:text-lg font-black text-white font-mono mt-0.5 block">
+            {heightStats ? `${heightStats} cm` : "-"}
+          </span>
+        </div>
+
+        <div className="bg-[#0c1630] border border-[#1b2b52] rounded-xl p-2.5 sm:p-3 text-center">
+          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+            Yaş Ortalaması
+          </span>
+          <span className="text-base sm:text-lg font-black text-white font-mono mt-0.5 block">
+            {ageStats ? `${ageStats} Yaş` : "-"}
+          </span>
+        </div>
+      </div>
+
+      {/* 3. GÖRÜNÜM DEĞİŞTİRİCİ (LİSTE VS SAHA DİZİLİŞİ) */}
+      <div className="flex items-center justify-between pt-1 border-t border-[#1b2a4d]">
+        <span className="text-xs font-bold text-slate-300">Görünüm:</span>
+        <div className="flex items-center rounded-xl bg-slate-900/90 p-0.5 border border-slate-800">
+          <button
+            onClick={() => setViewMode("table")}
+            className={`px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+              viewMode === "table"
+                ? "bg-red-600 text-white shadow-xs"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            <List size={13} />
+            <span>Liste</span>
+          </button>
+          <button
+            onClick={() => setViewMode("court")}
+            className={`px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
+              viewMode === "court"
+                ? "bg-red-600 text-white shadow-xs"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            <LayoutGrid size={13} />
+            <span>Saha Dizilişi</span>
+          </button>
+        </div>
+      </div>
+
+      {/* 4. SAHA DİZİLİŞİ MODU */}
+      {viewMode === "court" ? (
+        <VolleyballCourtView players={players} teamName={teamName} />
+      ) : (
+        /* 5. TABLO LİSTE MODU */
+        <div className="space-y-2">
         <div className="flex items-center justify-between pt-2">
           <h3 className="text-xs sm:text-sm font-bold text-slate-200 tracking-wide">
             Oyuncular
@@ -197,6 +275,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
           </div>
         )}
       </div>
+      )}
 
       {/* 4. TEKNİK KADRO BÖLÜMÜ */}
       <div className="space-y-2 pt-2">

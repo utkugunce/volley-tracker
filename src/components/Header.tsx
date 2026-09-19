@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -24,6 +24,7 @@ interface HeaderProps {
   onSelectTab: (tab: "results" | "home" | "fixtures" | "standings") => void;
   onRefresh: () => void;
   isLoading: boolean;
+  onOpenSearch?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -42,6 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
   onSelectTab,
   onRefresh,
   isLoading,
+  onOpenSearch,
 }) => {
   const formattedTime = updatedAt
     ? new Date(updatedAt).toLocaleTimeString("tr-TR", {
@@ -89,8 +91,24 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Sağ Taraf: Favoriler, Yazdır, Canlı Yenile */}
+        {/* Sağ Taraf: Arama, Favoriler, Yazdır, Canlı Yenile */}
         <div className="flex items-center gap-2">
+          {/* Spotlight Arama Butonu */}
+          {onOpenSearch && (
+            <button
+              onClick={onOpenSearch}
+              className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/60 transition-all active:scale-95 cursor-pointer"
+              title="Hızlı Arama (Ctrl + K)"
+              aria-label="Arama"
+            >
+              <Search size={13} className="text-slate-400" />
+              <span className="hidden md:inline font-medium text-[11px] text-slate-400">Ara</span>
+              <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-slate-400 bg-slate-900 px-1 py-0.2 rounded border border-slate-700">
+                ⌘K
+              </kbd>
+            </button>
+          )}
+
           {/* Favoriler Butonu */}
           {(activeTab === "fixtures" || activeTab === "home" || activeTab === "results") && (
             <button

@@ -40,6 +40,7 @@ interface TodayMatchesViewProps {
   favorites: string[];
   onToggleFavorite: (matchId: string) => void;
   onNavigateToFullFixtures?: () => void;
+  onSelectMatch?: (match: Match) => void;
 }
 
 export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
@@ -52,6 +53,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   favorites,
   onToggleFavorite,
   onNavigateToFullFixtures = () => {},
+  onSelectMatch,
 }) => {
   const [quickStatus, setQuickStatus] = useState<"all" | "upcoming" | "finished" | "favorites">("all");
   const [displayMode, setDisplayMode] = useState<"cards" | "table">("cards");
@@ -493,6 +495,16 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               <span className="text-[10px] text-slate-600 font-medium">VB Girişi Yok</span>
             )}
           </div>
+
+          {onSelectMatch && (
+            <button
+              onClick={() => onSelectMatch(m)}
+              className="w-full py-2 px-3 bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white text-[11px] font-bold border-t border-slate-800/80 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+            >
+              <span>Maç Merkezi & Setler</span>
+              <ArrowRight size={12} className="text-red-400" />
+            </button>
+          )}
         </div>
       </div>
     );
@@ -796,6 +808,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 favorites={favorites}
                 onToggleFavorite={onToggleFavorite}
                 city={city}
+                onSelectMatch={onSelectMatch}
               />
             ))}
           </div>
@@ -875,6 +888,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                       favorites={favorites}
                       onToggleFavorite={onToggleFavorite}
                       city={city}
+                      onSelectMatch={onSelectMatch}
                     />
                   ))}
                 </div>

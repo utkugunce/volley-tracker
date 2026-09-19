@@ -117,6 +117,20 @@ body {
     text-shadow: 0 0 12px rgba(16, 185, 129, 0.55);
   }
 
+  .font-scoreboard {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+    letter-spacing: -0.02em;
+  }
+
+  .ambient-glow-red {
+    box-shadow: 0 0 35px -8px rgba(220, 38, 38, 0.35);
+  }
+
+  .ambient-glow-emerald {
+    box-shadow: 0 0 35px -8px rgba(16, 185, 129, 0.35);
+  }
+
   .no-scrollbar {
     -ms-overflow-style: none;
   }

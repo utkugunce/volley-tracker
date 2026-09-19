@@ -12,6 +12,7 @@ interface FeaturedMatchHeroProps {
   city?: string;
   favorites?: string[];
   onToggleFavorite?: (id: string) => void;
+  onSelectMatch?: (match: Match) => void;
 }
 
 export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
@@ -19,6 +20,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
   city = "İstanbul",
   favorites = [],
   onToggleFavorite,
+  onSelectMatch,
 }) => {
   const [copied, setCopied] = useState(false);
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
@@ -284,6 +286,16 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
 
         {/* Butonlar */}
         <div className="flex items-center gap-2">
+          {onSelectMatch && (
+            <button
+              onClick={() => onSelectMatch(featuredMatch)}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-glow-red transition-all cursor-pointer text-xs active:scale-95"
+              title="Maç Merkezi & Set Detayları"
+            >
+              <span>Maç Merkezi</span>
+            </button>
+          )}
+
           {!isFinished && featuredMatch.date !== "TBD" && (
             <button
               onClick={handleDownloadIcs}

@@ -6,6 +6,7 @@ import { getVolleyboxMapping, normalizeCitySlug } from "@/utils/volleybox";
 import { slugify } from "@/utils/slugify";
 import { ExternalLink, Star } from "lucide-react";
 import { useFavorites } from "@/utils/useFavorites";
+import { triggerHaptic } from "@/utils/haptics";
 
 import Image from "next/image";
 
@@ -87,6 +88,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
+        triggerHaptic("selection");
         toggleFavorite(displayName);
       }}
       className={`p-0.5 rounded transition-all shrink-0 inline-flex items-center ml-1 cursor-pointer ${
