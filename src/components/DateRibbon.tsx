@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface DateRibbonProps {
   dates: string[];
@@ -47,20 +47,26 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
   };
 
   return (
-    <div className="bg-[#0e1526] text-white rounded-lg p-1.5 shadow-md flex items-center gap-1.5 mb-4 no-print border border-slate-800">
+    <div className="bg-[#0e1526] text-white rounded-lg p-1.5 shadow-md flex items-center gap-1.5 mb-4 no-print border border-slate-800" role="region" aria-label="Tarih seçim şeridi">
       {/* Sol Ok */}
       <button
+        type="button"
         onClick={() => handleScroll("left")}
-        className="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors shrink-0"
+        aria-label="Önceki günler"
+        className="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors shrink-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
         title="Önceki Günler"
       >
-        <ChevronLeft size={16} />
+        <ChevronLeft size={16} aria-hidden="true" />
       </button>
 
       {/* "TÜMÜ" Butonu */}
       <button
+        type="button"
+        role="tab"
+        aria-selected={selectedDate === "all"}
+        aria-label="Tüm tarihleri göster"
         onClick={() => onSelectDate("all")}
-        className={`px-3 py-1.5 rounded text-xs font-bold shrink-0 transition-all ${
+        className={`px-3 py-1.5 rounded text-xs font-bold shrink-0 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
           selectedDate === "all"
             ? "bg-primary text-white shadow-sm"
             : "bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white"
@@ -72,6 +78,8 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
       {/* Yatay Tarih Şeridi */}
       <div
         ref={scrollContainerRef}
+        role="tablist"
+        aria-label="Tarih sekmeleri"
         className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 flex-1 scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
@@ -83,8 +91,12 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
           return (
             <button
               key={dStr}
+              type="button"
+              role="tab"
+              aria-selected={isSelected}
+              aria-label={`${top} ${bottom}${count > 0 ? `, ${count} maç` : ""}`}
               onClick={() => onSelectDate(dStr)}
-              className={`flex flex-col items-center justify-center min-w-[72px] px-2.5 py-1 rounded transition-all shrink-0 ${
+              className={`flex flex-col items-center justify-center min-w-[72px] px-2.5 py-1 rounded transition-all shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 isSelected
                   ? "bg-primary text-white font-bold shadow-sm"
                   : isToday
@@ -112,11 +124,13 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
 
       {/* Sağ Ok */}
       <button
+        type="button"
         onClick={() => handleScroll("right")}
-        className="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors shrink-0"
+        aria-label="Sonraki günler"
+        className="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors shrink-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
         title="Sonraki Günler"
       >
-        <ChevronRight size={16} />
+        <ChevronRight size={16} aria-hidden="true" />
       </button>
     </div>
   );

@@ -316,11 +316,13 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               </span>
             )}
             <button
+              type="button"
               onClick={() => onToggleFavorite(m.id)}
-              className="p-1 rounded text-slate-500 hover:text-amber-400 transition-colors"
+              className="p-1 rounded text-slate-500 hover:text-amber-400 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
               title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+              aria-label={isFav ? `${m.home_team} - ${m.away_team} maçını favorilerden çıkar` : `${m.home_team} - ${m.away_team} maçını favorilere ekle`}
             >
-              <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
+              <Star size={13} aria-hidden="true" className={isFav ? "fill-amber-400 text-amber-400" : ""} />
             </button>
           </div>
         </div>
@@ -535,7 +537,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
       {/* 2. AKTİF İL HIZLI KARTLARI */}
       {onSelectCity && (
-        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1" role="tablist" aria-label="Aktif şehir hızlı erişim sekmeleri">
           {citiesList === undefined ? (
             <div className="flex items-center gap-2 py-1">
               <div className="h-8 w-24 bg-slate-200 animate-pulse rounded-xl" />
@@ -550,8 +552,12 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               return (
                 <button
                   key={item.slug}
+                  type="button"
+                  role="tab"
+                  aria-selected={isSelected}
+                  aria-label={`${item.name}, ${item.count} maç`}
                   onClick={() => onSelectCity(item.slug)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                     isSelected
                       ? "bg-slate-800 text-white border-primary shadow-sm ring-2 ring-primary/40 font-bold"
                       : "bg-slate-800/40 text-slate-300 hover:bg-slate-800/70 border-slate-700"
@@ -559,6 +565,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 >
                   <IconComponent
                     size={14}
+                    aria-hidden="true"
                     className={isSelected ? "text-primary" : "text-slate-400"}
                   />
                   <span>{item.name}</span>
@@ -600,51 +607,64 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
           {/* Sağ Kontroller: Görünüm Değiştirici (Kart / Tablo) & Tüm Fikstür */}
           <div className="flex items-center gap-2 flex-wrap text-xs">
             {/* Kart vs Tablo Görünümü */}
-            <div className="bg-slate-800 p-0.5 rounded-lg border border-slate-700 flex items-center gap-0.5">
+            <div className="bg-slate-800 p-0.5 rounded-lg border border-slate-700 flex items-center gap-0.5" role="tablist" aria-label="Görünüm biçimi">
               <button
+                type="button"
+                role="tab"
+                aria-selected={displayMode === "cards"}
+                aria-label="Kartlar görünümü"
                 onClick={() => setDisplayMode("cards")}
-                className={`px-2 py-1 rounded text-xs font-semibold flex items-center gap-1 transition-colors ${
+                className={`px-2 py-1 rounded text-xs font-semibold flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                   displayMode === "cards"
                     ? "bg-primary text-white shadow-xs"
                     : "text-slate-400 hover:text-white"
                 }`}
                 title="Dashboard Kart Görünümü"
               >
-                <LayoutGrid size={13} />
+                <LayoutGrid size={13} aria-hidden="true" />
                 <span className="hidden sm:inline">Kartlar</span>
               </button>
               <button
+                type="button"
+                role="tab"
+                aria-selected={displayMode === "table"}
+                aria-label="Tablo görünümü"
                 onClick={() => setDisplayMode("table")}
-                className={`px-2 py-1 rounded text-xs font-semibold flex items-center gap-1 transition-colors ${
+                className={`px-2 py-1 rounded text-xs font-semibold flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                   displayMode === "table"
                     ? "bg-primary text-white shadow-xs"
                     : "text-slate-400 hover:text-white"
                 }`}
                 title="Detaylı Tablo Görünümü"
               >
-                <TableIcon size={13} />
+                <TableIcon size={13} aria-hidden="true" />
                 <span className="hidden sm:inline">Tablo</span>
               </button>
             </div>
 
             <button
+              type="button"
               onClick={onNavigateToFullFixtures}
-              className="inline-flex items-center gap-1 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-2.5 py-1.5 rounded-lg border border-slate-700 transition-colors"
+              aria-label="Tüm sezon fikstürünü ve tarih şeridini görüntüle"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-2.5 py-1.5 rounded-lg border border-slate-700 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               title="Tüm sezon takvimini ve tarih şeridini görüntüle"
             >
               <span>Tüm Fikstür</span>
-              <ArrowRight size={13} />
+              <ArrowRight size={13} aria-hidden="true" />
             </button>
           </div>
         </div>
 
         {/* Hızlı Filtre Butonları */}
         {todayMatches.length > 0 && (
-          <div className="mt-3 pt-3 border-t border-slate-800 flex items-center gap-1.5">
+          <div className="mt-3 pt-3 border-t border-slate-800 flex items-center gap-1.5" role="tablist" aria-label="Maç durum filtresi">
             <span className="text-[11px] text-slate-400 font-medium mr-1">Durum:</span>
             <button
+              type="button"
+              role="tab"
+              aria-selected={quickStatus === "all"}
               onClick={() => setQuickStatus("all")}
-              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 quickStatus === "all"
                   ? "bg-primary text-white"
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
@@ -653,8 +673,11 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               Tümü ({dashboardKpis.todayTotal})
             </button>
             <button
+              type="button"
+              role="tab"
+              aria-selected={quickStatus === "upcoming"}
               onClick={() => setQuickStatus("upcoming")}
-              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 ${
                 quickStatus === "upcoming"
                   ? "bg-sky-600 text-white"
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
@@ -663,8 +686,11 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               Oynanacak ({dashboardKpis.todayUpcoming})
             </button>
             <button
+              type="button"
+              role="tab"
+              aria-selected={quickStatus === "finished"}
               onClick={() => setQuickStatus("finished")}
-              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer ${
+              className={`px-2.5 py-1 rounded text-xs font-semibold transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                 quickStatus === "finished"
                   ? "bg-emerald-600 text-white"
                   : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"

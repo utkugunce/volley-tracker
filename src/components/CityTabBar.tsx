@@ -95,6 +95,8 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
         {/* Yatay Kaydırılabilir Sekmeler */}
         <div
           ref={scrollRef}
+          role="tablist"
+          aria-label="Şehir sekmeleri"
           className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar py-0.5 scroll-smooth"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
@@ -105,22 +107,27 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
             return (
               <button
                 key={item.slug}
+                role="tab"
+                aria-selected={isSelected}
                 onClick={() => onSelectCity(item.slug)}
-                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border ${
+                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
                   isSelected
                     ? "bg-slate-800 text-white border-primary shadow-sm ring-1 ring-primary/40 font-bold"
                     : "bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800/60 border-slate-800"
                 }`}
                 title={`${item.name} maçlarını ve fikstürünü görüntüle`}
+                aria-label={`${item.name} maçlarını ve fikstürünü görüntüle`}
               >
                 {item.isAll ? (
                   <Globe
                     size={13}
+                    aria-hidden="true"
                     className={isSelected ? "text-primary" : "text-slate-400"}
                   />
                 ) : (
                   <MapPin
                     size={13}
+                    aria-hidden="true"
                     className={isSelected ? "text-primary" : "text-slate-500"}
                   />
                 )}
@@ -149,19 +156,25 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
         {/* 81 İl Seçici Açılır Buton (+ Diğer İller) */}
         <div className="relative shrink-0" ref={dropdownRef}>
           <button
+            type="button"
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className={`flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors border ${
+            aria-expanded={dropdownOpen}
+            aria-haspopup="listbox"
+            aria-controls="city-dropdown-menu"
+            aria-label="Tüm 81 ili listele ve seç"
+            className={`flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
               dropdownOpen
                 ? "bg-slate-800 text-white border-slate-700"
                 : "bg-slate-900/80 text-slate-300 hover:text-white hover:bg-slate-800 border-slate-800"
             }`}
             title="Tüm 81 ili ara ve seç"
           >
-            <span className="text-slate-400 font-bold">+</span>
+            <span className="text-slate-400 font-bold" aria-hidden="true">+</span>
             <span className="hidden sm:inline">Diğer İller</span>
             <span className="sm:hidden">81 İl</span>
             <ChevronDown
               size={12}
+              aria-hidden="true"
               className={`text-slate-400 transition-transform ${
                 dropdownOpen ? "rotate-180" : ""
               }`}
@@ -170,16 +183,22 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
 
           {/* Açılır Menü */}
           {dropdownOpen && (
-            <div className="absolute right-0 mt-1.5 w-64 sm:w-72 bg-[#0f172a] border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100">
+            <div
+              id="city-dropdown-menu"
+              role="listbox"
+              aria-label="81 İl Seçici"
+              className="absolute right-0 mt-1.5 w-64 sm:w-72 bg-[#0f172a] border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100"
+            >
               <div className="p-2 border-b border-slate-800 bg-[#0b1325]">
                 <div className="relative">
-                  <Search size={13} className="absolute left-2.5 top-2.5 text-slate-400" />
+                  <Search size={13} aria-hidden="true" className="absolute left-2.5 top-2.5 text-slate-400" />
                   <input
                     type="text"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="İl ara (örn: Ankara, 06)..."
-                    className="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-800 text-white placeholder-slate-400 rounded-lg border border-slate-700 focus:outline-none focus:border-primary"
+                    aria-label="İl ara"
+                    className="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-800 text-white placeholder-slate-400 rounded-lg border border-slate-700 focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary"
                     autoFocus
                   />
                 </div>
@@ -191,11 +210,14 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                   return (
                     <button
                       key={c.slug}
+                      type="button"
+                      role="option"
+                      aria-selected={isCur}
                       onClick={() => {
                         onSelectCity(c.slug);
                         setDropdownOpen(false);
                       }}
-                      className={`w-full px-3 py-2 text-left flex items-center justify-between text-xs transition-colors cursor-pointer ${
+                      className={`w-full px-3 py-2 text-left flex items-center justify-between text-xs transition-colors cursor-pointer focus:outline-none focus-visible:bg-slate-800 ${
                         isCur
                           ? "bg-primary/20 text-white font-bold"
                           : "hover:bg-slate-800/70 text-slate-200"
@@ -213,7 +235,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                             {c.matches_count}
                           </span>
                         )}
-                        {isCur && <Check size={12} className="text-primary" />}
+                        {isCur && <Check size={12} aria-hidden="true" className="text-primary" />}
                       </div>
                     </button>
                   );

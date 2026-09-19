@@ -304,19 +304,21 @@ export default function AdminPage() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1.5">
+              <label htmlFor="admin-token-input" className="block text-xs font-semibold text-slate-400 mb-1.5">
                 ADMIN TOKEN
               </label>
               <div className="relative">
                 <input
+                  id="admin-token-input"
                   type="password"
                   value={inputToken}
                   onChange={(e) => setInputToken(e.target.value)}
                   placeholder="Gizli admin token'ı..."
-                  className="w-full pl-10 pr-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary transition-colors"
+                  aria-label="Admin Token"
+                  className="w-full pl-10 pr-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-2 focus-visible:ring-primary transition-colors"
                   required
                 />
-                <KeyRound size={16} className="absolute left-3.5 top-3.5 text-slate-500" />
+                <KeyRound size={16} aria-hidden="true" className="absolute left-3.5 top-3.5 text-slate-500" />
               </div>
             </div>
 
@@ -375,10 +377,13 @@ export default function AdminPage() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2" role="tablist" aria-label="Yönetim sekmeleri">
           <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === "matches"}
             onClick={() => setActiveTab("matches")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "matches"
                 ? "bg-primary text-white shadow-sm"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
@@ -387,19 +392,24 @@ export default function AdminPage() {
             Maçlar ({matches.length})
           </button>
           <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === "audit"}
             onClick={() => setActiveTab("audit")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "audit"
                 ? "bg-primary text-white shadow-sm"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
-            <History size={13} />
+            <History size={13} aria-hidden="true" />
             Denetim Günlüğü ({auditLogs.length})
           </button>
           <button
+            type="button"
             onClick={handleLogout}
-            className="p-1.5 rounded-lg bg-slate-800 hover:bg-red-950/80 text-slate-400 hover:text-red-400 border border-slate-700 transition-colors text-xs"
+            aria-label="Yönetici oturumunu kapat"
+            className="p-1.5 rounded-lg bg-slate-800 hover:bg-red-950/80 text-slate-400 hover:text-red-400 border border-slate-700 transition-colors text-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
             title="Oturumu Kapat"
           >
             Çıkış
@@ -413,13 +423,14 @@ export default function AdminPage() {
             {/* Filtre ve Arama Alanı */}
             <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 mb-5 shadow-lg flex flex-wrap items-center justify-between gap-3">
               <div className="flex-1 min-w-[240px] relative">
-                <Search size={16} className="absolute left-3.5 top-3 text-slate-500" />
+                <Search size={16} aria-hidden="true" className="absolute left-3.5 top-3 text-slate-500" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Takım adı, salon, lig veya maç ID ile ara..."
-                  className="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-primary"
+                  aria-label="Takım adı, salon, lig veya maç ID ile ara"
+                  className="w-full pl-10 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs sm:text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary"
                 />
               </div>
 
@@ -427,7 +438,8 @@ export default function AdminPage() {
                 <select
                   value={selectedCity}
                   onChange={(e) => setSelectedCity(e.target.value)}
-                  className="px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none"
+                  aria-label="Şehir filtrele"
+                  className="px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
                 >
                   <option value="all">Tüm İller ({cities.length})</option>
                   {cities.map((c) => (
@@ -630,57 +642,65 @@ export default function AdminPage() {
             <form onSubmit={handleSaveOverride} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label htmlFor="override-home-score" className="block text-xs font-semibold text-slate-300 mb-1">
                     Ev Sahibi Skor
                   </label>
                   <input
+                    id="override-home-score"
                     type="number"
                     min="0"
                     max="3"
                     value={homeScore}
                     onChange={(e) => setHomeScore(e.target.value)}
                     placeholder="Örn: 3"
-                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary text-center font-mono font-bold"
+                    aria-label="Ev Sahibi Skor"
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary text-center font-mono font-bold"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label htmlFor="override-away-score" className="block text-xs font-semibold text-slate-300 mb-1">
                     Deplasman Skor
                   </label>
                   <input
+                    id="override-away-score"
                     type="number"
                     min="0"
                     max="3"
                     value={awayScore}
                     onChange={(e) => setAwayScore(e.target.value)}
                     placeholder="Örn: 1"
-                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary text-center font-mono font-bold"
+                    aria-label="Deplasman Skor"
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary text-center font-mono font-bold"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label htmlFor="override-set-scores" className="block text-xs font-semibold text-slate-300 mb-1">
                   Set Skorları (Virgülle ayırın)
                 </label>
                 <input
+                  id="override-set-scores"
                   type="text"
                   value={setScoresInput}
                   onChange={(e) => setSetScoresInput(e.target.value)}
                   placeholder="Örn: 25-18, 22-25, 25-20, 25-19"
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-primary font-mono"
+                  aria-label="Set Skorları"
+                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary font-mono"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label htmlFor="override-status" className="block text-xs font-semibold text-slate-300 mb-1">
                     Maç Durumu
                   </label>
                   <select
+                    id="override-status"
                     value={statusInput}
                     onChange={(e) => setStatusInput(e.target.value as any)}
-                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none"
+                    aria-label="Maç Durumu"
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
                   >
                     <option value="finished">Bitti (finished)</option>
                     <option value="upcoming">Gelecek (upcoming)</option>
@@ -689,28 +709,32 @@ export default function AdminPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                  <label htmlFor="override-author" className="block text-xs font-semibold text-slate-300 mb-1">
                     Düzenleyen Kişi
                   </label>
                   <input
+                    id="override-author"
                     type="text"
                     value={authorInput}
                     onChange={(e) => setAuthorInput(e.target.value)}
-                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none"
+                    aria-label="Düzenleyen Kişi"
+                    className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">
+                <label htmlFor="override-reason" className="block text-xs font-semibold text-slate-300 mb-1">
                   Düzeltme Gerekçesi (Audit Log) *
                 </label>
                 <textarea
+                  id="override-reason"
                   value={reasonInput}
                   onChange={(e) => setReasonInput(e.target.value)}
                   placeholder="Bu düzeltme neden yapıldı? (Örn: TVF bülteninde skor ters yazılmıştı)"
+                  aria-label="Düzeltme Gerekçesi"
                   rows={2}
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-primary resize-none"
+                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary resize-none"
                   required
                 />
               </div>
