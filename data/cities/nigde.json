@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T12:29:10.854202",
+  "updated_at": "2026-09-19T21:49:30.840159",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
@@ -117,7 +117,7 @@
       "group": "Yıldız Kızlar İl Birinciliği",
       "match_no": "1",
       "home_team": "ODTÜ GV Niğde Okulları Spor Kulübü U16",
-      "away_team": "Niğde Gençlik Spor Kulübü U16",
+      "away_team": "Niğde Gençlik Spor Kulübü - A U16",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -235,5 +235,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-19T19:40:02.311262"
+  "volleybox_sync_updated_at": "2026-09-19T21:50:35.559824"
 }
