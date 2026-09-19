@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T14:52:22.318945",
+  "updated_at": "2026-09-19T17:30:51.068514",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -133,7 +133,7 @@
       },
       {
         "rank": 2,
-        "team": "Es Voleybol Akademi Spor Kulübü U18",
+        "team": "Es Voleybol Akademi Spor Kulübü - A U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -526,7 +526,7 @@
       "gender": "Kız",
       "group": "- B Gr",
       "match_no": "1",
-      "home_team": "Es Voleybol Akademi Spor Kulübü U18",
+      "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
       "away_team": "Anadolu Kolej Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -1050,5 +1050,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-09-19T14:53:33.007066"
+  "volleybox_sync_updated_at": "2026-09-19T17:31:59.016086"
 }

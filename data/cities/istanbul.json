@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T14:52:28.197291+00:00",
+  "updated_at": "2026-09-19T17:30:57.617848+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1606,7 +1606,7 @@
       },
       {
         "rank": 3,
-        "team": "Türk Hava Yolları SK U16",
+        "team": "Türk Hava Yolları SK - A U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1623,7 +1623,7 @@
       },
       {
         "rank": 4,
-        "team": "Eczacıbaşı U16",
+        "team": "Eczacıbaşı - A U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1744,7 +1744,7 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Fenerbahçe U16",
+        "team": "Fenerbahçe - A U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1863,7 +1863,7 @@
       },
       {
         "rank": 8,
-        "team": "Eyüpsultan Belediyesi SK U16",
+        "team": "Eyüpsultan Belediyesi SK - A U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1967,7 +1967,7 @@
       },
       {
         "rank": 4,
-        "team": "VakıfBank U16",
+        "team": "VakıfBank - A U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -2001,7 +2001,7 @@
       },
       {
         "rank": 6,
-        "team": "Marmara Akademi Atletik Spor Kulübü U16",
+        "team": "Akademi Atletik Spor U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -2656,7 +2656,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "3",
-      "home_team": "Türk Hava Yolları SK U16",
+      "home_team": "Türk Hava Yolları SK - A U16",
       "away_team": "Sarıyer Konak Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -2794,7 +2794,7 @@
       "group": "C Grubu",
       "match_no": "2",
       "home_team": "Eczacıbaşı - B U16",
-      "away_team": "Marmara Akademi Atletik Spor Kulübü U16",
+      "away_team": "Akademi Atletik Spor U16",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -2885,7 +2885,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "5",
-      "home_team": "Eczacıbaşı U16",
+      "home_team": "Eczacıbaşı - A U16",
       "away_team": "Silivri Çağrıbey SK U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -3065,7 +3065,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "4",
-      "home_team": "Fenerbahçe U16",
+      "home_team": "Fenerbahçe - A U16",
       "away_team": "Başakşehir Belediyesi SK U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -3202,7 +3202,7 @@
       "group": "B Grubu",
       "match_no": "5",
       "home_team": "VakıfBank - B U16",
-      "away_team": "Eyüpsultan Belediyesi SK U16",
+      "away_team": "Eyüpsultan Belediyesi SK - A U16",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -3384,7 +3384,7 @@
       "gender": "Kız",
       "group": "C Grubu",
       "match_no": "5",
-      "home_team": "VakıfBank U16",
+      "home_team": "VakıfBank - A U16",
       "away_team": "Smaç SK U16",
       "score": "3 - 1",
       "home_score": 3,
@@ -4033,5 +4033,5 @@
     }
   ],
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-09-19T14:53:33.013080"
+  "volleybox_sync_updated_at": "2026-09-19T17:31:59.021786"
 }

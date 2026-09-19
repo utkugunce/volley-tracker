@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T14:52:31.277043",
+  "updated_at": "2026-09-19T17:31:00.818720",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -42,7 +42,7 @@
       },
       {
         "rank": 2,
-        "team": "Anadolu Birlik Spor Kulübü U18",
+        "team": "Anadolu Birlik Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -99,7 +99,7 @@
       },
       {
         "rank": 2,
-        "team": "Başkent Arma Spor U18",
+        "team": "Başkent Arma Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -110,7 +110,7 @@
       },
       {
         "rank": 3,
-        "team": "Çaba Spor Kulübü U18",
+        "team": "Çaba Spor Kulübü - A U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -121,7 +121,7 @@
       },
       {
         "rank": 4,
-        "team": "Yedidağspor U18",
+        "team": "Yedidağspor - A U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -316,7 +316,7 @@
     "Yıldız Kızlar Süper Lig - 2. Grup": [
       {
         "rank": 1,
-        "team": "Başkent Arma Spor - B U16",
+        "team": "Başkent Arma Spor B",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -417,7 +417,7 @@
       },
       {
         "rank": 5,
-        "team": "Yedidağ Spor Kulübü U16",
+        "team": "Yedidağ Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -544,7 +544,7 @@
       },
       {
         "rank": 2,
-        "team": "Akademi Atletik Spor U16",
+        "team": "Akademi Atletik Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -555,7 +555,7 @@
       },
       {
         "rank": 3,
-        "team": "Blue Wolves Spor Kulübü U16",
+        "team": "Mavi Kurtlar GSK - A U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -641,7 +641,7 @@
       "gender": "Kız",
       "group": "2.Grup",
       "match_no": "1",
-      "home_team": "Yedidağspor U18",
+      "home_team": "Yedidağspor - A U18",
       "away_team": "Ankara DSİ GSK U18",
       "score": "- : -",
       "home_score": null,
@@ -683,7 +683,7 @@
       "group": "2.Grup",
       "match_no": "2",
       "home_team": "Zeren Spor Kulübü U18",
-      "away_team": "Başkent Arma Spor U18",
+      "away_team": "Başkent Arma Spor",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -962,7 +962,7 @@
       "gender": "Kız",
       "group": "2. Grup",
       "match_no": "1",
-      "home_team": "Başkent Arma Spor - B U16",
+      "home_team": "Başkent Arma Spor B",
       "away_team": "Eryaman Gelişim SK U16",
       "score": "- : -",
       "home_score": null,
@@ -1085,7 +1085,7 @@
       "gender": "Kız",
       "group": "3. Grup",
       "match_no": "2",
-      "home_team": "Yedidağ Spor Kulübü U16",
+      "home_team": "Yedidağ Spor Kulübü",
       "away_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -1331,7 +1331,7 @@
       "gender": "Kız",
       "group": "6. Grup",
       "match_no": "2",
-      "home_team": "Akademi Atletik Spor U16",
+      "home_team": "Akademi Atletik Spor",
       "away_team": "Maç Akademi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -1363,5 +1363,5 @@
     }
   ],
   "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-09-19T14:53:33.008078"
+  "volleybox_sync_updated_at": "2026-09-19T17:31:59.017023"
 }

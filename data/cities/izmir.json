@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T14:52:26.616524",
+  "updated_at": "2026-09-19T17:30:55.373707",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -533,16 +533,27 @@
       {
         "rank": 1,
         "team": "AB Voleybol Akademi U16",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Vakıfbank İzmir U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -553,7 +564,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Karşıyaka SK",
         "played": 0,
         "won": 0,
@@ -564,19 +575,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "KZY Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Vakıfbank İzmir U16",
+        "team": "KZY Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2044,11 +2044,15 @@
       "match_no": "1",
       "home_team": "AB Voleybol Akademi U16",
       "away_team": "Vakıfbank İzmir U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-10",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397118",
@@ -3223,5 +3227,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-19T14:53:33.009711"
+  "volleybox_sync_updated_at": "2026-09-19T17:31:59.018588"
 }

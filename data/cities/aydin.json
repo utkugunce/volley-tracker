@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T14:20:43.469406",
+  "updated_at": "2026-09-19T17:30:43.498630",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -41,7 +41,7 @@
       },
       {
         "rank": 2,
-        "team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
+        "team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -220,7 +220,7 @@
       "gender": "Kız",
       "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
       "match_no": "4",
-      "home_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
+      "home_team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
       "away_team": "Aydın Büyükşehir Belediyespor U18",
       "score": "- : -",
       "home_score": null,
@@ -262,7 +262,7 @@
       "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
       "match_no": "5",
       "home_team": "Söke Voleybol Spor Kulübü U18",
-      "away_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
+      "away_team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -334,5 +334,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-09-19T14:53:33.017568"
+  "volleybox_sync_updated_at": "2026-09-19T17:31:59.025927"
 }
