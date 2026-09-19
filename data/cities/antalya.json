@@ -270,6 +270,28 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar B Grubu": [
       {
         "rank": 1,
+        "team": "Antalya DSİ Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "07 Zenit Spor Kulübü U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "07 Alya Spor U16",
         "played": 0,
         "won": 0,
@@ -280,7 +302,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "07 Anka Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -291,18 +313,7 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "07 Zenit Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
+        "rank": 5,
         "team": "Akdeniz Bilgi Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -313,19 +324,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Antalya 1907 Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Antalya DSİ Spor Kulübü U16",
+        "team": "Antalya 1907 Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -828,11 +828,16 @@
       "match_no": "1",
       "home_team": "Antalya DSİ Spor Kulübü U16",
       "away_team": "07 Zenit Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-21",
+        "18-25",
+        "25-7",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398877",
