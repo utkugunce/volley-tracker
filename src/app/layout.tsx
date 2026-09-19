@@ -1,5 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+
+export const viewport: Viewport = {
+  themeColor: "#dc2626",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -8,12 +15,21 @@ export const metadata: Metadata = {
   },
   description: "Türkiye Voleybol Federasyonu (TVF) 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig ile 1. Lig haftalık maç programı, canlı sonuçlar ve puan durumu.",
   metadataBase: new URL("https://altyapivoleybol.com.tr"),
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Altyapı Voleybol",
+  },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
       { url: "/favicon.ico" },
     ],
     apple: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
       { url: "/apple-icon.svg", type: "image/svg+xml" },
     ],
   },
@@ -44,6 +60,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
         {children}
+        <ServiceWorkerRegister />
       </body>
     </html>
   );
