@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T06:44:23.733822",
+  "updated_at": "2026-09-19T14:20:52.865925",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -360,46 +360,46 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar Doğu Grubu": [
       {
         "rank": 1,
-        "team": "Alanya Belediyespor U16",
-        "played": 0,
-        "won": 0,
+        "team": "Alanya MASK Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Manavgat Belediyespor U16",
-        "played": 0,
-        "won": 0,
+        "team": "Net Voleybol Akademi Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Alanya MASK Spor Kulübü",
-        "played": 0,
+        "team": "Alanya Belediyespor U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Net Voleybol Akademi Spor Kulübü U16",
-        "played": 0,
+        "team": "Manavgat Belediyespor U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -1033,11 +1033,15 @@
       "match_no": "1",
       "home_team": "Manavgat Belediyespor U16",
       "away_team": "Alanya MASK Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "17-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398882",
@@ -1074,11 +1078,15 @@
       "match_no": "2",
       "home_team": "Net Voleybol Akademi Spor Kulübü U16",
       "away_team": "Alanya Belediyespor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-22",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398883",
@@ -1186,5 +1194,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-09-19T06:45:28.729157"
+  "volleybox_sync_updated_at": "2026-09-19T14:21:52.832017"
 }

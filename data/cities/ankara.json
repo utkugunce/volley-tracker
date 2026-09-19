@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T06:44:28.624470",
+  "updated_at": "2026-09-19T14:20:57.571387",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -23,7 +23,8 @@
     "halls": [
       "Tümü",
       "Batıkent S.S.",
-      "Mamak S.S."
+      "Mamak S.S.",
+      "Sinan Şamil Sam S.S"
     ]
   },
   "standings": {
@@ -1201,7 +1202,7 @@
       "city": "Ankara",
       "date": "2026-09-25",
       "time": "18:00",
-      "hall": "Mamak S.S.",
+      "hall": "Sinan Şamil Sam S.S",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -1242,7 +1243,7 @@
       "city": "Ankara",
       "date": "2026-09-25",
       "time": "19:30",
-      "hall": "Mamak S.S.",
+      "hall": "Sinan Şamil Sam S.S",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -1362,5 +1363,5 @@
     }
   ],
   "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-09-19T06:45:28.713902"
+  "volleybox_sync_updated_at": "2026-09-19T14:21:52.829543"
 }
