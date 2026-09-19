@@ -90,14 +90,14 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
   });
 
   return (
-    <div className="bg-[#070d19] border-b border-slate-800/80 px-2 sm:px-4 py-1.5 shadow-inner">
+    <div className="bg-[#070d19]/90 backdrop-blur-md border-b border-slate-800/80 px-2 sm:px-4 py-1.5 shadow-sm">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-1.5 sm:gap-2">
         {/* Yatay Kaydırılabilir Sekmeler */}
         <div
           ref={scrollRef}
           role="tablist"
           aria-label="Şehir sekmeleri"
-          className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto no-scrollbar py-0.5 scroll-smooth"
+          className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 scroll-smooth"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {tabCities.map((item) => {
@@ -110,10 +110,10 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                 role="tab"
                 aria-selected={isSelected}
                 onClick={() => onSelectCity(item.slug)}
-                className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
                   isSelected
-                    ? "bg-slate-800 text-white border-primary shadow-sm ring-1 ring-primary/40 font-bold"
-                    : "bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800/60 border-slate-800"
+                    ? "bg-gradient-to-r from-red-600 to-rose-600 text-white border-red-500 shadow-glow-red font-bold ring-1 ring-red-500/40"
+                    : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border-slate-800/80"
                 }`}
                 title={`${item.name} maçlarını ve fikstürünü görüntüle`}
                 aria-label={`${item.name} maçlarını ve fikstürünü görüntüle`}
@@ -122,13 +122,13 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                   <Globe
                     size={13}
                     aria-hidden="true"
-                    className={isSelected ? "text-primary" : "text-slate-400"}
+                    className={isSelected ? "text-white" : "text-slate-400"}
                   />
                 ) : (
                   <MapPin
                     size={13}
                     aria-hidden="true"
-                    className={isSelected ? "text-primary" : "text-slate-500"}
+                    className={isSelected ? "text-white" : "text-slate-400"}
                   />
                 )}
                 <span>{item.name}</span>

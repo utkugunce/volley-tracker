@@ -25,6 +25,14 @@ const config: Config = {
           muted: "#94A3B8",
         },
       },
+      boxShadow: {
+        "glow-red": "0 0 20px -3px rgba(220, 38, 38, 0.45)",
+        "glow-amber": "0 0 20px -3px rgba(245, 158, 11, 0.45)",
+        "glow-emerald": "0 0 20px -3px rgba(16, 185, 129, 0.45)",
+        "glow-sky": "0 0 20px -3px rgba(14, 165, 233, 0.45)",
+        "card": "0 8px 30px -4px rgba(0, 0, 0, 0.4)",
+        "card-hover": "0 14px 36px -4px rgba(0, 0, 0, 0.6)",
+      },
       fontFamily: {
         sans: ["'Museo Sans'", "'MuseoSans'", "system-ui", "-apple-system", "BlinkMacSystemFont", "'Segoe UI'", "Roboto", "sans-serif"],
         mono: ["monospace"],

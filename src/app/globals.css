@@ -72,9 +72,73 @@ html, body, button, input, select, textarea {
 }
 
 body {
-  background-color: var(--background);
+  background-color: #080c14;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(220, 38, 38, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 15%, rgba(14, 165, 233, 0.06), transparent),
+    radial-gradient(ellipse 50% 50% at 10% 85%, rgba(245, 158, 11, 0.05), transparent);
+  background-attachment: fixed;
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card {
+    background: rgba(30, 41, 59, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -6px rgba(0, 0, 0, 0.55);
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 12px rgba(220, 38, 38, 0.55);
+  }
+
+  .text-glow-amber {
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.55);
+  }
+
+  .text-glow-emerald {
+    text-shadow: 0 0 12px rgba(16, 185, 129, 0.55);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.25);
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Temiz bülten scrollbar */
@@ -83,14 +147,15 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b1325;
+  background: #080c14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #1e293b;
   border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #334155;
 }
 
 /* Yazdırma (Bülten Çıktısı) Stilleri */

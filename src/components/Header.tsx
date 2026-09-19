@@ -50,14 +50,14 @@ export const Header: React.FC<HeaderProps> = ({
     : "--:--";
 
   return (
-    <header className="bg-[#0b1325] text-white sticky top-0 z-30 shadow-lg border-b border-slate-800">
+    <header className="bg-[#080c14]/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80">
       {/* 1. Üst Flashscore Bar */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/80 gap-2">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/60 gap-2">
         {/* Logo & Brand & İl Seçici */}
         <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
           <BrandLogo onClick={() => onSelectTab("home")} />
 
-          <div className="h-4 w-px bg-slate-700 hidden sm:block" />
+          <div className="h-4 w-px bg-slate-700/80 hidden sm:block" />
 
           {/* 81 İl Seçici Açılır Menü */}
           {onSelectCity && (
@@ -69,22 +69,21 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           <div className="hidden md:flex items-center gap-2 text-xs text-slate-400">
-            <span>•</span>
-            <span className="text-amber-400 font-medium">Genç & Yıldız Kızlar Süper Lig</span>
+            <span className="text-slate-600">•</span>
+            <span className="text-amber-400/90 font-medium tracking-wide">Genç & Yıldız Kızlar Süper Lig</span>
           </div>
         </div>
 
         {/* Sağ Taraf: Favoriler, Yazdır, Canlı Yenile */}
         <div className="flex items-center gap-2">
-
           {/* Favoriler Butonu */}
           {(activeTab === "fixtures" || activeTab === "home" || activeTab === "results") && (
             <button
               onClick={onToggleFavoritesOnly}
-              className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded transition-all ${
+              className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-all active:scale-95 duration-200 ${
                 showOnlyFavorites
-                  ? "bg-amber-400 text-black shadow-sm font-bold"
-                  : "bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700"
+                  ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-glow-amber font-bold"
+                  : "bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 border border-slate-700/60"
               }`}
               title="Sadece Favori Maçları Göster"
             >
@@ -108,7 +107,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Yazdır Butonu */}
           <button
             onClick={() => window.print()}
-            className="p-1.5 rounded bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors no-print border border-slate-700"
+            className="p-1.5 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all active:scale-95 no-print border border-slate-700/60 hover:border-slate-600"
             title="Yazdır"
           >
             <Printer size={14} />
@@ -118,11 +117,11 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onRefresh}
             disabled={isLoading}
-            className="flex items-center gap-1 text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-2 py-1.5 rounded transition-colors disabled:opacity-50 border border-slate-700"
+            className="flex items-center gap-1.5 text-xs bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white px-2.5 py-1.5 rounded-lg transition-all active:scale-95 disabled:opacity-50 border border-slate-700/60 hover:border-slate-600"
             title="Verileri Yenile"
           >
-            <RefreshCw size={13} className={isLoading ? "animate-spin text-primary" : ""} />
-            <span className="hidden sm:inline font-mono">{formattedTime}</span>
+            <RefreshCw size={13} className={isLoading ? "animate-spin text-primary" : "text-slate-400 group-hover:text-white"} />
+            <span className="hidden sm:inline font-mono text-[11px] text-slate-300">{formattedTime}</span>
           </button>
         </div>
       </div>
@@ -132,20 +131,20 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Sonuçlar Sekmesi */}
         <button
           onClick={() => onSelectTab("results")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "results"
-              ? "border-primary text-white bg-slate-800/40"
-              : "border-transparent text-slate-400 hover:text-slate-200"
+              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
           <CheckCircle2 size={14} className={activeTab === "results" ? "text-emerald-400" : "text-slate-400"} />
           <span>SONUÇLAR</span>
           {typeof resultsCount === "number" && (
             <span
-              className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+              className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold transition-colors ${
                 activeTab === "results"
-                  ? "bg-emerald-500 text-white"
-                  : "bg-slate-800 text-slate-300"
+                  ? "bg-emerald-500 text-white shadow-xs shadow-emerald-900/50"
+                  : "bg-slate-800 text-slate-300 border border-slate-700/50"
               }`}
             >
               {resultsCount}
@@ -156,16 +155,16 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Günün Maçları (Anasayfa) Sekmesi */}
         <button
           onClick={() => onSelectTab("home")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "home"
-              ? "border-primary text-white bg-slate-800/40"
-              : "border-transparent text-slate-400 hover:text-slate-200"
+              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Flame size={14} className={activeTab === "home" ? "text-primary fill-primary/20" : "text-slate-400"} />
+          <Flame size={14} className={activeTab === "home" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
           <span>GÜNÜN MAÇLARI</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[10px] bg-primary text-white px-1.5 py-0.2 rounded-full font-mono font-bold">
+            <span className="text-[10px] bg-gradient-to-r from-red-600 to-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs shadow-red-900/50">
               {todayMatchesCount}
             </span>
           )}
@@ -174,15 +173,15 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Fikstür Sekmesi */}
         <button
           onClick={() => onSelectTab("fixtures")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "fixtures"
-              ? "border-primary text-white bg-slate-800/40"
-              : "border-transparent text-slate-400 hover:text-slate-200"
+              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Calendar size={14} className={activeTab === "fixtures" ? "text-primary" : ""} />
+          <Calendar size={14} className={activeTab === "fixtures" ? "text-primary" : "text-slate-400"} />
           <span>FİKSTÜR</span>
-          <span className="text-[10px] bg-slate-800 text-slate-300 px-1.5 py-0.2 rounded-full font-normal">
+          <span className="text-[10px] bg-slate-800/80 text-slate-300 px-1.5 py-0.2 rounded-full font-normal border border-slate-700/50">
             {totalMatches}
           </span>
         </button>
@@ -190,13 +189,13 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Puan Durumu Sekmesi */}
         <button
           onClick={() => onSelectTab("standings")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "standings"
-              ? "border-primary text-white bg-slate-800/40"
-              : "border-transparent text-slate-400 hover:text-slate-200"
+              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Trophy size={14} className={activeTab === "standings" ? "text-amber-400" : ""} />
+          <Trophy size={14} className={activeTab === "standings" ? "text-amber-400 fill-amber-400/20" : "text-slate-400"} />
           <span>PUAN DURUMU</span>
         </button>
       </div>

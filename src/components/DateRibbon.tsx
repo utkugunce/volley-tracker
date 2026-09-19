@@ -47,13 +47,13 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
   };
 
   return (
-    <div className="bg-[#0e1526] text-white rounded-lg p-1.5 shadow-md flex items-center gap-1.5 mb-4 no-print border border-slate-800" role="region" aria-label="Tarih seçim şeridi">
+    <div className="glass-panel text-white rounded-2xl p-2 shadow-card flex items-center gap-1.5 mb-4 no-print border border-slate-800/80" role="region" aria-label="Tarih seçim şeridi">
       {/* Sol Ok */}
       <button
         type="button"
         onClick={() => handleScroll("left")}
         aria-label="Önceki günler"
-        className="p-1.5 rounded hover:bg-slate-800 text-slate-400 hover:text-white transition-colors shrink-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+        className="p-2 rounded-xl hover:bg-slate-800/80 text-slate-400 hover:text-white transition-all shrink-0 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary cursor-pointer active:scale-90"
         title="Önceki Günler"
       >
         <ChevronLeft size={16} aria-hidden="true" />
@@ -66,10 +66,10 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
         aria-selected={selectedDate === "all"}
         aria-label="Tüm tarihleri göster"
         onClick={() => onSelectDate("all")}
-        className={`px-3 py-1.5 rounded text-xs font-bold shrink-0 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+        className={`px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
           selectedDate === "all"
-            ? "bg-primary text-white shadow-sm"
-            : "bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white"
+            ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold ring-2 ring-red-500/30"
+            : "glass-panel text-slate-300 hover:bg-slate-800/70 hover:text-white border-slate-800"
         }`}
       >
         TÜMÜ
@@ -80,7 +80,7 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
         ref={scrollContainerRef}
         role="tablist"
         aria-label="Tarih sekmeleri"
-        className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 flex-1 scroll-smooth"
+        className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 flex-1 scroll-smooth"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {dates.map((dStr) => {
@@ -96,12 +96,12 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
               aria-selected={isSelected}
               aria-label={`${top} ${bottom}${count > 0 ? `, ${count} maç` : ""}`}
               onClick={() => onSelectDate(dStr)}
-              className={`flex flex-col items-center justify-center min-w-[72px] px-2.5 py-1 rounded transition-all shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              className={`flex flex-col items-center justify-center min-w-[74px] px-3 py-1.5 rounded-xl transition-all duration-150 shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 isSelected
-                  ? "bg-primary text-white font-bold shadow-sm"
+                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold shadow-glow-red ring-2 ring-red-500/30"
                   : isToday
-                  ? "bg-slate-800 text-amber-300 font-semibold hover:bg-slate-700"
-                  : "bg-slate-900/60 text-slate-300 hover:bg-slate-800 hover:text-white"
+                  ? "bg-amber-500/10 text-amber-300 font-bold border border-amber-500/40 hover:bg-amber-500/20"
+                  : "glass-panel text-slate-300 hover:bg-slate-800/70 hover:text-white border-slate-800/80"
               }`}
             >
               <div className="flex items-center gap-1">
