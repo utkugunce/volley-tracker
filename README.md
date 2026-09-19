@@ -93,7 +93,8 @@ Projede yönetim ve bülten yükleme güvenliği için ortam değişkenleri kull
 
 | Değişken | Açıklama | Zorunlu mu? |
 |---|---|---|
-| `ADMIN_TOKEN` | `/api/fixtures/upload` endpoint'ine bülten yükleme isteklerini yetkilendirmek için kullanılan gizli anahtar. Tanımlanmadığında endpoint güvenlik amacıyla 503 Service Unavailable döner. | Evet (Upload özelliği için) |
+| `ADMIN_TOKEN` | `/api/fixtures/upload` ve `/api/admin/override` endpoint'lerini yetkilendirmek için kullanılan gizli anahtar. Tanımlanmadığında endpoint güvenlik amacıyla 503 Service Unavailable döner. | Evet (Admin özellikleri için) |
+| `BLOB_READ_WRITE_TOKEN` | Vercel sunucusuz (serverless) salt-okunur dosya sistemi ortamında manuel admin skor düzeltmelerini (`manual-overrides.json`) kalıcı olarak saklamak için Vercel Blob token'ı. Yerel ortamda tanımlanmadığında `data/manual-overrides.json` dosyasına fallback yapılır. | Vercel ortamında Evet |
 
 > [!IMPORTANT]
 > `ADMIN_TOKEN` için asla tahmin edilebilir veya varsayılan değerler kullanmayın. Güçlü ve rastgele bir token üretmek için şu komutlardan birini çalıştırabilirsiniz:

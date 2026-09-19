@@ -12,6 +12,7 @@
     "sync:volleybox": "python scripts/sync_volleybox_matches.py"
   },
   "dependencies": {
+    "@vercel/blob": "^2.8.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
     "next": "^15.2.0",

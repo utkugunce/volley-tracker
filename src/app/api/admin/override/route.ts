@@ -99,7 +99,7 @@ export async function GET(request: Request) {
   if (!auth.authorized) return auth.response!;
 
   try {
-    const data = getOverridesData();
+    const data = await getOverridesData();
     return NextResponse.json(data);
   } catch (e: any) {
     console.error("GET override error:", e);
@@ -156,7 +156,7 @@ export async function POST(request: Request) {
       parsedAwayScore = num;
     }
 
-    const currentData = getOverridesData();
+    const currentData = await getOverridesData();
     const existingOverride = currentData.overrides[safeMatchId];
     const isUpdate = !!existingOverride;
 
@@ -190,7 +190,7 @@ export async function POST(request: Request) {
       currentData.audit_log = currentData.audit_log.slice(0, 200);
     }
 
-    saveOverridesData(currentData);
+    await saveOverridesData(currentData);
 
     return NextResponse.json({
       success: true,
@@ -222,7 +222,7 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: "Geçerli bir match_id parametresi gereklidir." }, { status: 400 });
     }
 
-    const currentData = getOverridesData();
+    const currentData = await getOverridesData();
     const existing = currentData.overrides[safeMatchId];
 
     if (!existing) {
@@ -246,7 +246,7 @@ export async function DELETE(request: Request) {
     };
 
     currentData.audit_log.unshift(auditEntry);
-    saveOverridesData(currentData);
+    await saveOverridesData(currentData);
 
     return NextResponse.json({
       success: true,

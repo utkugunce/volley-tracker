@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { applyOverridesToMatches } from "@/utils/overrides";
+import { applyOverridesToMatches, applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
@@ -269,7 +269,7 @@ export async function GET(request: Request) {
     }
 
     let rawMatches = data.matches || [];
-    let matches = applyOverridesToMatches(rawMatches);
+    let matches = await applyOverridesToMatchesAsync(rawMatches);
 
     if (category && category !== "Tümü") {
       matches = matches.filter((m: any) => m.category === category);
