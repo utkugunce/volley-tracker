@@ -23,6 +23,20 @@ const securityHeaders = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
   },
+  {
+    key: "Content-Security-Policy",
+    value: [
+      "default-src 'self'",
+      "img-src 'self' https://*.volleybox.net data: blob:",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      "style-src 'self' 'unsafe-inline'",
+      "connect-src 'self' https://*.vercel-storage.com",
+      "font-src 'self' data:",
+      "manifest-src 'self'",
+      "worker-src 'self'",
+      "frame-ancestors 'none'",
+    ].join("; "),
+  },
 ];
 
 /** @type {import('next').NextConfig} */
