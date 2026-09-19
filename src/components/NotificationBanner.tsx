@@ -8,13 +8,18 @@ import {
   isBannerDismissed,
   dismissBanner,
   requestNotificationPermission,
+  registerPushSubscription,
 } from "@/utils/notifications";
 
 interface NotificationBannerProps {
   favoritesCount: number;
+  favoriteTeams?: string[];
 }
 
-export const NotificationBanner: React.FC<NotificationBannerProps> = ({ favoritesCount }) => {
+export const NotificationBanner: React.FC<NotificationBannerProps> = ({
+  favoritesCount,
+  favoriteTeams = [],
+}) => {
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -40,13 +45,20 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({ favorite
   const handleEnable = async () => {
     setLoading(true);
     const granted = await requestNotificationPermission();
-    setLoading(false);
     if (granted) {
+      // Arka plan web push aboneliğini kaydet
+      try {
+        await registerPushSubscription({ favoriteTeams });
+      } catch (err) {
+        console.warn("Push abonelik kaydı başarısız:", err);
+      }
+      setLoading(false);
       setSuccess(true);
       setTimeout(() => {
         setVisible(false);
-      }, 2000);
+      }, 2500);
     } else {
+      setLoading(false);
       // Reddedildi veya engellendi
       dismissBanner();
       setVisible(false);
@@ -73,11 +85,11 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({ favorite
               </span>
             </div>
             <p className="text-xs text-slate-300 mt-0.5">
-              Yıldızladığınız favori takımların maç saatine <strong>30 dakika kala</strong> tarayıcınızdan canlı bildirim almak ister misiniz?
+              Yıldızladığınız favori takımların maç saatine <strong>30 dakika kala</strong> canlı bildirim almak ister misiniz?
             </p>
             <p className="text-[11px] text-slate-400 flex items-center gap-1 mt-1">
               <Info size={12} className="text-blue-400 shrink-0" />
-              <span>Bildirimler tarayıcı sekmeniz açıkken iletilir. Dilediğiniz zaman kapatabilirsiniz.</span>
+              <span>Web Push ile maç hatırlatmaları arka planda iletilir. Dilediğiniz zaman kapatabilirsiniz.</span>
             </p>
           </div>
         </div>
