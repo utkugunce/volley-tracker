@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { isMatchPassed } from "@/utils/calendar";
@@ -30,6 +30,8 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   showCityBadge = false,
 }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const [viewMode, setViewMode] = useState<"table" | "grid">("table");
 
   const effectiveCity = city && city !== "Tüm İller" ? city : matches[0]?.city;
 
@@ -97,6 +99,34 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
           </h3>
         </div>
         <div className="flex items-center gap-2">
+          {/* Görünüm Seçici (Liste vs Yayın Kartı) */}
+          <div className="flex items-center rounded-lg bg-slate-800/80 p-0.5 border border-slate-700/60 shadow-xs">
+            <button
+              onClick={() => setViewMode("table")}
+              className={`p-1 rounded-md transition-all cursor-pointer ${
+                viewMode === "table"
+                  ? "bg-red-600 text-white shadow-xs"
+                  : "text-slate-400 hover:text-white"
+              }`}
+              title="Liste Görünümü"
+              aria-label="Liste Görünümü"
+            >
+              <List size={13} />
+            </button>
+            <button
+              onClick={() => setViewMode("grid")}
+              className={`p-1 rounded-md transition-all cursor-pointer ${
+                viewMode === "grid"
+                  ? "bg-red-600 text-white shadow-xs"
+                  : "text-slate-400 hover:text-white"
+              }`}
+              title="Yayın Kartı (Grid) Görünümü"
+              aria-label="Yayın Kartı Görünümü"
+            >
+              <LayoutGrid size={13} />
+            </button>
+          </div>
+
           {matches.some((m) => favorites.includes(m.id) && m.date && m.date !== "TBD") && (
             <button
               onClick={handleDownloadFavoritesIcs}
@@ -115,8 +145,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       </div>
 
       {/* 2. Resmi TVF / Fikstür Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları - Volleybox - İşlem */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-left border-collapse text-xs">
+      {viewMode === "table" ? (
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse text-xs">
           <thead>
             <tr className="bg-slate-950/60 text-slate-400 font-bold border-b border-slate-800 uppercase text-[10px] tracking-wider">
               <th className="py-2 px-1.5 text-center w-7" title="Favorilere Ekle">⭐</th>
@@ -288,14 +319,22 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   <td className="py-2 px-2 text-left whitespace-nowrap">
                     {isFinished && match.set_scores && match.set_scores.length > 0 ? (
                       <div className="flex items-center gap-1.5 flex-nowrap">
-                        {match.set_scores.map((set, sIdx) => (
-                          <span
-                            key={sIdx}
-                            className="font-mono text-[10px] bg-slate-900/90 text-slate-200 px-1.5 py-0.5 rounded-md border border-slate-700/60 font-medium shadow-2xs"
-                          >
-                            {set}
-                          </span>
-                        ))}
+                        {match.set_scores.map((set, sIdx) => {
+                          const parts = set.split("-").map((n) => parseInt(n.trim(), 10));
+                          const isHomeSet = parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1]) && parts[0] > parts[1];
+                          return (
+                            <span
+                              key={sIdx}
+                              className={`font-mono text-[10px] px-1.5 py-0.5 rounded-md border font-bold shadow-2xs ${
+                                isHomeSet
+                                  ? "bg-red-950/50 text-red-200 border-red-800/60"
+                                  : "bg-slate-900/90 text-slate-300 border-slate-700/60"
+                              }`}
+                            >
+                              {set}
+                            </span>
+                          );
+                        })}
                       </div>
                     ) : (
                       <span className="text-slate-500 text-[11px] font-mono">-</span>
@@ -398,6 +437,225 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
           </tbody>
         </table>
       </div>
+      ) : (
+        /* 3. Yayın Tarzı Grid Kart Görünümü (Broadcast Cards) */
+        <div className="p-3.5 sm:p-4 grid grid-cols-1 md:grid-cols-2 gap-3.5 bg-slate-950/40">
+          {matches.map((match) => {
+            const isFav = favorites.includes(match.id);
+            const isFinished = match.status === "finished";
+            const homeWon = isFinished && (match.home_score ?? 0) > (match.away_score ?? 0);
+            const awayWon = isFinished && (match.away_score ?? 0) > (match.home_score ?? 0);
+            const formattedDate = formatRowDate(match.date);
+            const isCopied = copiedId === match.id;
+            const disc = match.volleybox?.discrepancy;
+            const hasDiff = Boolean(disc?.has_diff);
+
+            return (
+              <div
+                key={match.id}
+                className={`rounded-xl border transition-all duration-200 overflow-hidden flex flex-col justify-between ${
+                  hasDiff
+                    ? "bg-gradient-to-b from-amber-950/30 via-slate-900/90 to-slate-950 border-amber-600/50 shadow-md shadow-amber-950/20"
+                    : isFav
+                    ? "bg-gradient-to-b from-amber-500/10 via-slate-900/90 to-slate-950 border-amber-400/50 shadow-md shadow-amber-500/10"
+                    : "bg-gradient-to-b from-slate-900/90 via-slate-900/60 to-slate-950/90 border-slate-800/80 hover:border-slate-700/80 shadow-card hover:shadow-lg"
+                }`}
+              >
+                {/* Kart Üst Bilgi Çubuğu */}
+                <div className="px-3.5 py-2 bg-slate-900/60 border-b border-slate-800/70 flex items-center justify-between gap-2 text-[11px]">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="font-mono font-bold text-slate-200">
+                      {formattedDate}
+                    </span>
+                    <span className="text-slate-600">•</span>
+                    <span className="font-mono font-semibold text-slate-300">
+                      {match.time === "--:--" ? "Saat Belirtilmedi" : match.time}
+                    </span>
+                    {isFinished && (
+                      <span className="ml-1 px-1.5 py-0.2 rounded text-[9px] font-black uppercase tracking-wider bg-red-600/20 text-red-300 border border-red-500/30">
+                        Bitti
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {!isFinished && match.date !== "TBD" && (
+                      <button
+                        onClick={(e) => handleDownloadIcs(e, match)}
+                        className="p-1 rounded-md text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
+                        title="Takvime Ekle (.ics)"
+                      >
+                        <CalendarPlus size={13} />
+                      </button>
+                    )}
+                    <button
+                      onClick={(e) => handleCopy(e, match)}
+                      className="p-1 rounded-md text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors"
+                      title="Maç Detayını Kopyala"
+                    >
+                      {isCopied ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
+                    </button>
+                    <button
+                      onClick={() => onToggleFavorite?.(match.id)}
+                      className="p-1 rounded-md text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
+                      title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+                    >
+                      <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Kart Gövdesi: Takımlar & Skorlar */}
+                <div className="p-3.5 space-y-2.5">
+                  {/* Ev Sahibi Takım */}
+                  <div
+                    className={`flex items-center justify-between gap-2.5 p-2 rounded-xl transition-colors ${
+                      homeWon ? "bg-red-500/10 border border-red-500/25 shadow-xs" : "bg-slate-900/30"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                      <TeamVolleyboxLink
+                        teamName={match.home_team}
+                        category={match.category || match.age_group}
+                        city={match.city || effectiveCity}
+                        logoClassName="!w-9 !h-9 sm:!w-10 sm:!h-10 object-contain drop-shadow-md bg-transparent shrink-0"
+                        className={`text-xs sm:text-sm truncate transition-colors ${
+                          homeWon
+                            ? "font-black text-white"
+                            : isFinished
+                            ? "font-medium text-slate-400"
+                            : "font-bold text-slate-200 hover:text-white"
+                        }`}
+                      />
+                    </div>
+                    <div className="shrink-0 font-mono text-sm font-black">
+                      {isFinished ? (
+                        <span
+                          className={`inline-flex items-center justify-center min-w-[26px] h-6 px-1.5 rounded-lg text-xs font-black ${
+                            homeWon
+                              ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red"
+                              : "bg-slate-800 text-slate-400 border border-slate-700/60"
+                          }`}
+                        >
+                          {match.home_score ?? 0}
+                        </span>
+                      ) : (
+                        <span className="text-slate-600 text-xs">-</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Deplasman Takımı */}
+                  <div
+                    className={`flex items-center justify-between gap-2.5 p-2 rounded-xl transition-colors ${
+                      awayWon ? "bg-red-500/10 border border-red-500/25 shadow-xs" : "bg-slate-900/30"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                      <TeamVolleyboxLink
+                        teamName={match.away_team}
+                        category={match.category || match.age_group}
+                        city={match.city || effectiveCity}
+                        logoClassName="!w-9 !h-9 sm:!w-10 sm:!h-10 object-contain drop-shadow-md bg-transparent shrink-0"
+                        className={`text-xs sm:text-sm truncate transition-colors ${
+                          awayWon
+                            ? "font-black text-white"
+                            : isFinished
+                            ? "font-medium text-slate-400"
+                            : "font-bold text-slate-200 hover:text-white"
+                        }`}
+                      />
+                    </div>
+                    <div className="shrink-0 font-mono text-sm font-black">
+                      {isFinished ? (
+                        <span
+                          className={`inline-flex items-center justify-center min-w-[26px] h-6 px-1.5 rounded-lg text-xs font-black ${
+                            awayWon
+                              ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red"
+                              : "bg-slate-800 text-slate-400 border border-slate-700/60"
+                          }`}
+                        >
+                          {match.away_score ?? 0}
+                        </span>
+                      ) : (
+                        <span className="text-slate-600 text-xs">-</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Set Skorları */}
+                  {isFinished && match.set_scores && match.set_scores.length > 0 && (
+                    <div className="pt-2 border-t border-slate-800/80 flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Setler:</span>
+                      {match.set_scores.map((set, sIdx) => {
+                        const parts = set.split("-").map((n) => parseInt(n.trim(), 10));
+                        const isHomeSet = parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1]) && parts[0] > parts[1];
+                        return (
+                          <span
+                            key={sIdx}
+                            className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border shadow-xs ${
+                              isHomeSet
+                                ? "bg-red-950/40 text-red-200 border-red-800/50"
+                                : "bg-slate-900/90 text-slate-300 border-slate-700/60"
+                            }`}
+                          >
+                            {set}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+
+                {/* Kart Alt Bilgi: Salon & Volleybox */}
+                <div className="px-3.5 py-2 bg-slate-950/70 border-t border-slate-800/70 flex items-center justify-between gap-2 text-[11px]">
+                  {match.hall && match.hall !== "TBD" ? (
+                    <a
+                      href={getHallNavigationUrl(match.hall, match.city || effectiveCity)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 min-w-0 truncate text-slate-300 hover:text-white group/hall transition-colors cursor-pointer"
+                      title={`${match.hall} — Haritada Gör & Yol Tarifi Al`}
+                    >
+                      <MapPin size={11} className="text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform" />
+                      <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-red-400 font-medium text-[11px]">
+                        {match.hall}
+                      </span>
+                    </a>
+                  ) : (
+                    <span className="text-slate-500 text-[11px]">Salon Belirtilmedi</span>
+                  )}
+
+                  {match.volleybox?.synced ? (
+                    hasDiff ? (
+                      <a
+                        href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700 shadow-xs"
+                      >
+                        <AlertTriangle size={9} className="text-amber-400" />
+                        <span>VB Değişti</span>
+                      </a>
+                    ) : (
+                      <a
+                        href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700 shadow-xs"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>VB: {match.volleybox.score || "Kayıtlı"}</span>
+                      </a>
+                    )
+                  ) : (
+                    <span className="text-[9px] text-slate-500">VB: Girilmedi</span>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

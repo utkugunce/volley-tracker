@@ -21,6 +21,7 @@ import {
   Star,
   Users,
   Shield,
+  LayoutGrid,
 } from "lucide-react";
 import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
@@ -28,15 +29,118 @@ import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
 
+const getClubBrandColors = (teamName: string) => {
+  const lower = teamName.toLowerCase();
+  if (lower.includes("fenerbahçe")) {
+    return {
+      glowHome: "bg-yellow-400/20",
+      glowAway: "bg-blue-600/25",
+      accentBorder: "border-yellow-500/40",
+      gradient: "from-blue-950/80 via-slate-900 to-amber-950/40",
+    };
+  }
+  if (lower.includes("vakıfbank")) {
+    return {
+      glowHome: "bg-yellow-400/25",
+      glowAway: "bg-amber-600/20",
+      accentBorder: "border-yellow-500/40",
+      gradient: "from-yellow-950/50 via-slate-900 to-slate-950",
+    };
+  }
+  if (lower.includes("eczacıbaşı")) {
+    return {
+      glowHome: "bg-orange-500/25",
+      glowAway: "bg-rose-600/20",
+      accentBorder: "border-orange-500/40",
+      gradient: "from-orange-950/50 via-slate-900 to-slate-950",
+    };
+  }
+  if (lower.includes("galatasaray")) {
+    return {
+      glowHome: "bg-amber-500/25",
+      glowAway: "bg-red-600/25",
+      accentBorder: "border-red-500/40",
+      gradient: "from-red-950/50 via-slate-900 to-amber-950/40",
+    };
+  }
+  if (lower.includes("beşiktaş")) {
+    return {
+      glowHome: "bg-white/15",
+      glowAway: "bg-slate-700/30",
+      accentBorder: "border-slate-500/40",
+      gradient: "from-slate-800/60 via-slate-900 to-slate-950",
+    };
+  }
+  return {
+    glowHome: "bg-red-600/15",
+    glowAway: "bg-sky-600/10",
+    accentBorder: "border-red-500/30",
+    gradient: "from-[#0f172a] via-[#0b1325] to-[#1e293b]",
+  };
+};
+
+const WinLossDonut: React.FC<{ wins: number; losses: number }> = ({ wins, losses }) => {
+  const total = wins + losses;
+  const winPercent = total > 0 ? Math.round((wins / total) * 100) : 0;
+  const radius = 24;
+  const circumference = 2 * Math.PI * radius;
+  const winStroke = total > 0 ? (wins / total) * circumference : 0;
+
+  return (
+    <div className="flex items-center gap-3 bg-slate-800/50 border border-slate-700/60 rounded-xl p-2.5">
+      <div className="relative w-14 h-14 flex items-center justify-center shrink-0">
+        <svg className="w-full h-full -rotate-90" viewBox="0 0 64 64">
+          <circle
+            cx="32"
+            cy="32"
+            r={radius}
+            fill="transparent"
+            stroke="#334155"
+            strokeWidth="6"
+          />
+          {wins > 0 && (
+            <circle
+              cx="32"
+              cy="32"
+              r={radius}
+              fill="transparent"
+              stroke="#10b981"
+              strokeWidth="6"
+              strokeDasharray={`${winStroke} ${circumference}`}
+              strokeLinecap="round"
+            />
+          )}
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+          <span className="text-[11px] font-black font-mono text-white">%{winPercent}</span>
+          <span className="text-[8px] font-bold text-slate-400 uppercase">Gal</span>
+        </div>
+      </div>
+      <div className="text-xs space-y-0.5 min-w-0">
+        <div className="flex items-center gap-1.5 text-emerald-400 font-bold truncate">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+          <span>{wins}G</span>
+        </div>
+        <div className="flex items-center gap-1.5 text-rose-400 font-bold truncate">
+          <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0"></span>
+          <span>{losses}M</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 interface TeamDetailClientProps {
   team: TeamDetails;
 }
 
 export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
   const [matchFilter, setMatchFilter] = useState<"all" | "finished" | "upcoming">("all");
+  const [rosterView, setRosterView] = useState<"grid" | "court">("grid");
   const [downloadingSeason, setDownloadingSeason] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const isFav = isFavorite(team.teamName);
+  const brand = getClubBrandColors(team.teamName);
 
   const filteredMatches = team.matches.filter((m) => {
     if (matchFilter === "finished") return m.status === "finished";
@@ -130,9 +234,13 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 pt-6 space-y-6">
-        {/* 2. TAKIM KÜNYESİ VE LOGOSU */}
-        <section className="bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xl">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+        {/* 2. TAKIM KÜNYESİ VE LOGOSU (Dinamik Kulüp Temalı Hero) */}
+        <section className={`relative overflow-hidden bg-gradient-to-br ${brand.gradient} border ${brand.accentBorder} rounded-3xl p-5 sm:p-7 shadow-2xl transition-all duration-300`}>
+          {/* Kulüp Ambient Glow Efektleri */}
+          <div className={`absolute -top-24 -left-24 w-80 h-80 ${brand.glowHome} rounded-full blur-3xl pointer-events-none`} />
+          <div className={`absolute -bottom-24 -right-24 w-80 h-80 ${brand.glowAway} rounded-full blur-3xl pointer-events-none`} />
+
+          <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
             {/* Logo (Cut-out) */}
             <div className="w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center shrink-0 drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]">
               {logoSrc ? (
@@ -270,8 +378,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
             </div>
           </div>
 
-          {/* KPI İstatistik Şeridi */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5 sm:gap-3 mt-6 pt-5 border-t border-slate-800/80">
+          {/* KPI İstatistik Şeridi & Sezon Donut Grafiği */}
+          <div className="relative z-10 grid grid-cols-2 sm:grid-cols-6 gap-2.5 sm:gap-3 mt-6 pt-5 border-t border-slate-800/80 items-center">
             <div className="bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 text-center">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                 Toplam Maç
@@ -304,11 +412,14 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                 {team.stats.upcoming}
               </span>
             </div>
-            <div className="col-span-2 sm:col-span-1 bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 text-center">
+            <div className="bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 text-center">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                Son 5 Maç Formu
+                Son 5 Form
               </span>
               <FormBadge matches={team.form} className="justify-center mt-2" />
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+              <WinLossDonut wins={team.stats.wins} losses={team.stats.losses} />
             </div>
           </div>
         </section>
@@ -402,86 +513,297 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
 
         {/* 4. TAKIM KADROSU (ROSTER) */}
         <section className="space-y-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2 flex-wrap">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
               <Users size={18} className="text-primary" />
               <span>Takım Kadrosu {team.roster ? `(${team.roster.length} Sporcu)` : ""}</span>
             </h2>
-            {team.roster && (
-              <span className="text-xs text-slate-400 font-medium">2024-2025 Sezonu</span>
-            )}
+            
+            <div className="flex items-center gap-2.5">
+              {team.roster && team.roster.length > 0 && (
+                <div className="flex items-center rounded-lg bg-slate-800/90 p-0.5 border border-slate-700">
+                  <button
+                    onClick={() => setRosterView("grid")}
+                    className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                      rosterView === "grid"
+                        ? "bg-primary text-white shadow-xs"
+                        : "text-slate-400 hover:text-white"
+                    }`}
+                  >
+                    Liste
+                  </button>
+                  <button
+                    onClick={() => setRosterView("court")}
+                    className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
+                      rosterView === "court"
+                        ? "bg-primary text-white shadow-xs"
+                        : "text-slate-400 hover:text-white"
+                    }`}
+                  >
+                    Saha Dizilişi
+                  </button>
+                </div>
+              )}
+              {team.roster && (
+                <span className="text-xs text-slate-400 font-medium hidden sm:inline">2024-2025 Sezonu</span>
+              )}
+            </div>
           </div>
 
           {team.roster && team.roster.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-              {team.roster.map((player) => {
-                const isLibero = player.isLibero || player.position === "Libero";
-                const isSetter = player.position === "Pasör";
-                const isSpiker = player.position === "Smaçör";
-                const isOpposite = player.position === "Pasör Çaprazı";
-                const isMiddle = player.position === "Orta Oyuncu";
+            rosterView === "court" ? (
+              /* Voleybol Sahası Diziliş Görünümü (Tactical Court View) */
+              <div className="relative rounded-3xl border border-amber-500/30 bg-gradient-to-b from-amber-950/20 via-slate-900/90 to-slate-950 p-4 sm:p-6 overflow-hidden shadow-2xl">
+                {/* File / Net Hattı */}
+                <div className="w-full bg-slate-950/90 border-b-2 border-white/60 py-1.5 px-3 rounded-t-xl text-center flex items-center justify-center gap-2 mb-5">
+                  <div className="h-0.5 w-10 bg-white/40"></div>
+                  <span className="text-[10px] sm:text-xs font-black tracking-widest text-amber-300 uppercase">
+                    FİLE / NET (HÜCUM ÇİZGİSİ)
+                  </span>
+                  <div className="h-0.5 w-10 bg-white/40"></div>
+                </div>
 
-                const posBadgeStyle = isLibero
-                  ? "bg-rose-500/20 text-rose-300 border-rose-500/40"
-                  : isSetter
-                  ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
-                  : isSpiker
-                  ? "bg-blue-500/20 text-blue-300 border-blue-500/40"
-                  : isOpposite
-                  ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
-                  : isMiddle
-                  ? "bg-purple-500/20 text-purple-300 border-purple-500/40"
-                  : "bg-slate-700/60 text-slate-300 border-slate-600";
-
-                return (
-                  <div
-                    key={player.number + player.name}
-                    className="bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/70 hover:border-slate-600 rounded-xl p-3.5 transition-all flex items-center gap-3.5 shadow-sm group"
-                  >
-                    {/* Forma Numarası */}
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 text-white font-black font-mono text-base flex items-center justify-center shrink-0 shadow-glow-red border border-red-400/40 group-hover:scale-105 transition-transform">
-                      {player.number}
-                    </div>
-
-                    {/* Oyuncu Bilgileri */}
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="font-bold text-white text-sm truncate group-hover:text-primary transition-colors">
-                          {player.name}
-                        </span>
-                        {player.isCaptain && (
-                          <span
-                            className="bg-amber-500/30 text-amber-300 border border-amber-500/50 text-[10px] font-black px-1.5 py-0.2 rounded shadow-xs"
-                            title="Takım Kaptanı"
-                          >
-                            (K)
-                          </span>
-                        )}
-                        {player.isLibero && (
-                          <span
-                            className="bg-rose-500/30 text-rose-300 border border-rose-500/50 text-[10px] font-black px-1.5 py-0.2 rounded shadow-xs"
-                            title="Libero"
-                          >
-                            (L)
-                          </span>
-                        )}
-                      </div>
-
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${posBadgeStyle}`}>
-                          {player.position}
-                        </span>
-                        {player.birthYear && (
-                          <span className="text-[10px] text-slate-400 font-mono">
-                            {player.birthYear}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                {/* Ön Hat (3 Metre İçi) */}
+                <div className="relative border-b-2 border-dashed border-amber-400/30 pb-5 mb-5">
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-slate-500 mb-2.5 text-center">
+                    Ön Hat (Hücum & Blok Bölgesi)
                   </div>
-                );
-              })}
-            </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {/* Pozisyon 4: Sol Smaçör */}
+                    {(() => {
+                      const players = team.roster.filter((p) => p.position === "Smaçör");
+                      const primary = players[0];
+                      return (
+                        <div className="bg-slate-900/80 border border-blue-500/30 hover:border-blue-500/60 rounded-2xl p-3 text-center transition-all shadow-md">
+                          <div className="inline-flex items-center gap-1 text-[10px] font-black text-blue-400 uppercase tracking-wide bg-blue-500/10 px-2 py-0.5 rounded-full mb-2">
+                            4 • Sol Smaçör (OH)
+                          </div>
+                          {primary ? (
+                            <div className="flex flex-col items-center">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-black font-mono text-sm flex items-center justify-center shadow-md mb-1.5">
+                                #{primary.number}
+                              </div>
+                              <span className="font-bold text-white text-xs">{primary.name}</span>
+                              {primary.birthYear && <span className="text-[10px] text-slate-400 font-mono">{primary.birthYear}</span>}
+                              {players.length > 1 && (
+                                <span className="text-[9px] text-slate-500 mt-1">+{players.length - 1} alternatif</span>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="text-xs text-slate-500 py-3">Sporcu atanmadı</div>
+                          )}
+                        </div>
+                      );
+                    })()}
+
+                    {/* Pozisyon 3: Orta Oyuncu */}
+                    {(() => {
+                      const players = team.roster.filter((p) => p.position === "Orta Oyuncu");
+                      const primary = players[0];
+                      return (
+                        <div className="bg-slate-900/80 border border-purple-500/30 hover:border-purple-500/60 rounded-2xl p-3 text-center transition-all shadow-md">
+                          <div className="inline-flex items-center gap-1 text-[10px] font-black text-purple-400 uppercase tracking-wide bg-purple-500/10 px-2 py-0.5 rounded-full mb-2">
+                            3 • Orta Oyuncu (MB)
+                          </div>
+                          {primary ? (
+                            <div className="flex flex-col items-center">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-700 text-white font-black font-mono text-sm flex items-center justify-center shadow-md mb-1.5">
+                                #{primary.number}
+                              </div>
+                              <span className="font-bold text-white text-xs">{primary.name}</span>
+                              {primary.birthYear && <span className="text-[10px] text-slate-400 font-mono">{primary.birthYear}</span>}
+                              {players.length > 1 && (
+                                <span className="text-[9px] text-slate-500 mt-1">+{players.length - 1} alternatif</span>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="text-xs text-slate-500 py-3">Sporcu atanmadı</div>
+                          )}
+                        </div>
+                      );
+                    })()}
+
+                    {/* Pozisyon 2: Pasör Çaprazı / Pasör */}
+                    {(() => {
+                      const players = team.roster.filter((p) => p.position === "Pasör Çaprazı" || p.position === "Pasör");
+                      const primary = players[0];
+                      return (
+                        <div className="bg-slate-900/80 border border-amber-500/30 hover:border-amber-500/60 rounded-2xl p-3 text-center transition-all shadow-md">
+                          <div className="inline-flex items-center gap-1 text-[10px] font-black text-amber-400 uppercase tracking-wide bg-amber-500/10 px-2 py-0.5 rounded-full mb-2">
+                            2 • Pasör Çaprazı (OPP)
+                          </div>
+                          {primary ? (
+                            <div className="flex flex-col items-center">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-600 to-rose-700 text-white font-black font-mono text-sm flex items-center justify-center shadow-md mb-1.5">
+                                #{primary.number}
+                              </div>
+                              <span className="font-bold text-white text-xs">{primary.name}</span>
+                              {primary.birthYear && <span className="text-[10px] text-slate-400 font-mono">{primary.birthYear}</span>}
+                              {players.length > 1 && (
+                                <span className="text-[9px] text-slate-500 mt-1">+{players.length - 1} alternatif</span>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="text-xs text-slate-500 py-3">Sporcu atanmadı</div>
+                          )}
+                        </div>
+                      );
+                    })()}
+                  </div>
+                </div>
+
+                {/* Arka Hat (Defans & Servis) */}
+                <div>
+                  <div className="text-[9px] uppercase font-bold tracking-wider text-slate-500 mb-2.5 text-center">
+                    Arka Hat (Defans & Servis Hattı)
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    {/* Pozisyon 5: Defans / Smaçör */}
+                    {(() => {
+                      const players = team.roster.filter((p) => p.position === "Smaçör");
+                      const secondary = players[1] || players[0];
+                      return (
+                        <div className="bg-slate-900/80 border border-blue-500/30 hover:border-blue-500/60 rounded-2xl p-3 text-center transition-all shadow-md">
+                          <div className="inline-flex items-center gap-1 text-[10px] font-black text-blue-400 uppercase tracking-wide bg-blue-500/10 px-2 py-0.5 rounded-full mb-2">
+                            5 • Sol Arka Defans
+                          </div>
+                          {secondary ? (
+                            <div className="flex flex-col items-center">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-slate-800 text-white font-black font-mono text-sm flex items-center justify-center shadow-md mb-1.5">
+                                #{secondary.number}
+                              </div>
+                              <span className="font-bold text-white text-xs">{secondary.name}</span>
+                              {secondary.birthYear && <span className="text-[10px] text-slate-400 font-mono">{secondary.birthYear}</span>}
+                            </div>
+                          ) : (
+                            <div className="text-xs text-slate-500 py-3">Sporcu atanmadı</div>
+                          )}
+                        </div>
+                      );
+                    })()}
+
+                    {/* Pozisyon 6: Libero */}
+                    {(() => {
+                      const players = team.roster.filter((p) => p.isLibero || p.position === "Libero");
+                      const primary = players[0];
+                      return (
+                        <div className="bg-slate-900/80 border border-rose-500/40 hover:border-rose-500/70 rounded-2xl p-3 text-center transition-all shadow-md ring-1 ring-rose-500/30">
+                          <div className="inline-flex items-center gap-1 text-[10px] font-black text-rose-300 uppercase tracking-wide bg-rose-500/20 px-2 py-0.5 rounded-full mb-2">
+                            6 • Libero (L)
+                          </div>
+                          {primary ? (
+                            <div className="flex flex-col items-center">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-600 to-pink-700 text-white font-black font-mono text-sm flex items-center justify-center shadow-glow-red mb-1.5">
+                                #{primary.number}
+                              </div>
+                              <span className="font-bold text-white text-xs">{primary.name}</span>
+                              {primary.birthYear && <span className="text-[10px] text-slate-400 font-mono">{primary.birthYear}</span>}
+                            </div>
+                          ) : (
+                            <div className="text-xs text-slate-500 py-3">Libero atanmadı</div>
+                          )}
+                        </div>
+                      );
+                    })()}
+
+                    {/* Pozisyon 1: Pasör / Servis */}
+                    {(() => {
+                      const players = team.roster.filter((p) => p.position === "Pasör");
+                      const primary = players[0];
+                      return (
+                        <div className="bg-slate-900/80 border border-emerald-500/30 hover:border-emerald-500/60 rounded-2xl p-3 text-center transition-all shadow-md">
+                          <div className="inline-flex items-center gap-1 text-[10px] font-black text-emerald-400 uppercase tracking-wide bg-emerald-500/10 px-2 py-0.5 rounded-full mb-2">
+                            1 • Servis / Pasör (S)
+                          </div>
+                          {primary ? (
+                            <div className="flex flex-col items-center">
+                              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white font-black font-mono text-sm flex items-center justify-center shadow-md mb-1.5">
+                                #{primary.number}
+                              </div>
+                              <span className="font-bold text-white text-xs">{primary.name}</span>
+                              {primary.birthYear && <span className="text-[10px] text-slate-400 font-mono">{primary.birthYear}</span>}
+                            </div>
+                          ) : (
+                            <div className="text-xs text-slate-500 py-3">Pasör atanmadı</div>
+                          )}
+                        </div>
+                      );
+                    })()}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* Grid Kartlar Görünümü */
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                {team.roster.map((player) => {
+                  const isLibero = player.isLibero || player.position === "Libero";
+                  const isSetter = player.position === "Pasör";
+                  const isSpiker = player.position === "Smaçör";
+                  const isOpposite = player.position === "Pasör Çaprazı";
+                  const isMiddle = player.position === "Orta Oyuncu";
+
+                  const posBadgeStyle = isLibero
+                    ? "bg-rose-500/20 text-rose-300 border-rose-500/40"
+                    : isSetter
+                    ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
+                    : isSpiker
+                    ? "bg-blue-500/20 text-blue-300 border-blue-500/40"
+                    : isOpposite
+                    ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
+                    : isMiddle
+                    ? "bg-purple-500/20 text-purple-300 border-purple-500/40"
+                    : "bg-slate-700/60 text-slate-300 border-slate-600";
+
+                  return (
+                    <div
+                      key={player.number + player.name}
+                      className="bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/70 hover:border-slate-600 rounded-xl p-3.5 transition-all flex items-center gap-3.5 shadow-sm group"
+                    >
+                      {/* Forma Numarası */}
+                      <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 text-white font-black font-mono text-base flex items-center justify-center shrink-0 shadow-glow-red border border-red-400/40 group-hover:scale-105 transition-transform">
+                        {player.number}
+                      </div>
+
+                      {/* Oyuncu Bilgileri */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="font-bold text-white text-sm truncate group-hover:text-primary transition-colors">
+                            {player.name}
+                          </span>
+                          {player.isCaptain && (
+                            <span
+                              className="bg-amber-500/30 text-amber-300 border border-amber-500/50 text-[10px] font-black px-1.5 py-0.2 rounded shadow-xs"
+                              title="Takım Kaptanı"
+                            >
+                              (K)
+                            </span>
+                          )}
+                          {player.isLibero && (
+                            <span
+                              className="bg-rose-500/30 text-rose-300 border border-rose-500/50 text-[10px] font-black px-1.5 py-0.2 rounded shadow-xs"
+                              title="Libero"
+                            >
+                              (L)
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${posBadgeStyle}`}>
+                            {player.position}
+                          </span>
+                          {player.birthYear && (
+                            <span className="text-[10px] text-slate-400 font-mono">
+                              {player.birthYear}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )
           ) : (
             <div className="bg-slate-800/40 border border-slate-700/60 rounded-xl p-6 text-center text-slate-400 text-xs">
               <Shield size={24} className="mx-auto text-slate-500 mb-2 opacity-70" />

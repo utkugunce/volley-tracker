@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useEffect } from "react";
 import { StandingItem } from "@/types/fixture";
-import { Trophy, HelpCircle, MapPin, Layers, Download } from "lucide-react";
+import { Trophy, HelpCircle, MapPin, Layers, Download, TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { slugify } from "@/utils/slugify";
@@ -520,40 +520,68 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                 {items.map((row) => {
                   const isTop1 = row.rank === 1;
                   const isTop4 = row.rank <= 4;
+                  const isPlayoff = row.rank <= 4;
+                  const isKlasman = row.rank > 4 && row.rank <= 8;
+
+                  const totalSets = (row.sets_won || 0) + (row.sets_lost || 0);
+                  const setWinPct = totalSets > 0 ? Math.round(((row.sets_won || 0) / totalSets) * 100) : 0;
+
+                  // Trend: son maça göre
+                  const lastForm = row.form && row.form.length > 0 ? row.form[row.form.length - 1] : null;
 
                   return (
                     <tr
                       key={row.rank}
                       className={`transition-colors duration-150 ${
                         isTop1
+                          ? "bg-amber-500/10 hover:bg-amber-500/15"
+                          : isPlayoff
+                          ? "bg-emerald-500/5 hover:bg-emerald-500/10"
+                          : isKlasman
                           ? "bg-amber-500/5 hover:bg-amber-500/10"
                           : row.rank % 2 === 1
                           ? "bg-transparent hover:bg-slate-800/50"
                           : "bg-slate-900/25 hover:bg-slate-800/60"
                       }`}
                     >
-                      {/* Sıra & Final Etabı Çizgisi */}
-                      <td className="py-3 px-3 text-center font-bold text-xs relative">
+                      {/* Sıra & Final Etabı / Klasman Çizgisi & Trend Oku */}
+                      <td className="py-3 px-2 text-center font-bold text-xs relative">
                         <span
                           className={`absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r ${
                             isTop1
                               ? "bg-amber-400 shadow-glow-amber"
-                              : isTop4
-                              ? "bg-emerald-500"
-                              : "bg-transparent"
+                              : isPlayoff
+                              ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
+                              : isKlasman
+                              ? "bg-amber-500/80 shadow-[0_0_6px_rgba(245,158,11,0.4)]"
+                              : "bg-slate-700/40"
                           }`}
                         />
-                        <span
-                          className={`inline-flex items-center justify-center font-mono ${
-                            isTop1
-                              ? "text-amber-300 font-black"
-                              : isTop4
-                              ? "text-emerald-400 font-black"
-                              : "text-slate-500 font-medium"
-                          }`}
-                        >
-                          {row.rank}
-                        </span>
+                        <div className="flex items-center justify-center gap-1">
+                          <span
+                            className={`font-mono ${
+                              isTop1
+                                ? "text-amber-300 font-black text-sm"
+                                : isPlayoff
+                                ? "text-emerald-400 font-black"
+                                : isKlasman
+                                ? "text-amber-400 font-bold"
+                                : "text-slate-400 font-medium"
+                            }`}
+                          >
+                            {row.rank}
+                          </span>
+                          {/* Trend Oku */}
+                          <span className="shrink-0" title={lastForm === "W" ? "Son maç galibiyet" : lastForm === "L" ? "Son maç mağlubiyet" : "Durum sabit"}>
+                            {lastForm === "W" ? (
+                              <TrendingUp size={11} className="text-emerald-400 stroke-[2.5]" />
+                            ) : lastForm === "L" ? (
+                              <TrendingDown size={11} className="text-rose-400 stroke-[2.5]" />
+                            ) : (
+                              <Minus size={9} className="text-slate-600" />
+                            )}
+                          </span>
+                        </div>
                       </td>
 
                       {/* Takım Adı */}
@@ -587,11 +615,23 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                         {row.lost}
                       </td>
 
-                      {/* Setler (AS - VS) */}
+                      {/* Setler (AS - VS) + Mini Oran Çubuğu */}
                       <td className="py-3 px-3 text-center font-mono text-slate-200 whitespace-nowrap">
-                        <span className="font-bold text-white">{row.sets_won}</span>
-                        <span className="text-slate-500 mx-1">:</span>
-                        <span className="text-slate-400">{row.sets_lost}</span>
+                        <div className="flex flex-col items-center">
+                          <div>
+                            <span className="font-bold text-white">{row.sets_won}</span>
+                            <span className="text-slate-500 mx-1">:</span>
+                            <span className="text-slate-400">{row.sets_lost}</span>
+                          </div>
+                          {totalSets > 0 && (
+                            <div className="w-12 h-1 bg-slate-800 rounded-full overflow-hidden mt-1 flex" title={`Set Kazanma: %${setWinPct}`}>
+                              <div
+                                style={{ width: `${setWinPct}%` }}
+                                className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full transition-all"
+                              />
+                            </div>
+                          )}
+                        </div>
                       </td>
 
                       {/* Set Oranı */}
@@ -605,7 +645,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       </td>
 
                       {/* Puan (P) */}
-                      <td className="py-3 px-3 text-center bg-slate-900/80 font-mono font-black text-sm text-white border-x border-slate-800/60">
+                      <td className="py-3 px-3 text-center bg-slate-900/80 font-mono font-black text-sm text-white border-x border-slate-800/60 shadow-inner">
                         {row.points}
                       </td>
 
@@ -637,19 +677,25 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
         {/* Alt Açıklama / Legend */}
         <div className="glass-panel border-t border-slate-800/80 px-4 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-400">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded bg-emerald-500 shadow-2xs" />
-              <span className="font-semibold text-slate-300">1 - 4: Final Etabı (Play-Off)</span>
+              <span className="w-2.5 h-2.5 rounded bg-emerald-500 shadow-xs" />
+              <span className="font-bold text-slate-200">1 - 4: Final Etabı (Play-Off)</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded bg-slate-600" />
-              <span>5 - 8: Klasman Etabı</span>
+              <span className="w-2.5 h-2.5 rounded bg-amber-500 shadow-xs" />
+              <span className="font-bold text-slate-300">5 - 8: Klasman Etabı</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded bg-slate-700" />
+              <span>9+: Normal Sezon</span>
             </div>
           </div>
 
-          <div className="text-slate-500 font-mono text-[10px]">
-            * TVF Puan Sistemi: 3-0/3-1 (3 puan), 3-2 (2/1 puan)
+          <div className="text-slate-400 font-mono text-[10px] flex items-center gap-2">
+            <span>▲ Galibiyet trendi</span>
+            <span>•</span>
+            <span>▼ Mağlubiyet trendi</span>
           </div>
         </div>
       </div>

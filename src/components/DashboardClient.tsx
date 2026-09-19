@@ -8,6 +8,8 @@ import { FixtureTable } from "@/components/FixtureTable";
 import { StandingsTable } from "@/components/StandingsTable";
 import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
+import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { NotificationBanner } from "@/components/NotificationBanner";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History } from "lucide-react";
@@ -516,6 +518,19 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
           </div>
         )}
 
+        {/* Shimmer Parıltılı Yükleme Efekti (Filtre / İl Değişimlerinde) */}
+        {loading && (
+          <div className="space-y-4 animate-pulse mb-6">
+            <div className="h-44 rounded-3xl bg-slate-800/40 border border-slate-700/50 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              <div className="h-32 rounded-2xl bg-slate-800/30 border border-slate-700/40" />
+              <div className="h-32 rounded-2xl bg-slate-800/30 border border-slate-700/40" />
+            </div>
+          </div>
+        )}
+
         {/* 3. SEÇİLEN SEKME GÖRÜNÜMÜ */}
         {activeMainTab === "results" ? (
           /* ==================== SONUÇLAR SEKMESİ (SADECE BİTEN / SKORLU MAÇLAR) ==================== */
@@ -681,17 +696,27 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
           </div>
         ) : activeMainTab === "home" ? (
           /* ==================== GÜNÜN MAÇLARI (ANASAYFA DASHBOARD) ==================== */
-          <TodayMatchesView
-            matches={data?.matches || []}
-            city={data?.city}
-            currentCitySlug={currentCitySlug}
-            onSelectCity={handleSelectCity}
-            citiesList={citiesList}
-            todayStr={todayStr}
-            favorites={favorites}
-            onToggleFavorite={toggleFavorite}
-            onNavigateToFullFixtures={() => setActiveMainTab("fixtures")}
-          />
+          <div className="space-y-4">
+            {data?.matches && data.matches.length > 0 && (
+              <FeaturedMatchHero
+                matches={data.matches}
+                city={data?.city}
+                favorites={favorites}
+                onToggleFavorite={toggleFavorite}
+              />
+            )}
+            <TodayMatchesView
+              matches={data?.matches || []}
+              city={data?.city}
+              currentCitySlug={currentCitySlug}
+              onSelectCity={handleSelectCity}
+              citiesList={citiesList}
+              todayStr={todayStr}
+              favorites={favorites}
+              onToggleFavorite={toggleFavorite}
+              onNavigateToFullFixtures={() => setActiveMainTab("fixtures")}
+            />
+          </div>
         ) : activeMainTab === "fixtures" ? (
           /* ==================== FİKSTÜR SEKMESİ ==================== */
           <div>
@@ -822,6 +847,41 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
           </div>
         </div>
       </footer>
+
+      {/* 4. Mobil Sabit Alt Menü (Thumb-friendly Navigation) */}
+      <MobileBottomNav
+        activeTab={
+          showOnlyFavorites
+            ? "favorites"
+            : activeMainTab === "home"
+            ? "today"
+            : activeMainTab === "results"
+            ? "results"
+            : activeMainTab === "fixtures"
+            ? "fixtures"
+            : "standings"
+        }
+        onSelectTab={(tab) => {
+          if (tab === "today") {
+            setShowOnlyFavorites(false);
+            setActiveMainTab("home");
+          } else if (tab === "results") {
+            setShowOnlyFavorites(false);
+            setActiveMainTab("results");
+          } else if (tab === "fixtures") {
+            setShowOnlyFavorites(false);
+            setActiveMainTab("fixtures");
+          } else if (tab === "standings") {
+            setShowOnlyFavorites(false);
+            setActiveMainTab("standings");
+          } else if (tab === "favorites") {
+            setShowOnlyFavorites(true);
+            setActiveMainTab("fixtures");
+          }
+        }}
+        favoriteCount={favorites.length}
+        todayMatchesCount={todayMatchesCount}
+      />
     </div>
   );
 };

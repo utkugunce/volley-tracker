@@ -328,78 +328,246 @@ export const CompareClient: React.FC<CompareClientProps> = ({
               </div>
             </section>
 
-            {/* GÜÇ DENGESİ & İSTATİSTİK KARŞILAŞTIRMASI */}
-            <section className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 shadow-lg space-y-4">
-              <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-                <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                  <Activity size={16} className="text-primary" />
-                  <span>Güç Dengesi & Sezon Başarımı</span>
-                </h2>
-                <span className="text-xs text-slate-400">Sofascore Tarzı Analiz</span>
+            {/* GÜÇ DENGESİ & RADAR İSTATİSTİK KARŞILAŞTIRMASI */}
+            <section className="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 sm:p-6 shadow-xl space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800/80 pb-3 gap-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center text-primary">
+                    <Activity size={16} />
+                  </div>
+                  <div>
+                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">
+                      Güç Dengesi & Performans Radarı
+                    </h2>
+                    <p className="text-[11px] text-slate-400">Sofascore & Instat Tarzı 5 Boyutlu Güç Karşılaştırması</p>
+                  </div>
+                </div>
+                {/* Lejant */}
+                <div className="flex items-center gap-3 text-xs">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
+                    <span className="font-bold text-sky-300 truncate max-w-[120px]">{comparison.team1.teamName}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-400"></span>
+                    <span className="font-bold text-indigo-300 truncate max-w-[120px]">{comparison.team2.teamName}</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Karşılaştırma Barları */}
-              <div className="space-y-3.5 max-w-xl mx-auto text-xs">
-                {/* 1. Sezon Galibiyet Oranı */}
-                <div>
-                  {(() => {
-                    const t1Rate = comparison.team1.stats.played > 0
-                      ? Math.round((comparison.team1.stats.wins / comparison.team1.stats.played) * 100)
-                      : 0;
-                    const t2Rate = comparison.team2.stats.played > 0
-                      ? Math.round((comparison.team2.stats.wins / comparison.team2.stats.played) * 100)
-                      : 0;
-                    const sum = t1Rate + t2Rate || 1;
-                    const t1Pct = Math.round((t1Rate / sum) * 100);
-                    const t2Pct = 100 - t1Pct;
+              {/* 5 Boyutlu Metriklerin Hesaplanması */}
+              {(() => {
+                // 1. Galibiyet Oranı
+                const t1WinRate = comparison.team1.stats.played > 0
+                  ? Math.round((comparison.team1.stats.wins / comparison.team1.stats.played) * 100)
+                  : 50;
+                const t2WinRate = comparison.team2.stats.played > 0
+                  ? Math.round((comparison.team2.stats.wins / comparison.team2.stats.played) * 100)
+                  : 50;
 
-                    return (
-                      <>
+                // 2. Form Gücü (Son 5 Maç)
+                const t1FormWins = comparison.team1.form.filter((f) => f.result === "W").length;
+                const t1FormRate = Math.round((t1FormWins / (comparison.team1.form.length || 1)) * 100);
+                const t2FormWins = comparison.team2.form.filter((f) => f.result === "W").length;
+                const t2FormRate = Math.round((t2FormWins / (comparison.team2.form.length || 1)) * 100);
+
+                // 3. Set Verimliliği (H2H + Sezon)
+                const t1SetSum = (comparison.summary.team1SetsWon + 1) / (comparison.summary.team1SetsWon + comparison.summary.team2SetsWon + 2);
+                const t1SetRate = Math.round(t1SetSum * 100);
+                const t2SetRate = 100 - t1SetRate;
+
+                // 4. Doğrudan Eşleşme (H2H Üstünlüğü)
+                const h2hTotal = comparison.summary.team1Wins + comparison.summary.team2Wins;
+                const t1H2hRate = h2hTotal > 0 ? Math.round((comparison.summary.team1Wins / h2hTotal) * 100) : 50;
+                const t2H2hRate = h2hTotal > 0 ? 100 - t1H2hRate : 50;
+
+                // 5. Puan Kapasitesi
+                const t1PtsRate = Math.min(100, Math.round(((comparison.team1.stats.wins * 3) / ((comparison.team1.stats.played || 1) * 3)) * 100));
+                const t2PtsRate = Math.min(100, Math.round(((comparison.team2.stats.wins * 3) / ((comparison.team2.stats.played || 1) * 3)) * 100));
+
+                const t1Metrics = [t1WinRate, t1FormRate, t1SetRate, t1H2hRate, t1PtsRate];
+                const t2Metrics = [t2WinRate, t2FormRate, t2SetRate, t2H2hRate, t2PtsRate];
+
+                const t1Score = Math.round(t1Metrics.reduce((a, b) => a + b, 0) / 5);
+                const t2Score = Math.round(t2Metrics.reduce((a, b) => a + b, 0) / 5);
+
+                // Radar SVG Hesaplaması
+                const center = 100;
+                const maxR = 75;
+                const axesLabels = ["Galibiyet", "Form (Son 5)", "Set Oranı", "H2H Üstünlük", "Puan Gücü"];
+
+                const getPolygon = (vals: number[]) => {
+                  return vals
+                    .map((val, idx) => {
+                      const clamped = Math.max(15, Math.min(100, val));
+                      const r = (clamped / 100) * maxR;
+                      const angle = -Math.PI / 2 + (idx * 2 * Math.PI) / 5;
+                      const x = center + r * Math.cos(angle);
+                      const y = center + r * Math.sin(angle);
+                      return `${x.toFixed(1)},${y.toFixed(1)}`;
+                    })
+                    .join(" ");
+                };
+
+                const getWebPolygon = (percent: number) => {
+                  return [0, 1, 2, 3, 4]
+                    .map((idx) => {
+                      const r = percent * maxR;
+                      const angle = -Math.PI / 2 + (idx * 2 * Math.PI) / 5;
+                      const x = center + r * Math.cos(angle);
+                      const y = center + r * Math.sin(angle);
+                      return `${x.toFixed(1)},${y.toFixed(1)}`;
+                    })
+                    .join(" ");
+                };
+
+                return (
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                    {/* Sol / Orta: Radar Grafiği */}
+                    <div className="lg:col-span-6 flex flex-col items-center justify-center relative">
+                      <div className="relative w-64 h-64 sm:w-72 sm:h-72">
+                        <svg className="w-full h-full overflow-visible" viewBox="0 0 200 200">
+                          {/* Izgara Web Katmanları */}
+                          {[0.25, 0.5, 0.75, 1.0].map((level) => (
+                            <polygon
+                              key={level}
+                              points={getWebPolygon(level)}
+                              fill="none"
+                              stroke="#334155"
+                              strokeWidth="1"
+                              strokeDasharray={level < 1.0 ? "2,2" : undefined}
+                              opacity="0.6"
+                            />
+                          ))}
+
+                          {/* 5 Eksen Çizgileri */}
+                          {[0, 1, 2, 3, 4].map((idx) => {
+                            const angle = -Math.PI / 2 + (idx * 2 * Math.PI) / 5;
+                            const x2 = center + maxR * Math.cos(angle);
+                            const y2 = center + maxR * Math.sin(angle);
+                            return (
+                              <line
+                                key={idx}
+                                x1={center}
+                                y1={center}
+                                x2={x2}
+                                y2={y2}
+                                stroke="#475569"
+                                strokeWidth="1"
+                                opacity="0.5"
+                              />
+                            );
+                          })}
+
+                          {/* Takım 1 Poligonu (Sky Blue) */}
+                          <polygon
+                            points={getPolygon(t1Metrics)}
+                            fill="rgba(56, 189, 248, 0.3)"
+                            stroke="#38bdf8"
+                            strokeWidth="2"
+                            className="transition-all duration-700"
+                          />
+
+                          {/* Takım 2 Poligonu (Indigo) */}
+                          <polygon
+                            points={getPolygon(t2Metrics)}
+                            fill="rgba(129, 140, 248, 0.3)"
+                            stroke="#818cf8"
+                            strokeWidth="2"
+                            className="transition-all duration-700"
+                          />
+
+                          {/* Eksen Etiketleri */}
+                          {axesLabels.map((lbl, idx) => {
+                            const angle = -Math.PI / 2 + (idx * 2 * Math.PI) / 5;
+                            const r = maxR + 18;
+                            const x = center + r * Math.cos(angle);
+                            const y = center + r * Math.sin(angle);
+                            return (
+                              <text
+                                key={idx}
+                                x={x}
+                                y={y}
+                                textAnchor="middle"
+                                dominantBaseline="central"
+                                fill="#94a3b8"
+                                fontSize="9"
+                                fontWeight="bold"
+                              >
+                                {lbl}
+                              </text>
+                            );
+                          })}
+                        </svg>
+
+                        {/* Merkez Güç Puanı Rozeti */}
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <div className="bg-slate-950/90 border border-slate-700/80 px-2.5 py-1 rounded-xl shadow-lg text-center flex items-center gap-1.5 font-mono text-xs font-black">
+                            <span className="text-sky-400">{t1Score}</span>
+                            <span className="text-slate-600">vs</span>
+                            <span className="text-indigo-400">{t2Score}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Sağ: Detaylı Karşılaştırma Barları */}
+                    <div className="lg:col-span-6 space-y-4 text-xs">
+                      {/* 1. Galibiyet Oranı */}
+                      <div>
                         <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-blue-400 font-mono font-black">%{t1Rate} ({comparison.team1.stats.wins}G / {comparison.team1.stats.played}M)</span>
+                          <span className="text-sky-400 font-mono font-black">%{t1WinRate} ({comparison.team1.stats.wins}G / {comparison.team1.stats.played}M)</span>
                           <span className="text-slate-400 font-medium">Sezon Galibiyet Oranı</span>
-                          <span className="text-indigo-400 font-mono font-black">%{t2Rate} ({comparison.team2.stats.wins}G / {comparison.team2.stats.played}M)</span>
+                          <span className="text-indigo-400 font-mono font-black">%{t2WinRate} ({comparison.team2.stats.wins}G / {comparison.team2.stats.played}M)</span>
                         </div>
                         <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${t1Pct}%` }} className="bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-500" />
-                          <div style={{ width: `${t2Pct}%` }} className="bg-gradient-to-r from-indigo-500 to-indigo-600 transition-all duration-500" />
+                          <div style={{ width: `${Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-sky-400 to-sky-600 transition-all duration-500" />
+                          <div style={{ width: `${100 - Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-indigo-500 to-indigo-600 transition-all duration-500" />
                         </div>
-                      </>
-                    );
-                  })()}
-                </div>
+                      </div>
 
-                {/* 2. Son 5 Maç Başarısı */}
-                <div>
-                  {(() => {
-                    const t1Wins = comparison.team1.form.filter(f => f.result === "W").length;
-                    const t1Len = comparison.team1.form.length || 1;
-                    const t1Rate = Math.round((t1Wins / t1Len) * 100);
-
-                    const t2Wins = comparison.team2.form.filter(f => f.result === "W").length;
-                    const t2Len = comparison.team2.form.length || 1;
-                    const t2Rate = Math.round((t2Wins / t2Len) * 100);
-
-                    const sum = t1Rate + t2Rate || 1;
-                    const t1Pct = Math.round((t1Rate / sum) * 100);
-                    const t2Pct = 100 - t1Pct;
-
-                    return (
-                      <>
+                      {/* 2. Son 5 Maç Başarısı */}
+                      <div>
                         <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-blue-400 font-mono font-black">%{t1Rate} ({t1Wins}/5)</span>
+                          <span className="text-sky-400 font-mono font-black">%{t1FormRate} ({t1FormWins}/5)</span>
                           <span className="text-slate-400 font-medium">Son 5 Maç Form Gücü</span>
-                          <span className="text-indigo-400 font-mono font-black">%{t2Rate} ({t2Wins}/5)</span>
+                          <span className="text-indigo-400 font-mono font-black">%{t2FormRate} ({t2FormWins}/5)</span>
                         </div>
                         <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${t1Pct}%` }} className="bg-gradient-to-r from-sky-400 to-blue-500 transition-all duration-500" />
-                          <div style={{ width: `${t2Pct}%` }} className="bg-gradient-to-r from-indigo-400 to-purple-500 transition-all duration-500" />
+                          <div style={{ width: `${Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-sky-400 to-sky-500 transition-all duration-500" />
+                          <div style={{ width: `${100 - Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-indigo-400 to-purple-500 transition-all duration-500" />
                         </div>
-                      </>
-                    );
-                  })()}
-                </div>
-              </div>
+                      </div>
+
+                      {/* 3. Set Verimliliği */}
+                      <div>
+                        <div className="flex justify-between font-bold text-slate-300 mb-1">
+                          <span className="text-sky-400 font-mono font-black">{comparison.summary.team1SetsWon} Set</span>
+                          <span className="text-slate-400 font-medium">H2H Set Üstünlüğü</span>
+                          <span className="text-indigo-400 font-mono font-black">{comparison.summary.team2SetsWon} Set</span>
+                        </div>
+                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
+                          <div style={{ width: `${t1SetRate}%` }} className="bg-gradient-to-r from-sky-400 to-blue-500 transition-all duration-500" />
+                          <div style={{ width: `${t2SetRate}%` }} className="bg-gradient-to-r from-indigo-500 to-indigo-600 transition-all duration-500" />
+                        </div>
+                      </div>
+
+                      {/* 4. Doğrudan Galibiyet */}
+                      <div>
+                        <div className="flex justify-between font-bold text-slate-300 mb-1">
+                          <span className="text-sky-400 font-mono font-black">{comparison.summary.team1Wins} Galibiyet</span>
+                          <span className="text-slate-400 font-medium">Aralarındaki Maçlar</span>
+                          <span className="text-indigo-400 font-mono font-black">{comparison.summary.team2Wins} Galibiyet</span>
+                        </div>
+                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
+                          <div style={{ width: `${t1H2hRate}%` }} className="bg-gradient-to-r from-sky-400 to-sky-600 transition-all duration-500" />
+                          <div style={{ width: `${t2H2hRate}%` }} className="bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-500" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })()}
             </section>
 
             {/* 4. ARALARINDAKİ MAÇLAR (H2H) */}
