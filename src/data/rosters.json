@@ -1,0 +1,43 @@
+{
+  "eryaman-gelisim-sk": [
+    { "number": 1, "name": "Defne Yıldız", "position": "Pasör", "birthYear": 2008, "isCaptain": true },
+    { "number": 3, "name": "Elif Naz Demir", "position": "Smaçör", "birthYear": 2008 },
+    { "number": 5, "name": "Zeynep Asya Kaya", "position": "Orta Oyuncu", "birthYear": 2009 },
+    { "number": 7, "name": "Ece Nur Çelik", "position": "Smaçör", "birthYear": 2008 },
+    { "number": 9, "name": "Duru Aksoy", "position": "Pasör Çaprazı", "birthYear": 2009 },
+    { "number": 11, "name": "İrem Su Öztürk", "position": "Orta Oyuncu", "birthYear": 2008 },
+    { "number": 12, "name": "Beren Su Şahin", "position": "Libero", "birthYear": 2009, "isLibero": true },
+    { "number": 14, "name": "Melis Yılmaz", "position": "Smaçör", "birthYear": 2009 },
+    { "number": 16, "name": "Ada Koç", "position": "Orta Oyuncu", "birthYear": 2009 },
+    { "number": 18, "name": "Selin Bulut", "position": "Pasör", "birthYear": 2010 }
+  ],
+  "eczacibasi": [
+    { "number": 2, "name": "Eylül Tekin", "position": "Pasör", "birthYear": 2008, "isCaptain": true },
+    { "number": 4, "name": "Ceren Arslan", "position": "Smaçör", "birthYear": 2008 },
+    { "number": 6, "name": "Derin Keskin", "position": "Orta Oyuncu", "birthYear": 2008 },
+    { "number": 8, "name": "Irmak Aydın", "position": "Pasör Çaprazı", "birthYear": 2009 },
+    { "number": 10, "name": "Lara Şen", "position": "Smaçör", "birthYear": 2009 },
+    { "number": 15, "name": "Yağmur Akın", "position": "Libero", "birthYear": 2008, "isLibero": true }
+  ],
+  "vakifbank": [
+    { "number": 1, "name": "Ceylin Doğan", "position": "Pasör", "birthYear": 2008, "isCaptain": true },
+    { "number": 5, "name": "Buse Çetin", "position": "Smaçör", "birthYear": 2008 },
+    { "number": 7, "name": "Sude Yurt", "position": "Orta Oyuncu", "birthYear": 2009 },
+    { "number": 9, "name": "Nehir Erdem", "position": "Pasör Çaprazı", "birthYear": 2008 },
+    { "number": 13, "name": "Aslıhan Güler", "position": "Libero", "birthYear": 2009, "isLibero": true }
+  ],
+  "fenerbahce": [
+    { "number": 3, "name": "Bade Kara", "position": "Pasör", "birthYear": 2008, "isCaptain": true },
+    { "number": 8, "name": "Melisa Özdemir", "position": "Smaçör", "birthYear": 2008 },
+    { "number": 10, "name": "Damla Karaca", "position": "Orta Oyuncu", "birthYear": 2009 },
+    { "number": 12, "name": "Selin Kurt", "position": "Pasör Çaprazı", "birthYear": 2009 },
+    { "number": 17, "name": "Simge Polat", "position": "Libero", "birthYear": 2008, "isLibero": true }
+  ],
+  "ziraat-bankkart": [
+    { "number": 1, "name": "Kaan Yılmaz", "position": "Pasör", "birthYear": 2008, "isCaptain": true },
+    { "number": 4, "name": "Emir Arda", "position": "Smaçör", "birthYear": 2008 },
+    { "number": 7, "name": "Yiğit Taş", "position": "Orta Oyuncu", "birthYear": 2008 },
+    { "number": 9, "name": "Mert Şimşek", "position": "Pasör Çaprazı", "birthYear": 2009 },
+    { "number": 11, "name": "Barış Can", "position": "Libero", "birthYear": 2008, "isLibero": true }
+  ]
+}

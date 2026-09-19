@@ -23,8 +23,12 @@ import {
   Star,
   Activity,
   AlertTriangle,
+  Navigation,
 } from "lucide-react";
 import { formatDateTurkish, isMatchPassed, compareMatchTimes } from "@/utils/calendar";
+import { useFavorites } from "@/utils/useFavorites";
+import { getHallNavigationUrl, getHallDetails } from "@/utils/halls";
+import { PrintScheduleButton } from "./PrintScheduleButton";
 
 interface TodayMatchesViewProps {
   matches: Match[];
@@ -49,19 +53,41 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   onToggleFavorite,
   onNavigateToFullFixtures = () => {},
 }) => {
-  const [quickStatus, setQuickStatus] = useState<"all" | "upcoming" | "finished">("all");
+  const [quickStatus, setQuickStatus] = useState<"all" | "upcoming" | "finished" | "favorites">("all");
   const [displayMode, setDisplayMode] = useState<"cards" | "table">("cards");
+  const { isFavorite: isTeamFavorite, count: favoriteTeamsCount } = useFavorites();
 
   // Bugünün tüm maçları
   const todayMatches = useMemo(() => {
     return matches.filter((m) => m.date === todayStr);
   }, [matches, todayStr]);
 
+  const isMatchFavorite = useMemo(() => {
+    return (m: Match) => {
+      return (
+        favorites.includes(m.id) ||
+        isTeamFavorite(m.home_team) ||
+        isTeamFavorite(m.away_team)
+      );
+    };
+  }, [favorites, isTeamFavorite]);
+
+  const todayFavoritesCount = useMemo(() => {
+    return todayMatches.filter(isMatchFavorite).length;
+  }, [todayMatches, isMatchFavorite]);
+
   // Durum filtrelemesi (Her zaman erken saatteki maç ilk gösterilecek şekilde saat sıralamalı)
   const filteredTodayMatches = useMemo(() => {
-    const base = quickStatus === "all" ? todayMatches : todayMatches.filter((m) => m.status === quickStatus);
+    let base = todayMatches;
+    if (quickStatus === "upcoming") {
+      base = todayMatches.filter((m) => m.status === "upcoming");
+    } else if (quickStatus === "finished") {
+      base = todayMatches.filter((m) => m.status === "finished");
+    } else if (quickStatus === "favorites") {
+      base = todayMatches.filter(isMatchFavorite);
+    }
     return [...base].sort((m1, m2) => compareMatchTimes(m1.time, m2.time));
-  }, [todayMatches, quickStatus]);
+  }, [todayMatches, quickStatus, isMatchFavorite]);
 
   // Dashboard KPI Sayıları
   const dashboardKpis = useMemo(() => {
@@ -258,7 +284,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
   // Tekil bir maç kartı bileşeni (Dashboard Match Card)
   const renderDashboardMatchCard = (m: Match) => {
-    const isFav = favorites.includes(m.id);
+    const isFav = isMatchFavorite(m);
     const isFinished = m.status === "finished";
     const homeWon = isFinished && (m.home_score ?? 0) > (m.away_score ?? 0);
     const awayWon = isFinished && (m.away_score ?? 0) > (m.home_score ?? 0);
@@ -420,10 +446,27 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
         {/* Kart Alt Bilgi: Salon & Volleybox */}
         <div className="px-4 py-2.5 bg-slate-900/40 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 gap-2">
-          <div className="flex items-center gap-1.5 min-w-0 truncate" title={m.hall}>
-            <MapPin size={12} className="text-slate-500 shrink-0" />
-            <span className="truncate text-slate-300">{m.hall}</span>
-          </div>
+          {m.hall && m.hall !== "TBD" ? (
+            <a
+              href={getHallNavigationUrl(m.hall, m.city || (city === "Tüm İller" ? undefined : city))}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 min-w-0 truncate text-slate-300 hover:text-white group/hall transition-colors cursor-pointer"
+              title={`${m.hall} — Haritada Gör & Yol Tarifi Al`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <MapPin size={12} className="text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform" />
+              <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-red-400 font-medium">
+                {m.hall}
+              </span>
+              <Navigation size={10} className="text-slate-400 group-hover/hall:text-red-400 shrink-0" />
+            </a>
+          ) : (
+            <div className="flex items-center gap-1.5 text-slate-500 min-w-0 truncate">
+              <MapPin size={12} className="shrink-0" />
+              <span>Salon Belirtilmedi</span>
+            </div>
+          )}
 
           <div className="flex items-center gap-2 shrink-0">
             {disc?.has_diff && (
@@ -654,6 +697,8 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               </button>
             </div>
 
+            <PrintScheduleButton title="Bülten Yazdır" />
+
             <button
               type="button"
               onClick={onNavigateToFullFixtures}
@@ -709,6 +754,24 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               }`}
             >
               Bitenler ({dashboardKpis.todayFinished})
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={quickStatus === "favorites"}
+              onClick={() => setQuickStatus("favorites")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer inline-flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
+                quickStatus === "favorites"
+                  ? "bg-amber-500/25 text-amber-300 border border-amber-500/60 shadow-glow-amber font-bold"
+                  : "bg-slate-800/70 text-slate-300 hover:bg-slate-700/70 hover:text-white border border-slate-700/50"
+              }`}
+              title="Favori takımlarınızın ve maçlarınızın programı"
+            >
+              <Star size={11} className={quickStatus === "favorites" ? "fill-amber-400 text-amber-400" : "text-amber-400/80"} />
+              <span>Favorilerim</span>
+              <span className="bg-black/40 text-amber-300 text-[10px] px-1 rounded-full font-mono font-bold">
+                {todayFavoritesCount}
+              </span>
             </button>
           </div>
         )}

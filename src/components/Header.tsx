@@ -4,6 +4,7 @@ import React from "react";
 import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
+import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
 import { CityInfo } from "@/types/fixture";
 
 interface HeaderProps {
@@ -103,6 +104,9 @@ export const Header: React.FC<HeaderProps> = ({
               )}
             </button>
           )}
+
+          {/* PWA Uygulama Yükleme */}
+          <PwaInstallPrompt />
 
           {/* Yazdır Butonu */}
           <button

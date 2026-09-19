@@ -20,6 +20,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { TeamListItem, HeadToHeadComparison } from "@/utils/teamData";
+import { FormBadge } from "@/components/FormBadge";
 
 interface CompareClientProps {
   teamsList: TeamListItem[];
@@ -235,6 +236,10 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                     <ExternalLink size={14} className="text-slate-400" />
                   </Link>
                   <span className="text-xs text-slate-400 mt-0.5">{comparison.team1.city}</span>
+                  <div className="mt-2.5 flex flex-col items-center gap-1">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Son Form</span>
+                    <FormBadge matches={comparison.team1.form} />
+                  </div>
                 </div>
 
                 {/* VS Rozeti & Özet Skor */}
@@ -276,6 +281,10 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                     <ExternalLink size={14} className="text-slate-400" />
                   </Link>
                   <span className="text-xs text-slate-400 mt-0.5">{comparison.team2.city}</span>
+                  <div className="mt-2.5 flex flex-col items-center gap-1">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Son Form</span>
+                    <FormBadge matches={comparison.team2.form} />
+                  </div>
                 </div>
               </div>
 
@@ -312,6 +321,80 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 ) : (
                   <div className="w-full h-2 bg-slate-800 rounded-full" />
                 )}
+              </div>
+            </section>
+
+            {/* GÜÇ DENGESİ & İSTATİSTİK KARŞILAŞTIRMASI */}
+            <section className="bg-slate-900/60 border border-slate-800/80 rounded-2xl p-5 shadow-lg space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                <h2 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                  <Activity size={16} className="text-primary" />
+                  <span>Güç Dengesi & Sezon Başarımı</span>
+                </h2>
+                <span className="text-xs text-slate-400">Sofascore Tarzı Analiz</span>
+              </div>
+
+              {/* Karşılaştırma Barları */}
+              <div className="space-y-3.5 max-w-xl mx-auto text-xs">
+                {/* 1. Sezon Galibiyet Oranı */}
+                <div>
+                  {(() => {
+                    const t1Rate = comparison.team1.stats.played > 0
+                      ? Math.round((comparison.team1.stats.wins / comparison.team1.stats.played) * 100)
+                      : 0;
+                    const t2Rate = comparison.team2.stats.played > 0
+                      ? Math.round((comparison.team2.stats.wins / comparison.team2.stats.played) * 100)
+                      : 0;
+                    const sum = t1Rate + t2Rate || 1;
+                    const t1Pct = Math.round((t1Rate / sum) * 100);
+                    const t2Pct = 100 - t1Pct;
+
+                    return (
+                      <>
+                        <div className="flex justify-between font-bold text-slate-300 mb-1">
+                          <span className="text-blue-400 font-mono font-black">%{t1Rate} ({comparison.team1.stats.wins}G / {comparison.team1.stats.played}M)</span>
+                          <span className="text-slate-400 font-medium">Sezon Galibiyet Oranı</span>
+                          <span className="text-indigo-400 font-mono font-black">%{t2Rate} ({comparison.team2.stats.wins}G / {comparison.team2.stats.played}M)</span>
+                        </div>
+                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
+                          <div style={{ width: `${t1Pct}%` }} className="bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-500" />
+                          <div style={{ width: `${t2Pct}%` }} className="bg-gradient-to-r from-indigo-500 to-indigo-600 transition-all duration-500" />
+                        </div>
+                      </>
+                    );
+                  })()}
+                </div>
+
+                {/* 2. Son 5 Maç Başarısı */}
+                <div>
+                  {(() => {
+                    const t1Wins = comparison.team1.form.filter(f => f.result === "W").length;
+                    const t1Len = comparison.team1.form.length || 1;
+                    const t1Rate = Math.round((t1Wins / t1Len) * 100);
+
+                    const t2Wins = comparison.team2.form.filter(f => f.result === "W").length;
+                    const t2Len = comparison.team2.form.length || 1;
+                    const t2Rate = Math.round((t2Wins / t2Len) * 100);
+
+                    const sum = t1Rate + t2Rate || 1;
+                    const t1Pct = Math.round((t1Rate / sum) * 100);
+                    const t2Pct = 100 - t1Pct;
+
+                    return (
+                      <>
+                        <div className="flex justify-between font-bold text-slate-300 mb-1">
+                          <span className="text-blue-400 font-mono font-black">%{t1Rate} ({t1Wins}/5)</span>
+                          <span className="text-slate-400 font-medium">Son 5 Maç Form Gücü</span>
+                          <span className="text-indigo-400 font-mono font-black">%{t2Rate} ({t2Wins}/5)</span>
+                        </div>
+                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
+                          <div style={{ width: `${t1Pct}%` }} className="bg-gradient-to-r from-sky-400 to-blue-500 transition-all duration-500" />
+                          <div style={{ width: `${t2Pct}%` }} className="bg-gradient-to-r from-indigo-400 to-purple-500 transition-all duration-500" />
+                        </div>
+                      </>
+                    );
+                  })()}
+                </div>
               </div>
             </section>
 

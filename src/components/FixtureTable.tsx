@@ -2,11 +2,13 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { isMatchPassed } from "@/utils/calendar";
 import { generateMatchIcs, generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
+import { getHallNavigationUrl } from "@/utils/halls";
+import { PrintScheduleButton } from "./PrintScheduleButton";
 
 interface FixtureTableProps {
   title: string;
@@ -105,6 +107,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               <span className="hidden sm:inline">Favorileri Takvime Ekle</span>
             </button>
           )}
+          <PrintScheduleButton />
           <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-900/90 px-2 py-0.5 rounded-lg border border-slate-800">
             {matches.length} Maç
           </span>
@@ -184,12 +187,25 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
                   {/* 2. Yer */}
                   <td className="py-2 px-2 text-slate-300 whitespace-nowrap text-[11px]" title={match.hall}>
-                    <div className="flex items-center gap-1.5">
-                      <MapPin size={11} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-slate-500 shrink-0"} />
-                      <span className={`truncate max-w-[70px] sm:max-w-[95px] lg:max-w-[130px] font-medium ${disc?.hall_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1.5 py-0.5 rounded-md" : ""}`}>
-                        {match.hall}
-                      </span>
-                    </div>
+                    {match.hall && match.hall !== "TBD" ? (
+                      <a
+                        href={getHallNavigationUrl(match.hall, match.city || effectiveCity)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 group/hall hover:text-white transition-colors cursor-pointer"
+                        title={`${match.hall} — Haritada Gör & Yol Tarifi Al`}
+                      >
+                        <MapPin size={11} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform"} />
+                        <span className={`truncate max-w-[70px] sm:max-w-[95px] lg:max-w-[130px] font-medium group-hover/hall:underline ${disc?.hall_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1.5 py-0.5 rounded-md" : ""}`}>
+                          {match.hall}
+                        </span>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-1.5 text-slate-500">
+                        <MapPin size={11} className="shrink-0" />
+                        <span>-</span>
+                      </div>
+                    )}
                     {disc?.hall_diff && disc.vb_hall && (
                       <div
                         className="text-[9px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1.5 py-0.5 rounded-md inline-flex items-center gap-0.5 mt-0.5 truncate max-w-[110px] shadow-xs"

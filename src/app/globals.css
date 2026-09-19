@@ -160,25 +160,69 @@ body {
   background: #334155;
 }
 
-/* Yazdırma (Bülten Çıktısı) Stilleri */
+/* Yazdırma (Bülten Çıktısı & Antrenör Pano Modu) Stilleri */
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm;
+  }
+
   body {
     background: #ffffff !important;
     color: #000000 !important;
+    font-size: 10pt !important;
   }
-  header, .no-print, button, input, select {
+
+  header, nav, .no-print, button, input, select, [role="tablist"] {
     display: none !important;
   }
+
   .print-only {
     display: block !important;
   }
+
+  .glass-panel, .glass-card, div[class*="bg-slate-"], section {
+    background: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+  }
+
+  * {
+    color: #0f172a !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
   table {
     border-collapse: collapse !important;
     width: 100% !important;
+    margin-top: 8px !important;
+    page-break-inside: auto !important;
   }
-  th, td {
-    border: 1px solid #000000 !important;
+
+  tr {
+    page-break-inside: avoid !important;
+    page-break-after: auto !important;
+  }
+
+  th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #94a3b8 !important;
     padding: 6px 8px !important;
-    font-size: 11pt !important;
+    font-weight: bold !important;
+    font-size: 9pt !important;
+  }
+
+  td {
+    border: 1px solid #cbd5e1 !important;
+    padding: 5px 8px !important;
+    font-size: 9pt !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #0f172a !important;
   }
 }

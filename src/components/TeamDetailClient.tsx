@@ -18,10 +18,15 @@ import {
   Download,
   Swords,
   Layers,
+  Star,
+  Users,
+  Shield,
 } from "lucide-react";
 import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
+import { useFavorites } from "@/utils/useFavorites";
+import { FormBadge } from "@/components/FormBadge";
 
 interface TeamDetailClientProps {
   team: TeamDetails;
@@ -30,6 +35,8 @@ interface TeamDetailClientProps {
 export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
   const [matchFilter, setMatchFilter] = useState<"all" | "finished" | "upcoming">("all");
   const [downloadingSeason, setDownloadingSeason] = useState(false);
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const isFav = isFavorite(team.teamName);
 
   const filteredMatches = team.matches.filter((m) => {
     if (matchFilter === "finished") return m.status === "finished";
@@ -92,6 +99,20 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               </a>
             )}
 
+            <button
+              onClick={() => toggleFavorite(team.teamName)}
+              className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                isFav
+                  ? "bg-amber-500/20 border-amber-500/60 text-amber-300 shadow-glow-amber"
+                  : "bg-slate-800/80 border-slate-700 text-slate-300 hover:text-white hover:border-slate-600"
+              }`}
+              title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+            >
+              <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : "text-slate-400"} />
+              <span className="hidden sm:inline">{isFav ? "Favorilerde" : "Favorilere Ekle"}</span>
+              <span className="sm:hidden">{isFav ? "Takipte" : "Takip"}</span>
+            </button>
+
             {team.matches.length > 0 && (
               <button
                 onClick={handleDownloadSeasonIcs}
@@ -151,9 +172,18 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                 ))}
               </div>
 
-              <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight break-words">
-                {team.teamName}
-              </h1>
+              <div className="flex items-center gap-2.5 flex-wrap">
+                <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight break-words">
+                  {team.teamName}
+                </h1>
+                <button
+                  onClick={() => toggleFavorite(team.teamName)}
+                  className="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 transition-all cursor-pointer inline-flex items-center justify-center"
+                  title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+                >
+                  <Star size={18} className={isFav ? "fill-amber-400 text-amber-400 drop-shadow-xs" : "text-slate-400 hover:text-amber-300"} />
+                </button>
+              </div>
 
               {team.mapping?.matched_as && (
                 <p className="text-xs text-slate-400 mt-1 flex items-center gap-1">
@@ -276,23 +306,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                 Son 5 Maç Formu
               </span>
-              <div className="flex items-center justify-center gap-1.5 mt-1.5">
-                {team.form.length === 0 ? (
-                  <span className="text-xs text-slate-500 font-medium">Henüz maç yok</span>
-                ) : (
-                  team.form.map((f) => (
-                    <span
-                      key={f.matchId}
-                      className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black text-white shadow-xs ${
-                        f.result === "W" ? "bg-emerald-600" : "bg-rose-600"
-                      }`}
-                      title={`${f.date} | ${f.opponent} (${f.score}) - ${f.result === "W" ? "Galibiyet" : "Mağlubiyet"}`}
-                    >
-                      {f.result === "W" ? "G" : "M"}
-                    </span>
-                  ))
-                )}
-              </div>
+              <FormBadge matches={team.form} className="justify-center mt-2" />
             </div>
           </div>
         </section>
@@ -384,7 +398,100 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
           </section>
         )}
 
-        {/* 4. SEZON FİKSTÜRÜ (TÜM MAÇLAR) */}
+        {/* 4. TAKIM KADROSU (ROSTER) */}
+        <section className="space-y-3">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <Users size={18} className="text-primary" />
+              <span>Takım Kadrosu {team.roster ? `(${team.roster.length} Sporcu)` : ""}</span>
+            </h2>
+            {team.roster && (
+              <span className="text-xs text-slate-400 font-medium">2024-2025 Sezonu</span>
+            )}
+          </div>
+
+          {team.roster && team.roster.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {team.roster.map((player) => {
+                const isLibero = player.isLibero || player.position === "Libero";
+                const isSetter = player.position === "Pasör";
+                const isSpiker = player.position === "Smaçör";
+                const isOpposite = player.position === "Pasör Çaprazı";
+                const isMiddle = player.position === "Orta Oyuncu";
+
+                const posBadgeStyle = isLibero
+                  ? "bg-rose-500/20 text-rose-300 border-rose-500/40"
+                  : isSetter
+                  ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
+                  : isSpiker
+                  ? "bg-blue-500/20 text-blue-300 border-blue-500/40"
+                  : isOpposite
+                  ? "bg-amber-500/20 text-amber-300 border-amber-500/40"
+                  : isMiddle
+                  ? "bg-purple-500/20 text-purple-300 border-purple-500/40"
+                  : "bg-slate-700/60 text-slate-300 border-slate-600";
+
+                return (
+                  <div
+                    key={player.number + player.name}
+                    className="bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/70 hover:border-slate-600 rounded-xl p-3.5 transition-all flex items-center gap-3.5 shadow-sm group"
+                  >
+                    {/* Forma Numarası */}
+                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-rose-700 text-white font-black font-mono text-base flex items-center justify-center shrink-0 shadow-glow-red border border-red-400/40 group-hover:scale-105 transition-transform">
+                      {player.number}
+                    </div>
+
+                    {/* Oyuncu Bilgileri */}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-bold text-white text-sm truncate group-hover:text-primary transition-colors">
+                          {player.name}
+                        </span>
+                        {player.isCaptain && (
+                          <span
+                            className="bg-amber-500/30 text-amber-300 border border-amber-500/50 text-[10px] font-black px-1.5 py-0.2 rounded shadow-xs"
+                            title="Takım Kaptanı"
+                          >
+                            (K)
+                          </span>
+                        )}
+                        {player.isLibero && (
+                          <span
+                            className="bg-rose-500/30 text-rose-300 border border-rose-500/50 text-[10px] font-black px-1.5 py-0.2 rounded shadow-xs"
+                            title="Libero"
+                          >
+                            (L)
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${posBadgeStyle}`}>
+                          {player.position}
+                        </span>
+                        {player.birthYear && (
+                          <span className="text-[10px] text-slate-400 font-mono">
+                            {player.birthYear}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="bg-slate-800/40 border border-slate-700/60 rounded-xl p-6 text-center text-slate-400 text-xs">
+              <Shield size={24} className="mx-auto text-slate-500 mb-2 opacity-70" />
+              <p className="font-medium text-slate-300 text-sm mb-1">Kadro Listesi Henüz Eklenmedi</p>
+              <p className="text-slate-400 max-w-md mx-auto">
+                Bu takımın sporcu listesi resmi bültenlerde henüz yer almıyor. Kulüp antrenörü veya yöneticisiyseniz kadro bilgisi iletebilirsiniz.
+              </p>
+            </div>
+          )}
+        </section>
+
+        {/* 5. SEZON FİKSTÜRÜ (TÜM MAÇLAR) */}
         <section className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">

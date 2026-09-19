@@ -42,6 +42,15 @@ export interface ClubSisterTeam {
   matchesCount?: number;
 }
 
+export interface Player {
+  number: number;
+  name: string;
+  position: string;
+  birthYear?: number;
+  isCaptain?: boolean;
+  isLibero?: boolean;
+}
+
 export interface TeamDetails {
   teamName: string;
   slug: string;
@@ -61,6 +70,7 @@ export interface TeamDetails {
   };
   otherCities?: OtherCityTeam[];
   clubTeams?: ClubSisterTeam[];
+  roster?: Player[];
 }
 
 let cachedAllData: {
@@ -372,6 +382,29 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     mapping
   );
 
+  // Bu kulübün oyuncu kadrosu (rosters.json)
+  let roster: Player[] | undefined = undefined;
+  try {
+    const rostersPath = path.join(process.cwd(), "src/data/rosters.json");
+    if (fs.existsSync(rostersPath)) {
+      const rostersData: Record<string, Player[]> = JSON.parse(fs.readFileSync(rostersPath, "utf-8"));
+      const possibleSlugs = [
+        cleanSlug,
+        extractClubRoot(officialTeamName).rootSlug,
+        mapping?.internal_name ? slugify(mapping.internal_name) : "",
+      ].filter(Boolean);
+
+      for (const s of possibleSlugs) {
+        if (rostersData[s]) {
+          roster = rostersData[s];
+          break;
+        }
+      }
+    }
+  } catch (err) {
+    console.warn("Kadro verisi okunamadı:", err);
+  }
+
   return {
     teamName: officialTeamName,
     slug: cleanSlug,
@@ -391,6 +424,7 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     },
     otherCities,
     clubTeams,
+    roster,
   };
 }
 
