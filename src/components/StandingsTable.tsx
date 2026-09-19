@@ -557,26 +557,19 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       </td>
 
                       {/* Takım Adı */}
-                      <td className="py-3 px-4 whitespace-nowrap text-sm">
-                        <div className="flex items-center gap-2">
-                          {isTop1 && (
-                            <span className="text-[10px] px-1.5 py-0.2 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold uppercase tracking-wider shrink-0">
-                              Lider
-                            </span>
-                          )}
-                          <TeamVolleyboxLink
-                            teamName={row.team}
-                            category={activeContext?.leagueFullName}
-                            city={activeContext?.city || city}
-                            className={`transition-colors ${
-                              isTop1
-                                ? "font-black text-white"
-                                : isTop4
-                                ? "font-bold text-white"
-                                : "font-semibold text-slate-200 hover:text-white"
-                            }`}
-                          />
-                        </div>
+                      <td className="py-3 px-4 font-bold text-white whitespace-nowrap text-sm">
+                        <TeamVolleyboxLink
+                          teamName={row.team}
+                          category={activeContext?.leagueFullName}
+                          city={activeContext?.city || city}
+                          className={`transition-colors ${
+                            isTop1
+                              ? "font-black text-white"
+                              : isTop4
+                              ? "font-bold text-white"
+                              : "font-semibold text-slate-200 hover:text-white"
+                          }`}
+                        />
                       </td>
 
                       {/* O */}
