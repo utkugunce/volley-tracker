@@ -16,6 +16,7 @@ import {
   Clock,
   Sparkles,
   Download,
+  Swords,
 } from "lucide-react";
 import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
@@ -67,6 +68,15 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
           </Link>
 
           <div className="flex items-center gap-2">
+            <Link
+              href={`/karsilastir?takim1=${team.slug}`}
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 bg-amber-950/60 border border-amber-800/70 hover:bg-amber-900/60 px-3 py-1.5 rounded-lg transition-colors shadow-xs"
+              title="Bu takımı rakiple karşılaştır"
+            >
+              <Swords size={13} />
+              <span>Rakiple Karşılaştır</span>
+            </Link>
+
             {team.mapping?.volleybox_url && (
               <a
                 href={team.mapping.volleybox_url}
@@ -75,7 +85,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-800 hover:bg-emerald-900/60 px-3 py-1.5 rounded-lg transition-colors"
                 title="Volleybox Kulüp / Takım Profilini Aç"
               >
-                <span>Volleybox Profili</span>
+                <span>Volleybox</span>
                 <ExternalLink size={12} />
               </a>
             )}
@@ -88,7 +98,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                 title="Tüm sezon maçlarını iCalendar (.ics) formatında indir"
               >
                 <Download size={13} />
-                <span>{downloadingSeason ? "İndiriliyor..." : "Sezonu Takvime Ekle"}</span>
+                <span className="hidden sm:inline">{downloadingSeason ? "İndiriliyor..." : "Sezonu Takvime Ekle"}</span>
+                <span className="sm:hidden">Takvim</span>
               </button>
             )}
           </div>
