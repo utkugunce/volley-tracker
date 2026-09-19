@@ -49,7 +49,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       alt={`${displayName} logosu`}
       width={36}
       height={36}
-      className={`w-7 h-7 sm:w-8 sm:h-8 object-contain rounded-lg bg-white/95 p-1 border border-slate-700/80 shadow-xs shrink-0 inline-block align-middle mr-2.5 transition-transform duration-200 group-hover:scale-110 ${logoClassName}`}
+      className={`w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0 inline-block align-middle mr-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 group-hover:scale-115 ${logoClassName}`}
       unoptimized={logoSrc.startsWith("http")}
       onError={() => {
         setImgFailed(true);

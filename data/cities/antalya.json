@@ -88,7 +88,7 @@
       },
       {
         "rank": 6,
-        "team": "Murat Akar Spor Kulübü U18",
+        "team": "Alanya MASK Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -224,7 +224,7 @@
       },
       {
         "rank": 5,
-        "team": "Nova Spor U15",
+        "team": "Nova Spor U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -360,7 +360,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar Doğu Grubu": [
       {
         "rank": 1,
-        "team": "Alanya MASK Spor Kulübü",
+        "team": "Alanya MASK Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -703,7 +703,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar A Grubu",
       "match_no": "2",
-      "home_team": "Nova Spor U15",
+      "home_team": "Nova Spor U16",
       "away_team": "Antalya Açı Koleji Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -1037,7 +1037,7 @@
       "group": "Yıldız Kızlar Doğu Grubu",
       "match_no": "1",
       "home_team": "Manavgat Belediyespor U16",
-      "away_team": "Alanya MASK Spor Kulübü",
+      "away_team": "Alanya MASK Spor Kulübü U16",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -1126,7 +1126,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar Doğu Grubu",
       "match_no": "3",
-      "home_team": "Alanya MASK Spor Kulübü",
+      "home_team": "Alanya MASK Spor Kulübü U16",
       "away_team": "Net Voleybol Akademi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,

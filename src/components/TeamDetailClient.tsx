@@ -133,19 +133,21 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
         {/* 2. TAKIM KÜNYESİ VE LOGOSU */}
         <section className="bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            {/* Logo */}
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-white/95 p-3 border border-slate-700/80 shadow-xl flex items-center justify-center shrink-0">
+            {/* Logo (Cut-out) */}
+            <div className="w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center shrink-0 drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]">
               {logoSrc ? (
                 <Image
                   src={logoSrc}
                   alt={`${team.teamName} logosu`}
                   width={128}
                   height={128}
-                  className="w-full h-full object-contain rounded-xl"
+                  className="w-full h-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-105"
                   unoptimized={logoSrc.startsWith("http")}
                 />
               ) : (
-                <Trophy size={56} className="text-primary/70" />
+                <div className="w-full h-full rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center">
+                  <Trophy size={56} className="text-primary/70" />
+                </div>
               )}
             </div>
 
