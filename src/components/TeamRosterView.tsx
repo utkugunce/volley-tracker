@@ -195,21 +195,8 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
                 key={(player.id || "") + (player.number || "") + player.name + idx}
                 className="w-full bg-[#0a1226]/90 hover:bg-[#121f3d] transition-colors border border-[#162342] rounded-lg px-3 sm:px-4 py-2 flex items-center justify-between gap-2"
               >
-                {/* Sol Kısım: Forma No Kutusu + Bayrak + İsim + Onay İkonu */}
-                <div className="flex items-center gap-2.5 min-w-0 flex-1">
-                  {/* Forma No Kutusu */}
-                  <div className="w-6 h-6 rounded bg-[#070d1c] border border-[#1c2948] flex items-center justify-center text-[11px] font-mono font-bold text-slate-400 shrink-0">
-                    {player.number || ""}
-                  </div>
-
-                  {/* Dairesel Bayrak */}
-                  <img
-                    src={player.flag_url || "https://volleybox.net/media/img/flags/TR.png"}
-                    alt={player.nationality || "TR"}
-                    className="w-4 h-4 rounded-full object-cover shrink-0 border border-white/20"
-                    loading="lazy"
-                  />
-
+                {/* Sol Kısım: İsim + Onay İkonu */}
+                <div className="flex items-center min-w-0 flex-1">
                   {/* İsim & Link */}
                   {player.profile_url ? (
                     <a
@@ -278,15 +265,8 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
                 key={(st.id || "") + st.name + idx}
                 className="w-full bg-[#0a1226]/90 hover:bg-[#121f3d] transition-colors border border-[#162342] rounded-lg px-3 sm:px-4 py-2 flex items-center justify-between gap-2"
               >
-                {/* Sol Kısım: Bayrak + İsim */}
-                <div className="flex items-center gap-2.5 min-w-0 flex-1 pl-8.5">
-                  <img
-                    src={st.flag_url || "https://volleybox.net/media/img/flags/TR.png"}
-                    alt={st.nationality || "TR"}
-                    className="w-4 h-4 rounded-full object-cover shrink-0 border border-white/20"
-                    loading="lazy"
-                  />
-
+                {/* Sol Kısım: İsim */}
+                <div className="flex items-center min-w-0 flex-1">
                   {st.profile_url ? (
                     <a
                       href={st.profile_url}
