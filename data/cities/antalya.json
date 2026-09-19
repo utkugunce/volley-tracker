@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T14:20:52.865925",
+  "updated_at": "2026-09-19T14:52:27.670481",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -33,6 +33,28 @@
     "Genç Kızlar Süper Lig - Genç Kızlar A Grubu": [
       {
         "rank": 1,
+        "team": "Luna Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Antalya Şimşek GSK U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "07 Zenit Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -43,7 +65,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "Akdeniz Bilgi Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -54,7 +76,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "Antalya 1907 Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -65,7 +87,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -76,30 +98,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Luna Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Murat Akar Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "Antalya Şimşek GSK U18",
+        "team": "Murat Akar Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -418,11 +418,15 @@
       "match_no": "1",
       "home_team": "Antalya Şimşek GSK U18",
       "away_team": "Luna Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "26-28",
+        "16-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398685",
@@ -1199,5 +1203,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-09-19T14:21:52.832017"
+  "volleybox_sync_updated_at": "2026-09-19T14:53:33.015908"
 }
