@@ -6,6 +6,7 @@ import { getVolleyboxMapping, normalizeCitySlug } from "./volleybox";
 import { VolleyboxMapping } from "@/types/fixture";
 import { applyOverridesToMatches } from "./overrides";
 import { compareMatchDateTime } from "./calendar";
+import { TeamRosterRecord, TeamRostersDatabase } from "@/types/roster";
 
 export interface TeamStandingContext {
   groupName: string;
@@ -71,6 +72,7 @@ export interface TeamDetails {
   otherCities?: OtherCityTeam[];
   clubTeams?: ClubSisterTeam[];
   roster?: Player[];
+  volleyboxRoster?: TeamRosterRecord;
 }
 
 let cachedAllData: {
@@ -80,6 +82,42 @@ let cachedAllData: {
 } | null = null;
 
 const CACHE_TTL_MS = 60 * 1000; // 1 minute
+
+let cachedRosters: TeamRostersDatabase | null = null;
+let rostersTimestamp = 0;
+
+export function loadTeamRosters(): TeamRostersDatabase {
+  const now = Date.now();
+  if (cachedRosters && now - rostersTimestamp < CACHE_TTL_MS) {
+    return cachedRosters;
+  }
+  const rostersPath = path.join(process.cwd(), "data", "team-rosters.json");
+  if (fs.existsSync(rostersPath)) {
+    try {
+      cachedRosters = JSON.parse(fs.readFileSync(rostersPath, "utf-8"));
+      rostersTimestamp = now;
+      return cachedRosters || {};
+    } catch {
+      return {};
+    }
+  }
+  return {};
+}
+
+export function extractVolleyboxTeamId(url?: string): string | null {
+  if (!url) return null;
+  const m = url.match(/-t(\d+)$/);
+  if (m) return `t${m[1]}`;
+  const m2 = url.match(/\/t(\d+)$/);
+  if (m2) return `t${m2[1]}`;
+  const parts = url.replace(/\/$/, "").split("/").pop()?.split("-") || [];
+  for (let i = parts.length - 1; i >= 0; i--) {
+    if (parts[i].startsWith("t") && /^\d+$/.test(parts[i].slice(1))) {
+      return parts[i];
+    }
+  }
+  return null;
+}
 
 function loadAllCityData() {
   const now = Date.now();
@@ -382,27 +420,80 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     mapping
   );
 
-  // Bu kulübün oyuncu kadrosu (rosters.json)
+  // Volleybox Kadro Verisi (data/team-rosters.json)
+  let volleyboxRoster: TeamRosterRecord | undefined = undefined;
   let roster: Player[] | undefined = undefined;
-  try {
-    const rostersPath = path.join(process.cwd(), "src/data/rosters.json");
-    if (fs.existsSync(rostersPath)) {
-      const rostersData: Record<string, Player[]> = JSON.parse(fs.readFileSync(rostersPath, "utf-8"));
-      const possibleSlugs = [
-        cleanSlug,
-        extractClubRoot(officialTeamName).rootSlug,
-        mapping?.internal_name ? slugify(mapping.internal_name) : "",
-      ].filter(Boolean);
 
-      for (const s of possibleSlugs) {
-        if (rostersData[s]) {
-          roster = rostersData[s];
+  try {
+    const allRosters = loadTeamRosters();
+    const vbId = extractVolleyboxTeamId(mapping?.volleybox_url);
+
+    if (vbId && allRosters[vbId]) {
+      volleyboxRoster = allRosters[vbId];
+    } else {
+      // url veya matched_as fallback
+      for (const record of Object.values(allRosters)) {
+        if (mapping?.volleybox_url && record.volleybox_url === mapping.volleybox_url) {
+          volleyboxRoster = record;
+          break;
+        }
+        if (mapping?.matched_as && record.matched_as === mapping.matched_as) {
+          volleyboxRoster = record;
+          break;
+        }
+        if (record.internal_name && slugify(record.internal_name) === cleanSlug) {
+          volleyboxRoster = record;
           break;
         }
       }
     }
+
+    if (volleyboxRoster && volleyboxRoster.seasons) {
+      // En dolu veya en güncel sezonu seç
+      const seasonsEntries = Object.entries(volleyboxRoster.seasons);
+      // Öncelik: Oyuncusu olan en güncel sezon
+      let selectedSeason = seasonsEntries.find(([_, s]) => s.total_players > 0)?.[1];
+      if (!selectedSeason && seasonsEntries.length > 0) {
+        selectedSeason = seasonsEntries[0][1];
+      }
+
+      if (selectedSeason && selectedSeason.players && selectedSeason.players.length > 0) {
+        roster = selectedSeason.players.map((p, idx) => ({
+          number: p.number ? parseInt(p.number, 10) || (idx + 1) : idx + 1,
+          name: p.name,
+          position: p.position || "Bilinmiyor",
+          birthYear: p.birth_year || undefined,
+          isLibero: p.position === "Libero",
+          isCaptain: idx === 0,
+        }));
+      }
+    }
   } catch (err) {
-    console.warn("Kadro verisi okunamadı:", err);
+    console.warn("Volleybox kadro verisi okunamadı:", err);
+  }
+
+  // Fallback: Eski src/data/rosters.json
+  if (!roster) {
+    try {
+      const rostersPath = path.join(process.cwd(), "src/data/rosters.json");
+      if (fs.existsSync(rostersPath)) {
+        const rostersData: Record<string, Player[]> = JSON.parse(fs.readFileSync(rostersPath, "utf-8"));
+        const possibleSlugs = [
+          cleanSlug,
+          extractClubRoot(officialTeamName).rootSlug,
+          mapping?.internal_name ? slugify(mapping.internal_name) : "",
+        ].filter(Boolean);
+
+        for (const s of possibleSlugs) {
+          if (rostersData[s]) {
+            roster = rostersData[s];
+            break;
+          }
+        }
+      }
+    } catch {
+      // ignore
+    }
   }
 
   return {
@@ -425,6 +516,7 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     otherCities,
     clubTeams,
     roster,
+    volleyboxRoster,
   };
 }
 
