@@ -2,9 +2,10 @@
 
 import React, { useState, useMemo, useEffect } from "react";
 import { StandingItem } from "@/types/fixture";
-import { Trophy, HelpCircle, MapPin, Layers } from "lucide-react";
+import { Trophy, HelpCircle, MapPin, Layers, Download } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
+import { slugify } from "@/utils/slugify";
 
 const TURKISH_CITIES = [
   "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
@@ -110,6 +111,70 @@ function parseStandingKey(rawKey: string, defaultCity?: string): ParsedStandingC
     rawGroup: groupPart,
     displayGroup,
   };
+}
+
+/**
+ * Puan durumu verilerini Türkçe Excel uyumlu UTF-8 BOM ve ';' ayırıcılı CSV'ye çevirir.
+ */
+export function generateStandingsCsv(items: StandingItem[]): string {
+  const BOM = "\uFEFF";
+  const header = [
+    "Sıra",
+    "Takım",
+    "Oynadığı",
+    "Galibiyet",
+    "Mağlubiyet",
+    "Puan",
+    "Aldığı Set",
+    "Verdiği Set",
+    "Set Oranı",
+    "Aldığı Sayı",
+    "Verdiği Sayı",
+    "Sayı Oranı",
+  ].join(";");
+
+  const rows = items.map((row) => {
+    const escapedTeam =
+      row.team.includes(";") || row.team.includes('"')
+        ? `"${row.team.replace(/"/g, '""')}"`
+        : row.team;
+
+    return [
+      row.rank,
+      escapedTeam,
+      row.played,
+      row.won,
+      row.lost,
+      row.points,
+      row.sets_won,
+      row.sets_lost,
+      row.set_ratio,
+      row.points_won,
+      row.points_lost,
+      row.point_ratio,
+    ].join(";");
+  });
+
+  return BOM + [header, ...rows].join("\r\n");
+}
+
+export function downloadStandingsCsv(items: StandingItem[], groupName?: string): void {
+  if (typeof window === "undefined" || items.length === 0) return;
+
+  const csv = generateStandingsCsv(items);
+  const groupSlug = slugify(groupName || "puan-durumu");
+  const todayStr = new Date().toISOString().slice(0, 10);
+  const filename = `puan-durumu-${groupSlug}-${todayStr}.csv`;
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", filename);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 }
 
 interface StandingsTableProps {
@@ -382,10 +447,10 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
       {/* Puan Durumu Tablosu veya Boş Durum */}
       <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl shadow-md overflow-hidden">
         {/* Başlık Şeridi */}
-        <div className="bg-[#111827] text-white px-4 py-2.5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Trophy size={16} className="text-amber-400" />
-            <h2 className="text-sm font-bold tracking-tight">
+        <div className="bg-[#111827] text-white px-4 py-2.5 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <Trophy size={16} className="text-amber-400 shrink-0" />
+            <h2 className="text-sm font-bold tracking-tight truncate">
               <LeagueVolleyboxLink
                 league={activeContext?.leagueFullName || ""}
                 city={activeContext?.city || city}
@@ -396,9 +461,27 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
               {activeContext?.rawGroup ? ` • ${activeContext.rawGroup.toLocaleUpperCase("tr-TR")}` : ""} - PUAN DURUMU
             </h2>
           </div>
-          <span className="text-xs text-slate-400 font-mono">
-            {items.length} Takım
-          </span>
+          <div className="flex items-center gap-3 shrink-0">
+            {items.length > 0 && (
+              <button
+                onClick={() =>
+                  downloadStandingsCsv(
+                    items,
+                    `${activeContext?.city || city || ""}-${activeContext?.leagueFullName || ""}-${activeContext?.rawGroup || ""}`
+                  )
+                }
+                className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 hover:border-slate-600 transition-colors shadow-xs cursor-pointer"
+                title="Puan durumunu Türkçe Excel uyumlu (.csv) olarak indir"
+                aria-label="Puan durumunu CSV olarak indir"
+              >
+                <Download size={13} className="text-emerald-400" />
+                <span>CSV İndir</span>
+              </button>
+            )}
+            <span className="text-xs text-slate-400 font-mono">
+              {items.length} Takım
+            </span>
+          </div>
         </div>
 
         {/* Tablo veya Boş Durum (Empty State) */}
