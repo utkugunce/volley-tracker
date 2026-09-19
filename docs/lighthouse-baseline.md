@@ -1,6 +1,6 @@
 # Lighthouse & SEO Baz Çizgisi Raporu (GÖREV 4)
 
-Bu rapor, `utkugunce/volley-tracker` uygulamasının performans, erişilebilirlik, en iyi uygulamalar ve SEO denetim sonuçları ile hayata geçirilen optimizasyonları belgeler.
+Bu rapor, `Altyapı Voleybol` (`volley-tracker`) uygulamasının performans, erişilebilirlik, en iyi uygulamalar ve SEO denetim sonuçları ile hayata geçirilen optimizasyonları belgeler.
 
 ---
 

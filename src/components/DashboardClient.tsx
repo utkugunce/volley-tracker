@@ -54,16 +54,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
-  // Canlı Senkronizasyon Durum Bildirimi
-  const [syncFeedback, setSyncFeedback] = useState<{
-    type: "success" | "warning" | "error" | "info";
-    message: string;
-    link?: { url: string; label: string };
-    inProgress?: boolean;
-    step?: string;
-    remainingSeconds?: number;
-  } | null>(null);
-
   useEffect(() => {
     try {
       const saved = localStorage.getItem("tvf_favorites");
@@ -117,134 +107,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
   const fetchData = async () => {
     setLoading(true);
     setError(null);
-    setSyncFeedback(null);
     try {
-      const res = await fetch(`/api/fixtures?city=${currentCitySlug}&refresh=1`);
+      const res = await fetch(`/api/fixtures?city=${currentCitySlug}`);
       if (!res.ok) {
         throw new Error("Bülten verisi yüklenemedi.");
       }
       const json: FixturesData = await res.json();
       setData(json);
-
-      if (json.sync?.mode === "github_actions_dispatch") {
-        let currentRemaining = 75;
-
-        setSyncFeedback({
-          type: "info",
-          message: "Canlı tarama GitHub Actions üzerinde başlatıldı! TVF bülteni ve Volleybox taranıyor...",
-          link: {
-            url: "https://github.com/utkugunce/volley-tracker/actions",
-            label: "GitHub'da Canlı İzle ↗",
-          },
-          inProgress: true,
-          remainingSeconds: currentRemaining,
-        });
-
-        // 1 saniyelik pürüzsüz geri sayım sayacı
-        const countdownTimer = setInterval(() => {
-          setSyncFeedback((prev) => {
-            if (!prev || !prev.inProgress || typeof prev.remainingSeconds !== "number") {
-              return prev;
-            }
-            const nextSec = Math.max(5, prev.remainingSeconds - 1);
-            return {
-              ...prev,
-              remainingSeconds: nextSec,
-            };
-          });
-        }, 1000);
-
-        // Canlı durum takibi (Polling - her 4 saniyede bir GitHub'dan senkronize et)
-        let pollCount = 0;
-        const maxPolls = 35; // ~2.5 dakika
-        const intervalId = setInterval(async () => {
-          pollCount++;
-          try {
-            const sRes = await fetch("/api/sync/status");
-            if (sRes.ok) {
-              const sData = await sRes.json();
-              if (sData.available) {
-                const runUrl = sData.htmlUrl || "https://github.com/utkugunce/volley-tracker/actions";
-                if (sData.status === "in_progress" || sData.status === "queued") {
-                  const stepText = sData.activeStep ? `: ${sData.activeStep}` : "...";
-                  const serverRemaining =
-                    typeof sData.remainingSeconds === "number"
-                      ? sData.remainingSeconds
-                      : currentRemaining;
-                  setSyncFeedback((prev) => ({
-                    type: "info",
-                    message: `Canlı tarama devam ediyor${stepText}`,
-                    link: { url: runUrl, label: "GitHub'da Canlı İzle ↗" },
-                    inProgress: true,
-                    remainingSeconds: serverRemaining,
-                  }));
-                } else if (sData.status === "completed") {
-                  clearInterval(intervalId);
-                  clearInterval(countdownTimer);
-                  if (sData.conclusion === "success") {
-                    setSyncFeedback({
-                      type: "success",
-                      message: "Canlı senkronizasyon tamamlandı! Güncel fikstür ve skorlar yüklendi.",
-                      link: { url: runUrl, label: "İşlem Özeti ↗" },
-                      inProgress: false,
-                      remainingSeconds: 0,
-                    });
-                    // Verileri otomatik olarak ekrana yeniden çek
-                    try {
-                      const reloadRes = await fetch(`/api/fixtures?city=${currentCitySlug}`);
-                      if (reloadRes.ok) {
-                        const reloadJson = await reloadRes.json();
-                        setData(reloadJson);
-                      }
-                    } catch {}
-                  } else {
-                    setSyncFeedback({
-                      type: "error",
-                      message: "Canlı tarama sırasında bir hata oluştu.",
-                      link: { url: runUrl, label: "Hata Günlüğünü Gör ↗" },
-                      inProgress: false,
-                    });
-                  }
-                }
-              }
-            }
-          } catch {}
-
-          if (pollCount >= maxPolls) {
-            clearInterval(intervalId);
-            clearInterval(countdownTimer);
-          }
-        }, 4000);
-      } else if (json.sync?.attempted) {
-        if (json.sync.success) {
-          setSyncFeedback({
-            type: "success",
-            message: json.sync.message || "Veriler resmi siteden canlı olarak güncellendi.",
-          });
-        } else {
-          setSyncFeedback({
-            type: "warning",
-            message:
-              json.sync.message ||
-              "Bulut ortamında Python motoru bulunmadığı için en güncel önbellek sunulmuştur. Fikstürler periyodik GitHub Actions cron ile taranmaktadır.",
-            link: {
-              url: "https://github.com/utkugunce/volley-tracker/actions",
-              label: "GitHub Actions ↗",
-            },
-          });
-        }
-      } else {
-        setSyncFeedback({
-          type: "success",
-          message: "En güncel fikstür verileri başarıyla yüklendi.",
-        });
-      }
     } catch (err: any) {
       setError(err.message || "Bilinmeyen bir hata oluştu.");
-      setSyncFeedback({
-        type: "error",
-        message: `Yenileme sırasında hata oluştu: ${err.message || "Bilinmeyen hata"}`,
-      });
     } finally {
       setLoading(false);
     }
@@ -621,8 +492,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         onSelectTab={setActiveMainTab}
         onRefresh={fetchData}
         isLoading={loading}
-        syncFeedback={syncFeedback}
-        onDismissSyncFeedback={() => setSyncFeedback(null)}
       />
 
       {/* 2. Üst İl Sekmeleri (CityTabBar: Tüm İller, İstanbul, İzmir, Yalova, Niğde vb.) */}

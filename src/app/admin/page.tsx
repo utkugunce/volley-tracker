@@ -17,6 +17,8 @@ import {
   ExternalLink,
   ChevronLeft,
   ArrowRight,
+  RefreshCw,
+  Clock,
 } from "lucide-react";
 import { compareMatchDateTime } from "@/utils/calendar";
 import { Match } from "@/types/fixture";
@@ -50,6 +52,16 @@ export default function AdminPage() {
   const [authorInput, setAuthorInput] = useState<string>("Admin");
   const [saveLoading, setSaveLoading] = useState<boolean>(false);
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  // Canlı Tarama (GitHub Actions / Local Scraper) Durumu
+  const [syncLoading, setSyncLoading] = useState<boolean>(false);
+  const [syncStatus, setSyncStatus] = useState<{
+    inProgress: boolean;
+    message: string;
+    type: "info" | "success" | "error";
+    step?: string;
+    remainingSeconds?: number;
+  } | null>(null);
 
   // Oturum açma kontrolü
   useEffect(() => {
@@ -121,6 +133,94 @@ export default function AdminPage() {
     try {
       sessionStorage.removeItem("volley_admin_token");
     } catch {}
+  };
+
+  // Yönetici Canlı Taramayı Tetikler (81 İl + Volleybox)
+  const handleTriggerLiveSync = async () => {
+    if (syncLoading || !token) return;
+    setSyncLoading(true);
+    setSyncStatus({
+      inProgress: true,
+      message: "Canlı tarama başlatılıyor...",
+      type: "info",
+      remainingSeconds: 75,
+    });
+
+    try {
+      const res = await fetch("/api/fixtures?city=all&refresh=1", {
+        headers: { "x-admin-token": token },
+      });
+      const json = await res.json();
+
+      if (json.sync?.mode === "github_actions_dispatch") {
+        setSyncStatus({
+          inProgress: true,
+          message: "GitHub Actions taraması başlatıldı. Canlı ilerleme takip ediliyor...",
+          type: "info",
+          remainingSeconds: 75,
+        });
+
+        let pollCount = 0;
+        const maxPolls = 30;
+        const intervalId = setInterval(async () => {
+          pollCount++;
+          try {
+            const statusRes = await fetch("/api/sync/status", {
+              headers: { "x-admin-token": token },
+              cache: "no-store",
+            });
+            if (statusRes.ok) {
+              const st = await statusRes.json();
+              if (st.status === "completed") {
+                clearInterval(intervalId);
+                setSyncLoading(false);
+                setSyncStatus({
+                  inProgress: false,
+                  message: "Canlı tarama başarıyla tamamlandı! Güncel veriler yüklendi.",
+                  type: "success",
+                });
+                verifyAndFetchData(token);
+                return;
+              } else if (st.status === "in_progress") {
+                setSyncStatus({
+                  inProgress: true,
+                  message: st.activeStep || "Veriler taranıyor...",
+                  type: "info",
+                  step: st.activeStep,
+                  remainingSeconds: st.remainingSeconds,
+                });
+              }
+            }
+          } catch {}
+
+          if (pollCount >= maxPolls) {
+            clearInterval(intervalId);
+            setSyncLoading(false);
+            setSyncStatus({
+              inProgress: false,
+              message: "Tarama arka planda tamamlandı.",
+              type: "info",
+            });
+            verifyAndFetchData(token);
+          }
+        }, 4000);
+      } else {
+        setSyncLoading(false);
+        setSyncStatus({
+          inProgress: false,
+          message: json.sync?.message || "Fikstür verileri başarıyla yenilendi.",
+          type: json.sync?.success ? "success" : "info",
+        });
+        verifyAndFetchData(token);
+      }
+    } catch (err: any) {
+      setSyncLoading(false);
+      setSyncStatus({
+        inProgress: false,
+        message: `Tarama başlatılamadı: ${err.message}`,
+        type: "error",
+      });
+    }
   };
 
   // Düzenleme başlat
@@ -380,6 +480,16 @@ export default function AdminPage() {
         <div className="flex items-center gap-2" role="tablist" aria-label="Yönetim sekmeleri">
           <button
             type="button"
+            onClick={handleTriggerLiveSync}
+            disabled={syncLoading}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-sky-600 hover:bg-sky-500 text-white disabled:opacity-50 cursor-pointer shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+            title="81 il bültenini ve Volleybox verilerini canlı tara"
+          >
+            <RefreshCw size={13} className={syncLoading ? "animate-spin" : ""} />
+            <span>{syncLoading ? "Taranıyor..." : "Canlı Tara"}</span>
+          </button>
+          <button
+            type="button"
             role="tab"
             aria-selected={activeTab === "matches"}
             onClick={() => setActiveTab("matches")}
@@ -416,6 +526,45 @@ export default function AdminPage() {
           </button>
         </div>
       </header>
+
+      {/* Canlı Senkronizasyon Durum Bildirimi (Yalnızca Admin Panelinde) */}
+      {syncStatus && (
+        <div
+          className={`px-4 py-2 text-xs font-medium border-b animate-in fade-in duration-150 ${
+            syncStatus.type === "success"
+              ? "bg-emerald-950/90 text-emerald-300 border-emerald-800"
+              : syncStatus.type === "info"
+              ? "bg-sky-950/90 text-sky-300 border-sky-800"
+              : "bg-rose-950/90 text-rose-300 border-rose-800"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            <div className="flex items-center gap-2 flex-wrap">
+              {syncStatus.inProgress ? (
+                <RefreshCw size={13} className="animate-spin text-sky-400 shrink-0" />
+              ) : syncStatus.type === "success" ? (
+                <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+              ) : (
+                <AlertTriangle size={14} className="text-rose-400 shrink-0" />
+              )}
+              <span>{syncStatus.message}</span>
+              {syncStatus.inProgress && typeof syncStatus.remainingSeconds === "number" && (
+                <span className="inline-flex items-center gap-1 font-mono text-[10px] font-bold bg-sky-500/20 text-sky-200 border border-sky-400/40 px-2 py-0.5 rounded-full">
+                  <Clock size={10} className="text-sky-300 shrink-0" />
+                  <span>~{syncStatus.remainingSeconds} sn kaldı</span>
+                </span>
+              )}
+            </div>
+            <button
+              onClick={() => setSyncStatus(null)}
+              className="text-xs opacity-70 hover:opacity-100 transition-opacity px-1 cursor-pointer"
+              title="Bildirimi Kapat"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6">
         {activeTab === "matches" ? (

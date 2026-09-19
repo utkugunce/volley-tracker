@@ -131,7 +131,7 @@ describe("Admin Manual Match Override API & Auth (GÖREV 1 - Vercel Blob & Local
           set_scores: ["25-23", "20-25", "25-22", "19-25", "15-12"],
           status: "finished",
           reason: "TVF bülteninde skor eksikti",
-          updated_by: "utku",
+          updated_by: "admin_editor",
         }),
       });
 
@@ -235,7 +235,7 @@ describe("Admin Manual Match Override API & Auth (GÖREV 1 - Vercel Blob & Local
             home_score: 3,
             away_score: 1,
             updated_at: new Date().toISOString(),
-            updated_by: "utku",
+            updated_by: "admin_editor",
             reason: "Vercel Blob persistence check",
           },
         },

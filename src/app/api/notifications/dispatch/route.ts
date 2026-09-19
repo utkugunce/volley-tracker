@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
+import { timingSafeEqual } from "crypto";
 import {
   getPushSubscriptions,
   sendWebPush,
@@ -9,6 +10,13 @@ import {
 import { applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { parseMatchDateTime } from "@/utils/notifications";
 import { Match } from "@/types/fixture";
+
+function safeCompare(a: string, b: string): boolean {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  if (bufA.length !== bufB.length) return false;
+  return timingSafeEqual(bufA, bufB);
+}
 
 function loadAllMatches(): Match[] {
   const allMatches: Match[] = [];
@@ -87,14 +95,25 @@ function doesSubscriptionMatch(sub: StoredSubscription, match: Match): boolean {
 
 export async function POST(req: NextRequest) {
   try {
-    // İsteğe bağlı güvenlik kontrolü (CRON_SECRET)
+    // Yetkilendirme kontrolü (CRON_SECRET veya ADMIN_TOKEN)
     const cronSecret = process.env.CRON_SECRET;
-    if (cronSecret) {
-      const authHeader = req.headers.get("authorization");
+    const adminToken = process.env.ADMIN_TOKEN;
+    const expectedSecret = cronSecret || adminToken;
+
+    if (expectedSecret) {
+      const authHeader = req.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+      const xAdmin = req.headers.get("x-admin-token");
       const urlSecret = req.nextUrl.searchParams.get("secret");
-      const isAuthorized =
-        authHeader === `Bearer ${cronSecret}` || urlSecret === cronSecret;
-      if (!isAuthorized) {
+      const provided = authHeader || xAdmin || urlSecret;
+
+      if (!provided) {
+        return NextResponse.json({ error: "Yetkisiz erişim" }, { status: 401 });
+      }
+
+      const matchesCron = Boolean(cronSecret && safeCompare(provided, cronSecret));
+      const matchesAdmin = Boolean(adminToken && safeCompare(provided, adminToken));
+
+      if (!matchesCron && !matchesAdmin) {
         return NextResponse.json({ error: "Yetkisiz erişim" }, { status: 401 });
       }
     }

@@ -28,6 +28,12 @@ sys.path.insert(0, str(BASE_DIR))
 try:
     from bs4 import BeautifulSoup
     import httpx
+    try:
+        from curl_cffi import requests as cffi_requests
+        HAS_CURL_CFFI = True
+    except ImportError:
+        cffi_requests = None
+        HAS_CURL_CFFI = False
 except ImportError:
     venv_py = BASE_DIR / ".venv" / ("Scripts" if sys.platform == "win32" else "bin") / ("python.exe" if sys.platform == "win32" else "python")
     if venv_py.exists():
@@ -203,9 +209,15 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
 
     matches_url = tournament_url.rstrip("/") + "/matches"
 
+    client = None
     try:
-        client = httpx.Client(headers=HEADERS, timeout=15.0, follow_redirects=True)
-        resp = client.get(matches_url)
+        if HAS_CURL_CFFI:
+            client = cffi_requests.Session(impersonate="chrome120")
+            client.headers.update(HEADERS)
+        else:
+            client = httpx.Client(headers=HEADERS, timeout=15.0, follow_redirects=True)
+
+        resp = client.get(matches_url, timeout=15.0)
         if resp.status_code == 429:
             print(f"  [UYARI] Volleybox hız sınırına (429) ulaşıldı ({tournament_url.split('/')[-1]}). Mevcut veriler korunuyor.")
             client.close()
@@ -214,6 +226,8 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
         html = resp.text
     except Exception as e:
         print(f"  [UYARI] Turnuva sayfası okunamadı ({tournament_url}): {e}")
+        if client:
+            client.close()
         return []
 
     soup = BeautifulSoup(html, "html.parser")
@@ -238,7 +252,7 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
     for rid in sorted(round_ids, key=lambda x: int(x) if x.isdigit() else 0):
         round_url = f"{matches_url}?round_id={rid}"
         try:
-            r_resp = client.get(round_url)
+            r_resp = client.get(round_url, timeout=15.0)
             if r_resp.status_code == 429:
                 print(f"  [UYARI] Round {rid} için hız sınırına (429) ulaşıldı, ana sayfadaki maçlar kullanılıyor.")
                 break

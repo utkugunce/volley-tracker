@@ -1,6 +1,37 @@
 import { NextResponse } from "next/server";
+import { timingSafeEqual } from "crypto";
 
-export async function GET() {
+function safeCompare(a: string, b: string): boolean {
+  const bufA = Buffer.from(a);
+  const bufB = Buffer.from(b);
+  if (bufA.length !== bufB.length) return false;
+  return timingSafeEqual(bufA, bufB);
+}
+
+export async function GET(request: Request) {
+  const adminToken = process.env.ADMIN_TOKEN;
+  if (!adminToken) {
+    return NextResponse.json(
+      { error: "Sunucu yapılandırması eksik: ADMIN_TOKEN ortam değişkeni tanımlanmamış." },
+      { status: 503 }
+    );
+  }
+
+  const xAdmin = request.headers.get("x-admin-token");
+  const authHeader = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+  const provided = xAdmin || authHeader;
+  if (!provided || !safeCompare(provided, adminToken)) {
+    return NextResponse.json({ error: "Yetkisiz erişim" }, { status: 401 });
+  }
+
+  const repo = process.env.GITHUB_REPOSITORY;
+  if (!repo) {
+    return NextResponse.json({
+      available: false,
+      error: "GITHUB_REPOSITORY ortam değişkeni yapılandırılmamış.",
+    });
+  }
+
   const ghToken = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN)?.trim();
   const headers: Record<string, string> = {
     Accept: "application/vnd.github+json",
@@ -13,7 +44,7 @@ export async function GET() {
 
   try {
     const res = await fetch(
-      "https://api.github.com/repos/utkugunce/volley-tracker/actions/workflows/scrape-sync.yml/runs?per_page=1",
+      `https://api.github.com/repos/${repo}/actions/workflows/scrape-sync.yml/runs?per_page=1`,
       {
         headers,
         cache: "no-store",
@@ -24,7 +55,6 @@ export async function GET() {
       return NextResponse.json({
         available: false,
         error: `GitHub API status ${res.status}`,
-        fallbackUrl: "https://github.com/utkugunce/volley-tracker/actions",
       });
     }
 
@@ -34,7 +64,6 @@ export async function GET() {
     if (!latestRun) {
       return NextResponse.json({
         available: false,
-        fallbackUrl: "https://github.com/utkugunce/volley-tracker/actions",
       });
     }
 
@@ -90,7 +119,6 @@ export async function GET() {
     return NextResponse.json({
       available: false,
       error: err.message,
-      fallbackUrl: "https://github.com/utkugunce/volley-tracker/actions",
     });
   }
 }

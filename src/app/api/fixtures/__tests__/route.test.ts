@@ -22,4 +22,20 @@ describe("Fixtures API Route", () => {
     // Across Istanbul, Izmir, Yalova, Nigde, we have at least 92 matches
     expect(data.total_matches).toBeGreaterThanOrEqual(92);
   });
+
+  it("should not trigger live refresh when ADMIN_TOKEN is set but request is unauthorized", async () => {
+    const originalAdmin = process.env.ADMIN_TOKEN;
+    try {
+      process.env.ADMIN_TOKEN = "super-secret-token";
+      const req = new Request("http://localhost:3000/api/fixtures?city=istanbul&refresh=1");
+      const res = await GET(req);
+      expect(res.status).toBe(200);
+      const data = await res.json();
+      expect(data.sync?.attempted).toBe(false);
+      expect(data.sync?.mode).toBe("cached");
+      expect(data.sync?.message).toContain("yönetici paneli ile sınırlandırılmıştır");
+    } finally {
+      process.env.ADMIN_TOKEN = originalAdmin;
+    }
+  });
 });

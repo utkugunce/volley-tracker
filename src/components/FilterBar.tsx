@@ -286,45 +286,6 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                   </span>
                 )}
               </button>
-              <button
-                type="button"
-                aria-pressed={volleyboxFilter === "unsynced"}
-                onClick={() => onSelectVolleyboxFilter("unsynced")}
-                className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-slate-400 ${
-                  volleyboxFilter === "unsynced"
-                    ? "bg-slate-600 text-white shadow-xs font-bold"
-                    : "text-slate-400 hover:bg-slate-700/60"
-                }`}
-                title="Volleybox'a henüz girilmemiş maçlar"
-              >
-                <span>Girilmedi</span>
-                {volleyboxStats && (
-                  <span className={`text-[10px] ${volleyboxFilter === "unsynced" ? "text-slate-200" : "text-slate-500"}`}>
-                    ({volleyboxStats.unsynced})
-                  </span>
-                )}
-              </button>
-
-              {/* Değişenler: Tarihi, saati veya salonu il bülteninde değişen maçlar */}
-              {volleyboxStats && (volleyboxStats.discrepancy ?? 0) > 0 && (
-                <button
-                  type="button"
-                  aria-pressed={volleyboxFilter === "discrepancy"}
-                  onClick={() => onSelectVolleyboxFilter("discrepancy")}
-                  className={`px-2 py-0.5 rounded text-[11px] font-semibold transition-all flex items-center gap-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-amber-400 ${
-                    volleyboxFilter === "discrepancy"
-                      ? "bg-amber-600 text-white shadow-xs font-bold"
-                      : "text-amber-300 bg-amber-950/60 hover:bg-amber-900/60 border border-amber-700/50 font-bold"
-                  }`}
-                  title="Volleybox'a girildikten sonra il temsilciliğinde tarihi, saati veya salonu değişen maçlar"
-                >
-                  <AlertTriangle size={10} aria-hidden="true" className={volleyboxFilter === "discrepancy" ? "text-white" : "text-amber-400"} />
-                  <span>Değişenler</span>
-                  <span className={`text-[10px] ${volleyboxFilter === "discrepancy" ? "text-amber-100" : "text-amber-400 font-bold"}`}>
-                    ({volleyboxStats.discrepancy})
-                  </span>
-                </button>
-              )}
             </div>
           )}
         </div>
