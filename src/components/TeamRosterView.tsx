@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { Camera, ExternalLink, Shield } from "lucide-react";
+import { ExternalLink, Shield } from "lucide-react";
 import { TeamRosterRecord, RosterPlayer, TeamRosterSeason } from "@/types/roster";
 import { Player } from "@/utils/teamData";
 
@@ -88,7 +88,6 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
     return currentSeason?.staff || [];
   }, [currentSeason]);
 
-  const leagueTitle = category || (teamName.includes("U18") ? "İstanbul Süper Ligi U18" : category || "Süper Lig");
 
   return (
     <div className="w-full rounded-2xl bg-[#080f24] border border-[#172547] p-4 sm:p-6 text-slate-100 shadow-xl space-y-4">
@@ -128,47 +127,6 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
         )}
       </div>
 
-      {/* 2. MERKEZ KART: KIRMIZI VOLEYBOL LOGOSU + LİG ADI + FOTOĞRAF EKLE */}
-      <div className="py-4 text-center flex flex-col items-center">
-        {/* Kırmızı dairesel voleybol amblemi */}
-        <div className="w-14 h-14 rounded-full bg-[#d7192a] border-2 border-white/90 p-2.5 flex items-center justify-center text-white shadow-lg mb-2">
-          <svg
-            className="w-7 h-7 stroke-current fill-none stroke-[2.2]"
-            viewBox="0 0 24 24"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="12" cy="12" r="10" />
-            <path d="m4.93 4.93 4.24 4.24" />
-            <path d="m14.83 9.17 4.24-4.24" />
-            <path d="m14.83 14.83 4.24 4.24" />
-            <path d="m4.93 19.07 4.24-4.24" />
-            <circle cx="12" cy="12" r="4" />
-          </svg>
-        </div>
-
-        <span className="text-xs text-slate-400 font-mono block mb-1">-</span>
-        <span className="text-xs sm:text-sm font-bold text-slate-100 block">
-          {leagueTitle}
-        </span>
-
-        {vbUrl ? (
-          <a
-            href={vbUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-200 mt-2.5 transition-colors cursor-pointer"
-          >
-            <Camera size={13} className="text-slate-400" />
-            <span>Takım fotoğrafı ekler</span>
-          </a>
-        ) : (
-          <span className="inline-flex items-center gap-1.5 text-xs text-slate-500 mt-2.5">
-            <Camera size={13} className="text-slate-500" />
-            <span>Takım fotoğrafı</span>
-          </span>
-        )}
-      </div>
 
       {/* 3. OYUNCULAR BÖLÜMÜ */}
       <div className="space-y-2">
