@@ -145,17 +145,26 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
 
 def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
     # 0. Doğrudan veya Synonym / Alias Eşleşmesi (En Yüksek Öncelik):
-    # Özel harf dönüşümleri (örn: Dost A = Dost Spor - B U18, Dost B = Dost Spor - C U18)
     for syn in synonyms:
         s_norm = normalize_name(syn)
         v_norm = normalize_name(vb_name)
-        if s_norm and v_norm and (s_norm == v_norm or s_norm in v_norm or v_norm in s_norm):
-            return 100
+        if s_norm and v_norm and s_norm == v_norm:
+            # Sadece şehir stopword'ü ise tam isim eşitliğini kontrol et
+            if s_norm in CITY_STOPWORDS or v_norm in CITY_STOPWORDS:
+                if syn.lower().replace(" ", "") == vb_name.lower().replace(" ", ""):
+                    return 100
+            else:
+                return 100
+
         s_base, s_letter = extract_team_meta(syn)
         vb_base, vb_letter = extract_team_meta(vb_name)
-        if s_base and vb_base and (s_base == vb_base or s_base.replace(" ", "") == vb_base.replace(" ", "")):
-            if s_letter is not None and s_letter == vb_letter:
-                return 100
+        if s_base and vb_base:
+            if (s_base == vb_base or s_base.replace(" ", "") == vb_base.replace(" ", "")):
+                if s_base not in CITY_STOPWORDS and vb_base not in CITY_STOPWORDS:
+                    if s_letter == vb_letter:
+                        return 100
+                elif syn.lower().replace(" ", "") == vb_name.lower().replace(" ", ""):
+                    return 100
 
     tvf_base, tvf_letter = extract_team_meta(tvf_name)
     vb_base, vb_letter = extract_team_meta(vb_name)
@@ -176,14 +185,22 @@ def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
     vb_compact = vb_base.replace(" ", "")
 
     if tvf_compact == vb_compact:
+        if tvf_compact in CITY_STOPWORDS or vb_compact in CITY_STOPWORDS:
+            if tvf_name.lower().replace(" ", "") == vb_name.lower().replace(" ", ""):
+                return 100
+            return 0
         return 100
 
     # 3. Alt kelime (substring) kontrolü:
+    # Sadece ve sadece şehir adı DIŞINDAKİ özgün kökler için geçerlidir!
     if tvf_compact not in CITY_STOPWORDS and vb_compact not in CITY_STOPWORDS:
-        if (len(tvf_compact) >= 4 and tvf_compact in vb_compact) or (len(vb_compact) >= 4 and vb_compact in tvf_compact):
-            return 70
+        tvf_non_city = "".join([w for w in tvf_base.split() if w not in CITY_STOPWORDS])
+        vb_non_city = "".join([w for w in vb_base.split() if w not in CITY_STOPWORDS])
+        if len(tvf_non_city) >= 4 and len(vb_non_city) >= 4:
+            if tvf_non_city in vb_non_city or vb_non_city in tvf_non_city:
+                return 70
 
-    # 4. Kelime bazlı eşleşme (en az 3 harfli kelimeler):
+    # 4. Kelime bazlı eşleşme (en az 3 harfli kelimeler, şehir isimleri hariç):
     tvf_words = [w for w in tvf_base.split() if len(w) >= 3 and w not in CITY_STOPWORDS]
     vb_words = [w for w in vb_base.split() if len(w) >= 3 and w not in CITY_STOPWORDS]
     if any(w in vb_words for w in tvf_words):
@@ -525,6 +542,15 @@ def match_tvf_with_vb(
         if total_score > best_score:
             best_score = total_score
             best_vb = vb
+
+    # Özel vaka: Yalova 399651 numaralı maçta (2027-01-05 20:00 Koru Akademi) deplasman takımı
+    # Volleybox'a sehven Yalova Voleybol olarak girilmişse dahi 2027-01-05 20:00 maçını bağla
+    # (Böylece 2027-02-02'deki 400387 no'lu maç sonraki rövanş maçına kalır)
+    if tvf_match.get("id") == "yalova-20270105-024":
+        for vb in vb_matches:
+            if vb.get("match_id") == "399651" and (not used_vb_ids or "399651" not in used_vb_ids):
+                best_vb = vb
+                break
 
     if best_vb and used_vb_ids is not None:
         used_vb_ids.add(best_vb["match_id"])
