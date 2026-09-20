@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T12:30:45.100689",
+  "updated_at": "2026-09-20T18:41:55.300892",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -589,6 +589,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - B Gr": [
       {
         "rank": 1,
+        "team": "Göztepe SK - B U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "KZY Bornova Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -599,7 +610,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Alfa Gaziemir Voleybol Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -610,7 +621,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Parla Voleybol Kulübü - A U16",
         "played": 1,
         "won": 0,
@@ -621,7 +632,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "İzmirspor U16",
         "played": 1,
         "won": 0,
@@ -632,25 +643,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Göztepe SK - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Venüs Spor Kulübü U16",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -1103,8 +1103,8 @@
         "url": "https://women.volleybox.net/tr/kzy-bornova-spor-kulubu-u18-forza-spor-kulubu-u18-c397113",
         "host_name": "KZY Bornova Spor Kulübü U18",
         "guest_name": "Forza Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-09-18",
         "vb_time": "18:30",
         "vb_hall": "Gaziemir Spor Salonu",
@@ -2318,11 +2318,15 @@
       "match_no": "3",
       "home_team": "Göztepe SK - B U16",
       "away_team": "Venüs Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-14",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397122",
@@ -3053,8 +3057,8 @@
         "url": "https://women.volleybox.net/tr/dost-spor-u16-ozay-voleybol-spor-kulubu-u16-c397165",
         "host_name": "Dost Spor U16",
         "guest_name": "Özay Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-09-18",
         "vb_time": "20:00",
         "vb_hall": "Gaziemir Spor Salonu",
@@ -3098,8 +3102,8 @@
         "url": "https://women.volleybox.net/tr/dalton-koleji-spor-kulubu-u16-gelisim-koleji-sk-u16-c397166",
         "host_name": "Dalton Koleji Spor Kulübü U16",
         "guest_name": "Gelişim Koleji SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-18",
         "vb_time": "20:00",
         "vb_hall": "Menemen Spor Salonu",
@@ -3240,5 +3244,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-20T12:31:52.654670"
+  "volleybox_sync_updated_at": "2026-09-20T18:44:31.978879"
 }

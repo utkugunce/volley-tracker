@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T12:30:34.159077",
+  "updated_at": "2026-09-20T18:41:42.383427",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -1227,14 +1227,14 @@
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-09-25",
           "vb_time": "18:00",
           "vb_hall": "Mamak Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Sinan Şamil Sam S.S / VB: Mamak Spor Salonu)"
         }
       }
     },
@@ -1268,14 +1268,14 @@
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-09-25",
           "vb_time": "19:30",
           "vb_hall": "Mamak Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Sinan Şamil Sam S.S / VB: Mamak Spor Salonu)"
         }
       }
     },
@@ -1363,5 +1363,5 @@
     }
   ],
   "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-09-20T12:31:52.652368"
+  "volleybox_sync_updated_at": "2026-09-20T18:44:31.341323"
 }
