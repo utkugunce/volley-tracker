@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T20:21:46.189407",
+  "updated_at": "2026-09-20T19:06:50.875014",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -45,6 +45,28 @@
       },
       {
         "rank": 2,
+        "team": "Parla Voleybol Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Dalton Koleji Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Volkan Güç Spor Kulübü - B U18",
         "played": 1,
         "won": 0,
@@ -55,30 +77,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Bayraklı Belediyesi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Dalton Koleji Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Parla Voleybol Kulübü U18",
+        "team": "Bayraklı Belediyesi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -918,11 +918,16 @@
       "match_no": "2",
       "home_team": "Dalton Koleji Spor Kulübü U18",
       "away_team": "Parla Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "25-23",
+        "21-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397110",
@@ -1920,7 +1925,7 @@
       "id": "izmir-20260927-026",
       "city": "İzmir",
       "date": "2026-09-27",
-      "time": "--:--",
+      "time": "12:30",
       "hall": "Balçova",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
@@ -1961,7 +1966,7 @@
       "id": "izmir-20260927-027",
       "city": "İzmir",
       "date": "2026-09-27",
-      "time": "--:--",
+      "time": "14:00",
       "hall": "Gaziemir",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
@@ -3244,5 +3249,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-20T21:37:21.693986"
+  "volleybox_sync_updated_at": "2026-09-20T19:07:55.160489"
 }
