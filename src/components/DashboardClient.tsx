@@ -1090,6 +1090,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         }}
         favoriteCount={favorites.length}
         todayMatchesCount={todayMatchesCount}
+        resultsCount={resultsCount}
       />
 
       {/* 5. Maç Detay Çekmecesi (Match Center Drawer) */}
