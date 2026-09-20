@@ -15,7 +15,7 @@ import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
 import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { Match, FixturesData } from "@/types/fixture";
-import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin } from "lucide-react";
+import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 import { groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
@@ -168,6 +168,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy">("all");
 
   const [citiesList, setCitiesList] = useState<any[]>([]);
+
+  // Şehir bazlı gizleme / daraltma durumu (Collapse / Accordion)
+  const [collapsedCities, setCollapsedCities] = useState<Record<string, boolean>>({});
+
+  const toggleCityCollapse = (cityName: string) => {
+    setCollapsedCities((prev) => ({
+      ...prev,
+      [cityName]: !prev[cityName],
+    }));
+  };
 
   // Favoriler (Flashscore Yıldız İmzası - LocalStorage ile kaydedilir)
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -712,53 +722,91 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             {/* Sonuçlar Tablosu: Şehir Başlığı Altında Ligler (U18/U16) ve Gruplar (A Grubu, B Grubu) */}
             {resultsByCityAndLeague.length > 0 && (
               <div className="space-y-6">
-                {resultsByCityAndLeague.map((cityGroup) => (
-                  <div key={cityGroup.city} className="space-y-3">
-                    {/* Şehir Başlık Banner'ı: Örn 📍 İZMİR (4 Maç) */}
-                    <div className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-[#0d172a] to-slate-900/95 border border-sky-500/30 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md">
-                      <div className="flex items-center gap-2.5">
-                        <div className="w-7 h-7 rounded-lg bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 font-black shadow-xs">
-                          <MapPin size={15} className="text-sky-300" />
+                {resultsByCityAndLeague.map((cityGroup) => {
+                  const isCityCollapsed = Boolean(collapsedCities[cityGroup.city]);
+
+                  return (
+                    <div key={cityGroup.city} className="space-y-3">
+                      {/* Şehir Başlık Banner'ı: Tıklandığında o ilin maçlarını gizler/açar */}
+                      <div
+                        role="button"
+                        tabIndex={0}
+                        aria-expanded={!isCityCollapsed}
+                        onClick={() => toggleCityCollapse(cityGroup.city)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            toggleCityCollapse(cityGroup.city);
+                          }
+                        }}
+                        className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-[#0d172a] to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
+                        title={isCityCollapsed ? `${cityGroup.city} maçlarını göster` : `${cityGroup.city} maçlarını gizle`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-7 h-7 rounded-lg bg-sky-500/20 group-hover/city:bg-sky-500/30 border border-sky-400/40 flex items-center justify-center text-sky-400 font-black shadow-xs transition-colors">
+                            <MapPin size={15} className="text-sky-300" />
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <h2 className="text-xs sm:text-sm md:text-base font-black text-white tracking-wide uppercase flex items-center gap-1.5 group-hover/city:text-sky-200 transition-colors">
+                              <span>{cityGroup.city}</span>
+                              <span className="text-slate-400 font-normal text-xs">• TVF İl Temsilciliği</span>
+                            </h2>
+                            <span className="text-[10px] sm:text-[11px] font-bold text-sky-400 bg-sky-950/80 border border-sky-700/60 px-2 py-0.5 rounded-full font-mono">
+                              {cityGroup.totalMatches} Maç
+                            </span>
+                          </div>
                         </div>
+
                         <div className="flex items-center gap-2">
-                          <h2 className="text-xs sm:text-sm md:text-base font-black text-white tracking-wide uppercase flex items-center gap-1.5">
-                            <span>{cityGroup.city}</span>
-                            <span className="text-slate-400 font-normal text-xs">• TVF İl Temsilciliği</span>
-                          </h2>
-                          <span className="text-[10px] sm:text-[11px] font-bold text-sky-400 bg-sky-950/80 border border-sky-700/60 px-2 py-0.5 rounded-full font-mono">
-                            {cityGroup.totalMatches} Maç
-                          </span>
+                          {isCityCollapsed ? (
+                            <span className="text-[11px] text-amber-300 font-semibold bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-lg flex items-center gap-1">
+                              <span>Gizlendi (Göster)</span>
+                              <ChevronDown size={13} className="text-amber-400" />
+                            </span>
+                          ) : (
+                            <span className="text-[11px] text-slate-400 font-medium group-hover/city:text-slate-200 flex items-center gap-1">
+                              <span className="hidden sm:inline">Gizle</span>
+                              <ChevronUp size={13} className="text-slate-400 group-hover/city:text-white transition-colors" />
+                            </span>
+                          )}
+
+                          {isAllCities && (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleSelectCity(slugify(cityGroup.city));
+                              }}
+                              className="text-[11px] text-sky-400 hover:text-sky-200 font-semibold underline underline-offset-2 transition-colors cursor-pointer hidden sm:inline-flex ml-2"
+                              title={`${cityGroup.city} sayfasına git`}
+                            >
+                              {cityGroup.city} Sayfası →
+                            </button>
+                          )}
                         </div>
                       </div>
-                      {isAllCities && (
-                        <button
-                          type="button"
-                          onClick={() => handleSelectCity(slugify(cityGroup.city))}
-                          className="text-[11px] text-sky-400 hover:text-sky-200 font-semibold underline underline-offset-2 transition-colors cursor-pointer hidden sm:inline-flex"
-                        >
-                          {cityGroup.city} Sayfası →
-                        </button>
+
+                      {/* Bu Şehirdeki Ligler (Örn: Genç Kızlar Süper Lig (U18), Yıldız Kızlar Süper Lig (U16)) */}
+                      {!isCityCollapsed && (
+                        <div className="space-y-3 animate-in fade-in-50 duration-200">
+                          {cityGroup.leagues.map((sec, idx) => (
+                            <FixtureTable
+                              key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
+                              title={sec.title}
+                              subTitle={sec.subTitle}
+                              matches={sec.matches}
+                              favorites={favorites}
+                              onToggleFavorite={toggleFavorite}
+                              city={sec.city || data?.city}
+                              showCityBadge={false}
+                              onSelectMatch={setSelectedMatch}
+                            />
+                          ))}
+                        </div>
                       )}
                     </div>
-
-                    {/* Bu Şehirdeki Ligler (Örn: Genç Kızlar Süper Lig (U18), Yıldız Kızlar Süper Lig (U16)) */}
-                    <div className="space-y-3">
-                      {cityGroup.leagues.map((sec, idx) => (
-                        <FixtureTable
-                          key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
-                          title={sec.title}
-                          subTitle={sec.subTitle}
-                          matches={sec.matches}
-                          favorites={favorites}
-                          onToggleFavorite={toggleFavorite}
-                          city={sec.city || data?.city}
-                          showCityBadge={false}
-                          onSelectMatch={setSelectedMatch}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
 
