@@ -9,6 +9,7 @@ YALNIZCA "Genç Kızlar Süper Lig" ve "Yıldız Kızlar Süper Lig" maçların�
 """
 
 import os
+import sys
 import re
 import json
 import html
@@ -24,6 +25,8 @@ logging.basicConfig(level=logging.INFO, format="[%(asctime)s] [%(levelname)s] %(
 logger = logging.getLogger("IstanbulLiveParser")
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
 DATA_DIR = BASE_DIR / "data"
 RAW_DIR = DATA_DIR / "raw"
 OUTPUT_JSON = DATA_DIR / "fixtures.json"

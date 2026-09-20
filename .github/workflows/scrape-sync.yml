@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   scrape-and-sync:
@@ -33,6 +34,12 @@ jobs:
       - name: Sync Volleybox matches & scores
         run: |
           python scripts/sync_volleybox_matches.py
+
+      - name: Check standings team name conflicts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/check_standings_conflicts.py
 
       - name: Commit and push changes
         run: |

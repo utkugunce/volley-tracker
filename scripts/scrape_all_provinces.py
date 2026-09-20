@@ -10,9 +10,12 @@ import re
 import json
 import html
 import time
+import logging
 from pathlib import Path
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+logger = logging.getLogger("ScraperSync")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -177,17 +180,134 @@ def build_volleybox_name_resolver():
 RESOLVE_TEAM_NAME = build_volleybox_name_resolver()
 
 def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
-    """Tüm maç ve puan durumu takımlarını Volleybox'taki resmi adıyla günceller."""
-    for m in matches:
+    """Tüm maç ve puan durumu takımlarını Volleybox'taki resmi adıyla günceller.
+    Aynı puan durumu grubunda mükerrer takım isimleri tespit edilirse ve takımların
+    istatistikleri veya ham isimleri farklı takımlar olduğunu gösteriyorsa (played > 0,
+    farklı istatistikler veya farklı ham isimler), uyarı loglar ve otomatik olarak
+    ' - A', ' - B' sonekleriyle ayrıştırır (disambiguation)."""
+    
+    def _norm(s: str) -> str:
+        if not s:
+            return ""
+        return (
+            str(s)
+            .strip()
+            .lower()
+            .replace("ı", "i")
+            .replace("ğ", "g")
+            .replace("ü", "u")
+            .replace("ş", "s")
+            .replace("ö", "o")
+            .replace("ç", "c")
+        )
+
+    # Standings üzerinden ham -> çözülmüş/ayrıştırılmış isim haritası
+    # Anahtar: (_norm(ham_isim), _norm(grup_veya_kategori)) -> final_name
+    disambiguated_map = {}
+
+    # 1. Puan durumu tablolarını tara ve çöz
+    for grp, table in (standings or {}).items():
+        if not isinstance(table, list):
+            continue
+
+        # Gruptaki takımları çöz ve grupla
+        name_groups = {}  # resolved_name -> list of (row, raw_team)
+        for row in table:
+            if not isinstance(row, dict) or "team" not in row:
+                continue
+            raw_team = str(row["team"]).strip()
+            resolved = RESOLVE_TEAM_NAME(raw_team, grp, city_name)
+            name_groups.setdefault(resolved, []).append((row, raw_team))
+
+        suffixes = ["A", "B", "C", "D", "E", "F", "G"]
+
+        for res_name, entries in name_groups.items():
+            if len(entries) == 1:
+                row, raw_team = entries[0]
+                row["team"] = res_name
+                disambiguated_map[(_norm(raw_team), _norm(grp))] = res_name
+                disambiguated_map[(_norm(raw_team), "")] = res_name
+            else:
+                # Birden fazla satır aynı çözümlenmiş isme sahip!
+                # Farklı takımlar mı kontrol et (played > 0 veya farklı istatistikler)
+                has_played = any((r.get("played") or 0) > 0 for r, _ in entries)
+                stats_tuples = [
+                    (
+                        r.get("played", 0),
+                        r.get("won", 0),
+                        r.get("lost", 0),
+                        r.get("points", 0),
+                        r.get("sets_won", 0),
+                        r.get("sets_lost", 0),
+                        r.get("points_won", 0),
+                        r.get("points_lost", 0),
+                    )
+                    for r, _ in entries
+                ]
+                distinct_stats = len(set(stats_tuples)) > 1
+                distinct_raw = len(set(_norm(raw) for _, raw in entries)) > 1
+
+                is_distinct = has_played or distinct_stats or distinct_raw or len(entries) > 1
+
+                if is_distinct:
+                    msg = (
+                        f"⚠️ İsim çakışması tespit edildi: '{grp}' grubunda '{res_name}' "
+                        f"ismi {len(entries)} kez geçiyor. Otomatik olarak ' - A', ' - B' sonekleriyle ayrıştırılıyor."
+                    )
+                    logger.warning(msg)
+                    print(msg)
+
+                    for i, (row, raw_team) in enumerate(entries):
+                        sfx = suffixes[i] if i < len(suffixes) else f"T{i+1}"
+                        disambiguated_name = f"{res_name} - {sfx}"
+                        row["team"] = disambiguated_name
+                        disambiguated_map[(_norm(raw_team), _norm(grp))] = disambiguated_name
+                        disambiguated_map[(_norm(raw_team), "")] = disambiguated_name
+                        disambiguated_map[(_norm(disambiguated_name), _norm(grp))] = disambiguated_name
+                        disambiguated_map[(_norm(disambiguated_name), "")] = disambiguated_name
+                else:
+                    for row, raw_team in entries:
+                        row["team"] = res_name
+                        disambiguated_map[(_norm(raw_team), _norm(grp))] = res_name
+                        disambiguated_map[(_norm(raw_team), "")] = res_name
+
+    # 2. Maçları güncelle
+    for m in (matches or []):
         cat = m.get("category", "")
+        grp = m.get("group", "")
         m_city = m.get("city") or city_name
-        m["home_team"] = RESOLVE_TEAM_NAME(m.get("home_team", ""), cat, m_city)
-        m["away_team"] = RESOLVE_TEAM_NAME(m.get("away_team", ""), cat, m_city)
-    for grp, table in standings.items():
-        if isinstance(table, list):
-            for row in table:
-                if isinstance(row, dict) and "team" in row:
-                    row["team"] = RESOLVE_TEAM_NAME(row["team"], grp, city_name)
+
+        keys_to_try = []
+        if cat and grp:
+            keys_to_try.append(_norm(f"{cat} - {grp}"))
+        if grp:
+            keys_to_try.append(_norm(grp))
+        if cat:
+            keys_to_try.append(_norm(cat))
+        keys_to_try.append("")
+
+        home_raw = str(m.get("home_team", "")).strip()
+        away_raw = str(m.get("away_team", "")).strip()
+
+        # Ev sahibi takımı çöz
+        home_resolved = None
+        for k in keys_to_try:
+            if (_norm(home_raw), k) in disambiguated_map:
+                home_resolved = disambiguated_map[(_norm(home_raw), k)]
+                break
+        if not home_resolved:
+            home_resolved = RESOLVE_TEAM_NAME(home_raw, cat, m_city)
+        m["home_team"] = home_resolved
+
+        # Deplasman takımını çöz
+        away_resolved = None
+        for k in keys_to_try:
+            if (_norm(away_raw), k) in disambiguated_map:
+                away_resolved = disambiguated_map[(_norm(away_raw), k)]
+                break
+        if not away_resolved:
+            away_resolved = RESOLVE_TEAM_NAME(away_raw, cat, m_city)
+        m["away_team"] = away_resolved
 
 def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
     """Mevcut dosyadaki volleybox verilerini yeni taranan mac listesine aktar.

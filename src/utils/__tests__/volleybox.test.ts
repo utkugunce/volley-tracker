@@ -40,6 +40,18 @@ describe("volleybox utility", () => {
       expect(mapping?.volleybox_url).toContain("fenerbahce-u18-t27716");
     });
 
+    it("disambiguates Bizimkent U16 A and B teams", () => {
+      const bizimkentA = getVolleyboxMapping("Bizimkent Voleybol", "Yıldız Kızlar Süper Lig");
+      expect(bizimkentA).toBeDefined();
+      expect(bizimkentA?.matched_as).toBe("Bizimkent Voleybol Spor Kulübü U16 - A");
+      expect(bizimkentA?.volleybox_url).toContain("bizimkent-voleybol-spor-kulubu-u16-t41638");
+
+      const bizimkentB = getVolleyboxMapping("Bizimkent Sk", "Yıldız Kızlar Süper Lig");
+      expect(bizimkentB).toBeDefined();
+      expect(bizimkentB?.matched_as).toBe("Bizimkent Voleybol Spor Kulübü U16 - B");
+      expect(bizimkentB?.volleybox_url).toContain("bizimkent-voleybol-spor-kulubu-u16-t41638");
+    });
+
     it("returns correct mapping for other cities (Bursa, İzmir, Antalya, Yalova, Düzce, Niğde)", () => {
       // Bursa
       const bursa23Nisan = getVolleyboxMapping("Bursa 23 Nisan Spor Kulübü", "Genç Kızlar Süper Lig");
