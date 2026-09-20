@@ -15,9 +15,11 @@ import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
 import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { Match, FixturesData } from "@/types/fixture";
-import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History } from "lucide-react";
+import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin } from "lucide-react";
 import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
+import { groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
+import { slugify } from "@/utils/slugify";
 
 // Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
 export const isMatchScored = (m: Match): boolean => {
@@ -561,50 +563,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     });
   }, [data, resultsSubTab, yesterdayStr, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
 
-  // Sonuçlar için gruplama: En son oynanan maçlar en üstte (tarihe göre azalan sıralama)
-  const resultsGroupedSections = useMemo(() => {
-    const sections: {
-      [key: string]: {
-        title: string;
-        subTitle: string;
-        city?: string;
-        matches: Match[];
-      };
-    } = {};
-
-    filteredResultMatches.forEach((m) => {
-      const matchCity = m.city || data?.city || "Genel";
-      const groupKey = isAllCities
-        ? `${matchCity}::${m.category} - ${m.group}`
-        : `${m.category} - ${m.group}`;
-
-      if (!sections[groupKey]) {
-        sections[groupKey] = {
-          title: m.category,
-          subTitle: m.group,
-          city: matchCity,
-          matches: [],
-        };
-      }
-      sections[groupKey].matches.push(m);
-    });
-
-    // Sonuçlarda en son oynanan maç günleri en üstte, aynı gün içinde ERKEN SAAT İLK
-    Object.values(sections).forEach((sec) => {
-      sec.matches.sort((m1, m2) => compareMatchDateTime(m1, m2, "desc"));
-    });
-
-    // Grupları sırala: Tüm iller modunda önce Şehir, sonra Kategori ve Grup
-    return Object.values(sections).sort((a, b) => {
-      if (isAllCities) {
-        const cityComp = (a.city || "").localeCompare(b.city || "", "tr");
-        if (cityComp !== 0) return cityComp;
-      }
-      const catComp = (a.title || "").localeCompare(b.title || "", "tr", { numeric: true });
-      if (catComp !== 0) return catComp;
-      return (a.subTitle || "").localeCompare(b.subTitle || "", "tr", { numeric: true });
-    });
-  }, [filteredResultMatches, isAllCities, data?.city]);
+  // Sonuçlar için Şehir ve Lig bazlı hiyerarşik gruplama (İzmir başlığı altında U18 / U16 ve A Grubu / B Grubu)
+  const resultsByCityAndLeague = useMemo<CityResultGroup[]>(() => {
+    return groupResultsByCityAndLeague(filteredResultMatches, data?.city);
+  }, [filteredResultMatches, data?.city]);
 
   const resetFilters = () => {
     setSelectedCategory("Tümü");
@@ -747,27 +709,61 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               </div>
             )}
 
-            {/* Sonuçlar Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları */}
-            {resultsGroupedSections.length > 0 && (
-              <div className="space-y-4">
-                {resultsGroupedSections.map((sec, idx) => (
-                  <FixtureTable
-                    key={idx}
-                    title={sec.title}
-                    subTitle={sec.subTitle}
-                    matches={sec.matches}
-                    favorites={favorites}
-                    onToggleFavorite={toggleFavorite}
-                    city={sec.city || data?.city}
-                    showCityBadge={isAllCities}
-                    onSelectMatch={setSelectedMatch}
-                  />
+            {/* Sonuçlar Tablosu: Şehir Başlığı Altında Ligler (U18/U16) ve Gruplar (A Grubu, B Grubu) */}
+            {resultsByCityAndLeague.length > 0 && (
+              <div className="space-y-6">
+                {resultsByCityAndLeague.map((cityGroup) => (
+                  <div key={cityGroup.city} className="space-y-3">
+                    {/* Şehir Başlık Banner'ı: Örn 📍 İZMİR (4 Maç) */}
+                    <div className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-[#0d172a] to-slate-900/95 border border-sky-500/30 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-lg bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-400 font-black shadow-xs">
+                          <MapPin size={15} className="text-sky-300" />
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <h2 className="text-xs sm:text-sm md:text-base font-black text-white tracking-wide uppercase flex items-center gap-1.5">
+                            <span>{cityGroup.city}</span>
+                            <span className="text-slate-400 font-normal text-xs">• TVF İl Temsilciliği</span>
+                          </h2>
+                          <span className="text-[10px] sm:text-[11px] font-bold text-sky-400 bg-sky-950/80 border border-sky-700/60 px-2 py-0.5 rounded-full font-mono">
+                            {cityGroup.totalMatches} Maç
+                          </span>
+                        </div>
+                      </div>
+                      {isAllCities && (
+                        <button
+                          type="button"
+                          onClick={() => handleSelectCity(slugify(cityGroup.city))}
+                          className="text-[11px] text-sky-400 hover:text-sky-200 font-semibold underline underline-offset-2 transition-colors cursor-pointer hidden sm:inline-flex"
+                        >
+                          {cityGroup.city} Sayfası →
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Bu Şehirdeki Ligler (Örn: Genç Kızlar Süper Lig (U18), Yıldız Kızlar Süper Lig (U16)) */}
+                    <div className="space-y-3">
+                      {cityGroup.leagues.map((sec, idx) => (
+                        <FixtureTable
+                          key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
+                          title={sec.title}
+                          subTitle={sec.subTitle}
+                          matches={sec.matches}
+                          favorites={favorites}
+                          onToggleFavorite={toggleFavorite}
+                          city={sec.city || data?.city}
+                          showCityBadge={false}
+                          onSelectMatch={setSelectedMatch}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             )}
 
             {/* Sonuç Bulunamadı */}
-            {resultsGroupedSections.length === 0 && (
+            {resultsByCityAndLeague.length === 0 && (
               <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
                 <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-emerald-400 border border-slate-700">
                   {resultsSubTab === "yesterday" ? <History size={22} /> : <CheckCircle2 size={22} />}

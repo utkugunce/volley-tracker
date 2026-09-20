@@ -9,6 +9,7 @@ import { isMatchPassed } from "@/utils/calendar";
 import { generateMatchIcs, generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { getHallNavigationUrl } from "@/utils/halls";
 import { PrintScheduleButton } from "./PrintScheduleButton";
+import { formatGroupName } from "@/utils/grouping";
 
 interface FixtureTableProps {
   title: string;
@@ -36,6 +37,12 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   const [viewMode, setViewMode] = useState<"table" | "grid">("table");
 
   const effectiveCity = city && city !== "Tüm İller" ? city : matches[0]?.city;
+
+  // Çoklu grup ayrımı kontrolü (A Grubu, B Grubu vb.)
+  const distinctGroups = React.useMemo(() => {
+    return Array.from(new Set(matches.map((m) => formatGroupName(m.group)).filter(Boolean)));
+  }, [matches]);
+  const hasMultipleGroups = distinctGroups.length > 1;
 
   const formatRowDate = (dateStr: string) => {
     if (!dateStr || dateStr === "TBD") return "Açıklanacak";
@@ -175,22 +182,44 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               const disc = match.volleybox?.discrepancy;
               const hasDiff = Boolean(disc?.has_diff);
 
+              const currentGroup = formatGroupName(match.group);
+              const prevGroup = idx > 0 ? formatGroupName(matches[idx - 1]?.group) : null;
+              const isFirstOfGroup = hasMultipleGroups && currentGroup !== prevGroup;
+              const matchesInGroupCount = hasMultipleGroups
+                ? matches.filter((m) => formatGroupName(m.group) === currentGroup).length
+                : 0;
+
               return (
-                <tr
-                  key={match.id}
-                  onClick={() => onSelectMatch?.(match)}
-                  className={`transition-colors duration-150 ${
-                    onSelectMatch ? "cursor-pointer" : ""
-                  } ${
-                    hasDiff
-                      ? "bg-amber-950/30 border-l-4 border-l-amber-500 hover:bg-amber-950/50"
-                      : isFav
-                      ? "bg-amber-500/10 border-l-2 border-l-amber-400 hover:bg-amber-500/20"
-                      : idx % 2 === 1
-                      ? "bg-slate-900/30 hover:bg-slate-800/60"
-                      : "bg-transparent hover:bg-slate-800/40"
-                  }`}
-                >
+                <React.Fragment key={match.id}>
+                  {isFirstOfGroup && (
+                    <tr className="bg-[#0b1325]/95 text-amber-300 font-extrabold text-[11px] uppercase tracking-wider border-y border-amber-500/20 select-none">
+                      <td colSpan={10} className="py-2 px-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-amber-400 shadow-glow-amber"></span>
+                            <span className="text-amber-300 font-black tracking-wide">{currentGroup}</span>
+                          </div>
+                          <span className="text-[10px] font-mono text-slate-400 font-bold bg-slate-950/80 px-2 py-0.5 rounded border border-slate-800">
+                            {matchesInGroupCount} Maç
+                          </span>
+                        </div>
+                      </td>
+                    </tr>
+                  )}
+                  <tr
+                    onClick={() => onSelectMatch?.(match)}
+                    className={`transition-colors duration-150 ${
+                      onSelectMatch ? "cursor-pointer" : ""
+                    } ${
+                      hasDiff
+                        ? "bg-amber-950/30 border-l-4 border-l-amber-500 hover:bg-amber-950/50"
+                        : isFav
+                        ? "bg-amber-500/10 border-l-2 border-l-amber-400 hover:bg-amber-500/20"
+                        : idx % 2 === 1
+                        ? "bg-slate-900/30 hover:bg-slate-800/60"
+                        : "bg-transparent hover:bg-slate-800/40"
+                    }`}
+                  >
                   {/* ⭐ Favori */}
                   <td className="py-2 px-1.5 text-center w-7">
                     <button
@@ -449,7 +478,8 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         )}
                       </div>
                     </td>
-                </tr>
+                  </tr>
+                </React.Fragment>
               );
             })}
           </tbody>
@@ -458,7 +488,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       ) : (
         /* 3. Yayın Tarzı Grid Kart Görünümü (Broadcast Cards) */
         <div className="p-3.5 sm:p-4 grid grid-cols-1 md:grid-cols-2 gap-3.5 bg-slate-950/40">
-          {matches.map((match) => {
+          {matches.map((match, idx) => {
             const isFav = favorites.includes(match.id);
             const isFinished = match.status === "finished";
             const homeWon = isFinished && (match.home_score ?? 0) > (match.away_score ?? 0);
@@ -468,8 +498,27 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             const disc = match.volleybox?.discrepancy;
             const hasDiff = Boolean(disc?.has_diff);
 
+            const currentGroup = formatGroupName(match.group);
+            const prevGroup = idx > 0 ? formatGroupName(matches[idx - 1]?.group) : null;
+            const isFirstOfGroup = hasMultipleGroups && currentGroup !== prevGroup;
+            const matchesInGroupCount = hasMultipleGroups
+              ? matches.filter((m) => formatGroupName(m.group) === currentGroup).length
+              : 0;
+
             return (
-              <div
+              <React.Fragment key={match.id}>
+                {isFirstOfGroup && (
+                  <div className="col-span-full flex items-center justify-between py-2 px-3.5 bg-[#0b1325]/95 rounded-xl border border-amber-500/25 text-amber-300 text-xs font-bold uppercase mt-2 mb-0.5 shadow-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-amber-400 shadow-glow-amber"></span>
+                      <span className="font-black text-amber-300 tracking-wide">{currentGroup}</span>
+                    </div>
+                    <span className="text-[10px] font-mono text-slate-400 font-bold bg-slate-900/80 px-2 py-0.5 rounded border border-slate-800">
+                      {matchesInGroupCount} Maç
+                    </span>
+                  </div>
+                )}
+                <div
                 key={match.id}
                 className={`rounded-xl border transition-all duration-200 overflow-hidden flex flex-col justify-between ${
                   hasDiff
@@ -680,8 +729,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </button>
                 )}
               </div>
-            );
-          })}
+            </React.Fragment>
+          );
+        })}
         </div>
       )}
     </div>
