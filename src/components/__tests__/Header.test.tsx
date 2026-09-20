@@ -75,4 +75,25 @@ describe("Header Component", () => {
     const resultsButton = screen.getByText("SONUÇLAR").closest("button")!;
     expect(resultsButton.className).toContain("border-primary text-white");
   });
+
+  it("includes iOS safe-area top inset padding in header container", () => {
+    const { container } = render(
+      <Header
+        totalMatches={10}
+        todayMatchesCount={0}
+        resultsCount={0}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="home"
+        onSelectTab={vi.fn()}
+        onRefresh={vi.fn()}
+        isLoading={false}
+      />
+    );
+
+    const header = container.querySelector("header");
+    expect(header).toBeInTheDocument();
+    expect(header?.className).toContain("pt-[env(safe-area-inset-top,0px)]");
+  });
 });

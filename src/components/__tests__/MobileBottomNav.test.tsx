@@ -84,4 +84,17 @@ describe("MobileBottomNav Component", () => {
 
     expect(screen.getByText("99+")).toBeInTheDocument();
   });
+
+  it("includes iOS safe-area bottom inset padding in nav container", () => {
+    const { container } = render(
+      <MobileBottomNav
+        activeTab="today"
+        onSelectTab={vi.fn()}
+      />
+    );
+
+    const nav = container.querySelector("nav");
+    expect(nav).toBeInTheDocument();
+    expect(nav?.className).toContain("pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))]");
+  });
 });

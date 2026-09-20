@@ -52,7 +52,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   return (
     <nav
       aria-label="Mobil Alt Menü"
-      className="sm:hidden fixed bottom-0 left-0 right-0 z-40 backdrop-blur-xl bg-slate-950/90 border-t border-slate-800/80 px-1 py-1.5 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] transition-all duration-200"
+      className="sm:hidden fixed bottom-0 left-0 right-0 z-40 backdrop-blur-xl bg-slate-950/90 border-t border-slate-800/80 px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] shadow-[0_-4px_20px_rgba(0,0,0,0.5)] transition-all duration-200"
     >
       <div className="flex items-center justify-between max-w-lg mx-auto w-full gap-0.5">
         {navItems.map((item) => {
