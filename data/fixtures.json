@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T22:42:10.559248+03:00",
+  "updated_at": "2026-09-20T21:40:04.668647+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -2001,7 +2001,7 @@
       },
       {
         "rank": 6,
-        "team": "Marmara Akademi Atletik Spor Kulübü U16",
+        "team": "Akademi Atletik Spor U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -2794,7 +2794,7 @@
       "group": "C Grubu",
       "match_no": "2",
       "home_team": "Eczacıbaşı - B U16",
-      "away_team": "Marmara Akademi Atletik Spor Kulübü U16",
+      "away_team": "Akademi Atletik Spor U16",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -4159,5 +4159,5 @@
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-20T19:07:55.150764"
+  "volleybox_sync_updated_at": "2026-09-20T21:41:16.039375"
 }

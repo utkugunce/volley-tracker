@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20T19:06:41.901914",
+  "updated_at": "2026-09-20T21:39:52.103720",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -199,7 +199,7 @@
     "Genç Kızlar Süper Lig - - D": [
       {
         "rank": 1,
-        "team": "Doruk Voleybol Spor Kulübü U18",
+        "team": "Bursa Osmangazi Belediye Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -210,7 +210,7 @@
       },
       {
         "rank": 2,
-        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
+        "team": "Doruk Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -221,7 +221,7 @@
       },
       {
         "rank": 3,
-        "team": "Nilüfer Belediye Spor Kulübü U18",
+        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -232,7 +232,7 @@
       },
       {
         "rank": 4,
-        "team": "Osmangazi Belediyespor U18",
+        "team": "Nilüfer Belediye Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -392,7 +392,7 @@
       },
       {
         "rank": 2,
-        "team": "Hekimoğlu GCT Bursa Voleybol Kulübü U16",
+        "team": "Bursa Osmangazi Belediye Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -403,7 +403,7 @@
       },
       {
         "rank": 3,
-        "team": "Mesut Kökel Spor Kulübü U16",
+        "team": "Hekimoğlu GCT Bursa Voleybol Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -414,7 +414,7 @@
       },
       {
         "rank": 4,
-        "team": "Nilüfer Belediye Spor Kulübü",
+        "team": "Mesut Kökel Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -425,7 +425,7 @@
       },
       {
         "rank": 5,
-        "team": "Oksijen Spor Kulübü U16",
+        "team": "Nilüfer Belediye Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -436,7 +436,7 @@
       },
       {
         "rank": 6,
-        "team": "Osmangazi Belediyespor U16",
+        "team": "Oksijen Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -563,5 +563,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-20T19:07:55.163760"
+  "volleybox_sync_updated_at": "2026-09-20T21:41:16.053071"
 }
