@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { DashboardClient } from "@/components/DashboardClient";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
 
@@ -7,31 +8,37 @@ interface PageProps {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export async function generateMetadata({ searchParams }: PageProps): Promise<import("next").Metadata> {
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
   const params = searchParams ? await searchParams : {};
   const city = typeof params?.city === "string" && params.city !== "Tümü" && params.city !== "Tüm İller" ? params.city : undefined;
   const category = typeof params?.category === "string" && params.category !== "Tümü" ? params.category : undefined;
 
-  let title = "Altyapı Voleybol — TVF Fikstür ve Puan Durumu";
-  let description = "Türkiye Voleybol Federasyonu 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig haftalık maç bülteni, puan durumu ve fikstür.";
+  let title = "Günün Voleybol Maçları ve Canlı Program — Altyapı Voleybol";
+  let description = "Bugün oynanacak tüm voleybol maçları, başlama saatleri, salonlar ve canlı karşılaşmalar.";
 
   if (city && category) {
-    title = `Altyapı Voleybol — ${city} ${category}`;
-    description = `${city} ili ${category} ligi güncel haftalık maç bülteni, canlı puan durumu, maç sonuçları ve takvimi.`;
+    title = `Bugün: ${city} ${category} Maçları — Altyapı Voleybol`;
+    description = `${city} ili ${category} ligi bugün oynanacak karşılaşmalar, maç saatleri ve salon bilgileri.`;
   } else if (city) {
-    title = `Altyapı Voleybol — ${city} Fikstür ve Sonuçlar`;
-    description = `${city} ili voleybol ligleri güncel maç bülteni, puan durumu ve fikstürü.`;
+    title = `Bugün: ${city} Voleybol Maçları — Altyapı Voleybol`;
+    description = `${city} ilinde bugün oynanacak tüm voleybol maçları ve program.`;
   } else if (category) {
-    title = `Altyapı Voleybol — ${category}`;
-    description = `Türkiye geneli ${category} ligleri maç programı, canlı puan durumu ve sonuçları.`;
+    title = `Bugün: ${category} Maç Programı — Altyapı Voleybol`;
+    description = `Türkiye genelinde bugün oynanacak ${category} karşılaşmaları.`;
   }
+
+  const url = `https://altyapivoleybol.com.tr/gunun-maclari${city ? `?city=${city}` : ""}`;
 
   return {
     title,
     description,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title,
       description,
+      url,
       type: "website",
       locale: "tr_TR",
     },
@@ -43,7 +50,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<imp
   };
 }
 
-export default async function Page({ searchParams }: PageProps) {
+export default async function TodayMatchesPage({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
   const citySlug = typeof params?.city === "string" ? params.city : undefined;
   const initialData = getInitialFixtures(citySlug);

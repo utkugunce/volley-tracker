@@ -30,15 +30,64 @@ export const isMatchScored = (m: Match): boolean => {
 
 interface DashboardClientProps {
   initialData: FixturesData;
+  initialTab?: "results" | "home" | "fixtures" | "standings";
 }
 
-export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData }) => {
+export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData, initialTab = "home" }) => {
   const [data, setData] = useState<FixturesData>(initialData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // Ana Sekmeler: "results" (Sonuçlar), "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür) ve "standings" (Puan Durumu)
-  const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings">("home");
+  const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings">(initialTab);
+
+  // Sekme değiştiğinde tarayıcı URL'ini senkronize et (URL'i /fikstur, /puan-durumu vb. yapar)
+  const handleSelectTab = (tab: "results" | "home" | "fixtures" | "standings") => {
+    setActiveMainTab(tab);
+    if (typeof window !== "undefined") {
+      const routeMap: Record<"results" | "home" | "fixtures" | "standings", string> = {
+        home: "/",
+        fixtures: "/fikstur",
+        standings: "/puan-durumu",
+        results: "/sonuclar",
+      };
+      const targetPath = routeMap[tab];
+      const currentPath = window.location.pathname;
+      if (
+        currentPath !== targetPath &&
+        !(tab === "home" && (currentPath === "/" || currentPath === "/gunun-maclari"))
+      ) {
+        const url = new URL(window.location.href);
+        url.pathname = targetPath;
+        window.history.pushState({ tab }, "", url.toString());
+      }
+    }
+  };
+
+  // Tarayıcı Geri/İleri butonları (popstate) dinleyicisi
+  useEffect(() => {
+    const handlePopState = () => {
+      const pathname = window.location.pathname;
+      if (pathname === "/fikstur") {
+        setActiveMainTab("fixtures");
+      } else if (pathname === "/puan-durumu") {
+        setActiveMainTab("standings");
+      } else if (pathname === "/sonuclar") {
+        setActiveMainTab("results");
+      } else if (pathname === "/" || pathname === "/gunun-maclari") {
+        setActiveMainTab("home");
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  useEffect(() => {
+    if (initialTab) {
+      setActiveMainTab(initialTab);
+    }
+  }, [initialTab]);
 
   // Sonuçlar Alt Sekmesi: "all" (Tüm Sonuçlar) veya "yesterday" (Dünün Sonuçları)
   const [resultsSubTab, setResultsSubTab] = useState<"all" | "yesterday">("all");
@@ -525,7 +574,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
         activeTab={activeMainTab}
-        onSelectTab={setActiveMainTab}
+        onSelectTab={handleSelectTab}
         onRefresh={fetchData}
         isLoading={loading}
         onOpenSearch={() => setIsSearchOpen(true)}
@@ -906,19 +955,19 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData })
         onSelectTab={(tab) => {
           if (tab === "today") {
             setShowOnlyFavorites(false);
-            setActiveMainTab("home");
+            handleSelectTab("home");
           } else if (tab === "results") {
             setShowOnlyFavorites(false);
-            setActiveMainTab("results");
+            handleSelectTab("results");
           } else if (tab === "fixtures") {
             setShowOnlyFavorites(false);
-            setActiveMainTab("fixtures");
+            handleSelectTab("fixtures");
           } else if (tab === "standings") {
             setShowOnlyFavorites(false);
-            setActiveMainTab("standings");
+            handleSelectTab("standings");
           } else if (tab === "favorites") {
             setShowOnlyFavorites(true);
-            setActiveMainTab("fixtures");
+            handleSelectTab("fixtures");
           }
         }}
         favoriteCount={favorites.length}
