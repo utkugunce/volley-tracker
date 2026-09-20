@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import { MapPin, ChevronDown, Check, Search, Activity, Globe } from "lucide-react";
 import { CityInfo } from "@/types/fixture";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 interface CitySelectorProps {
   currentCitySlug: string;
@@ -53,11 +54,12 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
   }, [cities, currentCitySlug]);
 
   const filteredCities = useMemo(() => {
+    const term = trLower(searchTerm).trim();
     return cities.filter((c) => {
       const matchSearch =
-        c.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        c.ilid.includes(searchTerm) ||
-        c.slug.toLowerCase().includes(searchTerm.toLowerCase());
+        trIncludes(c.name, term) ||
+        c.ilid.includes(term) ||
+        trIncludes(c.slug, term);
 
       if (filterTab === "active") {
         return matchSearch && (c.matches_count > 0 || c.standings_count > 0);

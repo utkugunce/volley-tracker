@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { MapPin, Globe, ChevronDown, Check, Search } from "lucide-react";
 import { CityInfo } from "@/types/fixture";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 interface CityTabBarProps {
   currentCitySlug: string;
@@ -81,11 +82,11 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
 
   // Açılır menüdeki filtrelenmiş 81 il
   const filteredDropdownCities = cities.filter((c) => {
-    const term = searchTerm.toLowerCase();
+    const term = trLower(searchTerm).trim();
     return (
-      c.name.toLowerCase().includes(term) ||
+      trIncludes(c.name, term) ||
       c.ilid.includes(term) ||
-      c.slug.toLowerCase().includes(term)
+      trIncludes(c.slug, term)
     );
   });
 

@@ -5,6 +5,7 @@ import { execFileSync } from "child_process";
 import { timingSafeEqual } from "crypto";
 import { applyOverridesToMatches, applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 function safeCompare(a: string, b: string): boolean {
   const bufA = Buffer.from(a);
@@ -326,16 +327,17 @@ export async function GET(request: Request) {
     }
 
     if (search) {
+      const q = trLower(search).trim();
       matches = matches.filter((m: any) => {
-        const home = (m.home_team || "").toLowerCase();
-        const away = (m.away_team || "").toLowerCase();
-        const hallName = (m.hall || "").toLowerCase();
-        const cat = (m.category || "").toLowerCase();
+        const home = m.home_team || "";
+        const away = m.away_team || "";
+        const hallName = m.hall || "";
+        const cat = m.category || "";
         return (
-          home.includes(search) ||
-          away.includes(search) ||
-          hallName.includes(search) ||
-          cat.includes(search)
+          trIncludes(home, q) ||
+          trIncludes(away, q) ||
+          trIncludes(hallName, q) ||
+          trIncludes(cat, q)
         );
       });
     }

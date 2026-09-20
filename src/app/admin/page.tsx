@@ -23,6 +23,7 @@ import {
 import { compareMatchDateTime } from "@/utils/calendar";
 import { Match } from "@/types/fixture";
 import { MatchOverride, AuditLogEntry } from "@/utils/overrides";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 export default function AdminPage() {
   const [token, setToken] = useState<string>("");
@@ -371,13 +372,13 @@ export default function AdminPage() {
       if (selectedCity !== "all" && m.city !== selectedCity) return false;
 
       if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const home = (m.home_team || "").toLowerCase();
-        const away = (m.away_team || "").toLowerCase();
-        const id = (m.id || "").toLowerCase();
-        const cat = (m.category || "").toLowerCase();
-        const hall = (m.hall || "").toLowerCase();
-        return home.includes(q) || away.includes(q) || id.includes(q) || cat.includes(q) || hall.includes(q);
+        const q = trLower(searchQuery).trim();
+        const home = m.home_team || "";
+        const away = m.away_team || "";
+        const id = m.id || "";
+        const cat = m.category || "";
+        const hall = m.hall || "";
+        return trIncludes(home, q) || trIncludes(away, q) || trIncludes(id, q) || trIncludes(cat, q) || trIncludes(hall, q);
       }
       return true;
     }).sort((a, b) => compareMatchDateTime(a, b, "asc"));

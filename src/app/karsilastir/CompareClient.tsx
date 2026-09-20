@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { TeamListItem, HeadToHeadComparison } from "@/utils/teamData";
 import { FormBadge } from "@/components/FormBadge";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 interface CompareClientProps {
   teamsList: TeamListItem[];
@@ -66,17 +67,17 @@ export const CompareClient: React.FC<CompareClientProps> = ({
   // Filtrelenmiş takım listeleri
   const filteredTeams1 = useMemo(() => {
     if (!search1.trim()) return teamsList;
-    const q = search1.toLowerCase().trim();
+    const q = trLower(search1).trim();
     return teamsList.filter(
-      (t) => t.name.toLowerCase().includes(q) || t.city.toLowerCase().includes(q)
+      (t) => trIncludes(t.name, q) || trIncludes(t.city, q)
     );
   }, [teamsList, search1]);
 
   const filteredTeams2 = useMemo(() => {
     if (!search2.trim()) return teamsList;
-    const q = search2.toLowerCase().trim();
+    const q = trLower(search2).trim();
     return teamsList.filter(
-      (t) => t.name.toLowerCase().includes(q) || t.city.toLowerCase().includes(q)
+      (t) => trIncludes(t.name, q) || trIncludes(t.city, q)
     );
   }, [teamsList, search2]);
 

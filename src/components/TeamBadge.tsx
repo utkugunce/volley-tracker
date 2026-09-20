@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { trLower } from "@/utils/turkishLocale";
 
 interface TeamBadgeProps {
   name: string;
@@ -28,7 +29,7 @@ const PIXEL_MAP = {
 
 // Takım adına göre tutarlı renk paleti (Deterministic Color Hashing)
 function getTeamColor(name: string): { bg: string; border: string; text: string } {
-  const lower = name.toLowerCase();
+  const lower = trLower(name);
 
   if (lower.includes("fenerbahçe")) {
     return {

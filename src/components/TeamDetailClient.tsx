@@ -29,9 +29,10 @@ import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
 import { TeamRosterView } from "@/components/TeamRosterView";
+import { trLower } from "@/utils/turkishLocale";
 
 const getClubBrandColors = (teamName: string) => {
-  const lower = teamName.toLowerCase();
+  const lower = trLower(teamName);
   if (lower.includes("fenerbahçe")) {
     return {
       glowHome: "bg-yellow-400/20",

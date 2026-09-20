@@ -16,6 +16,7 @@ import { TeamBadge } from "./TeamBadge";
 import { slugify } from "@/utils/slugify";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { triggerHaptic } from "@/utils/haptics";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 interface SpotlightItem {
   id: string;
@@ -65,7 +66,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
   // Arama sonuçları
   const results = useMemo<SpotlightItem[]>(() => {
-    const q = query.toLowerCase().trim();
+    const q = trLower(query).trim();
     if (!q) {
       // Varsayılan popüler aramalar / öneriler
       const quickTeams = teams.slice(0, 5).map((t) => {
@@ -89,7 +90,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
     // 1. Takımlar
     teams.forEach((t) => {
-      if (t.toLowerCase().includes(q)) {
+      if (trIncludes(t, q)) {
         const mapping = getVolleyboxMapping(t);
         items.push({
           id: `team-${t}`,
@@ -107,7 +108,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
     // 2. Salonlar
     halls.forEach((h) => {
-      if (h !== "Tümü" && h.toLowerCase().includes(q)) {
+      if (h !== "Tümü" && trIncludes(h, q)) {
         items.push({
           id: `hall-${h}`,
           type: "hall",
@@ -123,7 +124,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
     // 3. Şehirler
     cities.forEach((c) => {
-      if (c.name.toLowerCase().includes(q)) {
+      if (trIncludes(c.name, q)) {
         items.push({
           id: `city-${c.slug}`,
           type: "city",
@@ -139,7 +140,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
     // 4. Kategoriler
     categories.forEach((cat) => {
-      if (cat !== "Tümü" && cat.toLowerCase().includes(q)) {
+      if (cat !== "Tümü" && trIncludes(cat, q)) {
         items.push({
           id: `cat-${cat}`,
           type: "category",

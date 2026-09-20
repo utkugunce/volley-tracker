@@ -20,6 +20,7 @@ import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTi
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 import { groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
 import { slugify } from "@/utils/slugify";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 // Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
 export const isMatchScored = (m: Match): boolean => {
@@ -417,7 +418,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       // 2. Kategori / Lig
       if (selectedCategory !== "Tümü") {
         const cat = m.category || m.age_group || "";
-        if (!cat.toLowerCase().includes(selectedCategory.toLowerCase())) {
+        if (!trIncludes(cat, selectedCategory)) {
           return false;
         }
       }
@@ -438,9 +439,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
       // 6. Arama
       if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const matchText = `${m.home_team} ${m.away_team} ${m.hall} ${m.category} ${m.match_no} ${m.city || ""}`.toLowerCase();
-        if (!matchText.includes(q)) {
+        const q = trLower(searchQuery).trim();
+        const matchText = `${m.home_team} ${m.away_team} ${m.hall} ${m.category} ${m.match_no} ${m.city || ""}`;
+        if (!trIncludes(matchText, q)) {
           return false;
         }
       }
@@ -539,7 +540,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
       if (selectedCategory !== "Tümü") {
         const cat = m.category || m.age_group || "";
-        if (!cat.toLowerCase().includes(selectedCategory.toLowerCase())) {
+        if (!trIncludes(cat, selectedCategory)) {
           return false;
         }
       }
@@ -549,9 +550,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       }
 
       if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const matchText = `${m.home_team} ${m.away_team} ${m.hall} ${m.category} ${m.match_no} ${m.city || ""}`.toLowerCase();
-        if (!matchText.includes(q)) {
+        const q = trLower(searchQuery).trim();
+        const matchText = `${m.home_team} ${m.away_team} ${m.hall} ${m.category} ${m.match_no} ${m.city || ""}`;
+        if (!trIncludes(matchText, q)) {
           return false;
         }
       }

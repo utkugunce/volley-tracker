@@ -89,4 +89,33 @@ describe("CityTabBar Component", () => {
     // 44 on Izmir
     expect(screen.getByText("44")).toBeInTheDocument();
   });
+
+  it("filters dropdown cities when searching with ASCII lowercase 'istanbul' or 'izmir'", () => {
+    render(
+      <CityTabBar
+        currentCitySlug="istanbul"
+        onSelectCity={vi.fn()}
+        cities={mockCities}
+        totalMatchesAcrossAll={72}
+      />
+    );
+
+    // Açılır menü butonuna tıkla
+    const dropdownBtn = screen.getByLabelText(/Tüm 81 ili listele ve seç/i);
+    fireEvent.click(dropdownBtn);
+
+    // Arama kutusuna "istanbul" yaz
+    const searchInput = screen.getByPlaceholderText(/İl ara/i);
+    fireEvent.change(searchInput, { target: { value: "istanbul" } });
+
+    // Dropdown listesinde İstanbul bulunmalı
+    const dropdownList = screen.getByRole("listbox");
+    expect(dropdownList).toHaveTextContent("İstanbul");
+    expect(dropdownList).not.toHaveTextContent("Niğde");
+
+    // Arama kutusuna "izmir" yaz
+    fireEvent.change(searchInput, { target: { value: "izmir" } });
+    expect(dropdownList).toHaveTextContent("İzmir");
+    expect(dropdownList).not.toHaveTextContent("İstanbul");
+  });
 });

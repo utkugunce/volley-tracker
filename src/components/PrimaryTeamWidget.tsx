@@ -21,6 +21,7 @@ import { slugify } from "@/utils/slugify";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { generateMatchIcs, downloadIcsFile } from "@/utils/ics";
 import { triggerHaptic } from "@/utils/haptics";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 interface PrimaryTeamWidgetProps {
   matches: Match[];
@@ -75,11 +76,11 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   // Birincil takıma ait maçlar
   const teamMatches = useMemo(() => {
     if (!primaryTeam) return [];
-    const lower = primaryTeam.toLowerCase().trim();
+    const lower = trLower(primaryTeam).trim();
     return matches.filter(
       (m) =>
-        m.home_team.toLowerCase().trim() === lower ||
-        m.away_team.toLowerCase().trim() === lower
+        trLower(m.home_team).trim() === lower ||
+        trLower(m.away_team).trim() === lower
     );
   }, [matches, primaryTeam]);
 
@@ -139,8 +140,8 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
           );
     list.sort((a, b) => a.localeCompare(b, "tr"));
     if (!searchQuery.trim()) return list.slice(0, 24);
-    const q = searchQuery.toLowerCase().trim();
-    return list.filter((t) => t.toLowerCase().includes(q)).slice(0, 24);
+    const q = trLower(searchQuery).trim();
+    return list.filter((t) => trIncludes(t, q)).slice(0, 24);
   }, [availableTeams, matches, searchQuery]);
 
   // Eğer takım seçilmediyse şık davet kartı göster
@@ -232,7 +233,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   const teamSlug = slugify(mapping?.matched_as || primaryTeam);
 
   const opponent = nextMatch
-    ? nextMatch.home_team.toLowerCase() === primaryTeam.toLowerCase()
+    ? trLower(nextMatch.home_team) === trLower(primaryTeam)
       ? nextMatch.away_team
       : nextMatch.home_team
     : null;

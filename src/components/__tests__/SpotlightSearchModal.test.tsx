@@ -59,4 +59,30 @@ describe("SpotlightSearchModal Component", () => {
     fireEvent.keyDown(window, { key: "Escape" });
     expect(onClose).toHaveBeenCalled();
   });
+
+  it("düz ASCII 'istanbul', 'ibb', 'itu' yazıldığında Türkçe İ/I içeren kayıtları bulur", () => {
+    render(
+      <SpotlightSearchModal
+        isOpen={true}
+        onClose={vi.fn()}
+        teams={["İBB Spor Kulübü", "İTÜ Geliştirme Vakfı", "VakıfBank"]}
+        halls={["İBB Cebeci Spor Salonu"]}
+        cities={[{ name: "İstanbul", slug: "istanbul" }]}
+      />
+    );
+
+    const input = screen.getByPlaceholderText(/Takım, salon veya şehir ara/i);
+
+    // 1. "istanbul" araması -> "İstanbul İl Temsilciliği"
+    fireEvent.change(input, { target: { value: "istanbul" } });
+    expect(screen.getByText("İstanbul İl Temsilciliği")).toBeInTheDocument();
+
+    // 2. "ibb" araması -> "İBB Spor Kulübü"
+    fireEvent.change(input, { target: { value: "ibb" } });
+    expect(screen.getByText("İBB Spor Kulübü")).toBeInTheDocument();
+
+    // 3. "itu" araması -> "İTÜ Geliştirme Vakfı"
+    fireEvent.change(input, { target: { value: "itu" } });
+    expect(screen.getByText("İTÜ Geliştirme Vakfı")).toBeInTheDocument();
+  });
 });
