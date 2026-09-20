@@ -854,18 +854,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400350",
+        "url": "https://women.volleybox.net/tr/ptt-spor-u18-eryaman-gelisim-sk-u18-c400350",
+        "host_name": "PTT Spor U18",
+        "guest_name": "Eryaman Gelişim SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-24",
+        "vb_time": "18:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-24",
+          "vb_time": "18:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1225,16 +1232,16 @@
         "has_score": false,
         "vb_date": "2026-09-25",
         "vb_time": "18:00",
-        "vb_hall": "Mamak Spor Salonu",
+        "vb_hall": "Sinan Şamil Sam Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-09-25",
           "vb_time": "18:00",
-          "vb_hall": "Mamak Spor Salonu",
-          "details": "Salon Değişti (TVF: Sinan Şamil Sam S.S / VB: Mamak Spor Salonu)"
+          "vb_hall": "Sinan Şamil Sam Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1266,16 +1273,16 @@
         "has_score": false,
         "vb_date": "2026-09-25",
         "vb_time": "19:30",
-        "vb_hall": "Mamak Spor Salonu",
+        "vb_hall": "Sinan Şamil Sam Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-09-25",
           "vb_time": "19:30",
-          "vb_hall": "Mamak Spor Salonu",
-          "details": "Salon Değişti (TVF: Sinan Şamil Sam S.S / VB: Mamak Spor Salonu)"
+          "vb_hall": "Sinan Şamil Sam Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1362,6 +1369,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-09-20T20:24:11.877922"
+  "volleybox_synced_matches": 19,
+  "volleybox_sync_updated_at": "2026-09-20T21:24:54.126872"
 }

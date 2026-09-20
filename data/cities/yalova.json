@@ -1362,18 +1362,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400390",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u16-altn-manset-spor-kulubu-u16-c400390",
+        "host_name": "Yalova Voleybol Spor Kulübü U16",
+        "guest_name": "Altın Manşet Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-04",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-04",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2027-01-14 / VB: 2027-02-04)"
         }
       }
     },
@@ -1396,18 +1403,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400379",
+        "url": "https://women.volleybox.net/tr/yalova-genclik-ve-spor-l-mudurlugu-sk-u16-yalova-voleybol-spor-kulubu-u16-c400379",
+        "host_name": "Yalova Gençlik Ve Spor İl Müdürlüğü SK U16",
+        "guest_name": "Yalova Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-01-19",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-01-19",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1431,24 +1445,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "399651",
-        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u16-yalova-voleybol-spor-kulubu-u16-c399651",
-        "host_name": "Koru Akademi Spor Kulübü U16",
-        "guest_name": "Yalova Voleybol Spor Kulübü U16",
+        "match_id": "400386",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u16-koru-akademi-spor-kulubu-u16-c400386",
+        "host_name": "Yalova Atakent Spor Kulübü U16",
+        "guest_name": "Koru Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2027-01-05",
+        "vb_date": "2027-01-19",
         "vb_time": "20:00",
         "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2027-01-05",
+          "vb_date": "2027-01-19",
           "vb_time": "20:00",
           "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2027-01-19 / VB: 2027-01-05)"
+          "details": null
         }
       }
     },
@@ -1471,18 +1485,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400380",
+        "url": "https://women.volleybox.net/tr/yalova-elit-akademi-spor-kulubu-u16-yalova-atakent-spor-kulubu-u16-c400380",
+        "host_name": "Yalova Elit Akademi Spor Kulübü U16",
+        "guest_name": "Yalova Atakent Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-01-21",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-01-21",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1505,18 +1526,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400381",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u16-koru-akademi-spor-kulubu-u16-c400381",
+        "host_name": "Yalova Voleybol Spor Kulübü U16",
+        "guest_name": "Koru Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-01-21",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-01-21",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1539,18 +1567,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400382",
+        "url": "https://women.volleybox.net/tr/altn-manset-spor-kulubu-u16-yalova-genclik-ve-spor-l-mudurlugu-sk-u16-c400382",
+        "host_name": "Altın Manşet Spor Kulübü U16",
+        "guest_name": "Yalova Gençlik Ve Spor İl Müdürlüğü SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-01-26",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-01-26",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1573,18 +1608,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400383",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u16-altn-manset-spor-kulubu-u16-c400383",
+        "host_name": "Yalova Atakent Spor Kulübü U16",
+        "guest_name": "Altın Manşet Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-01-26",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-01-26",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1607,18 +1649,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400384",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u16-yalova-genclik-ve-spor-l-mudurlugu-sk-u16-c400384",
+        "host_name": "Koru Akademi Spor Kulübü U16",
+        "guest_name": "Yalova Gençlik Ve Spor İl Müdürlüğü SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-01-28",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-01-28",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1641,18 +1690,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400385",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u16-yalova-elit-akademi-spor-kulubu-u16-c400385",
+        "host_name": "Yalova Voleybol Spor Kulübü U16",
+        "guest_name": "Yalova Elit Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-01-28",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-01-28",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1675,18 +1731,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400387",
+        "url": "https://women.volleybox.net/tr/altn-manset-spor-kulubu-u16-koru-akademi-spor-kulubu-u16-c400387",
+        "host_name": "Altın Manşet Spor Kulübü U16",
+        "guest_name": "Koru Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-02",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-02",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1709,18 +1772,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400388",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u16-yalova-voleybol-spor-kulubu-u16-c400388",
+        "host_name": "Yalova Atakent Spor Kulübü U16",
+        "guest_name": "Yalova Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-02",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-02",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1743,18 +1813,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400389",
+        "url": "https://women.volleybox.net/tr/yalova-elit-akademi-spor-kulubu-u16-yalova-genclik-ve-spor-l-mudurlugu-sk-u16-c400389",
+        "host_name": "Yalova Elit Akademi Spor Kulübü U16",
+        "guest_name": "Yalova Gençlik Ve Spor İl Müdürlüğü SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-04",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-04",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1777,18 +1854,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400393",
+        "url": "https://women.volleybox.net/tr/altn-manset-spor-kulubu-u16-yalova-elit-akademi-spor-kulubu-u16-c400393",
+        "host_name": "Altın Manşet Spor Kulübü U16",
+        "guest_name": "Yalova Elit Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-11",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2027-02-11",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2027-02-04 / VB: 2027-02-11) | Saat Değişti (TVF: 20:00 / VB: 18:00)"
         }
       }
     },
@@ -1811,18 +1895,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400391",
+        "url": "https://women.volleybox.net/tr/yalova-elit-akademi-spor-kulubu-u16-koru-akademi-spor-kulubu-u16-c400391",
+        "host_name": "Yalova Elit Akademi Spor Kulübü U16",
+        "guest_name": "Koru Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-09",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-09",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1845,18 +1936,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400392",
+        "url": "https://women.volleybox.net/tr/yalova-genclik-ve-spor-l-mudurlugu-sk-u16-yalova-atakent-spor-kulubu-u16-c400392",
+        "host_name": "Yalova Gençlik Ve Spor İl Müdürlüğü SK U16",
+        "guest_name": "Yalova Atakent Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-09",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-09",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1913,18 +2011,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400394",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u16-yalova-genclik-ve-spor-l-mudurlugu-sk-u16-c400394",
+        "host_name": "Yalova Voleybol Spor Kulübü U16",
+        "guest_name": "Yalova Gençlik Ve Spor İl Müdürlüğü SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-11",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-11",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1947,18 +2052,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400395",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u16-yalova-atakent-spor-kulubu-u16-c400395",
+        "host_name": "Koru Akademi Spor Kulübü U16",
+        "guest_name": "Yalova Atakent Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-16",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-16",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1981,18 +2093,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400396",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u16-yalova-elit-akademi-spor-kulubu-u16-c400396",
+        "host_name": "Yalova Atakent Spor Kulübü U16",
+        "guest_name": "Yalova Elit Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-16",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-16",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2015,18 +2134,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400397",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u16-yalova-voleybol-spor-kulubu-u16-c400397",
+        "host_name": "Koru Akademi Spor Kulübü U16",
+        "guest_name": "Yalova Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-18",
+        "vb_time": "18:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-18",
+          "vb_time": "18:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2049,22 +2175,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400398",
+        "url": "https://women.volleybox.net/tr/yalova-genclik-ve-spor-l-mudurlugu-sk-u16-altn-manset-spor-kulubu-u16-c400398",
+        "host_name": "Yalova Gençlik Ve Spor İl Müdürlüğü SK U16",
+        "guest_name": "Altın Manşet Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-18",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-18",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 30,
-  "volleybox_sync_updated_at": "2026-09-20T20:24:12.309922"
+  "volleybox_synced_matches": 49,
+  "volleybox_sync_updated_at": "2026-09-20T21:24:55.524738"
 }
