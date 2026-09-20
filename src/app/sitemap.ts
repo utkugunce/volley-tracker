@@ -54,5 +54,51 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...teamRoutes];
+  // Şehir sayfaları (Puan Durumu, Fikstür, Sonuçlar, Günün Maçları)
+  const activeCities = [
+    "istanbul",
+    "ankara",
+    "izmir",
+    "bursa",
+    "antalya",
+    "canakkale",
+    "duzce",
+    "eskisehir",
+    "balikesir",
+    "aydin",
+    "mersin",
+    "samsun",
+    "yalova",
+    "nigde",
+    "kahramanmaras",
+  ];
+
+  const cityRoutes: MetadataRoute.Sitemap = activeCities.flatMap((slug) => [
+    {
+      url: `${baseUrl}/puan-durumu/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/fikstur/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/sonuclar/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/gunun-maclari/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+  ]);
+
+  return [...staticRoutes, ...teamRoutes, ...cityRoutes];
 }

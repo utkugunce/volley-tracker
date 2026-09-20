@@ -28,12 +28,81 @@ export const isMatchScored = (m: Match): boolean => {
   return false;
 };
 
+export const getAppRoute = (
+  tab: "results" | "home" | "fixtures" | "standings",
+  citySlug?: string
+): string => {
+  const isCity = citySlug && citySlug !== "all" && citySlug !== "Tüm İller";
+  const slug = isCity ? citySlug.toLowerCase() : "";
+
+  switch (tab) {
+    case "standings":
+      return slug ? `/puan-durumu/${slug}` : "/puan-durumu";
+    case "fixtures":
+      return slug ? `/fikstur/${slug}` : "/fikstur";
+    case "results":
+      return slug ? `/sonuclar/${slug}` : "/sonuclar";
+    case "home":
+    default:
+      return slug ? `/gunun-maclari/${slug}` : "/";
+  }
+};
+
+export const parseAppRoute = (
+  pathname: string
+): { tab: "results" | "home" | "fixtures" | "standings"; city: string } => {
+  const cleanPath = pathname.replace(/^\/+|\/+$/g, "");
+  if (!cleanPath) {
+    return { tab: "home", city: "all" };
+  }
+
+  const parts = cleanPath.split("/").filter(Boolean);
+  const first = parts[0]?.toLowerCase();
+  const second = parts[1]?.toLowerCase();
+
+  // Pattern 1: /puan-durumu/[city]
+  if (first === "puan-durumu") {
+    return { tab: "standings", city: second || "all" };
+  }
+  if (first === "fikstur") {
+    return { tab: "fixtures", city: second || "all" };
+  }
+  if (first === "sonuclar") {
+    return { tab: "results", city: second || "all" };
+  }
+  if (first === "gunun-maclari") {
+    return { tab: "home", city: second || "all" };
+  }
+
+  // Pattern 2: /[city]/puan-durumu
+  if (second === "puan-durumu") {
+    return { tab: "standings", city: first };
+  }
+  if (second === "fikstur") {
+    return { tab: "fixtures", city: first };
+  }
+  if (second === "sonuclar") {
+    return { tab: "results", city: first };
+  }
+  if (second === "gunun-maclari") {
+    return { tab: "home", city: first };
+  }
+
+  // Pattern 3: /[city] (direct city slug like /istanbul)
+  return { tab: "home", city: first };
+};
+
 interface DashboardClientProps {
   initialData: FixturesData;
   initialTab?: "results" | "home" | "fixtures" | "standings";
+  initialCity?: string;
 }
 
-export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData, initialTab = "home" }) => {
+export const DashboardClient: React.FC<DashboardClientProps> = ({
+  initialData,
+  initialTab = "home",
+  initialCity = "all",
+}) => {
   const [data, setData] = useState<FixturesData>(initialData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -41,25 +110,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData, i
   // Ana Sekmeler: "results" (Sonuçlar), "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür) ve "standings" (Puan Durumu)
   const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings">(initialTab);
 
-  // Sekme değiştiğinde tarayıcı URL'ini senkronize et (URL'i /fikstur, /puan-durumu vb. yapar)
+  // 81 İl Desteği - URL'den veya prop'tan gelen şehir ile başlar
+  const [currentCitySlug, setCurrentCitySlug] = useState(initialCity || "all");
+
+  // Sekme değiştiğinde tarayıcı URL'ini senkronize et (Şehir seçiliyse şehri korur: /puan-durumu/istanbul, /fikstur/istanbul vb.)
   const handleSelectTab = (tab: "results" | "home" | "fixtures" | "standings") => {
     setActiveMainTab(tab);
     if (typeof window !== "undefined") {
-      const routeMap: Record<"results" | "home" | "fixtures" | "standings", string> = {
-        home: "/",
-        fixtures: "/fikstur",
-        standings: "/puan-durumu",
-        results: "/sonuclar",
-      };
-      const targetPath = routeMap[tab];
+      const targetPath = getAppRoute(tab, currentCitySlug);
       const currentPath = window.location.pathname;
       if (
         currentPath !== targetPath &&
-        !(tab === "home" && (currentPath === "/" || currentPath === "/gunun-maclari"))
+        !(tab === "home" && currentCitySlug === "all" && (currentPath === "/" || currentPath === "/gunun-maclari"))
       ) {
-        const url = new URL(window.location.href);
-        url.pathname = targetPath;
-        window.history.pushState({ tab }, "", url.toString());
+        window.history.pushState({ tab, city: currentCitySlug }, "", targetPath);
       }
     }
   };
@@ -67,27 +131,28 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData, i
   // Tarayıcı Geri/İleri butonları (popstate) dinleyicisi
   useEffect(() => {
     const handlePopState = () => {
-      const pathname = window.location.pathname;
-      if (pathname === "/fikstur") {
-        setActiveMainTab("fixtures");
-      } else if (pathname === "/puan-durumu") {
-        setActiveMainTab("standings");
-      } else if (pathname === "/sonuclar") {
-        setActiveMainTab("results");
-      } else if (pathname === "/" || pathname === "/gunun-maclari") {
-        setActiveMainTab("home");
+      const { tab, city } = parseAppRoute(window.location.pathname);
+      setActiveMainTab(tab);
+      if (city !== currentCitySlug) {
+        handleSelectCity(city);
       }
     };
 
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
+  }, [currentCitySlug]);
 
   useEffect(() => {
     if (initialTab) {
       setActiveMainTab(initialTab);
     }
   }, [initialTab]);
+
+  useEffect(() => {
+    if (initialCity && initialCity !== currentCitySlug) {
+      setCurrentCitySlug(initialCity);
+    }
+  }, [initialCity]);
 
   // Sonuçlar Alt Sekmesi: "all" (Tüm Sonuçlar) veya "yesterday" (Dünün Sonuçları)
   const [resultsSubTab, setResultsSubTab] = useState<"all" | "yesterday">("all");
@@ -100,8 +165,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData, i
   const [searchQuery, setSearchQuery] = useState("");
   const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy">("all");
 
-  // 81 İl Desteği - Varsayılan olarak "all" (Tüm İller) seçili başlar
-  const [currentCitySlug, setCurrentCitySlug] = useState("all");
   const [citiesList, setCitiesList] = useState<any[]>([]);
 
   // Favoriler (Flashscore Yıldız İmzası - LocalStorage ile kaydedilir)
@@ -216,6 +279,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({ initialData, i
     setStatusFilter("all");
     setVolleyboxFilter("all");
     setSearchQuery("");
+
+    // Tarayıcı URL'ini güncelle: Örneğin /puan-durumu -> /puan-durumu/istanbul
+    if (typeof window !== "undefined") {
+      const targetPath = getAppRoute(activeMainTab, slug);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab: activeMainTab, city: slug }, "", targetPath);
+      }
+    }
+
     try {
       const res = await fetch(`/api/fixtures?city=${slug}`);
       if (!res.ok) throw new Error("İl verisi alınamadı.");

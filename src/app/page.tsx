@@ -47,5 +47,5 @@ export default async function Page({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
   const citySlug = typeof params?.city === "string" ? params.city : undefined;
   const initialData = getInitialFixtures(citySlug);
-  return <DashboardClient initialData={initialData} initialTab="home" />;
+  return <DashboardClient initialData={initialData} initialTab="home" initialCity={citySlug} />;
 }
