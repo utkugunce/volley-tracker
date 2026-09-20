@@ -110,7 +110,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                 role="tab"
                 aria-selected={isSelected}
                 onClick={() => onSelectCity(item.slug)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
+                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
                   isSelected
                     ? "bg-gradient-to-r from-red-600 to-rose-600 text-white border-red-500 shadow-glow-red font-bold ring-1 ring-red-500/40"
                     : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border-slate-800/80"

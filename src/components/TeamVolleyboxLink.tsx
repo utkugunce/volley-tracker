@@ -50,7 +50,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       alt={`${displayName} logosu`}
       width={36}
       height={36}
-      className={`w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0 inline-block align-middle mr-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 group-hover:scale-115 ${logoClassName}`}
+      className={`w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 object-contain shrink-0 inline-block align-middle mr-1.5 sm:mr-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 group-hover:scale-115 ${logoClassName}`}
       unoptimized={logoSrc.startsWith("http")}
       onError={() => {
         setImgFailed(true);
@@ -105,7 +105,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 
   if (disableTeamPageLink) {
     return (
-      <span className={`inline-flex items-center max-w-[180px] sm:max-w-[220px] md:max-w-[280px] lg:max-w-[340px] ${className}`} title={displayName}>
+      <span className={`inline-flex items-center max-w-[160px] xs:max-w-[220px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-none ${className}`} title={displayName}>
         {logoElement}
         <span className="truncate">{content}</span>
         {externalVbLink}
@@ -116,7 +116,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 
   return (
     <span
-      className={`group inline-flex items-center max-w-[180px] sm:max-w-[220px] md:max-w-[280px] lg:max-w-[340px] ${className}`}
+      className={`group inline-flex items-center max-w-[160px] xs:max-w-[220px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-none ${className}`}
       title={displayName}
     >
       {logoElement}

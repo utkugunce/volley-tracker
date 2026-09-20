@@ -193,21 +193,21 @@ export const Header: React.FC<HeaderProps> = ({
       )}
 
       {/* 2. ANA SEKMELER: SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU */}
-      <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-xs font-bold overflow-x-auto no-scrollbar">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
         {/* Sonuçlar Sekmesi */}
         <button
           onClick={() => onSelectTab("results")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "results"
               ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <CheckCircle2 size={14} className={activeTab === "results" ? "text-emerald-400" : "text-slate-400"} />
+          <CheckCircle2 size={13} className={activeTab === "results" ? "text-emerald-400" : "text-slate-400"} />
           <span>SONUÇLAR</span>
           {typeof resultsCount === "number" && (
             <span
-              className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold transition-colors ${
+              className={`text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold transition-colors ${
                 activeTab === "results"
                   ? "bg-emerald-500 text-white shadow-xs shadow-emerald-900/50"
                   : "bg-slate-800 text-slate-300 border border-slate-700/50"
@@ -221,16 +221,16 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Günün Maçları (Anasayfa) Sekmesi */}
         <button
           onClick={() => onSelectTab("home")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "home"
               ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Flame size={14} className={activeTab === "home" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
+          <Flame size={13} className={activeTab === "home" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
           <span>GÜNÜN MAÇLARI</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[10px] bg-gradient-to-r from-red-600 to-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs shadow-red-900/50">
+            <span className="text-[9px] sm:text-[10px] bg-gradient-to-r from-red-600 to-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs shadow-red-900/50">
               {todayMatchesCount}
             </span>
           )}
@@ -239,15 +239,15 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Fikstür Sekmesi */}
         <button
           onClick={() => onSelectTab("fixtures")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "fixtures"
               ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Calendar size={14} className={activeTab === "fixtures" ? "text-primary" : "text-slate-400"} />
+          <Calendar size={13} className={activeTab === "fixtures" ? "text-primary" : "text-slate-400"} />
           <span>FİKSTÜR</span>
-          <span className="text-[10px] bg-slate-800/80 text-slate-300 px-1.5 py-0.2 rounded-full font-normal border border-slate-700/50">
+          <span className="text-[9px] sm:text-[10px] bg-slate-800/80 text-slate-300 px-1.5 py-0.2 rounded-full font-normal border border-slate-700/50">
             {totalMatches}
           </span>
         </button>
@@ -255,13 +255,13 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Puan Durumu Sekmesi */}
         <button
           onClick={() => onSelectTab("standings")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2.5 px-3 sm:px-4 text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "standings"
               ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Trophy size={14} className={activeTab === "standings" ? "text-amber-400 fill-amber-400/20" : "text-slate-400"} />
+          <Trophy size={13} className={activeTab === "standings" ? "text-amber-400 fill-amber-400/20" : "text-slate-400"} />
           <span>PUAN DURUMU</span>
         </button>
       </div>
