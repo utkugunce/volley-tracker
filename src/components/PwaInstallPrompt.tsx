@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { Download, Smartphone, X, WifiOff, Share } from "lucide-react";
 
+export const DISMISS_COOLDOWN_DAYS = 14;
+export const STORAGE_KEY = "pwa-install-dismissed-at";
+
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
@@ -17,8 +20,24 @@ export const PwaInstallPrompt: React.FC = () => {
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    // 1. Standalone / Yüklü PWA kontrolü
     if (typeof window !== "undefined") {
+      // 0. 14 Günlük gizleme/dismiss kontrolü
+      try {
+        const dismissedAtStr = localStorage.getItem(STORAGE_KEY);
+        if (dismissedAtStr) {
+          const dismissedAt = parseInt(dismissedAtStr, 10);
+          if (!isNaN(dismissedAt)) {
+            const daysSinceDismissed = (Date.now() - dismissedAt) / (1000 * 60 * 60 * 24);
+            if (daysSinceDismissed < DISMISS_COOLDOWN_DAYS) {
+              setDismissed(true);
+            }
+          }
+        }
+      } catch (e) {
+        // ignore localStorage access errors
+      }
+
+      // 1. Standalone / Yüklü PWA kontrolü
       const isStandaloneMode =
         (typeof window.matchMedia === "function" &&
           window.matchMedia("(display-mode: standalone)")?.matches) ||
@@ -52,12 +71,24 @@ export const PwaInstallPrompt: React.FC = () => {
     }
   }, []);
 
+  const handleDismiss = () => {
+    setDismissed(true);
+    setShowIosModal(false);
+    try {
+      localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    } catch (e) {
+      // ignore
+    }
+  };
+
   const handleInstallClick = async () => {
     if (installPrompt) {
       await installPrompt.prompt();
       const choice = await installPrompt.userChoice;
       if (choice.outcome === "accepted") {
         setInstallPrompt(null);
+      } else if (choice.outcome === "dismissed") {
+        handleDismiss();
       }
     } else if (isIos) {
       setShowIosModal(true);
@@ -65,7 +96,7 @@ export const PwaInstallPrompt: React.FC = () => {
   };
 
   // Zaten uygulama olarak açıldıysa veya reddedildiyse butonu gösterme
-  const canShowPrompt = !isStandalone && (installPrompt !== null || (isIos && !dismissed));
+  const canShowPrompt = !isStandalone && !dismissed && (installPrompt !== null || isIos);
 
   return (
     <>
@@ -83,16 +114,26 @@ export const PwaInstallPrompt: React.FC = () => {
       )}
 
       {/* PWA YÜKLEME BUTONU (Header veya sabit çubuk için) */}
-      {canShowPrompt && !dismissed && (
-        <button
-          onClick={handleInstallClick}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-glow-red border border-red-400/40 transition-all active:scale-95 cursor-pointer"
-          title="Altyapı Voleybol uygulamasını telefonunuza veya bilgisayarınıza yükleyin"
-        >
-          <Smartphone size={14} className="animate-pulse" />
-          <span className="hidden sm:inline">Uygulamayı Yükle</span>
-          <span className="sm:hidden">Yükle</span>
-        </button>
+      {canShowPrompt && (
+        <div className="inline-flex items-center rounded-xl bg-gradient-to-r from-red-600 to-rose-600 shadow-glow-red border border-red-400/40 overflow-hidden">
+          <button
+            onClick={handleInstallClick}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-white hover:from-red-500 hover:to-rose-500 transition-all active:scale-95 cursor-pointer"
+            title="Altyapı Voleybol uygulamasını telefonunuza veya bilgisayarınıza yükleyin"
+          >
+            <Smartphone size={14} className="animate-pulse" />
+            <span className="hidden sm:inline">Uygulamayı Yükle</span>
+            <span className="sm:hidden">Yükle</span>
+          </button>
+          <button
+            onClick={handleDismiss}
+            aria-label="Yükleme istemini 14 gün gizle"
+            title="14 gün boyunca gösterme"
+            className="px-1.5 py-1.5 text-white/80 hover:text-white hover:bg-white/10 transition-colors border-l border-white/20 cursor-pointer"
+          >
+            <X size={13} />
+          </button>
+        </div>
       )}
 
       {/* iOS Safari Rehber Modalı */}
@@ -100,8 +141,9 @@ export const PwaInstallPrompt: React.FC = () => {
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-700 rounded-3xl p-6 max-w-sm w-full shadow-2xl text-white relative animate-in zoom-in-95 duration-200">
             <button
-              onClick={() => setShowIosModal(false)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-white p-1"
+              onClick={handleDismiss}
+              aria-label="Modalı kapat"
+              className="absolute top-4 right-4 text-slate-400 hover:text-white p-1 cursor-pointer"
             >
               <X size={18} />
             </button>
@@ -123,8 +165,8 @@ export const PwaInstallPrompt: React.FC = () => {
               </li>
             </ol>
             <button
-              onClick={() => setShowIosModal(false)}
-              className="w-full py-2.5 rounded-xl bg-primary text-white font-bold text-xs hover:bg-primary/90 transition-colors"
+              onClick={handleDismiss}
+              className="w-full py-2.5 rounded-xl bg-primary text-white font-bold text-xs hover:bg-primary/90 transition-colors cursor-pointer"
             >
               Anladım
             </button>
