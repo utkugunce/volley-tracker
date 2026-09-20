@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-20T07:09:07.063675+00:00",
+  "updated_at": "2026-09-20T12:31:08.827263+00:00",
   "total_cities": 81,
   "active_cities": 9,
-  "total_matches": 222,
+  "total_matches": 233,
   "cities": [
     {
       "ilid": "1",
@@ -69,8 +69,8 @@
       "name": "Antalya",
       "slug": "antalya",
       "url": "https://antalya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (19 Maç Mevcut)",
-      "matches_count": 19,
+      "status": "Aktif (30 Maç Mevcut)",
+      "matches_count": 30,
       "standings_count": 5,
       "data_file": "data/cities/antalya.json"
     },
@@ -129,7 +129,7 @@
       "name": "Bitlis",
       "slug": "bitlis",
       "url": "https://bitlis.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -519,7 +519,7 @@
       "name": "Ordu",
       "slug": "ordu",
       "url": "https://ordu.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -649,7 +649,7 @@
       "name": "Van",
       "slug": "van",
       "url": "https://van.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -739,7 +739,7 @@
       "name": "Bartın",
       "slug": "bartin",
       "url": "https://bartin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
