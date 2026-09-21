@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T07:17:58.017418",
+  "updated_at": "2026-09-21T14:22:42.188165",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
@@ -31,12 +31,12 @@
       {
         "rank": 1,
         "team": "Bor Belediyespor U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
@@ -74,7 +74,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kızlar İl Birinciliği",
-      "match_no": "2",
+      "match_no": "1",
       "home_team": "Niğde Sev Voleybol Kulübü U18",
       "away_team": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
       "score": "- : -",
@@ -106,53 +106,7 @@
       }
     },
     {
-      "id": "nigde-20260909-002",
-      "city": "Niğde",
-      "date": "2026-09-09",
-      "time": "12:00",
-      "hall": "Merkez S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kızlar İl Birinciliği",
-      "match_no": "1",
-      "home_team": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
-      "away_team": "Niğde Gençlik Spor Kulübü - A U16",
-      "score": "3 - 1",
-      "home_score": 3,
-      "away_score": 1,
-      "set_scores": [
-        "25-10",
-        "25-23",
-        "20-25",
-        "25-23"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "398180",
-        "url": "https://women.volleybox.net/tr/odtu-gv-nigde-okullar-spor-kulubu-u16-nigde-genclik-spor-kulubu-u16-c398180",
-        "host_name": "ODTÜ GV Niğde Okulları Spor Kulübü U16",
-        "guest_name": "Niğde Gençlik Spor Kulübü U16",
-        "score": "3 - 1",
-        "has_score": true,
-        "vb_date": "2026-09-09",
-        "vb_time": "12:00",
-        "vb_hall": "Niğde Merkez Spor Kompleksı",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-09",
-          "vb_time": "12:00",
-          "vb_hall": "Niğde Merkez Spor Kompleksı",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "nigde-20260912-003",
+      "id": "nigde-20260912-002",
       "city": "Niğde",
       "date": "2026-09-12",
       "time": "10:00",
@@ -161,7 +115,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kızlar İl Birinciliği",
-      "match_no": "3",
+      "match_no": "1",
       "home_team": "Nahita Spor Kulübü U16",
       "away_team": "Niğde Sev Voleybol Kulübü U18",
       "score": "- : -",
@@ -193,7 +147,7 @@
       }
     },
     {
-      "id": "nigde-20260915-004",
+      "id": "nigde-20260915-003",
       "city": "Niğde",
       "date": "2026-09-15",
       "time": "17:00",
@@ -202,7 +156,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kızlar İl Birinciliği",
-      "match_no": "4",
+      "match_no": "2",
       "home_team": "Niğde Volley Akademi Spor Kulübü U16",
       "away_team": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
       "score": "- : -",
@@ -232,8 +186,47 @@
           "details": "Salon Değişti (TVF: Bor Salon / VB: Bor Spor Salonu)"
         }
       }
+    },
+    {
+      "id": "nigde-20260920-004",
+      "city": "Niğde",
+      "date": "2026-09-20",
+      "time": "12:00",
+      "hall": "Merkez S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kızlar İl Birinciliği",
+      "match_no": "3",
+      "home_team": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
+      "away_team": "Niğde Gençlik Spor Kulübü - A U16",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-10",
+        "25-23",
+        "20-25",
+        "25-23"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-21T07:19:02.179386"
+  "volleybox_synced_matches": 3,
+  "volleybox_sync_updated_at": "2026-09-21T14:23:41.199796"
 }
