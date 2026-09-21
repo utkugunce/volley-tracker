@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T19:36:36.387038+00:00",
+  "updated_at": "2026-09-21T22:52:46.685641+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -37,6 +37,24 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+        "team": "Milan Atletik U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 151,
+        "points_lost": 97,
+        "point_ratio": "1.557",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Beşiktaş U18",
         "played": 1,
         "won": 1,
@@ -53,7 +71,7 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Eczacıbaşı U18",
         "played": 1,
         "won": 1,
@@ -65,23 +83,6 @@
         "points_won": 75,
         "points_lost": 37,
         "point_ratio": "2.027",
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 3,
-        "team": "Milan Atletik U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 44,
-        "point_ratio": "1.705",
         "form": [
           "W"
         ]
@@ -123,17 +124,18 @@
       {
         "rank": 6,
         "team": "Beylikdüzü Voleybol 2021 U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 3,
-        "set_ratio": "0.333",
-        "points_won": 77,
-        "points_lost": 100,
-        "point_ratio": "0.770",
+        "sets_lost": 6,
+        "set_ratio": "0.167",
+        "points_won": 130,
+        "points_lost": 176,
+        "point_ratio": "0.739",
         "form": [
+          "L",
           "L"
         ]
       },
@@ -3275,11 +3277,15 @@
       "match_no": "6",
       "home_team": "Milan Atletik U18",
       "away_team": "Beylikdüzü Voleybol 2021 U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-9",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3846,5 +3852,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-21T19:37:36.304234"
+  "volleybox_sync_updated_at": "2026-09-21T22:53:54.325821"
 }
