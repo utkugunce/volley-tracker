@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T01:49:10.624720",
+  "updated_at": "2026-09-21T07:17:55.316203",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1761,14 +1761,14 @@
       "city": "İzmir",
       "date": "2026-09-28",
       "time": "--:--",
-      "hall": "Balçova",
+      "hall": "Vali Hüseyin Öğütcen",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kız - D Gr",
       "match_no": "5",
-      "home_team": "Dost Spor U18",
-      "away_team": "Arkas Spor Kulübü - B U18",
+      "home_team": "Mavişehir Spor Kulübü U18",
+      "away_team": "İzmirspor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1791,18 +1791,18 @@
       }
     },
     {
-      "id": "izmir-20260928-024",
+      "id": "izmir-20260930-024",
       "city": "İzmir",
-      "date": "2026-09-28",
+      "date": "2026-09-30",
       "time": "--:--",
-      "hall": "Vali Hüseyin Öğütcen",
+      "hall": "Gaziemir",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kız - D Gr",
       "match_no": "6",
-      "home_team": "Mavişehir Spor Kulübü U18",
-      "away_team": "İzmirspor U18",
+      "home_team": "Dost Spor U18",
+      "away_team": "Arkas Spor Kulübü - B U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -3990,5 +3990,5 @@
     }
   ],
   "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-09-21T01:50:14.668202"
+  "volleybox_sync_updated_at": "2026-09-21T07:19:02.165977"
 }
