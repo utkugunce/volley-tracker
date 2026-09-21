@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T14:22:30.267922",
+  "updated_at": "2026-09-21T19:36:23.118573",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -259,17 +259,28 @@
     "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16 B",
-        "played": 0,
-        "won": 0,
+        "team": "İlbank U16",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16 B",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Birlik Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -280,19 +291,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Karayolları Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "İlbank U16",
+        "team": "Karayolları Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -373,6 +373,28 @@
     "Yıldız Kızlar Süper Lig - 3. Grup": [
       {
         "rank": 1,
+        "team": "TVF Spor Lisesi U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Başkent Arma Spor U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -383,30 +405,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Başkent Arma Spor U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "TED Ankara Kolejliler U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "TVF Spor Lisesi U16",
+        "team": "TED Ankara Kolejliler U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -534,11 +534,11 @@
       {
         "rank": 1,
         "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
@@ -566,7 +566,7 @@
       },
       {
         "rank": 4,
-        "team": "Hakan Akışık Spor Kulübü U16",
+        "team": "Maç Akademi Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -577,13 +577,13 @@
       },
       {
         "rank": 5,
-        "team": "Maç Akademi Spor Kulübü U16",
-        "played": 0,
+        "team": "Hakan Akışık Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -1195,11 +1195,15 @@
       "match_no": "1",
       "home_team": "İlbank U16",
       "away_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16 B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-11",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399228",
@@ -1359,11 +1363,17 @@
       "match_no": "1",
       "home_team": "TVF Spor Lisesi U16",
       "away_team": "Başkent Arma Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "13-25",
+        "25-23",
+        "17-25",
+        "25-21",
+        "15-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399232",
@@ -1604,12 +1614,16 @@
       "group": "6. Grup",
       "match_no": "1",
       "home_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
-      "away_team": "Hakan Akışık Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "away_team": "(H) - Hakan Akışık",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399238",
@@ -1676,5 +1690,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-09-21T14:23:41.183636"
+  "volleybox_sync_updated_at": "2026-09-21T19:37:36.311272"
 }

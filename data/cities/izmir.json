@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T14:22:39.515097",
+  "updated_at": "2026-09-21T19:36:35.803348",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -747,17 +747,28 @@
       },
       {
         "rank": 3,
-        "team": "Altınordu Voleybol U16",
+        "team": "İzmir Altınay Spor Kulübü U16",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
+        "team": "Altınordu Voleybol U16",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 3,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Bayraklı Belediyesi Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -765,17 +776,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "İzmir Altınay Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -3373,11 +3373,17 @@
       "match_no": "3",
       "home_team": "Altınordu Voleybol U16",
       "away_team": "İzmir Altınay Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-22",
+        "19-25",
+        "29-27",
+        "24-26",
+        "7-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398210",
@@ -3990,5 +3996,5 @@
     }
   ],
   "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-09-21T14:23:41.186748"
+  "volleybox_sync_updated_at": "2026-09-21T19:37:36.314365"
 }

@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-21T19:36:25.924853",
-  "city": "Çanakkale",
-  "slug": "canakkale",
-  "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
+  "updated_at": "2026-09-21T19:36:42.970795",
+  "city": "Tekirdağ",
+  "slug": "tekirdag",
+  "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
-  "source": "https://canakkale.voleyboliltemsilciligi.com",
+  "source": "https://tekirdag.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -25,10 +25,10 @@
     ]
   },
   "standings": {
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
+    "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "AS SPOR KULÜBÜ",
+        "team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "Çanakkale Barbarosspor U16",
+        "team": "Ergene Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Biga Ada Spor U16",
+        "team": "Kapaklı Site Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -61,7 +61,7 @@
       },
       {
         "rank": 4,
-        "team": "Çomü Spor Kulübü (B)",
+        "team": "Liva Volley Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -72,7 +72,40 @@
       },
       {
         "rank": 5,
-        "team": "Kepez Spor Kulübü U16",
+        "team": "Set 59 Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Süleymanpaşa Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Trakya Olimpia Akademi Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Voleybol Akademi Tekirdağ Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -82,10 +115,10 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği B Grubu": [
+    "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Çanakkale Belediyespor U16",
+        "team": "Çerkezköy Voleybol Akademi Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -96,7 +129,7 @@
       },
       {
         "rank": 2,
-        "team": "Çanakkale Belediyespor",
+        "team": "Çorlu Yıldırım Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -107,7 +140,7 @@
       },
       {
         "rank": 3,
-        "team": "Eceabat Spor Kulübü U16",
+        "team": "Muratlı Yıldız 2012 Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -118,7 +151,7 @@
       },
       {
         "rank": 4,
-        "team": "UVM Akademi Spor Kulübü U16",
+        "team": "Süleymanpaşa Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -129,7 +162,29 @@
       },
       {
         "rank": 5,
-        "team": "Yeşil Bayramiç SK U16",
+        "team": "Tekirdağ Basket Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Tekirdağ Çağdaş Spor Kulübü (A)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Tekirdağ Marmara Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -139,10 +194,10 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği C Grubu": [
+    "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "Biga Çiçeklidedespor U16",
+        "team": "Arges Voleybol Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -153,7 +208,7 @@
       },
       {
         "rank": 2,
-        "team": "Çomü Spor Kulübü (A)",
+        "team": "Çorlu GSB SK",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -164,7 +219,7 @@
       },
       {
         "rank": 3,
-        "team": "Nehir Spor Kulübü U16",
+        "team": "Çorlu Yıldırım Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -175,20 +230,7 @@
       },
       {
         "rank": 4,
-        "team": "Parion Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği D Grubu": [
-      {
-        "rank": 1,
-        "team": "Biga Gelişim Voleybol Kulübü U16",
+        "team": "Kapaklı Site Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -198,8 +240,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Çan Gençlik Kale Spor Kulübü U16",
+        "rank": 5,
+        "team": "Tekirdağ Çağdaş Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -209,8 +251,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Çanakkale Belediyespor U16",
+        "rank": 6,
+        "team": "Tekirdağ Voleybol İhtisas Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -220,8 +262,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Gökçeada Spor Kulübü U16",
+        "rank": 7,
+        "team": "Yıldızkent Fatih Korgancı Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -234,5 +276,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-21T19:37:36.308589"
+  "volleybox_sync_updated_at": "2026-09-21T19:37:36.326165"
 }

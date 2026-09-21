@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T14:22:41.192907+00:00",
+  "updated_at": "2026-09-21T19:36:36.387038+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -277,6 +277,58 @@
       },
       {
         "rank": 5,
+        "team": "Bahçelievler Belediyespor U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "set_ratio": "1.000",
+        "points_won": 134,
+        "points_lost": 139,
+        "point_ratio": "0.964",
+        "form": [
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 6,
+        "team": "Galatasaray U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "set_ratio": "1.500",
+        "points_won": 107,
+        "points_lost": 93,
+        "point_ratio": "1.151",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 7,
+        "team": "Ünsped Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "set_ratio": "0.667",
+        "points_won": 93,
+        "points_lost": 107,
+        "point_ratio": "0.869",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 8,
         "team": "Türk Hava Yolları SK U18",
         "played": 1,
         "won": 0,
@@ -293,24 +345,25 @@
         ]
       },
       {
-        "rank": 6,
-        "team": "Bahçelievler Belediyespor U18",
-        "played": 1,
+        "rank": 9,
+        "team": "Güngören Voleybol Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 57,
-        "points_lost": 76,
-        "point_ratio": "0.750",
+        "points_won": 94,
+        "points_lost": 152,
+        "point_ratio": "0.618",
         "form": [
+          "L",
           "L"
         ]
       },
       {
-        "rank": 7,
+        "rank": 10,
         "team": "Marmara Akademi Atletik Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -325,53 +378,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 8,
-        "team": "Güngören Voleybol Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "set_ratio": "MIN",
-        "points_won": 31,
-        "points_lost": 75,
-        "point_ratio": "0.413",
-        "form": [
-          "L"
-        ]
-      },
-      {
-        "rank": 9,
-        "team": "Galatasaray U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 10,
-        "team": "Ünsped Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - 1. Bölge A Grubu": [
@@ -3229,11 +3235,17 @@
       "match_no": "5",
       "home_team": "Galatasaray U18",
       "away_team": "Ünsped Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "21-25",
+        "25-20",
+        "25-10",
+        "21-25",
+        "15-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3297,11 +3309,15 @@
       "match_no": "6",
       "home_team": "Bahçelievler Belediyespor U18",
       "away_team": "Güngören Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "27-25",
+        "25-15",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3830,5 +3846,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-21T14:23:41.192321"
+  "volleybox_sync_updated_at": "2026-09-21T19:37:36.320453"
 }

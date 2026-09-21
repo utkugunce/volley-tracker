@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-21T14:22:58.263545+00:00",
+  "updated_at": "2026-09-21T19:36:49.258924+00:00",
   "total_cities": 81,
-  "active_cities": 9,
-  "total_matches": 261,
+  "active_cities": 10,
+  "total_matches": 276,
   "cities": [
     {
       "ilid": "1",
@@ -69,8 +69,8 @@
       "name": "Antalya",
       "slug": "antalya",
       "url": "https://antalya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (27 Maç Mevcut)",
-      "matches_count": 27,
+      "status": "Aktif (31 Maç Mevcut)",
+      "matches_count": 31,
       "standings_count": 5,
       "data_file": "data/cities/antalya.json"
     },
@@ -159,8 +159,8 @@
       "name": "Bursa",
       "slug": "bursa",
       "url": "https://bursa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (9 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (11 Maç Mevcut)",
+      "matches_count": 11,
       "standings_count": 9,
       "data_file": "data/cities/bursa.json"
     },
@@ -199,7 +199,7 @@
       "name": "Denizli",
       "slug": "denizli",
       "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -289,7 +289,7 @@
       "name": "Gümüşhane",
       "slug": "gumushane",
       "url": "https://gumushane.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -299,7 +299,7 @@
       "name": "Hakkari",
       "slug": "hakkari",
       "url": "https://hakkari.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -319,7 +319,7 @@
       "name": "Isparta",
       "slug": "isparta",
       "url": "https://isparta.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -429,7 +429,7 @@
       "name": "Kütahya",
       "slug": "kutahya",
       "url": "https://kutahya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -489,7 +489,7 @@
       "name": "Muş",
       "slug": "mus",
       "url": "https://mus.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -589,10 +589,10 @@
       "name": "Tekirdağ",
       "slug": "tekirdag",
       "url": "https://tekirdag.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Puan Durumu Var (3 Tablo)",
       "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "standings_count": 3,
+      "data_file": "data/cities/tekirdag.json"
     },
     {
       "ilid": "60",
@@ -759,7 +759,7 @@
       "name": "Iğdır",
       "slug": "igdir",
       "url": "https://igdir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
