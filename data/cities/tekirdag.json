@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-22T06:23:30.469303",
+  "updated_at": "2026-09-22T11:53:26.128773",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 10,
   "source": "https://tekirdag.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -274,7 +274,348 @@
       }
     ]
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "tekirdag-20260926-001",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Set 59 Spor Kulübü",
+      "away_team": "Kapaklı Site Spor Kulübü (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-002",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
+      "away_team": "Ergene Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-003",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "Liva Volley Spor Kulübü",
+      "away_team": "Voleybol Akademi Tekirdağ Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-004",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Trakya Olimpia Akademi Spor Kulübü",
+      "away_team": "Süleymanpaşa Spor Kulübü (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-005",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Tekirdağ Basket Spor Kulübü",
+      "away_team": "Muratlı Yıldız 2012 Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-006",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
+      "home_team": "Tekirdağ Marmara Spor Kulübü",
+      "away_team": "Çorlu Yıldırım Spor Kulübü (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-007",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "3",
+      "home_team": "Tekirdağ Çağdaş Spor Kulübü (A)",
+      "away_team": "Süleymanpaşa Spor Kulübü (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-008",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "1",
+      "home_team": "Kapaklı Site Spor Kulübü (A)",
+      "away_team": "Tekirdağ Voleybol İhtisas Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-009",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "2",
+      "home_team": "Yıldızkent Fatih Korgancı Spor Kulübü",
+      "away_team": "Çorlu GSB SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20260926-010",
+      "city": "Tekirdağ",
+      "date": "2026-09-26",
+      "time": "--:--",
+      "hall": "Açıklanacak",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "3",
+      "home_team": "Arges Voleybol Spor Kulübü",
+      "away_team": "Çorlu Yıldırım Spor Kulübü (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-22T06:24:26.394423"
+  "volleybox_sync_updated_at": "2026-09-22T11:54:24.049982"
 }
