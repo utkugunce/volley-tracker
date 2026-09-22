@@ -104,7 +104,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             <LeagueVolleyboxLink league={title} city={effectiveCity}>
               {title}
             </LeagueVolleyboxLink>
-            {subTitle && subTitle.toLowerCase() !== title.toLowerCase() && subTitle !== "Tek Grup" ? ` • ${subTitle}` : ""}
+            {subTitle && subTitle.toLowerCase() !== title.toLowerCase() && subTitle !== "Tek Grup" ? ` • ${subTitle.replace(/\b(grup)\s+grubu\b/i, "Grubu")}` : ""}
           </h3>
         </div>
         <div className="flex items-center gap-2">
@@ -156,19 +156,31 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       {/* 2. Resmi TVF / Fikstür Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları - Volleybox - İşlem */}
       {viewMode === "table" ? (
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs">
+          <table className="w-full table-fixed text-left border-collapse text-xs">
+          <colgroup>
+            <col className="w-7" />
+            <col className="w-[68px] sm:w-[74px]" />
+            <col className="w-[78px] sm:w-[95px] md:w-[110px]" />
+            <col className="w-10" />
+            <col className="w-auto" />
+            <col className="w-auto" />
+            <col className="w-12 sm:w-14" />
+            <col className="w-[105px] sm:w-[125px]" />
+            <col className="w-[74px] sm:w-[84px]" />
+            <col className="w-8" />
+          </colgroup>
           <thead>
             <tr className="bg-slate-950/60 text-slate-400 font-bold border-b border-slate-800 uppercase text-[10px] tracking-wider">
-              <th className="py-2 px-1.5 text-center w-7" title="Favorilere Ekle">⭐</th>
-              <th className="py-2 px-2 w-[80px] whitespace-nowrap">Tarih</th>
-              <th className="py-2 px-2 min-w-[70px] max-w-[95px] lg:max-w-[130px]">Yer</th>
-              <th className="py-2 px-1.5 text-center w-12">Saat</th>
-              <th className="py-2 px-2 min-w-[120px] max-w-[200px] lg:max-w-[260px]">A Takımı</th>
-              <th className="py-2 px-2 min-w-[120px] max-w-[200px] lg:max-w-[260px]">B Takımı</th>
-              <th className="py-2 px-1.5 text-center w-16 whitespace-nowrap">Skor</th>
-              <th className="py-2 px-2 min-w-[110px] max-w-[145px]">Set Skorları</th>
-              <th className="py-2 px-1.5 text-center min-w-[80px]" title="Volleybox maç kaydı durumu">Volleybox</th>
-              <th className="py-2 px-1.5 text-center w-12 no-print">İşlem</th>
+              <th className="py-1.5 px-0.5 text-center" title="Favorilere Ekle">⭐</th>
+              <th className="py-1.5 px-1 whitespace-nowrap">Tarih</th>
+              <th className="py-1.5 px-1">Yer</th>
+              <th className="py-1.5 px-0.5 text-center">Saat</th>
+              <th className="py-1.5 px-1.5">A Takımı</th>
+              <th className="py-1.5 px-1.5">B Takımı</th>
+              <th className="py-1.5 px-1 text-center whitespace-nowrap">Skor</th>
+              <th className="py-1.5 px-1">Setler</th>
+              <th className="py-1.5 px-0.5 text-center" title="Volleybox maç kaydı durumu">VB</th>
+              <th className="py-1.5 px-0.5 text-center no-print">İşlem</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60">
@@ -221,27 +233,27 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     }`}
                   >
                   {/* ⭐ Favori */}
-                  <td className="py-2 px-1.5 text-center w-7">
+                  <td className="py-1 px-0.5 text-center">
                     <button
                       onClick={() => onToggleFavorite?.(match.id)}
                       className="p-1 rounded-lg text-slate-500 hover:text-amber-400 hover:bg-slate-800/60 transition-all active:scale-90"
                       title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
                     >
                       <Star
-                        size={13}
+                        size={12}
                         className={isFav ? "fill-amber-400 text-amber-400 drop-shadow-xs" : ""}
                       />
                     </button>
                   </td>
 
                   {/* 1. Tarih */}
-                  <td className="py-2 px-2 font-mono font-medium whitespace-nowrap text-slate-200 text-[11px] w-[80px]">
-                    <span className={disc?.date_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1.5 py-0.5 rounded-md" : ""}>
+                  <td className="py-1 px-1 font-mono font-medium whitespace-nowrap text-slate-200 text-[10.5px] sm:text-[11px]">
+                    <span className={disc?.date_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1 py-0.5 rounded" : ""}>
                       {formattedDate}
                     </span>
                     {disc?.date_diff && disc.vb_date && (
                       <div
-                        className="text-[9px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1.5 py-0.5 rounded-md inline-flex items-center gap-0.5 mt-0.5 shadow-xs"
+                        className="text-[8.5px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 shadow-xs"
                         title={`İl bülteninde tarih değişti! Volleybox'taki eski tarih: ${disc.vb_date}`}
                       >
                         <AlertTriangle size={8} className="text-amber-400 shrink-0" />
@@ -251,29 +263,29 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 2. Yer */}
-                  <td className="py-2 px-2 text-slate-300 whitespace-nowrap text-[11px]" title={match.hall}>
+                  <td className="py-1 px-1 text-slate-300 truncate text-[11px]" title={match.hall}>
                     {match.hall && match.hall !== "TBD" ? (
                       <a
                         href={getHallNavigationUrl(match.hall, match.city || effectiveCity)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 group/hall hover:text-white transition-colors cursor-pointer"
+                        className="flex items-center gap-1 group/hall hover:text-white transition-colors cursor-pointer min-w-0"
                         title={`${match.hall} — Haritada Gör & Yol Tarifi Al`}
                       >
-                        <MapPin size={11} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform"} />
-                        <span className={`truncate max-w-[70px] sm:max-w-[95px] lg:max-w-[130px] font-medium group-hover/hall:underline ${disc?.hall_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1.5 py-0.5 rounded-md" : ""}`}>
+                        <MapPin size={10} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform"} />
+                        <span className={`truncate font-medium group-hover/hall:underline ${disc?.hall_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1 py-0.5 rounded" : ""}`}>
                           {match.hall}
                         </span>
                       </a>
                     ) : (
-                      <div className="flex items-center gap-1.5 text-slate-500">
-                        <MapPin size={11} className="shrink-0" />
+                      <div className="flex items-center gap-1 text-slate-500">
+                        <MapPin size={10} className="shrink-0" />
                         <span>-</span>
                       </div>
                     )}
                     {disc?.hall_diff && disc.vb_hall && (
                       <div
-                        className="text-[9px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1.5 py-0.5 rounded-md inline-flex items-center gap-0.5 mt-0.5 truncate max-w-[110px] shadow-xs"
+                        className="text-[8.5px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 truncate max-w-full shadow-xs"
                         title={`İl bülteninde salon değişti! Volleybox'taki salon: ${disc.vb_hall}`}
                       >
                         <AlertTriangle size={8} className="text-amber-400 shrink-0" />
@@ -283,15 +295,15 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 3. Saat */}
-                  <td className="py-2 px-1.5 text-center font-mono font-bold text-slate-200 whitespace-nowrap text-[11px] w-12">
+                  <td className="py-1 px-0.5 text-center font-mono font-bold text-slate-200 whitespace-nowrap text-[11px]">
                     {match.time === "--:--" ? (
                       <span className="text-slate-500 text-[10px]">-</span>
                     ) : (
-                      <span className={disc?.time_diff ? "text-amber-200 bg-amber-900/60 px-1.5 py-0.5 rounded-md" : ""}>{match.time}</span>
+                      <span className={disc?.time_diff ? "text-amber-200 bg-amber-900/60 px-1 py-0.5 rounded" : ""}>{match.time}</span>
                     )}
                     {disc?.time_diff && disc.vb_time && (
                       <div
-                        className="text-[9px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1.5 py-0.5 rounded-md inline-flex items-center justify-center gap-0.5 mt-0.5 shadow-xs"
+                        className="text-[8.5px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center justify-center gap-0.5 mt-0.5 shadow-xs"
                         title={`İl bülteninde saat değişti! Volleybox'taki eski saat: ${disc.vb_time}`}
                       >
                         <AlertTriangle size={8} className="text-amber-400 shrink-0" />
@@ -301,12 +313,12 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 4. A Takımı */}
-                  <td className="py-2 px-2 whitespace-nowrap">
+                  <td className="py-1 px-1.5 min-w-0 truncate">
                     <TeamVolleyboxLink
                       teamName={match.home_team}
                       category={match.category || match.age_group}
                       city={match.city || city}
-                      className={`text-xs ${
+                      className={`text-xs min-w-0 truncate ${
                         homeWon
                           ? "font-black text-white drop-shadow-xs"
                           : isFinished
@@ -317,12 +329,12 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 5. B Takımı */}
-                  <td className="py-2 px-2 whitespace-nowrap">
+                  <td className="py-1 px-1.5 min-w-0 truncate">
                     <TeamVolleyboxLink
                       teamName={match.away_team}
                       category={match.category || match.age_group}
                       city={match.city || city}
-                      className={`text-xs ${
+                      className={`text-xs min-w-0 truncate ${
                         awayWon
                           ? "font-black text-white drop-shadow-xs"
                           : isFinished
@@ -333,33 +345,33 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 6. Skor */}
-                  <td className="py-2 px-1.5 text-center whitespace-nowrap w-16">
+                  <td className="py-1 px-1 text-center whitespace-nowrap">
                     {isFinished ? (
-                      <span className="inline-block px-2 py-0.5 rounded-lg font-mono font-black text-[11px] bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-wide">
+                      <span className="inline-block px-1.5 py-0.5 rounded-md font-mono font-black text-[10px] sm:text-[11px] bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-tight">
                         {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
-                          ? `${match.home_score} - ${match.away_score}`
-                          : match.score || "- : -"}
+                          ? `${match.home_score}-${match.away_score}`
+                          : match.score || "-:-"}
                       </span>
                     ) : match.date !== "TBD" ? (
-                      <span className="inline-block px-2 py-0.5 rounded-md font-mono text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700/70">
+                      <span className="inline-block px-1.5 py-0.5 rounded font-mono text-[9px] font-bold bg-slate-800 text-slate-400 border border-slate-700/70">
                         vs
                       </span>
                     ) : (
-                      <span className="text-slate-500 font-mono text-[11px]">-</span>
+                      <span className="text-slate-500 font-mono text-[10px]">-</span>
                     )}
                   </td>
 
                   {/* 7. Set Skorları */}
-                  <td className="py-2 px-2 text-left whitespace-nowrap">
+                  <td className="py-1 px-1 text-left whitespace-nowrap">
                     {isFinished && match.set_scores && match.set_scores.length > 0 ? (
-                      <div className="flex items-center gap-1.5 flex-nowrap">
+                      <div className="flex items-center gap-1 flex-nowrap">
                         {match.set_scores.map((set, sIdx) => {
                           const parts = set.split("-").map((n) => parseInt(n.trim(), 10));
                           const isHomeSet = parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1]) && parts[0] > parts[1];
                           return (
                             <span
                               key={sIdx}
-                              className={`font-mono text-[10px] px-1.5 py-0.5 rounded-md border font-bold shadow-2xs ${
+                              className={`font-mono text-[9px] sm:text-[9.5px] px-1 py-0.5 rounded border font-bold shadow-2xs ${
                                 isHomeSet
                                   ? "bg-red-950/50 text-red-200 border-red-800/60"
                                   : "bg-slate-900/90 text-slate-300 border-slate-700/60"
@@ -371,69 +383,64 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         })}
                       </div>
                     ) : (
-                      <span className="text-slate-500 text-[11px] font-mono">-</span>
+                      <span className="text-slate-500 text-[10px] font-mono">-</span>
                     )}
                   </td>
 
 
                   {/* 8. Volleybox Senkronizasyon ve Skor Durumu Rozeti */}
-                  <td className="py-1.5 px-1.5 text-center whitespace-nowrap">
+                  <td className="py-1 px-0.5 text-center whitespace-nowrap">
                     {match.volleybox?.synced ? (
                       hasDiff ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700 hover:bg-amber-900/80 hover:border-amber-600 transition-all shadow-sm group"
+                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700 hover:bg-amber-900/80 hover:border-amber-600 transition-all shadow-xs group"
                           title={`DİKKAT: İl bülteninde değişiklik var! (${disc?.details || "Tarih/Saat/Yer farklı"}) - Volleybox'ta güncellemek için tıklayın`}
                         >
-                          <AlertTriangle size={10} className="text-amber-400 shrink-0 animate-bounce" />
-                          <span>VB: Değişti</span>
-                          <ExternalLink size={9} className="text-amber-500 group-hover:translate-x-0.5 transition-transform" />
+                          <AlertTriangle size={9} className="text-amber-400 shrink-0" />
+                          <span>VB Değişti</span>
                         </a>
                       ) : match.volleybox.has_score ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700 hover:bg-emerald-900/70 hover:border-emerald-600 transition-all shadow-sm group"
+                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700 hover:bg-emerald-900/70 hover:border-emerald-600 transition-all shadow-xs group"
                           title={`Volleybox'ta Kayıtlı ve Skoru Girilmiş (Maç ID: #${match.volleybox.match_id} | Skor: ${match.volleybox.score}) - Tıklayarak profili açın`}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                          <span>VB: {match.volleybox.score || "Skorlu"}</span>
-                          <ExternalLink size={9} className="text-emerald-400 group-hover:translate-x-0.5 transition-transform" />
+                          <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span>
+                          <span>{match.volleybox.score || "VB: Skor"}</span>
                         </a>
                       ) : isMatchPassed(match.volleybox?.vb_date || match.date, match.time, match.status) ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-950/60 text-amber-300 border border-amber-700 hover:bg-amber-900/60 hover:border-amber-600 transition-all shadow-sm group"
+                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-amber-950/60 text-amber-300 border border-amber-700 hover:bg-amber-900/60 transition-all shadow-xs group"
                           title={`Maç tarihi geçmesine rağmen Volleybox'a skor henüz girilmemiş! (Maç ID: #${match.volleybox.match_id}) - Skoru girmek için tıklayın`}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
-                          <span>VB: Skorsuz</span>
-                          <ExternalLink size={9} className="text-amber-400 group-hover:translate-x-0.5 transition-transform" />
+                          <span className="w-1 h-1 rounded-full bg-amber-400"></span>
+                          <span>Skor Bekliyor</span>
                         </a>
                       ) : (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-slate-800/80 text-slate-300 border border-slate-700 hover:bg-slate-700 transition-all group"
+                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-medium bg-slate-800/80 text-slate-300 border border-slate-700 hover:bg-slate-700 transition-all group"
                           title={`Volleybox'ta Kayıtlı Gelecek Maç (Maç ID: #${match.volleybox.match_id}) - Maç sayfasını açmak için tıklayın`}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                          <span>VB: Kayıtlı</span>
-                          <ExternalLink size={9} className="text-slate-500 group-hover:translate-x-0.5 transition-transform" />
+                          <span className="w-1 h-1 rounded-full bg-blue-400"></span>
+                          <span>Kayıtlı</span>
                         </a>
                       )
                     ) : (
                       <span
-                        className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] text-slate-500 bg-slate-900/50 border border-slate-700/50 font-medium"
+                        className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded text-[8.5px] text-slate-500 bg-slate-900/50 border border-slate-700/50 font-medium"
                         title="Bu maç henüz Volleybox veritabanına girilmemiş"
                       >
-                        <span className="w-1 h-1 rounded-full bg-slate-600"></span>
                         <span>Girilmedi</span>
                       </span>
                     )}
@@ -441,7 +448,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
 
                   {/* 9. İşlemler */}
-                  <td className="py-1.5 px-1.5 text-center whitespace-nowrap no-print">
+                  <td className="py-1 px-0.5 text-center whitespace-nowrap no-print">
                       <div className="flex items-center justify-center gap-0.5">
                         {!isFinished && match.date !== "TBD" && (
                           <button
@@ -449,7 +456,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                             className="p-1 rounded hover:bg-slate-700 text-slate-500 hover:text-primary transition-colors"
                             title="Takvime Ekle (.ics)"
                           >
-                            <CalendarPlus size={12} />
+                            <CalendarPlus size={11} />
                           </button>
                         )}
                         <button
@@ -458,9 +465,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           title="Maç Detayını Kopyala"
                         >
                           {isCopied ? (
-                            <Check size={12} className="text-emerald-400" />
+                            <Check size={11} className="text-emerald-400" />
                           ) : (
-                            <Copy size={12} />
+                            <Copy size={11} />
                           )}
                         </button>
                         {onSelectMatch && (
@@ -473,7 +480,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                             title="Maç Merkezi & Setler"
                             aria-label="Maç Detayı"
                           >
-                            <ChevronRight size={13} />
+                            <ChevronRight size={12} />
                           </button>
                         )}
                       </div>

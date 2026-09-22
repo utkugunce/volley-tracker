@@ -1,4 +1,4 @@
-﻿# dependencies
+# dependencies
 /node_modules
 /.pnp
 .pnp.js
@@ -65,3 +65,4 @@ Thumbs.db
 
 data/raw/*.html
 .vercel
+scratch/

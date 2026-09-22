@@ -105,9 +105,9 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 
   if (disableTeamPageLink) {
     return (
-      <span className={`inline-flex items-center max-w-[160px] xs:max-w-[220px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-none ${className}`} title={displayName}>
+      <span className={`inline-flex items-center min-w-0 max-w-full ${className}`} title={displayName}>
         {logoElement}
-        <span className="truncate">{content}</span>
+        <span className="truncate min-w-0">{content}</span>
         {externalVbLink}
         {starElement}
       </span>
@@ -116,13 +116,13 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
 
   return (
     <span
-      className={`group inline-flex items-center max-w-[160px] xs:max-w-[220px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-none ${className}`}
+      className={`group inline-flex items-center min-w-0 max-w-full ${className}`}
       title={displayName}
     >
       {logoElement}
       <Link
         href={`/takim/${teamSlug}${cityQuery}`}
-        className="truncate hover:underline hover:text-primary transition-colors cursor-pointer"
+        className="truncate min-w-0 hover:underline hover:text-primary transition-colors cursor-pointer"
         title={`${displayName} Detay Sayfası`}
         onClick={(e) => e.stopPropagation()}
       >
