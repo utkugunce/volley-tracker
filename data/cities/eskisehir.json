@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T15:47:27.252042",
+  "updated_at": "2026-09-22T19:18:22.467073",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -284,7 +284,7 @@
     "Yıldız Kızlar Süper Lig - - D Gr": [
       {
         "rank": 1,
-        "team": "Es Voleybol Akademi Spor Kulübü - A U16",
+        "team": "Eskişehir Peyman SK U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -295,6 +295,17 @@
       },
       {
         "rank": 2,
+        "team": "Es Voleybol Akademi Spor Kulübü - A U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Üniversitesi GSK U16",
         "played": 1,
         "won": 0,
@@ -305,25 +316,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Eskişehir Peyman SK U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Eskişehir Voleybol Spor Kulübü U16",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -385,8 +385,8 @@
       "id": "eskisehir-20260927-002",
       "city": "Eskişehir",
       "date": "2026-09-27",
-      "time": "18:00",
-      "hall": "Kemal Unakıtan",
+      "time": "16:00",
+      "hall": "Şehit Anıl Gül",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -850,8 +850,8 @@
       "id": "eskisehir-20260927-013",
       "city": "Eskişehir",
       "date": "2026-09-27",
-      "time": "16:00",
-      "hall": "Şehit Anıl Gül",
+      "time": "18:00",
+      "hall": "Kemal Unakıtan",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -938,11 +938,15 @@
       "match_no": "2",
       "home_team": "Eskişehir Peyman SK U16",
       "away_team": "Eskişehir Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-12",
+        "25-8"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399260",
@@ -1043,5 +1047,5 @@
     }
   ],
   "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-09-22T15:48:37.056163"
+  "volleybox_sync_updated_at": "2026-09-22T19:19:34.039494"
 }

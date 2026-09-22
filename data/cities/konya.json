@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-22T19:18:35.567560",
-  "city": "Samsun",
-  "slug": "samsun",
-  "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
+  "updated_at": "2026-09-22T19:18:30.825978",
+  "city": "Konya",
+  "slug": "konya",
+  "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
-  "source": "https://samsun.voleyboliltemsilciligi.com",
+  "source": "https://konya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -25,10 +25,10 @@
     ]
   },
   "standings": {
-    "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği A Grubu": [
+    "Yıldız Kızlar Süper Lig - - A Grubu": [
       {
         "rank": 1,
-        "team": "19 Mayıs Voleybol Sk",
+        "team": "BALLAS SPOR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "55 Matasyon Spor Kulübü U18",
+        "team": "EREĞLİ SÜMER",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Anadolu Voleybol Akademi SK U18",
+        "team": "FALCON ATLETİK",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -61,7 +61,7 @@
       },
       {
         "rank": 4,
-        "team": "Atakum Atılım Spor Kulübü U18",
+        "team": "KONYA ANADOLU YILDIZLARI",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -72,51 +72,7 @@
       },
       {
         "rank": 5,
-        "team": "Bafra Akademi Gençlik SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Bafra Vera Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "Samsun Volley Team U18",
+        "team": "KONYA ARMADA",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -126,10 +82,10 @@
         "form": []
       }
     ],
-    "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği B Grubu": [
+    "Yıldız Kızlar Süper Lig - - B Grubu": [
       {
         "rank": 1,
-        "team": "Anadolu Voleybol Akademi SK U18",
+        "team": "1854 AKŞEHİR BELEDİYE",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -140,7 +96,7 @@
       },
       {
         "rank": 2,
-        "team": "Atakum Atılım Spor Kulübü U18",
+        "team": "BAL AKADEMİ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -151,7 +107,7 @@
       },
       {
         "rank": 3,
-        "team": "İlkkıvılcım Havza SK U18",
+        "team": "ILGIN UĞUR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -162,7 +118,7 @@
       },
       {
         "rank": 4,
-        "team": "Nova Spor Kulübü U18",
+        "team": "SELÇUKLU BELEDİYE",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -173,7 +129,20 @@
       },
       {
         "rank": 5,
-        "team": "Sam55 Spor Kulübü U18",
+        "team": "VEZİROĞLU SPOR",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - - C Grubu": [
+      {
+        "rank": 1,
+        "team": "DİLTAŞ SPOR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -183,8 +152,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Samsunspor U18",
+        "rank": 2,
+        "team": "EREĞLİ AREL",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -194,8 +163,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Terme Gsim Sk",
+        "rank": 3,
+        "team": "KARAPINAR ALBA",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -205,8 +174,76 @@
         "form": []
       },
       {
-        "rank": 8,
-        "team": "Vezirköprü Voleybol Akademi Sk",
+        "rank": 4,
+        "team": "KARATAY BELEDİYE",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "KONYA ANKA",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - - D Grubu": [
+      {
+        "rank": 1,
+        "team": "ANADOLU ZİRVE",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "KADINHANI GMSK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "SEYDİŞEHİR CİMNASTİK",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "TÜRMAK SPOR",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "VAKIF AKADEMİ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -219,5 +256,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-22T19:19:34.037746"
+  "volleybox_sync_updated_at": "2026-09-22T19:19:34.049330"
 }
