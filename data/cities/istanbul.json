@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T19:18:29.464343+00:00",
+  "updated_at": "2026-09-22T22:20:09.224052+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -387,21 +387,40 @@
     "Genç Kızlar 1. Ligi - 1. Bölge A Grubu": [
       {
         "rank": 1,
-        "team": "Alp",
-        "played": 0,
-        "won": 0,
+        "team": "Beylerbeyi",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "set_ratio": "1.500",
+        "points_won": 96,
+        "points_lost": 97,
+        "point_ratio": "0.990",
+        "form": [
+          "W"
+        ]
       },
       {
         "rank": 2,
+        "team": "Alp",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "set_ratio": "0.667",
+        "points_won": 97,
+        "points_lost": 96,
+        "point_ratio": "1.010",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Anka Anadolu",
         "played": 0,
         "won": 0,
@@ -416,23 +435,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Ateş A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Beylerbeyi",
+        "team": "Ateş A",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -3530,11 +3534,17 @@
       "match_no": "1",
       "home_team": "Beylerbeyi",
       "away_team": "Alp",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "16-25",
+        "25-20",
+        "25-21",
+        "15-25",
+        "15-6"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3901,5 +3911,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-22T19:19:34.050782"
+  "volleybox_sync_updated_at": "2026-09-22T22:21:20.618493"
 }

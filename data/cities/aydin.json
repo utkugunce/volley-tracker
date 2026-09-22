@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T19:18:14.079170",
+  "updated_at": "2026-09-22T22:19:55.781853",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -31,16 +31,27 @@
       {
         "rank": 1,
         "team": "Aydın Büyükşehir Belediyespor U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Söke Voleybol Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
         "played": 0,
         "won": 0,
@@ -51,7 +62,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Aydın DSİ Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -62,19 +73,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Efeler Altın Smaç Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Söke Voleybol Spor Kulübü U18",
+        "team": "Efeler Altın Smaç Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -99,11 +99,16 @@
       "match_no": "1",
       "home_team": "Aydın Büyükşehir Belediyespor U18",
       "away_team": "Söke Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-13",
+        "25-16",
+        "19-25",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399629",
@@ -334,5 +339,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-09-22T19:19:34.061681"
+  "volleybox_sync_updated_at": "2026-09-22T22:21:20.625203"
 }
