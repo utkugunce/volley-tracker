@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-23T17:28:23.605102",
+  "updated_at": "2026-09-23T15:06:40.847171",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 4,
+  "total_matches": 5,
   "source": "https://kayseri.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -63,6 +63,30 @@
       {
         "rank": 4,
         "team": "Kayseri Voleybol Kulübü - B",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - - B": [
+      {
+        "rank": 1,
+        "team": "Ç.S.K. Çınar Spor Kulubü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Evola Spor Kulubü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -353,7 +377,41 @@
   },
   "matches": [
     {
-      "id": "kayseri-20260928-001",
+      "id": "kayseri-20260929-001",
+      "city": "Kayseri",
+      "date": "2026-09-29",
+      "time": "19:30",
+      "hall": "Gevher Nesibe",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- B",
+      "match_no": "1",
+      "home_team": "Ç.S.K. Çınar Spor Kulubü",
+      "away_team": "Evola Spor Kulubü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kayseri-20260928-002",
       "city": "Kayseri",
       "date": "2026-09-28",
       "time": "18:00",
@@ -387,7 +445,7 @@
       }
     },
     {
-      "id": "kayseri-20260928-002",
+      "id": "kayseri-20260928-003",
       "city": "Kayseri",
       "date": "2026-09-28",
       "time": "19:30",
@@ -421,7 +479,7 @@
       }
     },
     {
-      "id": "kayseri-20261001-003",
+      "id": "kayseri-20261001-004",
       "city": "Kayseri",
       "date": "2026-10-01",
       "time": "18:00",
@@ -455,7 +513,7 @@
       }
     },
     {
-      "id": "kayseri-20261001-004",
+      "id": "kayseri-20261001-005",
       "city": "Kayseri",
       "date": "2026-10-01",
       "time": "19:30",
@@ -490,5 +548,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-23T17:31:43.355887"
+  "volleybox_sync_updated_at": "2026-09-23T15:07:52.511892"
 }

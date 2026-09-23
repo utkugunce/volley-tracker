@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T10:08:28.332469",
+  "updated_at": "2026-09-23T15:06:38.519241",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -201,7 +201,7 @@
       },
       {
         "rank": 3,
-        "team": "İVA SPOR",
+        "team": "İskenderun Voleybol Akademi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2081,7 +2081,7 @@
       "group": "D Grb.",
       "match_no": "2",
       "home_team": "VİPARK SPOR",
-      "away_team": "İVA SPOR",
+      "away_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -2162,7 +2162,7 @@
       "gender": "Kız",
       "group": "D Grb.",
       "match_no": "4",
-      "home_team": "İVA SPOR",
+      "home_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
       "away_team": "ES AKADEMİ SPOR",
       "score": "- : -",
       "home_score": null,
@@ -2204,7 +2204,7 @@
       "group": "D Grb.",
       "match_no": "5",
       "home_team": "HATAY YILDIZLAR SPOR",
-      "away_team": "İVA SPOR",
+      "away_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -2285,7 +2285,7 @@
       "gender": "Kız",
       "group": "D Grb.",
       "match_no": "7",
-      "home_team": "İVA SPOR",
+      "home_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
       "away_team": "VİPARK SPOR",
       "score": "- : -",
       "home_score": null,
@@ -2409,7 +2409,7 @@
       "group": "D Grb.",
       "match_no": "10",
       "home_team": "ES AKADEMİ SPOR",
-      "away_team": "İVA SPOR",
+      "away_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -2449,7 +2449,7 @@
       "gender": "Kız",
       "group": "D Grb.",
       "match_no": "11",
-      "home_team": "İVA SPOR",
+      "home_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
       "away_team": "HATAY YILDIZLAR SPOR",
       "score": "- : -",
       "home_score": null,
@@ -2522,5 +2522,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-23T17:31:42.899461"
+  "volleybox_sync_updated_at": "2026-09-23T15:07:52.499589"
 }

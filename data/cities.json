@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-23T17:28:42.272697+03:00",
+  "updated_at": "2026-09-23T15:06:58.294834+00:00",
   "total_cities": 81,
   "active_cities": 15,
-  "total_matches": 412,
+  "total_matches": 413,
   "cities": [
     {
       "ilid": "1",
@@ -379,9 +379,9 @@
       "name": "Kayseri",
       "slug": "kayseri",
       "url": "https://kayseri.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (4 Maç Mevcut)",
-      "matches_count": 4,
-      "standings_count": 8,
+      "status": "Aktif (5 Maç Mevcut)",
+      "matches_count": 5,
+      "standings_count": 9,
       "data_file": "data/cities/kayseri.json"
     },
     {
