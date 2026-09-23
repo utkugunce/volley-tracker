@@ -8829,6 +8829,38 @@
       "verified_at": "2026-09-20",
       "local_logo": null,
       "logo_url": "/media/upload/teams/1760352002o8xu2.png"
+    },
+    {
+      "internal_name": "Voleybol Akademi Tekirdağ Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Tekirdağ",
+      "city_slug": "tekirdag",
+      "matched_as": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tekirdag-voleybol-akademi-spor-kulubu-u16-t54734",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Tekirdağ Voleybol Akademi Spor Kulübü",
+        "Tekirdağ Voleybol Akademi Spor Kulübü U16"
+      ],
+      "verified_at": "2026-09-23"
+    },
+    {
+      "internal_name": "İVA SPOR",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Hatay",
+      "city_slug": "hatay",
+      "matched_as": "İskenderun Voleybol Akademi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/skenderun-voleybol-akademi-spor-kulubu-u18-t43556",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "İskenderun Voleybol Akademi",
+        "İskenderun Voleybol Akademi Spor Kulübü",
+        "İskenderun Voleybol Akademi Spor Kulübü U18",
+        "İVA SPOR"
+      ],
+      "verified_at": "2026-09-23"
     }
   ],
   "leagues": [
@@ -9447,6 +9479,39 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-09-20"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Tekirdağ",
+      "city_slug": "tekirdag",
+      "matched_as": "Tekirdağ Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-tekirdag-super-ligi-u16-2026-27-o51218",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-23"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Tekirdağ",
+      "city_slug": "tekirdag",
+      "matched_as": "Tekirdağ Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-tekirdag-super-ligi-u18-2026-27-o51217",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-23"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Hatay",
+      "city_slug": "hatay",
+      "matched_as": "Hatay Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-hatay-super-ligi-u18-2026-27-o51216",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-23"
     }
   ]
 }
