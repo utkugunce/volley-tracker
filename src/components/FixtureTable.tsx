@@ -52,6 +52,14 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
     return `${d}.${m}.${y}`;
   };
 
+  const formatShortDate = (dateStr: string) => {
+    if (!dateStr || dateStr === "TBD") return "TBD";
+    const parts = dateStr.split("-");
+    if (parts.length !== 3) return dateStr;
+    const [, m, d] = parts;
+    return `${d}.${m}`;
+  };
+
   const handleCopy = (e: React.MouseEvent, match: Match) => {
     e.stopPropagation();
     const dateText = match.date === "TBD" ? "Tarih Açıklanacak" : `${match.date} ${match.time}`;
@@ -157,30 +165,18 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       {viewMode === "table" ? (
         <div className="overflow-x-auto">
           <table className="w-full table-fixed text-left border-collapse text-xs">
-          <colgroup>
-            <col className="w-7" />
-            <col className="w-[68px] sm:w-[74px]" />
-            <col className="w-[78px] sm:w-[95px] md:w-[110px]" />
-            <col className="w-10" />
-            <col className="w-auto" />
-            <col className="w-auto" />
-            <col className="w-12 sm:w-14" />
-            <col className="w-[105px] sm:w-[125px]" />
-            <col className="w-[74px] sm:w-[84px]" />
-            <col className="w-8" />
-          </colgroup>
           <thead>
             <tr className="bg-slate-950/60 text-slate-400 font-bold border-b border-slate-800 uppercase text-[10px] tracking-wider">
-              <th className="py-1.5 px-0.5 text-center" title="Favorilere Ekle">⭐</th>
-              <th className="py-1.5 px-1 whitespace-nowrap">Tarih</th>
-              <th className="py-1.5 px-1">Yer</th>
-              <th className="py-1.5 px-0.5 text-center">Saat</th>
-              <th className="py-1.5 px-1.5">A Takımı</th>
-              <th className="py-1.5 px-1.5">B Takımı</th>
-              <th className="py-1.5 px-1 text-center whitespace-nowrap">Skor</th>
-              <th className="py-1.5 px-1">Setler</th>
-              <th className="py-1.5 px-0.5 text-center" title="Volleybox maç kaydı durumu">VB</th>
-              <th className="py-1.5 px-0.5 text-center no-print">İşlem</th>
+              <th className="py-1.5 px-0.5 text-center w-6 sm:w-7" title="Favorilere Ekle">⭐</th>
+              <th className="py-1.5 px-1 whitespace-nowrap w-[44px] sm:w-[50px] xl:w-[72px]">Tarih</th>
+              <th className="py-1.5 px-1 w-[60px] sm:w-[70px] xl:w-[92px]">Yer</th>
+              <th className="py-1.5 px-0.5 text-center w-[36px] sm:w-10">Saat</th>
+              <th className="py-1.5 px-1.5 w-auto">A Takımı</th>
+              <th className="py-1.5 px-1.5 w-auto">B Takımı</th>
+              <th className="py-1.5 px-1 text-center whitespace-nowrap w-[48px] sm:w-[56px] xl:w-[62px]">Skor</th>
+              <th className="hidden xl:table-cell py-1.5 px-1 w-[125px]">Setler</th>
+              <th className="py-1.5 px-0.5 text-center w-[36px] sm:w-[46px] xl:w-[72px]" title="Volleybox maç kaydı durumu">VB</th>
+              <th className="py-1.5 px-0.5 text-center w-7 sm:w-8 no-print">İşlem</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800/60">
@@ -247,23 +243,25 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 1. Tarih */}
-                  <td className="py-1 px-1 font-mono font-medium whitespace-nowrap text-slate-200 text-[10.5px] sm:text-[11px]">
+                  <td className="py-1 px-1 font-mono font-medium whitespace-nowrap text-slate-200 text-[10px] sm:text-[10.5px] xl:text-[11px]" title={formattedDate}>
                     <span className={disc?.date_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1 py-0.5 rounded" : ""}>
-                      {formattedDate}
+                      <span className="hidden xl:inline">{formattedDate}</span>
+                      <span className="xl:hidden">{formatShortDate(match.date)}</span>
                     </span>
                     {disc?.date_diff && disc.vb_date && (
                       <div
-                        className="text-[8.5px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 shadow-xs"
+                        className="text-[8px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 shadow-xs"
                         title={`İl bülteninde tarih değişti! Volleybox'taki eski tarih: ${disc.vb_date}`}
                       >
-                        <AlertTriangle size={8} className="text-amber-400 shrink-0" />
-                        <span>VB: {formatRowDate(disc.vb_date)}</span>
+                        <AlertTriangle size={7} className="text-amber-400 shrink-0" />
+                        <span className="hidden xl:inline">VB: {formatRowDate(disc.vb_date)}</span>
+                        <span className="xl:hidden">VB: {formatShortDate(disc.vb_date)}</span>
                       </div>
                     )}
                   </td>
 
                   {/* 2. Yer */}
-                  <td className="py-1 px-1 text-slate-300 truncate text-[11px]" title={match.hall}>
+                  <td className="py-1 px-1 text-slate-300 truncate text-[10.5px] sm:text-[11px]" title={match.hall}>
                     {match.hall && match.hall !== "TBD" ? (
                       <a
                         href={getHallNavigationUrl(match.hall, match.city || effectiveCity)}
@@ -272,30 +270,30 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         className="flex items-center gap-1 group/hall hover:text-white transition-colors cursor-pointer min-w-0"
                         title={`${match.hall} — Haritada Gör & Yol Tarifi Al`}
                       >
-                        <MapPin size={10} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform"} />
+                        <MapPin size={9} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform"} />
                         <span className={`truncate font-medium group-hover/hall:underline ${disc?.hall_diff ? "text-amber-200 font-bold bg-amber-900/60 px-1 py-0.5 rounded" : ""}`}>
                           {match.hall}
                         </span>
                       </a>
                     ) : (
                       <div className="flex items-center gap-1 text-slate-500">
-                        <MapPin size={10} className="shrink-0" />
+                        <MapPin size={9} className="shrink-0" />
                         <span>-</span>
                       </div>
                     )}
                     {disc?.hall_diff && disc.vb_hall && (
                       <div
-                        className="text-[8.5px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 truncate max-w-full shadow-xs"
+                        className="text-[8px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center gap-0.5 mt-0.5 truncate max-w-full shadow-xs"
                         title={`İl bülteninde salon değişti! Volleybox'taki salon: ${disc.vb_hall}`}
                       >
-                        <AlertTriangle size={8} className="text-amber-400 shrink-0" />
+                        <AlertTriangle size={7} className="text-amber-400 shrink-0" />
                         <span className="truncate">VB: {disc.vb_hall}</span>
                       </div>
                     )}
                   </td>
 
                   {/* 3. Saat */}
-                  <td className="py-1 px-0.5 text-center font-mono font-bold text-slate-200 whitespace-nowrap text-[11px]">
+                  <td className="py-1 px-0.5 text-center font-mono font-bold text-slate-200 whitespace-nowrap text-[10.5px] sm:text-[11px]">
                     {match.time === "--:--" ? (
                       <span className="text-slate-500 text-[10px]">-</span>
                     ) : (
@@ -303,22 +301,24 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     )}
                     {disc?.time_diff && disc.vb_time && (
                       <div
-                        className="text-[8.5px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center justify-center gap-0.5 mt-0.5 shadow-xs"
+                        className="text-[8px] font-sans font-bold text-amber-300 bg-amber-950/90 border border-amber-700/80 px-1 py-0.5 rounded inline-flex items-center justify-center gap-0.5 mt-0.5 shadow-xs"
                         title={`İl bülteninde saat değişti! Volleybox'taki eski saat: ${disc.vb_time}`}
                       >
-                        <AlertTriangle size={8} className="text-amber-400 shrink-0" />
+                        <AlertTriangle size={7} className="text-amber-400 shrink-0" />
                         <span>VB: {disc.vb_time}</span>
                       </div>
                     )}
                   </td>
 
                   {/* 4. A Takımı */}
-                  <td className="py-1 px-1.5 min-w-0 truncate">
+                  <td className="py-1 px-1.5 min-w-0">
                     <TeamVolleyboxLink
                       teamName={match.home_team}
                       category={match.category || match.age_group}
                       city={match.city || city}
-                      className={`text-xs min-w-0 truncate ${
+                      showFavoriteButton={false}
+                      logoClassName="!w-4 !h-4 sm:!w-4.5 sm:!h-4.5 !mr-1.5 shrink-0"
+                      className={`text-xs min-w-0 ${
                         homeWon
                           ? "font-black text-white drop-shadow-xs"
                           : isFinished
@@ -329,12 +329,14 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 5. B Takımı */}
-                  <td className="py-1 px-1.5 min-w-0 truncate">
+                  <td className="py-1 px-1.5 min-w-0">
                     <TeamVolleyboxLink
                       teamName={match.away_team}
                       category={match.category || match.age_group}
                       city={match.city || city}
-                      className={`text-xs min-w-0 truncate ${
+                      showFavoriteButton={false}
+                      logoClassName="!w-4 !h-4 sm:!w-4.5 sm:!h-4.5 !mr-1.5 shrink-0"
+                      className={`text-xs min-w-0 ${
                         awayWon
                           ? "font-black text-white drop-shadow-xs"
                           : isFinished
@@ -347,11 +349,22 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   {/* 6. Skor */}
                   <td className="py-1 px-1 text-center whitespace-nowrap">
                     {isFinished ? (
-                      <span className="inline-block px-1.5 py-0.5 rounded-md font-mono font-black text-[10px] sm:text-[11px] bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-tight">
-                        {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
-                          ? `${match.home_score}-${match.away_score}`
-                          : match.score || "-:-"}
-                      </span>
+                      <div className="flex flex-col items-center justify-center">
+                        <span className="inline-block px-1.5 py-0.5 rounded-md font-mono font-black text-[10px] sm:text-[11px] bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-tight">
+                          {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
+                            ? `${match.home_score}-${match.away_score}`
+                            : match.score || "-:-"}
+                        </span>
+                        {match.set_scores && match.set_scores.length > 0 && (
+                          <div className="xl:hidden flex items-center gap-0.5 mt-0.5 flex-wrap justify-center max-w-[65px]" title={`Setler: ${match.set_scores.join(", ")}`}>
+                            {match.set_scores.map((set, sIdx) => (
+                              <span key={sIdx} className="text-[7.5px] font-mono text-slate-400 bg-slate-900/90 px-0.5 rounded border border-slate-800">
+                                {set}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ) : match.date !== "TBD" ? (
                       <span className="inline-block px-1.5 py-0.5 rounded font-mono text-[9px] font-bold bg-slate-800 text-slate-400 border border-slate-700/70">
                         vs
@@ -361,8 +374,8 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     )}
                   </td>
 
-                  {/* 7. Set Skorları */}
-                  <td className="py-1 px-1 text-left whitespace-nowrap">
+                  {/* 7. Set Skorları (Sadece xl ve üzeri geniş ekranlarda bağımsız sütun, dar ekranlarda skor altında) */}
+                  <td className="hidden xl:table-cell py-1 px-1 text-left whitespace-nowrap">
                     {isFinished && match.set_scores && match.set_scores.length > 0 ? (
                       <div className="flex items-center gap-1 flex-nowrap">
                         {match.set_scores.map((set, sIdx) => {
@@ -396,52 +409,52 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700 hover:bg-amber-900/80 hover:border-amber-600 transition-all shadow-xs group"
-                          title={`DİKKAT: İl bülteninde değişiklik var! (${disc?.details || "Tarih/Saat/Yer farklı"}) - Volleybox'ta güncellemek için tıklayın`}
+                          className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded-full text-[8.5px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700 hover:bg-amber-900/80 transition-all shadow-xs"
+                          title={`DİKKAT: İl bülteninde değişiklik var! (${disc?.details || "Tarih/Saat/Yer farklı"})`}
                         >
-                          <AlertTriangle size={9} className="text-amber-400 shrink-0" />
-                          <span>VB Değişti</span>
+                          <AlertTriangle size={8} className="text-amber-400 shrink-0" />
+                          <span className="hidden sm:inline">Değişti</span>
                         </a>
                       ) : match.volleybox.has_score ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700 hover:bg-emerald-900/70 hover:border-emerald-600 transition-all shadow-xs group"
-                          title={`Volleybox'ta Kayıtlı ve Skoru Girilmiş (Maç ID: #${match.volleybox.match_id} | Skor: ${match.volleybox.score}) - Tıklayarak profili açın`}
+                          className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded-full text-[8.5px] font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700 hover:bg-emerald-900/70 transition-all shadow-xs"
+                          title={`Volleybox'ta Kayıtlı ve Skoru Girilmiş (${match.volleybox.score})`}
                         >
-                          <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span>
-                          <span>{match.volleybox.score || "VB: Skor"}</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                          <span>{match.volleybox.score || "VB"}</span>
                         </a>
                       ) : isMatchPassed(match.volleybox?.vb_date || match.date, match.time, match.status) ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-amber-950/60 text-amber-300 border border-amber-700 hover:bg-amber-900/60 transition-all shadow-xs group"
-                          title={`Maç tarihi geçmesine rağmen Volleybox'a skor henüz girilmemiş! (Maç ID: #${match.volleybox.match_id}) - Skoru girmek için tıklayın`}
+                          className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded-full text-[8.5px] font-bold bg-amber-950/60 text-amber-300 border border-amber-700 hover:bg-amber-900/60 transition-all shadow-xs"
+                          title="Maç tarihi geçti, Volleybox'a skor bekleniyor"
                         >
-                          <span className="w-1 h-1 rounded-full bg-amber-400"></span>
-                          <span>Skor Bekliyor</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0"></span>
+                          <span className="hidden sm:inline">Bekliyor</span>
                         </a>
                       ) : (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full text-[9px] font-medium bg-slate-800/80 text-slate-300 border border-slate-700 hover:bg-slate-700 transition-all group"
-                          title={`Volleybox'ta Kayıtlı Gelecek Maç (Maç ID: #${match.volleybox.match_id}) - Maç sayfasını açmak için tıklayın`}
+                          className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded-full text-[8.5px] font-medium bg-slate-800/80 text-slate-300 border border-slate-700 hover:bg-slate-700 transition-all"
+                          title="Volleybox'ta Kayıtlı Gelecek Maç"
                         >
-                          <span className="w-1 h-1 rounded-full bg-blue-400"></span>
-                          <span>Kayıtlı</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
+                          <span className="hidden sm:inline">Kayıtlı</span>
                         </a>
                       )
                     ) : (
                       <span
-                        className="inline-flex items-center gap-0.5 px-1 py-0.5 rounded text-[8.5px] text-slate-500 bg-slate-900/50 border border-slate-700/50 font-medium"
+                        className="text-[10px] text-slate-600 font-mono"
                         title="Bu maç henüz Volleybox veritabanına girilmemiş"
                       >
-                        <span>Girilmedi</span>
+                        -
                       </span>
                     )}
                   </td>
