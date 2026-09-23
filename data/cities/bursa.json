@@ -748,18 +748,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401043",
+        "url": "https://women.volleybox.net/tr/bursa-fethiye-1973-spor-kulubu-u16-doruk-voleybol-spor-kulubu-u16-c401043",
+        "host_name": "Bursa Fethiye 1973 Spor Kulübü U16",
+        "guest_name": "Doruk Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-30",
+        "vb_time": "18:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-30",
+          "vb_time": "18:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1010,6 +1017,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-23T15:49:04.945635"
+  "volleybox_synced_matches": 11,
+  "volleybox_sync_updated_at": "2026-09-23T16:03:27.356004"
 }
