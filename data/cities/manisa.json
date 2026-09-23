@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-19T12:29:15.277275",
-  "city": "Kahramanmaraş",
-  "slug": "kahramanmaras",
-  "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
+  "updated_at": "2026-09-23T15:16:13.793726",
+  "city": "Manisa",
+  "slug": "manisa",
+  "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 0,
-  "source": "https://kahramanmaras.voleyboliltemsilciligi.com",
+  "source": "https://manisa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -25,10 +25,10 @@
     ]
   },
   "standings": {
-    "Genç Kızlar 1. Ligi - Genç Kızlar Grup A": [
+    "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "Büyükşehir Belediye Sk (B)",
+        "team": "1922 Salihli Gençlik Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "ELBİSTAN ALTINIŞIK SK",
+        "team": "Akhisar İlçe Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "GENÇLİK SK",
+        "team": "Akhisarspor Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -61,7 +61,7 @@
       },
       {
         "rank": 4,
-        "team": "TÜRKOĞLU 20 NİSAN SK",
+        "team": "Değerli Zamanlar Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -72,7 +72,18 @@
       },
       {
         "rank": 5,
-        "team": "Vesta SK (A)",
+        "team": "Manisa Büyükşehir Belediye Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Salihli Değerli Zamanlar Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -82,10 +93,10 @@
         "form": []
       }
     ],
-    "Genç Kızlar 1. Ligi - Genç Kızlar Grup B": [
+    "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği B Grubu": [
       {
         "rank": 1,
-        "team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
+        "team": "Akhisargücü Spor Kulübü Derneği",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -96,7 +107,7 @@
       },
       {
         "rank": 2,
-        "team": "ÇAĞLAYANCERİT GENÇLİK SK",
+        "team": "Sarıgöl Akademi Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -107,7 +118,7 @@
       },
       {
         "rank": 3,
-        "team": "GAZİ SK",
+        "team": "Soma Belediye Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -118,7 +129,29 @@
       },
       {
         "rank": 4,
-        "team": "Vesta SK (B)",
+        "team": "Soma İlçe Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Turgutlu Belediye Kültür Sanat Ve Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Yunusemre Belediye Spor Kulübü Derneği",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -131,5 +164,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-23T15:26:34.586675"
+  "volleybox_sync_updated_at": "2026-09-23T15:26:34.625989"
 }
