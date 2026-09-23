@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T15:23:27.141640",
+  "updated_at": "2026-09-23T17:28:11.799166",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -115,8 +115,8 @@
         "url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-u18-soke-voleybol-spor-kulubu-u18-c399629",
         "host_name": "Aydın Büyükşehir Belediyespor U18",
         "guest_name": "Söke Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-09-22",
         "vb_time": "20:30",
         "vb_hall": "SKS Spor Salonu",
@@ -339,5 +339,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-09-23T15:49:04.897973"
+  "volleybox_sync_updated_at": "2026-09-23T17:31:42.741480"
 }

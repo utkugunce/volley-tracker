@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T15:23:33.735853",
+  "updated_at": "2026-09-23T17:28:19.965129",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -242,10 +242,10 @@
       }
     },
     {
-      "id": "mersin-20260930-004",
+      "id": "mersin-20261001-004",
       "city": "Mersin",
-      "date": "2026-09-30",
-      "time": "17:00",
+      "date": "2026-10-01",
+      "time": "19:00",
       "hall": "Mersinli Ahmet S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -278,11 +278,11 @@
           "vb_date": "2026-09-26",
           "vb_time": "11:00",
           "vb_hall": "Mersinli Ahmet Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-30 / VB: 2026-09-26) | Saat Değişti (TVF: 17:00 / VB: 11:00)"
+          "details": "Tarih Değişti (TVF: 2026-10-01 / VB: 2026-09-26) | Saat Değişti (TVF: 19:00 / VB: 11:00)"
         }
       }
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-23T15:49:06.158045"
+  "volleybox_sync_updated_at": "2026-09-23T17:31:43.372136"
 }

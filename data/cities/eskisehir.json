@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T15:23:37.611549",
+  "updated_at": "2026-09-23T17:28:19.180094",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -1480,8 +1480,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-u16-eskisehir-voleybol-spor-kulubu-u16-c399260",
         "host_name": "Eskişehir Peyman SK U16",
         "guest_name": "Eskişehir Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-22",
         "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1615,5 +1615,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-09-23T15:49:05.058573"
+  "volleybox_sync_updated_at": "2026-09-23T17:31:42.815951"
 }

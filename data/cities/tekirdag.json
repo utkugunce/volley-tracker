@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T15:23:44.403850",
+  "updated_at": "2026-09-23T17:28:32.452850",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -24,7 +24,6 @@
       "Tümü",
       "Atatürk Ss",
       "Beyza Adalı Ss",
-      "Kapaklı S.S.",
       "Çerkezköy S.S",
       "Çorlu Ss",
       "İsmet İnönü Ss"
@@ -179,7 +178,7 @@
       },
       {
         "rank": 8,
-        "team": "Voleybol Akademi Tekirdağ Spor Kulübü",
+        "team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -484,7 +483,7 @@
       "group": "A Grubu",
       "match_no": "1",
       "home_team": "Liva Volley Spor Kulübü",
-      "away_team": "Voleybol Akademi Tekirdağ Spor Kulübü",
+      "away_team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -763,8 +762,8 @@
       "id": "tekirdag-20260926-011",
       "city": "Tekirdağ",
       "date": "2026-09-26",
-      "time": "10:30",
-      "hall": "Kapaklı S.S.",
+      "time": "11:00",
+      "hall": "Çerkezköy S.S",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -789,14 +788,14 @@
         "vb_time": "10:30",
         "vb_hall": "Kapaklı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-09-26",
           "vb_time": "10:30",
           "vb_hall": "Kapaklı Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 11:00 / VB: 10:30) | Salon Değişti (TVF: Çerkezköy S.S / VB: Kapaklı Spor Salonu)"
         }
       }
     },
@@ -884,5 +883,5 @@
     }
   ],
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-09-23T15:49:06.190387"
+  "volleybox_sync_updated_at": "2026-09-23T17:31:43.387691"
 }
