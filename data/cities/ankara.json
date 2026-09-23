@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T15:06:30.011317",
+  "updated_at": "2026-09-23T19:07:25.936276",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -32,16 +32,27 @@
       {
         "rank": 1,
         "team": "Akademi Atletik Spor U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Hakan Akışık Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Birlik Spor Kulübü",
         "played": 0,
         "won": 0,
@@ -52,7 +63,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Karayolları Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -63,19 +74,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Blue Wolves Volleyball U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Hakan Akışık Spor Kulübü U18",
+        "team": "Blue Wolves Volleyball U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -145,51 +145,51 @@
     "Genç Kızlar Süper Lig - 3.Grup": [
       {
         "rank": 1,
-        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "TVF Spor Lisesi U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Maç Akademi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "SET UP Spor Kulübü U18",
-        "played": 0,
+        "team": "Maç Akademi Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "TED Ankara Kolejliler U18",
-        "played": 0,
+        "team": "SET UP Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "TVF Spor Lisesi U18",
+        "team": "TED Ankara Kolejliler U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -202,29 +202,29 @@
     "Genç Kızlar Süper Lig - 4.Grup": [
       {
         "rank": 1,
-        "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
-        "played": 0,
-        "won": 0,
+        "team": "İlbank U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Eryaman Gelişim SK U18",
-        "played": 0,
+        "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "İlbank U18",
+        "team": "Eryaman Gelişim SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -602,11 +602,15 @@
       "match_no": "1",
       "home_team": "Hakan Akışık Spor Kulübü U18",
       "away_team": "Akademi Atletik Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399222",
@@ -930,11 +934,15 @@
       "match_no": "1",
       "home_team": "TVF Spor Lisesi U18",
       "away_team": "SET UP Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "26-24",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399225",
@@ -971,11 +979,15 @@
       "match_no": "2",
       "home_team": "Maç Akademi Spor Kulübü U18",
       "away_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "17-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399226",
@@ -1094,11 +1106,15 @@
       "match_no": "1",
       "home_team": "İlbank U18",
       "away_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-18",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399227",
@@ -1775,5 +1791,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-09-23T15:07:52.481605"
+  "volleybox_sync_updated_at": "2026-09-23T19:08:50.140548"
 }

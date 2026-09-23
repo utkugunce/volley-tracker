@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T15:06:41.735874+00:00",
+  "updated_at": "2026-09-23T19:07:35.166795+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -214,17 +214,18 @@
       {
         "rank": 1,
         "team": "VakıfBank U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 31,
-        "point_ratio": "2.419",
+        "points_won": 150,
+        "points_lost": 77,
+        "point_ratio": "1.948",
         "form": [
+          "W",
           "W"
         ]
       },
@@ -334,17 +335,18 @@
       {
         "rank": 8,
         "team": "Türk Hava Yolları SK U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 3,
-        "set_ratio": "0.333",
-        "points_won": 82,
-        "points_lost": 95,
-        "point_ratio": "0.863",
+        "sets_lost": 6,
+        "set_ratio": "0.167",
+        "points_won": 128,
+        "points_lost": 170,
+        "point_ratio": "0.753",
         "form": [
+          "L",
           "L"
         ]
       },
@@ -1246,6 +1248,23 @@
     "Genç Kızlar 1. Ligi - 4. Bölge B Grubu": [
       {
         "rank": 1,
+        "team": "Başakşehir Belediyesi SK U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 0,
+        "point_ratio": "MAX",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Avrupa Voleybol Gelişim Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -1262,7 +1281,7 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Başakşehir Voleybol Kulübü U18",
         "played": 1,
         "won": 0,
@@ -1279,23 +1298,8 @@
         ]
       },
       {
-        "rank": 3,
-        "team": "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Başakşehir Belediyesi SK U16",
+        "team": "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1326,16 +1330,16 @@
       {
         "rank": 6,
         "team": "Yıldızlar Arena Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
+        "sets_lost": 3,
+        "set_ratio": "MIN",
         "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
+        "points_lost": 75,
+        "point_ratio": "MIN",
         "form": []
       }
     ],
@@ -3922,12 +3926,16 @@
       "group": "4. Bölge B Grubu",
       "match_no": "2",
       "home_team": "Başakşehir Belediyesi SK U16",
-      "away_team": "Yıldızlar Arena Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "away_team": "(H) - Yıldızlar Arena",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400368",
@@ -3964,11 +3972,15 @@
       "match_no": "7",
       "home_team": "VakıfBank U18",
       "away_team": "Türk Hava Yolları SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-16",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400375",
@@ -4240,5 +4252,5 @@
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-23T15:07:52.492435"
+  "volleybox_sync_updated_at": "2026-09-23T19:08:50.129553"
 }

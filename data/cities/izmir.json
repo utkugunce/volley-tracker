@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T15:06:39.388289",
+  "updated_at": "2026-09-23T19:07:32.632933",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -92,6 +92,17 @@
       {
         "rank": 1,
         "team": "Gelişim Koleji SK U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Altınordu Voleybol - B U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -101,29 +112,29 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "KZY Bornova Spor Kulübü - B U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Forza Spor Kulübü",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 4,
+        "team": "Forza Spor Kulübü",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Göztepe SK - B U18",
         "played": 1,
         "won": 0,
@@ -132,40 +143,29 @@
         "sets_won": 0,
         "sets_lost": 3,
         "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Altınordu Voleybol - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
       }
     ],
     "Genç Kızlar Süper Lig - Genç Kız - C Gr": [
       {
         "rank": 1,
         "team": "İzmir DSİ Spor U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Özay Voleybol Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -205,6 +205,17 @@
     "Genç Kızlar Süper Lig - Genç Kız - D Gr": [
       {
         "rank": 1,
+        "team": "İzmir Altınay Spor Kulübü - B U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Mavişehir Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -212,17 +223,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "İzmir Altınay Spor Kulübü - B U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
         "form": []
       },
       {
@@ -238,7 +238,7 @@
       },
       {
         "rank": 4,
-        "team": "Dost Spor U18",
+        "team": "İzmirspor U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -249,13 +249,13 @@
       },
       {
         "rank": 5,
-        "team": "İzmirspor U18",
-        "played": 0,
+        "team": "Dost Spor U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -1224,11 +1224,15 @@
       "match_no": "3",
       "home_team": "Forza Spor Kulübü",
       "away_team": "Gelişim Koleji SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "12-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398193",
@@ -1265,11 +1269,15 @@
       "match_no": "4",
       "home_team": "Altınordu Voleybol - B U18",
       "away_team": "KZY Bornova Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "26-24",
+        "25-13",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398194",
@@ -1478,11 +1486,15 @@
       "match_no": "3",
       "home_team": "İzmir DSİ Spor U18",
       "away_team": "Özay Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-18",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398195",
@@ -1733,11 +1745,15 @@
       "match_no": "3",
       "home_team": "İzmirspor U18",
       "away_team": "İzmir Altınay Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "18-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398198",
@@ -4181,5 +4197,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-23T15:07:52.485216"
+  "volleybox_sync_updated_at": "2026-09-23T19:08:50.143881"
 }
