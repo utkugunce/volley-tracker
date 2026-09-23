@@ -168,6 +168,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   // Sonuçlar Alt Sekmesi: "all" (Tüm Sonuçlar) veya "yesterday" (Dünün Sonuçları)
   const [resultsSubTab, setResultsSubTab] = useState<"all" | "yesterday">("all");
+  const [selectedResultDate, setSelectedResultDate] = useState("all");
 
   // Fikstür Filtre Durumları
   const [selectedCategory, setSelectedCategory] = useState("Tümü");
@@ -297,10 +298,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     setError(null);
     setSelectedCategory("Tümü");
     setSelectedDate("all");
+    setSelectedResultDate("all");
     setSelectedHall("Tümü");
     setStatusFilter("all");
     setVolleyboxFilter("all");
     setSearchQuery("");
+    setResultsSubTab("all");
 
     // Tarayıcı URL'ini güncelle: Örneğin /puan-durumu -> /puan-durumu/istanbul
     if (typeof window !== "undefined") {
@@ -359,11 +362,34 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     return Array.from(set).sort();
   }, [data]);
 
+  // Sonuçlanan maçların benzersiz tarihleri (En yeni tarihten geriye doğru sıralı)
+  const uniqueResultDates = useMemo(() => {
+    if (!data?.matches) return [];
+    const set = new Set(
+      data.matches
+        .filter(isMatchScored)
+        .map((m) => m.date)
+        .filter((d) => d && d !== "TBD")
+    );
+    return Array.from(set).sort().reverse();
+  }, [data]);
+
   // Tarih bazlı maç sayıları
   const dateCounts = useMemo(() => {
     const counts: { [dateStr: string]: number } = {};
     (data?.matches || []).forEach((m) => {
       counts[m.date] = (counts[m.date] || 0) + 1;
+    });
+    return counts;
+  }, [data]);
+
+  // Sonuçlanan maçların tarih bazlı sayıları
+  const resultDateCounts = useMemo(() => {
+    const counts: { [dateStr: string]: number } = {};
+    (data?.matches || []).forEach((m) => {
+      if (isMatchScored(m) && m.date && m.date !== "TBD") {
+        counts[m.date] = (counts[m.date] || 0) + 1;
+      }
     });
     return counts;
   }, [data]);
@@ -538,6 +564,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     return (data?.matches || []).filter((m) => {
       if (!isMatchScored(m)) return false;
 
+      // Sonuçlar seçilen tarih filtresi
+      if (selectedResultDate !== "all" && m.date !== selectedResultDate) {
+        return false;
+      }
+
       // Sonuçlar alt sekme filtresi: "yesterday" seçildiyse sadece dünün maçlarını göster
       if (resultsSubTab === "yesterday" && m.date !== yesterdayStr) {
         return false;
@@ -581,16 +612,26 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
       return true;
     });
-  }, [data, resultsSubTab, yesterdayStr, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
+  }, [data, selectedResultDate, resultsSubTab, yesterdayStr, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
 
   // Sonuçlar için Şehir ve Lig bazlı hiyerarşik gruplama (İzmir başlığı altında U18 / U16 ve A Grubu / B Grubu)
   const resultsByCityAndLeague = useMemo<CityResultGroup[]>(() => {
     return groupResultsByCityAndLeague(filteredResultMatches, data?.city);
   }, [filteredResultMatches, data?.city]);
 
+  const handleSelectResultsSubTab = (subTab: "all" | "yesterday") => {
+    setResultsSubTab(subTab);
+    if (subTab === "yesterday") {
+      setSelectedResultDate(yesterdayStr);
+    } else {
+      setSelectedResultDate("all");
+    }
+  };
+
   const resetFilters = () => {
     setSelectedCategory("Tümü");
     setSelectedDate("all");
+    setSelectedResultDate("all");
     setStatusFilter("all");
     setSelectedHall("Tümü");
     setVolleyboxFilter("all");
@@ -601,7 +642,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const isFiltered =
     selectedCategory !== "Tümü" ||
-    selectedDate !== "all" ||
+    (activeMainTab === "results" ? selectedResultDate !== "all" : selectedDate !== "all") ||
     statusFilter !== "all" ||
     selectedHall !== "Tümü" ||
     searchQuery.trim().length > 0 ||
@@ -677,6 +718,26 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         {activeMainTab === "results" ? (
           /* ==================== SONUÇLAR SEKMESİ (SADECE BİTEN / SKORLU MAÇLAR) ==================== */
           <div>
+            {/* Flashscore Yatay Tarih Şeridi (Sonuçlar Modunda - Zümrüt Yeşili Temalı) */}
+            <DateRibbon
+              dates={uniqueResultDates}
+              selectedDate={selectedResultDate}
+              onSelectDate={(d) => {
+                setSelectedResultDate(d);
+                if (d === "all") {
+                  setResultsSubTab("all");
+                } else if (d === yesterdayStr) {
+                  setResultsSubTab("yesterday");
+                } else {
+                  setResultsSubTab("all");
+                }
+              }}
+              dateCounts={resultDateCounts}
+              todayStr={todayStr}
+              yesterdayStr={yesterdayStr}
+              variant="emerald"
+            />
+
             {/* Flashscore Filtre Barı (Sonuçlar Modunda) */}
             {data?.filters && (
               <FilterBar
@@ -702,18 +763,23 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                 isFiltered={isFiltered}
                 isResultsTab={true}
                 resultsSubTab={resultsSubTab}
-                onSelectResultsSubTab={setResultsSubTab}
+                onSelectResultsSubTab={handleSelectResultsSubTab}
                 yesterdayCount={yesterdayResultsCount}
               />
             )}
 
-            {/* Dünün Sonuçları Bilgi ve Kolay Geçiş Rozeti */}
-            {resultsSubTab === "yesterday" && (
+            {/* Seçilen Tarihin Sonuçları Bilgi ve Kolay Geçiş Rozeti */}
+            {selectedResultDate !== "all" && (
               <div className="flex items-center justify-between bg-emerald-950/40 border border-emerald-800/60 rounded-xl px-3.5 py-2.5 mb-4 text-xs text-emerald-300 shadow-sm max-w-6xl mx-auto flex-wrap gap-2">
                 <div className="flex items-center gap-2">
                   <Calendar size={15} className="text-emerald-400 shrink-0" />
                   <span>
-                    <strong>Dünün Sonuçları:</strong> {formatDateTurkish(yesterdayStr)}
+                    <strong>
+                      {selectedResultDate === yesterdayStr
+                        ? "Dünün Sonuçları:"
+                        : `${formatDateTurkish(selectedResultDate)} Sonuçları:`}
+                    </strong>{" "}
+                    {formatDateTurkish(selectedResultDate)}
                   </span>
                   <span className="text-[11px] bg-emerald-500/20 text-emerald-200 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold font-mono">
                     {filteredResultMatches.length} Maç
@@ -721,8 +787,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                 </div>
                 <button
                   type="button"
-                  onClick={() => setResultsSubTab("all")}
-                  className="text-xs text-emerald-400 hover:text-emerald-200 font-semibold underline underline-offset-2 transition-colors inline-flex items-center gap-1"
+                  onClick={() => {
+                    setSelectedResultDate("all");
+                    setResultsSubTab("all");
+                  }}
+                  className="text-xs text-emerald-400 hover:text-emerald-200 font-semibold underline underline-offset-2 transition-colors inline-flex items-center gap-1 cursor-pointer"
                 >
                   <span>Tüm Sonuçları Göster ({resultsCount})</span>
                 </button>
@@ -889,17 +958,23 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                 ) : (
                   <>
                     <h3 className="text-sm font-bold text-white mb-1">
-                      {showOnlyFavorites ? "Favori Maçlarınız Arasında Biten Maç Bulunmuyor" : "Kriterlere Uygun Sonuçlanan Maç Bulunamadı"}
+                      {selectedResultDate !== "all"
+                        ? `${formatDateTurkish(selectedResultDate)} Tarihinde Sonuçlanan Maç Bulunamadı`
+                        : showOnlyFavorites
+                        ? "Favori Maçlarınız Arasında Biten Maç Bulunmuyor"
+                        : "Kriterlere Uygun Sonuçlanan Maç Bulunamadı"}
                     </h3>
                     <p className="text-xs text-slate-400 mb-4">
-                      {showOnlyFavorites
+                      {selectedResultDate !== "all"
+                        ? "Seçilen tarihte oynanmış veya sonucu sisteme girilmiş bir maç kaydı bulunmuyor."
+                        : showOnlyFavorites
                         ? "Favoriye aldığınız maçlar tamamlandığında skorları burada görüntülenecektir."
                         : "Seçtiğiniz lig veya arama filtresine uygun sonuçlanan maç kaydı bulunmamaktadır."}
                     </p>
                     {isFiltered && (
                       <button
                         onClick={resetFilters}
-                        className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
+                        className="px-3.5 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition-colors shadow-md cursor-pointer"
                       >
                         Filtreleri Sıfırla
                       </button>
@@ -944,6 +1019,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               onSelectDate={setSelectedDate}
               dateCounts={dateCounts}
               todayStr={todayStr}
+              yesterdayStr={yesterdayStr}
+              variant="red"
             />
 
             {/* Flashscore Filtre Barı (HEPSİ / OYNANACAK / BİTENLER) */}

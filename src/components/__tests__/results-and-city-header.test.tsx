@@ -143,4 +143,45 @@ describe("Results and City Header enhancements", () => {
     fireEvent.click(yesterdayBtn);
     expect(handleSelectSubTab).toHaveBeenCalledWith("yesterday");
   });
+
+  it("DateRibbon renders emerald variant with yesterday label, match counts and triggers date selection", () => {
+    const handleSelectDate = vi.fn();
+    const { container } = render(
+      <DateRibbon
+        dates={["2026-09-22", "2026-09-21", "2026-09-17"]}
+        selectedDate="2026-09-22"
+        onSelectDate={handleSelectDate}
+        dateCounts={{ "2026-09-22": 3, "2026-09-21": 4, "2026-09-17": 6 }}
+        todayStr="2026-09-23"
+        yesterdayStr="2026-09-22"
+        variant="emerald"
+      />
+    );
+
+    // TÜMÜ butonu ve Takvim butonu bulunmalı
+    expect(screen.getByRole("tab", { name: /Tüm tarihleri göster/i })).toBeInTheDocument();
+    expect(screen.getByLabelText("Takvimden tarih seç")).toBeInTheDocument();
+
+    // Dünün sonuçları DÜN etiketiyle ve 3 maç sayısıyla render edilmeli
+    expect(screen.getByText("DÜN")).toBeInTheDocument();
+    expect(screen.getByText("3")).toBeInTheDocument();
+
+    // 21 Eylül maç sayısı 4 olmalı
+    expect(screen.getByText("4")).toBeInTheDocument();
+
+    // DÜN butonuna tıklandığında seçili olmalı
+    const yesterdayTab = screen.getByText("DÜN").closest("button")!;
+    expect(yesterdayTab.getAttribute("aria-selected")).toBe("true");
+
+    // TÜMÜ butonuna tıklanınca onSelectDate("all") çağrılmalı
+    const allBtn = screen.getByRole("tab", { name: /Tüm tarihleri göster/i });
+    fireEvent.click(allBtn);
+    expect(handleSelectDate).toHaveBeenCalledWith("all");
+
+    // Takvim input'undan tarih seçildiğinde onSelectDate tetiklenmeli
+    const dateInput = container.querySelector('input[type="date"]')!;
+    fireEvent.change(dateInput, { target: { value: "2026-09-15" } });
+    expect(handleSelectDate).toHaveBeenCalledWith("2026-09-15");
+  });
 });
+
