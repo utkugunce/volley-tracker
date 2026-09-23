@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T19:07:30.349198",
+  "updated_at": "2026-09-23T22:23:05.857138",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -30,6 +30,28 @@
     "Genç Kızlar Süper Lig - - C Gr": [
       {
         "rank": 1,
+        "team": "Şehir Koleji Eğitim Kültür SK U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Es Voleybol Akademi Spor Kulübü - B U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Üniversitesi GSK U18",
         "played": 0,
         "won": 0,
@@ -40,30 +62,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Es Voleybol Akademi Spor Kulübü - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Eskişehir Peyman SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Şehir Koleji Eğitim Kültür SK U18",
+        "team": "Eskişehir Peyman SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -76,6 +76,28 @@
     "Genç Kızlar Süper Lig - - A Gr": [
       {
         "rank": 1,
+        "team": "Eskişehir Ata Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Eskişehir Türk Telekom Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Eskişehir DSİ Bentspor U18",
         "played": 0,
         "won": 0,
@@ -86,30 +108,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Eskişehir Ata Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Eskişehir Türk Telekom Spor Kulübü U18",
+        "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -123,23 +123,23 @@
       {
         "rank": 1,
         "team": "Anadolu Kolej Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Es Voleybol Akademi Spor Kulübü - A U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -397,11 +397,15 @@
       "match_no": "1",
       "home_team": "Es Voleybol Akademi Spor Kulübü - B U18",
       "away_team": "Şehir Koleji Eğitim Kültür SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "9-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399244",
@@ -547,11 +551,16 @@
       "match_no": "1",
       "home_team": "Eskişehir Türk Telekom Spor Kulübü U18",
       "away_team": "Eskişehir Ata Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-27",
+        "25-17",
+        "20-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399240",
@@ -697,11 +706,15 @@
       "match_no": "1",
       "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
       "away_team": "Anadolu Kolej Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "6-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399242",
@@ -1615,5 +1628,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-09-23T19:08:50.149183"
+  "volleybox_sync_updated_at": "2026-09-23T22:24:23.721094"
 }
