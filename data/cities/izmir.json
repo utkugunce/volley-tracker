@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T09:35:29.447548",
+  "updated_at": "2026-09-23T10:08:27.124622",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -2830,7 +2830,7 @@
       "id": "izmir-20261001-049",
       "city": "İzmir",
       "date": "2026-10-01",
-      "time": "--:--",
+      "time": "20:00",
       "hall": "Halkapınar Küçük",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3920,7 +3920,7 @@
       "id": "izmir-20261001-076",
       "city": "İzmir",
       "date": "2026-10-01",
-      "time": "--:--",
+      "time": "20:00",
       "hall": "Karabağlar",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -4020,5 +4020,5 @@
     }
   ],
   "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-09-23T09:38:17.072136"
+  "volleybox_sync_updated_at": "2026-09-23T10:09:33.994549"
 }
