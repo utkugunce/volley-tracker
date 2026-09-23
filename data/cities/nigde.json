@@ -211,22 +211,29 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "398180",
+        "url": "https://women.volleybox.net/tr/odtu-gv-nigde-okullar-spor-kulubu-u16-nigde-genclik-spor-kulubu-u16-c398180",
+        "host_name": "ODTÜ GV Niğde Okulları Spor Kulübü U16",
+        "guest_name": "Niğde Gençlik Spor Kulübü U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-09-09",
+        "vb_time": "12:00",
+        "vb_hall": "Niğde Merkez Spor Kompleksı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-09",
+          "vb_time": "12:00",
+          "vb_hall": "Niğde Merkez Spor Kompleksı",
+          "details": "Tarih Değişti (TVF: 2026-09-20 / VB: 2026-09-09)"
         }
       }
     }
   ],
-  "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-09-23T05:19:53.949076"
+  "volleybox_synced_matches": 4,
+  "volleybox_sync_updated_at": "2026-09-23T09:38:17.111235"
 }

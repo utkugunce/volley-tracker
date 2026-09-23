@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T05:18:32.894164",
+  "updated_at": "2026-09-23T09:35:22.339758",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -1210,8 +1210,8 @@
         "url": "https://women.volleybox.net/tr/lbank-u16-ahmet-hamdi-tanpnar-ortaokulu-sk-b-u16-c399228",
         "host_name": "İlbank U16",
         "guest_name": "Ahmet Hamdi Tanpınar Ortaokulu SK - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
@@ -1301,8 +1301,8 @@
         "url": "https://women.volleybox.net/tr/baskent-arma-spor-b-u16-eryaman-gelisim-sk-u16-c399230",
         "host_name": "Başkent Arma Spor - B U16",
         "guest_name": "Eryaman Gelişim SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
@@ -1393,8 +1393,8 @@
         "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-u16-baskent-arma-spor-u16-c399232",
         "host_name": "TVF Spor Lisesi U16",
         "guest_name": "Başkent Arma Spor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "18:00",
         "vb_hall": "Batıkent Spor Salonu",
@@ -1652,8 +1652,8 @@
         "url": "https://women.volleybox.net/tr/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-hakan-aksk-spor-kulubu-u16-c399238",
         "host_name": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
         "guest_name": "Hakan Akışık Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
@@ -1712,5 +1712,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-09-23T05:19:53.927600"
+  "volleybox_sync_updated_at": "2026-09-23T09:38:15.989605"
 }

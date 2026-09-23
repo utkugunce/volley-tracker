@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T05:18:37.733902",
+  "updated_at": "2026-09-23T09:35:24.305731",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -411,14 +411,14 @@
         "vb_time": "18:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-09-27",
           "vb_time": "18:00",
           "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:00 / VB: 18:00) | Salon Değişti (TVF: Şehit Anıl Gül / VB: Kemal Unakıtan Spor Salonu)"
         }
       }
     },
@@ -614,8 +614,8 @@
         "url": "https://women.volleybox.net/tr/es-voleybol-akademi-spor-kulubu-b-u16-eskisehir-ds-bentspor-u16-c399250",
         "host_name": "Es Voleybol Akademi Spor Kulübü - B U16",
         "guest_name": "Eskişehir DSİ Bentspor U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -700,8 +700,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-ata-spor-kulubu-b-u16-eskisehir-turk-telekom-spor-kulubu-u16-c399253",
         "host_name": "Eskişehir Ata Spor Kulübü - B U16",
         "guest_name": "Eskişehir Türk Telekom Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "20:00",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -736,25 +736,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "399254",
-        "url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-u16-esnova-spor-kulubu-u16-c399254",
-        "host_name": "Şehir Koleji Eğitim Kültür SK U16",
-        "guest_name": "Esnova Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-25",
-        "vb_time": "18:30",
-        "vb_hall": "Şehit Anıl Gül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-25",
-          "vb_time": "18:30",
-          "vb_hall": "Şehit Anıl Gül Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -829,8 +822,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-ata-spor-kulubu-u16-eskisehir-turk-telekom-spor-kulubu-b-u16-c399256",
         "host_name": "Eskişehir Ata Spor Kulübü U16",
         "guest_name": "Eskişehir Türk Telekom Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "18:30",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -908,8 +901,8 @@
         "url": "https://women.volleybox.net/tr/anadolu-universitesi-spor-kulubu-u16-es-voleybol-akademi-spor-kulubu-u16-c399259",
         "host_name": "Anadolu Üniversitesi Spor Kulübü U16",
         "guest_name": "Es Voleybol Akademi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-21",
         "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1046,6 +1039,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-09-23T05:19:53.925924"
+  "volleybox_synced_matches": 14,
+  "volleybox_sync_updated_at": "2026-09-23T09:38:16.331920"
 }
