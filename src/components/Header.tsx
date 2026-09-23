@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -20,8 +20,8 @@ interface HeaderProps {
   favoritesCount: number;
   showOnlyFavorites: boolean;
   onToggleFavoritesOnly: () => void;
-  activeTab: "results" | "home" | "fixtures" | "standings";
-  onSelectTab: (tab: "results" | "home" | "fixtures" | "standings") => void;
+  activeTab: "results" | "home" | "fixtures" | "standings" | "group-status";
+  onSelectTab: (tab: "results" | "home" | "fixtures" | "standings" | "group-status") => void;
   onRefresh: () => void;
   isLoading: boolean;
   onOpenSearch?: () => void;
@@ -263,6 +263,19 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <Trophy size={13} className={activeTab === "standings" ? "text-amber-400 fill-amber-400/20" : "text-slate-400"} />
           <span>PUAN DURUMU</span>
+        </button>
+
+        {/* Grup Durumu Sekmesi (Volleybox İlerleme & Renk Kodları) */}
+        <button
+          onClick={() => onSelectTab("group-status")}
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            activeTab === "group-status"
+              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
+          }`}
+        >
+          <Layers size={13} className={activeTab === "group-status" ? "text-primary" : "text-slate-400"} />
+          <span>GRUP DURUMU</span>
         </button>
       </div>
     </header>

@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/grup-durumu`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/sonuclar`,
       lastModified: now,
       changeFrequency: "daily",
@@ -76,6 +82,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const cityRoutes: MetadataRoute.Sitemap = activeCities.flatMap((slug) => [
     {
       url: `${baseUrl}/puan-durumu/${slug}`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/grup-durumu/${slug}`,
       lastModified: now,
       changeFrequency: "daily",
       priority: 0.85,

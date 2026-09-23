@@ -14,6 +14,7 @@ import { NotificationBanner } from "@/components/NotificationBanner";
 import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
 import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
+import { GroupStatusView } from "@/components/GroupStatusView";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
@@ -32,13 +33,15 @@ export const isMatchScored = (m: Match): boolean => {
 };
 
 export const getAppRoute = (
-  tab: "results" | "home" | "fixtures" | "standings",
+  tab: "results" | "home" | "fixtures" | "standings" | "group-status",
   citySlug?: string
 ): string => {
   const isCity = citySlug && citySlug !== "all" && citySlug !== "Tüm İller";
   const slug = isCity ? citySlug.toLowerCase() : "";
 
   switch (tab) {
+    case "group-status":
+      return slug ? `/grup-durumu/${slug}` : "/grup-durumu";
     case "standings":
       return slug ? `/puan-durumu/${slug}` : "/puan-durumu";
     case "fixtures":
@@ -53,7 +56,7 @@ export const getAppRoute = (
 
 export const parseAppRoute = (
   pathname: string
-): { tab: "results" | "home" | "fixtures" | "standings"; city: string } => {
+): { tab: "results" | "home" | "fixtures" | "standings" | "group-status"; city: string } => {
   const cleanPath = pathname.replace(/^\/+|\/+$/g, "");
   if (!cleanPath) {
     return { tab: "home", city: "all" };
@@ -63,7 +66,10 @@ export const parseAppRoute = (
   const first = parts[0]?.toLowerCase();
   const second = parts[1]?.toLowerCase();
 
-  // Pattern 1: /puan-durumu/[city]
+  // Pattern 1: /grup-durumu/[city]
+  if (first === "grup-durumu") {
+    return { tab: "group-status", city: second || "all" };
+  }
   if (first === "puan-durumu") {
     return { tab: "standings", city: second || "all" };
   }
@@ -77,7 +83,10 @@ export const parseAppRoute = (
     return { tab: "home", city: second || "all" };
   }
 
-  // Pattern 2: /[city]/puan-durumu
+  // Pattern 2: /[city]/grup-durumu
+  if (second === "grup-durumu") {
+    return { tab: "group-status", city: first };
+  }
   if (second === "puan-durumu") {
     return { tab: "standings", city: first };
   }
@@ -97,7 +106,7 @@ export const parseAppRoute = (
 
 interface DashboardClientProps {
   initialData: FixturesData;
-  initialTab?: "results" | "home" | "fixtures" | "standings";
+  initialTab?: "results" | "home" | "fixtures" | "standings" | "group-status";
   initialCity?: string;
 }
 
@@ -110,14 +119,14 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Ana Sekmeler: "results" (Sonuçlar), "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür) ve "standings" (Puan Durumu)
-  const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings">(initialTab);
+  // Ana Sekmeler: "results" (Sonuçlar), "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür), "standings" (Puan Durumu) ve "group-status" (Grup Durumu)
+  const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings" | "group-status">(initialTab);
 
   // 81 İl Desteği - URL'den veya prop'tan gelen şehir ile başlar
   const [currentCitySlug, setCurrentCitySlug] = useState(initialCity || "all");
 
-  // Sekme değiştiğinde tarayıcı URL'ini senkronize et (Şehir seçiliyse şehri korur: /puan-durumu/istanbul, /fikstur/istanbul vb.)
-  const handleSelectTab = (tab: "results" | "home" | "fixtures" | "standings") => {
+  // Sekme değiştiğinde tarayıcı URL'ini senkronize et (Şehir seçiliyse şehri korur: /grup-durumu/istanbul, /puan-durumu/istanbul vb.)
+  const handleSelectTab = (tab: "results" | "home" | "fixtures" | "standings" | "group-status") => {
     setActiveMainTab(tab);
     if (typeof window !== "undefined") {
       const targetPath = getAppRoute(tab, currentCitySlug);
@@ -1027,7 +1036,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               </div>
             )}
           </div>
-        ) : (
+        ) : activeMainTab === "standings" ? (
           /* ==================== PUAN DURUMU SEKMESİ ==================== */
           <div>
             {data?.standings && Object.keys(data.standings).length > 0 ? (
@@ -1039,6 +1048,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                 </p>
               </div>
             )}
+          </div>
+        ) : (
+          /* ==================== GRUP DURUMU SEKMESİ (VOLLEYBOX) ==================== */
+          <div>
+            <GroupStatusView
+              selectedCity={currentCitySlug}
+              onSelectCity={handleSelectCity}
+              citiesList={citiesList}
+              onRefresh={fetchData}
+              isLoading={loading}
+            />
           </div>
         )}
       </main>
