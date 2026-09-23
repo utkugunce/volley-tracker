@@ -120,7 +120,9 @@ export function evaluateGroupStatus(params: {
 }): GroupStatusKey {
   const { total, dated, synced, finished, teamsCount } = params;
 
-  if (total > 0 && finished === total && finished > 0) {
+  // "Lig Bitti" demek için il temsilciliği sitesindeki ilgili ligin tüm maçlarının
+  // oynanmış bitmiş (finished === total) ve Volleybox'a girilmiş olması (synced === total) gerekir.
+  if (total > 0 && finished === total && synced === total) {
     return "finished";
   }
   if (total > 0 && synced === total) {
@@ -273,7 +275,10 @@ export function computeGroupStatusList(
       (m) => m.volleybox?.synced === true
     ).length;
     const finished = item.matches.filter(
-      (m) => m.status === "finished"
+      (m) =>
+        m.status === "finished" ||
+        (m.home_score !== null && m.home_score !== undefined && m.away_score !== null && m.away_score !== undefined) ||
+        (m.score && m.score.trim() !== "" && m.score.trim() !== "- : -" && m.score.toLowerCase() !== "vs")
     ).length;
     const teamsCount = item.teamsSet.size;
 

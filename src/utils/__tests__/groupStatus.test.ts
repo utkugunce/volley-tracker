@@ -63,7 +63,7 @@ describe("groupStatus", () => {
   });
 
   describe("evaluateGroupStatus", () => {
-    it("returns 'finished' when all matches are finished", () => {
+    it("returns 'finished' ONLY when all matches are finished AND all matches are synced to Volleybox", () => {
       expect(
         evaluateGroupStatus({
           total: 10,
@@ -75,7 +75,31 @@ describe("groupStatus", () => {
       ).toBe("finished");
     });
 
-    it("returns 'all_program_entered' when all matches in the program are synced", () => {
+    it("does NOT return 'finished' if matches are finished on TVF but not yet entered into Volleybox", () => {
+      // Tüm maçlar TVF sitesinde bitmiş ama Volleybox'a hiç girilmemiş -> not_entered
+      expect(
+        evaluateGroupStatus({
+          total: 10,
+          dated: 10,
+          synced: 0,
+          finished: 10,
+          teamsCount: 5,
+        })
+      ).toBe("not_entered");
+
+      // Tüm maçlar TVF sitesinde bitmiş ama Volleybox'a kısmen girilmiş -> partial
+      expect(
+        evaluateGroupStatus({
+          total: 10,
+          dated: 10,
+          synced: 6,
+          finished: 10,
+          teamsCount: 5,
+        })
+      ).toBe("partial");
+    });
+
+    it("returns 'all_program_entered' when all matches in the program are synced but league is not finished", () => {
       expect(
         evaluateGroupStatus({
           total: 12,
