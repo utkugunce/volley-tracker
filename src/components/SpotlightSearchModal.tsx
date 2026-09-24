@@ -281,7 +281,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
             })
           ) : (
             <div className="py-12 text-center text-xs text-slate-400">
-              "{query}" için eşleşen takım, salon veya şehir bulunamadı.
+              &quot;{query}&quot; için eşleşen takım, salon veya şehir bulunamadı.
             </div>
           )}
         </div>

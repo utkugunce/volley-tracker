@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { Header } from "@/components/Header";
 import { DateRibbon } from "@/components/DateRibbon";
 import { FilterBar } from "@/components/FilterBar";
@@ -125,6 +125,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   // 81 İl Desteği - URL'den veya prop'tan gelen şehir ile başlar
   const [currentCitySlug, setCurrentCitySlug] = useState(initialCity || "all");
 
+  // Sonuçlar Alt Sekmesi: "all" (Tüm Sonuçlar) veya "yesterday" (Dünün Sonuçları)
+  const [resultsSubTab, setResultsSubTab] = useState<"all" | "yesterday">("all");
+  const [selectedResultDate, setSelectedResultDate] = useState("all");
+
+  // Fikstür Filtre Durumları
+  const [selectedCategory, setSelectedCategory] = useState("Tümü");
+  const [selectedDate, setSelectedDate] = useState("all");
+  const [statusFilter, setStatusFilter] = useState("all"); // "all" | "upcoming" | "finished"
+  const [selectedHall, setSelectedHall] = useState("Tümü");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy">("all");
+
+  const [citiesList, setCitiesList] = useState<any[]>([]);
+
   // Sekme değiştiğinde tarayıcı URL'ini senkronize et (Şehir seçiliyse şehri korur: /grup-durumu/istanbul, /puan-durumu/istanbul vb.)
   const handleSelectTab = (tab: "results" | "home" | "fixtures" | "standings" | "group-status") => {
     setActiveMainTab(tab);
@@ -140,19 +154,53 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     }
   };
 
+  const handleSelectCity = useCallback(async (slug: string, skipPushState = false) => {
+    setCurrentCitySlug(slug);
+    setLoading(true);
+    setError(null);
+    setSelectedCategory("Tümü");
+    setSelectedDate("all");
+    setSelectedResultDate("all");
+    setSelectedHall("Tümü");
+    setStatusFilter("all");
+    setVolleyboxFilter("all");
+    setSearchQuery("");
+    setResultsSubTab("all");
+
+    // Tarayıcı URL'ini güncelle: Örneğin /puan-durumu -> /puan-durumu/istanbul
+    if (!skipPushState && typeof window !== "undefined") {
+      const targetPath = getAppRoute(activeMainTab, slug);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab: activeMainTab, city: slug }, "", targetPath);
+      }
+    }
+
+    try {
+      const res = await fetch(`/api/fixtures?city=${slug}`);
+      if (!res.ok) throw new Error("İl verisi alınamadı.");
+      const json: FixturesData = await res.json();
+      setData(json);
+    } catch (err: any) {
+      setError(err.message || "İl fikstürü yüklenirken hata oluştu.");
+    } finally {
+      setLoading(false);
+    }
+  }, [activeMainTab]);
+
   // Tarayıcı Geri/İleri butonları (popstate) dinleyicisi
   useEffect(() => {
     const handlePopState = () => {
       const { tab, city } = parseAppRoute(window.location.pathname);
       setActiveMainTab(tab);
       if (city !== currentCitySlug) {
-        handleSelectCity(city);
+        handleSelectCity(city, true);
       }
     };
 
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, [currentCitySlug]);
+  }, [currentCitySlug, handleSelectCity]);
 
   useEffect(() => {
     if (initialTab) {
@@ -161,24 +209,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   }, [initialTab]);
 
   useEffect(() => {
-    if (initialCity && initialCity !== currentCitySlug) {
-      setCurrentCitySlug(initialCity);
+    if (initialCity) {
+      setCurrentCitySlug((prev) => (prev !== initialCity ? initialCity : prev));
     }
   }, [initialCity]);
-
-  // Sonuçlar Alt Sekmesi: "all" (Tüm Sonuçlar) veya "yesterday" (Dünün Sonuçları)
-  const [resultsSubTab, setResultsSubTab] = useState<"all" | "yesterday">("all");
-  const [selectedResultDate, setSelectedResultDate] = useState("all");
-
-  // Fikstür Filtre Durumları
-  const [selectedCategory, setSelectedCategory] = useState("Tümü");
-  const [selectedDate, setSelectedDate] = useState("all");
-  const [statusFilter, setStatusFilter] = useState("all"); // "all" | "upcoming" | "finished"
-  const [selectedHall, setSelectedHall] = useState("Tümü");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy">("all");
-
-  const [citiesList, setCitiesList] = useState<any[]>([]);
 
   // Şehir bazlı gizleme / daraltma durumları (Collapse / Accordion)
   const [collapsedResultCities, setCollapsedResultCities] = useState<Record<string, boolean>>({});
@@ -300,39 +334,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     }
   };
 
-  const handleSelectCity = async (slug: string) => {
-    setCurrentCitySlug(slug);
-    setLoading(true);
-    setError(null);
-    setSelectedCategory("Tümü");
-    setSelectedDate("all");
-    setSelectedResultDate("all");
-    setSelectedHall("Tümü");
-    setStatusFilter("all");
-    setVolleyboxFilter("all");
-    setSearchQuery("");
-    setResultsSubTab("all");
-
-    // Tarayıcı URL'ini güncelle: Örneğin /puan-durumu -> /puan-durumu/istanbul
-    if (typeof window !== "undefined") {
-      const targetPath = getAppRoute(activeMainTab, slug);
-      const currentPath = window.location.pathname;
-      if (currentPath !== targetPath) {
-        window.history.pushState({ tab: activeMainTab, city: slug }, "", targetPath);
-      }
-    }
-
-    try {
-      const res = await fetch(`/api/fixtures?city=${slug}`);
-      if (!res.ok) throw new Error("İl verisi alınamadı.");
-      const json: FixturesData = await res.json();
-      setData(json);
-    } catch (err: any) {
-      setError(err.message || "İl fikstürü yüklenirken hata oluştu.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
   // Bugün tarihi
   const todayStr = useMemo(() => {

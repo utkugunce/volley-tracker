@@ -326,7 +326,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:underline font-semibold"
                     >
-                      <span>Volleybox'ta Aç</span>
+                      <span>Volleybox&apos;ta Aç</span>
                       <ExternalLink size={11} />
                     </a>
                   )}
