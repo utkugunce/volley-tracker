@@ -10,6 +10,7 @@ import { generateMatchIcs, generateSeasonIcs, downloadIcsFile } from "@/utils/ic
 import { getHallNavigationUrl } from "@/utils/halls";
 import { PrintScheduleButton } from "./PrintScheduleButton";
 import { formatGroupName } from "@/utils/grouping";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 
 interface FixtureTableProps {
   title: string;
@@ -54,8 +55,10 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
 
   const handleCopy = (e: React.MouseEvent, match: Match) => {
     e.stopPropagation();
+    const forfeit = getMatchForfeitInfo(match);
     const dateText = match.date === "TBD" ? "Tarih Açıklanacak" : `${match.date} ${match.time}`;
-    const scoreText = match.status === "finished" ? `\nSkor: ${match.score} (${(match.set_scores || []).join(", ")})` : "";
+    const forfeitSuffix = forfeit.isForfeit ? " [Hükmen]" : "";
+    const scoreText = match.status === "finished" ? `\nSkor: ${match.score} (${(match.set_scores || []).join(", ")})${forfeitSuffix}` : "";
     const cityName = match.city || effectiveCity || city;
     const text = `TVF ${cityName} ${match.category} (${match.group}):\n${match.home_team} vs ${match.away_team}\n🗓 ${dateText}\n📍 ${match.hall}${scoreText}\nMaç No: #${match.match_no}`;
     navigator.clipboard.writeText(text);
@@ -181,6 +184,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
               const isCopied = copiedId === match.id;
               const disc = match.volleybox?.discrepancy;
               const hasDiff = Boolean(disc?.has_diff);
+              const forfeitInfo = getMatchForfeitInfo(match);
 
               const currentGroup = formatGroupName(match.group);
               const prevGroup = idx > 0 ? formatGroupName(matches[idx - 1]?.group) : null;
@@ -333,13 +337,23 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   </td>
 
                   {/* 6. Skor */}
-                  <td className="py-2 px-1.5 text-center whitespace-nowrap w-16">
+                  <td className="py-2 px-1.5 text-center whitespace-nowrap w-20">
                     {isFinished ? (
-                      <span className="inline-block px-2 py-0.5 rounded-lg font-mono font-black text-[11px] bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-wide">
-                        {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
-                          ? `${match.home_score} - ${match.away_score}`
-                          : match.score || "- : -"}
-                      </span>
+                      <div className="inline-flex flex-col items-center">
+                        <span className="inline-block px-2 py-0.5 rounded-lg font-mono font-black text-[11px] bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-wide">
+                          {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
+                            ? `${match.home_score} - ${match.away_score}`
+                            : match.score || "- : -"}
+                        </span>
+                        {forfeitInfo.isForfeit && (
+                          <span
+                            className="text-[9px] font-black uppercase tracking-wider text-amber-300 bg-amber-950/80 border border-amber-600/70 px-1 py-0.2 rounded mt-0.5"
+                            title={forfeitInfo.reason || "TVF kuralı gereği hükmen galibiyet"}
+                          >
+                            Hükmen
+                          </span>
+                        )}
+                      </div>
                     ) : match.date !== "TBD" ? (
                       <span className="inline-block px-2 py-0.5 rounded-md font-mono text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700/70">
                         vs
@@ -369,6 +383,14 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                             </span>
                           );
                         })}
+                        {forfeitInfo.isForfeit && (
+                          <span
+                            className="inline-flex items-center gap-0.5 text-[10px] font-black px-1.5 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30 shadow-2xs"
+                            title={forfeitInfo.reason || "TVF kuralı gereği hükmen tescil edilmiştir"}
+                          >
+                            <span>(Hükmen)</span>
+                          </span>
+                        )}
                       </div>
                     ) : (
                       <span className="text-slate-500 text-[11px] font-mono">-</span>
@@ -497,6 +519,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             const isCopied = copiedId === match.id;
             const disc = match.volleybox?.discrepancy;
             const hasDiff = Boolean(disc?.has_diff);
+            const forfeitInfo = getMatchForfeitInfo(match);
 
             const currentGroup = formatGroupName(match.group);
             const prevGroup = idx > 0 ? formatGroupName(matches[idx - 1]?.group) : null;
@@ -539,8 +562,12 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       {match.time === "--:--" ? "Saat Belirtilmedi" : match.time}
                     </span>
                     {isFinished && (
-                      <span className="ml-1 px-1.5 py-0.2 rounded text-[9px] font-black uppercase tracking-wider bg-red-600/20 text-red-300 border border-red-500/30">
-                        Bitti
+                      <span className={`ml-1 px-1.5 py-0.2 rounded text-[9px] font-black uppercase tracking-wider ${
+                        forfeitInfo.isForfeit
+                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
+                          : "bg-red-600/20 text-red-300 border border-red-500/30"
+                      }`}>
+                        {forfeitInfo.isForfeit ? "Hükmen" : "Bitti"}
                       </span>
                     )}
                   </div>
@@ -669,6 +696,11 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           </span>
                         );
                       })}
+                      {forfeitInfo.isForfeit && (
+                        <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                          (Hükmen)
+                        </span>
+                      )}
                     </div>
                   )}
                 </div>

@@ -6,6 +6,7 @@ import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { MapPin, Calendar, Clock, Star, CalendarPlus, ExternalLink, Flame, Trophy, Navigation, Copy, Check } from "lucide-react";
 import { getHallNavigationUrl } from "@/utils/halls";
 import { generateMatchIcs, downloadIcsFile } from "@/utils/ics";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 
 interface FeaturedMatchHeroProps {
   matches: Match[];
@@ -208,7 +209,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
                 </span>
               </div>
               {featuredMatch.set_scores && featuredMatch.set_scores.length > 0 && (
-                <div className="flex items-center gap-1.5 mt-1">
+                <div className="flex items-center gap-1.5 mt-1 flex-wrap justify-center">
                   {featuredMatch.set_scores.map((set, idx) => (
                     <span
                       key={idx}
@@ -217,6 +218,11 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
                       {set}
                     </span>
                   ))}
+                  {getMatchForfeitInfo(featuredMatch).isForfeit && (
+                    <span className="px-2 py-0.5 rounded-md text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                      Hükmen
+                    </span>
+                  )}
                 </div>
               )}
             </div>

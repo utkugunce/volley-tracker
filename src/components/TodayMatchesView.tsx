@@ -28,6 +28,7 @@ import {
 import { formatDateTurkish, isMatchPassed, compareMatchTimes } from "@/utils/calendar";
 import { useFavorites } from "@/utils/useFavorites";
 import { getHallNavigationUrl, getHallDetails } from "@/utils/halls";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { PrintScheduleButton } from "./PrintScheduleButton";
 
 interface TodayMatchesViewProps {
@@ -291,6 +292,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     const homeWon = isFinished && (m.home_score ?? 0) > (m.away_score ?? 0);
     const awayWon = isFinished && (m.away_score ?? 0) > (m.home_score ?? 0);
     const disc = m.volleybox?.discrepancy;
+    const forfeitInfo = getMatchForfeitInfo(m);
 
     const homeScoreText =
       m.home_score !== null && m.home_score !== undefined
@@ -334,9 +336,13 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
           <div className="flex items-center gap-1.5 shrink-0">
             {isFinished ? (
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-black tracking-wider bg-emerald-950/90 text-emerald-300 border border-emerald-500/40 shadow-xs flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                BİTTİ
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-black tracking-wider border shadow-xs flex items-center gap-1 ${
+                forfeitInfo.isForfeit
+                  ? "bg-amber-950/90 text-amber-300 border-amber-500/40"
+                  : "bg-emerald-950/90 text-emerald-300 border-emerald-500/40"
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${forfeitInfo.isForfeit ? "bg-amber-400" : "bg-emerald-400"}`} />
+                {forfeitInfo.isForfeit ? "HÜKMEN" : "BİTTİ"}
               </span>
             ) : (
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black tracking-wide bg-sky-950/90 text-sky-300 border border-sky-500/40 flex items-center gap-1 shadow-xs">
@@ -442,6 +448,11 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                   {set}
                 </span>
               ))}
+              {forfeitInfo.isForfeit && (
+                <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                  (Hükmen)
+                </span>
+              )}
             </div>
           )}
         </div>

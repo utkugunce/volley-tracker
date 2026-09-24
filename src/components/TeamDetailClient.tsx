@@ -26,6 +26,7 @@ import {
 import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
 import { TeamRosterView } from "@/components/TeamRosterView";
@@ -610,13 +611,20 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                       </div>
 
                       {/* Skor Rozeti */}
-                      <div className="shrink-0 text-center px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 shadow-inner">
-                        {isFinished ? (
-                          <span className={`font-mono font-black text-sm ${isWon ? "text-emerald-400" : isLoss ? "text-rose-400" : "text-white"}`}>
-                            {m.home_score} - {m.away_score}
+                      <div className="shrink-0 flex flex-col items-center">
+                        <div className="text-center px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 shadow-inner">
+                          {isFinished ? (
+                            <span className={`font-mono font-black text-sm ${isWon ? "text-emerald-400" : isLoss ? "text-rose-400" : "text-white"}`}>
+                              {m.home_score} - {m.away_score}
+                            </span>
+                          ) : (
+                            <span className="font-mono text-xs text-slate-400">vs</span>
+                          )}
+                        </div>
+                        {isFinished && getMatchForfeitInfo(m).isForfeit && (
+                          <span className="text-[9px] font-black uppercase text-amber-300 bg-amber-500/20 border border-amber-500/40 px-1 py-0.2 rounded mt-0.5 shadow-2xs">
+                            Hükmen
                           </span>
-                        ) : (
-                          <span className="font-mono text-xs text-slate-400">vs</span>
                         )}
                       </div>
 
@@ -634,8 +642,13 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                     <div className="flex items-center justify-end gap-2 shrink-0">
                       {/* Set Skorları */}
                       {isFinished && m.set_scores && m.set_scores.length > 0 && (
-                        <span className="text-[10px] font-mono text-slate-400 hidden md:inline-block">
-                          ({m.set_scores.join(", ")})
+                        <span className="text-[10px] font-mono text-slate-400 hidden md:inline-flex items-center gap-1">
+                          <span>({m.set_scores.join(", ")})</span>
+                          {getMatchForfeitInfo(m).isForfeit && (
+                            <span className="text-[9px] font-bold text-amber-300 bg-amber-500/15 border border-amber-500/30 px-1 py-0.2 rounded">
+                              Hükmen
+                            </span>
+                          )}
                         </span>
                       )}
 

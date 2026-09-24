@@ -37,7 +37,7 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
   React.useEffect(() => {
     if (selectedDate && selectedDate !== "all" && scrollContainerRef.current) {
       const activeEl = scrollContainerRef.current.querySelector<HTMLElement>('[aria-selected="true"]');
-      if (activeEl) {
+      if (activeEl && typeof activeEl.scrollIntoView === "function") {
         activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
       }
     }

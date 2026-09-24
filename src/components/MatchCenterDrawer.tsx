@@ -26,6 +26,7 @@ import { generateMatchIcs, downloadIcsFile } from "@/utils/ics";
 import { slugify } from "@/utils/slugify";
 import { triggerHaptic } from "@/utils/haptics";
 import { getVolleyboxMapping } from "@/utils/volleybox";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 
 interface MatchCenterDrawerProps {
   match: Match | null;
@@ -72,11 +73,14 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
   const homeSlug = slugify(homeMapping?.matched_as || match.home_team);
   const awaySlug = slugify(awayMapping?.matched_as || match.away_team);
 
+  const forfeitInfo = getMatchForfeitInfo(match);
+
   const handleCopy = () => {
     triggerHaptic("light");
     const dateText = match.date === "TBD" ? "Tarih Açıklanacak" : `${match.date} ${match.time}`;
+    const forfeitSuffix = forfeitInfo.isForfeit ? " [Hükmen]" : "";
     const scoreText = isFinished
-      ? `\nSkor: ${match.score} (${(match.set_scores || []).join(", ")})`
+      ? `\nSkor: ${match.score} (${(match.set_scores || []).join(", ")})${forfeitSuffix}`
       : "";
     const text = `TVF ${effectiveCity} ${match.category} (${match.group}):\n${match.home_team} vs ${match.away_team}\n🗓 ${dateText}\n📍 ${match.hall}${scoreText}\nMaç No: #${match.match_no}`;
     navigator.clipboard.writeText(text);
@@ -176,10 +180,20 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                 {/* Skor / VS */}
                 <div className="col-span-1 flex flex-col items-center justify-center">
                   {isFinished ? (
-                    <div className="px-3 py-1.5 rounded-2xl bg-slate-950/90 border border-slate-800 shadow-lg text-center font-scoreboard">
-                      <span className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                        {match.home_score ?? 0} : {match.away_score ?? 0}
-                      </span>
+                    <div className="flex flex-col items-center">
+                      <div className="px-3 py-1.5 rounded-2xl bg-slate-950/90 border border-slate-800 shadow-lg text-center font-scoreboard">
+                        <span className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                          {match.home_score ?? 0} : {match.away_score ?? 0}
+                        </span>
+                      </div>
+                      {forfeitInfo.isForfeit && (
+                        <span
+                          className="mt-1 px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow-xs"
+                          title={forfeitInfo.reason}
+                        >
+                          Hükmen
+                        </span>
+                      )}
                     </div>
                   ) : (
                     <div className="w-10 h-10 rounded-2xl bg-slate-800/80 border border-slate-700 flex items-center justify-center font-black text-amber-400 text-sm shadow-xs font-scoreboard">
@@ -207,9 +221,21 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
               {/* Set Skorları Tablosu */}
               {isFinished && match.set_scores && match.set_scores.length > 0 && (
                 <div className="mt-6 pt-5 border-t border-slate-800/80 space-y-2">
-                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center">
-                    Set Skorları Dökümü
+                  <div className="flex items-center justify-center gap-2">
+                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center">
+                      Set Skorları Dökümü
+                    </span>
+                    {forfeitInfo.isForfeit && (
+                      <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                        Hükmen Tescil
+                      </span>
+                    )}
                   </div>
+                  {forfeitInfo.isForfeit && (
+                    <p className="text-[11px] text-center text-amber-300/90 bg-amber-950/50 border border-amber-800/50 rounded-xl px-3 py-1.5 font-medium max-w-sm mx-auto">
+                      TVF kuralı gereği 25-0 setlerle hükmen sonuçlanmıştır.
+                    </p>
+                  )}
                   <div className="flex flex-wrap items-center justify-center gap-2">
                     {match.set_scores.map((setStr, idx) => {
                       const parts = setStr.split("-").map((n) => parseInt(n.trim(), 10));

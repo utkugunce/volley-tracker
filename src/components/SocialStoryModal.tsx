@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Match } from "@/types/fixture";
 import { X, Download, Share2, Sparkles, Check, Copy } from "lucide-react";
 import { triggerHaptic } from "@/utils/haptics";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 
 interface SocialStoryModalProps {
   match: Match | null;
@@ -125,7 +126,11 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
       if (match.set_scores && match.set_scores.length > 0) {
         ctx.fillStyle = "#cbd5e1";
         ctx.font = "bold 34px monospace, sans-serif";
-        ctx.fillText(match.set_scores.join("   •   "), 540, 875);
+        const forfeit = getMatchForfeitInfo(match);
+        const setScoresText = forfeit.isForfeit
+          ? `${match.set_scores.join("   •   ")}   (HÜKMEN)`
+          : match.set_scores.join("   •   ");
+        ctx.fillText(setScoresText, 540, 875);
       }
     } else {
       // VS Rozeti

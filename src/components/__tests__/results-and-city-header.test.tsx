@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { isMatchScored } from "../DashboardClient";
 import { FilterBar } from "../FilterBar";
+import { DateRibbon } from "../DateRibbon";
 import { Match } from "@/types/fixture";
 
 describe("Results and City Header enhancements", () => {
