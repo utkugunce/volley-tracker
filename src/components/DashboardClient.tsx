@@ -180,11 +180,19 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const [citiesList, setCitiesList] = useState<any[]>([]);
 
-  // Şehir bazlı gizleme / daraltma durumu (Collapse / Accordion)
-  const [collapsedCities, setCollapsedCities] = useState<Record<string, boolean>>({});
+  // Şehir bazlı gizleme / daraltma durumları (Collapse / Accordion)
+  const [collapsedResultCities, setCollapsedResultCities] = useState<Record<string, boolean>>({});
+  const [collapsedFixtureCities, setCollapsedFixtureCities] = useState<Record<string, boolean>>({});
 
-  const toggleCityCollapse = (cityName: string) => {
-    setCollapsedCities((prev) => ({
+  const toggleResultCityCollapse = (cityName: string) => {
+    setCollapsedResultCities((prev) => ({
+      ...prev,
+      [cityName]: !prev[cityName],
+    }));
+  };
+
+  const toggleFixtureCityCollapse = (cityName: string) => {
+    setCollapsedFixtureCities((prev) => ({
       ...prev,
       [cityName]: !prev[cityName],
     }));
@@ -559,6 +567,34 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     });
   }, [filteredMatches, isAllCities, data?.city]);
 
+  // Fikstür maçlarını illere göre grupla (Her ilin altında lig ve grup tabloları)
+  const fixturesByCity = useMemo(() => {
+    const map = new Map<
+      string,
+      {
+        city: string;
+        totalMatches: number;
+        sections: typeof groupedSections;
+      }
+    >();
+
+    groupedSections.forEach((sec) => {
+      const cityName = sec.city || data?.city || "Genel";
+      if (!map.has(cityName)) {
+        map.set(cityName, {
+          city: cityName,
+          totalMatches: 0,
+          sections: [],
+        });
+      }
+      const group = map.get(cityName)!;
+      group.totalMatches += sec.matches.length;
+      group.sections.push(sec);
+    });
+
+    return Array.from(map.values()).sort((a, b) => a.city.localeCompare(b.city, "tr"));
+  }, [groupedSections, data?.city]);
+
   // Sadece skoru/sonucu olan maçlar için filtrelenmiş liste
   const filteredResultMatches = useMemo(() => {
     return (data?.matches || []).filter((m) => {
@@ -618,6 +654,42 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const resultsByCityAndLeague = useMemo<CityResultGroup[]>(() => {
     return groupResultsByCityAndLeague(filteredResultMatches, data?.city);
   }, [filteredResultMatches, data?.city]);
+
+  // Sonuçlar sekmesi toplu il gizleme / gösterme durumları
+  const areAllResultCitiesCollapsed = useMemo(() => {
+    if (resultsByCityAndLeague.length === 0) return false;
+    return resultsByCityAndLeague.every((c) => Boolean(collapsedResultCities[c.city]));
+  }, [resultsByCityAndLeague, collapsedResultCities]);
+
+  const expandAllResultCities = () => {
+    setCollapsedResultCities({});
+  };
+
+  const collapseAllResultCities = () => {
+    const next: Record<string, boolean> = {};
+    resultsByCityAndLeague.forEach((c) => {
+      next[c.city] = true;
+    });
+    setCollapsedResultCities(next);
+  };
+
+  // Fikstür sekmesi toplu il gizleme / gösterme durumları
+  const areAllFixtureCitiesCollapsed = useMemo(() => {
+    if (fixturesByCity.length === 0) return false;
+    return fixturesByCity.every((c) => Boolean(collapsedFixtureCities[c.city]));
+  }, [fixturesByCity, collapsedFixtureCities]);
+
+  const expandAllFixtureCities = () => {
+    setCollapsedFixtureCities({});
+  };
+
+  const collapseAllFixtureCities = () => {
+    const next: Record<string, boolean> = {};
+    fixturesByCity.forEach((c) => {
+      next[c.city] = true;
+    });
+    setCollapsedFixtureCities(next);
+  };
 
   const handleSelectResultsSubTab = (subTab: "all" | "yesterday") => {
     setResultsSubTab(subTab);
@@ -798,11 +870,60 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               </div>
             )}
 
+            {/* Toplu İl Gizleme / Gösterme Kontrol Çubuğu */}
+            {resultsByCityAndLeague.length > 0 && (
+              <div className="flex flex-wrap items-center justify-between gap-2.5 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-3.5 sm:px-4 py-2 mb-4 shadow-xs">
+                <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>
+                    Toplam <strong className="text-white font-mono">{resultsByCityAndLeague.length}</strong> İl Listeleniyor
+                  </span>
+                  {areAllResultCitiesCollapsed && (
+                    <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
+                      (Tümü Gizli)
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-1.5">
+                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                    <button
+                      type="button"
+                      onClick={expandAllResultCities}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        !areAllResultCitiesCollapsed
+                          ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs"
+                          : "text-slate-400 hover:text-white"
+                      }`}
+                      title="Tüm illeri aç ve sonuçları göster"
+                    >
+                      <ChevronDown size={13} className="text-emerald-400" />
+                      <span>Tümünü Göster</span>
+                    </button>
+                    <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                    <button
+                      type="button"
+                      onClick={collapseAllResultCities}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        areAllResultCitiesCollapsed
+                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                          : "text-slate-400 hover:text-white"
+                      }`}
+                      title="Tüm illeri gizle"
+                    >
+                      <ChevronUp size={13} className="text-amber-400" />
+                      <span>Tümünü Gizle</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Sonuçlar Tablosu: Şehir Başlığı Altında Ligler (U18/U16) ve Gruplar (A Grubu, B Grubu) */}
             {resultsByCityAndLeague.length > 0 && (
               <div className="space-y-6">
                 {resultsByCityAndLeague.map((cityGroup) => {
-                  const isCityCollapsed = Boolean(collapsedCities[cityGroup.city]);
+                  const isCityCollapsed = Boolean(collapsedResultCities[cityGroup.city]);
 
                   return (
                     <div key={cityGroup.city} className="space-y-3">
@@ -811,11 +932,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                         role="button"
                         tabIndex={0}
                         aria-expanded={!isCityCollapsed}
-                        onClick={() => toggleCityCollapse(cityGroup.city)}
+                        onClick={() => toggleResultCityCollapse(cityGroup.city)}
                         onKeyDown={(e) => {
                           if (e.key === "Enter" || e.key === " ") {
                             e.preventDefault();
-                            toggleCityCollapse(cityGroup.city);
+                            toggleResultCityCollapse(cityGroup.city);
                           }
                         }}
                         className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-[#0d172a] to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
@@ -1045,22 +1166,143 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               />
             )}
 
-            {/* Resmi Fikstür Tablosu: Tarih - Saat - A Takımı - B Takımı - Skor - Set Skorları - Yer */}
-            {groupedSections.length > 0 && (
-              <div className="space-y-4">
-                {groupedSections.map((sec, idx) => (
-                  <FixtureTable
-                    key={idx}
-                    title={sec.title}
-                    subTitle={sec.subTitle}
-                    matches={sec.matches}
-                    favorites={favorites}
-                    onToggleFavorite={toggleFavorite}
-                    city={sec.city || data?.city}
-                    showCityBadge={isAllCities}
-                    onSelectMatch={setSelectedMatch}
-                  />
-                ))}
+            {/* Toplu İl Gizleme / Gösterme Kontrol Çubuğu */}
+            {fixturesByCity.length > 0 && (
+              <div className="flex flex-wrap items-center justify-between gap-2.5 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-3.5 sm:px-4 py-2 mb-4 shadow-xs">
+                <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
+                  <div className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" />
+                  <span>
+                    Toplam <strong className="text-white font-mono">{fixturesByCity.length}</strong> İl Listeleniyor
+                  </span>
+                  {areAllFixtureCitiesCollapsed && (
+                    <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
+                      (Tümü Gizli)
+                    </span>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-1.5">
+                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                    <button
+                      type="button"
+                      onClick={expandAllFixtureCities}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        !areAllFixtureCitiesCollapsed
+                          ? "bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-xs"
+                          : "text-slate-400 hover:text-white"
+                      }`}
+                      title="Tüm illeri aç ve fikstür maçlarını göster"
+                    >
+                      <ChevronDown size={13} className="text-sky-400" />
+                      <span>Tümünü Göster</span>
+                    </button>
+                    <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                    <button
+                      type="button"
+                      onClick={collapseAllFixtureCities}
+                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        areAllFixtureCitiesCollapsed
+                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                          : "text-slate-400 hover:text-white"
+                      }`}
+                      title="Tüm illeri gizle"
+                    >
+                      <ChevronUp size={13} className="text-amber-400" />
+                      <span>Tümünü Gizle</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Resmi Fikstür Tablosu: İllere Göre Gruplanmış ve Açılır/Kapanır */}
+            {fixturesByCity.length > 0 && (
+              <div className="space-y-6">
+                {fixturesByCity.map((cityGroup) => {
+                  const isCityCollapsed = Boolean(collapsedFixtureCities[cityGroup.city]);
+
+                  return (
+                    <div key={cityGroup.city} className="space-y-3">
+                      {/* Şehir Başlık Banner'ı: Tıklandığında o ilin maçlarını gizler/açar */}
+                      <div
+                        role="button"
+                        tabIndex={0}
+                        aria-expanded={!isCityCollapsed}
+                        onClick={() => toggleFixtureCityCollapse(cityGroup.city)}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            toggleFixtureCityCollapse(cityGroup.city);
+                          }
+                        }}
+                        className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-[#0d172a] to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
+                        title={isCityCollapsed ? `${cityGroup.city} fikstürünü göster` : `${cityGroup.city} fikstürünü gizle`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-7 h-7 rounded-lg bg-sky-500/20 group-hover/city:bg-sky-500/30 border border-sky-400/40 flex items-center justify-center text-sky-400 font-black shadow-xs transition-colors">
+                            <MapPin size={15} className="text-sky-300" />
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <h2 className="text-xs sm:text-sm md:text-base font-black text-white tracking-wide uppercase flex items-center gap-1.5 group-hover/city:text-sky-200 transition-colors">
+                              <span>{cityGroup.city}</span>
+                              <span className="text-slate-400 font-normal text-xs">• TVF İl Temsilciliği</span>
+                            </h2>
+                            <span className="text-[10px] sm:text-[11px] font-bold text-sky-400 bg-sky-950/80 border border-sky-700/60 px-2 py-0.5 rounded-full font-mono">
+                              {cityGroup.totalMatches} Maç
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          {isCityCollapsed ? (
+                            <span className="text-[11px] text-amber-300 font-semibold bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-lg flex items-center gap-1">
+                              <span>Gizlendi (Göster)</span>
+                              <ChevronDown size={13} className="text-amber-400" />
+                            </span>
+                          ) : (
+                            <span className="text-[11px] text-slate-400 font-medium group-hover/city:text-slate-200 flex items-center gap-1">
+                              <span className="hidden sm:inline">Gizle</span>
+                              <ChevronUp size={13} className="text-slate-400 group-hover/city:text-white transition-colors" />
+                            </span>
+                          )}
+
+                          {isAllCities && (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleSelectCity(slugify(cityGroup.city));
+                              }}
+                              className="text-[11px] text-sky-400 hover:text-sky-200 font-semibold underline underline-offset-2 transition-colors cursor-pointer hidden sm:inline-flex ml-2"
+                              title={`${cityGroup.city} sayfasına git`}
+                            >
+                              {cityGroup.city} Sayfası →
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Bu Şehirdeki Fikstür Tabloları */}
+                      {!isCityCollapsed && (
+                        <div className="space-y-4 animate-in fade-in-50 duration-200">
+                          {cityGroup.sections.map((sec, idx) => (
+                            <FixtureTable
+                              key={`${cityGroup.city}-${sec.title}-${sec.subTitle}-${idx}`}
+                              title={sec.title}
+                              subTitle={sec.subTitle}
+                              matches={sec.matches}
+                              favorites={favorites}
+                              onToggleFavorite={toggleFavorite}
+                              city={sec.city || data?.city}
+                              showCityBadge={false}
+                              onSelectMatch={setSelectedMatch}
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             )}
 
