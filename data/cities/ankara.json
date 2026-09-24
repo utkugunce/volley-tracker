@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-24T10:34:07.846934",
+  "updated_at": "2026-09-24T15:31:54.806551",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 34,
+  "total_matches": 35,
   "source": "https://ankara.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -1484,10 +1484,10 @@
       }
     },
     {
-      "id": "ankara-20261003-022",
+      "id": "ankara-20261006-022",
       "city": "Ankara",
-      "date": "2026-10-03",
-      "time": "14:00",
+      "date": "2026-10-06",
+      "time": "19:30",
       "hall": "Batıkent S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -1502,25 +1502,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401452",
-        "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-b-u16-baskent-arma-spor-b-u16-c401452",
-        "host_name": "TVF Spor Lisesi - B U16",
-        "guest_name": "Başkent Arma Spor - B U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-03",
-        "vb_time": "14:00",
-        "vb_hall": "Batıkent Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-03",
-          "vb_time": "14:00",
-          "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1613,7 +1606,41 @@
       }
     },
     {
-      "id": "ankara-20260922-025",
+      "id": "ankara-20261003-025",
+      "city": "Ankara",
+      "date": "2026-10-03",
+      "time": "14:00",
+      "hall": "Batıkent S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "3. Grup",
+      "match_no": "3",
+      "home_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
+      "away_team": "TVF Spor Lisesi U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20260922-026",
       "city": "Ankara",
       "date": "2026-09-22",
       "time": "19:30",
@@ -1658,7 +1685,7 @@
       }
     },
     {
-      "id": "ankara-20260922-026",
+      "id": "ankara-20260922-027",
       "city": "Ankara",
       "date": "2026-09-22",
       "time": "19:30",
@@ -1704,7 +1731,7 @@
       }
     },
     {
-      "id": "ankara-20261003-027",
+      "id": "ankara-20261003-028",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "12:00",
@@ -1745,9 +1772,9 @@
       }
     },
     {
-      "id": "ankara-20261003-028",
+      "id": "ankara-20261004-029",
       "city": "Ankara",
-      "date": "2026-10-03",
+      "date": "2026-10-04",
       "time": "16:00",
       "hall": "Batıkent S.S.",
       "category": "Yıldız Kızlar Süper Lig",
@@ -1763,30 +1790,23 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401454",
-        "url": "https://women.volleybox.net/tr/genia-z-akademi-spor-kulubu-u16-zeren-spor-kulubu-u16-c401454",
-        "host_name": "Genia İz Akademi Spor Kulübü U16",
-        "guest_name": "Zeren Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-03",
-        "vb_time": "16:00",
-        "vb_hall": "Batıkent Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-03",
-          "vb_time": "16:00",
-          "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
     {
-      "id": "ankara-20260925-029",
+      "id": "ankara-20260925-030",
       "city": "Ankara",
       "date": "2026-09-25",
       "time": "18:00",
@@ -1827,7 +1847,7 @@
       }
     },
     {
-      "id": "ankara-20260925-030",
+      "id": "ankara-20260925-031",
       "city": "Ankara",
       "date": "2026-09-25",
       "time": "19:30",
@@ -1868,7 +1888,7 @@
       }
     },
     {
-      "id": "ankara-20261003-031",
+      "id": "ankara-20261003-032",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "18:00",
@@ -1909,7 +1929,7 @@
       }
     },
     {
-      "id": "ankara-20260921-032",
+      "id": "ankara-20260921-033",
       "city": "Ankara",
       "date": "2026-09-21",
       "time": "19:30",
@@ -1954,7 +1974,7 @@
       }
     },
     {
-      "id": "ankara-20260924-033",
+      "id": "ankara-20260924-034",
       "city": "Ankara",
       "date": "2026-09-24",
       "time": "19:30",
@@ -1995,7 +2015,7 @@
       }
     },
     {
-      "id": "ankara-20261003-034",
+      "id": "ankara-20261003-035",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "18:00",
@@ -2036,6 +2056,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-09-24T10:35:34.971436"
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-09-24T15:33:25.336393"
 }

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-24T10:34:16.933696+00:00",
+  "updated_at": "2026-09-24T15:32:05.881882+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
-  "total_matches": 47,
+  "total_matches": 51,
   "source": "https://istanbul.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -389,7 +389,7 @@
     "Genç Kızlar 1. Ligi - 1. Bölge A Grubu": [
       {
         "rank": 1,
-        "team": "Beylerbeyi",
+        "team": "Beylerbeyi Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -406,7 +406,7 @@
       },
       {
         "rank": 2,
-        "team": "Alp",
+        "team": "Alp Voleybol Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -438,7 +438,7 @@
       },
       {
         "rank": 4,
-        "team": "Ateş A",
+        "team": "Ateş Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -453,7 +453,7 @@
       },
       {
         "rank": 5,
-        "team": "Boğaziçi Akademi",
+        "team": "Boğaziçi Akademi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -468,7 +468,7 @@
       },
       {
         "rank": 6,
-        "team": "Çengelköy Voleybol",
+        "team": "Çengelköy Voleybol Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -483,7 +483,7 @@
       },
       {
         "rank": 7,
-        "team": "Geleceğe Dönüş",
+        "team": "Geleceğe Dönüş Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -498,7 +498,7 @@
       },
       {
         "rank": 8,
-        "team": "Mavi Yıldızlar",
+        "team": "Mavi Yıldızlar Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -515,7 +515,7 @@
     "Genç Kızlar 1. Ligi - 1. Bölge B Grubu": [
       {
         "rank": 1,
-        "team": "Dinamo",
+        "team": "Dinamo Spor U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -532,7 +532,7 @@
       },
       {
         "rank": 2,
-        "team": "Blok Akademi",
+        "team": "Blok Akademi Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -549,7 +549,7 @@
       },
       {
         "rank": 3,
-        "team": "Altınyurt",
+        "team": "Altınyurt Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -564,7 +564,7 @@
       },
       {
         "rank": 4,
-        "team": "Başarır",
+        "team": "Başarır Performans Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -579,7 +579,7 @@
       },
       {
         "rank": 5,
-        "team": "Beykoz Voleybol",
+        "team": "Beykoz Voleybol Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -594,7 +594,7 @@
       },
       {
         "rank": 6,
-        "team": "Dev Ataşehir",
+        "team": "Dev Ataşehir Spor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -609,7 +609,7 @@
       },
       {
         "rank": 7,
-        "team": "Kuzey Yıldızları A",
+        "team": "Kuzey Yıldızları Spor Kulübü - A U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -641,7 +641,7 @@
     "Genç Kızlar 1. Ligi - 2. Bölge A Grubu": [
       {
         "rank": 1,
-        "team": "2014 Maltepe",
+        "team": "2014 Maltepe Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -656,7 +656,7 @@
       },
       {
         "rank": 2,
-        "team": "Anadolu Olimpik",
+        "team": "İstanbul Anadolu Olimpik SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -671,7 +671,7 @@
       },
       {
         "rank": 3,
-        "team": "İstanbul Marmara",
+        "team": "İstanbul Marmara Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -686,7 +686,7 @@
       },
       {
         "rank": 4,
-        "team": "Kartal Yıldızları",
+        "team": "Kartal Yıldızları Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -701,7 +701,7 @@
       },
       {
         "rank": 5,
-        "team": "Marmara Elit",
+        "team": "Marmara Elit Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -716,7 +716,7 @@
       },
       {
         "rank": 6,
-        "team": "Tuzla Mercan",
+        "team": "Tuzla Mercan Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -731,7 +731,7 @@
       },
       {
         "rank": 7,
-        "team": "Tuzla New",
+        "team": "Tuzla New Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -746,7 +746,7 @@
       },
       {
         "rank": 8,
-        "team": "Tuzla Rekor B",
+        "team": "Tuzla Rekor Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -763,7 +763,7 @@
     "Genç Kızlar 1. Ligi - 2. Bölge B Grubu": [
       {
         "rank": 1,
-        "team": "Ada Yıldızları",
+        "team": "Ada Yıldızları Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -778,7 +778,7 @@
       },
       {
         "rank": 2,
-        "team": "Anadolu Marmara",
+        "team": "Anadolu Marmara SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -808,7 +808,7 @@
       },
       {
         "rank": 4,
-        "team": "Maç Sayısı",
+        "team": "Maç Sayısı Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -838,7 +838,7 @@
       },
       {
         "rank": 6,
-        "team": "Pendik Akademi",
+        "team": "Pendik Akademi Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -853,7 +853,7 @@
       },
       {
         "rank": 7,
-        "team": "Pendik Güzelyalı",
+        "team": "Pendik Güzelyalı Voleybol Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -868,7 +868,7 @@
       },
       {
         "rank": 8,
-        "team": "Süreyyapaşa",
+        "team": "Süreyyapaşa Gençlik Ve Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -885,7 +885,7 @@
     "Genç Kızlar 1. Ligi - 3. Bölge A Grubu": [
       {
         "rank": 1,
-        "team": "Anadolu Smaç",
+        "team": "Anadolu Smaç Spor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -900,7 +900,7 @@
       },
       {
         "rank": 2,
-        "team": "Ataşehir Yıldızları",
+        "team": "Ataşehir Yıldızları U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -915,7 +915,7 @@
       },
       {
         "rank": 3,
-        "team": "Çekmeköy İstanbul A",
+        "team": "Çekmeköy İstanbul SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -930,7 +930,7 @@
       },
       {
         "rank": 4,
-        "team": "Dev Anadolu Yıldızları",
+        "team": "Dev Anadolu Yıldızları U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -945,7 +945,7 @@
       },
       {
         "rank": 5,
-        "team": "Ekol",
+        "team": "Ekol Spor Kulubü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -960,7 +960,7 @@
       },
       {
         "rank": 6,
-        "team": "İstanbul Alfa",
+        "team": "Alfa Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -975,7 +975,7 @@
       },
       {
         "rank": 7,
-        "team": "İstanbul Anka",
+        "team": "İstanbul Anka Spor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -990,7 +990,7 @@
       },
       {
         "rank": 8,
-        "team": "Vadi",
+        "team": "İstanbul Vadi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1007,7 +1007,7 @@
     "Genç Kızlar 1. Ligi - 3. Bölge B Grubu": [
       {
         "rank": 1,
-        "team": "Arena Anka",
+        "team": "Arena Anka Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1022,7 +1022,7 @@
       },
       {
         "rank": 2,
-        "team": "Ateş B",
+        "team": "Ateş Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1037,7 +1037,7 @@
       },
       {
         "rank": 3,
-        "team": "Balkan Yeşilbağlar",
+        "team": "Balkan Yeşilbağlar Spor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1052,7 +1052,7 @@
       },
       {
         "rank": 4,
-        "team": "Çekmeköy İstanbul B",
+        "team": "Çekmeköy İstanbul SK - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1067,7 +1067,7 @@
       },
       {
         "rank": 5,
-        "team": "Dev Adım Sk",
+        "team": "Dev Adım Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1082,7 +1082,7 @@
       },
       {
         "rank": 6,
-        "team": "Göztepe Akademi",
+        "team": "İstanbul Göztepe Akademi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1097,7 +1097,7 @@
       },
       {
         "rank": 7,
-        "team": "Kuzey Yıldızları B",
+        "team": "Kuzey Yıldızları Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1112,7 +1112,7 @@
       },
       {
         "rank": 8,
-        "team": "Turuncu",
+        "team": "Turuncu Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1129,7 +1129,7 @@
     "Genç Kızlar 1. Ligi - 4. Bölge A Grubu": [
       {
         "rank": 1,
-        "team": "Ulus Spor Akademisi U18",
+        "team": "Ulus Spor Akademi",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1146,7 +1146,7 @@
       },
       {
         "rank": 2,
-        "team": "SET Voleybol Kulübü U18",
+        "team": "Set Voleybol A",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1163,7 +1163,7 @@
       },
       {
         "rank": 3,
-        "team": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
+        "team": "Avrupa Voleybol Gelişim B",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1197,7 +1197,7 @@
       },
       {
         "rank": 5,
-        "team": "Avcılar Demirorduspor Kulübü U18",
+        "team": "Avcılar Demirordu",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1214,7 +1214,7 @@
       },
       {
         "rank": 6,
-        "team": "Küçükçekmece Voleybol Kulübü - B U18",
+        "team": "Küçükçekmece Voleybol B",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1231,7 +1231,7 @@
       },
       {
         "rank": 7,
-        "team": "Sultangazi Olimpik Spor Kulübü U18",
+        "team": "Sultangazi Olimpik",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1248,7 +1248,7 @@
     "Genç Kızlar 1. Ligi - 4. Bölge B Grubu": [
       {
         "rank": 1,
-        "team": "Başakşehir Belediyesi SK U16",
+        "team": "Başakşehir Belediyesi SK U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1265,7 +1265,7 @@
       },
       {
         "rank": 2,
-        "team": "Avrupa Voleybol Gelişim Spor Kulübü U18",
+        "team": "Avrupa Voleybol Gelişim A",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1282,7 +1282,7 @@
       },
       {
         "rank": 3,
-        "team": "Başakşehir Voleybol Kulübü U18",
+        "team": "Başakşehir Voleybol",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1299,7 +1299,7 @@
       },
       {
         "rank": 4,
-        "team": "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
+        "team": "Bahçeşehir Avrupa Gelişim",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1314,7 +1314,7 @@
       },
       {
         "rank": 5,
-        "team": "SET Voleybol Kulübü - B U18",
+        "team": "Set Voleybol B",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1329,7 +1329,7 @@
       },
       {
         "rank": 6,
-        "team": "Yıldızlar Arena Spor Kulübü U18",
+        "team": "Yıldızlar Arena",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1346,7 +1346,7 @@
     "Genç Kızlar 1. Ligi - 4. Bölge C Grubu": [
       {
         "rank": 1,
-        "team": "Atakent Elit Spor Kulübü U18",
+        "team": "Atakent Elit",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1361,7 +1361,7 @@
       },
       {
         "rank": 2,
-        "team": "Bahçelievler Voleybol Kulübü U18",
+        "team": "Bahçelievler Voleybol",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1376,7 +1376,7 @@
       },
       {
         "rank": 3,
-        "team": "Ernilvolley Spor Kulübü U18",
+        "team": "Ernilvolley",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1391,7 +1391,7 @@
       },
       {
         "rank": 4,
-        "team": "Kovan Spor Kulübü U18",
+        "team": "Kovan",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1406,7 +1406,7 @@
       },
       {
         "rank": 5,
-        "team": "Küçükçekmece Voleybol Kulübü U18",
+        "team": "Küçükçekmece Voleybol A",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1421,7 +1421,7 @@
       },
       {
         "rank": 6,
-        "team": "Real Elite Spor Kulübü U18",
+        "team": "Real Elite",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1438,7 +1438,7 @@
     "Genç Kızlar 1. Ligi - 5. Bölge": [
       {
         "rank": 1,
-        "team": "Haliç Akademi SK U18",
+        "team": "Haliç Akademi",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1455,7 +1455,7 @@
       },
       {
         "rank": 2,
-        "team": "Bağcılar Evren Spor U18",
+        "team": "Bağcılar Evren",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1472,7 +1472,7 @@
       },
       {
         "rank": 3,
-        "team": "Kuzey Işıkları SK U18",
+        "team": "Kuzey Işıkları",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1489,7 +1489,7 @@
       },
       {
         "rank": 4,
-        "team": "Beylikdüzü Beykent Spor Kulübü U18",
+        "team": "Beylikdüzü Beykent",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1523,7 +1523,7 @@
       },
       {
         "rank": 6,
-        "team": "Avcılar Yankı Spor Kulübü U18",
+        "team": "Avcılar Yankı",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1557,7 +1557,7 @@
       },
       {
         "rank": 8,
-        "team": "Bizimkent İlkokulu Spor Kulübü U18",
+        "team": "Bizimkent İlkokulu",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1729,7 +1729,7 @@
       },
       {
         "rank": 8,
-        "team": "Sarıyer Konak Spor Kulübü U16",
+        "team": "Sarıyer Konak Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1746,7 +1746,7 @@
       },
       {
         "rank": 9,
-        "team": "Bahçelievler Belediyespor U16",
+        "team": "Bahçelievler Belediyespor ll U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1763,7 +1763,7 @@
       },
       {
         "rank": 10,
-        "team": "Tuzla Rekor Spor Kulübü U16",
+        "team": "Tuzla Rekor Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1935,7 +1935,7 @@
       },
       {
         "rank": 10,
-        "team": "Başakşehir Belediyesi SK U16",
+        "team": "Başakşehir Belediyesi SK U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -2604,7 +2604,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "2",
-      "home_team": "Tuzla Rekor Spor Kulübü U16",
+      "home_team": "Tuzla Rekor Spor Kulübü U18",
       "away_team": "Robert Spor Kulübü U16",
       "score": "0 - 3",
       "home_score": 0,
@@ -2639,7 +2639,7 @@
       }
     },
     {
-      "id": "ist-20260914-043",
+      "id": "ist-20260914-046",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -2695,7 +2695,7 @@
       "group": "A Grubu",
       "match_no": "3",
       "home_team": "Türk Hava Yolları SK - A U16",
-      "away_team": "Sarıyer Konak Spor Kulübü U16",
+      "away_team": "Sarıyer Konak Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -2740,7 +2740,7 @@
       "group": "A Grubu",
       "match_no": "4",
       "home_team": "Galatasaray U16",
-      "away_team": "Bahçelievler Belediyespor U16",
+      "away_team": "Bahçelievler Belediyespor ll U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -2821,7 +2821,7 @@
       }
     },
     {
-      "id": "ist-20260915-044",
+      "id": "ist-20260915-047",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "18:00",
@@ -2868,7 +2868,7 @@
       }
     },
     {
-      "id": "ist-20260915-045",
+      "id": "ist-20260915-048",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:00",
@@ -3048,7 +3048,7 @@
       }
     },
     {
-      "id": "ist-20260916-046",
+      "id": "ist-20260916-049",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
@@ -3104,7 +3104,7 @@
       "group": "B Grubu",
       "match_no": "4",
       "home_team": "Fenerbahçe - A U16",
-      "away_team": "Başakşehir Belediyesi SK U16",
+      "away_team": "Başakşehir Belediyesi SK U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -3149,7 +3149,7 @@
       "group": "5. Bölge",
       "match_no": "1",
       "home_team": "Atayıldız Spor U18",
-      "away_team": "Haliç Akademi SK U18",
+      "away_team": "Haliç Akademi",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -3193,8 +3193,8 @@
       "gender": "Kız",
       "group": "5. Bölge",
       "match_no": "2",
-      "home_team": "Kuzey Işıkları SK U18",
-      "away_team": "Bizimkent İlkokulu Spor Kulübü U18",
+      "home_team": "Kuzey Işıkları",
+      "away_team": "Bizimkent İlkokulu",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -3284,7 +3284,7 @@
       "gender": "Kız",
       "group": "5. Bölge",
       "match_no": "3",
-      "home_team": "Avcılar Yankı Spor Kulübü U18",
+      "home_team": "Avcılar Yankı",
       "away_team": "Sarıyer Konak Spor Kulübü U18",
       "score": "2 - 3",
       "home_score": 2,
@@ -3331,7 +3331,7 @@
       "gender": "Kız",
       "group": "5. Bölge",
       "match_no": "4",
-      "home_team": "Bağcılar Evren Spor U18",
+      "home_team": "Bağcılar Evren",
       "away_team": "İTÜ Geliştirme Vakfı Okulları SK U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -3376,7 +3376,7 @@
       "gender": "Kız",
       "group": "5. Bölge",
       "match_no": "5",
-      "home_team": "Beylikdüzü Beykent Spor Kulübü U18",
+      "home_team": "Beylikdüzü Beykent",
       "away_team": "FMV Işık Spor Kulübü U18",
       "score": "3 - 1",
       "home_score": 3,
@@ -3412,7 +3412,7 @@
       }
     },
     {
-      "id": "ist-20260917-047",
+      "id": "ist-20260917-050",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3650,8 +3650,8 @@
       "gender": "Kız",
       "group": "1. Bölge B Grubu",
       "match_no": "1",
-      "home_team": "Dinamo",
-      "away_team": "Blok Akademi",
+      "home_team": "Dinamo Spor U18",
+      "away_team": "Blok Akademi Spor Kulübü U18",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -3696,7 +3696,7 @@
       "gender": "Kız",
       "group": "4. Bölge A Grubu",
       "match_no": "1",
-      "home_team": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
+      "home_team": "Avrupa Voleybol Gelişim B",
       "away_team": "Bahçelievler Belediyespor U18",
       "score": "3 - 2",
       "home_score": 3,
@@ -3743,8 +3743,8 @@
       "gender": "Kız",
       "group": "4. Bölge A Grubu",
       "match_no": "2",
-      "home_team": "SET Voleybol Kulübü U18",
-      "away_team": "Avcılar Demirorduspor Kulübü U18",
+      "home_team": "Set Voleybol A",
+      "away_team": "Avcılar Demirordu",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -3788,8 +3788,8 @@
       "gender": "Kız",
       "group": "1. Bölge A Grubu",
       "match_no": "1",
-      "home_team": "Beylerbeyi",
-      "away_team": "Alp",
+      "home_team": "Beylerbeyi Spor Kulübü U18",
+      "away_team": "Alp Voleybol Kulübü U18",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -3835,8 +3835,8 @@
       "gender": "Kız",
       "group": "4. Bölge A Grubu",
       "match_no": "3",
-      "home_team": "Küçükçekmece Voleybol Kulübü - B U18",
-      "away_team": "Ulus Spor Akademisi U18",
+      "home_team": "Küçükçekmece Voleybol B",
+      "away_team": "Ulus Spor Akademi",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -3880,8 +3880,8 @@
       "gender": "Kız",
       "group": "4. Bölge B Grubu",
       "match_no": "1",
-      "home_team": "Avrupa Voleybol Gelişim Spor Kulübü U18",
-      "away_team": "Başakşehir Voleybol Kulübü U18",
+      "home_team": "Avrupa Voleybol Gelişim A",
+      "away_team": "Başakşehir Voleybol",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -3925,7 +3925,7 @@
       "gender": "Kız",
       "group": "4. Bölge B Grubu",
       "match_no": "2",
-      "home_team": "Başakşehir Belediyesi SK U16",
+      "home_team": "Başakşehir Belediyesi SK U18",
       "away_team": "(H) - Yıldızlar Arena",
       "score": "3 - 0",
       "home_score": 3,
@@ -4138,8 +4138,8 @@
       "gender": "Kız",
       "group": "2. Bölge A Grubu",
       "match_no": "1",
-      "home_team": "Tuzla New",
-      "away_team": "Anadolu Olimpik",
+      "home_team": "Tuzla New Spor Kulübü U18",
+      "away_team": "İstanbul Anadolu Olimpik SK U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -4220,8 +4220,8 @@
       "gender": "Kız",
       "group": "4. Bölge B Grubu",
       "match_no": "3",
-      "home_team": "SET Voleybol Kulübü - B U18",
-      "away_team": "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
+      "home_team": "Set Voleybol B",
+      "away_team": "Bahçeşehir Avrupa Gelişim",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -4249,8 +4249,144 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "ist-20260928-043",
+      "city": "İstanbul",
+      "date": "2026-09-28",
+      "time": "18:00",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "6",
+      "home_team": "Ümraniye Belediyesi Spor Kulübü U16",
+      "away_team": "Fenerbahçe - A U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260928-044",
+      "city": "İstanbul",
+      "date": "2026-09-28",
+      "time": "18:00",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "7",
+      "home_team": "Bizimkent Voleybol Spor Kulübü U16 - A",
+      "away_team": "Yeşilyurt Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260928-045",
+      "city": "İstanbul",
+      "date": "2026-09-28",
+      "time": "19:30",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "8",
+      "home_team": "Bizimkent Voleybol Spor Kulübü U16 - B",
+      "away_team": "Olimpia 2017 Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20260928-051",
+      "city": "İstanbul",
+      "date": "2026-09-28",
+      "time": "19:30",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "6",
+      "home_team": "Akademi Atletik Spor U16",
+      "away_team": "VakıfBank - A U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-24T15:47:52.328879"
+  "volleybox_sync_updated_at": "2026-09-24T15:33:25.324570"
 }

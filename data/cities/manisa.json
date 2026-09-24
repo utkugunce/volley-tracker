@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T11:18:05.968312",
+  "updated_at": "2026-09-24T15:32:09.791293",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -28,7 +28,7 @@
     "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "1922 Salihli Gençlik Spor Kulübü",
+        "team": "1922 Salihli Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "Akhisar İlçe Spor Kulübü",
+        "team": "Akhisar İlçe Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Akhisarspor Spor Kulübü",
+        "team": "Akhisar Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -61,7 +61,7 @@
       },
       {
         "rank": 4,
-        "team": "Değerli Zamanlar Spor Kulübü",
+        "team": "Değerli Zamanlar Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -72,7 +72,7 @@
       },
       {
         "rank": 5,
-        "team": "Manisa Büyükşehir Belediye Spor Kulübü",
+        "team": "Manisa Büyükşehir Belediyespor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -83,7 +83,7 @@
       },
       {
         "rank": 6,
-        "team": "Salihli Değerli Zamanlar Spor Kulübü",
+        "team": "Salihli Değerli Zamanlar Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -96,7 +96,7 @@
     "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği B Grubu": [
       {
         "rank": 1,
-        "team": "Akhisargücü Spor Kulübü Derneği",
+        "team": "Akhisargücü Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -107,7 +107,7 @@
       },
       {
         "rank": 2,
-        "team": "Sarıgöl Akademi Spor Kulübü",
+        "team": "Sarıgöl Akademi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -118,7 +118,7 @@
       },
       {
         "rank": 3,
-        "team": "Soma Belediye Spor Kulübü",
+        "team": "Soma Belediye Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -129,7 +129,7 @@
       },
       {
         "rank": 4,
-        "team": "Soma İlçe Spor Kulübü",
+        "team": "Soma İlçe Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -140,7 +140,7 @@
       },
       {
         "rank": 5,
-        "team": "Turgutlu Belediye Kültür Sanat Ve Spor Kulübü",
+        "team": "Turgutlu Belediyespor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -151,7 +151,7 @@
       },
       {
         "rank": 6,
-        "team": "Yunusemre Belediye Spor Kulübü Derneği",
+        "team": "Yunusemre Belediyespor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -164,5 +164,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-24T10:35:34.979407"
+  "volleybox_sync_updated_at": "2026-09-24T15:33:25.350428"
 }

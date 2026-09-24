@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T10:34:26.163708",
+  "updated_at": "2026-09-24T15:32:16.076789",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -28,7 +28,7 @@
     "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "19 Mayıs Voleybol Sk",
+        "team": "19 Mayıs Gençlik Ve Spor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -39,7 +39,7 @@
       },
       {
         "rank": 2,
-        "team": "55 Matasyon Spor Kulübü U18",
+        "team": "55 Matasyon Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -50,7 +50,7 @@
       },
       {
         "rank": 3,
-        "team": "Anadolu Voleybol Akademi SK U18",
+        "team": "Anadolu Voleybol Akademi Sk (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -72,7 +72,7 @@
       },
       {
         "rank": 5,
-        "team": "Bafra Akademi Gençlik SK U18",
+        "team": "Bafra Akademi Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -83,7 +83,7 @@
       },
       {
         "rank": 6,
-        "team": "Bafra Vera Spor Kulübü U18",
+        "team": "Bafra Vera Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -94,7 +94,7 @@
       },
       {
         "rank": 7,
-        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
+        "team": "Gülizar Hasan Yılmaz Spor Lisesi Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -105,7 +105,7 @@
       },
       {
         "rank": 8,
-        "team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
+        "team": "Samsun Büyükşehir Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -140,7 +140,7 @@
       },
       {
         "rank": 2,
-        "team": "Atakum Atılım Spor Kulübü U18",
+        "team": "Atakum Atılım Sk (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -173,7 +173,7 @@
       },
       {
         "rank": 5,
-        "team": "Sam55 Spor Kulübü U18",
+        "team": "Sam55 Sk",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -195,7 +195,7 @@
       },
       {
         "rank": 7,
-        "team": "Terme Gsim Sk",
+        "team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -206,7 +206,7 @@
       },
       {
         "rank": 8,
-        "team": "Vezirköprü Voleybol Akademi Sk",
+        "team": "Vezirköprü Gençlik Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -219,5 +219,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-24T10:35:34.979688"
+  "volleybox_sync_updated_at": "2026-09-24T15:33:25.350919"
 }
