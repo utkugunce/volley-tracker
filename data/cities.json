@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-24T09:48:01.370537+03:00",
+  "updated_at": "2026-09-24T11:18:18.811758+03:00",
   "total_cities": 81,
   "active_cities": 15,
-  "total_matches": 413,
+  "total_matches": 419,
   "cities": [
     {
       "ilid": "1",
@@ -59,8 +59,8 @@
       "name": "Ankara",
       "slug": "ankara",
       "url": "https://ankara.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (28 Maç Mevcut)",
-      "matches_count": 28,
+      "status": "Aktif (34 Maç Mevcut)",
+      "matches_count": 34,
       "standings_count": 10,
       "data_file": "data/cities/ankara.json"
     },

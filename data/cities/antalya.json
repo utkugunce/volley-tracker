@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T09:47:40.819846",
+  "updated_at": "2026-09-24T11:17:59.874834",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -705,18 +705,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401379",
+        "url": "https://women.volleybox.net/tr/antalya-1907-spor-kulubu-u18-gazipasa-genclerbirligi-spor-kulubu-u18-c401379",
+        "host_name": "Antalya 1907 Spor Kulübü U18",
+        "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-04",
+        "vb_time": "12:30",
+        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "12:30",
+          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+          "details": null
         }
       }
     },
@@ -989,18 +996,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401380",
+        "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u18-erse-spor-kulubu-u18-c401380",
+        "host_name": "Nova Spor Kulübü U18",
+        "guest_name": "Erse Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-04",
+        "vb_time": "11:00",
+        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "11:00",
+          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1821,6 +1835,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-09-24T09:50:57.462260"
+  "volleybox_synced_matches": 33,
+  "volleybox_sync_updated_at": "2026-09-24T11:21:17.456922"
 }
