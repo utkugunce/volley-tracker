@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-24T11:17:58.382672",
+  "updated_at": "2026-09-24T10:34:08.333262",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 11,
+  "total_matches": 12,
   "source": "https://bursa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,6 +22,7 @@
     ],
     "halls": [
       "Tümü",
+      "Kestel",
       "Nilüfer 100.Yıl",
       "Orhangazi",
       "Çekirge"
@@ -980,12 +981,53 @@
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
-      "hall": "Nilüfer 100.Yıl",
+      "hall": "Kestel",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "- E",
       "match_no": "1",
+      "home_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+      "away_team": "Kestel Belediye 1952 Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "401049",
+        "url": "https://women.volleybox.net/tr/bursa-buyuksehir-belediyespor-u16-nilufer-belediyespor-u16-c401049",
+        "host_name": "Bursa Büyükşehir Belediyespor U16",
+        "guest_name": "Nilüfer Belediyespor U16",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-01",
+        "vb_time": "18:30",
+        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-01",
+          "vb_time": "18:30",
+          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "bursa-20261001-012",
+      "city": "Bursa",
+      "date": "2026-10-01",
+      "time": "18:30",
+      "hall": "Nilüfer 100.Yıl",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- E",
+      "match_no": "2",
       "home_team": "Bursa Büyükşehir Belediyespor U16",
       "away_team": "Nilüfer Belediye Spor Kulübü (A)",
       "score": "- : -",
@@ -1017,6 +1059,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 11,
-  "volleybox_sync_updated_at": "2026-09-24T11:21:17.557781"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-09-24T10:35:34.978350"
 }
