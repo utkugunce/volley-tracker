@@ -4859,17 +4859,22 @@
     {
       "internal_name": "İlbank B",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "İlbank U16",
-      "volleybox_url": "https://women.volleybox.net/lbank-u15-t35575",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "İlbank - B U16",
+      "volleybox_url": "https://women.volleybox.net/lbank-u16-t54454",
       "age_category": "U16",
       "confidence": "verified",
-      "note": null,
-      "verified_at": "2026-09-14",
+      "note": "Ankara Yıldız Kızlar Süper Lig 4. Grup B Takımı",
+      "verified_at": "2026-09-24",
       "aliases": [
-        "İlbank B"
+        "İlbank B",
+        "İlbank - B",
+        "İlbank - B U16",
+        "İlbank B U16"
       ],
-      "local_logo": "/logos/lbank-u15-t35575.png",
-      "logo_url": null
+      "local_logo": "/logos/lbank-u16-t54454.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/17894608541etKL.png"
     },
     {
       "internal_name": "Ted Ankara",

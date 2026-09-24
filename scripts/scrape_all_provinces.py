@@ -192,6 +192,9 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         return (
             str(s)
             .strip()
+            .replace("İ", "i")
+            .replace("I", "i")
+            .replace("ı", "i")
             .lower()
             .replace("ı", "i")
             .replace("ğ", "g")
@@ -200,6 +203,16 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
             .replace("ö", "o")
             .replace("ç", "c")
         )
+
+    def _get_group_override(raw_team: str, group_str: str, city: str):
+        rt = _norm(raw_team)
+        gs = _norm(group_str)
+        ct = _norm(city)
+        # Ankara Yıldız Kızlar Süper Lig 4. Grup -> İlbank - B U16
+        if ("ankara" in ct or not ct) and ("4" in gs) and ("gen" not in gs):
+            if "lbank" in rt:
+                return "İlbank - B U16"
+        return None
 
     # Standings üzerinden ham -> çözülmüş/ayrıştırılmış isim haritası
     # Anahtar: (_norm(ham_isim), _norm(grup_veya_kategori)) -> final_name
@@ -216,7 +229,8 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
             if not isinstance(row, dict) or "team" not in row:
                 continue
             raw_team = str(row["team"]).strip()
-            resolved = RESOLVE_TEAM_NAME(raw_team, grp, city_name)
+            override = _get_group_override(raw_team, grp, city_name)
+            resolved = override or RESOLVE_TEAM_NAME(raw_team, grp, city_name)
             name_groups.setdefault(resolved, []).append((row, raw_team))
 
         suffixes = ["A", "B", "C", "D", "E", "F", "G"]
@@ -227,6 +241,8 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
                 row["team"] = res_name
                 disambiguated_map[(_norm(raw_team), _norm(grp))] = res_name
                 disambiguated_map[(_norm(raw_team), "")] = res_name
+                disambiguated_map[(_norm(res_name), _norm(grp))] = res_name
+                disambiguated_map[(_norm(res_name), "")] = res_name
             else:
                 # Birden fazla satır aynı çözümlenmiş isme sahip!
                 # Farklı takımlar mı kontrol et (played > 0 veya farklı istatistikler)
@@ -290,21 +306,23 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         away_raw = str(m.get("away_team", "")).strip()
 
         # Ev sahibi takımı çöz
-        home_resolved = None
-        for k in keys_to_try:
-            if (_norm(home_raw), k) in disambiguated_map:
-                home_resolved = disambiguated_map[(_norm(home_raw), k)]
-                break
+        home_resolved = _get_group_override(home_raw, f"{cat} - {grp}", m_city)
+        if not home_resolved:
+            for k in keys_to_try:
+                if (_norm(home_raw), k) in disambiguated_map:
+                    home_resolved = disambiguated_map[(_norm(home_raw), k)]
+                    break
         if not home_resolved:
             home_resolved = RESOLVE_TEAM_NAME(home_raw, cat, m_city)
         m["home_team"] = home_resolved
 
         # Deplasman takımını çöz
-        away_resolved = None
-        for k in keys_to_try:
-            if (_norm(away_raw), k) in disambiguated_map:
-                away_resolved = disambiguated_map[(_norm(away_raw), k)]
-                break
+        away_resolved = _get_group_override(away_raw, f"{cat} - {grp}", m_city)
+        if not away_resolved:
+            for k in keys_to_try:
+                if (_norm(away_raw), k) in disambiguated_map:
+                    away_resolved = disambiguated_map[(_norm(away_raw), k)]
+                    break
         if not away_resolved:
             away_resolved = RESOLVE_TEAM_NAME(away_raw, cat, m_city)
         m["away_team"] = away_resolved

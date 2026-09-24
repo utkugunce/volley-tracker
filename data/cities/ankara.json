@@ -441,7 +441,7 @@
       },
       {
         "rank": 2,
-        "team": "İlbank U16",
+        "team": "İlbank - B U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1371,18 +1371,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401451",
+        "url": "https://women.volleybox.net/tr/anadolu-birlik-spor-kulubu-u16-ufuk-universitesi-uc-pas-spor-kulubu-u16-c401451",
+        "host_name": "Anadolu Birlik Spor Kulübü U16",
+        "guest_name": "Ufuk Üniversitesi Üç Pas Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "10:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "10:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1495,18 +1502,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401452",
+        "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-b-u16-baskent-arma-spor-b-u16-c401452",
+        "host_name": "TVF Spor Lisesi - B U16",
+        "guest_name": "Başkent Arma Spor - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "14:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "14:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1655,7 +1669,7 @@
       "group": "4. Grup",
       "match_no": "2",
       "home_team": "Zeren Spor Kulübü U16",
-      "away_team": "İlbank U16",
+      "away_team": "İlbank - B U16",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -1700,7 +1714,7 @@
       "gender": "Kız",
       "group": "4. Grup",
       "match_no": "3",
-      "home_team": "İlbank U16",
+      "home_team": "İlbank - B U16",
       "away_team": "Ankara DSİ GSK U16",
       "score": "- : -",
       "home_score": null,
@@ -1708,18 +1722,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401453",
+        "url": "https://women.volleybox.net/tr/lbank-b-u16-ankara-ds-gsk-u16-c401453",
+        "host_name": "İlbank - B U16",
+        "guest_name": "Ankara DSİ GSK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "12:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "12:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1742,18 +1763,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401454",
+        "url": "https://women.volleybox.net/tr/genia-z-akademi-spor-kulubu-u16-zeren-spor-kulubu-u16-c401454",
+        "host_name": "Genia İz Akademi Spor Kulübü U16",
+        "guest_name": "Zeren Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "16:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "16:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1858,18 +1886,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401455",
+        "url": "https://women.volleybox.net/tr/teas-spor-kulubu-u16-first-spor-kulubu-u16-c401455",
+        "host_name": "TEİAŞ Spor Kulübü U16",
+        "guest_name": "First Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "18:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "18:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1978,22 +2013,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401456",
+        "url": "https://women.volleybox.net/tr/blue-wolves-spor-kulubu-u16-akademi-atletik-spor-u16-c401456",
+        "host_name": "Blue Wolves Spor Kulübü U16",
+        "guest_name": "Akademi Atletik Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "18:00",
+        "vb_hall": "Mamak Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "18:00",
+          "vb_hall": "Mamak Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-09-24T11:21:17.297868"
+  "volleybox_synced_matches": 34,
+  "volleybox_sync_updated_at": "2026-09-24T12:54:54.620611"
 }
