@@ -103,14 +103,14 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
   return (
     <>
       <div
-        className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex justify-end transition-opacity duration-300 animate-in fade-in"
+        className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 transition-all duration-300 animate-in fade-in"
         onClick={onClose}
         aria-modal="true"
         role="dialog"
       >
-        {/* Çekmece Gövdesi (Masaüstünde sağdan kayar, mobilde alttan) */}
+        {/* Merkezi Modal Gövdesi */}
         <div
-          className="relative w-full sm:max-w-lg md:max-w-xl h-full bg-[#080c14] border-l border-slate-800 shadow-2xl flex flex-col overflow-hidden text-slate-100 animate-in slide-in-from-right duration-300"
+          className="relative w-full max-w-lg md:max-w-xl max-h-[92vh] bg-gradient-to-b from-[#0b1220] via-[#080c14] to-[#050810] border border-slate-700/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden text-slate-100 animate-in zoom-in-95 duration-200"
           onClick={(e) => e.stopPropagation()}
         >
           {/* 1. Üst Bar: Kategori & Kapat */}
