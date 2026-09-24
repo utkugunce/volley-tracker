@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T15:32:04.659906",
+  "updated_at": "2026-09-24T19:32:13.354845",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -114,6 +114,17 @@
       {
         "rank": 1,
         "team": "Antalyaspor U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "07 Mega Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -123,7 +134,18 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
+        "team": "Elit Akdeniz Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Erse Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -134,41 +156,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "07 Mega Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Antalya Açı Koleji Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Elit Akdeniz Spor Kulübü U18",
-        "played": 0,
+        "team": "Nova Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Nova Spor Kulübü U18",
+        "team": "Antalya Açı Koleji Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -785,11 +785,15 @@
       "match_no": "2",
       "home_team": "07 Mega Spor Kulübü U18",
       "away_team": "Nova Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-11",
+        "25-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398871",
@@ -826,11 +830,17 @@
       "match_no": "3",
       "home_team": "Antalyaspor U18",
       "away_team": "Elit Akdeniz Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "25-16",
+        "26-24",
+        "11-25",
+        "7-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398872",
@@ -1836,5 +1846,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-09-24T15:33:25.316006"
+  "volleybox_sync_updated_at": "2026-09-24T19:33:35.961968"
 }

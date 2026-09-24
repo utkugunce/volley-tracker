@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T15:32:05.881882+00:00",
+  "updated_at": "2026-09-24T19:32:13.858625+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -231,6 +231,24 @@
       },
       {
         "rank": 2,
+        "team": "Eyüpsultan Belediyesi SK U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
+        "set_ratio": "1.667",
+        "points_won": 174,
+        "points_lost": 152,
+        "point_ratio": "1.145",
+        "form": [
+          "W",
+          "L"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Fenerbahçe U18",
         "played": 1,
         "won": 1,
@@ -242,23 +260,6 @@
         "points_won": 75,
         "points_lost": 45,
         "point_ratio": "1.667",
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 3,
-        "team": "Eyüpsultan Belediyesi SK U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 76,
-        "points_lost": 57,
-        "point_ratio": "1.333",
         "form": [
           "W"
         ]
@@ -317,6 +318,24 @@
       },
       {
         "rank": 7,
+        "team": "Marmara Akademi Atletik Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 5,
+        "set_ratio": "0.600",
+        "points_won": 140,
+        "points_lost": 173,
+        "point_ratio": "0.809",
+        "form": [
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 8,
         "team": "Ünsped Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -333,7 +352,7 @@
         ]
       },
       {
-        "rank": 8,
+        "rank": 9,
         "team": "Türk Hava Yolları SK U18",
         "played": 2,
         "won": 0,
@@ -351,7 +370,7 @@
         ]
       },
       {
-        "rank": 9,
+        "rank": 10,
         "team": "Güngören Voleybol Kulübü U18",
         "played": 2,
         "won": 0,
@@ -365,23 +384,6 @@
         "point_ratio": "0.618",
         "form": [
           "L",
-          "L"
-        ]
-      },
-      {
-        "rank": 10,
-        "team": "Marmara Akademi Atletik Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "set_ratio": "MIN",
-        "points_won": 45,
-        "points_lost": 75,
-        "point_ratio": "0.600",
-        "form": [
           "L"
         ]
       }
@@ -4017,11 +4019,17 @@
       "match_no": "8",
       "home_team": "Marmara Akademi Atletik Spor Kulübü U18",
       "away_team": "Eyüpsultan Belediyesi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "14-25",
+        "25-21",
+        "25-15",
+        "16-25",
+        "15-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400376",
@@ -4388,5 +4396,5 @@
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-24T15:33:25.324570"
+  "volleybox_sync_updated_at": "2026-09-24T19:33:35.969468"
 }
