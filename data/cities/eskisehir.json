@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T19:32:08.181948",
+  "updated_at": "2026-09-24T22:45:11.924803",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -1277,8 +1277,8 @@
       "gender": "Kız",
       "group": "- B Gr",
       "match_no": "5",
-      "home_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
-      "away_team": "Şehir Koleji Eğitim Kültür SK U16",
+      "home_team": "Şehir Koleji Eğitim Kültür SK U16",
+      "away_team": "Eskişehir Ata Spor Kulübü (B)",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1733,5 +1733,5 @@
     }
   ],
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-09-24T19:33:35.989829"
+  "volleybox_sync_updated_at": "2026-09-24T22:46:43.426781"
 }

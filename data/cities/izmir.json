@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-24T19:32:11.887801",
+  "updated_at": "2026-09-24T22:45:15.446215",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -657,18 +657,18 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - C Gr": [
       {
         "rank": 1,
-        "team": "Volkan Güç Spor Kulübü U16",
-        "played": 1,
+        "team": "Parla Voleybol Kulübü - B U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Parla Voleybol Kulübü - B U16",
+        "team": "Volkan Güç Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -702,12 +702,12 @@
       {
         "rank": 5,
         "team": "Mavişehir Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "points": 2,
+        "sets_won": 4,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -3260,11 +3260,17 @@
       "match_no": "5",
       "home_team": "Parla Voleybol Kulübü - B U16",
       "away_team": "Mavişehir Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-15",
+        "25-23",
+        "21-25",
+        "22-25",
+        "12-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398207",
@@ -4230,5 +4236,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-24T19:33:35.984514"
+  "volleybox_sync_updated_at": "2026-09-24T22:46:43.422966"
 }
