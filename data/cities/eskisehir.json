@@ -448,18 +448,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399245",
+        "url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-u18-anadolu-universitesi-spor-kulubu-u18-c399245",
+        "host_name": "Eskişehir Peyman SK U18",
+        "guest_name": "Anadolu Üniversitesi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-27",
+        "vb_time": "18:00",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-09-27",
+          "vb_time": "18:00",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-09-28 / VB: 2026-09-27) | Saat Değişti (TVF: 20:00 / VB: 18:00)"
         }
       }
     },
@@ -987,18 +994,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401388",
+        "url": "https://women.volleybox.net/tr/meryem-boz-spor-kulubu-b-u16-anadolu-kolej-spor-kulubu-u16-c401388",
+        "host_name": "Meryem Boz Spor Kulübü - B U16",
+        "guest_name": "Anadolu Kolej Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-28",
+        "vb_time": "20:00",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-09-28",
+          "vb_time": "20:00",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-09-27 / VB: 2026-09-28) | Saat Değişti (TVF: 16:00 / VB: 20:00) | Salon Değişti (TVF: Şehit Anıl Gül / VB: Kemal Unakıtan Spor Salonu)"
         }
       }
     },
@@ -1718,6 +1732,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 30,
-  "volleybox_sync_updated_at": "2026-09-24T10:35:34.976572"
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-09-24T15:47:05.210978"
 }
