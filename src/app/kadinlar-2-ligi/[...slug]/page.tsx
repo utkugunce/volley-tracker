@@ -48,6 +48,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title = "TVF Kadınlar 2. Ligi Takımları ve Kulüp Profilleri — Altyapı Voleybol";
       description = "Kadınlar 2. Ligi'nde mücadele eden 160+ voleybol kulübü, maçları ve kadro bağlantıları.";
       break;
+    case "karsilastir":
+      title = "TVF Kadınlar 2. Ligi Takım Karşılaştırması & H2H — Altyapı Voleybol";
+      description = "Kadınlar 2. Ligi takımlarının kafa kafaya maçları, galibiyet oranları ve form durumu kıyaslaması.";
+      break;
     case "statu":
       title = "TVF Kadınlar 2. Ligi 2026-2027 Resmi Lig Statüsü — Altyapı Voleybol";
       description = "2026-2027 sezonu Uzman Posta Kadınlar 2. Ligi çeyrek final, yarı final, final ve yükselme statüsü.";
@@ -90,6 +94,7 @@ export function generateStaticParams() {
     "gunun-maclari",
     "grup-durumu",
     "takimlar",
+    "karsilastir",
     "statu",
     "anasayfa",
   ];

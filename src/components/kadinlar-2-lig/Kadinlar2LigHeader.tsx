@@ -18,6 +18,7 @@ import {
   Printer,
   FileText,
   Home,
+  Swords,
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
@@ -31,6 +32,7 @@ export type Kadinlar2LigTabType =
   | "standings"
   | "leaders"
   | "teams"
+  | "karsilastir"
   | "statu";
 
 interface Kadinlar2LigHeaderProps {
@@ -367,6 +369,19 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           >
             <Users size={13} className={activeTab === "teams" ? "text-primary" : "text-slate-400"} />
             <span>KULÜPLER</span>
+          </button>
+
+          {/* Karşılaştır (H2H) */}
+          <button
+            onClick={() => onSelectTab("karsilastir")}
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+              activeTab === "karsilastir"
+                ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+                : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
+            }`}
+          >
+            <Swords size={13} className={activeTab === "karsilastir" ? "text-rose-400" : "text-slate-400"} />
+            <span>KARŞILAŞTIR</span>
           </button>
 
           {/* Statü & Rehber */}

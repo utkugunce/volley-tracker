@@ -34,6 +34,8 @@ export const getKadinlar2LigRoute = (
       return "/kadinlar-2-ligi/grup-durumu";
     case "teams":
       return "/kadinlar-2-ligi/takimlar";
+    case "karsilastir":
+      return "/kadinlar-2-ligi/karsilastir";
     case "statu":
       return "/kadinlar-2-ligi/statu";
     case "home":
@@ -72,6 +74,8 @@ export const parseKadinlar2LigRoute = (
     tab = "leaders";
   } else if (sub === "takimlar" || sub === "kulupler") {
     tab = "teams";
+  } else if (sub === "karsilastir" || sub === "h2h") {
+    tab = "karsilastir";
   } else if (sub === "statu") {
     tab = "statu";
   }

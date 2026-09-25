@@ -18,6 +18,7 @@ import { Kadinlar2LigResults } from "./Kadinlar2LigResults";
 import { Kadinlar2LigMobileNav } from "./Kadinlar2LigMobileNav";
 import { Kadinlar2LigStatuView } from "./Kadinlar2LigStatuView";
 import { Kadinlar2LigHomePortal } from "./Kadinlar2LigHomePortal";
+import { Kadinlar2LigCompare } from "./Kadinlar2LigCompare";
 import {
   getKadinlar2LigRoute,
   parseKadinlar2LigRoute,
@@ -285,6 +286,14 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             onSelectGroup={handleSelectGroupFromAnywhere}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
+          />
+        )}
+
+        {/* H2H KARŞILAŞTIR TABI */}
+        {activeTab === "karsilastir" && (
+          <Kadinlar2LigCompare
+            data={data}
+            onSelectGroup={handleSelectGroupFromAnywhere}
           />
         )}
 
