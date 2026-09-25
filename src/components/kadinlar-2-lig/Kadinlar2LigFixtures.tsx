@@ -1,22 +1,28 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, ChevronRight, Swords } from "lucide-react";
+import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, ChevronRight, Swords, Download, Printer, Star } from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { slugify } from "@/utils/slugify";
+import { downloadIcsFile, generateSeasonIcs } from "@/utils/ics";
+import { useFavorites } from "@/utils/useFavorites";
+import { triggerHaptic } from "@/utils/haptics";
 
 interface Kadinlar2LigFixturesProps {
   group: Kadinlar2LigGroup;
   searchQuery?: string;
   onSelectMatch?: (match: Match) => void;
+  showOnlyFavorites?: boolean;
 }
 
 export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   group,
   searchQuery = "",
   onSelectMatch,
+  showOnlyFavorites = false,
 }) => {
+  const { isFavorite, toggleFavorite } = useFavorites();
   const [selectedWeek, setSelectedWeek] = useState<number | "all">("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "OYNANACAK" | "BİTTİ">("all");
 
@@ -72,6 +78,12 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       if (selectedWeek !== "all" && m.hafta !== selectedWeek) return false;
       // Status filter
       if (statusFilter !== "all" && m.durum !== statusFilter) return false;
+      // Favorites filter
+      if (showOnlyFavorites) {
+        const homeFav = isFavorite(m.takim_a);
+        const awayFav = isFavorite(m.takim_b);
+        if (!homeFav && !awayFav) return false;
+      }
       // Search query
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
@@ -82,7 +94,17 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       }
       return true;
     });
-  }, [matches, selectedWeek, statusFilter, searchQuery]);
+  }, [matches, selectedWeek, statusFilter, showOnlyFavorites, searchQuery, isFavorite]);
+
+  const handleDownloadGroupIcs = () => {
+    const icsMatches = filteredMatches.map(convertToMatch);
+    const ics = generateSeasonIcs(icsMatches, `TVF Kadınlar 2. Ligi - ${group.grup_adi} Fikstürü`);
+    downloadIcsFile(`kadinlar-2-ligi-${slugify(group.grup_adi)}-fiksturu.ics`, ics);
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
 
   // Group filtered matches by week
   const matchesByWeek = useMemo(() => {
@@ -126,38 +148,61 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
           ))}
         </div>
 
-        {/* Durum Filtresi: Hepsi / Oynanacak / Bitenler */}
-        <div className="flex items-center gap-1 bg-[#181130] p-1 rounded-xl border border-purple-800/40 self-end md:self-auto text-xs">
+        {/* Sağ Taraf: Durum Filtresi + Takvim (.ics) + Yazdır */}
+        <div className="flex flex-wrap items-center gap-2 self-end md:self-auto text-xs">
+          {/* Takvim .ics İndir */}
           <button
-            onClick={() => setStatusFilter("all")}
-            className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
-              statusFilter === "all"
-                ? "bg-purple-600 text-white shadow-xs"
-                : "text-purple-300/70 hover:text-white"
-            }`}
+            onClick={handleDownloadGroupIcs}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-900/60 hover:bg-purple-800/80 text-purple-200 hover:text-white border border-purple-700/50 transition-all font-semibold active:scale-95 cursor-pointer shadow-xs"
+            title="Bu grubun fikstürünü telefon/bilgisayar takviminize (.ics) aktarın"
           >
-            Hepsi
+            <Download size={12} className="text-pink-400" />
+            <span className="hidden sm:inline">Takvime Ekle</span>
           </button>
+
+          {/* Yazdır Butonu */}
           <button
-            onClick={() => setStatusFilter("OYNANACAK")}
-            className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
-              statusFilter === "OYNANACAK"
-                ? "bg-purple-600 text-white shadow-xs"
-                : "text-purple-300/70 hover:text-white"
-            }`}
+            onClick={handlePrint}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-900/40 hover:bg-purple-800/60 text-purple-300 hover:text-white border border-purple-800/50 transition-all active:scale-95 cursor-pointer"
+            title="Fikstürü yazdır veya PDF olarak kaydet"
           >
-            Oynanacak
+            <Printer size={12} />
+            <span className="hidden sm:inline">Yazdır</span>
           </button>
-          <button
-            onClick={() => setStatusFilter("BİTTİ")}
-            className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
-              statusFilter === "BİTTİ"
-                ? "bg-purple-600 text-white shadow-xs"
-                : "text-purple-300/70 hover:text-white"
-            }`}
-          >
-            Bitenler
-          </button>
+
+          {/* Durum Filtresi: Hepsi / Oynanacak / Bitenler */}
+          <div className="flex items-center gap-1 bg-[#181130] p-1 rounded-xl border border-purple-800/40 text-xs">
+            <button
+              onClick={() => setStatusFilter("all")}
+              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
+                statusFilter === "all"
+                  ? "bg-purple-600 text-white shadow-xs"
+                  : "text-purple-300/70 hover:text-white"
+              }`}
+            >
+              Hepsi
+            </button>
+            <button
+              onClick={() => setStatusFilter("OYNANACAK")}
+              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
+                statusFilter === "OYNANACAK"
+                  ? "bg-purple-600 text-white shadow-xs"
+                  : "text-purple-300/70 hover:text-white"
+              }`}
+            >
+              Oynanacak
+            </button>
+            <button
+              onClick={() => setStatusFilter("BİTTİ")}
+              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
+                statusFilter === "BİTTİ"
+                  ? "bg-purple-600 text-white shadow-xs"
+                  : "text-purple-300/70 hover:text-white"
+              }`}
+            >
+              Bitenler
+            </button>
+          </div>
         </div>
       </div>
 
@@ -238,13 +283,35 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                             )}
                           </Link>
                           <div className="min-w-0">
-                            <Link
-                              href={`/takim/${slugify(m.takim_a)}`}
-                              className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
-                              title={`${m.takim_a} Takım Profili`}
-                            >
-                              {m.takim_a}
-                            </Link>
+                            <div className="flex items-center gap-1.5">
+                              <Link
+                                href={`/takim/${slugify(m.takim_a)}`}
+                                className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
+                                title={`${m.takim_a} Takım Profili`}
+                              >
+                                {m.takim_a}
+                              </Link>
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  triggerHaptic("selection");
+                                  toggleFavorite(m.takim_a);
+                                }}
+                                className="shrink-0 p-0.5"
+                                title={isFavorite(m.takim_a) ? "Favorilerden çıkar" : "Favorilere ekle"}
+                              >
+                                <Star
+                                  size={11}
+                                  className={
+                                    isFavorite(m.takim_a)
+                                      ? "fill-amber-400 text-amber-400"
+                                      : "text-purple-400/40 hover:text-amber-300"
+                                  }
+                                />
+                              </button>
+                            </div>
                             <div className="flex items-center gap-2 mt-0.5">
                               <Link
                                 href={`/takim/${slugify(m.takim_a)}`}
@@ -299,13 +366,35 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                       <div className="flex-1 min-w-0 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <div className="min-w-0">
-                            <Link
-                              href={`/takim/${slugify(m.takim_b)}`}
-                              className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
-                              title={`${m.takim_b} Takım Profili`}
-                            >
-                              {m.takim_b}
-                            </Link>
+                            <div className="flex items-center justify-end gap-1.5">
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  triggerHaptic("selection");
+                                  toggleFavorite(m.takim_b);
+                                }}
+                                className="shrink-0 p-0.5"
+                                title={isFavorite(m.takim_b) ? "Favorilerden çıkar" : "Favorilere ekle"}
+                              >
+                                <Star
+                                  size={11}
+                                  className={
+                                    isFavorite(m.takim_b)
+                                      ? "fill-amber-400 text-amber-400"
+                                      : "text-purple-400/40 hover:text-amber-300"
+                                  }
+                                />
+                              </button>
+                              <Link
+                                href={`/takim/${slugify(m.takim_b)}`}
+                                className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
+                                title={`${m.takim_b} Takım Profili`}
+                              >
+                                {m.takim_b}
+                              </Link>
+                            </div>
                             <div className="flex items-center justify-end gap-2 mt-0.5">
                               {m.takim_b_volleybox_url && (
                                 <a

@@ -1,27 +1,83 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Trophy, HelpCircle, ChevronRight, Shield, User } from "lucide-react";
+import { ExternalLink, Trophy, HelpCircle, ChevronRight, Shield, User, Download, Star, Swords } from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
+import { useFavorites } from "@/utils/useFavorites";
+import { triggerHaptic } from "@/utils/haptics";
 
 interface Kadinlar2LigStandingsProps {
   group: Kadinlar2LigGroup;
   searchQuery?: string;
+  showOnlyFavorites?: boolean;
 }
 
 export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
   group,
   searchQuery = "",
+  showOnlyFavorites = false,
 }) => {
   const [showDetailedStats, setShowDetailedStats] = useState(false);
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   const teams = group?.puan_durumu || [];
-  const filteredTeams = searchQuery
-    ? teams.filter((t) => t.takim_adi.toLowerCase().includes(searchQuery.toLowerCase()))
-    : teams;
+  const filteredTeams = useMemo(() => {
+    return teams.filter((t) => {
+      if (showOnlyFavorites && !isFavorite(t.takim_adi)) return false;
+      if (searchQuery && !t.takim_adi.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+      return true;
+    });
+  }, [teams, showOnlyFavorites, searchQuery, isFavorite]);
+
+  const handleDownloadCsv = () => {
+    const BOM = "\uFEFF";
+    const header = [
+      "Sıra",
+      "Takım",
+      "Oynadığı",
+      "Galibiyet",
+      "Mağlubiyet",
+      "Puan",
+      "Aldığı Set",
+      "Verdiği Set",
+      "Set Oranı",
+      "Aldığı Sayı",
+      "Verdiği Sayı",
+      "Sayı Oranı",
+    ].join(";");
+    const rows = teams.map((row) => {
+      const escapedTeam = row.takim_adi.includes(";") || row.takim_adi.includes('"')
+        ? `"${row.takim_adi.replace(/"/g, '""')}"`
+        : row.takim_adi;
+      return [
+        row.sira,
+        escapedTeam,
+        row.o,
+        row.g,
+        row.m,
+        row.p,
+        row.as,
+        row.vs,
+        row.sav,
+        row.asp,
+        row.vsp,
+        row.spav,
+      ].join(";");
+    });
+    const csvContent = BOM + [header, ...rows].join("\r\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `kadinlar-2-ligi-${slugify(group.grup_adi)}-puan-durumu.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
 
   return (
     <div className="space-y-4">
@@ -46,14 +102,26 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
           </div>
         </div>
 
-        {/* Detaylı Skorlar Toggle */}
-        <button
-          onClick={() => setShowDetailedStats(!showDetailedStats)}
-          className="text-xs px-3 py-1.5 rounded-xl bg-purple-900/40 hover:bg-purple-800/50 text-purple-200 hover:text-white border border-purple-700/40 transition-all active:scale-95 cursor-pointer flex items-center gap-1.5"
-        >
-          <span>{showDetailedStats ? "Detayları Gizle" : "Detaylı Skorları Göster"}</span>
-          <ChevronRight size={13} className={`transform transition-transform ${showDetailedStats ? "rotate-90" : ""}`} />
-        </button>
+        <div className="flex items-center gap-2 flex-wrap">
+          {/* CSV İndir Butonu */}
+          <button
+            onClick={handleDownloadCsv}
+            className="text-xs px-3 py-1.5 rounded-xl bg-purple-900/60 hover:bg-purple-800/80 text-purple-200 hover:text-white border border-purple-700/50 transition-all active:scale-95 cursor-pointer flex items-center gap-1.5 font-semibold"
+            title="Puan tablosunu Excel uyumlu CSV olarak indir"
+          >
+            <Download size={13} className="text-emerald-400" />
+            <span>CSV İndir</span>
+          </button>
+
+          {/* Detaylı Skorlar Toggle */}
+          <button
+            onClick={() => setShowDetailedStats(!showDetailedStats)}
+            className="text-xs px-3 py-1.5 rounded-xl bg-purple-900/40 hover:bg-purple-800/50 text-purple-200 hover:text-white border border-purple-700/40 transition-all active:scale-95 cursor-pointer flex items-center gap-1.5"
+          >
+            <span>{showDetailedStats ? "Detayları Gizle" : "Detaylı Skorlar"}</span>
+            <ChevronRight size={13} className={`transform transition-transform ${showDetailedStats ? "rotate-90" : ""}`} />
+          </button>
+        </div>
       </div>
 
       {/* Puan Durumu Tablosu */}
@@ -145,10 +213,32 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                               {team.takim_adi.slice(0, 2)}
                             </div>
                           )}
-                          <div className="min-w-0">
-                            <span className="font-semibold text-slate-100 group-hover/team:text-pink-300 transition-colors truncate block text-xs sm:text-[13px] group-hover/team:underline underline-offset-2">
-                              {team.takim_adi}
-                            </span>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-1.5">
+                              <span className="font-semibold text-slate-100 group-hover/team:text-pink-300 transition-colors truncate block text-xs sm:text-[13px] group-hover/team:underline underline-offset-2">
+                                {team.takim_adi}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  triggerHaptic("selection");
+                                  toggleFavorite(team.takim_adi);
+                                }}
+                                className="shrink-0 p-0.5"
+                                title={isFavorite(team.takim_adi) ? "Favorilerden çıkar" : "Favorilere ekle"}
+                              >
+                                <Star
+                                  size={11}
+                                  className={
+                                    isFavorite(team.takim_adi)
+                                      ? "fill-amber-400 text-amber-400"
+                                      : "text-purple-400/40 hover:text-amber-300"
+                                  }
+                                />
+                              </button>
+                            </div>
                             {isPlayoff && (
                               <span className="text-[10px] text-amber-400/90 font-medium">
                                 ★ Play-Off Hattı
@@ -192,9 +282,18 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                         </>
                       )}
 
-                      {/* Profil & Volleybox Butonları */}
+                      {/* Profil, Karşılaştır & Volleybox Butonları */}
                       <td className="py-2.5 px-3 text-right">
                         <div className="flex items-center justify-end gap-1.5">
+                          <Link
+                            href={`/karsilastir?takim1=${slugify(team.takim_adi)}`}
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-950/60 hover:bg-amber-900/80 text-amber-300 hover:text-white border border-amber-800/50 text-[11px] font-semibold transition-all shadow-xs"
+                            title="Bu takımı başka bir takımla karşılaştır"
+                          >
+                            <Swords size={10} />
+                            <span className="hidden sm:inline">H2H</span>
+                          </Link>
+
                           <Link
                             href={`/takim/${slugify(team.takim_adi)}`}
                             className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-purple-900/50 hover:bg-purple-800 text-purple-200 hover:text-white border border-purple-700/40 text-[11px] font-semibold transition-all shadow-xs"

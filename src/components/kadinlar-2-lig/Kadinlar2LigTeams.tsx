@@ -1,33 +1,41 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Search, Shield, Trophy, ArrowRight, User } from "lucide-react";
+import { ExternalLink, Search, Shield, Trophy, ArrowRight, User, Star, Swords } from "lucide-react";
 import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
+import { useFavorites } from "@/utils/useFavorites";
+import { triggerHaptic } from "@/utils/haptics";
 
 interface Kadinlar2LigTeamsProps {
   teams: Kadinlar2LigTeam[];
   onSelectGroup?: (groupNo: number) => void;
   searchQuery?: string;
+  showOnlyFavorites?: boolean;
 }
 
 export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
   teams,
   onSelectGroup,
   searchQuery = "",
+  showOnlyFavorites = false,
 }) => {
   const [filterGroup, setFilterGroup] = useState<number | "all">("all");
+  const { isFavorite, toggleFavorite } = useFavorites();
 
-  const filteredTeams = teams.filter((t) => {
-    if (filterGroup !== "all" && t.grup_no !== filterGroup) return false;
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      if (!t.takim_adi.toLowerCase().includes(q)) return false;
-    }
-    return true;
-  });
+  const filteredTeams = useMemo(() => {
+    return teams.filter((t) => {
+      if (showOnlyFavorites && !isFavorite(t.takim_adi)) return false;
+      if (filterGroup !== "all" && t.grup_no !== filterGroup) return false;
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        if (!t.takim_adi.toLowerCase().includes(q)) return false;
+      }
+      return true;
+    });
+  }, [teams, showOnlyFavorites, filterGroup, searchQuery, isFavorite]);
 
   return (
     <div className="space-y-4">
@@ -67,53 +75,74 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
             key={team.takim_id || idx}
             className="bg-[#130d29]/90 hover:bg-[#1b123d] border border-purple-900/40 hover:border-purple-600/50 rounded-2xl p-3.5 transition-all shadow-md hover:shadow-xl backdrop-blur-sm flex flex-col justify-between gap-3 group"
           >
-            <div className="flex items-start gap-3">
-              <Link
-                href={`/takim/${slugify(team.takim_adi)}`}
-                className="shrink-0 hover:opacity-85 transition-opacity"
-                title={`${team.takim_adi} Kulüp Profili`}
-              >
-                {team.logo && !team.logo.includes("takimlogoyok") ? (
-                  <Image
-                    src={team.logo}
-                    alt={team.takim_adi}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-contain rounded-xl shrink-0 bg-white/5 p-1 border border-purple-800/30 group-hover:scale-105 transition-transform"
-                    unoptimized={team.logo.startsWith("http")}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
-                    }}
-                  />
-                ) : (
-                  <div className="w-10 h-10 rounded-xl bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-xs text-purple-200 font-bold shrink-0 group-hover:border-pink-500 transition-colors">
-                    {team.takim_adi.slice(0, 2)}
-                  </div>
-                )}
-              </Link>
-
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <span
-                    onClick={() => onSelectGroup && onSelectGroup(team.grup_no)}
-                    className="text-[10px] px-1.5 py-0.2 rounded-md bg-purple-950 text-purple-300 border border-purple-800/40 font-mono font-bold cursor-pointer hover:bg-purple-800 transition-colors"
-                    title={`Grup ${team.grup_no}'e git`}
-                  >
-                    Grup {team.grup_no}
-                  </span>
-                  <span className="text-[10px] text-slate-500">•</span>
-                  <span className="text-[10px] font-mono text-purple-400">
-                    Sıra: {team.sira}
-                  </span>
-                </div>
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-start gap-3 min-w-0 flex-1">
                 <Link
                   href={`/takim/${slugify(team.takim_adi)}`}
-                  className="font-bold text-xs sm:text-[13px] text-white group-hover:text-pink-300 transition-colors line-clamp-2 block hover:underline underline-offset-2"
-                  title={`${team.takim_adi} Kulüp Profilini Aç`}
+                  className="shrink-0 hover:opacity-85 transition-opacity"
+                  title={`${team.takim_adi} Kulüp Profili`}
                 >
-                  {team.takim_adi}
+                  {team.logo && !team.logo.includes("takimlogoyok") ? (
+                    <Image
+                      src={team.logo}
+                      alt={team.takim_adi}
+                      width={40}
+                      height={40}
+                      className="w-10 h-10 object-contain rounded-xl shrink-0 bg-white/5 p-1 border border-purple-800/30 group-hover:scale-105 transition-transform"
+                      unoptimized={team.logo.startsWith("http")}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-xl bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-xs text-purple-200 font-bold shrink-0 group-hover:border-pink-500 transition-colors">
+                      {team.takim_adi.slice(0, 2)}
+                    </div>
+                  )}
                 </Link>
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <span
+                      onClick={() => onSelectGroup && onSelectGroup(team.grup_no)}
+                      className="text-[10px] px-1.5 py-0.2 rounded-md bg-purple-950 text-purple-300 border border-purple-800/40 font-mono font-bold cursor-pointer hover:bg-purple-800 transition-colors"
+                      title={`Grup ${team.grup_no}'e git`}
+                    >
+                      Grup {team.grup_no}
+                    </span>
+                    <span className="text-[10px] text-slate-500">•</span>
+                    <span className="text-[10px] font-mono text-purple-400">
+                      Sıra: {team.sira}
+                    </span>
+                  </div>
+                  <Link
+                    href={`/takim/${slugify(team.takim_adi)}`}
+                    className="font-bold text-xs sm:text-[13px] text-white group-hover:text-pink-300 transition-colors line-clamp-2 block hover:underline underline-offset-2"
+                    title={`${team.takim_adi} Kulüp Profilini Aç`}
+                  >
+                    {team.takim_adi}
+                  </Link>
+                </div>
               </div>
+
+              {/* Favori Yıldız Butonu */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  triggerHaptic();
+                  toggleFavorite(team.takim_adi);
+                }}
+                className={`p-1.5 rounded-lg border transition-all shrink-0 cursor-pointer ${
+                  isFavorite(team.takim_adi)
+                    ? "bg-amber-500/20 text-amber-400 border-amber-500/40 shadow-xs shadow-amber-500/20"
+                    : "bg-purple-950/40 text-purple-400/50 border-purple-800/40 hover:text-amber-400 hover:border-purple-600/50"
+                }`}
+                title={isFavorite(team.takim_adi) ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+              >
+                <Star size={13} className={isFavorite(team.takim_adi) ? "fill-amber-400" : ""} />
+              </button>
             </div>
 
             {/* Alt Kısım: Puan İstatistiği & Profil / Volleybox Butonları */}
@@ -127,6 +156,15 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
               </div>
 
               <div className="flex items-center gap-1.5 shrink-0">
+                <Link
+                  href={`/karsilastir?takim1=${encodeURIComponent(team.takim_adi)}`}
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-indigo-950/70 hover:bg-indigo-900 text-indigo-300 hover:text-white border border-indigo-700/50 text-[11px] font-semibold transition-all shadow-xs"
+                  title={`${team.takim_adi} H2H Karşılaştır`}
+                >
+                  <Swords size={10} />
+                  <span>H2H</span>
+                </Link>
+
                 <Link
                   href={`/takim/${slugify(team.takim_adi)}`}
                   className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-900/60 hover:bg-purple-800 text-purple-200 hover:text-white border border-purple-700/50 text-[11px] font-semibold transition-all shadow-xs"

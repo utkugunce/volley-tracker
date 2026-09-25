@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T15:51:46.848074+03:00",
+  "updated_at": "2026-09-25T16:07:56.248027+03:00",
   "total_cities": 81,
   "active_cities": 15,
   "total_matches": 470,
@@ -609,7 +609,7 @@
       "name": "Trabzon",
       "slug": "trabzon",
       "url": "https://trabzon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -779,7 +779,7 @@
       "name": "Karabük",
       "slug": "karabuk",
       "url": "https://karabuk.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

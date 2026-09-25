@@ -2,18 +2,42 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, RefreshCw, ExternalLink, Search, Trophy, Check, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  RefreshCw,
+  ExternalLink,
+  Search,
+  Trophy,
+  Check,
+  Sparkles,
+  Flame,
+  CheckCircle2,
+  CalendarDays,
+  Layers,
+  Users,
+  Star,
+  Command,
+} from "lucide-react";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
+import { triggerHaptic } from "@/utils/haptics";
+
+export type Kadinlar2LigTabType = "standings" | "fixtures" | "today" | "results" | "leaders" | "teams";
 
 interface Kadinlar2LigHeaderProps {
   metadata: Kadinlar2LigMetadata;
-  activeTab: "standings" | "fixtures" | "leaders" | "teams";
-  onSelectTab: (tab: "standings" | "fixtures" | "leaders" | "teams") => void;
+  activeTab: Kadinlar2LigTabType;
+  onSelectTab: (tab: Kadinlar2LigTabType) => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
   onRefresh: () => void;
   isLoading: boolean;
   justUpdated: boolean;
+  todayMatchesCount?: number;
+  resultsCount?: number;
+  favoritesCount?: number;
+  showOnlyFavorites?: boolean;
+  onToggleFavoritesOnly?: () => void;
+  onOpenSearch?: () => void;
 }
 
 export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
@@ -25,6 +49,12 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
   onRefresh,
   isLoading,
   justUpdated,
+  todayMatchesCount = 0,
+  resultsCount = 0,
+  favoritesCount = 0,
+  showOnlyFavorites = false,
+  onToggleFavoritesOnly,
+  onOpenSearch,
 }) => {
   const [showLinksModal, setShowLinksModal] = useState(false);
 
@@ -75,8 +105,54 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           </div>
         </div>
 
-        {/* Sağ Taraf: Resmi Kaynaklar Linki & Yenile */}
+        {/* Sağ Taraf: Spotlight Arama, Sadece Favorilerim, Resmi Kaynaklar Linki & Yenile */}
         <div className="flex items-center gap-2">
+          {/* Spotlight Arama Butonu (Masaüstü & Tablet) */}
+          {onOpenSearch && (
+            <button
+              onClick={onOpenSearch}
+              className="hidden sm:flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-xl bg-purple-950/60 hover:bg-purple-900/70 text-purple-300 hover:text-white border border-purple-800/50 transition-all active:scale-95 cursor-pointer shadow-xs"
+              title="Spotlight Hızlı Arama (Ctrl+K)"
+            >
+              <Search size={13} className="text-pink-400" />
+              <span className="font-medium text-[11px]">Ara</span>
+              <kbd className="text-[9px] bg-purple-900/90 text-purple-300 px-1 py-0.5 rounded border border-purple-700/50 font-mono">
+                ⌘K
+              </kbd>
+            </button>
+          )}
+
+          {/* Sadece Favorilerim Filtresi */}
+          {onToggleFavoritesOnly && (
+            <button
+              onClick={() => {
+                triggerHaptic();
+                onToggleFavoritesOnly();
+              }}
+              className={`flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-xl transition-all active:scale-95 cursor-pointer border ${
+                showOnlyFavorites
+                  ? "bg-amber-500/25 border-amber-500/60 text-amber-300 shadow-md shadow-amber-500/20 font-bold"
+                  : "bg-purple-950/60 hover:bg-purple-900/60 border-purple-700/40 text-purple-200 hover:text-white"
+              }`}
+              title="Sadece Favori Kulüplerimi Filtrele"
+            >
+              <Star
+                size={13}
+                className={showOnlyFavorites ? "fill-amber-400 text-amber-400" : "text-amber-400"}
+              />
+              <span className="hidden sm:inline font-medium text-[11px]">Favoriler</span>
+              {favoritesCount > 0 && (
+                <span
+                  className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
+                    showOnlyFavorites ? "bg-amber-400 text-slate-950 font-black" : "bg-purple-900 text-purple-200"
+                  }`}
+                >
+                  {favoritesCount}
+                </span>
+              )}
+            </button>
+          )}
+
           {/* Resmi Kaynaklar Açılır Menü Butonu */}
           <div className="relative">
             <button
@@ -185,11 +261,48 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
 
       {/* 2. Canlı Arama Çubuğu & Ana Sekmeler */}
       <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex flex-col md:flex-row items-center justify-between gap-2.5">
-        {/* Sekmeler: PUAN DURUMU, FİKSTÜR, GRUP LİDERLERİ, TÜM TAKIMLAR */}
-        <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-bold w-full md:w-auto overflow-x-auto no-scrollbar">
+        {/* Sekmeler: GÜNÜN MAÇLARI, SONUÇLAR, PUAN DURUMU, FİKSTÜR, 16 GRUP STATÜSÜ, KULÜPLER */}
+        <div className="flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-bold w-full md:w-auto overflow-x-auto no-scrollbar">
+          {/* Günün Maçları */}
+          <button
+            onClick={() => onSelectTab("today")}
+            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
+              activeTab === "today"
+                ? "bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-md shadow-pink-600/30 border border-pink-400/40"
+                : "text-purple-300/80 hover:text-white hover:bg-purple-950/40"
+            }`}
+          >
+            <Flame size={14} className={activeTab === "today" ? "text-amber-200 fill-amber-300" : "text-pink-400"} />
+            <span>GÜNÜN MAÇLARI</span>
+            {todayMatchesCount > 0 && (
+              <span className="text-[10px] bg-pink-900/90 text-pink-200 px-1.5 py-0.2 rounded-full font-mono">
+                {todayMatchesCount}
+              </span>
+            )}
+          </button>
+
+          {/* Sonuçlar */}
+          <button
+            onClick={() => onSelectTab("results")}
+            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
+              activeTab === "results"
+                ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-600/30 border border-emerald-400/40"
+                : "text-purple-300/80 hover:text-white hover:bg-purple-950/40"
+            }`}
+          >
+            <CheckCircle2 size={14} className={activeTab === "results" ? "text-emerald-200" : "text-emerald-400"} />
+            <span>SONUÇLAR</span>
+            {resultsCount > 0 && (
+              <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-700/50 px-1.5 py-0.2 rounded-full font-mono">
+                {resultsCount}
+              </span>
+            )}
+          </button>
+
+          {/* Puan Cetveli */}
           <button
             onClick={() => onSelectTab("standings")}
-            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-3 sm:px-4 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
+            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
               activeTab === "standings"
                 ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30 border border-purple-400/40"
                 : "text-purple-300/80 hover:text-white hover:bg-purple-950/40"
@@ -199,57 +312,63 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
             <span>PUAN CETVELİ</span>
           </button>
 
+          {/* Fikstür */}
           <button
             onClick={() => onSelectTab("fixtures")}
-            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-3 sm:px-4 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
+            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
               activeTab === "fixtures"
                 ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30 border border-purple-400/40"
                 : "text-purple-300/80 hover:text-white hover:bg-purple-950/40"
             }`}
           >
-            <span>FİKSTÜR & MAÇLAR</span>
-            <span className="text-[10px] bg-purple-900/80 px-1.5 py-0.5 rounded-full text-purple-200 font-mono">
+            <CalendarDays size={14} className={activeTab === "fixtures" ? "text-indigo-200" : "text-purple-400"} />
+            <span>FİKSTÜR</span>
+            <span className="text-[10px] bg-purple-900/80 px-1.5 py-0.2 rounded-full text-purple-200 font-mono">
               {metadata?.toplam_mac_sayisi || 289}
             </span>
           </button>
 
+          {/* 16 Grup Statüsü */}
           <button
             onClick={() => onSelectTab("leaders")}
-            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-3 sm:px-4 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
+            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
               activeTab === "leaders"
                 ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30 border border-purple-400/40"
                 : "text-purple-300/80 hover:text-white hover:bg-purple-950/40"
             }`}
           >
-            <span>16 GRUP ÖZETİ</span>
+            <Layers size={14} className={activeTab === "leaders" ? "text-pink-300" : "text-purple-400"} />
+            <span>16 GRUP STATÜSÜ</span>
           </button>
 
+          {/* Kulüpler */}
           <button
             onClick={() => onSelectTab("teams")}
-            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-3 sm:px-4 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
+            className={`flex items-center gap-1.5 py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-xl text-[11px] sm:text-xs font-bold tracking-wide transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-150 ${
               activeTab === "teams"
                 ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30 border border-purple-400/40"
                 : "text-purple-300/80 hover:text-white hover:bg-purple-950/40"
             }`}
           >
+            <Users size={14} className={activeTab === "teams" ? "text-cyan-200" : "text-purple-400"} />
             <span>KULÜPLER ({metadata?.toplam_takim_sayisi || 167})</span>
           </button>
         </div>
 
-        {/* Canlı Arama Input */}
+        {/* Canlı Filtreleme Arama Input */}
         <div className="relative w-full md:w-64">
           <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-400" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Takım, şehir veya salon ara..."
+            placeholder="Takım, salon veya şehir..."
             className="w-full bg-[#160f2e] border border-purple-800/60 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white placeholder-purple-400/50 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all shadow-inner"
           />
           {searchQuery && (
             <button
               onClick={() => onSearchChange("")}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] bg-purple-900 text-purple-300 hover:text-white px-1.5 py-0.5 rounded-full"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] bg-purple-900 text-purple-300 hover:text-white px-1.5 py-0.5 rounded-full cursor-pointer"
             >
               ✕
             </button>
@@ -259,3 +378,4 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
     </header>
   );
 };
+
