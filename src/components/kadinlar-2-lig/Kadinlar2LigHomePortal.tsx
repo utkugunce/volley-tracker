@@ -515,8 +515,18 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     <div className="flex items-center justify-between text-xs">
                       <div className="flex items-center gap-1.5 min-w-0 flex-1">
                         <span className="text-emerald-400 font-black font-mono text-[11px]">1.</span>
+                        {grp.leader.logo && !grp.leader.logo.includes("takimlogoyok") && (
+                          <Image
+                            src={grp.leader.logo}
+                            alt=""
+                            width={16}
+                            height={16}
+                            className="w-3.5 h-3.5 object-contain rounded shrink-0 bg-white/5 p-0.5"
+                            unoptimized={grp.leader.logo.startsWith("http")}
+                          />
+                        )}
                         <span className="text-slate-200 truncate font-semibold text-[11px]">
-                          {grp.leader.takim_adi}
+                          {grp.leader.volleybox_name || grp.leader.takim_adi}
                         </span>
                       </div>
                       <span className="font-mono font-bold text-white text-[11px] bg-slate-950 px-1.5 py-0.2 rounded border border-slate-800">
@@ -529,8 +539,18 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     <div className="flex items-center justify-between text-xs">
                       <div className="flex items-center gap-1.5 min-w-0 flex-1">
                         <span className="text-emerald-400/80 font-black font-mono text-[11px]">2.</span>
+                        {grp.runnerUp.logo && !grp.runnerUp.logo.includes("takimlogoyok") && (
+                          <Image
+                            src={grp.runnerUp.logo}
+                            alt=""
+                            width={16}
+                            height={16}
+                            className="w-3.5 h-3.5 object-contain rounded shrink-0 bg-white/5 p-0.5"
+                            unoptimized={grp.runnerUp.logo.startsWith("http")}
+                          />
+                        )}
                         <span className="text-slate-300 truncate text-[11px]">
-                          {grp.runnerUp.takim_adi}
+                          {grp.runnerUp.volleybox_name || grp.runnerUp.takim_adi}
                         </span>
                       </div>
                       <span className="font-mono text-slate-400 text-[11px]">

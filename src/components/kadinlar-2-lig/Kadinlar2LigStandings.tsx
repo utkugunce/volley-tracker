@@ -8,6 +8,7 @@ import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
+import { getVolleyboxMapping } from "@/utils/volleybox";
 
 interface Kadinlar2LigStandingsProps {
   group: Kadinlar2LigGroup;
@@ -26,8 +27,13 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
   const teams = group?.puan_durumu || [];
   const filteredTeams = useMemo(() => {
     return teams.filter((t) => {
-      if (showOnlyFavorites && !isFavorite(t.takim_adi)) return false;
-      if (searchQuery && !t.takim_adi.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+      const vb = getVolleyboxMapping(t.takim_adi, "Kadınlar 2. Ligi");
+      const displayName = t.volleybox_name || vb?.matched_as || t.takim_adi;
+      if (showOnlyFavorites && !isFavorite(t.takim_adi) && !isFavorite(displayName)) return false;
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        if (!t.takim_adi.toLowerCase().includes(q) && !displayName.toLowerCase().includes(q)) return false;
+      }
       return true;
     });
   }, [teams, showOnlyFavorites, searchQuery, isFavorite]);
@@ -185,144 +191,156 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                       </td>
 
                       {/* Takım Logo & İsim */}
-                      <td className="py-2 sm:py-2.5 px-3">
-                        <div className="flex items-center gap-2.5 min-w-0">
-                          <Link
-                            href={`/takim/${slugify(team.takim_adi)}`}
-                            className="shrink-0 hover:opacity-80 transition-opacity"
-                            title={`${team.takim_adi} Kulüp Profili`}
-                          >
-                            {team.logo && !team.logo.includes("takimlogoyok") ? (
-                              <Image
-                                src={team.logo}
-                                alt={team.takim_adi}
-                                width={22}
-                                height={22}
-                                className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
-                                unoptimized={team.logo.startsWith("http")}
-                                onError={(e) => {
-                                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                                }}
-                              />
-                            ) : (
-                              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
-                                {team.takim_adi.slice(0, 2)}
+                      {(() => {
+                        const vb = getVolleyboxMapping(team.takim_adi, "Kadınlar 2. Ligi");
+                        const displayName = team.volleybox_name || vb?.matched_as || team.takim_adi;
+                        const logoSrc = (team.logo && !team.logo.includes("takimlogoyok")) ? team.logo : (vb?.local_logo || vb?.logo_url);
+                        const vbUrl = team.volleybox_url || vb?.volleybox_url;
+                        const isFav = isFavorite(displayName) || isFavorite(team.takim_adi);
+
+                        return (
+                          <>
+                            <td className="py-2 sm:py-2.5 px-3">
+                              <div className="flex items-center gap-2.5 min-w-0">
+                                <Link
+                                  href={`/takim/${slugify(displayName)}`}
+                                  className="shrink-0 hover:opacity-80 transition-opacity"
+                                  title={`${displayName} Kulüp Profili`}
+                                >
+                                  {logoSrc ? (
+                                    <Image
+                                      src={logoSrc}
+                                      alt={displayName}
+                                      width={24}
+                                      height={24}
+                                      className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
+                                      unoptimized={logoSrc.startsWith("http")}
+                                      onError={(e) => {
+                                        (e.currentTarget as HTMLImageElement).style.display = "none";
+                                      }}
+                                    />
+                                  ) : (
+                                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
+                                      {displayName.slice(0, 2)}
+                                    </div>
+                                  )}
+                                </Link>
+
+                                <div className="min-w-0 flex-1 flex items-center gap-1.5">
+                                  <Link
+                                    href={`/takim/${slugify(displayName)}`}
+                                    className="font-semibold text-slate-100 hover:text-rose-400 transition-colors truncate block text-xs sm:text-[13px] hover:underline underline-offset-2"
+                                    title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Profilini Aç`}
+                                  >
+                                    {displayName}
+                                  </Link>
+
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.preventDefault();
+                                      e.stopPropagation();
+                                      triggerHaptic("selection");
+                                      toggleFavorite(displayName);
+                                    }}
+                                    className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400 transition-colors cursor-pointer"
+                                    title={isFav ? "Favorilerden çıkar" : "Favorilere ekle"}
+                                  >
+                                    <Star
+                                      size={12}
+                                      className={
+                                        isFav
+                                          ? "fill-amber-400 text-amber-400"
+                                          : "text-slate-600 hover:text-amber-400"
+                                      }
+                                    />
+                                  </button>
+
+                                  {isPlayoff && (
+                                    <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 hidden sm:inline-block">
+                                      Çeyrek Final
+                                    </span>
+                                  )}
+                                  {isRelegation && (
+                                    <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-rose-950/80 text-rose-300 border border-rose-500/40 hidden sm:inline-block">
+                                      Düşme
+                                    </span>
+                                  )}
+                                </div>
                               </div>
+                            </td>
+
+                            {/* O, G, M */}
+                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono text-slate-300">{team.o}</td>
+                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-bold text-emerald-400">{team.g}</td>
+                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono text-rose-400">{team.m}</td>
+
+                            {/* Setler */}
+                            <td className="py-2 sm:py-2.5 px-2.5 text-center font-mono text-slate-300 hidden md:table-cell">
+                              <span>{team.as}:{team.vs}</span>
+                              <span className="text-[10px] text-slate-500 ml-1">({team.sav})</span>
+                            </td>
+
+                            {/* Sayılar */}
+                            <td className="py-2 sm:py-2.5 px-2.5 text-center font-mono text-slate-300 hidden lg:table-cell">
+                              <span>{team.asp}:{team.vsp}</span>
+                              <span className="text-[10px] text-slate-500 ml-1">({team.spav})</span>
+                            </td>
+
+                            {/* Detaylı Skorlar */}
+                            {showDetailedStats && (
+                              <>
+                                <td className="py-2 px-2 text-center font-mono text-slate-300 hidden xl:table-cell">{team.a3_0}</td>
+                                <td className="py-2 px-2 text-center font-mono text-slate-300 hidden xl:table-cell">{team.a3_1}</td>
+                                <td className="py-2 px-2 text-center font-mono text-slate-300 hidden xl:table-cell">{team.a3_2}</td>
+                                <td className="py-2 px-2 text-center font-mono text-slate-400 hidden xl:table-cell">{team.v2_3}</td>
+                                <td className="py-2 px-2 text-center font-mono text-slate-400 hidden xl:table-cell">{team.v1_3}</td>
+                                <td className="py-2 px-2 text-center font-mono text-slate-400 hidden xl:table-cell">{team.v0_3}</td>
+                              </>
                             )}
-                          </Link>
 
-                          <div className="min-w-0 flex-1 flex items-center gap-1.5">
-                            <Link
-                              href={`/takim/${slugify(team.takim_adi)}`}
-                              className="font-semibold text-slate-100 hover:text-rose-400 transition-colors truncate block text-xs sm:text-[13px] hover:underline underline-offset-2"
-                              title={`${team.takim_adi} Kulüp Profilini Aç`}
-                            >
-                              {team.takim_adi}
-                            </Link>
+                            {/* Puan (Vurgulu) */}
+                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-black text-white bg-slate-900/80 text-xs sm:text-sm">
+                              {team.p}
+                            </td>
 
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                triggerHaptic("selection");
-                                toggleFavorite(team.takim_adi);
-                              }}
-                              className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400 transition-colors"
-                              title={isFavorite(team.takim_adi) ? "Favorilerden çıkar" : "Favorilere ekle"}
-                            >
-                              <Star
-                                size={12}
-                                className={
-                                  isFavorite(team.takim_adi)
-                                    ? "fill-amber-400 text-amber-400"
-                                    : "text-slate-600 hover:text-amber-400"
-                                }
-                              />
-                            </button>
+                            {/* İşlemler: H2H, Profil, Volleybox */}
+                            <td className="py-2 sm:py-2.5 px-3 text-right">
+                              <div className="flex items-center justify-end gap-1.5">
+                                <Link
+                                  href={`/karsilastir?takim1=${slugify(displayName)}`}
+                                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all shadow-xs"
+                                  title="Bu takımı karşılaştır"
+                                >
+                                  <Swords size={10} />
+                                  <span className="hidden sm:inline">H2H</span>
+                                </Link>
 
-                            {isPlayoff && (
-                              <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 hidden sm:inline-block">
-                                Çeyrek Final
-                              </span>
-                            )}
-                            {isRelegation && (
-                              <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-rose-950/80 text-rose-300 border border-rose-500/40 hidden sm:inline-block">
-                                Düşme
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </td>
+                                <Link
+                                  href={`/takim/${slugify(displayName)}`}
+                                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all shadow-xs"
+                                  title={`${displayName} Kadrosu`}
+                                >
+                                  <span>Kadro</span>
+                                </Link>
 
-                      {/* O, G, M */}
-                      <td className="py-2 sm:py-2.5 px-2 text-center font-mono text-slate-300">{team.o}</td>
-                      <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-bold text-emerald-400">{team.g}</td>
-                      <td className="py-2 sm:py-2.5 px-2 text-center font-mono text-rose-400">{team.m}</td>
-
-                      {/* Setler */}
-                      <td className="py-2 sm:py-2.5 px-2.5 text-center font-mono text-slate-300 hidden md:table-cell">
-                        <span>{team.as}:{team.vs}</span>
-                        <span className="text-[10px] text-slate-500 ml-1">({team.sav})</span>
-                      </td>
-
-                      {/* Sayılar */}
-                      <td className="py-2 sm:py-2.5 px-2.5 text-center font-mono text-slate-300 hidden lg:table-cell">
-                        <span>{team.asp}:{team.vsp}</span>
-                        <span className="text-[10px] text-slate-500 ml-1">({team.spav})</span>
-                      </td>
-
-                      {/* Detaylı Skorlar */}
-                      {showDetailedStats && (
-                        <>
-                          <td className="py-2 px-2 text-center font-mono text-slate-300 hidden xl:table-cell">{team.a3_0}</td>
-                          <td className="py-2 px-2 text-center font-mono text-slate-300 hidden xl:table-cell">{team.a3_1}</td>
-                          <td className="py-2 px-2 text-center font-mono text-slate-300 hidden xl:table-cell">{team.a3_2}</td>
-                          <td className="py-2 px-2 text-center font-mono text-slate-400 hidden xl:table-cell">{team.v2_3}</td>
-                          <td className="py-2 px-2 text-center font-mono text-slate-400 hidden xl:table-cell">{team.v1_3}</td>
-                          <td className="py-2 px-2 text-center font-mono text-slate-400 hidden xl:table-cell">{team.v0_3}</td>
-                        </>
-                      )}
-
-                      {/* Puan (Vurgulu) */}
-                      <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-black text-white bg-slate-900/80 text-xs sm:text-sm">
-                        {team.p}
-                      </td>
-
-                      {/* İşlemler: H2H, Profil, Volleybox */}
-                      <td className="py-2 sm:py-2.5 px-3 text-right">
-                        <div className="flex items-center justify-end gap-1.5">
-                          <Link
-                            href={`/karsilastir?takim1=${slugify(team.takim_adi)}`}
-                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all shadow-xs"
-                            title="Bu takımı karşılaştır"
-                          >
-                            <Swords size={10} />
-                            <span className="hidden sm:inline">H2H</span>
-                          </Link>
-
-                          <Link
-                            href={`/takim/${slugify(team.takim_adi)}`}
-                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all shadow-xs"
-                            title={`${team.takim_adi} Kadrosu`}
-                          >
-                            <span>Kadro</span>
-                          </Link>
-
-                          {team.volleybox_url && (
-                            <a
-                              href={team.volleybox_url}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-lg bg-cyan-950/50 hover:bg-cyan-900/70 text-cyan-300 hover:text-white border border-cyan-800/40 text-[11px] font-medium transition-all shadow-xs"
-                              title={`${team.takim_adi} Volleybox Profili`}
-                            >
-                              <span>VB</span>
-                              <ExternalLink size={9} />
-                            </a>
-                          )}
-                        </div>
-                      </td>
+                                {vbUrl && (
+                                  <a
+                                    href={vbUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 hover:text-white border border-emerald-700/50 text-[11px] font-semibold transition-all shadow-xs"
+                                    title={`${displayName} Volleybox Profili`}
+                                  >
+                                    <span>VB</span>
+                                    <ExternalLink size={9} />
+                                  </a>
+                                )}
+                              </div>
+                            </td>
+                          </>
+                        );
+                      })()}
                     </tr>
                   );
                 })

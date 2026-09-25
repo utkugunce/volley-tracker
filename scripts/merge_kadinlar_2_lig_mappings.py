@@ -121,8 +121,9 @@ def merge_kadinlar_2_lig_mappings(silent: bool = False):
                 if (m.get("internal_name", "").lower(), m.get("internal_category", "").lower()) == pair:
                     m["volleybox_url"] = vb_url
                     m["matched_as"] = vb_name or name
-                    if clean_logo and not m.get("logo_url"):
+                    if clean_logo:
                         m["logo_url"] = clean_logo
+                        m["local_logo"] = clean_logo
                     curr_aliases = set(m.get("aliases") or [])
                     curr_aliases.update(aliases)
                     m["aliases"] = list(curr_aliases)
@@ -141,7 +142,8 @@ def merge_kadinlar_2_lig_mappings(silent: bool = False):
                 "note": f"Grup {grup_no}",
                 "verified_at": "2026-09-25",
                 "aliases": list(set(aliases)),
-                "logo_url": clean_logo
+                "logo_url": clean_logo,
+                "local_logo": clean_logo
             }
             mappings.append(new_entry)
             existing_keys.add(pair)

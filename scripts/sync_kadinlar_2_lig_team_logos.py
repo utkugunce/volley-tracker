@@ -149,6 +149,25 @@ def main():
     all_teams = data.get("tum_takimlar", [])
     print(f"Toplam takim: {len(all_teams)}")
 
+    VBM_FILE = DATA_DIR / "volleybox-mappings.json"
+    if VBM_FILE.exists():
+        try:
+            with open(VBM_FILE, "r", encoding="utf-8") as vf:
+                vbm = json.load(vf)
+                k2_maps = {m["internal_name"].strip().lower(): m for m in vbm.get("mappings", []) if m.get("internal_category") == "Kadınlar 2. Ligi"}
+                for m in vbm.get("mappings", []):
+                    if m.get("internal_category") == "Kadınlar 2. Ligi":
+                        for alias in m.get("aliases", []):
+                            k2_maps[alias.strip().lower()] = m
+                for t in all_teams:
+                    if not t.get("volleybox_url"):
+                        m = k2_maps.get(t.get("takim_adi", "").strip().lower())
+                        if m:
+                            t["volleybox_url"] = m.get("volleybox_url")
+                            t["volleybox_name"] = m.get("matched_as")
+        except Exception as mex:
+            print(f"  Mappings okuma hatasi: {mex}")
+
     url_to_teams = {}
     for t in all_teams:
         url = t.get("volleybox_url")

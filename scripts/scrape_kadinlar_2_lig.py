@@ -33,6 +33,8 @@ except ImportError:
 
 DATA_DIR = os.path.join(BASE_DIR, "data")
 OUTPUT_FILE = os.path.join(DATA_DIR, "kadinlar_2_lig.json")
+VBM_FILE = os.path.join(DATA_DIR, "volleybox-mappings.json")
+LOGOS_DIR = os.path.join(BASE_DIR, "public", "logos")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -340,6 +342,23 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
 
     # 3. Match Volleybox & Enrich
     log("\n🔗 Takımlar Volleybox profilleri ile eşleştiriliyor...")
+    
+    # volleybox-mappings.json yükle (öncelikli ve güvenilir kaynak)
+    k2_mappings = {}
+    if os.path.exists(VBM_FILE):
+        try:
+            with open(VBM_FILE, "r", encoding="utf-8") as vf:
+                vbm_data = json.load(vf)
+                for item in vbm_data.get("mappings", []):
+                    if item.get("internal_category") == "Kadınlar 2. Ligi":
+                        iname = item.get("internal_name", "").strip().lower()
+                        k2_mappings[iname] = item
+                        for alias in item.get("aliases", []):
+                            k2_mappings[alias.strip().lower()] = item
+            log(f"  📖 {len(k2_mappings)} kayıtlı Volleybox eşleşmesi yüklendi.")
+        except Exception as mex:
+            log(f"  ⚠️ Mappings yüklenemedi: {mex}")
+
     all_teams_map = {}
     matched_count = 0
     total_unique_teams = 0
@@ -347,10 +366,35 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
     for g, teams in groups_standings.items():
         for t in teams:
             t_name = t["takim_adi"]
-            vb_url, vb_name = match_volleybox(t_name, vb_teams)
+            name_clean = t_name.strip().lower()
+            
+            # 1. Önce volleybox-mappings.json'a bak
+            m_info = k2_mappings.get(name_clean)
+            if m_info:
+                vb_url = m_info.get("volleybox_url")
+                vb_name = m_info.get("matched_as")
+                logo_val = m_info.get("local_logo") or m_info.get("logo_url")
+            else:
+                # 2. Canlı Volleybox fuzzy matching fallback
+                vb_url, vb_name = match_volleybox(t_name, vb_teams)
+                logo_val = None
+
             t["volleybox_url"] = vb_url
             t["volleybox_name"] = vb_name
             t["grup_no"] = g
+            
+            # Disk'te logo varsa set et
+            if vb_url:
+                slug_m = re.search(r"([^/]+)$", vb_url.rstrip("/"))
+                if slug_m:
+                    slug = re.sub(r"[^a-zA-Z0-9_\-]", "", slug_m.group(1))
+                    dest_path = os.path.join(LOGOS_DIR, f"{slug}.png")
+                    if os.path.exists(dest_path) and os.path.getsize(dest_path) > 100:
+                        logo_val = f"/logos/{slug}.png"
+            
+            if logo_val:
+                t["logo"] = logo_val
+
             if vb_url:
                 matched_count += 1
             if t_name not in all_teams_map:
@@ -361,10 +405,20 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
         for m in matches:
             t_a = all_teams_map.get(m["takim_a"])
             t_b = all_teams_map.get(m["takim_b"])
-            if t_a and t_a.get("volleybox_url"):
-                m["takim_a_volleybox_url"] = t_a["volleybox_url"]
-            if t_b and t_b.get("volleybox_url"):
-                m["takim_b_volleybox_url"] = t_b["volleybox_url"]
+            if t_a:
+                if t_a.get("volleybox_url"):
+                    m["takim_a_volleybox_url"] = t_a["volleybox_url"]
+                if t_a.get("volleybox_name"):
+                    m["takim_a_volleybox_name"] = t_a["volleybox_name"]
+                if t_a.get("logo") and "takimlogoyok" not in t_a.get("logo", ""):
+                    m["takim_a_logo"] = t_a["logo"]
+            if t_b:
+                if t_b.get("volleybox_url"):
+                    m["takim_b_volleybox_url"] = t_b["volleybox_url"]
+                if t_b.get("volleybox_name"):
+                    m["takim_b_volleybox_name"] = t_b["volleybox_name"]
+                if t_b.get("logo") and "takimlogoyok" not in t_b.get("logo", ""):
+                    m["takim_b_logo"] = t_b["logo"]
 
     # Flatten all matches
     all_matches = []

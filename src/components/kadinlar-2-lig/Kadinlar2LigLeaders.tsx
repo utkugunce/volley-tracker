@@ -2,10 +2,12 @@
 
 import React, { useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Trophy, ArrowRight, Layers, CheckCircle2 } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
+import { getVolleyboxMapping } from "@/utils/volleybox";
 
 interface Kadinlar2LigLeadersProps {
   groups: Kadinlar2LigGroup[];
@@ -116,35 +118,56 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                       Henüz maç oynanmadı
                     </div>
                   ) : (
-                    topTeams.map((team) => (
-                      <div
-                        key={team.takim_id}
-                        className="flex items-center justify-between text-xs py-1 px-1.5 rounded-lg hover:bg-slate-800/50 transition-colors"
-                      >
-                        <div className="flex items-center gap-2 min-w-0 flex-1">
-                          <span
-                            className={`w-4 text-center font-mono font-bold text-[11px] ${
-                              team.sira <= 2 ? "text-emerald-400" : "text-slate-400"
-                            }`}
-                          >
-                            {team.sira}.
-                          </span>
-                          <Link
-                            href={`/takim/${slugify(team.takim_adi)}`}
-                            className="text-slate-200 hover:text-rose-400 truncate text-[11px] font-semibold"
-                            title={`${team.takim_adi} Kulüp Sayfası`}
-                          >
-                            {team.takim_adi}
-                          </Link>
+                    topTeams.map((team) => {
+                      const vb = getVolleyboxMapping(team.takim_adi, "Kadınlar 2. Ligi");
+                      const displayName = team.volleybox_name || vb?.matched_as || team.takim_adi;
+                      const logoSrc = (team.logo && !team.logo.includes("takimlogoyok")) ? team.logo : (vb?.local_logo || vb?.logo_url);
+
+                      return (
+                        <div
+                          key={team.takim_id}
+                          className="flex items-center justify-between text-xs py-1 px-1.5 rounded-lg hover:bg-slate-800/50 transition-colors"
+                        >
+                          <div className="flex items-center gap-2 min-w-0 flex-1">
+                            <span
+                              className={`w-4 text-center font-mono font-bold text-[11px] ${
+                                team.sira <= 2 ? "text-emerald-400" : "text-slate-400"
+                              }`}
+                            >
+                              {team.sira}.
+                            </span>
+
+                            {logoSrc ? (
+                              <Image
+                                src={logoSrc}
+                                alt={displayName}
+                                width={18}
+                                height={18}
+                                className="w-4 h-4 object-contain rounded shrink-0 bg-white/5 p-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
+                                unoptimized={logoSrc.startsWith("http")}
+                                onError={(e) => {
+                                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                                }}
+                              />
+                            ) : null}
+
+                            <Link
+                              href={`/takim/${slugify(displayName)}`}
+                              className="text-slate-200 hover:text-rose-400 truncate text-[11px] font-semibold"
+                              title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Sayfası`}
+                            >
+                              {displayName}
+                            </Link>
+                          </div>
+                          <div className="flex items-center gap-2 shrink-0 font-mono text-[11px]">
+                            <span className="text-slate-400">{team.g}G</span>
+                            <span className="font-black text-white bg-slate-950 px-1.5 py-0.2 rounded border border-slate-800">
+                              {team.p}P
+                            </span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2 shrink-0 font-mono text-[11px]">
-                          <span className="text-slate-400">{team.g}G</span>
-                          <span className="font-black text-white bg-slate-950 px-1.5 py-0.2 rounded border border-slate-800">
-                            {team.p}P
-                          </span>
-                        </div>
-                      </div>
-                    ))
+                      );
+                    })
                   )}
                 </div>
               </div>
