@@ -14,6 +14,7 @@ import {
   ChevronDown,
   Search,
   Check,
+  X,
 } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
@@ -381,7 +382,11 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
   return (
     <div className="space-y-4">
       {/* Kategori, Lig ve Grup Seçici Barı */}
-      <div className="glass-panel p-4 rounded-2xl border border-slate-800/80 shadow-card no-print space-y-3">
+      <div
+        className={`glass-panel p-4 rounded-2xl border border-slate-800/80 shadow-card no-print space-y-3 relative ${
+          isCityDropdownOpen ? "z-30" : "z-10"
+        }`}
+      >
         
         {/* 1. İL SEÇİMİ (Açılır Menü / Dropdown) */}
         {distinctCities.length > 1 && (
@@ -423,22 +428,45 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
                 {/* Dropdown Açılır Menü */}
                 {isCityDropdownOpen && (
-                  <div className="absolute left-0 top-full mt-1.5 w-72 sm:w-80 bg-[#0f172a] border border-slate-700/90 rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+                  <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 bg-[#0f172a] border border-slate-700/90 rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
                     {/* Arama Inputu */}
                     <div className="p-2.5 border-b border-slate-800 bg-[#0b1325]">
                       <div className="relative">
                         <Search
                           size={13}
-                          className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                          className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
                         />
                         <input
                           type="text"
                           placeholder="İl ara (örn: Ankara, İstanbul, İzmir)..."
                           value={citySearchTerm}
                           onChange={(e) => setCitySearchTerm(e.target.value)}
-                          className="w-full bg-slate-900/90 border border-slate-700/70 text-slate-200 text-xs rounded-xl pl-8 pr-3 py-1.5 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 placeholder-slate-500"
+                          onKeyDown={(e) => {
+                            if (e.key === "Escape") {
+                              setIsCityDropdownOpen(false);
+                            } else if (e.key === "Enter" && filteredCities.length === 1) {
+                              handleCitySelect(filteredCities[0]);
+                            }
+                          }}
+                          className="w-full bg-slate-900/90 border border-slate-700/70 text-slate-200 text-xs rounded-xl pl-8 pr-7 py-1.5 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 placeholder-slate-500"
                           autoFocus
                         />
+                        {citySearchTerm && (
+                          <button
+                            type="button"
+                            onClick={() => setCitySearchTerm("")}
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-0.5 rounded cursor-pointer"
+                            title="Temizle"
+                          >
+                            <X size={12} />
+                          </button>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between text-[10px] text-slate-400 px-1 pt-1.5">
+                        <span>Kayıtlı İller</span>
+                        <span className="font-mono text-slate-400">
+                          {filteredCities.length} / {distinctCities.length} İl
+                        </span>
                       </div>
                     </div>
 
