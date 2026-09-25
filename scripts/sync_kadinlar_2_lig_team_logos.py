@@ -163,6 +163,22 @@ def main():
 
     LOGOS_DIR.mkdir(parents=True, exist_ok=True)
 
+    # --- Ön geçiş: disk'teki mevcut logo dosyalarını doğrudan eşle ---
+    pre_updated = 0
+    for t in all_teams:
+        url = t.get("volleybox_url")
+        if not url:
+            continue
+        slug = get_slug_from_url(url)
+        dest_path = LOGOS_DIR / f"{slug}.png"
+        local_logo = f"/logos/{slug}.png"
+        if dest_path.exists() and dest_path.stat().st_size > 100:
+            if t.get("logo") != local_logo:
+                t["logo"] = local_logo
+                pre_updated += 1
+    if pre_updated:
+        print(f"[Ön geçiş] {pre_updated} takımın logosu disk'ten güncellendi.")
+
     for idx, (vb_url, teams) in enumerate(url_to_teams.items(), 1):
         slug = get_slug_from_url(vb_url)
         dest_path = LOGOS_DIR / f"{slug}.png"
@@ -195,9 +211,8 @@ def main():
             elif logo_exists:
                 print(f"  Mevcut logo kullanilacak: {local_logo}")
                 for t in teams:
-                    if t.get("logo") != local_logo:
-                        t["logo"] = local_logo
-                        updated_logos += 1
+                    t["logo"] = local_logo  # her zaman guncelle
+                    updated_logos += 1
                 skipped += 1
 
             # Kanonical isim
@@ -212,9 +227,8 @@ def main():
         elif logo_exists:
             print(f"  Mevcut logo: {local_logo}")
             for t in teams:
-                if t.get("logo") != local_logo:
-                    t["logo"] = local_logo
-                    updated_logos += 1
+                t["logo"] = local_logo  # her zaman guncelle
+                updated_logos += 1
             skipped += 1
 
         time.sleep(0.4)
