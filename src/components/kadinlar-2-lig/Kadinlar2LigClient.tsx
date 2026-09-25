@@ -16,6 +16,7 @@ import { Kadinlar2LigTeams } from "./Kadinlar2LigTeams";
 import { Kadinlar2LigTodayMatches } from "./Kadinlar2LigTodayMatches";
 import { Kadinlar2LigResults } from "./Kadinlar2LigResults";
 import { Kadinlar2LigMobileNav } from "./Kadinlar2LigMobileNav";
+import { Kadinlar2LigStatuView } from "./Kadinlar2LigStatuView";
 
 interface Kadinlar2LigClientProps {
   initialData: Kadinlar2LigData;
@@ -111,8 +112,8 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#090714] text-slate-100 flex flex-col font-sans selection:bg-purple-600 selection:text-white">
-      {/* 1. Özel Kadınlar 2. Ligi Header'ı */}
+    <div className="min-h-screen bg-[#0a0f1d] text-slate-100 flex flex-col font-sans selection:bg-rose-600 selection:text-white">
+      {/* 1. Altyapı ile Birebir Header */}
       <Kadinlar2LigHeader
         metadata={data.metadata}
         activeTab={activeTab}
@@ -139,8 +140,8 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         />
       )}
 
-      {/* 3. Ana İçerik Alanı */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-4 py-4 sm:py-6 pb-24 sm:pb-8">
+      {/* 3. Ana İçerik Alanı (Altyapı max-w-6xl ile Birebir) */}
+      <main className="flex-1 max-w-6xl w-full mx-auto px-2 sm:px-4 py-3 sm:py-4 pb-20 sm:pb-8 flex flex-col space-y-3 sm:space-y-4">
         {/* GÜNÜN MAÇLARI TABI */}
         {activeTab === "today" && (
           <Kadinlar2LigTodayMatches
@@ -184,7 +185,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           />
         )}
 
-        {/* 16 GRUP STATÜSÜ TABI */}
+        {/* 16 GRUP DURUMU TABI */}
         {activeTab === "leaders" && (
           <Kadinlar2LigLeaders
             groups={data.gruplar}
@@ -203,6 +204,9 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
           />
         )}
+
+        {/* RESMİ STATÜ & REHBER TABI */}
+        {activeTab === "statu" && <Kadinlar2LigStatuView />}
       </main>
 
       {/* 4. Maç Detay ve Salon Çekmecesi */}
@@ -243,26 +247,23 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         resultsCount={resultsCount}
       />
 
-      {/* 7. Özel Kadınlar 2. Ligi Footer'ı */}
-      <footer className="bg-[#0b0816] border-t border-purple-900/40 py-6 text-center text-xs text-purple-300/60 hidden sm:block">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      {/* 7. Footer */}
+      <footer className="bg-[#080c14] border-t border-slate-800/80 py-4 text-center text-xs text-slate-500 hidden sm:block">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-md bg-purple-600 flex items-center justify-center text-[10px] font-bold text-white">
-              2L
-            </div>
-            <span className="font-semibold text-purple-200">
-              TVF Uzman Posta Kadınlar Voleybol 2. Ligi Takip Sistemi
+            <span className="font-semibold text-slate-400">
+              TVF Uzman Posta Kadınlar Voleybol 2. Ligi
             </span>
+            <span>•</span>
+            <span className="text-slate-500">16 Grup • 167 Kulüp</span>
           </div>
 
           <div className="flex items-center gap-3 text-[11px]">
-            <span>16 Grup • 167 Takım • 289 Maç</span>
-            <span>•</span>
             <a
               href="https://tvf.org.tr"
               target="_blank"
               rel="noreferrer"
-              className="text-purple-400 hover:text-white transition-colors"
+              className="text-slate-400 hover:text-white transition-colors"
             >
               tvf.org.tr
             </a>

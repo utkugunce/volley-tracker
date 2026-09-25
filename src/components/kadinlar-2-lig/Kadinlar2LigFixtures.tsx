@@ -1,7 +1,20 @@
+"use client";
+
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, ChevronRight, Swords, Download, Printer, Star } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  ExternalLink,
+  ChevronRight,
+  Swords,
+  Download,
+  Printer,
+  Star,
+  Layers,
+} from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { slugify } from "@/utils/slugify";
@@ -62,7 +75,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
 
   const matches = useMemo(() => group?.fikstur || [], [group?.fikstur]);
 
-  // Available weeks in this group
+  // Hafta listesi
   const weeks = useMemo(() => {
     const set = new Set<number>();
     matches.forEach((m) => {
@@ -71,20 +84,16 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     return Array.from(set).sort((a, b) => a - b);
   }, [matches]);
 
-  // Filtered matches
+  // Filtrelenmiş maçlar
   const filteredMatches = useMemo(() => {
     return matches.filter((m) => {
-      // Week filter
       if (selectedWeek !== "all" && m.hafta !== selectedWeek) return false;
-      // Status filter
       if (statusFilter !== "all" && m.durum !== statusFilter) return false;
-      // Favorites filter
       if (showOnlyFavorites) {
         const homeFav = isFavorite(m.takim_a);
         const awayFav = isFavorite(m.takim_b);
         if (!homeFav && !awayFav) return false;
       }
-      // Search query
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
         const inTeams = m.takim_a.toLowerCase().includes(q) || m.takim_b.toLowerCase().includes(q);
@@ -98,15 +107,19 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
 
   const handleDownloadGroupIcs = () => {
     const icsMatches = filteredMatches.map(convertToMatch);
+    if (icsMatches.length === 0) {
+      alert("Takvime eklenebilecek geçerli maç bulunamadı.");
+      return;
+    }
     const ics = generateSeasonIcs(icsMatches, `TVF Kadınlar 2. Ligi - ${group.grup_adi} Fikstürü`);
-    downloadIcsFile(`kadinlar-2-ligi-${slugify(group.grup_adi)}-fiksturu.ics`, ics);
+    downloadIcsFile(`kadinlar-2-lig-${slugify(group.grup_adi)}-fikstur.ics`, ics);
   };
 
   const handlePrint = () => {
     window.print();
   };
 
-  // Group filtered matches by week
+  // Haftalara göre grupla
   const matchesByWeek = useMemo(() => {
     const map = new Map<number, Kadinlar2LigMatch[]>();
     filteredMatches.forEach((m) => {
@@ -114,21 +127,21 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       if (!map.has(w)) map.set(w, []);
       map.get(w)!.push(m);
     });
-    return Array.from(map.entries()).sort((a, b) => a[0] - b[0]);
+    return Array.from(map.entries()).sort(([a], [b]) => a - b);
   }, [filteredMatches]);
 
   return (
     <div className="space-y-4">
-      {/* Filtre ve Hafta Seçici Bar */}
-      <div className="bg-[#120d24]/90 border border-purple-900/40 rounded-2xl p-3.5 shadow-xl backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+      {/* 1. Filtre ve Hafta Seçici Bar (Altyapı ile Birebir) */}
+      <div className="glass-panel border border-slate-800/80 rounded-2xl p-3 sm:p-4 shadow-card flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
         {/* Hafta Butonları */}
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar w-full md:w-auto">
+        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar w-full md:w-auto py-0.5">
           <button
             onClick={() => setSelectedWeek("all")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap active:scale-95 cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all whitespace-nowrap active:scale-95 cursor-pointer border ${
               selectedWeek === "all"
-                ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30"
-                : "bg-purple-950/40 text-purple-300 hover:text-white hover:bg-purple-900/40 border border-purple-800/40"
+                ? "bg-gradient-to-r from-red-600 to-rose-600 text-white border-red-500 shadow-glow-red"
+                : "bg-slate-800/70 text-slate-300 hover:text-white hover:bg-slate-700/80 border-slate-700/60"
             }`}
           >
             Tüm Haftalar ({matches.length})
@@ -137,10 +150,10 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
             <button
               key={w}
               onClick={() => setSelectedWeek(w)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap active:scale-95 cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all whitespace-nowrap active:scale-95 cursor-pointer border ${
                 selectedWeek === w
-                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30"
-                  : "bg-purple-950/40 text-purple-300 hover:text-white hover:bg-purple-900/40 border border-purple-800/40"
+                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white border-red-500 shadow-glow-red"
+                  : "bg-slate-800/70 text-slate-300 hover:text-white hover:bg-slate-700/80 border-slate-700/60"
               }`}
             >
               {w}. Hafta
@@ -153,51 +166,45 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
           {/* Takvim .ics İndir */}
           <button
             onClick={handleDownloadGroupIcs}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-900/60 hover:bg-purple-800/80 text-purple-200 hover:text-white border border-purple-700/50 transition-all font-semibold active:scale-95 cursor-pointer shadow-xs"
-            title="Bu grubun fikstürünü telefon/bilgisayar takviminize (.ics) aktarın"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-slate-700/80 hover:border-slate-600 transition-all font-semibold active:scale-95 cursor-pointer shadow-xs text-xs"
+            title="Bu grubun fikstürünü takviminize (.ics) aktarın"
           >
-            <Download size={12} className="text-pink-400" />
+            <Download size={12} className="text-emerald-400" />
             <span className="hidden sm:inline">Takvime Ekle</span>
           </button>
 
           {/* Yazdır Butonu */}
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-900/40 hover:bg-purple-800/60 text-purple-300 hover:text-white border border-purple-800/50 transition-all active:scale-95 cursor-pointer"
-            title="Fikstürü yazdır veya PDF olarak kaydet"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/60 transition-all active:scale-95 cursor-pointer text-xs"
+            title="Fikstürü yazdır"
           >
             <Printer size={12} />
             <span className="hidden sm:inline">Yazdır</span>
           </button>
 
           {/* Durum Filtresi: Hepsi / Oynanacak / Bitenler */}
-          <div className="flex items-center gap-1 bg-[#181130] p-1 rounded-xl border border-purple-800/40 text-xs">
+          <div className="flex items-center gap-0.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800 text-xs">
             <button
               onClick={() => setStatusFilter("all")}
-              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
-                statusFilter === "all"
-                  ? "bg-purple-600 text-white shadow-xs"
-                  : "text-purple-300/70 hover:text-white"
+              className={`px-2.5 py-0.5 rounded-lg font-semibold transition-all cursor-pointer ${
+                statusFilter === "all" ? "bg-red-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
               }`}
             >
               Hepsi
             </button>
             <button
               onClick={() => setStatusFilter("OYNANACAK")}
-              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
-                statusFilter === "OYNANACAK"
-                  ? "bg-purple-600 text-white shadow-xs"
-                  : "text-purple-300/70 hover:text-white"
+              className={`px-2.5 py-0.5 rounded-lg font-semibold transition-all cursor-pointer ${
+                statusFilter === "OYNANACAK" ? "bg-red-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
               }`}
             >
               Oynanacak
             </button>
             <button
               onClick={() => setStatusFilter("BİTTİ")}
-              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
-                statusFilter === "BİTTİ"
-                  ? "bg-purple-600 text-white shadow-xs"
-                  : "text-purple-300/70 hover:text-white"
+              className={`px-2.5 py-0.5 rounded-lg font-semibold transition-all cursor-pointer ${
+                statusFilter === "BİTTİ" ? "bg-red-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
               }`}
             >
               Bitenler
@@ -206,50 +213,51 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
         </div>
       </div>
 
-      {/* Maç Listesi */}
+      {/* 2. Maç Listesi */}
       {matchesByWeek.length === 0 ? (
-        <div className="bg-[#120d24]/90 border border-purple-900/40 rounded-2xl p-8 text-center text-purple-300/60 text-xs">
+        <div className="glass-panel border border-slate-800/80 rounded-2xl p-8 text-center text-slate-400 text-xs">
           Seçilen kriterlere uygun karşılaşma bulunamadı.
         </div>
       ) : (
         matchesByWeek.map(([weekNum, weekMatches]) => (
           <div key={weekNum} className="space-y-2">
             {/* Hafta Başlığı */}
-            <div className="flex items-center justify-between px-2 text-xs font-bold text-purple-300 uppercase tracking-wider">
+            <div className="flex items-center justify-between px-2 text-xs font-bold text-slate-300 uppercase tracking-wider">
               <span className="flex items-center gap-1.5">
-                <Calendar size={13} className="text-pink-400" />
+                <Calendar size={13} className="text-rose-400" />
                 <span>{group.grup_adi} • {weekNum}. Hafta</span>
               </span>
-              <span className="text-[11px] font-mono text-purple-400/80">
-                {weekMatches.length} Maç
+              <span className="text-[11px] font-mono text-slate-400">
+                {weekMatches.length} Karşılaşma
               </span>
             </div>
 
-            {/* Maç Kartları */}
+            {/* Maç Kartları Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
               {weekMatches.map((m) => {
                 const isFinished = m.durum === "BİTTİ";
                 return (
                   <div
                     key={m.id}
-                    className="bg-[#130d29]/90 hover:bg-[#1a1238] border border-purple-900/40 hover:border-purple-600/50 rounded-2xl p-3.5 transition-all shadow-md hover:shadow-xl backdrop-blur-sm group"
+                    onClick={() => onSelectMatch?.(convertToMatch(m))}
+                    className="glass-panel border border-slate-800/80 hover:border-slate-700 bg-slate-900/65 hover:bg-slate-850/90 rounded-2xl p-3.5 transition-all shadow-card hover:shadow-card-hover cursor-pointer group"
                   >
                     {/* Üst Bilgi: Tarih, Saat, Salon, Şehir */}
-                    <div className="flex items-center justify-between text-[11px] text-purple-300/80 border-b border-purple-900/40 pb-2 mb-2.5 gap-2 flex-wrap">
+                    <div className="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/80 pb-2 mb-2.5 gap-2 flex-wrap">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-purple-200">
+                        <span className="font-semibold text-slate-200">
                           {m.tarih} {m.gun ? `(${m.gun})` : ""}
                         </span>
                         {m.saat && (
-                          <span className="flex items-center gap-1 text-purple-400 font-mono">
+                          <span className="flex items-center gap-1 text-slate-400 font-mono">
                             <Clock size={11} />
                             {m.saat}
                           </span>
                         )}
                       </div>
 
-                      <div className="flex items-center gap-1.5 text-purple-400/90 truncate max-w-[200px]" title={`${m.sehir} - ${m.salon}`}>
-                        <MapPin size={11} className="shrink-0 text-pink-400" />
+                      <div className="flex items-center gap-1.5 text-slate-400 truncate max-w-[200px]" title={`${m.sehir} - ${m.salon}`}>
+                        <MapPin size={11} className="shrink-0 text-rose-400" />
                         <span className="truncate">{m.sehir} • {m.salon}</span>
                       </div>
                     </div>
@@ -261,6 +269,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                         <div className="flex items-center gap-2">
                           <Link
                             href={`/takim/${slugify(m.takim_a)}`}
+                            onClick={(e) => e.stopPropagation()}
                             className="shrink-0 hover:opacity-80 transition-opacity"
                             title={`${m.takim_a} Takım Profili`}
                           >
@@ -268,25 +277,27 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                               <Image
                                 src={m.takim_a_logo}
                                 alt={m.takim_a}
-                                width={24}
-                                height={24}
-                                className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
+                                width={22}
+                                height={22}
+                                className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
                                 unoptimized={m.takim_a_logo.startsWith("http")}
                                 onError={(e) => {
                                   (e.currentTarget as HTMLImageElement).style.display = "none";
                                 }}
                               />
                             ) : (
-                              <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
+                              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
                                 {m.takim_a.slice(0, 2)}
                               </div>
                             )}
                           </Link>
+
                           <div className="min-w-0">
-                            <div className="flex items-center gap-1.5">
+                            <div className="flex items-center gap-1">
                               <Link
                                 href={`/takim/${slugify(m.takim_a)}`}
-                                className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
+                                onClick={(e) => e.stopPropagation()}
+                                className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 transition-colors truncate block hover:underline underline-offset-2"
                                 title={`${m.takim_a} Takım Profili`}
                               >
                                 {m.takim_a}
@@ -299,7 +310,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                                   triggerHaptic("selection");
                                   toggleFavorite(m.takim_a);
                                 }}
-                                className="shrink-0 p-0.5"
+                                className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
                                 title={isFavorite(m.takim_a) ? "Favorilerden çıkar" : "Favorilere ekle"}
                               >
                                 <Star
@@ -307,66 +318,40 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                                   className={
                                     isFavorite(m.takim_a)
                                       ? "fill-amber-400 text-amber-400"
-                                      : "text-purple-400/40 hover:text-amber-300"
+                                      : "text-slate-600 hover:text-amber-400"
                                   }
                                 />
                               </button>
-                            </div>
-                            <div className="flex items-center gap-2 mt-0.5">
-                              <Link
-                                href={`/takim/${slugify(m.takim_a)}`}
-                                className="text-[10px] text-purple-300/80 hover:text-white hover:underline"
-                              >
-                                Profil
-                              </Link>
-                              {m.takim_a_volleybox_url && (
-                                <a
-                                  href={m.takim_a_volleybox_url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5"
-                                >
-                                  <span>Volleybox</span>
-                                  <ExternalLink size={9} />
-                                </a>
-                              )}
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      {/* Skor veya Durum */}
-                      <div
-                        onClick={() => onSelectMatch?.(convertToMatch(m))}
-                        className="text-center px-2 shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform"
-                        title="Maç Detaylarını ve Salon Bilgilerini Aç"
-                      >
+                      {/* Skor veya VS Rozeti (Ortada) */}
+                      <div className="shrink-0 text-center px-2">
                         {isFinished ? (
-                          <div>
-                            <div className="text-base sm:text-lg font-black font-mono tracking-wider text-amber-300 bg-amber-950/40 px-3 py-1 rounded-xl border border-amber-500/30 shadow-md hover:border-amber-400">
-                              {m.skor}
-                            </div>
-                            <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider block mt-0.5">
-                              BİTTİ • Detay
+                          <div className="flex flex-col items-center">
+                            <span className="text-sm font-black font-mono px-2.5 py-0.5 rounded-lg bg-slate-950 border border-emerald-500/40 text-emerald-400 shadow-xs">
+                              {m.skor || "3-0"}
                             </span>
+                            {m.set_sonuclari && (
+                              <span className="text-[10px] font-mono text-slate-400 mt-1 max-w-[120px] truncate" title={m.set_sonuclari}>
+                                {m.set_sonuclari}
+                              </span>
+                            )}
                           </div>
                         ) : (
-                          <div>
-                            <div className="text-xs font-mono font-bold text-purple-300 bg-purple-950/60 px-2.5 py-1 rounded-xl border border-purple-800/50 hover:border-purple-600">
-                              {m.saat || "VS"}
-                            </div>
-                            <span className="text-[9px] text-purple-400/70 font-semibold uppercase tracking-wider block mt-0.5">
-                              OYNANACAK • Detay
-                            </span>
+                          <div className="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center font-black text-slate-400 text-xs shadow-inner">
+                            VS
                           </div>
                         )}
                       </div>
 
-                      {/* Deplasman Takımı */}
+                      {/* Deplasman Takım */}
                       <div className="flex-1 min-w-0 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <div className="min-w-0">
-                            <div className="flex items-center justify-end gap-1.5">
+                            <div className="flex items-center justify-end gap-1">
                               <button
                                 type="button"
                                 onClick={(e) => {
@@ -375,7 +360,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                                   triggerHaptic("selection");
                                   toggleFavorite(m.takim_b);
                                 }}
-                                className="shrink-0 p-0.5"
+                                className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
                                 title={isFavorite(m.takim_b) ? "Favorilerden çıkar" : "Favorilere ekle"}
                               >
                                 <Star
@@ -383,40 +368,24 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                                   className={
                                     isFavorite(m.takim_b)
                                       ? "fill-amber-400 text-amber-400"
-                                      : "text-purple-400/40 hover:text-amber-300"
+                                      : "text-slate-600 hover:text-amber-400"
                                   }
                                 />
                               </button>
                               <Link
                                 href={`/takim/${slugify(m.takim_b)}`}
-                                className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
+                                onClick={(e) => e.stopPropagation()}
+                                className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 transition-colors truncate block hover:underline underline-offset-2"
                                 title={`${m.takim_b} Takım Profili`}
                               >
                                 {m.takim_b}
                               </Link>
                             </div>
-                            <div className="flex items-center justify-end gap-2 mt-0.5">
-                              {m.takim_b_volleybox_url && (
-                                <a
-                                  href={m.takim_b_volleybox_url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5 justify-end"
-                                >
-                                  <span>Volleybox</span>
-                                  <ExternalLink size={9} />
-                                </a>
-                              )}
-                              <Link
-                                href={`/takim/${slugify(m.takim_b)}`}
-                                className="text-[10px] text-purple-300/80 hover:text-white hover:underline"
-                              >
-                                Profil
-                              </Link>
-                            </div>
                           </div>
+
                           <Link
                             href={`/takim/${slugify(m.takim_b)}`}
+                            onClick={(e) => e.stopPropagation()}
                             className="shrink-0 hover:opacity-80 transition-opacity"
                             title={`${m.takim_b} Takım Profili`}
                           >
@@ -424,16 +393,16 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                               <Image
                                 src={m.takim_b_logo}
                                 alt={m.takim_b}
-                                width={24}
-                                height={24}
-                                className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
+                                width={22}
+                                height={22}
+                                className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
                                 unoptimized={m.takim_b_logo.startsWith("http")}
                                 onError={(e) => {
                                   (e.currentTarget as HTMLImageElement).style.display = "none";
                                 }}
                               />
                             ) : (
-                              <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
+                              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
                                 {m.takim_b.slice(0, 2)}
                               </div>
                             )}
@@ -442,15 +411,26 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                       </div>
                     </div>
 
-                    {/* Set Skorları Dökümü (Varsa) */}
-                    {m.set_sonuclari && m.set_sonuclari.trim().length > 0 && (
-                      <div className="mt-2.5 pt-2 border-t border-purple-900/30 flex items-center justify-center gap-1.5 text-[10px] font-mono text-purple-300/80">
-                        <span className="text-purple-400/60">Setler:</span>
-                        <span className="bg-purple-950/60 px-2 py-0.5 rounded-md border border-purple-800/40">
-                          {m.set_sonuclari}
+                    {/* Alt Çubuk: H2H, Maç Merkezi */}
+                    <div className="mt-3 pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
+                      <span className="font-mono text-[10px] text-slate-500">
+                        Maç No: #{m.mac_no || m.id}
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <Link
+                          href={`/karsilastir?takim1=${slugify(m.takim_a)}&takim2=${slugify(m.takim_b)}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[10px] font-semibold"
+                        >
+                          <Swords size={10} />
+                          <span>H2H</span>
+                        </Link>
+                        <span className="text-[10px] font-semibold text-rose-400 group-hover:underline flex items-center gap-0.5">
+                          <span>Maç Merkezi</span>
+                          <ChevronRight size={10} />
                         </span>
                       </div>
-                    )}
+                    </div>
                   </div>
                 );
               })}
