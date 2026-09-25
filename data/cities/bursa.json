@@ -995,25 +995,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401049",
-        "url": "https://women.volleybox.net/tr/bursa-buyuksehir-belediyespor-u16-nilufer-belediyespor-u16-c401049",
-        "host_name": "Bursa Büyükşehir Belediyespor U16",
-        "guest_name": "Nilüfer Belediyespor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-01",
-        "vb_time": "18:30",
-        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-01",
-          "vb_time": "18:30",
-          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1059,6 +1052,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.925005"
+  "volleybox_synced_matches": 11,
+  "volleybox_sync_updated_at": "2026-09-25T11:57:46.212347"
 }

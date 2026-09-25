@@ -144,18 +144,18 @@
         "guest_name": "Tarsus Amerikan Koleji U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-26",
-        "vb_time": "13:00",
+        "vb_date": "2026-09-28",
+        "vb_time": "17:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-09-26",
-          "vb_time": "13:00",
+          "vb_date": "2026-09-28",
+          "vb_time": "17:00",
           "vb_hall": "Mersinli Ahmet Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-28 / VB: 2026-09-26) | Saat Değişti (TVF: 17:00 / VB: 13:00)"
+          "details": null
         }
       }
     },
@@ -185,18 +185,18 @@
         "guest_name": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-26",
-        "vb_time": "17:00",
+        "vb_date": "2026-09-28",
+        "vb_time": "19:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-09-26",
-          "vb_time": "17:00",
+          "vb_date": "2026-09-28",
+          "vb_time": "19:00",
           "vb_hall": "Mersinli Ahmet Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-28 / VB: 2026-09-26) | Saat Değişti (TVF: 19:00 / VB: 17:00)"
+          "details": null
         }
       }
     },
@@ -226,18 +226,18 @@
         "guest_name": "MEV Toros Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-26",
-        "vb_time": "15:00",
+        "vb_date": "2026-09-29",
+        "vb_time": "17:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-09-26",
-          "vb_time": "15:00",
+          "vb_date": "2026-09-29",
+          "vb_time": "17:00",
           "vb_hall": "Mersinli Ahmet Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-29 / VB: 2026-09-26) | Saat Değişti (TVF: 17:00 / VB: 15:00)"
+          "details": null
         }
       }
     },
@@ -267,22 +267,22 @@
         "guest_name": "Mersin İhtisas Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-26",
-        "vb_time": "11:00",
+        "vb_date": "2026-10-01",
+        "vb_time": "19:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-09-26",
-          "vb_time": "11:00",
+          "vb_date": "2026-10-01",
+          "vb_time": "19:00",
           "vb_hall": "Mersinli Ahmet Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-01 / VB: 2026-09-26) | Saat Değişti (TVF: 19:00 / VB: 11:00)"
+          "details": null
         }
       }
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.929936"
+  "volleybox_sync_updated_at": "2026-09-25T11:57:49.125583"
 }

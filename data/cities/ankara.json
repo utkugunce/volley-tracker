@@ -1510,18 +1510,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401452",
+        "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-b-u16-baskent-arma-spor-b-u16-c401452",
+        "host_name": "TVF Spor Lisesi - B U16",
+        "guest_name": "Başkent Arma Spor - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "14:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "14:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-06 / VB: 2026-10-03) | Saat Değişti (TVF: 19:30 / VB: 14:00)"
         }
       }
     },
@@ -1798,18 +1805,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401454",
+        "url": "https://women.volleybox.net/tr/genia-z-akademi-spor-kulubu-u16-zeren-spor-kulubu-u16-c401454",
+        "host_name": "Genia İz Akademi Spor Kulübü U16",
+        "guest_name": "Zeren Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "16:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "16:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-04 / VB: 2026-10-03)"
         }
       }
     },
@@ -2068,6 +2082,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.913325"
+  "volleybox_synced_matches": 34,
+  "volleybox_sync_updated_at": "2026-09-25T11:57:45.767988"
 }

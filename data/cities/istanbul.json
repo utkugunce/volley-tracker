@@ -4080,17 +4080,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-25",
-        "vb_time": "19:30",
+        "vb_time": "18:00",
         "vb_hall": "Yeşilyurt SK Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-25",
-          "vb_time": "19:30",
+          "vb_time": "18:00",
           "vb_hall": "Yeşilyurt SK Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -4396,5 +4396,5 @@
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.902305"
+  "volleybox_sync_updated_at": "2026-09-25T11:57:47.689882"
 }

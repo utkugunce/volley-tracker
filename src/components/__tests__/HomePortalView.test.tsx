@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { HomePortalView } from "../HomePortalView";
-import { Match } from "@/types/fixture";
+import { Match, CityInfo } from "@/types/fixture";
 
 const mockMatches: Match[] = [
   {
@@ -12,18 +12,20 @@ const mockMatches: Match[] = [
     home_team: "VakıfBank U18",
     away_team: "Eczacıbaşı U18",
     city: "İstanbul",
-    league: "İstanbul Genç Kızlar Süper Ligi",
+    group: "İstanbul Genç Kızlar Süper Ligi",
     category: "Genç Kızlar",
+    age_group: "Genç",
+    gender: "Kız",
+    match_no: "1",
     hall: "TVF 50. Yıl Deniz Esinduy",
     status: "finished",
     home_score: 3,
     away_score: 1,
-    sets: "25-22, 23-25, 25-18, 25-20",
+    set_scores: ["25-22", "23-25", "25-18", "25-20"],
     volleybox: {
       synced: true,
       has_score: true,
       score: "3-1",
-      tournament_name: "İstanbul U18 Süper Ligi",
     },
   },
   {
@@ -33,8 +35,11 @@ const mockMatches: Match[] = [
     home_team: "Fenerbahçe U18",
     away_team: "Galatasaray U18",
     city: "İstanbul",
-    league: "İstanbul Genç Kızlar Süper Ligi",
+    group: "İstanbul Genç Kızlar Süper Ligi",
     category: "Genç Kızlar",
+    age_group: "Genç",
+    gender: "Kız",
+    match_no: "2",
     hall: "Burhan Felek Voleybol Salonu",
     status: "upcoming",
     home_score: null,
@@ -42,8 +47,13 @@ const mockMatches: Match[] = [
   },
 ];
 
+const mockCitiesList: CityInfo[] = [
+  { ilid: "34", slug: "istanbul", name: "İstanbul", matches_count: 2, standings_count: 1, url: "", status: "Aktif", data_file: null },
+  { ilid: "06", slug: "ankara", name: "Ankara", matches_count: 0, standings_count: 0, url: "", status: "Fikstür Açıklanmadı", data_file: null },
+];
+
 describe("HomePortalView Component", () => {
-  it("renders portal hero, KPI metrics and featured match sections", () => {
+  it("renders live hub, filter buttons and match rows", () => {
     const onSelectCity = vi.fn();
     const onToggleFavorite = vi.fn();
     const onSelectMatch = vi.fn();
@@ -55,10 +65,7 @@ describe("HomePortalView Component", () => {
         city="Tüm İller"
         currentCitySlug="all"
         onSelectCity={onSelectCity}
-        citiesList={[
-          { slug: "istanbul", name: "İstanbul", matchCount: 2 },
-          { slug: "ankara", name: "Ankara", matchCount: 0 },
-        ]}
+        citiesList={mockCitiesList}
         standings={{}}
         favorites={[]}
         onToggleFavorite={onToggleFavorite}
@@ -69,26 +76,17 @@ describe("HomePortalView Component", () => {
       />
     );
 
-    // 1. Hero başlığı ve rozetler
-    expect(screen.getByText(/Türkiye Voleybol Federasyonu Altyapı Portalı/i)).toBeInTheDocument();
-    expect(screen.getByText(/Canlı Maç & Veri Merkezi/i)).toBeInTheDocument();
+    // 1. Canlı Hub başlığı ve filtre butonları
+    expect(screen.getByText(/Canlı Hub/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Bugün/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Biten Skorlar/i)).toBeInTheDocument();
 
-    // 2. İstatistik kartları (KPI)
-    expect(screen.getByText("Resmi Bültende")).toBeInTheDocument();
-    expect(screen.getByText("Altyapı Takımı")).toBeInTheDocument();
-
-    // 3. Hızlı geçiş butonları (Fikstür, Sonuçlar, Puan Durumu)
-    const fixturesBtn = screen.getByRole("button", { name: /Günün Maçları/i });
-    expect(fixturesBtn).toBeInTheDocument();
-    fireEvent.click(fixturesBtn);
-    expect(onNavigateTab).toHaveBeenCalledWith("today");
-
-    // 4. Son biten maçlar vitrininde maç skoru tıklama
-    const matchCards = screen.getAllByText(/VakıfBank/i);
-    expect(matchCards.length).toBeGreaterThan(0);
+    // 2. Takımların ve maç şeritlerinin ekranda listelenmesi
+    expect(screen.getAllByText(/VakıfBank/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Eczacıbaşı/i).length).toBeGreaterThan(0);
   });
 
-  it("handles city filter selection from popular cities carousel", () => {
+  it("handles city filter selection from quick city pills", () => {
     const onSelectCity = vi.fn();
     render(
       <HomePortalView
@@ -96,10 +94,7 @@ describe("HomePortalView Component", () => {
         city="Tüm İller"
         currentCitySlug="all"
         onSelectCity={onSelectCity}
-        citiesList={[
-          { slug: "istanbul", name: "İstanbul", matchCount: 2 },
-          { slug: "ankara", name: "Ankara", matchCount: 0 },
-        ]}
+        citiesList={mockCitiesList}
         standings={{}}
         favorites={[]}
         onToggleFavorite={vi.fn()}
@@ -110,13 +105,13 @@ describe("HomePortalView Component", () => {
       />
     );
 
-    // Popüler iller kartına tıklama
-    const ankaraButtons = screen.getAllByRole("button").filter(
-      (b) => b.textContent?.includes("Ankara")
+    // İstanbul hapına tıklama
+    const istanbulButtons = screen.getAllByRole("button").filter(
+      (b) => b.textContent?.includes("İstanbul")
     );
-    if (ankaraButtons.length > 0) {
-      fireEvent.click(ankaraButtons[0]);
-      expect(onSelectCity).toHaveBeenCalledWith("ankara");
+    if (istanbulButtons.length > 0) {
+      fireEvent.click(istanbulButtons[0]);
+      expect(onSelectCity).toHaveBeenCalledWith("istanbul");
     }
   });
 });

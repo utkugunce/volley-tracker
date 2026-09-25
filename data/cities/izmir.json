@@ -3710,17 +3710,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-29",
-        "vb_time": "20:00",
+        "vb_time": "18:30",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-29",
-          "vb_time": "20:00",
+          "vb_time": "18:30",
           "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -4236,5 +4236,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.916789"
+  "volleybox_sync_updated_at": "2026-09-25T11:57:48.476294"
 }

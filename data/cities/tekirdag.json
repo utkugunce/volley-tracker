@@ -490,25 +490,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401151",
-        "url": "https://women.volleybox.net/tr/liva-volley-spor-kulubu-u16-tekirdag-voleybol-akademi-spor-kulubu-u16-c401151",
-        "host_name": "Liva Volley Spor Kulübü U16",
-        "guest_name": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-26",
-        "vb_time": "10:30",
-        "vb_hall": "Çorlu Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-26",
-          "vb_time": "10:30",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -785,17 +778,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-26",
-        "vb_time": "10:30",
-        "vb_hall": "Kapaklı Spor Salonu",
+        "vb_time": "11:00",
+        "vb_hall": "Çerkezköy Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
-          "hall_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
           "vb_date": "2026-09-26",
-          "vb_time": "10:30",
-          "vb_hall": "Kapaklı Spor Salonu",
-          "details": "Saat Değişti (TVF: 11:00 / VB: 10:30) | Salon Değişti (TVF: Çerkezköy S.S / VB: Kapaklı Spor Salonu)"
+          "vb_time": "11:00",
+          "vb_hall": "Çerkezköy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -882,6 +875,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.907585"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-09-25T11:57:49.239822"
 }

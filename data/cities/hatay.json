@@ -2088,25 +2088,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401109",
-        "url": "https://women.volleybox.net/tr/vipark-genclik-ve-spor-u18-skenderun-voleybol-akademi-spor-kulubu-u18-c401109",
-        "host_name": "Vipark Gençlik Ve Spor U18",
-        "guest_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-06",
-        "vb_time": "19:30",
-        "vb_hall": "İskenderun Sakarya Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-06",
-          "vb_time": "19:30",
-          "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2170,25 +2163,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401111",
-        "url": "https://women.volleybox.net/tr/skenderun-voleybol-akademi-spor-kulubu-u18-es-akademi-spor-kulubu-u18-c401111",
-        "host_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "Es Akademi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-10",
-        "vb_time": "17:30",
-        "vb_hall": "İskenderun Sakarya Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-10",
-          "vb_time": "17:30",
-          "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2211,25 +2197,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401112",
-        "url": "https://women.volleybox.net/tr/hatay-yldzlar-spor-kulubu-u18-skenderun-voleybol-akademi-spor-kulubu-u18-c401112",
-        "host_name": "Hatay Yıldızlar Spor Kulübü U18",
-        "guest_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-22",
-        "vb_time": "18:00",
-        "vb_hall": "İskenderun Sakarya Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-22",
-          "vb_time": "18:00",
-          "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2293,25 +2272,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401114",
-        "url": "https://women.volleybox.net/tr/skenderun-voleybol-akademi-spor-kulubu-u18-vipark-genclik-ve-spor-u18-c401114",
-        "host_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "Vipark Gençlik Ve Spor U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-29",
-        "vb_time": "18:00",
-        "vb_hall": "İskenderun Sakarya Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-29",
-          "vb_time": "18:00",
-          "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2416,25 +2388,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401117",
-        "url": "https://women.volleybox.net/tr/es-akademi-spor-kulubu-u18-skenderun-voleybol-akademi-spor-kulubu-u18-c401117",
-        "host_name": "Es Akademi Spor Kulübü U18",
-        "guest_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-12",
-        "vb_time": "19:30",
-        "vb_hall": "İskenderun Sakarya Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-12",
-          "vb_time": "19:30",
-          "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2457,25 +2422,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401118",
-        "url": "https://women.volleybox.net/tr/skenderun-voleybol-akademi-spor-kulubu-u18-hatay-yldzlar-spor-kulubu-u18-c401118",
-        "host_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "Hatay Yıldızlar Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-19",
-        "vb_time": "18:00",
-        "vb_hall": "İskenderun Sakarya Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-19",
-          "vb_time": "18:00",
-          "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2521,6 +2479,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.897759"
+  "volleybox_synced_matches": 50,
+  "volleybox_sync_updated_at": "2026-09-25T11:57:47.497755"
 }

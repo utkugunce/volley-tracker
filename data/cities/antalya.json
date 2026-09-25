@@ -631,17 +631,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-27",
-        "vb_time": "12:00",
+        "vb_time": "12:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-27",
-          "vb_time": "12:00",
+          "vb_time": "12:30",
           "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
-          "details": "Saat Değişti (TVF: 12:30 / VB: 12:00)"
+          "details": null
         }
       }
     },
@@ -803,17 +803,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-24",
-        "vb_time": "18:30",
+        "vb_time": "19:00",
         "vb_hall": "Kepez Turgut Özal Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-24",
-          "vb_time": "18:30",
+          "vb_time": "19:00",
           "vb_hall": "Kepez Turgut Özal Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:00 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -850,17 +850,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-24",
-        "vb_time": "20:00",
+        "vb_time": "20:30",
         "vb_hall": "Kepez Turgut Özal Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-24",
-          "vb_time": "20:00",
+          "vb_time": "20:30",
           "vb_hall": "Kepez Turgut Özal Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -1846,5 +1846,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.894996"
+  "volleybox_sync_updated_at": "2026-09-25T11:57:46.036189"
 }

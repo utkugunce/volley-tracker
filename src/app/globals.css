@@ -72,11 +72,9 @@ html, body, button, input, select, textarea {
 }
 
 body {
-  background-color: #080c14;
+  background-color: #090d16;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(220, 38, 38, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 90% 15%, rgba(14, 165, 233, 0.06), transparent),
-    radial-gradient(ellipse 50% 50% at 10% 85%, rgba(245, 158, 11, 0.05), transparent);
+    radial-gradient(ellipse 80% 35% at 50% 0%, rgba(225, 29, 72, 0.08), transparent);
   background-attachment: fixed;
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
@@ -91,18 +89,34 @@ body {
   }
 
   .glass-card {
-    background: rgba(30, 41, 59, 0.55);
+    background: rgba(17, 24, 39, 0.6);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.07);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card:hover {
-    background: rgba(30, 41, 59, 0.8);
-    border-color: rgba(255, 255, 255, 0.16);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 32px -6px rgba(0, 0, 0, 0.55);
+    background: rgba(30, 41, 59, 0.85);
+    border-color: rgba(225, 29, 72, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45);
+  }
+
+  .match-strip {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.15s ease-out;
+  }
+
+  .match-strip:hover {
+    background: rgba(24, 33, 53, 0.85);
+    border-color: rgba(225, 29, 72, 0.35);
+  }
+
+  .card-clean {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 1rem;
   }
 
   .text-glow-red {

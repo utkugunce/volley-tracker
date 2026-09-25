@@ -194,17 +194,22 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* 2. ANA SEKMELER: ANASAYFA, SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU, GRUP DURUMU */}
       <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
-        {/* Anasayfa Portalı Sekmesi */}
+        {/* Anasayfa Portalı & Günün Maçları Sekmesi */}
         <button
           onClick={() => onSelectTab("home")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
-            activeTab === "home"
+            activeTab === "home" || activeTab === "today"
               ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Home size={13} className={activeTab === "home" ? "text-primary fill-primary/20" : "text-slate-400"} />
+          <Home size={13} className={activeTab === "home" || activeTab === "today" ? "text-primary fill-primary/20" : "text-slate-400"} />
           <span>ANASAYFA</span>
+          {todayMatchesCount > 0 && (
+            <span className="text-[9px] sm:text-[10px] bg-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs">
+              {todayMatchesCount} Bugün
+            </span>
+          )}
         </button>
 
         {/* Sonuçlar Sekmesi */}

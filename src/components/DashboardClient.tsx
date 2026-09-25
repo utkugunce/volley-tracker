@@ -754,13 +754,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      {/* 2. Üst İl Sekmeleri (CityTabBar: Tüm İller, İstanbul, İzmir, Yalova, Niğde vb.) */}
-      <CityTabBar
-        currentCitySlug={currentCitySlug}
-        onSelectCity={handleSelectCity}
-        cities={citiesList}
-        totalMatchesAcrossAll={totalMatchesAcrossAll}
-      />
+      {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
+      {activeMainTab !== "home" && (
+        <CityTabBar
+          currentCitySlug={currentCitySlug}
+          onSelectCity={handleSelectCity}
+          cities={citiesList}
+          totalMatchesAcrossAll={totalMatchesAcrossAll}
+        />
+      )}
 
       <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4 space-y-4">
         {/* Desteklenen Kulüp (Primary Team VIP Widget) */}

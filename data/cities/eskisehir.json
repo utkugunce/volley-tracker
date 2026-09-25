@@ -455,18 +455,18 @@
         "guest_name": "Anadolu Üniversitesi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-27",
-        "vb_time": "18:00",
+        "vb_date": "2026-09-28",
+        "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-09-27",
-          "vb_time": "18:00",
+          "vb_date": "2026-09-28",
+          "vb_time": "20:00",
           "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-28 / VB: 2026-09-27) | Saat Değişti (TVF: 20:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -1001,18 +1001,18 @@
         "guest_name": "Anadolu Kolej Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-28",
-        "vb_time": "20:00",
-        "vb_hall": "Kemal Unakıtan Spor Salonu",
+        "vb_date": "2026-09-27",
+        "vb_time": "16:00",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-09-28",
-          "vb_time": "20:00",
-          "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-09-27 / VB: 2026-09-28) | Saat Değişti (TVF: 16:00 / VB: 20:00) | Salon Değişti (TVF: Şehit Anıl Gül / VB: Kemal Unakıtan Spor Salonu)"
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-27",
+          "vb_time": "16:00",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1285,25 +1285,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401391",
-        "url": "https://women.volleybox.net/tr/eskisehir-cagdas-kolejliler-spor-kulubu-u16-sehir-koleji-egitim-kultur-sk-u16-c401391",
-        "host_name": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
-        "guest_name": "Şehir Koleji Eğitim Kültür SK U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-02",
-        "vb_time": "18:30",
-        "vb_hall": "Kemal Unakıtan Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-02",
-          "vb_time": "18:30",
-          "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1720,18 +1713,18 @@
         "vb_time": "22:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-01",
           "vb_time": "22:00",
           "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 20:00 / VB: 22:00)"
         }
       }
     }
   ],
-  "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-09-25T05:39:11.922102"
+  "volleybox_synced_matches": 31,
+  "volleybox_sync_updated_at": "2026-09-25T11:57:46.509008"
 }
