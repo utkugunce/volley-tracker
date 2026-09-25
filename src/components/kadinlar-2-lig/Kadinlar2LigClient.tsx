@@ -18,17 +18,27 @@ import { Kadinlar2LigResults } from "./Kadinlar2LigResults";
 import { Kadinlar2LigMobileNav } from "./Kadinlar2LigMobileNav";
 import { Kadinlar2LigStatuView } from "./Kadinlar2LigStatuView";
 import { Kadinlar2LigHomePortal } from "./Kadinlar2LigHomePortal";
+import {
+  getKadinlar2LigRoute,
+  parseKadinlar2LigRoute,
+} from "@/utils/kadinlar2LigRoutes";
 
 interface Kadinlar2LigClientProps {
   initialData: Kadinlar2LigData;
+  initialTab?: Kadinlar2LigTabType;
+  initialGroup?: number;
 }
 
 export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   initialData,
+  initialTab,
+  initialGroup,
 }) => {
   const [data, setData] = useState<Kadinlar2LigData>(initialData);
-  const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>("home");
-  const [selectedGroup, setSelectedGroup] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>(
+    initialTab || "home"
+  );
+  const [selectedGroup, setSelectedGroup] = useState<number>(initialGroup || 1);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [justUpdated, setJustUpdated] = useState<boolean>(false);
@@ -106,11 +116,71 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     }
   };
 
-  const handleSelectGroupFromAnywhere = (gNo: number, tab?: "standings" | "fixtures") => {
+  const handleSelectTab = (tab: Kadinlar2LigTabType) => {
+    setActiveTab(tab);
+    if (typeof window !== "undefined") {
+      const targetPath = getKadinlar2LigRoute(tab, selectedGroup);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab, group: selectedGroup }, "", targetPath);
+      }
+    }
+  };
+
+  const handleSelectGroup = (gNo: number) => {
     setSelectedGroup(gNo);
-    setActiveTab(tab || "standings");
+    if (typeof window !== "undefined") {
+      const targetPath = getKadinlar2LigRoute(activeTab, gNo);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab: activeTab, group: gNo }, "", targetPath);
+      }
+    }
+  };
+
+  const handleSelectGroupFromAnywhere = (
+    gNo: number,
+    tab?: "standings" | "fixtures"
+  ) => {
+    const targetTab = tab || "standings";
+    setSelectedGroup(gNo);
+    setActiveTab(targetTab);
+    if (typeof window !== "undefined") {
+      const targetPath = getKadinlar2LigRoute(targetTab, gNo);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab: targetTab, group: gNo }, "", targetPath);
+      }
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  // Tarayıcı Geri/İleri butonları (popstate) dinleyicisi
+  useEffect(() => {
+    const handlePopState = () => {
+      const { tab, groupNo } = parseKadinlar2LigRoute(window.location.pathname);
+      setActiveTab(tab);
+      if (groupNo) {
+        setSelectedGroup(groupNo);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  // Sayfa ilk yüklendiğinde tarayıcı URL'ini kontrol et
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const { tab, groupNo } = parseKadinlar2LigRoute(window.location.pathname);
+      if (tab && !initialTab) {
+        setActiveTab(tab);
+      }
+      if (groupNo && !initialGroup) {
+        setSelectedGroup(groupNo);
+      }
+    }
+  }, [initialTab, initialGroup]);
 
   return (
     <div className="min-h-screen bg-[#0a0f1d] text-slate-100 flex flex-col font-sans selection:bg-rose-600 selection:text-white">
@@ -118,7 +188,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       <Kadinlar2LigHeader
         metadata={data.metadata}
         activeTab={activeTab}
-        onSelectTab={setActiveTab}
+        onSelectTab={handleSelectTab}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onRefresh={handleRefresh}
@@ -137,7 +207,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         <Kadinlar2LigGroupBar
           groups={data.gruplar}
           selectedGroup={selectedGroup}
-          onSelectGroup={setSelectedGroup}
+          onSelectGroup={handleSelectGroup}
         />
       )}
 
@@ -252,7 +322,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       {/* 6. Mobil Alt Menü Barı (Sticky Bottom Navigation) */}
       <Kadinlar2LigMobileNav
         activeTab={activeTab}
-        onSelectTab={setActiveTab}
+        onSelectTab={handleSelectTab}
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavorites={() => setShowOnlyFavorites((prev) => !prev)}
         favoriteCount={favoritesCount}
