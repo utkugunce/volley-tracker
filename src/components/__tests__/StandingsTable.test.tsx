@@ -202,7 +202,7 @@ describe('StandingsTable Component', () => {
     expect(screen.getByText(/Galatasaray Yıldız/i)).toBeInTheDocument();
   });
 
-  it('(h) Tüm İller modunda birden fazla il varken İL seçici butonları gösterilir ve şehirler arası geçiş yapılır', () => {
+  it('(h) Tüm İller modunda birden fazla il varken İL açılır menüsü gösterilir ve şehir seçimi yapılır', () => {
     const multiCityStandings = {
       'Ankara - Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 1. Grup': [mockItemA],
       'İstanbul - Genç Kızlar Süper Lig - A Grubu': [
@@ -212,21 +212,34 @@ describe('StandingsTable Component', () => {
 
     render(<StandingsTable standingsData={multiCityStandings} />);
 
-    // İl butonları görünmeli
-    const ankaraBtn = screen.getByRole('button', { name: 'Ankara' });
-    const istanbulBtn = screen.getByRole('button', { name: 'İstanbul' });
-    expect(ankaraBtn).toBeInTheDocument();
-    expect(istanbulBtn).toBeInTheDocument();
+    // Dropdown butonu seçili il olarak Ankara'yı göstermeli
+    const cityDropdownBtn = screen.getByRole('button', { name: 'Ankara' });
+    expect(cityDropdownBtn).toBeInTheDocument();
 
     // Başlangıçta Ankara ve Eczacıbaşı aktif
     expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
 
-    // İstanbul'a tıkla
-    fireEvent.click(istanbulBtn);
+    // Dropdown'ı açmak için tıkla
+    fireEvent.click(cityDropdownBtn);
 
-    // THY İstanbul görünmeli
+    // Açılır listede İstanbul seçeneği görünmeli
+    const istanbulOption = screen.getByRole('option', { name: /İstanbul/i });
+    expect(istanbulOption).toBeInTheDocument();
+
+    // İstanbul seçeneğine tıkla
+    fireEvent.click(istanbulOption);
+
+    // THY İstanbul görünmeli ve Eczacıbaşı gitmeli
     expect(screen.getByText(/THY İstanbul/i)).toBeInTheDocument();
     expect(screen.queryByText(/Eczacıbaşı/i)).not.toBeInTheDocument();
+
+    // Filtreleri Gizle / Aç butonu çalışmalı
+    const toggleFiltersBtn = screen.getByRole('button', { name: /Filtreleri Gizle/i });
+    expect(toggleFiltersBtn).toBeInTheDocument();
+    fireEvent.click(toggleFiltersBtn);
+
+    // Filtreler gizlendiğinde aç butonu görünmeli
+    expect(screen.getByRole('button', { name: /Kategori & Grupları Aç/i })).toBeInTheDocument();
   });
 });
 
