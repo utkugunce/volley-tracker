@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T19:36:10.358985+00:00",
+  "updated_at": "2026-09-25T22:51:23.721516+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -235,6 +235,24 @@
       },
       {
         "rank": 2,
+        "team": "İBB Spor Kulübü U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "set_ratio": "3.000",
+        "points_won": 188,
+        "points_lost": 161,
+        "point_ratio": "1.168",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Eyüpsultan Belediyesi SK U18",
         "played": 2,
         "won": 1,
@@ -252,7 +270,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Fenerbahçe U18",
         "played": 1,
         "won": 1,
@@ -264,23 +282,6 @@
         "points_won": 75,
         "points_lost": 45,
         "point_ratio": "1.667",
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "İBB Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "set_ratio": "3.000",
-        "points_won": 95,
-        "points_lost": 82,
-        "point_ratio": "1.159",
         "form": [
           "W"
         ]
@@ -306,18 +307,19 @@
       {
         "rank": 6,
         "team": "Galatasaray U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "set_ratio": "1.500",
-        "points_won": 107,
-        "points_lost": 93,
-        "point_ratio": "1.151",
+        "sets_won": 4,
+        "sets_lost": 5,
+        "set_ratio": "0.800",
+        "points_won": 186,
+        "points_lost": 186,
+        "point_ratio": "1.000",
         "form": [
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -4115,11 +4117,16 @@
       "match_no": "9",
       "home_team": "İBB Spor Kulübü U18",
       "away_team": "Galatasaray U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "25-20",
+        "18-25",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400377",
@@ -4948,5 +4955,5 @@
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-25T19:37:32.159681"
+  "volleybox_sync_updated_at": "2026-09-25T22:52:46.180363"
 }

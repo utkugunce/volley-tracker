@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T19:36:07.802451",
+  "updated_at": "2026-09-25T22:51:21.490424",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -273,6 +273,28 @@
       },
       {
         "rank": 2,
+        "team": "Bal Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Uzay 35 Voleybol Kulübü - B U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Volkan Güç Spor Kulübü - B U18",
         "played": 1,
         "won": 0,
@@ -283,7 +305,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "Bergama Belediyesi Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -294,18 +316,7 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Bal Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
+        "rank": 6,
         "team": "ÖZEGE Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -316,7 +327,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Karşıyaka SK - B U18",
         "played": 0,
         "won": 0,
@@ -327,19 +338,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Monza Spor Kulübü - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Uzay 35 Voleybol Kulübü - B U18",
+        "team": "Monza Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -725,18 +725,18 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - D Gr": [
       {
         "rank": 1,
-        "team": "Narlıdere Belediyesi Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "İzmir DSİ Spor U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
-        "team": "İzmir DSİ Spor U16",
+        "team": "Monza Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -747,13 +747,13 @@
       },
       {
         "rank": 3,
-        "team": "Monza Spor Kulübü U16",
-        "played": 1,
+        "team": "Narlıdere Belediyesi Spor Kulübü U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -1969,11 +1969,17 @@
       "match_no": "2",
       "home_team": "Uzay 35 Voleybol Kulübü - B U18",
       "away_team": "Bal Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "25-20",
+        "19-25",
+        "14-25",
+        "9-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399270",
@@ -3663,11 +3669,15 @@
       "match_no": "5",
       "home_team": "Narlıdere Belediyesi Spor Kulübü U16",
       "away_team": "İzmir DSİ Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "18-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398212",
@@ -4254,5 +4264,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-25T19:37:32.191119"
+  "volleybox_sync_updated_at": "2026-09-25T22:52:46.212672"
 }
