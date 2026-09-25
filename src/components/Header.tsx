@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers } from "lucide-react";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -20,8 +20,8 @@ interface HeaderProps {
   favoritesCount: number;
   showOnlyFavorites: boolean;
   onToggleFavoritesOnly: () => void;
-  activeTab: "results" | "home" | "fixtures" | "standings" | "group-status";
-  onSelectTab: (tab: "results" | "home" | "fixtures" | "standings" | "group-status") => void;
+  activeTab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status";
+  onSelectTab: (tab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status") => void;
   onRefresh: () => void;
   isLoading: boolean;
   onOpenSearch?: () => void;
@@ -110,7 +110,7 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           {/* Favoriler Butonu */}
-          {(activeTab === "fixtures" || activeTab === "home" || activeTab === "results") && (
+          {(activeTab === "fixtures" || activeTab === "home" || activeTab === "today" || activeTab === "results") && (
             <button
               onClick={onToggleFavoritesOnly}
               className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-all active:scale-95 duration-200 ${
@@ -192,8 +192,21 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       )}
 
-      {/* 2. ANA SEKMELER: SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU */}
+      {/* 2. ANA SEKMELER: ANASAYFA, SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU, GRUP DURUMU */}
       <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
+        {/* Anasayfa Portalı Sekmesi */}
+        <button
+          onClick={() => onSelectTab("home")}
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            activeTab === "home"
+              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
+          }`}
+        >
+          <Home size={13} className={activeTab === "home" ? "text-primary fill-primary/20" : "text-slate-400"} />
+          <span>ANASAYFA</span>
+        </button>
+
         {/* Sonuçlar Sekmesi */}
         <button
           onClick={() => onSelectTab("results")}
@@ -218,16 +231,16 @@ export const Header: React.FC<HeaderProps> = ({
           )}
         </button>
 
-        {/* Günün Maçları (Anasayfa) Sekmesi */}
+        {/* Günün Maçları Sekmesi */}
         <button
-          onClick={() => onSelectTab("home")}
+          onClick={() => onSelectTab("today")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
-            activeTab === "home"
+            activeTab === "today"
               ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Flame size={13} className={activeTab === "home" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
+          <Flame size={13} className={activeTab === "today" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
           <span>GÜNÜN MAÇLARI</span>
           {todayMatchesCount > 0 && (
             <span className="text-[9px] sm:text-[10px] bg-gradient-to-r from-red-600 to-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs shadow-red-900/50">

@@ -8,6 +8,7 @@ describe("Route Sync & City URL Mapping", () => {
       expect(getAppRoute("standings", "all")).toBe("/puan-durumu");
       expect(getAppRoute("fixtures", "all")).toBe("/fikstur");
       expect(getAppRoute("results", "all")).toBe("/sonuclar");
+      expect(getAppRoute("today", "all")).toBe("/gunun-maclari");
       expect(getAppRoute("home", "all")).toBe("/");
       expect(getAppRoute("standings", "Tüm İller")).toBe("/puan-durumu");
       expect(getAppRoute("standings", undefined)).toBe("/puan-durumu");
@@ -17,7 +18,8 @@ describe("Route Sync & City URL Mapping", () => {
       expect(getAppRoute("standings", "istanbul")).toBe("/puan-durumu/istanbul");
       expect(getAppRoute("fixtures", "ankara")).toBe("/fikstur/ankara");
       expect(getAppRoute("results", "izmir")).toBe("/sonuclar/izmir");
-      expect(getAppRoute("home", "bursa")).toBe("/gunun-maclari/bursa");
+      expect(getAppRoute("today", "bursa")).toBe("/gunun-maclari/bursa");
+      expect(getAppRoute("home", "bursa")).toBe("/bursa");
     });
 
     it("handles uppercase and mixed case city slugs gracefully", () => {
@@ -33,21 +35,21 @@ describe("Route Sync & City URL Mapping", () => {
       expect(parseAppRoute("/puan-durumu")).toEqual({ tab: "standings", city: "all" });
       expect(parseAppRoute("/fikstur")).toEqual({ tab: "fixtures", city: "all" });
       expect(parseAppRoute("/sonuclar")).toEqual({ tab: "results", city: "all" });
-      expect(parseAppRoute("/gunun-maclari")).toEqual({ tab: "home", city: "all" });
+      expect(parseAppRoute("/gunun-maclari")).toEqual({ tab: "today", city: "all" });
     });
 
     it("parses canonical /tab/city routes correctly", () => {
       expect(parseAppRoute("/puan-durumu/istanbul")).toEqual({ tab: "standings", city: "istanbul" });
       expect(parseAppRoute("/fikstur/ankara")).toEqual({ tab: "fixtures", city: "ankara" });
       expect(parseAppRoute("/sonuclar/izmir")).toEqual({ tab: "results", city: "izmir" });
-      expect(parseAppRoute("/gunun-maclari/bursa")).toEqual({ tab: "home", city: "bursa" });
+      expect(parseAppRoute("/gunun-maclari/bursa")).toEqual({ tab: "today", city: "bursa" });
     });
 
     it("parses /city/tab alternative friendly routes correctly", () => {
       expect(parseAppRoute("/istanbul/puan-durumu")).toEqual({ tab: "standings", city: "istanbul" });
       expect(parseAppRoute("/ankara/fikstur")).toEqual({ tab: "fixtures", city: "ankara" });
       expect(parseAppRoute("/izmir/sonuclar")).toEqual({ tab: "results", city: "izmir" });
-      expect(parseAppRoute("/bursa/gunun-maclari")).toEqual({ tab: "home", city: "bursa" });
+      expect(parseAppRoute("/bursa/gunun-maclari")).toEqual({ tab: "today", city: "bursa" });
     });
 
     it("parses direct city landing routes (/city)", () => {

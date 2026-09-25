@@ -9,6 +9,7 @@ import { StandingsTable } from "@/components/StandingsTable";
 import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
+import { HomePortalView } from "@/components/HomePortalView";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { NotificationBanner } from "@/components/NotificationBanner";
 import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
@@ -32,8 +33,10 @@ export const isMatchScored = (m: Match): boolean => {
   return false;
 };
 
+export type AppMainTab = "home" | "results" | "today" | "fixtures" | "standings" | "group-status";
+
 export const getAppRoute = (
-  tab: "results" | "home" | "fixtures" | "standings" | "group-status",
+  tab: AppMainTab,
   citySlug?: string
 ): string => {
   const isCity = citySlug && citySlug !== "all" && citySlug !== "Tüm İller";
@@ -48,15 +51,17 @@ export const getAppRoute = (
       return slug ? `/fikstur/${slug}` : "/fikstur";
     case "results":
       return slug ? `/sonuclar/${slug}` : "/sonuclar";
+    case "today":
+      return slug ? `/gunun-maclari/${slug}` : "/gunun-maclari";
     case "home":
     default:
-      return slug ? `/gunun-maclari/${slug}` : "/";
+      return slug ? `/${slug}` : "/";
   }
 };
 
 export const parseAppRoute = (
   pathname: string
-): { tab: "results" | "home" | "fixtures" | "standings" | "group-status"; city: string } => {
+): { tab: AppMainTab; city: string } => {
   const cleanPath = pathname.replace(/^\/+|\/+$/g, "");
   if (!cleanPath) {
     return { tab: "home", city: "all" };
@@ -80,7 +85,7 @@ export const parseAppRoute = (
     return { tab: "results", city: second || "all" };
   }
   if (first === "gunun-maclari") {
-    return { tab: "home", city: second || "all" };
+    return { tab: "today", city: second || "all" };
   }
 
   // Pattern 2: /[city]/grup-durumu
@@ -97,7 +102,7 @@ export const parseAppRoute = (
     return { tab: "results", city: first };
   }
   if (second === "gunun-maclari") {
-    return { tab: "home", city: first };
+    return { tab: "today", city: first };
   }
 
   // Pattern 3: /[city] (direct city slug like /istanbul)
@@ -106,7 +111,7 @@ export const parseAppRoute = (
 
 interface DashboardClientProps {
   initialData: FixturesData;
-  initialTab?: "results" | "home" | "fixtures" | "standings" | "group-status";
+  initialTab?: AppMainTab;
   initialCity?: string;
 }
 
@@ -119,8 +124,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Ana Sekmeler: "results" (Sonuçlar), "home" (Günün Maçları / Anasayfa), "fixtures" (Fikstür), "standings" (Puan Durumu) ve "group-status" (Grup Durumu)
-  const [activeMainTab, setActiveMainTab] = useState<"results" | "home" | "fixtures" | "standings" | "group-status">(initialTab);
+  // Ana Sekmeler: "home" (Anasayfa Portalı), "results" (Sonuçlar), "today" (Günün Maçları), "fixtures" (Fikstür), "standings" (Puan Durumu) ve "group-status" (Grup Durumu)
+  const [activeMainTab, setActiveMainTab] = useState<AppMainTab>(initialTab);
 
   // 81 İl Desteği - URL'den veya prop'tan gelen şehir ile başlar
   const [currentCitySlug, setCurrentCitySlug] = useState(initialCity || "all");
@@ -140,14 +145,14 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [citiesList, setCitiesList] = useState<any[]>([]);
 
   // Sekme değiştiğinde tarayıcı URL'ini senkronize et (Şehir seçiliyse şehri korur: /grup-durumu/istanbul, /puan-durumu/istanbul vb.)
-  const handleSelectTab = (tab: "results" | "home" | "fixtures" | "standings" | "group-status") => {
+  const handleSelectTab = (tab: AppMainTab) => {
     setActiveMainTab(tab);
     if (typeof window !== "undefined") {
       const targetPath = getAppRoute(tab, currentCitySlug);
       const currentPath = window.location.pathname;
       if (
         currentPath !== targetPath &&
-        !(tab === "home" && currentCitySlug === "all" && (currentPath === "/" || currentPath === "/gunun-maclari"))
+        !(tab === "home" && currentCitySlug === "all" && currentPath === "/")
       ) {
         window.history.pushState({ tab, city: currentCitySlug }, "", targetPath);
       }
@@ -1107,7 +1112,23 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             )}
           </div>
         ) : activeMainTab === "home" ? (
-          /* ==================== GÜNÜN MAÇLARI (ANASAYFA DASHBOARD) ==================== */
+          /* ==================== ANASAYFA PORTAL & DASHBOARD ==================== */
+          <HomePortalView
+            matches={data?.matches || []}
+            city={data?.city}
+            currentCitySlug={currentCitySlug}
+            onSelectCity={handleSelectCity}
+            citiesList={citiesList}
+            standings={data?.standings || {}}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+            onSelectMatch={setSelectedMatch}
+            onNavigateTab={handleSelectTab}
+            todayStr={todayStr}
+            yesterdayStr={yesterdayStr}
+          />
+        ) : activeMainTab === "today" ? (
+          /* ==================== GÜNÜN MAÇLARI ==================== */
           <div className="space-y-4">
             {data?.matches && data.matches.length > 0 && (
               <FeaturedMatchHero
@@ -1127,7 +1148,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               todayStr={todayStr}
               favorites={favorites}
               onToggleFavorite={toggleFavorite}
-              onNavigateToFullFixtures={() => setActiveMainTab("fixtures")}
+              onNavigateToFullFixtures={() => handleSelectTab("fixtures")}
               onSelectMatch={setSelectedMatch}
             />
           </div>
@@ -1402,18 +1423,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         activeTab={
           showOnlyFavorites
             ? "favorites"
-            : activeMainTab === "home"
+            : activeMainTab === "today"
             ? "today"
             : activeMainTab === "results"
             ? "results"
             : activeMainTab === "fixtures"
             ? "fixtures"
-            : "standings"
+            : activeMainTab === "standings"
+            ? "standings"
+            : "today"
         }
         onSelectTab={(tab) => {
           if (tab === "today") {
             setShowOnlyFavorites(false);
-            handleSelectTab("home");
+            handleSelectTab("today");
           } else if (tab === "results") {
             setShowOnlyFavorites(false);
             handleSelectTab("results");

@@ -54,5 +54,5 @@ export default async function TodayMatchesPage({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
   const citySlug = typeof params?.city === "string" ? params.city : undefined;
   const initialData = getInitialFixtures(citySlug);
-  return <DashboardClient initialData={initialData} initialTab="home" initialCity={citySlug} />;
+  return <DashboardClient initialData={initialData} initialTab="today" initialCity={citySlug} />;
 }

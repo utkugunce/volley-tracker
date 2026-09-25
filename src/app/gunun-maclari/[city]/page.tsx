@@ -51,5 +51,5 @@ export default async function CityTodayMatchesPage({ params }: PageProps) {
   }
 
   const initialData = getInitialFixtures(citySlug);
-  return <DashboardClient initialData={initialData} initialTab="home" initialCity={citySlug} />;
+  return <DashboardClient initialData={initialData} initialTab="today" initialCity={citySlug} />;
 }

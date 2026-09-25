@@ -21,39 +21,71 @@ describe("Header Component", () => {
       />
     );
 
-    // 1. SONUÇLAR ve GÜNÜN MAÇLARI sekmeleri mevcut mu?
+    // 1. ANASAYFA, SONUÇLAR ve GÜNÜN MAÇLARI sekmeleri mevcut mu?
+    const homeSpan = screen.getByText("ANASAYFA");
     const resultsSpan = screen.getByText("SONUÇLAR");
     const todaySpan = screen.getByText("GÜNÜN MAÇLARI");
     const fixturesSpan = screen.getByText("FİKSTÜR");
     const standingsSpan = screen.getByText("PUAN DURUMU");
 
+    expect(homeSpan).toBeInTheDocument();
     expect(resultsSpan).toBeInTheDocument();
     expect(todaySpan).toBeInTheDocument();
     expect(fixturesSpan).toBeInTheDocument();
     expect(standingsSpan).toBeInTheDocument();
 
+    const homeButton = homeSpan.closest("button")!;
     const resultsButton = resultsSpan.closest("button")!;
     const todayButton = todaySpan.closest("button")!;
     const fixturesButton = fixturesSpan.closest("button")!;
     const standingsButton = standingsSpan.closest("button")!;
 
+    expect(homeButton).toBeInTheDocument();
     expect(resultsButton).toBeInTheDocument();
     expect(todayButton).toBeInTheDocument();
     expect(fixturesButton).toBeInTheDocument();
     expect(standingsButton).toBeInTheDocument();
 
-    // 2. Sıralama kontrolü: SONUÇLAR, GÜNÜN MAÇLARI'ndan önce (solunda) yer almalıdır
+    // 2. Sıralama kontrolü: ANASAYFA -> SONUÇLAR -> GÜNÜN MAÇLARI
     const allButtons = screen.getAllByRole("button");
+    const homeIdx = allButtons.indexOf(homeButton);
     const resultsIdx = allButtons.indexOf(resultsButton);
     const todayIdx = allButtons.indexOf(todayButton);
+    expect(homeIdx).toBeLessThan(resultsIdx);
     expect(resultsIdx).toBeLessThan(todayIdx);
 
     // 3. Rozet sayısı: 29 sonuç
     expect(screen.getByText("29")).toBeInTheDocument();
 
-    // 4. Tıklama aksiyonu: onSelectTab("results") tetiklenmeli
+    // 4. Tıklama aksiyonları:
+    fireEvent.click(homeButton);
+    expect(onSelectTab).toHaveBeenCalledWith("home");
+
     fireEvent.click(resultsButton);
     expect(onSelectTab).toHaveBeenCalledWith("results");
+
+    fireEvent.click(todayButton);
+    expect(onSelectTab).toHaveBeenCalledWith("today");
+  });
+
+  it("activeTab='home' olduğunda ANASAYFA sekmesini aktif stilde gösterir", () => {
+    render(
+      <Header
+        totalMatches={151}
+        todayMatchesCount={0}
+        resultsCount={29}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="home"
+        onSelectTab={vi.fn()}
+        onRefresh={vi.fn()}
+        isLoading={false}
+      />
+    );
+
+    const homeButton = screen.getByText("ANASAYFA").closest("button")!;
+    expect(homeButton.className).toContain("border-primary text-white");
   });
 
   it("activeTab='results' olduğunda SONUÇLAR sekmesini aktif stilde gösterir", () => {
