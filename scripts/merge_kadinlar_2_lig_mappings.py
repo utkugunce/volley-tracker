@@ -20,9 +20,24 @@ def normalize_slug(text):
     text = re.sub(r"[^a-z0-9]+", "-", text)
     return text.strip("-")
 
-def main():
+KNOWN_2_LIG_ALIASES = {
+    "TOYZZ SHOP DİNAMO SPOR": ["Dinamo Kartal Spor Kulübü", "Dinamo Spor Kulübü"],
+    "ÇANAKKALE ONSEKİZ MART ÜNİVERSİTESİ": ["ÇOMÜ Spor Kulübü", "ÇOMÜ"],
+    "ESKİŞEHİR ŞEHİR KOLEJİ EĞT. KÜLTÜR": ["Şehir Koleji Eğitim Kültür SK"],
+    "BARTIN VOLLEY ACADEMY": ["Bartın Voleybol Kulübü"],
+    "ADANA T.D.S.": ["Adana Tenis Dağ ve Su Sporları Kulübü", "ATDSK"],
+    "ADANA SPORCU EĞİTİM SPOR": ["Adana Sporcu Eğitim Merkezi Spor Kulübü"],
+    "AHTO": ["AHTO Spor Kulübü"],
+    "TMS SPOR": ["TMS Voleybol Spor Kulübü"],
+    "KVK SPOR": ["KVK Voleybol Kulübü"],
+    "YALOVA ÇİFTLİKKÖY BLD. SPOR": ["Çiftlikköy Belediyespor"],
+    "GALATASARAY": ["Galatasaray ll", "Galatasaray II"],
+}
+
+def merge_kadinlar_2_lig_mappings(silent: bool = False):
     if not os.path.exists(K2_FILE) or not os.path.exists(VBM_FILE):
-        print("Dosyalar bulunamadı.")
+        if not silent:
+            print("Dosyalar bulunamadı.")
         return
 
     with open(K2_FILE, "r", encoding="utf-8") as f:
@@ -49,7 +64,8 @@ def main():
             "verified_at": "2026-09-25"
         })
         vbm["leagues"] = leagues
-        print("✅ Kadınlar 2. Ligi lig eşleştirmesi eklendi.")
+        if not silent:
+            print("✅ Kadınlar 2. Ligi lig eşleştirmesi eklendi.")
 
     # 2. Şehir Tespiti (Maçlardan)
     team_cities = {}
@@ -65,9 +81,6 @@ def main():
     existing_keys = {
         (m.get("internal_name", "").lower(), m.get("internal_category", "").lower())
         for m in mappings
-    }
-    existing_urls = {
-        m.get("volleybox_url") for m in mappings if m.get("volleybox_url")
     }
 
     added_count = 0
@@ -95,6 +108,10 @@ def main():
         if vb_name and vb_name != name:
             aliases.append(vb_name)
 
+        for kn, extra_al in KNOWN_2_LIG_ALIASES.items():
+            if kn.lower() == name.lower():
+                aliases.extend(extra_al)
+
         clean_logo = logo if logo and "takimlogoyok" not in logo else None
 
         pair = (name.lower(), "kadınlar 2. ligi".lower())
@@ -106,6 +123,9 @@ def main():
                     m["matched_as"] = vb_name or name
                     if clean_logo and not m.get("logo_url"):
                         m["logo_url"] = clean_logo
+                    curr_aliases = set(m.get("aliases") or [])
+                    curr_aliases.update(aliases)
+                    m["aliases"] = list(curr_aliases)
                     updated_count += 1
                     break
         else:
@@ -131,7 +151,12 @@ def main():
     with open(VBM_FILE, "w", encoding="utf-8") as f:
         json.dump(vbm, f, ensure_ascii=False, indent=2)
 
-    print(f"🎉 İşlem Tamamlandı: {added_count} yeni takım eklendi, {updated_count} takım güncellendi.")
+    if not silent:
+        print(f"🎉 İşlem Tamamlandı: {added_count} yeni takım eklendi, {updated_count} takım güncellendi.")
+
+def main():
+    merge_kadinlar_2_lig_mappings(silent=False)
 
 if __name__ == "__main__":
     main()
+

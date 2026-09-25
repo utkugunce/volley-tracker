@@ -202,17 +202,17 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      {/* 2. Gruplar Seçim Barı (Puan Cetveli veya Fikstür açıkken) */}
-      {(activeTab === "standings" || activeTab === "fixtures") && (
-        <Kadinlar2LigGroupBar
-          groups={data.gruplar}
-          selectedGroup={selectedGroup}
-          onSelectGroup={handleSelectGroup}
-        />
-      )}
-
       {/* 3. Ana İçerik Alanı (Altyapı max-w-6xl ile Birebir) */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-2 sm:px-4 py-3 sm:py-4 pb-20 sm:pb-8 flex flex-col space-y-3 sm:space-y-4">
+        {/* 2. Gruplar & İl Seçici Barı (Puan Cetveli veya Fikstür açıkken) */}
+        {(activeTab === "standings" || activeTab === "fixtures") && (
+          <Kadinlar2LigGroupBar
+            groups={data.gruplar}
+            allMatches={data.tum_maclar}
+            selectedGroup={selectedGroup}
+            onSelectGroup={handleSelectGroup}
+          />
+        )}
         {/* ANASAYFA / CANLI HUB TABI */}
         {activeTab === "home" && (
           <Kadinlar2LigHomePortal

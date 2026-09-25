@@ -3,11 +3,11 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-09-25T13:15:33.999064",
+    "guncellenme_zamani": "2026-09-25T20:57:15.371044",
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 167,
     "toplam_mac_sayisi": 289,
-    "volleybox_eslesme_sayisi": 158,
+    "volleybox_eslesme_sayisi": 159,
     "resmi_kaynaklar": {
       "tvf_puan_durumu": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu",
       "tvf_fikstur": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur",
@@ -2304,8 +2304,8 @@
           "v0_3": 0,
           "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154",
-          "volleybox_name": "Toyzz Shop Dinamo Spor",
+          "volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
+          "volleybox_name": "Dinamo Kartal Spor Kulübü",
           "grup_no": 4
         }
       ],
@@ -2361,7 +2361,7 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/nar-kumasclk-cengelkoy-voleybol-t16876"
         },
         {
@@ -2468,7 +2468,7 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/galatasaray-ll-t14016",
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154"
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369"
         },
         {
           "id": "2lig_g4_m6_2777_2868",
@@ -2547,7 +2547,7 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154"
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369"
         },
         {
           "id": "2lig_g4_m14_2788_2819",
@@ -2815,8 +2815,8 @@
           "v0_3": 0,
           "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "sezon": "2026-2027",
-          "volleybox_url": null,
-          "volleybox_name": null,
+          "volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
+          "volleybox_name": "ÇOMÜ Spor Kulübü",
           "grup_no": 5
         },
         {
@@ -2976,7 +2976,8 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-t2978"
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-t2978",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223"
         },
         {
           "id": "2lig_g5_m3_2821_2820",
@@ -3137,6 +3138,7 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/balkesir-ds-spor-t13448"
         },
         {
@@ -3244,7 +3246,8 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-klubu-t17132"
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-klubu-t17132",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223"
         },
         {
           "id": "2lig_g5_m13_2791_2793",
@@ -3432,6 +3435,7 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-t16196"
         },
         {
@@ -3566,7 +3570,8 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/can-genclik-kale-spor-kulubu-t6566"
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/can-genclik-kale-spor-kulubu-t6566",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223"
         },
         {
           "id": "2lig_g5_m21_2820_2793",
@@ -6021,8 +6026,8 @@
           "v0_3": 0,
           "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180",
-          "volleybox_name": "Eskişehir Peyman SK",
+          "volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067",
+          "volleybox_name": "Şehir Koleji Eğitim Kültür SK",
           "grup_no": 9
         },
         {
@@ -6316,7 +6321,7 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180",
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180"
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067"
         },
         {
           "id": "2lig_g9_m8_2807_2886",
@@ -6424,7 +6429,7 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/bursa-koc-spor-kulubu-t36105",
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180"
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067"
         },
         {
           "id": "2lig_g9_m13_2851_2838",
@@ -7514,6 +7519,32 @@
       "puan_durumu": [
         {
           "sira": 1,
+          "takim_id": "2914",
+          "takim_adi": "TEMİZ ENERJİ BİRLİĞİ",
+          "o": 1,
+          "g": 1,
+          "m": 0,
+          "p": 3,
+          "as": 3,
+          "vs": 0,
+          "sav": "MAX",
+          "asp": 75,
+          "vsp": 0,
+          "spav": "MAX",
+          "a3_0": 1,
+          "a3_1": 0,
+          "a3_2": 0,
+          "v2_3": 0,
+          "v1_3": 0,
+          "v0_3": 0,
+          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "sezon": "2026-2027",
+          "volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+          "volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
+          "grup_no": 11
+        },
+        {
+          "sira": 2,
           "takim_id": "2782",
           "takim_adi": "ANKARA BAROSU",
           "o": 0,
@@ -7539,7 +7570,7 @@
           "grup_no": 11
         },
         {
-          "sira": 2,
+          "sira": 3,
           "takim_id": "2783",
           "takim_adi": "ANKARA DSİ",
           "o": 0,
@@ -7565,7 +7596,7 @@
           "grup_no": 11
         },
         {
-          "sira": 3,
+          "sira": 4,
           "takim_id": "2817",
           "takim_adi": "ÇAYYOLU SPORTSA",
           "o": 0,
@@ -7591,7 +7622,7 @@
           "grup_no": 11
         },
         {
-          "sira": 4,
+          "sira": 5,
           "takim_id": "2837",
           "takim_adi": "ERYAMAN GELİŞİM",
           "o": 0,
@@ -7617,7 +7648,7 @@
           "grup_no": 11
         },
         {
-          "sira": 5,
+          "sira": 6,
           "takim_id": "2852",
           "takim_adi": "GÖLBAŞI İNCEK SPOR",
           "o": 0,
@@ -7640,32 +7671,6 @@
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/golbas-ncek-spor-kulubu-t30620",
           "volleybox_name": "Gölbaşı İncek Spor Kulübü",
-          "grup_no": 11
-        },
-        {
-          "sira": 6,
-          "takim_id": "2869",
-          "takim_adi": "KAVAK SPOR",
-          "o": 0,
-          "g": 0,
-          "m": 0,
-          "p": 0,
-          "as": 0,
-          "vs": 0,
-          "sav": "0",
-          "asp": 0,
-          "vsp": 0,
-          "spav": "0",
-          "a3_0": 0,
-          "a3_1": 0,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
-          "volleybox_name": "Kavak Spor Kulübü",
           "grup_no": 11
         },
         {
@@ -7722,32 +7727,6 @@
         },
         {
           "sira": 9,
-          "takim_id": "2914",
-          "takim_adi": "TEMİZ ENERJİ BİRLİĞİ",
-          "o": 0,
-          "g": 0,
-          "m": 0,
-          "p": 0,
-          "as": 0,
-          "vs": 0,
-          "sav": "0",
-          "asp": 0,
-          "vsp": 0,
-          "spav": "0",
-          "a3_0": 0,
-          "a3_1": 0,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
-          "volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
-          "grup_no": 11
-        },
-        {
-          "sira": 10,
           "takim_id": "2919",
           "takim_adi": "TVF SPOR LİSESİ",
           "o": 0,
@@ -7773,7 +7752,7 @@
           "grup_no": 11
         },
         {
-          "sira": 11,
+          "sira": 10,
           "takim_id": "2921",
           "takim_adi": "VEGA ATLETİK",
           "o": 0,
@@ -7796,6 +7775,32 @@
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/vega-atletik-spor-t36065",
           "volleybox_name": "Vega Atletik Spor Kulübü",
+          "grup_no": 11
+        },
+        {
+          "sira": 11,
+          "takim_id": "2869",
+          "takim_adi": "KAVAK SPOR",
+          "o": 1,
+          "g": 0,
+          "m": 1,
+          "p": -3,
+          "as": 0,
+          "vs": 3,
+          "sav": "MIN",
+          "asp": 0,
+          "vsp": 75,
+          "spav": "MIN",
+          "a3_0": 0,
+          "a3_1": 0,
+          "a3_2": 0,
+          "v2_3": 0,
+          "v1_3": 0,
+          "v0_3": 1,
+          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "sezon": "2026-2027",
+          "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
+          "volleybox_name": "Kavak Spor Kulübü",
           "grup_no": 11
         }
       ],
@@ -7899,11 +7904,11 @@
           "takim_b_id": "2869",
           "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "set_a": "",
-          "set_b": "",
-          "skor": "- : -",
-          "set_sonuclari": "",
-          "durum": "OYNANACAK",
+          "set_a": "3",
+          "set_b": "0",
+          "skor": "3 - 0",
+          "set_sonuclari": "(25-0) (25-0) (25-0)",
+          "durum": "BİTTİ",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536"
@@ -9195,8 +9200,8 @@
           "v0_3": 0,
           "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
-          "volleybox_name": "Adana Büyükşehir Belediyespor Kulübü",
+          "volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840",
+          "volleybox_name": "Adana Sporcu Eğitim Merkezi Spor Kulübü",
           "grup_no": 13
         },
         {
@@ -9221,8 +9226,8 @@
           "v0_3": 0,
           "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
-          "volleybox_name": "Adana Büyükşehir Belediyespor Kulübü",
+          "volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049",
+          "volleybox_name": "Adana Tenis Dağ ve Su Sporları Kulübü",
           "grup_no": 13
         },
         {
@@ -9487,8 +9492,8 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590"
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840"
         },
         {
           "id": "2lig_g13_m5_2856_2769",
@@ -9568,7 +9573,7 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/voleybol-gelisim-egitim-merkezi-t36208"
         },
         {
@@ -9650,7 +9655,7 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/eregli-sumer-sk-t13649",
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590"
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049"
         },
         {
           "id": "2lig_g13_m8_2895_2911",
@@ -9730,7 +9735,7 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/voleybol-gelisim-egitim-merkezi-t36208"
         },
         {
@@ -9758,7 +9763,7 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/hatay-voleybol-spor-kulubu-t13604",
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590"
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840"
         },
         {
           "id": "2lig_g13_m12_2836_2895",
@@ -12077,33 +12082,6 @@
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/silopi-gelisim-faaliyetleri-t20790"
         },
         {
-          "id": "2lig_g16_m7_2892_2906",
-          "mac_no": "7",
-          "grup_no": 16,
-          "grup_adi": "Grup 16",
-          "hafta": 2,
-          "devre": 1,
-          "tarih": "10.10.2026",
-          "gun": "CUMARTESİ",
-          "saat": "13:00",
-          "sehir": "MUŞ",
-          "salon": "YENİ SPOR SALONU",
-          "takim_a": "MUŞ 1071 AKADEMİİ",
-          "takim_b": "SİVEREK BELEDİYE SPOR",
-          "takim_a_id": "2892",
-          "takim_b_id": "2906",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "set_a": "",
-          "set_b": "",
-          "skor": "- : -",
-          "set_sonuclari": "",
-          "durum": "OYNANACAK",
-          "mac_durumu_kod": "O",
-          "takim_a_volleybox_url": "https://women.volleybox.net/tr/mus-olimpik-spor-kulubu-t32179",
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/siverek-belediye-spor-kulubu-t45575"
-        },
-        {
           "id": "2lig_g16_m6_2881_2885",
           "mac_no": "6",
           "grup_no": 16,
@@ -12128,6 +12106,33 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/megaron-nsaat-diyarbakr-spor-kulubu-t45535"
+        },
+        {
+          "id": "2lig_g16_m7_2892_2906",
+          "mac_no": "7",
+          "grup_no": 16,
+          "grup_adi": "Grup 16",
+          "hafta": 2,
+          "devre": 1,
+          "tarih": "11.10.2026",
+          "gun": "PAZAR",
+          "saat": "13:00",
+          "sehir": "MUŞ",
+          "salon": "YENİ SPOR SALONU",
+          "takim_a": "MUŞ 1071 AKADEMİİ",
+          "takim_b": "SİVEREK BELEDİYE SPOR",
+          "takim_a_id": "2892",
+          "takim_b_id": "2906",
+          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "set_a": "",
+          "set_b": "",
+          "skor": "- : -",
+          "set_sonuclari": "",
+          "durum": "OYNANACAK",
+          "mac_durumu_kod": "O",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/mus-olimpik-spor-kulubu-t32179",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/siverek-belediye-spor-kulubu-t45575"
         },
         {
           "id": "2lig_g16_m9_2904_2882",
@@ -12480,7 +12485,8 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-t2978"
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-t2978",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223"
     },
     {
       "id": "2lig_g10_m2_2829_2849",
@@ -12932,11 +12938,11 @@
       "takim_b_id": "2869",
       "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "set_a": "",
-      "set_b": "",
-      "skor": "- : -",
-      "set_sonuclari": "",
-      "durum": "OYNANACAK",
+      "set_a": "3",
+      "set_b": "0",
+      "skor": "3 - 0",
+      "set_sonuclari": "(25-0) (25-0) (25-0)",
+      "durum": "BİTTİ",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536"
@@ -13449,6 +13455,7 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/balkesir-ds-spor-t13448"
     },
     {
@@ -14042,7 +14049,8 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-klubu-t17132"
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-klubu-t17132",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223"
     },
     {
       "id": "2lig_g13_m4_2925_2895",
@@ -14821,7 +14829,7 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/nar-kumasclk-cengelkoy-voleybol-t16876"
     },
     {
@@ -15385,8 +15393,8 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590"
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840"
     },
     {
       "id": "2lig_g13_m5_2856_2769",
@@ -15978,7 +15986,7 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180"
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067"
     },
     {
       "id": "2lig_g14_m9_2877_2768",
@@ -16006,33 +16014,6 @@
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/samsunspor-t31533",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344"
-    },
-    {
-      "id": "2lig_g16_m7_2892_2906",
-      "mac_no": "7",
-      "grup_no": 16,
-      "grup_adi": "Grup 16",
-      "hafta": 2,
-      "devre": 1,
-      "tarih": "10.10.2026",
-      "gun": "CUMARTESİ",
-      "saat": "13:00",
-      "sehir": "MUŞ",
-      "salon": "YENİ SPOR SALONU",
-      "takim_a": "MUŞ 1071 AKADEMİİ",
-      "takim_b": "SİVEREK BELEDİYE SPOR",
-      "takim_a_id": "2892",
-      "takim_b_id": "2906",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "set_a": "",
-      "set_b": "",
-      "skor": "- : -",
-      "set_sonuclari": "",
-      "durum": "OYNANACAK",
-      "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/mus-olimpik-spor-kulubu-t32179",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/siverek-belediye-spor-kulubu-t45575"
     },
     {
       "id": "2lig_g10_m24_2828_2811",
@@ -16274,7 +16255,7 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/voleybol-gelisim-egitim-merkezi-t36208"
     },
     {
@@ -16677,6 +16658,7 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-t16196"
     },
     {
@@ -16894,6 +16876,33 @@
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/megaron-nsaat-diyarbakr-spor-kulubu-t45535"
     },
     {
+      "id": "2lig_g16_m7_2892_2906",
+      "mac_no": "7",
+      "grup_no": 16,
+      "grup_adi": "Grup 16",
+      "hafta": 2,
+      "devre": 1,
+      "tarih": "11.10.2026",
+      "gun": "PAZAR",
+      "saat": "13:00",
+      "sehir": "MUŞ",
+      "salon": "YENİ SPOR SALONU",
+      "takim_a": "MUŞ 1071 AKADEMİİ",
+      "takim_b": "SİVEREK BELEDİYE SPOR",
+      "takim_a_id": "2892",
+      "takim_b_id": "2906",
+      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "set_a": "",
+      "set_b": "",
+      "skor": "- : -",
+      "set_sonuclari": "",
+      "durum": "OYNANACAK",
+      "mac_durumu_kod": "O",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/mus-olimpik-spor-kulubu-t32179",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/siverek-belediye-spor-kulubu-t45575"
+    },
+    {
       "id": "2lig_g4_m9_2846_2916",
       "mac_no": "9",
       "grup_no": 4,
@@ -16918,7 +16927,7 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/galatasaray-ll-t14016",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154"
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369"
     },
     {
       "id": "2lig_g5_m16_2797_2795",
@@ -17322,7 +17331,7 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/eregli-sumer-sk-t13649",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590"
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049"
     },
     {
       "id": "2lig_g13_m8_2895_2911",
@@ -17967,7 +17976,7 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154"
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369"
     },
     {
       "id": "2lig_g4_m14_2788_2819",
@@ -19015,7 +19024,8 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/can-genclik-kale-spor-kulubu-t6566"
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/can-genclik-kale-spor-kulubu-t6566",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223"
     },
     {
       "id": "2lig_g6_m14_2917_2901",
@@ -19553,7 +19563,7 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/bursa-koc-spor-kulubu-t36105",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180"
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067"
     },
     {
       "id": "2lig_g10_m30_2829_2828",
@@ -19686,7 +19696,7 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/voleybol-gelisim-egitim-merkezi-t36208"
     },
     {
@@ -19714,7 +19724,7 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/hatay-voleybol-spor-kulubu-t13604",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590"
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840"
     },
     {
       "id": "2lig_g3_m15_2780_2860",
@@ -21105,8 +21115,8 @@
       "v0_3": 0,
       "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154",
-      "volleybox_name": "Toyzz Shop Dinamo Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
+      "volleybox_name": "Dinamo Kartal Spor Kulübü",
       "grup_no": 4
     },
     {
@@ -21287,8 +21297,8 @@
       "v0_3": 0,
       "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "sezon": "2026-2027",
-      "volleybox_url": null,
-      "volleybox_name": null,
+      "volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
+      "volleybox_name": "ÇOMÜ Spor Kulübü",
       "grup_no": 5
     },
     {
@@ -22301,8 +22311,8 @@
       "v0_3": 0,
       "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180",
-      "volleybox_name": "Eskişehir Peyman SK",
+      "volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067",
+      "volleybox_name": "Şehir Koleji Eğitim Kültür SK",
       "grup_no": 9
     },
     {
@@ -22775,6 +22785,32 @@
     },
     {
       "sira": 1,
+      "takim_id": "2914",
+      "takim_adi": "TEMİZ ENERJİ BİRLİĞİ",
+      "o": 1,
+      "g": 1,
+      "m": 0,
+      "p": 3,
+      "as": 3,
+      "vs": 0,
+      "sav": "MAX",
+      "asp": 75,
+      "vsp": 0,
+      "spav": "MAX",
+      "a3_0": 1,
+      "a3_1": 0,
+      "a3_2": 0,
+      "v2_3": 0,
+      "v1_3": 0,
+      "v0_3": 0,
+      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "sezon": "2026-2027",
+      "volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+      "volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
+      "grup_no": 11
+    },
+    {
+      "sira": 2,
       "takim_id": "2782",
       "takim_adi": "ANKARA BAROSU",
       "o": 0,
@@ -22800,7 +22836,7 @@
       "grup_no": 11
     },
     {
-      "sira": 2,
+      "sira": 3,
       "takim_id": "2783",
       "takim_adi": "ANKARA DSİ",
       "o": 0,
@@ -22826,7 +22862,7 @@
       "grup_no": 11
     },
     {
-      "sira": 3,
+      "sira": 4,
       "takim_id": "2817",
       "takim_adi": "ÇAYYOLU SPORTSA",
       "o": 0,
@@ -22852,7 +22888,7 @@
       "grup_no": 11
     },
     {
-      "sira": 4,
+      "sira": 5,
       "takim_id": "2837",
       "takim_adi": "ERYAMAN GELİŞİM",
       "o": 0,
@@ -22878,7 +22914,7 @@
       "grup_no": 11
     },
     {
-      "sira": 5,
+      "sira": 6,
       "takim_id": "2852",
       "takim_adi": "GÖLBAŞI İNCEK SPOR",
       "o": 0,
@@ -22901,32 +22937,6 @@
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/golbas-ncek-spor-kulubu-t30620",
       "volleybox_name": "Gölbaşı İncek Spor Kulübü",
-      "grup_no": 11
-    },
-    {
-      "sira": 6,
-      "takim_id": "2869",
-      "takim_adi": "KAVAK SPOR",
-      "o": 0,
-      "g": 0,
-      "m": 0,
-      "p": 0,
-      "as": 0,
-      "vs": 0,
-      "sav": "0",
-      "asp": 0,
-      "vsp": 0,
-      "spav": "0",
-      "a3_0": 0,
-      "a3_1": 0,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
-      "volleybox_name": "Kavak Spor Kulübü",
       "grup_no": 11
     },
     {
@@ -22983,32 +22993,6 @@
     },
     {
       "sira": 9,
-      "takim_id": "2914",
-      "takim_adi": "TEMİZ ENERJİ BİRLİĞİ",
-      "o": 0,
-      "g": 0,
-      "m": 0,
-      "p": 0,
-      "as": 0,
-      "vs": 0,
-      "sav": "0",
-      "asp": 0,
-      "vsp": 0,
-      "spav": "0",
-      "a3_0": 0,
-      "a3_1": 0,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
-      "volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
-      "grup_no": 11
-    },
-    {
-      "sira": 10,
       "takim_id": "2919",
       "takim_adi": "TVF SPOR LİSESİ",
       "o": 0,
@@ -23034,7 +23018,7 @@
       "grup_no": 11
     },
     {
-      "sira": 11,
+      "sira": 10,
       "takim_id": "2921",
       "takim_adi": "VEGA ATLETİK",
       "o": 0,
@@ -23057,6 +23041,32 @@
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/vega-atletik-spor-t36065",
       "volleybox_name": "Vega Atletik Spor Kulübü",
+      "grup_no": 11
+    },
+    {
+      "sira": 11,
+      "takim_id": "2869",
+      "takim_adi": "KAVAK SPOR",
+      "o": 1,
+      "g": 0,
+      "m": 1,
+      "p": -3,
+      "as": 0,
+      "vs": 3,
+      "sav": "MIN",
+      "asp": 0,
+      "vsp": 75,
+      "spav": "MIN",
+      "a3_0": 0,
+      "a3_1": 0,
+      "a3_2": 0,
+      "v2_3": 0,
+      "v1_3": 0,
+      "v0_3": 1,
+      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "sezon": "2026-2027",
+      "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
+      "volleybox_name": "Kavak Spor Kulübü",
       "grup_no": 11
     },
     {
@@ -23367,8 +23377,8 @@
       "v0_3": 0,
       "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
-      "volleybox_name": "Adana Büyükşehir Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/adana-sporcu-egitim-merkezi-t30840",
+      "volleybox_name": "Adana Sporcu Eğitim Merkezi Spor Kulübü",
       "grup_no": 13
     },
     {
@@ -23393,8 +23403,8 @@
       "v0_3": 0,
       "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
-      "volleybox_name": "Adana Büyükşehir Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/adana-tenis-dag-ve-su-sporlar-kulubu-t36049",
+      "volleybox_name": "Adana Tenis Dağ ve Su Sporları Kulübü",
       "grup_no": 13
     },
     {

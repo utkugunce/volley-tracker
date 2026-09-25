@@ -779,7 +779,16 @@ def main():
     active_count = 0
     total_matches_all = 0
 
-    with ThreadPoolExecutor(max_workers=16) as executor:
+    kadinlar_2_lig_future = None
+
+    with ThreadPoolExecutor(max_workers=18) as executor:
+        if not args.city:
+            try:
+                from scripts.scrape_kadinlar_2_lig import run_kadinlar_2_lig_scraper
+                kadinlar_2_lig_future = executor.submit(run_kadinlar_2_lig_scraper, True)
+            except Exception as e:
+                logger.warning(f"Kadınlar 2. Ligi eşzamanlı başlatılamadı: {e}")
+
         future_to_city = {executor.submit(scrape_single_city, c): c for c in cities}
         for future in as_completed(future_to_city):
             completed_count += 1
@@ -808,6 +817,16 @@ def main():
     print("\n" + "=" * 80)
     print("🎉 81 İLİN TARAMASI BAŞARIYLA TAMAMLANDI!")
     print("=" * 80)
+
+    if kadinlar_2_lig_future:
+        try:
+            k2_res = kadinlar_2_lig_future.result()
+            if k2_res:
+                k2_m = k2_res.get("metadata", {}).get("toplam_mac_sayisi", 0)
+                k2_t = k2_res.get("metadata", {}).get("toplam_takim_sayisi", 0)
+                print(f"  🏐 Kadınlar 2. Ligi     : {k2_t} Takım, {k2_m} Maç (Eşzamanlı çekildi)")
+        except Exception as k2_err:
+            print(f"  ⚠️ Kadınlar 2. Ligi eşzamanlı tarama hatası: {k2_err}")
     
     results.sort(key=lambda x: int(x["ilid"]) if str(x["ilid"]).isdigit() else 999)
     

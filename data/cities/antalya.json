@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T20:18:42.159121",
+  "updated_at": "2026-09-25T20:53:47.902477",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -295,6 +295,28 @@
       },
       {
         "rank": 3,
+        "team": "Antalya 1907 Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "07 Alya Spor U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "07 Zenit Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -305,7 +327,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Luna Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -316,18 +338,7 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "07 Alya Spor U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
+        "rank": 7,
         "team": "07 Anka Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -338,19 +349,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Akdeniz Bilgi Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Antalya 1907 Spor Kulübü U16",
+        "team": "Akdeniz Bilgi Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1812,11 +1812,16 @@
       "match_no": "3",
       "home_team": "Antalya 1907 Spor Kulübü U16",
       "away_team": "07 Alya Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-9",
+        "25-22",
+        "17-25",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398879",
@@ -2424,5 +2429,5 @@
     }
   ],
   "volleybox_synced_matches": 37,
-  "volleybox_sync_updated_at": "2026-09-25T20:22:08.331086"
+  "volleybox_sync_updated_at": "2026-09-25T20:57:23.263888"
 }

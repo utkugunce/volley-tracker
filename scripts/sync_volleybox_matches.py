@@ -45,6 +45,8 @@ DATA_DIR = BASE_DIR / "data"
 MAPPINGS_FILE = DATA_DIR / "volleybox-mappings.json"
 FIXTURES_FILE = DATA_DIR / "fixtures.json"
 CITIES_DIR = DATA_DIR / "cities"
+K2_FILE = DATA_DIR / "kadinlar_2_lig.json"
+
 
 if sys.platform == "win32":
     try:
@@ -91,6 +93,7 @@ def normalize_name(name: str) -> str:
     # Yaş kategorilerini ve kulüp eklerini temizle
     s = re.sub(r"\s+u\d+", "", s)
     s = re.sub(r"\bthy\b", "turk hava yollari", s)
+    s = re.sub(r"\b(ii|ll)\b", "", s)
     pattern = r"\b(" + "|".join(GENERIC_WORDS) + r")\b"
     filtered = re.sub(pattern, "", s)
     res = re.sub(r"[^a-z0-9]", "", filtered)
@@ -123,6 +126,7 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
     s = s.replace(".", "")
     s = re.sub(r"\s+u\d+", "", s)
     s = re.sub(r"\bthy\b", "turk hava yollari", s)
+    s = re.sub(r"\b(ii|ll)\b", "", s)
 
     # Takım harfi (A veya B) tespiti:
     # Hem parantezli (a)/(b), hem tireli - a/- b, hem de boşluklu a/b formatlarını yakala
@@ -708,6 +712,170 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
     return synced_count, total_count
 
 
+def sync_kadinlar_2_lig_matches(
+    k2_path: Path,
+    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
+    team_alias_map: Dict[str, set] = None
+) -> Tuple[int, int]:
+    """
+    data/kadinlar_2_lig.json dosyasındaki 16 grubun maçlarını
+    Volleybox Kadınlar 2. Ligi turnuva maçlarıyla eşleştirir ve doğrular.
+    """
+    if not k2_path.exists():
+        return 0, 0
+
+    if vb_tournaments is None:
+        vb_tournaments = {}
+    if team_alias_map is None:
+        team_alias_map = {}
+
+    if not team_alias_map and MAPPINGS_FILE.exists():
+        try:
+            with open(MAPPINGS_FILE, "r", encoding="utf-8") as f:
+                mappings_data = json.load(f)
+            for item in mappings_data.get("mappings", []):
+                in_name = item.get("internal_name", "").strip()
+                matched = item.get("matched_as", "").strip()
+                aliases = item.get("aliases", []) or []
+                synonyms = item.get("synonyms", []) or []
+                all_names = [in_name, matched] + aliases + synonyms
+                for n in all_names:
+                    if n:
+                        k = n.strip().lower()
+                        for target in all_names:
+                            if target:
+                                team_alias_map.setdefault(k, set()).add(target.strip())
+        except Exception:
+            pass
+
+    with open(k2_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    # 2. Lig turnuva maçlarını al
+    vb_matches = (
+        vb_tournaments.get(normalize_tourn_key("Kadınlar 2. Ligi", "Türkiye"))
+        or vb_tournaments.get("kadınlar 2. ligi::türkiye")
+        or vb_tournaments.get("kadinlar 2. ligi::turkiye")
+        or vb_tournaments.get("kadinlar 2. ligi")
+        or vb_tournaments.get("kadınlar 2. ligi")
+        or []
+    )
+    if not vb_matches:
+        for k, v in vb_tournaments.items():
+            if "2. lig" in k:
+                vb_matches = v
+                break
+
+    if not vb_matches:
+        league_url = "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047"
+        vb_matches = fetch_volleybox_tournament_matches(league_url)
+
+    if not vb_matches:
+        print("  ⚠️ Kadınlar 2. Ligi Volleybox maçları temin edilemedi.")
+        return 0, len(data.get("tum_maclar", []))
+
+    matches = data.get("tum_maclar", [])
+    synced_count = 0
+    total_count = len(matches)
+    used_vb_ids = set()
+
+    # Takım isimlerine göre hızlı erişim için teams_map
+    teams_map = {t.get("takim_adi"): t for t in data.get("tum_takimlar", []) if t.get("takim_adi")}
+
+    updated_matches_by_id = {}
+
+    for m in matches:
+        t_a = m.get("takim_a", "")
+        t_b = m.get("takim_b", "")
+        tarih = m.get("tarih", "")
+
+        # DD.MM.YYYY -> YYYY-MM-DD
+        d_str = ""
+        if "." in tarih:
+            parts = tarih.split(".")
+            if len(parts) == 3:
+                d_str = f"{parts[2]}-{parts[1]}-{parts[0]}"
+
+        tvf_m = {
+            "id": m.get("id"),
+            "home_team": t_a,
+            "away_team": t_b,
+            "date": d_str,
+            "time": m.get("saat", ""),
+            "hall": m.get("salon", "")
+        }
+
+        # Takımın bilinen volleybox_name'i varsa alias setine ekle
+        t_a_obj = teams_map.get(t_a)
+        if t_a_obj and t_a_obj.get("volleybox_name"):
+            team_alias_map.setdefault(normalize_name(t_a), set()).add(t_a_obj["volleybox_name"])
+            team_alias_map.setdefault(t_a.lower(), set()).add(t_a_obj["volleybox_name"])
+        t_b_obj = teams_map.get(t_b)
+        if t_b_obj and t_b_obj.get("volleybox_name"):
+            team_alias_map.setdefault(normalize_name(t_b), set()).add(t_b_obj["volleybox_name"])
+            team_alias_map.setdefault(t_b.lower(), set()).add(t_b_obj["volleybox_name"])
+
+        matched_vb = match_tvf_with_vb(tvf_m, vb_matches, team_alias_map, used_vb_ids)
+        if matched_vb:
+            discrepancy = check_discrepancy(tvf_m, matched_vb)
+            m["volleybox"] = {
+                "synced": True,
+                "match_id": matched_vb["match_id"],
+                "url": matched_vb["url"],
+                "host_name": matched_vb["host_name"],
+                "guest_name": matched_vb["guest_name"],
+                "score": matched_vb.get("score"),
+                "has_score": matched_vb.get("has_score", False),
+                "vb_date": matched_vb.get("date"),
+                "vb_time": matched_vb.get("time") if matched_vb.get("time") != "00:00" else None,
+                "vb_hall": matched_vb.get("arena") or None,
+                "discrepancy": discrepancy
+            }
+            # Eğer Volleybox'ta skor girilmişse ve TVF skoru henüz yoksa skoru zenginleştir
+            if matched_vb.get("has_score") and matched_vb.get("score"):
+                if not m.get("skor") or m.get("skor") == "- : -":
+                    m["skor"] = matched_vb.get("score")
+                    m["durum"] = "BİTTİ"
+            synced_count += 1
+        else:
+            m["volleybox"] = {
+                "synced": False,
+                "match_id": None,
+                "url": None,
+                "host_name": None,
+                "guest_name": None,
+                "score": None,
+                "has_score": False,
+                "vb_date": None,
+                "vb_time": None,
+                "vb_hall": None,
+                "discrepancy": {"has_diff": False}
+            }
+        updated_matches_by_id[m.get("id")] = m
+
+    # gruplar altındaki fikstur listelerini de senkronize et
+    for grp in data.get("gruplar", []):
+        new_fikstur = []
+        for gm in grp.get("fikstur", []):
+            g_id = gm.get("id")
+            if g_id in updated_matches_by_id:
+                new_fikstur.append(updated_matches_by_id[g_id])
+            else:
+                new_fikstur.append(gm)
+        grp["fikstur"] = new_fikstur
+
+    data["tum_maclar"] = matches
+    if "metadata" not in data:
+        data["metadata"] = {}
+    data["metadata"]["volleybox_synced_matches"] = synced_count
+    data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
+
+    with open(k2_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    return synced_count, total_count
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="TVF - Volleybox Maç Senkronizasyonu")
@@ -786,14 +954,17 @@ def main():
 
         c_name = l.get("city", "")
         c_slug = l.get("city_slug", "")
-        c_norm = normalize_name(c_name)
+        internal_name = (l.get("internal_name") or "").lower()
+        is_k2 = "2. lig" in internal_name or c_slug.lower() == "turkiye" or c_norm == "turkiye"
         if args.city:
             if args.city.lower() in [c_slug.lower(), c_norm, c_name.lower()]:
+                target_leagues.append(l)
+            elif is_k2 and args.city.lower() in ["kadinlar-2-ligi", "2lig", "turkiye"]:
                 target_leagues.append(l)
         elif args.all:
             target_leagues.append(l)
         else:
-            if c_slug.lower() in active_city_names or c_norm in active_city_names:
+            if c_slug.lower() in active_city_names or c_norm in active_city_names or is_k2:
                 target_leagues.append(l)
 
     print(f"📋 Toplam {len(target_leagues)} aktif ({CURRENT_SEASON} sezonu) turnuva taranıyor...")
@@ -838,6 +1009,13 @@ def main():
                 add_vb_matches(vb_tournaments, normalize_tourn_key("Genç Kızlar 1. Ligi", city), vb_matches)
                 add_vb_matches(vb_tournaments, normalize_tourn_key("Genç Kızlar Süper Lig", city), vb_matches)
 
+            # Kadınlar 2. Ligi için ek anahtarlar
+            if "2. lig" in internal_name.lower():
+                add_vb_matches(vb_tournaments, "kadinlar 2. ligi", vb_matches)
+                add_vb_matches(vb_tournaments, "kadınlar 2. ligi", vb_matches)
+                add_vb_matches(vb_tournaments, "kadinlar 2. ligi::turkiye", vb_matches)
+                add_vb_matches(vb_tournaments, "kadınlar 2. ligi::türkiye", vb_matches)
+
             if age_cat:
                 add_vb_matches(vb_tournaments, f"{city}::{age_cat}", vb_matches)
                 add_vb_matches(vb_tournaments, f"{normalize_name(city)}::{age_cat}", vb_matches)
@@ -861,6 +1039,12 @@ def main():
             c_synced, c_total = sync_fixtures_file(city_json, vb_tournaments, team_alias_map)
             if c_total > 0:
                 print(f"✅ {city_json.name:<18} : {c_synced} / {c_total} maç Volleybox ile eşleşti.")
+
+    # 5. data/kadinlar_2_lig.json senkronizasyonu
+    if K2_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-2-ligi", "2lig", "turkiye"]):
+        print("\n🔄 data/kadinlar_2_lig.json senkronize ediliyor...")
+        k2_synced, k2_total = sync_kadinlar_2_lig_matches(K2_FILE, vb_tournaments, team_alias_map)
+        print(f"✅ Kadınlar 2. Ligi: {k2_synced} / {k2_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     print("\n" + "=" * 75)
     print("🎉 VOLLEYBOX MAÇ SENKRONİZASYONU BAŞARIYLA TAMAMLANDI!")

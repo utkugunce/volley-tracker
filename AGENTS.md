@@ -60,7 +60,8 @@ python scripts/scrape_all_provinces.py --force
 ```
 
 ### Detaylar:
-- Bu komut 81 ilin TVF bültenlerini eşzamanlı (multi-threaded) olarak tarar.
-- `data/cities/*.json`, `data/cities.json` ve `data/fixtures.json` dosyalarını günceller.
-- Ardından Volleybox eşleşmelerini (`scripts/sync_volleybox_matches.py`) senkronize eder.
+- Bu komut 81 ilin TVF bültenlerini ve TVF Kadınlar 2. Ligi'ni eşzamanlı (multi-threaded) olarak tarar.
+- `data/cities/*.json`, `data/cities.json`, `data/fixtures.json` ve `data/kadinlar_2_lig.json` dosyalarını günceller.
+- Ardından Volleybox eşleşmelerini ve doğrulamasını (`scripts/sync_volleybox_matches.py`) 81 il ve Kadınlar 2. Ligi için senkronize eder.
 - Script tamamlandıktan sonra özet kullanıcıya bildirilir.
+
