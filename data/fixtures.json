@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T15:35:58.232758+00:00",
+  "updated_at": "2026-09-25T20:19:02.892177+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -109,23 +109,42 @@
       },
       {
         "rank": 5,
-        "team": "Yeşilyurt Spor Kulübü U18",
-        "played": 1,
+        "team": "Silivri Çağrıbey SK U18",
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
-        "set_ratio": "3.000",
-        "points_won": 100,
-        "points_lost": 77,
-        "point_ratio": "1.299",
+        "sets_lost": 3,
+        "set_ratio": "1.000",
+        "points_won": 133,
+        "points_lost": 138,
+        "point_ratio": "0.964",
         "form": [
+          "L",
           "W"
         ]
       },
       {
         "rank": 6,
+        "team": "Yeşilyurt Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
+        "set_ratio": "0.750",
+        "points_won": 162,
+        "points_lost": 152,
+        "point_ratio": "1.066",
+        "form": [
+          "W",
+          "L"
+        ]
+      },
+      {
+        "rank": 7,
         "team": "Beylikdüzü Voleybol 2021 U18",
         "played": 2,
         "won": 0,
@@ -139,23 +158,6 @@
         "point_ratio": "0.739",
         "form": [
           "L",
-          "L"
-        ]
-      },
-      {
-        "rank": 7,
-        "team": "Silivri Çağrıbey SK U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "set_ratio": "MIN",
-        "points_won": 58,
-        "points_lost": 76,
-        "point_ratio": "0.763",
-        "form": [
           "L"
         ]
       },
@@ -4068,11 +4070,15 @@
       "match_no": "8",
       "home_team": "Yeşilyurt Spor Kulübü U18",
       "away_team": "Silivri Çağrıbey SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "22-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400372",
@@ -4942,5 +4948,5 @@
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-25T15:37:18.496691"
+  "volleybox_sync_updated_at": "2026-09-25T20:22:08.010789"
 }

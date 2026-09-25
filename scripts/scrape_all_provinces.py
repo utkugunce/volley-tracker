@@ -706,7 +706,39 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="TVF İl Temsilcilikleri Canlı Veri Çekici")
     parser.add_argument("--city", default=None, help="Yalnızca belirli bir ili tara (ör: istanbul, izmir)")
+    parser.add_argument("--force", "-f", action="store_true", help="30 dakika bekleme kuralını yoksay ve zorla çalıştır")
     args = parser.parse_args()
+
+    COOLDOWN_MINUTES = 30
+
+    # 30 Dakika Kontrolü: İki çekme arasında minimum 30 dk olmalı. Sadece --force veya tek il taramasında atlanır.
+    if not args.force and not args.city and CITIES_INDEX_JSON.exists():
+        try:
+            with open(CITIES_INDEX_JSON, "r", encoding="utf-8") as f:
+                last_data = json.load(f)
+                last_updated_str = last_data.get("updated_at")
+                if last_updated_str:
+                    last_dt = datetime.fromisoformat(last_updated_str)
+                    now_dt = datetime.now().astimezone()
+                    if last_dt.tzinfo is None:
+                        last_dt = last_dt.astimezone()
+                    elapsed_seconds = (now_dt - last_dt).total_seconds()
+                    if elapsed_seconds < COOLDOWN_MINUTES * 60:
+                        elapsed_min = max(0.0, elapsed_seconds / 60)
+                        remaining_min = COOLDOWN_MINUTES - elapsed_min
+                        print("=" * 80)
+                        print(f"⏳ [KORUMA] 81 il taraması için iki çekme arasında minimum {COOLDOWN_MINUTES} dakika olmalıdır.")
+                        print(f"   Son tarama : {elapsed_min:.1f} dakika önce yapıldı ({last_dt.strftime('%H:%M:%S')}).")
+                        print(f"   Kalan süre : {remaining_min:.1f} dakika beklenmesi gerekiyor.")
+                        print(f"   ⚠️ Tarama atlandı. Bu kural yalnızca manuel kullanıcı talebinde bozulabilir.")
+                        print(f"   💡 Zorla çalıştırmak için: python scripts/scrape_all_provinces.py --force")
+                        print("=" * 80)
+                        return
+        except Exception as e:
+            logger.warning(f"Son tarama zamanı kontrol edilirken hata: {e}")
+
+    if args.force and not args.city:
+        print("⚡ [MANUEL TALEP] 30 dakika bekleme kuralı manuel olarak aşıldı, tam tarama başlatılıyor...")
 
     print("=" * 80)
     print("🏆 TVF 81 İL VOLEYBOL İL TEMSİLCİLİĞİ CANLI TARAMA VE VERİ MOTORU")
@@ -779,13 +811,39 @@ def main():
     
     results.sort(key=lambda x: int(x["ilid"]) if str(x["ilid"]).isdigit() else 999)
     
-    master_payload = {
-        "updated_at": datetime.now().astimezone().isoformat(),
-        "total_cities": len(results),
-        "active_cities": active_count,
-        "total_matches": total_matches_all,
-        "cities": results
-    }
+    if args.city and CITIES_INDEX_JSON.exists():
+        try:
+            with open(CITIES_INDEX_JSON, "r", encoding="utf-8") as f:
+                existing_payload = json.load(f)
+            existing_map = {str(c.get("ilid")): c for c in existing_payload.get("cities", [])}
+            for r in results:
+                existing_map[str(r.get("ilid"))] = r
+            all_cities = list(existing_map.values())
+            all_cities.sort(key=lambda x: int(x["ilid"]) if str(x.get("ilid", "")).isdigit() else 999)
+            master_payload = {
+                "updated_at": existing_payload.get("updated_at", datetime.now().astimezone().isoformat()),
+                "total_cities": len(all_cities),
+                "active_cities": sum(1 for c in all_cities if c.get("matches_count", 0) > 0 or c.get("standings_count", 0) > 0),
+                "total_matches": sum(c.get("matches_count", 0) for c in all_cities),
+                "cities": all_cities
+            }
+        except Exception:
+            master_payload = {
+                "updated_at": datetime.now().astimezone().isoformat(),
+                "total_cities": len(results),
+                "active_cities": active_count,
+                "total_matches": total_matches_all,
+                "cities": results
+            }
+    else:
+        master_payload = {
+            "updated_at": datetime.now().astimezone().isoformat(),
+            "total_cities": len(results),
+            "active_cities": active_count,
+            "total_matches": total_matches_all,
+            "cities": results
+        }
+
     with open(CITIES_INDEX_JSON, "w", encoding="utf-8") as f:
         json.dump(master_payload, f, ensure_ascii=False, indent=2)
 

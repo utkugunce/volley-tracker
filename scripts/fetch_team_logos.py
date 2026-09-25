@@ -59,6 +59,32 @@ def fetch_og_image(url: str, timeout: int = 15) -> str | None:
     return None
 
 
+def trim_image(im):
+    if im.mode not in ("RGBA", "LA"):
+        im = im.convert("RGBA")
+    alpha = im.split()[-1]
+    bin_alpha = alpha.point(lambda p: 255 if p > 10 else 0)
+    bbox = bin_alpha.getbbox()
+    if not bbox:
+        return im
+    w, h = im.size
+    bw = bbox[2] - bbox[0]
+    bh = bbox[3] - bbox[1]
+    pad_x = max(1, int(bw * 0.02))
+    pad_y = max(1, int(bh * 0.02))
+    x0 = max(0, bbox[0] - pad_x)
+    y0 = max(0, bbox[1] - pad_y)
+    x1 = min(w, bbox[2] + pad_x)
+    y1 = min(h, bbox[3] + pad_y)
+    cropped = im.crop((x0, y0, x1, y1))
+    max_dim = max(cropped.size)
+    if max_dim > 160:
+        scale = 160.0 / max_dim
+        new_size = (max(1, int(cropped.size[0] * scale)), max(1, int(cropped.size[1] * scale)))
+        cropped = cropped.resize(new_size, 3)  # Image.Resampling.LANCZOS
+    return cropped
+
+
 def download_image(img_url: str, dest_path: Path, timeout: int = 15) -> bool:
     req = urllib.request.Request(img_url, headers=HEADERS)
     try:
@@ -70,8 +96,8 @@ def download_image(img_url: str, dest_path: Path, timeout: int = 15) -> bool:
                     from PIL import Image
                     import io
                     with Image.open(io.BytesIO(raw_bytes)) as im:
-                        im.thumbnail((96, 96), Image.Resampling.LANCZOS)
-                        im.save(dest_path, format="PNG", optimize=True)
+                        trimmed = trim_image(im)
+                        trimmed.save(dest_path, format="PNG", optimize=True)
                 except Exception:
                     with open(dest_path, "wb") as f:
                         f.write(raw_bytes)

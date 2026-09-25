@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T15:35:48.042669",
+  "updated_at": "2026-09-25T20:18:37.050730",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -374,6 +374,17 @@
     "Yıldız Kızlar Süper Lig - 3. Grup": [
       {
         "rank": 1,
+        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "TVF Spor Lisesi U16",
         "played": 1,
         "won": 1,
@@ -384,7 +395,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Başkent Arma Spor U16",
         "played": 1,
         "won": 0,
@@ -395,30 +406,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "TED Ankara Kolejliler U16",
-        "played": 0,
+        "team": "Yedidağ Spor Kulübü",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Yedidağ Spor Kulübü",
+        "team": "TED Ankara Kolejliler U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -477,6 +477,28 @@
     "Yıldız Kızlar Süper Lig - 5. Grup": [
       {
         "rank": 1,
+        "team": "SET UP Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "TED Ankara Kolejliler U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "DHMİ Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -487,30 +509,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "First Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "SET UP Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "TED Ankara Kolejliler U16",
+        "team": "First Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1933,11 +1933,16 @@
       "match_no": "2",
       "home_team": "Yedidağ Spor Kulübü",
       "away_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "24-26",
+        "25-18",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399233",
@@ -2215,11 +2220,16 @@
       "match_no": "1",
       "home_team": "TED Ankara Kolejliler U16",
       "away_team": "SET UP Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "11-25",
+        "25-18",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399236",
@@ -2526,5 +2536,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-09-25T15:37:18.524700"
+  "volleybox_sync_updated_at": "2026-09-25T20:22:08.190988"
 }

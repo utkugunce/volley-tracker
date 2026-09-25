@@ -54,7 +54,7 @@ python scripts/scrape_all_provinces.py
 ```
 
 > [!NOTE]
-> **AI Asistanı & Geliştirici Kuralı:** Proje üzerinde kod geliştirme, UI/tasarım değişiklikleri, hata düzeltmeleri veya veri senkronizasyonu yapıldığında en güncel bülten verisinin korunması için adım sonunda otomatik olarak `python scripts/scrape_all_provinces.py` çalıştırılır. Basit soru-cevap ("şu nasıl?", "tamam" vb.) promptlarında tetiklenmez; tereddütte kalındığında ise varsayımda bulunulmayıp doğrudan kullanıcıya sorulur. Detaylar için [AGENTS.md](AGENTS.md) dosyasına bakabilirsiniz.
+> **AI Asistanı & Geliştirici Kuralı:** Proje üzerinde kod geliştirme, UI/tasarım değişiklikleri, hata düzeltmeleri veya veri senkronizasyonu yapıldığında adım sonunda otomatik olarak `python scripts/scrape_all_provinces.py` çalıştırılır. İki çekme arasında **minimum 30 dakika** kuralı vardır (son çekim üzerinden 30 dk geçmediyse tarama atlanır; bu kural yalnızca kullanıcı manuel olarak `--force` istediğinde aşılabilir). Detaylar için [AGENTS.md](AGENTS.md) dosyasına bakabilirsiniz.
 
 ### 4. Arayüzü Başlatma (Next.js)
 ```bash
