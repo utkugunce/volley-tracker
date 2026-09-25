@@ -17,12 +17,14 @@ import {
   Star,
   Printer,
   FileText,
+  Home,
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
 import { triggerHaptic } from "@/utils/haptics";
 
 export type Kadinlar2LigTabType =
+  | "home"
   | "today"
   | "results"
   | "fixtures"
@@ -79,7 +81,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
       <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/60 gap-2">
         {/* Sol Taraf: Logo & Altyapıya Dönüş Butonu */}
         <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
-          <BrandLogo onClick={() => onSelectTab("today")} />
+          <BrandLogo onClick={() => onSelectTab("home")} />
 
           <div className="h-4 w-px bg-slate-700/80 hidden sm:block" />
 
@@ -260,6 +262,19 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
       {/* 2. ANA SEKMELER (Altyapı ile Birebir Sekme Çubuğu) */}
       <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center justify-between gap-1 sm:gap-2">
         <div className="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar py-0.5">
+          {/* Anasayfa / Canlı Hub */}
+          <button
+            onClick={() => onSelectTab("home")}
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+              activeTab === "home"
+                ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+                : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
+            }`}
+          >
+            <Home size={13} className={activeTab === "home" ? "text-primary" : "text-slate-400"} />
+            <span>ANASAYFA</span>
+          </button>
+
           {/* Günün Maçları */}
           <button
             onClick={() => onSelectTab("today")}

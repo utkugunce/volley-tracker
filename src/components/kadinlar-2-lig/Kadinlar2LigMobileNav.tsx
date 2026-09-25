@@ -2,6 +2,7 @@
 
 import React from "react";
 import {
+  Home,
   Flame,
   CalendarDays,
   BarChart3,
@@ -28,16 +29,21 @@ export const Kadinlar2LigMobileNav: React.FC<Kadinlar2LigMobileNavProps> = ({
 }) => {
   const navItems = [
     {
-      id: "results" as const,
-      label: "Sonuçlar",
-      icon: CheckCircle2,
-      badge: resultsCount > 0 ? resultsCount : undefined,
+      id: "home" as const,
+      label: "Anasayfa",
+      icon: Home,
     },
     {
       id: "today" as const,
       label: "Günün Maçı",
       icon: Flame,
       badge: todayMatchesCount > 0 ? todayMatchesCount : undefined,
+    },
+    {
+      id: "results" as const,
+      label: "Sonuçlar",
+      icon: CheckCircle2,
+      badge: resultsCount > 0 ? resultsCount : undefined,
     },
     {
       id: "fixtures" as const,

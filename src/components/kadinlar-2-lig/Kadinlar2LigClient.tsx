@@ -17,6 +17,7 @@ import { Kadinlar2LigTodayMatches } from "./Kadinlar2LigTodayMatches";
 import { Kadinlar2LigResults } from "./Kadinlar2LigResults";
 import { Kadinlar2LigMobileNav } from "./Kadinlar2LigMobileNav";
 import { Kadinlar2LigStatuView } from "./Kadinlar2LigStatuView";
+import { Kadinlar2LigHomePortal } from "./Kadinlar2LigHomePortal";
 
 interface Kadinlar2LigClientProps {
   initialData: Kadinlar2LigData;
@@ -26,7 +27,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   initialData,
 }) => {
   const [data, setData] = useState<Kadinlar2LigData>(initialData);
-  const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>("standings");
+  const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>("home");
   const [selectedGroup, setSelectedGroup] = useState<number>(1);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -142,6 +143,18 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
       {/* 3. Ana İçerik Alanı (Altyapı max-w-6xl ile Birebir) */}
       <main className="flex-1 max-w-6xl w-full mx-auto px-2 sm:px-4 py-3 sm:py-4 pb-20 sm:pb-8 flex flex-col space-y-3 sm:space-y-4">
+        {/* ANASAYFA / CANLI HUB TABI */}
+        {activeTab === "home" && (
+          <Kadinlar2LigHomePortal
+            data={data}
+            onNavigateTab={setActiveTab}
+            onSelectGroup={handleSelectGroupFromAnywhere}
+            onSelectMatch={setSelectedMatch}
+            searchQuery={searchQuery}
+            showOnlyFavorites={showOnlyFavorites}
+          />
+        )}
+
         {/* GÜNÜN MAÇLARI TABI */}
         {activeTab === "today" && (
           <Kadinlar2LigTodayMatches
