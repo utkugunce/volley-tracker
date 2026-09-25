@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T21:48:30.507332",
+  "updated_at": "2026-09-25T19:36:07.802451",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -532,7 +532,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - A Gr": [
       {
         "rank": 1,
-        "team": "AB Voleybol Akademi U16",
+        "team": "Karşıyaka SK",
         "played": 2,
         "won": 2,
         "lost": 0,
@@ -543,12 +543,12 @@
       },
       {
         "rank": 2,
-        "team": "Karşıyaka SK",
-        "played": 1,
-        "won": 1,
+        "team": "AB Voleybol Akademi U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 1,
         "form": []
       },
@@ -577,12 +577,12 @@
       {
         "rank": 5,
         "team": "Vakıfbank İzmir U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -815,6 +815,17 @@
       },
       {
         "rank": 3,
+        "team": "Dalton Koleji Spor Kulübü U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Dost Spor U16",
         "played": 2,
         "won": 1,
@@ -825,7 +836,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Özay Voleybol Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -836,25 +847,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Dalton Koleji Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Torbalı Gelişim Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -2563,11 +2563,15 @@
       "match_no": "4",
       "home_team": "Vakıfbank İzmir U16",
       "away_team": "Karşıyaka SK",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "13-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398201",
@@ -4093,11 +4097,15 @@
       "match_no": "6",
       "home_team": "Torbalı Gelişim Spor Kulübü U16",
       "away_team": "Dalton Koleji Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "16-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398258",
@@ -4246,5 +4254,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-25T21:52:50.388541"
+  "volleybox_sync_updated_at": "2026-09-25T19:37:32.191119"
 }

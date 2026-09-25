@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T21:48:22.684674",
+  "updated_at": "2026-09-25T19:36:00.838669",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -89,7 +89,7 @@
     "Genç Kızlar Süper Lig - 2.Grup": [
       {
         "rank": 1,
-        "team": "Ankara DSİ GSK U18",
+        "team": "Zeren Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -100,6 +100,17 @@
       },
       {
         "rank": 2,
+        "team": "Ankara DSİ GSK U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Yedidağspor - A U18",
         "played": 1,
         "won": 0,
@@ -110,30 +121,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Başkent Arma Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Çaba Spor Kulübü - A U18",
-        "played": 0,
+        "team": "Başkent Arma Spor",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Zeren Spor Kulübü U18",
+        "team": "Çaba Spor Kulübü - A U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -884,11 +884,15 @@
       "match_no": "2",
       "home_team": "Zeren Spor Kulübü U18",
       "away_team": "Başkent Arma Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-13",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399224",
@@ -2540,5 +2544,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-09-25T21:52:47.588881"
+  "volleybox_sync_updated_at": "2026-09-25T19:37:32.187170"
 }
