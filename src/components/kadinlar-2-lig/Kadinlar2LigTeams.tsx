@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink, Search, Shield, Trophy, ArrowRight, User } from "lucide-react";
 import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
@@ -73,10 +74,13 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                 title={`${team.takim_adi} Kulüp Profili`}
               >
                 {team.logo && !team.logo.includes("takimlogoyok") ? (
-                  <img
+                  <Image
                     src={team.logo}
                     alt={team.takim_adi}
+                    width={40}
+                    height={40}
                     className="w-10 h-10 object-contain rounded-xl shrink-0 bg-white/5 p-1 border border-purple-800/30 group-hover:scale-105 transition-transform"
+                    unoptimized={team.logo.startsWith("http")}
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).style.display = "none";
                     }}

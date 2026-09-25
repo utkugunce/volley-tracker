@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, ChevronRight, Swords } from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
@@ -53,7 +54,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     };
   };
 
-  const matches = group?.fikstur || [];
+  const matches = useMemo(() => group?.fikstur || [], [group?.fikstur]);
 
   // Available weeks in this group
   const weeks = useMemo(() => {
@@ -219,10 +220,13 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                             title={`${m.takim_a} Takım Profili`}
                           >
                             {m.takim_a_logo && !m.takim_a_logo.includes("takimlogoyok") ? (
-                              <img
+                              <Image
                                 src={m.takim_a_logo}
                                 alt={m.takim_a}
+                                width={24}
+                                height={24}
                                 className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
+                                unoptimized={m.takim_a_logo.startsWith("http")}
                                 onError={(e) => {
                                   (e.currentTarget as HTMLImageElement).style.display = "none";
                                 }}
@@ -328,10 +332,13 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                             title={`${m.takim_b} Takım Profili`}
                           >
                             {m.takim_b_logo && !m.takim_b_logo.includes("takimlogoyok") ? (
-                              <img
+                              <Image
                                 src={m.takim_b_logo}
                                 alt={m.takim_b}
+                                width={24}
+                                height={24}
                                 className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
+                                unoptimized={m.takim_b_logo.startsWith("http")}
                                 onError={(e) => {
                                   (e.currentTarget as HTMLImageElement).style.display = "none";
                                 }}

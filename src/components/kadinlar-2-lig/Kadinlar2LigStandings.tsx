@@ -129,10 +129,13 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                           title={`${team.takim_adi} Detaylı Kulüp Profili`}
                         >
                           {team.logo && !team.logo.includes("takimlogoyok") ? (
-                            <img
+                            <Image
                               src={team.logo}
                               alt={team.takim_adi}
+                              width={24}
+                              height={24}
                               className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 group-hover/team:scale-110 transition-transform"
+                              unoptimized={team.logo.startsWith("http")}
                               onError={(e) => {
                                 (e.currentTarget as HTMLImageElement).style.display = "none";
                               }}
