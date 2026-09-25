@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Trophy, ArrowRight, Shield, Calendar } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
+import { slugify } from "@/utils/slugify";
 
 interface Kadinlar2LigLeadersProps {
   groups: Kadinlar2LigGroup[];
@@ -58,13 +60,15 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                 {/* İlk 3 Takım Listesi */}
                 <div className="space-y-1.5">
                   {topTeams.map((t, idx) => (
-                    <div
+                    <Link
                       key={t.takim_id || idx}
-                      className={`flex items-center justify-between p-1.5 rounded-xl text-xs transition-colors ${
+                      href={`/takim/${slugify(t.takim_adi)}`}
+                      className={`flex items-center justify-between p-1.5 rounded-xl text-xs transition-all hover:scale-102 hover:border-purple-500/50 cursor-pointer block border ${
                         idx === 0
-                          ? "bg-amber-950/20 border border-amber-500/20"
-                          : "bg-purple-950/20"
+                          ? "bg-amber-950/20 border-amber-500/30 text-amber-200"
+                          : "bg-purple-950/20 border-transparent hover:bg-purple-900/30 text-slate-200"
                       }`}
+                      title={`${t.takim_adi} Kulüp Profili`}
                     >
                       <div className="flex items-center gap-2 min-w-0">
                         <span
@@ -78,14 +82,14 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                         >
                           {idx + 1}
                         </span>
-                        <span className="font-semibold text-slate-200 truncate text-[11px] block">
+                        <span className="font-semibold truncate text-[11px] block hover:text-white">
                           {t.takim_adi}
                         </span>
                       </div>
                       <span className="font-mono font-bold text-amber-300 text-xs shrink-0 pl-1">
                         {t.p} P
                       </span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>

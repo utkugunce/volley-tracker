@@ -1,20 +1,57 @@
-"use client";
-
 import React, { useState, useMemo } from "react";
-import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, ChevronRight, Swords } from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
+import { Match } from "@/types/fixture";
+import { slugify } from "@/utils/slugify";
 
 interface Kadinlar2LigFixturesProps {
   group: Kadinlar2LigGroup;
   searchQuery?: string;
+  onSelectMatch?: (match: Match) => void;
 }
 
 export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   group,
   searchQuery = "",
+  onSelectMatch,
 }) => {
   const [selectedWeek, setSelectedWeek] = useState<number | "all">("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "OYNANACAK" | "BİTTİ">("all");
+
+  const convertToMatch = (m: Kadinlar2LigMatch): Match => {
+    const setScores = m.set_sonuclari
+      ? m.set_sonuclari.split(",").map((s) => s.trim()).filter(Boolean)
+      : [];
+    let homeScore: number | null = null;
+    let awayScore: number | null = null;
+    if (m.skor && m.skor.includes("-") && m.skor !== "- : -") {
+      const parts = m.skor.split("-").map((s) => parseInt(s.trim(), 10));
+      if (!isNaN(parts[0]) && !isNaN(parts[1])) {
+        homeScore = parts[0];
+        awayScore = parts[1];
+      }
+    }
+    return {
+      id: m.id,
+      match_no: m.mac_no || "",
+      date: m.tarih || "",
+      time: m.saat || "",
+      hall: m.salon || "",
+      home_team: m.takim_a,
+      away_team: m.takim_b,
+      category: "Kadınlar 2. Ligi",
+      age_group: "Genç",
+      gender: "Kız",
+      group: m.grup_adi || `Grup ${m.grup_no}`,
+      city: m.sehir || "Türkiye",
+      status: m.durum === "BİTTİ" ? "finished" : "upcoming",
+      score: m.skor && m.skor !== "- : -" ? m.skor : undefined,
+      set_scores: setScores,
+      home_score: homeScore,
+      away_score: awayScore,
+    };
+  };
 
   const matches = group?.fikstur || [];
 
@@ -176,57 +213,79 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                       {/* Ev Sahibi Takım */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          {m.takim_a_logo && !m.takim_a_logo.includes("takimlogoyok") ? (
-                            <img
-                              src={m.takim_a_logo}
-                              alt={m.takim_a}
-                              className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
-                              onError={(e) => {
-                                (e.currentTarget as HTMLImageElement).style.display = "none";
-                              }}
-                            />
-                          ) : (
-                            <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
-                              {m.takim_a.slice(0, 2)}
-                            </div>
-                          )}
-                          <div className="min-w-0">
-                            <span className="font-bold text-xs sm:text-[13px] text-white truncate block">
-                              {m.takim_a}
-                            </span>
-                            {m.takim_a_volleybox_url && (
-                              <a
-                                href={m.takim_a_volleybox_url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5"
-                              >
-                                <span>Kadro</span>
-                                <ExternalLink size={9} />
-                              </a>
+                          <Link
+                            href={`/takim/${slugify(m.takim_a)}`}
+                            className="shrink-0 hover:opacity-80 transition-opacity"
+                            title={`${m.takim_a} Takım Profili`}
+                          >
+                            {m.takim_a_logo && !m.takim_a_logo.includes("takimlogoyok") ? (
+                              <img
+                                src={m.takim_a_logo}
+                                alt={m.takim_a}
+                                className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
+                                onError={(e) => {
+                                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                                }}
+                              />
+                            ) : (
+                              <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
+                                {m.takim_a.slice(0, 2)}
+                              </div>
                             )}
+                          </Link>
+                          <div className="min-w-0">
+                            <Link
+                              href={`/takim/${slugify(m.takim_a)}`}
+                              className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
+                              title={`${m.takim_a} Takım Profili`}
+                            >
+                              {m.takim_a}
+                            </Link>
+                            <div className="flex items-center gap-2 mt-0.5">
+                              <Link
+                                href={`/takim/${slugify(m.takim_a)}`}
+                                className="text-[10px] text-purple-300/80 hover:text-white hover:underline"
+                              >
+                                Profil
+                              </Link>
+                              {m.takim_a_volleybox_url && (
+                                <a
+                                  href={m.takim_a_volleybox_url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5"
+                                >
+                                  <span>Volleybox</span>
+                                  <ExternalLink size={9} />
+                                </a>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
 
                       {/* Skor veya Durum */}
-                      <div className="text-center px-2 shrink-0">
+                      <div
+                        onClick={() => onSelectMatch?.(convertToMatch(m))}
+                        className="text-center px-2 shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform"
+                        title="Maç Detaylarını ve Salon Bilgilerini Aç"
+                      >
                         {isFinished ? (
                           <div>
-                            <div className="text-base sm:text-lg font-black font-mono tracking-wider text-amber-300 bg-amber-950/40 px-3 py-1 rounded-xl border border-amber-500/30">
+                            <div className="text-base sm:text-lg font-black font-mono tracking-wider text-amber-300 bg-amber-950/40 px-3 py-1 rounded-xl border border-amber-500/30 shadow-md hover:border-amber-400">
                               {m.skor}
                             </div>
                             <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider block mt-0.5">
-                              BİTTİ
+                              BİTTİ • Detay
                             </span>
                           </div>
                         ) : (
                           <div>
-                            <div className="text-xs font-mono font-bold text-purple-300 bg-purple-950/60 px-2.5 py-1 rounded-xl border border-purple-800/50">
+                            <div className="text-xs font-mono font-bold text-purple-300 bg-purple-950/60 px-2.5 py-1 rounded-xl border border-purple-800/50 hover:border-purple-600">
                               {m.saat || "VS"}
                             </div>
                             <span className="text-[9px] text-purple-400/70 font-semibold uppercase tracking-wider block mt-0.5">
-                              OYNANACAK
+                              OYNANACAK • Detay
                             </span>
                           </div>
                         )}
@@ -236,35 +295,53 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                       <div className="flex-1 min-w-0 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <div className="min-w-0">
-                            <span className="font-bold text-xs sm:text-[13px] text-white truncate block">
+                            <Link
+                              href={`/takim/${slugify(m.takim_b)}`}
+                              className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
+                              title={`${m.takim_b} Takım Profili`}
+                            >
                               {m.takim_b}
-                            </span>
-                            {m.takim_b_volleybox_url && (
-                              <a
-                                href={m.takim_b_volleybox_url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5 justify-end"
+                            </Link>
+                            <div className="flex items-center justify-end gap-2 mt-0.5">
+                              {m.takim_b_volleybox_url && (
+                                <a
+                                  href={m.takim_b_volleybox_url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5 justify-end"
+                                >
+                                  <span>Volleybox</span>
+                                  <ExternalLink size={9} />
+                                </a>
+                              )}
+                              <Link
+                                href={`/takim/${slugify(m.takim_b)}`}
+                                className="text-[10px] text-purple-300/80 hover:text-white hover:underline"
                               >
-                                <span>Kadro</span>
-                                <ExternalLink size={9} />
-                              </a>
-                            )}
-                          </div>
-                          {m.takim_b_logo && !m.takim_b_logo.includes("takimlogoyok") ? (
-                            <img
-                              src={m.takim_b_logo}
-                              alt={m.takim_b}
-                              className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
-                              onError={(e) => {
-                                (e.currentTarget as HTMLImageElement).style.display = "none";
-                              }}
-                            />
-                          ) : (
-                            <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
-                              {m.takim_b.slice(0, 2)}
+                                Profil
+                              </Link>
                             </div>
-                          )}
+                          </div>
+                          <Link
+                            href={`/takim/${slugify(m.takim_b)}`}
+                            className="shrink-0 hover:opacity-80 transition-opacity"
+                            title={`${m.takim_b} Takım Profili`}
+                          >
+                            {m.takim_b_logo && !m.takim_b_logo.includes("takimlogoyok") ? (
+                              <img
+                                src={m.takim_b_logo}
+                                alt={m.takim_b}
+                                className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
+                                onError={(e) => {
+                                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                                }}
+                              />
+                            ) : (
+                              <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
+                                {m.takim_b.slice(0, 2)}
+                              </div>
+                            )}
+                          </Link>
                         </div>
                       </div>
                     </div>

@@ -103,4 +103,24 @@ describe("teamData utility", () => {
     const hasBTeam = armaTeam?.clubTeams?.some((t) => t.teamBranch?.includes("B") || t.teamName.includes("B"));
     expect(hasBTeam).toBe(true);
   });
+
+  it("retrieves details for a TVF Kadınlar 2. Ligi team with Volleybox mapping, roster, standings and matches", () => {
+    const team = getTeamDetailsBySlug("arnavutkoy-bld-spor");
+    expect(team).not.toBeNull();
+    expect(team?.teamName.toLowerCase()).toContain("arnavutköy");
+    expect(team?.categories).toContain("Kadınlar 2. Ligi");
+    expect(team?.mapping?.volleybox_url).toContain("arnavutkoy-bld-t13576");
+    expect(team?.standingsContexts.length).toBeGreaterThan(0);
+    expect(team?.matches.length).toBeGreaterThan(0);
+    expect(team?.volleyboxRoster).toBeDefined();
+    expect(Object.keys(team?.volleyboxRoster?.seasons || {}).length).toBeGreaterThan(0);
+  });
+
+  it("retrieves details for Çatalca Bld. Spor from 2. Lig", () => {
+    const catalca = getTeamDetailsBySlug("catalca-bld-spor");
+    expect(catalca).not.toBeNull();
+    expect(catalca?.categories).toContain("Kadınlar 2. Ligi");
+    expect(catalca?.matches.length).toBeGreaterThan(0);
+    expect(catalca?.standingsContexts[0].groupName).toContain("Grup 1");
+  });
 });

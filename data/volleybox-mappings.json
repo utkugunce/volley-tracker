@@ -12935,6 +12935,2659 @@
         "Akhisar Spor Kulübü U18"
       ],
       "verified_at": "2026-09-24"
+    },
+    {
+      "internal_name": "ARNAVUTKÖY BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Arnavutköy Belediyesi SK",
+      "volleybox_url": "https://women.volleybox.net/tr/arnavutkoy-bld-t13576",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ARNAVUTKÖY BLD. SPOR KULÜBÜ",
+        "Arnavutköy Belediyesi SK",
+        "ARNAVUTKÖY BELEDİYE SPOR",
+        "ARNAVUTKÖY BELEDİYESİ SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAHÇELİEVLER BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Bahçelievler Belediyespor ll",
+      "volleybox_url": "https://women.volleybox.net/tr/bahcelievler-belediyespor-ll-t20984",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "BAHÇELİEVLER BELEDİYESİ SPOR",
+        "Bahçelievler Belediyespor ll",
+        "BAHÇELİEVLER BLD. SPOR KULÜBÜ",
+        "BAHÇELİEVLER BELEDİYE SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAŞAKŞEHİR VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Başakşehir Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/basaksehir-voleybol-kulubu-t17130",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Başakşehir Voleybol Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BEŞİKTAŞ BJK KABATAŞ VAKFI ÖZEL OKULLARI",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Beşiktaş BJK Kabataş Vakfı Özel Okulları",
+      "volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BEYLİKDÜZÜ BEYKENT",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Beylikdüzü Beykent Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/beylikduzu-beykent-voleybol-t21634",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Beylikdüzü Beykent Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BÜYÜK REŞİTPAŞA ORTAOKULU",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Büyük Reşitpaşa Orta Okulu SK",
+      "volleybox_url": "https://women.volleybox.net/tr/buyuk-resitpasa-orta-okulu-sk-t32144",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Büyük Reşitpaşa Orta Okulu SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇATALCA BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Çatalca Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/catalca-belediye-spor-t36157",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ÇATALCA BELEDİYESİ SPOR",
+        "ÇATALCA BELEDİYE SPOR",
+        "ÇATALCA BLD. SPOR KULÜBÜ",
+        "Çatalca Belediyespor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GÜNGÖREN VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Güngören Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/gungoren-voleybol-kulubu-t25882",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Güngören Voleybol Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TÜRK HAVA YOLLARI",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Türk Hava Yolları SK ll",
+      "volleybox_url": "https://women.volleybox.net/tr/turk-hava-yollar-ll-t16678",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Türk Hava Yolları SK ll"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "YEŞİLYURT",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Yeşilyurt Spor Kulübü II",
+      "volleybox_url": "https://women.volleybox.net/tr/yesilyurt-ii-t39639",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 1",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Yeşilyurt Spor Kulübü II"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "AVRUPA VOLEYBOL GELİŞİM",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Avrupa Voleybol Gelişim Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/avrupa-voleybol-gelisim-spor-t36149",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Avrupa Voleybol Gelişim Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BÜYÜKÇEKMECE VOLEYBOL AKADEMİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Büyükçekmece Voleybol Akademisi SK",
+      "volleybox_url": "https://women.volleybox.net/tr/buyukcekmece-voleybol-akademisi-sk-t6389",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Büyükçekmece Voleybol Akademisi SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "EYÜPSULTAN BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Eyüpsultan Belediyesi SK",
+      "volleybox_url": "https://women.volleybox.net/tr/eyupsultan-belediyesi-sk-t36166",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "EYÜPSULTAN BLD. SPOR KULÜBÜ",
+        "EYÜPSULTAN BELEDİYESİ SPOR",
+        "Eyüpsultan Belediyesi SK",
+        "EYÜPSULTAN BELEDİYE SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "İBB SPOR KULÜBÜ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "İBB Spor Kulübü II",
+      "volleybox_url": "https://women.volleybox.net/tr/bb-spor-kulubu-ii-t45548",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "İBB Spor Kulübü II"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "İSTANBUL BİZİMKENT SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Bizimkent Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/bizimkent-spor-kulubu-t10044",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Bizimkent Spor Kulübü",
+        "İSTANBUL BİZİMKENT SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ROBERTEAM",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Roberteam Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/roberteam-spor-t32150",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Roberteam Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SİLİVRİ ÇAĞRIBEY",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Silivri Çağrıbey SK",
+      "volleybox_url": "https://women.volleybox.net/tr/silivri-cagrbey-sk-t17181",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Silivri Çağrıbey SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SMAÇ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Smaç SK",
+      "volleybox_url": "https://women.volleybox.net/tr/smac-sk-t21635",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "SMAÇ SPOR KULÜBÜ",
+        "Smaç SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SULTANGAZİ BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Sultangazi Belediyesi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/sultangazi-belediyesi-spor-kulubu-t36144",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "SULTANGAZİ BELEDİYE SPOR",
+        "SULTANGAZİ BELEDİYESİ SPOR",
+        "Sultangazi Belediyesi Spor Kulübü",
+        "SULTANGAZİ BLD. SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÜNSPED",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Ünsped Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/unsped-spor-kulubu-t13566",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 2",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ünsped Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ALTINYURT",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Altınyurt Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/altnyurt-spor-kulubu-t18861",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Altınyurt Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ANADOLU MARMARA",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Anadolu Marmara SK",
+      "volleybox_url": "https://women.volleybox.net/tr/anadolu-marmara-sk-t36159",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Anadolu Marmara SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAYRAMPAŞA BELEDİYE SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Bayrampaşa Belediye Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/bayrampasa-belediye-spor-kulubu-t53609",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "BAYRAMPAŞA BELEDİYE SPOR KULÜBÜ",
+        "Bayrampaşa Belediye Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇEKMEKÖY İSTANBUL SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Çekmeköy İstanbul SK",
+      "volleybox_url": "https://women.volleybox.net/tr/cekmekoy-stanbul-sk-t25888",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ÇEKMEKÖY İSTANBUL SPOR KULÜBÜ",
+        "Çekmeköy İstanbul SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "DOĞU AKADEMİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Doğu Akademi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/dogu-akademi-spor-kulubu-t19896",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Doğu Akademi Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "FENERBAHÇE MEDICANA",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Fenerbahçe Medicana III",
+      "volleybox_url": "https://women.volleybox.net/tr/fenerbahce-iii-t15576",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Fenerbahçe Medicana III"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "İSTANBUL ANKA",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "İstanbul Anka Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/stanbul-anka-spor-t36163",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "İstanbul Anka Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "İSTANBUL ATEŞ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Ateş Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/ates-spor-kulubu-t17185",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "İSTANBUL ATEŞ SPOR KULÜBÜ",
+        "Ateş Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KUZEY YILDIZLARI SPEED",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Kuzey Yıldızları Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kuzey-yldzlar-spor-kulubu-t17187",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Kuzey Yıldızları Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MARMARA AKADEMİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Marmara Akademi Atletik Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/mehmet-erdem-marmara-akademi-t7348",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Marmara Akademi Atletik Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ATAŞEHİR KARTALLARI",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Ataşehir Kartalları Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/atasehir-kartallar-spor-kulubu-t39649",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ataşehir Kartalları Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "CAN MİLAN ATLETİK",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Milan Atletik",
+      "volleybox_url": "https://women.volleybox.net/tr/milan-atletik-t22036",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Milan Atletik"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇENGELKÖY VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Çengelköy Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/nar-kumasclk-cengelkoy-voleybol-t16876",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Çengelköy Voleybol Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "DEV ATAŞEHİR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Dev Ataşehir Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/dev-atasehir-spor-t36146",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Dev Ataşehir Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GALATASARAY",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Galatasaray ll",
+      "volleybox_url": "https://women.volleybox.net/tr/galatasaray-ll-t14016",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Galatasaray ll"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KARTAL ANADOLU",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Türkiye",
+      "city_slug": "turkiye",
+      "matched_as": "Ataşehir Kartalları Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/atasehir-kartallar-spor-kulubu-t39649",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ataşehir Kartalları Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KARTAL BELEDİYESPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Kartal Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/kartal-belediyespor-t10060",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "KARTAL BELEDİYESPOR KULÜBÜ",
+        "Kartal Belediyespor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TOYZZ SHOP DİNAMO SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Toyzz Shop Dinamo Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/dinamo-spor-t32154",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 4",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "TOYZZ SHOP DİNAMO SPOR KULÜBÜ",
+        "Toyzz Shop Dinamo Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "AYVALIK GELİŞİM SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Balikesi̇r",
+      "city_slug": "balikesi-r",
+      "matched_as": "Ayvalık Gelişim Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-t16196",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ayvalık Gelişim Spor Kulübü",
+        "AYVALIK GELİŞİM SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAHÇEŞEHİR KOLEJİ AYVALIKSPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Balikesi̇r",
+      "city_slug": "balikesi-r",
+      "matched_as": "Bahçeşehir Koleji Ayvalıkspor",
+      "volleybox_url": "https://women.volleybox.net/tr/bahcesehir-koleji-ayvalkspor-t22021",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "BAHÇEŞEHİR KOLEJİ AYVALIKSPOR KULÜBÜ",
+        "Bahçeşehir Koleji Ayvalıkspor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BALIKESİR B.ŞEHİR BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Balikesi̇r",
+      "city_slug": "balikesi-r",
+      "matched_as": "Balıkesir Büyükşehir Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-t2978",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "BALIKESİR B.ŞEHİR BELEDİYESİ SPOR",
+        "Balıkesir Büyükşehir Belediyespor",
+        "BALIKESİR B.ŞEHİR BLD. SPOR KULÜBÜ",
+        "BALIKESİR B.ŞEHİR BELEDİYE SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BALIKESİR DSİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Balikesi̇r",
+      "city_slug": "balikesi-r",
+      "matched_as": "Balıkesir DSİ Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/balkesir-ds-spor-t13448",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Balıkesir DSİ Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BANDIRMA ÇELİK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Balikesi̇r",
+      "city_slug": "balikesi-r",
+      "matched_as": "Bandırma Çelikspor",
+      "volleybox_url": "https://women.volleybox.net/tr/bandrma-celikspor-t36097",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Bandırma Çelikspor",
+        "BANDIRMA ÇELİK SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇAN KALE SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Balikesi̇r",
+      "city_slug": "balikesi-r",
+      "matched_as": "Çan Kale Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/can-genclik-kale-spor-kulubu-t6566",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ÇAN KALE SPOR KULÜBÜ",
+        "Çan Kale Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇERKEZKÖY VOLEYBOL AKADEMİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Teki̇rdağ",
+      "city_slug": "teki-rdag",
+      "matched_as": "Çerkezköy Voleybol Akademi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/cerkezkoy-voleybol-akademi-t36232",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Çerkezköy Voleybol Akademi Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇORLU BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Teki̇rdağ",
+      "city_slug": "teki-rdag",
+      "matched_as": "Çorlu Belediyesi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-klubu-t17132",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ÇORLU BELEDİYESİ SPOR",
+        "ÇORLU BELEDİYE SPOR",
+        "Çorlu Belediyesi Spor Kulübü",
+        "ÇORLU BLD. SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KIRKLARELİ GENÇLİK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kirklareli̇",
+      "city_slug": "kirklareli",
+      "matched_as": "Kırklareli Gençlik Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Kırklareli Gençlik Spor Kulübü",
+        "KIRKLARELİ GENÇLİK SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "YEŞİL BAYRAMİÇ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Balikesi̇r",
+      "city_slug": "balikesi-r",
+      "matched_as": "Yeşil Bayramiç SK",
+      "volleybox_url": "https://women.volleybox.net/tr/yesil-bayramic-sk-t2995",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 5",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Yeşil Bayramiç SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "AKHİSAR GÜCÜ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mani̇sa",
+      "city_slug": "mani-sa",
+      "matched_as": "Akhisargücü Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/akhisargucu-spor-kulubu-t13489",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Akhisargücü Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "AL-KA ALTIN KANATLAR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mani̇sa",
+      "city_slug": "mani-sa",
+      "matched_as": "Alka Altın Kanatlar SK",
+      "volleybox_url": "https://women.volleybox.net/tr/alka-altn-kanatlar-t36237",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Alka Altın Kanatlar SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ARKAS SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Arkas Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/arkas-spor-t2979",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ARKAS SPOR KULÜBÜ",
+        "Arkas Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "FORZA SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Forza Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/forza-spor-kulubu-t19820",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Forza Spor Kulübü",
+        "FORZA SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GAZİEMİR BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Gaziemir Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/gaziemir-belediyespor-t24629",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Gaziemir Belediyespor",
+        "GAZİEMİR BELEDİYESİ SPOR",
+        "GAZİEMİR BELEDİYE SPOR",
+        "GAZİEMİR BLD. SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KARŞIYAKA",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mani̇sa",
+      "city_slug": "mani-sa",
+      "matched_as": "Endo Karşıyaka SK II",
+      "volleybox_url": "https://women.volleybox.net/tr/karsyaka-sk-ii-t19819",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Endo Karşıyaka SK II"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mani̇sa",
+      "city_slug": "mani-sa",
+      "matched_as": "Manisa Büyükşehir Belediyespor Kulübü II",
+      "volleybox_url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-ii-t45562",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR KULÜBÜ",
+        "Manisa Büyükşehir Belediyespor Kulübü II"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ROTA KOLEJİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Rota Koleji SK",
+      "volleybox_url": "https://women.volleybox.net/tr/rota-koleji-sk-t2990",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Rota Koleji SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TURGUTLU BLD. KÜLTÜR SANAT",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mani̇sa",
+      "city_slug": "mani-sa",
+      "matched_as": "Turgutlu Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/turgutlu-belediyespor-t16095",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "TURGUTLU BELEDİYESİ KÜLTÜR SANAT",
+        "TURGUTLU BELEDİYE KÜLTÜR SANAT",
+        "Turgutlu Belediyespor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "VENÜS SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mani̇sa",
+      "city_slug": "mani-sa",
+      "matched_as": "Venüs Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/venus-t19915",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 6",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Venüs Spor Kulübü",
+        "VENÜS SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ALTAY",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Altay SK",
+      "volleybox_url": "https://women.volleybox.net/tr/altay-t19765",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Altay SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ALTINAY SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "İzmir Altınay Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/zmir-altnay-spor-t36174",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ALTINAY SPOR KULÜBÜ",
+        "İzmir Altınay Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Aydin",
+      "city_slug": "aydin",
+      "matched_as": "Aydın Büyükşehir Belediyespor II",
+      "volleybox_url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-ii-t13583",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Aydın Büyükşehir Belediyespor II",
+        "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAYRAKLI BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Bayraklı Belediyesi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/bayrakl-belediye-t19913",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "BAYRAKLI BELEDİYE SPOR",
+        "BAYRAKLI BELEDİYESİ SPOR",
+        "Bayraklı Belediyesi Spor Kulübü",
+        "BAYRAKLI BLD. SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "EFOR GENÇLİK",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Efor Gençlik Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/efor-genclik-spor-kulubu-t17198",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Efor Gençlik Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GELİŞİM KOLEJİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Gelişim Koleji SK",
+      "volleybox_url": "https://women.volleybox.net/tr/gelisim-koleji-sk-t7132",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Gelişim Koleji SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GÖZTEPE",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Göztepe SK II",
+      "volleybox_url": "https://women.volleybox.net/tr/goztepe-sk-ii-t22628",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Göztepe SK II"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "POLAT GROUP DİDİM BELEDİYESPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Aydin",
+      "city_slug": "aydin",
+      "matched_as": "Polat Group Didim Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/polat-group-didim-spor-kulubu-t24704",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Polat Group Didim Belediyespor Kulübü",
+        "POLAT GROUP DİDİM BELEDİYESPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SÖKE BELEDİYE SALDOS VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Aydin",
+      "city_slug": "aydin",
+      "matched_as": "Söke Belediye Saldos Voleybol",
+      "volleybox_url": "https://women.volleybox.net/tr/soke-belediye-saldos-voleybol-t7009",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Söke Belediye Saldos Voleybol"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "VOLKAN GÜÇ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Volkan Güç Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/volkan-guc-spor-kulubu-t27785",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "VOLKAN GÜÇ SPOR KULÜBÜ",
+        "Volkan Güç Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "YUNUSEMRE BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İzmi̇r",
+      "city_slug": "i-zmi-r",
+      "matched_as": "Yunusemre Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/yunusemre-belediyespor-t23089",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 7",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Yunusemre Belediyespor",
+        "YUNUSEMRE BELEDİYESİ SPOR",
+        "YUNUSEMRE BELEDİYE SPOR",
+        "YUNUSEMRE BLD. SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "07 MEGA SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "07 Mega Spor Kulübü II",
+      "volleybox_url": "https://women.volleybox.net/tr/07-mega-spor-kulubu-t53610",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "07 MEGA SPOR KULÜBÜ",
+        "07 Mega Spor Kulübü II"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "AKDENİZ BİLGİ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "Akdeniz Bilgi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/akdeniz-bilgi-spor-kulubu-t30512",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Akdeniz Bilgi Spor Kulübü",
+        "AKDENİZ BİLGİ SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ANTALYASPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "Güral Premier Antalyaspor",
+      "volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ANTALYASPOR KULÜBÜ",
+        "Güral Premier Antalyaspor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAHÇEŞEHİR KOLEJİ DALAMAN BLD.",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "matched_as": "Bahçeşehir Koleji Dalaman Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/bahcesehir-koleji-dalaman-belediyespor-t29535",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "BAHÇEŞEHİR KOLEJİ DALAMAN BELEDİYESİ",
+        "Bahçeşehir Koleji Dalaman Belediyespor",
+        "BAHÇEŞEHİR KOLEJİ DALAMAN BELEDİYE"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "DENİZLİ B.ŞEHİR BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Deni̇zli̇",
+      "city_slug": "deni-zli",
+      "matched_as": "Denizli Büyükşehir Belediyespor II",
+      "volleybox_url": "https://women.volleybox.net/tr/denizli-buyuksehir-belediyespor-ii-t40628",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "DENİZLİ B.ŞEHİR BELEDİYESİ SPOR",
+        "DENİZLİ B.ŞEHİR BELEDİYE SPOR",
+        "Denizli Büyükşehir Belediyespor II",
+        "DENİZLİ B.ŞEHİR BLD. SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ELİT AKDENİZ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "Elit Akdeniz Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/elit-akdeniz-spor-kulubu-t36089",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Elit Akdeniz Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MARMARİS BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Deni̇zli̇",
+      "city_slug": "deni-zli",
+      "matched_as": "Marmaris Belediyesi GSK",
+      "volleybox_url": "https://women.volleybox.net/tr/marmaris-belediyesi-gsk-t2804",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Marmaris Belediyesi GSK",
+        "MARMARİS BLD. SPOR KULÜBÜ",
+        "MARMARİS BELEDİYE SPOR",
+        "MARMARİS BELEDİYESİ SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MUĞLA SPORTİF AKADEMİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "matched_as": "Muğla Sportif Akademi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/mugla-sportif-akademi-spor-kulubu-t45569",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "MUĞLA SPOR KULÜBÜTİF AKADEMİ",
+        "Muğla Sportif Akademi Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "YESS POOL ANTALYA AÇI KOLEJİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "matched_as": "Yess Pool Antalya Açı Koleji Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/antalya-ac-koleji-gsk-t19999",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 8",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Yess Pool Antalya Açı Koleji Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BURSA FETHİYE 1973 SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Bursa Fethiye 1973 Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/fethiye-1973-spor-t40629",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Bursa Fethiye 1973 Spor Kulübü",
+        "BURSA FETHİYE 1973 SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "EKER SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Eker Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/ekerspor-t53368",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Eker Spor Kulübü",
+        "EKER SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ESKİŞEHİR PEYMAN SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Eskişehir Peyman SK",
+      "volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ESKİŞEHİR PEYMAN SPOR KULÜBÜ",
+        "Eskişehir Peyman SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ESKİŞEHİR ŞEHİR KOLEJİ EĞT. KÜLTÜR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Eski̇şehi̇r",
+      "city_slug": "eski-sehi-r",
+      "matched_as": "Eskişehir Peyman SK",
+      "volleybox_url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-t17180",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Eskişehir Peyman SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GEMLİK İSTİKLAL SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Gemlik İstiklal Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/gemlik-stiklal-spor-t32159",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Gemlik İstiklal Spor Kulübü",
+        "GEMLİK İSTİKLAL SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KARACABEY BELEDİYE",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Karacabey Belediye Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/karacabey-belediye-spor-t45529",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Karacabey Belediye Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KOÇ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Bursa Koç Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/bursa-koc-spor-kulubu-t36105",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "KOÇ SPOR KULÜBÜ",
+        "Bursa Koç Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MEHMET EGE İNŞAAT İNEGÖL ORHANİYE VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/negol-orhaniye-voleybol-sk-t17193",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MG SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "MG Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/mg-spor-kulubu-t32161",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "MG SPOR KULÜBÜ",
+        "MG Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "YALOVA ÇİFTLİKKÖY BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Türkiye",
+      "city_slug": "turkiye",
+      "matched_as": "Çiftlikköy Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/ciftlikkoy-belediyespor-t13002",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 9",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Çiftlikköy Belediyespor",
+        "YALOVA ÇİFTLİKKÖY BLD. SPOR KULÜBÜ",
+        "YALOVA ÇİFTLİKKÖY BELEDİYESİ SPOR",
+        "YALOVA ÇİFTLİKKÖY BELEDİYE SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BARTIN VOLLEY ACADEMY",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Türkiye",
+      "city_slug": "turkiye",
+      "matched_as": "Bartın Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/han-kale-spor-t36098",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Bartın Voleybol Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BOLU ATATÜRK ANADOLU LİSESİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Sakarya",
+      "city_slug": "sakarya",
+      "matched_as": "Bolu Atatürk Anadolu Lisesi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/bolu-voleybol-spor-kulubu-t13647",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Bolu Atatürk Anadolu Lisesi Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BÜYÜK KARTEPE SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kocaeli̇",
+      "city_slug": "kocaeli",
+      "matched_as": "Büyük Kartepe Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/buyuk-kartepe-spor-t36192",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "BÜYÜK KARTEPE SPOR KULÜBÜ",
+        "Büyük Kartepe Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "CADENCE BOYA GÖLCÜK İHSANİYE",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kocaeli̇",
+      "city_slug": "kocaeli",
+      "matched_as": "Cadence Boya Gölcük İhsaniye Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/golcuk-hsaniye-spor-kulubu-t13491",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Cadence Boya Gölcük İhsaniye Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "DÜZCE 1907 SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kocaeli̇",
+      "city_slug": "kocaeli",
+      "matched_as": "Düzce 1907 Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/duzce-1907-spor-kulubu-t40065",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Düzce 1907 Spor Kulübü",
+        "DÜZCE 1907 SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "DÜZCE VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Düzce",
+      "city_slug": "duzce",
+      "matched_as": "Düzce Voleybol SK",
+      "volleybox_url": "https://women.volleybox.net/tr/duzce-voleybol-sk-t21292",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Düzce Voleybol SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GEBZE GENÇLİK VE SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Düzce",
+      "city_slug": "duzce",
+      "matched_as": "Gebze Gençlik Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/gebze-genclik-ve-spor-sk-t40247",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Gebze Gençlik Voleybol Kulübü",
+        "GEBZE GENÇLİK VE SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KARABÜK GENÇLİK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Karabük",
+      "city_slug": "karabuk",
+      "matched_as": "Karabük Gençlik ve Spor İl Müdürlüğü Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/karabuk-genclik-ve-spor-kulubu-t23253",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "KARABÜK GENÇLİK SPOR KULÜBÜ",
+        "Karabük Gençlik ve Spor İl Müdürlüğü Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KOCAELİ NİCOMEDİA AKADEMİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kocaeli̇",
+      "city_slug": "kocaeli",
+      "matched_as": "Kocaeli Voleybol Akademi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-t31227",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Kocaeli Voleybol Akademi Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KOCAELİ VOLEYBOL AKADEMİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kocaeli̇",
+      "city_slug": "kocaeli",
+      "matched_as": "Kocaeli Voleybol Akademi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-t31227",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Kocaeli Voleybol Akademi Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SERDİVAN BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Sakarya",
+      "city_slug": "sakarya",
+      "matched_as": "Serdivan Belediyesi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/serdivan-belediyesi-spor-kulubu-t40630",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "SERDİVAN BELEDİYESİ SPOR",
+        "SERDİVAN BELEDİYE SPOR",
+        "Serdivan Belediyesi Spor Kulübü",
+        "SERDİVAN BLD. SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SİYAH KUĞULAR VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kocaeli̇",
+      "city_slug": "kocaeli",
+      "matched_as": "Siyah Kuğular Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-t45560",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 10",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Siyah Kuğular Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ANKARA BAROSU",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Ankara Barosu Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/ankara-barosu-voleybol-t36080",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ankara Barosu Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ANKARA DSİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Ankara DSİ GSK",
+      "volleybox_url": "https://women.volleybox.net/tr/ankara-ds-gsk-t5617",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ankara DSİ GSK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇAYYOLU SPORTSA",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Çayyolu Sportsa Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/sportsa-academy-volleyball-t13948",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ÇAYYOLU SPOR KULÜBÜTSA",
+        "Çayyolu Sportsa Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ERYAMAN GELİŞİM",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Eryaman Gelişim SK",
+      "volleybox_url": "https://women.volleybox.net/tr/eryaman-gelisim-sk-t13588",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Eryaman Gelişim SK"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GÖLBAŞI İNCEK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Gölbaşı İncek Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/golbas-ncek-spor-kulubu-t30620",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "GÖLBAŞI İNCEK SPOR KULÜBÜ",
+        "Gölbaşı İncek Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KAVAK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Kavak Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "KAVAK SPOR KULÜBÜ",
+        "Kavak Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MISIROĞLU BEYTEPE",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Mısıroğlu Beytepespor",
+      "volleybox_url": "https://women.volleybox.net/tr/msroglu-beytepespor-t30533",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Mısıroğlu Beytepespor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TEMİZ ENERJİ BİRLİĞİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TVF SPOR LİSESİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "TVF Spor Lisesi",
+      "volleybox_url": "https://women.volleybox.net/tr/tvf-spor-lisesi-t2992",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "TVF Spor Lisesi",
+        "TVF SPOR KULÜBÜ LİSESİ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "VEGA ATLETİK",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Vega Atletik Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/vega-atletik-spor-t36065",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 11",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Vega Atletik Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAŞKENT ARMA",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Başkent Arma Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/arma-voleybol-t32331",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Başkent Arma Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BAŞKENT ZİRVE",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Başkent Zirve Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/baskent-zirve-spor-kulubu-t40620",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Başkent Zirve Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇABA SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Çaba Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/caba-spor-kulubu-t24060",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ÇABA SPOR KULÜBÜ",
+        "Çaba Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ENGLISH TIME SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "English Time Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/english-time-spor-t36069",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "English Time Spor Kulübü",
+        "ENGLISH TIME SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ETİMESGUT BLD. GELİŞİM",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Etimesgut Belediyesi Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/etimesgut-belediyesi-gelisim-sk-t30345",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Etimesgut Belediyesi Voleybol Kulübü",
+        "ETİMESGUT BELEDİYESİ GELİŞİM",
+        "ETİMESGUT BELEDİYE GELİŞİM"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "İLBANK",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "İlbank III",
+      "volleybox_url": "https://women.volleybox.net/tr/lbank-iii-t40631",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "İlbank III"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TED ANKARA KOLEJLİLER",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "TED Ankara Kolejliler II",
+      "volleybox_url": "https://women.volleybox.net/tr/ted-ankara-kolejliler-ii-t40617",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "TED Ankara Kolejliler II"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "YEDİDAĞ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Yedidağ Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/yedidagspor-t23365",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 12",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Yedidağ Spor Kulübü",
+        "YEDİDAĞ SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ADANA B.ŞEHİR BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Hatay",
+      "city_slug": "hatay",
+      "matched_as": "Adana Büyükşehir Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "ADANA B.ŞEHİR BELEDİYESİ SPOR",
+        "ADANA B.ŞEHİR BLD. SPOR KULÜBÜ",
+        "Adana Büyükşehir Belediyespor Kulübü",
+        "ADANA B.ŞEHİR BELEDİYE SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ADANA SPORCU EĞİTİM SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Adana",
+      "city_slug": "adana",
+      "matched_as": "Adana Büyükşehir Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Adana Büyükşehir Belediyespor Kulübü",
+        "ADANA SPOR KULÜBÜCU EĞİTİM SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ADANA T.D.S.",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Adana",
+      "city_slug": "adana",
+      "matched_as": "Adana Büyükşehir Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/adana-bsehir-bld-t13590",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Adana Büyükşehir Belediyespor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "EREĞLİ SÜMER SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mersi̇n",
+      "city_slug": "mersi-n",
+      "matched_as": "Ereğli Sümer SK",
+      "volleybox_url": "https://women.volleybox.net/tr/eregli-sumer-sk-t13649",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ereğli Sümer SK",
+        "EREĞLİ SÜMER SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "HATAY VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Hatay",
+      "city_slug": "hatay",
+      "matched_as": "Hatay Voleybol Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/hatay-voleybol-spor-kulubu-t13604",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Hatay Voleybol Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MEV TOROS SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mersi̇n",
+      "city_slug": "mersi-n",
+      "matched_as": "MEV Toros Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/voleybol-gelisim-egitim-merkezi-t36208",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "MEV TOROS SPOR KULÜBÜ",
+        "MEV Toros Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "OKURA LOJİSTİK MERSİN İHTİSAS",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mersi̇n",
+      "city_slug": "mersi-n",
+      "matched_as": "Okura Lojistik Mersin İhtisas Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/okura-lojistik-mersin-htisas-yenisehir-bld-t22317",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Okura Lojistik Mersin İhtisas Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TARSUS AMERİKAN KOLEJİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mersi̇n",
+      "city_slug": "mersi-n",
+      "matched_as": "Tarsus Amerikan Koleji",
+      "volleybox_url": "https://women.volleybox.net/tr/tarsus-amerikan-koleji-t23366",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Tarsus Amerikan Koleji"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "TOROSLAR BLD.",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mersi̇n",
+      "city_slug": "mersi-n",
+      "matched_as": "Toroslar Belediye Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/toroslar-belediye-spor-kulubu-t40633",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "TOROSLAR BELEDİYE",
+        "TOROSLAR BELEDİYESİ",
+        "Toroslar Belediye Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "YENİŞEHİR GENÇLERBİRLİĞİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mersi̇n",
+      "city_slug": "mersi-n",
+      "matched_as": "Yenişehir Gençlerbirliği Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/mersin-yenisehir-genclerbirligi-t36209",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 13",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Yenişehir Gençlerbirliği Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "52 ÇAMLIK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "matched_as": "52 Çamlık Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "52 ÇAMLIK SPOR KULÜBÜ",
+        "52 Çamlık Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "AKÇA GRUP OSMANCIK BLD.",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Samsun",
+      "city_slug": "samsun",
+      "matched_as": "Akça Grup Osmancık Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/osmanck-belediyespor-t10378",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "AKÇA GRUP OSMANCIK BELEDİYESİ",
+        "Akça Grup Osmancık Belediyespor",
+        "AKÇA GRUP OSMANCIK BELEDİYE"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "BEŞİKDÜZÜ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Trabzon",
+      "city_slug": "trabzon",
+      "matched_as": "Beşikdüzü Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/besikduzu-spor-t36235",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Beşikdüzü Spor",
+        "BEŞİKDÜZÜ SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ÇORUM ARENA SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Artvi̇n",
+      "city_slug": "artvi-n",
+      "matched_as": "Çorum Arena Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/corum-arena-spor-t36114",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Çorum Arena Spor",
+        "ÇORUM ARENA SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "FINDIKLI 1974",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Si̇vas",
+      "city_slug": "si-vas",
+      "matched_as": "Fındıklı 1974 Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/fndkl-1974-spor-kulubu-t37153",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Fındıklı 1974 Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "HOPA BELEDİYE",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Artvi̇n",
+      "city_slug": "artvi-n",
+      "matched_as": "Hopa Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/hopa-belediyespor-t53689",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Hopa Belediyespor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KONELSİS ENERJİ SAMSUNSPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Trabzon",
+      "city_slug": "trabzon",
+      "matched_as": "Konelsis Enerji Samsunspor",
+      "volleybox_url": "https://women.volleybox.net/tr/samsunspor-t31533",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Konelsis Enerji Samsunspor",
+        "KONELSİS ENERJİ SAMSUNSPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "NOVA SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Samsun",
+      "city_slug": "samsun",
+      "matched_as": "Nova Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kanarya-55-spor-kulubu-t45377",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Nova Spor Kulübü",
+        "NOVA SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "RİZE DNZ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Ordu",
+      "city_slug": "ordu",
+      "matched_as": "Rize DNZ Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/rize-endustri-meslek-spor-t36220",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Rize DNZ Spor Kulübü",
+        "RİZE DNZ SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ANTEPİA",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kayseri̇",
+      "city_slug": "kayseri",
+      "matched_as": "Antepia Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/antepia-spor-kulubu-t32178",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Antepia Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ELAZIĞ BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Gazi̇antep",
+      "city_slug": "gazi-antep",
+      "matched_as": "Elazığ Belediyesi SK",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-belediyesi-t20428",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Elazığ Belediyesi SK",
+        "ELAZIĞ BELEDİYESİ SPOR",
+        "ELAZIĞ BLD. SPOR KULÜBÜ",
+        "ELAZIĞ BELEDİYE SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "FORLİVA KAYSERİ ATLETİK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Malatya",
+      "city_slug": "malatya",
+      "matched_as": "Forliva Kayseri Atletik Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/kayseri-atletik-spor-kulubu-t8654",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Forliva Kayseri Atletik Spor",
+        "FORLİVA KAYSERİ ATLETİK SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "GAZİANTEP BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Gazi̇antep",
+      "city_slug": "gazi-antep",
+      "matched_as": "Gaziantep Büyükşehir Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/gaziantep-belediye-sk-t28164",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Gaziantep Büyükşehir Belediyespor",
+        "GAZİANTEP BLD. SPOR KULÜBÜ",
+        "GAZİANTEP BELEDİYESİ SPOR",
+        "GAZİANTEP BELEDİYE SPOR"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KAHRAMANMARAŞ BÜYÜKŞEHİR BLD.",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "K.Maraş",
+      "city_slug": "k-maras",
+      "matched_as": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kahramanmaras-buyuksehir-belediye-spor-kulubu-t45553",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Kahramanmaraş Büyükşehir Belediye Spor Kulübü",
+        "KAHRAMANMARAŞ BÜYÜKŞEHİR BELEDİYESİ",
+        "KAHRAMANMARAŞ BÜYÜKŞEHİR BELEDİYE"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KAYSERİ CİMNASTİK SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Kayseri̇",
+      "city_slug": "kayseri",
+      "matched_as": "Kayseri Cimnastik Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kayseri-cimnastik-spor-kulubu-t32165",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Kayseri Cimnastik Spor Kulübü",
+        "KAYSERİ CİMNASTİK SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "KAYSERİ VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Gazi̇antep",
+      "city_slug": "gazi-antep",
+      "matched_as": "Forliva Kayseri Atletik Spor",
+      "volleybox_url": "https://women.volleybox.net/tr/kayseri-atletik-spor-kulubu-t8654",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Forliva Kayseri Atletik Spor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MALATYA VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Elaziğ",
+      "city_slug": "elazig",
+      "matched_as": "Malatya Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Malatya Voleybol Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MERİNOS VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Gazi̇antep",
+      "city_slug": "gazi-antep",
+      "matched_as": "Merinos Gençlik",
+      "volleybox_url": "https://women.volleybox.net/tr/merinos-genclik-t16685",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Merinos Gençlik"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MSE FİLO ELAZIĞ EKOL SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Elaziğ",
+      "city_slug": "elazig",
+      "matched_as": "Ekol Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Ekol Spor Kulübü",
+        "MSE FİLO ELAZIĞ EKOL SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "NİCER HOTEL VOLEYBOL",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Malatya",
+      "city_slug": "malatya",
+      "matched_as": "Nicer Hotel Voleybol Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/nicer-hotel-voleybol-t20783",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Nicer Hotel Voleybol Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "ZEUGMA GAZİANTEP SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "K.Maraş",
+      "city_slug": "k-maras",
+      "matched_as": "Zeugma Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-t7352",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 15",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Zeugma Spor Kulübü",
+        "ZEUGMA GAZİANTEP SPOR KULÜBÜ"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "DİYARBAKIR B.ŞEHİR BLD. SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Şirnak",
+      "city_slug": "sirnak",
+      "matched_as": "Diyarbakır Büyükşehir Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/tr/diyarbakr-buyuksehir-belediyespor-t13501",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "DİYARBAKIR B.ŞEHİR BLD. SPOR KULÜBÜ",
+        "DİYARBAKIR B.ŞEHİR BELEDİYE SPOR",
+        "DİYARBAKIR B.ŞEHİR BELEDİYESİ SPOR",
+        "Diyarbakır Büyükşehir Belediyespor"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "DİYARBAKIR VOLEYBOLCULAR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Di̇yarbakir",
+      "city_slug": "di-yarbakir",
+      "matched_as": "Diyarbakır Voleybolcular Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/voleybolcular-spor-kulubu-t36118",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Diyarbakır Voleybolcular Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "HAKKARİ SPORTİF FAALİYETLER",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mardi̇n",
+      "city_slug": "mardi-n",
+      "matched_as": "Hakkari Gençlik Sportif Faaliyetler",
+      "volleybox_url": "https://women.volleybox.net/tr/hakkari-genclik-sportif-faaliyetler-t20786",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "HAKKARİ SPOR KULÜBÜTİF FAALİYETLER",
+        "Hakkari Gençlik Sportif Faaliyetler"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MARGENÇ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Mardi̇n",
+      "city_slug": "mardi-n",
+      "matched_as": "Margenç Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/mardin-margenc-spor-t28165",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Margenç Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MEGARON İNŞAAT",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Di̇yarbakir",
+      "city_slug": "di-yarbakir",
+      "matched_as": "Megaron İnşaat Diyarbakır Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/megaron-nsaat-diyarbakr-spor-kulubu-t45535",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Megaron İnşaat Diyarbakır Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "MUŞ 1071 AKADEMİİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Di̇yarbakir",
+      "city_slug": "di-yarbakir",
+      "matched_as": "Muş 1071 Akademii Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/mus-olimpik-spor-kulubu-t32179",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Muş 1071 Akademii Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SİLOPİ BLD. SPORTİF FAALİYETLER",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Şanliurfa",
+      "city_slug": "sanliurfa",
+      "matched_as": "Silopi Belediye Sportif Faaliyetler Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/silopi-belediye-sportif-faaliyetler-spor-kulubu-t13661",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "SİLOPİ BELEDİYESİ SPORTİF FAALİYETLER",
+        "SİLOPİ BELEDİYE SPORTİF FAALİYETLER",
+        "SİLOPİ BLD. SPOR KULÜBÜTİF FAALİYETLER",
+        "Silopi Belediye Sportif Faaliyetler Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SİLOPİ GELİŞİM FAALİYETLERİ",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Şirnak",
+      "city_slug": "sirnak",
+      "matched_as": "Silopi Gelişim Faaliyetleri Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/silopi-gelisim-faaliyetleri-t20790",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Silopi Gelişim Faaliyetleri Spor Kulübü"
+      ],
+      "logo_url": null
+    },
+    {
+      "internal_name": "SİVEREK BELEDİYE SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Şanliurfa",
+      "city_slug": "sanliurfa",
+      "matched_as": "Siverek Kadın Voleybol Takımı",
+      "volleybox_url": "https://women.volleybox.net/tr/siverek-belediye-spor-kulubu-t45575",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 16",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Siverek Kadın Voleybol Takımı",
+        "SİVEREK BELEDİYE SPOR KULÜBÜ"
+      ],
+      "logo_url": null
     }
   ],
   "leagues": [
@@ -13641,6 +16294,17 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-09-24"
+    },
+    {
+      "internal_name": "Kadınlar 2. Ligi",
+      "city": "Türkiye",
+      "city_slug": "turkiye",
+      "matched_as": "Türkiye Kadınlar Voleybol 2. Ligi 2026/27",
+      "volleybox_url": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-09-25"
     }
   ]
 }

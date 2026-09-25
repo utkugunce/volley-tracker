@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { ExternalLink, Search, Shield, Trophy } from "lucide-react";
+import Link from "next/link";
+import { ExternalLink, Search, Shield, Trophy, ArrowRight, User } from "lucide-react";
 import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
+import { slugify } from "@/utils/slugify";
 
 interface Kadinlar2LigTeamsProps {
   teams: Kadinlar2LigTeam[];
@@ -65,20 +67,26 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
             className="bg-[#130d29]/90 hover:bg-[#1b123d] border border-purple-900/40 hover:border-purple-600/50 rounded-2xl p-3.5 transition-all shadow-md hover:shadow-xl backdrop-blur-sm flex flex-col justify-between gap-3 group"
           >
             <div className="flex items-start gap-3">
-              {team.logo && !team.logo.includes("takimlogoyok") ? (
-                <img
-                  src={team.logo}
-                  alt={team.takim_adi}
-                  className="w-10 h-10 object-contain rounded-xl shrink-0 bg-white/5 p-1 border border-purple-800/30"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = "none";
-                  }}
-                />
-              ) : (
-                <div className="w-10 h-10 rounded-xl bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-xs text-purple-200 font-bold shrink-0">
-                  {team.takim_adi.slice(0, 2)}
-                </div>
-              )}
+              <Link
+                href={`/takim/${slugify(team.takim_adi)}`}
+                className="shrink-0 hover:opacity-85 transition-opacity"
+                title={`${team.takim_adi} Kulüp Profili`}
+              >
+                {team.logo && !team.logo.includes("takimlogoyok") ? (
+                  <img
+                    src={team.logo}
+                    alt={team.takim_adi}
+                    className="w-10 h-10 object-contain rounded-xl shrink-0 bg-white/5 p-1 border border-purple-800/30 group-hover:scale-105 transition-transform"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                  />
+                ) : (
+                  <div className="w-10 h-10 rounded-xl bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-xs text-purple-200 font-bold shrink-0 group-hover:border-pink-500 transition-colors">
+                    {team.takim_adi.slice(0, 2)}
+                  </div>
+                )}
+              </Link>
 
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-1.5 mb-0.5">
@@ -94,17 +102,19 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                     Sıra: {team.sira}
                   </span>
                 </div>
-                <h3 className="font-bold text-xs sm:text-[13px] text-white group-hover:text-pink-300 transition-colors line-clamp-2">
+                <Link
+                  href={`/takim/${slugify(team.takim_adi)}`}
+                  className="font-bold text-xs sm:text-[13px] text-white group-hover:text-pink-300 transition-colors line-clamp-2 block hover:underline underline-offset-2"
+                  title={`${team.takim_adi} Kulüp Profilini Aç`}
+                >
                   {team.takim_adi}
-                </h3>
+                </Link>
               </div>
             </div>
 
-            {/* Alt Kısım: Puan İstatistiği & Volleybox Butonu */}
-            <div className="flex items-center justify-between pt-2 border-t border-purple-900/30 text-xs">
-              <div className="flex items-center gap-2 text-[11px] text-purple-300/80 font-mono">
-                <span>{team.o} Maç</span>
-                <span>•</span>
+            {/* Alt Kısım: Puan İstatistiği & Profil / Volleybox Butonları */}
+            <div className="flex items-center justify-between pt-2 border-t border-purple-900/30 text-xs gap-2">
+              <div className="flex items-center gap-1.5 text-[11px] text-purple-300/80 font-mono">
                 <span className="text-emerald-400 font-bold">{team.g}G</span>
                 <span>•</span>
                 <span className="text-rose-400">{team.m}M</span>
@@ -112,20 +122,29 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                 <span className="text-amber-300 font-extrabold">{team.p}P</span>
               </div>
 
-              {team.volleybox_url ? (
-                <a
-                  href={team.volleybox_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-cyan-950/70 hover:bg-cyan-900 text-cyan-300 hover:text-white border border-cyan-700/50 text-[11px] font-semibold transition-all shadow-xs"
-                  title={`${team.takim_adi} Volleybox Kadro Profili`}
+              <div className="flex items-center gap-1.5 shrink-0">
+                <Link
+                  href={`/takim/${slugify(team.takim_adi)}`}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-900/60 hover:bg-purple-800 text-purple-200 hover:text-white border border-purple-700/50 text-[11px] font-semibold transition-all shadow-xs"
+                  title={`${team.takim_adi} Kulüp Profilini Aç`}
                 >
-                  <span>Kadro</span>
-                  <ExternalLink size={10} />
-                </a>
-              ) : (
-                <span className="text-[10px] text-slate-600">Kadro yok</span>
-              )}
+                  <span>Profil</span>
+                  <ArrowRight size={10} />
+                </Link>
+
+                {team.volleybox_url ? (
+                  <a
+                    href={team.volleybox_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-cyan-950/70 hover:bg-cyan-900 text-cyan-300 hover:text-white border border-cyan-700/50 text-[11px] font-semibold transition-all shadow-xs"
+                    title={`${team.takim_adi} Volleybox Kadro Profili`}
+                  >
+                    <span>Kadro</span>
+                    <ExternalLink size={10} />
+                  </a>
+                ) : null}
+              </div>
             </div>
           </div>
         ))}

@@ -159,6 +159,82 @@ function loadAllCityData() {
     }
   }
 
+  // TVF Kadınlar 2. Ligi Verilerini Yükle
+  const k2Path = path.join(process.cwd(), "data", "kadinlar_2_lig.json");
+  if (fs.existsSync(k2Path)) {
+    try {
+      const k2Content = fs.readFileSync(k2Path, "utf-8");
+      const k2 = JSON.parse(k2Content);
+
+      // 1. Karşılaşmalar
+      if (Array.isArray(k2.tum_maclar)) {
+        for (const m of k2.tum_maclar) {
+          const setScores = m.set_sonuclari
+            ? m.set_sonuclari.split(",").map((s: string) => s.trim()).filter(Boolean)
+            : [];
+          let homeScore: number | null = null;
+          let awayScore: number | null = null;
+          if (m.skor && m.skor.includes("-") && m.skor !== "- : -") {
+            const parts = m.skor.split("-").map((s: string) => parseInt(s.trim(), 10));
+            if (!isNaN(parts[0]) && !isNaN(parts[1])) {
+              homeScore = parts[0];
+              awayScore = parts[1];
+            }
+          }
+          allMatches.push({
+            id: m.id || `2lig_${m.grup_no}_${m.mac_no}`,
+            match_no: m.mac_no || "",
+            date: m.tarih || "",
+            time: m.saat || "",
+            hall: m.salon || "",
+            home_team: m.takim_a,
+            away_team: m.takim_b,
+            category: "Kadınlar 2. Ligi",
+            age_group: "Genç",
+            gender: "Kız",
+            group: m.grup_adi || `Grup ${m.grup_no}`,
+            city: m.sehir || "Türkiye",
+            status: m.durum === "BİTTİ" ? "finished" : "upcoming",
+            score: m.skor && m.skor !== "- : -" ? m.skor : undefined,
+            set_scores: setScores,
+            home_score: homeScore,
+            away_score: awayScore,
+          });
+        }
+      }
+
+      // 2. Gruplar ve Puan Durumları
+      if (Array.isArray(k2.gruplar)) {
+        if (!standingsByCity["TVF Kadınlar 2. Ligi"]) {
+          standingsByCity["TVF Kadınlar 2. Ligi"] = {
+            city: "TVF Kadınlar 2. Ligi",
+            standings: {},
+          };
+        }
+        for (const g of k2.gruplar) {
+          const groupName = g.grup_adi || `Grup ${g.grup_no}`;
+          const table: StandingItem[] = (g.puan_durumu || []).map((t: any) => ({
+            rank: t.sira || 0,
+            team: t.takim_adi,
+            played: t.o || 0,
+            won: t.g || 0,
+            lost: t.m || 0,
+            points: t.p || 0,
+            sets_for: t.as || 0,
+            sets_against: t.vs || 0,
+            sets_ratio: String(t.sav || "0"),
+            points_for: t.asp || 0,
+            points_against: t.vsp || 0,
+            points_ratio: String(t.spav || "0"),
+          }));
+          standingsByCity["TVF Kadınlar 2. Ligi"].standings[groupName] = table;
+        }
+      }
+    } catch (err) {
+      console.error("Error loading kadinlar_2_lig.json in teamData:", err);
+    }
+  }
+
   cachedAllData = {
     matches: applyOverridesToMatches(allMatches),
     standingsByCity,
@@ -289,8 +365,9 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     const awaySlug = slugify(m.away_team);
     const mCity = m.city || "İstanbul";
 
-    // Şehir izolasyonu: Takım profilinde SADECE o ilin maçları gösterilir
-    if (normalizeCitySlug(mCity) !== selectedCitySlug) {
+    // Şehir izolasyonu: Altyapı liglerinde sadece o ilin maçları; ulusal liglerde (Kadınlar 2. Ligi) tüm maçlar
+    const isNationalMatch = m.category === "Kadınlar 2. Ligi";
+    if (!isNationalMatch && normalizeCitySlug(mCity) !== selectedCitySlug) {
       continue;
     }
 
@@ -336,9 +413,10 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     }
   }
 
-  // Puan durumları (SADECE seçili şehir)
+  // Puan durumları (seçili şehir veya ulusal ligler)
   for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
-    if (normalizeCitySlug(cityName) !== selectedCitySlug) {
+    const isNationalStandings = cityName === "TVF Kadınlar 2. Ligi";
+    if (!isNationalStandings && normalizeCitySlug(cityName) !== selectedCitySlug) {
       continue;
     }
 
@@ -358,9 +436,12 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
         );
       });
       if (foundRow) {
+        const is2Lig = cityName === "TVF Kadınlar 2. Ligi" || groupName.includes("Grup");
         const isGenc = groupName.includes("Genç") || groupName.includes("U18");
         const is1Lig = groupName.includes("1. Lig") || groupName.includes("1.Lig") || groupName.includes("1. Ligi");
-        const cat = isGenc
+        const cat = is2Lig && cityName === "TVF Kadınlar 2. Ligi"
+          ? "Kadınlar 2. Ligi"
+          : isGenc
           ? (is1Lig ? "Genç Kızlar 1. Ligi" : "Genç Kızlar Süper Lig")
           : groupName.includes("Yıldız") || groupName.includes("U16")
           ? "Yıldız Kızlar Süper Lig"
@@ -368,9 +449,9 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
         categoriesSet.add(cat);
 
         standingsContexts.push({
-          groupName,
+          groupName: is2Lig && cityName === "TVF Kadınlar 2. Ligi" ? `TVF Kadınlar 2. Ligi - ${groupName}` : groupName,
           category: cat,
-          city: selectedCity,
+          city: is2Lig && cityName === "TVF Kadınlar 2. Ligi" ? (selectedCity || "Türkiye") : selectedCity,
           standingRow: foundRow,
           fullGroupTable: table,
         });
@@ -399,7 +480,13 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
 
   // Volleybox profili - o ilin takımına özel eşleme
   const firstCat = Array.from(categoriesSet)[0];
-  const mapping = getVolleyboxMapping(officialTeamName, firstCat, undefined, selectedCity);
+  let mapping = getVolleyboxMapping(officialTeamName, firstCat, undefined, selectedCity);
+  if (!mapping) {
+    mapping = getVolleyboxMapping(officialTeamName, "Kadınlar 2. Ligi", undefined, selectedCity);
+  }
+  if (!mapping) {
+    mapping = getVolleyboxMapping(officialTeamName);
+  }
 
   // Bu kulübün diğer illerdeki takımları
   const otherCities: OtherCityTeam[] = allAvailableCities

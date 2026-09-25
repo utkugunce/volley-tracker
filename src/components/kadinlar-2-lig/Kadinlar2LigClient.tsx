@@ -2,6 +2,8 @@
 
 import React, { useState, useTransition } from "react";
 import { Kadinlar2LigData } from "@/types/kadinlar2Lig";
+import { Match } from "@/types/fixture";
+import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
 import { Kadinlar2LigHeader } from "./Kadinlar2LigHeader";
 import { Kadinlar2LigGroupBar } from "./Kadinlar2LigGroupBar";
 import { Kadinlar2LigStandings } from "./Kadinlar2LigStandings";
@@ -22,6 +24,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [justUpdated, setJustUpdated] = useState<boolean>(false);
+  const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
 
   const currentGroupData = data.gruplar.find((g) => g.grup_no === selectedGroup) || data.gruplar[0];
 
@@ -84,6 +87,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           <Kadinlar2LigFixtures
             group={currentGroupData}
             searchQuery={searchQuery}
+            onSelectMatch={setSelectedMatch}
           />
         )}
 
@@ -102,6 +106,13 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           />
         )}
       </main>
+
+      {/* 4. Maç Detay ve Salon Çekmecesi */}
+      <MatchCenterDrawer
+        match={selectedMatch}
+        onClose={() => setSelectedMatch(null)}
+        city="Türkiye"
+      />
 
       {/* 4. Özel Kadınlar 2. Ligi Footer'ı */}
       <footer className="bg-[#0b0816] border-t border-purple-900/40 py-6 text-center text-xs text-purple-300/60">

@@ -32,7 +32,7 @@ import { FormBadge } from "@/components/FormBadge";
 import { TeamRosterView } from "@/components/TeamRosterView";
 import { trLower } from "@/utils/turkishLocale";
 
-const getClubBrandColors = (teamName: string) => {
+const getClubBrandColors = (teamName: string, is2Lig: boolean = false) => {
   const lower = trLower(teamName);
   if (lower.includes("fenerbahçe")) {
     return {
@@ -72,6 +72,14 @@ const getClubBrandColors = (teamName: string) => {
       glowAway: "bg-slate-700/30",
       accentBorder: "border-slate-500/40",
       gradient: "from-slate-800/60 via-slate-900 to-slate-950",
+    };
+  }
+  if (is2Lig) {
+    return {
+      glowHome: "bg-fuchsia-600/20",
+      glowAway: "bg-purple-600/15",
+      accentBorder: "border-fuchsia-500/35",
+      gradient: "from-purple-950/50 via-[#0b1325] to-[#1e1b4b]/60",
     };
   }
   return {
@@ -142,7 +150,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
   const [downloadingSeason, setDownloadingSeason] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const isFav = isFavorite(team.teamName);
-  const brand = getClubBrandColors(team.teamName);
+  const is2LigTeam = team.categories.some((c) => c.includes("Kadınlar 2. Ligi"));
+  const brand = getClubBrandColors(team.teamName, is2LigTeam);
 
   const filteredMatches = team.matches.filter((m) => {
     if (matchFilter === "finished") return m.status === "finished";
@@ -174,13 +183,27 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
       {/* 1. ÜST NAVİGASYON VE BAŞLIK BÖLÜMÜ */}
       <header className="sticky top-0 z-40 bg-[#0b1325]/95 backdrop-blur-md border-b border-slate-800 shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
-          >
-            <ChevronLeft size={16} />
-            <span>Ana Sayfa</span>
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
+            >
+              <ChevronLeft size={16} />
+              <span>Ana Sayfa</span>
+            </Link>
+
+            {is2LigTeam && (
+              <Link
+                href="/kadinlar-2-ligi"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-fuchsia-300 hover:text-white bg-fuchsia-950/70 hover:bg-fuchsia-900/80 px-3 py-1.5 rounded-lg border border-fuchsia-700/60 transition-colors shadow-xs"
+                title="TVF Kadınlar 2. Ligi Paneli"
+              >
+                <Trophy size={13} className="text-pink-400" />
+                <span className="hidden sm:inline">2. Lig Paneli</span>
+                <span className="sm:hidden">2. Lig</span>
+              </Link>
+            )}
+          </div>
 
           <div className="flex items-center gap-2">
             <Link
@@ -273,15 +296,22 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                     {city}
                   </span>
                 ))}
-                {team.categories.map((cat) => (
-                  <span
-                    key={cat}
-                    className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-primary/20 text-primary border border-primary/30"
-                  >
-                    <Activity size={11} />
-                    {cat}
-                  </span>
-                ))}
+                {team.categories.map((cat) => {
+                  const is2Lig = cat.includes("Kadınlar 2. Ligi");
+                  return (
+                    <span
+                      key={cat}
+                      className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full border transition-all ${
+                        is2Lig
+                          ? "bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-500/40 shadow-[0_0_12px_rgba(217,70,239,0.25)]"
+                          : "bg-primary/20 text-primary border-primary/30"
+                      }`}
+                    >
+                      <Activity size={11} className={is2Lig ? "text-pink-400" : ""} />
+                      {cat}
+                    </span>
+                  );
+                })}
               </div>
 
               <div className="flex items-center gap-2.5 flex-wrap">
@@ -443,7 +473,15 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary"></span>
                     <span>{ctx.groupName}</span>
-                    <span className="text-xs text-slate-400 font-normal">({ctx.city})</span>
+                    <span className="text-xs text-slate-400 font-normal">
+                      {ctx.city === "TVF Kadınlar 2. Ligi" ? (
+                        <Link href="/kadinlar-2-ligi" className="text-fuchsia-400 hover:text-fuchsia-300 hover:underline">
+                          (TVF Kadınlar 2. Ligi)
+                        </Link>
+                      ) : (
+                        `(${ctx.city})`
+                      )}
+                    </span>
                   </h3>
                   <div className="text-xs text-slate-300">
                     Sıra: <strong className="text-amber-400 font-black">#{ctx.standingRow.rank}</strong>

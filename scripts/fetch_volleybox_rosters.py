@@ -266,6 +266,7 @@ def main():
     parser = argparse.ArgumentParser(description="Volleybox Kadro Çekme Scripti")
     parser.add_argument("--team", type=str, help="Sadece ismi eşleşen takımı tara (örn: 'VakıfBank')")
     parser.add_argument("--city", type=str, help="Sadece bu şehre ait takımları tara (örn: 'istanbul')")
+    parser.add_argument("--league", type=str, help="Sadece bu lige ait takımları tara (örn: 'Kadınlar 2. Ligi')")
     parser.add_argument("--limit", type=int, help="Maksimum taranacak takım sayısı")
     parser.add_argument("--delay", type=float, default=0.6, help="İstekler arası bekleme süresi (sn)")
     parser.add_argument("--force", action="store_true", help="Zaten çekilmiş takımları tekrar tara")
@@ -293,6 +294,12 @@ def main():
         t_id = extract_team_id(u)
         if not t_id:
             continue
+
+        # Lig filtresi
+        if args.league:
+            cat = (m.get("internal_category") or "").lower()
+            if args.league.lower() not in cat:
+                continue
 
         # Şehir veya takım filtresi
         if args.city:

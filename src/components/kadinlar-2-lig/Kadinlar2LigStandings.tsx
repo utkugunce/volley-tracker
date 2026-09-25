@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ExternalLink, Trophy, HelpCircle, ChevronRight, Shield } from "lucide-react";
+import Link from "next/link";
+import { ExternalLink, Trophy, HelpCircle, ChevronRight, Shield, User } from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
+import { slugify } from "@/utils/slugify";
 
 interface Kadinlar2LigStandingsProps {
   group: Kadinlar2LigGroup;
@@ -121,23 +123,27 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
 
                       {/* Takım Logo & İsim */}
                       <td className="py-2.5 px-3">
-                        <div className="flex items-center gap-2.5">
+                        <Link
+                          href={`/takim/${slugify(team.takim_adi)}`}
+                          className="flex items-center gap-2.5 group/team cursor-pointer"
+                          title={`${team.takim_adi} Detaylı Kulüp Profili`}
+                        >
                           {team.logo && !team.logo.includes("takimlogoyok") ? (
                             <img
                               src={team.logo}
                               alt={team.takim_adi}
-                              className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
+                              className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 group-hover/team:scale-110 transition-transform"
                               onError={(e) => {
                                 (e.currentTarget as HTMLImageElement).style.display = "none";
                               }}
                             />
                           ) : (
-                            <div className="w-6 h-6 rounded-md bg-purple-900/60 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
+                            <div className="w-6 h-6 rounded-md bg-purple-900/60 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0 group-hover/team:border-pink-500 transition-colors">
                               {team.takim_adi.slice(0, 2)}
                             </div>
                           )}
                           <div className="min-w-0">
-                            <span className="font-semibold text-slate-100 hover:text-white truncate block text-xs sm:text-[13px]">
+                            <span className="font-semibold text-slate-100 group-hover/team:text-pink-300 transition-colors truncate block text-xs sm:text-[13px] group-hover/team:underline underline-offset-2">
                               {team.takim_adi}
                             </span>
                             {isPlayoff && (
@@ -146,7 +152,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                               </span>
                             )}
                           </div>
-                        </div>
+                        </Link>
                       </td>
 
                       {/* O, G, M */}
@@ -183,22 +189,29 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                         </>
                       )}
 
-                      {/* Volleybox Kadro Butonu */}
+                      {/* Profil & Volleybox Butonları */}
                       <td className="py-2.5 px-3 text-right">
-                        {team.volleybox_url ? (
-                          <a
-                            href={team.volleybox_url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-cyan-950/60 hover:bg-cyan-900/80 text-cyan-300 hover:text-white border border-cyan-700/40 text-[11px] font-medium transition-all shadow-xs"
-                            title={`${team.takim_adi} Volleybox Kadro ve İstatistikleri`}
+                        <div className="flex items-center justify-end gap-1.5">
+                          <Link
+                            href={`/takim/${slugify(team.takim_adi)}`}
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-purple-900/50 hover:bg-purple-800 text-purple-200 hover:text-white border border-purple-700/40 text-[11px] font-semibold transition-all shadow-xs"
+                            title={`${team.takim_adi} Kulüp Profilini Aç`}
                           >
-                            <span>Volleybox</span>
-                            <ExternalLink size={10} />
-                          </a>
-                        ) : (
-                          <span className="text-[10px] text-slate-600">-</span>
-                        )}
+                            <span>Profil</span>
+                          </Link>
+                          {team.volleybox_url ? (
+                            <a
+                              href={team.volleybox_url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-cyan-950/60 hover:bg-cyan-900/80 text-cyan-300 hover:text-white border border-cyan-700/40 text-[11px] font-medium transition-all shadow-xs"
+                              title={`${team.takim_adi} Volleybox Kadro ve İstatistikleri`}
+                            >
+                              <span>Volleybox</span>
+                              <ExternalLink size={9} />
+                            </a>
+                          ) : null}
+                        </div>
                       </td>
                     </tr>
                   );
