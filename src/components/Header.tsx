@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home } from "lucide-react";
+import Link from "next/link";
+import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -89,6 +90,21 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="text-slate-600">•</span>
             <span className="text-amber-400/90 font-medium tracking-wide">Genç & Yıldız Kızlar Süper Lig</span>
           </div>
+
+          {/* Kadınlar 2. Ligi Sayfasına Geçiş Butonu */}
+          <Link
+            href="/kadinlar-2-ligi"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-xs shadow-md shadow-purple-900/40 hover:shadow-purple-700/60 transition-all hover:scale-105 active:scale-95 border border-purple-400/40 ml-0.5 sm:ml-1"
+            title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
+            </span>
+            <span className="tracking-wide">Kadınlar 2. Ligi</span>
+            <span className="text-[10px] bg-white/20 px-1 py-0.2 rounded font-mono hidden sm:inline">16 Grup</span>
+            <ArrowRight size={12} className="text-pink-200" />
+          </Link>
         </div>
 
         {/* Sağ Taraf: Arama, Favoriler, Yazdır, Canlı Yenile */}
@@ -295,6 +311,16 @@ export const Header: React.FC<HeaderProps> = ({
           <Layers size={13} className={activeTab === "group-status" ? "text-primary" : "text-slate-400"} />
           <span>GRUP DURUMU</span>
         </button>
+
+        {/* Kadınlar 2. Ligi Sekme Butonu (Sağ Taraf) */}
+        <Link
+          href="/kadinlar-2-ligi"
+          className="ml-auto flex items-center gap-1.5 py-1 px-3 rounded-lg bg-purple-950/70 hover:bg-purple-900/80 border border-purple-600/50 text-purple-200 hover:text-white text-[11px] font-bold tracking-wide transition-all shrink-0 hover:scale-102"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse"></span>
+          <span>⚡ Kadınlar 2. Ligi</span>
+          <span className="text-[10px] text-purple-400 font-mono">→</span>
+        </Link>
       </div>
     </header>
   );

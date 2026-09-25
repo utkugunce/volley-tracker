@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T10:37:51.618872",
+  "updated_at": "2026-09-25T13:22:50.487363",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -1495,18 +1495,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400355",
+        "url": "https://women.volleybox.net/tr/07-mega-spor-kulubu-u16-antalya-ac-koleji-spor-kulubu-u16-c400355",
+        "host_name": "07 Mega Spor Kulübü U16",
+        "guest_name": "Antalya Açı Koleji Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "18:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "18:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -1529,18 +1536,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400358",
+        "url": "https://women.volleybox.net/tr/sistem-egitim-spor-kulubu-u16-kemer-sarp-spor-kulubu-u16-c400358",
+        "host_name": "Sistem Eğitim Spor Kulübü U16",
+        "guest_name": "Kemer Sarp Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "20:30",
+        "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "20:30",
+          "vb_hall": "Döşemealtı Spor Salonu",
+          "details": "Saat Değişti (TVF: 19:00 / VB: 20:30)"
         }
       }
     },
@@ -1563,18 +1577,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400357",
+        "url": "https://women.volleybox.net/tr/elit-akdeniz-spor-kulubu-u16-antalya-simsek-gsk-u16-c400357",
+        "host_name": "Elit Akdeniz Spor Kulübü U16",
+        "guest_name": "Antalya Şimşek GSK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "20:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "20:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -1597,18 +1618,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "400356",
+        "url": "https://women.volleybox.net/tr/vera-spor-kulubu-u16-nova-spor-kulubu-u16-c400356",
+        "host_name": "Vera Spor Kulübü U16",
+        "guest_name": "Nova Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "19:00",
+        "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "19:00",
+          "vb_hall": "Döşemealtı Spor Salonu",
+          "details": "Saat Değişti (TVF: 20:30 / VB: 19:00)"
         }
       }
     },
@@ -2391,6 +2419,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-09-25T10:39:12.927218"
+  "volleybox_synced_matches": 37,
+  "volleybox_sync_updated_at": "2026-09-25T13:26:21.223251"
 }

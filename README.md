@@ -46,8 +46,15 @@ pip install httpx beautifulsoup4
 
 ### 3. Fikstür ve Puan Durumunu Çekme (Python)
 ```bash
+# Sadece İstanbul ve Ankara:
 python scripts/run_scraper.py
+
+# 81 İl Verisini Eşzamanlı Çekme (Tüm Türkiye):
+python scripts/scrape_all_provinces.py
 ```
+
+> [!NOTE]
+> **AI Asistanı & Geliştirici Kuralı:** Proje üzerinde kod geliştirme, UI/tasarım değişiklikleri, hata düzeltmeleri veya veri senkronizasyonu yapıldığında en güncel bülten verisinin korunması için adım sonunda otomatik olarak `python scripts/scrape_all_provinces.py` çalıştırılır. Basit soru-cevap ("şu nasıl?", "tamam" vb.) promptlarında tetiklenmez; tereddütte kalındığında ise varsayımda bulunulmayıp doğrudan kullanıcıya sorulur. Detaylar için [AGENTS.md](AGENTS.md) dosyasına bakabilirsiniz.
 
 ### 4. Arayüzü Başlatma (Next.js)
 ```bash

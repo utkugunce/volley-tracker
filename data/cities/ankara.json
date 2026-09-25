@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T10:37:42.322889",
+  "updated_at": "2026-09-25T13:22:43.849813",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -1980,25 +1980,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401456",
-        "url": "https://women.volleybox.net/tr/blue-wolves-spor-kulubu-u16-akademi-atletik-spor-u16-c401456",
-        "host_name": "Blue Wolves Spor Kulübü U16",
-        "guest_name": "Akademi Atletik Spor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-03",
-        "vb_time": "18:00",
-        "vb_hall": "Mamak Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-03",
-          "vb_time": "18:00",
-          "vb_hall": "Mamak Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2532,6 +2525,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-09-25T10:39:12.943638"
+  "volleybox_synced_matches": 34,
+  "volleybox_sync_updated_at": "2026-09-25T13:26:20.954792"
 }

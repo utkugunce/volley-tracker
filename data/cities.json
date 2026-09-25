@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-25T10:38:10.569048+00:00",
+  "updated_at": "2026-09-25T13:23:06.674615+03:00",
   "total_cities": 81,
   "active_cities": 15,
-  "total_matches": 464,
+  "total_matches": 455,
   "cities": [
     {
       "ilid": "1",
@@ -109,10 +109,10 @@
       "name": "Bilecik",
       "slug": "bilecik",
       "url": "https://bilecik.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Puan Durumu Var (2 Tablo)",
       "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "standings_count": 2,
+      "data_file": "data/cities/bilecik.json"
     },
     {
       "ilid": "12",
@@ -339,8 +339,8 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (61 Maç Mevcut)",
-      "matches_count": 61,
+      "status": "Aktif (52 Maç Mevcut)",
+      "matches_count": 52,
       "standings_count": 15,
       "data_file": "data/cities/istanbul.json"
     },
