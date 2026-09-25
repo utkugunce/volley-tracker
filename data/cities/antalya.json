@@ -451,7 +451,29 @@
         "16-25",
         "15-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398685",
+        "url": "https://women.volleybox.net/tr/antalya-simsek-gsk-u18-luna-spor-kulubu-u18-c398685",
+        "host_name": "Antalya Şimşek GSK U18",
+        "guest_name": "Luna Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-09-19",
+        "vb_time": "14:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "14:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
+        }
+      }
     },
     {
       "id": "antalya-20260920-002",
@@ -474,7 +496,29 @@
         "13-25",
         "23-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398688",
+        "url": "https://women.volleybox.net/tr/antalya-simsek-gsk-u18-gazipasa-genclerbirligi-spor-kulubu-u18-c398688",
+        "host_name": "Antalya Şimşek GSK U18",
+        "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-09-20",
+        "vb_time": "13:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "13:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
+        }
+      }
     },
     {
       "id": "antalya-20260920-003",
@@ -497,7 +541,29 @@
         "25-8",
         "25-18"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398869",
+        "url": "https://women.volleybox.net/tr/07-zenit-spor-kulubu-u18-antalya-1907-spor-kulubu-u18-c398869",
+        "host_name": "07 Zenit Spor Kulübü U18",
+        "guest_name": "Antalya 1907 Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-09-20",
+        "vb_time": "15:00",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "15:00",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
+        }
+      }
     },
     {
       "id": "antalya-20260926-004",
@@ -519,14 +585,14 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "401034",
-        "url": "https://women.volleybox.net/tr/erse-spor-kulubu-u18-07-mega-spor-kulubu-u18-c401034",
-        "host_name": "Erse Spor Kulübü U18",
-        "guest_name": "07 Mega Spor Kulübü U18",
+        "match_id": "401026",
+        "url": "https://women.volleybox.net/tr/alanya-mask-spor-kulubu-u18-gazipasa-genclerbirligi-spor-kulubu-u18-c401026",
+        "host_name": "Alanya MASK Spor Kulübü U18",
+        "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-26",
-        "vb_time": "13:30",
+        "vb_time": "12:00",
         "vb_hall": "Alanya Atatürk Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -534,7 +600,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-26",
-          "vb_time": "13:30",
+          "vb_time": "12:00",
           "vb_hall": "Alanya Atatürk Spor Salonu",
           "details": null
         }
@@ -560,23 +626,23 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "401036",
-        "url": "https://women.volleybox.net/tr/antalya-ac-koleji-spor-kulubu-u18-erse-spor-kulubu-u18-c401036",
-        "host_name": "Antalya Açı Koleji Spor Kulübü U18",
-        "guest_name": "Erse Spor Kulübü U18",
+        "match_id": "401031",
+        "url": "https://women.volleybox.net/tr/akdeniz-bilgi-spor-kulubu-u18-alanya-mask-spor-kulubu-u18-c401031",
+        "host_name": "Akdeniz Bilgi Spor Kulübü U18",
+        "guest_name": "Alanya MASK Spor Kulübü U18",
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-27",
-        "vb_time": "12:00",
-        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+        "vb_time": "12:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-27",
-          "vb_time": "12:00",
-          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+          "vb_time": "12:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
           "details": null
         }
       }
@@ -601,23 +667,23 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "401037",
-        "url": "https://women.volleybox.net/tr/elit-akdeniz-spor-kulubu-u18-nova-spor-kulubu-u18-c401037",
-        "host_name": "Elit Akdeniz Spor Kulübü U18",
-        "guest_name": "Nova Spor Kulübü U18",
+        "match_id": "401033",
+        "url": "https://women.volleybox.net/tr/luna-spor-kulubu-u18-07-zenit-spor-kulubu-u18-c401033",
+        "host_name": "Luna Spor Kulübü U18",
+        "guest_name": "07 Zenit Spor Kulübü U18",
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-01",
-        "vb_time": "18:30",
-        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+        "vb_time": "19:00",
+        "vb_hall": "Kepez Turgut Özal Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-01",
-          "vb_time": "18:30",
-          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "vb_time": "19:00",
+          "vb_hall": "Kepez Turgut Özal Spor Salonu",
           "details": null
         }
       }
@@ -642,14 +708,14 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "401380",
-        "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u18-erse-spor-kulubu-u18-c401380",
-        "host_name": "Nova Spor Kulübü U18",
-        "guest_name": "Erse Spor Kulübü U18",
+        "match_id": "401379",
+        "url": "https://women.volleybox.net/tr/antalya-1907-spor-kulubu-u18-gazipasa-genclerbirligi-spor-kulubu-u18-c401379",
+        "host_name": "Antalya 1907 Spor Kulübü U18",
+        "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-04",
-        "vb_time": "11:00",
+        "vb_time": "12:30",
         "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -657,7 +723,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-04",
-          "vb_time": "11:00",
+          "vb_time": "12:30",
           "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
           "details": null
         }
@@ -680,7 +746,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261017-009",
@@ -699,7 +780,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261020-010",
@@ -718,7 +814,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20260920-011",
@@ -1546,7 +1657,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261017-031",
@@ -1565,7 +1691,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20260919-032",
@@ -1895,7 +2036,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261013-040",
@@ -1914,7 +2070,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261015-041",
@@ -1933,7 +2104,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261022-042",
@@ -1952,7 +2138,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261022-043",
@@ -1971,7 +2172,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20260919-044",
@@ -2170,7 +2386,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "antalya-20261025-049",
@@ -2189,7 +2420,24 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 37,
+  "volleybox_sync_updated_at": "2026-09-26T02:28:32.148324"
 }
