@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T20:53:45.611748",
+  "updated_at": "2026-09-25T21:05:43.052286",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -225,7 +225,7 @@
     "Yıldız Kızlar Süper Lig - - B Gr": [
       {
         "rank": 1,
-        "team": "Eskişehir Türktelekom Spor Kulübü (A)",
+        "team": "Şehir Koleji Eğitim Kültür SK U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -236,6 +236,17 @@
       },
       {
         "rank": 2,
+        "team": "Eskişehir Türktelekom Spor Kulübü (A)",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Eskişehir Ata Spor Kulübü (B)",
         "played": 1,
         "won": 0,
@@ -246,7 +257,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -257,19 +268,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Esnova Spor Kulübü (A)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Şehir Koleji Eğitim Kültür SK U16",
+        "team": "Esnova Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1156,11 +1156,15 @@
       "match_no": "2",
       "home_team": "Eskişehir Türktelekom Spor Kulübü (A)",
       "away_team": "Şehir Koleji Eğitim Kültür SK U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "2-25",
+        "1-25",
+        "6-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401060",
@@ -1283,22 +1287,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "eskisehir-20261002-023",
@@ -1724,7 +1713,5 @@
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-09-25T20:57:23.384055"
+  ]
 }

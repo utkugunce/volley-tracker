@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T20:54:03.452913",
+  "updated_at": "2026-09-25T21:05:57.816089",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -488,22 +488,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20260926-005",
@@ -874,7 +859,5 @@
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-09-25T20:57:24.513977"
+  ]
 }

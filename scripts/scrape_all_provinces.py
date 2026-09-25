@@ -882,7 +882,12 @@ def main():
     # Volleybox maç senkronizasyonunu otomatik çalıştır
     try:
         from scripts.sync_volleybox_matches import main as sync_vb_main
-        sync_vb_main()
+        old_argv = sys.argv
+        sys.argv = [sys.argv[0]] + [a for a in sys.argv[1:] if a not in ("--force", "-f")]
+        try:
+            sync_vb_main()
+        finally:
+            sys.argv = old_argv
     except Exception as vb_ex:
         print(f"Volleybox maç senkronizasyonu atlandı: {vb_ex}")
 

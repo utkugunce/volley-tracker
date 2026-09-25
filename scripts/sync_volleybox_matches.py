@@ -880,8 +880,8 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="TVF - Volleybox Maç Senkronizasyonu")
     parser.add_argument("--city", default=None, help="Belirli bir şehri senkronize et (örn: istanbul, izmir)")
-    parser.add_argument("--all", action="store_true", help="Tüm 32 turnuvayı tara (varsayılan: sadece aktif fikstürü olan iller)")
-    args = parser.parse_args()
+    parser.add_argument("--all", action="store_true", help="Tüm turnuvaları tara (varsayılan: sadece aktif fikstürü olan iller)")
+    args, _ = parser.parse_known_args()
 
     print("\n" + "=" * 75)
     print("🏐 TVF - VOLLEYBOX MAÇ SENKRONİZASYON MOTORU")
@@ -954,6 +954,7 @@ def main():
 
         c_name = l.get("city", "")
         c_slug = l.get("city_slug", "")
+        c_norm = normalize_name(c_name)
         internal_name = (l.get("internal_name") or "").lower()
         is_k2 = "2. lig" in internal_name or c_slug.lower() == "turkiye" or c_norm == "turkiye"
         if args.city:
