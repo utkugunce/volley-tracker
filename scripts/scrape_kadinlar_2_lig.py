@@ -401,6 +401,18 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
                 all_teams_map[t_name] = t
                 total_unique_teams += 1
 
+    # Önceki dosyadan Volleybox maç senkronizasyon verilerini koru (GitHub Actions veya periyodik cronlarda kaybolmasın)
+    existing_matches_map = {}
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, "r", encoding="utf-8") as ef:
+                prev_data = json.load(ef)
+                for pm in prev_data.get("tum_maclar", []):
+                    m_id = pm.get("id") or f"{pm.get('grup_no')}_{pm.get('mac_no')}"
+                    existing_matches_map[m_id] = pm
+        except Exception:
+            pass
+
     for g, matches in groups_fixtures.items():
         for m in matches:
             t_a = all_teams_map.get(m["takim_a"])
@@ -419,6 +431,14 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
                     m["takim_b_volleybox_name"] = t_b["volleybox_name"]
                 if t_b.get("logo") and "takimlogoyok" not in t_b.get("logo", ""):
                     m["takim_b_logo"] = t_b["logo"]
+
+            m_id = m.get("id") or f"{m.get('grup_no')}_{m.get('mac_no')}"
+            prev_m = existing_matches_map.get(m_id)
+            if prev_m:
+                if prev_m.get("volleybox") and not m.get("volleybox"):
+                    m["volleybox"] = prev_m["volleybox"]
+                if prev_m.get("discrepancy") and not m.get("discrepancy"):
+                    m["discrepancy"] = prev_m["discrepancy"]
 
     # Flatten all matches
     all_matches = []
@@ -456,8 +476,13 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
                 "tvf_fsw_portal": "https://fikstur.tvf.org.tr/FSW/MjAyNi0yMDI3/Sw%3d%3d/MkxL/VXptYW4gUG9zdGEgS2FkxLFubGFyIDIuIExpZw%3d%3d",
                 "volleybox_turnuva": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
                 "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
-            }
         },
+    }
+
+    synced_matches_count = sum(1 for m in all_matches if m.get("volleybox", {}).get("synced"))
+    if synced_matches_count > 0:
+        payload_data["metadata"]["volleybox_synced_matches"] = synced_matches_count
+        payload_data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
         "gruplar": [
             {
                 "grup_no": g,
