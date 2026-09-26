@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import {
   Trophy,
@@ -60,21 +60,18 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
 
   const { favoriteTeams: favorites, isFavorite, toggleFavorite } = useFavorites();
 
-  const { todayStr, yesterdayStr } = useMemo(() => {
-    const now = new Date();
-    const y = now.getFullYear();
-    const m = String(now.getMonth() + 1).padStart(2, "0");
-    const d = String(now.getDate()).padStart(2, "0");
-    const today = `${y}-${m}-${d}`;
+  // Bugün & Dün — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
+  const [todayStr, setTodayStr] = useState("");
+  const [yesterdayStr, setYesterdayStr] = useState("");
 
-    const yDate = new Date(now);
-    yDate.setDate(yDate.getDate() - 1);
-    const yy = yDate.getFullYear();
-    const ym = String(yDate.getMonth() + 1).padStart(2, "0");
-    const yd = String(yDate.getDate()).padStart(2, "0");
-    const yesterday = `${yy}-${ym}-${yd}`;
-
-    return { todayStr: today, yesterdayStr: yesterday };
+  useEffect(() => {
+    const computeDate = (offsetDays = 0) => {
+      const d = new Date();
+      d.setDate(d.getDate() - offsetDays);
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    };
+    setTodayStr(computeDate(0));
+    setYesterdayStr(computeDate(1));
   }, []);
 
   // Fikstür maçlarının benzersiz tarihleri

@@ -51,13 +51,14 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
   const currentGroupData = data.gruplar.find((g) => g.grup_no === selectedGroup) || data.gruplar[0];
 
-  // Günün maçları sayısı & Sonuçlar sayısı
-  const todayStr = useMemo(() => {
+  // Bugün tarihi — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
+  const [todayStr, setTodayStr] = useState("");
+  useEffect(() => {
     const d = new Date();
     const day = String(d.getDate()).padStart(2, "0");
     const month = String(d.getMonth() + 1).padStart(2, "0");
     const year = d.getFullYear();
-    return `${day}.${month}.${year}`;
+    setTodayStr(`${day}.${month}.${year}`);
   }, []);
 
   const todayMatchesCount = useMemo(() => {

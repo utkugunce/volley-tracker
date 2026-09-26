@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -47,12 +47,14 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
   const { isFavorite, toggleFavorite } = useFavorites();
   const [feedFilter, setFeedFilter] = useState<"all" | "today" | "upcoming" | "finished">("all");
 
-  const todayStr = useMemo(() => {
+  // Bugün tarihi — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
+  const [todayStr, setTodayStr] = useState("");
+  useEffect(() => {
     const d = new Date();
     const day = String(d.getDate()).padStart(2, "0");
     const month = String(d.getMonth() + 1).padStart(2, "0");
     const year = d.getFullYear();
-    return `${day}.${month}.${year}`;
+    setTodayStr(`${day}.${month}.${year}`);
   }, []);
 
   const allMatches = useMemo(() => data.tum_maclar || [], [data.tum_maclar]);

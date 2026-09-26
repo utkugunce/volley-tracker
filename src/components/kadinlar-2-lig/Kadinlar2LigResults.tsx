@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { CheckCircle2, Star, History, SearchX, RotateCcw } from "lucide-react";
 import { Kadinlar2LigMatch, Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
@@ -30,17 +30,19 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
   const [selectedGroupFilter, setSelectedGroupFilter] = useState<number | "all">("all");
   const [selectedResultDate, setSelectedResultDate] = useState<string>("all");
 
-  // Bugün ve Dün Tarihleri (ISO format: YYYY-MM-DD)
-  const { todayIso, yesterdayIso } = useMemo(() => {
-    const now = new Date();
-    const pad = (n: number) => String(n).padStart(2, "0");
-    const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  // Bugün & Dün — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
+  const [todayIso, setTodayIso] = useState("");
+  const [yesterdayIso, setYesterdayIso] = useState("");
 
-    const y = new Date();
-    y.setDate(y.getDate() - 1);
-    const yesterday = `${y.getFullYear()}-${pad(y.getMonth() + 1)}-${pad(y.getDate())}`;
-
-    return { todayIso: today, yesterdayIso: yesterday };
+  useEffect(() => {
+    const computeDate = (offsetDays = 0) => {
+      const d = new Date();
+      d.setDate(d.getDate() - offsetDays);
+      const pad = (n: number) => String(n).padStart(2, "0");
+      return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    };
+    setTodayIso(computeDate(0));
+    setYesterdayIso(computeDate(1));
   }, []);
 
   // Yalnızca sonuçlanan veya skoru olan maçlar

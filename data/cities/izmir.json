@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T14:39:18.698769",
+  "updated_at": "2026-09-26T15:12:08.185804",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -159,6 +159,17 @@
       },
       {
         "rank": 2,
+        "team": "Monza Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Özay Voleybol Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -169,7 +180,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Venüs Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -180,25 +191,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Göksu Atletik Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Monza Spor Kulübü - B U18",
-        "played": 0,
+        "team": "Göksu Atletik Spor Kulübü U16",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -352,6 +352,17 @@
     "Genç Kızlar 1. Ligi - Genç Kız - B Gr": [
       {
         "rank": 1,
+        "team": "Altınordu Voleybol - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "İzmir Altınay Spor Kulübü - B U18",
         "played": 1,
         "won": 1,
@@ -362,7 +373,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Özateş SK U18",
         "played": 1,
         "won": 0,
@@ -373,7 +384,18 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
+        "team": "Smyrna Voleybol Kulübü - B U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Altekma SK U18",
         "played": 0,
         "won": 0,
@@ -384,18 +406,7 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Altınordu Voleybol - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
+        "rank": 6,
         "team": "Dokuz Eylül Voleybol U18",
         "played": 0,
         "won": 0,
@@ -406,7 +417,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Dost Spor - C U18",
         "played": 0,
         "won": 0,
@@ -417,19 +428,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "KZY Bornova Spor Kulübü - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Smyrna Voleybol Kulübü - B U18",
+        "team": "KZY Bornova Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1535,11 +1535,15 @@
       "match_no": "4",
       "home_team": "Monza Spor Kulübü - B U18",
       "away_team": "Göksu Atletik Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-18",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398197",
@@ -2145,11 +2149,15 @@
       "match_no": "2",
       "home_team": "Altınordu Voleybol - B U18",
       "away_team": "Smyrna Voleybol Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-6",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399281",
@@ -4270,5 +4278,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-26T14:43:20.749526"
+  "volleybox_sync_updated_at": "2026-09-26T15:16:03.834463"
 }

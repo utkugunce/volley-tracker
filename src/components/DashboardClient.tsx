@@ -368,23 +368,23 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   };
 
 
-  // Bugün tarihi
-  const todayStr = useMemo(() => {
-    const d = new Date();
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  }, []);
+  // Bugün & Dün tarihleri — sadece client tarafında hesaplanır.
+  // useMemo yerine useEffect kullanılır: SSR (UTC) vs istemci (UTC+3) timezone farkından
+  // kaynaklanan React hydration error #418 (metin uyuşmazlığı) önlenir.
+  const [todayStr, setTodayStr] = useState("");
+  const [yesterdayStr, setYesterdayStr] = useState("");
 
-  // Dün tarihi
-  const yesterdayStr = useMemo(() => {
-    const d = new Date();
-    d.setDate(d.getDate() - 1);
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
+  useEffect(() => {
+    const computeDate = (offsetDays = 0) => {
+      const d = new Date();
+      d.setDate(d.getDate() - offsetDays);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    };
+    setTodayStr(computeDate(0));
+    setYesterdayStr(computeDate(1));
   }, []);
 
   // Bugün oynanacak maç sayısı (Header rozeti için)
