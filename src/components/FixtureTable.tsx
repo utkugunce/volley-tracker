@@ -241,8 +241,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   <td className={`py-2.5 px-2 text-center w-8 rounded-l-xl border-l border-y ${cardBorderClass} ${hasDiff ? "border-l-4 border-l-amber-500" : isFav ? "border-l-3 border-l-amber-400" : ""}`}>
                     <button
                       onClick={() => onToggleFavorite?.(match.id)}
-                      className="p-1 rounded-lg text-slate-500 hover:text-amber-400 hover:bg-slate-800/80 transition-all active:scale-90"
+                      className="p-1 min-w-[28px] min-h-[28px] inline-flex items-center justify-center rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-all active:scale-90"
                       title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+                      aria-label={isFav ? `${match.home_team} - ${match.away_team} maçını favorilerden çıkar` : `${match.home_team} - ${match.away_team} maçını favorilere ekle`}
                     >
                       <Star
                         size={13}
@@ -624,8 +625,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     </button>
                     <button
                       onClick={() => onToggleFavorite?.(match.id)}
-                      className="p-1 rounded-md text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
+                      className="p-1 min-w-[28px] min-h-[28px] flex items-center justify-center rounded-md text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
                       title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+                      aria-label={isFav ? `${match.home_team} - ${match.away_team} maçını favorilerden çıkar` : `${match.home_team} - ${match.away_team} maçını favorilere ekle`}
                     >
                       <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
                     </button>

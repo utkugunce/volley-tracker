@@ -115,7 +115,6 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
               onClick={onOpenSearch}
               className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/60 transition-all active:scale-95 cursor-pointer"
               title="Hızlı Arama (Ctrl + K)"
-              aria-label="Arama"
             >
               <Search size={13} className="text-slate-400" />
               <span className="hidden md:inline font-medium text-[11px] text-slate-400">Ara</span>
@@ -160,7 +159,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           <div className="relative">
             <button
               onClick={() => setShowLinksModal(!showLinksModal)}
-              className="p-1.5 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all active:scale-95 border border-slate-700/60"
+              className="p-2 sm:p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all active:scale-95 border border-slate-700/60"
               title="Resmi TVF ve Volleybox Bağlantıları"
               aria-label="Resmi Bağlantılar"
             >
@@ -220,8 +219,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Yazdır Butonu */}
           <button
             onClick={() => window.print()}
-            className="p-1.5 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all active:scale-95 no-print border border-slate-700/60 hover:border-slate-600"
+            className="p-2 sm:p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all active:scale-95 no-print border border-slate-700/60 hover:border-slate-600"
             title="Yazdır"
+            aria-label="Yazdır"
           >
             <Printer size={14} />
           </button>
@@ -238,7 +238,6 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border-slate-700/60 hover:border-slate-600"
             }`}
             title="TVF ve Volleybox verilerini yenile"
-            aria-label="Verileri Yenile"
           >
             {isLoading ? (
               <>

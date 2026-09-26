@@ -170,7 +170,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             <Flame size={13} className={feedFilter === "today" ? "fill-white/30 text-white" : "text-rose-400"} />
             <span>Bugün</span>
             {stats.todayCount > 0 && (
-              <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-rose-500 text-white font-mono font-bold">
+              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-rose-700 text-white font-mono font-bold shadow-xs">
                 {stats.todayCount}
               </span>
             )}
@@ -453,7 +453,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                         <div className="px-2 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono font-bold text-xs">
                           {lead.points} P
                         </div>
-                        <div className="text-[9px] text-slate-500 mt-0.5 font-mono">
+                        <div className="text-[10px] text-slate-300 font-medium mt-0.5 font-mono">
                           {lead.won}/{lead.played} G
                         </div>
                       </div>
@@ -585,12 +585,13 @@ const MatchRow: React.FC<MatchRowProps> = ({
               e.stopPropagation();
               onToggleFavorite(match.id);
             }}
-            className={`p-1 rounded-md transition-colors ${
-              isFavorite ? "text-amber-400" : "text-slate-600 hover:text-amber-400"
+            className={`p-1.5 min-w-[28px] min-h-[28px] flex items-center justify-center rounded-md transition-colors ${
+              isFavorite ? "text-amber-400" : "text-slate-400 hover:text-amber-400"
             }`}
             title={isFavorite ? "Favorilerden Çıkar" : "Favoriye Ekle"}
+            aria-label={isFavorite ? "Favorilerden Çıkar" : "Favoriye Ekle"}
           >
-            <Star size={13} className={isFavorite ? "fill-amber-400" : ""} />
+            <Star size={14} className={isFavorite ? "fill-amber-400" : ""} />
           </button>
         </div>
       </div>

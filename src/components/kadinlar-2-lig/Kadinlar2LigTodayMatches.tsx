@@ -239,7 +239,7 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
                     <span className="font-semibold text-slate-200">{m.tarih}</span>
                     {m.saat && (
                       <span className="flex items-center gap-1 text-slate-400 font-mono">
-                        <Clock size={11} />
+                        <Clock size={12} />
                         {m.saat}
                       </span>
                     )}
@@ -249,7 +249,7 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
                   </div>
 
                   <div className="flex items-center gap-1 text-slate-400 truncate max-w-[200px]" title={`${m.sehir} - ${m.salon}`}>
-                    <MapPin size={11} className="shrink-0 text-rose-400" />
+                    <MapPin size={12} className="shrink-0 text-rose-400" />
                     <span className="truncate">{m.sehir} • {m.salon}</span>
                   </div>
                 </div>
@@ -315,15 +315,15 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
                                     triggerHaptic("selection");
                                     toggleFavorite(nameA);
                                   }}
-                                  className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
+                                  className="shrink-0 p-1 min-w-[28px] min-h-[28px] flex items-center justify-center text-slate-400 hover:text-amber-400 cursor-pointer"
                                   title={isFavA ? "Favorilerden çıkar" : "Favorilere ekle"}
                                 >
                                   <Star
-                                    size={11}
+                                    size={12}
                                     className={
                                       isFavA
                                         ? "fill-amber-400 text-amber-400"
-                                        : "text-slate-600 hover:text-amber-400"
+                                        : "text-slate-400 hover:text-amber-400"
                                     }
                                   />
                                 </button>
@@ -365,15 +365,15 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
                                     triggerHaptic("selection");
                                     toggleFavorite(nameB);
                                   }}
-                                  className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
+                                  className="shrink-0 p-1 min-w-[28px] min-h-[28px] flex items-center justify-center text-slate-400 hover:text-amber-400 cursor-pointer"
                                   title={isFavB ? "Favorilerden çıkar" : "Favorilere ekle"}
                                 >
                                   <Star
-                                    size={11}
+                                    size={12}
                                     className={
                                       isFavB
                                         ? "fill-amber-400 text-amber-400"
-                                        : "text-slate-600 hover:text-amber-400"
+                                        : "text-slate-400 hover:text-amber-400"
                                     }
                                   />
                                 </button>

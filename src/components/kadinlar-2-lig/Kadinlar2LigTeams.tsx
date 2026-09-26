@@ -129,15 +129,16 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                           triggerHaptic("selection");
                           toggleFavorite(displayName);
                         }}
-                        className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400 cursor-pointer"
+                        className="shrink-0 p-1 min-w-[28px] min-h-[28px] flex items-center justify-center text-slate-400 hover:text-amber-400 cursor-pointer"
                         title={isFav ? "Favorilerden çıkar" : "Favorilere ekle"}
+                        aria-label={isFav ? "Favorilerden çıkar" : "Favorilere ekle"}
                       >
                         <Star
-                          size={12}
+                          size={13}
                           className={
                             isFav
                               ? "fill-amber-400 text-amber-400"
-                              : "text-slate-600 hover:text-amber-400"
+                              : "text-slate-400 hover:text-amber-400"
                           }
                         />
                       </button>
