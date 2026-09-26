@@ -26,12 +26,15 @@ import {
 import { LeagueData } from "@/utils/leagueData";
 import { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
+import { FixtureTable } from "@/components/FixtureTable";
+import { DateRibbon } from "@/components/DateRibbon";
 import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
 import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
 import { useFavorites } from "@/utils/useFavorites";
 import { generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
-import { formatDateTurkish } from "@/utils/calendar";
+import { formatDateTurkish, compareMatchDateTime } from "@/utils/calendar";
+import { formatGroupName } from "@/utils/grouping";
 import { slugify } from "@/utils/slugify";
 import { downloadStandingsCsv } from "@/components/StandingsTable";
 
@@ -48,12 +51,71 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<LeagueTabType>(initialTab);
   const [selectedGroup, setSelectedGroup] = useState<string>("all");
+  const [selectedFixtureDate, setSelectedFixtureDate] = useState<string>("all");
+  const [selectedResultDate, setSelectedResultDate] = useState<string>("all");
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [teamSearchQuery, setTeamSearchQuery] = useState("");
 
-  const { isFavorite, toggleFavorite } = useFavorites();
+  const { favoriteTeams: favorites, isFavorite, toggleFavorite } = useFavorites();
+
+  const { todayStr, yesterdayStr } = useMemo(() => {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const d = String(now.getDate()).padStart(2, "0");
+    const today = `${y}-${m}-${d}`;
+
+    const yDate = new Date(now);
+    yDate.setDate(yDate.getDate() - 1);
+    const yy = yDate.getFullYear();
+    const ym = String(yDate.getMonth() + 1).padStart(2, "0");
+    const yd = String(yDate.getDate()).padStart(2, "0");
+    const yesterday = `${yy}-${ym}-${yd}`;
+
+    return { todayStr: today, yesterdayStr: yesterday };
+  }, []);
+
+  // Fikstür maçlarının benzersiz tarihleri
+  const uniqueFixtureDates = useMemo(() => {
+    const set = new Set(
+      league.upcomingMatches
+        .map((m) => m.date)
+        .filter((d) => d && d !== "TBD")
+    );
+    return Array.from(set).sort();
+  }, [league.upcomingMatches]);
+
+  const fixtureDateCounts = useMemo(() => {
+    const counts: { [dateStr: string]: number } = {};
+    league.upcomingMatches.forEach((m) => {
+      if (m.date && m.date !== "TBD") {
+        counts[m.date] = (counts[m.date] || 0) + 1;
+      }
+    });
+    return counts;
+  }, [league.upcomingMatches]);
+
+  // Sonuçlanan maçların benzersiz tarihleri (En yeni tarihten geriye doğru)
+  const uniqueResultDates = useMemo(() => {
+    const set = new Set(
+      league.finishedMatches
+        .map((m) => m.date)
+        .filter((d) => d && d !== "TBD")
+    );
+    return Array.from(set).sort().reverse();
+  }, [league.finishedMatches]);
+
+  const resultDateCounts = useMemo(() => {
+    const counts: { [dateStr: string]: number } = {};
+    league.finishedMatches.forEach((m) => {
+      if (m.date && m.date !== "TBD") {
+        counts[m.date] = (counts[m.date] || 0) + 1;
+      }
+    });
+    return counts;
+  }, [league.finishedMatches]);
 
   // Gruplar listesi
   const groupNames = useMemo(() => {
@@ -66,41 +128,103 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
     return league.groups.filter((g) => g.rawGroup === selectedGroup);
   }, [league.groups, selectedGroup]);
 
-  // Seçili gruba göre filtrelenmiş fikstür
+  // Seçili gruba ve tarihe göre filtrelenmiş fikstür
   const displayedUpcomingMatches = useMemo(() => {
     let list = league.upcomingMatches;
     if (selectedGroup !== "all") {
       list = list.filter((m) => m.group === selectedGroup || m.group?.includes(selectedGroup));
     }
+    if (selectedFixtureDate !== "all") {
+      list = list.filter((m) => m.date === selectedFixtureDate);
+    }
     if (teamSearchQuery.trim()) {
       const q = teamSearchQuery.toLowerCase();
       list = list.filter(
         (m) =>
           m.home_team.toLowerCase().includes(q) ||
           m.away_team.toLowerCase().includes(q) ||
-          m.hall.toLowerCase().includes(q)
+          m.hall.toLowerCase().includes(q) ||
+          (m.group && m.group.toLowerCase().includes(q))
       );
     }
     return list;
-  }, [league.upcomingMatches, selectedGroup, teamSearchQuery]);
+  }, [league.upcomingMatches, selectedGroup, selectedFixtureDate, teamSearchQuery]);
 
-  // Seçili gruba göre filtrelenmiş sonuçlar
+  // Seçili gruba ve tarihe göre filtrelenmiş sonuçlar
   const displayedFinishedMatches = useMemo(() => {
     let list = league.finishedMatches;
     if (selectedGroup !== "all") {
       list = list.filter((m) => m.group === selectedGroup || m.group?.includes(selectedGroup));
     }
+    if (selectedResultDate !== "all") {
+      list = list.filter((m) => m.date === selectedResultDate);
+    }
     if (teamSearchQuery.trim()) {
       const q = teamSearchQuery.toLowerCase();
       list = list.filter(
         (m) =>
           m.home_team.toLowerCase().includes(q) ||
           m.away_team.toLowerCase().includes(q) ||
-          m.hall.toLowerCase().includes(q)
+          m.hall.toLowerCase().includes(q) ||
+          (m.group && m.group.toLowerCase().includes(q))
       );
     }
     return list;
-  }, [league.finishedMatches, selectedGroup, teamSearchQuery]);
+  }, [league.finishedMatches, selectedGroup, selectedResultDate, teamSearchQuery]);
+
+  // Fikstür maçlarını gruplara göre düzenle (Anasayfadaki gibi FixtureTable formatında)
+  const upcomingSections = useMemo(() => {
+    const map = new Map<string, { title: string; subTitle: string; matches: Match[] }>();
+
+    displayedUpcomingMatches.forEach((m) => {
+      const groupName = m.group ? formatGroupName(m.group) : "Tek Grup";
+      if (!map.has(groupName)) {
+        map.set(groupName, {
+          title: league.category,
+          subTitle: groupName,
+          matches: [],
+        });
+      }
+      map.get(groupName)!.matches.push(m);
+    });
+
+    const sections = Array.from(map.values()).sort((a, b) =>
+      a.subTitle.localeCompare(b.subTitle, "tr", { numeric: true })
+    );
+
+    sections.forEach((sec) => {
+      sec.matches.sort((m1, m2) => compareMatchDateTime(m1, m2, "asc"));
+    });
+
+    return sections;
+  }, [displayedUpcomingMatches, league.category]);
+
+  // Sonuçlanan maçları gruplara göre düzenle (Anasayfadaki gibi FixtureTable formatında)
+  const finishedSections = useMemo(() => {
+    const map = new Map<string, { title: string; subTitle: string; matches: Match[] }>();
+
+    displayedFinishedMatches.forEach((m) => {
+      const groupName = m.group ? formatGroupName(m.group) : "Tek Grup";
+      if (!map.has(groupName)) {
+        map.set(groupName, {
+          title: league.category,
+          subTitle: groupName,
+          matches: [],
+        });
+      }
+      map.get(groupName)!.matches.push(m);
+    });
+
+    const sections = Array.from(map.values()).sort((a, b) =>
+      a.subTitle.localeCompare(b.subTitle, "tr", { numeric: true })
+    );
+
+    sections.forEach((sec) => {
+      sec.matches.sort((m1, m2) => compareMatchDateTime(m1, m2, "desc"));
+    });
+
+    return sections;
+  }, [displayedFinishedMatches, league.category]);
 
   // Filtrelenmiş takımlar
   const displayedTeams = useMemo(() => {
@@ -569,14 +693,28 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
           </div>
         )}
 
-        {/* TAB 2: FİKSTÜR (GELECEK MAÇLAR) */}
+        {/* TAB 2: FİKSTÜR (GELECEK MAÇLAR - ANASAYFA İLE AYNI FİXTURETABLE DÜZENİ) */}
         {activeTab === "fixtures" && (
           <div className="space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60 p-3.5 rounded-2xl border border-slate-800">
+            {/* Flashscore Yatay Tarih Şeridi (Fikstür Modunda) */}
+            {uniqueFixtureDates.length > 0 && (
+              <DateRibbon
+                dates={uniqueFixtureDates}
+                selectedDate={selectedFixtureDate}
+                onSelectDate={setSelectedFixtureDate}
+                dateCounts={fixtureDateCounts}
+                todayStr={todayStr}
+                yesterdayStr={yesterdayStr}
+                variant="red"
+              />
+            )}
+
+            {/* Arama ve Bilgi Kontrol Çubuğu */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
               <div className="flex items-center gap-2">
                 <Calendar size={18} className="text-primary" />
                 <h2 className="text-sm font-bold text-white">
-                  Oynanacak Karşılaşmalar ({displayedUpcomingMatches.length})
+                  Fikstür & Maç Programı ({displayedUpcomingMatches.length})
                 </h2>
               </div>
 
@@ -592,103 +730,78 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               </div>
             </div>
 
-            {displayedUpcomingMatches.length === 0 ? (
+            {/* Seçilen Tarihin Maçları Bilgi ve Kolay Geçiş Rozeti */}
+            {selectedFixtureDate !== "all" && (
+              <div className="flex items-center justify-between bg-sky-950/40 border border-sky-800/60 rounded-xl px-3.5 py-2.5 text-xs text-sky-300 shadow-sm flex-wrap gap-2">
+                <div className="flex items-center gap-2">
+                  <Calendar size={15} className="text-sky-400 shrink-0" />
+                  <span>
+                    <strong>Seçilen Tarih:</strong> {formatDateTurkish(selectedFixtureDate)}
+                  </span>
+                  <span className="text-[11px] bg-sky-500/20 text-sky-200 border border-sky-500/30 px-2 py-0.5 rounded-full font-bold font-mono">
+                    {displayedUpcomingMatches.length} Maç
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedFixtureDate("all")}
+                  className="text-xs text-sky-400 hover:text-sky-200 font-semibold underline underline-offset-2 transition-colors cursor-pointer"
+                >
+                  Tüm Fikstürü Göster ({league.stats.upcomingMatches})
+                </button>
+              </div>
+            )}
+
+            {upcomingSections.length === 0 ? (
               <div className="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-8 text-center text-slate-400 text-sm">
-                Planlanmış gelecek maç bulunamadı.
+                {selectedFixtureDate !== "all"
+                  ? `${formatDateTurkish(selectedFixtureDate)} tarihinde oynanacak maç bulunmuyor.`
+                  : teamSearchQuery
+                  ? "Aramanıza uygun gelecek maç bulunamadı."
+                  : "Planlanmış gelecek maç bulunamadı."}
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {displayedUpcomingMatches.map((m) => {
-                  const fav = isFavorite(m.id);
-                  return (
-                    <div
-                      key={m.id}
-                      className="glass-panel border border-slate-800/80 hover:border-slate-700 rounded-2xl p-4 transition-all duration-200 flex flex-col justify-between gap-3 group"
-                    >
-                      <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-800/80">
-                        <div className="flex items-center gap-2 text-slate-400 font-mono">
-                          <Calendar size={13} className="text-primary" />
-                          <span>{m.date ? formatDateTurkish(m.date) : "TBD"}</span>
-                          <span>•</span>
-                          <Clock size={13} />
-                          <span>{m.time || "--:--"}</span>
-                        </div>
-
-                        <div className="flex items-center gap-2">
-                          <span className="text-[11px] font-semibold text-slate-400 bg-slate-800 px-2 py-0.5 rounded-md">
-                            {m.group || league.category}
-                          </span>
-                          <button
-                            onClick={() => toggleFavorite(m.id)}
-                            className="text-slate-500 hover:text-amber-400 transition-colors p-1"
-                            title={fav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
-                          >
-                            <Star size={14} className={fav ? "fill-amber-400 text-amber-400" : ""} />
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Eşleşme */}
-                      <div className="flex items-center justify-between gap-3 py-1">
-                        <div className="flex-1 text-right">
-                          <TeamVolleyboxLink
-                            teamName={m.home_team}
-                            category={league.category}
-                            city={league.city}
-                            className="font-bold text-white text-sm hover:text-primary transition-colors block truncate"
-                          />
-                        </div>
-
-                        <div className="shrink-0 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-[11px] font-mono text-slate-400">
-                          vs
-                        </div>
-
-                        <div className="flex-1 text-left">
-                          <TeamVolleyboxLink
-                            teamName={m.away_team}
-                            category={league.category}
-                            city={league.city}
-                            className="font-bold text-white text-sm hover:text-primary transition-colors block truncate"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Salon Bilgisi */}
-                      <div className="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800/80">
-                        <div className="flex items-center gap-1.5 truncate">
-                          <MapPin size={12} className="text-slate-500 shrink-0" />
-                          <span className="truncate">{m.hall}</span>
-                        </div>
-
-                        {m.volleybox?.url && (
-                          <a
-                            href={m.volleybox.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-emerald-400 hover:text-emerald-300 font-semibold inline-flex items-center gap-1 shrink-0"
-                            title="Volleybox maç kaydı"
-                          >
-                            <span>Volleybox</span>
-                            <ExternalLink size={10} />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="space-y-4">
+                {upcomingSections.map((sec, idx) => (
+                  <FixtureTable
+                    key={`${sec.title}-${sec.subTitle}-${idx}`}
+                    title={sec.title}
+                    subTitle={sec.subTitle}
+                    matches={sec.matches}
+                    favorites={favorites}
+                    onToggleFavorite={toggleFavorite}
+                    city={league.city}
+                    showCityBadge={false}
+                    onSelectMatch={setSelectedMatch}
+                  />
+                ))}
               </div>
             )}
           </div>
         )}
 
-        {/* TAB 3: SONUÇLAR (BİTEN MAÇLAR) */}
+        {/* TAB 3: SONUÇLAR (BİTEN MAÇLAR - ANASAYFA İLE AYNI FİXTURETABLE DÜZENİ) */}
         {activeTab === "results" && (
           <div className="space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60 p-3.5 rounded-2xl border border-slate-800">
+            {/* Flashscore Yatay Tarih Şeridi (Sonuçlar Modunda - Zümrüt Yeşili) */}
+            {uniqueResultDates.length > 0 && (
+              <DateRibbon
+                dates={uniqueResultDates}
+                selectedDate={selectedResultDate}
+                onSelectDate={setSelectedResultDate}
+                dateCounts={resultDateCounts}
+                todayStr={todayStr}
+                yesterdayStr={yesterdayStr}
+                variant="emerald"
+              />
+            )}
+
+            {/* Arama ve Bilgi Kontrol Çubuğu */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={18} className="text-emerald-400" />
                 <h2 className="text-sm font-bold text-white">
-                  Tamamlanan Karşılaşmalar ({displayedFinishedMatches.length})
+                  Oynanan Maç Sonuçları ({displayedFinishedMatches.length})
                 </h2>
               </div>
 
@@ -704,93 +817,56 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               </div>
             </div>
 
-            {displayedFinishedMatches.length === 0 ? (
+            {/* Seçilen Tarihin Sonuçları Bilgi ve Kolay Geçiş Rozeti */}
+            {selectedResultDate !== "all" && (
+              <div className="flex items-center justify-between bg-emerald-950/40 border border-emerald-800/60 rounded-xl px-3.5 py-2.5 text-xs text-emerald-300 shadow-sm flex-wrap gap-2">
+                <div className="flex items-center gap-2">
+                  <Calendar size={15} className="text-emerald-400 shrink-0" />
+                  <span>
+                    <strong>
+                      {selectedResultDate === yesterdayStr
+                        ? "Dünün Sonuçları:"
+                        : `${formatDateTurkish(selectedResultDate)} Sonuçları:`}
+                    </strong>{" "}
+                    {formatDateTurkish(selectedResultDate)}
+                  </span>
+                  <span className="text-[11px] bg-emerald-500/20 text-emerald-200 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold font-mono">
+                    {displayedFinishedMatches.length} Maç
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedResultDate("all")}
+                  className="text-xs text-emerald-400 hover:text-emerald-200 font-semibold underline underline-offset-2 transition-colors cursor-pointer"
+                >
+                  Tüm Sonuçları Göster ({league.stats.finishedMatches})
+                </button>
+              </div>
+            )}
+
+            {finishedSections.length === 0 ? (
               <div className="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-8 text-center text-slate-400 text-sm">
-                Henüz tamamlanmış maç skoru bulunmuyor.
+                {selectedResultDate !== "all"
+                  ? `${formatDateTurkish(selectedResultDate)} tarihinde sonuçlanan maç bulunmuyor.`
+                  : teamSearchQuery
+                  ? "Aramanıza uygun tamamlanan maç bulunamadı."
+                  : "Henüz tamamlanmış maç skoru bulunmuyor."}
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {displayedFinishedMatches.map((m) => {
-                  const forfeit = getMatchForfeitInfo(m);
-                  return (
-                    <div
-                      key={m.id}
-                      className="glass-panel border border-slate-800/80 hover:border-slate-700 rounded-2xl p-4 transition-all duration-200 flex flex-col justify-between gap-3 group"
-                    >
-                      <div className="flex items-center justify-between text-xs pb-2 border-b border-slate-800/80">
-                        <div className="flex items-center gap-2 text-slate-400 font-mono">
-                          <Calendar size={13} className="text-emerald-400" />
-                          <span>{m.date ? formatDateTurkish(m.date) : "Tarih Yok"}</span>
-                        </div>
-
-                        <div className="flex items-center gap-1.5">
-                          {forfeit.isForfeit && (
-                            <span className="text-[10px] font-black uppercase text-amber-300 bg-amber-500/20 border border-amber-500/40 px-1.5 py-0.5 rounded">
-                              Hükmen
-                            </span>
-                          )}
-                          <span className="text-[11px] font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-600/40 px-2 py-0.5 rounded-md">
-                            BİTTİ
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Skor ve Eşleşme */}
-                      <div className="flex items-center justify-between gap-3 py-1">
-                        <div className="flex-1 text-right">
-                          <TeamVolleyboxLink
-                            teamName={m.home_team}
-                            category={league.category}
-                            city={league.city}
-                            className={`font-bold text-sm block truncate ${
-                              (m.home_score || 0) > (m.away_score || 0)
-                                ? "text-white"
-                                : "text-slate-400"
-                            }`}
-                          />
-                        </div>
-
-                        <div className="shrink-0 px-3 py-1 rounded-lg bg-slate-900 border border-slate-700/80 text-center">
-                          <span className="font-mono font-black text-sm text-emerald-400">
-                            {m.home_score ?? "-"} - {m.away_score ?? "-"}
-                          </span>
-                        </div>
-
-                        <div className="flex-1 text-left">
-                          <TeamVolleyboxLink
-                            teamName={m.away_team}
-                            category={league.category}
-                            city={league.city}
-                            className={`font-bold text-sm block truncate ${
-                              (m.away_score || 0) > (m.home_score || 0)
-                                ? "text-white"
-                                : "text-slate-400"
-                            }`}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Set Skorları & Aksiyon */}
-                      <div className="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800/80">
-                        <div className="flex items-center gap-1.5 font-mono text-[11px] truncate">
-                          {m.set_scores && m.set_scores.length > 0 ? (
-                            <span>Setler: {m.set_scores.join(", ")}</span>
-                          ) : (
-                            <span className="truncate">{m.hall}</span>
-                          )}
-                        </div>
-
-                        <button
-                          onClick={() => setSelectedMatch(m)}
-                          className="text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-2.5 py-1 rounded-lg transition-colors cursor-pointer inline-flex items-center gap-1"
-                        >
-                          <span>Maç Detayı</span>
-                          <ArrowRight size={12} />
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="space-y-4">
+                {finishedSections.map((sec, idx) => (
+                  <FixtureTable
+                    key={`${sec.title}-${sec.subTitle}-${idx}`}
+                    title={sec.title}
+                    subTitle={sec.subTitle}
+                    matches={sec.matches}
+                    favorites={favorites}
+                    onToggleFavorite={toggleFavorite}
+                    city={league.city}
+                    showCityBadge={false}
+                    onSelectMatch={setSelectedMatch}
+                  />
+                ))}
               </div>
             )}
           </div>
