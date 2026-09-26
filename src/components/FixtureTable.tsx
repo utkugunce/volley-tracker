@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight, ChevronDown } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { isMatchPassed, isMatchOverdueForScore } from "@/utils/calendar";
@@ -23,6 +23,8 @@ interface FixtureTableProps {
   onSelectMatch?: (match: Match) => void;
 }
 
+const PAGE_SIZE = 50;
+
 export const FixtureTable: React.FC<FixtureTableProps> = ({
   title,
   subTitle,
@@ -34,8 +36,21 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   onSelectMatch,
 }) => {
   const [copiedId, setCopiedId] = useState<string | null>(null);
-
   const [viewMode, setViewMode] = useState<"table" | "grid">("table");
+  const [visibleLimit, setVisibleLimit] = useState(PAGE_SIZE);
+
+  React.useEffect(() => {
+    setVisibleLimit(PAGE_SIZE);
+  }, [matches]);
+
+  React.useEffect(() => {
+    const handleBeforePrint = () => setVisibleLimit(matches.length);
+    window.addEventListener("beforeprint", handleBeforePrint);
+    return () => window.removeEventListener("beforeprint", handleBeforePrint);
+  }, [matches.length]);
+
+  const visibleMatches = matches.length > PAGE_SIZE ? matches.slice(0, visibleLimit) : matches;
+  const remainingCount = matches.length - visibleMatches.length;
 
   const effectiveCity = city && city !== "Tüm İller" ? city : matches[0]?.city;
 
@@ -175,7 +190,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             </tr>
           </thead>
           <tbody>
-            {matches.map((match, idx) => {
+            {visibleMatches.map((match, idx) => {
               const isFav = favorites.includes(match.id);
               const isFinished = match.status === "finished";
               const homeWon = isFinished && (match.home_score ?? 0) > (match.away_score ?? 0);
@@ -529,7 +544,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       ) : (
         /* 3. Yayın Tarzı Grid Kart Görünümü (Broadcast Cards) */
         <div className="p-3.5 sm:p-4 grid grid-cols-1 md:grid-cols-2 gap-3.5 bg-slate-950/40">
-          {matches.map((match, idx) => {
+          {visibleMatches.map((match, idx) => {
             const isFav = favorites.includes(match.id);
             const isFinished = match.status === "finished";
             const homeWon = isFinished && (match.home_score ?? 0) > (match.away_score ?? 0);
@@ -803,6 +818,27 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             </React.Fragment>
           );
         })}
+        </div>
+      )}
+
+      {/* 4. Sayfalama / Daha Fazla Göster (DOM yükünü hafifletir) */}
+      {remainingCount > 0 && (
+        <div className="p-3 text-center no-print border-t border-slate-800/80 bg-slate-900/40 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => setVisibleLimit((prev) => prev + PAGE_SIZE)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 transition-all cursor-pointer shadow-sm active:scale-95"
+          >
+            <span>Daha Fazla Maç Göster ({remainingCount} maç kaldı)</span>
+            <ChevronDown size={14} className="text-slate-400" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setVisibleLimit(matches.length)}
+            className="text-xs font-semibold text-slate-400 hover:text-slate-200 underline cursor-pointer"
+          >
+            Tümünü Göster ({matches.length})
+          </button>
         </div>
       )}
     </div>

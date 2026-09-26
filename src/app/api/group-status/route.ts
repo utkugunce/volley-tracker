@@ -82,13 +82,20 @@ export async function GET(request: Request) {
       }
     }
 
-    return NextResponse.json({
-      success: true,
-      totalGroups: groupList.length,
-      groups: groupList,
-      summary,
-      updatedAt: new Date().toISOString(),
-    });
+    return NextResponse.json(
+      {
+        success: true,
+        totalGroups: groupList.length,
+        groups: groupList,
+        summary,
+        updatedAt: new Date().toISOString(),
+      },
+      {
+        headers: {
+          "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+        },
+      }
+    );
   } catch (err: any) {
     console.error("API group-status error:", err);
     return NextResponse.json(

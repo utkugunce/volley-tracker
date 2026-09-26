@@ -3,12 +3,17 @@ import path from "path";
 import { FixturesData } from "@/types/fixture";
 import { isCityHidden } from "./cityHelper";
 
+const CACHE_TTL_MS = 60 * 1000;
+let cachedAllData: { data: FixturesData; timestamp: number } | null = null;
+const cachedCityData = new Map<string, { data: FixturesData; timestamp: number }>();
+
 /**
  * Sunucu tarafında (SSR/SSG) fikstür ve puan durumu verilerini yükler.
  * Belirli bir il slug'ı verilirse o ilin dosyasını, verilmezse ("all") 81 ilin
- * birleştirilmiş veritabanını döndürür.
+ * birleştirilmiş veritabanını döndürür. Bellek önbelleği ile disk I/O yükünü minimize eder.
  */
 export function getInitialFixtures(citySlug?: string): FixturesData {
+  const now = Date.now();
   try {
     const citiesDir = path.join(process.cwd(), "data", "cities");
 
@@ -16,12 +21,18 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
     if (citySlug && citySlug !== "all" && citySlug !== "Tüm İller") {
       const sanitizedSlug = citySlug.toLowerCase().replace(/[^a-z0-9_-]/g, "");
       if (!isCityHidden(sanitizedSlug)) {
+        const cached = cachedCityData.get(sanitizedSlug);
+        if (cached && now - cached.timestamp < CACHE_TTL_MS) {
+          return cached.data;
+        }
+
         const specificFile = path.join(citiesDir, `${sanitizedSlug}.json`);
         if (fs.existsSync(specificFile)) {
           try {
             const content = fs.readFileSync(specificFile, "utf-8");
             const parsed = JSON.parse(content);
             if (parsed && typeof parsed === "object") {
+              cachedCityData.set(sanitizedSlug, { data: parsed, timestamp: now });
               return parsed;
             }
           } catch (e) {
@@ -31,7 +42,14 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
       }
     }
 
-    // 2. Tüm İller: data/cities klasöründeki tüm JSON dosyalarını tara ve birleştir
+    // 2. Tüm İller için önbellek kontrolü
+    if (!citySlug || citySlug === "all" || citySlug === "Tüm İller") {
+      if (cachedAllData && now - cachedAllData.timestamp < CACHE_TTL_MS) {
+        return cachedAllData.data;
+      }
+    }
+
+    // 3. Tüm İller: data/cities klasöründeki tüm JSON dosyalarını tara ve birleştir
     if (fs.existsSync(citiesDir)) {
       const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
       const allMatches: any[] = [];
@@ -72,7 +90,7 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
       }
 
       if (allMatches.length > 0) {
-        return {
+        const result: FixturesData = {
           city: "Tüm İller",
           title: "TVF Türkiye Geneli Genç & Yıldız Kızlar Süper Lig",
           updated_at: latestUpdated > new Date(0).toISOString() ? latestUpdated : new Date().toISOString(),
@@ -87,6 +105,8 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
           matches: allMatches,
           standings: allStandings,
         };
+        cachedAllData = { data: result, timestamp: now };
+        return result;
       }
     }
 

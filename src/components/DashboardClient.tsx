@@ -11,12 +11,23 @@ import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
 import { HomePortalView } from "@/components/HomePortalView";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { NotificationBanner } from "@/components/NotificationBanner";
-import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
-import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { GroupStatusView } from "@/components/GroupStatusView";
+import dynamic from "next/dynamic";
 import { Match, FixturesData } from "@/types/fixture";
+
+const NotificationBanner = dynamic(
+  () => import("@/components/NotificationBanner").then((mod) => mod.NotificationBanner),
+  { ssr: false }
+);
+const MatchCenterDrawer = dynamic(
+  () => import("@/components/MatchCenterDrawer").then((mod) => mod.MatchCenterDrawer),
+  { ssr: false }
+);
+const SpotlightSearchModal = dynamic(
+  () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
+  { ssr: false }
+);
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { isMatchPassed, isMatchOverdueForScore, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
@@ -108,6 +119,9 @@ export const parseAppRoute = (
   return { tab: "home", city: first };
 };
 
+// İstemci tarafı şehir verisi önbelleği (Tekrar tıklanan iller 0ms anında açılır)
+const clientCityCache = new Map<string, FixturesData>();
+
 interface DashboardClientProps {
   initialData: FixturesData;
   initialTab?: AppMainTab;
@@ -122,6 +136,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [data, setData] = useState<FixturesData>(initialData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // İlk veriyi istemci önbelleğine yaz
+  useEffect(() => {
+    if (initialData) {
+      clientCityCache.set(initialCity || "all", initialData);
+      if (initialData.city && initialData.city !== "Tüm İller") {
+        clientCityCache.set(initialData.city.toLowerCase(), initialData);
+      }
+    }
+  }, [initialData, initialCity]);
 
   // Ana Sekmeler: "home" (Anasayfa Portalı), "results" (Sonuçlar), "today" (Günün Maçları), "fixtures" (Fikstür), "standings" (Puan Durumu) ve "group-status" (Grup Durumu)
   const [activeMainTab, setActiveMainTab] = useState<AppMainTab>(initialTab);
@@ -160,7 +184,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const handleSelectCity = useCallback(async (slug: string, skipPushState = false) => {
     setCurrentCitySlug(slug);
-    setLoading(true);
     setError(null);
     setSelectedCategory("Tümü");
     setSelectedDate("all");
@@ -180,10 +203,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       }
     }
 
+    // 1. Önbellekte varsa anında 0ms aç (Loading beklemeden)
+    const cached = clientCityCache.get(slug);
+    if (cached) {
+      setData(cached);
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
     try {
       const res = await fetch(`/api/fixtures?city=${slug}`);
       if (!res.ok) throw new Error("İl verisi alınamadı.");
       const json: FixturesData = await res.json();
+      clientCityCache.set(slug, json);
       setData(json);
     } catch (err: any) {
       setError(err.message || "İl fikstürü yüklenirken hata oluştu.");
@@ -319,17 +352,13 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const fetchData = async () => {
     setLoading(true);
     setError(null);
-    const startTime = Date.now();
     try {
       const res = await fetch(`/api/fixtures?city=${currentCitySlug}`);
       if (!res.ok) {
         throw new Error("Bülten verisi yüklenemedi.");
       }
       const json: FixturesData = await res.json();
-      const elapsed = Date.now() - startTime;
-      if (elapsed < 400) {
-        await new Promise((resolve) => setTimeout(resolve, 400 - elapsed));
-      }
+      clientCityCache.set(currentCitySlug, json);
       setData(json);
     } catch (err: any) {
       setError(err.message || "Bilinmeyen bir hata oluştu.");
