@@ -21,11 +21,10 @@ const BLOB_FILENAME = "push-subscriptions.json";
 let memorySubsCache: StoredSubscription[] | null = null;
 
 export const DEFAULT_VAPID_PUBLIC_KEY =
-  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ||
-  "BLxQQh-7VlGxSjDSc7qC1-ABcTkrU7ha6JStAFPy6y04LDetsGvMjpyihmZyPY1d44jp5_A4D8rV4n1uLetyuZs";
+  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "";
 
 export const DEFAULT_VAPID_PRIVATE_KEY =
-  process.env.VAPID_PRIVATE_KEY || "XRw1mrOuqM9mkQz_xzmSgkI8s5a-arremHuTb-tFaPY";
+  process.env.VAPID_PRIVATE_KEY || "";
 
 export const DEFAULT_VAPID_SUBJECT =
   process.env.VAPID_SUBJECT || "mailto:admin@altyapivoleybol.com.tr";
@@ -34,15 +33,20 @@ function isBlobConfigured(): boolean {
   return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
 }
 
-export function initVapid(): void {
+export function initVapid(): boolean {
+  if (!DEFAULT_VAPID_PUBLIC_KEY || !DEFAULT_VAPID_PRIVATE_KEY) {
+    return false;
+  }
   try {
     webpush.setVapidDetails(
       DEFAULT_VAPID_SUBJECT,
       DEFAULT_VAPID_PUBLIC_KEY,
       DEFAULT_VAPID_PRIVATE_KEY
     );
+    return true;
   } catch (err) {
     console.warn("VAPID yapılandırma uyarısı:", err);
+    return false;
   }
 }
 
@@ -179,7 +183,13 @@ export async function sendWebPush(
   sub: StoredSubscription,
   payload: { title: string; body: string; data?: any; tag?: string }
 ): Promise<{ success: boolean; statusCode?: number; error?: string }> {
-  initVapid();
+  const initialized = initVapid();
+  if (!initialized) {
+    return {
+      success: false,
+      error: "VAPID anahtarları yapılandırılmamış (VAPID_PUBLIC_KEY / VAPID_PRIVATE_KEY eksik).",
+    };
+  }
 
   const pushSubscription = {
     endpoint: sub.endpoint,
