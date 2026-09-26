@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T12:03:49.033930+03:00",
+  "updated_at": "2026-09-26T12:44:59.523096+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -4087,8 +4087,8 @@
         "url": "https://women.volleybox.net/tr/yesilyurt-spor-kulubu-u18-silivri-cagrbey-sk-u18-c400372",
         "host_name": "Yeşilyurt Spor Kulübü U18",
         "guest_name": "Silivri Çağrıbey SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "18:00",
         "vb_hall": "Yeşilyurt SK Spor Salonu",
@@ -4133,8 +4133,8 @@
         "url": "https://women.volleybox.net/tr/bb-spor-kulubu-u18-galatasaray-u18-c400377",
         "host_name": "İBB Spor Kulübü U18",
         "guest_name": "Galatasaray U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "20:30",
         "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
@@ -4955,5 +4955,5 @@
     }
   ],
   "volleybox_synced_matches": 47,
-  "volleybox_sync_updated_at": "2026-09-26T12:07:38.840906"
+  "volleybox_sync_updated_at": "2026-09-26T12:48:52.230782"
 }

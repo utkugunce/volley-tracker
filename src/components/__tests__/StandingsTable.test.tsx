@@ -150,7 +150,7 @@ describe('StandingsTable Component', () => {
     expect(teamLink).toHaveAttribute('href', '/takim/bilinmeyen-mahalle-voleybol-sk');
   });
 
-  it('(f) lig başlığına tıklandığında Volleybox turnuva sayfasına yönlendiren link render ediliyor', () => {
+  it('(f) lig başlığına tıklandığında ilgili lig sayfasına yönlendiren link render ediliyor', () => {
     const standingsData = {
       'Genç Kızlar Süper Lig - A Grubu': [mockItemA],
     };
@@ -159,8 +159,7 @@ describe('StandingsTable Component', () => {
 
     const leagueLink = screen.getByRole('link', { name: /GENÇ KIZLAR SÜPER LİG/i });
     expect(leagueLink).toBeInTheDocument();
-    expect(leagueLink).toHaveAttribute('href', expect.stringContaining('women-stanbul-super-ligi-u18-2026-27-o50864'));
-    expect(leagueLink).toHaveAttribute('target', '_blank');
+    expect(leagueLink).toHaveAttribute('href', '/lig/istanbul/genc-kizlar-super-lig');
   });
 
   it('(g) Genç ve Yıldız yaş grubu seçici butonları grupları ve verileri ayrıştırır', () => {

@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import { Match, CityInfo } from "@/types/fixture";
 import { FixtureTable } from "@/components/FixtureTable";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
+import { LeagueVolleyboxLink } from "@/components/LeagueVolleyboxLink";
 import {
   Calendar,
   Clock,
@@ -327,9 +328,14 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 {m.city}
               </span>
             )}
-            <span className="font-bold text-slate-200 truncate text-[11px] tracking-wide">
+            <LeagueVolleyboxLink
+              league={m.category}
+              city={m.city || (city !== "Tüm İller" ? city : undefined)}
+              className="font-bold text-slate-200 hover:text-amber-400 truncate text-[11px] tracking-wide"
+              showExternalIcon={false}
+            >
               {m.category}
-            </span>
+            </LeagueVolleyboxLink>
             <span className="text-slate-600 text-[10px]">•</span>
             <span className="text-slate-400 text-[11px]">{m.group}</span>
           </div>

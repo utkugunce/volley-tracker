@@ -30,8 +30,8 @@ export interface Match {
   time: string;
   hall: string;
   category: string;
-  age_group: "Genç" | "Yıldız";
-  gender: "Kız" | "Erkek";
+  age_group: "Genç" | "Yıldız" | "Büyük" | "Büyük Kadınlar" | string;
+  gender: "Kız" | "Erkek" | "Kadın" | string;
   group: string;
   match_no: string;
   home_team: string;

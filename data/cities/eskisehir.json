@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T12:03:43.653069",
+  "updated_at": "2026-09-26T12:44:56.018847",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -1171,8 +1171,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-turk-telekom-spor-kulubu-u16-sehir-koleji-egitim-kultur-sk-u16-c401060",
         "host_name": "Eskişehir Türk Telekom Spor Kulübü U16",
         "guest_name": "Şehir Koleji Eğitim Kültür SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1634,8 +1634,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-yldz-spor-kulubu-u16-es-voleybol-akademi-spor-kulubu-u16-c401062",
         "host_name": "Eskişehir Yıldız Spor Kulübü U16",
         "guest_name": "Es Voleybol Akademi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "20:00",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -1719,21 +1719,21 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-01",
-        "vb_time": "22:00",
+        "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-01",
-          "vb_time": "22:00",
+          "vb_time": "20:00",
           "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:00 / VB: 22:00)"
+          "details": null
         }
       }
     }
   ],
   "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-09-26T12:07:37.549114"
+  "volleybox_sync_updated_at": "2026-09-26T12:48:50.977542"
 }

@@ -22,6 +22,7 @@ import {
   Users,
   Shield,
   LayoutGrid,
+  ArrowRight,
 } from "lucide-react";
 import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
@@ -31,6 +32,7 @@ import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
 import { TeamRosterView } from "@/components/TeamRosterView";
 import { trLower } from "@/utils/turkishLocale";
+import { getLeagueStandingsRoute, getLeagueFixtureRoute } from "@/utils/leagueRoutes";
 
 const getClubBrandColors = (teamName: string, is2Lig: boolean = false) => {
   const lower = trLower(teamName);
@@ -464,31 +466,64 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               <span>Lig & Puan Durumu Konumu</span>
             </h2>
 
-            {team.standingsContexts.map((ctx) => (
-              <div
-                key={ctx.groupName}
-                className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-4 shadow-md overflow-hidden"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-3">
-                  <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    <span>{ctx.groupName}</span>
-                    <span className="text-xs text-slate-400 font-normal">
-                      {ctx.city === "TVF Kadınlar 2. Ligi" ? (
-                        <Link href="/kadinlar-2-ligi" className="text-fuchsia-400 hover:text-fuchsia-300 hover:underline">
-                          (TVF Kadınlar 2. Ligi)
+            {team.standingsContexts.map((ctx) => {
+              const standingsHref = getLeagueStandingsRoute(ctx.groupName, ctx.city);
+              const fixtureHref = getLeagueFixtureRoute(ctx.groupName, ctx.city);
+
+              return (
+                <div
+                  key={ctx.groupName}
+                  className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-4 shadow-md overflow-hidden"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+                      <Link
+                        href={standingsHref}
+                        className="text-sm font-bold text-white hover:text-amber-400 hover:underline inline-flex items-center gap-1 transition-colors cursor-pointer group/title"
+                        title={`${ctx.groupName} Puan Durumuna Git`}
+                      >
+                        <span>{ctx.groupName}</span>
+                        <ArrowRight size={13} className="text-slate-500 group-hover/title:text-amber-400 transition-colors" />
+                      </Link>
+                      <span className="text-xs text-slate-400 font-normal">
+                        {ctx.city === "TVF Kadınlar 2. Ligi" ? (
+                          <Link href="/kadinlar-2-ligi" className="text-fuchsia-400 hover:text-fuchsia-300 hover:underline">
+                            (TVF Kadınlar 2. Ligi)
+                          </Link>
+                        ) : (
+                          `(${ctx.city})`
+                        )}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2.5 flex-wrap">
+                      <div className="text-xs text-slate-300">
+                        Sıra: <strong className="text-amber-400 font-black">#{ctx.standingRow.rank}</strong>
+                        <span className="mx-1.5">•</span>
+                        Puan: <strong className="text-white font-mono">{ctx.standingRow.points}</strong>
+                      </div>
+
+                      <div className="flex items-center gap-1.5">
+                        <Link
+                          href={standingsHref}
+                          className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-1 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-colors cursor-pointer"
+                          title={`${ctx.groupName} Puan Durumuna Git`}
+                        >
+                          <Trophy size={11} className="text-amber-400" />
+                          <span>Puan Durumu →</span>
                         </Link>
-                      ) : (
-                        `(${ctx.city})`
-                      )}
-                    </span>
-                  </h3>
-                  <div className="text-xs text-slate-300">
-                    Sıra: <strong className="text-amber-400 font-black">#{ctx.standingRow.rank}</strong>
-                    <span className="mx-1.5">•</span>
-                    Puan: <strong className="text-white font-mono">{ctx.standingRow.points}</strong>
+                        <Link
+                          href={fixtureHref}
+                          className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-1 rounded-lg bg-sky-500/15 text-sky-300 border border-sky-500/30 hover:bg-sky-500/25 transition-colors cursor-pointer"
+                          title={`${ctx.groupName} Fikstürüne Git`}
+                        >
+                          <Calendar size={11} className="text-sky-400" />
+                          <span>Fikstür →</span>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </div>
 
                 <div className="overflow-x-auto">
                   <table className="w-full text-xs text-left">
@@ -547,7 +582,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                   </table>
                 </div>
               </div>
-            ))}
+            );
+          })}
           </section>
         )}
 
@@ -564,10 +600,23 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
         {/* 5. SEZON FİKSTÜRÜ (TÜM MAÇLAR) */}
         <section className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <Calendar size={18} className="text-primary" />
-              <span>Sezon Fikstürü ({team.matches.length} Maç)</span>
-            </h2>
+            <div className="flex items-center gap-3 flex-wrap">
+              <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                <Calendar size={18} className="text-primary" />
+                <span>Sezon Fikstürü ({team.matches.length} Maç)</span>
+              </h2>
+              {team.standingsContexts[0] && (
+                <Link
+                  href={getLeagueFixtureRoute(team.standingsContexts[0].groupName, team.standingsContexts[0].city)}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-300 hover:text-white bg-sky-950/60 hover:bg-sky-900/60 border border-sky-800/80 px-2.5 py-1 rounded-lg transition-colors cursor-pointer"
+                  title="Ligin resmi fikstür sayfasına git"
+                >
+                  <Calendar size={12} className="text-sky-400" />
+                  <span>Lig Fikstürüne Git</span>
+                  <ArrowRight size={12} />
+                </Link>
+              )}
+            </div>
 
             {/* Filtre Butonları */}
             <div className="flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700 text-xs">
@@ -635,6 +684,18 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                           {m.hall} ({m.city})
                         </span>
                       </div>
+                      {m.category && (
+                        <div className="mt-1">
+                          <Link
+                            href={getLeagueFixtureRoute(m.category, m.city || (team.cities.length === 1 ? team.cities[0] : undefined))}
+                            className="text-[10px] text-slate-400 hover:text-amber-400 font-semibold hover:underline inline-flex items-center gap-1 transition-colors"
+                            title={`${m.category} Lig Fikstürüne Git`}
+                          >
+                            <span>{m.category}</span>
+                            <ArrowRight size={10} />
+                          </Link>
+                        </div>
+                      )}
                     </div>
 
                     {/* Maç Eşleşmesi (Home vs Away) */}

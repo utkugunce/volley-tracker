@@ -99,7 +99,7 @@ describe("FixtureTable Component", () => {
     ).toContain("/takim/bilinmeyen-spor-kulubu-b");
   });
 
-  it("lig başlığı için Volleybox turnuva linki render eder", () => {
+  it("lig başlığı için lig sayfası linki render eder", () => {
     render(
       <FixtureTable
         title="Genç Kızlar Süper Lig"
@@ -112,7 +112,7 @@ describe("FixtureTable Component", () => {
 
     const leagueLink = screen.getByRole("link", { name: "Genç Kızlar Süper Lig" });
     expect(leagueLink).toBeInTheDocument();
-    expect(leagueLink).toHaveAttribute("href", expect.stringContaining("women-stanbul-super-ligi-u18-2026-27-o50864"));
+    expect(leagueLink).toHaveAttribute("href", "/lig/istanbul/genc-kizlar-super-lig");
   });
 
   it("takım adının sonundaki A ve B harflerini her zaman tam olarak korur", () => {
