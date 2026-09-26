@@ -221,7 +221,7 @@ export const Header: React.FC<HeaderProps> = ({
           <Home size={13} className={activeTab === "home" || activeTab === "today" ? "text-primary fill-primary/20" : "text-slate-400"} />
           <span>ANASAYFA</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[9px] sm:text-[10px] bg-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs">
+            <span className="text-[9px] sm:text-[10px] bg-rose-700 text-white px-1.5 py-0.5 rounded-full font-mono font-bold shadow-xs">
               {todayMatchesCount} Bugün
             </span>
           )}
@@ -263,7 +263,7 @@ export const Header: React.FC<HeaderProps> = ({
           <Flame size={13} className={activeTab === "today" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
           <span>GÜNÜN MAÇLARI</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[9px] sm:text-[10px] bg-gradient-to-r from-red-600 to-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs shadow-red-900/50">
+            <span className="text-[9px] sm:text-[10px] bg-red-700 text-white px-1.5 py-0.5 rounded-full font-mono font-bold shadow-xs">
               {todayMatchesCount}
             </span>
           )}

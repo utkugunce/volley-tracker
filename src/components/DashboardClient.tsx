@@ -1436,14 +1436,14 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       </main>
 
       {/* Altbilgi */}
-      <footer className="border-t border-slate-800 bg-[#0b1325] mt-auto py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-slate-500 no-print">
+      <footer className="border-t border-slate-800 bg-[#0b1325] mt-auto py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-slate-300 no-print">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="font-semibold text-slate-300">
+          <p className="font-semibold text-slate-200">
             Altyapı Voleybol • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
           </p>
-          <div className="flex items-center gap-3 text-[11px] text-slate-500">
+          <div className="flex items-center gap-3 text-[11px] text-slate-300">
             <span>Fikstür & Puan Durumu</span>
-            <span>•</span>
+            <span className="text-slate-500">•</span>
             <span>Resmi TVF Bülten Sistemi</span>
           </div>
         </div>
