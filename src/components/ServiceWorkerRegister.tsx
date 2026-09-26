@@ -40,6 +40,14 @@ export function ServiceWorkerRegister() {
 
     // 2. Service Worker Kayıt ve Yaşam Döngüsü
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!refreshing) {
+          refreshing = true;
+          window.location.reload();
+        }
+      });
+
       window.addEventListener("load", () => {
         navigator.serviceWorker
           .register("/sw.js")

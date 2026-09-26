@@ -19,6 +19,7 @@ import { slugify } from "@/utils/slugify";
 import { DateRibbon } from "@/components/DateRibbon";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
+import { getVolleyboxMapping } from "@/utils/volleybox";
 
 interface Kadinlar2LigTodayMatchesProps {
   allMatches: Kadinlar2LigMatch[];
@@ -256,150 +257,166 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
                 {/* Karşılaşma Gövdesi */}
                 <div className="flex items-center justify-between gap-3">
                   {/* Ev Sahibi */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <Link
-                        href={`/takim/${slugify(m.takim_a)}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="shrink-0 hover:opacity-80 transition-opacity"
-                        title={`${m.takim_a} Takım Profili`}
-                      >
-                        {m.takim_a_logo && !m.takim_a_logo.includes("takimlogoyok") ? (
-                          <Image
-                            src={m.takim_a_logo}
-                            alt={m.takim_a}
-                            width={22}
-                            height={22}
-                            className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
-                            unoptimized={m.takim_a_logo.startsWith("http")}
-                            onError={(e) => {
-                              (e.currentTarget as HTMLImageElement).style.display = "none";
-                            }}
-                          />
-                        ) : (
-                          <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
-                            {m.takim_a.slice(0, 2)}
+                  {(() => {
+                    const mAny = m as any;
+                    const vbA = getVolleyboxMapping(m.takim_a, "Kadınlar 2. Ligi");
+                    const nameA = mAny.takim_a_volleybox_name || vbA?.matched_as || m.takim_a;
+                    const logoA = (m.takim_a_logo && !m.takim_a_logo.includes("takimlogoyok")) ? m.takim_a_logo : (vbA?.local_logo || vbA?.logo_url);
+                    const vbB = getVolleyboxMapping(m.takim_b, "Kadınlar 2. Ligi");
+                    const nameB = mAny.takim_b_volleybox_name || vbB?.matched_as || m.takim_b;
+                    const logoB = (m.takim_b_logo && !m.takim_b_logo.includes("takimlogoyok")) ? m.takim_b_logo : (vbB?.local_logo || vbB?.logo_url);
+                    const isFavA = isFavorite(nameA) || isFavorite(m.takim_a);
+                    const isFavB = isFavorite(nameB) || isFavorite(m.takim_b);
+
+                    return (
+                      <>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <Link
+                              href={`/takim/${slugify(nameA)}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="shrink-0 hover:opacity-80 transition-opacity"
+                              title={`${nameA} Takım Profili`}
+                            >
+                              {logoA ? (
+                                <Image
+                                  src={logoA}
+                                  alt={nameA}
+                                  width={22}
+                                  height={22}
+                                  className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
+                                  unoptimized={logoA.startsWith("http")}
+                                  onError={(e) => {
+                                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                                  }}
+                                />
+                              ) : (
+                                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
+                                  {nameA.slice(0, 2)}
+                                </div>
+                              )}
+                            </Link>
+
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-1">
+                                <Link
+                                  href={`/takim/${slugify(nameA)}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 transition-colors truncate block hover:underline underline-offset-2"
+                                  title={`${nameA} Takım Profili`}
+                                >
+                                  {nameA}
+                                </Link>
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    triggerHaptic("selection");
+                                    toggleFavorite(nameA);
+                                  }}
+                                  className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
+                                  title={isFavA ? "Favorilerden çıkar" : "Favorilere ekle"}
+                                >
+                                  <Star
+                                    size={11}
+                                    className={
+                                      isFavA
+                                        ? "fill-amber-400 text-amber-400"
+                                        : "text-slate-600 hover:text-amber-400"
+                                    }
+                                  />
+                                </button>
+                              </div>
+                            </div>
                           </div>
-                        )}
-                      </Link>
-
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-1">
-                          <Link
-                            href={`/takim/${slugify(m.takim_a)}`}
-                            onClick={(e) => e.stopPropagation()}
-                            className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 transition-colors truncate block hover:underline underline-offset-2"
-                            title={`${m.takim_a} Takım Profili`}
-                          >
-                            {m.takim_a}
-                          </Link>
-                          <button
-                            type="button"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              triggerHaptic("selection");
-                              toggleFavorite(m.takim_a);
-                            }}
-                            className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
-                            title={isFavorite(m.takim_a) ? "Favorilerden çıkar" : "Favorilere ekle"}
-                          >
-                            <Star
-                              size={11}
-                              className={
-                                isFavorite(m.takim_a)
-                                  ? "fill-amber-400 text-amber-400"
-                                  : "text-slate-600 hover:text-amber-400"
-                              }
-                            />
-                          </button>
                         </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Skor / VS Rozeti */}
-                  <div className="shrink-0 text-center px-2">
-                    {isFinished ? (
-                      <div className="flex flex-col items-center">
-                        <span className="text-sm font-black font-mono px-2.5 py-0.5 rounded-lg bg-slate-950 border border-emerald-500/40 text-emerald-400 shadow-xs">
-                          {m.skor || "3-0"}
-                        </span>
-                        {m.set_sonuclari && (
-                          <span className="text-[10px] font-mono text-slate-400 mt-1 max-w-[120px] truncate" title={m.set_sonuclari}>
-                            {m.set_sonuclari}
-                          </span>
-                        )}
-                      </div>
-                    ) : (
-                      <div className="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center font-black text-slate-400 text-xs shadow-inner">
-                        VS
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Deplasman */}
-                  <div className="flex-1 min-w-0 text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <div className="min-w-0">
-                        <div className="flex items-center justify-end gap-1">
-                          <button
-                            type="button"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              e.stopPropagation();
-                              triggerHaptic("selection");
-                              toggleFavorite(m.takim_b);
-                            }}
-                            className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
-                            title={isFavorite(m.takim_b) ? "Favorilerden çıkar" : "Favorilere ekle"}
-                          >
-                            <Star
-                              size={11}
-                              className={
-                                isFavorite(m.takim_b)
-                                  ? "fill-amber-400 text-amber-400"
-                                  : "text-slate-600 hover:text-amber-400"
-                              }
-                            />
-                          </button>
-                          <Link
-                            href={`/takim/${slugify(m.takim_b)}`}
-                            onClick={(e) => e.stopPropagation()}
-                            className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 transition-colors truncate block hover:underline underline-offset-2"
-                            title={`${m.takim_b} Takım Profili`}
-                          >
-                            {m.takim_b}
-                          </Link>
+                        {/* Skor / VS Rozeti */}
+                        <div className="shrink-0 text-center px-2">
+                          {isFinished ? (
+                            <div className="flex flex-col items-center">
+                              <span className="text-sm font-black font-mono px-2.5 py-0.5 rounded-lg bg-slate-950 border border-emerald-500/40 text-emerald-400 shadow-xs">
+                                {m.skor || "3-0"}
+                              </span>
+                              {m.set_sonuclari && (
+                                <span className="text-[10px] font-mono text-slate-400 mt-1 max-w-[120px] truncate" title={m.set_sonuclari}>
+                                  {m.set_sonuclari}
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <div className="w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center font-black text-slate-400 text-xs shadow-inner">
+                              VS
+                            </div>
+                          )}
                         </div>
-                      </div>
 
-                      <Link
-                        href={`/takim/${slugify(m.takim_b)}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="shrink-0 hover:opacity-80 transition-opacity"
-                        title={`${m.takim_b} Takım Profili`}
-                      >
-                        {m.takim_b_logo && !m.takim_b_logo.includes("takimlogoyok") ? (
-                          <Image
-                            src={m.takim_b_logo}
-                            alt={m.takim_b}
-                            width={22}
-                            height={22}
-                            className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
-                            unoptimized={m.takim_b_logo.startsWith("http")}
-                            onError={(e) => {
-                              (e.currentTarget as HTMLImageElement).style.display = "none";
-                            }}
-                          />
-                        ) : (
-                          <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
-                            {m.takim_b.slice(0, 2)}
+                        {/* Deplasman */}
+                        <div className="flex-1 min-w-0 text-right">
+                          <div className="flex items-center justify-end gap-2">
+                            <div className="min-w-0">
+                              <div className="flex items-center justify-end gap-1">
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    triggerHaptic("selection");
+                                    toggleFavorite(nameB);
+                                  }}
+                                  className="shrink-0 p-0.5 text-slate-500 hover:text-amber-400"
+                                  title={isFavB ? "Favorilerden çıkar" : "Favorilere ekle"}
+                                >
+                                  <Star
+                                    size={11}
+                                    className={
+                                      isFavB
+                                        ? "fill-amber-400 text-amber-400"
+                                        : "text-slate-600 hover:text-amber-400"
+                                    }
+                                  />
+                                </button>
+                                <Link
+                                  href={`/takim/${slugify(nameB)}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 transition-colors truncate block hover:underline underline-offset-2"
+                                  title={`${nameB} Takım Profili`}
+                                >
+                                  {nameB}
+                                </Link>
+                              </div>
+                            </div>
+
+                            <Link
+                              href={`/takim/${slugify(nameB)}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="shrink-0 hover:opacity-80 transition-opacity"
+                              title={`${nameB} Takım Profili`}
+                            >
+                              {logoB ? (
+                                <Image
+                                  src={logoB}
+                                  alt={nameB}
+                                  width={22}
+                                  height={22}
+                                  className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5"
+                                  unoptimized={logoB.startsWith("http")}
+                                  onError={(e) => {
+                                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                                  }}
+                                />
+                              ) : (
+                                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
+                                  {nameB.slice(0, 2)}
+                                </div>
+                              )}
+                            </Link>
                           </div>
-                        )}
-                      </Link>
-                    </div>
-                  </div>
+                        </div>
+                      </>
+                    );
+                  })()}
                 </div>
 
                 {/* Alt Çubuk */}

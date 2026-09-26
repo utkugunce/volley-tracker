@@ -1,5 +1,5 @@
 // public/sw.js — Altyapı Voleybol Service Worker
-const CACHE_NAME = "altyapi-voleybol-v2";
+const CACHE_NAME = "altyapi-voleybol-v3";
 const STATIC_ASSETS = [
   "/manifest.json",
   "/icon.svg",
