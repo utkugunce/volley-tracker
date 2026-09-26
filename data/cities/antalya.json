@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T15:12:15.795782",
+  "updated_at": "2026-09-26T14:35:46.181398",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -47,17 +47,6 @@
       },
       {
         "rank": 2,
-        "team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
         "team": "Luna Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -68,7 +57,29 @@
         "form": []
       },
       {
+        "rank": 3,
+        "team": "Murat Akar Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
         "rank": 4,
+        "team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Antalya Şimşek GSK U18",
         "played": 2,
         "won": 0,
@@ -79,7 +90,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Antalya 1907 Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -90,19 +101,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Akdeniz Bilgi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "Murat Akar Spor Kulübü U18",
+        "team": "Akdeniz Bilgi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -194,18 +194,18 @@
       },
       {
         "rank": 2,
-        "team": "07 Mega Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "Antalya Açı Koleji Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Antalya Açı Koleji Spor Kulübü U16",
+        "team": "07 Mega Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -227,6 +227,17 @@
       },
       {
         "rank": 5,
+        "team": "Sistem Eğitim Spor Kulübü U16",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Antalya Şimşek GSK U16",
         "played": 1,
         "won": 0,
@@ -237,7 +248,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Nova Spor U15",
         "played": 2,
         "won": 0,
@@ -245,17 +256,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Sistem Eğitim Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -578,11 +578,16 @@
       "match_no": "4",
       "home_team": "Murat Akar Spor Kulübü U18",
       "away_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "22-25",
+        "25-20",
+        "25-20",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401026",
@@ -1391,11 +1396,16 @@
       "match_no": "6",
       "home_team": "Antalya Açı Koleji Spor Kulübü U16",
       "away_team": "Sistem Eğitim Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-17",
+        "25-8",
+        "22-25",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400352",
@@ -2527,5 +2537,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-09-26T15:16:01.138504"
+  "volleybox_sync_updated_at": "2026-09-26T14:37:01.963180"
 }

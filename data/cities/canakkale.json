@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T15:11:55.512628",
+  "updated_at": "2026-09-26T14:35:37.495564",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -242,23 +242,23 @@
       {
         "rank": 1,
         "team": "Çanakkale Belediyespor U16",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Çanakkale Belediyespor",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -484,11 +484,16 @@
       "match_no": "1",
       "home_team": "Çanakkale Belediyespor U16",
       "away_team": "Çanakkale Belediyespor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-12",
+        "25-12",
+        "23-25",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401052",
@@ -801,5 +806,5 @@
     }
   ],
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-26T15:16:01.244696"
+  "volleybox_sync_updated_at": "2026-09-26T14:37:01.961189"
 }
