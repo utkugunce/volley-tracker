@@ -5,6 +5,7 @@ import path from "path";
 import { getLeagueData } from "@/utils/leagueData";
 import { LeagueHubClient, LeagueTabType } from "@/components/league/LeagueHubClient";
 import { slugify } from "@/utils/slugify";
+import { isCityHidden } from "@/utils/cityHelper";
 
 export const revalidate = 60; // 1 minute ISR cache
 
@@ -69,10 +70,13 @@ export function generateStaticParams() {
     if (fs.existsSync(citiesDir)) {
       const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
       for (const file of files) {
+        const fileSlug = file.replace(".json", "");
+        if (isCityHidden(fileSlug)) continue;
         try {
           const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
           const parsed = JSON.parse(content);
-          const citySlug = slugify(parsed.city || file.replace(".json", ""));
+          const citySlug = slugify(parsed.city || fileSlug);
+          if (isCityHidden(citySlug)) continue;
           const categories: string[] = parsed.filters?.categories || [];
 
           for (const cat of categories) {

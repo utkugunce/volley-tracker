@@ -4,6 +4,7 @@ import { Match, StandingItem, VolleyboxLeagueMapping } from "@/types/fixture";
 import { slugify } from "./slugify";
 import { getVolleyboxLeagueMapping, extractAgeGroup } from "./volleybox";
 import { compareMatchDateTime } from "./calendar";
+import { isCityHidden } from "./cityHelper";
 
 export interface LeagueGroupStanding {
   groupName: string;
@@ -73,6 +74,10 @@ export interface LeagueData {
  * Searches and loads all information for a specific league in a given city or across all cities.
  */
 export function getLeagueData(citySlug: string, leagueSlug: string): LeagueData | null {
+  if (isCityHidden(citySlug)) {
+    return null;
+  }
+
   const citiesDir = path.join(process.cwd(), "data", "cities");
 
   // Kadınlar 2. Ligi kontrolü
@@ -223,8 +228,10 @@ export function getLeagueData(citySlug: string, leagueSlug: string): LeagueData 
   if (!parsedCity && fs.existsSync(citiesDir)) {
     const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
     for (const f of files) {
+      if (isCityHidden(f.replace(".json", ""))) continue;
       try {
         const d = JSON.parse(fs.readFileSync(path.join(citiesDir, f), "utf-8"));
+        if (isCityHidden(d.city)) continue;
         if (slugify(d.city || "") === citySlug) {
           parsedCity = d;
           break;

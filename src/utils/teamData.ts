@@ -7,6 +7,7 @@ import { VolleyboxMapping } from "@/types/fixture";
 import { applyOverridesToMatches } from "./overrides";
 import { compareMatchDateTime } from "./calendar";
 import { TeamRosterRecord, TeamRostersDatabase } from "@/types/roster";
+import { isCityHidden } from "./cityHelper";
 
 export interface TeamStandingContext {
   groupName: string;
@@ -132,11 +133,14 @@ function loadAllCityData() {
   if (fs.existsSync(citiesDir)) {
     const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
     for (const file of files) {
+      const fileSlug = file.replace(".json", "");
+      if (isCityHidden(fileSlug)) continue;
       try {
         const fullPath = path.join(citiesDir, file);
         const content = fs.readFileSync(fullPath, "utf-8");
         const parsed = JSON.parse(content);
-        const cityName = parsed.city || file.replace(".json", "");
+        const cityName = parsed.city || fileSlug;
+        if (isCityHidden(cityName) || isCityHidden(parsed.slug)) continue;
 
         if (Array.isArray(parsed.matches)) {
           for (const m of parsed.matches) {
@@ -246,6 +250,7 @@ function loadAllCityData() {
 
 export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): TeamDetails | null {
   if (!targetSlug) return null;
+  if (cityFilter && isCityHidden(cityFilter)) return null;
 
   const { matches: allMatches, standingsByCity } = loadAllCityData();
 

@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { computeGroupStatusList, GROUP_STATUS_CONFIGS, GroupStatusKey, GroupStatusItem } from "@/utils/groupStatus";
 import { slugify } from "@/utils/slugify";
+import { isCityHidden } from "@/utils/cityHelper";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +19,7 @@ export async function GET(request: Request) {
     if (fs.existsSync(citiesIndexPath)) {
       try {
         const cData = JSON.parse(fs.readFileSync(citiesIndexPath, "utf-8"));
-        citiesInfo = cData.cities || [];
+        citiesInfo = (cData.cities || []).filter((c: any) => !isCityHidden(c.slug));
       } catch (e) {
         console.warn("Could not read cities.json:", e);
       }
@@ -30,10 +31,13 @@ export async function GET(request: Request) {
     if (fs.existsSync(citiesDir)) {
       const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
       for (const file of files) {
+        const fileSlug = file.replace(".json", "");
+        if (isCityHidden(fileSlug)) continue;
         try {
           const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
           const parsed = JSON.parse(content);
           const cityName = parsed.city || file.replace(".json", "");
+          if (isCityHidden(cityName)) continue;
           
           if (Array.isArray(parsed.matches)) {
             for (const m of parsed.matches) {

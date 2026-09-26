@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { MapPin, Globe, ChevronDown, Check, Search } from "lucide-react";
 import { CityInfo } from "@/types/fixture";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import { isCityHidden } from "@/utils/hiddenCities";
 
 interface CityTabBarProps {
   currentCitySlug: string;
@@ -22,7 +23,7 @@ const PRIMARY_CITIES = [
   { slug: "bursa", name: "Bursa", ilid: "16" },
   { slug: "antalya", name: "Antalya", ilid: "07" },
   { slug: "duzce", name: "Düzce", ilid: "81" },
-];
+].filter((item) => !isCityHidden(item.slug));
 
 export const CityTabBar: React.FC<CityTabBarProps> = ({
   currentCitySlug,
@@ -81,14 +82,16 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
   };
 
   // Açılır menüdeki filtrelenmiş 81 il
-  const filteredDropdownCities = cities.filter((c) => {
-    const term = trLower(searchTerm).trim();
-    return (
-      trIncludes(c.name, term) ||
-      c.ilid.includes(term) ||
-      trIncludes(c.slug, term)
-    );
-  });
+  const filteredDropdownCities = cities
+    .filter((c) => !isCityHidden(c.slug))
+    .filter((c) => {
+      const term = trLower(searchTerm).trim();
+      return (
+        trIncludes(c.name, term) ||
+        c.ilid.includes(term) ||
+        trIncludes(c.slug, term)
+      );
+    });
 
   return (
     <div className="bg-[#070d19]/90 backdrop-blur-md border-b border-slate-800/80 px-2 sm:px-4 py-1.5 shadow-sm">

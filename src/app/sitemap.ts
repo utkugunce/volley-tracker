@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllTeamSlugs } from "@/utils/teamData";
+import { isCityHidden } from "@/utils/cityHelper";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://altyapivoleybol.com.tr";
@@ -126,7 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "yalova",
     "nigde",
     "kahramanmaras",
-  ];
+  ].filter((slug) => !isCityHidden(slug));
 
   const cityRoutes: MetadataRoute.Sitemap = activeCities.flatMap((slug) => [
     {

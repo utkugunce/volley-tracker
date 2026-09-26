@@ -49,7 +49,8 @@ describe("CityTabBar Component", () => {
     expect(screen.getByText("Tüm İller")).toBeInTheDocument();
     expect(screen.getByText("İstanbul")).toBeInTheDocument();
     expect(screen.getByText("İzmir")).toBeInTheDocument();
-    expect(screen.getByText("Niğde")).toBeInTheDocument();
+    expect(screen.getByText("Bursa")).toBeInTheDocument();
+    expect(screen.queryByText("Niğde")).not.toBeInTheDocument();
   });
 
   it("calls onSelectCity when a tab is clicked", () => {

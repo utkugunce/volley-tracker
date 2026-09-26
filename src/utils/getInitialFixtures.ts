@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { FixturesData } from "@/types/fixture";
+import { isCityHidden } from "./cityHelper";
 
 /**
  * Sunucu tarafında (SSR/SSG) fikstür ve puan durumu verilerini yükler.
@@ -11,19 +12,21 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
   try {
     const citiesDir = path.join(process.cwd(), "data", "cities");
 
-    // 1. Belirli bir il istendiyse doğrudan o ilin verisini döndür
+    // 1. Belirli bir il istendiyse doğrudan o ilin verisini döndür (gizli iller atlanır)
     if (citySlug && citySlug !== "all" && citySlug !== "Tüm İller") {
       const sanitizedSlug = citySlug.toLowerCase().replace(/[^a-z0-9_-]/g, "");
-      const specificFile = path.join(citiesDir, `${sanitizedSlug}.json`);
-      if (fs.existsSync(specificFile)) {
-        try {
-          const content = fs.readFileSync(specificFile, "utf-8");
-          const parsed = JSON.parse(content);
-          if (parsed && typeof parsed === "object") {
-            return parsed;
+      if (!isCityHidden(sanitizedSlug)) {
+        const specificFile = path.join(citiesDir, `${sanitizedSlug}.json`);
+        if (fs.existsSync(specificFile)) {
+          try {
+            const content = fs.readFileSync(specificFile, "utf-8");
+            const parsed = JSON.parse(content);
+            if (parsed && typeof parsed === "object") {
+              return parsed;
+            }
+          } catch (e) {
+            console.warn(`Error reading specific city file for ${citySlug}:`, e);
           }
-        } catch (e) {
-          console.warn(`Error reading specific city file for ${citySlug}:`, e);
         }
       }
     }
@@ -38,10 +41,13 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
       let latestUpdated = new Date(0).toISOString();
 
       for (const file of files) {
+        const fileSlug = file.replace(".json", "");
+        if (isCityHidden(fileSlug)) continue;
         try {
           const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
           const parsed = JSON.parse(content);
           const cityName = parsed.city || file.replace(".json", "");
+          if (isCityHidden(cityName)) continue;
           if (parsed.updated_at && parsed.updated_at > latestUpdated) {
             latestUpdated = parsed.updated_at;
           }

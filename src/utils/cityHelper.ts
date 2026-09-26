@@ -1,8 +1,11 @@
 import fs from "fs";
 import path from "path";
 import { slugify } from "./slugify";
+import { HIDDEN_CITY_SLUGS, isCityHidden } from "./hiddenCities";
 
-interface CityEntry {
+export { HIDDEN_CITY_SLUGS, isCityHidden };
+
+export interface CityEntry {
   ilid: string;
   name: string;
   slug: string;
@@ -18,8 +21,10 @@ export function getAllCitiesList(): CityEntry[] {
     if (fs.existsSync(filePath)) {
       const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
       if (Array.isArray(data?.cities)) {
-        cachedCities = data.cities;
-        return data.cities;
+        // Canlıda gizlenen illeri filtrele
+        const filtered = data.cities.filter((c: CityEntry) => !isCityHidden(c.slug));
+        cachedCities = filtered;
+        return filtered;
       }
     }
   } catch (e) {
@@ -44,6 +49,7 @@ export function getCityNameFromSlug(slug: string): string {
 export function isValidCitySlug(slug: string): boolean {
   if (!slug || slug === "all") return true;
   const cleanSlug = slugify(slug);
+  if (isCityHidden(cleanSlug)) return false;
   const cities = getAllCitiesList();
   if (cities.length === 0) return true; // fallback if list not loaded yet
   return cities.some((c) => c.slug.toLowerCase() === cleanSlug);

@@ -6,6 +6,7 @@ import { timingSafeEqual } from "crypto";
 import { applyOverridesToMatches, applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import { isCityHidden } from "@/utils/cityHelper";
 
 function safeCompare(a: string, b: string): boolean {
   const bufA = Buffer.from(a);
@@ -210,10 +211,13 @@ export async function GET(request: Request) {
       if (fs.existsSync(citiesDir)) {
         const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
         for (const file of files) {
+          const fileSlug = file.replace(".json", "");
+          if (isCityHidden(fileSlug)) continue;
           try {
             const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
             const parsed = JSON.parse(content);
             const cityName = parsed.city || file.replace(".json", "");
+            if (isCityHidden(cityName)) continue;
             if (parsed.updated_at && parsed.updated_at > latestUpdated) {
               latestUpdated = parsed.updated_at;
             }
@@ -255,6 +259,13 @@ export async function GET(request: Request) {
         standings: allStandings,
       };
     } else {
+      if (isCityHidden(citySlug)) {
+        return NextResponse.json(
+          { error: "Bu il için fikstür bulunamadı." },
+          { status: 404 }
+        );
+      }
+
       let filePath = path.join(process.cwd(), "data", "fixtures.json");
       if (citySlug && citySlug !== "istanbul") {
         const citySpecificPath = path.join(process.cwd(), "data", "cities", `${citySlug}.json`);
