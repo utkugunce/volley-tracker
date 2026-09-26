@@ -87,8 +87,8 @@ describe("FixtureTable Component", () => {
     expect(screen.getByText("Bilinmeyen Spor Kulübü A")).toBeInTheDocument();
     expect(screen.getByText("Bilinmeyen Spor Kulübü B")).toBeInTheDocument();
 
-    // Volleybox harici linki render edilmemeli
-    expect(screen.queryByRole("link", { name: /volleybox/i })).not.toBeInTheDocument();
+    // Takımlar için Volleybox profil linki render edilmemeli
+    expect(screen.queryByRole("link", { name: /takım profili/i })).not.toBeInTheDocument();
 
     // Takım detay sayfası iç linkleri bulunmalı
     expect(

@@ -332,7 +332,6 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               league={m.category}
               city={m.city || (city !== "Tüm İller" ? city : undefined)}
               className="font-bold text-slate-200 hover:text-amber-400 truncate text-[11px] tracking-wide"
-              showExternalIcon={false}
             >
               {m.category}
             </LeagueVolleyboxLink>

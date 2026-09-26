@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T12:44:50.258593",
+  "updated_at": "2026-09-26T13:16:43.356013",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -995,18 +995,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402167",
+        "url": "https://women.volleybox.net/tr/metin-kucukkenar-frtna16-spor-kulubu-u16-kestel-belediye-1952-spor-kulubu-u16-c402167",
+        "host_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+        "guest_name": "Kestel Belediye 1952 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-01",
+        "vb_time": "18:30",
+        "vb_hall": "Kestel Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-01",
+          "vb_time": "18:30",
+          "vb_hall": "Kestel Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1052,6 +1059,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 11,
-  "volleybox_sync_updated_at": "2026-09-26T12:48:50.774132"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-09-26T13:20:32.566432"
 }

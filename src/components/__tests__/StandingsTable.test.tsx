@@ -143,8 +143,8 @@ describe('StandingsTable Component', () => {
     render(<StandingsTable standingsData={standingsData} />);
 
     expect(screen.getByText('Bilinmeyen Mahalle Voleybol SK')).toBeInTheDocument();
-    // Volleybox harici linki olmamalı
-    expect(screen.queryByRole('link', { name: /volleybox/i })).not.toBeInTheDocument();
+    // Takımlar için Volleybox profil linki olmamalı
+    expect(screen.queryByRole('link', { name: /takım profili/i })).not.toBeInTheDocument();
     // Takım detay sayfası iç linki bulunmalı
     const teamLink = screen.getByRole('link', { name: 'Bilinmeyen Mahalle Voleybol SK' });
     expect(teamLink).toHaveAttribute('href', '/takim/bilinmeyen-mahalle-voleybol-sk');

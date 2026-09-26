@@ -28,6 +28,7 @@ import { TeamDetails, TeamMatchDetail } from "@/utils/teamData";
 import { downloadIcsFile, generateMatchIcs, generateSeasonIcs } from "@/utils/ics";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
+import { getVolleyboxLeagueMapping } from "@/utils/volleybox";
 import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
 import { TeamRosterView } from "@/components/TeamRosterView";
@@ -486,6 +487,22 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                         <span>{ctx.groupName}</span>
                         <ArrowRight size={13} className="text-slate-500 group-hover/title:text-amber-400 transition-colors" />
                       </Link>
+                      {(() => {
+                        const vbLeague = getVolleyboxLeagueMapping(ctx.groupName, ctx.city);
+                        if (!vbLeague?.volleybox_url) return null;
+                        return (
+                          <a
+                            href={vbLeague.volleybox_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-slate-400 hover:text-emerald-400 transition-colors p-0.5 rounded shrink-0 inline-flex items-center opacity-70 hover:opacity-100"
+                            title={`${vbLeague.matched_as || ctx.groupName} — Volleybox Turnuva Sayfası`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ExternalLink size={12} />
+                          </a>
+                        );
+                      })()}
                       <span className="text-xs text-slate-400 font-normal">
                         {ctx.city === "TVF Kadınlar 2. Ligi" ? (
                           <Link href="/kadinlar-2-ligi" className="text-fuchsia-400 hover:text-fuchsia-300 hover:underline">

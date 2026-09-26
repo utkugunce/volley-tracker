@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T12:44:56.018847",
+  "updated_at": "2026-09-26T13:16:45.180767",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -1289,18 +1289,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402168",
+        "url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-u16-eskisehir-ata-spor-kulubu-b-u16-c402168",
+        "host_name": "Şehir Koleji Eğitim Kültür SK U16",
+        "guest_name": "Eskişehir Ata Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-02",
+        "vb_time": "18:30",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-02",
+          "vb_time": "18:30",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1734,6 +1741,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-09-26T12:48:50.977542"
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-09-26T13:20:32.773103"
 }
