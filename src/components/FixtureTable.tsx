@@ -5,7 +5,7 @@ import { Match } from "@/types/fixture";
 import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
-import { isMatchPassed } from "@/utils/calendar";
+import { isMatchPassed, isMatchOverdueForScore } from "@/utils/calendar";
 import { generateMatchIcs, generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { getHallNavigationUrl } from "@/utils/halls";
 import { PrintScheduleButton } from "./PrintScheduleButton";
@@ -443,7 +443,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           <span>VB: {match.volleybox.score || "Skorlu"}</span>
                           <ExternalLink size={9} className="text-emerald-400 group-hover/vb:translate-x-0.5 transition-transform" />
                         </a>
-                      ) : isMatchPassed(match.volleybox?.vb_date || match.date, match.time, match.status) ? (
+                      ) : isMatchOverdueForScore(match.volleybox?.vb_date || match.date) ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
@@ -759,10 +759,30 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700 shadow-xs"
+                        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-bold shadow-xs border ${
+                          match.volleybox.has_score
+                            ? "bg-emerald-950/70 text-emerald-300 border-emerald-700"
+                            : isMatchOverdueForScore(match.volleybox?.vb_date || match.date)
+                            ? "bg-amber-950/80 text-amber-300 border-amber-700"
+                            : "bg-slate-800/80 text-slate-300 border-slate-700"
+                        }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>VB: {match.volleybox.score || "Kayıtlı"}</span>
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            match.volleybox.has_score
+                              ? "bg-emerald-400 animate-pulse"
+                              : isMatchOverdueForScore(match.volleybox?.vb_date || match.date)
+                              ? "bg-amber-400 animate-ping"
+                              : "bg-blue-400"
+                          }`}
+                        ></span>
+                        <span>
+                          VB:{" "}
+                          {match.volleybox.score ||
+                            (isMatchOverdueForScore(match.volleybox?.vb_date || match.date)
+                              ? "Skorsuz"
+                              : "Kayıtlı")}
+                        </span>
                       </a>
                     )
                   ) : (

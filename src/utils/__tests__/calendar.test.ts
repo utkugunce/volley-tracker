@@ -4,6 +4,7 @@ import {
   compareMatchDateTime,
   formatDateTurkish,
   isMatchPassed,
+  isMatchOverdueForScore,
 } from "../calendar";
 
 describe("Calendar & Match Time Sorting Utilities", () => {
@@ -72,6 +73,29 @@ describe("Calendar & Match Time Sorting Utilities", () => {
     it("TBD veya boş tarihleri güvenle ele alır", () => {
       expect(formatDateTurkish("TBD")).toBe("TBD");
       expect(formatDateTurkish("")).toBe("");
+    });
+  });
+
+  describe("isMatchOverdueForScore", () => {
+    it("o gün olan maçları (bugün) skorsuz olarak göstermez", () => {
+      // Bugün: 2026-09-26, Maç: 2026-09-26 -> false (skorsuz DEĞİL)
+      expect(isMatchOverdueForScore("2026-09-26", "2026-09-26")).toBe(false);
+    });
+
+    it("gelecek maçları skorsuz olarak göstermez", () => {
+      expect(isMatchOverdueForScore("2026-09-27", "2026-09-26")).toBe(false);
+      expect(isMatchOverdueForScore("2026-10-01", "2026-09-26")).toBe(false);
+    });
+
+    it("dünden ve daha eski tarihlerden kalan maçları skorsuz kabul eder", () => {
+      expect(isMatchOverdueForScore("2026-09-25", "2026-09-26")).toBe(true);
+      expect(isMatchOverdueForScore("2026-09-20", "2026-09-26")).toBe(true);
+    });
+
+    it("TBD veya boş tarihleri skorsuz saymaz", () => {
+      expect(isMatchOverdueForScore("TBD", "2026-09-26")).toBe(false);
+      expect(isMatchOverdueForScore("", "2026-09-26")).toBe(false);
+      expect(isMatchOverdueForScore(undefined, "2026-09-26")).toBe(false);
     });
   });
 });

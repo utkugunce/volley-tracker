@@ -17,6 +17,7 @@ import { convertK2MatchToMatch } from "@/utils/kadinlar2LigConverter";
 import { generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { useFavorites } from "@/utils/useFavorites";
 import { PrintScheduleButton } from "@/components/PrintScheduleButton";
+import { isMatchOverdueForScore } from "@/utils/calendar";
 
 interface Kadinlar2LigFixturesProps {
   group: Kadinlar2LigGroup;
@@ -61,7 +62,8 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       (m) =>
         Boolean(m.takim_a_volleybox_url && m.takim_b_volleybox_url) &&
         m.durum !== "BİTTİ" &&
-        (!m.skor || !m.skor.includes("-") || m.skor === "- : -")
+        (!m.skor || !m.skor.includes("-") || m.skor === "- : -") &&
+        isMatchOverdueForScore(m.tarih)
     ).length;
     const unsynced = matches.filter(
       (m) => !m.takim_a_volleybox_url || !m.takim_b_volleybox_url
@@ -102,7 +104,12 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       );
 
       if (volleyboxFilter === "scored" && !isScored) return false;
-      if (volleyboxFilter === "unscored" && (!isSynced || isScored)) return false;
+      if (
+        volleyboxFilter === "unscored" &&
+        (!isSynced || isScored || !isMatchOverdueForScore(m.tarih))
+      ) {
+        return false;
+      }
       if (volleyboxFilter === "unsynced" && isSynced) return false;
       if (volleyboxFilter === "discrepancy" && !hasDiscrepancy) return false;
 

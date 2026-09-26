@@ -70,6 +70,27 @@ export function isMatchPassed(dateStr?: string, timeStr?: string, status?: strin
 }
 
 /**
+ * Bir maçın Volleybox skoru için gecikmiş ("skorsuz") kabul edilip edilmeyeceğini belirler.
+ * Kullanıcı skorları genelde maçtan bir gün sonra girdiği için,
+ * maç günü (o gün) olan maçlar henüz skorsuz olarak işaretlenmez.
+ * Yalnızca tarihi bugünden önce olan (dün veya daha eski, dateStr < today) maçlar "skorsuz" sayılır.
+ */
+export function isMatchOverdueForScore(dateStr?: string, todayStr?: string): boolean {
+  if (!dateStr || dateStr === "TBD") return false;
+
+  let today = todayStr;
+  if (!today) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    today = `${year}-${month}-${day}`;
+  }
+
+  return dateStr < today;
+}
+
+/**
  * ISO veya YYYY-MM-DD formatındaki tarihi Türkçe okunaklı formata çevirir.
  * Örn: '2026-09-14' -> '14 Eylül 2026 Pazartesi'
  */

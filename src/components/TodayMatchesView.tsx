@@ -26,7 +26,7 @@ import {
   AlertTriangle,
   Navigation,
 } from "lucide-react";
-import { formatDateTurkish, isMatchPassed, compareMatchTimes } from "@/utils/calendar";
+import { formatDateTurkish, isMatchPassed, isMatchOverdueForScore, compareMatchTimes } from "@/utils/calendar";
 import { useFavorites } from "@/utils/useFavorites";
 import { getHallNavigationUrl, getHallDetails } from "@/utils/halls";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
@@ -108,8 +108,9 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
       totalMatchesCount > 0 ? Math.round((syncedCount / totalMatchesCount) * 100) : 0;
 
     const scoredCount = syncedMatches.filter((m) => m.volleybox?.has_score).length;
+    // O gün olan maçlar skorsuz gösterilmez, sadece dünden kalan skorsuzlar sayılır
     const unscoredPassed = syncedMatches.filter(
-      (m) => !m.volleybox?.has_score && isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status)
+      (m) => !m.volleybox?.has_score && isMatchOverdueForScore(m.volleybox?.vb_date || m.date, todayStr)
     ).length;
 
     // Aktif il sayısı

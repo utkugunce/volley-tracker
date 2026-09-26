@@ -18,7 +18,7 @@ import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { GroupStatusView } from "@/components/GroupStatusView";
 import { Match, FixturesData } from "@/types/fixture";
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp } from "lucide-react";
-import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
+import { isMatchPassed, isMatchOverdueForScore, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 import { groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
 import { slugify } from "@/utils/slugify";
@@ -26,7 +26,6 @@ import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 // Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
 export const isMatchScored = (m: Match): boolean => {
-  if (m.status === "finished") return true;
   if (m.home_score !== null && m.home_score !== undefined && m.away_score !== null && m.away_score !== undefined) return true;
   if (m.score && m.score.trim() !== "" && m.score.trim() !== "- : -" && m.score.toLowerCase() !== "vs") return true;
   if (m.volleybox?.has_score && m.volleybox?.score) return true;
@@ -443,9 +442,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     const syncedMatches = validMatches.filter((m) => m.volleybox?.synced);
     const synced = syncedMatches.length;
     const scored = syncedMatches.filter((m) => m.volleybox?.has_score).length;
-    // Skorsuz: SADECE maç tarihi geçmesine rağmen Volleybox'a skoru henüz girilmemiş olanlar!
+    // Skorsuz: SADECE maç günü geçmiş (dün veya daha eski) ve Volleybox'a skoru henüz girilmemiş olanlar!
+    // Kullanıcı skorları genelde maçtan bir gün sonra girdiği için maç günü (o gün) olan maçlar skorsuz sayılmaz.
     const unscored = syncedMatches.filter(
-      (m) => !m.volleybox?.has_score && isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status)
+      (m) => !m.volleybox?.has_score && isMatchOverdueForScore(m.volleybox?.vb_date || m.date, todayStr)
     ).length;
     // Değişenler: İl bülteninde tarihi, saati veya salonu değişen maçlar
     const discrepancy = syncedMatches.filter(
@@ -502,10 +502,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       if (volleyboxFilter === "scored" && (!m.volleybox?.synced || !m.volleybox?.has_score)) {
         return false;
       }
-      // Skorsuz: Maç tarihi geçmesine rağmen Volleybox'a skor girilmemiş olanlar
+      // Skorsuz: Maç günü geçmiş olmasına rağmen Volleybox'a skor girilmemiş olanlar (O gün olan maçlar hariç)
       if (
         volleyboxFilter === "unscored" &&
-        (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status))
+        (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchOverdueForScore(m.volleybox?.vb_date || m.date, todayStr))
       ) {
         return false;
       }
