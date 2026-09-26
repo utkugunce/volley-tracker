@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T18:06:33.308650",
+  "updated_at": "2026-09-26T21:19:05.665707",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -363,6 +363,17 @@
       },
       {
         "rank": 2,
+        "team": "KZY Bornova Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Dokuz Eylül Voleybol U18",
         "played": 1,
         "won": 1,
@@ -373,7 +384,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "İzmir Altınay Spor Kulübü - B U18",
         "played": 1,
         "won": 1,
@@ -384,7 +395,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Özateş SK U18",
         "played": 1,
         "won": 0,
@@ -395,7 +406,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Altekma SK U18",
         "played": 1,
         "won": 0,
@@ -406,8 +417,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Smyrna Voleybol Kulübü - B U18",
+        "rank": 7,
+        "team": "Dost Spor - C U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -417,25 +428,14 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Dost Spor - C U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "KZY Bornova Spor Kulübü - B U18",
-        "played": 0,
+        "team": "Smyrna Voleybol Kulübü - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -2240,11 +2240,15 @@
       "match_no": "4",
       "home_team": "Dost Spor - C U18",
       "away_team": "KZY Bornova Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "21-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399279",
@@ -4287,5 +4291,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-26T18:07:54.728398"
+  "volleybox_sync_updated_at": "2026-09-26T21:20:27.076956"
 }
