@@ -558,7 +558,18 @@
       "note": null,
       "verified_at": "2026-09-14",
       "local_logo": "/logos/mehmet-erdem-marmara-akademi-spor-kulubu-u16-t41445.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1788784804cLG1m.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1788784804cLG1m.png",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "aliases": [
+        "Marmara Akademi",
+        "Akademi Atletik",
+        "Akademi Atletik Spor",
+        "Akademi Atletik Spor U16",
+        "Marmar Akademi Atletik Spor U16",
+        "Marmara Akademi Atletik Spor Kulübü U16",
+        "Marmara Akademi Atletik Spor"
+      ]
     },
     {
       "internal_name": "Silivri Çağrıbey",
@@ -575,14 +586,21 @@
     {
       "internal_name": "Bizimkent Voleybol",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Bizimkent Voleybol Spor Kulübü U16 - A",
+      "matched_as": "Bizimkent Voleybol Spor Kulübü U16",
       "volleybox_url": "https://women.volleybox.net/bizimkent-voleybol-spor-kulubu-u16-t41638",
       "age_category": "U16",
       "confidence": "verified",
       "note": null,
       "verified_at": "2026-09-14",
       "local_logo": "/logos/bizimkent-voleybol-spor-kulubu-u16-t41638.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1758270616HMpR3.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758270616HMpR3.png",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "aliases": [
+        "Bizimkent Voleybol",
+        "Bizimkent Voleybol Spor Kulübü U16",
+        "Bizimkent Voleybol Spor Kulübü"
+      ]
     },
     {
       "internal_name": "Bizimkent Sk",
@@ -594,7 +612,15 @@
       "note": null,
       "verified_at": "2026-09-14",
       "local_logo": "/logos/bizimkent-voleybol-spor-kulubu-u16-t41638.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1758270616HMpR3.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1758270616HMpR3.png",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "aliases": [
+        "Bizimkent Sk",
+        "Bizimkent SK",
+        "Bizimkent Voleybol Spor Kulübü U16 - B",
+        "Bizimkent Spor Kulübü U16"
+      ]
     },
     {
       "internal_name": "Milan Atletik",
@@ -5119,7 +5145,9 @@
         "Akademi Atletik SK"
       ],
       "local_logo": "/logos/akademi-atletik-spor-t36067.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1768563586uxG8l.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1768563586uxG8l.png",
+      "city": "Ankara",
+      "city_slug": "ankara"
     },
     {
       "internal_name": "Maç Akademi",
@@ -9023,7 +9051,9 @@
       "confidence": "verified",
       "aliases": [
         "Tekirdağ Voleybol Akademi Spor Kulübü",
-        "Tekirdağ Voleybol Akademi Spor Kulübü U16"
+        "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+        "Voleybol Akademi Tekirdağ Spor Kulübü",
+        "Voleybol Akademi Tekirdağ"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/tekirdag-voleybol-akademi-spor-kulubu-u16-t54734.png",
@@ -15775,6 +15805,47 @@
       ],
       "logo_url": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png",
       "local_logo": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png"
+    },
+    {
+      "internal_name": "Akademi Atletik",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "matched_as": "Marmara Akademi Atletik Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/mehmet-erdem-marmara-akademi-spor-kulubu-u16-t41445",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-26",
+      "local_logo": "/logos/mehmet-erdem-marmara-akademi-spor-kulubu-u16-t41445.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1788784804cLG1m.png",
+      "aliases": [
+        "Akademi Atletik",
+        "Akademi Atletik Spor",
+        "Akademi Atletik Spor U16",
+        "Marmar Akademi Atletik Spor U16",
+        "Marmara Akademi Atletik Spor Kulübü U16"
+      ]
+    },
+    {
+      "internal_name": "Voleybol Akademi Tekirdağ Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Tekirdağ",
+      "city_slug": "tekirdag",
+      "matched_as": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tekirdag-voleybol-akademi-spor-kulubu-u16-t54734",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-09-26",
+      "local_logo": "/logos/tekirdag-voleybol-akademi-spor-kulubu-u16-t54734.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1790158767L9FJc.png",
+      "aliases": [
+        "Voleybol Akademi Tekirdağ Spor Kulübü",
+        "Voleybol Akademi Tekirdağ",
+        "Tekirdağ Voleybol Akademi Spor Kulübü",
+        "Tekirdağ Voleybol Akademi Spor Kulübü U16"
+      ]
     }
   ],
   "leagues": [

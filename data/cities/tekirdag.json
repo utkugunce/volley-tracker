@@ -178,7 +178,7 @@
       },
       {
         "rank": 8,
-        "team": "Voleybol Akademi Tekirdağ Spor Kulübü",
+        "team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -483,25 +483,32 @@
       "group": "A Grubu",
       "match_no": "1",
       "home_team": "Liva Volley Spor Kulübü U16",
-      "away_team": "Voleybol Akademi Tekirdağ Spor Kulübü",
+      "away_team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401151",
+        "url": "https://women.volleybox.net/tr/liva-volley-spor-kulubu-u16-tekirdag-voleybol-akademi-spor-kulubu-u16-c401151",
+        "host_name": "Liva Volley Spor Kulübü U16",
+        "guest_name": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-26",
+        "vb_time": "10:30",
+        "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-26",
+          "vb_time": "10:30",
+          "vb_hall": "Çorlu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -875,6 +882,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-09-26T12:48:53.577407"
+  "volleybox_synced_matches": 13,
+  "volleybox_sync_updated_at": "2026-09-26T13:09:30.504969"
 }
