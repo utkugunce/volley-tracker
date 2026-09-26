@@ -33,12 +33,15 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
     }
   };
 
-  // Seçilen tarih değiştiğinde butonu görünür alana ortala
+  // Seçilen tarih değiştiğinde butonu görünür alana ortala (zorunlu reflow'u engellemek için rAF ile)
   React.useEffect(() => {
     if (selectedDate && selectedDate !== "all" && scrollContainerRef.current) {
       const activeEl = scrollContainerRef.current.querySelector<HTMLElement>('[aria-selected="true"]');
       if (activeEl && typeof activeEl.scrollIntoView === "function") {
-        activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        const frameId = requestAnimationFrame(() => {
+          activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        });
+        return () => cancelAnimationFrame(frameId);
       }
     }
   }, [selectedDate]);

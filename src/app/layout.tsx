@@ -58,6 +58,13 @@ export default function RootLayout({
           type="font/woff"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/museo-sans-900.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-screen bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
         {children}

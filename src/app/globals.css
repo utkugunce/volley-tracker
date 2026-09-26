@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'Museo Sans';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 500;
   font-display: swap;
   src: local('Museo Sans 500'), local('MuseoSans-500'), url('/fonts/museo-sans-500.woff') format('woff');
 }
@@ -17,15 +17,7 @@
 @font-face {
   font-family: 'Museo Sans';
   font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local('Museo Sans 500'), local('MuseoSans-500'), url('/fonts/museo-sans-500.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Museo Sans';
-  font-style: normal;
-  font-weight: 600;
+  font-weight: 600 700;
   font-display: swap;
   src: local('Museo Sans 700'), local('MuseoSans-700'), url('/fonts/museo-sans-700.woff') format('woff');
 }
@@ -33,23 +25,7 @@
 @font-face {
   font-family: 'Museo Sans';
   font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Museo Sans 700'), local('MuseoSans-700'), url('/fonts/museo-sans-700.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Museo Sans';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: local('Museo Sans 900'), local('MuseoSans-900'), url('/fonts/museo-sans-900.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Museo Sans';
-  font-style: normal;
-  font-weight: 900;
+  font-weight: 800 900;
   font-display: swap;
   src: local('Museo Sans 900'), local('MuseoSans-900'), url('/fonts/museo-sans-900.woff') format('woff');
 }
