@@ -135,16 +135,15 @@ export default function AdminPage() {
     setAuthError(null);
 
     try {
-      // 1. Override verilerini ve audit logunu çek
-      const overrideRes = await fetch("/api/admin/override", {
-        headers: { "x-admin-token": authToken },
-      });
+      // Supabase session cookie'ları otomatik olarak gönderilir
+      // x-admin-token header'ı eklemeye gerek yok
+      const overrideRes = await fetch("/api/admin/override");
 
       if (!overrideRes.ok) {
         if (overrideRes.status === 401) {
-          throw new Error("Geçersiz ADMIN_TOKEN. Lütfen token bilginizi kontrol edin.");
+          throw new Error("Yetkisiz işlem. Lütfen tekrar giriş yapın.");
         } else if (overrideRes.status === 503) {
-          throw new Error("Sunucuda ADMIN_TOKEN ortam değişkeni tanımlı değil.");
+          throw new Error("Sunucu yapılandırması eksik.");
         } else {
           throw new Error(`Yetkilendirme hatası: HTTP ${overrideRes.status}`);
         }
@@ -163,9 +162,7 @@ export default function AdminPage() {
 
       // 3. Kullanıcı listesini çek
       try {
-        const usersRes = await fetch("/api/admin/users", {
-          headers: { "x-admin-token": authToken },
-        });
+        const usersRes = await fetch("/api/admin/users");
         if (usersRes.ok) {
           const usersData = await usersRes.json();
           setUsers(usersData.users || []);
