@@ -220,7 +220,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           className={`p-1 rounded-md transition-colors ${
             isFavorite
               ? "text-amber-400"
-              : "text-[#64748B] hover:text-amber-400 opacity-0 group-hover:opacity-100 sm:opacity-70"
+              : "text-[#64748B] hover:text-amber-400 opacity-100 sm:opacity-70 sm:group-hover:opacity-100"
           }`}
         >
           <Star size={13} className={isFavorite ? "fill-amber-400" : ""} />

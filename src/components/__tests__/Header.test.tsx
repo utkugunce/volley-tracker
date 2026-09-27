@@ -88,6 +88,25 @@ describe("Header Component", () => {
     expect(homeButton.className).toContain("border-primary text-white");
   });
 
+  it("activeTab='today' olduğunda yalnızca GÜNÜN MAÇLARI sekmesini aktif gösterir", () => {
+    render(
+      <Header
+        totalMatches={10}
+        todayMatchesCount={2}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="today"
+        onSelectTab={vi.fn()}
+      />
+    );
+
+    const homeButton = screen.getByText("ANASAYFA").closest("button")!;
+    const todayButton = screen.getByText("GÜNÜN MAÇLARI").closest("button")!;
+    expect(homeButton.className).not.toContain("border-primary text-white");
+    expect(todayButton.className).toContain("border-primary text-white");
+  });
+
   it("activeTab='results' olduğunda SONUÇLAR sekmesini aktif stilde gösterir", () => {
     render(
       <Header
@@ -127,6 +146,44 @@ describe("Header Component", () => {
     const header = container.querySelector("header");
     expect(header).toBeInTheDocument();
     expect(header?.className).toContain("pt-[env(safe-area-inset-top,0px)]");
+  });
+
+  it("shows data freshness and refreshes on request", () => {
+    const onRefresh = vi.fn();
+    render(
+      <Header
+        updatedAt="2026-01-01T00:00:00.000Z"
+        totalMatches={10}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="home"
+        onSelectTab={vi.fn()}
+        onRefresh={onRefresh}
+      />
+    );
+
+    expect(screen.getByText("Son güncelleme 03:00")).toBeInTheDocument();
+    expect(screen.getByText("03:00")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Verileri yenile" }));
+    expect(onRefresh).toHaveBeenCalledOnce();
+  });
+
+  it("disables refresh while data is loading", () => {
+    render(
+      <Header
+        totalMatches={10}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="home"
+        onSelectTab={vi.fn()}
+        onRefresh={vi.fn()}
+        isLoading
+      />
+    );
+
+    expect(screen.getByRole("button", { name: "Veriler güncelleniyor" })).toBeDisabled();
   });
 
   it("formats update times consistently in the Istanbul timezone", () => {
