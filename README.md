@@ -28,6 +28,7 @@ Türkiye Voleybol Federasyonu (TVF) İstanbul yerel liglerindeki **Genç Kızlar
   - **Yerel Geliştirme (Local Python):** Yerel ortamda çalışırken `GET /api/fixtures?refresh=1` doğrudan yerel Python tarayıcısını tetikleyebilir. Vercel sunucusuz (serverless) ortamında ise güvenli ve yüksek hızlı CDN/build önbelleği kullanılır.
   - Operasyonel veri kontrolü için `GET /api/health` endpoint'i son veri zamanını, şehir dosyası sayısını, maç toplamını ve GitHub Actions, Blob ve push bildirim yapılandırma durumunu döndürür.
   - Supabase geçişi için `supabase/migrations/001_backend_schema.sql` şeması hazırdır. `SUPABASE_SERVICE_ROLE_KEY` yalnızca sunucu ortamında tutulmalı; değişkenler yokken uygulama JSON fallback'iyle çalışmaya devam eder.
+  - Migration uygulandıktan sonra mevcut JSON verisini aktarmak için `npm run supabase:import` komutu kullanılabilir.
 
 ---
 

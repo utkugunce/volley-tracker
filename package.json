@@ -11,7 +11,8 @@
     "scrape": "python scripts/scrape_all_provinces.py",
     "scrape:provinces": "python scripts/scrape_all_provinces.py",
     "scrape:kadinlar-2-lig": "python scripts/scrape_kadinlar_2_lig.py",
-    "sync:volleybox": "python scripts/sync_volleybox_matches.py"
+    "sync:volleybox": "python scripts/sync_volleybox_matches.py",
+    "supabase:import": "node scripts/import_json_to_supabase.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
