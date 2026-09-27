@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T15:41:18.222386",
+  "updated_at": "2026-09-27T13:21:00.693822",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -79,7 +79,7 @@
     "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği B Grubu": [
       {
         "rank": 1,
-        "team": "Biga Çiçeklidede Spor Kulübü",
+        "team": "Biga Çiçeklidedespor U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -114,7 +114,7 @@
     "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği C Grubu": [
       {
         "rank": 1,
-        "team": "Biga Gelişim Spor Kulübü",
+        "team": "Biga Gelişim Voleybol Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -125,7 +125,7 @@
       },
       {
         "rank": 2,
-        "team": "Çanakkale Belediyespor U16",
+        "team": "Çanakkale Belediyespor - B U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -184,7 +184,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "Barbaros Spor Kulübü",
+        "team": "Çanakkale Barbarosspor U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -195,7 +195,7 @@
       },
       {
         "rank": 2,
-        "team": "Biga Ada Spor Kulübü",
+        "team": "Biga Ada Spor U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -241,7 +241,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği B Grubu": [
       {
         "rank": 1,
-        "team": "Çanakkale Belediyespor U16",
+        "team": "Çanakkale Belediyespor - B U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -309,7 +309,7 @@
       },
       {
         "rank": 2,
-        "team": "Biga Çiçeklidede Spor Kulübü",
+        "team": "Biga Çiçeklidedespor U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -344,7 +344,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği D Grubu": [
       {
         "rank": 1,
-        "team": "Biga Gelişim Spor Kulübü",
+        "team": "Biga Gelişim Voleybol Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -377,7 +377,7 @@
       },
       {
         "rank": 4,
-        "team": "Çanakkale Belediye Spor Kulübü(A)",
+        "team": "Çanakkale Belediyespor U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -400,8 +400,8 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği A Grubu",
       "match_no": "1",
-      "home_team": "Biga Ada Spor Kulübü",
-      "away_team": "Barbaros Spor Kulübü",
+      "home_team": "Biga Ada Spor U16",
+      "away_team": "Çanakkale Barbarosspor U16",
       "score": "2 - 3",
       "home_score": 2,
       "away_score": 3,
@@ -488,7 +488,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği B Grubu",
       "match_no": "1",
-      "home_team": "Çanakkale Belediyespor U16",
+      "home_team": "Çanakkale Belediyespor - B U16",
       "away_team": "Çanakkale Belediyespor",
       "score": "3 - 1",
       "home_score": 3,
@@ -616,7 +616,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği C Grubu",
       "match_no": "1",
-      "home_team": "Biga Çiçeklidede Spor Kulübü",
+      "home_team": "Biga Çiçeklidedespor U16",
       "away_team": "Parion Spor Kulübü U16",
       "score": "2 - 3",
       "home_score": 2,
@@ -705,7 +705,7 @@
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "1",
       "home_team": "Gökçeada Spor Kulübü U16",
-      "away_team": "Biga Gelişim Spor Kulübü",
+      "away_team": "Biga Gelişim Voleybol Kulübü U16",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -750,7 +750,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "2",
-      "home_team": "Biga Gelişim Spor Kulübü",
+      "home_team": "Biga Gelişim Voleybol Kulübü U16",
       "away_team": "Çan Kale Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -791,7 +791,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "3",
-      "home_team": "Çanakkale Belediye Spor Kulübü(A)",
+      "home_team": "Çanakkale Belediyespor U16",
       "away_team": "Gökçeada Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -823,5 +823,5 @@
     }
   ],
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-27T15:56:16.321360"
+  "volleybox_sync_updated_at": "2026-09-27T13:22:34.003355"
 }

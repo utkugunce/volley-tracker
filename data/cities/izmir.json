@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T15:41:23.968699",
+  "updated_at": "2026-09-27T13:21:06.810849",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -442,6 +442,17 @@
     "Genç Kızlar 1. Ligi - Genç Kız - C Gr": [
       {
         "rank": 1,
+        "team": "Zirve 35 Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "35 Yıldız Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -452,7 +463,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Efor Gençlik Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -463,7 +474,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Güzelyalı Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -474,7 +485,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Mavişehir Koleji Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -485,18 +496,18 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Anka Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Dost Spor U18",
         "played": 0,
         "won": 0,
@@ -507,19 +518,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Smyrna Voleybol Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Zirve 35 Spor Kulübü U18",
+        "team": "Smyrna Voleybol Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2383,11 +2383,15 @@
       "match_no": "3",
       "home_team": "Zirve 35 Spor Kulübü U18",
       "away_team": "Anka Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-22",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399264",
@@ -4301,5 +4305,5 @@
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-27T15:45:16.504954"
+  "volleybox_sync_updated_at": "2026-09-27T13:22:34.030522"
 }
