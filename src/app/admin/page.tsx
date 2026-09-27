@@ -135,9 +135,12 @@ export default function AdminPage() {
     setAuthError(null);
 
     try {
-      // Supabase session cookie'ları otomatik olarak gönderilir
-      // x-admin-token header'ı eklemeye gerek yok
-      const overrideRes = await fetch("/api/admin/override");
+      // Supabase session token'ı Authorization header'ı olarak gönder
+      const overrideRes = await fetch("/api/admin/override", {
+        headers: { 
+          "Authorization": `Bearer ${authToken}`
+        },
+      });
 
       if (!overrideRes.ok) {
         if (overrideRes.status === 401) {
@@ -162,7 +165,11 @@ export default function AdminPage() {
 
       // 3. Kullanıcı listesini çek
       try {
-        const usersRes = await fetch("/api/admin/users");
+        const usersRes = await fetch("/api/admin/users", {
+          headers: { 
+            "Authorization": `Bearer ${authToken}`
+          },
+        });
         if (usersRes.ok) {
           const usersData = await usersRes.json();
           setUsers(usersData.users || []);
