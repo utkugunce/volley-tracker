@@ -7,6 +7,7 @@ import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
+import { getSupabaseFixtures } from "@/utils/supabaseFixtures";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
 const refreshLimiter = new RateLimiter({
@@ -184,7 +185,11 @@ export async function GET(request: Request) {
 
     let data: any;
 
-    if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
+    const supabaseData = await getSupabaseFixtures(citySlug);
+
+    if (supabaseData) {
+      data = supabaseData;
+    } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
       const citiesDir = path.join(process.cwd(), "data", "cities");
       const allMatches: any[] = [];
       const allStandings: Record<string, any[]> = {};
