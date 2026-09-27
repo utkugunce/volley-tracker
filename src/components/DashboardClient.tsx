@@ -1137,7 +1137,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                   )}
                 </div>
 
-                <div className="flex items-center gap-2 flex-wrap">
+                <details className="relative">
+                  <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-slate-700/70 bg-slate-800/70 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-700/80">
+                    Görünüm
+                    <ChevronDown size={13} aria-hidden="true" />
+                  </summary>
+                  <div className="absolute right-0 z-20 mt-2 flex min-w-max flex-wrap items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 p-2 shadow-xl">
                   {/* İl Kontrolleri (Birden çok il listeleniyorsa) */}
                   {resultsByCityAndLeague.length > 1 && (
                     <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
@@ -1205,7 +1210,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       </button>
                     </div>
                   )}
-                </div>
+                  </div>
+                </details>
               </div>
             )}
 
@@ -1483,7 +1489,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                   )}
                 </div>
 
-                <div className="flex items-center gap-2 flex-wrap">
+                <details className="relative">
+                  <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-slate-700/70 bg-slate-800/70 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-700/80">
+                    Görünüm
+                    <ChevronDown size={13} aria-hidden="true" />
+                  </summary>
+                  <div className="absolute right-0 z-20 mt-2 flex min-w-max flex-wrap items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 p-2 shadow-xl">
                   {/* İl Kontrolleri (Birden çok il listeleniyorsa) */}
                   {fixturesByCity.length > 1 && (
                     <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
@@ -1551,7 +1562,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       </button>
                     </div>
                   )}
-                </div>
+                  </div>
+                </details>
               </div>
             )}
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search, X, MapPin, AlertTriangle, CheckCircle2, History } from "lucide-react";
+import { Search, X, MapPin, AlertTriangle, CheckCircle2, History, SlidersHorizontal, ChevronDown } from "lucide-react";
 
 interface FilterBarProps {
   categories: string[];
@@ -67,6 +67,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onSelectResultsSubTab,
   yesterdayCount = 0,
 }) => {
+  const [filtersOpen, setFiltersOpen] = React.useState(false);
+  const activeFilterCount =
+    Number(selectedCategory !== "Tümü") +
+    Number(selectedHall !== "Tümü") +
+    Number(searchQuery.trim().length > 0) +
+    Number(volleyboxFilter !== "all");
+
   const statusTabs = [
     { id: "all", label: "HEPSİ", count: counts.all },
     { id: "upcoming", label: "OYNANACAK", count: counts.upcoming },
@@ -155,31 +162,47 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           </div>
         )}
 
-        {/* Lig Sekmeleri: Genç Kızlar Süper Lig / Yıldız Kızlar Süper Lig */}
-        <div className="flex items-center gap-1 overflow-x-auto" role="tablist" aria-label="Lig filtreleri">
-          {categories.map((cat) => {
-            const isActive = selectedCategory === cat;
-            return (
-              <button
-                key={cat}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                onClick={() => onSelectCategory(cat)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                  isActive
-                    ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-xs font-bold ring-1 ring-red-500/40"
-                    : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/60"
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
-        </div>
+        <button
+          type="button"
+          aria-expanded={filtersOpen}
+          onClick={() => setFiltersOpen((open) => !open)}
+          className="inline-flex items-center gap-2 self-start sm:self-auto px-3 py-2 rounded-lg border border-slate-700/70 bg-slate-800/70 text-slate-200 hover:bg-slate-700/80 transition-colors text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <SlidersHorizontal size={14} aria-hidden="true" />
+          <span>Filtreler</span>
+          {activeFilterCount > 0 && (
+            <span className="min-w-5 h-5 px-1 rounded-full bg-primary text-white text-[10px] flex items-center justify-center font-bold">
+              {activeFilterCount}
+            </span>
+          )}
+          <ChevronDown size={14} aria-hidden="true" className={filtersOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+        </button>
       </div>
 
       {/* 2. Salon, Takım Arama ve Volleybox Filtreleri */}
+      {filtersOpen && (
+      <div className="space-y-3">
+      <div className="flex items-center gap-1 overflow-x-auto" role="tablist" aria-label="Lig filtreleri">
+        {categories.map((cat) => {
+          const isActive = selectedCategory === cat;
+          return (
+            <button
+              key={cat}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => onSelectCategory(cat)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                isActive
+                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-xs font-bold ring-1 ring-red-500/40"
+                  : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/60"
+              }`}
+            >
+              {cat}
+            </button>
+          );
+        })}
+      </div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-0.5">
         <div className="flex flex-wrap items-center gap-2 flex-1">
           {/* Arama Input */}
@@ -343,6 +366,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           </button>
         )}
       </div>
+      </div>
+      )}
     </div>
   );
 };
