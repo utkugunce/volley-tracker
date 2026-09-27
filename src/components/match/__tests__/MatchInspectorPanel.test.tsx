@@ -90,6 +90,14 @@ describe("MatchInspectorPanel Component", () => {
     expect(screen.getByText("Sofascore Maç Merkezi")).toBeInTheDocument();
   });
 
+  it("boş durumdan seçili maça geçerken hook sırasını korur", () => {
+    const { rerender } = render(<MatchInspectorPanel match={null} />);
+
+    rerender(<MatchInspectorPanel match={mockMatch} allMatches={mockAllMatches} />);
+
+    expect(screen.getByText("Maç Tamamlandı")).toBeInTheDocument();
+  });
+
   it("seçili maç olduğunda üst başlık, skorboard ve set matrisini render eder", () => {
     const onClose = vi.fn();
     const onToggleFavorite = vi.fn();

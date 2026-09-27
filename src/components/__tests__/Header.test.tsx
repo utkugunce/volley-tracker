@@ -128,4 +128,34 @@ describe("Header Component", () => {
     expect(header).toBeInTheDocument();
     expect(header?.className).toContain("pt-[env(safe-area-inset-top,0px)]");
   });
+
+  it("formats update times consistently in the Istanbul timezone", () => {
+    const { rerender } = render(
+      <Header
+        updatedAt="2026-01-01T00:00:00.000Z"
+        totalMatches={10}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="home"
+        onSelectTab={vi.fn()}
+        isLoading
+      />
+    );
+
+    rerender(
+      <Header
+        updatedAt="2026-01-01T00:00:00.000Z"
+        totalMatches={10}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="home"
+        onSelectTab={vi.fn()}
+        isLoading={false}
+      />
+    );
+
+    expect(screen.getByText(/Fikstür ve sonuçlar güncellendi/)).toHaveTextContent("03:00");
+  });
 });

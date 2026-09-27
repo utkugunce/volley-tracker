@@ -42,19 +42,9 @@ export interface MatchInspectorPanelProps {
   className?: string;
 }
 
-export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = ({
-  match,
-  allMatches = [],
-  standings = {},
-  onClose,
-  onToggleFavorite,
-  isFavorite = false,
-  className = "",
-}) => {
-  const [activeTab, setActiveTab] = useState<"overview" | "h2h" | "standings">("overview");
-  const [copied, setCopied] = useState(false);
+export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) => {
+  const { match, className = "" } = props;
 
-  // 1. Boş Durum (Empty State)
   if (!match) {
     return (
       <div className={`flex flex-col items-center justify-center h-full p-6 text-center select-none bg-[#121212] ${className}`}>
@@ -75,6 +65,22 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = ({
     );
   }
 
+  return <MatchInspectorPanelContent {...props} match={match} />;
+};
+
+const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match"> & { match: Match }> = ({
+  match,
+  allMatches = [],
+  standings = {},
+  onClose,
+  onToggleFavorite,
+  isFavorite = false,
+  className = "",
+}) => {
+  const [activeTab, setActiveTab] = useState<"overview" | "h2h" | "standings">("overview");
+  const [copied, setCopied] = useState(false);
+
+  // 1. Boş Durum (Empty State)
   // Maç Bilgileri Hesaplamaları
   const isLive = match.status === "live";
   const isFinished =

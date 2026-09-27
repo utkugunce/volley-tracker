@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T17:14:29.245393+03:00",
+  "updated_at": "2026-09-27T17:50:03.168069+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -4585,47 +4585,6 @@
       }
     },
     {
-      "id": "ist-20260929-065",
-      "city": "İstanbul",
-      "date": "2026-09-29",
-      "time": "18:00",
-      "hall": "Yakacık İTO Spor Salonu",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "C Grubu",
-      "match_no": "8",
-      "home_team": "ES Voleybol U16",
-      "away_team": "Türk Hava Yolları SK - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402191",
-        "url": "https://women.volleybox.net/tr/es-voleybol-u16-turk-hava-yollar-sk-b-u16-c402191",
-        "host_name": "ES Voleybol U16",
-        "guest_name": "Türk Hava Yolları SK - B U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-09-29",
-        "vb_time": "18:00",
-        "vb_hall": "Yakacık İTO Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-29",
-          "vb_time": "18:00",
-          "vb_hall": "Yakacık İTO Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
       "id": "ist-20260929-044",
       "city": "İstanbul",
       "date": "2026-09-29",
@@ -4704,6 +4663,47 @@
           "vb_time": "19:30",
           "vb_hall": "Tozkoparan Spor Salonu",
           "details": null
+        }
+      }
+    },
+    {
+      "id": "ist-20260929-065",
+      "city": "İstanbul",
+      "date": "2026-09-29",
+      "time": "19:30",
+      "hall": "Yakacık İTO Spor Salonu",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "8",
+      "home_team": "ES Voleybol U16",
+      "away_team": "Türk Hava Yolları SK - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402191",
+        "url": "https://women.volleybox.net/tr/es-voleybol-u16-turk-hava-yollar-sk-b-u16-c402191",
+        "host_name": "ES Voleybol U16",
+        "guest_name": "Türk Hava Yolları SK - B U16",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-09-29",
+        "vb_time": "18:00",
+        "vb_hall": "Yakacık İTO Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-09-29",
+          "vb_time": "18:00",
+          "vb_hall": "Yakacık İTO Spor Salonu",
+          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
         }
       }
     },
@@ -5119,5 +5119,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-09-27T17:18:19.894484"
+  "volleybox_sync_updated_at": "2026-09-27T17:54:00.116431"
 }
