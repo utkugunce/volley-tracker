@@ -18,7 +18,7 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
-import { formatDateTurkish, compareMatchDateTime, isMatchPassed } from "@/utils/calendar";
+import { formatDateTurkish, compareMatchDateTime, isMatchPassed, isTodayOrUnscoredYesterday, getYesterdayString } from "@/utils/calendar";
 import { isMatchScored } from "@/components/DashboardClient";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { getVolleyboxMapping } from "@/utils/volleybox";
@@ -60,7 +60,10 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
     const totalMatches = matches.length;
     const scoredMatches = matches.filter(isMatchScored).length;
     const upcomingMatches = totalMatches - scoredMatches;
-    const todayCount = matches.filter((m) => m.date === todayStr).length;
+    const effectiveYesterday = yesterdayStr || (todayStr ? getYesterdayString(todayStr) : "");
+    const todayCount = matches.filter((m) =>
+      isTodayOrUnscoredYesterday(m.date, isMatchScored(m), todayStr, effectiveYesterday)
+    ).length;
 
     return {
       totalMatches,
@@ -68,14 +71,17 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       upcomingMatches,
       todayCount,
     };
-  }, [matches, todayStr]);
+  }, [matches, todayStr, yesterdayStr]);
 
-  // Bugünün Maçları
+  // Bugünün Maçları (Bugünkü maçlar + dünden skoru henüz girilmemiş maçlar)
   const todayMatches = useMemo(() => {
+    const effectiveYesterday = yesterdayStr || (todayStr ? getYesterdayString(todayStr) : "");
     return matches
-      .filter((m) => m.date === todayStr)
+      .filter((m) =>
+        isTodayOrUnscoredYesterday(m.date, isMatchScored(m), todayStr, effectiveYesterday)
+      )
       .sort((a, b) => compareMatchDateTime(a, b, "asc"));
-  }, [matches, todayStr]);
+  }, [matches, todayStr, yesterdayStr]);
 
   // Son Biten Maçlar (En yeni 8 maç)
   const recentResults = useMemo(() => {

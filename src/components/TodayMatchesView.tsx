@@ -26,10 +26,11 @@ import {
   AlertTriangle,
   Navigation,
 } from "lucide-react";
-import { formatDateTurkish, isMatchPassed, isMatchOverdueForScore, compareMatchTimes } from "@/utils/calendar";
+import { formatDateTurkish, isMatchPassed, isMatchOverdueForScore, compareMatchTimes, isTodayOrUnscoredYesterday, getYesterdayString } from "@/utils/calendar";
 import { useFavorites } from "@/utils/useFavorites";
 import { getHallNavigationUrl, getHallDetails } from "@/utils/halls";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
+import { isMatchScored } from "@/components/DashboardClient";
 import { PrintScheduleButton } from "./PrintScheduleButton";
 
 interface TodayMatchesViewProps {
@@ -39,6 +40,7 @@ interface TodayMatchesViewProps {
   onSelectCity?: (slug: string) => void;
   citiesList?: CityInfo[];
   todayStr: string;
+  yesterdayStr?: string;
   favorites: string[];
   onToggleFavorite: (matchId: string) => void;
   onNavigateToFullFixtures?: () => void;
@@ -52,6 +54,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   onSelectCity,
   citiesList = [],
   todayStr,
+  yesterdayStr,
   favorites,
   onToggleFavorite,
   onNavigateToFullFixtures = () => {},
@@ -61,10 +64,14 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   const [displayMode, setDisplayMode] = useState<"cards" | "table">("cards");
   const { isFavorite: isTeamFavorite, count: favoriteTeamsCount } = useFavorites();
 
-  // Bugünün tüm maçları
+  const effectiveYesterdayStr = yesterdayStr || getYesterdayString(todayStr);
+
+  // Bugünün tüm maçları ve dünden skoru henüz girilmemiş (gecikmiş) maçlar
   const todayMatches = useMemo(() => {
-    return matches.filter((m) => m.date === todayStr);
-  }, [matches, todayStr]);
+    return matches.filter((m) =>
+      isTodayOrUnscoredYesterday(m.date, isMatchScored(m), todayStr, effectiveYesterdayStr)
+    );
+  }, [matches, todayStr, effectiveYesterdayStr]);
 
   const isMatchFavorite = useMemo(() => {
     return (m: Match) => {
@@ -84,13 +91,18 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   const filteredTodayMatches = useMemo(() => {
     let base = todayMatches;
     if (quickStatus === "upcoming") {
-      base = todayMatches.filter((m) => m.status === "upcoming");
+      base = todayMatches.filter((m) => m.status === "upcoming" || !isMatchScored(m));
     } else if (quickStatus === "finished") {
-      base = todayMatches.filter((m) => m.status === "finished");
+      base = todayMatches.filter((m) => isMatchScored(m));
     } else if (quickStatus === "favorites") {
       base = todayMatches.filter(isMatchFavorite);
     }
-    return [...base].sort((m1, m2) => compareMatchTimes(m1.time, m2.time));
+    return [...base].sort((m1, m2) => {
+      if (m1.date !== m2.date) {
+        return m1.date.localeCompare(m2.date);
+      }
+      return compareMatchTimes(m1.time, m2.time);
+    });
   }, [todayMatches, quickStatus, isMatchFavorite]);
 
   // Dashboard KPI Sayıları
@@ -99,8 +111,8 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
     const totalMatchesCount = validMatches.length;
 
     const todayTotal = todayMatches.length;
-    const todayUpcoming = todayMatches.filter((m) => m.status === "upcoming").length;
-    const todayFinished = todayMatches.filter((m) => m.status === "finished").length;
+    const todayUpcoming = todayMatches.filter((m) => m.status === "upcoming" || !isMatchScored(m)).length;
+    const todayFinished = todayMatches.filter((m) => isMatchScored(m)).length;
 
     const syncedMatches = validMatches.filter((m) => m.volleybox?.synced);
     const syncedCount = syncedMatches.length;
@@ -290,7 +302,9 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
   // Tekil bir maç kartı bileşeni (Dashboard Match Card)
   const renderDashboardMatchCard = (m: Match) => {
     const isFav = isMatchFavorite(m);
-    const isFinished = m.status === "finished";
+    const hasScore = isMatchScored(m);
+    const isFinished = (m.status === "finished" || hasScore) && hasScore;
+    const isYesterdayUnscored = m.date === effectiveYesterdayStr && !hasScore;
     const homeWon = isFinished && (m.home_score ?? 0) > (m.away_score ?? 0);
     const awayWon = isFinished && (m.away_score ?? 0) > (m.home_score ?? 0);
     const disc = m.volleybox?.discrepancy;
@@ -318,12 +332,19 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
             ? "border-amber-500/60 ring-1 ring-amber-400/30"
             : isFav
             ? "border-amber-500/60 ring-1 ring-amber-400/40"
+            : isYesterdayUnscored
+            ? "border-amber-500/30 bg-amber-950/10 hover:border-amber-500/60"
             : "border-slate-800 hover:border-slate-600/80"
         }`}
       >
         {/* Kart Üst Bilgi Başlığı */}
         <div className="px-4 py-2.5 bg-slate-900/70 border-b border-slate-800/80 flex items-center justify-between text-xs gap-2">
           <div className="flex items-center gap-1.5 flex-wrap min-w-0">
+            {isYesterdayUnscored && (
+              <span className="font-bold px-1.5 py-0.5 rounded-md bg-amber-950/90 border border-amber-700/60 text-amber-300 text-[10px] tracking-wide">
+                Dün
+              </span>
+            )}
             {m.city && city === "Tüm İller" && (
               <span className="font-bold px-1.5 py-0.5 rounded-md bg-slate-800 border border-slate-700/60 text-slate-200 text-[10px] uppercase tracking-wider">
                 {m.city}
@@ -349,6 +370,14 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               }`}>
                 <span className={`w-1.5 h-1.5 rounded-full ${forfeitInfo.isForfeit ? "bg-amber-400" : "bg-emerald-400"}`} />
                 {forfeitInfo.isForfeit ? "HÜKMEN" : "BİTTİ"}
+              </span>
+            ) : isYesterdayUnscored ? (
+              <span
+                className="px-2 py-0.5 rounded-full text-[10px] font-black tracking-wide bg-amber-950/90 text-amber-300 border border-amber-500/40 flex items-center gap-1 shadow-xs"
+                title="Dün oynandı, il temsilciliğinden skor girişi bekleniyor"
+              >
+                <Clock size={10} className="text-amber-400" />
+                <span>DÜN • SKOR BEKLENİYOR</span>
               </span>
             ) : (
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black tracking-wide bg-sky-950/90 text-sky-300 border border-sky-500/40 flex items-center gap-1 shadow-xs">

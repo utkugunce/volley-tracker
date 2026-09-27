@@ -387,10 +387,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     setYesterdayStr(computeDate(1));
   }, []);
 
-  // Bugün oynanacak maç sayısı (Header rozeti için)
+  // Bugün oynanacak veya dünden skoru henüz girilmemiş maç sayısı (Header rozeti için)
   const todayMatchesCount = useMemo(() => {
-    return (data?.matches || []).filter((m) => m.date === todayStr).length;
-  }, [data, todayStr]);
+    return (data?.matches || []).filter(
+      (m) => m.date === todayStr || (m.date === yesterdayStr && !isMatchScored(m))
+    ).length;
+  }, [data, todayStr, yesterdayStr]);
 
   // Türkiye genelindeki toplam maç sayısı
   const totalMatchesAcrossAll = useMemo(() => {
@@ -1177,6 +1179,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               onSelectCity={handleSelectCity}
               citiesList={citiesList}
               todayStr={todayStr}
+              yesterdayStr={yesterdayStr}
               favorites={favorites}
               onToggleFavorite={toggleFavorite}
               onNavigateToFullFixtures={() => handleSelectTab("fixtures")}
