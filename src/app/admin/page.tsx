@@ -987,7 +987,6 @@ export default function AdminPage() {
             </div>
           </div>
         ) : activeTab === "audit" ? (
-          /* Denetim Günlüğü (Audit Log) */
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <h2 className="text-base font-bold text-white mb-4 flex items-center gap-2">
               <History size={18} className="text-primary" />
@@ -1042,8 +1041,7 @@ export default function AdminPage() {
               </div>
             )}
           </div>
-        ) : (
-          /* Kullanıcı Yönetimi */
+        ) : activeTab === "users" ? (
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2">
@@ -1114,7 +1112,6 @@ export default function AdminPage() {
             )}
           </div>
         ) : activeTab === "live" ? (
-          /* Canlı Skor Yönetimi */
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2">
@@ -1166,7 +1163,6 @@ export default function AdminPage() {
             </div>
           </div>
         ) : activeTab === "notifications" ? (
-          /* Bildirim Yönetimi */
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2">
@@ -1260,7 +1256,6 @@ export default function AdminPage() {
             </div>
           </div>
         ) : activeTab === "sync" ? (
-          /* Sync Geçmişi */
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2">
@@ -1305,7 +1300,7 @@ export default function AdminPage() {
                             {log.action}
                           </div>
                           <div className="text-slate-400 text-[10px]">
-                            {log.author} • {new Date(log.created_at).toLocaleString("tr-TR")}
+                            {log.updated_by} • {new Date(log.timestamp).toLocaleString("tr-TR")}
                           </div>
                         </div>
                         <span className={`px-2 py-1 rounded text-[10px] font-medium ${
@@ -1365,7 +1360,7 @@ export default function AdminPage() {
               </div>
             </div>
           </div>
-        )}
+        ) : null}
       </main>
 
       {/* KULLANICI EKLEME MODALI */}

@@ -55,6 +55,10 @@ describe("useRealtimeMatches", () => {
       // Get the options object passed to getRealtimeManager
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
       
+      if (!options) {
+        throw new Error("Options should be defined");
+      }
+      
       act(() => {
         options.onConnectionChange(true);
       });
@@ -67,11 +71,15 @@ describe("useRealtimeMatches", () => {
     it("should update lastUpdate when match is updated", () => {
       const { result } = renderHook(() => useRealtimeMatches());
 
-      const matchUpdate = { id: "match1", home_score: 2, away_score: 1 };
+      const matchUpdate = { id: "match1", home_score: 2, away_score: 1, set_scores: ["25-18", "22-25"], status: "live", updated_at: new Date().toISOString() };
 
       // Get the options object passed to getRealtimeManager
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
-
+      
+      if (!options) {
+        throw new Error("Options should be defined");
+      }
+      
       act(() => {
         options.onMatchUpdate(matchUpdate);
       });
@@ -84,17 +92,18 @@ describe("useRealtimeMatches", () => {
 
       // Get the options object passed to getRealtimeManager
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
-
-      // Set error first
-      act(() => {
-        options.onError(new Error("Test error"));
-      });
+      
+      if (options) {
+        act(() => {
+          options.onError(new Error("Test error"));
+        });
+      }
 
       expect(result.current.error).not.toBeNull();
 
       // Then update match
       act(() => {
-        options.onMatchUpdate({ id: "match1", home_score: 2, away_score: 1 });
+        options?.onMatchUpdate({ id: "match1", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() });
       });
 
       expect(result.current.error).toBeNull();
@@ -109,7 +118,11 @@ describe("useRealtimeMatches", () => {
 
       // Get the options object passed to getRealtimeManager
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
-
+      
+      if (!options) {
+        throw new Error("Options should be defined");
+      }
+      
       act(() => {
         options.onError(testError);
       });
@@ -185,11 +198,15 @@ describe("useRealtimeMatch", () => {
     it("should update match when specific match is updated", () => {
       const { result } = renderHook(() => useRealtimeMatch("match1"));
 
-      const matchUpdate = { id: "match1", home_score: 2, away_score: 1 };
+      const matchUpdate = { id: "match1", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() };
 
       // Get the options object passed to getRealtimeManager
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
-
+      
+      if (!options) {
+        throw new Error("Options should be defined");
+      }
+      
       act(() => {
         options.onMatchUpdate(matchUpdate);
       });
@@ -200,11 +217,15 @@ describe("useRealtimeMatch", () => {
     it("should not update match when different match is updated", () => {
       const { result } = renderHook(() => useRealtimeMatch("match1"));
 
-      const matchUpdate = { id: "match2", home_score: 2, away_score: 1 };
+      const matchUpdate = { id: "match2", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() };
 
       // Get the options object passed to getRealtimeManager
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
-
+      
+      if (!options) {
+        throw new Error("Options should be defined");
+      }
+      
       act(() => {
         options.onMatchUpdate(matchUpdate);
       });
@@ -219,15 +240,17 @@ describe("useRealtimeMatch", () => {
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
 
       // First set a match
-      act(() => {
-        options.onMatchUpdate({ id: "match1", home_score: 2, away_score: 1 });
-      });
+      if (options) {
+        act(() => {
+          options.onMatchUpdate({ id: "match1", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() });
+        });
+      }
 
       expect(result.current.match).not.toBeNull();
 
       // Then delete it
       act(() => {
-        options.onMatchDeleted("match1");
+        options?.onMatchDeleted("match1");
       });
 
       expect(result.current.match).toBeNull();

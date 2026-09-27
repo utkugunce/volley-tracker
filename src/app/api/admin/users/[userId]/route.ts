@@ -4,7 +4,7 @@ import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   const authenticatedUser = await getAuthenticatedUser(request);
   if (!authenticatedUser || authenticatedUser.role !== "admin") {
@@ -27,7 +27,7 @@ export async function PATCH(
       );
     }
 
-    const userId = params.userId;
+    const { userId } = await params;
 
     // Prevent admin from changing their own role
     if (userId === authenticatedUser.user.id) {
@@ -76,7 +76,7 @@ export async function PATCH(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   const authenticatedUser = await getAuthenticatedUser(request);
   if (!authenticatedUser || authenticatedUser.role !== "admin") {
@@ -89,7 +89,7 @@ export async function DELETE(
   }
 
   try {
-    const userId = params.userId;
+    const { userId } = await params;
 
     // Prevent admin from deleting themselves
     if (userId === authenticatedUser.user.id) {
