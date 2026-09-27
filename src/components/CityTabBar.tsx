@@ -63,7 +63,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
         list.push({
           slug: currentCity.slug,
           name: currentCity.name,
-          ilid: currentCity.ilid,
+          ilid: currentCity.ilid ?? "",
         });
       }
     }
@@ -88,7 +88,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
       const term = trLower(searchTerm).trim();
       return (
         trIncludes(c.name, term) ||
-        c.ilid.includes(term) ||
+        (c.ilid?.includes(term) ?? false) ||
         trIncludes(c.slug, term)
       );
     });

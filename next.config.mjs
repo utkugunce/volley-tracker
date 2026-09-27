@@ -28,9 +28,9 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "img-src 'self' https://*.volleybox.net data: blob:",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
       "style-src 'self' 'unsafe-inline'",
-      "connect-src 'self' https://*.vercel-storage.com",
+      "connect-src 'self' https://*.vercel-storage.com https://va.vercel-scripts.com https://vitals.vercel-insights.com",
       "font-src 'self' data:",
       "manifest-src 'self'",
       "worker-src 'self'",
@@ -42,11 +42,6 @@ const securityHeaders = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Vercel build süresini önemli ölçüde hızlandıran optimizasyonlar:
-  eslint: {
-    // Derleme esnasında ESLint kontrolünü atlar (ESLint yerel olarak 'npm run lint' ile çalıştırılabilir)
-    ignoreDuringBuilds: true,
-  },
   experimental: {
     // Lucide ikonlarının tüm paketi yerine yalnızca kullanılan ikonların import edilmesini sağlayarak derleme süresini ve bundle boyutunu düşürür
     optimizePackageImports: ["lucide-react"],

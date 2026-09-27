@@ -89,14 +89,15 @@ export interface FixturesData {
 }
 
 export interface CityInfo {
-  ilid: string;
+  ilid?: string;
   name: string;
   slug: string;
-  url: string;
-  status: string;
+  url?: string;
+  status?: string;
   matches_count: number;
-  standings_count: number;
+  standings_count?: number;
   data_file?: string | null;
+  last_updated?: string | null;
 }
 
 export type VolleyboxConfidence = "verified" | "club_level_only" | "broken";

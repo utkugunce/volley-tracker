@@ -58,18 +58,18 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
     return cities.filter((c) => {
       const matchSearch =
         trIncludes(c.name, term) ||
-        c.ilid.includes(term) ||
+        (c.ilid?.includes(term) ?? false) ||
         trIncludes(c.slug, term);
 
       if (filterTab === "active") {
-        return matchSearch && (c.matches_count > 0 || c.standings_count > 0);
+        return matchSearch && (c.matches_count > 0 || (c.standings_count ?? 0) > 0);
       }
       return matchSearch;
     });
   }, [cities, searchTerm, filterTab]);
 
   const activeCitiesCount = useMemo(() => {
-    return cities.filter((c) => c.matches_count > 0 || c.standings_count > 0).length;
+    return cities.filter((c) => c.matches_count > 0 || (c.standings_count ?? 0) > 0).length;
   }, [cities]);
 
   return (
