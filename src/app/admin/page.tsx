@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import {
-  ShieldAlert,
-  KeyRound,
+  Shield,
   Search,
   CheckCircle2,
   AlertTriangle,
@@ -21,9 +20,7 @@ import {
   Clock,
   Users,
   UserPlus,
-  Shield,
   Play,
-  LogOut,
 } from "lucide-react";
 import { compareMatchDateTime } from "@/utils/calendar";
 import { Match } from "@/types/fixture";
@@ -33,7 +30,6 @@ import { getSupabaseClient } from "@/utils/supabaseClient";
 
 export default function AdminPage() {
   const [token, setToken] = useState<string>("");
-  const [inputToken, setInputToken] = useState<string>("");
   const [authEmail, setAuthEmail] = useState<string>("");
   const [authPassword, setAuthPassword] = useState<string>("");
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -190,13 +186,6 @@ export default function AdminPage() {
     }
   };
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!inputToken.trim()) return;
-    setToken(inputToken.trim());
-    verifyAndFetchData(inputToken.trim());
-  };
-
   const handleSupabaseLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -225,7 +214,6 @@ export default function AdminPage() {
   const handleLogout = async () => {
     setIsAuthenticated(false);
     setToken("");
-    setInputToken("");
     try {
       sessionStorage.removeItem("volley_admin_token");
       // Also sign out from Supabase if session exists
@@ -589,43 +577,55 @@ export default function AdminPage() {
     }).sort((a, b) => compareMatchDateTime(a, b, "asc"));
   }, [matches, overrides, filterOverriddenOnly, selectedCity, searchQuery]);
 
-  // 1. Giriş Yapılmamışsa Token Formunu Göster
+  // 1. Giriş Yapılmamışsa Supabase Login Formunu Göster
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 text-slate-100">
         <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 border border-red-500/30 flex items-center justify-center shrink-0">
-              <ShieldAlert size={22} />
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">
+              <Shield size={22} />
             </div>
             <div>
               <h1 className="text-xl font-bold text-white">Yönetim Paneli</h1>
-              <p className="text-xs text-slate-400">ADMIN_TOKEN Doğrulaması</p>
+              <p className="text-xs text-slate-400">Supabase Authentication</p>
             </div>
           </div>
 
           <p className="text-sm text-slate-300 mb-5 leading-relaxed">
-            Maç skorlarını ve durumlarını manuel olarak düzeltmek için lütfen yönetici token bilginizi girin.
+            Maç skorlarını ve durumlarını manuel olarak düzeltmek için Supabase hesabınızla giriş yapın.
           </p>
 
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleSupabaseLogin} className="space-y-4">
             <div>
-              <label htmlFor="admin-token-input" className="block text-xs font-semibold text-slate-400 mb-1.5">
-                ADMIN TOKEN
+              <label htmlFor="supabase-email" className="block text-xs font-semibold text-slate-400 mb-1.5">
+                E-POSTA
               </label>
-              <div className="relative">
-                <input
-                  id="admin-token-input"
-                  type="password"
-                  value={inputToken}
-                  onChange={(e) => setInputToken(e.target.value)}
-                  placeholder="Gizli admin token'ı..."
-                  aria-label="Admin Token"
-                  className="w-full pl-10 pr-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-2 focus-visible:ring-primary transition-colors"
-                  required
-                />
-                <KeyRound size={16} aria-hidden="true" className="absolute left-3.5 top-3.5 text-slate-500" />
-              </div>
+              <input
+                id="supabase-email"
+                type="email"
+                value={authEmail}
+                onChange={(event) => setAuthEmail(event.target.value)}
+                placeholder="admin@example.com"
+                aria-label="Supabase e-posta"
+                className="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-2 focus-visible:ring-primary transition-colors"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="supabase-password" className="block text-xs font-semibold text-slate-400 mb-1.5">
+                ŞİFRE
+              </label>
+              <input
+                id="supabase-password"
+                type="password"
+                value={authPassword}
+                onChange={(event) => setAuthPassword(event.target.value)}
+                placeholder="••••••••"
+                aria-label="Supabase şifre"
+                className="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-2 focus-visible:ring-primary transition-colors"
+                required
+              />
             </div>
 
             {authError && (
@@ -638,44 +638,10 @@ export default function AdminPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 px-4 rounded-xl bg-primary hover:bg-primary/90 text-white font-semibold text-sm shadow transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
+              className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
             >
-              {loading ? "Doğrulanıyor..." : "Panele Giriş Yap"}
+              {loading ? "Giriş Yapılıyor..." : "Supabase ile Giriş Yap"}
               <ArrowRight size={16} />
-            </button>
-          </form>
-
-          <div className="my-5 flex items-center gap-3 text-[10px] uppercase tracking-widest text-slate-500">
-            <span className="h-px flex-1 bg-slate-800" />
-            veya Supabase Auth
-            <span className="h-px flex-1 bg-slate-800" />
-          </div>
-
-          <form onSubmit={handleSupabaseLogin} className="space-y-3">
-            <input
-              type="email"
-              value={authEmail}
-              onChange={(event) => setAuthEmail(event.target.value)}
-              placeholder="E-posta"
-              aria-label="Supabase e-posta"
-              className="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary"
-              required
-            />
-            <input
-              type="password"
-              value={authPassword}
-              onChange={(event) => setAuthPassword(event.target.value)}
-              placeholder="Şifre"
-              aria-label="Supabase şifre"
-              className="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary"
-              required
-            />
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-2.5 px-4 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-colors disabled:opacity-50"
-            >
-              Supabase ile giriş yap
             </button>
           </form>
 
