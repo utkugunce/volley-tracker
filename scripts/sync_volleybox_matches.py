@@ -243,6 +243,10 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
             print(f"  [UYARI] Volleybox hız sınırına (429) ulaşıldı ({tournament_url.split('/')[-1]}). Mevcut veriler korunuyor.")
             client.close()
             return []
+        if resp.status_code == 403:
+            print(f"  [UYARI] Volleybox erişimi 403 ile reddetti ({tournament_url.split('/')[-1]}). Kayıtlı maç eşleşmeleri korunacak.")
+            client.close()
+            return []
         resp.raise_for_status()
         html = resp.text
     except Exception as e:
@@ -881,6 +885,7 @@ def main():
     parser = argparse.ArgumentParser(description="TVF - Volleybox Maç Senkronizasyonu")
     parser.add_argument("--city", default=None, help="Belirli bir şehri senkronize et (örn: istanbul, izmir)")
     parser.add_argument("--all", action="store_true", help="Tüm turnuvaları tara (varsayılan: sadece aktif fikstürü olan iller)")
+    parser.add_argument("--skip-kadinlar-2-lig", action="store_true", help="Kadınlar 2. Ligi verilerine dokunma")
     args, _ = parser.parse_known_args()
 
     print("\n" + "=" * 75)
@@ -956,7 +961,10 @@ def main():
         c_slug = l.get("city_slug", "")
         c_norm = normalize_name(c_name)
         internal_name = (l.get("internal_name") or "").lower()
-        is_k2 = "2. lig" in internal_name or c_slug.lower() == "turkiye" or c_norm == "turkiye"
+        is_k2 = "2. lig" in internal_name
+        is_national_tournament = c_slug.lower() == "turkiye" or c_norm == "turkiye"
+        if args.skip_kadinlar_2_lig and is_k2:
+            continue
         if args.city:
             if args.city.lower() in [c_slug.lower(), c_norm, c_name.lower()]:
                 target_leagues.append(l)
@@ -965,7 +973,7 @@ def main():
         elif args.all:
             target_leagues.append(l)
         else:
-            if c_slug.lower() in active_city_names or c_norm in active_city_names or is_k2:
+            if c_slug.lower() in active_city_names or c_norm in active_city_names or is_k2 or is_national_tournament:
                 target_leagues.append(l)
 
     print(f"📋 Toplam {len(target_leagues)} aktif ({CURRENT_SEASON} sezonu) turnuva taranıyor...")
@@ -1042,7 +1050,7 @@ def main():
                 print(f"✅ {city_json.name:<18} : {c_synced} / {c_total} maç Volleybox ile eşleşti.")
 
     # 5. data/kadinlar_2_lig.json senkronizasyonu
-    if K2_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-2-ligi", "2lig", "turkiye"]):
+    if not args.skip_kadinlar_2_lig and K2_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-2-ligi", "2lig", "turkiye"]):
         print("\n🔄 data/kadinlar_2_lig.json senkronize ediliyor...")
         k2_synced, k2_total = sync_kadinlar_2_lig_matches(K2_FILE, vb_tournaments, team_alias_map)
         print(f"✅ Kadınlar 2. Ligi: {k2_synced} / {k2_total} maç Volleybox ile eşleşti ve doğrulandı!")

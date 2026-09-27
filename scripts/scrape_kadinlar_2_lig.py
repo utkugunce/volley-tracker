@@ -59,7 +59,10 @@ def fetch_volleybox_teams():
         else:
             r = httpx.get(volleybox_url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
         if r.status_code != 200:
-            print(f"⚠️ Volleybox HTTP {r.status_code} döndü.")
+            if r.status_code == 403:
+                print("⚠️ Volleybox otomatik erişimi HTTP 403 ile reddetti; kayıtlı takım eşleşmeleri kullanılacak.")
+            else:
+                print(f"⚠️ Volleybox HTTP {r.status_code} döndü; kayıtlı takım eşleşmeleri kullanılacak.")
             return {}
         soup = BeautifulSoup(r.text, "html.parser")
         team_links = {}
@@ -221,8 +224,22 @@ KNOWN_2_LIG_ALIASES = {
     "galatasaray": ["galatasaray ll", "galatasaray ii"],
 }
 
+KNOWN_2_LIG_PROFILE_OVERRIDES = {
+    "alpspor": ("https://women.volleybox.net/tr/stanbul-alp-spor-t36171", "Alp Voleybol Kulübü"),
+    "asyakartallarikamarinspor": ("https://women.volleybox.net/tr/kamarin-spor-kulubu-t36145", "Kamarin Asya Kartalları SK"),
+    "muglaturkfethiyezirve": ("https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-t19942", "Fethiye Zirve Spor Kulübü"),
+    "ptt": ("https://women.volleybox.net/tr/ptt-spor-ii-t9985", "PTT Spor II"),
+    "ahmethamditanpinarortaokulu": ("https://women.volleybox.net/tr/ahmet-hamdi-tanpnar-ortaokulu-t20533", "AHTO Spor Kulübü"),
+    "tekmetalsportif": ("https://women.volleybox.net/tr/als-voleybol-t19501", "Tek Metal Sportif SK"),
+    "parsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Volley"),
+    "mardinderikrota": ("https://women.volleybox.net/tr/derik-rota-spor-kulubu-t45209", "Derik Rota Spor Kulübü"),
+}
+
 def match_volleybox(tvf_name, vb_dict):
     norm_tvf = normalize_for_match(tvf_name)
+
+    if norm_tvf in KNOWN_2_LIG_PROFILE_OVERRIDES:
+        return KNOWN_2_LIG_PROFILE_OVERRIDES[norm_tvf]
     
     # 0. Known explicit aliases
     for kn, extra_als in KNOWN_2_LIG_ALIASES.items():

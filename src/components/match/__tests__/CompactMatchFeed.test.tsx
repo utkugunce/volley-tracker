@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { Match } from "@/types/fixture";
 import { CompactMatchFeed } from "../CompactMatchFeed";
@@ -77,6 +77,21 @@ describe("CompactMatchFeed keyboard navigation", () => {
 
     expect(getAllByText("Salon A")).toHaveLength(2);
     expect(getAllByRole("button", { name: "Takvime ekle" })).toHaveLength(2);
+  });
+
+  it("lig başlığını lig detay sayfasına bağlar", () => {
+    render(
+      <CompactMatchFeed
+        matches={matches}
+        todayStr="2026-10-15"
+        yesterdayStr="2026-10-14"
+      />
+    );
+
+    expect(screen.getByRole("link", { name: "Genç Kızlar (U18)" })).toHaveAttribute(
+      "href",
+      "/lig/genc-kizlar-u18"
+    );
   });
 
   it("sonuç modunda sadece skorlu maçları listeler", () => {

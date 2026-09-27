@@ -38,6 +38,9 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     time: m.saat || null,
     discrepancy: rawAny.discrepancy || null,
   };
+  if (rawAny.discrepancy?.has_diff && !volleyboxData.discrepancy?.has_diff) {
+    volleyboxData.discrepancy = rawAny.discrepancy;
+  }
 
   // DD.MM.YYYY tarihini standart YYYY-MM-DD formatına çevir
   let isoDate = m.tarih || "TBD";

@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Trophy, ExternalLink } from "lucide-react";
+import { ChevronDown, Trophy } from "lucide-react";
 import { Match } from "@/types/fixture";
 import { CompactMatchRow, MatchRowMode } from "./CompactMatchRow";
+import { LeagueVolleyboxLink } from "@/components/LeagueVolleyboxLink";
 import { slugify } from "@/utils/slugify";
 
 interface LeagueSectionProps {
@@ -67,8 +68,14 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             }`}
           />
           <h3 className="text-xs font-bold text-white uppercase tracking-wide truncate">
-            {cityName ? `${cityName.toUpperCase()} - ` : ""}
-            {leagueTitle}
+            {cityName && <span>{cityName.toUpperCase()} - </span>}
+            <LeagueVolleyboxLink
+              league={leagueTitle}
+              city={cityName}
+              className="text-xs font-bold text-white hover:text-amber-400"
+            >
+              {leagueTitle}
+            </LeagueVolleyboxLink>
           </h3>
         </div>
 

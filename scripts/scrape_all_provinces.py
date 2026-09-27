@@ -864,7 +864,7 @@ def main():
     try:
         from scripts.sync_volleybox_matches import main as sync_vb_main
         old_argv = sys.argv
-        sys.argv = [sys.argv[0]] + [a for a in sys.argv[1:] if a not in ("--force", "-f")]
+        sys.argv = [sys.argv[0]] + [a for a in sys.argv[1:] if a not in ("--force", "-f")] + ["--skip-kadinlar-2-lig"]
         try:
             sync_vb_main()
         finally:
