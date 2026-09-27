@@ -76,6 +76,12 @@ def fetch_volleybox_teams():
         print(f"⚠️ Volleybox çekme hatası: {e}")
         return {}
 
+# TVF veya Volleybox üzerinde ligden çekilen/çıkarılan takımlar
+WITHDRAWN_TEAMS = {
+    "BARTIN VOLLEY ACADEMY",
+    "BARTIN VOLEYBOL KULÜBÜ",
+}
+
 def extract_standings_from_snapshot(snap_dict):
     lp = snap_dict.get("data", {}).get("leaguePoints", [])
     teams = []
@@ -116,7 +122,19 @@ def extract_standings_from_snapshot(snap_dict):
                                 "logo": t.get("LOGO") or "",
                                 "sezon": clean_text(t.get("SEZON", "2026-2027")),
                             })
-    return teams
+
+    # Ligden çekilen / çıkarılan takımları filtrele ve sıralamayı yeniden düzenle
+    filtered_teams = []
+    for t in teams:
+        t_name = clean_text(t.get("takim_adi", ""))
+        if any(w in t_name.upper() for w in WITHDRAWN_TEAMS):
+            continue
+        filtered_teams.append(t)
+
+    for idx, t in enumerate(filtered_teams, 1):
+        t["sira"] = idx
+
+    return filtered_teams
 
 def extract_fixtures_from_snapshot(snap_dict, group_id):
     lf = snap_dict.get("data", {}).get("leagueFixture", [])
@@ -164,7 +182,17 @@ def extract_fixtures_from_snapshot(snap_dict, group_id):
                                         "durum": "BİTTİ" if (set_a != "" and set_b != "") else "OYNANACAK",
                                         "mac_durumu_kod": str(m.get("MACDURUMU", "")),
                                     })
-    return matches
+
+    # Ligden çekilen / çıkarılan takımların maçlarını filtrele
+    filtered_matches = []
+    for m in matches:
+        t_a = clean_text(m.get("takim_a", "")).upper()
+        t_b = clean_text(m.get("takim_b", "")).upper()
+        if any(w in t_a for w in WITHDRAWN_TEAMS) or any(w in t_b for w in WITHDRAWN_TEAMS):
+            continue
+        filtered_matches.append(m)
+
+    return filtered_matches
 
 def normalize_for_match(name):
     n = name.lower()
@@ -184,7 +212,6 @@ KNOWN_2_LIG_ALIASES = {
     "toyzz shop dinamo spor": ["dinamo kartal spor kulübü", "dinamo spor kulübü", "dinamo kartal"],
     "çanakkale onsekiz mart üniversitesi": ["çomü spor kulübü", "çomü", "comu spor kulubu"],
     "eskişehir şehir koleji eğt. kültür": ["şehir koleji eğitim kültür sk", "şehir koleji"],
-    "bartın volley academy": ["bartın voleybol kulübü", "bartın voleybol"],
     "adana t.d.s.": ["adana tenis dağ ve su sporları kulübü", "atdsk"],
     "adana sporcu eğitim spor": ["adana sporcu eğitim merkezi spor kulübü"],
     "ahto": ["ahto spor kulübü", "ahto spor"],

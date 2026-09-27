@@ -24,7 +24,6 @@ KNOWN_2_LIG_ALIASES = {
     "TOYZZ SHOP DİNAMO SPOR": ["Dinamo Kartal Spor Kulübü", "Dinamo Spor Kulübü"],
     "ÇANAKKALE ONSEKİZ MART ÜNİVERSİTESİ": ["ÇOMÜ Spor Kulübü", "ÇOMÜ"],
     "ESKİŞEHİR ŞEHİR KOLEJİ EĞT. KÜLTÜR": ["Şehir Koleji Eğitim Kültür SK"],
-    "BARTIN VOLLEY ACADEMY": ["Bartın Voleybol Kulübü"],
     "ADANA T.D.S.": ["Adana Tenis Dağ ve Su Sporları Kulübü", "ATDSK"],
     "ADANA SPORCU EĞİTİM SPOR": ["Adana Sporcu Eğitim Merkezi Spor Kulübü"],
     "AHTO": ["AHTO Spor Kulübü"],
@@ -33,6 +32,9 @@ KNOWN_2_LIG_ALIASES = {
     "YALOVA ÇİFTLİKKÖY BLD. SPOR": ["Çiftlikköy Belediyespor"],
     "GALATASARAY": ["Galatasaray ll", "Galatasaray II"],
 }
+
+# 2. Ligden çekilen / ihraç edilen ve eşleştirmesi silinen takımlar
+WITHDRAWN_TEAMS = {"bartın volley academy", "bartın voleybol kulübü", "bartın voleybol"}
 
 def merge_kadinlar_2_lig_mappings(silent: bool = False):
     if not os.path.exists(K2_FILE) or not os.path.exists(VBM_FILE):
@@ -47,6 +49,13 @@ def merge_kadinlar_2_lig_mappings(silent: bool = False):
         vbm = json.load(f)
 
     mappings = vbm.get("mappings", [])
+    # Ligden çekilen takımların Kadınlar 2. Ligi eşleştirmesini kaldır
+    mappings = [
+        m for m in mappings
+        if not (m.get("internal_category") == "Kadınlar 2. Ligi" and
+                (m.get("internal_name", "").strip().lower() in WITHDRAWN_TEAMS or
+                 m.get("matched_as", "").strip().lower() in WITHDRAWN_TEAMS))
+    ]
     leagues = vbm.get("leagues", [])
 
     # 1. Lig Eşleştirmesi Ekle
