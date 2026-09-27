@@ -606,6 +606,156 @@ export default function AdminPage() {
     "YEŞİL BAYRAMİÇ", "YEŞİLYURT", "YUNUSEMRE BLD. SPOR", "ZEUGMA GAZİANTEP SPOR"
   ], []);
 
+  // Altyapı takımları listesi (81 il verilerinden çekilen - 464 takım)
+  const ALTYAPI_TEAMS = useMemo(() => [
+    "07 Alya Spor U16", "07 Anka Spor Kulübü U16", "07 Mega Spor Kulübü U16", "07 Mega Spor Kulübü U18",
+    "07 Zenit Spor Kulübü U16", "07 Zenit Spor Kulübü U18", "19 Mayıs Gençlik Ve Spor U18", "1922 Salihli Spor Kulübü U18",
+    "2014 Maltepe Spor Kulübü U18", "23 Nisan Spor Kulübü U16", "23 Nisan Spor Kulübü U18", "35 Yıldız Spor Kulübü U18",
+    "AB Voleybol Akademi U16", "Ada Yıldızları Spor Kulübü U18", "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+    "Ahmet Hamdi Tanpınar Ortaokulu SK U16 B", "Ahmet Hamdi Tanpınar Ortaokulu SK U18", "Akademi Atletik Spor U18",
+    "Akademi16 Spor Kulübü U16", "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü U16", "Akdeniz Bilgi Spor Kulübü U16",
+    "Akdeniz Bilgi Spor Kulübü U18", "Akhisar İlçe Spor Kulübü U18", "Akhisar Spor Kulübü U18", "Akhisargücü Spor Kulübü U18",
+    "Aktif Nesil Spor Kulübü U16", "Alanya Belediyespor U16", "Alfa Gaziemir Voleybol Spor Kulübü U16",
+    "Alfa Karşıyaka Voleybol Spor Kulübü U16", "Alfa Spor Kulübü U18", "Alp Voleybol Kulübü U18",
+    "Alsancak Spor Kulübü U18", "Altekma SK U18", "Altın Manşet Spor Kulübü U16", "Altınordu Voleybol - B U18",
+    "Altınordu Voleybol U16", "Altınyurt Spor Kulübü U18", "Anadolu Birlik Spor Kulübü U16", "Anadolu Kolej Spor Kulübü U16",
+    "Anadolu Kolej Spor Kulübü U18", "Anadolu Marmara SK U18", "Anadolu Smaç Spor U18", "Anadolu Üniversitesi GSK U18",
+    "Anadolu Üniversitesi Spor Kulübü U16", "Anadolu Voleybol Akademi SK U18", "Anka Spor Kulübü U18",
+    "Ankara Büyükşehir Belediyesi Spor Kulübü U16", "Ankara Büyükşehir Belediyesi Spor Kulübü U18", "Ankara DSİ GSK U16",
+    "Ankara DSİ GSK U18", "Antakya Güneş Spor Kulübü - B U18", "Antakya Güneş Spor Kulübü U18",
+    "Antalya 1907 Spor Kulübü U16", "Antalya 1907 Spor Kulübü U18", "Antalya Açı Koleji Spor Kulübü U16",
+    "Antalya Açı Koleji Spor Kulübü U18", "Antalya DSİ Spor Kulübü U16", "Antalya Şimşek GSK U16",
+    "Antalya Şimşek GSK U18", "Antalyaspor U16", "Antalyaspor U18", "Arena Anka Spor Kulübü U18",
+    "Arges Voleybol Spor Kulübü U16", "Arkas Spor Kulübü - B U18", "Arkas Spor Kulübü U16", "As Spor Kulübü U16",
+    "Atakum Atılım Spor Kulübü U18", "Ataşehir Yıldızları U18", "Atayıldız Spor U18", "Ateş Spor Kulübü - B U18",
+    "Ateş Spor Kulübü U18", "Aydın Büyükşehir Belediyespor U18", "Aydın DSİ Spor Kulübü U18",
+    "Ayvalık Gelişim Spor Kulübü U18", "Ayvalıkgücü Belediye SK U16", "Ayvalıkspor - B U16", "Ayvalıkspor U16",
+    "Bahçelievler Belediyespor ll U18", "Bahçelievler Belediyespor U18", "Bal Spor Kulübü U18",
+    "Balıkesir Büyükşehir Belediyespor - B U18", "Balıkesir Büyükşehir Belediyespor U18", "Balıkesir DSİ Spor U18",
+    "Balıkesir EKA Spor Kulubü U16", "Balıkesir Voleybol Akademi Spor Kulübü U18", "Balkan Yeşilbağlar Spor U18",
+    "Bandırma Bordo Spor Kulübü U16", "Bandırma Çelikspor U18", "Bandırma Voleybol Spor Kulübü U16",
+    "Başakşehir Belediyesi SK U18", "Başarır Performans Spor Kulübü U18", "Başkent Arma Spor U16",
+    "Bayraklı Belediyesi Spor Kulübü U16", "Bayraklı Belediyesi Spor Kulübü U18", "Bergama Belediyesi Spor Kulübü U18",
+    "Beşiktaş U16", "Beşiktaş U18", "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+    "Beykoz Voleybol Kulübü U18", "Beylerbeyi Spor Kulübü U18", "Beylikdüzü Voleybol 2021 U18",
+    "Biga Ada Spor U16", "Biga Ada Spor U18", "Biga Çiçeklidedespor U16", "Biga Gelişim Voleybol Kulübü U16",
+    "Bizimkent Voleybol Spor Kulübü U16", "Bizimkent Voleybol Spor Kulübü U16 - B", "Bizimkent Voleybol Spor Kulübü U18",
+    "Blok Akademi Spor Kulübü U18", "Blue Wolves Volleyball U18", "Boğaziçi Akademi Spor Kulübü U18",
+    "Bor Belediyespor U18", "Bursa Ayyıldız Spor Kulübü U16", "Bursa Ayyıldız Spor Kulübü U18",
+    "Bursa Büyükşehir Belediyespor U16", "Bursa Büyükşehir Belediyespor U18", "Bursa Fethiye 1973 Spor Kulübü - A U16",
+    "Bursa Fethiye 1973 Spor Kulübü - B U16", "Bursa Fethiye 1973 Spor Kulübü U18", "Bursa Genç Saray Spor Kulübü U16",
+    "Bursa Genç Saray Spor Kulübü U18", "Bursa Koç Spor Kulübü - A U18", "Bursa Koç Spor Kulübü - B U18",
+    "Bursa Koç Spor Kulübü U16", "Çaba Spor Kulübü - A U18", "Çaba Spor Kulübü U16", "Çağdaş Spor Kulübü - B U16",
+    "Çağdaş Spor Kulübü U16", "ÇAĞLAYANCERİT GENÇLİK SK", "Çan Kale Spor Kulübü U16", "Çanakkale Barbarosspor U16",
+    "Çanakkale Belediyespor - B U16", "Çanakkale Belediyespor U16", "Çekmeköy İstanbul SK - B U18",
+    "Çekmeköy İstanbul SK U18", "Çengelköy Voleybol Kulübü U18", "Çerkezköy Voleybol Akademi Spor Kulübü U16",
+    "Çınar Akademi Spor Kulübü - B U16", "Çınar Akademi Spor Kulübü U16", "Çınar Akademi Spor Kulübü U18",
+    "ÇOMÜ Spor Kulübü - B U16", "ÇOMÜ Spor Kulübü U16", "Çorlu Belediyesi Spor Kulübü U16", "Çorlu GSB Spor Kulübü U16",
+    "Çorlu Yıldırım Spor Kulübü - B U16", "Çorlu Yıldırım Spor Kulübü U16", "Dalton Koleji Spor Kulübü U16",
+    "Dalton Koleji Spor Kulübü U18", "Defne Lider Akademi Spor Kulübü U18", "Değerli Zamanlar Spor Kulübü U18",
+    "Dev Adım Spor Kulübü U18", "Dev Anadolu Yıldızları U18", "Dev Ataşehir Spor U18", "DHMİ Spor Kulübü U16",
+    "Dinamo Spor U18", "Dokuz Eylül Voleybol U16", "Dokuz Eylül Voleybol U18", "Doruk Voleybol Spor Kulübü U16",
+    "Doruk Voleybol Spor Kulübü U18", "Dost Spor - C U18", "Dost Spor U16", "Dost Spor U18",
+    "Dörtyol Dokuz Ocak Spor Kulübü U18", "DSİ Nilüfer Spor Kulübü U16", "DSİ Nilüfer Spor Kulübü U18",
+    "Düzce 1907 Spor Kulübü U16", "Düzce 1907 Spor Kulübü U18", "Düzce Atletik Spor Kulübü U16",
+    "Düzce Atletik Spor Kulübü U18", "Düzce Ay Spor U16", "Düzce Can Sportif Spor Kulübü U16",
+    "Düzce Gençlik Spor U16", "Düzce UltrAslan Spor Kulübü U16", "Düzce UltrAslan Spor Kulübü U18",
+    "Düzce Voleybol SK - A U16", "Düzce Voleybol SK - A U18", "EBA Spor U16", "Eceabat Spor Kulübü U16",
+    "Eceabat Spor Kulübü U18", "Eczacıbaşı - A U16", "Eczacıbaşı - B U16", "Eczacıbaşı U18",
+    "Edremit Belediyesi Altınoluk Spor Kulübü - B U16", "Edremit Belediyesi Altınoluk Spor Kulübü U18",
+    "Efeler Altın Smaç Spor Kulübü U18", "Efor Gençlik Spor Kulübü U18", "Eker Spor Kulübü - A U16",
+    "Eker Spor Kulübü - B U16", "Eker Spor Kulübü U18", "Ekol Spor Kulubü U18", "Elit Akdeniz Spor Kulübü U16",
+    "Elit Akdeniz Spor Kulübü U18", "Erciyes Aslan Spor Kulübü - B U16", "Ergene Voleybol Spor Kulübü U16",
+    "Erse Spor Kulübü U16", "Erse Spor Kulübü U18", "Eryaman Gelişim SK U16", "Eryaman Gelişim SK U18",
+    "Es Akademi Spor Kulübü U18", "Es Güneş Spor Kulübü U16", "Es Voleybol Akademi Spor Kulübü - A U16",
+    "Es Voleybol Akademi Spor Kulübü - A U18", "Es Voleybol Akademi Spor Kulübü - B U16",
+    "Es Voleybol Akademi Spor Kulübü - B U18", "ES Voleybol U16", "ES Voleybol U18",
+    "Eskişehir Ata Spor Kulübü - B U16", "Eskişehir Ata Spor Kulübü U16", "Eskişehir Ata Spor Kulübü U18",
+    "Eskişehir Çağdaş Kolejliler Spor Kulübü U16", "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
+    "Eskişehir DSİ Bentspor U16", "Eskişehir DSİ Bentspor U18", "Eskişehir Peyman SK U18",
+    "Eskişehir Türk Telekom Spor Kulübü - B U16", "Eskişehir Türk Telekom Spor Kulübü U16",
+    "Eskişehir Türk Telekom Spor Kulübü U18", "Eskişehir Voleybol Spor Kulübü U16", "Eskişehir Yıldız Spor Kulübü U16",
+    "Eskişehir Yıldız Spor Kulübü U18", "Esnova Spor Kulübü U16", "Evola Spor Kulübü - B U16",
+    "Evola Spor Kulübü U16", "Evola Spor Kulübü U18", "Eyüpsultan Belediyesi SK - A U16",
+    "Eyüpsultan Belediyesi SK - B U16", "Eyüpsultan Belediyesi SK U18", "Fenerbahçe - A U16",
+    "Fenerbahçe - B U16", "Fenerbahçe U18", "First Spor Kulübü U16", "FMV Işık Spor Kulübü U18",
+    "Galatasaray U16", "Galatasaray U18", "Gazipaşa Gençlerbirliği Spor Kulübü U16",
+    "Gazipaşa Gençlerbirliği Spor Kulübü U18", "Geleceğe Dönüş Spor Kulübü U18", "Gelişim Koleji SK U16",
+    "Gelişim Koleji SK U18", "GENÇLİK SK", "Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
+    "Genia İz Akademi Spor Kulübü U16", "Gökçeada Spor Kulübü U16", "Göksu Atletik Spor Kulübü U16",
+    "Gönen Karşıyakaspor U16", "Gönen Karşıyakaspor U18", "Göztepe SK - A U18", "Göztepe SK - B U16",
+    "Göztepe SK - B U18", "Güner Karakaya Spor Kulübü U16", "Güner Karakaya Spor Kulübü U18",
+    "Güngören Voleybol Kulübü U18", "Günyaka Spor U16", "Günyaka Spor U18", "Güzelyalı Spor Kulübü U18",
+    "Hakan Akışık Spor Kulübü U16", "Hakan Akışık Spor Kulübü U18", "Hatay Voleybol Spor Kulübü U18",
+    "Hatay Yıldızlar Spor Kulübü U18", "Hekimoğlu GCT Bursa Voleybol Kulübü U16", "Hürriyet Spor Kulübü U16",
+    "İBB Spor Kulübü U16", "İBB Spor Kulübü U18", "İlbank - B U16", "İlbank U16", "İlbank U18",
+    "İlkkıvılcım Havza SK U18", "İnegöl Orhaniye Voleybol SK U18", "İskenderun 12 Dev Adam Spor Kulübü U18",
+    "İskenderun Tan Spor Kulübü U18", "İskenderun Voleybol Akademi Spor Kulübü U18", "İskenderun Yurdum Spor U18",
+    "İstanbul Anadolu Olimpik SK U18", "İstanbul Anka Spor U18", "İstanbul Göztepe Akademi Spor Kulübü U18",
+    "İstanbul Marmara Spor Kulübü U18", "İstanbul Vadi Spor Kulübü U18", "İTÜ Geliştirme Vakfı Okulları SK U18",
+    "İZEGE Spor Kulübü U18", "İzmir Altınay Spor Kulübü - B U18", "İzmir Altınay Spor Kulübü U16",
+    "İzmir DSİ Spor U16", "İzmir DSİ Spor U18", "İzmirspor U16", "İzmirspor U18",
+    "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16", "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
+    "Kapaklı Site Spor - B U16", "Kapaklı Site Spor U16", "Karayolları Spor Kulübü U16",
+    "Karayolları Spor Kulübü U18", "Karşıyaka SK - B U18", "Kartal Yıldızları Spor Kulübü U18",
+    "Kayseri Atletik Spor Kulübü U18", "Kayseri Bahçelievler Spor Kulübü U16", "Kayseri Cimnastik Spor Kulübü - B U16",
+    "Kayseri Cimnastik Spor Kulübü U18", "Kemer Sarp Spor Kulübü U16", "Kepez Spor Kulübü U16",
+    "Kepez Spor Kulübü U18", "Kestel Belediye 1952 Spor Kulübü U16", "Kestel Belediye 1952 Spor Kulübü U18",
+    "Koru Akademi Spor Kulübü - B U18", "Koru Akademi Spor Kulübü U16", "Koru Akademi Spor Kulübü U18",
+    "Kuzey Ege Gelişim Spor Kulübü U18", "Kuzey Yıldızları Spor Kulübü - A U18", "Kuzey Yıldızları Spor Kulübü - B U18",
+    "KVK Voleybol Kulübü - B U18", "KZY Bornova Spor Kulübü - B U18", "KZY Bornova Spor Kulübü U16",
+    "KZY Spor Kulübü U16", "Liva Volley Spor Kulübü U16", "Luna Spor Kulübü U16", "Luna Spor Kulübü U18",
+    "Maç Akademi Spor Kulübü U16", "Maç Akademi Spor Kulübü U18", "Maç Sayısı Spor Kulübü U18",
+    "Manavgat Belediyespor U16", "Manisa Büyükşehir Belediyespor Kulübü U18", "Marmara Akademi Atletik Spor Kulübü U16",
+    "Marmara Akademi Atletik Spor Kulübü U18", "Marmara Elit Spor Kulübü U18", "Mas Smaç Spor Kulübü U18",
+    "Mavi Kurtlar GSK - A U16", "Mavi Yıldızlar Spor Kulübü U18", "Mavişehir Koleji Spor Kulübü U18",
+    "Mavişehir Spor Kulübü U16", "Mavişehir Spor Kulübü U18", "Mersin İhtisas Spor Kulübü U18",
+    "Meryem Boz Spor Kulübü - B U16", "Meryem Boz Spor Kulübü U16", "Meryem Boz Spor Kulübü U18",
+    "Mesut Kökel Spor Kulübü U16", "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+    "Metin Küçükkenar Fırtına16 Spor Kulübü U18", "MEV Toros Spor Kulübü U18", "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
+    "MG Spor Kulübü U16", "MG Spor Kulübü U18", "Milan Atletik U16", "Milan Atletik U18",
+    "Monza Spor Kulübü - B U18", "Monza Spor Kulübü U16", "Murat Akar Spor Kulübü U18",
+    "Muratlı Yıldız 2012 Spor Kulübü U16", "Narlıdere Belediyesi Spor Kulübü U16", "Nehir Spor Kulübü U16",
+    "Nehir Spor Kulübü U18", "Net Voleybol Akademi Spor Kulübü U16", "Niğde Sev Voleybol Kulübü U18",
+    "Nilüfer Belediye Spor Kulübü U18", "Nilüfer Beşevler Spor Kulübü U16", "Nilüfer Olimpik Spor Kulübü U16",
+    "Nilüfer Olimpik Spor Kulübü U18", "Nova Spor Kulübü U18", "ODTÜ GV Niğde Okulları Spor Kulübü U18",
+    "Oksijen Spor Kulübü U16", "Oksijen Spor Kulübü U18", "Olimpia 2017 Spor Kulübü U16",
+    "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16", "Öncü Yıldız Spor Kulübü U16", "Özateş SK U18",
+    "Özay Voleybol Spor Kulübü U16", "Özay Voleybol Spor Kulübü U18", "Parion Spor Kulübü U16",
+    "Parla Voleybol Kulübü - A U16", "Parla Voleybol Kulübü - B U16", "Parla Voleybol Kulübü U18",
+    "Pegasus Spor Kulübü U16", "Pegasus Spor Kulübü U18", "Pendik Akademi Voleybol Spor Kulübü U18",
+    "Pendik Güzelyalı Voleybol Kulübü U18", "PTT Spor U16", "PTT Spor U18", "Robert Spor Kulübü U16",
+    "Salihli Değerli Zamanlar Spor Kulübü U18", "Samandağ Anka Spor Kulübü U18", "Samsun Volley Team U18",
+    "Samsunspor U18", "Sarıgöl Akademi Spor Kulübü U18", "Sarıyer Belediyesi Spor Kulübü U16",
+    "Sarıyer Konak Spor Kulübü U18", "Serinyol Yıldızlar Spor Kulübü U18", "Set 59 Spor Kulübü U16",
+    "SET UP Spor Kulübü U18", "Silivri Çağrıbey SK U16", "Silivri Çağrıbey SK U18",
+    "Sistem Eğitim Spor Kulübü U16", "Smaç SK U16", "Smyrna Voleybol Kulübü - B U18",
+    "Smyrna Voleybol Kulübü U18", "Soma Belediye Spor Kulübü U18", "Soma İlçe Spor Kulübü U18",
+    "Söke Voleybol Spor Kulübü U18", "SUSURLUK GENÇLERBİRLİĞİ EĞİTİM SPOR", "Süleymanpaşa Spor Kulübü - B U16",
+    "Süleymanpaşa Spor Kulübü U16", "Süreyyapaşa Gençlik Ve Spor Kulübü U18", "Şehir Koleji Eğitim Kültür SK U16",
+    "Şehir Koleji Eğitim Kültür SK U18", "Tarsus Amerikan Koleji U18", "Tarsus Gelecek Spor Kulübü U18",
+    "TED Ankara Kolejliler U16", "TED Ankara Kolejliler U18", "TEİAŞ Spor Kulübü U16",
+    "Tekirdağ Basket Spor Kulübü U16", "Tekirdağ Marmara Spor Kulübü U16", "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+    "Tekirdağ Voleybol İhtisas Kulübü U16", "Temiz Enerji Birliği Spor Kulübü U18",
+    "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18", "Torbalı Gelişim Spor Kulübü U16",
+    "Toroslar Belediye Spor Kulübü U18", "Trakya Olimpia Akademi Spor Kulübü U16", "Turgutlu Belediyespor U18",
+    "Turuncu Spor Kulübü U18", "Tuzla Mercan Spor Kulübü U18", "Tuzla New Spor Kulübü U18",
+    "Tuzla Rekor Spor Kulübü - B U18", "Tuzla Rekor Spor Kulübü U18", "Türk Hava Yolları SK - A U16",
+    "Türk Hava Yolları SK - B U16", "Türk Hava Yolları SK U18", "TVF Spor Lisesi - B U16",
+    "TVF Spor Lisesi U16", "TVF Spor Lisesi U18", "Ufuk Üniversitesi Üç Pas Spor Kulübü U16",
+    "UVM Akademi Spor Kulübü U16", "Uzay 35 Voleybol Kulübü - B U18", "Ümraniye Belediyesi Spor Kulübü U16",
+    "Ümraniye Belediyesi Spor Kulübü U18", "Ünsped Spor Kulübü U16", "Ünsped Spor Kulübü U18",
+    "VakıfBank - A U16", "VakıfBank - B U16", "Vakıfbank İzmir U16", "VakıfBank U18",
+    "Venüs Spor Kulübü U16", "Venüs Spor Kulübü U18", "Vera Spor Kulübü U16", "Vezirköprü Gençlik Spor Kulübü U18",
+    "Vipark Gençlik Ve Spor U18", "Volkan Güç Spor Kulübü - B U18", "Volkan Güç Spor Kulübü U16",
+    "Yalova Atakent Spor Kulübü U18", "Yalova Elit Akademi Spor Kulübü U16", "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
+    "Yalova Voleybol Spor Kulübü - A U18", "Yalova Voleybol Spor Kulübü - B U18", "Yalova Voleybol Spor Kulübü U16",
+    "Yedidağspor - A U18", "Yenişehir Gençlerbirliği Spor Kulübü U18", "Yeşil Bayramiç SK U18",
+    "Yeşilyurt Spor Kulübü U16", "Yeşilyurt Spor Kulübü U18", "Yıldızkent Fatih Korgancı Spor Kulübü U16",
+    "Yıldızlar Arena", "Yıldızlar Samandağ Spor Kulübü U18", "Yunusemre Belediyespor U18",
+    "Yükseliş Akademi Spor Kulübü U18", "Zeren Spor Kulübü U16", "Zeren Spor Kulübü U18", "Zirve 35 Spor Kulübü U18"
+  ], []);
+
   // Takım listesi (A-Z sıralı, kategorili)
   const teamsByCategory = useMemo(() => {
     const altyapıTeams = new Set<string>();
@@ -614,10 +764,10 @@ export default function AdminPage() {
     matches.forEach((m) => {
       if (m.home_team) {
         const team = m.home_team;
-        // 2. Lig listesinde varsa 2. Lig, yoksa Altyapı
+        // 2. Lig listesinde varsa 2. Lig, Altyapı listesinde varsa Altyapı
         if (LIG_TEAMS.includes(team)) {
           ligTeams.add(team);
-        } else {
+        } else if (ALTYAPI_TEAMS.includes(team)) {
           altyapıTeams.add(team);
         }
       }
@@ -625,7 +775,7 @@ export default function AdminPage() {
         const team = m.away_team;
         if (LIG_TEAMS.includes(team)) {
           ligTeams.add(team);
-        } else {
+        } else if (ALTYAPI_TEAMS.includes(team)) {
           altyapıTeams.add(team);
         }
       }
@@ -635,7 +785,7 @@ export default function AdminPage() {
       altyapı: Array.from(altyapıTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
       lig: Array.from(ligTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
     };
-  }, [matches, LIG_TEAMS]);
+  }, [matches, LIG_TEAMS, ALTYAPI_TEAMS]);
 
   // Filtrelenmiş takımlar
   const filteredTeams = useMemo(() => {
