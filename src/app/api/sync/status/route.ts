@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { timingSafeEqual } from "crypto";
+import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 
 function safeCompare(a: string, b: string): boolean {
   const bufA = Buffer.from(a);
@@ -43,6 +44,22 @@ export async function GET(request: Request) {
   }
 
   try {
+    let latestPersistedSync: Record<string, unknown> | null = null;
+    const supabase = getSupabaseAdmin();
+    if (supabase) {
+      const { data, error } = await supabase
+        .from("sync_runs")
+        .select("id, source, status, started_at, finished_at, cities_scanned, matches_imported, error_message, metadata")
+        .order("started_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (!error && data) {
+        latestPersistedSync = data;
+      } else if (error) {
+        console.warn("Supabase sync geçmişi okunamadı:", error.message);
+      }
+    }
+
     const res = await fetch(
       `https://api.github.com/repos/${repo}/actions/workflows/scrape-sync.yml/runs?per_page=1`,
       {
@@ -114,6 +131,7 @@ export async function GET(request: Request) {
       elapsedSeconds,
       remainingSeconds,
       totalEstimatedSeconds: TOTAL_ESTIMATED_SECONDS,
+      latestPersistedSync,
     });
   } catch (err: any) {
     return NextResponse.json({
