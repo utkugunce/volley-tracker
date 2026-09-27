@@ -24,10 +24,13 @@ import { compareMatchDateTime } from "@/utils/calendar";
 import { Match } from "@/types/fixture";
 import { MatchOverride, AuditLogEntry } from "@/utils/overrides";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import { createClient } from "@supabase/supabase-js";
 
 export default function AdminPage() {
   const [token, setToken] = useState<string>("");
   const [inputToken, setInputToken] = useState<string>("");
+  const [authEmail, setAuthEmail] = useState<string>("");
+  const [authPassword, setAuthPassword] = useState<string>("");
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [authError, setAuthError] = useState<string | null>(null);
 
@@ -125,6 +128,32 @@ export default function AdminPage() {
     if (!inputToken.trim()) return;
     setToken(inputToken.trim());
     verifyAndFetchData(inputToken.trim());
+  };
+
+  const handleSupabaseLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setAuthError(null);
+    try {
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (!supabaseUrl || !supabaseAnonKey) {
+        throw new Error("Supabase Auth yapılandırması eksik.");
+      }
+      const supabase = createClient(supabaseUrl, supabaseAnonKey);
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: authEmail,
+        password: authPassword,
+      });
+      if (error || !data.session) throw new Error(error?.message || "Supabase giriş başarısız.");
+      setToken(data.session.access_token);
+      await verifyAndFetchData(data.session.access_token);
+    } catch (error: any) {
+      setAuthError(error.message || "Supabase giriş başarısız.");
+      setIsAuthenticated(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleLogout = () => {
@@ -437,6 +466,40 @@ export default function AdminPage() {
             >
               {loading ? "Doğrulanıyor..." : "Panele Giriş Yap"}
               <ArrowRight size={16} />
+            </button>
+          </form>
+
+          <div className="my-5 flex items-center gap-3 text-[10px] uppercase tracking-widest text-slate-500">
+            <span className="h-px flex-1 bg-slate-800" />
+            veya Supabase Auth
+            <span className="h-px flex-1 bg-slate-800" />
+          </div>
+
+          <form onSubmit={handleSupabaseLogin} className="space-y-3">
+            <input
+              type="email"
+              value={authEmail}
+              onChange={(event) => setAuthEmail(event.target.value)}
+              placeholder="E-posta"
+              aria-label="Supabase e-posta"
+              className="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary"
+              required
+            />
+            <input
+              type="password"
+              value={authPassword}
+              onChange={(event) => setAuthPassword(event.target.value)}
+              placeholder="Şifre"
+              aria-label="Supabase şifre"
+              className="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary"
+              required
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-2.5 px-4 rounded-xl border border-slate-700 hover:bg-slate-800 text-slate-200 font-semibold text-sm transition-colors disabled:opacity-50"
+            >
+              Supabase ile giriş yap
             </button>
           </form>
 

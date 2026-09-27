@@ -9,8 +9,9 @@ export interface AuthenticatedUser {
 }
 
 function getAccessToken(request: Request): string | null {
+  const legacyHeader = request.headers.get("x-admin-token");
   const authorization = request.headers.get("authorization");
-  return authorization?.match(/^Bearer\s+(.+)$/i)?.[1] || null;
+  return authorization?.match(/^Bearer\s+(.+)$/i)?.[1] || legacyHeader || null;
 }
 
 function isAppRole(value: unknown): value is AppRole {
