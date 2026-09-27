@@ -42,6 +42,9 @@ export interface Match {
   set_scores?: string[];
   status: "upcoming" | "finished" | "postponed" | "live";
   volleybox?: VolleyboxMatchInfo | null;
+  referee_1?: string;
+  referee_2?: string;
+  set_durations?: string[];
 }
 
 export interface StandingItem {

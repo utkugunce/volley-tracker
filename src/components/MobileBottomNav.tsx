@@ -1,12 +1,23 @@
 "use client";
 
 import React from "react";
-import { Flame, CalendarDays, BarChart3, Star, CheckCircle2 } from "lucide-react";
+import { CalendarDays, Flame, BarChart3, Layers, Star } from "lucide-react";
 
-interface MobileBottomNavProps {
-  activeTab: "today" | "results" | "fixtures" | "standings" | "favorites";
-  onSelectTab: (tab: "today" | "results" | "fixtures" | "standings" | "favorites") => void;
+export type MobileTab =
+  | "matches"
+  | "live"
+  | "standings"
+  | "leagues"
+  | "favorites"
+  | "today"
+  | "results"
+  | "fixtures";
+
+export interface MobileBottomNavProps {
+  activeTab: MobileTab;
+  onSelectTab: (tab: any) => void;
   favoriteCount?: number;
+  liveCount?: number;
   todayMatchesCount?: number;
   resultsCount?: number;
 }
@@ -15,35 +26,36 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   activeTab,
   onSelectTab,
   favoriteCount = 0,
+  liveCount = 0,
   todayMatchesCount = 0,
-  resultsCount = 0,
 }) => {
   const navItems = [
     {
-      id: "results" as const,
-      label: "Sonuçlar",
-      icon: CheckCircle2,
-      badge: resultsCount > 0 ? resultsCount : undefined,
-    },
-    {
-      id: "today" as const,
-      label: "Günün Maçı",
-      icon: Flame,
+      id: "matches",
+      label: "Maçlar",
+      icon: CalendarDays,
       badge: todayMatchesCount > 0 ? todayMatchesCount : undefined,
     },
     {
-      id: "fixtures" as const,
-      label: "Fikstür",
-      icon: CalendarDays,
+      id: "live",
+      label: "Canlı",
+      icon: Flame,
+      badge: liveCount > 0 ? liveCount : undefined,
+      isLive: true,
     },
     {
-      id: "standings" as const,
+      id: "standings",
       label: "Puan Durumu",
       icon: BarChart3,
     },
     {
-      id: "favorites" as const,
-      label: "Favoriler",
+      id: "leagues",
+      label: "Ligler",
+      icon: Layers,
+    },
+    {
+      id: "favorites",
+      label: "Favorilerim",
       icon: Star,
       badge: favoriteCount > 0 ? favoriteCount : undefined,
     },
@@ -52,41 +64,68 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   return (
     <nav
       aria-label="Mobil Alt Menü"
-      className="sm:hidden fixed bottom-0 left-0 right-0 z-40 backdrop-blur-xl bg-slate-950/90 border-t border-slate-800/80 px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] shadow-[0_-4px_20px_rgba(0,0,0,0.5)] transition-all duration-200"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-[#1E222D] border-t border-[#2A2E3D] lg:hidden px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] shadow-[0_-4px_20px_rgba(0,0,0,0.5)] transition-all duration-200"
     >
       <div className="flex items-center justify-between max-w-lg mx-auto w-full gap-0.5">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive = activeTab === item.id;
+
+          const isActive =
+            (item.id === "matches" &&
+              (activeTab === "matches" ||
+                activeTab === "today" ||
+                activeTab === "results" ||
+                activeTab === "fixtures")) ||
+            (item.id === "live" && activeTab === "live") ||
+            (item.id === "standings" && activeTab === "standings") ||
+            (item.id === "leagues" && activeTab === "leagues") ||
+            (item.id === "favorites" && activeTab === "favorites");
 
           return (
             <button
               key={item.id}
+              type="button"
               onClick={() => onSelectTab(item.id)}
               className={`relative flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all duration-150 cursor-pointer ${
                 isActive
-                  ? "text-primary font-black scale-105"
-                  : "text-slate-400 hover:text-slate-200 font-medium"
+                  ? item.isLive
+                    ? "text-red-400 font-bold scale-105"
+                    : "text-blue-400 font-bold scale-105"
+                  : "text-[#94A3B8] hover:text-[#F1F5F9] font-medium"
               }`}
             >
               <div className="relative">
                 <Icon
-                  size={19}
+                  size={20}
                   className={`transition-colors ${
-                    isActive ? "text-primary fill-primary/20" : "text-slate-400"
+                    isActive
+                      ? item.isLive
+                        ? "text-red-400 fill-red-400/20"
+                        : "text-blue-400 fill-blue-400/20"
+                      : "text-[#94A3B8]"
                   }`}
                 />
-                {item.badge !== undefined && item.badge > 0 && (
-                  <span className="absolute -top-1.5 -right-2 min-w-[15px] h-3.5 px-0.5 rounded-full bg-red-700 text-white text-[9px] font-mono font-bold flex items-center justify-center shadow-xs">
+                {item.isLive && liveCount > 0 && (
+                  <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                  </span>
+                )}
+                {item.badge !== undefined && item.badge > 0 && !item.isLive && (
+                  <span className="absolute -top-1.5 -right-2 min-w-[15px] h-3.5 px-0.5 rounded-full bg-blue-600 text-white text-[9px] font-mono font-bold flex items-center justify-center shadow-xs">
                     {item.badge > 99 ? "99+" : item.badge}
                   </span>
                 )}
               </div>
-              <span className="text-[9.5px] xs:text-[10px] tracking-tight mt-0.5 truncate text-center w-full">
+              <span className="text-[10px] tracking-tight mt-0.5 truncate text-center w-full">
                 {item.label}
               </span>
               {isActive && (
-                <span className="absolute bottom-0 w-6 h-0.5 rounded-full bg-primary shadow-glow-red" />
+                <span
+                  className={`absolute bottom-0 w-6 h-0.5 rounded-full ${
+                    item.isLive ? "bg-red-500" : "bg-blue-500"
+                  }`}
+                />
               )}
             </button>
           );

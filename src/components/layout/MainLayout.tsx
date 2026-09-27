@@ -42,7 +42,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
           {/* Orta Kolon (%52): Ana maç akışı, filtreler, fikstür ve sonuçlar */}
           <main 
             aria-label="Ana Maç Akışı ve İçerik"
-            className={`col-span-1 min-w-0 py-2 sm:py-3 space-y-4 ${
+            className={`w-full col-span-1 min-w-0 py-2 sm:py-3 space-y-4 ${
               leftSidebar && rightSidebar
                 ? "lg:col-span-6 xl:col-span-6.5"
                 : leftSidebar

@@ -9,13 +9,15 @@ import { StandingsTable } from "@/components/StandingsTable";
 import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
+import { CompactMatchFeed } from "@/components/match/CompactMatchFeed";
 import { HomePortalView } from "@/components/HomePortalView";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { GroupStatusView } from "@/components/GroupStatusView";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
-import { RightSidebarPlaceholder } from "@/components/layout/RightSidebarPlaceholder";
+import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
+import { MobileMatchDrawer } from "@/components/MobileMatchDrawer";
 import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
 import dynamic from "next/dynamic";
 import { Match, FixturesData } from "@/types/fixture";
@@ -24,15 +26,11 @@ const NotificationBanner = dynamic(
   () => import("@/components/NotificationBanner").then((mod) => mod.NotificationBanner),
   { ssr: false }
 );
-const MatchCenterDrawer = dynamic(
-  () => import("@/components/MatchCenterDrawer").then((mod) => mod.MatchCenterDrawer),
-  { ssr: false }
-);
 const SpotlightSearchModal = dynamic(
   () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
   { ssr: false }
 );
-import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp } from "lucide-react";
+import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp, Layers, X } from "lucide-react";
 import { isMatchPassed, isMatchOverdueForScore, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 import { groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
@@ -297,11 +295,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   // Premium Özellikler: Maç Detay Çekmecesi & Spotlight Arama
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
+  const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
+  const [isLeaguesMenuOpen, setIsLeaguesMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // URL ?match=id senkronizasyonu ve maç seçimi
   const handleSelectMatch = useCallback((match: Match | null) => {
     setSelectedMatch(match);
+    if (match) {
+      setIsMobileDrawerOpen(true);
+    }
     if (typeof window !== "undefined" && match) {
       try {
         const url = new URL(window.location.href);
@@ -509,6 +512,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   // Sonuçlanan toplam maç sayısı (Header rozeti ve Sonuçlar sekmesi için)
   const resultsCount = useMemo(() => {
     return (data?.matches || []).filter(isMatchScored).length;
+  }, [data]);
+
+  // Canlı maç sayısı
+  const liveMatchesCount = useMemo(() => {
+    return (data?.matches || []).filter((m) => m.status === "live").length;
   }, [data]);
 
   // Dünün sonuçlanan maç sayısı
@@ -927,8 +935,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           />
         }
         rightSidebar={
-          <RightSidebarPlaceholder
-            selectedMatch={selectedMatch}
+          <MatchInspectorPanel
+            match={selectedMatch}
+            allMatches={data?.matches || []}
+            standings={data?.standings}
             onClose={() => setSelectedMatch(null)}
             onToggleFavorite={toggleFavorite}
             isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
@@ -1364,31 +1374,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             yesterdayStr={yesterdayStr}
           />
         ) : activeMainTab === "today" ? (
-          /* ==================== GÜNÜN MAÇLARI ==================== */
-          <div className="space-y-4">
-            {data?.matches && data.matches.length > 0 && (
-              <FeaturedMatchHero
-                matches={data.matches}
-                city={data?.city}
-                favorites={favorites}
-                onToggleFavorite={toggleFavorite}
-                onSelectMatch={handleSelectMatch}
-              />
-            )}
-            <TodayMatchesView
-              matches={data?.matches || []}
-              city={data?.city}
-              currentCitySlug={currentCitySlug}
-              onSelectCity={handleSelectCity}
-              citiesList={citiesList}
-              todayStr={todayStr}
-              yesterdayStr={yesterdayStr}
-              favorites={favorites}
-              onToggleFavorite={toggleFavorite}
-              onNavigateToFullFixtures={() => handleSelectTab("fixtures")}
-              onSelectMatch={handleSelectMatch}
-            />
-          </div>
+          /* ==================== GÜNÜN MAÇLARI — Sofascore Kompakt Maç Akışı ==================== */
+          <CompactMatchFeed
+            matches={data?.matches || []}
+            selectedMatchId={selectedMatch?.id || null}
+            onSelectMatch={(m) => handleSelectMatch(m)}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+            todayStr={todayStr}
+            yesterdayStr={yesterdayStr}
+            city={data?.city}
+          />
         ) : activeMainTab === "fixtures" ? (
           /* ==================== FİKSTÜR SEKMESİ ==================== */
           <div>
@@ -1691,54 +1687,95 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         </div>
       </MainLayout>
 
-      {/* 4. Mobil Sabit Alt Menü (Thumb-friendly Navigation) */}
+      {/* 4. Mobil Sabit Alt Menü (Sofascore Standardı) */}
       <MobileBottomNav
         activeTab={
           showOnlyFavorites
             ? "favorites"
-            : activeMainTab === "today"
-            ? "today"
-            : activeMainTab === "results"
-            ? "results"
-            : activeMainTab === "fixtures"
-            ? "fixtures"
+            : statusFilter === "live"
+            ? "live"
             : activeMainTab === "standings"
             ? "standings"
-            : "today"
+            : isLeaguesMenuOpen
+            ? "leagues"
+            : "matches"
         }
         onSelectTab={(tab) => {
-          if (tab === "today") {
+          if (tab === "matches") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
+            setStatusFilter("all");
             handleSelectTab("today");
-          } else if (tab === "results") {
+          } else if (tab === "live") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
-            handleSelectTab("results");
-          } else if (tab === "fixtures") {
-            setShowOnlyFavorites(false);
-            handleSelectTab("fixtures");
+            setStatusFilter("live");
+            handleSelectTab("today");
           } else if (tab === "standings") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
             handleSelectTab("standings");
+          } else if (tab === "leagues") {
+            setIsLeaguesMenuOpen(true);
           } else if (tab === "favorites") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(true);
             handleSelectTab("fixtures");
           }
         }}
         favoriteCount={favorites.length}
+        liveCount={liveMatchesCount}
         todayMatchesCount={todayMatchesCount}
         resultsCount={resultsCount}
       />
 
-      {/* 5. Maç Detay Çekmecesi (Mobilde Alttan Açılan Bottom Sheet / Drawer) */}
-      <div className="lg:hidden">
-        <MatchCenterDrawer
-          match={selectedMatch}
-          onClose={() => setSelectedMatch(null)}
-          city={data?.city}
-          onToggleFavorite={toggleFavorite}
-          isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
-        />
-      </div>
+      {/* 5. Mobil Maç Detayı: Alttan Açılan Çekmece (MobileMatchDrawer) */}
+      <MobileMatchDrawer
+        isOpen={isMobileDrawerOpen && Boolean(selectedMatch)}
+        match={selectedMatch}
+        onClose={() => setIsMobileDrawerOpen(false)}
+        allMatches={data?.matches || []}
+        standings={data?.standings}
+        onToggleFavorite={toggleFavorite}
+        isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
+      />
+
+      {/* 6. Mobil Tam Ekran Ligler Menüsü (Sol Panel Ağacı) */}
+      {isLeaguesMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden flex flex-col animate-in fade-in duration-200">
+          <div className="flex items-center justify-between px-4 py-3 bg-[#1E222D] border-b border-[#2A2E3D]">
+            <div className="flex items-center gap-2">
+              <Layers size={18} className="text-blue-400" />
+              <h2 className="text-sm font-bold text-white">Lig Navigasyonu</h2>
+            </div>
+            <button
+              onClick={() => setIsLeaguesMenuOpen(false)}
+              className="p-1.5 rounded-lg text-[#94A3B8] hover:text-white hover:bg-[#181A20] transition-colors"
+              aria-label="Kapat"
+            >
+              <X size={18} />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto p-3 bg-[#121212]">
+            <SidebarNavigation
+              cities={citiesList}
+              currentCity={currentCitySlug}
+              onSelectCity={(city) => {
+                handleSelectCity(city);
+                setIsLeaguesMenuOpen(false);
+              }}
+              matches={data?.matches || []}
+              selectedCategory={selectedCategory}
+              onSelectCategory={(cat) => {
+                setSelectedCategory(cat);
+                setIsLeaguesMenuOpen(false);
+              }}
+              favoritesCount={favorites.length}
+              totalMatches={totalMatchesAcrossAll}
+            />
+          </div>
+        </div>
+      )}
 
       {/* 6. Spotlight Hızlı Arama Modalı (Cmd + K) */}
       <SpotlightSearchModal
