@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { Header } from "@/components/Header";
-import { DateRibbon } from "@/components/DateRibbon";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import { FilterBar } from "@/components/FilterBar";
 import { StandingsTable, StandingsTeamContext } from "@/components/StandingsTable";
@@ -1436,15 +1435,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         ) : activeMainTab === "fixtures" ? (
           /* ==================== FİKSTÜR SEKMESİ ==================== */
           <div>
-            {/* Flashscore Yatay Tarih Şeridi (Date Ribbon) */}
-            <DateRibbon
-              dates={uniqueDates}
+            {/* Sonuçlar sayfasıyla aynı hızlı tarih şeridi */}
+            <DateNavigationRibbon
               selectedDate={selectedDate}
               onSelectDate={setSelectedDate}
-              dateCounts={dateCounts}
               todayStr={todayStr}
-              yesterdayStr={yesterdayStr}
-              variant="red"
+              statusFilter={statusFilter as "all" | "upcoming" | "finished"}
+              onSelectStatusFilter={() => {}}
+              counts={{
+                all: counts.all,
+                live: liveMatchesCount,
+                finished: counts.finished,
+                upcoming: counts.upcoming,
+              }}
+              showStatusFilters={false}
             />
 
             {/* Flashscore Filtre Barı (HEPSİ / OYNANACAK / BİTENLER) */}
