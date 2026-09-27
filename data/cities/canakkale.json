@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T07:34:55.857429",
+  "updated_at": "2026-09-27T15:03:12.687413",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -184,29 +184,29 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "As Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
+        "team": "Barbaros Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Barbaros Spor Kulübü",
-        "played": 0,
+        "team": "Biga Ada Spor Kulübü",
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Biga Ada Spor Kulübü",
+        "team": "As Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -298,17 +298,28 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği C Grubu": [
       {
         "rank": 1,
-        "team": "Biga Çiçeklidede Spor Kulübü",
-        "played": 0,
-        "won": 0,
+        "team": "Parion Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Biga Çiçeklidede Spor Kulübü",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "ÇOMÜ Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -319,19 +330,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Nehir Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Parion Spor Kulübü U16",
+        "team": "Nehir Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -402,11 +402,17 @@
       "match_no": "1",
       "home_team": "Biga Ada Spor Kulübü",
       "away_team": "Barbaros Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "28-26",
+        "25-15",
+        "23-25",
+        "13-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401050",
@@ -612,11 +618,17 @@
       "match_no": "1",
       "home_team": "Biga Çiçeklidede Spor Kulübü",
       "away_team": "Parion Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-18",
+        "25-22",
+        "22-25",
+        "20-25",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401055",
@@ -811,5 +823,5 @@
     }
   ],
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-27T07:36:25.459723"
+  "volleybox_sync_updated_at": "2026-09-27T15:06:55.035347"
 }

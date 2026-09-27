@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T07:35:02.041560",
+  "updated_at": "2026-09-27T15:03:15.480092",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -262,7 +262,7 @@
     "Genç Kızlar 1. Ligi - Genç Kız - A Gr": [
       {
         "rank": 1,
-        "team": "Arkas Spor Kulübü - B U18",
+        "team": "Karşıyaka SK - B U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -273,6 +273,17 @@
       },
       {
         "rank": 2,
+        "team": "Arkas Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Bal Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -283,7 +294,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Uzay 35 Voleybol Kulübü - B U18",
         "played": 1,
         "won": 0,
@@ -294,7 +305,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Volkan Güç Spor Kulübü - B U18",
         "played": 1,
         "won": 0,
@@ -305,30 +316,19 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Bergama Belediyesi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "ÖZEGE Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Karşıyaka SK - B U18",
+        "team": "Bergama Belediyesi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2020,11 +2020,16 @@
       "match_no": "3",
       "home_team": "Karşıyaka SK - B U18",
       "away_team": "ÖZEGE Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-10",
+        "23-25",
+        "25-9",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399276",
@@ -3024,7 +3029,7 @@
       "id": "izmir-20261003-050",
       "city": "İzmir",
       "date": "2026-10-03",
-      "time": "--:--",
+      "time": "10:00",
       "hall": "Gaziemir",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3065,7 +3070,7 @@
       "id": "izmir-20261004-051",
       "city": "İzmir",
       "date": "2026-10-04",
-      "time": "--:--",
+      "time": "16:00",
       "hall": "Gaziemir",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3855,7 +3860,7 @@
       "id": "izmir-20261004-069",
       "city": "İzmir",
       "date": "2026-10-04",
-      "time": "--:--",
+      "time": "15:00",
       "hall": "Vali Hüseyin Öğütcen",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -4211,54 +4216,13 @@
       "id": "izmir-20261004-077",
       "city": "İzmir",
       "date": "2026-10-04",
-      "time": "--:--",
+      "time": "11:30",
       "hall": "Halkapınar Küçük",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Yıldız Kızlar - E Gr",
       "match_no": "8",
-      "home_team": "Dalton Koleji Spor Kulübü U16",
-      "away_team": "Özay Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "401140",
-        "url": "https://women.volleybox.net/tr/dalton-koleji-spor-kulubu-u16-ozay-voleybol-spor-kulubu-u16-c401140",
-        "host_name": "Dalton Koleji Spor Kulübü U16",
-        "guest_name": "Özay Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-04",
-        "vb_time": null,
-        "vb_hall": "Halkapınar Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-04",
-          "vb_time": null,
-          "vb_hall": "Halkapınar Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "izmir-20261004-078",
-      "city": "İzmir",
-      "date": "2026-10-04",
-      "time": "--:--",
-      "hall": "Halkapınar Küçük",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kızlar - E Gr",
-      "match_no": "9",
       "home_team": "Gelişim Koleji SK U16",
       "away_team": "Dokuz Eylül Voleybol U16",
       "score": "- : -",
@@ -4288,8 +4252,49 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "izmir-20261004-078",
+      "city": "İzmir",
+      "date": "2026-10-04",
+      "time": "17:00",
+      "hall": "Halkapınar Küçük",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kızlar - E Gr",
+      "match_no": "9",
+      "home_team": "Dalton Koleji Spor Kulübü U16",
+      "away_team": "Özay Voleybol Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "401140",
+        "url": "https://women.volleybox.net/tr/dalton-koleji-spor-kulubu-u16-ozay-voleybol-spor-kulubu-u16-c401140",
+        "host_name": "Dalton Koleji Spor Kulübü U16",
+        "guest_name": "Özay Voleybol Spor Kulübü U16",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-04",
+        "vb_time": null,
+        "vb_hall": "Halkapınar Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": null,
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 78,
-  "volleybox_sync_updated_at": "2026-09-27T07:36:25.486499"
+  "volleybox_sync_updated_at": "2026-09-27T15:06:57.456461"
 }
