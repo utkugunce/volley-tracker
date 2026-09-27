@@ -784,7 +784,10 @@ def main():
     with ThreadPoolExecutor(max_workers=18) as executor:
         if not args.city:
             try:
-                from scripts.scrape_kadinlar_2_lig import run_kadinlar_2_lig_scraper
+                try:
+                    from scripts.scrape_kadinlar_2_lig import run_kadinlar_2_lig_scraper
+                except ImportError:
+                    from scrape_kadinlar_2_lig import run_kadinlar_2_lig_scraper
                 kadinlar_2_lig_future = executor.submit(run_kadinlar_2_lig_scraper, True)
             except Exception as e:
                 logger.warning(f"Kadınlar 2. Ligi eşzamanlı başlatılamadı: {e}")
