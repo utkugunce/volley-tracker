@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
-  RefreshCw,
   ExternalLink,
   Search,
   Trophy,
@@ -41,9 +40,9 @@ interface Kadinlar2LigHeaderProps {
   onSelectTab: (tab: Kadinlar2LigTabType) => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
-  onRefresh: () => void;
-  isLoading: boolean;
-  justUpdated: boolean;
+  onRefresh?: () => void;
+  isLoading?: boolean;
+  justUpdated?: boolean;
   todayMatchesCount?: number;
   resultsCount?: number;
   favoritesCount?: number;
@@ -59,8 +58,8 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
   searchQuery,
   onSearchChange,
   onRefresh,
-  isLoading,
-  justUpdated,
+  isLoading = false,
+  justUpdated = false,
   todayMatchesCount = 0,
   resultsCount = 0,
   favoritesCount = 0,
@@ -224,38 +223,6 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
             aria-label="Yazdır"
           >
             <Printer size={14} />
-          </button>
-
-          {/* Canlı Yenile Butonu */}
-          <button
-            onClick={onRefresh}
-            disabled={isLoading}
-            className={`flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg transition-all active:scale-95 disabled:opacity-75 border cursor-pointer ${
-              isLoading
-                ? "bg-amber-950/40 text-amber-300 border-amber-500/60 shadow-xs"
-                : justUpdated
-                ? "bg-emerald-950/90 text-emerald-300 border-emerald-500/80 shadow-glow-emerald font-bold"
-                : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border-slate-700/60 hover:border-slate-600"
-            }`}
-            title="TVF ve Volleybox verilerini yenile"
-          >
-            {isLoading ? (
-              <>
-                <RefreshCw size={13} className="animate-spin text-amber-400" />
-                <span className="font-bold text-[11px] text-amber-300">Yenileniyor...</span>
-              </>
-            ) : justUpdated ? (
-              <>
-                <Check size={13} className="text-emerald-400 stroke-[3] animate-in zoom-in-75 duration-200" />
-                <span className="font-bold text-[11px] text-emerald-300">Güncellendi!</span>
-              </>
-            ) : (
-              <>
-                <RefreshCw size={13} className="text-slate-400 group-hover:text-white" />
-                <span className="hidden sm:inline font-medium text-[11px] text-slate-300">Yenile</span>
-                <span className="font-mono text-[11px] text-slate-400">({formattedTime})</span>
-              </>
-            )}
           </button>
         </div>
       </div>

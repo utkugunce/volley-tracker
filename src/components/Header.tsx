@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight } from "lucide-react";
+import { Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -23,8 +23,8 @@ interface HeaderProps {
   onToggleFavoritesOnly: () => void;
   activeTab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status";
   onSelectTab: (tab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status") => void;
-  onRefresh: () => void;
-  isLoading: boolean;
+  onRefresh?: () => void;
+  isLoading?: boolean;
   onOpenSearch?: () => void;
 }
 
@@ -43,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
   activeTab,
   onSelectTab,
   onRefresh,
-  isLoading,
+  isLoading = false,
   onOpenSearch,
 }) => {
   const formattedTime = updatedAt
@@ -163,38 +163,6 @@ export const Header: React.FC<HeaderProps> = ({
             aria-label="Yazdır"
           >
             <Printer size={14} />
-          </button>
-
-          {/* Yenile Butonu */}
-          <button
-            onClick={onRefresh}
-            disabled={isLoading}
-            className={`flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg transition-all active:scale-95 disabled:opacity-75 border cursor-pointer ${
-              isLoading
-                ? "bg-amber-950/40 text-amber-300 border-amber-500/60 shadow-xs"
-                : justUpdated
-                ? "bg-emerald-950/90 text-emerald-300 border-emerald-500/80 shadow-glow-emerald font-bold"
-                : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border-slate-700/60 hover:border-slate-600"
-            }`}
-            title="Fikstür ve canlı sonuçları yenile"
-          >
-            {isLoading ? (
-              <>
-                <RefreshCw size={13} className="animate-spin text-amber-400" />
-                <span className="font-bold text-[11px] text-amber-300">Yenileniyor...</span>
-              </>
-            ) : justUpdated ? (
-              <>
-                <Check size={13} className="text-emerald-400 stroke-[3] animate-in zoom-in-75 duration-200" />
-                <span className="font-bold text-[11px] text-emerald-300">Güncellendi!</span>
-              </>
-            ) : (
-              <>
-                <RefreshCw size={13} className="text-slate-400 group-hover:text-white" />
-                <span className="hidden sm:inline font-medium text-[11px] text-slate-300">Yenile</span>
-                <span className="font-mono text-[11px] text-slate-400">({formattedTime})</span>
-              </>
-            )}
           </button>
         </div>
       </div>
