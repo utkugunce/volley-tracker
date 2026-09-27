@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T13:21:06.106181",
+  "updated_at": "2026-09-27T16:35:14.583810",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -726,16 +726,16 @@
         "has_score": false,
         "vb_date": "2026-10-04",
         "vb_time": "12:30",
-        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+        "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-04",
           "vb_time": "12:30",
-          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
-          "details": "Salon Değişti (TVF: Döşemealtı S.S. / VB: Aksu Pelin Cemal Kütahya Spor Salonu)"
+          "vb_hall": "Döşemealtı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1158,16 +1158,16 @@
         "has_score": false,
         "vb_date": "2026-10-04",
         "vb_time": "11:00",
-        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+        "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-04",
           "vb_time": "11:00",
-          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
-          "details": "Salon Değişti (TVF: Döşemealtı S.S. / VB: Aksu Pelin Cemal Kütahya Spor Salonu)"
+          "vb_hall": "Döşemealtı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1716,16 +1716,16 @@
         "has_score": false,
         "vb_date": "2026-10-15",
         "vb_time": "19:00",
-        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+        "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-15",
           "vb_time": "19:00",
-          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
-          "details": "Salon Değişti (TVF: Döşemealtı S.S. / VB: Aksu Pelin Cemal Kütahya Spor Salonu)"
+          "vb_hall": "Döşemealtı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2150,16 +2150,16 @@
         "has_score": false,
         "vb_date": "2026-10-13",
         "vb_time": "19:00",
-        "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
+        "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-13",
           "vb_time": "19:00",
-          "vb_hall": "Aksu Pelin Cemal Kütahya Spor Salonu",
-          "details": "Salon Değişti (TVF: Döşemealtı S.S. / VB: Aksu Pelin Cemal Kütahya Spor Salonu)"
+          "vb_hall": "Döşemealtı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2550,5 +2550,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-09-27T13:22:34.005323"
+  "volleybox_sync_updated_at": "2026-09-27T16:39:09.681636"
 }

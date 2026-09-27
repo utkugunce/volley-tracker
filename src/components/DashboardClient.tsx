@@ -13,6 +13,10 @@ import { HomePortalView } from "@/components/HomePortalView";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { GroupStatusView } from "@/components/GroupStatusView";
+import { MainLayout } from "@/components/layout/MainLayout";
+import { LeftSidebarPlaceholder } from "@/components/layout/LeftSidebarPlaceholder";
+import { RightSidebarPlaceholder } from "@/components/layout/RightSidebarPlaceholder";
+import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
 import dynamic from "next/dynamic";
 import { Match, FixturesData } from "@/types/fixture";
 
@@ -294,6 +298,43 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   // Premium Özellikler: Maç Detay Çekmecesi & Spotlight Arama
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // URL ?match=id senkronizasyonu ve maç seçimi
+  const handleSelectMatch = useCallback((match: Match | null) => {
+    setSelectedMatch(match);
+    if (typeof window !== "undefined" && match) {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("match", match.id);
+        window.history.replaceState({}, "", url.toString());
+      } catch {
+        // fallback
+      }
+    }
+  }, []);
+
+  // Sayfa ilk açıldığında veya maçlar değiştiğinde:
+  // Varsa o günün ilk canlı maçı, yoksa ilk biten maçı varsayılan olarak seçili getir
+  useEffect(() => {
+    if (!data?.matches || data.matches.length === 0) return;
+
+    let urlMatchId: string | null = null;
+    if (typeof window !== "undefined") {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        urlMatchId = params.get("match");
+      } catch {
+        // fallback
+      }
+    }
+
+    setSelectedMatch((prev) => {
+      if (prev && data.matches.some((m) => m.id === prev.id)) {
+        return prev;
+      }
+      return findDefaultSelectedMatch(data.matches, urlMatchId);
+    });
+  }, [data?.matches]);
 
   // Ctrl+K / Cmd+K ile hızlı arama açma
   useEffect(() => {
@@ -834,49 +875,85 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     resultsSubTab !== "all";
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100 font-sans">
-      {/* 0. Favori Maç Hatırlatma Banner'ı (GÖREV 2) */}
-      <NotificationBanner favoritesCount={favorites.length} />
+    <MatchSelectionProvider matches={data?.matches || []} initialMatchId={selectedMatch?.id}>
+      <MainLayout
+        header={
+          <>
+            {/* 0. Favori Maç Hatırlatma Banner'ı */}
+            <NotificationBanner favoritesCount={favorites.length} />
 
-      {/* 1. Header (SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
-      <Header
-        city={data?.city}
-        currentCitySlug={currentCitySlug}
-        onSelectCity={handleSelectCity}
-        cities={citiesList}
-        title={data?.title}
-        updatedAt={data?.updated_at}
-        totalMatches={data?.total_matches || 0}
-        todayMatchesCount={todayMatchesCount}
-        resultsCount={resultsCount}
-        favoritesCount={favorites.length}
-        showOnlyFavorites={showOnlyFavorites}
-        onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
-        activeTab={activeMainTab}
-        onSelectTab={handleSelectTab}
-        onRefresh={fetchData}
-        isLoading={loading}
-        onOpenSearch={() => setIsSearchOpen(true)}
-      />
+            {/* 1. Header (SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
+            <Header
+              city={data?.city}
+              currentCitySlug={currentCitySlug}
+              onSelectCity={handleSelectCity}
+              cities={citiesList}
+              title={data?.title}
+              updatedAt={data?.updated_at}
+              totalMatches={data?.total_matches || 0}
+              todayMatchesCount={todayMatchesCount}
+              resultsCount={resultsCount}
+              favoritesCount={favorites.length}
+              showOnlyFavorites={showOnlyFavorites}
+              onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
+              activeTab={activeMainTab}
+              onSelectTab={handleSelectTab}
+              onRefresh={fetchData}
+              isLoading={loading}
+              onOpenSearch={() => setIsSearchOpen(true)}
+            />
 
-      {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
-      {activeMainTab !== "home" && (
-        <CityTabBar
-          currentCitySlug={currentCitySlug}
-          onSelectCity={handleSelectCity}
-          cities={citiesList}
-          totalMatchesAcrossAll={totalMatchesAcrossAll}
-        />
-      )}
-
-      <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4 space-y-4">
-        {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
-        <PrimaryTeamWidget
-          matches={data?.matches || []}
-          city={data?.city}
-          onSelectMatch={setSelectedMatch}
-          availableTeams={allTeamNames}
-        />
+            {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
+            {activeMainTab !== "home" && (
+              <CityTabBar
+                currentCitySlug={currentCitySlug}
+                onSelectCity={handleSelectCity}
+                cities={citiesList}
+                totalMatchesAcrossAll={totalMatchesAcrossAll}
+              />
+            )}
+          </>
+        }
+        leftSidebar={
+          <LeftSidebarPlaceholder
+            cities={citiesList}
+            currentCity={currentCitySlug}
+            onSelectCity={handleSelectCity}
+            favoritesCount={favorites.length}
+            totalMatches={totalMatchesAcrossAll}
+          />
+        }
+        rightSidebar={
+          <RightSidebarPlaceholder
+            selectedMatch={selectedMatch}
+            onClose={() => setSelectedMatch(null)}
+            onToggleFavorite={toggleFavorite}
+            isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
+          />
+        }
+        footer={
+          <footer className="py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-[#94A3B8] no-print">
+            <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+              <p className="font-semibold text-[#F1F5F9]">
+                Altyapı Voleybol • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
+              </p>
+              <div className="flex items-center gap-3 text-[11px] text-[#94A3B8]">
+                <span>Fikstür & Puan Durumu</span>
+                <span className="text-[#64748B]">•</span>
+                <span>Sofascore Voleybol Arayüz Mimarisi</span>
+              </div>
+            </div>
+          </footer>
+        }
+      >
+        <div className="space-y-4">
+          {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
+          <PrimaryTeamWidget
+            matches={data?.matches || []}
+            city={data?.city}
+            onSelectMatch={handleSelectMatch}
+            availableTeams={allTeamNames}
+          />
 
         {/* Hata Durumu */}
         {error && (
@@ -1157,7 +1234,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                                 onToggleFavorite={toggleFavorite}
                                 city={sec.city || data?.city}
                                 showCityBadge={false}
-                                onSelectMatch={setSelectedMatch}
+                                onSelectMatch={handleSelectMatch}
                                 isCollapsible={true}
                                 isCollapsed={Boolean(collapsedResultLeagues[leagueKey])}
                                 onToggleCollapse={() => toggleResultLeagueCollapse(leagueKey)}
@@ -1278,7 +1355,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             standings={data?.standings || {}}
             favorites={favorites}
             onToggleFavorite={toggleFavorite}
-            onSelectMatch={setSelectedMatch}
+            onSelectMatch={handleSelectMatch}
             onNavigateTab={handleSelectTab}
             todayStr={todayStr}
             yesterdayStr={yesterdayStr}
@@ -1292,7 +1369,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                 city={data?.city}
                 favorites={favorites}
                 onToggleFavorite={toggleFavorite}
-                onSelectMatch={setSelectedMatch}
+                onSelectMatch={handleSelectMatch}
               />
             )}
             <TodayMatchesView
@@ -1306,7 +1383,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               favorites={favorites}
               onToggleFavorite={toggleFavorite}
               onNavigateToFullFixtures={() => handleSelectTab("fixtures")}
-              onSelectMatch={setSelectedMatch}
+              onSelectMatch={handleSelectMatch}
             />
           </div>
         ) : activeMainTab === "fixtures" ? (
@@ -1519,7 +1596,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                                 onToggleFavorite={toggleFavorite}
                                 city={sec.city || data?.city}
                                 showCityBadge={false}
-                                onSelectMatch={setSelectedMatch}
+                                onSelectMatch={handleSelectMatch}
                                 isCollapsible={true}
                                 isCollapsed={Boolean(collapsedFixtureLeagues[leagueKey])}
                                 onToggleCollapse={() => toggleFixtureLeagueCollapse(leagueKey)}
@@ -1608,21 +1685,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             />
           </div>
         )}
-      </main>
-
-      {/* Altbilgi */}
-      <footer className="border-t border-slate-800 bg-[#0b1325] mt-auto py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-slate-300 no-print">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="font-semibold text-slate-200">
-            Altyapı Voleybol • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
-          </p>
-          <div className="flex items-center gap-3 text-[11px] text-slate-300">
-            <span>Fikstür & Puan Durumu</span>
-            <span className="text-slate-500">•</span>
-            <span>Resmi TVF Bülten Sistemi</span>
-          </div>
         </div>
-      </footer>
+      </MainLayout>
 
       {/* 4. Mobil Sabit Alt Menü (Thumb-friendly Navigation) */}
       <MobileBottomNav
@@ -1662,14 +1726,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         resultsCount={resultsCount}
       />
 
-      {/* 5. Maç Detay Çekmecesi (Match Center Drawer) */}
-      <MatchCenterDrawer
-        match={selectedMatch}
-        onClose={() => setSelectedMatch(null)}
-        city={data?.city}
-        onToggleFavorite={toggleFavorite}
-        isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
-      />
+      {/* 5. Maç Detay Çekmecesi (Mobilde Alttan Açılan Bottom Sheet / Drawer) */}
+      <div className="lg:hidden">
+        <MatchCenterDrawer
+          match={selectedMatch}
+          onClose={() => setSelectedMatch(null)}
+          city={data?.city}
+          onToggleFavorite={toggleFavorite}
+          isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
+        />
+      </div>
 
       {/* 6. Spotlight Hızlı Arama Modalı (Cmd + K) */}
       <SpotlightSearchModal
@@ -1683,6 +1749,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         onSelectCategory={setSelectedCategory}
         onSelectHall={setSelectedHall}
       />
-    </div>
+    </MatchSelectionProvider>
   );
 };

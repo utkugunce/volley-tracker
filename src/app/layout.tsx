@@ -66,7 +66,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="min-h-screen bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
+      <body className="min-h-screen bg-[#121212] text-[#F1F5F9] font-sans antialiased selection:bg-blue-600 selection:text-white">
         {children}
         <ServiceWorkerRegister />
       </body>
