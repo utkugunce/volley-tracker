@@ -60,6 +60,20 @@ try {
       importedMatches += matches.length;
     }
 
+    const { data: existingMatches, error: existingMatchesError } = await supabase
+      .from("matches")
+      .select("id")
+      .eq("city_slug", citySlug);
+    if (existingMatchesError) throw new Error(`${citySlug} existing matches: ${existingMatchesError.message}`);
+    const currentMatchIds = new Set(matches.map((match) => match.id));
+    const staleMatchIds = (existingMatches || [])
+      .map((row) => row.id)
+      .filter((id) => !currentMatchIds.has(id));
+    if (staleMatchIds.length) {
+      const { error } = await supabase.from("matches").delete().in("id", staleMatchIds);
+      if (error) throw new Error(`${citySlug} stale matches: ${error.message}`);
+    }
+
     const standings = Object.entries(parsed.standings || {}).map(([category, rows]) => ({
       city_slug: citySlug,
       category,
@@ -73,6 +87,24 @@ try {
         .upsert(standings, { onConflict: "city_slug,category" });
       if (error) throw new Error(`${citySlug} standings: ${error.message}`);
       importedStandings += standings.length;
+    }
+
+    const { data: existingStandings, error: existingStandingsError } = await supabase
+      .from("standings")
+      .select("category")
+      .eq("city_slug", citySlug);
+    if (existingStandingsError) throw new Error(`${citySlug} existing standings: ${existingStandingsError.message}`);
+    const currentCategories = new Set(standings.map((standing) => standing.category));
+    const staleCategories = (existingStandings || [])
+      .map((row) => row.category)
+      .filter((category) => !currentCategories.has(category));
+    if (staleCategories.length) {
+      const { error } = await supabase
+        .from("standings")
+        .delete()
+        .eq("city_slug", citySlug)
+        .in("category", staleCategories);
+      if (error) throw new Error(`${citySlug} stale standings: ${error.message}`);
     }
   }
 
