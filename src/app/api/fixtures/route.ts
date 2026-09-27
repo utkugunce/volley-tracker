@@ -2,18 +2,11 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { timingSafeEqual } from "crypto";
 import { applyOverridesToMatches, applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
-
-function safeCompare(a: string, b: string): boolean {
-  const bufA = Buffer.from(a);
-  const bufB = Buffer.from(b);
-  if (bufA.length !== bufB.length) return false;
-  return timingSafeEqual(bufA, bufB);
-}
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
 const refreshLimiter = new RateLimiter({
@@ -61,17 +54,8 @@ export async function GET(request: Request) {
       | undefined;
 
     if (refresh === "1") {
-      const adminToken = process.env.ADMIN_TOKEN;
-      const xAdmin = request.headers.get("x-admin-token");
-      const authHeader = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
-      const providedToken = xAdmin || authHeader;
-
-      // Sadece admin yetkisi olan kullanıcılar canlı taramayı tetikleyebilir
-      const isAuthorized = Boolean(
-        !adminToken || (providedToken && safeCompare(providedToken, adminToken))
-      );
-
-      if (adminToken && !isAuthorized) {
+      const authError = requireConfiguredSecret(request, "ADMIN_TOKEN");
+      if (authError) {
         syncMeta = {
           attempted: false,
           success: true,

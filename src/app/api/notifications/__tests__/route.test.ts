@@ -141,9 +141,11 @@ describe("Web Push API Routes (GÖREV 5)", () => {
 
     it("hiç abone yoksa bildirim göndermeden başarı döner", async () => {
       vi.spyOn(webPushUtils, "getPushSubscriptions").mockResolvedValue([]);
+      process.env.ADMIN_TOKEN = "test-admin-token";
 
       const req = new NextRequest("http://localhost:3000/api/notifications/dispatch", {
         method: "POST",
+        headers: { "x-admin-token": "test-admin-token" },
       });
 
       const res = await dispatchPost(req);
@@ -152,6 +154,7 @@ describe("Web Push API Routes (GÖREV 5)", () => {
       expect(data.ok).toBe(true);
       expect(data.sent).toBe(0);
       expect(data.message).toContain("Aktif bildirim abonesi bulunamadı");
+      delete process.env.ADMIN_TOKEN;
     });
 
     it("aboneler varsa ve maç eşleşiyorsa push bildirimini tetikler", async () => {
@@ -168,10 +171,12 @@ describe("Web Push API Routes (GÖREV 5)", () => {
         success: true,
         statusCode: 201,
       });
+      process.env.ADMIN_TOKEN = "test-admin-token";
 
       // Maç saatini şimdiden 15 dk sonraya simüle et (leadMinutes=30 penceresine girsin)
       const req = new NextRequest("http://localhost:3000/api/notifications/dispatch?leadMinutes=120", {
         method: "POST",
+        headers: { "x-admin-token": "test-admin-token" },
       });
 
       const res = await dispatchPost(req);
@@ -179,6 +184,7 @@ describe("Web Push API Routes (GÖREV 5)", () => {
       const data = await res.json();
       expect(data.ok).toBe(true);
       expect(data.totalSubscribers).toBe(1);
+      delete process.env.ADMIN_TOKEN;
     });
   });
 });

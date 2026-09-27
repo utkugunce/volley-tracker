@@ -4,9 +4,21 @@ import {
   removePushSubscription,
   StoredSubscription,
 } from "@/utils/webPush";
+import { RateLimiter } from "@/utils/rateLimit";
+import { getRateLimitResponse, validateSameOrigin } from "@/utils/apiSecurity";
+
+const subscriptionLimiter = new RateLimiter({
+  windowMs: 10 * 60 * 1000,
+  maxRequests: 20,
+});
 
 export async function POST(req: NextRequest) {
   try {
+    const originError = validateSameOrigin(req);
+    if (originError) return originError;
+    const rateLimitError = getRateLimitResponse(req, subscriptionLimiter);
+    if (rateLimitError) return rateLimitError;
+
     const body = await req.json();
     const { subscription, favoriteTeams, favoriteMatches } = body || {};
 
@@ -53,6 +65,11 @@ export async function POST(req: NextRequest) {
 
 export async function DELETE(req: NextRequest) {
   try {
+    const originError = validateSameOrigin(req);
+    if (originError) return originError;
+    const rateLimitError = getRateLimitResponse(req, subscriptionLimiter);
+    if (rateLimitError) return rateLimitError;
+
     const body = await req.json();
     const { endpoint } = body || {};
 
