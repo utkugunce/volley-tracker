@@ -758,34 +758,15 @@ export default function AdminPage() {
 
   // Takım listesi (A-Z sıralı, kategorili)
   const teamsByCategory = useMemo(() => {
-    const altyapıTeams = new Set<string>();
-    const ligTeams = new Set<string>();
-
-    matches.forEach((m) => {
-      if (m.home_team) {
-        const team = m.home_team;
-        // 2. Lig listesinde varsa 2. Lig, Altyapı listesinde varsa Altyapı
-        if (LIG_TEAMS.includes(team)) {
-          ligTeams.add(team);
-        } else if (ALTYAPI_TEAMS.includes(team)) {
-          altyapıTeams.add(team);
-        }
-      }
-      if (m.away_team) {
-        const team = m.away_team;
-        if (LIG_TEAMS.includes(team)) {
-          ligTeams.add(team);
-        } else if (ALTYAPI_TEAMS.includes(team)) {
-          altyapıTeams.add(team);
-        }
-      }
-    });
+    // Doğrudan tanımlı listeleri kullan (maç verilerine bakmadan)
+    const altyapıSet = new Set(ALTYAPI_TEAMS);
+    const ligSet = new Set(LIG_TEAMS);
 
     return {
-      altyapı: Array.from(altyapıTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
-      lig: Array.from(ligTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
+      altyapı: Array.from(altyapıSet).sort((a, b) => trLower(a).localeCompare(trLower(b))),
+      lig: Array.from(ligSet).sort((a, b) => trLower(a).localeCompare(trLower(b))),
     };
-  }, [matches, LIG_TEAMS, ALTYAPI_TEAMS]);
+  }, [ALTYAPI_TEAMS, LIG_TEAMS]);
 
   // Filtrelenmiş takımlar
   const filteredTeams = useMemo(() => {
