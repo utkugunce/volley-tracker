@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T18:59:53.729105",
+  "updated_at": "2026-09-27T17:41:46.578191",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -133,6 +133,28 @@
       },
       {
         "rank": 2,
+        "team": "Eskişehir Yıldız Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Meryem Boz Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Es Voleybol Akademi Spor Kulübü - A U18",
         "played": 1,
         "won": 0,
@@ -140,28 +162,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Eskişehir Yıldız Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Meryem Boz Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -282,6 +282,17 @@
     "Yıldız Kızlar Süper Lig - - C Gr": [
       {
         "rank": 1,
+        "team": "Es Güneş Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Eskişehir Ata Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -292,25 +303,14 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Es Güneş Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -784,11 +784,17 @@
       "match_no": "2",
       "home_team": "Meryem Boz Spor Kulübü U18",
       "away_team": "Eskişehir Yıldız Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "26-24",
+        "17-25",
+        "25-16",
+        "20-25",
+        "14-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399243",
@@ -1425,11 +1431,15 @@
       "match_no": "2",
       "home_team": "Es Güneş Spor Kulübü U16",
       "away_team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-13",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401061",
@@ -1759,5 +1769,5 @@
     }
   ],
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-09-27T19:03:45.515704"
+  "volleybox_sync_updated_at": "2026-09-27T17:43:23.236613"
 }
