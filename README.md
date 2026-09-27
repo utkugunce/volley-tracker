@@ -27,6 +27,7 @@ Türkiye Voleybol Federasyonu (TVF) İstanbul yerel liglerindeki **Genç Kızlar
   - **Arayüzden Senkronizasyon Durumu:** Web arayüzündeki yenileme butonuna basıldığında sunucu önbelleğindeki en son veriler anında çekilir, son güncelleme zamanı ve senkronizasyon durumu (başarı / önbellek / uyarı) görsel bildirim olarak gösterilir.
   - **Yerel Geliştirme (Local Python):** Yerel ortamda çalışırken `GET /api/fixtures?refresh=1` doğrudan yerel Python tarayıcısını tetikleyebilir. Vercel sunucusuz (serverless) ortamında ise güvenli ve yüksek hızlı CDN/build önbelleği kullanılır.
   - Operasyonel veri kontrolü için `GET /api/health` endpoint'i son veri zamanını, şehir dosyası sayısını, maç toplamını ve GitHub Actions, Blob ve push bildirim yapılandırma durumunu döndürür.
+  - Supabase geçişi için `supabase/migrations/001_backend_schema.sql` şeması hazırdır. `SUPABASE_SERVICE_ROLE_KEY` yalnızca sunucu ortamında tutulmalı; değişkenler yokken uygulama JSON fallback'iyle çalışmaya devam eder.
 
 ---
 
@@ -103,6 +104,8 @@ Projede yönetim ve bülten yükleme güvenliği için ortam değişkenleri kull
 |---|---|---|
 | `ADMIN_TOKEN` | `/api/fixtures/upload` ve `/api/admin/override` endpoint'lerini yetkilendirmek için kullanılan gizli anahtar. Tanımlanmadığında endpoint güvenlik amacıyla 503 Service Unavailable döner. | Evet (Admin özellikleri için) |
 | `CRON_SECRET` | `/api/notifications/dispatch` endpoint'ini yalnızca zamanlanmış görevlerin çağırabilmesi için kullanılan gizli anahtar. Tanımlandığında dispatch isteği `Authorization: Bearer <CRON_SECRET>` ile yapılmalıdır. | Evet (Otomatik bildirimler için) |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase proje URL'si. | Supabase kullanımı için Evet |
+| `SUPABASE_SERVICE_ROLE_KEY` | Sunucu tarafı Supabase anahtarı; tarayıcıya gönderilmemelidir. | Supabase kullanımı için Evet |
 | `BLOB_READ_WRITE_TOKEN` | Vercel sunucusuz (serverless) salt-okunur dosya sistemi ortamında manuel admin skor düzeltmelerini (`manual-overrides.json`) kalıcı olarak saklamak için Vercel Blob token'ı. Yerel ortamda tanımlanmadığında `data/manual-overrides.json` dosyasına fallback yapılır. | Vercel ortamında Evet |
 
 > [!IMPORTANT]

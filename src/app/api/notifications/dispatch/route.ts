@@ -9,7 +9,13 @@ import {
 import { applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { parseMatchDateTime } from "@/utils/notifications";
 import { Match } from "@/types/fixture";
-import { requireConfiguredSecret } from "@/utils/apiSecurity";
+import { getRateLimitResponse, requireConfiguredSecret } from "@/utils/apiSecurity";
+import { RateLimiter } from "@/utils/rateLimit";
+
+const dispatchLimiter = new RateLimiter({
+  windowMs: 5 * 60 * 1000,
+  maxRequests: 5,
+});
 
 function loadAllMatches(): Match[] {
   const allMatches: Match[] = [];
@@ -93,6 +99,9 @@ export async function POST(req: NextRequest) {
       : requireConfiguredSecret(req, "ADMIN_TOKEN");
     if (authError) return authError;
 
+    const rateLimitError = getRateLimitResponse(req, dispatchLimiter);
+    if (rateLimitError) return rateLimitError;
+
     const subscriptions = await getPushSubscriptions();
     if (subscriptions.length === 0) {
       return NextResponse.json({
@@ -107,7 +116,13 @@ export async function POST(req: NextRequest) {
     const allMatches = await applyOverridesToMatchesAsync(rawMatches);
 
     // Parametre ile test veya özel dakika penceresi desteği
-    const leadMinutes = parseInt(req.nextUrl.searchParams.get("leadMinutes") || "35", 10);
+    const requestedLeadMinutes = Number.parseInt(
+      req.nextUrl.searchParams.get("leadMinutes") || "35",
+      10
+    );
+    const leadMinutes = Number.isFinite(requestedLeadMinutes)
+      ? Math.min(Math.max(requestedLeadMinutes, 1), 24 * 60)
+      : 35;
     const windowMs = leadMinutes * 60 * 1000;
     const now = new Date();
 

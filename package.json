@@ -14,6 +14,7 @@
     "sync:volleybox": "python scripts/sync_volleybox_matches.py"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.8.0",
     "clsx": "^2.1.1",

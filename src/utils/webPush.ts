@@ -2,6 +2,7 @@ import path from "path";
 import fs from "fs";
 import webpush from "web-push";
 import { put, list } from "@vercel/blob";
+import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 
 export interface StoredSubscription {
   endpoint: string;
@@ -54,6 +55,27 @@ export function initVapid(): boolean {
  * Tüm push aboneliklerini getirir (Vercel Blob veya yerel depolama).
  */
 export async function getPushSubscriptions(): Promise<StoredSubscription[]> {
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const { data, error } = await supabase
+      .from("push_subscriptions")
+      .select("endpoint, p256dh, auth, expiration_time, favorite_teams, favorite_matches, created_at")
+      .order("created_at", { ascending: false });
+    if (!error && data) {
+      const subscriptions = data.map((row) => ({
+        endpoint: row.endpoint,
+        keys: { p256dh: row.p256dh, auth: row.auth },
+        expirationTime: row.expiration_time ?? null,
+        favoriteTeams: Array.isArray(row.favorite_teams) ? row.favorite_teams : [],
+        favoriteMatches: Array.isArray(row.favorite_matches) ? row.favorite_matches : [],
+        createdAt: row.created_at,
+      }));
+      memorySubsCache = subscriptions;
+      return subscriptions;
+    }
+    if (error) console.warn("Supabase push abonelik okuma hatası (fallback'e dönülüyor):", error.message);
+  }
+
   if (isBlobConfigured()) {
     try {
       const { blobs } = await list({ prefix: BLOB_FILENAME });
@@ -122,6 +144,22 @@ export async function savePushSubscription(sub: StoredSubscription): Promise<voi
 
   memorySubsCache = updated;
 
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const { error } = await supabase.from("push_subscriptions").upsert({
+      endpoint: sub.endpoint,
+      p256dh: sub.keys.p256dh,
+      auth: sub.keys.auth,
+      expiration_time: sub.expirationTime ?? null,
+      favorite_teams: sub.favoriteTeams || [],
+      favorite_matches: sub.favoriteMatches || [],
+      created_at: sub.createdAt,
+      updated_at: new Date().toISOString(),
+    });
+    if (!error) return;
+    console.warn("Supabase push abonelik yazma hatası (fallback'e dönülüyor):", error.message);
+  }
+
   // 1. Vercel Blob'a yaz
   if (isBlobConfigured()) {
     try {
@@ -155,6 +193,13 @@ export async function removePushSubscription(endpoint: string): Promise<void> {
   const filtered = current.filter((item) => item.endpoint !== endpoint);
 
   memorySubsCache = filtered;
+
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const { error } = await supabase.from("push_subscriptions").delete().eq("endpoint", endpoint);
+    if (!error) return;
+    console.warn("Supabase push abonelik silme hatası (fallback'e dönülüyor):", error.message);
+  }
 
   if (isBlobConfigured()) {
     try {
