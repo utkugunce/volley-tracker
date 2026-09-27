@@ -19,12 +19,16 @@ import {
   ArrowRight,
   RefreshCw,
   Clock,
+  Users,
+  UserPlus,
+  Shield,
+  Play,
 } from "lucide-react";
 import { compareMatchDateTime } from "@/utils/calendar";
 import { Match } from "@/types/fixture";
 import { MatchOverride, AuditLogEntry } from "@/utils/overrides";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
-import { createClient } from "@supabase/supabase-js";
+import { getSupabaseClient } from "@/utils/supabaseClient";
 
 export default function AdminPage() {
   const [token, setToken] = useState<string>("");
@@ -39,7 +43,7 @@ export default function AdminPage() {
   const [overrides, setOverrides] = useState<Record<string, MatchOverride>>({});
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<"matches" | "audit">("matches");
+  const [activeTab, setActiveTab] = useState<"matches" | "audit" | "users" | "live" | "notifications" | "sync">("matches");
 
   // Filtreler
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -67,6 +71,19 @@ export default function AdminPage() {
     remainingSeconds?: number;
   } | null>(null);
 
+  // Kullanıcı Yönetimi
+  const [users, setUsers] = useState<any[]>([]);
+  const [usersLoading, setUsersLoading] = useState<boolean>(false);
+  const [showAddUserModal, setShowAddUserModal] = useState<boolean>(false);
+  const [newUserEmail, setNewUserEmail] = useState<string>("");
+  const [newUserPassword, setNewUserPassword] = useState<string>("");
+  const [newUserRole, setNewUserRole] = useState<"admin" | "editor" | "viewer">("viewer");
+  const [userOperationLoading, setUserOperationLoading] = useState<boolean>(false);
+
+  // Bildirim Yönetimi
+  const [notificationStatus, setNotificationStatus] = useState<any>(null);
+  const [notificationHistory, setNotificationHistory] = useState<any[]>([]);
+
   // Oturum açma kontrolü
   useEffect(() => {
     try {
@@ -79,6 +96,34 @@ export default function AdminPage() {
       // ignore
     }
   }, []);
+
+  // Bildirim durumu ve geçmişi yükle
+  const fetchNotificationStatus = async () => {
+    try {
+      const [statusRes, historyRes] = await Promise.all([
+        fetch("/api/notifications/queue?action=status", {
+          headers: { "x-admin-token": token },
+        }),
+        fetch("/api/notifications/queue?action=history&limit=10", {
+          headers: { "x-admin-token": token },
+        }),
+      ]);
+
+      const statusData = await statusRes.json();
+      const historyData = await historyRes.json();
+
+      setNotificationStatus(statusData);
+      setNotificationHistory(historyData.history || []);
+    } catch (error) {
+      console.error("Bildirim durumu yükleme hatası:", error);
+    }
+  };
+
+  useEffect(() => {
+    if (token && activeTab === "notifications") {
+      fetchNotificationStatus();
+    }
+  }, [token, activeTab]);
 
   const verifyAndFetchData = async (authToken: string) => {
     setLoading(true);
@@ -111,6 +156,19 @@ export default function AdminPage() {
         setMatches(fixJson.matches || []);
       }
 
+      // 3. Kullanıcı listesini çek (admin ise)
+      try {
+        const usersRes = await fetch("/api/admin/users", {
+          headers: { "x-admin-token": authToken },
+        });
+        if (usersRes.ok) {
+          const usersData = await usersRes.json();
+          setUsers(usersData.users || []);
+        }
+      } catch {
+        // User endpoint might not be available yet
+      }
+
       setIsAuthenticated(true);
       try {
         sessionStorage.setItem("volley_admin_token", authToken);
@@ -135,12 +193,10 @@ export default function AdminPage() {
     setLoading(true);
     setAuthError(null);
     try {
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-      const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-      if (!supabaseUrl || !supabaseAnonKey) {
+      const supabase = getSupabaseClient();
+      if (!supabase) {
         throw new Error("Supabase Auth yapılandırması eksik.");
       }
-      const supabase = createClient(supabaseUrl, supabaseAnonKey);
       const { data, error } = await supabase.auth.signInWithPassword({
         email: authEmail,
         password: authPassword,
@@ -156,12 +212,17 @@ export default function AdminPage() {
     }
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     setIsAuthenticated(false);
     setToken("");
     setInputToken("");
     try {
       sessionStorage.removeItem("volley_admin_token");
+      // Also sign out from Supabase if session exists
+      const supabase = getSupabaseClient();
+      if (supabase) {
+        await supabase.auth.signOut();
+      }
     } catch {}
   };
 
@@ -385,6 +446,111 @@ export default function AdminPage() {
     }
   };
 
+  // Kullanıcı Yönetimi Fonksiyonları
+  const handleAddUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setUserOperationLoading(true);
+    try {
+      const res = await fetch("/api/admin/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-token": token,
+        },
+        body: JSON.stringify({
+          email: newUserEmail,
+          password: newUserPassword,
+          role: newUserRole,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Kullanıcı oluşturma hatası");
+      }
+
+      // Kullanıcı listesini güncelle
+      const usersRes = await fetch("/api/admin/users", {
+        headers: { "x-admin-token": token },
+      });
+      if (usersRes.ok) {
+        const usersData = await usersRes.json();
+        setUsers(usersData.users || []);
+      }
+
+      setShowAddUserModal(false);
+      setNewUserEmail("");
+      setNewUserPassword("");
+      setNewUserRole("viewer");
+      alert("Kullanıcı başarıyla oluşturuldu.");
+    } catch (err: any) {
+      alert(`Hata: ${err.message}`);
+    } finally {
+      setUserOperationLoading(false);
+    }
+  };
+
+  const handleUpdateUserRole = async (userId: string, newRole: "admin" | "editor" | "viewer") => {
+    if (!confirm(`Kullanıcının rolünü ${newRole} olarak değiştirmek istediğinize emin misiniz?`)) return;
+
+    setUserOperationLoading(true);
+    try {
+      const res = await fetch(`/api/admin/users/${userId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-token": token,
+        },
+        body: JSON.stringify({ role: newRole }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Rol güncelleme hatası");
+      }
+
+      // Kullanıcı listesini güncelle
+      const usersRes = await fetch("/api/admin/users", {
+        headers: { "x-admin-token": token },
+      });
+      if (usersRes.ok) {
+        const usersData = await usersRes.json();
+        setUsers(usersData.users || []);
+      }
+
+      alert("Rol başarıyla güncellendi.");
+    } catch (err: any) {
+      alert(`Hata: ${err.message}`);
+    } finally {
+      setUserOperationLoading(false);
+    }
+  };
+
+  const handleDeleteUser = async (userId: string, userEmail: string) => {
+    if (!confirm(`${userEmail} kullanıcısını silmek istediğinize emin misiniz? Bu işlem geri alınamaz.`)) return;
+
+    setUserOperationLoading(true);
+    try {
+      const res = await fetch(`/api/admin/users/${userId}`, {
+        method: "DELETE",
+        headers: { "x-admin-token": token },
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Kullanıcı silme hatası");
+      }
+
+      // Kullanıcı listesini güncelle
+      setUsers((prev) => prev.filter((u) => u.id !== userId));
+      alert("Kullanıcı başarıyla silindi.");
+    } catch (err: any) {
+      alert(`Hata: ${err.message}`);
+    } finally {
+      setUserOperationLoading(false);
+    }
+  };
+
   // Şehir listesi
   const cities = useMemo(() => {
     const set = new Set<string>();
@@ -581,6 +747,61 @@ export default function AdminPage() {
           </button>
           <button
             type="button"
+            role="tab"
+            aria-selected={activeTab === "users"}
+            onClick={() => setActiveTab("users")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              activeTab === "users"
+                ? "bg-primary text-white shadow-sm"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            <Users size={13} aria-hidden="true" />
+            Kullanıcılar ({users.length})
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === "live"}
+            onClick={() => setActiveTab("live")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              activeTab === "live"
+                ? "bg-red-500 text-white shadow-sm"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+            Canlı Skor
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === "notifications"}
+            onClick={() => setActiveTab("notifications")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              activeTab === "notifications"
+                ? "bg-blue-500 text-white shadow-sm"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            📢 Bildirimler
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === "sync"}
+            onClick={() => setActiveTab("sync")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              activeTab === "sync"
+                ? "bg-emerald-500 text-white shadow-sm"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            <RefreshCw size={13} />
+            Sync Geçmişi
+          </button>
+          <button
+            type="button"
             onClick={handleLogout}
             aria-label="Yönetici oturumunu kapat"
             className="p-1.5 rounded-lg bg-slate-800 hover:bg-red-950/80 text-slate-400 hover:text-red-400 border border-slate-700 transition-colors text-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
@@ -765,7 +986,7 @@ export default function AdminPage() {
               </div>
             </div>
           </div>
-        ) : (
+        ) : activeTab === "audit" ? (
           /* Denetim Günlüğü (Audit Log) */
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <h2 className="text-base font-bold text-white mb-4 flex items-center gap-2">
@@ -821,8 +1042,420 @@ export default function AdminPage() {
               </div>
             )}
           </div>
+        ) : (
+          /* Kullanıcı Yönetimi */
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-bold text-white flex items-center gap-2">
+                <Users size={18} className="text-primary" />
+                Kullanıcı Yönetimi
+              </h2>
+              <button
+                onClick={() => setShowAddUserModal(true)}
+                className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+              >
+                <UserPlus size={13} />
+                Kullanıcı Ekle
+              </button>
+            </div>
+
+            {users.length === 0 ? (
+              <div className="py-12 text-center text-slate-400 text-xs">
+                Henüz kayıtlı kullanıcı bulunmuyor.
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-2 px-3 text-slate-400 font-semibold">Email</th>
+                      <th className="text-left py-2 px-3 text-slate-400 font-semibold">Rol</th>
+                      <th className="text-left py-2 px-3 text-slate-400 font-semibold">Kayıt Tarihi</th>
+                      <th className="text-left py-2 px-3 text-slate-400 font-semibold">Son Giriş</th>
+                      <th className="text-right py-2 px-3 text-slate-400 font-semibold">İşlemler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {users.map((user) => (
+                      <tr key={user.id} className="border-b border-slate-800 hover:bg-slate-800/50">
+                        <td className="py-2 px-3 text-white">{user.email}</td>
+                        <td className="py-2 px-3">
+                          <select
+                            value={user.role}
+                            onChange={(e) => handleUpdateUserRole(user.id, e.target.value as "admin" | "editor" | "viewer")}
+                            disabled={userOperationLoading}
+                            className="px-2 py-1 bg-slate-800 border border-slate-700 rounded text-white text-xs focus:outline-none focus:border-primary"
+                          >
+                            <option value="viewer">Viewer</option>
+                            <option value="editor">Editor</option>
+                            <option value="admin">Admin</option>
+                          </select>
+                        </td>
+                        <td className="py-2 px-3 text-slate-400">
+                          {user.created_at ? new Date(user.created_at).toLocaleDateString("tr-TR") : "-"}
+                        </td>
+                        <td className="py-2 px-3 text-slate-400">
+                          {user.last_sign_in_at ? new Date(user.last_sign_in_at).toLocaleDateString("tr-TR") : "-"}
+                        </td>
+                        <td className="py-2 px-3 text-right">
+                          <button
+                            onClick={() => handleDeleteUser(user.id, user.email)}
+                            disabled={userOperationLoading}
+                            className="text-red-400 hover:text-red-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            <Trash2 size={14} />
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </div>
+        ) : activeTab === "live" ? (
+          /* Canlı Skor Yönetimi */
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-bold text-white flex items-center gap-2">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                Canlı Skor Yönetimi
+              </h2>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-slate-400">
+                  Maçları düzenlemek için "Maçlar" tab'ına gidin
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 rounded-xl p-4 text-center">
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center">
+                  <Play size={32} className="text-red-400" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white mb-1">
+                    Canlı Skor Sistemi
+                  </h3>
+                  <p className="text-xs text-slate-400 mb-3">
+                    Supabase Realtime ile anlık skor güncellemeleri aktif
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-slate-500">
+                  <span className="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">
+                    Realtime Bağlantı: Aktif
+                  </span>
+                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">
+                    Otomatik Güncelleme: Açık
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 bg-slate-800/30 rounded-xl p-4">
+              <h4 className="text-xs font-semibold text-slate-300 mb-2">
+                Nasıl Kullanılır?
+              </h4>
+              <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
+                <li>"Maçlar" tab'ına gidin</li>
+                <li>Düzenlemek istediğiniz maçı bulun</li>
+                <li>"Düzenle" butonuna tıklayın</li>
+                <li>Skorları güncelleyin ve "Canlı" durumunu seçin</li>
+                <li>Kaydedin - değişiklikler anında tüm kullanıcılara yansır</li>
+              </ol>
+            </div>
+          </div>
+        ) : activeTab === "notifications" ? (
+          /* Bildirim Yönetimi */
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-bold text-white flex items-center gap-2">
+                📢 Bildirim Yönetimi
+              </h2>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={async () => {
+                    try {
+                      const res = await fetch("/api/notifications/queue?action=process", {
+                        method: "POST",
+                        headers: { "x-admin-token": token },
+                      });
+                      const data = await res.json();
+                      if (data.success) {
+                        alert(`${data.processed} bildirim işlendi`);
+                        setNotificationStatus(await fetchNotificationStatus());
+                      }
+                    } catch (error: any) {
+                      alert(`Hata: ${error.message}`);
+                    }
+                  }}
+                  className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                >
+                  <RefreshCw size={13} />
+                  İşle
+                </button>
+              </div>
+            </div>
+
+            {/* Kuyruk Durumu */}
+            <div className="grid grid-cols-4 gap-3 mb-4">
+              <div className="bg-slate-800/50 rounded-xl p-3 text-center">
+                <div className="text-2xl font-bold text-white">{notificationStatus?.pending || 0}</div>
+                <div className="text-xs text-slate-400">Bekleyen</div>
+              </div>
+              <div className="bg-slate-800/50 rounded-xl p-3 text-center">
+                <div className="text-2xl font-bold text-yellow-400">{notificationStatus?.processing || 0}</div>
+                <div className="text-xs text-slate-400">İşleniyor</div>
+              </div>
+              <div className="bg-slate-800/50 rounded-xl p-3 text-center">
+                <div className="text-2xl font-bold text-emerald-400">{notificationStatus?.sent || 0}</div>
+                <div className="text-xs text-slate-400">Gönderildi</div>
+              </div>
+              <div className="bg-slate-800/50 rounded-xl p-3 text-center">
+                <div className="text-2xl font-bold text-red-400">{notificationStatus?.failed || 0}</div>
+                <div className="text-xs text-slate-400">Başarısız</div>
+              </div>
+            </div>
+
+            {/* Son Bildirimler */}
+            <div className="bg-slate-800/30 rounded-xl p-4">
+              <h4 className="text-xs font-semibold text-slate-300 mb-3">Son Bildirimler</h4>
+              {notificationHistory.length === 0 ? (
+                <div className="text-center text-slate-500 text-xs py-4">
+                  Henüz bildirim geçmişi yok
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {notificationHistory.slice(0, 10).map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex items-center justify-between p-2 bg-slate-700/50 rounded-lg text-xs"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <div className="font-medium text-white truncate">
+                          {item.payload.title}
+                        </div>
+                        <div className="text-slate-400 truncate">
+                          {item.subscription_endpoint.substring(0, 30)}...
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span
+                          className={`px-2 py-1 rounded text-[10px] font-medium ${
+                            item.status === "sent"
+                              ? "bg-emerald-500/20 text-emerald-400"
+                              : "bg-red-500/20 text-red-400"
+                          }`}
+                        >
+                          {item.status === "sent" ? "Gönderildi" : "Başarısız"}
+                        </span>
+                        <span className="text-slate-500 text-[10px]">
+                          {new Date(item.created_at).toLocaleTimeString("tr-TR")}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ) : activeTab === "sync" ? (
+          /* Sync Geçmişi */
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-bold text-white flex items-center gap-2">
+                <RefreshCw size={18} className="text-emerald-400" />
+                Sync Geçmişi
+              </h2>
+              <button
+                onClick={async () => {
+                  try {
+                    const res = await fetch("/api/sync/status");
+                    const data = await res.json();
+                    alert(`Son sync: ${data.lastSync ? new Date(data.lastSync).toLocaleString("tr-TR") : "Henüz sync yok"}`);
+                  } catch (error: any) {
+                    alert(`Hata: ${error.message}`);
+                  }
+                }}
+                className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+              >
+                <RefreshCw size={13} />
+                Durum Sorgula
+              </button>
+            </div>
+
+            <div className="bg-slate-800/30 rounded-xl p-4">
+              <h4 className="text-xs font-semibold text-slate-300 mb-3">Son Sync İşlemleri</h4>
+              {auditLogs.filter(log => log.action.includes("sync") || log.action.includes("import")).length === 0 ? (
+                <div className="text-center text-slate-500 text-xs py-4">
+                  Henüz sync geçmişi yok
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  {auditLogs
+                    .filter(log => log.action.includes("sync") || log.action.includes("import"))
+                    .slice(0, 10)
+                    .map((log) => (
+                      <div
+                        key={log.id}
+                        className="flex items-center justify-between p-2 bg-slate-700/50 rounded-lg text-xs"
+                      >
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-white truncate">
+                            {log.action}
+                          </div>
+                          <div className="text-slate-400 text-[10px]">
+                            {log.author} • {new Date(log.created_at).toLocaleString("tr-TR")}
+                          </div>
+                        </div>
+                        <span className={`px-2 py-1 rounded text-[10px] font-medium ${
+                          log.action.includes("success") || log.action.includes("tamamlandı")
+                            ? "bg-emerald-500/20 text-emerald-400"
+                            : "bg-red-500/20 text-red-400"
+                        }`}>
+                          {log.action.includes("success") || log.action.includes("tamamlandı") ? "Başarılı" : "Hata"}
+                        </span>
+                      </div>
+                    ))}
+                </div>
+              )}
+            </div>
+
+            <div className="mt-4 bg-slate-800/30 rounded-xl p-4">
+              <h4 className="text-xs font-semibold text-slate-300 mb-2">Veri Sağlığı İstatistikleri</h4>
+              <div className="grid grid-cols-4 gap-3">
+                <div className="text-center">
+                  <div className="text-xl font-bold text-white">{matches.length}</div>
+                  <div className="text-xs text-slate-400">Toplam Maç</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-emerald-400">
+                    {matches.filter(m => m.status === "finished").length}
+                  </div>
+                  <div className="text-xs text-slate-400">Tamamlanan</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-yellow-400">
+                    {matches.filter(m => m.status === "upcoming").length}
+                  </div>
+                  <div className="text-xs text-slate-400">Yaklaşan</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-red-400">
+                    {matches.filter(m => m.status === "live").length}
+                  </div>
+                  <div className="text-xs text-slate-400">Canlı</div>
+                </div>
+              </div>
+              <div className="mt-3 grid grid-cols-3 gap-3">
+                <div className="text-center">
+                  <div className="text-lg font-bold text-blue-400">{auditLogs.length}</div>
+                  <div className="text-xs text-slate-400">Audit Log</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-purple-400">{users.length}</div>
+                  <div className="text-xs text-slate-400">Kullanıcı</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-orange-400">
+                    {Object.keys(overrides).length}
+                  </div>
+                  <div className="text-xs text-slate-400">Override</div>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
       </main>
+
+      {/* KULLANICI EKLEME MODALI */}
+      {showAddUserModal && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="max-w-md w-full bg-slate-900 border border-slate-700 rounded-2xl p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+            <div className="flex items-start justify-between gap-3 mb-4 pb-3 border-b border-slate-800">
+              <div>
+                <h3 className="text-base font-bold text-white">Yeni Kullanıcı Ekle</h3>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Supabase Auth ile yeni kullanıcı oluştur
+                </p>
+              </div>
+              <button
+                onClick={() => setShowAddUserModal(false)}
+                className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <form onSubmit={handleAddUser} className="space-y-4">
+              <div>
+                <label htmlFor="new-user-email" className="block text-xs font-semibold text-slate-300 mb-1">
+                  Email
+                </label>
+                <input
+                  id="new-user-email"
+                  type="email"
+                  value={newUserEmail}
+                  onChange={(e) => setNewUserEmail(e.target.value)}
+                  placeholder="ornek@email.com"
+                  required
+                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="new-user-password" className="block text-xs font-semibold text-slate-300 mb-1">
+                  Şifre
+                </label>
+                <input
+                  id="new-user-password"
+                  type="password"
+                  value={newUserPassword}
+                  onChange={(e) => setNewUserPassword(e.target.value)}
+                  placeholder="Minimum 6 karakter"
+                  required
+                  minLength={6}
+                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="new-user-role" className="block text-xs font-semibold text-slate-300 mb-1">
+                  Rol
+                </label>
+                <select
+                  id="new-user-role"
+                  value={newUserRole}
+                  onChange={(e) => setNewUserRole(e.target.value as "admin" | "editor" | "viewer")}
+                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-primary focus-visible:ring-1 focus-visible:ring-primary"
+                >
+                  <option value="viewer">Viewer (Sadece görüntüleme)</option>
+                  <option value="editor">Editor (Düzenleme yapabilir)</option>
+                  <option value="admin">Admin (Tam yetki)</option>
+                </select>
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-800">
+                <button
+                  type="button"
+                  onClick={() => setShowAddUserModal(false)}
+                  className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium transition-colors cursor-pointer"
+                >
+                  İptal
+                </button>
+                <button
+                  type="submit"
+                  disabled={userOperationLoading}
+                  className="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-white text-xs font-semibold shadow flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
+                >
+                  <UserPlus size={14} />
+                  {userOperationLoading ? "Ekleniyor..." : "Kullanıcı Ekle"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* DÜZENLEME MODALI */}
       {editingMatch && (

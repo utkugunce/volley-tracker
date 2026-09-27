@@ -110,11 +110,13 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
       }
     }
 
-    // 3. Klasörde maç yoksa veya okunamazsa data/fixtures.json yedeğini oku
+    // 3. Klasörde maç yoksa veya okunamazsa data/fixtures.json yedeğini oku (geçici fallback)
     const filePath = path.join(process.cwd(), "data", "fixtures.json");
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, "utf-8");
-      return JSON.parse(content);
+      const parsed = JSON.parse(content);
+      console.warn("JSON fallback kullanılıyor - Supabase birincil kaynak olmalı");
+      return parsed;
     }
   } catch (e) {
     console.error("Fikstür verisi yüklenemedi:", e);

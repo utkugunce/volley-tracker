@@ -12,13 +12,15 @@
     "scrape:provinces": "python scripts/scrape_all_provinces.py",
     "scrape:kadinlar-2-lig": "python scripts/scrape_kadinlar_2_lig.py",
     "sync:volleybox": "python scripts/sync_volleybox_matches.py",
-    "supabase:import": "node scripts/import_json_to_supabase.mjs"
+    "supabase:import": "node scripts/import_json_to_supabase.mjs",
+    "create-admin": "node scripts/create_admin_user.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.8.0",
     "clsx": "^2.1.1",
+    "dotenv": "^18.0.4",
     "lucide-react": "^0.475.0",
     "next": "^16.3.6",
     "react": "^19.0.0",

@@ -31,7 +31,7 @@ const SpotlightSearchModal = dynamic(
   () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
   { ssr: false }
 );
-import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp, Layers, X } from "lucide-react";
+import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp, Layers, X, Wifi, WifiOff } from "lucide-react";
 import { isMatchPassed, isMatchOverdueForScore, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
 import { formatGroupName, groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
@@ -942,6 +942,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               isLoading={loading}
               onOpenSearch={() => setIsSearchOpen(true)}
             />
+
+            {/* Canlı Skor Göstergesi */}
+            {liveMatchesCount > 0 && (
+              <div className="mx-4 mt-2 flex items-center gap-2 px-3 py-2 bg-red-950/80 border border-red-800 rounded-lg">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                <span className="text-xs font-medium text-red-400">
+                  {liveMatchesCount} Canlı Maç
+                </span>
+                <Wifi size={12} className="text-red-400" />
+              </div>
+            )}
 
             {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
             {activeMainTab !== "home" && (

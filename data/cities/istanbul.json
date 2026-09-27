@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T20:36:12.531237+03:00",
+  "updated_at": "2026-09-27T22:05:42.565136+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -4693,17 +4693,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-29",
-        "vb_time": "18:00",
+        "vb_time": "19:30",
         "vb_hall": "Yakacık İTO Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-09-29",
-          "vb_time": "18:00",
+          "vb_time": "19:30",
           "vb_hall": "Yakacık İTO Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -5119,5 +5119,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-09-27T20:40:28.522231"
+  "volleybox_sync_updated_at": "2026-09-27T22:08:57.284896"
 }

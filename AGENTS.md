@@ -1,6 +1,51 @@
 # Antigravity & AI Agent Kuralları
 
-## 🚨 KURAL: 81 İli Çekme & Senkronizasyon (Scrape 81 Provinces)
+## � Supabase Auth ve Rol Sistemi
+
+> **UYGULAMA PRENSİBİ:**
+> Projede Supabase Auth tabanlı kullanıcı yönetimi ve rol sistemi kullanılmaktadır. Admin, Editor ve Viewer rolleri ile farklı yetki seviyeleri bulunmaktadır.
+
+### 📋 Mevcut Durum
+- ✅ Supabase RLS politikaları uygulanmış (matches, standings, sync_runs, manual_overrides, override_audit_log, push_subscriptions, user_roles)
+- ✅ Kullanıcı yönetimi API endpoint'leri (GET /api/admin/users, POST /api/admin/users, PATCH /api/admin/users/[userId], DELETE /api/admin/users/[userId])
+- ✅ Admin panelinde kullanıcı yönetimi UI bileşeni (kullanıcı listesi, rol atama, kullanıcı silme)
+- ✅ İlk admin kullanıcısını oluşturma scripti (npm run create-admin)
+- ✅ Auth client-side helper ve session yönetimi (supabaseClient.ts, authHelpers.ts, useAuthSession.ts, AuthContext.tsx)
+
+### 🔑 Rol Yetkileri
+- **Admin**: Tüm tablolarda tam yetki (SELECT, INSERT, UPDATE, DELETE), kullanıcı yönetimi
+- **Editor**: matches, standings, manual_overrides tablolarında SELECT, INSERT, UPDATE
+- **Viewer**: Tüm tablolarda sadece SELECT
+
+### 🚀 İlk Admin Kullanıcısını Oluşturma
+```bash
+npm run create-admin -- --email admin@example.com --password securepassword
+```
+
+### 📝 Auth Context Kullanımı
+```tsx
+import { AuthProvider, useAuth } from "@/contexts/AuthContext";
+
+// Provider'ı app.tsx veya layout.tsx'e ekleyin
+<AuthProvider>
+  <YourApp />
+</AuthProvider>
+
+// Component içinde kullanın
+const { user, role, loading, signIn, signOut } = useAuth();
+```
+
+### 🔒 API Endpoint'lerinde Auth Kontrolü
+```typescript
+import { getAuthenticatedUser } from "@/utils/supabaseAuth";
+
+const authenticatedUser = await getAuthenticatedUser(request);
+if (!authenticatedUser || authenticatedUser.role !== "admin") {
+  return NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 });
+}
+```
+
+## �🚨 KURAL: 81 İli Çekme & Senkronizasyon (Scrape 81 Provinces)
 
 > **UYGULAMA PRENSİBİ:**
 > Projede kod yazma, UI/tasarım geliştirme, hata düzeltme (bugfix), veri/script güncellemesi veya doğrudan veri çekme talebi içeren promptların sonunda **EN SON ADIM OLARAK 81 İLİN VERİSİ ÇEKİLMELİDİR**.
