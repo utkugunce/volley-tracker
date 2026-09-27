@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T15:03:15.131750",
+  "updated_at": "2026-09-27T15:41:20.499120",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -329,11 +329,11 @@
       {
         "rank": 1,
         "team": "Es Voleybol Akademi Spor Kulübü - A U16",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 1,
         "form": []
       },
@@ -373,12 +373,12 @@
       {
         "rank": 5,
         "team": "Eskişehir Voleybol Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -965,10 +965,10 @@
         "synced": true,
         "match_id": "399251",
         "url": "https://women.volleybox.net/tr/anadolu-kolej-spor-kulubu-u16-es-voleybol-akademi-spor-kulubu-b-u16-c399251",
-        "host_name": "Anadolu Kolej Spor Kulübü U16",
+        "host_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "guest_name": "Es Voleybol Akademi Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "16:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1007,7 +1007,7 @@
         "match_id": "401388",
         "url": "https://women.volleybox.net/tr/meryem-boz-spor-kulubu-b-u16-anadolu-kolej-spor-kulubu-u16-c401388",
         "host_name": "Meryem Boz Spor Kulübü - B U16",
-        "guest_name": "Anadolu Kolej Spor Kulübü U16",
+        "guest_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-27",
@@ -1225,8 +1225,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-ata-spor-kulubu-b-u16-eskisehir-cagdas-kolejliler-spor-kulubu-u16-c399255",
         "host_name": "Eskişehir Ata Spor Kulübü - B U16",
         "guest_name": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "18:00",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -1684,11 +1684,15 @@
       "match_no": "4",
       "home_team": "Es Voleybol Akademi Spor Kulübü - A U16",
       "away_team": "Eskişehir Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-15",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399261",
@@ -1755,5 +1759,5 @@
     }
   ],
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-09-27T15:06:55.210803"
+  "volleybox_sync_updated_at": "2026-09-27T15:45:14.088587"
 }

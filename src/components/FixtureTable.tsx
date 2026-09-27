@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight, ChevronDown } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { isMatchPassed, isMatchOverdueForScore } from "@/utils/calendar";
@@ -21,6 +21,10 @@ interface FixtureTableProps {
   city?: string;
   showCityBadge?: boolean;
   onSelectMatch?: (match: Match) => void;
+  isCollapsible?: boolean;
+  isCollapsed?: boolean;
+  onToggleCollapse?: () => void;
+  defaultCollapsed?: boolean;
 }
 
 const PAGE_SIZE = 50;
@@ -34,7 +38,27 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   city = "İstanbul",
   showCityBadge = false,
   onSelectMatch,
+  isCollapsible = true,
+  isCollapsed: controlledIsCollapsed,
+  onToggleCollapse,
+  defaultCollapsed = false,
 }) => {
+  const [internalCollapsed, setInternalCollapsed] = useState(defaultCollapsed);
+  const isCollapsed = isCollapsible
+    ? controlledIsCollapsed !== undefined
+      ? controlledIsCollapsed
+      : internalCollapsed
+    : false;
+
+  const handleToggleCollapse = () => {
+    if (!isCollapsible) return;
+    if (onToggleCollapse) {
+      onToggleCollapse();
+    } else {
+      setInternalCollapsed((prev) => !prev);
+    }
+  };
+
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"table" | "grid">("table");
   const [visibleLimit, setVisibleLimit] = useState(PAGE_SIZE);
@@ -107,7 +131,24 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   return (
     <div className="glass-panel rounded-2xl shadow-card border-slate-800/80 overflow-hidden mb-4 transition-all duration-200">
       {/* 1. Grup Başlığı */}
-      <div className="bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between border-b border-slate-800/80 select-none">
+      <div
+        onClick={(e) => {
+          if (!isCollapsible) return;
+          const target = e.target as HTMLElement;
+          if (target.closest("a") || target.closest("button")) return;
+          handleToggleCollapse();
+        }}
+        className={`bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between select-none transition-colors ${
+          isCollapsed ? "rounded-2xl" : "border-b border-slate-800/80"
+        } ${isCollapsible ? "cursor-pointer hover:bg-slate-850/60" : ""}`}
+        title={
+          isCollapsible
+            ? isCollapsed
+              ? `${title} ligini aç ve maçları göster`
+              : `${title} ligini gizle`
+            : undefined
+        }
+      >
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-xs">
             <Trophy size={12} className="text-amber-400" />
@@ -126,52 +167,86 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
           </h3>
         </div>
         <div className="flex items-center gap-2">
-          {/* Görünüm Seçici (Liste vs Yayın Kartı) */}
-          <div className="flex items-center rounded-lg bg-slate-800/80 p-0.5 border border-slate-700/60 shadow-xs">
-            <button
-              onClick={() => setViewMode("table")}
-              className={`p-1 rounded-md transition-all cursor-pointer ${
-                viewMode === "table"
-                  ? "bg-red-600 text-white shadow-xs"
-                  : "text-slate-400 hover:text-white"
-              }`}
-              title="Liste Görünümü"
-              aria-label="Liste Görünümü"
-            >
-              <List size={13} />
-            </button>
-            <button
-              onClick={() => setViewMode("grid")}
-              className={`p-1 rounded-md transition-all cursor-pointer ${
-                viewMode === "grid"
-                  ? "bg-red-600 text-white shadow-xs"
-                  : "text-slate-400 hover:text-white"
-              }`}
-              title="Yayın Kartı (Grid) Görünümü"
-              aria-label="Yayın Kartı Görünümü"
-            >
-              <LayoutGrid size={13} />
-            </button>
-          </div>
+          {!isCollapsed && (
+            <>
+              {/* Görünüm Seçici (Liste vs Yayın Kartı) */}
+              <div className="flex items-center rounded-lg bg-slate-800/80 p-0.5 border border-slate-700/60 shadow-xs">
+                <button
+                  type="button"
+                  onClick={() => setViewMode("table")}
+                  className={`p-1 rounded-md transition-all cursor-pointer ${
+                    viewMode === "table"
+                      ? "bg-red-600 text-white shadow-xs"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                  title="Liste Görünümü"
+                  aria-label="Liste Görünümü"
+                >
+                  <List size={13} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewMode("grid")}
+                  className={`p-1 rounded-md transition-all cursor-pointer ${
+                    viewMode === "grid"
+                      ? "bg-red-600 text-white shadow-xs"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                  title="Yayın Kartı (Grid) Görünümü"
+                  aria-label="Yayın Kartı Görünümü"
+                >
+                  <LayoutGrid size={13} />
+                </button>
+              </div>
 
-          {matches.some((m) => favorites.includes(m.id) && m.date && m.date !== "TBD") && (
-            <button
-              onClick={handleDownloadFavoritesIcs}
-              className="inline-flex items-center gap-1 text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/40 hover:bg-amber-500/25 px-2.5 py-1 rounded-lg transition-all cursor-pointer shadow-xs active:scale-95"
-              title="Bu tablodaki favori maçlarınızı .ics olarak takvime ekleyin"
-            >
-              <CalendarPlus size={11} />
-              <span className="hidden sm:inline">Favorileri Takvime Ekle</span>
-            </button>
+              {matches.some((m) => favorites.includes(m.id) && m.date && m.date !== "TBD") && (
+                <button
+                  type="button"
+                  onClick={handleDownloadFavoritesIcs}
+                  className="inline-flex items-center gap-1 text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/40 hover:bg-amber-500/25 px-2.5 py-1 rounded-lg transition-all cursor-pointer shadow-xs active:scale-95"
+                  title="Bu tablodaki favori maçlarınızı .ics olarak takvime ekleyin"
+                >
+                  <CalendarPlus size={11} />
+                  <span className="hidden sm:inline">Favorileri Takvime Ekle</span>
+                </button>
+              )}
+              <PrintScheduleButton />
+            </>
           )}
-          <PrintScheduleButton />
           <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-900/90 px-2 py-0.5 rounded-lg border border-slate-800">
             {matches.length} Maç
           </span>
+
+          {isCollapsible && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleToggleCollapse();
+              }}
+              aria-expanded={!isCollapsed}
+              aria-label={isCollapsed ? `${title} ligini göster` : `${title} ligini gizle`}
+              title={isCollapsed ? `${title} ligini aç ve maçları göster` : `${title} ligini gizle`}
+              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer shadow-xs active:scale-95 ${
+                isCollapsed
+                  ? "bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25"
+                  : "bg-slate-800/80 text-slate-400 hover:text-white border border-slate-700/60 hover:bg-slate-700/80"
+              }`}
+            >
+              <span>{isCollapsed ? "Göster" : "Gizle"}</span>
+              {isCollapsed ? (
+                <ChevronDown size={13} className="text-amber-400" />
+              ) : (
+                <ChevronUp size={13} className="text-slate-400" />
+              )}
+            </button>
+          )}
         </div>
       </div>
 
       {/* 2. Resmi TVF / Fikstür Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları - Volleybox - İşlem */}
+      {!isCollapsed && (
+        <>
       {viewMode === "table" ? (
         <div className="overflow-x-auto p-2 sm:p-3 bg-slate-950/40">
           <table className="w-full text-left border-separate border-spacing-y-2 text-xs">
@@ -842,6 +917,8 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             Tümünü Göster ({matches.length})
           </button>
         </div>
+      )}
+        </>
       )}
     </div>
   );

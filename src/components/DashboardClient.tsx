@@ -255,6 +255,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [collapsedResultCities, setCollapsedResultCities] = useState<Record<string, boolean>>({});
   const [collapsedFixtureCities, setCollapsedFixtureCities] = useState<Record<string, boolean>>({});
 
+  // Lig bazlı gizleme / daraltma durumları (Collapse / Accordion)
+  const [collapsedResultLeagues, setCollapsedResultLeagues] = useState<Record<string, boolean>>({});
+  const [collapsedFixtureLeagues, setCollapsedFixtureLeagues] = useState<Record<string, boolean>>({});
+
   const toggleResultCityCollapse = (cityName: string) => {
     setCollapsedResultCities((prev) => ({
       ...prev,
@@ -266,6 +270,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     setCollapsedFixtureCities((prev) => ({
       ...prev,
       [cityName]: !prev[cityName],
+    }));
+  };
+
+  const toggleResultLeagueCollapse = (leagueKey: string) => {
+    setCollapsedResultLeagues((prev) => ({
+      ...prev,
+      [leagueKey]: !prev[leagueKey],
+    }));
+  };
+
+  const toggleFixtureLeagueCollapse = (leagueKey: string) => {
+    setCollapsedFixtureLeagues((prev) => ({
+      ...prev,
+      [leagueKey]: !prev[leagueKey],
     }));
   };
 
@@ -710,6 +728,34 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     setCollapsedResultCities(next);
   };
 
+  // Sonuçlar sekmesi lig anahtarları ve toplu lig gizleme / gösterme durumları
+  const allResultLeagueKeys = useMemo(() => {
+    const keys: string[] = [];
+    resultsByCityAndLeague.forEach((c) => {
+      c.leagues.forEach((l) => {
+        keys.push(`${c.city}::${l.categoryKey}`);
+      });
+    });
+    return keys;
+  }, [resultsByCityAndLeague]);
+
+  const areAllResultLeaguesCollapsed = useMemo(() => {
+    if (allResultLeagueKeys.length === 0) return false;
+    return allResultLeagueKeys.every((k) => Boolean(collapsedResultLeagues[k]));
+  }, [allResultLeagueKeys, collapsedResultLeagues]);
+
+  const expandAllResultLeagues = () => {
+    setCollapsedResultLeagues({});
+  };
+
+  const collapseAllResultLeagues = () => {
+    const next: Record<string, boolean> = {};
+    allResultLeagueKeys.forEach((k) => {
+      next[k] = true;
+    });
+    setCollapsedResultLeagues(next);
+  };
+
   // Fikstür sekmesi toplu il gizleme / gösterme durumları
   const areAllFixtureCitiesCollapsed = useMemo(() => {
     if (fixturesByCity.length === 0) return false;
@@ -726,6 +772,34 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       next[c.city] = true;
     });
     setCollapsedFixtureCities(next);
+  };
+
+  // Fikstür sekmesi lig anahtarları ve toplu lig gizleme / gösterme durumları
+  const allFixtureLeagueKeys = useMemo(() => {
+    const keys: string[] = [];
+    fixturesByCity.forEach((c) => {
+      c.sections.forEach((sec) => {
+        keys.push(`${c.city}::${sec.title}::${sec.subTitle || ""}`);
+      });
+    });
+    return keys;
+  }, [fixturesByCity]);
+
+  const areAllFixtureLeaguesCollapsed = useMemo(() => {
+    if (allFixtureLeagueKeys.length === 0) return false;
+    return allFixtureLeagueKeys.every((k) => Boolean(collapsedFixtureLeagues[k]));
+  }, [allFixtureLeagueKeys, collapsedFixtureLeagues]);
+
+  const expandAllFixtureLeagues = () => {
+    setCollapsedFixtureLeagues({});
+  };
+
+  const collapseAllFixtureLeagues = () => {
+    const next: Record<string, boolean> = {};
+    allFixtureLeagueKeys.forEach((k) => {
+      next[k] = true;
+    });
+    setCollapsedFixtureLeagues(next);
   };
 
   const handleSelectResultsSubTab = (subTab: "all" | "yesterday") => {
@@ -909,51 +983,94 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               </div>
             )}
 
-            {/* Toplu İl Gizleme / Gösterme Kontrol Çubuğu */}
+            {/* Toplu İl ve Lig Gizleme / Gösterme Kontrol Çubuğu */}
             {resultsByCityAndLeague.length > 0 && (
               <div className="flex flex-wrap items-center justify-between gap-2.5 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-3.5 sm:px-4 py-2 mb-4 shadow-xs">
                 <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
                   <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>
-                    Toplam <strong className="text-white font-mono">{resultsByCityAndLeague.length}</strong> İl Listeleniyor
+                    Toplam <strong className="text-white font-mono">{resultsByCityAndLeague.length}</strong> İl, <strong className="text-white font-mono">{allResultLeagueKeys.length}</strong> Lig Listeleniyor
                   </span>
+                  {areAllResultLeaguesCollapsed && (
+                    <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
+                      (Ligler Gizli)
+                    </span>
+                  )}
                   {areAllResultCitiesCollapsed && (
                     <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
-                      (Tümü Gizli)
+                      (İller Gizli)
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-1.5">
-                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
-                    <button
-                      type="button"
-                      onClick={expandAllResultCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        !areAllResultCitiesCollapsed
-                          ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri aç ve sonuçları göster"
-                    >
-                      <ChevronDown size={13} className="text-emerald-400" />
-                      <span>Tümünü Göster</span>
-                    </button>
-                    <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
-                    <button
-                      type="button"
-                      onClick={collapseAllResultCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        areAllResultCitiesCollapsed
-                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri gizle"
-                    >
-                      <ChevronUp size={13} className="text-amber-400" />
-                      <span>Tümünü Gizle</span>
-                    </button>
-                  </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {/* İl Kontrolleri (Birden çok il listeleniyorsa) */}
+                  {resultsByCityAndLeague.length > 1 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">İller:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllResultCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllResultCitiesCollapsed
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri aç ve sonuçları göster"
+                      >
+                        <ChevronDown size={13} className="text-emerald-400" />
+                        <span>Tümünü Göster</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllResultCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllResultCitiesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Tümünü Gizle</span>
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Lig Kontrolleri */}
+                  {allResultLeagueKeys.length > 0 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">Ligler:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllResultLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllResultLeaguesCollapsed
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri aç ve maçları göster"
+                      >
+                        <ChevronDown size={13} className="text-emerald-400" />
+                        <span>Ligleri Aç</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllResultLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllResultLeaguesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Ligleri Gizle</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -1028,19 +1145,25 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       {/* Bu Şehirdeki Ligler (Örn: Genç Kızlar Süper Lig (U18), Yıldız Kızlar Süper Lig (U16)) */}
                       {!isCityCollapsed && (
                         <div className="space-y-3 animate-in fade-in-50 duration-200">
-                          {cityGroup.leagues.map((sec, idx) => (
-                            <FixtureTable
-                              key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
-                              title={sec.title}
-                              subTitle={sec.subTitle}
-                              matches={sec.matches}
-                              favorites={favorites}
-                              onToggleFavorite={toggleFavorite}
-                              city={sec.city || data?.city}
-                              showCityBadge={false}
-                              onSelectMatch={setSelectedMatch}
-                            />
-                          ))}
+                          {cityGroup.leagues.map((sec, idx) => {
+                            const leagueKey = `${cityGroup.city}::${sec.categoryKey}`;
+                            return (
+                              <FixtureTable
+                                key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
+                                title={sec.title}
+                                subTitle={sec.subTitle}
+                                matches={sec.matches}
+                                favorites={favorites}
+                                onToggleFavorite={toggleFavorite}
+                                city={sec.city || data?.city}
+                                showCityBadge={false}
+                                onSelectMatch={setSelectedMatch}
+                                isCollapsible={true}
+                                isCollapsed={Boolean(collapsedResultLeagues[leagueKey])}
+                                onToggleCollapse={() => toggleResultLeagueCollapse(leagueKey)}
+                              />
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -1222,51 +1345,94 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               />
             )}
 
-            {/* Toplu İl Gizleme / Gösterme Kontrol Çubuğu */}
+            {/* Toplu İl ve Lig Gizleme / Gösterme Kontrol Çubuğu */}
             {fixturesByCity.length > 0 && (
               <div className="flex flex-wrap items-center justify-between gap-2.5 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-3.5 sm:px-4 py-2 mb-4 shadow-xs">
                 <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
                   <div className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" />
                   <span>
-                    Toplam <strong className="text-white font-mono">{fixturesByCity.length}</strong> İl Listeleniyor
+                    Toplam <strong className="text-white font-mono">{fixturesByCity.length}</strong> İl, <strong className="text-white font-mono">{allFixtureLeagueKeys.length}</strong> Lig Listeleniyor
                   </span>
+                  {areAllFixtureLeaguesCollapsed && (
+                    <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
+                      (Ligler Gizli)
+                    </span>
+                  )}
                   {areAllFixtureCitiesCollapsed && (
                     <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
-                      (Tümü Gizli)
+                      (İller Gizli)
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-1.5">
-                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
-                    <button
-                      type="button"
-                      onClick={expandAllFixtureCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        !areAllFixtureCitiesCollapsed
-                          ? "bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri aç ve fikstür maçlarını göster"
-                    >
-                      <ChevronDown size={13} className="text-sky-400" />
-                      <span>Tümünü Göster</span>
-                    </button>
-                    <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
-                    <button
-                      type="button"
-                      onClick={collapseAllFixtureCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        areAllFixtureCitiesCollapsed
-                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri gizle"
-                    >
-                      <ChevronUp size={13} className="text-amber-400" />
-                      <span>Tümünü Gizle</span>
-                    </button>
-                  </div>
+                <div className="flex items-center gap-2 flex-wrap">
+                  {/* İl Kontrolleri (Birden çok il listeleniyorsa) */}
+                  {fixturesByCity.length > 1 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">İller:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllFixtureCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllFixtureCitiesCollapsed
+                            ? "bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri aç ve fikstür maçlarını göster"
+                      >
+                        <ChevronDown size={13} className="text-sky-400" />
+                        <span>Tümünü Göster</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllFixtureCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllFixtureCitiesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Tümünü Gizle</span>
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Lig Kontrolleri */}
+                  {allFixtureLeagueKeys.length > 0 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">Ligler:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllFixtureLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllFixtureLeaguesCollapsed
+                            ? "bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri aç ve fikstür maçlarını göster"
+                      >
+                        <ChevronDown size={13} className="text-sky-400" />
+                        <span>Ligleri Aç</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllFixtureLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllFixtureLeaguesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Ligleri Gizle</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -1341,19 +1507,25 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       {/* Bu Şehirdeki Fikstür Tabloları */}
                       {!isCityCollapsed && (
                         <div className="space-y-4 animate-in fade-in-50 duration-200">
-                          {cityGroup.sections.map((sec, idx) => (
-                            <FixtureTable
-                              key={`${cityGroup.city}-${sec.title}-${sec.subTitle}-${idx}`}
-                              title={sec.title}
-                              subTitle={sec.subTitle}
-                              matches={sec.matches}
-                              favorites={favorites}
-                              onToggleFavorite={toggleFavorite}
-                              city={sec.city || data?.city}
-                              showCityBadge={false}
-                              onSelectMatch={setSelectedMatch}
-                            />
-                          ))}
+                          {cityGroup.sections.map((sec, idx) => {
+                            const leagueKey = `${cityGroup.city}::${sec.title}::${sec.subTitle || ""}`;
+                            return (
+                              <FixtureTable
+                                key={`${cityGroup.city}-${sec.title}-${sec.subTitle}-${idx}`}
+                                title={sec.title}
+                                subTitle={sec.subTitle}
+                                matches={sec.matches}
+                                favorites={favorites}
+                                onToggleFavorite={toggleFavorite}
+                                city={sec.city || data?.city}
+                                showCityBadge={false}
+                                onSelectMatch={setSelectedMatch}
+                                isCollapsible={true}
+                                isCollapsed={Boolean(collapsedFixtureLeagues[leagueKey])}
+                                onToggleCollapse={() => toggleFixtureLeagueCollapse(leagueKey)}
+                              />
+                            );
+                          })}
                         </div>
                       )}
                     </div>

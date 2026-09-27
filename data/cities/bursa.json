@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T15:03:13.162392",
+  "updated_at": "2026-09-27T15:41:17.758248",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -717,8 +717,8 @@
         "url": "https://women.volleybox.net/tr/bursa-genc-saray-spor-kulubu-u16-23-nisan-spor-kulubu-u16-c401041",
         "host_name": "Bursa Genç Saray Spor Kulübü U16",
         "guest_name": "23 Nisan Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "18:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -1064,5 +1064,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-09-27T15:06:55.005213"
+  "volleybox_sync_updated_at": "2026-09-27T15:45:13.888857"
 }

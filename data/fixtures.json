@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T15:03:17.031628+03:00",
+  "updated_at": "2026-09-27T15:41:26.065455+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -4189,8 +4189,8 @@
         "url": "https://women.volleybox.net/tr/tuzla-new-spor-kulubu-u18-stanbul-anadolu-olimpik-sk-u18-c400363",
         "host_name": "Tuzla New Spor Kulübü U18",
         "guest_name": "İstanbul Anadolu Olimpik SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "18:30",
         "vb_hall": "Sancaktepe Taha Akgül Spor Salonu",
@@ -4234,8 +4234,8 @@
         "url": "https://women.volleybox.net/tr/unsped-spor-kulubu-u18-fenerbahce-u18-c400378",
         "host_name": "Ünsped Spor Kulübü U18",
         "guest_name": "Fenerbahçe U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "19:00",
         "vb_hall": "Ünsped Spor Salonu",
@@ -5119,5 +5119,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-09-27T15:06:53.984721"
+  "volleybox_sync_updated_at": "2026-09-27T15:45:12.886191"
 }
