@@ -27,6 +27,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install httpx beautifulsoup4 curl_cffi
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
       - name: Run TVF 81 provinces scraper
         run: |
           python scripts/scrape_all_provinces.py
@@ -44,6 +53,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python scripts/check_standings_conflicts.py
+
+      - name: Import synchronized data into Supabase
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run supabase:import
 
       - name: Commit and push changes
         run: |

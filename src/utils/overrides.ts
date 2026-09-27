@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { Match } from "@/types/fixture";
 import { put, list } from "@vercel/blob";
+import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 
 export interface MatchOverride {
   match_id: string;
@@ -71,6 +72,43 @@ export function getOverridesDataSync(): OverridesData {
  * Vercel sunucusuz fonksiyonlar arası kalıcılığı garanti eder.
  */
 export async function getOverridesData(): Promise<OverridesData> {
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const [{ data: overrideRows, error: overridesError }, { data: auditRows, error: auditError }] =
+      await Promise.all([
+        supabase.from("manual_overrides").select("*").order("updated_at", { ascending: false }),
+        supabase.from("override_audit_log").select("*").order("timestamp", { ascending: false }),
+      ]);
+
+    if (!overridesError && !auditError) {
+      const data: OverridesData = {
+        overrides: Object.fromEntries((overrideRows || []).map((row) => [row.match_id, {
+          match_id: row.match_id,
+          home_score: row.home_score,
+          away_score: row.away_score,
+          set_scores: Array.isArray(row.set_scores) ? row.set_scores : [],
+          status: row.status || undefined,
+          updated_at: row.updated_at,
+          updated_by: row.updated_by,
+          reason: row.reason,
+        }])),
+        audit_log: (auditRows || []).map((row) => ({
+          id: row.id,
+          match_id: row.match_id,
+          action: row.action,
+          timestamp: row.timestamp,
+          updated_by: row.updated_by,
+          reason: row.reason,
+          old_value: row.old_value,
+          new_value: row.new_value,
+        })),
+      };
+      memoryOverridesCache = data;
+      return data;
+    }
+    console.warn("Supabase override okuma hatası (fallback'e dönülüyor):", overridesError?.message || auditError?.message);
+  }
+
   // 1. Vercel Blob yapılandırılmışsa doğrudan Blob üzerinden oku
   if (isBlobConfigured()) {
     try {
@@ -105,6 +143,54 @@ export async function getOverridesData(): Promise<OverridesData> {
 export async function saveOverridesData(data: OverridesData): Promise<void> {
   // Bellek önbelleğini hemen güncelle
   memoryOverridesCache = data;
+
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const overrideRows = Object.values(data.overrides).map((override) => ({
+      match_id: override.match_id,
+      home_score: override.home_score,
+      away_score: override.away_score,
+      set_scores: override.set_scores || [],
+      status: override.status || null,
+      updated_at: override.updated_at,
+      updated_by: override.updated_by,
+      reason: override.reason,
+    }));
+    const { data: existingRows, error: existingError } = await supabase
+      .from("manual_overrides")
+      .select("match_id");
+    if (existingError) throw new Error(`Supabase override okunamadı: ${existingError.message}`);
+
+    const currentIds = new Set(overrideRows.map((row) => row.match_id));
+    const staleIds = (existingRows || [])
+      .map((row) => row.match_id)
+      .filter((matchId) => !currentIds.has(matchId));
+    if (staleIds.length) {
+      const { error } = await supabase.from("manual_overrides").delete().in("match_id", staleIds);
+      if (error) throw new Error(`Supabase eski override silinemedi: ${error.message}`);
+    }
+    if (overrideRows.length) {
+      const { error } = await supabase.from("manual_overrides").upsert(overrideRows, { onConflict: "match_id" });
+      if (error) throw new Error(`Supabase override yazılamadı: ${error.message}`);
+    }
+    if (data.audit_log.length) {
+      const auditRows = data.audit_log.map((entry) => ({
+        id: entry.id,
+        match_id: entry.match_id,
+        action: entry.action,
+        timestamp: entry.timestamp,
+        updated_by: entry.updated_by,
+        reason: entry.reason,
+        old_value: entry.old_value || null,
+        new_value: entry.new_value || null,
+      }));
+      const { error } = await supabase
+        .from("override_audit_log")
+        .upsert(auditRows, { onConflict: "id" });
+      if (error) throw new Error(`Supabase audit log yazılamadı: ${error.message}`);
+    }
+    return;
+  }
 
   let blobSaved = false;
 

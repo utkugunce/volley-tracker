@@ -17,11 +17,19 @@ const citiesDir = path.join(root, "data", "cities");
 const files = fs.readdirSync(citiesDir).filter((file) => file.endsWith(".json"));
 let importedMatches = 0;
 let importedStandings = 0;
+const startedAt = new Date().toISOString();
+const { data: syncRun, error: syncStartError } = await supabase
+  .from("sync_runs")
+  .insert({ source: "json-import", status: "running", metadata: { startedAt } })
+  .select("id")
+  .single();
+if (syncStartError) throw new Error(`sync_runs start: ${syncStartError.message}`);
 
-for (const file of files) {
-  const citySlug = file.replace(/\.json$/, "");
-  const parsed = JSON.parse(fs.readFileSync(path.join(citiesDir, file), "utf8"));
-  const matches = (parsed.matches || []).map((match) => ({
+try {
+  for (const file of files) {
+    const citySlug = file.replace(/\.json$/, "");
+    const parsed = JSON.parse(fs.readFileSync(path.join(citiesDir, file), "utf8"));
+    const matches = (parsed.matches || []).map((match) => ({
     id: match.id,
     city_slug: citySlug,
     city_name: parsed.city || match.city || citySlug,
@@ -44,42 +52,52 @@ for (const file of files) {
     raw: match,
     source_updated_at: parsed.updated_at || null,
     updated_at: new Date().toISOString(),
-  }));
+    }));
 
-  if (matches.length) {
-    const { error } = await supabase.from("matches").upsert(matches, { onConflict: "id" });
-    if (error) throw new Error(`${citySlug} matches: ${error.message}`);
-    importedMatches += matches.length;
+    if (matches.length) {
+      const { error } = await supabase.from("matches").upsert(matches, { onConflict: "id" });
+      if (error) throw new Error(`${citySlug} matches: ${error.message}`);
+      importedMatches += matches.length;
+    }
+
+    const standings = Object.entries(parsed.standings || {}).map(([category, rows]) => ({
+      city_slug: citySlug,
+      category,
+      rows,
+      source_updated_at: parsed.updated_at || null,
+      updated_at: new Date().toISOString(),
+    }));
+    if (standings.length) {
+      const { error } = await supabase
+        .from("standings")
+        .upsert(standings, { onConflict: "city_slug,category" });
+      if (error) throw new Error(`${citySlug} standings: ${error.message}`);
+      importedStandings += standings.length;
+    }
   }
 
-  const standings = Object.entries(parsed.standings || {}).map(([category, rows]) => ({
-    city_slug: citySlug,
-    category,
-    rows,
-    source_updated_at: parsed.updated_at || null,
-    updated_at: new Date().toISOString(),
-  }));
-  if (standings.length) {
-    const { error } = await supabase
-      .from("standings")
-      .upsert(standings, { onConflict: "city_slug,category" });
-    if (error) throw new Error(`${citySlug} standings: ${error.message}`);
-    importedStandings += standings.length;
-  }
+  const { error: runError } = await supabase.from("sync_runs").update({
+    status: "success",
+    finished_at: new Date().toISOString(),
+    cities_scanned: files.length,
+    matches_imported: importedMatches,
+    metadata: { standings_imported: importedStandings },
+  }).eq("id", syncRun.id);
+  if (runError) throw new Error(`sync_runs complete: ${runError.message}`);
+
+  console.log(JSON.stringify({
+    citiesScanned: files.length,
+    matchesImported: importedMatches,
+    standingsImported: importedStandings,
+    syncRunId: syncRun.id,
+  }, null, 2));
+} catch (error) {
+  await supabase.from("sync_runs").update({
+    status: "failed",
+    finished_at: new Date().toISOString(),
+    cities_scanned: files.length,
+    matches_imported: importedMatches,
+    error_message: error instanceof Error ? error.message : String(error),
+  }).eq("id", syncRun.id);
+  throw error;
 }
-
-const { error: runError } = await supabase.from("sync_runs").insert({
-  source: "json-import",
-  status: "success",
-  finished_at: new Date().toISOString(),
-  cities_scanned: files.length,
-  matches_imported: importedMatches,
-  metadata: { standings_imported: importedStandings },
-});
-if (runError) throw new Error(`sync_runs: ${runError.message}`);
-
-console.log(JSON.stringify({
-  citiesScanned: files.length,
-  matchesImported: importedMatches,
-  standingsImported: importedStandings,
-}, null, 2));
