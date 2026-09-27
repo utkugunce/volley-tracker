@@ -30,7 +30,7 @@ const securityHeaders = [
       "img-src 'self' https://*.volleybox.net data: blob:",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com",
       "style-src 'self' 'unsafe-inline'",
-      "connect-src 'self' https://*.vercel-storage.com https://va.vercel-scripts.com https://vitals.vercel-insights.com",
+      "connect-src 'self' https://*.vercel-storage.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.supabase.co wss://*.supabase.co",
       "font-src 'self' data:",
       "manifest-src 'self'",
       "worker-src 'self'",
