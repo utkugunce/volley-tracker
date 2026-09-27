@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "scrape": "python scripts/run_scraper.py",
+    "scrape": "python scripts/scrape_all_provinces.py",
+    "scrape:provinces": "python scripts/scrape_all_provinces.py",
+    "scrape:kadinlar-2-lig": "python scripts/scrape_kadinlar_2_lig.py",
     "sync:volleybox": "python scripts/sync_volleybox_matches.py"
   },
   "dependencies": {

@@ -31,6 +31,10 @@ jobs:
         run: |
           python scripts/scrape_all_provinces.py
 
+      - name: Run TVF Kadinlar 2. Lig scraper
+        run: |
+          python scripts/scrape_kadinlar_2_lig.py
+
       - name: Sync Volleybox matches & scores
         run: |
           python scripts/sync_volleybox_matches.py
