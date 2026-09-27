@@ -6754,7 +6754,12 @@
       "confidence": "verified",
       "aliases": [
         "Eskişehir Ata Spor Kulübü U16",
-        "Eskişehir Ata Spor Kulübü"
+        "Eskişehir Ata Spor Kulübü",
+        "Eskişehir Ata Spor Kulübü (A)",
+        "Eskişehir Ata Spor Kulübü A",
+        "Eskişehir Ata Spor (A)",
+        "Eskişehir Ata Spor A",
+        "Ata Spor Kulübü (A)"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/eskisehir-ata-spor-kulubu-u16-t54514.png",
@@ -6771,7 +6776,12 @@
       "confidence": "verified",
       "aliases": [
         "Eskişehir Ata Spor Kulübü - B",
-        "Eskişehir Ata Spor Kulübü - B U16"
+        "Eskişehir Ata Spor Kulübü - B U16",
+        "Eskişehir Ata Spor Kulübü (B)",
+        "Eskişehir Ata Spor Kulübü B",
+        "Eskişehir Ata Spor (B)",
+        "Eskişehir Ata Spor B",
+        "Ata Spor Kulübü (B)"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/eskisehir-ata-spor-kulubu-u16-t54515.png",
@@ -6840,7 +6850,13 @@
       "confidence": "verified",
       "aliases": [
         "Eskişehir Türk Telekom Spor Kulübü U16",
-        "Eskişehir Türk Telekom Spor Kulübü"
+        "Eskişehir Türk Telekom Spor Kulübü",
+        "Eskişehir Türktelekom Spor Kulübü (A)",
+        "Eskişehir Türk Telekom Spor Kulübü (A)",
+        "Eskişehir Türktelekom (A)",
+        "Eskişehir Türk Telekom A",
+        "Eskişehir Türktelekom Spor Kulübü",
+        "Türk Telekom (A)"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/eskisehir-turk-telekom-spor-kulubu-u16-t43239.png",
@@ -6857,7 +6873,13 @@
       "confidence": "verified",
       "aliases": [
         "Eskişehir Türk Telekom Spor Kulübü - B U16",
-        "Eskişehir Türk Telekom Spor Kulübü - B"
+        "Eskişehir Türk Telekom Spor Kulübü - B",
+        "Eskişehir Türktelekom Spor Kulübü (B)",
+        "Eskişehir Türk Telekom Spor Kulübü (B)",
+        "Eskişehir Türktelekom (B)",
+        "Eskişehir Türk Telekom B",
+        "Eskişehir Türktelekom Spor Kulübü B",
+        "Türk Telekom (B)"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/eskisehir-turk-telekom-spor-kulubu-u16-t54517.png",
@@ -6924,7 +6946,11 @@
       "confidence": "verified",
       "aliases": [
         "Esnova Spor Kulübü",
-        "Esnova Spor Kulübü U16"
+        "Esnova Spor Kulübü U16",
+        "Esnova Spor Kulübü (A)",
+        "Esnova Spor Kulübü A",
+        "Esnova (A)",
+        "Esnova A"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/esnova-spor-kulubu-u16-t54516.png",
@@ -8559,7 +8585,10 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_1766580347ft13k.png",
       "aliases": [
         "Çanakkale Barbarosspor U16",
-        "Çanakkale Barbarosspor"
+        "Çanakkale Barbarosspor",
+        "Barbaros Spor Kulübü",
+        "Barbaros Spor",
+        "Barbarosspor"
       ]
     },
     {
@@ -8577,7 +8606,10 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_1766579751Gf334.png",
       "aliases": [
         "Biga Gelişim Voleybol Kulübü U16",
-        "Biga Gelişim Voleybol Kulübü"
+        "Biga Gelişim Voleybol Kulübü",
+        "Biga Gelişim Spor Kulübü",
+        "Biga Gelişim Spor",
+        "Biga Gelişim"
       ]
     },
     {
@@ -8595,7 +8627,11 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_1771422496YY4ti.png",
       "aliases": [
         "Biga Çiçeklidedespor U16",
-        "Biga Çiçeklidedespor"
+        "Biga Çiçeklidedespor",
+        "Biga Çiçeklidede Spor Kulübü",
+        "Biga Çiçeklidede Spor",
+        "Biga Çiçeklidede",
+        "Çiçeklidede"
       ]
     },
     {
@@ -8614,7 +8650,8 @@
       "aliases": [
         "Biga Ada Spor",
         "Biga Ada Spor U16",
-        "Biga Adaspor"
+        "Biga Adaspor",
+        "Biga Ada Spor Kulübü"
       ]
     },
     {
@@ -8765,23 +8802,6 @@
       ]
     },
     {
-      "internal_name": "Çanakkale Belediye Spor Kulübü (B)",
-      "internal_category": "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği B Grubu",
-      "city": "Çanakkale",
-      "city_slug": "canakkale",
-      "matched_as": "Çanakkale Belediyespor U16",
-      "volleybox_url": "https://women.volleybox.net/canakkale-belediyespor-u16-t48846",
-      "age_category": "U16",
-      "confidence": "verified",
-      "note": "Auto-mapped from city roster",
-      "verified_at": "2026-09-20",
-      "local_logo": null,
-      "logo_url": "/media/upload/teams/17750298075EXa5.png",
-      "aliases": [
-        "Çanakkale Belediye Spor Kulübü (A)"
-      ]
-    },
-    {
       "internal_name": "Çanakkale Belediyespor",
       "internal_category": "Yıldız Kızlar Süper Lig",
       "city": "Çanakkale",
@@ -8797,7 +8817,11 @@
       "aliases": [
         "Çanakkale Belediyespor",
         "Çanakkale Belediyespor U16",
-        "Çanakkale Belediye Spor Kulübü (A)"
+        "Çanakkale Belediye Spor Kulübü (A)",
+        "Çanakkale Belediye Spor Kulübü(A)",
+        "Çanakkale Belediyespor (A)",
+        "Çanakkale Belediyespor A",
+        "Çanakkale Belediye Spor Kulübü"
       ]
     },
     {
@@ -11976,14 +12000,19 @@
       "confidence": "verified",
       "aliases": [
         "Çanakkale Belediyespor - B",
-        "Çanakkale Belediyespor - B U16"
+        "Çanakkale Belediyespor - B U16",
+        "Çanakkale Belediyespor U16",
+        "Çanakkale Belediyespor (B)",
+        "Çanakkale Belediyespor B",
+        "Çanakkale Belediye Spor Kulübü (B)"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/canakkale-belediyespor-u16-t54646.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1789921280y9khe.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1789921280y9khe.png",
+      "note": "aslında b takımı"
     },
     {
-      "internal_name": "Çanakkale Belediyespor",
+      "internal_name": "Çanakkalespor",
       "internal_category": "Yıldız Kızlar Süper Lig",
       "city": "Çanakkale",
       "city_slug": "canakkale",
@@ -11992,9 +12021,8 @@
       "age_category": "U16",
       "confidence": "verified",
       "aliases": [
-        "Çanakkalespor U16",
         "Çanakkalespor",
-        "Çanakkale Belediyespor"
+        "Çanakkalespor U16"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/canakkalespor-u16-t44826.png",
@@ -12019,7 +12047,7 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_1789921290ahF0P.png"
     },
     {
-      "internal_name": "Anadolu Kolej Spor Kulübü U16",
+      "internal_name": "Eskişehir Beyhan Rıfat Çıkılıoğlu A.L. Spor Kulübü",
       "internal_category": "Yıldız Kızlar Süper Lig",
       "city": "Eskişehir",
       "city_slug": "eskisehir",
@@ -12030,7 +12058,11 @@
       "aliases": [
         "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "Anadolu Kolej Spor Kulübü U16",
-        "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü"
+        "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü",
+        "Eskişehir Beyhan Rıfat Çıkılıoğlu A.L. Spor Kulübü",
+        "Beyhan Rıfat Çıkılıoğlu A.L. Spor Kulübü",
+        "Beyhan Rıfat Çıkılıoğlu A.L.",
+        "Beyhan Rıfat Çıkılıoğlu"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-t43244.png",
@@ -12170,7 +12202,11 @@
       "aliases": [
         "Meryem Boz Spor Kulübü U16",
         "Meryem Boz Spor Kulübü",
-        "Meryem Boz Spor Kulübü U18"
+        "Meryem Boz Spor Kulübü U18",
+        "Meryem Boz Spor Kulübü (A)",
+        "Meryem Boz Spor Kulübü A",
+        "Meryem Boz (A)",
+        "Meryem Boz A"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/meryem-boz-spor-kulubu-u16-t43242.png",
