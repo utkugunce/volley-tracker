@@ -14,7 +14,7 @@ import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { GroupStatusView } from "@/components/GroupStatusView";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { LeftSidebarPlaceholder } from "@/components/layout/LeftSidebarPlaceholder";
+import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
 import { RightSidebarPlaceholder } from "@/components/layout/RightSidebarPlaceholder";
 import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
 import dynamic from "next/dynamic";
@@ -915,10 +915,13 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           </>
         }
         leftSidebar={
-          <LeftSidebarPlaceholder
+          <SidebarNavigation
             cities={citiesList}
             currentCity={currentCitySlug}
             onSelectCity={handleSelectCity}
+            matches={data?.matches || []}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
             favoritesCount={favorites.length}
             totalMatches={totalMatchesAcrossAll}
           />
