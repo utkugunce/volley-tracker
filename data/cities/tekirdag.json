@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T17:42:03.255144",
+  "updated_at": "2026-09-27T20:36:42.182019",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -34,28 +34,28 @@
       {
         "rank": 1,
         "team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "played": 0,
+        "won": 0,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 0,
+        "sets_won": 0,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Çorlu GSB Spor Kulübü U16",
-        "played": 1,
+        "team": "Çorlu Belediyesi Spor Kulübü U16",
+        "played": 0,
         "won": 0,
-        "lost": 1,
+        "lost": 0,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Çorlu Belediyesi Spor Kulübü U16",
+        "team": "Çorlu GSB Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -361,15 +361,11 @@
       "match_no": "1",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
       "away_team": "Çorlu GSB Spor Kulübü U16",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-19",
-        "25-22",
-        "25-20"
-      ],
-      "status": "finished",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
       "volleybox": {
         "synced": true,
         "match_id": "401146",
@@ -887,5 +883,5 @@
     }
   ],
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-09-27T17:51:38.635170"
+  "volleybox_sync_updated_at": "2026-09-27T20:40:29.379298"
 }

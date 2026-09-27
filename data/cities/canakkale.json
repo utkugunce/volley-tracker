@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T17:41:45.790820",
+  "updated_at": "2026-09-27T20:36:06.092034",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -810,22 +810,22 @@
         "guest_name": "Gökçeada Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-27",
+        "vb_date": "2026-10-03",
         "vb_time": "13:00",
         "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-09-27",
+          "vb_date": "2026-10-03",
           "vb_time": "13:00",
           "vb_hall": "18 Mart Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-03 / VB: 2026-09-27)"
+          "details": null
         }
       }
     }
   ],
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-27T17:51:38.618251"
+  "volleybox_sync_updated_at": "2026-09-27T20:40:27.602430"
 }
