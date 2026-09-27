@@ -476,13 +476,8 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
                 "tvf_fsw_portal": "https://fikstur.tvf.org.tr/FSW/MjAyNi0yMDI3/Sw%3d%3d/MkxL/VXptYW4gUG9zdGEgS2FkxLFubGFyIDIuIExpZw%3d%3d",
                 "volleybox_turnuva": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
                 "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
+            }
         },
-    }
-
-    synced_matches_count = sum(1 for m in all_matches if m.get("volleybox", {}).get("synced"))
-    if synced_matches_count > 0:
-        payload_data["metadata"]["volleybox_synced_matches"] = synced_matches_count
-        payload_data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
         "gruplar": [
             {
                 "grup_no": g,
@@ -497,6 +492,11 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
         "tum_maclar": all_matches,
         "tum_takimlar": list(all_teams_map.values())
     }
+
+    synced_matches_count = sum(1 for m in all_matches if m.get("volleybox", {}).get("synced"))
+    if synced_matches_count > 0:
+        payload_data["metadata"]["volleybox_synced_matches"] = synced_matches_count
+        payload_data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload_data, f, ensure_ascii=False, indent=2)
