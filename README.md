@@ -30,6 +30,7 @@ Türkiye Voleybol Federasyonu (TVF) İstanbul yerel liglerindeki **Genç Kızlar
   - Supabase geçişi için `supabase/migrations/001_backend_schema.sql` şeması hazırdır. `SUPABASE_SERVICE_ROLE_KEY` yalnızca sunucu ortamında tutulmalı; değişkenler yokken uygulama JSON fallback'iyle çalışmaya devam eder.
   - Migration uygulandıktan sonra mevcut JSON verisini aktarmak için `npm run supabase:import` komutu kullanılabilir.
   - GitHub Actions otomatik Supabase aktarımı için repository secrets olarak `SUPABASE_URL` ve `SUPABASE_SERVICE_ROLE_KEY` tanımlanmalıdır. Service role anahtarı yalnızca Actions secret ve sunucu ortamında tutulur.
+  - Supabase Auth rol temeli için `supabase/migrations/002_auth_roles.sql` uygulanmalıdır. Kullanıcı rolleri `admin`, `editor` ve `viewer` olabilir; JWT doğrulaması `GET /api/auth/me` endpoint'i üzerinden yapılır.
 
 ---
 
