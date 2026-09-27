@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
 import { Match, CityInfo } from "@/types/fixture";
 import { DateNavigationRibbon, StatusFilterType } from "./DateNavigationRibbon";
 import { LeagueSection } from "./LeagueSection";
+import { MatchRowMode } from "./CompactMatchRow";
 import { formatLeagueCategoryTitle } from "@/utils/grouping";
 import { isMatchScored } from "@/context/MatchSelectionContext";
 import { useFavorites } from "@/utils/useFavorites";
@@ -18,6 +19,9 @@ interface CompactMatchFeedProps {
   todayStr: string;
   yesterdayStr: string;
   city?: string;
+  viewMode?: MatchRowMode;
+  initialDate?: string;
+  availableDates?: string[];
 }
 
 export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
@@ -29,10 +33,16 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
   todayStr,
   yesterdayStr,
   city,
+  viewMode = "today",
+  initialDate,
+  availableDates,
 }) => {
-  const [selectedDate, setSelectedDate] = useState<string>(todayStr || "all");
-  const [statusFilter, setStatusFilter] = useState<StatusFilterType>("all");
+  const [selectedDate, setSelectedDate] = useState<string>(() => initialDate ?? (viewMode === "today" ? todayStr || "all" : "all"));
+  const [statusFilter, setStatusFilter] = useState<StatusFilterType>(() =>
+    viewMode === "results" ? "finished" : viewMode === "fixtures" ? "upcoming" : "all"
+  );
   const { isFavorite: isTeamFavorite } = useFavorites();
+  const feedRef = useRef<HTMLDivElement>(null);
 
   // Durum bazlı toplam sayıları hesapla
   const counts = useMemo(() => {
@@ -57,6 +67,7 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
   // Filtrelenmiş maçlar
   const filteredMatches = useMemo(() => {
     return matches.filter((m) => {
+      if (viewMode === "results" && !isMatchScored(m)) return false;
       // 1. Tarih filtresi
       if (selectedDate !== "all" && m.date !== selectedDate) {
         return false;
@@ -69,7 +80,7 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
 
       return true;
     });
-  }, [matches, selectedDate, statusFilter]);
+  }, [matches, selectedDate, statusFilter, viewMode]);
 
   // Liglerine göre grupla: Map<LeagueKey, { leagueTitle: string, cityName?: string, matches: Match[] }>
   const groupedByLeague = useMemo(() => {
@@ -106,8 +117,31 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
     return result;
   }, [filteredMatches, city]);
 
+  const handleFeedKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+    const target = event.target as HTMLElement;
+    if (target.closest("button, a, input, select, textarea") || !target.closest("[data-match-row]")) return;
+
+    const rows = Array.from(feedRef.current?.querySelectorAll<HTMLElement>("[data-match-row]") || []);
+    const focusedRow = target.closest<HTMLElement>("[data-match-row]");
+    const selectedRowIndex = rows.findIndex((row) => row.dataset.matchId === selectedMatchId);
+    const currentIndex = selectedRowIndex >= 0
+      ? selectedRowIndex
+      : rows.findIndex((row) => row === focusedRow);
+    const nextIndex = currentIndex + (event.key === "ArrowDown" ? 1 : -1);
+    if (currentIndex < 0 || nextIndex < 0 || nextIndex >= rows.length) return;
+
+    const nextMatchId = rows[nextIndex].dataset.matchId;
+    const nextMatch = groupedByLeague.flatMap((league) => league.matches).find((match) => match.id === nextMatchId);
+    if (!nextMatch) return;
+
+    event.preventDefault();
+    onSelectMatch?.(nextMatch);
+    rows[nextIndex].focus();
+  };
+
   return (
-    <div className="space-y-3">
+    <div ref={feedRef} className="space-y-3" onKeyDown={handleFeedKeyDown}>
       {/* 1. DateNavigationRibbon: Sticky Tarih Şeridi & Durum Filtre Hapları */}
       <DateNavigationRibbon
         selectedDate={selectedDate}
@@ -116,6 +150,8 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
         statusFilter={statusFilter}
         onSelectStatusFilter={setStatusFilter}
         counts={counts}
+        availableDates={availableDates}
+        showStatusFilters={viewMode !== "results"}
       />
 
       {/* 2. Lig Bazlı Kompakt Maç Akışı */}
@@ -131,6 +167,7 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
               onSelectMatch={onSelectMatch}
               favorites={favorites}
               onToggleFavorite={onToggleFavorite}
+              mode={viewMode}
             />
           ))}
         </div>

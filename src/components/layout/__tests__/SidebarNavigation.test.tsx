@@ -146,6 +146,7 @@ describe("SidebarNavigation & leagueHierarchy", () => {
 
     it("kategori tıklandığında onSelectCategory çağrılır ve alt gruplar açılır", () => {
       const onSelectCategory = vi.fn();
+      const onSelectCity = vi.fn();
 
       render(
         <SidebarNavigation
@@ -153,6 +154,7 @@ describe("SidebarNavigation & leagueHierarchy", () => {
           currentCity="istanbul"
           matches={sampleMatches}
           onSelectCategory={onSelectCategory}
+          onSelectCity={onSelectCity}
         />
       );
 
@@ -162,9 +164,13 @@ describe("SidebarNavigation & leagueHierarchy", () => {
 
       fireEvent.click(gencBtn);
       expect(onSelectCategory).toHaveBeenCalledWith("Genç Kızlar (U18)");
+      expect(onSelectCity).toHaveBeenCalledWith("istanbul");
 
       // Alt grup listelenmeli: A Grubu
       expect(screen.getByText("• A Grubu")).toBeDefined();
+      fireEvent.click(screen.getByText("• A Grubu"));
+      expect(onSelectCity).toHaveBeenLastCalledWith("istanbul");
+      expect(onSelectCategory).toHaveBeenLastCalledWith("Genç Kızlar (U18) A Grubu");
     });
   });
 });

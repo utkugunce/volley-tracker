@@ -42,6 +42,8 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
   // Swipe down (Aşağı kaydırarak kapatma) dokunmatik işleyicileri
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartY.current = e.touches[0].clientY;
+    currentDragY.current = 0;
+    setDragY(0);
     setIsDragging(true);
   };
 
@@ -69,7 +71,7 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
     <div className="fixed inset-0 z-50 lg:hidden flex flex-col justify-end">
       {/* 1. Arka Plan Karartması (Backdrop) */}
       <div
-        className="fixed inset-0 bg-black/75 backdrop-blur-xs transition-opacity duration-300 animate-in fade-in"
+        className="fixed inset-0 bg-black/75 backdrop-blur-xs transition-opacity duration-300 motion-reduce:animate-none animate-[drawer-backdrop-in_200ms_ease-out]"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -79,7 +81,7 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
         role="dialog"
         aria-modal="true"
         aria-label="Maç Detayı"
-        className="relative z-10 w-full max-h-[90vh] bg-[#1E222D] border-t border-[#2A2E3D] rounded-t-3xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom duration-300 ease-out"
+        className="relative z-10 w-full max-h-[85vh] bg-[#1E222D] border-t border-[#2A2E3D] rounded-t-3xl shadow-2xl flex flex-col overflow-hidden motion-reduce:animate-none animate-[drawer-sheet-in_280ms_cubic-bezier(0.16,1,0.3,1)]"
         style={{
           transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
           transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
@@ -91,12 +93,13 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchEnd}
         >
-          <div className="w-12 h-1.5 rounded-full bg-[#475569] active:bg-[#64748B] transition-colors" />
+          <div className="my-2 h-1 w-10 rounded-full bg-slate-600 transition-colors active:bg-slate-500" />
         </div>
 
         {/* Çekmece İçeriği: MatchInspectorPanel */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pb-8 custom-scrollbar">
           <MatchInspectorPanel
             match={match}
             allMatches={allMatches}

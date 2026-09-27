@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Match, StandingItem } from "@/types/fixture";
 import { TeamBadge } from "@/components/TeamBadge";
@@ -21,6 +21,7 @@ import {
   CalendarPlus,
   Copy,
   Check,
+  Link2,
   Layers,
   ChevronRight,
 } from "lucide-react";
@@ -39,11 +40,12 @@ export interface MatchInspectorPanelProps {
   onClose?: () => void;
   onToggleFavorite?: (matchId: string) => void;
   isFavorite?: boolean;
+  isLoading?: boolean;
   className?: string;
 }
 
 export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) => {
-  const { match, className = "" } = props;
+  const { match, className = "", isLoading = false } = props;
 
   if (!match) {
     return (
@@ -65,7 +67,25 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) =
     );
   }
 
-  return <MatchInspectorPanelContent {...props} match={match} />;
+  if (isLoading) {
+    return (
+      <div
+        role="status"
+        aria-label="Maç detayları yükleniyor"
+        className={`flex h-full flex-col gap-3 overflow-hidden bg-[#121212] p-3 ${className}`}
+      >
+        <div className="h-6 w-48 shrink-0 animate-pulse rounded bg-slate-800" />
+        <div className="h-28 w-full shrink-0 animate-pulse rounded-lg bg-slate-800/60" />
+        <div className="space-y-2">
+          <div className="h-8 w-full animate-pulse rounded bg-slate-800/60" />
+          <div className="h-8 w-full animate-pulse rounded bg-slate-800/60" />
+        </div>
+        <div className="h-28 w-full animate-pulse rounded-lg bg-slate-800/40" />
+      </div>
+    );
+  }
+
+  return <MatchInspectorPanelContent key={match.id} {...props} match={match} />;
 };
 
 const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match"> & { match: Match }> = ({
@@ -78,7 +98,17 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   className = "",
 }) => {
   const [activeTab, setActiveTab] = useState<"overview" | "h2h" | "standings">("overview");
-  const [copied, setCopied] = useState(false);
+  const [copyFeedback, setCopyFeedback] = useState<{
+    action: "text" | "link";
+    status: "success" | "error";
+  } | null>(null);
+  const copyFeedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copyFeedbackTimeout.current) clearTimeout(copyFeedbackTimeout.current);
+    };
+  }, []);
 
   // 1. Boş Durum (Empty State)
   // Maç Bilgileri Hesaplamaları
@@ -207,6 +237,17 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
     return null;
   }, [standings, match.home_team, match.away_team]);
 
+  const copyToClipboard = async (value: string, action: "text" | "link") => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopyFeedback({ action, status: "success" });
+    } catch {
+      setCopyFeedback({ action, status: "error" });
+    }
+    if (copyFeedbackTimeout.current) clearTimeout(copyFeedbackTimeout.current);
+    copyFeedbackTimeout.current = setTimeout(() => setCopyFeedback(null), 2000);
+  };
+
   // Hızlı Aksiyon: Metin Kopyala
   const handleCopy = () => {
     triggerHaptic("light");
@@ -214,9 +255,14 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
       ? `Skor: ${match.home_score}-${match.away_score} (${(match.set_scores || []).join(", ")})`
       : `Tarih/Saat: ${match.date} ${match.time}`;
     const text = `TVF ${effectiveCity} ${match.category} (${match.group}):\n${match.home_team} vs ${match.away_team}\n${scoreStr}\nSalon: ${match.hall}\nMaç No: #${match.match_no}`;
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    void copyToClipboard(text, "text");
+  };
+
+  const handleCopyLink = () => {
+    triggerHaptic("light");
+    const url = new URL(window.location.href);
+    url.searchParams.set("match", match.id);
+    void copyToClipboard(url.toString(), "link");
   };
 
   // Hızlı Aksiyon: Takvim (.ics)
@@ -233,7 +279,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   };
 
   return (
-    <div className={`flex flex-col h-full bg-[#121212] text-xs select-none ${className}`}>
+    <div className={`flex flex-col h-full bg-[#121212] text-xs select-none motion-reduce:animate-none animate-[match-panel-fade_200ms_ease-out] ${className}`}>
       {/* 1. Üst Bar: Başlık, Favori & Kapat */}
       <div className="px-3.5 py-2.5 border-b border-[#2A2E3D] flex items-center justify-between bg-[#1E222D]/90 shrink-0">
         <div className="flex items-center gap-2 min-w-0">
@@ -307,6 +353,10 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             {isLive ? (
               <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-red-950/80 text-red-300 border border-red-600/60 animate-pulse">
                 <Flame size={12} className="text-red-400" />
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
+                </span>
                 <span>{statusLabel}</span>
               </span>
             ) : isFinished ? (
@@ -507,17 +557,38 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#181A20] hover:bg-[#1E222D] text-[#CBD5E1] text-[10px] font-semibold border border-[#2A2E3D] transition-colors"
+                  className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#181A20] hover:bg-[#1E222D] text-[10px] font-semibold border border-[#2A2E3D] transition-colors ${copyFeedback?.action === "text" && copyFeedback.status === "success" ? "text-emerald-400" : "text-[#CBD5E1]"}`}
                 >
-                  {copied ? (
+                  {copyFeedback?.action === "text" ? copyFeedback.status === "success" ? (
                     <>
                       <Check size={12} className="text-emerald-400" />
-                      <span className="text-emerald-300">Kopyalandı!</span>
+                      <span>Kopyalandı! ✓</span>
                     </>
+                  ) : (
+                    <span className="text-rose-400">Kopyalanamadı</span>
                   ) : (
                     <>
                       <Copy size={12} className="text-blue-400" />
                       <span>Metni Kopyala</span>
+                    </>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleCopyLink}
+                  className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#181A20] hover:bg-[#1E222D] text-[10px] font-semibold border border-[#2A2E3D] transition-colors ${copyFeedback?.action === "link" && copyFeedback.status === "success" ? "text-emerald-400" : "text-[#CBD5E1]"}`}
+                >
+                  {copyFeedback?.action === "link" ? copyFeedback.status === "success" ? (
+                    <>
+                      <Check size={12} className="text-emerald-400" />
+                      <span>Kopyalandı! ✓</span>
+                    </>
+                  ) : (
+                    <span className="text-rose-400">Kopyalanamadı</span>
+                  ) : (
+                    <>
+                      <Link2 size={12} className="text-blue-400" />
+                      <span>Bağlantıyı Kopyala</span>
                     </>
                   )}
                 </button>

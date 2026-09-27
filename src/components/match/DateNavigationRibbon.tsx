@@ -11,6 +11,8 @@ interface DateNavigationRibbonProps {
   todayStr: string; // YYYY-MM-DD
   statusFilter: StatusFilterType;
   onSelectStatusFilter: (status: StatusFilterType) => void;
+  availableDates?: string[];
+  showStatusFilters?: boolean;
   counts: {
     all: number;
     live: number;
@@ -26,10 +28,31 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
   statusFilter,
   onSelectStatusFilter,
   counts,
+  availableDates,
+  showStatusFilters = true,
 }) => {
-  // [-2 Gün, Dün, Bugün, Yarın, +2 Gün] hesapla
+  // Result views can supply historical dates; other views use the rolling week strip.
   const daysCarousel = useMemo(() => {
     const base = todayStr ? new Date(todayStr + "T00:00:00") : new Date();
+    if (availableDates?.length) {
+      const dayNames = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
+      return availableDates.slice(0, 5).map((dateStr) => {
+        const date = new Date(`${dateStr}T00:00:00`);
+        const dayOffset = Math.round((date.getTime() - base.getTime()) / 86400000);
+        const label = dayOffset === 0
+          ? "BUGÜN"
+          : dayOffset === -1
+          ? "DÜN"
+          : `${String(date.getDate()).padStart(2, "0")} ${dayNames[date.getDay()]}`;
+        return {
+          dateStr,
+          label,
+          shortDay: `${String(date.getDate()).padStart(2, "0")}.${String(date.getMonth() + 1).padStart(2, "0")}`,
+          isToday: dayOffset === 0,
+        };
+      });
+    }
+
     const offsets = [-2, -1, 0, 1, 2];
 
     const dayNames = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
@@ -58,7 +81,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
         isToday: offset === 0,
       };
     });
-  }, [todayStr]);
+  }, [todayStr, availableDates]);
 
   return (
     <div className="sticky top-0 z-20 bg-[#1E222D]/95 backdrop-blur-md border border-[#2A2E3D] rounded-xl p-2 shadow-md space-y-2 mb-3">
@@ -122,7 +145,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
       </div>
 
       {/* 2. Durum Filtre Hapları */}
-      <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1 border-t border-[#2A2E3D]/50 text-[11px]">
+      {showStatusFilters && <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1 border-t border-[#2A2E3D]/50 text-[11px]">
         {/* Tümü */}
         <button
           type="button"
@@ -179,7 +202,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
           <span>Program</span>
           <span className="font-mono text-[10px] opacity-90">({counts.upcoming})</span>
         </button>
-      </div>
+      </div>}
     </div>
   );
 };

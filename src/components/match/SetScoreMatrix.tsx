@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { Match } from "@/types/fixture";
 import { TeamBadge } from "@/components/TeamBadge";
 import { Clock } from "lucide-react";
@@ -10,22 +10,29 @@ export interface SetScoreMatrixProps {
   className?: string;
 }
 
-export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className = "" }) => {
-  const setScores = match.set_scores || [];
+const EMPTY_SET_SCORES: string[] = [];
 
-  const parsedSets = setScores.map((setStr, idx) => {
-    const parts = setStr.replace(":", "-").split("-").map((p) => parseInt(p.trim(), 10));
-    const home = isNaN(parts[0]) ? 0 : parts[0];
-    const away = isNaN(parts[1]) ? 0 : parts[1];
-    return {
-      setNum: idx + 1,
-      home,
-      away,
-      homeWon: home > away,
-      awayWon: away > home,
-      raw: setStr,
-    };
-  });
+export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className = "" }) => {
+  const setScores = match.set_scores ?? EMPTY_SET_SCORES;
+  const isLive = match.status === "live";
+
+  const parsedSets = useMemo(
+    () =>
+      setScores.map((setStr, idx) => {
+        const parts = setStr.replace(":", "-").split("-").map((p) => parseInt(p.trim(), 10));
+        const home = isNaN(parts[0]) ? 0 : parts[0];
+        const away = isNaN(parts[1]) ? 0 : parts[1];
+        return {
+          setNum: idx + 1,
+          home,
+          away,
+          homeWon: home > away,
+          awayWon: away > home,
+          raw: setStr,
+        };
+      }),
+    [match.set_scores]
+  );
 
   const hasScoreData = parsedSets.length > 0;
   const totalHomePoints = parsedSets.reduce((acc, curr) => acc + curr.home, 0);
@@ -104,12 +111,16 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
               </td>
               {parsedSets.map((s) => (
                 <td key={s.setNum} className="py-2 px-2 text-center font-mono text-[11px]">
-                  {s.homeWon ? (
-                    <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-extrabold text-blue-300 bg-blue-500/20 border border-blue-500/30">
+                  {isLive && s.setNum === parsedSets.length ? (
+                    <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-semibold text-blue-300 bg-blue-500/10" title="Canlı set skoru">
+                      {s.home}
+                    </span>
+                  ) : s.homeWon ? (
+                    <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-bold text-emerald-400 bg-emerald-500/10">
                       {s.home}
                     </span>
                   ) : (
-                    <span className="text-[#64748B]">{s.home}</span>
+                    <span className="font-normal text-slate-500">{s.home}</span>
                   )}
                 </td>
               ))}
@@ -139,12 +150,16 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
               </td>
               {parsedSets.map((s) => (
                 <td key={s.setNum} className="py-2 px-2 text-center font-mono text-[11px]">
-                  {s.awayWon ? (
-                    <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-extrabold text-blue-300 bg-blue-500/20 border border-blue-500/30">
+                  {isLive && s.setNum === parsedSets.length ? (
+                    <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-semibold text-blue-300 bg-blue-500/10" title="Canlı set skoru">
+                      {s.away}
+                    </span>
+                  ) : s.awayWon ? (
+                    <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-bold text-emerald-400 bg-emerald-500/10">
                       {s.away}
                     </span>
                   ) : (
-                    <span className="text-[#64748B]">{s.away}</span>
+                    <span className="font-normal text-slate-500">{s.away}</span>
                   )}
                 </td>
               ))}

@@ -48,6 +48,7 @@ describe("MobileMatchDrawer Component", () => {
     const dialog = screen.getByRole("dialog");
     expect(dialog).toBeInTheDocument();
     expect(dialog).toHaveAttribute("aria-modal", "true");
+    expect(dialog).toHaveClass("max-h-[85vh]");
 
     // Maç takımları ve skor
     expect(screen.getAllByText("Fenerbahçe").length).toBeGreaterThanOrEqual(1);

@@ -241,6 +241,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                             {/* Kategori Satırı (Örn: Genç Kızlar U18) */}
                             <div
                               onClick={() => {
+                                if (onSelectCity) onSelectCity(cityNode.citySlug);
                                 handleCategoryClick(cat.label);
                                 toggleCategoryExpand(catId);
                               }}
@@ -276,7 +277,10 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                                     <button
                                       key={group.name}
                                       type="button"
-                                      onClick={() => handleCategoryClick(group.name)}
+                                      onClick={() => {
+                                        if (onSelectCity) onSelectCity(cityNode.citySlug);
+                                        handleCategoryClick(group.filterValue);
+                                      }}
                                       className={`w-full flex items-center justify-between py-1 px-2 rounded text-[10px] font-medium text-left transition-all cursor-pointer ${
                                         isGroupSelected
                                           ? "border-l-2 border-blue-500 bg-blue-500/20 text-blue-200 font-bold"

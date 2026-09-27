@@ -12,6 +12,7 @@ import {
   TrendingDown,
   Minus,
   ChevronDown,
+  ChevronRight,
   Search,
   Check,
   X,
@@ -42,6 +43,13 @@ interface ParsedStandingContext {
   leagueFullName: string; // e.g. "Genç Kızlar Süper Lig"
   rawGroup: string; // e.g. "Genç Kızlar Süper Lig 1. Grup" or "A Grubu"
   displayGroup: string; // e.g. "1. Grup" or "A Grubu"
+}
+
+export interface StandingsTeamContext {
+  rawKey: string;
+  city: string;
+  leagueName: string;
+  groupName: string;
 }
 
 function parseStandingKey(rawKey: string, defaultCity?: string): ParsedStandingContext {
@@ -196,9 +204,10 @@ interface StandingsTableProps {
     [category: string]: StandingItem[];
   };
   city?: string;
+  onSelectTeam?: (team: StandingItem, context: StandingsTeamContext) => void;
 }
 
-export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city }) => {
+export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city, onSelectTeam }) => {
   const allKeys = Object.keys(standingsData);
 
   // Tüm anahtarları ayrıştır
@@ -699,22 +708,20 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Oynanan Maç">O</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Galibiyet">G</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Mağlubiyet">M</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center w-16 sm:w-24" title="Aldığı Set - Verdiği Set">Setler</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-12 sm:w-16 hidden md:table-cell" title="Set Oranı">Set Oran</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center w-20 sm:w-28 hidden lg:table-cell" title="Aldığı Sayı - Verdiği Sayı">Sayılar</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center w-12 sm:w-16 bg-slate-900/80 font-black text-white" title="Puan">P</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-center w-28 sm:w-36 hidden sm:table-cell" title="Son 5 Maç Formu">Form</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Aldığı Set">AS</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Verdiği Set">VS</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Set Oranı">Set Oran</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Sayı Oranı">Sayı Oran</th>
+                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-black text-white" title="Puan">Puan</th>
+                  <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-center" title="Son 5 Maç Formu">Form</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/60">
                 {items.map((row) => {
                   const isTop1 = row.rank === 1;
                   const isTop4 = row.rank <= 4;
-                  const isPlayoff = row.rank <= 4;
-                  const isKlasman = row.rank > 4 && row.rank <= 8;
-
-                  const totalSets = (row.sets_won || 0) + (row.sets_lost || 0);
-                  const setWinPct = totalSets > 0 ? Math.round(((row.sets_won || 0) / totalSets) * 100) : 0;
+                  const isPlayoff = row.rank <= 2;
+                  const isKlasman = row.rank > 2 && row.rank <= 8;
 
                   // Trend: son maça göre
                   const lastForm = row.form && row.form.length > 0 ? row.form[row.form.length - 1] : null;
@@ -724,7 +731,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       key={row.rank}
                       className={`transition-colors duration-150 ${
                         isTop1
-                          ? "bg-amber-500/10 hover:bg-amber-500/15"
+                          ? "bg-emerald-500/5 hover:bg-emerald-500/10"
                           : isPlayoff
                           ? "bg-emerald-500/5 hover:bg-emerald-500/10"
                           : isKlasman
@@ -738,9 +745,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-bold text-xs relative">
                         <span
                           className={`absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r ${
-                            isTop1
-                              ? "bg-amber-400 shadow-glow-amber"
-                              : isPlayoff
+                            isPlayoff
                               ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
                               : isKlasman
                               ? "bg-amber-500/80 shadow-[0_0_6px_rgba(245,158,11,0.4)]"
@@ -776,18 +781,36 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
                       {/* Takım Adı */}
                       <td className="py-2.5 sm:py-3 px-2 sm:px-4 font-bold text-white whitespace-nowrap text-xs sm:text-sm">
-                        <TeamVolleyboxLink
-                          teamName={row.team}
-                          category={activeContext?.leagueFullName}
-                          city={activeContext?.city || city}
-                          className={`transition-colors ${
-                            isTop1
-                              ? "font-black text-white"
-                              : isTop4
-                              ? "font-bold text-white"
-                              : "font-semibold text-slate-200 hover:text-white"
-                          }`}
-                        />
+                        <div className="flex items-center gap-1.5">
+                          <TeamVolleyboxLink
+                            teamName={row.team}
+                            category={activeContext?.leagueFullName}
+                            city={activeContext?.city || city}
+                            className={`transition-colors ${
+                              isTop1
+                                ? "font-black text-white"
+                                : isTop4
+                                ? "font-bold text-white"
+                                : "font-semibold text-slate-200 hover:text-white"
+                            }`}
+                          />
+                          {onSelectTeam && (
+                            <button
+                              type="button"
+                              onClick={() => onSelectTeam(row, {
+                                rawKey: activeContext?.rawKey || "",
+                                city: activeContext?.city || city || "",
+                                leagueName: activeContext?.leagueFullName || "",
+                                groupName: activeContext?.displayGroup || "",
+                              })}
+                              className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded text-slate-500 transition-colors hover:bg-slate-700 hover:text-white"
+                              aria-label={`${row.team} takımını incele`}
+                              title="Takımı incele"
+                            >
+                              <ChevronRight size={14} />
+                            </button>
+                          )}
+                        </div>
                       </td>
 
                       {/* O */}
@@ -805,42 +828,26 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                         {row.lost}
                       </td>
 
-                      {/* Setler (AS - VS) + Mini Oran Çubuğu */}
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center font-mono text-slate-200 whitespace-nowrap text-[11px] sm:text-xs">
-                        <div className="flex flex-col items-center">
-                          <div>
-                            <span className="font-bold text-white">{row.sets_won}</span>
-                            <span className="text-slate-500 mx-0.5 sm:mx-1">:</span>
-                            <span className="text-slate-400">{row.sets_lost}</span>
-                          </div>
-                          {totalSets > 0 && (
-                            <div className="w-8 sm:w-12 h-1 bg-slate-800 rounded-full overflow-hidden mt-1 flex" title={`Set Kazanma: %${setWinPct}`}>
-                              <div
-                                style={{ width: `${setWinPct}%` }}
-                                className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full transition-all"
-                              />
-                            </div>
-                          )}
-                        </div>
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-emerald-300 text-[11px] sm:text-xs">
+                        {row.sets_won}
                       </td>
-
-                      {/* Set Oranı */}
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-400 hidden md:table-cell text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-rose-300 text-[11px] sm:text-xs">
+                        {row.sets_lost}
+                      </td>
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-300 text-[11px] sm:text-xs">
                         {row.set_ratio}
                       </td>
 
-                      {/* Sayılar (AP - VP) */}
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center font-mono text-slate-400 text-[10px] sm:text-[11px] hidden lg:table-cell whitespace-nowrap">
-                        {row.points_won}:{row.points_lost}
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-300 text-[11px] sm:text-xs">
+                        {row.point_ratio}
                       </td>
 
-                      {/* Puan (P) */}
                       <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-mono font-black text-xs sm:text-sm text-white border-x border-slate-800/60 shadow-inner">
                         {row.points}
                       </td>
 
                       {/* Form */}
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-4 text-center hidden sm:table-cell">
+                      <td className="py-2.5 sm:py-3 px-2 sm:px-4 text-center">
                         <div className="flex items-center justify-center gap-1">
                           {(row.form || []).map((f, fIdx) => (
                             <span
@@ -870,11 +877,11 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-emerald-500 shadow-xs" />
-              <span className="font-bold text-slate-200">1 - 4: Final Etabı (Play-Off)</span>
+              <span className="font-bold text-slate-200">1 - 2: Final Etabı (Play-Off)</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-amber-500 shadow-xs" />
-              <span className="font-bold text-slate-300">5 - 8: Klasman Etabı</span>
+              <span className="font-bold text-slate-300">3 - 8: Klasman Etabı</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-slate-700" />

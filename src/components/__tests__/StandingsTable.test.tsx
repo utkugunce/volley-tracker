@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { StandingsTable } from '../StandingsTable';
 import { StandingItem } from '@/types/fixture';
 
@@ -239,6 +239,25 @@ describe('StandingsTable Component', () => {
 
     // Filtreler gizlendiğinde aç butonu görünmeli
     expect(screen.getByRole('button', { name: /Kategori & Grupları Aç/i })).toBeInTheDocument();
+  });
+
+  it("takım inceleme aksiyonu seçilen takımın lig bağlamını iletir", () => {
+    const onSelectTeam = vi.fn();
+    const standingsData = {
+      "İstanbul - Genç Kızlar Süper Lig - A Grubu": [mockItemA],
+    };
+
+    render(<StandingsTable standingsData={standingsData} onSelectTeam={onSelectTeam} />);
+    fireEvent.click(screen.getByRole("button", { name: "Eczacıbaşı A takımını incele" }));
+
+    expect(onSelectTeam).toHaveBeenCalledWith(
+      mockItemA,
+      expect.objectContaining({
+        city: "İstanbul",
+        leagueName: "Genç Kızlar Süper Lig",
+        rawKey: "İstanbul - Genç Kızlar Süper Lig - A Grubu",
+      })
+    );
   });
 });
 

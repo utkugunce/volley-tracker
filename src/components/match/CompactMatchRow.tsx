@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
-import { Star } from "lucide-react";
+import { CalendarPlus, Star } from "lucide-react";
 import { Match } from "@/types/fixture";
 import { TeamBadge } from "@/components/TeamBadge";
+import { downloadIcsFile, generateMatchIcs } from "@/utils/ics";
+
+export type MatchRowMode = "today" | "results" | "fixtures";
 
 interface CompactMatchRowProps {
   match: Match;
@@ -11,6 +14,7 @@ interface CompactMatchRowProps {
   onSelect?: (match: Match) => void;
   isFavorite?: boolean;
   onToggleFavorite?: (id: string) => void;
+  mode?: MatchRowMode;
 }
 
 export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
@@ -19,6 +23,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
   onSelect,
   isFavorite = false,
   onToggleFavorite,
+  mode = "today",
 }) => {
   const isLive = match.status === "live";
   const isFinished = match.status === "finished" || (match.home_score !== null && match.home_score !== undefined);
@@ -32,17 +37,27 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
 
   // Set skorları ayrıştırma: ["25-20", "23-25", "25-18"] -> [{ home: 25, away: 20 }, ...]
   const parsedSets = (match.set_scores || []).map((setStr) => {
-    const parts = setStr.split("-").map((s) => s.trim());
+    const parts = setStr.replace(":", "-").split("-").map((s) => Number.parseInt(s.trim(), 10));
     return {
-      home: parts[0] || "-",
-      away: parts[1] || "-",
+      home: Number.isNaN(parts[0]) ? null : parts[0],
+      away: Number.isNaN(parts[1]) ? null : parts[1],
     };
   });
+
+  const handleAddToCalendar = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    const ics = generateMatchIcs(match);
+    if (ics) {
+      downloadIcsFile(`mac-${match.home_team}-${match.away_team}-${match.date}.ics`, ics);
+    }
+  };
 
   return (
     <div
       role="button"
       tabIndex={0}
+      data-match-row="true"
+      data-match-id={match.id}
       onClick={() => onSelect?.(match)}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -50,7 +65,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           onSelect?.(match);
         }
       }}
-      className={`group relative flex items-center h-[46px] px-2.5 transition-all cursor-pointer border-b border-[#2A2E3D]/50 select-none ${
+      className={`group relative flex items-center min-h-[46px] px-2.5 py-1.5 transition-all cursor-pointer border-b border-[#2A2E3D]/50 select-none ${
         isSelected
           ? "bg-slate-800/80 border-l-2 border-l-blue-500 shadow-inner"
           : "hover:bg-[#1E222D]/80 bg-[#181A20]"
@@ -62,8 +77,11 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           {match.time || "--:--"}
         </span>
         {isLive ? (
-          <span className="flex items-center gap-1 text-[9px] font-bold text-[#EF4444] animate-pulse">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#EF4444]" />
+          <span className="flex items-center gap-1 text-[9px] font-bold text-[#EF4444]">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-red-500" />
+            </span>
             <span>CANLI</span>
           </span>
         ) : isFinished ? (
@@ -116,6 +134,11 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               {match.away_team}
             </span>
           </div>
+          {mode === "fixtures" && match.hall && match.hall !== "TBD" && (
+            <span className="truncate pl-6 text-[9px] leading-tight text-slate-500" title={match.hall}>
+              {match.hall}
+            </span>
+          )}
         </div>
 
         {/* Set Puanları Sütunları (Desktop/Geniş Ekran) */}
@@ -123,11 +146,23 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono pr-2.5 text-[#64748B]">
             {parsedSets.map((set, idx) => (
               <div key={idx} className="flex flex-col items-center justify-center leading-none gap-0.5">
-                <span className={set.home > set.away && isFinished ? "text-slate-300 font-semibold" : "text-[#64748B]"}>
-                  {set.home}
+                <span className={`rounded px-1 py-0.5 ${
+                  mode === "today" && isLive && idx === parsedSets.length - 1
+                    ? "bg-blue-500/10 text-blue-300 font-semibold"
+                    : set.home !== null && set.away !== null && set.home > set.away
+                    ? "bg-emerald-500/10 text-emerald-400 font-bold"
+                    : "text-slate-500 font-normal"
+                }`}>
+                  {set.home ?? "-"}
                 </span>
-                <span className={set.away > set.home && isFinished ? "text-slate-300 font-semibold" : "text-[#64748B]"}>
-                  {set.away}
+                <span className={`rounded px-1 py-0.5 ${
+                  mode === "today" && isLive && idx === parsedSets.length - 1
+                    ? "bg-blue-500/10 text-blue-300 font-semibold"
+                    : set.home !== null && set.away !== null && set.away > set.home
+                    ? "bg-emerald-500/10 text-emerald-400 font-bold"
+                    : "text-slate-500 font-normal"
+                }`}>
+                  {set.away ?? "-"}
                 </span>
               </div>
             ))}
@@ -162,7 +197,19 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
       </div>
 
       {/* 3. Sağ Kısım: Favori Yıldızı */}
-      <div className="shrink-0 pl-1.5 pr-0.5">
+      <div className="shrink-0 flex items-center gap-0.5 pl-1.5 pr-0.5">
+        {mode === "fixtures" && (
+          <button
+            type="button"
+            aria-label="Takvime ekle"
+            title="Takvime ekle"
+            disabled={!match.date || match.date === "TBD"}
+            onClick={handleAddToCalendar}
+            className="p-1 rounded-md text-slate-500 hover:text-sky-400 disabled:opacity-30 transition-colors"
+          >
+            <CalendarPlus size={13} />
+          </button>
+        )}
         <button
           type="button"
           aria-label={isFavorite ? "Favorilerden Çıkar" : "Favoriye Ekle"}

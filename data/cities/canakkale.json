@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T17:49:57.168280",
+  "updated_at": "2026-09-27T18:23:45.801968",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -184,6 +184,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
       {
         "rank": 1,
+        "team": "ÇOMÜ Spor Kulübü - B U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Çanakkale Barbarosspor U16",
         "played": 1,
         "won": 1,
@@ -194,7 +205,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Biga Ada Spor U16",
         "played": 1,
         "won": 0,
@@ -205,25 +216,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "As Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "ÇOMÜ Spor Kulübü - B U16",
-        "played": 0,
+        "team": "As Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -449,11 +449,15 @@
       "match_no": "2",
       "home_team": "As Spor Kulübü U16",
       "away_team": "ÇOMÜ Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "18-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401051",
@@ -823,5 +827,5 @@
     }
   ],
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-27T17:53:59.187270"
+  "volleybox_sync_updated_at": "2026-09-27T18:27:47.214098"
 }

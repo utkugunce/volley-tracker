@@ -3,24 +3,26 @@
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { Header } from "@/components/Header";
 import { DateRibbon } from "@/components/DateRibbon";
+import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import { FilterBar } from "@/components/FilterBar";
-import { FixtureTable } from "@/components/FixtureTable";
-import { StandingsTable } from "@/components/StandingsTable";
+import { StandingsTable, StandingsTeamContext } from "@/components/StandingsTable";
+import { TeamInspectorPanel } from "@/components/TeamInspectorPanel";
 import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
 import { CompactMatchFeed } from "@/components/match/CompactMatchFeed";
+import { LeagueSection } from "@/components/match/LeagueSection";
 import { HomePortalView } from "@/components/HomePortalView";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { GroupStatusView } from "@/components/GroupStatusView";
-import { MainLayout } from "@/components/layout/MainLayout";
+import { AppShell } from "@/components/layout/AppShell";
 import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
 import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
 import { MobileMatchDrawer } from "@/components/MobileMatchDrawer";
 import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
 import dynamic from "next/dynamic";
-import { Match, FixturesData } from "@/types/fixture";
+import { Match, FixturesData, StandingItem } from "@/types/fixture";
 
 const NotificationBanner = dynamic(
   () => import("@/components/NotificationBanner").then((mod) => mod.NotificationBanner),
@@ -33,7 +35,8 @@ const SpotlightSearchModal = dynamic(
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp, Layers, X } from "lucide-react";
 import { isMatchPassed, isMatchOverdueForScore, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
-import { groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
+import { formatGroupName, groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
+import { AGE_CATEGORIES, classifyAgeCategory } from "@/utils/leagueHierarchy";
 import { slugify } from "@/utils/slugify";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 
@@ -124,6 +127,18 @@ export const parseAppRoute = (
 // İstemci tarafı şehir verisi önbelleği (Tekrar tıklanan iller 0ms anında açılır)
 const clientCityCache = new Map<string, FixturesData>();
 
+function matchesLeagueFilter(match: Match, filter: string): boolean {
+  if (filter === "Tümü") return true;
+  const category = AGE_CATEGORIES.find((item) => filter.startsWith(item.label));
+  if (category) {
+    if (classifyAgeCategory(match) !== category.key) return false;
+    const groupFilter = filter.slice(category.label.length).trim();
+    return !groupFilter || trIncludes(formatGroupName(match.group), groupFilter);
+  }
+
+  return [match.category || "", match.age_group || "", match.group || ""].some((value) => trIncludes(value, filter));
+}
+
 interface DashboardClientProps {
   initialData: FixturesData;
   initialTab?: AppMainTab;
@@ -186,6 +201,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const handleSelectCity = useCallback(async (slug: string, skipPushState = false) => {
     setCurrentCitySlug(slug);
+    setSelectedStandingTeam(null);
     setError(null);
     setSelectedCategory("Tümü");
     setSelectedDate("all");
@@ -295,6 +311,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   // Premium Özellikler: Maç Detay Çekmecesi & Spotlight Arama
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
+  const [selectedStandingTeam, setSelectedStandingTeam] = useState<{
+    team: StandingItem;
+    context: StandingsTeamContext;
+  } | null>(null);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
   const [isLeaguesMenuOpen, setIsLeaguesMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -563,12 +583,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       }
 
       // 2. Kategori / Lig
-      if (selectedCategory !== "Tümü") {
-        const cat = m.category || m.age_group || "";
-        if (!trIncludes(cat, selectedCategory)) {
-          return false;
-        }
-      }
+      if (!matchesLeagueFilter(m, selectedCategory)) return false;
 
       // 3. Tarih
       if (selectedDate !== "all" && m.date !== selectedDate) {
@@ -718,12 +733,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         return false;
       }
 
-      if (selectedCategory !== "Tümü") {
-        const cat = m.category || m.age_group || "";
-        if (!trIncludes(cat, selectedCategory)) {
-          return false;
-        }
-      }
+      if (!matchesLeagueFilter(m, selectedCategory)) return false;
 
       if (selectedHall !== "Tümü" && m.hall !== selectedHall) {
         return false;
@@ -882,9 +892,32 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     showOnlyFavorites ||
     resultsSubTab !== "all";
 
+  const activeStandings = useMemo(() => {
+    const entries = Object.entries(data?.standings || {});
+    if (selectedCategory === "Tümü") return Object.fromEntries(entries);
+    const category = AGE_CATEGORIES.find((item) => selectedCategory.startsWith(item.label));
+    return Object.fromEntries(entries.filter(([key]) => {
+      if (!category) return trIncludes(key, selectedCategory);
+      const categoryTerms: Record<string, string> = {
+        genc: "genç",
+        yildiz: "yıldız",
+        kucuk: "küçük",
+        midi: "midi",
+        erkek: "erkek",
+        diger: "",
+      };
+      if (category.key === "diger" && ["genç", "yıldız", "küçük", "midi", "erkek"].some((term) => trIncludes(key, term))) {
+        return false;
+      }
+      if (categoryTerms[category.key] && !trIncludes(key, categoryTerms[category.key])) return false;
+      const groupFilter = selectedCategory.slice(category.label.length).trim();
+      return !groupFilter || trIncludes(key, groupFilter);
+    }));
+  }, [data?.standings, selectedCategory]);
+
   return (
     <MatchSelectionProvider matches={data?.matches || []} initialMatchId={selectedMatch?.id}>
-      <MainLayout
+      <AppShell
         header={
           <>
             {/* 0. Favori Maç Hatırlatma Banner'ı */}
@@ -935,14 +968,24 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           />
         }
         rightSidebar={
-          <MatchInspectorPanel
-            match={selectedMatch}
-            allMatches={data?.matches || []}
-            standings={data?.standings}
-            onClose={() => setSelectedMatch(null)}
-            onToggleFavorite={toggleFavorite}
-            isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
-          />
+          activeMainTab === "standings" ? (
+            <TeamInspectorPanel
+              team={selectedStandingTeam?.team || null}
+              context={selectedStandingTeam?.context || null}
+              matches={data?.matches || []}
+              onClose={() => setSelectedStandingTeam(null)}
+            />
+          ) : (
+            <MatchInspectorPanel
+              match={selectedMatch}
+              allMatches={data?.matches || []}
+              standings={data?.standings}
+              isLoading={loading}
+              onClose={() => setSelectedMatch(null)}
+              onToggleFavorite={toggleFavorite}
+              isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
+            />
+          )
         }
         footer={
           <footer className="py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-[#94A3B8] no-print">
@@ -994,8 +1037,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           /* ==================== SONUÇLAR SEKMESİ (SADECE BİTEN / SKORLU MAÇLAR) ==================== */
           <div>
             {/* Flashscore Yatay Tarih Şeridi (Sonuçlar Modunda - Zümrüt Yeşili Temalı) */}
-            <DateRibbon
-              dates={uniqueResultDates}
+            <DateNavigationRibbon
               selectedDate={selectedResultDate}
               onSelectDate={(d) => {
                 setSelectedResultDate(d);
@@ -1007,10 +1049,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                   setResultsSubTab("all");
                 }
               }}
-              dateCounts={resultDateCounts}
               todayStr={todayStr}
-              yesterdayStr={yesterdayStr}
-              variant="emerald"
+              availableDates={uniqueResultDates}
+              showStatusFilters={false}
+              statusFilter="finished"
+              onSelectStatusFilter={() => {}}
+              counts={{ all: resultsCount, live: 0, finished: resultsCount, upcoming: 0 }}
             />
 
             {/* Flashscore Filtre Barı (Sonuçlar Modunda) */}
@@ -1238,19 +1282,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                           {cityGroup.leagues.map((sec, idx) => {
                             const leagueKey = `${cityGroup.city}::${sec.categoryKey}`;
                             return (
-                              <FixtureTable
+                              <LeagueSection
                                 key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
-                                title={sec.title}
-                                subTitle={sec.subTitle}
+                                leagueTitle={`${sec.title} · ${sec.subTitle}`}
+                                cityName={cityGroup.city}
                                 matches={sec.matches}
                                 favorites={favorites}
                                 onToggleFavorite={toggleFavorite}
-                                city={sec.city || data?.city}
-                                showCityBadge={false}
                                 onSelectMatch={handleSelectMatch}
-                                isCollapsible={true}
                                 isCollapsed={Boolean(collapsedResultLeagues[leagueKey])}
                                 onToggleCollapse={() => toggleResultLeagueCollapse(leagueKey)}
+                                mode="results"
                               />
                             );
                           })}
@@ -1586,19 +1628,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                           {cityGroup.sections.map((sec, idx) => {
                             const leagueKey = `${cityGroup.city}::${sec.title}::${sec.subTitle || ""}`;
                             return (
-                              <FixtureTable
+                              <LeagueSection
                                 key={`${cityGroup.city}-${sec.title}-${sec.subTitle}-${idx}`}
-                                title={sec.title}
-                                subTitle={sec.subTitle}
+                                leagueTitle={`${sec.title} · ${sec.subTitle}`}
+                                cityName={cityGroup.city}
                                 matches={sec.matches}
                                 favorites={favorites}
                                 onToggleFavorite={toggleFavorite}
-                                city={sec.city || data?.city}
-                                showCityBadge={false}
                                 onSelectMatch={handleSelectMatch}
-                                isCollapsible={true}
                                 isCollapsed={Boolean(collapsedFixtureLeagues[leagueKey])}
                                 onToggleCollapse={() => toggleFixtureLeagueCollapse(leagueKey)}
+                                mode="fixtures"
                               />
                             );
                           })}
@@ -1662,8 +1702,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         ) : activeMainTab === "standings" ? (
           /* ==================== PUAN DURUMU SEKMESİ ==================== */
           <div>
-            {data?.standings && Object.keys(data.standings).length > 0 ? (
-              <StandingsTable standingsData={data.standings} city={data?.city} />
+            {Object.keys(activeStandings).length > 0 ? (
+              <StandingsTable
+                standingsData={activeStandings}
+                city={data?.city}
+                onSelectTeam={(team, context) => setSelectedStandingTeam({ team, context })}
+              />
             ) : (
               <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-md mx-auto my-8 shadow-xl">
                 <p className="text-sm font-semibold text-slate-300">
@@ -1685,7 +1729,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           </div>
         )}
         </div>
-      </MainLayout>
+      </AppShell>
 
       {/* 4. Mobil Sabit Alt Menü (Sofascore Standardı) */}
       <MobileBottomNav

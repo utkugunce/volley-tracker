@@ -98,6 +98,25 @@ describe("MatchInspectorPanel Component", () => {
     expect(screen.getByText("Maç Tamamlandı")).toBeInTheDocument();
   });
 
+  it("veri yüklenirken panel içeriği yerine iskelet gösterir", () => {
+    render(<MatchInspectorPanel match={mockMatch} isLoading />);
+
+    expect(screen.getByRole("status", { name: "Maç detayları yükleniyor" })).toBeInTheDocument();
+    expect(screen.queryByText("3 : 1")).not.toBeInTheDocument();
+  });
+
+  it("maç metni kopyalanınca iki saniyelik başarı bildirimi gösterir", async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    vi.stubGlobal("navigator", { clipboard: { writeText } });
+
+    render(<MatchInspectorPanel match={mockMatch} />);
+    fireEvent.click(screen.getByRole("button", { name: "Metni Kopyala" }));
+
+    expect(await screen.findByText("Kopyalandı! ✓")).toBeInTheDocument();
+    expect(writeText).toHaveBeenCalledTimes(1);
+    vi.unstubAllGlobals();
+  });
+
   it("seçili maç olduğunda üst başlık, skorboard ve set matrisini render eder", () => {
     const onClose = vi.fn();
     const onToggleFavorite = vi.fn();

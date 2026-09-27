@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-27T17:50:19.306137+03:00",
+  "updated_at": "2026-09-27T18:24:15.610714+03:00",
   "total_cities": 81,
   "active_cities": 15,
-  "total_matches": 489,
+  "total_matches": 485,
   "cities": [
     {
       "ilid": "1",
@@ -219,7 +219,7 @@
       "name": "Edirne",
       "slug": "edirne",
       "url": "https://edirne.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -229,7 +229,7 @@
       "name": "Elazığ",
       "slug": "elazig",
       "url": "https://elazig.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -349,9 +349,9 @@
       "name": "İzmir",
       "slug": "izmir",
       "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (97 Maç Mevcut)",
-      "matches_count": 97,
-      "standings_count": 12,
+      "status": "Aktif (93 Maç Mevcut)",
+      "matches_count": 93,
+      "standings_count": 11,
       "data_file": "data/cities/izmir.json"
     },
     {

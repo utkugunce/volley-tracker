@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, Trophy, ExternalLink } from "lucide-react";
 import { Match } from "@/types/fixture";
-import { CompactMatchRow } from "./CompactMatchRow";
+import { CompactMatchRow, MatchRowMode } from "./CompactMatchRow";
 import { slugify } from "@/utils/slugify";
 
 interface LeagueSectionProps {
@@ -16,6 +16,9 @@ interface LeagueSectionProps {
   favorites?: string[];
   onToggleFavorite?: (id: string) => void;
   defaultCollapsed?: boolean;
+  isCollapsed?: boolean;
+  onToggleCollapse?: () => void;
+  mode?: MatchRowMode;
 }
 
 export const LeagueSection: React.FC<LeagueSectionProps> = ({
@@ -27,8 +30,16 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
   favorites = [],
   onToggleFavorite,
   defaultCollapsed = false,
+  isCollapsed: controlledCollapsed,
+  onToggleCollapse,
+  mode = "today",
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
+  const [localCollapsed, setLocalCollapsed] = useState(defaultCollapsed);
+  const isCollapsed = controlledCollapsed ?? localCollapsed;
+  const toggleCollapsed = () => {
+    if (onToggleCollapse) onToggleCollapse();
+    else setLocalCollapsed((collapsed) => !collapsed);
+  };
 
   const citySlug = cityName ? slugify(cityName) : "istanbul";
   const standingsUrl = `/puan-durumu/${citySlug}`;
@@ -39,11 +50,11 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
       <div
         role="button"
         tabIndex={0}
-        onClick={() => setIsCollapsed(!isCollapsed)}
+        onClick={toggleCollapsed}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            setIsCollapsed(!isCollapsed);
+            toggleCollapsed();
           }
         }}
         className="flex items-center justify-between px-3 py-2 bg-[#1E222D] hover:bg-[#242936] transition-colors cursor-pointer select-none border-b border-[#2A2E3D]/80"
@@ -88,6 +99,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
               onSelect={onSelectMatch}
               isFavorite={favorites.includes(m.id)}
               onToggleFavorite={onToggleFavorite}
+              mode={mode}
             />
           ))}
         </div>
