@@ -563,6 +563,49 @@ export default function AdminPage() {
     return Array.from(set).sort();
   }, [matches]);
 
+  // 2. Lig takımları listesi (kadinlar_2_lig.json'den çekilen - 166 takım)
+  const LIG_TEAMS = useMemo(() => [
+    "07 MEGA SPOR", "52 ÇAMLIK SPOR", "ADANA B.ŞEHİR BLD. SPOR", "ADANA SPORCU EĞİTİM SPOR",
+    "ADANA T.D.S.", "AHMET HAMDİ TANPINAR ORTAOKULU", "AKÇA GRUP OSMANCIK BLD.", "AKDENİZ BİLGİ SPOR",
+    "AKHİSAR GÜCÜ", "AL-KA ALTIN KANATLAR", "ALP SPOR", "ALTAY", "ALTINAY SPOR", "ALTINYURT",
+    "ANADOLU MARMARA", "ANKARA BAROSU", "ANKARA DSİ", "ANTALYASPOR", "ANTEPİA", "ARKAS SPOR",
+    "ARNAVUTKÖY BLD. SPOR", "ASYA KARTALLARI KAMARİN SPOR", "ATAŞEHİR KARTALLARI", "AVRUPA VOLEYBOL GELİŞİM",
+    "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR", "AYVALIK GELİŞİM SPOR", "BAHÇELİEVLER BLD. SPOR",
+    "BAHÇEŞEHİR KOLEJİ AYVALIKSPOR", "BAHÇEŞEHİR KOLEJİ DALAMAN BLD.", "BALIKESİR B.ŞEHİR BLD. SPOR",
+    "BALIKESİR DSİ", "BANDIRMA ÇELİK SPOR", "BAŞAKŞEHİR VOLEYBOL", "BAŞKENT ARMA", "BAŞKENT ZİRVE",
+    "BAYRAKLI BLD. SPOR", "BAYRAMPAŞA BELEDİYE SPOR", "BEŞİKDÜZÜ SPOR", "BEŞİKTAŞ BJK KABATAŞ VAKFI ÖZEL OKULLARI",
+    "BEYLİKDÜZÜ BEYKENT", "BOLU ATATÜRK ANADOLU LİSESİ", "BURSA FETHİYE 1973 SPOR", "BÜYÜK KARTEPE SPOR",
+    "BÜYÜK REŞİTPAŞA ORTAOKULU", "BÜYÜKÇEKMECE VOLEYBOL AKADEMİ", "CADENCE BOYA GÖLCÜK İHSANİYE",
+    "CAN MİLAN ATLETİK", "ÇABA SPOR", "ÇAN KALE SPOR", "ÇANAKKALE ONSEKİZ MART ÜNİVERSİTESİ",
+    "ÇATALCA BLD. SPOR", "ÇAYYOLU SPORTSA", "ÇEKMEKÖY İSTANBUL SPOR", "ÇENGELKÖY VOLEYBOL",
+    "ÇERKEZKÖY VOLEYBOL AKADEMİ", "ÇORLU BLD. SPOR", "ÇORUM ARENA SPOR", "DENİZLİ B.ŞEHİR BLD. SPOR",
+    "DEV ATAŞEHİR", "DİYARBAKIR B.ŞEHİR BLD. SPOR", "DİYARBAKIR VOLEYBOLCULAR", "DOĞU AKADEMİ",
+    "DÜZCE 1907 SPOR", "DÜZCE VOLEYBOL", "EFOR GENÇLİK", "EKER SPOR", "ELAZIĞ BLD. SPOR",
+    "ELİT AKDENİZ", "ENGLISH TIME SPOR", "EREĞLİ SÜMER SPOR", "ERYAMAN GELİŞİM", "ESKİŞEHİR PEYMAN SPOR",
+    "ESKİŞEHİR ŞEHİR KOLEJİ EĞT. KÜLTÜR", "ETİMESGUT BLD. GELİŞİM", "EYÜPSULTAN BLD. SPOR",
+    "FENERBAHÇE MEDICANA", "FINDIKLI 1974", "FORLİVA KAYSERİ ATLETİK SPOR", "FORZA SPOR",
+    "GALATASARAY", "GAZİANTEP BLD. SPOR", "GAZİEMİR BLD. SPOR", "GEBZE GENÇLİK VE SPOR", "GELİŞİM KOLEJİ",
+    "GEMLİK İSTİKLAL SPOR", "GÖLBAŞI İNCEK SPOR", "GÖZTEPE", "GÜNGÖREN VOLEYBOL", "HAKKARİ SPORTİF FAALİYETLER",
+    "HATAY VOLEYBOL", "HOPA BELEDİYE", "İBB SPOR KULÜBÜ", "İLBANK", "İSTANBUL ANKA",
+    "İSTANBUL ATEŞ SPOR", "İSTANBUL BİZİMKENT SPOR", "KAHRAMANMARAŞ BÜYÜKŞEHİR BLD.", "KARABÜK GENÇLİK SPOR",
+    "KARACABEY BELEDİYE", "KARŞIYAKA", "KARTAL ANADOLU", "KARTAL BELEDİYESPOR", "KAVAK SPOR",
+    "KAYSERİ CİMNASTİK SPOR", "KAYSERİ VOLEYBOL", "KIRKLARELİ GENÇLİK SPOR", "KOCAELİ NİCOMEDİA AKADEMİ",
+    "KOCAELİ VOLEYBOL AKADEMİ", "KOÇ SPOR", "KONELSİS ENERJİ SAMSUNSPOR", "KUZEY YILDIZLARI SPEED",
+    "MALATYA VOLEYBOL", "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR", "MARDİN DERİK ROTA", "MARGENÇ",
+    "MARMARA AKADEMİ", "MARMARİS BLD. SPOR", "MEGARON İNŞAAT", "MEHMET EGE İNŞAAT İNEGÖL ORHANİYE VOLEYBOL",
+    "MERİNOS VOLEYBOL", "MEV TOROS SPOR", "MG SPOR", "MISIROĞLU BEYTEPE", "MSE FİLO ELAZIĞ EKOL SPOR",
+    "MUĞLA SPORTİF AKADEMİ", "MUĞLATÜRK FETHİYE ZİRVE", "MUŞ 1071 AKADEMİİ", "NİCER HOTEL VOLEYBOL",
+    "NOVA SPOR", "OKURA LOJİSTİK MERSİN İHTİSAS", "PARS AKADEMİ", "POLAT GROUP DİDİM BELEDİYESPOR",
+    "PTT", "RİZE DNZ SPOR", "ROBERTEAM", "ROTA KOLEJİ", "SERDİVAN BLD. SPOR", "SİLİVRİ ÇAĞRIBEY",
+    "SİLOPİ BLD. SPORTİF FAALİYETLER", "SİLOPİ GELİŞİM FAALİYETLERİ", "SİVEREK BELEDİYE SPOR",
+    "SİYAH KUĞULAR VOLEYBOL", "SMAÇ SPOR", "SÖKE BELEDİYE SALDOS VOLEYBOL", "SULTANGAZİ BLD. SPOR",
+    "TARSUS AMERİKAN KOLEJİ", "TED ANKARA KOLEJLİLER", "TEK METAL SPORTİF", "TEMİZ ENERJİ BİRLİĞİ",
+    "TOROSLAR BLD.", "TOYZZ SHOP DİNAMO SPOR", "TURGUTLU BLD. KÜLTÜR SANAT", "TÜRK HAVA YOLLARI",
+    "TVF SPOR LİSESİ", "ÜNSPED", "VEGA ATLETİK", "VENÜS SPOR", "VOLKAN GÜÇ SPOR",
+    "YALOVA ÇİFTLİKKÖY BLD. SPOR", "YEDİDAĞ SPOR", "YENİŞEHİR GENÇLERBİRLİĞİ", "YESS POOL ANTALYA AÇI KOLEJİ",
+    "YEŞİL BAYRAMİÇ", "YEŞİLYURT", "YUNUSEMRE BLD. SPOR", "ZEUGMA GAZİANTEP SPOR"
+  ], []);
+
   // Takım listesi (A-Z sıralı, kategorili)
   const teamsByCategory = useMemo(() => {
     const altyapıTeams = new Set<string>();
@@ -571,18 +614,19 @@ export default function AdminPage() {
     matches.forEach((m) => {
       if (m.home_team) {
         const team = m.home_team;
-        if (team.toLowerCase().includes("altyapı") || team.toLowerCase().includes("u14") || team.toLowerCase().includes("u16") || team.toLowerCase().includes("u18")) {
-          altyapıTeams.add(team);
-        } else {
+        // 2. Lig listesinde varsa 2. Lig, yoksa Altyapı
+        if (LIG_TEAMS.includes(team)) {
           ligTeams.add(team);
+        } else {
+          altyapıTeams.add(team);
         }
       }
       if (m.away_team) {
         const team = m.away_team;
-        if (team.toLowerCase().includes("altyapı") || team.toLowerCase().includes("u14") || team.toLowerCase().includes("u16") || team.toLowerCase().includes("u18")) {
-          altyapıTeams.add(team);
-        } else {
+        if (LIG_TEAMS.includes(team)) {
           ligTeams.add(team);
+        } else {
+          altyapıTeams.add(team);
         }
       }
     });
@@ -591,7 +635,7 @@ export default function AdminPage() {
       altyapı: Array.from(altyapıTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
       lig: Array.from(ligTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
     };
-  }, [matches]);
+  }, [matches, LIG_TEAMS]);
 
   // Filtrelenmiş takımlar
   const filteredTeams = useMemo(() => {
@@ -1132,7 +1176,7 @@ export default function AdminPage() {
                       <div>
                         <div className="text-sm font-medium text-white">{team}</div>
                         <div className="text-[10px] text-slate-400">
-                          {team.toLowerCase().includes("altyapı") || team.toLowerCase().includes("u14") || team.toLowerCase().includes("u16") || team.toLowerCase().includes("u18") ? "Altyapı" : "2. Lig"}
+                          {LIG_TEAMS.includes(team) ? "2. Lig" : "Altyapı"}
                         </div>
                       </div>
                     </div>
