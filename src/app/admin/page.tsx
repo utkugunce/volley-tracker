@@ -85,71 +85,18 @@ export default function AdminPage() {
   const [notificationStatus, setNotificationStatus] = useState<any>(null);
   const [notificationHistory, setNotificationHistory] = useState<any[]>([]);
 
-  // Oturum kontrolü - Supabase Auth
+  // Oturum açma kontrolü
   useEffect(() => {
-    if (user && role === "admin") {
-      fetchData();
-    } else if (user && role !== "admin") {
-      setAuthError("Admin yetkisi gerekiyor");
-    }
-  }, [user, role]);
-
-  const fetchData = async () => {
-    setLoading(true);
-    setAuthError(null);
-
     try {
-      const supabase = getSupabaseClient();
-      if (!supabase) {
-        throw new Error("Supabase yapılandırılmamış");
+      const savedToken = sessionStorage.getItem("volley_admin_token");
+      if (savedToken) {
+        setToken(savedToken);
+        verifyAndFetchData(savedToken);
       }
-
-      // Supabase session'ı kullanarak API çağrıları
-      const session = await supabase.auth.getSession();
-      if (!session.data.session) {
-        throw new Error("Oturum bulunamadı");
-      }
-
-      const token = session.data.session.access_token;
-
-      // 1. Override verilerini ve audit logunu çek
-      const overrideRes = await fetch("/api/admin/override", {
-        headers: { "x-admin-token": token },
-      });
-
-      if (!overrideRes.ok) {
-        throw new Error(`Yetkilendirme hatası: HTTP ${overrideRes.status}`);
-      }
-
-      const overrideData = await overrideRes.json();
-      setOverrides(overrideData.overrides || {});
-      setAuditLogs(overrideData.audit_log || []);
-
-      // 2. Tüm maçları çek
-      const fixturesRes = await fetch("/api/fixtures?city=all");
-      if (fixturesRes.ok) {
-        const fixJson = await fixturesRes.json();
-        setMatches(fixJson.matches || []);
-      }
-
-      // 3. Kullanıcı listesini çek
-      try {
-        const usersRes = await fetch("/api/admin/users", {
-          headers: { "x-admin-token": token },
-        });
-        if (usersRes.ok) {
-          const usersData = await usersRes.json();
-          setUsers(usersData.users || []);
-        }
-      } catch {
-        // User endpoint might not be available yet
-      }
-    } catch (error: any) {
-      setAuthError(error.message || "Veri yüklenemedi");
-    } finally {
-      setLoading(false);
+    } catch {
+      // ignore
     }
-  };
+  }, []);
 
   // Bildirim durumu ve geçmişi yükle
   const fetchNotificationStatus = async () => {
@@ -182,10 +129,10 @@ export default function AdminPage() {
   };
 
   useEffect(() => {
-    if (user && role === "admin" && activeTab === "notifications") {
+    if (token && activeTab === "notifications") {
       fetchNotificationStatus();
     }
-  }, [user, role, activeTab]);
+  }, [token, activeTab]);
 
   const verifyAndFetchData = async (authToken: string) => {
     setLoading(true);
@@ -260,38 +207,6 @@ export default function AdminPage() {
         throw new Error("Supabase yapılandırılmamış");
       }
 
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: authEmail,
-        password: authPassword,
-      });
-      if (error || !data.session) throw new Error(error?.message || "Supabase giriş başarısız.");
-      setToken(data.session.access_token);
-      await verifyAndFetchData(data.session.access_token);
-    } catch (error: any) {
-      setAuthError(error.message || "Supabase giriş başarısız.");
-      setIsAuthenticated(false);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleLogout = async () => {
-    setIsAuthenticated(false);
-    setToken("");
-    setInputToken("");
-    try {
-      sessionStorage.removeItem("volley_admin_token");
-      // Also sign out from Supabase if session exists
-      const supabase = getSupabaseClient();
-      if (supabase) {
-        await supabase.auth.signOut();
-      }
-    } catch {}
-  };
-      const supabase = getSupabaseClient();
-      if (!supabase) {
-        throw new Error("Supabase Auth yapılandırması eksik.");
-      }
       const { data, error } = await supabase.auth.signInWithPassword({
         email: authEmail,
         password: authPassword,
