@@ -40,12 +40,13 @@ export default function AdminPage() {
   const [overrides, setOverrides] = useState<Record<string, MatchOverride>>({});
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<"matches" | "audit" | "users" | "live" | "notifications" | "sync">("matches");
+  const [activeTab, setActiveTab] = useState<"matches" | "audit" | "users" | "live" | "notifications" | "sync" | "teams">("matches");
 
   // Filtreler
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [filterOverriddenOnly, setFilterOverriddenOnly] = useState<boolean>(false);
   const [selectedCity, setSelectedCity] = useState<string>("all");
+  const [teamCategoryFilter, setTeamCategoryFilter] = useState<"all" | "altyapı" | "2lig">("all");
 
   // Düzenleme Modalı
   const [editingMatch, setEditingMatch] = useState<Match | null>(null);
@@ -562,6 +563,50 @@ export default function AdminPage() {
     return Array.from(set).sort();
   }, [matches]);
 
+  // Takım listesi (A-Z sıralı, kategorili)
+  const teamsByCategory = useMemo(() => {
+    const altyapıTeams = new Set<string>();
+    const ligTeams = new Set<string>();
+
+    matches.forEach((m) => {
+      if (m.home_team) {
+        const team = m.home_team;
+        if (team.toLowerCase().includes("altyapı") || team.toLowerCase().includes("u14") || team.toLowerCase().includes("u16") || team.toLowerCase().includes("u18")) {
+          altyapıTeams.add(team);
+        } else {
+          ligTeams.add(team);
+        }
+      }
+      if (m.away_team) {
+        const team = m.away_team;
+        if (team.toLowerCase().includes("altyapı") || team.toLowerCase().includes("u14") || team.toLowerCase().includes("u16") || team.toLowerCase().includes("u18")) {
+          altyapıTeams.add(team);
+        } else {
+          ligTeams.add(team);
+        }
+      }
+    });
+
+    return {
+      altyapı: Array.from(altyapıTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
+      lig: Array.from(ligTeams).sort((a, b) => trLower(a).localeCompare(trLower(b))),
+    };
+  }, [matches]);
+
+  // Filtrelenmiş takımlar
+  const filteredTeams = useMemo(() => {
+    const allTeams = teamCategoryFilter === "all" 
+      ? [...teamsByCategory.altyapı, ...teamsByCategory.lig]
+      : teamCategoryFilter === "altyapı" 
+      ? teamsByCategory.altyapı
+      : teamsByCategory.lig;
+
+    if (!searchQuery.trim()) return allTeams;
+
+    const q = trLower(searchQuery).trim();
+    return allTeams.filter(team => trIncludes(team, q));
+  }, [teamsByCategory, teamCategoryFilter, searchQuery]);
+
   // Filtrelenmiş maçlar
   const filteredMatches = useMemo(() => {
     return matches.filter((m) => {
@@ -710,6 +755,20 @@ export default function AdminPage() {
             }`}
           >
             Maçlar ({matches.length})
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === "teams"}
+            onClick={() => setActiveTab("teams")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              activeTab === "teams"
+                ? "bg-primary text-white shadow-sm"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            <Users size={13} aria-hidden="true" />
+            Takımlar ({teamsByCategory.altyapı.length + teamsByCategory.lig.length})
           </button>
           <button
             type="button"
@@ -1020,6 +1079,76 @@ export default function AdminPage() {
                 ))}
               </div>
             )}
+          </div>
+        ) : activeTab === "teams" ? (
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base font-bold text-white flex items-center gap-2">
+                <Users size={18} className="text-primary" />
+                Takım Listesi
+              </h2>
+              <div className="flex items-center gap-2">
+                <select
+                  value={teamCategoryFilter}
+                  onChange={(e) => setTeamCategoryFilter(e.target.value as "all" | "altyapı" | "2lig")}
+                  className="px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-primary"
+                >
+                  <option value="all">Tümü ({teamsByCategory.altyapı.length + teamsByCategory.lig.length})</option>
+                  <option value="altyapı">Altyapı ({teamsByCategory.altyapı.length})</option>
+                  <option value="2lig">2. Lig ({teamsByCategory.lig.length})</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="bg-slate-800/50 rounded-xl p-4 mb-4">
+              <div className="relative">
+                <Search size={16} aria-hidden="true" className="absolute left-3.5 top-3 text-slate-500" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Takım ara..."
+                  aria-label="Takım ara"
+                  className="w-full pl-10 pr-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-white focus:outline-none focus:border-primary"
+                />
+              </div>
+            </div>
+
+            {filteredTeams.length === 0 ? (
+              <div className="py-12 text-center text-slate-400 text-xs">
+                {searchQuery ? "Arama kriterine uygun takım bulunamadı." : "Takım listesi boş."}
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {filteredTeams.map((team, index) => (
+                  <div
+                    key={`${team}-${index}`}
+                    className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50 transition-colors flex items-center justify-between"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center text-xs font-bold text-primary">
+                        {team.charAt(0)}
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-white">{team}</div>
+                        <div className="text-[10px] text-slate-400">
+                          {team.toLowerCase().includes("altyapı") || team.toLowerCase().includes("u14") || team.toLowerCase().includes("u16") || team.toLowerCase().includes("u18") ? "Altyapı" : "2. Lig"}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-xs text-slate-500">
+                      {team.length} karakter
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="mt-4 pt-4 border-t border-slate-800 text-center">
+              <div className="text-xs text-slate-400">
+                Toplam {filteredTeams.length} takım gösteriliyor
+              </div>
+            </div>
           </div>
         ) : activeTab === "users" ? (
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
