@@ -19,6 +19,10 @@ import { Kadinlar2LigMobileNav } from "./Kadinlar2LigMobileNav";
 import { Kadinlar2LigStatuView } from "./Kadinlar2LigStatuView";
 import { Kadinlar2LigHomePortal } from "./Kadinlar2LigHomePortal";
 import { Kadinlar2LigCompare } from "./Kadinlar2LigCompare";
+import { Kadinlar2LigSidebar } from "./Kadinlar2LigSidebar";
+import { AppShell } from "@/components/layout/AppShell";
+import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
+import { convertK2MatchToMatch } from "@/utils/kadinlar2LigConverter";
 import {
   getKadinlar2LigRoute,
   parseKadinlar2LigRoute,
@@ -50,6 +54,10 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   const { count: favoritesCount } = useFavorites();
 
   const currentGroupData = data.gruplar.find((g) => g.grup_no === selectedGroup) || data.gruplar[0];
+  const standardMatches = useMemo(
+    () => (data.tum_maclar || []).map(convertK2MatchToMatch),
+    [data.tum_maclar]
+  );
 
   // Bugün tarihi — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
   const [todayStr, setTodayStr] = useState("");
@@ -185,9 +193,9 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   }, [initialTab, initialGroup]);
 
   return (
-    <div className="min-h-screen bg-[#0a0f1d] text-slate-100 flex flex-col font-sans selection:bg-rose-600 selection:text-white">
-      {/* 1. Altyapı ile Birebir Header */}
-      <Kadinlar2LigHeader
+    <AppShell
+      header={
+        <Kadinlar2LigHeader
         metadata={data.metadata}
         activeTab={activeTab}
         onSelectTab={handleSelectTab}
@@ -202,10 +210,28 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
         onOpenSearch={() => setIsSearchOpen(true)}
-      />
+        />
+      }
+      leftSidebar={
+        <Kadinlar2LigSidebar
+          groups={data.gruplar}
+          selectedGroup={selectedGroup}
+          activeTab={activeTab}
+          favoritesCount={favoritesCount}
+          onSelectGroup={handleSelectGroup}
+          onSelectTab={handleSelectTab}
+        />
+      }
+      rightSidebar={<MatchInspectorPanel match={selectedMatch} allMatches={standardMatches} />}
+      footer={
+        <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between">
+          <span className="font-semibold text-slate-400">TVF Uzman Posta Kadınlar Voleybol 2. Ligi</span>
+          <span className="mt-1 block sm:mt-0">16 Grup • {data.metadata?.toplam_takim_sayisi || 0} Kulüp</span>
+        </footer>
+      }
+    >
 
-      {/* 3. Ana İçerik Alanı (Altyapı max-w-6xl ile Birebir) */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-2 sm:px-4 py-3 sm:py-4 pb-20 sm:pb-8 flex flex-col space-y-3 sm:space-y-4">
+      <div className="flex flex-col space-y-3 px-2 pb-20 sm:space-y-4 sm:px-3 sm:pb-8">
         {/* 2. Gruplar & İl Seçici Barı (Puan Cetveli veya Fikstür açıkken) */}
         {(activeTab === "standings" || activeTab === "fixtures") && (
           <Kadinlar2LigGroupBar
@@ -300,7 +326,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
         {/* RESMİ STATÜ & REHBER TABI */}
         {activeTab === "statu" && <Kadinlar2LigStatuView />}
-      </main>
+      </div>
 
       {/* 4. Maç Detay ve Salon Çekmecesi */}
       <MatchCenterDrawer
@@ -340,38 +366,6 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         resultsCount={resultsCount}
       />
 
-      {/* 7. Footer */}
-      <footer className="bg-[#080c14] border-t border-slate-800/80 py-4 text-center text-xs text-slate-500 hidden sm:block">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="font-semibold text-slate-400">
-              TVF Uzman Posta Kadınlar Voleybol 2. Ligi
-            </span>
-            <span>•</span>
-            <span className="text-slate-500">16 Grup • 167 Kulüp</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-[11px]">
-            <a
-              href="https://tvf.org.tr"
-              target="_blank"
-              rel="noreferrer"
-              className="text-slate-400 hover:text-white transition-colors"
-            >
-              tvf.org.tr
-            </a>
-            <span>•</span>
-            <a
-              href="https://women.volleybox.net"
-              target="_blank"
-              rel="noreferrer"
-              className="text-cyan-400 hover:text-white transition-colors"
-            >
-              volleybox.net
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </AppShell>
   );
 };
