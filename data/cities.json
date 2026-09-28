@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-28T01:48:10.869956+00:00",
+  "updated_at": "2026-09-28T07:48:59.260487+00:00",
   "total_cities": 81,
-  "active_cities": 15,
-  "total_matches": 496,
+  "active_cities": 16,
+  "total_matches": 520,
   "cities": [
     {
       "ilid": "1",
@@ -299,7 +299,7 @@
       "name": "Hakkari",
       "slug": "hakkari",
       "url": "https://hakkari.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -379,8 +379,8 @@
       "name": "Kayseri",
       "slug": "kayseri",
       "url": "https://kayseri.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (5 Maç Mevcut)",
-      "matches_count": 5,
+      "status": "Aktif (12 Maç Mevcut)",
+      "matches_count": 12,
       "standings_count": 9,
       "data_file": "data/cities/kayseri.json"
     },
@@ -549,8 +549,8 @@
       "name": "Samsun",
       "slug": "samsun",
       "url": "https://samsun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (2 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (17 Maç Mevcut)",
+      "matches_count": 17,
       "standings_count": 2,
       "data_file": "data/cities/samsun.json"
     },
@@ -579,7 +579,7 @@
       "name": "Sivas",
       "slug": "sivas",
       "url": "https://sivas.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -719,7 +719,7 @@
       "name": "Batman",
       "slug": "batman",
       "url": "https://batman.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
