@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T12:37:40.952737",
+  "updated_at": "2026-09-28T13:16:29.686554",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -162,5 +162,7 @@
       }
     ]
   },
-  "matches": []
+  "matches": [],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-28T13:20:00.279753"
 }

@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="bg-[#080c14]/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
       {/* 1. Üst Flashscore Bar */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/60 gap-2">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/60 gap-2">
         {/* Logo & Brand & İl Seçici */}
         <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
           <BrandLogo onClick={() => onSelectTab("home")} />
@@ -193,7 +193,7 @@ export const Header: React.FC<HeaderProps> = ({
       )}
 
       {/* 2. ANA SEKMELER: ANASAYFA, SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU, GRUP DURUMU */}
-      <div className="max-w-6xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
+      <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
         {/* Anasayfa Portalı & Günün Maçları Sekmesi */}
         <button
           onClick={() => onSelectTab("home")}

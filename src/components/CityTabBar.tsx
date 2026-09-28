@@ -95,7 +95,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
 
   return (
     <div className="bg-[#070d19]/90 backdrop-blur-md border-b border-slate-800/80 px-2 sm:px-4 py-1.5 shadow-sm">
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-1.5 sm:gap-2">
+      <div className="max-w-screen-2xl mx-auto flex items-center justify-between gap-1.5 sm:gap-2">
         {/* Yatay Kaydırılabilir Sekmeler */}
         <div
           ref={scrollRef}
