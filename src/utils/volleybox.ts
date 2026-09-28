@@ -269,7 +269,7 @@ export function getVolleyboxLeagueMapping(
 
   const map = customMap || getDefaultVolleyboxLeagueMap();
   const rawLeague = normalizeKey(leagueName);
-  const leagueClean = rawLeague.split(" - ")[0].trim();
+  const leagueClean = rawLeague.split("·")[0].split(" - ")[0].trim();
   const citySlug = normalizeCitySlug(city);
   const age = extractAgeGroup(leagueName);
 

@@ -132,6 +132,34 @@ describe("volleybox utility", () => {
       expect(altinordu1Lig?.matched_as).toBe("Altınordu Voleybol - B U18");
       expect(altinordu1Lig?.volleybox_url).toContain("altnordu-voleybol-b-u18-t41259");
 
+      const userCorrections = [
+        ["Dost Spor U18", "Genç Kızlar 1. Ligi", "İzmir", "t53583"],
+        ["Volkan Güç Spor Kulübü - B U18", "Genç Kızlar Süper Lig", "İzmir", "t41256"],
+        ["Altınordu Voleybol - B U18", "Genç Kızlar Süper Lig", "İzmir", "t41238"],
+        ["KZY Bornova Spor Kulübü - B U18", "Genç Kızlar Süper Lig", "İzmir", "t53577"],
+        ["Monza Spor Kulübü - B U18", "Genç Kızlar Süper Lig", "İzmir", "t44603"],
+        ["İzmir Altınay Spor Kulübü - B U18", "Genç Kızlar Süper Lig", "İzmir", "t41236"],
+        ["Erciyes Aslan Spor Kulübü U16", "Genç Kızlar Süper Lig", "Kayseri", "t41955"],
+        ["Develi Gençlik Ve Spor İlçe Müdürlüğü S.K.", "Yıldız Kızlar Süper Lig", "Kayseri", "t42418"],
+        ["Kayseri Voleybol Kulübü - A", "Yıldız Kızlar Süper Lig", "Kayseri", "t41424"],
+        ["Altıyıldız Spor Kulubü", "Yıldız Kızlar Süper Lig", "Kayseri", "t54199"],
+        ["Kayseri Cimnastik Spor Kulübü - C", "Yıldız Kızlar Süper Lig", "Kayseri", "t54902"],
+        ["Altınoluk İzzet Öksüzkaya S.K. - B", "Yıldız Kızlar Süper Lig", "Kayseri", "t54903"],
+        ["Samsun Büyükşehir Sk", "Genç Kızlar 1. Ligi", "Samsun", "t42570"],
+        ["Bafra Akademi Sk", "Genç Kızlar 1. Ligi", "Samsun", "t42569"],
+        ["Anadolu Voleybol Akademi Sk (B)", "Genç Kızlar 1. Ligi", "Samsun", "t42564"],
+        ["Bafra Vera Sk", "Genç Kızlar 1. Ligi", "Samsun", "t54656"],
+        ["55 Matasyon Sk", "Genç Kızlar 1. Ligi", "Samsun", "t42572"],
+        ["Gülizar Hasan Yılmaz Spor Lisesi Sk", "Genç Kızlar 1. Ligi", "Samsun", "t42565"],
+        ["Sam55 Sk", "Genç Kızlar 1. Ligi", "Samsun", "t54659"],
+        ["Atakum Atılım Sk (B)", "Genç Kızlar 1. Ligi", "Samsun", "t54657"],
+      ] as const;
+
+      for (const [team, category, city, profileId] of userCorrections) {
+        const mapping = getVolleyboxMapping(team, category, undefined, city);
+        expect(mapping?.volleybox_url, `${team} (${city}, ${category})`).toContain(profileId);
+      }
+
       // Antalya
       const zenit = getVolleyboxMapping("07 Zenit S.K.", "Genç Kızlar Süper Lig");
       expect(zenit).toBeDefined();
@@ -288,6 +316,12 @@ describe("volleybox utility", () => {
       expect(mapping).toBeDefined();
       expect(mapping?.volleybox_url).toContain("women-zmir-1-ligi-u18-2026-27-o49400");
       expect(mapping?.age_category).toBe("U18");
+    });
+
+    it("resolves İzmir 1. Ligi despite the city, age, and group suffix", () => {
+      const mapping = getVolleyboxLeagueMapping("Genç Kızlar 1. Ligi · Genç Kız - C Gr", "İzmir");
+      expect(mapping).toBeDefined();
+      expect(mapping?.volleybox_url).toBe("https://women.volleybox.net/women-zmir-1-ligi-u18-2026-27-o49400");
     });
 
     it("resolves city-specific leagues such as Bursa U18", () => {

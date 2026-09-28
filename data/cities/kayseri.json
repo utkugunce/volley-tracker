@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T13:59:49.310261",
+  "updated_at": "2026-09-28T16:38:18.707240",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -306,7 +306,7 @@
       },
       {
         "rank": 2,
-        "team": "Develi Gençlik Ve Spor İlçe Müdürlüğü S.K.",
+        "team": "Develi GSB Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -352,7 +352,7 @@
     "Yıldız Kızlar Süper Lig - - B": [
       {
         "rank": 1,
-        "team": "Altıyıldız Spor Kulubü",
+        "team": "Altıyıldız Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -385,7 +385,7 @@
       },
       {
         "rank": 4,
-        "team": "Kayseri Voleybol Kulübü - A",
+        "team": "KVK Voleybol Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -398,7 +398,7 @@
     "Yıldız Kızlar Süper Lig - - C": [
       {
         "rank": 1,
-        "team": "Altınoluk İzzet Öksüzkaya S.K. - B",
+        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -442,7 +442,7 @@
       },
       {
         "rank": 5,
-        "team": "Kayseri Cimnastik Spor Kulübü - C",
+        "team": "Kayseri Cimnastik Spor Kulübü - C U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -473,18 +473,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402759",
+        "url": "https://women.volleybox.net/tr/kayseri-cimnastik-spor-kulubu-u18-kvk-voleybol-kulubu-b-u18-c402759",
+        "host_name": "Kayseri Cimnastik Spor Kulübü U18",
+        "guest_name": "KVK Voleybol Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-05",
+        "vb_time": "18:00",
+        "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "18:00",
+          "vb_hall": "Gevher Nesibe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -507,18 +514,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402760",
+        "url": "https://women.volleybox.net/tr/kayseri-atletik-spor-kulubu-u18-zzet-oksuzkaya-orta-okulu-genclik-ve-spor-kulubu-u18-c402760",
+        "host_name": "Kayseri Atletik Spor Kulübü U18",
+        "guest_name": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-05",
+        "vb_time": "19:30",
+        "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "19:30",
+          "vb_hall": "Gevher Nesibe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -582,18 +596,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402788",
+        "url": "https://women.volleybox.net/tr/erciyes-aslan-spor-kulubu-u18-cnar-akademi-spor-kulubu-u18-c402788",
+        "host_name": "Erciyes Aslan Spor Kulübü U18",
+        "guest_name": "Çınar Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-11",
+        "vb_time": "19:30",
+        "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "19:30",
+          "vb_hall": "Gevher Nesibe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -690,7 +711,7 @@
       "gender": "Kız",
       "group": "- A",
       "match_no": "3",
-      "home_team": "Develi Gençlik Ve Spor İlçe Müdürlüğü S.K.",
+      "home_team": "Develi GSB Spor Kulübü U16",
       "away_team": "Erciyes Aslan Spor Kulübü - B U16",
       "score": "- : -",
       "home_score": null,
@@ -698,18 +719,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402761",
+        "url": "https://women.volleybox.net/tr/develi-gsb-spor-kulubu-u16-erciyes-aslan-spor-kulubu-b-u16-c402761",
+        "host_name": "Develi GSB Spor Kulübü U16",
+        "guest_name": "Erciyes Aslan Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "18:00",
+        "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "18:00",
+          "vb_hall": "Gevher Nesibe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -765,26 +793,33 @@
       "gender": "Kız",
       "group": "- B",
       "match_no": "2",
-      "home_team": "Kayseri Voleybol Kulübü - A",
-      "away_team": "Altıyıldız Spor Kulubü",
+      "home_team": "KVK Voleybol Kulübü U16",
+      "away_team": "Altıyıldız Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402762",
+        "url": "https://women.volleybox.net/tr/kvk-voleybol-kulubu-u16-altyldz-spor-kulubu-u16-c402762",
+        "host_name": "KVK Voleybol Kulübü U16",
+        "guest_name": "Altıyıldız Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-07",
+        "vb_time": "19:30",
+        "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "19:30",
+          "vb_hall": "Gevher Nesibe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -841,25 +876,32 @@
       "group": "- C",
       "match_no": "2",
       "home_team": "Erciyes Aslan Spor Kulübü - A",
-      "away_team": "Kayseri Cimnastik Spor Kulübü - C",
+      "away_team": "Kayseri Cimnastik Spor Kulübü - C U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402763",
+        "url": "https://women.volleybox.net/tr/erciyes-aslan-spor-kulubu-u16-kayseri-cimnastik-spor-kulubu-c-u16-c402763",
+        "host_name": "Erciyes Aslan Spor Kulübü U16",
+        "guest_name": "Kayseri Cimnastik Spor Kulübü - C U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-07",
+        "vb_time": "18:00",
+        "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "18:00",
+          "vb_hall": "Gevher Nesibe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -874,7 +916,7 @@
       "gender": "Kız",
       "group": "- C",
       "match_no": "3",
-      "home_team": "Altınoluk İzzet Öksüzkaya S.K. - B",
+      "home_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
       "away_team": "Erciyes Aslan Spor Kulübü - A",
       "score": "- : -",
       "home_score": null,
@@ -882,22 +924,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402764",
+        "url": "https://women.volleybox.net/tr/zzet-oksuzkaya-orta-okulu-genclik-ve-spor-kulubu-b-u16-erciyes-aslan-spor-kulubu-u16-c402764",
+        "host_name": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
+        "guest_name": "Erciyes Aslan Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "19:30",
+        "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "19:30",
+          "vb_hall": "Gevher Nesibe Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-09-28T14:06:30.073579"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-09-28T16:42:05.047225"
 }
