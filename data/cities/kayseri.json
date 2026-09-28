@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T16:38:18.707240",
+  "updated_at": "2026-09-28T22:10:52.462345",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -296,50 +296,50 @@
       {
         "rank": 1,
         "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Develi GSB Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
+        "team": "Kayseri Cimnastik Spor Kulübü - B U16",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Erciyes Aslan Spor Kulübü - B U16",
-        "played": 0,
+        "team": "Kayseri Bahçelievler Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Kayseri Bahçelievler Spor Kulübü U16",
-        "played": 0,
+        "team": "Erciyes Aslan Spor Kulübü - B U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Kayseri Cimnastik Spor Kulübü - B U16",
+        "team": "Develi GSB Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -631,11 +631,15 @@
       "match_no": "1",
       "home_team": "Kayseri Cimnastik Spor Kulübü - B U16",
       "away_team": "Kayseri Bahçelievler Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "27-25",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401398",
@@ -672,11 +676,15 @@
       "match_no": "2",
       "home_team": "Erciyes Aslan Spor Kulübü - B U16",
       "away_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "20-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401399",
@@ -948,5 +956,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-09-28T16:09:27.787701"
+  "volleybox_sync_updated_at": "2026-09-28T22:12:24.139057"
 }

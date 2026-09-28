@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T16:07:45.365669",
+  "updated_at": "2026-09-28T22:10:43.118992",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -253,11 +253,11 @@
       {
         "rank": 2,
         "team": "Çanakkale Belediyespor",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 3,
         "form": []
       },
@@ -274,7 +274,7 @@
       },
       {
         "rank": 4,
-        "team": "UVM Akademi Spor Kulübü U16",
+        "team": "Yeşil Bayramiç Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -285,13 +285,13 @@
       },
       {
         "rank": 5,
-        "team": "Yeşil Bayramiç Spor Kulübü",
-        "played": 0,
+        "team": "UVM Akademi Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -344,17 +344,28 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği D Grubu": [
       {
         "rank": 1,
-        "team": "Biga Gelişim Voleybol Kulübü U16",
+        "team": "Çan Kale Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Biga Gelişim Voleybol Kulübü U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Gökçeada Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -362,17 +373,6 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Çan Kale Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -538,13 +538,13 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği B Grubu",
       "match_no": "2",
-      "home_team": "UVM Akademi Spor Kulübü U16",
+      "home_team": "(H) - Uvm Akademi Spor Kulübü",
       "away_team": "Çanakkale Belediyespor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
       "set_scores": [],
-      "status": "upcoming",
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401053",
@@ -756,11 +756,15 @@
       "match_no": "2",
       "home_team": "Biga Gelişim Voleybol Kulübü U16",
       "away_team": "Çan Kale Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "24-26",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401059",
@@ -827,5 +831,5 @@
     }
   ],
   "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-28T16:09:27.772003"
+  "volleybox_sync_updated_at": "2026-09-28T22:12:24.123133"
 }

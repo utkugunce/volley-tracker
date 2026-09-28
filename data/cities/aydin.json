@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T16:07:40.827075",
+  "updated_at": "2026-09-28T22:10:37.752309",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -53,23 +53,23 @@
       {
         "rank": 3,
         "team": "Söke Voleybol Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
         "team": "Aydın DSİ Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -190,11 +190,15 @@
       "match_no": "3",
       "home_team": "Söke Voleybol Spor Kulübü U18",
       "away_team": "Aydın DSİ Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-10",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399631",
@@ -343,5 +347,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-09-28T16:09:27.805528"
+  "volleybox_sync_updated_at": "2026-09-28T22:12:24.157818"
 }

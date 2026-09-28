@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T16:07:48.053380",
+  "updated_at": "2026-09-28T22:10:48.257739",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -40,6 +40,28 @@
       },
       {
         "rank": 2,
+        "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Alsancak Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Tarsus Amerikan Koleji U18",
         "played": 1,
         "won": 0,
@@ -50,18 +72,7 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Alsancak Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
+        "rank": 5,
         "team": "Mersin İhtisas Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -72,19 +83,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "MEV Toros Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
+        "team": "MEV Toros Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -176,11 +176,16 @@
       "match_no": "2",
       "home_team": "Alsancak Spor Kulübü U18",
       "away_team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "26-24",
+        "17-25",
+        "24-26"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399642",
@@ -288,5 +293,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-28T16:09:27.817910"
+  "volleybox_sync_updated_at": "2026-09-28T22:12:24.171194"
 }
