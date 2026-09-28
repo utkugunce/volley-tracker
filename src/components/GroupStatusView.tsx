@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import { Virtuoso } from "react-virtuoso";
 import {
   GROUP_STATUS_CONFIGS,
   GROUP_STATUS_LIST,
@@ -371,16 +372,17 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
           )}
         </div>
       ) : (
-        <div className="space-y-4">
-          {cityGroups.map(([cityName, items]) => {
+        <Virtuoso
+          useWindowScroll
+          data={cityGroups}
+          increaseViewportBy={{ top: 600, bottom: 900 }}
+          itemContent={(_, [cityName, items]) => {
             const isCollapsed = expandedCities[cityName] === false; // Varsayılan olarak açık
             const hasMultipleGroups = items.length > 1;
 
             return (
-              <div
-                key={cityName}
-                className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-md transition-all hover:border-slate-700/80"
-              >
+              <div className="pb-4">
+                <div className="bg-slate-900/90 border border-slate-800 rounded-xl overflow-hidden shadow-md transition-all hover:border-slate-700/80">
                 {/* Şehir Başlığı / Akordeon Barı */}
                 <div
                   onClick={() => toggleCityExpand(cityName)}
@@ -525,10 +527,11 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                     </table>
                   </div>
                 )}
+                </div>
               </div>
             );
-          })}
-        </div>
+          }}
+        />
       )}
     </div>
   );

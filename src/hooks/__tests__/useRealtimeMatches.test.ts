@@ -58,9 +58,10 @@ describe("useRealtimeMatches", () => {
       if (!options) {
         throw new Error("Options should be defined");
       }
-      
+
+      expect(options.onConnectionChange).toBeTypeOf("function");
       act(() => {
-        options.onConnectionChange(true);
+        options.onConnectionChange?.(true);
       });
 
       expect(result.current.isConnected).toBe(true);
@@ -79,9 +80,10 @@ describe("useRealtimeMatches", () => {
       if (!options) {
         throw new Error("Options should be defined");
       }
-      
+
+      expect(options.onMatchUpdate).toBeTypeOf("function");
       act(() => {
-        options.onMatchUpdate(matchUpdate);
+        options.onMatchUpdate?.(matchUpdate);
       });
 
       expect(result.current.lastUpdate).toEqual(matchUpdate);
@@ -92,18 +94,20 @@ describe("useRealtimeMatches", () => {
 
       // Get the options object passed to getRealtimeManager
       const options = vi.mocked(getRealtimeManager).mock.calls[0][0];
-      
+
+      expect(options?.onError).toBeTypeOf("function");
       if (options) {
         act(() => {
-          options.onError(new Error("Test error"));
+          options.onError?.(new Error("Test error"));
         });
       }
 
       expect(result.current.error).not.toBeNull();
 
       // Then update match
+      expect(options?.onMatchUpdate).toBeTypeOf("function");
       act(() => {
-        options?.onMatchUpdate({ id: "match1", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() });
+        options?.onMatchUpdate?.({ id: "match1", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() });
       });
 
       expect(result.current.error).toBeNull();
@@ -122,9 +126,10 @@ describe("useRealtimeMatches", () => {
       if (!options) {
         throw new Error("Options should be defined");
       }
-      
+
+      expect(options.onError).toBeTypeOf("function");
       act(() => {
-        options.onError(testError);
+        options.onError?.(testError);
       });
 
       expect(result.current.error).toEqual(testError);
@@ -206,9 +211,10 @@ describe("useRealtimeMatch", () => {
       if (!options) {
         throw new Error("Options should be defined");
       }
-      
+
+      expect(options.onMatchUpdate).toBeTypeOf("function");
       act(() => {
-        options.onMatchUpdate(matchUpdate);
+        options.onMatchUpdate?.(matchUpdate);
       });
 
       expect(result.current.match).toEqual(matchUpdate);
@@ -225,9 +231,10 @@ describe("useRealtimeMatch", () => {
       if (!options) {
         throw new Error("Options should be defined");
       }
-      
+
+      expect(options.onMatchUpdate).toBeTypeOf("function");
       act(() => {
-        options.onMatchUpdate(matchUpdate);
+        options.onMatchUpdate?.(matchUpdate);
       });
 
       expect(result.current.match).toBeNull();
@@ -241,16 +248,20 @@ describe("useRealtimeMatch", () => {
 
       // First set a match
       if (options) {
+        expect(options.onMatchUpdate).toBeTypeOf("function");
         act(() => {
-          options.onMatchUpdate({ id: "match1", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() });
+          options.onMatchUpdate?.({ id: "match1", home_score: 2, away_score: 1, set_scores: [], status: "live", updated_at: new Date().toISOString() });
         });
+      } else {
+        throw new Error("Options should be defined");
       }
 
       expect(result.current.match).not.toBeNull();
 
       // Then delete it
+      expect(options?.onMatchDeleted).toBeTypeOf("function");
       act(() => {
-        options?.onMatchDeleted("match1");
+        options?.onMatchDeleted?.("match1");
       });
 
       expect(result.current.match).toBeNull();

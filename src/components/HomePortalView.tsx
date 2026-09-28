@@ -19,7 +19,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { formatDateTurkish, compareMatchDateTime, isMatchPassed, isTodayOrUnscoredYesterday, getYesterdayString } from "@/utils/calendar";
-import { isMatchScored } from "@/components/DashboardClient";
+import { isMatchScored } from "@/utils/matchScoring";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 

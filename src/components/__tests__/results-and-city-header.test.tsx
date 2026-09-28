@@ -1,12 +1,23 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
-import { isMatchScored } from "../DashboardClient";
+import { isMatchScored } from "@/utils/matchScoring";
+import { getInitialFixtures, getInitialResults } from "@/utils/getInitialFixtures";
 import { FilterBar } from "../FilterBar";
 import { DateRibbon } from "../DateRibbon";
 import { Match } from "@/types/fixture";
 
 describe("Results and City Header enhancements", () => {
+  it("loads only scored matches for results while preserving the full fixture count", () => {
+    const fullFixtures = getInitialFixtures();
+    const initialResults = getInitialResults();
+
+    expect(initialResults.matches.length).toBeGreaterThan(0);
+    expect(initialResults.matches.every(isMatchScored)).toBe(true);
+    expect(initialResults.matches.length).toBeLessThan(fullFixtures.matches.length);
+    expect(initialResults.total_matches).toBe(fullFixtures.total_matches);
+  });
+
   it("isMatchScored correctly identifies matches with scores or finished status", () => {
     const finishedMatch: Match = {
       id: "m-1",

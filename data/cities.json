@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-28T13:16:39.696554+03:00",
+  "updated_at": "2026-09-28T13:59:59.797321+03:00",
   "total_cities": 81,
   "active_cities": 16,
-  "total_matches": 567,
+  "total_matches": 577,
   "cities": [
     {
       "ilid": "1",
@@ -549,8 +549,8 @@
       "name": "Samsun",
       "slug": "samsun",
       "url": "https://samsun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (51 Maç Mevcut)",
-      "matches_count": 51,
+      "status": "Aktif (61 Maç Mevcut)",
+      "matches_count": 61,
       "standings_count": 2,
       "data_file": "data/cities/samsun.json"
     },

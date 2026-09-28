@@ -1,27 +1,53 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useCallback } from "react";
+import React, { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { Header } from "@/components/Header";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import { FilterBar } from "@/components/FilterBar";
-import { StandingsTable, StandingsTeamContext } from "@/components/StandingsTable";
-import { TeamInspectorPanel } from "@/components/TeamInspectorPanel";
+import type { StandingsTeamContext } from "@/components/StandingsTable";
 import { CityTabBar } from "@/components/CityTabBar";
-import { TodayMatchesView } from "@/components/TodayMatchesView";
-import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
-import { CompactMatchFeed } from "@/components/match/CompactMatchFeed";
 import { LeagueSection } from "@/components/match/LeagueSection";
-import { HomePortalView } from "@/components/HomePortalView";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
-import { GroupStatusView } from "@/components/GroupStatusView";
 import { AppShell } from "@/components/layout/AppShell";
 import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
 import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
-import { MobileMatchDrawer } from "@/components/MobileMatchDrawer";
 import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
 import dynamic from "next/dynamic";
+import { Virtuoso } from "react-virtuoso";
 import { Match, FixturesData, StandingItem } from "@/types/fixture";
+import { isMatchScored } from "@/utils/matchScoring";
+
+export { isMatchScored };
+
+const TabViewLoading = () => (
+  <div role="status" aria-label="Sekme yükleniyor" className="min-h-40 animate-pulse rounded-xl bg-slate-900/50" />
+);
+
+const HomePortalView = dynamic(
+  () => import("@/components/HomePortalView").then((mod) => mod.HomePortalView),
+  { loading: TabViewLoading }
+);
+const CompactMatchFeed = dynamic(
+  () => import("@/components/match/CompactMatchFeed").then((mod) => mod.CompactMatchFeed),
+  { loading: TabViewLoading }
+);
+const StandingsTable = dynamic(
+  () => import("@/components/StandingsTable").then((mod) => mod.StandingsTable),
+  { loading: TabViewLoading }
+);
+const TeamInspectorPanel = dynamic(
+  () => import("@/components/TeamInspectorPanel").then((mod) => mod.TeamInspectorPanel),
+  { loading: TabViewLoading }
+);
+const GroupStatusView = dynamic(
+  () => import("@/components/GroupStatusView").then((mod) => mod.GroupStatusView),
+  { loading: TabViewLoading }
+);
+const MobileMatchDrawer = dynamic(
+  () => import("@/components/MobileMatchDrawer").then((mod) => mod.MobileMatchDrawer),
+  { loading: TabViewLoading }
+);
 
 const NotificationBanner = dynamic(
   () => import("@/components/NotificationBanner").then((mod) => mod.NotificationBanner),
@@ -38,14 +64,6 @@ import { formatGroupName, groupResultsByCityAndLeague, CityResultGroup } from "@
 import { AGE_CATEGORIES, classifyAgeCategory } from "@/utils/leagueHierarchy";
 import { slugify } from "@/utils/slugify";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
-
-// Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
-export const isMatchScored = (m: Match): boolean => {
-  if (m.home_score !== null && m.home_score !== undefined && m.away_score !== null && m.away_score !== undefined) return true;
-  if (m.score && m.score.trim() !== "" && m.score.trim() !== "- : -" && m.score.toLowerCase() !== "vs") return true;
-  if (m.volleybox?.has_score && m.volleybox?.score) return true;
-  return false;
-};
 
 export type AppMainTab = "home" | "results" | "today" | "fixtures" | "standings" | "group-status";
 
@@ -142,26 +160,30 @@ interface DashboardClientProps {
   initialData: FixturesData;
   initialTab?: AppMainTab;
   initialCity?: string;
+  initialDataPartial?: boolean;
 }
 
 export const DashboardClient: React.FC<DashboardClientProps> = ({
   initialData,
   initialTab = "home",
   initialCity = "all",
+  initialDataPartial = false,
 }) => {
   const [data, setData] = useState<FixturesData>(initialData);
+  const [isPartialData, setIsPartialData] = useState(initialDataPartial);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const fullDataRequestRef = useRef<Promise<boolean> | null>(null);
 
   // İlk veriyi istemci önbelleğine yaz
   useEffect(() => {
-    if (initialData) {
+    if (initialData && !initialDataPartial) {
       clientCityCache.set(initialCity || "all", initialData);
       if (initialData.city && initialData.city !== "Tüm İller") {
         clientCityCache.set(initialData.city.toLowerCase(), initialData);
       }
     }
-  }, [initialData, initialCity]);
+  }, [initialData, initialCity, initialDataPartial]);
 
   // Ana Sekmeler: "home" (Anasayfa Portalı), "results" (Sonuçlar), "today" (Günün Maçları), "fixtures" (Fikstür), "standings" (Puan Durumu) ve "group-status" (Grup Durumu)
   const [activeMainTab, setActiveMainTab] = useState<AppMainTab>(initialTab);
@@ -183,10 +205,37 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const [citiesList, setCitiesList] = useState<any[]>([]);
 
+  const ensureFullData = () => {
+    if (!isPartialData) return Promise.resolve(true);
+    if (fullDataRequestRef.current) return fullDataRequestRef.current;
+
+    setLoading(true);
+    setError(null);
+    const request = (async () => {
+      try {
+        const res = await fetch(`/api/fixtures?city=${currentCitySlug}`);
+        if (!res.ok) throw new Error("Tam il verisi alınamadı.");
+        const json: FixturesData = await res.json();
+        clientCityCache.set(currentCitySlug, json);
+        setData(json);
+        setIsPartialData(false);
+        return true;
+      } catch (err: any) {
+        setError(err.message || "Tam il verisi yüklenirken hata oluştu.");
+        return false;
+      } finally {
+        setLoading(false);
+        fullDataRequestRef.current = null;
+      }
+    })();
+    fullDataRequestRef.current = request;
+    return request;
+  };
+
   // Sekme değiştiğinde tarayıcı URL'ini senkronize et (Şehir seçiliyse şehri korur: /grup-durumu/istanbul, /puan-durumu/istanbul vb.)
   const handleSelectTab = (tab: AppMainTab) => {
-    setActiveMainTab(tab);
-    if (typeof window !== "undefined") {
+    const syncTabUrl = () => {
+      if (typeof window === "undefined") return;
       const targetPath = getAppRoute(tab, currentCitySlug);
       const currentPath = window.location.pathname;
       if (
@@ -195,6 +244,18 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       ) {
         window.history.pushState({ tab, city: currentCitySlug }, "", targetPath);
       }
+    };
+
+    if (isPartialData && tab !== "results") {
+      void ensureFullData().then((loaded) => {
+        if (loaded) {
+          setActiveMainTab(tab);
+          syncTabUrl();
+        }
+      });
+    } else {
+      setActiveMainTab(tab);
+      syncTabUrl();
     }
   };
 
@@ -224,6 +285,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     const cached = clientCityCache.get(slug);
     if (cached) {
       setData(cached);
+      setIsPartialData(false);
       setLoading(false);
       return;
     }
@@ -235,6 +297,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       const json: FixturesData = await res.json();
       clientCityCache.set(slug, json);
       setData(json);
+      setIsPartialData(false);
     } catch (err: any) {
       setError(err.message || "İl fikstürü yüklenirken hata oluştu.");
     } finally {
@@ -441,6 +504,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       const json: FixturesData = await res.json();
       clientCityCache.set(currentCitySlug, json);
       setData(json);
+      setIsPartialData(false);
     } catch (err: any) {
       setError(err.message || "Bilinmeyen bir hata oluştu.");
     } finally {
@@ -571,7 +635,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     const unsynced = total - synced;
     const percent = total > 0 ? Math.round((synced / total) * 100) : 0;
     return { total, synced, scored, unscored, unsynced, discrepancy, percent };
-  }, [data]);
+  }, [data, todayStr]);
 
   // Filtrelenmiş Maç Listesi
   const filteredMatches = useMemo(() => {
@@ -634,7 +698,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
       return true;
     });
-  }, [data, showOnlyFavorites, favorites, selectedCategory, selectedDate, statusFilter, selectedHall, searchQuery, volleyboxFilter]);
+  }, [data, showOnlyFavorites, favorites, selectedCategory, selectedDate, statusFilter, selectedHall, searchQuery, volleyboxFilter, todayStr]);
 
   // Lig & Gruba göre grupla (Genç Kızlar Süper Lig - A Grubu, B Grubu vb.)
   // Tüm İller seçildiğinde görseldeki yere il adı yazılır ve iller ayrılır
@@ -1227,12 +1291,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
             {/* Sonuçlar Tablosu: Şehir Başlığı Altında Ligler (U18/U16) ve Gruplar (A Grubu, B Grubu) */}
             {resultsByCityAndLeague.length > 0 && (
-              <div className="space-y-6">
-                {resultsByCityAndLeague.map((cityGroup) => {
+              <Virtuoso
+                useWindowScroll
+                data={resultsByCityAndLeague}
+                increaseViewportBy={{ top: 600, bottom: 900 }}
+                itemContent={(_, cityGroup) => {
                   const isCityCollapsed = Boolean(collapsedResultCities[cityGroup.city]);
 
                   return (
-                    <div key={cityGroup.city} className="space-y-3">
+                    <div className="space-y-3 pb-6">
                       {/* Şehir Başlık Banner'ı: Tıklandığında o ilin maçlarını gizler/açar */}
                       <div
                         role="button"
@@ -1316,8 +1383,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       )}
                     </div>
                   );
-                })}
-              </div>
+                }}
+              />
             )}
 
             {/* Sonuç Bulunamadı */}
@@ -1584,12 +1651,15 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
             {/* Resmi Fikstür Tablosu: İllere Göre Gruplanmış ve Açılır/Kapanır */}
             {fixturesByCity.length > 0 && (
-              <div className="space-y-6">
-                {fixturesByCity.map((cityGroup) => {
+              <Virtuoso
+                useWindowScroll
+                data={fixturesByCity}
+                increaseViewportBy={{ top: 600, bottom: 900 }}
+                itemContent={(_, cityGroup) => {
                   const isCityCollapsed = Boolean(collapsedFixtureCities[cityGroup.city]);
 
                   return (
-                    <div key={cityGroup.city} className="space-y-3">
+                    <div className="space-y-3 pb-6">
                       {/* Şehir Başlık Banner'ı: Tıklandığında o ilin maçlarını gizler/açar */}
                       <div
                         role="button"
@@ -1673,8 +1743,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       )}
                     </div>
                   );
-                })}
-              </div>
+                }}
+              />
             )}
 
             {/* Sonuç Bulunamadı / İl Sezon Takvimi Bekleniyor */}
@@ -1801,15 +1871,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       />
 
       {/* 5. Mobil Maç Detayı: Alttan Açılan Çekmece (MobileMatchDrawer) */}
-      <MobileMatchDrawer
-        isOpen={isMobileDrawerOpen && Boolean(selectedMatch)}
-        match={selectedMatch}
-        onClose={() => setIsMobileDrawerOpen(false)}
-        allMatches={data?.matches || []}
-        standings={data?.standings}
-        onToggleFavorite={toggleFavorite}
-        isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
-      />
+      {isMobileDrawerOpen && selectedMatch && (
+        <MobileMatchDrawer
+          isOpen
+          match={selectedMatch}
+          onClose={() => setIsMobileDrawerOpen(false)}
+          allMatches={data?.matches || []}
+          standings={data?.standings}
+          onToggleFavorite={toggleFavorite}
+          isFavorite={favorites.includes(selectedMatch.id)}
+        />
+      )}
 
       {/* 6. Mobil Tam Ekran Ligler Menüsü (Sol Panel Ağacı) */}
       {isLeaguesMenuOpen && (

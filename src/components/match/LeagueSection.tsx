@@ -46,7 +46,10 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
   const standingsUrl = `/puan-durumu/${citySlug}`;
 
   return (
-    <div className="rounded-xl border border-[#2A2E3D] bg-[#181A20] overflow-hidden shadow-sm">
+    <div
+      className="rounded-xl border border-[#2A2E3D] bg-[#181A20] overflow-hidden shadow-sm"
+      style={{ contentVisibility: "auto", containIntrinsicSize: "auto 320px" }}
+    >
       {/* Lig Akordiyon Başlığı */}
       <div
         role="button"

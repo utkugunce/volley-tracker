@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { DashboardClient } from "@/components/DashboardClient";
-import { getInitialFixtures } from "@/utils/getInitialFixtures";
+import { getInitialResults } from "@/utils/getInitialFixtures";
 
 export const revalidate = 180; // 3 minutes ISR cache
 
@@ -53,6 +53,6 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 export default async function ResultsPage({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
   const citySlug = typeof params?.city === "string" ? params.city : undefined;
-  const initialData = getInitialFixtures(citySlug);
-  return <DashboardClient initialData={initialData} initialTab="results" initialCity={citySlug} />;
+  const initialData = getInitialResults(citySlug);
+  return <DashboardClient initialData={initialData} initialTab="results" initialCity={citySlug} initialDataPartial />;
 }

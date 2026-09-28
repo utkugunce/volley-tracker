@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { FixturesData } from "@/types/fixture";
 import { isCityHidden } from "./cityHelper";
+import { isMatchScored } from "./matchScoring";
 
 const CACHE_TTL_MS = 60 * 1000;
 let cachedAllData: { data: FixturesData; timestamp: number } | null = null;
@@ -136,5 +137,13 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
       halls: [],
     },
     matches: [],
+  };
+}
+
+export function getInitialResults(citySlug?: string): FixturesData {
+  const data = getInitialFixtures(citySlug);
+  return {
+    ...data,
+    matches: data.matches.filter(isMatchScored),
   };
 }
