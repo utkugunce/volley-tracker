@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T16:07:23.816364",
+  "updated_at": "2026-09-28T11:11:45.194444",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -30,6 +30,17 @@
     "Genç Kızlar 1. Ligi - 2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi": [
       {
         "rank": 1,
+        "team": "Efeler Altın Smaç Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Aydın Büyükşehir Belediyespor U18",
         "played": 1,
         "won": 1,
@@ -40,7 +51,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Söke Voleybol Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -51,30 +62,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Aydın DSİ Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Efeler Altın Smaç Spor Kulübü U18",
+        "team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -145,19 +145,23 @@
       "match_no": "2",
       "home_team": "Aydın DSİ Spor Kulübü U18",
       "away_team": "Efeler Altın Smaç Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "10-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399630",
         "url": "https://women.volleybox.net/tr/aydn-ds-spor-kulubu-u18-efeler-altn-smac-spor-kulubu-u18-c399630",
         "host_name": "Aydın DSİ Spor Kulübü U18",
         "guest_name": "Efeler Altın Smaç Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "20:30",
         "vb_hall": "SKS Spor Salonu",
@@ -339,5 +343,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-09-25T16:11:08.127582"
+  "volleybox_sync_updated_at": "2026-09-28T11:15:24.517182"
 }

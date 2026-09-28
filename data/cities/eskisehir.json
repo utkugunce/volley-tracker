@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T16:07:30.189777",
+  "updated_at": "2026-09-28T11:11:50.389026",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -76,7 +76,7 @@
     "Genç Kızlar Süper Lig - - A Gr": [
       {
         "rank": 1,
-        "team": "Eskişehir Ata Spor Kulübü U18",
+        "team": "Eskişehir DSİ Bentspor U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -87,6 +87,17 @@
       },
       {
         "rank": 2,
+        "team": "Eskişehir Ata Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Eskişehir Türk Telekom Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -97,25 +108,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Eskişehir DSİ Bentspor U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -133,6 +133,28 @@
       },
       {
         "rank": 2,
+        "team": "Eskişehir Yıldız Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Meryem Boz Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Es Voleybol Akademi Spor Kulübü - A U18",
         "played": 1,
         "won": 0,
@@ -141,33 +163,22 @@
         "sets_won": 0,
         "sets_lost": 3,
         "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Eskişehir Yıldız Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Meryem Boz Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - - A Gr": [
       {
         "rank": 1,
+        "team": "Anadolu Kolej Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Eskişehir DSİ Bentspor U16",
         "played": 1,
         "won": 1,
@@ -178,25 +189,14 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Es Voleybol Akademi Spor Kulübü - B U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 3,
-        "team": "Anadolu Kolej Spor Kulübü U16",
-        "played": 0,
+        "team": "Es Voleybol Akademi Spor Kulübü - B U16",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -213,19 +213,19 @@
       {
         "rank": 5,
         "team": "Meryem Boz Spor Kulübü - B U16",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - - B Gr": [
       {
         "rank": 1,
-        "team": "Eskişehir Türktelekom Spor Kulübü (A)",
+        "team": "Şehir Koleji Eğitim Kültür SK U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -236,40 +236,40 @@
       },
       {
         "rank": 2,
-        "team": "Eskişehir Ata Spor Kulübü (B)",
+        "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "team": "Eskişehir Türktelekom Spor Kulübü (A)",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Esnova Spor Kulübü (A)",
-        "played": 0,
+        "team": "Eskişehir Ata Spor Kulübü (B)",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Şehir Koleji Eğitim Kültür SK U16",
+        "team": "Esnova Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -282,6 +282,17 @@
     "Yıldız Kızlar Süper Lig - - C Gr": [
       {
         "rank": 1,
+        "team": "Es Güneş Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Eskişehir Ata Spor Kulübü (A)",
         "played": 1,
         "won": 1,
@@ -292,25 +303,14 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Eskişehir Türktelekom Spor Kulübü (B)",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Es Güneş Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -328,6 +328,17 @@
     "Yıldız Kızlar Süper Lig - - D Gr": [
       {
         "rank": 1,
+        "team": "Es Voleybol Akademi Spor Kulübü - A U16",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Eskişehir Peyman SK U18",
         "played": 1,
         "won": 1,
@@ -338,18 +349,18 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Es Voleybol Akademi Spor Kulübü - A U16",
+        "rank": 3,
+        "team": "Eskişehir Yıldız Spor Kulübü U16",
         "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Anadolu Üniversitesi Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -360,25 +371,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Eskişehir Voleybol Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Eskişehir Yıldız Spor Kulübü U16",
-        "played": 0,
+        "team": "Eskişehir Voleybol Spor Kulübü U16",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -611,11 +611,16 @@
       "match_no": "2",
       "home_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
       "away_team": "Eskişehir DSİ Bentspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-22",
+        "17-25",
+        "21-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399241",
@@ -779,11 +784,17 @@
       "match_no": "2",
       "home_team": "Meryem Boz Spor Kulübü U18",
       "away_team": "Eskişehir Yıldız Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "26-24",
+        "17-25",
+        "25-16",
+        "20-25",
+        "14-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399243",
@@ -947,19 +958,23 @@
       "match_no": "2",
       "home_team": "Anadolu Kolej Spor Kulübü U16",
       "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-7",
+        "25-5"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399251",
         "url": "https://women.volleybox.net/tr/anadolu-kolej-spor-kulubu-u16-es-voleybol-akademi-spor-kulubu-b-u16-c399251",
-        "host_name": "Anadolu Kolej Spor Kulübü U16",
+        "host_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "guest_name": "Es Voleybol Akademi Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "16:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -986,19 +1001,23 @@
       "gender": "Kız",
       "group": "- A Gr",
       "match_no": "3",
-      "home_team": "Meryem Boz Spor Kulübü - B U16",
+      "home_team": "(H) - Meryem Boz Spor Kulübü (B)",
       "away_team": "Anadolu Kolej Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401388",
         "url": "https://women.volleybox.net/tr/meryem-boz-spor-kulubu-b-u16-anadolu-kolej-spor-kulubu-u16-c401388",
         "host_name": "Meryem Boz Spor Kulübü - B U16",
-        "guest_name": "Anadolu Kolej Spor Kulübü U16",
+        "guest_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "score": null,
         "has_score": false,
         "vb_date": "2026-09-27",
@@ -1156,19 +1175,23 @@
       "match_no": "2",
       "home_team": "Eskişehir Türktelekom Spor Kulübü (A)",
       "away_team": "Şehir Koleji Eğitim Kültür SK U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "2-25",
+        "1-25",
+        "6-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401060",
         "url": "https://women.volleybox.net/tr/eskisehir-turk-telekom-spor-kulubu-u16-sehir-koleji-egitim-kultur-sk-u16-c401060",
         "host_name": "Eskişehir Türk Telekom Spor Kulübü U16",
         "guest_name": "Şehir Koleji Eğitim Kültür SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1197,19 +1220,23 @@
       "match_no": "3",
       "home_team": "Eskişehir Ata Spor Kulübü (B)",
       "away_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "20-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399255",
         "url": "https://women.volleybox.net/tr/eskisehir-ata-spor-kulubu-b-u16-eskisehir-cagdas-kolejliler-spor-kulubu-u16-c399255",
         "host_name": "Eskişehir Ata Spor Kulübü - B U16",
         "guest_name": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "18:00",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -1285,18 +1312,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402168",
+        "url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-u16-eskisehir-ata-spor-kulubu-b-u16-c402168",
+        "host_name": "Şehir Koleji Eğitim Kültür SK U16",
+        "guest_name": "Eskişehir Ata Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-02",
+        "vb_time": "18:30",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-02",
+          "vb_time": "18:30",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1401,11 +1435,15 @@
       "match_no": "2",
       "home_team": "Es Güneş Spor Kulübü U16",
       "away_team": "Eskişehir Türktelekom Spor Kulübü (B)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-13",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401061",
@@ -1614,19 +1652,24 @@
       "match_no": "3",
       "home_team": "Eskişehir Yıldız Spor Kulübü U16",
       "away_team": "Es Voleybol Akademi Spor Kulübü - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "16-25",
+        "25-18",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401062",
         "url": "https://women.volleybox.net/tr/eskisehir-yldz-spor-kulubu-u16-es-voleybol-akademi-spor-kulubu-u16-c401062",
         "host_name": "Eskişehir Yıldız Spor Kulübü U16",
         "guest_name": "Es Voleybol Akademi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-09-25",
         "vb_time": "20:00",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -1655,11 +1698,15 @@
       "match_no": "4",
       "home_team": "Es Voleybol Akademi Spor Kulübü - A U16",
       "away_team": "Eskişehir Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-15",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399261",
@@ -1710,21 +1757,21 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-01",
-        "vb_time": "22:00",
+        "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-01",
-          "vb_time": "22:00",
+          "vb_time": "20:00",
           "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:00 / VB: 22:00)"
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-09-25T16:11:08.265632"
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-09-28T11:15:24.627174"
 }

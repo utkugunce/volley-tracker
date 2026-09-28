@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-25T16:07:26.198252",
+  "updated_at": "2026-09-28T11:11:46.988636",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -318,28 +318,28 @@
       {
         "rank": 1,
         "team": "23 Nisan Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
-        "played": 0,
+        "team": "Bursa Genç Saray Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Bursa Genç Saray Spor Kulübü U16",
+        "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -702,19 +702,23 @@
       "match_no": "1",
       "home_team": "Bursa Genç Saray Spor Kulübü U16",
       "away_team": "23 Nisan Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "14-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401041",
         "url": "https://women.volleybox.net/tr/bursa-genc-saray-spor-kulubu-u16-23-nisan-spor-kulubu-u16-c401041",
         "host_name": "Bursa Genç Saray Spor Kulübü U16",
         "guest_name": "23 Nisan Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-26",
         "vb_time": "18:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -995,18 +999,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402167",
+        "url": "https://women.volleybox.net/tr/metin-kucukkenar-frtna16-spor-kulubu-u16-kestel-belediye-1952-spor-kulubu-u16-c402167",
+        "host_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+        "guest_name": "Kestel Belediye 1952 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-01",
+        "vb_time": "18:30",
+        "vb_hall": "Kestel Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-01",
+          "vb_time": "18:30",
+          "vb_hall": "Kestel Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1052,6 +1063,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 11,
-  "volleybox_sync_updated_at": "2026-09-25T16:11:08.158043"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-09-28T11:15:24.547905"
 }
