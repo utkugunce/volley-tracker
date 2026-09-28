@@ -3,19 +3,13 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-<<<<<<< HEAD
     "guncellenme_zamani": "2026-09-28T11:16:07.507864",
-=======
     "guncellenme_zamani": "2026-09-28T07:50:15.709811",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 166,
     "toplam_mac_sayisi": 289,
-<<<<<<< HEAD
     "volleybox_eslesme_sayisi": 157,
-=======
     "volleybox_eslesme_sayisi": 166,
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
     "resmi_kaynaklar": {
       "tvf_puan_durumu": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu",
       "tvf_fikstur": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur",
@@ -3833,11 +3827,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/balkesir-ds-spor-t13448.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/balkesir-ds-spor-t13448",
           "volleybox_name": "Balıkesir DSİ Spor",
@@ -3863,11 +3853,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/yesil-bayramic-sk-t2995.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/yesil-bayramic-sk-t2995",
           "volleybox_name": "Yeşil Bayramiç SK",
@@ -3893,11 +3879,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/balkesir-buyuksehir-belediyespor-t2978.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-t2978",
           "volleybox_name": "Balıkesir Büyükşehir Belediyespor",
@@ -3923,17 +3905,10 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "sezon": "2026-2027",
-          "volleybox_url": null,
-          "volleybox_name": null,
-=======
           "logo": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png",
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
           "volleybox_name": "ÇOMÜ Spor Kulübü",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "grup_no": 5
         },
         {
@@ -3956,11 +3931,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/bandrma-celikspor-t36097.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/bandrma-celikspor-t36097",
           "volleybox_name": "Bandırma Çelikspor",
@@ -3986,11 +3957,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/bahcesehir-koleji-ayvalkspor-t22021.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/bahcesehir-koleji-ayvalkspor-t22021",
           "volleybox_name": "Bahçeşehir Koleji Ayvalıkspor",
@@ -4016,11 +3983,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/cerkezkoy-voleybol-akademi-t36232.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/cerkezkoy-voleybol-akademi-t36232",
           "volleybox_name": "Çerkezköy Voleybol Akademi Spor Kulübü",
@@ -4046,11 +4009,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/ayvalk-gelisim-spor-kulubu-t16196.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-t16196",
           "volleybox_name": "Ayvalık Gelişim Spor Kulübü",
@@ -4100,13 +4059,8 @@
           "takim_b": "BAHÇEŞEHİR KOLEJİ AYVALIKSPOR",
           "takim_a_id": "2796",
           "takim_b_id": "2793",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/balkesir-ds-spor-t13448.png",
           "takim_b_logo": "/logos/bahcesehir-koleji-ayvalkspor-t22021.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -4156,13 +4110,8 @@
           "takim_b": "ÇANAKKALE ONSEKİZ MART ÜNİVERSİTESİ",
           "takim_a_id": "2795",
           "takim_b_id": "2815",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/balkesir-buyuksehir-belediyespor-t2978.png",
           "takim_b_logo": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -4212,13 +4161,8 @@
           "takim_b": "ÇERKEZKÖY VOLEYBOL AKADEMİ",
           "takim_a_id": "2821",
           "takim_b_id": "2820",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/corlu-belediyesi-spor-klubu-t17132.png",
           "takim_b_logo": "/logos/cerkezkoy-voleybol-akademi-t36232.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -4268,13 +4212,8 @@
           "takim_b": "ÇAN KALE SPOR",
           "takim_a_id": "2791",
           "takim_b_id": "2814",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/ayvalk-gelisim-spor-kulubu-t16196.png",
           "takim_b_logo": "/logos/can-genclik-kale-spor-kulubu-t6566.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "0",
           "set_b": "3",
           "skor": "0 - 3",
@@ -4324,13 +4263,8 @@
           "takim_b": "YEŞİL BAYRAMİÇ",
           "takim_a_id": "2797",
           "takim_b_id": "2927",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/bandrma-celikspor-t36097.png",
           "takim_b_logo": "/logos/yesil-bayramic-sk-t2995.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "0",
           "set_b": "3",
           "skor": "0 - 3",
@@ -6319,17 +6253,6 @@
           "takim_adi": "EFOR GENÇLİK",
           "o": 1,
           "g": 1,
-<<<<<<< HEAD
-          "m": 0,
-          "p": 3,
-          "as": 3,
-          "vs": 0,
-          "sav": "MAX",
-          "asp": 75,
-          "vsp": 56,
-          "spav": "1.339",
-          "a3_0": 1,
-=======
           "m": 0,
           "p": 3,
           "as": 3,
@@ -6417,7 +6340,6 @@
           "vsp": 92,
           "spav": "1.130",
           "a3_0": 0,
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "a3_1": 0,
           "a3_2": 1,
           "v2_3": 0,
@@ -6430,87 +6352,6 @@
           "grup_no": 7
         },
         {
-<<<<<<< HEAD
-          "sira": 3,
-          "takim_id": "2853",
-          "takim_adi": "GÖZTEPE",
-          "o": 1,
-          "g": 1,
-          "m": 0,
-          "p": 3,
-          "as": 3,
-          "vs": 0,
-          "sav": "MAX",
-          "asp": 75,
-          "vsp": 62,
-          "spav": "1.210",
-          "a3_0": 1,
-          "a3_1": 0,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/goztepe-sk-ii-t22628",
-          "volleybox_name": "Göztepe SK II",
-          "grup_no": 7
-        },
-        {
-          "sira": 4,
-          "takim_id": "2801",
-          "takim_adi": "BAYRAKLI BLD. SPOR",
-          "o": 1,
-          "g": 1,
-          "m": 0,
-          "p": 3,
-          "as": 3,
-          "vs": 1,
-          "sav": "3.000",
-          "asp": 94,
-          "vsp": 83,
-          "spav": "1.133",
-          "a3_0": 0,
-          "a3_1": 1,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/bayrakl-belediye-t19913",
-          "volleybox_name": "Bayraklı Belediyesi Spor Kulübü",
-          "grup_no": 7
-        },
-        {
-          "sira": 5,
-          "takim_id": "2790",
-          "takim_adi": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
-          "o": 1,
-          "g": 1,
-          "m": 0,
-          "p": 2,
-          "as": 3,
-          "vs": 2,
-          "sav": "1.500",
-          "asp": 104,
-          "vsp": 92,
-          "spav": "1.130",
-          "a3_0": 0,
-          "a3_1": 0,
-          "a3_2": 1,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-ii-t13583",
-          "volleybox_name": "Aydın Büyükşehir Belediyespor II",
-          "grup_no": 7
-        },
-        {
-=======
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sira": 6,
           "takim_id": "2909",
           "takim_adi": "SÖKE BELEDİYE SALDOS VOLEYBOL",
@@ -6530,11 +6371,7 @@
           "v2_3": 1,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/soke-belediye-saldos-voleybol-t7009.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/soke-belediye-saldos-voleybol-t7009",
           "volleybox_name": "Söke Belediye Saldos Voleybol",
@@ -6560,11 +6397,7 @@
           "v2_3": 0,
           "v1_3": 1,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/yunusemre-belediyespor-t23089.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/yunusemre-belediyespor-t23089",
           "volleybox_name": "Yunusemre Belediyespor",
@@ -6590,11 +6423,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/altay-t19765.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/altay-t19765",
           "volleybox_name": "Altay SK",
@@ -6620,11 +6449,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/zmir-altnay-spor-t36174.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/zmir-altnay-spor-t36174",
           "volleybox_name": "İzmir Altınay Spor Kulübü",
@@ -6650,11 +6475,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/gelisim-koleji-sk-t7132.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/gelisim-koleji-sk-t7132",
           "volleybox_name": "Gelişim Koleji SK",
@@ -6704,13 +6525,8 @@
           "takim_b": "YUNUSEMRE BLD. SPOR",
           "takim_a_id": "2801",
           "takim_b_id": "2929",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/bayrakl-belediye-t19913.png",
           "takim_b_logo": "/logos/yunusemre-belediyespor-t23089.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "1",
           "skor": "3 - 1",
@@ -6760,13 +6576,8 @@
           "takim_b": "ALTAY",
           "takim_a_id": "2853",
           "takim_b_id": "2778",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/goztepe-sk-ii-t22628.png",
           "takim_b_logo": "/logos/altay-t19765.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -6816,13 +6627,8 @@
           "takim_b": "VOLKAN GÜÇ SPOR",
           "takim_a_id": "2850",
           "takim_b_id": "2923",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/gelisim-koleji-sk-t7132.png",
           "takim_b_logo": "/logos/volkan-guc-spor-kulubu-t27785.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "0",
           "set_b": "3",
           "skor": "0 - 3",
@@ -6872,13 +6678,8 @@
           "takim_b": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
           "takim_a_id": "2909",
           "takim_b_id": "2790",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/soke-belediye-saldos-voleybol-t7009.png",
           "takim_b_logo": "/logos/aydn-buyuksehir-belediyespor-ii-t13583.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "2",
           "set_b": "3",
           "skor": "2 - 3",
@@ -6928,13 +6729,8 @@
           "takim_b": "EFOR GENÇLİK",
           "takim_a_id": "2779",
           "takim_b_id": "2830",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/zmir-altnay-spor-t36174.png",
           "takim_b_logo": "/logos/efor-genclik-spor-kulubu-t17198.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "0",
           "set_b": "3",
           "skor": "0 - 3",
@@ -9737,11 +9533,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/golcuk-hsaniye-spor-kulubu-t13491.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/golcuk-hsaniye-spor-kulubu-t13491",
           "volleybox_name": "Cadence Boya Gölcük İhsaniye Spor Kulübü",
@@ -9767,11 +9559,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/serdivan-belediyesi-spor-kulubu-t40630.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/serdivan-belediyesi-spor-kulubu-t40630",
           "volleybox_name": "Serdivan Belediyesi Spor Kulübü",
@@ -9797,11 +9585,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-t31227",
           "volleybox_name": "Kocaeli Voleybol Akademi Spor Kulübü",
@@ -9827,11 +9611,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-t31227",
           "volleybox_name": "Kocaeli Voleybol Akademi Spor Kulübü",
@@ -9857,11 +9637,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/duzce-voleybol-sk-t21292.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/duzce-voleybol-sk-t21292",
           "volleybox_name": "Düzce Voleybol SK",
@@ -9887,11 +9663,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/gebze-genclik-ve-spor-sk-t40247.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/gebze-genclik-ve-spor-sk-t40247",
           "volleybox_name": "Gebze Gençlik Voleybol Kulübü",
@@ -9917,11 +9689,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/siyah-kugular-spor-kulubu-t45560.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-t45560",
           "volleybox_name": "Siyah Kuğular Spor Kulübü",
@@ -9947,11 +9715,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/duzce-1907-spor-kulubu-t40065.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/duzce-1907-spor-kulubu-t40065",
           "volleybox_name": "Düzce 1907 Spor Kulübü",
@@ -9977,11 +9741,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/bolu-voleybol-spor-kulubu-t13647.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/bolu-voleybol-spor-kulubu-t13647",
           "volleybox_name": "Bolu Atatürk Anadolu Lisesi Spor Kulübü",
@@ -10007,11 +9767,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/buyuk-kartepe-spor-t36192.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/buyuk-kartepe-spor-t36192",
           "volleybox_name": "Büyük Kartepe Spor",
@@ -10019,35 +9775,6 @@
         },
         {
           "sira": 11,
-<<<<<<< HEAD
-          "takim_id": "2981",
-          "takim_adi": "BARTIN VOLLEY ACADEMY",
-          "o": 0,
-          "g": 0,
-          "m": 0,
-          "p": 0,
-          "as": 0,
-          "vs": 0,
-          "sav": "0",
-          "asp": 0,
-          "vsp": 0,
-          "spav": "0",
-          "a3_0": 0,
-          "a3_1": 0,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "sezon": "2026-2027",
-          "volleybox_url": null,
-          "volleybox_name": null,
-          "grup_no": 10
-        },
-        {
-          "sira": 12,
-=======
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "takim_id": "2865",
           "takim_adi": "KARABÜK GENÇLİK SPOR",
           "o": 0,
@@ -10090,13 +9817,8 @@
           "takim_b": "GEBZE GENÇLİK VE SPOR",
           "takim_a_id": "2829",
           "takim_b_id": "2849",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/duzce-voleybol-sk-t21292.png",
           "takim_b_logo": "/logos/gebze-genclik-ve-spor-sk-t40247.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -10146,13 +9868,8 @@
           "takim_b": "BÜYÜK KARTEPE SPOR",
           "takim_a_id": "2811",
           "takim_b_id": "2808",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/golcuk-hsaniye-spor-kulubu-t13491.png",
           "takim_b_logo": "/logos/buyuk-kartepe-spor-t36192.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -10202,13 +9919,8 @@
           "takim_b": "KOCAELİ VOLEYBOL AKADEMİ",
           "takim_a_id": "2907",
           "takim_b_id": "2875",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/siyah-kugular-spor-kulubu-t45560.png",
           "takim_b_logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "0",
           "set_b": "3",
           "skor": "0 - 3",
@@ -10258,13 +9970,8 @@
           "takim_b": "DÜZCE 1907 SPOR",
           "takim_a_id": "2874",
           "takim_b_id": "2828",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
           "takim_b_logo": "/logos/duzce-1907-spor-kulubu-t40065.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -10314,13 +10021,8 @@
           "takim_b": "BOLU ATATÜRK ANADOLU LİSESİ",
           "takim_a_id": "2902",
           "takim_b_id": "2806",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/serdivan-belediyesi-spor-kulubu-t40630.png",
           "takim_b_logo": "/logos/bolu-voleybol-spor-kulubu-t13647.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -11386,13 +11088,8 @@
           "v0_3": 0,
           "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "sezon": "2026-2027",
-<<<<<<< HEAD
-          "volleybox_url": null,
-          "volleybox_name": null,
-=======
           "volleybox_url": "https://women.volleybox.net/tr/ptt-spor-ii-t9985",
           "volleybox_name": "PTT Spor II",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "grup_no": 11
         },
         {
@@ -11415,11 +11112,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/msroglu-beytepespor-t30533.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/msroglu-beytepespor-t30533",
           "volleybox_name": "Mısıroğlu Beytepespor",
@@ -11471,11 +11164,7 @@
           "v2_3": 1,
           "v1_3": 0,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/golbas-ncek-spor-kulubu-t30620.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/golbas-ncek-spor-kulubu-t30620",
           "volleybox_name": "Gölbaşı İncek Spor Kulübü",
@@ -11501,11 +11190,7 @@
           "v2_3": 0,
           "v1_3": 1,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/ankara-barosu-voleybol-t36080.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/ankara-barosu-voleybol-t36080",
           "volleybox_name": "Ankara Barosu Spor Kulübü",
@@ -11531,11 +11216,7 @@
           "v2_3": 0,
           "v1_3": 1,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/sportsa-academy-volleyball-t13948.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/sportsa-academy-volleyball-t13948",
           "volleybox_name": "Çayyolu Sportsa Spor Kulübü",
@@ -11561,11 +11242,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/eryaman-gelisim-sk-t13588.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/eryaman-gelisim-sk-t13588",
           "volleybox_name": "Eryaman Gelişim SK",
@@ -11617,11 +11294,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/kavak-spor-kulubu-t20536.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
           "volleybox_name": "Kavak Spor Kulübü",
@@ -11645,13 +11318,8 @@
           "takim_b": "ANKARA BAROSU",
           "takim_a_id": "2890",
           "takim_b_id": "2782",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/msroglu-beytepespor-t30533.png",
           "takim_b_logo": "/logos/ankara-barosu-voleybol-t36080.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "1",
           "skor": "3 - 1",
@@ -11701,13 +11369,8 @@
           "takim_b": "ANKARA DSİ",
           "takim_a_id": "2837",
           "takim_b_id": "2783",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/eryaman-gelisim-sk-t13588.png",
           "takim_b_logo": "/logos/ankara-ds-gsk-t5617.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "0",
           "set_b": "3",
           "skor": "0 - 3",
@@ -11757,13 +11420,8 @@
           "takim_b": "TVF SPOR LİSESİ",
           "takim_a_id": "2852",
           "takim_b_id": "2919",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/golbas-ncek-spor-kulubu-t30620.png",
           "takim_b_logo": "/logos/tvf-spor-lisesi-t2992.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "2",
           "set_b": "3",
           "skor": "2 - 3",
@@ -11813,13 +11471,8 @@
           "takim_b": "KAVAK SPOR",
           "takim_a_id": "2914",
           "takim_b_id": "2869",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/mke-ankaragucu-t2497.png",
           "takim_b_logo": "/logos/kavak-spor-kulubu-t20536.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -15945,11 +15598,7 @@
           "v2_3": 0,
           "v1_3": 1,
           "v0_3": 0,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/kayseri-atletik-spor-kulubu-t8654",
           "volleybox_name": "Forliva Kayseri Atletik Spor",
@@ -15975,11 +15624,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/zeugma-spor-kulubu-t7352.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-t7352",
           "volleybox_name": "Zeugma Spor Kulübü",
@@ -16005,11 +15650,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/antepia-spor-kulubu-t32178.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/antepia-spor-kulubu-t32178",
           "volleybox_name": "Antepia Spor Kulübü",
@@ -16035,11 +15676,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/gaziantep-belediye-sk-t28164.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/gaziantep-belediye-sk-t28164",
           "volleybox_name": "Gaziantep Büyükşehir Belediyespor",
@@ -16065,11 +15702,7 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 1,
-<<<<<<< HEAD
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "logo": "/logos/malatya-voleybol-kulubu-t40635.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
           "volleybox_name": "Malatya Voleybol Kulübü",
@@ -16093,13 +15726,8 @@
           "takim_b": "ELAZIĞ BLD. SPOR",
           "takim_a_id": "2847",
           "takim_b_id": "2832",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/gaziantep-belediye-sk-t28164.png",
           "takim_b_logo": "/logos/elazg-belediyesi-t20428.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "0",
           "set_b": "3",
           "skor": "0 - 3",
@@ -16149,13 +15777,8 @@
           "takim_b": "ANTEPİA",
           "takim_a_id": "2871",
           "takim_b_id": "2785",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/kayseri-cimnastik-spor-kulubu-t32165.png",
           "takim_b_logo": "/logos/antepia-spor-kulubu-t32178.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -16205,13 +15828,8 @@
           "takim_b": "MALATYA VOLEYBOL",
           "takim_a_id": "2833",
           "takim_b_id": "2879",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/elazg-ekol-spor-t36123.png",
           "takim_b_logo": "/logos/malatya-voleybol-kulubu-t40635.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -16261,13 +15879,8 @@
           "takim_b": "KAYSERİ VOLEYBOL",
           "takim_a_id": "2887",
           "takim_b_id": "2872",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/merinos-genclik-t16685.png",
           "takim_b_logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "1",
           "skor": "3 - 1",
@@ -16310,13 +15923,8 @@
           "takim_b": "ZEUGMA GAZİANTEP SPOR",
           "takim_a_id": "2863",
           "takim_b_id": "2930",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/kahramanmaras-buyuksehir-belediye-spor-kulubu-t45553.png",
           "takim_b_logo": "/logos/zeugma-spor-kulubu-t7352.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "3",
           "set_b": "0",
           "skor": "3 - 0",
@@ -16366,13 +15974,8 @@
           "takim_b": "FORLİVA KAYSERİ ATLETİK SPOR",
           "takim_a_id": "2893",
           "takim_b_id": "2870",
-<<<<<<< HEAD
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
           "takim_a_logo": "/logos/nicer-hotel-voleybol-t20783.png",
           "takim_b_logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
           "set_a": "2",
           "set_b": "3",
           "skor": "2 - 3",
@@ -18126,9 +17729,6 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/hakkari-genclik-sportif-faaliyetler-t20786",
-<<<<<<< HEAD
-          "takim_b_volleybox_url": "https://women.volleybox.net/tr/silopi-gelisim-faaliyetleri-t20790"
-=======
           "takim_a_volleybox_name": "Hakkari Gençlik Sportif Faaliyetler",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/silopi-gelisim-faaliyetleri-t20790",
           "takim_b_volleybox_name": "Silopi Gelişim Faaliyetleri Spor Kulübü",
@@ -18147,7 +17747,6 @@
               "has_diff": false
             }
           }
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
         },
         {
           "id": "2lig_g16_m6_2881_2885",
@@ -18548,13 +18147,8 @@
       "takim_b": "ELAZIĞ BLD. SPOR",
       "takim_a_id": "2847",
       "takim_b_id": "2832",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/gaziantep-belediye-sk-t28164.png",
       "takim_b_logo": "/logos/elazg-belediyesi-t20428.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "0",
       "set_b": "3",
       "skor": "0 - 3",
@@ -18604,13 +18198,8 @@
       "takim_b": "BAHÇEŞEHİR KOLEJİ AYVALIKSPOR",
       "takim_a_id": "2796",
       "takim_b_id": "2793",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/balkesir-ds-spor-t13448.png",
       "takim_b_logo": "/logos/bahcesehir-koleji-ayvalkspor-t22021.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -18660,13 +18249,8 @@
       "takim_b": "ALTAY",
       "takim_a_id": "2853",
       "takim_b_id": "2778",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/goztepe-sk-ii-t22628.png",
       "takim_b_logo": "/logos/altay-t19765.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -18716,13 +18300,8 @@
       "takim_b": "VOLKAN GÜÇ SPOR",
       "takim_a_id": "2850",
       "takim_b_id": "2923",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/gelisim-koleji-sk-t7132.png",
       "takim_b_logo": "/logos/volkan-guc-spor-kulubu-t27785.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "0",
       "set_b": "3",
       "skor": "0 - 3",
@@ -18772,13 +18351,8 @@
       "takim_b": "ÇERKEZKÖY VOLEYBOL AKADEMİ",
       "takim_a_id": "2821",
       "takim_b_id": "2820",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/corlu-belediyesi-spor-klubu-t17132.png",
       "takim_b_logo": "/logos/cerkezkoy-voleybol-akademi-t36232.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -18828,13 +18402,8 @@
       "takim_b": "ANTEPİA",
       "takim_a_id": "2871",
       "takim_b_id": "2785",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/kayseri-cimnastik-spor-kulubu-t32165.png",
       "takim_b_logo": "/logos/antepia-spor-kulubu-t32178.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -18884,13 +18453,8 @@
       "takim_b": "ÇANAKKALE ONSEKİZ MART ÜNİVERSİTESİ",
       "takim_a_id": "2795",
       "takim_b_id": "2815",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/balkesir-buyuksehir-belediyespor-t2978.png",
       "takim_b_logo": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -18940,13 +18504,8 @@
       "takim_b": "GEBZE GENÇLİK VE SPOR",
       "takim_a_id": "2829",
       "takim_b_id": "2849",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/duzce-voleybol-sk-t21292.png",
       "takim_b_logo": "/logos/gebze-genclik-ve-spor-sk-t40247.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -18996,13 +18555,8 @@
       "takim_b": "ANKARA BAROSU",
       "takim_a_id": "2890",
       "takim_b_id": "2782",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/msroglu-beytepespor-t30533.png",
       "takim_b_logo": "/logos/ankara-barosu-voleybol-t36080.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "1",
       "skor": "3 - 1",
@@ -19052,13 +18606,8 @@
       "takim_b": "YUNUSEMRE BLD. SPOR",
       "takim_a_id": "2801",
       "takim_b_id": "2929",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/bayrakl-belediye-t19913.png",
       "takim_b_logo": "/logos/yunusemre-belediyespor-t23089.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "1",
       "skor": "3 - 1",
@@ -19108,13 +18657,8 @@
       "takim_b": "ANKARA DSİ",
       "takim_a_id": "2837",
       "takim_b_id": "2783",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/eryaman-gelisim-sk-t13588.png",
       "takim_b_logo": "/logos/ankara-ds-gsk-t5617.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "0",
       "set_b": "3",
       "skor": "0 - 3",
@@ -19164,13 +18708,8 @@
       "takim_b": "BÜYÜK KARTEPE SPOR",
       "takim_a_id": "2811",
       "takim_b_id": "2808",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/golcuk-hsaniye-spor-kulubu-t13491.png",
       "takim_b_logo": "/logos/buyuk-kartepe-spor-t36192.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -19220,13 +18759,8 @@
       "takim_b": "ÇAN KALE SPOR",
       "takim_a_id": "2791",
       "takim_b_id": "2814",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/ayvalk-gelisim-spor-kulubu-t16196.png",
       "takim_b_logo": "/logos/can-genclik-kale-spor-kulubu-t6566.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "0",
       "set_b": "3",
       "skor": "0 - 3",
@@ -19276,13 +18810,8 @@
       "takim_b": "BOLU ATATÜRK ANADOLU LİSESİ",
       "takim_a_id": "2902",
       "takim_b_id": "2806",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/serdivan-belediyesi-spor-kulubu-t40630.png",
       "takim_b_logo": "/logos/bolu-voleybol-spor-kulubu-t13647.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -19332,13 +18861,8 @@
       "takim_b": "TVF SPOR LİSESİ",
       "takim_a_id": "2852",
       "takim_b_id": "2919",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/golbas-ncek-spor-kulubu-t30620.png",
       "takim_b_logo": "/logos/tvf-spor-lisesi-t2992.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "2",
       "set_b": "3",
       "skor": "2 - 3",
@@ -19388,13 +18912,8 @@
       "takim_b": "MALATYA VOLEYBOL",
       "takim_a_id": "2833",
       "takim_b_id": "2879",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/elazg-ekol-spor-t36123.png",
       "takim_b_logo": "/logos/malatya-voleybol-kulubu-t40635.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -19444,13 +18963,8 @@
       "takim_b": "ZEUGMA GAZİANTEP SPOR",
       "takim_a_id": "2863",
       "takim_b_id": "2930",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/kahramanmaras-buyuksehir-belediye-spor-kulubu-t45553.png",
       "takim_b_logo": "/logos/zeugma-spor-kulubu-t7352.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -19500,13 +19014,8 @@
       "takim_b": "FORLİVA KAYSERİ ATLETİK SPOR",
       "takim_a_id": "2893",
       "takim_b_id": "2870",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/nicer-hotel-voleybol-t20783.png",
       "takim_b_logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "2",
       "set_b": "3",
       "skor": "2 - 3",
@@ -19556,13 +19065,8 @@
       "takim_b": "YEŞİL BAYRAMİÇ",
       "takim_a_id": "2797",
       "takim_b_id": "2927",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/bandrma-celikspor-t36097.png",
       "takim_b_logo": "/logos/yesil-bayramic-sk-t2995.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "0",
       "set_b": "3",
       "skor": "0 - 3",
@@ -19612,13 +19116,8 @@
       "takim_b": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
       "takim_a_id": "2909",
       "takim_b_id": "2790",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/soke-belediye-saldos-voleybol-t7009.png",
       "takim_b_logo": "/logos/aydn-buyuksehir-belediyespor-ii-t13583.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "2",
       "set_b": "3",
       "skor": "2 - 3",
@@ -19668,13 +19167,8 @@
       "takim_b": "KAYSERİ VOLEYBOL",
       "takim_a_id": "2887",
       "takim_b_id": "2872",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/merinos-genclik-t16685.png",
       "takim_b_logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "1",
       "skor": "3 - 1",
@@ -19717,13 +19211,8 @@
       "takim_b": "EFOR GENÇLİK",
       "takim_a_id": "2779",
       "takim_b_id": "2830",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/zmir-altnay-spor-t36174.png",
       "takim_b_logo": "/logos/efor-genclik-spor-kulubu-t17198.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "0",
       "set_b": "3",
       "skor": "0 - 3",
@@ -19773,13 +19262,8 @@
       "takim_b": "DÜZCE 1907 SPOR",
       "takim_a_id": "2874",
       "takim_b_id": "2828",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
       "takim_b_logo": "/logos/duzce-1907-spor-kulubu-t40065.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -19829,13 +19313,8 @@
       "takim_b": "KAVAK SPOR",
       "takim_a_id": "2914",
       "takim_b_id": "2869",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/mke-ankaragucu-t2497.png",
       "takim_b_logo": "/logos/kavak-spor-kulubu-t20536.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "3",
       "set_b": "0",
       "skor": "3 - 0",
@@ -19885,13 +19364,8 @@
       "takim_b": "KOCAELİ VOLEYBOL AKADEMİ",
       "takim_a_id": "2907",
       "takim_b_id": "2875",
-<<<<<<< HEAD
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "takim_a_logo": "/logos/siyah-kugular-spor-kulubu-t45560.png",
       "takim_b_logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "set_a": "0",
       "set_b": "3",
       "skor": "0 - 3",
@@ -25592,9 +25066,6 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/samsunspor-t31533",
-<<<<<<< HEAD
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344"
-=======
       "takim_a_volleybox_name": "Konelsis Enerji Samsunspor",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344",
       "takim_b_volleybox_name": "52 Çamlık Spor",
@@ -25613,7 +25084,6 @@
           "has_diff": false
         }
       }
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
     },
     {
       "id": "2lig_g10_m24_2828_2811",
@@ -33407,11 +32877,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/balkesir-ds-spor-t13448.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/balkesir-ds-spor-t13448",
       "volleybox_name": "Balıkesir DSİ Spor",
@@ -33437,11 +32903,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/yesil-bayramic-sk-t2995.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/yesil-bayramic-sk-t2995",
       "volleybox_name": "Yeşil Bayramiç SK",
@@ -33467,11 +32929,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/balkesir-buyuksehir-belediyespor-t2978.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-t2978",
       "volleybox_name": "Balıkesir Büyükşehir Belediyespor",
@@ -33497,17 +32955,10 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "sezon": "2026-2027",
-      "volleybox_url": null,
-      "volleybox_name": null,
-=======
       "logo": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png",
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-t37223",
       "volleybox_name": "ÇOMÜ Spor Kulübü",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "grup_no": 5
     },
     {
@@ -33530,11 +32981,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/bandrma-celikspor-t36097.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/bandrma-celikspor-t36097",
       "volleybox_name": "Bandırma Çelikspor",
@@ -33560,11 +33007,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/bahcesehir-koleji-ayvalkspor-t22021.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/bahcesehir-koleji-ayvalkspor-t22021",
       "volleybox_name": "Bahçeşehir Koleji Ayvalıkspor",
@@ -33590,11 +33033,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/cerkezkoy-voleybol-akademi-t36232.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/cerkezkoy-voleybol-akademi-t36232",
       "volleybox_name": "Çerkezköy Voleybol Akademi Spor Kulübü",
@@ -33620,11 +33059,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/ayvalk-gelisim-spor-kulubu-t16196.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-t16196",
       "volleybox_name": "Ayvalık Gelişim Spor Kulübü",
@@ -33948,17 +33383,6 @@
       "takim_adi": "EFOR GENÇLİK",
       "o": 1,
       "g": 1,
-<<<<<<< HEAD
-      "m": 0,
-      "p": 3,
-      "as": 3,
-      "vs": 0,
-      "sav": "MAX",
-      "asp": 75,
-      "vsp": 56,
-      "spav": "1.339",
-      "a3_0": 1,
-=======
       "m": 0,
       "p": 3,
       "as": 3,
@@ -34046,7 +33470,6 @@
       "vsp": 92,
       "spav": "1.130",
       "a3_0": 0,
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "a3_1": 0,
       "a3_2": 1,
       "v2_3": 0,
@@ -34059,87 +33482,6 @@
       "grup_no": 7
     },
     {
-<<<<<<< HEAD
-      "sira": 3,
-      "takim_id": "2853",
-      "takim_adi": "GÖZTEPE",
-      "o": 1,
-      "g": 1,
-      "m": 0,
-      "p": 3,
-      "as": 3,
-      "vs": 0,
-      "sav": "MAX",
-      "asp": 75,
-      "vsp": 62,
-      "spav": "1.210",
-      "a3_0": 1,
-      "a3_1": 0,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/goztepe-sk-ii-t22628",
-      "volleybox_name": "Göztepe SK II",
-      "grup_no": 7
-    },
-    {
-      "sira": 4,
-      "takim_id": "2801",
-      "takim_adi": "BAYRAKLI BLD. SPOR",
-      "o": 1,
-      "g": 1,
-      "m": 0,
-      "p": 3,
-      "as": 3,
-      "vs": 1,
-      "sav": "3.000",
-      "asp": 94,
-      "vsp": 83,
-      "spav": "1.133",
-      "a3_0": 0,
-      "a3_1": 1,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/bayrakl-belediye-t19913",
-      "volleybox_name": "Bayraklı Belediyesi Spor Kulübü",
-      "grup_no": 7
-    },
-    {
-      "sira": 5,
-      "takim_id": "2790",
-      "takim_adi": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
-      "o": 1,
-      "g": 1,
-      "m": 0,
-      "p": 2,
-      "as": 3,
-      "vs": 2,
-      "sav": "1.500",
-      "asp": 104,
-      "vsp": 92,
-      "spav": "1.130",
-      "a3_0": 0,
-      "a3_1": 0,
-      "a3_2": 1,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-ii-t13583",
-      "volleybox_name": "Aydın Büyükşehir Belediyespor II",
-      "grup_no": 7
-    },
-    {
-=======
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sira": 6,
       "takim_id": "2909",
       "takim_adi": "SÖKE BELEDİYE SALDOS VOLEYBOL",
@@ -34159,11 +33501,7 @@
       "v2_3": 1,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/soke-belediye-saldos-voleybol-t7009.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/soke-belediye-saldos-voleybol-t7009",
       "volleybox_name": "Söke Belediye Saldos Voleybol",
@@ -34189,11 +33527,7 @@
       "v2_3": 0,
       "v1_3": 1,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/yunusemre-belediyespor-t23089.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/yunusemre-belediyespor-t23089",
       "volleybox_name": "Yunusemre Belediyespor",
@@ -34219,11 +33553,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/altay-t19765.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/altay-t19765",
       "volleybox_name": "Altay SK",
@@ -34249,11 +33579,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/zmir-altnay-spor-t36174.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/zmir-altnay-spor-t36174",
       "volleybox_name": "İzmir Altınay Spor Kulübü",
@@ -34279,11 +33605,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/gelisim-koleji-sk-t7132.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/gelisim-koleji-sk-t7132",
       "volleybox_name": "Gelişim Koleji SK",
@@ -34855,11 +34177,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/golcuk-hsaniye-spor-kulubu-t13491.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/golcuk-hsaniye-spor-kulubu-t13491",
       "volleybox_name": "Cadence Boya Gölcük İhsaniye Spor Kulübü",
@@ -34885,11 +34203,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/serdivan-belediyesi-spor-kulubu-t40630.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/serdivan-belediyesi-spor-kulubu-t40630",
       "volleybox_name": "Serdivan Belediyesi Spor Kulübü",
@@ -34915,11 +34229,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-t31227",
       "volleybox_name": "Kocaeli Voleybol Akademi Spor Kulübü",
@@ -34945,11 +34255,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/kocaeli-voleybol-akademi-spor-kulubu-t31227.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-t31227",
       "volleybox_name": "Kocaeli Voleybol Akademi Spor Kulübü",
@@ -34975,11 +34281,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/duzce-voleybol-sk-t21292.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/duzce-voleybol-sk-t21292",
       "volleybox_name": "Düzce Voleybol SK",
@@ -35005,11 +34307,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/gebze-genclik-ve-spor-sk-t40247.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/gebze-genclik-ve-spor-sk-t40247",
       "volleybox_name": "Gebze Gençlik Voleybol Kulübü",
@@ -35035,11 +34333,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/siyah-kugular-spor-kulubu-t45560.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-t45560",
       "volleybox_name": "Siyah Kuğular Spor Kulübü",
@@ -35065,11 +34359,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/duzce-1907-spor-kulubu-t40065.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/duzce-1907-spor-kulubu-t40065",
       "volleybox_name": "Düzce 1907 Spor Kulübü",
@@ -35095,11 +34385,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/bolu-voleybol-spor-kulubu-t13647.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/bolu-voleybol-spor-kulubu-t13647",
       "volleybox_name": "Bolu Atatürk Anadolu Lisesi Spor Kulübü",
@@ -35125,11 +34411,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/buyuk-kartepe-spor-t36192.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/buyuk-kartepe-spor-t36192",
       "volleybox_name": "Büyük Kartepe Spor",
@@ -35137,35 +34419,6 @@
     },
     {
       "sira": 11,
-<<<<<<< HEAD
-      "takim_id": "2981",
-      "takim_adi": "BARTIN VOLLEY ACADEMY",
-      "o": 0,
-      "g": 0,
-      "m": 0,
-      "p": 0,
-      "as": 0,
-      "vs": 0,
-      "sav": "0",
-      "asp": 0,
-      "vsp": 0,
-      "spav": "0",
-      "a3_0": 0,
-      "a3_1": 0,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-      "sezon": "2026-2027",
-      "volleybox_url": null,
-      "volleybox_name": null,
-      "grup_no": 10
-    },
-    {
-      "sira": 12,
-=======
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "takim_id": "2865",
       "takim_adi": "KARABÜK GENÇLİK SPOR",
       "o": 0,
@@ -35264,13 +34517,8 @@
       "v0_3": 0,
       "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "sezon": "2026-2027",
-<<<<<<< HEAD
-      "volleybox_url": null,
-      "volleybox_name": null,
-=======
       "volleybox_url": "https://women.volleybox.net/tr/ptt-spor-ii-t9985",
       "volleybox_name": "PTT Spor II",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "grup_no": 11
     },
     {
@@ -35293,11 +34541,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/msroglu-beytepespor-t30533.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/msroglu-beytepespor-t30533",
       "volleybox_name": "Mısıroğlu Beytepespor",
@@ -35349,11 +34593,7 @@
       "v2_3": 1,
       "v1_3": 0,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/golbas-ncek-spor-kulubu-t30620.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/golbas-ncek-spor-kulubu-t30620",
       "volleybox_name": "Gölbaşı İncek Spor Kulübü",
@@ -35379,11 +34619,7 @@
       "v2_3": 0,
       "v1_3": 1,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/ankara-barosu-voleybol-t36080.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/ankara-barosu-voleybol-t36080",
       "volleybox_name": "Ankara Barosu Spor Kulübü",
@@ -35409,11 +34645,7 @@
       "v2_3": 0,
       "v1_3": 1,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/sportsa-academy-volleyball-t13948.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/sportsa-academy-volleyball-t13948",
       "volleybox_name": "Çayyolu Sportsa Spor Kulübü",
@@ -35439,11 +34671,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/eryaman-gelisim-sk-t13588.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/eryaman-gelisim-sk-t13588",
       "volleybox_name": "Eryaman Gelişim SK",
@@ -35495,11 +34723,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/kavak-spor-kulubu-t20536.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
       "volleybox_name": "Kavak Spor Kulübü",
@@ -36487,11 +35711,7 @@
       "v2_3": 0,
       "v1_3": 1,
       "v0_3": 0,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/kayseri-atletik-spor-kulubu-t8654",
       "volleybox_name": "Forliva Kayseri Atletik Spor",
@@ -36517,11 +35737,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/zeugma-spor-kulubu-t7352.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-t7352",
       "volleybox_name": "Zeugma Spor Kulübü",
@@ -36547,11 +35763,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/antepia-spor-kulubu-t32178.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/antepia-spor-kulubu-t32178",
       "volleybox_name": "Antepia Spor Kulübü",
@@ -36577,11 +35789,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/gaziantep-belediye-sk-t28164.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/gaziantep-belediye-sk-t28164",
       "volleybox_name": "Gaziantep Büyükşehir Belediyespor",
@@ -36607,11 +35815,7 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 1,
-<<<<<<< HEAD
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
-=======
       "logo": "/logos/malatya-voleybol-kulubu-t40635.png",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/malatya-voleybol-kulubu-t40635",
       "volleybox_name": "Malatya Voleybol Kulübü",
