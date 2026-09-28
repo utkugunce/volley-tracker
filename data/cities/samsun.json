@@ -1,17 +1,10 @@
 {
-<<<<<<< HEAD
-  "updated_at": "2026-09-28T11:11:57.354808",
-  "city": "Samsun",
-  "slug": "samsun",
-  "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 28,
-=======
   "updated_at": "2026-09-28T07:48:55.285262",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 17,
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
   "source": "https://samsun.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -35,12 +28,8 @@
       "Bafra Ss",
       "Bahattin Ekinci Ss",
       "Köprülü Mehmet Paşa Ss",
-<<<<<<< HEAD
-      "Mustafa Dağıstanlı Ss",
-      "Terme Ss"
-=======
       "Mustafa Dağıstanlı Ss"
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
     ]
   },
   "standings": {
@@ -510,155 +499,12 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261024-009",
-      "city": "Samsun",
-      "date": "2026-10-24",
-      "time": "17:00",
-      "hall": "Mustafa Dağıstanlı Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği A Grubu",
-      "match_no": "9",
-      "home_team": "Atakum Atılım Spor Kulübü U18",
-      "away_team": "Gülizar Hasan Yılmaz Spor Lisesi Sk",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261025-010",
-      "city": "Samsun",
-      "date": "2026-10-25",
-      "time": "11:00",
-      "hall": "Bahattin Ekinci Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği A Grubu",
-      "match_no": "10",
-      "home_team": "Anadolu Voleybol Akademi Sk (B)",
-      "away_team": "Samsun Büyükşehir Sk",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261025-011",
-      "city": "Samsun",
-      "date": "2026-10-25",
-      "time": "13:00",
-      "hall": "Bafra Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği A Grubu",
-      "match_no": "11",
-      "home_team": "Bafra Vera Sk",
-      "away_team": "Samsun Volley Team U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261029-012",
-      "city": "Samsun",
-      "date": "2026-10-29",
-      "time": "19:15",
-      "hall": "Mustafa Dağıstanlı Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği A Grubu",
-      "match_no": "12",
-      "home_team": "19 Mayıs Gençlik Ve Spor U18",
-      "away_team": "Atakum Atılım Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261003-013",
-      "city": "Samsun",
-      "date": "2026-10-03",
-      "time": "13:00",
-      "hall": "Terme Ss",
-=======
       "id": "samsun-20261003-009",
       "city": "Samsun",
       "date": "2026-10-03",
       "time": "18:00",
       "hall": "Mustafa Dağıstanlı Ss",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
@@ -688,11 +534,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261004-014",
-=======
       "id": "samsun-20261004-010",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-04",
       "time": "11:00",
@@ -726,11 +569,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261004-015",
-=======
       "id": "samsun-20261004-011",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-04",
       "time": "14:00",
@@ -764,11 +604,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261006-016",
-=======
       "id": "samsun-20261006-012",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-06",
       "time": "19:15",
@@ -802,11 +639,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261010-017",
-=======
       "id": "samsun-20261010-013",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-10",
       "time": "13:00",
@@ -840,11 +674,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261010-018",
-=======
       "id": "samsun-20261010-014",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-10",
       "time": "14:00",
@@ -878,11 +709,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261011-019",
-=======
       "id": "samsun-20261011-015",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-11",
       "time": "13:00",
@@ -916,11 +744,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261011-020",
-=======
       "id": "samsun-20261011-016",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-11",
       "time": "14:00",
@@ -954,11 +779,8 @@
       }
     },
     {
-<<<<<<< HEAD
-      "id": "samsun-20261013-021",
-=======
       "id": "samsun-20261013-017",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "city": "Samsun",
       "date": "2026-10-13",
       "time": "19:15",
@@ -990,253 +812,9 @@
           "has_diff": false
         }
       }
-<<<<<<< HEAD
-    },
-    {
-      "id": "samsun-20261022-022",
-      "city": "Samsun",
-      "date": "2026-10-22",
-      "time": "19:15",
-      "hall": "Mustafa Dağıstanlı Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği B Grubu",
-      "match_no": "10",
-      "home_team": "Sam55 Sk",
-      "away_team": "Samsunspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261024-023",
-      "city": "Samsun",
-      "date": "2026-10-24",
-      "time": "13:00",
-      "hall": "Köprülü Mehmet Paşa Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği B Grubu",
-      "match_no": "11",
-      "home_team": "Vezirköprü Gençlik Spor Kulübü U18",
-      "away_team": "Atakum Atılım Sk (B)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261024-024",
-      "city": "Samsun",
-      "date": "2026-10-24",
-      "time": "13:00",
-      "hall": "Terme Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği B Grubu",
-      "match_no": "12",
-      "home_team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
-      "away_team": "Anadolu Voleybol Akademi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261025-025",
-      "city": "Samsun",
-      "date": "2026-10-25",
-      "time": "13:00",
-      "hall": "Bahattin Ekinci Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği B Grubu",
-      "match_no": "13",
-      "home_team": "Anadolu Voleybol Akademi SK U18",
-      "away_team": "Vezirköprü Gençlik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261025-026",
-      "city": "Samsun",
-      "date": "2026-10-25",
-      "time": "14:00",
-      "hall": "Atatürk Ss.",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği B Grubu",
-      "match_no": "14",
-      "home_team": "Atakum Atılım Sk (B)",
-      "away_team": "Nova Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261031-027",
-      "city": "Samsun",
-      "date": "2026-10-31",
-      "time": "11:00",
-      "hall": "Bahattin Ekinci Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği B Grubu",
-      "match_no": "15",
-      "home_team": "Sam55 Sk",
-      "away_team": "Atakum Atılım Sk (B)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "samsun-20261031-028",
-      "city": "Samsun",
-      "date": "2026-10-31",
-      "time": "13:00",
-      "hall": "25 Mayıs Ss",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Samsun Genç Kadınlar İl Birinciliği B Grubu",
-      "match_no": "16",
-      "home_team": "İlkkıvılcım Havza SK U18",
-      "away_team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    }
-  ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-28T11:15:25.797109"
-=======
     }
   ],
   "volleybox_synced_matches": 0,
   "volleybox_sync_updated_at": "2026-09-28T07:50:48.003889"
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
 }

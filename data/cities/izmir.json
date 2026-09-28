@@ -1,9 +1,6 @@
 {
-<<<<<<< HEAD
-  "updated_at": "2026-09-28T11:11:52.670824",
-=======
   "updated_at": "2026-09-28T07:48:37.734944",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -332,11 +329,8 @@
       },
       {
         "rank": 7,
-<<<<<<< HEAD
-        "team": "ÖZEGE Spor Kulübü U18",
-=======
         "team": "İZEGE Spor Kulübü U18",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -2299,11 +2293,8 @@
       "group": "Genç Kız - A Gr",
       "match_no": "3",
       "home_team": "Karşıyaka SK - B U18",
-<<<<<<< HEAD
-      "away_team": "ÖZEGE Spor Kulübü U18",
-=======
       "away_team": "İZEGE Spor Kulübü U18",
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -5206,9 +5197,6 @@
     }
   ],
   "volleybox_synced_matches": 78,
-<<<<<<< HEAD
-  "volleybox_sync_updated_at": "2026-09-28T11:15:25.619455"
-=======
   "volleybox_sync_updated_at": "2026-09-28T07:50:47.991860"
->>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
+
 }
