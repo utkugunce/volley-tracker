@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T16:38:16.019963",
+  "updated_at": "2026-09-28T16:07:48.053380",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -29,6 +29,28 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Tarsus Amerikan Koleji U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Alsancak Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -39,7 +61,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "Mersin İhtisas Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -50,7 +72,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "MEV Toros Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -61,7 +83,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -72,18 +94,7 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Tarsus Amerikan Koleji U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
+        "rank": 7,
         "team": "Tarsus Gelecek Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -94,19 +105,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Toroslar Belediye Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "team": "Toroslar Belediye Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -131,11 +131,15 @@
       "match_no": "1",
       "home_team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
       "away_team": "Tarsus Amerikan Koleji U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-15",
+        "27-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399640",
@@ -284,5 +288,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-28T16:42:05.493654"
+  "volleybox_sync_updated_at": "2026-09-28T16:09:27.817910"
 }
