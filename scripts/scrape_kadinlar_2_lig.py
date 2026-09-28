@@ -18,11 +18,23 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8")
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BASE_DIR not in sys.path:
+    sys.path.insert(0, BASE_DIR)
+
 import httpx
 from bs4 import BeautifulSoup
+try:
+    from curl_cffi import requests as cffi_requests
+    HAS_CURL_CFFI = True
+except ImportError:
+    cffi_requests = None
+    HAS_CURL_CFFI = False
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
+DATA_DIR = os.path.join(BASE_DIR, "data")
 OUTPUT_FILE = os.path.join(DATA_DIR, "kadinlar_2_lig.json")
+VBM_FILE = os.path.join(DATA_DIR, "volleybox-mappings.json")
+LOGOS_DIR = os.path.join(BASE_DIR, "public", "logos")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -41,9 +53,16 @@ def fetch_volleybox_teams():
     print("🔍 Volleybox 2. Lig takımları taranıyor...")
     volleybox_url = "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047"
     try:
-        r = httpx.get(volleybox_url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
+        if HAS_CURL_CFFI:
+            s = cffi_requests.Session(impersonate="chrome120")
+            r = s.get(volleybox_url, headers=HEADERS, timeout=20)
+        else:
+            r = httpx.get(volleybox_url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
         if r.status_code != 200:
-            print(f"⚠️ Volleybox HTTP {r.status_code} döndü.")
+            if r.status_code == 403:
+                print("⚠️ Volleybox otomatik erişimi HTTP 403 ile reddetti; kayıtlı takım eşleşmeleri kullanılacak.")
+            else:
+                print(f"⚠️ Volleybox HTTP {r.status_code} döndü; kayıtlı takım eşleşmeleri kullanılacak.")
             return {}
         soup = BeautifulSoup(r.text, "html.parser")
         team_links = {}
@@ -59,6 +78,12 @@ def fetch_volleybox_teams():
     except Exception as e:
         print(f"⚠️ Volleybox çekme hatası: {e}")
         return {}
+
+# TVF veya Volleybox üzerinde ligden çekilen/çıkarılan takımlar
+WITHDRAWN_TEAMS = {
+    "BARTIN VOLLEY ACADEMY",
+    "BARTIN VOLEYBOL KULÜBÜ",
+}
 
 def extract_standings_from_snapshot(snap_dict):
     lp = snap_dict.get("data", {}).get("leaguePoints", [])
@@ -100,7 +125,19 @@ def extract_standings_from_snapshot(snap_dict):
                                 "logo": t.get("LOGO") or "",
                                 "sezon": clean_text(t.get("SEZON", "2026-2027")),
                             })
-    return teams
+
+    # Ligden çekilen / çıkarılan takımları filtrele ve sıralamayı yeniden düzenle
+    filtered_teams = []
+    for t in teams:
+        t_name = clean_text(t.get("takim_adi", ""))
+        if any(w in t_name.upper() for w in WITHDRAWN_TEAMS):
+            continue
+        filtered_teams.append(t)
+
+    for idx, t in enumerate(filtered_teams, 1):
+        t["sira"] = idx
+
+    return filtered_teams
 
 def extract_fixtures_from_snapshot(snap_dict, group_id):
     lf = snap_dict.get("data", {}).get("leagueFixture", [])
@@ -148,7 +185,17 @@ def extract_fixtures_from_snapshot(snap_dict, group_id):
                                         "durum": "BİTTİ" if (set_a != "" and set_b != "") else "OYNANACAK",
                                         "mac_durumu_kod": str(m.get("MACDURUMU", "")),
                                     })
-    return matches
+
+    # Ligden çekilen / çıkarılan takımların maçlarını filtrele
+    filtered_matches = []
+    for m in matches:
+        t_a = clean_text(m.get("takim_a", "")).upper()
+        t_b = clean_text(m.get("takim_b", "")).upper()
+        if any(w in t_a for w in WITHDRAWN_TEAMS) or any(w in t_b for w in WITHDRAWN_TEAMS):
+            continue
+        filtered_matches.append(m)
+
+    return filtered_matches
 
 def normalize_for_match(name):
     n = name.lower()
@@ -164,8 +211,45 @@ def normalize_for_match(name):
     n = re.sub(r"[^a-z0-9]", "", n)
     return n
 
+KNOWN_2_LIG_ALIASES = {
+    "toyzz shop dinamo spor": ["dinamo kartal spor kulübü", "dinamo spor kulübü", "dinamo kartal"],
+    "çanakkale onsekiz mart üniversitesi": ["çomü spor kulübü", "çomü", "comu spor kulubu"],
+    "eskişehir şehir koleji eğt. kültür": ["şehir koleji eğitim kültür sk", "şehir koleji"],
+    "adana t.d.s.": ["adana tenis dağ ve su sporları kulübü", "atdsk"],
+    "adana sporcu eğitim spor": ["adana sporcu eğitim merkezi spor kulübü"],
+    "ahto": ["ahto spor kulübü", "ahto spor"],
+    "tms spor": ["tms voleybol spor kulübü", "tms voleybol"],
+    "kvk spor": ["kvk voleybol kulübü", "kvk voleybol"],
+    "yalova çiftlikköy bld. spor": ["çiftlikköy belediyespor", "çiftlikköy belediye"],
+    "galatasaray": ["galatasaray ll", "galatasaray ii"],
+}
+
+KNOWN_2_LIG_PROFILE_OVERRIDES = {
+    "alpspor": ("https://women.volleybox.net/tr/stanbul-alp-spor-t36171", "Alp Voleybol Kulübü"),
+    "asyakartallarikamarinspor": ("https://women.volleybox.net/tr/kamarin-spor-kulubu-t36145", "Kamarin Asya Kartalları SK"),
+    "muglaturkfethiyezirve": ("https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-t19942", "Fethiye Zirve Spor Kulübü"),
+    "ptt": ("https://women.volleybox.net/tr/ptt-spor-ii-t9985", "PTT Spor II"),
+    "ahmethamditanpinarortaokulu": ("https://women.volleybox.net/tr/ahmet-hamdi-tanpnar-ortaokulu-t20533", "AHTO Spor Kulübü"),
+    "tekmetalsportif": ("https://women.volleybox.net/tr/als-voleybol-t19501", "Tek Metal Sportif SK"),
+    "parsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Volley"),
+    "mardinderikrota": ("https://women.volleybox.net/tr/derik-rota-spor-kulubu-t45209", "Derik Rota Spor Kulübü"),
+}
+
 def match_volleybox(tvf_name, vb_dict):
     norm_tvf = normalize_for_match(tvf_name)
+
+    if norm_tvf in KNOWN_2_LIG_PROFILE_OVERRIDES:
+        return KNOWN_2_LIG_PROFILE_OVERRIDES[norm_tvf]
+    
+    # 0. Known explicit aliases
+    for kn, extra_als in KNOWN_2_LIG_ALIASES.items():
+        if normalize_for_match(kn) == norm_tvf:
+            for extra in extra_als:
+                extra_norm = normalize_for_match(extra)
+                for vb_name, url in vb_dict.items():
+                    if normalize_for_match(vb_name) == extra_norm:
+                        return url, vb_name
+
     # 1. Exact normalized match
     for vb_name, url in vb_dict.items():
         norm_vb = normalize_for_match(vb_name)
@@ -190,10 +274,14 @@ def match_volleybox(tvf_name, vb_dict):
 
     return None, None
 
-def main():
-    print("=" * 70)
-    print("🏐 TVF KADINLAR 2. LİGİ VERİ SENKRONİZASYON MOTORU")
-    print("=" * 70)
+def run_kadinlar_2_lig_scraper(silent: bool = False):
+    def log(msg):
+        if not silent:
+            print(msg)
+
+    log("=" * 70)
+    log("🏐 TVF KADINLAR 2. LİGİ VERİ SENKRONİZASYON MOTORU")
+    log("=" * 70)
     
     os.makedirs(DATA_DIR, exist_ok=True)
     vb_teams = fetch_volleybox_teams()
@@ -201,10 +289,14 @@ def main():
     client = httpx.Client(headers=HEADERS, timeout=30)
     
     # 1. Fetch Standings across all 16 groups
-    print("\n📊 16 Grubun Puan Durumu Çekiliyor...")
+    log("\n📊 16 Grubun Puan Durumu Çekiliyor...")
     r_standings = client.get("https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu")
     soup_s = BeautifulSoup(r_standings.text, "html.parser")
-    csrf_s = soup_s.find("meta", attrs={"name": "csrf-token"})["content"]
+    csrf_tag = soup_s.find("meta", attrs={"name": "csrf-token"})
+    if not csrf_tag:
+        log("❌ TVF Standings CSRF token bulunamadı!")
+        return None
+    csrf_s = csrf_tag["content"]
     client.headers["X-CSRF-TOKEN"] = csrf_s
     
     target_s = None
@@ -214,14 +306,14 @@ def main():
             break
             
     if not target_s:
-        print("❌ TVF Standings snapshot bulunamadı!")
-        sys.exit(1)
+        log("❌ TVF Standings snapshot bulunamadı!")
+        return None
         
     curr_s_str = target_s["wire:snapshot"]
     initial_s = json.loads(curr_s_str)
     
     groups_standings = {1: extract_standings_from_snapshot(initial_s)}
-    print(f"  ✅ Grup 1: {len(groups_standings[1])} takım")
+    log(f"  ✅ Grup 1: {len(groups_standings[1])} takım")
     
     for g in range(2, 17):
         payload = {
@@ -239,16 +331,20 @@ def main():
             snap_dict = json.loads(curr_s_str)
             teams = extract_standings_from_snapshot(snap_dict)
             groups_standings[g] = teams
-            print(f"  ✅ Grup {g}: {len(teams)} takım")
+            log(f"  ✅ Grup {g}: {len(teams)} takım")
         else:
-            print(f"  ⚠️ Grup {g} puan durumu alınamadı (HTTP {res.status_code})")
+            log(f"  ⚠️ Grup {g} puan durumu alınamadı (HTTP {res.status_code})")
             groups_standings[g] = []
             
     # 2. Fetch Fixtures across all 16 groups
-    print("\n📅 16 Grubun Fikstürü Çekiliyor...")
+    log("\n📅 16 Grubun Fikstürü Çekiliyor...")
     r_fix = client.get("https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur")
     soup_f = BeautifulSoup(r_fix.text, "html.parser")
-    csrf_f = soup_f.find("meta", attrs={"name": "csrf-token"})["content"]
+    csrf_f_tag = soup_f.find("meta", attrs={"name": "csrf-token"})
+    if not csrf_f_tag:
+        log("❌ TVF Fixture CSRF token bulunamadı!")
+        return None
+    csrf_f = csrf_f_tag["content"]
     client.headers["X-CSRF-TOKEN"] = csrf_f
     
     target_f = None
@@ -258,14 +354,14 @@ def main():
             break
             
     if not target_f:
-        print("❌ TVF Fixture snapshot bulunamadı!")
-        sys.exit(1)
+        log("❌ TVF Fixture snapshot bulunamadı!")
+        return None
         
     curr_f_str = target_f["wire:snapshot"]
     initial_f = json.loads(curr_f_str)
     
     groups_fixtures = {1: extract_fixtures_from_snapshot(initial_f, 1)}
-    print(f"  ✅ Grup 1: {len(groups_fixtures[1])} maç")
+    log(f"  ✅ Grup 1: {len(groups_fixtures[1])} maç")
     
     for g in range(2, 17):
         payload = {
@@ -283,13 +379,30 @@ def main():
             snap_dict = json.loads(curr_f_str)
             matches = extract_fixtures_from_snapshot(snap_dict, g)
             groups_fixtures[g] = matches
-            print(f"  ✅ Grup {g}: {len(matches)} maç")
+            log(f"  ✅ Grup {g}: {len(matches)} maç")
         else:
-            print(f"  ⚠️ Grup {g} fikstürü alınamadı (HTTP {res.status_code})")
+            log(f"  ⚠️ Grup {g} fikstürü alınamadı (HTTP {res.status_code})")
             groups_fixtures[g] = []
 
     # 3. Match Volleybox & Enrich
-    print("\n🔗 Takımlar Volleybox profilleri ile eşleştiriliyor...")
+    log("\n🔗 Takımlar Volleybox profilleri ile eşleştiriliyor...")
+    
+    # volleybox-mappings.json yükle (öncelikli ve güvenilir kaynak)
+    k2_mappings = {}
+    if os.path.exists(VBM_FILE):
+        try:
+            with open(VBM_FILE, "r", encoding="utf-8") as vf:
+                vbm_data = json.load(vf)
+                for item in vbm_data.get("mappings", []):
+                    if item.get("internal_category") == "Kadınlar 2. Ligi":
+                        iname = item.get("internal_name", "").strip().lower()
+                        k2_mappings[iname] = item
+                        for alias in item.get("aliases", []):
+                            k2_mappings[alias.strip().lower()] = item
+            log(f"  📖 {len(k2_mappings)} kayıtlı Volleybox eşleşmesi yüklendi.")
+        except Exception as mex:
+            log(f"  ⚠️ Mappings yüklenemedi: {mex}")
+
     all_teams_map = {}
     matched_count = 0
     total_unique_teams = 0
@@ -297,24 +410,79 @@ def main():
     for g, teams in groups_standings.items():
         for t in teams:
             t_name = t["takim_adi"]
-            vb_url, vb_name = match_volleybox(t_name, vb_teams)
+            name_clean = t_name.strip().lower()
+            
+            # 1. Önce volleybox-mappings.json'a bak
+            m_info = k2_mappings.get(name_clean)
+            if m_info:
+                vb_url = m_info.get("volleybox_url")
+                vb_name = m_info.get("matched_as")
+                logo_val = m_info.get("local_logo") or m_info.get("logo_url")
+            else:
+                # 2. Canlı Volleybox fuzzy matching fallback
+                vb_url, vb_name = match_volleybox(t_name, vb_teams)
+                logo_val = None
+
             t["volleybox_url"] = vb_url
             t["volleybox_name"] = vb_name
             t["grup_no"] = g
+            
+            # Disk'te logo varsa set et
+            if vb_url:
+                slug_m = re.search(r"([^/]+)$", vb_url.rstrip("/"))
+                if slug_m:
+                    slug = re.sub(r"[^a-zA-Z0-9_\-]", "", slug_m.group(1))
+                    dest_path = os.path.join(LOGOS_DIR, f"{slug}.png")
+                    if os.path.exists(dest_path) and os.path.getsize(dest_path) > 100:
+                        logo_val = f"/logos/{slug}.png"
+            
+            if logo_val:
+                t["logo"] = logo_val
+
             if vb_url:
                 matched_count += 1
             if t_name not in all_teams_map:
                 all_teams_map[t_name] = t
                 total_unique_teams += 1
 
+    # Önceki dosyadan Volleybox maç senkronizasyon verilerini koru (GitHub Actions veya periyodik cronlarda kaybolmasın)
+    existing_matches_map = {}
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, "r", encoding="utf-8") as ef:
+                prev_data = json.load(ef)
+                for pm in prev_data.get("tum_maclar", []):
+                    m_id = pm.get("id") or f"{pm.get('grup_no')}_{pm.get('mac_no')}"
+                    existing_matches_map[m_id] = pm
+        except Exception:
+            pass
+
     for g, matches in groups_fixtures.items():
         for m in matches:
             t_a = all_teams_map.get(m["takim_a"])
             t_b = all_teams_map.get(m["takim_b"])
-            if t_a and t_a.get("volleybox_url"):
-                m["takim_a_volleybox_url"] = t_a["volleybox_url"]
-            if t_b and t_b.get("volleybox_url"):
-                m["takim_b_volleybox_url"] = t_b["volleybox_url"]
+            if t_a:
+                if t_a.get("volleybox_url"):
+                    m["takim_a_volleybox_url"] = t_a["volleybox_url"]
+                if t_a.get("volleybox_name"):
+                    m["takim_a_volleybox_name"] = t_a["volleybox_name"]
+                if t_a.get("logo") and "takimlogoyok" not in t_a.get("logo", ""):
+                    m["takim_a_logo"] = t_a["logo"]
+            if t_b:
+                if t_b.get("volleybox_url"):
+                    m["takim_b_volleybox_url"] = t_b["volleybox_url"]
+                if t_b.get("volleybox_name"):
+                    m["takim_b_volleybox_name"] = t_b["volleybox_name"]
+                if t_b.get("logo") and "takimlogoyok" not in t_b.get("logo", ""):
+                    m["takim_b_logo"] = t_b["logo"]
+
+            m_id = m.get("id") or f"{m.get('grup_no')}_{m.get('mac_no')}"
+            prev_m = existing_matches_map.get(m_id)
+            if prev_m:
+                if prev_m.get("volleybox") and not m.get("volleybox"):
+                    m["volleybox"] = prev_m["volleybox"]
+                if prev_m.get("discrepancy") and not m.get("discrepancy"):
+                    m["discrepancy"] = prev_m["discrepancy"]
 
     # Flatten all matches
     all_matches = []
@@ -369,13 +537,43 @@ def main():
         "tum_takimlar": list(all_teams_map.values())
     }
 
+    synced_matches_count = sum(1 for m in all_matches if m.get("volleybox", {}).get("synced"))
+    if synced_matches_count > 0:
+        payload_data["metadata"]["volleybox_synced_matches"] = synced_matches_count
+        payload_data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload_data, f, ensure_ascii=False, indent=2)
 
-    print(f"\n🎉 Veriler başarıyla kaydedildi: {OUTPUT_FILE}")
-    print(f"   - 16 Grup")
-    print(f"   - {total_unique_teams} Takım ({matched_count} Volleybox eşleşti)")
-    print(f"   - {len(all_matches)} Karşılaşma")
+    log(f"\n🎉 Veriler başarıyla kaydedildi: {OUTPUT_FILE}")
+    log(f"   - 16 Grup")
+    log(f"   - {total_unique_teams} Takım ({matched_count} Volleybox eşleşti)")
+    log(f"   - {len(all_matches)} Karşılaşma")
+
+    # Mappings dosyasını da otomatik güncelle
+    try:
+        from scripts.merge_kadinlar_2_lig_mappings import merge_kadinlar_2_lig_mappings
+        merge_kadinlar_2_lig_mappings(silent=silent)
+    except Exception as me:
+        try:
+            from merge_kadinlar_2_lig_mappings import merge_kadinlar_2_lig_mappings
+            merge_kadinlar_2_lig_mappings(silent=silent)
+        except Exception:
+            pass
+
+    return payload_data
+
+def main():
+    run_kadinlar_2_lig_scraper(silent=False)
+    try:
+        from scripts.sync_volleybox_matches import sync_kadinlar_2_lig_matches
+        from pathlib import Path
+        print("\n🏐 Volleybox Kadınlar 2. Ligi maçları doğrulanıyor...")
+        k2_path = Path(OUTPUT_FILE)
+        sync_kadinlar_2_lig_matches(k2_path, {}, {})
+    except Exception as e:
+        print(f"Volleybox doğrulaması atlandı: {e}")
 
 if __name__ == "__main__":
     main()
+

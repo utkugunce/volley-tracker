@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "updated_at": "2026-09-28T11:11:50.389026",
+=======
+  "updated_at": "2026-09-28T07:48:28.584621",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -201,7 +205,7 @@
       },
       {
         "rank": 4,
-        "team": "Eskişehir Beyhan Rıfat Çıkılıoğlu A.L. Spor Kulübü",
+        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -247,7 +251,11 @@
       },
       {
         "rank": 3,
+<<<<<<< HEAD
         "team": "Eskişehir Türktelekom Spor Kulübü (A)",
+=======
+        "team": "Eskişehir Türk Telekom Spor Kulübü U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -258,7 +266,11 @@
       },
       {
         "rank": 4,
+<<<<<<< HEAD
         "team": "Eskişehir Ata Spor Kulübü (B)",
+=======
+        "team": "Eskişehir Ata Spor Kulübü - B U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -269,7 +281,11 @@
       },
       {
         "rank": 5,
+<<<<<<< HEAD
         "team": "Esnova Spor Kulübü (A)",
+=======
+        "team": "Esnova Spor Kulübü U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -293,7 +309,11 @@
       },
       {
         "rank": 2,
+<<<<<<< HEAD
         "team": "Eskişehir Ata Spor Kulübü (A)",
+=======
+        "team": "Eskişehir Ata Spor Kulübü U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -304,7 +324,11 @@
       },
       {
         "rank": 3,
+<<<<<<< HEAD
         "team": "Eskişehir Türktelekom Spor Kulübü (B)",
+=======
+        "team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -315,7 +339,7 @@
       },
       {
         "rank": 4,
-        "team": "Meryem Boz Spor Kulübü (A)",
+        "team": "Meryem Boz Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1047,7 +1071,7 @@
       "group": "- A Gr",
       "match_no": "4",
       "home_team": "Eskişehir DSİ Bentspor U16",
-      "away_team": "Eskişehir Beyhan Rıfat Çıkılıoğlu A.L. Spor Kulübü",
+      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1128,8 +1152,8 @@
       "gender": "Kız",
       "group": "- B Gr",
       "match_no": "1",
-      "home_team": "Eskişehir Ata Spor Kulübü (B)",
-      "away_team": "Eskişehir Türktelekom Spor Kulübü (A)",
+      "home_team": "Eskişehir Ata Spor Kulübü - B U16",
+      "away_team": "Eskişehir Türk Telekom Spor Kulübü U16",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -1173,7 +1197,7 @@
       "gender": "Kız",
       "group": "- B Gr",
       "match_no": "2",
-      "home_team": "Eskişehir Türktelekom Spor Kulübü (A)",
+      "home_team": "Eskişehir Türk Telekom Spor Kulübü U16",
       "away_team": "Şehir Koleji Eğitim Kültür SK U16",
       "score": "0 - 3",
       "home_score": 0,
@@ -1218,7 +1242,7 @@
       "gender": "Kız",
       "group": "- B Gr",
       "match_no": "3",
-      "home_team": "Eskişehir Ata Spor Kulübü (B)",
+      "home_team": "Eskişehir Ata Spor Kulübü - B U16",
       "away_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
       "score": "0 - 3",
       "home_score": 0,
@@ -1263,7 +1287,7 @@
       "gender": "Kız",
       "group": "- B Gr",
       "match_no": "4",
-      "home_team": "Eskişehir Türktelekom Spor Kulübü (A)",
+      "home_team": "Eskişehir Türk Telekom Spor Kulübü U16",
       "away_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -1305,7 +1329,7 @@
       "group": "- B Gr",
       "match_no": "5",
       "home_team": "Şehir Koleji Eğitim Kültür SK U16",
-      "away_team": "Eskişehir Ata Spor Kulübü (B)",
+      "away_team": "Eskişehir Ata Spor Kulübü - B U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1345,8 +1369,8 @@
       "gender": "Kız",
       "group": "- B Gr",
       "match_no": "6",
-      "home_team": "Esnova Spor Kulübü (A)",
-      "away_team": "Eskişehir Türktelekom Spor Kulübü (A)",
+      "home_team": "Esnova Spor Kulübü U16",
+      "away_team": "Eskişehir Türk Telekom Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1386,8 +1410,8 @@
       "gender": "Kız",
       "group": "- C Gr",
       "match_no": "1",
-      "home_team": "Eskişehir Ata Spor Kulübü (A)",
-      "away_team": "Eskişehir Türktelekom Spor Kulübü (B)",
+      "home_team": "Eskişehir Ata Spor Kulübü U16",
+      "away_team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -1434,7 +1458,11 @@
       "group": "- C Gr",
       "match_no": "2",
       "home_team": "Es Güneş Spor Kulübü U16",
+<<<<<<< HEAD
       "away_team": "Eskişehir Türktelekom Spor Kulübü (B)",
+=======
+      "away_team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1478,8 +1506,8 @@
       "gender": "Kız",
       "group": "- C Gr",
       "match_no": "3",
-      "home_team": "Meryem Boz Spor Kulübü (A)",
-      "away_team": "Eskişehir Ata Spor Kulübü (A)",
+      "home_team": "Meryem Boz Spor Kulübü U16",
+      "away_team": "Eskişehir Ata Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1519,7 +1547,7 @@
       "gender": "Kız",
       "group": "- C Gr",
       "match_no": "4",
-      "home_team": "Eskişehir Ata Spor Kulübü (A)",
+      "home_team": "Eskişehir Ata Spor Kulübü U16",
       "away_team": "Es Güneş Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -1773,5 +1801,9 @@
     }
   ],
   "volleybox_synced_matches": 32,
+<<<<<<< HEAD
   "volleybox_sync_updated_at": "2026-09-28T11:15:24.627174"
+=======
+  "volleybox_sync_updated_at": "2026-09-28T07:50:47.998330"
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
 }

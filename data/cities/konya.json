@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "updated_at": "2026-09-28T11:11:56.096322",
+=======
+  "updated_at": "2026-09-28T07:48:44.211482",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -429,5 +433,9 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
+<<<<<<< HEAD
   "volleybox_sync_updated_at": "2026-09-28T11:15:25.779530"
+=======
+  "volleybox_sync_updated_at": "2026-09-28T07:50:47.971869"
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { FixtureTable } from "../FixtureTable";
 import { Match } from "@/types/fixture";
@@ -87,8 +87,8 @@ describe("FixtureTable Component", () => {
     expect(screen.getByText("Bilinmeyen Spor Kulübü A")).toBeInTheDocument();
     expect(screen.getByText("Bilinmeyen Spor Kulübü B")).toBeInTheDocument();
 
-    // Volleybox harici linki render edilmemeli
-    expect(screen.queryByRole("link", { name: /volleybox/i })).not.toBeInTheDocument();
+    // Takımlar için Volleybox profil linki render edilmemeli
+    expect(screen.queryByRole("link", { name: /takım profili/i })).not.toBeInTheDocument();
 
     // Takım detay sayfası iç linkleri bulunmalı
     expect(
@@ -99,7 +99,7 @@ describe("FixtureTable Component", () => {
     ).toContain("/takim/bilinmeyen-spor-kulubu-b");
   });
 
-  it("lig başlığı için Volleybox turnuva linki render eder", () => {
+  it("lig başlığı için lig sayfası linki render eder", () => {
     render(
       <FixtureTable
         title="Genç Kızlar Süper Lig"
@@ -112,7 +112,7 @@ describe("FixtureTable Component", () => {
 
     const leagueLink = screen.getByRole("link", { name: "Genç Kızlar Süper Lig" });
     expect(leagueLink).toBeInTheDocument();
-    expect(leagueLink).toHaveAttribute("href", expect.stringContaining("women-stanbul-super-ligi-u18-2026-27-o50864"));
+    expect(leagueLink).toHaveAttribute("href", "/lig/istanbul/genc-kizlar-super-lig");
   });
 
   it("takım adının sonundaki A ve B harflerini her zaman tam olarak korur", () => {
@@ -161,6 +161,64 @@ describe("FixtureTable Component", () => {
     expect(screen.getByText("İSTANBUL •")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Genç Kızlar Süper Lig" })).toBeInTheDocument();
     expect(screen.getByText(/• A Grubu/)).toBeInTheDocument();
+  });
+
+  it("gizle butonuna basıldığında lig tablosunu gizler ve göster butonuna basıldığında tekrar açar", () => {
+    render(
+      <FixtureTable
+        title="Genç Kızlar Süper Lig"
+        matches={[mockMatchMapped]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+      />
+    );
+
+    // Başlangıçta maç görünür
+    expect(screen.getByText(/VakıfBank/i)).toBeInTheDocument();
+
+    // Gizle butonu mevcut
+    const toggleButton = screen.getByRole("button", { name: /Genç Kızlar Süper Lig ligini gizle/i });
+    expect(toggleButton).toBeInTheDocument();
+
+    // Gizleye tıkla
+    fireEvent.click(toggleButton);
+
+    // Maç tablosu gizlenmeli
+    expect(screen.queryByText(/VakıfBank/i)).not.toBeInTheDocument();
+
+    // Buton "Göster" olmalı
+    const expandButton = screen.getByRole("button", { name: /Genç Kızlar Süper Lig ligini göster/i });
+    expect(expandButton).toBeInTheDocument();
+
+    // Tekrar tıkla
+    fireEvent.click(expandButton);
+
+    // Maç tekrar görünür olmalı
+    expect(screen.getByText(/VakıfBank/i)).toBeInTheDocument();
+  });
+
+  it("kontrollü isCollapsed={true} verildiğinde maçları gizler ve onToggleCollapse callback'ini tetikler", () => {
+    const handleToggle = vi.fn();
+    render(
+      <FixtureTable
+        title="Yıldız Kızlar Süper Lig"
+        matches={[mockMatchMapped]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+        isCollapsible={true}
+        isCollapsed={true}
+        onToggleCollapse={handleToggle}
+      />
+    );
+
+    // Kontrollü olarak gizli olmalı
+    expect(screen.queryByText(/VakıfBank/i)).not.toBeInTheDocument();
+
+    // Göster butonuna basıldığında callback tetiklenmeli
+    const expandButton = screen.getByRole("button", { name: /Yıldız Kızlar Süper Lig ligini göster/i });
+    fireEvent.click(expandButton);
+
+    expect(handleToggle).toHaveBeenCalledTimes(1);
   });
 });
 

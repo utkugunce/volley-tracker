@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "updated_at": "2026-09-28T11:11:53.118369+03:00",
+=======
+  "updated_at": "2026-09-28T07:48:34.430799+00:00",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1902,7 +1906,7 @@
       },
       {
         "rank": 7,
-        "team": "Bizimkent Voleybol Spor Kulübü U16 - A",
+        "team": "Bizimkent Voleybol Spor Kulübü U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -2057,7 +2061,7 @@
       },
       {
         "rank": 6,
-        "team": "Akademi Atletik Spor U16",
+        "team": "Marmara Akademi Atletik Spor Kulübü U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -2850,7 +2854,7 @@
       "group": "C Grubu",
       "match_no": "2",
       "home_team": "Eczacıbaşı - B U16",
-      "away_team": "Akademi Atletik Spor U16",
+      "away_team": "Marmara Akademi Atletik Spor Kulübü U16",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -3032,7 +3036,7 @@
       "group": "B Grubu",
       "match_no": "3",
       "home_team": "Sarıyer Belediyesi Spor Kulübü U16",
-      "away_team": "Bizimkent Voleybol Spor Kulübü U16 - A",
+      "away_team": "Bizimkent Voleybol Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -4349,7 +4353,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "7",
-      "home_team": "Bizimkent Voleybol Spor Kulübü U16 - A",
+      "home_team": "Bizimkent Voleybol Spor Kulübü U16",
       "away_team": "Yeşilyurt Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -4472,7 +4476,7 @@
       "gender": "Kız",
       "group": "C Grubu",
       "match_no": "6",
-      "home_team": "Akademi Atletik Spor U16",
+      "home_team": "Marmara Akademi Atletik Spor Kulübü U16",
       "away_team": "VakıfBank - A U16",
       "score": "- : -",
       "home_score": null,
@@ -5119,5 +5123,9 @@
     }
   ],
   "volleybox_synced_matches": 67,
+<<<<<<< HEAD
   "volleybox_sync_updated_at": "2026-09-28T11:15:24.142808"
+=======
+  "volleybox_sync_updated_at": "2026-09-28T07:50:47.958533"
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
 }

@@ -1,11 +1,26 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { StandingItem } from "@/types/fixture";
-import { Trophy, HelpCircle, MapPin, Layers, Download, TrendingUp, TrendingDown, Minus } from "lucide-react";
+import {
+  Trophy,
+  HelpCircle,
+  MapPin,
+  Layers,
+  Download,
+  TrendingUp,
+  TrendingDown,
+  Minus,
+  ChevronDown,
+  ChevronRight,
+  Search,
+  Check,
+  X,
+} from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { slugify } from "@/utils/slugify";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 const TURKISH_CITIES = [
   "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
@@ -28,6 +43,13 @@ interface ParsedStandingContext {
   leagueFullName: string; // e.g. "Genç Kızlar Süper Lig"
   rawGroup: string; // e.g. "Genç Kızlar Süper Lig 1. Grup" or "A Grubu"
   displayGroup: string; // e.g. "1. Grup" or "A Grubu"
+}
+
+export interface StandingsTeamContext {
+  rawKey: string;
+  city: string;
+  leagueName: string;
+  groupName: string;
 }
 
 function parseStandingKey(rawKey: string, defaultCity?: string): ParsedStandingContext {
@@ -182,9 +204,10 @@ interface StandingsTableProps {
     [category: string]: StandingItem[];
   };
   city?: string;
+  onSelectTeam?: (team: StandingItem, context: StandingsTeamContext) => void;
 }
 
-export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city }) => {
+export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city, onSelectTeam }) => {
   const allKeys = Object.keys(standingsData);
 
   // Tüm anahtarları ayrıştır
@@ -205,6 +228,39 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
     if (city && distinctCities.includes(city)) return city;
     return distinctCities[0] || "";
   });
+
+  const [isCityDropdownOpen, setIsCityDropdownOpen] = useState<boolean>(false);
+  const [citySearchTerm, setCitySearchTerm] = useState<string>("");
+  const [isCategoryGroupOpen, setIsCategoryGroupOpen] = useState<boolean>(true);
+  const cityDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Dışarı tıklayınca dropdown'ı kapat
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        cityDropdownRef.current &&
+        !cityDropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsCityDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // İl arama filtresi (Türkçe karakter duyarlı)
+  const filteredCities = useMemo(() => {
+    if (!citySearchTerm.trim()) return distinctCities;
+    const q = trLower(citySearchTerm).trim();
+    return distinctCities.filter((c) => trIncludes(c, q));
+  }, [distinctCities, citySearchTerm]);
+
+  const handleCitySelect = (cityName: string) => {
+    setSelectedCity(cityName);
+    setIsCityDropdownOpen(false);
+    setCitySearchTerm("");
+    setIsCategoryGroupOpen(true); // "ili seçince altındaki kategori grup kısmı da açılsın"
+  };
 
   useEffect(() => {
     if (city && distinctCities.includes(city)) {
@@ -335,111 +391,254 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
   return (
     <div className="space-y-4">
       {/* Kategori, Lig ve Grup Seçici Barı */}
-      <div className="glass-panel p-4 rounded-2xl border border-slate-800/80 shadow-card no-print space-y-3">
+      <div
+        className={`glass-panel p-4 rounded-2xl border border-slate-800/80 shadow-card no-print space-y-3 relative ${
+          isCityDropdownOpen ? "z-30" : "z-10"
+        }`}
+      >
         
-        {/* 1. İL SEÇİMİ (Yalnızca "Tüm İller" modunda veya birden fazla il varsa gösterilir) */}
+        {/* 1. İL SEÇİMİ (Açılır Menü / Dropdown) */}
         {distinctCities.length > 1 && (
-          <div className="flex flex-wrap items-center gap-1.5 pb-2.5 border-b border-slate-800/80">
-            <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px] flex items-center gap-1">
-              <MapPin size={12} className="text-rose-400 shrink-0" />
-              İL:
-            </span>
-            {distinctCities.map((cityName) => {
-              const isActive = selectedCity === cityName;
-              return (
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
+            <div className="flex items-center gap-2.5 flex-wrap">
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase flex items-center gap-1.5 shrink-0">
+                <MapPin size={13} className="text-rose-400 shrink-0" />
+                İL:
+              </span>
+
+              {/* Şehir Seçim Dropdown Menüsü */}
+              <div className="relative" ref={cityDropdownRef}>
                 <button
-                  key={cityName}
-                  onClick={() => setSelectedCity(cityName)}
-                  title={cityName}
-                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 cursor-pointer ${
-                    isActive
-                      ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/30 font-bold"
-                      : "bg-slate-800/70 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/60"
-                  }`}
+                  type="button"
+                  onClick={() => setIsCityDropdownOpen(!isCityDropdownOpen)}
+                  aria-expanded={isCityDropdownOpen}
+                  aria-haspopup="listbox"
+                  aria-label={selectedCity || "İl Seçiniz"}
+                  className="flex items-center justify-between gap-2.5 bg-slate-900/90 hover:bg-slate-850 text-white text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-700/80 hover:border-slate-600 transition-all shadow-sm active:scale-95 cursor-pointer min-w-[210px] sm:min-w-[240px] focus:outline-none focus:ring-1 focus:ring-red-500"
                 >
-                  {cityName}
+                  <span className="flex items-center gap-2 truncate">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 shadow-2xs" />
+                    <span className="text-white font-extrabold truncate text-[13px]">
+                      {selectedCity || "İl Seçiniz"}
+                    </span>
+                  </span>
+                  <div className="flex items-center gap-1.5 shrink-0 text-slate-400">
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">
+                      {distinctCities.length} İl
+                    </span>
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform duration-200 text-slate-400 ${
+                        isCityDropdownOpen ? "rotate-180 text-rose-400" : ""
+                      }`}
+                    />
+                  </div>
                 </button>
-              );
-            })}
+
+                {/* Dropdown Açılır Menü */}
+                {isCityDropdownOpen && (
+                  <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 bg-[#0f172a] border border-slate-700/90 rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+                    {/* Arama Inputu */}
+                    <div className="p-2.5 border-b border-slate-800 bg-[#0b1325]">
+                      <div className="relative">
+                        <Search
+                          size={13}
+                          className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+                        />
+                        <input
+                          type="text"
+                          placeholder="İl ara (örn: Ankara, İstanbul, İzmir)..."
+                          value={citySearchTerm}
+                          onChange={(e) => setCitySearchTerm(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Escape") {
+                              setIsCityDropdownOpen(false);
+                            } else if (e.key === "Enter" && filteredCities.length === 1) {
+                              handleCitySelect(filteredCities[0]);
+                            }
+                          }}
+                          className="w-full bg-slate-900/90 border border-slate-700/70 text-slate-200 text-xs rounded-xl pl-8 pr-7 py-1.5 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 placeholder-slate-500"
+                          autoFocus
+                        />
+                        {citySearchTerm && (
+                          <button
+                            type="button"
+                            onClick={() => setCitySearchTerm("")}
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-0.5 rounded cursor-pointer"
+                            title="Temizle"
+                          >
+                            <X size={12} />
+                          </button>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between text-[10px] text-slate-400 px-1 pt-1.5">
+                        <span>Kayıtlı İller</span>
+                        <span className="font-mono text-slate-400">
+                          {filteredCities.length} / {distinctCities.length} İl
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Şehirler Listesi */}
+                    <div
+                      className="max-h-64 overflow-y-auto p-1.5 space-y-0.5 custom-scrollbar"
+                      role="listbox"
+                    >
+                      {filteredCities.length === 0 ? (
+                        <div className="p-4 text-center text-xs text-slate-500">
+                          Eşleşen il bulunamadı.
+                        </div>
+                      ) : (
+                        filteredCities.map((cityName) => {
+                          const isSelected = selectedCity === cityName;
+                          return (
+                            <button
+                              key={cityName}
+                              type="button"
+                              role="option"
+                              aria-selected={isSelected}
+                              onClick={() => handleCitySelect(cityName)}
+                              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                                isSelected
+                                  ? "bg-red-600/20 text-rose-300 font-bold border border-red-500/40"
+                                  : "text-slate-300 hover:text-white hover:bg-slate-800/80"
+                              }`}
+                            >
+                              <span className="flex items-center gap-2 truncate">
+                                <span
+                                  className={`w-1.5 h-1.5 rounded-full ${
+                                    isSelected
+                                      ? "bg-rose-500 shadow-glow-red"
+                                      : "bg-slate-600"
+                                  }`}
+                                />
+                                <span className="truncate">{cityName}</span>
+                              </span>
+                              {isSelected && (
+                                <Check
+                                  size={14}
+                                  className="text-rose-400 shrink-0"
+                                />
+                              )}
+                            </button>
+                          );
+                        })
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Seçili İl ve Açılır/Kapanır Gösterge */}
+            {selectedCity && (
+              <div className="flex items-center gap-2 self-start sm:self-auto text-xs text-slate-400">
+                <span className="text-[11px] font-medium text-slate-400">
+                  Seçili İl: <strong className="text-white font-bold">{selectedCity}</strong>
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsCategoryGroupOpen(!isCategoryGroupOpen)}
+                  className="text-[11px] font-semibold text-rose-400 hover:text-rose-300 transition-colors flex items-center gap-1 cursor-pointer bg-slate-800/60 px-2.5 py-1 rounded-lg border border-slate-700/60"
+                >
+                  <span>{isCategoryGroupOpen ? "Filtreleri Gizle" : "Kategori & Grupları Aç"}</span>
+                  <ChevronDown
+                    size={12}
+                    className={`transition-transform duration-200 ${
+                      isCategoryGroupOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              </div>
+            )}
           </div>
         )}
 
-        {/* 2. KATEGORİ / YAŞ GRUBU SEÇİMİ (Genç / Yıldız vb.) */}
-        {availableAgeGroups.length > 0 && (
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px] flex items-center gap-1">
-              <Layers size={12} className="text-amber-400 shrink-0" />
-              Kategori:
-            </span>
-            {availableAgeGroups.map((age) => {
-              const isActive = selectedAgeGroup === age;
-              return (
-                <button
-                  key={age}
-                  onClick={() => setSelectedAgeGroup(age)}
-                  title={age}
-                  className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
-                    isActive
-                      ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/30"
-                      : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
-                  }`}
-                >
-                  <span>{age}</span>
-                </button>
-              );
-            })}
-          </div>
-        )}
+        {/* 2. KATEGORİ, LİG VE GRUP SEÇİCİ BÖLÜMÜ (İl seçilince açılır) */}
+        {!distinctCities || distinctCities.length <= 1 || (selectedCity && isCategoryGroupOpen) ? (
+          <div className="space-y-3 animate-in fade-in slide-in-from-top-1 duration-200">
+            {/* Kategori / Yaş Grubu Seçimi */}
+            {availableAgeGroups.length > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5">
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px] flex items-center gap-1">
+                  <Layers size={12} className="text-amber-400 shrink-0" />
+                  Kategori:
+                </span>
+                {availableAgeGroups.map((age) => {
+                  const isActive = selectedAgeGroup === age;
+                  return (
+                    <button
+                      key={age}
+                      onClick={() => setSelectedAgeGroup(age)}
+                      title={age}
+                      className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+                        isActive
+                          ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/30"
+                          : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
+                      }`}
+                    >
+                      <span>{age}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
 
-        {/* 3. LİG SEÇİMİ (Yalnızca o kategoride birden çok lig varsa, örn: Süper Lig vs 1. Lig) */}
-        {availableLeagues.length > 1 && (
-          <div className="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-800/80">
-            <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px]">
-              Lig:
-            </span>
-            {availableLeagues.map((lg) => {
-              const isActive = selectedLeagueTier === lg;
-              return (
-                <button
-                  key={lg}
-                  onClick={() => setSelectedLeagueTier(lg)}
-                  title={lg}
-                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-150 cursor-pointer ${
-                    isActive
-                      ? "bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-xs font-bold ring-2 ring-indigo-500/30"
-                      : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50"
-                  }`}
-                >
-                  {lg}
-                </button>
-              );
-            })}
-          </div>
-        )}
+            {/* Lig Seçimi (Birden çok lig varsa) */}
+            {availableLeagues.length > 1 && (
+              <div className="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-800/80">
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px]">
+                  Lig:
+                </span>
+                {availableLeagues.map((lg) => {
+                  const isActive = selectedLeagueTier === lg;
+                  return (
+                    <button
+                      key={lg}
+                      onClick={() => setSelectedLeagueTier(lg)}
+                      title={lg}
+                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-150 cursor-pointer ${
+                        isActive
+                          ? "bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-xs font-bold ring-2 ring-indigo-500/30"
+                          : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50"
+                      }`}
+                    >
+                      {lg}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
 
-        {/* 4. GRUP SEÇİMİ */}
-        {availableGroups.length > 0 && (
-          <div className="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-800/80">
-            <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px]">
-              Grup:
-            </span>
-            {availableGroups.map((grp) => {
-              const isActive = selectedGroupKey === grp.rawKey;
-              return (
-                <button
-                  key={grp.rawKey}
-                  onClick={() => setSelectedGroupKey(grp.rawKey)}
-                  title={grp.rawGroup || grp.displayGroup}
-                  className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-150 cursor-pointer ${
-                    isActive
-                      ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-xs font-bold ring-1 ring-red-500/40"
-                      : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50"
-                  }`}
-                >
-                  {grp.displayGroup}
-                </button>
-              );
-            })}
+            {/* Grup Seçimi */}
+            {availableGroups.length > 0 && (
+              <div className="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-800/80">
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px]">
+                  Grup:
+                </span>
+                {availableGroups.map((grp) => {
+                  const isActive = selectedGroupKey === grp.rawKey;
+                  return (
+                    <button
+                      key={grp.rawKey}
+                      onClick={() => setSelectedGroupKey(grp.rawKey)}
+                      title={grp.rawGroup || grp.displayGroup}
+                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-150 cursor-pointer ${
+                        isActive
+                          ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-xs font-bold ring-1 ring-red-500/40"
+                          : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50"
+                      }`}
+                    >
+                      {grp.displayGroup}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="p-4 text-center text-xs text-slate-400 bg-slate-900/50 rounded-xl border border-dashed border-slate-800">
+            Lütfen kategori ve grupları listelemek için yukarıdaki açılır menüden bir il seçiniz.
           </div>
         )}
       </div>
@@ -509,22 +708,20 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Oynanan Maç">O</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Galibiyet">G</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Mağlubiyet">M</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center w-16 sm:w-24" title="Aldığı Set - Verdiği Set">Setler</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-12 sm:w-16 hidden md:table-cell" title="Set Oranı">Set Oran</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center w-20 sm:w-28 hidden lg:table-cell" title="Aldığı Sayı - Verdiği Sayı">Sayılar</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center w-12 sm:w-16 bg-slate-900/80 font-black text-white" title="Puan">P</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-center w-28 sm:w-36 hidden sm:table-cell" title="Son 5 Maç Formu">Form</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Aldığı Set">AS</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Verdiği Set">VS</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Set Oranı">Set Oran</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Sayı Oranı">Sayı Oran</th>
+                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-black text-white" title="Puan">Puan</th>
+                  <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-center" title="Son 5 Maç Formu">Form</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/60">
                 {items.map((row) => {
                   const isTop1 = row.rank === 1;
                   const isTop4 = row.rank <= 4;
-                  const isPlayoff = row.rank <= 4;
-                  const isKlasman = row.rank > 4 && row.rank <= 8;
-
-                  const totalSets = (row.sets_won || 0) + (row.sets_lost || 0);
-                  const setWinPct = totalSets > 0 ? Math.round(((row.sets_won || 0) / totalSets) * 100) : 0;
+                  const isPlayoff = row.rank <= 2;
+                  const isKlasman = row.rank > 2 && row.rank <= 8;
 
                   // Trend: son maça göre
                   const lastForm = row.form && row.form.length > 0 ? row.form[row.form.length - 1] : null;
@@ -534,7 +731,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       key={row.rank}
                       className={`transition-colors duration-150 ${
                         isTop1
-                          ? "bg-amber-500/10 hover:bg-amber-500/15"
+                          ? "bg-emerald-500/5 hover:bg-emerald-500/10"
                           : isPlayoff
                           ? "bg-emerald-500/5 hover:bg-emerald-500/10"
                           : isKlasman
@@ -548,9 +745,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-bold text-xs relative">
                         <span
                           className={`absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r ${
-                            isTop1
-                              ? "bg-amber-400 shadow-glow-amber"
-                              : isPlayoff
+                            isPlayoff
                               ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
                               : isKlasman
                               ? "bg-amber-500/80 shadow-[0_0_6px_rgba(245,158,11,0.4)]"
@@ -586,18 +781,36 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
                       {/* Takım Adı */}
                       <td className="py-2.5 sm:py-3 px-2 sm:px-4 font-bold text-white whitespace-nowrap text-xs sm:text-sm">
-                        <TeamVolleyboxLink
-                          teamName={row.team}
-                          category={activeContext?.leagueFullName}
-                          city={activeContext?.city || city}
-                          className={`transition-colors ${
-                            isTop1
-                              ? "font-black text-white"
-                              : isTop4
-                              ? "font-bold text-white"
-                              : "font-semibold text-slate-200 hover:text-white"
-                          }`}
-                        />
+                        <div className="flex items-center gap-1.5">
+                          <TeamVolleyboxLink
+                            teamName={row.team}
+                            category={activeContext?.leagueFullName}
+                            city={activeContext?.city || city}
+                            className={`transition-colors ${
+                              isTop1
+                                ? "font-black text-white"
+                                : isTop4
+                                ? "font-bold text-white"
+                                : "font-semibold text-slate-200 hover:text-white"
+                            }`}
+                          />
+                          {onSelectTeam && (
+                            <button
+                              type="button"
+                              onClick={() => onSelectTeam(row, {
+                                rawKey: activeContext?.rawKey || "",
+                                city: activeContext?.city || city || "",
+                                leagueName: activeContext?.leagueFullName || "",
+                                groupName: activeContext?.displayGroup || "",
+                              })}
+                              className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded text-slate-500 transition-colors hover:bg-slate-700 hover:text-white"
+                              aria-label={`${row.team} takımını incele`}
+                              title="Takımı incele"
+                            >
+                              <ChevronRight size={14} />
+                            </button>
+                          )}
+                        </div>
                       </td>
 
                       {/* O */}
@@ -615,42 +828,26 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                         {row.lost}
                       </td>
 
-                      {/* Setler (AS - VS) + Mini Oran Çubuğu */}
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center font-mono text-slate-200 whitespace-nowrap text-[11px] sm:text-xs">
-                        <div className="flex flex-col items-center">
-                          <div>
-                            <span className="font-bold text-white">{row.sets_won}</span>
-                            <span className="text-slate-500 mx-0.5 sm:mx-1">:</span>
-                            <span className="text-slate-400">{row.sets_lost}</span>
-                          </div>
-                          {totalSets > 0 && (
-                            <div className="w-8 sm:w-12 h-1 bg-slate-800 rounded-full overflow-hidden mt-1 flex" title={`Set Kazanma: %${setWinPct}`}>
-                              <div
-                                style={{ width: `${setWinPct}%` }}
-                                className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full transition-all"
-                              />
-                            </div>
-                          )}
-                        </div>
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-emerald-300 text-[11px] sm:text-xs">
+                        {row.sets_won}
                       </td>
-
-                      {/* Set Oranı */}
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-400 hidden md:table-cell text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-rose-300 text-[11px] sm:text-xs">
+                        {row.sets_lost}
+                      </td>
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-300 text-[11px] sm:text-xs">
                         {row.set_ratio}
                       </td>
 
-                      {/* Sayılar (AP - VP) */}
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center font-mono text-slate-400 text-[10px] sm:text-[11px] hidden lg:table-cell whitespace-nowrap">
-                        {row.points_won}:{row.points_lost}
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-300 text-[11px] sm:text-xs">
+                        {row.point_ratio}
                       </td>
 
-                      {/* Puan (P) */}
                       <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-mono font-black text-xs sm:text-sm text-white border-x border-slate-800/60 shadow-inner">
                         {row.points}
                       </td>
 
                       {/* Form */}
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-4 text-center hidden sm:table-cell">
+                      <td className="py-2.5 sm:py-3 px-2 sm:px-4 text-center">
                         <div className="flex items-center justify-center gap-1">
                           {(row.form || []).map((f, fIdx) => (
                             <span
@@ -680,11 +877,11 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-emerald-500 shadow-xs" />
-              <span className="font-bold text-slate-200">1 - 4: Final Etabı (Play-Off)</span>
+              <span className="font-bold text-slate-200">1 - 2: Final Etabı (Play-Off)</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-amber-500 shadow-xs" />
-              <span className="font-bold text-slate-300">5 - 8: Klasman Etabı</span>
+              <span className="font-bold text-slate-300">3 - 8: Klasman Etabı</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-slate-700" />

@@ -81,4 +81,49 @@ describe("TodayMatchesView Component", () => {
     expect(screen.getByText(/Arkas/)).toBeInTheDocument();
     expect(screen.getByText(/Göztepe/)).toBeInTheDocument();
   });
+
+  it("dün oynanmış ama sonucu henüz girilmemiş maçları günün maçlarında skorsuz olarak gösterir", () => {
+    const matchesWithYesterdayUnscored: Match[] = [
+      {
+        id: "m_yesterday_unscored",
+        city: "Ankara",
+        date: "2026-09-26",
+        time: "15:00",
+        hall: "Başkent Voleybol Salonu",
+        category: "Genç Kızlar Süper Lig",
+        age_group: "Genç",
+        gender: "Kız",
+        group: "A Grubu",
+        match_no: "201",
+        home_team: "Zeren Spor",
+        away_team: "İlbank",
+        score: "- : -",
+        status: "upcoming",
+      },
+    ];
+
+    render(
+      <TodayMatchesView
+        matches={matchesWithYesterdayUnscored}
+        city="Ankara"
+        todayStr="2026-09-27"
+        yesterdayStr="2026-09-26"
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+        onNavigateToFullFixtures={vi.fn()}
+      />
+    );
+
+    // Günün Maçları listesinde yer almalı
+    expect(screen.getByText("Günün Maçları")).toBeInTheDocument();
+    expect(screen.getByText(/Zeren Spor/i)).toBeInTheDocument();
+    expect(screen.getByText(/İlbank/i)).toBeInTheDocument();
+
+    // Dün ve Skor Bekleniyor rozeti görünmeli
+    expect(screen.getByText("Dün")).toBeInTheDocument();
+    expect(screen.getByText("DÜN • SKOR BEKLENİYOR")).toBeInTheDocument();
+
+    // Skorsuz olarak (--) gösterilmeli
+    expect(screen.getAllByText("--").length).toBeGreaterThanOrEqual(2);
+  });
 });

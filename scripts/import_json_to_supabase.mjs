@@ -1,0 +1,135 @@
+import fs from "node:fs";
+import path from "node:path";
+import { createClient } from "@supabase/supabase-js";
+
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!url || !serviceRoleKey) {
+  throw new Error("NEXT_PUBLIC_SUPABASE_URL ve SUPABASE_SERVICE_ROLE_KEY zorunludur.");
+}
+
+const supabase = createClient(url, serviceRoleKey, {
+  auth: { autoRefreshToken: false, persistSession: false },
+});
+const root = process.cwd();
+const citiesDir = path.join(root, "data", "cities");
+const files = fs.readdirSync(citiesDir).filter((file) => file.endsWith(".json"));
+let importedMatches = 0;
+let importedStandings = 0;
+const startedAt = new Date().toISOString();
+const { data: syncRun, error: syncStartError } = await supabase
+  .from("sync_runs")
+  .insert({ source: "json-import", status: "running", metadata: { startedAt } })
+  .select("id")
+  .single();
+if (syncStartError) throw new Error(`sync_runs start: ${syncStartError.message}`);
+
+try {
+  for (const file of files) {
+    const citySlug = file.replace(/\.json$/, "");
+    const parsed = JSON.parse(fs.readFileSync(path.join(citiesDir, file), "utf8"));
+    const matches = (parsed.matches || []).map((match) => ({
+    id: match.id,
+    city_slug: citySlug,
+    city_name: parsed.city || match.city || citySlug,
+    match_date: match.date || null,
+    match_time: match.time || null,
+    hall: match.hall || null,
+    category: match.category || null,
+    age_group: match.age_group || null,
+    gender: match.gender || null,
+    group_name: match.group || null,
+    match_no: match.match_no || null,
+    home_team: match.home_team,
+    away_team: match.away_team,
+    score: match.score || null,
+    home_score: match.home_score ?? null,
+    away_score: match.away_score ?? null,
+    set_scores: match.set_scores || [],
+    status: match.status || "upcoming",
+    volleybox: match.volleybox || null,
+    raw: match,
+    source_updated_at: parsed.updated_at || null,
+    updated_at: new Date().toISOString(),
+    }));
+
+    if (matches.length) {
+      const { error } = await supabase.from("matches").upsert(matches, { onConflict: "id" });
+      if (error) throw new Error(`${citySlug} matches: ${error.message}`);
+      importedMatches += matches.length;
+    }
+
+    const { data: existingMatches, error: existingMatchesError } = await supabase
+      .from("matches")
+      .select("id")
+      .eq("city_slug", citySlug);
+    if (existingMatchesError) throw new Error(`${citySlug} existing matches: ${existingMatchesError.message}`);
+    const currentMatchIds = new Set(matches.map((match) => match.id));
+    const staleMatchIds = (existingMatches || [])
+      .map((row) => row.id)
+      .filter((id) => !currentMatchIds.has(id));
+    if (staleMatchIds.length) {
+      const { error } = await supabase.from("matches").delete().in("id", staleMatchIds);
+      if (error) throw new Error(`${citySlug} stale matches: ${error.message}`);
+    }
+
+    const standings = Object.entries(parsed.standings || {}).map(([category, rows]) => ({
+      city_slug: citySlug,
+      category,
+      rows,
+      source_updated_at: parsed.updated_at || null,
+      updated_at: new Date().toISOString(),
+    }));
+    if (standings.length) {
+      const { error } = await supabase
+        .from("standings")
+        .upsert(standings, { onConflict: "city_slug,category" });
+      if (error) throw new Error(`${citySlug} standings: ${error.message}`);
+      importedStandings += standings.length;
+    }
+
+    const { data: existingStandings, error: existingStandingsError } = await supabase
+      .from("standings")
+      .select("category")
+      .eq("city_slug", citySlug);
+    if (existingStandingsError) throw new Error(`${citySlug} existing standings: ${existingStandingsError.message}`);
+    const currentCategories = new Set(standings.map((standing) => standing.category));
+    const staleCategories = (existingStandings || [])
+      .map((row) => row.category)
+      .filter((category) => !currentCategories.has(category));
+    if (staleCategories.length) {
+      const { error } = await supabase
+        .from("standings")
+        .delete()
+        .eq("city_slug", citySlug)
+        .in("category", staleCategories);
+      if (error) throw new Error(`${citySlug} stale standings: ${error.message}`);
+    }
+  }
+
+  const { error: runError } = await supabase.from("sync_runs").update({
+    status: "success",
+    finished_at: new Date().toISOString(),
+    cities_scanned: files.length,
+    matches_imported: importedMatches,
+    metadata: { standings_imported: importedStandings },
+  }).eq("id", syncRun.id);
+  if (runError) throw new Error(`sync_runs complete: ${runError.message}`);
+
+  console.log(JSON.stringify({
+    citiesScanned: files.length,
+    matchesImported: importedMatches,
+    standingsImported: importedStandings,
+    syncRunId: syncRun.id,
+  }, null, 2));
+} catch (error) {
+  await supabase.from("sync_runs").update({
+    status: "failed",
+    finished_at: new Date().toISOString(),
+    cities_scanned: files.length,
+    matches_imported: importedMatches,
+    error_message: error instanceof Error ? error.message : String(error),
+  }).eq("id", syncRun.id);
+  throw error;
+}

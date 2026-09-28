@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import { requireConfiguredSecret } from "@/utils/apiSecurity";
 
 const refreshLimiter = new RateLimiter({
   windowMs: 120 * 1000,
@@ -19,6 +20,9 @@ export async function GET(request: Request) {
     const dataPath = path.join(process.cwd(), "data", "kadinlar_2_lig.json");
 
     if (refresh === "1" || refresh === "true") {
+      const authError = requireConfiguredSecret(request, "ADMIN_TOKEN");
+      if (authError) return authError;
+
       const clientIp = getClientIp(request);
       if (!refreshLimiter.check(clientIp)) {
         return NextResponse.json(

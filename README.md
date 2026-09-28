@@ -26,6 +26,11 @@ Türkiye Voleybol Federasyonu (TVF) İstanbul yerel liglerindeki **Genç Kızlar
   - **Otomatik Zamanlanmış Görev (Cron):** GitHub Actions (`.github/workflows/scrape-sync.yml`) üzerinden her saat başı (`0 * * * *`) TVF 81 il temsilciliği taranarak bültenler otomatik güncellenir ve depoya commit edilir.
   - **Arayüzden Senkronizasyon Durumu:** Web arayüzündeki yenileme butonuna basıldığında sunucu önbelleğindeki en son veriler anında çekilir, son güncelleme zamanı ve senkronizasyon durumu (başarı / önbellek / uyarı) görsel bildirim olarak gösterilir.
   - **Yerel Geliştirme (Local Python):** Yerel ortamda çalışırken `GET /api/fixtures?refresh=1` doğrudan yerel Python tarayıcısını tetikleyebilir. Vercel sunucusuz (serverless) ortamında ise güvenli ve yüksek hızlı CDN/build önbelleği kullanılır.
+  - Operasyonel veri kontrolü için `GET /api/health` endpoint'i son veri zamanını, şehir dosyası sayısını, maç toplamını ve GitHub Actions, Blob ve push bildirim yapılandırma durumunu döndürür.
+  - Supabase geçişi için `supabase/migrations/001_backend_schema.sql` şeması hazırdır. `SUPABASE_SERVICE_ROLE_KEY` yalnızca sunucu ortamında tutulmalı; değişkenler yokken uygulama JSON fallback'iyle çalışmaya devam eder.
+  - Migration uygulandıktan sonra mevcut JSON verisini aktarmak için `npm run supabase:import` komutu kullanılabilir.
+  - GitHub Actions otomatik Supabase aktarımı için repository secrets olarak `SUPABASE_URL` ve `SUPABASE_SERVICE_ROLE_KEY` tanımlanmalıdır. Service role anahtarı yalnızca Actions secret ve sunucu ortamında tutulur.
+  - Supabase Auth rol temeli için `supabase/migrations/002_auth_roles.sql` uygulanmalıdır. Kullanıcı rolleri `admin`, `editor` ve `viewer` olabilir; JWT doğrulaması `GET /api/auth/me` endpoint'i üzerinden yapılır.
 
 ---
 
@@ -54,7 +59,7 @@ python scripts/scrape_all_provinces.py
 ```
 
 > [!NOTE]
-> **AI Asistanı & Geliştirici Kuralı:** Proje üzerinde kod geliştirme, UI/tasarım değişiklikleri, hata düzeltmeleri veya veri senkronizasyonu yapıldığında en güncel bülten verisinin korunması için adım sonunda otomatik olarak `python scripts/scrape_all_provinces.py` çalıştırılır. Basit soru-cevap ("şu nasıl?", "tamam" vb.) promptlarında tetiklenmez; tereddütte kalındığında ise varsayımda bulunulmayıp doğrudan kullanıcıya sorulur. Detaylar için [AGENTS.md](AGENTS.md) dosyasına bakabilirsiniz.
+> **AI Asistanı & Geliştirici Kuralı:** Proje üzerinde kod geliştirme, UI/tasarım değişiklikleri, hata düzeltmeleri veya veri senkronizasyonu yapıldığında adım sonunda otomatik olarak `python scripts/scrape_all_provinces.py` çalıştırılır. İki çekme arasında **minimum 30 dakika** kuralı vardır (son çekim üzerinden 30 dk geçmediyse tarama atlanır; bu kural yalnızca kullanıcı manuel olarak `--force` istediğinde aşılabilir). Detaylar için [AGENTS.md](AGENTS.md) dosyasına bakabilirsiniz.
 
 ### 4. Arayüzü Başlatma (Next.js)
 ```bash
@@ -101,6 +106,9 @@ Projede yönetim ve bülten yükleme güvenliği için ortam değişkenleri kull
 | Değişken | Açıklama | Zorunlu mu? |
 |---|---|---|
 | `ADMIN_TOKEN` | `/api/fixtures/upload` ve `/api/admin/override` endpoint'lerini yetkilendirmek için kullanılan gizli anahtar. Tanımlanmadığında endpoint güvenlik amacıyla 503 Service Unavailable döner. | Evet (Admin özellikleri için) |
+| `CRON_SECRET` | `/api/notifications/dispatch` endpoint'ini yalnızca zamanlanmış görevlerin çağırabilmesi için kullanılan gizli anahtar. Tanımlandığında dispatch isteği `Authorization: Bearer <CRON_SECRET>` ile yapılmalıdır. | Evet (Otomatik bildirimler için) |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase proje URL'si. | Supabase kullanımı için Evet |
+| `SUPABASE_SERVICE_ROLE_KEY` | Sunucu tarafı Supabase anahtarı; tarayıcıya gönderilmemelidir. | Supabase kullanımı için Evet |
 | `BLOB_READ_WRITE_TOKEN` | Vercel sunucusuz (serverless) salt-okunur dosya sistemi ortamında manuel admin skor düzeltmelerini (`manual-overrides.json`) kalıcı olarak saklamak için Vercel Blob token'ı. Yerel ortamda tanımlanmadığında `data/manual-overrides.json` dosyasına fallback yapılır. | Vercel ortamında Evet |
 
 > [!IMPORTANT]

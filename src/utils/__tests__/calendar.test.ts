@@ -4,6 +4,9 @@ import {
   compareMatchDateTime,
   formatDateTurkish,
   isMatchPassed,
+  isMatchOverdueForScore,
+  getYesterdayString,
+  isTodayOrUnscoredYesterday,
 } from "../calendar";
 
 describe("Calendar & Match Time Sorting Utilities", () => {
@@ -72,6 +75,58 @@ describe("Calendar & Match Time Sorting Utilities", () => {
     it("TBD veya boş tarihleri güvenle ele alır", () => {
       expect(formatDateTurkish("TBD")).toBe("TBD");
       expect(formatDateTurkish("")).toBe("");
+    });
+  });
+
+  describe("isMatchOverdueForScore", () => {
+    it("o gün olan maçları (bugün) skorsuz olarak göstermez", () => {
+      // Bugün: 2026-09-26, Maç: 2026-09-26 -> false (skorsuz DEĞİL)
+      expect(isMatchOverdueForScore("2026-09-26", "2026-09-26")).toBe(false);
+    });
+
+    it("gelecek maçları skorsuz olarak göstermez", () => {
+      expect(isMatchOverdueForScore("2026-09-27", "2026-09-26")).toBe(false);
+      expect(isMatchOverdueForScore("2026-10-01", "2026-09-26")).toBe(false);
+    });
+
+    it("dünden ve daha eski tarihlerden kalan maçları skorsuz kabul eder", () => {
+      expect(isMatchOverdueForScore("2026-09-25", "2026-09-26")).toBe(true);
+      expect(isMatchOverdueForScore("2026-09-20", "2026-09-26")).toBe(true);
+    });
+
+    it("TBD veya boş tarihleri skorsuz saymaz", () => {
+      expect(isMatchOverdueForScore("TBD", "2026-09-26")).toBe(false);
+      expect(isMatchOverdueForScore("", "2026-09-26")).toBe(false);
+      expect(isMatchOverdueForScore(undefined, "2026-09-26")).toBe(false);
+    });
+  });
+
+  describe("getYesterdayString", () => {
+    it("verilen tarihin bir önceki gününü YYYY-MM-DD olarak döner", () => {
+      expect(getYesterdayString("2026-09-27")).toBe("2026-09-26");
+      expect(getYesterdayString("2026-10-01")).toBe("2026-09-30");
+      expect(getYesterdayString("2026-01-01")).toBe("2025-12-31");
+    });
+  });
+
+  describe("isTodayOrUnscoredYesterday", () => {
+    it("bugün oynanacak maçlar için true döner", () => {
+      expect(isTodayOrUnscoredYesterday("2026-09-27", false, "2026-09-27", "2026-09-26")).toBe(true);
+      expect(isTodayOrUnscoredYesterday("2026-09-27", true, "2026-09-27", "2026-09-26")).toBe(true);
+    });
+
+    it("dün oynanmış ama sonucu henüz girilmemiş (skorsuz) maçlar için true döner", () => {
+      expect(isTodayOrUnscoredYesterday("2026-09-26", false, "2026-09-27", "2026-09-26")).toBe(true);
+    });
+
+    it("dün oynanmış ve sonucu girilmiş maçlar için false döner (artık sonuçlar sekmesindedir)", () => {
+      expect(isTodayOrUnscoredYesterday("2026-09-26", true, "2026-09-27", "2026-09-26")).toBe(false);
+    });
+
+    it("daha eski veya gelecek maçlar için false döner", () => {
+      expect(isTodayOrUnscoredYesterday("2026-09-25", false, "2026-09-27", "2026-09-26")).toBe(false);
+      expect(isTodayOrUnscoredYesterday("2026-09-28", false, "2026-09-27", "2026-09-26")).toBe(false);
+      expect(isTodayOrUnscoredYesterday("TBD", false, "2026-09-27", "2026-09-26")).toBe(false);
     });
   });
 });

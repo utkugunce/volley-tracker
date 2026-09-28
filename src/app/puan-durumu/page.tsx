@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { DashboardClient } from "@/components/DashboardClient";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 180; // 3 minutes ISR cache
 
 interface PageProps {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;

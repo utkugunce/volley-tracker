@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'Museo Sans';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 500;
   font-display: swap;
   src: local('Museo Sans 500'), local('MuseoSans-500'), url('/fonts/museo-sans-500.woff') format('woff');
 }
@@ -17,15 +17,7 @@
 @font-face {
   font-family: 'Museo Sans';
   font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local('Museo Sans 500'), local('MuseoSans-500'), url('/fonts/museo-sans-500.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Museo Sans';
-  font-style: normal;
-  font-weight: 600;
+  font-weight: 600 700;
   font-display: swap;
   src: local('Museo Sans 700'), local('MuseoSans-700'), url('/fonts/museo-sans-700.woff') format('woff');
 }
@@ -33,23 +25,7 @@
 @font-face {
   font-family: 'Museo Sans';
   font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Museo Sans 700'), local('MuseoSans-700'), url('/fonts/museo-sans-700.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Museo Sans';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: local('Museo Sans 900'), local('MuseoSans-900'), url('/fonts/museo-sans-900.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Museo Sans';
-  font-style: normal;
-  font-weight: 900;
+  font-weight: 800 900;
   font-display: swap;
   src: local('Museo Sans 900'), local('MuseoSans-900'), url('/fonts/museo-sans-900.woff') format('woff');
 }
@@ -158,6 +134,24 @@ body {
     width: 0;
     height: 0;
   }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #2A2E3D transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #2A2E3D;
+    border-radius: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+  }
 }
 
 @keyframes pulse-dot {
@@ -173,6 +167,35 @@ body {
 
 .animate-pulse-dot {
   animation: pulse-dot 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes match-panel-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawer-sheet-in {
+  from {
+    translate: 0 100%;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes drawer-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Temiz bülten scrollbar */

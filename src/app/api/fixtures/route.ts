@@ -2,17 +2,12 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
-import { timingSafeEqual } from "crypto";
 import { applyOverridesToMatches, applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
-
-function safeCompare(a: string, b: string): boolean {
-  const bufA = Buffer.from(a);
-  const bufB = Buffer.from(b);
-  if (bufA.length !== bufB.length) return false;
-  return timingSafeEqual(bufA, bufB);
-}
+import { isCityHidden } from "@/utils/cityHelper";
+import { getSupabaseFixtures } from "@/utils/supabaseFixtures";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
 const refreshLimiter = new RateLimiter({
@@ -60,17 +55,8 @@ export async function GET(request: Request) {
       | undefined;
 
     if (refresh === "1") {
-      const adminToken = process.env.ADMIN_TOKEN;
-      const xAdmin = request.headers.get("x-admin-token");
-      const authHeader = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
-      const providedToken = xAdmin || authHeader;
-
-      // Sadece admin yetkisi olan kullanıcılar canlı taramayı tetikleyebilir
-      const isAuthorized = Boolean(
-        !adminToken || (providedToken && safeCompare(providedToken, adminToken))
-      );
-
-      if (adminToken && !isAuthorized) {
+      const authError = requireConfiguredSecret(request, "ADMIN_TOKEN");
+      if (authError) {
         syncMeta = {
           attempted: false,
           success: true,
@@ -199,7 +185,11 @@ export async function GET(request: Request) {
 
     let data: any;
 
-    if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
+    const supabaseData = await getSupabaseFixtures(citySlug);
+
+    if (supabaseData) {
+      data = supabaseData;
+    } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
       const citiesDir = path.join(process.cwd(), "data", "cities");
       const allMatches: any[] = [];
       const allStandings: Record<string, any[]> = {};
@@ -210,10 +200,13 @@ export async function GET(request: Request) {
       if (fs.existsSync(citiesDir)) {
         const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
         for (const file of files) {
+          const fileSlug = file.replace(".json", "");
+          if (isCityHidden(fileSlug)) continue;
           try {
             const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
             const parsed = JSON.parse(content);
             const cityName = parsed.city || file.replace(".json", "");
+            if (isCityHidden(cityName)) continue;
             if (parsed.updated_at && parsed.updated_at > latestUpdated) {
               latestUpdated = parsed.updated_at;
             }
@@ -255,6 +248,13 @@ export async function GET(request: Request) {
         standings: allStandings,
       };
     } else {
+      if (isCityHidden(citySlug)) {
+        return NextResponse.json(
+          { error: "Bu il için fikstür bulunamadı." },
+          { status: 404 }
+        );
+      }
+
       let filePath = path.join(process.cwd(), "data", "fixtures.json");
       if (citySlug && citySlug !== "istanbul") {
         const citySpecificPath = path.join(process.cwd(), "data", "cities", `${citySlug}.json`);

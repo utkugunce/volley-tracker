@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { RefreshCw, Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight } from "lucide-react";
+import { Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight, RefreshCw } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -23,8 +23,8 @@ interface HeaderProps {
   onToggleFavoritesOnly: () => void;
   activeTab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status";
   onSelectTab: (tab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status") => void;
-  onRefresh: () => void;
-  isLoading: boolean;
+  onRefresh?: () => void;
+  isLoading?: boolean;
   onOpenSearch?: () => void;
 }
 
@@ -43,13 +43,14 @@ export const Header: React.FC<HeaderProps> = ({
   activeTab,
   onSelectTab,
   onRefresh,
-  isLoading,
+  isLoading = false,
   onOpenSearch,
 }) => {
   const formattedTime = updatedAt
     ? new Date(updatedAt).toLocaleTimeString("tr-TR", {
         hour: "2-digit",
         minute: "2-digit",
+        timeZone: "Europe/Istanbul",
       })
     : "--:--";
 
@@ -94,16 +95,12 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Kadınlar 2. Ligi Sayfasına Geçiş Butonu */}
           <Link
             href="/kadinlar-2-ligi"
-            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold text-xs shadow-md shadow-purple-900/40 hover:shadow-purple-700/60 transition-all hover:scale-105 active:scale-95 border border-purple-400/40 ml-0.5 sm:ml-1"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-colors border border-slate-700/70 ml-0.5 sm:ml-1"
             title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
-            </span>
             <span className="tracking-wide">Kadınlar 2. Ligi</span>
-            <span className="text-[10px] bg-white/20 px-1 py-0.2 rounded font-mono hidden sm:inline">16 Grup</span>
-            <ArrowRight size={12} className="text-pink-200" />
+            <span className="text-[10px] text-slate-400 px-1 py-0.2 rounded font-mono hidden sm:inline">16 Grup</span>
+            <ArrowRight size={12} className="text-slate-400" />
           </Link>
         </div>
 
@@ -115,7 +112,6 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={onOpenSearch}
               className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/60 transition-all active:scale-95 cursor-pointer"
               title="Hızlı Arama (Ctrl + K)"
-              aria-label="Arama"
             >
               <Search size={13} className="text-slate-400" />
               <span className="hidden md:inline font-medium text-[11px] text-slate-400">Ara</span>
@@ -156,46 +152,34 @@ export const Header: React.FC<HeaderProps> = ({
           {/* PWA Uygulama Yükleme */}
           <PwaInstallPrompt />
 
+          {updatedAt && (
+            <span className="inline-flex text-[10px] text-slate-400 whitespace-nowrap" title={`Son güncelleme ${formattedTime}`} aria-label={`Son güncelleme ${formattedTime}`}>
+              <span className="sm:hidden">{formattedTime}</span>
+              <span className="hidden sm:inline">Son güncelleme {formattedTime}</span>
+            </span>
+          )}
+
+          {onRefresh && (
+            <button
+              type="button"
+              onClick={onRefresh}
+              disabled={isLoading}
+              className="p-2 sm:p-1.5 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 disabled:opacity-60 transition-colors no-print border border-slate-700/60"
+              title={isLoading ? "Veriler güncelleniyor" : "Verileri yenile"}
+              aria-label={isLoading ? "Veriler güncelleniyor" : "Verileri yenile"}
+            >
+              <RefreshCw size={14} className={isLoading ? "animate-spin" : ""} />
+            </button>
+          )}
+
           {/* Yazdır Butonu */}
           <button
             onClick={() => window.print()}
-            className="p-1.5 rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all active:scale-95 no-print border border-slate-700/60 hover:border-slate-600"
+            className="hidden sm:flex p-2 sm:p-1.5 min-w-[32px] min-h-[32px] items-center justify-center rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-all active:scale-95 no-print border border-slate-700/60 hover:border-slate-600"
             title="Yazdır"
+            aria-label="Yazdır"
           >
             <Printer size={14} />
-          </button>
-
-          {/* Yenile Butonu */}
-          <button
-            onClick={onRefresh}
-            disabled={isLoading}
-            className={`flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg transition-all active:scale-95 disabled:opacity-75 border cursor-pointer ${
-              isLoading
-                ? "bg-amber-950/40 text-amber-300 border-amber-500/60 shadow-xs"
-                : justUpdated
-                ? "bg-emerald-950/90 text-emerald-300 border-emerald-500/80 shadow-glow-emerald font-bold"
-                : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border-slate-700/60 hover:border-slate-600"
-            }`}
-            title="Fikstür ve canlı sonuçları yenile"
-            aria-label="Verileri Yenile"
-          >
-            {isLoading ? (
-              <>
-                <RefreshCw size={13} className="animate-spin text-amber-400" />
-                <span className="font-bold text-[11px] text-amber-300">Yenileniyor...</span>
-              </>
-            ) : justUpdated ? (
-              <>
-                <Check size={13} className="text-emerald-400 stroke-[3] animate-in zoom-in-75 duration-200" />
-                <span className="font-bold text-[11px] text-emerald-300">Güncellendi!</span>
-              </>
-            ) : (
-              <>
-                <RefreshCw size={13} className="text-slate-400 group-hover:text-white" />
-                <span className="hidden sm:inline font-medium text-[11px] text-slate-300">Yenile</span>
-                <span className="font-mono text-[11px] text-slate-400">({formattedTime})</span>
-              </>
-            )}
           </button>
         </div>
       </div>
@@ -214,15 +198,15 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           onClick={() => onSelectTab("home")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
-            activeTab === "home" || activeTab === "today"
+            activeTab === "home"
               ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Home size={13} className={activeTab === "home" || activeTab === "today" ? "text-primary fill-primary/20" : "text-slate-400"} />
+          <Home size={13} className={activeTab === "home" ? "text-primary fill-primary/20" : "text-slate-400"} />
           <span>ANASAYFA</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[9px] sm:text-[10px] bg-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs">
+            <span className="text-[9px] sm:text-[10px] bg-rose-700 text-white px-1.5 py-0.5 rounded-full font-mono font-bold shadow-xs">
               {todayMatchesCount} Bugün
             </span>
           )}
@@ -264,7 +248,7 @@ export const Header: React.FC<HeaderProps> = ({
           <Flame size={13} className={activeTab === "today" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
           <span>GÜNÜN MAÇLARI</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[9px] sm:text-[10px] bg-gradient-to-r from-red-600 to-rose-600 text-white px-1.5 py-0.2 rounded-full font-mono font-bold shadow-xs shadow-red-900/50">
+            <span className="text-[9px] sm:text-[10px] bg-red-700 text-white px-1.5 py-0.5 rounded-full font-mono font-bold shadow-xs">
               {todayMatchesCount}
             </span>
           )}
@@ -312,15 +296,6 @@ export const Header: React.FC<HeaderProps> = ({
           <span>GRUP DURUMU</span>
         </button>
 
-        {/* Kadınlar 2. Ligi Sekme Butonu (Sağ Taraf) */}
-        <Link
-          href="/kadinlar-2-ligi"
-          className="ml-auto flex items-center gap-1.5 py-1 px-3 rounded-lg bg-purple-950/70 hover:bg-purple-900/80 border border-purple-600/50 text-purple-200 hover:text-white text-[11px] font-bold tracking-wide transition-all shrink-0 hover:scale-102"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse"></span>
-          <span>⚡ Kadınlar 2. Ligi</span>
-          <span className="text-[10px] text-purple-400 font-mono">→</span>
-        </Link>
       </div>
     </header>
   );

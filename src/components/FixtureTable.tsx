@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { Match } from "@/types/fixture";
-import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight } from "lucide-react";
+import { Star, MapPin, CalendarPlus, Copy, Check, Trophy, ExternalLink, AlertTriangle, Navigation, LayoutGrid, List, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
-import { isMatchPassed } from "@/utils/calendar";
+import { isMatchPassed, isMatchOverdueForScore } from "@/utils/calendar";
 import { generateMatchIcs, generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { getHallNavigationUrl } from "@/utils/halls";
 import { PrintScheduleButton } from "./PrintScheduleButton";
@@ -21,7 +21,13 @@ interface FixtureTableProps {
   city?: string;
   showCityBadge?: boolean;
   onSelectMatch?: (match: Match) => void;
+  isCollapsible?: boolean;
+  isCollapsed?: boolean;
+  onToggleCollapse?: () => void;
+  defaultCollapsed?: boolean;
 }
+
+const PAGE_SIZE = 50;
 
 export const FixtureTable: React.FC<FixtureTableProps> = ({
   title,
@@ -32,10 +38,43 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   city = "İstanbul",
   showCityBadge = false,
   onSelectMatch,
+  isCollapsible = true,
+  isCollapsed: controlledIsCollapsed,
+  onToggleCollapse,
+  defaultCollapsed = false,
 }) => {
-  const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [internalCollapsed, setInternalCollapsed] = useState(defaultCollapsed);
+  const isCollapsed = isCollapsible
+    ? controlledIsCollapsed !== undefined
+      ? controlledIsCollapsed
+      : internalCollapsed
+    : false;
 
+  const handleToggleCollapse = () => {
+    if (!isCollapsible) return;
+    if (onToggleCollapse) {
+      onToggleCollapse();
+    } else {
+      setInternalCollapsed((prev) => !prev);
+    }
+  };
+
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"table" | "grid">("table");
+  const [visibleLimit, setVisibleLimit] = useState(PAGE_SIZE);
+
+  React.useEffect(() => {
+    setVisibleLimit(PAGE_SIZE);
+  }, [matches]);
+
+  React.useEffect(() => {
+    const handleBeforePrint = () => setVisibleLimit(matches.length);
+    window.addEventListener("beforeprint", handleBeforePrint);
+    return () => window.removeEventListener("beforeprint", handleBeforePrint);
+  }, [matches.length]);
+
+  const visibleMatches = matches.length > PAGE_SIZE ? matches.slice(0, visibleLimit) : matches;
+  const remainingCount = matches.length - visibleMatches.length;
 
   const effectiveCity = city && city !== "Tüm İller" ? city : matches[0]?.city;
 
@@ -92,7 +131,24 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
   return (
     <div className="glass-panel rounded-2xl shadow-card border-slate-800/80 overflow-hidden mb-4 transition-all duration-200">
       {/* 1. Grup Başlığı */}
-      <div className="bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between border-b border-slate-800/80 select-none">
+      <div
+        onClick={(e) => {
+          if (!isCollapsible) return;
+          const target = e.target as HTMLElement;
+          if (target.closest("a") || target.closest("button")) return;
+          handleToggleCollapse();
+        }}
+        className={`bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between select-none transition-colors ${
+          isCollapsed ? "rounded-2xl" : "border-b border-slate-800/80"
+        } ${isCollapsible ? "cursor-pointer hover:bg-slate-850/60" : ""}`}
+        title={
+          isCollapsible
+            ? isCollapsed
+              ? `${title} ligini aç ve maçları göster`
+              : `${title} ligini gizle`
+            : undefined
+        }
+      >
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-xs">
             <Trophy size={12} className="text-amber-400" />
@@ -111,52 +167,86 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
           </h3>
         </div>
         <div className="flex items-center gap-2">
-          {/* Görünüm Seçici (Liste vs Yayın Kartı) */}
-          <div className="flex items-center rounded-lg bg-slate-800/80 p-0.5 border border-slate-700/60 shadow-xs">
-            <button
-              onClick={() => setViewMode("table")}
-              className={`p-1 rounded-md transition-all cursor-pointer ${
-                viewMode === "table"
-                  ? "bg-red-600 text-white shadow-xs"
-                  : "text-slate-400 hover:text-white"
-              }`}
-              title="Liste Görünümü"
-              aria-label="Liste Görünümü"
-            >
-              <List size={13} />
-            </button>
-            <button
-              onClick={() => setViewMode("grid")}
-              className={`p-1 rounded-md transition-all cursor-pointer ${
-                viewMode === "grid"
-                  ? "bg-red-600 text-white shadow-xs"
-                  : "text-slate-400 hover:text-white"
-              }`}
-              title="Yayın Kartı (Grid) Görünümü"
-              aria-label="Yayın Kartı Görünümü"
-            >
-              <LayoutGrid size={13} />
-            </button>
-          </div>
+          {!isCollapsed && (
+            <>
+              {/* Görünüm Seçici (Liste vs Yayın Kartı) */}
+              <div className="flex items-center rounded-lg bg-slate-800/80 p-0.5 border border-slate-700/60 shadow-xs">
+                <button
+                  type="button"
+                  onClick={() => setViewMode("table")}
+                  className={`p-1 rounded-md transition-all cursor-pointer ${
+                    viewMode === "table"
+                      ? "bg-red-600 text-white shadow-xs"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                  title="Liste Görünümü"
+                  aria-label="Liste Görünümü"
+                >
+                  <List size={13} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setViewMode("grid")}
+                  className={`p-1 rounded-md transition-all cursor-pointer ${
+                    viewMode === "grid"
+                      ? "bg-red-600 text-white shadow-xs"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                  title="Yayın Kartı (Grid) Görünümü"
+                  aria-label="Yayın Kartı Görünümü"
+                >
+                  <LayoutGrid size={13} />
+                </button>
+              </div>
 
-          {matches.some((m) => favorites.includes(m.id) && m.date && m.date !== "TBD") && (
-            <button
-              onClick={handleDownloadFavoritesIcs}
-              className="inline-flex items-center gap-1 text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/40 hover:bg-amber-500/25 px-2.5 py-1 rounded-lg transition-all cursor-pointer shadow-xs active:scale-95"
-              title="Bu tablodaki favori maçlarınızı .ics olarak takvime ekleyin"
-            >
-              <CalendarPlus size={11} />
-              <span className="hidden sm:inline">Favorileri Takvime Ekle</span>
-            </button>
+              {matches.some((m) => favorites.includes(m.id) && m.date && m.date !== "TBD") && (
+                <button
+                  type="button"
+                  onClick={handleDownloadFavoritesIcs}
+                  className="inline-flex items-center gap-1 text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/40 hover:bg-amber-500/25 px-2.5 py-1 rounded-lg transition-all cursor-pointer shadow-xs active:scale-95"
+                  title="Bu tablodaki favori maçlarınızı .ics olarak takvime ekleyin"
+                >
+                  <CalendarPlus size={11} />
+                  <span className="hidden sm:inline">Favorileri Takvime Ekle</span>
+                </button>
+              )}
+              <PrintScheduleButton />
+            </>
           )}
-          <PrintScheduleButton />
           <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-900/90 px-2 py-0.5 rounded-lg border border-slate-800">
             {matches.length} Maç
           </span>
+
+          {isCollapsible && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleToggleCollapse();
+              }}
+              aria-expanded={!isCollapsed}
+              aria-label={isCollapsed ? `${title} ligini göster` : `${title} ligini gizle`}
+              title={isCollapsed ? `${title} ligini aç ve maçları göster` : `${title} ligini gizle`}
+              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all cursor-pointer shadow-xs active:scale-95 ${
+                isCollapsed
+                  ? "bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25"
+                  : "bg-slate-800/80 text-slate-400 hover:text-white border border-slate-700/60 hover:bg-slate-700/80"
+              }`}
+            >
+              <span>{isCollapsed ? "Göster" : "Gizle"}</span>
+              {isCollapsed ? (
+                <ChevronDown size={13} className="text-amber-400" />
+              ) : (
+                <ChevronUp size={13} className="text-slate-400" />
+              )}
+            </button>
+          )}
         </div>
       </div>
 
       {/* 2. Resmi TVF / Fikstür Tablosu: Tarih - Yer - Saat - A Takımı - B Takımı - Skor - Set Skorları - Volleybox - İşlem */}
+      {!isCollapsed && (
+        <>
       {viewMode === "table" ? (
         <div className="overflow-x-auto p-2 sm:p-3 bg-slate-950/40">
           <table className="w-full text-left border-separate border-spacing-y-2 text-xs">
@@ -175,7 +265,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             </tr>
           </thead>
           <tbody>
-            {matches.map((match, idx) => {
+            {visibleMatches.map((match, idx) => {
               const isFav = favorites.includes(match.id);
               const isFinished = match.status === "finished";
               const homeWon = isFinished && (match.home_score ?? 0) > (match.away_score ?? 0);
@@ -226,8 +316,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   <td className={`py-2.5 px-2 text-center w-8 rounded-l-xl border-l border-y ${cardBorderClass} ${hasDiff ? "border-l-4 border-l-amber-500" : isFav ? "border-l-3 border-l-amber-400" : ""}`}>
                     <button
                       onClick={() => onToggleFavorite?.(match.id)}
-                      className="p-1 rounded-lg text-slate-500 hover:text-amber-400 hover:bg-slate-800/80 transition-all active:scale-90"
+                      className="p-1 min-w-[28px] min-h-[28px] inline-flex items-center justify-center rounded-lg text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-all active:scale-90"
                       title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+                      aria-label={isFav ? `${match.home_team} - ${match.away_team} maçını favorilerden çıkar` : `${match.home_team} - ${match.away_team} maçını favorilere ekle`}
                     >
                       <Star
                         size={13}
@@ -443,7 +534,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           <span>VB: {match.volleybox.score || "Skorlu"}</span>
                           <ExternalLink size={9} className="text-emerald-400 group-hover/vb:translate-x-0.5 transition-transform" />
                         </a>
-                      ) : isMatchPassed(match.volleybox?.vb_date || match.date, match.time, match.status) ? (
+                      ) : isMatchOverdueForScore(match.volleybox?.vb_date || match.date) ? (
                         <a
                           href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                           target="_blank"
@@ -529,7 +620,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       ) : (
         /* 3. Yayın Tarzı Grid Kart Görünümü (Broadcast Cards) */
         <div className="p-3.5 sm:p-4 grid grid-cols-1 md:grid-cols-2 gap-3.5 bg-slate-950/40">
-          {matches.map((match, idx) => {
+          {visibleMatches.map((match, idx) => {
             const isFav = favorites.includes(match.id);
             const isFinished = match.status === "finished";
             const homeWon = isFinished && (match.home_score ?? 0) > (match.away_score ?? 0);
@@ -609,8 +700,9 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     </button>
                     <button
                       onClick={() => onToggleFavorite?.(match.id)}
-                      className="p-1 rounded-md text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
+                      className="p-1 min-w-[28px] min-h-[28px] flex items-center justify-center rounded-md text-slate-400 hover:text-amber-400 hover:bg-slate-800/80 transition-colors"
                       title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
+                      aria-label={isFav ? `${match.home_team} - ${match.away_team} maçını favorilerden çıkar` : `${match.home_team} - ${match.away_team} maçını favorilere ekle`}
                     >
                       <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
                     </button>
@@ -759,10 +851,30 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         href={match.volleybox.url || `https://women.volleybox.net/m${match.volleybox.match_id}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700 shadow-xs"
+                        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[9px] font-bold shadow-xs border ${
+                          match.volleybox.has_score
+                            ? "bg-emerald-950/70 text-emerald-300 border-emerald-700"
+                            : isMatchOverdueForScore(match.volleybox?.vb_date || match.date)
+                            ? "bg-amber-950/80 text-amber-300 border-amber-700"
+                            : "bg-slate-800/80 text-slate-300 border-slate-700"
+                        }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>VB: {match.volleybox.score || "Kayıtlı"}</span>
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            match.volleybox.has_score
+                              ? "bg-emerald-400 animate-pulse"
+                              : isMatchOverdueForScore(match.volleybox?.vb_date || match.date)
+                              ? "bg-amber-400 animate-ping"
+                              : "bg-blue-400"
+                          }`}
+                        ></span>
+                        <span>
+                          VB:{" "}
+                          {match.volleybox.score ||
+                            (isMatchOverdueForScore(match.volleybox?.vb_date || match.date)
+                              ? "Skorsuz"
+                              : "Kayıtlı")}
+                        </span>
                       </a>
                     )
                   ) : (
@@ -784,6 +896,29 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
           );
         })}
         </div>
+      )}
+
+      {/* 4. Sayfalama / Daha Fazla Göster (DOM yükünü hafifletir) */}
+      {remainingCount > 0 && (
+        <div className="p-3 text-center no-print border-t border-slate-800/80 bg-slate-900/40 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => setVisibleLimit((prev) => prev + PAGE_SIZE)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 transition-all cursor-pointer shadow-sm active:scale-95"
+          >
+            <span>Daha Fazla Maç Göster ({remainingCount} maç kaldı)</span>
+            <ChevronDown size={14} className="text-slate-400" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setVisibleLimit(matches.length)}
+            className="text-xs font-semibold text-slate-400 hover:text-slate-200 underline cursor-pointer"
+          >
+            Tümünü Göster ({matches.length})
+          </button>
+        </div>
+      )}
+        </>
       )}
     </div>
   );

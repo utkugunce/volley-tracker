@@ -41,6 +41,8 @@ export interface Kadinlar2LigTeam {
   volleybox_url?: string | null;
   volleybox_name?: string | null;
   grup_no: number;
+  grup_adi?: string;
+  sehir?: string;
 }
 
 export interface Kadinlar2LigMatch {

@@ -2,31 +2,45 @@
 
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import { Header } from "@/components/Header";
-import { DateRibbon } from "@/components/DateRibbon";
+import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import { FilterBar } from "@/components/FilterBar";
-import { FixtureTable } from "@/components/FixtureTable";
-import { StandingsTable } from "@/components/StandingsTable";
+import { StandingsTable, StandingsTeamContext } from "@/components/StandingsTable";
+import { TeamInspectorPanel } from "@/components/TeamInspectorPanel";
 import { CityTabBar } from "@/components/CityTabBar";
 import { TodayMatchesView } from "@/components/TodayMatchesView";
 import { FeaturedMatchHero } from "@/components/FeaturedMatchHero";
+import { CompactMatchFeed } from "@/components/match/CompactMatchFeed";
+import { LeagueSection } from "@/components/match/LeagueSection";
 import { HomePortalView } from "@/components/HomePortalView";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
-import { NotificationBanner } from "@/components/NotificationBanner";
-import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
-import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { GroupStatusView } from "@/components/GroupStatusView";
-import { Match, FixturesData } from "@/types/fixture";
-import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp } from "lucide-react";
-import { isMatchPassed, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
+import { AppShell } from "@/components/layout/AppShell";
+import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
+import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
+import { MobileMatchDrawer } from "@/components/MobileMatchDrawer";
+import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
+import dynamic from "next/dynamic";
+import { Match, FixturesData, StandingItem } from "@/types/fixture";
+
+const NotificationBanner = dynamic(
+  () => import("@/components/NotificationBanner").then((mod) => mod.NotificationBanner),
+  { ssr: false }
+);
+const SpotlightSearchModal = dynamic(
+  () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
+  { ssr: false }
+);
+import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp, Layers, X, Wifi, WifiOff } from "lucide-react";
+import { isMatchPassed, isMatchOverdueForScore, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
-import { groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
+import { formatGroupName, groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
+import { AGE_CATEGORIES, classifyAgeCategory } from "@/utils/leagueHierarchy";
 import { slugify } from "@/utils/slugify";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 
 // Bir maçın skoru / sonucu olup olmadığını belirleyen yardımcı fonksiyon
 export const isMatchScored = (m: Match): boolean => {
-  if (m.status === "finished") return true;
   if (m.home_score !== null && m.home_score !== undefined && m.away_score !== null && m.away_score !== undefined) return true;
   if (m.score && m.score.trim() !== "" && m.score.trim() !== "- : -" && m.score.toLowerCase() !== "vs") return true;
   if (m.volleybox?.has_score && m.volleybox?.score) return true;
@@ -109,6 +123,21 @@ export const parseAppRoute = (
   return { tab: "home", city: first };
 };
 
+// İstemci tarafı şehir verisi önbelleği (Tekrar tıklanan iller 0ms anında açılır)
+const clientCityCache = new Map<string, FixturesData>();
+
+function matchesLeagueFilter(match: Match, filter: string): boolean {
+  if (filter === "Tümü") return true;
+  const category = AGE_CATEGORIES.find((item) => filter.startsWith(item.label));
+  if (category) {
+    if (classifyAgeCategory(match) !== category.key) return false;
+    const groupFilter = filter.slice(category.label.length).trim();
+    return !groupFilter || trIncludes(formatGroupName(match.group), groupFilter);
+  }
+
+  return [match.category || "", match.age_group || "", match.group || ""].some((value) => trIncludes(value, filter));
+}
+
 interface DashboardClientProps {
   initialData: FixturesData;
   initialTab?: AppMainTab;
@@ -123,6 +152,16 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [data, setData] = useState<FixturesData>(initialData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // İlk veriyi istemci önbelleğine yaz
+  useEffect(() => {
+    if (initialData) {
+      clientCityCache.set(initialCity || "all", initialData);
+      if (initialData.city && initialData.city !== "Tüm İller") {
+        clientCityCache.set(initialData.city.toLowerCase(), initialData);
+      }
+    }
+  }, [initialData, initialCity]);
 
   // Ana Sekmeler: "home" (Anasayfa Portalı), "results" (Sonuçlar), "today" (Günün Maçları), "fixtures" (Fikstür), "standings" (Puan Durumu) ve "group-status" (Grup Durumu)
   const [activeMainTab, setActiveMainTab] = useState<AppMainTab>(initialTab);
@@ -161,7 +200,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const handleSelectCity = useCallback(async (slug: string, skipPushState = false) => {
     setCurrentCitySlug(slug);
-    setLoading(true);
+    setSelectedStandingTeam(null);
     setError(null);
     setSelectedCategory("Tümü");
     setSelectedDate("all");
@@ -181,10 +220,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       }
     }
 
+    // 1. Önbellekte varsa anında 0ms aç (Loading beklemeden)
+    const cached = clientCityCache.get(slug);
+    if (cached) {
+      setData(cached);
+      setLoading(false);
+      return;
+    }
+
+    setLoading(true);
     try {
       const res = await fetch(`/api/fixtures?city=${slug}`);
       if (!res.ok) throw new Error("İl verisi alınamadı.");
       const json: FixturesData = await res.json();
+      clientCityCache.set(slug, json);
       setData(json);
     } catch (err: any) {
       setError(err.message || "İl fikstürü yüklenirken hata oluştu.");
@@ -223,6 +272,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [collapsedResultCities, setCollapsedResultCities] = useState<Record<string, boolean>>({});
   const [collapsedFixtureCities, setCollapsedFixtureCities] = useState<Record<string, boolean>>({});
 
+  // Lig bazlı gizleme / daraltma durumları (Collapse / Accordion)
+  const [collapsedResultLeagues, setCollapsedResultLeagues] = useState<Record<string, boolean>>({});
+  const [collapsedFixtureLeagues, setCollapsedFixtureLeagues] = useState<Record<string, boolean>>({});
+
   const toggleResultCityCollapse = (cityName: string) => {
     setCollapsedResultCities((prev) => ({
       ...prev,
@@ -237,13 +290,73 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     }));
   };
 
+  const toggleResultLeagueCollapse = (leagueKey: string) => {
+    setCollapsedResultLeagues((prev) => ({
+      ...prev,
+      [leagueKey]: !prev[leagueKey],
+    }));
+  };
+
+  const toggleFixtureLeagueCollapse = (leagueKey: string) => {
+    setCollapsedFixtureLeagues((prev) => ({
+      ...prev,
+      [leagueKey]: !prev[leagueKey],
+    }));
+  };
+
   // Favoriler (Flashscore Yıldız İmzası - LocalStorage ile kaydedilir)
   const [favorites, setFavorites] = useState<string[]>([]);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   // Premium Özellikler: Maç Detay Çekmecesi & Spotlight Arama
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
+  const [selectedStandingTeam, setSelectedStandingTeam] = useState<{
+    team: StandingItem;
+    context: StandingsTeamContext;
+  } | null>(null);
+  const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
+  const [isLeaguesMenuOpen, setIsLeaguesMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // URL ?match=id senkronizasyonu ve maç seçimi
+  const handleSelectMatch = useCallback((match: Match | null) => {
+    setSelectedMatch(match);
+    if (match) {
+      setIsMobileDrawerOpen(true);
+    }
+    if (typeof window !== "undefined" && match) {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set("match", match.id);
+        window.history.replaceState({}, "", url.toString());
+      } catch {
+        // fallback
+      }
+    }
+  }, []);
+
+  // Sayfa ilk açıldığında veya maçlar değiştiğinde:
+  // Varsa o günün ilk canlı maçı, yoksa ilk biten maçı varsayılan olarak seçili getir
+  useEffect(() => {
+    if (!data?.matches || data.matches.length === 0) return;
+
+    let urlMatchId: string | null = null;
+    if (typeof window !== "undefined") {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        urlMatchId = params.get("match");
+      } catch {
+        // fallback
+      }
+    }
+
+    setSelectedMatch((prev) => {
+      if (prev && data.matches.some((m) => m.id === prev.id)) {
+        return prev;
+      }
+      return findDefaultSelectedMatch(data.matches, urlMatchId);
+    });
+  }, [data?.matches]);
 
   // Ctrl+K / Cmd+K ile hızlı arama açma
   useEffect(() => {
@@ -320,17 +433,13 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const fetchData = async () => {
     setLoading(true);
     setError(null);
-    const startTime = Date.now();
     try {
       const res = await fetch(`/api/fixtures?city=${currentCitySlug}`);
       if (!res.ok) {
         throw new Error("Bülten verisi yüklenemedi.");
       }
       const json: FixturesData = await res.json();
-      const elapsed = Date.now() - startTime;
-      if (elapsed < 400) {
-        await new Promise((resolve) => setTimeout(resolve, 400 - elapsed));
-      }
+      clientCityCache.set(currentCitySlug, json);
       setData(json);
     } catch (err: any) {
       setError(err.message || "Bilinmeyen bir hata oluştu.");
@@ -340,29 +449,31 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   };
 
 
-  // Bugün tarihi
-  const todayStr = useMemo(() => {
-    const d = new Date();
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
+  // Bugün & Dün tarihleri — sadece client tarafında hesaplanır.
+  // useMemo yerine useEffect kullanılır: SSR (UTC) vs istemci (UTC+3) timezone farkından
+  // kaynaklanan React hydration error #418 (metin uyuşmazlığı) önlenir.
+  const [todayStr, setTodayStr] = useState("");
+  const [yesterdayStr, setYesterdayStr] = useState("");
+
+  useEffect(() => {
+    const computeDate = (offsetDays = 0) => {
+      const d = new Date();
+      d.setDate(d.getDate() - offsetDays);
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    };
+    setTodayStr(computeDate(0));
+    setYesterdayStr(computeDate(1));
   }, []);
 
-  // Dün tarihi
-  const yesterdayStr = useMemo(() => {
-    const d = new Date();
-    d.setDate(d.getDate() - 1);
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  }, []);
-
-  // Bugün oynanacak maç sayısı (Header rozeti için)
+  // Bugün oynanacak veya dünden skoru henüz girilmemiş maç sayısı (Header rozeti için)
   const todayMatchesCount = useMemo(() => {
-    return (data?.matches || []).filter((m) => m.date === todayStr).length;
-  }, [data, todayStr]);
+    return (data?.matches || []).filter(
+      (m) => m.date === todayStr || (m.date === yesterdayStr && !isMatchScored(m))
+    ).length;
+  }, [data, todayStr, yesterdayStr]);
 
   // Türkiye genelindeki toplam maç sayısı
   const totalMatchesAcrossAll = useMemo(() => {
@@ -422,6 +533,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     return (data?.matches || []).filter(isMatchScored).length;
   }, [data]);
 
+  // Canlı maç sayısı
+  const liveMatchesCount = useMemo(() => {
+    return (data?.matches || []).filter((m) => m.status === "live").length;
+  }, [data]);
+
   // Dünün sonuçlanan maç sayısı
   const yesterdayResultsCount = useMemo(() => {
     return (data?.matches || []).filter((m) => isMatchScored(m) && m.date === yesterdayStr).length;
@@ -443,9 +559,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     const syncedMatches = validMatches.filter((m) => m.volleybox?.synced);
     const synced = syncedMatches.length;
     const scored = syncedMatches.filter((m) => m.volleybox?.has_score).length;
-    // Skorsuz: SADECE maç tarihi geçmesine rağmen Volleybox'a skoru henüz girilmemiş olanlar!
+    // Skorsuz: SADECE maç günü geçmiş (dün veya daha eski) ve Volleybox'a skoru henüz girilmemiş olanlar!
+    // Kullanıcı skorları genelde maçtan bir gün sonra girdiği için maç günü (o gün) olan maçlar skorsuz sayılmaz.
     const unscored = syncedMatches.filter(
-      (m) => !m.volleybox?.has_score && isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status)
+      (m) => !m.volleybox?.has_score && isMatchOverdueForScore(m.volleybox?.vb_date || m.date, todayStr)
     ).length;
     // Değişenler: İl bülteninde tarihi, saati veya salonu değişen maçlar
     const discrepancy = syncedMatches.filter(
@@ -465,12 +582,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       }
 
       // 2. Kategori / Lig
-      if (selectedCategory !== "Tümü") {
-        const cat = m.category || m.age_group || "";
-        if (!trIncludes(cat, selectedCategory)) {
-          return false;
-        }
-      }
+      if (!matchesLeagueFilter(m, selectedCategory)) return false;
 
       // 3. Tarih
       if (selectedDate !== "all" && m.date !== selectedDate) {
@@ -502,10 +614,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       if (volleyboxFilter === "scored" && (!m.volleybox?.synced || !m.volleybox?.has_score)) {
         return false;
       }
-      // Skorsuz: Maç tarihi geçmesine rağmen Volleybox'a skor girilmemiş olanlar
+      // Skorsuz: Maç günü geçmiş olmasına rağmen Volleybox'a skor girilmemiş olanlar (O gün olan maçlar hariç)
       if (
         volleyboxFilter === "unscored" &&
-        (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchPassed(m.volleybox?.vb_date || m.date, m.time, m.status))
+        (!m.volleybox?.synced || m.volleybox?.has_score || !isMatchOverdueForScore(m.volleybox?.vb_date || m.date, todayStr))
       ) {
         return false;
       }
@@ -620,12 +732,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         return false;
       }
 
-      if (selectedCategory !== "Tümü") {
-        const cat = m.category || m.age_group || "";
-        if (!trIncludes(cat, selectedCategory)) {
-          return false;
-        }
-      }
+      if (!matchesLeagueFilter(m, selectedCategory)) return false;
 
       if (selectedHall !== "Tümü" && m.hall !== selectedHall) {
         return false;
@@ -679,6 +786,34 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     setCollapsedResultCities(next);
   };
 
+  // Sonuçlar sekmesi lig anahtarları ve toplu lig gizleme / gösterme durumları
+  const allResultLeagueKeys = useMemo(() => {
+    const keys: string[] = [];
+    resultsByCityAndLeague.forEach((c) => {
+      c.leagues.forEach((l) => {
+        keys.push(`${c.city}::${l.categoryKey}`);
+      });
+    });
+    return keys;
+  }, [resultsByCityAndLeague]);
+
+  const areAllResultLeaguesCollapsed = useMemo(() => {
+    if (allResultLeagueKeys.length === 0) return false;
+    return allResultLeagueKeys.every((k) => Boolean(collapsedResultLeagues[k]));
+  }, [allResultLeagueKeys, collapsedResultLeagues]);
+
+  const expandAllResultLeagues = () => {
+    setCollapsedResultLeagues({});
+  };
+
+  const collapseAllResultLeagues = () => {
+    const next: Record<string, boolean> = {};
+    allResultLeagueKeys.forEach((k) => {
+      next[k] = true;
+    });
+    setCollapsedResultLeagues(next);
+  };
+
   // Fikstür sekmesi toplu il gizleme / gösterme durumları
   const areAllFixtureCitiesCollapsed = useMemo(() => {
     if (fixturesByCity.length === 0) return false;
@@ -695,6 +830,34 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       next[c.city] = true;
     });
     setCollapsedFixtureCities(next);
+  };
+
+  // Fikstür sekmesi lig anahtarları ve toplu lig gizleme / gösterme durumları
+  const allFixtureLeagueKeys = useMemo(() => {
+    const keys: string[] = [];
+    fixturesByCity.forEach((c) => {
+      c.sections.forEach((sec) => {
+        keys.push(`${c.city}::${sec.title}::${sec.subTitle || ""}`);
+      });
+    });
+    return keys;
+  }, [fixturesByCity]);
+
+  const areAllFixtureLeaguesCollapsed = useMemo(() => {
+    if (allFixtureLeagueKeys.length === 0) return false;
+    return allFixtureLeagueKeys.every((k) => Boolean(collapsedFixtureLeagues[k]));
+  }, [allFixtureLeagueKeys, collapsedFixtureLeagues]);
+
+  const expandAllFixtureLeagues = () => {
+    setCollapsedFixtureLeagues({});
+  };
+
+  const collapseAllFixtureLeagues = () => {
+    const next: Record<string, boolean> = {};
+    allFixtureLeagueKeys.forEach((k) => {
+      next[k] = true;
+    });
+    setCollapsedFixtureLeagues(next);
   };
 
   const handleSelectResultsSubTab = (subTab: "all" | "yesterday") => {
@@ -728,50 +891,135 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     showOnlyFavorites ||
     resultsSubTab !== "all";
 
+  const activeStandings = useMemo(() => {
+    const entries = Object.entries(data?.standings || {});
+    if (selectedCategory === "Tümü") return Object.fromEntries(entries);
+    const category = AGE_CATEGORIES.find((item) => selectedCategory.startsWith(item.label));
+    return Object.fromEntries(entries.filter(([key]) => {
+      if (!category) return trIncludes(key, selectedCategory);
+      const categoryTerms: Record<string, string> = {
+        genc: "genç",
+        yildiz: "yıldız",
+        kucuk: "küçük",
+        midi: "midi",
+        erkek: "erkek",
+        diger: "",
+      };
+      if (category.key === "diger" && ["genç", "yıldız", "küçük", "midi", "erkek"].some((term) => trIncludes(key, term))) {
+        return false;
+      }
+      if (categoryTerms[category.key] && !trIncludes(key, categoryTerms[category.key])) return false;
+      const groupFilter = selectedCategory.slice(category.label.length).trim();
+      return !groupFilter || trIncludes(key, groupFilter);
+    }));
+  }, [data?.standings, selectedCategory]);
+
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100 font-sans">
-      {/* 0. Favori Maç Hatırlatma Banner'ı (GÖREV 2) */}
-      <NotificationBanner favoritesCount={favorites.length} />
+    <MatchSelectionProvider matches={data?.matches || []} initialMatchId={selectedMatch?.id}>
+      <AppShell
+        header={
+          <>
+            {/* 0. Favori Maç Hatırlatma Banner'ı */}
+            <NotificationBanner favoritesCount={favorites.length} />
 
-      {/* 1. Header (SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
-      <Header
-        city={data?.city}
-        currentCitySlug={currentCitySlug}
-        onSelectCity={handleSelectCity}
-        cities={citiesList}
-        title={data?.title}
-        updatedAt={data?.updated_at}
-        totalMatches={data?.total_matches || 0}
-        todayMatchesCount={todayMatchesCount}
-        resultsCount={resultsCount}
-        favoritesCount={favorites.length}
-        showOnlyFavorites={showOnlyFavorites}
-        onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
-        activeTab={activeMainTab}
-        onSelectTab={handleSelectTab}
-        onRefresh={fetchData}
-        isLoading={loading}
-        onOpenSearch={() => setIsSearchOpen(true)}
-      />
+            {/* 1. Header (SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR ve PUAN DURUMU Sekmeleriyle) */}
+            <Header
+              city={data?.city}
+              currentCitySlug={currentCitySlug}
+              onSelectCity={handleSelectCity}
+              cities={citiesList}
+              title={data?.title}
+              updatedAt={data?.updated_at}
+              totalMatches={data?.total_matches || 0}
+              todayMatchesCount={todayMatchesCount}
+              resultsCount={resultsCount}
+              favoritesCount={favorites.length}
+              showOnlyFavorites={showOnlyFavorites}
+              onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
+              activeTab={activeMainTab}
+              onSelectTab={handleSelectTab}
+              onRefresh={fetchData}
+              isLoading={loading}
+              onOpenSearch={() => setIsSearchOpen(true)}
+            />
 
-      {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
-      {activeMainTab !== "home" && (
-        <CityTabBar
-          currentCitySlug={currentCitySlug}
-          onSelectCity={handleSelectCity}
-          cities={citiesList}
-          totalMatchesAcrossAll={totalMatchesAcrossAll}
-        />
-      )}
+            {/* Canlı Skor Göstergesi */}
+            {liveMatchesCount > 0 && (
+              <div className="mx-4 mt-2 flex items-center gap-2 px-3 py-2 bg-red-950/80 border border-red-800 rounded-lg">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                <span className="text-xs font-medium text-red-400">
+                  {liveMatchesCount} Canlı Maç
+                </span>
+                <Wifi size={12} className="text-red-400" />
+              </div>
+            )}
 
-      <main className="flex-1 max-w-6xl w-full mx-auto px-1.5 sm:px-2 md:px-4 py-3 sm:py-4 space-y-4">
-        {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
-        <PrimaryTeamWidget
-          matches={data?.matches || []}
-          city={data?.city}
-          onSelectMatch={setSelectedMatch}
-          availableTeams={allTeamNames}
-        />
+            {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
+            {activeMainTab !== "home" && (
+              <CityTabBar
+                currentCitySlug={currentCitySlug}
+                onSelectCity={handleSelectCity}
+                cities={citiesList}
+                totalMatchesAcrossAll={totalMatchesAcrossAll}
+              />
+            )}
+          </>
+        }
+        leftSidebar={
+          <SidebarNavigation
+            cities={citiesList}
+            currentCity={currentCitySlug}
+            onSelectCity={handleSelectCity}
+            matches={data?.matches || []}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+            favoritesCount={favorites.length}
+            totalMatches={totalMatchesAcrossAll}
+          />
+        }
+        rightSidebar={
+          activeMainTab === "standings" ? (
+            <TeamInspectorPanel
+              team={selectedStandingTeam?.team || null}
+              context={selectedStandingTeam?.context || null}
+              matches={data?.matches || []}
+              onClose={() => setSelectedStandingTeam(null)}
+            />
+          ) : (
+            <MatchInspectorPanel
+              match={selectedMatch}
+              allMatches={data?.matches || []}
+              standings={data?.standings}
+              isLoading={loading}
+              onClose={() => setSelectedMatch(null)}
+              onToggleFavorite={toggleFavorite}
+              isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
+            />
+          )
+        }
+        footer={
+          <footer className="py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-[#94A3B8] no-print">
+            <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+              <p className="font-semibold text-[#F1F5F9]">
+                Altyapı Voleybol • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
+              </p>
+              <div className="flex items-center gap-3 text-[11px] text-[#94A3B8]">
+                <span>Fikstür & Puan Durumu</span>
+                <span className="text-[#64748B]">•</span>
+                <span>Sofascore Voleybol Arayüz Mimarisi</span>
+              </div>
+            </div>
+          </footer>
+        }
+      >
+        <div className="space-y-4">
+          {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
+          <PrimaryTeamWidget
+            matches={data?.matches || []}
+            city={data?.city}
+            onSelectMatch={handleSelectMatch}
+            availableTeams={allTeamNames}
+          />
 
         {/* Hata Durumu */}
         {error && (
@@ -799,8 +1047,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           /* ==================== SONUÇLAR SEKMESİ (SADECE BİTEN / SKORLU MAÇLAR) ==================== */
           <div>
             {/* Flashscore Yatay Tarih Şeridi (Sonuçlar Modunda - Zümrüt Yeşili Temalı) */}
-            <DateRibbon
-              dates={uniqueResultDates}
+            <DateNavigationRibbon
               selectedDate={selectedResultDate}
               onSelectDate={(d) => {
                 setSelectedResultDate(d);
@@ -812,10 +1059,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                   setResultsSubTab("all");
                 }
               }}
-              dateCounts={resultDateCounts}
               todayStr={todayStr}
-              yesterdayStr={yesterdayStr}
-              variant="emerald"
+              availableDates={uniqueResultDates}
+              showStatusFilters={false}
+              statusFilter="finished"
+              onSelectStatusFilter={() => {}}
+              counts={{ all: resultsCount, live: 0, finished: resultsCount, upcoming: 0 }}
             />
 
             {/* Flashscore Filtre Barı (Sonuçlar Modunda) */}
@@ -878,52 +1127,101 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               </div>
             )}
 
-            {/* Toplu İl Gizleme / Gösterme Kontrol Çubuğu */}
+            {/* Toplu İl ve Lig Gizleme / Gösterme Kontrol Çubuğu */}
             {resultsByCityAndLeague.length > 0 && (
               <div className="flex flex-wrap items-center justify-between gap-2.5 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-3.5 sm:px-4 py-2 mb-4 shadow-xs">
                 <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
                   <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>
-                    Toplam <strong className="text-white font-mono">{resultsByCityAndLeague.length}</strong> İl Listeleniyor
+                    Toplam <strong className="text-white font-mono">{resultsByCityAndLeague.length}</strong> İl, <strong className="text-white font-mono">{allResultLeagueKeys.length}</strong> Lig Listeleniyor
                   </span>
+                  {areAllResultLeaguesCollapsed && (
+                    <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
+                      (Ligler Gizli)
+                    </span>
+                  )}
                   {areAllResultCitiesCollapsed && (
                     <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
-                      (Tümü Gizli)
+                      (İller Gizli)
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-1.5">
-                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
-                    <button
-                      type="button"
-                      onClick={expandAllResultCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        !areAllResultCitiesCollapsed
-                          ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri aç ve sonuçları göster"
-                    >
-                      <ChevronDown size={13} className="text-emerald-400" />
-                      <span>Tümünü Göster</span>
-                    </button>
-                    <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
-                    <button
-                      type="button"
-                      onClick={collapseAllResultCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        areAllResultCitiesCollapsed
-                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri gizle"
-                    >
-                      <ChevronUp size={13} className="text-amber-400" />
-                      <span>Tümünü Gizle</span>
-                    </button>
+                <details className="relative">
+                  <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-slate-700/70 bg-slate-800/70 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-700/80">
+                    Görünüm
+                    <ChevronDown size={13} aria-hidden="true" />
+                  </summary>
+                  <div className="absolute right-0 z-20 mt-2 flex min-w-max flex-wrap items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 p-2 shadow-xl">
+                  {/* İl Kontrolleri (Birden çok il listeleniyorsa) */}
+                  {resultsByCityAndLeague.length > 1 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">İller:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllResultCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllResultCitiesCollapsed
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri aç ve sonuçları göster"
+                      >
+                        <ChevronDown size={13} className="text-emerald-400" />
+                        <span>Tümünü Göster</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllResultCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllResultCitiesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Tümünü Gizle</span>
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Lig Kontrolleri */}
+                  {allResultLeagueKeys.length > 0 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">Ligler:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllResultLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllResultLeaguesCollapsed
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri aç ve maçları göster"
+                      >
+                        <ChevronDown size={13} className="text-emerald-400" />
+                        <span>Ligleri Aç</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllResultLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllResultLeaguesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Ligleri Gizle</span>
+                      </button>
+                    </div>
+                  )}
                   </div>
-                </div>
+                </details>
               </div>
             )}
 
@@ -997,19 +1295,23 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       {/* Bu Şehirdeki Ligler (Örn: Genç Kızlar Süper Lig (U18), Yıldız Kızlar Süper Lig (U16)) */}
                       {!isCityCollapsed && (
                         <div className="space-y-3 animate-in fade-in-50 duration-200">
-                          {cityGroup.leagues.map((sec, idx) => (
-                            <FixtureTable
-                              key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
-                              title={sec.title}
-                              subTitle={sec.subTitle}
-                              matches={sec.matches}
-                              favorites={favorites}
-                              onToggleFavorite={toggleFavorite}
-                              city={sec.city || data?.city}
-                              showCityBadge={false}
-                              onSelectMatch={setSelectedMatch}
-                            />
-                          ))}
+                          {cityGroup.leagues.map((sec, idx) => {
+                            const leagueKey = `${cityGroup.city}::${sec.categoryKey}`;
+                            return (
+                              <LeagueSection
+                                key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
+                                leagueTitle={`${sec.title} · ${sec.subTitle}`}
+                                cityName={cityGroup.city}
+                                matches={sec.matches}
+                                favorites={favorites}
+                                onToggleFavorite={toggleFavorite}
+                                onSelectMatch={handleSelectMatch}
+                                isCollapsed={Boolean(collapsedResultLeagues[leagueKey])}
+                                onToggleCollapse={() => toggleResultLeagueCollapse(leagueKey)}
+                                mode="results"
+                              />
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -1124,48 +1426,40 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             standings={data?.standings || {}}
             favorites={favorites}
             onToggleFavorite={toggleFavorite}
-            onSelectMatch={setSelectedMatch}
+            onSelectMatch={handleSelectMatch}
             onNavigateTab={handleSelectTab}
             todayStr={todayStr}
             yesterdayStr={yesterdayStr}
           />
         ) : activeMainTab === "today" ? (
-          /* ==================== GÜNÜN MAÇLARI ==================== */
-          <div className="space-y-4">
-            {data?.matches && data.matches.length > 0 && (
-              <FeaturedMatchHero
-                matches={data.matches}
-                city={data?.city}
-                favorites={favorites}
-                onToggleFavorite={toggleFavorite}
-                onSelectMatch={setSelectedMatch}
-              />
-            )}
-            <TodayMatchesView
-              matches={data?.matches || []}
-              city={data?.city}
-              currentCitySlug={currentCitySlug}
-              onSelectCity={handleSelectCity}
-              citiesList={citiesList}
-              todayStr={todayStr}
-              favorites={favorites}
-              onToggleFavorite={toggleFavorite}
-              onNavigateToFullFixtures={() => handleSelectTab("fixtures")}
-              onSelectMatch={setSelectedMatch}
-            />
-          </div>
+          /* ==================== GÜNÜN MAÇLARI — Sofascore Kompakt Maç Akışı ==================== */
+          <CompactMatchFeed
+            matches={data?.matches || []}
+            selectedMatchId={selectedMatch?.id || null}
+            onSelectMatch={(m) => handleSelectMatch(m)}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+            todayStr={todayStr}
+            yesterdayStr={yesterdayStr}
+            city={data?.city}
+          />
         ) : activeMainTab === "fixtures" ? (
           /* ==================== FİKSTÜR SEKMESİ ==================== */
           <div>
-            {/* Flashscore Yatay Tarih Şeridi (Date Ribbon) */}
-            <DateRibbon
-              dates={uniqueDates}
+            {/* Sonuçlar sayfasıyla aynı hızlı tarih şeridi */}
+            <DateNavigationRibbon
               selectedDate={selectedDate}
               onSelectDate={setSelectedDate}
-              dateCounts={dateCounts}
               todayStr={todayStr}
-              yesterdayStr={yesterdayStr}
-              variant="red"
+              statusFilter={statusFilter as "all" | "upcoming" | "finished"}
+              onSelectStatusFilter={() => {}}
+              counts={{
+                all: counts.all,
+                live: liveMatchesCount,
+                finished: counts.finished,
+                upcoming: counts.upcoming,
+              }}
+              showStatusFilters={false}
             />
 
             {/* Flashscore Filtre Barı (HEPSİ / OYNANACAK / BİTENLER) */}
@@ -1190,52 +1484,101 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               />
             )}
 
-            {/* Toplu İl Gizleme / Gösterme Kontrol Çubuğu */}
+            {/* Toplu İl ve Lig Gizleme / Gösterme Kontrol Çubuğu */}
             {fixturesByCity.length > 0 && (
               <div className="flex flex-wrap items-center justify-between gap-2.5 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-3.5 sm:px-4 py-2 mb-4 shadow-xs">
                 <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
                   <div className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" />
                   <span>
-                    Toplam <strong className="text-white font-mono">{fixturesByCity.length}</strong> İl Listeleniyor
+                    Toplam <strong className="text-white font-mono">{fixturesByCity.length}</strong> İl, <strong className="text-white font-mono">{allFixtureLeagueKeys.length}</strong> Lig Listeleniyor
                   </span>
+                  {areAllFixtureLeaguesCollapsed && (
+                    <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
+                      (Ligler Gizli)
+                    </span>
+                  )}
                   {areAllFixtureCitiesCollapsed && (
                     <span className="text-[11px] text-amber-300/90 bg-amber-500/10 border border-amber-500/20 px-1.5 py-0.5 rounded-md font-normal">
-                      (Tümü Gizli)
+                      (İller Gizli)
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-1.5">
-                  <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
-                    <button
-                      type="button"
-                      onClick={expandAllFixtureCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        !areAllFixtureCitiesCollapsed
-                          ? "bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri aç ve fikstür maçlarını göster"
-                    >
-                      <ChevronDown size={13} className="text-sky-400" />
-                      <span>Tümünü Göster</span>
-                    </button>
-                    <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
-                    <button
-                      type="button"
-                      onClick={collapseAllFixtureCities}
-                      className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                        areAllFixtureCitiesCollapsed
-                          ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
-                          : "text-slate-400 hover:text-white"
-                      }`}
-                      title="Tüm illeri gizle"
-                    >
-                      <ChevronUp size={13} className="text-amber-400" />
-                      <span>Tümünü Gizle</span>
-                    </button>
+                <details className="relative">
+                  <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-lg border border-slate-700/70 bg-slate-800/70 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:bg-slate-700/80">
+                    Görünüm
+                    <ChevronDown size={13} aria-hidden="true" />
+                  </summary>
+                  <div className="absolute right-0 z-20 mt-2 flex min-w-max flex-wrap items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 p-2 shadow-xl">
+                  {/* İl Kontrolleri (Birden çok il listeleniyorsa) */}
+                  {fixturesByCity.length > 1 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">İller:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllFixtureCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllFixtureCitiesCollapsed
+                            ? "bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri aç ve fikstür maçlarını göster"
+                      >
+                        <ChevronDown size={13} className="text-sky-400" />
+                        <span>Tümünü Göster</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllFixtureCities}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllFixtureCitiesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm illeri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Tümünü Gizle</span>
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Lig Kontrolleri */}
+                  {allFixtureLeagueKeys.length > 0 && (
+                    <div className="inline-flex items-center p-0.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs shadow-inner">
+                      <span className="text-[11px] text-slate-400 font-semibold px-2 hidden sm:inline">Ligler:</span>
+                      <button
+                        type="button"
+                        onClick={expandAllFixtureLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          !areAllFixtureLeaguesCollapsed
+                            ? "bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri aç ve fikstür maçlarını göster"
+                      >
+                        <ChevronDown size={13} className="text-sky-400" />
+                        <span>Ligleri Aç</span>
+                      </button>
+                      <div className="w-[1px] h-3 bg-slate-800 mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={collapseAllFixtureLeagues}
+                        className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                          areAllFixtureLeaguesCollapsed
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-xs"
+                            : "text-slate-400 hover:text-white"
+                        }`}
+                        title="Tüm ligleri gizle"
+                      >
+                        <ChevronUp size={13} className="text-amber-400" />
+                        <span>Ligleri Gizle</span>
+                      </button>
+                    </div>
+                  )}
                   </div>
-                </div>
+                </details>
               </div>
             )}
 
@@ -1309,19 +1652,23 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                       {/* Bu Şehirdeki Fikstür Tabloları */}
                       {!isCityCollapsed && (
                         <div className="space-y-4 animate-in fade-in-50 duration-200">
-                          {cityGroup.sections.map((sec, idx) => (
-                            <FixtureTable
-                              key={`${cityGroup.city}-${sec.title}-${sec.subTitle}-${idx}`}
-                              title={sec.title}
-                              subTitle={sec.subTitle}
-                              matches={sec.matches}
-                              favorites={favorites}
-                              onToggleFavorite={toggleFavorite}
-                              city={sec.city || data?.city}
-                              showCityBadge={false}
-                              onSelectMatch={setSelectedMatch}
-                            />
-                          ))}
+                          {cityGroup.sections.map((sec, idx) => {
+                            const leagueKey = `${cityGroup.city}::${sec.title}::${sec.subTitle || ""}`;
+                            return (
+                              <LeagueSection
+                                key={`${cityGroup.city}-${sec.title}-${sec.subTitle}-${idx}`}
+                                leagueTitle={`${sec.title} · ${sec.subTitle}`}
+                                cityName={cityGroup.city}
+                                matches={sec.matches}
+                                favorites={favorites}
+                                onToggleFavorite={toggleFavorite}
+                                onSelectMatch={handleSelectMatch}
+                                isCollapsed={Boolean(collapsedFixtureLeagues[leagueKey])}
+                                onToggleCollapse={() => toggleFixtureLeagueCollapse(leagueKey)}
+                                mode="fixtures"
+                              />
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -1382,8 +1729,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         ) : activeMainTab === "standings" ? (
           /* ==================== PUAN DURUMU SEKMESİ ==================== */
           <div>
-            {data?.standings && Object.keys(data.standings).length > 0 ? (
-              <StandingsTable standingsData={data.standings} city={data?.city} />
+            {Object.keys(activeStandings).length > 0 ? (
+              <StandingsTable
+                standingsData={activeStandings}
+                city={data?.city}
+                onSelectTeam={(team, context) => setSelectedStandingTeam({ team, context })}
+              />
             ) : (
               <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-md mx-auto my-8 shadow-xl">
                 <p className="text-sm font-semibold text-slate-300">
@@ -1404,68 +1755,98 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             />
           </div>
         )}
-      </main>
-
-      {/* Altbilgi */}
-      <footer className="border-t border-slate-800 bg-[#0b1325] mt-auto py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-slate-500 no-print">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="font-semibold text-slate-300">
-            Altyapı Voleybol • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
-          </p>
-          <div className="flex items-center gap-3 text-[11px] text-slate-500">
-            <span>Fikstür & Puan Durumu</span>
-            <span>•</span>
-            <span>Resmi TVF Bülten Sistemi</span>
-          </div>
         </div>
-      </footer>
+      </AppShell>
 
-      {/* 4. Mobil Sabit Alt Menü (Thumb-friendly Navigation) */}
+      {/* 4. Mobil Sabit Alt Menü (Sofascore Standardı) */}
       <MobileBottomNav
         activeTab={
           showOnlyFavorites
             ? "favorites"
-            : activeMainTab === "today"
-            ? "today"
-            : activeMainTab === "results"
-            ? "results"
-            : activeMainTab === "fixtures"
-            ? "fixtures"
+            : statusFilter === "live"
+            ? "live"
             : activeMainTab === "standings"
             ? "standings"
-            : "today"
+            : isLeaguesMenuOpen
+            ? "leagues"
+            : "matches"
         }
         onSelectTab={(tab) => {
-          if (tab === "today") {
+          if (tab === "matches") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
+            setStatusFilter("all");
             handleSelectTab("today");
-          } else if (tab === "results") {
+          } else if (tab === "live") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
-            handleSelectTab("results");
-          } else if (tab === "fixtures") {
-            setShowOnlyFavorites(false);
-            handleSelectTab("fixtures");
+            setStatusFilter("live");
+            handleSelectTab("today");
           } else if (tab === "standings") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
             handleSelectTab("standings");
+          } else if (tab === "leagues") {
+            setIsLeaguesMenuOpen(true);
           } else if (tab === "favorites") {
+            setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(true);
             handleSelectTab("fixtures");
           }
         }}
         favoriteCount={favorites.length}
+        liveCount={liveMatchesCount}
         todayMatchesCount={todayMatchesCount}
         resultsCount={resultsCount}
       />
 
-      {/* 5. Maç Detay Çekmecesi (Match Center Drawer) */}
-      <MatchCenterDrawer
+      {/* 5. Mobil Maç Detayı: Alttan Açılan Çekmece (MobileMatchDrawer) */}
+      <MobileMatchDrawer
+        isOpen={isMobileDrawerOpen && Boolean(selectedMatch)}
         match={selectedMatch}
-        onClose={() => setSelectedMatch(null)}
-        city={data?.city}
+        onClose={() => setIsMobileDrawerOpen(false)}
+        allMatches={data?.matches || []}
+        standings={data?.standings}
         onToggleFavorite={toggleFavorite}
         isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
       />
+
+      {/* 6. Mobil Tam Ekran Ligler Menüsü (Sol Panel Ağacı) */}
+      {isLeaguesMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden flex flex-col animate-in fade-in duration-200">
+          <div className="flex items-center justify-between px-4 py-3 bg-[#1E222D] border-b border-[#2A2E3D]">
+            <div className="flex items-center gap-2">
+              <Layers size={18} className="text-blue-400" />
+              <h2 className="text-sm font-bold text-white">Lig Navigasyonu</h2>
+            </div>
+            <button
+              onClick={() => setIsLeaguesMenuOpen(false)}
+              className="p-1.5 rounded-lg text-[#94A3B8] hover:text-white hover:bg-[#181A20] transition-colors"
+              aria-label="Kapat"
+            >
+              <X size={18} />
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto p-3 bg-[#121212]">
+            <SidebarNavigation
+              cities={citiesList}
+              currentCity={currentCitySlug}
+              onSelectCity={(city) => {
+                handleSelectCity(city);
+                setIsLeaguesMenuOpen(false);
+              }}
+              matches={data?.matches || []}
+              selectedCategory={selectedCategory}
+              onSelectCategory={(cat) => {
+                setSelectedCategory(cat);
+                setIsLeaguesMenuOpen(false);
+              }}
+              favoritesCount={favorites.length}
+              totalMatches={totalMatchesAcrossAll}
+            />
+          </div>
+        </div>
+      )}
 
       {/* 6. Spotlight Hızlı Arama Modalı (Cmd + K) */}
       <SpotlightSearchModal
@@ -1479,6 +1860,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         onSelectCategory={setSelectedCategory}
         onSelectHall={setSelectedHall}
       />
-    </div>
+    </MatchSelectionProvider>
   );
 };

@@ -28,8 +28,9 @@ const PIXEL_MAP = {
 };
 
 // Takım adına göre tutarlı renk paleti (Deterministic Color Hashing)
-function getTeamColor(name: string): { bg: string; border: string; text: string } {
-  const lower = trLower(name);
+function getTeamColor(name: string = ""): { bg: string; border: string; text: string } {
+  const safeName = name || "";
+  const lower = trLower(safeName);
 
   if (lower.includes("fenerbahçe")) {
     return {
@@ -85,21 +86,22 @@ function getTeamColor(name: string): { bg: string; border: string; text: string 
   ];
 
   let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = (hash << 5) - hash + name.charCodeAt(i);
+  for (let i = 0; i < safeName.length; i++) {
+    hash = (hash << 5) - hash + safeName.charCodeAt(i);
     hash |= 0;
   }
   return PALETTES[Math.abs(hash) % PALETTES.length];
 }
 
 // İsimden kısa spor kulübü kısaltması (2-3 harf) üret
-function getInitials(name: string): string {
-  const clean = name
+function getInitials(name: string = ""): string {
+  const safe = name || "";
+  const clean = safe
     .replace(/\b(sk|gsk|belediyesi|belediye|bld|spor|kulübü|kulubu|ortaokulu|koleji|akademi)\b/gi, "")
     .trim();
 
   const words = clean.split(/\s+/).filter(Boolean);
-  if (words.length === 0) return name.slice(0, 2).toUpperCase();
+  if (words.length === 0) return safe.slice(0, 2).toUpperCase();
   if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
   return (words[0][0] + words[1][0]).toUpperCase();
 }

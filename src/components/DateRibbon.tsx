@@ -3,6 +3,9 @@
 import React from "react";
 import { ChevronLeft, ChevronRight, Calendar } from "lucide-react";
 
+const MONTH_LABELS = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"];
+const WEEKDAY_LABELS = ["PAZ", "PZT", "SAL", "ÇAR", "PER", "CUM", "CMT"];
+
 interface DateRibbonProps {
   dates: string[];
   selectedDate: string; // "all" or "YYYY-MM-DD"
@@ -33,12 +36,15 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
     }
   };
 
-  // Seçilen tarih değiştiğinde butonu görünür alana ortala
+  // Seçilen tarih değiştiğinde butonu görünür alana ortala (zorunlu reflow'u engellemek için rAF ile)
   React.useEffect(() => {
     if (selectedDate && selectedDate !== "all" && scrollContainerRef.current) {
       const activeEl = scrollContainerRef.current.querySelector<HTMLElement>('[aria-selected="true"]');
       if (activeEl && typeof activeEl.scrollIntoView === "function") {
-        activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        const frameId = requestAnimationFrame(() => {
+          activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        });
+        return () => cancelAnimationFrame(frameId);
       }
     }
   }, [selectedDate]);
@@ -55,22 +61,27 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
     if (!dateStr || dateStr === "TBD") {
       return { top: "FİKSTÜR", bottom: "Tarihsiz", isToday: false, isYesterday: false };
     }
-    const d = new Date(dateStr);
-    if (isNaN(d.getTime())) {
+    const parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr);
+    if (!parts) {
       return { top: "FİKSTÜR", bottom: dateStr, isToday: false, isYesterday: false };
     }
-    const dayNum = d.getDate();
-    const month = d.toLocaleDateString("tr-TR", { month: "short" });
-    const weekday = d.toLocaleDateString("tr-TR", { weekday: "short" });
+    const [, year, month, day] = parts;
+    const d = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
+    if (d.getUTCMonth() !== Number(month) - 1 || d.getUTCDate() !== Number(day)) {
+      return { top: "FİKSTÜR", bottom: dateStr, isToday: false, isYesterday: false };
+    }
+    const dayNum = d.getUTCDate();
+    const monthLabel = MONTH_LABELS[d.getUTCMonth()];
+    const weekday = WEEKDAY_LABELS[d.getUTCDay()];
 
     if (dateStr === todayStr) {
-      return { top: "BUGÜN", bottom: `${dayNum} ${month}`, isToday: true, isYesterday: false };
+      return { top: "BUGÜN", bottom: `${dayNum} ${monthLabel}`, isToday: true, isYesterday: false };
     }
     if (yesterdayStr && dateStr === yesterdayStr) {
-      return { top: "DÜN", bottom: `${dayNum} ${month}`, isToday: false, isYesterday: true };
+      return { top: "DÜN", bottom: `${dayNum} ${monthLabel}`, isToday: false, isYesterday: true };
     }
 
-    return { top: weekday.toUpperCase(), bottom: `${dayNum} ${month}`, isToday: false, isYesterday: false };
+    return { top: weekday, bottom: `${dayNum} ${monthLabel}`, isToday: false, isYesterday: false };
   };
 
   return (

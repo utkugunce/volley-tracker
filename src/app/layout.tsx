@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+import { Analytics } from "@vercel/analytics/next";
 
 export const viewport: Viewport = {
   themeColor: "#dc2626",
@@ -58,9 +59,17 @@ export default function RootLayout({
           type="font/woff"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/museo-sans-900.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body className="min-h-screen bg-slate-900 text-slate-100 font-sans antialiased selection:bg-primary selection:text-white">
+      <body className="min-h-screen bg-[#121212] text-[#F1F5F9] font-sans antialiased selection:bg-blue-600 selection:text-white">
         {children}
+        <Analytics />
         <ServiceWorkerRegister />
       </body>
     </html>

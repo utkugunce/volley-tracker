@@ -16,17 +16,30 @@ import { Kadinlar2LigTeams } from "./Kadinlar2LigTeams";
 import { Kadinlar2LigTodayMatches } from "./Kadinlar2LigTodayMatches";
 import { Kadinlar2LigResults } from "./Kadinlar2LigResults";
 import { Kadinlar2LigMobileNav } from "./Kadinlar2LigMobileNav";
+import { Kadinlar2LigStatuView } from "./Kadinlar2LigStatuView";
+import { Kadinlar2LigHomePortal } from "./Kadinlar2LigHomePortal";
+import { Kadinlar2LigCompare } from "./Kadinlar2LigCompare";
+import {
+  getKadinlar2LigRoute,
+  parseKadinlar2LigRoute,
+} from "@/utils/kadinlar2LigRoutes";
 
 interface Kadinlar2LigClientProps {
   initialData: Kadinlar2LigData;
+  initialTab?: Kadinlar2LigTabType;
+  initialGroup?: number;
 }
 
 export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   initialData,
+  initialTab,
+  initialGroup,
 }) => {
   const [data, setData] = useState<Kadinlar2LigData>(initialData);
-  const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>("standings");
-  const [selectedGroup, setSelectedGroup] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>(
+    initialTab || "home"
+  );
+  const [selectedGroup, setSelectedGroup] = useState<number>(initialGroup || 1);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [justUpdated, setJustUpdated] = useState<boolean>(false);
@@ -38,13 +51,14 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
   const currentGroupData = data.gruplar.find((g) => g.grup_no === selectedGroup) || data.gruplar[0];
 
-  // Günün maçları sayısı & Sonuçlar sayısı
-  const todayStr = useMemo(() => {
+  // Bugün tarihi — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
+  const [todayStr, setTodayStr] = useState("");
+  useEffect(() => {
     const d = new Date();
     const day = String(d.getDate()).padStart(2, "0");
     const month = String(d.getMonth() + 1).padStart(2, "0");
     const year = d.getFullYear();
-    return `${day}.${month}.${year}`;
+    setTodayStr(`${day}.${month}.${year}`);
   }, []);
 
   const todayMatchesCount = useMemo(() => {
@@ -104,19 +118,79 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     }
   };
 
-  const handleSelectGroupFromAnywhere = (gNo: number, tab?: "standings" | "fixtures") => {
+  const handleSelectTab = (tab: Kadinlar2LigTabType) => {
+    setActiveTab(tab);
+    if (typeof window !== "undefined") {
+      const targetPath = getKadinlar2LigRoute(tab, selectedGroup);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab, group: selectedGroup }, "", targetPath);
+      }
+    }
+  };
+
+  const handleSelectGroup = (gNo: number) => {
     setSelectedGroup(gNo);
-    setActiveTab(tab || "standings");
+    if (typeof window !== "undefined") {
+      const targetPath = getKadinlar2LigRoute(activeTab, gNo);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab: activeTab, group: gNo }, "", targetPath);
+      }
+    }
+  };
+
+  const handleSelectGroupFromAnywhere = (
+    gNo: number,
+    tab?: "standings" | "fixtures"
+  ) => {
+    const targetTab = tab || "standings";
+    setSelectedGroup(gNo);
+    setActiveTab(targetTab);
+    if (typeof window !== "undefined") {
+      const targetPath = getKadinlar2LigRoute(targetTab, gNo);
+      const currentPath = window.location.pathname;
+      if (currentPath !== targetPath) {
+        window.history.pushState({ tab: targetTab, group: gNo }, "", targetPath);
+      }
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Tarayıcı Geri/İleri butonları (popstate) dinleyicisi
+  useEffect(() => {
+    const handlePopState = () => {
+      const { tab, groupNo } = parseKadinlar2LigRoute(window.location.pathname);
+      setActiveTab(tab);
+      if (groupNo) {
+        setSelectedGroup(groupNo);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  // Sayfa ilk yüklendiğinde tarayıcı URL'ini kontrol et
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const { tab, groupNo } = parseKadinlar2LigRoute(window.location.pathname);
+      if (tab && !initialTab) {
+        setActiveTab(tab);
+      }
+      if (groupNo && !initialGroup) {
+        setSelectedGroup(groupNo);
+      }
+    }
+  }, [initialTab, initialGroup]);
+
   return (
-    <div className="min-h-screen bg-[#090714] text-slate-100 flex flex-col font-sans selection:bg-purple-600 selection:text-white">
-      {/* 1. Özel Kadınlar 2. Ligi Header'ı */}
+    <div className="min-h-screen bg-[#0a0f1d] text-slate-100 flex flex-col font-sans selection:bg-rose-600 selection:text-white">
+      {/* 1. Altyapı ile Birebir Header */}
       <Kadinlar2LigHeader
         metadata={data.metadata}
         activeTab={activeTab}
-        onSelectTab={setActiveTab}
+        onSelectTab={handleSelectTab}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         onRefresh={handleRefresh}
@@ -130,17 +204,29 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      {/* 2. Gruplar Seçim Barı (Puan Cetveli veya Fikstür açıkken) */}
-      {(activeTab === "standings" || activeTab === "fixtures") && (
-        <Kadinlar2LigGroupBar
-          groups={data.gruplar}
-          selectedGroup={selectedGroup}
-          onSelectGroup={setSelectedGroup}
-        />
-      )}
+      {/* 3. Ana İçerik Alanı (Altyapı max-w-6xl ile Birebir) */}
+      <main className="flex-1 max-w-6xl w-full mx-auto px-2 sm:px-4 py-3 sm:py-4 pb-20 sm:pb-8 flex flex-col space-y-3 sm:space-y-4">
+        {/* 2. Gruplar & İl Seçici Barı (Puan Cetveli veya Fikstür açıkken) */}
+        {(activeTab === "standings" || activeTab === "fixtures") && (
+          <Kadinlar2LigGroupBar
+            groups={data.gruplar}
+            allMatches={data.tum_maclar}
+            selectedGroup={selectedGroup}
+            onSelectGroup={handleSelectGroup}
+          />
+        )}
+        {/* ANASAYFA / CANLI HUB TABI */}
+        {activeTab === "home" && (
+          <Kadinlar2LigHomePortal
+            data={data}
+            onNavigateTab={setActiveTab}
+            onSelectGroup={handleSelectGroupFromAnywhere}
+            onSelectMatch={setSelectedMatch}
+            searchQuery={searchQuery}
+            showOnlyFavorites={showOnlyFavorites}
+          />
+        )}
 
-      {/* 3. Ana İçerik Alanı */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-4 py-4 sm:py-6 pb-24 sm:pb-8">
         {/* GÜNÜN MAÇLARI TABI */}
         {activeTab === "today" && (
           <Kadinlar2LigTodayMatches
@@ -184,7 +270,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           />
         )}
 
-        {/* 16 GRUP STATÜSÜ TABI */}
+        {/* 16 GRUP DURUMU TABI */}
         {activeTab === "leaders" && (
           <Kadinlar2LigLeaders
             groups={data.gruplar}
@@ -203,6 +289,17 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
           />
         )}
+
+        {/* H2H KARŞILAŞTIR TABI */}
+        {activeTab === "karsilastir" && (
+          <Kadinlar2LigCompare
+            data={data}
+            onSelectGroup={handleSelectGroupFromAnywhere}
+          />
+        )}
+
+        {/* RESMİ STATÜ & REHBER TABI */}
+        {activeTab === "statu" && <Kadinlar2LigStatuView />}
       </main>
 
       {/* 4. Maç Detay ve Salon Çekmecesi */}
@@ -235,7 +332,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       {/* 6. Mobil Alt Menü Barı (Sticky Bottom Navigation) */}
       <Kadinlar2LigMobileNav
         activeTab={activeTab}
-        onSelectTab={setActiveTab}
+        onSelectTab={handleSelectTab}
         showOnlyFavorites={showOnlyFavorites}
         onToggleFavorites={() => setShowOnlyFavorites((prev) => !prev)}
         favoriteCount={favoritesCount}
@@ -243,26 +340,23 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         resultsCount={resultsCount}
       />
 
-      {/* 7. Özel Kadınlar 2. Ligi Footer'ı */}
-      <footer className="bg-[#0b0816] border-t border-purple-900/40 py-6 text-center text-xs text-purple-300/60 hidden sm:block">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      {/* 7. Footer */}
+      <footer className="bg-[#080c14] border-t border-slate-800/80 py-4 text-center text-xs text-slate-500 hidden sm:block">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-md bg-purple-600 flex items-center justify-center text-[10px] font-bold text-white">
-              2L
-            </div>
-            <span className="font-semibold text-purple-200">
-              TVF Uzman Posta Kadınlar Voleybol 2. Ligi Takip Sistemi
+            <span className="font-semibold text-slate-400">
+              TVF Uzman Posta Kadınlar Voleybol 2. Ligi
             </span>
+            <span>•</span>
+            <span className="text-slate-500">16 Grup • 167 Kulüp</span>
           </div>
 
           <div className="flex items-center gap-3 text-[11px]">
-            <span>16 Grup • 167 Takım • 289 Maç</span>
-            <span>•</span>
             <a
               href="https://tvf.org.tr"
               target="_blank"
               rel="noreferrer"
-              className="text-purple-400 hover:text-white transition-colors"
+              className="text-slate-400 hover:text-white transition-colors"
             >
               tvf.org.tr
             </a>

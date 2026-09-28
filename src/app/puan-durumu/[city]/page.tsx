@@ -2,10 +2,17 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DashboardClient } from "@/components/DashboardClient";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
-import { getCityNameFromSlug, isValidCitySlug } from "@/utils/cityHelper";
+import { getCityNameFromSlug, isValidCitySlug, getAllCitiesList } from "@/utils/cityHelper";
 import { slugify } from "@/utils/slugify";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 180; // 3 minutes ISR cache
+
+export function generateStaticParams() {
+  const cities = getAllCitiesList();
+  return cities
+    .filter((c) => (c.matches_count || 0) > 0)
+    .map((c) => ({ city: c.slug }));
+}
 
 interface PageProps {
   params: Promise<{ city: string }>;

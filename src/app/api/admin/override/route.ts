@@ -13,6 +13,7 @@ import {
   sanitizeSetScores,
   sanitizeStatus,
 } from "@/utils/sanitize";
+import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 
 // Brute-force koruması: 5 dakika içinde 10 hatalı token denemesi -> 15 dakika blok
 const adminAuthLimiter = new RateLimiter({
@@ -34,7 +35,7 @@ function safeCompare(a: string, b: string): boolean {
   return timingSafeEqual(bufA, bufB);
 }
 
-function verifyAdminToken(request: Request): { authorized: boolean; response?: NextResponse } {
+async function verifyAdminToken(request: Request): Promise<{ authorized: boolean; response?: NextResponse }> {
   const clientIp = getClientIp(request);
 
   // 1. Genel hız sınırı kontrolü
@@ -63,39 +64,57 @@ function verifyAdminToken(request: Request): { authorized: boolean; response?: N
 
   const expectedToken = process.env.ADMIN_TOKEN;
 
-  if (!expectedToken) {
-    console.error("ADMIN_TOKEN ortam değişkeni tanımlı değil — admin override endpoint devre dışı.");
+  const authHeader =
+    request.headers.get("x-admin-token") ||
+    request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+  const legacyToken = request.headers.get("x-admin-token");
+
+  if (expectedToken && authHeader && safeCompare(authHeader, expectedToken)) {
+    adminAuthLimiter.reset(clientIp);
+    return { authorized: true };
+  }
+
+  if (expectedToken && legacyToken) {
+    return {
+      authorized: false,
+      response: NextResponse.json({ error: "Yetkisiz işlem: Geçersiz admin token." }, { status: 401 }),
+    };
+  }
+
+  const authenticatedUser = await getAuthenticatedUser(request);
+  if (authenticatedUser && (authenticatedUser.role === "admin" || authenticatedUser.role === "editor")) {
+    adminAuthLimiter.reset(clientIp);
+    return { authorized: true };
+  }
+
+  if (!expectedToken && !process.env.NEXT_PUBLIC_SUPABASE_URL) {
+    console.error("Admin auth yapılandırılmamış — ADMIN_TOKEN veya Supabase Auth gerekli.");
     return {
       authorized: false,
       response: NextResponse.json(
-        { error: "Sunucu yapılandırması eksik: ADMIN_TOKEN ortam değişkeni tanımlanmamış." },
+        { error: "Sunucu yapılandırması eksik: ADMIN_TOKEN veya Supabase Auth tanımlanmamış." },
         { status: 503 }
       ),
     };
   }
 
-  const authHeader =
-    request.headers.get("x-admin-token") ||
-    request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
-
-  if (!authHeader || !safeCompare(authHeader, expectedToken)) {
+  if (!authHeader) {
     return {
       authorized: false,
       response: NextResponse.json(
-        { error: "Yetkisiz işlem: Geçersiz veya eksik admin token." },
+        { error: "Yetkisiz işlem: Geçersiz veya eksik admin oturumu." },
         { status: 401 }
       ),
     };
   }
-
-  // Başarılı giriş yapıldığında bu IP için hatalı giriş sayacını sıfırla
-  adminAuthLimiter.reset(clientIp);
-
-  return { authorized: true };
+  return {
+    authorized: false,
+    response: NextResponse.json({ error: "Yetkisiz işlem: Admin veya editor rolü gerekli." }, { status: 403 }),
+  };
 }
 
 export async function GET(request: Request) {
-  const auth = verifyAdminToken(request);
+  const auth = await verifyAdminToken(request);
   if (!auth.authorized) return auth.response!;
 
   try {
@@ -108,7 +127,7 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const auth = verifyAdminToken(request);
+  const auth = await verifyAdminToken(request);
   if (!auth.authorized) return auth.response!;
 
   try {
@@ -208,7 +227,7 @@ export async function POST(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  const auth = verifyAdminToken(request);
+  const auth = await verifyAdminToken(request);
   if (!auth.authorized) return auth.response!;
 
   try {

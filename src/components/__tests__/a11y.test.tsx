@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, it, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { CityTabBar } from "../CityTabBar";
 import { FilterBar } from "../FilterBar";
 import { DateRibbon } from "../DateRibbon";
@@ -72,8 +72,13 @@ describe("Erişilebilirlik (a11y) Standartları (GÖREV 3)", () => {
       const allTab = screen.getByRole("tab", { name: /HEPSİ/i });
       expect(allTab.getAttribute("aria-selected")).toBe("false");
 
-      const searchInput = screen.getByLabelText("Kulüp veya salon ara");
-      expect(searchInput).toBeDefined();
+      const filtersButton = screen.getByRole("button", { name: /Filtreler/ });
+      expect(filtersButton).toHaveAttribute("aria-expanded", "false");
+      expect(screen.queryByLabelText("Kulüp veya salon ara")).not.toBeInTheDocument();
+      fireEvent.click(filtersButton);
+      expect(filtersButton).toHaveAttribute("aria-expanded", "true");
+      expect(screen.getByRole("tablist", { name: "Lig filtreleri" })).toBeVisible();
+      expect(screen.getByLabelText("Kulüp veya salon ara")).toBeVisible();
     });
   });
 

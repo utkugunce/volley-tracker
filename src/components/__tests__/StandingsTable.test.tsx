@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { StandingsTable } from '../StandingsTable';
 import { StandingItem } from '@/types/fixture';
 
@@ -143,14 +143,14 @@ describe('StandingsTable Component', () => {
     render(<StandingsTable standingsData={standingsData} />);
 
     expect(screen.getByText('Bilinmeyen Mahalle Voleybol SK')).toBeInTheDocument();
-    // Volleybox harici linki olmamalı
-    expect(screen.queryByRole('link', { name: /volleybox/i })).not.toBeInTheDocument();
+    // Takımlar için Volleybox profil linki olmamalı
+    expect(screen.queryByRole('link', { name: /takım profili/i })).not.toBeInTheDocument();
     // Takım detay sayfası iç linki bulunmalı
     const teamLink = screen.getByRole('link', { name: 'Bilinmeyen Mahalle Voleybol SK' });
     expect(teamLink).toHaveAttribute('href', '/takim/bilinmeyen-mahalle-voleybol-sk');
   });
 
-  it('(f) lig başlığına tıklandığında Volleybox turnuva sayfasına yönlendiren link render ediliyor', () => {
+  it('(f) lig başlığına tıklandığında ilgili lig sayfasına yönlendiren link render ediliyor', () => {
     const standingsData = {
       'Genç Kızlar Süper Lig - A Grubu': [mockItemA],
     };
@@ -159,8 +159,7 @@ describe('StandingsTable Component', () => {
 
     const leagueLink = screen.getByRole('link', { name: /GENÇ KIZLAR SÜPER LİG/i });
     expect(leagueLink).toBeInTheDocument();
-    expect(leagueLink).toHaveAttribute('href', expect.stringContaining('women-stanbul-super-ligi-u18-2026-27-o50864'));
-    expect(leagueLink).toHaveAttribute('target', '_blank');
+    expect(leagueLink).toHaveAttribute('href', '/lig/istanbul/genc-kizlar-super-lig');
   });
 
   it('(g) Genç ve Yıldız yaş grubu seçici butonları grupları ve verileri ayrıştırır', () => {
@@ -202,7 +201,7 @@ describe('StandingsTable Component', () => {
     expect(screen.getByText(/Galatasaray Yıldız/i)).toBeInTheDocument();
   });
 
-  it('(h) Tüm İller modunda birden fazla il varken İL seçici butonları gösterilir ve şehirler arası geçiş yapılır', () => {
+  it('(h) Tüm İller modunda birden fazla il varken İL açılır menüsü gösterilir ve şehir seçimi yapılır', () => {
     const multiCityStandings = {
       'Ankara - Genç Kızlar Süper Lig - Genç Kızlar Süper Lig 1. Grup': [mockItemA],
       'İstanbul - Genç Kızlar Süper Lig - A Grubu': [
@@ -212,21 +211,53 @@ describe('StandingsTable Component', () => {
 
     render(<StandingsTable standingsData={multiCityStandings} />);
 
-    // İl butonları görünmeli
-    const ankaraBtn = screen.getByRole('button', { name: 'Ankara' });
-    const istanbulBtn = screen.getByRole('button', { name: 'İstanbul' });
-    expect(ankaraBtn).toBeInTheDocument();
-    expect(istanbulBtn).toBeInTheDocument();
+    // Dropdown butonu seçili il olarak Ankara'yı göstermeli
+    const cityDropdownBtn = screen.getByRole('button', { name: 'Ankara' });
+    expect(cityDropdownBtn).toBeInTheDocument();
 
     // Başlangıçta Ankara ve Eczacıbaşı aktif
     expect(screen.getByText(/Eczacıbaşı/i)).toBeInTheDocument();
 
-    // İstanbul'a tıkla
-    fireEvent.click(istanbulBtn);
+    // Dropdown'ı açmak için tıkla
+    fireEvent.click(cityDropdownBtn);
 
-    // THY İstanbul görünmeli
+    // Açılır listede İstanbul seçeneği görünmeli
+    const istanbulOption = screen.getByRole('option', { name: /İstanbul/i });
+    expect(istanbulOption).toBeInTheDocument();
+
+    // İstanbul seçeneğine tıkla
+    fireEvent.click(istanbulOption);
+
+    // THY İstanbul görünmeli ve Eczacıbaşı gitmeli
     expect(screen.getByText(/THY İstanbul/i)).toBeInTheDocument();
     expect(screen.queryByText(/Eczacıbaşı/i)).not.toBeInTheDocument();
+
+    // Filtreleri Gizle / Aç butonu çalışmalı
+    const toggleFiltersBtn = screen.getByRole('button', { name: /Filtreleri Gizle/i });
+    expect(toggleFiltersBtn).toBeInTheDocument();
+    fireEvent.click(toggleFiltersBtn);
+
+    // Filtreler gizlendiğinde aç butonu görünmeli
+    expect(screen.getByRole('button', { name: /Kategori & Grupları Aç/i })).toBeInTheDocument();
+  });
+
+  it("takım inceleme aksiyonu seçilen takımın lig bağlamını iletir", () => {
+    const onSelectTeam = vi.fn();
+    const standingsData = {
+      "İstanbul - Genç Kızlar Süper Lig - A Grubu": [mockItemA],
+    };
+
+    render(<StandingsTable standingsData={standingsData} onSelectTeam={onSelectTeam} />);
+    fireEvent.click(screen.getByRole("button", { name: "Eczacıbaşı A takımını incele" }));
+
+    expect(onSelectTeam).toHaveBeenCalledWith(
+      mockItemA,
+      expect.objectContaining({
+        city: "İstanbul",
+        leagueName: "Genç Kızlar Süper Lig",
+        rawKey: "İstanbul - Genç Kızlar Süper Lig - A Grubu",
+      })
+    );
   });
 });
 

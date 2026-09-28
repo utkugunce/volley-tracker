@@ -81,8 +81,7 @@ export function urlBase64ToUint8Array(base64String: string): Uint8Array {
 }
 
 export const VAPID_PUBLIC_KEY =
-  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ||
-  "BLxQQh-7VlGxSjDSc7qC1-ABcTkrU7ha6JStAFPy6y04LDetsGvMjpyihmZyPY1d44jp5_A4D8rV4n1uLetyuZs";
+  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "";
 
 /**
  * Service Worker PushManager üzerinden abone olur ve sunucuya kaydeder.
@@ -94,7 +93,8 @@ export async function registerPushSubscription(options?: {
   if (
     typeof window === "undefined" ||
     !("serviceWorker" in navigator) ||
-    !("PushManager" in window)
+    !("PushManager" in window) ||
+    !VAPID_PUBLIC_KEY
   ) {
     return false;
   }

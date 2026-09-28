@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "updated_at": "2026-09-28T11:11:50.326566",
+=======
+  "updated_at": "2026-09-28T07:48:27.806142",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -284,5 +288,9 @@
     }
   ],
   "volleybox_synced_matches": 4,
+<<<<<<< HEAD
   "volleybox_sync_updated_at": "2026-09-28T11:15:25.788238"
+=======
+  "volleybox_sync_updated_at": "2026-09-28T07:50:48.007293"
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
 }

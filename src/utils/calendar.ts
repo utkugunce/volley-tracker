@@ -70,6 +70,27 @@ export function isMatchPassed(dateStr?: string, timeStr?: string, status?: strin
 }
 
 /**
+ * Bir maçın Volleybox skoru için gecikmiş ("skorsuz") kabul edilip edilmeyeceğini belirler.
+ * Kullanıcı skorları genelde maçtan bir gün sonra girdiği için,
+ * maç günü (o gün) olan maçlar henüz skorsuz olarak işaretlenmez.
+ * Yalnızca tarihi bugünden önce olan (dün veya daha eski, dateStr < today) maçlar "skorsuz" sayılır.
+ */
+export function isMatchOverdueForScore(dateStr?: string, todayStr?: string): boolean {
+  if (!dateStr || dateStr === "TBD") return false;
+
+  let today = todayStr;
+  if (!today) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    today = `${year}-${month}-${day}`;
+  }
+
+  return dateStr < today;
+}
+
+/**
  * ISO veya YYYY-MM-DD formatındaki tarihi Türkçe okunaklı formata çevirir.
  * Örn: '2026-09-14' -> '14 Eylül 2026 Pazartesi'
  */
@@ -136,5 +157,60 @@ export function compareMatchDateTime(
 
   // Aynı tarihte her zaman erken saatteki maç ilk gösterilir!
   return compareMatchTimes(m1.time, m2.time);
+}
+
+/**
+ * Verilen YYYY-MM-DD formatındaki tarihten bir önceki günün (dünün) tarihini döner.
+ */
+export function getYesterdayString(todayStr?: string): string {
+  let today = todayStr;
+  if (!today) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    today = `${year}-${month}-${day}`;
+  }
+
+  const parts = today.split("-");
+  if (parts.length !== 3) return "";
+  const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+  d.setDate(d.getDate() - 1);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Bir maçın "Günün Maçları" kapsamında değerlendirilip değerlendirilmeyeceğini kontrol eder.
+ * 1. Maç tarihi bugün ise (date === todayStr)
+ * 2. VEYA maç dün oynanmışsa (date === yesterdayStr) ve il temsilciliği henüz sonucu girmediyse (skorsuz ise)
+ */
+export function isTodayOrUnscoredYesterday(
+  matchDate?: string,
+  hasScore: boolean = false,
+  todayStr?: string,
+  yesterdayStr?: string
+): boolean {
+  if (!matchDate || matchDate === "TBD") return false;
+
+  let today = todayStr;
+  if (!today) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    today = `${year}-${month}-${day}`;
+  }
+
+  if (matchDate === today) return true;
+
+  const yesterday = yesterdayStr || getYesterdayString(today);
+  if (matchDate === yesterday && !hasScore) {
+    return true;
+  }
+
+  return false;
 }
 

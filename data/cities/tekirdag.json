@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "updated_at": "2026-09-28T11:12:01.058740",
+=======
+  "updated_at": "2026-09-28T07:48:49.870232",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -101,7 +105,11 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+<<<<<<< HEAD
         "team": "Voleybol Akademi Tekirdağ Spor Kulübü",
+=======
+        "team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -491,7 +499,11 @@
       "group": "A Grubu",
       "match_no": "1",
       "home_team": "Liva Volley Spor Kulübü U16",
+<<<<<<< HEAD
       "away_team": "Voleybol Akademi Tekirdağ Spor Kulübü",
+=======
+      "away_team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -502,18 +514,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "401151",
+        "url": "https://women.volleybox.net/tr/liva-volley-spor-kulubu-u16-tekirdag-voleybol-akademi-spor-kulubu-u16-c401151",
+        "host_name": "Liva Volley Spor Kulübü U16",
+        "guest_name": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-09-26",
+        "vb_time": "10:30",
+        "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-26",
+          "vb_time": "10:30",
+          "vb_hall": "Çorlu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -926,6 +945,11 @@
       }
     }
   ],
+<<<<<<< HEAD
   "volleybox_synced_matches": 12,
   "volleybox_sync_updated_at": "2026-09-28T11:15:25.817203"
+=======
+  "volleybox_synced_matches": 13,
+  "volleybox_sync_updated_at": "2026-09-28T07:50:47.981194"
+>>>>>>> f5c691621f24ea82346b3b5a5cbd9a8683398a67
 }

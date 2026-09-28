@@ -1,19 +1,30 @@
+"use client";
+
 import React, { useState, useMemo } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, ChevronRight, Swords, Download, Printer, Star } from "lucide-react";
+import {
+  Calendar,
+  Star,
+  Download,
+  Printer,
+  AlertTriangle,
+  RotateCcw,
+  SearchX,
+} from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
-import { slugify } from "@/utils/slugify";
-import { downloadIcsFile, generateSeasonIcs } from "@/utils/ics";
+import { FixtureTable } from "@/components/FixtureTable";
+import { convertK2MatchToMatch } from "@/utils/kadinlar2LigConverter";
+import { generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { useFavorites } from "@/utils/useFavorites";
-import { triggerHaptic } from "@/utils/haptics";
+import { PrintScheduleButton } from "@/components/PrintScheduleButton";
+import { isMatchOverdueForScore } from "@/utils/calendar";
 
 interface Kadinlar2LigFixturesProps {
   group: Kadinlar2LigGroup;
   searchQuery?: string;
   onSelectMatch?: (match: Match) => void;
   showOnlyFavorites?: boolean;
+  onToggleFavoritesOnly?: () => void;
 }
 
 export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
@@ -21,48 +32,18 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   searchQuery = "",
   onSelectMatch,
   showOnlyFavorites = false,
+  onToggleFavoritesOnly,
 }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const [selectedWeek, setSelectedWeek] = useState<number | "all">("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "OYNANACAK" | "BİTTİ">("all");
-
-  const convertToMatch = (m: Kadinlar2LigMatch): Match => {
-    const setScores = m.set_sonuclari
-      ? m.set_sonuclari.split(",").map((s) => s.trim()).filter(Boolean)
-      : [];
-    let homeScore: number | null = null;
-    let awayScore: number | null = null;
-    if (m.skor && m.skor.includes("-") && m.skor !== "- : -") {
-      const parts = m.skor.split("-").map((s) => parseInt(s.trim(), 10));
-      if (!isNaN(parts[0]) && !isNaN(parts[1])) {
-        homeScore = parts[0];
-        awayScore = parts[1];
-      }
-    }
-    return {
-      id: m.id,
-      match_no: m.mac_no || "",
-      date: m.tarih || "",
-      time: m.saat || "",
-      hall: m.salon || "",
-      home_team: m.takim_a,
-      away_team: m.takim_b,
-      category: "Kadınlar 2. Ligi",
-      age_group: "Genç",
-      gender: "Kız",
-      group: m.grup_adi || `Grup ${m.grup_no}`,
-      city: m.sehir || "Türkiye",
-      status: m.durum === "BİTTİ" ? "finished" : "upcoming",
-      score: m.skor && m.skor !== "- : -" ? m.skor : undefined,
-      set_scores: setScores,
-      home_score: homeScore,
-      away_score: awayScore,
-    };
-  };
+  const [volleyboxFilter, setVolleyboxFilter] = useState<
+    "all" | "scored" | "unscored" | "unsynced" | "discrepancy"
+  >("all");
 
   const matches = useMemo(() => group?.fikstur || [], [group?.fikstur]);
 
-  // Available weeks in this group
+  // Hafta listesi
   const weeks = useMemo(() => {
     const set = new Set<number>();
     matches.forEach((m) => {
@@ -71,42 +52,80 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     return Array.from(set).sort((a, b) => a - b);
   }, [matches]);
 
-  // Filtered matches
+  // Volleybox Eşleşme İstatistikleri (Tümü, Skorlu, Skorsuz, Girilmedi, Değişenler)
+  const volleyboxStats = useMemo(() => {
+    const total = matches.length;
+    const scored = matches.filter(
+      (m) => m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -")
+    ).length;
+    const unscored = matches.filter(
+      (m) =>
+        Boolean(m.takim_a_volleybox_url && m.takim_b_volleybox_url) &&
+        m.durum !== "BİTTİ" &&
+        (!m.skor || !m.skor.includes("-") || m.skor === "- : -") &&
+        isMatchOverdueForScore(m.tarih)
+    ).length;
+    const unsynced = matches.filter(
+      (m) => !m.takim_a_volleybox_url || !m.takim_b_volleybox_url
+    ).length;
+    const discrepancy = matches.filter(
+      (m) =>
+        Boolean((m as any).discrepancy?.has_diff || (m as any).volleybox?.discrepancy?.has_diff)
+    ).length;
+
+    return { total, scored, unscored, unsynced, discrepancy };
+  }, [matches]);
+
+  // Filtrelenmiş maçlar
   const filteredMatches = useMemo(() => {
     return matches.filter((m) => {
-      // Week filter
       if (selectedWeek !== "all" && m.hafta !== selectedWeek) return false;
-      // Status filter
       if (statusFilter !== "all" && m.durum !== statusFilter) return false;
-      // Favorites filter
       if (showOnlyFavorites) {
         const homeFav = isFavorite(m.takim_a);
         const awayFav = isFavorite(m.takim_b);
         if (!homeFav && !awayFav) return false;
       }
-      // Search query
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
-        const inTeams = m.takim_a.toLowerCase().includes(q) || m.takim_b.toLowerCase().includes(q);
-        const inCity = m.sehir.toLowerCase().includes(q);
-        const inHall = m.salon.toLowerCase().includes(q);
+        const inTeams =
+          m.takim_a.toLowerCase().includes(q) || m.takim_b.toLowerCase().includes(q);
+        const inCity = m.sehir?.toLowerCase().includes(q);
+        const inHall = m.salon?.toLowerCase().includes(q);
         if (!inTeams && !inCity && !inHall) return false;
       }
+
+      // Volleybox filtreleri
+      const isScored =
+        m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -");
+      const isSynced = Boolean(m.takim_a_volleybox_url && m.takim_b_volleybox_url);
+      const hasDiscrepancy = Boolean(
+        (m as any).discrepancy?.has_diff || (m as any).volleybox?.discrepancy?.has_diff
+      );
+
+      if (volleyboxFilter === "scored" && !isScored) return false;
+      if (
+        volleyboxFilter === "unscored" &&
+        (!isSynced || isScored || !isMatchOverdueForScore(m.tarih))
+      ) {
+        return false;
+      }
+      if (volleyboxFilter === "unsynced" && isSynced) return false;
+      if (volleyboxFilter === "discrepancy" && !hasDiscrepancy) return false;
+
       return true;
     });
-  }, [matches, selectedWeek, statusFilter, showOnlyFavorites, searchQuery, isFavorite]);
+  }, [
+    matches,
+    selectedWeek,
+    statusFilter,
+    showOnlyFavorites,
+    searchQuery,
+    volleyboxFilter,
+    isFavorite,
+  ]);
 
-  const handleDownloadGroupIcs = () => {
-    const icsMatches = filteredMatches.map(convertToMatch);
-    const ics = generateSeasonIcs(icsMatches, `TVF Kadınlar 2. Ligi - ${group.grup_adi} Fikstürü`);
-    downloadIcsFile(`kadinlar-2-ligi-${slugify(group.grup_adi)}-fiksturu.ics`, ics);
-  };
-
-  const handlePrint = () => {
-    window.print();
-  };
-
-  // Group filtered matches by week
+  // Haftalara göre gruplama
   const matchesByWeek = useMemo(() => {
     const map = new Map<number, Kadinlar2LigMatch[]>();
     filteredMatches.forEach((m) => {
@@ -117,346 +136,270 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     return Array.from(map.entries()).sort((a, b) => a[0] - b[0]);
   }, [filteredMatches]);
 
+  // Favori maç ID'leri
+  const favoriteMatchIds = useMemo(() => {
+    return matches
+      .filter((m) => isFavorite(m.takim_a) || isFavorite(m.takim_b))
+      .map((m) => m.id);
+  }, [matches, isFavorite]);
+
+  const handleToggleFavorite = (matchId: string) => {
+    const found = matches.find((m) => m.id === matchId);
+    if (found) {
+      toggleFavorite(found.takim_a);
+    }
+  };
+
+  // Sezon Takvimi İndir (.ics)
+  const handleDownloadSeasonIcs = () => {
+    const converted = filteredMatches.map(convertK2MatchToMatch);
+    const ics = generateSeasonIcs(
+      converted,
+      `Kadınlar 2. Ligi ${group.grup_adi} Fikstürü`
+    );
+    downloadIcsFile(`kadinlar-2-ligi-${group.grup_no}-grup-fikstur.ics`, ics);
+  };
+
+  const groupCity = group?.fikstur?.[0]?.sehir || "Türkiye";
+
   return (
     <div className="space-y-4">
-      {/* Filtre ve Hafta Seçici Bar */}
-      <div className="bg-[#120d24]/90 border border-purple-900/40 rounded-2xl p-3.5 shadow-xl backdrop-blur-md flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-        {/* Hafta Butonları */}
-        <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar w-full md:w-auto">
-          <button
-            onClick={() => setSelectedWeek("all")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap active:scale-95 cursor-pointer ${
-              selectedWeek === "all"
-                ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30"
-                : "bg-purple-950/40 text-purple-300 hover:text-white hover:bg-purple-900/40 border border-purple-800/40"
-            }`}
-          >
-            Tüm Haftalar ({matches.length})
-          </button>
-          {weeks.map((w) => (
+      {/* 1. Üst Filtre ve Kontrol Barı (Altyapı ile Birebir) */}
+      <div className="glass-panel border border-slate-800/80 rounded-2xl p-3 sm:p-4 shadow-card space-y-3">
+        {/* Üst Satır: Hafta Seçici & Aksiyonlar */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
+          {/* Hafta Butonları */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1">
+              <Calendar size={13} className="text-rose-400" />
+              <span>Hafta:</span>
+            </span>
+
             <button
-              key={w}
-              onClick={() => setSelectedWeek(w)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap active:scale-95 cursor-pointer ${
-                selectedWeek === w
-                  ? "bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md shadow-purple-600/30"
-                  : "bg-purple-950/40 text-purple-300 hover:text-white hover:bg-purple-900/40 border border-purple-800/40"
+              type="button"
+              onClick={() => setSelectedWeek("all")}
+              className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                selectedWeek === "all"
+                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold"
+                  : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
               }`}
             >
-              {w}. Hafta
+              Tüm Haftalar ({matches.length})
             </button>
-          ))}
+
+            {weeks.map((w) => {
+              const count = matches.filter((m) => m.hafta === w).length;
+              const isSelected = selectedWeek === w;
+              return (
+                <button
+                  key={w}
+                  type="button"
+                  onClick={() => setSelectedWeek(w)}
+                  className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                    isSelected
+                      ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold"
+                      : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
+                  }`}
+                >
+                  {w}. Hafta ({count})
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Sağ Aksiyon Butonları (ICS İndir, Yazdır, Favoriler) */}
+          <div className="flex items-center gap-2 shrink-0 self-end sm:self-auto">
+            {onToggleFavoritesOnly && (
+              <button
+                type="button"
+                onClick={onToggleFavoritesOnly}
+                className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-xl border transition-all cursor-pointer ${
+                  showOnlyFavorites
+                    ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-glow-amber font-bold border-amber-400"
+                    : "bg-slate-800/80 text-slate-300 hover:text-white border-slate-700/60 hover:bg-slate-700/80"
+                }`}
+                title="Sadece takip ettiğim kulüplerin maçlarını listele"
+              >
+                <Star
+                  size={12}
+                  className={showOnlyFavorites ? "fill-black text-black" : "text-amber-400"}
+                />
+                <span className="hidden sm:inline">Favoriler</span>
+              </button>
+            )}
+
+            <button
+              type="button"
+              onClick={handleDownloadSeasonIcs}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-slate-700/80 transition-all shadow-xs cursor-pointer active:scale-95"
+              title="Fikstürü Apple/Google/Outlook Takvime Ekle (.ics)"
+            >
+              <Download size={12} className="text-rose-400" />
+              <span className="hidden sm:inline">Takvime Ekle</span>
+            </button>
+
+            <PrintScheduleButton
+              title="Yazdır"
+            />
+          </div>
         </div>
 
-        {/* Sağ Taraf: Durum Filtresi + Takvim (.ics) + Yazdır */}
-        <div className="flex flex-wrap items-center gap-2 self-end md:self-auto text-xs">
-          {/* Takvim .ics İndir */}
-          <button
-            onClick={handleDownloadGroupIcs}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-900/60 hover:bg-purple-800/80 text-purple-200 hover:text-white border border-purple-700/50 transition-all font-semibold active:scale-95 cursor-pointer shadow-xs"
-            title="Bu grubun fikstürünü telefon/bilgisayar takviminize (.ics) aktarın"
-          >
-            <Download size={12} className="text-pink-400" />
-            <span className="hidden sm:inline">Takvime Ekle</span>
-          </button>
+        {/* Alt Satır: Durum ve Volleybox Filtreleri */}
+        <div className="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+          {/* Sol: Durum Filtresi (Tümü, Oynanacak, Bitenler) */}
+          <div className="flex items-center gap-1.5 text-xs">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+              Durum:
+            </span>
+            <div className="flex items-center rounded-xl bg-slate-900/90 p-0.5 border border-slate-700/70">
+              <button
+                type="button"
+                onClick={() => setStatusFilter("all")}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  statusFilter === "all"
+                    ? "bg-slate-800 text-white shadow-xs font-bold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Tümü
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatusFilter("OYNANACAK")}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  statusFilter === "OYNANACAK"
+                    ? "bg-rose-600 text-white shadow-xs font-bold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Oynanacak
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatusFilter("BİTTİ")}
+                className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                  statusFilter === "BİTTİ"
+                    ? "bg-emerald-600 text-white shadow-xs font-bold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Bitenler
+              </button>
+            </div>
+          </div>
 
-          {/* Yazdır Butonu */}
-          <button
-            onClick={handlePrint}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-900/40 hover:bg-purple-800/60 text-purple-300 hover:text-white border border-purple-800/50 transition-all active:scale-95 cursor-pointer"
-            title="Fikstürü yazdır veya PDF olarak kaydet"
-          >
-            <Printer size={12} />
-            <span className="hidden sm:inline">Yazdır</span>
-          </button>
+          {/* Sağ: Volleybox Filtreleri (Tümü, Skorlu, Skorsuz, Girilmedi, Değişenler) */}
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 text-xs">
+            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0">
+              Volleybox:
+            </span>
+            <div className="flex items-center rounded-xl bg-slate-900/90 p-0.5 border border-slate-700/70">
+              <button
+                type="button"
+                onClick={() => setVolleyboxFilter("all")}
+                className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
+                  volleyboxFilter === "all"
+                    ? "bg-slate-800 text-white font-bold shadow-xs"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Tümü ({volleyboxStats.total})
+              </button>
+              <button
+                type="button"
+                onClick={() => setVolleyboxFilter("scored")}
+                className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
+                  volleyboxFilter === "scored"
+                    ? "bg-emerald-600 text-white font-bold shadow-xs"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Skorlu ({volleyboxStats.scored})
+              </button>
+              <button
+                type="button"
+                onClick={() => setVolleyboxFilter("unscored")}
+                className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
+                  volleyboxFilter === "unscored"
+                    ? "bg-amber-600 text-white font-bold shadow-xs"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Skorsuz ({volleyboxStats.unscored})
+              </button>
+              <button
+                type="button"
+                onClick={() => setVolleyboxFilter("unsynced")}
+                className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
+                  volleyboxFilter === "unsynced"
+                    ? "bg-slate-700 text-white font-bold shadow-xs"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                Girilmedi ({volleyboxStats.unsynced})
+              </button>
+              <button
+                type="button"
+                onClick={() => setVolleyboxFilter("discrepancy")}
+                className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all flex items-center gap-1 cursor-pointer ${
+                  volleyboxFilter === "discrepancy"
+                    ? "bg-amber-600 text-white font-bold shadow-xs"
+                    : volleyboxStats.discrepancy > 0
+                    ? "text-amber-300 bg-amber-950/40 hover:bg-amber-900/60 border border-amber-700/50 font-bold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                <AlertTriangle size={11} />
+                <span>Değişenler ({volleyboxStats.discrepancy})</span>
+              </button>
+            </div>
 
-          {/* Durum Filtresi: Hepsi / Oynanacak / Bitenler */}
-          <div className="flex items-center gap-1 bg-[#181130] p-1 rounded-xl border border-purple-800/40 text-xs">
-            <button
-              onClick={() => setStatusFilter("all")}
-              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
-                statusFilter === "all"
-                  ? "bg-purple-600 text-white shadow-xs"
-                  : "text-purple-300/70 hover:text-white"
-              }`}
-            >
-              Hepsi
-            </button>
-            <button
-              onClick={() => setStatusFilter("OYNANACAK")}
-              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
-                statusFilter === "OYNANACAK"
-                  ? "bg-purple-600 text-white shadow-xs"
-                  : "text-purple-300/70 hover:text-white"
-              }`}
-            >
-              Oynanacak
-            </button>
-            <button
-              onClick={() => setStatusFilter("BİTTİ")}
-              className={`px-2.5 py-1 rounded-lg font-semibold transition-all cursor-pointer ${
-                statusFilter === "BİTTİ"
-                  ? "bg-purple-600 text-white shadow-xs"
-                  : "text-purple-300/70 hover:text-white"
-              }`}
-            >
-              Bitenler
-            </button>
+            {/* Filtreleri Sıfırla */}
+            {(volleyboxFilter !== "all" || selectedWeek !== "all" || statusFilter !== "all") && (
+              <button
+                type="button"
+                onClick={() => {
+                  setVolleyboxFilter("all");
+                  setSelectedWeek("all");
+                  setStatusFilter("all");
+                }}
+                className="px-2 py-1 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-slate-800/80 border border-slate-700/60 font-medium flex items-center gap-1 transition-all shrink-0 cursor-pointer active:scale-95"
+              >
+                <RotateCcw size={11} />
+                <span>Sıfırla</span>
+              </button>
+            )}
           </div>
         </div>
       </div>
 
-      {/* Maç Listesi */}
+      {/* 2. Maç Tabloları (Altyapı FixtureTable ile Birebir) */}
       {matchesByWeek.length === 0 ? (
-        <div className="bg-[#120d24]/90 border border-purple-900/40 rounded-2xl p-8 text-center text-purple-300/60 text-xs">
-          Seçilen kriterlere uygun karşılaşma bulunamadı.
+        <div className="glass-panel border border-slate-800/80 rounded-2xl p-10 text-center space-y-2 shadow-card">
+          <SearchX size={36} className="mx-auto text-slate-600" />
+          <h3 className="text-sm font-bold text-white">Karşılaşma Bulunamadı</h3>
+          <p className="text-xs text-slate-400 max-w-sm mx-auto">
+            {showOnlyFavorites
+              ? "Favori kulüplerinize ait bu kriterlere uygun karşılaşma kaydı bulunmuyor."
+              : "Seçilen hafta veya filtreleme kriterlerine uygun maç bulunamadı."}
+          </p>
         </div>
       ) : (
-        matchesByWeek.map(([weekNum, weekMatches]) => (
-          <div key={weekNum} className="space-y-2">
-            {/* Hafta Başlığı */}
-            <div className="flex items-center justify-between px-2 text-xs font-bold text-purple-300 uppercase tracking-wider">
-              <span className="flex items-center gap-1.5">
-                <Calendar size={13} className="text-pink-400" />
-                <span>{group.grup_adi} • {weekNum}. Hafta</span>
-              </span>
-              <span className="text-[11px] font-mono text-purple-400/80">
-                {weekMatches.length} Maç
-              </span>
-            </div>
-
-            {/* Maç Kartları */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-              {weekMatches.map((m) => {
-                const isFinished = m.durum === "BİTTİ";
-                return (
-                  <div
-                    key={m.id}
-                    className="bg-[#130d29]/90 hover:bg-[#1a1238] border border-purple-900/40 hover:border-purple-600/50 rounded-2xl p-3.5 transition-all shadow-md hover:shadow-xl backdrop-blur-sm group"
-                  >
-                    {/* Üst Bilgi: Tarih, Saat, Salon, Şehir */}
-                    <div className="flex items-center justify-between text-[11px] text-purple-300/80 border-b border-purple-900/40 pb-2 mb-2.5 gap-2 flex-wrap">
-                      <div className="flex items-center gap-2">
-                        <span className="font-semibold text-purple-200">
-                          {m.tarih} {m.gun ? `(${m.gun})` : ""}
-                        </span>
-                        {m.saat && (
-                          <span className="flex items-center gap-1 text-purple-400 font-mono">
-                            <Clock size={11} />
-                            {m.saat}
-                          </span>
-                        )}
-                      </div>
-
-                      <div className="flex items-center gap-1.5 text-purple-400/90 truncate max-w-[200px]" title={`${m.sehir} - ${m.salon}`}>
-                        <MapPin size={11} className="shrink-0 text-pink-400" />
-                        <span className="truncate">{m.sehir} • {m.salon}</span>
-                      </div>
-                    </div>
-
-                    {/* Karşılaşma Gövdesi */}
-                    <div className="flex items-center justify-between gap-3">
-                      {/* Ev Sahibi Takım */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2">
-                          <Link
-                            href={`/takim/${slugify(m.takim_a)}`}
-                            className="shrink-0 hover:opacity-80 transition-opacity"
-                            title={`${m.takim_a} Takım Profili`}
-                          >
-                            {m.takim_a_logo && !m.takim_a_logo.includes("takimlogoyok") ? (
-                              <Image
-                                src={m.takim_a_logo}
-                                alt={m.takim_a}
-                                width={24}
-                                height={24}
-                                className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
-                                unoptimized={m.takim_a_logo.startsWith("http")}
-                                onError={(e) => {
-                                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                                }}
-                              />
-                            ) : (
-                              <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
-                                {m.takim_a.slice(0, 2)}
-                              </div>
-                            )}
-                          </Link>
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-1.5">
-                              <Link
-                                href={`/takim/${slugify(m.takim_a)}`}
-                                className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
-                                title={`${m.takim_a} Takım Profili`}
-                              >
-                                {m.takim_a}
-                              </Link>
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  triggerHaptic("selection");
-                                  toggleFavorite(m.takim_a);
-                                }}
-                                className="shrink-0 p-0.5"
-                                title={isFavorite(m.takim_a) ? "Favorilerden çıkar" : "Favorilere ekle"}
-                              >
-                                <Star
-                                  size={11}
-                                  className={
-                                    isFavorite(m.takim_a)
-                                      ? "fill-amber-400 text-amber-400"
-                                      : "text-purple-400/40 hover:text-amber-300"
-                                  }
-                                />
-                              </button>
-                            </div>
-                            <div className="flex items-center gap-2 mt-0.5">
-                              <Link
-                                href={`/takim/${slugify(m.takim_a)}`}
-                                className="text-[10px] text-purple-300/80 hover:text-white hover:underline"
-                              >
-                                Profil
-                              </Link>
-                              {m.takim_a_volleybox_url && (
-                                <a
-                                  href={m.takim_a_volleybox_url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5"
-                                >
-                                  <span>Volleybox</span>
-                                  <ExternalLink size={9} />
-                                </a>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Skor veya Durum */}
-                      <div
-                        onClick={() => onSelectMatch?.(convertToMatch(m))}
-                        className="text-center px-2 shrink-0 cursor-pointer hover:scale-105 active:scale-95 transition-transform"
-                        title="Maç Detaylarını ve Salon Bilgilerini Aç"
-                      >
-                        {isFinished ? (
-                          <div>
-                            <div className="text-base sm:text-lg font-black font-mono tracking-wider text-amber-300 bg-amber-950/40 px-3 py-1 rounded-xl border border-amber-500/30 shadow-md hover:border-amber-400">
-                              {m.skor}
-                            </div>
-                            <span className="text-[9px] text-emerald-400 font-bold uppercase tracking-wider block mt-0.5">
-                              BİTTİ • Detay
-                            </span>
-                          </div>
-                        ) : (
-                          <div>
-                            <div className="text-xs font-mono font-bold text-purple-300 bg-purple-950/60 px-2.5 py-1 rounded-xl border border-purple-800/50 hover:border-purple-600">
-                              {m.saat || "VS"}
-                            </div>
-                            <span className="text-[9px] text-purple-400/70 font-semibold uppercase tracking-wider block mt-0.5">
-                              OYNANACAK • Detay
-                            </span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Deplasman Takımı */}
-                      <div className="flex-1 min-w-0 text-right">
-                        <div className="flex items-center justify-end gap-2">
-                          <div className="min-w-0">
-                            <div className="flex items-center justify-end gap-1.5">
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  triggerHaptic("selection");
-                                  toggleFavorite(m.takim_b);
-                                }}
-                                className="shrink-0 p-0.5"
-                                title={isFavorite(m.takim_b) ? "Favorilerden çıkar" : "Favorilere ekle"}
-                              >
-                                <Star
-                                  size={11}
-                                  className={
-                                    isFavorite(m.takim_b)
-                                      ? "fill-amber-400 text-amber-400"
-                                      : "text-purple-400/40 hover:text-amber-300"
-                                  }
-                                />
-                              </button>
-                              <Link
-                                href={`/takim/${slugify(m.takim_b)}`}
-                                className="font-bold text-xs sm:text-[13px] text-white hover:text-pink-300 transition-colors truncate block hover:underline underline-offset-2"
-                                title={`${m.takim_b} Takım Profili`}
-                              >
-                                {m.takim_b}
-                              </Link>
-                            </div>
-                            <div className="flex items-center justify-end gap-2 mt-0.5">
-                              {m.takim_b_volleybox_url && (
-                                <a
-                                  href={m.takim_b_volleybox_url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="text-[10px] text-cyan-400 hover:text-cyan-200 hover:underline inline-flex items-center gap-0.5 justify-end"
-                                >
-                                  <span>Volleybox</span>
-                                  <ExternalLink size={9} />
-                                </a>
-                              )}
-                              <Link
-                                href={`/takim/${slugify(m.takim_b)}`}
-                                className="text-[10px] text-purple-300/80 hover:text-white hover:underline"
-                              >
-                                Profil
-                              </Link>
-                            </div>
-                          </div>
-                          <Link
-                            href={`/takim/${slugify(m.takim_b)}`}
-                            className="shrink-0 hover:opacity-80 transition-opacity"
-                            title={`${m.takim_b} Takım Profili`}
-                          >
-                            {m.takim_b_logo && !m.takim_b_logo.includes("takimlogoyok") ? (
-                              <Image
-                                src={m.takim_b_logo}
-                                alt={m.takim_b}
-                                width={24}
-                                height={24}
-                                className="w-6 h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 hover:scale-110 transition-transform"
-                                unoptimized={m.takim_b_logo.startsWith("http")}
-                                onError={(e) => {
-                                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                                }}
-                              />
-                            ) : (
-                              <div className="w-6 h-6 rounded-md bg-purple-900/50 border border-purple-700/50 flex items-center justify-center text-[10px] text-purple-300 font-bold shrink-0">
-                                {m.takim_b.slice(0, 2)}
-                              </div>
-                            )}
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Set Skorları Dökümü (Varsa) */}
-                    {m.set_sonuclari && m.set_sonuclari.trim().length > 0 && (
-                      <div className="mt-2.5 pt-2 border-t border-purple-900/30 flex items-center justify-center gap-1.5 text-[10px] font-mono text-purple-300/80">
-                        <span className="text-purple-400/60">Setler:</span>
-                        <span className="bg-purple-950/60 px-2 py-0.5 rounded-md border border-purple-800/40">
-                          {m.set_sonuclari}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        ))
+        <div className="space-y-4">
+          {matchesByWeek.map(([weekNum, weekMatches]) => (
+            <FixtureTable
+              key={weekNum}
+              title="Kadınlar 2. Ligi"
+              subTitle={`${group.grup_adi} • ${weekNum}. Hafta`}
+              matches={weekMatches.map(convertK2MatchToMatch)}
+              favorites={favoriteMatchIds}
+              onToggleFavorite={handleToggleFavorite}
+              city={groupCity}
+              showCityBadge={false}
+              onSelectMatch={onSelectMatch}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

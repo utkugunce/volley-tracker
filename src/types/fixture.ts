@@ -30,8 +30,8 @@ export interface Match {
   time: string;
   hall: string;
   category: string;
-  age_group: "Genç" | "Yıldız";
-  gender: "Kız" | "Erkek";
+  age_group: "Genç" | "Yıldız" | "Büyük" | "Büyük Kadınlar" | string;
+  gender: "Kız" | "Erkek" | "Kadın" | string;
   group: string;
   match_no: string;
   home_team: string;
@@ -42,6 +42,9 @@ export interface Match {
   set_scores?: string[];
   status: "upcoming" | "finished" | "postponed" | "live";
   volleybox?: VolleyboxMatchInfo | null;
+  referee_1?: string;
+  referee_2?: string;
+  set_durations?: string[];
 }
 
 export interface StandingItem {
@@ -86,14 +89,15 @@ export interface FixturesData {
 }
 
 export interface CityInfo {
-  ilid: string;
+  ilid?: string;
   name: string;
   slug: string;
-  url: string;
-  status: string;
+  url?: string;
+  status?: string;
   matches_count: number;
-  standings_count: number;
+  standings_count?: number;
   data_file?: string | null;
+  last_updated?: string | null;
 }
 
 export type VolleyboxConfidence = "verified" | "club_level_only" | "broken";
