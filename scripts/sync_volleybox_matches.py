@@ -484,11 +484,11 @@ def match_tvf_with_vb(
 
         s_dir_h = team_match_score(tvf_home, vb_host, home_synonyms)
         s_dir_a = team_match_score(tvf_away, vb_guest, away_synonyms)
-        direct_compatible = (s_dir_h > 0 and s_dir_a > 0)
+        direct_compatible = (s_dir_h >= 70 and s_dir_a >= 70)
 
         s_rev_h = team_match_score(tvf_home, vb_guest, home_synonyms)
         s_rev_a = team_match_score(tvf_away, vb_host, away_synonyms)
-        rev_compatible = (s_rev_h > 0 and s_rev_a > 0)
+        rev_compatible = (s_rev_h >= 70 and s_rev_a >= 70)
 
         if not (direct_compatible or rev_compatible):
             continue
