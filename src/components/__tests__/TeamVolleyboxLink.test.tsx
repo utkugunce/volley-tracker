@@ -77,9 +77,9 @@ describe("TeamVolleyboxLink", () => {
     );
   });
 
-  it("shows the mapped Çanakkalespor U16 name for the legacy Çanakkale source name", () => {
-    const officialName = "Çanakkalespor U16";
-    const profileUrl = "https://women.volleybox.net/tr/canakkalespor-u16-t44826";
+  it("shows the mapped Çanakkale Belediyespor U16 name for the source club in Çanakkale", () => {
+    const officialName = "Çanakkale Belediyespor U16";
+    const profileUrl = "https://women.volleybox.net/canakkale-belediyespor-u16-t48846";
 
     render(
       <TeamVolleyboxLink

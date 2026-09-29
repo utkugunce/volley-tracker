@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T12:55:40.231437",
+  "updated_at": "2026-09-29T14:17:36.137511",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -501,18 +501,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402981",
+        "url": "https://women.volleybox.net/tr/kepez-spor-kulubu-u16-biga-ada-spor-u16-c402981",
+        "host_name": "Kepez Spor Kulübü U16",
+        "guest_name": "Biga Ada Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "15:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "15:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -535,18 +542,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402982",
+        "url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-spor-kulubu-b-u16-kepez-spor-kulubu-u16-c402982",
+        "host_name": "ÇOMÜ Spor Kulübü - B U16",
+        "guest_name": "Kepez Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-06",
+        "vb_time": "18:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-06",
+          "vb_time": "18:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -569,18 +583,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402983",
+        "url": "https://women.volleybox.net/tr/canakkale-barbarosspor-u16-canakkale-onsekiz-mart-universitesi-spor-kulubu-b-u16-c402983",
+        "host_name": "Çanakkale Barbarosspor U16",
+        "guest_name": "ÇOMÜ Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "20:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "20:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -651,22 +672,7 @@
         "0-25",
         "0-25"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "canakkale-20261002-008",
@@ -689,22 +695,7 @@
         "25-0",
         "25-0"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "canakkale-20261004-009",
@@ -725,18 +716,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402984",
+        "url": "https://women.volleybox.net/tr/yesil-bayramic-sk-u16-eceabat-spor-kulubu-u16-c402984",
+        "host_name": "Yeşil Bayramiç SK U16",
+        "guest_name": "Eceabat Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-04",
+        "vb_time": "14:00",
+        "vb_hall": "Bayramiç Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "14:00",
+          "vb_hall": "Bayramiç Spor Salonu",
+          "details": null
         }
       }
     },
@@ -759,18 +757,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402986",
+        "url": "https://women.volleybox.net/tr/canakkalespor-u16-yesil-bayramic-sk-u16-c402986",
+        "host_name": "Çanakkalespor U16",
+        "guest_name": "Yeşil Bayramiç SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-07",
+        "vb_time": "20:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "20:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -793,18 +798,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402987",
+        "url": "https://women.volleybox.net/tr/canakkale-belediyespor-b-u16-eceabat-spor-kulubu-u16-c402987",
+        "host_name": "Çanakkale Belediyespor - B U16",
+        "guest_name": "Eceabat Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "20:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "20:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -915,18 +927,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402989",
+        "url": "https://women.volleybox.net/tr/parion-spor-kulubu-u16-canakkale-onsekiz-mart-universitesi-spor-kulubu-u16-c402989",
+        "host_name": "Parion Spor Kulübü U16",
+        "guest_name": "ÇOMÜ Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "11:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "11:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -949,18 +968,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402990",
+        "url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-spor-kulubu-u16-nehir-spor-kulubu-u16-c402990",
+        "host_name": "ÇOMÜ Spor Kulübü U16",
+        "guest_name": "Nehir Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-05",
+        "vb_time": "20:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "20:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -983,18 +1009,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402991",
+        "url": "https://women.volleybox.net/tr/biga-ciceklidedespor-u16-canakkale-onsekiz-mart-universitesi-spor-kulubu-u16-c402991",
+        "host_name": "Biga Çiçeklidedespor U16",
+        "guest_name": "ÇOMÜ Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-07",
+        "vb_time": "20:00",
+        "vb_hall": "Biga Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "20:00",
+          "vb_hall": "Biga Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1017,18 +1050,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402992",
+        "url": "https://women.volleybox.net/tr/biga-ciceklidedespor-u16-nehir-spor-kulubu-u16-c402992",
+        "host_name": "Biga Çiçeklidedespor U16",
+        "guest_name": "Nehir Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "20:00",
+        "vb_hall": "Biga Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "20:00",
+          "vb_hall": "Biga Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1164,7 +1204,5 @@
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-09-29T13:00:06.728653"
+  ]
 }

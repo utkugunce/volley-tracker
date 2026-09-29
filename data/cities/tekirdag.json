@@ -1,18 +1,20 @@
 {
-  "updated_at": "2026-09-29T12:55:55.437439",
+  "updated_at": "2026-09-29T14:17:43.494542",
   "city": "Tekirdağ",
   "slug": "tekirdag",
-  "title": "TVF Tekirdağ Yıldız Kızlar Süper Lig",
+  "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
   "total_matches": 26,
   "source": "https://tekirdag.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Yıldız Kızlar Süper Lig",
-      "Genç Kızlar 1. Ligi"
+      "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
+      "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
       "Tümü",
+      "Genç",
       "Yıldız"
     ],
     "genders": [
@@ -30,7 +32,7 @@
     ]
   },
   "standings": {
-    "Yıldız Kızlar Süper Lig - Final Grubu": [
+    "Genç Kızlar Süper Lig - Final Grubu": [
       {
         "rank": 1,
         "team": "Çorlu Belediyesi Spor Kulübü U16",
@@ -354,8 +356,8 @@
       "date": "2026-09-27",
       "time": "12:15",
       "hall": "Çerkezköy S.S",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "1",
@@ -399,8 +401,8 @@
       "date": "2026-09-27",
       "time": "15:15",
       "hall": "Çorlu Ss",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "2",
@@ -444,8 +446,8 @@
       "date": "2026-10-01",
       "time": "19:30",
       "hall": "Atatürk Ss",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "3",
@@ -485,8 +487,8 @@
       "date": "2026-10-04",
       "time": "10:30",
       "hall": "Kapaklı S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "4",
@@ -498,18 +500,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403024",
+        "url": "https://women.volleybox.net/tr/kapakl-site-spor-u18-corlu-gsb-spor-kulubu-u18-c403024",
+        "host_name": "Kapaklı Site Spor U18",
+        "guest_name": "Çorlu GSB Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-04",
+        "vb_time": "10:30",
+        "vb_hall": "Kapaklı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "10:30",
+          "vb_hall": "Kapaklı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -519,8 +528,8 @@
       "date": "2026-10-04",
       "time": "17:00",
       "hall": "Çorlu Ss",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "5",
@@ -532,18 +541,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403025",
+        "url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-kulubu-u18-suleymanpasa-spor-kulubu-u18-c403025",
+        "host_name": "Çorlu Belediyesi Spor Kulübü U18",
+        "guest_name": "Süleymanpaşa Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-04",
+        "vb_time": "17:00",
+        "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "17:00",
+          "vb_hall": "Çorlu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -553,8 +569,8 @@
       "date": "2026-10-08",
       "time": "19:00",
       "hall": "Atatürk Ss",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "6",
@@ -566,18 +582,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403026",
+        "url": "https://women.volleybox.net/tr/tekirdag-basket-spor-kulubu-u18-cerkezkoy-voleybol-akademi-spor-kulubu-u18-c403026",
+        "host_name": "Tekirdağ Basket Spor Kulübü U18",
+        "guest_name": "Çerkezköy Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "19:00",
+        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "19:00",
+          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -784,18 +807,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403028",
+        "url": "https://women.volleybox.net/tr/ergene-voleybol-spor-kulubu-u16-set-59-spor-kulubu-u16-c403028",
+        "host_name": "Ergene Voleybol Spor Kulübü U16",
+        "guest_name": "Set 59 Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "12:00",
+        "vb_hall": "Ergene Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "12:00",
+          "vb_hall": "Ergene Spor Salonu",
+          "details": null
         }
       }
     },
@@ -818,18 +848,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403029",
+        "url": "https://women.volleybox.net/tr/kapakl-site-spor-b-u16-liva-volley-spor-kulubu-u16-c403029",
+        "host_name": "Kapaklı Site Spor - B U16",
+        "guest_name": "Liva Volley Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "17:30",
+        "vb_hall": "Çerkezköy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "17:30",
+          "vb_hall": "Çerkezköy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -852,18 +889,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403030",
+        "url": "https://women.volleybox.net/tr/tekirdag-voleybol-akademi-spor-kulubu-u16-trakya-olimpia-akademi-spor-kulubu-u16-c403030",
+        "host_name": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+        "guest_name": "Trakya Olimpia Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "17:45",
+        "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "17:45",
+          "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -886,18 +930,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403049",
+        "url": "https://women.volleybox.net/tr/suleymanpasa-spor-kulubu-u16-corlu-belediyesi-spor-kulubu-u16-c403049",
+        "host_name": "Süleymanpaşa Spor Kulübü U16",
+        "guest_name": "Çorlu Belediyesi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-06",
+        "vb_time": "19:30",
+        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-06",
+          "vb_time": "19:30",
+          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1058,18 +1109,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403052",
+        "url": "https://women.volleybox.net/tr/cerkezkoy-voleybol-akademi-spor-kulubu-u16-tekirdag-marmara-spor-kulubu-u16-c403052",
+        "host_name": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
+        "guest_name": "Tekirdağ Marmara Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-05",
+        "vb_time": "19:00",
+        "vb_hall": "Çerkezköy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "19:00",
+          "vb_hall": "Çerkezköy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1092,18 +1150,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403053",
+        "url": "https://women.volleybox.net/tr/corlu-yldrm-spor-kulubu-b-u16-cagdas-spor-kulubu-u16-c403053",
+        "host_name": "Çorlu Yıldırım Spor Kulübü - B U16",
+        "guest_name": "Çağdaş Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-05",
+        "vb_time": "20:30",
+        "vb_hall": "Ergene Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "20:30",
+          "vb_hall": "Ergene Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1126,18 +1191,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403056",
+        "url": "https://women.volleybox.net/tr/suleymanpasa-spor-kulubu-b-u16-tekirdag-basket-spor-kulubu-u16-c403056",
+        "host_name": "Süleymanpaşa Spor Kulübü - B U16",
+        "guest_name": "Tekirdağ Basket Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-06",
+        "vb_time": "18:00",
+        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-06",
+          "vb_time": "18:00",
+          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1291,18 +1363,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403058",
+        "url": "https://women.volleybox.net/tr/corlu-yldrm-spor-kulubu-u16-kapakl-site-spor-u16-c403058",
+        "host_name": "Çorlu Yıldırım Spor Kulübü U16",
+        "guest_name": "Kapaklı Site Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "12:00",
+        "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "12:00",
+          "vb_hall": "Çorlu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1325,18 +1404,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403060",
+        "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u16-arges-voleybol-spor-kulubu-u16-c403060",
+        "host_name": "Çorlu GSB Spor Kulübü U16",
+        "guest_name": "Arges Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "17:00",
+        "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "17:00",
+          "vb_hall": "Çorlu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1359,22 +1445,27 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403061",
+        "url": "https://women.volleybox.net/tr/cagdas-spor-kulubu-b-u16-yldzkent-fatih-korganc-spor-kulubu-u16-c403061",
+        "host_name": "Çağdaş Spor Kulübü - B U16",
+        "guest_name": "Yıldızkent Fatih Korgancı Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-03",
+        "vb_time": "19:30",
+        "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "19:30",
+          "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
+          "details": null
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-09-29T13:00:13.595089"
+  ]
 }

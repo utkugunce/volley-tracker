@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T12:55:46.632168",
+  "updated_at": "2026-09-29T14:17:36.985671",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -3289,18 +3289,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402993",
+        "url": "https://women.volleybox.net/tr/kzy-spor-kulubu-u16-alfa-karsyaka-voleybol-spor-kulubu-u16-c402993",
+        "host_name": "KZY Spor Kulübü U16",
+        "guest_name": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
+        "vb_date": "2026-10-09",
         "vb_time": null,
-        "vb_hall": null,
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": null,
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -5388,7 +5395,5 @@
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 103,
-  "volleybox_sync_updated_at": "2026-09-29T13:00:11.722333"
+  ]
 }

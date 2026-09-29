@@ -95,7 +95,7 @@ describe("volleybox utility", () => {
       expect(mapping?.volleybox_url).toBe("https://women.volleybox.net/tr/dost-spor-u18-t53583");
     });
 
-    it("maps the Çanakkale Belediyespor source name to Çanakkalespor U16", () => {
+    it("maps the Çanakkale Belediyespor source name to the correct U16 team", () => {
       const mapping = getVolleyboxMapping(
         "Çanakkale Belediyespor",
         "Yıldız Kızlar Süper Lig",
@@ -103,8 +103,8 @@ describe("volleybox utility", () => {
         "Çanakkale"
       );
 
-      expect(mapping?.matched_as).toBe("Çanakkalespor U16");
-      expect(mapping?.volleybox_url).toBe("https://women.volleybox.net/tr/canakkalespor-u16-t44826");
+      expect(mapping?.matched_as).toBe("Çanakkale Belediyespor U16");
+      expect(mapping?.volleybox_url).toBe("https://women.volleybox.net/canakkale-belediyespor-u16-t48846");
     });
 
     it("returns correct mapping for other cities (Bursa, İzmir, Antalya, Yalova, Düzce, Niğde)", () => {

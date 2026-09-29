@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T12:55:55.115068",
+  "updated_at": "2026-09-29T14:17:43.126816",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -352,7 +352,7 @@
       "id": "samsun-20261008-004",
       "city": "Samsun",
       "date": "2026-10-08",
-      "time": "19:15",
+      "time": "20:00",
       "hall": "Mustafa Dağıstanlı Ss",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
@@ -378,14 +378,14 @@
         "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-08",
           "vb_time": "19:15",
           "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 20:00 / VB: 19:15)"
         }
       }
     },
@@ -900,18 +900,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402999",
+        "url": "https://women.volleybox.net/tr/bafra-akademi-genclik-sk-u18-anadolu-voleybol-akademi-sk-b-u18-c402999",
+        "host_name": "Bafra Akademi Gençlik SK U18",
+        "guest_name": "Anadolu Voleybol Akademi SK - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-08",
+        "vb_time": "15:00",
+        "vb_hall": "Bafra Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "15:00",
+          "vb_hall": "Bafra Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2082,18 +2089,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403000",
+        "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u18-sam55-spor-kulubu-u18-c403000",
+        "host_name": "Nova Spor Kulübü U18",
+        "guest_name": "Sam55 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-18",
+        "vb_time": "14:00",
+        "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "14:00",
+          "vb_hall": "Samsun Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2116,18 +2130,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403001",
+        "url": "https://women.volleybox.net/tr/sam55-spor-kulubu-u18-samsunspor-u18-c403001",
+        "host_name": "Sam55 Spor Kulübü U18",
+        "guest_name": "Samsunspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-22",
+        "vb_time": "19:15",
+        "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-22",
+          "vb_time": "19:15",
+          "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2150,18 +2171,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403002",
+        "url": "https://women.volleybox.net/tr/vezirkopru-genclik-spor-kulubu-u18-atakum-atlm-spor-kulubu-b-u18-c403002",
+        "host_name": "Vezirköprü Gençlik Spor Kulübü U18",
+        "guest_name": "Atakum Atılım Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-24",
+        "vb_time": "13:00",
+        "vb_hall": "Köprülü Mehmet Paşa Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-24",
+          "vb_time": "13:00",
+          "vb_hall": "Köprülü Mehmet Paşa Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2184,18 +2212,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403003",
+        "url": "https://women.volleybox.net/tr/terme-genclik-ve-spor-lce-mudurlugu-sk-u18-anadolu-voleybol-akademi-sk-u18-c403003",
+        "host_name": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
+        "guest_name": "Anadolu Voleybol Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-24",
+        "vb_time": "13:00",
+        "vb_hall": "Terme Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-24",
+          "vb_time": "13:00",
+          "vb_hall": "Terme Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2218,18 +2253,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403004",
+        "url": "https://women.volleybox.net/tr/anadolu-voleybol-akademi-sk-u18-vezirkopru-genclik-spor-kulubu-u18-c403004",
+        "host_name": "Anadolu Voleybol Akademi SK U18",
+        "guest_name": "Vezirköprü Gençlik Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-25",
+        "vb_time": "13:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "13:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2252,18 +2294,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403005",
+        "url": "https://women.volleybox.net/tr/atakum-atlm-spor-kulubu-b-u18-nova-spor-kulubu-u18-c403005",
+        "host_name": "Atakum Atılım Spor Kulübü - B U18",
+        "guest_name": "Nova Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-25",
+        "vb_time": "14:00",
+        "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "14:00",
+          "vb_hall": "Samsun Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2286,18 +2335,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403006",
+        "url": "https://women.volleybox.net/tr/sam55-spor-kulubu-u18-atakum-atlm-spor-kulubu-b-u18-c403006",
+        "host_name": "Sam55 Spor Kulübü U18",
+        "guest_name": "Atakum Atılım Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-31",
+        "vb_time": "11:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "11:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2320,18 +2376,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403007",
+        "url": "https://women.volleybox.net/tr/lkkvlcm-havza-sk-u18-terme-genclik-ve-spor-lce-mudurlugu-sk-u18-c403007",
+        "host_name": "İlkkıvılcım Havza SK U18",
+        "guest_name": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-31",
+        "vb_time": "13:00",
+        "vb_hall": "25 Mayıs Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "13:00",
+          "vb_hall": "25 Mayıs Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2354,18 +2417,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403009",
+        "url": "https://women.volleybox.net/tr/vezirkopru-genclik-spor-kulubu-u18-lkkvlcm-havza-sk-u18-c403009",
+        "host_name": "Vezirköprü Gençlik Spor Kulübü U18",
+        "guest_name": "İlkkıvılcım Havza SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "13:00",
+        "vb_hall": "Köprülü Mehmet Paşa Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "13:00",
+          "vb_hall": "Köprülü Mehmet Paşa Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2388,18 +2458,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403011",
+        "url": "https://women.volleybox.net/tr/samsunspor-u18-terme-genclik-ve-spor-lce-mudurlugu-sk-u18-c403011",
+        "host_name": "Samsunspor U18",
+        "guest_name": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-08",
+        "vb_time": "16:00",
+        "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "16:00",
+          "vb_hall": "Samsun Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2422,18 +2499,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403013",
+        "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u18-anadolu-voleybol-akademi-sk-u18-c403013",
+        "host_name": "Nova Spor Kulübü U18",
+        "guest_name": "Anadolu Voleybol Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-15",
+        "vb_time": "13:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "13:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2456,18 +2540,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403014",
+        "url": "https://women.volleybox.net/tr/anadolu-voleybol-akademi-sk-u18-sam55-spor-kulubu-u18-c403014",
+        "host_name": "Anadolu Voleybol Akademi SK U18",
+        "guest_name": "Sam55 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-16",
+        "vb_time": "11:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "11:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2490,18 +2581,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403015",
+        "url": "https://women.volleybox.net/tr/terme-genclik-ve-spor-lce-mudurlugu-sk-u18-vezirkopru-genclik-spor-kulubu-u18-c403015",
+        "host_name": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
+        "guest_name": "Vezirköprü Gençlik Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-16",
+        "vb_time": "13:00",
+        "vb_hall": "Terme Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "13:00",
+          "vb_hall": "Terme Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2524,18 +2622,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403016",
+        "url": "https://women.volleybox.net/tr/atakum-atlm-spor-kulubu-b-u18-samsunspor-u18-c403016",
+        "host_name": "Atakum Atılım Spor Kulübü - B U18",
+        "guest_name": "Samsunspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-16",
+        "vb_time": "19:30",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "19:30",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2558,18 +2663,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403017",
+        "url": "https://women.volleybox.net/tr/lkkvlcm-havza-sk-u18-nova-spor-kulubu-u18-c403017",
+        "host_name": "İlkkıvılcım Havza SK U18",
+        "guest_name": "Nova Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "13:00",
+        "vb_hall": "25 Mayıs Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "13:00",
+          "vb_hall": "25 Mayıs Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2592,18 +2704,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403018",
+        "url": "https://women.volleybox.net/tr/vezirkopru-genclik-spor-kulubu-u18-samsunspor-u18-c403018",
+        "host_name": "Vezirköprü Gençlik Spor Kulübü U18",
+        "guest_name": "Samsunspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "13:00",
+        "vb_hall": "Köprülü Mehmet Paşa Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "13:00",
+          "vb_hall": "Köprülü Mehmet Paşa Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2626,18 +2745,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403019",
+        "url": "https://women.volleybox.net/tr/atakum-atlm-spor-kulubu-b-u18-anadolu-voleybol-akademi-sk-u18-c403019",
+        "host_name": "Atakum Atılım Spor Kulübü - B U18",
+        "guest_name": "Anadolu Voleybol Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-20",
+        "vb_time": "11:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-20",
+          "vb_time": "11:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2660,18 +2786,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403022",
+        "url": "https://women.volleybox.net/tr/sam55-spor-kulubu-u18-lkkvlcm-havza-sk-u18-c403022",
+        "host_name": "Sam55 Spor Kulübü U18",
+        "guest_name": "İlkkıvılcım Havza SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "13:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "13:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2694,22 +2827,27 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "403023",
+        "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u18-terme-genclik-ve-spor-lce-mudurlugu-sk-u18-c403023",
+        "host_name": "Nova Spor Kulübü U18",
+        "guest_name": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "12:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "12:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-09-29T13:00:13.472373"
+  ]
 }

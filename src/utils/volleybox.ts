@@ -51,6 +51,59 @@ export function normalizeCitySlug(city?: string): string {
  * - `team::ageGroup` (e.g. team::u18 or team::u16)
  * - `team` (general fallback)
  */
+function shouldReplaceMapping(existing: VolleyboxMapping | undefined, candidate: VolleyboxMapping): boolean {
+  if (!existing) return true;
+
+  const priority: Record<string, number> = {
+    broken: 0,
+    unverified: 1,
+    likely: 2,
+    verified: 3,
+  };
+
+  const candidatePriority = priority[candidate.confidence] ?? 0;
+  const existingPriority = priority[existing.confidence] ?? 0;
+
+  if (candidatePriority !== existingPriority) {
+    return candidatePriority > existingPriority;
+  }
+
+  const agePriority = (value?: string): number => {
+    const normalized = (value || "").toUpperCase();
+    if (normalized.includes("U18") || normalized.includes("GENC") || normalized.includes("YOUNG")) return 2;
+    if (normalized.includes("U16") || normalized.includes("YILDIZ")) return 1;
+    return 0;
+  };
+
+  const candidateAge = agePriority(candidate.age_category || extractAgeGroup(candidate.internal_category) || undefined);
+  const existingAge = agePriority(existing.age_category || extractAgeGroup(existing.internal_category) || undefined);
+
+  if (candidateAge !== existingAge) {
+    return candidateAge > existingAge;
+  }
+
+  const specificity = (item: VolleyboxMapping): number => {
+    const values = [
+      item.internal_name,
+      item.matched_as,
+      ...(item.aliases || []),
+      ...(item.synonyms || []),
+    ].filter(Boolean) as string[];
+
+    const combined = values.join(" ").toLowerCase();
+    let score = 0;
+
+    if (/(?:^|[\s-])b(?:\s|$)/.test(combined) || /\(b\)/.test(combined)) score += 3;
+    if (/(?:^|[\s-])a(?:\s|$)/.test(combined) || /\(a\)/.test(combined)) score += 2;
+    if (combined.includes("u16") || combined.includes("u18")) score += 1;
+    if (combined.includes(" - ")) score += 1;
+
+    return score;
+  };
+
+  return specificity(candidate) > specificity(existing);
+}
+
 export function buildVolleyboxMap(
   data: VolleyboxMappingsFile = mappingsJson as unknown as VolleyboxMappingsFile
 ): Map<string, VolleyboxMapping> {
@@ -76,24 +129,39 @@ export function buildVolleyboxMap(
 
       // Şehir spesifik indeksler
       if (citySlug) {
-        map.set(`${teamKey}::${catKey}::${citySlug}`, item);
-        if (age) {
-          map.set(`${teamKey}::${age}::${citySlug}`, item);
+        const cityCatKey = `${teamKey}::${catKey}::${citySlug}`;
+        if (shouldReplaceMapping(map.get(cityCatKey), item)) {
+          map.set(cityCatKey, item);
         }
-        map.set(`${teamKey}::${citySlug}`, item);
+
+        if (age) {
+          const cityAgeKey = `${teamKey}::${age}::${citySlug}`;
+          if (shouldReplaceMapping(map.get(cityAgeKey), item)) {
+            map.set(cityAgeKey, item);
+          }
+        }
+
+        const cityKey = `${teamKey}::${citySlug}`;
+        if (shouldReplaceMapping(map.get(cityKey), item)) {
+          map.set(cityKey, item);
+        }
       }
 
       // Genel indeksler (şehir verilmediğinde veya genel fallback)
-      if (!map.has(`${teamKey}::${catKey}`)) {
-        map.set(`${teamKey}::${catKey}`, item);
+      const generalCatKey = `${teamKey}::${catKey}`;
+      if (shouldReplaceMapping(map.get(generalCatKey), item)) {
+        map.set(generalCatKey, item);
       }
 
-      if (age && !map.has(`${teamKey}::${age}`)) {
-        map.set(`${teamKey}::${age}`, item);
+      if (age) {
+        const generalAgeKey = `${teamKey}::${age}`;
+        if (shouldReplaceMapping(map.get(generalAgeKey), item)) {
+          map.set(generalAgeKey, item);
+        }
       }
 
       // Genel takım adı fallback (verified olan önceliklidir)
-      if (!map.has(teamKey) || map.get(teamKey)?.confidence !== "verified") {
+      if (shouldReplaceMapping(map.get(teamKey), item)) {
         map.set(teamKey, item);
       }
     }
