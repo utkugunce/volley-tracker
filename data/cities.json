@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-09-29T12:56:05.994438+03:00",
-  "total_cities": 81,
-  "active_cities": 23,
+  "total_cities": 80,
+  "active_cities": 22,
   "total_matches": 598,
   "cities": [
     {
@@ -193,16 +193,6 @@
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
-    },
-    {
-      "ilid": "20",
-      "name": "Denizli",
-      "slug": "denizli",
-      "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (2 Maç Mevcut)",
-      "matches_count": 2,
-      "standings_count": 2,
-      "data_file": "data/cities/denizli.json"
     },
     {
       "ilid": "21",

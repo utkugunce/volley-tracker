@@ -72,6 +72,11 @@ OFFICIAL_CITIES = {
     81: "Düzce"
 }
 
+# Bu slug'lar sitede gösterilmeyecek (veri yetersiz / geçici olarak devre dışı)
+EXCLUDED_SLUGS = {
+    "denizli",  # Sezon başı fikstür henüz hazır değil
+}
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "*/*",
@@ -380,6 +385,21 @@ def scrape_single_city(city_info):
     
     clean_url = url_raw.replace("https://", "").replace("http://", "").split("/")[0]
     subdomain = clean_url.replace(".voleyboliltemsilciligi.com", "").strip().lower()
+
+    # Sitede gösterilmeyecek şehirler
+    if subdomain in EXCLUDED_SLUGS:
+        return {
+            "ilid": ilid,
+            "name": name,
+            "slug": subdomain,
+            "url": url_raw,
+            "status": "Devre Dışı",
+            "matches_count": 0,
+            "standings_count": 0,
+            "data_file": None,
+            "excluded": True
+        }
+
     if not subdomain:
         return {
             "ilid": ilid,

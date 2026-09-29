@@ -2,19 +2,17 @@
   "updated_at": "2026-09-29T12:55:55.437439",
   "city": "Tekirdağ",
   "slug": "tekirdag",
-  "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
+  "title": "TVF Tekirdağ Yıldız Kızlar Süper Lig",
   "total_matches": 26,
   "source": "https://tekirdag.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
-      "Genç Kızlar Süper Lig",
-      "Genç Kızlar 1. Ligi",
-      "Yıldız Kızlar Süper Lig"
+      "Yıldız Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi"
     ],
     "age_groups": [
       "Tümü",
-      "Genç",
       "Yıldız"
     ],
     "genders": [
@@ -32,7 +30,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Final Grubu": [
+    "Yıldız Kızlar Süper Lig - Final Grubu": [
       {
         "rank": 1,
         "team": "Çorlu Belediyesi Spor Kulübü U16",
@@ -356,8 +354,8 @@
       "date": "2026-09-27",
       "time": "12:15",
       "hall": "Çerkezköy S.S",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "1",
@@ -401,8 +399,8 @@
       "date": "2026-09-27",
       "time": "15:15",
       "hall": "Çorlu Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "2",
@@ -446,8 +444,8 @@
       "date": "2026-10-01",
       "time": "19:30",
       "hall": "Atatürk Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "3",
@@ -487,8 +485,8 @@
       "date": "2026-10-04",
       "time": "10:30",
       "hall": "Kapaklı S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "4",
@@ -521,8 +519,8 @@
       "date": "2026-10-04",
       "time": "17:00",
       "hall": "Çorlu Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "5",
@@ -555,8 +553,8 @@
       "date": "2026-10-08",
       "time": "19:00",
       "hall": "Atatürk Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "6",
