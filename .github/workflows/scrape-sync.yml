@@ -54,6 +54,14 @@ jobs:
         run: |
           python scripts/check_standings_conflicts.py
 
+      - name: Validate generated data files
+        run: |
+          python scripts/validate_data_files.py
+
+      - name: Check data freshness
+        run: |
+          python scripts/check_data_freshness.py
+
       - name: Import synchronized data into Supabase
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -71,3 +79,21 @@ jobs:
             git commit -m 'chore(data): periyodik TVF fikstur senkronizasyonu [skip ci]'
             git push
           fi
+
+      - name: Create sync failure alert
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="⚠️ TVF sync failed $(date -u +'%Y-%m-%d %H:%M UTC')"
+          BODY=$(cat <<EOF
+          Otomatik TVF senkronizasyonu başarısız oldu.
+
+          - Workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          - Commit: ${{ github.sha }}
+          - Tarih: $(date -u +'%Y-%m-%d %H:%M UTC')
+
+          Lütfen ilgili logları inceleyin ve scrape/validation adımlarını doğrulayın.
+          EOF
+          )
+          gh issue create --title "$TITLE" --body "$BODY" --label "automation" || echo 'Issue creation skipped; no actionable failure alert was created.'
