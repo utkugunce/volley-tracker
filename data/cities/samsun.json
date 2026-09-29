@@ -2305,14 +2305,14 @@
         "vb_time": "14:00",
         "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-25",
           "vb_time": "14:00",
           "vb_hall": "Samsun Atatürk Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:00 / VB: 14:00)"
         }
       }
     },
@@ -2849,5 +2849,7 @@
         }
       }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 64,
+  "volleybox_sync_updated_at": "2026-09-29T17:01:23.714474"
 }
