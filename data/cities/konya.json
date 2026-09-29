@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T09:45:18.852323",
+  "updated_at": "2026-09-29T08:45:12.180739",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -448,7 +448,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "konya-20261003-002",
@@ -467,7 +482,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "konya-20261007-003",
@@ -486,7 +516,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "konya-20261004-004",
@@ -505,7 +550,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "konya-20261004-005",
@@ -524,7 +584,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "konya-20261004-006",
@@ -543,7 +618,24 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-29T08:46:52.420076"
 }

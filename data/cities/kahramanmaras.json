@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T10:25:15.046583",
+  "updated_at": "2026-09-29T08:45:12.601631",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
@@ -129,5 +129,7 @@
       }
     ]
   },
-  "matches": []
+  "matches": [],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-09-29T08:46:52.432616"
 }

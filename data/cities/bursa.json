@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T10:25:01.902355",
+  "updated_at": "2026-09-29T08:44:58.743221",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -1070,5 +1070,7 @@
         }
       }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-09-29T08:46:52.453769"
 }

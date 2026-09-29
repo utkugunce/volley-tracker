@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T10:25:04.702804",
+  "updated_at": "2026-09-29T08:45:02.462808",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -1785,5 +1785,7 @@
         }
       }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-09-29T08:46:52.450402"
 }

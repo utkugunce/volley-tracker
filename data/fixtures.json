@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T10:25:13.045325+03:00",
+  "updated_at": "2026-09-29T08:45:07.380231+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -5149,5 +5149,7 @@
         }
       }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 67,
+  "volleybox_sync_updated_at": "2026-09-29T08:46:52.404539"
 }
