@@ -1,6 +1,13 @@
 import { Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 
+export function normalizeK2Date(date: string | undefined): string {
+  if (!date) return "TBD";
+  const parts = date.split(".");
+  if (parts.length !== 3) return date;
+  return `${parts[2]}-${parts[1].padStart(2, "0")}-${parts[0].padStart(2, "0")}`;
+}
+
 /**
  * Kadınlar 2. Ligi maç nesnesini Altyapı FixtureTable ve MatchCenterDrawer ile
  * tam uyumlu standart Match tipine dönüştürür.
@@ -43,13 +50,7 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
   }
 
   // DD.MM.YYYY tarihini standart YYYY-MM-DD formatına çevir
-  let isoDate = m.tarih || "TBD";
-  if (m.tarih && m.tarih.includes(".")) {
-    const parts = m.tarih.split(".");
-    if (parts.length === 3) {
-      isoDate = `${parts[2]}-${parts[1].padStart(2, "0")}-${parts[0].padStart(2, "0")}`;
-    }
-  }
+  const isoDate = normalizeK2Date(m.tarih);
 
   return {
     id: m.id,

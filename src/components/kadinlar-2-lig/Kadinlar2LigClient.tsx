@@ -231,7 +231,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       }
     >
 
-      <div className="flex flex-col space-y-3 px-2 pb-20 sm:space-y-4 sm:px-3 sm:pb-8">
+      <div className="flex flex-col space-y-3 px-1 pb-20 sm:space-y-4 sm:px-2 sm:pb-8 lg:px-0">
         {/* 2. Gruplar & İl Seçici Barı (Puan Cetveli veya Fikstür açıkken) */}
         {(activeTab === "standings" || activeTab === "fixtures") && (
           <Kadinlar2LigGroupBar

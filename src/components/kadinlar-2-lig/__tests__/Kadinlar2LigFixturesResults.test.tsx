@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import { Kadinlar2LigFixtures } from "../Kadinlar2LigFixtures";
 import { Kadinlar2LigResults } from "../Kadinlar2LigResults";
+import { Kadinlar2LigTodayMatches } from "../Kadinlar2LigTodayMatches";
 import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 
 describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
@@ -117,5 +118,22 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
 
     // Henüz oynanmamış maç sonuçlar sayfasında görünmemeli
     expect(screen.queryByText("Fenerbahçe 2")).not.toBeInTheDocument();
+  });
+
+  it("Kadinlar2LigTodayMatches paylaşılan FixtureTable görünümünü kullanır", () => {
+    render(
+      <Kadinlar2LigTodayMatches
+        allMatches={mockMatches}
+        groups={[mockGroup]}
+        onSelectMatch={vi.fn()}
+      />
+    );
+
+    fireEvent.click(screen.getByRole("tab", { name: "Tüm tarihleri göster" }));
+
+    expect(screen.getByLabelText("Liste Görünümü")).toBeInTheDocument();
+    expect(screen.getByLabelText("Yayın Kartı Görünümü")).toBeInTheDocument();
+    expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
+    expect(screen.getByText("Fenerbahçe 2")).toBeInTheDocument();
   });
 });
