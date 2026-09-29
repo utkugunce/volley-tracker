@@ -147,6 +147,52 @@ describe("groupStatus", () => {
       ).toBe("not_entered");
     });
 
+    it("does not classify a group as not entered when it contains a recorded forfeit", () => {
+      const list = computeGroupStatusList([
+        {
+          id: "forfeit",
+          city: "Çanakkale",
+          date: "2026-09-28",
+          time: "20:00",
+          hall: "18 Mart Ss.",
+          category: "Yıldız Kızlar Süper Lig",
+          age_group: "Yıldız",
+          gender: "Kız",
+          group: "Yıldız Kız İl Birinciliği B Grubu",
+          match_no: "2",
+          home_team: "(H) - Uvm Akademi Spor Kulübü",
+          away_team: "Çanakkale Belediyespor",
+          score: "0 - 3",
+          home_score: 0,
+          away_score: 3,
+          set_scores: ["0-25", "0-25", "0-25"],
+          status: "finished",
+        },
+        {
+          id: "upcoming",
+          city: "Çanakkale",
+          date: "2026-10-04",
+          time: "14:00",
+          hall: "Bayramiç Ss.",
+          category: "Yıldız Kızlar Süper Lig",
+          age_group: "Yıldız",
+          gender: "Kız",
+          group: "Yıldız Kız İl Birinciliği B Grubu",
+          match_no: "4",
+          home_team: "Yeşil Bayramiç Spor Kulübü",
+          away_team: "Eceabat Spor Kulübü U16",
+          score: "- : -",
+          home_score: null,
+          away_score: null,
+          set_scores: [],
+          status: "upcoming",
+        },
+      ]);
+
+      expect(list[0].statusKey).toBe("partial");
+      expect(list[0].syncedMatches).toBe(0);
+    });
+
     it("returns 'teams_only' when teams are defined but no matches exist", () => {
       expect(
         evaluateGroupStatus({

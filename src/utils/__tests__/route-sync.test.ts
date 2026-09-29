@@ -70,6 +70,7 @@ describe("Route Sync & City URL Mapping", () => {
       expect(isValidCitySlug("istanbul")).toBe(true);
       expect(isValidCitySlug("ankara")).toBe(true);
       expect(isValidCitySlug("canakkale")).toBe(true);
+      expect(isValidCitySlug("denizli")).toBe(false);
       expect(isValidCitySlug("hayali-sehir-xyz-123")).toBe(false);
     });
   });

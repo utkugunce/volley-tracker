@@ -3,7 +3,7 @@ import { slugify } from "./slugify";
 /**
  * Canlıda geçici olarak gizlenen iller (datalar saklanır fakat sitede gösterilmez).
  */
-export const HIDDEN_CITY_SLUGS = new Set<string>(["nigde"]);
+export const HIDDEN_CITY_SLUGS = new Set<string>(["nigde", "denizli"]);
 
 /**
  * Bir ilin veya il slug'ının sitede gizli olup olmadığını kontrol eder.

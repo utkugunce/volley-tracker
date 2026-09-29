@@ -274,6 +274,15 @@ export function computeGroupStatusList(
     const synced = item.matches.filter(
       (m) => m.volleybox?.synced === true
     ).length;
+    const accounted = Math.min(
+      total,
+      synced +
+        item.matches.filter(
+          (m) =>
+            m.volleybox?.synced !== true &&
+            (m.forfeit || /^\s*\(H\)/i.test(m.home_team) || /^\s*\(H\)/i.test(m.away_team))
+        ).length
+    );
     const finished = item.matches.filter(
       (m) =>
         m.status === "finished" ||
@@ -285,7 +294,7 @@ export function computeGroupStatusList(
     const statusKey = evaluateGroupStatus({
       total,
       dated,
-      synced,
+      synced: accounted,
       finished,
       teamsCount,
     });

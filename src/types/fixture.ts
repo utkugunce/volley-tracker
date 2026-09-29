@@ -41,6 +41,7 @@ export interface Match {
   away_score?: number | null;
   set_scores?: string[];
   status: "upcoming" | "finished" | "postponed" | "live";
+  forfeit?: boolean;
   volleybox?: VolleyboxMatchInfo | null;
   referee_1?: string;
   referee_2?: string;
