@@ -24,7 +24,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
   const [showDetailedStats, setShowDetailedStats] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
 
-  const teams = group?.puan_durumu || [];
+  const teams = useMemo(() => group?.puan_durumu || [], [group?.puan_durumu]);
   const filteredTeams = useMemo(() => {
     return teams.filter((t) => {
       const vb = getVolleyboxMapping(t.takim_adi, "Kadınlar 2. Ligi");

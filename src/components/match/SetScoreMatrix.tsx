@@ -31,7 +31,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
           raw: setStr,
         };
       }),
-    [match.set_scores]
+    [setScores]
   );
 
   const hasScoreData = parsedSets.length > 0;

@@ -577,11 +577,11 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             <div className="flex items-center gap-2 text-amber-400">
               <Sparkles size={16} />
               <h4 className="font-extrabold text-xs uppercase tracking-wider">
-                1. Lig'e Yükselme Sistemi
+                1. Lig&apos;e Yükselme Sistemi
               </h4>
             </div>
             <p className="text-[11px] text-slate-300 leading-relaxed">
-              16 gruptan ilk 2 sırayı alan <strong className="text-white">32 takım</strong> Çeyrek Final'e yükselir. Çeyrek final, yarı final ve final etapları sonucunda <strong className="text-amber-300">4 takım Arabica Coffee House Kadınlar 1. Ligi</strong>'ne yükselir.
+              16 gruptan ilk 2 sırayı alan <strong className="text-white">32 takım</strong> Çeyrek Final&apos;e yükselir. Çeyrek final, yarı final ve final etapları sonucunda <strong className="text-amber-300">4 takım Arabica Coffee House Kadınlar 1. Ligi</strong>&apos;ne yükselir.
             </p>
             <button
               onClick={() => onNavigateTab("statu")}

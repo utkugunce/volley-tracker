@@ -30,14 +30,14 @@ export function validateCityIndex(payload: any): DataValidationResult {
   }
 
   const activeCities = cities.filter(
-    (city) => toNumber(city?.matches_count) > 0 || toNumber(city?.standings_count) > 0
+    (city: Record<string, unknown>) => toNumber(city?.matches_count) > 0 || toNumber(city?.standings_count) > 0
   ).length;
 
   if (payload.active_cities != null && toNumber(payload.active_cities) !== activeCities) {
     errors.push(`active_cities mismatch: expected ${activeCities}, got ${payload.active_cities}.`);
   }
 
-  const totalMatches = cities.reduce((sum, city) => sum + toNumber(city?.matches_count), 0);
+  const totalMatches = cities.reduce((sum: number, city: Record<string, unknown>) => sum + toNumber(city?.matches_count), 0);
   if (payload.total_matches != null && toNumber(payload.total_matches) !== totalMatches) {
     errors.push(`total_matches mismatch: expected ${totalMatches}, got ${payload.total_matches}.`);
   }
@@ -77,7 +77,7 @@ export function validateKadinlar2LigData(payload: any): DataValidationResult {
   }
 
   const totalTeams = groups.reduce(
-    (sum, group) => sum + (Array.isArray(group?.puan_durumu) ? group.puan_durumu.length : 0),
+    (sum: number, group: Record<string, unknown>) => sum + (Array.isArray(group?.puan_durumu) ? (group.puan_durumu as unknown[]).length : 0),
     0
   );
   if (payload.metadata?.toplam_takim_sayisi != null && toNumber(payload.metadata.toplam_takim_sayisi) !== totalTeams) {
@@ -86,7 +86,7 @@ export function validateKadinlar2LigData(payload: any): DataValidationResult {
 
   const allMatches = Array.isArray(payload.tum_maclar) ? payload.tum_maclar : [];
   const fixtureMatches = groups.reduce(
-    (sum, group) => sum + (Array.isArray(group?.fikstur) ? group.fikstur.length : 0),
+    (sum: number, group: Record<string, unknown>) => sum + (Array.isArray(group?.fikstur) ? (group.fikstur as unknown[]).length : 0),
     0
   );
   const matchCount = allMatches.length > 0 ? allMatches.length : fixtureMatches;

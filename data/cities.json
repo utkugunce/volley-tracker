@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-29T12:24:59.874571+03:00",
+  "updated_at": "2026-09-29T12:56:05.994438+03:00",
   "total_cities": 81,
   "active_cities": 23,
-  "total_matches": 588,
+  "total_matches": 598,
   "cities": [
     {
       "ilid": "1",
@@ -169,8 +169,8 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (10 Maç Mevcut)",
-      "matches_count": 10,
+      "status": "Aktif (20 Maç Mevcut)",
+      "matches_count": 20,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
     },
@@ -179,7 +179,7 @@
       "name": "Çankırı",
       "slug": "cankiri",
       "url": "https://cankiri.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

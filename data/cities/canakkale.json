@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-29T12:24:39.908116",
+  "updated_at": "2026-09-29T12:55:40.231437",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 10,
+  "total_matches": 20,
   "source": "https://canakkale.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -23,6 +23,7 @@
     "halls": [
       "Tümü",
       "18 Mart Ss.",
+      "Bayramiç Ss.",
       "Biga S.S.",
       "Eceabat",
       "Gelibolu S.S.",
@@ -482,7 +483,109 @@
       }
     },
     {
-      "id": "canakkale-20260926-003",
+      "id": "canakkale-20261003-003",
+      "city": "Çanakkale",
+      "date": "2026-10-03",
+      "time": "15:00",
+      "hall": "18 Mart Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "match_no": "3",
+      "home_team": "Kepez Spor Kulübü U16",
+      "away_team": "Biga Ada Spor U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261006-004",
+      "city": "Çanakkale",
+      "date": "2026-10-06",
+      "time": "18:00",
+      "hall": "18 Mart Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "match_no": "4",
+      "home_team": "ÇOMÜ Spor Kulübü - B U16",
+      "away_team": "Kepez Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261008-005",
+      "city": "Çanakkale",
+      "date": "2026-10-08",
+      "time": "20:00",
+      "hall": "18 Mart Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "match_no": "5",
+      "home_team": "Çanakkale Barbarosspor U16",
+      "away_team": "ÇOMÜ Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20260926-006",
       "city": "Çanakkale",
       "date": "2026-09-26",
       "time": "15:00",
@@ -528,7 +631,7 @@
       }
     },
     {
-      "id": "canakkale-20260928-004",
+      "id": "canakkale-20260928-007",
       "city": "Çanakkale",
       "date": "2026-09-28",
       "time": "20:00",
@@ -543,7 +646,11 @@
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
-      "set_scores": [],
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
       "status": "finished",
       "volleybox": {
         "synced": false,
@@ -562,7 +669,7 @@
       }
     },
     {
-      "id": "canakkale-20261002-005",
+      "id": "canakkale-20261002-008",
       "city": "Çanakkale",
       "date": "2026-10-02",
       "time": "18:30",
@@ -600,7 +707,109 @@
       }
     },
     {
-      "id": "canakkale-20260926-006",
+      "id": "canakkale-20261004-009",
+      "city": "Çanakkale",
+      "date": "2026-10-04",
+      "time": "14:00",
+      "hall": "Bayramiç Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "match_no": "4",
+      "home_team": "Yeşil Bayramiç Spor Kulübü",
+      "away_team": "Eceabat Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261007-010",
+      "city": "Çanakkale",
+      "date": "2026-10-07",
+      "time": "20:00",
+      "hall": "18 Mart Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "match_no": "5",
+      "home_team": "Çanakkale Belediyespor",
+      "away_team": "Yeşil Bayramiç Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261009-011",
+      "city": "Çanakkale",
+      "date": "2026-10-09",
+      "time": "20:00",
+      "hall": "18 Mart Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "match_no": "6",
+      "home_team": "Çanakkale Belediyespor - B U16",
+      "away_team": "Eceabat Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20260926-012",
       "city": "Çanakkale",
       "date": "2026-09-26",
       "time": "15:00",
@@ -647,7 +856,7 @@
       }
     },
     {
-      "id": "canakkale-20261001-007",
+      "id": "canakkale-20261001-013",
       "city": "Çanakkale",
       "date": "2026-10-01",
       "time": "20:00",
@@ -688,7 +897,143 @@
       }
     },
     {
-      "id": "canakkale-20260926-008",
+      "id": "canakkale-20261003-014",
+      "city": "Çanakkale",
+      "date": "2026-10-03",
+      "time": "11:00",
+      "hall": "18 Mart Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "match_no": "3",
+      "home_team": "Parion Spor Kulübü U16",
+      "away_team": "ÇOMÜ Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261005-015",
+      "city": "Çanakkale",
+      "date": "2026-10-05",
+      "time": "20:00",
+      "hall": "18 Mart Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "match_no": "4",
+      "home_team": "ÇOMÜ Spor Kulübü U16",
+      "away_team": "Nehir Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261007-016",
+      "city": "Çanakkale",
+      "date": "2026-10-07",
+      "time": "20:00",
+      "hall": "Biga S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "match_no": "5",
+      "home_team": "Biga Çiçeklidedespor U16",
+      "away_team": "ÇOMÜ Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20261009-017",
+      "city": "Çanakkale",
+      "date": "2026-10-09",
+      "time": "20:00",
+      "hall": "Biga S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "match_no": "6",
+      "home_team": "Biga Çiçeklidedespor U16",
+      "away_team": "Nehir Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "canakkale-20260926-018",
       "city": "Çanakkale",
       "date": "2026-09-26",
       "time": "12:00",
@@ -734,7 +1079,7 @@
       }
     },
     {
-      "id": "canakkale-20260928-009",
+      "id": "canakkale-20260928-019",
       "city": "Çanakkale",
       "date": "2026-09-28",
       "time": "20:00",
@@ -779,7 +1124,7 @@
       }
     },
     {
-      "id": "canakkale-20261003-010",
+      "id": "canakkale-20261003-020",
       "city": "Çanakkale",
       "date": "2026-10-03",
       "time": "13:00",
@@ -821,5 +1166,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-09-29T12:27:24.565477"
+  "volleybox_sync_updated_at": "2026-09-29T13:00:06.728653"
 }

@@ -1404,7 +1404,7 @@ export default function AdminPage() {
               </h2>
               <div className="flex items-center gap-2">
                 <span className="text-xs text-slate-400">
-                  Maçları düzenlemek için "Maçlar" tab'ına gidin
+                  Maçları düzenlemek için &ldquo;Maçlar&rdquo; tab&apos;ına gidin
                 </span>
               </div>
             </div>
@@ -1438,10 +1438,10 @@ export default function AdminPage() {
                 Nasıl Kullanılır?
               </h4>
               <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
-                <li>"Maçlar" tab'ına gidin</li>
+                <li>&ldquo;Maçlar&rdquo; tab&apos;ına gidin</li>
                 <li>Düzenlemek istediğiniz maçı bulun</li>
-                <li>"Düzenle" butonuna tıklayın</li>
-                <li>Skorları güncelleyin ve "Canlı" durumunu seçin</li>
+                <li>&ldquo;Düzenle&rdquo; butonuna tıklayın</li>
+                <li>Skorları güncelleyin ve &ldquo;Canlı&rdquo; durumunu seçin</li>
                 <li>Kaydedin - değişiklikler anında tüm kullanıcılara yansır</li>
               </ol>
             </div>

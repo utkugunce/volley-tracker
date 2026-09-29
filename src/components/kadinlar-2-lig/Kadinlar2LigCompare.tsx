@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -112,13 +112,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
   }, [allTeams, search2]);
 
   // Takım maçları
-  const getTeamMatches = (teamName?: string) => {
+  const getTeamMatches = useCallback((teamName?: string) => {
     if (!teamName) return [];
     return allMatches.filter((m) => m.takim_a === teamName || m.takim_b === teamName);
-  };
+  }, [allMatches]);
 
-  const team1Matches = useMemo(() => getTeamMatches(team1?.takim_adi), [allMatches, team1]);
-  const team2Matches = useMemo(() => getTeamMatches(team2?.takim_adi), [allMatches, team2]);
+  const team1Matches = useMemo(() => getTeamMatches(team1?.takim_adi), [team1, getTeamMatches]);
+  const team2Matches = useMemo(() => getTeamMatches(team2?.takim_adi), [team2, getTeamMatches]);
 
   // İki takım arasındaki geçmiş maçlar (H2H)
   const headToHeadMatches = useMemo(() => {

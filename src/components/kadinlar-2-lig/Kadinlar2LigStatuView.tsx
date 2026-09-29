@@ -48,7 +48,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
           rel="noreferrer"
           className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-bold shadow-glow-red transition-all active:scale-95 shrink-0"
         >
-          <span>Resmi TVF Statü PDF'i</span>
+          <span>Resmi TVF Statü PDF&apos;i</span>
           <ExternalLink size={13} />
         </a>
       </div>
@@ -66,7 +66,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
             </div>
             <h3 className="text-sm font-extrabold text-white">Lig Etabı (Grup Maçları)</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              İki devreli deplasmanlı lig usulü. Her grubun <span className="text-emerald-400 font-bold">ilk 2 takımı</span> Çeyrek Final'e yükselir.
+              İki devreli deplasmanlı lig usulü. Her grubun <span className="text-emerald-400 font-bold">ilk 2 takımı</span> Çeyrek Final&apos;e yükselir.
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
@@ -89,7 +89,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
             </div>
             <h3 className="text-sm font-extrabold text-white">Çeyrek Final Etabı</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              32 takım 4'erli 8 gruba (A-H) ayrılır. Tarafsız sahada tek devreli lig oynanır. İlk 2'ler Yarı Final'e çıkar.
+              32 takım 4&apos;erli 8 gruba (A-H) ayrılır. Tarafsız sahada tek devreli lig oynanır. İlk 2&apos;ler Yarı Final&apos;e çıkar.
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
@@ -112,7 +112,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
             </div>
             <h3 className="text-sm font-extrabold text-white">Yarı Final Etabı</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
-              16 takım 4'erli 4 gruba (A-D) ayrılır. Tek devreli lig usulü sonucunda ilk 2'ler Final Etabı'na kalır.
+              16 takım 4&apos;erli 4 gruba (A-D) ayrılır. Tek devreli lig usulü sonucunda ilk 2&apos;ler Final Etabı&apos;na kalır.
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
@@ -138,12 +138,12 @@ export const Kadinlar2LigStatuView: React.FC = () => {
               <span>Final Etabı</span>
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              8 takım 4'erli 2 gruba ayrılır. Her iki grubun <span className="text-amber-300 font-bold">1. ve 2.</span> olan takımları <span className="text-white font-black underline decoration-amber-400">1. Lig'e</span> terfi eder!
+              8 takım 4&apos;erli 2 gruba ayrılır. Her iki grubun <span className="text-amber-300 font-bold">1. ve 2.</span> olan takımları <span className="text-white font-black underline decoration-amber-400">1. Lig&apos;e</span> terfi eder!
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
             <span className="text-amber-400 font-extrabold flex items-center gap-1">
-              🏆 4 Takım 1. Lig'e
+              🏆 4 Takım 1. Lig&apos;e
             </span>
             <span className="text-slate-400 text-[10px]">Şampiyonlar</span>
           </div>
@@ -209,7 +209,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
                 <span>Madde 2.8: 1. Lig Pilot Takımı Kısıtlaması</span>
               </div>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Kadınlar 1. Ligi'nde takımı bulunan bir kulübün 2. Lig'deki takımı ilk 2'ye girerek Çeyrek Final hakkı kazansa dahi <strong>Çeyrek Final etabına katılamaz</strong>. Bu hak sıralamadaki sonraki takıma devreder.
+                Kadınlar 1. Ligi&apos;nde takımı bulunan bir kulübün 2. Lig&apos;deki takımı ilk 2&apos;ye girerek Çeyrek Final hakkı kazansa dahi <strong>Çeyrek Final etabına katılamaz</strong>. Bu hak sıralamadaki sonraki takıma devreder.
               </p>
             </div>
 
@@ -227,7 +227,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
                 <span>Madde 6.3 & 9.1: Yaş Sınırı ve Saha Ölçüleri</span>
               </div>
               <p className="text-[11px] text-slate-400 leading-relaxed">
-                1. Lig kulüplerinin 2. Lig takım kadrosu yalnızca 21 yaş ve altı sporculardan oluşur. File yüksekliği 2,24 m'dir ve Mikasa V200W resmi maç topu kullanılır.
+                1. Lig kulüplerinin 2. Lig takım kadrosu yalnızca 21 yaş ve altı sporculardan oluşur. File yüksekliği 2,24 m&apos;dir ve Mikasa V200W resmi maç topu kullanılır.
               </p>
             </div>
           </div>

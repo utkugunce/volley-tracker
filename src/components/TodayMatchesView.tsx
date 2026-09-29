@@ -139,7 +139,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
       scoredCount,
       unscoredPassed,
     };
-  }, [matches, todayMatches]);
+  }, [matches, todayMatches, todayStr]);
 
   // Eğer bugün maç yoksa: Sıradaki en yakın maç tarihini ve maçlarını bul
   const nextMatchDay = useMemo(() => {
