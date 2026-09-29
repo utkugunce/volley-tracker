@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:10:24.233056",
+  "updated_at": "2026-09-29T20:03:44.695679",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -32,7 +32,7 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Akademi Atletik Spor U18",
+        "team": "Karayolları Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -43,6 +43,17 @@
       },
       {
         "rank": 2,
+        "team": "Akademi Atletik Spor U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Hakan Akışık Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -53,19 +64,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Anadolu Birlik Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Karayolları Spor Kulübü U18",
+        "team": "Anadolu Birlik Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -111,17 +111,28 @@
       },
       {
         "rank": 3,
-        "team": "Yedidağspor - A U18",
+        "team": "Çaba Spor Kulübü - A U18",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
+        "team": "Yedidağspor - A U18",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Başkent Arma Spor",
         "played": 1,
         "won": 0,
@@ -130,23 +141,12 @@
         "sets_won": 0,
         "sets_lost": 3,
         "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Çaba Spor Kulübü - A U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
       }
     ],
     "Genç Kızlar Süper Lig - 3.Grup": [
       {
         "rank": 1,
-        "team": "TVF Spor Lisesi U18",
+        "team": "TED Ankara Kolejliler U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -157,7 +157,7 @@
       },
       {
         "rank": 2,
-        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
+        "team": "TVF Spor Lisesi U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -168,13 +168,13 @@
       },
       {
         "rank": 3,
-        "team": "Maç Akademi Spor Kulübü U18",
+        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
@@ -190,31 +190,31 @@
       },
       {
         "rank": 5,
-        "team": "TED Ankara Kolejliler U18",
-        "played": 0,
+        "team": "Maç Akademi Spor Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
     "Genç Kızlar Süper Lig - 4.Grup": [
       {
         "rank": 1,
-        "team": "PTT Spor U18",
-        "played": 1,
-        "won": 1,
+        "team": "İlbank U18",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "İlbank U18",
+        "team": "PTT Spor U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -237,12 +237,12 @@
       {
         "rank": 4,
         "team": "Eryaman Gelişim SK U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -648,11 +648,15 @@
       "match_no": "2",
       "home_team": "Akademi Atletik Spor U18",
       "away_team": "Karayolları Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "19-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401017",
@@ -943,11 +947,17 @@
       "match_no": "3",
       "home_team": "Çaba Spor Kulübü - A U18",
       "away_team": "Yedidağspor - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "32-34",
+        "25-18",
+        "25-21",
+        "20-25",
+        "15-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401022",
@@ -1265,11 +1275,15 @@
       "match_no": "3",
       "home_team": "TED Ankara Kolejliler U18",
       "away_team": "Maç Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-18",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401020",
@@ -1587,11 +1601,15 @@
       "match_no": "3",
       "home_team": "Eryaman Gelişim SK U18",
       "away_team": "İlbank U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "12-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401024",
@@ -3186,5 +3204,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-09-29T15:12:13.717035"
+  "volleybox_sync_updated_at": "2026-09-29T20:05:26.671467"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:10:26.825070",
+  "updated_at": "2026-09-29T20:03:47.901012",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -29,7 +29,7 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "team": "MEV Toros Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -40,6 +40,17 @@
       },
       {
         "rank": 2,
+        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -50,7 +61,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Alsancak Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -61,7 +72,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Tarsus Amerikan Koleji U18",
         "played": 1,
         "won": 0,
@@ -72,30 +83,19 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Mersin İhtisas Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "MEV Toros Spor Kulübü U18",
-        "played": 0,
+        "team": "Tarsus Gelecek Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Tarsus Gelecek Spor Kulübü U18",
+        "team": "Mersin İhtisas Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -222,11 +222,15 @@
       "match_no": "3",
       "home_team": "Tarsus Gelecek Spor Kulübü U18",
       "away_team": "MEV Toros Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "12-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399639",
@@ -293,5 +297,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-29T15:12:13.744061"
+  "volleybox_sync_updated_at": "2026-09-29T20:05:26.695740"
 }

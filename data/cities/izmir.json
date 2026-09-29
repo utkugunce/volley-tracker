@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:10:29.925129",
+  "updated_at": "2026-09-29T20:03:51.523706",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -149,11 +149,11 @@
       {
         "rank": 1,
         "team": "İzmir DSİ Spor U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -182,12 +182,12 @@
       {
         "rank": 4,
         "team": "Venüs Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -1744,11 +1744,15 @@
       "match_no": "5",
       "home_team": "Venüs Spor Kulübü U18",
       "away_team": "İzmir DSİ Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "15-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401124",
@@ -5397,5 +5401,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-09-29T15:12:13.722525"
+  "volleybox_sync_updated_at": "2026-09-29T20:05:26.676427"
 }

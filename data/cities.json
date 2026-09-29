@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-29T15:10:50.658111+00:00",
+  "updated_at": "2026-09-29T20:04:11.192436+00:00",
   "total_cities": 81,
   "active_cities": 22,
-  "total_matches": 612,
+  "total_matches": 621,
   "cities": [
     {
       "ilid": "1",
@@ -159,8 +159,8 @@
       "name": "Bursa",
       "slug": "bursa",
       "url": "https://bursa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (12 Maç Mevcut)",
-      "matches_count": 12,
+      "status": "Aktif (21 Maç Mevcut)",
+      "matches_count": 21,
       "standings_count": 9,
       "data_file": "data/cities/bursa.json"
     },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:10:31.317456",
+  "updated_at": "2026-09-29T20:03:52.696540",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -194,6 +194,17 @@
       },
       {
         "rank": 2,
+        "team": "Vera Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Antalya Açı Koleji Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -204,7 +215,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "07 Mega Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -215,41 +226,30 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Vera Spor Kulübü U16",
-        "played": 1,
+        "rank": 5,
+        "team": "Nova Spor U15",
+        "played": 3,
         "won": 1,
-        "lost": 0,
+        "lost": 2,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Sistem Eğitim Spor Kulübü U16",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 1,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Antalya Şimşek GSK U16",
-        "played": 1,
+        "team": "Sistem Eğitim Spor Kulübü U16",
+        "played": 3,
         "won": 0,
-        "lost": 1,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Nova Spor U15",
+        "team": "Antalya Şimşek GSK U16",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -1455,11 +1455,15 @@
       "match_no": "7",
       "home_team": "Sistem Eğitim Spor Kulübü U16",
       "away_team": "Vera Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "21-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400353",
@@ -1496,11 +1500,15 @@
       "match_no": "8",
       "home_team": "Antalya Şimşek GSK U16",
       "away_team": "Nova Spor U15",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "20-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "400354",
@@ -2550,5 +2558,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-09-29T15:12:13.691322"
+  "volleybox_sync_updated_at": "2026-09-29T20:05:26.648694"
 }

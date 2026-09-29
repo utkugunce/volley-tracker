@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:10:32.649251",
+  "updated_at": "2026-09-29T20:03:56.539645",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -76,29 +76,29 @@
     "Genç Kızlar Süper Lig - - B": [
       {
         "rank": 1,
-        "team": "Çınar Akademi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Evola Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Erciyes Aslan Spor Kulübü U16",
-        "played": 0,
+        "team": "Çınar Akademi Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Evola Spor Kulübü U18",
+        "team": "Erciyes Aslan Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -549,11 +549,15 @@
       "match_no": "1",
       "home_team": "Çınar Akademi Spor Kulübü U18",
       "away_team": "Evola Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "22-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401397",
@@ -956,5 +960,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-09-29T15:12:13.707787"
+  "volleybox_sync_updated_at": "2026-09-29T20:05:26.662928"
 }

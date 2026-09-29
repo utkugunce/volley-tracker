@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T15:10:33.039283+00:00",
+  "updated_at": "2026-09-29T20:03:57.499894+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1630,40 +1630,60 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Robert Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "Galatasaray U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 34,
-        "point_ratio": "2.206",
+        "points_won": 150,
+        "points_lost": 102,
+        "point_ratio": "1.471",
         "form": [
+          "W",
           "W"
         ]
       },
       {
         "rank": 2,
-        "team": "Galatasaray U16",
-        "played": 1,
-        "won": 1,
+        "team": "Eczacıbaşı - A U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 44,
-        "point_ratio": "1.705",
+        "points_won": 150,
+        "points_lost": 107,
+        "point_ratio": "1.402",
         "form": [
+          "W",
           "W"
         ]
       },
       {
         "rank": 3,
+        "team": "Beşiktaş U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
+        "set_ratio": "6.000",
+        "points_won": 169,
+        "points_lost": 113,
+        "point_ratio": "1.496",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Türk Hava Yolları SK - A U16",
         "played": 1,
         "won": 1,
@@ -1680,37 +1700,21 @@
         ]
       },
       {
-        "rank": 4,
-        "team": "Eczacıbaşı - A U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 65,
-        "point_ratio": "1.154",
-        "form": [
-          "W"
-        ]
-      },
-      {
         "rank": 5,
-        "team": "Beşiktaş U16",
-        "played": 1,
+        "team": "Robert Spor Kulübü U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
-        "set_ratio": "3.000",
-        "points_won": 94,
-        "points_lost": 76,
-        "point_ratio": "1.237",
+        "sets_lost": 3,
+        "set_ratio": "1.000",
+        "points_won": 133,
+        "points_lost": 109,
+        "point_ratio": "1.220",
         "form": [
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -1767,34 +1771,36 @@
       {
         "rank": 9,
         "team": "Bahçelievler Belediyespor ll U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 44,
-        "points_lost": 75,
-        "point_ratio": "0.587",
+        "points_won": 86,
+        "points_lost": 150,
+        "point_ratio": "0.573",
         "form": [
+          "L",
           "L"
         ]
       },
       {
         "rank": 10,
         "team": "Tuzla Rekor Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 34,
-        "points_lost": 75,
-        "point_ratio": "0.453",
+        "points_won": 71,
+        "points_lost": 150,
+        "point_ratio": "0.473",
         "form": [
+          "L",
           "L"
         ]
       }
@@ -1980,6 +1986,24 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
+        "team": "ES Voleybol U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
+        "set_ratio": "6.000",
+        "points_won": 171,
+        "points_lost": 128,
+        "point_ratio": "1.336",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "VakıfBank - A U16",
         "played": 2,
         "won": 2,
@@ -1997,7 +2021,25 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
+        "team": "Eczacıbaşı - B U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "set_ratio": "3.000",
+        "points_won": 175,
+        "points_lost": 140,
+        "point_ratio": "1.250",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "İBB Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -2014,54 +2056,21 @@
         ]
       },
       {
-        "rank": 3,
-        "team": "Türk Hava Yolları SK - B U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 42,
-        "point_ratio": "1.786",
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "ES Voleybol U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 49,
-        "point_ratio": "1.531",
-        "form": [
-          "W"
-        ]
-      },
-      {
         "rank": 5,
-        "team": "Eczacıbaşı - B U16",
-        "played": 1,
+        "team": "Türk Hava Yolları SK - B U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "set_ratio": "1.500",
-        "points_won": 100,
-        "points_lost": 98,
-        "point_ratio": "1.020",
+        "lost": 1,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 3,
+        "set_ratio": "1.333",
+        "points_won": 154,
+        "points_lost": 138,
+        "point_ratio": "1.116",
         "form": [
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -2136,17 +2145,18 @@
       {
         "rank": 10,
         "team": "Pegasus Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 37,
-        "points_lost": 75,
-        "point_ratio": "0.493",
+        "points_won": 79,
+        "points_lost": 150,
+        "point_ratio": "0.527",
         "form": [
+          "L",
           "L"
         ]
       },
@@ -4547,11 +4557,15 @@
       "match_no": "6",
       "home_team": "Beşiktaş U16",
       "away_team": "Tuzla Rekor Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-14",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402176",
@@ -4588,11 +4602,15 @@
       "match_no": "7",
       "home_team": "Pegasus Spor Kulübü U16",
       "away_team": "Eczacıbaşı - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "15-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402190",
@@ -4629,11 +4647,15 @@
       "match_no": "7",
       "home_team": "Bahçelievler Belediyespor ll U18",
       "away_team": "Eczacıbaşı - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "12-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402177",
@@ -4670,11 +4692,15 @@
       "match_no": "8",
       "home_team": "Robert Spor Kulübü U16",
       "away_team": "Galatasaray U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "23-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402178",
@@ -4711,11 +4737,16 @@
       "match_no": "8",
       "home_team": "ES Voleybol U16",
       "away_team": "Türk Hava Yolları SK - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "21-25",
+        "25-13",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402191",
@@ -5151,5 +5182,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-09-29T15:12:13.701147"
+  "volleybox_sync_updated_at": "2026-09-29T20:05:26.657376"
 }
