@@ -262,6 +262,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
+            selectedMatchId={selectedMatch?.id || null}
           />
         )}
 
@@ -274,6 +275,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
+            selectedMatchId={selectedMatch?.id || null}
           />
         )}
 
@@ -293,6 +295,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
             onSelectMatch={setSelectedMatch}
+            selectedMatchId={selectedMatch?.id || null}
           />
         )}
 

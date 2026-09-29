@@ -10,7 +10,9 @@ import { slugify } from "@/utils/slugify";
 
 interface LeagueSectionProps {
   leagueTitle: string;
+  sectionLabel?: string;
   cityName?: string;
+  standingsHref?: string;
   matches: Match[];
   selectedMatchId?: string | null;
   onSelectMatch?: (match: Match) => void;
@@ -24,7 +26,9 @@ interface LeagueSectionProps {
 
 export const LeagueSection: React.FC<LeagueSectionProps> = ({
   leagueTitle,
+  sectionLabel,
   cityName,
+  standingsHref,
   matches,
   selectedMatchId,
   onSelectMatch,
@@ -43,7 +47,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
   };
 
   const citySlug = cityName ? slugify(cityName) : "istanbul";
-  const standingsUrl = `/puan-durumu/${citySlug}`;
+  const standingsUrl = standingsHref || `/puan-durumu/${citySlug}`;
 
   return (
     <div
@@ -79,6 +83,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             >
               {leagueTitle}
             </LeagueVolleyboxLink>
+            {sectionLabel && <span className="text-[#94A3B8] font-semibold"> · {sectionLabel}</span>}
           </h3>
         </div>
 

@@ -48,8 +48,17 @@ describe("volleybox utility", () => {
 
       const bizimkentB = getVolleyboxMapping("Bizimkent Sk", "Yıldız Kızlar Süper Lig");
       expect(bizimkentB).toBeDefined();
-      expect(bizimkentB?.matched_as).toBe("Bizimkent Voleybol Spor Kulübü U16 - B");
-      expect(bizimkentB?.volleybox_url).toContain("bizimkent-voleybol-spor-kulubu-u16-t41638");
+      expect(bizimkentB?.matched_as).toBe("Bizimkent Spor Kulübü U16");
+      expect(bizimkentB?.volleybox_url).toBe("https://women.volleybox.net/tr/bizimkent-spor-kulubu-u16-t54145");
+
+      const bizimkentBSourceName = getVolleyboxMapping(
+        "Bizimkent Voleybol Spor Kulübü U16 - B",
+        "Yıldız Kızlar Süper Lig",
+        undefined,
+        "İstanbul"
+      );
+      expect(bizimkentBSourceName?.matched_as).toBe("Bizimkent Spor Kulübü U16");
+      expect(bizimkentBSourceName?.volleybox_url).toBe(bizimkentB?.volleybox_url);
 
       const akademiAtletik = getVolleyboxMapping("Akademi Atletik", "Yıldız Kızlar Süper Lig", undefined, "İstanbul");
       expect(akademiAtletik).toBeDefined();
@@ -58,6 +67,44 @@ describe("volleybox utility", () => {
       const tekirdagVoleybolAkademi = getVolleyboxMapping("Voleybol Akademi Tekirdağ Spor Kulübü", "Yıldız Kızlar Süper Lig", undefined, "Tekirdağ");
       expect(tekirdagVoleybolAkademi).toBeDefined();
       expect(tekirdagVoleybolAkademi?.matched_as).toBe("Tekirdağ Voleybol Akademi Spor Kulübü U16");
+    });
+
+    it("maps the Bizimkent İlkokulu U18 source name to its official profile", () => {
+      const mapping = getVolleyboxMapping(
+        "Bizimkent İlkokulu",
+        "Genç Kızlar 1. Ligi - 5. Bölge",
+        undefined,
+        "İstanbul"
+      );
+
+      expect(mapping?.matched_as).toBe("Bizimkent İlkokulu Spor Kulübü U18");
+      expect(mapping?.volleybox_url).toBe(
+        "https://women.volleybox.net/tr/bizimkent-lkokulu-spor-kulubu-u18-t47013"
+      );
+    });
+
+    it("maps the İzmir 1. Lig C-group Dost name to Dost Spor - B U18", () => {
+      const mapping = getVolleyboxMapping(
+        "Dost Spor U18",
+        "Genç Kızlar 1. Ligi - Genç Kız - C Gr",
+        undefined,
+        "İzmir"
+      );
+
+      expect(mapping?.matched_as).toBe("Dost Spor - B U18");
+      expect(mapping?.volleybox_url).toBe("https://women.volleybox.net/tr/dost-spor-u18-t53583");
+    });
+
+    it("maps the Çanakkale Belediyespor source name to Çanakkalespor U16", () => {
+      const mapping = getVolleyboxMapping(
+        "Çanakkale Belediyespor",
+        "Yıldız Kızlar Süper Lig",
+        undefined,
+        "Çanakkale"
+      );
+
+      expect(mapping?.matched_as).toBe("Çanakkalespor U16");
+      expect(mapping?.volleybox_url).toBe("https://women.volleybox.net/tr/canakkalespor-u16-t44826");
     });
 
     it("returns correct mapping for other cities (Bursa, İzmir, Antalya, Yalova, Düzce, Niğde)", () => {

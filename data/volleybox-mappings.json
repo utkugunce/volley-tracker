@@ -605,8 +605,8 @@
     {
       "internal_name": "Bizimkent Sk",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Bizimkent Voleybol Spor Kulübü U16 - B",
-      "volleybox_url": "https://women.volleybox.net/bizimkent-voleybol-spor-kulubu-u16-t41638",
+      "matched_as": "Bizimkent Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tr/bizimkent-spor-kulubu-u16-t54145",
       "age_category": "U16",
       "confidence": "verified",
       "note": null,
@@ -6343,9 +6343,10 @@
       "city": "İstanbul",
       "city_slug": "istanbul",
       "matched_as": "Bizimkent İlkokulu Spor Kulübü U18",
-      "volleybox_url": "https://women.volleybox.net/bizimkent-lkokulu-spor-kulubu-u18-t47013",
+      "volleybox_url": "https://women.volleybox.net/tr/bizimkent-lkokulu-spor-kulubu-u18-t47013",
       "age_category": "U18",
       "aliases": [
+        "Bizimkent İlkokulu",
         "Bizimkent İlkokulu Spor Kulübü",
         "Bizimkent İlkokulu Spor Kulübü U18"
       ],
@@ -9114,7 +9115,7 @@
       "city": "İzmir",
       "city_slug": "izmir",
       "matched_as": "Dost Spor - B U18",
-      "volleybox_url": "https://women.volleybox.net/dost-spor-u18-t53583",
+      "volleybox_url": "https://women.volleybox.net/tr/dost-spor-u18-t53583",
       "age_category": "U18",
       "confidence": "verified",
       "aliases": [
@@ -12023,10 +12024,11 @@
       "city": "Çanakkale",
       "city_slug": "canakkale",
       "matched_as": "Çanakkalespor U16",
-      "volleybox_url": "https://women.volleybox.net/canakkalespor-u16-t44826",
+      "volleybox_url": "https://women.volleybox.net/tr/canakkalespor-u16-t44826",
       "age_category": "U16",
       "confidence": "verified",
       "aliases": [
+        "Çanakkale Belediyespor",
         "Çanakkalespor",
         "Çanakkalespor U16"
       ],

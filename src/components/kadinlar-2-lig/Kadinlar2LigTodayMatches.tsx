@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { Calendar, Star } from "lucide-react";
 import { Kadinlar2LigMatch, Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
-import { DateRibbon } from "@/components/DateRibbon";
-import { FixtureTable } from "@/components/FixtureTable";
+import { DateNavigationRibbon, StatusFilterType } from "@/components/match/DateNavigationRibbon";
+import { LeagueSection } from "@/components/match/LeagueSection";
 import { useFavorites } from "@/utils/useFavorites";
 import { convertK2MatchToMatch, normalizeK2Date } from "@/utils/kadinlar2LigConverter";
+import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 
 interface Kadinlar2LigTodayMatchesProps {
   allMatches: Kadinlar2LigMatch[];
@@ -16,6 +17,7 @@ interface Kadinlar2LigTodayMatchesProps {
   showOnlyFavorites?: boolean;
   onToggleFavoritesOnly?: () => void;
   searchQuery?: string;
+  selectedMatchId?: string | null;
 }
 
 export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> = ({
@@ -25,45 +27,53 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
   showOnlyFavorites = false,
   onToggleFavoritesOnly,
   searchQuery = "",
+  selectedMatchId,
 }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
-  const todayStr = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const [todayStr, setTodayStr] = useState("");
+  const [selectedDate, setSelectedDate] = useState("all");
+  const [statusFilter, setStatusFilter] = useState<StatusFilterType>("all");
 
-  const { uniqueDates, dateCounts, initialSelectedDate } = useMemo(() => {
-    const counts: { [dateStr: string]: number } = {};
-    allMatches.forEach((m) => {
-      const date = normalizeK2Date(m.tarih);
-      if (date !== "TBD") {
-        counts[date] = (counts[date] || 0) + 1;
-      }
-    });
+  useEffect(() => {
+    const now = new Date();
+    setTodayStr(`${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`);
+  }, []);
 
-    const dates = Object.keys(counts).sort();
+  const { uniqueDates, initialSelectedDate } = useMemo(() => {
+    const dates = Array.from(new Set(allMatches.map((match) => normalizeK2Date(match.tarih)).filter((date) => date !== "TBD"))).sort();
 
-    let defaultDate = "all";
-    if (counts[todayStr]) {
-      defaultDate = todayStr;
-    } else {
-      const upcoming = dates.find((d) => d >= todayStr);
-      defaultDate = upcoming || dates[0] || "all";
-    }
+    const defaultDate = dates.includes(todayStr)
+      ? todayStr
+      : dates.find((date) => date >= todayStr) || dates[0] || "all";
 
     return {
       uniqueDates: dates,
-      dateCounts: counts,
       initialSelectedDate: defaultDate,
     };
   }, [allMatches, todayStr]);
 
-  const [selectedDate, setSelectedDate] = useState<string>(initialSelectedDate);
+  useEffect(() => {
+    if (todayStr) setSelectedDate(initialSelectedDate);
+  }, [todayStr, initialSelectedDate]);
+
   const [selectedGroupFilter, setSelectedGroupFilter] = useState<number | "all">("all");
-  const [statusFilter, setStatusFilter] = useState<"all" | "OYNANACAK" | "BİTTİ">("all");
+
+  const statusCounts = useMemo(() => {
+    const matchesForDate = allMatches.filter((match) =>
+      (selectedDate === "all" || normalizeK2Date(match.tarih) === selectedDate) &&
+      (selectedGroupFilter === "all" || match.grup_no === selectedGroupFilter)
+    );
+    const finished = matchesForDate.filter((match) => match.durum === "BİTTİ" || (match.skor && match.skor.includes("-") && match.skor !== "- : -")).length;
+    return { all: matchesForDate.length, live: 0, finished, upcoming: matchesForDate.length - finished };
+  }, [allMatches, selectedDate, selectedGroupFilter]);
 
   const filteredMatches = useMemo(() => {
     return allMatches.filter((m) => {
       if (selectedDate !== "all" && normalizeK2Date(m.tarih) !== selectedDate) return false;
       if (selectedGroupFilter !== "all" && m.grup_no !== selectedGroupFilter) return false;
-      if (statusFilter !== "all" && m.durum !== statusFilter) return false;
+      if (statusFilter === "finished" && m.durum !== "BİTTİ" && (!m.skor || !m.skor.includes("-") || m.skor === "- : -")) return false;
+      if (statusFilter === "upcoming" && (m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -"))) return false;
+      if (statusFilter === "live") return false;
       if (showOnlyFavorites) {
         const homeFav = isFavorite(m.takim_a);
         const awayFav = isFavorite(m.takim_b);
@@ -100,18 +110,19 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
     if (match) toggleFavorite(match.takim_a);
   };
 
+  const selectStatus = (status: StatusFilterType) => setStatusFilter(status);
+
   return (
     <div className="space-y-4">
-      {/* 1. Tarih Şeridi */}
-      {uniqueDates.length > 0 && (
-        <DateRibbon
-          dates={uniqueDates}
-          selectedDate={selectedDate}
-          onSelectDate={setSelectedDate}
-          dateCounts={dateCounts}
-          todayStr={todayStr}
-        />
-      )}
+      <DateNavigationRibbon
+        selectedDate={selectedDate}
+        onSelectDate={setSelectedDate}
+        todayStr={todayStr}
+        statusFilter={statusFilter}
+        onSelectStatusFilter={selectStatus}
+        counts={statusCounts}
+        availableDates={uniqueDates}
+      />
 
       {/* 2. Filtre Barı (Grup, Durum, Favoriler) */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-3 sm:p-4 shadow-card flex flex-wrap items-center justify-between gap-3">
@@ -133,33 +144,6 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
             </select>
           </div>
 
-          {/* Durum Filtresi */}
-          <div className="flex items-center gap-0.5 bg-slate-900 p-0.5 rounded-xl border border-slate-800">
-            <button
-              onClick={() => setStatusFilter("all")}
-              className={`px-2.5 py-1 rounded-lg font-semibold text-[11px] transition-colors cursor-pointer ${
-                statusFilter === "all" ? "bg-red-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
-              }`}
-            >
-              Tümü
-            </button>
-            <button
-              onClick={() => setStatusFilter("OYNANACAK")}
-              className={`px-2.5 py-1 rounded-lg font-semibold text-[11px] transition-colors cursor-pointer ${
-                statusFilter === "OYNANACAK" ? "bg-red-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
-              }`}
-            >
-              Oynanacak
-            </button>
-            <button
-              onClick={() => setStatusFilter("BİTTİ")}
-              className={`px-2.5 py-1 rounded-lg font-semibold text-[11px] transition-colors cursor-pointer ${
-                statusFilter === "BİTTİ" ? "bg-red-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
-              }`}
-            >
-              Bitenler
-            </button>
-          </div>
         </div>
 
         {/* Favoriler Filtresi Butonu */}
@@ -201,16 +185,17 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
       ) : (
         <div className="space-y-4">
           {matchesByGroup.map(([groupNo, groupMatches]) => (
-            <FixtureTable
+            <LeagueSection
               key={groupNo}
-              title="Kadınlar 2. Ligi"
-              subTitle={`Grup ${groupNo}`}
+              leagueTitle="Kadınlar 2. Ligi"
+              sectionLabel={`Grup ${groupNo}`}
               matches={groupMatches.map(convertK2MatchToMatch)}
+              selectedMatchId={selectedMatchId}
               favorites={favoriteMatchIds}
               onToggleFavorite={handleToggleFavorite}
-              city="Türkiye"
-              showCityBadge={false}
               onSelectMatch={onSelectMatch}
+              mode="today"
+              standingsHref={getKadinlar2LigRoute("standings", groupNo)}
             />
           ))}
         </div>

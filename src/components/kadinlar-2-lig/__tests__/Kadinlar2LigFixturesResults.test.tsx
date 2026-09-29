@@ -71,7 +71,7 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     fikstur: mockMatches,
   };
 
-  it("Kadinlar2LigFixtures Altyapı FixtureTable bileşenini ve kontrollerini render eder", () => {
+  it("Kadinlar2LigFixtures altyapı tarih şeridi ve kompakt maç akışını render eder", () => {
     const handleSelectMatch = vi.fn();
     render(
       <Kadinlar2LigFixtures
@@ -82,7 +82,7 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
 
     // Hafta filtre butonu
     expect(screen.getByRole("button", { name: /Tüm Haftalar/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /1\. Hafta/i })).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: /1\. Hafta/i }).length).toBeGreaterThan(0);
 
     // Volleybox filtreleri
     expect(screen.getByRole("button", { name: /Skorlu/i })).toBeInTheDocument();
@@ -93,12 +93,10 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.getByText("Eczacıbaşı 2")).toBeInTheDocument();
     expect(screen.getByText("Fenerbahçe 2")).toBeInTheDocument();
 
-    // Görünüm seçici butonları (Liste & Grid)
-    expect(screen.getByLabelText("Liste Görünümü")).toBeInTheDocument();
-    expect(screen.getByLabelText("Yayın Kartı Görünümü")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "TÜMÜ" })).toBeInTheDocument();
   });
 
-  it("Kadinlar2LigResults DateRibbon ve FixtureTable ile tamamlanan maçları listeler", () => {
+  it("Kadinlar2LigResults altyapı tarih şeridi ve kompakt maç akışını listeler", () => {
     const handleSelectMatch = vi.fn();
     render(
       <Kadinlar2LigResults
@@ -114,13 +112,13 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     // Biten maç (VakıfBank 2 vs Eczacıbaşı 2) görünmeli
     expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
     expect(screen.getByText("Eczacıbaşı 2")).toBeInTheDocument();
-    expect(screen.getByText(/3\s*-\s*1/)).toBeInTheDocument();
+    expect(screen.getAllByText("3", { exact: true }).length).toBeGreaterThan(0);
 
     // Henüz oynanmamış maç sonuçlar sayfasında görünmemeli
     expect(screen.queryByText("Fenerbahçe 2")).not.toBeInTheDocument();
   });
 
-  it("Kadinlar2LigTodayMatches paylaşılan FixtureTable görünümünü kullanır", () => {
+  it("Kadinlar2LigTodayMatches altyapı tarih şeridi ve kompakt maç akışını kullanır", () => {
     render(
       <Kadinlar2LigTodayMatches
         allMatches={mockMatches}
@@ -129,10 +127,9 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
       />
     );
 
-    fireEvent.click(screen.getByRole("tab", { name: "Tüm tarihleri göster" }));
+    fireEvent.click(screen.getByRole("button", { name: "TÜMÜ" }));
 
-    expect(screen.getByLabelText("Liste Görünümü")).toBeInTheDocument();
-    expect(screen.getByLabelText("Yayın Kartı Görünümü")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Tümü\(2\)/ })).toBeInTheDocument();
     expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
     expect(screen.getByText("Fenerbahçe 2")).toBeInTheDocument();
   });

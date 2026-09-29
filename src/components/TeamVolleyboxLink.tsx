@@ -38,7 +38,10 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   // Sitede yer alan tüm takım isimleri Volleybox'taki resmi profiliyle (matched_as) aynı gösterilir
   const volleyboxName = mapping?.matched_as?.trim();
   const displayName = volleyboxName || teamName?.trim() || "";
-  const content = children ?? displayName;
+  const content =
+    typeof children === "string" && children.trim() === teamName?.trim()
+      ? displayName
+      : children ?? displayName;
   const [imgFailed, setImgFailed] = useState(false);
 
   // Logo source: prefer local_logo, fallback to logo_url
