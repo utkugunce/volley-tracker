@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { Analytics } from "@vercel/analytics/next";
@@ -69,6 +70,16 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#121212] text-[#F1F5F9] font-sans antialiased selection:bg-blue-600 selection:text-white">
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-S5FYXCW2LC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){window.dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-S5FYXCW2LC');`}
+        </Script>
         <Analytics />
         <ServiceWorkerRegister />
       </body>
