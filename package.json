@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
+    "validate:data": "python scripts/validate_data_files.py",
     "scrape": "python scripts/scrape_all_provinces.py",
     "scrape:provinces": "python scripts/scrape_all_provinces.py",
     "scrape:kadinlar-2-lig": "python scripts/scrape_kadinlar_2_lig.py",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T08:45:03.202401",
+  "updated_at": "2026-09-29T12:24:40.339282",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -146,8 +146,8 @@
         "url": "https://women.volleybox.net/tr/yenisehir-genclerbirligi-spor-kulubu-u18-tarsus-amerikan-koleji-u18-c399640",
         "host_name": "Yenişehir Gençlerbirliği Spor Kulübü U18",
         "guest_name": "Tarsus Amerikan Koleji U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "17:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
@@ -192,8 +192,8 @@
         "url": "https://women.volleybox.net/tr/alsancak-spor-kulubu-u18-mezitli-belediyesi-genclik-ve-spor-kulubu-u18-c399642",
         "host_name": "Alsancak Spor Kulübü U18",
         "guest_name": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "19:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
@@ -293,5 +293,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-09-29T08:46:52.463188"
+  "volleybox_sync_updated_at": "2026-09-29T12:27:26.414398"
 }

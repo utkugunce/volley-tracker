@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T08:45:02.462808",
+  "updated_at": "2026-09-29T12:24:45.233806",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -457,8 +457,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-peyman-sk-u18-anadolu-universitesi-spor-kulubu-u18-c399245",
         "host_name": "Eskişehir Peyman SK U18",
         "guest_name": "Anadolu Üniversitesi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1067,8 +1067,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-ds-bentspor-u16-beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-c401387",
         "host_name": "Eskişehir DSİ Bentspor U16",
         "guest_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "18:30",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -1505,8 +1505,8 @@
         "url": "https://women.volleybox.net/tr/meryem-boz-spor-kulubu-u16-eskisehir-ata-spor-kulubu-u16-c401393",
         "host_name": "Meryem Boz Spor Kulübü U16",
         "guest_name": "Eskişehir Ata Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1787,5 +1787,5 @@
     }
   ],
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-09-29T08:46:52.450402"
+  "volleybox_sync_updated_at": "2026-09-29T12:27:24.705223"
 }

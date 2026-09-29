@@ -22,8 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
+from scripts.data_quality import validate_kadinlar_2_lig_data, print_validation_summary
+
 import httpx
 from bs4 import BeautifulSoup
+from scripts.data_quality import fetch_with_retry
 try:
     from curl_cffi import requests as cffi_requests
     HAS_CURL_CFFI = True
@@ -53,11 +56,13 @@ def fetch_volleybox_teams():
     print("🔍 Volleybox 2. Lig takımları taranıyor...")
     volleybox_url = "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047"
     try:
-        if HAS_CURL_CFFI:
-            s = cffi_requests.Session(impersonate="chrome120")
-            r = s.get(volleybox_url, headers=HEADERS, timeout=20)
-        else:
-            r = httpx.get(volleybox_url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
+        def fetch_teams():
+            if HAS_CURL_CFFI:
+                s = cffi_requests.Session(impersonate="chrome120")
+                return s.get(volleybox_url, headers=HEADERS, timeout=20)
+            return httpx.get(volleybox_url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
+
+        r = fetch_with_retry("Volleybox teams fetch", fetch_teams, max_attempts=3, initial_delay=1.0)
         if r.status_code != 200:
             if r.status_code == 403:
                 print("⚠️ Volleybox otomatik erişimi HTTP 403 ile reddetti; kayıtlı takım eşleşmeleri kullanılacak.")
@@ -290,7 +295,12 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
     
     # 1. Fetch Standings across all 16 groups
     log("\n📊 16 Grubun Puan Durumu Çekiliyor...")
-    r_standings = client.get("https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu")
+    r_standings = fetch_with_retry(
+        "TVF standings page",
+        lambda: client.get("https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu"),
+        max_attempts=3,
+        initial_delay=1.0,
+    )
     soup_s = BeautifulSoup(r_standings.text, "html.parser")
     csrf_tag = soup_s.find("meta", attrs={"name": "csrf-token"})
     if not csrf_tag:
@@ -324,7 +334,12 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
                 "calls": [{"path": "", "method": "setFilter", "params": ["GR", str(g)]}]
             }]
         }
-        res = client.post("https://tvf.org.tr/livewire/update", json=payload)
+        res = fetch_with_retry(
+            f"TVF standings group {g}",
+            lambda: client.post("https://tvf.org.tr/livewire/update", json=payload),
+            max_attempts=3,
+            initial_delay=1.0,
+        )
         if res.status_code == 200:
             comp = res.json()["components"][0]
             curr_s_str = comp["snapshot"]
@@ -338,7 +353,12 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
             
     # 2. Fetch Fixtures across all 16 groups
     log("\n📅 16 Grubun Fikstürü Çekiliyor...")
-    r_fix = client.get("https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur")
+    r_fix = fetch_with_retry(
+        "TVF fixtures page",
+        lambda: client.get("https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur"),
+        max_attempts=3,
+        initial_delay=1.0,
+    )
     soup_f = BeautifulSoup(r_fix.text, "html.parser")
     csrf_f_tag = soup_f.find("meta", attrs={"name": "csrf-token"})
     if not csrf_f_tag:
@@ -372,7 +392,12 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
                 "calls": [{"path": "", "method": "setFilter", "params": ["GR", str(g)]}]
             }]
         }
-        res = client.post("https://tvf.org.tr/livewire/update", json=payload)
+        res = fetch_with_retry(
+            f"TVF fixtures group {g}",
+            lambda: client.post("https://tvf.org.tr/livewire/update", json=payload),
+            max_attempts=3,
+            initial_delay=1.0,
+        )
         if res.status_code == 200:
             comp = res.json()["components"][0]
             curr_f_str = comp["snapshot"]
@@ -544,6 +569,9 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(payload_data, f, ensure_ascii=False, indent=2)
+
+    validation_result = validate_kadinlar_2_lig_data(payload_data)
+    print_validation_summary("Kadınlar 2. Lig", validation_result)
 
     log(f"\n🎉 Veriler başarıyla kaydedildi: {OUTPUT_FILE}")
     log(f"   - 16 Grup")

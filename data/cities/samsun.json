@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T08:45:17.148929",
+  "updated_at": "2026-09-29T12:24:58.211262",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -375,17 +375,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-08",
-        "vb_time": "19:30",
+        "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-08",
-          "vb_time": "19:30",
+          "vb_time": "19:15",
           "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:15 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -1057,18 +1057,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402796",
+        "url": "https://women.volleybox.net/tr/19-mays-genclik-ve-spor-u18-anadolu-voleybol-akademi-sk-b-u18-c402796",
+        "host_name": "19 Mayıs Gençlik Ve Spor U18",
+        "guest_name": "Anadolu Voleybol Akademi SK - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "11:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "11:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1091,18 +1098,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402797",
+        "url": "https://women.volleybox.net/tr/bafra-akademi-genclik-sk-u18-samsun-volley-team-u18-c402797",
+        "host_name": "Bafra Akademi Gençlik SK U18",
+        "guest_name": "Samsun Volley Team U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-15",
+        "vb_time": "13:00",
+        "vb_hall": "Bafra Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "13:00",
+          "vb_hall": "Bafra Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1125,18 +1139,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402798",
+        "url": "https://women.volleybox.net/tr/samsun-gulizar-hasan-ylmaz-spor-lisesi-u18-bafra-vera-spor-kulubu-u18-c402798",
+        "host_name": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
+        "guest_name": "Bafra Vera Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-15",
+        "vb_time": "14:00",
+        "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "14:00",
+          "vb_hall": "Samsun Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1159,18 +1180,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402799",
+        "url": "https://women.volleybox.net/tr/atakum-atlm-spor-kulubu-u18-55-matasyon-spor-kulubu-u18-c402799",
+        "host_name": "Atakum Atılım Spor Kulübü U18",
+        "guest_name": "55 Matasyon Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-15",
+        "vb_time": "16:00",
+        "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "16:00",
+          "vb_hall": "Samsun Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1193,18 +1221,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402800",
+        "url": "https://women.volleybox.net/tr/anadolu-voleybol-akademi-sk-b-u18-atakum-atlm-spor-kulubu-u18-c402800",
+        "host_name": "Anadolu Voleybol Akademi SK - B U18",
+        "guest_name": "Atakum Atılım Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "11:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "11:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1227,18 +1262,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402801",
+        "url": "https://women.volleybox.net/tr/samsun-buyuksehir-belediyesi-spor-kulubu-u18-bafra-akademi-genclik-sk-u18-c402801",
+        "host_name": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
+        "guest_name": "Bafra Akademi Gençlik SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-18",
+        "vb_time": "13:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-18",
+          "vb_time": "13:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1268,18 +1310,18 @@
         "guest_name": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-12",
+        "vb_date": "2026-11-19",
         "vb_time": "11:00",
         "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-12",
+          "vb_date": "2026-11-19",
           "vb_time": "11:00",
           "vb_hall": "Bahattin Ekinci Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-19 / VB: 2026-11-12)"
+          "details": null
         }
       }
     },
@@ -1302,18 +1344,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402802",
+        "url": "https://women.volleybox.net/tr/bafra-vera-spor-kulubu-u18-19-mays-genclik-ve-spor-u18-c402802",
+        "host_name": "Bafra Vera Spor Kulübü U18",
+        "guest_name": "19 Mayıs Gençlik Ve Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "13:00",
+        "vb_hall": "Bafra Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-19",
+          "vb_time": "13:00",
+          "vb_hall": "Bafra Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1336,18 +1385,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402803",
+        "url": "https://women.volleybox.net/tr/atakum-atlm-spor-kulubu-u18-bafra-vera-spor-kulubu-u18-c402803",
+        "host_name": "Atakum Atılım Spor Kulübü U18",
+        "guest_name": "Bafra Vera Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "14:00",
+        "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "14:00",
+          "vb_hall": "Samsun Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1370,18 +1426,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402804",
+        "url": "https://women.volleybox.net/tr/19-mays-genclik-ve-spor-u18-samsun-volley-team-u18-c402804",
+        "host_name": "19 Mayıs Gençlik Ve Spor U18",
+        "guest_name": "Samsun Volley Team U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "11:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "11:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1404,18 +1467,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402805",
+        "url": "https://women.volleybox.net/tr/samsun-gulizar-hasan-ylmaz-spor-lisesi-u18-samsun-buyuksehir-belediyesi-spor-kulubu-u18-c402805",
+        "host_name": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
+        "guest_name": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-22",
+        "vb_time": "14:00",
+        "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "14:00",
+          "vb_hall": "Samsun Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1438,18 +1508,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402806",
+        "url": "https://women.volleybox.net/tr/55-matasyon-spor-kulubu-u18-anadolu-voleybol-akademi-sk-b-u18-c402806",
+        "host_name": "55 Matasyon Spor Kulübü U18",
+        "guest_name": "Anadolu Voleybol Akademi SK - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-23",
+        "vb_time": "19:30",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-23",
+          "vb_time": "19:30",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1472,18 +1549,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402807",
+        "url": "https://women.volleybox.net/tr/bafra-vera-spor-kulubu-u18-55-matasyon-spor-kulubu-u18-c402807",
+        "host_name": "Bafra Vera Spor Kulübü U18",
+        "guest_name": "55 Matasyon Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-27",
+        "vb_time": "19:30",
+        "vb_hall": "Bafra Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-27",
+          "vb_time": "19:30",
+          "vb_hall": "Bafra Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1506,18 +1590,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402808",
+        "url": "https://women.volleybox.net/tr/bafra-akademi-genclik-sk-u18-samsun-gulizar-hasan-ylmaz-spor-lisesi-u18-c402808",
+        "host_name": "Bafra Akademi Gençlik SK U18",
+        "guest_name": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "12:00",
+        "vb_hall": "Bafra Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "12:00",
+          "vb_hall": "Bafra Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1540,18 +1631,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402809",
+        "url": "https://women.volleybox.net/tr/samsun-buyuksehir-belediyesi-spor-kulubu-u18-19-mays-genclik-ve-spor-u18-c402809",
+        "host_name": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
+        "guest_name": "19 Mayıs Gençlik Ve Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "15:00",
+        "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "15:00",
+          "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1574,18 +1672,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402810",
+        "url": "https://women.volleybox.net/tr/samsun-volley-team-u18-atakum-atlm-spor-kulubu-u18-c402810",
+        "host_name": "Samsun Volley Team U18",
+        "guest_name": "Atakum Atılım Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "17:00",
+        "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "17:00",
+          "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1616,17 +1721,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-03",
-        "vb_time": "18:00",
-        "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
+        "vb_time": "13:00",
+        "vb_hall": "Terme Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
-          "hall_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
           "vb_date": "2026-10-03",
-          "vb_time": "18:00",
-          "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": "Saat Değişti (TVF: 13:00 / VB: 18:00) | Salon Değişti (TVF: Terme Ss / VB: Mustafa Dağıstanlı Spor Salonu)"
+          "vb_time": "13:00",
+          "vb_hall": "Terme Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2605,6 +2710,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-09-29T08:46:52.457050"
+  "volleybox_synced_matches": 44,
+  "volleybox_sync_updated_at": "2026-09-29T12:27:26.729061"
 }

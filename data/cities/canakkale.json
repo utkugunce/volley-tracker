@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T08:45:00.934177",
+  "updated_at": "2026-09-29T12:24:39.908116",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -546,25 +546,18 @@
       "set_scores": [],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "401053",
-        "url": "https://women.volleybox.net/tr/uvm-akademi-spor-kulubu-u16-canakkalespor-u16-c401053",
-        "host_name": "UVM Akademi Spor Kulübü U16",
-        "guest_name": "Çanakkalespor U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-09-28",
-        "vb_time": "20:00",
-        "vb_hall": "18 Mart Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-28",
-          "vb_time": "20:00",
-          "vb_hall": "18 Mart Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -591,25 +584,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "401054",
-        "url": "https://women.volleybox.net/tr/eceabat-spor-kulubu-u16-uvm-akademi-spor-kulubu-u16-c401054",
-        "host_name": "Eceabat Spor Kulübü U16",
-        "guest_name": "UVM Akademi Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-02",
-        "vb_time": "18:30",
-        "vb_hall": "Eceabat Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-02",
-          "vb_time": "18:30",
-          "vb_hall": "Eceabat Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -775,8 +761,8 @@
         "url": "https://women.volleybox.net/tr/biga-gelisim-voleybol-kulubu-u16-can-genclik-kale-spor-kulubu-u16-c401059",
         "host_name": "Biga Gelişim Voleybol Kulübü U16",
         "guest_name": "Çan Kale Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "20:00",
         "vb_hall": "Biga Kapalı Spor Salonu",
@@ -834,6 +820,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-09-29T08:46:52.410887"
+  "volleybox_synced_matches": 8,
+  "volleybox_sync_updated_at": "2026-09-29T12:27:24.565477"
 }

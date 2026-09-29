@@ -49,6 +49,8 @@ try:
 except ImportError:
     fetch_istanbul_live_data = None
 
+from scripts.data_quality import validate_city_index, print_validation_summary
+
 # Resmi 81 İl Plaka ve İsim Tablosu
 OFFICIAL_CITIES = {
     1: "Adana", 2: "Adıyaman", 3: "Afyonkarahisar", 4: "Ağrı", 5: "Amasya",
@@ -776,7 +778,8 @@ def main():
 
     results = []
     completed_count = 0
-    active_count = 0
+    active_match_count = 0
+    active_city_count = 0
     total_matches_all = 0
 
     with ThreadPoolExecutor(max_workers=18) as executor:
@@ -792,11 +795,13 @@ def main():
                 m_count = res.get("matches_count", 0)
                 st_count = res.get("standings_count", 0)
                 if m_count > 0:
-                    active_count += 1
+                    active_match_count += 1
                     total_matches_all += m_count
                     extra = f"🔥 {m_count} Maç | {st_count} Puan Tablosu Bulundu!"
                 elif st_count > 0:
                     extra = f"Puan Durumu Mevcut ({st_count} Tablo)"
+                if m_count > 0 or st_count > 0:
+                    active_city_count += 1
                 else:
                     extra = res.get("status", "Taranıyor...")
                 render_progress(completed_count, total_cities, plate, city_name, extra)
@@ -831,7 +836,7 @@ def main():
             master_payload = {
                 "updated_at": datetime.now().astimezone().isoformat(),
                 "total_cities": len(results),
-                "active_cities": active_count,
+                "active_cities": active_city_count,
                 "total_matches": total_matches_all,
                 "cities": results
             }
@@ -839,7 +844,7 @@ def main():
         master_payload = {
             "updated_at": datetime.now().astimezone().isoformat(),
             "total_cities": len(results),
-            "active_cities": active_count,
+            "active_cities": active_city_count,
             "total_matches": total_matches_all,
             "cities": results
         }
@@ -847,8 +852,12 @@ def main():
     with open(CITIES_INDEX_JSON, "w", encoding="utf-8") as f:
         json.dump(master_payload, f, ensure_ascii=False, indent=2)
 
+    validation_result = validate_city_index(master_payload)
+    print_validation_summary("81 il", validation_result)
+
     print(f"  📊 Toplam Taranan İl   : {len(results)}")
-    print(f"  ⭐ Aktif Fikstürü Olan : {active_count} İl")
+    print(f"  ⭐ Aktif Fikstürü Olan : {active_match_count} İl")
+    print(f"  🗂️ Etkin Veri Olan     : {active_city_count} İl")
     print(f"  🏐 Toplam Maç Sayısı   : {total_matches_all}")
     print(f"  📁 İndeks Dosyası      : {CITIES_INDEX_JSON.relative_to(BASE_DIR)}")
     print("-" * 80)

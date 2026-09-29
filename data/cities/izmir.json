@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T08:45:05.694055",
+  "updated_at": "2026-09-29T12:24:47.892732",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -2106,8 +2106,8 @@
         "url": "https://women.volleybox.net/tr/mavisehir-spor-kulubu-u18-zmirspor-u18-c401126",
         "host_name": "Mavişehir Spor Kulübü U18",
         "guest_name": "İzmirspor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "20:00",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
@@ -2780,8 +2780,8 @@
         "url": "https://women.volleybox.net/tr/dost-spor-b-u18-smyrna-voleybol-kulubu-u18-c399265",
         "host_name": "Dost Spor - B U18",
         "guest_name": "Smyrna Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "20:00",
         "vb_hall": "Balçova Spor Salonu",
@@ -3171,8 +3171,8 @@
         "url": "https://women.volleybox.net/tr/karsyaka-sk-u16-kzy-spor-kulubu-u16-c401128",
         "host_name": "Karşıyaka SK U16",
         "guest_name": "KZY Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "18:30",
         "vb_hall": "Menemen Spor Salonu",
@@ -3289,25 +3289,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "401131",
-        "url": "https://women.volleybox.net/tr/alfa-gaziemir-voleybol-spor-kulubu-u16-kzy-bornova-spor-kulubu-u16-c401131",
-        "host_name": "Alfa Gaziemir Voleybol Spor Kulübü U16",
-        "guest_name": "KZY Bornova Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-03",
+        "vb_date": null,
         "vb_time": null,
-        "vb_hall": "Gaziemir Spor Salonu",
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-10-03",
-          "vb_time": null,
-          "vb_hall": "Gaziemir Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-09 / VB: 2026-10-03) | Salon Değişti (TVF: Menemen / VB: Gaziemir Spor Salonu)"
+          "has_diff": false
         }
       }
     },
@@ -3645,14 +3638,14 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "402745",
-        "url": "https://women.volleybox.net/tr/alfa-gaziemir-voleybol-spor-kulubu-u16-kzy-bornova-spor-kulubu-u16-c402745",
+        "match_id": "401131",
+        "url": "https://women.volleybox.net/tr/alfa-gaziemir-voleybol-spor-kulubu-u16-kzy-bornova-spor-kulubu-u16-c401131",
         "host_name": "Alfa Gaziemir Voleybol Spor Kulübü U16",
         "guest_name": "KZY Bornova Spor Kulübü U16",
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-03",
-        "vb_time": "10:00",
+        "vb_time": null,
         "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -3660,7 +3653,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-03",
-          "vb_time": "10:00",
+          "vb_time": null,
           "vb_hall": "Gaziemir Spor Salonu",
           "details": null
         }
@@ -4132,8 +4125,8 @@
         "url": "https://women.volleybox.net/tr/forza-spor-kulubu-u16-arkas-spor-kulubu-u16-c401133",
         "host_name": "Forza Spor Kulübü U16",
         "guest_name": "Arkas Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "20:00",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -4178,8 +4171,8 @@
         "url": "https://women.volleybox.net/tr/volkan-guc-spor-kulubu-u16-parla-voleybol-kulubu-b-u16-c401134",
         "host_name": "Volkan Güç Spor Kulübü U16",
         "guest_name": "Parla Voleybol Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-09-28",
         "vb_time": "20:00",
         "vb_hall": "Menemen Spor Salonu",
@@ -5396,6 +5389,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-09-29T08:46:52.442996"
+  "volleybox_synced_matches": 103,
+  "volleybox_sync_updated_at": "2026-09-29T12:27:26.193185"
 }
