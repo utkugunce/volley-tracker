@@ -3,11 +3,11 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-09-29T02:06:53.495659",
+    "guncellenme_zamani": "2026-09-29T09:46:09.681759",
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 166,
     "toplam_mac_sayisi": 285,
-    "volleybox_eslesme_sayisi": 165,
+    "volleybox_eslesme_sayisi": 166,
     "resmi_kaynaklar": {
       "tvf_puan_durumu": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu",
       "tvf_fikstur": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur",
@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 125,
-    "volleybox_sync_updated_at": "2026-09-29T02:06:53.495729"
+    "volleybox_sync_updated_at": "2026-09-29T09:46:38.280505"
   },
   "gruplar": [
     {
@@ -11266,10 +11266,10 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "logo": "/logos/mke-ankaragucu-t2497.png",
           "sezon": "2026-2027",
-          "volleybox_url": null,
-          "volleybox_name": null,
+          "volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+          "volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
           "grup_no": 11
         },
         {
@@ -11521,7 +11521,7 @@
           "takim_a_id": "2783",
           "takim_b_id": "2914",
           "takim_a_logo": "/logos/ankara-ds-gsk-t5617.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/mke-ankaragucu-t2497.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -11530,6 +11530,8 @@
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/ankara-ds-gsk-t5617",
           "takim_a_volleybox_name": "Ankara DSİ GSK",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+          "takim_b_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
           "volleybox": {
             "synced": true,
             "match_id": "397719",
@@ -11773,7 +11775,7 @@
           "takim_b": "PTT",
           "takim_a_id": "2914",
           "takim_b_id": "2898",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/mke-ankaragucu-t2497.png",
           "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
           "set_a": "",
           "set_b": "",
@@ -11781,6 +11783,8 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+          "takim_a_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/ptt-spor-ii-t9985",
           "takim_b_volleybox_name": "PTT Spor II",
           "volleybox": {
@@ -11925,7 +11929,7 @@
           "takim_a_id": "2919",
           "takim_b_id": "2914",
           "takim_a_logo": "/logos/tvf-spor-lisesi-t2992.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/mke-ankaragucu-t2497.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -11934,6 +11938,8 @@
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/tvf-spor-lisesi-t2992",
           "takim_a_volleybox_name": "TVF Spor Lisesi",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+          "takim_b_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
           "volleybox": {
             "synced": false,
             "match_id": null,
@@ -12186,7 +12192,7 @@
           "takim_b": "VEGA ATLETİK",
           "takim_a_id": "2914",
           "takim_b_id": "2921",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/mke-ankaragucu-t2497.png",
           "takim_b_logo": "/logos/vega-atletik-spor-t36065.png",
           "set_a": "",
           "set_b": "",
@@ -12194,6 +12200,8 @@
           "set_sonuclari": "",
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+          "takim_a_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/vega-atletik-spor-t36065",
           "takim_b_volleybox_name": "Vega Atletik Spor Kulübü",
           "volleybox": {
@@ -17398,14 +17406,14 @@
             "vb_time": "13:00",
             "vb_hall": "Siverek 75. Yıl Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
-              "date_diff": false,
+              "has_diff": true,
+              "date_diff": true,
               "time_diff": false,
               "hall_diff": false,
               "vb_date": "2026-10-03",
               "vb_time": "13:00",
               "vb_hall": "Siverek 75. Yıl Spor Salonu",
-              "details": null
+              "details": "Tarih Değişti (TVF: 2026-10-04 / VB: 2026-10-03)"
             }
           }
         },
@@ -19488,7 +19496,7 @@
       "takim_a_id": "2783",
       "takim_b_id": "2914",
       "takim_a_logo": "/logos/ankara-ds-gsk-t5617.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/mke-ankaragucu-t2497.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -19497,6 +19505,8 @@
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/ankara-ds-gsk-t5617",
       "takim_a_volleybox_name": "Ankara DSİ GSK",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+      "takim_b_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
       "volleybox": {
         "synced": true,
         "match_id": "397719",
@@ -21474,7 +21484,7 @@
       "takim_b": "PTT",
       "takim_a_id": "2914",
       "takim_b_id": "2898",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/mke-ankaragucu-t2497.png",
       "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
       "set_a": "",
       "set_b": "",
@@ -21482,6 +21492,8 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+      "takim_a_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/ptt-spor-ii-t9985",
       "takim_b_volleybox_name": "PTT Spor II",
       "volleybox": {
@@ -22356,14 +22368,14 @@
         "vb_time": "13:00",
         "vb_hall": "Siverek 75. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-03",
           "vb_time": "13:00",
           "vb_hall": "Siverek 75. Yıl Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-04 / VB: 2026-10-03)"
         }
       }
     },
@@ -25473,7 +25485,7 @@
       "takim_a_id": "2919",
       "takim_b_id": "2914",
       "takim_a_logo": "/logos/tvf-spor-lisesi-t2992.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/mke-ankaragucu-t2497.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -25482,6 +25494,8 @@
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/tvf-spor-lisesi-t2992",
       "takim_a_volleybox_name": "TVF Spor Lisesi",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+      "takim_b_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -29041,7 +29055,7 @@
       "takim_b": "VEGA ATLETİK",
       "takim_a_id": "2914",
       "takim_b_id": "2921",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/mke-ankaragucu-t2497.png",
       "takim_b_logo": "/logos/vega-atletik-spor-t36065.png",
       "set_a": "",
       "set_b": "",
@@ -29049,6 +29063,8 @@
       "set_sonuclari": "",
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+      "takim_a_volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/vega-atletik-spor-t36065",
       "takim_b_volleybox_name": "Vega Atletik Spor Kulübü",
       "volleybox": {
@@ -34245,10 +34261,10 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "logo": "/logos/mke-ankaragucu-t2497.png",
       "sezon": "2026-2027",
-      "volleybox_url": null,
-      "volleybox_name": null,
+      "volleybox_url": "https://women.volleybox.net/tr/mke-ankaragucu-t2497",
+      "volleybox_name": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
       "grup_no": 11
     },
     {

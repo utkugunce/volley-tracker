@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-28T16:38:21.242350",
+  "updated_at": "2026-09-29T09:45:18.852323",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 6,
   "source": "https://konya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,7 +21,10 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "Karapınar Atatürk",
+      "Kongre Küçük Salon",
+      "Seydişehir Atatürk"
     ]
   },
   "standings": {
@@ -427,7 +430,120 @@
       }
     ]
   },
-  "matches": [],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-29T02:07:25.785827"
+  "matches": [
+    {
+      "id": "konya-20261004-001",
+      "city": "Konya",
+      "date": "2026-10-04",
+      "time": "14:30",
+      "hall": "Karapınar Atatürk",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- A Grubu",
+      "match_no": "1",
+      "home_team": "KARAPINAR ALBA",
+      "away_team": "EREĞLİ AREL",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
+    },
+    {
+      "id": "konya-20261003-002",
+      "city": "Konya",
+      "date": "2026-10-03",
+      "time": "20:00",
+      "hall": "Kongre Küçük Salon",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- B Grubu",
+      "match_no": "1",
+      "home_team": "SELÇUKLU BELEDİYE",
+      "away_team": "TÜRMAK SPOR",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
+    },
+    {
+      "id": "konya-20261007-003",
+      "city": "Konya",
+      "date": "2026-10-07",
+      "time": "20:30",
+      "hall": "Kongre Küçük Salon",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- B Grubu",
+      "match_no": "2",
+      "home_team": "ANADOLU ZİRVE",
+      "away_team": "KONYA ANKA",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
+    },
+    {
+      "id": "konya-20261004-004",
+      "city": "Konya",
+      "date": "2026-10-04",
+      "time": "10:00",
+      "hall": "Kongre Küçük Salon",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- C Grubu",
+      "match_no": "1",
+      "home_team": "BALLAS SPOR",
+      "away_team": "VAKIF AKADEMİ",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
+    },
+    {
+      "id": "konya-20261004-005",
+      "city": "Konya",
+      "date": "2026-10-04",
+      "time": "12:00",
+      "hall": "Kongre Küçük Salon",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- D Grubu",
+      "match_no": "1",
+      "home_team": "FALCON ATLETİK",
+      "away_team": "KONYA ARMADA",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
+    },
+    {
+      "id": "konya-20261004-006",
+      "city": "Konya",
+      "date": "2026-10-04",
+      "time": "13:00",
+      "hall": "Seydişehir Atatürk",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- D Grubu",
+      "match_no": "2",
+      "home_team": "SEYDİŞEHİR CİMNASTİK",
+      "away_team": "DİLTAŞ SPOR",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
+    }
+  ]
 }

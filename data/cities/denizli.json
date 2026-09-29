@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-09-29T02:05:48.601373",
+  "updated_at": "2026-09-29T09:45:04.798421",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 3,
+  "total_matches": 2,
   "source": "https://denizli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -26,30 +26,6 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Eralp Deneme Genç Kız": [
-      {
-        "rank": 1,
-        "team": "Anadolu Pars S.K",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Denizli Voleybol Spor Klübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
     "Genç Kızlar 1. Ligi - Eralp Deneme Genç Kız": [
       {
         "rank": 1,
@@ -106,40 +82,6 @@
       "date": "2026-10-05",
       "time": "19:00",
       "hall": "Kyk Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Eralp Deneme Genç Kız",
-      "match_no": "1",
-      "home_team": "Anadolu Pars S.K",
-      "away_team": "Denizli Voleybol Spor Klübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "denizli-20261005-002",
-      "city": "Denizli",
-      "date": "2026-10-05",
-      "time": "19:00",
-      "hall": "Kyk Ss",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
@@ -151,25 +93,10 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
-      "id": "denizli-20261005-003",
+      "id": "denizli-20261005-002",
       "city": "Denizli",
       "date": "2026-10-05",
       "time": "19:00",
@@ -185,24 +112,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     }
-  ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-09-29T02:07:25.821592"
+  ]
 }

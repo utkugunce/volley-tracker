@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T22:11:02.780931",
+  "updated_at": "2026-09-29T09:45:23.469213",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -496,22 +496,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261004-005",
@@ -530,22 +515,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261004-006",
@@ -564,22 +534,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20260926-007",
@@ -782,22 +737,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261003-012",
@@ -816,22 +756,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261003-013",
@@ -850,22 +775,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261006-014",
@@ -884,22 +794,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20260926-015",
@@ -1040,41 +935,7 @@
       }
     },
     {
-      "id": "tekirdag-20261003-018",
-      "city": "Tekirdağ",
-      "date": "2026-10-03",
-      "time": "--:--",
-      "hall": "Açıklanacak",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "4",
-      "home_team": "Çorlu Yıldırım Spor Kulübü - B U16",
-      "away_team": "Çağdaş Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "tekirdag-20261005-019",
+      "id": "tekirdag-20261005-018",
       "city": "Tekirdağ",
       "date": "2026-10-05",
       "time": "19:00",
@@ -1083,32 +944,17 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "5",
+      "match_no": "4",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
       "away_team": "Tekirdağ Marmara Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
-      "id": "tekirdag-20261006-020",
+      "id": "tekirdag-20261006-019",
       "city": "Tekirdağ",
       "date": "2026-10-06",
       "time": "18:00",
@@ -1117,29 +963,33 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "6",
+      "match_no": "5",
       "home_team": "Süleymanpaşa Spor Kulübü - B U16",
       "away_team": "Tekirdağ Basket Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
+    },
+    {
+      "id": "tekirdag-20261006-020",
+      "city": "Tekirdağ",
+      "date": "2026-10-06",
+      "time": "19:00",
+      "hall": "Çorlu Ss",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "6",
+      "home_team": "Çorlu Yıldırım Spor Kulübü - B U16",
+      "away_team": "Çağdaş Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20260926-021",
@@ -1289,22 +1139,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261003-025",
@@ -1323,22 +1158,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261003-026",
@@ -1357,24 +1177,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     }
-  ],
-  "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-09-29T02:07:25.795302"
+  ]
 }

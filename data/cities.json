@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-29T02:06:13.849345+00:00",
+  "updated_at": "2026-09-29T09:45:23.591001+03:00",
   "total_cities": 81,
-  "active_cities": 17,
-  "total_matches": 583,
+  "active_cities": 18,
+  "total_matches": 588,
   "cities": [
     {
       "ilid": "1",
@@ -199,9 +199,9 @@
       "name": "Denizli",
       "slug": "denizli",
       "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (3 Maç Mevcut)",
-      "matches_count": 3,
-      "standings_count": 3,
+      "status": "Aktif (2 Maç Mevcut)",
+      "matches_count": 2,
+      "standings_count": 2,
       "data_file": "data/cities/denizli.json"
     },
     {
@@ -419,8 +419,8 @@
       "name": "Konya",
       "slug": "konya",
       "url": "https://konya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (8 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (6 Maç Mevcut)",
+      "matches_count": 6,
       "standings_count": 8,
       "data_file": "data/cities/konya.json"
     },
