@@ -13,9 +13,10 @@ export function normalizeK2Date(date: string | undefined): string {
  * tam uyumlu standart Match tipine dönüştürür.
  */
 export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
-  const setScores = m.set_sonuclari
-    ? m.set_sonuclari.split(",").map((s) => s.trim()).filter(Boolean)
-    : [];
+  const setScores = Array.from(
+    m.set_sonuclari?.matchAll(/\d{1,2}\s*[-:]\s*\d{1,2}/g) || [],
+    ([setScore]) => setScore.trim().replace(":", "-")
+  );
 
   let homeScore: number | null = null;
   let awayScore: number | null = null;

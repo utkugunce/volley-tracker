@@ -29,7 +29,7 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
       set_a: "3",
       set_b: "1",
       skor: "3-1",
-      set_sonuclari: "25-20, 22-25, 25-18, 25-15",
+      set_sonuclari: "(25-20) (22-25) (25-18) (25-15)",
       durum: "BİTTİ",
       mac_durumu_kod: "3",
       takim_a_volleybox_url: "https://women.volleybox.net/tr/vakifbank",
@@ -113,6 +113,8 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
     expect(screen.getByText("Eczacıbaşı 2")).toBeInTheDocument();
     expect(screen.getAllByText("3", { exact: true }).length).toBeGreaterThan(0);
+    expect(screen.getAllByText("25", { exact: true }).length).toBeGreaterThan(0);
+    expect(screen.getAllByText("20", { exact: true }).length).toBeGreaterThan(0);
 
     // Henüz oynanmamış maç sonuçlar sayfasında görünmemeli
     expect(screen.queryByText("Fenerbahçe 2")).not.toBeInTheDocument();
