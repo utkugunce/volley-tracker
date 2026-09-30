@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T09:03:55.862048",
+  "updated_at": "2026-09-30T15:59:57.597730",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -283,7 +283,7 @@
       },
       {
         "rank": 2,
-        "team": "Çorlu GSB Spor Kulübü U16",
+        "team": "Çorlu Yıldırım Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -294,18 +294,18 @@
       },
       {
         "rank": 3,
-        "team": "Yıldızkent Fatih Korgancı Spor Kulübü U16",
+        "team": "Çorlu GSB Spor Kulübü U16",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Tekirdağ Voleybol İhtisas Kulübü U16",
+        "team": "Yıldızkent Fatih Korgancı Spor Kulübü U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -317,23 +317,23 @@
       {
         "rank": 5,
         "team": "Arges Voleybol Spor Kulübü U16",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Çorlu Yıldırım Spor Kulübü U16",
-        "played": 0,
+        "team": "Tekirdağ Voleybol İhtisas Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -912,9 +912,9 @@
       }
     },
     {
-      "id": "tekirdag-20261006-014",
+      "id": "tekirdag-20261007-014",
       "city": "Tekirdağ",
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "time": "19:30",
       "hall": "Atatürk Ss",
       "category": "Yıldız Kızlar Süper Lig",
@@ -930,25 +930,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "403049",
-        "url": "https://women.volleybox.net/tr/suleymanpasa-spor-kulubu-u16-corlu-belediyesi-spor-kulubu-u16-c403049",
-        "host_name": "Süleymanpaşa Spor Kulübü U16",
-        "guest_name": "Çorlu Belediyesi Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-06",
-        "vb_time": "19:30",
-        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-06",
-          "vb_time": "19:30",
-          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1173,9 +1166,9 @@
       }
     },
     {
-      "id": "tekirdag-20261006-020",
+      "id": "tekirdag-20261007-020",
       "city": "Tekirdağ",
-      "date": "2026-10-06",
+      "date": "2026-10-07",
       "time": "18:00",
       "hall": "Atatürk Ss",
       "category": "Yıldız Kızlar Süper Lig",
@@ -1191,25 +1184,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "403056",
-        "url": "https://women.volleybox.net/tr/suleymanpasa-spor-kulubu-b-u16-tekirdag-basket-spor-kulubu-u16-c403056",
-        "host_name": "Süleymanpaşa Spor Kulübü - B U16",
-        "guest_name": "Tekirdağ Basket Spor Kulübü U16",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-06",
-        "vb_time": "18:00",
-        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-06",
-          "vb_time": "18:00",
-          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1316,11 +1302,15 @@
       "match_no": "3",
       "home_team": "Arges Voleybol Spor Kulübü U16",
       "away_team": "Çorlu Yıldırım Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "13-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401167",
@@ -1468,6 +1458,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-09-30T09:05:22.637358"
+  "volleybox_synced_matches": 24,
+  "volleybox_sync_updated_at": "2026-09-30T16:01:28.053503"
 }

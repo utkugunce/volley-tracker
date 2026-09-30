@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T09:03:43.605909",
+  "updated_at": "2026-09-30T15:59:46.470799",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -736,13 +736,13 @@
       },
       {
         "rank": 2,
-        "team": "Monza Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "İzmir Altınay Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
         "form": []
       },
       {
@@ -758,13 +758,13 @@
       },
       {
         "rank": 4,
-        "team": "İzmir Altınay Spor Kulübü U16",
-        "played": 1,
+        "team": "Monza Spor Kulübü U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
+        "lost": 1,
+        "points": 3,
         "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -4605,11 +4605,15 @@
       "match_no": "6",
       "home_team": "Monza Spor Kulübü U16",
       "away_team": "İzmir Altınay Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "17-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "397163",
@@ -5401,5 +5405,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-09-30T09:05:22.648948"
+  "volleybox_sync_updated_at": "2026-09-30T16:01:28.065294"
 }

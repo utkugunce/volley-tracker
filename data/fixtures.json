@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T09:03:44.260821+00:00",
+  "updated_at": "2026-09-30T15:59:47.837886+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1808,6 +1808,24 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "VakıfBank - B U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 150,
+        "points_lost": 78,
+        "point_ratio": "1.923",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Fenerbahçe - A U16",
         "played": 2,
         "won": 2,
@@ -1825,7 +1843,7 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Yeşilyurt Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -1843,7 +1861,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Bizimkent Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -1857,23 +1875,6 @@
         "point_ratio": "1.267",
         "form": [
           "L",
-          "W"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "VakıfBank - B U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 51,
-        "point_ratio": "1.471",
-        "form": [
           "W"
         ]
       },
@@ -1968,17 +1969,18 @@
       {
         "rank": 10,
         "team": "Başakşehir Belediyesi SK U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 28,
-        "points_lost": 75,
-        "point_ratio": "0.373",
+        "points_won": 55,
+        "points_lost": 150,
+        "point_ratio": "0.367",
         "form": [
+          "L",
           "L"
         ]
       }
@@ -4783,11 +4785,15 @@
       "match_no": "9",
       "home_team": "Başakşehir Belediyesi SK U18",
       "away_team": "VakıfBank - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "6-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402187",
@@ -5182,5 +5188,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-09-30T09:05:22.613670"
+  "volleybox_sync_updated_at": "2026-09-30T16:01:28.030215"
 }

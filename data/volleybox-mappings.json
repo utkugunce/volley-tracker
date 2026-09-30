@@ -13039,8 +13039,8 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "ARNAVUTKÖY BELEDİYE SPOR",
-        "ARNAVUTKÖY BLD. SPOR KULÜBÜ",
         "ARNAVUTKÖY BELEDİYESİ SPOR",
+        "ARNAVUTKÖY BLD. SPOR KULÜBÜ",
         "Arnavutköy Belediyesi SK"
       ],
       "logo_url": "/logos/arnavutkoy-bld-t13576.png",
@@ -13058,10 +13058,10 @@
       "note": "Grup 1",
       "verified_at": "2026-09-25",
       "aliases": [
+        "BAHÇELİEVLER BELEDİYESİ SPOR",
         "BAHÇELİEVLER BLD. SPOR KULÜBÜ",
         "Bahçelievler Belediyespor ll",
-        "BAHÇELİEVLER BELEDİYE SPOR",
-        "BAHÇELİEVLER BELEDİYESİ SPOR"
+        "BAHÇELİEVLER BELEDİYE SPOR"
       ],
       "logo_url": "/logos/bahcelievler-belediyespor-ll-t20984.png",
       "local_logo": "/logos/bahcelievler-belediyespor-ll-t20984.png"
@@ -13146,10 +13146,10 @@
       "note": "Grup 1",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ÇATALCA BELEDİYESİ SPOR",
         "ÇATALCA BLD. SPOR KULÜBÜ",
         "Çatalca Belediyespor",
-        "ÇATALCA BELEDİYE SPOR"
+        "ÇATALCA BELEDİYE SPOR",
+        "ÇATALCA BELEDİYESİ SPOR"
       ],
       "logo_url": "/logos/catalca-belediye-spor-t36157.png",
       "local_logo": "/logos/catalca-belediye-spor-t36157.png"
@@ -13251,10 +13251,10 @@
       "note": "Grup 2",
       "verified_at": "2026-09-25",
       "aliases": [
-        "EYÜPSULTAN BLD. SPOR KULÜBÜ",
         "Eyüpsultan Belediyesi SK",
-        "EYÜPSULTAN BELEDİYE SPOR",
-        "EYÜPSULTAN BELEDİYESİ SPOR"
+        "EYÜPSULTAN BELEDİYESİ SPOR",
+        "EYÜPSULTAN BLD. SPOR KULÜBÜ",
+        "EYÜPSULTAN BELEDİYE SPOR"
       ],
       "logo_url": "/logos/eyupsultan-belediyesi-sk-t36166.png",
       "local_logo": "/logos/eyupsultan-belediyesi-sk-t36166.png"
@@ -13340,8 +13340,8 @@
       "note": "Grup 2",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Smaç SK",
-        "SMAÇ SPOR KULÜBÜ"
+        "SMAÇ SPOR KULÜBÜ",
+        "Smaç SK"
       ],
       "logo_url": "/logos/smac-sk-t21635.png",
       "local_logo": "/logos/smac-sk-t21635.png"
@@ -13358,9 +13358,9 @@
       "note": "Grup 2",
       "verified_at": "2026-09-25",
       "aliases": [
+        "SULTANGAZİ BELEDİYESİ SPOR",
         "Sultangazi Belediyesi Spor Kulübü",
         "SULTANGAZİ BLD. SPOR KULÜBÜ",
-        "SULTANGAZİ BELEDİYESİ SPOR",
         "SULTANGAZİ BELEDİYE SPOR"
       ],
       "logo_url": "/logos/sultangazi-belediyesi-spor-kulubu-t36144.png",
@@ -13429,8 +13429,8 @@
       "note": "Grup 3",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Bayrampaşa Belediye Spor Kulübü",
-        "BAYRAMPAŞA BELEDİYE SPOR KULÜBÜ"
+        "BAYRAMPAŞA BELEDİYE SPOR KULÜBÜ",
+        "Bayrampaşa Belediye Spor Kulübü"
       ],
       "logo_url": "/logos/bayrampasa-belediye-spor-kulubu-t53609.png",
       "local_logo": "/logos/bayrampasa-belediye-spor-kulubu-t53609.png"
@@ -13447,8 +13447,8 @@
       "note": "Grup 3",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ÇEKMEKÖY İSTANBUL SPOR KULÜBÜ",
-        "Çekmeköy İstanbul SK"
+        "Çekmeköy İstanbul SK",
+        "ÇEKMEKÖY İSTANBUL SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/cekmekoy-stanbul-sk-t25888.png",
       "local_logo": "/logos/cekmekoy-stanbul-sk-t25888.png"
@@ -13636,8 +13636,8 @@
       "note": "Grup 4",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Galatasaray II",
-        "Galatasaray ll"
+        "Galatasaray ll",
+        "Galatasaray II"
       ],
       "logo_url": "/logos/galatasaray-ll-t14016.png",
       "local_logo": "/logos/galatasaray-ll-t14016.png"
@@ -13689,10 +13689,10 @@
       "note": "Grup 4",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Dinamo Spor Kulübü",
-        "TOYZZ SHOP DİNAMO SPOR KULÜBÜ",
         "Toyzz Shop Dinamo Spor",
-        "Dinamo Kartal Spor Kulübü"
+        "Dinamo Kartal Spor Kulübü",
+        "TOYZZ SHOP DİNAMO SPOR KULÜBÜ",
+        "Dinamo Spor Kulübü"
       ],
       "logo_url": "/logos/kartal-anadolu-t7369.png",
       "local_logo": "/logos/kartal-anadolu-t7369.png"
@@ -13727,8 +13727,8 @@
       "note": "Grup 5",
       "verified_at": "2026-09-25",
       "aliases": [
-        "BAHÇEŞEHİR KOLEJİ AYVALIKSPOR KULÜBÜ",
-        "Bahçeşehir Koleji Ayvalıkspor"
+        "Bahçeşehir Koleji Ayvalıkspor",
+        "BAHÇEŞEHİR KOLEJİ AYVALIKSPOR KULÜBÜ"
       ],
       "logo_url": "/logos/bahcesehir-koleji-ayvalkspor-t22021.png",
       "local_logo": "/logos/bahcesehir-koleji-ayvalkspor-t22021.png"
@@ -13745,10 +13745,10 @@
       "note": "Grup 5",
       "verified_at": "2026-09-25",
       "aliases": [
-        "BALIKESİR B.ŞEHİR BLD. SPOR KULÜBÜ",
-        "BALIKESİR B.ŞEHİR BELEDİYE SPOR",
+        "BALIKESİR B.ŞEHİR BELEDİYESİ SPOR",
         "Balıkesir Büyükşehir Belediyespor",
-        "BALIKESİR B.ŞEHİR BELEDİYESİ SPOR"
+        "BALIKESİR B.ŞEHİR BLD. SPOR KULÜBÜ",
+        "BALIKESİR B.ŞEHİR BELEDİYE SPOR"
       ],
       "logo_url": "/logos/balkesir-buyuksehir-belediyespor-t2978.png",
       "local_logo": "/logos/balkesir-buyuksehir-belediyespor-t2978.png"
@@ -13782,8 +13782,8 @@
       "note": "Grup 5",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Bandırma Çelikspor",
-        "BANDIRMA ÇELİK SPOR KULÜBÜ"
+        "BANDIRMA ÇELİK SPOR KULÜBÜ",
+        "Bandırma Çelikspor"
       ],
       "logo_url": "/logos/bandrma-celikspor-t36097.png",
       "local_logo": "/logos/bandrma-celikspor-t36097.png"
@@ -13835,10 +13835,10 @@
       "note": "Grup 5",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ÇORLU BLD. SPOR KULÜBÜ",
-        "ÇORLU BELEDİYE SPOR",
         "Çorlu Belediyesi Spor Kulübü",
-        "ÇORLU BELEDİYESİ SPOR"
+        "ÇORLU BELEDİYESİ SPOR",
+        "ÇORLU BELEDİYE SPOR",
+        "ÇORLU BLD. SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/corlu-belediyesi-spor-klubu-t17132.png",
       "local_logo": "/logos/corlu-belediyesi-spor-klubu-t17132.png"
@@ -13924,8 +13924,8 @@
       "note": "Grup 6",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Arkas Spor Kulübü",
-        "ARKAS SPOR KULÜBÜ"
+        "ARKAS SPOR KULÜBÜ",
+        "Arkas Spor Kulübü"
       ],
       "logo_url": "/logos/arkas-spor-t2979.png",
       "local_logo": "/logos/arkas-spor-t2979.png"
@@ -13960,8 +13960,8 @@
       "note": "Grup 6",
       "verified_at": "2026-09-25",
       "aliases": [
-        "GAZİEMİR BELEDİYE SPOR",
         "Gaziemir Belediyespor",
+        "GAZİEMİR BELEDİYE SPOR",
         "GAZİEMİR BELEDİYESİ SPOR",
         "GAZİEMİR BLD. SPOR KULÜBÜ"
       ],
@@ -14032,8 +14032,8 @@
       "note": "Grup 6",
       "verified_at": "2026-09-25",
       "aliases": [
-        "TURGUTLU BELEDİYESİ KÜLTÜR SANAT",
         "TURGUTLU BELEDİYE KÜLTÜR SANAT",
+        "TURGUTLU BELEDİYESİ KÜLTÜR SANAT",
         "Turgutlu Belediyespor"
       ],
       "logo_url": "/logos/turgutlu-belediyespor-t16095.png",
@@ -14086,8 +14086,8 @@
       "note": "Grup 7",
       "verified_at": "2026-09-25",
       "aliases": [
-        "İzmir Altınay Spor Kulübü",
-        "ALTINAY SPOR KULÜBÜ"
+        "ALTINAY SPOR KULÜBÜ",
+        "İzmir Altınay Spor Kulübü"
       ],
       "logo_url": "/logos/zmir-altnay-spor-t36174.png",
       "local_logo": "/logos/zmir-altnay-spor-t36174.png"
@@ -14104,8 +14104,8 @@
       "note": "Grup 7",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Aydın Büyükşehir Belediyespor II",
-        "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR KULÜBÜ"
+        "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR KULÜBÜ",
+        "Aydın Büyükşehir Belediyespor II"
       ],
       "logo_url": "/logos/aydn-buyuksehir-belediyespor-ii-t13583.png",
       "local_logo": "/logos/aydn-buyuksehir-belediyespor-ii-t13583.png"
@@ -14122,8 +14122,8 @@
       "note": "Grup 7",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Bayraklı Belediyesi Spor Kulübü",
         "BAYRAKLI BLD. SPOR KULÜBÜ",
+        "Bayraklı Belediyesi Spor Kulübü",
         "BAYRAKLI BELEDİYE SPOR",
         "BAYRAKLI BELEDİYESİ SPOR"
       ],
@@ -14228,8 +14228,8 @@
       "note": "Grup 7",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Volkan Güç Spor Kulübü",
-        "VOLKAN GÜÇ SPOR KULÜBÜ"
+        "VOLKAN GÜÇ SPOR KULÜBÜ",
+        "Volkan Güç Spor Kulübü"
       ],
       "logo_url": "/logos/volkan-guc-spor-kulubu-t27785.png",
       "local_logo": "/logos/volkan-guc-spor-kulubu-t27785.png"
@@ -14246,9 +14246,9 @@
       "note": "Grup 7",
       "verified_at": "2026-09-25",
       "aliases": [
-        "YUNUSEMRE BLD. SPOR KULÜBÜ",
         "YUNUSEMRE BELEDİYESİ SPOR",
         "Yunusemre Belediyespor",
+        "YUNUSEMRE BLD. SPOR KULÜBÜ",
         "YUNUSEMRE BELEDİYE SPOR"
       ],
       "logo_url": "/logos/yunusemre-belediyespor-t23089.png",
@@ -14284,8 +14284,8 @@
       "note": "Grup 8",
       "verified_at": "2026-09-25",
       "aliases": [
-        "AKDENİZ BİLGİ SPOR KULÜBÜ",
-        "Akdeniz Bilgi Spor Kulübü"
+        "Akdeniz Bilgi Spor Kulübü",
+        "AKDENİZ BİLGİ SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/akdeniz-bilgi-spor-kulubu-t30512.png",
       "local_logo": "/logos/akdeniz-bilgi-spor-kulubu-t30512.png"
@@ -14302,8 +14302,8 @@
       "note": "Grup 8",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Güral Premier Antalyaspor",
-        "ANTALYASPOR KULÜBÜ"
+        "ANTALYASPOR KULÜBÜ",
+        "Güral Premier Antalyaspor"
       ],
       "logo_url": "/logos/antalyaspor-t7008.png",
       "local_logo": "/logos/antalyaspor-t7008.png"
@@ -14320,9 +14320,9 @@
       "note": "Grup 8",
       "verified_at": "2026-09-25",
       "aliases": [
+        "BAHÇEŞEHİR KOLEJİ DALAMAN BELEDİYE",
         "BAHÇEŞEHİR KOLEJİ DALAMAN BELEDİYESİ",
-        "Bahçeşehir Koleji Dalaman Belediyespor",
-        "BAHÇEŞEHİR KOLEJİ DALAMAN BELEDİYE"
+        "Bahçeşehir Koleji Dalaman Belediyespor"
       ],
       "logo_url": "/logos/bahcesehir-koleji-dalaman-belediyespor-t29535.png",
       "local_logo": "/logos/bahcesehir-koleji-dalaman-belediyespor-t29535.png"
@@ -14339,10 +14339,10 @@
       "note": "Grup 8",
       "verified_at": "2026-09-25",
       "aliases": [
-        "DENİZLİ B.ŞEHİR BLD. SPOR KULÜBÜ",
-        "Denizli Büyükşehir Belediyespor II",
         "DENİZLİ B.ŞEHİR BELEDİYESİ SPOR",
-        "DENİZLİ B.ŞEHİR BELEDİYE SPOR"
+        "DENİZLİ B.ŞEHİR BLD. SPOR KULÜBÜ",
+        "DENİZLİ B.ŞEHİR BELEDİYE SPOR",
+        "Denizli Büyükşehir Belediyespor II"
       ],
       "logo_url": "/logos/denizli-buyuksehir-belediyespor-ii-t40628.png",
       "local_logo": "/logos/denizli-buyuksehir-belediyespor-ii-t40628.png"
@@ -14376,10 +14376,10 @@
       "note": "Grup 8",
       "verified_at": "2026-09-25",
       "aliases": [
+        "Marmaris Belediyesi GSK",
         "MARMARİS BLD. SPOR KULÜBÜ",
         "MARMARİS BELEDİYE SPOR",
-        "MARMARİS BELEDİYESİ SPOR",
-        "Marmaris Belediyesi GSK"
+        "MARMARİS BELEDİYESİ SPOR"
       ],
       "logo_url": "/logos/marmaris-belediyesi-gsk-t2804.png",
       "local_logo": "/logos/marmaris-belediyesi-gsk-t2804.png"
@@ -14467,8 +14467,8 @@
       "note": "Grup 9",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Eskişehir Peyman SK",
-        "ESKİŞEHİR PEYMAN SPOR KULÜBÜ"
+        "ESKİŞEHİR PEYMAN SPOR KULÜBÜ",
+        "Eskişehir Peyman SK"
       ],
       "logo_url": "/logos/eskisehir-peyman-sk-t17180.png",
       "local_logo": "/logos/eskisehir-peyman-sk-t17180.png"
@@ -14485,8 +14485,8 @@
       "note": "Grup 9",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Eskişehir Peyman SK",
-        "Şehir Koleji Eğitim Kültür SK"
+        "Şehir Koleji Eğitim Kültür SK",
+        "Eskişehir Peyman SK"
       ],
       "logo_url": "/logos/sehir-koleji-egitim-kultur-sk-t32067.png",
       "local_logo": "/logos/sehir-koleji-egitim-kultur-sk-t32067.png"
@@ -14503,8 +14503,8 @@
       "note": "Grup 9",
       "verified_at": "2026-09-25",
       "aliases": [
-        "GEMLİK İSTİKLAL SPOR KULÜBÜ",
-        "Gemlik İstiklal Spor Kulübü"
+        "Gemlik İstiklal Spor Kulübü",
+        "GEMLİK İSTİKLAL SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/gemlik-stiklal-spor-t32159.png",
       "local_logo": "/logos/gemlik-stiklal-spor-t32159.png"
@@ -14538,8 +14538,8 @@
       "note": "Grup 9",
       "verified_at": "2026-09-25",
       "aliases": [
-        "KOÇ SPOR KULÜBÜ",
-        "Bursa Koç Spor Kulübü"
+        "Bursa Koç Spor Kulübü",
+        "KOÇ SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/bursa-koc-spor-kulubu-t36105.png",
       "local_logo": "/logos/bursa-koc-spor-kulubu-t36105.png"
@@ -14573,8 +14573,8 @@
       "note": "Grup 9",
       "verified_at": "2026-09-25",
       "aliases": [
-        "MG SPOR KULÜBÜ",
-        "MG Spor Kulübü"
+        "MG Spor Kulübü",
+        "MG SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/mg-spor-kulubu-t32161.png",
       "local_logo": "/logos/mg-spor-kulubu-t32161.png"
@@ -14591,9 +14591,9 @@
       "note": "Grup 9",
       "verified_at": "2026-09-25",
       "aliases": [
-        "YALOVA ÇİFTLİKKÖY BELEDİYE SPOR",
-        "Çiftlikköy Belediyespor",
         "YALOVA ÇİFTLİKKÖY BLD. SPOR KULÜBÜ",
+        "Çiftlikköy Belediyespor",
+        "YALOVA ÇİFTLİKKÖY BELEDİYE SPOR",
         "YALOVA ÇİFTLİKKÖY BELEDİYESİ SPOR"
       ],
       "logo_url": "/logos/ciftlikkoy-belediyespor-t13002.png",
@@ -14698,8 +14698,8 @@
       "note": "Grup 10",
       "verified_at": "2026-09-25",
       "aliases": [
-        "GEBZE GENÇLİK VE SPOR KULÜBÜ",
-        "Gebze Gençlik Voleybol Kulübü"
+        "Gebze Gençlik Voleybol Kulübü",
+        "GEBZE GENÇLİK VE SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/gebze-genclik-ve-spor-sk-t40247.png",
       "local_logo": "/logos/gebze-genclik-ve-spor-sk-t40247.png"
@@ -14716,8 +14716,8 @@
       "note": "Grup 10",
       "verified_at": "2026-09-25",
       "aliases": [
-        "KARABÜK GENÇLİK SPOR KULÜBÜ",
-        "Karabük Gençlik ve Spor İl Müdürlüğü Spor Kulübü"
+        "Karabük Gençlik ve Spor İl Müdürlüğü Spor Kulübü",
+        "KARABÜK GENÇLİK SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/karabuk-genclik-ve-spor-kulubu-t23253.png",
       "local_logo": "/logos/karabuk-genclik-ve-spor-kulubu-t23253.png"
@@ -14768,10 +14768,10 @@
       "note": "Grup 10",
       "verified_at": "2026-09-25",
       "aliases": [
-        "SERDİVAN BELEDİYE SPOR",
         "SERDİVAN BELEDİYESİ SPOR",
+        "SERDİVAN BLD. SPOR KULÜBÜ",
         "Serdivan Belediyesi Spor Kulübü",
-        "SERDİVAN BLD. SPOR KULÜBÜ"
+        "SERDİVAN BELEDİYE SPOR"
       ],
       "logo_url": "/logos/serdivan-belediyesi-spor-kulubu-t40630.png",
       "local_logo": "/logos/serdivan-belediyesi-spor-kulubu-t40630.png"
@@ -14839,8 +14839,8 @@
       "note": "Grup 11",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ÇAYYOLU SPOR KULÜBÜTSA",
-        "Çayyolu Sportsa Spor Kulübü"
+        "Çayyolu Sportsa Spor Kulübü",
+        "ÇAYYOLU SPOR KULÜBÜTSA"
       ],
       "logo_url": "/logos/sportsa-academy-volleyball-t13948.png",
       "local_logo": "/logos/sportsa-academy-volleyball-t13948.png"
@@ -14874,8 +14874,8 @@
       "note": "Grup 11",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Gölbaşı İncek Spor Kulübü",
-        "GÖLBAŞI İNCEK SPOR KULÜBÜ"
+        "GÖLBAŞI İNCEK SPOR KULÜBÜ",
+        "Gölbaşı İncek Spor Kulübü"
       ],
       "logo_url": "/logos/golbas-ncek-spor-kulubu-t30620.png",
       "local_logo": "/logos/golbas-ncek-spor-kulubu-t30620.png"
@@ -15013,8 +15013,8 @@
       "note": "Grup 12",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ÇABA SPOR KULÜBÜ",
-        "Çaba Spor Kulübü"
+        "Çaba Spor Kulübü",
+        "ÇABA SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/caba-spor-kulubu-t24060.png",
       "local_logo": "/logos/caba-spor-kulubu-t24060.png"
@@ -15049,9 +15049,9 @@
       "note": "Grup 12",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ETİMESGUT BELEDİYE GELİŞİM",
         "Etimesgut Belediyesi Voleybol Kulübü",
-        "ETİMESGUT BELEDİYESİ GELİŞİM"
+        "ETİMESGUT BELEDİYESİ GELİŞİM",
+        "ETİMESGUT BELEDİYE GELİŞİM"
       ],
       "logo_url": "/logos/etimesgut-belediyesi-gelisim-sk-t30345.png",
       "local_logo": "/logos/etimesgut-belediyesi-gelisim-sk-t30345.png"
@@ -15121,9 +15121,9 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "ADANA B.ŞEHİR BLD. SPOR KULÜBÜ",
-        "ADANA B.ŞEHİR BELEDİYE SPOR",
         "Adana Büyükşehir Belediyespor Kulübü",
-        "ADANA B.ŞEHİR BELEDİYESİ SPOR"
+        "ADANA B.ŞEHİR BELEDİYESİ SPOR",
+        "ADANA B.ŞEHİR BELEDİYE SPOR"
       ],
       "logo_url": "/logos/adana-bsehir-bld-t13590.png",
       "local_logo": "/logos/adana-bsehir-bld-t13590.png"
@@ -15140,8 +15140,8 @@
       "note": "Grup 13",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Adana Sporcu Eğitim Merkezi Spor Kulübü",
         "Adana Büyükşehir Belediyespor Kulübü",
+        "Adana Sporcu Eğitim Merkezi Spor Kulübü",
         "ADANA SPOR KULÜBÜCU EĞİTİM SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/adana-sporcu-egitim-merkezi-t30840.png",
@@ -15159,9 +15159,9 @@
       "note": "Grup 13",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ATDSK",
+        "Adana Tenis Dağ ve Su Sporları Kulübü",
         "Adana Büyükşehir Belediyespor Kulübü",
-        "Adana Tenis Dağ ve Su Sporları Kulübü"
+        "ATDSK"
       ],
       "logo_url": "/logos/adana-tenis-dag-ve-su-sporlar-kulubu-t36049.png",
       "local_logo": "/logos/adana-tenis-dag-ve-su-sporlar-kulubu-t36049.png"
@@ -15178,8 +15178,8 @@
       "note": "Grup 13",
       "verified_at": "2026-09-25",
       "aliases": [
-        "EREĞLİ SÜMER SPOR KULÜBÜ",
-        "Ereğli Sümer SK"
+        "Ereğli Sümer SK",
+        "EREĞLİ SÜMER SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/eregli-sumer-sk-t13649.png",
       "local_logo": "/logos/eregli-sumer-sk-t13649.png"
@@ -15265,9 +15265,9 @@
       "note": "Grup 13",
       "verified_at": "2026-09-25",
       "aliases": [
-        "TOROSLAR BELEDİYE",
         "Toroslar Belediye Spor Kulübü",
-        "TOROSLAR BELEDİYESİ"
+        "TOROSLAR BELEDİYESİ",
+        "TOROSLAR BELEDİYE"
       ],
       "logo_url": "/logos/toroslar-belediye-spor-kulubu-t40633.png",
       "local_logo": "/logos/toroslar-belediye-spor-kulubu-t40633.png"
@@ -15319,9 +15319,9 @@
       "note": "Grup 14",
       "verified_at": "2026-09-25",
       "aliases": [
-        "AKÇA GRUP OSMANCIK BELEDİYE",
         "AKÇA GRUP OSMANCIK BELEDİYESİ",
-        "Akça Grup Osmancık Belediyespor"
+        "Akça Grup Osmancık Belediyespor",
+        "AKÇA GRUP OSMANCIK BELEDİYE"
       ],
       "logo_url": "/logos/osmanck-belediyespor-t10378.png",
       "local_logo": "/logos/osmanck-belediyespor-t10378.png"
@@ -15356,8 +15356,8 @@
       "note": "Grup 14",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ÇORUM ARENA SPOR KULÜBÜ",
-        "Çorum Arena Spor"
+        "Çorum Arena Spor",
+        "ÇORUM ARENA SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/corum-arena-spor-t36114.png",
       "local_logo": "/logos/corum-arena-spor-t36114.png"
@@ -15444,8 +15444,8 @@
       "note": "Grup 14",
       "verified_at": "2026-09-25",
       "aliases": [
-        "RİZE DNZ SPOR KULÜBÜ",
-        "Rize DNZ Spor Kulübü"
+        "Rize DNZ Spor Kulübü",
+        "RİZE DNZ SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/rize-endustri-meslek-spor-t36220.png",
       "local_logo": "/logos/rize-endustri-meslek-spor-t36220.png"
@@ -15480,9 +15480,9 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "Elazığ Belediyesi SK",
+        "ELAZIĞ BELEDİYESİ SPOR",
         "ELAZIĞ BLD. SPOR KULÜBÜ",
-        "ELAZIĞ BELEDİYE SPOR",
-        "ELAZIĞ BELEDİYESİ SPOR"
+        "ELAZIĞ BELEDİYE SPOR"
       ],
       "logo_url": "/logos/elazg-belediyesi-t20428.png",
       "local_logo": "/logos/elazg-belediyesi-t20428.png"
@@ -15499,8 +15499,8 @@
       "note": "Grup 15",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Forliva Kayseri Atletik Spor",
-        "FORLİVA KAYSERİ ATLETİK SPOR KULÜBÜ"
+        "FORLİVA KAYSERİ ATLETİK SPOR KULÜBÜ",
+        "Forliva Kayseri Atletik Spor"
       ],
       "logo_url": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
       "local_logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png"
@@ -15517,10 +15517,10 @@
       "note": "Grup 15",
       "verified_at": "2026-09-25",
       "aliases": [
-        "GAZİANTEP BLD. SPOR KULÜBÜ",
-        "GAZİANTEP BELEDİYESİ SPOR",
+        "GAZİANTEP BELEDİYE SPOR",
         "Gaziantep Büyükşehir Belediyespor",
-        "GAZİANTEP BELEDİYE SPOR"
+        "GAZİANTEP BELEDİYESİ SPOR",
+        "GAZİANTEP BLD. SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/gaziantep-belediye-sk-t28164.png",
       "local_logo": "/logos/gaziantep-belediye-sk-t28164.png"
@@ -15537,9 +15537,9 @@
       "note": "Grup 15",
       "verified_at": "2026-09-25",
       "aliases": [
+        "KAHRAMANMARAŞ BÜYÜKŞEHİR BELEDİYE",
         "KAHRAMANMARAŞ BÜYÜKŞEHİR BELEDİYESİ",
-        "Kahramanmaraş Büyükşehir Belediye Spor Kulübü",
-        "KAHRAMANMARAŞ BÜYÜKŞEHİR BELEDİYE"
+        "Kahramanmaraş Büyükşehir Belediye Spor Kulübü"
       ],
       "logo_url": "/logos/kahramanmaras-buyuksehir-belediye-spor-kulubu-t45553.png",
       "local_logo": "/logos/kahramanmaras-buyuksehir-belediye-spor-kulubu-t45553.png"
@@ -15556,8 +15556,8 @@
       "note": "Grup 15",
       "verified_at": "2026-09-25",
       "aliases": [
-        "KAYSERİ CİMNASTİK SPOR KULÜBÜ",
-        "Kayseri Cimnastik Spor Kulübü"
+        "Kayseri Cimnastik Spor Kulübü",
+        "KAYSERİ CİMNASTİK SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/kayseri-cimnastik-spor-kulubu-t32165.png",
       "local_logo": "/logos/kayseri-cimnastik-spor-kulubu-t32165.png"
@@ -15660,8 +15660,8 @@
       "note": "Grup 15",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ZEUGMA GAZİANTEP SPOR KULÜBÜ",
-        "Zeugma Spor Kulübü"
+        "Zeugma Spor Kulübü",
+        "ZEUGMA GAZİANTEP SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/zeugma-spor-kulubu-t7352.png",
       "local_logo": "/logos/zeugma-spor-kulubu-t7352.png"
@@ -15679,8 +15679,8 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "Diyarbakır Büyükşehir Belediyespor",
-        "DİYARBAKIR B.ŞEHİR BLD. SPOR KULÜBÜ",
         "DİYARBAKIR B.ŞEHİR BELEDİYESİ SPOR",
+        "DİYARBAKIR B.ŞEHİR BLD. SPOR KULÜBÜ",
         "DİYARBAKIR B.ŞEHİR BELEDİYE SPOR"
       ],
       "logo_url": "/logos/diyarbakr-buyuksehir-belediyespor-t13501.png",
@@ -15715,8 +15715,8 @@
       "note": "Grup 16",
       "verified_at": "2026-09-25",
       "aliases": [
-        "HAKKARİ SPOR KULÜBÜTİF FAALİYETLER",
-        "Hakkari Gençlik Sportif Faaliyetler"
+        "Hakkari Gençlik Sportif Faaliyetler",
+        "HAKKARİ SPOR KULÜBÜTİF FAALİYETLER"
       ],
       "logo_url": "/logos/hakkari-genclik-sportif-faaliyetler-t20786.png",
       "local_logo": "/logos/hakkari-genclik-sportif-faaliyetler-t20786.png"
@@ -15784,10 +15784,10 @@
       "note": "Grup 16",
       "verified_at": "2026-09-25",
       "aliases": [
-        "SİLOPİ BLD. SPOR KULÜBÜTİF FAALİYETLER",
-        "SİLOPİ BELEDİYESİ SPORTİF FAALİYETLER",
         "SİLOPİ BELEDİYE SPORTİF FAALİYETLER",
-        "Silopi Belediye Sportif Faaliyetler Spor Kulübü"
+        "SİLOPİ BLD. SPOR KULÜBÜTİF FAALİYETLER",
+        "Silopi Belediye Sportif Faaliyetler Spor Kulübü",
+        "SİLOPİ BELEDİYESİ SPORTİF FAALİYETLER"
       ],
       "logo_url": "/logos/silopi-belediye-sportif-faaliyetler-spor-kulubu-t13661.png",
       "local_logo": "/logos/silopi-belediye-sportif-faaliyetler-spor-kulubu-t13661.png"
@@ -15821,8 +15821,8 @@
       "note": "Grup 16",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Siverek Kadın Voleybol Takımı",
-        "SİVEREK BELEDİYE SPOR KULÜBÜ"
+        "SİVEREK BELEDİYE SPOR KULÜBÜ",
+        "Siverek Kadın Voleybol Takımı"
       ],
       "logo_url": "/logos/siverek-belediye-spor-kulubu-t45575.png",
       "local_logo": "/logos/siverek-belediye-spor-kulubu-t45575.png"
@@ -15839,8 +15839,8 @@
       "note": "Grup 5",
       "verified_at": "2026-09-25",
       "aliases": [
-        "ÇOMÜ",
-        "ÇOMÜ Spor Kulübü"
+        "ÇOMÜ Spor Kulübü",
+        "ÇOMÜ"
       ],
       "logo_url": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png",
       "local_logo": "/logos/canakkale-onsekiz-mart-universitesi-t37223.png"
@@ -15898,8 +15898,8 @@
       "note": "Grup 4",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Alp Voleybol Kulübü",
-        "ALP SPOR KULÜBÜ"
+        "ALP SPOR KULÜBÜ",
+        "Alp Voleybol Kulübü"
       ],
       "logo_url": null,
       "local_logo": null
@@ -15916,8 +15916,8 @@
       "note": "Grup 4",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Kamarin Asya Kartalları SK",
-        "ASYA KARTALLARI KAMARİN SPOR KULÜBÜ"
+        "ASYA KARTALLARI KAMARİN SPOR KULÜBÜ",
+        "Kamarin Asya Kartalları SK"
       ],
       "logo_url": null,
       "local_logo": null
@@ -15985,8 +15985,8 @@
       "note": "Grup 12",
       "verified_at": "2026-09-25",
       "aliases": [
-        "TEK METAL SPOR KULÜBÜTİF",
-        "Tek Metal Sportif SK"
+        "Tek Metal Sportif SK",
+        "TEK METAL SPOR KULÜBÜTİF"
       ],
       "logo_url": null,
       "local_logo": null
