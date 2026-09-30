@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T15:59:40.581182",
+  "updated_at": "2026-09-30T20:32:11.655997",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -331,7 +331,18 @@
       },
       {
         "rank": 2,
-        "team": "Bursa Genç Saray Spor Kulübü U16",
+        "team": "Doruk Voleybol Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -341,25 +352,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Doruk Voleybol Spor Kulübü U16",
-        "played": 0,
+        "team": "Bursa Genç Saray Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -456,6 +456,28 @@
     "Yıldız Kızlar Süper Lig - - D": [
       {
         "rank": 1,
+        "team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Nilüfer Beşevler Spor Kulübü U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Akademi16 Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -466,30 +488,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "DSİ Nilüfer Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Nilüfer Beşevler Spor Kulübü U16",
+        "team": "DSİ Nilüfer Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1030,11 +1030,15 @@
       "match_no": "2",
       "home_team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
       "away_team": "Doruk Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "18-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401043",
@@ -1232,11 +1236,15 @@
       "match_no": "1",
       "home_team": "Nilüfer Beşevler Spor Kulübü U16",
       "away_team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "11-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401047",
@@ -1385,5 +1393,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-09-30T16:01:28.074952"
+  "volleybox_sync_updated_at": "2026-09-30T20:34:05.889183"
 }
