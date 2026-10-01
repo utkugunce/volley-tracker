@@ -164,7 +164,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
             aria-expanded={dropdownOpen}
             aria-haspopup="listbox"
             aria-controls="city-dropdown-menu"
-            aria-label="+ 81 İl: Tüm 81 ili listele ve seç"
+            aria-label="Diğer İller, 81 İl: Tüm 81 ili listele ve seç"
             className={`flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
               dropdownOpen
                 ? "bg-slate-800 text-white border-slate-700"
