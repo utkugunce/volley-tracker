@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T21:10:07.863836",
+  "updated_at": "2026-10-01T19:05:59.413476",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -456,7 +456,7 @@
     "Yıldız Kızlar Süper Lig - - D": [
       {
         "rank": 1,
-        "team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
+        "team": "DSİ Nilüfer Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -467,6 +467,17 @@
       },
       {
         "rank": 2,
+        "team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Nilüfer Beşevler Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -477,30 +488,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Akademi16 Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "DSİ Nilüfer Spor Kulübü U16",
-        "played": 0,
+        "team": "Nilüfer Olimpik Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Nilüfer Olimpik Spor Kulübü U16",
+        "team": "Akademi16 Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -524,6 +524,28 @@
       },
       {
         "rank": 2,
+        "team": "Bursa Büyükşehir Belediyespor U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Nilüfer Belediye Spor Kulübü (A)",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -534,30 +556,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Bursa Büyükşehir Belediyespor U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Hürriyet Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Nilüfer Belediye Spor Kulübü (A)",
+        "team": "Hürriyet Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1285,11 +1285,15 @@
       "match_no": "2",
       "home_team": "DSİ Nilüfer Spor Kulübü U16",
       "away_team": "Nilüfer Olimpik Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-10",
+        "25-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401048",
@@ -1371,11 +1375,17 @@
       "match_no": "2",
       "home_team": "Bursa Büyükşehir Belediyespor U16",
       "away_team": "Nilüfer Belediye Spor Kulübü (A)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-20",
+        "15-25",
+        "27-25",
+        "25-27",
+        "15-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401049",
@@ -1401,5 +1411,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-01T21:14:39.646896"
+  "volleybox_sync_updated_at": "2026-10-01T19:09:10.505785"
 }
