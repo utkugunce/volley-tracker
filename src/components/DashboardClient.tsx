@@ -1413,7 +1413,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                     <div className="flex items-center justify-center gap-2">
                       <button
                         onClick={() => setActiveMainTab("fixtures")}
-                        className="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
+                        className="px-4 py-2 rounded-lg bg-primary text-primary-fg text-xs font-bold hover:bg-primary-hover transition-colors shadow-md"
                       >
                         Fikstürü Görüntüle
                       </button>
@@ -1743,7 +1743,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                     </p>
                     <button
                       onClick={() => handleSelectCity("istanbul")}
-                      className="px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
+                      className="px-4 py-2 rounded-lg bg-primary text-primary-fg text-xs font-bold hover:bg-primary-hover transition-colors shadow-md"
                     >
                       İstanbul Fikstürünü Görüntüle (24 Maç)
                     </button>
@@ -1761,7 +1761,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                     {isFiltered && (
                       <button
                         onClick={resetFilters}
-                        className="px-3.5 py-1.5 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-colors shadow-md"
+                        className="px-3.5 py-1.5 rounded-lg bg-primary text-primary-fg text-xs font-bold hover:bg-primary-hover transition-colors shadow-md"
                       >
                         Filtreleri Sıfırla
                       </button>
