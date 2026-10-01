@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T21:10:15.970315",
+  "updated_at": "2026-10-01T19:06:09.260301",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -589,6 +589,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - B Gr": [
       {
         "rank": 1,
+        "team": "Parla Voleybol Kulübü - A U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Göztepe SK - B U16",
         "played": 2,
         "won": 2,
@@ -599,7 +610,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Alfa Gaziemir Voleybol Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -607,17 +618,6 @@
         "points": 5,
         "sets_won": 6,
         "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Parla Voleybol Kulübü - A U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 4,
-        "sets_won": 5,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -645,12 +645,12 @@
       {
         "rank": 6,
         "team": "Venüs Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -804,6 +804,17 @@
       },
       {
         "rank": 2,
+        "team": "Dost Spor U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 8,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Dokuz Eylül Voleybol U16",
         "played": 2,
         "won": 1,
@@ -814,7 +825,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Dalton Koleji Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -822,17 +833,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Dost Spor U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 5,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -849,12 +849,12 @@
       {
         "rank": 6,
         "team": "Torbalı Gelişim Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -3614,11 +3614,15 @@
       "match_no": "7",
       "home_team": "Parla Voleybol Kulübü - A U16",
       "away_team": "Venüs Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-14",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401130",
@@ -5192,11 +5196,15 @@
       "match_no": "7",
       "home_team": "Torbalı Gelişim Spor Kulübü U16",
       "away_team": "Dost Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "22-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401139",
@@ -5427,5 +5435,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-01T21:14:41.489602"
+  "volleybox_sync_updated_at": "2026-10-01T19:09:10.494572"
 }
