@@ -425,7 +425,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 <div className="glass-panel rounded-2xl p-3.5 border border-slate-800/80 shadow-sm space-y-3">
                   <div className="flex items-center justify-between border-b border-slate-800/70 pb-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-5 h-5 rounded-md bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                      <div className="w-5 h-5 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
                         <Trophy size={12} />
                       </div>
                       <h3 className="text-xs font-black text-white uppercase tracking-wider">

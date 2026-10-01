@@ -46,7 +46,7 @@ export const TeamInspectorPanel: React.FC<TeamInspectorPanelProps> = ({
   if (!team) {
     return (
       <div className="flex h-full flex-col items-center justify-center p-6 text-center">
-        <Trophy size={26} className="mb-3 text-amber-400" />
+        <Trophy size={26} className="mb-3 text-primary" />
         <h2 className="text-sm font-bold text-white">Takım seçin</h2>
         <p className="mt-1 max-w-[220px] text-xs text-slate-400">
           Seçilen grubun formunu ve kalan maçlarını incelemek için puan tablosundan bir takım seçin.

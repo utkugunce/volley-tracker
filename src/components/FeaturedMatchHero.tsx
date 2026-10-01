@@ -188,7 +188,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
               }`}
             />
             {homeWon && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-black text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded-md">
+              <span className="inline-flex items-center gap-1 text-[11px] font-black text-done bg-done/10 border border-done/30 px-2 py-0.5 rounded-md">
                 <Trophy size={11} /> KAZANDI
               </span>
             )}
@@ -262,7 +262,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
               }`}
             />
             {awayWon && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-black text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded-md">
+              <span className="inline-flex items-center gap-1 text-[11px] font-black text-done bg-done/10 border border-done/30 px-2 py-0.5 rounded-md">
                 <Trophy size={11} /> KAZANDI
               </span>
             )}

@@ -343,7 +343,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               <span>{league.city} TVF İl Temsilciliği</span>
             </span>
 
-            <span className="inline-flex items-center gap-1.5 font-bold px-2.5 py-1 rounded-lg bg-amber-950/80 text-amber-300 border border-amber-600/40">
+            <span className="inline-flex items-center gap-1.5 font-bold px-2.5 py-1 rounded-lg bg-primary/10 text-primary border border-primary/40">
               <Trophy size={12} className="text-primary" />
               <span>{league.category}</span>
             </span>
@@ -590,7 +590,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                 >
                   <div className="bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 px-4 py-3 flex items-center justify-between border-b border-slate-800">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">
+                      <div className="w-6 h-6 rounded-lg bg-primary/15 text-primary flex items-center justify-center font-bold text-xs">
                         <Trophy size={14} />
                       </div>
                       <h2 className="text-sm font-extrabold text-white tracking-wide">
@@ -882,11 +882,11 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* Lider Takım */}
-              <div className="glass-panel p-5 rounded-2xl border border-amber-500/30 bg-gradient-to-br from-amber-950/20 via-slate-900 to-slate-900 relative overflow-hidden">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-3">
+              <div className="glass-panel p-5 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-slate-900 to-slate-900 relative overflow-hidden">
+                <div className="w-10 h-10 rounded-xl bg-primary/15 text-primary flex items-center justify-center mb-3">
                   <Trophy size={20} />
                 </div>
-                <span className="text-xs font-bold text-amber-400 block uppercase tracking-wider">
+                <span className="text-xs font-bold text-primary block uppercase tracking-wider">
                   Lig Sıralaması Lideri
                 </span>
                 <h3 className="text-lg font-black text-white mt-1">

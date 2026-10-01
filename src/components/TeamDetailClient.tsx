@@ -492,7 +492,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                       <div className="flex items-center gap-1.5">
                         <Link
                           href={standingsHref}
-                          className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-1 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-colors cursor-pointer"
+                          className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-1 rounded-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors cursor-pointer"
                           title={`${ctx.groupName} Puan Durumuna Git`}
                         >
                           <Trophy size={11} className="text-primary" />
