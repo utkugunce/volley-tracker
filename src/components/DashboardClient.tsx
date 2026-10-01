@@ -4,7 +4,6 @@ import React, { useState, useMemo, useEffect, useCallback, useRef } from "react"
 import { Header } from "@/components/Header";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import { FilterBar } from "@/components/FilterBar";
-import type { StandingsTeamContext } from "@/components/StandingsTable";
 import { CityTabBar } from "@/components/CityTabBar";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -15,7 +14,7 @@ import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
 import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
 import dynamic from "next/dynamic";
 import { Virtuoso } from "react-virtuoso";
-import { Match, FixturesData, StandingItem } from "@/types/fixture";
+import { Match, FixturesData } from "@/types/fixture";
 import { isMatchScored } from "@/utils/matchScoring";
 
 export { isMatchScored };
@@ -36,10 +35,6 @@ const CompactMatchFeed = dynamic(
 );
 const StandingsTable = dynamic(
   () => import("@/components/StandingsTable").then((mod) => mod.StandingsTable),
-  { loading: TabViewLoading }
-);
-const TeamInspectorPanel = dynamic(
-  () => import("@/components/TeamInspectorPanel").then((mod) => mod.TeamInspectorPanel),
   { loading: TabViewLoading }
 );
 const GroupStatusView = dynamic(
@@ -263,7 +258,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const handleSelectCity = useCallback(async (slug: string, skipPushState = false) => {
     setCurrentCitySlug(slug);
-    setSelectedStandingTeam(null);
     setError(null);
     setSelectedCategory("Tümü");
     setSelectedDate("all");
@@ -375,10 +369,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   // Premium Özellikler: Maç Detay Çekmecesi & Spotlight Arama
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
-  const [selectedStandingTeam, setSelectedStandingTeam] = useState<{
-    team: StandingItem;
-    context: StandingsTeamContext;
-  } | null>(null);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
   const [isLeaguesMenuOpen, setIsLeaguesMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -1044,14 +1034,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           />
         }
         rightSidebar={
-          activeMainTab === "standings" ? (
-            <TeamInspectorPanel
-              team={selectedStandingTeam?.team || null}
-              context={selectedStandingTeam?.context || null}
-              matches={data?.matches || []}
-              onClose={() => setSelectedStandingTeam(null)}
-            />
-          ) : (
+          activeMainTab === "standings" ? undefined : (
             <MatchInspectorPanel
               match={selectedMatch}
               allMatches={data?.matches || []}
@@ -1790,12 +1773,17 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           </div>
         ) : activeMainTab === "standings" ? (
           /* ==================== PUAN DURUMU SEKMESİ ==================== */
-          <div>
+          <div className="space-y-4">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-ink">
+              {data?.city && data.city !== "Tüm İller"
+                ? `${data.city} Puan Durumu · Genç & Yıldız Kızlar Süper Lig`
+                : "Puan Durumu · Genç & Yıldız Kızlar Süper Lig"}
+            </h1>
             {Object.keys(activeStandings).length > 0 ? (
               <StandingsTable
                 standingsData={activeStandings}
                 city={data?.city}
-                onSelectTeam={(team, context) => setSelectedStandingTeam({ team, context })}
+                matches={data?.matches || []}
               />
             ) : (
               <div className="text-center py-12 bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-6 max-w-md mx-auto my-8 shadow-xl">

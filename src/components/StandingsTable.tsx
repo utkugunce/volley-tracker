@@ -17,6 +17,7 @@ import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { LeagueVolleyboxLink } from "./LeagueVolleyboxLink";
 import { slugify } from "@/utils/slugify";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import { formatGroupName } from "@/utils/grouping";
 
 const TURKISH_CITIES = [
   "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
@@ -210,6 +211,16 @@ function hasScore(m: Match): boolean {
   return (m.home_score != null && m.away_score != null) || !!m.score;
 }
 
+const normGroup = (g: string) => trLower(g).replace(/[^a-z0-9ğüşıöç]/gi, "");
+
+/** Maç grubu ile puan durumu grubu aynı mı? ("A Grubu" ≈ "Genç Kızlar Süper Lig - A Gr") */
+function sameGroup(matchGroup: string, standingGroup: string): boolean {
+  const a = normGroup(formatGroupName(matchGroup));
+  const b = normGroup(formatGroupName(standingGroup));
+  if (!a || !b) return true;
+  return a === b || a.includes(b) || b.includes(a);
+}
+
 export function summarizeTeam(
   row: StandingItem,
   ctx: { city: string; leagueName: string; groupName: string } | null,
@@ -235,6 +246,7 @@ export function summarizeTeam(
       if (ctx.city && m.city && trLower(m.city) !== trLower(ctx.city)) return false;
       if (ctx.leagueName && m.category && !trIncludes(trLower(m.category), trLower(ctx.leagueName)) && !trIncludes(trLower(ctx.leagueName), trLower(m.category)))
         return false;
+      if (ctx.groupName && m.group && !sameGroup(m.group, ctx.groupName)) return false;
     }
     return true;
   });
