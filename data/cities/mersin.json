@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T20:06:22.355731",
+  "updated_at": "2026-10-01T20:37:27.574997",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -30,7 +30,7 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "MEV Toros Spor Kulübü U18",
+        "team": "Mersin İhtisas Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -41,7 +41,7 @@
       },
       {
         "rank": 2,
-        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "team": "MEV Toros Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -52,6 +52,17 @@
       },
       {
         "rank": 3,
+        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -62,7 +73,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Alsancak Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -73,7 +84,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Tarsus Amerikan Koleji U18",
         "played": 1,
         "won": 0,
@@ -84,7 +95,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Tarsus Gelecek Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -95,25 +106,14 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Mersin İhtisas Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
         "team": "Toroslar Belediye Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -993,11 +993,15 @@
       "match_no": "4",
       "home_team": "Toroslar Belediye Spor Kulübü U18",
       "away_team": "Mersin İhtisas Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "7-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "399641",
@@ -1158,9 +1162,9 @@
       }
     },
     {
-      "id": "mersin-20261108-009",
+      "id": "mersin-20261011-009",
       "city": "Mersin",
-      "date": "2026-11-08",
+      "date": "2026-10-11",
       "time": "10:00",
       "hall": "500 Kişilik S.S",
       "category": "Genç Kızlar 1. Ligi",
@@ -1192,9 +1196,9 @@
       }
     },
     {
-      "id": "mersin-20261108-010",
+      "id": "mersin-20261011-010",
       "city": "Mersin",
-      "date": "2026-11-08",
+      "date": "2026-10-11",
       "time": "12:00",
       "hall": "500 Kişilik S.S",
       "category": "Genç Kızlar 1. Ligi",
@@ -1226,9 +1230,9 @@
       }
     },
     {
-      "id": "mersin-20261108-011",
+      "id": "mersin-20261011-011",
       "city": "Mersin",
-      "date": "2026-11-08",
+      "date": "2026-10-11",
       "time": "14:00",
       "hall": "500 Kişilik S.S",
       "category": "Genç Kızlar 1. Ligi",
@@ -1260,9 +1264,9 @@
       }
     },
     {
-      "id": "mersin-20261108-012",
+      "id": "mersin-20261011-012",
       "city": "Mersin",
-      "date": "2026-11-08",
+      "date": "2026-10-11",
       "time": "16:00",
       "hall": "500 Kişilik S.S",
       "category": "Genç Kızlar 1. Ligi",
@@ -1295,5 +1299,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-01T20:10:47.768865"
+  "volleybox_sync_updated_at": "2026-10-01T20:41:47.459886"
 }

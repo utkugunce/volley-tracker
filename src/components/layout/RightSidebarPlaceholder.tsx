@@ -35,14 +35,14 @@ export const RightSidebarPlaceholder: React.FC<RightSidebarPlaceholderProps> = (
   if (!selectedMatch) {
     return (
       <div className="flex flex-col items-center justify-center h-full p-6 text-center select-none">
-        <div className="w-14 h-14 rounded-2xl bg-[#181A20] border border-[#2A2E3D] flex items-center justify-center text-[#64748B] mb-3 shadow-inner">
+        <div className="w-14 h-14 rounded-2xl bg-[#181A20] border border-[#2A2E3D] flex items-center justify-center text-[#94A3B8] mb-3 shadow-inner">
           <BarChart3 size={24} />
         </div>
         <h3 className="text-sm font-bold text-white mb-1">Maç Detayı</h3>
         <p className="text-xs text-[#94A3B8] max-w-[220px] mb-4">
           Detaylı set analizi, salon bilgisi ve kafa kafaya istatistikleri görüntülemek için listeden bir maça tıklayın.
         </p>
-        <span className="text-[10px] text-[#64748B] bg-[#181A20] px-2.5 py-1 rounded-full border border-[#2A2E3D]">
+        <span className="text-[10px] text-[#94A3B8] bg-[#181A20] px-2.5 py-1 rounded-full border border-[#2A2E3D]">
           Sofascore Detay Paneli
         </span>
       </div>
@@ -194,11 +194,11 @@ export const RightSidebarPlaceholder: React.FC<RightSidebarPlaceholderProps> = (
           <div className="bg-[#1E222D] rounded-lg p-2.5 text-center text-[#94A3B8] text-[11px]">
             {selectedMatch.set_scores && selectedMatch.set_scores.length > 0 ? (
               <div className="space-y-1">
-                <div className="text-[10px] text-[#64748B]">Set Ayrıntıları</div>
+                <div className="text-[10px] text-[#94A3B8]">Set Ayrıntıları</div>
                 <div className="font-mono text-white font-bold">{selectedMatch.set_scores.join(" • ")}</div>
               </div>
             ) : (
-              <span className="text-[10px] text-[#64748B]">Maç tamamlandığında set dökümü burada listelenecektir.</span>
+              <span className="text-[10px] text-[#94A3B8]">Maç tamamlandığında set dökümü burada listelenecektir.</span>
             )}
           </div>
         </div>

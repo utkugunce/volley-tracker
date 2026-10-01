@@ -126,7 +126,7 @@ export const LeftSidebarPlaceholder: React.FC<LeftSidebarPlaceholderProps> = ({
                   <Layers size={12} className="text-blue-400" />
                   <span>Tüm İller (81 İl)</span>
                 </span>
-                <span className="font-mono text-[10px] text-[#64748B]">Türkiye</span>
+                <span className="font-mono text-[10px] text-[#94A3B8]">Türkiye</span>
               </button>
 
               {popularCitySlugs.map((slug) => {
@@ -151,7 +151,7 @@ export const LeftSidebarPlaceholder: React.FC<LeftSidebarPlaceholderProps> = ({
                       <span className="truncate">{cityName}</span>
                     </span>
                     {count > 0 && (
-                      <span className="font-mono text-[10px] text-[#64748B] shrink-0">
+                      <span className="font-mono text-[10px] text-[#94A3B8] shrink-0">
                         {count}
                       </span>
                     )}

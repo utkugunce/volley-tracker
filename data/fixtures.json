@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T20:06:25.031398+03:00",
+  "updated_at": "2026-10-01T20:37:30.329948+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1460,6 +1460,24 @@
     "Genç Kızlar 1. Ligi - 5. Bölge": [
       {
         "rank": 1,
+        "team": "Bağcılar Evren",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "set_ratio": "3.000",
+        "points_won": 186,
+        "points_lost": 151,
+        "point_ratio": "1.232",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Haliç Akademi",
         "played": 1,
         "won": 1,
@@ -1471,23 +1489,6 @@
         "points_won": 75,
         "points_lost": 43,
         "point_ratio": "1.744",
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 2,
-        "team": "Bağcılar Evren",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 57,
-        "point_ratio": "1.316",
         "form": [
           "W"
         ]
@@ -1528,6 +1529,24 @@
       },
       {
         "rank": 5,
+        "team": "Sarıyer Konak Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 5,
+        "sets_lost": 5,
+        "set_ratio": "1.000",
+        "points_won": 204,
+        "points_lost": 206,
+        "point_ratio": "0.990",
+        "form": [
+          "W",
+          "L"
+        ]
+      },
+      {
+        "rank": 6,
         "team": "Atayıldız Spor U18",
         "played": 2,
         "won": 1,
@@ -1541,23 +1560,6 @@
         "point_ratio": "0.894",
         "form": [
           "L",
-          "W"
-        ]
-      },
-      {
-        "rank": 6,
-        "team": "Sarıyer Konak Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "set_ratio": "1.500",
-        "points_won": 110,
-        "points_lost": 95,
-        "point_ratio": "1.158",
-        "form": [
           "W"
         ]
       },
@@ -1670,6 +1672,24 @@
       },
       {
         "rank": 3,
+        "team": "Türk Hava Yolları SK - A U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 150,
+        "points_lost": 116,
+        "point_ratio": "1.293",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Beşiktaş U16",
         "played": 2,
         "won": 2,
@@ -1683,23 +1703,6 @@
         "point_ratio": "1.496",
         "form": [
           "W",
-          "W"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "Türk Hava Yolları SK - A U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 55,
-        "point_ratio": "1.364",
-        "form": [
           "W"
         ]
       },
@@ -1742,17 +1745,18 @@
       {
         "rank": 7,
         "team": "Silivri Çağrıbey SK U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 65,
-        "points_lost": 75,
-        "point_ratio": "0.867",
+        "points_won": 126,
+        "points_lost": 150,
+        "point_ratio": "0.840",
         "form": [
+          "L",
           "L"
         ]
       },
@@ -4978,11 +4982,17 @@
       "match_no": "7",
       "home_team": "Sarıyer Konak Spor Kulübü U18",
       "away_team": "Bağcılar Evren",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "17-25",
+        "25-23",
+        "25-23",
+        "10-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402173",
@@ -5064,11 +5074,15 @@
       "match_no": "10",
       "home_team": "Silivri Çağrıbey SK U16",
       "away_team": "Türk Hava Yolları SK - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "22-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402180",
@@ -5897,5 +5911,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-10-01T20:10:42.604474"
+  "volleybox_sync_updated_at": "2026-10-01T20:41:42.296006"
 }

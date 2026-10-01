@@ -63,7 +63,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
     return (
       <div className={`bg-[#181A20] rounded-xl border border-[#2A2E3D] p-3 text-center ${className}`}>
         <div className="text-[11px] font-semibold text-[#94A3B8]">Set Skor Matrisi</div>
-        <p className="text-[10px] text-[#64748B] mt-1">
+        <p className="text-[10px] text-[#94A3B8] mt-1">
           {match.status === "finished"
             ? "Detaylı set sayıları sisteme girilmedi."
             : "Karşılaşma başladığında set dökümü burada canlı listelenecektir."}

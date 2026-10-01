@@ -174,7 +174,7 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
       ) : (
         /* Boş Durum */
         <div className="text-center py-12 bg-[#181A20] border border-[#2A2E3D] rounded-2xl p-6 shadow-md">
-          <div className="w-12 h-12 rounded-2xl bg-[#1E222D] border border-[#2A2E3D] flex items-center justify-center mx-auto mb-3 text-[#64748B]">
+          <div className="w-12 h-12 rounded-2xl bg-[#1E222D] border border-[#2A2E3D] flex items-center justify-center mx-auto mb-3 text-[#94A3B8]">
             <SearchX size={22} />
           </div>
           <h3 className="text-sm font-bold text-white mb-1">

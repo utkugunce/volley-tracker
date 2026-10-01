@@ -50,7 +50,7 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) =
   if (!match) {
     return (
       <div className={`flex flex-col items-center justify-center h-full p-6 text-center select-none bg-[#121212] ${className}`}>
-        <div className="w-16 h-16 rounded-2xl bg-[#1E222D] border border-[#2A2E3D] flex items-center justify-center text-[#64748B] mb-3 shadow-inner">
+        <div className="w-16 h-16 rounded-2xl bg-[#1E222D] border border-[#2A2E3D] flex items-center justify-center text-[#94A3B8] mb-3 shadow-inner">
           <BarChart3 size={28} className="text-blue-400" />
         </div>
         <h3 className="text-sm font-bold text-white mb-1">
@@ -322,7 +322,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             <span className="font-semibold text-white truncate">
               {match.category} {match.group ? `• ${formatGroupName(match.group)}` : ""}
             </span>
-            <span className="text-[10px] text-[#64748B] font-mono shrink-0">
+            <span className="text-[10px] text-[#94A3B8] font-mono shrink-0">
               #{match.match_no}
             </span>
           </div>
@@ -487,7 +487,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                   >
                     <Navigation size={12} className="group-hover:translate-x-0.5 transition-transform" />
                     <span>Google Haritalarda Aç</span>
-                    <ExternalLink size={10} className="text-[#64748B]" />
+                    <ExternalLink size={10} className="text-[#94A3B8]" />
                   </a>
                 )}
               </div>
@@ -502,7 +502,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                   <div className="grid grid-cols-2 gap-2 text-[10px]">
                     {match.referee_1 && (
                       <div className="bg-[#1E222D] p-2 rounded-lg border border-[#2A2E3D]/80">
-                        <span className="text-[#64748B] block text-[9px] uppercase font-bold">
+                        <span className="text-[#94A3B8] block text-[9px] uppercase font-bold">
                           1. Hakem
                         </span>
                         <span className="text-white font-semibold truncate block mt-0.5">
@@ -512,7 +512,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                     )}
                     {match.referee_2 && (
                       <div className="bg-[#1E222D] p-2 rounded-lg border border-[#2A2E3D]/80">
-                        <span className="text-[#64748B] block text-[9px] uppercase font-bold">
+                        <span className="text-[#94A3B8] block text-[9px] uppercase font-bold">
                           2. Hakem
                         </span>
                         <span className="text-white font-semibold truncate block mt-0.5">
@@ -612,7 +612,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                     <span className="text-[#CBD5E1] font-semibold truncate max-w-[180px]">
                       {match.home_team}
                     </span>
-                    <span className="text-[#64748B] font-mono">
+                    <span className="text-[#94A3B8] font-mono">
                       {homeFormMatches.filter((f) => f.won).length}G -{" "}
                       {homeFormMatches.filter((f) => !f.won).length}M
                     </span>
@@ -634,7 +634,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                       ))}
                     </div>
                   ) : (
-                    <div className="text-[10px] text-[#64748B]">Önceki maç kaydı bulunamadı.</div>
+                    <div className="text-[10px] text-[#94A3B8]">Önceki maç kaydı bulunamadı.</div>
                   )}
                 </div>
 
@@ -644,7 +644,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                     <span className="text-[#CBD5E1] font-semibold truncate max-w-[180px]">
                       {match.away_team}
                     </span>
-                    <span className="text-[#64748B] font-mono">
+                    <span className="text-[#94A3B8] font-mono">
                       {awayFormMatches.filter((f) => f.won).length}G -{" "}
                       {awayFormMatches.filter((f) => !f.won).length}M
                     </span>
@@ -666,7 +666,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                       ))}
                     </div>
                   ) : (
-                    <div className="text-[10px] text-[#64748B]">Önceki maç kaydı bulunamadı.</div>
+                    <div className="text-[10px] text-[#94A3B8]">Önceki maç kaydı bulunamadı.</div>
                   )}
                 </div>
               </div>
@@ -790,7 +790,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                   </table>
                 </div>
               ) : (
-                <div className="p-3 text-center text-[10px] text-[#64748B]">
+                <div className="p-3 text-center text-[10px] text-[#94A3B8]">
                   Bu maçtaki takımlara ait grup puan durumu henüz bültende yer almamaktadır.
                 </div>
               )}

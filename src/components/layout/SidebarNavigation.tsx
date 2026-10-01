@@ -185,7 +185,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
               <Layers size={13} className="text-blue-400" />
               <span>Tümünü Göster</span>
             </span>
-            <span className="text-[10px] font-mono text-[#64748B]">Hepsi</span>
+            <span className="text-[10px] font-mono text-[#94A3B8]">Hepsi</span>
           </button>
 
           {/* İller Listesi (Plaka / Alfabetik Sıralı) */}
@@ -211,7 +211,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                     <div className="flex items-center gap-2 truncate">
                       <ChevronDown
                         size={12}
-                        className={`text-[#64748B] shrink-0 transform transition-transform duration-200 ${
+                        className={`text-[#94A3B8] shrink-0 transform transition-transform duration-200 ${
                           isExpanded ? "rotate-0" : "-rotate-90"
                         }`}
                       />
@@ -223,7 +223,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                       <span className="truncate text-xs">{cityNode.cityName}</span>
                     </div>
 
-                    <span className="font-mono text-[10px] text-[#64748B] shrink-0 ml-1">
+                    <span className="font-mono text-[10px] text-[#94A3B8] shrink-0 ml-1">
                       {cityNode.totalMatches}
                     </span>
                   </div>
@@ -255,14 +255,14 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                                 {cat.groups.length > 0 && (
                                   <ChevronDown
                                     size={11}
-                                    className={`text-[#64748B] shrink-0 transform transition-transform duration-200 ${
+                                    className={`text-[#94A3B8] shrink-0 transform transition-transform duration-200 ${
                                       isCatExpanded ? "rotate-0" : "-rotate-90"
                                     }`}
                                   />
                                 )}
                                 <span className="truncate">{cat.label}</span>
                               </div>
-                              <span className="text-[10px] font-mono text-[#64748B]">
+                              <span className="text-[10px] font-mono text-[#94A3B8]">
                                 {cat.matchesCount}
                               </span>
                             </div>
@@ -284,11 +284,11 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                                       className={`w-full flex items-center justify-between py-1 px-2 rounded text-[10px] font-medium text-left transition-all cursor-pointer ${
                                         isGroupSelected
                                           ? "border-l-2 border-blue-500 bg-blue-500/20 text-blue-200 font-bold"
-                                          : "text-[#64748B] hover:text-[#F1F5F9] hover:bg-[#1E222D]"
+                                          : "text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-[#1E222D]"
                                       }`}
                                     >
                                       <span className="truncate">• {group.name}</span>
-                                      <span className="font-mono text-[9px] text-[#64748B]">
+                                      <span className="font-mono text-[9px] text-[#94A3B8]">
                                         {group.matchesCount}
                                       </span>
                                     </button>

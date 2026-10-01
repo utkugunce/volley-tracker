@@ -1071,7 +1071,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               </p>
               <div className="flex items-center gap-3 text-[11px] text-[#94A3B8]">
                 <span>Fikstür & Puan Durumu</span>
-                <span className="text-[#64748B]">•</span>
+                <span className="text-[#94A3B8]">•</span>
                 <span>Sofascore Voleybol Arayüz Mimarisi</span>
               </div>
             </div>

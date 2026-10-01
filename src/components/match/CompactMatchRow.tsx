@@ -107,7 +107,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span className={`text-[9px] font-medium px-1 py-0.5 rounded ${
             discrepancy?.date_diff
               ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
-              : "text-[#64748B]"
+              : "text-[#94A3B8]"
           }`} title={discrepancy?.date_diff ? discrepancy.details || "Tarih Volleybox kaydından farklı" : undefined}>
             {match.date ? match.date.slice(5) : "Program"}
           </span>
@@ -186,7 +186,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
 
         {/* Set Puanları Sütunları (Desktop/Geniş Ekran) */}
         {parsedSets.length > 0 && (
-          <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono font-scoreboard tabular-nums pr-2.5 text-[#64748B]">
+          <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono font-scoreboard tabular-nums pr-2.5 text-[#94A3B8]">
             {parsedSets.map((set, idx) => (
               <div key={idx} className="flex flex-col items-center justify-center leading-none gap-0.5">
                 <span className={`rounded px-1 py-0.5 ${
@@ -219,7 +219,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               homeWon
                 ? "font-extrabold text-white"
                 : isFinished
-                ? "font-bold text-[#64748B]"
+                ? "font-bold text-[#94A3B8]"
                 : "font-semibold text-slate-400"
             }`}
           >
@@ -230,7 +230,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               awayWon
                 ? "font-extrabold text-white"
                 : isFinished
-                ? "font-bold text-[#64748B]"
+                ? "font-bold text-[#94A3B8]"
                 : "font-semibold text-slate-400"
             }`}
           >
@@ -248,7 +248,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
             title="Takvime ekle"
             disabled={!match.date || match.date === "TBD"}
             onClick={handleAddToCalendar}
-            className="p-1 rounded-md text-slate-500 hover:text-sky-400 disabled:opacity-30 transition-colors"
+            className="p-1 rounded-md text-slate-400 hover:text-sky-400 disabled:opacity-30 transition-colors"
           >
             <CalendarPlus size={13} />
           </button>
@@ -263,7 +263,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           className={`p-1 rounded-md transition-colors ${
             isFavorite
               ? "text-amber-400"
-              : "text-[#64748B] hover:text-amber-400 opacity-100 sm:opacity-70 sm:group-hover:opacity-100"
+              : "text-[#94A3B8] hover:text-amber-400 opacity-100 sm:opacity-70 sm:group-hover:opacity-100"
           }`}
         >
           <Star size={13} className={isFavorite ? "fill-amber-400" : ""} />

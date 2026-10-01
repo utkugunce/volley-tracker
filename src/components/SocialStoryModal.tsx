@@ -173,7 +173,7 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
     ctx.fillText(`📍  ${match.hall || "Salon Açıklanacak"}`, 540, 1390);
 
     // 10. Altbilgi / İntro Filigran
-    ctx.fillStyle = "#64748b";
+    ctx.fillStyle = "#94a3b8";
     ctx.font = "bold 26px 'Museo Sans', system-ui, sans-serif";
     ctx.fillText("volley-tracker • Resmi TVF Fikstür ve Canlı Sonuçlar", 540, 1720);
 

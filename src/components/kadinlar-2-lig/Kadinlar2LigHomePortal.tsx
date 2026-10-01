@@ -25,6 +25,7 @@ import { Match } from "@/types/fixture";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
+import { convertK2MatchToMatch } from "@/utils/kadinlar2LigConverter";
 import { Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
 
 interface Kadinlar2LigHomePortalProps {
@@ -58,40 +59,6 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
   }, []);
 
   const allMatches = useMemo(() => data.tum_maclar || [], [data.tum_maclar]);
-
-  const convertToMatch = (m: Kadinlar2LigMatch): Match => {
-    const setScores = m.set_sonuclari
-      ? m.set_sonuclari.split(",").map((s) => s.trim()).filter(Boolean)
-      : [];
-    let homeScore: number | null = null;
-    let awayScore: number | null = null;
-    if (m.skor && m.skor.includes("-") && m.skor !== "- : -") {
-      const parts = m.skor.split("-").map((s) => parseInt(s.trim(), 10));
-      if (!isNaN(parts[0]) && !isNaN(parts[1])) {
-        homeScore = parts[0];
-        awayScore = parts[1];
-      }
-    }
-    return {
-      id: m.id,
-      match_no: m.mac_no || "",
-      date: m.tarih || "",
-      time: m.saat || "",
-      hall: m.salon || "",
-      home_team: m.takim_a,
-      away_team: m.takim_b,
-      category: "Kadınlar 2. Ligi",
-      age_group: "Genç",
-      gender: "Kız",
-      group: m.grup_adi || `Grup ${m.grup_no}`,
-      city: m.sehir || "Türkiye",
-      status: m.durum === "BİTTİ" ? "finished" : "upcoming",
-      score: m.skor && m.skor !== "- : -" ? m.skor : undefined,
-      set_scores: setScores,
-      home_score: homeScore,
-      away_score: awayScore,
-    };
-  };
 
   // İstatistikler
   const stats = useMemo(() => {
@@ -267,7 +234,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             <Layers size={13} className="text-rose-400" />
             <span>16 Grup Hızlı Erişim:</span>
           </div>
-          <span className="text-[11px] text-slate-500 font-mono">
+          <span className="text-[11px] text-[#94A3B8] font-mono">
             {stats.totalTeams} Kulüp • 32 Çeyrek Finalist
           </span>
         </div>
@@ -341,7 +308,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                 return (
                   <div
                     key={m.id}
-                    onClick={() => onSelectMatch(convertToMatch(m))}
+                    onClick={() => onSelectMatch(convertK2MatchToMatch(m))}
                     className="glass-panel border border-slate-800/80 hover:border-slate-700 bg-slate-900/65 hover:bg-slate-850/90 rounded-2xl p-3.5 transition-all shadow-card hover:shadow-card-hover cursor-pointer group flex flex-col justify-between"
                   >
                     <div>
@@ -456,7 +423,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
 
                     {/* Alt Çubuk */}
                     <div className="mt-3 pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
-                      <span className="text-[10px] font-mono text-slate-500">#{m.mac_no || m.id}</span>
+                      <span className="text-[10px] font-mono text-[#94A3B8]">#{m.mac_no || m.id}</span>
                       <div className="flex items-center gap-1.5">
                         <Link
                           href={`/karsilastir?takim1=${slugify(m.takim_a)}&takim2=${slugify(m.takim_b)}`}
@@ -508,7 +475,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                 >
                   <div className="flex items-center justify-between text-[11px]">
                     <span className="font-bold text-rose-300">Grup {grp.grup_no}</span>
-                    <span className="text-[10px] font-mono text-slate-500">
+                    <span className="text-[10px] font-mono text-[#94A3B8]">
                       {grp.completedMatches}/{grp.totalMatches} Maç
                     </span>
                   </div>
