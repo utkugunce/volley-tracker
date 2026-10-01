@@ -27,8 +27,8 @@ export function LiveScoreIndicator({
       <div
         className={`flex items-center gap-1.5 px-2 py-1 rounded-full ${
           isConnected
-            ? "bg-emerald-950/80 text-emerald-400 border border-emerald-800"
-            : "bg-red-950/80 text-red-400 border border-red-800"
+            ? "bg-done/10 text-done border border-done/40"
+            : "bg-warn/10 text-warn border border-warn/40"
         }`}
       >
         {isConnected ? (

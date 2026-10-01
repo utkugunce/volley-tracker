@@ -862,7 +862,7 @@ export default function AdminPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
+              className="w-full py-2.5 px-4 rounded-xl bg-done hover:bg-done/90 text-done-fg font-semibold text-sm shadow transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
             >
               {loading ? "Giriş Yapılıyor..." : "Supabase ile Giriş Yap"}
               <ArrowRight size={16} />
@@ -925,7 +925,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab("matches")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "matches"
-                ? "bg-primary text-white shadow-sm"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
@@ -938,7 +938,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab("teams")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "teams"
-                ? "bg-primary text-white shadow-sm"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
@@ -952,7 +952,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab("audit")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "audit"
-                ? "bg-primary text-white shadow-sm"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
@@ -966,7 +966,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab("users")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "users"
-                ? "bg-primary text-white shadow-sm"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
@@ -1007,7 +1007,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab("sync")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "sync"
-                ? "bg-emerald-500 text-white shadow-sm"
+                ? "bg-done text-done-fg shadow-sm"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
@@ -1185,7 +1185,7 @@ export default function AdminPage() {
                             <td className="py-2.5 px-3 text-center whitespace-nowrap">
                               <button
                                 onClick={() => startEdit(m)}
-                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-primary text-slate-200 hover:text-white border border-slate-700 transition-all cursor-pointer"
+                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-primary text-slate-200 hover:text-primary-fg border border-slate-700 transition-all cursor-pointer"
                               >
                                 <Edit3 size={12} />
                                 Düzenle
@@ -1203,7 +1203,7 @@ export default function AdminPage() {
         ) : activeTab === "audit" ? (
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <h2 className="text-base font-bold text-white mb-4 flex items-center gap-2">
-              <History size={18} className="text-primary" />
+              <History size={18} className="text-ink-2" />
               Manuel Düzenleme Geçmişi (Audit Log)
             </h2>
 
@@ -1259,7 +1259,7 @@ export default function AdminPage() {
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2">
-                <Users size={18} className="text-primary" />
+                <Users size={18} className="text-ink-2" />
                 Takım Listesi
               </h2>
               <div className="flex items-center gap-2">
@@ -1301,7 +1301,7 @@ export default function AdminPage() {
                     className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 hover:bg-slate-700/50 transition-colors flex items-center justify-between"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center text-xs font-bold text-primary">
+                      <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center text-xs font-bold text-primary">
                         {team.charAt(0)}
                       </div>
                       <div>
@@ -1329,12 +1329,12 @@ export default function AdminPage() {
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-base font-bold text-white flex items-center gap-2">
-                <Users size={18} className="text-primary" />
+                <Users size={18} className="text-ink-2" />
                 Kullanıcı Yönetimi
               </h2>
               <button
                 onClick={() => setShowAddUserModal(true)}
-                className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                className="px-3 py-1.5 bg-primary hover:bg-primary-hover text-primary-fg font-bold rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
               >
                 <UserPlus size={13} />
                 Kullanıcı Ekle
@@ -1469,7 +1469,7 @@ export default function AdminPage() {
                       alert(`Hata: ${error.message}`);
                     }
                   }}
-                  className="px-3 py-1.5 bg-primary hover:bg-primary/90 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                  className="px-3 py-1.5 bg-primary hover:bg-primary-hover text-primary-fg font-bold rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
                 >
                   <RefreshCw size={13} />
                   İşle
@@ -1556,7 +1556,7 @@ export default function AdminPage() {
                     alert(`Hata: ${error.message}`);
                   }
                 }}
-                className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                className="px-3 py-1.5 bg-done hover:bg-done/90 text-done-fg rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
               >
                 <RefreshCw size={13} />
                 Durum Sorgula
@@ -1725,7 +1725,7 @@ export default function AdminPage() {
                 <button
                   type="submit"
                   disabled={userOperationLoading}
-                  className="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-white text-xs font-semibold shadow flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
+                  className="px-4 py-2 rounded-xl bg-primary hover:bg-primary-hover text-primary-fg font-bold text-xs font-semibold shadow flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
                 >
                   <UserPlus size={14} />
                   {userOperationLoading ? "Ekleniyor..." : "Kullanıcı Ekle"}
@@ -1903,7 +1903,7 @@ export default function AdminPage() {
                   <button
                     type="submit"
                     disabled={saveLoading}
-                    className="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-white text-xs font-semibold shadow flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
+                    className="px-4 py-2 rounded-xl bg-primary hover:bg-primary-hover text-primary-fg font-bold text-xs font-semibold shadow flex items-center gap-1.5 transition-all cursor-pointer disabled:opacity-50"
                   >
                     <Save size={14} />
                     {saveLoading ? "Kaydediliyor..." : "Kaydet (Override)"}
