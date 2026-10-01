@@ -406,7 +406,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                         {/* Skor / VS Rozeti */}
                         <div className="shrink-0 text-center px-1">
                           {isFinished ? (
-                            <span className="text-sm font-black font-mono px-2 py-0.5 rounded-lg bg-slate-950 border border-emerald-500/40 text-emerald-400 shadow-xs">
+                            <span className="text-sm font-black font-mono font-scoreboard tabular-nums px-2 py-0.5 rounded-lg bg-slate-950 border border-emerald-500/40 text-emerald-400 shadow-xs">
                               {m.skor || "3-0"}
                             </span>
                           ) : (

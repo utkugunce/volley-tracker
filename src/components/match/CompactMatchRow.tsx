@@ -78,7 +78,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
       {/* 1. Sol Kısım (60px): Saat ve Durum */}
       <div className="w-[74px] shrink-0 flex flex-col justify-center items-start leading-tight pr-1.5 border-r border-[#2A2E3D]/40">
         <span
-          className={`font-mono text-[11px] font-semibold px-1 py-0.5 rounded ${
+          className={`font-mono font-scoreboard tabular-nums text-[11px] font-semibold px-1 py-0.5 rounded ${
             discrepancy?.time_diff
               ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
               : "text-[#F1F5F9]"
@@ -186,7 +186,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
 
         {/* Set Puanları Sütunları (Desktop/Geniş Ekran) */}
         {parsedSets.length > 0 && (
-          <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono pr-2.5 text-[#64748B]">
+          <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono font-scoreboard tabular-nums pr-2.5 text-[#64748B]">
             {parsedSets.map((set, idx) => (
               <div key={idx} className="flex flex-col items-center justify-center leading-none gap-0.5">
                 <span className={`rounded px-1 py-0.5 ${
@@ -213,7 +213,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
         )}
 
         {/* Toplam Set Skoru */}
-        <div className="w-[32px] shrink-0 flex flex-col items-center justify-center font-mono leading-none gap-0.5 pl-1.5 border-l border-[#2A2E3D]/40">
+        <div className="w-[32px] shrink-0 flex flex-col items-center justify-center font-mono font-scoreboard tabular-nums leading-none gap-0.5 pl-1.5 border-l border-[#2A2E3D]/40">
           <span
             className={`text-xs ${
               homeWon

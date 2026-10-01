@@ -20,8 +20,10 @@ import { isMatchScored } from "@/utils/matchScoring";
 
 export { isMatchScored };
 
+import { TabViewSkeleton } from "@/components/common/SkeletonLoaders";
+
 const TabViewLoading = () => (
-  <div role="status" aria-label="Sekme yükleniyor" className="min-h-40 animate-pulse rounded-xl bg-slate-900/50" />
+  <TabViewSkeleton />
 );
 
 const HomePortalView = dynamic(
@@ -1093,21 +1095,10 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           </div>
         )}
 
-        {/* Shimmer Parıltılı Yükleme Efekti (Filtre / İl Değişimlerinde) */}
-        {loading && (
-          <div className="space-y-4 animate-pulse mb-6">
-            <div className="h-44 rounded-3xl bg-slate-800/40 border border-slate-700/50 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_1.5s_infinite]" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-              <div className="h-32 rounded-2xl bg-slate-800/30 border border-slate-700/40" />
-              <div className="h-32 rounded-2xl bg-slate-800/30 border border-slate-700/40" />
-            </div>
-          </div>
-        )}
-
-        {/* 3. SEÇİLEN SEKME GÖRÜNÜMÜ */}
-        {activeMainTab === "results" ? (
+        {/* 3. SEÇİLEN SEKME GÖRÜNÜMÜ VEYA İSKELET YÜKLEYİCİ (SIFIR CLS) */}
+        {loading ? (
+          <TabViewSkeleton tab={activeMainTab} />
+        ) : activeMainTab === "results" ? (
           /* ==================== SONUÇLAR SEKMESİ (SADECE BİTEN / SKORLU MAÇLAR) ==================== */
           <div>
             {/* Flashscore Yatay Tarih Şeridi (Sonuçlar Modunda - Zümrüt Yeşili Temalı) */}

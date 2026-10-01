@@ -80,11 +80,11 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
             <tr className="bg-[#1E222D] text-[#94A3B8] border-b border-[#2A2E3D] text-[10px] uppercase font-bold tracking-wider">
               <th className="py-2 px-3 text-left">Takım</th>
               {parsedSets.map((s) => (
-                <th key={s.setNum} className="py-2 px-2 text-center font-mono w-10">
+                <th key={s.setNum} className="py-2 px-2 text-center font-mono font-scoreboard tabular-nums w-10">
                   S{s.setNum}
                 </th>
               ))}
-              <th className="py-2 px-3 text-center font-mono text-white w-14">
+              <th className="py-2 px-3 text-center font-mono font-scoreboard tabular-nums text-white w-14">
                 Toplam
               </th>
             </tr>
@@ -110,7 +110,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                 </div>
               </td>
               {parsedSets.map((s) => (
-                <td key={s.setNum} className="py-2 px-2 text-center font-mono text-[11px]">
+                <td key={s.setNum} className="py-2 px-2 text-center font-mono font-scoreboard tabular-nums text-[11px]">
                   {isLive && s.setNum === parsedSets.length ? (
                     <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-semibold text-blue-300 bg-blue-500/10" title="Canlı set skoru">
                       {s.home}
@@ -124,7 +124,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                   )}
                 </td>
               ))}
-              <td className="py-2 px-3 text-center font-mono font-black text-white text-[12px] bg-[#1E222D]/30">
+              <td className="py-2 px-3 text-center font-mono font-scoreboard tabular-nums font-black text-white text-[12px] bg-[#1E222D]/30">
                 {totalHomePoints}
               </td>
             </tr>
@@ -149,7 +149,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                 </div>
               </td>
               {parsedSets.map((s) => (
-                <td key={s.setNum} className="py-2 px-2 text-center font-mono text-[11px]">
+                <td key={s.setNum} className="py-2 px-2 text-center font-mono font-scoreboard tabular-nums text-[11px]">
                   {isLive && s.setNum === parsedSets.length ? (
                     <span className="inline-block min-w-[22px] px-1.5 py-0.5 rounded font-semibold text-blue-300 bg-blue-500/10" title="Canlı set skoru">
                       {s.away}
@@ -163,7 +163,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                   )}
                 </td>
               ))}
-              <td className="py-2 px-3 text-center font-mono font-black text-white text-[12px] bg-[#1E222D]/30">
+              <td className="py-2 px-3 text-center font-mono font-scoreboard tabular-nums font-black text-white text-[12px] bg-[#1E222D]/30">
                 {totalAwayPoints}
               </td>
             </tr>
@@ -176,11 +176,11 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                   <span>Süre</span>
                 </td>
                 {parsedSets.map((s, idx) => (
-                  <td key={s.setNum} className="py-1.5 px-2 text-center font-mono text-[10px]">
+                  <td key={s.setNum} className="py-1.5 px-2 text-center font-mono font-scoreboard tabular-nums text-[10px]">
                     {durations?.[idx] || "-"}
                   </td>
                 ))}
-                <td className="py-1.5 px-3 text-center font-mono font-semibold text-amber-300 text-[10px] bg-[#1E222D]/40">
+                <td className="py-1.5 px-3 text-center font-mono font-scoreboard tabular-nums font-semibold text-amber-300 text-[10px] bg-[#1E222D]/40">
                   {totalDurationStr || "-"}
                 </td>
               </tr>

@@ -200,11 +200,11 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
           {isFinished ? (
             <div className="flex flex-col items-center gap-1.5">
               <div className="flex items-center gap-2">
-                <span className={`text-3xl sm:text-4xl font-mono font-black ${homeWon ? "text-white" : "text-slate-400"}`}>
+                <span className={`text-3xl sm:text-4xl font-mono font-scoreboard tabular-nums font-black ${homeWon ? "text-white" : "text-slate-400"}`}>
                   {featuredMatch.home_score ?? 0}
                 </span>
-                <span className="text-xl sm:text-2xl font-mono font-bold text-slate-600">-</span>
-                <span className={`text-3xl sm:text-4xl font-mono font-black ${awayWon ? "text-white" : "text-slate-400"}`}>
+                <span className="text-xl sm:text-2xl font-mono font-scoreboard tabular-nums font-bold text-slate-600">-</span>
+                <span className={`text-3xl sm:text-4xl font-mono font-scoreboard tabular-nums font-black ${awayWon ? "text-white" : "text-slate-400"}`}>
                   {featuredMatch.away_score ?? 0}
                 </span>
               </div>
@@ -213,7 +213,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
                   {featuredMatch.set_scores.map((set, idx) => (
                     <span
                       key={idx}
-                      className="px-2 py-0.5 rounded-md text-[11px] font-mono font-bold bg-slate-950/80 text-slate-300 border border-slate-800"
+                      className="px-2 py-0.5 rounded-md text-[11px] font-mono font-scoreboard tabular-nums font-bold bg-slate-950/80 text-slate-300 border border-slate-800"
                     >
                       {set}
                     </span>
@@ -232,7 +232,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
                 VS
               </div>
               <div className="text-center mt-1">
-                <div className="text-sm sm:text-base font-mono font-black text-slate-200">
+                <div className="text-sm sm:text-base font-mono font-scoreboard tabular-nums font-black text-slate-200">
                   {featuredMatch.time === "--:--" ? "Saat TBD" : featuredMatch.time}
                 </div>
                 <div className="text-[11px] font-medium text-slate-400">

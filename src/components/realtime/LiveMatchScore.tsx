@@ -67,7 +67,7 @@ export function LiveMatchScore({
 
       {/* Main Score */}
       {(homeScore !== null || awayScore !== null) && (
-        <div className="flex items-center gap-2 font-mono font-bold text-lg">
+        <div className="flex items-center gap-2 font-mono font-scoreboard tabular-nums font-bold text-lg">
           <span className="text-white">{homeScore ?? 0}</span>
           <span className="text-slate-500">-</span>
           <span className="text-white">{awayScore ?? 0}</span>
@@ -76,7 +76,7 @@ export function LiveMatchScore({
 
       {/* Set Scores */}
       {setScores && setScores.length > 0 && (
-        <div className="flex items-center gap-1 text-xs font-mono text-slate-400">
+        <div className="flex items-center gap-1 text-xs font-mono font-scoreboard tabular-nums text-slate-400">
           {setScores.map((set, index) => (
             <span key={index} className="px-1.5 py-0.5 bg-slate-800 rounded">
               {set}

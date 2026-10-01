@@ -428,7 +428,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     <div className="flex items-center justify-center">
                       {isFinished ? (
                         <div className="inline-flex flex-col items-center">
-                          <span className="inline-block px-2.5 py-0.5 rounded-lg font-mono font-black text-xs bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-wider">
+                          <span className="inline-block px-2.5 py-0.5 rounded-lg font-mono font-scoreboard tabular-nums font-black text-xs bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-wider">
                             {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
                               ? `${match.home_score} - ${match.away_score}`
                               : match.score || "- : -"}
@@ -481,7 +481,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                           return (
                             <span
                               key={sIdx}
-                              className={`font-mono text-[10px] px-1.5 py-0.5 rounded-md border font-bold shadow-2xs ${
+                              className={`font-mono font-scoreboard tabular-nums text-[10px] px-1.5 py-0.5 rounded-md border font-bold shadow-2xs ${
                                 isHomeSet
                                   ? "bg-rose-950/50 text-rose-200 border-rose-800/60"
                                   : "bg-slate-900/90 text-slate-300 border-slate-700/60"
@@ -732,7 +732,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         }`}
                       />
                     </div>
-                    <div className="shrink-0 font-mono text-sm font-black">
+                    <div className="shrink-0 font-mono font-scoreboard tabular-nums text-sm font-black">
                       {isFinished ? (
                         <span
                           className={`inline-flex items-center justify-center min-w-[26px] h-6 px-1.5 rounded-lg text-xs font-black ${
@@ -770,7 +770,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         }`}
                       />
                     </div>
-                    <div className="shrink-0 font-mono text-sm font-black">
+                    <div className="shrink-0 font-mono font-scoreboard tabular-nums text-sm font-black">
                       {isFinished ? (
                         <span
                           className={`inline-flex items-center justify-center min-w-[26px] h-6 px-1.5 rounded-lg text-xs font-black ${
@@ -797,7 +797,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         return (
                           <span
                             key={sIdx}
-                            className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border shadow-xs ${
+                            className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-scoreboard tabular-nums font-bold border shadow-xs ${
                               isHomeSet
                                 ? "bg-red-950/40 text-red-200 border-red-800/50"
                                 : "bg-slate-900/90 text-slate-300 border-slate-700/60"

@@ -181,7 +181,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                 <div className="col-span-1 flex flex-col items-center justify-center">
                   {isFinished ? (
                     <div className="flex flex-col items-center">
-                      <div className="px-3 py-1.5 rounded-2xl bg-slate-950/90 border border-slate-800 shadow-lg text-center font-scoreboard">
+                      <div className="px-3 py-1.5 rounded-2xl bg-slate-950/90 border border-slate-800 shadow-lg text-center font-mono font-scoreboard tabular-nums">
                         <span className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                           {match.home_score ?? 0} : {match.away_score ?? 0}
                         </span>
@@ -244,7 +244,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                       return (
                         <div
                           key={idx}
-                          className={`px-3 py-1.5 rounded-xl border text-xs font-mono font-bold shadow-xs flex flex-col items-center min-w-[64px] ${
+                          className={`px-3 py-1.5 rounded-xl border text-xs font-mono font-scoreboard tabular-nums font-bold shadow-xs flex flex-col items-center min-w-[64px] ${
                             isHomeSet
                               ? "bg-red-950/60 text-red-200 border-red-800/80"
                               : "bg-slate-900 text-slate-200 border-slate-700"

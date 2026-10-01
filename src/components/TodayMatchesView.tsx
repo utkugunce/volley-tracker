@@ -382,7 +382,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
             ) : (
               <span className="px-2 py-0.5 rounded-full text-[10px] font-black tracking-wide bg-sky-950/90 text-sky-300 border border-sky-500/40 flex items-center gap-1 shadow-xs">
                 <Clock size={10} className="text-sky-400" />
-                <span className="font-mono">{m.time}</span>
+                <span className="font-mono font-scoreboard tabular-nums">{m.time}</span>
               </span>
             )}
             <button
@@ -418,7 +418,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 }`}
               />
             </div>
-            <div className="shrink-0 font-mono text-base font-black">
+            <div className="shrink-0 font-mono font-scoreboard tabular-nums text-base font-black">
               {isFinished ? (
                 <span
                   className={`inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-lg text-sm transition-all ${
@@ -454,7 +454,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 }`}
               />
             </div>
-            <div className="shrink-0 font-mono text-base font-black">
+            <div className="shrink-0 font-mono font-scoreboard tabular-nums text-base font-black">
               {isFinished ? (
                 <span
                   className={`inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-lg text-sm transition-all ${
@@ -478,7 +478,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               {m.set_scores.map((set, sIdx) => (
                 <span
                   key={sIdx}
-                  className="px-2 py-0.5 rounded-md bg-slate-900/90 text-slate-200 text-[10px] font-mono font-bold border border-slate-700/60 shadow-xs"
+                  className="px-2 py-0.5 rounded-md bg-slate-900/90 text-slate-200 text-[10px] font-mono font-scoreboard tabular-nums font-bold border border-slate-700/60 shadow-xs"
                 >
                   {set}
                 </span>

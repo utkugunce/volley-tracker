@@ -391,7 +391,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             {/* Skor / VS */}
             <div className="col-span-1 flex flex-col items-center justify-center">
               {isFinished || isLive ? (
-                <div className="px-2.5 py-1 rounded-xl bg-[#12141A] border border-[#2A2E3D] shadow-inner text-center font-mono">
+                <div className="px-2.5 py-1 rounded-xl bg-[#12141A] border border-[#2A2E3D] shadow-inner text-center font-mono font-scoreboard tabular-nums">
                   <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
                     {homeScore} : {awayScore}
                   </span>

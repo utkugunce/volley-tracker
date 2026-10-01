@@ -754,7 +754,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                         />
                         <div className="flex items-center justify-center gap-0.5 sm:gap-1">
                           <span
-                            className={`font-mono ${
+                            className={`font-mono font-scoreboard tabular-nums ${
                               isTop1
                                 ? "text-amber-300 font-black text-xs sm:text-sm"
                                 : isPlayoff
@@ -814,35 +814,35 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       </td>
 
                       {/* O */}
-                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-slate-300 font-medium font-mono text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-slate-300 font-medium font-mono font-scoreboard tabular-nums text-[11px] sm:text-xs">
                         {row.played}
                       </td>
 
                       {/* G */}
-                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-emerald-400 font-bold font-mono text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-emerald-400 font-bold font-mono font-scoreboard tabular-nums text-[11px] sm:text-xs">
                         {row.won}
                       </td>
 
                       {/* M */}
-                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-rose-400 font-medium font-mono text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-rose-400 font-medium font-mono font-scoreboard tabular-nums text-[11px] sm:text-xs">
                         {row.lost}
                       </td>
 
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-emerald-300 text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-emerald-300 text-[11px] sm:text-xs">
                         {row.sets_won}
                       </td>
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-rose-300 text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-rose-300 text-[11px] sm:text-xs">
                         {row.sets_lost}
                       </td>
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-300 text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-slate-300 text-[11px] sm:text-xs">
                         {row.set_ratio}
                       </td>
 
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono text-slate-300 text-[11px] sm:text-xs">
+                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-slate-300 text-[11px] sm:text-xs">
                         {row.point_ratio}
                       </td>
 
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-mono font-black text-xs sm:text-sm text-white border-x border-slate-800/60 shadow-inner">
+                      <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm text-white border-x border-slate-800/60 shadow-inner">
                         {row.points}
                       </td>
 

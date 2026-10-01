@@ -623,7 +623,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
               </span>
             </div>
             {hasScore && (
-              <span className="font-mono font-black text-xs sm:text-sm text-emerald-400 pl-2">
+              <span className="font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm text-emerald-400 pl-2">
                 {homeScore}
               </span>
             )}
@@ -638,7 +638,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
               </span>
             </div>
             {hasScore && (
-              <span className="font-mono font-black text-xs sm:text-sm text-emerald-400 pl-2">
+              <span className="font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm text-emerald-400 pl-2">
                 {awayScore}
               </span>
             )}
@@ -649,13 +649,13 @@ const MatchRow: React.FC<MatchRowProps> = ({
         <div className="flex flex-col items-end justify-center shrink-0 min-w-[70px]">
           {hasScore ? (
             <div className="text-right">
-              <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-950/80 border border-emerald-600/50 font-mono font-bold text-xs text-emerald-300">
+              <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-950/80 border border-emerald-600/50 font-mono font-scoreboard tabular-nums font-bold text-xs text-emerald-300">
                 <span>{homeScore}</span>
                 <span>:</span>
                 <span>{awayScore}</span>
               </div>
               {match.set_scores && match.set_scores.length > 0 && (
-                <div className="text-[9px] font-mono text-slate-400 mt-1 max-w-[110px] truncate text-right">
+                <div className="text-[9px] font-mono font-scoreboard tabular-nums text-slate-400 mt-1 max-w-[110px] truncate text-right">
                   {match.set_scores.join(", ")}
                 </div>
               )}
