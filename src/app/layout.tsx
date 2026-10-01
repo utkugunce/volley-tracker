@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const viewport: Viewport = {
   themeColor: "#dc2626",
@@ -96,6 +97,7 @@ gtag('js', new Date());
 gtag('config', 'G-S5FYXCW2LC');`}
         </Script>
         <Analytics />
+        <SpeedInsights />
         <ServiceWorkerRegister />
       </body>
     </html>
