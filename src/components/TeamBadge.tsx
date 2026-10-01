@@ -27,62 +27,48 @@ const PIXEL_MAP = {
   xl: 80,
 };
 
-// Takım adına göre tutarlı renk paleti (Deterministic Color Hashing)
-function getTeamColor(name: string = ""): { bg: string; border: string; text: string } {
+// Takım kimliği: Fileönü yüzeyi (koyu, düz) + marka renginde ince halka.
+// Metin HER ZAMAN `text-ink` (#EAF6FA) ve zemin koyu yüzey tonudur (≥ 10:1);
+// marka rengi yalnız metin DIŞI bir öğede (halka) kullanılır → okunurluk markadan bağımsız.
+export interface TeamPalette {
+  bg: string;
+  border: string;
+  text: string;
+  /** Logo görseli için kontrastlı açık plaka (koyu/kırmızı logolar koyu yüzeyde kaybolmasın). */
+  plate: boolean;
+}
+
+export function getTeamColor(name: string = ""): TeamPalette {
   const safeName = name || "";
   const lower = trLower(safeName);
 
-  if (lower.includes("fenerbahçe")) {
-    return {
-      bg: "bg-gradient-to-br from-yellow-400 via-blue-900 to-blue-950",
-      border: "border-yellow-400/70",
-      text: "text-yellow-300",
-    };
+  if (lower.includes("fenerbahçe") || lower.includes("fenerbahce")) {
+    return { bg: "bg-blue-950", border: "border-yellow-400", text: "text-ink", plate: true };
   }
   if (lower.includes("vakıfbank") || lower.includes("vakifbank")) {
-    return {
-      bg: "bg-gradient-to-br from-yellow-500 via-amber-700 to-slate-950",
-      border: "border-yellow-500/80",
-      text: "text-amber-200",
-    };
+    return { bg: "bg-surface-raised", border: "border-yellow-400", text: "text-ink", plate: true };
   }
   if (lower.includes("eczacıbaşı") || lower.includes("eczacibasi")) {
-    return {
-      bg: "bg-gradient-to-br from-orange-500 via-red-700 to-slate-950",
-      border: "border-orange-500/80",
-      text: "text-orange-200",
-    };
+    return { bg: "bg-surface-raised", border: "border-orange-400", text: "text-ink", plate: true };
   }
   if (lower.includes("galatasaray")) {
-    return {
-      bg: "bg-gradient-to-br from-amber-500 via-red-800 to-red-950",
-      border: "border-red-500/80",
-      text: "text-amber-200",
-    };
+    return { bg: "bg-surface-raised", border: "border-red-400", text: "text-ink", plate: true };
   }
   if (lower.includes("beşiktaş") || lower.includes("besiktas")) {
-    return {
-      bg: "bg-gradient-to-br from-slate-200 via-slate-800 to-black",
-      border: "border-slate-300/80",
-      text: "text-white",
-    };
+    return { bg: "bg-surface-raised", border: "border-slate-200", text: "text-ink", plate: true };
   }
   if (lower.includes("thy") || lower.includes("türk hava yolları")) {
-    return {
-      bg: "bg-gradient-to-br from-red-600 via-rose-900 to-slate-950",
-      border: "border-red-500/70",
-      text: "text-white",
-    };
+    return { bg: "bg-surface-raised", border: "border-red-400", text: "text-ink", plate: true };
   }
 
-  // Genel takımlar için metin hash'i ile estetik spor gradyanları
-  const PALETTES = [
-    { bg: "bg-gradient-to-br from-red-600 to-rose-950", border: "border-red-500/50", text: "text-red-100" },
-    { bg: "bg-gradient-to-br from-sky-500 to-indigo-950", border: "border-sky-500/50", text: "text-sky-100" },
-    { bg: "bg-gradient-to-br from-emerald-500 to-teal-950", border: "border-emerald-500/50", text: "text-emerald-100" },
-    { bg: "bg-gradient-to-br from-purple-500 to-indigo-950", border: "border-purple-500/50", text: "text-purple-100" },
-    { bg: "bg-gradient-to-br from-amber-500 to-orange-950", border: "border-amber-500/50", text: "text-amber-100" },
-    { bg: "bg-gradient-to-br from-teal-500 to-slate-950", border: "border-teal-500/50", text: "text-teal-100" },
+  // Genel takımlar: nötr/serin halkalar (kırmızı = CANLI, kehribar = favori/uyarı anlamına ayrıldı)
+  const PALETTES: TeamPalette[] = [
+    { bg: "bg-blue-950", border: "border-blue-400", text: "text-ink", plate: false },
+    { bg: "bg-teal-950", border: "border-teal-400", text: "text-ink", plate: false },
+    { bg: "bg-purple-950", border: "border-purple-400", text: "text-ink", plate: false },
+    { bg: "bg-surface-raised", border: "border-slate-300", text: "text-ink", plate: false },
+    { bg: "bg-teal-950", border: "border-teal-600", text: "text-ink", plate: false },
+    { bg: "bg-blue-950", border: "border-slate-400", text: "text-ink", plate: false },
   ];
 
   let hash = 0;
@@ -122,7 +108,9 @@ export const TeamBadge: React.FC<TeamBadgeProps> = ({
   if (logoUrl && !imgFailed) {
     return (
       <div
-        className={`relative shrink-0 flex items-center justify-center rounded-full overflow-hidden ${sizeClass} ${className}`}
+        className={`relative shrink-0 flex items-center justify-center rounded-full overflow-hidden ${
+          palette.plate ? `bg-ink border-2 ${palette.border} p-0.5` : ""
+        } ${sizeClass} ${className}`}
       >
         <Image
           src={logoUrl}
@@ -140,13 +128,13 @@ export const TeamBadge: React.FC<TeamBadgeProps> = ({
   // Şık spor rozet/arması fallback'i
   return (
     <div
-      className={`relative shrink-0 flex items-center justify-center rounded-full font-black tracking-tight select-none border shadow-md ${palette.bg} ${palette.border} ${palette.text} ${sizeClass} ${className}`}
+      className={`relative shrink-0 flex items-center justify-center rounded-full font-black tracking-tight select-none border-2 shadow-md ${palette.bg} ${palette.border} ${palette.text} ${sizeClass} ${className}`}
       title={name}
       aria-label={`${name} rozeti`}
     >
       <span className="drop-shadow-xs">{initials}</span>
       {/* İnce iç parıltı çemberi */}
-      <div className="absolute inset-0 rounded-full border border-white/20 pointer-events-none" />
+      <div className="absolute inset-0 rounded-full border border-ink/10 pointer-events-none" />
     </div>
   );
 };

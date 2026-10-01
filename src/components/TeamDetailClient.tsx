@@ -35,62 +35,30 @@ import { TeamRosterView } from "@/components/TeamRosterView";
 import { trLower } from "@/utils/turkishLocale";
 import { getLeagueStandingsRoute, getLeagueFixtureRoute } from "@/utils/leagueRoutes";
 
+// Marka kimliği: zemin Fileönü yüzeyi kalır; kulüp rengi yalnız ince çerçeve + düşük opaklıklı
+// dekoratif ışıma (metin içermez) ile verilir. Logo, kontrastlı açık plakada gösterilir (`logoPlate`).
 const getClubBrandColors = (teamName: string, is2Lig: boolean = false) => {
   const lower = trLower(teamName);
+  const base = "from-canvas via-surface-muted to-panel";
   if (lower.includes("fenerbahçe")) {
-    return {
-      glowHome: "bg-yellow-400/20",
-      glowAway: "bg-blue-600/25",
-      accentBorder: "border-yellow-500/40",
-      gradient: "from-blue-950/80 via-slate-900 to-amber-950/40",
-    };
+    return { glowHome: "bg-yellow-400/10", glowAway: "bg-blue-400/10", accentBorder: "border-yellow-400/50", gradient: base, logoPlate: true };
   }
   if (lower.includes("vakıfbank")) {
-    return {
-      glowHome: "bg-yellow-400/25",
-      glowAway: "bg-amber-600/20",
-      accentBorder: "border-yellow-500/40",
-      gradient: "from-yellow-950/50 via-slate-900 to-slate-950",
-    };
+    return { glowHome: "bg-yellow-400/10", glowAway: "bg-slate-400/10", accentBorder: "border-yellow-400/50", gradient: base, logoPlate: true };
   }
   if (lower.includes("eczacıbaşı")) {
-    return {
-      glowHome: "bg-orange-500/25",
-      glowAway: "bg-rose-600/20",
-      accentBorder: "border-orange-500/40",
-      gradient: "from-orange-950/50 via-slate-900 to-slate-950",
-    };
+    return { glowHome: "bg-orange-400/10", glowAway: "bg-slate-400/10", accentBorder: "border-orange-400/50", gradient: base, logoPlate: true };
   }
   if (lower.includes("galatasaray")) {
-    return {
-      glowHome: "bg-amber-500/25",
-      glowAway: "bg-red-600/25",
-      accentBorder: "border-red-500/40",
-      gradient: "from-red-950/50 via-slate-900 to-amber-950/40",
-    };
+    return { glowHome: "bg-red-400/10", glowAway: "bg-yellow-400/10", accentBorder: "border-red-400/50", gradient: base, logoPlate: true };
   }
   if (lower.includes("beşiktaş")) {
-    return {
-      glowHome: "bg-white/15",
-      glowAway: "bg-slate-700/30",
-      accentBorder: "border-slate-500/40",
-      gradient: "from-slate-800/60 via-slate-900 to-slate-950",
-    };
+    return { glowHome: "bg-white/10", glowAway: "bg-slate-400/10", accentBorder: "border-slate-300/50", gradient: base, logoPlate: true };
   }
   if (is2Lig) {
-    return {
-      glowHome: "bg-fuchsia-600/20",
-      glowAway: "bg-purple-600/15",
-      accentBorder: "border-fuchsia-500/35",
-      gradient: "from-purple-950/50 via-surface-muted to-canvas/60",
-    };
+    return { glowHome: "bg-orchid/10", glowAway: "bg-purple-400/10", accentBorder: "border-orchid/35", gradient: base, logoPlate: false };
   }
-  return {
-    glowHome: "bg-primary/15",
-    glowAway: "bg-selected/10",
-    accentBorder: "border-primary/30",
-    gradient: "from-canvas via-surface-muted to-panel",
-  };
+  return { glowHome: "bg-primary/15", glowAway: "bg-selected/10", accentBorder: "border-primary/30", gradient: base, logoPlate: false };
 };
 
 const WinLossDonut: React.FC<{ wins: number; losses: number }> = ({ wins, losses }) => {
@@ -270,7 +238,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
 
           <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
             {/* Logo (Cut-out) */}
-            <div className="w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center shrink-0 drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]">
+            <div className={`w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center shrink-0 ${brand.logoPlate ? `rounded-2xl bg-ink border-2 ${brand.accentBorder} p-2.5` : "drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]"}`}>
               {logoSrc ? (
                 <Image
                   src={logoSrc}
