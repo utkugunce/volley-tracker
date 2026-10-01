@@ -121,7 +121,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
           {/* 1. Üst Bar: Kategori & Kapat */}
           <div className="px-4 sm:px-6 py-3.5 bg-slate-950/80 border-b border-slate-800/80 flex items-center justify-between gap-3 shrink-0">
             <div className="flex items-center gap-2 min-w-0">
-              <span className="px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-red-600/20 text-red-400 border border-red-500/30">
+              <span className="px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-surface-raised text-ink-2 border border-line">
                 TVF {effectiveCity}
               </span>
               <h3 className="text-xs font-bold text-slate-300 truncate">
@@ -146,18 +146,18 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
             {/* Büyük Skorboard */}
             <div className="rounded-3xl bg-gradient-to-b from-slate-900/90 via-surface-muted/90 to-slate-950 border border-slate-800/90 p-5 shadow-card relative overflow-hidden">
               {/* Arka Plan Ambient Glow */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-red-600/10 blur-3xl pointer-events-none" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-primary/10 blur-3xl pointer-events-none" />
 
               {/* Maç Durumu Rozeti */}
               <div className="flex items-center justify-center mb-4">
                 {isFinished ? (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-600/50 shadow-xs">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-done/10 text-done border border-done/40 shadow-xs">
+                    <span className="w-2 h-2 rounded-full bg-done" />
                     Maç Tamamlandı
                   </span>
                 ) : match.status === "live" ? (
-                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-red-950/90 text-red-300 border border-red-500 shadow-glow-red animate-pulse">
-                    <Flame size={12} className="text-red-400" />
+                  <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-live/15 text-live border border-live/50 animate-pulse">
+                    <Flame size={12} className="text-live" />
                     CANLI MAÇ
                   </span>
                 ) : (
@@ -251,7 +251,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                           key={idx}
                           className={`px-3 py-1.5 rounded-xl border text-xs font-mono font-scoreboard tabular-nums font-bold shadow-xs flex flex-col items-center min-w-[64px] ${
                             isHomeSet
-                              ? "bg-red-950/60 text-red-200 border-red-800/80"
+                              ? "bg-surface-raised text-ink-2 border-line"
                               : "bg-slate-900 text-slate-200 border-slate-700"
                           }`}
                         >
@@ -270,7 +270,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
             {/* Salon & Yol Tarifi */}
             <div className="rounded-2xl bg-slate-900/60 border border-slate-800/80 p-4 space-y-3">
               <div className="flex items-center gap-2 text-xs font-bold text-slate-300 uppercase tracking-wider">
-                <MapPin size={14} className="text-red-400" />
+                <MapPin size={14} className="text-ink-2" />
                 <span>Salon ve Konum Bilgisi</span>
               </div>
 
@@ -288,7 +288,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                     href={getHallNavigationUrl(match.hall, effectiveCity)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition-all shadow-glow-red shrink-0 cursor-pointer active:scale-95"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-primary hover:bg-primary-hover text-primary-fg text-xs font-bold transition-all shadow-glow-primary shrink-0 cursor-pointer active:scale-95"
                   >
                     <Navigation size={13} />
                     <span>Yol Tarifi</span>
@@ -352,7 +352,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
           <div className="p-4 bg-slate-950 border-t border-slate-800 grid grid-cols-3 gap-2 shrink-0">
             <button
               onClick={() => setShowStoryModal(true)}
-              className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white text-xs font-bold shadow-glow-red hover:from-red-500 hover:to-rose-500 transition-all active:scale-95 cursor-pointer"
+              className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-primary hover:bg-primary-hover text-primary-fg text-xs font-bold shadow-glow-primary transition-all active:scale-95 cursor-pointer"
               title="Instagram/WhatsApp Story için görsel oluştur"
             >
               <Share2 size={14} />

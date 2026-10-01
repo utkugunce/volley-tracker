@@ -245,7 +245,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
                     {item.type === "team" ? (
                       <TeamBadge name={item.title} logoUrl={item.logo} size="sm" />
                     ) : item.type === "hall" ? (
-                      <div className="w-7 h-7 rounded-full bg-red-500/15 text-red-400 flex items-center justify-center shrink-0 border border-red-500/30">
+                      <div className="w-7 h-7 rounded-full bg-primary/15 text-primary flex items-center justify-center shrink-0 border border-primary/30">
                         <MapPin size={13} />
                       </div>
                     ) : item.type === "city" ? (

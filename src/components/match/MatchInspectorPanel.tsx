@@ -337,7 +337,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
               <span className="truncate">{match.time || "Program"}</span>
             </div>
             <div className="col-span-2 flex items-center gap-1.5 text-slate-200">
-              <MapPin size={12} className="text-rose-400 shrink-0" />
+              <MapPin size={12} className="text-ink-2 shrink-0" />
               <span className="truncate">{match.hall || "Salon Açıklanacak"}</span>
             </div>
           </div>
@@ -351,11 +351,11 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
           {/* Maç Durumu Rozeti */}
           <div className="flex items-center justify-center">
             {isLive ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-red-950/80 text-red-300 border border-red-600/60 animate-pulse">
-                <Flame size={12} className="text-red-400" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-live/15 text-live border border-live/50 animate-pulse">
+                <Flame size={12} className="text-live" />
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-live opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-live" />
                 </span>
                 <span>{statusLabel}</span>
               </span>
@@ -468,7 +468,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
               <div className="bg-surface-muted rounded-xl border border-line p-3 space-y-2">
                 <div className="flex items-center justify-between text-[11px] font-bold text-white">
                   <span className="flex items-center gap-1.5">
-                    <MapPin size={13} className="text-rose-400" />
+                    <MapPin size={13} className="text-ink-2" />
                     <span>Müsabaka Salonu</span>
                   </span>
                   <span className="text-[10px] text-ink-2 font-normal">
@@ -565,7 +565,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                       <span>Kopyalandı! ✓</span>
                     </>
                   ) : (
-                    <span className="text-rose-400">Kopyalanamadı</span>
+                    <span className="text-live">Kopyalanamadı</span>
                   ) : (
                     <>
                       <Copy size={12} className="text-blue-400" />
@@ -584,7 +584,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                       <span>Kopyalandı! ✓</span>
                     </>
                   ) : (
-                    <span className="text-rose-400">Kopyalanamadı</span>
+                    <span className="text-live">Kopyalanamadı</span>
                   ) : (
                     <>
                       <Link2 size={12} className="text-blue-400" />
@@ -625,8 +625,8 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                           title={`${f.date}: ${f.resultScore} vs ${f.opponent}`}
                           className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold font-mono transition-transform hover:scale-110 ${
                             f.won
-                              ? "bg-emerald-600/30 text-emerald-300 border border-emerald-500/40"
-                              : "bg-rose-600/30 text-rose-300 border border-rose-500/40"
+                              ? "bg-transparent text-done border border-done"
+                              : "bg-transparent text-form-loss border border-form-loss"
                           }`}
                         >
                           {f.won ? "G" : "M"}
@@ -657,8 +657,8 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                           title={`${f.date}: ${f.resultScore} vs ${f.opponent}`}
                           className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold font-mono transition-transform hover:scale-110 ${
                             f.won
-                              ? "bg-emerald-600/30 text-emerald-300 border border-emerald-500/40"
-                              : "bg-rose-600/30 text-rose-300 border border-rose-500/40"
+                              ? "bg-transparent text-done border border-done"
+                              : "bg-transparent text-form-loss border border-form-loss"
                           }`}
                         >
                           {f.won ? "G" : "M"}
@@ -777,7 +777,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                             <td className="py-1.5 px-1.5 text-center font-mono text-[10px] text-emerald-400">
                               {item.won}
                             </td>
-                            <td className="py-1.5 px-1.5 text-center font-mono text-[10px] text-rose-400">
+                            <td className="py-1.5 px-1.5 text-center font-mono text-[10px] text-form-loss">
                               {item.lost}
                             </td>
                             <td className="py-1.5 px-2 text-center font-mono font-bold text-white text-[11px] bg-panel/30">

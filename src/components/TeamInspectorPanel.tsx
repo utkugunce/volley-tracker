@@ -113,7 +113,7 @@ export const TeamInspectorPanel: React.FC<TeamInspectorPanelProps> = ({
             <span>Son 5 form</span>
             <div className="ml-auto flex items-center gap-1">
               {(team.form || []).slice(-5).map((result, index) => (
-                <span key={`${result}-${index}`} className={`flex h-5 w-5 items-center justify-center rounded text-[9px] font-bold text-white ${result === "W" ? "bg-emerald-600" : "bg-rose-600"}`}>
+                <span key={`${result}-${index}`} className={`flex h-5 w-5 items-center justify-center rounded text-[9px] font-bold bg-transparent border ${result === "W" ? "text-done border-done" : "text-form-loss border-form-loss"}`}>
                   {result === "W" ? "G" : "M"}
                 </span>
               ))}

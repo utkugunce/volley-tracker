@@ -43,8 +43,8 @@ export const FormBadge: React.FC<FormBadgeProps> = ({
             title={tooltip}
             className={`w-6 h-6 rounded-lg text-xs font-black font-mono flex items-center justify-center transition-transform hover:scale-115 cursor-help shadow-xs ${
               isWin
-                ? "bg-emerald-500/25 text-emerald-300 border border-emerald-500/50 shadow-glow-emerald"
-                : "bg-rose-500/25 text-rose-300 border border-rose-500/50"
+                ? "bg-transparent text-done border border-done"
+                : "bg-transparent text-form-loss border border-form-loss"
             }`}
           >
             {label}

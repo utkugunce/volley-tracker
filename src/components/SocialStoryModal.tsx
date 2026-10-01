@@ -35,157 +35,180 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
     canvas.width = 1080;
     canvas.height = 1920;
 
-    const FONT_BODY = "var(--font-manrope), 'Manrope', system-ui, -apple-system, sans-serif";
-    const FONT_NUM = "var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif";
+    // Canvas `ctx.font` içinde CSS var() çözülmez: next/font'un gerçek aile adını oku.
+    const cs = getComputedStyle(document.documentElement);
+    const FONT_BODY = `${cs.getPropertyValue("--font-manrope").trim() || "Manrope"}, system-ui, sans-serif`;
+    const FONT_NUM = `${cs.getPropertyValue("--font-space-grotesk").trim() || "Space Grotesk"}, system-ui, sans-serif`;
 
-    // 1. Zemin: Derin Koyu Gradyan
-    const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
-    bgGrad.addColorStop(0, "#07131F");
-    bgGrad.addColorStop(0.35, "#0E2033");
-    bgGrad.addColorStop(0.7, "#0A1A2B");
-    bgGrad.addColorStop(1, "#07131F");
-    ctx.fillStyle = bgGrad;
-    ctx.fillRect(0, 0, 1080, 1920);
+    let cancelled = false;
+    const draw = () => {
+      if (cancelled) return;
+      // 1. Zemin: Derin Koyu Gradyan
+      const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
+      bgGrad.addColorStop(0, "#07131F");
+      bgGrad.addColorStop(0.35, "#0E2033");
+      bgGrad.addColorStop(0.7, "#0A1A2B");
+      bgGrad.addColorStop(1, "#07131F");
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1080, 1920);
 
-    // 2. Voleybol Sahası Çizgi Filigranları
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
-    ctx.lineWidth = 4;
-    ctx.strokeRect(100, 250, 880, 1420); // Dış saha
-    ctx.beginPath();
-    ctx.moveTo(100, 960);
-    ctx.lineTo(980, 960); // Orta çizgi (File)
-    ctx.stroke();
-
-    ctx.setLineDash([16, 16]);
-    ctx.beginPath();
-    ctx.moveTo(100, 720);
-    ctx.lineTo(980, 720); // 3 metre hücum çizgisi
-    ctx.moveTo(100, 1200);
-    ctx.lineTo(980, 1200);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    // 3. Parlayan Üst Işık (Ambient Light)
-    const glowGrad = ctx.createRadialGradient(540, 200, 50, 540, 200, 450);
-    glowGrad.addColorStop(0, "rgba(45, 212, 192, 0.20)");
-    glowGrad.addColorStop(1, "transparent");
-    ctx.fillStyle = glowGrad;
-    ctx.fillRect(0, 0, 1080, 600);
-
-    // 4. TVF ALTYAPI VOLEYBOL Üst Rozet
-    ctx.fillStyle = "#2DD4C0";
-    ctx.beginPath();
-    ctx.roundRect(340, 140, 400, 64, 16);
-    ctx.fill();
-
-    ctx.fillStyle = "#032320";
-    ctx.font = `bold 28px ${FONT_BODY}`;
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText("TVF ALTYAPI VOLEYBOL", 540, 172);
-
-    // 5. Lig ve Grup Bilgisi
-    ctx.fillStyle = "#A9C3D1";
-    ctx.font = `bold 32px ${FONT_BODY}`;
-    ctx.fillText(
-      `${city.toUpperCase()} • ${(match.category || "").toUpperCase()}`,
-      540,
-      250
-    );
-
-    ctx.fillStyle = "#7FB4FF";
-    ctx.font = `bold 28px ${FONT_BODY}`;
-    ctx.fillText(match.group || "Grup Maçı", 540, 295);
-
-    // 6. Ev Sahibi Takım
-    ctx.fillStyle = "#EAF6FA";
-    ctx.font = `800 52px ${FONT_BODY}`;
-    ctx.fillText(match.home_team, 540, 560);
-
-    // 7. Skor veya VS Alanı
-    const isFinished = match.status === "finished";
-    if (isFinished) {
-      // Skor Kutusu
-      const scoreGrad = ctx.createLinearGradient(390, 640, 690, 840);
-      scoreGrad.addColorStop(0, "#13293F");
-      scoreGrad.addColorStop(1, "#0A1A2B");
-      ctx.fillStyle = scoreGrad;
+      // 2. Voleybol Sahası Çizgi Filigranları
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+      ctx.lineWidth = 4;
+      ctx.strokeRect(100, 250, 880, 1420); // Dış saha
       ctx.beginPath();
-      ctx.roundRect(360, 660, 360, 160, 28);
-      ctx.fill();
-      ctx.strokeStyle = "rgba(45, 212, 192, 0.4)";
-      ctx.lineWidth = 3;
+      ctx.moveTo(100, 960);
+      ctx.lineTo(980, 960); // Orta çizgi (File)
       ctx.stroke();
 
-      ctx.fillStyle = "#9BE15D";
-      ctx.font = `700 96px ${FONT_NUM}`;
+      ctx.setLineDash([16, 16]);
+      ctx.beginPath();
+      ctx.moveTo(100, 720);
+      ctx.lineTo(980, 720); // 3 metre hücum çizgisi
+      ctx.moveTo(100, 1200);
+      ctx.lineTo(980, 1200);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // 3. Parlayan Üst Işık (Ambient Light)
+      const glowGrad = ctx.createRadialGradient(540, 200, 50, 540, 200, 450);
+      glowGrad.addColorStop(0, "rgba(45, 212, 192, 0.20)");
+      glowGrad.addColorStop(1, "transparent");
+      ctx.fillStyle = glowGrad;
+      ctx.fillRect(0, 0, 1080, 600);
+
+      // 4. TVF ALTYAPI VOLEYBOL Üst Rozet
+      ctx.fillStyle = "#2DD4C0";
+      ctx.beginPath();
+      ctx.roundRect(340, 140, 400, 64, 16);
+      ctx.fill();
+
+      ctx.fillStyle = "#032320";
+      ctx.font = `bold 28px ${FONT_BODY}`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText("TVF ALTYAPI VOLEYBOL", 540, 172);
+
+      // 5. Lig ve Grup Bilgisi
+      ctx.fillStyle = "#A9C3D1";
+      ctx.font = `bold 32px ${FONT_BODY}`;
       ctx.fillText(
-        `${match.home_score ?? 0}  -  ${match.away_score ?? 0}`,
+        `${city.toUpperCase()} • ${(match.category || "").toUpperCase()}`,
         540,
-        745
+        250
       );
 
-      // Set Skorları
-      if (match.set_scores && match.set_scores.length > 0) {
-        ctx.fillStyle = "#A9C3D1";
-        ctx.font = `600 34px ${FONT_NUM}`;
-        const forfeit = getMatchForfeitInfo(match);
-        const setScoresText = forfeit.isForfeit
-          ? `${match.set_scores.join("   •   ")}   (HÜKMEN)`
-          : match.set_scores.join("   •   ");
-        ctx.fillText(setScoresText, 540, 875);
+      ctx.fillStyle = "#7FB4FF";
+      ctx.font = `bold 28px ${FONT_BODY}`;
+      ctx.fillText(match.group || "Grup Maçı", 540, 295);
+
+      // 6. Ev Sahibi Takım
+      ctx.fillStyle = "#EAF6FA";
+      ctx.font = `800 52px ${FONT_BODY}`;
+      ctx.fillText(match.home_team, 540, 560);
+
+      // 7. Skor veya VS Alanı
+      const isFinished = match.status === "finished";
+      if (isFinished) {
+        // Skor Kutusu
+        const scoreGrad = ctx.createLinearGradient(390, 640, 690, 840);
+        scoreGrad.addColorStop(0, "#13293F");
+        scoreGrad.addColorStop(1, "#0A1A2B");
+        ctx.fillStyle = scoreGrad;
+        ctx.beginPath();
+        ctx.roundRect(360, 660, 360, 160, 28);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(45, 212, 192, 0.4)";
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        ctx.fillStyle = "#9BE15D";
+        ctx.font = `700 96px ${FONT_NUM}`;
+        ctx.fillText(
+          `${match.home_score ?? 0}  -  ${match.away_score ?? 0}`,
+          540,
+          745
+        );
+
+        // Set Skorları
+        if (match.set_scores && match.set_scores.length > 0) {
+          ctx.fillStyle = "#A9C3D1";
+          ctx.font = `600 34px ${FONT_NUM}`;
+          const forfeit = getMatchForfeitInfo(match);
+          const setScoresText = forfeit.isForfeit
+            ? `${match.set_scores.join("   •   ")}   (HÜKMEN)`
+            : match.set_scores.join("   •   ");
+          ctx.fillText(setScoresText, 540, 875);
+        }
+      } else {
+        // VS Rozeti
+        ctx.fillStyle = "#13293F";
+        ctx.beginPath();
+        ctx.roundRect(450, 690, 180, 100, 24);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
+        ctx.stroke();
+
+        ctx.fillStyle = "#FFC24D";
+        ctx.font = `700 48px ${FONT_NUM}`;
+        ctx.fillText("VS", 540, 742);
       }
-    } else {
-      // VS Rozeti
-      ctx.fillStyle = "#13293F";
+
+      // 8. Deplasman Takımı
+      ctx.fillStyle = "#EAF6FA";
+      ctx.font = `800 52px ${FONT_BODY}`;
+      ctx.fillText(match.away_team, 540, 990);
+
+      // 9. Maç Bilgileri Kartı (Tarih, Saat, Salon)
+      ctx.fillStyle = "rgba(14, 32, 51, 0.85)";
       ctx.beginPath();
-      ctx.roundRect(450, 690, 180, 100, 24);
+      ctx.roundRect(140, 1160, 800, 320, 24);
       ctx.fill();
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
+      ctx.strokeStyle = "#1B3550";
+      ctx.lineWidth = 2;
       ctx.stroke();
 
+      ctx.fillStyle = "#EAF6FA";
+      ctx.font = `bold 36px ${FONT_BODY}`;
+      ctx.fillText(`🗓  ${match.date || "Tarih Açıklanacak"}`, 540, 1240);
+
       ctx.fillStyle = "#FFC24D";
-      ctx.font = `700 48px ${FONT_NUM}`;
-      ctx.fillText("VS", 540, 742);
+      ctx.font = `700 44px ${FONT_NUM}`;
+      ctx.fillText(`⏰  ${match.time || "--:--"}`, 540, 1315);
+
+      ctx.fillStyle = "#A9C3D1";
+      ctx.font = `600 32px ${FONT_BODY}`;
+      ctx.fillText(`📍  ${match.hall || "Salon Açıklanacak"}`, 540, 1390);
+
+      // 10. Altbilgi / İntro Filigran
+      ctx.fillStyle = "#8CA8B8";
+      ctx.font = `bold 26px ${FONT_BODY}`;
+      ctx.fillText("altyapivoleybol.com.tr • TVF Altyapı Bülteni ve Canlı Sonuçlar", 540, 1720);
+
+      try {
+        const url = canvas.toDataURL("image/png");
+        setDataUrl(url);
+      } catch {
+        // ignore
+      }
+    };
+
+    // Yüklenmemiş web fontuyla çizim yapmamak için önce fontları yükle (Türkçe karakterler dahil)
+    const fontsApi = document.fonts;
+    if (fontsApi?.load) {
+      Promise.all([
+        fontsApi.load(`700 32px ${FONT_BODY}`, "ÇĞİÖŞÜçğıöşü"),
+        fontsApi.load(`700 32px ${FONT_NUM}`, "0123456789"),
+      ])
+        .catch(() => undefined)
+        .then(draw);
+    } else {
+      draw();
     }
 
-    // 8. Deplasman Takımı
-    ctx.fillStyle = "#EAF6FA";
-    ctx.font = `800 52px ${FONT_BODY}`;
-    ctx.fillText(match.away_team, 540, 990);
-
-    // 9. Maç Bilgileri Kartı (Tarih, Saat, Salon)
-    ctx.fillStyle = "rgba(14, 32, 51, 0.85)";
-    ctx.beginPath();
-    ctx.roundRect(140, 1160, 800, 320, 24);
-    ctx.fill();
-    ctx.strokeStyle = "#1B3550";
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    ctx.fillStyle = "#EAF6FA";
-    ctx.font = `bold 36px ${FONT_BODY}`;
-    ctx.fillText(`🗓  ${match.date || "Tarih Açıklanacak"}`, 540, 1240);
-
-    ctx.fillStyle = "#FFC24D";
-    ctx.font = `700 44px ${FONT_NUM}`;
-    ctx.fillText(`⏰  ${match.time || "--:--"}`, 540, 1315);
-
-    ctx.fillStyle = "#A9C3D1";
-    ctx.font = `600 32px ${FONT_BODY}`;
-    ctx.fillText(`📍  ${match.hall || "Salon Açıklanacak"}`, 540, 1390);
-
-    // 10. Altbilgi / İntro Filigran
-    ctx.fillStyle = "#8CA8B8";
-    ctx.font = `bold 26px ${FONT_BODY}`;
-    ctx.fillText("altyapivoleybol.com.tr • TVF Altyapı Bülteni ve Canlı Sonuçlar", 540, 1720);
-
-    try {
-      const url = canvas.toDataURL("image/png");
-      setDataUrl(url);
-    } catch {
-      // ignore
-    }
+    return () => {
+      cancelled = true;
+    };
   }, [match, city]);
 
   if (!match) return null;
@@ -285,16 +308,16 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
           <button
             onClick={handleDownload}
             disabled={!dataUrl}
-            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 text-xs font-bold border border-slate-700 shadow-md transition-all active:scale-95 cursor-pointer disabled:opacity-50"
+            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-surface-raised hover:bg-surface-raised/80 text-ink text-xs font-bold border border-line shadow-md transition-all active:scale-95 cursor-pointer disabled:opacity-50"
           >
-            <Download size={15} className="text-emerald-400" />
+            <Download size={15} className="text-done" />
             <span>Görseli İndir (PNG)</span>
           </button>
 
           <button
             onClick={handleShare}
             disabled={!dataUrl || sharing}
-            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-bold shadow-glow-red transition-all active:scale-95 cursor-pointer disabled:opacity-50"
+            className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-primary hover:bg-primary-hover text-primary-fg text-xs font-bold shadow-glow-primary transition-all active:scale-95 cursor-pointer disabled:opacity-50"
           >
             <Share2 size={15} />
             <span>{sharing ? "Paylaşılıyor..." : "Hikayede Paylaş"}</span>
@@ -308,7 +331,7 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
           {copied ? (
             <>
               <Check size={13} className="text-emerald-400" />
-              <span className="text-emerald-300 font-semibold">Metin panoya kopyalandı!</span>
+              <span className="text-done font-semibold">Metin panoya kopyalandı!</span>
             </>
           ) : (
             <>
