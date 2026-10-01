@@ -187,7 +187,7 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
           {/* Alt Bilgi */}
           <div className="p-2 border-t border-slate-800 bg-surface-muted text-[10px] text-slate-400 flex items-center justify-between">
             <span>Türkiye Voleybol Federasyonu</span>
-            <span className="text-amber-400 font-mono">81 İl Temsilciliği</span>
+            <span className="text-primary font-mono">81 İl Temsilciliği</span>
           </div>
         </div>
       )}

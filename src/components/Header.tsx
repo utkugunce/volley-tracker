@@ -89,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="hidden md:flex items-center gap-2 text-xs text-slate-400">
             <span className="text-slate-600">•</span>
-            <span className="text-amber-400/90 font-medium tracking-wide">Genç & Yıldız Kızlar Süper Lig</span>
+            <span className="text-primary font-medium tracking-wide">Genç & Yıldız Kızlar Süper Lig</span>
           </div>
 
           {/* Kadınlar 2. Ligi Sayfasına Geçiş Butonu */}
@@ -127,7 +127,7 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={onToggleFavoritesOnly}
               className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-all active:scale-95 duration-200 ${
                 showOnlyFavorites
-                  ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-glow-amber font-bold"
+                  ? "bg-warn text-black shadow-glow-amber font-bold"
                   : "bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 border border-slate-700/60"
               }`}
               title="Sadece Favori Maçları Göster"
@@ -279,7 +279,7 @@ export const Header: React.FC<HeaderProps> = ({
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Trophy size={13} className={activeTab === "standings" ? "text-amber-400 fill-amber-400/20" : "text-slate-400"} />
+          <Trophy size={13} className={activeTab === "standings" ? "text-primary" : "text-slate-400"} />
           <span>PUAN DURUMU</span>
         </button>
 
