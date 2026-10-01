@@ -159,7 +159,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
         <div className="flex items-center gap-2.5 flex-wrap">
           <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase flex items-center gap-1.5 shrink-0">
-            <MapPin size={13} className="text-rose-400 shrink-0" />
+            <MapPin size={13} className="text-ink-2 shrink-0" />
             İL:
           </span>
 
@@ -171,10 +171,10 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
               aria-expanded={isCityDropdownOpen}
               aria-haspopup="listbox"
               aria-label={selectedCity || "İl Seçiniz"}
-              className="flex items-center justify-between gap-2.5 bg-slate-900/90 hover:bg-slate-850 text-white text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-700/80 hover:border-slate-600 transition-all shadow-sm active:scale-95 cursor-pointer min-w-[210px] sm:min-w-[240px] focus:outline-none focus:ring-1 focus:ring-red-500"
+              className="flex items-center justify-between gap-2.5 bg-slate-900/90 hover:bg-slate-850 text-white text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-700/80 hover:border-slate-600 transition-all shadow-sm active:scale-95 cursor-pointer min-w-[210px] sm:min-w-[240px] focus:outline-none focus:ring-1 focus:ring-primary/40"
             >
               <span className="flex items-center gap-2 truncate">
-                <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 shadow-2xs" />
+                <span className="w-2 h-2 rounded-full bg-primary shrink-0 shadow-2xs" />
                 <span className="text-white font-extrabold truncate text-[13px]">
                   {selectedCity || "Tüm İller"}
                 </span>
@@ -186,7 +186,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
                 <ChevronDown
                   size={14}
                   className={`transition-transform duration-200 text-slate-400 ${
-                    isCityDropdownOpen ? "rotate-180 text-rose-400" : ""
+                    isCityDropdownOpen ? "rotate-180 text-ink-2" : ""
                   }`}
                 />
               </div>
@@ -214,7 +214,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
                           handleCitySelect(filteredCities[0]);
                         }
                       }}
-                      className="w-full bg-slate-900/90 border border-slate-700/70 text-slate-200 text-xs rounded-xl pl-8 pr-7 py-1.5 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 placeholder-slate-500"
+                      className="w-full bg-slate-900/90 border border-slate-700/70 text-slate-200 text-xs rounded-xl pl-8 pr-7 py-1.5 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/40 placeholder-slate-500"
                       autoFocus
                     />
                     {citySearchTerm && (
@@ -262,7 +262,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
                           onClick={() => handleCitySelect(cityName)}
                           className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                             isSelected
-                              ? "bg-red-600/20 text-rose-300 font-bold border border-red-500/40"
+                              ? "bg-primary/20 text-ink-2 font-bold border border-primary/40"
                               : "text-slate-300 hover:text-white hover:bg-slate-800/80"
                           }`}
                         >
@@ -270,7 +270,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
                             <span
                               className={`w-1.5 h-1.5 rounded-full ${
                                 isSelected
-                                  ? "bg-rose-500 shadow-glow-red"
+                                  ? "bg-primary shadow-glow-primary"
                                   : "bg-slate-600"
                               }`}
                             />
@@ -283,7 +283,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
                             {isSelected && (
                               <Check
                                 size={14}
-                                className="text-rose-400 shrink-0"
+                                className="text-ink-2 shrink-0"
                               />
                             )}
                           </div>
@@ -306,7 +306,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
             <button
               type="button"
               onClick={() => setIsCategoryGroupOpen(!isCategoryGroupOpen)}
-              className="text-[11px] font-semibold text-rose-400 hover:text-rose-300 transition-colors flex items-center gap-1 cursor-pointer bg-slate-800/60 px-2.5 py-1 rounded-lg border border-slate-700/60"
+              className="text-[11px] font-semibold text-ink-2 hover:text-ink transition-colors flex items-center gap-1 cursor-pointer bg-slate-800/60 px-2.5 py-1 rounded-lg border border-slate-700/60"
             >
               <span>{isCategoryGroupOpen ? "Filtreleri Gizle" : "Kategori & Grupları Aç"}</span>
               <ChevronDown
@@ -331,7 +331,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
             </span>
             <button
               type="button"
-              className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/30 cursor-default"
+              className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 bg-primary text-primary-fg shadow-glow-primary cursor-default"
             >
               <span>Kadınlar 2. Ligi</span>
             </button>
@@ -353,7 +353,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
                     title={`Kadınlar 2. Ligi ${grp.grup_adi}`}
                     className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
                       isActive
-                        ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/30"
+                        ? "bg-primary text-primary-fg shadow-glow-primary"
                         : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
                     }`}
                   >
@@ -361,7 +361,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
                     <span
                       className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
                         isActive
-                          ? "bg-white/20 text-white"
+                          ? "bg-white/20 text-primary-fg"
                           : "bg-slate-800 text-slate-400 border border-slate-700/60"
                       }`}
                     >

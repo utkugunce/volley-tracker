@@ -69,7 +69,7 @@ export const MatchCardSkeleton: React.FC = () => {
       {/* Üst Kısım: Lig / Kategori & Saat */}
       <div className="flex items-center justify-between gap-2 border-b border-slate-800/60 pb-2.5">
         <div className="flex items-center gap-2">
-          <div className="h-4 w-12 rounded bg-sky-900/40" />
+          <div className="h-4 w-12 rounded bg-blue-900/40" />
           <div className="h-3.5 w-24 rounded bg-slate-700/50" />
         </div>
         <div className="h-4 w-14 rounded-full bg-slate-800/70" />
@@ -238,7 +238,7 @@ export const HomePortalSkeleton: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/40" />
+              <div className="w-2.5 h-2.5 rounded-full bg-done/40" />
               <div className="h-4 w-44 rounded bg-slate-700/60" />
             </div>
             <div className="h-3 w-64 max-w-[85%] rounded bg-slate-800/70" />

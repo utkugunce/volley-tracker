@@ -231,13 +231,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
       {/* 1. ÜST BAŞLIK VE KONTROL PANELİ */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500/20 to-purple-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0 shadow-xs">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center text-ink-2 shrink-0 shadow-xs">
             <Swords size={20} />
           </div>
           <div>
             <h2 className="text-sm sm:text-base font-extrabold text-white tracking-tight flex items-center gap-2">
               <span>Kadınlar 2. Ligi Kulüp Karşılaştırması</span>
-              <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-950/80 text-rose-300 font-bold border border-rose-500/40 font-mono">
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-ink-2 font-bold border border-primary/40 font-mono">
                 H2H
               </span>
             </h2>
@@ -281,7 +281,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             className="px-2.5 py-1 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 text-xs font-medium whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 shrink-0"
           >
             <span>{m.name1}</span>
-            <span className="text-rose-400 font-bold">vs</span>
+            <span className="text-ink-2 font-bold">vs</span>
             <span>{m.name2}</span>
           </button>
         ))}
@@ -302,13 +302,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 placeholder="Takım ara..."
                 value={search1}
                 onChange={(e) => setSearch1(e.target.value)}
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500"
+                className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary/40"
               />
             </div>
             <select
               value={slug1}
               onChange={(e) => handleApply(e.target.value, slug2)}
-              className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none focus:border-rose-500 cursor-pointer"
+              className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none focus:border-primary/40 cursor-pointer"
             >
               {filteredTeams1.map((t) => (
                 <option key={t.takim_id} value={slugify(t.takim_adi)}>
@@ -327,7 +327,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             >
               <ArrowRightLeft size={16} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            <span className="text-xs font-black font-mono text-rose-500 tracking-widest uppercase">
+            <span className="text-xs font-black font-mono text-ink-2 tracking-widest uppercase">
               VS
             </span>
           </div>
@@ -344,13 +344,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 placeholder="Takım ara..."
                 value={search2}
                 onChange={(e) => setSearch2(e.target.value)}
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500"
+                className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary/40"
               />
             </div>
             <select
               value={slug2}
               onChange={(e) => handleApply(slug1, e.target.value)}
-              className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none focus:border-rose-500 cursor-pointer"
+              className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none focus:border-primary/40 cursor-pointer"
             >
               {filteredTeams2.map((t) => (
                 <option key={t.takim_id} value={slugify(t.takim_adi)}>
@@ -377,14 +377,14 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                     unoptimized={team1.logo.startsWith("http")}
                   />
                 ) : (
-                  <div className="w-10 h-10 rounded-xl bg-rose-950/60 border border-rose-700/50 text-rose-300 font-extrabold flex items-center justify-center text-sm shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/50 text-ink-2 font-extrabold flex items-center justify-center text-sm shrink-0">
                     {team1.takim_adi.slice(0, 2)}
                   </div>
                 )}
                 <div className="min-w-0">
                   <Link
                     href={`/takim/${slugify(team1.takim_adi)}`}
-                    className="text-sm font-extrabold text-white hover:text-rose-400 transition-colors truncate block"
+                    className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >
                     {team1.takim_adi}
                   </Link>
@@ -420,7 +420,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 <div className="min-w-0">
                   <Link
                     href={`/takim/${slugify(team2.takim_adi)}`}
-                    className="text-sm font-extrabold text-white hover:text-rose-400 transition-colors truncate block"
+                    className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >
                     {team2.takim_adi}
                   </Link>
@@ -444,7 +444,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 sm:p-5 shadow-card space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
             <h3 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-tight flex items-center gap-2">
-              <Activity size={14} className="text-rose-400" />
+              <Activity size={14} className="text-ink-2" />
               <span>Sezon Performansı Karşılaştırması</span>
             </h3>
             <span className="text-[11px] text-slate-400 font-mono">
@@ -457,13 +457,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             {/* Galibiyet Oranı */}
             <div>
               <div className="flex justify-between font-mono font-bold text-slate-300 mb-1">
-                <span className="text-rose-400">%{stats1.winRate}</span>
+                <span className="text-ink-2">%{stats1.winRate}</span>
                 <span className="text-slate-400 font-sans font-semibold">Galibiyet Oranı</span>
                 <span className="text-cyan-400">%{stats2.winRate}</span>
               </div>
               <div className="w-full bg-slate-950 rounded-full h-2 flex overflow-hidden border border-slate-800">
                 <div
-                  className="bg-rose-500 h-full transition-all duration-500"
+                  className="bg-primary h-full transition-all duration-500"
                   style={{ width: `${stats1.winRate}%` }}
                 />
                 <div
@@ -486,7 +486,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
 
             {/* Puan Tablosu Puanı */}
             <div className="grid grid-cols-3 py-2 border-b border-slate-800/60 text-center items-center">
-              <span className="font-mono font-black text-rose-400 text-sm">
+              <span className="font-mono font-black text-ink-2 text-sm">
                 {team1.p} P
               </span>
               <span className="text-slate-400 text-[11px]">Toplam Puan</span>
@@ -535,14 +535,14 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 sm:p-5 shadow-card space-y-3">
         <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
           <div className="flex items-center gap-2">
-            <Calendar size={14} className="text-rose-400" />
+            <Calendar size={14} className="text-ink-2" />
             <h3 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-tight">
               Aralarındaki Karşılaşmalar ({headToHeadMatches.length})
             </h3>
           </div>
           {team1 && team2 && (
             <div className="flex items-center gap-2 text-xs font-mono font-bold">
-              <span className="text-rose-400">{team1.takim_adi}: {h2hWins1}</span>
+              <span className="text-ink-2">{team1.takim_adi}: {h2hWins1}</span>
               <span className="text-slate-600">-</span>
               <span className="text-cyan-400">{team2.takim_adi}: {h2hWins2}</span>
             </div>
@@ -570,13 +570,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                   <div className="flex items-center gap-2 text-slate-400 text-[11px]">
                     <span className="font-semibold text-slate-300">{m.tarih}</span>
                     {m.saat && <span>• {m.saat}</span>}
-                    <span className="px-1.5 py-0.2 rounded bg-slate-800 text-rose-300 font-bold border border-slate-700">
+                    <span className="px-1.5 py-0.2 rounded bg-slate-800 text-ink-2 font-bold border border-slate-700">
                       {m.grup_adi}
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3 font-semibold text-slate-200">
-                    <span className={m.takim_a === team1?.takim_adi ? "text-rose-300 font-bold" : ""}>
+                    <span className={m.takim_a === team1?.takim_adi ? "text-ink-2 font-bold" : ""}>
                       {m.takim_a}
                     </span>
                     <span className="font-mono font-black text-sm px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-white">

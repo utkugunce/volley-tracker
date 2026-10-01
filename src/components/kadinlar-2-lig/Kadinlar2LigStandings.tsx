@@ -143,9 +143,9 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                     <th className="py-2.5 px-2 text-center text-emerald-400 bg-slate-900/40 hidden xl:table-cell" title="3-0 Galibiyet">3-0</th>
                     <th className="py-2.5 px-2 text-center text-emerald-400 bg-slate-900/40 hidden xl:table-cell" title="3-1 Galibiyet">3-1</th>
                     <th className="py-2.5 px-2 text-center text-emerald-400 bg-slate-900/40 hidden xl:table-cell" title="3-2 Galibiyet">3-2</th>
-                    <th className="py-2.5 px-2 text-center text-rose-400 bg-slate-900/40 hidden xl:table-cell" title="2-3 Mağlubiyet">2-3</th>
-                    <th className="py-2.5 px-2 text-center text-rose-400 bg-slate-900/40 hidden xl:table-cell" title="1-3 Mağlubiyet">1-3</th>
-                    <th className="py-2.5 px-2 text-center text-rose-400 bg-slate-900/40 hidden xl:table-cell" title="0-3 Mağlubiyet">0-3</th>
+                    <th className="py-2.5 px-2 text-center text-form-loss bg-slate-900/40 hidden xl:table-cell" title="2-3 Mağlubiyet">2-3</th>
+                    <th className="py-2.5 px-2 text-center text-form-loss bg-slate-900/40 hidden xl:table-cell" title="1-3 Mağlubiyet">1-3</th>
+                    <th className="py-2.5 px-2 text-center text-form-loss bg-slate-900/40 hidden xl:table-cell" title="0-3 Mağlubiyet">0-3</th>
                   </>
                 )}
                 <th className="py-2.5 sm:py-3 px-2 text-center w-12 sm:w-16 bg-slate-900/80 font-black text-white" title="Puan">P</th>
@@ -169,9 +169,9 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                       key={team.takim_id || idx}
                       className={`hover:bg-slate-800/40 transition-colors ${
                         isPlayoff
-                          ? "border-l-4 border-l-emerald-500 bg-emerald-950/15"
+                          ? "border-l-4 border-l-primary bg-primary/5"
                           : isRelegation
-                          ? "border-l-4 border-l-rose-500 bg-rose-950/15"
+                          ? "border-l-4 border-l-line bg-transparent"
                           : "border-l-4 border-l-transparent"
                       }`}
                     >
@@ -180,9 +180,9 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                         <span
                           className={`font-black font-mono text-xs ${
                             isPlayoff
-                              ? "text-emerald-400"
+                              ? "text-primary"
                               : isRelegation
-                              ? "text-rose-400"
+                              ? "text-ink-2"
                               : "text-slate-400"
                           }`}
                         >
@@ -229,7 +229,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                                 <div className="min-w-0 flex-1 flex items-center gap-1.5">
                                   <Link
                                     href={`/takim/${slugify(displayName)}`}
-                                    className="font-semibold text-slate-100 hover:text-rose-400 transition-colors truncate block text-xs sm:text-[13px] hover:underline underline-offset-2"
+                                    className="font-semibold text-slate-100 hover:text-ink transition-colors truncate block text-xs sm:text-[13px] hover:underline underline-offset-2"
                                     title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Profilini Aç`}
                                   >
                                     {displayName}
@@ -258,12 +258,12 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                                   </button>
 
                                   {isPlayoff && (
-                                    <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-500/40 hidden sm:inline-block">
+                                    <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/40 hidden sm:inline-block">
                                       Çeyrek Final
                                     </span>
                                   )}
                                   {isRelegation && (
-                                    <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-rose-950/80 text-rose-300 border border-rose-500/40 hidden sm:inline-block">
+                                    <span className="text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider bg-surface-raised text-ink-2 border border-line hidden sm:inline-block">
                                       Düşme
                                     </span>
                                   )}
@@ -273,8 +273,8 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
 
                             {/* O, G, M */}
                             <td className="py-2 sm:py-2.5 px-2 text-center font-mono text-slate-300">{team.o}</td>
-                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-bold text-emerald-400">{team.g}</td>
-                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono text-rose-400">{team.m}</td>
+                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-bold text-done">{team.g}</td>
+                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono text-form-loss">{team.m}</td>
 
                             {/* Setler */}
                             <td className="py-2 sm:py-2.5 px-2.5 text-center font-mono text-slate-300 hidden md:table-cell">
@@ -354,11 +354,11 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
         <div className="bg-slate-950/70 border-t border-slate-800/80 px-4 py-2.5 flex flex-wrap items-center justify-between text-[11px] text-slate-400 gap-2">
           <div className="flex items-center gap-4 flex-wrap">
             <span className="flex items-center gap-1.5 font-semibold text-slate-300">
-              <span className="w-2.5 h-2.5 rounded-sm bg-emerald-500"></span>
+              <span className="w-2.5 h-2.5 rounded-sm bg-primary"></span>
               <span>1. & 2. Sıra: Çeyrek Final (Yükselme Etabı - 32 Takım)</span>
             </span>
             <span className="flex items-center gap-1.5 font-semibold text-slate-300">
-              <span className="w-2.5 h-2.5 rounded-sm bg-rose-500"></span>
+              <span className="w-2.5 h-2.5 rounded-sm bg-line"></span>
               <span>Son 2 Sıra: Düşme Hattı (Bir Alt Lige Düşer)</span>
             </span>
           </div>

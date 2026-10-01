@@ -42,7 +42,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
       <div className="sticky top-0 z-10 border-b border-line bg-panel/95 px-3.5 py-3 backdrop-blur-md">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <div className="flex h-6 w-6 items-center justify-center rounded-lg border border-rose-500/40 bg-rose-500/15 text-rose-300 shrink-0">
+            <div className="flex h-6 w-6 items-center justify-center rounded-lg border border-primary/40 bg-primary/15 text-ink-2 shrink-0">
               <Trophy size={13} />
             </div>
             <div>
@@ -50,7 +50,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
               <p className="text-[10px] text-ink-2">16 Grup Hiyerarşisi</p>
             </div>
           </div>
-          <span className="rounded border border-line bg-canvas px-2 py-0.5 font-mono text-[10px] font-bold text-rose-300">
+          <span className="rounded border border-line bg-canvas px-2 py-0.5 font-display tabular-nums text-[10px] font-bold text-primary">
             {totalMatches} Maç
           </span>
         </div>
@@ -79,13 +79,13 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
               {/* Altyapı Ligleri (81 İl) Dönüş Köprüsü */}
               <Link
                 href="/"
-                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-blue-950/40 hover:bg-blue-950/70 border border-blue-800/40 text-blue-200 transition-all group"
+                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-teal-950/40 hover:bg-teal-950/70 border border-teal-800/40 text-teal-200 transition-all group"
               >
                 <span className="flex items-center gap-2 truncate">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" />
                   <span className="font-semibold text-[11px] truncate group-hover:text-white">TVF Altyapı Ligleri</span>
                 </span>
-                <span className="text-[10px] text-blue-400 font-mono shrink-0">81 İl →</span>
+                <span className="text-[10px] text-teal-300 font-display tabular-nums shrink-0">81 İl →</span>
               </Link>
 
               {/* Takip Edilen Kulüpler / Yıldızlı */}
@@ -94,7 +94,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                   <Star size={12} className="text-amber-400" />
                   <span className="font-medium text-[11px]">Takip Edilenler</span>
                 </span>
-                <span className="font-mono text-[10px] font-bold bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded">
+                <span className="font-display text-[10px] font-semibold tabular-nums text-ink-2">
                   {favoritesCount}
                 </span>
               </div>
@@ -105,12 +105,12 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                 onClick={() => onSelectTab("leaders")}
                 className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all ${
                   activeTab === "leaders"
-                    ? "border-l-2 border-rose-400 bg-rose-500/10 text-white font-bold"
+                    ? "border-l-2 border-primary bg-primary/10 text-ink font-bold"
                     : "text-slate-200 hover:bg-panel hover:text-white"
                 }`}
               >
                 <span className="flex items-center gap-2 font-medium text-[11px]">
-                  <Layers size={13} className="text-rose-400" />
+                  <Layers size={13} className="text-ink-2" />
                   <span>16 Grup Durumu</span>
                 </span>
                 <ChevronRight size={12} className="text-ink-2" />
@@ -122,7 +122,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                 onClick={() => onSelectTab("teams")}
                 className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all ${
                   activeTab === "teams"
-                    ? "border-l-2 border-rose-400 bg-rose-500/10 text-white font-bold"
+                    ? "border-l-2 border-primary bg-primary/10 text-ink font-bold"
                     : "text-slate-200 hover:bg-panel hover:text-white"
                 }`}
               >
@@ -144,7 +144,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
             className="flex w-full items-center justify-between px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ink-2 hover:text-white transition-colors cursor-pointer"
           >
             <span className="flex items-center gap-1.5">
-              <BarChart3 size={12} className="text-rose-400" />
+              <BarChart3 size={12} className="text-ink-2" />
               <span>Grup Seçimi (16 Grup)</span>
             </span>
             <ChevronDown
@@ -169,7 +169,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                       }}
                       className={`flex min-w-0 flex-1 items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
                         isActive
-                          ? "border-l-2 border-rose-400 bg-rose-500/15 text-rose-200 font-bold"
+                          ? "border-l-2 border-primary bg-primary/15 text-ink-2 font-bold"
                           : "text-ink-2 hover:bg-panel hover:text-white"
                       }`}
                     >
@@ -186,8 +186,8 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                       }}
                       className={`rounded-lg p-1.5 transition ${
                         selectedGroup === group.grup_no && activeTab === "fixtures"
-                          ? "bg-rose-500/20 text-rose-300 border border-rose-500/40"
-                          : "text-ink-2 hover:bg-panel hover:text-rose-300"
+                          ? "bg-primary/20 text-ink-2 border border-primary/40"
+                          : "text-ink-2 hover:bg-panel hover:text-ink"
                       }`}
                       title={`Grup ${group.grup_no} fikstürü`}
                       aria-label={`Grup ${group.grup_no} fikstürü`}

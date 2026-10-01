@@ -46,7 +46,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
           href={statuPdfUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-bold shadow-glow-red transition-all active:scale-95 shrink-0"
+          className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-primary hover:bg-primary-hover text-primary-fg text-xs font-bold shadow-glow-primary transition-all active:scale-95 shrink-0"
         >
           <span>Resmi TVF Statü PDF&apos;i</span>
           <ExternalLink size={13} />
@@ -59,7 +59,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col justify-between relative overflow-hidden group">
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-black uppercase tracking-wider text-rose-400 bg-rose-950/40 px-2 py-0.5 rounded-md border border-rose-500/30">
+              <span className="text-[10px] font-black uppercase tracking-wider text-ink-2 bg-primary/10 px-2 py-0.5 rounded-md border border-primary/30">
                 1. Aşama
               </span>
               <span className="text-[10px] font-mono text-slate-400">16 Grup</span>
@@ -74,7 +74,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
               <CheckCircle2 size={12} />
               32 Takım Yükselir
             </span>
-            <span className="text-rose-400 text-[10px] font-medium">Son 2 Düşer</span>
+            <span className="text-ink-2 text-[10px] font-medium">Son 2 Düşer</span>
           </div>
         </div>
 
@@ -174,9 +174,9 @@ export const Kadinlar2LigStatuView: React.FC = () => {
               <span className="font-bold text-slate-400 block mb-0.5">0-3 veya 1-3 Mağlubiyet</span>
               <span className="text-slate-400 text-[11px]">Mağlup takıma <strong className="text-slate-300 font-mono">0 Puan</strong> verilir.</span>
             </div>
-            <div className="p-2.5 rounded-xl bg-rose-950/20 border border-rose-500/30">
-              <span className="font-bold text-rose-400 block mb-0.5">Hükmen Mağlubiyet</span>
-              <span className="text-rose-200 text-[11px]">Galip <strong className="font-mono">3 Puan</strong>, Mağluptan <strong className="font-mono">-3 Puan</strong> düşülür.</span>
+            <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/30">
+              <span className="font-bold text-ink-2 block mb-0.5">Hükmen Mağlubiyet</span>
+              <span className="text-ink-2 text-[11px]">Galip <strong className="font-mono">3 Puan</strong>, Mağluptan <strong className="font-mono">-3 Puan</strong> düşülür.</span>
             </div>
           </div>
 
@@ -214,11 +214,11 @@ export const Kadinlar2LigStatuView: React.FC = () => {
             </div>
 
             <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-              <div className="flex items-center gap-1.5 font-bold text-rose-400 mb-1">
+              <div className="flex items-center gap-1.5 font-bold text-ink-2 mb-1">
                 <span>Madde 2.4: Küme Düşme Hattı</span>
               </div>
               <p className="text-[11px] text-slate-300 leading-relaxed">
-                Lig etabı sonunda gruplarında puan cetvelinde <strong className="text-rose-300">son iki sırada yer alan takımlar</strong> bir alt lige (Bölgesel Lig) düşer.
+                Lig etabı sonunda gruplarında puan cetvelinde <strong className="text-ink-2">son iki sırada yer alan takımlar</strong> bir alt lige (Bölgesel Lig) düşer.
               </p>
             </div>
 

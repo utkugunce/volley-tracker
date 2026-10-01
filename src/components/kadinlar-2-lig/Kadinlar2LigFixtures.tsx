@@ -211,7 +211,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
           {/* Hafta Butonları */}
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
             <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1">
-              <Calendar size={13} className="text-rose-400" />
+              <Calendar size={13} className="text-ink-2" />
               <span>Hafta:</span>
             </span>
 
@@ -220,7 +220,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
               onClick={() => setSelectedWeek("all")}
               className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                 selectedWeek === "all"
-                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold"
+                  ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                   : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
               }`}
             >
@@ -237,7 +237,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                   onClick={() => setSelectedWeek(w)}
                   className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                     isSelected
-                      ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold"
+                      ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                       : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
                   }`}
                 >
@@ -274,7 +274,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
               className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-slate-700/80 transition-all shadow-xs cursor-pointer active:scale-95"
               title="Fikstürü Apple/Google/Outlook Takvime Ekle (.ics)"
             >
-              <Download size={12} className="text-rose-400" />
+              <Download size={12} className="text-ink-2" />
               <span className="hidden sm:inline">Takvime Ekle</span>
             </button>
 
@@ -308,7 +308,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                 onClick={() => setVolleyboxFilter("scored")}
                 className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
                   volleyboxFilter === "scored"
-                    ? "bg-emerald-600 text-white font-bold shadow-xs"
+                    ? "bg-done text-done-fg font-bold shadow-xs"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
               >

@@ -62,7 +62,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
           <select
             value={filterGroup}
             onChange={(e) => setFilterGroup(e.target.value === "all" ? "all" : Number(e.target.value))}
-            className="bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-red-500 cursor-pointer"
+            className="bg-slate-900 border border-slate-700/80 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-primary/40 cursor-pointer"
           >
             <option value="all">Tüm Gruplar (1-16)</option>
             {Array.from({ length: 16 }, (_, i) => i + 1).map((g) => (
@@ -118,7 +118,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                     <div className="flex items-center gap-1.5">
                       <Link
                         href={`/takim/${slugify(displayName)}`}
-                        className="font-bold text-xs sm:text-sm text-slate-100 hover:text-rose-400 transition-colors truncate block hover:underline underline-offset-2"
+                        className="font-bold text-xs sm:text-sm text-slate-100 hover:text-ink transition-colors truncate block hover:underline underline-offset-2"
                         title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Profilini Aç`}
                       >
                         {displayName}
@@ -146,7 +146,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                     <div className="flex items-center gap-1.5 mt-1 text-[11px] text-slate-400">
                       <button
                         onClick={() => onSelectGroup?.(team.grup_no)}
-                        className="hover:text-rose-400 transition-colors cursor-pointer"
+                        className="hover:text-ink transition-colors cursor-pointer"
                       >
                         Grup {team.grup_no}
                       </button>

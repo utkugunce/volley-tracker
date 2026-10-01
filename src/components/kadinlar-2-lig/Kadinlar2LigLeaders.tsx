@@ -84,7 +84,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
               <div>
                 <div className="flex items-center justify-between border-b border-slate-800/80 pb-2.5 mb-2.5">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                    <span className="w-2 h-2 rounded-full bg-primary"></span>
                     <h3 className="font-extrabold text-xs sm:text-sm text-white uppercase tracking-tight">
                       {group.grup_adi}
                     </h3>
@@ -102,7 +102,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                   </div>
                   <div className="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden border border-slate-800">
                     <div
-                      className="bg-gradient-to-r from-red-600 to-rose-600 h-full rounded-full transition-all duration-500"
+                      className="bg-primary h-full rounded-full transition-all duration-500"
                       style={{ width: `${progressPercent}%` }}
                     />
                   </div>
@@ -153,7 +153,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
 
                             <Link
                               href={`/takim/${slugify(displayName)}`}
-                              className="text-slate-200 hover:text-rose-400 truncate text-[11px] font-semibold"
+                              className="text-slate-200 hover:text-ink truncate text-[11px] font-semibold"
                               title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Sayfası`}
                             >
                               {displayName}

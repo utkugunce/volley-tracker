@@ -145,12 +145,12 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             onClick={() => setFeedFilter("all")}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "all"
-                ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold"
+                ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
             }`}
           >
             <span>Canlı Hub</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/30 font-mono">
+            <span className="text-[10px] font-display font-semibold tabular-nums opacity-90">
               {stats.totalMatches}
             </span>
           </button>
@@ -160,15 +160,15 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             onClick={() => setFeedFilter("today")}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "today"
-                ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold"
+                ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
             }`}
           >
-            <Flame size={12} className={feedFilter === "today" ? "text-amber-200 fill-amber-300" : "text-rose-400"} />
+            <Flame size={12} className={feedFilter === "today" ? "text-amber-200 fill-amber-300" : "text-ink-2"} />
             <span>Bugün</span>
             <span
-              className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
-                stats.todayCount > 0 ? "bg-rose-500 text-white" : "bg-black/30 text-slate-400"
+              className={`text-[10px] font-display font-semibold tabular-nums ${
+                stats.todayCount > 0 ? "text-primary" : "text-slate-400"
               }`}
             >
               {stats.todayCount}
@@ -180,13 +180,13 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             onClick={() => setFeedFilter("finished")}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "finished"
-                ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-glow-emerald font-bold"
+                ? "bg-done text-done-fg font-bold"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
             }`}
           >
-            <CheckCircle2 size={12} className={feedFilter === "finished" ? "text-emerald-100" : "text-emerald-400"} />
+            <CheckCircle2 size={12} className={feedFilter === "finished" ? "text-done-fg" : "text-done"} />
             <span>Sonuçlar</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/30 font-mono">
+            <span className="text-[10px] font-display font-semibold tabular-nums opacity-90">
               {stats.scoredMatches}
             </span>
           </button>
@@ -196,13 +196,13 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             onClick={() => setFeedFilter("upcoming")}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "upcoming"
-                ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold"
+                ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
             }`}
           >
-            <Calendar size={12} className={feedFilter === "upcoming" ? "text-white" : "text-rose-400"} />
+            <Calendar size={12} className={feedFilter === "upcoming" ? "text-white" : "text-ink-2"} />
             <span>Yaklaşan</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/30 font-mono">
+            <span className="text-[10px] font-display font-semibold tabular-nums opacity-90">
               {stats.upcomingMatches}
             </span>
           </button>
@@ -231,7 +231,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
       <div className="glass-panel rounded-2xl p-2.5 sm:p-3 border border-slate-800/90 shadow-sm">
         <div className="flex items-center justify-between gap-2 mb-2 px-1">
           <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300 uppercase tracking-wider">
-            <Layers size={13} className="text-rose-400" />
+            <Layers size={13} className="text-ink-2" />
             <span>16 Grup Hızlı Erişim:</span>
           </div>
           <span className="text-[11px] text-ink-2 font-mono">
@@ -261,7 +261,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           {/* Bölüm Başlığı */}
           <div className="flex items-center justify-between px-1">
             <div className="flex items-center gap-2">
-              <div className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></div>
               <h2 className="text-sm font-extrabold text-white uppercase tracking-tight">
                 {feedFilter === "today"
                   ? "Bugünün Karşılaşmaları"
@@ -276,7 +276,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             </div>
             <button
               onClick={() => onNavigateTab("fixtures")}
-              className="text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors flex items-center gap-1"
+              className="text-xs font-semibold text-ink-2 hover:text-ink transition-colors flex items-center gap-1"
             >
               <span>Tüm Fikstür</span>
               <ArrowRight size={12} />
@@ -295,7 +295,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
               {feedFilter === "today" && (
                 <button
                   onClick={() => setFeedFilter("upcoming")}
-                  className="text-xs text-rose-400 hover:underline font-semibold"
+                  className="text-xs text-ink-2 hover:underline font-semibold"
                 >
                   Yaklaşan maçları görüntüle ➔
                 </button>
@@ -322,12 +322,12 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                               {m.saat}
                             </span>
                           )}
-                          <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-rose-300 font-bold border border-slate-700">
+                          <span className="text-[10px] px-1.5 py-0.2 rounded bg-slate-800 text-ink-2 font-bold border border-slate-700">
                             {m.grup_adi || `Grup ${m.grup_no}`}
                           </span>
                         </div>
                         <div className="flex items-center gap-1 text-slate-400 truncate max-w-[170px]" title={`${m.sehir} - ${m.salon}`}>
-                          <MapPin size={11} className="shrink-0 text-rose-400" />
+                          <MapPin size={11} className="shrink-0 text-ink-2" />
                           <span className="truncate">{m.sehir}</span>
                         </div>
                       </div>
@@ -363,7 +363,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                             <Link
                               href={`/takim/${slugify(m.takim_a)}`}
                               onClick={(e) => e.stopPropagation()}
-                              className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 truncate block hover:underline"
+                              className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-ink truncate block hover:underline"
                             >
                               {m.takim_a}
                             </Link>
@@ -389,7 +389,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                             <Link
                               href={`/takim/${slugify(m.takim_b)}`}
                               onClick={(e) => e.stopPropagation()}
-                              className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-rose-400 truncate block hover:underline"
+                              className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-ink truncate block hover:underline"
                             >
                               {m.takim_b}
                             </Link>
@@ -433,7 +433,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                           <Swords size={10} />
                           <span>H2H</span>
                         </Link>
-                        <span className="text-[10px] font-semibold text-rose-400 group-hover:underline flex items-center gap-0.5">
+                        <span className="text-[10px] font-semibold text-ink-2 group-hover:underline flex items-center gap-0.5">
                           <span>Detay</span>
                           <ChevronRight size={10} />
                         </span>
@@ -459,7 +459,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
               </div>
               <button
                 onClick={() => onNavigateTab("leaders")}
-                className="text-[11px] text-rose-400 hover:text-rose-300 font-semibold flex items-center gap-0.5"
+                className="text-[11px] text-ink-2 hover:text-ink font-semibold flex items-center gap-0.5"
               >
                 <span>Tümü</span>
                 <ChevronRight size={11} />
@@ -474,7 +474,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                   className="p-2 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800/80 transition-all cursor-pointer space-y-1.5"
                 >
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="font-bold text-rose-300">Grup {grp.grup_no}</span>
+                    <span className="font-bold text-ink-2">Grup {grp.grup_no}</span>
                     <span className="text-[10px] font-mono text-ink-2">
                       {grp.completedMatches}/{grp.totalMatches} Maç
                     </span>

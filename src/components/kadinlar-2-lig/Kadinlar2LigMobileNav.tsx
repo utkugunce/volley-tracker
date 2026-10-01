@@ -90,7 +90,7 @@ export const Kadinlar2LigMobileNav: React.FC<Kadinlar2LigMobileNavProps> = ({
                   }`}
                 />
                 {item.badge !== undefined && item.badge > 0 && (
-                  <span className="absolute -top-1.5 -right-2 min-w-[15px] h-3.5 px-0.5 rounded-full bg-red-600 text-white text-[9px] font-mono font-bold flex items-center justify-center shadow-xs">
+                  <span className="absolute -top-1.5 -right-2 min-w-[15px] h-3.5 px-0.5 text-primary text-[10px] font-display font-bold flex items-center justify-center">
                     {item.badge > 99 ? "99+" : item.badge}
                   </span>
                 )}
@@ -99,7 +99,7 @@ export const Kadinlar2LigMobileNav: React.FC<Kadinlar2LigMobileNavProps> = ({
                 {item.label}
               </span>
               {isActive && (
-                <span className="absolute bottom-0 w-6 h-0.5 rounded-full bg-primary shadow-glow-red" />
+                <span className="absolute bottom-0 w-6 h-0.5 rounded-full bg-primary shadow-glow-primary" />
               )}
             </button>
           );

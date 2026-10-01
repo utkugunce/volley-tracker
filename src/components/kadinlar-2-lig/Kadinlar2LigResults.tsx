@@ -185,7 +185,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
                   e.target.value === "all" ? "all" : Number(e.target.value)
                 )
               }
-              className="bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-red-500 cursor-pointer"
+              className="bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-primary/40 cursor-pointer"
             >
               <option value="all">Tüm Gruplar (1-16)</option>
               {groups.map((g) => (
@@ -257,7 +257,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
             <button
               type="button"
               onClick={() => setSelectedResultDate("all")}
-              className="text-xs font-semibold px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5"
+              className="text-xs font-semibold px-3.5 py-1.5 rounded-xl bg-done hover:bg-done/90 text-done-fg transition-all shadow-xs cursor-pointer inline-flex items-center gap-1.5"
             >
               <span>Tüm Sonuçları Göster</span>
             </button>

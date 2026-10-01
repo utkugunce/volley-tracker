@@ -62,3 +62,21 @@ describe("Fileönü Tasarım Sistemi Sözleşmesi", () => {
     expect(css).toContain('--primary: #d98bff;');
   });
 });
+
+describe("Kadınlar 2. Lig orkide kapsamı", () => {
+  it("Kadınlar 2. Lig bölümü kırmızı/pembe marka sınıfı taşımaz", () => {
+    const dir = path.resolve(__dirname, "../../kadinlar-2-lig");
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".tsx"));
+    expect(files.length).toBeGreaterThan(0);
+    for (const f of files) {
+      const src = fs.readFileSync(path.join(dir, f), "utf-8");
+      expect(src, f).not.toMatch(/shadow-glow-red|from-red-600|to-rose-600|bg-pink-500|bg-rose-500\b/);
+    }
+  });
+
+  it("bölüm token bloğu rank-mid'i maviye çevirir", () => {
+    const css = fs.readFileSync(path.resolve(__dirname, "../../../app/globals.css"), "utf-8");
+    const block = css.slice(css.indexOf('[data-section="kadinlar-2-lig"]'));
+    expect(block).toContain("--rank-mid-rgb: 127 180 255;");
+  });
+});

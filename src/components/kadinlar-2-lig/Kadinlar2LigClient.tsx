@@ -242,12 +242,12 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
       <div className="flex flex-col space-y-3 px-1 pb-20 sm:space-y-4 sm:px-2 sm:pb-8 lg:px-0">
         {/* Sayfa Semantik H1 Başlığı */}
-        <div className="flex items-center justify-between pb-1 border-b border-purple-800/40">
+        <div className="flex items-center justify-between pb-1 border-b border-line">
           <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-pink-500 animate-pulse shrink-0" />
+            <span className="w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
             <span>TVF Kadınlar 2. Ligi — Canlı Puan Durumu & Fikstür</span>
           </h1>
-          <span className="text-[11px] font-mono text-purple-300 font-bold bg-purple-950/60 px-2 py-0.5 rounded-full border border-purple-800/50">
+          <span className="text-[11px] font-display tabular-nums text-primary font-bold bg-primary/10 px-2 py-0.5 rounded-full border border-primary/40">
             16 Grup · {data.tum_maclar?.length || 0} Maç
           </span>
         </div>
