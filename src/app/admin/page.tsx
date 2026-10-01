@@ -804,7 +804,7 @@ export default function AdminPage() {
   // 1. Giriş Yapılmamışsa Supabase Login Formunu Göster
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 text-slate-100">
+      <main className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 text-slate-100">
         <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shrink-0">
@@ -879,7 +879,7 @@ export default function AdminPage() {
             </Link>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 
@@ -980,7 +980,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab("live")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "live"
-                ? "bg-red-500 text-white shadow-sm"
+                ? "bg-live text-live-fg shadow-sm"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
@@ -994,7 +994,7 @@ export default function AdminPage() {
             onClick={() => setActiveTab("notifications")}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
               activeTab === "notifications"
-                ? "bg-blue-500 text-white shadow-sm"
+                ? "bg-selected-strong text-white shadow-sm"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-700"
             }`}
           >
@@ -1636,7 +1636,7 @@ export default function AdminPage() {
                   <div className="text-xs text-slate-400">Kullanıcı</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-bold text-orange-400">
+                  <div className="text-lg font-bold text-warn">
                     {Object.keys(overrides).length}
                   </div>
                   <div className="text-xs text-slate-400">Override</div>
