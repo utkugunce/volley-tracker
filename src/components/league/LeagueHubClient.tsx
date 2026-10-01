@@ -344,7 +344,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
             </span>
 
             <span className="inline-flex items-center gap-1.5 font-bold px-2.5 py-1 rounded-lg bg-amber-950/80 text-amber-300 border border-amber-600/40">
-              <Trophy size={12} className="text-amber-400" />
+              <Trophy size={12} className="text-primary" />
               <span>{league.category}</span>
             </span>
 

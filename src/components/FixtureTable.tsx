@@ -151,7 +151,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       >
         <div className="flex items-center gap-2">
           <div className="w-5 h-5 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-xs">
-            <Trophy size={12} className="text-amber-400" />
+            <Trophy size={12} className="text-primary" />
           </div>
           <h3 className="font-extrabold text-xs tracking-tight text-white uppercase flex items-center gap-1.5">
             {/* Şehir Başlığı: Tüm İller seçildiğinde görseldeki yere hangi il olduğu yazılır */}

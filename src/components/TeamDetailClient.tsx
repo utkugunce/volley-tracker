@@ -185,7 +185,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
     <div className="min-h-screen bg-slate-900 text-slate-100 font-sans pb-16">
       {/* 1. ÜST NAVİGASYON VE BAŞLIK BÖLÜMÜ */}
       <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-x-2 gap-y-2">
           <div className="flex items-center gap-2">
             <Link
               href="/"
@@ -208,10 +208,10 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/karsilastir?takim1=${team.slug}`}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 bg-amber-950/60 border border-amber-800/70 hover:bg-amber-900/60 px-3 py-1.5 rounded-lg transition-colors shadow-xs"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-selected-text bg-selected-strong/15 border border-selected/40 hover:bg-selected-strong/25 px-3 py-1.5 rounded-lg transition-colors shadow-xs"
               title="Bu takımı rakiple karşılaştır"
             >
               <Swords size={13} />
@@ -463,7 +463,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
         {team.standingsContexts.length > 0 && (
           <section className="space-y-4">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <Trophy size={18} className="text-amber-400" />
+              <Trophy size={18} className="text-primary" />
               <span>Lig & Puan Durumu Konumu</span>
             </h2>
 
@@ -527,7 +527,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                           className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-1 rounded-lg bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-colors cursor-pointer"
                           title={`${ctx.groupName} Puan Durumuna Git`}
                         >
-                          <Trophy size={11} className="text-amber-400" />
+                          <Trophy size={11} className="text-primary" />
                           <span>Puan Durumu →</span>
                         </Link>
                         <Link
@@ -716,8 +716,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                     </div>
 
                     {/* Maç Eşleşmesi (Home vs Away) */}
-                    <div className="flex-1 flex items-center justify-center gap-3 text-sm">
-                      <div className={`flex-1 flex justify-end items-center ${m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
+                    <div className="flex-1 min-w-0 w-full flex items-center justify-center gap-2 sm:gap-3 text-sm">
+                      <div className={`flex-1 min-w-0 flex justify-end items-center ${m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
                         <TeamVolleyboxLink
                           teamName={m.home_team}
                           category={team.categories[0]}
@@ -744,7 +744,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                         )}
                       </div>
 
-                      <div className={`flex-1 flex justify-start items-center ${!m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
+                      <div className={`flex-1 min-w-0 flex justify-start items-center ${!m.isHome ? "font-black text-white" : "text-slate-300 font-medium"}`}>
                         <TeamVolleyboxLink
                           teamName={m.away_team}
                           category={team.categories[0]}

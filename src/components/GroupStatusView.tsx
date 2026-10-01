@@ -445,7 +445,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                                   {g.group}
                                 </div>
                                 <div className="text-[11px] text-slate-400 flex items-center gap-1.5 mt-0.5">
-                                  <Trophy size={11} className="text-amber-400/80" />
+                                  <Trophy size={11} className="text-primary/80" />
                                   <span>{g.category}</span>
                                 </div>
                               </td>

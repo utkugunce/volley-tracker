@@ -118,7 +118,7 @@ export const PwaInstallPrompt: React.FC = () => {
         <div className="inline-flex items-center rounded-xl bg-surface-raised border border-line overflow-hidden">
           <button
             onClick={handleInstallClick}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-ink hover:bg-white/5 transition-all active:scale-95 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-bold text-ink hover:bg-white/5 transition-all active:scale-95 cursor-pointer"
             title="Altyapı Voleybol uygulamasını telefonunuza veya bilgisayarınıza yükleyin"
           >
             <Smartphone size={14} className="text-primary" />

@@ -221,7 +221,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             onClick={() => onNavigateTab("standings")}
             className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/80 transition-all font-semibold"
           >
-            <Trophy size={12} className="text-amber-400" />
+            <Trophy size={12} className="text-primary" />
             <span>Puan Durumu</span>
           </button>
         </div>
@@ -452,7 +452,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           <div className="glass-panel rounded-2xl p-4 border border-slate-800/90 shadow-card space-y-3">
             <div className="flex items-center justify-between border-b border-slate-800/80 pb-2.5">
               <div className="flex items-center gap-2">
-                <Trophy size={16} className="text-amber-400" />
+                <Trophy size={16} className="text-primary" />
                 <h3 className="font-extrabold text-xs sm:text-sm text-white uppercase tracking-tight">
                   Çeyrek Final Hattı (Top 2)
                 </h3>

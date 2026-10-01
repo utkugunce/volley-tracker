@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="bg-canvas/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
       {/* 1. Üst Flashscore Bar */}
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/60 gap-2">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap items-center justify-between border-b border-slate-800/60 gap-x-2 gap-y-1.5">
         {/* Logo & Brand & İl Seçici */}
         <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
           <BrandLogo onClick={() => onSelectTab("home")} />
@@ -105,7 +105,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Sağ Taraf: Arama, Favoriler, Yazdır, Canlı Yenile */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 ml-auto shrink-0">
           {/* Spotlight Arama Butonu */}
           {onOpenSearch && (
             <button
@@ -153,7 +153,7 @@ export const Header: React.FC<HeaderProps> = ({
           <PwaInstallPrompt />
 
           {updatedAt && (
-            <span className="inline-flex text-[10px] text-slate-400 whitespace-nowrap" title={`Son güncelleme ${formattedTime}`} aria-label={`Son güncelleme ${formattedTime}`}>
+            <span className="hidden sm:inline-flex text-[10px] text-slate-400 whitespace-nowrap" title={`Son güncelleme ${formattedTime}`} aria-label={`Son güncelleme ${formattedTime}`}>
               <span className="sm:hidden">{formattedTime}</span>
               <span className="hidden sm:inline">Son güncelleme {formattedTime}</span>
             </span>

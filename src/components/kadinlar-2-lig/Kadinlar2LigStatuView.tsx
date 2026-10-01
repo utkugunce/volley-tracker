@@ -134,7 +134,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
               <span className="text-[10px] font-mono text-amber-400 font-bold">2 Grup</span>
             </div>
             <h3 className="text-sm font-extrabold text-white flex items-center gap-1.5">
-              <Trophy size={14} className="text-amber-400 shrink-0" />
+              <Trophy size={14} className="text-primary shrink-0" />
               <span>Final Etabı</span>
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">

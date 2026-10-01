@@ -236,7 +236,7 @@ export const RightSidebarPlaceholder: React.FC<RightSidebarPlaceholderProps> = (
         <div className="bg-surface-muted rounded-xl border border-line p-3 space-y-2">
           <div className="flex items-center justify-between text-[11px] font-bold text-white">
             <span className="flex items-center gap-1.5">
-              <Trophy size={13} className="text-amber-400" />
+              <Trophy size={13} className="text-primary" />
               <span>Mini Puan Durumu</span>
             </span>
             <span className="text-[9px] bg-blue-950/60 text-blue-300 border border-blue-800/50 px-1.5 py-0.2 rounded font-mono">
