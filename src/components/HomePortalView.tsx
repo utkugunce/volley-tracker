@@ -73,7 +73,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       upcomingMatches,
       todayCount,
     };
-  }, [matches, todayStr, yesterdayStr]);
+  }, [matches, todayStr, yesterdayStr, totalMatchesCount]);
 
   // Bugünün Maçları (Bugünkü maçlar + dünden skoru henüz girilmemiş maçlar)
   const todayMatches = useMemo(() => {
