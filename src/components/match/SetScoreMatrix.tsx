@@ -61,9 +61,9 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
 
   if (!hasScoreData) {
     return (
-      <div className={`bg-[#181A20] rounded-xl border border-[#2A2E3D] p-3 text-center ${className}`}>
-        <div className="text-[11px] font-semibold text-[#94A3B8]">Set Skor Matrisi</div>
-        <p className="text-[10px] text-[#94A3B8] mt-1">
+      <div className={`bg-surface-muted rounded-xl border border-line p-3 text-center ${className}`}>
+        <div className="text-[11px] font-semibold text-ink-2">Set Skor Matrisi</div>
+        <p className="text-[10px] text-ink-2 mt-1">
           {match.status === "finished"
             ? "Detaylı set sayıları sisteme girilmedi."
             : "Karşılaşma başladığında set dökümü burada canlı listelenecektir."}
@@ -73,11 +73,11 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
   }
 
   return (
-    <div className={`bg-[#181A20] rounded-xl border border-[#2A2E3D] overflow-hidden ${className}`}>
+    <div className={`bg-surface-muted rounded-xl border border-line overflow-hidden ${className}`}>
       <div className="overflow-x-auto">
         <table className="w-full text-xs text-left border-collapse">
           <thead>
-            <tr className="bg-[#1E222D] text-[#94A3B8] border-b border-[#2A2E3D] text-[10px] uppercase font-bold tracking-wider">
+            <tr className="bg-panel text-ink-2 border-b border-line text-[10px] uppercase font-bold tracking-wider">
               <th className="py-2 px-3 text-left">Takım</th>
               {parsedSets.map((s) => (
                 <th key={s.setNum} className="py-2 px-2 text-center font-mono font-scoreboard tabular-nums w-10">
@@ -89,9 +89,9 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#2A2E3D]/50 font-medium">
+          <tbody className="divide-y divide-line/50 font-medium">
             {/* Ev Sahibi */}
-            <tr className="hover:bg-[#1E222D]/40 transition-colors">
+            <tr className="hover:bg-panel/40 transition-colors">
               <td className="py-2 px-3">
                 <div className="flex items-center gap-2 min-w-0">
                   <TeamBadge name={match.home_team} size="xs" />
@@ -101,7 +101,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                       match.away_score !== null &&
                       (match.home_score ?? 0) > (match.away_score ?? 0)
                         ? "text-white font-bold"
-                        : "text-[#CBD5E1]"
+                        : "text-slate-200"
                     }`}
                     title={match.home_team}
                   >
@@ -124,13 +124,13 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                   )}
                 </td>
               ))}
-              <td className="py-2 px-3 text-center font-mono font-scoreboard tabular-nums font-black text-white text-[12px] bg-[#1E222D]/30">
+              <td className="py-2 px-3 text-center font-mono font-scoreboard tabular-nums font-black text-white text-[12px] bg-panel/30">
                 {totalHomePoints}
               </td>
             </tr>
 
             {/* Deplasman */}
-            <tr className="hover:bg-[#1E222D]/40 transition-colors">
+            <tr className="hover:bg-panel/40 transition-colors">
               <td className="py-2 px-3">
                 <div className="flex items-center gap-2 min-w-0">
                   <TeamBadge name={match.away_team} size="xs" />
@@ -140,7 +140,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                       match.away_score !== null &&
                       (match.away_score ?? 0) > (match.home_score ?? 0)
                         ? "text-white font-bold"
-                        : "text-[#CBD5E1]"
+                        : "text-slate-200"
                     }`}
                     title={match.away_team}
                   >
@@ -163,14 +163,14 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                   )}
                 </td>
               ))}
-              <td className="py-2 px-3 text-center font-mono font-scoreboard tabular-nums font-black text-white text-[12px] bg-[#1E222D]/30">
+              <td className="py-2 px-3 text-center font-mono font-scoreboard tabular-nums font-black text-white text-[12px] bg-panel/30">
                 {totalAwayPoints}
               </td>
             </tr>
 
             {/* Set Süreleri (Varsa) */}
             {hasDurations && (
-              <tr className="bg-[#12141A] text-[#94A3B8] text-[10px]">
+              <tr className="bg-canvas text-ink-2 text-[10px]">
                 <td className="py-1.5 px-3 flex items-center gap-1.5">
                   <Clock size={11} className="text-amber-400 shrink-0" />
                   <span>Süre</span>
@@ -180,7 +180,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
                     {durations?.[idx] || "-"}
                   </td>
                 ))}
-                <td className="py-1.5 px-3 text-center font-mono font-scoreboard tabular-nums font-semibold text-amber-300 text-[10px] bg-[#1E222D]/40">
+                <td className="py-1.5 px-3 text-center font-mono font-scoreboard tabular-nums font-semibold text-amber-300 text-[10px] bg-panel/40">
                   {totalDurationStr || "-"}
                 </td>
               </tr>

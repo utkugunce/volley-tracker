@@ -81,7 +81,7 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
         role="dialog"
         aria-modal="true"
         aria-label="Maç Detayı"
-        className="relative z-10 w-full max-h-[85vh] bg-[#1E222D] border-t border-[#2A2E3D] rounded-t-3xl shadow-2xl flex flex-col overflow-hidden motion-reduce:animate-none animate-[drawer-sheet-in_280ms_cubic-bezier(0.16,1,0.3,1)]"
+        className="relative z-10 w-full max-h-[85vh] bg-panel border-t border-line rounded-t-3xl shadow-2xl flex flex-col overflow-hidden motion-reduce:animate-none animate-[drawer-sheet-in_280ms_cubic-bezier(0.16,1,0.3,1)]"
         style={{
           transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
           transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)",

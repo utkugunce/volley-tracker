@@ -90,7 +90,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 font-sans pb-16">
       {/* 1. ÜST NAVİGASYON */}
-      <header className="sticky top-0 z-40 bg-[#0b1325]/95 backdrop-blur-md border-b border-slate-800 shadow-md">
+      <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link
             href="/"
@@ -117,7 +117,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
 
       <main className="max-w-6xl mx-auto px-4 pt-6 space-y-6">
         {/* 2. SAYFA BAŞLIĞI VE TAKIM SEÇİCİ BÖLÜMÜ */}
-        <section className="bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xl">
+        <section className="bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xl">
           <div className="flex items-center gap-2.5 mb-2">
             <div className="p-2 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
               <Swords size={20} />

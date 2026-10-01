@@ -68,18 +68,18 @@ export const TeamInspectorPanel: React.FC<TeamInspectorPanelProps> = ({
     .slice(0, 5);
 
   return (
-    <div className="flex h-full flex-col bg-[#121212] text-xs">
-      <div className="flex shrink-0 items-center justify-between border-b border-[#2A2E3D] bg-[#1E222D]/90 px-3.5 py-2.5">
+    <div className="flex h-full flex-col bg-canvas text-xs">
+      <div className="flex shrink-0 items-center justify-between border-b border-line bg-panel/90 px-3.5 py-2.5">
         <span className="truncate font-bold text-white">Takım İnceleme</span>
         {onClose && (
-          <button type="button" onClick={onClose} aria-label="Kapat" className="rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-[#181A20] hover:text-white">
+          <button type="button" onClick={onClose} aria-label="Kapat" className="rounded-lg p-1.5 text-slate-400 transition-colors hover:bg-surface-muted hover:text-white">
             <X size={14} />
           </button>
         )}
       </div>
 
       <div className="custom-scrollbar flex-1 space-y-3 overflow-y-auto p-3">
-        <section className="flex items-center gap-3 rounded-xl border border-[#2A2E3D] bg-[#181A20] p-3">
+        <section className="flex items-center gap-3 rounded-xl border border-line bg-surface-muted p-3">
           <TeamBadge name={team.team} logoUrl={mapping?.local_logo || mapping?.logo_url} size="lg" />
           <div className="min-w-0 flex-1">
             <h2 className="truncate text-sm font-bold text-white">{team.team}</h2>
@@ -92,19 +92,19 @@ export const TeamInspectorPanel: React.FC<TeamInspectorPanelProps> = ({
         </section>
 
         {mapping?.volleybox_url && (
-          <a href={mapping.volleybox_url} target="_blank" rel="noopener noreferrer" className="block truncate rounded-lg border border-[#2A2E3D] bg-[#181A20] px-3 py-2 text-[11px] font-semibold text-sky-400 transition-colors hover:text-sky-300">
+          <a href={mapping.volleybox_url} target="_blank" rel="noopener noreferrer" className="block truncate rounded-lg border border-line bg-surface-muted px-3 py-2 text-[11px] font-semibold text-sky-400 transition-colors hover:text-sky-300">
             {mapping.matched_as} kulüp profili ↗
           </a>
         )}
 
-        <section className="rounded-xl border border-[#2A2E3D] bg-[#181A20] p-3">
+        <section className="rounded-xl border border-line bg-surface-muted p-3">
           <h3 className="mb-2 font-bold text-white">İç Saha / Deplasman</h3>
           <div className="grid grid-cols-2 gap-2">
-            <div className="rounded-lg bg-[#1E222D] p-2">
+            <div className="rounded-lg bg-panel p-2">
               <span className="block text-[10px] text-slate-400">İç saha galibiyeti</span>
               <strong className="mt-1 block font-mono text-sm text-emerald-400">{homeWins} / {homeMatches.length}</strong>
             </div>
-            <div className="rounded-lg bg-[#1E222D] p-2">
+            <div className="rounded-lg bg-panel p-2">
               <span className="block text-[10px] text-slate-400">Deplasman galibiyeti</span>
               <strong className="mt-1 block font-mono text-sm text-emerald-400">{awayWins} / {awayMatches.length}</strong>
             </div>
@@ -121,13 +121,13 @@ export const TeamInspectorPanel: React.FC<TeamInspectorPanelProps> = ({
           </div>
         </section>
 
-        <section className="rounded-xl border border-[#2A2E3D] bg-[#181A20] p-3">
+        <section className="rounded-xl border border-line bg-surface-muted p-3">
           <div className="mb-2 flex items-center gap-1.5 font-bold text-white">
             <Calendar size={13} className="text-sky-400" />
             <h3>Kalan Maçlar</h3>
           </div>
           {upcomingMatches.length ? (
-            <div className="divide-y divide-[#2A2E3D]/70">
+            <div className="divide-y divide-line/70">
               {upcomingMatches.map((match) => {
                 const isHome = isHomeTeam(match);
                 return (

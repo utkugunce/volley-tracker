@@ -90,7 +90,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
       {/* Puan Durumu Tablosu Kartı */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl shadow-card overflow-hidden">
         {/* 1. Başlık Şeridi (Altyapı ile Birebir) */}
-        <div className="bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-slate-800/80">
+        <div className="bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-slate-800/80">
           <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
             <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-xs">
               <Trophy size={13} className="text-amber-400" />

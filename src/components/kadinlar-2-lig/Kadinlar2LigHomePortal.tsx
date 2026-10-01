@@ -234,7 +234,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             <Layers size={13} className="text-rose-400" />
             <span>16 Grup Hızlı Erişim:</span>
           </div>
-          <span className="text-[11px] text-[#94A3B8] font-mono">
+          <span className="text-[11px] text-ink-2 font-mono">
             {stats.totalTeams} Kulüp • 32 Çeyrek Finalist
           </span>
         </div>
@@ -423,7 +423,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
 
                     {/* Alt Çubuk */}
                     <div className="mt-3 pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
-                      <span className="text-[10px] font-mono text-[#94A3B8]">#{m.mac_no || m.id}</span>
+                      <span className="text-[10px] font-mono text-ink-2">#{m.mac_no || m.id}</span>
                       <div className="flex items-center gap-1.5">
                         <Link
                           href={`/karsilastir?takim1=${slugify(m.takim_a)}&takim2=${slugify(m.takim_b)}`}
@@ -475,7 +475,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                 >
                   <div className="flex items-center justify-between text-[11px]">
                     <span className="font-bold text-rose-300">Grup {grp.grup_no}</span>
-                    <span className="text-[10px] font-mono text-[#94A3B8]">
+                    <span className="text-[10px] font-mono text-ink-2">
                       {grp.completedMatches}/{grp.totalMatches} Maç
                     </span>
                   </div>

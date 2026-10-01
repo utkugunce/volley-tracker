@@ -37,9 +37,9 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
   const [isGroupsOpen, setIsGroupsOpen] = useState(true);
 
   return (
-    <div className="flex h-full flex-col bg-[#1E222D] text-xs select-none">
+    <div className="flex h-full flex-col bg-panel text-xs select-none">
       {/* 1. Üst Başlık & Sofascore Lig Sayacı */}
-      <div className="sticky top-0 z-10 border-b border-[#2A2E3D] bg-[#1E222D]/95 px-3.5 py-3 backdrop-blur-md">
+      <div className="sticky top-0 z-10 border-b border-line bg-panel/95 px-3.5 py-3 backdrop-blur-md">
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <div className="flex h-6 w-6 items-center justify-center rounded-lg border border-rose-500/40 bg-rose-500/15 text-rose-300 shrink-0">
@@ -47,10 +47,10 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
             </div>
             <div>
               <h2 className="font-bold leading-tight tracking-wide text-white text-[13px]">Kadınlar 2. Lig</h2>
-              <p className="text-[10px] text-[#94A3B8]">16 Grup Hiyerarşisi</p>
+              <p className="text-[10px] text-ink-2">16 Grup Hiyerarşisi</p>
             </div>
           </div>
-          <span className="rounded border border-[#2A2E3D] bg-[#121212] px-2 py-0.5 font-mono text-[10px] font-bold text-rose-300">
+          <span className="rounded border border-line bg-canvas px-2 py-0.5 font-mono text-[10px] font-bold text-rose-300">
             {totalMatches} Maç
           </span>
         </div>
@@ -58,11 +58,11 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
 
       <div className="custom-scrollbar flex-1 space-y-3 overflow-y-auto p-2">
         {/* 1. BÖLÜM: HIZLI ERİŞİM & GEÇİŞLER */}
-        <div className="space-y-1 rounded-xl border border-[#2A2E3D] bg-[#181A20] p-2">
+        <div className="space-y-1 rounded-xl border border-line bg-surface-muted p-2">
           <button
             type="button"
             onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
-            className="flex w-full items-center justify-between px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
+            className="flex w-full items-center justify-between px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ink-2 hover:text-white transition-colors cursor-pointer"
           >
             <span className="flex items-center gap-1.5">
               <Star size={12} className="text-amber-400 fill-amber-400/20" />
@@ -89,7 +89,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
               </Link>
 
               {/* Takip Edilen Kulüpler / Yıldızlı */}
-              <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-[#1E222D]/60 hover:bg-[#1E222D] border border-transparent hover:border-[#2A2E3D] text-[#F1F5F9] transition-all">
+              <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-panel/60 hover:bg-panel border border-transparent hover:border-line text-ink transition-all">
                 <span className="flex items-center gap-2">
                   <Star size={12} className="text-amber-400" />
                   <span className="font-medium text-[11px]">Takip Edilenler</span>
@@ -106,14 +106,14 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                 className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all ${
                   activeTab === "leaders"
                     ? "border-l-2 border-rose-400 bg-rose-500/10 text-white font-bold"
-                    : "text-[#CBD5E1] hover:bg-[#1E222D] hover:text-white"
+                    : "text-slate-200 hover:bg-panel hover:text-white"
                 }`}
               >
                 <span className="flex items-center gap-2 font-medium text-[11px]">
                   <Layers size={13} className="text-rose-400" />
                   <span>16 Grup Durumu</span>
                 </span>
-                <ChevronRight size={12} className="text-[#94A3B8]" />
+                <ChevronRight size={12} className="text-ink-2" />
               </button>
 
               {/* Kulüpler Listesi */}
@@ -123,25 +123,25 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                 className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all ${
                   activeTab === "teams"
                     ? "border-l-2 border-rose-400 bg-rose-500/10 text-white font-bold"
-                    : "text-[#CBD5E1] hover:bg-[#1E222D] hover:text-white"
+                    : "text-slate-200 hover:bg-panel hover:text-white"
                 }`}
               >
                 <span className="flex items-center gap-2 font-medium text-[11px]">
                   <Users size={13} className="text-blue-300" />
                   <span>Kulüpler</span>
                 </span>
-                <ChevronRight size={12} className="text-[#94A3B8]" />
+                <ChevronRight size={12} className="text-ink-2" />
               </button>
             </div>
           )}
         </div>
 
         {/* 2. BÖLÜM: 16 GRUP HİYERARŞİSİ */}
-        <div className="space-y-1 rounded-xl border border-[#2A2E3D] bg-[#181A20] p-2">
+        <div className="space-y-1 rounded-xl border border-line bg-surface-muted p-2">
           <button
             type="button"
             onClick={() => setIsGroupsOpen(!isGroupsOpen)}
-            className="flex w-full items-center justify-between px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#94A3B8] hover:text-white transition-colors cursor-pointer"
+            className="flex w-full items-center justify-between px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-ink-2 hover:text-white transition-colors cursor-pointer"
           >
             <span className="flex items-center gap-1.5">
               <BarChart3 size={12} className="text-rose-400" />
@@ -170,11 +170,11 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                       className={`flex min-w-0 flex-1 items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
                         isActive
                           ? "border-l-2 border-rose-400 bg-rose-500/15 text-rose-200 font-bold"
-                          : "text-[#94A3B8] hover:bg-[#1E222D] hover:text-white"
+                          : "text-ink-2 hover:bg-panel hover:text-white"
                       }`}
                     >
                       <span className="truncate text-xs font-semibold">Grup {group.grup_no}</span>
-                      <span className="font-mono text-[10px] text-[#94A3B8] bg-[#121212] px-1.5 py-0.2 rounded border border-[#2A2E3D]">
+                      <span className="font-mono text-[10px] text-ink-2 bg-canvas px-1.5 py-0.2 rounded border border-line">
                         {group.takim_sayisi} Takım
                       </span>
                     </button>
@@ -187,7 +187,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                       className={`rounded-lg p-1.5 transition ${
                         selectedGroup === group.grup_no && activeTab === "fixtures"
                           ? "bg-rose-500/20 text-rose-300 border border-rose-500/40"
-                          : "text-[#94A3B8] hover:bg-[#1E222D] hover:text-rose-300"
+                          : "text-ink-2 hover:bg-panel hover:text-rose-300"
                       }`}
                       title={`Grup ${group.grup_no} fikstürü`}
                       aria-label={`Grup ${group.grup_no} fikstürü`}

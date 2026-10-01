@@ -94,7 +94,7 @@ describe("MobileBottomNav Component", () => {
 
     const nav = container.querySelector("nav");
     expect(nav).toBeInTheDocument();
-    expect(nav?.className).toContain("fixed bottom-0 left-0 right-0 z-50 bg-[#1E222D] border-t border-[#2A2E3D]");
+    expect(nav?.className).toContain("fixed bottom-0 left-0 right-0 z-50 bg-panel border-t border-line");
     expect(nav?.className).toContain("pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))]");
   });
 });

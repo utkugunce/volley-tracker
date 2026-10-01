@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64">
-      <stop offset="0%" stopColor="#0f172a" />
-      <stop offset="100%" stopColor="#020617" />
+      <stop offset="0%" stopColor="#0E2033" />
+      <stop offset="100%" stopColor="#07131F" />
     </linearGradient>
     <linearGradient id="ring" x1="0" y1="0" x2="64" y2="64">
-      <stop offset="0%" stopColor="#f59e0b" />
-      <stop offset="50%" stopColor="#ef4444" />
-      <stop offset="100%" stopColor="#6366f1" />
+      <stop offset="0%" stopColor="#2DD4C0" />
+      <stop offset="50%" stopColor="#7FB4FF" />
+      <stop offset="100%" stopColor="#5B9DFF" />
     </linearGradient>
     <linearGradient id="seg-top" x1="20" y1="6" x2="56" y2="28">
-      <stop offset="0%" stopColor="#fbbf24" />
-      <stop offset="100%" stopColor="#f59e0b" />
+      <stop offset="0%" stopColor="#2DD4C0" />
+      <stop offset="100%" stopColor="#27B6A5" />
     </linearGradient>
-    <linearGradient id="seg-red" x1="6" y1="24" x2="48" y2="58">
-      <stop offset="0%" stopColor="#f43f5e" />
-      <stop offset="100%" stopColor="#be123c" />
+    <linearGradient id="seg-blue" x1="6" y1="24" x2="48" y2="58">
+      <stop offset="0%" stopColor="#5B9DFF" />
+      <stop offset="100%" stopColor="#2A63BD" />
     </linearGradient>
   </defs>
 
@@ -26,26 +26,26 @@
   <!-- Volleyball Center Body -->
   <g transform="translate(32, 32)">
     <!-- Base ball circle -->
-    <circle r="22" fill="#0f172a" stroke="#ffffff" stroke-width="1.5" />
+    <circle r="22" fill="#07131F" stroke="#EAF6FA" stroke-width="1.5" />
 
-    <!-- Top panel (gold) -->
+    <!-- Top panel (turquoise) -->
     <path d="M0 -22C11 -22 20 -15 22 -6C15 -8 7 -7 0 -3C-4 -10 -8 -17 0 -22Z" fill="url(#seg-top)" />
 
-    <!-- Left panel (white) -->
-    <path d="M-22 -5C-18 -15 -8 -21 0 -22C-6 -17 -2 -10 2 -3C-6 -1 -15 -1 -22 -5Z" fill="#ffffff" />
+    <!-- Left panel (ink) -->
+    <path d="M-22 -5C-18 -15 -8 -21 0 -22C-6 -17 -2 -10 2 -3C-6 -1 -15 -1 -22 -5Z" fill="#EAF6FA" />
 
-    <!-- Bottom left panel (crimson) -->
-    <path d="M-22 -3C-14 -1 -6 0 1 -2C2 6 6 13 13 18C4 24 -9 23 -17 16C-22 10 -24 3 -22 -3Z" fill="url(#seg-red)" />
+    <!-- Bottom left panel (blue) -->
+    <path d="M-22 -3C-14 -1 -6 0 1 -2C2 6 6 13 13 18C4 24 -9 23 -17 16C-22 10 -24 3 -22 -3Z" fill="url(#seg-blue)" />
 
-    <!-- Bottom right panel (white) -->
-    <path d="M14 17C8 12 4 5 3 -2C10 -5 17 -5 23 -3C24 4 21 12 14 17Z" fill="#ffffff" />
+    <!-- Bottom right panel (ink) -->
+    <path d="M14 17C8 12 4 5 3 -2C10 -5 17 -5 23 -3C24 4 21 12 14 17Z" fill="#EAF6FA" />
 
     <!-- Seam curves -->
-    <path d="M0 -22C-6 -17 -2 -10 2 -3C10 -5 17 -5 23 -3" stroke="#020617" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <path d="M-22 -5C-14 -1 -6 0 1 -2C2 6 6 13 13 18" stroke="#020617" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-    <path d="M0 -22C-4 -10 -8 -17 0 -22" stroke="#020617" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M0 -22C-6 -17 -2 -10 2 -3C10 -5 17 -5 23 -3" stroke="#07131F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M-22 -5C-14 -1 -6 0 1 -2C2 6 6 13 13 18" stroke="#07131F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <path d="M0 -22C-4 -10 -8 -17 0 -22" stroke="#07131F" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 
     <!-- Kinetic velocity dots -->
-    <circle cx="2" cy="-3" r="2.5" fill="#fbbf24" stroke="#ffffff" stroke-width="0.8"/>
+    <circle cx="2" cy="-3" r="2.5" fill="#2DD4C0" stroke="#EAF6FA" stroke-width="0.8"/>
   </g>
 </svg>

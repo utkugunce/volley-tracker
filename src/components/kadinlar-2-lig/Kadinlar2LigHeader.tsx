@@ -77,7 +77,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
     : "--:--";
 
   return (
-    <header className="bg-[#080c14]/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
+    <header className="bg-canvas/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
       {/* 1. Üst Flashscore Bar */}
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/60 gap-2">
         {/* Sol Taraf: Logo & Altyapıya Dönüş Butonu */}

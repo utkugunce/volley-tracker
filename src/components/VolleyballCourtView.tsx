@@ -108,7 +108,7 @@ export const VolleyballCourtView: React.FC<VolleyballCourtViewProps> = ({
   return (
     <div className="space-y-4">
       {/* Voleybol Sahası Konteyneri */}
-      <div className="relative rounded-3xl overflow-hidden border-2 border-[#38bdf8]/40 bg-gradient-to-b from-[#0b3b60] via-[#072640] to-[#041525] p-4 sm:p-6 shadow-2xl">
+      <div className="relative rounded-3xl overflow-hidden border-2 border-blue-400/40 bg-gradient-to-b from-[#0b3b60] via-[#072640] to-[#041525] p-4 sm:p-6 shadow-2xl">
         {/* File (Orta Çizgi - Net) */}
         <div className="relative mb-4 flex items-center justify-center">
           <div className="w-full h-2 bg-gradient-to-r from-white/40 via-white to-white/40 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.6)]" />
@@ -133,7 +133,7 @@ export const VolleyballCourtView: React.FC<VolleyballCourtViewProps> = ({
         </div>
 
         {/* 3 Metre Hücum Çizgisi */}
-        <div className="my-3 border-t-2 border-dashed border-[#38bdf8]/40 relative">
+        <div className="my-3 border-t-2 border-dashed border-blue-400/40 relative">
           <span className="absolute right-2 -top-2.5 bg-[#072640] px-1.5 text-[9px] font-bold text-sky-400/80 tracking-wider">
             3M ÇİZGİSİ
           </span>

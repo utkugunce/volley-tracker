@@ -153,7 +153,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
   return (
     <div className="space-y-6">
       {/* 1. ÜST BİLGİ VE BAŞLIK KARTI */}
-      <div className="bg-gradient-to-r from-slate-900 via-[#0d1628] to-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-slate-900 via-surface-muted to-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-6 shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 -mt-8 -mr-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
@@ -196,7 +196,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
       </div>
 
       {/* 2. GÖRSELDEKİ RESMİ 7 RENK KODU LEJANTI & İNTERAKTİF FİLTRELER */}
-      <div className="bg-[#0f172a]/95 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg space-y-3">
+      <div className="bg-canvas/95 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-lg space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-2.5">
           <div className="flex items-center gap-2">
             <Filter size={15} className="text-slate-400" />

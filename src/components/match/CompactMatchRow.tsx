@@ -67,28 +67,28 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           onSelect?.(match);
         }
       }}
-      className={`group relative flex items-center min-h-[46px] px-2.5 py-1.5 transition-all cursor-pointer border-b border-[#2A2E3D]/50 select-none ${
+      className={`group relative flex items-center min-h-[46px] px-2.5 py-1.5 transition-all cursor-pointer border-b border-line/50 select-none ${
         isSelected
           ? "bg-slate-800/80 border-l-2 border-l-blue-500 shadow-inner"
           : hasDiscrepancy
           ? "bg-amber-950/30 border-l-2 border-l-amber-400 hover:bg-amber-950/50"
-          : "hover:bg-[#1E222D]/80 bg-[#181A20]"
+          : "hover:bg-panel/80 bg-surface-muted"
       }`}
     >
       {/* 1. Sol Kısım (60px): Saat ve Durum */}
-      <div className="w-[74px] shrink-0 flex flex-col justify-center items-start leading-tight pr-1.5 border-r border-[#2A2E3D]/40">
+      <div className="w-[74px] shrink-0 flex flex-col justify-center items-start leading-tight pr-1.5 border-r border-line/40">
         <span
           className={`font-mono font-scoreboard tabular-nums text-[11px] font-semibold px-1 py-0.5 rounded ${
             discrepancy?.time_diff
               ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
-              : "text-[#F1F5F9]"
+              : "text-ink"
           }`}
           title={discrepancy?.time_diff ? discrepancy.details || "Saat Volleybox kaydından farklı" : undefined}
         >
           {match.time || "--:--"}
         </span>
         {isLive ? (
-          <span className="flex items-center gap-1 text-[9px] font-bold text-[#EF4444]">
+          <span className="flex items-center gap-1 text-[9px] font-bold text-live">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-red-500" />
@@ -107,7 +107,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span className={`text-[9px] font-medium px-1 py-0.5 rounded ${
             discrepancy?.date_diff
               ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
-              : "text-[#94A3B8]"
+              : "text-ink-2"
           }`} title={discrepancy?.date_diff ? discrepancy.details || "Tarih Volleybox kaydından farklı" : undefined}>
             {match.date ? match.date.slice(5) : "Program"}
           </span>
@@ -145,8 +145,8 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                 homeWon
                   ? "font-bold text-white"
                   : isFinished
-                  ? "font-medium text-[#94A3B8]"
-                  : "font-medium text-[#F1F5F9]"
+                  ? "font-medium text-ink-2"
+                  : "font-medium text-ink"
               }`}
             >
               {match.home_team}
@@ -165,8 +165,8 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                 awayWon
                   ? "font-bold text-white"
                   : isFinished
-                  ? "font-medium text-[#94A3B8]"
-                  : "font-medium text-[#F1F5F9]"
+                  ? "font-medium text-ink-2"
+                  : "font-medium text-ink"
               }`}
             >
               {match.away_team}
@@ -186,7 +186,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
 
         {/* Set Puanları Sütunları (Desktop/Geniş Ekran) */}
         {parsedSets.length > 0 && (
-          <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono font-scoreboard tabular-nums pr-2.5 text-[#94A3B8]">
+          <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono font-scoreboard tabular-nums pr-2.5 text-ink-2">
             {parsedSets.map((set, idx) => (
               <div key={idx} className="flex flex-col items-center justify-center leading-none gap-0.5">
                 <span className={`rounded px-1 py-0.5 ${
@@ -213,13 +213,13 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
         )}
 
         {/* Toplam Set Skoru */}
-        <div className="w-[32px] shrink-0 flex flex-col items-center justify-center font-mono font-scoreboard tabular-nums leading-none gap-0.5 pl-1.5 border-l border-[#2A2E3D]/40">
+        <div className="w-[32px] shrink-0 flex flex-col items-center justify-center font-mono font-scoreboard tabular-nums leading-none gap-0.5 pl-1.5 border-l border-line/40">
           <span
             className={`text-xs ${
               homeWon
                 ? "font-extrabold text-white"
                 : isFinished
-                ? "font-bold text-[#94A3B8]"
+                ? "font-bold text-ink-2"
                 : "font-semibold text-slate-400"
             }`}
           >
@@ -230,7 +230,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               awayWon
                 ? "font-extrabold text-white"
                 : isFinished
-                ? "font-bold text-[#94A3B8]"
+                ? "font-bold text-ink-2"
                 : "font-semibold text-slate-400"
             }`}
           >
@@ -263,7 +263,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           className={`p-1 rounded-md transition-colors ${
             isFavorite
               ? "text-amber-400"
-              : "text-[#94A3B8] hover:text-amber-400 opacity-100 sm:opacity-70 sm:group-hover:opacity-100"
+              : "text-ink-2 hover:text-amber-400 opacity-100 sm:opacity-70 sm:group-hover:opacity-100"
           }`}
         >
           <Star size={13} className={isFavorite ? "fill-amber-400" : ""} />

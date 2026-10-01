@@ -191,7 +191,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-xl bg-[#080c14] border border-slate-700/80 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh]"
+        className="w-full max-w-xl bg-canvas border border-slate-700/80 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Arama Input Alanı */}

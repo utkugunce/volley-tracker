@@ -173,14 +173,14 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
         </div>
       ) : (
         /* Boş Durum */
-        <div className="text-center py-12 bg-[#181A20] border border-[#2A2E3D] rounded-2xl p-6 shadow-md">
-          <div className="w-12 h-12 rounded-2xl bg-[#1E222D] border border-[#2A2E3D] flex items-center justify-center mx-auto mb-3 text-[#94A3B8]">
+        <div className="text-center py-12 bg-surface-muted border border-line rounded-2xl p-6 shadow-md">
+          <div className="w-12 h-12 rounded-2xl bg-panel border border-line flex items-center justify-center mx-auto mb-3 text-ink-2">
             <SearchX size={22} />
           </div>
           <h3 className="text-sm font-bold text-white mb-1">
             Seçilen Kriterlere Uygun Maç Bulunamadı
           </h3>
-          <p className="text-xs text-[#94A3B8] max-w-sm mx-auto mb-4">
+          <p className="text-xs text-ink-2 max-w-sm mx-auto mb-4">
             {selectedDate !== "all"
               ? `${selectedDate} tarihinde seçilen durum filtresine uygun karşılaşma kaydı bulunmuyor.`
               : "Bu kriterlere ait bültende maç bulunmamaktadır."}

@@ -114,13 +114,13 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
   };
 
   return (
-    <div className="relative rounded-3xl border border-red-500/25 bg-gradient-to-br from-slate-900/95 via-[#0b1220]/95 to-slate-950 p-5 sm:p-7 overflow-hidden shadow-2xl transition-all duration-300 mb-6 group">
+    <div className="relative rounded-3xl border border-primary/25 bg-gradient-to-br from-slate-900/95 via-canvas/95 to-slate-950 p-5 sm:p-7 overflow-hidden shadow-2xl transition-all duration-300 mb-6 group">
       {/* Voleybol Sahası Arka Plan Çizgileri Deseni (SVG Neon Court Overlay) */}
       <div className="absolute inset-0 pointer-events-none opacity-5 overflow-hidden">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="court-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#ef4444" strokeWidth="1" />
+              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#FF6E82" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#court-grid)" />
@@ -128,14 +128,14 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
       </div>
 
       {/* Ambient Radial Işıma Efektleri */}
-      <div className="absolute -top-24 -left-24 w-80 h-80 bg-red-600/15 rounded-full blur-3xl pointer-events-none group-hover:bg-red-600/20 transition-all duration-500" />
+      <div className="absolute -top-24 -left-24 w-80 h-80 bg-primary/15 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/20 transition-all duration-500" />
       <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-sky-600/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Üst Başlık Barı: Kategori, Grup, Durum & Sayaç */}
       <div className="relative z-10 flex flex-wrap items-center justify-between gap-2.5 pb-4 border-b border-slate-800/80">
         <div className="flex items-center gap-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black bg-red-600/20 text-red-400 border border-red-500/30 shadow-xs">
-            <Flame size={13} className="text-red-400 animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-surface-raised text-ink-2 border border-line shadow-xs">
+            <Flame size={13} className="text-primary" />
             <span>ÖNE ÇIKAN MAÇ</span>
           </div>
           <span className="text-xs font-bold text-slate-400">
@@ -228,7 +228,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
             </div>
           ) : (
             <div className="flex flex-col items-center gap-1">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-600 to-rose-700 flex items-center justify-center text-white font-black text-sm shadow-glow-red tracking-wider">
+              <div className="w-12 h-12 rounded-2xl bg-surface-raised border border-line flex items-center justify-center text-ink-2 font-display font-bold text-sm tracking-wider">
                 VS
               </div>
               <div className="text-center mt-1">
@@ -274,13 +274,13 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
       <div className="relative z-10 pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
         {/* Salon Linki & Yol Tarifi */}
         <div className="flex items-center gap-2 text-slate-300">
-          <MapPin size={14} className="text-red-400 shrink-0" />
+          <MapPin size={14} className="text-ink-2 shrink-0" />
           {featuredMatch.hall && featuredMatch.hall !== "TBD" ? (
             <a
               href={getHallNavigationUrl(featuredMatch.hall, featuredMatch.city || city)}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium hover:text-white underline decoration-slate-600 hover:decoration-red-400 transition-colors flex items-center gap-1 cursor-pointer"
+              className="font-medium hover:text-white underline decoration-slate-600 hover:decoration-primary transition-colors flex items-center gap-1 cursor-pointer"
             >
               <span>{featuredMatch.hall}</span>
               <Navigation size={11} className="text-slate-400" />
@@ -295,7 +295,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
           {onSelectMatch && (
             <button
               onClick={() => onSelectMatch(featuredMatch)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-glow-red transition-all cursor-pointer text-xs active:scale-95"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-primary text-primary-fg shadow-glow-primary hover:bg-primary/90 transition-all cursor-pointer text-xs active:scale-95"
               title="Maç Merkezi & Set Detayları"
             >
               <span>Maç Merkezi</span>

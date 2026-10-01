@@ -194,9 +194,9 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
 
             {/* Dropdown Açılır Menü */}
             {isCityDropdownOpen && (
-              <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 bg-[#0f172a] border border-slate-700/90 rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+              <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 bg-canvas border border-slate-700/90 rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
                 {/* Arama Inputu */}
-                <div className="p-2.5 border-b border-slate-800 bg-[#0b1325]">
+                <div className="p-2.5 border-b border-slate-800 bg-surface-muted">
                   <div className="relative">
                     <Search
                       size={13}

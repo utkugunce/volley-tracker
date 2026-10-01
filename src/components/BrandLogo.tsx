@@ -66,13 +66,13 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           {/* Center Swirl & Seams */}
           <path
             d="M20 3C15.6 6.5 18.5 11 21.2 15.8C27.5 14.8 32.5 14.5 36.8 16"
-            stroke="#0f172a"
+            stroke="#07131F"
             strokeWidth="1.2"
             strokeLinecap="round"
           />
           <path
             d="M4.5 15.2C10.2 17.2 15.8 17.5 21.2 15.8C22 22.8 24.5 28 30.5 30.8"
-            stroke="#0f172a"
+            stroke="#07131F"
             strokeWidth="1.2"
             strokeLinecap="round"
           />
@@ -88,30 +88,30 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
           />
 
           {/* Core Energy Dot */}
-          <circle cx="21" cy="16.5" r="2" fill="#fbbf24" />
+          <circle cx="21" cy="16.5" r="2" fill="#FFC24D" />
 
           {/* Gradient Definitions */}
           <defs>
             <linearGradient id="logo-grad-bg" x1="0" y1="0" x2="40" y2="40">
-              <stop offset="0%" stopColor="#1e293b" />
-              <stop offset="100%" stopColor="#0f172a" />
+              <stop offset="0%" stopColor="#13293F" />
+              <stop offset="100%" stopColor="#07131F" />
             </linearGradient>
             <linearGradient id="logo-border-grad" x1="0" y1="0" x2="40" y2="40">
-              <stop offset="0%" stopColor="#f59e0b" />
-              <stop offset="50%" stopColor="#ef4444" />
-              <stop offset="100%" stopColor="#3b82f6" />
+              <stop offset="0%" stopColor="#2DD4C0" />
+              <stop offset="50%" stopColor="#7FB4FF" />
+              <stop offset="100%" stopColor="#5B9DFF" />
             </linearGradient>
             <linearGradient id="seg-grad-top" x1="15" y1="3" x2="36" y2="16">
-              <stop offset="0%" stopColor="#f59e0b" />
-              <stop offset="100%" stopColor="#d97706" />
+              <stop offset="0%" stopColor="#2DD4C0" />
+              <stop offset="100%" stopColor="#1B8175" />
             </linearGradient>
             <linearGradient id="seg-grad-coral" x1="4" y1="16" x2="29" y2="36">
-              <stop offset="0%" stopColor="#ef4444" />
-              <stop offset="100%" stopColor="#b91c1c" />
+              <stop offset="0%" stopColor="#5B9DFF" />
+              <stop offset="100%" stopColor="#2A63BD" />
             </linearGradient>
             <linearGradient id="accent-ring" x1="0" y1="0" x2="40" y2="40">
-              <stop offset="0%" stopColor="#fbbf24" />
-              <stop offset="100%" stopColor="#f43f5e" />
+              <stop offset="0%" stopColor="#2DD4C0" />
+              <stop offset="100%" stopColor="#7FB4FF" />
             </linearGradient>
           </defs>
         </svg>
@@ -121,7 +121,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
       {variant !== "mark" && (
         <div className="flex flex-col leading-none">
           <div className="flex items-center gap-1.5">
-            <span className="bg-gradient-to-r from-red-600 via-rose-600 to-amber-500 text-white text-xs sm:text-[13px] font-black tracking-wider uppercase px-2 py-0.5 rounded-md shadow-xs border border-white/10">
+            <span className="bg-primary/15 text-primary border border-primary/40 font-display font-bold text-xs sm:text-[13px] tracking-wider uppercase px-2 py-0.5 rounded-md">
               ALTYAPI
             </span>
             <span className="text-white text-base sm:text-lg font-black tracking-tight font-sans">

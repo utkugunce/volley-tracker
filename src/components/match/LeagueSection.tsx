@@ -51,7 +51,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
 
   return (
     <div
-      className="rounded-xl border border-[#2A2E3D] bg-[#181A20] overflow-hidden shadow-sm"
+      className="rounded-xl border border-line bg-surface-muted overflow-hidden shadow-sm"
       style={{ contentVisibility: "auto", containIntrinsicSize: "auto 320px" }}
     >
       {/* Lig Akordiyon Başlığı */}
@@ -65,12 +65,12 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             toggleCollapsed();
           }
         }}
-        className="flex items-center justify-between px-3 py-2 bg-[#1E222D] hover:bg-[#242936] transition-colors cursor-pointer select-none border-b border-[#2A2E3D]/80"
+        className="flex items-center justify-between px-3 py-2 bg-panel hover:bg-panel transition-colors cursor-pointer select-none border-b border-line/80"
       >
         <div className="flex items-center gap-2 truncate pr-2">
           <ChevronDown
             size={14}
-            className={`text-[#94A3B8] shrink-0 transform transition-transform duration-200 ${
+            className={`text-ink-2 shrink-0 transform transition-transform duration-200 ${
               isCollapsed ? "-rotate-90" : "rotate-0"
             }`}
           />
@@ -83,19 +83,19 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             >
               {leagueTitle}
             </LeagueVolleyboxLink>
-            {sectionLabel && <span className="text-[#94A3B8] font-semibold"> · {sectionLabel}</span>}
+            {sectionLabel && <span className="text-ink-2 font-semibold"> · {sectionLabel}</span>}
           </h3>
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
-          <span className="font-mono text-[10px] font-semibold text-blue-400 bg-[#121212] px-2 py-0.5 rounded border border-[#2A2E3D]">
+          <span className="font-mono text-[10px] font-semibold text-blue-400 bg-canvas px-2 py-0.5 rounded border border-line">
             {matches.length} Maç
           </span>
 
           <Link
             href={standingsUrl}
             onClick={(e) => e.stopPropagation()}
-            className="p-1 rounded text-[#94A3B8] hover:text-amber-400 hover:bg-[#121212] transition-colors"
+            className="p-1 rounded text-ink-2 hover:text-amber-400 hover:bg-canvas transition-colors"
             title="Puan Durumunu Gör"
           >
             <Trophy size={13} />
@@ -105,7 +105,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
 
       {/* Maç Satırları */}
       {!isCollapsed && (
-        <div className="divide-y divide-[#2A2E3D]/40">
+        <div className="divide-y divide-line/40">
           {matches.map((m) => (
             <CompactMatchRow
               key={m.id}

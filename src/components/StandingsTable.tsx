@@ -1,16 +1,12 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useRef } from "react";
-import { StandingItem } from "@/types/fixture";
+import React, { useState, useMemo, useEffect, useRef, useCallback } from "react";
+import { StandingItem, Match } from "@/types/fixture";
 import {
   Trophy,
   HelpCircle,
   MapPin,
-  Layers,
   Download,
-  TrendingUp,
-  TrendingDown,
-  Minus,
   ChevronDown,
   ChevronRight,
   Search,
@@ -199,15 +195,141 @@ export function downloadStandingsCsv(items: StandingItem[], groupName?: string):
   URL.revokeObjectURL(url);
 }
 
+/* ──────────────────────────── Form Helpers ──────────────────────────── */
+
+export type FormResult = "W" | "L";
+
+interface TeamMatchSummary {
+  form: FormResult[];
+  formSource: "matches" | "standings" | "none";
+  last: Match | null;
+  next: Match | null;
+}
+
+function hasScore(m: Match): boolean {
+  return (m.home_score != null && m.away_score != null) || !!m.score;
+}
+
+export function summarizeTeam(
+  row: StandingItem,
+  ctx: { city: string; leagueName: string; groupName: string } | null,
+  matches?: Match[]
+): TeamMatchSummary {
+  const fallback = (row.form || []).slice(-5) as FormResult[];
+  const empty: TeamMatchSummary = {
+    form: fallback,
+    formSource: fallback.length ? "standings" : "none",
+    last: null,
+    next: null,
+  };
+  if (!matches?.length) return empty;
+
+  const name = trLower(row.team.trim());
+
+  const mine = matches.filter((m) => {
+    const home = trLower(m.home_team.trim());
+    const away = trLower(m.away_team.trim());
+    if (!trIncludes(home, name) && !trIncludes(away, name) && !trIncludes(name, home) && !trIncludes(name, away))
+      return false;
+    if (ctx) {
+      if (ctx.city && m.city && trLower(m.city) !== trLower(ctx.city)) return false;
+      if (ctx.leagueName && m.category && !trIncludes(trLower(m.category), trLower(ctx.leagueName)) && !trIncludes(trLower(ctx.leagueName), trLower(m.category)))
+        return false;
+    }
+    return true;
+  });
+
+  if (!mine.length) return empty;
+
+  const key = (m: Match) => `${m.date} ${m.time || ""}`;
+  const finished = mine
+    .filter((m) => m.status === "finished" && hasScore(m))
+    .sort((a, b) => key(a).localeCompare(key(b)));
+  const upcoming = mine
+    .filter((m) => m.status === "upcoming" || m.status === "live")
+    .sort((a, b) => key(a).localeCompare(key(b)));
+
+  const form: FormResult[] = finished.slice(-5).map((m) => {
+    const home = trLower(m.home_team.trim());
+    const isHome = trIncludes(home, name) || trIncludes(name, home);
+    const myScore = isHome ? (m.home_score ?? 0) : (m.away_score ?? 0);
+    const theirScore = isHome ? (m.away_score ?? 0) : (m.home_score ?? 0);
+    return myScore > theirScore ? "W" : "L";
+  });
+
+  return {
+    form: form.length ? form : fallback,
+    formSource: form.length ? "matches" : fallback.length ? "standings" : "none",
+    last: finished.at(-1) ?? null,
+    next: upcoming[0] ?? null,
+  };
+}
+
+export const FormDots = ({ form, source }: { form: FormResult[]; source?: TeamMatchSummary["formSource"] }) => {
+  const padded: (FormResult | null)[] = [...form.slice(-5)];
+  while (padded.length < 5) padded.push(null);
+  return (
+    <div
+      className="flex items-center justify-center gap-1"
+      role="img"
+      aria-label={form.length ? `Son ${form.length} maç: ${form.map((f) => (f === "W" ? "G" : "M")).join(" ")}` : "Form verisi yok"}
+      title={source === "standings" ? "Form: TVF puan tablosundan (yalnız oynanan maçlar)" : undefined}
+    >
+      {padded.map((f, i) =>
+        f === null ? (
+          <span key={i} className="h-[18px] w-[18px] rounded-full border border-dashed border-line" aria-hidden="true" />
+        ) : (
+          <span
+            key={i}
+            aria-hidden="true"
+            className={`flex h-[18px] w-[18px] items-center justify-center rounded-full border-[1.5px] font-display text-[9px] font-bold leading-none ${
+              f === "W" ? "border-done text-done" : "border-form-loss text-form-loss"
+            }`}
+          >
+            {f === "W" ? "G" : "M"}
+          </span>
+        )
+      )}
+    </div>
+  );
+};
+
+/* ──────────────────────────── Detail Row ──────────────────────────── */
+
+function MatchMiniCard({ match, label }: { match: Match | null; label: string }) {
+  if (!match) {
+    return (
+      <div className="text-ink-3 text-[11px]">
+        <span className="font-semibold text-ink-2">{label}:</span> Veri yok
+      </div>
+    );
+  }
+  return (
+    <div className="text-[11px]">
+      <span className="font-semibold text-ink-2">{label}:</span>{" "}
+      <span className="text-ink">
+        {match.home_team} vs {match.away_team}
+      </span>{" "}
+      <span className="text-ink-3">
+        ({match.date}{match.time ? ` ${match.time}` : ""})
+      </span>
+      {match.score && <span className="ml-1 font-scoreboard tabular-nums text-ink font-bold">{match.score}</span>}
+    </div>
+  );
+}
+
+/* ──────────────────────────── Main Component ──────────────────────────── */
+
 interface StandingsTableProps {
   standingsData: {
     [category: string]: StandingItem[];
   };
   city?: string;
+  matches?: Match[];
   onSelectTeam?: (team: StandingItem, context: StandingsTeamContext) => void;
 }
 
-export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city, onSelectTeam }) => {
+export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city, matches, onSelectTeam }) => {
   const allKeys = Object.keys(standingsData);
 
   // Tüm anahtarları ayrıştır
@@ -232,6 +354,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
   const [isCityDropdownOpen, setIsCityDropdownOpen] = useState<boolean>(false);
   const [citySearchTerm, setCitySearchTerm] = useState<string>("");
   const [isCategoryGroupOpen, setIsCategoryGroupOpen] = useState<boolean>(true);
+  const [expandedTeam, setExpandedTeam] = useState<string | null>(null);
   const cityDropdownRef = useRef<HTMLDivElement>(null);
 
   // Dışarı tıklayınca dropdown'ı kapat
@@ -372,16 +495,33 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
     return [];
   }, [selectedGroupKey, standingsData]);
 
+  // Satır açılır/kapanır
+  const toggleDetail = useCallback(
+    (row: StandingItem) => {
+      const teamKey = `${row.rank}-${row.team}`;
+      setExpandedTeam((prev) => (prev === teamKey ? null : teamKey));
+      if (onSelectTeam && activeContext) {
+        onSelectTeam(row, {
+          rawKey: activeContext.rawKey || "",
+          city: activeContext.city || city || "",
+          leagueName: activeContext.leagueFullName || "",
+          groupName: activeContext.displayGroup || "",
+        });
+      }
+    },
+    [onSelectTeam, activeContext, city]
+  );
+
   if (allKeys.length === 0) {
     return (
-      <div className="bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-8 text-center shadow-xl">
-        <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-slate-500 border border-slate-700">
+      <div className="rounded-2xl border border-line bg-surface p-8 text-center shadow-card">
+        <div className="w-12 h-12 rounded-full bg-surface-raised flex items-center justify-center mx-auto mb-3 text-ink-3 border border-line">
           <HelpCircle size={22} />
         </div>
-        <h3 className="text-sm font-bold text-white mb-1">
+        <h3 className="text-sm font-bold text-ink mb-1">
           Puan Durumu Verisi Henüz Açıklanmadı
         </h3>
-        <p className="text-xs text-slate-400 max-w-sm mx-auto">
+        <p className="text-xs text-ink-3 max-w-sm mx-auto">
           Bu il veya kategori için resmi puan cetveli TVF tarafından sisteme girildiğinde burada görüntülenecektir.
         </p>
       </div>
@@ -392,17 +532,17 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
     <div className="space-y-4">
       {/* Kategori, Lig ve Grup Seçici Barı */}
       <div
-        className={`glass-panel p-4 rounded-2xl border border-slate-800/80 shadow-card no-print space-y-3 relative ${
+        className={`rounded-2xl border border-line bg-surface p-3 sm:p-4 no-print space-y-3 relative ${
           isCityDropdownOpen ? "z-30" : "z-10"
         }`}
       >
         
         {/* 1. İL SEÇİMİ (Açılır Menü / Dropdown) */}
         {distinctCities.length > 1 && (
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-line">
             <div className="flex items-center gap-2.5 flex-wrap">
-              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase flex items-center gap-1.5 shrink-0">
-                <MapPin size={13} className="text-rose-400 shrink-0" />
+              <span className="text-[10px] sm:text-[11px] font-bold text-ink-2 uppercase flex items-center gap-1.5 shrink-0">
+                <MapPin size={13} className="text-ink-2 shrink-0" />
                 İL:
               </span>
 
@@ -414,22 +554,22 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                   aria-expanded={isCityDropdownOpen}
                   aria-haspopup="listbox"
                   aria-label={selectedCity || "İl Seçiniz"}
-                  className="flex items-center justify-between gap-2.5 bg-slate-900/90 hover:bg-slate-850 text-white text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-700/80 hover:border-slate-600 transition-all shadow-sm active:scale-95 cursor-pointer min-w-[210px] sm:min-w-[240px] focus:outline-none focus:ring-1 focus:ring-red-500"
+                  className="flex items-center justify-between gap-2.5 bg-surface-raised hover:bg-surface-raised/80 text-ink text-xs font-bold px-3.5 py-2 rounded-xl border border-line hover:border-ink-3 transition-all shadow-sm active:scale-95 cursor-pointer min-w-[210px] sm:min-w-[240px] focus:outline-none focus:ring-1 focus:ring-primary"
                 >
                   <span className="flex items-center gap-2 truncate">
-                    <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0 shadow-2xs" />
-                    <span className="text-white font-extrabold truncate text-[13px]">
+                    <span className="w-2 h-2 rounded-full bg-primary shrink-0 shadow-2xs" />
+                    <span className="text-ink font-extrabold truncate text-[13px]">
                       {selectedCity || "İl Seçiniz"}
                     </span>
                   </span>
-                  <div className="flex items-center gap-1.5 shrink-0 text-slate-400">
-                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">
+                  <div className="flex items-center gap-1.5 shrink-0 text-ink-2">
+                    <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-canvas border border-line text-ink-2">
                       {distinctCities.length} İl
                     </span>
                     <ChevronDown
                       size={14}
-                      className={`transition-transform duration-200 text-slate-400 ${
-                        isCityDropdownOpen ? "rotate-180 text-rose-400" : ""
+                      className={`transition-transform duration-200 text-ink-2 ${
+                        isCityDropdownOpen ? "rotate-180 text-primary" : ""
                       }`}
                     />
                   </div>
@@ -437,13 +577,13 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
                 {/* Dropdown Açılır Menü */}
                 {isCityDropdownOpen && (
-                  <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 bg-[#0f172a] border border-slate-700/90 rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+                  <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 bg-canvas border border-line rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
                     {/* Arama Inputu */}
-                    <div className="p-2.5 border-b border-slate-800 bg-[#0b1325]">
+                    <div className="p-2.5 border-b border-line bg-surface-muted">
                       <div className="relative">
                         <Search
                           size={13}
-                          className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
+                          className="absolute left-3 top-1/2 -translate-y-1/2 text-ink-3 pointer-events-none"
                         />
                         <input
                           type="text"
@@ -457,23 +597,23 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                               handleCitySelect(filteredCities[0]);
                             }
                           }}
-                          className="w-full bg-slate-900/90 border border-slate-700/70 text-slate-200 text-xs rounded-xl pl-8 pr-7 py-1.5 focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 placeholder-slate-500"
+                          className="w-full bg-surface-raised border border-line text-ink text-xs rounded-xl pl-8 pr-7 py-1.5 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-ink-3"
                           autoFocus
                         />
                         {citySearchTerm && (
                           <button
                             type="button"
                             onClick={() => setCitySearchTerm("")}
-                            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-0.5 rounded cursor-pointer"
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-ink-3 hover:text-ink p-0.5 rounded cursor-pointer"
                             title="Temizle"
                           >
                             <X size={12} />
                           </button>
                         )}
                       </div>
-                      <div className="flex items-center justify-between text-[10px] text-slate-400 px-1 pt-1.5">
+                      <div className="flex items-center justify-between text-[10px] text-ink-3 px-1 pt-1.5">
                         <span>Kayıtlı İller</span>
-                        <span className="font-mono text-slate-400">
+                        <span className="font-mono text-ink-3">
                           {filteredCities.length} / {distinctCities.length} İl
                         </span>
                       </div>
@@ -485,7 +625,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                       role="listbox"
                     >
                       {filteredCities.length === 0 ? (
-                        <div className="p-4 text-center text-xs text-slate-500">
+                        <div className="p-4 text-center text-xs text-ink-3">
                           Eşleşen il bulunamadı.
                         </div>
                       ) : (
@@ -500,16 +640,16 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                               onClick={() => handleCitySelect(cityName)}
                               className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                                 isSelected
-                                  ? "bg-red-600/20 text-rose-300 font-bold border border-red-500/40"
-                                  : "text-slate-300 hover:text-white hover:bg-slate-800/80"
+                                  ? "bg-primary/20 text-primary font-bold border border-primary/40"
+                                  : "text-ink-2 hover:text-ink hover:bg-surface-raised"
                               }`}
                             >
                               <span className="flex items-center gap-2 truncate">
                                 <span
                                   className={`w-1.5 h-1.5 rounded-full ${
                                     isSelected
-                                      ? "bg-rose-500 shadow-glow-red"
-                                      : "bg-slate-600"
+                                      ? "bg-primary shadow-glow-primary"
+                                      : "bg-ink-3"
                                   }`}
                                 />
                                 <span className="truncate">{cityName}</span>
@@ -517,7 +657,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                               {isSelected && (
                                 <Check
                                   size={14}
-                                  className="text-rose-400 shrink-0"
+                                  className="text-primary shrink-0"
                                 />
                               )}
                             </button>
@@ -532,14 +672,14 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
             {/* Seçili İl ve Açılır/Kapanır Gösterge */}
             {selectedCity && (
-              <div className="flex items-center gap-2 self-start sm:self-auto text-xs text-slate-400">
-                <span className="text-[11px] font-medium text-slate-400">
-                  Seçili İl: <strong className="text-white font-bold">{selectedCity}</strong>
+              <div className="flex items-center gap-2 self-start sm:self-auto text-xs text-ink-2">
+                <span className="text-[11px] font-medium text-ink-2">
+                  Seçili İl: <strong className="text-ink font-bold">{selectedCity}</strong>
                 </span>
                 <button
                   type="button"
                   onClick={() => setIsCategoryGroupOpen(!isCategoryGroupOpen)}
-                  className="text-[11px] font-semibold text-rose-400 hover:text-rose-300 transition-colors flex items-center gap-1 cursor-pointer bg-slate-800/60 px-2.5 py-1 rounded-lg border border-slate-700/60"
+                  className="text-[11px] font-semibold text-primary hover:text-primary-hover transition-colors flex items-center gap-1 cursor-pointer bg-surface-raised px-2.5 py-1 rounded-lg border border-line"
                 >
                   <span>{isCategoryGroupOpen ? "Filtreleri Gizle" : "Kategori & Grupları Aç"}</span>
                   <ChevronDown
@@ -557,100 +697,102 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         {/* 2. KATEGORİ, LİG VE GRUP SEÇİCİ BÖLÜMÜ (İl seçilince açılır) */}
         {!distinctCities || distinctCities.length <= 1 || (selectedCity && isCategoryGroupOpen) ? (
           <div className="space-y-3 animate-in fade-in slide-in-from-top-1 duration-200">
-            {/* Kategori / Yaş Grubu Seçimi */}
+            {/* Kategori / Yaş Grubu Seçimi — segmented kontrol */}
             {availableAgeGroups.length > 0 && (
-              <div className="flex flex-wrap items-center gap-1.5">
-                <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px] flex items-center gap-1">
-                  <Layers size={12} className="text-amber-400 shrink-0" />
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[10px] sm:text-[11px] font-bold text-ink-2 uppercase min-w-[55px] sm:min-w-[65px] flex items-center gap-1">
                   Kategori:
                 </span>
-                {availableAgeGroups.map((age) => {
-                  const isActive = selectedAgeGroup === age;
-                  return (
-                    <button
-                      key={age}
-                      onClick={() => setSelectedAgeGroup(age)}
-                      title={age}
-                      className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
-                        isActive
-                          ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/30"
-                          : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
-                      }`}
-                    >
-                      <span>{age}</span>
-                    </button>
-                  );
-                })}
+                <div className="inline-flex rounded-xl border border-line bg-canvas p-0.5">
+                  {availableAgeGroups.map((age) => {
+                    const isActive = selectedAgeGroup === age;
+                    return (
+                      <button
+                        key={age}
+                        onClick={() => setSelectedAgeGroup(age)}
+                        title={age}
+                        aria-pressed={isActive}
+                        className={`rounded-[10px] px-3 py-1.5 text-xs font-semibold transition-all duration-150 cursor-pointer ${
+                          isActive
+                            ? "bg-primary text-primary-fg font-bold shadow-glow-primary"
+                            : "text-ink-2 hover:text-ink"
+                        }`}
+                      >
+                        <span>{age}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             )}
 
             {/* Lig Seçimi (Birden çok lig varsa) */}
             {availableLeagues.length > 1 && (
-              <div className="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-800/80">
-                <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px]">
+              <div className="flex flex-wrap items-center gap-2 pt-2.5 border-t border-line">
+                <span className="text-[10px] sm:text-[11px] font-bold text-ink-2 uppercase min-w-[55px] sm:min-w-[65px]">
                   Lig:
                 </span>
-                {availableLeagues.map((lg) => {
-                  const isActive = selectedLeagueTier === lg;
-                  return (
-                    <button
-                      key={lg}
-                      onClick={() => setSelectedLeagueTier(lg)}
-                      title={lg}
-                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-150 cursor-pointer ${
-                        isActive
-                          ? "bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-xs font-bold ring-2 ring-indigo-500/30"
-                          : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50"
-                      }`}
-                    >
-                      {lg}
-                    </button>
-                  );
-                })}
+                <div className="inline-flex rounded-xl border border-line bg-canvas p-0.5">
+                  {availableLeagues.map((lg) => {
+                    const isActive = selectedLeagueTier === lg;
+                    return (
+                      <button
+                        key={lg}
+                        onClick={() => setSelectedLeagueTier(lg)}
+                        title={lg}
+                        className={`rounded-[10px] px-3 py-1.5 text-xs font-semibold transition-all duration-150 cursor-pointer ${
+                          isActive
+                            ? "bg-surface-raised text-ink font-bold"
+                            : "text-ink-2 hover:text-ink"
+                        }`}
+                      >
+                        {lg}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             )}
 
-            {/* Grup Seçimi */}
+            {/* Grup Seçimi — alt çizgili sekmeler */}
             {availableGroups.length > 0 && (
-              <div className="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-800/80">
-                <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px]">
-                  Grup:
-                </span>
-                {availableGroups.map((grp) => {
-                  const isActive = selectedGroupKey === grp.rawKey;
-                  return (
-                    <button
-                      key={grp.rawKey}
-                      onClick={() => setSelectedGroupKey(grp.rawKey)}
-                      title={grp.rawGroup || grp.displayGroup}
-                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold transition-all duration-150 cursor-pointer ${
-                        isActive
-                          ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-xs font-bold ring-1 ring-red-500/40"
-                          : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50"
-                      }`}
-                    >
-                      {grp.displayGroup}
-                    </button>
-                  );
-                })}
+              <div className="border-b border-line" role="tablist">
+                <div className="flex flex-wrap items-center gap-0">
+                  {availableGroups.map((grp) => {
+                    const isActive = selectedGroupKey === grp.rawKey;
+                    return (
+                      <button
+                        key={grp.rawKey}
+                        onClick={() => setSelectedGroupKey(grp.rawKey)}
+                        title={grp.rawGroup || grp.displayGroup}
+                        aria-current={isActive ? "true" : undefined}
+                        className={`-mb-px border-b-2 px-3 py-2 text-xs font-semibold transition-all duration-150 cursor-pointer ${
+                          isActive
+                            ? "border-selected text-selected-text font-bold"
+                            : "border-transparent text-ink-2 hover:text-ink"
+                        }`}
+                      >
+                        {grp.displayGroup}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
         ) : (
-          <div className="p-4 text-center text-xs text-slate-400 bg-slate-900/50 rounded-xl border border-dashed border-slate-800">
+          <div className="p-4 text-center text-xs text-ink-3 bg-canvas rounded-xl border border-dashed border-line">
             Lütfen kategori ve grupları listelemek için yukarıdaki açılır menüden bir il seçiniz.
           </div>
         )}
       </div>
 
       {/* Puan Durumu Tablosu veya Boş Durum */}
-      <div className="glass-panel border border-slate-800/80 rounded-2xl shadow-card overflow-hidden">
+      <div className="rounded-2xl border border-line bg-surface shadow-card overflow-hidden">
         {/* Başlık Şeridi */}
-        <div className="bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 text-white px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-slate-800/80">
+        <div className="bg-surface text-ink px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-line">
           <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
-            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 shadow-xs">
-              <Trophy size={13} className="text-amber-400" />
-            </div>
+            <Trophy size={15} className="text-warn shrink-0" />
             <h2 className="text-xs sm:text-sm font-extrabold tracking-tight truncate">
               <LeagueVolleyboxLink
                 league={activeContext?.leagueFullName || ""}
@@ -671,15 +813,15 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                     `${activeContext?.city || city || ""}-${activeContext?.leagueFullName || ""}-${activeContext?.rawGroup || ""}`
                   )
                 }
-                className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-semibold px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-slate-700/80 hover:border-slate-600 transition-all shadow-xs active:scale-95 cursor-pointer"
+                className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-semibold px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-line bg-surface-raised text-ink-2 hover:text-ink transition-all shadow-xs active:scale-95 cursor-pointer"
                 title="Puan durumunu Türkçe Excel uyumlu (.csv) olarak indir"
                 aria-label="Puan durumunu CSV olarak indir"
               >
-                <Download size={12} className="text-emerald-400" />
+                <Download size={12} className="text-done" />
                 <span>CSV İndir</span>
               </button>
             )}
-            <span className="text-[10px] sm:text-xs text-slate-400 font-mono font-bold bg-slate-900/80 px-1.5 sm:px-2 py-0.5 rounded-lg border border-slate-800">
+            <span className="text-[10px] sm:text-xs text-ink-2 font-mono font-bold bg-canvas px-1.5 sm:px-2 py-0.5 rounded-lg border border-line">
               {items.length} Takım
             </span>
           </div>
@@ -688,183 +830,198 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         {/* Tablo veya Boş Durum (Empty State) */}
         {items.length === 0 ? (
           <div className="py-12 px-4 text-center">
-            <div className="w-12 h-12 rounded-2xl bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-slate-500 border border-slate-700/60">
+            <div className="w-12 h-12 rounded-2xl bg-surface-raised flex items-center justify-center mx-auto mb-3 text-ink-3 border border-line">
               <HelpCircle size={22} />
             </div>
-            <h3 className="text-sm font-bold text-white mb-1">
+            <h3 className="text-sm font-bold text-ink mb-1">
               Bu grup için puan durumu verisi henüz mevcut değil.
             </h3>
-            <p className="text-xs text-slate-400 max-w-sm mx-auto">
+            <p className="text-xs text-ink-3 max-w-sm mx-auto">
               Seçtiğiniz {activeContext?.leagueFullName} - {activeContext?.displayGroup} kategorisine ait resmi puan cetveli TVF il temsilciliği tarafından sisteme girildiğinde burada görüntülenecektir.
             </p>
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse text-xs">
+            <table className="w-full table-fixed text-left border-collapse text-xs">
+              <caption className="sr-only">
+                {activeContext?.city || ""} {activeContext?.leagueFullName || ""} {activeContext?.rawGroup || ""} Puan Durumu
+              </caption>
               <thead>
-                <tr className="bg-slate-950/60 text-slate-400 font-bold border-b border-slate-800 uppercase text-[10px] sm:text-[11px] tracking-wider">
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center w-8 sm:w-12">#</th>
+                <tr className="bg-surface text-ink-2 font-bold uppercase text-[10px] sm:text-[11px] tracking-wider sticky top-[var(--app-header-h,0px)] z-20 shadow-[0_1px_0_var(--line)]">
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center w-12 sm:w-14">#</th>
                   <th className="py-2.5 sm:py-3 px-2 sm:px-4">Takım</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Oynanan Maç">O</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Galibiyet">G</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Mağlubiyet">M</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Aldığı Set">AS</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Verdiği Set">VS</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Set Oranı">Set Oran</th>
-                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center" title="Sayı Oranı">Sayı Oran</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-black text-white" title="Puan">Puan</th>
-                  <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-center" title="Son 5 Maç Formu">Form</th>
+                  <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden sm:table-cell w-16" title="Set (Aldığı-Verdiği)">Set</th>
+                  <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center w-12 sm:w-14 font-black text-ink" title="Puan">Puan</th>
+                  <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-center w-24 sm:w-28" title="Son 5 Maç Formu">Form</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60">
+              <tbody>
                 {items.map((row) => {
-                  const isTop1 = row.rank === 1;
                   const isTop4 = row.rank <= 4;
                   const isPlayoff = row.rank <= 2;
                   const isKlasman = row.rank > 2 && row.rank <= 8;
+                  const teamKey = `${row.rank}-${row.team}`;
+                  const isExpanded = expandedTeam === teamKey;
 
-                  // Trend: son maça göre
-                  const lastForm = row.form && row.form.length > 0 ? row.form[row.form.length - 1] : null;
+                  const summary = summarizeTeam(
+                    row,
+                    activeContext
+                      ? { city: activeContext.city || city || "", leagueName: activeContext.leagueFullName, groupName: activeContext.displayGroup }
+                      : null,
+                    matches
+                  );
 
                   return (
-                    <tr
-                      key={row.rank}
-                      className={`transition-colors duration-150 ${
-                        isTop1
-                          ? "bg-emerald-500/5 hover:bg-emerald-500/10"
-                          : isPlayoff
-                          ? "bg-emerald-500/5 hover:bg-emerald-500/10"
-                          : isKlasman
-                          ? "bg-amber-500/5 hover:bg-amber-500/10"
-                          : row.rank % 2 === 1
-                          ? "bg-transparent hover:bg-slate-800/50"
-                          : "bg-slate-900/25 hover:bg-slate-800/60"
-                      }`}
-                    >
-                      {/* Sıra & Final Etabı / Klasman Çizgisi & Trend Oku */}
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-bold text-xs relative">
-                        <span
-                          className={`absolute left-0 top-1.5 bottom-1.5 w-1 rounded-r ${
-                            isPlayoff
-                              ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"
-                              : isKlasman
-                              ? "bg-amber-500/80 shadow-[0_0_6px_rgba(245,158,11,0.4)]"
-                              : "bg-slate-700/40"
-                          }`}
-                        />
-                        <div className="flex items-center justify-center gap-0.5 sm:gap-1">
+                    <React.Fragment key={teamKey}>
+                      <tr
+                        className={`border-t border-line/70 transition-colors duration-150 cursor-pointer ${
+                          isExpanded ? "bg-surface-raised" : "hover:bg-surface-raised/70"
+                        }`}
+                        onClick={(e) => {
+                          // Bağlantılara tıklama satırı açmaz
+                          const target = e.target as HTMLElement;
+                          if (target.closest("a")) return;
+                          toggleDetail(row);
+                        }}
+                      >
+                        {/* Sıra & Final Etabı / Klasman Çizgisi */}
+                        <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-bold text-xs relative">
                           <span
-                            className={`font-mono font-scoreboard tabular-nums ${
-                              isTop1
-                                ? "text-amber-300 font-black text-xs sm:text-sm"
-                                : isPlayoff
-                                ? "text-emerald-400 font-black text-xs sm:text-sm"
+                            className={`absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r ${
+                              isPlayoff
+                                ? "bg-primary shadow-[0_0_8px_rgb(var(--primary-rgb)/0.5)]"
                                 : isKlasman
-                                ? "text-amber-400 font-bold text-xs sm:text-sm"
-                                : "text-slate-400 font-medium text-xs sm:text-sm"
+                                ? "bg-rank-mid shadow-[0_0_6px_rgb(var(--rank-mid-rgb)/0.4)]"
+                                : ""
+                            }`}
+                          />
+                          <span
+                            className={`font-display font-scoreboard tabular-nums ${
+                              isPlayoff
+                                ? "text-primary font-black text-xs sm:text-sm"
+                                : isKlasman
+                                ? "text-rank-mid font-bold text-xs sm:text-sm"
+                                : "text-ink-2 font-medium text-xs sm:text-sm"
                             }`}
                           >
                             {row.rank}
                           </span>
-                          {/* Trend Oku */}
-                          <span className="shrink-0" title={lastForm === "W" ? "Son maç galibiyet" : lastForm === "L" ? "Son maç mağlubiyet" : "Durum sabit"}>
-                            {lastForm === "W" ? (
-                              <TrendingUp size={11} className="text-emerald-400 stroke-[2.5]" />
-                            ) : lastForm === "L" ? (
-                              <TrendingDown size={11} className="text-rose-400 stroke-[2.5]" />
-                            ) : (
-                              <Minus size={9} className="text-slate-600" />
-                            )}
-                          </span>
-                        </div>
-                      </td>
+                        </td>
 
-                      {/* Takım Adı */}
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-4 font-bold text-white whitespace-nowrap text-xs sm:text-sm">
-                        <div className="flex items-center gap-1.5">
-                          <TeamVolleyboxLink
-                            teamName={row.team}
-                            category={activeContext?.leagueFullName}
-                            city={activeContext?.city || city}
-                            className={`transition-colors ${
-                              isTop1
-                                ? "font-black text-white"
-                                : isTop4
-                                ? "font-bold text-white"
-                                : "font-semibold text-slate-200 hover:text-white"
-                            }`}
-                          />
-                          {onSelectTeam && (
+                        {/* Takım Adı */}
+                        <td className="py-2.5 sm:py-3 px-2 sm:px-4 font-bold text-ink whitespace-nowrap text-xs sm:text-sm">
+                          <div className="flex items-center gap-1.5">
+                            <TeamVolleyboxLink
+                              teamName={row.team}
+                              category={activeContext?.leagueFullName}
+                              city={activeContext?.city || city}
+                              className={`transition-colors ${
+                                isTop4
+                                  ? "font-bold text-ink"
+                                  : "font-semibold text-ink-2 hover:text-ink"
+                              }`}
+                            />
                             <button
                               type="button"
-                              onClick={() => onSelectTeam(row, {
-                                rawKey: activeContext?.rawKey || "",
-                                city: activeContext?.city || city || "",
-                                leagueName: activeContext?.leagueFullName || "",
-                                groupName: activeContext?.displayGroup || "",
-                              })}
-                              className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded text-slate-500 transition-colors hover:bg-slate-700 hover:text-white"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleDetail(row);
+                              }}
+                              className={`inline-flex h-6 w-6 shrink-0 items-center justify-center rounded text-ink-3 transition-all hover:bg-surface-raised hover:text-ink ${
+                                isExpanded ? "rotate-90" : ""
+                              }`}
+                              aria-expanded={isExpanded}
                               aria-label={`${row.team} takımını incele`}
                               title="Takımı incele"
                             >
                               <ChevronRight size={14} />
                             </button>
-                          )}
-                        </div>
-                      </td>
+                          </div>
+                        </td>
 
-                      {/* O */}
-                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-slate-300 font-medium font-mono font-scoreboard tabular-nums text-[11px] sm:text-xs">
-                        {row.played}
-                      </td>
+                        {/* O */}
+                        <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-ink-2 font-medium font-display font-scoreboard tabular-nums text-[11px] sm:text-xs">
+                          {row.played}
+                        </td>
 
-                      {/* G */}
-                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-emerald-400 font-bold font-mono font-scoreboard tabular-nums text-[11px] sm:text-xs">
-                        {row.won}
-                      </td>
+                        {/* G */}
+                        <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-ink font-bold font-display font-scoreboard tabular-nums text-[11px] sm:text-xs">
+                          {row.won}
+                        </td>
 
-                      {/* M */}
-                      <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-rose-400 font-medium font-mono font-scoreboard tabular-nums text-[11px] sm:text-xs">
-                        {row.lost}
-                      </td>
+                        {/* M */}
+                        <td className="py-2.5 sm:py-3 px-1 sm:px-2 text-center text-ink font-medium font-display font-scoreboard tabular-nums text-[11px] sm:text-xs">
+                          {row.lost}
+                        </td>
 
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-emerald-300 text-[11px] sm:text-xs">
-                        {row.sets_won}
-                      </td>
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-rose-300 text-[11px] sm:text-xs">
-                        {row.sets_lost}
-                      </td>
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-slate-300 text-[11px] sm:text-xs">
-                        {row.set_ratio}
-                      </td>
+                        {/* Set (combined, sm: only) */}
+                        <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden sm:table-cell font-display font-scoreboard tabular-nums text-ink-2 text-[11px] sm:text-xs">
+                          {row.sets_won}-{row.sets_lost}
+                        </td>
 
-                      <td className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center font-mono font-scoreboard tabular-nums text-slate-300 text-[11px] sm:text-xs">
-                        {row.point_ratio}
-                      </td>
+                        {/* Puan */}
+                        <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center font-display font-scoreboard tabular-nums text-sm font-bold text-ink">
+                          {row.points}
+                        </td>
 
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-3 text-center bg-slate-900/80 font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm text-white border-x border-slate-800/60 shadow-inner">
-                        {row.points}
-                      </td>
+                        {/* Form */}
+                        <td className="py-2.5 sm:py-3 px-2 sm:px-4 text-center">
+                          <FormDots form={summary.form} source={summary.formSource} />
+                        </td>
+                      </tr>
 
-                      {/* Form */}
-                      <td className="py-2.5 sm:py-3 px-2 sm:px-4 text-center">
-                        <div className="flex items-center justify-center gap-1">
-                          {(row.form || []).map((f, fIdx) => (
-                            <span
-                              key={fIdx}
-                              className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-[9px] sm:text-[10px] font-bold text-white leading-none shadow-2xs ${
-                                f === "W"
-                                  ? "bg-gradient-to-br from-emerald-500 to-emerald-600"
-                                  : "bg-gradient-to-br from-rose-500 to-rose-600"
-                              }`}
-                              title={f === "W" ? "Galibiyet (3 veya 2 puan)" : "Mağlubiyet"}
-                            >
-                              {f === "W" ? "G" : "M"}
-                            </span>
-                          ))}
-                        </div>
-                      </td>
-                    </tr>
+                      {/* Satır içi detay */}
+                      {isExpanded && (
+                        <tr data-detail-for={row.team}>
+                          <td colSpan={8} className="p-0">
+                            <div className="bg-surface-raised border-t border-line relative">
+                              <span className="absolute left-0 top-0 bottom-0 w-[3px] bg-primary" />
+                              <div className="pl-6 pr-4 py-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                                <div className="space-y-1">
+                                  <div>
+                                    <span className="font-semibold text-ink-2">Set Oranı:</span>{" "}
+                                    <span className="font-scoreboard tabular-nums text-ink">{row.set_ratio}</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-semibold text-ink-2">Sayı Oranı:</span>{" "}
+                                    <span className="font-scoreboard tabular-nums text-ink">{row.point_ratio}</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-semibold text-ink-2">Set:</span>{" "}
+                                    <span className="font-scoreboard tabular-nums text-done">{row.sets_won}</span>
+                                    <span className="text-ink-3"> - </span>
+                                    <span className="font-scoreboard tabular-nums text-form-loss">{row.sets_lost}</span>
+                                  </div>
+                                  <div>
+                                    <span className="font-semibold text-ink-2">Sayı:</span>{" "}
+                                    <span className="font-scoreboard tabular-nums text-ink">{row.points_won}</span>
+                                    <span className="text-ink-3"> - </span>
+                                    <span className="font-scoreboard tabular-nums text-ink">{row.points_lost}</span>
+                                  </div>
+                                </div>
+                                <div className="space-y-1">
+                                  <MatchMiniCard match={summary.last} label="Son Maç" />
+                                  <MatchMiniCard match={summary.next} label="Sıradaki Maç" />
+                                  {summary.formSource === "none" && (
+                                    <p className="text-ink-3 text-[10px] italic">
+                                      Form verisi mevcut değil — henüz oynanan maç bulunmuyor.
+                                    </p>
+                                  )}
+                                  {summary.formSource === "standings" && (
+                                    <p className="text-ink-3 text-[10px] italic">
+                                      Form: TVF puan tablosundan (yalnız oynanan maçlar).
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      )}
+                    </React.Fragment>
                   );
                 })}
               </tbody>
@@ -873,26 +1030,30 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         )}
 
         {/* Alt Açıklama / Legend */}
-        <div className="glass-panel border-t border-slate-800/80 px-3 sm:px-4 py-2 sm:py-3 flex flex-wrap items-center justify-between gap-2 sm:gap-3 text-[10px] sm:text-[11px] text-slate-400">
+        <div className="border-t border-line px-3 sm:px-4 py-2 sm:py-3 flex flex-wrap items-center justify-between gap-2 sm:gap-3 text-[10px] sm:text-[11px] text-ink-3">
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-4">
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-emerald-500 shadow-xs" />
-              <span className="font-bold text-slate-200">1 - 2: Final Etabı (Play-Off)</span>
+              <span className="w-[3px] h-3 rounded bg-primary" />
+              <span className="font-bold text-ink-2">1-2: Final Etabı (Play-Off)</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-amber-500 shadow-xs" />
-              <span className="font-bold text-slate-300">3 - 8: Klasman Etabı</span>
+              <span className="w-[3px] h-3 rounded bg-rank-mid" />
+              <span className="font-bold text-ink-2">3-8: Klasman Etabı</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded bg-slate-700" />
+              <span className="w-[3px] h-3 rounded bg-line" />
               <span>9+: Normal Sezon</span>
             </div>
           </div>
 
-          <div className="text-slate-400 font-mono text-[9px] sm:text-[10px] flex items-center gap-1.5 sm:gap-2">
-            <span>▲ Galibiyet trendi</span>
-            <span>•</span>
-            <span>▼ Mağlubiyet trendi</span>
+          <div className="flex items-center gap-2">
+            <span className="font-medium">Form:</span>
+            <span className="flex items-center gap-1">
+              <span className="flex h-[14px] w-[14px] items-center justify-center rounded-full border-[1.5px] border-done text-done text-[8px] font-bold">G</span>
+              <span className="flex h-[14px] w-[14px] items-center justify-center rounded-full border-[1.5px] border-form-loss text-form-loss text-[8px] font-bold">M</span>
+              <span className="h-[14px] w-[14px] rounded-full border border-dashed border-line" />
+              <span className="ml-0.5">oynanmadı</span>
+            </span>
           </div>
         </div>
       </div>

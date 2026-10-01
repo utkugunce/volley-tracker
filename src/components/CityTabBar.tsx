@@ -94,7 +94,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
     });
 
   return (
-    <div className="bg-[#070d19]/90 backdrop-blur-md border-b border-slate-800/80 px-2 sm:px-4 py-1.5 shadow-sm">
+    <div className="bg-canvas/90 backdrop-blur-md border-b border-slate-800/80 px-2 sm:px-4 py-1.5 shadow-sm">
       <div className="max-w-screen-2xl mx-auto flex items-center justify-between gap-1.5 sm:gap-2">
         {/* Yatay Kaydırılabilir Sekmeler */}
         <div
@@ -116,7 +116,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                 onClick={() => onSelectCity(item.slug)}
                 className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
                   isSelected
-                    ? "bg-gradient-to-r from-red-600 to-rose-600 text-white border-red-500 shadow-glow-red font-bold ring-1 ring-red-500/40"
+                    ? "bg-primary text-primary-fg border-primary shadow-glow-primary font-bold"
                     : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border-slate-800/80"
                 }`}
                 title={`${item.name} maçlarını ve fikstürünü görüntüle`}
@@ -126,13 +126,13 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                   <Globe
                     size={13}
                     aria-hidden="true"
-                    className={isSelected ? "text-white" : "text-slate-400"}
+                    className={isSelected ? "text-primary-fg" : "text-slate-400"}
                   />
                 ) : (
                   <MapPin
                     size={13}
                     aria-hidden="true"
-                    className={isSelected ? "text-white" : "text-slate-400"}
+                    className={isSelected ? "text-primary-fg" : "text-slate-400"}
                   />
                 )}
                 <span>{item.name}</span>
@@ -143,10 +143,10 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                 )}
                 {matchCount > 0 && (
                   <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                    className={`text-[10px] font-display font-semibold tabular-nums ${
                       isSelected
-                        ? "bg-primary text-white"
-                        : "bg-emerald-950 text-emerald-300 border border-emerald-800/60"
+                        ? "text-primary-fg"
+                        : "text-ink-2"
                     }`}
                   >
                     {matchCount}
@@ -191,9 +191,9 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
               id="city-dropdown-menu"
               role="listbox"
               aria-label="81 İl Seçici"
-              className="absolute right-0 mt-1.5 w-64 sm:w-72 bg-[#0f172a] border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100"
+              className="absolute right-0 mt-1.5 w-64 sm:w-72 bg-canvas border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100"
             >
-              <div className="p-2 border-b border-slate-800 bg-[#0b1325]">
+              <div className="p-2 border-b border-slate-800 bg-surface-muted">
                 <div className="relative">
                   <Search size={13} aria-hidden="true" className="absolute left-2.5 top-2.5 text-slate-400" />
                   <input

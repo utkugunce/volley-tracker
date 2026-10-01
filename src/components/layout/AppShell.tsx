@@ -10,6 +10,7 @@ export interface AppShellProps {
   rightSidebar?: React.ReactNode;
   footer?: React.ReactNode;
   className?: string;
+  section?: "altyapi" | "kadinlar-2-lig";
 }
 
 export const AppShell: React.FC<AppShellProps> = ({
@@ -19,23 +20,27 @@ export const AppShell: React.FC<AppShellProps> = ({
   rightSidebar,
   footer,
   className = "",
+  section = "altyapi",
 }) => {
   const [headerHeight, setHeaderHeight] = React.useState(64);
   const headerRef = React.useRef<HTMLDivElement>(null);
+  const rootRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    if (!headerRef.current) return;
-    const updateHeight = () => {
-      if (headerRef.current) {
-        setHeaderHeight(headerRef.current.offsetHeight);
-      }
+    const el = headerRef.current;
+    const root = rootRef.current;
+    if (!el) return;
+
+    const apply = () => {
+      setHeaderHeight(el.offsetHeight);
+      root?.style.setProperty("--app-header-h", `${el.offsetHeight}px`);
     };
-    updateHeight();
-    if (typeof ResizeObserver !== "undefined") {
-      const ro = new ResizeObserver(updateHeight);
-      ro.observe(headerRef.current);
-      return () => ro.disconnect();
-    }
+
+    apply();
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(apply);
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
 
   const sidebarStyle = {
@@ -45,7 +50,9 @@ export const AppShell: React.FC<AppShellProps> = ({
 
   return (
     <div
-      className={`min-h-screen flex flex-col bg-[var(--portal-background)] text-[#F1F5F9] font-sans antialiased selection:bg-blue-600 selection:text-white ${className}`}
+      ref={rootRef}
+      data-section={section}
+      className={`min-h-screen flex flex-col bg-[var(--portal-background)] text-ink font-sans antialiased selection:bg-selected-strong selection:text-white ${className}`}
       style={{
         "--portal-background": ThemeTokens.background,
         "--portal-panel": ThemeTokens.panel,

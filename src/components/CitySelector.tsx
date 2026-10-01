@@ -80,13 +80,13 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
         className="flex items-center gap-1.5 bg-slate-800/90 hover:bg-slate-700 text-white text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-slate-700 transition-colors shadow-sm"
         title="İl Seçiniz (81 TVF İl Temsilciliği)"
       >
-        <MapPin size={13} className="text-primary flex-shrink-0" />
+        <MapPin size={13} className="text-ink-2 flex-shrink-0" />
         <span className="font-bold">
           {currentCity.name}
           <span className="text-slate-400 font-normal ml-1">({currentCity.ilid})</span>
         </span>
         {currentCity.matches_count > 0 && (
-          <span className="bg-emerald-600 text-white text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold">
+          <span className="font-display font-semibold tabular-nums text-ink-2 text-[10px]">
             {currentCity.matches_count}
           </span>
         )}
@@ -95,9 +95,9 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
 
       {/* Açılır Menü */}
       {isOpen && (
-        <div className="absolute left-0 mt-1.5 w-72 sm:w-80 bg-[#0f172a] border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100">
+        <div className="absolute left-0 mt-1.5 w-72 sm:w-80 bg-canvas border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-100">
           {/* Arama Inputu */}
-          <div className="p-2.5 border-b border-slate-800 bg-[#0b1325]">
+          <div className="p-2.5 border-b border-slate-800 bg-surface-muted">
             <div className="relative">
               <Search size={14} className="absolute left-2.5 top-2.5 text-slate-400" />
               <input
@@ -156,7 +156,7 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
                       setSearchTerm("");
                     }}
                     className={`w-full px-3 py-2 text-left flex items-center justify-between text-xs transition-colors hover:bg-slate-800/70 ${
-                      isSelected ? "bg-primary/20 text-white font-bold" : "text-slate-200"
+                      isSelected ? "bg-primary text-primary-fg font-bold" : "text-slate-200"
                     }`}
                   >
                     <div className="flex items-center gap-2">
@@ -185,7 +185,7 @@ export const CitySelector: React.FC<CitySelectorProps> = ({
           </div>
 
           {/* Alt Bilgi */}
-          <div className="p-2 border-t border-slate-800 bg-[#0b1325] text-[10px] text-slate-400 flex items-center justify-between">
+          <div className="p-2 border-t border-slate-800 bg-surface-muted text-[10px] text-slate-400 flex items-center justify-between">
             <span>Türkiye Voleybol Federasyonu</span>
             <span className="text-amber-400 font-mono">81 İl Temsilciliği</span>
           </div>

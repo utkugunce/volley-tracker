@@ -82,14 +82,14 @@ const getClubBrandColors = (teamName: string, is2Lig: boolean = false) => {
       glowHome: "bg-fuchsia-600/20",
       glowAway: "bg-purple-600/15",
       accentBorder: "border-fuchsia-500/35",
-      gradient: "from-purple-950/50 via-[#0b1325] to-[#1e1b4b]/60",
+      gradient: "from-purple-950/50 via-surface-muted to-canvas/60",
     };
   }
   return {
     glowHome: "bg-red-600/15",
     glowAway: "bg-sky-600/10",
     accentBorder: "border-red-500/30",
-    gradient: "from-[#0f172a] via-[#0b1325] to-[#1e293b]",
+    gradient: "from-canvas via-surface-muted to-panel",
   };
 };
 
@@ -184,7 +184,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 font-sans pb-16">
       {/* 1. ÜST NAVİGASYON VE BAŞLIK BÖLÜMÜ */}
-      <header className="sticky top-0 z-40 bg-[#0b1325]/95 backdrop-blur-md border-b border-slate-800 shadow-md">
+      <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link

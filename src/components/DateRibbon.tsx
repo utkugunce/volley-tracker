@@ -113,8 +113,8 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
         className={`px-3.5 py-2 rounded-xl text-xs font-bold shrink-0 transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 ${
           selectedDate === "all"
             ? isEmerald
-              ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-glow-emerald font-bold ring-2 ring-emerald-500/30"
-              : "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold ring-2 ring-red-500/30"
+              ? "bg-done text-done-fg shadow-glow-emerald font-bold"
+              : "bg-selected-strong text-white font-bold shadow-glow-selected"
             : isEmerald
             ? "glass-panel text-slate-300 hover:bg-slate-800/70 hover:text-white border-slate-800 focus-visible:ring-emerald-400"
             : "glass-panel text-slate-300 hover:bg-slate-800/70 hover:text-white border-slate-800 focus-visible:ring-primary"
@@ -138,15 +138,15 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
           className={`px-2.5 py-2 rounded-xl text-xs font-semibold shrink-0 transition-all duration-150 cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 ${
             selectedDate !== "all" && !dates.includes(selectedDate)
               ? isEmerald
-                ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-glow-emerald font-bold ring-2 ring-emerald-500/30"
-                : "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold ring-2 ring-red-500/30"
+                ? "bg-done text-done-fg shadow-glow-emerald font-bold"
+                : "bg-selected-strong text-white font-bold shadow-glow-selected"
               : isEmerald
               ? "glass-panel text-slate-300 hover:bg-slate-800/70 hover:text-white border-slate-800 focus-visible:ring-emerald-400"
               : "glass-panel text-slate-300 hover:bg-slate-800/70 hover:text-white border-slate-800 focus-visible:ring-primary"
           }`}
           title="Takvimden Tarih Seç"
         >
-          <Calendar size={14} aria-hidden="true" className={isEmerald ? "text-emerald-400" : "text-rose-400"} />
+          <Calendar size={14} aria-hidden="true" className={isEmerald ? "text-done" : "text-ink-2"} />
           <span className="hidden sm:inline">Takvim</span>
         </button>
         <input
@@ -190,8 +190,8 @@ export const DateRibbon: React.FC<DateRibbonProps> = ({
               } ${
                 isSelected
                   ? isEmerald
-                    ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold shadow-glow-emerald ring-2 ring-emerald-500/30"
-                    : "bg-gradient-to-r from-red-600 to-rose-600 text-white font-bold shadow-glow-red ring-2 ring-red-500/30"
+                    ? "bg-done text-done-fg font-bold shadow-glow-emerald"
+                    : "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : isToday
                   ? "bg-amber-500/10 text-amber-300 font-bold border border-amber-500/40 hover:bg-amber-500/20"
                   : isYesterday

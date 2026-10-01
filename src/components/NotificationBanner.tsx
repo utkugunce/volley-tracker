@@ -105,7 +105,7 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
               <button
                 onClick={handleEnable}
                 disabled={loading}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary hover:bg-primary/90 text-white shadow transition-all cursor-pointer disabled:opacity-50"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs bg-primary text-primary-fg font-bold shadow-glow-primary hover:bg-primary/90 transition-all cursor-pointer disabled:opacity-50"
               >
                 <Bell size={13} />
                 {loading ? "İzin İsteniyor..." : "Bildirimleri Aç"}

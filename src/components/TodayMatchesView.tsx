@@ -423,7 +423,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 <span
                   className={`inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-lg text-sm transition-all ${
                     homeWon
-                      ? "bg-gradient-to-br from-red-600 to-rose-700 text-white shadow-glow-red font-black"
+                      ? "text-done font-black"
                       : "bg-slate-800/90 text-slate-400 border border-slate-700/60"
                   }`}
                 >
@@ -459,7 +459,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 <span
                   className={`inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-lg text-sm transition-all ${
                     awayWon
-                      ? "bg-gradient-to-br from-red-600 to-rose-700 text-white shadow-glow-red font-black"
+                      ? "text-done font-black"
                       : "bg-slate-800/90 text-slate-400 border border-slate-700/60"
                   }`}
                 >
@@ -671,20 +671,20 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                   onClick={() => onSelectCity(item.slug)}
                   className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                     isSelected
-                      ? "bg-gradient-to-r from-red-600/90 to-rose-700/90 text-white border-red-500 shadow-glow-red font-bold ring-2 ring-red-500/30"
+                      ? "bg-primary text-primary-fg shadow-glow-primary font-bold border-primary"
                       : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border-slate-800/80"
                   }`}
                 >
                   <IconComponent
                     size={14}
                     aria-hidden="true"
-                    className={isSelected ? "text-white" : "text-slate-400"}
+                    className={isSelected ? "text-primary-fg" : "text-slate-400"}
                   />
                   <span>{item.name}</span>
                   <span
                     className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
                       isSelected
-                        ? "bg-black/30 text-white"
+                        ? "bg-black/20 text-primary-fg"
                         : "bg-slate-800 text-slate-400"
                     }`}
                   >
@@ -730,7 +730,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 onClick={() => setDisplayMode("cards")}
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                   displayMode === "cards"
-                    ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-sm font-bold"
+                    ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                     : "text-slate-400 hover:text-white"
                 }`}
                 title="Dashboard Kart Görünümü"
@@ -746,7 +746,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 onClick={() => setDisplayMode("table")}
                 className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                   displayMode === "table"
-                    ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-sm font-bold"
+                    ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                     : "text-slate-400 hover:text-white"
                 }`}
                 title="Detaylı Tablo Görünümü"
@@ -879,7 +879,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
                 </p>
                 <button
                   onClick={onNavigateToFullFixtures}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white text-xs font-bold rounded-xl transition-all shadow-glow-red hover:scale-[1.02] active:scale-95"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 bg-primary text-primary-fg shadow-glow-primary hover:bg-primary/90 text-xs font-bold rounded-xl transition-all hover:scale-[1.02] active:scale-95"
                 >
                   <span>Tüm Sezon Fikstürüne Git</span>
                   <ArrowRight size={14} />
@@ -894,7 +894,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               </p>
               <button
                 onClick={() => setQuickStatus("all")}
-                className="px-3.5 py-1.5 bg-red-600 hover:bg-red-500 text-white text-xs font-bold rounded-xl shadow-xs transition-all"
+                className="px-3.5 py-1.5 bg-primary text-primary-fg shadow-glow-primary hover:bg-primary/90 text-xs font-bold rounded-xl transition-all"
               >
                 Filtreyi Sıfırla
               </button>

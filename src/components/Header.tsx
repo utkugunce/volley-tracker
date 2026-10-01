@@ -69,7 +69,7 @@ export const Header: React.FC<HeaderProps> = ({
   }, [isLoading]);
 
   return (
-    <header className="bg-[#080c14]/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
+    <header className="bg-canvas/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
       {/* 1. Üst Flashscore Bar */}
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-slate-800/60 gap-2">
         {/* Logo & Brand & İl Seçici */}
@@ -199,14 +199,14 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onSelectTab("home")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "home"
-              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
           <Home size={13} className={activeTab === "home" ? "text-primary fill-primary/20" : "text-slate-400"} />
           <span>ANASAYFA</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[9px] sm:text-[10px] bg-rose-700 text-white px-1.5 py-0.5 rounded-full font-mono font-bold shadow-xs">
+            <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
               {todayMatchesCount} Bugün
             </span>
           )}
@@ -217,7 +217,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onSelectTab("results")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "results"
-              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -225,9 +225,9 @@ export const Header: React.FC<HeaderProps> = ({
           <span>SONUÇLAR</span>
           {typeof resultsCount === "number" && (
             <span
-              className={`text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold transition-colors ${
+              className={`text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-display font-semibold tabular-nums transition-colors ${
                 activeTab === "results"
-                  ? "bg-emerald-500 text-white shadow-xs shadow-emerald-900/50"
+                  ? "bg-done text-done-fg shadow-xs"
                   : "bg-slate-800 text-slate-300 border border-slate-700/50"
               }`}
             >
@@ -241,14 +241,14 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onSelectTab("today")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "today"
-              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
-          <Flame size={13} className={activeTab === "today" ? "text-primary fill-primary/20 animate-pulse" : "text-slate-400"} />
+          <Flame size={13} className={activeTab === "today" ? "text-primary fill-primary/20" : "text-slate-400"} />
           <span>GÜNÜN MAÇLARI</span>
           {todayMatchesCount > 0 && (
-            <span className="text-[9px] sm:text-[10px] bg-red-700 text-white px-1.5 py-0.5 rounded-full font-mono font-bold shadow-xs">
+            <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
               {todayMatchesCount}
             </span>
           )}
@@ -259,13 +259,13 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onSelectTab("fixtures")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "fixtures"
-              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
           <Calendar size={13} className={activeTab === "fixtures" ? "text-primary" : "text-slate-400"} />
           <span>FİKSTÜR</span>
-          <span className="text-[9px] sm:text-[10px] bg-slate-800/80 text-slate-300 px-1.5 py-0.2 rounded-full font-normal border border-slate-700/50">
+          <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
             {totalMatches}
           </span>
         </button>
@@ -275,7 +275,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onSelectTab("standings")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "standings"
-              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -288,7 +288,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => onSelectTab("group-status")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "group-status"
-              ? "border-primary text-white bg-gradient-to-t from-red-950/30 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >

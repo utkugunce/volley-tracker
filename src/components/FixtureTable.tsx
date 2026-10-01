@@ -138,7 +138,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
           if (target.closest("a") || target.closest("button")) return;
           handleToggleCollapse();
         }}
-        className={`bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between select-none transition-colors ${
+        className={`bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between select-none transition-colors ${
           isCollapsed ? "rounded-2xl" : "border-b border-slate-800/80"
         } ${isCollapsible ? "cursor-pointer hover:bg-slate-850/60" : ""}`}
         title={
@@ -293,7 +293,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                 <React.Fragment key={match.id}>
                   {isFirstOfGroup && (
                     <tr className="select-none">
-                      <td colSpan={10} className="py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-[#0b1325]/90 to-amber-500/10 border border-amber-500/30 text-amber-300 font-extrabold text-[11px] uppercase tracking-wider shadow-xs">
+                      <td colSpan={10} className="py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-surface-muted/90 to-amber-500/10 border border-amber-500/30 text-amber-300 font-extrabold text-[11px] uppercase tracking-wider shadow-xs">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <span className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-glow-amber"></span>
@@ -428,7 +428,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     <div className="flex items-center justify-center">
                       {isFinished ? (
                         <div className="inline-flex flex-col items-center">
-                          <span className="inline-block px-2.5 py-0.5 rounded-lg font-mono font-scoreboard tabular-nums font-black text-xs bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red tracking-wider">
+                          <span className="inline-block px-2 py-0.5 rounded-lg font-mono font-scoreboard tabular-nums font-black text-xs text-done tracking-wider">
                             {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
                               ? `${match.home_score} - ${match.away_score}`
                               : match.score || "- : -"}
@@ -444,7 +444,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         </div>
                       ) : (
                         <span
-                          className="inline-flex items-center justify-center px-2.5 py-0.5 rounded-full font-black text-[10px] tracking-wider bg-rose-500/15 text-rose-400 border border-rose-500/30 shadow-xs group-hover:scale-105 group-hover:bg-rose-500/25 transition-all select-none"
+                          className="inline-flex items-center justify-center px-2 py-0.5 rounded-full font-bold text-[10px] tracking-wider bg-surface-raised text-ink-2 border border-line shadow-xs select-none"
                           title="Karşılaşma"
                         >
                           VS
@@ -641,7 +641,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
             return (
               <React.Fragment key={match.id}>
                 {isFirstOfGroup && (
-                  <div className="col-span-full flex items-center justify-between py-2 px-3.5 bg-[#0b1325]/95 rounded-xl border border-amber-500/25 text-amber-300 text-xs font-bold uppercase mt-2 mb-0.5 shadow-xs">
+                  <div className="col-span-full flex items-center justify-between py-2 px-3.5 bg-surface-muted/95 rounded-xl border border-amber-500/25 text-amber-300 text-xs font-bold uppercase mt-2 mb-0.5 shadow-xs">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-amber-400 shadow-glow-amber"></span>
                       <span className="font-black text-amber-300 tracking-wide">{currentGroup}</span>
@@ -737,7 +737,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         <span
                           className={`inline-flex items-center justify-center min-w-[26px] h-6 px-1.5 rounded-lg text-xs font-black ${
                             homeWon
-                              ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red"
+                              ? "bg-done/15 text-done border border-done/30"
                               : "bg-slate-800 text-slate-400 border border-slate-700/60"
                           }`}
                         >
@@ -752,7 +752,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   {/* Deplasman Takımı */}
                   <div
                     className={`flex items-center justify-between gap-2.5 p-2 rounded-xl transition-colors ${
-                      awayWon ? "bg-red-500/10 border border-red-500/25 shadow-xs" : "bg-slate-900/30"
+                      awayWon ? "bg-primary/10 border border-primary/25 shadow-xs" : "bg-slate-900/30"
                     }`}
                   >
                     <div className="flex items-center gap-2.5 min-w-0 flex-1">
@@ -775,7 +775,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         <span
                           className={`inline-flex items-center justify-center min-w-[26px] h-6 px-1.5 rounded-lg text-xs font-black ${
                             awayWon
-                              ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red"
+                              ? "bg-done/15 text-done border border-done/30"
                               : "bg-slate-800 text-slate-400 border border-slate-700/60"
                           }`}
                         >

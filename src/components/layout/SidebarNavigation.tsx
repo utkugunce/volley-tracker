@@ -96,30 +96,30 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full text-xs select-none bg-[#1E222D]">
+    <div className="flex flex-col h-full text-xs select-none bg-panel">
       {/* 1. Üst Başlık & Sofascore Lig Sayacı */}
-      <div className="px-3.5 py-3 border-b border-[#2A2E3D] flex items-center justify-between bg-[#1E222D]/90 sticky top-0 z-10 backdrop-blur-md">
+      <div className="px-3.5 py-3 border-b border-line flex items-center justify-between bg-panel/90 sticky top-0 z-10 backdrop-blur-md">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-lg bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 shrink-0">
             <Trophy size={13} />
           </div>
           <div>
             <h2 className="font-bold text-white text-[13px] tracking-wide leading-tight">Lig Ağacı</h2>
-            <p className="text-[10px] text-[#94A3B8]">TVF Altyapı Hiyerarşisi</p>
+            <p className="text-[10px] text-ink-2">TVF Altyapı Hiyerarşisi</p>
           </div>
         </div>
-        <span className="text-[10px] font-mono font-bold bg-[#121212] text-blue-400 px-2 py-0.5 rounded border border-[#2A2E3D]">
+        <span className="text-[10px] font-mono font-bold bg-canvas text-blue-400 px-2 py-0.5 rounded border border-line">
           {totalMatches > 0 ? `${totalMatches} Maç` : "81 İl"}
         </span>
       </div>
 
       <div className="flex-1 overflow-y-auto custom-scrollbar p-2 space-y-3">
         {/* 1. BÖLÜM: FAVORİLERİM & HIZLI ERİŞİM */}
-        <div className="bg-[#181A20] rounded-xl border border-[#2A2E3D] p-2 space-y-1">
+        <div className="bg-surface-muted rounded-xl border border-line p-2 space-y-1">
           <button
             type="button"
             onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
-            className="w-full flex items-center justify-between text-[11px] font-bold text-[#94A3B8] hover:text-white px-1.5 py-1 rounded transition-colors cursor-pointer"
+            className="w-full flex items-center justify-between text-[11px] font-bold text-ink-2 hover:text-white px-1.5 py-1 rounded transition-colors cursor-pointer"
           >
             <span className="flex items-center gap-1.5 uppercase tracking-wider text-[10px]">
               <Star size={12} className="text-amber-400 fill-amber-400/20" />
@@ -134,12 +134,12 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
           {isFavoritesOpen && (
             <div className="space-y-1 pt-1">
               {/* Takip Edilen Maçlar Butonu */}
-              <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-[#1E222D]/60 hover:bg-[#1E222D] border border-transparent hover:border-[#2A2E3D] text-[#F1F5F9] transition-all">
+              <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-panel/60 hover:bg-panel border border-transparent hover:border-line text-ink transition-all">
                 <span className="flex items-center gap-2">
                   <Star size={12} className="text-amber-400" />
                   <span className="font-medium text-[11px]">Yıldızlı Maçlar</span>
                 </span>
-                <span className="font-mono text-[10px] font-bold bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded">
+                <span className="font-display font-semibold tabular-nums text-ink-2 text-[10px]">
                   {favoritesCount}
                 </span>
               </div>
@@ -150,7 +150,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                 className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-purple-950/40 hover:bg-purple-950/70 border border-purple-800/40 text-purple-200 transition-all group"
               >
                 <span className="flex items-center gap-2 truncate">
-                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-400 shrink-0" />
                   <span className="font-semibold text-[11px] truncate group-hover:text-white">TVF Kadınlar 2. Ligi</span>
                 </span>
                 <span className="text-[10px] text-purple-400 font-mono shrink-0">16 Grup →</span>
@@ -160,8 +160,8 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
         </div>
 
         {/* 2. BÖLÜM: İLLER & ALTYAPI LİGLERİ HİYERARŞİSİ */}
-        <div className="bg-[#181A20] rounded-xl border border-[#2A2E3D] p-2 space-y-1">
-          <div className="flex items-center justify-between px-1.5 py-1 text-[10px] uppercase font-bold tracking-wider text-[#94A3B8]">
+        <div className="bg-surface-muted rounded-xl border border-line p-2 space-y-1">
+          <div className="flex items-center justify-between px-1.5 py-1 text-[10px] uppercase font-bold tracking-wider text-ink-2">
             <span className="flex items-center gap-1.5">
               <MapPin size={12} className="text-blue-400" />
               <span>İller & Altyapı Ligleri</span>
@@ -177,15 +177,15 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
             }}
             className={`w-full flex items-center justify-between py-1.5 px-3 rounded-lg text-xs font-medium transition-all text-left cursor-pointer ${
               selectedCategory === "Tümü" && (currentCity === "all" || !currentCity)
-                ? "border-l-2 border-blue-500 bg-blue-500/10 text-white font-bold"
-                : "text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-[#1E222D]"
+                ? "border-l-2 border-selected bg-selected/10 text-white font-bold"
+                : "text-ink-2 hover:text-ink hover:bg-panel"
             }`}
           >
             <span className="flex items-center gap-2">
               <Layers size={13} className="text-blue-400" />
               <span>Tümünü Göster</span>
             </span>
-            <span className="text-[10px] font-mono text-[#94A3B8]">Hepsi</span>
+            <span className="text-[10px] font-mono text-ink-2">Hepsi</span>
           </button>
 
           {/* İller Listesi (Plaka / Alfabetik Sıralı) */}
@@ -200,8 +200,8 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                   <div
                     className={`flex items-center justify-between py-1.5 px-3 rounded-lg transition-all cursor-pointer ${
                       isCityActive
-                        ? "border-l-2 border-blue-500 bg-blue-500/10 text-white font-bold"
-                        : "text-[#94A3B8] hover:text-white hover:bg-[#1E222D]"
+                        ? "border-l-2 border-selected bg-selected/10 text-white font-bold"
+                        : "text-ink-2 hover:text-white hover:bg-panel"
                     }`}
                     onClick={() => {
                       if (onSelectCity) onSelectCity(cityNode.citySlug);
@@ -211,26 +211,26 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                     <div className="flex items-center gap-2 truncate">
                       <ChevronDown
                         size={12}
-                        className={`text-[#94A3B8] shrink-0 transform transition-transform duration-200 ${
+                        className={`text-ink-2 shrink-0 transform transition-transform duration-200 ${
                           isExpanded ? "rotate-0" : "-rotate-90"
                         }`}
                       />
                       {cityNode.plate && (
-                        <span className="font-mono text-[10px] text-blue-400 font-bold bg-[#121212] px-1 py-0.2 rounded border border-[#2A2E3D]">
+                        <span className="font-mono text-[10px] text-blue-400 font-bold bg-canvas px-1 py-0.2 rounded border border-line">
                           {cityNode.plate}
                         </span>
                       )}
                       <span className="truncate text-xs">{cityNode.cityName}</span>
                     </div>
 
-                    <span className="font-mono text-[10px] text-[#94A3B8] shrink-0 ml-1">
+                    <span className="font-mono text-[10px] text-ink-2 shrink-0 ml-1">
                       {cityNode.totalMatches}
                     </span>
                   </div>
 
                   {/* İl Altındaki Yaş Kategorileri (Açılır Ağaç) */}
                   {isExpanded && (
-                    <div className="pl-5 pr-1 py-1 space-y-1 border-l border-[#2A2E3D]/50 ml-3.5 my-0.5 animate-in fade-in-50 duration-150">
+                    <div className="pl-5 pr-1 py-1 space-y-1 border-l border-line/50 ml-3.5 my-0.5 animate-in fade-in-50 duration-150">
                       {cityNode.categories.map((cat) => {
                         const catId = `${cityNode.citySlug}-${cat.key}`;
                         const isCatExpanded = Boolean(expandedCategories[catId]);
@@ -248,28 +248,28 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                               className={`flex items-center justify-between py-1 px-2 rounded-md transition-all text-[11px] cursor-pointer ${
                                 isCatSelected
                                   ? "border-l-2 border-blue-500 bg-blue-500/15 text-blue-300 font-bold"
-                                  : "text-[#94A3B8] hover:text-white hover:bg-[#1E222D]/80"
+                                  : "text-ink-2 hover:text-white hover:bg-panel/80"
                               }`}
                             >
                               <div className="flex items-center gap-1.5 truncate">
                                 {cat.groups.length > 0 && (
                                   <ChevronDown
                                     size={11}
-                                    className={`text-[#94A3B8] shrink-0 transform transition-transform duration-200 ${
+                                    className={`text-ink-2 shrink-0 transform transition-transform duration-200 ${
                                       isCatExpanded ? "rotate-0" : "-rotate-90"
                                     }`}
                                   />
                                 )}
                                 <span className="truncate">{cat.label}</span>
                               </div>
-                              <span className="text-[10px] font-mono text-[#94A3B8]">
+                              <span className="text-[10px] font-mono text-ink-2">
                                 {cat.matchesCount}
                               </span>
                             </div>
 
                             {/* Kategori Altındaki Gruplar (Örn: A Grubu, B Grubu, Klasman 1) */}
                             {isCatExpanded && cat.groups.length > 0 && (
-                              <div className="pl-4 py-0.5 space-y-0.5 border-l border-[#2A2E3D]/40 ml-2 animate-in fade-in-50 duration-100">
+                              <div className="pl-4 py-0.5 space-y-0.5 border-l border-line/40 ml-2 animate-in fade-in-50 duration-100">
                                 {cat.groups.map((group) => {
                                   const isGroupSelected = selectedCategory === group.filterValue || selectedCategory === group.name;
 
@@ -284,11 +284,11 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                                       className={`w-full flex items-center justify-between py-1 px-2 rounded text-[10px] font-medium text-left transition-all cursor-pointer ${
                                         isGroupSelected
                                           ? "border-l-2 border-blue-500 bg-blue-500/20 text-blue-200 font-bold"
-                                          : "text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-[#1E222D]"
+                                          : "text-ink-2 hover:text-ink hover:bg-panel"
                                       }`}
                                     >
                                       <span className="truncate">• {group.name}</span>
-                                      <span className="font-mono text-[9px] text-[#94A3B8]">
+                                      <span className="font-mono text-[9px] text-ink-2">
                                         {group.matchesCount}
                                       </span>
                                     </button>

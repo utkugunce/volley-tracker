@@ -202,6 +202,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
   return (
     <AppShell
+      section="kadinlar-2-lig"
       header={
         <Kadinlar2LigHeader
         metadata={data.metadata}

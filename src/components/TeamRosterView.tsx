@@ -106,9 +106,9 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
   }, [players]);
 
   return (
-    <div className="w-full rounded-2xl bg-[#080f24] border border-[#172547] p-4 sm:p-6 text-slate-100 shadow-xl space-y-4">
+    <div className="w-full rounded-2xl bg-canvas border border-panel p-4 sm:p-6 text-slate-100 shadow-xl space-y-4">
       {/* 1. ÜST BAŞLIK: [LOGO/İKON] 2026/27 + EKLE */}
-      <div className="flex items-center justify-between pb-3.5 border-b border-[#1b2a4d]">
+      <div className="flex items-center justify-between pb-3.5 border-b border-panel">
         <div className="flex items-center gap-3">
           {/* Pembe hatlı grup ikonu (Volleybox birebir) */}
           <div className="w-8 h-8 rounded-lg border border-pink-500/80 bg-pink-500/10 flex items-center justify-center text-pink-500 shrink-0">
@@ -145,7 +145,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
 
       {/* 2. KADRO KPI İSTATİSTİKLERİ */}
       <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-1">
-        <div className="bg-[#0c1630] border border-[#1b2b52] rounded-xl p-2.5 sm:p-3 text-center">
+        <div className="bg-surface-muted border border-panel rounded-xl p-2.5 sm:p-3 text-center">
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
             Toplam Kadro
           </span>
@@ -154,7 +154,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
           </span>
         </div>
 
-        <div className="bg-[#0c1630] border border-[#1b2b52] rounded-xl p-2.5 sm:p-3 text-center">
+        <div className="bg-surface-muted border border-panel rounded-xl p-2.5 sm:p-3 text-center">
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
             Boy Ortalaması
           </span>
@@ -163,7 +163,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
           </span>
         </div>
 
-        <div className="bg-[#0c1630] border border-[#1b2b52] rounded-xl p-2.5 sm:p-3 text-center">
+        <div className="bg-surface-muted border border-panel rounded-xl p-2.5 sm:p-3 text-center">
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
             Yaş Ortalaması
           </span>
@@ -174,7 +174,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
       </div>
 
       {/* 3. GÖRÜNÜM DEĞİŞTİRİCİ (LİSTE VS SAHA DİZİLİŞİ) */}
-      <div className="flex items-center justify-between pt-1 border-t border-[#1b2a4d]">
+      <div className="flex items-center justify-between pt-1 border-t border-panel">
         <span className="text-xs font-bold text-slate-300">Görünüm:</span>
         <div className="flex items-center rounded-xl bg-slate-900/90 p-0.5 border border-slate-800">
           <button
@@ -229,7 +229,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
             {players.map((player, idx) => (
               <div
                 key={(player.id || "") + (player.number || "") + player.name + idx}
-                className="w-full bg-[#0a1226]/90 hover:bg-[#121f3d] transition-colors border border-[#162342] rounded-lg px-3 sm:px-4 py-2 flex items-center justify-between gap-2"
+                className="w-full bg-canvas/90 hover:bg-panel transition-colors border border-panel rounded-lg px-3 sm:px-4 py-2 flex items-center justify-between gap-2"
               >
                 {/* Sol Kısım: İsim + Onay İkonu */}
                 <div className="flex items-center min-w-0 flex-1">
@@ -269,7 +269,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
             ))}
           </div>
         ) : (
-          <div className="bg-[#0a1226]/50 border border-[#162342] rounded-lg p-5 text-center text-slate-400 text-xs">
+          <div className="bg-canvas/50 border border-panel rounded-lg p-5 text-center text-slate-400 text-xs">
             <p className="font-medium text-slate-300 mb-1">Bu sezon için henüz oyuncu girilmemiş</p>
             <p className="text-slate-500">Volleybox üzerinde oyuncu eklemek için yukarıdaki bağlantıyı kullanabilirsiniz.</p>
           </div>
@@ -300,7 +300,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
             {staff.map((st, idx) => (
               <div
                 key={(st.id || "") + st.name + idx}
-                className="w-full bg-[#0a1226]/90 hover:bg-[#121f3d] transition-colors border border-[#162342] rounded-lg px-3 sm:px-4 py-2 flex items-center justify-between gap-2"
+                className="w-full bg-canvas/90 hover:bg-panel transition-colors border border-panel rounded-lg px-3 sm:px-4 py-2 flex items-center justify-between gap-2"
               >
                 {/* Sol Kısım: İsim */}
                 <div className="flex items-center min-w-0 flex-1">
@@ -338,7 +338,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
             ))}
           </div>
         ) : (
-          <div className="bg-[#0a1226]/50 border border-[#162342] rounded-lg p-3.5 text-center text-slate-500 text-xs">
+          <div className="bg-canvas/50 border border-panel rounded-lg p-3.5 text-center text-slate-500 text-xs">
             Teknik heyet kaydı bulunmuyor
           </div>
         )}

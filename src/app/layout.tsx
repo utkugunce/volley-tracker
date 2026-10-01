@@ -1,11 +1,26 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { Analytics } from "@vercel/analytics/next";
 
+const manrope = Manrope({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
 export const viewport: Viewport = {
-  themeColor: "#dc2626",
+  themeColor: "#07131F",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -21,7 +36,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
-    statusBarStyle: "default",
+    statusBarStyle: "black-translucent",
     title: "Altyapı Voleybol",
   },
   openGraph: {
@@ -59,31 +74,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr">
-      <head>
-        <link
-          rel="preload"
-          href="/fonts/museo-sans-500.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/museo-sans-700.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/museo-sans-900.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin="anonymous"
-        />
-      </head>
-      <body className="min-h-screen bg-[#121212] text-[#F1F5F9] font-sans antialiased selection:bg-blue-600 selection:text-white">
+    <html lang="tr" className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+      <body className="min-h-screen bg-canvas text-ink font-sans antialiased selection:bg-selected-strong selection:text-white">
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S5FYXCW2LC"

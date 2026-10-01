@@ -21,7 +21,7 @@ vi.mock("@/utils/volleybox", async (importOriginal) => {
 });
 
 describe("Scoreboard & Tabular Numbers Typography (GÖREV 8)", () => {
-  const sampleMatch: Match = {
+  const sampleMatch = {
     id: "m-score-1",
     home_team: "Eczacıbaşı",
     away_team: "VakıfBank",
@@ -31,7 +31,7 @@ describe("Scoreboard & Tabular Numbers Typography (GÖREV 8)", () => {
     time: "17:30",
     status: "finished",
     set_scores: ["25-21", "22-25", "25-18", "19-25", "15-12"],
-  };
+  } as unknown as Match;
 
   it("CompactMatchRow renders set scores and total scores with font-scoreboard and tabular-nums", () => {
     const { container } = render(<CompactMatchRow match={sampleMatch} />);
@@ -73,8 +73,10 @@ describe("Scoreboard & Tabular Numbers Typography (GÖREV 8)", () => {
           sets_lost: 5,
           set_ratio: "5.80",
           point_ratio: "1.32",
+          points_won: 800,
+          points_lost: 600,
           form: ["W", "W", "W"],
-        },
+        } as unknown as StandingItem,
       ],
     };
 

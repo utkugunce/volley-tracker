@@ -99,7 +99,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   if (!primaryTeam) {
     if (isDismissed) return null;
     return (
-      <div className="bg-[#0f172a]/60 hover:bg-[#0f172a]/80 border border-slate-800/80 rounded-xl px-3 py-1.5 flex items-center justify-between gap-2 text-xs transition-colors shadow-xs">
+      <div className="bg-canvas/60 hover:bg-canvas/80 border border-slate-800/80 rounded-xl px-3 py-1.5 flex items-center justify-between gap-2 text-xs transition-colors shadow-xs">
         <div className="flex items-center gap-2 min-w-0">
           <Star size={13} className="text-amber-400 fill-amber-400/20 shrink-0" />
           <span className="font-bold text-white text-[11px] shrink-0">
@@ -133,7 +133,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
             onClick={() => setIsPicking(false)}
           >
             <div
-              className="bg-[#0b1325] border border-slate-700 rounded-2xl p-4 max-w-md w-full shadow-2xl space-y-3 max-h-[80vh] flex flex-col"
+              className="bg-surface-muted border border-slate-700 rounded-2xl p-4 max-w-md w-full shadow-2xl space-y-3 max-h-[80vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between border-b border-slate-800 pb-2">
@@ -198,7 +198,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   const opponentLogo = opponentMapping?.local_logo || opponentMapping?.logo_url;
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-[#0d172a] to-slate-900 border border-amber-500/30 rounded-xl px-3 py-2 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+    <div className="bg-gradient-to-r from-slate-900 via-surface-muted to-slate-900 border border-amber-500/30 rounded-xl px-3 py-2 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
       {/* Sol: Kulüp Bilgisi */}
       <div className="flex items-center gap-2.5 min-w-0">
         <TeamBadge name={primaryTeam} logoUrl={teamLogo} size="xs" />

@@ -150,10 +150,10 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       {/* Sayfa Başlığı (Semantik H1 & Canlı Gösterge) */}
       <div className="flex items-center justify-between pb-1">
         <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+          <span className="w-2.5 h-2.5 rounded-full bg-done shrink-0" />
           <span>Canlı Maç Merkezi & TVF Altyapı Bülteni</span>
         </h1>
-        <span className="text-[11px] font-mono text-slate-400">
+        <span className="text-[11px] font-display tabular-nums text-ink-2">
           {city === "all" ? "81 İl" : city} · {stats.totalMatches} Maç
         </span>
       </div>
@@ -167,12 +167,12 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             onClick={() => setFeedFilter("all")}
             className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "all"
-                ? "bg-rose-600 text-white shadow-sm"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
             }`}
           >
             <span>Canlı Hub</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/30 font-mono">
+            <span className="text-[10px] font-display font-semibold tabular-nums text-ink-2 opacity-90">
               {stats.totalMatches}
             </span>
           </button>
@@ -182,14 +182,14 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             onClick={() => setFeedFilter("today")}
             className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "today"
-                ? "bg-rose-600 text-white shadow-sm"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
             }`}
           >
-            <Flame size={13} className={feedFilter === "today" ? "fill-white/30 text-white" : "text-rose-400"} />
+            <Flame size={13} className={feedFilter === "today" ? "fill-white/30 text-white" : "text-ink-2"} />
             <span>Bugün</span>
             {stats.todayCount > 0 && (
-              <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-rose-700 text-white font-mono font-bold shadow-xs">
+              <span className="text-[10px] font-display font-semibold tabular-nums text-ink-2">
                 {stats.todayCount}
               </span>
             )}
@@ -200,13 +200,13 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             onClick={() => setFeedFilter("finished")}
             className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "finished"
-                ? "bg-emerald-600 text-white shadow-sm"
+                ? "bg-done text-done-fg font-bold"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
             }`}
           >
-            <CheckCircle2 size={13} className={feedFilter === "finished" ? "text-white" : "text-emerald-400"} />
+            <CheckCircle2 size={13} className={feedFilter === "finished" ? "text-done-fg" : "text-emerald-400"} />
             <span>Biten Skorlar</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/30 font-mono">
+            <span className="text-[10px] font-display font-semibold tabular-nums text-ink-2 opacity-90">
               {stats.scoredMatches}
             </span>
           </button>
@@ -216,13 +216,13 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             onClick={() => setFeedFilter("upcoming")}
             className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "upcoming"
-                ? "bg-sky-600 text-white shadow-sm"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
             }`}
           >
             <Calendar size={13} className={feedFilter === "upcoming" ? "text-white" : "text-sky-400"} />
             <span>Gelecek Maçlar</span>
-            <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-black/30 font-mono">
+            <span className="text-[10px] font-display font-semibold tabular-nums text-ink-2 opacity-90">
               {stats.upcomingMatches}
             </span>
           </button>
@@ -236,7 +236,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             onClick={() => onSelectCity("all")}
             className={`px-2.5 py-1 min-h-[36px] rounded-lg text-[11px] font-bold transition-colors whitespace-nowrap cursor-pointer ${
               currentCitySlug === "all"
-                ? "bg-rose-500/20 text-rose-300 border border-rose-500/40"
+                ? "bg-primary/20 text-primary border border-primary/40"
                 : "text-slate-400 hover:text-white hover:bg-slate-800"
             }`}
           >
@@ -249,7 +249,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
               onClick={() => onSelectCity(c.slug)}
               className={`px-2.5 py-1 min-h-[36px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
                 currentCitySlug === c.slug
-                  ? "bg-rose-500/20 text-rose-300 border border-rose-500/40 font-bold"
+                  ? "bg-primary/20 text-primary border border-primary/40 font-bold"
                   : "text-slate-400 hover:text-white hover:bg-slate-800"
               }`}
             >
@@ -523,7 +523,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             </div>
 
             {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
-            <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-[#0e1627] border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-xs">
+            <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-xs">
               <div className="flex items-center gap-2">
                 <Sparkles size={14} className="text-rose-400 shrink-0" />
                 <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
@@ -575,7 +575,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
           onSelectMatch(match);
         }
       }}
-      className="group relative bg-[#0f172a]/70 hover:bg-[#18233c] border border-slate-800/80 hover:border-rose-500/40 rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-xs active:scale-[0.995]"
+      className="group relative bg-canvas/70 hover:bg-panel border border-slate-800/80 hover:border-rose-500/40 rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-xs active:scale-[0.995]"
     >
       {/* Üst Satır: Şehir, Lig ve Salon */}
       <div className="flex items-center justify-between gap-2 text-[10px] sm:text-[11px] text-slate-400 mb-1.5 pb-1 border-b border-slate-800/50">

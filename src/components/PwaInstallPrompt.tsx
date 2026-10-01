@@ -115,13 +115,13 @@ export const PwaInstallPrompt: React.FC = () => {
 
       {/* PWA YÜKLEME BUTONU (Header veya sabit çubuk için) */}
       {canShowPrompt && (
-        <div className="inline-flex items-center rounded-xl bg-gradient-to-r from-red-600 to-rose-600 shadow-glow-red border border-red-400/40 overflow-hidden">
+        <div className="inline-flex items-center rounded-xl bg-surface-raised border border-line overflow-hidden">
           <button
             onClick={handleInstallClick}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-white hover:from-red-500 hover:to-rose-500 transition-all active:scale-95 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-ink hover:bg-white/5 transition-all active:scale-95 cursor-pointer"
             title="Altyapı Voleybol uygulamasını telefonunuza veya bilgisayarınıza yükleyin"
           >
-            <Smartphone size={14} className="animate-pulse" />
+            <Smartphone size={14} className="text-primary" />
             <span className="hidden sm:inline">Uygulamayı Yükle</span>
             <span className="sm:hidden">Yükle</span>
           </button>
@@ -129,7 +129,7 @@ export const PwaInstallPrompt: React.FC = () => {
             onClick={handleDismiss}
             aria-label="Yükleme istemini 14 gün gizle"
             title="14 gün boyunca gösterme"
-            className="px-1.5 py-1.5 text-white/80 hover:text-white hover:bg-white/10 transition-colors border-l border-white/20 cursor-pointer"
+            className="px-1.5 py-1.5 text-ink-2 hover:text-ink hover:bg-white/5 transition-colors border-l border-line cursor-pointer"
           >
             <X size={13} />
           </button>
@@ -166,7 +166,7 @@ export const PwaInstallPrompt: React.FC = () => {
             </ol>
             <button
               onClick={handleDismiss}
-              className="w-full py-2.5 rounded-xl bg-primary text-white font-bold text-xs hover:bg-primary/90 transition-colors cursor-pointer"
+              className="w-full py-2.5 rounded-xl bg-primary text-primary-fg font-bold text-xs shadow-glow-primary hover:bg-primary/90 transition-colors cursor-pointer"
             >
               Anladım
             </button>

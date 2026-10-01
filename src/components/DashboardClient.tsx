@@ -1064,14 +1064,14 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           )
         }
         footer={
-          <footer className="py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-[#94A3B8] no-print">
+          <footer className="py-4 pb-[calc(4rem+env(safe-area-inset-bottom,0px))] sm:pb-4 text-center text-xs text-ink-2 no-print">
             <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-              <p className="font-semibold text-[#F1F5F9]">
+              <p className="font-semibold text-ink">
                 Altyapı Voleybol • {data?.city || "Türkiye"} Genç & Yıldız Kızlar Süper Lig
               </p>
-              <div className="flex items-center gap-3 text-[11px] text-[#94A3B8]">
+              <div className="flex items-center gap-3 text-[11px] text-ink-2">
                 <span>Fikstür & Puan Durumu</span>
-                <span className="text-[#94A3B8]">•</span>
+                <span className="text-ink-2">•</span>
                 <span>Sofascore Voleybol Arayüz Mimarisi</span>
               </div>
             </div>
@@ -1303,7 +1303,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                             toggleResultCityCollapse(cityGroup.city);
                           }
                         }}
-                        className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-[#0d172a] to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
+                        className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-surface-muted to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
                         title={isCityCollapsed ? `${cityGroup.city} maçlarını göster` : `${cityGroup.city} maçlarını gizle`}
                       >
                         <div className="flex items-center gap-2.5">
@@ -1380,7 +1380,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
             {/* Sonuç Bulunamadı */}
             {resultsByCityAndLeague.length === 0 && (
-              <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
+              <div className="text-center py-12 bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
                 <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-emerald-400 border border-slate-700">
                   {resultsSubTab === "yesterday" ? <History size={22} /> : <CheckCircle2 size={22} />}
                 </div>
@@ -1664,7 +1664,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                             toggleFixtureCityCollapse(cityGroup.city);
                           }
                         }}
-                        className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-[#0d172a] to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
+                        className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-surface-muted to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
                         title={isCityCollapsed ? `${cityGroup.city} fikstürünü göster` : `${cityGroup.city} fikstürünü gizle`}
                       >
                         <div className="flex items-center gap-2.5">
@@ -1741,7 +1741,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
             {/* Sonuç Bulunamadı / İl Sezon Takvimi Bekleniyor */}
             {groupedSections.length === 0 && (
-              <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
+              <div className="text-center py-12 bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-6 max-w-lg mx-auto my-8 shadow-xl">
                 <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto mb-3 text-slate-400 border border-slate-700">
                   {showOnlyFavorites ? (
                     <Star size={22} className="text-amber-400" />
@@ -1798,7 +1798,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                 onSelectTeam={(team, context) => setSelectedStandingTeam({ team, context })}
               />
             ) : (
-              <div className="text-center py-12 bg-gradient-to-br from-[#0f172a] via-[#0b1325] to-[#1e293b] border border-slate-800 rounded-2xl p-6 max-w-md mx-auto my-8 shadow-xl">
+              <div className="text-center py-12 bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-6 max-w-md mx-auto my-8 shadow-xl">
                 <p className="text-sm font-semibold text-slate-300">
                   TVF {data?.city || "Bu İl"} için henüz puan durumu tablosu oluşturulmamıştır.
                 </p>
@@ -1878,20 +1878,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       {/* 6. Mobil Tam Ekran Ligler Menüsü (Sol Panel Ağacı) */}
       {isLeaguesMenuOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden flex flex-col animate-in fade-in duration-200">
-          <div className="flex items-center justify-between px-4 py-3 bg-[#1E222D] border-b border-[#2A2E3D]">
+          <div className="flex items-center justify-between px-4 py-3 bg-panel border-b border-line">
             <div className="flex items-center gap-2">
               <Layers size={18} className="text-blue-400" />
               <h2 className="text-sm font-bold text-white">Lig Navigasyonu</h2>
             </div>
             <button
               onClick={() => setIsLeaguesMenuOpen(false)}
-              className="p-1.5 rounded-lg text-[#94A3B8] hover:text-white hover:bg-[#181A20] transition-colors"
+              className="p-1.5 rounded-lg text-ink-2 hover:text-white hover:bg-surface-muted transition-colors"
               aria-label="Kapat"
             >
               <X size={18} />
             </button>
           </div>
-          <div className="flex-1 overflow-y-auto p-3 bg-[#121212]">
+          <div className="flex-1 overflow-y-auto p-3 bg-canvas">
             <SidebarNavigation
               cities={citiesList}
               currentCity={currentCitySlug}

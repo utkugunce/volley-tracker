@@ -115,7 +115,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
       >
         {/* Merkezi Modal Gövdesi */}
         <div
-          className="relative w-full max-w-lg md:max-w-xl max-h-[92vh] bg-gradient-to-b from-[#0b1220] via-[#080c14] to-[#050810] border border-slate-700/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden text-slate-100 animate-in zoom-in-95 duration-200"
+          className="relative w-full max-w-lg md:max-w-xl max-h-[92vh] bg-gradient-to-b from-canvas via-canvas to-canvas border border-slate-700/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden text-slate-100 animate-in zoom-in-95 duration-200"
           onClick={(e) => e.stopPropagation()}
         >
           {/* 1. Üst Bar: Kategori & Kapat */}
@@ -144,7 +144,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
           {/* 2. Kaydırılabilir İçerik */}
           <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
             {/* Büyük Skorboard */}
-            <div className="rounded-3xl bg-gradient-to-b from-slate-900/90 via-[#0d1424]/90 to-slate-950 border border-slate-800/90 p-5 shadow-card relative overflow-hidden">
+            <div className="rounded-3xl bg-gradient-to-b from-slate-900/90 via-surface-muted/90 to-slate-950 border border-slate-800/90 p-5 shadow-card relative overflow-hidden">
               {/* Arka Plan Ambient Glow */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-red-600/10 blur-3xl pointer-events-none" />
 

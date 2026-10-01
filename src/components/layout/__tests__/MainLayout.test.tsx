@@ -113,7 +113,7 @@ describe("Sofascore 3-Kolonlu MainLayout ve MatchSelection Mimarisi", () => {
       expect(screen.getByTestId("footer-slot")).toBeDefined();
     });
 
-    it("Sofascore koyu tema renk sınıflarını (bg-[#121212], border-[#2A2E3D], bg-[#1E222D]) içerir", () => {
+    it("Sofascore koyu tema renk sınıflarını (canvas, panel, line) içerir", () => {
       const { container } = render(
         <MainLayout
           header={<div>Header</div>}
@@ -125,10 +125,10 @@ describe("Sofascore 3-Kolonlu MainLayout ve MatchSelection Mimarisi", () => {
       );
 
       const rootDiv = container.firstChild as HTMLElement;
-      expect(rootDiv.style.getPropertyValue("--portal-background")).toBe("#121212");
-      expect(rootDiv.className).toContain("text-[#F1F5F9]");
-      expect(rootDiv.style.getPropertyValue("--portal-panel")).toBe("#1E222D");
-      expect(rootDiv.style.getPropertyValue("--portal-border")).toBe("#2A2E3D");
+      expect(rootDiv.style.getPropertyValue("--portal-background")).toBe("#07131F");
+      expect(rootDiv.className).toContain("text-ink");
+      expect(rootDiv.style.getPropertyValue("--portal-panel")).toBe("#0E2033");
+      expect(rootDiv.style.getPropertyValue("--portal-border")).toBe("#1B3550");
 
       // Sol ve sağ panellerin aside elementleri
       const asides = container.querySelectorAll("aside");

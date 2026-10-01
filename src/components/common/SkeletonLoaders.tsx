@@ -11,10 +11,10 @@ export const MatchRowSkeleton: React.FC = () => {
     <div
       role="status"
       aria-label="Maç bilgisi yükleniyor"
-      className="flex items-center min-h-[46px] px-2.5 py-1.5 border-b border-[#2A2E3D]/50 bg-[#181A20] animate-pulse select-none"
+      className="flex items-center min-h-[46px] px-2.5 py-1.5 border-b border-line/50 bg-surface-muted animate-pulse select-none"
     >
       {/* Sol: Saat & Durum */}
-      <div className="w-[74px] shrink-0 flex flex-col justify-center gap-1 pr-1.5 border-r border-[#2A2E3D]/40">
+      <div className="w-[74px] shrink-0 flex flex-col justify-center gap-1 pr-1.5 border-r border-line/40">
         <div className="h-3.5 w-12 rounded bg-slate-700/50" />
         <div className="h-2.5 w-9 rounded bg-slate-800/70" />
       </div>
@@ -42,7 +42,7 @@ export const MatchRowSkeleton: React.FC = () => {
         </div>
 
         {/* Toplam Skor */}
-        <div className="w-[32px] shrink-0 flex flex-col items-center justify-center gap-1 pl-1.5 border-l border-[#2A2E3D]/40">
+        <div className="w-[32px] shrink-0 flex flex-col items-center justify-center gap-1 pl-1.5 border-l border-line/40">
           <div className="w-3.5 h-3 rounded bg-slate-700/60" />
           <div className="w-3.5 h-3 rounded bg-slate-700/60" />
         </div>
@@ -124,15 +124,15 @@ export const MatchFeedSkeleton: React.FC<{ rows?: number }> = ({ rows = 5 }) => 
       </div>
 
       {/* 1. Lig Bölümü */}
-      <div className="rounded-xl border border-[#2A2E3D] bg-[#181A20] overflow-hidden shadow-sm animate-pulse">
-        <div className="flex items-center justify-between px-3 py-2.5 bg-[#1E222D] border-b border-[#2A2E3D]">
+      <div className="rounded-xl border border-line bg-surface-muted overflow-hidden shadow-sm animate-pulse">
+        <div className="flex items-center justify-between px-3 py-2.5 bg-panel border-b border-line">
           <div className="flex items-center gap-2">
             <div className="w-3.5 h-3.5 rounded-full bg-slate-700/60" />
             <div className="h-3.5 w-40 rounded bg-slate-700/60" />
           </div>
           <div className="h-4 w-12 rounded bg-slate-800/60" />
         </div>
-        <div className="divide-y divide-[#2A2E3D]/50">
+        <div className="divide-y divide-line/50">
           {Array.from({ length: rows }).map((_, i) => (
             <MatchRowSkeleton key={i} />
           ))}

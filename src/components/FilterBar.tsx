@@ -144,13 +144,13 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                   onClick={() => onSelectStatusFilter(tab.id)}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                     isActive
-                      ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red font-bold ring-2 ring-red-500/30"
+                      ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                       : "bg-slate-800/70 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/50"
                   }`}
                 >
                   <span>{tab.label}</span>
                   <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-display font-semibold tabular-nums ${
                       isActive ? "bg-black/30 text-white" : "bg-slate-700 text-slate-300"
                     }`}
                   >
@@ -171,8 +171,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           <SlidersHorizontal size={14} aria-hidden="true" />
           <span>Filtreler</span>
           {activeFilterCount > 0 && (
-            <span className="min-w-5 h-5 px-1 rounded-full bg-primary text-white text-[10px] flex items-center justify-center font-bold">
-              {activeFilterCount}
+            <span className="text-[11px] font-display tabular-nums text-primary font-bold">
+              ({activeFilterCount})
             </span>
           )}
           <ChevronDown size={14} aria-hidden="true" className={filtersOpen ? "rotate-180 transition-transform" : "transition-transform"} />
@@ -194,7 +194,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               onClick={() => onSelectCategory(cat)}
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 isActive
-                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-xs font-bold ring-1 ring-red-500/40"
+                  ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/60"
               }`}
             >
@@ -218,7 +218,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Kulüp veya salon ara..."
               aria-label="Kulüp veya salon ara"
-              className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-8.5 pr-7 py-1.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-red-500 focus-visible:ring-2 focus-visible:ring-red-500/30 transition-all font-medium"
+              className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-8.5 pr-7 py-1.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/30 transition-all font-medium"
             />
             {searchQuery && (
               <button
@@ -238,7 +238,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               value={selectedHall}
               onChange={(e) => onSelectHall(e.target.value)}
               aria-label="Salon filtrele"
-              className="bg-slate-900/90 border border-slate-700/80 text-slate-200 text-xs rounded-xl px-3 py-1.5 pr-7 appearance-none focus:outline-none focus:border-red-500 focus-visible:ring-2 focus-visible:ring-red-500/30 transition-all cursor-pointer font-medium"
+              className="bg-slate-900/90 border border-slate-700/80 text-slate-200 text-xs rounded-xl px-3 py-1.5 pr-7 appearance-none focus:outline-none focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/30 transition-all cursor-pointer font-medium"
             >
               <option value="Tümü">Tüm Salonlar</option>
               {halls.map((h) => (

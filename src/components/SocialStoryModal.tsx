@@ -35,17 +35,20 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
     canvas.width = 1080;
     canvas.height = 1920;
 
+    const FONT_BODY = "var(--font-manrope), 'Manrope', system-ui, -apple-system, sans-serif";
+    const FONT_NUM = "var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif";
+
     // 1. Zemin: Derin Koyu Gradyan
     const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
-    bgGrad.addColorStop(0, "#080c14");
-    bgGrad.addColorStop(0.35, "#0f172a");
-    bgGrad.addColorStop(0.7, "#1e1b4b");
-    bgGrad.addColorStop(1, "#080c14");
+    bgGrad.addColorStop(0, "#07131F");
+    bgGrad.addColorStop(0.35, "#0E2033");
+    bgGrad.addColorStop(0.7, "#0A1A2B");
+    bgGrad.addColorStop(1, "#07131F");
     ctx.fillStyle = bgGrad;
     ctx.fillRect(0, 0, 1080, 1920);
 
     // 2. Voleybol Sahası Çizgi Filigranları
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.04)";
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
     ctx.lineWidth = 4;
     ctx.strokeRect(100, 250, 880, 1420); // Dış saha
     ctx.beginPath();
@@ -64,39 +67,39 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
 
     // 3. Parlayan Üst Işık (Ambient Light)
     const glowGrad = ctx.createRadialGradient(540, 200, 50, 540, 200, 450);
-    glowGrad.addColorStop(0, "rgba(220, 38, 38, 0.25)");
+    glowGrad.addColorStop(0, "rgba(45, 212, 192, 0.20)");
     glowGrad.addColorStop(1, "transparent");
     ctx.fillStyle = glowGrad;
     ctx.fillRect(0, 0, 1080, 600);
 
     // 4. TVF ALTYAPI VOLEYBOL Üst Rozet
-    ctx.fillStyle = "#dc2626";
+    ctx.fillStyle = "#2DD4C0";
     ctx.beginPath();
     ctx.roundRect(340, 140, 400, 64, 16);
     ctx.fill();
 
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 30px 'Museo Sans', system-ui, -apple-system, sans-serif";
+    ctx.fillStyle = "#032320";
+    ctx.font = `bold 28px ${FONT_BODY}`;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("TVF ALTYAPI VOLEYBOL", 540, 172);
 
     // 5. Lig ve Grup Bilgisi
-    ctx.fillStyle = "#94a3b8";
-    ctx.font = "bold 32px 'Museo Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#A9C3D1";
+    ctx.font = `bold 32px ${FONT_BODY}`;
     ctx.fillText(
       `${city.toUpperCase()} • ${(match.category || "").toUpperCase()}`,
       540,
       250
     );
 
-    ctx.fillStyle = "#38bdf8";
-    ctx.font = "bold 28px 'Museo Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#7FB4FF";
+    ctx.font = `bold 28px ${FONT_BODY}`;
     ctx.fillText(match.group || "Grup Maçı", 540, 295);
 
     // 6. Ev Sahibi Takım
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "900 52px 'Museo Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#EAF6FA";
+    ctx.font = `800 52px ${FONT_BODY}`;
     ctx.fillText(match.home_team, 540, 560);
 
     // 7. Skor veya VS Alanı
@@ -104,18 +107,18 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
     if (isFinished) {
       // Skor Kutusu
       const scoreGrad = ctx.createLinearGradient(390, 640, 690, 840);
-      scoreGrad.addColorStop(0, "#dc2626");
-      scoreGrad.addColorStop(1, "#991b1b");
+      scoreGrad.addColorStop(0, "#13293F");
+      scoreGrad.addColorStop(1, "#0A1A2B");
       ctx.fillStyle = scoreGrad;
       ctx.beginPath();
       ctx.roundRect(360, 660, 360, 160, 28);
       ctx.fill();
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.25)";
+      ctx.strokeStyle = "rgba(45, 212, 192, 0.4)";
       ctx.lineWidth = 3;
       ctx.stroke();
 
-      ctx.fillStyle = "#ffffff";
-      ctx.font = "900 96px monospace, sans-serif";
+      ctx.fillStyle = "#9BE15D";
+      ctx.font = `700 96px ${FONT_NUM}`;
       ctx.fillText(
         `${match.home_score ?? 0}  -  ${match.away_score ?? 0}`,
         540,
@@ -124,8 +127,8 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
 
       // Set Skorları
       if (match.set_scores && match.set_scores.length > 0) {
-        ctx.fillStyle = "#cbd5e1";
-        ctx.font = "bold 34px monospace, sans-serif";
+        ctx.fillStyle = "#A9C3D1";
+        ctx.font = `600 34px ${FONT_NUM}`;
         const forfeit = getMatchForfeitInfo(match);
         const setScoresText = forfeit.isForfeit
           ? `${match.set_scores.join("   •   ")}   (HÜKMEN)`
@@ -134,48 +137,48 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
       }
     } else {
       // VS Rozeti
-      ctx.fillStyle = "rgba(30, 41, 59, 0.85)";
+      ctx.fillStyle = "#13293F";
       ctx.beginPath();
       ctx.roundRect(450, 690, 180, 100, 24);
       ctx.fill();
       ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
       ctx.stroke();
 
-      ctx.fillStyle = "#f59e0b";
-      ctx.font = "900 48px monospace, sans-serif";
+      ctx.fillStyle = "#FFC24D";
+      ctx.font = `700 48px ${FONT_NUM}`;
       ctx.fillText("VS", 540, 742);
     }
 
     // 8. Deplasman Takımı
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "900 52px 'Museo Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#EAF6FA";
+    ctx.font = `800 52px ${FONT_BODY}`;
     ctx.fillText(match.away_team, 540, 990);
 
     // 9. Maç Bilgileri Kartı (Tarih, Saat, Salon)
-    ctx.fillStyle = "rgba(15, 23, 42, 0.75)";
+    ctx.fillStyle = "rgba(14, 32, 51, 0.85)";
     ctx.beginPath();
     ctx.roundRect(140, 1160, 800, 320, 24);
     ctx.fill();
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+    ctx.strokeStyle = "#1B3550";
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    ctx.fillStyle = "#e2e8f0";
-    ctx.font = "bold 38px 'Museo Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#EAF6FA";
+    ctx.font = `bold 36px ${FONT_BODY}`;
     ctx.fillText(`🗓  ${match.date || "Tarih Açıklanacak"}`, 540, 1240);
 
-    ctx.fillStyle = "#facc15";
-    ctx.font = "bold 44px monospace, sans-serif";
+    ctx.fillStyle = "#FFC24D";
+    ctx.font = `700 44px ${FONT_NUM}`;
     ctx.fillText(`⏰  ${match.time || "--:--"}`, 540, 1315);
 
-    ctx.fillStyle = "#94a3b8";
-    ctx.font = "600 32px 'Museo Sans', system-ui, sans-serif";
+    ctx.fillStyle = "#A9C3D1";
+    ctx.font = `600 32px ${FONT_BODY}`;
     ctx.fillText(`📍  ${match.hall || "Salon Açıklanacak"}`, 540, 1390);
 
     // 10. Altbilgi / İntro Filigran
-    ctx.fillStyle = "#94a3b8";
-    ctx.font = "bold 26px 'Museo Sans', system-ui, sans-serif";
-    ctx.fillText("volley-tracker • Resmi TVF Fikstür ve Canlı Sonuçlar", 540, 1720);
+    ctx.fillStyle = "#8CA8B8";
+    ctx.font = `bold 26px ${FONT_BODY}`;
+    ctx.fillText("altyapivoleybol.com.tr • TVF Altyapı Bülteni ve Canlı Sonuçlar", 540, 1720);
 
     try {
       const url = canvas.toDataURL("image/png");
@@ -241,7 +244,7 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="relative bg-[#0b1325] border border-slate-700/80 rounded-3xl p-4 sm:p-6 max-w-md w-full shadow-2xl space-y-4"
+        className="relative bg-surface-muted border border-slate-700/80 rounded-3xl p-4 sm:p-6 max-w-md w-full shadow-2xl space-y-4"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Başlığı */}

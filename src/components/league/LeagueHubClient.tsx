@@ -274,9 +274,9 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
       : 0;
 
   return (
-    <div className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col selection:bg-red-600/30 selection:text-white">
+    <div className="min-h-screen bg-canvas text-slate-100 flex flex-col selection:bg-red-600/30 selection:text-white">
       {/* 1. ÜST GEZİNME VE BAŞLIK ŞERİDİ */}
-      <header className="sticky top-0 z-40 bg-[#070b14]/90 backdrop-blur-md border-b border-slate-800/80 px-4 py-3">
+      <header className="sticky top-0 z-40 bg-canvas/90 backdrop-blur-md border-b border-slate-800/80 px-4 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <Link
@@ -331,7 +331,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
       </header>
 
       {/* 2. LİG HERO BİLGİ ALANI */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#0b1325] via-[#070b14] to-[#070b14] border-b border-slate-800/80 py-6 sm:py-8 px-4">
+      <section className="relative overflow-hidden bg-gradient-to-b from-surface-muted via-canvas to-canvas border-b border-slate-800/80 py-6 sm:py-8 px-4">
         <div className="absolute top-0 right-1/4 w-96 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 left-10 w-72 h-36 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -476,7 +476,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
       </section>
 
       {/* 3. İKİNCİL GEZİNME (SEKMELER VE GRUP SEÇİCİ) */}
-      <div className="bg-[#0b1325]/95 border-b border-slate-800/80 sticky top-[57px] z-30 px-4 py-2.5 backdrop-blur-md">
+      <div className="bg-surface-muted/95 border-b border-slate-800/80 sticky top-[57px] z-30 px-4 py-2.5 backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
           {/* Ana Sekmeler */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none text-xs">
@@ -588,7 +588,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                   key={grp.groupName}
                   className="glass-panel border border-slate-800/80 rounded-2xl overflow-hidden shadow-card"
                 >
-                  <div className="bg-gradient-to-r from-slate-900/90 via-[#0d1424]/90 to-slate-900/90 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+                  <div className="bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 px-4 py-3 flex items-center justify-between border-b border-slate-800">
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs">
                         <Trophy size={14} />

@@ -1,12 +1,10 @@
 // public/sw.js — Altyapı Voleybol Service Worker
-const CACHE_NAME = "altyapi-voleybol-v3";
+const CACHE_NAME = "altyapi-voleybol-v4";
 const STATIC_ASSETS = [
   "/manifest.json",
   "/icon.svg",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
-  "/fonts/museo-sans-500.woff",
-  "/fonts/museo-sans-700.woff",
 ];
 
 // 1. Kurulum (Install): Sabit statik çekirdek dosyaları önbelleğe al (HTML sayfaları dinamik alınır)
