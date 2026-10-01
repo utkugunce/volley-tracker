@@ -1,11 +1,19 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { Kadinlar2LigData } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
-import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
-import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
 import { useFavorites } from "@/utils/useFavorites";
+
+const MatchCenterDrawer = dynamic(
+  () => import("@/components/MatchCenterDrawer").then((mod) => mod.MatchCenterDrawer),
+  { ssr: false }
+);
+const SpotlightSearchModal = dynamic(
+  () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
+  { ssr: false }
+);
 import { slugify } from "@/utils/slugify";
 import { Kadinlar2LigHeader, Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
 import { Kadinlar2LigGroupBar } from "./Kadinlar2LigGroupBar";

@@ -1,10 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Match } from "@/types/fixture";
 import { TeamBadge } from "./TeamBadge";
-import { SocialStoryModal } from "./SocialStoryModal";
+
+const SocialStoryModal = dynamic(
+  () => import("./SocialStoryModal").then((mod) => mod.SocialStoryModal),
+  { ssr: false }
+);
 import {
   X,
   MapPin,

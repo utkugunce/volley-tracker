@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getInitialFixtures } from "../getInitialFixtures";
+import { getInitialFixtures, getInitialHomeFixtures } from "../getInitialFixtures";
 
 describe("getInitialFixtures Utility", () => {
   it("loads all-city data by default with valid structure", () => {
@@ -24,5 +24,15 @@ describe("getInitialFixtures Utility", () => {
     expect(data).toBeDefined();
     // falls back to all cities or valid fixture data
     expect(Array.isArray(data.matches)).toBe(true);
+  });
+
+  it("loads lightweight home data via getInitialHomeFixtures", () => {
+    const homeData = getInitialHomeFixtures();
+    expect(homeData).toBeDefined();
+    expect(homeData.city).toBe("Tüm İller");
+    expect(Array.isArray(homeData.matches)).toBe(true);
+    // Home data should be bounded for performance
+    expect(homeData.matches.length).toBeLessThanOrEqual(50);
+    expect(homeData.total_matches).toBeGreaterThan(0);
   });
 });

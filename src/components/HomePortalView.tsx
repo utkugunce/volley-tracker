@@ -36,6 +36,7 @@ interface HomePortalViewProps {
   onNavigateTab: (tab: "results" | "today" | "fixtures" | "standings" | "group-status") => void;
   todayStr: string;
   yesterdayStr: string;
+  totalMatchesCount?: number;
 }
 
 export const HomePortalView: React.FC<HomePortalViewProps> = ({
@@ -51,13 +52,14 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
   onNavigateTab,
   todayStr,
   yesterdayStr,
+  totalMatchesCount,
 }) => {
   // Filtre sekmesi: "all" | "today" | "upcoming" | "finished"
   const [feedFilter, setFeedFilter] = useState<"all" | "today" | "upcoming" | "finished">("all");
 
   // İstatistikler
   const stats = useMemo(() => {
-    const totalMatches = matches.length;
+    const totalMatches = totalMatchesCount ?? matches.length;
     const scoredMatches = matches.filter(isMatchScored).length;
     const upcomingMatches = totalMatches - scoredMatches;
     const effectiveYesterday = yesterdayStr || (todayStr ? getYesterdayString(todayStr) : "");

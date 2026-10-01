@@ -1,5 +1,5 @@
 import { DashboardClient } from "@/components/DashboardClient";
-import { getInitialFixtures } from "@/utils/getInitialFixtures";
+import { getInitialFixtures, getInitialHomeFixtures } from "@/utils/getInitialFixtures";
 
 export const revalidate = 180; // 3 minutes ISR cache
 
@@ -53,6 +53,12 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<imp
 export default async function Page({ searchParams }: PageProps) {
   const params = searchParams ? await searchParams : {};
   const citySlug = typeof params?.city === "string" ? params.city : undefined;
-  const initialData = getInitialFixtures(citySlug);
-  return <DashboardClient initialData={initialData} initialTab="home" initialCity={citySlug} />;
+
+  if (citySlug) {
+    const initialData = getInitialFixtures(citySlug);
+    return <DashboardClient initialData={initialData} initialTab="home" initialCity={citySlug} />;
+  }
+
+  const initialData = getInitialHomeFixtures();
+  return <DashboardClient initialData={initialData} initialTab="home" initialCity="all" initialDataPartial={true} />;
 }

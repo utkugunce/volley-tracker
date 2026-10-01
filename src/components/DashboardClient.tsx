@@ -248,7 +248,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       }
     };
 
-    if (isPartialData && tab !== "results") {
+    if (isPartialData && tab !== "home") {
       void ensureFullData().then((loaded) => {
         if (loaded) {
           setActiveMainTab(tab);
@@ -1488,6 +1488,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             onNavigateTab={handleSelectTab}
             todayStr={todayStr}
             yesterdayStr={yesterdayStr}
+            totalMatchesCount={data?.total_matches}
           />
         ) : activeMainTab === "today" ? (
           /* ==================== GÜNÜN MAÇLARI — Sofascore Kompakt Maç Akışı ==================== */

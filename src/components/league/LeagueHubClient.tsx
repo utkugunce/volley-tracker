@@ -28,8 +28,16 @@ import { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { FixtureTable } from "@/components/FixtureTable";
 import { DateRibbon } from "@/components/DateRibbon";
-import { MatchCenterDrawer } from "@/components/MatchCenterDrawer";
-import { SpotlightSearchModal } from "@/components/SpotlightSearchModal";
+import dynamic from "next/dynamic";
+
+const MatchCenterDrawer = dynamic(
+  () => import("@/components/MatchCenterDrawer").then((mod) => mod.MatchCenterDrawer),
+  { ssr: false }
+);
+const SpotlightSearchModal = dynamic(
+  () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
+  { ssr: false }
+);
 import { useFavorites } from "@/utils/useFavorites";
 import { generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { getMatchForfeitInfo } from "@/utils/forfeit";

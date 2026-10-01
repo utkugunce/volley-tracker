@@ -66,7 +66,7 @@ describe("MatchCenterDrawer Component", () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  it("Hikaye Kartı butonuna basıldığında SocialStoryModal açılır", () => {
+  it("Hikaye Kartı butonuna basıldığında SocialStoryModal açılır", async () => {
     render(
       <MatchCenterDrawer
         match={mockMatch}
@@ -78,6 +78,6 @@ describe("MatchCenterDrawer Component", () => {
     const storyBtn = screen.getByText("Hikaye Kartı");
     fireEvent.click(storyBtn);
 
-    expect(screen.getByText("Instagram & WhatsApp Hikaye Kartı")).toBeInTheDocument();
+    expect(await screen.findByText("Instagram & WhatsApp Hikaye Kartı")).toBeInTheDocument();
   });
 });

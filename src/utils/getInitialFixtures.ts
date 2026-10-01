@@ -147,3 +147,63 @@ export function getInitialResults(citySlug?: string): FixturesData {
     matches: data.matches.filter(isMatchScored),
   };
 }
+
+/**
+ * Anasayfa (/) ilk açılışını hızlandırmak ve mobil TBT / LCP darboğazını çözmek için
+ * hafifletilmiş başlangıç verisi döndürür. 81 ilin tüm veritabanı (1+ MB JSON) yerine
+ * sadece bugün/dün maçlarını, son biten 16 maçı, en yakın 16 maçı ve grup liderlerini içerir.
+ * Tam veri kullanıcı diğer sekmelere geçtiğinde veya il seçtiğinde arka planda yüklenir.
+ */
+export function getInitialHomeFixtures(): FixturesData {
+  const full = getInitialFixtures("all");
+  const now = new Date();
+  const day = String(now.getDate()).padStart(2, "0");
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const year = now.getFullYear();
+  const todayIso = `${year}-${month}-${day}`;
+
+  const yesterday = new Date(Date.now() - 86400000);
+  const yDay = String(yesterday.getDate()).padStart(2, "0");
+  const yMonth = String(yesterday.getMonth() + 1).padStart(2, "0");
+  const yYear = yesterday.getFullYear();
+  const yesterdayIso = `${yYear}-${yMonth}-${yDay}`;
+
+  // 1. Bugün ve dünün maçları
+  const todayAndYesterday = full.matches.filter(
+    (m) => m.date === todayIso || m.date === yesterdayIso
+  );
+
+  // 2. En son biten 16 maç
+  const scored = full.matches
+    .filter(isMatchScored)
+    .sort((a, b) => (b.date && a.date ? b.date.localeCompare(a.date) : 0))
+    .slice(0, 16);
+
+  // 3. En yakın yaklaşan 16 maç
+  const upcoming = full.matches
+    .filter((m) => !isMatchScored(m) && m.date && m.date >= todayIso)
+    .sort((a, b) => (a.date && b.date ? a.date.localeCompare(b.date) : 0))
+    .slice(0, 16);
+
+  // ID'ye göre tekilleştir
+  const matchMap = new Map<string, any>();
+  [...todayAndYesterday, ...scored, ...upcoming].forEach((m) => {
+    if (m && m.id) matchMap.set(m.id, m);
+  });
+
+  // Grup liderleri (her gruptan sadece ilk sıradaki takım)
+  const homeStandings: Record<string, any[]> = {};
+  if (full.standings) {
+    for (const [k, v] of Object.entries(full.standings)) {
+      if (Array.isArray(v) && v.length > 0) {
+        homeStandings[k] = [v[0]];
+      }
+    }
+  }
+
+  return {
+    ...full,
+    matches: Array.from(matchMap.values()),
+    standings: homeStandings,
+  };
+}
