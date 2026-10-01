@@ -113,7 +113,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setIsPicking(true)}
-            className="text-[11px] font-bold text-rose-400 hover:text-rose-300 underline underline-offset-2 cursor-pointer transition-colors"
+            className="text-[11px] font-bold text-ink-2 hover:text-ink underline underline-offset-2 cursor-pointer transition-colors"
           >
             Kulüp Seç
           </button>
@@ -154,7 +154,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Kulüp adı ara (örn: Fenerbahçe, VakıfBank, Zeren)..."
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-rose-500"
+                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary/40"
                 autoFocus
               />
 
@@ -221,7 +221,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
           role="button"
           tabIndex={0}
           onClick={() => onSelectMatch?.(nextMatch)}
-          className="flex items-center gap-2 cursor-pointer hover:text-rose-200 transition-colors bg-slate-950/60 border border-slate-800/80 px-2.5 py-1 rounded-lg self-start sm:self-auto"
+          className="flex items-center gap-2 cursor-pointer hover:text-ink transition-colors bg-slate-950/60 border border-slate-800/80 px-2.5 py-1 rounded-lg self-start sm:self-auto"
         >
           <span className="text-[10px] font-bold text-sky-400 uppercase">Sıradaki:</span>
           {opponent && <TeamBadge name={opponent} logoUrl={opponentLogo} size="xs" />}
@@ -241,7 +241,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
       <div className="flex items-center gap-1.5 self-end sm:self-auto">
         <button
           onClick={() => handleSetPrimaryTeam(null)}
-          className="p-1 rounded text-slate-500 hover:text-rose-400 transition-colors"
+          className="p-1 rounded text-slate-500 hover:text-ink transition-colors"
           title="Kulüp seçimini kaldır"
         >
           <X size={12} />

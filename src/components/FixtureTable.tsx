@@ -176,7 +176,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   onClick={() => setViewMode("table")}
                   className={`p-1 rounded-md transition-all cursor-pointer ${
                     viewMode === "table"
-                      ? "bg-red-600 text-white shadow-xs"
+                      ? "bg-primary text-primary-fg shadow-xs"
                       : "text-slate-400 hover:text-white"
                   }`}
                   title="Liste Görünümü"
@@ -189,7 +189,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   onClick={() => setViewMode("grid")}
                   className={`p-1 rounded-md transition-all cursor-pointer ${
                     viewMode === "grid"
-                      ? "bg-red-600 text-white shadow-xs"
+                      ? "bg-primary text-primary-fg shadow-xs"
                       : "text-slate-400 hover:text-white"
                   }`}
                   title="Yayın Kartı (Grid) Görünümü"
@@ -386,7 +386,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                         className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-slate-800/40 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/50 hover:border-slate-600 transition-all max-w-[95px] lg:max-w-[150px] truncate group/hall shadow-2xs"
                         title={`${match.hall} — Haritada Gör & Yol Tarifi Al`}
                       >
-                        <MapPin size={11} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-rose-400 group-hover/hall:scale-110 shrink-0 transition-transform"} />
+                        <MapPin size={11} className={disc?.hall_diff ? "text-amber-400 shrink-0" : "text-ink-2 group-hover/hall:scale-110 shrink-0 transition-transform"} />
                         <span className={`truncate text-[11px] font-medium ${disc?.hall_diff ? "text-amber-200 font-bold" : ""}`}>
                           {match.hall}
                         </span>
@@ -483,7 +483,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                               key={sIdx}
                               className={`font-mono font-scoreboard tabular-nums text-[10px] px-1.5 py-0.5 rounded-md border font-bold shadow-2xs ${
                                 isHomeSet
-                                  ? "bg-rose-950/50 text-rose-200 border-rose-800/60"
+                                  ? "bg-surface-raised text-ink-2 border-line"
                                   : "bg-slate-900/90 text-slate-300 border-slate-700/60"
                               }`}
                             >
@@ -675,7 +675,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       <span className={`ml-1 px-1.5 py-0.2 rounded text-[9px] font-black uppercase tracking-wider ${
                         forfeitInfo.isForfeit
                           ? "bg-amber-500/20 text-amber-300 border border-amber-500/40"
-                          : "bg-red-600/20 text-red-300 border border-red-500/30"
+                          : "bg-done/15 text-done border border-done/30"
                       }`}>
                         {forfeitInfo.isForfeit ? "Hükmen" : "Bitti"}
                       </span>
@@ -714,7 +714,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                   {/* Ev Sahibi Takım */}
                   <div
                     className={`flex items-center justify-between gap-2.5 p-2 rounded-xl transition-colors ${
-                      homeWon ? "bg-red-500/10 border border-red-500/25 shadow-xs" : "bg-slate-900/30"
+                      homeWon ? "bg-primary/10 border border-primary/25 shadow-xs" : "bg-slate-900/30"
                     }`}
                   >
                     <div className="flex items-center gap-2.5 min-w-0 flex-1">
@@ -799,7 +799,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                             key={sIdx}
                             className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-scoreboard tabular-nums font-bold border shadow-xs ${
                               isHomeSet
-                                ? "bg-red-950/40 text-red-200 border-red-800/50"
+                                ? "bg-surface-raised text-ink-2 border-line"
                                 : "bg-slate-900/90 text-slate-300 border-slate-700/60"
                             }`}
                           >
@@ -826,8 +826,8 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                       className="flex items-center gap-1.5 min-w-0 truncate text-slate-300 hover:text-white group/hall transition-colors cursor-pointer"
                       title={`${match.hall} — Haritada Gör & Yol Tarifi Al`}
                     >
-                      <MapPin size={11} className="text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform" />
-                      <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-red-400 font-medium text-[11px]">
+                      <MapPin size={11} className="text-ink-2 group-hover/hall:scale-110 shrink-0 transition-transform" />
+                      <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-primary font-medium text-[11px]">
                         {match.hall}
                       </span>
                     </a>
@@ -888,7 +888,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
                     className="w-full py-2 px-3 rounded-b-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white text-[11px] font-bold border-t border-slate-800/80 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <span>Maç Merkezi & Setler</span>
-                    <ChevronRight size={13} className="text-red-400" />
+                    <ChevronRight size={13} className="text-ink-2" />
                   </button>
                 )}
               </div>

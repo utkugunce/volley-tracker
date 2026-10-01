@@ -503,11 +503,11 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               title={`${m.hall} — Haritada Gör & Yol Tarifi Al`}
               onClick={(e) => e.stopPropagation()}
             >
-              <MapPin size={12} className="text-red-400 group-hover/hall:scale-110 shrink-0 transition-transform" />
-              <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-red-400 font-medium">
+              <MapPin size={12} className="text-ink-2 group-hover/hall:scale-110 shrink-0 transition-transform" />
+              <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-primary font-medium">
                 {m.hall}
               </span>
-              <Navigation size={10} className="text-slate-400 group-hover/hall:text-red-400 shrink-0" />
+              <Navigation size={10} className="text-slate-400 group-hover/hall:text-ink-2 shrink-0" />
             </a>
           ) : (
             <div className="flex items-center gap-1.5 text-slate-500 min-w-0 truncate">
@@ -548,7 +548,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               className="w-full py-2 px-3 bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white text-[11px] font-bold border-t border-slate-800/80 flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
             >
               <span>Maç Merkezi & Setler</span>
-              <ArrowRight size={12} className="text-red-400" />
+              <ArrowRight size={12} className="text-ink-2" />
             </button>
           )}
         </div>
@@ -633,7 +633,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
             </span>
             <span className="text-[10px] text-slate-500 block mt-0.5 font-medium">
               {dashboardKpis.unscoredPassed > 0 ? (
-                <span className="text-rose-400 font-bold animate-pulse">
+                <span className="text-warn font-bold">
                   {dashboardKpis.unscoredPassed} Maç Skorsuz!
                 </span>
               ) : (
@@ -699,12 +699,12 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
 
       {/* 3. ANA GÜNÜN MAÇLARI / PROGRAM BAŞLIK ÇUBUĞU */}
       <div className="glass-panel border border-slate-800/90 rounded-2xl p-4 sm:p-4.5 text-white shadow-xl relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-96 h-28 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-96 h-28 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-400 border border-red-500/30 uppercase tracking-wider">
-                <Flame size={12} className="text-red-400 animate-pulse" />
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-surface-raised text-ink-2 border border-line uppercase tracking-wider">
+                <Flame size={12} className="text-warn" />
                 Günün Maçları & Canlı Skor
               </span>
               <span className="text-xs text-slate-400 font-medium">
@@ -782,7 +782,7 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
               onClick={() => setQuickStatus("all")}
               className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 quickStatus === "all"
-                  ? "bg-red-600 text-white shadow-xs font-bold"
+                  ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                   : "bg-slate-800/70 text-slate-300 hover:bg-slate-700/70 hover:text-white border border-slate-700/50"
               }`}
             >

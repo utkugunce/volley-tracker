@@ -280,7 +280,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 <button
                   type="button"
                   onClick={() => setFeedFilter("all")}
-                  className="text-xs text-rose-400 hover:text-rose-300 font-semibold cursor-pointer"
+                  className="text-xs text-ink-2 hover:text-ink font-semibold cursor-pointer"
                 >
                   Tüm Akışa Dön →
                 </button>
@@ -317,10 +317,10 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-done" />
                       <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-1.5">
                         <span>Bugünün Maçları</span>
-                        <span className="text-rose-400 font-mono">({todayMatches.length})</span>
+                        <span className="text-ink-2 font-display tabular-nums">({todayMatches.length})</span>
                       </h2>
                     </div>
                     <span className="text-[11px] font-mono text-slate-400 font-medium">
@@ -346,7 +346,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 rounded-md bg-rose-500/20 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                    <div className="w-5 h-5 rounded-md bg-surface-raised border border-line flex items-center justify-center text-ink-2">
                       <Calendar size={12} />
                     </div>
                     <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider">
@@ -356,7 +356,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                   <button
                     type="button"
                     onClick={() => onNavigateTab("fixtures")}
-                    className="text-xs text-rose-400 hover:text-rose-300 font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
+                    className="text-xs text-ink-2 hover:text-ink font-bold inline-flex items-center gap-1 cursor-pointer transition-colors"
                   >
                     <span>Tüm Fikstür</span>
                     <ChevronRight size={13} />
@@ -507,7 +507,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                         }}
                         className={`p-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between gap-1 text-xs ${
                           isSelected
-                            ? "bg-rose-950/70 border-rose-500/60 text-white font-bold"
+                            ? "bg-primary/10 border-primary/60 text-white font-bold"
                             : "bg-slate-900/60 hover:bg-slate-800/80 border-slate-800 text-slate-300 hover:text-white"
                         }`}
                       >
@@ -525,7 +525,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
             <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-xs">
               <div className="flex items-center gap-2">
-                <Sparkles size={14} className="text-rose-400 shrink-0" />
+                <Sparkles size={14} className="text-ink-2 shrink-0" />
                 <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
               </div>
               <span className="font-mono font-bold text-slate-200 shrink-0">81 İl Canlı Takip</span>
@@ -575,7 +575,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
           onSelectMatch(match);
         }
       }}
-      className="group relative bg-canvas/70 hover:bg-panel border border-slate-800/80 hover:border-rose-500/40 rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-xs active:scale-[0.995]"
+      className="group relative bg-canvas/70 hover:bg-panel border border-slate-800/80 hover:border-primary/40 rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-xs active:scale-[0.995]"
     >
       {/* Üst Satır: Şehir, Lig ve Salon */}
       <div className="flex items-center justify-between gap-2 text-[10px] sm:text-[11px] text-slate-400 mb-1.5 pb-1 border-b border-slate-800/50">
@@ -620,7 +620,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
           <div className="flex items-center justify-between gap-2 min-w-0">
             <div className="flex items-center gap-2 min-w-0">
               <TeamBadge name={match.home_team} logoUrl={homeLogo} size="xs" />
-              <span className="text-xs sm:text-sm font-bold text-white group-hover:text-rose-100 transition-colors truncate">
+              <span className="text-xs sm:text-sm font-bold text-white group-hover:text-ink transition-colors truncate">
                 {match.home_team}
               </span>
             </div>
@@ -635,7 +635,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
           <div className="flex items-center justify-between gap-2 min-w-0">
             <div className="flex items-center gap-2 min-w-0">
               <TeamBadge name={match.away_team} logoUrl={awayLogo} size="xs" />
-              <span className="text-xs sm:text-sm font-bold text-white group-hover:text-rose-100 transition-colors truncate">
+              <span className="text-xs sm:text-sm font-bold text-white group-hover:text-ink transition-colors truncate">
                 {match.away_team}
               </span>
             </div>
@@ -668,7 +668,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
           ) : (
             <div className="text-right">
               <div className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-800 border border-slate-700 font-mono font-bold text-xs text-slate-200">
-                <Clock size={11} className="text-rose-400" />
+                <Clock size={11} className="text-ink-2" />
                 <span>{match.time || "--:--"}</span>
               </div>
               <div className="text-[10px] font-mono text-slate-400 mt-1 text-right">

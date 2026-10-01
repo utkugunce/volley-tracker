@@ -1547,7 +1547,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             {fixturesByCity.length > 0 && (
               <div className="flex flex-wrap items-center justify-between gap-2.5 bg-slate-900/60 border border-slate-800/80 rounded-2xl px-3.5 sm:px-4 py-2 mb-4 shadow-xs">
                 <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                  <div className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" />
+                  <div className="w-2 h-2 rounded-full bg-done" />
                   <span>
                     Toplam <strong className="text-white font-mono">{fixturesByCity.length}</strong> İl, <strong className="text-white font-mono">{allFixtureLeagueKeys.length}</strong> Lig Listeleniyor
                   </span>
