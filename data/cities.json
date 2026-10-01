@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-01T00:13:53.098274+00:00",
+  "updated_at": "2026-10-01T06:12:03.574668+00:00",
   "total_cities": 81,
   "active_cities": 22,
-  "total_matches": 630,
+  "total_matches": 636,
   "cities": [
     {
       "ilid": "1",
@@ -450,8 +450,8 @@
       "name": "Manisa",
       "slug": "manisa",
       "url": "https://manisa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (2 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (6 Maç Mevcut)",
+      "matches_count": 6,
       "standings_count": 2,
       "data_file": "data/cities/manisa.json"
     },
