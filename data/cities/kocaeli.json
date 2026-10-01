@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-01T13:35:17.010443",
-  "city": "Manisa",
-  "slug": "manisa",
-  "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 6,
-  "source": "https://manisa.voleyboliltemsilciligi.com",
+  "updated_at": "2026-10-01T13:35:15.634063",
+  "city": "Kocaeli",
+  "slug": "kocaeli",
+  "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 9,
+  "source": "https://kocaeli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
@@ -22,17 +22,15 @@
     ],
     "halls": [
       "Tümü",
-      "Akhisar S.S.",
-      "M.F.Zeyrek S.Kompleksi",
-      "Ramiz Turan Ss",
-      "Çok Amaçlı S.S."
+      "Derince S.S",
+      "H.Gemici S.S."
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği A Grubu": [
+    "Genç Kızlar Süper Lig - Genç Kızlar İzmit Grubu": [
       {
         "rank": 1,
-        "team": "1922 Salihli Spor Kulübü U18",
+        "team": "19 Mayıs Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -43,7 +41,7 @@
       },
       {
         "rank": 2,
-        "team": "Akhisar İlçe Spor Kulübü U18",
+        "team": "Beşrenk Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -54,7 +52,7 @@
       },
       {
         "rank": 3,
-        "team": "Akhisar Spor Kulübü U18",
+        "team": "Elite Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -65,7 +63,7 @@
       },
       {
         "rank": 4,
-        "team": "Değerli Zamanlar Spor Kulübü U18",
+        "team": "Gölcük Belediye",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -76,7 +74,7 @@
       },
       {
         "rank": 5,
-        "team": "Manisa Büyükşehir Belediyespor Kulübü U18",
+        "team": "İzmitspor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -87,20 +85,7 @@
       },
       {
         "rank": 6,
-        "team": "Salihli Değerli Zamanlar Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği B Grubu": [
-      {
-        "rank": 1,
-        "team": "Akhisargücü Spor Kulübü U18",
+        "team": "Kandıra Voleybol",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -110,8 +95,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Sarıgöl Akademi Spor Kulübü U18",
+        "rank": 7,
+        "team": "Kocaeli Anka Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -121,8 +106,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Soma Belediye Spor Kulübü U18",
+        "rank": 8,
+        "team": "Kocaeli Voleybol Akademi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -132,8 +117,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Soma İlçe Spor Kulübü U18",
+        "rank": 9,
+        "team": "Körfez Akademi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -143,8 +128,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Turgutlu Belediyespor U18",
+        "rank": 10,
+        "team": "Körfez Vaveyla Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -154,8 +139,30 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Yunusemre Belediyespor U18",
+        "rank": 11,
+        "team": "Nicomedia Akademi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 12,
+        "team": "Siyah Kuğular",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 13,
+        "team": "Yahyakaptan Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -168,18 +175,18 @@
   },
   "matches": [
     {
-      "id": "manisa-20261006-001",
-      "city": "Manisa",
+      "id": "kocaeli-20261006-001",
+      "city": "Kocaeli",
       "date": "2026-10-06",
       "time": "18:30",
-      "hall": "Çok Amaçlı S.S.",
+      "hall": "Derince S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği A Grubu",
+      "group": "Genç Kızlar İzmit Grubu",
       "match_no": "1",
-      "home_team": "Manisa Büyükşehir Belediyespor Kulübü U18",
-      "away_team": "Salihli Değerli Zamanlar Spor Kulübü U18",
+      "home_team": "Körfez Akademi",
+      "away_team": "Gölcük Belediye",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -202,18 +209,18 @@
       }
     },
     {
-      "id": "manisa-20261006-002",
-      "city": "Manisa",
+      "id": "kocaeli-20261006-002",
+      "city": "Kocaeli",
       "date": "2026-10-06",
-      "time": "19:00",
-      "hall": "Ramiz Turan Ss",
+      "time": "18:30",
+      "hall": "H.Gemici S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği A Grubu",
+      "group": "Genç Kızlar İzmit Grubu",
       "match_no": "2",
-      "home_team": "1922 Salihli Spor Kulübü U18",
-      "away_team": "Değerli Zamanlar Spor Kulübü U18",
+      "home_team": "Yahyakaptan Spor",
+      "away_team": "Nicomedia Akademi",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -236,18 +243,18 @@
       }
     },
     {
-      "id": "manisa-20261007-003",
-      "city": "Manisa",
-      "date": "2026-10-07",
-      "time": "20:30",
-      "hall": "Akhisar S.S.",
+      "id": "kocaeli-20261006-003",
+      "city": "Kocaeli",
+      "date": "2026-10-06",
+      "time": "20:00",
+      "hall": "Derince S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği A Grubu",
+      "group": "Genç Kızlar İzmit Grubu",
       "match_no": "3",
-      "home_team": "Akhisar Spor Kulübü U18",
-      "away_team": "Akhisar İlçe Spor Kulübü U18",
+      "home_team": "19 Mayıs Spor",
+      "away_team": "Siyah Kuğular",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -270,18 +277,18 @@
       }
     },
     {
-      "id": "manisa-20261006-004",
-      "city": "Manisa",
+      "id": "kocaeli-20261006-004",
+      "city": "Kocaeli",
       "date": "2026-10-06",
-      "time": "19:00",
-      "hall": "M.F.Zeyrek S.Kompleksi",
+      "time": "20:00",
+      "hall": "H.Gemici S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği B Grubu",
-      "match_no": "1",
-      "home_team": "Turgutlu Belediyespor U18",
-      "away_team": "Soma İlçe Spor Kulübü U18",
+      "group": "Genç Kızlar İzmit Grubu",
+      "match_no": "4",
+      "home_team": "Beşrenk Spor",
+      "away_team": "Kocaeli Anka Spor",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -304,52 +311,154 @@
       }
     },
     {
-      "id": "manisa-20261006-005",
-      "city": "Manisa",
-      "date": "2026-10-06",
-      "time": "20:30",
-      "hall": "Çok Amaçlı S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği B Grubu",
-      "match_no": "2",
-      "home_team": "Yunusemre Belediyespor U18",
-      "away_team": "Soma Belediye Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "manisa-20261007-006",
-      "city": "Manisa",
+      "id": "kocaeli-20261007-005",
+      "city": "Kocaeli",
       "date": "2026-10-07",
       "time": "18:30",
-      "hall": "Akhisar S.S.",
+      "hall": "H.Gemici S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği B Grubu",
-      "match_no": "3",
-      "home_team": "Akhisargücü Spor Kulübü U18",
-      "away_team": "Sarıgöl Akademi Spor Kulübü U18",
+      "group": "Genç Kızlar İzmit Grubu",
+      "match_no": "5",
+      "home_team": "Elite Spor",
+      "away_team": "Kandıra Voleybol",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261007-006",
+      "city": "Kocaeli",
+      "date": "2026-10-07",
+      "time": "20:00",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İzmit Grubu",
+      "match_no": "6",
+      "home_team": "İzmitspor",
+      "away_team": "Körfez Vaveyla Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261009-007",
+      "city": "Kocaeli",
+      "date": "2026-10-09",
+      "time": "18:30",
+      "hall": "Derince S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İzmit Grubu",
+      "match_no": "7",
+      "home_team": "19 Mayıs Spor",
+      "away_team": "Kocaeli Voleybol Akademi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261009-008",
+      "city": "Kocaeli",
+      "date": "2026-10-09",
+      "time": "20:00",
+      "hall": "Derince S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İzmit Grubu",
+      "match_no": "8",
+      "home_team": "Körfez Vaveyla Spor",
+      "away_team": "Beşrenk Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261010-009",
+      "city": "Kocaeli",
+      "date": "2026-10-10",
+      "time": "16:00",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İzmit Grubu",
+      "match_no": "9",
+      "home_team": "Kocaeli Voleybol Akademi",
+      "away_team": "Körfez Akademi",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -373,5 +482,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-01T13:36:58.911418"
+  "volleybox_sync_updated_at": "2026-10-01T13:36:58.886062"
 }
