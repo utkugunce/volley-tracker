@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T20:37:28.684885",
+  "updated_at": "2026-10-01T21:10:15.970315",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -725,6 +725,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - D Gr": [
       {
         "rank": 1,
+        "team": "İzmir Altınay Spor Kulübü U16",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 8,
+        "sets_won": 9,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "İzmir DSİ Spor U16",
         "played": 2,
         "won": 2,
@@ -735,29 +746,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "İzmir Altınay Spor Kulübü U16",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 5,
-        "sets_won": 6,
-        "sets_lost": 2,
-        "form": []
-      },
-      {
         "rank": 3,
-        "team": "Narlıdere Belediyesi Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
         "team": "Monza Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -765,6 +754,17 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Narlıdere Belediyesi Spor Kulübü U16",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -4667,11 +4667,16 @@
       "match_no": "7",
       "home_team": "İzmir Altınay Spor Kulübü U16",
       "away_team": "Narlıdere Belediyesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "18-25",
+        "25-22",
+        "25-22",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401136",
@@ -5422,5 +5427,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-01T20:41:47.020663"
+  "volleybox_sync_updated_at": "2026-10-01T21:14:41.489602"
 }
