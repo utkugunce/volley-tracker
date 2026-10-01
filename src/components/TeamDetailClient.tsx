@@ -484,7 +484,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
 
                     <div className="flex items-center gap-2.5 flex-wrap">
                       <div className="text-xs text-slate-300">
-                        Sıra: <strong className="text-amber-400 font-black">#{ctx.standingRow.rank}</strong>
+                        Sıra: <strong className="text-primary font-black">#{ctx.standingRow.rank}</strong>
                         <span className="mx-1.5">•</span>
                         Puan: <strong className="text-white font-mono">{ctx.standingRow.points}</strong>
                       </div>
