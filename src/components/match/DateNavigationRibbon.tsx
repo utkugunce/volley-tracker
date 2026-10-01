@@ -120,7 +120,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
               >
                 <span className="text-[11px] leading-tight">{item.label}</span>
                 {item.shortDay && (
-                  <span className="text-[9px] font-mono opacity-80 leading-none mt-0.5">
+                  <span className="text-[9px] font-mono leading-none mt-0.5">
                     {item.shortDay}
                   </span>
                 )}
@@ -140,6 +140,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
             }}
             className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
             title="Tarih Seç"
+            aria-label="Tarih Seç"
           />
         </label>
       </div>
@@ -157,7 +158,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
           }`}
         >
           <span>Tümü</span>
-          <span className="font-mono text-[10px] opacity-80 font-normal">({counts.all})</span>
+          <span className="font-mono text-[10px] font-normal">({counts.all})</span>
         </button>
 
         {/* Canlı */}
@@ -172,7 +173,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
         >
           <span className="w-1.5 h-1.5 rounded-full bg-live shrink-0" />
           <span>Canlı</span>
-          <span className="font-mono text-[10px] opacity-90">({counts.live})</span>
+          <span className="font-mono text-[10px]">({counts.live})</span>
         </button>
 
         {/* Biten */}
@@ -186,7 +187,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
           }`}
         >
           <span>Biten</span>
-          <span className="font-mono text-[10px] opacity-90">({counts.finished})</span>
+          <span className="font-mono text-[10px]">({counts.finished})</span>
         </button>
 
         {/* Program (Oynanacak) */}
@@ -200,7 +201,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
           }`}
         >
           <span>Program</span>
-          <span className="font-mono text-[10px] opacity-90">({counts.upcoming})</span>
+          <span className="font-mono text-[10px]">({counts.upcoming})</span>
         </button>
       </div>}
     </div>

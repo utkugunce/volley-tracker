@@ -207,7 +207,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                 </div>
               </div>
 
-              <div className="max-h-60 overflow-y-auto divide-y divide-slate-800/50">
+              <div className="max-h-60 overflow-y-auto divide-y divide-slate-800/50" tabIndex={0}>
                 {filteredDropdownCities.map((c) => {
                   const isCur = currentCitySlug === c.slug;
                   return (

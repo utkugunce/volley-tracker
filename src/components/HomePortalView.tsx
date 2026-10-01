@@ -172,7 +172,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             }`}
           >
             <span>Canlı Hub</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums text-ink-2 opacity-90">
+            <span className="text-[10px] font-display font-semibold tabular-nums text-current">
               {stats.totalMatches}
             </span>
           </button>
@@ -206,7 +206,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           >
             <CheckCircle2 size={13} className={feedFilter === "finished" ? "text-done-fg" : "text-emerald-400"} />
             <span>Biten Skorlar</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums text-ink-2 opacity-90">
+            <span className="text-[10px] font-display font-semibold tabular-nums text-current">
               {stats.scoredMatches}
             </span>
           </button>
@@ -222,7 +222,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           >
             <Calendar size={13} className={feedFilter === "upcoming" ? "text-white" : "text-sky-400"} />
             <span>Gelecek Maçlar</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums text-ink-2 opacity-90">
+            <span className="text-[10px] font-display font-semibold tabular-nums text-current">
               {stats.upcomingMatches}
             </span>
           </button>
@@ -441,7 +441,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     </button>
                   </div>
 
-                  <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-1">
+                  <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-1" tabIndex={0} role="region" aria-label="Grup liderleri">
                     {groupLeaders.map((lead, idx) => {
                       const mapping = getVolleyboxMapping(lead.team, undefined, undefined, city);
                       const logo = mapping?.local_logo || mapping?.logo_url;

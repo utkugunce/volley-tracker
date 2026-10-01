@@ -248,7 +248,7 @@ export const FixtureTable: React.FC<FixtureTableProps> = ({
       {!isCollapsed && (
         <>
       {viewMode === "table" ? (
-        <div className="overflow-x-auto p-2 sm:p-3 bg-slate-950/40">
+        <div className="overflow-x-auto p-2 sm:p-3 bg-slate-950/40" tabIndex={0} role="region" aria-label="Fikstür tablosu">
           <table className="w-full text-left border-separate border-spacing-y-2 text-xs">
           <thead>
             <tr className="text-slate-400 font-bold uppercase text-[10px] tracking-wider select-none">

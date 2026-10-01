@@ -273,7 +273,7 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
         {/* Modal Başlığı */}
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <div className="flex items-center gap-2 text-white font-bold text-sm">
-            <Sparkles size={16} className="text-amber-400" />
+            <Sparkles size={16} className="text-primary" />
             <span>Instagram & WhatsApp Hikaye Kartı</span>
           </div>
           <button

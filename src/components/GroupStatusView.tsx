@@ -307,6 +307,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
           {/* İl Seçici Dropdown */}
           <div className="w-36 sm:w-48 shrink-0">
             <select
+              aria-label="İl filtresi"
               value={cityFilter}
               onChange={(e) => {
                 const nextCity = e.target.value;
@@ -411,7 +412,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                       ))}
                     </div>
 
-                    <button className="text-slate-400 hover:text-white p-1">
+                    <button type="button" aria-label={isCollapsed ? "Grupları göster" : "Grupları gizle"} aria-expanded={!isCollapsed} className="text-slate-400 hover:text-white p-1">
                       {isCollapsed ? <ChevronDown size={18} /> : <ChevronUp size={18} />}
                     </button>
                   </div>
@@ -419,7 +420,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
 
                 {/* Grup Tablosu */}
                 {!isCollapsed && (
-                  <div className="overflow-x-auto">
+                  <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Grup durum tablosu">
                     <table className="w-full text-left text-xs">
                       <thead className="bg-slate-950/60 text-slate-400 uppercase text-[10px] font-bold border-b border-slate-800/80">
                         <tr>

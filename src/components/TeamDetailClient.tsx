@@ -327,11 +327,11 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                             </span>
                           )}
                           {ct.teamBranch && (
-                            <span className="bg-white/20 text-white text-[10px] px-1.5 py-0.2 rounded-md font-bold">
+                            <span className="bg-canvas/40 text-white text-[10px] px-1.5 py-0.2 rounded-md font-bold">
                               {ct.teamBranch}
                             </span>
                           )}
-                          <span className="text-[10px] bg-white/20 px-1 rounded text-white font-medium">Mevcut</span>
+                          <span className="text-[10px] bg-canvas/40 px-1 rounded text-white font-medium">Mevcut</span>
                         </div>
                       ) : (
                         <Link

@@ -102,7 +102,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <span>SONUÇLAR</span>
               <span
                 className={`text-[10px] px-1.5 rounded-full font-mono font-bold ${
-                  resultsSubTab === "all" ? "bg-white/20 text-white" : "bg-slate-700 text-slate-300"
+                  resultsSubTab === "all" ? "bg-canvas/40 text-white" : "bg-slate-700 text-slate-300"
                 }`}
               >
                 {counts.all}
@@ -124,7 +124,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               <span>DÜNÜN SONUÇLARI</span>
               <span
                 className={`text-[10px] px-1.5 rounded-full font-mono font-bold ${
-                  resultsSubTab === "yesterday" ? "bg-white/20 text-white" : "bg-slate-700 text-slate-300"
+                  resultsSubTab === "yesterday" ? "bg-canvas/40 text-white" : "bg-slate-700 text-slate-300"
                 }`}
               >
                 {yesterdayCount}

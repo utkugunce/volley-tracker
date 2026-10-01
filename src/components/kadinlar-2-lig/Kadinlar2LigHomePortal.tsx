@@ -150,7 +150,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             }`}
           >
             <span>Canlı Hub</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums opacity-90">
+            <span className="text-[10px] font-display font-semibold tabular-nums">
               {stats.totalMatches}
             </span>
           </button>
@@ -186,7 +186,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           >
             <CheckCircle2 size={12} className={feedFilter === "finished" ? "text-done-fg" : "text-done"} />
             <span>Sonuçlar</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums opacity-90">
+            <span className="text-[10px] font-display font-semibold tabular-nums">
               {stats.scoredMatches}
             </span>
           </button>
@@ -202,7 +202,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           >
             <Calendar size={12} className={feedFilter === "upcoming" ? "text-white" : "text-ink-2"} />
             <span>Yaklaşan</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums opacity-90">
+            <span className="text-[10px] font-display font-semibold tabular-nums">
               {stats.upcomingMatches}
             </span>
           </button>
@@ -466,7 +466,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
               </button>
             </div>
 
-            <div className="space-y-2 max-h-[380px] overflow-y-auto no-scrollbar pr-1">
+            <div className="space-y-2 max-h-[380px] overflow-y-auto no-scrollbar pr-1" tabIndex={0} role="region" aria-label="Grup liderleri">
               {topTeamsPerGroup.slice(0, 8).map((grp) => (
                 <div
                   key={grp.grup_no}
