@@ -13,17 +13,17 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   const city = typeof params?.city === "string" && params.city !== "Tümü" && params.city !== "Tüm İller" ? params.city : undefined;
   const category = typeof params?.category === "string" && params.category !== "Tümü" ? params.category : undefined;
 
-  let title = "Voleybol Maç Sonuçları ve Set Skorları — Altyapı Voleybol";
+  let title = "Voleybol Maç Sonuçları ve Set Skorları";
   let description = "Oynanan tüm voleybol maçlarının kesinleşmiş set skorları, dün oynanan maçlar ve detaylı sonuç dökümü.";
 
   if (city && category) {
-    title = `${city} ${category} Maç Sonuçları — Altyapı Voleybol`;
+    title = `${city} ${category} Maç Sonuçları`;
     description = `${city} ili ${category} ligi biten maçlar, set sonuçları ve skor dökümleri.`;
   } else if (city) {
-    title = `${city} Voleybol Maç Sonuçları — Altyapı Voleybol`;
+    title = `${city} Voleybol Maç Sonuçları`;
     description = `${city} ili tüm voleybol ligleri tamamlanan maç sonuçları ve skorları.`;
   } else if (category) {
-    title = `${category} Maç Sonuçları — Altyapı Voleybol`;
+    title = `${category} Maç Sonuçları`;
     description = `Türkiye geneli ${category} ligleri güncel maç skorları ve set dökümleri.`;
   }
 

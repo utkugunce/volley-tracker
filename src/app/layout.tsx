@@ -24,6 +24,21 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Altyapı Voleybol",
   },
+  openGraph: {
+    title: "Altyapı Voleybol — TVF Fikstür ve Puan Durumu",
+    description: "Türkiye Voleybol Federasyonu (TVF) 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig ile 1. Lig haftalık maç programı, canlı sonuçlar ve puan durumu.",
+    url: "https://altyapivoleybol.com.tr",
+    siteName: "Altyapı Voleybol",
+    locale: "tr_TR",
+    type: "website",
+    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "Altyapı Voleybol" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Altyapı Voleybol — TVF Fikstür ve Puan Durumu",
+    description: "Türkiye Voleybol Federasyonu (TVF) 81 İl Temsilciliği Genç ve Yıldız Kızlar Süper Lig ile 1. Lig haftalık maç programı, canlı sonuçlar ve puan durumu.",
+    images: ["/icon.svg"],
+  },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },

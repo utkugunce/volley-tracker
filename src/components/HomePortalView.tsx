@@ -145,6 +145,17 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
 
   return (
     <div className="space-y-4 animate-in fade-in-50 duration-200">
+      {/* Sayfa Başlığı (Semantik H1 & Canlı Gösterge) */}
+      <div className="flex items-center justify-between pb-1">
+        <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+          <span>Canlı Maç Merkezi & TVF Altyapı Bülteni</span>
+        </h1>
+        <span className="text-[11px] font-mono text-slate-400">
+          {city === "all" ? "81 İl" : city} · {stats.totalMatches} Maç
+        </span>
+      </div>
+
       {/* 1. ÜST KONTROL BAR: FİLTRE HAPLARI & HIZLI İL SEÇİMİ */}
       <div className="glass-panel rounded-2xl p-2.5 sm:p-3 border border-slate-800/90 flex flex-col md:flex-row md:items-center justify-between gap-2.5 shadow-sm">
         {/* Sol: Akış Filtreleri (Tümü, Bugün, Bitenler, Fikstür) */}
@@ -152,7 +163,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("all")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "all"
                 ? "bg-rose-600 text-white shadow-sm"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -167,7 +178,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("today")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "today"
                 ? "bg-rose-600 text-white shadow-sm"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -185,7 +196,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("finished")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "finished"
                 ? "bg-emerald-600 text-white shadow-sm"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -201,7 +212,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("upcoming")}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "upcoming"
                 ? "bg-sky-600 text-white shadow-sm"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -221,7 +232,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => onSelectCity("all")}
-            className={`px-2 py-1 rounded-lg text-[11px] font-bold transition-colors whitespace-nowrap cursor-pointer ${
+            className={`px-2.5 py-1 min-h-[36px] rounded-lg text-[11px] font-bold transition-colors whitespace-nowrap cursor-pointer ${
               currentCitySlug === "all"
                 ? "bg-rose-500/20 text-rose-300 border border-rose-500/40"
                 : "text-slate-400 hover:text-white hover:bg-slate-800"
@@ -234,7 +245,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
               key={c.slug}
               type="button"
               onClick={() => onSelectCity(c.slug)}
-              className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
+              className={`px-2.5 py-1 min-h-[36px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
                 currentCitySlug === c.slug
                   ? "bg-rose-500/20 text-rose-300 border border-rose-500/40 font-bold"
                   : "text-slate-400 hover:text-white hover:bg-slate-800"
@@ -246,10 +257,8 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
         </div>
       </div>
 
-      {/* 2. ANA İÇERİK DÜZENİ: SOLDA MAÇ AKIŞI (68%), SAĞDA BİLGİ PANELİ (32%) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
-        {/* ================= SOL SÜTUN: MAÇ AKIŞI ================= */}
-        <div className="lg:col-span-8 space-y-4">
+      {/* 2. ANA İÇERİK DÜZENİ: TAM GENİŞLİK MAÇ AKIŞI */}
+      <div className="w-full space-y-4">
           {/* Eğer filtrelenmiş tek bir mod seçildiyse doğrudan o listeyi göster */}
           {feedFilter !== "all" ? (
             <div className="space-y-3">
@@ -406,122 +415,121 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                   </div>
                 </div>
               )}
-            </div>
-          )}
-        </div>
 
-        {/* ================= SAĞ SÜTUN: WIDGET VE BİLGİ PANELİ ================= */}
-        <div className="lg:col-span-4 space-y-3.5 sticky top-24">
-          {/* 1. KART: ZİRVE YARIŞI / GRUP LİDERLERİ */}
-          {groupLeaders.length > 0 && (
-            <div className="glass-panel rounded-2xl p-3.5 border border-slate-800/80 shadow-sm space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-800/70 pb-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-md bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                    <Trophy size={12} />
-                  </div>
-                  <h3 className="text-xs font-black text-white uppercase tracking-wider">
-                    Grup Liderleri
-                  </h3>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => onNavigateTab("standings")}
-                  className="text-[11px] text-amber-400 hover:text-amber-300 font-semibold cursor-pointer"
-                >
-                  Puan Durumu →
-                </button>
-              </div>
-
-              <div className="space-y-2">
-                {groupLeaders.map((lead, idx) => {
-                  const mapping = getVolleyboxMapping(lead.team, undefined, undefined, city);
-                  const logo = mapping?.local_logo || mapping?.logo_url;
-
-                  return (
-                    <div
-                      key={`${lead.groupTitle}-${idx}`}
-                      className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-amber-500/40 transition-colors flex items-center justify-between gap-2 text-xs"
-                    >
-                      <div className="min-w-0 flex items-center gap-2">
-                        <TeamBadge name={lead.team} logoUrl={logo} size="xs" />
-                        <div className="min-w-0">
-                          <div className="font-bold text-white truncate text-xs">
-                            {lead.team}
-                          </div>
-                          <div className="text-[10px] text-slate-400 truncate">
-                            {lead.groupTitle.replace("TVF ", "").replace(" 2026-2027", "")}
-                          </div>
-                        </div>
+            {/* ================= ALT KISIM: 2 KOLONLU WIDGET VE BİLGİ PANELİ ================= */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
+              {/* 1. KART: ZİRVE YARIŞI / GRUP LİDERLERİ */}
+              {groupLeaders.length > 0 && (
+                <div className="glass-panel rounded-2xl p-3.5 border border-slate-800/80 shadow-sm space-y-3">
+                  <div className="flex items-center justify-between border-b border-slate-800/70 pb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 rounded-md bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                        <Trophy size={12} />
                       </div>
-
-                      <div className="text-right shrink-0">
-                        <div className="px-2 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono font-bold text-xs">
-                          {lead.points} P
-                        </div>
-                        <div className="text-[10px] text-slate-300 font-medium mt-0.5 font-mono">
-                          {lead.won}/{lead.played} G
-                        </div>
-                      </div>
+                      <h3 className="text-xs font-black text-white uppercase tracking-wider">
+                        Grup Liderleri
+                      </h3>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
+                    <button
+                      type="button"
+                      onClick={() => onNavigateTab("standings")}
+                      className="text-[11px] text-amber-400 hover:text-amber-300 font-semibold cursor-pointer"
+                    >
+                      Puan Durumu →
+                    </button>
+                  </div>
 
-          {/* 2. KART: AKTİF İLLER FİKSTÜR ERİŞİMİ */}
-          <div className="glass-panel rounded-2xl p-3.5 border border-slate-800/80 shadow-sm space-y-3">
-            <div className="flex items-center justify-between border-b border-slate-800/70 pb-2">
-              <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-md bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400">
-                  <Globe size={12} />
+                  <div className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-1">
+                    {groupLeaders.map((lead, idx) => {
+                      const mapping = getVolleyboxMapping(lead.team, undefined, undefined, city);
+                      const logo = mapping?.local_logo || mapping?.logo_url;
+
+                      return (
+                        <div
+                          key={`${lead.groupTitle}-${idx}`}
+                          className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-amber-500/40 transition-colors flex items-center justify-between gap-2 text-xs"
+                        >
+                          <div className="min-w-0 flex items-center gap-2">
+                            <TeamBadge name={lead.team} logoUrl={logo} size="xs" />
+                            <div className="min-w-0">
+                              <div className="font-bold text-white truncate text-xs">
+                                {lead.team}
+                              </div>
+                              <div className="text-[10px] text-slate-400 truncate">
+                                {lead.groupTitle.replace("TVF ", "").replace(" 2026-2027", "")}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="text-right shrink-0">
+                            <div className="px-2 py-0.5 rounded-md bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono font-bold text-xs">
+                              {lead.points} P
+                            </div>
+                            <div className="text-[10px] text-slate-300 font-medium mt-0.5 font-mono">
+                              {lead.won}/{lead.played} G
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <h3 className="text-xs font-black text-white uppercase tracking-wider">
-                  Aktif İller Fikstürü
-                </h3>
+              )}
+
+              {/* 2. KART: AKTİF İLLER FİKSTÜR ERİŞİMİ */}
+              <div className="glass-panel rounded-2xl p-3.5 border border-slate-800/80 shadow-sm space-y-3">
+                <div className="flex items-center justify-between border-b border-slate-800/70 pb-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-md bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                      <Globe size={12} />
+                    </div>
+                    <h3 className="text-xs font-black text-white uppercase tracking-wider">
+                      Aktif İller Fikstürü
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400">
+                    {activeCities.length} İl
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-1.5">
+                  {activeCities.map((item) => {
+                    const isSelected = currentCitySlug === item.slug;
+                    return (
+                      <button
+                        key={item.slug}
+                        type="button"
+                        onClick={() => {
+                          onSelectCity(item.slug);
+                          onNavigateTab("fixtures");
+                        }}
+                        className={`p-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between gap-1 text-xs ${
+                          isSelected
+                            ? "bg-rose-950/70 border-rose-500/60 text-white font-bold"
+                            : "bg-slate-900/60 hover:bg-slate-800/80 border-slate-800 text-slate-300 hover:text-white"
+                        }`}
+                      >
+                        <span className="truncate">{item.name}</span>
+                        <span className="text-[10px] font-mono text-slate-400 bg-slate-950 px-1.5 py-0.2 rounded-md shrink-0">
+                          {item.matches_count}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-              <span className="text-[10px] font-mono text-slate-400">
-                {activeCities.length} İl
-              </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-1.5">
-              {activeCities.map((item) => {
-                const isSelected = currentCitySlug === item.slug;
-                return (
-                  <button
-                    key={item.slug}
-                    type="button"
-                    onClick={() => {
-                      onSelectCity(item.slug);
-                      onNavigateTab("fixtures");
-                    }}
-                    className={`p-2 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between gap-1 text-xs ${
-                      isSelected
-                        ? "bg-rose-950/70 border-rose-500/60 text-white font-bold"
-                        : "bg-slate-900/60 hover:bg-slate-800/80 border-slate-800 text-slate-300 hover:text-white"
-                    }`}
-                  >
-                    <span className="truncate">{item.name}</span>
-                    <span className="text-[10px] font-mono text-slate-400 bg-slate-950 px-1.5 py-0.2 rounded-md shrink-0">
-                      {item.matches_count}
-                    </span>
-                  </button>
-                );
-              })}
+            {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
+            <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-[#0e1627] border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-xs">
+              <div className="flex items-center gap-2">
+                <Sparkles size={14} className="text-rose-400 shrink-0" />
+                <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
+              </div>
+              <span className="font-mono font-bold text-slate-200 shrink-0">81 İl Canlı Takip</span>
             </div>
           </div>
-
-          {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
-          <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-[#0e1627] border border-slate-800/80 text-[11px] text-slate-400 flex items-center justify-between gap-2 shadow-xs">
-            <div className="flex items-center gap-2">
-              <Sparkles size={14} className="text-rose-400 shrink-0" />
-              <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
-            </div>
-            <span className="font-mono font-bold text-slate-300 shrink-0">81 İl</span>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

@@ -13,17 +13,17 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   const city = typeof params?.city === "string" && params.city !== "Tümü" && params.city !== "Tüm İller" ? params.city : undefined;
   const category = typeof params?.category === "string" && params.category !== "Tümü" ? params.category : undefined;
 
-  let title = "Günün Voleybol Maçları ve Canlı Program — Altyapı Voleybol";
+  let title = "Günün Voleybol Maçları ve Canlı Program";
   let description = "Bugün oynanacak tüm voleybol maçları, başlama saatleri, salonlar ve canlı karşılaşmalar.";
 
   if (city && category) {
-    title = `Bugün: ${city} ${category} Maçları — Altyapı Voleybol`;
+    title = `Bugün: ${city} ${category} Maçları`;
     description = `${city} ili ${category} ligi bugün oynanacak karşılaşmalar, maç saatleri ve salon bilgileri.`;
   } else if (city) {
-    title = `Bugün: ${city} Voleybol Maçları — Altyapı Voleybol`;
+    title = `Bugün: ${city} Voleybol Maçları`;
     description = `${city} ilinde bugün oynanacak tüm voleybol maçları ve program.`;
   } else if (category) {
-    title = `Bugün: ${category} Maç Programı — Altyapı Voleybol`;
+    title = `Bugün: ${category} Maç Programı`;
     description = `Türkiye genelinde bugün oynanacak ${category} karşılaşmaları.`;
   }
 

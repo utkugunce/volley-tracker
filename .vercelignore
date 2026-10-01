@@ -1,13 +1,20 @@
 # Vercel Deployment Ignore
 # Python scraping scripts and dependencies (only run locally)
 scripts/
+tests/
 *.py
 requirements.txt
 
 # Documentation & Scratch files
 docs/
+scratch/
+*.log
+
+# Supabase local migrations & config
+supabase/
 
 # Tests (vitest & testing-library only needed locally or in CI)
 src/**/__tests__/
 vitest.config.ts
+vitest.config.mjs
 vitest.setup.ts

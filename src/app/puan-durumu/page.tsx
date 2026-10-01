@@ -13,17 +13,17 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   const city = typeof params?.city === "string" && params.city !== "Tümü" && params.city !== "Tüm İller" ? params.city : undefined;
   const category = typeof params?.category === "string" && params.category !== "Tümü" ? params.category : undefined;
 
-  let title = "TVF Canlı Puan Durumu ve Lig Sıralaması — Altyapı Voleybol";
+  let title = "TVF Canlı Puan Durumu ve Lig Sıralaması";
   let description = "Genç & Yıldız Kızlar Süper Lig ve tüm altyapı ligleri güncel puan cetveli, set averajları, galibiyet sayıları ve sıralama tabloları.";
 
   if (city && category) {
-    title = `${city} ${category} Puan Durumu — Altyapı Voleybol`;
+    title = `${city} ${category} Puan Durumu`;
     description = `${city} ili ${category} ligi güncel puan tablosu, averajlar ve lig sıralaması.`;
   } else if (city) {
-    title = `${city} Voleybol Puan Durumu — Altyapı Voleybol`;
+    title = `${city} Voleybol Puan Durumu`;
     description = `${city} ili tüm voleybol kategorileri resmi puan durumları ve grup sıralamaları.`;
   } else if (category) {
-    title = `${category} Puan Durumu — Altyapı Voleybol`;
+    title = `${category} Puan Durumu`;
     description = `Türkiye geneli ${category} ligleri puan durumu ve canlı sıralama tabloları.`;
   }
 

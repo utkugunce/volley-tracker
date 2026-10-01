@@ -27,18 +27,25 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<imp
   }
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
+    alternates: {
+      canonical: "https://altyapivoleybol.com.tr",
+    },
     openGraph: {
       title,
       description,
       type: "website",
       locale: "tr_TR",
+      images: [{ url: "/icon.svg", width: 512, height: 512, alt: "Altyapı Voleybol" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/icon.svg"],
     },
   };
 }

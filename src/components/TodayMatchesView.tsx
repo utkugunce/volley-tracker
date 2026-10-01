@@ -713,8 +713,9 @@ export const TodayMatchesView: React.FC<TodayMatchesViewProps> = ({
             </div>
             <h1 className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-2">
               <Calendar size={18} className="text-amber-400 shrink-0" />
-              <span>{formattedToday}</span>
+              <span>Günün Maçları & Canlı Skor Takibi</span>
             </h1>
+            <p className="text-xs text-slate-400 font-medium mt-0.5">{formattedToday}</p>
           </div>
 
           {/* Sağ Kontroller: Görünüm Değiştirici (Kart / Tablo) & Tüm Fikstür */}
