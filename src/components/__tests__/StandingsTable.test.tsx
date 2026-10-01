@@ -212,7 +212,7 @@ describe('StandingsTable Component', () => {
     render(<StandingsTable standingsData={multiCityStandings} />);
 
     // Dropdown butonu seçili il olarak Ankara'yı göstermeli
-    const cityDropdownBtn = screen.getByRole('button', { name: 'Ankara' });
+    const cityDropdownBtn = screen.getByRole('button', { name: /^Ankara/ });
     expect(cityDropdownBtn).toBeInTheDocument();
 
     // Başlangıçta Ankara ve Eczacıbaşı aktif
