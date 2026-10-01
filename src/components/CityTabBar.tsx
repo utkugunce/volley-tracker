@@ -120,7 +120,6 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                     : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border-slate-800/80"
                 }`}
                 title={`${item.name} maçlarını ve fikstürünü görüntüle`}
-                aria-label={`${item.name} maçlarını ve fikstürünü görüntüle`}
               >
                 {item.isAll ? (
                   <Globe
@@ -165,7 +164,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
             aria-expanded={dropdownOpen}
             aria-haspopup="listbox"
             aria-controls="city-dropdown-menu"
-            aria-label="Tüm 81 ili listele ve seç"
+            aria-label="+ 81 İl: Tüm 81 ili listele ve seç"
             className={`flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
               dropdownOpen
                 ? "bg-slate-800 text-white border-slate-700"

@@ -565,7 +565,6 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                   onClick={() => setIsCityDropdownOpen(!isCityDropdownOpen)}
                   aria-expanded={isCityDropdownOpen}
                   aria-haspopup="listbox"
-                  aria-label={selectedCity || "İl Seçiniz"}
                   className="flex items-center justify-between gap-2.5 bg-surface-raised hover:bg-surface-raised/80 text-ink text-xs font-bold px-3.5 py-2 rounded-xl border border-line hover:border-ink-3 transition-all shadow-sm active:scale-95 cursor-pointer min-w-[210px] sm:min-w-[240px] focus:outline-none focus:ring-1 focus:ring-primary"
                 >
                   <span className="flex items-center gap-2 truncate">
@@ -768,7 +767,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
             {/* Grup Seçimi — alt çizgili sekmeler */}
             {availableGroups.length > 0 && (
-              <div className="border-b border-line" role="tablist">
+              <div className="border-b border-line" role="group" aria-label="Grup seçimi">
                 <div className="flex flex-wrap items-center gap-0">
                   {availableGroups.map((grp) => {
                     const isActive = selectedGroupKey === grp.rawKey;
@@ -827,7 +826,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                 }
                 className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-semibold px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-line bg-surface-raised text-ink-2 hover:text-ink transition-all shadow-xs active:scale-95 cursor-pointer"
                 title="Puan durumunu Türkçe Excel uyumlu (.csv) olarak indir"
-                aria-label="Puan durumunu CSV olarak indir"
+                aria-label="CSV İndir: puan durumunu CSV olarak indir"
               >
                 <Download size={12} className="text-done" />
                 <span>CSV İndir</span>

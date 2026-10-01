@@ -36,7 +36,7 @@ describe("Erişilebilirlik (a11y) Standartları (GÖREV 3)", () => {
       expect(istanbulTab?.getAttribute("aria-selected")).toBe("true");
 
       // Dropdown butonunda aria-expanded ve aria-haspopup olmalı
-      const dropdownButton = screen.getByLabelText("Tüm 81 ili listele ve seç");
+      const dropdownButton = screen.getByLabelText(/Tüm 81 ili listele ve seç/);
       expect(dropdownButton).toBeDefined();
       expect(dropdownButton.getAttribute("aria-expanded")).toBe("false");
       expect(dropdownButton.getAttribute("aria-haspopup")).toBe("listbox");

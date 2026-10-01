@@ -99,7 +99,7 @@ describe("Puan Durumu CSV Dışa Aktarma (GÖREV 7)", () => {
       );
 
       const downloadButton = screen.getByRole("button", {
-        name: "Puan durumunu CSV olarak indir",
+        name: "CSV İndir: puan durumunu CSV olarak indir",
       });
       expect(downloadButton).toBeInTheDocument();
       expect(downloadButton).toHaveTextContent("CSV İndir");
@@ -130,7 +130,7 @@ describe("Puan Durumu CSV Dışa Aktarma (GÖREV 7)", () => {
       );
 
       const downloadButton = screen.getByRole("button", {
-        name: "Puan durumunu CSV olarak indir",
+        name: "CSV İndir: puan durumunu CSV olarak indir",
       });
       fireEvent.click(downloadButton);
 
