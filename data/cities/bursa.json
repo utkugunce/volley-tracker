@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T13:35:07.453105",
+  "updated_at": "2026-10-01T20:06:12.563562",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -320,7 +320,7 @@
     "Yıldız Kızlar Süper Lig - - B": [
       {
         "rank": 1,
-        "team": "23 Nisan Spor Kulübü U16",
+        "team": "Eker Spor Kulübü - B U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -331,7 +331,7 @@
       },
       {
         "rank": 2,
-        "team": "Doruk Voleybol Spor Kulübü U16",
+        "team": "23 Nisan Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -342,6 +342,17 @@
       },
       {
         "rank": 3,
+        "team": "Doruk Voleybol Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
         "played": 1,
         "won": 0,
@@ -352,7 +363,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Bursa Genç Saray Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -363,25 +374,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Eker Spor Kulübü - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Öncü Yıldız Spor Kulübü U16",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -1075,11 +1075,15 @@
       "match_no": "3",
       "home_team": "Eker Spor Kulübü - B U16",
       "away_team": "Öncü Yıldız Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-7",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401044",
@@ -1393,5 +1397,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-01T13:36:58.910134"
+  "volleybox_sync_updated_at": "2026-10-01T20:10:43.785326"
 }

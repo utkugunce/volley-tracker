@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T13:35:07.176772",
+  "updated_at": "2026-10-01T20:06:14.087345",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -146,18 +146,18 @@
     "Genç Kızlar Süper Lig - 3.Grup": [
       {
         "rank": 1,
-        "team": "TED Ankara Kolejliler U18",
-        "played": 1,
-        "won": 1,
+        "team": "TVF Spor Lisesi U18",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "TVF Spor Lisesi U18",
+        "team": "TED Ankara Kolejliler U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -169,12 +169,12 @@
       {
         "rank": 3,
         "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -1320,11 +1320,15 @@
       "match_no": "4",
       "home_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
       "away_team": "TVF Spor Lisesi U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "7-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401021",
@@ -2428,14 +2432,14 @@
         "vb_time": "14:00",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-03",
           "vb_time": "14:00",
           "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:00 / VB: 14:00)"
         }
       }
     },
@@ -3204,5 +3208,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-01T13:36:58.897006"
+  "volleybox_sync_updated_at": "2026-10-01T20:10:43.281871"
 }

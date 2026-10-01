@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T13:35:13.491657",
+  "updated_at": "2026-10-01T20:06:22.246581",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -679,6 +679,17 @@
       },
       {
         "rank": 3,
+        "team": "Mavişehir Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Parla Voleybol Kulübü - B U16",
         "played": 3,
         "won": 1,
@@ -689,7 +700,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Forza Spor Kulübü",
         "played": 3,
         "won": 1,
@@ -700,25 +711,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Mavişehir Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 2,
-        "sets_won": 4,
-        "sets_lost": 5,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Göksu Atletik Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -4225,11 +4225,15 @@
       "match_no": "9",
       "home_team": "Göksu Atletik Spor Kulübü U16",
       "away_team": "Mavişehir Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "18-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401135",
@@ -5418,5 +5422,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-01T13:36:58.899782"
+  "volleybox_sync_updated_at": "2026-10-01T20:10:47.321159"
 }

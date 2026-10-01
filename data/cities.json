@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-10-01T13:35:35.353556+00:00",
+  "updated_at": "2026-10-01T20:06:47.807482+03:00",
   "total_cities": 81,
   "active_cities": 23,
-  "total_matches": 683,
+  "total_matches": 708,
   "cities": [
     {
       "ilid": "1",
       "name": "Adana",
       "slug": "adana",
       "url": "https://adana.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -99,8 +99,8 @@
       "name": "Balıkesir",
       "slug": "balikesir",
       "url": "https://balikesir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (7 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
       "standings_count": 7,
       "data_file": "data/cities/balikesir.json"
     },
@@ -230,7 +230,7 @@
       "name": "Elazığ",
       "slug": "elazig",
       "url": "https://elazig.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -270,7 +270,7 @@
       "name": "Gaziantep",
       "slug": "gaziantep",
       "url": "https://gaziantep.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -330,8 +330,8 @@
       "name": "Mersin",
       "slug": "mersin",
       "url": "https://mersin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (8 Maç Mevcut)",
-      "matches_count": 8,
+      "status": "Aktif (12 Maç Mevcut)",
+      "matches_count": 12,
       "standings_count": 6,
       "data_file": "data/cities/mersin.json"
     },
@@ -410,9 +410,9 @@
       "name": "Kocaeli",
       "slug": "kocaeli",
       "url": "https://kocaeli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (9 Maç Mevcut)",
-      "matches_count": 9,
-      "standings_count": 1,
+      "status": "Aktif (14 Maç Mevcut)",
+      "matches_count": 14,
+      "standings_count": 2,
       "data_file": "data/cities/kocaeli.json"
     },
     {
@@ -440,7 +440,7 @@
       "name": "Malatya",
       "slug": "malatya",
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -810,8 +810,8 @@
       "name": "Düzce",
       "slug": "duzce",
       "url": "https://duzce.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (3 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (6 Maç Mevcut)",
+      "matches_count": 6,
       "standings_count": 3,
       "data_file": "data/cities/duzce.json"
     }

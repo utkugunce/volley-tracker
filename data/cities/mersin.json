@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-01T13:35:10.324866",
+  "updated_at": "2026-10-01T20:06:22.355731",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 8,
+  "total_matches": 12,
   "source": "https://mersin.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,6 +22,7 @@
     ],
     "halls": [
       "Tümü",
+      "500 Kişilik S.S",
       "Mersinli Ahmet S.S."
     ]
   },
@@ -1155,8 +1156,144 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "mersin-20261108-009",
+      "city": "Mersin",
+      "date": "2026-11-08",
+      "time": "10:00",
+      "hall": "500 Kişilik S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "match_no": "1",
+      "home_team": "MERSİN EVA SK A",
+      "away_team": "SİYAH BEYAZ SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mersin-20261108-010",
+      "city": "Mersin",
+      "date": "2026-11-08",
+      "time": "12:00",
+      "hall": "500 Kişilik S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "match_no": "2",
+      "home_team": "MERSİN GELİŞİM SK",
+      "away_team": "MEZİTLİ DENİZ SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mersin-20261108-011",
+      "city": "Mersin",
+      "date": "2026-11-08",
+      "time": "14:00",
+      "hall": "500 Kişilik S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "match_no": "3",
+      "home_team": "SİLİFKE ATATÜRK OO SK",
+      "away_team": "MERSİN EVA SK B",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mersin-20261108-012",
+      "city": "Mersin",
+      "date": "2026-11-08",
+      "time": "16:00",
+      "hall": "500 Kişilik S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "match_no": "4",
+      "home_team": "TÜRKOĞLU SK",
+      "away_team": "TARSUS FÇ SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-01T13:36:58.915778"
+  "volleybox_sync_updated_at": "2026-10-01T20:10:47.768865"
 }

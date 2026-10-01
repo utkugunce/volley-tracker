@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T13:35:15.293046+00:00",
+  "updated_at": "2026-10-01T20:06:25.031398+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1994,6 +1994,24 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
+        "team": "İBB Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 150,
+        "points_lost": 79,
+        "point_ratio": "1.899",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "ES Voleybol U16",
         "played": 2,
         "won": 2,
@@ -2011,7 +2029,7 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "VakıfBank - A U16",
         "played": 2,
         "won": 2,
@@ -2029,7 +2047,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Eczacıbaşı - B U16",
         "played": 2,
         "won": 2,
@@ -2043,23 +2061,6 @@
         "point_ratio": "1.250",
         "form": [
           "W",
-          "W"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "İBB Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 37,
-        "point_ratio": "2.027",
-        "form": [
           "W"
         ]
       },
@@ -2154,17 +2155,18 @@
       {
         "rank": 10,
         "team": "Eyüpsultan Belediyesi SK - B U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 42,
-        "points_lost": 75,
+        "points_won": 84,
+        "points_lost": 150,
         "point_ratio": "0.560",
         "form": [
+          "L",
           "L"
         ]
       },
@@ -5017,11 +5019,15 @@
       "match_no": "10",
       "home_team": "Eyüpsultan Belediyesi SK - B U16",
       "away_team": "İBB Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "12-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402193",
@@ -5891,5 +5897,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-10-01T13:36:58.888138"
+  "volleybox_sync_updated_at": "2026-10-01T20:10:45.681978"
 }

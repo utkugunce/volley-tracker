@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-01T06:12:00.273949",
+  "updated_at": "2026-10-01T20:06:43.641743",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 6,
   "source": "https://duzce.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,7 +21,8 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "Bahçeşehir S.S."
     ]
   },
   "standings": {
@@ -164,7 +165,212 @@
       }
     ]
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "duzce-20261007-001",
+      "city": "Düzce",
+      "date": "2026-10-07",
+      "time": "19:30",
+      "hall": "Bahçeşehir S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İl Birinciliği",
+      "match_no": "1",
+      "home_team": "Düzce Voleybol SK - A U18",
+      "away_team": "Düzce 1907 Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "duzce-20261008-002",
+      "city": "Düzce",
+      "date": "2026-10-08",
+      "time": "19:30",
+      "hall": "Bahçeşehir S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İl Birinciliği",
+      "match_no": "2",
+      "home_team": "Düzce UltrAslan Spor Kulübü U18",
+      "away_team": "Düzce Atletik Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "duzce-20261009-003",
+      "city": "Düzce",
+      "date": "2026-10-09",
+      "time": "19:30",
+      "hall": "Bahçeşehir S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İl Birinciliği",
+      "match_no": "3",
+      "home_team": "Düzce 1907 Spor Kulübü U18",
+      "away_team": "Düzce UltrAslan Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "duzce-20261012-004",
+      "city": "Düzce",
+      "date": "2026-10-12",
+      "time": "19:30",
+      "hall": "Bahçeşehir S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İl Birinciliği",
+      "match_no": "4",
+      "home_team": "Düzce Atletik Spor Kulübü U18",
+      "away_team": "Düzce Voleybol SK - A U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "duzce-20261013-005",
+      "city": "Düzce",
+      "date": "2026-10-13",
+      "time": "19:30",
+      "hall": "Bahçeşehir S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İl Birinciliği",
+      "match_no": "5",
+      "home_team": "Düzce Voleybol SK - A U18",
+      "away_team": "Düzce UltrAslan Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "duzce-20261014-006",
+      "city": "Düzce",
+      "date": "2026-10-14",
+      "time": "19:30",
+      "hall": "Bahçeşehir S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar İl Birinciliği",
+      "match_no": "6",
+      "home_team": "Düzce Atletik Spor Kulübü U18",
+      "away_team": "Düzce 1907 Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-01T13:36:58.911064"
+  "volleybox_sync_updated_at": "2026-10-01T20:10:43.965299"
 }
