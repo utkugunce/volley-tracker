@@ -63,7 +63,7 @@ export const VolleyballCourtView: React.FC<VolleyballCourtViewProps> = ({
           isLibero
             ? "bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/50 shadow-glow-amber"
             : isSelected
-            ? "bg-red-600/30 border-2 border-red-400 shadow-glow-red scale-105"
+            ? "bg-selected/20 border-2 border-selected shadow-glow-selected scale-105"
             : "bg-slate-900/85 hover:bg-slate-800 border border-slate-700/80 shadow-md hover:scale-102"
         }`}
       >
@@ -83,7 +83,7 @@ export const VolleyballCourtView: React.FC<VolleyballCourtViewProps> = ({
           className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center font-black text-sm sm:text-base font-mono shadow-md mt-1 ${
             isLibero
               ? "bg-gradient-to-br from-amber-400 to-amber-600 text-black font-black"
-              : "bg-gradient-to-br from-red-600 to-rose-700 text-white font-black"
+              : "bg-surface-raised border border-line text-ink font-black"
           }`}
         >
           {player.number ? `#${player.number}` : <User size={16} />}
@@ -108,7 +108,7 @@ export const VolleyballCourtView: React.FC<VolleyballCourtViewProps> = ({
   return (
     <div className="space-y-4">
       {/* Voleybol Sahası Konteyneri */}
-      <div className="relative rounded-3xl overflow-hidden border-2 border-blue-400/40 bg-gradient-to-b from-[#0b3b60] via-[#072640] to-[#041525] p-4 sm:p-6 shadow-2xl">
+      <div className="relative rounded-3xl overflow-hidden border-2 border-blue-400/40 bg-gradient-to-b from-[#0E2F4D] via-[#0A2038] to-[#07131F] p-4 sm:p-6 shadow-2xl">
         {/* File (Orta Çizgi - Net) */}
         <div className="relative mb-4 flex items-center justify-center">
           <div className="w-full h-2 bg-gradient-to-r from-white/40 via-white to-white/40 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.6)]" />
@@ -134,7 +134,7 @@ export const VolleyballCourtView: React.FC<VolleyballCourtViewProps> = ({
 
         {/* 3 Metre Hücum Çizgisi */}
         <div className="my-3 border-t-2 border-dashed border-blue-400/40 relative">
-          <span className="absolute right-2 -top-2.5 bg-[#072640] px-1.5 text-[9px] font-bold text-sky-400/80 tracking-wider">
+          <span className="absolute right-2 -top-2.5 bg-[#0A2038] px-1.5 text-[9px] font-bold text-sky-400/80 tracking-wider">
             3M ÇİZGİSİ
           </span>
         </div>
@@ -168,7 +168,7 @@ export const VolleyballCourtView: React.FC<VolleyballCourtViewProps> = ({
       {selectedPlayer && (
         <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-between gap-3 text-xs animate-in fade-in duration-200">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-xl bg-red-600/20 border border-red-500/40 text-red-300 font-bold flex items-center justify-center font-mono text-sm shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-primary/20 border border-primary/40 text-primary font-bold flex items-center justify-center font-mono text-sm shrink-0">
               {selectedPlayer.number ? `#${selectedPlayer.number}` : "-"}
             </div>
             <div className="min-w-0">

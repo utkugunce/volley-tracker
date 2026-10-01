@@ -211,7 +211,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
         {comparison ? (
           <>
             {/* Karşılaşma Kartı Banner */}
-            <section className="bg-gradient-to-r from-blue-950/40 via-slate-900 to-indigo-950/40 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <section className="bg-gradient-to-r from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-6 shadow-xl">
               <div className="grid grid-cols-1 sm:grid-cols-[1fr,auto,1fr] items-center gap-6 text-center">
                 {/* 1. Takım */}
                 <div className="flex flex-col items-center">
@@ -227,13 +227,13 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       />
                     ) : (
                       <div className="w-full h-full rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center">
-                        <Trophy size={44} className="text-primary/70" />
+                        <Trophy size={44} className="text-ink-2" />
                       </div>
                     )}
                   </div>
                   <Link
                     href={`/takim/${comparison.team1.slug}`}
-                    className="text-lg sm:text-xl font-black text-white hover:text-primary transition-colors flex items-center gap-1.5 justify-center"
+                    className="text-lg sm:text-xl font-black text-white hover:text-ink transition-colors flex items-center gap-1.5 justify-center"
                   >
                     <span>{comparison.team1.teamName}</span>
                     <ExternalLink size={14} className="text-slate-400" />
@@ -253,7 +253,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                   <div className="text-2xl sm:text-3xl font-black font-mono tracking-tight text-white">
                     <span className="text-blue-400">{comparison.summary.team1Wins}</span>
                     <span className="text-slate-500 mx-2">-</span>
-                    <span className="text-indigo-400">{comparison.summary.team2Wins}</span>
+                    <span className="text-selected-text">{comparison.summary.team2Wins}</span>
                   </div>
                   <span className="text-[11px] font-semibold text-slate-400 mt-1 uppercase tracking-wider">
                     {comparison.summary.totalMatches} Maç
@@ -274,13 +274,13 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       />
                     ) : (
                       <div className="w-full h-full rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center">
-                        <Trophy size={44} className="text-indigo-400/70" />
+                        <Trophy size={44} className="text-selected-text" />
                       </div>
                     )}
                   </div>
                   <Link
                     href={`/takim/${comparison.team2.slug}`}
-                    className="text-lg sm:text-xl font-black text-white hover:text-primary transition-colors flex items-center gap-1.5 justify-center"
+                    className="text-lg sm:text-xl font-black text-white hover:text-ink transition-colors flex items-center gap-1.5 justify-center"
                   >
                     <span>{comparison.team2.teamName}</span>
                     <ExternalLink size={14} className="text-slate-400" />
@@ -320,7 +320,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                           100
                         }%`,
                       }}
-                      className="bg-indigo-500 transition-all"
+                      className="bg-selected transition-all"
                     />
                   </div>
                 ) : (
@@ -333,7 +333,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
             <section className="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 sm:p-6 shadow-xl space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800/80 pb-3 gap-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center text-primary">
+                  <div className="w-7 h-7 rounded-lg bg-surface-raised border border-line flex items-center justify-center text-ink-2">
                     <Activity size={16} />
                   </div>
                   <div>
@@ -346,12 +346,12 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 {/* Lejant */}
                 <div className="flex items-center gap-3 text-xs">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
-                    <span className="font-bold text-sky-300 truncate max-w-[120px]">{comparison.team1.teamName}</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                    <span className="font-bold text-primary truncate max-w-[120px]">{comparison.team1.teamName}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-400"></span>
-                    <span className="font-bold text-indigo-300 truncate max-w-[120px]">{comparison.team2.teamName}</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-selected"></span>
+                    <span className="font-bold text-selected-text truncate max-w-[120px]">{comparison.team2.teamName}</span>
                   </div>
                 </div>
               </div>
@@ -434,7 +434,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                               key={level}
                               points={getWebPolygon(level)}
                               fill="none"
-                              stroke="#334155"
+                              stroke="#1B3550"
                               strokeWidth="1"
                               strokeDasharray={level < 1.0 ? "2,2" : undefined}
                               opacity="0.6"
@@ -453,7 +453,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                                 y1={center}
                                 x2={x2}
                                 y2={y2}
-                                stroke="#475569"
+                                stroke="#2A4560"
                                 strokeWidth="1"
                                 opacity="0.5"
                               />
@@ -463,8 +463,8 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                           {/* Takım 1 Poligonu (Sky Blue) */}
                           <polygon
                             points={getPolygon(t1Metrics)}
-                            fill="rgba(56, 189, 248, 0.3)"
-                            stroke="#38bdf8"
+                            fill="rgba(45, 212, 192, 0.3)"
+                            stroke="#2DD4C0"
                             strokeWidth="2"
                             className="transition-all duration-700"
                           />
@@ -472,8 +472,8 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                           {/* Takım 2 Poligonu (Indigo) */}
                           <polygon
                             points={getPolygon(t2Metrics)}
-                            fill="rgba(129, 140, 248, 0.3)"
-                            stroke="#818cf8"
+                            fill="rgba(127, 180, 255, 0.3)"
+                            stroke="#7FB4FF"
                             strokeWidth="2"
                             className="transition-all duration-700"
                           />
@@ -491,7 +491,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                                 y={y}
                                 textAnchor="middle"
                                 dominantBaseline="central"
-                                fill="#94a3b8"
+                                fill="#A9C3D1"
                                 fontSize="9"
                                 fontWeight="bold"
                               >
@@ -504,9 +504,9 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                         {/* Merkez Güç Puanı Rozeti */}
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                           <div className="bg-slate-950/90 border border-slate-700/80 px-2.5 py-1 rounded-xl shadow-lg text-center flex items-center gap-1.5 font-mono text-xs font-black">
-                            <span className="text-sky-400">{t1Score}</span>
+                            <span className="text-primary">{t1Score}</span>
                             <span className="text-slate-600">vs</span>
-                            <span className="text-indigo-400">{t2Score}</span>
+                            <span className="text-selected-text">{t2Score}</span>
                           </div>
                         </div>
                       </div>
@@ -517,52 +517,52 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       {/* 1. Galibiyet Oranı */}
                       <div>
                         <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-sky-400 font-mono font-black">%{t1WinRate} ({comparison.team1.stats.wins}G / {comparison.team1.stats.played}M)</span>
+                          <span className="text-primary font-mono font-black">%{t1WinRate} ({comparison.team1.stats.wins}G / {comparison.team1.stats.played}M)</span>
                           <span className="text-slate-400 font-medium">Sezon Galibiyet Oranı</span>
-                          <span className="text-indigo-400 font-mono font-black">%{t2WinRate} ({comparison.team2.stats.wins}G / {comparison.team2.stats.played}M)</span>
+                          <span className="text-selected-text font-mono font-black">%{t2WinRate} ({comparison.team2.stats.wins}G / {comparison.team2.stats.played}M)</span>
                         </div>
                         <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-sky-400 to-sky-600 transition-all duration-500" />
-                          <div style={{ width: `${100 - Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-indigo-500 to-indigo-600 transition-all duration-500" />
+                          <div style={{ width: `${Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-primary transition-all duration-500" />
+                          <div style={{ width: `${100 - Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-selected transition-all duration-500" />
                         </div>
                       </div>
 
                       {/* 2. Son 5 Maç Başarısı */}
                       <div>
                         <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-sky-400 font-mono font-black">%{t1FormRate} ({t1FormWins}/5)</span>
+                          <span className="text-primary font-mono font-black">%{t1FormRate} ({t1FormWins}/5)</span>
                           <span className="text-slate-400 font-medium">Son 5 Maç Form Gücü</span>
-                          <span className="text-indigo-400 font-mono font-black">%{t2FormRate} ({t2FormWins}/5)</span>
+                          <span className="text-selected-text font-mono font-black">%{t2FormRate} ({t2FormWins}/5)</span>
                         </div>
                         <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-sky-400 to-sky-500 transition-all duration-500" />
-                          <div style={{ width: `${100 - Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-gradient-to-r from-indigo-400 to-purple-500 transition-all duration-500" />
+                          <div style={{ width: `${Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-primary transition-all duration-500" />
+                          <div style={{ width: `${100 - Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-selected transition-all duration-500" />
                         </div>
                       </div>
 
                       {/* 3. Set Verimliliği */}
                       <div>
                         <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-sky-400 font-mono font-black">{comparison.summary.team1SetsWon} Set</span>
+                          <span className="text-primary font-mono font-black">{comparison.summary.team1SetsWon} Set</span>
                           <span className="text-slate-400 font-medium">H2H Set Üstünlüğü</span>
-                          <span className="text-indigo-400 font-mono font-black">{comparison.summary.team2SetsWon} Set</span>
+                          <span className="text-selected-text font-mono font-black">{comparison.summary.team2SetsWon} Set</span>
                         </div>
                         <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
                           <div style={{ width: `${t1SetRate}%` }} className="bg-gradient-to-r from-sky-400 to-blue-500 transition-all duration-500" />
-                          <div style={{ width: `${t2SetRate}%` }} className="bg-gradient-to-r from-indigo-500 to-indigo-600 transition-all duration-500" />
+                          <div style={{ width: `${t2SetRate}%` }} className="bg-selected transition-all duration-500" />
                         </div>
                       </div>
 
                       {/* 4. Doğrudan Galibiyet */}
                       <div>
                         <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-sky-400 font-mono font-black">{comparison.summary.team1Wins} Galibiyet</span>
+                          <span className="text-primary font-mono font-black">{comparison.summary.team1Wins} Galibiyet</span>
                           <span className="text-slate-400 font-medium">Aralarındaki Maçlar</span>
-                          <span className="text-indigo-400 font-mono font-black">{comparison.summary.team2Wins} Galibiyet</span>
+                          <span className="text-selected-text font-mono font-black">{comparison.summary.team2Wins} Galibiyet</span>
                         </div>
                         <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${t1H2hRate}%` }} className="bg-gradient-to-r from-sky-400 to-sky-600 transition-all duration-500" />
-                          <div style={{ width: `${t2H2hRate}%` }} className="bg-gradient-to-r from-indigo-500 to-purple-600 transition-all duration-500" />
+                          <div style={{ width: `${t1H2hRate}%` }} className="bg-primary transition-all duration-500" />
+                          <div style={{ width: `${t2H2hRate}%` }} className="bg-selected transition-all duration-500" />
                         </div>
                       </div>
                     </div>
@@ -575,7 +575,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
             <section className="space-y-3">
               <div className="flex items-center justify-between">
                 <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                  <Calendar size={18} className="text-primary" />
+                  <Calendar size={18} className="text-ink-2" />
                   <span>Aralarındaki Maçlar ({comparison.matches.length})</span>
                 </h2>
               </div>
@@ -608,7 +608,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                               {m.date} {m.time ? `• ${m.time}` : ""}
                             </div>
                             <div className="flex items-center gap-1 mt-0.5 text-slate-400">
-                              <MapPin size={11} className="text-primary" />
+                              <MapPin size={11} className="text-ink-2" />
                               <span>{m.hall || "Salon Belirtilmedi"}</span>
                               {m.category && <span>({m.category})</span>}
                             </div>
@@ -671,7 +671,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
             <section className="space-y-3 pt-4">
               <div className="flex items-center justify-between">
                 <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                  <Activity size={18} className="text-primary" />
+                  <Activity size={18} className="text-ink-2" />
                   <span>Puan Durumu İstatistikleri</span>
                 </h2>
                 {comparison.isSameGroup ? (
@@ -705,7 +705,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                     </div>
                     <Link
                       href={`/takim/${comparison.team1.slug}`}
-                      className="text-xs text-primary hover:underline flex items-center gap-1 font-semibold"
+                      className="text-xs text-selected-text hover:underline flex items-center gap-1 font-semibold"
                     >
                       <span>Profil</span>
                       <ChevronRight size={13} />
@@ -736,7 +736,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                               </div>
                               <div>
                                 <div className="text-slate-400 text-[10px]">M</div>
-                                <div className="font-bold text-rose-400 mt-0.5">{row.lost}</div>
+                                <div className="font-bold text-form-loss mt-0.5">{row.lost}</div>
                               </div>
                               <div>
                                 <div className="text-slate-400 text-[10px]">Set</div>
@@ -767,7 +767,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                     </div>
                     <Link
                       href={`/takim/${comparison.team2.slug}`}
-                      className="text-xs text-primary hover:underline flex items-center gap-1 font-semibold"
+                      className="text-xs text-selected-text hover:underline flex items-center gap-1 font-semibold"
                     >
                       <span>Profil</span>
                       <ChevronRight size={13} />
@@ -798,7 +798,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                               </div>
                               <div>
                                 <div className="text-slate-400 text-[10px]">M</div>
-                                <div className="font-bold text-rose-400 mt-0.5">{row.lost}</div>
+                                <div className="font-bold text-form-loss mt-0.5">{row.lost}</div>
                               </div>
                               <div>
                                 <div className="text-slate-400 text-[10px]">Set</div>

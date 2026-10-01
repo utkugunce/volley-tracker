@@ -64,7 +64,7 @@ export default async function TeamDetailPage({ params, searchParams }: TeamPageP
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-xl transition-all shadow-md"
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-primary-fg text-xs sm:text-sm font-bold px-4 py-2 rounded-xl transition-all shadow-glow-primary"
         >
           <ChevronLeft size={16} />
           <span>Ana Sayfaya Dön</span>

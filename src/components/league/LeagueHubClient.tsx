@@ -274,7 +274,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
       : 0;
 
   return (
-    <div className="min-h-screen bg-canvas text-slate-100 flex flex-col selection:bg-red-600/30 selection:text-white">
+    <div className="min-h-screen bg-canvas text-slate-100 flex flex-col selection:bg-primary/30 selection:text-white">
       {/* 1. ÜST GEZİNME VE BAŞLIK ŞERİDİ */}
       <header className="sticky top-0 z-40 bg-canvas/90 backdrop-blur-md border-b border-slate-800/80 px-4 py-3">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
@@ -387,7 +387,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               {league.matches.length > 0 && (
                 <button
                   onClick={handleDownloadCalendar}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold bg-primary hover:bg-primary/90 text-white px-3.5 py-2 rounded-xl shadow-glow-red transition-all cursor-pointer hover:scale-[1.02] active:scale-95"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold bg-primary hover:bg-primary-hover text-primary-fg px-3.5 py-2 rounded-xl shadow-glow-primary transition-all cursor-pointer hover:scale-[1.02] active:scale-95"
                   title="Tüm lig fikstürünü takviminize (.ics) indirin"
                 >
                   <Download size={14} />
@@ -484,7 +484,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               onClick={() => setActiveTab("standings")}
               className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
                 activeTab === "standings"
-                  ? "bg-primary text-white shadow-glow-red"
+                  ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/70"
               }`}
             >
@@ -496,7 +496,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               onClick={() => setActiveTab("fixtures")}
               className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
                 activeTab === "fixtures"
-                  ? "bg-primary text-white shadow-glow-red"
+                  ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/70"
               }`}
             >
@@ -508,7 +508,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               onClick={() => setActiveTab("results")}
               className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
                 activeTab === "results"
-                  ? "bg-primary text-white shadow-glow-red"
+                  ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/70"
               }`}
             >
@@ -520,7 +520,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               onClick={() => setActiveTab("stats")}
               className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
                 activeTab === "stats"
-                  ? "bg-primary text-white shadow-glow-red"
+                  ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/70"
               }`}
             >
@@ -532,7 +532,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
               onClick={() => setActiveTab("teams")}
               className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
                 activeTab === "teams"
-                  ? "bg-primary text-white shadow-glow-red"
+                  ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : "text-slate-400 hover:text-white hover:bg-slate-800/70"
               }`}
             >
@@ -610,7 +610,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                           <th className="py-2.5 px-3 min-w-[200px]">Takım</th>
                           <th className="py-2.5 px-2.5 text-center font-semibold">O</th>
                           <th className="py-2.5 px-2.5 text-center font-semibold text-emerald-400">G</th>
-                          <th className="py-2.5 px-2.5 text-center font-semibold text-rose-400">M</th>
+                          <th className="py-2.5 px-2.5 text-center font-semibold text-form-loss">M</th>
                           <th className="py-2.5 px-2.5 text-center font-semibold">AS</th>
                           <th className="py-2.5 px-2.5 text-center font-semibold">VS</th>
                           <th className="py-2.5 px-2.5 text-center font-semibold">SAV</th>
@@ -651,7 +651,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                                     teamName={row.team}
                                     category={league.category}
                                     city={league.city}
-                                    className="font-bold text-white hover:text-primary transition-colors text-xs"
+                                    className="font-bold text-white hover:text-ink transition-colors text-xs"
                                   />
                                 </div>
                               </td>
@@ -659,7 +659,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                               <td className="py-2.5 px-2.5 text-center font-mono text-emerald-400 font-bold">
                                 {row.won}
                               </td>
-                              <td className="py-2.5 px-2.5 text-center font-mono text-rose-400 font-bold">
+                              <td className="py-2.5 px-2.5 text-center font-mono text-form-loss font-bold">
                                 {row.lost}
                               </td>
                               <td className="py-2.5 px-2.5 text-center font-mono text-slate-300">{row.sets_won}</td>
@@ -677,8 +677,8 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                                       key={fIdx}
                                       className={`w-4 h-4 rounded text-[9px] font-black inline-flex items-center justify-center ${
                                         f === "W"
-                                          ? "bg-emerald-500 text-white"
-                                          : "bg-rose-500 text-white"
+                                          ? "bg-transparent text-done border border-done"
+                                          : "bg-transparent text-form-loss border border-form-loss"
                                       }`}
                                     >
                                       {f}
@@ -717,7 +717,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
             {/* Arama ve Bilgi Kontrol Çubuğu */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
               <div className="flex items-center gap-2">
-                <Calendar size={18} className="text-primary" />
+                <Calendar size={18} className="text-ink-2" />
                 <h2 className="text-sm font-bold text-white">
                   Fikstür & Maç Programı ({displayedUpcomingMatches.length})
                 </h2>
@@ -937,7 +937,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
             {/* Salon Listesi */}
             <div className="glass-panel p-5 rounded-2xl border border-slate-800">
               <h3 className="text-sm font-bold text-white flex items-center gap-2 mb-3">
-                <MapPin size={16} className="text-primary" />
+                <MapPin size={16} className="text-ink-2" />
                 <span>Bu Ligin Oynandığı Spor Salonları ({league.halls.length})</span>
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -989,7 +989,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                         teamName={team.name}
                         category={league.category}
                         city={league.city}
-                        className="font-black text-white text-sm hover:text-primary transition-colors block"
+                        className="font-black text-white text-sm hover:text-ink transition-colors block"
                       />
                       <span className="text-[11px] text-slate-400 mt-0.5 block">
                         {team.group || league.category}
@@ -1014,7 +1014,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-500 block">Mağlubiyet</span>
-                      <strong className="text-rose-400 font-mono">{team.lost}</strong>
+                      <strong className="text-form-loss font-mono">{team.lost}</strong>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-500 block">Puan</span>

@@ -111,7 +111,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
       <div className="flex items-center justify-between pb-3.5 border-b border-panel">
         <div className="flex items-center gap-3">
           {/* Pembe hatlı grup ikonu (Volleybox birebir) */}
-          <div className="w-8 h-8 rounded-lg border border-pink-500/80 bg-pink-500/10 flex items-center justify-center text-pink-500 shrink-0">
+          <div className="w-8 h-8 rounded-lg border border-primary/80 bg-primary/10 flex items-center justify-center text-primary shrink-0">
             <svg
               className="w-4.5 h-4.5 stroke-current fill-none stroke-[2]"
               viewBox="0 0 24 24"
@@ -181,7 +181,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
             onClick={() => setViewMode("table")}
             className={`px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
               viewMode === "table"
-                ? "bg-red-600 text-white shadow-xs"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -192,7 +192,7 @@ export const TeamRosterView: React.FC<TeamRosterViewProps> = ({
             onClick={() => setViewMode("court")}
             className={`px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer ${
               viewMode === "court"
-                ? "bg-red-600 text-white shadow-xs"
+                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "text-slate-400 hover:text-white"
             }`}
           >

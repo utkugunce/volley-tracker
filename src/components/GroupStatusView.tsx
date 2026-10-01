@@ -159,7 +159,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-primary/20 text-rose-300 border border-primary/30">
+              <span className="inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-surface-raised text-ink-2 border border-line">
                 <Layers size={12} />
                 Volleybox Veri Entegrasyonu
               </span>
@@ -182,7 +182,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700/80 transition-all active:scale-95 disabled:opacity-50 cursor-pointer shadow-sm"
                 title="Verileri Yenile"
               >
-                <RefreshCw size={14} className={isLoading || loadingData ? "animate-spin text-primary" : ""} />
+                <RefreshCw size={14} className={isLoading || loadingData ? "animate-spin text-ink-2" : ""} />
                 <span>Yenile</span>
               </button>
             )}
@@ -207,7 +207,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
           {selectedStatus !== "all" && (
             <button
               onClick={() => setSelectedStatus("all")}
-              className="text-xs text-primary hover:underline font-semibold self-start sm:self-auto cursor-pointer"
+              className="text-xs text-selected-text hover:underline font-semibold self-start sm:self-auto cursor-pointer"
             >
               Filtreyi Temizle (Tümünü Göster)
             </button>
@@ -229,7 +229,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
               <span className="w-4 h-4 rounded-md bg-gradient-to-tr from-slate-600 to-slate-400 shrink-0 border border-slate-500/50" />
               <span className="text-xs font-bold text-slate-200 truncate">Tümü (Hepsi)</span>
             </div>
-            <span className="text-[11px] font-mono font-bold bg-slate-900/80 text-slate-300 px-2 py-0.5 rounded-full border border-slate-700 shrink-0 ml-2">
+            <span className="text-[11px] font-display font-semibold tabular-nums text-ink-2 shrink-0 ml-2">
               {groups.length}
             </span>
           </button>
@@ -348,7 +348,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
       {/* 4. İLLERE GÖRE LİSTE TABLOLARI */}
       {loadingData ? (
         <div className="text-center py-16 bg-slate-900/50 border border-slate-800 rounded-2xl">
-          <RefreshCw size={28} className="animate-spin text-primary mx-auto mb-3" />
+          <RefreshCw size={28} className="animate-spin text-ink-2 mx-auto mb-3" />
           <p className="text-sm font-semibold text-slate-300">Grup ve lig durumları taranıyor...</p>
         </div>
       ) : cityGroups.length === 0 ? (
@@ -365,7 +365,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                 setSearchQuery("");
                 setCityFilter("all");
               }}
-              className="mt-4 px-4 py-2 rounded-lg bg-primary text-white text-xs font-semibold hover:bg-primary/90 transition-all cursor-pointer shadow-md"
+              className="mt-4 px-4 py-2 rounded-lg bg-primary text-primary-fg text-xs font-bold transition-all cursor-pointer shadow-glow-primary"
             >
               Filtreleri Sıfırla
             </button>
@@ -389,7 +389,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                   className="flex items-center justify-between px-4 py-3 bg-slate-800/60 hover:bg-slate-800/90 transition-colors cursor-pointer select-none"
                 >
                   <div className="flex items-center gap-2.5">
-                    <MapPin size={16} className="text-primary" />
+                    <MapPin size={16} className="text-ink-2" />
                     <h3 className="text-sm sm:text-base font-bold text-white tracking-wide">
                       {cityName}
                     </h3>
@@ -494,7 +494,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                                     href={g.tournamentUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#1f497d]/20 hover:bg-[#1f497d]/40 text-blue-300 hover:text-white border border-[#1f497d]/40 text-[11px] font-semibold transition-all"
+                                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-selected-strong/20 hover:bg-selected-strong/40 text-blue-300 hover:text-white border border-selected-strong/40 text-[11px] font-semibold transition-all"
                                     title="Volleybox Turnuva Sayfasını Aç"
                                   >
                                     <ExternalLink size={11} />

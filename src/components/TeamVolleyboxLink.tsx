@@ -125,7 +125,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       {logoElement}
       <Link
         href={`/takim/${teamSlug}${cityQuery}`}
-        className="truncate hover:underline hover:text-primary transition-colors cursor-pointer"
+        className="truncate hover:underline hover:text-ink transition-colors cursor-pointer"
         title={`${displayName} Detay Sayfası`}
         onClick={(e) => e.stopPropagation()}
       >

@@ -86,9 +86,9 @@ const getClubBrandColors = (teamName: string, is2Lig: boolean = false) => {
     };
   }
   return {
-    glowHome: "bg-red-600/15",
-    glowAway: "bg-sky-600/10",
-    accentBorder: "border-red-500/30",
+    glowHome: "bg-primary/15",
+    glowAway: "bg-selected/10",
+    accentBorder: "border-primary/30",
     gradient: "from-canvas via-surface-muted to-panel",
   };
 };
@@ -109,7 +109,7 @@ const WinLossDonut: React.FC<{ wins: number; losses: number }> = ({ wins, losses
             cy="32"
             r={radius}
             fill="transparent"
-            stroke="#334155"
+            stroke="#1B3550"
             strokeWidth="6"
           />
           {wins > 0 && (
@@ -118,7 +118,7 @@ const WinLossDonut: React.FC<{ wins: number; losses: number }> = ({ wins, losses
               cy="32"
               r={radius}
               fill="transparent"
-              stroke="#10b981"
+              stroke="#9BE15D"
               strokeWidth="6"
               strokeDasharray={`${winStroke} ${circumference}`}
               strokeLinecap="round"
@@ -131,12 +131,12 @@ const WinLossDonut: React.FC<{ wins: number; losses: number }> = ({ wins, losses
         </div>
       </div>
       <div className="text-xs space-y-0.5 min-w-0">
-        <div className="flex items-center gap-1.5 text-emerald-400 font-bold truncate">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+        <div className="flex items-center gap-1.5 text-done font-bold truncate">
+          <span className="w-2 h-2 rounded-full bg-done shrink-0"></span>
           <span>{wins}G</span>
         </div>
-        <div className="flex items-center gap-1.5 text-rose-400 font-bold truncate">
-          <span className="w-2 h-2 rounded-full bg-rose-500 shrink-0"></span>
+        <div className="flex items-center gap-1.5 text-form-loss font-bold truncate">
+          <span className="w-2 h-2 rounded-full bg-form-loss shrink-0"></span>
           <span>{losses}M</span>
         </div>
       </div>
@@ -201,7 +201,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-fuchsia-300 hover:text-white bg-fuchsia-950/70 hover:bg-fuchsia-900/80 px-3 py-1.5 rounded-lg border border-fuchsia-700/60 transition-colors shadow-xs"
                 title="TVF Kadınlar 2. Ligi Paneli"
               >
-                <Trophy size={13} className="text-pink-400" />
+                <Trophy size={13} className="text-orchid" />
                 <span className="hidden sm:inline">2. Lig Paneli</span>
                 <span className="sm:hidden">2. Lig</span>
               </Link>
@@ -249,7 +249,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               <button
                 onClick={handleDownloadSeasonIcs}
                 disabled={downloadingSeason}
-                className="inline-flex items-center gap-1.5 text-xs font-bold bg-primary hover:bg-primary/90 text-white px-3 py-1.5 rounded-lg shadow-sm transition-all cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold bg-primary hover:bg-primary-hover text-primary-fg px-3 py-1.5 rounded-lg shadow-glow-primary transition-all cursor-pointer"
                 title="Tüm sezon maçlarını iCalendar (.ics) formatında indir"
               >
                 <Download size={13} />
@@ -282,7 +282,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                 />
               ) : (
                 <div className="w-full h-full rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center">
-                  <Trophy size={56} className="text-primary/70" />
+                  <Trophy size={56} className="text-ink-2" />
                 </div>
               )}
             </div>
@@ -295,7 +295,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                     key={city}
                     className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700"
                   >
-                    <MapPin size={11} className="text-primary" />
+                    <MapPin size={11} className="text-ink-2" />
                     {city}
                   </span>
                 ))}
@@ -306,11 +306,11 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                       key={cat}
                       className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full border transition-all ${
                         is2Lig
-                          ? "bg-fuchsia-500/20 text-fuchsia-300 border-fuchsia-500/40 shadow-[0_0_12px_rgba(217,70,239,0.25)]"
-                          : "bg-primary/20 text-primary border-primary/30"
+                          ? "bg-orchid/15 text-orchid border-orchid/40 shadow-[0_0_12px_rgba(217,139,255,0.25)]"
+                          : "bg-surface-raised text-ink-2 border-line"
                       }`}
                     >
-                      <Activity size={11} className={is2Lig ? "text-pink-400" : ""} />
+                      <Activity size={11} className={is2Lig ? "text-orchid" : ""} />
                       {cat}
                     </span>
                   );
@@ -341,7 +341,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               {team.clubTeams && team.clubTeams.length > 1 && (
                 <div className="mt-4 pt-3.5 border-t border-slate-800/80 space-y-2">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300">
-                    <Layers size={14} className="text-primary" />
+                    <Layers size={14} className="text-ink-2" />
                     <span>Kulübün Diğer Takımları & Yaş Grupları ({team.clubTeams.length}):</span>
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -349,7 +349,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                       ct.isCurrent ? (
                         <div
                           key={ct.slug + ct.city}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-glow-red ring-2 ring-red-500/40"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-selected-strong text-white shadow-glow-selected"
                           title="Şu an bu takımı görüntülüyorsunuz"
                         >
                           <span>{ct.teamName}</span>
@@ -404,7 +404,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                       href={oc.path}
                       className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 transition-colors"
                     >
-                      <MapPin size={11} className="text-primary" />
+                      <MapPin size={11} className="text-ink-2" />
                       <span>{oc.city} Takımı</span>
                     </Link>
                   ))}
@@ -427,15 +427,15 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">
                 Galibiyet
               </span>
-              <span className="text-xl font-black text-emerald-400 font-mono mt-0.5 block">
+              <span className="text-xl font-black text-done font-mono mt-0.5 block">
                 {team.stats.wins}
               </span>
             </div>
             <div className="bg-slate-800/50 border border-slate-700/60 rounded-xl p-3 text-center">
-              <span className="text-[10px] font-bold text-rose-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-form-loss uppercase tracking-wider block">
                 Mağlubiyet
               </span>
-              <span className="text-xl font-black text-rose-400 font-mono mt-0.5 block">
+              <span className="text-xl font-black text-form-loss font-mono mt-0.5 block">
                 {team.stats.losses}
               </span>
             </div>
@@ -564,7 +564,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                             key={row.team}
                             className={`transition-colors ${
                               isThisTeam
-                                ? "bg-primary/20 text-white font-bold border-l-4 border-l-primary"
+                                ? "bg-primary/15 text-white font-bold border-l-4 border-l-primary"
                                 : "text-slate-300 hover:bg-slate-700/40"
                             }`}
                           >
@@ -578,15 +578,15 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                                   className={isThisTeam ? "font-bold text-white" : "text-slate-300 font-medium"}
                                 />
                                 {isThisTeam && (
-                                  <span className="text-[9px] bg-primary text-white px-1.5 py-0.2 rounded font-semibold shrink-0">
+                                  <span className="text-[9px] bg-primary text-primary-fg px-1.5 py-0.2 rounded font-semibold shrink-0">
                                     Bu Takım
                                   </span>
                                 )}
                               </div>
                             </td>
                             <td className="py-1.5 px-2 text-center font-mono">{row.played}</td>
-                            <td className="py-1.5 px-2 text-center font-mono text-emerald-400">{row.won}</td>
-                            <td className="py-1.5 px-2 text-center font-mono text-rose-400">{row.lost}</td>
+                            <td className="py-1.5 px-2 text-center font-mono text-done">{row.won}</td>
+                            <td className="py-1.5 px-2 text-center font-mono text-form-loss">{row.lost}</td>
                             <td className="py-1.5 px-2 text-center font-mono">{row.sets_won}</td>
                             <td className="py-1.5 px-2 text-center font-mono">{row.sets_lost}</td>
                             <td className="py-1.5 px-2 text-center font-mono font-black text-white bg-slate-800/40">
@@ -619,7 +619,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3 flex-wrap">
               <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                <Calendar size={18} className="text-primary" />
+                <Calendar size={18} className="text-ink-2" />
                 <span>Sezon Fikstürü ({team.matches.length} Maç)</span>
               </h2>
               {team.standingsContexts[0] && (
@@ -640,7 +640,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               <button
                 onClick={() => setMatchFilter("all")}
                 className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  matchFilter === "all" ? "bg-primary text-white shadow-xs" : "text-slate-400 hover:text-white"
+                  matchFilter === "all" ? "bg-selected-strong text-white font-bold shadow-glow-selected" : "text-slate-400 hover:text-white"
                 }`}
               >
                 Tümü ({team.matches.length})
@@ -648,7 +648,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               <button
                 onClick={() => setMatchFilter("finished")}
                 className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  matchFilter === "finished" ? "bg-primary text-white shadow-xs" : "text-slate-400 hover:text-white"
+                  matchFilter === "finished" ? "bg-selected-strong text-white font-bold shadow-glow-selected" : "text-slate-400 hover:text-white"
                 }`}
               >
                 Bitenler ({team.stats.played})
@@ -656,7 +656,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
               <button
                 onClick={() => setMatchFilter("upcoming")}
                 className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  matchFilter === "upcoming" ? "bg-primary text-white shadow-xs" : "text-slate-400 hover:text-white"
+                  matchFilter === "upcoming" ? "bg-selected-strong text-white font-bold shadow-glow-selected" : "text-slate-400 hover:text-white"
                 }`}
               >
                 Gelecek ({team.stats.upcoming})
@@ -681,15 +681,15 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                     className={`bg-slate-800/60 hover:bg-slate-800/90 border rounded-xl p-3.5 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
                       isFinished
                         ? isWon
-                          ? "border-emerald-500/40 bg-emerald-950/10"
-                          : "border-rose-500/40 bg-rose-950/10"
+                          ? "border-done/40 bg-done/5"
+                          : "border-form-loss/40 bg-form-loss/5"
                         : "border-slate-700/70"
                     }`}
                   >
                     {/* Tarih, Saat & Salon */}
                     <div className="min-w-[170px]">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300 font-mono">
-                        <Calendar size={13} className="text-primary shrink-0" />
+                        <Calendar size={13} className="text-ink-2 shrink-0" />
                         <span>{m.date}</span>
                         <span>•</span>
                         <Clock size={13} className="text-slate-400 shrink-0" />
@@ -730,7 +730,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                       <div className="shrink-0 flex flex-col items-center">
                         <div className="text-center px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 shadow-inner">
                           {isFinished ? (
-                            <span className={`font-mono font-black text-sm ${isWon ? "text-emerald-400" : isLoss ? "text-rose-400" : "text-white"}`}>
+                            <span className={`font-mono font-black text-sm ${isWon ? "text-done" : isLoss ? "text-form-loss" : "text-white"}`}>
                               {m.home_score} - {m.away_score}
                             </span>
                           ) : (
