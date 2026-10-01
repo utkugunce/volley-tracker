@@ -14,8 +14,12 @@ export type GroupStatusKey =
 export interface GroupStatusConfig {
   key: GroupStatusKey;
   label: string;
+  /** Fileönü temasındaki ekran rengi (zemin #0E2033'e karşı ≥ 4.5:1, durumlar arası ayırt edilebilir). */
   hex: string;
+  /** `hex` zemininin üstündeki metin rengi (≥ 4.5:1). */
   textColor: string;
+  /** Resmî TVF/Volleybox tablosundaki özgün renk. Yalnız referans/eşleştirme içindir, arayüzde çizilmez. */
+  officialHex: string;
   badgeBg: string;
   badgeText: string;
   order: number;
@@ -25,64 +29,71 @@ export const GROUP_STATUS_CONFIGS: Record<GroupStatusKey, GroupStatusConfig> = {
   all_dated_entered: {
     key: "all_dated_entered",
     label: "Tarihi belli tüm maçlar girildi",
-    hex: "#00b050", // 🟢 Yeşil
-    textColor: "#ffffff",
-    badgeBg: "bg-[#00b050]",
-    badgeText: "text-white",
+    hex: "#9BE15D", // 🟢 Yeşil
+    textColor: "#0B2A05",
+    officialHex: "#00b050",
+    badgeBg: "bg-done",
+    badgeText: "text-done-fg",
     order: 1,
   },
   partial: {
     key: "partial",
     label: "Kısmen girildi",
-    hex: "#ffff00", // 🟡 Sarı
-    textColor: "#000000",
-    badgeBg: "bg-[#ffff00]",
-    badgeText: "text-black",
+    hex: "#FFC24D", // 🟡 Sarı
+    textColor: "#2B1D00",
+    officialHex: "#ffff00",
+    badgeBg: "bg-warn",
+    badgeText: "text-[#2B1D00]",
     order: 2,
   },
   not_entered: {
     key: "not_entered",
     label: "Maçlar girilmedi",
-    hex: "#ff0000", // 🔴 Kırmızı
-    textColor: "#ffffff",
-    badgeBg: "bg-[#ff0000]",
-    badgeText: "text-white",
+    hex: "#FF6E82", // 🔴 Kırmızı
+    textColor: "#2B0A10",
+    officialHex: "#ff0000",
+    badgeBg: "bg-live",
+    badgeText: "text-live-fg",
     order: 3,
   },
   no_matches: {
     key: "no_matches",
     label: "Maç Yok",
-    hex: "#404040", // ⚫ Koyu Gri
-    textColor: "#ffffff",
-    badgeBg: "bg-[#404040]",
-    badgeText: "text-white",
+    hex: "#8CA8B8", // ⚫ Koyu Gri
+    textColor: "#07131F",
+    officialHex: "#404040",
+    badgeBg: "bg-ink-3",
+    badgeText: "text-canvas",
     order: 4,
   },
   teams_only: {
     key: "teams_only",
     label: "Takımlar belli fikstür yok",
-    hex: "#f79646", // 🟠 Turuncu
-    textColor: "#000000",
-    badgeBg: "bg-[#f79646]",
-    badgeText: "text-black",
+    hex: "#E8743B", // 🟠 Turuncu
+    textColor: "#1F0D00",
+    officialHex: "#f79646",
+    badgeBg: "bg-[#E8743B]",
+    badgeText: "text-[#1F0D00]",
     order: 5,
   },
   all_program_entered: {
     key: "all_program_entered",
     label: "Programdaki tüm maçlar girildi",
-    hex: "#1f497d", // 🔵 Koyu Lacivert
-    textColor: "#ffffff",
-    badgeBg: "bg-[#1f497d]",
-    badgeText: "text-white",
+    hex: "#5B9DFF", // 🔵 Koyu Lacivert
+    textColor: "#06142B",
+    officialHex: "#1f497d",
+    badgeBg: "bg-selected",
+    badgeText: "text-[#06142B]",
     order: 6,
   },
   finished: {
     key: "finished",
     label: "Lig Bitti",
-    hex: "#7030a0", // 🟣 Mor
-    textColor: "#ffffff",
-    badgeBg: "bg-[#7030a0]",
-    badgeText: "text-white",
+    hex: "#B79BFF", // 🟣 Mor
+    textColor: "#1B1033",
+    officialHex: "#7030a0",
+    badgeBg: "bg-[#B79BFF]",
+    badgeText: "text-[#1B1033]",
     order: 7,
   },
 };

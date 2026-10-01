@@ -245,12 +245,12 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                 onClick={() => setSelectedStatus(isSelected ? "all" : cfg.key)}
                 className={`flex items-center justify-between p-2.5 rounded-xl border text-left transition-all cursor-pointer ${
                   isSelected
-                    ? "shadow-md ring-2 ring-white/50"
-                    : "hover:brightness-110 opacity-90 hover:opacity-100"
+                    ? "shadow-md ring-2 ring-ink/70"
+                    : "hover:brightness-110"
                 }`}
                 style={{
                   backgroundColor: cfg.hex,
-                  borderColor: isSelected ? "#ffffff" : "rgba(0,0,0,0.25)",
+                  borderColor: isSelected ? "#EAF6FA" : "rgba(7,19,31,0.45)",
                   color: cfg.textColor,
                 }}
                 title={`${cfg.label} (${count} grup)`}
@@ -260,7 +260,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                     className="w-3.5 h-3.5 rounded-sm border shrink-0"
                     style={{
                       backgroundColor: cfg.hex,
-                      borderColor: cfg.textColor === "#ffffff" ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.4)",
+                      borderColor: cfg.textColor,
                     }}
                   />
                   <span className="text-xs font-bold truncate leading-tight">
@@ -270,7 +270,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                 <span
                   className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full shrink-0 ml-2"
                   style={{
-                    backgroundColor: cfg.textColor === "#ffffff" ? "rgba(0,0,0,0.35)" : "rgba(255,255,255,0.7)",
+                    backgroundColor: "rgba(255,255,255,0.45)",
                     color: cfg.textColor,
                   }}
                 >
@@ -404,7 +404,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                       {items.map((it, idx) => (
                         <span
                           key={idx}
-                          className="w-2.5 h-2.5 rounded-full shadow-xs"
+                          className="w-2.5 h-2.5 rounded-full shadow-xs ring-1 ring-canvas/60"
                           style={{ backgroundColor: it.statusHex }}
                           title={`${it.category} - ${it.group}: ${it.statusLabel}`}
                         />
@@ -513,7 +513,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                                     style={{
                                       backgroundColor: g.statusHex,
                                       color: g.statusTextColor,
-                                      borderColor: g.statusTextColor === "#ffffff" ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.2)",
+                                      borderColor: "rgba(7,19,31,0.35)",
                                     }}
                                   >
                                     {g.statusLabel}

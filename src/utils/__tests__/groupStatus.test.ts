@@ -15,51 +15,124 @@ describe("groupStatus", () => {
     expect(GROUP_STATUS_CONFIGS.all_dated_entered).toEqual(
       expect.objectContaining({
         label: "Tarihi belli tüm maçlar girildi",
-        hex: "#00b050",
+        hex: "#9BE15D",
+        officialHex: "#00b050",
       })
     );
 
     expect(GROUP_STATUS_CONFIGS.partial).toEqual(
       expect.objectContaining({
         label: "Kısmen girildi",
-        hex: "#ffff00",
+        hex: "#FFC24D",
+        officialHex: "#ffff00",
       })
     );
 
     expect(GROUP_STATUS_CONFIGS.not_entered).toEqual(
       expect.objectContaining({
         label: "Maçlar girilmedi",
-        hex: "#ff0000",
+        hex: "#FF6E82",
+        officialHex: "#ff0000",
       })
     );
 
     expect(GROUP_STATUS_CONFIGS.no_matches).toEqual(
       expect.objectContaining({
         label: "Maç Yok",
-        hex: "#404040",
+        hex: "#8CA8B8",
+        officialHex: "#404040",
       })
     );
 
     expect(GROUP_STATUS_CONFIGS.teams_only).toEqual(
       expect.objectContaining({
         label: "Takımlar belli fikstür yok",
-        hex: "#f79646",
+        hex: "#E8743B",
+        officialHex: "#f79646",
       })
     );
 
     expect(GROUP_STATUS_CONFIGS.all_program_entered).toEqual(
       expect.objectContaining({
         label: "Programdaki tüm maçlar girildi",
-        hex: "#1f497d",
+        hex: "#5B9DFF",
+        officialHex: "#1f497d",
       })
     );
 
     expect(GROUP_STATUS_CONFIGS.finished).toEqual(
       expect.objectContaining({
         label: "Lig Bitti",
-        hex: "#7030a0",
+        hex: "#B79BFF",
+        officialHex: "#7030a0",
       })
     );
+  });
+
+  describe("Fileönü tema kontrastı ve ayırt edilebilirlik", () => {
+    const lin = (c: number) => {
+      const v = c / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    };
+    const lum = (hex: string) => {
+      const n = parseInt(hex.slice(1), 16);
+      return 0.2126 * lin((n >> 16) & 255) + 0.7152 * lin((n >> 8) & 255) + 0.0722 * lin(n & 255);
+    };
+    const cr = (a: string, b: string) => {
+      const [hi, lo] = [lum(a), lum(b)].sort((x, y) => y - x);
+      return (hi + 0.05) / (lo + 0.05);
+    };
+    const SURFACE = "#0E2033";
+    const CANVAS = "#07131F";
+
+    it.each(GROUP_STATUS_LIST.map((c) => [c.key, c] as const))(
+      "%s: etiket metni rozet zeminine karşı WCAG AA (≥ 4.5)",
+      (_k, c) => {
+        expect(cr(c.textColor, c.hex)).toBeGreaterThanOrEqual(4.5);
+      }
+    );
+
+    it.each(GROUP_STATUS_LIST.map((c) => [c.key, c] as const))(
+      "%s: durum rengi (nokta/rozet) panel zeminine karşı ≥ 4.5 (metin dışı için ≥ 3 yeterli)",
+      (_k, c) => {
+        expect(cr(c.hex, SURFACE)).toBeGreaterThanOrEqual(4.5);
+        expect(cr(c.hex, CANVAS)).toBeGreaterThanOrEqual(4.5);
+      }
+    );
+
+    it("7 durum rengi birbirinden farklıdır ve ton ailesi resmî renkle aynı kalır (≤ 60° kayma)", () => {
+      const hexes = GROUP_STATUS_LIST.map((c) => c.hex.toLowerCase());
+      expect(new Set(hexes).size).toBe(7);
+      const hue = (hex: string) => {
+        const n = parseInt(hex.slice(1), 16);
+        const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map((x) => x / 255);
+        const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+        if (d === 0) return -1;
+        let h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+        h *= 60;
+        return h < 0 ? h + 360 : h;
+      };
+      const diff = (a: number, b: number) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
+      for (const c of GROUP_STATUS_LIST) {
+        if (c.key === "no_matches") continue; // nötr gri
+        expect(diff(hue(c.hex), hue(c.officialHex))).toBeLessThanOrEqual(60);
+      }
+    });
+
+    it("her çift arasında yeterli parlaklık VEYA ton farkı vardır (yalnız renge dayanmaz: etiket metni de gösterilir)", () => {
+      const list = GROUP_STATUS_LIST;
+      for (let i = 0; i < list.length; i++) {
+        for (let j = i + 1; j < list.length; j++) {
+          const a = list[i].hex, b = list[j].hex;
+          const lr = cr(a, b);
+          const dr = Math.abs(((parseInt(a.slice(1), 16) >> 16) & 255) - ((parseInt(b.slice(1), 16) >> 16) & 255));
+          const dg = Math.abs(((parseInt(a.slice(1), 16) >> 8) & 255) - ((parseInt(b.slice(1), 16) >> 8) & 255));
+          const db = Math.abs((parseInt(a.slice(1), 16) & 255) - (parseInt(b.slice(1), 16) & 255));
+          // Öklid RGB uzaklığı (kaba eşik)
+          expect(Math.sqrt(dr * dr + dg * dg + db * db) + lr * 10).toBeGreaterThan(60);
+        }
+      }
+    });
   });
 
   describe("evaluateGroupStatus", () => {
@@ -260,7 +333,7 @@ describe("groupStatus", () => {
       expect(list[0].city).toBe("İstanbul");
       expect(list[0].group).toBe("A Grubu");
       expect(list[0].statusKey).toBe("all_program_entered");
-      expect(list[0].statusHex).toBe("#1f497d");
+      expect(list[0].statusHex).toBe("#5B9DFF");
       expect(list[0].teamsCount).toBe(4);
       expect(list[0].tournamentUrl).toContain("women-stanbul-super-ligi-u18-2026-27-o50864");
     });
