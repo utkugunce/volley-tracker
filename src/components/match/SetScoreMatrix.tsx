@@ -74,7 +74,7 @@ export const SetScoreMatrix: React.FC<SetScoreMatrixProps> = ({ match, className
 
   return (
     <div className={`bg-surface-muted rounded-xl border border-line overflow-hidden ${className}`}>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Set skorları tablosu">
         <table className="w-full text-xs text-left border-collapse">
           <thead>
             <tr className="bg-panel text-ink-2 border-b border-line text-[10px] uppercase font-bold tracking-wider">

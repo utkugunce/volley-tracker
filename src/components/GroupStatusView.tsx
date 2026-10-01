@@ -420,7 +420,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
 
                 {/* Grup Tablosu */}
                 {!isCollapsed && (
-                  <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Grup durum tablosu">
+                  <div className="overflow-x-auto" tabIndex={0} role="region" aria-label={`${cityName} grup durum tablosu`}>
                     <table className="w-full text-left text-xs">
                       <thead className="bg-slate-950/60 text-slate-400 uppercase text-[10px] font-bold border-b border-slate-800/80">
                         <tr>
