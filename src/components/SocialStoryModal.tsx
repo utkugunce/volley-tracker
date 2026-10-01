@@ -149,7 +149,7 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
         ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
         ctx.stroke();
 
-        ctx.fillStyle = "#FFC24D";
+        ctx.fillStyle = "#2DD4C0";
         ctx.font = `700 48px ${FONT_NUM}`;
         ctx.fillText("VS", 540, 742);
       }
@@ -172,7 +172,7 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
       ctx.font = `bold 36px ${FONT_BODY}`;
       ctx.fillText(`🗓  ${match.date || "Tarih Açıklanacak"}`, 540, 1240);
 
-      ctx.fillStyle = "#FFC24D";
+      ctx.fillStyle = "#2DD4C0";
       ctx.font = `700 44px ${FONT_NUM}`;
       ctx.fillText(`⏰  ${match.time || "--:--"}`, 540, 1315);
 
