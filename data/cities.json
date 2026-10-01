@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-01T19:06:30.042299+00:00",
+  "updated_at": "2026-10-01T23:16:39.819877+00:00",
   "total_cities": 81,
   "active_cities": 23,
-  "total_matches": 708,
+  "total_matches": 710,
   "cities": [
     {
       "ilid": "1",
@@ -260,8 +260,8 @@
       "name": "Eskişehir",
       "slug": "eskisehir",
       "url": "https://eskisehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (37 Maç Mevcut)",
-      "matches_count": 37,
+      "status": "Aktif (39 Maç Mevcut)",
+      "matches_count": 39,
       "standings_count": 7,
       "data_file": "data/cities/eskisehir.json"
     },
@@ -480,7 +480,7 @@
       "name": "Muğla",
       "slug": "mugla",
       "url": "https://mugla.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Bağlantı Zaman Aşımı",
+      "status": "Fikstür Açıklanmadı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -580,7 +580,7 @@
       "name": "Sivas",
       "slug": "sivas",
       "url": "https://sivas.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Bağlantı Zaman Aşımı",
+      "status": "Fikstür Açıklanmadı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
