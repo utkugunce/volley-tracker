@@ -9326,14 +9326,14 @@
       "internal_category": "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği B Grubu",
       "city": "Çanakkale",
       "city_slug": "canakkale",
-      "matched_as": "3 AS Sigorta AS Canakkale Belediye Spor",
-      "volleybox_url": "https://women.volleybox.net/canakkale-belediyespor-t2058",
+      "matched_as": "Çanakkalespor U16",
+      "volleybox_url": "https://women.volleybox.net/tr/canakkalespor-u16-t44826",
       "age_category": "U16",
       "confidence": "verified",
       "note": "Auto-mapped from city roster",
       "verified_at": "2026-09-20",
-      "local_logo": null,
-      "logo_url": "/media/upload/teams/1763561383jyEH1.png",
+      "local_logo": "/logos/canakkalespor-u16-t44826.png",
+      "logo_url": "/logos/canakkalespor-u16-t44826.png",
       "aliases": [
         "Çanakkale Belediyespor",
         "Canakkale Belediyespor Kulübü"
@@ -13856,7 +13856,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "İstanbul",
       "city_slug": "i-stanbul",
-      "matched_as": "Arev Okulları Smaçspor",
+      "matched_as": "Smaç SK",
       "volleybox_url": "https://women.volleybox.net/tr/smac-sk-t21635",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -13864,7 +13864,8 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "Smaç SK",
-        "SMAÇ SPOR KULÜBÜ"
+        "SMAÇ SPOR KULÜBÜ",
+        "Arev Okulları Smaçspor"
       ],
       "logo_url": "/logos/smac-sk-t21635.png",
       "local_logo": "/logos/smac-sk-t21635.png"
@@ -15461,7 +15462,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Ankara",
       "city_slug": "ankara",
-      "matched_as": "Genia Turkey Kavak Spor Kulübü",
+      "matched_as": "Kavak Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -15469,7 +15470,8 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "KAVAK SPOR KULÜBÜ",
-        "Kavak Spor Kulübü"
+        "Kavak Spor Kulübü",
+        "Genia Turkey Kavak Spor Kulübü"
       ],
       "logo_url": "/logos/kavak-spor-kulubu-t20536.png",
       "local_logo": "/logos/kavak-spor-kulubu-t20536.png"
@@ -16013,7 +16015,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Samsun",
       "city_slug": "samsun",
-      "matched_as": "Kanarya 55 Spor Kulübü",
+      "matched_as": "Nova Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/kanarya-55-spor-kulubu-t45377",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -16021,7 +16023,8 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "NOVA SPOR KULÜBÜ",
-        "Nova Spor Kulübü"
+        "Nova Spor Kulübü",
+        "Kanarya 55 Spor Kulübü"
       ],
       "logo_url": "/logos/kanarya-55-spor-kulubu-t45377.png",
       "local_logo": "/logos/kanarya-55-spor-kulubu-t45377.png"
@@ -16258,7 +16261,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "K.Maraş",
       "city_slug": "k-maras",
-      "matched_as": "Ada Koleji Zeugma Spor",
+      "matched_as": "Zeugma Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-t7352",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -16267,7 +16270,8 @@
       "aliases": [
         "ZEUGMA GAZİANTEP SPOR KULÜBÜ",
         "Zeugma Spor Kulübü",
-        "Zeugma Gençlik Spor Kulübü"
+        "Zeugma Gençlik Spor Kulübü",
+        "Ada Koleji Zeugma Spor"
       ],
       "logo_url": "/logos/zeugma-spor-kulubu-t7352.png",
       "local_logo": "/logos/zeugma-spor-kulubu-t7352.png"
@@ -16541,7 +16545,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Muğla",
       "city_slug": "mugla",
-      "matched_as": "Uysallar Oto Fethiye Zirve Spor Kulübü",
+      "matched_as": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-t19942",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -16549,7 +16553,8 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "Fethiye Zirve Spor Kulübü",
-        "Fethiye Lokman Hekim Zirve Spor Kulübü"
+        "Fethiye Lokman Hekim Zirve Spor Kulübü",
+        "Uysallar Oto Fethiye Zirve Spor Kulübü"
       ],
       "logo_url": null,
       "local_logo": null
