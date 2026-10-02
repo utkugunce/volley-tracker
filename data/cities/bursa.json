@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T23:16:14.898906",
+  "updated_at": "2026-10-02T08:41:33.411866",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -399,6 +399,17 @@
       },
       {
         "rank": 2,
+        "team": "Nilüfer Belediye Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Bursa Ayyıldız Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -409,30 +420,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Hekimoğlu GCT Bursa Voleybol Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Mesut Kökel Spor Kulübü U16",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Nilüfer Belediye Spor Kulübü",
+        "team": "Hekimoğlu GCT Bursa Voleybol Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1165,11 +1165,15 @@
       "match_no": "2",
       "home_team": "Nilüfer Belediye Spor Kulübü",
       "away_team": "Mesut Kökel Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-12",
+        "25-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401046",
@@ -1411,5 +1415,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-02T02:22:23.603643"
+  "volleybox_sync_updated_at": "2026-10-02T08:43:26.956384"
 }

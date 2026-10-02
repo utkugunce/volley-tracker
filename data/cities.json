@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-02T02:21:00.662709+00:00",
+  "updated_at": "2026-10-02T08:42:02.131313+00:00",
   "total_cities": 81,
   "active_cities": 23,
-  "total_matches": 710,
+  "total_matches": 708,
   "cities": [
     {
       "ilid": "1",
@@ -260,8 +260,8 @@
       "name": "Eskişehir",
       "slug": "eskisehir",
       "url": "https://eskisehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (39 Maç Mevcut)",
-      "matches_count": 39,
+      "status": "Aktif (37 Maç Mevcut)",
+      "matches_count": 37,
       "standings_count": 7,
       "data_file": "data/cities/eskisehir.json"
     },
@@ -402,7 +402,7 @@
       "url": "https://kirsehir.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (36 Maç Mevcut)",
       "matches_count": 36,
-      "standings_count": 0,
+      "standings_count": 2,
       "data_file": "data/cities/kirsehir.json"
     },
     {
