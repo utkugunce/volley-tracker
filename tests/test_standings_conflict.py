@@ -11,7 +11,8 @@ from scripts.check_standings_conflicts import scan_for_standings_conflicts
 
 class TestStandingsConflictResolution(unittest.TestCase):
 
-    def test_duplicate_teams_with_different_stats_disambiguated(self):
+    @patch("scripts.scrape_all_provinces.RESOLVE_TEAM_NAME", return_value="Bizimkent Spor Kulübü U16")
+    def test_duplicate_teams_with_different_stats_disambiguated(self, mock_resolve):
         """Aynı grupta aynı çözümlenmiş isme sahip ancak farklı istatistikleri olan
         iki takım otomatik olarak ' - A' ve ' - B' sonekleriyle ayrıştırılmalı."""
         standings = {
