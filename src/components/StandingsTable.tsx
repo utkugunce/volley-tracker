@@ -101,13 +101,18 @@ function parseStandingKey(rawKey: string, defaultCity?: string): ParsedStandingC
 
   // 5. Temiz Grup Adı
   let displayGroup = groupPart;
-  const stripPrefixRegex = /^(?:(?:Genç|Yıldız)\s+Kızlar\s+(?:Süper\s+Lig[iıİI]?|1\.\s*Lig[iıİI]?)|(?:Süper\s+Lig|1\.\s*Lig)\s+(?:Genç|Yıldız)\s+Kız(?:lar)?)\s*[-–—:\s]*/i;
+  const stripPrefixRegex = /^(?:(?:Genç|Yıldız|Küçük|Midi|Mini)\s+(?:Kız(?:lar)?|Erkek(?:ler)?|Kadın(?:lar)?)?\s*(?:Süper\s+Lig[iıİI]?|1\.\s*Lig[iıİI]?)?|(?:Süper\s+Lig|1\.\s*Lig)\s*(?:Genç|Yıldız)?\s*(?:Kız(?:lar)?)?)\s*[-–—:\s]*(?=(?:[A-Z0-9]\.?\s*Gr(?:up|ubu)?|Grup\s+[A-Z0-9]|[A-Z]\s*(?:\(|$|\s*Gr)))/i;
   let cleaned = displayGroup.replace(stripPrefixRegex, "").trim();
+
+  // Parantez içi ve tire kenarı boşluklarını düzelt (örn: "( Merkez+Marmara)" -> "(Merkez+Marmara)")
+  cleaned = cleaned.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")").replace(/^[-–—\s]+/, "");
 
   if (/^[A-Z]$/i.test(cleaned)) {
     cleaned = `${cleaned.toUpperCase()} Grubu`;
-  } else if (/\b[A-Z]\s+Gr\b/i.test(cleaned)) {
+  } else if (/^[A-Z]\s+Gr$/i.test(cleaned) || /\b[A-Z]\s+Gr\b/i.test(cleaned)) {
     cleaned = cleaned.replace(/\b([A-Z])\s+Gr\b/i, "$1 Grubu");
+  } else if (/^Grup\s+([A-Z0-9]+)/i.test(cleaned)) {
+    cleaned = cleaned.replace(/^Grup\s+([A-Z0-9]+)/i, "$1 Grubu");
   } else if (/^\d+\.?(?:\s*Grup)?$/i.test(cleaned)) {
     const numMatch = cleaned.match(/^(\d+)/);
     if (numMatch) {
@@ -812,7 +817,9 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                 {activeContext?.city ? `${activeContext.city.toLocaleUpperCase("tr-TR")} • ` : ""}
                 {(activeContext?.leagueFullName || "").toLocaleUpperCase("tr-TR")}
               </LeagueVolleyboxLink>
-              {activeContext?.rawGroup ? ` • ${activeContext.rawGroup.toLocaleUpperCase("tr-TR")}` : ""} - PUAN DURUMU
+              {activeContext?.displayGroup && activeContext.displayGroup !== "Genel"
+                ? ` • ${activeContext.displayGroup.toLocaleUpperCase("tr-TR")}`
+                : ""}
             </h2>
           </div>
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
@@ -821,7 +828,7 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
                 onClick={() =>
                   downloadStandingsCsv(
                     items,
-                    `${activeContext?.city || city || ""}-${activeContext?.leagueFullName || ""}-${activeContext?.rawGroup || ""}`
+                    `${activeContext?.city || city || ""}-${activeContext?.leagueFullName || ""}-${activeContext?.displayGroup || activeContext?.rawGroup || ""}`
                   )
                 }
                 className="inline-flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs font-semibold px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-line bg-surface-raised text-ink-2 hover:text-ink transition-all shadow-xs active:scale-95 cursor-pointer"
@@ -855,10 +862,10 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
           <div className="overflow-x-auto">
             <table className="w-full table-fixed text-left border-collapse text-xs">
               <caption className="sr-only">
-                {activeContext?.city || ""} {activeContext?.leagueFullName || ""} {activeContext?.rawGroup || ""} Puan Durumu
+                {activeContext?.city || ""} {activeContext?.leagueFullName || ""} {activeContext?.displayGroup || ""} Puan Durumu
               </caption>
               <thead>
-                <tr className="bg-surface text-ink-2 font-bold uppercase text-[10px] sm:text-[11px] tracking-wider sticky top-[var(--app-header-h,0px)] z-20 shadow-[0_1px_0_var(--line)]">
+                <tr className="bg-surface text-ink-2 font-bold uppercase text-[10px] sm:text-[11px] tracking-wider border-b border-line">
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center w-12 sm:w-14">#</th>
                   <th className="py-2.5 sm:py-3 px-2 sm:px-4">Takım</th>
                   <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Oynanan Maç">O</th>
