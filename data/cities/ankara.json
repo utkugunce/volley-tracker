@@ -418,7 +418,7 @@
       },
       {
         "rank": 5,
-        "team": "TED Ankara Kolejliler - B U16",
+        "team": "TED Ankara Kolejliler U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2535,7 +2535,7 @@
       "gender": "Kız",
       "group": "3. Grup",
       "match_no": "4",
-      "home_team": "TED Ankara Kolejliler - B U16",
+      "home_team": "TED Ankara Kolejliler U16",
       "away_team": "Yedidağ Spor Kulübü",
       "score": "- : -",
       "home_score": null,
@@ -2543,18 +2543,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402152",
+        "url": "https://women.volleybox.net/tr/ted-ankara-kolejliler-u16-yedidag-spor-kulubu-u16-c402152",
+        "host_name": "TED Ankara Kolejliler U16",
+        "guest_name": "Yedidağ Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-06",
+        "vb_time": "18:00",
+        "vb_hall": "Ulubey Sporcu Fabrikası Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-06",
+          "vb_time": "18:00",
+          "vb_hall": "Ulubey Sporcu Fabrikası Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2570,25 +2577,32 @@
       "group": "3. Grup",
       "match_no": "5",
       "home_team": "TVF Spor Lisesi U16",
-      "away_team": "TED Ankara Kolejliler - B U16",
+      "away_team": "TED Ankara Kolejliler U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404235",
+        "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-u16-ted-ankara-kolejliler-u16-c404235",
+        "host_name": "TVF Spor Lisesi U16",
+        "guest_name": "TED Ankara Kolejliler U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-14",
+        "vb_time": "18:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-10-14",
+          "vb_time": "18:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-12 / VB: 2026-10-14) | Salon Değişti (TVF: Mamak S.S. / VB: Batıkent Spor Salonu)"
         }
       }
     },
@@ -3316,6 +3330,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 62,
-  "volleybox_sync_updated_at": "2026-10-02T16:25:36.038296"
+  "volleybox_synced_matches": 64,
+  "volleybox_sync_updated_at": "2026-10-02T16:42:42.062910"
 }

@@ -5385,7 +5385,7 @@
     {
       "internal_name": "Ted Ankara A",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "TED Ankara Kolejliler U16",
+      "matched_as": "TED Ankara Kolejliler - A U16",
       "volleybox_url": "https://women.volleybox.net/ted-ankara-kolejliler-u16-t41600",
       "age_category": "U16",
       "confidence": "verified",
@@ -5393,7 +5393,10 @@
       "verified_at": "2026-09-14",
       "aliases": [
         "Ted Ankara A",
-        "TED Ankara Kolejliler A"
+        "TED Ankara Kolejliler A",
+        "TED Ankara Kolejliler - A",
+        "TED Ankara Kolejliler - A U16",
+        "TED Ankara Kolejliler U16"
       ],
       "local_logo": "/logos/ted-ankara-kolejliler-u16-t41600.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_17635612867YtIQ.png"
