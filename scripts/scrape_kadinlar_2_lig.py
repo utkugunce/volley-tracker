@@ -23,6 +23,7 @@ if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 from scripts.data_quality import validate_kadinlar_2_lig_data, print_validation_summary
+from scripts.k2l_volleybox_names import load_k2_mappings
 
 import httpx
 from bs4 import BeautifulSoup
@@ -236,6 +237,8 @@ KNOWN_2_LIG_PROFILE_OVERRIDES = {
     "ptt": ("https://women.volleybox.net/tr/ptt-spor-ii-t9985", "PTT Spor II"),
     "ahmethamditanpinarortaokulu": ("https://women.volleybox.net/tr/ahmet-hamdi-tanpnar-ortaokulu-t20533", "AHTO Spor Kulübü"),
     "tekmetalsportif": ("https://women.volleybox.net/tr/als-voleybol-t19501", "Tek Metal Sportif SK"),
+    "buffgymparsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Volley"),
+    "lanuevakozmetikanadolumarmara": ("https://women.volleybox.net/tr/anadolu-marmara-sk-t36159", "Anadolu Marmara SK"),
     "parsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Volley"),
     "mardinderikrota": ("https://women.volleybox.net/tr/derik-rota-spor-kulubu-t45209", "Derik Rota Spor Kulübü"),
 }
@@ -414,19 +417,11 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
     
     # volleybox-mappings.json yükle (öncelikli ve güvenilir kaynak)
     k2_mappings = {}
-    if os.path.exists(VBM_FILE):
-        try:
-            with open(VBM_FILE, "r", encoding="utf-8") as vf:
-                vbm_data = json.load(vf)
-                for item in vbm_data.get("mappings", []):
-                    if item.get("internal_category") == "Kadınlar 2. Ligi":
-                        iname = item.get("internal_name", "").strip().lower()
-                        k2_mappings[iname] = item
-                        for alias in item.get("aliases", []):
-                            k2_mappings[alias.strip().lower()] = item
-            log(f"  📖 {len(k2_mappings)} kayıtlı Volleybox eşleşmesi yüklendi.")
-        except Exception as mex:
-            log(f"  ⚠️ Mappings yüklenemedi: {mex}")
+    try:
+        k2_mappings = load_k2_mappings(VBM_FILE)
+        log(f"  📖 {len(k2_mappings)} kayıtlı Volleybox eşleşmesi yüklendi.")
+    except Exception as mex:
+        log(f"  ⚠️ Mappings yüklenemedi: {mex}")
 
     all_teams_map = {}
     matched_count = 0

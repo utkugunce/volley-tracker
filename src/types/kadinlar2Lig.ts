@@ -71,6 +71,8 @@ export interface Kadinlar2LigMatch {
   mac_durumu_kod: string;
   takim_a_volleybox_url?: string | null;
   takim_b_volleybox_url?: string | null;
+  takim_a_volleybox_name?: string | null;
+  takim_b_volleybox_name?: string | null;
 }
 
 export interface Kadinlar2LigGroup {

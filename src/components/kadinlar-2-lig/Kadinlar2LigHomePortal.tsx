@@ -25,7 +25,13 @@ import { Match } from "@/types/fixture";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
-import { convertK2MatchToMatch } from "@/utils/kadinlar2LigConverter";
+import {
+  convertK2MatchToMatch,
+  getKadinlar2LigMatchTeamNames,
+  getKadinlar2LigTeamName,
+  isKadinlar2LigMatchFavorite,
+  kadinlar2LigMatchHasTeamQuery,
+} from "@/utils/kadinlar2LigConverter";
 import { Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
 
 interface Kadinlar2LigHomePortalProps {
@@ -119,14 +125,13 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
     else list = todayMatches.length > 0 ? todayMatches : upcomingMatches;
 
     if (showOnlyFavorites) {
-      list = list.filter((m) => isFavorite(m.takim_a) || isFavorite(m.takim_b));
+      list = list.filter((m) => isKadinlar2LigMatchFavorite(m, isFavorite));
     }
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       list = list.filter(
         (m) =>
-          m.takim_a.toLowerCase().includes(q) ||
-          m.takim_b.toLowerCase().includes(q) ||
+          kadinlar2LigMatchHasTeamQuery(m, q) ||
           m.sehir.toLowerCase().includes(q) ||
           m.salon.toLowerCase().includes(q)
       );
@@ -305,6 +310,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
               {activeFeedMatches.map((m) => {
                 const isFinished = m.durum === "BİTTİ";
+                const { home: homeName, away: awayName } = getKadinlar2LigMatchTeamNames(m);
                 return (
                   <div
                     key={m.id}
@@ -345,7 +351,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                               {m.takim_a_logo && !m.takim_a_logo.includes("takimlogoyok") ? (
                                 <Image
                                   src={m.takim_a_logo}
-                                  alt={m.takim_a}
+                                  alt={homeName}
                                   width={22}
                                   height={22}
                                   className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded bg-white/5 p-0.5"
@@ -356,7 +362,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                                 />
                               ) : (
                                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-300">
-                                  {m.takim_a.slice(0, 2)}
+                                  {homeName.slice(0, 2)}
                                 </div>
                               )}
                             </Link>
@@ -365,7 +371,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                               onClick={(e) => e.stopPropagation()}
                               className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-ink truncate block hover:underline"
                             >
-                              {m.takim_a}
+                              {homeName}
                             </Link>
                           </div>
                         </div>
@@ -391,7 +397,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                               onClick={(e) => e.stopPropagation()}
                               className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-ink truncate block hover:underline"
                             >
-                              {m.takim_b}
+                              {awayName}
                             </Link>
                             <Link
                               href={`/takim/${slugify(m.takim_b)}`}
@@ -401,7 +407,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                               {m.takim_b_logo && !m.takim_b_logo.includes("takimlogoyok") ? (
                                 <Image
                                   src={m.takim_b_logo}
-                                  alt={m.takim_b}
+                                  alt={awayName}
                                   width={22}
                                   height={22}
                                   className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded bg-white/5 p-0.5"
@@ -412,7 +418,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                                 />
                               ) : (
                                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] font-bold text-slate-300">
-                                  {m.takim_b.slice(0, 2)}
+                                  {awayName.slice(0, 2)}
                                 </div>
                               )}
                             </Link>
@@ -495,7 +501,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                           />
                         )}
                         <span className="text-slate-200 truncate font-semibold text-[11px]">
-                          {grp.leader.volleybox_name || grp.leader.takim_adi}
+                          {getKadinlar2LigTeamName(grp.leader.takim_adi, grp.leader.volleybox_name)}
                         </span>
                       </div>
                       <span className="font-mono font-bold text-white text-[11px] bg-slate-950 px-1.5 py-0.2 rounded border border-slate-800">
@@ -519,7 +525,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                           />
                         )}
                         <span className="text-slate-300 truncate text-[11px]">
-                          {grp.runnerUp.volleybox_name || grp.runnerUp.takim_adi}
+                          {getKadinlar2LigTeamName(grp.runnerUp.takim_adi, grp.runnerUp.volleybox_name)}
                         </span>
                       </div>
                       <span className="font-mono text-slate-400 text-[11px]">

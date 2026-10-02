@@ -1,5 +1,65 @@
 import { Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
+import { getVolleyboxTeamName } from "@/utils/volleybox";
+
+/** Altyapı eşleme dosyasındaki (volleybox-mappings.json) kategori adı. */
+export const K2_CATEGORY = "Kadınlar 2. Ligi";
+
+/**
+ * Kadınlar 2. Ligi takım adını Altyapı ile aynı mekanizmayla (volleybox-mappings.json →
+ * `getVolleyboxTeamName` → `matched_as`) Volleybox resmi adına çevirir.
+ *
+ * Öncelik: (1) scraper'ın JSON'a yazdığı `volleybox_name`, (2) eşleme dosyası (`matched_as`),
+ * (3) güvenli geri dönüş: TVF'deki mevcut ad (eşleşmeyen takım için hata verilmez).
+ */
+export function getKadinlar2LigTeamName(
+  takimAdi: string | null | undefined,
+  volleyboxName?: string | null
+): string {
+  const vbName = volleyboxName?.trim();
+  if (vbName) return vbName;
+  return getVolleyboxTeamName(takimAdi || "", K2_CATEGORY);
+}
+
+/**
+ * Favori / arama gibi karşılaştırmalarda kullanılacak ad varyantları (Volleybox adı + TVF adı).
+ * Favoriler Volleybox adıyla saklandığı için ikisi de denenir.
+ */
+export function getKadinlar2LigTeamNameVariants(
+  takimAdi: string | null | undefined,
+  volleyboxName?: string | null
+): string[] {
+  const raw = (takimAdi || "").trim();
+  const display = getKadinlar2LigTeamName(raw, volleyboxName);
+  return display && display !== raw ? [display, raw] : [raw];
+}
+
+/** Bir maçın iki takımı için görüntülenecek (Volleybox) adlar. */
+export function getKadinlar2LigMatchTeamNames(m: Kadinlar2LigMatch): { home: string; away: string } {
+  return {
+    home: getKadinlar2LigTeamName(m.takim_a, m.takim_a_volleybox_name),
+    away: getKadinlar2LigTeamName(m.takim_b, m.takim_b_volleybox_name),
+  };
+}
+
+/** Maçın iki takımından biri favoriyse true (Volleybox adı ve TVF adı birlikte denenir). */
+export function isKadinlar2LigMatchFavorite(
+  m: Kadinlar2LigMatch,
+  isFavorite: (teamName: string) => boolean
+): boolean {
+  return [
+    ...getKadinlar2LigTeamNameVariants(m.takim_a, m.takim_a_volleybox_name),
+    ...getKadinlar2LigTeamNameVariants(m.takim_b, m.takim_b_volleybox_name),
+  ].some((name) => isFavorite(name));
+}
+
+/** Takım adı araması: hem Volleybox adı hem TVF adı üzerinden eşleşir. `query` küçük harfli olmalı. */
+export function kadinlar2LigMatchHasTeamQuery(m: Kadinlar2LigMatch, query: string): boolean {
+  return [
+    ...getKadinlar2LigTeamNameVariants(m.takim_a, m.takim_a_volleybox_name),
+    ...getKadinlar2LigTeamNameVariants(m.takim_b, m.takim_b_volleybox_name),
+  ].some((name) => name.toLowerCase().includes(query));
+}
 
 export function normalizeK2Date(date: string | undefined): string {
   if (!date) return "TBD";
@@ -28,6 +88,8 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     }
   }
 
+  const { home: homeName, away: awayName } = getKadinlar2LigMatchTeamNames(m);
+
   const isFinished =
     m.durum === "BİTTİ" || (homeScore !== null && awayScore !== null);
 
@@ -35,8 +97,8 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
   const rawAny = m as any;
   const volleyboxData = rawAny.volleybox || {
     match_url: rawAny.volleybox_url || null,
-    home_team_name: rawAny.takim_a_volleybox_name || m.takim_a,
-    away_team_name: rawAny.takim_b_volleybox_name || m.takim_b,
+    home_team_name: homeName,
+    away_team_name: awayName,
     home_team_url: m.takim_a_volleybox_url || null,
     away_team_url: m.takim_b_volleybox_url || null,
     score: m.skor || null,
@@ -59,8 +121,8 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     date: isoDate,
     time: m.saat || "",
     hall: m.salon || "",
-    home_team: rawAny.takim_a_volleybox_name || m.takim_a,
-    away_team: rawAny.takim_b_volleybox_name || m.takim_b,
+    home_team: homeName,
+    away_team: awayName,
     category: "Kadınlar 2. Ligi",
     age_group: "Genç",
     gender: "Kız",

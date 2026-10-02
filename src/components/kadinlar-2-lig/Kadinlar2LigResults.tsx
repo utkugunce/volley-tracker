@@ -6,7 +6,7 @@ import { Kadinlar2LigMatch, Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
-import { convertK2MatchToMatch } from "@/utils/kadinlar2LigConverter";
+import { convertK2MatchToMatch, getKadinlar2LigMatchTeamNames, isKadinlar2LigMatchFavorite, kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
 import { useFavorites } from "@/utils/useFavorites";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 
@@ -92,15 +92,12 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
       if (selectedResultDate !== "all" && match.date !== selectedResultDate) return false;
 
       if (showOnlyFavorites) {
-        const homeFav = isFavorite(m.takim_a);
-        const awayFav = isFavorite(m.takim_b);
-        if (!homeFav && !awayFav) return false;
+        if (!isKadinlar2LigMatchFavorite(m, isFavorite)) return false;
       }
 
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
-        const inTeams =
-          m.takim_a.toLowerCase().includes(q) || m.takim_b.toLowerCase().includes(q);
+        const inTeams = kadinlar2LigMatchHasTeamQuery(m, q);
         const inCity = m.sehir?.toLowerCase().includes(q);
         const inHall = m.salon?.toLowerCase().includes(q);
         if (!inTeams && !inCity && !inHall) return false;
@@ -131,14 +128,14 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
   // Favori maç ID'leri
   const favoriteMatchIds = useMemo(() => {
     return finishedMatches
-      .filter((m) => isFavorite(m.takim_a) || isFavorite(m.takim_b))
+      .filter((m) => isKadinlar2LigMatchFavorite(m, isFavorite))
       .map((m) => m.id);
   }, [finishedMatches, isFavorite]);
 
   const handleToggleFavorite = (matchId: string) => {
     const found = finishedMatches.find((m) => m.id === matchId);
     if (found) {
-      toggleFavorite(found.takim_a);
+      toggleFavorite(getKadinlar2LigMatchTeamNames(found).home);
     }
   };
 

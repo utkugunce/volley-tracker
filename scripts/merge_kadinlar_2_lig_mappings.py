@@ -124,7 +124,23 @@ def merge_kadinlar_2_lig_mappings(silent: bool = False):
         clean_logo = logo if logo and "takimlogoyok" not in logo else None
 
         pair = (name.lower(), "kadınlar 2. ligi".lower())
-        if pair in existing_keys:
+        # TVF adı sponsor nedeniyle değiştiyse (ör. "BUFF GYM PARS AKADEMİ") aynı Volleybox profiline
+        # ait mevcut kaydın alias'ı olabilir; tekrar kayıt açmak yerine o kayıt güncellenir.
+        alias_target = None
+        if pair not in existing_keys:
+            for m in mappings:
+                if m.get("internal_category") != "Kadınlar 2. Ligi" or m.get("volleybox_url") != vb_url:
+                    continue
+                if name.lower() in {str(a).strip().lower() for a in (m.get("aliases") or [])}:
+                    alias_target = m
+                    break
+        if alias_target is not None:
+            alias_target["matched_as"] = vb_name or alias_target.get("matched_as") or name
+            if clean_logo:
+                alias_target["logo_url"] = clean_logo
+                alias_target["local_logo"] = clean_logo
+            updated_count += 1
+        elif pair in existing_keys:
             # Var olan kaydı güncelle
             for m in mappings:
                 if (m.get("internal_name", "").lower(), m.get("internal_category", "").lower()) == pair:

@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { Kadinlar2LigData, Kadinlar2LigTeam, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
+import { getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
 import { FormBadge, FormMatchItem } from "@/components/FormBadge";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { triggerHaptic } from "@/utils/haptics";
@@ -40,6 +41,19 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
 }) => {
   const allTeams = useMemo(() => data.tum_takimlar || [], [data.tum_takimlar]);
   const allMatches = useMemo(() => data.tum_maclar || [], [data.tum_maclar]);
+
+  // TVF adı → Volleybox adı (Altyapı ile aynı eşleme; eşleşmeyen takımda TVF adı kalır)
+  const displayNames = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const t of data.tum_takimlar || []) {
+      map.set(t.takim_adi, getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name));
+    }
+    return map;
+  }, [data.tum_takimlar]);
+  const nameOf = useCallback(
+    (tvfName: string) => displayNames.get(tvfName) ?? getKadinlar2LigTeamName(tvfName),
+    [displayNames]
+  );
 
   // Varsayılan takım slug'ları
   const defaultSlug1 = initialSlug1 || (allTeams[0] ? slugify(allTeams[0].takim_adi) : "");
@@ -102,14 +116,14 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
   const filteredTeams1 = useMemo(() => {
     if (!search1.trim()) return allTeams;
     const q = trLower(search1).trim();
-    return allTeams.filter((t) => trIncludes(t.takim_adi, q) || trIncludes(t.sehir || "", q));
-  }, [allTeams, search1]);
+    return allTeams.filter((t) => trIncludes(t.takim_adi, q) || trIncludes(nameOf(t.takim_adi), q) || trIncludes(t.sehir || "", q));
+  }, [allTeams, search1, nameOf]);
 
   const filteredTeams2 = useMemo(() => {
     if (!search2.trim()) return allTeams;
     const q = trLower(search2).trim();
-    return allTeams.filter((t) => trIncludes(t.takim_adi, q) || trIncludes(t.sehir || "", q));
-  }, [allTeams, search2]);
+    return allTeams.filter((t) => trIncludes(t.takim_adi, q) || trIncludes(nameOf(t.takim_adi), q) || trIncludes(t.sehir || "", q));
+  }, [allTeams, search2, nameOf]);
 
   // Takım maçları
   const getTeamMatches = useCallback((teamName?: string) => {
@@ -312,7 +326,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             >
               {filteredTeams1.map((t) => (
                 <option key={t.takim_id} value={slugify(t.takim_adi)}>
-                  {t.takim_adi} ({t.grup_adi || `Grup ${t.grup_no}`}{t.sehir ? ` • ${t.sehir}` : ""})
+                  {nameOf(t.takim_adi)} ({t.grup_adi || `Grup ${t.grup_no}`}{t.sehir ? ` • ${t.sehir}` : ""})
                 </option>
               ))}
             </select>
@@ -354,7 +368,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             >
               {filteredTeams2.map((t) => (
                 <option key={t.takim_id} value={slugify(t.takim_adi)}>
-                  {t.takim_adi} ({t.grup_adi || `Grup ${t.grup_no}`}{t.sehir ? ` • ${t.sehir}` : ""})
+                  {nameOf(t.takim_adi)} ({t.grup_adi || `Grup ${t.grup_no}`}{t.sehir ? ` • ${t.sehir}` : ""})
                 </option>
               ))}
             </select>
@@ -370,7 +384,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 {team1.logo && !team1.logo.includes("takimlogoyok") ? (
                   <Image
                     src={team1.logo}
-                    alt={team1.takim_adi}
+                    alt={nameOf(team1.takim_adi)}
                     width={40}
                     height={40}
                     className="w-10 h-10 object-contain rounded-xl bg-white/5 p-1 shrink-0"
@@ -378,7 +392,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                   />
                 ) : (
                   <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/50 text-ink-2 font-extrabold flex items-center justify-center text-sm shrink-0">
-                    {team1.takim_adi.slice(0, 2)}
+                    {nameOf(team1.takim_adi).slice(0, 2)}
                   </div>
                 )}
                 <div className="min-w-0">
@@ -386,7 +400,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                     href={`/takim/${slugify(team1.takim_adi)}`}
                     className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >
-                    {team1.takim_adi}
+                    {nameOf(team1.takim_adi)}
                   </Link>
                   <div className="text-[11px] text-slate-400 flex items-center gap-2">
                     <span>{team1.grup_adi || `Grup ${team1.grup_no}`}</span>
@@ -406,7 +420,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 {team2.logo && !team2.logo.includes("takimlogoyok") ? (
                   <Image
                     src={team2.logo}
-                    alt={team2.takim_adi}
+                    alt={nameOf(team2.takim_adi)}
                     width={40}
                     height={40}
                     className="w-10 h-10 object-contain rounded-xl bg-white/5 p-1 shrink-0"
@@ -414,7 +428,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                   />
                 ) : (
                   <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-700/50 text-cyan-300 font-extrabold flex items-center justify-center text-sm shrink-0">
-                    {team2.takim_adi.slice(0, 2)}
+                    {nameOf(team2.takim_adi).slice(0, 2)}
                   </div>
                 )}
                 <div className="min-w-0">
@@ -422,7 +436,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                     href={`/takim/${slugify(team2.takim_adi)}`}
                     className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >
-                    {team2.takim_adi}
+                    {nameOf(team2.takim_adi)}
                   </Link>
                   <div className="text-[11px] text-slate-400 flex items-center gap-2">
                     <span>{team2.grup_adi || `Grup ${team2.grup_no}`}</span>
@@ -542,9 +556,9 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
           </div>
           {team1 && team2 && (
             <div className="flex items-center gap-2 text-xs font-mono font-bold">
-              <span className="text-ink-2">{team1.takim_adi}: {h2hWins1}</span>
+              <span className="text-ink-2">{nameOf(team1.takim_adi)}: {h2hWins1}</span>
               <span className="text-slate-600">-</span>
-              <span className="text-cyan-400">{team2.takim_adi}: {h2hWins2}</span>
+              <span className="text-cyan-400">{nameOf(team2.takim_adi)}: {h2hWins2}</span>
             </div>
           )}
         </div>
@@ -577,13 +591,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
 
                   <div className="flex items-center gap-3 font-semibold text-slate-200">
                     <span className={m.takim_a === team1?.takim_adi ? "text-ink-2 font-bold" : ""}>
-                      {m.takim_a}
+                      {nameOf(m.takim_a)}
                     </span>
                     <span className="font-mono font-black text-sm px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-white">
                       {isFinished && m.skor ? m.skor : "vs"}
                     </span>
                     <span className={m.takim_b === team2?.takim_adi ? "text-cyan-300 font-bold" : ""}>
-                      {m.takim_b}
+                      {nameOf(m.takim_b)}
                     </span>
                   </div>
 
