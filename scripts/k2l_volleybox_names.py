@@ -72,9 +72,11 @@ def enrich_k2_data(
     data: Dict[str, Any],
     k2_mappings: Dict[str, Dict[str, Any]],
     logos_dir: str = LOGOS_DIR,
+    sync_names: bool = False,
 ) -> Dict[str, Any]:
     """
     Volleybox adı/bağlantısı eksik takımları eşleme dosyasından tamamlar ve maçlara yayar.
+    sync_names=True olduğunda mevcut volleybox_name değerlerini de matched_as ile günceller.
     Dönüş: {"total", "matched", "newly_matched": [...], "unmatched": [...]} (takım adları).
     """
     teams: List[Dict[str, Any]] = list(data.get("tum_takimlar") or [])
@@ -85,10 +87,16 @@ def enrich_k2_data(
     newly: List[str] = []
     for t in teams:
         name = t.get("takim_adi", "")
+        item = k2_mappings.get(_key(name))
         if t.get("volleybox_url") and t.get("volleybox_name"):
+            if sync_names and item and item.get("matched_as"):
+                new_vb = item["matched_as"]
+                if t.get("volleybox_name") != new_vb:
+                    t["volleybox_name"] = new_vb
+                    if name not in newly:
+                        newly.append(name)
             resolved.setdefault(name, t)
             continue
-        item = k2_mappings.get(_key(name))
         if not item or not item.get("volleybox_url"):
             continue
         t["volleybox_url"] = item["volleybox_url"]
@@ -110,7 +118,9 @@ def enrich_k2_data(
                 continue
             if not m.get(f"takim_{side}_volleybox_url") and t.get("volleybox_url"):
                 m[f"takim_{side}_volleybox_url"] = t["volleybox_url"]
-            if not m.get(f"takim_{side}_volleybox_name") and t.get("volleybox_name"):
+            if sync_names and t.get("volleybox_name"):
+                m[f"takim_{side}_volleybox_name"] = t["volleybox_name"]
+            elif not m.get(f"takim_{side}_volleybox_name") and t.get("volleybox_name"):
                 m[f"takim_{side}_volleybox_name"] = t["volleybox_name"]
             if _has_real_logo(t.get("logo")) and not _has_real_logo(m.get(f"takim_{side}_logo")):
                 m[f"takim_{side}_logo"] = t["logo"]
@@ -128,11 +138,12 @@ def main(argv: Optional[List[str]] = None) -> int:
         sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="Kadınlar 2. Ligi Volleybox takım adı eşleme raporu")
     parser.add_argument("--write", action="store_true", help="Değişiklikleri data/kadinlar_2_lig.json'a yaz")
+    parser.add_argument("--sync-names", action="store_true", help="Mevcut Volleybox adlarını eşleme dosyasındaki matched_as ile güncelle")
     args = parser.parse_args(argv)
 
     with open(K2_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
-    report = enrich_k2_data(data, load_k2_mappings())
+    report = enrich_k2_data(data, load_k2_mappings(), sync_names=args.sync_names)
 
     print(f"Toplam takım: {report['total']} | Volleybox adı eşleşen: {report['matched']} | Eşleşmeyen: {len(report['unmatched'])}")
     for n in report["newly_matched"]:

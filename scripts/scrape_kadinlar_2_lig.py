@@ -237,9 +237,9 @@ KNOWN_2_LIG_PROFILE_OVERRIDES = {
     "ptt": ("https://women.volleybox.net/tr/ptt-spor-ii-t9985", "PTT Spor II"),
     "ahmethamditanpinarortaokulu": ("https://women.volleybox.net/tr/ahmet-hamdi-tanpnar-ortaokulu-t20533", "AHTO Spor Kulübü"),
     "tekmetalsportif": ("https://women.volleybox.net/tr/als-voleybol-t19501", "Tek Metal Sportif SK"),
-    "buffgymparsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Volley"),
+    "buffgymparsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Akademi Spor Kulübü"),
     "lanuevakozmetikanadolumarmara": ("https://women.volleybox.net/tr/anadolu-marmara-sk-t36159", "Anadolu Marmara SK"),
-    "parsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Volley"),
+    "parsakademi": ("https://women.volleybox.net/tr/pars-akademi-spor-t36227", "Sivas Pars Akademi Spor Kulübü"),
     "mardinderikrota": ("https://women.volleybox.net/tr/derik-rota-spor-kulubu-t45209", "Derik Rota Spor Kulübü"),
 }
 

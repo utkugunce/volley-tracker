@@ -53,7 +53,7 @@ describe("getKadinlar2LigTeamName (Altyapı ile aynı eşleme mekanizması)", ()
   });
 
   it("sponsor eklenerek yeniden adlandırılan TVF takımlarını alias ile çözer", () => {
-    expect(getKadinlar2LigTeamName("BUFF GYM PARS AKADEMİ")).toBe("Sivas Pars Volley");
+    expect(getKadinlar2LigTeamName("BUFF GYM PARS AKADEMİ")).toBe("Sivas Pars Akademi Spor Kulübü");
     expect(getKadinlar2LigTeamName("LANUEVA KOZMETİK ANADOLU MARMARA")).toBe("Anadolu Marmara SK");
   });
 

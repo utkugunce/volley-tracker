@@ -128,7 +128,7 @@ describe("teamData utility", () => {
     const pars = getTeamDetailsBySlug("buff-gym-pars-akademi");
     expect(pars).not.toBeNull();
     expect(pars?.categories).toContain("Kadınlar 2. Ligi");
-    expect(pars?.mapping?.matched_as).toBe("Sivas Pars Volley");
+    expect(pars?.mapping?.matched_as).toBe("Sivas Pars Akademi Spor Kulübü");
 
     const marmara = getTeamDetailsBySlug("lanueva-kozmetik-anadolu-marmara");
     expect(marmara).not.toBeNull();

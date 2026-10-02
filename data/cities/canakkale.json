@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T19:05:58.883552",
+  "updated_at": "2026-10-02T11:50:48.132173",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -56,7 +56,7 @@
       },
       {
         "rank": 3,
-        "team": "ÇOMÜ Spor Kulübü U16",
+        "team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -185,7 +185,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "ÇOMÜ Spor Kulübü - B U16",
+        "team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü - B U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -299,6 +299,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği C Grubu": [
       {
         "rank": 1,
+        "team": "Nehir Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Parion Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -309,7 +320,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Biga Çiçeklidedespor U16",
         "played": 1,
         "won": 0,
@@ -320,25 +331,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "ÇOMÜ Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Nehir Spor Kulübü U16",
-        "played": 0,
+        "team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -449,7 +449,7 @@
       "group": "Yıldız Kız İl Birinciliği A Grubu",
       "match_no": "2",
       "home_team": "As Spor Kulübü U16",
-      "away_team": "ÇOMÜ Spor Kulübü - B U16",
+      "away_team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü - B U16",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -534,7 +534,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği A Grubu",
       "match_no": "4",
-      "home_team": "ÇOMÜ Spor Kulübü - B U16",
+      "home_team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü - B U16",
       "away_team": "Kepez Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -576,7 +576,7 @@
       "group": "Yıldız Kız İl Birinciliği A Grubu",
       "match_no": "5",
       "home_team": "Çanakkale Barbarosspor U16",
-      "away_team": "ÇOMÜ Spor Kulübü - B U16",
+      "away_team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü - B U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -909,12 +909,17 @@
       "group": "Yıldız Kız İl Birinciliği C Grubu",
       "match_no": "2",
       "home_team": "Nehir Spor Kulübü U16",
-      "away_team": "ÇOMÜ Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "away_team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü U16",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-27",
+        "25-16",
+        "25-8",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401056",
@@ -950,7 +955,7 @@
       "group": "Yıldız Kız İl Birinciliği C Grubu",
       "match_no": "3",
       "home_team": "Parion Spor Kulübü U16",
-      "away_team": "ÇOMÜ Spor Kulübü U16",
+      "away_team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -990,7 +995,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği C Grubu",
       "match_no": "4",
-      "home_team": "ÇOMÜ Spor Kulübü U16",
+      "home_team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü U16",
       "away_team": "Nehir Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -1032,7 +1037,7 @@
       "group": "Yıldız Kız İl Birinciliği C Grubu",
       "match_no": "5",
       "home_team": "Biga Çiçeklidedespor U16",
-      "away_team": "ÇOMÜ Spor Kulübü U16",
+      "away_team": "Çanakkale Onsekiz Mart Üniversitesi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1236,5 +1241,5 @@
     }
   ],
   "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-10-02T02:22:23.558825"
+  "volleybox_sync_updated_at": "2026-10-02T11:55:01.027958"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T19:06:07.360656",
+  "updated_at": "2026-10-02T11:50:50.509744",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -41,7 +41,7 @@
       },
       {
         "rank": 2,
-        "team": "MEV Toros Spor Kulübü U18",
+        "team": "VOLGEM Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -947,7 +947,7 @@
       "group": "A Grubu",
       "match_no": "3",
       "home_team": "Tarsus Gelecek Spor Kulübü U18",
-      "away_team": "MEV Toros Spor Kulübü U18",
+      "away_team": "VOLGEM Spor Kulübü U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -963,8 +963,8 @@
         "url": "https://women.volleybox.net/tr/tarsus-gelecek-spor-kulubu-u18-volgem-spor-kulubu-u18-c399639",
         "host_name": "Tarsus Gelecek Spor Kulübü U18",
         "guest_name": "MEV Toros Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-29",
         "vb_time": "17:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
@@ -1008,8 +1008,8 @@
         "url": "https://women.volleybox.net/tr/toroslar-belediye-spor-kulubu-u18-mersin-htisas-spor-kulubu-u18-c399641",
         "host_name": "Toroslar Belediye Spor Kulübü U18",
         "guest_name": "Mersin İhtisas Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-01",
         "vb_time": "19:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
@@ -1070,7 +1070,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "6",
-      "home_team": "MEV Toros Spor Kulübü U18",
+      "home_team": "VOLGEM Spor Kulübü U18",
       "away_team": "Toroslar Belediye Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -1299,5 +1299,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-02T02:22:23.613739"
+  "volleybox_sync_updated_at": "2026-10-02T11:55:03.440386"
 }

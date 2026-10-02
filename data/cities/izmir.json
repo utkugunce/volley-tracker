@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T02:20:39.459938",
+  "updated_at": "2026-10-02T11:50:52.583816",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1836,48 +1836,7 @@
       }
     },
     {
-      "id": "izmir-20261005-023",
-      "city": "İzmir",
-      "date": "2026-10-05",
-      "time": "--:--",
-      "hall": "Gaziemir",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kız - C Gr",
-      "match_no": "7",
-      "home_team": "Göksu Atletik Spor Kulübü U16",
-      "away_team": "Özay Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "402740",
-        "url": "https://women.volleybox.net/tr/goksu-atletik-spor-kulubu-u18-ozay-voleybol-spor-kulubu-u18-c402740",
-        "host_name": "Göksu Atletik Spor Kulübü U18",
-        "guest_name": "Özay Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-05",
-        "vb_time": null,
-        "vb_hall": "Gaziemir Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-05",
-          "vb_time": null,
-          "vb_hall": "Gaziemir Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "izmir-20261006-024",
+      "id": "izmir-20261006-023",
       "city": "İzmir",
       "date": "2026-10-06",
       "time": "--:--",
@@ -1886,7 +1845,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kız - C Gr",
-      "match_no": "8",
+      "match_no": "7",
       "home_team": "Monza Spor Kulübü - B U18",
       "away_team": "Venüs Spor Kulübü U18",
       "score": "- : -",
@@ -1914,6 +1873,47 @@
           "vb_time": null,
           "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
           "details": null
+        }
+      }
+    },
+    {
+      "id": "izmir-20261012-024",
+      "city": "İzmir",
+      "date": "2026-10-12",
+      "time": "--:--",
+      "hall": "Halkapınar Küçük",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kız - C Gr",
+      "match_no": "8",
+      "home_team": "Göksu Atletik Spor Kulübü U16",
+      "away_team": "Özay Voleybol Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402740",
+        "url": "https://women.volleybox.net/tr/goksu-atletik-spor-kulubu-u18-ozay-voleybol-spor-kulubu-u18-c402740",
+        "host_name": "Göksu Atletik Spor Kulübü U18",
+        "guest_name": "Özay Voleybol Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-05",
+        "vb_time": null,
+        "vb_hall": "Gaziemir Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-10-05",
+          "vb_time": null,
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-12 / VB: 2026-10-05) | Salon Değişti (TVF: Halkapınar Küçük / VB: Gaziemir Spor Salonu)"
         }
       }
     },
@@ -5444,5 +5444,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-02T02:22:23.592185"
+  "volleybox_sync_updated_at": "2026-10-02T11:55:03.001027"
 }

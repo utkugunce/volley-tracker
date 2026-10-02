@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T19:05:54.690451",
+  "updated_at": "2026-10-02T11:50:46.219315",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -63,7 +63,7 @@
       },
       {
         "rank": 4,
-        "team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
+        "team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -233,7 +233,7 @@
       "gender": "Kız",
       "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
       "match_no": "4",
-      "home_team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
+      "home_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
       "away_team": "Aydın Büyükşehir Belediyespor U18",
       "score": "1 - 3",
       "home_score": 1,
@@ -272,7 +272,7 @@
       "id": "aydin-20261005-005",
       "city": "Aydın",
       "date": "2026-10-05",
-      "time": "20:30",
+      "time": "19:00",
       "hall": "Söke S.S.",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
@@ -280,7 +280,7 @@
       "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
       "match_no": "5",
       "home_team": "Söke Voleybol Spor Kulübü U18",
-      "away_team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
+      "away_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -298,21 +298,21 @@
         "vb_time": "20:30",
         "vb_hall": "Söke TAYEM Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-05",
           "vb_time": "20:30",
           "vb_hall": "Söke TAYEM Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:00 / VB: 20:30)"
         }
       }
     },
     {
-      "id": "aydin-20261009-006",
+      "id": "aydin-20261008-006",
       "city": "Aydın",
-      "date": "2026-10-09",
+      "date": "2026-10-08",
       "time": "19:00",
       "hall": "Sks",
       "category": "Genç Kızlar 1. Ligi",
@@ -339,18 +339,18 @@
         "vb_time": "19:00",
         "vb_hall": "SKS Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-09",
           "vb_time": "19:00",
           "vb_hall": "SKS Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-08 / VB: 2026-10-09)"
         }
       }
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-02T02:22:23.598203"
+  "volleybox_sync_updated_at": "2026-10-02T11:55:00.769502"
 }
