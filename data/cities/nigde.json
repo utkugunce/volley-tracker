@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T19:06:11.304723",
+  "updated_at": "2026-10-02T15:07:48.990725",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
@@ -27,7 +27,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
+    "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
         "team": "Bor Belediyespor U18",
@@ -73,7 +73,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "1",
       "home_team": "Niğde Sev Voleybol Kulübü U18",
       "away_team": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
@@ -114,7 +114,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "1",
       "home_team": "Nahita Spor Kulübü U16",
       "away_team": "Niğde Sev Voleybol Kulübü U18",
@@ -155,7 +155,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "2",
       "home_team": "Niğde Volley Akademi Spor Kulübü U16",
       "away_team": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
@@ -196,7 +196,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "3",
       "home_team": "ODTÜ GV Niğde Okulları Spor Kulübü U18",
       "away_team": "Niğde Gençlik Spor Kulübü - A U16",
@@ -235,5 +235,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-02T17:20:12.138039"
+  "volleybox_sync_updated_at": "2026-10-02T15:09:38.771182"
 }
