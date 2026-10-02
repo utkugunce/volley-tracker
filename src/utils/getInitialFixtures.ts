@@ -67,11 +67,21 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
           const parsed = JSON.parse(content);
           const cityName = parsed.city || file.replace(".json", "");
           if (isCityHidden(cityName)) continue;
+
+          // 2026-2027 sezonu öncesine ait (eski sezon) verileri filtrele
+          const hasCurrentMatches =
+            Array.isArray(parsed.matches) &&
+            parsed.matches.some((m: any) => m.date && m.date >= "2026-08-01");
+          if (Array.isArray(parsed.matches) && parsed.matches.length > 0 && !hasCurrentMatches) {
+            continue;
+          }
+
           if (parsed.updated_at && parsed.updated_at > latestUpdated) {
             latestUpdated = parsed.updated_at;
           }
           if (Array.isArray(parsed.matches)) {
             for (const m of parsed.matches) {
+              if (m.date && m.date < "2026-08-01") continue;
               allMatches.push({
                 ...m,
                 city: m.city || cityName,

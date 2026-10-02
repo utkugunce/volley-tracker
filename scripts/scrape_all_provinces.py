@@ -77,6 +77,9 @@ EXCLUDED_SLUGS = {
     "denizli",  # Sezon başı fikstür henüz hazır değil
 }
 
+# 2026-2027 sezonu başlangıç eşiği (öncesine ait maçlar eski sezon kabul edilir)
+CURRENT_SEASON_CUTOFF = "2026-08-01"
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "*/*",
@@ -460,6 +463,23 @@ def scrape_single_city(city_info):
                     cached_data = json.load(f)
                 cached_matches = cached_data.get("matches", [])
                 cached_standings = cached_data.get("standings", {})
+                # Eski sezona ait verileri fallback olarak yukleme, dosyayi temizle
+                has_current = any((m.get("date") or "") >= CURRENT_SEASON_CUTOFF for m in cached_matches) if cached_matches else False
+                if cached_matches and not has_current:
+                    try:
+                        city_file.unlink(missing_ok=True)
+                    except Exception:
+                        pass
+                    return {
+                        "ilid": ilid,
+                        "name": name,
+                        "slug": subdomain,
+                        "url": puan_url,
+                        "status": "Fikstür Açıklanmadı",
+                        "matches_count": 0,
+                        "standings_count": 0,
+                        "data_file": None
+                    }
                 m_count = len(cached_matches)
                 s_count = len(cached_standings)
                 if m_count > 0 or s_count > 0:
@@ -739,7 +759,16 @@ def scrape_single_city(city_info):
                     cached_data = json.load(f)
                 cached_matches = cached_data.get("matches", [])
                 cached_standings = cached_data.get("standings", {})
-                if cached_matches or cached_standings:
+                # Eski sezon verilerini koruma, temizle
+                has_current = any((m.get("date") or "") >= CURRENT_SEASON_CUTOFF for m in cached_matches) if cached_matches else False
+                if cached_matches and not has_current:
+                    try:
+                        city_file.unlink(missing_ok=True)
+                    except Exception:
+                        pass
+                    cached_matches = []
+                    cached_standings = {}
+                elif cached_matches or cached_standings:
                     city_matches = cached_matches
                     city_standings = cached_standings
                     data_file_rel = f"data/cities/{subdomain}.json"

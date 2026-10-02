@@ -37,4 +37,20 @@ describe("getInitialFixtures Utility", () => {
     expect(homeData.matches.length).toBeLessThan(getInitialFixtures().matches.length);
     expect(homeData.total_matches).toBeGreaterThan(0);
   });
+
+  it("does not include pre-2026/27 past-season matches or unannounced cities (e.g. Adana)", () => {
+    const data = getInitialFixtures();
+    // Tüm maçlar 2026-2027 sezonuna ait olmalı (>= 2026-08-01)
+    const pastSeasonMatches = data.matches.filter((m) => m.date && m.date < "2026-08-01");
+    expect(pastSeasonMatches).toHaveLength(0);
+
+    // Fikstürü henüz açıklanmamış Adana ili maçları bulunmamalı
+    const adanaMatches = data.matches.filter((m) => m.city?.toLowerCase() === "adana");
+    expect(adanaMatches).toHaveLength(0);
+
+    // Adana puan durumları da genel akışta olmamalı
+    const standingsKeys = Object.keys(data.standings || {});
+    const adanaStandings = standingsKeys.filter((k) => k.toLowerCase().startsWith("adana"));
+    expect(adanaStandings).toHaveLength(0);
+  });
 });

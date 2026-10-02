@@ -1,18 +1,18 @@
 {
   "updated_at": "2026-10-02T16:21:29.765601+03:00",
   "total_cities": 81,
-  "active_cities": 26,
-  "total_matches": 843,
+  "active_cities": 25,
+  "total_matches": 713,
   "cities": [
     {
       "ilid": "1",
       "name": "Adana",
       "slug": "adana",
       "url": "https://adana.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (130 Maç Mevcut)",
-      "matches_count": 130,
-      "standings_count": 12,
-      "data_file": "data/cities/adana.json"
+      "status": "Fikstür Açıklanmadı",
+      "matches_count": 0,
+      "standings_count": 0,
+      "data_file": null
     },
     {
       "ilid": "2",
