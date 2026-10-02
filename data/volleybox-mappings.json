@@ -3684,7 +3684,14 @@
       "verified_at": "2026-09-14",
       "local_logo": "/logos/osmangazi-belediyespor-u18-t54287.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_178912519789XAq.png",
-      "aliases": []
+      "aliases": [
+        "Bursa Osmangazi Belediye Spor",
+        "Bursa Osmangazi Belediyespor",
+        "Osmangazi Belediye Spor",
+        "Osmangazi Belediyespor",
+        "Bursa Osmangazi Belediye Spor U18",
+        "Bursa Osmangazi Belediyespor U18"
+      ]
     },
     {
       "internal_name": "Osmangazi Belediyespor",
@@ -3697,7 +3704,14 @@
       "verified_at": "2026-09-14",
       "local_logo": "/logos/osmangazi-belediyespor-u18-t54287.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_178912519789XAq.png",
-      "aliases": []
+      "aliases": [
+        "Bursa Osmangazi Belediye Spor",
+        "Bursa Osmangazi Belediyespor",
+        "Osmangazi Belediye Spor",
+        "Osmangazi Belediyespor",
+        "Bursa Osmangazi Belediye Spor U18",
+        "Bursa Osmangazi Belediyespor U18"
+      ]
     },
     {
       "internal_name": "Osmangazi Belediye Spor",
@@ -6800,7 +6814,11 @@
       "age_category": "U18",
       "aliases": [
         "Kuzey Işıkları SK",
-        "Kuzey Işıkları SK U18"
+        "Kuzey Işıkları SK U18",
+        "Kuzey Işıkları",
+        "Kuzey Işıklar",
+        "Kuzey Işıklar SK",
+        "Kuzey Işıklar SK U18"
       ],
       "synonyms": [
         "Kuzey Işıkları SK U18",
@@ -7493,7 +7511,9 @@
       "confidence": "verified",
       "aliases": [
         "Atakent Elit Spor Kulübü",
-        "Atakent Elit Spor Kulübü U18"
+        "Atakent Elit Spor Kulübü U18",
+        "Atakent Elit",
+        "Atakent Elit SK"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/atakent-elit-spor-kulubu-u18-t41201.png",
@@ -7510,7 +7530,10 @@
       "confidence": "verified",
       "aliases": [
         "Avcılar Demirorduspor Kulübü U18",
-        "Avcılar Demirorduspor Kulübü"
+        "Avcılar Demirorduspor Kulübü",
+        "Avcılar Demirordu",
+        "Avcılar Demirordu SK",
+        "Avcılar Demirorduspor"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/avclar-demirorduspor-kulubu-u18-t54176.png",
@@ -7527,7 +7550,11 @@
       "confidence": "verified",
       "aliases": [
         "Avrupa Voleybol Gelişim Spor Kulübü U18",
-        "Avrupa Voleybol Gelişim Spor Kulübü"
+        "Avrupa Voleybol Gelişim Spor Kulübü",
+        "Avrupa Voleybol Gelişim A",
+        "Başakşehir Avrupa Voleybol Gelişim",
+        "Avrupa Voleybol Gelişim",
+        "Avrupa Voleybol Gelişim Spor Kulübü A"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/avrupa-voleybol-gelisim-spor-kulubu-u18-t41202.png",
@@ -7544,14 +7571,16 @@
       "confidence": "verified",
       "aliases": [
         "Avrupa Voleybol Gelişim Spor Kulübü - B",
-        "Avrupa Voleybol Gelişim Spor Kulübü - B U18"
+        "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
+        "Avrupa Voleybol Gelişim B",
+        "Avrupa Voleybol Gelişim Spor Kulübü B"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/avrupa-voleybol-gelisim-spor-kulubu-u18-t54175.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1788788342iv9bA.png"
     },
     {
-      "internal_name": "Bahçelievler Belediyespor U16",
+      "internal_name": "Bahçelievler Voleybol Kulübü",
       "internal_category": "Genç Kızlar 1. Ligi",
       "city": "İstanbul",
       "city_slug": "istanbul",
@@ -7562,7 +7591,9 @@
       "aliases": [
         "Bahçelievler Voleybol Kulübü U18",
         "Bahçelievler Belediyespor U16",
-        "Bahçelievler Voleybol Kulübü"
+        "Bahçelievler Voleybol Kulübü",
+        "Bahçelievler Voleybol",
+        "Bahçelievler Voleybol SK"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/bahcelievler-voleybol-kulubu-u18-t41208.png",
@@ -7579,14 +7610,16 @@
       "confidence": "verified",
       "aliases": [
         "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
-        "Bahçeşehir Avrupa Gelişim Spor Kulübü"
+        "Bahçeşehir Avrupa Gelişim Spor Kulübü",
+        "Bahçeşehir Avrupa Gelişim",
+        "Bahçeşehir Avrupa Gelişim U18"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/bahcesehir-avrupa-gelisim-spor-kulubu-u18-t54180.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1788788577OkGw9.png"
     },
     {
-      "internal_name": "Başakşehir Belediyesi SK U16",
+      "internal_name": "Başakşehir Voleybol Kulübü",
       "internal_category": "Genç Kızlar 1. Ligi",
       "city": "İstanbul",
       "city_slug": "istanbul",
@@ -7597,7 +7630,8 @@
       "aliases": [
         "Başakşehir Voleybol Kulübü",
         "Başakşehir Voleybol Kulübü U18",
-        "Başakşehir Belediyesi SK U16"
+        "Başakşehir Belediyesi SK U16",
+        "Başakşehir Voleybol"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/basaksehir-voleybol-kulubu-u18-t41209.png",
@@ -7614,7 +7648,10 @@
       "confidence": "verified",
       "aliases": [
         "Ernilvolley Spor Kulübü",
-        "Ernilvolley Spor Kulübü U18"
+        "Ernilvolley Spor Kulübü U18",
+        "Ernilvolley",
+        "Ernilvolley SK",
+        "Ernil Volley"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/ernilvolley-spor-kulubu-u18-t54182.png",
@@ -7631,7 +7668,10 @@
       "confidence": "verified",
       "aliases": [
         "Kovan Spor Kulübü",
-        "Kovan Spor Kulübü U18"
+        "Kovan Spor Kulübü U18",
+        "Kovan",
+        "Kovan Spor",
+        "Kovan SK"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/kovan-spor-kulubu-u18-t41219.png",
@@ -7648,7 +7688,10 @@
       "confidence": "verified",
       "aliases": [
         "Küçükçekmece Voleybol Kulübü",
-        "Küçükçekmece Voleybol Kulübü U18"
+        "Küçükçekmece Voleybol Kulübü U18",
+        "Küçükçekmece Voleybol A",
+        "Küçükçekmece Voleybol Kulübü A",
+        "Küçükçekmece Voleybol"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/kucukcekmece-voleybol-kulubu-u18-t41212.png",
@@ -7665,7 +7708,9 @@
       "confidence": "verified",
       "aliases": [
         "Küçükçekmece Voleybol Kulübü - B",
-        "Küçükçekmece Voleybol Kulübü - B U18"
+        "Küçükçekmece Voleybol Kulübü - B U18",
+        "Küçükçekmece Voleybol B",
+        "Küçükçekmece Voleybol Kulübü B"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/kucukcekmece-voleybol-kulubu-u18-t54177.png",
@@ -7682,7 +7727,9 @@
       "confidence": "verified",
       "aliases": [
         "Real Elite Spor Kulübü U18",
-        "Real Elite Spor Kulübü"
+        "Real Elite Spor Kulübü",
+        "Real Elite",
+        "Real Elite SK"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/real-elite-spor-kulubu-u18-t54183.png",
@@ -7699,7 +7746,11 @@
       "confidence": "verified",
       "aliases": [
         "SET Voleybol Kulübü U18",
-        "SET Voleybol Kulübü"
+        "SET Voleybol Kulübü",
+        "Set Voleybol A",
+        "SET Voleybol A",
+        "Set Voleybol",
+        "SET Voleybol Kulübü A"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/set-voleybol-kulubu-a-u18-t41210.png",
@@ -7716,7 +7767,10 @@
       "confidence": "verified",
       "aliases": [
         "SET Voleybol Kulübü - B",
-        "SET Voleybol Kulübü - B U18"
+        "SET Voleybol Kulübü - B U18",
+        "Set Voleybol B",
+        "SET Voleybol B",
+        "SET Voleybol Kulübü B"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/set-voleybol-kulubu-b-u18-t41211.png",
@@ -7733,7 +7787,9 @@
       "confidence": "verified",
       "aliases": [
         "Sultangazi Olimpik Spor Kulübü U18",
-        "Sultangazi Olimpik Spor Kulübü"
+        "Sultangazi Olimpik Spor Kulübü",
+        "Sultangazi Olimpik",
+        "Sultangazi Olimpik SK"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/sultangazi-olimpik-spor-kulubu-u18-t54178.png",
@@ -7750,7 +7806,9 @@
       "confidence": "verified",
       "aliases": [
         "Ulus Spor Akademisi U18",
-        "Ulus Spor Akademisi"
+        "Ulus Spor Akademisi",
+        "Ulus Spor Akademi",
+        "Ulus Spor"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/ulus-spor-akademisi-u18-t41229.png",
@@ -7767,7 +7825,9 @@
       "confidence": "verified",
       "aliases": [
         "Yıldızlar Arena Spor Kulübü U18",
-        "Yıldızlar Arena Spor Kulübü"
+        "Yıldızlar Arena Spor Kulübü",
+        "Yıldızlar Arena",
+        "Yıldızlar Arena SK"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/yldzlar-arena-spor-kulubu-u18-t54181.png",
@@ -11634,7 +11694,9 @@
       "aliases": [
         "İstanbul Anka Spor",
         "İstanbul Anka Spor U18",
-        "İstanbul Anka"
+        "İstanbul Anka",
+        "Anka Anadolu",
+        "Anka Anadolu U18"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/stanbul-anka-spor-u18-t54156.png",
@@ -12206,7 +12268,10 @@
       "aliases": [
         "Bahçelievler Belediyespor ll",
         "Bahçelievler Belediyespor U16",
-        "Bahçelievler Belediyespor ll U18"
+        "Bahçelievler Belediyespor ll U18",
+        "Bahçelievler Belediyespor U18",
+        "Bahçelievler Bld",
+        "Bahçelievler Belediyespor II"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/bahcelievler-belediyespor-ll-u18-t44592.png",

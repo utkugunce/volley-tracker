@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T19:06:27.505450",
+  "updated_at": "2026-10-02T17:15:41.295763",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -26,7 +26,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar İl Birinciliği": [
+    "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
         "team": "Düzce 1907 Spor Kulübü U18",
@@ -72,7 +72,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Düzce İl Birinciliği A Grubu": [
+    "Yıldız Kızlar Süper Lig - Düzce İl Birinciliği A Grubu": [
       {
         "rank": 1,
         "team": "Akçakoca Orhan Özdemir Fen Lisesi Spor Kulübü U16",
@@ -118,7 +118,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kızlar Düzce İl Birinciliği B Grubu": [
+    "Yıldız Kızlar Süper Lig - Düzce İl Birinciliği B Grubu": [
       {
         "rank": 1,
         "team": "Düzce 1907 Spor Kulübü U16",
@@ -175,7 +175,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "1",
       "home_team": "Düzce Voleybol SK - A U18",
       "away_team": "Düzce 1907 Spor Kulübü U18",
@@ -209,7 +209,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "2",
       "home_team": "Düzce UltrAslan Spor Kulübü U18",
       "away_team": "Düzce Atletik Spor Kulübü U18",
@@ -250,7 +250,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "3",
       "home_team": "Düzce 1907 Spor Kulübü U18",
       "away_team": "Düzce UltrAslan Spor Kulübü U18",
@@ -291,7 +291,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "4",
       "home_team": "Düzce Atletik Spor Kulübü U18",
       "away_team": "Düzce Voleybol SK - A U18",
@@ -325,7 +325,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "5",
       "home_team": "Düzce Voleybol SK - A U18",
       "away_team": "Düzce UltrAslan Spor Kulübü U18",
@@ -359,7 +359,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar İl Birinciliği",
+      "group": "1. Grup",
       "match_no": "6",
       "home_team": "Düzce Atletik Spor Kulübü U18",
       "away_team": "Düzce 1907 Spor Kulübü U18",
@@ -393,5 +393,5 @@
     }
   ],
   "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-10-02T16:25:36.865641"
+  "volleybox_sync_updated_at": "2026-10-02T17:20:07.421398"
 }

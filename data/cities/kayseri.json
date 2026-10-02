@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:42:09.706820",
+  "updated_at": "2026-10-02T17:15:32.310592",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -98,7 +98,7 @@
       },
       {
         "rank": 3,
-        "team": "Erciyes Aslan Spor Kulübü U16",
+        "team": "Erciyes Aslan Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -592,7 +592,7 @@
       "gender": "Kız",
       "group": "- B",
       "match_no": "2",
-      "home_team": "Erciyes Aslan Spor Kulübü U16",
+      "home_team": "Erciyes Aslan Spor Kulübü",
       "away_team": "Çınar Akademi Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -971,5 +971,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-02T16:25:40.714067"
+  "volleybox_sync_updated_at": "2026-10-02T17:20:11.723762"
 }

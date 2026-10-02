@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T16:21:01.552115",
+  "updated_at": "2026-10-02T17:15:23.804214",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -206,7 +206,7 @@
     "Genç Kızlar Süper Lig - - D": [
       {
         "rank": 1,
-        "team": "Bursa Osmangazi Belediye Spor",
+        "team": "Osmangazi Belediyespor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -868,7 +868,7 @@
       "group": "- D",
       "match_no": "2",
       "home_team": "Nilüfer Belediyespor Eker",
-      "away_team": "Bursa Osmangazi Belediye Spor",
+      "away_team": "Osmangazi Belediyespor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1478,5 +1478,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-02T16:25:36.638739"
+  "volleybox_sync_updated_at": "2026-10-02T17:20:07.205305"
 }

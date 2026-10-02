@@ -75,6 +75,7 @@ OFFICIAL_CITIES = {
 # Bu slug'lar sitede gösterilmeyecek (veri yetersiz / geçici olarak devre dışı)
 EXCLUDED_SLUGS = {
     "denizli",  # Sezon başı fikstür henüz hazır değil
+    "adana",    # Kulüpler fikstürü/puan durumu henüz oluşmadı
 }
 
 # 2026-2027 sezonu başlangıç eşiği (öncesine ait maçlar eski sezon kabul edilir)
@@ -208,6 +209,30 @@ def build_volleybox_name_resolver():
 
 RESOLVE_TEAM_NAME = build_volleybox_name_resolver()
 
+def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str = "") -> bool:
+    if not team:
+        return False
+    t_clean = str(team).lower().replace("ı", "i").replace("İ", "i")
+    c_clean = str(city or "").lower().replace("ı", "i").replace("İ", "i")
+    g_clean = (str(category or "") + " " + str(group or "")).lower().replace("ı", "i").replace("İ", "i")
+
+    if "cekildi" in t_clean or "çekildi" in str(team).lower():
+        return True
+
+    # Çanakkale U16 (Yıldız): UVM Akademi
+    if "canakkale" in c_clean and "uvm" in t_clean:
+        return True
+
+    # Eskişehir U16 (Yıldız): Meryem Boz - B
+    if "eskisehir" in c_clean and "meryem boz" in t_clean and ("- b" in t_clean or "(b)" in t_clean or " b" in t_clean):
+        return True
+
+    # İstanbul 4. Bölge: Başakşehir Belediye / Başakşehir Bld
+    if "istanbul" in c_clean and "basaksehir" in t_clean and ("belediye" in t_clean or "bld" in t_clean) and "4. bolge" in g_clean:
+        return True
+
+    return False
+
 def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
     """Tüm maç ve puan durumu takımlarını Volleybox'taki resmi adıyla günceller.
     Aynı puan durumu grubunda mükerrer takım isimleri tespit edilirse ve takımların
@@ -275,6 +300,14 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         if not isinstance(table, list):
             continue
 
+        # Çekilen takımları puan durumundan filtrele
+        table[:] = [
+            row for row in table
+            if not is_withdrawn_team(str(row.get("team", "")), city_name, grp, grp)
+        ]
+        for r_idx, row in enumerate(table, 1):
+            row["rank"] = r_idx
+
         # Gruptaki takımları çöz ve grupla
         name_groups = {}  # resolved_name -> list of (row, raw_team)
         for row in table:
@@ -338,6 +371,15 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
                         row["team"] = res_name
                         disambiguated_map[(_norm(raw_team), _norm(grp))] = res_name
                         disambiguated_map[(_norm(raw_team), "")] = res_name
+
+    # Çekilen takımların maçlarını filtrele
+    matches[:] = [
+        m for m in (matches or [])
+        if not (
+            is_withdrawn_team(str(m.get("home_team", "")), m.get("city") or city_name, m.get("category", ""), m.get("group", ""))
+            or is_withdrawn_team(str(m.get("away_team", "")), m.get("city") or city_name, m.get("category", ""), m.get("group", ""))
+        )
+    ]
 
     # 2. Maçları güncelle
     for m in (matches or []):
@@ -651,7 +693,7 @@ def scrape_single_city(city_info):
                             tds = [clean_str(td.text) for td in tr.find_all("td")]
                             if len(tds) >= 8:
                                 t_name = tds[1]
-                                if "deneme" in t_name.lower() or "test" in t_name.lower():
+                                if "deneme" in t_name.lower() or "test" in t_name.lower() or is_withdrawn_team(t_name, name, cat_name, group_name):
                                     continue
                                 try:
                                     played = int(tds[2]) if tds[2].isdigit() else 0
@@ -695,6 +737,9 @@ def scrape_single_city(city_info):
                                 raw_sets = tds[8] if len(tds) > 8 else ""
 
                                 if "deneme" in home.lower() or "deneme" in away.lower() or "test" in home.lower() or "test" in away.lower():
+                                    continue
+
+                                if is_withdrawn_team(home, name, cat_name, group_name) or is_withdrawn_team(away, name, cat_name, group_name):
                                     continue
 
                                 if raw_hall and raw_hall != "Açıklanacak":

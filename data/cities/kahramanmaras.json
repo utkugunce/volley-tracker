@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T08:41:48.394187",
+  "updated_at": "2026-10-02T17:15:32.592337",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
@@ -25,7 +25,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar 1. Ligi - Genç Kızlar Grup A": [
+    "Genç Kızlar 1. Ligi - Grup A": [
       {
         "rank": 1,
         "team": "Büyükşehir Belediye Sk (B)",
@@ -82,7 +82,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar 1. Ligi - Genç Kızlar Grup B": [
+    "Genç Kızlar 1. Ligi - Grup B": [
       {
         "rank": 1,
         "team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
@@ -131,5 +131,5 @@
   },
   "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-02T16:25:40.653257"
+  "volleybox_sync_updated_at": "2026-10-02T17:20:11.669633"
 }

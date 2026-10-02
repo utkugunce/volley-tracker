@@ -1,18 +1,19 @@
 {
-  "updated_at": "2026-10-02T16:21:29.765601+03:00",
+  "updated_at": "2026-10-02T17:15:52.525872+03:00",
   "total_cities": 81,
   "active_cities": 25,
-  "total_matches": 713,
+  "total_matches": 710,
   "cities": [
     {
       "ilid": "1",
       "name": "Adana",
       "slug": "adana",
       "url": "https://adana.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Devre Dışı",
       "matches_count": 0,
       "standings_count": 0,
-      "data_file": null
+      "data_file": null,
+      "excluded": true
     },
     {
       "ilid": "2",
@@ -260,8 +261,8 @@
       "name": "Eskişehir",
       "slug": "eskisehir",
       "url": "https://eskisehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (37 Maç Mevcut)",
-      "matches_count": 37,
+      "status": "Aktif (35 Maç Mevcut)",
+      "matches_count": 35,
       "standings_count": 7,
       "data_file": "data/cities/eskisehir.json"
     },
@@ -340,8 +341,8 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (87 Maç Mevcut)",
-      "matches_count": 87,
+      "status": "Aktif (86 Maç Mevcut)",
+      "matches_count": 86,
       "standings_count": 15,
       "data_file": "data/cities/istanbul.json"
     },
@@ -570,7 +571,7 @@
       "name": "Sinop",
       "slug": "sinop",
       "url": "https://sinop.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -640,7 +641,7 @@
       "name": "Uşak",
       "slug": "usak",
       "url": "https://usak.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

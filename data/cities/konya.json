@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T16:21:19.889255",
+  "updated_at": "2026-10-02T17:15:38.867933",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -655,22 +655,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404296",
+        "url": "https://women.volleybox.net/tr/seydisehir-cimnastik-spor-u18-diltas-spor-kulubu-u18-c404296",
+        "host_name": "Seydişehir Cimnastik Spor U18",
+        "guest_name": "Diltaş Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-04",
+        "vb_time": "13:00",
+        "vb_hall": "Seydişehir Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "13:00",
+          "vb_hall": "Seydişehir Atatürk Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-02T16:25:41.126234"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-10-02T17:20:12.114509"
 }
