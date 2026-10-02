@@ -128,11 +128,11 @@ describe("teamData utility", () => {
     const pars = getTeamDetailsBySlug("buff-gym-pars-akademi");
     expect(pars).not.toBeNull();
     expect(pars?.categories).toContain("Kadınlar 2. Ligi");
-    expect(pars?.mapping?.matched_as).toBe("Sivas Pars Volley");
+    expect(pars?.mapping?.matched_as).toBe("Buff Gym Sivas Pars Akademi Spor Kulübü");
 
     const marmara = getTeamDetailsBySlug("lanueva-kozmetik-anadolu-marmara");
     expect(marmara).not.toBeNull();
-    expect(marmara?.mapping?.matched_as).toBe("Anadolu Marmara SK");
+    expect(marmara?.mapping?.matched_as).toBe("Lanueva Kozmetik Anadolu Marmara SK");
 
     const byVolleyboxName = getTeamDetailsBySlug("arnavutkoy-belediyesi-sk");
     expect(byVolleyboxName).not.toBeNull();

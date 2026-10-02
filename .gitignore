@@ -64,5 +64,6 @@ ENV/
 Thumbs.db
 
 data/raw/*.html
+data/.volleybox_names_cache.json
 .vercel
 scratch/

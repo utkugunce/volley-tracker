@@ -1,0 +1,5651 @@
+{
+  "updated_at": "2026-10-02T12:47:47.040924",
+  "city": "Adana",
+  "slug": "adana",
+  "title": "TVF Adana Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 130,
+  "source": "https://adana.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü",
+      "Menderes",
+      "Nihat Geven S.S",
+      "Yüreğir S.S"
+    ]
+  },
+  "standings": {
+    "Genç Kızlar Süper Lig - A Grubu": [
+      {
+        "rank": 1,
+        "team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+        "played": 5,
+        "won": 5,
+        "lost": 0,
+        "points": 15,
+        "sets_won": 15,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Sporcu Eğitim Spor Kulübü",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 13,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Çukurova Efes Spor Kulübü",
+        "played": 5,
+        "won": 3,
+        "lost": 2,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Adana Gelişim Spor Kulübü",
+        "played": 5,
+        "won": 2,
+        "lost": 3,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 10,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 13,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Sabancı Mesleki Ve Teknik Anadolu Lisesi Spor Kulü",
+        "played": 5,
+        "won": 0,
+        "lost": 5,
+        "points": 0,
+        "sets_won": 3,
+        "sets_lost": 15,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - B Grubu": [
+      {
+        "rank": 1,
+        "team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+        "played": 5,
+        "won": 5,
+        "lost": 0,
+        "points": 15,
+        "sets_won": 15,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 10,
+        "sets_won": 12,
+        "sets_lost": 8,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Seyhan Yıldırım",
+        "played": 5,
+        "won": 3,
+        "lost": 2,
+        "points": 10,
+        "sets_won": 11,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Fitlife Spor Kulübü",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 13,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Adana Voleybol Spor Kulübü",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 3,
+        "sets_won": 5,
+        "sets_lost": 12,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Adana Oluşum Spor Kulübü",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 12,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Genç Kızlar Yarı Final A Grubu": [
+      {
+        "rank": 1,
+        "team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+        "played": 5,
+        "won": 5,
+        "lost": 0,
+        "points": 14,
+        "sets_won": 15,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Tenis Dağcılık Spor Kulübü",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 13,
+        "sets_won": 14,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+        "played": 5,
+        "won": 3,
+        "lost": 2,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+        "played": 5,
+        "won": 2,
+        "lost": 3,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 11,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Adana Gelişim Spor Kulübü",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 13,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Seyhan Yıldırım",
+        "played": 5,
+        "won": 0,
+        "lost": 5,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 15,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Genç Kızlar Yarı Final B Grubu": [
+      {
+        "rank": 1,
+        "team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+        "played": 5,
+        "won": 5,
+        "lost": 0,
+        "points": 15,
+        "sets_won": 15,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 11,
+        "sets_won": 13,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Seyhan Belediye Spor Kulübü",
+        "played": 5,
+        "won": 3,
+        "lost": 2,
+        "points": 8,
+        "sets_won": 10,
+        "sets_lost": 8,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Adana Sporcu Eğitim Spor Kulübü",
+        "played": 5,
+        "won": 2,
+        "lost": 3,
+        "points": 8,
+        "sets_won": 11,
+        "sets_lost": 9,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Çukurova Efes Spor Kulübü",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 13,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Adana Voleybol Spor Kulübü",
+        "played": 5,
+        "won": 0,
+        "lost": 5,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 15,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Final": [
+      {
+        "rank": 1,
+        "team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+        "played": 6,
+        "won": 5,
+        "lost": 1,
+        "points": 14,
+        "sets_won": 16,
+        "sets_lost": 8,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+        "played": 6,
+        "won": 4,
+        "lost": 2,
+        "points": 12,
+        "sets_won": 15,
+        "sets_lost": 9,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Adana Tenis Dağcılık Spor Kulübü",
+        "played": 6,
+        "won": 3,
+        "lost": 3,
+        "points": 8,
+        "sets_won": 10,
+        "sets_lost": 12,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+        "played": 6,
+        "won": 0,
+        "lost": 6,
+        "points": 2,
+        "sets_won": 6,
+        "sets_lost": 18,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - A Grubu": [
+      {
+        "rank": 1,
+        "team": "Seyhan Belediye Spor Kulübü",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Çukurova Efes Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Adana Gelişim Spor Kulübü",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 9,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - B Grubu": [
+      {
+        "rank": 1,
+        "team": "Adana Tenis Dağcılık Spor Kulübü",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Sporcu Eğitim Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Cgrubu": [
+      {
+        "rank": 1,
+        "team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Genç İstiklal Voleybol",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Fitlife Spor Kulübü",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 8,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Adana 1907",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 9,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - D Grubu": [
+      {
+        "rank": 1,
+        "team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Gençlik Merkezi Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Adana Büyükşehir Belediye Spor Kulübü",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Adana Voleybol Spor Kulübü",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 6,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yıldız Kız Süper Lig Yarı Final A Grubu": [
+      {
+        "rank": 1,
+        "team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Sporcu Eğitim Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Seyhan Belediye Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Adana Gençlik Merkezi Spor Kulübü",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 9,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yıldız Kız Süper Lig Yarı Final B Grubu": [
+      {
+        "rank": 1,
+        "team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Tenis Dağcılık Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Adana Genç İstiklal Voleybol",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Çukurova Efes Spor Kulübü",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 9,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Final": [
+      {
+        "rank": 1,
+        "team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+        "played": 6,
+        "won": 6,
+        "lost": 0,
+        "points": 16,
+        "sets_won": 18,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Adana Tenis Dağcılık Spor Kulübü",
+        "played": 6,
+        "won": 3,
+        "lost": 3,
+        "points": 10,
+        "sets_won": 13,
+        "sets_lost": 11,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+        "played": 6,
+        "won": 2,
+        "lost": 4,
+        "points": 5,
+        "sets_won": 8,
+        "sets_lost": 15,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Adana Sporcu Eğitim Spor Kulübü",
+        "played": 6,
+        "won": 1,
+        "lost": 5,
+        "points": 5,
+        "sets_won": 9,
+        "sets_lost": 15,
+        "form": []
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "adana-20251108-001",
+      "city": "Adana",
+      "date": "2025-11-08",
+      "time": "12:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Sabancı Mesleki Ve Teknik Anadolu Lisesi Spor Kulü",
+      "away_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "25-23",
+        "13-25",
+        "22-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251110-002",
+      "city": "Adana",
+      "date": "2025-11-10",
+      "time": "16:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-19",
+        "25-11"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251111-003",
+      "city": "Adana",
+      "date": "2025-11-11",
+      "time": "10:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-13",
+        "25-12"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251111-004",
+      "city": "Adana",
+      "date": "2025-11-11",
+      "time": "12:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Adana Gelişim Spor Kulübü",
+      "away_team": "Sabancı Mesleki Ve Teknik Anadolu Lisesi Spor Kulü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "14-25",
+        "25-13",
+        "25-17",
+        "25-20"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251118-005",
+      "city": "Adana",
+      "date": "2025-11-18",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "5",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Adana Gelişim Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-11",
+        "25-16"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251119-006",
+      "city": "Adana",
+      "date": "2025-11-19",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "6",
+      "home_team": "Çukurova Efes Spor Kulübü",
+      "away_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "9-25",
+        "6-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251124-007",
+      "city": "Adana",
+      "date": "2025-11-24",
+      "time": "18:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "7",
+      "home_team": "Çukurova Efes Spor Kulübü",
+      "away_team": "Adana Gelişim Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "26-24",
+        "29-27",
+        "25-20"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251126-008",
+      "city": "Adana",
+      "date": "2025-11-26",
+      "time": "19:45",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "8",
+      "home_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "21-25",
+        "15-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251128-009",
+      "city": "Adana",
+      "date": "2025-11-28",
+      "time": "19:45",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "9",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "Sabancı Mesleki Ve Teknik Anadolu Lisesi Spor Kulü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-9",
+        "25-14"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251130-010",
+      "city": "Adana",
+      "date": "2025-11-30",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "10",
+      "home_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "18-25",
+        "20-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251204-011",
+      "city": "Adana",
+      "date": "2025-12-04",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "11",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Sabancı Mesleki Ve Teknik Anadolu Lisesi Spor Kulü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-16",
+        "25-17"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251204-012",
+      "city": "Adana",
+      "date": "2025-12-04",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "12",
+      "home_team": "Adana Gelişim Spor Kulübü",
+      "away_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "4-25",
+        "21-25",
+        "15-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251209-013",
+      "city": "Adana",
+      "date": "2025-12-09",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "13",
+      "home_team": "Adana Gelişim Spor Kulübü",
+      "away_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "28-26",
+        "25-14"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251209-014",
+      "city": "Adana",
+      "date": "2025-12-09",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "14",
+      "home_team": "Sabancı Mesleki Ve Teknik Anadolu Lisesi Spor Kulü",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "25-17",
+        "11-25",
+        "21-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251215-015",
+      "city": "Adana",
+      "date": "2025-12-15",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "15",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "18-25",
+        "25-21",
+        "25-14",
+        "25-17"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251109-016",
+      "city": "Adana",
+      "date": "2025-11-09",
+      "time": "10:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-23",
+        "25-23"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251109-017",
+      "city": "Adana",
+      "date": "2025-11-09",
+      "time": "14:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Fitlife Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "14-25",
+        "25-18",
+        "20-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251112-018",
+      "city": "Adana",
+      "date": "2025-11-12",
+      "time": "12:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "3",
+      "home_team": "Fitlife Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "18-25",
+        "20-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251112-019",
+      "city": "Adana",
+      "date": "2025-11-12",
+      "time": "16:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "4",
+      "home_team": "Seyhan Yıldırım",
+      "away_team": "Adana Oluşum Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-20",
+        "25-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251114-020",
+      "city": "Adana",
+      "date": "2025-11-14",
+      "time": "10:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "5",
+      "home_team": "Adana Oluşum Spor Kulübü",
+      "away_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "8-25",
+        "25-20",
+        "22-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251116-021",
+      "city": "Adana",
+      "date": "2025-11-16",
+      "time": "14:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "6",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Seyhan Yıldırım",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-18",
+        "23-25",
+        "24-26",
+        "10-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251124-022",
+      "city": "Adana",
+      "date": "2025-11-24",
+      "time": "18:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "7",
+      "home_team": "Fitlife Spor Kulübü",
+      "away_team": "Seyhan Yıldırım",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "21-25",
+        "23-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251124-023",
+      "city": "Adana",
+      "date": "2025-11-24",
+      "time": "19:45",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "8",
+      "home_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "away_team": "Adana Voleybol Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-18",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251127-024",
+      "city": "Adana",
+      "date": "2025-11-27",
+      "time": "18:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "9",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Oluşum Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-8",
+        "25-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251129-025",
+      "city": "Adana",
+      "date": "2025-11-29",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "10",
+      "home_team": "Seyhan Yıldırım",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "13-25",
+        "12-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251130-026",
+      "city": "Adana",
+      "date": "2025-11-30",
+      "time": "16:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "11",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Adana Oluşum Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "27-25",
+        "25-22",
+        "25-23"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251203-027",
+      "city": "Adana",
+      "date": "2025-12-03",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "12",
+      "home_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "away_team": "Fitlife Spor Kulübü",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "23-25",
+        "25-13",
+        "23-25",
+        "25-20",
+        "15-8"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251206-028",
+      "city": "Adana",
+      "date": "2025-12-06",
+      "time": "10:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "13",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Voleybol Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-15",
+        "25-19"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251206-029",
+      "city": "Adana",
+      "date": "2025-12-06",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "14",
+      "home_team": "Adana Oluşum Spor Kulübü",
+      "away_team": "Fitlife Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251212-030",
+      "city": "Adana",
+      "date": "2025-12-12",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "15",
+      "home_team": "Seyhan Yıldırım",
+      "away_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "27-25",
+        "25-20",
+        "19-25",
+        "9-25",
+        "13-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251113-031",
+      "city": "Adana",
+      "date": "2025-11-13",
+      "time": "12:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "1",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-22",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251114-032",
+      "city": "Adana",
+      "date": "2025-11-14",
+      "time": "14:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "2",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "23-25",
+        "25-22",
+        "14-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251116-033",
+      "city": "Adana",
+      "date": "2025-11-16",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "3",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Karataş Belediyesi Gençlik Ve Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-16",
+        "25-20"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251118-034",
+      "city": "Adana",
+      "date": "2025-11-18",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "4",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "15-25",
+        "27-25",
+        "25-12",
+        "21-25",
+        "15-5"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251119-035",
+      "city": "Adana",
+      "date": "2025-11-19",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "5",
+      "home_team": "Karataş Belediyesi Gençlik Ve Spor Kulübü",
+      "away_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-19",
+        "27-29",
+        "25-17",
+        "25-12"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251120-036",
+      "city": "Adana",
+      "date": "2025-11-20",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "6",
+      "home_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "away_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "17-25",
+        "22-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251126-037",
+      "city": "Adana",
+      "date": "2025-11-26",
+      "time": "18:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "7",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "26-24",
+        "25-18"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251128-038",
+      "city": "Adana",
+      "date": "2025-11-28",
+      "time": "18:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "8",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Karataş Belediyesi Gençlik Ve Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-6",
+        "25-13",
+        "25-10"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251201-039",
+      "city": "Adana",
+      "date": "2025-12-01",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "9",
+      "home_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "11-25",
+        "11-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251202-040",
+      "city": "Adana",
+      "date": "2025-12-02",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "10",
+      "home_team": "Karataş Belediyesi Gençlik Ve Spor Kulübü",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251206-041",
+      "city": "Adana",
+      "date": "2025-12-06",
+      "time": "14:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "11",
+      "home_team": "Karataş Belediyesi Gençlik Ve Spor Kulübü",
+      "away_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "16-25",
+        "19-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251206-042",
+      "city": "Adana",
+      "date": "2025-12-06",
+      "time": "16:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "12",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-18",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251212-043",
+      "city": "Adana",
+      "date": "2025-12-12",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "13",
+      "home_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "15-25",
+        "13-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251215-044",
+      "city": "Adana",
+      "date": "2025-12-15",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "14",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "12-25",
+        "17-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251216-045",
+      "city": "Adana",
+      "date": "2025-12-16",
+      "time": "18:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "15",
+      "home_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251220-046",
+      "city": "Adana",
+      "date": "2025-12-20",
+      "time": "09:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "1",
+      "home_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "away_team": "Seyhan Yıldırım",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-17",
+        "25-22"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251222-047",
+      "city": "Adana",
+      "date": "2025-12-22",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "2",
+      "home_team": "Seyhan Yıldırım",
+      "away_team": "Adana Gelişim Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "25-21",
+        "20-25",
+        "16-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251224-048",
+      "city": "Adana",
+      "date": "2025-12-24",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "3",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Adana Gelişim Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-9",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251225-049",
+      "city": "Adana",
+      "date": "2025-12-25",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "4",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-16",
+        "25-17"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251227-050",
+      "city": "Adana",
+      "date": "2025-12-27",
+      "time": "14:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "5",
+      "home_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "away_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-23",
+        "27-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251228-051",
+      "city": "Adana",
+      "date": "2025-12-28",
+      "time": "16:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "6",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "(H) - Seyhan Yıldırım",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260102-052",
+      "city": "Adana",
+      "date": "2026-01-02",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "7",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-15",
+        "25-10"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260103-053",
+      "city": "Adana",
+      "date": "2026-01-03",
+      "time": "16:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "8",
+      "home_team": "Adana Gelişim Spor Kulübü",
+      "away_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "17-25",
+        "8-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260110-054",
+      "city": "Adana",
+      "date": "2026-01-10",
+      "time": "16:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "9",
+      "home_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "17-25",
+        "4-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260112-055",
+      "city": "Adana",
+      "date": "2026-01-12",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "10",
+      "home_team": "Adana Toroslar 1922 Gençlik Spor Kulübü",
+      "away_team": "Adana Gelişim Spor Kulübü",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "20-25",
+        "26-24",
+        "25-11",
+        "24-26",
+        "16-14"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260112-056",
+      "city": "Adana",
+      "date": "2026-01-12",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "11",
+      "home_team": "(H) - Seyhan Yıldırım",
+      "away_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260115-057",
+      "city": "Adana",
+      "date": "2026-01-15",
+      "time": "16:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "12",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "(H) - Seyhan Yıldırım",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260115-058",
+      "city": "Adana",
+      "date": "2026-01-15",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "13",
+      "home_team": "Adana Gelişim Spor Kulübü",
+      "away_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "11-25",
+        "12-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260116-059",
+      "city": "Adana",
+      "date": "2026-01-16",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "14",
+      "home_team": "CEYHANGENÇLİK SPOR KULÜBÜ",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "17-25",
+        "14-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260120-060",
+      "city": "Adana",
+      "date": "2026-01-20",
+      "time": "14:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final A Grubu",
+      "match_no": "15",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "18-25",
+        "25-23",
+        "25-16",
+        "7-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251220-061",
+      "city": "Adana",
+      "date": "2025-12-20",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "1",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Voleybol Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-10",
+        "25-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251221-062",
+      "city": "Adana",
+      "date": "2025-12-21",
+      "time": "14:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "2",
+      "home_team": "Çukurova Efes Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "15-25",
+        "10-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251223-063",
+      "city": "Adana",
+      "date": "2025-12-23",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "3",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "19-25",
+        "18-25",
+        "25-19",
+        "12-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251226-064",
+      "city": "Adana",
+      "date": "2025-12-26",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "4",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-5",
+        "25-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251228-065",
+      "city": "Adana",
+      "date": "2025-12-28",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "5",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "21-25",
+        "25-18",
+        "19-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251229-066",
+      "city": "Adana",
+      "date": "2025-12-29",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "6",
+      "home_team": "Çukurova Efes Spor Kulübü",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "9-25",
+        "17-25",
+        "6-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251230-067",
+      "city": "Adana",
+      "date": "2025-12-30",
+      "time": "19:45",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "7",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-17",
+        "12-25",
+        "25-20",
+        "25-14"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20251230-068",
+      "city": "Adana",
+      "date": "2025-12-30",
+      "time": "19:45",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "8",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "Adana Voleybol Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-14",
+        "25-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260107-069",
+      "city": "Adana",
+      "date": "2026-01-07",
+      "time": "19:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "9",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "11-25",
+        "6-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260109-070",
+      "city": "Adana",
+      "date": "2026-01-09",
+      "time": "18:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "10",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-7",
+        "25-21",
+        "20-25",
+        "25-17"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260109-071",
+      "city": "Adana",
+      "date": "2026-01-09",
+      "time": "19:30",
+      "hall": "Nihat Geven S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "11",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Adana Voleybol Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-9",
+        "25-14"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260113-072",
+      "city": "Adana",
+      "date": "2026-01-13",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "12",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-17",
+        "25-21",
+        "22-25",
+        "18-25",
+        "13-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260116-073",
+      "city": "Adana",
+      "date": "2026-01-16",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "13",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-11",
+        "25-22"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260119-074",
+      "city": "Adana",
+      "date": "2026-01-19",
+      "time": "16:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "14",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-22",
+        "10-25",
+        "18-25",
+        "17-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260121-075",
+      "city": "Adana",
+      "date": "2026-01-21",
+      "time": "12:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kızlar Yarı Final B Grubu",
+      "match_no": "15",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260123-076",
+      "city": "Adana",
+      "date": "2026-01-23",
+      "time": "10:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "1",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-15",
+        "25-21",
+        "21-25",
+        "25-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260123-077",
+      "city": "Adana",
+      "date": "2026-01-23",
+      "time": "12:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "2",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "23-25",
+        "21-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260128-078",
+      "city": "Adana",
+      "date": "2026-01-28",
+      "time": "14:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "3",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "21-25",
+        "23-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260128-079",
+      "city": "Adana",
+      "date": "2026-01-28",
+      "time": "16:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "4",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "22-25",
+        "13-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260130-080",
+      "city": "Adana",
+      "date": "2026-01-30",
+      "time": "14:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "5",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-23",
+        "25-16",
+        "22-25",
+        "25-19"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260130-081",
+      "city": "Adana",
+      "date": "2026-01-30",
+      "time": "16:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "6",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "17-25",
+        "28-30",
+        "25-21",
+        "25-15",
+        "15-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260202-082",
+      "city": "Adana",
+      "date": "2026-02-02",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "7",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "25-18",
+        "15-25",
+        "15-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260202-083",
+      "city": "Adana",
+      "date": "2026-02-02",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "8",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-20",
+        "23-25",
+        "25-19",
+        "25-22"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260204-084",
+      "city": "Adana",
+      "date": "2026-02-04",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "9",
+      "home_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-19",
+        "23-25",
+        "16-25",
+        "25-27"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260204-085",
+      "city": "Adana",
+      "date": "2026-02-04",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "10",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-12",
+        "23-25",
+        "25-13",
+        "16-25",
+        "17-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260206-086",
+      "city": "Adana",
+      "date": "2026-02-06",
+      "time": "18:00",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "11",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "ADANA BÜYÜKŞEHİR BELEDİYE SPOR KLÜBÜ",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "21-25",
+        "17-25",
+        "25-20",
+        "14-16"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260206-087",
+      "city": "Adana",
+      "date": "2026-02-06",
+      "time": "19:30",
+      "hall": "Menderes",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "12",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "26-28",
+        "21-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260114-088",
+      "city": "Adana",
+      "date": "2026-01-14",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "20-25",
+        "22-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260120-089",
+      "city": "Adana",
+      "date": "2026-01-20",
+      "time": "10:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Adana Gelişim Spor Kulübü",
+      "away_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "19-25",
+        "25-18",
+        "25-12",
+        "25-11"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260126-090",
+      "city": "Adana",
+      "date": "2026-01-26",
+      "time": "14:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "Adana Gelişim Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-23",
+        "25-17"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260130-091",
+      "city": "Adana",
+      "date": "2026-01-30",
+      "time": "12:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Çukurova Efes Spor Kulübü",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "6-25",
+        "7-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260131-092",
+      "city": "Adana",
+      "date": "2026-01-31",
+      "time": "11:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "5",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "Kurttepe Mesleki Ve Teknik Anadolu Lisesi",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-6",
+        "25-7"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260203-093",
+      "city": "Adana",
+      "date": "2026-02-03",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "6",
+      "home_team": "Çukurova Efes Spor Kulübü",
+      "away_team": "Adana Gelişim Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-23",
+        "25-23",
+        "13-25",
+        "25-18"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260115-094",
+      "city": "Adana",
+      "date": "2026-01-15",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Cgrubu",
+      "match_no": "1",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana 1907",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260119-095",
+      "city": "Adana",
+      "date": "2026-01-19",
+      "time": "12:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Cgrubu",
+      "match_no": "2",
+      "home_team": "Adana Genç İstiklal Voleybol",
+      "away_team": "Adana 1907",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-7",
+        "25-16"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260125-096",
+      "city": "Adana",
+      "date": "2026-01-25",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Cgrubu",
+      "match_no": "3",
+      "home_team": "Adana Genç İstiklal Voleybol",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "7-25",
+        "18-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260127-097",
+      "city": "Adana",
+      "date": "2026-01-27",
+      "time": "14:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Cgrubu",
+      "match_no": "4",
+      "home_team": "Fitlife Spor Kulübü",
+      "away_team": "Adana Genç İstiklal Voleybol",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "12-25",
+        "21-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260129-098",
+      "city": "Adana",
+      "date": "2026-01-29",
+      "time": "14:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Cgrubu",
+      "match_no": "5",
+      "home_team": "Adana 1907",
+      "away_team": "Fitlife Spor Kulübü",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "26-24",
+        "5-25",
+        "25-19",
+        "13-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260131-099",
+      "city": "Adana",
+      "date": "2026-01-31",
+      "time": "13:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Cgrubu",
+      "match_no": "6",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Fitlife Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-6",
+        "25-15",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260117-100",
+      "city": "Adana",
+      "date": "2026-01-17",
+      "time": "12:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "1",
+      "home_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "away_team": "Adana Voleybol Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-17",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260119-101",
+      "city": "Adana",
+      "date": "2026-01-19",
+      "time": "14:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "2",
+      "home_team": "Adana Büyükşehir Belediye Spor Kulübü",
+      "away_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "25-22",
+        "17-25",
+        "19-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260124-102",
+      "city": "Adana",
+      "date": "2026-01-24",
+      "time": "16:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "3",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-21",
+        "25-19",
+        "22-25",
+        "25-10"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260126-103",
+      "city": "Adana",
+      "date": "2026-01-26",
+      "time": "12:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "4",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "4-25",
+        "5-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260210-104",
+      "city": "Adana",
+      "date": "2026-02-10",
+      "time": "18:00",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "5",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Büyükşehir Belediye Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-20",
+        "25-6"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260213-105",
+      "city": "Adana",
+      "date": "2026-02-13",
+      "time": "18:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "6",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Adana Büyükşehir Belediye Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260215-106",
+      "city": "Adana",
+      "date": "2026-02-15",
+      "time": "10:00",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "7",
+      "home_team": "Adana Voleybol Spor Kulübü",
+      "away_team": "Adana Büyükşehir Belediye Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260216-107",
+      "city": "Adana",
+      "date": "2026-02-16",
+      "time": "18:00",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final A Grubu",
+      "match_no": "1",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-19",
+        "25-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260217-108",
+      "city": "Adana",
+      "date": "2026-02-17",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final A Grubu",
+      "match_no": "2",
+      "home_team": "Seyhan Belediye Spor Kulübü",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-23",
+        "25-14",
+        "23-25",
+        "25-19"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260220-109",
+      "city": "Adana",
+      "date": "2026-02-20",
+      "time": "18:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final A Grubu",
+      "match_no": "3",
+      "home_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "25-23",
+        "9-25",
+        "25-20",
+        "5-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260220-110",
+      "city": "Adana",
+      "date": "2026-02-20",
+      "time": "19:30",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final A Grubu",
+      "match_no": "4",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "16-25",
+        "25-23",
+        "25-21",
+        "25-27",
+        "15-8"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260223-111",
+      "city": "Adana",
+      "date": "2026-02-23",
+      "time": "17:45",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final A Grubu",
+      "match_no": "5",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Adana Gençlik Merkezi Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "29-27",
+        "25-15",
+        "25-21"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260226-112",
+      "city": "Adana",
+      "date": "2026-02-26",
+      "time": "19:15",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final A Grubu",
+      "match_no": "6",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Seyhan Belediye Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-12",
+        "23-25",
+        "25-22",
+        "26-24"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260215-113",
+      "city": "Adana",
+      "date": "2026-02-15",
+      "time": "12:00",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final B Grubu",
+      "match_no": "1",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-14",
+        "25-12"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260219-114",
+      "city": "Adana",
+      "date": "2026-02-19",
+      "time": "19:30",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final B Grubu",
+      "match_no": "2",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Adana Genç İstiklal Voleybol",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "23-25",
+        "25-20",
+        "25-6",
+        "25-14"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260221-115",
+      "city": "Adana",
+      "date": "2026-02-21",
+      "time": "15:00",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final B Grubu",
+      "match_no": "3",
+      "home_team": "Adana Genç İstiklal Voleybol",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "13-25",
+        "16-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260223-116",
+      "city": "Adana",
+      "date": "2026-02-23",
+      "time": "19:15",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final B Grubu",
+      "match_no": "4",
+      "home_team": "Çukurova Efes Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "12-25",
+        "14-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260227-117",
+      "city": "Adana",
+      "date": "2026-02-27",
+      "time": "17:45",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final B Grubu",
+      "match_no": "5",
+      "home_team": "Adana Genç İstiklal Voleybol",
+      "away_team": "Çukurova Efes Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-23",
+        "25-15",
+        "17-25",
+        "25-11"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260227-118",
+      "city": "Adana",
+      "date": "2026-02-27",
+      "time": "19:15",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yıldız Kız Süper Lig Yarı Final B Grubu",
+      "match_no": "6",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-23",
+        "26-24"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260303-119",
+      "city": "Adana",
+      "date": "2026-03-03",
+      "time": "17:45",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "1",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "16-25",
+        "16-25",
+        "27-25",
+        "25-20",
+        "15-7"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260303-120",
+      "city": "Adana",
+      "date": "2026-03-03",
+      "time": "19:15",
+      "hall": "Nihat Geven S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "2",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "20-25",
+        "25-20",
+        "20-25",
+        "25-8",
+        "15-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260305-121",
+      "city": "Adana",
+      "date": "2026-03-05",
+      "time": "17:45",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "3",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-14",
+        "25-21"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260305-122",
+      "city": "Adana",
+      "date": "2026-03-05",
+      "time": "19:15",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "4",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "19-25",
+        "25-20",
+        "10-25",
+        "11-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260307-123",
+      "city": "Adana",
+      "date": "2026-03-07",
+      "time": "13:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "5",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "24-26",
+        "25-20",
+        "19-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260307-124",
+      "city": "Adana",
+      "date": "2026-03-07",
+      "time": "15:00",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "6",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-16",
+        "25-20",
+        "21-25",
+        "22-25",
+        "8-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260310-125",
+      "city": "Adana",
+      "date": "2026-03-10",
+      "time": "17:45",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "7",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-16",
+        "25-17"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260310-126",
+      "city": "Adana",
+      "date": "2026-03-10",
+      "time": "19:15",
+      "hall": "Yüreğir S.S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "8",
+      "home_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "away_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "25-22",
+        "12-25",
+        "18-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260313-127",
+      "city": "Adana",
+      "date": "2026-03-13",
+      "time": "17:45",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "9",
+      "home_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "22-25",
+        "25-17",
+        "25-16",
+        "25-18"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260313-128",
+      "city": "Adana",
+      "date": "2026-03-13",
+      "time": "19:15",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "10",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-18",
+        "25-23"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260316-129",
+      "city": "Adana",
+      "date": "2026-03-16",
+      "time": "13:30",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "11",
+      "home_team": "Adana Tenis Dağcılık Spor Kulübü",
+      "away_team": "Adana Sporcu Eğitim Spor Kulübü",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-12",
+        "25-19"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "adana-20260316-130",
+      "city": "Adana",
+      "date": "2026-03-16",
+      "time": "15:15",
+      "hall": "Menderes",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Final",
+      "match_no": "12",
+      "home_team": "Akkapı Tek.Ve End.Mes.Lis.Spor Kulübü",
+      "away_team": "Şehit Ahmet Mehmet Oruç Spor Lisesi",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "17-25",
+        "25-14",
+        "25-19",
+        "25-23"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-10-02T12:52:08.042048"
+}

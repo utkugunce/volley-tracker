@@ -62,7 +62,7 @@ describe("volleybox utility", () => {
 
       const akademiAtletik = getVolleyboxMapping("Akademi Atletik", "Yıldız Kızlar Süper Lig", undefined, "İstanbul");
       expect(akademiAtletik).toBeDefined();
-      expect(akademiAtletik?.matched_as).toBe("Marmara Akademi Atletik Spor Kulübü U16");
+      expect(akademiAtletik?.matched_as).toBe("Mehmet Erdem Marmara Akademi Spor Kulübü U16");
 
       const tekirdagVoleybolAkademi = getVolleyboxMapping("Voleybol Akademi Tekirdağ Spor Kulübü", "Yıldız Kızlar Süper Lig", undefined, "Tekirdağ");
       expect(tekirdagVoleybolAkademi).toBeDefined();
