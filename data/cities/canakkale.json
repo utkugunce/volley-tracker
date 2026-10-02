@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:42:00.214020",
+  "updated_at": "2026-10-02T16:21:03.820093",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -34,7 +34,7 @@
     "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "As Spor Kulübü U16",
+        "team": "AS SPOR KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -45,7 +45,7 @@
       },
       {
         "rank": 2,
-        "team": "Çan Kale Spor Kulübü U16",
+        "team": "Çan Kale Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -56,7 +56,7 @@
       },
       {
         "rank": 3,
-        "team": "ÇOMÜ Spor Kulübü U16",
+        "team": "Çomü Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -80,7 +80,7 @@
     "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği B Grubu": [
       {
         "rank": 1,
-        "team": "Biga Çiçeklidedespor U16",
+        "team": "Biga Çiçeklidede Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -91,7 +91,7 @@
       },
       {
         "rank": 2,
-        "team": "Çanakkale Belediyespor U16",
+        "team": "Çanakkale Belediye Spor Kulübü (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -115,7 +115,7 @@
     "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği C Grubu": [
       {
         "rank": 1,
-        "team": "Biga Gelişim Voleybol Kulübü U16",
+        "team": "Biga Gelişim Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -126,7 +126,7 @@
       },
       {
         "rank": 2,
-        "team": "Çanakkale Belediyespor - B U16",
+        "team": "Çanakkale Belediye Spor Kulübü (B)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -137,7 +137,7 @@
       },
       {
         "rank": 3,
-        "team": "Çanakkalespor U16",
+        "team": "Çanakkale Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1279,5 +1279,5 @@
     }
   ],
   "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-10-02T15:46:25.990493"
+  "volleybox_sync_updated_at": "2026-10-02T16:25:36.836969"
 }

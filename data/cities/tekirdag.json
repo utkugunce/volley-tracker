@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:42:18.466872",
+  "updated_at": "2026-10-02T16:21:15.595557",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -35,7 +35,7 @@
     "Genç Kızlar Süper Lig - Final Grubu": [
       {
         "rank": 1,
-        "team": "Çorlu Belediyesi Spor Kulübü U16",
+        "team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -46,7 +46,7 @@
       },
       {
         "rank": 2,
-        "team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
+        "team": "Çerkezköy Voleybol Akademi Spor Kulübü",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -57,7 +57,7 @@
       },
       {
         "rank": 3,
-        "team": "Çorlu GSB Spor Kulübü U16",
+        "team": "Çorlu GSB SK",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -68,7 +68,7 @@
       },
       {
         "rank": 4,
-        "team": "Tekirdağ Basket Spor Kulübü U16",
+        "team": "Tekirdağ Basket Spor Kulübü",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -79,7 +79,7 @@
       },
       {
         "rank": 5,
-        "team": "Kapaklı Site Spor U16",
+        "team": "Kapaklı Site Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -350,8 +350,8 @@
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "1",
-      "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
-      "away_team": "Çorlu GSB Spor Kulübü U16",
+      "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
+      "away_team": "Çorlu GSB SK",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -395,8 +395,8 @@
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "2",
-      "home_team": "Çorlu Belediyesi Spor Kulübü U16",
-      "away_team": "Tekirdağ Basket Spor Kulübü U16",
+      "home_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
+      "away_team": "Tekirdağ Basket Spor Kulübü",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -440,8 +440,8 @@
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "3",
-      "home_team": "Kapaklı Site Spor U16",
-      "away_team": "Çorlu GSB Spor Kulübü U16",
+      "home_team": "Kapaklı Site Spor Kulübü",
+      "away_team": "Çorlu GSB SK",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -481,8 +481,8 @@
       "gender": "Kız",
       "group": "Final Grubu",
       "match_no": "4",
-      "home_team": "Tekirdağ Basket Spor Kulübü U16",
-      "away_team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
+      "home_team": "Tekirdağ Basket Spor Kulübü",
+      "away_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1380,5 +1380,5 @@
     }
   ],
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-10-02T15:46:31.301248"
+  "volleybox_sync_updated_at": "2026-10-02T16:25:42.680471"
 }

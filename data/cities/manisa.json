@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:42:11.844334",
+  "updated_at": "2026-10-02T16:21:10.088346",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -29,7 +29,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği A Grubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "1922 Salihli Spor Kulübü U18",
@@ -97,7 +97,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Genç Kızlar Voleybol İl Birinciliği B Grubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Akhisargücü Spor Kulübü U18",
@@ -176,7 +176,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Vestel Manisa Büyükşehir Belediye Spor U18",
       "away_team": "Salihli Değerli Zamanlar Spor Kulübü U18",
@@ -210,7 +210,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "2",
       "home_team": "1922 Salihli Spor Kulübü U18",
       "away_team": "Değerli Zamanlar Spor Kulübü U18",
@@ -244,7 +244,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "3",
       "home_team": "Akhisar Spor Kulübü U18",
       "away_team": "Akhisar İlçe Spor Kulübü U18",
@@ -278,7 +278,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "1",
       "home_team": "Turgutlu Belediyespor U18",
       "away_team": "Soma İlçe Spor Kulübü U18",
@@ -312,7 +312,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "2",
       "home_team": "Yunusemre Belediyespor U18",
       "away_team": "Soma Belediye Spor Kulübü U18",
@@ -346,7 +346,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Voleybol İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "3",
       "home_team": "Akhisargücü Spor Kulübü U18",
       "away_team": "Sarıgöl Akademi Spor Kulübü U18",
@@ -373,5 +373,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-02T15:46:29.810909"
+  "volleybox_sync_updated_at": "2026-10-02T16:25:41.130391"
 }

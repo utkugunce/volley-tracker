@@ -12,6 +12,7 @@ interface LeagueSectionProps {
   leagueTitle: string;
   sectionLabel?: string;
   cityName?: string;
+  showCityPrefix?: boolean;
   standingsHref?: string;
   matches: Match[];
   selectedMatchId?: string | null;
@@ -28,6 +29,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
   leagueTitle,
   sectionLabel,
   cityName,
+  showCityPrefix = false,
   standingsHref,
   matches,
   selectedMatchId,
@@ -75,7 +77,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             }`}
           />
           <h3 className="text-xs font-bold text-white uppercase tracking-wide flex items-center gap-1.5 min-w-0 flex-1">
-            {cityName && <span className="shrink-0">{cityName.toUpperCase()} -</span>}
+            {showCityPrefix && cityName && <span className="shrink-0">{cityName.toUpperCase()} -</span>}
             <LeagueVolleyboxLink
               league={leagueTitle}
               city={cityName}

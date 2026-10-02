@@ -139,12 +139,15 @@ def build_volleybox_name_resolver():
 
     def norm(s):
         if not s: return ""
-        return s.strip().lower().replace("ı", "i").replace("ğ", "g").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ç", "c")
+        s = str(s).strip().replace("İ", "i").replace("I", "i").replace("ı", "i").lower().replace("\u0307", "")
+        s = s.replace("ğ", "g").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ç", "c")
+        s = s.replace("belediye spor", "belediyespor").replace("b.sehir", "buyuksehir").replace("bld.", "belediye")
+        return s
 
     def extract_age(cat):
         c = norm(cat)
         if "genc" in c or "u18" in c: return "u18"
-        if "yildiz" in c or "u16" in c: return "u16"
+        if "yildiz" in c or "u16" in c or "yk" in c: return "u16"
         return ""
 
     lookup_exact = {}
@@ -184,8 +187,18 @@ def build_volleybox_name_resolver():
         if ct and age and (nn, age, ct) in lookup_age_city: return lookup_age_city[(nn, age, ct)]
         if c and (nn, c) in lookup_cat: return lookup_cat[(nn, c)]
         if age and (nn, age) in lookup_age: return lookup_age[(nn, age)]
-        if ct and (nn, ct) in lookup_city: return lookup_city[(nn, ct)]
-        if nn in lookup_general: return lookup_general[nn]
+
+        # Fallback: Yalnızca yaş kategorisi çelişmiyorsa kabul et (örn: U16 liginde U18 takım dönülmez)
+        if ct and (nn, ct) in lookup_city:
+            cand = lookup_city[(nn, ct)]
+            cand_age = extract_age(cand)
+            if not age or not cand_age or age == cand_age:
+                return cand
+        if nn in lookup_general:
+            cand = lookup_general[nn]
+            cand_age = extract_age(cand)
+            if not age or not cand_age or age == cand_age:
+                return cand
         return team_name
 
     return resolve
@@ -202,20 +215,21 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
     def _norm(s: str) -> str:
         if not s:
             return ""
-        return (
+        s = (
             str(s)
             .strip()
             .replace("İ", "i")
             .replace("I", "i")
             .replace("ı", "i")
             .lower()
-            .replace("ı", "i")
+            .replace("\u0307", "")
             .replace("ğ", "g")
             .replace("ü", "u")
             .replace("ş", "s")
             .replace("ö", "o")
             .replace("ç", "c")
         )
+        return s.replace("belediye spor", "belediyespor").replace("b.sehir", "buyuksehir").replace("bld.", "belediye")
 
     def _get_group_override(raw_team: str, group_str: str, city: str):
         rt = _norm(raw_team)
@@ -229,6 +243,20 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         if ("ankara" in ct or not ct) and ("5" in gs) and ("gen" not in gs):
             if "ted" in rt or "kolej" in rt:
                 return "TED Ankara Kolejliler - B U16"
+        # Balıkesir Yıldız Kızlar Süper Lig (U16) Merkez & Körfez
+        if ("balikesir" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
+            if "altinoluk" in rt:
+                return "Edremit Belediyesi Altınoluk Spor Kulübü - B U16"
+            if "merkez" in rt and ("buyuksehir" in rt or "belediye" in rt):
+                return "Balıkesir Büyükşehir Belediyespor Merkez U16"
+            if "edremit" in rt and ("buyuksehir" in rt or "belediye" in rt):
+                return "Balıkesir Büyükşehir Belediyespor Edremit - B U16"
+            if "dsi" in rt:
+                return "Balıkesir DSİ Spor U16"
+            if "ayvalik gelisim" in rt:
+                return "Ayvalık Gelişim Spor Kulübü U16"
+            if "kuzey ege" in rt:
+                return "Kuzey Ege Gelişim Spor Kulübü U16"
         return None
 
     # Standings üzerinden ham -> çözülmüş/ayrıştırılmış isim haritası

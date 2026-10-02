@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:42:03.660538",
+  "updated_at": "2026-10-02T16:21:05.988405",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -339,7 +339,7 @@
       },
       {
         "rank": 2,
-        "team": "Eskişehir Peyman SK U18",
+        "team": "Eskişehir Peyman Spor Kulübü",
         "played": 2,
         "won": 2,
         "lost": 0,
@@ -1147,18 +1147,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404267",
+        "url": "https://women.volleybox.net/tr/anadolu-kolej-spor-kulubu-u16-beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-c404267",
+        "host_name": "Anadolu Kolej Spor Kulübü U16",
+        "guest_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-07",
+        "vb_time": "20:00",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "20:00",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1623,18 +1630,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404269",
+        "url": "https://women.volleybox.net/tr/es-gunes-spor-kulubu-u16-esnova-spor-kulubu-b-u16-c404269",
+        "host_name": "Es Güneş Spor Kulübü U16",
+        "guest_name": "Esnova Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-05",
+        "vb_time": "18:30",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "18:30",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1657,18 +1671,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404271",
+        "url": "https://women.volleybox.net/tr/eskisehir-turk-telekom-spor-kulubu-b-u16-esnova-spor-kulubu-b-u16-c404271",
+        "host_name": "Eskişehir Türk Telekom Spor Kulübü - B U16",
+        "guest_name": "Esnova Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-07",
+        "vb_time": "18:30",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "18:30",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1728,7 +1749,7 @@
       "gender": "Kız",
       "group": "- D Gr",
       "match_no": "2",
-      "home_team": "Eskişehir Peyman SK U18",
+      "home_team": "Eskişehir Peyman Spor Kulübü",
       "away_team": "Eskişehir Voleybol Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -1864,7 +1885,7 @@
       "gender": "Kız",
       "group": "- D Gr",
       "match_no": "5",
-      "home_team": "Eskişehir Peyman SK U18",
+      "home_team": "Eskişehir Peyman Spor Kulübü",
       "away_team": "Anadolu Üniversitesi Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -1917,18 +1938,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404272",
+        "url": "https://women.volleybox.net/tr/eskisehir-voleybol-spor-kulubu-u16-eskisehir-yldz-spor-kulubu-u16-c404272",
+        "host_name": "Eskişehir Voleybol Spor Kulübü U16",
+        "guest_name": "Eskişehir Yıldız Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "18:30",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "18:30",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1944,29 +1972,36 @@
       "group": "- D Gr",
       "match_no": "7",
       "home_team": "Es Voleybol Akademi Spor Kulübü - A U16",
-      "away_team": "Eskişehir Peyman SK U18",
+      "away_team": "Eskişehir Peyman Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404273",
+        "url": "https://women.volleybox.net/tr/es-voleybol-akademi-spor-kulubu-u16-eskisehir-peyman-sk-u16-c404273",
+        "host_name": "Es Voleybol Akademi Spor Kulübü U16",
+        "guest_name": "Eskişehir Peyman SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-08",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-08",
+          "vb_time": "20:00",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 30,
-  "volleybox_sync_updated_at": "2026-10-02T15:46:26.308618"
+  "volleybox_synced_matches": 35,
+  "volleybox_sync_updated_at": "2026-10-02T16:25:37.273331"
 }

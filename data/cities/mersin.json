@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:42:05.094467",
+  "updated_at": "2026-10-02T16:21:07.777328",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -117,7 +117,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar 1. Ligi - Genç Kızlar Mersin 1. Ligi A Grubu": [
+    "Genç Kızlar 1. Ligi - Mersin 1. Ligi A Grubu": [
       {
         "rank": 1,
         "team": "ERDEMLİ BELEDİYE SK",
@@ -697,7 +697,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Genç Kızlar Mersin 1. Ligi A Grubu": [
+    "Yıldız Kızlar Süper Lig - Mersin 1. Ligi A Grubu": [
       {
         "rank": 1,
         "team": "ERDEMLİ BELEDİYE SK",
@@ -1170,7 +1170,7 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "group": "Mersin 1. Ligi A Grubu",
       "match_no": "1",
       "home_team": "MERSİN EVA SK A",
       "away_team": "SİYAH BEYAZ SK",
@@ -1204,7 +1204,7 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "group": "Mersin 1. Ligi A Grubu",
       "match_no": "2",
       "home_team": "MERSİN GELİŞİM SK",
       "away_team": "MEZİTLİ DENİZ SK",
@@ -1238,7 +1238,7 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "group": "Mersin 1. Ligi A Grubu",
       "match_no": "3",
       "home_team": "SİLİFKE ATATÜRK OO SK",
       "away_team": "MERSİN EVA SK B",
@@ -1272,7 +1272,7 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Genç Kızlar Mersin 1. Ligi A Grubu",
+      "group": "Mersin 1. Ligi A Grubu",
       "match_no": "4",
       "home_team": "TÜRKOĞLU SK",
       "away_team": "TARSUS FÇ SK",
@@ -1299,5 +1299,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-02T15:46:29.825889"
+  "volleybox_sync_updated_at": "2026-10-02T16:25:41.142608"
 }

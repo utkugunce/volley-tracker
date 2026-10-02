@@ -197,6 +197,18 @@ export function getLeagueDisplayTitle(title: string, subTitle?: string): string 
     return cleanTitle;
   }
 
-  return `${cleanTitle} · ${cleanSub}`;
+  // Alt başlıktaki gereksiz lig / kategori öneklerini temizle (örn. "Yıldız Kızlar B Grubu ( Merkez )" -> "B Grubu (Merkez)")
+  const stripPrefixRegex = /^(?:(?:Genç|Yıldız|Küçük|Midi|Mini)\s+(?:Kız(?:lar)?|Erkek(?:ler)?|Kadın(?:lar)?)?\s*(?:Süper\s+Lig[iıİI]?|1\.\s*Lig[iıİI]?)?|(?:Süper\s+Lig|1\.\s*Lig)\s*(?:Genç|Yıldız)?\s*(?:Kız(?:lar)?)?)\s*[-–—:\s]*(?=(?:[A-Z0-9]\.?\s*Gr(?:up|ubu)?|Grup\s+[A-Z0-9]|[A-Z]\s*(?:\(|$|\s*Gr)))/i;
+  let formattedSub = cleanSub.replace(stripPrefixRegex, "").trim();
+  formattedSub = formattedSub.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")").replace(/^[-–—\s]+/, "");
+  if (/^[A-Z]$/i.test(formattedSub)) {
+    formattedSub = `${formattedSub.toUpperCase()} Grubu`;
+  } else if (/^[A-Z]\s+Gr$/i.test(formattedSub) || /\b[A-Z]\s+Gr\b/i.test(formattedSub)) {
+    formattedSub = formattedSub.replace(/\b([A-Z])\s+Gr\b/i, "$1 Grubu");
+  } else if (/^Grup\s+([A-Z0-9]+)/i.test(formattedSub)) {
+    formattedSub = formattedSub.replace(/^Grup\s+([A-Z0-9]+)/i, "$1 Grubu");
+  }
+
+  return `${cleanTitle} · ${formattedSub}`;
 }
 
