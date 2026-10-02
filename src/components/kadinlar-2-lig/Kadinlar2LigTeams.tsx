@@ -9,6 +9,7 @@ import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
 import { getVolleyboxMapping } from "@/utils/volleybox";
+import { getKadinlar2LigTeamName, getKadinlar2LigTeamNameVariants, K2_CATEGORY } from "@/utils/kadinlar2LigConverter";
 
 interface Kadinlar2LigTeamsProps {
   teams: Kadinlar2LigTeam[];
@@ -28,9 +29,8 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
 
   const filteredTeams = useMemo(() => {
     return teams.filter((t) => {
-      const vb = getVolleyboxMapping(t.takim_adi, "Kadınlar 2. Ligi");
-      const displayName = t.volleybox_name || vb?.matched_as || t.takim_adi;
-      if (showOnlyFavorites && !isFavorite(t.takim_adi) && !isFavorite(displayName)) return false;
+      const displayName = getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name);
+      if (showOnlyFavorites && !getKadinlar2LigTeamNameVariants(t.takim_adi, t.volleybox_name).some((n) => isFavorite(n))) return false;
       if (filterGroup !== "all" && t.grup_no !== filterGroup) return false;
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
@@ -77,8 +77,8 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
       {/* 2. Takım Kartları Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
         {filteredTeams.map((team, idx) => {
-          const vb = getVolleyboxMapping(team.takim_adi, "Kadınlar 2. Ligi");
-          const displayName = team.volleybox_name || vb?.matched_as || team.takim_adi;
+          const vb = getVolleyboxMapping(team.takim_adi, K2_CATEGORY);
+          const displayName = getKadinlar2LigTeamName(team.takim_adi, team.volleybox_name);
           const logoSrc = (team.logo && !team.logo.includes("takimlogoyok")) ? team.logo : (vb?.local_logo || vb?.logo_url);
           const vbUrl = team.volleybox_url || vb?.volleybox_url;
           const isFav = isFavorite(displayName) || isFavorite(team.takim_adi);

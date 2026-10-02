@@ -30,7 +30,7 @@ import { Kadinlar2LigCompare } from "./Kadinlar2LigCompare";
 import { Kadinlar2LigSidebar } from "./Kadinlar2LigSidebar";
 import { AppShell } from "@/components/layout/AppShell";
 import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
-import { convertK2MatchToMatch } from "@/utils/kadinlar2LigConverter";
+import { convertK2MatchToMatch, getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
 import {
   getKadinlar2LigRoute,
   parseKadinlar2LigRoute,
@@ -89,7 +89,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
   // Spotlight Arama Verileri
   const searchableTeams = useMemo(() => {
-    return (data.tum_takimlar || []).map((t) => t.takim_adi);
+    return (data.tum_takimlar || []).map((t) => getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name));
   }, [data.tum_takimlar]);
 
   const searchableHalls = useMemo(() => {

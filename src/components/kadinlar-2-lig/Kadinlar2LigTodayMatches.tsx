@@ -7,7 +7,7 @@ import { Match } from "@/types/fixture";
 import { DateNavigationRibbon, StatusFilterType } from "@/components/match/DateNavigationRibbon";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { useFavorites } from "@/utils/useFavorites";
-import { convertK2MatchToMatch, normalizeK2Date } from "@/utils/kadinlar2LigConverter";
+import { convertK2MatchToMatch, normalizeK2Date, getKadinlar2LigMatchTeamNames, isKadinlar2LigMatchFavorite, kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 
 interface Kadinlar2LigTodayMatchesProps {
@@ -75,13 +75,11 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
       if (statusFilter === "upcoming" && (m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -"))) return false;
       if (statusFilter === "live") return false;
       if (showOnlyFavorites) {
-        const homeFav = isFavorite(m.takim_a);
-        const awayFav = isFavorite(m.takim_b);
-        if (!homeFav && !awayFav) return false;
+        if (!isKadinlar2LigMatchFavorite(m, isFavorite)) return false;
       }
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
-        const inTeams = m.takim_a.toLowerCase().includes(q) || m.takim_b.toLowerCase().includes(q);
+        const inTeams = kadinlar2LigMatchHasTeamQuery(m, q);
         const inCity = m.sehir.toLowerCase().includes(q);
         const inHall = m.salon.toLowerCase().includes(q);
         if (!inTeams && !inCity && !inHall) return false;
@@ -101,13 +99,13 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
   }, [filteredMatches]);
 
   const favoriteMatchIds = useMemo(
-    () => allMatches.filter((match) => isFavorite(match.takim_a) || isFavorite(match.takim_b)).map((match) => match.id),
+    () => allMatches.filter((match) => isKadinlar2LigMatchFavorite(match, isFavorite)).map((match) => match.id),
     [allMatches, isFavorite]
   );
 
   const handleToggleFavorite = (matchId: string) => {
     const match = allMatches.find((item) => item.id === matchId);
-    if (match) toggleFavorite(match.takim_a);
+    if (match) toggleFavorite(getKadinlar2LigMatchTeamNames(match).home);
   };
 
   const selectStatus = (status: StatusFilterType) => setStatusFilter(status);

@@ -123,4 +123,19 @@ describe("teamData utility", () => {
     expect(catalca?.matches.length).toBeGreaterThan(0);
     expect(catalca?.standingsContexts[0].groupName).toContain("Grup 1");
   });
+
+  it("sponsor eklenerek adı değişen 2. Lig takımları hem TVF hem Volleybox slug'ıyla bulunur", () => {
+    const pars = getTeamDetailsBySlug("buff-gym-pars-akademi");
+    expect(pars).not.toBeNull();
+    expect(pars?.categories).toContain("Kadınlar 2. Ligi");
+    expect(pars?.mapping?.matched_as).toBe("Sivas Pars Volley");
+
+    const marmara = getTeamDetailsBySlug("lanueva-kozmetik-anadolu-marmara");
+    expect(marmara).not.toBeNull();
+    expect(marmara?.mapping?.matched_as).toBe("Anadolu Marmara SK");
+
+    const byVolleyboxName = getTeamDetailsBySlug("arnavutkoy-belediyesi-sk");
+    expect(byVolleyboxName).not.toBeNull();
+    expect(byVolleyboxName?.categories).toContain("Kadınlar 2. Ligi");
+  });
 });
