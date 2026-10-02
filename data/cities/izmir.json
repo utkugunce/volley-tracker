@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T19:06:09.260301",
+  "updated_at": "2026-10-02T02:20:39.459938",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -35,28 +35,28 @@
       {
         "rank": 1,
         "team": "Göztepe SK - A U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Bayraklı Belediyesi Spor Kulübü U18",
-        "played": 1,
+        "team": "Volkan Güç Spor Kulübü - B U18",
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Volkan Güç Spor Kulübü - B U18",
+        "team": "Bayraklı Belediyesi Spor Kulübü U18",
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -92,23 +92,23 @@
       {
         "rank": 1,
         "team": "Gelişim Koleji SK U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Altınordu Voleybol - B U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "sets_won": 4,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -1099,11 +1099,15 @@
       "match_no": "6",
       "home_team": "Göztepe SK - A U18",
       "away_team": "Bayraklı Belediyesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-11",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401121",
@@ -1450,11 +1454,16 @@
       "match_no": "6",
       "home_team": "Gelişim Koleji SK U18",
       "away_team": "Altınordu Voleybol - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "21-25",
+        "25-11",
+        "25-14",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401123",
@@ -5435,5 +5444,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-01T19:09:10.494572"
+  "volleybox_sync_updated_at": "2026-10-02T02:22:23.592185"
 }
