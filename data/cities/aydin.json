@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T14:50:22.444889",
+  "updated_at": "2026-10-02T15:41:54.317705",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -329,28 +329,28 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "399634",
-        "url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-u18-efeler-altn-smac-spor-kulubu-u18-c399634",
+        "match_id": "404243",
+        "url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-u18-efeler-altn-smac-spor-kulubu-u18-c404243",
         "host_name": "Aydın Büyükşehir Belediyespor U18",
         "guest_name": "Efeler Altın Smaç Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-09",
+        "vb_date": "2026-10-08",
         "vb_time": "19:00",
         "vb_hall": "SKS Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-09",
+          "vb_date": "2026-10-08",
           "vb_time": "19:00",
           "vb_hall": "SKS Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-08 / VB: 2026-10-09)"
+          "details": null
         }
       }
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-02T14:54:55.700812"
+  "volleybox_sync_updated_at": "2026-10-02T15:46:25.768913"
 }

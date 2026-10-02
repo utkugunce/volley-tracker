@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T14:50:24.104568",
+  "updated_at": "2026-10-02T15:41:57.682238",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -25,7 +25,8 @@
       "Ayvalık Ss.",
       "Edremit Ss.",
       "Kurtdereli Ss.",
-      "R.Gencer Ss."
+      "R.Gencer Ss.",
+      "Şh.T.Solak S.S."
     ]
   },
   "standings": {
@@ -500,8 +501,8 @@
       "id": "balikesir-20261003-001",
       "city": "Balıkesir",
       "date": "2026-10-03",
-      "time": "17:00",
-      "hall": "Kurtdereli Ss.",
+      "time": "18:30",
+      "hall": "Şh.T.Solak S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -838,5 +839,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-02T14:54:55.736443"
+  "volleybox_sync_updated_at": "2026-10-02T15:46:25.772661"
 }
