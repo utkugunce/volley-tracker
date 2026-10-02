@@ -14179,17 +14179,17 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Türkiye",
       "city_slug": "turkiye",
-      "matched_as": "Ataşehir Kartalları Spor Kulübü",
-      "volleybox_url": "https://women.volleybox.net/tr/atasehir-kartallar-spor-kulubu-t39649",
+      "matched_as": "Kartal Anadolu Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
       "age_category": "A Takım",
       "confidence": "verified",
       "note": "Grup 4",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Ataşehir Kartalları Spor Kulübü"
+        "Kartal Anadolu Spor Kulübü"
       ],
-      "logo_url": "/logos/atasehir-kartallar-spor-kulubu-t39649.png",
-      "local_logo": "/logos/atasehir-kartallar-spor-kulubu-t39649.png"
+      "logo_url": "/logos/kartal-anadolu-t7369.png",
+      "local_logo": "/logos/kartal-anadolu-t7369.png"
     },
     {
       "internal_name": "KARTAL BELEDİYESPOR",
@@ -16171,7 +16171,7 @@
       "city": "Gazi̇antep",
       "city_slug": "gazi-antep",
       "matched_as": "Forliva Kayseri Atletik Spor",
-      "volleybox_url": "https://women.volleybox.net/tr/kayseri-atletik-spor-kulubu-t8654",
+      "volleybox_url": "https://women.volleybox.net/tr/kayseri-voleybol-t17248",
       "age_category": "A Takım",
       "confidence": "verified",
       "note": "Grup 15",
@@ -16184,8 +16184,8 @@
         "Kayseri OSB Teknik Koleji Gençlik SK",
         "Kayseri BRN Yatak Voleybol Kulübü"
       ],
-      "logo_url": "/logos/kayseri-atletik-spor-kulubu-t8654.png",
-      "local_logo": "/logos/kayseri-atletik-spor-kulubu-t8654.png"
+      "logo_url": null,
+      "local_logo": null
     },
     {
       "internal_name": "MALATYA VOLEYBOL",
