@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T12:47:40.133884",
+  "updated_at": "2026-10-02T08:41:39.462216",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -328,7 +328,7 @@
       },
       {
         "rank": 7,
-        "team": "İZEGE Spor Kulübü - A U18",
+        "team": "İZEGE Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -532,7 +532,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - A Gr": [
       {
         "rank": 1,
-        "team": "Endo Karşıyaka",
+        "team": "Karşıyaka SK",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -1895,25 +1895,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "402740",
-        "url": "https://women.volleybox.net/tr/goksu-atletik-spor-kulubu-u18-ozay-voleybol-spor-kulubu-u18-c402740",
-        "host_name": "Göksu Atletik Spor Kulübü U18",
-        "guest_name": "Özay Voleybol Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-05",
+        "vb_date": null,
         "vb_time": null,
-        "vb_hall": "Gaziemir Spor Salonu",
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-10-05",
-          "vb_time": null,
-          "vb_hall": "Gaziemir Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-12 / VB: 2026-10-05) | Salon Değişti (TVF: Halkapınar Küçük / VB: Gaziemir Spor Salonu)"
+          "has_diff": false
         }
       }
     },
@@ -2377,7 +2370,7 @@
       "group": "Genç Kız - A Gr",
       "match_no": "3",
       "home_team": "Karşıyaka SK - B U18",
-      "away_team": "İZEGE Spor Kulübü - A U18",
+      "away_team": "İZEGE Spor Kulübü U18",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -3043,7 +3036,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "2",
-      "home_team": "Endo Karşıyaka",
+      "home_team": "Karşıyaka SK",
       "away_team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
       "score": "3 - 1",
       "home_score": 3,
@@ -3136,7 +3129,7 @@
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "4",
       "home_team": "Vakıfbank İzmir U16",
-      "away_team": "Endo Karşıyaka",
+      "away_team": "Karşıyaka SK",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -3180,7 +3173,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "5",
-      "home_team": "Endo Karşıyaka",
+      "home_team": "Karşıyaka SK",
       "away_team": "KZY Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -3267,7 +3260,7 @@
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "7",
       "home_team": "AB Voleybol Akademi U16",
-      "away_team": "Endo Karşıyaka",
+      "away_team": "Karşıyaka SK",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -5443,6 +5436,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-02T12:52:12.912628"
+  "volleybox_synced_matches": 103,
+  "volleybox_sync_updated_at": "2026-10-02T08:43:26.947340"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T12:47:34.752467",
+  "updated_at": "2026-10-02T08:41:38.389300",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -52,7 +52,7 @@
       },
       {
         "rank": 3,
-        "team": "Anadolu Üniversitesi Spor Kulübü U18",
+        "team": "Anadolu Üniversitesi GSK U18",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -441,7 +441,7 @@
       "group": "- C Gr",
       "match_no": "2",
       "home_team": "Eskişehir Peyman SK U18",
-      "away_team": "Anadolu Üniversitesi Spor Kulübü U18",
+      "away_team": "Anadolu Üniversitesi GSK U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -485,7 +485,7 @@
       "gender": "Kız",
       "group": "- C Gr",
       "match_no": "3",
-      "home_team": "Anadolu Üniversitesi Spor Kulübü U18",
+      "home_team": "Anadolu Üniversitesi GSK U18",
       "away_team": "Şehir Koleji Eğitim Kültür SK U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -1982,5 +1982,5 @@
     }
   ],
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-10-02T12:52:09.501705"
+  "volleybox_sync_updated_at": "2026-10-02T08:43:26.953345"
 }

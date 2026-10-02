@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T12:47:44.068544+03:00",
+  "updated_at": "2026-10-02T08:41:41.439985+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -325,7 +325,7 @@
       },
       {
         "rank": 7,
-        "team": "Mehmet Erdem Marmara Akademi Spor Kulübü U18",
+        "team": "Marmara Akademi Atletik Spor Kulübü U18",
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -1728,7 +1728,7 @@
       },
       {
         "rank": 6,
-        "team": "Roberteam Spor U16",
+        "team": "Robert Spor Kulübü U16",
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -2110,7 +2110,7 @@
       },
       {
         "rank": 7,
-        "team": "Mehmet Erdem Marmara Akademi Spor Kulübü U16",
+        "team": "Marmara Akademi Atletik Spor Kulübü U16",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -2347,7 +2347,7 @@
       "group": "B Grubu",
       "match_no": "2",
       "home_team": "Fenerbahçe U18",
-      "away_team": "Mehmet Erdem Marmara Akademi Spor Kulübü U18",
+      "away_team": "Marmara Akademi Atletik Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -2664,7 +2664,7 @@
       "group": "A Grubu",
       "match_no": "2",
       "home_team": "Tuzla Rekor Spor Kulübü U18",
-      "away_team": "Roberteam Spor U16",
+      "away_team": "Robert Spor Kulübü U16",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -2891,7 +2891,7 @@
       "group": "C Grubu",
       "match_no": "2",
       "home_team": "Eczacıbaşı - B U16",
-      "away_team": "Mehmet Erdem Marmara Akademi Spor Kulübü U16",
+      "away_team": "Marmara Akademi Atletik Spor Kulübü U16",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -4074,7 +4074,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "8",
-      "home_team": "Mehmet Erdem Marmara Akademi Spor Kulübü U18",
+      "home_team": "Marmara Akademi Atletik Spor Kulübü U18",
       "away_team": "Eyüpsultan Belediyesi SK U18",
       "score": "3 - 2",
       "home_score": 3,
@@ -4530,7 +4530,7 @@
       "gender": "Kız",
       "group": "C Grubu",
       "match_no": "6",
-      "home_team": "Mehmet Erdem Marmara Akademi Spor Kulübü U16",
+      "home_team": "Marmara Akademi Atletik Spor Kulübü U16",
       "away_team": "VakıfBank - A U16",
       "score": "1 - 3",
       "home_score": 1,
@@ -4711,7 +4711,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "8",
-      "home_team": "Roberteam Spor U16",
+      "home_team": "Robert Spor Kulübü U16",
       "away_team": "Galatasaray U16",
       "score": "0 - 3",
       "home_score": 0,
@@ -5592,7 +5592,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "11",
-      "home_team": "Mehmet Erdem Marmara Akademi Spor Kulübü U18",
+      "home_team": "Marmara Akademi Atletik Spor Kulübü U18",
       "away_team": "Ünsped Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -5923,5 +5923,5 @@
     }
   ],
   "volleybox_synced_matches": 67,
-  "volleybox_sync_updated_at": "2026-10-02T12:52:08.022810"
+  "volleybox_sync_updated_at": "2026-10-02T08:43:26.916439"
 }
