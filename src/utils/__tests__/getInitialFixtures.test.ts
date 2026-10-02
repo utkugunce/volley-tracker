@@ -31,8 +31,10 @@ describe("getInitialFixtures Utility", () => {
     expect(homeData).toBeDefined();
     expect(homeData.city).toBe("Tüm İller");
     expect(Array.isArray(homeData.matches)).toBe(true);
-    // Home data should be bounded for performance
-    expect(homeData.matches.length).toBeLessThanOrEqual(50);
+    // Home data should be bounded for performance: 16 son biten + 16 yaklaşan
+    // + bugün/dünün maçları (günlük veriye göre değişir), bu yüzden esnek üst sınır.
+    expect(homeData.matches.length).toBeLessThanOrEqual(150);
+    expect(homeData.matches.length).toBeLessThan(getInitialFixtures().matches.length);
     expect(homeData.total_matches).toBeGreaterThan(0);
   });
 });
