@@ -116,6 +116,44 @@ class TestStandingsConflictResolution(unittest.TestCase):
         self.assertFalse(any(" - A" in t for t in team_names))
         self.assertFalse(any(" - B" in t for t in team_names))
 
+    def test_ankara_group_overrides(self):
+        """Ankara Yıldız Kızlar Süper Lig'de:
+        - 3. Gruptaki TED Ankara Kolejliler A takımı ('TED Ankara Kolejliler U16')
+        - 5. Gruptaki TED Ankara Kolejliler B takımı ('TED Ankara Kolejliler - B U16')
+        olarak çözümlenmeli."""
+        standings = {
+            "Yıldız Kızlar Süper Lig - 3. Grup": [
+                {"rank": 5, "team": "TED Ankara Kolejliler", "played": 0, "points": 0}
+            ],
+            "Yıldız Kızlar Süper Lig - 5. Grup": [
+                {"rank": 3, "team": "TED Ankara Kolejliler", "played": 1, "points": 0}
+            ],
+        }
+        matches = [
+            {
+                "category": "Yıldız Kızlar Süper Lig",
+                "group": "3. Grup",
+                "home_team": "TED Ankara Kolejliler",
+                "away_team": "Yedidağ Spor Kulübü",
+            },
+            {
+                "category": "Yıldız Kızlar Süper Lig",
+                "group": "5. Grup",
+                "home_team": "TED Ankara Kolejliler",
+                "away_team": "TEİAŞ Spor Kulübü",
+            },
+        ]
+
+        apply_volleybox_names(matches, standings, "Ankara")
+
+        # 3. Grup A takımı
+        self.assertEqual(standings["Yıldız Kızlar Süper Lig - 3. Grup"][0]["team"], "TED Ankara Kolejliler U16")
+        self.assertEqual(matches[0]["home_team"], "TED Ankara Kolejliler U16")
+
+        # 5. Grup B takımı
+        self.assertEqual(standings["Yıldız Kızlar Süper Lig - 5. Grup"][0]["team"], "TED Ankara Kolejliler - B U16")
+        self.assertEqual(matches[1]["home_team"], "TED Ankara Kolejliler - B U16")
+
     def test_live_data_has_zero_standings_conflicts(self):
         """Mevcut data/ dizinindeki tüm şehir dosyalarında 0 takım ismi çakışması olmalı."""
         conflicts = scan_for_standings_conflicts()
