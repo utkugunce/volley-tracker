@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T11:50:51.361571",
+  "updated_at": "2026-10-02T12:47:43.940129",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -407,7 +407,7 @@
       },
       {
         "rank": 5,
-        "team": "Erse Spor Kulübü U16",
+        "team": "ON Hotels Erse Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2536,7 +2536,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar Doğu Grubu",
       "match_no": "6",
-      "home_team": "Erse Spor Kulübü U16",
+      "home_team": "ON Hotels Erse Spor Kulübü U16",
       "away_team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -2568,5 +2568,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-10-02T11:55:00.725870"
+  "volleybox_sync_updated_at": "2026-10-02T12:52:09.028641"
 }

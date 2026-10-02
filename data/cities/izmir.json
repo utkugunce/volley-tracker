@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T11:50:52.583816",
+  "updated_at": "2026-10-02T12:47:40.133884",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -328,7 +328,7 @@
       },
       {
         "rank": 7,
-        "team": "İZEGE Spor Kulübü U18",
+        "team": "İZEGE Spor Kulübü - A U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -532,7 +532,7 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kızlar - A Gr": [
       {
         "rank": 1,
-        "team": "Karşıyaka SK",
+        "team": "Endo Karşıyaka",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -2377,7 +2377,7 @@
       "group": "Genç Kız - A Gr",
       "match_no": "3",
       "home_team": "Karşıyaka SK - B U18",
-      "away_team": "İZEGE Spor Kulübü U18",
+      "away_team": "İZEGE Spor Kulübü - A U18",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -3043,7 +3043,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "2",
-      "home_team": "Karşıyaka SK",
+      "home_team": "Endo Karşıyaka",
       "away_team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
       "score": "3 - 1",
       "home_score": 3,
@@ -3136,7 +3136,7 @@
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "4",
       "home_team": "Vakıfbank İzmir U16",
-      "away_team": "Karşıyaka SK",
+      "away_team": "Endo Karşıyaka",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -3180,7 +3180,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "5",
-      "home_team": "Karşıyaka SK",
+      "home_team": "Endo Karşıyaka",
       "away_team": "KZY Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -3267,7 +3267,7 @@
       "group": "Yıldız Kızlar - A Gr",
       "match_no": "7",
       "home_team": "AB Voleybol Akademi U16",
-      "away_team": "Karşıyaka SK",
+      "away_team": "Endo Karşıyaka",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -5444,5 +5444,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-02T11:55:03.001027"
+  "volleybox_sync_updated_at": "2026-10-02T12:52:12.912628"
 }

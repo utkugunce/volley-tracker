@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T11:50:48.276777",
+  "updated_at": "2026-10-02T12:47:32.315340",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -182,7 +182,7 @@
       },
       {
         "rank": 4,
-        "team": "İnegöl Orhaniye Voleybol SK U18",
+        "team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -239,7 +239,7 @@
       },
       {
         "rank": 4,
-        "team": "Nilüfer Belediyespor",
+        "team": "Nilüfer Belediyespor Eker",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -399,7 +399,7 @@
       },
       {
         "rank": 2,
-        "team": "Nilüfer Belediyespor",
+        "team": "Nilüfer Belediyespor Eker",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -432,7 +432,7 @@
       },
       {
         "rank": 5,
-        "team": "Hekimoğlu GCT Bursa Voleybol Kulübü U16",
+        "team": "Hk Volleyball Academy Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -535,7 +535,7 @@
       },
       {
         "rank": 3,
-        "team": "Nilüfer Belediyespor (A)",
+        "team": "Nilüfer Belediyespor Eker (A)",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -717,7 +717,7 @@
       "group": "- C",
       "match_no": "1",
       "home_team": "Bursa Koç Spor Kulübü - A U18",
-      "away_team": "İnegöl Orhaniye Voleybol SK U18",
+      "away_team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -818,7 +818,7 @@
       "gender": "Kız",
       "group": "- D",
       "match_no": "2",
-      "home_team": "Nilüfer Belediyespor",
+      "home_team": "Nilüfer Belediyespor Eker",
       "away_team": "Bursa Osmangazi Belediye Spor",
       "score": "- : -",
       "home_score": null,
@@ -1163,7 +1163,7 @@
       "gender": "Kız",
       "group": "- C",
       "match_no": "2",
-      "home_team": "Nilüfer Belediyespor",
+      "home_team": "Nilüfer Belediyespor Eker",
       "away_team": "Mesut Kökel Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -1208,7 +1208,7 @@
       "gender": "Kız",
       "group": "- C",
       "match_no": "3",
-      "home_team": "Hekimoğlu GCT Bursa Voleybol Kulübü U16",
+      "home_team": "Hk Volleyball Academy Spor Kulübü U16",
       "away_team": "Oksijen Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -1378,7 +1378,7 @@
       "group": "- E",
       "match_no": "2",
       "home_team": "Bursa Büyükşehir Belediyespor U16",
-      "away_team": "Nilüfer Belediyespor (A)",
+      "away_team": "Nilüfer Belediyespor Eker (A)",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -1415,5 +1415,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-02T11:55:00.905322"
+  "volleybox_sync_updated_at": "2026-10-02T12:52:09.096028"
 }
