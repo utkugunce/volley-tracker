@@ -628,11 +628,16 @@ def scrape_single_city(city_info):
     halls_set = set()
     match_counter = 1
 
-    target_kumes = [
-        ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
-        ("GK1L", "Genç Kızlar 1. Ligi", "Genç"),
-        ("YKSL", "Yıldız Kızlar Süper Lig", "Yıldız"),
-    ]
+    if subdomain == "mersin":
+        target_kumes = [
+            ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
+        ]
+    else:
+        target_kumes = [
+            ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
+            ("GK1L", "Genç Kızlar 1. Ligi", "Genç"),
+            ("YKSL", "Yıldız Kızlar Süper Lig", "Yıldız"),
+        ]
 
     for kume_code, cat_name, age_group in target_kumes:
         p_k = state.copy()
@@ -785,8 +790,8 @@ def scrape_single_city(city_info):
             "total_matches": len(city_matches),
             "source": f"https://{subdomain}.voleyboliltemsilciligi.com",
             "filters": {
-                "categories": ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
-                "age_groups": ["Tümü", "Genç", "Yıldız"],
+                "categories": ["Tümü", "Genç Kızlar Süper Lig"] if subdomain == "mersin" else ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
+                "age_groups": ["Tümü", "Genç"] if subdomain == "mersin" else ["Tümü", "Genç", "Yıldız"],
                 "genders": ["Kız"],
                 "halls": ["Tümü"] + sorted(list(halls_set)),
             },

@@ -2,7 +2,7 @@
   "updated_at": "2026-10-02T17:15:52.525872+03:00",
   "total_cities": 81,
   "active_cities": 25,
-  "total_matches": 710,
+  "total_matches": 706,
   "cities": [
     {
       "ilid": "1",
@@ -331,9 +331,9 @@
       "name": "Mersin",
       "slug": "mersin",
       "url": "https://mersin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (12 Maç Mevcut)",
-      "matches_count": 12,
-      "standings_count": 6,
+      "status": "Aktif (8 Maç Mevcut)",
+      "matches_count": 8,
+      "standings_count": 1,
       "data_file": "data/cities/mersin.json"
     },
     {
