@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-10-02T08:42:02.131313+00:00",
+  "updated_at": "2026-10-02T14:50:56.063879+03:00",
   "total_cities": 81,
-  "active_cities": 23,
-  "total_matches": 708,
+  "active_cities": 26,
+  "total_matches": 843,
   "cities": [
     {
       "ilid": "1",
       "name": "Adana",
       "slug": "adana",
       "url": "https://adana.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (130 Maç Mevcut)",
+      "matches_count": 130,
+      "standings_count": 12,
+      "data_file": "data/cities/adana.json"
     },
     {
       "ilid": "2",
@@ -29,10 +29,10 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (4 Maç Mevcut)",
+      "matches_count": 4,
+      "standings_count": 2,
+      "data_file": "data/cities/afyon.json"
     },
     {
       "ilid": "4",
@@ -169,8 +169,8 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (20 Maç Mevcut)",
-      "matches_count": 20,
+      "status": "Aktif (21 Maç Mevcut)",
+      "matches_count": 21,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
     },
@@ -210,7 +210,7 @@
       "name": "Diyarbakır",
       "slug": "diyarbakir",
       "url": "https://diyarbakir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -250,7 +250,7 @@
       "name": "Erzurum",
       "slug": "erzurum",
       "url": "https://erzurum.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -480,10 +480,10 @@
       "name": "Muğla",
       "slug": "mugla",
       "url": "https://mugla.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Puan Durumu Var (11 Tablo)",
       "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "standings_count": 11,
+      "data_file": "data/cities/mugla.json"
     },
     {
       "ilid": "49",
@@ -570,7 +570,7 @@
       "name": "Sinop",
       "slug": "sinop",
       "url": "https://sinop.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -600,7 +600,7 @@
       "name": "Tokat",
       "slug": "tokat",
       "url": "https://tokat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -650,7 +650,7 @@
       "name": "Van",
       "slug": "van",
       "url": "https://van.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

@@ -844,18 +844,18 @@
         "guest_name": "Çorlu Belediyesi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-06",
+        "vb_date": "2026-10-07",
         "vb_time": "19:30",
         "vb_hall": "Tekirdağ Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-06",
+          "vb_date": "2026-10-07",
           "vb_time": "19:30",
           "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-07 / VB: 2026-10-06)"
+          "details": null
         }
       }
     },
@@ -1105,18 +1105,18 @@
         "guest_name": "Tekirdağ Basket Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-06",
+        "vb_date": "2026-10-07",
         "vb_time": "18:00",
         "vb_hall": "Tekirdağ Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-06",
+          "vb_date": "2026-10-07",
           "vb_time": "18:00",
           "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-07 / VB: 2026-10-06)"
+          "details": null
         }
       }
     },
@@ -1238,8 +1238,8 @@
         "url": "https://women.volleybox.net/tr/arges-voleybol-spor-kulubu-u16-corlu-yldrm-spor-kulubu-u16-c401167",
         "host_name": "Arges Voleybol Spor Kulübü U16",
         "guest_name": "Çorlu Yıldırım Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-09-29",
         "vb_time": "19:30",
         "vb_hall": "Tekirdağ Atatürk Spor Salonu",
@@ -1380,5 +1380,5 @@
     }
   ],
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-10-02T08:43:26.938047"
+  "volleybox_sync_updated_at": "2026-10-02T14:55:01.974491"
 }

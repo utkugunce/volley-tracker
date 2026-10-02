@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T08:41:29.811718",
+  "updated_at": "2026-10-02T14:50:22.444889",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -63,7 +63,7 @@
       },
       {
         "rank": 4,
-        "team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
+        "team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -233,7 +233,7 @@
       "gender": "Kız",
       "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
       "match_no": "4",
-      "home_team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
+      "home_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
       "away_team": "Aydın Büyükşehir Belediyespor U18",
       "score": "1 - 3",
       "home_score": 1,
@@ -251,8 +251,8 @@
         "url": "https://women.volleybox.net/tr/aydn-genclik-ve-spor-l-mudurlugu-spor-kulubu-u18-aydn-buyuksehir-belediyespor-u18-c399632",
         "host_name": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
         "guest_name": "Aydın Büyükşehir Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-09-30",
         "vb_time": "19:00",
         "vb_hall": "SKS Spor Salonu",
@@ -280,7 +280,7 @@
       "group": "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi",
       "match_no": "5",
       "home_team": "Söke Voleybol Spor Kulübü U18",
-      "away_team": "Yalova Gençlik ve Spor İl Müdürlüğü SK U16",
+      "away_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -298,14 +298,14 @@
         "vb_time": "20:30",
         "vb_hall": "Söke TAYEM Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-05",
           "vb_time": "20:30",
           "vb_hall": "Söke TAYEM Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:00 / VB: 20:30)"
         }
       }
     },
@@ -328,22 +328,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "399634",
+        "url": "https://women.volleybox.net/tr/aydn-buyuksehir-belediyespor-u18-efeler-altn-smac-spor-kulubu-u18-c399634",
+        "host_name": "Aydın Büyükşehir Belediyespor U18",
+        "guest_name": "Efeler Altın Smaç Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "19:00",
+        "vb_hall": "SKS Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "19:00",
+          "vb_hall": "SKS Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-08 / VB: 2026-10-09)"
         }
       }
     }
   ],
-  "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-02T08:43:26.952246"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-10-02T14:54:55.700812"
 }

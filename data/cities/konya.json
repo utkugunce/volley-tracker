@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T08:41:49.216554",
+  "updated_at": "2026-10-02T14:50:38.505215",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -498,18 +498,18 @@
         "guest_name": "Türmak Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-03",
-        "vb_time": "20:00",
+        "vb_date": "2026-10-04",
+        "vb_time": "16:00",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-03",
-          "vb_time": "20:00",
+          "vb_date": "2026-10-04",
+          "vb_time": "16:00",
           "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
-          "details": "Tarih Değişti (TVF: 2026-10-04 / VB: 2026-10-03) | Saat Değişti (TVF: 16:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -621,18 +621,18 @@
         "guest_name": "Konya Armada Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-04",
-        "vb_time": "12:00",
+        "vb_date": "2026-10-03",
+        "vb_time": "20:00",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-04",
-          "vb_time": "12:00",
+          "vb_date": "2026-10-03",
+          "vb_time": "20:00",
           "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
-          "details": "Tarih Değişti (TVF: 2026-10-03 / VB: 2026-10-04) | Saat Değişti (TVF: 20:00 / VB: 12:00)"
+          "details": null
         }
       }
     },
@@ -672,5 +672,5 @@
     }
   ],
   "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-02T08:43:26.928992"
+  "volleybox_sync_updated_at": "2026-10-02T14:55:00.339621"
 }

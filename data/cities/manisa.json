@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T08:41:45.433885",
+  "updated_at": "2026-10-02T14:50:36.450152",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -76,7 +76,7 @@
       },
       {
         "rank": 5,
-        "team": "Manisa Büyükşehir Belediyespor Kulübü U18",
+        "team": "Vestel Manisa Büyükşehir Belediye Spor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -178,7 +178,7 @@
       "gender": "Kız",
       "group": "Genç Kızlar Voleybol İl Birinciliği A Grubu",
       "match_no": "1",
-      "home_team": "Manisa Büyükşehir Belediyespor Kulübü U18",
+      "home_team": "Vestel Manisa Büyükşehir Belediye Spor U18",
       "away_team": "Salihli Değerli Zamanlar Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -373,5 +373,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-02T08:43:26.958460"
+  "volleybox_sync_updated_at": "2026-10-02T14:55:00.375701"
 }

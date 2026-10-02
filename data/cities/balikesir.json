@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T08:41:33.686846",
+  "updated_at": "2026-10-02T14:50:24.104568",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -32,7 +32,7 @@
     "Genç Kızlar Süper Lig - Genç Kızlar A Grubu ( Merkez+Marmara)": [
       {
         "rank": 1,
-        "team": "Balıkesir Büyükşehir Belediyespor U18",
+        "team": "Balıkesir Büyükşehir Belediyespor Merkez U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -133,7 +133,7 @@
       },
       {
         "rank": 4,
-        "team": "Balıkesir Büyükşehir Belediyespor - B U18",
+        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -315,7 +315,7 @@
       },
       {
         "rank": 3,
-        "team": "Balıkesir Büyükşehir Belediyespor - B U18",
+        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -609,7 +609,7 @@
       "gender": "Kız",
       "group": "Yıldız Kızlar C Grubu ( Körfez )",
       "match_no": "2",
-      "home_team": "Balıkesir Büyükşehir Belediyespor - B U18",
+      "home_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U18",
       "away_team": "BURHANİYE ÖREN PEGASUS SPOR",
       "score": "- : -",
       "home_score": null,
@@ -838,5 +838,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-02T08:43:26.955211"
+  "volleybox_sync_updated_at": "2026-10-02T14:54:55.736443"
 }
