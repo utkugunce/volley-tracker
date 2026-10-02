@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:07:38.875010",
+  "updated_at": "2026-10-02T19:59:48.863172",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -33,6 +33,17 @@
       {
         "rank": 1,
         "team": "Karayolları Spor Kulübü U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Anadolu Birlik Spor Kulübü",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -42,7 +53,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Akademi Atletik Spor U18",
         "played": 2,
         "won": 1,
@@ -53,8 +64,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Hakan Akışık Spor Kulübü U18",
+        "rank": 4,
+        "team": "Blue Wolves Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -64,25 +75,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Anadolu Birlik Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Blue Wolves Spor Kulübü U18",
-        "played": 0,
+        "team": "Hakan Akışık Spor Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -693,11 +693,15 @@
       "match_no": "3",
       "home_team": "Karayolları Spor Kulübü U18",
       "away_team": "Blue Wolves Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-21",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401018",
@@ -733,12 +737,16 @@
       "group": "1. Grup",
       "match_no": "4",
       "home_team": "Anadolu Birlik Spor Kulübü",
-      "away_team": "Hakan Akışık Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "away_team": "(H) - Hakan Akışık",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401019",
@@ -3331,5 +3339,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-02T15:09:38.773990"
+  "volleybox_sync_updated_at": "2026-10-02T20:01:49.261302"
 }

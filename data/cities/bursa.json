@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:07:38.929826",
+  "updated_at": "2026-10-02T19:59:48.193528",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -274,6 +274,28 @@
       },
       {
         "rank": 3,
+        "team": "Güner Karakaya Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "MG Spor Kulübü U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Eker Spor Kulübü - A U16",
         "played": 1,
         "won": 0,
@@ -284,7 +306,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -292,28 +314,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Güner Karakaya Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "MG Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -826,8 +826,8 @@
       "gender": "Kız",
       "group": "- D",
       "match_no": "1",
-      "home_team": "Doruk Voleybol Spor Kulübü U18",
-      "away_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
+      "home_team": "Nilüfer Belediyespor Eker",
+      "away_team": "Osmangazi Belediyespor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -867,8 +867,8 @@
       "gender": "Kız",
       "group": "- D",
       "match_no": "2",
-      "home_team": "Nilüfer Belediyespor Eker",
-      "away_team": "Osmangazi Belediyespor U18",
+      "home_team": "Doruk Voleybol Spor Kulübü U18",
+      "away_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1000,11 +1000,17 @@
       "match_no": "3",
       "home_team": "MG Spor Kulübü U16",
       "away_team": "Güner Karakaya Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "14-25",
+        "25-21",
+        "22-25",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401040",
@@ -1478,5 +1484,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-02T15:09:38.784696"
+  "volleybox_sync_updated_at": "2026-10-02T20:01:49.278764"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T15:07:45.379666",
+  "updated_at": "2026-10-02T19:59:54.084253",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -557,11 +557,11 @@
       {
         "rank": 3,
         "team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 3,
         "form": []
       },
@@ -579,12 +579,12 @@
       {
         "rank": 5,
         "team": "Vakıfbank İzmir U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -727,6 +727,17 @@
     "Yıldız Kızlar Süper Lig - - D Gr": [
       {
         "rank": 1,
+        "team": "İzmir DSİ Spor U16",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "İzmir Altınay Spor Kulübü U16",
         "played": 3,
         "won": 3,
@@ -734,17 +745,6 @@
         "points": 8,
         "sets_won": 9,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "İzmir DSİ Spor U16",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
         "form": []
       },
       {
@@ -783,12 +783,12 @@
       {
         "rank": 6,
         "team": "Bayraklı Belediyesi Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -3229,11 +3229,15 @@
       "match_no": "6",
       "home_team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
       "away_team": "Vakıfbank İzmir U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-12",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401129",
@@ -4728,11 +4732,15 @@
       "match_no": "8",
       "home_team": "Bayraklı Belediyesi Spor Kulübü U16",
       "away_team": "İzmir DSİ Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "20-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401137",
@@ -5446,5 +5454,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-02T15:09:38.777863"
+  "volleybox_sync_updated_at": "2026-10-02T20:01:49.267389"
 }
