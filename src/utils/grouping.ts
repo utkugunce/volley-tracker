@@ -157,3 +157,46 @@ export function groupResultsByCityAndLeague(
 
   return result;
 }
+
+/**
+ * Lig ve grup başlığını formatlar.
+ * Eğer alt başlık sezon kalıntısı içeriyorsa (örn: "2026 - 2027 Voleybol Sezonu ...")
+ * veya kategori adını tekrar ediyorsa (örn: "Genç Kızlar Süper Lig" vs "Genç Kızlar Süper Ligi"),
+ * temizler ve sadece lig adını ya da temiz grup adını döner.
+ */
+export function getLeagueDisplayTitle(title: string, subTitle?: string): string {
+  if (!subTitle || !subTitle.trim()) return title.trim();
+  const cleanTitle = title.trim();
+  const cleanSub = subTitle.trim();
+
+  // Boşluk, noktalama ve sayıları temizleyerek temel harfleri karşılaştır
+  const toBaseNorm = (s: string) => s.toLowerCase().replace(/[^a-zğüşıöç]/g, "");
+
+  // Sezon kalıntısı içeren alt başlıkları temizle (örn. "2026 - 2027 Voleybol Sezonu ...")
+  if (/^\d{4}\s*[-/]\s*\d{4}/.test(cleanSub)) {
+    const stripped = cleanSub.replace(/^\d{4}\s*[-/]\s*\d{4}(?:\s*voleybol)?(?:\s*sezonu)?\s*/i, "").trim();
+    if (!stripped) return cleanTitle;
+
+    // Eğer stripped bir grup ismi içermiyorsa (sadece "Genç Kızlar Ligi" gibi ligin kendisiyse)
+    if (!/(?:grup|gr\b|bölge|final|yarı\s*final)/i.test(stripped)) {
+      return cleanTitle;
+    }
+
+    const strippedNorm = toBaseNorm(stripped);
+    const titleNorm = toBaseNorm(cleanTitle);
+    if (strippedNorm === titleNorm || titleNorm.includes(strippedNorm) || strippedNorm.includes(titleNorm)) {
+      return cleanTitle;
+    }
+    return `${cleanTitle} · ${stripped}`;
+  }
+
+  // Başlığın kendisini tekrarlayan alt başlıklar (örn. "Genç Kızlar Süper Lig" vs "Genç Kızlar Süper Ligi")
+  const titleBase = toBaseNorm(cleanTitle);
+  const subBase = toBaseNorm(cleanSub);
+  if (titleBase === subBase || subBase.includes(titleBase) || titleBase.includes(subBase)) {
+    return cleanTitle;
+  }
+
+  return `${cleanTitle} · ${cleanSub}`;
+}
+

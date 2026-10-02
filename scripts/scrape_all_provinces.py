@@ -91,9 +91,15 @@ def clean_str(s: str) -> str:
 
 def extract_group_name(c_text: str) -> str:
     cleaned = clean_str(c_text)
-    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+Kızlar\s+(?:1\.\s*Lig(?:i)?|Süper\s*Lig(?:i)?)\s*", "", cleaned, flags=re.I).strip()
-    cleaned = re.sub(r"^(?:Süper|1\.)\s*Lig\s*", "", cleaned, flags=re.I).strip()
-    return cleaned or clean_str(c_text)
+    # Sezon ve yıl ifadelerini baştan temizle (örn. "2026 - 2027 Voleybol Sezonu ...", "2026-2027 Sezonu ...")
+    cleaned = re.sub(r"^\d{4}\s*[-/]\s*\d{4}(?:\s*voleybol)?(?:\s*sezonu)?\s*", "", cleaned, flags=re.I).strip()
+    # Kategori ve lig adlarını baştan temizle
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s+(?:1\.\s*Lig(?:i)?|Süper\s*Lig(?:i)?|Ligi)\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Süper|1\.)\s*Lig(?:i)?\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s+Ligi\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Voleybol\s+)?(?:İl\s+)?Birinciliği\s*", "", cleaned, flags=re.I).strip()
+    return cleaned or "1. Grup"
 
 def decode_html(resp: httpx.Response) -> str:
     try:

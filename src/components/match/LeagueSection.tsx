@@ -67,15 +67,15 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
         }}
         className="flex items-center justify-between px-3 py-2 bg-panel hover:bg-panel transition-colors cursor-pointer select-none border-b border-line/80"
       >
-        <div className="flex items-center gap-2 truncate pr-2">
+        <div className="flex items-center gap-2 min-w-0 flex-1 pr-2">
           <ChevronDown
             size={14}
             className={`text-ink-2 shrink-0 transform transition-transform duration-200 ${
               isCollapsed ? "-rotate-90" : "rotate-0"
             }`}
           />
-          <h3 className="text-xs font-bold text-white uppercase tracking-wide truncate">
-            {cityName && <span>{cityName.toUpperCase()} - </span>}
+          <h3 className="text-xs font-bold text-white uppercase tracking-wide flex items-center gap-1.5 min-w-0 flex-1">
+            {cityName && <span className="shrink-0">{cityName.toUpperCase()} -</span>}
             <LeagueVolleyboxLink
               league={leagueTitle}
               city={cityName}
@@ -83,7 +83,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             >
               {leagueTitle}
             </LeagueVolleyboxLink>
-            {sectionLabel && <span className="text-ink-2 font-semibold"> · {sectionLabel}</span>}
+            {sectionLabel && <span className="text-ink-2 font-semibold shrink-0"> · {sectionLabel}</span>}
           </h3>
         </div>
 

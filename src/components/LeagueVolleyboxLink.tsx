@@ -39,7 +39,7 @@ export const LeagueVolleyboxLink: React.FC<LeagueVolleyboxLinkProps> = ({
   ) : null;
 
   return (
-    <span className="inline-flex items-center max-w-full">
+    <span className="inline-flex items-center min-w-0 max-w-full">
       <Link
         href={internalRoute}
         className={`hover:underline hover:text-amber-400 transition-colors cursor-pointer truncate ${className}`}

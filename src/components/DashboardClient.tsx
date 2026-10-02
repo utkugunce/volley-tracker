@@ -57,7 +57,8 @@ const SpotlightSearchModal = dynamic(
 import { SearchX, AlertCircle, Star, CheckCircle2, Calendar, History, MapPin, ChevronDown, ChevronUp, Layers, X, Wifi, WifiOff } from "lucide-react";
 import { isMatchPassed, isMatchOverdueForScore, formatDateTurkish, compareMatchTimes, compareMatchDateTime } from "@/utils/calendar";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
-import { formatGroupName, groupResultsByCityAndLeague, CityResultGroup } from "@/utils/grouping";
+import { formatGroupName, groupResultsByCityAndLeague, CityResultGroup, getLeagueDisplayTitle } from "@/utils/grouping";
+export { getLeagueDisplayTitle };
 import { AGE_CATEGORIES, classifyAgeCategory } from "@/utils/leagueHierarchy";
 import { slugify } from "@/utils/slugify";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
@@ -1341,7 +1342,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                             return (
                               <LeagueSection
                                 key={`${cityGroup.city}-${sec.categoryKey}-${idx}`}
-                                leagueTitle={`${sec.title} · ${sec.subTitle}`}
+                                leagueTitle={getLeagueDisplayTitle(sec.title, sec.subTitle)}
                                 cityName={cityGroup.city}
                                 matches={sec.matches}
                                 favorites={favorites}
@@ -1702,7 +1703,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
                             return (
                               <LeagueSection
                                 key={`${cityGroup.city}-${sec.title}-${sec.subTitle}-${idx}`}
-                                leagueTitle={`${sec.title} · ${sec.subTitle}`}
+                                leagueTitle={getLeagueDisplayTitle(sec.title, sec.subTitle)}
                                 cityName={cityGroup.city}
                                 matches={sec.matches}
                                 favorites={favorites}

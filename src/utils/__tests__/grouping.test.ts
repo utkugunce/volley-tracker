@@ -1,8 +1,37 @@
 import { describe, it, expect } from "vitest";
-import { formatGroupName, formatLeagueCategoryTitle, groupResultsByCityAndLeague } from "../grouping";
+import { formatGroupName, formatLeagueCategoryTitle, groupResultsByCityAndLeague, getLeagueDisplayTitle } from "../grouping";
 import { Match } from "@/types/fixture";
 
 describe("Grouping & Group Name Formatting Utilities", () => {
+  describe("getLeagueDisplayTitle", () => {
+    it("cleans redundant season strings from league title (e.g. Aydın)", () => {
+      expect(
+        getLeagueDisplayTitle("Genç Kızlar 1. Ligi", "2026 - 2027 Voleybol Sezonu Genç Kızlar Ligi")
+      ).toBe("Genç Kızlar 1. Ligi");
+    });
+
+    it("cleans repeated category names (e.g. Yalova / Bilecik)", () => {
+      expect(
+        getLeagueDisplayTitle("Genç Kızlar Süper Lig", "Genç Kızlar Süper Ligi")
+      ).toBe("Genç Kızlar Süper Lig");
+    });
+
+    it("preserves legitimate group subtitles", () => {
+      expect(
+        getLeagueDisplayTitle("Genç Kızlar Süper Lig", "A Grubu")
+      ).toBe("Genç Kızlar Süper Lig · A Grubu");
+
+      expect(
+        getLeagueDisplayTitle("Genç Kızlar 1. Ligi", "1. Grup")
+      ).toBe("Genç Kızlar 1. Ligi · 1. Grup");
+    });
+
+    it("handles missing subtitle gracefully", () => {
+      expect(getLeagueDisplayTitle("Genç Kızlar Süper Lig", "")).toBe("Genç Kızlar Süper Lig");
+      expect(getLeagueDisplayTitle("Genç Kızlar Süper Lig", undefined)).toBe("Genç Kızlar Süper Lig");
+    });
+  });
+
   describe("formatGroupName", () => {
     it("cleans and normalizes dash-separated group abbreviations", () => {
       expect(formatGroupName("Genç Kız - A Gr")).toBe("A Grubu");
