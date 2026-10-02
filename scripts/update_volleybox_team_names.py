@@ -8,8 +8,10 @@ güncel adlarla (aktif sezon / sponsorlu ad veya ana kulüp adı) yenileyen scri
 Kurallar & Mantık:
 1. Her kayıttaki `volleybox_url` sayfası taranır.
 2. Sayfadan 3 katmanlı bilgi çıkarılır:
-   a. Aktif Sezon / Sponsorlu Ad: `dl.club_alternative_names` içinde "present" içeren
-      veya güncel sezona ait kayıt, ya da kadro bölümündeki `div.fontSize125rem`.
+   a. Aktif Sezon / Sponsorlu Ad: `dl.club_alternative_names` içinde dönemi güncel sezonu
+      (CURRENT_SEASON_START, 2026/27) kapsayan kayıt: bitişi "günümüz"/"present" olan ya da
+      bitiş sezonu >= 2026/27. (Eski sezon adları ve kadro başlığındaki `fontSize125rem` adı
+      ASLA aktif sayılmaz.)
    b. Temel Kulüp Adı: `<h1>` etiketi (fallback: `og:title` / `<title>`).
    c. Geçmiş Adlar: `dl.club_alternative_names` listesindeki tüm adlar.
 3. Öncelik: Aktif sezon / sponsorlu ad varsa `matched_as` olarak o kullanılır;
@@ -94,6 +96,31 @@ def clean_tag_text(raw_tag_str: str) -> str:
     return clean_title(s)
 
 
+# Güncel sezonun başlangıç yılı (2026/27 -> 2026). Yeni sezonda güncellenmelidir.
+CURRENT_SEASON_START = 2026
+
+_PERIOD_PRESENT_WORDS = ("günümüz", "gunumuz", "present", "now", "şimdi", "simdi")
+
+
+def period_covers_current_season(period: str) -> bool:
+    """
+    Volleybox 'Geçmiş adlar' dönem metni (örn. '2025/26 - günümüz', '2022/23 - 2022/23')
+    güncel sezonu kapsıyor mu? Bitişi 'günümüz/present' olan ya da bitiş sezonu güncel sezona
+    ulaşan dönemler True döner. Ayrıştırılamayan metin için False (güvenli taraf).
+    """
+    text = (period or "").strip().lower()
+    if not text:
+        return False
+    seasons = [int(y) for y, _ in re.findall(r"(\d{4})/(\d{2})", text)]
+    parts = re.split(r"\s*[-–—]\s*", text, maxsplit=1)
+    end_part = parts[1] if len(parts) > 1 else ""
+    if any(w in end_part for w in _PERIOD_PRESENT_WORDS):
+        return True
+    if not seasons:
+        return False
+    return max(seasons) >= CURRENT_SEASON_START
+
+
 def extract_team_info(html_text: str) -> Optional[Dict[str, Any]]:
     """
     Volleybox HTML metninden temel ad, aktif sezon adı ve geçmiş adları çıkarır.
@@ -121,6 +148,9 @@ def extract_team_info(html_text: str) -> Optional[Dict[str, Any]]:
                 base_name = clean_title(m_t.group(1))
 
     # 2. Geçmiş adlar & Aktif sezon sponsorlu adı (Historical names)
+    #    Bir ad ANCAK dönemi güncel sezonu (CURRENT_SEASON_START) kapsıyorsa "aktif" sayılır:
+    #    bitişi "günümüz"/"present" olan ya da bitiş sezonu >= güncel sezon olan kayıtlar.
+    #    Örn. "2025/26 - günümüz" aktiftir; "2022/23 - 2022/23" aktif DEĞİLDİR.
     historical_names: List[str] = []
     active_sponsored_name: Optional[str] = None
 
@@ -135,19 +165,8 @@ def extract_team_info(html_text: str) -> Optional[Dict[str, Any]]:
                 if name:
                     if name not in historical_names:
                         historical_names.append(name)
-                    if not active_sponsored_name:
-                        if "present" in period.lower() or re.search(r"202[6-9]/\d{2}", period):
-                            active_sponsored_name = name
-
-    # 3. Eğer dl'de aktif ad bulunamadıysa, kadro bölümündeki `div.fontSize125rem` kontrol et
-    if not active_sponsored_name:
-        season_div = soup.find("div", class_="fontSize125rem")
-        if season_div:
-            s_name = clean_title(season_div.get_text(strip=True))
-            if s_name and len(s_name) > 1:
-                active_sponsored_name = s_name
-                if s_name not in historical_names:
-                    historical_names.append(s_name)
+                    if not active_sponsored_name and period_covers_current_season(period):
+                        active_sponsored_name = name
 
     chosen_name = active_sponsored_name if active_sponsored_name else base_name
 
