@@ -7,7 +7,7 @@
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 166,
     "toplam_mac_sayisi": 569,
-    "volleybox_eslesme_sayisi": 164,
+    "volleybox_eslesme_sayisi": 166,
     "resmi_kaynaklar": {
       "tvf_puan_durumu": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu",
       "tvf_fikstur": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur",
@@ -123,10 +123,10 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "logo": "/logos/besiktas-ll-t16711.png",
           "sezon": "2026-2027",
-          "volleybox_url": null,
-          "volleybox_name": null,
+          "volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+          "volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları",
           "grup_no": 1
         },
         {
@@ -508,7 +508,7 @@
           "takim_a_id": "2928",
           "takim_b_id": "2804",
           "takim_a_logo": "/logos/yesilyurt-ii-t39639.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/besiktas-ll-t16711.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -538,7 +538,9 @@
               "vb_hall": "Yeşilyurt SK Spor Salonu",
               "details": null
             }
-          }
+          },
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+          "takim_b_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
         },
         {
           "id": "2lig_g1_m7_2787_2809",
@@ -688,7 +690,7 @@
           "takim_b": "BAŞAKŞEHİR VOLEYBOL",
           "takim_a_id": "2804",
           "takim_b_id": "2798",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/besiktas-ll-t16711.png",
           "takim_b_logo": "/logos/basaksehir-voleybol-kulubu-t17130.png",
           "set_a": "",
           "set_b": "",
@@ -712,7 +714,9 @@
             "discrepancy": {
               "has_diff": false
             }
-          }
+          },
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+          "takim_a_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
         },
         {
           "id": "2lig_g1_m9_2854_2805",
@@ -906,7 +910,7 @@
           "takim_b": "TÜRK HAVA YOLLARI",
           "takim_a_id": "2804",
           "takim_b_id": "2918",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/besiktas-ll-t16711.png",
           "takim_b_logo": "/logos/turk-hava-yollar-ll-t16678.png",
           "set_a": "",
           "set_b": "",
@@ -930,7 +934,9 @@
             "discrepancy": {
               "has_diff": false
             }
-          }
+          },
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+          "takim_a_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
         },
         {
           "id": "2lig_g1_m14_2928_2792",
@@ -1080,7 +1086,7 @@
           "takim_a_id": "2792",
           "takim_b_id": "2804",
           "takim_a_logo": "/logos/bahcelievler-belediyespor-ll-t20984.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/besiktas-ll-t16711.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -1088,7 +1094,9 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/bahcelievler-belediyespor-ll-t20984",
-          "takim_a_volleybox_name": "Bahçelievler Belediyespor ll"
+          "takim_a_volleybox_name": "Bahçelievler Belediyespor ll",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+          "takim_b_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
         },
         {
           "id": "2lig_g1_m20_2854_2928",
@@ -1222,7 +1230,7 @@
           "takim_b": "GÜNGÖREN VOLEYBOL",
           "takim_a_id": "2804",
           "takim_b_id": "2854",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/besiktas-ll-t16711.png",
           "takim_b_logo": "/logos/gungoren-voleybol-kulubu-t25882.png",
           "set_a": "",
           "set_b": "",
@@ -1231,7 +1239,9 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/gungoren-voleybol-kulubu-t25882",
-          "takim_b_volleybox_name": "Güngören Voleybol Kulübü"
+          "takim_b_volleybox_name": "Güngören Voleybol Kulübü",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+          "takim_a_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
         },
         {
           "id": "2lig_g1_m25_2928_2787",
@@ -1279,7 +1289,7 @@
           "takim_a_id": "2787",
           "takim_b_id": "2804",
           "takim_a_logo": "/logos/arnavutkoy-bld-t13576.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/besiktas-ll-t16711.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -1287,7 +1297,9 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/arnavutkoy-bld-t13576",
-          "takim_a_volleybox_name": "Arnavutköy Belediyesi SK"
+          "takim_a_volleybox_name": "Arnavutköy Belediyesi SK",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+          "takim_b_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
         },
         {
           "id": "2lig_g1_m27_2805_2816",
@@ -11396,10 +11408,10 @@
           "v2_3": 0,
           "v1_3": 0,
           "v0_3": 0,
-          "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "logo": "/logos/antalyaspor-t7008.png",
           "sezon": "2026-2027",
-          "volleybox_url": null,
-          "volleybox_name": null,
+          "volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+          "volleybox_name": "Güral Premier Antalyaspor",
           "grup_no": 8
         },
         {
@@ -11575,7 +11587,7 @@
           "takim_b": "ELİT AKDENİZ",
           "takim_a_id": "2784",
           "takim_b_id": "2834",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/antalyaspor-t7008.png",
           "takim_b_logo": "/logos/elit-akdeniz-spor-kulubu-t36089.png",
           "set_a": "",
           "set_b": "",
@@ -11606,7 +11618,9 @@
               "vb_hall": "Süleyman Evcilmen Spor Salonu",
               "details": null
             }
-          }
+          },
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+          "takim_a_volleybox_name": "Güral Premier Antalyaspor"
         },
         {
           "id": "2lig_g8_m3_2774_2767",
@@ -11866,7 +11880,7 @@
           "takim_a_id": "2767",
           "takim_b_id": "2784",
           "takim_a_logo": "/logos/07-mega-spor-kulubu-t53610.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/antalyaspor-t7008.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -11889,7 +11903,9 @@
             "discrepancy": {
               "has_diff": false
             }
-          }
+          },
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+          "takim_b_volleybox_name": "Güral Premier Antalyaspor"
         },
         {
           "id": "2lig_g8_m7_2884_2774",
@@ -12083,7 +12099,7 @@
           "takim_b": "MARMARİS BLD. SPOR",
           "takim_a_id": "2784",
           "takim_b_id": "2884",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/antalyaspor-t7008.png",
           "takim_b_logo": "/logos/marmaris-belediyesi-gsk-t2804.png",
           "set_a": "",
           "set_b": "",
@@ -12107,7 +12123,9 @@
             "discrepancy": {
               "has_diff": false
             }
-          }
+          },
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+          "takim_a_volleybox_name": "Güral Premier Antalyaspor"
         },
         {
           "id": "2lig_g8_m11_2823_2774",
@@ -12214,7 +12232,7 @@
           "takim_a_id": "2774",
           "takim_b_id": "2784",
           "takim_a_logo": "/logos/akdeniz-bilgi-spor-kulubu-t30512.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/antalyaspor-t7008.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -12222,7 +12240,9 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/akdeniz-bilgi-spor-kulubu-t30512",
-          "takim_a_volleybox_name": "Akdeniz Bilgi Spor Kulübü"
+          "takim_a_volleybox_name": "Akdeniz Bilgi Spor Kulübü",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+          "takim_b_volleybox_name": "Güral Premier Antalyaspor"
         },
         {
           "id": "2lig_g8_m20_2767_2891",
@@ -12415,7 +12435,7 @@
           "takim_a_id": "2823",
           "takim_b_id": "2784",
           "takim_a_logo": "/logos/denizli-buyuksehir-belediyespor-ii-t40628.png",
-          "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_b_logo": "/logos/antalyaspor-t7008.png",
           "set_a": "",
           "set_b": "",
           "skor": "- : -",
@@ -12423,7 +12443,9 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_a_volleybox_url": "https://women.volleybox.net/tr/denizli-buyuksehir-belediyespor-ii-t40628",
-          "takim_a_volleybox_name": "Denizli Büyükşehir Belediyespor II"
+          "takim_a_volleybox_name": "Denizli Büyükşehir Belediyespor II",
+          "takim_b_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+          "takim_b_volleybox_name": "Güral Premier Antalyaspor"
         },
         {
           "id": "2lig_g8_m22_2843_2834",
@@ -12528,7 +12550,7 @@
           "takim_b": "BAHÇEŞEHİR KOLEJİ DALAMAN BLD.",
           "takim_a_id": "2784",
           "takim_b_id": "2794",
-          "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+          "takim_a_logo": "/logos/antalyaspor-t7008.png",
           "takim_b_logo": "/logos/bahcesehir-koleji-dalaman-belediyespor-t29535.png",
           "set_a": "",
           "set_b": "",
@@ -12537,7 +12559,9 @@
           "durum": "OYNANACAK",
           "mac_durumu_kod": "O",
           "takim_b_volleybox_url": "https://women.volleybox.net/tr/bahcesehir-koleji-dalaman-belediyespor-t29535",
-          "takim_b_volleybox_name": "Bahçeşehir Koleji Dalaman Belediyespor"
+          "takim_b_volleybox_name": "Bahçeşehir Koleji Dalaman Belediyespor",
+          "takim_a_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+          "takim_a_volleybox_name": "Güral Premier Antalyaspor"
         },
         {
           "id": "2lig_g8_m29_2774_2891",
@@ -30002,7 +30026,7 @@
       "takim_b": "ELİT AKDENİZ",
       "takim_a_id": "2784",
       "takim_b_id": "2834",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/antalyaspor-t7008.png",
       "takim_b_logo": "/logos/elit-akdeniz-spor-kulubu-t36089.png",
       "set_a": "",
       "set_b": "",
@@ -30033,7 +30057,9 @@
           "vb_hall": "Süleyman Evcilmen Spor Salonu",
           "details": null
         }
-      }
+      },
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "takim_a_volleybox_name": "Güral Premier Antalyaspor"
     },
     {
       "id": "2lig_g10_m15_2902_2875",
@@ -32027,7 +32053,7 @@
       "takim_a_id": "2928",
       "takim_b_id": "2804",
       "takim_a_logo": "/logos/yesilyurt-ii-t39639.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/besiktas-ll-t16711.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -32057,7 +32083,9 @@
           "vb_hall": "Yeşilyurt SK Spor Salonu",
           "details": null
         }
-      }
+      },
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "takim_b_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
     },
     {
       "id": "2lig_g6_m1_2775_2867",
@@ -33868,7 +33896,7 @@
       "takim_b": "BAŞAKŞEHİR VOLEYBOL",
       "takim_a_id": "2804",
       "takim_b_id": "2798",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/besiktas-ll-t16711.png",
       "takim_b_logo": "/logos/basaksehir-voleybol-kulubu-t17130.png",
       "set_a": "",
       "set_b": "",
@@ -33892,7 +33920,9 @@
         "discrepancy": {
           "has_diff": false
         }
-      }
+      },
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "takim_a_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
     },
     {
       "id": "2lig_g2_m8_2858_2789",
@@ -35326,7 +35356,7 @@
       "takim_a_id": "2767",
       "takim_b_id": "2784",
       "takim_a_logo": "/logos/07-mega-spor-kulubu-t53610.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/antalyaspor-t7008.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -35349,7 +35379,9 @@
         "discrepancy": {
           "has_diff": false
         }
-      }
+      },
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "takim_b_volleybox_name": "Güral Premier Antalyaspor"
     },
     {
       "id": "2lig_g8_m7_2884_2774",
@@ -37127,7 +37159,7 @@
       "takim_b": "TÜRK HAVA YOLLARI",
       "takim_a_id": "2804",
       "takim_b_id": "2918",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/besiktas-ll-t16711.png",
       "takim_b_logo": "/logos/turk-hava-yollar-ll-t16678.png",
       "set_a": "",
       "set_b": "",
@@ -37151,7 +37183,9 @@
         "discrepancy": {
           "has_diff": false
         }
-      }
+      },
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "takim_a_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
     },
     {
       "id": "2lig_g5_m25_2791_2927",
@@ -37213,7 +37247,7 @@
       "takim_b": "MARMARİS BLD. SPOR",
       "takim_a_id": "2784",
       "takim_b_id": "2884",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/antalyaspor-t7008.png",
       "takim_b_logo": "/logos/marmaris-belediyesi-gsk-t2804.png",
       "set_a": "",
       "set_b": "",
@@ -37237,7 +37271,9 @@
         "discrepancy": {
           "has_diff": false
         }
-      }
+      },
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "takim_a_volleybox_name": "Güral Premier Antalyaspor"
     },
     {
       "id": "2lig_g11_m24_2914_2921",
@@ -40559,7 +40595,7 @@
       "takim_a_id": "2774",
       "takim_b_id": "2784",
       "takim_a_logo": "/logos/akdeniz-bilgi-spor-kulubu-t30512.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/antalyaspor-t7008.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -40567,7 +40603,9 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/akdeniz-bilgi-spor-kulubu-t30512",
-      "takim_a_volleybox_name": "Akdeniz Bilgi Spor Kulübü"
+      "takim_a_volleybox_name": "Akdeniz Bilgi Spor Kulübü",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "takim_b_volleybox_name": "Güral Premier Antalyaspor"
     },
     {
       "id": "2lig_g9_m17_2839_2851",
@@ -41195,7 +41233,7 @@
       "takim_a_id": "2792",
       "takim_b_id": "2804",
       "takim_a_logo": "/logos/bahcelievler-belediyespor-ll-t20984.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/besiktas-ll-t16711.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -41203,7 +41241,9 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/bahcelievler-belediyespor-ll-t20984",
-      "takim_a_volleybox_name": "Bahçelievler Belediyespor ll"
+      "takim_a_volleybox_name": "Bahçelievler Belediyespor ll",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "takim_b_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
     },
     {
       "id": "2lig_g10_m31_2865_2907",
@@ -42526,7 +42566,7 @@
       "takim_b": "GÜNGÖREN VOLEYBOL",
       "takim_a_id": "2804",
       "takim_b_id": "2854",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/besiktas-ll-t16711.png",
       "takim_b_logo": "/logos/gungoren-voleybol-kulubu-t25882.png",
       "set_a": "",
       "set_b": "",
@@ -42535,7 +42575,9 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/gungoren-voleybol-kulubu-t25882",
-      "takim_b_volleybox_name": "Güngören Voleybol Kulübü"
+      "takim_b_volleybox_name": "Güngören Voleybol Kulübü",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "takim_a_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
     },
     {
       "id": "2lig_g2_m22_2858_2841",
@@ -43511,7 +43553,7 @@
       "takim_a_id": "2823",
       "takim_b_id": "2784",
       "takim_a_logo": "/logos/denizli-buyuksehir-belediyespor-ii-t40628.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/antalyaspor-t7008.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -43519,7 +43561,9 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/denizli-buyuksehir-belediyespor-ii-t40628",
-      "takim_a_volleybox_name": "Denizli Büyükşehir Belediyespor II"
+      "takim_a_volleybox_name": "Denizli Büyükşehir Belediyespor II",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "takim_b_volleybox_name": "Güral Premier Antalyaspor"
     },
     {
       "id": "2lig_g8_m22_2843_2834",
@@ -44843,7 +44887,7 @@
       "takim_a_id": "2787",
       "takim_b_id": "2804",
       "takim_a_logo": "/logos/arnavutkoy-bld-t13576.png",
-      "takim_b_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_b_logo": "/logos/besiktas-ll-t16711.png",
       "set_a": "",
       "set_b": "",
       "skor": "- : -",
@@ -44851,7 +44895,9 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_a_volleybox_url": "https://women.volleybox.net/tr/arnavutkoy-bld-t13576",
-      "takim_a_volleybox_name": "Arnavutköy Belediyesi SK"
+      "takim_a_volleybox_name": "Arnavutköy Belediyesi SK",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "takim_b_volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları"
     },
     {
       "id": "2lig_g6_m28_2786_2776",
@@ -45768,7 +45814,7 @@
       "takim_b": "BAHÇEŞEHİR KOLEJİ DALAMAN BLD.",
       "takim_a_id": "2784",
       "takim_b_id": "2794",
-      "takim_a_logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "takim_a_logo": "/logos/antalyaspor-t7008.png",
       "takim_b_logo": "/logos/bahcesehir-koleji-dalaman-belediyespor-t29535.png",
       "set_a": "",
       "set_b": "",
@@ -45777,7 +45823,9 @@
       "durum": "OYNANACAK",
       "mac_durumu_kod": "O",
       "takim_b_volleybox_url": "https://women.volleybox.net/tr/bahcesehir-koleji-dalaman-belediyespor-t29535",
-      "takim_b_volleybox_name": "Bahçeşehir Koleji Dalaman Belediyespor"
+      "takim_b_volleybox_name": "Bahçeşehir Koleji Dalaman Belediyespor",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "takim_a_volleybox_name": "Güral Premier Antalyaspor"
     },
     {
       "id": "2lig_g9_m29_2839_2886",
@@ -47851,10 +47899,10 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "logo": "/logos/besiktas-ll-t16711.png",
       "sezon": "2026-2027",
-      "volleybox_url": null,
-      "volleybox_name": null,
+      "volleybox_url": "https://women.volleybox.net/tr/besiktas-ll-t16711",
+      "volleybox_name": "Beşiktaş BJK Kabataş Vakfı Özel Okulları",
       "grup_no": 1
     },
     {
@@ -49775,10 +49823,10 @@
       "v2_3": 0,
       "v1_3": 0,
       "v0_3": 0,
-      "logo": "https://tvfportal.com/TakimLogo/takimlogoyok.png",
+      "logo": "/logos/antalyaspor-t7008.png",
       "sezon": "2026-2027",
-      "volleybox_url": null,
-      "volleybox_name": null,
+      "volleybox_url": "https://women.volleybox.net/tr/antalyaspor-t7008",
+      "volleybox_name": "Güral Premier Antalyaspor",
       "grup_no": 8
     },
     {
