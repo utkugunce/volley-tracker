@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T08:23:02.237027",
+  "updated_at": "2026-10-03T13:33:07.394027",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -36,16 +36,49 @@
       {
         "rank": 1,
         "team": "19 Mayıs Gençlik Ve Spor U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Atakum Atılım Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Bafra Akademi Gençlik SK U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "55 Matasyon Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -56,7 +89,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 6,
         "team": "Anadolu Voleybol Akademi SK - B U18",
         "played": 0,
         "won": 0,
@@ -67,29 +100,7 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Atakum Atılım Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Bafra Akademi Gençlik SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
+        "rank": 7,
         "team": "Bafra Vera Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -100,19 +111,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
+        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -136,6 +136,28 @@
     "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği B Grubu": [
       {
         "rank": 1,
+        "team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Sam55 Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Voleybol Akademi SK U18",
         "played": 0,
         "won": 0,
@@ -146,7 +168,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "Atakum Atılım Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
@@ -157,7 +179,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "İlkkıvılcım Havza SK U18",
         "played": 0,
         "won": 0,
@@ -168,7 +190,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Nova Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -179,30 +201,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Sam55 Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Samsunspor U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
+        "team": "Samsunspor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -238,11 +238,15 @@
       "match_no": "1",
       "home_team": "Atakum Atılım Spor Kulübü U18",
       "away_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-16",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402765",
@@ -279,11 +283,15 @@
       "match_no": "2",
       "home_team": "19 Mayıs Gençlik Ve Spor U18",
       "away_team": "Bafra Akademi Gençlik SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-17",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402766",
@@ -1714,11 +1722,15 @@
       "match_no": "1",
       "home_team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
       "away_team": "Sam55 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-15",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402773",
@@ -2851,5 +2863,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-03T08:24:31.940471"
+  "volleybox_sync_updated_at": "2026-10-03T13:34:46.544736"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T08:22:49.357716",
+  "updated_at": "2026-10-03T13:32:51.528647",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -70,6 +70,17 @@
       },
       {
         "rank": 5,
+        "team": "Tarsus Gelecek Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Alsancak Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -80,25 +91,14 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Tarsus Amerikan Koleji U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "Tarsus Gelecek Spor Kulübü U18",
-        "played": 1,
+        "team": "Tarsus Amerikan Koleji U18",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 1,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -309,11 +309,16 @@
       "match_no": "5",
       "home_team": "Tarsus Amerikan Koleji U18",
       "away_team": "Tarsus Gelecek Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-21",
+        "16-25",
+        "17-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -434,5 +439,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-03T08:24:31.945946"
+  "volleybox_sync_updated_at": "2026-10-03T13:34:46.551584"
 }
