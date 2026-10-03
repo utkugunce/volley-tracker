@@ -57,6 +57,32 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    // Eski `?city=<il>` adresleri (ör. /fikstur?city=istanbul) yol tabanlı sayfalara (/fikstur/istanbul) yönlenir.
+    // Yalnızca ASCII slug değerleri yönlenir; diğer değerler (ör. `Tüm İller`, `all`) eskisi gibi tüm illeri gösteren ana sayfada kalır.
+    // Ana sekme sayfaları artık searchParams okumadığı için statik/ISR olarak CDN'den servis edilir.
+    const cityQuery = [{ type: "query", key: "city", value: "^(?<city>(?!all$)[A-Za-z0-9_-]+)$" }];
+    return [
+      { source: "/", has: cityQuery, destination: "/:city", permanent: false },
+      ...["fikstur", "puan-durumu", "sonuclar", "gunun-maclari", "grup-durumu"].map((tab) => ({
+        source: `/${tab}`,
+        has: cityQuery,
+        destination: `/${tab}/:city`,
+        permanent: false,
+      })),
+    ];
+  },
+  async rewrites() {
+    // Eski `/takim/<slug>?sehir=<il>` ve `?city=<il>` adresleri çalışmaya devam eder (URL değişmez);
+    // içerik, arama parametresi okumayan statik/ISR `/takim/<slug>/<il>` rotasından gelir.
+    return {
+      beforeFiles: ["sehir", "city"].map((key) => ({
+        source: "/takim/:slug",
+        has: [{ type: "query", key, value: "(?<cityParam>[^/]+)" }],
+        destination: "/takim/:slug/:cityParam",
+      })),
+    };
+  },
   async headers() {
     return [
       {

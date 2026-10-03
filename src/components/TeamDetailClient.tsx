@@ -166,6 +166,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
             {is2LigTeam && (
               <Link
                 href="/kadinlar-2-ligi"
+                prefetch={false}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-fuchsia-300 hover:text-white bg-fuchsia-950/70 hover:bg-fuchsia-900/80 px-3 py-1.5 rounded-lg border border-fuchsia-700/60 transition-colors shadow-xs"
                 title="TVF Kadınlar 2. Ligi Paneli"
               >
@@ -473,7 +474,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
                       })()}
                       <span className="text-xs text-slate-400 font-normal">
                         {ctx.city === "TVF Kadınlar 2. Ligi" ? (
-                          <Link href="/kadinlar-2-ligi" className="text-fuchsia-400 hover:text-fuchsia-300 hover:underline">
+                          <Link href="/kadinlar-2-ligi" prefetch={false} className="text-fuchsia-400 hover:text-fuchsia-300 hover:underline">
                             (TVF Kadınlar 2. Ligi)
                           </Link>
                         ) : (

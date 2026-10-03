@@ -84,6 +84,7 @@ export const LeftSidebarPlaceholder: React.FC<LeftSidebarPlaceholderProps> = ({
               {/* Kadınlar 2. Ligi Hızlı Bağlantısı */}
               <Link
                 href="/kadinlar-2-ligi"
+                prefetch={false}
                 className="flex items-center justify-between px-2 py-1.5 rounded-lg bg-purple-950/40 hover:bg-purple-950/70 border border-purple-800/40 text-purple-200 transition-all group"
               >
                 <span className="flex items-center gap-2">

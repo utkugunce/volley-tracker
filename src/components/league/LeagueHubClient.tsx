@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useLayoutEffect } from "react";
 import Link from "next/link";
 import {
   Trophy,
@@ -58,6 +58,19 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
   initialTab = "standings",
 }) => {
   const [activeTab, setActiveTab] = useState<LeagueTabType>(initialTab);
+
+  // Sayfa statik/ISR üretildiği için `?tab=` sunucuda okunmaz; istemcide ilk boyamadan önce uygulanır
+  // (ör. /lig/istanbul/genc-kizlar-super-lig?tab=fixtures).
+  useLayoutEffect(() => {
+    const tab = new URLSearchParams(window.location.search).get("tab");
+    if (
+      (tab === "standings" || tab === "fixtures" || tab === "results" || tab === "stats" || tab === "teams") &&
+      tab !== initialTab
+    ) {
+      setActiveTab(tab);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [selectedGroup, setSelectedGroup] = useState<string>("all");
   const [selectedFixtureDate, setSelectedFixtureDate] = useState<string>("all");
   const [selectedResultDate, setSelectedResultDate] = useState<string>("all");
