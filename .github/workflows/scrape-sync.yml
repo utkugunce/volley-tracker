@@ -96,4 +96,15 @@ jobs:
           Lütfen ilgili logları inceleyin ve scrape/validation adımlarını doğrulayın.
           EOF
           )
-          gh issue create --title "$TITLE" --body "$BODY" --label "automation" || echo 'Issue creation skipped; no actionable failure alert was created.'
+          # Önceden açık bir sync-hata issue'su varsa yenisini açma, yorum ekle (spam önleme).
+          # Başlıkta tarih olduğu için sabit kısımla ("TVF sync failed") aranır.
+          EXISTING=$(gh issue list --state open --label automation \
+            --search "TVF sync failed in:title" --json number,title \
+            --jq '[.[] | select(.title | contains("TVF sync failed"))][0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "Açık issue #$EXISTING zaten var; yeni issue açılmıyor, yorum ekleniyor."
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            # Hata yutulmaz: issue açılamazsa adım başarısız olur ve günlükte görünür.
+            gh issue create --title "$TITLE" --body "$BODY" --label automation
+          fi
