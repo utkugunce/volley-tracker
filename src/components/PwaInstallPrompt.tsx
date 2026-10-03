@@ -122,8 +122,10 @@ export const PwaInstallPrompt: React.FC = () => {
             title="Altyapı Voleybol uygulamasını telefonunuza veya bilgisayarınıza yükleyin"
           >
             <Smartphone size={14} className="text-primary" />
-            <span className="hidden sm:inline">Uygulamayı Yükle</span>
-            <span className="sm:hidden">Yükle</span>
+            {/* Buton yükleme sonrası (beforeinstallprompt) görünür; 1400 px altında kısa etiket kullanılır ki
+                üst çubuk iki satıra sarılıp sayfayı aşağı itmesin (CLS). */}
+            <span className="hidden min-[1400px]:inline">Uygulamayı Yükle</span>
+            <span className="min-[1400px]:hidden">Yükle</span>
           </button>
           <button
             onClick={handleDismiss}

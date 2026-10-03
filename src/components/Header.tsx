@@ -71,9 +71,9 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="bg-canvas/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
       {/* 1. Üst Flashscore Bar */}
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap items-center justify-between border-b border-slate-800/60 gap-x-2 gap-y-1.5">
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap min-[1200px]:flex-nowrap items-center justify-between border-b border-slate-800/60 gap-x-2 gap-y-1.5">
         {/* Logo & Brand & İl Seçici */}
-        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap min-[1200px]:flex-nowrap min-[1200px]:min-w-0 min-[1200px]:[&>*:not(.hdr-tagline)]:shrink-0">
           <BrandLogo onClick={() => onSelectTab("home")} />
 
           <div className="h-4 w-px bg-slate-700/80 hidden sm:block" />
@@ -87,16 +87,16 @@ export const Header: React.FC<HeaderProps> = ({
             />
           )}
 
-          <div className="hidden md:flex items-center gap-2 text-xs text-slate-400">
+          <div className="hdr-tagline hidden md:flex items-center gap-2 text-xs text-slate-400 min-w-0">
             <span className="text-slate-600">•</span>
-            <span className="text-primary font-medium tracking-wide">Genç & Yıldız Kızlar Süper Lig</span>
+            <span className="text-primary font-medium tracking-wide truncate">Genç & Yıldız Kızlar Süper Lig</span>
           </div>
 
           {/* Kadınlar 2. Ligi Sayfasına Geçiş Butonu */}
           <Link
             href="/kadinlar-2-ligi"
             prefetch={false}
-            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-colors border border-slate-700/70 ml-0.5 sm:ml-1"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-colors border border-slate-700/70 ml-0.5 sm:ml-1 shrink-0 whitespace-nowrap"
             title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
           >
             <span className="tracking-wide">Kadınlar 2. Ligi</span>
