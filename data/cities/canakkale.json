@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-02T23:33:32.983107",
+  "updated_at": "2026-10-03T16:20:19.834275",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 21,
+  "total_matches": 20,
   "source": "https://canakkale.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -185,6 +185,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
       {
         "rank": 1,
+        "team": "Biga Ada Spor U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "ÇOMÜ Spor Kulübü - B U16",
         "played": 1,
         "won": 1,
@@ -195,7 +206,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Çanakkale Barbarosspor U16",
         "played": 1,
         "won": 1,
@@ -203,17 +214,6 @@
         "points": 2,
         "sets_won": 3,
         "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Biga Ada Spor U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -230,12 +230,12 @@
       {
         "rank": 5,
         "team": "Kepez Spor Kulübü U16",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -299,6 +299,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği C Grubu": [
       {
         "rank": 1,
+        "team": "Parion Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Nehir Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -306,17 +317,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Parion Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
         "form": []
       },
       {
@@ -333,12 +333,12 @@
       {
         "rank": 4,
         "team": "ÇOMÜ Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -495,11 +495,15 @@
       "match_no": "3",
       "home_team": "Kepez Spor Kulübü U16",
       "away_team": "Biga Ada Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "23-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402981",
@@ -994,11 +998,15 @@
       "match_no": "3",
       "home_team": "Parion Spor Kulübü U16",
       "away_team": "ÇOMÜ Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-22",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402989",
@@ -1235,49 +1243,8 @@
           "details": null
         }
       }
-    },
-    {
-      "id": "canakkale-20261010-021",
-      "city": "Çanakkale",
-      "date": "2026-10-10",
-      "time": "13:00",
-      "hall": "18 Mart Ss.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
-      "match_no": "3",
-      "home_team": "Çanakkale Belediyespor U16",
-      "away_team": "Gökçeada Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "401058",
-        "url": "https://women.volleybox.net/tr/canakkale-belediyespor-u16-gokceada-spor-kulubu-u16-c401058",
-        "host_name": "Çanakkale Belediyespor U16",
-        "guest_name": "Gökçeada Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-03",
-        "vb_time": "13:00",
-        "vb_hall": "18 Mart Spor Salonu",
-        "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-03",
-          "vb_time": "13:00",
-          "vb_hall": "18 Mart Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-10 / VB: 2026-10-03)"
-        }
-      }
     }
   ],
-  "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-10-03T13:34:46.495098"
+  "volleybox_synced_matches": 17,
+  "volleybox_sync_updated_at": "2026-10-03T16:22:11.113586"
 }

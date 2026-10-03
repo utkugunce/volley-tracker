@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T13:32:56.702638",
+  "updated_at": "2026-10-03T16:20:25.095915",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -123,28 +123,28 @@
       {
         "rank": 1,
         "team": "İskenderun 12 Dev Adam Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
-        "played": 0,
+        "team": "İskenderun Tan Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "İskenderun Tan Spor Kulübü U18",
+        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1221,11 +1221,15 @@
       "match_no": "1",
       "home_team": "İskenderun 12 Dev Adam Spor Kulübü U18",
       "away_team": "İskenderun Tan Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-20",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401088",
@@ -2522,5 +2526,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-03T13:34:46.500891"
+  "volleybox_sync_updated_at": "2026-10-03T16:22:11.119429"
 }

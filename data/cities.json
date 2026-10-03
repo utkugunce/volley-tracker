@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-03T13:33:17.744539+00:00",
+  "updated_at": "2026-10-03T16:20:44.404854+00:00",
   "total_cities": 81,
   "active_cities": 25,
-  "total_matches": 714,
+  "total_matches": 713,
   "cities": [
     {
       "ilid": "1",
@@ -170,8 +170,8 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (21 Maç Mevcut)",
-      "matches_count": 21,
+      "status": "Aktif (20 Maç Mevcut)",
+      "matches_count": 20,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
     },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T13:33:09.330882",
+  "updated_at": "2026-10-03T16:20:36.035210",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -92,6 +92,17 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+        "team": "Kapaklı Site Spor - B U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -102,7 +113,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Çorlu Belediyesi Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -113,7 +124,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Süleymanpaşa Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -124,41 +135,30 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Kapaklı Site Spor - B U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Set 59 Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
+        "team": "Ergene Voleybol Spor Kulübü U16",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
+        "points": 2,
+        "sets_won": 4,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Trakya Olimpia Akademi Spor Kulübü U16",
-        "played": 1,
+        "team": "Set 59 Spor Kulübü U16",
+        "played": 2,
         "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "lost": 2,
+        "points": 2,
+        "sets_won": 4,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Ergene Voleybol Spor Kulübü U16",
+        "team": "Trakya Olimpia Akademi Spor Kulübü U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -170,12 +170,12 @@
       {
         "rank": 8,
         "team": "Liva Volley Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -261,6 +261,17 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
+        "team": "Çorlu GSB Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Kapaklı Site Spor U16",
         "played": 1,
         "won": 1,
@@ -271,19 +282,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Çorlu Yıldırım Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 3,
-        "team": "Çorlu GSB Spor Kulübü U16",
+        "team": "Çorlu Yıldırım Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -306,12 +306,12 @@
       {
         "rank": 5,
         "team": "Arges Voleybol Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -708,11 +708,17 @@
       "match_no": "5",
       "home_team": "Ergene Voleybol Spor Kulübü U16",
       "away_team": "Set 59 Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-21",
+        "20-25",
+        "25-21",
+        "17-25",
+        "15-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403028",
@@ -749,11 +755,15 @@
       "match_no": "6",
       "home_team": "Kapaklı Site Spor - B U16",
       "away_team": "Liva Volley Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-8",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403029",
@@ -1309,11 +1319,15 @@
       "match_no": "5",
       "home_team": "Çorlu GSB Spor Kulübü U16",
       "away_team": "Arges Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-12",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403060",
@@ -1380,5 +1394,5 @@
     }
   ],
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-10-03T13:34:46.516283"
+  "volleybox_sync_updated_at": "2026-10-03T16:22:11.134919"
 }
