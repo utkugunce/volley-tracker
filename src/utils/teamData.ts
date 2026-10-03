@@ -248,26 +248,122 @@ function loadAllCityData() {
   return cachedAllData;
 }
 
+interface AllCityData {
+  matches: Match[];
+  standingsByCity: Record<string, { city: string; standings: Record<string, any> }>;
+  timestamp: number;
+}
+
+interface StandingHit {
+  cityName: string;
+  groupName: string;
+  table: StandingItem[];
+  row: StandingItem;
+  rowMapping: VolleyboxMapping | undefined;
+}
+
+/**
+ * Takım sayfası için ters indeks (slug → maç/puan durumu satırları).
+ * Önceden her istekte tüm maçlar üzerinde (maç başına 2 Volleybox eşleştirmesi + slugify) tarama yapılıyordu;
+ * indeks veri yüklemesiyle birlikte bir kez kurulur (cachedAllData ile aynı ömürde) ve istek başına yalnızca
+ * ilgili takımın satırlarına bakılır.
+ */
+interface SlugIndex {
+  homeMapping: Array<VolleyboxMapping | undefined>;
+  awayMapping: Array<VolleyboxMapping | undefined>;
+  homeKeys: Array<Set<string>>;
+  awayKeys: Array<Set<string>>;
+  matchesBySlug: Map<string, number[]>;
+  standingsBySlug: Map<string, StandingHit[]>;
+  knownCitySlugs: Set<string>;
+}
+
+const slugIndexCache = new WeakMap<AllCityData, SlugIndex>();
+
+function slugKeysOf(team: string, mapping: VolleyboxMapping | undefined): Set<string> {
+  const keys = new Set<string>([slugify(team)]);
+  if (mapping?.matched_as) keys.add(slugify(mapping.matched_as));
+  if (mapping?.internal_name) keys.add(slugify(mapping.internal_name));
+  return keys;
+}
+
+function getSlugIndex(data: AllCityData): SlugIndex {
+  const cached = slugIndexCache.get(data);
+  if (cached) return cached;
+
+  const { matches, standingsByCity } = data;
+  const homeMapping: Array<VolleyboxMapping | undefined> = new Array(matches.length);
+  const awayMapping: Array<VolleyboxMapping | undefined> = new Array(matches.length);
+  const homeKeys: Array<Set<string>> = new Array(matches.length);
+  const awayKeys: Array<Set<string>> = new Array(matches.length);
+  const matchesBySlug = new Map<string, number[]>();
+  const knownCitySlugs = new Set<string>();
+
+  for (let i = 0; i < matches.length; i++) {
+    const m = matches[i];
+    const mCity = m.city || "İstanbul";
+    if (m.city) knownCitySlugs.add(normalizeCitySlug(m.city));
+    homeMapping[i] = getVolleyboxMapping(m.home_team, m.category, undefined, mCity);
+    awayMapping[i] = getVolleyboxMapping(m.away_team, m.category, undefined, mCity);
+    homeKeys[i] = slugKeysOf(m.home_team, homeMapping[i]);
+    awayKeys[i] = slugKeysOf(m.away_team, awayMapping[i]);
+    const all = new Set<string>([...homeKeys[i], ...awayKeys[i]]);
+    for (const key of all) {
+      const list = matchesBySlug.get(key);
+      if (list) list.push(i);
+      else matchesBySlug.set(key, [i]);
+    }
+  }
+
+  const standingsBySlug = new Map<string, StandingHit[]>();
+  for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
+    knownCitySlugs.add(normalizeCitySlug(cityName));
+    for (const [groupName, groupData] of Object.entries(cityGroup.standings)) {
+      const table: StandingItem[] = Array.isArray(groupData)
+        ? groupData
+        : (groupData as any)?.table || [];
+      const seen = new Set<string>();
+      for (const row of table) {
+        const rowMapping = getVolleyboxMapping(row.team, undefined, undefined, cityName);
+        for (const key of slugKeysOf(row.team, rowMapping)) {
+          if (seen.has(key)) continue; // table.find → grup başına ilk eşleşen satır
+          seen.add(key);
+          const hit: StandingHit = { cityName, groupName, table, row, rowMapping };
+          const list = standingsBySlug.get(key);
+          if (list) list.push(hit);
+          else standingsBySlug.set(key, [hit]);
+        }
+      }
+    }
+  }
+
+  const index: SlugIndex = {
+    homeMapping,
+    awayMapping,
+    homeKeys,
+    awayKeys,
+    matchesBySlug,
+    standingsBySlug,
+    knownCitySlugs,
+  };
+  slugIndexCache.set(data, index);
+  return index;
+}
+
 export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): TeamDetails | null {
   if (!targetSlug) return null;
   if (cityFilter && isCityHidden(cityFilter)) return null;
 
-  const { matches: allMatches, standingsByCity } = loadAllCityData();
+  const allData = loadAllCityData();
+  const { matches: allMatches, standingsByCity } = allData;
+  const index = getSlugIndex(allData);
 
   // Şehir öneki kontrolü (örn: izmir-vakifbank -> citySlug: izmir, cleanSlug: vakifbank)
   let cleanSlug = slugify(targetSlug);
   let requestedCitySlug = cityFilter ? normalizeCitySlug(cityFilter) : "";
 
   if (!requestedCitySlug) {
-    const knownCitySlugs = new Set<string>();
-    for (const m of allMatches) {
-      if (m.city) knownCitySlugs.add(normalizeCitySlug(m.city));
-    }
-    for (const cityName of Object.keys(standingsByCity)) {
-      knownCitySlugs.add(normalizeCitySlug(cityName));
-    }
-
-    for (const cSlug of knownCitySlugs) {
+    for (const cSlug of index.knownCitySlugs) {
       if (cleanSlug.startsWith(`${cSlug}-`)) {
         requestedCitySlug = cSlug;
         cleanSlug = cleanSlug.slice(cSlug.length + 1);
@@ -278,64 +374,32 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
 
   // 1. Önce bu takımın yer aldığı tüm şehirleri tespit et
   const teamCitiesMap = new Map<string, { officialName: string; count: number }>();
+  const matchIndices = index.matchesBySlug.get(cleanSlug) ?? [];
 
-  for (const m of allMatches) {
-    const homeSlug = slugify(m.home_team);
-    const awaySlug = slugify(m.away_team);
+  for (const i of matchIndices) {
+    const m = allMatches[i];
     const mCity = m.city || "İstanbul";
-    const homeMapping = getVolleyboxMapping(m.home_team, m.category, undefined, mCity);
-    const awayMapping = getVolleyboxMapping(m.away_team, m.category, undefined, mCity);
 
-    const isHomeSlugMatch = Boolean(
-      homeSlug === cleanSlug ||
-      (homeMapping?.matched_as && slugify(homeMapping.matched_as) === cleanSlug) ||
-      (homeMapping?.internal_name && slugify(homeMapping.internal_name) === cleanSlug)
-    );
-
-    const isAwaySlugMatch = Boolean(
-      awaySlug === cleanSlug ||
-      (awayMapping?.matched_as && slugify(awayMapping.matched_as) === cleanSlug) ||
-      (awayMapping?.internal_name && slugify(awayMapping.internal_name) === cleanSlug)
-    );
-
-    if (isHomeSlugMatch) {
-      const resolvedName = homeMapping?.matched_as || m.home_team;
+    if (index.homeKeys[i].has(cleanSlug)) {
+      const resolvedName = index.homeMapping[i]?.matched_as || m.home_team;
       const entry = teamCitiesMap.get(mCity) || { officialName: resolvedName, count: 0 };
       entry.count++;
       teamCitiesMap.set(mCity, entry);
     }
-    if (isAwaySlugMatch) {
-      const resolvedName = awayMapping?.matched_as || m.away_team;
+    if (index.awayKeys[i].has(cleanSlug)) {
+      const resolvedName = index.awayMapping[i]?.matched_as || m.away_team;
       const entry = teamCitiesMap.get(mCity) || { officialName: resolvedName, count: 0 };
       entry.count++;
       teamCitiesMap.set(mCity, entry);
     }
   }
 
-  for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
-    const standings = cityGroup.standings;
-    for (const groupData of Object.values(standings)) {
-      const table: StandingItem[] = Array.isArray(groupData)
-        ? groupData
-        : (groupData as any)?.table || [];
-
-      const foundRow = table.find((item) => {
-        const rowSlug = slugify(item.team);
-        const rowMapping = getVolleyboxMapping(item.team, undefined, undefined, cityName);
-        return (
-          rowSlug === cleanSlug ||
-          (rowMapping?.matched_as && slugify(rowMapping.matched_as) === cleanSlug) ||
-          (rowMapping?.internal_name && slugify(rowMapping.internal_name) === cleanSlug)
-        );
-      });
-      if (foundRow) {
-        const rowMapping = getVolleyboxMapping(foundRow.team, undefined, undefined, cityName);
-        const resolvedName = rowMapping?.matched_as || foundRow.team;
-        const entry = teamCitiesMap.get(cityName) || { officialName: resolvedName, count: 0 };
-        entry.count++;
-        teamCitiesMap.set(cityName, entry);
-      }
-    }
+  const standingHits = index.standingsBySlug.get(cleanSlug) ?? [];
+  for (const hit of standingHits) {
+    const resolvedName = hit.rowMapping?.matched_as || hit.row.team;
+    const entry = teamCitiesMap.get(hit.cityName) || { officialName: resolvedName, count: 0 };
+    entry.count++;
+    teamCitiesMap.set(hit.cityName, entry);
   }
 
   if (teamCitiesMap.size === 0) {
@@ -365,9 +429,8 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
   const standingsContexts: TeamStandingContext[] = [];
   const categoriesSet = new Set<string>();
 
-  for (const m of allMatches) {
-    const homeSlug = slugify(m.home_team);
-    const awaySlug = slugify(m.away_team);
+  for (const i of matchIndices) {
+    const m = allMatches[i];
     const mCity = m.city || "İstanbul";
 
     // Şehir izolasyonu: Altyapı liglerinde sadece o ilin maçları; ulusal liglerde (Kadınlar 2. Ligi) tüm maçlar
@@ -376,20 +439,8 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
       continue;
     }
 
-    const homeMapping = getVolleyboxMapping(m.home_team, m.category, undefined, mCity);
-    const awayMapping = getVolleyboxMapping(m.away_team, m.category, undefined, mCity);
-
-    const isHome: boolean = Boolean(
-      homeSlug === cleanSlug ||
-      (homeMapping?.matched_as && slugify(homeMapping.matched_as) === cleanSlug) ||
-      (homeMapping?.internal_name && slugify(homeMapping.internal_name) === cleanSlug)
-    );
-
-    const isAway: boolean = Boolean(
-      awaySlug === cleanSlug ||
-      (awayMapping?.matched_as && slugify(awayMapping.matched_as) === cleanSlug) ||
-      (awayMapping?.internal_name && slugify(awayMapping.internal_name) === cleanSlug)
-    );
+    const isHome: boolean = index.homeKeys[i].has(cleanSlug);
+    const isAway: boolean = index.awayKeys[i].has(cleanSlug);
 
     if (isHome || isAway) {
       if (m.category) categoriesSet.add(m.category);
@@ -419,49 +470,31 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
   }
 
   // Puan durumları (seçili şehir veya ulusal ligler)
-  for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
+  for (const { cityName, groupName, table, row: foundRow } of standingHits) {
     const isNationalStandings = cityName === "TVF Kadınlar 2. Ligi";
     if (!isNationalStandings && normalizeCitySlug(cityName) !== selectedCitySlug) {
       continue;
     }
 
-    const standings = cityGroup.standings;
-    for (const [groupName, groupData] of Object.entries(standings)) {
-      const table: StandingItem[] = Array.isArray(groupData)
-        ? groupData
-        : (groupData as any)?.table || [];
+    const is2Lig = cityName === "TVF Kadınlar 2. Ligi" || groupName.includes("Grup");
+    const isGenc = groupName.includes("Genç") || groupName.includes("U18");
+    const is1Lig = groupName.includes("1. Lig") || groupName.includes("1.Lig") || groupName.includes("1. Ligi");
+    const cat = is2Lig && cityName === "TVF Kadınlar 2. Ligi"
+      ? "Kadınlar 2. Ligi"
+      : isGenc
+      ? (is1Lig ? "Genç Kızlar 1. Ligi" : "Genç Kızlar Süper Lig")
+      : groupName.includes("Yıldız") || groupName.includes("U16")
+      ? "Yıldız Kızlar Süper Lig"
+      : groupName.split(" - ")[0];
+    categoriesSet.add(cat);
 
-      const foundRow = table.find((item) => {
-        const rowSlug = slugify(item.team);
-        const rowMapping = getVolleyboxMapping(item.team, undefined, undefined, cityName);
-        return (
-          rowSlug === cleanSlug ||
-          (rowMapping?.matched_as && slugify(rowMapping.matched_as) === cleanSlug) ||
-          (rowMapping?.internal_name && slugify(rowMapping.internal_name) === cleanSlug)
-        );
-      });
-      if (foundRow) {
-        const is2Lig = cityName === "TVF Kadınlar 2. Ligi" || groupName.includes("Grup");
-        const isGenc = groupName.includes("Genç") || groupName.includes("U18");
-        const is1Lig = groupName.includes("1. Lig") || groupName.includes("1.Lig") || groupName.includes("1. Ligi");
-        const cat = is2Lig && cityName === "TVF Kadınlar 2. Ligi"
-          ? "Kadınlar 2. Ligi"
-          : isGenc
-          ? (is1Lig ? "Genç Kızlar 1. Ligi" : "Genç Kızlar Süper Lig")
-          : groupName.includes("Yıldız") || groupName.includes("U16")
-          ? "Yıldız Kızlar Süper Lig"
-          : groupName.split(" - ")[0];
-        categoriesSet.add(cat);
-
-        standingsContexts.push({
-          groupName: is2Lig && cityName === "TVF Kadınlar 2. Ligi" ? `TVF Kadınlar 2. Ligi - ${groupName}` : groupName,
-          category: cat,
-          city: is2Lig && cityName === "TVF Kadınlar 2. Ligi" ? (selectedCity || "Türkiye") : selectedCity,
-          standingRow: foundRow,
-          fullGroupTable: table,
-        });
-      }
-    }
+    standingsContexts.push({
+      groupName: is2Lig && cityName === "TVF Kadınlar 2. Ligi" ? `TVF Kadınlar 2. Ligi - ${groupName}` : groupName,
+      category: cat,
+      city: is2Lig && cityName === "TVF Kadınlar 2. Ligi" ? (selectedCity || "Türkiye") : selectedCity,
+      standingRow: foundRow,
+      fullGroupTable: table,
+    });
   }
 
   // Maçları tarihe ve erken saate göre sırala (TBD sona, erken saat ilk)
@@ -657,6 +690,84 @@ export function extractClubRoot(name: string): { rootName: string; rootSlug: str
   };
 }
 
+interface SisterCandidate {
+  teamName: string;
+  city: string;
+  category?: string;
+  count: number;
+  candMapping: VolleyboxMapping | undefined;
+  candExt: ReturnType<typeof extractClubRoot>;
+  candRoots: Set<string>;
+}
+
+const sisterCandidateCache = new WeakMap<
+  Match[],
+  { standings: object; candidates: SisterCandidate[] }
+>();
+
+function stripClubSuffix(slug: string): string {
+  return slug.replace(/-sk$/, "").replace(/-spor-kulubu$/, "").replace(/-spor$/, "");
+}
+
+function getSisterCandidates(
+  allMatches: Match[],
+  standingsByCity: Record<string, { city: string; standings: Record<string, any> }>
+): SisterCandidate[] {
+  const cached = sisterCandidateCache.get(allMatches);
+  if (cached && cached.standings === standingsByCity) return cached.candidates;
+
+  const candidatesMap = new Map<string, { teamName: string; city: string; category?: string; count: number }>();
+
+  const addCandidate = (teamName: string, city: string, category?: string) => {
+    if (!teamName) return;
+    const key = `${teamName}__${city}`;
+    const existing = candidatesMap.get(key) || { teamName, city, category, count: 0 };
+    existing.count++;
+    if (!existing.category && category) existing.category = category;
+    candidatesMap.set(key, existing);
+  };
+
+  for (const m of allMatches) {
+    const mCity = m.city || "İstanbul";
+    addCandidate(m.home_team, mCity, m.category);
+    addCandidate(m.away_team, mCity, m.category);
+  }
+
+  for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
+    for (const [groupName, groupData] of Object.entries(cityGroup.standings)) {
+      const table: StandingItem[] = Array.isArray(groupData) ? groupData : (groupData as any)?.table || [];
+      for (const item of table) {
+        if (item.team) {
+          addCandidate(item.team, cityName, groupName);
+        }
+      }
+    }
+  }
+
+  const candidates: SisterCandidate[] = [];
+  for (const cand of candidatesMap.values()) {
+    const candMapping = getVolleyboxMapping(cand.teamName, cand.category, undefined, cand.city);
+    const candExt = extractClubRoot(cand.teamName);
+
+    const candRoots = new Set<string>();
+    if (candExt.rootSlug) {
+      candRoots.add(candExt.rootSlug);
+      const candWithoutSk = stripClubSuffix(candExt.rootSlug);
+      if (candWithoutSk) candRoots.add(candWithoutSk);
+    }
+    if (candMapping?.internal_name) {
+      const islug = slugify(candMapping.internal_name);
+      candRoots.add(islug);
+      const islugWithoutSk = stripClubSuffix(islug);
+      if (islugWithoutSk) candRoots.add(islugWithoutSk);
+    }
+    candidates.push({ ...cand, candMapping, candExt, candRoots });
+  }
+
+  sisterCandidateCache.set(allMatches, { standings: standingsByCity, candidates });
+  return candidates;
+}
+
 export function findClubSisterTeams(
   officialTeamName: string,
   currentSlug: string,
@@ -692,66 +803,12 @@ export function findClubSisterTeams(
     return [];
   }
 
-  // 2. Tüm maç ve puan tablolarındaki takımları topla
-  const candidatesMap = new Map<string, {
-    teamName: string;
-    city: string;
-    category?: string;
-    count: number;
-  }>();
-
-  const addCandidate = (teamName: string, city: string, category?: string) => {
-    if (!teamName) return;
-    const key = `${teamName}__${city}`;
-    const existing = candidatesMap.get(key) || { teamName, city, category, count: 0 };
-    existing.count++;
-    if (!existing.category && category) existing.category = category;
-    candidatesMap.set(key, existing);
-  };
-
-  for (const m of allMatches) {
-    const mCity = m.city || "İstanbul";
-    addCandidate(m.home_team, mCity, m.category);
-    addCandidate(m.away_team, mCity, m.category);
-  }
-
-  for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
-    for (const [groupName, groupData] of Object.entries(cityGroup.standings)) {
-      const table: StandingItem[] = Array.isArray(groupData) ? groupData : (groupData as any)?.table || [];
-      for (const item of table) {
-        if (item.team) {
-          addCandidate(item.team, cityName, groupName);
-        }
-      }
-    }
-  }
-
-  // 3. Kökü eşleşen adayları filtrele
+  // 2-3. Tüm maç ve puan tablolarındaki takımlar ve kök slug'ları (veri başına bir kez hesaplanıp önbelleğe alınır)
   const results: ClubSisterTeam[] = [];
   const addedSlugs = new Set<string>();
 
-  for (const cand of candidatesMap.values()) {
-    const candMapping = getVolleyboxMapping(cand.teamName, cand.category, undefined, cand.city);
-    const candExt = extractClubRoot(cand.teamName);
-
-    const candRoots = new Set<string>();
-    if (candExt.rootSlug) {
-      candRoots.add(candExt.rootSlug);
-      const candWithoutSk = candExt.rootSlug
-        .replace(/-sk$/, "")
-        .replace(/-spor-kulubu$/, "")
-        .replace(/-spor$/, "");
-      if (candWithoutSk) candRoots.add(candWithoutSk);
-    }
-    if (candMapping?.internal_name) {
-      const islug = slugify(candMapping.internal_name);
-      candRoots.add(islug);
-      const islugWithoutSk = islug
-        .replace(/-sk$/, "")
-        .replace(/-spor-kulubu$/, "")
-        .replace(/-spor$/, "");
-      if (islugWithoutSk) candRoots.add(islugWithoutSk);
-    }
+  for (const cand of getSisterCandidates(allMatches, standingsByCity)) {
+    const { candMapping, candExt, candRoots } = cand;
 
     // Ortak kök var mı?
     let matchesRoot = false;

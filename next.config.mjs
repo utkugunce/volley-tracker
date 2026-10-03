@@ -57,6 +57,17 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    // Eski `/takim/<slug>?sehir=<il>` ve `?city=<il>` adresleri çalışmaya devam eder (URL değişmez);
+    // içerik, arama parametresi okumayan statik/ISR `/takim/<slug>/<il>` rotasından gelir.
+    return {
+      beforeFiles: ["sehir", "city"].map((key) => ({
+        source: "/takim/:slug",
+        has: [{ type: "query", key, value: "(?<cityParam>[^/]+)" }],
+        destination: "/takim/:slug/:cityParam",
+      })),
+    };
+  },
   async headers() {
     return [
       {
