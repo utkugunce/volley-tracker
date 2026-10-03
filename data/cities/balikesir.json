@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T13:32:48.380709",
+  "updated_at": "2026-10-03T17:40:03.287959",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -170,16 +170,27 @@
       {
         "rank": 1,
         "team": "Balıkesir DSİ Spor U16",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "MEHMET ŞEREF EĞİNLİOĞLU ORTAOKULU GSK",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Balıkesir EKA Spor Kulubü U16",
         "played": 0,
         "won": 0,
@@ -190,7 +201,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "BALIKESİR NETS BASKET",
         "played": 0,
         "won": 0,
@@ -201,19 +212,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Karesi Hürriyet Spor U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "MEHMET ŞEREF EĞİNLİOĞLU ORTAOKULU GSK",
+        "team": "Karesi Hürriyet Spor U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -510,11 +510,15 @@
       "match_no": "1",
       "home_team": "Balıkesir DSİ Spor U16",
       "away_team": "MEHMET ŞEREF EĞİNLİOĞLU ORTAOKULU GSK",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-21",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -839,5 +843,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-03T13:34:46.539029"
+  "volleybox_sync_updated_at": "2026-10-03T17:42:04.641898"
 }

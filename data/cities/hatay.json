@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T16:20:25.095915",
+  "updated_at": "2026-10-03T17:40:11.634903",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -133,6 +133,28 @@
       },
       {
         "rank": 2,
+        "team": "Mas Smaç Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İskenderun Yurdum Spor U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "İskenderun Tan Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -143,30 +165,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "İskenderun Yurdum Spor U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Mas Smaç Spor Kulübü U18",
+        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1266,11 +1266,16 @@
       "match_no": "2",
       "home_team": "Mas Smaç Spor Kulübü U18",
       "away_team": "İskenderun Yurdum Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "13-25",
+        "25-12",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401089",
@@ -2526,5 +2531,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-03T16:22:11.119429"
+  "volleybox_sync_updated_at": "2026-10-03T17:42:04.603568"
 }
