@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Trophy, ChevronLeft } from "lucide-react";
 import { getTeamDetailsBySlug } from "@/utils/teamData";
 import { TeamDetailClient } from "@/components/TeamDetailClient";
+import { TeamStatsSection } from "@/components/team/TeamStatsSection";
+import { getTeamStatsBundle } from "@/utils/teamStatsBundle";
 
 /**
  * Takım sayfası (/takim/[slug]) ve şehir varyantı (/takim/[slug]/[city]) için ortak içerik.
@@ -75,6 +77,7 @@ export function TeamPageView({ slug, cityFilter }: { slug: string; cityFilter?: 
     );
   }
 
+  const statsBundle = getTeamStatsBundle(team);
   const logo = team.mapping?.logo_url;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -93,7 +96,7 @@ export function TeamPageView({ slug, cityFilter }: { slug: string; cityFilter?: 
         // "<" kaçışlanır: takım adı içindeki olası "</script>" dizisi etiketi kapatamasın.
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
-      <TeamDetailClient team={team} />
+      <TeamDetailClient team={team} statsSlot={<TeamStatsSection stats={statsBundle.stats} playoff={statsBundle.playoff} />} />
     </>
   );
 }

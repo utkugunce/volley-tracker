@@ -81,6 +81,12 @@ export interface TeamDetails {
   volleyboxRoster?: TeamRosterRecord;
 }
 
+/** TVF Kadınlar 2. Ligi tarihleri "gg.aa.yyyy" gelir; uygulamanın geri kalanıyla uyumlu ve sıralanabilir ISO biçimine çevirir. */
+function normalizeK2Date(raw?: string): string {
+  const m = (raw || "").trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  return m ? `${m[3]}-${m[2]}-${m[1]}` : raw || "";
+}
+
 let cachedAllData: {
   matches: Match[];
   standingsByCity: Record<string, StandingsCityEntry>;
@@ -125,7 +131,7 @@ export function extractVolleyboxTeamId(url?: string): string | null {
   return null;
 }
 
-function loadAllCityData() {
+export function loadAllCityData() {
   const now = Date.now();
   if (cachedAllData && now - cachedAllData.timestamp < CACHE_TTL_MS) {
     return cachedAllData;
@@ -193,7 +199,7 @@ function loadAllCityData() {
           allMatches.push({
             id: m.id || `2lig_${m.grup_no}_${m.mac_no}`,
             match_no: m.mac_no || "",
-            date: m.tarih || "",
+            date: normalizeK2Date(m.tarih),
             time: m.saat || "",
             hall: m.salon || "",
             home_team: m.takim_a,
@@ -229,12 +235,13 @@ function loadAllCityData() {
             won: t.g || 0,
             lost: t.m || 0,
             points: t.p || 0,
-            sets_for: t.as || 0,
-            sets_against: t.vs || 0,
-            sets_ratio: String(t.sav || "0"),
-            points_for: t.asp || 0,
-            points_against: t.vsp || 0,
-            points_ratio: String(t.spav || "0"),
+            sets_won: t.as || 0,
+            sets_lost: t.vs || 0,
+            set_ratio: String(t.sav || "0"),
+            points_won: t.asp || 0,
+            points_lost: t.vsp || 0,
+            point_ratio: String(t.spav || "0"),
+            form: [],
           }));
           standingsByCity["TVF Kadınlar 2. Ligi"].standings[groupName] = table;
         }

@@ -118,9 +118,11 @@ const WinLossDonut: React.FC<{ wins: number; losses: number }> = ({ wins, losses
 
 interface TeamDetailClientProps {
   team: TeamDetails;
+  /** Sunucuda üretilen "İstatistikler" bölümü (play-off hesabı tüm grubu gerektirdiği için sunucuda hesaplanır). */
+  statsSlot?: React.ReactNode;
 }
 
-export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
+export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsSlot }) => {
   const [matchFilter, setMatchFilter] = useState<"all" | "finished" | "upcoming">("all");
   const [downloadingSeason, setDownloadingSeason] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
@@ -439,6 +441,9 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
 
         {/* 2b. FORM GRAFİĞİ */}
         <TeamFormChart series={formSeries} />
+
+        {/* 2c. İSTATİSTİKLER VE PLAY-OFF DURUMU */}
+        {statsSlot}
 
         {/* 3. PUAN DURUMU TABLOLARI */}
         {team.standingsContexts.length > 0 && (
