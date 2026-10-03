@@ -128,6 +128,19 @@ describe("service worker (public/sw.js)", () => {
     }
   });
 
+  it("oturumlu sayfalar (/panel, /giris, /auth) service worker tarafından önbelleğe alınmaz", async () => {
+    const { listeners, stores } = loadWorker(network);
+    for (const r of [
+      req("/panel", { mode: "navigate" }),
+      req("/panel/yonetim", { mode: "navigate" }),
+      req("/giris", { mode: "navigate" }),
+      req("/auth/callback?code=abc", { mode: "navigate" }),
+    ]) {
+      expect(await dispatchFetch(listeners, r)).toBeNull();
+    }
+    expect([...stores.values()].every((s) => s.size === 0)).toBe(true);
+  });
+
   it("/api/fixtures çevrimiçiyken ağ yanıtını döndürür, çevrimdışıyken son kayıtlı veriyi verir", async () => {
     const { listeners } = loadWorker(network);
     const request = req("/api/fixtures?city=istanbul");

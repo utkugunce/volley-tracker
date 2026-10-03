@@ -7,6 +7,8 @@ const OFFLINE_URL = "/offline.html";
 // Yalnızca herkese açık, salt okunur veri uçları önbelleğe alınır. Bildirim, kimlik doğrulama,
 // yönetim ve senkronizasyon uçları (/api/notifications, /api/auth, /api/admin, /api/sync) asla.
 const CACHEABLE_API_PATHS = ["/api/fixtures", "/api/cities"];
+// Kimlik doğrulamalı alanlar (kulüp paneli, giriş, auth callback) asla önbelleğe alınmaz / SW'den geçirilmez.
+const BYPASS_PATH_PREFIXES = ["/panel", "/giris", "/auth"];
 const STATIC_ASSETS = [
   OFFLINE_URL,
   "/manifest.json",
@@ -97,6 +99,11 @@ self.addEventListener("fetch", (event) => {
 
   // Yalnızca GET isteklerini ele al
   if (request.method !== "GET") {
+    return;
+  }
+
+  // (-) Oturumlu sayfalar: tarayıcıya bırak (önbellek yok).
+  if (BYPASS_PATH_PREFIXES.some((prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`))) {
     return;
   }
 

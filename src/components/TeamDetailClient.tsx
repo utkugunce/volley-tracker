@@ -128,9 +128,11 @@ interface TeamDetailClientProps {
   team: TeamDetails;
   /** Sunucuda üretilen "İstatistikler" bölümü (play-off hesabı tüm grubu gerektirdiği için sunucuda hesaplanır). */
   statsSlot?: React.ReactNode;
+  /** Kulüp tarafından yayınlanan içerik (duyuru/kadro); sunucu bileşeninden verilir. */
+  clubSlot?: React.ReactNode;
 }
 
-export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsSlot }) => {
+export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsSlot, clubSlot }) => {
   const [matchFilter, setMatchFilter] = useState<"all" | "finished" | "upcoming">("all");
   const [downloadingSeason, setDownloadingSeason] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
@@ -455,6 +457,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
 
         {/* 2c. İSTATİSTİKLER VE PLAY-OFF DURUMU */}
         {statsSlot}
+        {clubSlot}
 
         {/* 3. PUAN DURUMU TABLOLARI */}
         {team.standingsContexts.length > 0 && (
