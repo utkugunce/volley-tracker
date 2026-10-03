@@ -28,6 +28,7 @@ import { MatchOverride, AuditLogEntry } from "@/utils/overrides";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { getSupabaseClient } from "@/utils/supabaseClient";
 import { toErrorLike } from "@/utils/errors";
+import { ClubMembersAdmin } from "@/components/club/ClubMembersAdmin";
 import type { NotificationHistory } from "@/utils/notificationQueue";
 
 /** /api/admin/users yanıtındaki kullanıcı kaydı. */
@@ -60,7 +61,7 @@ export default function AdminPage() {
   const [overrides, setOverrides] = useState<Record<string, MatchOverride>>({});
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<"matches" | "audit" | "users" | "live" | "notifications" | "sync" | "teams">("matches");
+  const [activeTab, setActiveTab] = useState<"matches" | "audit" | "users" | "live" | "notifications" | "sync" | "teams" | "clubs">("matches");
 
   // Filtreler
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -1036,6 +1037,20 @@ export default function AdminPage() {
           </button>
           <button
             type="button"
+            role="tab"
+            aria-selected={activeTab === "clubs"}
+            onClick={() => setActiveTab("clubs")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              activeTab === "clubs"
+                ? "bg-done text-done-fg shadow-sm"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            <Users size={13} />
+            Kulüp Hesapları
+          </button>
+          <button
+            type="button"
             onClick={handleLogout}
             aria-label="Yönetici oturumunu kapat"
             className="p-1.5 rounded-lg bg-slate-800 hover:bg-red-950/80 text-slate-400 hover:text-red-400 border border-slate-700 transition-colors text-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
@@ -1345,6 +1360,8 @@ export default function AdminPage() {
               </div>
             </div>
           </div>
+        ) : activeTab === "clubs" ? (
+          <ClubMembersAdmin token={token} />
         ) : activeTab === "users" ? (
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
             <div className="flex items-center justify-between mb-4">
