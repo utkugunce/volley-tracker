@@ -5,6 +5,7 @@ import { Trophy, ChevronLeft } from "lucide-react";
 import { getTeamDetailsBySlug } from "@/utils/teamData";
 import { TeamDetailClient } from "@/components/TeamDetailClient";
 import { TeamStatsSection } from "@/components/team/TeamStatsSection";
+import { ClubPublicSection } from "@/components/club/ClubPublicSection";
 import { getTeamStatsBundle } from "@/utils/teamStatsBundle";
 
 /**
@@ -96,7 +97,11 @@ export function TeamPageView({ slug, cityFilter }: { slug: string; cityFilter?: 
         // "<" kaçışlanır: takım adı içindeki olası "</script>" dizisi etiketi kapatamasın.
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
-      <TeamDetailClient team={team} statsSlot={<TeamStatsSection stats={statsBundle.stats} playoff={statsBundle.playoff} />} />
+      <TeamDetailClient
+        team={team}
+        statsSlot={<TeamStatsSection stats={statsBundle.stats} playoff={statsBundle.playoff} />}
+        clubSlot={<ClubPublicSection slug={slug} />}
+      />
     </>
   );
 }
