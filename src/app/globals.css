@@ -476,3 +476,8 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb {
     color: #0f172a !important;
   }
 }
+
+/* Açık tema: logo "plaka" zemini (bg-ink) koyu logoların okunabilirliği için açık kalır. */
+html[data-theme="light"] .bg-ink {
+  background-color: #eaf6fa;
+}

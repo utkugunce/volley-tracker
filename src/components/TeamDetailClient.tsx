@@ -31,7 +31,13 @@ import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { getVolleyboxLeagueMapping } from "@/utils/volleybox";
 import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
-import { TeamRosterView } from "@/components/TeamRosterView";
+import dynamic from "next/dynamic";
+import { SkeletonCard } from "@/components/skeletons/Skeleton";
+
+// Kadro bölümü sayfanın alt kısmında; ayrı parçaya bölünerek ilk JS yükü azaltılır (SSR çıktısı aynı kalır).
+const TeamRosterView = dynamic(() => import("@/components/TeamRosterView").then((mod) => mod.TeamRosterView), {
+  loading: () => <SkeletonCard lines={4} />,
+});
 import { trLower } from "@/utils/turkishLocale";
 import { getLeagueStandingsRoute, getLeagueFixtureRoute } from "@/utils/leagueRoutes";
 import { buildFormSeries, computeOpponentRecords, getTeamHalls } from "@/utils/teamStats";
@@ -260,6 +266,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                   alt={`${team.teamName} logosu`}
                   width={128}
                   height={128}
+                  priority
+                  sizes="(min-width: 640px) 128px, 112px"
                   className="w-full h-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-105"
                   unoptimized={logoSrc.startsWith("http")}
                 />
