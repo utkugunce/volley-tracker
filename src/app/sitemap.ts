@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { getAllTeamSlugs } from "@/utils/teamData";
 import { isCityHidden } from "@/utils/cityHelper";
+import { getLeagueAnalytics } from "@/utils/leagueAnalyticsData";
+import { slugify } from "@/utils/slugify";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://altyapivoleybol.com.tr";
@@ -48,6 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/karsilastir`,
       lastModified: now,
       changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/istatistikler`,
+      lastModified: now,
+      changeFrequency: "daily",
       priority: 0.8,
     },
     // Kadınlar 2. Ligi Rotaları
@@ -100,6 +108,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
   ];
+
+  // Lig istatistik sayfaları (kategori bazlı)
+  const statsRoutes: MetadataRoute.Sitemap = getLeagueAnalytics().categories.map((category) => ({
+    url: `${baseUrl}/istatistikler/${slugify(category)}`,
+    lastModified: now,
+    changeFrequency: "daily",
+    priority: 0.75,
+  }));
 
   // Takım detay sayfaları
   const teamSlugs = getAllTeamSlugs();
@@ -162,5 +178,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...staticRoutes, ...teamRoutes, ...cityRoutes];
+  return [...staticRoutes, ...statsRoutes, ...teamRoutes, ...cityRoutes];
 }

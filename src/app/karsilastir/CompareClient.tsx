@@ -22,12 +22,16 @@ import {
 import { TeamListItem, HeadToHeadComparison } from "@/utils/teamData";
 import { FormBadge } from "@/components/FormBadge";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import type { CompareStatsData } from "@/utils/compareStats";
+import { CompareStatsTable } from "@/components/stats/CompareStatsTable";
 
 interface CompareClientProps {
   teamsList: TeamListItem[];
   initialSlug1?: string;
   initialSlug2?: string;
   comparison?: HeadToHeadComparison | null;
+  /** Sunucuda hesaplanan yan yana istatistikler (yoksa bölüm gizlenir). */
+  statsData?: CompareStatsData | null;
 }
 
 export const CompareClient: React.FC<CompareClientProps> = ({
@@ -35,6 +39,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
   initialSlug1 = "",
   initialSlug2 = "",
   comparison,
+  statsData,
 }) => {
   const router = useRouter();
   const [slug1, setSlug1] = useState(initialSlug1);
@@ -570,6 +575,15 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 );
               })()}
             </section>
+
+            {/* 3b. YAN YANA SEZON İSTATİSTİKLERİ */}
+            {statsData && (
+              <CompareStatsTable
+                data={statsData}
+                name1={comparison.team1.teamName}
+                name2={comparison.team2.teamName}
+              />
+            )}
 
             {/* 4. ARALARINDAKİ MAÇLAR (H2H) */}
             <section className="space-y-3">

@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Metadata } from "next";
 import { getAllTeamsList, getHeadToHeadComparison } from "@/utils/teamData";
+import { buildCompareStats, slimComparison } from "@/utils/compareStats";
 import { CompareClient } from "./CompareClient";
 
 interface ComparePageProps {
@@ -22,9 +23,13 @@ export async function generateMetadata({ searchParams }: ComparePageProps): Prom
     if (comp) {
       const t1 = comp.team1.teamName;
       const t2 = comp.team2.teamName;
+      const url = `https://altyapivoleybol.com.tr/karsilastir?takim1=${encodeURIComponent(slug1)}&takim2=${encodeURIComponent(slug2)}`;
+      const description = `${t1} ve ${t2} arasındaki geçmiş maç sonuçları, set skorları, form, set ve sayı ortalamaları ile lig puan durumu istatistikleri.`;
       return {
         title: `${t1} vs ${t2} — Karşılaştırma | Altyapı Voleybol`,
-        description: `${t1} ve ${t2} arasındaki geçmiş maç sonuçları, set skorları ve lig puan durumu istatistikleri.`,
+        description,
+        alternates: { canonical: url },
+        openGraph: { title: `${t1} vs ${t2} — Takım Karşılaştırma`, description, url, type: "website" },
       };
     }
   }
@@ -32,7 +37,8 @@ export async function generateMetadata({ searchParams }: ComparePageProps): Prom
   return {
     title: "İki Takım Karşılaştırma (Head-to-Head) | Altyapı Voleybol",
     description:
-      "Altyapı voleybol takımları arasında geçmiş maç sonuçlarını, set sayılarını ve lig puan durumu istatistiklerini karşılaştırın.",
+      "Altyapı voleybol takımları arasında geçmiş maç sonuçlarını, form, set ve sayı ortalamalarını ve lig puan durumu istatistiklerini yan yana karşılaştırın.",
+    alternates: { canonical: "https://altyapivoleybol.com.tr/karsilastir" },
   };
 }
 
@@ -42,7 +48,10 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
   const slug2 = sParams?.takim2 || sParams?.team2 || "";
 
   const teamsList = getAllTeamsList();
-  const comparison = slug1 && slug2 ? getHeadToHeadComparison(slug1, slug2) : null;
+  const fullComparison = slug1 && slug2 ? getHeadToHeadComparison(slug1, slug2) : null;
+  // İstatistikler sunucuda hesaplanır; istemciye yalnızca hafifletilmiş karşılaştırma verisi gider.
+  const statsData = fullComparison ? buildCompareStats(fullComparison) : null;
+  const comparison = fullComparison ? slimComparison(fullComparison) : null;
 
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-900 text-white p-6">Yükleniyor...</div>}>
@@ -51,6 +60,7 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
         initialSlug1={slug1}
         initialSlug2={slug2}
         comparison={comparison}
+        statsData={statsData}
       />
     </Suspense>
   );
