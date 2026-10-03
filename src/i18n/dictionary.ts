@@ -37,6 +37,7 @@ const tr = {
   "compare.title": "Takım Karşılaştırma",
   "offline.title": "Çevrimdışısınız",
   "offline.body": "İnternet bağlantısı yok. Daha önce açtığınız sayfalar ve son kaydedilen fikstür verileri kullanılabilir olabilir.",
+  "offline.banner": "Çevrimdışısınız — son kaydedilen veriler gösteriliyor",
   "offline.retry": "Tekrar dene",
   "offline.home": "Ana sayfaya dön",
 } as const;
@@ -76,6 +77,7 @@ const en: Record<TranslationKey, string> = {
   "compare.title": "Team Comparison",
   "offline.title": "You are offline",
   "offline.body": "No internet connection. Pages you opened earlier and the last saved fixture data may still be available.",
+  "offline.banner": "You are offline — showing last saved data",
   "offline.retry": "Try again",
   "offline.home": "Back to home",
 };

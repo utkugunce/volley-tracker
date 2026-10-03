@@ -5,6 +5,7 @@ import "@/theme/theme-vars.css";
 import "./globals.css";
 import { THEME_INIT_SCRIPT } from "@/theme/theme";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+import { OfflineBanner } from "@/components/OfflineBanner";
 import { Analytics } from "@vercel/analytics/next";
 
 const manrope = Manrope({
@@ -97,6 +98,7 @@ gtag('config', 'G-S5FYXCW2LC');`}
         </Script>
         <Analytics />
         <ServiceWorkerRegister />
+        <OfflineBanner />
       </body>
     </html>
   );

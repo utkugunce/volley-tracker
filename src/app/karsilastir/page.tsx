@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getAllTeamsList, getHeadToHeadComparison } from "@/utils/teamData";
 import { buildCompareStats, slimComparison } from "@/utils/compareStats";
 import { CompareClient } from "./CompareClient";
+import { ComparePageSkeleton } from "@/components/skeletons/PageSkeletons";
 
 interface ComparePageProps {
   searchParams?: Promise<{
@@ -54,7 +55,7 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
   const comparison = fullComparison ? slimComparison(fullComparison) : null;
 
   return (
-    <Suspense fallback={<div className="min-h-screen bg-slate-900 text-white p-6">Yükleniyor...</div>}>
+    <Suspense fallback={<ComparePageSkeleton />}>
       <CompareClient
         teamsList={teamsList}
         initialSlug1={slug1}
