@@ -24,6 +24,8 @@ import { FormBadge } from "@/components/FormBadge";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import type { CompareStatsData } from "@/utils/compareStats";
 import { CompareStatsTable } from "@/components/stats/CompareStatsTable";
+import { T } from "@/components/T";
+import { SettingsControls } from "@/components/SettingsControls";
 
 interface CompareClientProps {
   teamsList: TeamListItem[];
@@ -102,10 +104,11 @@ export const CompareClient: React.FC<CompareClientProps> = ({
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
           >
             <ChevronLeft size={16} />
-            <span>Ana Sayfa</span>
+            <span><T k="common.home" /></span>
           </Link>
 
           <div className="flex items-center gap-2">
+            <SettingsControls />
             {slug1 && slug2 && (
               <button
                 onClick={handleShare}

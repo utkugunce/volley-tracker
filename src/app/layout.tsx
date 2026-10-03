@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { Manrope, Space_Grotesk } from "next/font/google";
+import "@/theme/theme-vars.css";
 import "./globals.css";
+import { THEME_INIT_SCRIPT } from "@/theme/theme";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+import { OfflineBanner } from "@/components/OfflineBanner";
 import { Analytics } from "@vercel/analytics/next";
 
 const manrope = Manrope({
@@ -74,7 +77,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+    <html lang="tr" data-theme="dark" suppressHydrationWarning className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        {/* Tema/dil tercihini ilk boyamadan önce uygular (yanıp sönme olmaz). */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body className="min-h-screen bg-canvas text-ink font-sans antialiased selection:bg-selected-strong selection:text-white">
         {children}
         <Script
@@ -91,6 +98,7 @@ gtag('config', 'G-S5FYXCW2LC');`}
         </Script>
         <Analytics />
         <ServiceWorkerRegister />
+        <OfflineBanner />
       </body>
     </html>
   );

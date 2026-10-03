@@ -39,6 +39,7 @@ export function ServiceWorkerRegister() {
     window.addEventListener("unhandledrejection", handleChunkError);
 
     // 2. Service Worker Kayıt ve Yaşam Döngüsü
+    let loadListener: (() => void) | null = null;
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
       let refreshing = false;
       navigator.serviceWorker.addEventListener("controllerchange", () => {
@@ -48,7 +49,7 @@ export function ServiceWorkerRegister() {
         }
       });
 
-      window.addEventListener("load", () => {
+      const registerWorker = () => {
         navigator.serviceWorker
           .register("/sw.js")
           .then((registration) => {
@@ -75,12 +76,21 @@ export function ServiceWorkerRegister() {
           .catch((error) => {
             console.warn("Service Worker kayıt hatası:", error);
           });
-      });
+      };
+
+      // "load" olayı hydration'dan önce tetiklenmiş olabilir; bu durumda dinleyici hiç çalışmazdı.
+      if (document.readyState === "complete") {
+        registerWorker();
+      } else {
+        loadListener = registerWorker;
+        window.addEventListener("load", registerWorker, { once: true });
+      }
     }
 
     return () => {
       window.removeEventListener("error", handleChunkError);
       window.removeEventListener("unhandledrejection", handleChunkError);
+      if (loadListener) window.removeEventListener("load", loadListener);
     };
   }, []);
 

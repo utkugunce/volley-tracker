@@ -42,6 +42,52 @@
   --rank-mid-rgb: 127 180 255;
 }
 
+/* ---------- Açık tema ----------
+   Renk token'ları (Tailwind) src/theme/theme-vars.css içindeki CSS değişkenlerinden gelir.
+   Burada yalnızca değişkenle bağlanmamış eski değişkenler ve özel sınıflar açık temaya uyarlanır. */
+html[data-theme="light"] {
+  --canvas: #f4f8fb;
+  --surface: #ffffff;
+  --surface-muted: #eef3f8;
+  --surface-raised: #ffffff;
+  --line: #cbd8e3;
+  --ink: #0b1b2b;
+  --ink-2: #3e566b;
+  --ink-3: #566f84;
+  --live: #c42d49;
+  --done: #3f7a1c;
+  --selected: #2a63bd;
+  --selected-strong: #2a63bd;
+  --selected-text: #1e4fa0;
+  --warn: #b7791f;
+  --primary: #0f766e;
+  --primary-rgb: 15 118 110;
+  --primary-hover-rgb: 17 94 89;
+  --primary-fg-rgb: 255 255 255;
+  --primary-soft: rgb(15 118 110 / 0.12);
+  --rank-mid-rgb: 42 99 189;
+  --glass-rgb: 255 255 255;
+  --glass-hover-rgb: 238 243 248;
+  --edge-rgb: 11 27 43;
+  --shadow-rgb: 11 27 43;
+}
+
+html[data-theme="light"] [data-section="kadinlar-2-lig"] {
+  --primary: #9333ea;
+  --primary-rgb: 147 51 234;
+  --primary-hover-rgb: 126 34 206;
+  --primary-fg-rgb: 255 255 255;
+  --primary-soft: rgb(147 51 234 / 0.12);
+  --rank-mid-rgb: 42 99 189;
+}
+
+:root {
+  --glass-rgb: 14 32 51;
+  --glass-hover-rgb: 19 41 63;
+  --edge-rgb: 255 255 255;
+  --shadow-rgb: 0 0 0;
+}
+
 html, body, button, input, select, textarea {
   font-family: var(--font-body);
 }
@@ -64,40 +110,40 @@ body {
 
 @layer utilities {
   .glass-panel {
-    background: rgb(14 32 51 / 0.78);
+    background: rgb(var(--glass-rgb) / 0.78);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgb(var(--edge-rgb) / 0.08);
   }
 
   .glass-card {
-    background: rgb(14 32 51 / 0.62);
+    background: rgb(var(--glass-rgb) / 0.62);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgb(var(--edge-rgb) / 0.07);
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card:hover {
-    background: rgb(19 41 63 / 0.88);
+    background: rgb(var(--glass-hover-rgb) / 0.88);
     border-color: rgb(var(--primary-rgb) / 0.35);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 10px 25px -5px rgb(var(--shadow-rgb) / 0.45);
   }
 
   .match-strip {
-    background: rgb(14 32 51 / 0.62);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgb(var(--glass-rgb) / 0.62);
+    border: 1px solid rgb(var(--edge-rgb) / 0.06);
     transition: all 0.15s ease-out;
   }
 
   .match-strip:hover {
-    background: rgb(19 41 63 / 0.88);
+    background: rgb(var(--glass-hover-rgb) / 0.88);
     border-color: rgb(var(--primary-rgb) / 0.40);
   }
 
   .card-clean {
-    background: rgb(14 32 51 / 0.68);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgb(var(--glass-rgb) / 0.68);
+    border: 1px solid rgb(var(--edge-rgb) / 0.07);
     border-radius: 1rem;
   }
 
@@ -240,6 +286,130 @@ body {
   background: var(--selected);
 }
 
+/* ---------- Açık tema: beyaz metin uyarlamaları ----------
+   Karanlık temada `text-white` koyu zeminde okunur; açık temada ana metin rengine çevrilir.
+   Canlı (dolu) renkli zeminlerde ve doğrudan alt öğelerinde beyaz korunur. */
+html[data-theme="light"] .text-white,
+html[data-theme="light"] .hover\:text-white:hover,
+html[data-theme="light"] .group:hover .group-hover\:text-white {
+  color: rgb(var(--c-ink));
+}
+
+html[data-theme="light"] :is(
+  .bg-red-500,
+  .bg-red-600,
+  .bg-rose-500,
+  .bg-rose-600,
+  .bg-pink-500,
+  .bg-pink-600,
+  .bg-emerald-500,
+  .bg-emerald-600,
+  .bg-green-500,
+  .bg-green-600,
+  .bg-lime-500,
+  .bg-lime-600,
+  .bg-amber-500,
+  .bg-amber-600,
+  .bg-yellow-500,
+  .bg-yellow-600,
+  .bg-orange-500,
+  .bg-orange-600,
+  .bg-blue-500,
+  .bg-blue-600,
+  .bg-sky-500,
+  .bg-sky-600,
+  .bg-cyan-500,
+  .bg-cyan-600,
+  .bg-indigo-500,
+  .bg-indigo-600,
+  .bg-teal-500,
+  .bg-teal-600,
+  .bg-purple-500,
+  .bg-purple-600,
+  .bg-violet-500,
+  .bg-violet-600,
+  .bg-fuchsia-500,
+  .bg-fuchsia-600,
+  .bg-emerald-700,
+  .bg-blue-700,
+  .bg-sky-700,
+  .bg-red-700,
+  .bg-selected-strong,
+  .bg-selected,
+  .bg-selected-fill,
+  .bg-primary,
+  .bg-live,
+  .bg-black,
+  .bg-slate-600
+).text-white,
+html[data-theme="light"] :is(
+  .bg-red-500,
+  .bg-red-600,
+  .bg-rose-500,
+  .bg-rose-600,
+  .bg-pink-500,
+  .bg-pink-600,
+  .bg-emerald-500,
+  .bg-emerald-600,
+  .bg-green-500,
+  .bg-green-600,
+  .bg-lime-500,
+  .bg-lime-600,
+  .bg-amber-500,
+  .bg-amber-600,
+  .bg-yellow-500,
+  .bg-yellow-600,
+  .bg-orange-500,
+  .bg-orange-600,
+  .bg-blue-500,
+  .bg-blue-600,
+  .bg-sky-500,
+  .bg-sky-600,
+  .bg-cyan-500,
+  .bg-cyan-600,
+  .bg-indigo-500,
+  .bg-indigo-600,
+  .bg-teal-500,
+  .bg-teal-600,
+  .bg-purple-500,
+  .bg-purple-600,
+  .bg-violet-500,
+  .bg-violet-600,
+  .bg-fuchsia-500,
+  .bg-fuchsia-600,
+  .bg-emerald-700,
+  .bg-blue-700,
+  .bg-sky-700,
+  .bg-red-700,
+  .bg-selected-strong,
+  .bg-selected,
+  .bg-selected-fill,
+  .bg-primary,
+  .bg-live,
+  .bg-black,
+  .bg-slate-600
+) .text-white {
+  color: #ffffff;
+}
+
+html[data-theme="light"] :is(.bg-white\/5, .bg-white\/10, .bg-white\/20) {
+  background-color: rgb(var(--edge-rgb) / 0.06);
+}
+
+html[data-theme="light"] :is(.border-white\/10, .border-white\/20, .border-white\/30) {
+  border-color: rgb(var(--edge-rgb) / 0.14);
+}
+
+html[data-theme="light"] .text-glow-red,
+html[data-theme="light"] .text-glow-amber,
+html[data-theme="light"] .text-glow-emerald {
+  text-shadow: none;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  border-color: rgb(var(--edge-rgb) / 0.08);
+}
+
 /* Yazdırma (Bülten Çıktısı & Antrenör Pano Modu) Stilleri */
 @media print {
   @page {
@@ -305,4 +475,21 @@ body {
     text-decoration: none !important;
     color: #0f172a !important;
   }
+}
+
+/* Açık tema: logo "plaka" zemini (bg-ink) koyu logoların okunabilirliği için açık kalır. */
+html[data-theme="light"] .bg-ink {
+  background-color: #eaf6fa;
+}
+
+/* AppShell, --portal-* değişkenlerini satır içi (koyu) hex ile atar; açık temada tema değişkenlerine yönlendirilir. */
+html[data-theme="light"] [data-section] {
+  --portal-background: rgb(var(--c-canvas)) !important;
+  --portal-panel: rgb(var(--c-surface)) !important;
+  --portal-border: rgb(var(--c-line)) !important;
+}
+
+/* Açık tema: renkli rozetlerin üstündeki koyulaştırıcı katman (bg-canvas/40) açık zeminde siyah katmana çevrilir. */
+html[data-theme="light"] .bg-canvas\/40 {
+  background-color: rgb(0 0 0 / 0.25);
 }

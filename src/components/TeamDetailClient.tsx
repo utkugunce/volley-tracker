@@ -31,13 +31,21 @@ import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { getVolleyboxLeagueMapping } from "@/utils/volleybox";
 import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
-import { TeamRosterView } from "@/components/TeamRosterView";
+import dynamic from "next/dynamic";
+import { SkeletonCard } from "@/components/skeletons/Skeleton";
+
+// Kadro bölümü sayfanın alt kısmında; ayrı parçaya bölünerek ilk JS yükü azaltılır (SSR çıktısı aynı kalır).
+const TeamRosterView = dynamic(() => import("@/components/TeamRosterView").then((mod) => mod.TeamRosterView), {
+  loading: () => <SkeletonCard lines={4} />,
+});
 import { trLower } from "@/utils/turkishLocale";
 import { getLeagueStandingsRoute, getLeagueFixtureRoute } from "@/utils/leagueRoutes";
 import { buildFormSeries, computeOpponentRecords, getTeamHalls } from "@/utils/teamStats";
 import { TeamFormChart } from "@/components/team/TeamFormChart";
 import { TeamOpponentRecords } from "@/components/team/TeamOpponentRecords";
 import { TeamHallsCard } from "@/components/team/TeamHallsCard";
+import { T } from "@/components/T";
+import { SettingsControls } from "@/components/SettingsControls";
 
 // Marka kimliği: zemin Fileönü yüzeyi kalır; kulüp rengi yalnız ince çerçeve + düşük opaklıklı
 // dekoratif ışıma (metin içermez) ile verilir. Logo, kontrastlı açık plakada gösterilir (`logoPlate`).
@@ -171,7 +179,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
             >
               <ChevronLeft size={16} />
-              <span>Ana Sayfa</span>
+              <span><T k="common.home" /></span>
             </Link>
 
             {is2LigTeam && (
@@ -189,6 +197,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
+            <SettingsControls />
             <Link
               href={`/karsilastir?takim1=${team.slug}`}
               className="inline-flex items-center gap-1.5 text-xs font-bold text-selected-text bg-selected-strong/15 border border-selected/40 hover:bg-selected-strong/25 px-3 py-1.5 rounded-lg transition-colors shadow-xs"
@@ -257,6 +266,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                   alt={`${team.teamName} logosu`}
                   width={128}
                   height={128}
+                  priority
+                  sizes="(min-width: 640px) 128px, 112px"
                   className="w-full h-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-105"
                   unoptimized={logoSrc.startsWith("http")}
                 />

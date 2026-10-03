@@ -1,6 +1,14 @@
 // public/sw.js — Altyapı Voleybol Service Worker
-const CACHE_NAME = "altyapi-voleybol-v4";
+const CACHE_NAME = "altyapi-voleybol-v5";
+// Son görülen fikstür/il verisi ayrı bir önbellekte tutulur (çevrimdışıyken gösterilir).
+const DATA_CACHE_NAME = "altyapi-voleybol-data-v1";
+const DATA_CACHE_MAX_ENTRIES = 40;
+const OFFLINE_URL = "/offline.html";
+// Yalnızca herkese açık, salt okunur veri uçları önbelleğe alınır. Bildirim, kimlik doğrulama,
+// yönetim ve senkronizasyon uçları (/api/notifications, /api/auth, /api/admin, /api/sync) asla.
+const CACHEABLE_API_PATHS = ["/api/fixtures", "/api/cities"];
 const STATIC_ASSETS = [
+  OFFLINE_URL,
   "/manifest.json",
   "/icon.svg",
   "/icons/icon-192.png",
@@ -11,9 +19,13 @@ const STATIC_ASSETS = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS).catch((err) => {
-        console.warn("Service worker cache.addAll uyarısı:", err);
-      });
+      return cache
+        .addAll(STATIC_ASSETS)
+        .catch((err) => {
+          console.warn("Service worker cache.addAll uyarısı:", err);
+        })
+        // Uygulama kabuğu (ana sayfa) en iyi çabayla önceden alınır; başarısız olursa kurulum bozulmaz.
+        .then(() => cache.add("/").catch(() => undefined));
     })
   );
   self.skipWaiting();
@@ -24,7 +36,9 @@ self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
       return Promise.all(
-        keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+        keys
+          .filter((key) => key !== CACHE_NAME && key !== DATA_CACHE_NAME)
+          .map((key) => caches.delete(key))
       );
     })
   );
@@ -38,13 +52,59 @@ self.addEventListener("message", (event) => {
   }
 });
 
+// Yardımcılar: önbelleğe alınabilir veri isteği mi?
+function isCacheableDataRequest(request, url) {
+  if (!CACHEABLE_API_PATHS.includes(url.pathname)) return false;
+  // Yönetici yenilemesi (?refresh=) ve yetkili (Authorization) istekler asla önbelleğe alınmaz.
+  if (url.searchParams.has("refresh")) return false;
+  if (request.headers.has("Authorization")) return false;
+  return true;
+}
+
+// Ağ öncelikli: başarılı (200) yanıtı önbelleğe yazar; yalnızca ağ hatasında (çevrimdışı) önbellekten döner.
+async function networkFirstData(request) {
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse && networkResponse.status === 200) {
+      const copy = networkResponse.clone();
+      caches
+        .open(DATA_CACHE_NAME)
+        .then(async (cache) => {
+          await cache.put(request, copy);
+          const keys = await cache.keys();
+          // En eski kayıtları sil (Cache API ekleme sırasını korur).
+          for (let i = 0; i < keys.length - DATA_CACHE_MAX_ENTRIES; i++) {
+            await cache.delete(keys[i]);
+          }
+        })
+        .catch(() => undefined);
+    }
+    return networkResponse;
+  } catch (err) {
+    const cached = await caches.match(request, { cacheName: DATA_CACHE_NAME });
+    if (cached) return cached;
+    return new Response(JSON.stringify({ error: "Çevrimdışı: kayıtlı veri bulunamadı" }), {
+      status: 503,
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+    });
+  }
+}
+
 // 4. İstekleri Karşılama (Fetch)
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Yalnızca GET isteklerini ele al, API ve telemetry isteklerini es geç
-  if (request.method !== "GET" || url.pathname.startsWith("/api/")) {
+  // Yalnızca GET isteklerini ele al
+  if (request.method !== "GET") {
+    return;
+  }
+
+  // (0) API: yalnızca açık veri uçları "ağ öncelikli" (çevrimdışıyken son kayıtlı veri); diğer tüm /api/ istekleri es geçilir.
+  if (url.pathname.startsWith("/api/")) {
+    if (isCacheableDataRequest(request, url)) {
+      event.respondWith(networkFirstData(request));
+    }
     return;
   }
 
@@ -72,6 +132,9 @@ self.addEventListener("fetch", (event) => {
           // İnternet tamamen kesildiğinde (çevrimdışı modu) önbellekteki sayfaya dön
           const cachedResponse = await caches.match(request);
           if (cachedResponse) return cachedResponse;
+          // Önbellekte olmayan sayfa: Türkçe çevrimdışı sayfası (ana sayfaya bağlantısı vardır)
+          const offlinePage = await caches.match(OFFLINE_URL);
+          if (offlinePage) return offlinePage;
           const fallbackHome = await caches.match("/");
           if (fallbackHome) return fallbackHome;
           return new Response("Çevrimdışı mod: Bu sayfa henüz önbelleğe kaydedilmemiş.", {
@@ -116,7 +179,7 @@ self.addEventListener("fetch", (event) => {
           }
           return networkResponse;
         })
-        .catch(() => cachedResponse);
+        .catch(() => cachedResponse || Response.error());
 
       return cachedResponse || fetchPromise;
     })

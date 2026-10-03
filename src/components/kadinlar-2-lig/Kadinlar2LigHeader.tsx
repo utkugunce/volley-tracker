@@ -22,6 +22,7 @@ import {
 import { BrandLogo } from "@/components/BrandLogo";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
 import { triggerHaptic } from "@/utils/haptics";
+import { SettingsControls } from "@/components/SettingsControls";
 
 export type Kadinlar2LigTabType =
   | "home"
@@ -214,6 +215,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
               </div>
             )}
           </div>
+
+          {/* Tema + Dil */}
+          <SettingsControls />
 
           {/* Yazdır Butonu */}
           <button

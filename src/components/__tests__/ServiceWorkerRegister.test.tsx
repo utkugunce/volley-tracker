@@ -63,4 +63,38 @@ describe("ServiceWorkerRegister Component", () => {
 
     expect(window.location.reload).toHaveBeenCalledTimes(1);
   });
+
+  describe("service worker kaydı", () => {
+    const registerMock = vi.fn();
+    const originalSw = Object.getOwnPropertyDescriptor(navigator, "serviceWorker");
+
+    beforeEach(() => {
+      registerMock.mockReset();
+      registerMock.mockResolvedValue({ scope: "/", addEventListener: vi.fn() });
+      Object.defineProperty(navigator, "serviceWorker", {
+        configurable: true,
+        value: { register: registerMock, addEventListener: vi.fn(), controller: null },
+      });
+    });
+
+    afterEach(() => {
+      delete (document as unknown as Record<string, unknown>).readyState;
+      if (originalSw) Object.defineProperty(navigator, "serviceWorker", originalSw);
+      else delete (navigator as unknown as Record<string, unknown>).serviceWorker;
+    });
+
+    it("sayfa zaten yüklenmişse (load olayı geçmişse) hemen kaydeder", () => {
+      Object.defineProperty(document, "readyState", { configurable: true, get: () => "complete" });
+      render(<ServiceWorkerRegister />);
+      expect(registerMock).toHaveBeenCalledWith("/sw.js");
+    });
+
+    it("sayfa henüz yüklenmemişse load olayını bekler", () => {
+      Object.defineProperty(document, "readyState", { configurable: true, get: () => "loading" });
+      render(<ServiceWorkerRegister />);
+      expect(registerMock).not.toHaveBeenCalled();
+      window.dispatchEvent(new Event("load"));
+      expect(registerMock).toHaveBeenCalledWith("/sw.js");
+    });
+  });
 });

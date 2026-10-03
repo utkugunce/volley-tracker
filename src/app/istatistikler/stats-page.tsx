@@ -9,6 +9,8 @@ import { slugify } from "@/utils/slugify";
 import { fmt } from "@/utils/formatStats";
 import { FormChips, LeaderboardCard } from "@/components/stats/LeaderboardCard";
 import { PlayoffSummary } from "@/components/stats/PlayoffSummary";
+import { SettingsControls } from "@/components/SettingsControls";
+import { T } from "@/components/T";
 
 /**
  * Lig geneli analiz sayfası (/istatistikler ve /istatistikler/[kategori]).
@@ -81,11 +83,14 @@ export function StatsPageView({ slug }: { slug?: string }) {
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
           >
             <ChevronLeft size={16} />
-            <span>Ana Sayfa</span>
+            <span><T k="common.home" /></span>
           </Link>
-          <Link href="/karsilastir" className="text-xs font-bold text-primary hover:underline">
-            Takım Karşılaştır →
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href="/karsilastir" className="text-xs font-bold text-primary hover:underline">
+              <T k="stats.compareLink" />
+            </Link>
+            <SettingsControls />
+          </div>
         </div>
       </header>
 
@@ -97,7 +102,7 @@ export function StatsPageView({ slug }: { slug?: string }) {
             </div>
             <div>
               <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                {category ? `${category} İstatistikleri` : "Lig İstatistikleri ve Analiz"}
+                {category ? `${category} İstatistikleri` : <T k="stats.title" />}
               </h1>
               <p className="text-xs text-slate-400">
                 Resmi fikstür ve puan durumu verisinden hesaplanır; veri olmayan bölümler gösterilmez.

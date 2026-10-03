@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useLanguage } from "@/i18n/useLanguage";
 import { CalendarDays, Flame, BarChart3, Layers, Star } from "lucide-react";
 
 export type MobileTab =
@@ -29,6 +30,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   liveCount = 0,
   todayMatchesCount = 0,
 }) => {
+  const { t } = useLanguage();
   const navItems: Array<{
     id: MobileTab;
     label: string;
@@ -38,30 +40,30 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   }> = [
     {
       id: "matches",
-      label: "Maçlar",
+      label: t("mobile.matches"),
       icon: CalendarDays,
       badge: todayMatchesCount > 0 ? todayMatchesCount : undefined,
     },
     {
       id: "live",
-      label: "Canlı",
+      label: t("mobile.live"),
       icon: Flame,
       badge: liveCount > 0 ? liveCount : undefined,
       isLive: true,
     },
     {
       id: "standings",
-      label: "Puan Durumu",
+      label: t("mobile.standings"),
       icon: BarChart3,
     },
     {
       id: "leagues",
-      label: "Ligler",
+      label: t("mobile.leagues"),
       icon: Layers,
     },
     {
       id: "favorites",
-      label: "Favorilerim",
+      label: t("mobile.favorites"),
       icon: Star,
       badge: favoriteCount > 0 ? favoriteCount : undefined,
     },
