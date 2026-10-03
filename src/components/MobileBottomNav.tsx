@@ -15,7 +15,7 @@ export type MobileTab =
 
 export interface MobileBottomNavProps {
   activeTab: MobileTab;
-  onSelectTab: (tab: any) => void;
+  onSelectTab: (tab: MobileTab) => void;
   favoriteCount?: number;
   liveCount?: number;
   todayMatchesCount?: number;
@@ -29,7 +29,13 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   liveCount = 0,
   todayMatchesCount = 0,
 }) => {
-  const navItems = [
+  const navItems: Array<{
+    id: MobileTab;
+    label: string;
+    icon: React.ElementType;
+    badge?: number;
+    isLive?: boolean;
+  }> = [
     {
       id: "matches",
       label: "Maçlar",

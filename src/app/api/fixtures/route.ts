@@ -8,6 +8,7 @@ import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
 import { getSupabaseFixtures } from "@/utils/supabaseFixtures";
+import type { CityInfo, FixturesData, Match, StandingItem } from "@/types/fixture";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
 const refreshLimiter = new RateLimiter({
@@ -112,7 +113,7 @@ export async function GET(request: Request) {
                   message: `Canlı tarama tetiklenemedi (Durum kodu: ${dispatchRes.status}). Lütfen daha sonra tekrar deneyin.`,
                 };
               }
-            } catch (e: any) {
+            } catch (e) {
               console.error("GitHub Actions dispatch error:", e);
               syncMeta = {
                 attempted: true,
@@ -153,7 +154,7 @@ export async function GET(request: Request) {
               mode: "local_python",
               message: "81 ilin bülteni ve Volleybox verileri tam tarama ile başarıyla senkronize edildi.",
             };
-          } catch (err: any) {
+          } catch (err) {
             syncMeta = {
               attempted: true,
               success: false,
@@ -173,7 +174,7 @@ export async function GET(request: Request) {
       if (fs.existsSync(citiesIndexPath)) {
         const citiesData = JSON.parse(fs.readFileSync(citiesIndexPath, "utf-8"));
         const found = (citiesData.cities || []).find(
-          (c: any) => c.slug === citySlug || c.ilid === rawCity || c.slug === rawCity.toLowerCase()
+          (c: CityInfo) => c.slug === citySlug || c.ilid === rawCity || c.slug === rawCity.toLowerCase()
         );
         if (found) {
           officialCityName = found.name;
@@ -183,7 +184,7 @@ export async function GET(request: Request) {
       // fallback
     }
 
-    let data: any;
+    let data: FixturesData;
 
     const supabaseData = await getSupabaseFixtures(citySlug);
 
@@ -191,8 +192,8 @@ export async function GET(request: Request) {
       data = supabaseData;
     } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
       const citiesDir = path.join(process.cwd(), "data", "cities");
-      const allMatches: any[] = [];
-      const allStandings: Record<string, any[]> = {};
+      const allMatches: Match[] = [];
+      const allStandings: Record<string, StandingItem[]> = {};
       const categoriesSet = new Set<string>(["Tümü"]);
       const hallsSet = new Set<string>(["Tümü"]);
       let latestUpdated = new Date(0).toISOString();
@@ -222,7 +223,7 @@ export async function GET(request: Request) {
             }
             if (parsed.standings && typeof parsed.standings === "object") {
               for (const [k, v] of Object.entries(parsed.standings)) {
-                allStandings[`${cityName} - ${k}`] = v as any[];
+                allStandings[`${cityName} - ${k}`] = v as StandingItem[];
               }
             }
           } catch (e) {
@@ -303,32 +304,32 @@ export async function GET(request: Request) {
     let matches = await applyOverridesToMatchesAsync(rawMatches);
 
     if (category && category !== "Tümü") {
-      matches = matches.filter((m: any) => m.category === category);
+      matches = matches.filter((m) => m.category === category);
     }
 
     if (ageGroup && ageGroup !== "Tümü") {
-      matches = matches.filter((m: any) => m.age_group === ageGroup);
+      matches = matches.filter((m) => m.age_group === ageGroup);
     }
 
     if (gender && gender !== "Tümü") {
-      matches = matches.filter((m: any) => m.gender === gender);
+      matches = matches.filter((m) => m.gender === gender);
     }
 
     if (hall && hall !== "Tümü") {
-      matches = matches.filter((m: any) => m.hall === hall);
+      matches = matches.filter((m) => m.hall === hall);
     }
 
     if (status && status !== "Tümü") {
-      matches = matches.filter((m: any) => m.status === status);
+      matches = matches.filter((m) => m.status === status);
     }
 
     if (date) {
-      matches = matches.filter((m: any) => m.date === date);
+      matches = matches.filter((m) => m.date === date);
     }
 
     if (search) {
       const q = trLower(search).trim();
-      matches = matches.filter((m: any) => {
+      matches = matches.filter((m) => {
         const home = m.home_team || "";
         const away = m.away_team || "";
         const hallName = m.hall || "";

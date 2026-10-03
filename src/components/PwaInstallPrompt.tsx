@@ -41,7 +41,7 @@ export const PwaInstallPrompt: React.FC = () => {
       const isStandaloneMode =
         (typeof window.matchMedia === "function" &&
           window.matchMedia("(display-mode: standalone)")?.matches) ||
-        (window.navigator as any)?.standalone === true;
+        (window.navigator as Navigator & { standalone?: boolean })?.standalone === true;
       setIsStandalone(Boolean(isStandaloneMode));
 
       // 2. iOS Safari tespiti

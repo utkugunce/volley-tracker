@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
+import { toErrorLike } from "@/utils/errors";
 
 export async function PATCH(
   request: Request,
@@ -65,10 +66,10 @@ export async function PATCH(
     }
 
     return NextResponse.json({ success: true, role });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Rol güncelleme hatası:", error);
     return NextResponse.json(
-      { error: error.message || "Rol güncellenemedi" },
+      { error: toErrorLike(error).message || "Rol güncellenemedi" },
       { status: 500 }
     );
   }
@@ -104,10 +105,10 @@ export async function DELETE(
     if (deleteError) throw deleteError;
 
     return NextResponse.json({ success: true });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Kullanıcı silme hatası:", error);
     return NextResponse.json(
-      { error: error.message || "Kullanıcı silinemedi" },
+      { error: toErrorLike(error).message || "Kullanıcı silinemedi" },
       { status: 500 }
     );
   }

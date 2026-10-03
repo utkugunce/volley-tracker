@@ -67,6 +67,7 @@ export interface StandingItem {
 export interface FixturesData {
   updated_at: string;
   city?: string;
+  slug?: string;
   title?: string;
   total_matches: number;
   unfiltered_total?: number;

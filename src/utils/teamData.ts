@@ -8,6 +8,11 @@ import { applyOverridesToMatches } from "./overrides";
 import { compareMatchDateTime } from "./calendar";
 import { TeamRosterRecord, TeamRostersDatabase } from "@/types/roster";
 import { isCityHidden } from "./cityHelper";
+import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
+
+/** Bir grubun puan durumu: doğrudan satır listesi ya da `{ table }` sarmalayıcısı. */
+type StandingsGroup = StandingItem[] | { table?: StandingItem[] };
+type StandingsCityEntry = { city: string; standings: Record<string, StandingsGroup> };
 
 export interface TeamStandingContext {
   groupName: string;
@@ -78,7 +83,7 @@ export interface TeamDetails {
 
 let cachedAllData: {
   matches: Match[];
-  standingsByCity: Record<string, { city: string; standings: Record<string, any> }>;
+  standingsByCity: Record<string, StandingsCityEntry>;
   timestamp: number;
 } | null = null;
 
@@ -128,7 +133,7 @@ function loadAllCityData() {
 
   const citiesDir = path.join(process.cwd(), "data", "cities");
   const allMatches: Match[] = [];
-  const standingsByCity: Record<string, { city: string; standings: Record<string, any> }> = {};
+  const standingsByCity: Record<string, StandingsCityEntry> = {};
 
   if (fs.existsSync(citiesDir)) {
     const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
@@ -217,7 +222,7 @@ function loadAllCityData() {
         }
         for (const g of k2.gruplar) {
           const groupName = g.grup_adi || `Grup ${g.grup_no}`;
-          const table: StandingItem[] = (g.puan_durumu || []).map((t: any) => ({
+          const table: StandingItem[] = (g.puan_durumu || []).map((t: Kadinlar2LigTeam) => ({
             rank: t.sira || 0,
             team: t.takim_adi,
             played: t.o || 0,
@@ -250,7 +255,7 @@ function loadAllCityData() {
 
 interface AllCityData {
   matches: Match[];
-  standingsByCity: Record<string, { city: string; standings: Record<string, any> }>;
+  standingsByCity: Record<string, StandingsCityEntry>;
   timestamp: number;
 }
 
@@ -321,7 +326,7 @@ function getSlugIndex(data: AllCityData): SlugIndex {
     for (const [groupName, groupData] of Object.entries(cityGroup.standings)) {
       const table: StandingItem[] = Array.isArray(groupData)
         ? groupData
-        : (groupData as any)?.table || [];
+        : groupData?.table || [];
       const seen = new Set<string>();
       for (const row of table) {
         const rowMapping = getVolleyboxMapping(row.team, undefined, undefined, cityName);
@@ -711,7 +716,7 @@ function stripClubSuffix(slug: string): string {
 
 function getSisterCandidates(
   allMatches: Match[],
-  standingsByCity: Record<string, { city: string; standings: Record<string, any> }>
+  standingsByCity: Record<string, StandingsCityEntry>
 ): SisterCandidate[] {
   const cached = sisterCandidateCache.get(allMatches);
   if (cached && cached.standings === standingsByCity) return cached.candidates;
@@ -735,7 +740,7 @@ function getSisterCandidates(
 
   for (const [cityName, cityGroup] of Object.entries(standingsByCity)) {
     for (const [groupName, groupData] of Object.entries(cityGroup.standings)) {
-      const table: StandingItem[] = Array.isArray(groupData) ? groupData : (groupData as any)?.table || [];
+      const table: StandingItem[] = Array.isArray(groupData) ? groupData : groupData?.table || [];
       for (const item of table) {
         if (item.team) {
           addCandidate(item.team, cityName, groupName);
@@ -773,7 +778,7 @@ export function findClubSisterTeams(
   currentSlug: string,
   selectedCity: string,
   allMatches: Match[],
-  standingsByCity: Record<string, { city: string; standings: Record<string, any> }>,
+  standingsByCity: Record<string, StandingsCityEntry>,
   mapping?: VolleyboxMapping
 ): ClubSisterTeam[] {
   const currentExtraction = extractClubRoot(officialTeamName);
@@ -954,7 +959,7 @@ export function getAllTeamSlugs(): string[] {
     for (const groupData of Object.values(cityGroup.standings)) {
       const table: StandingItem[] = Array.isArray(groupData)
         ? groupData
-        : (groupData as any)?.table || [];
+        : groupData?.table || [];
       for (const item of table) {
         if (item.team) {
           addTeamWithAliases(item.team, cityName);
@@ -1044,7 +1049,7 @@ export function getAllTeamsList(): TeamListItem[] {
     for (const groupData of Object.values(cityGroup.standings)) {
       const table: StandingItem[] = Array.isArray(groupData)
         ? groupData
-        : (groupData as any)?.table || [];
+        : groupData?.table || [];
       for (const item of table) {
         if (item.team) {
           register(item.team, cityName);

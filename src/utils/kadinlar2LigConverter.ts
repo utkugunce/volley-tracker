@@ -1,4 +1,4 @@
-import { Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
+import { Kadinlar2LigMatch, Kadinlar2LigVolleybox } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { getVolleyboxTeamName } from "@/utils/volleybox";
 
@@ -94,9 +94,8 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     m.durum === "BİTTİ" || (homeScore !== null && awayScore !== null);
 
   // Volleybox eşleşme ve tutarsızlık bilgisi
-  const rawAny = m as any;
-  const volleyboxData = rawAny.volleybox || {
-    match_url: rawAny.volleybox_url || null,
+  const volleyboxData: Kadinlar2LigVolleybox = m.volleybox || {
+    match_url: m.volleybox_url || null,
     home_team_name: homeName,
     away_team_name: awayName,
     home_team_url: m.takim_a_volleybox_url || null,
@@ -106,10 +105,10 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     tournament_name: "TVF Uzman Posta Kadınlar 2. Ligi",
     date: m.tarih || null,
     time: m.saat || null,
-    discrepancy: rawAny.discrepancy || null,
+    discrepancy: m.discrepancy || null,
   };
-  if (rawAny.discrepancy?.has_diff && !volleyboxData.discrepancy?.has_diff) {
-    volleyboxData.discrepancy = rawAny.discrepancy;
+  if (m.discrepancy?.has_diff && !volleyboxData.discrepancy?.has_diff) {
+    volleyboxData.discrepancy = m.discrepancy;
   }
 
   // DD.MM.YYYY tarihini standart YYYY-MM-DD formatına çevir
@@ -133,6 +132,6 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     set_scores: setScores,
     home_score: homeScore,
     away_score: awayScore,
-    volleybox: volleyboxData,
+    volleybox: volleyboxData as unknown as Match["volleybox"],
   };
 }

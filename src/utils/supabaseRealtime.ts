@@ -5,7 +5,7 @@ export interface RealtimeMatchUpdate {
   id: string;
   home_score: number | null;
   away_score: number | null;
-  set_scores: any[];
+  set_scores: string[];
   status: string;
   updated_at: string;
 }

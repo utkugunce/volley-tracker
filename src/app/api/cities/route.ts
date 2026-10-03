@@ -3,6 +3,13 @@ import fs from "fs";
 import path from "path";
 import { isCityHidden } from "@/utils/cityHelper";
 
+/** data/cities.json içindeki il kaydından bu rotanın okuduğu alanlar. */
+interface CityListEntry {
+  slug: string;
+  has_matches?: boolean;
+  matches_count?: number;
+}
+
 export async function GET() {
   try {
     const filePath = path.join(process.cwd(), "data", "cities.json");
@@ -18,8 +25,8 @@ export async function GET() {
     const data = JSON.parse(fileContent);
 
     // Canlıda gizlenen illeri filtrele
-    const filteredCities = (data.cities || []).filter((c: any) => !isCityHidden(c.slug));
-    const activeCount = filteredCities.filter((c: any) => c.has_matches || (c.matches_count && c.matches_count > 0)).length;
+    const filteredCities = (data.cities || []).filter((c: CityListEntry) => !isCityHidden(c.slug));
+    const activeCount = filteredCities.filter((c: CityListEntry) => c.has_matches || (c.matches_count && c.matches_count > 0)).length;
 
     const sanitizedData = {
       ...data,

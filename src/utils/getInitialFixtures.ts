@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { FixturesData } from "@/types/fixture";
+import { FixturesData, Match, StandingItem } from "@/types/fixture";
 import { isCityHidden } from "./cityHelper";
 import { isMatchScored } from "./matchScoring";
 
@@ -53,8 +53,8 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
     // 3. Tüm İller: data/cities klasöründeki tüm JSON dosyalarını tara ve birleştir
     if (fs.existsSync(citiesDir)) {
       const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
-      const allMatches: any[] = [];
-      const allStandings: Record<string, any[]> = {};
+      const allMatches: Match[] = [];
+      const allStandings: Record<string, StandingItem[]> = {};
       const categoriesSet = new Set<string>(["Tümü"]);
       const hallsSet = new Set<string>(["Tümü"]);
       let latestUpdated = new Date(0).toISOString();
@@ -71,7 +71,7 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
           // 2026-2027 sezonu öncesine ait (eski sezon) verileri filtrele
           const hasCurrentMatches =
             Array.isArray(parsed.matches) &&
-            parsed.matches.some((m: any) => m.date && m.date >= "2026-08-01");
+            parsed.matches.some((m: Match) => m.date && m.date >= "2026-08-01");
           if (Array.isArray(parsed.matches) && parsed.matches.length > 0 && !hasCurrentMatches) {
             continue;
           }
@@ -92,7 +92,7 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
           }
           if (parsed.standings && typeof parsed.standings === "object") {
             for (const [k, v] of Object.entries(parsed.standings)) {
-              allStandings[`${cityName} - ${k}`] = v as any[];
+              allStandings[`${cityName} - ${k}`] = v as StandingItem[];
             }
           }
         } catch (e) {
@@ -196,13 +196,13 @@ export function getInitialHomeFixtures(): FixturesData {
     .slice(0, 16);
 
   // ID'ye göre tekilleştir
-  const matchMap = new Map<string, any>();
+  const matchMap = new Map<string, Match>();
   [...todayAndYesterday, ...scored, ...upcoming].forEach((m) => {
     if (m && m.id) matchMap.set(m.id, m);
   });
 
   // Grup liderleri (her gruptan sadece ilk sıradaki takım)
-  const homeStandings: Record<string, any[]> = {};
+  const homeStandings: Record<string, StandingItem[]> = {};
   if (full.standings) {
     for (const [k, v] of Object.entries(full.standings)) {
       if (Array.isArray(v) && v.length > 0) {

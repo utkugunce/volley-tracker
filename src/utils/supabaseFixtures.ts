@@ -1,5 +1,5 @@
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
-import type { FixturesData, Match } from "@/types/fixture";
+import type { FixturesData, Match, StandingItem } from "@/types/fixture";
 
 function toMatch(row: Record<string, unknown>): Match {
   const raw = row.raw && typeof row.raw === "object" ? row.raw : {};
@@ -58,7 +58,7 @@ export async function getSupabaseFixtures(
     console.warn("Supabase standings okuma hatası (boş standings kullanılıyor):", standingsError.message);
   }
 
-  const standings: Record<string, any[]> = {};
+  const standings: Record<string, StandingItem[]> = {};
   for (const row of standingRows || []) {
     const key = citySlug === "all"
       ? `${row.city_slug} - ${row.category}`

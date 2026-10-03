@@ -4,15 +4,32 @@ export type DataValidationResult = {
   summary: string;
 };
 
+interface CityIndexPayload {
+  cities?: unknown;
+  total_cities?: unknown;
+  active_cities?: unknown;
+  total_matches?: unknown;
+}
+
+interface Kadinlar2LigPayload {
+  metadata?: {
+    toplam_grup_sayisi?: unknown;
+    toplam_takim_sayisi?: unknown;
+    toplam_mac_sayisi?: unknown;
+  } | null;
+  gruplar?: unknown;
+  tum_maclar?: unknown;
+}
+
 function toNumber(value: unknown, fallback = 0): number {
   const parsed = Number(value ?? fallback);
   return Number.isFinite(parsed) ? parsed : fallback;
 }
 
-export function validateCityIndex(payload: any): DataValidationResult {
+export function validateCityIndex(input: unknown): DataValidationResult {
   const errors: string[] = [];
 
-  if (!payload || typeof payload !== "object") {
+  if (!input || typeof input !== "object") {
     return {
       valid: false,
       errors: ["City index payload is missing or invalid."],
@@ -20,7 +37,8 @@ export function validateCityIndex(payload: any): DataValidationResult {
     };
   }
 
-  const cities = Array.isArray(payload.cities) ? payload.cities : [];
+  const payload = input as CityIndexPayload;
+  const cities: Record<string, unknown>[] = Array.isArray(payload.cities) ? payload.cities : [];
   if (cities.length === 0) {
     errors.push("cities array is empty.");
   }
@@ -52,10 +70,10 @@ export function validateCityIndex(payload: any): DataValidationResult {
   };
 }
 
-export function validateKadinlar2LigData(payload: any): DataValidationResult {
+export function validateKadinlar2LigData(input: unknown): DataValidationResult {
   const errors: string[] = [];
 
-  if (!payload || typeof payload !== "object") {
+  if (!input || typeof input !== "object") {
     return {
       valid: false,
       errors: ["Kadinlar 2. Lig payload is missing or invalid."],
@@ -63,11 +81,13 @@ export function validateKadinlar2LigData(payload: any): DataValidationResult {
     };
   }
 
+  const payload = input as Kadinlar2LigPayload;
+
   if (!payload.metadata || typeof payload.metadata !== "object") {
     errors.push("metadata is missing or incomplete.");
   }
 
-  const groups = Array.isArray(payload.gruplar) ? payload.gruplar : [];
+  const groups: Record<string, unknown>[] = Array.isArray(payload.gruplar) ? payload.gruplar : [];
   if (groups.length === 0) {
     errors.push("gruplar array is empty.");
   }
@@ -84,7 +104,7 @@ export function validateKadinlar2LigData(payload: any): DataValidationResult {
     errors.push(`toplam_takim_sayisi mismatch: expected ${totalTeams}, got ${payload.metadata.toplam_takim_sayisi}.`);
   }
 
-  const allMatches = Array.isArray(payload.tum_maclar) ? payload.tum_maclar : [];
+  const allMatches: unknown[] = Array.isArray(payload.tum_maclar) ? payload.tum_maclar : [];
   const fixtureMatches = groups.reduce(
     (sum: number, group: Record<string, unknown>) => sum + (Array.isArray(group?.fikstur) ? (group.fikstur as unknown[]).length : 0),
     0

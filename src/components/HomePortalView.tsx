@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Match, CityInfo } from "@/types/fixture";
+import { Match, CityInfo, StandingItem } from "@/types/fixture";
 import { TeamBadge } from "@/components/TeamBadge";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import {
@@ -29,7 +29,7 @@ interface HomePortalViewProps {
   currentCitySlug?: string;
   onSelectCity: (slug: string) => void;
   citiesList: CityInfo[];
-  standings?: Record<string, any[]>;
+  standings?: Record<string, StandingItem[]>;
   favorites: string[];
   onToggleFavorite: (matchId: string) => void;
   onSelectMatch: (match: Match) => void;

@@ -99,7 +99,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     ).length;
     const discrepancy = matches.filter(
       (m) =>
-        Boolean((m as any).discrepancy?.has_diff || (m as any).volleybox?.discrepancy?.has_diff)
+        Boolean(m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff)
     ).length;
 
     return { total, scored, unscored, unsynced, discrepancy };
@@ -128,7 +128,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
         m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -");
       const isSynced = Boolean(m.takim_a_volleybox_url && m.takim_b_volleybox_url);
       const hasDiscrepancy = Boolean(
-        (m as any).discrepancy?.has_diff || (m as any).volleybox?.discrepancy?.has_diff
+        m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff
       );
 
       if (volleyboxFilter === "scored" && !isScored) return false;

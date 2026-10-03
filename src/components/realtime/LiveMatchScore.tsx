@@ -4,7 +4,7 @@ import { Play, Pause, Circle } from "lucide-react";
 interface LiveMatchScoreProps {
   homeScore: number | null;
   awayScore: number | null;
-  setScores: any[];
+  setScores: string[];
   status: string;
   isLive?: boolean;
 }
