@@ -79,8 +79,10 @@ export default function RootLayout({
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S5FYXCW2LC"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
+        {/* gtag.js (157 KB) sayfa yüklendikten sonra çekilir; dataLayer kuyruğu satır içi betikle hemen kurulur,
+            böylece config/page_view olayları kaybolmaz ve kütüphane yüklenince işlenir. */}
         <Script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){window.dataLayer.push(arguments);}
