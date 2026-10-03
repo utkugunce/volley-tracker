@@ -18,7 +18,7 @@ export const ThemeToggle: React.FC<{ className?: string }> = ({ className = "" }
     <button
       type="button"
       onClick={cycleTheme}
-      className={`p-2 sm:p-1.5 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-colors no-print border border-slate-700/60 ${className}`}
+      className={`p-2 sm:p-1.5 min-w-[36px] min-h-[36px] sm:min-w-[30px] sm:min-h-[30px] flex items-center justify-center rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 transition-colors no-print border border-slate-700/60 ${className}`}
       title={label}
       aria-label={label}
       data-theme-preference={preference}

@@ -60,11 +60,11 @@ html[data-theme="light"] {
   --selected-strong: #2a63bd;
   --selected-text: #1e4fa0;
   --warn: #b7791f;
-  --primary: #0d9488;
-  --primary-rgb: 13 148 136;
-  --primary-hover-rgb: 15 118 110;
+  --primary: #0f766e;
+  --primary-rgb: 15 118 110;
+  --primary-hover-rgb: 17 94 89;
   --primary-fg-rgb: 255 255 255;
-  --primary-soft: rgb(13 148 136 / 0.12);
+  --primary-soft: rgb(15 118 110 / 0.12);
   --rank-mid-rgb: 42 99 189;
   --glass-rgb: 255 255 255;
   --glass-hover-rgb: 238 243 248;
@@ -480,4 +480,16 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb {
 /* Açık tema: logo "plaka" zemini (bg-ink) koyu logoların okunabilirliği için açık kalır. */
 html[data-theme="light"] .bg-ink {
   background-color: #eaf6fa;
+}
+
+/* AppShell, --portal-* değişkenlerini satır içi (koyu) hex ile atar; açık temada tema değişkenlerine yönlendirilir. */
+html[data-theme="light"] [data-section] {
+  --portal-background: rgb(var(--c-canvas)) !important;
+  --portal-panel: rgb(var(--c-surface)) !important;
+  --portal-border: rgb(var(--c-line)) !important;
+}
+
+/* Açık tema: renkli rozetlerin üstündeki koyulaştırıcı katman (bg-canvas/40) açık zeminde siyah katmana çevrilir. */
+html[data-theme="light"] .bg-canvas\/40 {
+  background-color: rgb(0 0 0 / 0.25);
 }
