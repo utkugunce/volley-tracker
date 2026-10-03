@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T13:32:45.138136",
+  "updated_at": "2026-10-03T18:49:35.188618",
   "city": "Afyonkarahisar",
   "slug": "afyon",
   "title": "TVF Afyonkarahisar Genç & Yıldız Kızlar Süper Lig",
@@ -144,50 +144,50 @@
       {
         "rank": 1,
         "team": "Afyon Belediye Yüntaş Spor Kulübü",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Afyon Gençlik Spor Kulübü",
-        "played": 0,
-        "won": 0,
+        "team": "Afyon Zirve Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Afyon Zirve Spor Kulübü",
-        "played": 0,
+        "team": "Afyon Gençlik Spor Kulübü",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "E.M.A Spor Kulübü",
-        "played": 0,
+        "team": "İstek Afyon Spor Kulubü",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "İstek Afyon Spor Kulubü",
+        "team": "E.M.A Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -348,11 +348,15 @@
       "match_no": "1",
       "home_team": "İstek Afyon Spor Kulubü",
       "away_team": "Afyon Belediye Yüntaş Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "9-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -382,11 +386,15 @@
       "match_no": "2",
       "home_team": "Afyon Zirve Spor Kulübü",
       "away_team": "Afyon Gençlik Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-8",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -473,5 +481,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-03T13:34:46.550705"
+  "volleybox_sync_updated_at": "2026-10-03T18:51:37.449687"
 }
