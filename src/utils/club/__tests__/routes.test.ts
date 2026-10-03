@@ -168,7 +168,7 @@ describe("POST /api/auth/magic-link", () => {
   it("başarılı istek: yönlendirme adresi güvenli ve callback'e gider", async () => {
     const res = await magic.POST(req({ email: "Ali@Kulup.com", next: "//evil.com" }, "1.1.1.2"));
     expect(res.status).toBe(200);
-    const arg = state.otp.mock.calls[0][0] as { email: string; options: { emailRedirectTo: string } };
+    const arg = (state.otp.mock.calls as unknown as [{ email: string; options: { emailRedirectTo: string } }][])[0][0];
     expect(arg.email).toBe("ali@kulup.com");
     expect(arg.options.emailRedirectTo).toBe("https://site.test/auth/callback?next=%2Fpanel");
   });

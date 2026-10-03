@@ -33,6 +33,9 @@ export interface ClubResourceConfig<TInput extends object> {
 
 const PAGE_LIMIT = 300;
 
+type AuthorizedOk = Extract<Awaited<ReturnType<typeof authorizeClubAction>>, { ok: true }>;
+type Target = { ok: false; response: NextResponse } | { ok: true; auth: AuthorizedOk; id: string; clubSlug: string };
+
 function bad(error: string, status = 400): NextResponse {
   return NextResponse.json({ error }, { status });
 }
@@ -96,35 +99,35 @@ export function createClubResourceHandlers<TInput extends object>(config: ClubRe
    * Kayıt yoksa, olmayan bir kulüp için yetki denenir: giriş yapmamışsa 401, üye değilse 403 döner;
    * böylece kayıt varlığı yetkisiz kişilere sızdırılmaz.
    */
-  async function resolveTarget(body: Record<string, unknown>) {
+  async function resolveTarget(body: Record<string, unknown>): Promise<Target> {
     const id = validateUuid(body.id);
-    if (!id.ok) return { response: bad(id.error) } as const;
+    if (!id.ok) return { ok: false, response: bad(id.error) };
 
     const db = getSupabaseAdmin();
-    if (!db || !isAuthConfigured()) return { response: notConfiguredResponse() } as const;
+    if (!db || !isAuthConfigured()) return { ok: false, response: notConfiguredResponse() };
 
     const { data: row, error } = await db
       .from(config.table)
       .select("id, club_slug")
       .eq("id", id.value)
       .maybeSingle();
-    if (error) return { response: dbErrorResponse(error, `${config.label} lookup`) } as const;
+    if (error) return { ok: false, response: dbErrorResponse(error, `${config.label} lookup`) };
 
     const clubSlug = typeof row?.club_slug === "string" ? row.club_slug : "";
     const auth = await authorizeClubAction(clubSlug, config.writeAction);
-    if (!auth.ok) return { response: auth.response } as const;
-    if (!row) return { response: bad("Kayıt bulunamadı.", 404) } as const;
-    return { auth, id: id.value, clubSlug } as const;
+    if (!auth.ok) return { ok: false, response: auth.response };
+    if (!row) return { ok: false, response: bad("Kayıt bulunamadı.", 404) };
+    return { ok: true, auth, id: id.value, clubSlug };
   }
 
-  async function PUT(request: Request) {
+  async function PUT(request: Request): Promise<NextResponse> {
     const blocked = guardMutation(request);
     if (blocked) return blocked;
     const body = (await readJsonBody(request)) as Record<string, unknown> | null;
     if (!body || typeof body !== "object") return bad("Geçersiz istek gövdesi.");
 
     const target = await resolveTarget(body);
-    if ("response" in target) return target.response;
+    if (!target.ok) return target.response;
 
     const limited = checkMutationRate(target.auth.user.id);
     if (limited) return limited;
@@ -144,14 +147,14 @@ export function createClubResourceHandlers<TInput extends object>(config: ClubRe
     return NextResponse.json({ item: data });
   }
 
-  async function DELETE(request: Request) {
+  async function DELETE(request: Request): Promise<NextResponse> {
     const blocked = guardMutation(request);
     if (blocked) return blocked;
     const body = (await readJsonBody(request)) as Record<string, unknown> | null;
     if (!body || typeof body !== "object") return bad("Geçersiz istek gövdesi.");
 
     const target = await resolveTarget(body);
-    if ("response" in target) return target.response;
+    if (!target.ok) return target.response;
 
     const limited = checkMutationRate(target.auth.user.id);
     if (limited) return limited;
