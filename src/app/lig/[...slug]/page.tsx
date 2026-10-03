@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import fs from "fs";
 import path from "path";
 import { getLeagueData } from "@/utils/leagueData";
-import { LeagueHubClient, LeagueTabType } from "@/components/league/LeagueHubClient";
+import { LeagueHubClient } from "@/components/league/LeagueHubClient";
 import { slugify } from "@/utils/slugify";
 import { isCityHidden } from "@/utils/cityHelper";
 
@@ -11,7 +11,6 @@ export const revalidate = 60; // 1 minute ISR cache
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -95,7 +94,7 @@ export function generateStaticParams() {
   return params;
 }
 
-export default async function LeagueSlugPage({ params, searchParams }: PageProps) {
+export default async function LeagueSlugPage({ params }: PageProps) {
   const { slug } = await params;
   if (!slug || slug.length === 0) {
     notFound();
@@ -109,24 +108,10 @@ export default async function LeagueSlugPage({ params, searchParams }: PageProps
     redirect("/kadinlar-2-ligi");
   }
 
-  const sParams = searchParams ? await searchParams : {};
-  const tabParam = typeof sParams?.tab === "string" ? sParams.tab : undefined;
-
-  let initialTab: LeagueTabType = "standings";
-  if (
-    tabParam === "standings" ||
-    tabParam === "fixtures" ||
-    tabParam === "results" ||
-    tabParam === "stats" ||
-    tabParam === "teams"
-  ) {
-    initialTab = tabParam;
-  }
-
   const league = getLeagueData(citySlug, leagueSlug);
   if (!league) {
     notFound();
   }
 
-  return <LeagueHubClient league={league} initialTab={initialTab} />;
+  return <LeagueHubClient league={league} />;
 }

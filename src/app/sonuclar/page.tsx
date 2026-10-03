@@ -4,30 +4,11 @@ import { getInitialResults } from "@/utils/getInitialFixtures";
 
 export const revalidate = 180; // 3 minutes ISR cache
 
-interface PageProps {
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
-}
+export function generateMetadata(): Metadata {
+  const title = "Voleybol Maç Sonuçları ve Set Skorları";
+  const description = "Oynanan tüm voleybol maçlarının kesinleşmiş set skorları, dün oynanan maçlar ve detaylı sonuç dökümü.";
 
-export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
-  const params = searchParams ? await searchParams : {};
-  const city = typeof params?.city === "string" && params.city !== "Tümü" && params.city !== "Tüm İller" ? params.city : undefined;
-  const category = typeof params?.category === "string" && params.category !== "Tümü" ? params.category : undefined;
-
-  let title = "Voleybol Maç Sonuçları ve Set Skorları";
-  let description = "Oynanan tüm voleybol maçlarının kesinleşmiş set skorları, dün oynanan maçlar ve detaylı sonuç dökümü.";
-
-  if (city && category) {
-    title = `${city} ${category} Maç Sonuçları`;
-    description = `${city} ili ${category} ligi biten maçlar, set sonuçları ve skor dökümleri.`;
-  } else if (city) {
-    title = `${city} Voleybol Maç Sonuçları`;
-    description = `${city} ili tüm voleybol ligleri tamamlanan maç sonuçları ve skorları.`;
-  } else if (category) {
-    title = `${category} Maç Sonuçları`;
-    description = `Türkiye geneli ${category} ligleri güncel maç skorları ve set dökümleri.`;
-  }
-
-  const url = `https://altyapivoleybol.com.tr/sonuclar${city ? `?city=${city}` : ""}`;
+  const url = "https://altyapivoleybol.com.tr/sonuclar";
 
   return {
     title,
@@ -50,9 +31,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   };
 }
 
-export default async function ResultsPage({ searchParams }: PageProps) {
-  const params = searchParams ? await searchParams : {};
-  const citySlug = typeof params?.city === "string" ? params.city : undefined;
-  const initialData = getInitialResults(citySlug);
-  return <DashboardClient initialData={initialData} initialTab="results" initialCity={citySlug} initialDataPartial />;
+export default function ResultsPage() {
+  const initialData = getInitialResults();
+  return <DashboardClient initialData={initialData} initialTab="results" initialDataPartial />;
 }

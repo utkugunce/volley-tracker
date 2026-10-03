@@ -4,30 +4,11 @@ import { getInitialFixtures } from "@/utils/getInitialFixtures";
 
 export const revalidate = 180; // 3 minutes ISR cache
 
-interface PageProps {
-  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
-}
+export function generateMetadata(): Metadata {
+  const title = "Günün Voleybol Maçları ve Canlı Program";
+  const description = "Bugün oynanacak tüm voleybol maçları, başlama saatleri, salonlar ve canlı karşılaşmalar.";
 
-export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
-  const params = searchParams ? await searchParams : {};
-  const city = typeof params?.city === "string" && params.city !== "Tümü" && params.city !== "Tüm İller" ? params.city : undefined;
-  const category = typeof params?.category === "string" && params.category !== "Tümü" ? params.category : undefined;
-
-  let title = "Günün Voleybol Maçları ve Canlı Program";
-  let description = "Bugün oynanacak tüm voleybol maçları, başlama saatleri, salonlar ve canlı karşılaşmalar.";
-
-  if (city && category) {
-    title = `Bugün: ${city} ${category} Maçları`;
-    description = `${city} ili ${category} ligi bugün oynanacak karşılaşmalar, maç saatleri ve salon bilgileri.`;
-  } else if (city) {
-    title = `Bugün: ${city} Voleybol Maçları`;
-    description = `${city} ilinde bugün oynanacak tüm voleybol maçları ve program.`;
-  } else if (category) {
-    title = `Bugün: ${category} Maç Programı`;
-    description = `Türkiye genelinde bugün oynanacak ${category} karşılaşmaları.`;
-  }
-
-  const url = `https://altyapivoleybol.com.tr/gunun-maclari${city ? `?city=${city}` : ""}`;
+  const url = "https://altyapivoleybol.com.tr/gunun-maclari";
 
   return {
     title,
@@ -50,9 +31,7 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
   };
 }
 
-export default async function TodayMatchesPage({ searchParams }: PageProps) {
-  const params = searchParams ? await searchParams : {};
-  const citySlug = typeof params?.city === "string" ? params.city : undefined;
-  const initialData = getInitialFixtures(citySlug);
-  return <DashboardClient initialData={initialData} initialTab="today" initialCity={citySlug} />;
+export default function TodayMatchesPage() {
+  const initialData = getInitialFixtures();
+  return <DashboardClient initialData={initialData} initialTab="today" />;
 }
