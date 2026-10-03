@@ -95,6 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Kadınlar 2. Ligi Sayfasına Geçiş Butonu */}
           <Link
             href="/kadinlar-2-ligi"
+            prefetch={false}
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-colors border border-slate-700/70 ml-0.5 sm:ml-1"
             title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
           >
