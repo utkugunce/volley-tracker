@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -34,6 +34,10 @@ import { FormBadge } from "@/components/FormBadge";
 import { TeamRosterView } from "@/components/TeamRosterView";
 import { trLower } from "@/utils/turkishLocale";
 import { getLeagueStandingsRoute, getLeagueFixtureRoute } from "@/utils/leagueRoutes";
+import { buildFormSeries, computeOpponentRecords, getTeamHalls } from "@/utils/teamStats";
+import { TeamFormChart } from "@/components/team/TeamFormChart";
+import { TeamOpponentRecords } from "@/components/team/TeamOpponentRecords";
+import { TeamHallsCard } from "@/components/team/TeamHallsCard";
 
 // Marka kimliği: zemin Fileönü yüzeyi kalır; kulüp rengi yalnız ince çerçeve + düşük opaklıklı
 // dekoratif ışıma (metin içermez) ile verilir. Logo, kontrastlı açık plakada gösterilir (`logoPlate`).
@@ -123,6 +127,11 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
   const isFav = isFavorite(team.teamName);
   const is2LigTeam = team.categories.some((c) => c.includes("Kadınlar 2. Ligi"));
   const brand = getClubBrandColors(team.teamName, is2LigTeam);
+
+  // Sayfa bazında zaten yüklenmiş maç listesinden türetilir; ek veri istemciye gönderilmez.
+  const formSeries = useMemo(() => buildFormSeries(team.matches), [team.matches]);
+  const opponentRecords = useMemo(() => computeOpponentRecords(team.matches), [team.matches]);
+  const teamHalls = useMemo(() => getTeamHalls(team.matches), [team.matches]);
 
   const filteredMatches = team.matches.filter((m) => {
     if (matchFilter === "finished") return m.status === "finished";
@@ -428,6 +437,9 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
           </div>
         </section>
 
+        {/* 2b. FORM GRAFİĞİ */}
+        <TeamFormChart series={formSeries} />
+
         {/* 3. PUAN DURUMU TABLOLARI */}
         {team.standingsContexts.length > 0 && (
           <section className="space-y-4">
@@ -581,6 +593,9 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
           legacyRoster={team.roster}
           volleyboxUrl={team.mapping?.volleybox_url}
         />
+
+        {/* 4b. SALON BİLGİSİ */}
+        <TeamHallsCard halls={teamHalls} />
 
 
         {/* 5. SEZON FİKSTÜRÜ (TÜM MAÇLAR) */}
@@ -768,6 +783,13 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team }) => {
             </div>
           )}
         </section>
+
+        {/* 6. RAKİP BAZINDA GEÇMİŞ SONUÇLAR (HEAD-TO-HEAD) */}
+        <TeamOpponentRecords
+          records={opponentRecords}
+          category={team.categories[0]}
+          city={team.cities.length === 1 ? team.cities[0] : undefined}
+        />
       </main>
     </div>
   );

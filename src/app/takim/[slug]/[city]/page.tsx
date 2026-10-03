@@ -15,11 +15,8 @@ interface TeamCityPageProps {
 
 export async function generateMetadata({ params }: TeamCityPageProps): Promise<Metadata> {
   const { slug, city } = await params;
-  const base = await buildTeamMetadata(slug, decodeURIComponent(city));
-  return {
-    ...base,
-    alternates: { canonical: `https://altyapivoleybol.com.tr/takim/${slug}/${city}` },
-  };
+  // Kanonik adres (`/takim/<slug>/<il>`) buildTeamMetadata içinde üretilir.
+  return buildTeamMetadata(slug, decodeURIComponent(city));
 }
 
 export default async function TeamCityDetailPage({ params }: TeamCityPageProps) {
