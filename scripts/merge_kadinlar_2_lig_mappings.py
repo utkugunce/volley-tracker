@@ -36,6 +36,24 @@ KNOWN_2_LIG_ALIASES = {
 # 2. Ligden çekilen / ihraç edilen ve eşleştirmesi silinen takımlar
 WITHDRAWN_TEAMS = {"bartın volley academy", "bartın voleybol kulübü", "bartın voleybol"}
 
+def _ordered_union(existing, extra):
+    """Sıralamayı koruyarak birleştirir (set() kullanmaz).
+
+    `list(set(...))` Python'un string hash randomizasyonu yüzünden her çalışmada
+    farklı sırada döner; bu da `volleybox-mappings.json` dosyasının içerik
+    değişmediği halde her senkronizasyonda yeniden yazılmasına (ve commit
+    geçmişinin şişmesine) yol açıyordu. Mevcut sıra korunur, yeni öğeler sona eklenir.
+    """
+    result = []
+    seen = set()
+    for item in list(existing or []) + list(extra or []):
+        if item in seen:
+            continue
+        seen.add(item)
+        result.append(item)
+    return result
+
+
 def merge_kadinlar_2_lig_mappings(silent: bool = False):
     if not os.path.exists(K2_FILE) or not os.path.exists(VBM_FILE):
         if not silent:
@@ -149,9 +167,7 @@ def merge_kadinlar_2_lig_mappings(silent: bool = False):
                     if clean_logo:
                         m["logo_url"] = clean_logo
                         m["local_logo"] = clean_logo
-                    curr_aliases = set(m.get("aliases") or [])
-                    curr_aliases.update(aliases)
-                    m["aliases"] = list(curr_aliases)
+                    m["aliases"] = _ordered_union(m.get("aliases"), aliases)
                     updated_count += 1
                     break
         else:
@@ -166,7 +182,7 @@ def merge_kadinlar_2_lig_mappings(silent: bool = False):
                 "confidence": "verified",
                 "note": f"Grup {grup_no}",
                 "verified_at": "2026-09-25",
-                "aliases": list(set(aliases)),
+                "aliases": _ordered_union([], aliases),
                 "logo_url": clean_logo,
                 "local_logo": clean_logo
             }
