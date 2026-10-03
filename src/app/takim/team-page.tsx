@@ -11,25 +11,42 @@ import { TeamDetailClient } from "@/components/TeamDetailClient";
  * okumadan statik/ISR üretilip CDN'den servis edilebilir. Eski `?sehir=` / `?city=` adresleri
  * next.config.mjs içindeki rewrite ile aynı içeriğe çözülür.
  */
+const SITE_URL = "https://altyapivoleybol.com.tr";
+
+/** Takım sayfasının kanonik yolu: şehir varyantı varsa `/takim/<slug>/<il>`, yoksa `/takim/<slug>`. */
+export function getTeamCanonicalPath(slug: string, citySegment?: string): string {
+  return citySegment ? `/takim/${slug}/${encodeURIComponent(citySegment)}` : `/takim/${slug}`;
+}
+
 export async function buildTeamMetadata(slug: string, cityFilter?: string): Promise<Metadata> {
   const team = getTeamDetailsBySlug(slug, cityFilter);
 
   if (!team) {
     return {
-      title: "Takım Bulunamadı — Altyapı Voleybol",
+      title: "Takım Bulunamadı",
       description: "Aranan voleybol takımı için henüz fikstür veya puan durumu kaydı bulunamadı.",
+      robots: { index: false, follow: true },
     };
   }
 
   const citiesStr = team.cities.join(", ");
   const catStr = team.categories.join(", ");
+  const top = team.standingsContexts[0];
+  const standingStr = top
+    ? ` ${top.groupName} puan durumunda ${top.standingRow.rank}. sırada, ${top.standingRow.played} maçta ${top.standingRow.points} puan.`
+    : "";
+  const canonical = `${SITE_URL}${getTeamCanonicalPath(slug, cityFilter)}`;
 
   return {
-    title: `${team.teamName} | Altyapı Voleybol`,
-    description: `${team.teamName} (${citiesStr}) voleybol takımı ${catStr} sezon fikstürü, güncel puan durumu, maç sonuçları ve Volleybox profili.`,
+    // Başlık şablonu (layout.tsx) " | Altyapı Voleybol" ekini zaten ekler.
+    title: team.teamName,
+    description: `${team.teamName} (${citiesStr}) voleybol takımı ${catStr} sezon fikstürü, güncel puan durumu, maç sonuçları ve Volleybox profili.${standingStr}`,
+    alternates: { canonical },
     openGraph: {
       title: `${team.teamName} — Sezon Fikstürü ve Puan Durumu`,
       description: `${team.teamName} maç takvimi, skorları ve lig puan durumu.`,
+      url: canonical,
+      type: "website",
     },
   };
 }
@@ -58,5 +75,25 @@ export function TeamPageView({ slug, cityFilter }: { slug: string; cityFilter?: 
     );
   }
 
-  return <TeamDetailClient team={team} />;
+  const logo = team.mapping?.logo_url;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SportsTeam",
+    name: team.teamName,
+    sport: "Volleyball",
+    url: `${SITE_URL}${getTeamCanonicalPath(slug, cityFilter)}`,
+    ...(logo && /^https?:\/\//.test(logo) ? { logo } : {}),
+    ...(team.city ? { location: { "@type": "Place", name: team.city } } : {}),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // "<" kaçışlanır: takım adı içindeki olası "</script>" dizisi etiketi kapatamasın.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
+      <TeamDetailClient team={team} />
+    </>
+  );
 }
