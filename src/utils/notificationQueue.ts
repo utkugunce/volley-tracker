@@ -1,10 +1,11 @@
 import { getSupabaseAdmin } from "./supabaseAdmin";
+import { toErrorLike } from "@/utils/errors";
 
 export interface NotificationPayload {
   title: string;
   body: string;
   icon?: string;
-  data?: any;
+  data?: unknown;
 }
 
 export interface QueuedNotification {
@@ -130,13 +131,13 @@ export class NotificationQueueManager {
           });
 
           processedCount++;
-        } catch (error: any) {
+        } catch (error) {
           console.error(`Bildirim gönderme hatası (${notification.id}):`, error);
 
           // Başarısız olarak işaretle ve retry planla
           await supabase.rpc('mark_notification_failed', {
             p_queue_id: notification.id,
-            p_error_message: error.message || 'Bilinmeyen hata',
+            p_error_message: toErrorLike(error).message || 'Bilinmeyen hata',
             p_response_code: null,
             p_response_body: null,
           });
@@ -251,12 +252,12 @@ export class NotificationQueueManager {
 
       if (historyError) throw historyError;
 
-      const queueStatus = queueData.reduce((acc: any, item: any) => {
+      const queueStatus = queueData.reduce((acc: Record<string, number>, item: { status: string }) => {
         acc[item.status] = (acc[item.status] || 0) + 1;
         return acc;
       }, { pending: 0, processing: 0, sent: 0, failed: 0 });
 
-      const historyStatus = historyData.reduce((acc: any, item: any) => {
+      const historyStatus = historyData.reduce((acc: Record<string, number>, item: { status: string }) => {
         acc[item.status] = (acc[item.status] || 0) + 1;
         return acc;
       }, { sent: 0, failed: 0, cancelled: 0 });

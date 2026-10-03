@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
     let failedCount = 0;
 
     for (const match of upcomingMatches) {
-      const venue = match.hall || (match as any).venue || "Belirtilmedi";
+      const venue = match.hall || (match as Match & { venue?: string }).venue || "Belirtilmedi";
       const payload = {
         title: `🏐 Maç Başlıyor! (${match.time})`,
         body: `${match.home_team} - ${match.away_team} maçı ${match.time}'da başlıyor! Salon: ${venue}`,
@@ -171,7 +171,7 @@ export async function POST(req: NextRequest) {
       failed: failedCount,
       timestamp: new Date().toISOString(),
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error("Bildirim dağıtım hatası:", err);
     return NextResponse.json(
       { error: "Bildirimler dağıtılırken sunucu hatası oluştu." },

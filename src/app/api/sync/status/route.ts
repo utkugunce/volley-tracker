@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { timingSafeEqual } from "crypto";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
+import { toErrorLike } from "@/utils/errors";
 
 function safeCompare(a: string, b: string): boolean {
   const bufA = Buffer.from(a);
@@ -133,10 +134,10 @@ export async function GET(request: Request) {
       totalEstimatedSeconds: TOTAL_ESTIMATED_SECONDS,
       latestPersistedSync,
     });
-  } catch (err: any) {
+  } catch (err) {
     return NextResponse.json({
       available: false,
-      error: err.message,
+      error: toErrorLike(err).message,
     });
   }
 }

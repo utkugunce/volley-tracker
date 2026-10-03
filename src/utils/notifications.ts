@@ -241,7 +241,7 @@ export function checkAndTriggerMatchReminders(
     if (diffMs > 0 && diffMs <= windowMs) {
       const remainingMinutes = Math.max(1, Math.round(diffMs / 60000));
       const title = `🔔 Maç Hatırlatması: ${match.home_team} vs ${match.away_team}`;
-      const hall = match.hall || (match as any).venue || "Belirtilmedi";
+      const hall = match.hall || (match as Match & { venue?: string }).venue || "Belirtilmedi";
       const body = `Maç ${remainingMinutes} dakika içinde (${match.time}) başlıyor!\nSalon: ${hall}`;
 
       if (options?.notifyFn) {

@@ -70,7 +70,7 @@ export const NotificationSchema = z.object({
     title: z.string().min(1, "Bildirim başlığı gerekli"),
     body: z.string().min(1, "Bildirim içeriği gerekli"),
     icon: z.string().url().optional(),
-    data: z.any().optional(),
+    data: z.unknown().optional(),
   }),
   priority: z.number().int().min(0).max(10).default(0),
   scheduled_for: z.string().optional(),

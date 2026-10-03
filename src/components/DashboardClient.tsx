@@ -14,7 +14,7 @@ import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
 import { MatchSelectionProvider, findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
 import dynamic from "next/dynamic";
 import { Virtuoso } from "react-virtuoso";
-import { Match, FixturesData } from "@/types/fixture";
+import { Match, FixturesData, CityInfo } from "@/types/fixture";
 import { isMatchScored } from "@/utils/matchScoring";
 
 export { isMatchScored };
@@ -62,6 +62,10 @@ export { getLeagueDisplayTitle };
 import { AGE_CATEGORIES, classifyAgeCategory } from "@/utils/leagueHierarchy";
 import { slugify } from "@/utils/slugify";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import { toErrorLike } from "@/utils/errors";
+
+/** /api/cities yanıtındaki il kaydı: CityInfo alanları + sayaçlar. */
+type CityListItem = CityInfo & { finished_count?: number; scored_matches?: number };
 
 export type AppMainTab = "home" | "results" | "today" | "fixtures" | "standings" | "group-status";
 
@@ -201,7 +205,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   const [searchQuery, setSearchQuery] = useState("");
   const [volleyboxFilter, setVolleyboxFilter] = useState<"all" | "synced" | "scored" | "unscored" | "unsynced" | "discrepancy">("all");
 
-  const [citiesList, setCitiesList] = useState<any[]>([]);
+  const [citiesList, setCitiesList] = useState<CityListItem[]>([]);
 
   const ensureFullData = () => {
     if (!isPartialData) return Promise.resolve(true);
@@ -218,8 +222,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         setData(json);
         setIsPartialData(false);
         return true;
-      } catch (err: any) {
-        setError(err.message || "Tam il verisi yüklenirken hata oluştu.");
+      } catch (err) {
+        setError(toErrorLike(err).message || "Tam il verisi yüklenirken hata oluştu.");
         return false;
       } finally {
         setLoading(false);
@@ -295,8 +299,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       clientCityCache.set(slug, json);
       setData(json);
       setIsPartialData(false);
-    } catch (err: any) {
-      setError(err.message || "İl fikstürü yüklenirken hata oluştu.");
+    } catch (err) {
+      setError(toErrorLike(err).message || "İl fikstürü yüklenirken hata oluştu.");
     } finally {
       setLoading(false);
     }
@@ -498,8 +502,8 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
       clientCityCache.set(currentCitySlug, json);
       setData(json);
       setIsPartialData(false);
-    } catch (err: any) {
-      setError(err.message || "Bilinmeyen bir hata oluştu.");
+    } catch (err) {
+      setError(toErrorLike(err).message || "Bilinmeyen bir hata oluştu.");
     } finally {
       setLoading(false);
     }

@@ -4,6 +4,8 @@ import path from "path";
 import { computeGroupStatusList, GROUP_STATUS_CONFIGS, GroupStatusKey, GroupStatusItem } from "@/utils/groupStatus";
 import { slugify } from "@/utils/slugify";
 import { isCityHidden } from "@/utils/cityHelper";
+import { toErrorLike } from "@/utils/errors";
+import type { CityInfo, Match, StandingItem } from "@/types/fixture";
 
 export const dynamic = "force-dynamic";
 
@@ -15,18 +17,18 @@ export async function GET(request: Request) {
     const citiesDir = path.join(process.cwd(), "data", "cities");
     const citiesIndexPath = path.join(process.cwd(), "data", "cities.json");
 
-    let citiesInfo: any[] = [];
+    let citiesInfo: CityInfo[] = [];
     if (fs.existsSync(citiesIndexPath)) {
       try {
         const cData = JSON.parse(fs.readFileSync(citiesIndexPath, "utf-8"));
-        citiesInfo = (cData.cities || []).filter((c: any) => !isCityHidden(c.slug));
+        citiesInfo = (cData.cities || []).filter((c: CityInfo) => !isCityHidden(c.slug));
       } catch (e) {
         console.warn("Could not read cities.json:", e);
       }
     }
 
-    const allMatches: any[] = [];
-    const allStandings: Record<string, any[]> = {};
+    const allMatches: Match[] = [];
+    const allStandings: Record<string, StandingItem[]> = {};
 
     if (fs.existsSync(citiesDir)) {
       const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
@@ -50,7 +52,7 @@ export async function GET(request: Request) {
 
           if (parsed.standings && typeof parsed.standings === "object") {
             for (const [k, v] of Object.entries(parsed.standings)) {
-              allStandings[`${cityName} - ${k}`] = v as any[];
+              allStandings[`${cityName} - ${k}`] = v as StandingItem[];
             }
           }
         } catch (e) {
@@ -96,10 +98,10 @@ export async function GET(request: Request) {
         },
       }
     );
-  } catch (err: any) {
+  } catch (err) {
     console.error("API group-status error:", err);
     return NextResponse.json(
-      { success: false, error: err.message || "Grup durumları alınamadı" },
+      { success: false, error: toErrorLike(err).message || "Grup durumları alınamadı" },
       { status: 500 }
     );
   }

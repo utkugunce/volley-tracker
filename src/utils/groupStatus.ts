@@ -169,9 +169,16 @@ export function normalizeGroupName(rawGroup?: string): string {
  * Builds the complete list of groups and their Volleybox entry status
  * from a list of matches and optional standings/city records.
  */
+/** Puan durumu satırından yalnızca takım adı okunur; farklı kaynaklar farklı alan adı kullanır. */
+export interface StandingRowLike {
+  team?: string;
+  team_name?: string;
+  name?: string;
+}
+
 export function computeGroupStatusList(
   matches: Match[] = [],
-  standings?: Record<string, any[]>,
+  standings?: Record<string, StandingRowLike[]>,
   citiesInfo?: Array<{ name: string; slug: string; status?: string }>
 ): GroupStatusItem[] {
   // Key: `${citySlug}:::${category}:::${group}`

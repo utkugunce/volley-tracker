@@ -3,6 +3,7 @@ import fs from "fs";
 import webpush from "web-push";
 import { put, list } from "@vercel/blob";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
+import { toErrorLike } from "@/utils/errors";
 
 export interface StoredSubscription {
   endpoint: string;
@@ -226,7 +227,7 @@ export async function removePushSubscription(endpoint: string): Promise<void> {
  */
 export async function sendWebPush(
   sub: StoredSubscription,
-  payload: { title: string; body: string; data?: any; tag?: string }
+  payload: { title: string; body: string; data?: unknown; tag?: string }
 ): Promise<{ success: boolean; statusCode?: number; error?: string }> {
   const initialized = initVapid();
   if (!initialized) {
@@ -250,11 +251,12 @@ export async function sendWebPush(
       JSON.stringify(payload)
     );
     return { success: true, statusCode: res.statusCode };
-  } catch (err: any) {
+  } catch (err) {
+    const { statusCode, message } = toErrorLike(err);
     // 410 Gone veya 404 Not Found durumunda artık geçersiz olan bu aboneliği kaldır
-    if (err.statusCode === 410 || err.statusCode === 404) {
+    if (statusCode === 410 || statusCode === 404) {
       await removePushSubscription(sub.endpoint);
     }
-    return { success: false, statusCode: err.statusCode, error: err.message };
+    return { success: false, statusCode, error: message };
   }
 }

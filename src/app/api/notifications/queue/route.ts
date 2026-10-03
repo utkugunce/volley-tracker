@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { getNotificationQueueManager } from "@/utils/notificationQueue";
+import { toErrorLike } from "@/utils/errors";
 
 export async function POST(request: Request) {
   const authenticatedUser = await getAuthenticatedUser(request);
@@ -34,10 +35,10 @@ export async function POST(request: Request) {
       queueId,
       message: "Bildirim kuyruğa eklendi",
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Bildirim kuyruğa ekleme hatası:", error);
     return NextResponse.json(
-      { error: error.message || "İşlem hatası" },
+      { error: toErrorLike(error).message || "İşlem hatası" },
       { status: 500 }
     );
   }

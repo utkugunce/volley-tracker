@@ -5,6 +5,16 @@ import { slugify } from "./slugify";
 import { getVolleyboxLeagueMapping, extractAgeGroup } from "./volleybox";
 import { compareMatchDateTime } from "./calendar";
 import { isCityHidden } from "./cityHelper";
+import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
+
+/** data/cities/<il>.json dosyasından bu modülün okuduğu alanlar. */
+interface CityFileData {
+  city?: string;
+  source?: string;
+  updated_at?: string;
+  matches?: Match[];
+  standings?: Record<string, StandingItem[]>;
+}
 
 export interface LeagueGroupStanding {
   groupName: string;
@@ -96,7 +106,7 @@ export function getLeagueData(citySlug: string, leagueSlug: string): LeagueData 
         let forfeitMatches = 0;
 
         for (const g of k2Data.gruplar || []) {
-          const groupTable: StandingItem[] = (g.puan_durumu || []).map((row: any) => ({
+          const groupTable: StandingItem[] = (g.puan_durumu || []).map((row: Kadinlar2LigTeam) => ({
             rank: row.sira || 0,
             team: row.takim_adi || "",
             played: row.o || 0,
@@ -214,7 +224,7 @@ export function getLeagueData(citySlug: string, leagueSlug: string): LeagueData 
 
   // Altyapı ligleri: İlgili il dosyasını oku
   let cityFile = path.join(citiesDir, `${citySlug}.json`);
-  let parsedCity: any = null;
+  let parsedCity: CityFileData | null = null;
 
   if (fs.existsSync(cityFile)) {
     try {

@@ -14,6 +14,7 @@ import {
   sanitizeStatus,
 } from "@/utils/sanitize";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
+import { toErrorLike } from "@/utils/errors";
 
 // Brute-force koruması: 5 dakika içinde 10 hatalı token denemesi -> 15 dakika blok
 const adminAuthLimiter = new RateLimiter({
@@ -120,7 +121,7 @@ export async function GET(request: Request) {
   try {
     const data = await getOverridesData();
     return NextResponse.json(data);
-  } catch (e: any) {
+  } catch (e) {
     console.error("GET override error:", e);
     return NextResponse.json({ error: "Düzeltmeler okunamadı" }, { status: 500 });
   }
@@ -217,10 +218,10 @@ export async function POST(request: Request) {
       audit_entry: auditEntry,
       message: `Maç (#${safeMatchId}) skoru başarıyla güncellendi.`,
     });
-  } catch (e: any) {
+  } catch (e) {
     console.error("POST override error:", e);
     return NextResponse.json(
-      { error: `Düzeltme kaydedilemedi: ${e.message}` },
+      { error: `Düzeltme kaydedilemedi: ${toErrorLike(e).message}` },
       { status: 500 }
     );
   }
@@ -272,10 +273,10 @@ export async function DELETE(request: Request) {
       match_id: safeMatchId,
       message: `Maç (#${safeMatchId}) üzerindeki manuel override kaldırıldı.`,
     });
-  } catch (e: any) {
+  } catch (e) {
     console.error("DELETE override error:", e);
     return NextResponse.json(
-      { error: `Override silinemedi: ${e.message}` },
+      { error: `Override silinemedi: ${toErrorLike(e).message}` },
       { status: 500 }
     );
   }

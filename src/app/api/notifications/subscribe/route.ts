@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
       ok: true,
       message: "Push aboneliği başarıyla kaydedildi.",
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error("Abonelik kaydetme hatası:", err);
     return NextResponse.json(
       { error: "Sunucu hatası: Abonelik kaydedilemedi." },
@@ -86,7 +86,7 @@ export async function DELETE(req: NextRequest) {
       ok: true,
       message: "Abonelik başarıyla silindi.",
     });
-  } catch (err: any) {
+  } catch (err) {
     console.error("Abonelik silme hatası:", err);
     return NextResponse.json(
       { error: "Sunucu hatası: Abonelik silinemedi." },

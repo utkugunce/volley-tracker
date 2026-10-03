@@ -3,6 +3,7 @@ import path from "path";
 import { Match } from "@/types/fixture";
 import { put, list } from "@vercel/blob";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
+import { toErrorLike } from "@/utils/errors";
 
 export interface MatchOverride {
   match_id: string;
@@ -203,11 +204,11 @@ export async function saveOverridesData(data: OverridesData): Promise<void> {
         allowOverwrite: true,
       });
       blobSaved = true;
-    } catch (err: any) {
+    } catch (err) {
       console.error("Vercel Blob yazma hatası:", err);
       // Eğer Vercel ortamındaysak ve Blob yazılamadıysa kullanıcıyı bilgilendir
       if (process.env.VERCEL) {
-        throw new Error(`Vercel Blob depolamasına yazılamadı: ${err.message}`);
+        throw new Error(`Vercel Blob depolamasına yazılamadı: ${toErrorLike(err).message}`);
       }
     }
   }
@@ -219,7 +220,7 @@ export async function saveOverridesData(data: OverridesData): Promise<void> {
       fs.mkdirSync(dir, { recursive: true });
     }
     fs.writeFileSync(OVERRIDES_FILE, JSON.stringify(data, null, 2), "utf-8");
-  } catch (fsErr: any) {
+  } catch (fsErr) {
     // Vercel'de disk salt okunur olduğundan (EROFS), Blob başarıyla yazıldıysa bu beklenen bir durumdur.
     if (blobSaved) {
       return;
@@ -248,7 +249,7 @@ function internalApply(matches: Match[], overrides: Record<string, MatchOverride
       ...m,
       home_score: override.home_score !== undefined ? (override.home_score ?? undefined) : m.home_score,
       away_score: override.away_score !== undefined ? (override.away_score ?? undefined) : m.away_score,
-      set_scores: override.set_scores !== undefined ? override.set_scores : (m as any).set_scores,
+      set_scores: override.set_scores !== undefined ? override.set_scores : m.set_scores,
       status: override.status || m.status,
       manual_override: true,
       override_meta: {

@@ -278,7 +278,7 @@ export function buildVolleyboxLeagueMap(
   const leagueItems: VolleyboxLeagueMapping[] = [
     ...(data.leagues || []),
     ...((data.mappings || []).filter(
-      (m: any) => m.volleybox_url && m.volleybox_url.includes("-o")
+      (m) => m.volleybox_url && m.volleybox_url.includes("-o")
     ) as unknown as VolleyboxLeagueMapping[]),
   ];
 

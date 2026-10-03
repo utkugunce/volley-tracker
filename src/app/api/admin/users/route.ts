@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
+import { toErrorLike } from "@/utils/errors";
 
 export async function GET(request: Request) {
   const authenticatedUser = await getAuthenticatedUser(request);
@@ -38,10 +39,10 @@ export async function GET(request: Request) {
     });
 
     return NextResponse.json({ users: usersWithRoles });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Kullanıcı listesi hatası:", error);
     return NextResponse.json(
-      { error: error.message || "Kullanıcı listesi alınamadı" },
+      { error: toErrorLike(error).message || "Kullanıcı listesi alınamadı" },
       { status: 500 }
     );
   }
@@ -102,10 +103,10 @@ export async function POST(request: Request) {
         role,
       },
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Kullanıcı oluşturma hatası:", error);
     return NextResponse.json(
-      { error: error.message || "Kullanıcı oluşturulamadı" },
+      { error: toErrorLike(error).message || "Kullanıcı oluşturulamadı" },
       { status: 500 }
     );
   }

@@ -27,6 +27,26 @@ import { Match } from "@/types/fixture";
 import { MatchOverride, AuditLogEntry } from "@/utils/overrides";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { getSupabaseClient } from "@/utils/supabaseClient";
+import { toErrorLike } from "@/utils/errors";
+import type { NotificationHistory } from "@/utils/notificationQueue";
+
+/** /api/admin/users yanıtındaki kullanıcı kaydı. */
+interface AdminUser {
+  id: string;
+  email: string;
+  role: "admin" | "editor" | "viewer";
+  created_at?: string;
+  last_sign_in_at?: string;
+  role_updated_at?: string;
+}
+
+/** /api/notifications/queue?action=status yanıtı. */
+interface NotificationQueueStatus {
+  pending: number;
+  processing: number;
+  sent: number;
+  failed: number;
+}
 
 export default function AdminPage() {
   const [token, setToken] = useState<string>("");
@@ -70,7 +90,7 @@ export default function AdminPage() {
   } | null>(null);
 
   // Kullanıcı Yönetimi
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<AdminUser[]>([]);
   const [usersLoading, setUsersLoading] = useState<boolean>(false);
   const [showAddUserModal, setShowAddUserModal] = useState<boolean>(false);
   const [newUserEmail, setNewUserEmail] = useState<string>("");
@@ -79,8 +99,8 @@ export default function AdminPage() {
   const [userOperationLoading, setUserOperationLoading] = useState<boolean>(false);
 
   // Bildirim Yönetimi
-  const [notificationStatus, setNotificationStatus] = useState<any>(null);
-  const [notificationHistory, setNotificationHistory] = useState<any[]>([]);
+  const [notificationStatus, setNotificationStatus] = useState<NotificationQueueStatus | null>(null);
+  const [notificationHistory, setNotificationHistory] = useState<NotificationHistory[]>([]);
 
   // Oturum açma kontrolü
   useEffect(() => {
@@ -183,8 +203,8 @@ export default function AdminPage() {
       try {
         sessionStorage.setItem("volley_admin_token", authToken);
       } catch {}
-    } catch (err: any) {
-      setAuthError(err.message || "Giriş başarısız");
+    } catch (err) {
+      setAuthError(toErrorLike(err).message || "Giriş başarısız");
       setIsAuthenticated(false);
     } finally {
       setLoading(false);
@@ -208,8 +228,8 @@ export default function AdminPage() {
       if (error || !data.session) throw new Error(error?.message || "Supabase giriş başarısız.");
       setToken(data.session.access_token);
       await verifyAndFetchData(data.session.access_token);
-    } catch (error: any) {
-      setAuthError(error.message || "Supabase giriş başarısız.");
+    } catch (error) {
+      setAuthError(toErrorLike(error).message || "Supabase giriş başarısız.");
       setIsAuthenticated(false);
     } finally {
       setLoading(false);
@@ -307,11 +327,11 @@ export default function AdminPage() {
         });
         verifyAndFetchData(token);
       }
-    } catch (err: any) {
+    } catch (err) {
       setSyncLoading(false);
       setSyncStatus({
         inProgress: false,
-        message: `Tarama başlatılamadı: ${err.message}`,
+        message: `Tarama başlatılamadı: ${toErrorLike(err).message}`,
         type: "error",
       });
     }
@@ -323,7 +343,7 @@ export default function AdminPage() {
     setEditingMatch(match);
     setHomeScore(existing?.home_score !== undefined && existing?.home_score !== null ? String(existing.home_score) : (match.home_score !== undefined ? String(match.home_score) : ""));
     setAwayScore(existing?.away_score !== undefined && existing?.away_score !== null ? String(existing.away_score) : (match.away_score !== undefined ? String(match.away_score) : ""));
-    setSetScoresInput(existing?.set_scores ? existing.set_scores.join(", ") : (match as any).set_scores?.join(", ") || "");
+    setSetScoresInput(existing?.set_scores ? existing.set_scores.join(", ") : match.set_scores?.join(", ") || "");
     setStatusInput(existing?.status || match.status || "finished");
     setReasonInput(existing?.reason || "TVF bülteni skor düzeltmesi");
     setAuthorInput(existing?.updated_by || "Admin");
@@ -403,8 +423,8 @@ export default function AdminPage() {
       setTimeout(() => {
         setEditingMatch(null);
       }, 1000);
-    } catch (err: any) {
-      setFeedback({ type: "error", message: err.message || "Kaydedilemedi" });
+    } catch (err) {
+      setFeedback({ type: "error", message: toErrorLike(err).message || "Kaydedilemedi" });
     } finally {
       setSaveLoading(false);
     }
@@ -442,8 +462,8 @@ export default function AdminPage() {
 
       setEditingMatch(null);
       alert("Override başarıyla kaldırıldı.");
-    } catch (err: any) {
-      alert(`Hata: ${err.message}`);
+    } catch (err) {
+      alert(`Hata: ${toErrorLike(err).message}`);
     } finally {
       setSaveLoading(false);
     }
@@ -486,8 +506,8 @@ export default function AdminPage() {
       setNewUserPassword("");
       setNewUserRole("viewer");
       alert("Kullanıcı başarıyla oluşturuldu.");
-    } catch (err: any) {
-      alert(`Hata: ${err.message}`);
+    } catch (err) {
+      alert(`Hata: ${toErrorLike(err).message}`);
     } finally {
       setUserOperationLoading(false);
     }
@@ -522,8 +542,8 @@ export default function AdminPage() {
       }
 
       alert("Rol başarıyla güncellendi.");
-    } catch (err: any) {
-      alert(`Hata: ${err.message}`);
+    } catch (err) {
+      alert(`Hata: ${toErrorLike(err).message}`);
     } finally {
       setUserOperationLoading(false);
     }
@@ -547,8 +567,8 @@ export default function AdminPage() {
       // Kullanıcı listesini güncelle
       setUsers((prev) => prev.filter((u) => u.id !== userId));
       alert("Kullanıcı başarıyla silindi.");
-    } catch (err: any) {
-      alert(`Hata: ${err.message}`);
+    } catch (err) {
+      alert(`Hata: ${toErrorLike(err).message}`);
     } finally {
       setUserOperationLoading(false);
     }
@@ -1463,10 +1483,10 @@ export default function AdminPage() {
                       const data = await res.json();
                       if (data.success) {
                         alert(`${data.processed} bildirim işlendi`);
-                        setNotificationStatus(await fetchNotificationStatus());
+                        await fetchNotificationStatus();
                       }
-                    } catch (error: any) {
-                      alert(`Hata: ${error.message}`);
+                    } catch (error) {
+                      alert(`Hata: ${toErrorLike(error).message}`);
                     }
                   }}
                   className="px-3 py-1.5 bg-primary hover:bg-primary-hover text-primary-fg font-bold rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
@@ -1552,8 +1572,8 @@ export default function AdminPage() {
                     const res = await fetch("/api/sync/status");
                     const data = await res.json();
                     alert(`Son sync: ${data.lastSync ? new Date(data.lastSync).toLocaleString("tr-TR") : "Henüz sync yok"}`);
-                  } catch (error: any) {
-                    alert(`Hata: ${error.message}`);
+                  } catch (error) {
+                    alert(`Hata: ${toErrorLike(error).message}`);
                   }
                 }}
                 className="px-3 py-1.5 bg-done hover:bg-done/90 text-done-fg rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors"
@@ -1823,7 +1843,7 @@ export default function AdminPage() {
                   <select
                     id="override-status"
                     value={statusInput}
-                    onChange={(e) => setStatusInput(e.target.value as any)}
+                    onChange={(e) => setStatusInput(e.target.value as Match["status"])}
                     aria-label="Maç Durumu"
                     className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
                   >

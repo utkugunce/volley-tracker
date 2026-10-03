@@ -1,3 +1,5 @@
+import type { DiscrepancyInfo } from "@/types/fixture";
+
 export interface Kadinlar2LigMetadata {
   lig_adi: string;
   sezon: string;
@@ -45,6 +47,21 @@ export interface Kadinlar2LigTeam {
   sehir?: string;
 }
 
+/** Kadınlar 2. Lig JSON'unda bazı maçlara eklenen Volleybox eşleşme bilgisi. */
+export interface Kadinlar2LigVolleybox {
+  match_url?: string | null;
+  home_team_name?: string;
+  away_team_name?: string;
+  home_team_url?: string | null;
+  away_team_url?: string | null;
+  score?: string | null;
+  status?: string;
+  tournament_name?: string;
+  date?: string | null;
+  time?: string | null;
+  discrepancy?: DiscrepancyInfo | null;
+}
+
 export interface Kadinlar2LigMatch {
   id: string;
   mac_no: string;
@@ -73,6 +90,9 @@ export interface Kadinlar2LigMatch {
   takim_b_volleybox_url?: string | null;
   takim_a_volleybox_name?: string | null;
   takim_b_volleybox_name?: string | null;
+  volleybox_url?: string | null;
+  volleybox?: Kadinlar2LigVolleybox | null;
+  discrepancy?: DiscrepancyInfo | null;
 }
 
 export interface Kadinlar2LigGroup {

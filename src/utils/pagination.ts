@@ -23,10 +23,10 @@ export class PaginationHelper {
   /**
    * Parse and validate pagination parameters
    */
-  static parseParams(params: any): PaginationParams {
-    const page = Math.max(1, parseInt(params.page) || 1);
-    const limit = Math.min(100, Math.max(1, parseInt(params.limit) || 20));
-    const sort_by = params.sort_by || undefined;
+  static parseParams(params: Record<string, unknown>): PaginationParams {
+    const page = Math.max(1, parseInt(String(params.page)) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(String(params.limit)) || 20));
+    const sort_by = typeof params.sort_by === "string" && params.sort_by ? params.sort_by : undefined;
     const sort_order = (params.sort_order === "asc" ? "asc" : "desc") as "asc" | "desc";
 
     return { page, limit, sort_by, sort_order };
@@ -39,7 +39,7 @@ export class PaginationHelper {
     page: number,
     limit: number,
     total: number
-  ): PaginatedResponse<any>["pagination"] {
+  ): PaginatedResponse<unknown>["pagination"] {
     const totalPages = Math.ceil(total / limit);
     const hasNext = page < totalPages;
     const hasPrev = page > 1;
@@ -67,9 +67,9 @@ export class PaginationHelper {
     // Sort if requested
     let sortedData = [...data];
     if (sort_by) {
-      sortedData.sort((a: any, b: any) => {
-        const aVal = a[sort_by];
-        const bVal = b[sort_by];
+      sortedData.sort((a, b) => {
+        const aVal = (a as Record<string, unknown>)[sort_by];
+        const bVal = (b as Record<string, unknown>)[sort_by];
         
         if (typeof aVal === "string" && typeof bVal === "string") {
           return sort_order === "asc"

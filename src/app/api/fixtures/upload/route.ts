@@ -5,6 +5,7 @@ import { execFile } from "child_process";
 import { promisify } from "util";
 import { timingSafeEqual } from "crypto";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import { toErrorLike } from "@/utils/errors";
 
 const execFileAsync = promisify(execFile);
 
@@ -154,10 +155,10 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true, message: "Fikstür güncellendi" });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Upload error:", error);
     return NextResponse.json(
-      { error: `Bülten işlenirken hata oluştu: ${error.message}` },
+      { error: `Bülten işlenirken hata oluştu: ${toErrorLike(error).message}` },
       { status: 500 }
     );
   }
