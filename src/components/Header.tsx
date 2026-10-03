@@ -6,6 +6,8 @@ import { Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, La
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
+import { SettingsControls } from "@/components/SettingsControls";
+import { useLanguage } from "@/i18n/useLanguage";
 import { CityInfo } from "@/types/fixture";
 
 interface HeaderProps {
@@ -46,6 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
   isLoading = false,
   onOpenSearch,
 }) => {
+  const { t } = useLanguage();
   const formattedTime = updatedAt
     ? new Date(updatedAt).toLocaleTimeString("tr-TR", {
         hour: "2-digit",
@@ -89,7 +92,7 @@ export const Header: React.FC<HeaderProps> = ({
 
           <div className="hdr-tagline hidden md:flex items-center gap-2 text-xs text-slate-400 min-w-0">
             <span className="text-slate-600">•</span>
-            <span className="text-primary font-medium tracking-wide truncate">Genç & Yıldız Kızlar Süper Lig</span>
+            <span className="text-primary font-medium tracking-wide truncate">{t("header.leagueTagline")}</span>
           </div>
 
           {/* Kadınlar 2. Ligi Sayfasına Geçiş Butonu */}
@@ -99,8 +102,8 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-colors border border-slate-700/70 ml-0.5 sm:ml-1 shrink-0 whitespace-nowrap"
             title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
           >
-            <span className="tracking-wide">Kadınlar 2. Ligi</span>
-            <span className="text-[10px] text-slate-400 px-1 py-0.2 rounded font-mono hidden sm:inline">16 Grup</span>
+            <span className="tracking-wide">{t("header.k2")}</span>
+            <span className="text-[10px] text-slate-400 px-1 py-0.2 rounded font-mono hidden sm:inline">{t("header.groups16")}</span>
             <ArrowRight size={12} className="text-slate-400" />
           </Link>
         </div>
@@ -115,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({
               title="Hızlı Arama (Ctrl + K)"
             >
               <Search size={13} className="text-slate-400" />
-              <span className="hidden md:inline font-medium text-[11px] text-slate-400">Ara</span>
+              <span className="hidden md:inline font-medium text-[11px] text-slate-400">{t("header.search")}</span>
               <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-slate-400 bg-slate-900 px-1 py-0.2 rounded border border-slate-700">
                 ⌘K
               </kbd>
@@ -137,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({
                 size={13}
                 className={showOnlyFavorites ? "fill-black text-black" : "text-amber-400"}
               />
-              <span className="hidden sm:inline">Favoriler</span>
+              <span className="hidden sm:inline">{t("header.favorites")}</span>
               {favoritesCount > 0 && (
                 <span
                   className={`text-[10px] px-1 rounded-full ${
@@ -173,6 +176,9 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
+          {/* Tema + Dil */}
+          <SettingsControls />
+
           {/* Yazdır Butonu */}
           <button
             onClick={() => window.print()}
@@ -205,10 +211,10 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Home size={13} className={activeTab === "home" ? "text-primary fill-primary/20" : "text-slate-400"} />
-          <span>ANASAYFA</span>
+          <span>{t("nav.home")}</span>
           {todayMatchesCount > 0 && (
             <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
-              {todayMatchesCount} Bugün
+              {todayMatchesCount} {t("nav.todayBadge")}
             </span>
           )}
         </button>
@@ -223,7 +229,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <CheckCircle2 size={13} className={activeTab === "results" ? "text-emerald-400" : "text-slate-400"} />
-          <span>SONUÇLAR</span>
+          <span>{t("nav.results")}</span>
           {typeof resultsCount === "number" && (
             <span
               className={`text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-display font-semibold tabular-nums transition-colors ${
@@ -247,7 +253,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Flame size={13} className={activeTab === "today" ? "text-primary fill-primary/20" : "text-slate-400"} />
-          <span>GÜNÜN MAÇLARI</span>
+          <span>{t("nav.today")}</span>
           {todayMatchesCount > 0 && (
             <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
               {todayMatchesCount}
@@ -265,7 +271,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Calendar size={13} className={activeTab === "fixtures" ? "text-primary" : "text-slate-400"} />
-          <span>FİKSTÜR</span>
+          <span>{t("nav.fixtures")}</span>
           <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
             {totalMatches}
           </span>
@@ -281,7 +287,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Trophy size={13} className={activeTab === "standings" ? "text-primary" : "text-slate-400"} />
-          <span>PUAN DURUMU</span>
+          <span>{t("nav.standings")}</span>
         </button>
 
         {/* Grup Durumu Sekmesi (Volleybox İlerleme & Renk Kodları) */}
@@ -294,7 +300,7 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           <Layers size={13} className={activeTab === "group-status" ? "text-primary" : "text-slate-400"} />
-          <span>GRUP DURUMU</span>
+          <span>{t("nav.groupStatus")}</span>
         </button>
 
       </div>
