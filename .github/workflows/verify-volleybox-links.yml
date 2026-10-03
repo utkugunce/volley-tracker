@@ -13,6 +13,7 @@ permissions:
 jobs:
   verify-links:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,15 +26,43 @@ jobs:
       - name: Run Volleybox link verification
         id: verify
         run: |
+          # Çıkış kodları: 0 = temiz, 1 = kırık link var, 2 = dosya yok,
+          # 3 = Volleybox bot koruması (Cloudflare) yüzünden doğrulanamadı.
+          set +e
           python scripts/verify_volleybox_links.py --delay 2.0 --report-file report.md
+          code=$?
+          set -e
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          if [ "$code" -eq 3 ]; then
+            echo "::warning title=Volleybox doğrulanamadı::Volleybox istekleri bot koruması (Cloudflare) nedeniyle engelledi; bağlantılar doğrulanamadı. İş başarısız sayılmadı."
+            exit 0
+          fi
+          exit "$code"
 
       - name: Create GitHub Issue if broken links detected
-        if: failure() && steps.verify.outcome == 'failure'
+        # Sadece gerçekten kırık link bulunduğunda (çıkış kodu 1) issue açılır.
+        if: failure() && steps.verify.outputs.exit_code == '1'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f report.md ]; then
+          TITLE="⚠️ Kırık Volleybox Profil Bağlantıları Tespit Edildi"
+          if [ ! -f report.md ]; then
+            echo "::error::report.md bulunamadı; issue açılamadı."
+            exit 1
+          fi
+          # GitHub issue gövdesi en fazla 65536 karakter olabilir; güvenli sınırda kes.
+          head -c 60000 report.md > report-issue.md
+
+          # Aynı başlıkta açık issue varsa yenisini açma, yorum ekle.
+          EXISTING=$(gh issue list --state open --label automation \
+            --search "\"$TITLE\" in:title" --json number,title \
+            --jq "[.[] | select(.title == \"$TITLE\")][0].number // empty")
+          if [ -n "$EXISTING" ]; then
+            echo "Açık issue #$EXISTING zaten var; yeni issue açılmıyor, yorum ekleniyor."
+            gh issue comment "$EXISTING" --body-file report-issue.md
+          else
             gh issue create \
-              --title "⚠️ Kırık Volleybox Profil Bağlantıları Tespit Edildi" \
-              --body-file report.md || true
+              --title "$TITLE" \
+              --label automation \
+              --body-file report-issue.md
           fi
