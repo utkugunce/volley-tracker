@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T17:15:42.093859",
+  "updated_at": "2026-10-03T08:23:06.118059",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -158,7 +158,7 @@
       "id": "yalova-20261009-001",
       "city": "Yalova",
       "date": "2026-10-09",
-      "time": "18:00",
+      "time": "18:30",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -199,7 +199,7 @@
       "id": "yalova-20261009-002",
       "city": "Yalova",
       "date": "2026-10-09",
-      "time": "20:00",
+      "time": "20:30",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2206,5 +2206,5 @@
     }
   ],
   "volleybox_synced_matches": 50,
-  "volleybox_sync_updated_at": "2026-10-03T02:29:53.991930"
+  "volleybox_sync_updated_at": "2026-10-03T08:24:31.920518"
 }
