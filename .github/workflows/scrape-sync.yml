@@ -68,6 +68,14 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: npm run supabase:import
 
+      # Yalnızca zaman damgası (updated_at vb.) değişen dosyaları geri al: içerik aynıysa commit'e girmez.
+      # İçerik değişmediyse bile freshness kontrolüne tabi cities.json ve kadinlar_2_lig.json en fazla 12 saatte bir tazelenir.
+      # Bu adım yalnızca optimizasyondur; başarısız olursa dosyalar eskisi gibi commit'lenir.
+      - name: Skip timestamp-only data changes
+        continue-on-error: true
+        run: |
+          python scripts/skip_timestamp_only_changes.py --heartbeat-hours 12
+
       - name: Commit and push changes
         run: |
           git config --global user.name 'github-actions[bot]'
