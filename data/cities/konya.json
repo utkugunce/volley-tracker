@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T14:28:15.546946",
+  "updated_at": "2026-10-04T18:16:06.726080",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -66,6 +66,28 @@
     "Genç Kızlar Süper Lig - - B Grubu": [
       {
         "rank": 1,
+        "team": "Selçuklu Belediyespor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Türmak Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Zirve Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -76,30 +98,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Konya Anka Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Selçuklu Belediyespor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Türmak Spor Kulübü U18",
+        "team": "Konya Anka Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -489,11 +489,15 @@
       "match_no": "1",
       "home_team": "Selçuklu Belediyespor Kulübü U18",
       "away_team": "Türmak Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-16",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402995",
@@ -693,5 +697,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-04T14:29:54.013765"
+  "volleybox_sync_updated_at": "2026-10-04T18:17:45.051120"
 }

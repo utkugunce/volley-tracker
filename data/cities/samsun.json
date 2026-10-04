@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T14:28:17.671546",
+  "updated_at": "2026-10-04T18:16:09.838475",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -147,7 +147,7 @@
       },
       {
         "rank": 2,
-        "team": "Vezirköprü Gençlik Spor Kulübü U18",
+        "team": "Atakum Atılım Spor Kulübü - B U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -158,18 +158,18 @@
       },
       {
         "rank": 3,
-        "team": "Sam55 Spor Kulübü U18",
+        "team": "Vezirköprü Gençlik Spor Kulübü U18",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Nova Spor Kulübü U18",
+        "team": "İlkkıvılcım Havza SK U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -180,29 +180,29 @@
       },
       {
         "rank": 5,
-        "team": "Anadolu Voleybol Akademi SK U18",
-        "played": 0,
+        "team": "Sam55 Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Atakum Atılım Spor Kulübü - B U18",
-        "played": 0,
+        "team": "Nova Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 7,
-        "team": "İlkkıvılcım Havza SK U18",
+        "team": "Anadolu Voleybol Akademi SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1771,11 +1771,15 @@
       "match_no": "2",
       "home_team": "İlkkıvılcım Havza SK U18",
       "away_team": "Atakum Atılım Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "22-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402774",
@@ -2867,5 +2871,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-04T14:29:54.056691"
+  "volleybox_sync_updated_at": "2026-10-04T18:17:45.094793"
 }

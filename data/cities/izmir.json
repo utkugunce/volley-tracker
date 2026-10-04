@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T14:28:09.658789",
+  "updated_at": "2026-10-04T18:16:00.188598",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -591,6 +591,17 @@
     "Yıldız Kızlar Süper Lig - - B Gr": [
       {
         "rank": 1,
+        "team": "Göztepe SK - B U16",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Parla Voleybol Kulübü - A U16",
         "played": 3,
         "won": 2,
@@ -598,17 +609,6 @@
         "points": 7,
         "sets_won": 8,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Göztepe SK - B U16",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -636,12 +636,12 @@
       {
         "rank": 5,
         "team": "İzmirspor U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 6,
+        "sets_won": 2,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -749,13 +749,13 @@
       },
       {
         "rank": 3,
-        "team": "Monza Spor Kulübü U16",
-        "played": 2,
+        "team": "Altınordu Voleybol U16",
+        "played": 3,
         "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -771,13 +771,13 @@
       },
       {
         "rank": 5,
-        "team": "Altınordu Voleybol U16",
-        "played": 2,
-        "won": 0,
+        "team": "Monza Spor Kulübü U16",
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 1,
-        "sets_won": 3,
-        "sets_lost": 6,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -817,7 +817,18 @@
       },
       {
         "rank": 3,
-        "team": "Dokuz Eylül Voleybol U16",
+        "team": "Özay Voleybol Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Dalton Koleji Spor Kulübü U16",
         "played": 3,
         "won": 1,
         "lost": 2,
@@ -827,25 +838,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Dalton Koleji Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Özay Voleybol Spor Kulübü U16",
-        "played": 2,
+        "team": "Dokuz Eylül Voleybol U16",
+        "played": 3,
         "won": 1,
-        "lost": 1,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 5,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -4065,11 +4065,16 @@
       "match_no": "9",
       "home_team": "İzmirspor U16",
       "away_team": "Göztepe SK - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "25-19",
+        "10-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401132",
@@ -5331,11 +5336,16 @@
       "match_no": "9",
       "home_team": "Monza Spor Kulübü U16",
       "away_team": "Altınordu Voleybol U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "23-25",
+        "25-19",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401138",
@@ -5961,11 +5971,17 @@
       "match_no": "9",
       "home_team": "Dalton Koleji Spor Kulübü U16",
       "away_team": "Özay Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "26-28",
+        "22-25",
+        "25-12",
+        "13-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401140",
@@ -6216,5 +6232,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-04T14:29:54.040362"
+  "volleybox_sync_updated_at": "2026-10-04T18:17:45.078184"
 }

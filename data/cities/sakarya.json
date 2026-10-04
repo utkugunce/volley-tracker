@@ -1,0 +1,135 @@
+{
+  "updated_at": "2026-10-04T18:16:06.665212",
+  "city": "Sakarya",
+  "slug": "sakarya",
+  "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 0,
+  "source": "https://sakarya.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü"
+    ]
+  },
+  "standings": {
+    "Genç Kızlar Süper Lig - A Gurubu": [
+      {
+        "rank": 1,
+        "team": "Alaağaçspor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Fener Akademi Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Saraçhane 54 Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Serdivan Belediyesi Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - B Gurubu": [
+      {
+        "rank": 1,
+        "team": "Asaş Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Erenler Anadolu Voleybol S.K",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Sakarya Voleybol Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Sakarya Gelişim Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Sapanca Ayyıldız Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": [],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-10-04T18:17:45.068699"
+}
