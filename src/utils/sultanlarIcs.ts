@@ -330,12 +330,18 @@ let lastGood: { at: number; matches: SultanlarMatch[] } | null = null;
 
 /**
  * TVF'den güncel fikstürü getirir. İstek başarısız olursa (aynı sunucu örneğinde) son başarılı sonucu döner;
- * yoksa hata fırlatır. `no-store`: Vercel Data Cache / ISR yazma kotası kullanılmaz; önbellekleme CDN başlıklarıyla yapılır.
+ * yoksa hata fırlatır. Varsayılan `no-store`: Vercel Data Cache / ISR yazma kotası kullanılmaz; önbellekleme CDN başlıklarıyla yapılır.
+ * ISR sayfaları (`/takvim`) `{ cache: null }` ile çağırır: sayfa kendi `revalidate` süresiyle önbelleğe alınır.
  */
-export async function fetchSultanlarMatches(fetchImpl: typeof fetch = fetch): Promise<SultanlarMatch[]> {
+export async function fetchSultanlarMatches(
+  fetchImpl: typeof fetch = fetch,
+  options: { cache?: RequestCache | null } = {},
+): Promise<SultanlarMatch[]> {
+  // `null`: cache alanı hiç gönderilmez (ISR ile üretilen sayfalar kendi önbelleğini kullanır; sayfa dinamik olmaz).
+  const cache = options.cache === undefined ? "no-store" : options.cache;
   try {
     const res = await fetchImpl(SULTANLAR_SOURCE_URL, {
-      cache: "no-store",
+      ...(cache === null ? {} : { cache }),
       headers: {
         "User-Agent": "Mozilla/5.0 (compatible; AltyapiVoleybolTakvim/1.0; +https://altyapivoleybol.com.tr)",
         Accept: "text/html",

@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from "vitest";
+import { describe, it, expect, beforeEach, vi } from "vitest";
 import {
   buildIcs,
   displayName,
@@ -217,6 +217,16 @@ describe("fetchSultanlarMatches", () => {
     await fetchSultanlarMatches(okFetch);
     const stale: SultanlarMatch[] = await fetchSultanlarMatches(failFetch);
     expect(stale).toHaveLength(5);
+  });
+
+  it("varsayılan olarak cache: no-store gönderir; { cache: null } ile cache alanı hiç gönderilmez (ISR sayfaları)", async () => {
+    const spy = vi.fn(async () => new Response(tvfHtml(ROWS), { status: 200 }));
+    await fetchSultanlarMatches(spy as unknown as typeof fetch);
+    expect((spy.mock.calls[0] as unknown[])[1]).toMatchObject({ cache: "no-store" });
+
+    __resetSultanlarCacheForTests();
+    await fetchSultanlarMatches(spy as unknown as typeof fetch, { cache: null });
+    expect((spy.mock.calls[1] as unknown[])[1]).not.toHaveProperty("cache");
   });
 
   it("fikstürsüz sayfa hata sayılır", async () => {

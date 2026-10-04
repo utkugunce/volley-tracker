@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Printer, Star, Calendar, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight, RefreshCw } from "lucide-react";
+import { Printer, Star, Calendar, CalendarDays, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight, RefreshCw } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -17,13 +17,15 @@ interface HeaderProps {
   cities?: CityInfo[];
   title?: string;
   updatedAt?: string;
-  totalMatches: number;
+  /** Verilmezse FİKSTÜR sekmesinde sayı rozeti gösterilmez (ör. /takvim sayfası). */
+  totalMatches?: number;
   todayMatchesCount?: number;
   resultsCount?: number;
   favoritesCount: number;
   showOnlyFavorites: boolean;
   onToggleFavoritesOnly: () => void;
-  activeTab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status";
+  /** "calendar": /takvim sayfası (ayrı rota; sekme düğmesi yerine bağlantıdır). */
+  activeTab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status" | "calendar";
   onSelectTab: (tab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status") => void;
   onRefresh?: () => void;
   isLoading?: boolean;
@@ -38,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
   updatedAt,
   totalMatches,
   todayMatchesCount = 0,
-  resultsCount = 0,
+  resultsCount,
   favoritesCount,
   showOnlyFavorites,
   onToggleFavoritesOnly,
@@ -199,7 +201,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       )}
 
-      {/* 2. ANA SEKMELER: ANASAYFA, SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU, GRUP DURUMU */}
+      {/* 2. ANA SEKMELER: ANASAYFA, SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU, GRUP DURUMU, TAKVİM */}
       <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
         {/* Anasayfa Portalı & Günün Maçları Sekmesi */}
         <button
@@ -272,9 +274,11 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <Calendar size={13} className={activeTab === "fixtures" ? "text-primary" : "text-slate-400"} />
           <span>{t("nav.fixtures")}</span>
-          <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
-            {totalMatches}
-          </span>
+          {typeof totalMatches === "number" && (
+            <span className="text-[9px] sm:text-[10px] text-ink-2 font-display font-semibold tabular-nums">
+              {totalMatches}
+            </span>
+          )}
         </button>
 
         {/* Puan Durumu Sekmesi */}
@@ -302,6 +306,21 @@ export const Header: React.FC<HeaderProps> = ({
           <Layers size={13} className={activeTab === "group-status" ? "text-primary" : "text-slate-400"} />
           <span>{t("nav.groupStatus")}</span>
         </button>
+
+        {/* Takvim Sekmesi (Vodafone Sultanlar Ligi ay takvimi; ayrı rota: /takvim) */}
+        <Link
+          href="/takvim"
+          prefetch={false}
+          aria-current={activeTab === "calendar" ? "page" : undefined}
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            activeTab === "calendar"
+              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
+          }`}
+        >
+          <CalendarDays size={13} className={activeTab === "calendar" ? "text-primary" : "text-slate-400"} />
+          <span>{t("nav.calendar")}</span>
+        </Link>
 
       </div>
     </header>
