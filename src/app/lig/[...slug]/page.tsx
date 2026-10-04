@@ -7,7 +7,7 @@ import { LeagueHubClient } from "@/components/league/LeagueHubClient";
 import { slugify } from "@/utils/slugify";
 import { isCityHidden } from "@/utils/cityHelper";
 
-export const revalidate = 60; // 1 minute ISR cache
+export const revalidate = 300; // 5 minutes ISR cache
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;

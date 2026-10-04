@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { DashboardClient } from "@/components/DashboardClient";
 import { getInitialResults } from "@/utils/getInitialFixtures";
 
-export const revalidate = 180; // 3 minutes ISR cache
+export const revalidate = 900; // 15 minutes ISR cache
 
 export function generateMetadata(): Metadata {
   const title = "Voleybol Maç Sonuçları ve Set Skorları";

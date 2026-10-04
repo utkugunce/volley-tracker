@@ -5,7 +5,7 @@ import { getInitialResults } from "@/utils/getInitialFixtures";
 import { getCityNameFromSlug, isValidCitySlug, getAllCitiesList } from "@/utils/cityHelper";
 import { slugify } from "@/utils/slugify";
 
-export const revalidate = 180; // 3 minutes ISR cache
+export const revalidate = 900; // 15 minutes ISR cache
 
 export function generateStaticParams() {
   const cities = getAllCitiesList();
