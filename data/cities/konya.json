@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T08:53:14.281800",
+  "updated_at": "2026-10-04T14:28:15.546946",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -31,29 +31,29 @@
     "Genç Kızlar Süper Lig - - A Grubu": [
       {
         "rank": 1,
-        "team": "Ereğli Arel Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Ereğli Sümer SK U18",
-        "played": 0,
+        "team": "Ereğli Arel Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
+        "team": "Ereğli Sümer SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -444,11 +444,15 @@
       "match_no": "1",
       "home_team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
       "away_team": "Ereğli Arel Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-17",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402994",
@@ -689,5 +693,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-04T08:54:53.423219"
+  "volleybox_sync_updated_at": "2026-10-04T14:29:54.013765"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T17:40:23.026132",
+  "updated_at": "2026-10-04T14:28:17.671546",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -147,6 +147,17 @@
       },
       {
         "rank": 2,
+        "team": "Vezirköprü Gençlik Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Sam55 Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -157,7 +168,18 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
+        "team": "Nova Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Anadolu Voleybol Akademi SK U18",
         "played": 0,
         "won": 0,
@@ -168,7 +190,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Atakum Atılım Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
@@ -179,7 +201,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 7,
         "team": "İlkkıvılcım Havza SK U18",
         "played": 0,
         "won": 0,
@@ -190,30 +212,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Nova Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Samsunspor U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Vezirköprü Gençlik Spor Kulübü U18",
+        "team": "Samsunspor U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1812,11 +1812,11 @@
       "match_no": "3",
       "home_team": "Vezirköprü Gençlik Spor Kulübü U18",
       "away_team": "Nova Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
       "set_scores": [],
-      "status": "upcoming",
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402775",
@@ -2867,5 +2867,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-03T17:42:04.647922"
+  "volleybox_sync_updated_at": "2026-10-04T14:29:54.056691"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T16:20:19.834275",
+  "updated_at": "2026-10-04T14:28:04.900409",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -242,28 +242,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği B Grubu": [
       {
         "rank": 1,
-        "team": "Eceabat Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "Yeşil Bayramiç Spor Kulübü",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Yeşil Bayramiç Spor Kulübü",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
         "team": "Çanakkale Belediyespor - B U16",
         "played": 1,
         "won": 1,
@@ -274,13 +263,24 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 3,
         "team": "Çanakkalespor U16",
         "played": 2,
         "won": 1,
         "lost": 1,
         "points": 3,
         "sets_won": 4,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Eceabat Spor Kulübü U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 3,
         "form": []
       },
@@ -782,11 +782,15 @@
       "match_no": "5",
       "home_team": "Yeşil Bayramiç Spor Kulübü",
       "away_team": "Eceabat Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-14",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402984",
@@ -1246,5 +1250,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-10-03T16:22:11.113586"
+  "volleybox_sync_updated_at": "2026-10-04T14:29:54.004006"
 }

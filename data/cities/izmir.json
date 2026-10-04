@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T08:53:08.236892",
+  "updated_at": "2026-10-04T14:28:09.658789",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -796,11 +796,11 @@
       {
         "rank": 1,
         "team": "Gelişim Koleji SK U16",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -818,12 +818,12 @@
       {
         "rank": 3,
         "team": "Dokuz Eylül Voleybol U16",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 4,
         "sets_won": 5,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -5916,11 +5916,15 @@
       "match_no": "8",
       "home_team": "Gelişim Koleji SK U16",
       "away_team": "Dokuz Eylül Voleybol U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-21",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401142",
@@ -6212,5 +6216,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-04T08:54:53.439770"
+  "volleybox_sync_updated_at": "2026-10-04T14:29:54.040362"
 }
