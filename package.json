@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "validate:data": "python scripts/validate_data_files.py",
     "scrape": "python scripts/scrape_all_provinces.py",
@@ -41,6 +42,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@types/web-push": "^3.6.4",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "@vitejs/plugin-react": "^6.1.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
@@ -49,7 +51,7 @@
     "postcss": "^8.5.2",
     "supabase": "^2.118.0",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vitest": "^5.0.3"
   }
 }
