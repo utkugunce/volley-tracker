@@ -47,6 +47,9 @@ const nextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
   images: {
+    // Vercel ücretsiz plan görsel optimizasyonu kotasını korumak için logolar optimize edilmeden doğrudan servis edilir.
+    // remotePatterns korunur; next/image yine de volleybox alan adlarını doğrular.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
