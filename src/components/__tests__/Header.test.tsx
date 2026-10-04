@@ -215,4 +215,38 @@ describe("Header Component", () => {
 
     expect(screen.getByText(/Fikstür ve sonuçlar güncellendi/)).toHaveTextContent("03:00");
   });
+
+  it("places the TAKVİM link right after GRUP DURUMU and points it to /takvim", () => {
+    render(
+      <Header
+        totalMatches={10}
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="home"
+        onSelectTab={vi.fn()}
+      />
+    );
+    const groupTab = screen.getByText("GRUP DURUMU").closest("button")!;
+    const calendarLink = screen.getByRole("link", { name: "TAKVİM" });
+    expect(calendarLink).toHaveAttribute("href", "/takvim");
+    expect(calendarLink).not.toHaveAttribute("aria-current");
+    expect(groupTab.nextElementSibling).toBe(calendarLink);
+  });
+
+  it("marks TAKVİM as the current page and hides the fixture/results counts when they are omitted", () => {
+    render(
+      <Header
+        favoritesCount={0}
+        showOnlyFavorites={false}
+        onToggleFavoritesOnly={vi.fn()}
+        activeTab="calendar"
+        onSelectTab={vi.fn()}
+      />
+    );
+    expect(screen.getByRole("link", { name: "TAKVİM" })).toHaveAttribute("aria-current", "page");
+    const fixtures = screen.getByText("FİKSTÜR").closest("button")!;
+    expect(fixtures).toHaveTextContent(/^FİKSTÜR$/);
+    expect(screen.getByText("SONUÇLAR").closest("button")!).toHaveTextContent(/^SONUÇLAR$/);
+  });
 });
