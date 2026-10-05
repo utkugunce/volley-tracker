@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T17:00:19.320417",
+  "updated_at": "2026-10-05T21:14:48.549474",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -299,6 +299,17 @@
     "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği C Grubu": [
       {
         "rank": 1,
+        "team": "Nehir Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Parion Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -306,17 +317,6 @@
         "points": 5,
         "sets_won": 6,
         "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Nehir Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
         "form": []
       },
       {
@@ -333,12 +333,12 @@
       {
         "rank": 4,
         "team": "ÇOMÜ Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 6,
+        "sets_won": 2,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -1047,11 +1047,16 @@
       "match_no": "4",
       "home_team": "ÇOMÜ Spor Kulübü U16",
       "away_team": "Nehir Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-13",
+        "13-25",
+        "24-26",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402990",
@@ -1250,5 +1255,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-10-05T17:05:02.626191"
+  "volleybox_sync_updated_at": "2026-10-05T21:16:43.111287"
 }

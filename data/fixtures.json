@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-05T17:00:23.134743+03:00",
+  "updated_at": "2026-10-05T21:14:54.093315+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
-  "total_matches": 86,
+  "total_matches": 85,
   "source": "https://istanbul.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -1143,24 +1143,43 @@
     "Genç Kızlar 1. Ligi - 4. Bölge A Grubu": [
       {
         "rank": 1,
-        "team": "Ulus Spor Akademisi U18",
-        "played": 1,
-        "won": 1,
+        "team": "SET Voleybol Kulübü U18",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 24,
-        "point_ratio": "3.125",
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "set_ratio": "3.000",
+        "points_won": 185,
+        "points_lost": 148,
+        "point_ratio": "1.250",
         "form": [
+          "W",
           "W"
         ]
       },
       {
         "rank": 2,
-        "team": "SET Voleybol Kulübü U18",
+        "team": "Ulus Spor Akademisi U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
+        "set_ratio": "1.667",
+        "points_won": 174,
+        "points_lost": 134,
+        "point_ratio": "1.299",
+        "form": [
+          "W",
+          "L"
+        ]
+      },
+      {
+        "rank": 3,
+        "team": "Sultangazi Olimpik Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1169,31 +1188,50 @@
         "sets_lost": 0,
         "set_ratio": "MAX",
         "points_won": 75,
-        "points_lost": 49,
-        "point_ratio": "1.531",
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 3,
-        "team": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "set_ratio": "1.500",
-        "points_won": 105,
-        "points_lost": 95,
-        "point_ratio": "1.105",
+        "points_lost": 40,
+        "point_ratio": "1.875",
         "form": [
           "W"
         ]
       },
       {
         "rank": 4,
+        "team": "Avcılar Demirorduspor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
+        "set_ratio": "0.750",
+        "points_won": 143,
+        "points_lost": 149,
+        "point_ratio": "0.960",
+        "form": [
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
+        "team": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 2,
+        "sets_won": 4,
+        "sets_lost": 5,
+        "set_ratio": "0.800",
+        "points_won": 179,
+        "points_lost": 189,
+        "point_ratio": "0.947",
+        "form": [
+          "W",
+          "L"
+        ]
+      },
+      {
+        "rank": 6,
         "team": "Bahçelievler Belediyespor ll U18",
         "played": 1,
         "won": 0,
@@ -1210,53 +1248,22 @@
         ]
       },
       {
-        "rank": 5,
-        "team": "Avcılar Demirorduspor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "set_ratio": "MIN",
-        "points_won": 49,
-        "points_lost": 75,
-        "point_ratio": "0.653",
-        "form": [
-          "L"
-        ]
-      },
-      {
-        "rank": 6,
-        "team": "Küçükçekmece Voleybol Kulübü - B U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "set_ratio": "MIN",
-        "points_won": 24,
-        "points_lost": 75,
-        "point_ratio": "0.320",
-        "form": [
-          "L"
-        ]
-      },
-      {
         "rank": 7,
-        "team": "Sultangazi Olimpik Spor Kulübü U18",
-        "played": 0,
+        "team": "Küçükçekmece Voleybol Kulübü - B U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "sets_lost": 6,
+        "set_ratio": "MIN",
+        "points_won": 64,
+        "points_lost": 150,
+        "point_ratio": "0.427",
+        "form": [
+          "L",
+          "L"
+        ]
       }
     ],
     "Genç Kızlar 1. Ligi - 4. Bölge B Grubu": [
@@ -1398,6 +1405,40 @@
       },
       {
         "rank": 3,
+        "team": "Küçükçekmece Voleybol Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "set_ratio": "1.500",
+        "points_won": 106,
+        "points_lost": 91,
+        "point_ratio": "1.165",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
+        "team": "Bahçelievler Voleybol Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "set_ratio": "0.667",
+        "points_won": 91,
+        "points_lost": 106,
+        "point_ratio": "0.858",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 5,
         "team": "Kovan Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -1414,7 +1455,7 @@
         ]
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Real Elite Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -1429,36 +1470,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 5,
-        "team": "Bahçelievler Voleybol Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Küçükçekmece Voleybol Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - 5. Bölge": [
@@ -1482,6 +1493,24 @@
       },
       {
         "rank": 2,
+        "team": "Kuzey Işıkları SK U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
+        "set_ratio": "6.000",
+        "points_won": 171,
+        "points_lost": 125,
+        "point_ratio": "1.368",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Bağcılar Evren",
         "played": 2,
         "won": 2,
@@ -1499,41 +1528,7 @@
         ]
       },
       {
-        "rank": 3,
-        "team": "Kuzey Işıkları SK U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "set_ratio": "3.000",
-        "points_won": 96,
-        "points_lost": 80,
-        "point_ratio": "1.200",
-        "form": [
-          "W"
-        ]
-      },
-      {
         "rank": 4,
-        "team": "Beylikdüzü Beykent",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "set_ratio": "3.000",
-        "points_won": 100,
-        "points_lost": 87,
-        "point_ratio": "1.149",
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 5,
         "team": "Konak",
         "played": 2,
         "won": 1,
@@ -1548,6 +1543,24 @@
         "form": [
           "W",
           "L"
+        ]
+      },
+      {
+        "rank": 5,
+        "team": "İTÜ Geliştirme Vakfı Okulları SK U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "set_ratio": "1.000",
+        "points_won": 132,
+        "points_lost": 135,
+        "point_ratio": "0.978",
+        "form": [
+          "L",
+          "W"
         ]
       },
       {
@@ -1570,6 +1583,24 @@
       },
       {
         "rank": 7,
+        "team": "Beylikdüzü Beykent",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
+        "set_ratio": "0.750",
+        "points_won": 160,
+        "points_lost": 162,
+        "point_ratio": "0.988",
+        "form": [
+          "W",
+          "L"
+        ]
+      },
+      {
+        "rank": 8,
         "team": "Avcılar Yankı",
         "played": 2,
         "won": 0,
@@ -1583,23 +1614,6 @@
         "point_ratio": "0.839",
         "form": [
           "L",
-          "L"
-        ]
-      },
-      {
-        "rank": 8,
-        "team": "FMV Işık Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
-        "set_ratio": "0.333",
-        "points_won": 87,
-        "points_lost": 100,
-        "point_ratio": "0.870",
-        "form": [
           "L"
         ]
       },
@@ -1623,18 +1637,19 @@
       },
       {
         "rank": 10,
-        "team": "İTÜ Geliştirme Vakfı Okulları SK U18",
-        "played": 1,
+        "team": "FMV Işık Spor Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "set_ratio": "MIN",
-        "points_won": 57,
-        "points_lost": 75,
-        "point_ratio": "0.760",
+        "sets_won": 1,
+        "sets_lost": 6,
+        "set_ratio": "0.167",
+        "points_won": 132,
+        "points_lost": 175,
+        "point_ratio": "0.754",
         "form": [
+          "L",
           "L"
         ]
       }
@@ -2611,7 +2626,7 @@
       }
     },
     {
-      "id": "ist-20260914-057",
+      "id": "ist-20260914-056",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -2657,7 +2672,7 @@
       }
     },
     {
-      "id": "ist-20260914-058",
+      "id": "ist-20260914-057",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -2702,7 +2717,7 @@
       }
     },
     {
-      "id": "ist-20260914-077",
+      "id": "ist-20260914-076",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -2747,7 +2762,7 @@
       }
     },
     {
-      "id": "ist-20260914-059",
+      "id": "ist-20260914-058",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:00",
@@ -2792,7 +2807,7 @@
       }
     },
     {
-      "id": "ist-20260914-060",
+      "id": "ist-20260914-059",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
@@ -2837,7 +2852,7 @@
       }
     },
     {
-      "id": "ist-20260914-067",
+      "id": "ist-20260914-066",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
@@ -2884,7 +2899,7 @@
       }
     },
     {
-      "id": "ist-20260915-078",
+      "id": "ist-20260915-077",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "18:00",
@@ -2931,7 +2946,7 @@
       }
     },
     {
-      "id": "ist-20260915-079",
+      "id": "ist-20260915-078",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:00",
@@ -2976,7 +2991,7 @@
       }
     },
     {
-      "id": "ist-20260915-061",
+      "id": "ist-20260915-060",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:30",
@@ -3021,7 +3036,7 @@
       }
     },
     {
-      "id": "ist-20260915-068",
+      "id": "ist-20260915-067",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "20:30",
@@ -3066,7 +3081,7 @@
       }
     },
     {
-      "id": "ist-20260916-069",
+      "id": "ist-20260916-068",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
@@ -3111,7 +3126,7 @@
       }
     },
     {
-      "id": "ist-20260916-080",
+      "id": "ist-20260916-079",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
@@ -3156,7 +3171,7 @@
       }
     },
     {
-      "id": "ist-20260916-070",
+      "id": "ist-20260916-069",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "19:30",
@@ -3201,7 +3216,7 @@
       }
     },
     {
-      "id": "ist-20260917-047",
+      "id": "ist-20260917-046",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -3246,7 +3261,7 @@
       }
     },
     {
-      "id": "ist-20260917-048",
+      "id": "ist-20260917-047",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -3292,7 +3307,7 @@
       }
     },
     {
-      "id": "ist-20260917-071",
+      "id": "ist-20260917-070",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -3337,7 +3352,7 @@
       }
     },
     {
-      "id": "ist-20260917-049",
+      "id": "ist-20260917-048",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3384,7 +3399,7 @@
       }
     },
     {
-      "id": "ist-20260917-050",
+      "id": "ist-20260917-049",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3429,7 +3444,7 @@
       }
     },
     {
-      "id": "ist-20260917-051",
+      "id": "ist-20260917-050",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3475,7 +3490,7 @@
       }
     },
     {
-      "id": "ist-20260917-081",
+      "id": "ist-20260917-080",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -4343,7 +4358,7 @@
       }
     },
     {
-      "id": "ist-20260928-072",
+      "id": "ist-20260928-071",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "18:00",
@@ -4389,7 +4404,7 @@
       }
     },
     {
-      "id": "ist-20260928-073",
+      "id": "ist-20260928-072",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "18:00",
@@ -4434,7 +4449,7 @@
       }
     },
     {
-      "id": "ist-20260928-052",
+      "id": "ist-20260928-051",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "19:30",
@@ -4479,7 +4494,7 @@
       }
     },
     {
-      "id": "ist-20260928-074",
+      "id": "ist-20260928-073",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "19:30",
@@ -4524,7 +4539,7 @@
       }
     },
     {
-      "id": "ist-20260928-082",
+      "id": "ist-20260928-081",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "19:30",
@@ -4570,7 +4585,7 @@
       }
     },
     {
-      "id": "ist-20260929-062",
+      "id": "ist-20260929-061",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "18:00",
@@ -4615,7 +4630,7 @@
       }
     },
     {
-      "id": "ist-20260929-083",
+      "id": "ist-20260929-082",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "18:00",
@@ -4660,7 +4675,7 @@
       }
     },
     {
-      "id": "ist-20260929-063",
+      "id": "ist-20260929-062",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "19:30",
@@ -4705,7 +4720,7 @@
       }
     },
     {
-      "id": "ist-20260929-064",
+      "id": "ist-20260929-063",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "19:30",
@@ -4750,7 +4765,7 @@
       }
     },
     {
-      "id": "ist-20260929-084",
+      "id": "ist-20260929-083",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "19:30",
@@ -4796,7 +4811,7 @@
       }
     },
     {
-      "id": "ist-20260930-075",
+      "id": "ist-20260930-074",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "18:00",
@@ -4841,7 +4856,7 @@
       }
     },
     {
-      "id": "ist-20260930-085",
+      "id": "ist-20260930-084",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "18:00",
@@ -4887,7 +4902,7 @@
       }
     },
     {
-      "id": "ist-20260930-043",
+      "id": "ist-20260930-042",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "19:30",
@@ -4933,7 +4948,7 @@
       }
     },
     {
-      "id": "ist-20260930-065",
+      "id": "ist-20260930-064",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "19:30",
@@ -4978,7 +4993,7 @@
       }
     },
     {
-      "id": "ist-20261001-053",
+      "id": "ist-20261001-052",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "18:00",
@@ -5025,7 +5040,7 @@
       }
     },
     {
-      "id": "ist-20261001-086",
+      "id": "ist-20261001-085",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "18:00",
@@ -5070,7 +5085,7 @@
       }
     },
     {
-      "id": "ist-20261001-066",
+      "id": "ist-20261001-065",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "19:00",
@@ -5115,7 +5130,7 @@
       }
     },
     {
-      "id": "ist-20261001-054",
+      "id": "ist-20261001-053",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "19:30",
@@ -5160,7 +5175,7 @@
       }
     },
     {
-      "id": "ist-20261001-076",
+      "id": "ist-20261001-075",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "19:30",
@@ -5205,7 +5220,7 @@
       }
     },
     {
-      "id": "ist-20261003-044",
+      "id": "ist-20261003-043",
       "city": "İstanbul",
       "date": "2026-10-03",
       "time": "18:00",
@@ -5262,11 +5277,16 @@
       "match_no": "4",
       "home_team": "Avcılar Demirorduspor Kulübü U18",
       "away_team": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "19-25",
+        "25-11",
+        "25-15",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404276",
@@ -5291,7 +5311,7 @@
       }
     },
     {
-      "id": "ist-20261005-045",
+      "id": "ist-20261005-044",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "18:00",
@@ -5303,11 +5323,17 @@
       "match_no": "3",
       "home_team": "Bahçelievler Voleybol Kulübü U18",
       "away_team": "Küçükçekmece Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "14-25",
+        "25-23",
+        "25-18",
+        "8-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404281",
@@ -5332,7 +5358,7 @@
       }
     },
     {
-      "id": "ist-20261005-055",
+      "id": "ist-20261005-054",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "18:00",
@@ -5344,11 +5370,15 @@
       "match_no": "9",
       "home_team": "İTÜ Geliştirme Vakfı Okulları SK U18",
       "away_team": "Beylikdüzü Beykent",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-18",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404283",
@@ -5385,11 +5415,17 @@
       "match_no": "5",
       "home_team": "Ulus Spor Akademisi U18",
       "away_team": "SET Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "25-21",
+        "26-24",
+        "22-25",
+        "8-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404277",
@@ -5426,11 +5462,15 @@
       "match_no": "6",
       "home_team": "Sultangazi Olimpik Spor Kulübü U18",
       "away_team": "Küçükçekmece Voleybol Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-11",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404278",
@@ -5455,48 +5495,7 @@
       }
     },
     {
-      "id": "ist-20261005-041",
-      "city": "İstanbul",
-      "date": "2026-10-05",
-      "time": "19:30",
-      "hall": "Tozkoparan Spor Salonu",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "4. Bölge B Grubu",
-      "match_no": "5",
-      "home_team": "Yıldızlar Arena Spor Kulübü U18",
-      "away_team": "Avrupa Voleybol Gelişim Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "404279",
-        "url": "https://women.volleybox.net/tr/yldzlar-arena-spor-kulubu-u18-avrupa-voleybol-gelisim-spor-kulubu-u18-c404279",
-        "host_name": "Yıldızlar Arena Spor Kulübü U18",
-        "guest_name": "Avrupa Voleybol Gelişim Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-05",
-        "vb_time": "19:30",
-        "vb_hall": "Tozkoparan Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-05",
-          "vb_time": "19:30",
-          "vb_hall": "Tozkoparan Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "ist-20261005-056",
+      "id": "ist-20261005-055",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "19:30",
@@ -5508,11 +5507,15 @@
       "match_no": "10",
       "home_team": "FMV Işık Spor Kulübü U18",
       "away_team": "Kuzey Işıkları SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "11-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404284",
@@ -5824,7 +5827,7 @@
       }
     },
     {
-      "id": "ist-20261006-046",
+      "id": "ist-20261006-045",
       "city": "İstanbul",
       "date": "2026-10-06",
       "time": "19:30",
@@ -5947,7 +5950,7 @@
       }
     },
     {
-      "id": "ist-20261007-042",
+      "id": "ist-20261007-041",
       "city": "İstanbul",
       "date": "2026-10-07",
       "time": "18:00",
@@ -6029,6 +6032,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 86,
-  "volleybox_sync_updated_at": "2026-10-05T17:05:01.884037"
+  "volleybox_synced_matches": 85,
+  "volleybox_sync_updated_at": "2026-10-05T21:16:43.106571"
 }

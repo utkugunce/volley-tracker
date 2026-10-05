@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T17:00:29.937635",
+  "updated_at": "2026-10-05T21:15:04.387139",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -182,6 +182,17 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Çağdaş Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Tekirdağ Basket Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -192,40 +203,40 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Çağdaş Spor Kulübü U16",
+        "rank": 3,
+        "team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Çorlu Yıldırım Spor Kulübü - B U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Tekirdağ Marmara Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
+        "team": "Çorlu Yıldırım Spor Kulübü - B U16",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
+        "points": 2,
+        "sets_won": 4,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 5,
+        "team": "Tekirdağ Marmara Spor Kulübü U16",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Süleymanpaşa Spor Kulübü - B U16",
         "played": 1,
         "won": 0,
@@ -236,7 +247,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Muratlı Yıldız 2012 Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -244,17 +255,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -1228,11 +1228,15 @@
       "match_no": "4",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
       "away_team": "Tekirdağ Marmara Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-13",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403052",
@@ -1269,11 +1273,16 @@
       "match_no": "5",
       "home_team": "Çorlu Yıldırım Spor Kulübü - B U16",
       "away_team": "Çağdaş Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "12-25",
+        "25-20",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403053",
@@ -1816,5 +1825,5 @@
     }
   ],
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-10-05T17:05:05.532948"
+  "volleybox_sync_updated_at": "2026-10-05T21:16:43.130958"
 }
