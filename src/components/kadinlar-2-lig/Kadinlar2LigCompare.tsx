@@ -388,7 +388,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                     width={40}
                     height={40}
                     className="w-10 h-10 object-contain rounded-xl bg-white/5 p-1 shrink-0"
-                    unoptimized={team1.logo.startsWith("http")}
+                    unoptimized
                   />
                 ) : (
                   <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/50 text-ink-2 font-extrabold flex items-center justify-center text-sm shrink-0">
@@ -424,7 +424,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                     width={40}
                     height={40}
                     className="w-10 h-10 object-contain rounded-xl bg-white/5 p-1 shrink-0"
-                    unoptimized={team2.logo.startsWith("http")}
+                    unoptimized
                   />
                 ) : (
                   <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-700/50 text-cyan-300 font-extrabold flex items-center justify-center text-sm shrink-0">

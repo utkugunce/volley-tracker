@@ -2,16 +2,15 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DashboardClient } from "@/components/DashboardClient";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
-import { getCityNameFromSlug, isValidCitySlug, getAllCitiesList } from "@/utils/cityHelper";
+import { getCityNameFromSlug, isValidCitySlug } from "@/utils/cityHelper";
 import { slugify } from "@/utils/slugify";
 
-export const revalidate = 900; // 15 minutes ISR cache
+export const revalidate = 3600; // 1 hour ISR cache (Vercel kota)
 
 export function generateStaticParams() {
-  const cities = getAllCitiesList();
-  return cities
-    .filter((c) => (c.matches_count || 0) > 0)
-    .map((c) => ({ city: c.slug }));
+  // Yüksek kardinalite (il × sekme): derlemede ön-üretim ISR yazmalarını şişiriyor.
+  // On-demand ISR: ilk ziyarette üretilir, sonra revalidate süresince önbellekte kalır.
+  return [];
 }
 
 interface PageProps {

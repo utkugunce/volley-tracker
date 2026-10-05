@@ -7,7 +7,7 @@ import {
   getKadinlar2LigRoute,
 } from "@/utils/kadinlar2LigRoutes";
 
-export const revalidate = 300; // 5 minutes ISR cache
+export const revalidate = 1800; // 30 minutes ISR cache (Vercel kota)
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;

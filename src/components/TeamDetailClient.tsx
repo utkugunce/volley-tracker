@@ -271,7 +271,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                   priority
                   sizes="(min-width: 640px) 128px, 112px"
                   className="w-full h-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-105"
-                  unoptimized={logoSrc.startsWith("http")}
+                  unoptimized
                 />
               ) : (
                 <div className="w-full h-full rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center">

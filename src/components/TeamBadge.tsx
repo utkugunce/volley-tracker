@@ -118,7 +118,7 @@ export const TeamBadge: React.FC<TeamBadgeProps> = ({
           width={pxSize}
           height={pxSize}
           className="w-full h-full object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 hover:scale-110"
-          unoptimized={logoUrl.startsWith("http")}
+          unoptimized
           onError={() => setImgFailed(true)}
         />
       </div>
