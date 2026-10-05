@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-04T18:16:06.665212",
+  "updated_at": "2026-10-05T13:02:20.744777",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 6,
   "source": "https://sakarya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,7 +21,9 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "Akyazı Cevat Ayhan Ss",
+      "Lütfü Yaman1"
     ]
   },
   "standings": {
@@ -129,7 +131,212 @@
       }
     ]
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "sakarya-20261012-001",
+      "city": "Sakarya",
+      "date": "2026-10-12",
+      "time": "20:30",
+      "hall": "Akyazı Cevat Ayhan Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Gurubu",
+      "match_no": "1",
+      "home_team": "Alaağaçspor Kulübü",
+      "away_team": "Saraçhane 54 Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261015-002",
+      "city": "Sakarya",
+      "date": "2026-10-15",
+      "time": "18:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Gurubu",
+      "match_no": "2",
+      "home_team": "Serdivan Belediyesi Spor Kulübü",
+      "away_team": "Alaağaçspor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261015-003",
+      "city": "Sakarya",
+      "date": "2026-10-15",
+      "time": "20:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Gurubu",
+      "match_no": "3",
+      "home_team": "Saraçhane 54 Spor Kulübü",
+      "away_team": "Fener Akademi Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261013-004",
+      "city": "Sakarya",
+      "date": "2026-10-13",
+      "time": "18:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Gurubu",
+      "match_no": "1",
+      "home_team": "Sakarya Voleybol Spor Kulübü",
+      "away_team": "Sapanca Ayyıldız Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261013-005",
+      "city": "Sakarya",
+      "date": "2026-10-13",
+      "time": "20:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Gurubu",
+      "match_no": "2",
+      "home_team": "Sakarya Gelişim Spor Kulübü",
+      "away_team": "Asaş Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261016-006",
+      "city": "Sakarya",
+      "date": "2026-10-16",
+      "time": "18:30",
+      "hall": "Akyazı Cevat Ayhan Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Gurubu",
+      "match_no": "3",
+      "home_team": "Asaş Spor Kulübü",
+      "away_team": "Sakarya Voleybol Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-04T18:17:45.068699"
+  "volleybox_sync_updated_at": "2026-10-05T13:04:08.295414"
 }
