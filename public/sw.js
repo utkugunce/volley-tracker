@@ -3,7 +3,21 @@ const CACHE_NAME = "altyapi-voleybol-v5";
 // Son görülen fikstür/il verisi ayrı bir önbellekte tutulur (çevrimdışıyken gösterilir).
 const DATA_CACHE_NAME = "altyapi-voleybol-data-v1";
 const DATA_CACHE_MAX_ENTRIES = 40;
+const STATIC_CACHE_MAX_ENTRIES = 60;
 const OFFLINE_URL = "/offline.html";
+
+// Önbellek boyutunu sınırlamak için en eski kayıtları temizler
+async function trimCache(cacheName, maxEntries) {
+  try {
+    const cache = await caches.open(cacheName);
+    const keys = await cache.keys();
+    for (let i = 0; i < keys.length - maxEntries; i++) {
+      await cache.delete(keys[i]);
+    }
+  } catch {
+    // ignore
+  }
+}
 // Yalnızca herkese açık, salt okunur veri uçları önbelleğe alınır. Bildirim, kimlik doğrulama,
 // yönetim ve senkronizasyon uçları (/api/notifications, /api/auth, /api/admin, /api/sync) asla.
 const CACHEABLE_API_PATHS = ["/api/fixtures", "/api/cities"];
@@ -102,6 +116,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // (-) Harici etki alanları (Google Analytics, Vercel Insights, CDN'ler vb.)
+  // Asla SW tarafından ele alınmaz, doğrudan ağa bırakılır (Opera AdBlocker engellemeleriyle çatışmaz).
+  if (url.origin !== self.location.origin) {
+    return;
+  }
+
   // (-) Oturumlu sayfalar: tarayıcıya bırak (önbellek yok).
   if (BYPASS_PATH_PREFIXES.some((prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`))) {
     return;
@@ -180,8 +200,9 @@ self.addEventListener("fetch", (event) => {
         .then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
             const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseToCache);
+            caches.open(CACHE_NAME).then(async (cache) => {
+              await cache.put(request, responseToCache);
+              trimCache(CACHE_NAME, STATIC_CACHE_MAX_ENTRIES);
             });
           }
           return networkResponse;

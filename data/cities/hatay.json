@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T13:22:12.830732",
+  "updated_at": "2026-10-05T17:00:20.207084",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -1236,8 +1236,8 @@
         "url": "https://women.volleybox.net/tr/skenderun-12-dev-adam-spor-kulubu-u18-skenderun-tan-spor-kulubu-u18-c401088",
         "host_name": "İskenderun 12 Dev Adam Spor Kulübü U18",
         "guest_name": "İskenderun Tan Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-03",
         "vb_time": "16:00",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
@@ -1282,8 +1282,8 @@
         "url": "https://women.volleybox.net/tr/mas-smac-spor-kulubu-u18-skenderun-yurdum-spor-u18-c401089",
         "host_name": "Mas Smaç Spor Kulübü U18",
         "guest_name": "İskenderun Yurdum Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-03",
         "vb_time": "17:30",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
@@ -2531,5 +2531,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-05T13:26:29.854072"
+  "volleybox_sync_updated_at": "2026-10-05T17:05:03.311895"
 }

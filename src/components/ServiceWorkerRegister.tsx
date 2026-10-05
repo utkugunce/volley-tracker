@@ -14,10 +14,22 @@ export function ServiceWorkerRegister() {
         ("message" in event ? (event as ErrorEvent).message : "") ||
         "";
 
+      // Opera yerleşik reklam / izleyici engelleyicisi ve üçüncü parti uzantılar
+      // chunk hatası değildir; sayfayı yeniden yükleme döngüsüne sokmamalıdır.
+      const lower = message.toLowerCase();
+      const isBlockedByAdBlocker =
+        lower.includes("gtag") ||
+        lower.includes("analytics") ||
+        lower.includes("google-analytics") ||
+        lower.includes("speed-insights") ||
+        lower.includes("err_blocked_by_client") ||
+        lower.includes("extension");
+
       const isChunkError =
-        message.includes("ChunkLoadError") ||
-        message.includes("Loading chunk") ||
-        message.includes("Refused to execute script");
+        !isBlockedByAdBlocker &&
+        (message.includes("ChunkLoadError") ||
+          message.includes("Loading chunk") ||
+          (message.includes("Refused to execute script") && message.includes("/_next/static/")));
 
       if (isChunkError && typeof window !== "undefined") {
         const key = "chunk_load_failed_reload";
@@ -43,9 +55,15 @@ export function ServiceWorkerRegister() {
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
       let refreshing = false;
       navigator.serviceWorker.addEventListener("controllerchange", () => {
-        if (!refreshing) {
-          refreshing = true;
-          window.location.reload();
+        if (!refreshing && navigator.serviceWorker.controller) {
+          const key = "sw_controller_reload";
+          const lastReload = sessionStorage.getItem(key);
+          const now = Date.now();
+          if (!lastReload || now - parseInt(lastReload, 10) > 15000) {
+            sessionStorage.setItem(key, now.toString());
+            refreshing = true;
+            window.location.reload();
+          }
         }
       });
 

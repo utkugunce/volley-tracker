@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T13:22:12.918843",
+  "updated_at": "2026-10-05T17:00:21.360043",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -946,8 +946,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-yldz-spor-kulubu-u18-anadolu-kolej-spor-kulubu-u18-c401384",
         "host_name": "Eskişehir Yıldız Spor Kulübü U18",
         "guest_name": "Anadolu Kolej Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "20:00",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -1381,8 +1381,8 @@
         "url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-u16-eskisehir-ata-spor-kulubu-b-u16-c402168",
         "host_name": "Şehir Koleji Eğitim Kültür SK U16",
         "guest_name": "Eskişehir Ata Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -1428,8 +1428,8 @@
         "url": "https://women.volleybox.net/tr/esnova-spor-kulubu-u16-eskisehir-turk-telekom-spor-kulubu-u16-c401392",
         "host_name": "Esnova Spor Kulübü U16",
         "guest_name": "Eskişehir Türk Telekom Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "18:30",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
@@ -1646,8 +1646,8 @@
         "url": "https://women.volleybox.net/tr/eskisehir-ata-spor-kulubu-u16-es-gunes-spor-kulubu-u16-c401394",
         "host_name": "Eskişehir Ata Spor Kulübü U16",
         "guest_name": "Es Güneş Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -2089,5 +2089,5 @@
     }
   ],
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-10-05T13:26:29.360865"
+  "volleybox_sync_updated_at": "2026-10-05T17:05:02.817597"
 }

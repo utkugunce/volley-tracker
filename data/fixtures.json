@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T13:22:15.638645+03:00",
+  "updated_at": "2026-10-05T17:00:23.134743+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -5232,8 +5232,8 @@
         "url": "https://women.volleybox.net/tr/atakent-elit-spor-kulubu-u18-real-elite-spor-kulubu-u18-c402170",
         "host_name": "Atakent Elit Spor Kulübü U18",
         "guest_name": "Real Elite Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-03",
         "vb_time": "18:00",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
@@ -6030,5 +6030,5 @@
     }
   ],
   "volleybox_synced_matches": 86,
-  "volleybox_sync_updated_at": "2026-10-05T13:26:28.296100"
+  "volleybox_sync_updated_at": "2026-10-05T17:05:01.884037"
 }

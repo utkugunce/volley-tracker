@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T13:22:07.541860",
+  "updated_at": "2026-10-05T17:00:16.554818",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -1017,8 +1017,8 @@
         "url": "https://women.volleybox.net/tr/mg-spor-kulubu-u16-guner-karakaya-spor-kulubu-u16-c401040",
         "host_name": "MG Spor Kulübü U16",
         "guest_name": "Güner Karakaya Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "18:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -1288,8 +1288,8 @@
         "url": "https://women.volleybox.net/tr/hekimoglu-gct-bursa-voleybol-kulubu-u16-oksijen-spor-kulubu-u16-c404253",
         "host_name": "Hk Volleyball Academy Spor Kulübü U16",
         "guest_name": "Oksijen Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-04",
         "vb_time": "19:30",
         "vb_hall": "Mudanya Spor Salonu",
@@ -1489,5 +1489,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-05T13:26:29.085071"
+  "volleybox_sync_updated_at": "2026-10-05T17:05:02.569247"
 }

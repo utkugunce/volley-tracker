@@ -31,9 +31,14 @@ export const AppShell: React.FC<AppShellProps> = ({
     const root = rootRef.current;
     if (!el) return;
 
+    let lastHeight = 0;
     const apply = () => {
-      setHeaderHeight(el.offsetHeight);
-      root?.style.setProperty("--app-header-h", `${el.offsetHeight}px`);
+      const h = el.offsetHeight;
+      if (h > 0 && h !== lastHeight) {
+        lastHeight = h;
+        setHeaderHeight((prev) => (prev !== h ? h : prev));
+        root?.style.setProperty("--app-header-h", `${h}px`);
+      }
     };
 
     apply();

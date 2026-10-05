@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T16:20:55.824873",
+  "updated_at": "2026-10-05T17:00:13.578491",
   "city": "Bilecik",
   "slug": "bilecik",
   "title": "TVF Bilecik Genç & Yıldız Kızlar Süper Lig",
@@ -161,7 +161,7 @@
       "id": "bilecik-20261024-003",
       "city": "Bilecik",
       "date": "2026-10-24",
-      "time": "13:00",
+      "time": "11:00",
       "hall": "İstasyon Spor Salonu",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -771,5 +771,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-05T13:26:29.047758"
+  "volleybox_sync_updated_at": "2026-10-05T17:05:02.536083"
 }

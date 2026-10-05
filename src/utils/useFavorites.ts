@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import { slugify } from "./slugify";
 
 const STORAGE_KEY = "volley_favorite_teams";
 const EVENT_NAME = "volley-favorites-changed";
+const EMPTY_ARRAY: string[] = [];
 
 /**
  * Normalizes a team name for consistent favorite lookup (lowercase slugified).
@@ -17,60 +18,82 @@ export function normalizeFavoriteKey(teamName: string): string {
  * Reads favorites safely from localStorage.
  */
 export function getStoredFavorites(): string[] {
-  if (typeof window === "undefined") return [];
+  if (typeof window === "undefined") return EMPTY_ARRAY;
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
+    if (!raw) return EMPTY_ARRAY;
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    return Array.isArray(parsed) ? parsed : EMPTY_ARRAY;
   } catch {
-    return [];
+    return EMPTY_ARRAY;
   }
 }
 
+// Module-level singleton store: memory cache & centralized subscriber set
+let cachedFavorites: string[] = [];
+let isStoreInitialized = false;
+const listeners = new Set<() => void>();
+let globalListenersRegistered = false;
+
+function ensureGlobalListeners() {
+  if (typeof window === "undefined" || globalListenersRegistered) return;
+  globalListenersRegistered = true;
+
+  const handleUpdate = () => {
+    cachedFavorites = getStoredFavorites();
+    listeners.forEach((listener) => listener());
+  };
+
+  const handleStorage = (e: StorageEvent) => {
+    if (e.key === STORAGE_KEY) {
+      handleUpdate();
+    }
+  };
+
+  window.addEventListener(EVENT_NAME, handleUpdate);
+  window.addEventListener("storage", handleStorage);
+}
+
+function getSnapshot(): string[] {
+  if (typeof window === "undefined") return EMPTY_ARRAY;
+  if (!isStoreInitialized) {
+    cachedFavorites = getStoredFavorites();
+    isStoreInitialized = true;
+  }
+  return cachedFavorites;
+}
+
+const getServerSnapshot = (): string[] => EMPTY_ARRAY;
+
+function subscribe(callback: () => void) {
+  listeners.add(callback);
+  ensureGlobalListeners();
+  return () => {
+    listeners.delete(callback);
+  };
+}
+
+function updateStoredFavorites(newList: string[]) {
+  cachedFavorites = newList;
+  isStoreInitialized = true;
+  if (typeof window !== "undefined") {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(newList));
+      window.dispatchEvent(new Event(EVENT_NAME));
+    } catch (err) {
+      console.warn("Could not save favorite teams to localStorage:", err);
+    }
+  }
+  listeners.forEach((listener) => listener());
+}
+
 /**
- * Custom React hook to manage favorite teams in localStorage.
- * Automatically synchronizes across tabs and reactive components on the same page.
+ * Custom React hook to manage favorite teams in localStorage using useSyncExternalStore.
+ * Single centralized event listener across all components on the page, preventing
+ * memory leaks and excessive localStorage queries.
  */
 export function useFavorites() {
-  const [favoriteTeams, setFavoriteTeams] = useState<string[]>([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Sync state from localStorage on mount and whenever the event fires
-  const syncFromStorage = useCallback(() => {
-    const list = getStoredFavorites();
-    setFavoriteTeams(list);
-    setIsLoaded(true);
-  }, []);
-
-  useEffect(() => {
-    syncFromStorage();
-
-    const handleCustomChange = () => syncFromStorage();
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === STORAGE_KEY) syncFromStorage();
-    };
-
-    window.addEventListener(EVENT_NAME, handleCustomChange);
-    window.addEventListener("storage", handleStorageChange);
-
-    return () => {
-      window.removeEventListener(EVENT_NAME, handleCustomChange);
-      window.removeEventListener("storage", handleStorageChange);
-    };
-  }, [syncFromStorage]);
-
-  const saveFavorites = useCallback((newList: string[]) => {
-    setFavoriteTeams(newList);
-    if (typeof window !== "undefined") {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(newList));
-        window.dispatchEvent(new Event(EVENT_NAME));
-      } catch (err) {
-        console.warn("Could not save favorite teams to localStorage:", err);
-      }
-    }
-  }, []);
+  const favoriteTeams = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const isFavorite = useCallback(
     (teamName: string): boolean => {
@@ -93,28 +116,28 @@ export function useFavorites() {
       } else {
         updated = [...favoriteTeams, teamName.trim()];
       }
-      saveFavorites(updated);
+      updateStoredFavorites(updated);
     },
-    [favoriteTeams, saveFavorites]
+    [favoriteTeams]
   );
 
   const addFavorite = useCallback(
     (teamName: string) => {
       if (!teamName || !teamName.trim()) return;
       if (!isFavorite(teamName)) {
-        saveFavorites([...favoriteTeams, teamName.trim()]);
+        updateStoredFavorites([...favoriteTeams, teamName.trim()]);
       }
     },
-    [favoriteTeams, isFavorite, saveFavorites]
+    [favoriteTeams, isFavorite]
   );
 
   const removeFavorite = useCallback(
     (teamName: string) => {
       if (!teamName) return;
       const key = normalizeFavoriteKey(teamName);
-      saveFavorites(favoriteTeams.filter((fav) => normalizeFavoriteKey(fav) !== key));
+      updateStoredFavorites(favoriteTeams.filter((fav) => normalizeFavoriteKey(fav) !== key));
     },
-    [favoriteTeams, saveFavorites]
+    [favoriteTeams]
   );
 
   return {
@@ -123,7 +146,7 @@ export function useFavorites() {
     toggleFavorite,
     addFavorite,
     removeFavorite,
-    isLoaded,
+    isLoaded: true,
     count: favoriteTeams.length,
   };
 }

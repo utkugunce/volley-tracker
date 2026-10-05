@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Manrope, Space_Grotesk } from "next/font/google";
 import "@/theme/theme-vars.css";
 import "./globals.css";
@@ -7,7 +6,6 @@ import { THEME_INIT_SCRIPT } from "@/theme/theme";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { OfflineBanner } from "@/components/OfflineBanner";
 import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
@@ -85,20 +83,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-canvas text-ink font-sans antialiased selection:bg-selected-strong selection:text-white">
         {children}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-S5FYXCW2LC"
-          strategy="lazyOnload"
-        />
-        {/* gtag.js (157 KB) sayfa yüklendikten sonra çekilir; dataLayer kuyruğu satır içi betikle hemen kurulur,
-            böylece config/page_view olayları kaybolmaz ve kütüphane yüklenince işlenir. */}
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){window.dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-S5FYXCW2LC');`}
-        </Script>
         <Analytics />
-        <SpeedInsights />
         <ServiceWorkerRegister />
         <OfflineBanner />
       </body>

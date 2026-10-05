@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T13:22:11.566393",
+  "updated_at": "2026-10-05T17:00:19.030676",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -730,8 +730,8 @@
         "url": "https://women.volleybox.net/tr/antalya-1907-spor-kulubu-u18-gazipasa-genclerbirligi-spor-kulubu-u18-c401379",
         "host_name": "Antalya 1907 Spor Kulübü U18",
         "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-04",
         "vb_time": "12:30",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -1173,8 +1173,8 @@
         "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u18-erse-spor-kulubu-u18-c401380",
         "host_name": "Nova Spor Kulübü U18",
         "guest_name": "Erse Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-10-04",
         "vb_time": "11:00",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -2588,5 +2588,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-10-05T13:26:29.028881"
+  "volleybox_sync_updated_at": "2026-10-05T17:05:02.521165"
 }

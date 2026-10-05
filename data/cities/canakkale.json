@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T13:22:09.660819",
+  "updated_at": "2026-10-05T17:00:19.320417",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -510,8 +510,8 @@
         "url": "https://women.volleybox.net/tr/kepez-spor-kulubu-u16-biga-ada-spor-u16-c402981",
         "host_name": "Kepez Spor Kulübü U16",
         "guest_name": "Biga Ada Spor U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-03",
         "vb_time": "15:00",
         "vb_hall": "18 Mart Spor Salonu",
@@ -797,8 +797,8 @@
         "url": "https://women.volleybox.net/tr/yesil-bayramic-sk-u16-eceabat-spor-kulubu-u16-c402984",
         "host_name": "Yeşil Bayramiç SK U16",
         "guest_name": "Eceabat Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-04",
         "vb_time": "14:00",
         "vb_hall": "Bayramiç Spor Salonu",
@@ -1017,8 +1017,8 @@
         "url": "https://women.volleybox.net/tr/parion-spor-kulubu-u16-canakkale-onsekiz-mart-universitesi-spor-kulubu-u16-c402989",
         "host_name": "Parion Spor Kulübü U16",
         "guest_name": "ÇOMÜ Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-03",
         "vb_time": "11:00",
         "vb_hall": "18 Mart Spor Salonu",
@@ -1250,5 +1250,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-10-05T13:26:29.163371"
+  "volleybox_sync_updated_at": "2026-10-05T17:05:02.626191"
 }
