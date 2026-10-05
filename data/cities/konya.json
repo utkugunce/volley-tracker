@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T18:16:06.726080",
+  "updated_at": "2026-10-05T05:57:13.997756",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -158,6 +158,17 @@
     "Genç Kızlar Süper Lig - - D Grubu": [
       {
         "rank": 1,
+        "team": "Diltaş Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Falcon Atletik Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -168,7 +179,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Konya Armada Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -179,25 +190,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Diltaş Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Seydişehir Cimnastik Spor U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -667,11 +667,15 @@
       "match_no": "2",
       "home_team": "Seydişehir Cimnastik Spor U18",
       "away_team": "Diltaş Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "18-25",
+        "27-29"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404296",
@@ -697,5 +701,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-04T18:17:45.051120"
+  "volleybox_sync_updated_at": "2026-10-05T05:58:49.177788"
 }
