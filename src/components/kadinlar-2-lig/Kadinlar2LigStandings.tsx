@@ -214,7 +214,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                                       width={24}
                                       height={24}
                                       className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                                      unoptimized={logoSrc.startsWith("http")}
+                                      unoptimized
                                       onError={(e) => {
                                         (e.currentTarget as HTMLImageElement).style.display = "none";
                                       }}

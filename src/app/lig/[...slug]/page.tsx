@@ -1,13 +1,9 @@
 import { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import fs from "fs";
-import path from "path";
 import { getLeagueData } from "@/utils/leagueData";
 import { LeagueHubClient } from "@/components/league/LeagueHubClient";
-import { slugify } from "@/utils/slugify";
-import { isCityHidden } from "@/utils/cityHelper";
 
-export const revalidate = 300; // 5 minutes ISR cache
+export const revalidate = 1800; // 30 minutes ISR cache (Vercel kota)
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -62,36 +58,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export function generateStaticParams() {
-  const params: { slug: string[] }[] = [];
-
-  try {
-    const citiesDir = path.join(process.cwd(), "data", "cities");
-    if (fs.existsSync(citiesDir)) {
-      const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
-      for (const file of files) {
-        const fileSlug = file.replace(".json", "");
-        if (isCityHidden(fileSlug)) continue;
-        try {
-          const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
-          const parsed = JSON.parse(content);
-          const citySlug = slugify(parsed.city || fileSlug);
-          if (isCityHidden(citySlug)) continue;
-          const categories: string[] = parsed.filters?.categories || [];
-
-          for (const cat of categories) {
-            if (cat !== "Tümü") {
-              params.push({ slug: [citySlug, slugify(cat)] });
-            }
-          }
-        } catch {}
-      }
-    }
-  } catch {}
-
-  // 2. Lig için statik parametre
-  params.push({ slug: ["kadinlar-2-ligi"] });
-
-  return params;
+  // ~80+ il×kategori yolu derlemede ön-üretiliyordu; on-demand ISR'a geçildi (Vercel kota).
+  return [];
 }
 
 export default async function LeagueSlugPage({ params }: PageProps) {

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 300; // 5 minutes ISR cache
+export const revalidate = 1800; // 30 minutes ISR cache (Vercel kota)
 
 export default function Kadinlar2LigPage() {
   const data = getKadinlar2LigData();

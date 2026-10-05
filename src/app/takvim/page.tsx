@@ -7,11 +7,11 @@ import { toCalendarMatch } from "@/utils/takvimData";
 import type { CalendarMatch } from "@/utils/takvim";
 
 /**
- * Vodafone Sultanlar Ligi takvimi. Sayfa istek başına üretilmez: ISR ile 30 dakikada bir yenilenir
+ * Vodafone Sultanlar Ligi takvimi. Sayfa istek başına üretilmez: ISR ile 1 saatte bir yenilenir
  * (Vercel yazma kotası). Veri, .ics akışlarıyla aynı TVF okuyucusundan gelir; "bugün" ve seçili gün
  * tarayıcıda hesaplanır, bu yüzden sunucu çıktısı kişiye/zamana göre değişmez.
  */
-export const revalidate = 1800;
+export const revalidate = 3600; // 1 hour ISR cache (Vercel kota)
 
 export function generateMetadata(): Metadata {
   const title = "Vodafone Sultanlar Ligi Takvimi — Altyapı Voleybol";

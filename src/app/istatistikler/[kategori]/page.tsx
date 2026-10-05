@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { buildStatsMetadata, getStatsStaticParams, StatsPageView } from "../stats-page";
 
-// Kategori sayfaları (Genç Kızlar Süper Lig vb.) derleme sırasında üretilir, 10 dk'da bir yenilenir.
-export const revalidate = 1800; // 30 minutes ISR cache
+// Kategori sayfaları (Genç Kızlar Süper Lig vb.) derleme sırasında üretilir, 1 saatte bir yenilenir.
+export const revalidate = 3600; // 1 hour ISR cache (Vercel kota)
 
 export function generateStaticParams() {
   return getStatsStaticParams();

@@ -102,7 +102,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                         width={32}
                         height={32}
                         className="w-8 h-8 object-contain rounded-lg shrink-0 bg-white/5 p-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                        unoptimized={logoSrc.startsWith("http")}
+                        unoptimized
                         onError={(e) => {
                           (e.currentTarget as HTMLImageElement).style.display = "none";
                         }}

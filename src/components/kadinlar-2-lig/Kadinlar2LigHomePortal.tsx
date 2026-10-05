@@ -355,7 +355,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                                   width={22}
                                   height={22}
                                   className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded bg-white/5 p-0.5"
-                                  unoptimized={m.takim_a_logo.startsWith("http")}
+                                  unoptimized
                                   onError={(e) => {
                                     (e.currentTarget as HTMLImageElement).style.display = "none";
                                   }}
@@ -411,7 +411,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                                   width={22}
                                   height={22}
                                   className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded bg-white/5 p-0.5"
-                                  unoptimized={m.takim_b_logo.startsWith("http")}
+                                  unoptimized
                                   onError={(e) => {
                                     (e.currentTarget as HTMLImageElement).style.display = "none";
                                   }}
@@ -497,7 +497,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                             width={16}
                             height={16}
                             className="w-3.5 h-3.5 object-contain rounded shrink-0 bg-white/5 p-0.5"
-                            unoptimized={grp.leader.logo.startsWith("http")}
+                            unoptimized
                           />
                         )}
                         <span className="text-slate-200 truncate font-semibold text-[11px]">
@@ -521,7 +521,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                             width={16}
                             height={16}
                             className="w-3.5 h-3.5 object-contain rounded shrink-0 bg-white/5 p-0.5"
-                            unoptimized={grp.runnerUp.logo.startsWith("http")}
+                            unoptimized
                           />
                         )}
                         <span className="text-slate-300 truncate text-[11px]">

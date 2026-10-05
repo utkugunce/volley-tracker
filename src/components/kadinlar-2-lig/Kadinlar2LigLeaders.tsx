@@ -147,7 +147,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                                 width={18}
                                 height={18}
                                 className="w-4 h-4 object-contain rounded shrink-0 bg-white/5 p-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
-                                unoptimized={logoSrc.startsWith("http")}
+                                unoptimized
                                 onError={(e) => {
                                   (e.currentTarget as HTMLImageElement).style.display = "none";
                                 }}
