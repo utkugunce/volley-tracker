@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T08:53:19.375425",
+  "updated_at": "2026-10-05T13:22:21.295943",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -471,11 +471,11 @@
       }
     },
     {
-      "id": "tekirdag-20261008-004",
+      "id": "tekirdag-20261011-004",
       "city": "Tekirdağ",
-      "date": "2026-10-08",
-      "time": "19:00",
-      "hall": "Atatürk Ss",
+      "date": "2026-10-11",
+      "time": "--:--",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -500,14 +500,14 @@
         "vb_time": "19:00",
         "vb_hall": "Tekirdağ Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-08",
           "vb_time": "19:00",
           "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-11 / VB: 2026-10-08) | Salon Değişti (TVF: Açıklanacak / VB: Tekirdağ Atatürk Spor Salonu)"
         }
       }
     },
@@ -1408,5 +1408,5 @@
     }
   ],
   "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-10-04T08:54:53.430250"
+  "volleybox_sync_updated_at": "2026-10-05T13:26:32.060823"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T18:15:54.457527",
+  "updated_at": "2026-10-05T13:22:07.848361",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -708,8 +708,8 @@
         "url": "https://women.volleybox.net/tr/karayollar-spor-kulubu-u18-blue-wolves-spor-kulubu-u18-c401018",
         "host_name": "Karayolları Spor Kulübü U18",
         "guest_name": "Blue Wolves Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
@@ -753,8 +753,8 @@
         "url": "https://women.volleybox.net/tr/anadolu-birlik-spor-kulubu-u18-hakan-aksk-spor-kulubu-u18-c401019",
         "host_name": "Anadolu Birlik Spor Kulübü U18",
         "guest_name": "Hakan Akışık Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
@@ -1129,47 +1129,6 @@
       "gender": "Kız",
       "group": "2.Grup",
       "match_no": "7",
-      "home_team": "Çaba Spor Kulübü - A U18",
-      "away_team": "Başkent Arma Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "404227",
-        "url": "https://women.volleybox.net/tr/caba-spor-kulubu-u18-baskent-arma-spor-u18-c404227",
-        "host_name": "Çaba Spor Kulübü U18",
-        "guest_name": "Başkent Arma Spor U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-15",
-        "vb_time": "18:00",
-        "vb_hall": "Batıkent Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-15",
-          "vb_time": "18:00",
-          "vb_hall": "Batıkent Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "ankara-20261015-014",
-      "city": "Ankara",
-      "date": "2026-10-15",
-      "time": "19:30",
-      "hall": "Batıkent S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "2.Grup",
-      "match_no": "8",
       "home_team": "Yedidağ Spor Kulübü - A U18",
       "away_team": "Zeren Spor Kulübü U18",
       "score": "- : -",
@@ -1189,14 +1148,55 @@
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-15",
           "vb_time": "19:30",
           "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
+        }
+      }
+    },
+    {
+      "id": "ankara-20261015-014",
+      "city": "Ankara",
+      "date": "2026-10-15",
+      "time": "19:30",
+      "hall": "Batıkent S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "2.Grup",
+      "match_no": "8",
+      "home_team": "Çaba Spor Kulübü - A U18",
+      "away_team": "Başkent Arma Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "404227",
+        "url": "https://women.volleybox.net/tr/caba-spor-kulubu-u18-baskent-arma-spor-u18-c404227",
+        "host_name": "Çaba Spor Kulübü U18",
+        "guest_name": "Başkent Arma Spor U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-15",
+        "vb_time": "18:00",
+        "vb_hall": "Batıkent Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "18:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
         }
       }
     },
@@ -1473,6 +1473,47 @@
       "gender": "Kız",
       "group": "3.Grup",
       "match_no": "7",
+      "home_team": "TED Ankara Kolejliler U18",
+      "away_team": "SET UP Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "404230",
+        "url": "https://women.volleybox.net/tr/ted-ankara-kolejliler-u18-set-up-spor-kulubu-u18-c404230",
+        "host_name": "TED Ankara Kolejliler U18",
+        "guest_name": "SET UP Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-16",
+        "vb_time": "19:30",
+        "vb_hall": "Mamak Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "19:30",
+          "vb_hall": "Mamak Spor Salonu",
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
+        }
+      }
+    },
+    {
+      "id": "ankara-20261016-022",
+      "city": "Ankara",
+      "date": "2026-10-16",
+      "time": "19:30",
+      "hall": "Mamak S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "3.Grup",
+      "match_no": "8",
       "home_team": "Maç Akademi Spor Kulübü U18",
       "away_team": "TVF Spor Lisesi U18",
       "score": "- : -",
@@ -1494,53 +1535,12 @@
         "discrepancy": {
           "has_diff": true,
           "date_diff": true,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-15",
           "vb_time": "18:00",
           "vb_hall": "Mamak Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-16 / VB: 2026-10-15)"
-        }
-      }
-    },
-    {
-      "id": "ankara-20261016-022",
-      "city": "Ankara",
-      "date": "2026-10-16",
-      "time": "19:30",
-      "hall": "Mamak S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "3.Grup",
-      "match_no": "8",
-      "home_team": "TED Ankara Kolejliler U18",
-      "away_team": "SET UP Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "404230",
-        "url": "https://women.volleybox.net/tr/ted-ankara-kolejliler-u18-set-up-spor-kulubu-u18-c404230",
-        "host_name": "TED Ankara Kolejliler U18",
-        "guest_name": "SET UP Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-16",
-        "vb_time": "19:30",
-        "vb_hall": "Mamak Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-16",
-          "vb_time": "19:30",
-          "vb_hall": "Mamak Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-16 / VB: 2026-10-15) | Saat Değişti (TVF: 19:30 / VB: 18:00)"
         }
       }
     },
@@ -2629,7 +2629,7 @@
       "id": "ankara-20261014-048",
       "city": "Ankara",
       "date": "2026-10-14",
-      "time": "18:00",
+      "time": "19:30",
       "hall": "Batıkent S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -2655,14 +2655,14 @@
         "vb_time": "18:00",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-14",
           "vb_time": "18:00",
           "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
         }
       }
     },
@@ -3071,7 +3071,7 @@
       "id": "ankara-20261014-058",
       "city": "Ankara",
       "date": "2026-10-14",
-      "time": "19:30",
+      "time": "18:00",
       "hall": "Batıkent S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3097,14 +3097,14 @@
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-14",
           "vb_time": "19:30",
           "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
         }
       }
     },
@@ -3369,5 +3369,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-04T18:17:45.071387"
+  "volleybox_sync_updated_at": "2026-10-05T13:26:28.793620"
 }

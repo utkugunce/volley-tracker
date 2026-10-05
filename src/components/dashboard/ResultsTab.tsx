@@ -5,6 +5,7 @@ import { Virtuoso } from "react-virtuoso";
 import { Calendar } from "lucide-react";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import { FilterBar } from "@/components/FilterBar";
+import { ViewControlDropdown } from "@/components/ViewControlDropdown";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { CityGroupBanner } from "@/components/dashboard/CityGroupBanner";
 import { CollapseControlBar } from "@/components/dashboard/CollapseControlBar";
@@ -132,6 +133,21 @@ export const ResultsTab: React.FC<ResultsTabProps> = ({
           resultsSubTab={resultsSubTab}
           onSelectResultsSubTab={handleSelectResultsSubTab}
           yesterdayCount={yesterdayResultsCount}
+          viewControl={
+            resultsByCityAndLeague.length > 0 ? (
+              <ViewControlDropdown
+                hasCities={resultsByCityAndLeague.length > 1}
+                hasLeagues={allResultLeagueKeys.length > 0}
+                areCitiesCollapsed={cityCollapse.areAllCollapsed}
+                areLeaguesCollapsed={leagueCollapse.areAllCollapsed}
+                onExpandCities={cityCollapse.expandAll}
+                onCollapseCities={cityCollapse.collapseAll}
+                onExpandLeagues={leagueCollapse.expandAll}
+                onCollapseLeagues={leagueCollapse.collapseAll}
+                themeColor="emerald"
+              />
+            ) : undefined
+          }
         />
       )}
 

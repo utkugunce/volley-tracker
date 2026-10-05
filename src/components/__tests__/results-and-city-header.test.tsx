@@ -195,5 +195,34 @@ describe("Results and City Header enhancements", () => {
     fireEvent.change(dateInput, { target: { value: "2026-09-15" } });
     expect(handleSelectDate).toHaveBeenCalledWith("2026-09-15");
   });
+
+  it("FilterBar renders viewControl alongside the Filtreler button", () => {
+    render(
+      <FilterBar
+        categories={["Genç Kızlar Süper Lig"]}
+        selectedCategory="Tümü"
+        onSelectCategory={vi.fn()}
+        statusFilter="finished"
+        onSelectStatusFilter={vi.fn()}
+        counts={{ all: 10, upcoming: 0, finished: 10 }}
+        halls={["50. Yıl"]}
+        selectedHall="Tümü"
+        onSelectHall={vi.fn()}
+        searchQuery=""
+        onSearchChange={vi.fn()}
+        onReset={vi.fn()}
+        isFiltered={false}
+        viewControl={<button type="button" data-testid="custom-view-btn">Görünüm</button>}
+      />
+    );
+
+    const viewBtn = screen.getByTestId("custom-view-btn");
+    const filtersBtn = screen.getByRole("button", { name: /Filtreler/i });
+    expect(viewBtn).toBeInTheDocument();
+    expect(filtersBtn).toBeInTheDocument();
+
+    // Filtreler butonu ve Görünüm butonu aynı flex container içinde yer almalı
+    expect(viewBtn.parentElement).toBe(filtersBtn.parentElement);
+  });
 });
 

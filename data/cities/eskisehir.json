@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T13:32:53.632434",
+  "updated_at": "2026-10-05T13:22:12.918843",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -1142,7 +1142,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "- A Gr",
-      "match_no": "6",
+      "match_no": "8",
       "home_team": "Anadolu Kolej Spor Kulübü U16",
       "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
       "score": "- : -",
@@ -2089,5 +2089,5 @@
     }
   ],
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-10-03T13:34:46.536653"
+  "volleybox_sync_updated_at": "2026-10-05T13:26:29.360865"
 }

@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-05T00:16:23.626794+00:00",
+  "updated_at": "2026-10-05T13:22:26.745483+03:00",
   "total_cities": 81,
   "active_cities": 27,
-  "total_matches": 737,
+  "total_matches": 791,
   "cities": [
     {
       "ilid": "1",
@@ -351,8 +351,8 @@
       "name": "İzmir",
       "slug": "izmir",
       "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (126 Maç Mevcut)",
-      "matches_count": 126,
+      "status": "Aktif (134 Maç Mevcut)",
+      "matches_count": 134,
       "standings_count": 12,
       "data_file": "data/cities/izmir.json"
     },
@@ -411,8 +411,8 @@
       "name": "Kocaeli",
       "slug": "kocaeli",
       "url": "https://kocaeli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (14 Maç Mevcut)",
-      "matches_count": 14,
+      "status": "Aktif (24 Maç Mevcut)",
+      "matches_count": 24,
       "standings_count": 2,
       "data_file": "data/cities/kocaeli.json"
     },
@@ -541,8 +541,8 @@
       "name": "Sakarya",
       "slug": "sakarya",
       "url": "https://sakarya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (2 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (6 Maç Mevcut)",
+      "matches_count": 6,
       "standings_count": 2,
       "data_file": "data/cities/sakarya.json"
     },
@@ -771,9 +771,9 @@
       "name": "Yalova",
       "slug": "yalova",
       "url": "https://yalova.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (20 Maç Mevcut)",
-      "matches_count": 20,
-      "standings_count": 1,
+      "status": "Aktif (50 Maç Mevcut)",
+      "matches_count": 50,
+      "standings_count": 2,
       "data_file": "data/cities/yalova.json"
     },
     {

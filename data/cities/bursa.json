@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T21:41:19.460682",
+  "updated_at": "2026-10-05T13:22:07.541860",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -835,24 +835,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "404251",
-        "url": "https://women.volleybox.net/tr/doruk-voleybol-spor-kulubu-u18-metin-kucukkenar-frtna16-spor-kulubu-u18-c404251",
-        "host_name": "Doruk Voleybol Spor Kulübü U18",
-        "guest_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
+        "match_id": "404252",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-u18-osmangazi-belediyespor-u18-c404252",
+        "host_name": "Nilüfer Belediyespor U18",
+        "guest_name": "Osmangazi Belediyespor U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-07",
+        "vb_date": "2026-10-09",
         "vb_time": "20:00",
-        "vb_hall": "Çekirge Spor Salonu",
+        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-07",
+          "hall_diff": true,
+          "vb_date": "2026-10-09",
           "vb_time": "20:00",
-          "vb_hall": "Çekirge Spor Salonu",
-          "details": null
+          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-07 / VB: 2026-10-09) | Salon Değişti (TVF: Çekirge / VB: Nilüfer 100. Yıl Spor Salonu)"
         }
       }
     },
@@ -876,24 +876,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "404252",
-        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-u18-osmangazi-belediyespor-u18-c404252",
-        "host_name": "Nilüfer Belediyespor U18",
-        "guest_name": "Osmangazi Belediyespor U18",
+        "match_id": "404251",
+        "url": "https://women.volleybox.net/tr/doruk-voleybol-spor-kulubu-u18-metin-kucukkenar-frtna16-spor-kulubu-u18-c404251",
+        "host_name": "Doruk Voleybol Spor Kulübü U18",
+        "guest_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-09",
+        "vb_date": "2026-10-07",
         "vb_time": "20:00",
-        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-09",
+          "hall_diff": true,
+          "vb_date": "2026-10-07",
           "vb_time": "20:00",
-          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
-          "details": null
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-09 / VB: 2026-10-07) | Salon Değişti (TVF: Nilüfer 100.Yıl / VB: Çekirge Spor Salonu)"
         }
       }
     },
@@ -1489,5 +1489,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-04T21:43:15.140723"
+  "volleybox_sync_updated_at": "2026-10-05T13:26:29.085071"
 }

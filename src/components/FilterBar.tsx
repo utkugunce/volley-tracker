@@ -43,6 +43,7 @@ interface FilterBarProps {
   resultsSubTab?: "all" | "yesterday";
   onSelectResultsSubTab?: (subTab: "all" | "yesterday") => void;
   yesterdayCount?: number;
+  viewControl?: React.ReactNode;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
@@ -66,6 +67,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   resultsSubTab = "all",
   onSelectResultsSubTab,
   yesterdayCount = 0,
+  viewControl,
 }) => {
   const [filtersOpen, setFiltersOpen] = React.useState(false);
   const activeFilterCount =
@@ -162,21 +164,24 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           </div>
         )}
 
-        <button
-          type="button"
-          aria-expanded={filtersOpen}
-          onClick={() => setFiltersOpen((open) => !open)}
-          className="inline-flex items-center gap-2 self-start sm:self-auto px-3 py-2 rounded-lg border border-slate-700/70 bg-slate-800/70 text-slate-200 hover:bg-slate-700/80 transition-colors text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-        >
-          <SlidersHorizontal size={14} aria-hidden="true" />
-          <span>Filtreler</span>
-          {activeFilterCount > 0 && (
-            <span className="text-[11px] font-display tabular-nums text-primary font-bold">
-              ({activeFilterCount})
-            </span>
-          )}
-          <ChevronDown size={14} aria-hidden="true" className={filtersOpen ? "rotate-180 transition-transform" : "transition-transform"} />
-        </button>
+        <div className="flex items-center gap-2 self-start sm:self-auto flex-wrap">
+          {viewControl}
+          <button
+            type="button"
+            aria-expanded={filtersOpen}
+            onClick={() => setFiltersOpen((open) => !open)}
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-700/70 bg-slate-800/70 text-slate-200 hover:bg-slate-700/80 transition-colors text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-primary cursor-pointer"
+          >
+            <SlidersHorizontal size={14} aria-hidden="true" />
+            <span>Filtreler</span>
+            {activeFilterCount > 0 && (
+              <span className="text-[11px] font-display tabular-nums text-primary font-bold">
+                ({activeFilterCount})
+              </span>
+            )}
+            <ChevronDown size={14} aria-hidden="true" className={filtersOpen ? "rotate-180 transition-transform" : "transition-transform"} />
+          </button>
+        </div>
       </div>
 
       {/* 2. Salon, Takım Arama ve Volleybox Filtreleri */}

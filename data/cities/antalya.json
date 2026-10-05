@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T14:28:12.535106",
+  "updated_at": "2026-10-05T13:22:11.566393",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -24,7 +24,6 @@
       "Tümü",
       "Aksu Pelin Cemal Kütahya",
       "Alanya Atatürk S.S.",
-      "Antalya Spor Salonu",
       "Döşemealtı S.S.",
       "Kemer B.T.S.S.",
       "Kepez Turgut Özal S.S.",
@@ -831,11 +830,11 @@
       }
     },
     {
-      "id": "antalya-20261020-010",
+      "id": "antalya-20261102-010",
       "city": "Antalya",
-      "date": "2026-10-20",
-      "time": "19:30",
-      "hall": "Antalya Spor Salonu",
+      "date": "2026-11-02",
+      "time": "18:30",
+      "hall": "Kepez Ç.A.S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -860,14 +859,14 @@
         "vb_time": "19:30",
         "vb_hall": "Antalya Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-10-20",
           "vb_time": "19:30",
           "vb_hall": "Antalya Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-02 / VB: 2026-10-20) | Saat Değişti (TVF: 18:30 / VB: 19:30) | Salon Değişti (TVF: Kepez Ç.A.S.S. / VB: Antalya Spor Salonu)"
         }
       }
     },
@@ -2057,8 +2056,8 @@
         "url": "https://women.volleybox.net/tr/antalyaspor-u16-antalya-1907-spor-kulubu-u16-c400359",
         "host_name": "Antalyaspor U16",
         "guest_name": "Antalya 1907 Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "18:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
@@ -2103,8 +2102,8 @@
         "url": "https://women.volleybox.net/tr/antalya-ds-spor-kulubu-u16-luna-spor-kulubu-u16-c400360",
         "host_name": "Antalya DSİ Spor Kulübü U16",
         "guest_name": "Luna Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-02",
         "vb_time": "19:00",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -2589,5 +2588,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-10-04T14:29:54.006368"
+  "volleybox_sync_updated_at": "2026-10-05T13:26:29.028881"
 }

@@ -4,6 +4,7 @@ import React from "react";
 import { Virtuoso } from "react-virtuoso";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import { FilterBar } from "@/components/FilterBar";
+import { ViewControlDropdown } from "@/components/ViewControlDropdown";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { CityGroupBanner } from "@/components/dashboard/CityGroupBanner";
 import { CollapseControlBar } from "@/components/dashboard/CollapseControlBar";
@@ -107,6 +108,21 @@ export const FixturesTab: React.FC<FixturesTabProps> = ({
           volleyboxStats={volleyboxStats}
           onReset={resetFilters}
           isFiltered={isFiltered}
+          viewControl={
+            fixturesByCity.length > 0 ? (
+              <ViewControlDropdown
+                hasCities={fixturesByCity.length > 1}
+                hasLeagues={allFixtureLeagueKeys.length > 0}
+                areCitiesCollapsed={cityCollapse.areAllCollapsed}
+                areLeaguesCollapsed={leagueCollapse.areAllCollapsed}
+                onExpandCities={cityCollapse.expandAll}
+                onCollapseCities={cityCollapse.collapseAll}
+                onExpandLeagues={leagueCollapse.expandAll}
+                onCollapseLeagues={leagueCollapse.collapseAll}
+                themeColor="sky"
+              />
+            ) : undefined
+          }
         />
       )}
 
