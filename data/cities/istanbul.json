@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T13:37:07.746715+03:00",
+  "updated_at": "2026-10-06T14:08:40.718287+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -5293,8 +5293,8 @@
         "url": "https://women.volleybox.net/tr/avclar-demirorduspor-kulubu-u18-avrupa-voleybol-gelisim-spor-kulubu-b-u18-c404276",
         "host_name": "Avcılar Demirorduspor Kulübü U18",
         "guest_name": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "18:00",
         "vb_hall": "Tozkoparan Spor Salonu",
@@ -5340,8 +5340,8 @@
         "url": "https://women.volleybox.net/tr/bahcelievler-voleybol-kulubu-u18-kucukcekmece-voleybol-kulubu-u18-c404281",
         "host_name": "Bahçelievler Voleybol Kulübü U18",
         "guest_name": "Küçükçekmece Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "18:00",
         "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
@@ -5432,8 +5432,8 @@
         "url": "https://women.volleybox.net/tr/ulus-spor-akademisi-u18-set-voleybol-kulubu-u18-c404277",
         "host_name": "Ulus Spor Akademisi U18",
         "guest_name": "SET Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "19:30",
         "vb_hall": "Başakşehir Spor Kompleksi",
@@ -5477,8 +5477,8 @@
         "url": "https://women.volleybox.net/tr/sultangazi-olimpik-spor-kulubu-u18-kucukcekmece-voleybol-kulubu-b-u18-c404278",
         "host_name": "Sultangazi Olimpik Spor Kulübü U18",
         "guest_name": "Küçükçekmece Voleybol Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "19:30",
         "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
@@ -6033,5 +6033,5 @@
     }
   ],
   "volleybox_synced_matches": 85,
-  "volleybox_sync_updated_at": "2026-10-06T13:41:48.931523"
+  "volleybox_sync_updated_at": "2026-10-06T14:13:12.052449"
 }

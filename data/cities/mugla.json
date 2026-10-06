@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T13:37:09.243417",
+  "updated_at": "2026-10-06T14:08:40.718287+03:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 1,
   "source": "https://mugla.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,7 +21,8 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "Ula Spor Salonu"
     ]
   },
   "standings": {
@@ -477,7 +478,42 @@
       }
     ]
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "mugla-20261007-001",
+      "city": "Muğla",
+      "date": "2026-10-07",
+      "time": "19:00",
+      "hall": "Ula Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "1",
+      "home_team": "Muğla Sportif Akademi Spor Kulübü",
+      "away_team": "MİLAS BELEDİYE SPOR A",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-06T13:41:50.512375"
+  "volleybox_sync_updated_at": "2026-10-06T14:13:13.393252"
 }

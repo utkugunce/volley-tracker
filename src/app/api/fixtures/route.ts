@@ -170,10 +170,14 @@ export async function GET(request: Request) {
 
     // Doğru resmi il ismini bul (cities.json üzerinden)
     let officialCityName = citySlug;
+    let globalScanTime: string | null = null;
     try {
       const citiesIndexPath = path.join(process.cwd(), "data", "cities.json");
       if (fs.existsSync(citiesIndexPath)) {
         const citiesData = JSON.parse(fs.readFileSync(citiesIndexPath, "utf-8"));
+        if (citiesData?.updated_at) {
+          globalScanTime = citiesData.updated_at;
+        }
         const found = (citiesData.cities || []).find(
           (c: CityInfo) => c.slug === citySlug || c.ilid === rawCity || c.slug === rawCity.toLowerCase()
         );
@@ -247,6 +251,9 @@ export async function GET(request: Request) {
       } else {
         const fileContent = fs.readFileSync(filePath, "utf-8");
         data = JSON.parse(fileContent);
+        if (globalScanTime && (!data.updated_at || new Date(globalScanTime) > new Date(data.updated_at))) {
+          data.updated_at = globalScanTime;
+        }
       }
     }
 

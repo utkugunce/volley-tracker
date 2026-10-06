@@ -826,6 +826,12 @@ def scrape_single_city(city_info):
                     city_matches = cached_matches
                     city_standings = cached_standings
                     data_file_rel = f"data/cities/{subdomain}.json"
+                    cached_data["updated_at"] = datetime.now().astimezone().isoformat()
+                    try:
+                        with open(city_file, "w", encoding="utf-8") as f:
+                            json.dump(cached_data, f, ensure_ascii=False, indent=2)
+                    except Exception:
+                        pass
             except Exception:
                 pass
 
@@ -992,6 +998,33 @@ def main():
 
     with open(CITIES_INDEX_JSON, "w", encoding="utf-8") as f:
         json.dump(master_payload, f, ensure_ascii=False, indent=2)
+
+    # 81 il tarama zaman damgasını tüm aktif şehir JSON dosyalarına ve fixtures.json'a yansıt
+    scan_timestamp = master_payload.get("updated_at")
+    if scan_timestamp:
+        for c_info in master_payload.get("cities", []):
+            df_rel = c_info.get("data_file")
+            if df_rel:
+                c_path = BASE_DIR / df_rel
+                if c_path.exists():
+                    try:
+                        with open(c_path, "r", encoding="utf-8") as cf:
+                            c_data = json.load(cf)
+                        c_data["updated_at"] = scan_timestamp
+                        with open(c_path, "w", encoding="utf-8") as cf:
+                            json.dump(c_data, cf, ensure_ascii=False, indent=2)
+                    except Exception as ex_sync:
+                        logger.debug(f"{c_path.name} updated_at güncellenirken hata: {ex_sync}")
+
+        if FIXTURES_JSON.exists():
+            try:
+                with open(FIXTURES_JSON, "r", encoding="utf-8") as ff:
+                    f_data = json.load(ff)
+                f_data["updated_at"] = scan_timestamp
+                with open(FIXTURES_JSON, "w", encoding="utf-8") as ff:
+                    json.dump(f_data, ff, ensure_ascii=False, indent=2)
+            except Exception:
+                pass
 
     validation_result = validate_city_index(master_payload)
     print_validation_summary("81 il", validation_result)

@@ -21,3 +21,21 @@ export function useCitiesList() {
 
   return citiesList;
 }
+
+/** En son 81 il tarama zaman damgasını /api/cities üzerinden alır. */
+export function useCitiesSyncTime(): string | null {
+  const [syncTime, setSyncTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/cities")
+      .then((res) => res.json())
+      .then((json) => {
+        if (json?.updated_at) {
+          setSyncTime(json.updated_at);
+        }
+      })
+      .catch((e) => console.error("Cities sync time error:", e));
+  }, []);
+
+  return syncTime;
+}

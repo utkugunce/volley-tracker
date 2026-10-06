@@ -18,6 +18,20 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
   try {
     const citiesDir = path.join(process.cwd(), "data", "cities");
 
+    // 0. data/cities.json üzerinden 81 ilin merkezi tarama/güncelleme zaman damgasını oku
+    let globalScanUpdatedAt: string | null = null;
+    try {
+      const citiesIndexPath = path.join(process.cwd(), "data", "cities.json");
+      if (fs.existsSync(citiesIndexPath)) {
+        const cJson = JSON.parse(fs.readFileSync(citiesIndexPath, "utf-8"));
+        if (cJson && typeof cJson.updated_at === "string") {
+          globalScanUpdatedAt = cJson.updated_at;
+        }
+      }
+    } catch {
+      // ignore
+    }
+
     // 1. Belirli bir il istendiyse doğrudan o ilin verisini döndür (gizli iller atlanır)
     if (citySlug && citySlug !== "all" && citySlug !== "Tüm İller") {
       const sanitizedSlug = citySlug.toLowerCase().replace(/[^a-z0-9_-]/g, "");
@@ -33,6 +47,9 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
             const content = fs.readFileSync(specificFile, "utf-8");
             const parsed = JSON.parse(content);
             if (parsed && typeof parsed === "object") {
+              if (globalScanUpdatedAt && (!parsed.updated_at || new Date(globalScanUpdatedAt) > new Date(parsed.updated_at))) {
+                parsed.updated_at = globalScanUpdatedAt;
+              }
               cachedCityData.set(sanitizedSlug, { data: parsed, timestamp: now });
               return parsed;
             }
@@ -101,10 +118,11 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
       }
 
       if (allMatches.length > 0) {
+        const finalUpdatedAt = globalScanUpdatedAt || (latestUpdated > new Date(0).toISOString() ? latestUpdated : new Date().toISOString());
         const result: FixturesData = {
           city: "Tüm İller",
           title: "TVF Türkiye Geneli Genç & Yıldız Kızlar Süper Lig",
-          updated_at: latestUpdated > new Date(0).toISOString() ? latestUpdated : new Date().toISOString(),
+          updated_at: finalUpdatedAt,
           total_matches: allMatches.length,
           source: "TVF İl Temsilcilikleri",
           filters: {
@@ -126,6 +144,9 @@ export function getInitialFixtures(citySlug?: string): FixturesData {
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, "utf-8");
       const parsed = JSON.parse(content);
+      if (globalScanUpdatedAt && (!parsed.updated_at || new Date(globalScanUpdatedAt) > new Date(parsed.updated_at))) {
+        parsed.updated_at = globalScanUpdatedAt;
+      }
       console.warn("JSON fallback kullanılıyor - Supabase birincil kaynak olmalı");
       return parsed;
     }

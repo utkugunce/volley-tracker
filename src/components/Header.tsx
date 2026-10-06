@@ -51,7 +51,11 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const { t } = useLanguage();
   const formattedTime = updatedAt
-    ? new Date(updatedAt).toLocaleTimeString("tr-TR", {
+    ? new Date(
+        updatedAt.includes("Z") || updatedAt.includes("+")
+          ? updatedAt
+          : `${updatedAt}+03:00`
+      ).toLocaleTimeString("tr-TR", {
         hour: "2-digit",
         minute: "2-digit",
         timeZone: "Europe/Istanbul",

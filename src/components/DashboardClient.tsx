@@ -56,7 +56,7 @@ import { useDashboardNavigation } from "@/hooks/useDashboardNavigation";
 import { useDashboardFilters } from "@/hooks/useDashboardFilters";
 import { useCollapseControls } from "@/hooks/useCollapseControls";
 import { useFavorites } from "@/hooks/useFavorites";
-import { useCitiesList } from "@/hooks/useCitiesList";
+import { useCitiesList, useCitiesSyncTime } from "@/hooks/useCitiesList";
 import { useMatchSelection } from "@/hooks/useMatchSelection";
 import { useSearchShortcut } from "@/hooks/useSearchShortcut";
 import { useTodayYesterday } from "@/hooks/useTodayYesterday";
@@ -123,6 +123,12 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
 
   const { favorites, toggleFavorite } = useFavorites(data?.matches);
   const citiesList = useCitiesList();
+  const globalSyncTime = useCitiesSyncTime();
+
+  const activeUpdatedAt =
+    globalSyncTime && (!data?.updated_at || new Date(globalSyncTime) > new Date(data.updated_at))
+      ? globalSyncTime
+      : data?.updated_at;
 
   // Tüm İller seçili mi?
   const isAllCities = currentCitySlug === "all" || data?.city === "Tüm İller";
@@ -173,7 +179,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               onSelectCity={handleSelectCity}
               cities={citiesList}
               title={data?.title}
-              updatedAt={data?.updated_at}
+              updatedAt={activeUpdatedAt}
               totalMatches={data?.total_matches || 0}
               todayMatchesCount={todayMatchesCount}
               resultsCount={resultsCount}
