@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Match } from "@/types/fixture";
 import { findDefaultSelectedMatch } from "@/context/MatchSelectionContext";
+import { replaceUrlIfChanged } from "@/utils/historyUrl";
 
 /** Seçili maç, mobil çekmece durumu ve URL ?match=id senkronizasyonu. */
 export function useMatchSelection(matches: Match[] | undefined) {
@@ -18,7 +19,7 @@ export function useMatchSelection(matches: Match[] | undefined) {
       try {
         const url = new URL(window.location.href);
         url.searchParams.set("match", match.id);
-        window.history.replaceState({}, "", url.toString());
+        replaceUrlIfChanged(url);
       } catch {
         // fallback
       }

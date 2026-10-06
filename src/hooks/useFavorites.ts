@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Match } from "@/types/fixture";
 import { checkAndTriggerMatchReminders } from "@/utils/notifications";
+import { useVisibleInterval } from "./useVisibleInterval";
 
 /** Favori maçlar (LocalStorage) ve 30 dk kala tarayıcı hatırlatmaları. */
 export function useFavorites(matches: Match[] | undefined) {
@@ -19,19 +20,21 @@ export function useFavorites(matches: Match[] | undefined) {
   }, []);
 
   // Favori maçlar için 30 dakika kala tarayıcı hatırlatma kontrolü (GÖREV 2)
+  const remindersEnabled = favorites.length > 0 && !!matches && matches.length > 0;
+
   useEffect(() => {
-    if (favorites.length === 0 || !matches || matches.length === 0) return;
-
     // Sayfa açıldığında veya favori değiştiğinde hemen kontrol et
-    checkAndTriggerMatchReminders(matches, favorites);
+    if (remindersEnabled && matches) checkAndTriggerMatchReminders(matches, favorites);
+  }, [favorites, matches, remindersEnabled]);
 
-    // Sekme açıkken her 60 saniyede bir düzenli kontrol et
-    const timer = setInterval(() => {
-      checkAndTriggerMatchReminders(matches, favorites);
-    }, 60000);
-
-    return () => clearInterval(timer);
-  }, [favorites, matches]);
+  // Sekme görünürken her 60 saniyede bir düzenli kontrol et (arka planda durur, geri gelince hemen kontrol eder)
+  useVisibleInterval(
+    () => {
+      if (matches && matches.length > 0) checkAndTriggerMatchReminders(matches, favorites);
+    },
+    60000,
+    remindersEnabled
+  );
 
   const toggleFavorite = (matchId: string) => {
     setFavorites((prev) => {

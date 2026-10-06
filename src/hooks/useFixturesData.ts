@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import type { FixturesData } from "@/types/fixture";
 import { toErrorLike } from "@/utils/errors";
+import { createLruCache } from "@/utils/lruCache";
 
-// İstemci tarafı şehir verisi önbelleği (Tekrar tıklanan iller 0ms anında açılır)
-const clientCityCache = new Map<string, FixturesData>();
+// İstemci tarafı şehir verisi önbelleği (Tekrar tıklanan iller 0ms anında açılır).
+// Sınırlı LRU: il il gezinirken (81 il × ~100 KB+, "tümü" ~800 KB) bellek sınırsız büyümesin.
+const clientCityCache = createLruCache<FixturesData>(12);
 
 interface UseFixturesDataOptions {
   initialData: FixturesData;

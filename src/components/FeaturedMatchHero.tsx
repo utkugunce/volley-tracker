@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Match } from "@/types/fixture";
+import { useVisibleInterval } from "@/hooks/useVisibleInterval";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
 import { MapPin, Calendar, Clock, Star, CalendarPlus, ExternalLink, Flame, Trophy, Navigation, Copy, Check } from "lucide-react";
 import { getHallNavigationUrl } from "@/utils/halls";
@@ -50,38 +51,40 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
     return validMatches[validMatches.length - 1];
   }, [matches, favorites]);
 
-  // Geri sayım sayacı
-  useEffect(() => {
-    if (!featuredMatch || featuredMatch.status === "finished" || !featuredMatch.date || featuredMatch.date === "TBD") {
+  // Geri sayım sayacı (sekme arka plandayken durur; bkz. useVisibleInterval)
+  const countdownEnabled = Boolean(
+    featuredMatch && featuredMatch.status !== "finished" && featuredMatch.date && featuredMatch.date !== "TBD"
+  );
+
+  const calculateTime = useCallback(() => {
+    if (!featuredMatch || !countdownEnabled) {
       setTimeLeft(null);
       return;
     }
+    try {
+      const timeStr = featuredMatch.time && featuredMatch.time !== "--:--" ? featuredMatch.time : "12:00";
+      const matchDateTime = new Date(`${featuredMatch.date}T${timeStr}:00`);
+      const diff = matchDateTime.getTime() - Date.now();
 
-    const calculateTime = () => {
-      try {
-        const timeStr = featuredMatch.time && featuredMatch.time !== "--:--" ? featuredMatch.time : "12:00";
-        const matchDateTime = new Date(`${featuredMatch.date}T${timeStr}:00`);
-        const now = new Date();
-        const diff = matchDateTime.getTime() - now.getTime();
-
-        if (diff <= 0) {
-          setTimeLeft(null);
-        } else {
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-          const minutes = Math.floor((diff / (1000 * 60)) % 60);
-          const seconds = Math.floor((diff / 1000) % 60);
-          setTimeLeft({ days, hours, minutes, seconds });
-        }
-      } catch {
+      if (diff <= 0) {
         setTimeLeft(null);
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        setTimeLeft({ days, hours, minutes, seconds });
       }
-    };
+    } catch {
+      setTimeLeft(null);
+    }
+  }, [featuredMatch, countdownEnabled]);
 
+  useEffect(() => {
     calculateTime();
-    const interval = setInterval(calculateTime, 1000);
-    return () => clearInterval(interval);
-  }, [featuredMatch]);
+  }, [calculateTime]);
+
+  useVisibleInterval(calculateTime, 1000, countdownEnabled);
 
   if (!featuredMatch) return null;
 
