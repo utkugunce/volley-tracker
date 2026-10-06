@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T10:45:09.041124",
+  "updated_at": "2026-10-06T11:38:47.200155",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 6,
   "source": "https://nigde.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,7 +21,8 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "5 Şubat S.S."
     ]
   },
   "standings": {
@@ -138,9 +139,271 @@
         "sets_lost": 0,
         "form": []
       }
+    ],
+    "Yıldız Kızlar Süper Lig - Kamu Sporları Kadınlar": [
+      {
+        "rank": 1,
+        "team": "Albatros",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Niğde Valiliği B ( Evenstars)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Niğde Valiliği C (Nöhü)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Niğde Valiliği D (Gsb)",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
     ]
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "nigde-20261006-001",
+      "city": "Niğde",
+      "date": "2026-10-06",
+      "time": "18:00",
+      "hall": "5 Şubat S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Kamu Sporları Kadınlar",
+      "match_no": "1",
+      "home_team": "Niğde Valiliği D (Gsb)",
+      "away_team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "nigde-20261006-002",
+      "city": "Niğde",
+      "date": "2026-10-06",
+      "time": "19:45",
+      "hall": "5 Şubat S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Kamu Sporları Kadınlar",
+      "match_no": "2",
+      "home_team": "Niğde Valiliği B ( Evenstars)",
+      "away_team": "Albatros",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "nigde-20261006-003",
+      "city": "Niğde",
+      "date": "2026-10-06",
+      "time": "18:00",
+      "hall": "5 Şubat S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Kamu Sporları Kadınlar",
+      "match_no": "1",
+      "home_team": "Niğde Valiliği D (Gsb)",
+      "away_team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "nigde-20261006-004",
+      "city": "Niğde",
+      "date": "2026-10-06",
+      "time": "19:45",
+      "hall": "5 Şubat S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Kamu Sporları Kadınlar",
+      "match_no": "2",
+      "home_team": "Niğde Valiliği B ( Evenstars)",
+      "away_team": "Albatros",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "nigde-20261006-005",
+      "city": "Niğde",
+      "date": "2026-10-06",
+      "time": "18:00",
+      "hall": "5 Şubat S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Kamu Sporları Kadınlar",
+      "match_no": "1",
+      "home_team": "Niğde Valiliği D (Gsb)",
+      "away_team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "nigde-20261006-006",
+      "city": "Niğde",
+      "date": "2026-10-06",
+      "time": "19:45",
+      "hall": "5 Şubat S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Kamu Sporları Kadınlar",
+      "match_no": "2",
+      "home_team": "Niğde Valiliği B ( Evenstars)",
+      "away_team": "Albatros",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-06T10:49:23.282152"
+  "volleybox_sync_updated_at": "2026-10-06T11:43:11.307955"
 }
