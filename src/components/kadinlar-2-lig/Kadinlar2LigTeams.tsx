@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { TeamBadge } from "@/components/TeamBadge";
 import { ExternalLink, Search, Trophy, ArrowRight, User, Star, Swords } from "lucide-react";
 import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
@@ -95,23 +95,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                     className="shrink-0 hover:opacity-80 transition-opacity"
                     title={`${displayName} Kulüp Profili`}
                   >
-                    {logoSrc ? (
-                      <Image
-                        src={logoSrc}
-                        alt={displayName}
-                        width={32}
-                        height={32}
-                        className="w-8 h-8 object-contain rounded-lg shrink-0 bg-white/5 p-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                        unoptimized
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).style.display = "none";
-                        }}
-                      />
-                    ) : (
-                      <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-xs text-slate-300 font-bold shrink-0">
-                        {displayName.slice(0, 2)}
-                      </div>
-                    )}
+                    <TeamBadge name={displayName} size="md" />
                   </Link>
 
                   <div className="min-w-0 flex-1">

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import Image from "next/image";
+import { TeamBadge } from "@/components/TeamBadge";
 import Link from "next/link";
 import { ExternalLink, Trophy, ChevronRight, Download, Star, Swords, CheckCircle2, ShieldAlert } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
@@ -207,23 +207,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                                   className="shrink-0 hover:opacity-80 transition-opacity"
                                   title={`${displayName} Kulüp Profili`}
                                 >
-                                  {logoSrc ? (
-                                    <Image
-                                      src={logoSrc}
-                                      alt={displayName}
-                                      width={24}
-                                      height={24}
-                                      className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-md shrink-0 bg-white/5 p-0.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
-                                      unoptimized
-                                      onError={(e) => {
-                                        (e.currentTarget as HTMLImageElement).style.display = "none";
-                                      }}
-                                    />
-                                  ) : (
-                                    <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 border border-slate-700 flex items-center justify-center text-[10px] text-slate-300 font-bold shrink-0">
-                                      {displayName.slice(0, 2)}
-                                    </div>
-                                  )}
+                                  <TeamBadge name={displayName} size="xs" />
                                 </Link>
 
                                 <div className="min-w-0 flex-1 flex items-center gap-1.5">

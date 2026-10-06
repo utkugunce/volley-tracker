@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo, useCallback, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { TeamBadge } from "@/components/TeamBadge";
 import {
   Swords,
   Trophy,
@@ -381,20 +381,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             {/* Takım 1 Kartı */}
             <div className="glass-panel border border-slate-800/80 bg-slate-900/60 rounded-2xl p-4 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3 min-w-0">
-                {team1.logo && !team1.logo.includes("takimlogoyok") ? (
-                  <Image
-                    src={team1.logo}
-                    alt={nameOf(team1.takim_adi)}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-contain rounded-xl bg-white/5 p-1 shrink-0"
-                    unoptimized
-                  />
-                ) : (
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/50 text-ink-2 font-extrabold flex items-center justify-center text-sm shrink-0">
-                    {nameOf(team1.takim_adi).slice(0, 2)}
-                  </div>
-                )}
+                <TeamBadge name={nameOf(team1.takim_adi)} size="md" />
                 <div className="min-w-0">
                   <Link
                     href={`/takim/${slugify(team1.takim_adi)}`}
@@ -417,20 +404,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             {/* Takım 2 Kartı */}
             <div className="glass-panel border border-slate-800/80 bg-slate-900/60 rounded-2xl p-4 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3 min-w-0">
-                {team2.logo && !team2.logo.includes("takimlogoyok") ? (
-                  <Image
-                    src={team2.logo}
-                    alt={nameOf(team2.takim_adi)}
-                    width={40}
-                    height={40}
-                    className="w-10 h-10 object-contain rounded-xl bg-white/5 p-1 shrink-0"
-                    unoptimized
-                  />
-                ) : (
-                  <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-700/50 text-cyan-300 font-extrabold flex items-center justify-center text-sm shrink-0">
-                    {nameOf(team2.takim_adi).slice(0, 2)}
-                  </div>
-                )}
+                <TeamBadge name={nameOf(team2.takim_adi)} size="md" />
                 <div className="min-w-0">
                   <Link
                     href={`/takim/${slugify(team2.takim_adi)}`}

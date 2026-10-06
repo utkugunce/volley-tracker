@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T21:15:04.986972",
+  "updated_at": "2026-10-06T10:45:15.711345",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -104,18 +104,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398307",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u18-yalova-voleybol-spor-kulubu-b-u18-c398307",
+        "host_name": "Koru Akademi Spor Kulübü U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-10 / VB: 2026-10-09) | Saat Değişti (TVF: 11:00 / VB: 18:00)"
         }
       }
     },
@@ -138,18 +145,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398308",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-b-u18-yalova-atakent-spor-kulubu-u18-c398308",
+        "host_name": "Koru Akademi Spor Kulübü - B U18",
+        "guest_name": "Yalova Atakent Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-09",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-10 / VB: 2026-10-09) | Saat Değişti (TVF: 13:00 / VB: 20:00)"
         }
       }
     },
@@ -892,6 +906,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-10-05T21:16:43.134381"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-10-06T10:49:24.135506"
 }

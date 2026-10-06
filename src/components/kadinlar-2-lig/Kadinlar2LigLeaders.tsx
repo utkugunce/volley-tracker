@@ -2,7 +2,7 @@
 
 import React, { useMemo } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { TeamBadge } from "@/components/TeamBadge";
 import { Trophy, ArrowRight, Layers, CheckCircle2 } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
@@ -140,19 +140,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                               {team.sira}.
                             </span>
 
-                            {logoSrc ? (
-                              <Image
-                                src={logoSrc}
-                                alt={displayName}
-                                width={18}
-                                height={18}
-                                className="w-4 h-4 object-contain rounded shrink-0 bg-white/5 p-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"
-                                unoptimized
-                                onError={(e) => {
-                                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                                }}
-                              />
-                            ) : null}
+                            <TeamBadge name={displayName} size="xs" />
 
                             <Link
                               href={`/takim/${slugify(displayName)}`}

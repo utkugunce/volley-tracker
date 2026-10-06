@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T01:48:12.471019",
+  "updated_at": "2026-10-06T10:45:09.041124",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 4,
+  "total_matches": 0,
   "source": "https://nigde.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,8 +21,7 @@
       "Kız"
     ],
     "halls": [
-      "Tümü",
-      "5 Şubat S.S."
+      "Tümü"
     ]
   },
   "standings": {
@@ -141,144 +140,7 @@
       }
     ]
   },
-  "matches": [
-    {
-      "id": "nigde-20261006-001",
-      "city": "Niğde",
-      "date": "2026-10-06",
-      "time": "18:30",
-      "hall": "5 Şubat S.S.",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Kamu Sporları Kadınlar",
-      "match_no": "1",
-      "home_team": "Niğde Valiliği D (Gsb)",
-      "away_team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "nigde-20261006-002",
-      "city": "Niğde",
-      "date": "2026-10-06",
-      "time": "19:45",
-      "hall": "5 Şubat S.S.",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Kamu Sporları Kadınlar",
-      "match_no": "2",
-      "home_team": "Niğde Valiliği B ( Evenstars)",
-      "away_team": "Albatros",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "nigde-20261009-003",
-      "city": "Niğde",
-      "date": "2026-10-09",
-      "time": "18:30",
-      "hall": "5 Şubat S.S.",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Kamu Sporları Kadınlar",
-      "match_no": "3",
-      "home_team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
-      "away_team": "Niğde Valiliği B ( Evenstars)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "nigde-20261009-004",
-      "city": "Niğde",
-      "date": "2026-10-09",
-      "time": "19:45",
-      "hall": "5 Şubat S.S.",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Kamu Sporları Kadınlar",
-      "match_no": "4",
-      "home_team": "Niğde Valiliği C (Nöhü)",
-      "away_team": "Niğde Valiliği D (Gsb)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    }
-  ],
+  "matches": [],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-06T01:49:51.496729"
+  "volleybox_sync_updated_at": "2026-10-06T10:49:23.282152"
 }

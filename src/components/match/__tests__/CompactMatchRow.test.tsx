@@ -53,7 +53,7 @@ describe("CompactMatchRow", () => {
       "href",
       "https://women.volleybox.net/test-ev-t1"
     );
-    expect(screen.getByAltText("Test Ev logosu")).toBeInTheDocument();
+    expect(screen.getByLabelText("Test Ev rozeti")).toBeInTheDocument();
   });
 
   it("boxes changed date, time, and hall values with the previous Volleybox values", () => {

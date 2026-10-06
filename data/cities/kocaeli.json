@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T17:00:22.753327",
+  "updated_at": "2026-10-06T10:45:07.670503",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -179,16 +179,49 @@
       {
         "rank": 1,
         "team": "Çayırova Belediyesi",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Gebze Olimpik Spor",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Umutcan Spor",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Dev Ay Spor",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Darıca Anadolu Spor",
         "played": 0,
         "won": 0,
@@ -199,7 +232,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 6,
         "team": "Darıca Çınaraltı Spor",
         "played": 0,
         "won": 0,
@@ -210,7 +243,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 7,
         "team": "Darıca Kuzey Yıldızı",
         "played": 0,
         "won": 0,
@@ -221,7 +254,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 8,
         "team": "Darıca Yıldız Spor",
         "played": 0,
         "won": 0,
@@ -232,18 +265,7 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Dev Ay Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
+        "rank": 9,
         "team": "Dilovası Belediye",
         "played": 0,
         "won": 0,
@@ -254,30 +276,8 @@
         "form": []
       },
       {
-        "rank": 8,
-        "team": "Gebze Gençlik Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "Gebze Olimpik Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 10,
-        "team": "Umutcan Spor",
+        "team": "Gebze Gençlik Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -619,11 +619,15 @@
       "match_no": "1",
       "home_team": "Çayırova Belediyesi",
       "away_team": "Dev Ay Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-11",
+        "25-6"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -653,11 +657,16 @@
       "match_no": "2",
       "home_team": "Umutcan Spor",
       "away_team": "Gebze Olimpik Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-21",
+        "9-25",
+        "11-25",
+        "25-27"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1118,5 +1127,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-05T17:05:04.819906"
+  "volleybox_sync_updated_at": "2026-10-06T10:49:23.109542"
 }

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T01:48:12.832879",
+  "updated_at": "2026-10-06T10:45:06.651214",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 12,
+  "total_matches": 19,
   "source": "https://kayseri.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,8 +22,10 @@
     ],
     "halls": [
       "Tümü",
+      "Develi S.S.",
       "Gevher Nesibe",
-      "Gevher Nesibe S. S."
+      "Gevher Nesibe S. S.",
+      "Tomarza S.S."
     ]
   },
   "standings": {
@@ -106,183 +108,10 @@
         "sets_won": 0,
         "sets_lost": 0,
         "form": []
-      }
-    ],
-    "Genç Kızlar 1. Ligi - - A": [
-      {
-        "rank": 1,
-        "team": "KVK Voleybol Kulübü - B U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
       },
       {
         "rank": 4,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Genç Kızlar 1. Ligi - - B": [
-      {
-        "rank": 1,
-        "team": "KVK Voleybol Kulübü - B U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Genç Kızlar 1. Ligi - - C": [
-      {
-        "rank": 1,
-        "team": "KVK Voleybol Kulübü - B U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Genç Kızlar 1. Ligi - - D": [
-      {
-        "rank": 1,
-        "team": "KVK Voleybol Kulübü - B U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Kayseri Atletik Spor Kulübü U18",
+        "team": "Kayseri Voleybol Kulübü - A",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -386,6 +215,17 @@
       {
         "rank": 4,
         "team": "KVK Voleybol Kulübü U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Tomarza Belediye Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -541,7 +381,75 @@
       }
     },
     {
-      "id": "kayseri-20260929-003",
+      "id": "kayseri-20261013-003",
+      "city": "Kayseri",
+      "date": "2026-10-13",
+      "time": "18:00",
+      "hall": "Gevher Nesibe S. S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- A",
+      "match_no": "3",
+      "home_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
+      "away_team": "Kayseri Cimnastik Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kayseri-20261013-004",
+      "city": "Kayseri",
+      "date": "2026-10-13",
+      "time": "19:30",
+      "hall": "Gevher Nesibe S. S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- A",
+      "match_no": "4",
+      "home_team": "Kayseri Atletik Spor Kulübü U18",
+      "away_team": "KVK Voleybol Kulübü - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kayseri-20260929-005",
       "city": "Kayseri",
       "date": "2026-09-29",
       "time": "19:30",
@@ -586,7 +494,7 @@
       }
     },
     {
-      "id": "kayseri-20261011-004",
+      "id": "kayseri-20261011-006",
       "city": "Kayseri",
       "date": "2026-10-11",
       "time": "19:30",
@@ -627,7 +535,41 @@
       }
     },
     {
-      "id": "kayseri-20260928-005",
+      "id": "kayseri-20261015-007",
+      "city": "Kayseri",
+      "date": "2026-10-15",
+      "time": "19:30",
+      "hall": "Gevher Nesibe S. S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- B",
+      "match_no": "3",
+      "home_team": "Kayseri Voleybol Kulübü - A",
+      "away_team": "Erciyes Aslan Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kayseri-20260928-008",
       "city": "Kayseri",
       "date": "2026-09-28",
       "time": "18:00",
@@ -672,7 +614,7 @@
       }
     },
     {
-      "id": "kayseri-20260928-006",
+      "id": "kayseri-20260928-009",
       "city": "Kayseri",
       "date": "2026-09-28",
       "time": "19:30",
@@ -717,7 +659,7 @@
       }
     },
     {
-      "id": "kayseri-20261009-007",
+      "id": "kayseri-20261009-010",
       "city": "Kayseri",
       "date": "2026-10-09",
       "time": "18:00",
@@ -758,7 +700,41 @@
       }
     },
     {
-      "id": "kayseri-20261001-008",
+      "id": "kayseri-20261018-011",
+      "city": "Kayseri",
+      "date": "2026-10-18",
+      "time": "13:30",
+      "hall": "Develi S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- A",
+      "match_no": "4",
+      "home_team": "Kayseri Cimnastik Spor Kulübü - B U16",
+      "away_team": "Develi GSB Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kayseri-20261001-012",
       "city": "Kayseri",
       "date": "2026-10-01",
       "time": "18:00",
@@ -805,7 +781,7 @@
       }
     },
     {
-      "id": "kayseri-20261007-009",
+      "id": "kayseri-20261007-013",
       "city": "Kayseri",
       "date": "2026-10-07",
       "time": "19:30",
@@ -846,7 +822,75 @@
       }
     },
     {
-      "id": "kayseri-20261001-010",
+      "id": "kayseri-20261014-014",
+      "city": "Kayseri",
+      "date": "2026-10-14",
+      "time": "19:30",
+      "hall": "Gevher Nesibe S. S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- B",
+      "match_no": "3",
+      "home_team": "Altıyıldız Spor Kulübü U16",
+      "away_team": "Çınar Akademi Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kayseri-20261017-015",
+      "city": "Kayseri",
+      "date": "2026-10-17",
+      "time": "13:30",
+      "hall": "Tomarza S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- B",
+      "match_no": "4",
+      "home_team": "Çınar Akademi Spor Kulübü - B U16",
+      "away_team": "Tomarza Belediye Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kayseri-20261001-016",
       "city": "Kayseri",
       "date": "2026-10-01",
       "time": "19:30",
@@ -892,7 +936,7 @@
       }
     },
     {
-      "id": "kayseri-20261007-011",
+      "id": "kayseri-20261007-017",
       "city": "Kayseri",
       "date": "2026-10-07",
       "time": "18:00",
@@ -933,7 +977,7 @@
       }
     },
     {
-      "id": "kayseri-20261009-012",
+      "id": "kayseri-20261009-018",
       "city": "Kayseri",
       "date": "2026-10-09",
       "time": "19:30",
@@ -972,8 +1016,42 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "kayseri-20261014-019",
+      "city": "Kayseri",
+      "date": "2026-10-14",
+      "time": "18:00",
+      "hall": "Gevher Nesibe S. S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- C",
+      "match_no": "4",
+      "home_team": "Evola Spor Kulübü U16",
+      "away_team": "Kayseri Cimnastik Spor Kulübü - C U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-06T01:49:51.492536"
+  "volleybox_sync_updated_at": "2026-10-06T10:49:22.900995"
 }

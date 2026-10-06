@@ -111,6 +111,6 @@ describe("palet ve CSS değişkenleri", () => {
 
   it("src/theme/theme-vars.css üretici çıktısıyla senkron (node scripts/gen-theme-vars.mjs)", () => {
     const file = fs.readFileSync(path.resolve(__dirname, "../theme-vars.css"), "utf-8");
-    expect(file).toBe(buildThemeVarsCss());
+    expect(file.replace(/\r\n/g, "\n")).toBe(buildThemeVarsCss().replace(/\r\n/g, "\n"));
   });
 });

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { getVolleyboxMapping, normalizeCitySlug } from "@/utils/volleybox";
 import { slugify } from "@/utils/slugify";
@@ -8,7 +8,7 @@ import { ExternalLink, Star } from "lucide-react";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
 
-import Image from "next/image";
+import { TeamBadge } from "./TeamBadge";
 
 interface TeamVolleyboxLinkProps {
   teamName: string;
@@ -42,23 +42,9 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
     typeof children === "string" && children.trim() === teamName?.trim()
       ? displayName
       : children ?? displayName;
-  const [imgFailed, setImgFailed] = useState(false);
 
-  // Logo source: prefer local_logo, fallback to logo_url
-  const logoSrc = showLogo && !imgFailed ? (mapping?.local_logo || mapping?.logo_url) : null;
-
-  const logoElement = logoSrc ? (
-    <Image
-      src={logoSrc}
-      alt={`${displayName} logosu`}
-      width={36}
-      height={36}
-      className={`w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 object-contain shrink-0 inline-block align-middle mr-1.5 sm:mr-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 group-hover:scale-115 ${logoClassName}`}
-      unoptimized
-      onError={() => {
-        setImgFailed(true);
-      }}
-    />
+  const logoElement = showLogo ? (
+    <TeamBadge name={displayName} size="xs" className={`inline-flex mr-1.5 align-middle ${logoClassName}`} />
   ) : null;
 
   const teamSlug = slugify(displayName);

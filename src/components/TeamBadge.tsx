@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 import { trLower } from "@/utils/turkishLocale";
 
 interface TeamBadgeProps {
@@ -17,14 +16,6 @@ const SIZE_MAP = {
   md: "w-8 h-8 sm:w-9 sm:h-9 text-xs",
   lg: "w-11 h-11 sm:w-12 sm:h-12 text-sm",
   xl: "w-16 h-16 sm:w-20 sm:h-20 text-xl font-black",
-};
-
-const PIXEL_MAP = {
-  xs: 20,
-  sm: 28,
-  md: 36,
-  lg: 48,
-  xl: 80,
 };
 
 // Takım kimliği: Fileönü yüzeyi (koyu, düz) + marka renginde ince halka.
@@ -92,40 +83,19 @@ function getInitials(name: string = ""): string {
   return (words[0][0] + words[1][0]).toUpperCase();
 }
 
+/**
+ * Spor kulübü rozet arması: Kulüp renkleri ve baş harfleriyle vektörel,
+ * sıfır ağ yükü, sıfır CLS ve ultra hızlı render.
+ */
 export const TeamBadge: React.FC<TeamBadgeProps> = ({
   name,
-  logoUrl,
   size = "md",
   className = "",
 }) => {
-  const [imgFailed, setImgFailed] = useState(false);
-
   const sizeClass = SIZE_MAP[size] || SIZE_MAP.md;
-  const pxSize = PIXEL_MAP[size] || 36;
   const palette = getTeamColor(name);
   const initials = getInitials(name);
 
-  if (logoUrl && !imgFailed) {
-    return (
-      <div
-        className={`relative shrink-0 flex items-center justify-center rounded-full overflow-hidden ${
-          palette.plate ? `bg-ink border-2 ${palette.border} p-0.5` : ""
-        } ${sizeClass} ${className}`}
-      >
-        <Image
-          src={logoUrl}
-          alt={`${name} logosu`}
-          width={pxSize}
-          height={pxSize}
-          className="w-full h-full object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] transition-transform duration-200 hover:scale-110"
-          unoptimized
-          onError={() => setImgFailed(true)}
-        />
-      </div>
-    );
-  }
-
-  // Şık spor rozet/arması fallback'i
   return (
     <div
       className={`relative shrink-0 flex items-center justify-center rounded-full font-black tracking-tight select-none border-2 shadow-md ${palette.bg} ${palette.border} ${palette.text} ${sizeClass} ${className}`}

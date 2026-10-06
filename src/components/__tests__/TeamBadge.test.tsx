@@ -42,13 +42,12 @@ describe("TeamBadge marka renkleri (Fileönü)", () => {
     }
   });
 
-  it("marka takımlarının logosu kontrastlı açık plaka üzerinde çizilir", () => {
+  it("her zaman hafif vektörel harf arması çizer", () => {
     render(<TeamBadge name="Galatasaray" logoUrl="/x.png" size="md" />);
-    const img = screen.getByAltText("Galatasaray logosu");
-    expect(img.parentElement!.className).toContain("bg-ink");
+    expect(screen.getByLabelText("Galatasaray rozeti")).toBeInTheDocument();
   });
 
-  it("logosuz rozet kısaltmayı gösterir", () => {
+  it("rozet takım baş harfleriyle spor kısaltması gösterir", () => {
     render(<TeamBadge name="Eczacıbaşı Spor" />);
     expect(screen.getByLabelText("Eczacıbaşı Spor rozeti")).toBeInTheDocument();
   });

@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { TeamBadge } from "@/components/TeamBadge";
 import {
   CalendarPlus,
   Calendar,
@@ -260,24 +260,9 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
           <div className={`absolute -bottom-24 -right-24 w-80 h-80 ${brand.glowAway} rounded-full blur-3xl pointer-events-none`} />
 
           <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-            {/* Logo (Cut-out) */}
-            <div className={`w-28 h-28 sm:w-32 sm:h-32 flex items-center justify-center shrink-0 ${brand.logoPlate ? `rounded-2xl bg-ink border-2 ${brand.accentBorder} p-2.5` : "drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]"}`}>
-              {logoSrc ? (
-                <Image
-                  src={logoSrc}
-                  alt={`${team.teamName} logosu`}
-                  width={128}
-                  height={128}
-                  priority
-                  sizes="(min-width: 640px) 128px, 112px"
-                  className="w-full h-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-105"
-                  unoptimized
-                />
-              ) : (
-                <div className="w-full h-full rounded-2xl bg-slate-800/80 border border-slate-700/80 flex items-center justify-center">
-                  <Trophy size={56} className="text-ink-2" />
-                </div>
-              )}
+            {/* Kulüp Rozet Arması */}
+            <div className="shrink-0 drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)]">
+              <TeamBadge name={team.teamName} size="xl" className="!w-24 !h-24 sm:!w-28 sm:!h-28 text-3xl sm:text-4xl" />
             </div>
 
             {/* Bilgiler */}

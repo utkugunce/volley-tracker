@@ -69,9 +69,8 @@ describe("FixtureTable Component", () => {
     expect(fbLink).toBeDefined();
     expect(fbLink).toHaveAttribute("target", "_blank");
 
-    const vakifImg = screen.getByAltText(/VakıfBank.*logosu/i);
-    expect(vakifImg).toBeInTheDocument();
-    expect(vakifImg).toHaveAttribute("src", expect.stringContaining("vakfbank-u18"));
+    const vakifBadge = screen.getByLabelText(/VakıfBank.*rozeti/i);
+    expect(vakifBadge).toBeInTheDocument();
   });
 
   it("eşleşmeyen takımlar için hiçbir Volleybox linki render etmez ama takım sayfasına yönlendirir", () => {
