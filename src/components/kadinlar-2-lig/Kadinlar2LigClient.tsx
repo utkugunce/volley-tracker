@@ -54,7 +54,6 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   const [selectedGroup, setSelectedGroup] = useState<number>(initialGroup || 1);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [justUpdated, setJustUpdated] = useState<boolean>(false);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
@@ -117,22 +116,6 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  const handleRefresh = async () => {
-    try {
-      setIsLoading(true);
-      const res = await fetch("/api/kadinlar-2-ligi?refresh=1");
-      if (res.ok) {
-        const updated = await res.json();
-        setData(updated);
-        setJustUpdated(true);
-        setTimeout(() => setJustUpdated(false), 3000);
-      }
-    } catch (err) {
-      console.error("Yenileme hatası:", err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleSelectTab = (tab: Kadinlar2LigTabType) => {
     setActiveTab(tab);
@@ -210,9 +193,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         onSelectTab={handleSelectTab}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
-        onRefresh={handleRefresh}
         isLoading={isLoading}
-        justUpdated={justUpdated}
         todayMatchesCount={todayMatchesCount}
         resultsCount={resultsCount}
         favoritesCount={favoritesCount}

@@ -148,8 +148,7 @@ describe("Header Component", () => {
     expect(header?.className).toContain("pt-[env(safe-area-inset-top,0px)]");
   });
 
-  it("shows data freshness and refreshes on request", () => {
-    const onRefresh = vi.fn();
+  it("shows data freshness without manual refresh button", () => {
     render(
       <Header
         updatedAt="2026-01-01T00:00:00.000Z"
@@ -159,35 +158,16 @@ describe("Header Component", () => {
         onToggleFavoritesOnly={vi.fn()}
         activeTab="home"
         onSelectTab={vi.fn()}
-        onRefresh={onRefresh}
       />
     );
 
     expect(screen.getByText("Son güncelleme 03:00")).toBeInTheDocument();
     expect(screen.getByText("03:00")).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: "Verileri yenile" }));
-    expect(onRefresh).toHaveBeenCalledOnce();
-  });
-
-  it("disables refresh while data is loading", () => {
-    render(
-      <Header
-        totalMatches={10}
-        favoritesCount={0}
-        showOnlyFavorites={false}
-        onToggleFavoritesOnly={vi.fn()}
-        activeTab="home"
-        onSelectTab={vi.fn()}
-        onRefresh={vi.fn()}
-        isLoading
-      />
-    );
-
-    expect(screen.getByRole("button", { name: "Veriler güncelleniyor" })).toBeDisabled();
+    expect(screen.queryByRole("button", { name: /yenile/i })).not.toBeInTheDocument();
   });
 
   it("formats update times consistently in the Istanbul timezone", () => {
-    const { rerender } = render(
+    render(
       <Header
         updatedAt="2026-01-01T00:00:00.000Z"
         totalMatches={10}
@@ -196,24 +176,12 @@ describe("Header Component", () => {
         onToggleFavoritesOnly={vi.fn()}
         activeTab="home"
         onSelectTab={vi.fn()}
-        isLoading
       />
     );
 
-    rerender(
-      <Header
-        updatedAt="2026-01-01T00:00:00.000Z"
-        totalMatches={10}
-        favoritesCount={0}
-        showOnlyFavorites={false}
-        onToggleFavoritesOnly={vi.fn()}
-        activeTab="home"
-        onSelectTab={vi.fn()}
-        isLoading={false}
-      />
-    );
-
-    expect(screen.getByText(/Fikstür ve sonuçlar güncellendi/)).toHaveTextContent("03:00");
+    expect(screen.getByText("Son güncelleme 03:00")).toBeInTheDocument();
+    expect(screen.getByText("03:00")).toBeInTheDocument();
+    expect(screen.queryByText(/Fikstür ve sonuçlar güncellendi/)).not.toBeInTheDocument();
   });
 
   it("places the TAKVİM link right after GRUP DURUMU and points it to /takvim", () => {

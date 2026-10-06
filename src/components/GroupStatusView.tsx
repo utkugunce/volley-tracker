@@ -40,7 +40,6 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
   selectedCity = "all",
   onSelectCity,
   citiesList = [],
-  onRefresh,
   isLoading = false,
 }) => {
   const [groups, setGroups] = useState<GroupStatusItem[]>(initialGroups);
@@ -175,17 +174,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
           </div>
 
           <div className="flex items-center gap-2 self-start md:self-center">
-            {onRefresh && (
-              <button
-                onClick={onRefresh}
-                disabled={isLoading || loadingData}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold border border-slate-700/80 transition-all active:scale-95 disabled:opacity-50 cursor-pointer shadow-sm"
-                title="Verileri Yenile"
-              >
-                <RefreshCw size={14} className={isLoading || loadingData ? "animate-spin text-ink-2" : ""} />
-                <span>Yenile</span>
-              </button>
-            )}
+
 
             <div className="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700 text-center">
               <div className="text-[10px] uppercase font-bold text-slate-400">Toplam Grup</div>

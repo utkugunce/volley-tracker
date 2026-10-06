@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { getLeagueData } from "@/utils/leagueData";
 import { LeagueHubClient } from "@/components/league/LeagueHubClient";
 
-export const revalidate = 1800; // 30 minutes ISR cache (Vercel kota)
+export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;

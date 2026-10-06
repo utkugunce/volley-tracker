@@ -1,5 +1,5 @@
 import React from "react";
-import { Wifi, WifiOff, RefreshCw } from "lucide-react";
+import { Wifi, WifiOff } from "lucide-react";
 
 interface LiveScoreIndicatorProps {
   isConnected: boolean;
@@ -45,17 +45,6 @@ export function LiveScoreIndicator({
         <span className="text-slate-500">
           Son güncelleme: {getTimeSinceUpdate()}
         </span>
-      )}
-
-      {onRefresh && (
-        <button
-          onClick={onRefresh}
-          disabled={isRefreshing}
-          className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          title="Yenile"
-        >
-          <RefreshCw size={12} className={isRefreshing ? "animate-spin" : ""} />
-        </button>
       )}
     </div>
   );

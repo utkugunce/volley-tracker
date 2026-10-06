@@ -5,7 +5,7 @@ import { getInitialResults } from "@/utils/getInitialFixtures";
 import { getCityNameFromSlug, isValidCitySlug } from "@/utils/cityHelper";
 import { slugify } from "@/utils/slugify";
 
-export const revalidate = 3600; // 1 hour ISR cache (Vercel kota)
+export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export function generateStaticParams() {
   // Yüksek kardinalite (il × sekme): derlemede ön-üretim ISR yazmalarını şişiriyor.

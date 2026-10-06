@@ -41,9 +41,7 @@ interface Kadinlar2LigHeaderProps {
   onSelectTab: (tab: Kadinlar2LigTabType) => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
-  onRefresh?: () => void;
   isLoading?: boolean;
-  justUpdated?: boolean;
   todayMatchesCount?: number;
   resultsCount?: number;
   favoritesCount?: number;
@@ -58,9 +56,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
   onSelectTab,
   searchQuery,
   onSearchChange,
-  onRefresh,
   isLoading = false,
-  justUpdated = false,
   todayMatchesCount = 0,
   resultsCount = 0,
   favoritesCount = 0,

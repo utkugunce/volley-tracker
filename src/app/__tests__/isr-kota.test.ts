@@ -64,16 +64,16 @@ describe("Vercel kota — ISR revalidate süreleri", () => {
     "src/app/takvim/page.tsx",
   ];
 
-  it("şehir / ana sekme sayfaları 3600 sn (1 saat)", () => {
-    for (const f of cityAndMain) expectRevalidate(f, 3600);
+  it("şehir / ana sekme sayfaları 86400 sn (24 saat)", () => {
+    for (const f of cityAndMain) expectRevalidate(f, 86400);
   });
 
-  it("lig sayfaları 1800 sn (30 dk)", () => {
-    for (const f of league) expectRevalidate(f, 1800);
+  it("lig sayfaları 86400 sn (24 saat)", () => {
+    for (const f of league) expectRevalidate(f, 86400);
   });
 
-  it("takım / istatistik / takvim 3600 sn (1 saat)", () => {
-    for (const f of longLived) expectRevalidate(f, 3600);
+  it("takım / istatistik / takvim 86400 sn (24 saat)", () => {
+    for (const f of longLived) expectRevalidate(f, 86400);
   });
 });
 

@@ -87,7 +87,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   // 81 İl Desteği - URL'den veya prop'tan gelen şehir ile başlar
   const [currentCitySlug, setCurrentCitySlug] = useState(initialCity || "all");
 
-  const { data, isPartialData, loading, error, setError, ensureFullData, loadCityData, fetchData } =
+  const { data, isPartialData, loading, error, setError, ensureFullData, loadCityData } =
     useFixturesData({ initialData, initialCity, initialDataPartial, currentCitySlug });
 
   const { todayStr, yesterdayStr } = useTodayYesterday();
@@ -183,7 +183,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               onToggleFavoritesOnly={() => setShowOnlyFavorites(!showOnlyFavorites)}
               activeTab={activeMainTab}
               onSelectTab={handleSelectTab}
-              onRefresh={fetchData}
               isLoading={loading}
               onOpenSearch={() => setIsSearchOpen(true)}
             />
@@ -332,7 +331,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               selectedCity={currentCitySlug}
               onSelectCity={handleSelectCity}
               citiesList={citiesList}
-              onRefresh={fetchData}
               isLoading={loading}
             />
           </div>

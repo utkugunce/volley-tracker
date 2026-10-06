@@ -11,7 +11,7 @@ import type { CalendarMatch } from "@/utils/takvim";
  * (Vercel yazma kotası). Veri, .ics akışlarıyla aynı TVF okuyucusundan gelir; "bugün" ve seçili gün
  * tarayıcıda hesaplanır, bu yüzden sunucu çıktısı kişiye/zamana göre değişmez.
  */
-export const revalidate = 3600; // 1 hour ISR cache (Vercel kota)
+export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export function generateMetadata(): Metadata {
   const title = "Vodafone Sultanlar Ligi Takvimi — Altyapı Voleybol";

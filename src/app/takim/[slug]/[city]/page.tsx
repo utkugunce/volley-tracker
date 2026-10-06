@@ -3,7 +3,7 @@ import { buildTeamMetadata, TeamPageView } from "../../team-page";
 
 // Çok şehirli takımların il varyantı: /takim/izmir-vakifbank yerine /takim/vakifbank/izmir.
 // Eski `/takim/<slug>?sehir=<il>` (ve `?city=`) adresleri next.config.mjs rewrite'ı ile buraya çözülür.
-export const revalidate = 3600; // 1 hour ISR cache (Vercel kota)
+export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export function generateStaticParams() {
   return [];

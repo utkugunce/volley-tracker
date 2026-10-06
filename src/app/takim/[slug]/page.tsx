@@ -3,7 +3,7 @@ import { buildTeamMetadata, TeamPageView } from "../team-page";
 
 // Sayfa artık arama parametresi okumadığı için ISR ile CDN'den servis edilir.
 // 2387 takım sayfası derleme sırasında üretilmez; ilk istekte üretilir ve 1 saat önbellekte kalır.
-export const revalidate = 3600; // 1 hour ISR cache (Vercel kota)
+export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export function generateStaticParams() {
   return [];

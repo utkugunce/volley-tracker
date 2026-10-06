@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import { Printer, Star, Calendar, CalendarDays, Trophy, CheckCircle2, Flame, Check, Search, Layers, Home, ArrowRight, RefreshCw } from "lucide-react";
+import { Printer, Star, Calendar, CalendarDays, Trophy, CheckCircle2, Flame, Search, Layers, Home, ArrowRight } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -27,8 +27,8 @@ interface HeaderProps {
   /** "calendar": /takvim sayfası (ayrı rota; sekme düğmesi yerine bağlantıdır). */
   activeTab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status" | "calendar";
   onSelectTab: (tab: "home" | "results" | "today" | "fixtures" | "standings" | "group-status") => void;
-  onRefresh?: () => void;
   isLoading?: boolean;
+  onRefresh?: () => void;
   onOpenSearch?: () => void;
 }
 
@@ -46,7 +46,6 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleFavoritesOnly,
   activeTab,
   onSelectTab,
-  onRefresh,
   isLoading = false,
   onOpenSearch,
 }) => {
@@ -58,24 +57,6 @@ export const Header: React.FC<HeaderProps> = ({
         timeZone: "Europe/Istanbul",
       })
     : "--:--";
-
-  const [justUpdated, setJustUpdated] = useState(false);
-  const prevLoadingRef = useRef(isLoading);
-  const prevActiveTabRef = useRef(activeTab);
-
-  useEffect(() => {
-    const tabChanged = prevActiveTabRef.current !== activeTab;
-    prevActiveTabRef.current = activeTab;
-
-    if (prevLoadingRef.current && !isLoading && !tabChanged) {
-      setJustUpdated(true);
-      const timer = setTimeout(() => {
-        setJustUpdated(false);
-      }, 2500);
-      return () => clearTimeout(timer);
-    }
-    prevLoadingRef.current = isLoading;
-  }, [isLoading, activeTab]);
 
   return (
     <header className="bg-canvas/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
@@ -163,23 +144,10 @@ export const Header: React.FC<HeaderProps> = ({
           <PwaInstallPrompt />
 
           {updatedAt && (
-            <span className="hidden sm:inline-flex text-[10px] text-slate-400 whitespace-nowrap" title={`Son güncelleme ${formattedTime}`} aria-label={`Son güncelleme ${formattedTime}`}>
+            <span className="inline-flex text-[10px] text-slate-400 whitespace-nowrap" title={`Son güncelleme ${formattedTime}`} aria-label={`Son güncelleme ${formattedTime}`}>
               <span className="sm:hidden">{formattedTime}</span>
               <span className="hidden sm:inline">Son güncelleme {formattedTime}</span>
             </span>
-          )}
-
-          {onRefresh && (
-            <button
-              type="button"
-              onClick={onRefresh}
-              disabled={isLoading}
-              className="p-2 sm:p-1.5 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-lg bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 disabled:opacity-60 transition-colors no-print border border-slate-700/60"
-              title={isLoading ? "Veriler güncelleniyor" : "Verileri yenile"}
-              aria-label={isLoading ? "Veriler güncelleniyor" : "Verileri yenile"}
-            >
-              <RefreshCw size={14} className={isLoading ? "animate-spin" : ""} />
-            </button>
           )}
 
           {/* Tema + Dil */}
@@ -196,14 +164,6 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
         </div>
       </div>
-
-      {/* Canlı Yenileme Başarılı Toast Bildirimi */}
-      {justUpdated && (
-        <div className="fixed top-14 right-4 z-50 bg-emerald-950/95 border border-emerald-500/80 text-emerald-200 px-3.5 py-2 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2 animate-in fade-in slide-in-from-top-2 duration-300 text-xs font-semibold">
-          <Check size={15} className="text-emerald-400 stroke-[3]" />
-          <span>Fikstür ve sonuçlar güncellendi ({formattedTime})</span>
-        </div>
-      )}
 
       {/* 2. ANA SEKMELER: ANASAYFA, SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU, GRUP DURUMU, TAKVİM */}
       <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
