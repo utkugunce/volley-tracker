@@ -1,5 +1,8 @@
 // public/sw.js — Altyapı Voleybol Service Worker
-const CACHE_NAME = "altyapi-voleybol-v5";
+const CACHE_NAME = "altyapi-voleybol-v6";
+// Ziyaret edilen HTML sayfaları (çevrimdışı gösterim için) ayrı ve boyutu sınırlı bir önbellekte tutulur.
+const PAGE_CACHE_NAME = "altyapi-voleybol-pages-v1";
+const PAGE_CACHE_MAX_ENTRIES = 20;
 // Son görülen fikstür/il verisi ayrı bir önbellekte tutulur (çevrimdışıyken gösterilir).
 const DATA_CACHE_NAME = "altyapi-voleybol-data-v1";
 const DATA_CACHE_MAX_ENTRIES = 40;
@@ -53,7 +56,7 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((keys) => {
       return Promise.all(
         keys
-          .filter((key) => key !== CACHE_NAME && key !== DATA_CACHE_NAME)
+          .filter((key) => key !== CACHE_NAME && key !== DATA_CACHE_NAME && key !== PAGE_CACHE_NAME)
           .map((key) => caches.delete(key))
       );
     })
@@ -122,6 +125,18 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // (-) Next.js istemci yönlendiricisinin RSC / prefetch istekleri (`?_rsc=`, `RSC: 1`, `Next-Router-Prefetch`):
+  // asla SW'den geçirilmez ve önbelleğe yazılmaz. Bunlar sayfa başına yüzlerce olabilir; eskiden "stale-while-revalidate"
+  // dalına düşüp her biri Cache Storage'a yazılıyor (+ trim için keys() taranıyor), bayat RSC verisi de döndürülebiliyordu.
+  if (
+    url.searchParams.has("_rsc") ||
+    request.headers.get("RSC") === "1" ||
+    request.headers.has("Next-Router-Prefetch") ||
+    request.headers.has("Next-Router-State-Tree")
+  ) {
+    return;
+  }
+
   // (-) Oturumlu sayfalar: tarayıcıya bırak (önbellek yok).
   if (BYPASS_PATH_PREFIXES.some((prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`))) {
     return;
@@ -149,9 +164,13 @@ self.addEventListener("fetch", (event) => {
         .then((networkResponse) => {
           if (networkResponse && networkResponse.status === 200) {
             const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseToCache);
-            });
+            caches
+              .open(PAGE_CACHE_NAME)
+              .then(async (cache) => {
+                await cache.put(request, responseToCache);
+                await trimCache(PAGE_CACHE_NAME, PAGE_CACHE_MAX_ENTRIES);
+              })
+              .catch(() => undefined);
           }
           return networkResponse;
         })

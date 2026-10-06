@@ -52,9 +52,10 @@ function loadWorker(fetchImpl: (req: any) => Promise<Response>) {
   return { listeners, stores, caches };
 }
 
-function req(url: string, init: { method?: string; mode?: string; auth?: boolean } = {}) {
+function req(url: string, init: { method?: string; mode?: string; auth?: boolean; headers?: Record<string, string> } = {}) {
   const headers = new Map<string, string>();
   if (init.auth) headers.set("authorization", "Bearer x");
+  for (const [k, v] of Object.entries(init.headers ?? {})) headers.set(k.toLowerCase(), v);
   if (init.mode === "navigate") headers.set("accept", "text/html");
   return {
     url: "https://altyapivoleybol.com.tr" + url,
@@ -106,11 +107,13 @@ describe("service worker (public/sw.js)", () => {
     const { listeners, stores } = loadWorker(network);
     stores.set("altyapi-voleybol-v4", new Map());
     stores.set("altyapi-voleybol-v5", new Map());
+    stores.set("altyapi-voleybol-v6", new Map());
     stores.set("altyapi-voleybol-data-v1", new Map());
+    stores.set("altyapi-voleybol-pages-v1", new Map());
     let p: Promise<unknown> = Promise.resolve();
     listeners.activate({ waitUntil: (x: Promise<unknown>) => (p = x) });
     await p;
-    expect([...stores.keys()].sort()).toEqual(["altyapi-voleybol-data-v1", "altyapi-voleybol-v5"]);
+    expect([...stores.keys()].sort()).toEqual(["altyapi-voleybol-data-v1", "altyapi-voleybol-pages-v1", "altyapi-voleybol-v6"]);
   });
 
   it("bildirim, kimlik doğrulama, yönetim ve POST istekleri ele alınmaz", async () => {
@@ -178,7 +181,7 @@ describe("service worker (public/sw.js)", () => {
 
     const unknown = await (await dispatchFetch(listeners, req("/takim/yok", { mode: "navigate" })))!;
     expect(await unknown.text()).toBe("asset:/offline.html");
-    expect([...stores.keys()]).toContain("altyapi-voleybol-v5");
+    expect([...stores.keys()]).toContain("altyapi-voleybol-pages-v1");
   });
 
   it("veri önbelleği en fazla 40 kayıt tutar", async () => {
@@ -189,5 +192,35 @@ describe("service worker (public/sw.js)", () => {
     }
     await new Promise((r) => setTimeout(r, 30));
     expect(stores.get("altyapi-voleybol-data-v1")!.size).toBeLessThanOrEqual(40);
+  });
+
+  it("Next.js RSC / prefetch istekleri SW tarafından ele alınmaz ve önbelleğe yazılmaz", async () => {
+    let calls = 0;
+    const { listeners, stores } = loadWorker(async (r) => {
+      calls++;
+      return network(r);
+    });
+    for (const r of [
+      req("/takim/eczacibasi-u18/istanbul?_rsc=abc"),
+      req("/takim/eczacibasi-u18?sehir=istanbul&_rsc=abc"),
+      req("/fikstur", { headers: { RSC: "1" } }),
+      req("/sonuclar/afyon", { headers: { "Next-Router-Prefetch": "1" } }),
+      req("/puan-durumu", { headers: { "Next-Router-State-Tree": "x" } }),
+    ]) {
+      expect(await dispatchFetch(listeners, r)).toBeNull();
+    }
+    await new Promise((r) => setTimeout(r, 10));
+    expect(calls).toBe(0);
+    expect([...stores.values()].every((s) => s.size === 0)).toBe(true);
+  });
+
+  it("ziyaret edilen sayfa önbelleği en fazla 20 kayıt tutar", async () => {
+    const { listeners, stores } = loadWorker(network);
+    for (let i = 0; i < 30; i++) {
+      await (await dispatchFetch(listeners, req(`/puan-durumu/il${i}`, { mode: "navigate" })))!;
+      await new Promise((r) => setTimeout(r, 2));
+    }
+    await new Promise((r) => setTimeout(r, 30));
+    expect(stores.get("altyapi-voleybol-pages-v1")!.size).toBeLessThanOrEqual(20);
   });
 });
