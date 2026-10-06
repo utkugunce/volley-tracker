@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T14:08:40.718287+03:00",
+  "updated_at": "2026-10-06T20:25:49.528915+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -37,11 +37,11 @@
       {
         "rank": 1,
         "team": "Göztepe SK - A U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
@@ -81,12 +81,12 @@
       {
         "rank": 5,
         "team": "Dalton Koleji Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -94,11 +94,11 @@
       {
         "rank": 1,
         "team": "Gelişim Koleji SK U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
         "form": []
       },
@@ -127,12 +127,12 @@
       {
         "rank": 4,
         "team": "KZY Bornova Spor Kulübü - B U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 5,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -162,12 +162,12 @@
       {
         "rank": 2,
         "team": "Monza Spor Kulübü - B U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 2,
         "form": []
       },
       {
@@ -184,12 +184,12 @@
       {
         "rank": 4,
         "team": "Venüs Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -444,6 +444,17 @@
     "Genç Kızlar 1. Ligi - Genç Kız - C Gr": [
       {
         "rank": 1,
+        "team": "Zirve 35 Spor Kulübü U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "35 Yıldız Spor Kulübü U18",
         "played": 2,
         "won": 2,
@@ -454,7 +465,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Smyrna Voleybol Kulübü U18",
         "played": 2,
         "won": 1,
@@ -465,47 +476,36 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Zirve 35 Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Efor Gençlik Spor Kulübü U18",
-        "played": 1,
+        "team": "Güzelyalı Spor Kulübü U18",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Güzelyalı Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
+        "team": "Efor Gençlik Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 6,
         "team": "Mavişehir Koleji Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "sets_won": 2,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -681,17 +681,28 @@
       },
       {
         "rank": 3,
-        "team": "Mavişehir Spor Kulübü U16",
-        "played": 3,
+        "team": "Forza Spor Kulübü",
+        "played": 4,
         "won": 2,
-        "lost": 1,
-        "points": 5,
-        "sets_won": 7,
-        "sets_lost": 5,
+        "lost": 2,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 8,
         "form": []
       },
       {
         "rank": 4,
+        "team": "Mavişehir Spor Kulübü U16",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 5,
+        "sets_won": 8,
+        "sets_lost": 8,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Parla Voleybol Kulübü - B U16",
         "played": 3,
         "won": 1,
@@ -699,17 +710,6 @@
         "points": 4,
         "sets_won": 6,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Forza Spor Kulübü",
-        "played": 3,
-        "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 7,
         "form": []
       },
       {
@@ -1192,11 +1192,15 @@
       "match_no": "8",
       "home_team": "Dalton Koleji Spor Kulübü U18",
       "away_team": "Göztepe SK - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "15-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402736",
@@ -1622,11 +1626,15 @@
       "match_no": "8",
       "home_team": "KZY Bornova Spor Kulübü - B U18",
       "away_team": "Gelişim Koleji SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "13-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402739",
@@ -2002,11 +2010,16 @@
       "match_no": "7",
       "home_team": "Monza Spor Kulübü - B U18",
       "away_team": "Venüs Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-14",
+        "18-25",
+        "25-19",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402741",
@@ -3445,11 +3458,16 @@
       "match_no": "6",
       "home_team": "Mavişehir Koleji Spor Kulübü U18",
       "away_team": "Güzelyalı Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-17",
+        "12-25",
+        "14-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402733",
@@ -3486,11 +3504,15 @@
       "match_no": "7",
       "home_team": "Efor Gençlik Spor Kulübü U18",
       "away_team": "Zirve 35 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "23-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402734",
@@ -5018,11 +5040,16 @@
       "match_no": "10",
       "home_team": "Mavişehir Spor Kulübü U16",
       "away_team": "Forza Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "21-25",
+        "25-22",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -6497,5 +6524,5 @@
     }
   ],
   "volleybox_synced_matches": 100,
-  "volleybox_sync_updated_at": "2026-10-06T14:13:13.119582"
+  "volleybox_sync_updated_at": "2026-10-06T20:27:16.214687"
 }

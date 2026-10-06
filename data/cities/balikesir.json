@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T14:08:40.718287+03:00",
+  "updated_at": "2026-10-06T20:25:49.528915+00:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -294,24 +294,24 @@
     "Yıldız Kızlar Süper Lig - C Grubu ( Körfez )": [
       {
         "rank": 1,
-        "team": "AYVALIKGÜCÜ BELEDİYE SPOR B",
-        "played": 0,
-        "won": 0,
+        "team": "Ayvalıkspor U16",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Ayvalıkspor U16",
-        "played": 0,
+        "team": "AYVALIKGÜCÜ BELEDİYE SPOR B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -362,29 +362,29 @@
     "Yıldız Kızlar Süper Lig - D Grubu ( Körfez )": [
       {
         "rank": 1,
-        "team": "Ayvalık Gelişim Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
+        "team": "Ayvalıkgücü Belediye SK U16",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Ayvalıkgücü Belediye SK U16",
-        "played": 0,
+        "team": "Ayvalıkspor - B U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Ayvalıkspor - B U16",
+        "team": "Ayvalık Gelişim Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -588,11 +588,15 @@
       "match_no": "1",
       "home_team": "AYVALIKGÜCÜ BELEDİYE SPOR B",
       "away_team": "Ayvalıkspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "19-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -690,11 +694,15 @@
       "match_no": "1",
       "home_team": "Ayvalıkgücü Belediye SK U16",
       "away_team": "Ayvalıkspor - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-11",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -849,5 +857,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-06T14:13:09.648500"
+  "volleybox_sync_updated_at": "2026-10-06T20:27:16.225920"
 }

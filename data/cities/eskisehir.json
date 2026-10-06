@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T14:08:40.718287+03:00",
+  "updated_at": "2026-10-06T20:25:49.528915+00:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 39,
+  "total_matches": 48,
   "source": "https://eskisehir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -781,7 +781,41 @@
       }
     },
     {
-      "id": "eskisehir-20260923-010",
+      "id": "eskisehir-20261023-010",
+      "city": "Eskişehir",
+      "date": "2026-10-23",
+      "time": "18:30",
+      "hall": "Şehit Anıl Gül",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- A Gr",
+      "match_no": "5",
+      "home_team": "Eskişehir Türk Telekom Spor Kulübü U18",
+      "away_team": "Eskişehir DSİ Bentspor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260923-011",
       "city": "Eskişehir",
       "date": "2026-09-23",
       "time": "18:30",
@@ -826,7 +860,7 @@
       }
     },
     {
-      "id": "eskisehir-20260927-011",
+      "id": "eskisehir-20260927-012",
       "city": "Eskişehir",
       "date": "2026-09-27",
       "time": "18:00",
@@ -873,7 +907,7 @@
       }
     },
     {
-      "id": "eskisehir-20261001-012",
+      "id": "eskisehir-20261001-013",
       "city": "Eskişehir",
       "date": "2026-10-01",
       "time": "18:30",
@@ -919,7 +953,7 @@
       }
     },
     {
-      "id": "eskisehir-20261002-013",
+      "id": "eskisehir-20261002-014",
       "city": "Eskişehir",
       "date": "2026-10-02",
       "time": "20:00",
@@ -964,7 +998,7 @@
       }
     },
     {
-      "id": "eskisehir-20261014-014",
+      "id": "eskisehir-20261014-015",
       "city": "Eskişehir",
       "date": "2026-10-14",
       "time": "20:00",
@@ -998,7 +1032,41 @@
       }
     },
     {
-      "id": "eskisehir-20260921-015",
+      "id": "eskisehir-20261023-016",
+      "city": "Eskişehir",
+      "date": "2026-10-23",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "- B Gr",
+      "match_no": "6",
+      "home_team": "Anadolu Kolej Spor Kulübü U18",
+      "away_team": "Meryem Boz Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-017",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "18:30",
@@ -1043,7 +1111,7 @@
       }
     },
     {
-      "id": "eskisehir-20260926-016",
+      "id": "eskisehir-20260926-018",
       "city": "Eskişehir",
       "date": "2026-09-26",
       "time": "16:00",
@@ -1088,7 +1156,7 @@
       }
     },
     {
-      "id": "eskisehir-20260928-017",
+      "id": "eskisehir-20260928-019",
       "city": "Eskişehir",
       "date": "2026-09-28",
       "time": "18:30",
@@ -1133,7 +1201,7 @@
       }
     },
     {
-      "id": "eskisehir-20261007-018",
+      "id": "eskisehir-20261007-020",
       "city": "Eskişehir",
       "date": "2026-10-07",
       "time": "20:00",
@@ -1174,7 +1242,75 @@
       }
     },
     {
-      "id": "eskisehir-20260921-019",
+      "id": "eskisehir-20261018-021",
+      "city": "Eskişehir",
+      "date": "2026-10-18",
+      "time": "18:30",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- A Gr",
+      "match_no": "9",
+      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+      "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261018-022",
+      "city": "Eskişehir",
+      "date": "2026-10-18",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- A Gr",
+      "match_no": "10",
+      "home_team": "Eskişehir DSİ Bentspor U16",
+      "away_team": "Anadolu Kolej Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-023",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "20:00",
@@ -1219,7 +1355,7 @@
       }
     },
     {
-      "id": "eskisehir-20260925-020",
+      "id": "eskisehir-20260925-024",
       "city": "Eskişehir",
       "date": "2026-09-25",
       "time": "18:30",
@@ -1264,7 +1400,7 @@
       }
     },
     {
-      "id": "eskisehir-20260926-021",
+      "id": "eskisehir-20260926-025",
       "city": "Eskişehir",
       "date": "2026-09-26",
       "time": "18:00",
@@ -1309,7 +1445,7 @@
       }
     },
     {
-      "id": "eskisehir-20260930-022",
+      "id": "eskisehir-20260930-026",
       "city": "Eskişehir",
       "date": "2026-09-30",
       "time": "20:00",
@@ -1354,7 +1490,7 @@
       }
     },
     {
-      "id": "eskisehir-20261002-023",
+      "id": "eskisehir-20261002-027",
       "city": "Eskişehir",
       "date": "2026-10-02",
       "time": "18:30",
@@ -1399,7 +1535,7 @@
       }
     },
     {
-      "id": "eskisehir-20261002-024",
+      "id": "eskisehir-20261002-028",
       "city": "Eskişehir",
       "date": "2026-10-02",
       "time": "18:30",
@@ -1446,7 +1582,7 @@
       }
     },
     {
-      "id": "eskisehir-20261013-025",
+      "id": "eskisehir-20261013-029",
       "city": "Eskişehir",
       "date": "2026-10-13",
       "time": "18:30",
@@ -1480,7 +1616,109 @@
       }
     },
     {
-      "id": "eskisehir-20260921-026",
+      "id": "eskisehir-20261017-030",
+      "city": "Eskişehir",
+      "date": "2026-10-17",
+      "time": "18:30",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- B Gr",
+      "match_no": "8",
+      "home_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
+      "away_team": "Şehir Koleji Eğitim Kültür SK U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261017-031",
+      "city": "Eskişehir",
+      "date": "2026-10-17",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- B Gr",
+      "match_no": "9",
+      "home_team": "Esnova Spor Kulübü U16",
+      "away_team": "Eskişehir Ata Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261023-032",
+      "city": "Eskişehir",
+      "date": "2026-10-23",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- B Gr",
+      "match_no": "10",
+      "home_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
+      "away_team": "Esnova Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-033",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "18:30",
@@ -1527,7 +1765,7 @@
       }
     },
     {
-      "id": "eskisehir-20260927-027",
+      "id": "eskisehir-20260927-034",
       "city": "Eskişehir",
       "date": "2026-09-27",
       "time": "18:00",
@@ -1572,7 +1810,7 @@
       }
     },
     {
-      "id": "eskisehir-20260928-028",
+      "id": "eskisehir-20260928-035",
       "city": "Eskişehir",
       "date": "2026-09-28",
       "time": "18:30",
@@ -1619,7 +1857,7 @@
       }
     },
     {
-      "id": "eskisehir-20261002-029",
+      "id": "eskisehir-20261002-036",
       "city": "Eskişehir",
       "date": "2026-10-02",
       "time": "20:00",
@@ -1664,7 +1902,7 @@
       }
     },
     {
-      "id": "eskisehir-20261005-030",
+      "id": "eskisehir-20261005-037",
       "city": "Eskişehir",
       "date": "2026-10-05",
       "time": "18:30",
@@ -1709,7 +1947,7 @@
       }
     },
     {
-      "id": "eskisehir-20261007-031",
+      "id": "eskisehir-20261007-038",
       "city": "Eskişehir",
       "date": "2026-10-07",
       "time": "18:30",
@@ -1750,7 +1988,7 @@
       }
     },
     {
-      "id": "eskisehir-20261013-032",
+      "id": "eskisehir-20261013-039",
       "city": "Eskişehir",
       "date": "2026-10-13",
       "time": "20:00",
@@ -1784,7 +2022,75 @@
       }
     },
     {
-      "id": "eskisehir-20260921-033",
+      "id": "eskisehir-20261022-040",
+      "city": "Eskişehir",
+      "date": "2026-10-22",
+      "time": "18:30",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- C Gr",
+      "match_no": "8",
+      "home_team": "Eskişehir Türk Telekom Spor Kulübü - B U16",
+      "away_team": "Meryem Boz Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261022-041",
+      "city": "Eskişehir",
+      "date": "2026-10-22",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "- C Gr",
+      "match_no": "9",
+      "home_team": "Esnova Spor Kulübü - B U16",
+      "away_team": "Eskişehir Ata Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20260921-042",
       "city": "Eskişehir",
       "date": "2026-09-21",
       "time": "20:00",
@@ -1829,7 +2135,7 @@
       }
     },
     {
-      "id": "eskisehir-20260922-034",
+      "id": "eskisehir-20260922-043",
       "city": "Eskişehir",
       "date": "2026-09-22",
       "time": "20:00",
@@ -1874,7 +2180,7 @@
       }
     },
     {
-      "id": "eskisehir-20260925-035",
+      "id": "eskisehir-20260925-044",
       "city": "Eskişehir",
       "date": "2026-09-25",
       "time": "20:00",
@@ -1920,7 +2226,7 @@
       }
     },
     {
-      "id": "eskisehir-20260927-036",
+      "id": "eskisehir-20260927-045",
       "city": "Eskişehir",
       "date": "2026-09-27",
       "time": "14:00",
@@ -1965,7 +2271,7 @@
       }
     },
     {
-      "id": "eskisehir-20261001-037",
+      "id": "eskisehir-20261001-046",
       "city": "Eskişehir",
       "date": "2026-10-01",
       "time": "20:00",
@@ -2010,7 +2316,7 @@
       }
     },
     {
-      "id": "eskisehir-20261008-038",
+      "id": "eskisehir-20261008-047",
       "city": "Eskişehir",
       "date": "2026-10-08",
       "time": "18:30",
@@ -2051,7 +2357,7 @@
       }
     },
     {
-      "id": "eskisehir-20261008-039",
+      "id": "eskisehir-20261008-048",
       "city": "Eskişehir",
       "date": "2026-10-08",
       "time": "20:00",
@@ -2093,5 +2399,5 @@
     }
   ],
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-10-06T14:13:10.109380"
+  "volleybox_sync_updated_at": "2026-10-06T20:27:16.223171"
 }

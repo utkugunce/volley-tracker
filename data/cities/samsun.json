@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T14:08:40.718287+03:00",
+  "updated_at": "2026-10-06T20:25:49.528915+00:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -136,7 +136,7 @@
     "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği B Grubu": [
       {
         "rank": 1,
-        "team": "Vezirköprü Gençlik Spor Kulübü U18",
+        "team": "Samsunspor U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -147,7 +147,7 @@
       },
       {
         "rank": 2,
-        "team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
+        "team": "Vezirköprü Gençlik Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -158,7 +158,7 @@
       },
       {
         "rank": 3,
-        "team": "Atakum Atılım Spor Kulübü - B U18",
+        "team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -169,6 +169,17 @@
       },
       {
         "rank": 4,
+        "team": "Atakum Atılım Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "İlkkıvılcım Havza SK U18",
         "played": 1,
         "won": 0,
@@ -179,7 +190,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Sam55 Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -190,7 +201,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Nova Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -201,25 +212,14 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Anadolu Voleybol Akademi SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Samsunspor U18",
-        "played": 0,
+        "team": "Anadolu Voleybol Akademi SK U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -1861,11 +1861,15 @@
       "match_no": "4",
       "home_team": "Samsunspor U18",
       "away_team": "Anadolu Voleybol Akademi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-4",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402776",
@@ -2875,5 +2879,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-06T14:13:14.110015"
+  "volleybox_sync_updated_at": "2026-10-06T20:27:16.232454"
 }
