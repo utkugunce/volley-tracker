@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-06T14:08:40.718287+03:00",
+  "updated_at": "2026-10-06T15:19:46.170603+00:00",
   "total_cities": 81,
   "active_cities": 29,
-  "total_matches": 837,
+  "total_matches": 848,
   "cities": [
     {
       "ilid": "1",
@@ -271,8 +271,8 @@
       "name": "Gaziantep",
       "slug": "gaziantep",
       "url": "https://gaziantep.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
+      "status": "Aktif (5 Maç Mevcut)",
+      "matches_count": 5,
       "standings_count": 5,
       "data_file": "data/cities/gaziantep.json"
     },
@@ -421,8 +421,8 @@
       "name": "Konya",
       "slug": "konya",
       "url": "https://konya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
+      "status": "Aktif (14 Maç Mevcut)",
+      "matches_count": 14,
       "standings_count": 8,
       "data_file": "data/cities/konya.json"
     },
@@ -511,9 +511,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {
