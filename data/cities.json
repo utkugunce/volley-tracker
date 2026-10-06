@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-06T11:38:52.097080+03:00",
+  "updated_at": "2026-10-06T12:30:44.348731+03:00",
   "total_cities": 81,
-  "active_cities": 28,
-  "total_matches": 820,
+  "active_cities": 29,
+  "total_matches": 827,
   "cities": [
     {
       "ilid": "1",
@@ -271,10 +271,10 @@
       "name": "Gaziantep",
       "slug": "gaziantep",
       "url": "https://gaziantep.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (6 Maç Mevcut)",
+      "matches_count": 6,
+      "standings_count": 5,
+      "data_file": "data/cities/gaziantep.json"
     },
     {
       "ilid": "28",
@@ -331,8 +331,8 @@
       "name": "Mersin",
       "slug": "mersin",
       "url": "https://mersin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (11 Maç Mevcut)",
-      "matches_count": 11,
+      "status": "Aktif (12 Maç Mevcut)",
+      "matches_count": 12,
       "standings_count": 1,
       "data_file": "data/cities/mersin.json"
     },

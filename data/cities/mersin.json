@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T11:38:35.560693",
+  "updated_at": "2026-10-06T12:30:17.948909",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 11,
+  "total_matches": 12,
   "source": "https://mersin.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -481,18 +481,18 @@
       }
     },
     {
-      "id": "mersin-20261011-010",
+      "id": "mersin-20261010-010",
       "city": "Mersin",
-      "date": "2026-10-11",
-      "time": "11:00",
+      "date": "2026-10-10",
+      "time": "17:00",
       "hall": "Mersinli Ahmet S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "10",
-      "home_team": "Tarsus Gelecek Spor Kulübü U18",
-      "away_team": "Toroslar Belediye Spor Kulübü U18",
+      "home_team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+      "away_team": "Mersin İhtisas Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -547,8 +547,42 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "mersin-20261012-012",
+      "city": "Mersin",
+      "date": "2026-10-12",
+      "time": "17:00",
+      "hall": "Mersinli Ahmet S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "12",
+      "home_team": "Tarsus Gelecek Spor Kulübü U18",
+      "away_team": "Toroslar Belediye Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-06T11:43:11.298360"
+  "volleybox_sync_updated_at": "2026-10-06T12:35:15.188225"
 }
