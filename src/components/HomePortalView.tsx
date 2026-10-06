@@ -151,7 +151,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       <div className="flex items-center justify-between pb-1">
         <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-done shrink-0" />
-          <span>Canlı Maç Merkezi & TVF Altyapı Bülteni</span>
+          <span>TVF Altyapı Maç Merkezi & Bülteni</span>
         </h1>
         <span className="text-[11px] font-display tabular-nums text-ink-2">
           {city === "all" ? "81 İl" : city} · {stats.totalMatches} Maç

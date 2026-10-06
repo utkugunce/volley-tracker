@@ -95,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
           </Link>
         </div>
 
-        {/* Sağ Taraf: Arama, Favoriler, Yazdır, Canlı Yenile */}
+        {/* Sağ Taraf: Arama, Favoriler, Ayarlar, Yazdır */}
         <div className="flex items-center gap-1.5 sm:gap-2 ml-auto shrink-0">
           {/* Spotlight Arama Butonu */}
           {onOpenSearch && (

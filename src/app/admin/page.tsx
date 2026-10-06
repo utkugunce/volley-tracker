@@ -61,7 +61,7 @@ export default function AdminPage() {
   const [overrides, setOverrides] = useState<Record<string, MatchOverride>>({});
   const [auditLogs, setAuditLogs] = useState<AuditLogEntry[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<"matches" | "audit" | "users" | "live" | "notifications" | "sync" | "teams" | "clubs">("matches");
+  const [activeTab, setActiveTab] = useState<"matches" | "audit" | "users" | "notifications" | "sync" | "teams" | "clubs">("matches");
 
   // Filtreler
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -994,20 +994,7 @@ export default function AdminPage() {
             <Users size={13} aria-hidden="true" />
             Kullanıcılar ({users.length})
           </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={activeTab === "live"}
-            onClick={() => setActiveTab("live")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-              activeTab === "live"
-                ? "bg-live text-live-fg shadow-sm"
-                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-            }`}
-          >
-            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-            Canlı Skor
-          </button>
+
           <button
             type="button"
             role="tab"
@@ -1431,57 +1418,6 @@ export default function AdminPage() {
                 </table>
               </div>
             )}
-          </div>
-        ) : activeTab === "live" ? (
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-base font-bold text-white flex items-center gap-2">
-                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                Canlı Skor Yönetimi
-              </h2>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-slate-400">
-                  Maçları düzenlemek için &ldquo;Maçlar&rdquo; tab&apos;ına gidin
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-slate-800/50 rounded-xl p-4 text-center">
-              <div className="flex flex-col items-center gap-3">
-                <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center">
-                  <Play size={32} className="text-red-400" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white mb-1">
-                    Canlı Skor Sistemi
-                  </h3>
-                  <p className="text-xs text-slate-400 mb-3">
-                    Supabase Realtime ile anlık skor güncellemeleri aktif
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-slate-500">
-                  <span className="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded">
-                    Realtime Bağlantı: Aktif
-                  </span>
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">
-                    Otomatik Güncelleme: Açık
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-4 bg-slate-800/30 rounded-xl p-4">
-              <h4 className="text-xs font-semibold text-slate-300 mb-2">
-                Nasıl Kullanılır?
-              </h4>
-              <ol className="text-xs text-slate-400 space-y-1 list-decimal list-inside">
-                <li>&ldquo;Maçlar&rdquo; tab&apos;ına gidin</li>
-                <li>Düzenlemek istediğiniz maçı bulun</li>
-                <li>&ldquo;Düzenle&rdquo; butonuna tıklayın</li>
-                <li>Skorları güncelleyin ve &ldquo;Canlı&rdquo; durumunu seçin</li>
-                <li>Kaydedin - değişiklikler anında tüm kullanıcılara yansır</li>
-              </ol>
-            </div>
           </div>
         ) : activeTab === "notifications" ? (
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">

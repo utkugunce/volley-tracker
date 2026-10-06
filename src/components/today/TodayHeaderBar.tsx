@@ -43,7 +43,7 @@ export function TodayHeaderBar({
           <div className="flex items-center gap-2 mb-1.5">
             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-surface-raised text-ink-2 border border-line uppercase tracking-wider">
               <Flame size={12} className="text-warn" />
-              Günün Maçları & Canlı Skor
+              Günün Programı
             </span>
             <span className="text-xs text-slate-400 font-medium">
               {city === "Tüm İller" ? "Türkiye Geneli" : city}
@@ -51,7 +51,7 @@ export function TodayHeaderBar({
           </div>
           <h1 className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-2">
             <Calendar size={18} className="text-amber-400 shrink-0" />
-            <span>Günün Maçları & Canlı Skor Takibi</span>
+            <span>Günün Maçları Takibi</span>
           </h1>
           <p className="text-xs text-slate-400 font-medium mt-0.5">{formattedToday}</p>
         </div>

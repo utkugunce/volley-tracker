@@ -17,7 +17,6 @@ export { isMatchScored };
 
 import { TabViewSkeleton } from "@/components/common/SkeletonLoaders";
 import { TabViewLoading } from "@/components/dashboard/TabViewLoading";
-import { LiveMatchBanner } from "@/components/dashboard/LiveMatchBanner";
 import { DashboardFooter } from "@/components/dashboard/DashboardFooter";
 import { MobileLeaguesMenu } from "@/components/dashboard/MobileLeaguesMenu";
 import { ResultsTab } from "@/components/dashboard/ResultsTab";
@@ -186,9 +185,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               isLoading={loading}
               onOpenSearch={() => setIsSearchOpen(true)}
             />
-
-            {/* Canlı Skor Göstergesi */}
-            {liveMatchesCount > 0 && <LiveMatchBanner count={liveMatchesCount} />}
 
             {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
             {activeMainTab !== "home" && (
