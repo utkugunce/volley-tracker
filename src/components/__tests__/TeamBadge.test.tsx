@@ -51,4 +51,22 @@ describe("TeamBadge marka renkleri (Fileönü)", () => {
     render(<TeamBadge name="Eczacıbaşı Spor" />);
     expect(screen.getByLabelText("Eczacıbaşı Spor rozeti")).toBeInTheDocument();
   });
+
+  it("taranan logolardan gelen kulüp renklerini rozet stiline yansıtır", () => {
+    const zeren = getTeamColor("Zeren Spor");
+    expect(zeren.borderColor).toBe("#a855f7");
+    expect(zeren.bg).toBe("bg-purple-950");
+
+    const fb = getTeamColor("Fenerbahçe");
+    expect(fb.borderColor).toBe("#fbee00");
+    expect(fb.bg).toBe("bg-blue-950");
+
+    const anka = getTeamColor("07 Anka Spor Kulübü");
+    expect(anka.borderColor).toBeDefined();
+    expect(anka.bg).toBe("bg-teal-950");
+
+    render(<TeamBadge name="Zeren Spor" />);
+    const badge = screen.getByLabelText("Zeren Spor rozeti");
+    expect(badge).toHaveStyle({ borderColor: "#a855f7" });
+  });
 });
