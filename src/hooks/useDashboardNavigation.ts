@@ -45,16 +45,13 @@ export function useDashboardNavigation({
       }
     };
 
+    // Sekmeyi HEMEN aç (0ms gecikme, akıcı ve anında yanıt veren geçiş)
+    setActiveMainTab(tab);
+    syncTabUrl();
+
+    // Arka planda tam veriyi sessizce tamamla (sayfayı dondurmadan)
     if (isPartialData && tab !== "home") {
-      void ensureFullData().then((loaded) => {
-        if (loaded) {
-          setActiveMainTab(tab);
-          syncTabUrl();
-        }
-      });
-    } else {
-      setActiveMainTab(tab);
-      syncTabUrl();
+      void ensureFullData();
     }
   };
 

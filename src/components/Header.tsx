@@ -61,9 +61,13 @@ export const Header: React.FC<HeaderProps> = ({
 
   const [justUpdated, setJustUpdated] = useState(false);
   const prevLoadingRef = useRef(isLoading);
+  const prevActiveTabRef = useRef(activeTab);
 
   useEffect(() => {
-    if (prevLoadingRef.current && !isLoading) {
+    const tabChanged = prevActiveTabRef.current !== activeTab;
+    prevActiveTabRef.current = activeTab;
+
+    if (prevLoadingRef.current && !isLoading && !tabChanged) {
       setJustUpdated(true);
       const timer = setTimeout(() => {
         setJustUpdated(false);
@@ -71,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({
       return () => clearTimeout(timer);
     }
     prevLoadingRef.current = isLoading;
-  }, [isLoading]);
+  }, [isLoading, activeTab]);
 
   return (
     <header className="bg-canvas/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">

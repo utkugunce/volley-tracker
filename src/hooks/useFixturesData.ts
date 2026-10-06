@@ -42,22 +42,31 @@ export function useFixturesData({
     if (!isPartialData) return Promise.resolve(true);
     if (fullDataRequestRef.current) return fullDataRequestRef.current;
 
-    setLoading(true);
-    setError(null);
     const request = (async () => {
       try {
+        const cached = clientCityCache.get(currentCitySlug);
+        if (cached && (cached.matches?.length || 0) > (data?.matches?.length || 0)) {
+          setData(cached);
+          setIsPartialData(false);
+          return true;
+        }
+
         const res = await fetch(`/api/fixtures?city=${currentCitySlug}`);
-        if (!res.ok) throw new Error("Tam il verisi alınamadı.");
+        if (!res.ok) {
+          console.warn("Tam il verisi arka planda alınamadı, mevcut veri korunuyor.");
+          return false;
+        }
         const json: FixturesData = await res.json();
-        clientCityCache.set(currentCitySlug, json);
-        setData(json);
-        setIsPartialData(false);
+        if (json && Array.isArray(json.matches) && json.matches.length > 0) {
+          clientCityCache.set(currentCitySlug, json);
+          setData(json);
+          setIsPartialData(false);
+        }
         return true;
       } catch (err) {
-        setError(toErrorLike(err).message || "Tam il verisi yüklenirken hata oluştu.");
+        console.warn("Tam il verisi arka planda alınırken hata oluştu (mevcut veri korunuyor):", err);
         return false;
       } finally {
-        setLoading(false);
         fullDataRequestRef.current = null;
       }
     })();

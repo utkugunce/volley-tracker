@@ -42,6 +42,10 @@ const securityHeaders = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingIncludes: {
+    "/api/**/*": ["./data/**/*"],
+    "/**/*": ["./data/**/*"],
+  },
   experimental: {
     // Lucide ikonlarının tüm paketi yerine yalnızca kullanılan ikonların import edilmesini sağlayarak derleme süresini ve bundle boyutunu düşürür
     optimizePackageImports: ["lucide-react"],

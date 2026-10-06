@@ -2,26 +2,36 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 let cachedClient: SupabaseClient | null = null;
 
-export function isSupabaseConfigured(): boolean {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (process.env.NODE_ENV === "test" || !supabaseUrl || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    return false;
-  }
-
+function getValidSupabaseUrl(): string | null {
+  const raw = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  if (!raw) return null;
+  const withProtocol = raw.startsWith("http://") || raw.startsWith("https://") ? raw : `https://${raw}`;
   try {
-    const parsedUrl = new URL(supabaseUrl);
-    return (parsedUrl.protocol === "https:" || parsedUrl.protocol === "http:") && Boolean(parsedUrl.hostname);
+    const parsed = new URL(withProtocol);
+    return (parsed.protocol === "https:" || parsed.protocol === "http:") && Boolean(parsed.hostname)
+      ? withProtocol
+      : null;
   } catch {
+    return null;
+  }
+}
+
+export function isSupabaseConfigured(): boolean {
+  if (process.env.NODE_ENV === "test" || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
     return false;
   }
+  return Boolean(getValidSupabaseUrl());
 }
 
 export function getSupabaseAdmin(): SupabaseClient | null {
   if (!isSupabaseConfigured()) return null;
   if (cachedClient) return cachedClient;
 
+  const validUrl = getValidSupabaseUrl();
+  if (!validUrl) return null;
+
   cachedClient = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    validUrl,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
     {
       auth: {

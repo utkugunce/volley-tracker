@@ -8,6 +8,7 @@ import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
 import { getSupabaseFixtures } from "@/utils/supabaseFixtures";
+import { getInitialFixtures } from "@/utils/getInitialFixtures";
 import type { CityInfo, FixturesData, Match, StandingItem } from "@/types/fixture";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
@@ -188,66 +189,10 @@ export async function GET(request: Request) {
 
     const supabaseData = await getSupabaseFixtures(citySlug);
 
-    if (supabaseData) {
+    if (supabaseData && Array.isArray(supabaseData.matches) && supabaseData.matches.length > 0) {
       data = supabaseData;
     } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
-      const citiesDir = path.join(process.cwd(), "data", "cities");
-      const allMatches: Match[] = [];
-      const allStandings: Record<string, StandingItem[]> = {};
-      const categoriesSet = new Set<string>(["Tümü"]);
-      const hallsSet = new Set<string>(["Tümü"]);
-      let latestUpdated = new Date(0).toISOString();
-
-      if (fs.existsSync(citiesDir)) {
-        const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
-        for (const file of files) {
-          const fileSlug = file.replace(".json", "");
-          if (isCityHidden(fileSlug)) continue;
-          try {
-            const content = fs.readFileSync(path.join(citiesDir, file), "utf-8");
-            const parsed = JSON.parse(content);
-            const cityName = parsed.city || file.replace(".json", "");
-            if (isCityHidden(cityName)) continue;
-            if (parsed.updated_at && parsed.updated_at > latestUpdated) {
-              latestUpdated = parsed.updated_at;
-            }
-            if (Array.isArray(parsed.matches)) {
-              for (const m of parsed.matches) {
-                allMatches.push({
-                  ...m,
-                  city: m.city || cityName,
-                });
-                if (m.category) categoriesSet.add(m.category);
-                if (m.hall) hallsSet.add(m.hall);
-              }
-            }
-            if (parsed.standings && typeof parsed.standings === "object") {
-              for (const [k, v] of Object.entries(parsed.standings)) {
-                allStandings[`${cityName} - ${k}`] = v as StandingItem[];
-              }
-            }
-          } catch (e) {
-            console.warn(`Error reading city file ${file}:`, e);
-          }
-        }
-      }
-
-      data = {
-        city: "Tüm İller",
-        slug: "all",
-        title: "TVF Tüm İller Genç & Yıldız Kızlar Süper Lig",
-        updated_at: latestUpdated > new Date(0).toISOString() ? latestUpdated : new Date().toISOString(),
-        total_matches: allMatches.length,
-        source: "TVF İl Temsilcilikleri",
-        filters: {
-          categories: Array.from(categoriesSet),
-          age_groups: ["Tümü", "Genç", "Yıldız"],
-          genders: ["Kız"],
-          halls: Array.from(hallsSet),
-        },
-        matches: allMatches,
-        standings: allStandings,
-      };
+      data = getInitialFixtures("all");
     } else {
       if (isCityHidden(citySlug)) {
         return NextResponse.json(
@@ -286,18 +231,23 @@ export async function GET(request: Request) {
       }
 
       if (!fs.existsSync(filePath)) {
-        return NextResponse.json(
-          {
-            error: "fixtures.json bulunamadı. Lütfen önce scraper'ı çalıştırın.",
-            matches: [],
-            total_matches: 0,
-          },
-          { status: 404 }
-        );
+        const fallback = getInitialFixtures(citySlug);
+        if (fallback && Array.isArray(fallback.matches) && fallback.matches.length > 0) {
+          data = fallback;
+        } else {
+          return NextResponse.json(
+            {
+              error: "fixtures.json bulunamadı. Lütfen önce scraper'ı çalıştırın.",
+              matches: [],
+              total_matches: 0,
+            },
+            { status: 404 }
+          );
+        }
+      } else {
+        const fileContent = fs.readFileSync(filePath, "utf-8");
+        data = JSON.parse(fileContent);
       }
-
-      const fileContent = fs.readFileSync(filePath, "utf-8");
-      data = JSON.parse(fileContent);
     }
 
     let rawMatches = data.matches || [];
