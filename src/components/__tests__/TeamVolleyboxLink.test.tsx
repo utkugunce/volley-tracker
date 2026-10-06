@@ -23,7 +23,7 @@ describe("TeamVolleyboxLink", () => {
 
     expect(screen.getByRole("link", { name: officialName })).toHaveAttribute(
       "href",
-      "/takim/bizimkent-spor-kulubu-u16?sehir=istanbul"
+      "/takim/bizimkent-spor-kulubu-u16/istanbul"
     );
     expect(screen.getByTitle(`${officialName} — Volleybox Takım Profili`)).toHaveAttribute(
       "href",
