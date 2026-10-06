@@ -1,7 +1,14 @@
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, List, Optional
+
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
 
 
 def parse_timestamp(value: Any) -> Optional[datetime]:

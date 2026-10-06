@@ -1,25 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
 import "@/theme/theme-vars.css";
 import "./globals.css";
 import { THEME_INIT_SCRIPT } from "@/theme/theme";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { OfflineBanner } from "@/components/OfflineBanner";
 import { Analytics } from "@vercel/analytics/next";
-
-const manrope = Manrope({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  weight: ["500", "600", "700"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: "#07131F",
@@ -76,8 +61,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" data-theme="dark" suppressHydrationWarning className={`${manrope.variable} ${spaceGrotesk.variable}`}>
+    <html lang="tr" data-theme="dark" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        />
         {/* Tema/dil tercihini ilk boyamadan önce uygular (yanıp sönme olmaz). */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
