@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T17:00:26.047013",
+  "updated_at": "2026-10-06T01:48:12.832879",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -30,6 +30,28 @@
     "Genç Kızlar Süper Lig - - A": [
       {
         "rank": 1,
+        "team": "KVK Voleybol Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Kayseri Cimnastik Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -40,30 +62,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "KVK Voleybol Kulübü - B U18",
+        "team": "Kayseri Atletik Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -111,6 +111,28 @@
     "Genç Kızlar 1. Ligi - - A": [
       {
         "rank": 1,
+        "team": "KVK Voleybol Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Kayseri Cimnastik Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -121,30 +143,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "KVK Voleybol Kulübü - B U18",
+        "team": "Kayseri Atletik Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -157,6 +157,28 @@
     "Genç Kızlar 1. Ligi - - B": [
       {
         "rank": 1,
+        "team": "KVK Voleybol Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Kayseri Cimnastik Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -167,30 +189,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "KVK Voleybol Kulübü - B U18",
+        "team": "Kayseri Atletik Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -203,6 +203,28 @@
     "Genç Kızlar 1. Ligi - - C": [
       {
         "rank": 1,
+        "team": "KVK Voleybol Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Kayseri Cimnastik Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -213,30 +235,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "KVK Voleybol Kulübü - B U18",
+        "team": "Kayseri Atletik Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -249,6 +249,28 @@
     "Genç Kızlar 1. Ligi - - D": [
       {
         "rank": 1,
+        "team": "KVK Voleybol Kulübü - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Kayseri Cimnastik Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -259,30 +281,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "KVK Voleybol Kulübü - B U18",
+        "team": "Kayseri Atletik Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -467,11 +467,15 @@
       "match_no": "1",
       "home_team": "Kayseri Cimnastik Spor Kulübü U18",
       "away_team": "KVK Voleybol Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "17-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402759",
@@ -971,5 +975,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-05T17:05:04.647705"
+  "volleybox_sync_updated_at": "2026-10-06T01:49:51.492536"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T13:22:08.798733",
+  "updated_at": "2026-10-06T01:48:04.943705",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -37,18 +37,18 @@
       },
       {
         "rank": 2,
-        "team": "Mersin İhtisas Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
+        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "team": "Mersin İhtisas Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -60,12 +60,12 @@
       {
         "rank": 4,
         "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "sets_won": 4,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -386,11 +386,16 @@
       "match_no": "7",
       "home_team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
       "away_team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "21-25",
+        "29-27",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -443,5 +448,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-05T17:05:04.846466"
+  "volleybox_sync_updated_at": "2026-10-06T01:49:51.532619"
 }
