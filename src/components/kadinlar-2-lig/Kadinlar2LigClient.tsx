@@ -281,11 +281,24 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
         {/* PUAN CETVELİ TABI */}
         {activeTab === "standings" && (
-          <Kadinlar2LigStandings
-            group={currentGroupData}
-            searchQuery={searchQuery}
-            showOnlyFavorites={showOnlyFavorites}
-          />
+          <div className="space-y-8">
+            <Kadinlar2LigStandings
+              group={currentGroupData}
+              searchQuery={searchQuery}
+              showOnlyFavorites={showOnlyFavorites}
+            />
+
+            {/* PUAN CETVELİ ALTINDA: GRUBA AİT MAÇLAR & FİKSTÜR */}
+            <div className="space-y-4 pt-6 border-t border-slate-800/80">
+              <Kadinlar2LigFixtures
+                group={currentGroupData}
+                searchQuery={searchQuery}
+                showOnlyFavorites={showOnlyFavorites}
+                onSelectMatch={setSelectedMatch}
+                selectedMatchId={selectedMatch?.id || null}
+              />
+            </div>
+          </div>
         )}
 
         {/* FİKSTÜR TABI */}

@@ -708,6 +708,79 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
                 </div>
               ))
             )}
+            {/* PUAN DURUMU ALTINDA: OYNANAN MAÇ SONUÇLARI */}
+            {finishedSections.length > 0 && (
+              <div className="space-y-4 pt-6 border-t border-slate-800/80">
+                <div className="flex items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 size={18} className="text-emerald-400" />
+                    <h2 className="text-sm font-bold text-white">
+                      Oynanan Maç Sonuçları ({displayedFinishedMatches.length})
+                    </h2>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("results")}
+                    className="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                  >
+                    <span>Tüm Sonuçlar</span>
+                    <ArrowRight size={13} />
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {finishedSections.map((sec, idx) => (
+                    <FixtureTable
+                      key={`standings-res-${sec.title}-${sec.subTitle}-${idx}`}
+                      title={sec.title}
+                      subTitle={sec.subTitle}
+                      matches={sec.matches}
+                      favorites={favorites}
+                      onToggleFavorite={toggleFavorite}
+                      city={league.city}
+                      showCityBadge={false}
+                      onSelectMatch={setSelectedMatch}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* PUAN DURUMU ALTINDA: FİKSTÜR & GELECEK MAÇ PROGRAMI */}
+            {upcomingSections.length > 0 && (
+              <div className="space-y-4 pt-6 border-t border-slate-800/80">
+                <div className="flex items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+                  <div className="flex items-center gap-2">
+                    <Calendar size={18} className="text-ink-2" />
+                    <h2 className="text-sm font-bold text-white">
+                      Fikstür & Gelecek Maç Programı ({displayedUpcomingMatches.length})
+                    </h2>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("fixtures")}
+                    className="text-xs text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                  >
+                    <span>Tüm Fikstür</span>
+                    <ArrowRight size={13} />
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {upcomingSections.map((sec, idx) => (
+                    <FixtureTable
+                      key={`standings-fixt-${sec.title}-${sec.subTitle}-${idx}`}
+                      title={sec.title}
+                      subTitle={sec.subTitle}
+                      matches={sec.matches}
+                      favorites={favorites}
+                      onToggleFavorite={toggleFavorite}
+                      city={league.city}
+                      showCityBadge={false}
+                      onSelectMatch={setSelectedMatch}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
 

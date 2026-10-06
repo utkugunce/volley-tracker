@@ -18,7 +18,7 @@ function hasScore(m: Match): boolean {
 const normGroup = (g: string) => trLower(g).replace(/[^a-z0-9ğüşıöç]/gi, "");
 
 /** Maç grubu ile puan durumu grubu aynı mı? ("A Grubu" ≈ "Genç Kızlar Süper Lig - A Gr") */
-function sameGroup(matchGroup: string, standingGroup: string): boolean {
+export function sameGroup(matchGroup: string, standingGroup: string): boolean {
   const a = normGroup(formatGroupName(matchGroup));
   const b = normGroup(formatGroupName(standingGroup));
   if (!a || !b) return true;

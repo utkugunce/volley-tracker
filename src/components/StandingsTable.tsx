@@ -1,6 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
+import { FixtureTable } from "@/components/FixtureTable";
+import { sameGroup } from "@/utils/standingsForm";
+import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { StandingItem, Match } from "@/types/fixture";
 import { useStandingsSelection } from "@/hooks/useStandingsSelection";
 import { useStandingsCityDropdown } from "@/hooks/useStandingsCityDropdown";
@@ -51,6 +54,33 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
 
   const { expandedTeam, toggleDetail } = useStandingsRowExpansion(activeContext, city, onSelectTeam);
 
+  // Seçili lig/gruba ait maçlar (puan durumu altında sonuçlar & fikstür için)
+  const { finishedMatches, upcomingMatches } = useMemo(() => {
+    if (!matches?.length || !activeContext) {
+      return { finishedMatches: [] as Match[], upcomingMatches: [] as Match[] };
+    }
+    const ctxCity = activeContext.city || city || "";
+    const league = trLower(activeContext.leagueFullName || "");
+    const inContext = matches.filter((m) => {
+      if (ctxCity && m.city && trLower(m.city) !== trLower(ctxCity)) return false;
+      if (league && m.category) {
+        const cat = trLower(m.category);
+        if (!trIncludes(cat, league) && !trIncludes(league, cat)) return false;
+      }
+      if (activeContext.displayGroup && m.group && !sameGroup(m.group, activeContext.displayGroup)) return false;
+      return true;
+    });
+    const key = (m: Match) => `${m.date} ${m.time || ""}`;
+    return {
+      finishedMatches: inContext
+        .filter((m) => m.status === "finished")
+        .sort((a, b) => key(b).localeCompare(key(a))),
+      upcomingMatches: inContext
+        .filter((m) => m.status === "upcoming" || m.status === "live")
+        .sort((a, b) => key(a).localeCompare(key(b))),
+    };
+  }, [matches, activeContext, city]);
+
   if (allKeys.length === 0) {
     return <StandingsEmptyState />;
   }
@@ -95,6 +125,28 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         {/* Alt Açıklama / Legend */}
         <StandingsLegend />
       </div>
+
+      {/* Puan Durumu Altında: Sonuçlar */}
+      {finishedMatches.length > 0 && (
+        <FixtureTable
+          title="Oynanan Maç Sonuçları"
+          subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
+          matches={finishedMatches}
+          city={activeContext?.city || city}
+          showCityBadge={false}
+        />
+      )}
+
+      {/* Puan Durumu Altında: Fikstür */}
+      {upcomingMatches.length > 0 && (
+        <FixtureTable
+          title="Fikstür & Gelecek Maç Programı"
+          subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
+          matches={upcomingMatches}
+          city={activeContext?.city || city}
+          showCityBadge={false}
+        />
+      )}
     </div>
   );
 };
