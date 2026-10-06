@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T13:04:28.397646",
+  "updated_at": "2026-10-06T13:36:59.235632",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -1808,57 +1808,16 @@
       }
     },
     {
-      "id": "ankara-20261016-029",
+      "id": "ankara-20261015-029",
       "city": "Ankara",
-      "date": "2026-10-16",
+      "date": "2026-10-15",
       "time": "18:00",
-      "hall": "Batıkent S.S.",
+      "hall": "Mamak S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "4.Grup",
       "match_no": "7",
-      "home_team": "PTT Spor U18",
-      "away_team": "İlbank U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "404231",
-        "url": "https://women.volleybox.net/tr/ptt-spor-u18-lbank-u18-c404231",
-        "host_name": "PTT Spor U18",
-        "guest_name": "İlbank U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-16",
-        "vb_time": "18:00",
-        "vb_hall": "Batıkent Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-16",
-          "vb_time": "18:00",
-          "vb_hall": "Batıkent Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "ankara-20261016-030",
-      "city": "Ankara",
-      "date": "2026-10-16",
-      "time": "19:30",
-      "hall": "Batıkent S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "4.Grup",
-      "match_no": "8",
       "home_team": "Temiz Enerji Birliği Spor Kulübü U18",
       "away_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
       "score": "- : -",
@@ -1878,14 +1837,55 @@
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-10-16",
           "vb_time": "19:30",
           "vb_hall": "Batıkent Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-15 / VB: 2026-10-16) | Saat Değişti (TVF: 18:00 / VB: 19:30) | Salon Değişti (TVF: Mamak S.S. / VB: Batıkent Spor Salonu)"
+        }
+      }
+    },
+    {
+      "id": "ankara-20261015-030",
+      "city": "Ankara",
+      "date": "2026-10-15",
+      "time": "19:30",
+      "hall": "Mamak S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "4.Grup",
+      "match_no": "8",
+      "home_team": "PTT Spor U18",
+      "away_team": "İlbank U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "404231",
+        "url": "https://women.volleybox.net/tr/ptt-spor-u18-lbank-u18-c404231",
+        "host_name": "PTT Spor U18",
+        "guest_name": "İlbank U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-16",
+        "vb_time": "18:00",
+        "vb_hall": "Batıkent Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-10-16",
+          "vb_time": "18:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-15 / VB: 2026-10-16) | Saat Değişti (TVF: 19:30 / VB: 18:00) | Salon Değişti (TVF: Mamak S.S. / VB: Batıkent Spor Salonu)"
         }
       }
     },
@@ -3369,5 +3369,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-06T13:10:07.985341"
+  "volleybox_sync_updated_at": "2026-10-06T13:41:47.163850"
 }
