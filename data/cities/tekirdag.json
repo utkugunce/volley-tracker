@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T20:25:49.528915+00:00",
+  "updated_at": "2026-10-07T09:25:44.827549+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 35,
+  "total_matches": 34,
   "source": "https://tekirdag.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -25,7 +25,6 @@
       "Atatürk Ss",
       "Beyza Adalı Ss",
       "Ergene S.S.",
-      "Kapaklı S.S.",
       "Muratlı Atatürk S.S",
       "Çerkezköy S.S",
       "Çorlu Ss",
@@ -431,48 +430,7 @@
       }
     },
     {
-      "id": "tekirdag-20261004-003",
-      "city": "Tekirdağ",
-      "date": "2026-10-04",
-      "time": "10:30",
-      "hall": "Kapaklı S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Final Grubu",
-      "match_no": "3",
-      "home_team": "Kapaklı Site Spor Kulübü",
-      "away_team": "Çorlu GSB SK",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "403024",
-        "url": "https://women.volleybox.net/tr/kapakl-site-spor-u18-corlu-gsb-spor-kulubu-u18-c403024",
-        "host_name": "Kapaklı Site Spor U18",
-        "guest_name": "Çorlu GSB Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-04",
-        "vb_time": "10:30",
-        "vb_hall": "Kapaklı Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-04",
-          "vb_time": "10:30",
-          "vb_hall": "Kapaklı Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "tekirdag-20261011-004",
+      "id": "tekirdag-20261011-003",
       "city": "Tekirdağ",
       "date": "2026-10-11",
       "time": "16:00",
@@ -481,7 +439,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
-      "match_no": "4",
+      "match_no": "3",
       "home_team": "Tekirdağ Basket Spor Kulübü",
       "away_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
       "score": "- : -",
@@ -513,7 +471,7 @@
       }
     },
     {
-      "id": "tekirdag-20261013-005",
+      "id": "tekirdag-20261013-004",
       "city": "Tekirdağ",
       "date": "2026-10-13",
       "time": "19:00",
@@ -522,7 +480,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
-      "match_no": "5",
+      "match_no": "4",
       "home_team": "Çorlu GSB SK",
       "away_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
       "score": "- : -",
@@ -547,7 +505,7 @@
       }
     },
     {
-      "id": "tekirdag-20261014-006",
+      "id": "tekirdag-20261014-005",
       "city": "Tekirdağ",
       "date": "2026-10-14",
       "time": "20:30",
@@ -556,7 +514,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Grubu",
-      "match_no": "6",
+      "match_no": "5",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
       "away_team": "Kapaklı Site Spor Kulübü",
       "score": "- : -",
@@ -581,7 +539,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-007",
+      "id": "tekirdag-20260926-006",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "10:30",
@@ -626,7 +584,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-008",
+      "id": "tekirdag-20260926-007",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "12:15",
@@ -672,7 +630,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-009",
+      "id": "tekirdag-20260926-008",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "14:45",
@@ -718,7 +676,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-010",
+      "id": "tekirdag-20260926-009",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "17:45",
@@ -765,7 +723,7 @@
       }
     },
     {
-      "id": "tekirdag-20261003-011",
+      "id": "tekirdag-20261003-010",
       "city": "Tekirdağ",
       "date": "2026-10-03",
       "time": "12:00",
@@ -812,7 +770,7 @@
       }
     },
     {
-      "id": "tekirdag-20261003-012",
+      "id": "tekirdag-20261003-011",
       "city": "Tekirdağ",
       "date": "2026-10-03",
       "time": "17:30",
@@ -857,7 +815,7 @@
       }
     },
     {
-      "id": "tekirdag-20261003-013",
+      "id": "tekirdag-20261003-012",
       "city": "Tekirdağ",
       "date": "2026-10-03",
       "time": "17:45",
@@ -902,7 +860,7 @@
       }
     },
     {
-      "id": "tekirdag-20261009-014",
+      "id": "tekirdag-20261009-013",
       "city": "Tekirdağ",
       "date": "2026-10-09",
       "time": "19:30",
@@ -943,7 +901,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-015",
+      "id": "tekirdag-20261010-014",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "14:15",
@@ -977,7 +935,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-016",
+      "id": "tekirdag-20261010-015",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "17:45",
@@ -1011,7 +969,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-017",
+      "id": "tekirdag-20261010-016",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "18:00",
@@ -1045,7 +1003,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-018",
+      "id": "tekirdag-20261010-017",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "18:15",
@@ -1079,7 +1037,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-019",
+      "id": "tekirdag-20260926-018",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "13:00",
@@ -1126,7 +1084,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-020",
+      "id": "tekirdag-20260926-019",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "16:00",
@@ -1171,7 +1129,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-021",
+      "id": "tekirdag-20260926-020",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "19:30",
@@ -1217,7 +1175,7 @@
       }
     },
     {
-      "id": "tekirdag-20261005-022",
+      "id": "tekirdag-20261005-021",
       "city": "Tekirdağ",
       "date": "2026-10-05",
       "time": "19:00",
@@ -1262,7 +1220,7 @@
       }
     },
     {
-      "id": "tekirdag-20261005-023",
+      "id": "tekirdag-20261005-022",
       "city": "Tekirdağ",
       "date": "2026-10-05",
       "time": "20:30",
@@ -1308,7 +1266,7 @@
       }
     },
     {
-      "id": "tekirdag-20261009-024",
+      "id": "tekirdag-20261009-023",
       "city": "Tekirdağ",
       "date": "2026-10-09",
       "time": "18:00",
@@ -1349,7 +1307,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-025",
+      "id": "tekirdag-20261010-024",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "12:00",
@@ -1383,7 +1341,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-026",
+      "id": "tekirdag-20261010-025",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "17:45",
@@ -1417,7 +1375,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-027",
+      "id": "tekirdag-20260926-026",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "11:00",
@@ -1462,7 +1420,7 @@
       }
     },
     {
-      "id": "tekirdag-20260926-028",
+      "id": "tekirdag-20260926-027",
       "city": "Tekirdağ",
       "date": "2026-09-26",
       "time": "13:00",
@@ -1507,7 +1465,7 @@
       }
     },
     {
-      "id": "tekirdag-20260929-029",
+      "id": "tekirdag-20260929-028",
       "city": "Tekirdağ",
       "date": "2026-09-29",
       "time": "19:30",
@@ -1552,7 +1510,7 @@
       }
     },
     {
-      "id": "tekirdag-20261003-030",
+      "id": "tekirdag-20261003-029",
       "city": "Tekirdağ",
       "date": "2026-10-03",
       "time": "12:00",
@@ -1598,7 +1556,7 @@
       }
     },
     {
-      "id": "tekirdag-20261003-031",
+      "id": "tekirdag-20261003-030",
       "city": "Tekirdağ",
       "date": "2026-10-03",
       "time": "17:00",
@@ -1643,7 +1601,7 @@
       }
     },
     {
-      "id": "tekirdag-20261003-032",
+      "id": "tekirdag-20261003-031",
       "city": "Tekirdağ",
       "date": "2026-10-03",
       "time": "19:30",
@@ -1689,7 +1647,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-033",
+      "id": "tekirdag-20261010-032",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "16:00",
@@ -1723,7 +1681,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-034",
+      "id": "tekirdag-20261010-033",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "16:30",
@@ -1757,7 +1715,7 @@
       }
     },
     {
-      "id": "tekirdag-20261010-035",
+      "id": "tekirdag-20261010-034",
       "city": "Tekirdağ",
       "date": "2026-10-10",
       "time": "19:30",
@@ -1791,6 +1749,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 24,
-  "volleybox_sync_updated_at": "2026-10-06T20:27:16.197797"
+  "volleybox_synced_matches": 23,
+  "volleybox_sync_updated_at": "2026-10-07T09:27:14.300217"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T14:08:40.718287+03:00",
+  "updated_at": "2026-10-07T09:25:44.827549+00:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -76,46 +76,46 @@
     "Genç Kızlar Süper Lig - B Grb.": [
       {
         "rank": 1,
-        "team": "Antakya Güneş Spor Kulübü - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "Hatay Voleybol Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Hatay Voleybol Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Antakya Güneş Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Yıldızlar Samandağ Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
         "team": "Yükseliş Akademi Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -179,46 +179,46 @@
     "Genç Kızlar Süper Lig - D Grb.": [
       {
         "rank": 1,
-        "team": "Es Akademi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Hatay Yıldızlar Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Hatay Yıldızlar Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Vipark Gençlik Ve Spor U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
         "team": "İskenderun Voleybol Akademi Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Vipark Gençlik Ve Spor U18",
-        "played": 0,
+        "team": "Es Akademi Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -729,11 +729,15 @@
       "match_no": "1",
       "home_team": "Yükseliş Akademi Spor Kulübü U18",
       "away_team": "Hatay Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401076",
@@ -770,11 +774,17 @@
       "match_no": "2",
       "home_team": "Antakya Güneş Spor Kulübü - B U18",
       "away_team": "Yıldızlar Samandağ Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "27-29",
+        "30-28",
+        "25-23",
+        "18-25",
+        "15-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401077",
@@ -2050,11 +2060,15 @@
       "match_no": "1",
       "home_team": "Es Akademi Spor Kulübü U18",
       "away_team": "Hatay Yıldızlar Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "18-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401108",
@@ -2091,11 +2105,15 @@
       "match_no": "2",
       "home_team": "Vipark Gençlik Ve Spor U18",
       "away_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-19",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401109",
@@ -2120,7 +2138,41 @@
       }
     },
     {
-      "id": "hatay-20261010-047",
+      "id": "hatay-20261008-047",
+      "city": "Hatay",
+      "date": "2026-10-08",
+      "time": "19:30",
+      "hall": "İsk. Sakarya S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "D Grb.",
+      "match_no": "3",
+      "home_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
+      "away_team": "Es Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261010-048",
       "city": "Hatay",
       "date": "2026-10-10",
       "time": "16:00",
@@ -2129,7 +2181,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "D Grb.",
-      "match_no": "3",
+      "match_no": "4",
       "home_team": "Hatay Yıldızlar Spor Kulübü U18",
       "away_team": "Vipark Gençlik Ve Spor U18",
       "score": "- : -",
@@ -2155,47 +2207,6 @@
           "hall_diff": false,
           "vb_date": "2026-10-10",
           "vb_time": "16:00",
-          "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "hatay-20261010-048",
-      "city": "Hatay",
-      "date": "2026-10-10",
-      "time": "17:30",
-      "hall": "İsk. Sakarya S.S",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "D Grb.",
-      "match_no": "4",
-      "home_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
-      "away_team": "Es Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "401111",
-        "url": "https://women.volleybox.net/tr/skenderun-voleybol-akademi-spor-kulubu-u18-es-akademi-spor-kulubu-u18-c401111",
-        "host_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "Es Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-10",
-        "vb_time": "17:30",
-        "vb_hall": "İskenderun Sakarya Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-10",
-          "vb_time": "17:30",
           "vb_hall": "İskenderun Sakarya Spor Salonu",
           "details": null
         }
@@ -2530,6 +2541,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-06T14:13:11.255914"
+  "volleybox_synced_matches": 55,
+  "volleybox_sync_updated_at": "2026-10-07T09:27:14.283177"
 }
