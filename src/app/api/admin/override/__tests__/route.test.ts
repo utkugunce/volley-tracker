@@ -6,6 +6,7 @@ import {
   applyOverridesToMatches,
   applyOverridesToMatchesAsync,
   OverridesData,
+  getOverridesFilePath,
 } from "@/utils/overrides";
 import { Match } from "@/types/fixture";
 import fs from "fs";
@@ -17,7 +18,8 @@ vi.mock("@vercel/blob", () => ({
   list: vi.fn(),
 }));
 
-const OVERRIDES_FILE = path.join(process.cwd(), "data", "manual-overrides.json");
+// vitest.setup.ts MANUAL_OVERRIDES_FILE'ı geçici bir dizine yönlendirir; gerçek data/ dosyasına yazılmaz.
+const OVERRIDES_FILE = getOverridesFilePath();
 
 describe("Admin Manual Match Override API & Auth (GÖREV 1 - Vercel Blob & Local)", () => {
   const originalEnv = process.env.ADMIN_TOKEN;
@@ -26,6 +28,9 @@ describe("Admin Manual Match Override API & Auth (GÖREV 1 - Vercel Blob & Local
   let originalFileContent: string | null = null;
 
   beforeEach(() => {
+    expect(path.resolve(OVERRIDES_FILE)).not.toBe(
+      path.resolve(process.cwd(), "data", "manual-overrides.json")
+    );
     if (fs.existsSync(OVERRIDES_FILE)) {
       originalFileContent = fs.readFileSync(OVERRIDES_FILE, "utf-8");
     }

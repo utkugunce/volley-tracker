@@ -32,7 +32,13 @@ export interface OverridesData {
   audit_log: AuditLogEntry[];
 }
 
-const OVERRIDES_FILE = path.join(process.cwd(), "data", "manual-overrides.json");
+/**
+ * Yerel override dosyası. Testlerde MANUAL_OVERRIDES_FILE ile geçici bir dizine
+ * yönlendirilir; böylece `vitest run` çalışma ağacındaki data/ dosyasını değiştirmez.
+ */
+export function getOverridesFilePath(): string {
+  return process.env.MANUAL_OVERRIDES_FILE || path.join(process.cwd(), "data", "manual-overrides.json");
+}
 const BLOB_FILENAME = "manual-overrides.json";
 
 // Sunucu instance'ı içinde hızlı erişim ve senkron fallback için in-memory önbellek
@@ -51,8 +57,8 @@ export function getOverridesDataSync(): OverridesData {
     return memoryOverridesCache;
   }
   try {
-    if (fs.existsSync(OVERRIDES_FILE)) {
-      const content = fs.readFileSync(OVERRIDES_FILE, "utf-8").trim();
+    if (fs.existsSync(getOverridesFilePath())) {
+      const content = fs.readFileSync(getOverridesFilePath(), "utf-8").trim();
       if (!content) return { overrides: {}, audit_log: [] };
       const parsed = JSON.parse(content);
       const data: OverridesData = {
@@ -215,11 +221,11 @@ export async function saveOverridesData(data: OverridesData): Promise<void> {
 
   // 2. Yerel dosya sistemine yazmayı dene (yerel dev veya yazılabilir fs)
   try {
-    const dir = path.dirname(OVERRIDES_FILE);
+    const dir = path.dirname(getOverridesFilePath());
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
     }
-    fs.writeFileSync(OVERRIDES_FILE, JSON.stringify(data, null, 2), "utf-8");
+    fs.writeFileSync(getOverridesFilePath(), JSON.stringify(data, null, 2), "utf-8");
   } catch (fsErr) {
     // Vercel'de disk salt okunur olduğundan (EROFS), Blob başarıyla yazıldıysa bu beklenen bir durumdur.
     if (blobSaved) {
