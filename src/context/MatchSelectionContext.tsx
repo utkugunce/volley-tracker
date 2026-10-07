@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from "react";
 import { Match } from "@/types/fixture";
+import { replaceUrlIfChanged } from "@/utils/historyUrl";
 
 export const isMatchScored = (m: Match): boolean => {
   if (m.home_score !== null && m.home_score !== undefined && m.away_score !== null && m.away_score !== undefined) return true;
@@ -108,7 +109,7 @@ export const MatchSelectionProvider: React.FC<MatchSelectionProviderProps> = ({
         } else {
           url.searchParams.delete("match");
         }
-        window.history.replaceState({}, "", url.toString());
+        replaceUrlIfChanged(url);
       } catch {
         // history API fallback
       }

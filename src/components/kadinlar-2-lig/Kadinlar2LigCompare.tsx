@@ -25,6 +25,7 @@ import { getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
 import { FormBadge, FormMatchItem } from "@/components/FormBadge";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { triggerHaptic } from "@/utils/haptics";
+import { replaceUrlIfChanged } from "@/utils/historyUrl";
 
 interface Kadinlar2LigCompareProps {
   data: Kadinlar2LigData;
@@ -85,7 +86,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
       if (newSlug1) params.set("takim1", newSlug1);
       if (newSlug2) params.set("takim2", newSlug2);
       const url = `${window.location.pathname}?${params.toString()}`;
-      window.history.replaceState({}, "", url);
+      replaceUrlIfChanged(url);
     }
   };
 

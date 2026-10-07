@@ -5,6 +5,7 @@ import { slugify } from "./slugify";
 import { getVolleyboxMapping, normalizeCitySlug } from "./volleybox";
 import { VolleyboxMapping } from "@/types/fixture";
 import { applyOverridesToMatches } from "./overrides";
+import { teamPagePath } from "./teamRoutes";
 import { compareMatchDateTime } from "./calendar";
 import { TeamRosterRecord, TeamRostersDatabase } from "@/types/roster";
 import { isCityHidden } from "./cityHelper";
@@ -544,7 +545,7 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     .map((c) => ({
       city: c,
       citySlug: normalizeCitySlug(c),
-      path: `/takim/${cleanSlug}?sehir=${normalizeCitySlug(c)}`,
+      path: teamPagePath(cleanSlug, c),
     }));
 
   // Bu kulübün U18, U16, B, C, D vs. tüm kardeş takımları
@@ -857,7 +858,7 @@ export function findClubSisterTeams(
         slug: teamSlug,
         city: cand.city,
         citySlug,
-        path: `/takim/${teamSlug}?sehir=${citySlug}`,
+        path: teamPagePath(teamSlug, citySlug),
         ageCategory: ageCat || undefined,
         teamBranch: candExt.branch,
         leagueName: cand.category,
@@ -875,7 +876,7 @@ export function findClubSisterTeams(
       slug: currentSlug,
       city: selectedCity,
       citySlug: normalizeCitySlug(selectedCity),
-      path: `/takim/${currentSlug}?sehir=${normalizeCitySlug(selectedCity)}`,
+      path: teamPagePath(currentSlug, selectedCity),
       ageCategory: curExt.age || undefined,
       teamBranch: curExt.branch,
       isCurrent: true,

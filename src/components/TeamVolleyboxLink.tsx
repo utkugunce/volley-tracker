@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { getVolleyboxMapping, normalizeCitySlug } from "@/utils/volleybox";
+import { getVolleyboxMapping } from "@/utils/volleybox";
+import { teamPagePath } from "@/utils/teamRoutes";
 import { slugify } from "@/utils/slugify";
 import { ExternalLink, Star } from "lucide-react";
 import { useFavorites } from "@/utils/useFavorites";
@@ -48,7 +49,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
   ) : null;
 
   const teamSlug = slugify(displayName);
-  const cityQuery = city ? `?sehir=${normalizeCitySlug(city)}` : "";
+  const teamHref = teamPagePath(teamSlug, city);
 
   const isClubLevelOnly = mapping?.confidence === "club_level_only";
   const vbTitle = isClubLevelOnly
@@ -110,7 +111,10 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
     >
       {logoElement}
       <Link
-        href={`/takim/${teamSlug}${cityQuery}`}
+        href={teamHref}
+        // Bu bileşen tek sayfada yüzlerce kez render edilir (fikstür/puan tabloları); görünür her bağlantıyı
+        // önceden getirmek yüzlerce RSC isteği demektir. Takım sayfası tıklanınca yüklenir.
+        prefetch={false}
         className="truncate hover:underline hover:text-ink transition-colors cursor-pointer"
         title={`${displayName} Detay Sayfası`}
         onClick={(e) => e.stopPropagation()}

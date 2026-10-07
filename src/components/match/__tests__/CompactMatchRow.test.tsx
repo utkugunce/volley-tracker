@@ -47,7 +47,7 @@ describe("CompactMatchRow", () => {
 
     expect(screen.getByRole("link", { name: "Test Ev" })).toHaveAttribute(
       "href",
-      "/takim/test-ev?sehir=ankara"
+      "/takim/test-ev/ankara"
     );
     expect(screen.getByTitle("Test Ev — Volleybox Takım Profili")).toHaveAttribute(
       "href",

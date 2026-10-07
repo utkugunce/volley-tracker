@@ -18,6 +18,7 @@ import {
   shiftMonth,
   type CalendarMatch,
 } from "@/utils/takvim";
+import { replaceUrlIfChanged } from "@/utils/historyUrl";
 
 interface TakvimCalendarProps {
   matches: CalendarMatch[];
@@ -62,7 +63,7 @@ export const TakvimCalendar: React.FC<TakvimCalendarProps> = ({
     if (typeof window === "undefined") return;
     const url = new URL(window.location.href);
     url.searchParams.set(GUN_PARAM, date);
-    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    replaceUrlIfChanged(url);
   }, []);
 
   const selectDate = useCallback(
