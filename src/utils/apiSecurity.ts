@@ -37,11 +37,11 @@ export function requireConfiguredSecret(
   return null;
 }
 
-export function getRateLimitResponse(
+export async function getRateLimitResponse(
   request: Request,
   limiter: RateLimiter
-): NextResponse | null {
-  const result = limiter.check(getClientIp(request));
+): Promise<NextResponse | null> {
+  const result = await limiter.check(getClientIp(request));
   if (result.allowed) return null;
 
   const response = NextResponse.json(

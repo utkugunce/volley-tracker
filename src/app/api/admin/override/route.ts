@@ -18,6 +18,7 @@ import { toErrorLike } from "@/utils/errors";
 
 // Brute-force koruması: 5 dakika içinde 10 hatalı token denemesi -> 15 dakika blok
 const adminAuthLimiter = new RateLimiter({
+  name: "admin-override-auth",
   windowMs: 5 * 60 * 1000,
   maxRequests: 10,
   blockDurationMs: 15 * 60 * 1000,
@@ -25,6 +26,7 @@ const adminAuthLimiter = new RateLimiter({
 
 // Genel istek hız sınırı: dakikada 60 istek
 const adminGeneralLimiter = new RateLimiter({
+  name: "admin-override-general",
   windowMs: 60 * 1000,
   maxRequests: 60,
 });
@@ -40,7 +42,7 @@ async function verifyAdminToken(request: Request): Promise<{ authorized: boolean
   const clientIp = getClientIp(request);
 
   // 1. Genel hız sınırı kontrolü
-  const generalCheck = adminGeneralLimiter.check(clientIp);
+  const generalCheck = await adminGeneralLimiter.check(clientIp);
   if (!generalCheck.allowed) {
     return {
       authorized: false,
@@ -52,7 +54,7 @@ async function verifyAdminToken(request: Request): Promise<{ authorized: boolean
   }
 
   // 2. Brute-force blok kontrolü
-  const authCheck = adminAuthLimiter.check(clientIp);
+  const authCheck = await adminAuthLimiter.check(clientIp);
   if (!authCheck.allowed) {
     return {
       authorized: false,
@@ -71,7 +73,7 @@ async function verifyAdminToken(request: Request): Promise<{ authorized: boolean
   const legacyToken = request.headers.get("x-admin-token");
 
   if (expectedToken && authHeader && safeCompare(authHeader, expectedToken)) {
-    adminAuthLimiter.reset(clientIp);
+    await adminAuthLimiter.reset(clientIp);
     return { authorized: true };
   }
 
@@ -84,7 +86,7 @@ async function verifyAdminToken(request: Request): Promise<{ authorized: boolean
 
   const authenticatedUser = await getAuthenticatedUser(request);
   if (authenticatedUser && (authenticatedUser.role === "admin" || authenticatedUser.role === "editor")) {
-    adminAuthLimiter.reset(clientIp);
+    await adminAuthLimiter.reset(clientIp);
     return { authorized: true };
   }
 

@@ -6,7 +6,7 @@ import { validateClubSlug } from "@/utils/club/validation";
 
 export const dynamic = "force-dynamic";
 
-const limiter = new RateLimiter({ windowMs: 60_000, maxRequests: 120 });
+const limiter = new RateLimiter({ name: "club-public", windowMs: 60_000, maxRequests: 120 });
 
 const EMPTY = { available: false, announcements: [], roster: [], notes: [] };
 
@@ -18,7 +18,7 @@ export async function GET(request: Request) {
   const slug = validateClubSlug(new URL(request.url).searchParams.get("team"));
   if (!slug.ok) return NextResponse.json({ error: slug.error }, { status: 400 });
 
-  const rate = limiter.check(getClientIp(request));
+  const rate = await limiter.check(getClientIp(request));
   if (!rate.allowed) {
     return NextResponse.json(EMPTY, { status: 429, headers: { "Retry-After": String(rate.retryAfterSeconds || 60) } });
   }

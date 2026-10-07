@@ -176,15 +176,15 @@ export type AdminAuthResult =
   | { ok: true; actor: string; db: SupabaseClient }
   | { ok: false; response: NextResponse };
 
-const adminLimiter = new RateLimiter({ windowMs: 60_000, maxRequests: 60 });
-const adminFailLimiter = new RateLimiter({ windowMs: 5 * 60_000, maxRequests: 10, blockDurationMs: 15 * 60_000 });
+const adminLimiter = new RateLimiter({ name: "club-admin", windowMs: 60_000, maxRequests: 60 });
+const adminFailLimiter = new RateLimiter({ name: "club-admin-fail", windowMs: 5 * 60_000, maxRequests: 10, blockDurationMs: 15 * 60_000 });
 
 export async function authorizeAdmin(request: Request): Promise<AdminAuthResult> {
   const db = getSupabaseAdmin();
   if (!db) return { ok: false, response: notConfiguredResponse() };
 
   const ip = getClientIp(request);
-  const general = adminLimiter.check(ip);
+  const general = await adminLimiter.check(ip);
   if (!general.allowed) {
     return { ok: false, response: rateLimited(general.retryAfterSeconds) };
   }
@@ -213,7 +213,7 @@ export async function authorizeAdmin(request: Request): Promise<AdminAuthResult>
     if (role === "admin") return { ok: true, actor: sessionUser.id, db };
   }
 
-  const fail = adminFailLimiter.check(`${ip}:fail`);
+  const fail = await adminFailLimiter.check(`${ip}:fail`);
   if (!fail.allowed) return { ok: false, response: rateLimited(fail.retryAfterSeconds) };
   return { ok: false, response: NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 }) };
 }
@@ -265,9 +265,9 @@ export function guardMutation(request: Request): NextResponse | null {
 }
 
 /** Kullanıcı başına yazma sınırı (dakikada 40 işlem). */
-const mutationLimiter = new RateLimiter({ windowMs: 60_000, maxRequests: 40 });
-export function checkMutationRate(userId: string): NextResponse | null {
-  const result = mutationLimiter.check(userId);
+const mutationLimiter = new RateLimiter({ name: "club-mutation", windowMs: 60_000, maxRequests: 40 });
+export async function checkMutationRate(userId: string): Promise<NextResponse | null> {
+  const result = await mutationLimiter.check(userId);
   return result.allowed ? null : rateLimited(result.retryAfterSeconds);
 }
 

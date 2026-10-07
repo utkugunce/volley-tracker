@@ -70,7 +70,7 @@ export function createClubResourceHandlers<TInput extends object>(config: ClubRe
     const auth = await authorizeClubAction(club.value, config.writeAction);
     if (!auth.ok) return auth.response;
 
-    const limited = checkMutationRate(auth.user.id);
+    const limited = await checkMutationRate(auth.user.id);
     if (limited) return limited;
 
     const parsed = config.validate(body);
@@ -129,7 +129,7 @@ export function createClubResourceHandlers<TInput extends object>(config: ClubRe
     const target = await resolveTarget(body);
     if (!target.ok) return target.response;
 
-    const limited = checkMutationRate(target.auth.user.id);
+    const limited = await checkMutationRate(target.auth.user.id);
     if (limited) return limited;
 
     const parsed = config.validate(body);
@@ -156,7 +156,7 @@ export function createClubResourceHandlers<TInput extends object>(config: ClubRe
     const target = await resolveTarget(body);
     if (!target.ok) return target.response;
 
-    const limited = checkMutationRate(target.auth.user.id);
+    const limited = await checkMutationRate(target.auth.user.id);
     if (limited) return limited;
 
     const { error } = await target.auth.db

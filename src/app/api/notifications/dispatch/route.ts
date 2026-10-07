@@ -13,6 +13,7 @@ import { getRateLimitResponse, requireConfiguredSecret } from "@/utils/apiSecuri
 import { RateLimiter } from "@/utils/rateLimit";
 
 const dispatchLimiter = new RateLimiter({
+  name: "notifications-dispatch",
   windowMs: 5 * 60 * 1000,
   maxRequests: 5,
 });
@@ -99,7 +100,7 @@ export async function POST(req: NextRequest) {
       : requireConfiguredSecret(req, "ADMIN_TOKEN");
     if (authError) return authError;
 
-    const rateLimitError = getRateLimitResponse(req, dispatchLimiter);
+    const rateLimitError = await getRateLimitResponse(req, dispatchLimiter);
     if (rateLimitError) return rateLimitError;
 
     const subscriptions = await getPushSubscriptions();

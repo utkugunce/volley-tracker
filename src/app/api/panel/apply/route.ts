@@ -27,7 +27,7 @@ export async function POST(request: Request) {
   const user = await getSessionUser().catch(() => null);
   if (!user) return NextResponse.json({ error: "Giriş yapmanız gerekiyor." }, { status: 401 });
 
-  const limited = checkMutationRate(user.id);
+  const limited = await checkMutationRate(user.id);
   if (limited) return limited;
 
   const parsed = validateApplicationInput(await readJsonBody(request, 4_000));

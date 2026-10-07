@@ -22,8 +22,9 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024;
 // İzin verilen resmi TVF alan adları allowlist deseni
 const ALLOWED_DOMAIN_REGEX = /^([a-z0-9-]+\.)*(voleyboliltemsilciligi\.com|tvf\.org\.tr)$/i;
 
-// In-memory rate limiting (IP başına dakikada maksimum 5 istek)
+// Rate limiting (Upstash varsa dağıtık, yoksa bellek içi) (IP başına dakikada maksimum 5 istek)
 const uploadLimiter = new RateLimiter({
+  name: "fixtures-upload",
   windowMs: 60 * 1000,
   maxRequests: 5,
 });
@@ -63,7 +64,7 @@ export async function POST(request: Request) {
 
     // 2. Basit IP Bazlı Rate Limiting
     const clientIp = getClientIp(request);
-    const limitCheck = uploadLimiter.check(clientIp);
+    const limitCheck = await uploadLimiter.check(clientIp);
     if (!limitCheck.allowed) {
       return NextResponse.json(
         { error: "Çok fazla istek gönderildi. Lütfen bir dakika sonra tekrar deneyin." },
