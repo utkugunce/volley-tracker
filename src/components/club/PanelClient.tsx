@@ -69,6 +69,8 @@ export function PanelClient({ email }: { email: string }) {
 
   const logout = async () => {
     await clubApi("POST", "/api/auth/logout", {}).catch(() => undefined);
+    // Çıkışta oturum durumunun tamamen sıfırlanması için bilinçli olarak tam sayfa yönlendirme.
+    // eslint-disable-next-line @next/next/no-location-assign-relative-destination
     window.location.href = "/giris";
   };
 
