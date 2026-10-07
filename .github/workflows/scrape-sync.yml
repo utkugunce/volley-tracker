@@ -2,8 +2,14 @@ name: TVF Scraper Sync
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    # Saatte bir (dakika 7: saat başı GitHub Actions yoğunluğundan kaçınmak için)
+    - cron: '7 * * * *'
   workflow_dispatch:
+
+# Üst üste binen çalışmalar aynı anda commit/push yapmasın
+concurrency:
+  group: scrape-sync
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -80,6 +86,11 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Yalnızca data/ içeriği gerçekten değiştiyse commit at (izlenen dosyada değişiklik veya yeni dosya).
+          if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard -- data/)" ]; then
+            echo 'No data changes to commit'
+            exit 0
+          fi
           git add data/
           if git diff --staged --quiet; then
             echo 'No data changes to commit'
