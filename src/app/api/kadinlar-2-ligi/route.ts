@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import { execFileSync } from "child_process";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 import { requireConfiguredSecret } from "@/utils/apiSecurity";
+import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "@/utils/scrapeTrigger";
 
 const refreshLimiter = new RateLimiter({
+  name: "kadinlar-2-ligi-refresh",
   windowMs: 120 * 1000,
   maxRequests: 3,
 });
@@ -24,24 +25,28 @@ export async function GET(request: Request) {
       if (authError) return authError;
 
       const clientIp = getClientIp(request);
-      if (!refreshLimiter.check(clientIp)) {
+      const limitCheck = await refreshLimiter.check(clientIp);
+      if (!limitCheck.allowed) {
         return NextResponse.json(
           { error: "Çok fazla yenileme isteği gönderildi. Lütfen biraz bekleyin." },
-          { status: 429 }
+          { status: 429, headers: { "Retry-After": String(limitCheck.retryAfterSeconds || 60) } }
         );
       }
 
-      try {
-        const venvPython = path.join(process.cwd(), ".venv", "Scripts", "python.exe");
-        const pythonExe = fs.existsSync(venvPython) ? venvPython : "python";
-        const scriptPath = path.join(process.cwd(), "scripts", "scrape_kadinlar_2_lig.py");
-        execFileSync(pythonExe, [scriptPath], {
-          timeout: 45000,
-          cwd: process.cwd(),
-          encoding: "utf-8",
-        });
-      } catch (err) {
-        console.error("Scraper refresh error:", err);
+      if (isLocalScrapeAllowed()) {
+        // Yalnızca yerel geliştirmede: scraper'ı event loop'u bloklamadan çalıştır.
+        try {
+          await runLocalScraper("scripts/scrape_kadinlar_2_lig.py", 45000);
+        } catch (err) {
+          console.error("Scraper refresh error:", err);
+        }
+      } else {
+        // Üretimde istek içinde Python çalıştırılmaz; scrape-sync.yml workflow'u tetiklenir
+        // (Kadınlar 2. Lig taraması da bu workflow'un bir adımıdır). Önbellekteki veri döner.
+        const dispatch = await dispatchScrapeWorkflow();
+        if (dispatch.status !== "dispatched") {
+          console.warn("Kadınlar 2. Ligi yenileme workflow'u tetiklenemedi:", dispatch);
+        }
       }
     }
 

@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
-import { execFileSync } from "child_process";
 import { applyOverridesToMatches, applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "@/utils/scrapeTrigger";
 import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
@@ -13,6 +13,7 @@ import type { CityInfo, FixturesData, Match, StandingItem } from "@/types/fixtur
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
 const refreshLimiter = new RateLimiter({
+  name: "fixtures-refresh",
   windowMs: 120 * 1000,
   maxRequests: 2,
 });
@@ -67,7 +68,7 @@ export async function GET(request: Request) {
         };
       } else {
         const clientIp = getClientIp(request);
-        const limitCheck = refreshLimiter.check(clientIp);
+        const limitCheck = await refreshLimiter.check(clientIp);
 
         if (!limitCheck.allowed) {
           syncMeta = {
@@ -76,78 +77,11 @@ export async function GET(request: Request) {
             mode: "rate_limited",
             message: `Fikstür yenileme isteği yakın zamanda tetiklendi. Lütfen ${limitCheck.retryAfterSeconds || 60} saniye sonra tekrar deneyin. Önbellekteki güncel veriler gösteriliyor.`,
           };
-        } else if (process.env.VERCEL) {
-          const rawToken = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-          const ghToken = rawToken?.trim();
-          const repo = process.env.GITHUB_REPOSITORY;
-          if (ghToken && repo) {
-            try {
-              const dispatchRes = await fetch(
-                `https://api.github.com/repos/${repo}/actions/workflows/scrape-sync.yml/dispatches`,
-                {
-                  method: "POST",
-                  headers: {
-                    Authorization: `Bearer ${ghToken}`,
-                    Accept: "application/vnd.github+json",
-                    "X-GitHub-Api-Version": "2022-11-28",
-                    "User-Agent": "VolleyTracker-App",
-                  },
-                  body: JSON.stringify({ ref: "main" }),
-                }
-              );
-
-              if (dispatchRes.ok || dispatchRes.status === 204) {
-                syncMeta = {
-                  attempted: true,
-                  success: true,
-                  mode: "github_actions_dispatch",
-                  message:
-                    "Canlı tarama GitHub Actions üzerinde başlatıldı! Yaklaşık 1-2 dakika içinde bülten ve Volleybox verileri güncellenecektir.",
-                };
-              } else {
-                const errBody = await dispatchRes.text();
-                console.error("GitHub Actions dispatch failed:", dispatchRes.status, errBody);
-                syncMeta = {
-                  attempted: true,
-                  success: false,
-                  mode: "github_actions_dispatch",
-                  message: `Canlı tarama tetiklenemedi (Durum kodu: ${dispatchRes.status}). Lütfen daha sonra tekrar deneyin.`,
-                };
-              }
-            } catch (e) {
-              console.error("GitHub Actions dispatch error:", e);
-              syncMeta = {
-                attempted: true,
-                success: false,
-                mode: "github_actions_dispatch",
-                message: "Canlı tarama servisine bağlanırken bir hata oluştu.",
-              };
-            }
-          } else {
-            syncMeta = {
-              attempted: true,
-              success: false,
-              mode: "github_actions_cron",
-              message:
-                "Bulut ortamında canlı fikstür ve Volleybox taraması GitHub Actions ile periyodik çalışmaktadır.",
-            };
-          }
-        } else {
+        } else if (isLocalScrapeAllowed()) {
+          // Yalnızca yerel geliştirmede: Python scraper'ı event loop'u bloklamadan çalıştır.
           try {
-            const venvPyWin = path.join(process.cwd(), ".venv", "Scripts", "python.exe");
-            const venvPyNix = path.join(process.cwd(), ".venv", "bin", "python");
-            const pythonBin = fs.existsSync(venvPyWin)
-              ? venvPyWin
-              : fs.existsSync(venvPyNix)
-              ? venvPyNix
-              : "python";
-
             // Kullanıcı tam tarama talep ettiği için her yenilemede 81 ilin tamamı ve Volleybox tam taranır
-            execFileSync(pythonBin, ["scripts/scrape_all_provinces.py"], {
-              cwd: process.cwd(),
-              timeout: 120000,
-              stdio: "ignore",
-            });
+            await runLocalScraper("scripts/scrape_all_provinces.py", 120000);
 
             syncMeta = {
               attempted: true,
@@ -163,6 +97,35 @@ export async function GET(request: Request) {
               message: "Tam tarama sırasında bağlantı hatası oluştu, önbellekteki veriler gösteriliyor.",
             };
             console.warn("Live scraper refresh warning (falling back to cached data):", err);
+          }
+        } else {
+          // Üretimde istek içinde senkron Python çalıştırılmaz; tarama GitHub Actions'a devredilir.
+          const dispatch = await dispatchScrapeWorkflow();
+          if (dispatch.status === "dispatched") {
+            syncMeta = {
+              attempted: true,
+              success: true,
+              mode: "github_actions_dispatch",
+              message:
+                "Canlı tarama GitHub Actions üzerinde başlatıldı! Yaklaşık 1-2 dakika içinde bülten ve Volleybox verileri güncellenecektir.",
+            };
+          } else if (dispatch.status === "failed") {
+            syncMeta = {
+              attempted: true,
+              success: false,
+              mode: "github_actions_dispatch",
+              message: dispatch.httpStatus
+                ? `Canlı tarama tetiklenemedi (Durum kodu: ${dispatch.httpStatus}). Lütfen daha sonra tekrar deneyin.`
+                : "Canlı tarama servisine bağlanırken bir hata oluştu.",
+            };
+          } else {
+            syncMeta = {
+              attempted: true,
+              success: false,
+              mode: "github_actions_cron",
+              message:
+                "Bulut ortamında canlı fikstür ve Volleybox taraması GitHub Actions ile periyodik çalışmaktadır.",
+            };
           }
         }
       }
