@@ -158,8 +158,8 @@ describe("Vercel kota — Link prefetch kapalı", () => {
 describe("Vercel kota — deploy ve önbellek çıktısı", () => {
   it("vercel.json uygulama dışı değişikliklerde derlemeyi atlar", () => {
     const cfg = JSON.parse(read("vercel.json"));
-    expect(cfg.ignoreCommand).toBe("bash scripts/vercel-ignore-build.sh");
-    expect(fs.existsSync(path.join(ROOT, "scripts/vercel-ignore-build.sh"))).toBe(true);
+    expect(cfg.ignoreCommand).toBe("bash vercel-ignore-build.sh");
+    expect(fs.existsSync(path.join(ROOT, "vercel-ignore-build.sh"))).toBe(true);
   });
 
   it("scrape workflow'u data commit'lerini (deploy'ları) seyreltir", () => {
