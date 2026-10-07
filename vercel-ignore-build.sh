@@ -28,8 +28,9 @@ if ! CHANGED="$(git diff --name-only "$PREV" HEAD)"; then
 fi
 
 if [ -z "$CHANGED" ]; then
-  echo "Önceki deploy ile içerik aynı; derleme atlanıyor."
-  exit 0
+  # Aynı commit'in elle Redeploy'u (ör. ortam değişkeni değişikliği) her zaman derlenmeli.
+  echo "Kod değişmedi; elle redeploy kabul edilip derleniyor."
+  exit 1
 fi
 
 RELEVANT="$(printf '%s\n' "$CHANGED" | grep -vE '^(docs/|tests/|\.github/|supabase/|DEVIR|scripts/.*\.py$|.*\.md$)' || true)"
