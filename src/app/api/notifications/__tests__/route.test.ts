@@ -99,6 +99,70 @@ describe("Web Push API Routes (GÖREV 5)", () => {
     });
   });
 
+  describe("POST /api/notifications/subscribe girdi doğrulaması", () => {
+    const validSubscription = {
+      endpoint: "https://fcm.googleapis.com/fcm/send/abc-123",
+      keys: { p256dh: "key-p256dh-abc", auth: "key-auth-xyz" },
+    };
+
+    async function postBody(body: unknown) {
+      const req = new NextRequest("http://localhost:3000/api/notifications/subscribe", {
+        method: "POST",
+        body: JSON.stringify(body),
+      });
+      return subscribePost(req);
+    }
+
+    it("https olmayan endpoint'i reddeder", async () => {
+      const saveSpy = vi.spyOn(webPushUtils, "savePushSubscription").mockResolvedValue();
+      const res = await postBody({
+        subscription: { ...validSubscription, endpoint: "http://insecure.example.com/push" },
+      });
+      expect(res.status).toBe(400);
+      expect(saveSpy).not.toHaveBeenCalled();
+    });
+
+    it("çok uzun endpoint'i reddeder", async () => {
+      const res = await postBody({
+        subscription: {
+          ...validSubscription,
+          endpoint: `https://fcm.googleapis.com/${"a".repeat(2100)}`,
+        },
+      });
+      expect(res.status).toBe(400);
+    });
+
+    it("string olmayan veya 100'den fazla favori içeren listeleri reddeder", async () => {
+      const saveSpy = vi.spyOn(webPushUtils, "savePushSubscription").mockResolvedValue();
+      const nonString = await postBody({ subscription: validSubscription, favoriteTeams: [{ evil: true }] });
+      expect(nonString.status).toBe(400);
+
+      const tooMany = await postBody({
+        subscription: validSubscription,
+        favoriteMatches: Array.from({ length: 101 }, (_, i) => `match-${i}`),
+      });
+      expect(tooMany.status).toBe(400);
+
+      const notArray = await postBody({ subscription: validSubscription, favoriteTeams: "VakıfBank" });
+      expect(notArray.status).toBe(400);
+      expect(saveSpy).not.toHaveBeenCalled();
+    });
+
+    it("200 karakterden uzun favori öğesini reddeder", async () => {
+      const res = await postBody({ subscription: validSubscription, favoriteTeams: ["x".repeat(201)] });
+      expect(res.status).toBe(400);
+    });
+
+    it("favori listeleri verilmezse boş dizi olarak kaydeder", async () => {
+      const saveSpy = vi.spyOn(webPushUtils, "savePushSubscription").mockResolvedValue();
+      const res = await postBody({ subscription: validSubscription });
+      expect(res.status).toBe(200);
+      expect(saveSpy).toHaveBeenCalledWith(
+        expect.objectContaining({ favoriteTeams: [], favoriteMatches: [] })
+      );
+    });
+  });
+
   describe("DELETE /api/notifications/subscribe", () => {
     it("endpoint eksikse 400 döner", async () => {
       const req = new NextRequest("http://localhost:3000/api/notifications/subscribe", {
