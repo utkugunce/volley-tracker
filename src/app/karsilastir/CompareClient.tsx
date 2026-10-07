@@ -99,7 +99,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
       {/* 1. ÜST NAVİGASYON */}
       <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
           >
@@ -230,7 +230,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       className="!w-20 !h-20 sm:!w-24 sm:!h-24 text-2xl sm:text-3xl"
                     />
                   </div>
-                  <Link
+                  <Link prefetch={false}
                     href={`/takim/${comparison.team1.slug}`}
                     className="text-lg sm:text-xl font-black text-white hover:text-ink transition-colors flex items-center gap-1.5 justify-center"
                   >
@@ -268,7 +268,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       className="!w-20 !h-20 sm:!w-24 sm:!h-24 text-2xl sm:text-3xl"
                     />
                   </div>
-                  <Link
+                  <Link prefetch={false}
                     href={`/takim/${comparison.team2.slug}`}
                     className="text-lg sm:text-xl font-black text-white hover:text-ink transition-colors flex items-center gap-1.5 justify-center"
                   >
@@ -702,7 +702,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       <h3 className="text-base font-bold text-white">{comparison.team1.teamName}</h3>
                       <span className="text-xs text-slate-400">{comparison.team1.city}</span>
                     </div>
-                    <Link
+                    <Link prefetch={false}
                       href={`/takim/${comparison.team1.slug}`}
                       className="text-xs text-selected-text hover:underline flex items-center gap-1 font-semibold"
                     >
@@ -764,7 +764,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       <h3 className="text-base font-bold text-white">{comparison.team2.teamName}</h3>
                       <span className="text-xs text-slate-400">{comparison.team2.city}</span>
                     </div>
-                    <Link
+                    <Link prefetch={false}
                       href={`/takim/${comparison.team2.slug}`}
                       className="text-xs text-selected-text hover:underline flex items-center gap-1 font-semibold"
                     >

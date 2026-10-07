@@ -101,3 +101,79 @@ describe("Vercel kota — Image Optimization kapalı", () => {
     expect(src).toMatch(/images:\s*\{[\s\S]*?unoptimized:\s*true/);
   });
 });
+
+// Kaynak ağacı bir kez taranır; dosya içerikleri önbelleğe alınır (yük altında zaman aşımını önler).
+let sourceCache: Map<string, string> | null = null;
+function sourceFiles(): Map<string, string> {
+  if (!sourceCache) {
+    sourceCache = new Map(listSourceFiles("src").map((f) => [f, read(f)]));
+  }
+  return sourceCache;
+}
+
+function listSourceFiles(dir: string): string[] {
+  const out: string[] = [];
+  for (const entry of fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true })) {
+    const rel = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name === "__tests__" || entry.name === "node_modules") continue;
+      out.push(...listSourceFiles(rel));
+    } else if (/\.(tsx?|jsx?)$/.test(entry.name)) {
+      out.push(rel);
+    }
+  }
+  return out;
+}
+
+describe("Vercel kota — Image Optimization dönüşümü üretilmez", () => {
+  it("kaynak kodda next/image kullanılmaz", () => {
+    const offenders = [...sourceFiles()]
+      .filter(([, src]) => /from\s+["']next\/(legacy\/)?image["']/.test(src))
+      .map(([f]) => f);
+    expect(offenders).toEqual([]);
+  }, 30_000);
+});
+
+describe("Vercel kota — Link prefetch kapalı", () => {
+  // Görünüm alanına giren her <Link>, üretilmemiş ISR sayfasının (ör. 2400+ /takim/* sayfası)
+  // arka planda üretilip ISR önbelleğine yazılmasına yol açar. Tüm Link'ler açıkça prefetch={false} kullanır.
+  it("her next/link <Link> öğesi prefetch prop'u taşır", () => {
+    const offenders: string[] = [];
+    for (const [f, src] of sourceFiles()) {
+      if (!f.endsWith(".tsx")) continue;
+      const imp = src.match(/import\s+(\w+)\s+from\s+["']next\/link["']/);
+      if (!imp) continue;
+      const tag = imp[1];
+      const re = new RegExp(`<${tag}(?![\\w.])([^>]*?)>`, "gs");
+      for (const m of src.matchAll(re)) {
+        if (!/\bprefetch=/.test(m[1]) && !/\{\s*\.\.\./.test(m[1])) {
+          offenders.push(`${f}: ${m[0].slice(0, 80)}`);
+        }
+      }
+    }
+    expect(offenders).toEqual([]);
+  }, 30_000);
+});
+
+describe("Vercel kota — deploy ve önbellek çıktısı", () => {
+  it("vercel.json uygulama dışı değişikliklerde derlemeyi atlar", () => {
+    const cfg = JSON.parse(read("vercel.json"));
+    expect(cfg.ignoreCommand).toBe("bash scripts/vercel-ignore-build.sh");
+    expect(fs.existsSync(path.join(ROOT, "scripts/vercel-ignore-build.sh"))).toBe(true);
+  });
+
+  it("scrape workflow'u data commit'lerini (deploy'ları) seyreltir", () => {
+    const wf = read(".github/workflows/scrape-sync.yml");
+    expect(wf).toMatch(/DATA_COMMIT_MIN_INTERVAL_HOURS/);
+  });
+
+  it("Kadınlar 2. Ligi sayfaları sıkıştırılmış veri gönderir", () => {
+    for (const f of ["src/app/kadinlar-2-ligi/page.tsx", "src/app/kadinlar-2-ligi/[...slug]/page.tsx"]) {
+      expect(read(f), f).toMatch(/compactKadinlar2LigData\(getKadinlar2LigData\(\)\)/);
+    }
+  });
+
+  it("sitemap lastModified derleme zamanı değil veri zamanıdır", () => {
+    expect(read("src/app/sitemap.ts")).not.toMatch(/new Date\(\)/);
+  });
+});

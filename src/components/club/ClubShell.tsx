@@ -7,7 +7,7 @@ export function ClubShell({ title, children }: { title: string; children: React.
   return (
     <main className="min-h-screen bg-canvas text-ink">
       <div className="mx-auto max-w-3xl px-4 py-8 sm:py-12">
-        <Link href="/" className="inline-flex items-center gap-1 text-xs font-bold text-ink-2 hover:text-ink mb-6">
+        <Link prefetch={false} href="/" className="inline-flex items-center gap-1 text-xs font-bold text-ink-2 hover:text-ink mb-6">
           <ChevronLeft size={14} /> Ana sayfa
         </Link>
         <h1 className="text-2xl sm:text-3xl font-black mb-6">{title}</h1>

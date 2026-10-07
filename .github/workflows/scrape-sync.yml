@@ -83,6 +83,14 @@ jobs:
           python scripts/skip_timestamp_only_changes.py --heartbeat-hours 12
 
       - name: Commit and push changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Her data commit'i bir Vercel deploy'u = yeni ve boş ISR önbelleği demektir (ISR Write kotası).
+          # Zamanlanmış çalışmalar iki data commit'i arasında en az bu kadar saat bekler; bekleyen değişiklikler
+          # kaybolmaz (her çalışma yeniden tarar ve repodaki veriyle karşılaştırır), bir sonraki uygun çalışmada
+          # commit'lenir. Supabase importu her çalışmada yapıldığı için API'ler güncel kalır.
+          # Elle/yönetici tetiklemesi (workflow_dispatch) bu sınırı atlar. Repo değişkeniyle değiştirilebilir; 0 = kapalı.
+          DATA_COMMIT_MIN_INTERVAL_HOURS: ${{ vars.DATA_COMMIT_MIN_INTERVAL_HOURS || '3' }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
@@ -90,6 +98,16 @@ jobs:
           if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard -- data/)" ]; then
             echo 'No data changes to commit'
             exit 0
+          fi
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${DATA_COMMIT_MIN_INTERVAL_HOURS}" -gt 0 ] 2>/dev/null; then
+            LAST_DATA_COMMIT=$(gh api "repos/${{ github.repository }}/commits?path=data&per_page=1" --jq '.[0].commit.committer.date' 2>/dev/null || true)
+            if [ -n "$LAST_DATA_COMMIT" ]; then
+              AGE=$(( $(date -u +%s) - $(date -u -d "$LAST_DATA_COMMIT" +%s) ))
+              if [ "$AGE" -lt $(( DATA_COMMIT_MIN_INTERVAL_HOURS * 3600 )) ]; then
+                echo "Son data commit'i $(( AGE / 60 )) dk önce ($LAST_DATA_COMMIT); ${DATA_COMMIT_MIN_INTERVAL_HOURS} saat dolmadan yeni deploy tetiklenmiyor. Değişiklikler sonraki çalışmada commit'lenecek."
+                exit 0
+              fi
+            fi
           fi
           git add data/
           if git diff --staged --quiet; then

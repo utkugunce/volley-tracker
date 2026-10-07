@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Kadinlar2LigClient } from "@/components/kadinlar-2-lig/Kadinlar2LigClient";
 import { getKadinlar2LigData } from "@/utils/kadinlar2LigServer";
+import { compactKadinlar2LigData } from "@/utils/kadinlar2LigPayload";
 
 export const metadata: Metadata = {
   title: "TVF Kadınlar 2. Ligi — Canlı Puan Durumu & Fikstür",
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
 export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export default function Kadinlar2LigPage() {
-  const data = getKadinlar2LigData();
+  // Grup fikstürleri tum_maclar'ın kopyası: ISR çıktısını küçültmek için indekslenmiş hâli gönderilir.
+  const data = compactKadinlar2LigData(getKadinlar2LigData());
 
   return <Kadinlar2LigClient initialData={data} initialTab="home" />;
 }

@@ -81,7 +81,7 @@ export function LeagueTeamsTab({ displayedTeams, league, setTeamSearchQuery, tea
               </div>
             </div>
 
-            <Link
+            <Link prefetch={false}
               href={`/takim/${team.slug}`}
               className="w-full py-2 px-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold transition-all text-center flex items-center justify-center gap-1.5 cursor-pointer"
             >

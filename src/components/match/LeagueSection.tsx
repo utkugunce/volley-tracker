@@ -94,7 +94,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             {matches.length} Maç
           </span>
 
-          <Link
+          <Link prefetch={false}
             href={standingsUrl}
             onClick={(e) => e.stopPropagation()}
             className="p-1 rounded text-ink-2 hover:text-amber-400 hover:bg-canvas transition-colors"

@@ -109,7 +109,7 @@ export const TeamVolleyboxLink: React.FC<TeamVolleyboxLinkProps> = ({
       title={displayName}
     >
       {logoElement}
-      <Link
+      <Link prefetch={false}
         href={`/takim/${teamSlug}${cityQuery}`}
         className="truncate hover:underline hover:text-ink transition-colors cursor-pointer"
         title={`${displayName} Detay Sayfası`}

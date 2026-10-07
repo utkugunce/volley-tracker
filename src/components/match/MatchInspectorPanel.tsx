@@ -377,7 +377,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             {/* Ev Sahibi */}
             <div className="col-span-2 flex flex-col items-center text-center space-y-1.5">
               <TeamBadge name={match.home_team} logoUrl={homeLogo} size="md" />
-              <Link
+              <Link prefetch={false}
                 href={`/takim/${homeSlug}`}
                 className={`text-[11px] sm:text-xs font-bold transition-colors line-clamp-2 leading-tight ${
                   homeWon ? "text-white" : "text-slate-200 hover:text-blue-400"
@@ -406,7 +406,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             {/* Deplasman */}
             <div className="col-span-2 flex flex-col items-center text-center space-y-1.5">
               <TeamBadge name={match.away_team} logoUrl={awayLogo} size="md" />
-              <Link
+              <Link prefetch={false}
                 href={`/takim/${awaySlug}`}
                 className={`text-[11px] sm:text-xs font-bold transition-colors line-clamp-2 leading-tight ${
                   awayWon ? "text-white" : "text-slate-200 hover:text-blue-400"
@@ -678,7 +678,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                     <Swords size={13} className="text-amber-400" />
                     <span>Önceki Karşılaşmalar</span>
                   </span>
-                  <Link
+                  <Link prefetch={false}
                     href={`/karsilastir?takim1=${homeSlug}&takim2=${awaySlug}`}
                     className="text-[10px] text-amber-400 hover:text-amber-300 font-semibold inline-flex items-center gap-1"
                   >

@@ -51,16 +51,11 @@ const nextConfig = {
     optimizePackageImports: ["lucide-react"],
   },
   images: {
-    // Vercel Image Optimization Transformations kotası (ücretsiz 5K/ay) aşıldığı için tüm next/image
-    // çıktıları optimize edilmeden servis edilir. Yeni dönüşüm üretilmez; remotePatterns yalnızca
-    // uzak logo URL doğrulaması için kalır.
+    // Vercel Image Optimization Transformations kotası (ücretsiz 5K/ay) aşıldığı için dönüşüm kapalı.
+    // Projede next/image kullanılmıyor (logolar CSS TeamBadge, ikonlar statik SVG); ESLint
+    // `no-restricted-imports` kuralı ve isr-kota testi next/image'ın geri gelmesini engeller.
+    // Kullanılmayan remotePatterns kaldırıldı: uzak görseller optimize edilmeden, CSP img-src ile sınırlı.
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**.volleybox.net",
-      },
-    ],
   },
   async redirects() {
     // Eski `?city=<il>` adresleri (ör. /fikstur?city=istanbul) yol tabanlı sayfalara (/fikstur/istanbul) yönlenir.

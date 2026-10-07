@@ -12,6 +12,24 @@ export default defineConfig([
       "react-hooks/set-state-in-effect": "off",
       "react-hooks/immutability": "off",
       "react-hooks/preserve-manual-memoization": "off",
+      // Vercel Image Optimization kotası: next/image dönüşüm üretir, kullanılmamalı.
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "next/image",
+              message:
+                "next/image Vercel Image Optimization kotası tüketir; düz <img> veya statik SVG/CSS kullanın.",
+            },
+            {
+              name: "next/legacy/image",
+              message:
+                "next/legacy/image Vercel Image Optimization kotası tüketir; düz <img> veya statik SVG/CSS kullanın.",
+            },
+          ],
+        },
+      ],
     },
   },
   globalIgnores([

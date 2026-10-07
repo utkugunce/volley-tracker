@@ -176,7 +176,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
       <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-x-2 gap-y-2">
           <div className="flex items-center gap-2">
-            <Link
+            <Link prefetch={false}
               href="/"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
             >
@@ -200,7 +200,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
 
           <div className="flex flex-wrap items-center gap-2">
             <SettingsControls />
-            <Link
+            <Link prefetch={false}
               href={`/karsilastir?takim1=${team.slug}`}
               className="inline-flex items-center gap-1.5 text-xs font-bold text-selected-text bg-selected-strong/15 border border-selected/40 hover:bg-selected-strong/25 px-3 py-1.5 rounded-lg transition-colors shadow-xs"
               title="Bu takımı rakiple karşılaştır"
@@ -344,7 +344,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                           <span className="text-[10px] bg-canvas/40 px-1 rounded text-white font-medium">Mevcut</span>
                         </div>
                       ) : (
-                        <Link
+                        <Link prefetch={false}
                           key={ct.slug + ct.city}
                           href={ct.path}
                           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold glass-panel text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all shadow-xs active:scale-95 cursor-pointer"
@@ -377,7 +377,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                 <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
                   <span className="text-xs text-slate-400 font-medium">Bu kulübün diğer illerdeki takımları:</span>
                   {team.otherCities.map((oc) => (
-                    <Link
+                    <Link prefetch={false}
                       key={oc.citySlug}
                       href={oc.path}
                       className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 transition-colors"
@@ -464,7 +464,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="w-2 h-2 rounded-full bg-primary shrink-0"></span>
-                      <Link
+                      <Link prefetch={false}
                         href={standingsHref}
                         className="text-sm font-bold text-white hover:text-amber-400 hover:underline inline-flex items-center gap-1 transition-colors cursor-pointer group/title"
                         title={`${ctx.groupName} Puan Durumuna Git`}
@@ -507,7 +507,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                       </div>
 
                       <div className="flex items-center gap-1.5">
-                        <Link
+                        <Link prefetch={false}
                           href={standingsHref}
                           className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-1 rounded-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors cursor-pointer"
                           title={`${ctx.groupName} Puan Durumuna Git`}
@@ -515,7 +515,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                           <Trophy size={11} className="text-primary" />
                           <span>Puan Durumu →</span>
                         </Link>
-                        <Link
+                        <Link prefetch={false}
                           href={fixtureHref}
                           className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-1 rounded-lg bg-sky-500/15 text-sky-300 border border-sky-500/30 hover:bg-sky-500/25 transition-colors cursor-pointer"
                           title={`${ctx.groupName} Fikstürüne Git`}
@@ -611,7 +611,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                 <span>Sezon Fikstürü ({team.matches.length} Maç)</span>
               </h2>
               {team.standingsContexts[0] && (
-                <Link
+                <Link prefetch={false}
                   href={getLeagueFixtureRoute(team.standingsContexts[0].groupName, team.standingsContexts[0].city)}
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-300 hover:text-white bg-sky-950/60 hover:bg-sky-900/60 border border-sky-800/80 px-2.5 py-1 rounded-lg transition-colors cursor-pointer"
                   title="Ligin resmi fikstür sayfasına git"
@@ -691,7 +691,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                       </div>
                       {m.category && (
                         <div className="mt-1">
-                          <Link
+                          <Link prefetch={false}
                             href={getLeagueFixtureRoute(m.category, m.city || (team.cities.length === 1 ? team.cities[0] : undefined))}
                             className="text-[10px] text-slate-400 hover:text-amber-400 font-semibold hover:underline inline-flex items-center gap-1 transition-colors"
                             title={`${m.category} Lig Fikstürüne Git`}

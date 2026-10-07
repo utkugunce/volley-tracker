@@ -79,7 +79,7 @@ export function PanelClient({ email }: { email: string }) {
   if (me.state === "unauthenticated") {
     return (
       <p className="text-sm">
-        Oturumunuz sona erdi. <Link className="underline font-bold" href="/giris?sonraki=/panel">Yeniden giriş yapın</Link>.
+        Oturumunuz sona erdi. <Link prefetch={false} className="underline font-bold" href="/giris?sonraki=/panel">Yeniden giriş yapın</Link>.
       </p>
     );
   }
@@ -94,7 +94,7 @@ export function PanelClient({ email }: { email: string }) {
       <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-ink-2">
         <span>Giriş: <strong>{email}</strong></span>
         <div className="flex gap-2">
-          <Link href="/admin" className={btnGhost}>Yönetici</Link>
+          <Link prefetch={false} href="/admin" className={btnGhost}>Yönetici</Link>
           <button className={btnGhost} onClick={logout}>Çıkış yap</button>
         </div>
       </div>
@@ -139,7 +139,7 @@ export function PanelClient({ email }: { email: string }) {
             </select>
           )}
           <p className="text-xs text-ink-3">
-            Kulüp sayfası: <Link className="underline" href={`/takim/${active.club_slug}`}>/takim/{active.club_slug}</Link>
+            Kulüp sayfası: <Link prefetch={false} className="underline" href={`/takim/${active.club_slug}`}>/takim/{active.club_slug}</Link>
           </p>
           <div role="tablist" className="flex gap-2 border-b border-line">
             {TABS.map((t) => (

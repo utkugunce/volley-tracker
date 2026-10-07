@@ -3,113 +3,119 @@ import { getAllTeamSlugs } from "@/utils/teamData";
 import { isCityHidden } from "@/utils/cityHelper";
 import { getLeagueAnalytics } from "@/utils/leagueAnalyticsData";
 import { slugify } from "@/utils/slugify";
+import { parseScanTimestamp, readDataJson } from "@/utils/dataTimestamps";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://altyapivoleybol.com.tr";
-  const now = new Date();
+  // lastModified derleme zamanı değil, verinin gerçek güncellenme zamanıdır. Önceden her deploy'da
+  // tüm URL'ler (2400+ takım sayfası) "değişti" görünüyor ve tarayıcılar hepsini yeniden tarıyordu;
+  // her tarama yeni deploy'un boş ISR önbelleğinde sayfa üretip ISR Write tüketiyordu.
+  const dataUpdatedAt = parseScanTimestamp(readDataJson("data/cities.json")?.updated_at);
+  const k2Meta = readDataJson("data/kadinlar_2_lig.json")?.metadata as Record<string, unknown> | undefined;
+  const k2UpdatedAt = parseScanTimestamp(k2Meta?.guncellenme_zamani) ?? dataUpdatedAt;
 
   // Ana statik sayfalar ve sekmeler
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 1.0,
     },
     {
       url: `${baseUrl}/fikstur`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/puan-durumu`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/grup-durumu`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/takvim`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/sonuclar`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/gunun-maclari`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/karsilastir`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/istatistikler`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.8,
     },
     // Kadınlar 2. Ligi Rotaları
     {
       url: `${baseUrl}/kadinlar-2-ligi`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "daily",
       priority: 0.95,
     },
     {
       url: `${baseUrl}/kadinlar-2-ligi/puan-durumu`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kadinlar-2-ligi/fikstur`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kadinlar-2-ligi/sonuclar`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kadinlar-2-ligi/gunun-maclari`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kadinlar-2-ligi/grup-durumu`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kadinlar-2-ligi/takimlar`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/kadinlar-2-ligi/statu`,
-      lastModified: now,
+      lastModified: k2UpdatedAt,
       changeFrequency: "monthly",
       priority: 0.8,
     },
@@ -118,7 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Lig istatistik sayfaları (kategori bazlı)
   const statsRoutes: MetadataRoute.Sitemap = getLeagueAnalytics().categories.map((category) => ({
     url: `${baseUrl}/istatistikler/${slugify(category)}`,
-    lastModified: now,
+    lastModified: dataUpdatedAt,
     changeFrequency: "daily",
     priority: 0.75,
   }));
@@ -127,7 +133,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const teamSlugs = getAllTeamSlugs();
   const teamRoutes: MetadataRoute.Sitemap = teamSlugs.map((slug) => ({
     url: `${baseUrl}/takim/${slug}`,
-    lastModified: now,
+    lastModified: dataUpdatedAt,
     changeFrequency: "weekly",
     priority: 0.8,
   }));
@@ -154,31 +160,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const cityRoutes: MetadataRoute.Sitemap = activeCities.flatMap((slug) => [
     {
       url: `${baseUrl}/puan-durumu/${slug}`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/grup-durumu/${slug}`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/fikstur/${slug}`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/sonuclar/${slug}`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.85,
     },
     {
       url: `${baseUrl}/gunun-maclari/${slug}`,
-      lastModified: now,
+      lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.85,
     },

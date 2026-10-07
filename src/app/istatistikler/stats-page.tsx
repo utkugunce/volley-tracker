@@ -78,7 +78,7 @@ export function StatsPageView({ slug }: { slug?: string }) {
     <div className="min-h-screen bg-slate-900 text-slate-100 font-sans pb-16">
       <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
           >
@@ -86,7 +86,7 @@ export function StatsPageView({ slug }: { slug?: string }) {
             <span><T k="common.home" /></span>
           </Link>
           <div className="flex items-center gap-3">
-            <Link href="/karsilastir" className="text-xs font-bold text-primary hover:underline">
+            <Link prefetch={false} href="/karsilastir" className="text-xs font-bold text-primary hover:underline">
               <T k="stats.compareLink" />
             </Link>
             <SettingsControls />

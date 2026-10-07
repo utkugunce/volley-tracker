@@ -32,12 +32,17 @@ import { AppShell } from "@/components/layout/AppShell";
 import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
 import { convertK2MatchToMatch, getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
 import {
+  expandKadinlar2LigData,
+  type Kadinlar2LigCompactData,
+} from "@/utils/kadinlar2LigPayload";
+import {
   getKadinlar2LigRoute,
   parseKadinlar2LigRoute,
 } from "@/utils/kadinlar2LigRoutes";
 
 interface Kadinlar2LigClientProps {
-  initialData: Kadinlar2LigData;
+  /** Sunucu sayfaları ISR çıktısını küçültmek için sıkıştırılmış veri geçirir. */
+  initialData: Kadinlar2LigData | Kadinlar2LigCompactData;
   initialTab?: Kadinlar2LigTabType;
   initialGroup?: number;
 }
@@ -47,7 +52,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   initialTab,
   initialGroup,
 }) => {
-  const [data, setData] = useState<Kadinlar2LigData>(initialData);
+  const [data, setData] = useState<Kadinlar2LigData>(() => expandKadinlar2LigData(initialData));
   const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>(
     initialTab || "home"
   );

@@ -23,7 +23,7 @@ export function AdminHeader({ activeTab, auditLogs, handleLogout, handleTriggerL
   return (
     <header className="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-20">
       <div className="flex items-center gap-3">
-        <Link
+        <Link prefetch={false}
           href="/"
           className="text-xs text-slate-400 hover:text-white transition-colors p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700"
           title="Ana Sayfaya Dön"

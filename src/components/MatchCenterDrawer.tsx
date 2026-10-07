@@ -173,7 +173,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                 {/* Ev Sahibi Takım */}
                 <div className="col-span-2 flex flex-col items-center text-center space-y-2">
                   <TeamBadge name={match.home_team} logoUrl={homeLogo} size="lg" />
-                  <Link
+                  <Link prefetch={false}
                     href={`/takim/${homeSlug}`}
                     className="text-xs sm:text-sm font-bold text-slate-100 hover:text-primary transition-colors line-clamp-2 leading-tight"
                     title={`${match.home_team} Profili`}
@@ -213,7 +213,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                 {/* Deplasman Takımı */}
                 <div className="col-span-2 flex flex-col items-center text-center space-y-2">
                   <TeamBadge name={match.away_team} logoUrl={awayLogo} size="lg" />
-                  <Link
+                  <Link prefetch={false}
                     href={`/takim/${awaySlug}`}
                     className="text-xs sm:text-sm font-bold text-slate-100 hover:text-primary transition-colors line-clamp-2 leading-tight"
                     title={`${match.away_team} Profili`}
@@ -304,7 +304,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                   <Swords size={14} className="text-amber-400" />
                   <span>Kafaya Kafaya (H2H) Analiz</span>
                 </div>
-                <Link
+                <Link prefetch={false}
                   href={`/karsilastir?takim1=${homeSlug}&takim2=${awaySlug}`}
                   className="text-xs text-amber-400 hover:text-amber-300 font-bold inline-flex items-center gap-1 transition-colors"
                 >

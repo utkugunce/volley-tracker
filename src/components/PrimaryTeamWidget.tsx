@@ -206,7 +206,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
           <span className="px-1.5 py-0.2 rounded text-[9px] font-black uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
             Kulübüm
           </span>
-          <Link
+          <Link prefetch={false}
             href={`/takim/${teamSlug}`}
             className="font-bold text-white hover:text-amber-300 transition-colors truncate"
           >

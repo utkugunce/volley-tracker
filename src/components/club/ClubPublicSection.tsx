@@ -99,7 +99,7 @@ export function ClubPublicSection({ slug }: { slug: string }) {
       )}
 
       <p className="text-[11px] text-ink-3">
-        Kulüp yetkilisi misiniz? <Link href="/giris" className="underline">Giriş yapın</Link>.
+        Kulüp yetkilisi misiniz? <Link prefetch={false} href="/giris" className="underline">Giriş yapın</Link>.
       </p>
     </section>
   );

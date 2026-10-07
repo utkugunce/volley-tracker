@@ -17,7 +17,7 @@ export function LeagueHubHeader({ copiedLink, handleCopyLink, league, setIsSearc
     <header className="sticky top-0 z-40 bg-canvas/90 backdrop-blur-md border-b border-slate-800/80 px-4 py-3">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <Link
+          <Link prefetch={false}
             href={league.citySlug ? `/${league.citySlug}` : "/"}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 px-2.5 py-1.5 rounded-xl transition-colors cursor-pointer shrink-0"
             title="Geri dön"
@@ -28,11 +28,11 @@ export function LeagueHubHeader({ copiedLink, handleCopyLink, league, setIsSearc
 
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-xs text-slate-400 truncate">
-            <Link href="/" className="hover:text-white transition-colors">
+            <Link prefetch={false} href="/" className="hover:text-white transition-colors">
               Anasayfa
             </Link>
             <span>/</span>
-            <Link
+            <Link prefetch={false}
               href={league.citySlug ? `/${league.citySlug}` : "/"}
               className="hover:text-sky-300 text-sky-400 font-medium transition-colors"
             >

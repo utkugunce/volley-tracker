@@ -84,7 +84,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           <div className="h-4 w-px bg-slate-700/80 hidden sm:block" />
 
           {/* Altyapı Ligleri (81 İl) Butonu */}
-          <Link
+          <Link prefetch={false}
             href="/"
             className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white text-xs font-semibold border border-slate-700/60 transition-all active:scale-95 shadow-sm group"
             title="Altyapı Yerel Ligler Takip Sayfasına Dön"

@@ -67,7 +67,7 @@ export function TeamPageView({ slug, cityFilter }: { slug: string; cityFilter?: 
         <p className="text-slate-400 max-w-md text-xs sm:text-sm mb-6">
           Aradığınız takım için il temsilciliği bültenlerinde fikstür veya puan durumu bilgisi henüz açıklanmamış olabilir.
         </p>
-        <Link
+        <Link prefetch={false}
           href="/"
           className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-primary-fg text-xs sm:text-sm font-bold px-4 py-2 rounded-xl transition-all shadow-glow-primary"
         >

@@ -142,7 +142,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
 
                             <TeamBadge name={displayName} size="xs" />
 
-                            <Link
+                            <Link prefetch={false}
                               href={`/takim/${slugify(displayName)}`}
                               className="text-slate-200 hover:text-ink truncate text-[11px] font-semibold"
                               title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Sayfası`}

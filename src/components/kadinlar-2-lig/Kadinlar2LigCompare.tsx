@@ -383,7 +383,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
               <div className="flex items-center gap-3 min-w-0">
                 <TeamBadge name={nameOf(team1.takim_adi)} size="md" />
                 <div className="min-w-0">
-                  <Link
+                  <Link prefetch={false}
                     href={`/takim/${slugify(team1.takim_adi)}`}
                     className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >
@@ -406,7 +406,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
               <div className="flex items-center gap-3 min-w-0">
                 <TeamBadge name={nameOf(team2.takim_adi)} size="md" />
                 <div className="min-w-0">
-                  <Link
+                  <Link prefetch={false}
                     href={`/takim/${slugify(team2.takim_adi)}`}
                     className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >

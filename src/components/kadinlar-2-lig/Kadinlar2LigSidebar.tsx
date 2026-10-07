@@ -77,7 +77,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
           {isFavoritesOpen && (
             <div className="space-y-1 pt-1">
               {/* Altyapı Ligleri (81 İl) Dönüş Köprüsü */}
-              <Link
+              <Link prefetch={false}
                 href="/"
                 className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-teal-950/40 hover:bg-teal-950/70 border border-teal-800/40 text-teal-200 transition-all group"
               >
@@ -178,7 +178,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                         {group.takim_sayisi} Takım
                       </span>
                     </button>
-                    <Link
+                    <Link prefetch={false}
                       href={`/kadinlar-2-ligi/fikstur${group.grup_no > 1 ? `/grup-${group.grup_no}` : ""}`}
                       onClick={() => {
                         onSelectGroup(group.grup_no);

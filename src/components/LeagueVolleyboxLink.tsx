@@ -40,7 +40,7 @@ export const LeagueVolleyboxLink: React.FC<LeagueVolleyboxLinkProps> = ({
 
   return (
     <span className="inline-flex items-center min-w-0 max-w-full flex-1">
-      <Link
+      <Link prefetch={false}
         href={internalRoute}
         className={`hover:underline hover:text-amber-400 transition-colors cursor-pointer truncate ${className}`}
         title={`${league} Detaylı Lig Sayfası (Fikstür, Puan Durumu, İstatistikler)`}

@@ -343,14 +343,14 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                         {/* Ev Sahibi */}
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2">
-                            <Link
+                            <Link prefetch={false}
                               href={`/takim/${slugify(m.takim_a)}`}
                               onClick={(e) => e.stopPropagation()}
                               className="shrink-0"
                             >
                               <TeamBadge name={homeName} size="xs" />
                             </Link>
-                            <Link
+                            <Link prefetch={false}
                               href={`/takim/${slugify(m.takim_a)}`}
                               onClick={(e) => e.stopPropagation()}
                               className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-ink truncate block hover:underline"
@@ -376,14 +376,14 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                         {/* Deplasman */}
                         <div className="flex-1 min-w-0 text-right">
                           <div className="flex items-center justify-end gap-2">
-                            <Link
+                            <Link prefetch={false}
                               href={`/takim/${slugify(m.takim_b)}`}
                               onClick={(e) => e.stopPropagation()}
                               className="font-bold text-xs sm:text-[13px] text-slate-100 hover:text-ink truncate block hover:underline"
                             >
                               {awayName}
                             </Link>
-                            <Link
+                            <Link prefetch={false}
                               href={`/takim/${slugify(m.takim_b)}`}
                               onClick={(e) => e.stopPropagation()}
                               className="shrink-0"
@@ -399,7 +399,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     <div className="mt-3 pt-2 border-t border-slate-800/60 flex items-center justify-between text-[11px] text-slate-400">
                       <span className="text-[10px] font-mono text-ink-2">#{m.mac_no || m.id}</span>
                       <div className="flex items-center gap-1.5">
-                        <Link
+                        <Link prefetch={false}
                           href={`/karsilastir?takim1=${slugify(m.takim_a)}&takim2=${slugify(m.takim_b)}`}
                           onClick={(e) => e.stopPropagation()}
                           className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[10px] font-semibold"

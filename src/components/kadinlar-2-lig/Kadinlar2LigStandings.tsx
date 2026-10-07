@@ -202,7 +202,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                           <>
                             <td className="py-2 sm:py-2.5 px-3">
                               <div className="flex items-center gap-2.5 min-w-0">
-                                <Link
+                                <Link prefetch={false}
                                   href={`/takim/${slugify(displayName)}`}
                                   className="shrink-0 hover:opacity-80 transition-opacity"
                                   title={`${displayName} Kulüp Profili`}
@@ -211,7 +211,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                                 </Link>
 
                                 <div className="min-w-0 flex-1 flex items-center gap-1.5">
-                                  <Link
+                                  <Link prefetch={false}
                                     href={`/takim/${slugify(displayName)}`}
                                     className="font-semibold text-slate-100 hover:text-ink transition-colors truncate block text-xs sm:text-[13px] hover:underline underline-offset-2"
                                     title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Profilini Aç`}
@@ -292,7 +292,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                             {/* İşlemler: H2H, Profil, Volleybox */}
                             <td className="py-2 sm:py-2.5 px-3 text-right">
                               <div className="flex items-center justify-end gap-1.5">
-                                <Link
+                                <Link prefetch={false}
                                   href={`/karsilastir?takim1=${slugify(displayName)}`}
                                   className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all shadow-xs"
                                   title="Bu takımı karşılaştır"
@@ -301,7 +301,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                                   <span className="hidden sm:inline">H2H</span>
                                 </Link>
 
-                                <Link
+                                <Link prefetch={false}
                                   href={`/takim/${slugify(displayName)}`}
                                   className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all shadow-xs"
                                   title={`${displayName} Kadrosu`}

@@ -90,7 +90,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3 min-w-0 flex-1">
-                  <Link
+                  <Link prefetch={false}
                     href={`/takim/${slugify(displayName)}`}
                     className="shrink-0 hover:opacity-80 transition-opacity"
                     title={`${displayName} Kulüp Profili`}
@@ -100,7 +100,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
 
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5">
-                      <Link
+                      <Link prefetch={false}
                         href={`/takim/${slugify(displayName)}`}
                         className="font-bold text-xs sm:text-sm text-slate-100 hover:text-ink transition-colors truncate block hover:underline underline-offset-2"
                         title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Profilini Aç`}
@@ -145,7 +145,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
 
               {/* Butonlar */}
               <div className="grid grid-cols-3 gap-1.5 pt-2 border-t border-slate-800/60">
-                <Link
+                <Link prefetch={false}
                   href={`/karsilastir?takim1=${slugify(displayName)}`}
                   className="py-1 px-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[10px] font-semibold text-center flex items-center justify-center gap-1 transition-all"
                   title="H2H Karşılaştır"
@@ -154,7 +154,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                   <span>H2H</span>
                 </Link>
 
-                <Link
+                <Link prefetch={false}
                   href={`/takim/${slugify(displayName)}`}
                   className="py-1 px-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[10px] font-semibold text-center transition-all"
                   title="Kadro ve Detaylar"

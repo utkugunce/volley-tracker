@@ -82,7 +82,7 @@ export function AdminLoginForm({ authEmail, authError, authPassword, handleSupab
         </form>
 
         <div className="mt-6 pt-5 border-t border-slate-800 text-center">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="text-xs text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1"
           >
