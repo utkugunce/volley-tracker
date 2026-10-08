@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-08T11:58:33.548955+03:00",
+  "updated_at": "2026-10-08T14:43:17.081847+03:00",
   "total_cities": 81,
   "active_cities": 30,
-  "total_matches": 920,
+  "total_matches": 929,
   "cities": [
     {
       "ilid": "1",
@@ -190,7 +190,7 @@
       "name": "Çorum",
       "slug": "corum",
       "url": "https://corum.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -421,8 +421,8 @@
       "name": "Konya",
       "slug": "konya",
       "url": "https://konya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
+      "status": "Aktif (14 Maç Mevcut)",
+      "matches_count": 14,
       "standings_count": 8,
       "data_file": "data/cities/konya.json"
     },
@@ -451,8 +451,8 @@
       "name": "Manisa",
       "slug": "manisa",
       "url": "https://manisa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
+      "status": "Aktif (12 Maç Mevcut)",
+      "matches_count": 12,
       "standings_count": 2,
       "data_file": "data/cities/manisa.json"
     },
@@ -461,8 +461,8 @@
       "name": "Kahramanmaraş",
       "slug": "kahramanmaras",
       "url": "https://kahramanmaras.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Puan Durumu Var (2 Tablo)",
-      "matches_count": 0,
+      "status": "Aktif (15 Maç Mevcut)",
+      "matches_count": 15,
       "standings_count": 2,
       "data_file": "data/cities/kahramanmaras.json"
     },
@@ -511,9 +511,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {
@@ -571,7 +571,7 @@
       "name": "Sinop",
       "slug": "sinop",
       "url": "https://sinop.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -601,7 +601,7 @@
       "name": "Tokat",
       "slug": "tokat",
       "url": "https://tokat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -631,7 +631,7 @@
       "name": "Şanlıurfa",
       "slug": "sanliurfa",
       "url": "https://sanliurfa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

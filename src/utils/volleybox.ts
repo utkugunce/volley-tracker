@@ -288,21 +288,25 @@ export function buildVolleyboxLeagueMap(
     if (item.season && item.season !== "2026/27") continue;
 
     const leagueKey = normalizeKey(item.internal_name);
-    const citySlug = normalizeCitySlug(item.city_slug || item.city);
+    const slugs = new Set<string>();
+    if (item.city_slug) slugs.add(normalizeCitySlug(item.city_slug));
+    if (item.city) slugs.add(normalizeCitySlug(item.city));
     const age = item.age_category?.toLowerCase() || extractAgeGroup(item.internal_name);
 
-    if (citySlug) {
-      map.set(`${leagueKey}::${citySlug}`, item);
-      if (age) {
-        const ageCityKey = `${age}::${citySlug}`;
-        if (!map.has(ageCityKey) || leagueKey.includes("süper")) {
-          map.set(ageCityKey, item);
+    for (const citySlug of slugs) {
+      if (citySlug) {
+        map.set(`${leagueKey}::${citySlug}`, item);
+        if (age) {
+          const ageCityKey = `${age}::${citySlug}`;
+          if (!map.has(ageCityKey) || leagueKey.includes("süper")) {
+            map.set(ageCityKey, item);
+          }
         }
       }
     }
 
     // İstanbul veya ilk gelen kayıt genel varsayılan (fallback) olur
-    if (!map.has(leagueKey) || citySlug === "istanbul") {
+    if (!map.has(leagueKey) || slugs.has("istanbul")) {
       map.set(leagueKey, item);
       if (age) {
         map.set(age, item);
@@ -343,12 +347,18 @@ export function getVolleyboxLeagueMapping(
 
   // 1. Şehir ve tam lig adı
   if (citySlug) {
-    const directCityMatch = map.get(`${leagueClean}::${citySlug}`);
-    if (directCityMatch) return directCityMatch;
+    const candidateSlugs = [citySlug];
+    if (citySlug === "afyon") candidateSlugs.push("afyonkarahisar");
+    if (citySlug === "afyonkarahisar") candidateSlugs.push("afyon");
 
-    if (age) {
-      const ageCityMatch = map.get(`${age}::${citySlug}`);
-      if (ageCityMatch) return ageCityMatch;
+    for (const cSlug of candidateSlugs) {
+      const directCityMatch = map.get(`${leagueClean}::${cSlug}`);
+      if (directCityMatch) return directCityMatch;
+
+      if (age) {
+        const ageCityMatch = map.get(`${age}::${cSlug}`);
+        if (ageCityMatch) return ageCityMatch;
+      }
     }
 
     // Belirli bir il belirtildiyse ve o ilde turnuva bulunamadıysa (veya eski sezonsa),

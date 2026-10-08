@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T11:58:33.548955+03:00",
+  "updated_at": "2026-10-08T14:43:17.081847+03:00",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -29,17 +29,28 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Düzce 1907 Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Düzce Voleybol SK - A U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Düzce 1907 Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Düzce Atletik Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -50,19 +61,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Düzce UltrAslan Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Düzce Voleybol SK - A U18",
+        "team": "Düzce UltrAslan Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -179,11 +179,17 @@
       "match_no": "1",
       "home_team": "Düzce Voleybol SK - A U18",
       "away_team": "Düzce 1907 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "24-26",
+        "25-21",
+        "23-25",
+        "27-25",
+        "15-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -393,5 +399,5 @@
     }
   ],
   "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-10-08T12:03:08.690113"
+  "volleybox_sync_updated_at": "2026-10-08T14:48:04.708812"
 }

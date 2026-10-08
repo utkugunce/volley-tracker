@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-08T11:58:33.548955+03:00",
+  "updated_at": "2026-10-08T14:43:17.081847+03:00",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 0,
+  "total_matches": 15,
   "source": "https://kahramanmaras.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -21,7 +21,8 @@
       "Kız"
     ],
     "halls": [
-      "Tümü"
+      "Tümü",
+      "Batıpark S.S"
     ]
   },
   "standings": {
@@ -129,7 +130,518 @@
       }
     ]
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "kahramanmaras-20261024-001",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-24",
+      "time": "10:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "1",
+      "home_team": "Büyükşehir Belediye Sk (B)",
+      "away_team": "GENÇLİK SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261024-002",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-24",
+      "time": "12:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "2",
+      "home_team": "ELBİSTAN ALTINIŞIK SK",
+      "away_team": "TÜRKOĞLU 20 NİSAN SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261025-003",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-25",
+      "time": "10:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "3",
+      "home_team": "Vesta SK (A)",
+      "away_team": "Büyükşehir Belediye Sk (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261025-004",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-25",
+      "time": "12:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "4",
+      "home_team": "GENÇLİK SK",
+      "away_team": "ELBİSTAN ALTINIŞIK SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261026-005",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-26",
+      "time": "20:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "5",
+      "home_team": "TÜRKOĞLU 20 NİSAN SK",
+      "away_team": "Büyükşehir Belediye Sk (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261027-006",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-27",
+      "time": "18:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "6",
+      "home_team": "ELBİSTAN ALTINIŞIK SK",
+      "away_team": "Vesta SK (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261027-007",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-27",
+      "time": "20:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "7",
+      "home_team": "TÜRKOĞLU 20 NİSAN SK",
+      "away_team": "GENÇLİK SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261028-008",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-28",
+      "time": "18:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "8",
+      "home_team": "Vesta SK (A)",
+      "away_team": "TÜRKOĞLU 20 NİSAN SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261028-009",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-28",
+      "time": "20:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "9",
+      "home_team": "GENÇLİK SK",
+      "away_team": "Vesta SK (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261029-010",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-29",
+      "time": "18:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup A",
+      "match_no": "10",
+      "home_team": "Büyükşehir Belediye Sk (B)",
+      "away_team": "ELBİSTAN ALTINIŞIK SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261024-011",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-24",
+      "time": "14:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup B",
+      "match_no": "1",
+      "home_team": "GAZİ SK",
+      "away_team": "ÇAĞLAYANCERİT GENÇLİK SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261025-012",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-25",
+      "time": "14:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup B",
+      "match_no": "2",
+      "home_team": "ÇAĞLAYANCERİT GENÇLİK SK",
+      "away_team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261025-013",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-25",
+      "time": "16:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup B",
+      "match_no": "3",
+      "home_team": "Vesta SK (B)",
+      "away_team": "GAZİ SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261026-014",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-26",
+      "time": "18:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup B",
+      "match_no": "4",
+      "home_team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
+      "away_team": "GAZİ SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261029-015",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-29",
+      "time": "20:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup B",
+      "match_no": "5",
+      "home_team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
+      "away_team": "Vesta SK (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-08T12:03:13.515674"
+  "volleybox_sync_updated_at": "2026-10-08T14:48:09.622996"
 }
