@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T00:56:02.037011+00:00",
+  "updated_at": "2026-10-08T11:04:31.730203+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -3784,25 +3784,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "400364",
-        "url": "https://women.volleybox.net/tr/avrupa-voleybol-gelisim-spor-kulubu-b-u18-bahcelievler-belediyespor-ll-u18-c400364",
-        "host_name": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
-        "guest_name": "Bahçelievler Belediyespor ll U18",
-        "score": "3 - 2",
-        "has_score": true,
-        "vb_date": "2026-09-22",
-        "vb_time": "18:00",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-22",
-          "vb_time": "18:00",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3829,25 +3822,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "400365",
-        "url": "https://women.volleybox.net/tr/set-voleybol-kulubu-u18-avclar-demirorduspor-kulubu-u18-c400365",
-        "host_name": "SET Voleybol Kulübü U18",
-        "guest_name": "Avcılar Demirorduspor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-22",
-        "vb_time": "18:00",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-22",
-          "vb_time": "18:00",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3921,25 +3907,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "400366",
-        "url": "https://women.volleybox.net/tr/kucukcekmece-voleybol-kulubu-b-u18-ulus-spor-akademisi-u18-c400366",
-        "host_name": "Küçükçekmece Voleybol Kulübü - B U18",
-        "guest_name": "Ulus Spor Akademisi U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-09-22",
-        "vb_time": "19:30",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-22",
-          "vb_time": "19:30",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3966,25 +3945,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "400367",
-        "url": "https://women.volleybox.net/tr/avrupa-voleybol-gelisim-spor-kulubu-u18-basaksehir-voleybol-kulubu-u18-c400367",
-        "host_name": "Avrupa Voleybol Gelişim Spor Kulübü U18",
-        "guest_name": "Başakşehir Voleybol Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-22",
-        "vb_time": "19:30",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-22",
-          "vb_time": "19:30",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -4286,25 +4258,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "400369",
-        "url": "https://women.volleybox.net/tr/set-voleybol-kulubu-b-u18-bahcesehir-avrupa-gelisim-spor-kulubu-u18-c400369",
-        "host_name": "SET Voleybol Kulübü - B U18",
-        "guest_name": "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-09-27",
-        "vb_time": "11:30",
-        "vb_hall": "Halkalı Ata Sporları Merkezi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-27",
-          "vb_time": "11:30",
-          "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -5239,25 +5204,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "404276",
-        "url": "https://women.volleybox.net/tr/avclar-demirorduspor-kulubu-u18-avrupa-voleybol-gelisim-spor-kulubu-b-u18-c404276",
-        "host_name": "Avcılar Demirorduspor Kulübü U18",
-        "guest_name": "Avrupa Voleybol Gelişim Spor Kulübü - B U18",
-        "score": "3 - 1",
-        "has_score": true,
-        "vb_date": "2026-10-05",
-        "vb_time": "18:00",
-        "vb_hall": "Tozkoparan Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-05",
-          "vb_time": "18:00",
-          "vb_hall": "Tozkoparan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -5336,8 +5294,8 @@
         "url": "https://women.volleybox.net/tr/tu-gelistirme-vakf-okullar-sk-u18-beylikduzu-beykent-spor-kulubu-u18-c404283",
         "host_name": "İTÜ Geliştirme Vakfı Okulları SK U18",
         "guest_name": "Beylikdüzü Beykent Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "18:00",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
@@ -5378,25 +5336,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "404277",
-        "url": "https://women.volleybox.net/tr/ulus-spor-akademisi-u18-set-voleybol-kulubu-u18-c404277",
-        "host_name": "Ulus Spor Akademisi U18",
-        "guest_name": "SET Voleybol Kulübü U18",
-        "score": "2 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-05",
-        "vb_time": "19:30",
-        "vb_hall": "Başakşehir Spor Kompleksi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-05",
-          "vb_time": "19:30",
-          "vb_hall": "Başakşehir Spor Kompleksi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -5423,25 +5374,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "404278",
-        "url": "https://women.volleybox.net/tr/sultangazi-olimpik-spor-kulubu-u18-kucukcekmece-voleybol-kulubu-b-u18-c404278",
-        "host_name": "Sultangazi Olimpik Spor Kulübü U18",
-        "guest_name": "Küçükçekmece Voleybol Kulübü - B U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-05",
-        "vb_time": "19:30",
-        "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-05",
-          "vb_time": "19:30",
-          "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -5473,8 +5417,8 @@
         "url": "https://women.volleybox.net/tr/fmv-isk-spor-kulubu-u18-kuzey-isklar-sk-u18-c404284",
         "host_name": "FMV Işık Spor Kulübü U18",
         "guest_name": "Kuzey Işıkları SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "19:30",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
@@ -5968,25 +5912,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "404280",
-        "url": "https://women.volleybox.net/tr/avrupa-voleybol-gelisim-spor-kulubu-u18-basaksehir-voleybol-kulubu-u18-c404280",
-        "host_name": "Avrupa Voleybol Gelişim Spor Kulübü U18",
-        "guest_name": "Başakşehir Voleybol Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-07",
-        "vb_time": "18:00",
-        "vb_hall": "Başakşehir Spor Kompleksi",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-07",
-          "vb_time": "18:00",
-          "vb_hall": "Başakşehir Spor Kompleksi",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -6036,6 +5973,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 84,
-  "volleybox_sync_updated_at": "2026-10-08T00:57:26.833695"
+  "volleybox_synced_matches": 75,
+  "volleybox_sync_updated_at": "2026-10-08T11:09:14.118821"
 }
