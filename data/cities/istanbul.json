@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T00:56:02.037011+00:00",
+  "updated_at": "2026-10-08T11:58:33.548955+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -5336,8 +5336,8 @@
         "url": "https://women.volleybox.net/tr/tu-gelistirme-vakf-okullar-sk-u18-beylikduzu-beykent-spor-kulubu-u18-c404283",
         "host_name": "İTÜ Geliştirme Vakfı Okulları SK U18",
         "guest_name": "Beylikdüzü Beykent Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "18:00",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
@@ -5473,8 +5473,8 @@
         "url": "https://women.volleybox.net/tr/fmv-isk-spor-kulubu-u18-kuzey-isklar-sk-u18-c404284",
         "host_name": "FMV Işık Spor Kulübü U18",
         "guest_name": "Kuzey Işıkları SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "19:30",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
@@ -6037,5 +6037,5 @@
     }
   ],
   "volleybox_synced_matches": 84,
-  "volleybox_sync_updated_at": "2026-10-08T00:57:26.833695"
+  "volleybox_sync_updated_at": "2026-10-08T12:03:11.222999"
 }

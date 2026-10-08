@@ -1,3 +1,4 @@
+import { getCityNameFromSlug } from "@/utils/cityHelper";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 import type { FixturesData, Match, StandingItem } from "@/types/fixture";
 
@@ -60,8 +61,10 @@ export async function getSupabaseFixtures(
 
   const standings: Record<string, StandingItem[]> = {};
   for (const row of standingRows || []) {
-    const key = citySlug === "all"
-      ? `${row.city_slug} - ${row.category}`
+    const isAll = citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye";
+    const cityName = getCityNameFromSlug(row.city_slug);
+    const key = isAll
+      ? `${cityName} - ${row.category}`
       : row.category;
     standings[key] = Array.isArray(row.rows) ? row.rows : [];
   }

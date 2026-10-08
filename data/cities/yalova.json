@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T16:43:46.656083+00:00",
+  "updated_at": "2026-10-08T11:58:33.548955+03:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -22,8 +22,7 @@
     ],
     "halls": [
       "Tümü",
-      "90.Yıl S.S.",
-      "Ş.O.A.Spor Salonu"
+      "90.Yıl S.S."
     ]
   },
   "standings": {
@@ -169,11 +168,11 @@
       }
     },
     {
-      "id": "yalova-20261017-003",
+      "id": "yalova-20261016-003",
       "city": "Yalova",
-      "date": "2026-10-17",
-      "time": "13:00",
-      "hall": "Ş.O.A.Spor Salonu",
+      "date": "2026-10-16",
+      "time": "18:00",
+      "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -187,27 +186,34 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398309",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u18-koru-akademi-spor-kulubu-b-u18-c398309",
+        "host_name": "Yalova Voleybol Spor Kulübü U18",
+        "guest_name": "Koru Akademi Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-16",
+        "vb_time": "18:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "18:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
     {
-      "id": "yalova-20261017-004",
+      "id": "yalova-20261016-004",
       "city": "Yalova",
-      "date": "2026-10-17",
-      "time": "15:00",
-      "hall": "Ş.O.A.Spor Salonu",
+      "date": "2026-10-16",
+      "time": "20:00",
+      "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -221,18 +227,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398310",
+        "url": "https://women.volleybox.net/tr/yalova-atakent-spor-kulubu-u18-koru-akademi-spor-kulubu-u18-c398310",
+        "host_name": "Yalova Atakent Spor Kulübü U18",
+        "guest_name": "Koru Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-16",
+        "vb_time": "20:00",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "20:00",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -240,7 +253,7 @@
       "id": "yalova-20261023-005",
       "city": "Yalova",
       "date": "2026-10-23",
-      "time": "18:30",
+      "time": "18:00",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -281,7 +294,7 @@
       "id": "yalova-20261023-006",
       "city": "Yalova",
       "date": "2026-10-23",
-      "time": "20:30",
+      "time": "20:00",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -893,6 +906,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-10-07T16:45:20.156566"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-10-08T12:03:15.909741"
 }

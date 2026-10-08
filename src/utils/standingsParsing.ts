@@ -28,17 +28,132 @@ export interface StandingsTeamContext {
   groupName: string;
 }
 
+export const CITY_SLUG_TO_NAME: Record<string, string> = {
+  adana: "Adana",
+  adiyaman: "Adıyaman",
+  afyon: "Afyonkarahisar",
+  afyonkarahisar: "Afyonkarahisar",
+  agri: "Ağrı",
+  amasya: "Amasya",
+  ankara: "Ankara",
+  antalya: "Antalya",
+  artvin: "Artvin",
+  aydin: "Aydın",
+  balikesir: "Balıkesir",
+  bilecik: "Bilecik",
+  bingol: "Bingöl",
+  bitlis: "Bitlis",
+  bolu: "Bolu",
+  burdur: "Burdur",
+  bursa: "Bursa",
+  canakkale: "Çanakkale",
+  cankiri: "Çankırı",
+  corum: "Çorum",
+  denizli: "Denizli",
+  diyarbakir: "Diyarbakır",
+  edirne: "Edirne",
+  elazig: "Elazığ",
+  erzincan: "Erzincan",
+  erzurum: "Erzurum",
+  eskisehir: "Eskişehir",
+  gaziantep: "Gaziantep",
+  giresun: "Giresun",
+  gumushane: "Gümüşhane",
+  hakkari: "Hakkari",
+  hatay: "Hatay",
+  isparta: "Isparta",
+  mersin: "Mersin",
+  istanbul: "İstanbul",
+  izmir: "İzmir",
+  kars: "Kars",
+  kastamonu: "Kastamonu",
+  kayseri: "Kayseri",
+  kirklareli: "Kırklareli",
+  kirsehir: "Kırşehir",
+  kocaeli: "Kocaeli",
+  konya: "Konya",
+  kutahya: "Kütahya",
+  malatya: "Malatya",
+  manisa: "Manisa",
+  kahramanmaras: "Kahramanmaraş",
+  mardin: "Mardin",
+  mugla: "Muğla",
+  mus: "Muş",
+  nevsehir: "Nevşehir",
+  nigde: "Niğde",
+  ordu: "Ordu",
+  rize: "Rize",
+  sakarya: "Sakarya",
+  samsun: "Samsun",
+  siirt: "Siirt",
+  sinop: "Sinop",
+  sivas: "Sivas",
+  tekirdag: "Tekirdağ",
+  tokat: "Tokat",
+  trabzon: "Trabzon",
+  tunceli: "Tunceli",
+  sanliurfa: "Şanlıurfa",
+  usak: "Uşak",
+  van: "Van",
+  yozgat: "Yozgat",
+  zonguldak: "Zonguldak",
+  aksaray: "Aksaray",
+  bayburt: "Bayburt",
+  karaman: "Karaman",
+  kirikkale: "Kırıkkale",
+  batman: "Batman",
+  sirnak: "Şırnak",
+  bartin: "Bartın",
+  ardahan: "Ardahan",
+  igdir: "Iğdır",
+  yalova: "Yalova",
+  karabuk: "Karabük",
+  kilis: "Kilis",
+  osmaniye: "Osmaniye",
+  duzce: "Düzce",
+};
+
 export function parseStandingKey(rawKey: string, defaultCity?: string): ParsedStandingContext {
   let rem = rawKey.trim();
   let city = defaultCity && defaultCity !== "Tüm İller" ? defaultCity : "";
 
-  // 1. İl Tespiti
-  for (const c of TURKISH_CITIES) {
-    const prefix = `${c} - `;
-    if (rem.startsWith(prefix)) {
-      city = c;
-      rem = rem.slice(prefix.length).trim();
-      break;
+  // 1. İl Tespiti (resmi isim, slug veya küçük/büyük harf duyarsız kontrol)
+  const dashPos = rem.indexOf(" - ");
+  if (dashPos !== -1) {
+    const candidate = rem.slice(0, dashPos).trim();
+    const candidateLower = candidate.toLocaleLowerCase("tr-TR");
+    const candidateNormalized = candidateLower
+      .replace(/ğ/g, "g")
+      .replace(/ü/g, "u")
+      .replace(/ş/g, "s")
+      .replace(/ı/g, "i")
+      .replace(/ö/g, "o")
+      .replace(/ç/g, "c");
+
+    const matchedCity = TURKISH_CITIES.find(
+      (c) => c.toLocaleLowerCase("tr-TR") === candidateLower
+    );
+    const slugMatched =
+      CITY_SLUG_TO_NAME[candidateLower] || CITY_SLUG_TO_NAME[candidateNormalized];
+
+    if (matchedCity) {
+      city = matchedCity;
+      rem = rem.slice(dashPos + 3).trim();
+    } else if (slugMatched) {
+      city = slugMatched;
+      rem = rem.slice(dashPos + 3).trim();
+    }
+  }
+
+  // Yedek kontrol: Eğer ilk parça ayrılmadıysa doğrudan prefix kontrolü yap
+  if (!city) {
+    for (const c of TURKISH_CITIES) {
+      const prefix = `${c} - `;
+      if (rem.startsWith(prefix)) {
+        city = c;
+        rem = rem.slice(prefix.length).trim();
+        break;
+      }
     }
   }
 
@@ -64,8 +179,14 @@ export function parseStandingKey(rawKey: string, defaultCity?: string): ParsedSt
     leaguePart = rem.slice(0, dashIdx).trim();
     groupPart = rem.slice(dashIdx + 3).trim();
   } else {
-    leaguePart = rem.trim();
-    groupPart = "Genel";
+    const isOnlyGroup = /^(?:[A-Z0-9]\.?\s*Gr(?:up|ubu)?|Grup\s+[A-Z0-9]|\d+\.\s*Grup)/i.test(rem);
+    if (isOnlyGroup) {
+      leaguePart = "Süper Lig";
+      groupPart = rem.trim();
+    } else {
+      leaguePart = rem.trim();
+      groupPart = "Genel";
+    }
   }
 
   // 4. Lig Seviyesi (Süper Lig / 1. Lig)
@@ -75,7 +196,10 @@ export function parseStandingKey(rawKey: string, defaultCity?: string): ParsedSt
   } else if (/Süper\s*Lig/i.test(leaguePart)) {
     leagueTier = "Süper Lig";
   } else {
-    leagueTier = leaguePart;
+    const isCity =
+      TURKISH_CITIES.some((c) => c.toLocaleLowerCase("tr-TR") === leaguePart.toLocaleLowerCase("tr-TR")) ||
+      Boolean(CITY_SLUG_TO_NAME[leaguePart.toLocaleLowerCase("tr-TR")]);
+    leagueTier = isCity ? "Süper Lig" : leaguePart;
   }
 
   // 5. Temiz Grup Adı

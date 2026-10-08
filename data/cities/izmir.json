@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T00:56:02.037011+00:00",
+  "updated_at": "2026-10-08T11:58:33.548955+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1210,7 +1210,7 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-06",
-        "vb_time": null,
+        "vb_time": "18:30",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -1218,7 +1218,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-06",
-          "vb_time": null,
+          "vb_time": "18:30",
           "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
           "details": null
         }
@@ -1644,7 +1644,7 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-06",
-        "vb_time": null,
+        "vb_time": "18:30",
         "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -1652,7 +1652,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-06",
-          "vb_time": null,
+          "vb_time": "18:30",
           "vb_hall": "Menemen Spor Salonu",
           "details": null
         }
@@ -2029,7 +2029,7 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-06",
-        "vb_time": null,
+        "vb_time": "20:00",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -2037,7 +2037,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-06",
-          "vb_time": null,
+          "vb_time": "20:00",
           "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
           "details": null
         }
@@ -3428,8 +3428,8 @@
         "url": "https://women.volleybox.net/tr/smyrna-voleybol-kulubu-u18-35-yldz-spor-kulubu-u18-c402732",
         "host_name": "Smyrna Voleybol Kulübü U18",
         "guest_name": "35 Yıldız Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "18:30",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -3477,7 +3477,7 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-06",
-        "vb_time": null,
+        "vb_time": "18:30",
         "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -3485,7 +3485,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-06",
-          "vb_time": null,
+          "vb_time": "18:30",
           "vb_hall": "Balçova Spor Salonu",
           "details": null
         }
@@ -3522,7 +3522,7 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-06",
-        "vb_time": null,
+        "vb_time": "20:00",
         "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -3530,7 +3530,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-06",
-          "vb_time": null,
+          "vb_time": "20:00",
           "vb_hall": "Balçova Spor Salonu",
           "details": null
         }
@@ -4661,18 +4661,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "397123",
+        "url": "https://women.volleybox.net/tr/forza-spor-kulubu-u16-volkan-guc-spor-kulubu-u16-c397123",
+        "host_name": "Forza Spor Kulübü U16",
+        "guest_name": "Volkan Güç Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-09-16",
+        "vb_time": "18:30",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-16",
+          "vb_time": "18:30",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4791,18 +4798,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "398206",
+        "url": "https://women.volleybox.net/tr/goksu-atletik-spor-kulubu-u16-forza-spor-kulubu-u16-c398206",
+        "host_name": "Göksu Atletik Spor Kulübü U16",
+        "guest_name": "Forza Spor Kulübü U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-09-24",
+        "vb_time": "20:00",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-24",
+          "vb_time": "20:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4921,18 +4935,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "401133",
+        "url": "https://women.volleybox.net/tr/forza-spor-kulubu-u16-arkas-spor-kulubu-u16-c401133",
+        "host_name": "Forza Spor Kulübü U16",
+        "guest_name": "Arkas Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-09-28",
+        "vb_time": "20:00",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-28",
+          "vb_time": "20:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -5051,18 +5072,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402749",
+        "url": "https://women.volleybox.net/tr/mavisehir-spor-kulubu-u16-forza-spor-kulubu-u16-c402749",
+        "host_name": "Mavişehir Spor Kulübü U16",
+        "guest_name": "Forza Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-06",
+        "vb_time": "18:30",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-06",
+          "vb_time": "18:30",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -6541,6 +6569,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 100,
-  "volleybox_sync_updated_at": "2026-10-08T00:57:26.860409"
+  "volleybox_synced_matches": 104,
+  "volleybox_sync_updated_at": "2026-10-08T12:03:13.493794"
 }

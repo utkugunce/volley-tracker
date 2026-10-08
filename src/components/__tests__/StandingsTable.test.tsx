@@ -259,6 +259,23 @@ describe('StandingsTable Component', () => {
       })
     );
   });
+
+  it("(i) slug ile başlayan anahtarlarda (örn: afyon, ankara) il dropdown'ı gösterilir ve şehirler lig sekmesi olarak listelenmez", () => {
+    const slugBasedStandings = {
+      "afyon - Genç Kızlar Süper Lig - Genç Kız Süper Lig A": [mockItemA],
+      "ankara - Genç Kızlar Süper Lig - Genç Kız Süper Lig 1. Grup": [mockItemB],
+    };
+
+    render(<StandingsTable standingsData={slugBasedStandings} />);
+
+    // İl dropdown butonu görünmeli
+    const cityDropdownBtn = screen.getByRole("button", { name: /^Afyonkarahisar/ });
+    expect(cityDropdownBtn).toBeInTheDocument();
+
+    // Şehirler asla "LİG" butonları olarak render edilmemeli
+    expect(screen.queryByRole("button", { name: "afyon" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "ankara" })).not.toBeInTheDocument();
+  });
 });
 
 
