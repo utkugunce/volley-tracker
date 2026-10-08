@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T14:43:17.081847+03:00",
+  "updated_at": "2026-10-08T21:15:54.330519+00:00",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -51,6 +51,50 @@
       },
       {
         "rank": 3,
+        "team": "MALDİA SPOR KULÜBÜ",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Nicer Hotel Voleybol Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "91000 DEV SPOR KULÜBÜ",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Maldia Spor Kulübü A",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 7,
         "team": "GENÇLİK SPOR KULÜBÜ A",
         "played": 1,
         "won": 0,
@@ -61,52 +105,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "91000 DEV SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Gençlik Spor Kulübü B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "MALDİA SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Maldia Spor Kulübü A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Nicer Hotel Voleybol Kulübü",
+        "team": "Gençlik Spor Kulübü B",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -354,11 +354,16 @@
       "match_no": "7",
       "home_team": "MALDİA SPOR KULÜBÜ",
       "away_team": "Maldia Spor Kulübü A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-15",
+        "21-25",
+        "25-11",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -388,11 +393,16 @@
       "match_no": "8",
       "home_team": "91000 DEV SPOR KULÜBÜ",
       "away_team": "Nicer Hotel Voleybol Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "28-26",
+        "17-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1227,5 +1237,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-08T14:48:10.208119"
+  "volleybox_sync_updated_at": "2026-10-08T21:17:43.460812"
 }

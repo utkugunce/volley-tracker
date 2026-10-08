@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-08T14:43:17.081847+03:00",
+  "updated_at": "2026-10-08T21:15:54.330519+00:00",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 15,
+  "total_matches": 16,
   "source": "https://kahramanmaras.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -516,8 +516,8 @@
       "gender": "Kız",
       "group": "Grup B",
       "match_no": "2",
-      "home_team": "ÇAĞLAYANCERİT GENÇLİK SK",
-      "away_team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
+      "home_team": "Vesta SK (B)",
+      "away_team": "GAZİ SK",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -550,8 +550,8 @@
       "gender": "Kız",
       "group": "Grup B",
       "match_no": "3",
-      "home_team": "Vesta SK (B)",
-      "away_team": "GAZİ SK",
+      "home_team": "ÇAĞLAYANCERİT GENÇLİK SK",
+      "away_team": "BÜYÜKŞEHİR BELEDİYE SK (A)",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -640,8 +640,42 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "kahramanmaras-20261030-016",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-30",
+      "time": "18:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Grup B",
+      "match_no": "6",
+      "home_team": "ÇAĞLAYANCERİT GENÇLİK SK",
+      "away_team": "Vesta SK (B)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-08T14:48:09.622996"
+  "volleybox_sync_updated_at": "2026-10-08T21:17:43.455019"
 }

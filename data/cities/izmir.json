@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T14:43:17.081847+03:00",
+  "updated_at": "2026-10-08T21:15:54.330519+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -660,11 +660,11 @@
       {
         "rank": 1,
         "team": "Arkas Spor Kulübü U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
         "form": []
       },
@@ -704,12 +704,12 @@
       {
         "rank": 5,
         "team": "Parla Voleybol Kulübü - B U16",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 4,
         "sets_won": 6,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -728,12 +728,12 @@
       {
         "rank": 1,
         "team": "İzmir DSİ Spor U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 1,
+        "points": 11,
+        "sets_won": 12,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -760,7 +760,7 @@
       },
       {
         "rank": 4,
-        "team": "Altınordu Voleybol U16",
+        "team": "Monza Spor Kulübü U16",
         "played": 4,
         "won": 1,
         "lost": 3,
@@ -771,13 +771,13 @@
       },
       {
         "rank": 5,
-        "team": "Monza Spor Kulübü U16",
-        "played": 3,
+        "team": "Altınordu Voleybol U16",
+        "played": 4,
         "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 7,
+        "lost": 3,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 10,
         "form": []
       },
       {
@@ -2542,11 +2542,11 @@
       }
     },
     {
-      "id": "izmir-20261015-040",
+      "id": "izmir-20261019-040",
       "city": "İzmir",
-      "date": "2026-10-15",
+      "date": "2026-10-19",
       "time": "--:--",
-      "hall": "Gaziemir Spor Salonu",
+      "hall": "Balçova",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -5152,11 +5152,15 @@
       "match_no": "12",
       "home_team": "Parla Voleybol Kulübü - B U16",
       "away_team": "Arkas Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "12-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402751",
@@ -5798,11 +5802,17 @@
       "match_no": "12",
       "home_team": "İzmir DSİ Spor U16",
       "away_team": "Monza Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-22",
+        "25-15",
+        "24-26",
+        "15-25",
+        "15-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402754",
@@ -6570,5 +6580,5 @@
     }
   ],
   "volleybox_synced_matches": 104,
-  "volleybox_sync_updated_at": "2026-10-08T14:48:09.597887"
+  "volleybox_sync_updated_at": "2026-10-08T21:17:43.470570"
 }

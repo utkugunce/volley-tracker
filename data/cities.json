@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-08T15:31:16.941474+00:00",
+  "updated_at": "2026-10-08T21:15:54.330519+00:00",
   "total_cities": 81,
   "active_cities": 32,
-  "total_matches": 973,
+  "total_matches": 966,
   "cities": [
     {
       "ilid": "1",
@@ -423,7 +423,7 @@
       "url": "https://konya.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (14 Maç Mevcut)",
       "matches_count": 14,
-      "standings_count": 8,
+      "standings_count": 10,
       "data_file": "data/cities/konya.json"
     },
     {
@@ -461,8 +461,8 @@
       "name": "Kahramanmaraş",
       "slug": "kahramanmaras",
       "url": "https://kahramanmaras.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (15 Maç Mevcut)",
-      "matches_count": 15,
+      "status": "Aktif (16 Maç Mevcut)",
+      "matches_count": 16,
       "standings_count": 2,
       "data_file": "data/cities/kahramanmaras.json"
     },
@@ -511,9 +511,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {
@@ -591,8 +591,8 @@
       "name": "Tekirdağ",
       "slug": "tekirdag",
       "url": "https://tekirdag.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (34 Maç Mevcut)",
-      "matches_count": 34,
+      "status": "Aktif (46 Maç Mevcut)",
+      "matches_count": 46,
       "standings_count": 4,
       "data_file": "data/cities/tekirdag.json"
     },

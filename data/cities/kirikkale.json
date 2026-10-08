@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T15:31:16.941474+00:00",
+  "updated_at": "2026-10-08T21:15:54.330519+00:00",
   "city": "Kırıkkale",
   "slug": "kirikkale",
   "title": "TVF Kırıkkale Genç & Yıldız Kızlar Süper Lig",
@@ -30,16 +30,27 @@
       {
         "rank": 1,
         "team": "İL EMNİYET SPOR",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 2,
+        "sets_won": 2,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "VALİLİK SPOR",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 0,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "iL JANDARMA SPOR",
         "played": 0,
         "won": 0,
@@ -50,19 +61,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "KYK SPOR",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "VALİLİK SPOR",
+        "team": "KYK SPOR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -76,16 +76,27 @@
       {
         "rank": 1,
         "team": "İL EMNİYET SPOR",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 2,
+        "sets_won": 2,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "VALİLİK SPOR",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 0,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "iL JANDARMA SPOR",
         "played": 0,
         "won": 0,
@@ -96,19 +107,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "KYK SPOR",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "VALİLİK SPOR",
+        "team": "KYK SPOR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -122,16 +122,27 @@
       {
         "rank": 1,
         "team": "İL EMNİYET SPOR",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 2,
+        "sets_won": 2,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "VALİLİK SPOR",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 0,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "iL JANDARMA SPOR",
         "played": 0,
         "won": 0,
@@ -142,19 +153,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "KYK SPOR",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "VALİLİK SPOR",
+        "team": "KYK SPOR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -179,11 +179,14 @@
       "match_no": "1",
       "home_team": "İL EMNİYET SPOR",
       "away_team": "VALİLİK SPOR",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -383,11 +386,14 @@
       "match_no": "1",
       "home_team": "İL EMNİYET SPOR",
       "away_team": "VALİLİK SPOR",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -587,11 +593,14 @@
       "match_no": "1",
       "home_team": "İL EMNİYET SPOR",
       "away_team": "VALİLİK SPOR",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -780,5 +789,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-08T15:33:11.536213"
+  "volleybox_sync_updated_at": "2026-10-08T21:17:43.458410"
 }
