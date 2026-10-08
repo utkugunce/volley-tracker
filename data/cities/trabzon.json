@@ -1,0 +1,217 @@
+{
+  "updated_at": "2026-10-08T07:16:00.211813+00:00",
+  "city": "Trabzon",
+  "slug": "trabzon",
+  "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 4,
+  "source": "https://trabzon.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü",
+      "Akçaabat",
+      "M.Akif Ersoy"
+    ]
+  },
+  "standings": {
+    "Genç Kızlar Süper Lig - 1. Grup": [
+      {
+        "rank": 1,
+        "team": "AKÇAABAT BELEDİYESİ S.K.",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "İSKOFYA S.K. A",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İSKOFYA S.K. B",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "REVUP",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "trabzon-20261010-001",
+      "city": "Trabzon",
+      "date": "2026-10-10",
+      "time": "12:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "1",
+      "home_team": "İSKOFYA S.K. A",
+      "away_team": "İSKOFYA S.K. B",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261010-002",
+      "city": "Trabzon",
+      "date": "2026-10-10",
+      "time": "14:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "2",
+      "home_team": "REVUP",
+      "away_team": "AKÇAABAT BELEDİYESİ S.K.",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261017-003",
+      "city": "Trabzon",
+      "date": "2026-10-17",
+      "time": "12:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "3",
+      "home_team": "REVUP",
+      "away_team": "İSKOFYA S.K. B",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261017-004",
+      "city": "Trabzon",
+      "date": "2026-10-17",
+      "time": "16:00",
+      "hall": "Akçaabat",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "4",
+      "home_team": "AKÇAABAT BELEDİYESİ S.K.",
+      "away_team": "İSKOFYA S.K. A",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-10-08T07:17:25.467425"
+}

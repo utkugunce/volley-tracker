@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-06T23:55:51.100861+00:00",
+  "updated_at": "2026-10-08T07:16:00.211813+00:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 10,
+  "total_matches": 21,
   "source": "https://balikesir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -24,8 +24,10 @@
       "Tümü",
       "Ayvalık Ss.",
       "Edremit Ss.",
+      "Gönen Fahri Dilmaç Ss.",
       "Kurtdereli Ss.",
       "R.Gencer Ss.",
+      "Susurluk Nimet S O.O. Ss.",
       "Şh.T.Solak S.S."
     ]
   },
@@ -305,7 +307,40 @@
       },
       {
         "rank": 2,
-        "team": "AYVALIKGÜCÜ BELEDİYE SPOR B",
+        "team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "BURHANİYE ÖREN PEGASUS SPOR",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "GÜRE SPOR",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -315,47 +350,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "BURHANİYE ÖREN PEGASUS SPOR",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "GÜRE SPOR",
-        "played": 0,
+        "team": "AYVALIKGÜCÜ BELEDİYE SPOR B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -452,46 +454,46 @@
       },
       {
         "rank": 3,
-        "team": "Bandırma Bordo Spor Kulübü U16",
+        "team": "SUSURLUK GENÇLERBİRLİĞİ EĞİTİM SPOR",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 4,
         "team": "BANDIRMA GELİŞİM BASKETBOL SPOR",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Bandırma Bordo Spor Kulübü U16",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 2,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "BANDIRMA BORDO SPOR B",
         "played": 1,
         "won": 0,
         "lost": 1,
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "BANDIRMA BORDO SPOR B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "SUSURLUK GENÇLERBİRLİĞİ EĞİTİM SPOR",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ]
@@ -536,7 +538,41 @@
       }
     },
     {
-      "id": "balikesir-20261004-002",
+      "id": "balikesir-20261015-002",
+      "city": "Balıkesir",
+      "date": "2026-10-15",
+      "time": "19:30",
+      "hall": "Şh.T.Solak S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu ( Merkez )",
+      "match_no": "2",
+      "home_team": "Karesi Hürriyet Spor U16",
+      "away_team": "Balıkesir EKA Spor Kulubü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261004-003",
       "city": "Balıkesir",
       "date": "2026-10-04",
       "time": "17:00",
@@ -576,7 +612,109 @@
       }
     },
     {
-      "id": "balikesir-20261006-003",
+      "id": "balikesir-20261012-004",
+      "city": "Balıkesir",
+      "date": "2026-10-12",
+      "time": "18:00",
+      "hall": "Kurtdereli Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu ( Merkez )",
+      "match_no": "2",
+      "home_team": "Günyaka Spor U16",
+      "away_team": "BALIKESİR EKA SPOR B",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261013-005",
+      "city": "Balıkesir",
+      "date": "2026-10-13",
+      "time": "18:00",
+      "hall": "Kurtdereli Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu ( Merkez )",
+      "match_no": "3",
+      "home_team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
+      "away_team": "EBA Spor U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261015-006",
+      "city": "Balıkesir",
+      "date": "2026-10-15",
+      "time": "18:00",
+      "hall": "Kurtdereli Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu ( Merkez )",
+      "match_no": "4",
+      "home_team": "TED BALIKESİR KOLEJİ SPOR",
+      "away_team": "Bandırma Voleybol Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261006-007",
       "city": "Balıkesir",
       "date": "2026-10-06",
       "time": "19:00",
@@ -614,7 +752,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-004",
+      "id": "balikesir-20261007-008",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "19:00",
@@ -626,11 +764,17 @@
       "match_no": "2",
       "home_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
       "away_team": "BURHANİYE ÖREN PEGASUS SPOR",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "25-18",
+        "27-25",
+        "23-25",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -648,7 +792,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-005",
+      "id": "balikesir-20261007-009",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "20:30",
@@ -660,6 +804,44 @@
       "match_no": "3",
       "home_team": "GÜRE SPOR",
       "away_team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "21-25",
+        "18-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261015-010",
+      "city": "Balıkesir",
+      "date": "2026-10-15",
+      "time": "19:00",
+      "hall": "Ayvalık Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu ( Körfez )",
+      "match_no": "4",
+      "home_team": "Ayvalıkspor U16",
+      "away_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -682,7 +864,41 @@
       }
     },
     {
-      "id": "balikesir-20261006-006",
+      "id": "balikesir-20261015-011",
+      "city": "Balıkesir",
+      "date": "2026-10-15",
+      "time": "20:30",
+      "hall": "Ayvalık Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu ( Körfez )",
+      "match_no": "5",
+      "home_team": "AYVALIKGÜCÜ BELEDİYE SPOR B",
+      "away_team": "GÜRE SPOR",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261006-012",
       "city": "Balıkesir",
       "date": "2026-10-06",
       "time": "20:30",
@@ -720,7 +936,75 @@
       }
     },
     {
-      "id": "balikesir-20261005-007",
+      "id": "balikesir-20261013-013",
+      "city": "Balıkesir",
+      "date": "2026-10-13",
+      "time": "19:00",
+      "hall": "Ayvalık Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu ( Körfez )",
+      "match_no": "2",
+      "home_team": "Ayvalıkgücü Belediye SK U16",
+      "away_team": "BURHANİYE BELEDİYE SPOR",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261013-014",
+      "city": "Balıkesir",
+      "date": "2026-10-13",
+      "time": "20:30",
+      "hall": "Ayvalık Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu ( Körfez )",
+      "match_no": "3",
+      "home_team": "Ayvalık Gelişim Spor Kulübü U16",
+      "away_team": "Kuzey Ege Gelişim Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261005-015",
       "city": "Balıkesir",
       "date": "2026-10-05",
       "time": "19:00",
@@ -759,7 +1043,7 @@
       }
     },
     {
-      "id": "balikesir-20261005-008",
+      "id": "balikesir-20261005-016",
       "city": "Balıkesir",
       "date": "2026-10-05",
       "time": "20:30",
@@ -797,7 +1081,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-009",
+      "id": "balikesir-20261007-017",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "19:00",
@@ -809,6 +1093,83 @@
       "match_no": "3",
       "home_team": "Bandırma Bordo Spor Kulübü U16",
       "away_team": "SUSURLUK GENÇLERBİRLİĞİ EĞİTİM SPOR",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "26-24",
+        "20-25",
+        "18-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261007-018",
+      "city": "Balıkesir",
+      "date": "2026-10-07",
+      "time": "20:30",
+      "hall": "R.Gencer Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "E Grubu ( Marmara )",
+      "match_no": "4",
+      "home_team": "BANDIRMA BORDO SPOR B",
+      "away_team": "BANDIRMA GELİŞİM BASKETBOL SPOR",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "16-25",
+        "14-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261013-019",
+      "city": "Balıkesir",
+      "date": "2026-10-13",
+      "time": "19:00",
+      "hall": "Susurluk Nimet S O.O. Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "E Grubu ( Marmara )",
+      "match_no": "5",
+      "home_team": "SUSURLUK GENÇLERBİRLİĞİ EĞİTİM SPOR",
+      "away_team": "BANDIRMA BORDO SPOR B",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -831,18 +1192,52 @@
       }
     },
     {
-      "id": "balikesir-20261007-010",
+      "id": "balikesir-20261014-020",
       "city": "Balıkesir",
-      "date": "2026-10-07",
-      "time": "20:30",
+      "date": "2026-10-14",
+      "time": "19:00",
+      "hall": "Gönen Fahri Dilmaç Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "E Grubu ( Marmara )",
+      "match_no": "6",
+      "home_team": "Gönen Karşıyakaspor U16",
+      "away_team": "BANDIRMA VOLEYBOL SPOR",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261015-021",
+      "city": "Balıkesir",
+      "date": "2026-10-15",
+      "time": "19:00",
       "hall": "R.Gencer Ss.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "E Grubu ( Marmara )",
-      "match_no": "4",
-      "home_team": "BANDIRMA BORDO SPOR B",
-      "away_team": "BANDIRMA GELİŞİM BASKETBOL SPOR",
+      "match_no": "7",
+      "home_team": "BANDIRMA VOLEYBOL SPOR",
+      "away_team": "BANDIRMA BORDO SPOR B",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -866,5 +1261,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-06T23:57:19.746488"
+  "volleybox_sync_updated_at": "2026-10-08T07:17:25.496395"
 }

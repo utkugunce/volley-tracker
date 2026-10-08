@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T09:25:44.827549+00:00",
+  "updated_at": "2026-10-08T07:16:00.211813+00:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -33,7 +33,7 @@
     "Genç Kızlar Süper Lig - İzmit Grubu": [
       {
         "rank": 1,
-        "team": "Körfez Akademi",
+        "team": "Elite Spor",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -44,7 +44,7 @@
       },
       {
         "rank": 2,
-        "team": "Nicomedia Akademi",
+        "team": "İzmitspor",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -55,6 +55,28 @@
       },
       {
         "rank": 3,
+        "team": "Körfez Akademi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Nicomedia Akademi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Siyah Kuğular",
         "played": 1,
         "won": 1,
@@ -65,7 +87,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Kocaeli Anka Spor",
         "played": 1,
         "won": 1,
@@ -76,7 +98,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 7,
         "team": "Beşrenk Spor",
         "played": 1,
         "won": 0,
@@ -87,7 +109,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 8,
         "team": "19 Mayıs Spor",
         "played": 1,
         "won": 0,
@@ -98,7 +120,7 @@
         "form": []
       },
       {
-        "rank": 7,
+        "rank": 9,
         "team": "Yahyakaptan Spor",
         "played": 1,
         "won": 0,
@@ -109,7 +131,7 @@
         "form": []
       },
       {
-        "rank": 8,
+        "rank": 10,
         "team": "Gölcük Belediye",
         "played": 1,
         "won": 0,
@@ -120,52 +142,30 @@
         "form": []
       },
       {
-        "rank": 9,
-        "team": "Elite Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 10,
-        "team": "İzmitspor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 11,
-        "team": "Kandıra Voleybol",
-        "played": 0,
+        "team": "Körfez Vaveyla Spor",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 12,
-        "team": "Kocaeli Voleybol Akademi Spor Kulübü",
-        "played": 0,
+        "team": "Kandıra Voleybol",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 13,
-        "team": "Körfez Vaveyla Spor",
+        "team": "Kocaeli Voleybol Akademi Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -467,11 +467,15 @@
       "match_no": "5",
       "home_team": "Elite Spor",
       "away_team": "Kandıra Voleybol",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-11",
+        "25-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -501,11 +505,15 @@
       "match_no": "6",
       "home_team": "İzmitspor",
       "away_team": "Körfez Vaveyla Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-6",
+        "25-5",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1153,5 +1161,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-07T09:27:14.286136"
+  "volleybox_sync_updated_at": "2026-10-08T07:17:25.451737"
 }

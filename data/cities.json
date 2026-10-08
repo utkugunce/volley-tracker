@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-08T00:56:02.037011+00:00",
+  "updated_at": "2026-10-08T07:16:00.211813+00:00",
   "total_cities": 81,
-  "active_cities": 29,
-  "total_matches": 903,
+  "active_cities": 30,
+  "total_matches": 918,
   "cities": [
     {
       "ilid": "1",
@@ -100,8 +100,8 @@
       "name": "Balıkesir",
       "slug": "balikesir",
       "url": "https://balikesir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (10 Maç Mevcut)",
-      "matches_count": 10,
+      "status": "Aktif (21 Maç Mevcut)",
+      "matches_count": 21,
       "standings_count": 7,
       "data_file": "data/cities/balikesir.json"
     },
@@ -611,10 +611,10 @@
       "name": "Trabzon",
       "slug": "trabzon",
       "url": "https://trabzon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (4 Maç Mevcut)",
+      "matches_count": 4,
+      "standings_count": 1,
+      "data_file": "data/cities/trabzon.json"
     },
     {
       "ilid": "62",
