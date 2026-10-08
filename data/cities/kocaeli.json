@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-08T07:16:00.211813+00:00",
+  "updated_at": "2026-10-08T07:50:29.159508+00:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 24,
+  "total_matches": 34,
   "source": "https://kocaeli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,10 +22,13 @@
     ],
     "halls": [
       "Tümü",
+      "Başiskele Ss",
       "Darıca Ss",
+      "Derince O.Çetingöz Ss",
       "Derince S.S",
       "Gebze Ss",
       "H.Gemici S.S.",
+      "Vezirçiftliği",
       "Çayırova Ss"
     ]
   },
@@ -568,13 +571,47 @@
       "id": "kocaeli-20261009-008",
       "city": "Kocaeli",
       "date": "2026-10-09",
+      "time": "18:30",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "8",
+      "home_team": "Elite Spor",
+      "away_team": "Yahyakaptan Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261009-009",
+      "city": "Kocaeli",
+      "date": "2026-10-09",
       "time": "20:00",
       "hall": "Derince S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "İzmit Grubu",
-      "match_no": "8",
+      "match_no": "9",
       "home_team": "Körfez Vaveyla Spor",
       "away_team": "Beşrenk Spor",
       "score": "- : -",
@@ -599,7 +636,41 @@
       }
     },
     {
-      "id": "kocaeli-20261010-009",
+      "id": "kocaeli-20261009-010",
+      "city": "Kocaeli",
+      "date": "2026-10-09",
+      "time": "20:00",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "10",
+      "home_team": "İzmitspor",
+      "away_team": "Körfez Akademi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261010-011",
       "city": "Kocaeli",
       "date": "2026-10-10",
       "time": "16:00",
@@ -608,7 +679,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "İzmit Grubu",
-      "match_no": "9",
+      "match_no": "11",
       "home_team": "Kocaeli Voleybol Akademi Spor Kulübü",
       "away_team": "Körfez Akademi",
       "score": "- : -",
@@ -633,7 +704,279 @@
       }
     },
     {
-      "id": "kocaeli-20261005-010",
+      "id": "kocaeli-20261013-012",
+      "city": "Kocaeli",
+      "date": "2026-10-13",
+      "time": "18:30",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "12",
+      "home_team": "Elite Spor",
+      "away_team": "Siyah Kuğular",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261013-013",
+      "city": "Kocaeli",
+      "date": "2026-10-13",
+      "time": "20:00",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "13",
+      "home_team": "İzmitspor",
+      "away_team": "19 Mayıs Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261016-014",
+      "city": "Kocaeli",
+      "date": "2026-10-16",
+      "time": "18:30",
+      "hall": "Başiskele Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "14",
+      "home_team": "Gölcük Belediye",
+      "away_team": "Kocaeli Anka Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261016-015",
+      "city": "Kocaeli",
+      "date": "2026-10-16",
+      "time": "18:30",
+      "hall": "Derince O.Çetingöz Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "15",
+      "home_team": "Körfez Vaveyla Spor",
+      "away_team": "Körfez Akademi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261016-016",
+      "city": "Kocaeli",
+      "date": "2026-10-16",
+      "time": "18:30",
+      "hall": "Vezirçiftliği",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "16",
+      "home_team": "Elite Spor",
+      "away_team": "İzmitspor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261016-017",
+      "city": "Kocaeli",
+      "date": "2026-10-16",
+      "time": "20:00",
+      "hall": "Başiskele Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "17",
+      "home_team": "Siyah Kuğular",
+      "away_team": "Yahyakaptan Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261016-018",
+      "city": "Kocaeli",
+      "date": "2026-10-16",
+      "time": "20:00",
+      "hall": "Vezirçiftliği",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "18",
+      "home_team": "Beşrenk Spor",
+      "away_team": "19 Mayıs Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261020-019",
+      "city": "Kocaeli",
+      "date": "2026-10-20",
+      "time": "18:30",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "19",
+      "home_team": "Kocaeli Voleybol Akademi Spor Kulübü",
+      "away_team": "Kandıra Voleybol",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261005-020",
       "city": "Kocaeli",
       "date": "2026-10-05",
       "time": "18:30",
@@ -671,7 +1014,7 @@
       }
     },
     {
-      "id": "kocaeli-20261005-011",
+      "id": "kocaeli-20261005-021",
       "city": "Kocaeli",
       "date": "2026-10-05",
       "time": "20:00",
@@ -710,7 +1053,7 @@
       }
     },
     {
-      "id": "kocaeli-20261006-012",
+      "id": "kocaeli-20261006-022",
       "city": "Kocaeli",
       "date": "2026-10-06",
       "time": "18:30",
@@ -748,7 +1091,7 @@
       }
     },
     {
-      "id": "kocaeli-20261006-013",
+      "id": "kocaeli-20261006-023",
       "city": "Kocaeli",
       "date": "2026-10-06",
       "time": "20:00",
@@ -786,7 +1129,7 @@
       }
     },
     {
-      "id": "kocaeli-20261009-014",
+      "id": "kocaeli-20261009-024",
       "city": "Kocaeli",
       "date": "2026-10-09",
       "time": "20:00",
@@ -820,7 +1163,7 @@
       }
     },
     {
-      "id": "kocaeli-20261012-015",
+      "id": "kocaeli-20261012-025",
       "city": "Kocaeli",
       "date": "2026-10-12",
       "time": "18:30",
@@ -854,7 +1197,7 @@
       }
     },
     {
-      "id": "kocaeli-20261012-016",
+      "id": "kocaeli-20261012-026",
       "city": "Kocaeli",
       "date": "2026-10-12",
       "time": "20:00",
@@ -888,7 +1231,7 @@
       }
     },
     {
-      "id": "kocaeli-20261013-017",
+      "id": "kocaeli-20261013-027",
       "city": "Kocaeli",
       "date": "2026-10-13",
       "time": "18:30",
@@ -922,7 +1265,7 @@
       }
     },
     {
-      "id": "kocaeli-20261014-018",
+      "id": "kocaeli-20261014-028",
       "city": "Kocaeli",
       "date": "2026-10-14",
       "time": "18:30",
@@ -956,7 +1299,7 @@
       }
     },
     {
-      "id": "kocaeli-20261014-019",
+      "id": "kocaeli-20261014-029",
       "city": "Kocaeli",
       "date": "2026-10-14",
       "time": "20:00",
@@ -990,7 +1333,7 @@
       }
     },
     {
-      "id": "kocaeli-20261017-020",
+      "id": "kocaeli-20261017-030",
       "city": "Kocaeli",
       "date": "2026-10-17",
       "time": "14:30",
@@ -1024,7 +1367,7 @@
       }
     },
     {
-      "id": "kocaeli-20261017-021",
+      "id": "kocaeli-20261017-031",
       "city": "Kocaeli",
       "date": "2026-10-17",
       "time": "16:00",
@@ -1058,7 +1401,7 @@
       }
     },
     {
-      "id": "kocaeli-20261017-022",
+      "id": "kocaeli-20261017-032",
       "city": "Kocaeli",
       "date": "2026-10-17",
       "time": "17:30",
@@ -1092,7 +1435,7 @@
       }
     },
     {
-      "id": "kocaeli-20261018-023",
+      "id": "kocaeli-20261018-033",
       "city": "Kocaeli",
       "date": "2026-10-18",
       "time": "16:00",
@@ -1126,7 +1469,7 @@
       }
     },
     {
-      "id": "kocaeli-20261018-024",
+      "id": "kocaeli-20261018-034",
       "city": "Kocaeli",
       "date": "2026-10-18",
       "time": "17:30",
@@ -1161,5 +1504,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-08T07:17:25.451737"
+  "volleybox_sync_updated_at": "2026-10-08T07:51:57.224273"
 }
