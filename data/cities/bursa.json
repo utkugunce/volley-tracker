@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T16:43:46.656083+00:00",
+  "updated_at": "2026-10-08T00:56:02.037011+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -149,6 +149,28 @@
     "Genç Kızlar Süper Lig - - C": [
       {
         "rank": 1,
+        "team": "Bursa Koç Spor Kulübü - A U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Bursa Büyükşehir Belediyespor U18",
         "played": 0,
         "won": 0,
@@ -159,30 +181,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Bursa Genç Saray Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Bursa Koç Spor Kulübü - A U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
+        "team": "Bursa Genç Saray Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -206,17 +206,28 @@
     "Genç Kızlar Süper Lig - - D": [
       {
         "rank": 1,
-        "team": "Osmangazi Belediyespor U18",
-        "played": 0,
-        "won": 0,
+        "team": "Nilüfer Belediyespor Eker",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Osmangazi Belediyespor U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Doruk Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -227,19 +238,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Nilüfer Belediyespor Eker",
+        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -750,11 +750,15 @@
       "match_no": "1",
       "home_team": "Bursa Koç Spor Kulübü - A U18",
       "away_team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-18",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404249",
@@ -832,11 +836,15 @@
       "match_no": "1",
       "home_team": "Nilüfer Belediyespor Eker",
       "away_team": "Osmangazi Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-14",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404252",
@@ -1935,5 +1943,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-07T16:45:20.182530"
+  "volleybox_sync_updated_at": "2026-10-08T00:57:26.874301"
 }

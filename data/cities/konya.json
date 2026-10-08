@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T15:19:46.170603+00:00",
+  "updated_at": "2026-10-08T00:56:02.037011+00:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -68,7 +68,7 @@
     "Genç Kızlar Süper Lig - - B Grubu": [
       {
         "rank": 1,
-        "team": "Selçuklu Belediyespor Kulübü U18",
+        "team": "Konya Anka Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -79,6 +79,17 @@
       },
       {
         "rank": 2,
+        "team": "Selçuklu Belediyespor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Türmak Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -89,25 +100,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Anadolu Zirve Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Konya Anka Spor Kulübü U18",
-        "played": 0,
+        "team": "Anadolu Zirve Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -570,11 +570,15 @@
       "match_no": "2",
       "home_team": "Anadolu Zirve Spor Kulübü U18",
       "away_team": "Konya Anka Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "9-25",
+        "20-25",
+        "6-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402996",
@@ -975,5 +979,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-06T15:21:14.994684"
+  "volleybox_sync_updated_at": "2026-10-08T00:57:26.830705"
 }

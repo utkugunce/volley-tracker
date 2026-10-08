@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-06T20:25:49.528915+00:00",
+  "updated_at": "2026-10-08T00:56:02.037011+00:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -32,7 +32,7 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Vestel Manisa Büyükşehir Belediye Spor U18",
+        "team": "Akhisar İlçe Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -43,6 +43,17 @@
       },
       {
         "rank": 2,
+        "team": "Vestel Manisa Büyükşehir Belediye Spor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Değerli Zamanlar Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -53,7 +64,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "1922 Salihli Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -64,7 +75,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Salihli Değerli Zamanlar Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -75,25 +86,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Akhisar İlçe Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Akhisar Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -111,7 +111,7 @@
       },
       {
         "rank": 2,
-        "team": "Yunusemre Belediyespor U18",
+        "team": "Akhisargücü Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -122,6 +122,17 @@
       },
       {
         "rank": 3,
+        "team": "Yunusemre Belediyespor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Soma Belediye Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -132,8 +143,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Soma İlçe Spor Kulübü U18",
+        "rank": 5,
+        "team": "Sarıgöl Akademi Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -143,25 +154,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Akhisargücü Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Sarıgöl Akademi Spor Kulübü U18",
-        "played": 0,
+        "team": "Soma İlçe Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -271,11 +271,15 @@
       "match_no": "3",
       "home_team": "Akhisar Spor Kulübü U18",
       "away_team": "Akhisar İlçe Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404299",
@@ -402,11 +406,15 @@
       "match_no": "3",
       "home_team": "Akhisargücü Spor Kulübü U18",
       "away_team": "Sarıgöl Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-14",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404302",
@@ -432,5 +440,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-06T20:27:16.230689"
+  "volleybox_sync_updated_at": "2026-10-08T00:57:26.877414"
 }

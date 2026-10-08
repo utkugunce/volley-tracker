@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T09:25:44.827549+00:00",
+  "updated_at": "2026-10-08T00:56:02.037011+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -508,7 +508,7 @@
       "id": "tekirdag-20261014-005",
       "city": "Tekirdağ",
       "date": "2026-10-14",
-      "time": "20:30",
+      "time": "19:00",
       "hall": "Çerkezköy S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -1750,5 +1750,5 @@
     }
   ],
   "volleybox_synced_matches": 23,
-  "volleybox_sync_updated_at": "2026-10-07T09:27:14.300217"
+  "volleybox_sync_updated_at": "2026-10-08T00:57:26.843119"
 }

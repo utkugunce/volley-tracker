@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T16:43:46.656083+00:00",
+  "updated_at": "2026-10-08T00:56:02.037011+00:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -43,6 +43,17 @@
       },
       {
         "rank": 2,
+        "team": "Akademi Atletik Spor U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Birlik Spor Kulübü",
         "played": 1,
         "won": 1,
@@ -53,25 +64,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Akademi Atletik Spor U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Blue Wolves Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 1,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -90,34 +90,34 @@
       {
         "rank": 1,
         "team": "Zeren Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 5,
-        "sets_won": 6,
+        "points": 8,
+        "sets_won": 9,
         "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
         "team": "Ankara DSİ GSK U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 4,
-        "sets_won": 5,
-        "sets_lost": 3,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 3,
         "team": "Çaba Spor Kulübü - A U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -134,12 +134,12 @@
       {
         "rank": 5,
         "team": "Başkent Arma Spor",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 1,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -783,11 +783,16 @@
       "match_no": "5",
       "home_team": "Blue Wolves Spor Kulübü U18",
       "away_team": "Akademi Atletik Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "21-25",
+        "25-7",
+        "21-25",
+        "26-28"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402140",
@@ -1083,11 +1088,15 @@
       "match_no": "5",
       "home_team": "Zeren Spor Kulübü U18",
       "away_team": "Çaba Spor Kulübü - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "27-25",
+        "32-30",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402142",
@@ -1124,11 +1133,16 @@
       "match_no": "6",
       "home_team": "Başkent Arma Spor",
       "away_team": "Ankara DSİ GSK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "11-25",
+        "27-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402143",
@@ -3632,5 +3646,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-07T16:45:20.163376"
+  "volleybox_sync_updated_at": "2026-10-08T00:57:26.854603"
 }

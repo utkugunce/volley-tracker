@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T09:25:44.827549+00:00",
+  "updated_at": "2026-10-08T00:56:02.037011+00:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -136,29 +136,29 @@
     "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "MİLAS BELEDİYE SPOR A",
-        "played": 0,
-        "won": 0,
+        "team": "Muğla Sportif Akademi Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ",
-        "played": 0,
+        "team": "MİLAS BELEDİYE SPOR A",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Muğla Sportif Akademi Spor Kulübü",
+        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -632,11 +632,15 @@
       "match_no": "1",
       "home_team": "Muğla Sportif Akademi Spor Kulübü",
       "away_team": "MİLAS BELEDİYE SPOR A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-11",
+        "25-8"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -757,5 +761,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-07T09:27:14.324048"
+  "volleybox_sync_updated_at": "2026-10-08T00:57:26.868017"
 }
