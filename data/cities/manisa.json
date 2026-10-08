@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T14:43:17.081847+03:00",
+  "updated_at": "2026-10-08T15:31:16.941474+00:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -611,9 +611,9 @@
       }
     },
     {
-      "id": "manisa-20261013-012",
+      "id": "manisa-20261014-012",
       "city": "Manisa",
-      "date": "2026-10-13",
+      "date": "2026-10-14",
       "time": "19:00",
       "hall": "Sarıgöl Ss",
       "category": "Genç Kızlar Süper Lig",
@@ -646,5 +646,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-08T14:48:10.237117"
+  "volleybox_sync_updated_at": "2026-10-08T15:33:11.566147"
 }
