@@ -5,6 +5,10 @@ on:
     # Saatte bir (dakika 7: saat başı GitHub Actions yoğunluğundan kaçınmak için)
     - cron: '7 * * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/scrape-trigger'
 
 # Üst üste binen çalışmalar aynı anda commit/push yapmasın
 concurrency:
