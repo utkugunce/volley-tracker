@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import localFont from "next/font/local";
 import "@/theme/theme-vars.css";
 import "./globals.css";
 import { THEME_INIT_SCRIPT } from "@/theme/theme";
@@ -11,18 +11,43 @@ import {
   CookieConsentBanner,
 } from "@/components/analytics/AnalyticsConsent";
 
-const manrope = Manrope({
-  subsets: ["latin", "latin-ext"],
+const manrope = localFont({
+  src: [
+    {
+      path: "../fonts/Manrope-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Manrope-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Manrope-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-manrope",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
+const spaceGrotesk = localFont({
+  src: [
+    {
+      path: "../fonts/SpaceGrotesk-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/SpaceGrotesk-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-space-grotesk",
   display: "swap",
-  weight: ["500", "600", "700"],
 });
 
 export const viewport: Viewport = {
