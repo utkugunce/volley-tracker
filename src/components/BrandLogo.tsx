@@ -23,6 +23,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
     >
       {/* Volleyball Emblem Mark */}
       <div className="relative w-8 h-8 sm:w-9 sm:h-9 shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/icons/icon-192.png"
           alt="Altyapı Voleybol"
