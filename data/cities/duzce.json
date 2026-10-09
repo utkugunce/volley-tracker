@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T22:11:58.010979+03:00",
+  "updated_at": "2026-10-09T22:42:40.809947+03:00",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -29,17 +29,28 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Düzce UltrAslan Spor Kulübü U18",
-        "played": 1,
+        "team": "Düzce 1907 Spor Kulübü U18",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Düzce UltrAslan Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Düzce Voleybol SK - A U18",
         "played": 1,
         "won": 1,
@@ -47,17 +58,6 @@
         "points": 2,
         "sets_won": 3,
         "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Düzce 1907 Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -272,11 +272,15 @@
       "match_no": "3",
       "home_team": "Düzce 1907 Spor Kulübü U18",
       "away_team": "Düzce UltrAslan Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-9",
+        "25-17",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404258",
@@ -425,5 +429,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-09T22:16:45.365251"
+  "volleybox_sync_updated_at": "2026-10-09T22:47:21.559304"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T22:11:58.010979+03:00",
+  "updated_at": "2026-10-09T22:42:40.809947+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -37,12 +37,12 @@
       {
         "rank": 1,
         "team": "Elite Spor",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -80,6 +80,17 @@
       },
       {
         "rank": 5,
+        "team": "Kocaeli Voleybol Akademi Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Siyah Kuğular",
         "played": 1,
         "won": 1,
@@ -90,7 +101,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Kocaeli Anka Spor",
         "played": 1,
         "won": 1,
@@ -101,40 +112,40 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Beşrenk Spor",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "19 Mayıs Spor",
-        "played": 1,
-        "won": 0,
+        "team": "Beşrenk Spor",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 9,
         "team": "Yahyakaptan Spor",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 10,
+        "team": "19 Mayıs Spor",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 11,
         "team": "Gölcük Belediye",
         "played": 1,
         "won": 0,
@@ -145,18 +156,18 @@
         "form": []
       },
       {
-        "rank": 11,
+        "rank": 12,
         "team": "Körfez Vaveyla Spor",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
-        "rank": 12,
+        "rank": 13,
         "team": "Kandıra Voleybol",
         "played": 1,
         "won": 0,
@@ -164,17 +175,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 13,
-        "team": "Kocaeli Voleybol Akademi Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -192,7 +192,7 @@
       },
       {
         "rank": 2,
-        "team": "Darıca Çınaraltı Spor",
+        "team": "Yelkenkaya Spor",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -203,7 +203,7 @@
       },
       {
         "rank": 3,
-        "team": "Darıca Yıldız Spor",
+        "team": "Darıca Çınaraltı Spor",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -214,6 +214,17 @@
       },
       {
         "rank": 4,
+        "team": "Darıca Yıldız Spor",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Gebze Olimpik Spor",
         "played": 1,
         "won": 1,
@@ -224,7 +235,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Umutcan Spor",
         "played": 1,
         "won": 0,
@@ -235,7 +246,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Darıca Kuzey Yıldızı",
         "played": 1,
         "won": 0,
@@ -246,19 +257,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "Dilovası Belediye",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Dev Ay Spor",
+        "team": "Dilovası Belediye",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -270,28 +270,28 @@
       {
         "rank": 9,
         "team": "Darıca Anadolu Spor",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 10,
-        "team": "Gebze Gençlik Spor",
-        "played": 0,
+        "team": "Dev Ay Spor",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 11,
-        "team": "Yelkenkaya Spor",
+        "team": "Gebze Gençlik Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -546,11 +546,15 @@
       "match_no": "7",
       "home_team": "19 Mayıs Spor",
       "away_team": "Kocaeli Voleybol Akademi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "27-29",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -580,11 +584,17 @@
       "match_no": "8",
       "home_team": "Elite Spor",
       "away_team": "Yahyakaptan Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-18",
+        "13-25",
+        "25-18",
+        "18-25",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -614,11 +624,15 @@
       "match_no": "9",
       "home_team": "Körfez Vaveyla Spor",
       "away_team": "Beşrenk Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "13-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1175,11 +1189,15 @@
       "match_no": "5",
       "home_team": "Yelkenkaya Spor",
       "away_team": "Darıca Anadolu Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-17",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1538,5 +1556,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T22:16:50.416560"
+  "volleybox_sync_updated_at": "2026-10-09T22:47:24.061000"
 }

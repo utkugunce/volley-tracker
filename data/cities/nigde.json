@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T22:11:58.010979+03:00",
+  "updated_at": "2026-10-09T22:42:40.809947+03:00",
   "city": "Niğde",
   "slug": "nigde",
   "title": "TVF Niğde Genç & Yıldız Kızlar Süper Lig",
@@ -30,40 +30,40 @@
     "Genç Kızlar Süper Lig - Kamu Sporları Kadınlar": [
       {
         "rank": 1,
-        "team": "Niğde Valiliği B ( Evenstars)",
-        "played": 1,
-        "won": 1,
+        "team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 2,
-        "sets_won": 2,
+        "points": 4,
+        "sets_won": 4,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
-        "played": 1,
+        "team": "Niğde Valiliği B ( Evenstars)",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
+        "lost": 1,
+        "points": 3,
         "sets_won": 2,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Niğde Valiliği D (Gsb)",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 1,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 2,
         "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Albatros",
+        "team": "Niğde Valiliği C (Nöhü)",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -74,53 +74,53 @@
       },
       {
         "rank": 5,
-        "team": "Niğde Valiliği C (Nöhü)",
-        "played": 0,
+        "team": "Albatros",
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
+        "lost": 1,
+        "points": 1,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - Kamu Sporları Kadınlar": [
       {
         "rank": 1,
-        "team": "Niğde Valiliği B ( Evenstars)",
-        "played": 1,
-        "won": 1,
+        "team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 2,
-        "sets_won": 2,
+        "points": 4,
+        "sets_won": 4,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
-        "played": 1,
+        "team": "Niğde Valiliği B ( Evenstars)",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
+        "lost": 1,
+        "points": 3,
         "sets_won": 2,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Niğde Valiliği D (Gsb)",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 1,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 2,
         "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Albatros",
+        "team": "Niğde Valiliği C (Nöhü)",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -131,13 +131,13 @@
       },
       {
         "rank": 5,
-        "team": "Niğde Valiliği C (Nöhü)",
-        "played": 0,
+        "team": "Albatros",
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
+        "lost": 1,
+        "points": 1,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       }
     ]
@@ -230,11 +230,14 @@
       "match_no": "3",
       "home_team": "Niğde Valiliği A (MEB İl Milli Eğitim)",
       "away_team": "Niğde Valiliği B ( Evenstars)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -264,11 +267,14 @@
       "match_no": "4",
       "home_team": "Niğde Valiliği C (Nöhü)",
       "away_team": "Niğde Valiliği D (Gsb)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 2",
+      "home_score": 0,
+      "away_score": 2,
+      "set_scores": [
+        "19-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -491,5 +497,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T22:16:50.488604"
+  "volleybox_sync_updated_at": "2026-10-09T22:47:24.101062"
 }
