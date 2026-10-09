@@ -215,8 +215,8 @@ async function readSubscriptionsFromBlob(token: string): Promise<StoredSubscript
 function readLocalSubscriptions(): StoredSubscription[] {
   try {
     const file = getSubscriptionsFile();
-    if (fs.existsSync(file)) {
-      const content = fs.readFileSync(file, "utf-8").trim();
+    if (fs.existsSync(/*turbopackIgnore: true*/ file)) {
+      const content = fs.readFileSync(/*turbopackIgnore: true*/ file, "utf-8").trim();
       if (content) {
         const parsed = JSON.parse(content);
         if (Array.isArray(parsed)) return parsed;
@@ -232,10 +232,10 @@ function writeLocalSubscriptions(subs: StoredSubscription[]): void {
   try {
     const file = getSubscriptionsFile();
     const dir = path.dirname(file);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
+    if (!fs.existsSync(/*turbopackIgnore: true*/ dir)) {
+      fs.mkdirSync(/*turbopackIgnore: true*/ dir, { recursive: true });
     }
-    fs.writeFileSync(file, JSON.stringify(subs, null, 2), "utf-8");
+    fs.writeFileSync(/*turbopackIgnore: true*/ file, JSON.stringify(subs, null, 2), "utf-8");
   } catch {
     // Vercel read-only diskte beklenen durum
   }

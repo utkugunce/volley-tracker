@@ -57,8 +57,9 @@ export function getOverridesDataSync(): OverridesData {
     return memoryOverridesCache;
   }
   try {
-    if (fs.existsSync(getOverridesFilePath())) {
-      const content = fs.readFileSync(getOverridesFilePath(), "utf-8").trim();
+    const filePath = getOverridesFilePath();
+    if (fs.existsSync(/*turbopackIgnore: true*/ filePath)) {
+      const content = fs.readFileSync(/*turbopackIgnore: true*/ filePath, "utf-8").trim();
       if (!content) return { overrides: {}, audit_log: [] };
       const parsed = JSON.parse(content);
       const data: OverridesData = {

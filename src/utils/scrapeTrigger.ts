@@ -72,7 +72,7 @@ export async function runLocalScraper(scriptRelativePath: string, timeoutMs: num
   if (!isLocalScrapeAllowed()) {
     throw new Error("Yerel scraper yalnızca geliştirme ortamında çalıştırılabilir.");
   }
-  await execFileAsync(resolvePythonBin(), [path.join(process.cwd(), scriptRelativePath)], {
+  await execFileAsync(resolvePythonBin(), [path.join(/*turbopackIgnore: true*/ process.cwd(), scriptRelativePath)], {
     cwd: process.cwd(),
     timeout: timeoutMs,
     windowsHide: true,

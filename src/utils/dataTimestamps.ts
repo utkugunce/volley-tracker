@@ -26,7 +26,13 @@ export function parseScanTimestamp(raw: unknown): Date | undefined {
 /** data/ altındaki bir JSON dosyasını okur; yoksa ya da bozuksa null döner. */
 export function readDataJson(rel: string): Record<string, unknown> | null {
   try {
-    return JSON.parse(fs.readFileSync(path.join(process.cwd(), rel), "utf-8"));
+    const cleanRel = rel.replace(/^data[\\/]/, "");
+    return JSON.parse(
+      fs.readFileSync(
+        /*turbopackIgnore: true*/ path.join(process.cwd(), "data", cleanRel),
+        "utf-8"
+      )
+    );
   } catch {
     return null;
   }
