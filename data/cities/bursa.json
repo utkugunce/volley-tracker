@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T17:35:29.521978+03:00",
+  "updated_at": "2026-10-09T17:26:33.021541+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -160,6 +160,28 @@
       },
       {
         "rank": 2,
+        "team": "Bursa Büyükşehir Belediyespor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Nilüfer Olimpik Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
         "played": 1,
         "won": 0,
@@ -170,30 +192,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Bursa Büyükşehir Belediyespor U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Bursa Genç Saray Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Nilüfer Olimpik Spor Kulübü U18",
+        "team": "Bursa Genç Saray Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -808,11 +808,15 @@
       "match_no": "2",
       "home_team": "Bursa Büyükşehir Belediyespor U18",
       "away_team": "Nilüfer Olimpik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-19",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404250",
@@ -2047,5 +2051,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-09T17:40:12.739429"
+  "volleybox_sync_updated_at": "2026-10-09T17:28:24.738116"
 }

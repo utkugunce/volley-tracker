@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T17:35:29.521978+03:00",
+  "updated_at": "2026-10-09T17:26:33.021541+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -602,6 +602,17 @@
       },
       {
         "rank": 2,
+        "team": "KZY Bornova Spor Kulübü U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Parla Voleybol Kulübü - A U16",
         "played": 3,
         "won": 2,
@@ -609,17 +620,6 @@
         "points": 7,
         "sets_won": 8,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "KZY Bornova Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -647,12 +647,12 @@
       {
         "rank": 6,
         "team": "Venüs Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -4482,11 +4482,15 @@
       "match_no": "10",
       "home_team": "KZY Bornova Spor Kulübü U16",
       "away_team": "Venüs Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-12",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402746",
@@ -6636,5 +6640,5 @@
     }
   ],
   "volleybox_synced_matches": 112,
-  "volleybox_sync_updated_at": "2026-10-09T17:40:15.589284"
+  "volleybox_sync_updated_at": "2026-10-09T17:28:24.722058"
 }
