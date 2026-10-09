@@ -8,6 +8,23 @@ import { downloadIcsFile, generateMatchIcs } from "@/utils/ics";
 
 export type MatchRowMode = "today" | "results" | "fixtures";
 
+export function formatCompactMatchDate(dateStr?: string | null): string {
+  if (!dateStr || dateStr === "TBD") return "Program";
+  if (dateStr.includes("-")) {
+    const parts = dateStr.split("-");
+    if (parts.length === 3) {
+      return `${parts[2]}.${parts[1]}`;
+    }
+  }
+  if (dateStr.includes(".")) {
+    const parts = dateStr.split(".");
+    if (parts.length >= 2) {
+      return `${parts[0]}.${parts[1]}`;
+    }
+  }
+  return dateStr;
+}
+
 interface CompactMatchRowProps {
   match: Match;
   isSelected?: boolean;
@@ -28,6 +45,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
   const isLive = match.status === "live";
   const isFinished = match.status === "finished" || (match.home_score !== null && match.home_score !== undefined);
   const isPostponed = match.status === "postponed";
+  const formattedDate = formatCompactMatchDate(match.date);
   const discrepancy = match.volleybox?.discrepancy;
   const hasDiscrepancy = Boolean(discrepancy?.has_diff);
 
@@ -75,7 +93,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           : "hover:bg-panel/80 bg-surface-muted"
       }`}
     >
-      {/* 1. Sol Kısım (60px): Saat ve Durum */}
+      {/* 1. Sol Kısım: Saat, Tarih ve Durum */}
       <div className="w-[74px] shrink-0 flex flex-col justify-center items-start leading-tight pr-1.5 border-r border-line/40">
         <span
           className={`font-mono font-scoreboard tabular-nums text-[11px] font-semibold px-1 py-0.5 rounded ${
@@ -87,8 +105,22 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
         >
           {match.time || "--:--"}
         </span>
+
+        {/* Tarih (Biten, canlı, ertelenen veya planlanan tüm maçlarda gösterilir) */}
+        <span
+          className={`font-mono tabular-nums text-[9px] font-medium px-1 py-0.5 rounded ${
+            discrepancy?.date_diff
+              ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
+              : "text-ink-2"
+          }`}
+          title={discrepancy?.date_diff ? discrepancy.details || "Tarih Volleybox kaydından farklı" : undefined}
+        >
+          {formattedDate}
+        </span>
+
+        {/* Durum Rozeti (Canlı / Bitti / Ertelendi) */}
         {isLive ? (
-          <span className="flex items-center gap-1 text-[9px] font-bold text-live">
+          <span className="flex items-center gap-1 text-[9px] font-bold text-live px-1">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-red-500" />
@@ -96,22 +128,15 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
             <span>CANLI</span>
           </span>
         ) : isFinished ? (
-          <span className="text-[9px] font-bold text-emerald-400">
+          <span className="text-[9px] font-bold text-emerald-400 px-1">
             Bitti
           </span>
         ) : isPostponed ? (
-          <span className="text-[9px] font-medium text-slate-400">
+          <span className="text-[9px] font-medium text-slate-400 px-1">
             Ertelendi
           </span>
-        ) : (
-          <span className={`text-[9px] font-medium px-1 py-0.5 rounded ${
-            discrepancy?.date_diff
-              ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
-              : "text-ink-2"
-          }`} title={discrepancy?.date_diff ? discrepancy.details || "Tarih Volleybox kaydından farklı" : undefined}>
-            {match.date ? match.date.slice(5) : "Program"}
-          </span>
-        )}
+        ) : null}
+
         {discrepancy?.date_diff && discrepancy.vb_date && (
           <span className="mt-0.5 rounded border border-amber-500/30 bg-amber-950/70 px-1 text-[8px] font-semibold text-amber-300">
             VB {discrepancy.vb_date.slice(5)}

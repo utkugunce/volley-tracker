@@ -86,4 +86,23 @@ describe("CompactMatchRow", () => {
     expect(screen.getByText("VB: Eski Salon")).toBeInTheDocument();
     expect(container.querySelector("[data-match-row]")?.className).toContain("bg-amber-950/30");
   });
+
+  it("renders match date, time, and status for finished matches", () => {
+    const match = {
+      id: "match-finished",
+      home_team: "Eczacıbaşı",
+      away_team: "Fenerbahçe",
+      date: "2026-09-27",
+      time: "14:00",
+      home_score: 3,
+      away_score: 1,
+      status: "finished",
+    } as Match;
+
+    render(<CompactMatchRow match={match} mode="fixtures" />);
+
+    expect(screen.getByText("27.09")).toBeInTheDocument();
+    expect(screen.getByText("14:00")).toBeInTheDocument();
+    expect(screen.getByText("Bitti")).toBeInTheDocument();
+  });
 });
