@@ -22,6 +22,7 @@ import { formatDateTurkish, compareMatchDateTime, isMatchPassed, isTodayOrUnscor
 import { isMatchScored } from "@/utils/matchScoring";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { getVolleyboxMapping } from "@/utils/volleybox";
+import { LeagueFinderWidget } from "@/components/LeagueFinderWidget";
 
 interface HomePortalViewProps {
   matches: Match[];
@@ -520,6 +521,11 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                   })}
                 </div>
               </div>
+            </div>
+
+            {/* İNTERAKTİF YAŞ & KATEGORİ HESAPLAYICI */}
+            <div className="pt-2">
+              <LeagueFinderWidget />
             </div>
 
             {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}

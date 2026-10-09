@@ -103,6 +103,18 @@ export function LoginForm({ next, errorKey }: { next: string; errorKey?: string 
       >
         {status === "sending" ? "Gönderiliyor…" : "Giriş bağlantısı gönder"}
       </button>
+      <p className="text-[11px] text-ink-3 leading-relaxed">
+        Giriş yaparak{" "}
+        <a
+          href="/gizlilik"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline font-semibold"
+        >
+          Gizlilik Politikası ve KVKK Aydınlatma Metni
+        </a>
+        ’ni okuduğunuzu ve kabul ettiğinizi beyan edersiniz.
+      </p>
     </form>
   );
 }

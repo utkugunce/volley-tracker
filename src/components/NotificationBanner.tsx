@@ -117,11 +117,13 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
                 Şimdi Değil
               </button>
               <button
+                type="button"
                 onClick={handleDismiss}
                 className="p-1.5 text-slate-400 hover:text-white rounded-md hover:bg-white/10 transition-colors cursor-pointer"
                 title="Kapat"
+                aria-label="Bildirim uyarısını kapat"
               >
-                <X size={14} />
+                <X size={14} aria-hidden="true" />
               </button>
             </>
           )}

@@ -72,7 +72,16 @@ export interface CityResultGroup {
 }
 
 /**
- * Groups matches first by City, then by League (unifying all groups of the same league).
+ * Extracts regional subdivision from group name if present (e.g. "1. Bölge A Grubu" -> "1. Bölge").
+ */
+export function extractRegionFromGroup(groupName?: string): string | null {
+  if (!groupName) return null;
+  const match = groupName.match(/(\d+\.\s*B[öo]lge)/i);
+  return match ? match[1].replace(/\s+/g, " ").trim() : null;
+}
+
+/**
+ * Groups matches first by City, then by League (unifying all groups of the same league/region).
  * Inside each league, matches are sorted by group name, then by match datetime.
  */
 export function groupResultsByCityAndLeague(
@@ -81,7 +90,16 @@ export function groupResultsByCityAndLeague(
 ): CityResultGroup[] {
   const cityMap = new Map<
     string,
-    Map<string, { title: string; rawCategory: string; ageGroup?: string; matches: Match[] }>
+    Map<
+      string,
+      {
+        title: string;
+        rawCategory: string;
+        ageGroup?: string;
+        region?: string;
+        matches: Match[];
+      }
+    >
   >();
 
   for (const m of matches) {
@@ -92,17 +110,21 @@ export function groupResultsByCityAndLeague(
     const leagueMap = cityMap.get(city)!;
 
     const rawCategory = m.category || m.age_group || "Genel Lig";
-    const leagueTitle = formatLeagueCategoryTitle(rawCategory, m.age_group);
+    const region = extractRegionFromGroup(m.group);
+    const leagueKey = region ? `${rawCategory} - ${region}` : rawCategory;
+    const baseTitle = formatLeagueCategoryTitle(rawCategory, m.age_group);
+    const leagueTitle = region ? `${baseTitle} - ${region}` : baseTitle;
 
-    if (!leagueMap.has(rawCategory)) {
-      leagueMap.set(rawCategory, {
+    if (!leagueMap.has(leagueKey)) {
+      leagueMap.set(leagueKey, {
         title: leagueTitle,
         rawCategory,
         ageGroup: m.age_group,
+        region: region || undefined,
         matches: [],
       });
     }
-    leagueMap.get(rawCategory)!.matches.push(m);
+    leagueMap.get(leagueKey)!.matches.push(m);
   }
 
   const result: CityResultGroup[] = [];
@@ -111,7 +133,7 @@ export function groupResultsByCityAndLeague(
     let totalCityMatches = 0;
     const leagues: CityResultGroup["leagues"] = [];
 
-    for (const [rawCategory, data] of leagueMap.entries()) {
+    for (const [leagueKey, data] of leagueMap.entries()) {
       totalCityMatches += data.matches.length;
 
       // Sort matches in this league: by group name first (A Grubu, B Grubu...), then by datetime desc
@@ -128,14 +150,28 @@ export function groupResultsByCityAndLeague(
         return m1.time.localeCompare(m2.time);
       });
 
-      const uniqueGroups = Array.from(new Set(sortedMatches.map((m) => formatGroupName(m.group)).filter(Boolean)));
+      const uniqueGroups = Array.from(
+        new Set(
+          sortedMatches
+            .map((m) => {
+              if (data.region) {
+                // Bölge önekini temizle: "1. Bölge A Grubu" -> "A Grubu"
+                const cleaned = m.group ? m.group.replace(/(\d+\.\s*B[öo]lge\s*)/i, "").trim() : "";
+                if (!cleaned || cleaned.toLowerCase() === "bölge" || cleaned.toLowerCase() === "tek grup") return "";
+                return formatGroupName(cleaned);
+              }
+              return formatGroupName(m.group);
+            })
+            .filter((g) => Boolean(g) && g !== "Tek Grup")
+        )
+      );
       const subTitle = uniqueGroups.length > 0 ? uniqueGroups.join(" • ") : "";
 
       leagues.push({
-        categoryKey: rawCategory,
+        categoryKey: leagueKey,
         title: data.title,
         subTitle,
-        rawCategory,
+        rawCategory: data.rawCategory,
         ageGroup: data.ageGroup,
         city: cityName,
         matches: sortedMatches,

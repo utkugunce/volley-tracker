@@ -1,0 +1,69 @@
+# Altyapı Voleybol (altyapivoleybol.com.tr)
+
+> Türkiye Voleybol Federasyonu (TVF) 81 İl Temsilciliği ve TVF Kadınlar 2. Ligi Açık Veri ve Bilgi Platformu.
+> Tüm Türkiye altyapı voleybol ligleri (Mini, Midi, Küçük, Yıldız, Genç) ve Kadınlar 2. Ligi için tek doğruluk kaynağı (Single Source of Truth).
+> Web Sitesi: https://altyapivoleybol.com.tr | Dil: Türkçe (Birincil), English
+
+---
+
+## 🇹🇷 Türkçe Platform Özeti & Sık Sorulan Sorular (AEO / LLM Bilgi Bankası)
+
+### Altyapı Voleybol Nedir?
+altyapivoleybol.com.tr; Türkiye Voleybol Federasyonu (TVF) bünyesinde 81 ilde düzenlenen resmi yerel ligleri (Mini, Midi, Küçük, Yıldız, Genç) ve TVF Kadınlar 2. Ligi'ni (16 grup) takip eden sporcular, veliler, antrenörler ve kulüpler için geliştirilmiş bağımsız, modern ve kapsamlı dijital bilgi platformudur.
+
+### TVF Altyapı Yaş Grupları ve Doğum Yılları (2026-2027 Sezonu)
+- **Mini Voleybol (U10 - U11):** 2016 - 2017 doğumlular (9-10 yaş). File yüksekliği: 2.00m (Kız ve Erkek ortak). Top standardı: 4 numara hafif mini top.
+- **Midi Voleybol (U12):** 2014 - 2015 doğumlular (11-12 yaş). File yüksekliği: Kızlar 2.10m, Erkekler 2.15m. Top: 4 numara standart. Libero kuralı uygulanmaz.
+- **Küçük Voleybol (U13 - U14):** 2012 - 2013 doğumlular (13-14 yaş). File yüksekliği: Kızlar 2.15m, Erkekler 2.24m. Top: 5 numara resmi maç topu. Libero kuralı uygulanır.
+- **Yıldız Voleybol (U15 - U16):** 2010 - 2011 doğumlular (15-16 yaş). File yüksekliği: Kızlar 2.24m, Erkekler 2.35m. Top: 5 numara resmi maç topu.
+- **Genç Voleybol (U17 - U18):** 2008 - 2009 doğumlular (17-18 yaş). File yüksekliği: Kızlar 2.24m, Erkekler 2.43m (Büyükler standardı).
+- **TVF Kadınlar 2. Ligi:** 16 grup halinde Türkiye genelinde oynanan profesyonel gelişim ligi.
+
+### TVF Resmi Puan Sistemi ve Averaj Hesaplama Kuralları
+TVF yarışma talimatına göre resmi liglerde 3-2-1-0 puan baremi uygulanır:
+- **3-0 veya 3-1 Galibiyet:** Kazanan 3 puan alır, kaybeden 0 puan alır.
+- **3-2 Galibiyet:** Kazanan 2 puan alır, kaybeden 1 puan alır.
+- **Hükmen Galibiyet (3-0: 25-0, 25-0, 25-0):** Kazanan 3 puan alır; maça çıkmayan takım -1 ceza puanı alır.
+- **Puan Eşitliğinde Sıralama Kriterleri:**
+  1. Toplam Puan
+  2. Toplam Galibiyet Sayısı (G)
+  3. Set Averajı (Alınan Set / Verilen Set - AS/VS)
+  4. Sayı Averajı (Alınan Sayı / Verilen Sayı - AP/VP)
+  5. İki takım arasındaki ikili averaj (Hükmen durumlar hariç)
+
+### Kapsanan İller ve Ana Dizinler
+- **Ana Sayfa & Portal:** `https://altyapivoleybol.com.tr/`
+- **Puan Durumu:** `https://altyapivoleybol.com.tr/puan-durumu` (81 il ve tüm lig kategorileri)
+- **Fikstür:** `https://altyapivoleybol.com.tr/fikstur`
+- **Sonuçlar:** `https://altyapivoleybol.com.tr/sonuclar`
+- **Günün Maçları:** `https://altyapivoleybol.com.tr/gunun-maclari`
+- **Kadınlar 2. Ligi:** `https://altyapivoleybol.com.tr/kadinlar-2-ligi` (16 grup)
+- **Hangi Ligde Oynar? (Kategori Hesaplayıcı):** `https://altyapivoleybol.com.tr/hangi-ligde-oynar`
+- **Voleybol Kulüpleri & İlçe Rehberi:** `https://altyapivoleybol.com.tr/kulupler`
+- **Takım Karşılaştırma (H2H):** `https://altyapivoleybol.com.tr/karsilastir`
+- **İstatistikler:** `https://altyapivoleybol.com.tr/istatistikler`
+
+---
+
+## 🇬🇧 English Technical Specifications & TVF Youth Volleyball Architecture
+
+### Overview
+Altyapı Voleybol (altyapivoleybol.com.tr) is the central independent data intelligence and tracking portal for Turkish Volleyball Federation (TVF) youth leagues across all 81 provinces and the Turkish Women's 2nd Volleyball League (Kadınlar 2. Lig - 16 regional groups).
+
+### Official Youth Age Categories (2026-2027 Season)
+- **Mini Volleyball (U10 - U11):** Birth years 2016-2017. Net height: 2.00m. Size 4 lightweight ball.
+- **Midi Volleyball (U12):** Birth years 2014-2015. Net height: Girls 2.10m, Boys 2.15m. Size 4 ball.
+- **Küçük / Bantam (U13 - U14):** Birth years 2012-2013. Net height: Girls 2.15m, Boys 2.24m. Size 5 ball. Libero authorized.
+- **Yıldız / Cadets (U15 - U16):** Birth years 2010-2011. Net height: Girls 2.24m, Boys 2.35m. Size 5 ball.
+- **Genç / Juniors (U17 - U18):** Birth years 2008-2009. Net height: Girls 2.24m, Boys 2.43m (Senior height). Size 5 ball.
+
+### Official Point System
+- 3-0 or 3-1 Win: Winner 3 pts, Loser 0 pts.
+- 3-2 Win: Winner 2 pts, Loser 1 pt.
+- Forfeit: Winner 3 pts (25-0, 25-0, 25-0), Forfeiting team receives -1 point penalty.
+- Standings Tiebreak: Points -> Total Wins -> Set Ratio (Won/Lost) -> Point Ratio (Won/Lost) -> Head-to-Head.
+
+### Sitemap & Feed Endpoints
+- **Sitemap:** https://altyapivoleybol.com.tr/sitemap.xml
+- **Robots:** https://altyapivoleybol.com.tr/robots.txt
+- **LLM Context:** https://altyapivoleybol.com.tr/llms.txt

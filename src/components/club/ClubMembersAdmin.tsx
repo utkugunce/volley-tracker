@@ -97,9 +97,9 @@ export function ClubMembersAdmin({ token }: { token: string }) {
       <h2 className="text-base font-bold text-white">Kulüp / Antrenör Hesapları</h2>
 
       <form onSubmit={submitLink} className="flex flex-wrap items-end gap-2">
-        <input className={field} type="email" required placeholder="kullanici@eposta.com" value={link.email} onChange={(e) => setLink({ ...link, email: e.target.value })} />
-        <input className={field} required placeholder="kulüp slug (ör. fenerbahce)" value={link.club_slug} onChange={(e) => setLink({ ...link, club_slug: e.target.value.trim().toLowerCase() })} />
-        <select className={field} value={link.member_role} onChange={(e) => setLink({ ...link, member_role: e.target.value as MemberRole })}>
+        <input className={field} type="email" required aria-label="Kullanıcı e-posta adresi" placeholder="kullanici@eposta.com" value={link.email} onChange={(e) => setLink({ ...link, email: e.target.value })} />
+        <input className={field} required aria-label="Kulüp kısa adı (slug)" placeholder="kulüp slug (ör. fenerbahce)" value={link.club_slug} onChange={(e) => setLink({ ...link, club_slug: e.target.value.trim().toLowerCase() })} />
+        <select className={field} aria-label="Kulüp yetki rolü" value={link.member_role} onChange={(e) => setLink({ ...link, member_role: e.target.value as MemberRole })}>
           <option value="coach">Antrenör</option>
           <option value="manager">Yönetici</option>
         </select>

@@ -181,5 +181,61 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(yildizLig?.subTitle).toBe("A Grubu • C Grubu");
       expect(yildizLig?.matches).toHaveLength(2);
     });
+
+    it("separates leagues with regional subdivisions into distinct sections (e.g. Istanbul 1. Bölge vs 4. Bölge)", () => {
+      const istanbulMatches: Match[] = [
+        {
+          id: "m-ist-1",
+          city: "İstanbul",
+          date: "2026-09-27",
+          time: "19:30",
+          hall: "Çengelköy",
+          category: "Genç Kızlar 1. Ligi",
+          age_group: "Genç",
+          gender: "Kız",
+          match_no: "1",
+          group: "1. Bölge A Grubu",
+          home_team: "Çengelköy Voleybol Kulübü U18",
+          away_team: "İstanbul Anka Spor U18",
+          score: "3 - 0",
+          status: "finished",
+        },
+        {
+          id: "m-ist-2",
+          city: "İstanbul",
+          date: "2026-09-27",
+          time: "18:00",
+          hall: "Bahçeşehir",
+          category: "Genç Kızlar 1. Ligi",
+          age_group: "Genç",
+          gender: "Kız",
+          match_no: "2",
+          group: "4. Bölge B Grubu",
+          home_team: "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
+          away_team: "Başakşehir Voleybol Kulübü U18",
+          score: "1 - 3",
+          status: "finished",
+        },
+      ];
+
+      const grouped = groupResultsByCityAndLeague(istanbulMatches);
+      expect(grouped).toHaveLength(1);
+      const istanbul = grouped[0];
+      expect(istanbul.city).toBe("İstanbul");
+      // Must separate 1. Bölge and 4. Bölge into 2 distinct leagues!
+      expect(istanbul.leagues).toHaveLength(2);
+
+      const b1 = istanbul.leagues.find((l) => l.categoryKey.includes("1. Bölge"));
+      expect(b1).toBeDefined();
+      expect(b1?.title).toContain("1. Bölge");
+      expect(b1?.subTitle).toBe("A Grubu");
+      expect(b1?.matches).toHaveLength(1);
+
+      const b4 = istanbul.leagues.find((l) => l.categoryKey.includes("4. Bölge"));
+      expect(b4).toBeDefined();
+      expect(b4?.title).toContain("4. Bölge");
+      expect(b4?.subTitle).toBe("B Grubu");
+      expect(b4?.matches).toHaveLength(1);
+    });
   });
 });

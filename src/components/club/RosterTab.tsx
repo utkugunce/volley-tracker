@@ -20,12 +20,20 @@ const EMPTY = { name: "", shirt_number: "", position: "", height_cm: "", birth_y
 export function RosterTab({ club }: { club: string }) {
   const { items, loading, error, save, remove } = useClubResource<RosterEntry>("roster", club);
   const [form, setForm] = useState({ ...EMPTY });
+  const [guardianConsent, setGuardianConsent] = useState(false);
   const [editingId, setEditingId] = useState<string | undefined>();
   const [msg, setMsg] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
+  const currentYear = new Date().getFullYear();
+  const isUnder13 = !form.is_staff && Boolean(form.birth_year) && Number(form.birth_year) > (currentYear - 13);
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isUnder13 && !guardianConsent) {
+      setMsg("13 yaşından küçük sporcular için veli/yasal temsilci izni teyidi zorunludur.");
+      return;
+    }
     setBusy(true);
     setMsg(null);
     const err = await save(form, editingId);
@@ -33,12 +41,14 @@ export function RosterTab({ club }: { club: string }) {
     if (err) setMsg(err);
     else {
       setForm({ ...EMPTY });
+      setGuardianConsent(false);
       setEditingId(undefined);
     }
   };
 
   const startEdit = (p: RosterEntry) => {
     setEditingId(p.id);
+    setGuardianConsent(false);
     setForm({
       name: p.name,
       shirt_number: p.shirt_number?.toString() ?? "",
@@ -74,19 +84,37 @@ export function RosterTab({ club }: { club: string }) {
         <label className="flex items-center gap-2 text-xs font-bold text-ink-2 col-span-1 sm:col-span-2">
           <input type="checkbox" checked={form.is_visible} onChange={(e) => setForm({ ...form, is_visible: e.target.checked })} /> Takım sayfasında göster
         </label>
+
+        {isUnder13 && (
+          <div className="col-span-2 sm:col-span-6 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs space-y-1.5">
+            <label className="flex items-start gap-2 font-semibold cursor-pointer">
+              <input
+                type="checkbox"
+                required
+                checked={guardianConsent}
+                onChange={(e) => setGuardianConsent(e.target.checked)}
+                className="mt-0.5 rounded border-amber-500 focus:ring-amber-400"
+              />
+              <span>
+                <strong>Veli / Yasal Temsilci Rızası:</strong> Bu sporcu 13 yaşından küçüktür (COPPA / KVKK). Sporcunun isim, mevki ve fiziksel verilerinin Altyapı Voleybol platformunda kamuya açık kadro bülteninde listelenmesi için velisinin/yasal temsilcisinin açık rızası kulüp tarafından alınmıştır.
+              </span>
+            </label>
+          </div>
+        )}
+
         <div className="col-span-2 sm:col-span-6 flex items-center gap-3">
           <button type="submit" disabled={busy} className={btnPrimary}>
             {editingId ? "Güncelle" : "Ekle"}
           </button>
           {editingId && (
-            <button type="button" className={btnGhost} onClick={() => { setEditingId(undefined); setForm({ ...EMPTY }); }}>
+            <button type="button" className={btnGhost} onClick={() => { setEditingId(undefined); setForm({ ...EMPTY }); setGuardianConsent(false); }}>
               Vazgeç
             </button>
           )}
-          {msg && <span role="alert" className="text-xs font-bold text-live">{msg}</span>}
         </div>
       </form>
 
+      {msg && <p role="status" className="text-xs font-bold text-ink-2">{msg}</p>}
       {error && <p role="alert" className="text-xs font-bold text-live">{error}</p>}
       {loading ? (
         <p className="text-sm text-ink-3">Yükleniyor…</p>
@@ -107,9 +135,16 @@ export function RosterTab({ club }: { club: string }) {
                 </p>
               </div>
               <div className="flex gap-2 shrink-0">
-                <button className={btnGhost} onClick={() => startEdit(p)}>Düzenle</button>
                 <button
                   className={btnGhost}
+                  aria-label={`${p.name} kaydını düzenle`}
+                  onClick={() => startEdit(p)}
+                >
+                  Düzenle
+                </button>
+                <button
+                  className={btnGhost}
+                  aria-label={`${p.name} kaydını sil`}
                   onClick={async () => {
                     if (window.confirm(`${p.name} silinsin mi?`)) setMsg(await remove(p.id));
                   }}

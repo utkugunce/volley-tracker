@@ -12,7 +12,8 @@ import {
   Sparkles,
   ArrowRight,
   Filter,
-  Check
+  Check,
+  Shield
 } from "lucide-react";
 import { CityInfo, Match } from "@/types/fixture";
 import { 
@@ -155,6 +156,32 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                   <span className="font-semibold text-[11px] truncate group-hover:text-white">TVF Kadınlar 2. Ligi</span>
                 </span>
                 <span className="text-[10px] text-purple-400 font-mono shrink-0">16 Grup →</span>
+              </Link>
+
+              {/* Kulüpler Dizini Hızlı Geçiş */}
+              <Link
+                href="/kulupler"
+                prefetch={false}
+                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-panel/60 hover:bg-panel border border-transparent hover:border-line text-ink transition-all group"
+              >
+                <span className="flex items-center gap-2 truncate">
+                  <Shield size={12} className="text-blue-400 shrink-0" />
+                  <span className="font-medium text-[11px] truncate group-hover:text-white">Kulüpler Rehberi</span>
+                </span>
+                <span className="text-[10px] text-ink-3 font-mono shrink-0">İl / İlçe →</span>
+              </Link>
+
+              {/* Hangi Ligde Oynar? Rehber Aracı */}
+              <Link
+                href="/hangi-ligde-oynar"
+                prefetch={false}
+                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-amber-950/30 hover:bg-amber-950/60 border border-amber-800/40 text-amber-200 transition-all group"
+              >
+                <span className="flex items-center gap-2 truncate">
+                  <Sparkles size={12} className="text-amber-400 shrink-0" />
+                  <span className="font-semibold text-[11px] truncate group-hover:text-white">Hangi Ligde Oynar?</span>
+                </span>
+                <span className="text-[9px] px-1 rounded bg-amber-500/20 text-amber-300 font-mono shrink-0">YENİ</span>
               </Link>
             </div>
           )}

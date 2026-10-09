@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Printer, Star, Calendar, CalendarDays, Trophy, CheckCircle2, Flame, Search, Layers, Home, ArrowRight } from "lucide-react";
+import { Printer, Star, Calendar, CalendarDays, Trophy, CheckCircle2, Flame, Search, Layers, Home, ArrowRight, Shield, Sparkles } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -104,13 +104,15 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Spotlight Arama Butonu */}
           {onOpenSearch && (
             <button
+              type="button"
               onClick={onOpenSearch}
+              aria-label={t("header.search")}
               className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/60 transition-all active:scale-95 cursor-pointer"
               title="Hızlı Arama (Ctrl + K)"
             >
-              <Search size={13} className="text-slate-400" />
+              <Search size={13} className="text-slate-400" aria-hidden="true" />
               <span className="hidden md:inline font-medium text-[11px] text-slate-400">{t("header.search")}</span>
-              <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-slate-400 bg-slate-900 px-1 py-0.2 rounded border border-slate-700">
+              <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-slate-400 bg-slate-900 px-1 py-0.2 rounded border border-slate-700" aria-hidden="true">
                 ⌘K
               </kbd>
             </button>
@@ -119,7 +121,9 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Favoriler Butonu */}
           {(activeTab === "fixtures" || activeTab === "home" || activeTab === "today" || activeTab === "results") && (
             <button
+              type="button"
               onClick={onToggleFavoritesOnly}
+              aria-label={t("header.favorites")}
               className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-all active:scale-95 duration-200 ${
                 showOnlyFavorites
                   ? "bg-warn text-black shadow-glow-amber font-bold"
@@ -130,6 +134,7 @@ export const Header: React.FC<HeaderProps> = ({
               <Star
                 size={13}
                 className={showOnlyFavorites ? "fill-black text-black" : "text-amber-400"}
+                aria-hidden="true"
               />
               <span className="hidden sm:inline">{t("header.favorites")}</span>
               {favoritesCount > 0 && (
@@ -170,9 +175,13 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* 2. ANA SEKMELER: ANASAYFA, SONUÇLAR, GÜNÜN MAÇLARI, FİKSTÜR, PUAN DURUMU, GRUP DURUMU, TAKVİM */}
-      <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar">
+      <nav
+        aria-label="Sayfa ana sekmeleri"
+        className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-bold overflow-x-auto no-scrollbar"
+      >
         {/* Anasayfa Portalı & Günün Maçları Sekmesi */}
         <button
+          type="button"
           onClick={() => onSelectTab("home")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "home"
@@ -191,6 +200,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Sonuçlar Sekmesi */}
         <button
+          type="button"
           onClick={() => onSelectTab("results")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "results"
@@ -215,6 +225,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Günün Maçları Sekmesi */}
         <button
+          type="button"
           onClick={() => onSelectTab("today")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "today"
@@ -233,6 +244,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Fikstür Sekmesi */}
         <button
+          type="button"
           onClick={() => onSelectTab("fixtures")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "fixtures"
@@ -251,6 +263,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Puan Durumu Sekmesi */}
         <button
+          type="button"
           onClick={() => onSelectTab("standings")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "standings"
@@ -264,6 +277,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Grup Durumu Sekmesi (Volleybox İlerleme & Renk Kodları) */}
         <button
+          type="button"
           onClick={() => onSelectTab("group-status")}
           className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
             activeTab === "group-status"
@@ -290,7 +304,30 @@ export const Header: React.FC<HeaderProps> = ({
           <span>{t("nav.calendar")}</span>
         </Link>
 
-      </div>
+        {/* Kulüpler Sekmesi (İlçe Bazlı Kulüp Sayfaları; ayrı rota: /kulupler) */}
+        <Link
+          href="/kulupler"
+          prefetch={false}
+          className="flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
+          title="İl ve İlçe Bazlı Voleybol Kulüpleri Rehberi"
+        >
+          <Shield size={13} className="text-slate-400" />
+          <span>{t("nav.clubs")}</span>
+        </Link>
+
+        {/* Hangi Ligde Oynar? Rehber Aracı (ayrı rota: /hangi-ligde-oynar) */}
+        <Link
+          href="/hangi-ligde-oynar"
+          prefetch={false}
+          className="flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 border-transparent text-amber-400/90 hover:text-amber-300 hover:bg-slate-800/30"
+          title="TVF 2026-2027 Yaş Kategorisi ve File Yüksekliği Hesaplama Aracı"
+        >
+          <Sparkles size={13} className="text-amber-400" />
+          <span>{t("nav.whichLeague")}</span>
+          <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-300 font-mono tracking-normal">YENİ</span>
+        </Link>
+
+      </nav>
     </header>
   );
 };

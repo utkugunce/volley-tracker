@@ -24,6 +24,17 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
 
   useEffect(() => {
     if (!match) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [match, onClose]);
+
+  useEffect(() => {
+    if (!match) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -263,6 +274,9 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Hikaye Kartı Önizleme"
       className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto animate-in fade-in duration-200"
       onClick={onClose}
     >
@@ -273,14 +287,16 @@ export const SocialStoryModal: React.FC<SocialStoryModalProps> = ({
         {/* Modal Başlığı */}
         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
           <div className="flex items-center gap-2 text-white font-bold text-sm">
-            <Sparkles size={16} className="text-primary" />
+            <Sparkles size={16} className="text-primary" aria-hidden="true" />
             <span>Instagram & WhatsApp Hikaye Kartı</span>
           </div>
           <button
+            type="button"
             onClick={onClose}
+            aria-label="Kapat"
             className="p-1.5 rounded-xl bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 transition-colors"
           >
-            <X size={16} />
+            <X size={16} aria-hidden="true" />
           </button>
         </div>
 

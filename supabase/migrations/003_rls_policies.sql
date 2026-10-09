@@ -11,7 +11,7 @@ returns boolean as $$
     end if;
     
     -- Check user_roles table
-    exists (
+    return exists (
       select 1 from public.user_roles 
       where user_id = auth.uid() and role = required_role
     );
@@ -73,7 +73,7 @@ drop policy if exists standings_delete_policy on public.standings;
 
 create policy "standings_select_policy" on public.standings
   for select
-  to authenticated
+  to anon, authenticated
   using (true);
 
 create policy "standings_insert_policy" on public.standings

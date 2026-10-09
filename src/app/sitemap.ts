@@ -4,6 +4,7 @@ import { isCityHidden } from "@/utils/cityHelper";
 import { getLeagueAnalytics } from "@/utils/leagueAnalyticsData";
 import { slugify } from "@/utils/slugify";
 import { parseScanTimestamp, readDataJson } from "@/utils/dataTimestamps";
+import { getDistrictSummaries } from "@/utils/districtClubs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://altyapivoleybol.com.tr";
@@ -69,6 +70,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: dataUpdatedAt,
       changeFrequency: "daily",
       priority: 0.8,
+    },
+    // Voleybol Yaş & Kategori Hesaplayıcı & Kulüpler Dizini
+    {
+      url: `${baseUrl}/hangi-ligde-oynar`,
+      lastModified: dataUpdatedAt,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/kulupler`,
+      lastModified: dataUpdatedAt,
+      changeFrequency: "daily",
+      priority: 0.95,
     },
     // Kadınlar 2. Ligi Rotaları
     {
@@ -190,5 +204,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...staticRoutes, ...statsRoutes, ...teamRoutes, ...cityRoutes];
+  // İlçe bazlı kulüp rehberi rotaları (İstanbul, Ankara, İzmir, Bursa)
+  const clubCities = ["istanbul", "ankara", "izmir", "bursa"];
+  const clubCityRoutes: MetadataRoute.Sitemap = clubCities.flatMap((cSlug) => {
+    const districts = getDistrictSummaries(cSlug).filter((d) => d.clubCount > 0);
+    return [
+      {
+        url: `${baseUrl}/kulupler/${cSlug}`,
+        lastModified: dataUpdatedAt,
+        changeFrequency: "weekly" as const,
+        priority: 0.9,
+      },
+      ...districts.map((d) => ({
+        url: `${baseUrl}/kulupler/${cSlug}/${d.slug}`,
+        lastModified: dataUpdatedAt,
+        changeFrequency: "weekly" as const,
+        priority: 0.85,
+      })),
+    ];
+  });
+
+  return [...staticRoutes, ...statsRoutes, ...teamRoutes, ...cityRoutes, ...clubCityRoutes];
 }

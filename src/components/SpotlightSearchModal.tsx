@@ -187,6 +187,9 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Hızlı Arama"
       className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-start justify-center pt-16 sm:pt-24 p-3 animate-in fade-in duration-200"
       onClick={onClose}
     >
@@ -196,11 +199,12 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
       >
         {/* Arama Input Alanı */}
         <div className="relative flex items-center px-4 py-3.5 border-b border-slate-800 bg-slate-950/60">
-          <Search size={18} className="text-slate-400 shrink-0 mr-3" />
+          <Search size={18} className="text-slate-400 shrink-0 mr-3" aria-hidden="true" />
           <input
             ref={inputRef}
             type="text"
             value={query}
+            aria-label="Takım, salon veya şehir ara"
             onChange={(e) => {
               setQuery(e.target.value);
               setSelectedIndex(0);
@@ -210,13 +214,15 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
           />
           {query ? (
             <button
+              type="button"
               onClick={() => setQuery("")}
+              aria-label="Aramayı temizle"
               className="p-1 rounded-lg text-slate-400 hover:text-white"
             >
-              <X size={16} />
+              <X size={16} aria-hidden="true" />
             </button>
           ) : (
-            <kbd className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
+            <kbd className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700" aria-hidden="true">
               ESC
             </kbd>
           )}
