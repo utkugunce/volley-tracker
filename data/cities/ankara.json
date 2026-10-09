@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T17:35:29.521978+03:00",
+  "updated_at": "2026-10-09T21:28:38.623895+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -33,11 +33,11 @@
       {
         "rank": 1,
         "team": "Karayolları Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -55,12 +55,12 @@
       {
         "rank": 3,
         "team": "Anadolu Birlik Spor Kulübü",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -157,6 +157,17 @@
       },
       {
         "rank": 2,
+        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "TED Ankara Kolejliler U18",
         "played": 2,
         "won": 1,
@@ -167,25 +178,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "SET UP Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -225,6 +225,17 @@
       },
       {
         "rank": 3,
+        "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Temiz Enerji Birliği Spor Kulübü U18",
         "played": 2,
         "won": 0,
@@ -235,25 +246,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
         "team": "Eryaman Gelişim SK U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -829,11 +829,15 @@
       "match_no": "6",
       "home_team": "Karayolları Spor Kulübü U18",
       "away_team": "Anadolu Birlik Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-9",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402141",
@@ -1610,11 +1614,15 @@
       "match_no": "6",
       "home_team": "SET UP Spor Kulübü U18",
       "away_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "17-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402145",
@@ -2041,11 +2049,15 @@
       "match_no": "6",
       "home_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
       "away_team": "Eryaman Gelişim SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-19",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402147",
@@ -3738,5 +3750,5 @@
     }
   ],
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-10-09T17:40:12.161140"
+  "volleybox_sync_updated_at": "2026-10-09T21:33:50.500045"
 }

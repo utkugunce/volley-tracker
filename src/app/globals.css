@@ -33,6 +33,33 @@
   --font-space-grotesk: "Space Grotesk", "Manrope", system-ui, sans-serif;
   --font-body: var(--font-manrope), "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-display: var(--font-space-grotesk), "Space Grotesk", var(--font-manrope), system-ui, sans-serif;
+
+  /* Arc UI uyumluluk token'ları */
+  --foreground: var(--ink);
+  --text-secondary: var(--ink-2);
+  --danger: var(--live);
+  --control-height-sm: 2.25rem;
+  --control-height-md: 2.75rem;
+  --control-height-lg: 3.125rem;
+  --radius-control: 0.625rem;
+  --radius-pill: 9999px;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --leading-body: 1.4;
+  --text-xs: 0.75rem;
+  --duration-instant: 120ms;
+  --duration-fast: 160ms;
+  --duration-standard: 240ms;
+  --duration-spring: 580ms;
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: linear(0, 0.0258, 0.09, 0.1763, 0.2732, 0.3724, 0.4683, 0.5573, 0.6376, 0.7082, 0.7689, 0.8202, 0.8628, 0.8976, 0.9256, 0.9476, 0.9648, 0.9778, 0.9875, 0.9945, 0.9994, 1.0026, 1.0047, 1.0058, 1.0062, 1.0062, 1.0059, 1.0055, 1.0049, 1.0043, 1.0036, 1.0031, 1.0025, 1.002, 1.0016, 1.0013, 1);
+  --radius-panel: 1rem;
+  --border-subtle: color-mix(in oklab, var(--line) 70%, transparent);
+  --shadow-resting: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-floating: 0 20px 48px rgba(0, 0, 0, 0.45);
 }
 
 [data-section="kadinlar-2-lig"] {

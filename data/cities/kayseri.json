@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T17:35:29.521978+03:00",
+  "updated_at": "2026-10-09T21:28:38.623895+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -124,7 +124,7 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
+        "team": "Develi GSB Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -135,7 +135,7 @@
       },
       {
         "rank": 2,
-        "team": "Kayseri Cimnastik Spor Kulübü - B U16",
+        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -146,6 +146,17 @@
       },
       {
         "rank": 3,
+        "team": "Kayseri Cimnastik Spor Kulübü - B U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Kayseri Bahçelievler Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -156,25 +167,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Erciyes Aslan Spor Kulübü - B U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Develi GSB Spor Kulübü U16",
-        "played": 0,
+        "team": "Erciyes Aslan Spor Kulübü - B U16",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -238,6 +238,17 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
+        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Kayseri Cimnastik Spor Kulübü - C U16",
         "played": 1,
         "won": 1,
@@ -248,7 +259,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Evola Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -259,7 +270,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Çınar Akademi Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -270,25 +281,14 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Erciyes Aslan Spor Kulübü - A",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -791,11 +791,15 @@
       "match_no": "3",
       "home_team": "Develi GSB Spor Kulübü U16",
       "away_team": "Erciyes Aslan Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-18",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402761",
@@ -1254,11 +1258,15 @@
       "match_no": "3",
       "home_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
       "away_team": "Erciyes Aslan Spor Kulübü - A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-17",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402764",
@@ -1420,5 +1428,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-09T17:40:15.645351"
+  "volleybox_sync_updated_at": "2026-10-09T21:33:56.500913"
 }

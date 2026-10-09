@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-09T17:35:29.521978+03:00",
+  "updated_at": "2026-10-09T21:28:38.623895+03:00",
   "total_cities": 81,
-  "active_cities": 32,
-  "total_matches": 995,
+  "active_cities": 33,
+  "total_matches": 1057,
   "cities": [
     {
       "ilid": "1",
@@ -30,8 +30,8 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (8 Maç Mevcut)",
-      "matches_count": 8,
+      "status": "Aktif (12 Maç Mevcut)",
+      "matches_count": 12,
       "standings_count": 3,
       "data_file": "data/cities/afyon.json"
     },
@@ -280,10 +280,10 @@
       "name": "Giresun",
       "slug": "giresun",
       "url": "https://giresun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (58 Maç Mevcut)",
+      "matches_count": 58,
+      "standings_count": 1,
+      "data_file": "data/cities/giresun.json"
     },
     {
       "ilid": "29",
