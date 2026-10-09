@@ -90,6 +90,8 @@ WITHDRAWN_TEAMS = {
     "BARTIN VOLLEY ACADEMY",
     "BARTIN VOLEYBOL KULÜBÜ",
     "KAVAK SPOR",  # Grup 11: TVF "ligden çekildi ve mağlubiyetle düştü"
+    "KARTAL ANADOLU",  # Grup 4: TVF "ligden çekildi ve mahalli lige düştü"
+    "YALOVA ÇİFTLİKKÖY BLD. SPOR",  # Grup 9: TVF "ligden çekildi ve mahalli lige düştü"
 }
 
 def extract_standings_from_snapshot(snap_dict):

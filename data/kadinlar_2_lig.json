@@ -3,11 +3,11 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-10-09T14:32:33.756393",
+    "guncellenme_zamani": "2026-10-09T14:35:12.365367",
     "toplam_grup_sayisi": 16,
-    "toplam_takim_sayisi": 165,
+    "toplam_takim_sayisi": 163,
     "toplam_mac_sayisi": 569,
-    "volleybox_eslesme_sayisi": 165,
+    "volleybox_eslesme_sayisi": 163,
     "resmi_kaynaklar": {
       "tvf_puan_durumu": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu",
       "tvf_fikstur": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur",
@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 206,
-    "volleybox_sync_updated_at": "2026-10-09T14:33:08.777377"
+    "volleybox_sync_updated_at": "2026-10-09T14:35:46.494221"
   },
   "gruplar": [
     {
@@ -5002,7 +5002,7 @@
     {
       "grup_no": 4,
       "grup_adi": "Grup 4",
-      "takim_sayisi": 10,
+      "takim_sayisi": 9,
       "mac_sayisi": 24,
       "puan_durumu": [
         {
@@ -5237,32 +5237,6 @@
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/galatasaray-ll-t14016",
           "volleybox_name": "Galatasaray ll",
-          "grup_no": 4
-        },
-        {
-          "sira": 10,
-          "takim_id": "2765",
-          "takim_adi": "KARTAL ANADOLU",
-          "o": 0,
-          "g": 0,
-          "m": 0,
-          "p": 0,
-          "as": 0,
-          "vs": 0,
-          "sav": "0",
-          "asp": 0,
-          "vsp": 0,
-          "spav": "0",
-          "a3_0": 0,
-          "a3_1": 0,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "/logos/kartal-anadolu-t7369.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
-          "volleybox_name": "Kartal Anadolu Spor Kulübü",
           "grup_no": 4
         }
       ],
@@ -14969,7 +14943,7 @@
     {
       "grup_no": 9,
       "grup_adi": "Grup 9",
-      "takim_sayisi": 10,
+      "takim_sayisi": 9,
       "mac_sayisi": 24,
       "puan_durumu": [
         {
@@ -15204,32 +15178,6 @@
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067",
           "volleybox_name": "Şehir Koleji Eğitim Kültür SK",
-          "grup_no": 9
-        },
-        {
-          "sira": 10,
-          "takim_id": "2766",
-          "takim_adi": "YALOVA ÇİFTLİKKÖY BLD. SPOR",
-          "o": 0,
-          "g": 0,
-          "m": 0,
-          "p": 0,
-          "as": 0,
-          "vs": 0,
-          "sav": "0",
-          "asp": 0,
-          "vsp": 0,
-          "spav": "0",
-          "a3_0": 0,
-          "a3_1": 0,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "/logos/ciftlikkoy-belediyespor-t13002.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/ciftlikkoy-belediyespor-t13002",
-          "volleybox_name": "Çiftlikköy Belediyespor",
           "grup_no": 9
         }
       ],
@@ -58444,32 +58392,6 @@
       "grup_no": 4
     },
     {
-      "sira": 10,
-      "takim_id": "2765",
-      "takim_adi": "KARTAL ANADOLU",
-      "o": 0,
-      "g": 0,
-      "m": 0,
-      "p": 0,
-      "as": 0,
-      "vs": 0,
-      "sav": "0",
-      "asp": 0,
-      "vsp": 0,
-      "spav": "0",
-      "a3_0": 0,
-      "a3_1": 0,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "/logos/kartal-anadolu-t7369.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
-      "volleybox_name": "Kartal Anadolu Spor Kulübü",
-      "grup_no": 4
-    },
-    {
       "sira": 1,
       "takim_id": "2927",
       "takim_adi": "YEŞİL BAYRAMİÇ",
@@ -59793,32 +59715,6 @@
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-t32067",
       "volleybox_name": "Şehir Koleji Eğitim Kültür SK",
-      "grup_no": 9
-    },
-    {
-      "sira": 10,
-      "takim_id": "2766",
-      "takim_adi": "YALOVA ÇİFTLİKKÖY BLD. SPOR",
-      "o": 0,
-      "g": 0,
-      "m": 0,
-      "p": 0,
-      "as": 0,
-      "vs": 0,
-      "sav": "0",
-      "asp": 0,
-      "vsp": 0,
-      "spav": "0",
-      "a3_0": 0,
-      "a3_1": 0,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "/logos/ciftlikkoy-belediyespor-t13002.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/ciftlikkoy-belediyespor-t13002",
-      "volleybox_name": "Çiftlikköy Belediyespor",
       "grup_no": 9
     },
     {

@@ -14250,23 +14250,6 @@
       "local_logo": "/logos/galatasaray-ll-t14016.png"
     },
     {
-      "internal_name": "KARTAL ANADOLU",
-      "internal_category": "Kadınlar 2. Ligi",
-      "city": "Türkiye",
-      "city_slug": "turkiye",
-      "matched_as": "Kartal Anadolu Spor Kulübü",
-      "volleybox_url": "https://women.volleybox.net/tr/kartal-anadolu-t7369",
-      "age_category": "A Takım",
-      "confidence": "verified",
-      "note": "Grup 4",
-      "verified_at": "2026-09-25",
-      "aliases": [
-        "Kartal Anadolu Spor Kulübü"
-      ],
-      "logo_url": "/logos/kartal-anadolu-t7369.png",
-      "local_logo": "/logos/kartal-anadolu-t7369.png"
-    },
-    {
       "internal_name": "KARTAL BELEDİYESPOR",
       "internal_category": "Kadınlar 2. Ligi",
       "city": "İstanbul",
@@ -15224,27 +15207,6 @@
       ],
       "logo_url": "/logos/mg-spor-kulubu-t32161.png",
       "local_logo": "/logos/mg-spor-kulubu-t32161.png"
-    },
-    {
-      "internal_name": "YALOVA ÇİFTLİKKÖY BLD. SPOR",
-      "internal_category": "Kadınlar 2. Ligi",
-      "city": "Türkiye",
-      "city_slug": "turkiye",
-      "matched_as": "Çiftlikköy Belediyespor",
-      "volleybox_url": "https://women.volleybox.net/tr/ciftlikkoy-belediyespor-t13002",
-      "age_category": "A Takım",
-      "confidence": "verified",
-      "note": "Grup 9",
-      "verified_at": "2026-09-25",
-      "aliases": [
-        "YALOVA ÇİFTLİKKÖY BELEDİYE SPOR",
-        "YALOVA ÇİFTLİKKÖY BLD. SPOR KULÜBÜ",
-        "YALOVA ÇİFTLİKKÖY BELEDİYESİ SPOR",
-        "Çiftlikköy Belediyespor Kulübü",
-        "Çiftlikköy Belediyespor"
-      ],
-      "logo_url": "/logos/ciftlikkoy-belediyespor-t13002.png",
-      "local_logo": "/logos/ciftlikkoy-belediyespor-t13002.png"
     },
     {
       "internal_name": "BOLU ATATÜRK ANADOLU LİSESİ",
