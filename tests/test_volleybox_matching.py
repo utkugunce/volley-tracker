@@ -37,10 +37,41 @@ class TestVolleyboxMatchMatching(unittest.TestCase):
             "date": "2026-10-09",
         }
 
+    def test_matches_a_team_with_vb_base_team_for_city_clubs(self):
+        tvf_match = {
+            "home_team": "Düzce Voleybol SK - A U18",
+            "away_team": "Düzce 1907 Spor Kulübü U18",
+            "date": "2026-10-07",
+        }
+        volleybox_match = {
+            "match_id": "404256",
+            "host_name": "Düzce Voleybol SK U18",
+            "guest_name": "Düzce 1907 Spor Kulübü U18",
+            "date": "2026-10-07",
+        }
+
         matched = match_tvf_with_vb(tvf_match, [volleybox_match], {})
 
         self.assertIs(matched, volleybox_match)
 
+    def test_rejects_b_team_with_vb_base_team(self):
+        tvf_match = {
+            "home_team": "Düzce Voleybol SK - B U18",
+            "away_team": "Düzce 1907 Spor Kulübü U18",
+            "date": "2026-10-07",
+        }
+        volleybox_match = {
+            "match_id": "404256",
+            "host_name": "Düzce Voleybol SK U18",
+            "guest_name": "Düzce 1907 Spor Kulübü U18",
+            "date": "2026-10-07",
+        }
+
+        matched = match_tvf_with_vb(tvf_match, [volleybox_match], {})
+
+        self.assertIsNone(matched)
+
 
 if __name__ == "__main__":
     unittest.main()
+

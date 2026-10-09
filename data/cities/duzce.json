@@ -191,18 +191,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "404256",
+        "url": "https://women.volleybox.net/tr/duzce-voleybol-sk-u18-duzce-1907-spor-kulubu-u18-c404256",
+        "host_name": "Düzce Voleybol SK U18",
+        "guest_name": "Düzce 1907 Spor Kulübü U18",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "19:30",
+        "vb_hall": "Bahçeşehir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "19:30",
+          "vb_hall": "Bahçeşehir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -312,18 +319,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404260",
+        "url": "https://women.volleybox.net/tr/duzce-atletik-spor-kulubu-u18-duzce-voleybol-sk-u18-c404260",
+        "host_name": "Düzce Atletik Spor Kulübü U18",
+        "guest_name": "Düzce Voleybol SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-12",
+        "vb_time": "19:30",
+        "vb_hall": "Bahçeşehir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-12",
+          "vb_time": "19:30",
+          "vb_hall": "Bahçeşehir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -346,18 +360,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "404261",
+        "url": "https://women.volleybox.net/tr/duzce-voleybol-sk-u18-duzce-ultraslan-spor-kulubu-u18-c404261",
+        "host_name": "Düzce Voleybol SK U18",
+        "guest_name": "Düzce UltrAslan Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "19:30",
+        "vb_hall": "Bahçeşehir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "19:30",
+          "vb_hall": "Bahçeşehir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -403,6 +424,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:41.721546"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-10-09T16:19:51.624172"
 }

@@ -147,6 +147,18 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
     return base, letter
 
 
+def clean_for_stopword_compare(name: str) -> str:
+    if not name:
+        return ""
+    s = name.strip().lower()
+    for tr, en in [("ı", "i"), ("ğ", "g"), ("ü", "u"), ("ş", "s"), ("ö", "o"), ("ç", "c"), ("İ", "i")]:
+        s = s.replace(tr, en)
+    s = s.replace(".", "")
+    s = re.sub(r"\s+u\d+", "", s)
+    s = re.sub(r"(?:[\s\-_]+|\()a(?:\s*[\)]|\s+|$)", " ", s)
+    return re.sub(r"[^a-z0-9]", "", s)
+
+
 def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
     # 0. Doğrudan veya Synonym / Alias Eşleşmesi (En Yüksek Öncelik):
     for syn in synonyms:
@@ -155,7 +167,10 @@ def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
         if s_norm and v_norm and s_norm == v_norm:
             # Sadece şehir stopword'ü ise tam isim eşitliğini kontrol et
             if s_norm in CITY_STOPWORDS or v_norm in CITY_STOPWORDS:
-                if syn.lower().replace(" ", "") == vb_name.lower().replace(" ", ""):
+                if (
+                    syn.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
+                    or clean_for_stopword_compare(syn) == clean_for_stopword_compare(vb_name)
+                ):
                     return 100
             else:
                 return 100
@@ -164,11 +179,15 @@ def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
         vb_base, vb_letter = extract_team_meta(vb_name)
         if s_base and vb_base:
             if (s_base == vb_base or s_base.replace(" ", "") == vb_base.replace(" ", "")):
-                if s_base not in CITY_STOPWORDS and vb_base not in CITY_STOPWORDS:
-                    if s_letter == vb_letter:
+                letter_compat = (s_letter == vb_letter) or (s_letter in (None, "a") and vb_letter in (None, "a"))
+                if letter_compat:
+                    if s_base not in CITY_STOPWORDS and vb_base not in CITY_STOPWORDS:
                         return 100
-                elif syn.lower().replace(" ", "") == vb_name.lower().replace(" ", ""):
-                    return 100
+                    elif (
+                        syn.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
+                        or clean_for_stopword_compare(syn) == clean_for_stopword_compare(vb_name)
+                    ):
+                        return 100
 
     tvf_base, tvf_letter = extract_team_meta(tvf_name)
     vb_base, vb_letter = extract_team_meta(vb_name)
@@ -190,7 +209,10 @@ def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
 
     if tvf_compact == vb_compact:
         if tvf_compact in CITY_STOPWORDS or vb_compact in CITY_STOPWORDS:
-            if tvf_name.lower().replace(" ", "") == vb_name.lower().replace(" ", ""):
+            if (
+                tvf_name.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
+                or clean_for_stopword_compare(tvf_name) == clean_for_stopword_compare(vb_name)
+            ):
                 return 100
             return 0
         return 100
