@@ -34,7 +34,7 @@ KNOWN_2_LIG_ALIASES = {
 }
 
 # 2. Ligden çekilen / ihraç edilen ve eşleştirmesi silinen takımlar
-WITHDRAWN_TEAMS = {"bartın volley academy", "bartın voleybol kulübü", "bartın voleybol"}
+WITHDRAWN_TEAMS = {"bartın volley academy", "bartın voleybol kulübü", "bartın voleybol", "kavak spor", "kavak spor kulübü"}
 
 def _ordered_union(existing, extra):
     """Sıralamayı koruyarak birleştirir (set() kullanmaz).

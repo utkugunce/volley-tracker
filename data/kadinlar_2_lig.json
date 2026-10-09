@@ -3,11 +3,11 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-10-09T14:24:39.952521",
+    "guncellenme_zamani": "2026-10-09T14:32:33.756393",
     "toplam_grup_sayisi": 16,
-    "toplam_takim_sayisi": 166,
+    "toplam_takim_sayisi": 165,
     "toplam_mac_sayisi": 569,
-    "volleybox_eslesme_sayisi": 166,
+    "volleybox_eslesme_sayisi": 165,
     "resmi_kaynaklar": {
       "tvf_puan_durumu": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=puan-durumu",
       "tvf_fikstur": "https://tvf.org.tr/lig/kadinlar-2-ligi?sekme=fikstur",
@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 206,
-    "volleybox_sync_updated_at": "2026-10-09T14:25:26.096799"
+    "volleybox_sync_updated_at": "2026-10-09T14:33:08.777377"
   },
   "gruplar": [
     {
@@ -18987,7 +18987,7 @@
     {
       "grup_no": 11,
       "grup_adi": "Grup 11",
-      "takim_sayisi": 11,
+      "takim_sayisi": 10,
       "mac_sayisi": 41,
       "puan_durumu": [
         {
@@ -19248,32 +19248,6 @@
           "sezon": "2026-2027",
           "volleybox_url": "https://women.volleybox.net/tr/eryaman-gelisim-sk-t13588",
           "volleybox_name": "Eryaman Gençlik SK",
-          "grup_no": 11
-        },
-        {
-          "sira": 11,
-          "takim_id": "2869",
-          "takim_adi": "KAVAK SPOR",
-          "o": 0,
-          "g": 0,
-          "m": 0,
-          "p": 0,
-          "as": 0,
-          "vs": 0,
-          "sav": "0",
-          "asp": 0,
-          "vsp": 0,
-          "spav": "0",
-          "a3_0": 0,
-          "a3_1": 0,
-          "a3_2": 0,
-          "v2_3": 0,
-          "v1_3": 0,
-          "v0_3": 0,
-          "logo": "/logos/kavak-spor-kulubu-t20536.png",
-          "sezon": "2026-2027",
-          "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
-          "volleybox_name": "Kavak Spor Kulübü",
           "grup_no": 11
         }
       ],
@@ -60391,32 +60365,6 @@
       "sezon": "2026-2027",
       "volleybox_url": "https://women.volleybox.net/tr/eryaman-gelisim-sk-t13588",
       "volleybox_name": "Eryaman Gençlik SK",
-      "grup_no": 11
-    },
-    {
-      "sira": 11,
-      "takim_id": "2869",
-      "takim_adi": "KAVAK SPOR",
-      "o": 0,
-      "g": 0,
-      "m": 0,
-      "p": 0,
-      "as": 0,
-      "vs": 0,
-      "sav": "0",
-      "asp": 0,
-      "vsp": 0,
-      "spav": "0",
-      "a3_0": 0,
-      "a3_1": 0,
-      "a3_2": 0,
-      "v2_3": 0,
-      "v1_3": 0,
-      "v0_3": 0,
-      "logo": "/logos/kavak-spor-kulubu-t20536.png",
-      "sezon": "2026-2027",
-      "volleybox_url": "https://women.volleybox.net/tr/kavak-spor-kulubu-t20536",
-      "volleybox_name": "Kavak Spor Kulübü",
       "grup_no": 11
     },
     {
