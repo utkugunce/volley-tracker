@@ -3,7 +3,7 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-10-08T15:32:21.177402",
+    "guncellenme_zamani": "2026-10-09T10:13:37.073904",
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 166,
     "toplam_mac_sayisi": 569,
@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 204,
-    "volleybox_sync_updated_at": "2026-10-08T15:32:21.177655"
+    "volleybox_sync_updated_at": "2026-10-09T10:14:23.758133"
   },
   "gruplar": [
     {
@@ -2344,14 +2344,14 @@
             "vb_time": "16:00",
             "vb_hall": "Halkalı Ata Sporları Merkezi",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
-              "time_diff": false,
-              "hall_diff": false,
+              "time_diff": true,
+              "hall_diff": true,
               "vb_date": "2026-10-10",
               "vb_time": "16:00",
               "vb_hall": "Halkalı Ata Sporları Merkezi",
-              "details": null
+              "details": "Saat Değişti (TVF: 18:00 / VB: 16:00) | Salon Değişti (TVF: YUNUS EMRE GENÇLİK VE SPOR KOMPLEKSİ / VB: Halkalı Ata Sporları Merkezi)"
             }
           }
         },
@@ -2398,11 +2398,11 @@
               "has_diff": true,
               "date_diff": false,
               "time_diff": true,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-10-11",
               "vb_time": "13:00",
               "vb_hall": "Beylikdüzü Spor Kompleksi",
-              "details": "Saat Değişti (TVF: 18:00 / VB: 13:00)"
+              "details": "Saat Değişti (TVF: 16:30 / VB: 13:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
             }
           }
         },
@@ -3844,9 +3844,9 @@
             "match_id": "397837",
             "url": "https://women.volleybox.net/tr/altnyurt-spor-kulubu-kuzey-yldzlar-spor-kulubu-c397837",
             "host_name": "Altınyurt Spor Kulübü",
-            "guest_name": "Kuzey Yıldızları Spor Kulübü",
-            "score": null,
-            "has_score": false,
+            "guest_name": "Kuzey Yıldızları Speed Spor",
+            "score": "0 - 3",
+            "has_score": true,
             "vb_date": "2026-10-05",
             "vb_time": "19:00",
             "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
@@ -4098,7 +4098,7 @@
             "synced": true,
             "match_id": "404355",
             "url": "https://women.volleybox.net/tr/kuzey-yldzlar-spor-kulubu-fenerbahce-iii-c404355",
-            "host_name": "Kuzey Yıldızları Spor Kulübü",
+            "host_name": "Kuzey Yıldızları Speed Spor",
             "guest_name": "Fenerbahçe Medicana III",
             "score": null,
             "has_score": false,
@@ -26623,7 +26623,7 @@
             "synced": true,
             "match_id": "397710",
             "url": "https://women.volleybox.net/tr/ekol-spor-kulubu-malatya-voleybol-kulubu-c397710",
-            "host_name": "Ekol Spor Kulübü",
+            "host_name": "MSE Filo Elazığ Ekol Spor Kulübü",
             "guest_name": "Malatya Voleybol Kulübü",
             "score": "3 - 0",
             "has_score": true,
@@ -26828,7 +26828,7 @@
             "match_id": "397722",
             "url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-ekol-spor-kulubu-c397722",
             "host_name": "Zeugma Spor Kulübü",
-            "guest_name": "Ekol Spor Kulübü",
+            "guest_name": "MSE Filo Elazığ Ekol Spor Kulübü",
             "score": "3 - 2",
             "has_score": true,
             "vb_date": "2026-09-29",
@@ -27235,7 +27235,7 @@
             "synced": true,
             "match_id": "397797",
             "url": "https://women.volleybox.net/tr/ekol-spor-kulubu-kayseri-atletik-spor-kulubu-c397797",
-            "host_name": "Ekol Spor Kulübü",
+            "host_name": "MSE Filo Elazığ Ekol Spor Kulübü",
             "guest_name": "Forliva Kayseri Atletik Spor",
             "score": "3 - 1",
             "has_score": true,
@@ -27447,14 +27447,14 @@
             "vb_time": "15:00",
             "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
-              "time_diff": false,
+              "time_diff": true,
               "hall_diff": false,
               "vb_date": "2026-10-10",
               "vb_time": "15:00",
               "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
-              "details": null
+              "details": "Saat Değişti (TVF: 17:00 / VB: 15:00)"
             }
           }
         },
@@ -27495,17 +27495,17 @@
             "score": null,
             "has_score": false,
             "vb_date": "2026-10-10",
-            "vb_time": "03:00",
+            "vb_time": "14:00",
             "vb_hall": "Gevher Nesibe Spor Salonu",
             "discrepancy": {
-              "has_diff": true,
+              "has_diff": false,
               "date_diff": false,
-              "time_diff": true,
+              "time_diff": false,
               "hall_diff": false,
               "vb_date": "2026-10-10",
-              "vb_time": "03:00",
+              "vb_time": "14:00",
               "vb_hall": "Gevher Nesibe Spor Salonu",
-              "details": "Saat Değişti (TVF: 14:00 / VB: 03:00)"
+              "details": null
             }
           }
         },
@@ -27593,7 +27593,7 @@
             "match_id": "404412",
             "url": "https://women.volleybox.net/tr/elazg-belediyesi-sk-ekol-spor-kulubu-c404412",
             "host_name": "Elazığ Belediyesi SK",
-            "guest_name": "Ekol Spor Kulübü",
+            "guest_name": "MSE Filo Elazığ Ekol Spor Kulübü",
             "score": null,
             "has_score": false,
             "vb_date": "2026-10-11",
@@ -31758,7 +31758,7 @@
         "synced": true,
         "match_id": "397710",
         "url": "https://women.volleybox.net/tr/ekol-spor-kulubu-malatya-voleybol-kulubu-c397710",
-        "host_name": "Ekol Spor Kulübü",
+        "host_name": "MSE Filo Elazığ Ekol Spor Kulübü",
         "guest_name": "Malatya Voleybol Kulübü",
         "score": "3 - 0",
         "has_score": true,
@@ -32269,7 +32269,7 @@
         "match_id": "397722",
         "url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-ekol-spor-kulubu-c397722",
         "host_name": "Zeugma Spor Kulübü",
-        "guest_name": "Ekol Spor Kulübü",
+        "guest_name": "MSE Filo Elazığ Ekol Spor Kulübü",
         "score": "3 - 2",
         "has_score": true,
         "vb_date": "2026-09-29",
@@ -35226,7 +35226,7 @@
         "synced": true,
         "match_id": "397797",
         "url": "https://women.volleybox.net/tr/ekol-spor-kulubu-kayseri-atletik-spor-kulubu-c397797",
-        "host_name": "Ekol Spor Kulübü",
+        "host_name": "MSE Filo Elazığ Ekol Spor Kulübü",
         "guest_name": "Forliva Kayseri Atletik Spor",
         "score": "3 - 1",
         "has_score": true,
@@ -37464,9 +37464,9 @@
         "match_id": "397837",
         "url": "https://women.volleybox.net/tr/altnyurt-spor-kulubu-kuzey-yldzlar-spor-kulubu-c397837",
         "host_name": "Altınyurt Spor Kulübü",
-        "guest_name": "Kuzey Yıldızları Spor Kulübü",
-        "score": null,
-        "has_score": false,
+        "guest_name": "Kuzey Yıldızları Speed Spor",
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "19:00",
         "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
@@ -37927,17 +37927,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-10",
-        "vb_time": "03:00",
+        "vb_time": "14:00",
         "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-10",
-          "vb_time": "03:00",
+          "vb_time": "14:00",
           "vb_hall": "Gevher Nesibe Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:00 / VB: 03:00)"
+          "details": null
         }
       }
     },
@@ -38382,14 +38382,14 @@
         "vb_time": "15:00",
         "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-10",
           "vb_time": "15:00",
           "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 17:00 / VB: 15:00)"
         }
       }
     },
@@ -38535,14 +38535,14 @@
         "vb_time": "16:00",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-10-10",
           "vb_time": "16:00",
           "vb_hall": "Halkalı Ata Sporları Merkezi",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:00 / VB: 16:00) | Salon Değişti (TVF: YUNUS EMRE GENÇLİK VE SPOR KOMPLEKSİ / VB: Halkalı Ata Sporları Merkezi)"
         }
       }
     },
@@ -39388,7 +39388,7 @@
         "match_id": "404412",
         "url": "https://women.volleybox.net/tr/elazg-belediyesi-sk-ekol-spor-kulubu-c404412",
         "host_name": "Elazığ Belediyesi SK",
-        "guest_name": "Ekol Spor Kulübü",
+        "guest_name": "MSE Filo Elazığ Ekol Spor Kulübü",
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-11",
@@ -41023,11 +41023,11 @@
           "has_diff": true,
           "date_diff": false,
           "time_diff": true,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-11",
           "vb_time": "13:00",
           "vb_hall": "Beylikdüzü Spor Kompleksi",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 13:00)"
+          "details": "Saat Değişti (TVF: 16:30 / VB: 13:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
         }
       }
     },
@@ -41267,7 +41267,7 @@
         "synced": true,
         "match_id": "404355",
         "url": "https://women.volleybox.net/tr/kuzey-yldzlar-spor-kulubu-fenerbahce-iii-c404355",
-        "host_name": "Kuzey Yıldızları Spor Kulübü",
+        "host_name": "Kuzey Yıldızları Speed Spor",
         "guest_name": "Fenerbahçe Medicana III",
         "score": null,
         "has_score": false,
