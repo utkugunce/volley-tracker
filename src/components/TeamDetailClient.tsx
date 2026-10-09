@@ -33,6 +33,10 @@ import { useFavorites } from "@/utils/useFavorites";
 import { FormBadge } from "@/components/FormBadge";
 import dynamic from "next/dynamic";
 import { SkeletonCard } from "@/components/skeletons/Skeleton";
+import { Button } from "@/components/arc/button/button";
+import { Badge } from "@/components/arc/badge/badge";
+import SegmentedControl from "@/components/arc/segmented-control/segmented-control";
+import { EmptyState } from "@/components/arc/empty-state/empty-state";
 
 // Kadro bölümü sayfanın alt kısmında; ayrı parçaya bölünerek ilk JS yükü azaltılır (SSR çıktısı aynı kalır).
 const TeamRosterView = dynamic(() => import("@/components/TeamRosterView").then((mod) => mod.TeamRosterView), {
@@ -222,31 +226,35 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
               </a>
             )}
 
-            <button
+            <Button
+              variant={isFav ? "primary" : "secondary"}
+              size="sm"
               onClick={() => toggleFavorite(team.teamName)}
-              className={`inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
+              className={`cursor-pointer ${
                 isFav
                   ? "bg-amber-500/20 border-amber-500/60 text-amber-300 shadow-glow-amber"
-                  : "bg-slate-800/80 border-slate-700 text-slate-300 hover:text-white hover:border-slate-600"
+                  : "text-slate-300 hover:text-white"
               }`}
               title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
             >
-              <Star size={13} className={isFav ? "fill-amber-400 text-amber-400" : "text-slate-400"} />
+              <Star size={13} className={isFav ? "fill-amber-400 text-amber-400 mr-1" : "text-slate-400 mr-1"} />
               <span className="hidden sm:inline">{isFav ? "Favorilerde" : "Favorilere Ekle"}</span>
               <span className="sm:hidden">{isFav ? "Takipte" : "Takip"}</span>
-            </button>
+            </Button>
 
             {team.matches.length > 0 && (
-              <button
+              <Button
+                variant="primary"
+                size="sm"
                 onClick={handleDownloadSeasonIcs}
-                disabled={downloadingSeason}
-                className="inline-flex items-center gap-1.5 text-xs font-bold bg-primary hover:bg-primary-hover text-primary-fg px-3 py-1.5 rounded-lg shadow-glow-primary transition-all cursor-pointer"
+                loading={downloadingSeason}
+                className="font-bold cursor-pointer"
                 title="Tüm sezon maçlarını iCalendar (.ics) formatında indir"
               >
-                <Download size={13} />
+                <Download size={13} className="mr-1" />
                 <span className="hidden sm:inline">{downloadingSeason ? "İndiriliyor..." : "Sezonu Takvime Ekle"}</span>
                 <span className="sm:hidden">Takvim</span>
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -269,31 +277,25 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
             <div className="flex-1 min-w-0">
               <div className="flex flex-wrap items-center gap-2 mb-1.5">
                 {team.cities.map((city) => (
-                  <span
-                    key={city}
-                    className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700"
-                  >
-                    <MapPin size={11} className="text-ink-2" />
+                  <Badge key={city} tone="neutral" size="sm" icon={<MapPin size={11} className="text-ink-2" />}>
                     {city}
-                  </span>
+                  </Badge>
                 ))}
                 {team.categories.map((cat) => {
                   const is2Lig = cat.includes("Kadınlar 2. Ligi");
                   return (
-                    <span
+                    <Badge
                       key={cat}
-                      className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full border transition-all ${
-                        is2Lig
-                          ? "bg-orchid/15 text-orchid border-orchid/40 shadow-[0_0_12px_rgba(217,139,255,0.25)]"
-                          : "bg-surface-raised text-ink-2 border-line"
-                      }`}
+                      tone={is2Lig ? "warning" : "info"}
+                      size="sm"
+                      icon={<Activity size={11} className={is2Lig ? "text-orchid" : ""} />}
                     >
-                      <Activity size={11} className={is2Lig ? "text-orchid" : ""} />
                       {cat}
-                    </span>
+                    </Badge>
                   );
                 })}
               </div>
+
 
               <div className="flex items-center gap-2.5 flex-wrap">
                 <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight break-words">
@@ -563,9 +565,9 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                                   className={isThisTeam ? "font-bold text-white" : "text-slate-300 font-medium"}
                                 />
                                 {isThisTeam && (
-                                  <span className="text-[9px] bg-primary text-primary-fg px-1.5 py-0.2 rounded font-semibold shrink-0">
+                                  <Badge tone="info" size="sm">
                                     Bu Takım
-                                  </span>
+                                  </Badge>
                                 )}
                               </div>
                             </td>
@@ -624,37 +626,23 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
             </div>
 
             {/* Filtre Butonları */}
-            <div className="flex items-center gap-1 bg-slate-800/80 p-1 rounded-xl border border-slate-700 text-xs">
-              <button
-                onClick={() => setMatchFilter("all")}
-                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  matchFilter === "all" ? "bg-selected-strong text-white font-bold shadow-glow-selected" : "text-slate-400 hover:text-white"
-                }`}
-              >
-                Tümü ({team.matches.length})
-              </button>
-              <button
-                onClick={() => setMatchFilter("finished")}
-                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  matchFilter === "finished" ? "bg-selected-strong text-white font-bold shadow-glow-selected" : "text-slate-400 hover:text-white"
-                }`}
-              >
-                Bitenler ({team.stats.played})
-              </button>
-              <button
-                onClick={() => setMatchFilter("upcoming")}
-                className={`px-3 py-1 rounded-lg font-semibold transition-colors ${
-                  matchFilter === "upcoming" ? "bg-selected-strong text-white font-bold shadow-glow-selected" : "text-slate-400 hover:text-white"
-                }`}
-              >
-                Gelecek ({team.stats.upcoming})
-              </button>
-            </div>
+            <SegmentedControl
+              options={[
+                { value: "all", label: `Tümü (${team.matches.length})` },
+                { value: "finished", label: `Bitenler (${team.stats.played})` },
+                { value: "upcoming", label: `Gelecek (${team.stats.upcoming})` },
+              ]}
+              value={matchFilter}
+              onValueChange={(val) => setMatchFilter(val as "all" | "finished" | "upcoming")}
+            />
           </div>
 
           {filteredMatches.length === 0 ? (
-            <div className="bg-slate-800/40 border border-slate-700/60 rounded-xl p-8 text-center text-slate-400 text-sm">
-              Bu filtreye uygun maç bulunmuyor.
+            <div className="bg-slate-800/40 border border-slate-700/60 rounded-xl p-6 text-center">
+              <EmptyState
+                title="Maç Bulunmuyor"
+                description="Bu filtreye uygun maç bulunmuyor."
+              />
             </div>
           ) : (
             <div className="space-y-2.5">
@@ -771,14 +759,16 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
 
                       {/* Takvime Ekle Butonu */}
                       {m.date !== "TBD" && (
-                        <button
+                        <Button
+                          variant="secondary"
+                          size="sm"
                           onClick={() => handleDownloadSingleMatchIcs(m)}
-                          className="inline-flex items-center gap-1 text-[11px] font-semibold bg-slate-700/60 hover:bg-slate-700 text-slate-200 hover:text-white px-2 py-1 rounded-lg border border-slate-600/70 transition-colors cursor-pointer"
+                          className="cursor-pointer"
                           title="Bu maçı takvime ekle (.ics)"
                         >
-                          <CalendarPlus size={12} className="text-amber-400" />
+                          <CalendarPlus size={12} className="text-amber-400 mr-1" />
                           <span className="hidden sm:inline">Takvim</span>
-                        </button>
+                        </Button>
                       )}
                     </div>
                   </div>

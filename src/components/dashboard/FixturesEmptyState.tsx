@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Star, SearchX } from "lucide-react";
+import { Button } from "@/components/arc/button/button";
 
 interface FixturesEmptyStateProps {
   city: string | undefined;
@@ -38,12 +39,14 @@ export const FixturesEmptyState: React.FC<FixturesEmptyStateProps> = ({
         <p className="text-xs text-slate-400 mb-4 max-w-sm mx-auto">
           TVF {city} İl Temsilciliği 2026-2027 sezonu için Genç ve Yıldız Kızlar Süper Lig bültenini sisteme girdiğinde maçlar otomatik olarak burada listelenecektir.
         </p>
-        <button
+        <Button
+          variant="primary"
+          size="md"
           onClick={() => handleSelectCity("istanbul")}
-          className="px-4 py-2 rounded-lg bg-primary text-primary-fg text-xs font-bold hover:bg-primary-hover transition-colors shadow-md"
+          className="font-bold cursor-pointer"
         >
           İstanbul Fikstürünü Görüntüle (24 Maç)
-        </button>
+        </Button>
       </>
     ) : (
       <>
@@ -56,14 +59,17 @@ export const FixturesEmptyState: React.FC<FixturesEmptyStateProps> = ({
             : "Seçtiğiniz tarih, lig veya filtreye ait bültende maç kaydı bulunmamaktadır."}
         </p>
         {isFiltered && (
-          <button
+          <Button
+            variant="primary"
+            size="sm"
             onClick={resetFilters}
-            className="px-3.5 py-1.5 rounded-lg bg-primary text-primary-fg text-xs font-bold hover:bg-primary-hover transition-colors shadow-md"
+            className="font-bold cursor-pointer"
           >
             Filtreleri Sıfırla
-          </button>
+          </Button>
         )}
       </>
     )}
   </div>
 );
+

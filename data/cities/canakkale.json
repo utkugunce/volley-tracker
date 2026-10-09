@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T21:49:01.206971+03:00",
+  "updated_at": "2026-10-09T22:11:58.010979+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -302,12 +302,12 @@
       {
         "rank": 1,
         "team": "Nehir Spor Kulübü U16",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 2,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -324,12 +324,12 @@
       {
         "rank": 3,
         "team": "Biga Çiçeklidedespor U16",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 4,
-        "sets_won": 5,
-        "sets_lost": 4,
+        "sets_won": 6,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -1359,11 +1359,16 @@
       "match_no": "6",
       "home_team": "Biga Çiçeklidedespor U16",
       "away_team": "Nehir Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "20-25",
+        "12-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402992",
@@ -1644,5 +1649,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-09T21:54:18.584911"
+  "volleybox_sync_updated_at": "2026-10-09T22:16:45.345251"
 }

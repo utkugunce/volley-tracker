@@ -4,6 +4,7 @@ import React from "react";
 import { History, CheckCircle2 } from "lucide-react";
 import { formatDateTurkish } from "@/utils/calendar";
 import type { AppMainTab } from "@/utils/dashboardRoutes";
+import { Button } from "@/components/arc/button/button";
 
 interface ResultsEmptyStateProps {
   city: string | undefined;
@@ -53,22 +54,26 @@ export const ResultsEmptyState: React.FC<ResultsEmptyStateProps> = ({
           Dün bu ilde oynanmış maç kaydı bulunmuyor. Önceki tüm maç sonuçlarını görüntülemek için Tüm Sonuçlar sekmesine geçebilirsiniz.
         </p>
         <div className="flex items-center justify-center gap-2">
-          <button
+          <Button
             type="button"
+            variant="primary"
+            size="sm"
             onClick={() => setResultsSubTab("all")}
-            className="px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition-colors shadow-md inline-flex items-center gap-1.5"
+            className="font-semibold cursor-pointer"
           >
-            <CheckCircle2 size={14} />
+            <CheckCircle2 size={14} className="mr-1" />
             <span>Tüm Sonuçları Görüntüle ({resultsCount})</span>
-          </button>
+          </Button>
           {city !== "Tüm İller" && (
-            <button
+            <Button
               type="button"
+              variant="secondary"
+              size="sm"
               onClick={() => handleSelectCity("all")}
-              className="px-4 py-2 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold hover:bg-slate-700 transition-colors shadow-md"
+              className="cursor-pointer"
             >
               Tüm İllerin Dünkü Sonuçları
-            </button>
+            </Button>
           )}
         </div>
       </>
@@ -85,19 +90,23 @@ export const ResultsEmptyState: React.FC<ResultsEmptyStateProps> = ({
             : "Fikstür maçları oynandıkça skor ve set sonuçları otomatik olarak burada listelenir."}
         </p>
         <div className="flex items-center justify-center gap-2">
-          <button
+          <Button
+            variant="primary"
+            size="md"
             onClick={() => setActiveMainTab("fixtures")}
-            className="px-4 py-2 rounded-lg bg-primary text-primary-fg text-xs font-bold hover:bg-primary-hover transition-colors shadow-md"
+            className="font-bold cursor-pointer"
           >
             Fikstürü Görüntüle
-          </button>
+          </Button>
           {city !== "Tüm İller" && (
-            <button
+            <Button
+              variant="secondary"
+              size="md"
               onClick={() => handleSelectCity("all")}
-              className="px-4 py-2 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-xs font-semibold hover:bg-slate-700 transition-colors shadow-md"
+              className="cursor-pointer"
             >
               Tüm İllerin Sonuçlarını Gör ({totalResultsAcrossAll})
-            </button>
+            </Button>
           )}
         </div>
       </>
@@ -118,14 +127,17 @@ export const ResultsEmptyState: React.FC<ResultsEmptyStateProps> = ({
             : "Seçtiğiniz lig veya arama filtresine uygun sonuçlanan maç kaydı bulunmamaktadır."}
         </p>
         {isFiltered && (
-          <button
+          <Button
+            variant="primary"
+            size="sm"
             onClick={resetFilters}
-            className="px-3.5 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition-colors shadow-md cursor-pointer"
+            className="font-semibold cursor-pointer"
           >
             Filtreleri Sıfırla
-          </button>
+          </Button>
         )}
       </>
     )}
   </div>
 );
+
