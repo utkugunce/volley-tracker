@@ -1,26 +1,78 @@
 import { Match } from "@/types/fixture";
 
 /**
- * Normalizes raw group strings (e.g. "Genç Kız - A Gr", "Yıldız Kızlar B Grubu")
- * to clean, readable group titles (e.g. "A Grubu", "B Grubu", "Doğu Grubu").
+ * Normalizes raw group strings (e.g. "Genç Kız - A Gr", "Yıldız Kızlar B Grubu", "1. Grup")
+ * to clean, readable group titles (e.g. "A Grubu", "B Grubu", "1. Grup", "Doğu Grubu").
  */
 export function formatGroupName(rawGroup?: string): string {
-  if (!rawGroup || rawGroup.trim() === "" || rawGroup === "Tek Grup") {
+  if (!rawGroup || rawGroup.trim() === "" || rawGroup.trim() === "Tek Grup") {
     return "Tek Grup";
   }
   let g = rawGroup.trim();
 
-  // Pattern: "... - A Gr" or "... - A Grubu"
-  const dashMatch = g.match(/[-–]\s*([A-Za-zÇĞİÖŞÜçğiöşü0-9]+)\s*(?:Gr\.?|Grubu)?$/i);
-  if (dashMatch && dashMatch[1]) {
-    return dashMatch[1].toLocaleUpperCase("tr-TR") + " Grubu";
+  // Strip region if present at start (e.g. "1. Bölge A Grubu" -> "A Grubu")
+  g = g.replace(/^\d+\.\s*B[öo]lge\s*/i, "").trim();
+  if (!g || g.toLowerCase() === "bölge" || g.toLowerCase() === "tek grup") {
+    return "Tek Grup";
   }
 
-  // If starts with "Genç Kızlar", "Yıldız Kızlar", etc., strip league prefix
-  g = g.replace(/^(?:Genç|Yıldız|Küçük|Midi|Mini)\s*(?:Kızlar?|Erkekler?)?\s*/i, "").trim();
-  if (/grubu?$/i.test(g)) {
-    return g.replace(/grup$/i, "Grubu");
+  // Normalization for "2.Grup" -> "2. Grup"
+  g = g.replace(/^(\d+)\.\s*Grup/i, "$1. Grup");
+  if (/^\d+\.\s*Grup$/i.test(g)) {
+    return g;
   }
+
+  // Pattern: "Grup A", "Grup B", "Grup 1"
+  const mGrupPrefix = g.match(/^Grup\s+([A-Za-zÇĞİÖŞÜçğiöşü0-9]+)$/i);
+  if (mGrupPrefix) {
+    const val = mGrupPrefix[1].toLocaleUpperCase("tr-TR");
+    return /^\d+$/.test(val) ? `${val}. Grup` : `${val} Grubu`;
+  }
+
+  // Pattern: "- A", "- A Gr", "... - A Gr", "... - A"
+  const dashMatch = g.match(/[-–]\s*([A-Za-zÇĞİÖŞÜçğiöşü0-9]+)\s*(?:Gr\.?|Grubu?|Gurubu)?$/i);
+  if (dashMatch && dashMatch[1]) {
+    const val = dashMatch[1].toLocaleUpperCase("tr-TR");
+    return /^\d+$/.test(val) ? `${val}. Grup` : `${val} Grubu`;
+  }
+
+  // Strip prefixes like "Genç Kızlar", "Yıldız Kız İl Birinciliği", "Samsun Genç Kadınlar İl Birinciliği"
+  g = g.replace(/^(?:(?:Genç|Yıldız|Küçük|Midi|Mini)\s+(?:Kız(?:lar)?|Kadın(?:lar)?|Erkek(?:ler)?)?\s*(?:Süper\s+Lig[iıİI]?|1\.\s*Lig[iıİI]?|İl\s+Birinciliği)?|[A-Za-zÇĞİÖŞÜçğiöşü\s]+İl\s+Birinciliği)\s*/i, "").trim();
+  g = g.replace(/^(?:Süper\s+Lig|1\.\s*Lig)\s*/i, "").trim();
+
+  // Single letter or letter + Gr/Grb/Grubu/Gurubu (with optional parenthetical like (Merkez))
+  const mLetter = g.match(/^([A-Za-zÇĞİÖŞÜçğiöşü])(?:\s*(?:Gr\.?|Grubu?|Gurubu|Grb\.?))?(\s*\(.*\))?$/i);
+  if (mLetter) {
+    const letter = mLetter[1].toLocaleUpperCase("tr-TR");
+    let suffix = mLetter[2] ? mLetter[2].trim() : "";
+    if (suffix) {
+      suffix = suffix.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")");
+      return `${letter} Grubu ${suffix}`;
+    }
+    return `${letter} Grubu`;
+  }
+
+  // Clean parentheses spacing: "( Merkez )" -> "(Merkez)"
+  g = g.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")");
+
+  // Fix typo "Gurubu" or abbreviation "Grb." or "Gr."
+  if (/\b(?:Grubu|Gurubu|Grb\.?)$/i.test(g)) {
+    return g.replace(/\s*(?:Grubu|Gurubu|Grb\.?)$/i, " Grubu");
+  }
+  if (/\bGrup$/i.test(g)) {
+    return g;
+  }
+
+  // Named groups like "Doğu Grubu", "Gebze Grubu", "Final Grubu"
+  if (/Grubu$/i.test(g)) {
+    return g;
+  }
+
+  // If nothing matched and looks like league title without group (e.g. "Yıldız Kız Süper Lig")
+  if (!g || /(?:lig[iıİI]?|turnuva(?:sı)?|şampiyona(?:sı)?)$/i.test(g)) {
+    return "Tek Grup";
+  }
+
   return g + " Grubu";
 }
 
@@ -80,9 +132,29 @@ export function extractRegionFromGroup(groupName?: string): string | null {
   return match ? match[1].replace(/\s+/g, " ").trim() : null;
 }
 
+function getCategoryRank(cat: string, ageGroup?: string): number {
+  const s = `${cat} ${ageGroup || ""}`.toLowerCase();
+  if (s.includes("genç") || s.includes("u18")) return 1;
+  if (s.includes("yıldız") || s.includes("u16")) return 2;
+  if (s.includes("küçük") || s.includes("u14")) return 3;
+  if (s.includes("midi") || s.includes("u13")) return 4;
+  if (s.includes("mini") || s.includes("u12")) return 5;
+  if (s.includes("erkek")) return 6;
+  return 7;
+}
+
+function getTierRank(cat: string): number {
+  const s = cat.toLowerCase();
+  if (s.includes("süper")) return 1;
+  if (s.includes("1. lig") || s.includes("1.lig")) return 2;
+  if (s.includes("2. lig") || s.includes("2.lig")) return 3;
+  return 4;
+}
+
 /**
- * Groups matches first by City, then by League (unifying all groups of the same league/region).
- * Inside each league, matches are sorted by group name, then by match datetime.
+ * Groups matches first by City, then by League & Group.
+ * Every group (A Grubu, B Grubu, 1. Grup, etc.) across all leagues and cities
+ * is separated into its own distinct LeagueSection accordion.
  */
 export function groupResultsByCityAndLeague(
   matches: Match[],
@@ -93,7 +165,9 @@ export function groupResultsByCityAndLeague(
     Map<
       string,
       {
+        categoryKey: string;
         title: string;
+        subTitle: string;
         rawCategory: string;
         ageGroup?: string;
         region?: string;
@@ -111,20 +185,38 @@ export function groupResultsByCityAndLeague(
 
     const rawCategory = m.category || m.age_group || "Genel Lig";
     const region = extractRegionFromGroup(m.group);
-    const leagueKey = region ? `${rawCategory} - ${region}` : rawCategory;
+    const cleanedRawGroup = region && m.group
+      ? m.group.replace(/(\d+\.\s*B[öo]lge\s*)/i, "").trim()
+      : (m.group || "");
+    const cleanGroup = formatGroupName(cleanedRawGroup);
+    const hasSpecificGroup = cleanGroup !== "Tek Grup" && cleanGroup !== "";
+
     const baseTitle = formatLeagueCategoryTitle(rawCategory, m.age_group);
     const leagueTitle = region ? `${baseTitle} - ${region}` : baseTitle;
+    const subTitle = hasSpecificGroup ? cleanGroup : "";
 
-    if (!leagueMap.has(leagueKey)) {
-      leagueMap.set(leagueKey, {
+    // Benzersiz anahtar: Lig kategorisi, bölge ve grup kırılımı
+    let categoryKey = rawCategory;
+    if (region && hasSpecificGroup) {
+      categoryKey = `${rawCategory}::${region}::${cleanGroup}`;
+    } else if (region) {
+      categoryKey = `${rawCategory}::${region}`;
+    } else if (hasSpecificGroup) {
+      categoryKey = `${rawCategory}::${cleanGroup}`;
+    }
+
+    if (!leagueMap.has(categoryKey)) {
+      leagueMap.set(categoryKey, {
+        categoryKey,
         title: leagueTitle,
+        subTitle,
         rawCategory,
         ageGroup: m.age_group,
         region: region || undefined,
         matches: [],
       });
     }
-    leagueMap.get(leagueKey)!.matches.push(m);
+    leagueMap.get(categoryKey)!.matches.push(m);
   }
 
   const result: CityResultGroup[] = [];
@@ -133,44 +225,21 @@ export function groupResultsByCityAndLeague(
     let totalCityMatches = 0;
     const leagues: CityResultGroup["leagues"] = [];
 
-    for (const [leagueKey, data] of leagueMap.entries()) {
+    for (const [, data] of leagueMap.entries()) {
       totalCityMatches += data.matches.length;
 
-      // Sort matches in this league: by group name first (A Grubu, B Grubu...), then by datetime desc
+      // Maçları tarihe göre azalan (en son bitenler önce), saate göre artan sırala
       const sortedMatches = [...data.matches].sort((m1, m2) => {
-        const g1 = formatGroupName(m1.group);
-        const g2 = formatGroupName(m2.group);
-        const groupComp = g1.localeCompare(g2, "tr", { numeric: true });
-        if (groupComp !== 0) return groupComp;
-
-        // Same group: sort by date (descending for results) then time (ascending)
         if (m1.date !== m2.date) {
           return m2.date.localeCompare(m1.date);
         }
         return m1.time.localeCompare(m2.time);
       });
 
-      const uniqueGroups = Array.from(
-        new Set(
-          sortedMatches
-            .map((m) => {
-              if (data.region) {
-                // Bölge önekini temizle: "1. Bölge A Grubu" -> "A Grubu"
-                const cleaned = m.group ? m.group.replace(/(\d+\.\s*B[öo]lge\s*)/i, "").trim() : "";
-                if (!cleaned || cleaned.toLowerCase() === "bölge" || cleaned.toLowerCase() === "tek grup") return "";
-                return formatGroupName(cleaned);
-              }
-              return formatGroupName(m.group);
-            })
-            .filter((g) => Boolean(g) && g !== "Tek Grup")
-        )
-      );
-      const subTitle = uniqueGroups.length > 0 ? uniqueGroups.join(" • ") : "";
-
       leagues.push({
-        categoryKey: leagueKey,
+        categoryKey: data.categoryKey,
         title: data.title,
-        subTitle,
+        subTitle: data.subTitle,
         rawCategory: data.rawCategory,
         ageGroup: data.ageGroup,
         city: cityName,
@@ -178,8 +247,25 @@ export function groupResultsByCityAndLeague(
       });
     }
 
-    // Sort leagues within city: Genç (U18) first, then Yıldız (U16), etc.
-    leagues.sort((a, b) => a.title.localeCompare(b.title, "tr", { numeric: true }));
+    // Ligleri ve grupları şehir içinde mantıksal hiyerarşiyle sırala:
+    // 1. Yaş kategorisi (Genç U18 -> Yıldız U16 -> Küçük U14 -> Midi U13 -> Mini U12 -> Erkek -> Diğer)
+    // 2. Lig seviyesi (Süper Lig -> 1. Lig -> 2. Lig)
+    // 3. Başlık / Bölge (1. Bölge -> 4. Bölge)
+    // 4. Grup adı (A Grubu -> B Grubu -> C Grubu -> 1. Grup -> 2. Grup)
+    leagues.sort((a, b) => {
+      const rankA = getCategoryRank(a.rawCategory, a.ageGroup);
+      const rankB = getCategoryRank(b.rawCategory, b.ageGroup);
+      if (rankA !== rankB) return rankA - rankB;
+
+      const tierA = getTierRank(a.rawCategory);
+      const tierB = getTierRank(b.rawCategory);
+      if (tierA !== tierB) return tierA - tierB;
+
+      const titleComp = a.title.localeCompare(b.title, "tr", { numeric: true });
+      if (titleComp !== 0) return titleComp;
+
+      return a.subTitle.localeCompare(b.subTitle, "tr", { numeric: true });
+    });
 
     result.push({
       city: cityName,
@@ -201,7 +287,7 @@ export function groupResultsByCityAndLeague(
  * temizler ve sadece lig adını ya da temiz grup adını döner.
  */
 export function getLeagueDisplayTitle(title: string, subTitle?: string): string {
-  if (!subTitle || !subTitle.trim()) return title.trim();
+  if (!subTitle || !subTitle.trim() || subTitle.trim() === "Tek Grup") return title.trim();
   const cleanTitle = title.trim();
   const cleanSub = subTitle.trim();
 
@@ -243,6 +329,10 @@ export function getLeagueDisplayTitle(title: string, subTitle?: string): string 
     formattedSub = formattedSub.replace(/\b([A-Z])\s+Gr\b/i, "$1 Grubu");
   } else if (/^Grup\s+([A-Z0-9]+)/i.test(formattedSub)) {
     formattedSub = formattedSub.replace(/^Grup\s+([A-Z0-9]+)/i, "$1 Grubu");
+  }
+
+  if (!formattedSub || formattedSub === "Tek Grup") {
+    return cleanTitle;
   }
 
   return `${cleanTitle} · ${formattedSub}`;

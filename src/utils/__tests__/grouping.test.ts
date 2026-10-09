@@ -46,6 +46,15 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(formatGroupName("Genç Kızlar A Grubu")).toBe("A Grubu");
     });
 
+    it("handles typos, abbreviations, and numeric groups", () => {
+      expect(formatGroupName("A Grb.")).toBe("A Grubu");
+      expect(formatGroupName("A Gurubu")).toBe("A Grubu");
+      expect(formatGroupName("Grup A")).toBe("A Grubu");
+      expect(formatGroupName("1. Grup")).toBe("1. Grup");
+      expect(formatGroupName("2.Grup")).toBe("2. Grup");
+      expect(formatGroupName("4. Grup")).toBe("4. Grup");
+    });
+
     it("preserves already clean group names", () => {
       expect(formatGroupName("A Grubu")).toBe("A Grubu");
       expect(formatGroupName("Final Grubu")).toBe("Final Grubu");
@@ -68,7 +77,7 @@ describe("Grouping & Group Name Formatting Utilities", () => {
   });
 
   describe("groupResultsByCityAndLeague", () => {
-    it("groups matches under their respective city and unifies same leagues with multiple groups (e.g. İzmir U18 A and D groups)", () => {
+    it("groups matches under their respective city and splits every group (A Grubu, B Grubu etc.) into its own section", () => {
       const sampleMatches: Match[] = [
         {
           id: "m-izmir-1",
@@ -162,27 +171,39 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(antalya?.totalMatches).toBe(1);
       expect(antalya?.leagues).toHaveLength(1);
       expect(antalya?.leagues[0].title).toBe("Yıldız Kızlar Süper Lig (U16)");
+      expect(antalya?.leagues[0].subTitle).toBe("B Grubu");
+      expect(getLeagueDisplayTitle(antalya!.leagues[0].title, antalya!.leagues[0].subTitle)).toBe(
+        "Yıldız Kızlar Süper Lig (U16) · B Grubu"
+      );
 
       const izmir = grouped.find((c) => c.city === "İzmir");
       expect(izmir).toBeDefined();
       expect(izmir?.totalMatches).toBe(4);
-      // Under İzmir, exactly 2 leagues: U18 (Genç Kızlar) and U16 (Yıldız Kızlar)
-      expect(izmir?.leagues).toHaveLength(2);
+      // Under İzmir, each group is its own section: 4 separate sections!
+      expect(izmir?.leagues).toHaveLength(4);
 
-      const gencLig = izmir?.leagues.find((l) => l.rawCategory === "Genç Kızlar Süper Lig");
-      expect(gencLig).toBeDefined();
-      expect(gencLig?.title).toBe("Genç Kızlar Süper Lig (U18)");
-      expect(gencLig?.subTitle).toBe("A Grubu • D Grubu");
-      expect(gencLig?.matches).toHaveLength(2);
+      const gencA = izmir?.leagues.find((l) => l.rawCategory === "Genç Kızlar Süper Lig" && l.subTitle === "A Grubu");
+      expect(gencA).toBeDefined();
+      expect(gencA?.title).toBe("Genç Kızlar Süper Lig (U18)");
+      expect(gencA?.matches).toHaveLength(1);
 
-      const yildizLig = izmir?.leagues.find((l) => l.rawCategory === "Yıldız Kızlar Süper Lig");
-      expect(yildizLig).toBeDefined();
-      expect(yildizLig?.title).toBe("Yıldız Kızlar Süper Lig (U16)");
-      expect(yildizLig?.subTitle).toBe("A Grubu • C Grubu");
-      expect(yildizLig?.matches).toHaveLength(2);
+      const gencD = izmir?.leagues.find((l) => l.rawCategory === "Genç Kızlar Süper Lig" && l.subTitle === "D Grubu");
+      expect(gencD).toBeDefined();
+      expect(gencD?.title).toBe("Genç Kızlar Süper Lig (U18)");
+      expect(gencD?.matches).toHaveLength(1);
+
+      const yildizA = izmir?.leagues.find((l) => l.rawCategory === "Yıldız Kızlar Süper Lig" && l.subTitle === "A Grubu");
+      expect(yildizA).toBeDefined();
+      expect(yildizA?.title).toBe("Yıldız Kızlar Süper Lig (U16)");
+      expect(yildizA?.matches).toHaveLength(1);
+
+      const yildizC = izmir?.leagues.find((l) => l.rawCategory === "Yıldız Kızlar Süper Lig" && l.subTitle === "C Grubu");
+      expect(yildizC).toBeDefined();
+      expect(yildizC?.title).toBe("Yıldız Kızlar Süper Lig (U16)");
+      expect(yildizC?.matches).toHaveLength(1);
     });
 
-    it("separates leagues with regional subdivisions into distinct sections (e.g. Istanbul 1. Bölge vs 4. Bölge)", () => {
+    it("separates leagues with regional subdivisions and groups into distinct sections (e.g. Istanbul 1. Bölge A/B vs 4. Bölge B)", () => {
       const istanbulMatches: Match[] = [
         {
           id: "m-ist-1",
@@ -216,26 +237,48 @@ describe("Grouping & Group Name Formatting Utilities", () => {
           score: "1 - 3",
           status: "finished",
         },
+        {
+          id: "m-ist-3",
+          city: "İstanbul",
+          date: "2026-09-27",
+          time: "16:00",
+          hall: "Çengelköy",
+          category: "Genç Kızlar 1. Ligi",
+          age_group: "Genç",
+          gender: "Kız",
+          match_no: "3",
+          group: "1. Bölge B Grubu",
+          home_team: "Beylerbeyi Voleybol Kulübü U18",
+          away_team: "Kuzey Marmara Spor U18",
+          score: "3 - 2",
+          status: "finished",
+        },
       ];
 
       const grouped = groupResultsByCityAndLeague(istanbulMatches);
       expect(grouped).toHaveLength(1);
       const istanbul = grouped[0];
       expect(istanbul.city).toBe("İstanbul");
-      // Must separate 1. Bölge and 4. Bölge into 2 distinct leagues!
-      expect(istanbul.leagues).toHaveLength(2);
+      // Must separate 1. Bölge A, 1. Bölge B and 4. Bölge B into 3 distinct sections!
+      expect(istanbul.leagues).toHaveLength(3);
 
-      const b1 = istanbul.leagues.find((l) => l.categoryKey.includes("1. Bölge"));
-      expect(b1).toBeDefined();
-      expect(b1?.title).toContain("1. Bölge");
-      expect(b1?.subTitle).toBe("A Grubu");
-      expect(b1?.matches).toHaveLength(1);
+      const b1a = istanbul.leagues.find((l) => l.categoryKey.includes("1. Bölge") && l.subTitle === "A Grubu");
+      expect(b1a).toBeDefined();
+      expect(b1a?.title).toContain("1. Bölge");
+      expect(b1a?.subTitle).toBe("A Grubu");
+      expect(b1a?.matches).toHaveLength(1);
 
-      const b4 = istanbul.leagues.find((l) => l.categoryKey.includes("4. Bölge"));
-      expect(b4).toBeDefined();
-      expect(b4?.title).toContain("4. Bölge");
-      expect(b4?.subTitle).toBe("B Grubu");
-      expect(b4?.matches).toHaveLength(1);
+      const b1b = istanbul.leagues.find((l) => l.categoryKey.includes("1. Bölge") && l.subTitle === "B Grubu");
+      expect(b1b).toBeDefined();
+      expect(b1b?.title).toContain("1. Bölge");
+      expect(b1b?.subTitle).toBe("B Grubu");
+      expect(b1b?.matches).toHaveLength(1);
+
+      const b4b = istanbul.leagues.find((l) => l.categoryKey.includes("4. Bölge") && l.subTitle === "B Grubu");
+      expect(b4b).toBeDefined();
+      expect(b4b?.title).toContain("4. Bölge");
+      expect(b4b?.subTitle).toBe("B Grubu");
+      expect(b4b?.matches).toHaveLength(1);
     });
   });
 });
