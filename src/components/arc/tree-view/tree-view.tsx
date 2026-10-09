@@ -33,9 +33,9 @@ type VisibleNode = {
 
 /** A row is 36px plus the 2px gap above it; both collapse together, so nothing snaps when a row leaves. */
 const rowHeight = 38;
-const still = { duration: 0 } as const;
-const fadeIn = { duration: motionTokens.duration.fast, ease: [...motionTokens.ease.enter] } as const;
-const fadeOut = { duration: motionTokens.duration.instant, ease: [...motionTokens.ease.standard] } as const;
+const still = { duration: 0 };
+const fadeIn = { duration: motionTokens.duration.fast, ease: motionTokens.ease.enter };
+const fadeOut = { duration: motionTokens.duration.instant, ease: motionTokens.ease.standard };
 const blur = (px: number) => `blur(${px}px)`;
 
 function flatten(nodes: TreeNode[], expanded: ReadonlySet<string>, depth = 1, parentId?: string): VisibleNode[] {

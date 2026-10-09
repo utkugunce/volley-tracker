@@ -3,10 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "./TeamVolleyboxLink";
-import { MapPin, Calendar, Clock, Star, CalendarPlus, ExternalLink, Flame, Trophy, Navigation, Copy, Check } from "lucide-react";
+import { MapPin, Calendar, Clock, Star, CalendarPlus, Trophy, Navigation, Flame } from "lucide-react";
 import { getHallNavigationUrl } from "@/utils/halls";
 import { generateMatchIcs, downloadIcsFile } from "@/utils/ics";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
+import { Badge } from "@/components/arc/badge/badge";
+import { Button } from "@/components/arc/button/button";
+import { CopyButton } from "@/components/arc/copy-button/copy-button";
 
 interface FeaturedMatchHeroProps {
   matches: Match[];
@@ -23,7 +26,6 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
   onToggleFavorite,
   onSelectMatch,
 }) => {
-  const [copied, setCopied] = useState(false);
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
 
   // En uygun öne çıkan maçı seç:
@@ -106,12 +108,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
     }
   };
 
-  const handleCopy = () => {
-    const text = `TVF ${featuredMatch.city || city} ${featuredMatch.category} (${featuredMatch.group}):\n${featuredMatch.home_team} vs ${featuredMatch.away_team}\n🗓 ${featuredMatch.date} ${featuredMatch.time}\n📍 ${featuredMatch.hall}`;
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+  const copyShareText = `TVF ${featuredMatch.city || city} ${featuredMatch.category} (${featuredMatch.group}):\n${featuredMatch.home_team} vs ${featuredMatch.away_team}\n🗓 ${featuredMatch.date} ${featuredMatch.time}\n📍 ${featuredMatch.hall}`;
 
   return (
     <div className="relative rounded-3xl border border-primary/25 bg-gradient-to-br from-slate-900/95 via-canvas/95 to-slate-950 p-5 sm:p-7 overflow-hidden shadow-2xl transition-all duration-300 mb-6 group">
@@ -134,10 +131,9 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
       {/* Üst Başlık Barı: Kategori, Grup, Durum & Sayaç */}
       <div className="relative z-10 flex flex-wrap items-center justify-between gap-2.5 pb-4 border-b border-slate-800/80">
         <div className="flex items-center gap-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-surface-raised text-ink-2 border border-line shadow-xs">
-            <Flame size={13} className="text-primary" />
-            <span>ÖNE ÇIKAN MAÇ</span>
-          </div>
+          <Badge tone="neutral" size="sm" icon={<Flame size={13} className="text-primary" />}>
+            ÖNE ÇIKAN MAÇ
+          </Badge>
           <span className="text-xs font-bold text-slate-400">
             {featuredMatch.category} • {featuredMatch.group}
           </span>
@@ -146,10 +142,9 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
         {/* Geri Sayım / Durum Rozeti */}
         <div>
           {isFinished ? (
-            <span className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
-              <Trophy size={12} />
-              <span>Maç Tamamlandı</span>
-            </span>
+            <Badge tone="success" size="sm" icon={<Trophy size={12} />}>
+              Maç Tamamlandı
+            </Badge>
           ) : timeLeft ? (
             <div className="inline-flex items-center gap-1.5 font-mono text-xs font-bold text-amber-300 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full shadow-xs">
               <Clock size={12} className="text-amber-400 animate-spin-slow" />
@@ -188,9 +183,9 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
               }`}
             />
             {homeWon && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-black text-done bg-done/10 border border-done/30 px-2 py-0.5 rounded-md">
-                <Trophy size={11} /> KAZANDI
-              </span>
+              <Badge tone="success" size="sm" icon={<Trophy size={11} />}>
+                KAZANDI
+              </Badge>
             )}
           </div>
         </div>
@@ -262,9 +257,9 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
               }`}
             />
             {awayWon && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-black text-done bg-done/10 border border-done/30 px-2 py-0.5 rounded-md">
-                <Trophy size={11} /> KAZANDI
-              </span>
+              <Badge tone="success" size="sm" icon={<Trophy size={11} />}>
+                KAZANDI
+              </Badge>
             )}
           </div>
         </div>
@@ -293,50 +288,54 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
         {/* Butonlar */}
         <div className="flex items-center gap-2">
           {onSelectMatch && (
-            <button
+            <Button
+              variant="primary"
+              size="sm"
               onClick={() => onSelectMatch(featuredMatch)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-primary text-primary-fg shadow-glow-primary hover:bg-primary/90 transition-all cursor-pointer text-xs active:scale-95"
+              className="font-bold cursor-pointer text-xs"
               title="Maç Merkezi & Set Detayları"
             >
-              <span>Maç Merkezi</span>
-            </button>
+              Maç Merkezi
+            </Button>
           )}
 
           {!isFinished && featuredMatch.date !== "TBD" && (
-            <button
+            <Button
+              variant="secondary"
+              size="sm"
               onClick={handleDownloadIcs}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 border border-slate-700/60 transition-all cursor-pointer text-xs"
+              className="font-bold cursor-pointer text-xs"
               title="Takvime Ekle"
             >
-              <CalendarPlus size={13} className="text-primary" />
+              <CalendarPlus size={13} className="text-primary mr-1" />
               <span className="hidden sm:inline">Takvime Ekle</span>
-            </button>
+            </Button>
           )}
 
-          <button
-            onClick={handleCopy}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-slate-800/80 hover:bg-slate-700/80 text-slate-200 border border-slate-700/60 transition-all cursor-pointer text-xs"
-            title="Detayları Kopyala"
-          >
-            {copied ? <Check size={13} className="text-emerald-400" /> : <Copy size={13} />}
-            <span className="hidden sm:inline">{copied ? "Kopyalandı" : "Paylaş"}</span>
-          </button>
+          <CopyButton
+            value={copyShareText}
+            label="Paylaş"
+            variant="outline"
+          />
 
           {onToggleFavorite && (
-            <button
+            <Button
+              variant={isFav ? "primary" : "secondary"}
+              size="sm"
               onClick={() => onToggleFavorite(featuredMatch.id)}
-              className={`p-2 rounded-xl border transition-all cursor-pointer ${
+              className={`p-2 cursor-pointer ${
                 isFav
                   ? "bg-amber-500/15 border-amber-500/40 text-amber-400"
-                  : "bg-slate-800/80 hover:bg-slate-700/80 border-slate-700/60 text-slate-400 hover:text-white"
+                  : "text-slate-400 hover:text-white"
               }`}
               title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
             >
               <Star size={14} className={isFav ? "fill-amber-400 text-amber-400" : ""} />
-            </button>
+            </Button>
           )}
         </div>
       </div>
     </div>
   );
 };
+

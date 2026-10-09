@@ -8,6 +8,8 @@ import { getVolleyboxMapping } from "@/utils/volleybox";
 import { formatGroupName } from "@/utils/grouping";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { StandingsTeamContext } from "./StandingsTable";
+import { EmptyState } from "@/components/arc/empty-state/empty-state";
+import { Badge } from "@/components/arc/badge/badge";
 
 interface TeamInspectorPanelProps {
   team: StandingItem | null;
@@ -46,11 +48,11 @@ export const TeamInspectorPanel: React.FC<TeamInspectorPanelProps> = ({
   if (!team) {
     return (
       <div className="flex h-full flex-col items-center justify-center p-6 text-center">
-        <Trophy size={26} className="mb-3 text-primary" />
-        <h2 className="text-sm font-bold text-white">Takım seçin</h2>
-        <p className="mt-1 max-w-[220px] text-xs text-slate-400">
-          Seçilen grubun formunu ve kalan maçlarını incelemek için puan tablosundan bir takım seçin.
-        </p>
+        <EmptyState
+          icon={<Trophy size={26} className="text-primary" />}
+          title="Takım seçin"
+          description="Seçilen grubun formunu ve kalan maçlarını incelemek için puan tablosundan bir takım seçin."
+        />
       </div>
     );
   }
@@ -86,10 +88,11 @@ export const TeamInspectorPanel: React.FC<TeamInspectorPanelProps> = ({
             <p className="mt-0.5 truncate text-[10px] text-slate-400">{mapping?.matched_as || context?.city || "TVF altyapı ligi"}</p>
             <p className="mt-1 text-[10px] font-semibold text-emerald-400">{context?.leagueName} · {context?.groupName}</p>
           </div>
-          <span className="shrink-0 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-1 font-mono text-sm font-black text-amber-300">
+          <Badge tone="warning" size="md">
             #{team.rank}
-          </span>
+          </Badge>
         </section>
+
 
         {mapping?.volleybox_url && (
           <a href={mapping.volleybox_url} target="_blank" rel="noopener noreferrer" className="block truncate rounded-lg border border-line bg-surface-muted px-3 py-2 text-[11px] font-semibold text-sky-400 transition-colors hover:text-sky-300">

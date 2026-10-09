@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Bell, BellRing, X, Info, Check } from "lucide-react";
+import { Button } from "@/components/arc/button/button";
+import { Badge } from "@/components/arc/badge/badge";
 import {
   isNotificationSupported,
   isNotificationsEnabled,
@@ -80,9 +82,9 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
           <div>
             <div className="text-sm font-semibold flex items-center gap-2">
               <span>Favori Takım Maç Hatırlatıcısı</span>
-              <span className="text-[10px] uppercase tracking-wider font-bold bg-blue-500/30 text-blue-300 px-1.5 py-0.5 rounded">
+              <Badge tone="info" size="sm">
                 Canlı Hatırlatma
-              </span>
+              </Badge>
             </div>
             <p className="text-xs text-slate-300 mt-0.5">
               Yıldızladığınız favori takımların maç saatine <strong>30 dakika kala</strong> canlı bildirim almak ister misiniz?
@@ -96,35 +98,40 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
 
         <div className="flex items-center gap-2 self-end md:self-center shrink-0">
           {success ? (
-            <span className="text-xs font-semibold text-emerald-400 flex items-center gap-1 px-3 py-1.5 bg-emerald-950/60 rounded-lg border border-emerald-500/30">
-              <Check size={14} />
+            <Badge tone="success" size="md" icon={<Check size={14} />}>
               Bildirimler Aktif Edildi
-            </span>
+            </Badge>
           ) : (
             <>
-              <button
+              <Button
+                variant="primary"
+                size="sm"
                 onClick={handleEnable}
-                disabled={loading}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs bg-primary text-primary-fg font-bold shadow-glow-primary hover:bg-primary/90 transition-all cursor-pointer disabled:opacity-50"
+                loading={loading}
+                className="font-bold cursor-pointer"
               >
-                <Bell size={13} />
-                {loading ? "İzin İsteniyor..." : "Bildirimleri Aç"}
-              </button>
-              <button
+                <Bell size={13} className="mr-1.5" />
+                <span>{loading ? "İzin İsteniyor..." : "Bildirimleri Aç"}</span>
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleDismiss}
-                className="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                className="font-medium text-slate-300 hover:text-white cursor-pointer"
               >
                 Şimdi Değil
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
+                variant="ghost"
+                size="sm"
                 onClick={handleDismiss}
-                className="p-1.5 text-slate-400 hover:text-white rounded-md hover:bg-white/10 transition-colors cursor-pointer"
+                className="p-1.5 text-slate-400 hover:text-white cursor-pointer"
                 title="Kapat"
                 aria-label="Bildirim uyarısını kapat"
               >
                 <X size={14} aria-hidden="true" />
-              </button>
+              </Button>
             </>
           )}
         </div>
@@ -132,3 +139,4 @@ export const NotificationBanner: React.FC<NotificationBannerProps> = ({
     </div>
   );
 };
+

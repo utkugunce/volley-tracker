@@ -33,6 +33,10 @@ import { getVolleyboxMapping } from "@/utils/volleybox";
 import { formatLeagueCategoryTitle, formatGroupName } from "@/utils/grouping";
 import { trLower } from "@/utils/turkishLocale";
 
+import { EmptyState } from "@/components/arc/empty-state/empty-state";
+import { Badge } from "@/components/arc/badge/badge";
+import SegmentedControl from "@/components/arc/segmented-control/segmented-control";
+
 export interface MatchInspectorPanelProps {
   match: Match | null;
   allMatches?: Match[];
@@ -50,22 +54,19 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) =
   if (!match) {
     return (
       <div className={`flex flex-col items-center justify-center h-full p-6 text-center select-none bg-canvas ${className}`}>
-        <div className="w-16 h-16 rounded-2xl bg-panel border border-line flex items-center justify-center text-ink-2 mb-3 shadow-inner">
-          <BarChart3 size={28} className="text-blue-400" />
-        </div>
-        <h3 className="text-sm font-bold text-white mb-1">
-          Detayları görüntülemek için bir maç seçin
-        </h3>
-        <p className="text-xs text-ink-2 max-w-[240px] mb-4 leading-relaxed">
-          Skorboard, set sayıları dökümü, salon konumu, H2H form analizi ve mini puan durumunu anlık olarak inceleyin.
-        </p>
-        <div className="inline-flex items-center gap-1.5 text-[10px] text-blue-400 bg-blue-950/40 px-3 py-1 rounded-full border border-blue-800/50 font-medium">
+        <EmptyState
+          icon={<BarChart3 size={28} className="text-blue-400" />}
+          title="Detayları görüntülemek için bir maç seçin"
+          description="Skorboard, set sayıları dökümü, salon konumu, H2H form analizi ve mini puan durumunu anlık olarak inceleyin."
+        />
+        <div className="inline-flex items-center gap-1.5 text-[10px] text-blue-400 bg-blue-950/40 px-3 py-1 rounded-full border border-blue-800/50 font-medium mt-3">
           <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
           Sofascore Maç Merkezi
         </div>
       </div>
     );
   }
+
 
   if (isLoading) {
     return (
@@ -351,24 +352,17 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
           {/* Maç Durumu Rozeti */}
           <div className="flex items-center justify-center">
             {isLive ? (
-              <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-live/15 text-live border border-live/50 animate-pulse">
-                <Flame size={12} className="text-live" />
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-live opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-live" />
-                </span>
-                <span>{statusLabel}</span>
-              </span>
+              <Badge tone="danger" size="sm" icon={<Flame size={12} className="text-live" />}>
+                {statusLabel}
+              </Badge>
             ) : isFinished ? (
-              <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-950/60 text-emerald-300 border border-emerald-700/60">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>{statusLabel}</span>
-              </span>
+              <Badge tone="success" size="sm">
+                {statusLabel}
+              </Badge>
             ) : (
-              <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full text-[10px] font-medium bg-line text-slate-200 border border-line">
-                <Clock size={11} className="text-amber-400" />
-                <span>{statusLabel}</span>
-              </span>
+              <Badge tone="warning" size="sm" icon={<Clock size={11} className="text-amber-400" />}>
+                {statusLabel}
+              </Badge>
             )}
           </div>
 
@@ -424,42 +418,17 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
         {/* 4. Bağlamsal Sekmeler (Tabs) */}
         <div className="space-y-3">
-          {/* Sekme Butonları */}
-          <div className="grid grid-cols-3 p-1 rounded-xl bg-surface-muted border border-line text-[11px] font-semibold">
-            <button
-              type="button"
-              onClick={() => setActiveTab("overview")}
-              className={`py-1.5 px-2 rounded-lg transition-all text-center ${
-                activeTab === "overview"
-                  ? "bg-blue-600 text-white font-bold shadow-xs"
-                  : "text-ink-2 hover:text-white"
-              }`}
-            >
-              Genel Bakış
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("h2h")}
-              className={`py-1.5 px-2 rounded-lg transition-all text-center ${
-                activeTab === "h2h"
-                  ? "bg-blue-600 text-white font-bold shadow-xs"
-                  : "text-ink-2 hover:text-white"
-              }`}
-            >
-              H2H & Form
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("standings")}
-              className={`py-1.5 px-2 rounded-lg transition-all text-center ${
-                activeTab === "standings"
-                  ? "bg-blue-600 text-white font-bold shadow-xs"
-                  : "text-ink-2 hover:text-white"
-              }`}
-            >
-              Grup Durumu
-            </button>
-          </div>
+          {/* Sekme Seçici */}
+          <SegmentedControl
+            options={[
+              { value: "overview", label: "Genel Bakış" },
+              { value: "h2h", label: "H2H & Form" },
+              { value: "standings", label: "Grup Durumu" },
+            ]}
+            value={activeTab}
+            onValueChange={(val) => setActiveTab(val as "overview" | "h2h" | "standings")}
+          />
+
 
           {/* Sekme 1: Genel Bakış */}
           {activeTab === "overview" && (

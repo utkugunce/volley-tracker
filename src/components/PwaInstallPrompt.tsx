@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Download, Smartphone, X, WifiOff, Share } from "lucide-react";
+import { Button } from "@/components/arc/button/button";
 
 export const DISMISS_COOLDOWN_DAYS = 14;
 export const STORAGE_KEY = "pwa-install-dismissed-at";
@@ -116,17 +117,19 @@ export const PwaInstallPrompt: React.FC = () => {
       {/* PWA YÜKLEME BUTONU (Header veya sabit çubuk için) */}
       {canShowPrompt && (
         <div className="inline-flex items-center rounded-xl bg-surface-raised border border-line overflow-hidden">
-          <button
+          <Button
+            variant="ghost"
+            size="sm"
             onClick={handleInstallClick}
-            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-bold text-ink hover:bg-white/5 transition-all active:scale-95 cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 text-xs font-bold text-ink hover:bg-white/5 cursor-pointer rounded-none border-0"
             title="Altyapı Voleybol uygulamasını telefonunuza veya bilgisayarınıza yükleyin"
           >
-            <Smartphone size={14} className="text-primary" />
+            <Smartphone size={14} className="text-primary mr-1" />
             {/* Buton yükleme sonrası (beforeinstallprompt) görünür; 1400 px altında kısa etiket kullanılır ki
                 üst çubuk iki satıra sarılıp sayfayı aşağı itmesin (CLS). */}
             <span className="hidden min-[1400px]:inline">Uygulamayı Yükle</span>
             <span className="min-[1400px]:hidden">Yükle</span>
-          </button>
+          </Button>
           <button
             onClick={handleDismiss}
             aria-label="Yükleme istemini 14 gün gizle"
@@ -166,15 +169,18 @@ export const PwaInstallPrompt: React.FC = () => {
                 <span>Aşağı kaydırıp <strong className="text-white">&quot;Ana Ekrana Ekle&quot;</strong> seçeneğine dokunun.</span>
               </li>
             </ol>
-            <button
+            <Button
+              variant="primary"
+              size="md"
               onClick={handleDismiss}
-              className="w-full py-2.5 rounded-xl bg-primary text-primary-fg font-bold text-xs shadow-glow-primary hover:bg-primary/90 transition-colors cursor-pointer"
+              className="w-full font-bold cursor-pointer"
             >
               Anladım
-            </button>
+            </Button>
           </div>
         </div>
       )}
     </>
   );
 };
+
