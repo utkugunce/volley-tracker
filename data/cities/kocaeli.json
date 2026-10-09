@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 34,
+  "total_matches": 35,
   "source": "https://kocaeli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -952,6 +952,40 @@
       "gender": "Kız",
       "group": "İzmit Grubu",
       "match_no": "19",
+      "home_team": "Nicomedia Akademi",
+      "away_team": "Beşrenk Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261020-020",
+      "city": "Kocaeli",
+      "date": "2026-10-20",
+      "time": "20:00",
+      "hall": "H.Gemici S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "İzmit Grubu",
+      "match_no": "20",
       "home_team": "Kocaeli Voleybol Akademi Spor Kulübü",
       "away_team": "Kandıra Voleybol",
       "score": "- : -",
@@ -976,7 +1010,7 @@
       }
     },
     {
-      "id": "kocaeli-20261005-020",
+      "id": "kocaeli-20261005-021",
       "city": "Kocaeli",
       "date": "2026-10-05",
       "time": "18:30",
@@ -1014,7 +1048,7 @@
       }
     },
     {
-      "id": "kocaeli-20261005-021",
+      "id": "kocaeli-20261005-022",
       "city": "Kocaeli",
       "date": "2026-10-05",
       "time": "20:00",
@@ -1053,7 +1087,7 @@
       }
     },
     {
-      "id": "kocaeli-20261006-022",
+      "id": "kocaeli-20261006-023",
       "city": "Kocaeli",
       "date": "2026-10-06",
       "time": "18:30",
@@ -1091,7 +1125,7 @@
       }
     },
     {
-      "id": "kocaeli-20261006-023",
+      "id": "kocaeli-20261006-024",
       "city": "Kocaeli",
       "date": "2026-10-06",
       "time": "20:00",
@@ -1129,7 +1163,7 @@
       }
     },
     {
-      "id": "kocaeli-20261009-024",
+      "id": "kocaeli-20261009-025",
       "city": "Kocaeli",
       "date": "2026-10-09",
       "time": "20:00",
@@ -1163,7 +1197,7 @@
       }
     },
     {
-      "id": "kocaeli-20261012-025",
+      "id": "kocaeli-20261012-026",
       "city": "Kocaeli",
       "date": "2026-10-12",
       "time": "18:30",
@@ -1197,7 +1231,7 @@
       }
     },
     {
-      "id": "kocaeli-20261012-026",
+      "id": "kocaeli-20261012-027",
       "city": "Kocaeli",
       "date": "2026-10-12",
       "time": "20:00",
@@ -1231,7 +1265,7 @@
       }
     },
     {
-      "id": "kocaeli-20261013-027",
+      "id": "kocaeli-20261013-028",
       "city": "Kocaeli",
       "date": "2026-10-13",
       "time": "18:30",
@@ -1265,7 +1299,7 @@
       }
     },
     {
-      "id": "kocaeli-20261014-028",
+      "id": "kocaeli-20261014-029",
       "city": "Kocaeli",
       "date": "2026-10-14",
       "time": "18:30",
@@ -1299,7 +1333,7 @@
       }
     },
     {
-      "id": "kocaeli-20261014-029",
+      "id": "kocaeli-20261014-030",
       "city": "Kocaeli",
       "date": "2026-10-14",
       "time": "20:00",
@@ -1333,7 +1367,7 @@
       }
     },
     {
-      "id": "kocaeli-20261017-030",
+      "id": "kocaeli-20261017-031",
       "city": "Kocaeli",
       "date": "2026-10-17",
       "time": "14:30",
@@ -1367,7 +1401,7 @@
       }
     },
     {
-      "id": "kocaeli-20261017-031",
+      "id": "kocaeli-20261017-032",
       "city": "Kocaeli",
       "date": "2026-10-17",
       "time": "16:00",
@@ -1401,7 +1435,7 @@
       }
     },
     {
-      "id": "kocaeli-20261017-032",
+      "id": "kocaeli-20261017-033",
       "city": "Kocaeli",
       "date": "2026-10-17",
       "time": "17:30",
@@ -1435,7 +1469,7 @@
       }
     },
     {
-      "id": "kocaeli-20261018-033",
+      "id": "kocaeli-20261018-034",
       "city": "Kocaeli",
       "date": "2026-10-18",
       "time": "16:00",
@@ -1469,7 +1503,7 @@
       }
     },
     {
-      "id": "kocaeli-20261018-034",
+      "id": "kocaeli-20261018-035",
       "city": "Kocaeli",
       "date": "2026-10-18",
       "time": "17:30",
@@ -1504,5 +1538,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:46.553628"
+  "volleybox_sync_updated_at": "2026-10-09T17:40:15.874732"
 }

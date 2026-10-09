@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -27,7 +27,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - A Gurubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "Alaağaçspor Kulübü",
@@ -73,7 +73,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - B Gurubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Asaş Spor Kulübü",
@@ -141,7 +141,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Gurubu",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Alaağaçspor Kulübü",
       "away_team": "Saraçhane 54 Spor Kulübü",
@@ -175,7 +175,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Gurubu",
+      "group": "A Grubu",
       "match_no": "2",
       "home_team": "Serdivan Belediyesi Spor Kulübü",
       "away_team": "Alaağaçspor Kulübü",
@@ -209,7 +209,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "A Gurubu",
+      "group": "A Grubu",
       "match_no": "3",
       "home_team": "Saraçhane 54 Spor Kulübü",
       "away_team": "Fener Akademi Spor Kulübü",
@@ -243,7 +243,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Gurubu",
+      "group": "B Grubu",
       "match_no": "1",
       "home_team": "Sakarya Voleybol Spor Kulübü",
       "away_team": "Sapanca Ayyıldız Spor Kulübü",
@@ -277,7 +277,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Gurubu",
+      "group": "B Grubu",
       "match_no": "2",
       "home_team": "Sakarya Gelişim Spor Kulübü",
       "away_team": "Asaş Spor Kulübü",
@@ -311,7 +311,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "B Gurubu",
+      "group": "B Grubu",
       "match_no": "3",
       "home_team": "Asaş Spor Kulübü",
       "away_team": "Sakarya Voleybol Spor Kulübü",
@@ -338,5 +338,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:46.654394"
+  "volleybox_sync_updated_at": "2026-10-09T17:40:15.924362"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -522,18 +522,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406625",
+        "url": "https://women.volleybox.net/tr/balkesir-ds-spor-u16-mehmet-seref-eginlioglu-ortaokulu-sk-u16-c406625",
+        "host_name": "Balıkesir DSİ Spor U16",
+        "guest_name": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-03",
+        "vb_time": "18:30",
+        "vb_hall": "Şehit Turgut Solak Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "18:30",
+          "vb_hall": "Şehit Turgut Solak Spor Salonu",
+          "details": null
         }
       }
     },
@@ -556,18 +563,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406626",
+        "url": "https://women.volleybox.net/tr/karesi-hurriyet-spor-u16-balkesir-eka-spor-kulubu-u16-c406626",
+        "host_name": "Karesi Hürriyet Spor U16",
+        "guest_name": "Balıkesir EKA Spor Kulubü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-15",
+        "vb_time": "19:30",
+        "vb_hall": "Şehit Turgut Solak Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "19:30",
+          "vb_hall": "Şehit Turgut Solak Spor Salonu",
+          "details": null
         }
       }
     },
@@ -596,18 +610,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406627",
+        "url": "https://women.volleybox.net/tr/bandrma-voleybol-spor-kulubu-u16-balkesir-buyuksehir-belediyespor-u16-c406627",
+        "host_name": "Bandırma Voleybol Spor Kulübü U16",
+        "guest_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-04",
+        "vb_time": "17:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "17:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -630,18 +651,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406628",
+        "url": "https://women.volleybox.net/tr/gunyaka-spor-u16-balkesir-eka-spor-kulubu-b-u16-c406628",
+        "host_name": "Günyaka Spor U16",
+        "guest_name": "Balıkesir EKA Spor Kulubü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-12",
+        "vb_time": "18:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-12",
+          "vb_time": "18:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -664,18 +692,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406629",
+        "url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-u16-eba-spor-u16-c406629",
+        "host_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
+        "guest_name": "EBA Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "18:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "18:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -698,18 +733,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406630",
+        "url": "https://women.volleybox.net/tr/ted-balkesir-koleji-sk-u16-bandrma-voleybol-spor-kulubu-u16-c406630",
+        "host_name": "TED Balıkesir Koleji SK U16",
+        "guest_name": "Bandırma Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-15",
+        "vb_time": "18:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "18:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -736,18 +778,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406631",
+        "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-b-u16-ayvalkspor-u16-c406631",
+        "host_name": "Ayvalıkgücü Belediye SK - B U16",
+        "guest_name": "Ayvalıkspor U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-06",
+        "vb_time": "19:00",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-06",
+          "vb_time": "19:00",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -776,18 +825,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406633",
+        "url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-b-u16-burhaniye-oren-pegasus-spor-kulubu-u16-c406633",
+        "host_name": "Balıkesir Büyükşehir Belediyespor Edremit U16",
+        "guest_name": "Burhaniye Ören Pegasus Spor Kulübü U16",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "19:00",
+        "vb_hall": "Edremit Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "19:00",
+          "vb_hall": "Edremit Spor Salonu",
+          "details": null
         }
       }
     },
@@ -848,18 +904,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406637",
+        "url": "https://women.volleybox.net/tr/ayvalkspor-u16-balkesir-buyuksehir-belediyespor-b-u16-c406637",
+        "host_name": "Ayvalıkspor U16",
+        "guest_name": "Balıkesir Büyükşehir Belediyespor Edremit U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-15",
+        "vb_time": "19:00",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "19:00",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -882,18 +945,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406638",
+        "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-b-u16-edremit-belediyesi-gurespor-kulubu-u16-c406638",
+        "host_name": "Ayvalıkgücü Belediye SK - B U16",
+        "guest_name": "Edremit Belediyesi Gürespor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-15",
+        "vb_time": "20:30",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "20:30",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -920,18 +990,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406639",
+        "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-u16-ayvalkspor-b-u16-c406639",
+        "host_name": "Ayvalıkgücü Belediye SK U16",
+        "guest_name": "Ayvalıkspor - B U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-06",
+        "vb_time": "20:30",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-06",
+          "vb_time": "20:30",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -954,18 +1031,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406640",
+        "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-u16-burhaniye-belediye-spor-kulubu-u16-c406640",
+        "host_name": "Ayvalıkgücü Belediye SK U16",
+        "guest_name": "Burhaniye Belediye Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "19:00",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "19:00",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -988,18 +1072,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406641",
+        "url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-u16-kuzey-ege-gelisim-spor-kulubu-u16-c406641",
+        "host_name": "Ayvalık Gelişim Spor Kulübü U16",
+        "guest_name": "Kuzey Ege Gelişim Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "20:30",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "20:30",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1027,18 +1118,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406642",
+        "url": "https://women.volleybox.net/tr/bandrma-bordo-spor-kulubu-u16-gonen-karsyakaspor-u16-c406642",
+        "host_name": "Bandırma Bordo Spor Kulübü U16",
+        "guest_name": "Gönen Karşıyakaspor U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-05",
+        "vb_time": "19:00",
+        "vb_hall": "Neriman Gençer Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "19:00",
+          "vb_hall": "Neriman Gençer Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1065,18 +1163,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406643",
+        "url": "https://women.volleybox.net/tr/bandrma-voleybol-spor-kulubu-u16-bandrma-gelisim-basketbol-spor-kulubu-u16-c406643",
+        "host_name": "Bandırma Voleybol Spor Kulübü U16",
+        "guest_name": "Bandırma Gelişim Basketbol Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-05",
+        "vb_time": "20:30",
+        "vb_hall": "Neriman Gençer Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "20:30",
+          "vb_hall": "Neriman Gençer Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1104,18 +1209,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406644",
+        "url": "https://women.volleybox.net/tr/bandrma-bordo-spor-kulubu-u16-susurluk-genclerbirligi-egitim-spor-kulubu-u16-c406644",
+        "host_name": "Bandırma Bordo Spor Kulübü U16",
+        "guest_name": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "19:00",
+        "vb_hall": "Neriman Gençer Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "19:00",
+          "vb_hall": "Neriman Gençer Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1142,18 +1254,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406645",
+        "url": "https://women.volleybox.net/tr/bandrma-bordo-spor-kulubu-b-u16-bandrma-gelisim-basketbol-spor-kulubu-u16-c406645",
+        "host_name": "Bandırma Bordo Spor Kulübü - B U16",
+        "guest_name": "Bandırma Gelişim Basketbol Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "20:30",
+        "vb_hall": "Neriman Gençer Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "20:30",
+          "vb_hall": "Neriman Gençer Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1176,18 +1295,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406646",
+        "url": "https://women.volleybox.net/tr/susurluk-genclerbirligi-egitim-spor-kulubu-u16-bandrma-bordo-spor-kulubu-b-u16-c406646",
+        "host_name": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
+        "guest_name": "Bandırma Bordo Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "19:00",
+        "vb_hall": "Susurluk Nimet Sadık Özyiğit Ortaokulu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "19:00",
+          "vb_hall": "Susurluk Nimet Sadık Özyiğit Ortaokulu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1210,18 +1336,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406647",
+        "url": "https://women.volleybox.net/tr/gonen-karsyakaspor-u16-bandrma-voleybol-spor-kulubu-u16-c406647",
+        "host_name": "Gönen Karşıyakaspor U16",
+        "guest_name": "Bandırma Voleybol Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-14",
+        "vb_time": "19:00",
+        "vb_hall": "Gönen Fahri Dilmaç Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "19:00",
+          "vb_hall": "Gönen Fahri Dilmaç Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1244,22 +1377,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406648",
+        "url": "https://women.volleybox.net/tr/bandrma-voleybol-spor-kulubu-u16-bandrma-bordo-spor-kulubu-b-u16-c406648",
+        "host_name": "Bandırma Voleybol Spor Kulübü U16",
+        "guest_name": "Bandırma Bordo Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-15",
+        "vb_time": "19:00",
+        "vb_hall": "Neriman Gençer Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "19:00",
+          "vb_hall": "Neriman Gençer Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:41.433671"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-10-09T17:40:12.595228"
 }

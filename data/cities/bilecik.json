@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Bilecik",
   "slug": "bilecik",
   "title": "TVF Bilecik Genç & Yıldız Kızlar Süper Lig",
@@ -108,18 +108,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406649",
+        "url": "https://women.volleybox.net/tr/sogut-spor-u18-lefke-akademi-spor-kulubu-u18-c406649",
+        "host_name": "Söğüt Spor U18",
+        "guest_name": "Lefke Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-17",
+        "vb_time": "13:00",
+        "vb_hall": "Söğüt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-17",
+          "vb_time": "13:00",
+          "vb_hall": "Söğüt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -142,18 +149,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406650",
+        "url": "https://women.volleybox.net/tr/bayrkoy-spor-kulubu-u18-bozuyuk-belediyesi-egitim-spor-kulubu-u18-c406650",
+        "host_name": "Bayırköy Spor Kulübü U18",
+        "guest_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-17",
+        "vb_time": "16:00",
+        "vb_hall": "Bayırköy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-17",
+          "vb_time": "16:00",
+          "vb_hall": "Bayırköy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -176,18 +190,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406651",
+        "url": "https://women.volleybox.net/tr/bilecik-voley-11-spor-kulubu-u18-bayrkoy-spor-kulubu-u18-c406651",
+        "host_name": "Bilecik Voley 11 Spor Kulübü U18",
+        "guest_name": "Bayırköy Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-24",
+        "vb_time": "11:00",
+        "vb_hall": "Bilecik İstasyon Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-24",
+          "vb_time": "11:00",
+          "vb_hall": "Bilecik İstasyon Spor Salonu",
+          "details": null
         }
       }
     },
@@ -210,18 +231,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406652",
+        "url": "https://women.volleybox.net/tr/bozuyuk-belediyesi-egitim-spor-kulubu-u18-sogut-spor-u18-c406652",
+        "host_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
+        "guest_name": "Söğüt Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-24",
+        "vb_time": "16:00",
+        "vb_hall": "Bozüyük Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-24",
+          "vb_time": "16:00",
+          "vb_hall": "Bozüyük Merkez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -244,18 +272,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406653",
+        "url": "https://women.volleybox.net/tr/lefke-akademi-spor-kulubu-u18-bozuyuk-belediyesi-egitim-spor-kulubu-u18-c406653",
+        "host_name": "Lefke Akademi Spor Kulübü U18",
+        "guest_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-31",
+        "vb_time": "13:00",
+        "vb_hall": "Osmaneli Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "13:00",
+          "vb_hall": "Osmaneli Spor Salonu",
+          "details": null
         }
       }
     },
@@ -278,18 +313,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406654",
+        "url": "https://women.volleybox.net/tr/sogut-spor-u18-bilecik-voley-11-spor-kulubu-u18-c406654",
+        "host_name": "Söğüt Spor U18",
+        "guest_name": "Bilecik Voley 11 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-31",
+        "vb_time": "16:00",
+        "vb_hall": "Söğüt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "16:00",
+          "vb_hall": "Söğüt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -312,18 +354,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406655",
+        "url": "https://women.volleybox.net/tr/bayrkoy-spor-kulubu-u18-sogut-spor-u18-c406655",
+        "host_name": "Bayırköy Spor Kulübü U18",
+        "guest_name": "Söğüt Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "13:00",
+        "vb_hall": "Bayırköy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "13:00",
+          "vb_hall": "Bayırköy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -346,18 +395,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406656",
+        "url": "https://women.volleybox.net/tr/bilecik-voley-11-spor-kulubu-u18-lefke-akademi-spor-kulubu-u18-c406656",
+        "host_name": "Bilecik Voley 11 Spor Kulübü U18",
+        "guest_name": "Lefke Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "16:00",
+        "vb_hall": "Bilecik İstasyon Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "16:00",
+          "vb_hall": "Bilecik İstasyon Spor Salonu",
+          "details": null
         }
       }
     },
@@ -380,18 +436,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406657",
+        "url": "https://women.volleybox.net/tr/bozuyuk-belediyesi-egitim-spor-kulubu-u18-bilecik-voley-11-spor-kulubu-u18-c406657",
+        "host_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
+        "guest_name": "Bilecik Voley 11 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "13:00",
+        "vb_hall": "Bozüyük Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "13:00",
+          "vb_hall": "Bozüyük Merkez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -414,18 +477,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406658",
+        "url": "https://women.volleybox.net/tr/lefke-akademi-spor-kulubu-u18-bayrkoy-spor-kulubu-u18-c406658",
+        "host_name": "Lefke Akademi Spor Kulübü U18",
+        "guest_name": "Bayırköy Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "16:00",
+        "vb_hall": "Osmaneli Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "16:00",
+          "vb_hall": "Osmaneli Spor Salonu",
+          "details": null
         }
       }
     },
@@ -448,18 +518,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406659",
+        "url": "https://women.volleybox.net/tr/lefke-akademi-spor-kulubu-u18-sogut-spor-u18-c406659",
+        "host_name": "Lefke Akademi Spor Kulübü U18",
+        "guest_name": "Söğüt Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "13:00",
+        "vb_hall": "Osmaneli Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "13:00",
+          "vb_hall": "Osmaneli Spor Salonu",
+          "details": null
         }
       }
     },
@@ -482,18 +559,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406660",
+        "url": "https://women.volleybox.net/tr/bozuyuk-belediyesi-egitim-spor-kulubu-u18-bayrkoy-spor-kulubu-u18-c406660",
+        "host_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
+        "guest_name": "Bayırköy Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "16:00",
+        "vb_hall": "Bozüyük Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "16:00",
+          "vb_hall": "Bozüyük Merkez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -516,18 +600,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406661",
+        "url": "https://women.volleybox.net/tr/bayrkoy-spor-kulubu-u18-bilecik-voley-11-spor-kulubu-u18-c406661",
+        "host_name": "Bayırköy Spor Kulübü U18",
+        "guest_name": "Bilecik Voley 11 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-05",
+        "vb_time": "13:00",
+        "vb_hall": "Bayırköy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-05",
+          "vb_time": "13:00",
+          "vb_hall": "Bayırköy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -550,18 +641,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406662",
+        "url": "https://women.volleybox.net/tr/sogut-spor-u18-bozuyuk-belediyesi-egitim-spor-kulubu-u18-c406662",
+        "host_name": "Söğüt Spor U18",
+        "guest_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-05",
+        "vb_time": "16:00",
+        "vb_hall": "Söğüt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-05",
+          "vb_time": "16:00",
+          "vb_hall": "Söğüt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -584,18 +682,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406663",
+        "url": "https://women.volleybox.net/tr/bozuyuk-belediyesi-egitim-spor-kulubu-u18-lefke-akademi-spor-kulubu-u18-c406663",
+        "host_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
+        "guest_name": "Lefke Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-12",
+        "vb_time": "13:00",
+        "vb_hall": "Bozüyük Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-12",
+          "vb_time": "13:00",
+          "vb_hall": "Bozüyük Merkez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -618,18 +723,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406664",
+        "url": "https://women.volleybox.net/tr/bilecik-voley-11-spor-kulubu-u18-sogut-spor-u18-c406664",
+        "host_name": "Bilecik Voley 11 Spor Kulübü U18",
+        "guest_name": "Söğüt Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-12",
+        "vb_time": "16:00",
+        "vb_hall": "Bilecik İstasyon Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-12",
+          "vb_time": "16:00",
+          "vb_hall": "Bilecik İstasyon Spor Salonu",
+          "details": null
         }
       }
     },
@@ -652,18 +764,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406665",
+        "url": "https://women.volleybox.net/tr/sogut-spor-u18-bayrkoy-spor-kulubu-u18-c406665",
+        "host_name": "Söğüt Spor U18",
+        "guest_name": "Bayırköy Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-19",
+        "vb_time": "13:00",
+        "vb_hall": "Söğüt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-19",
+          "vb_time": "13:00",
+          "vb_hall": "Söğüt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -686,18 +805,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406666",
+        "url": "https://women.volleybox.net/tr/lefke-akademi-spor-kulubu-u18-bilecik-voley-11-spor-kulubu-u18-c406666",
+        "host_name": "Lefke Akademi Spor Kulübü U18",
+        "guest_name": "Bilecik Voley 11 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-19",
+        "vb_time": "16:00",
+        "vb_hall": "Osmaneli Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-19",
+          "vb_time": "16:00",
+          "vb_hall": "Osmaneli Spor Salonu",
+          "details": null
         }
       }
     },
@@ -720,18 +846,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406667",
+        "url": "https://women.volleybox.net/tr/bilecik-voley-11-spor-kulubu-u18-bozuyuk-belediyesi-egitim-spor-kulubu-u18-c406667",
+        "host_name": "Bilecik Voley 11 Spor Kulübü U18",
+        "guest_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-26",
+        "vb_time": "13:00",
+        "vb_hall": "Bilecik İstasyon Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-26",
+          "vb_time": "13:00",
+          "vb_hall": "Bilecik İstasyon Spor Salonu",
+          "details": null
         }
       }
     },
@@ -754,22 +887,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406668",
+        "url": "https://women.volleybox.net/tr/bayrkoy-spor-kulubu-u18-lefke-akademi-spor-kulubu-u18-c406668",
+        "host_name": "Bayırköy Spor Kulübü U18",
+        "guest_name": "Lefke Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-26",
+        "vb_time": "16:00",
+        "vb_hall": "Bayırköy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-26",
+          "vb_time": "16:00",
+          "vb_hall": "Bayırköy Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:41.440078"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-10-09T17:40:12.611930"
 }

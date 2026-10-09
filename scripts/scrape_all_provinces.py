@@ -74,7 +74,6 @@ OFFICIAL_CITIES = {
 
 # Bu slug'lar sitede gösterilmeyecek (veri yetersiz / geçici olarak devre dışı)
 EXCLUDED_SLUGS = {
-    "denizli",   # Sezon başı fikstür henüz hazır değil
     "adana",     # Kulüpler fikstürü/puan durumu henüz oluşmadı
     "kirikkale", # Yalnızca kurumlar arası turnuva mevcut, resmi altyapı ligi yok
 }
@@ -690,7 +689,7 @@ def scrape_single_city(city_info):
         for c_val, c_text in comps:
             # Kurumlar arası / kamu / özel şirket turnuvalarını filtrele (yalnızca TVF resmi altyapı ligleri)
             lower_comp = c_text.lower()
-            if any(kw in lower_comp for kw in ["kurumlar", "kurum", "şirket", "sirket", "veteran", "özel turnuva", "ozel turnuva"]):
+            if any(kw in lower_comp for kw in ["kurumlar", "kurum", "şirket", "sirket", "veteran", "özel turnuva", "ozel turnuva", "deneme", "test"]):
                 continue
 
             group_name = extract_group_name(c_text)

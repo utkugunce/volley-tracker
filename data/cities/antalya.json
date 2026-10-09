@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -855,18 +855,18 @@
         "guest_name": "Antalya Şimşek GSK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-20",
-        "vb_time": "19:30",
-        "vb_hall": "Antalya Spor Salonu",
+        "vb_date": "2026-11-02",
+        "vb_time": "18:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-10-20",
-          "vb_time": "19:30",
-          "vb_hall": "Antalya Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-02 / VB: 2026-10-20) | Saat Değişti (TVF: 18:30 / VB: 19:30) | Salon Değişti (TVF: Kepez Ç.A.S.S. / VB: Antalya Spor Salonu)"
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "18:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -2604,5 +2604,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:41.405303"
+  "volleybox_sync_updated_at": "2026-10-09T17:40:12.420364"
 }

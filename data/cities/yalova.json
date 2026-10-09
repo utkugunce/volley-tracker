@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -112,18 +112,18 @@
         "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-09",
-        "vb_time": "18:00",
+        "vb_date": "2026-10-10",
+        "vb_time": "11:00",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-09",
-          "vb_time": "18:00",
+          "vb_date": "2026-10-10",
+          "vb_time": "11:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-10 / VB: 2026-10-09) | Saat Değişti (TVF: 11:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -153,18 +153,18 @@
         "guest_name": "Yalova Atakent Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-09",
-        "vb_time": "20:00",
+        "vb_date": "2026-10-10",
+        "vb_time": "13:00",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-09",
-          "vb_time": "20:00",
+          "vb_date": "2026-10-10",
+          "vb_time": "13:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-10 / VB: 2026-10-09) | Saat Değişti (TVF: 13:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -194,18 +194,18 @@
         "guest_name": "Koru Akademi Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-16",
-        "vb_time": "18:00",
+        "vb_date": "2026-10-17",
+        "vb_time": "13:00",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-16",
-          "vb_time": "18:00",
+          "vb_date": "2026-10-17",
+          "vb_time": "13:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-17 / VB: 2026-10-16) | Saat Değişti (TVF: 13:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -235,18 +235,18 @@
         "guest_name": "Koru Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-16",
-        "vb_time": "20:00",
+        "vb_date": "2026-10-17",
+        "vb_time": "15:00",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-16",
-          "vb_time": "20:00",
+          "vb_date": "2026-10-17",
+          "vb_time": "15:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-17 / VB: 2026-10-16) | Saat Değişti (TVF: 15:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -277,17 +277,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-23",
-        "vb_time": "18:00",
+        "vb_time": "18:30",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-23",
-          "vb_time": "18:00",
+          "vb_time": "18:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:30 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -318,17 +318,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-23",
-        "vb_time": "20:00",
+        "vb_time": "20:30",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-23",
-          "vb_time": "20:00",
+          "vb_time": "20:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:30 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -908,5 +908,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:48.122937"
+  "volleybox_sync_updated_at": "2026-10-09T17:40:16.871800"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -509,18 +509,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406706",
+        "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u18-merinos-sk-u18-c406706",
+        "host_name": "Anadolugücü Spor Kulübü U18",
+        "guest_name": "Merinos SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-10",
+        "vb_time": "09:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-10",
+          "vb_time": "09:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -577,18 +584,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406708",
+        "url": "https://women.volleybox.net/tr/adrenalin-rekor-spor-kulubu-u18-antepia-spor-kulubu-u18-c406708",
+        "host_name": "Adrenalin Rekor Spor Kulübü U18",
+        "guest_name": "Antepia Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-10",
+        "vb_time": "11:00",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-10",
+          "vb_time": "11:00",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -645,22 +659,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "406710",
+        "url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-u18-adrenalin-rekor-spor-kulubu-u18-c406710",
+        "host_name": "Zeugma Spor Kulübü U18",
+        "guest_name": "Adrenalin Rekor Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-11",
+        "vb_time": "12:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "12:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:42.233994"
+  "volleybox_synced_matches": 3,
+  "volleybox_sync_updated_at": "2026-10-09T17:40:13.287238"
 }

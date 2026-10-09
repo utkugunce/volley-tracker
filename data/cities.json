@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "total_cities": 81,
-  "active_cities": 31,
-  "total_matches": 948,
+  "active_cities": 32,
+  "total_matches": 995,
   "cities": [
     {
       "ilid": "1",
@@ -60,8 +60,8 @@
       "name": "Ankara",
       "slug": "ankara",
       "url": "https://ankara.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (71 Maç Mevcut)",
-      "matches_count": 71,
+      "status": "Aktif (72 Maç Mevcut)",
+      "matches_count": 72,
       "standings_count": 10,
       "data_file": "data/cities/ankara.json"
     },
@@ -170,8 +170,8 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (28 Maç Mevcut)",
-      "matches_count": 28,
+      "status": "Aktif (29 Maç Mevcut)",
+      "matches_count": 29,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
     },
@@ -199,12 +199,11 @@
       "ilid": "20",
       "name": "Denizli",
       "slug": "denizli",
-      "url": "denizli.voleyboliltemsilciligi.com",
-      "status": "Devre Dışı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null,
-      "excluded": true
+      "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
+      "status": "Aktif (19 Maç Mevcut)",
+      "matches_count": 19,
+      "standings_count": 2,
+      "data_file": "data/cities/denizli.json"
     },
     {
       "ilid": "21",
@@ -341,8 +340,8 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (84 Maç Mevcut)",
-      "matches_count": 84,
+      "status": "Aktif (109 Maç Mevcut)",
+      "matches_count": 109,
       "standings_count": 15,
       "data_file": "data/cities/istanbul.json"
     },
@@ -411,8 +410,8 @@
       "name": "Kocaeli",
       "slug": "kocaeli",
       "url": "https://kocaeli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (34 Maç Mevcut)",
-      "matches_count": 34,
+      "status": "Aktif (35 Maç Mevcut)",
+      "matches_count": 35,
       "standings_count": 2,
       "data_file": "data/cities/kocaeli.json"
     },

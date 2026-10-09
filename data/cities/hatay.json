@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -2167,20 +2167,20 @@
         "url": "https://women.volleybox.net/tr/skenderun-voleybol-akademi-spor-kulubu-u18-es-akademi-spor-kulubu-u18-c401111",
         "host_name": "İskenderun Voleybol Akademi Spor Kulübü U18",
         "guest_name": "Es Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-10",
-        "vb_time": "17:30",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-08",
+        "vb_time": "19:30",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-10",
-          "vb_time": "17:30",
+          "vb_date": "2026-10-08",
+          "vb_time": "19:30",
           "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-08 / VB: 2026-10-10) | Saat Değişti (TVF: 19:30 / VB: 17:30)"
+          "details": null
         }
       }
     },
@@ -2555,5 +2555,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:43.302399"
+  "volleybox_sync_updated_at": "2026-10-09T17:40:13.888219"
 }

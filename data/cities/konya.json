@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T14:07:02.506869+03:00",
+  "updated_at": "2026-10-09T17:35:29.521978+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -30,7 +30,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - A Grubuubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
@@ -65,7 +65,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - B Grubuubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Konya Anka Spor Kulübü U18",
@@ -111,7 +111,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - C Grubuubu": [
+    "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Vakıf Akademi Spor Kulübü U18",
@@ -157,7 +157,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - D Grubuubu": [
+    "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
         "team": "Diltaş Spor Kulübü U18",
@@ -295,7 +295,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - A Grubuubu": [
+    "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "BALLAS SPOR",
@@ -352,7 +352,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - B Grubuubu": [
+    "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "1854 AKŞEHİR BELEDİYE",
@@ -409,7 +409,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - C Grubuubu": [
+    "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "DİLTAŞ SPOR",
@@ -466,7 +466,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - D Grubuubu": [
+    "Yıldız Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
         "team": "ANADOLU ZİRVE",
@@ -1071,5 +1071,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-09T14:11:46.587362"
+  "volleybox_sync_updated_at": "2026-10-09T17:40:15.890920"
 }
