@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T10:14:54.578013+03:00",
+  "updated_at": "2026-10-09T14:07:02.506869+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -1525,8 +1525,8 @@
         "url": "https://women.volleybox.net/tr/tvf-spor-lisesi-u18-ted-ankara-kolejliler-u18-c402144",
         "host_name": "TVF Spor Lisesi U18",
         "guest_name": "TED Ankara Kolejliler U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
@@ -1942,8 +1942,8 @@
         "url": "https://women.volleybox.net/tr/lbank-u18-temiz-enerji-birligi-spor-kulubu-u18-c402146",
         "host_name": "İlbank U18",
         "guest_name": "Temiz Enerji Birliği Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
@@ -3655,5 +3655,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-09T10:19:29.337139"
+  "volleybox_sync_updated_at": "2026-10-09T14:11:40.982035"
 }

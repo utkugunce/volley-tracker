@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-09T10:14:54.578013+03:00",
+  "updated_at": "2026-10-09T14:07:02.506869+03:00",
   "total_cities": 81,
   "active_cities": 31,
-  "total_matches": 968,
+  "total_matches": 948,
   "cities": [
     {
       "ilid": "1",
@@ -511,9 +511,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {
@@ -710,11 +710,12 @@
       "ilid": "71",
       "name": "Kırıkkale",
       "slug": "kirikkale",
-      "url": "https://kirikkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "url": "kirikkale.voleyboliltemsilciligi.com",
+      "status": "Devre Dışı",
       "matches_count": 0,
       "standings_count": 0,
-      "data_file": null
+      "data_file": null,
+      "excluded": true
     },
     {
       "ilid": "72",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T10:14:54.578013+03:00",
+  "updated_at": "2026-10-09T14:07:02.506869+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -602,8 +602,8 @@
         "url": "https://women.volleybox.net/tr/canakkale-barbarosspor-u16-canakkale-onsekiz-mart-universitesi-spor-kulubu-b-u16-c402983",
         "host_name": "Çanakkale Barbarosspor U16",
         "guest_name": "ÇOMÜ Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "20:00",
         "vb_hall": "18 Mart Spor Salonu",
@@ -920,8 +920,8 @@
         "url": "https://women.volleybox.net/tr/canakkalespor-u16-yesil-bayramic-sk-u16-c402986",
         "host_name": "Çanakkalespor U16",
         "guest_name": "Yeşil Bayramiç SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-07",
         "vb_time": "20:00",
         "vb_hall": "18 Mart Spor Salonu",
@@ -1259,8 +1259,8 @@
         "url": "https://women.volleybox.net/tr/biga-ciceklidedespor-u16-canakkale-onsekiz-mart-universitesi-spor-kulubu-u16-c402991",
         "host_name": "Biga Çiçeklidedespor U16",
         "guest_name": "ÇOMÜ Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-07",
         "vb_time": "20:00",
         "vb_hall": "Biga Kapalı Spor Salonu",
@@ -1546,5 +1546,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-10-09T10:19:30.100149"
+  "volleybox_sync_updated_at": "2026-10-09T14:11:41.704765"
 }

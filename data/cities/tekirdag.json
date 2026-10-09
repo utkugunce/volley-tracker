@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T10:14:54.578013+03:00",
+  "updated_at": "2026-10-09T14:07:02.506869+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -455,18 +455,18 @@
         "guest_name": "Çerkezköy Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-08",
-        "vb_time": "19:00",
-        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+        "vb_date": "2026-10-11",
+        "vb_time": "16:00",
+        "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-10-08",
-          "vb_time": "19:00",
-          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-11 / VB: 2026-10-08) | Saat Değişti (TVF: 16:00 / VB: 19:00) | Salon Değişti (TVF: İsmet İnönü Ss / VB: Tekirdağ Atatürk Spor Salonu)"
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "16:00",
+          "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -953,18 +953,18 @@
         "guest_name": "Çorlu Belediyesi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-07",
+        "vb_date": "2026-10-09",
         "vb_time": "19:30",
-        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+        "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-10-07",
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
           "vb_time": "19:30",
-          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-09 / VB: 2026-10-07) | Salon Değişti (TVF: İsmet İnönü Ss / VB: Tekirdağ Atatürk Spor Salonu)"
+          "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1495,18 +1495,18 @@
         "guest_name": "Tekirdağ Basket Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-07",
+        "vb_date": "2026-10-09",
         "vb_time": "18:00",
-        "vb_hall": "Tekirdağ Atatürk Spor Salonu",
+        "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
-          "vb_date": "2026-10-07",
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
           "vb_time": "18:00",
-          "vb_hall": "Tekirdağ Atatürk Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-09 / VB: 2026-10-07) | Salon Değişti (TVF: İsmet İnönü Ss / VB: Tekirdağ Atatürk Spor Salonu)"
+          "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2158,5 +2158,5 @@
     }
   ],
   "volleybox_synced_matches": 23,
-  "volleybox_sync_updated_at": "2026-10-09T10:19:36.717282"
+  "volleybox_sync_updated_at": "2026-10-09T14:11:47.968749"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T10:14:54.578013+03:00",
+  "updated_at": "2026-10-09T14:07:02.506869+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -288,8 +288,8 @@
         "url": "https://women.volleybox.net/tr/akhisar-spor-kulubu-u18-akhisar-lce-spor-kulubu-u18-c404299",
         "host_name": "Akhisar Spor Kulübü U18",
         "guest_name": "Akhisar İlçe Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-07",
         "vb_time": "20:30",
         "vb_hall": "Akhisar Spor Salonu",
@@ -525,8 +525,8 @@
         "url": "https://women.volleybox.net/tr/akhisargucu-spor-kulubu-u18-sargol-akademi-spor-kulubu-u18-c404302",
         "host_name": "Akhisargücü Spor Kulübü U18",
         "guest_name": "Sarıgöl Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-07",
         "vb_time": "18:30",
         "vb_hall": "Akhisar Spor Salonu",
@@ -646,5 +646,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-09T10:19:35.079263"
+  "volleybox_sync_updated_at": "2026-10-09T14:11:46.622535"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T10:14:54.578013+03:00",
+  "updated_at": "2026-10-09T14:07:02.506869+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -655,9 +655,9 @@
       }
     },
     {
-      "id": "kayseri-20261019-009",
+      "id": "kayseri-20261020-009",
       "city": "Kayseri",
-      "date": "2026-10-19",
+      "date": "2026-10-20",
       "time": "18:00",
       "hall": "Gevher Nesibe S. S.",
       "category": "Genç Kızlar Süper Lig",
@@ -1420,5 +1420,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-09T10:19:34.609367"
+  "volleybox_sync_updated_at": "2026-10-09T14:11:46.155942"
 }

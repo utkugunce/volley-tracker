@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T10:14:54.578013+03:00",
+  "updated_at": "2026-10-09T14:07:02.506869+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -1579,8 +1579,8 @@
         "url": "https://women.volleybox.net/tr/07-mega-spor-kulubu-u16-antalya-ac-koleji-spor-kulubu-u16-c400355",
         "host_name": "07 Mega Spor Kulübü U16",
         "guest_name": "Antalya Açı Koleji Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "18:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
@@ -1624,8 +1624,8 @@
         "url": "https://women.volleybox.net/tr/sistem-egitim-spor-kulubu-u16-kemer-sarp-spor-kulubu-u16-c400358",
         "host_name": "Sistem Eğitim Spor Kulübü U16",
         "guest_name": "Kemer Sarp Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "19:00",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -1669,8 +1669,8 @@
         "url": "https://women.volleybox.net/tr/elit-akdeniz-spor-kulubu-u16-antalya-simsek-gsk-u16-c400357",
         "host_name": "Elit Akdeniz Spor Kulübü U16",
         "guest_name": "Antalya Şimşek GSK U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "20:00",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
@@ -1714,8 +1714,8 @@
         "url": "https://women.volleybox.net/tr/vera-spor-kulubu-u16-nova-spor-kulubu-u16-c400356",
         "host_name": "Vera Spor Kulübü U16",
         "guest_name": "Nova Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-08",
         "vb_time": "20:30",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -2604,5 +2604,5 @@
     }
   ],
   "volleybox_synced_matches": 49,
-  "volleybox_sync_updated_at": "2026-10-09T10:19:29.768207"
+  "volleybox_sync_updated_at": "2026-10-09T14:11:41.405303"
 }
