@@ -46,9 +46,13 @@ const nextConfig = {
     "/api/**/*": ["./data/**/*"],
     "/**/*": ["./data/**/*"],
   },
+  typescript: {
+    // CI ve yerel ortamda 'npm run typecheck' calistirildigi icin Vercel build suresini 35+ saniye kisaltmak amaciyla derleme sirasinda tsc atlanir
+    ignoreBuildErrors: true,
+  },
   experimental: {
     // Lucide ikonlarının tüm paketi yerine yalnızca kullanılan ikonların import edilmesini sağlayarak derleme süresini ve bundle boyutunu düşürür
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: ["lucide-react", "motion"],
   },
   images: {
     // Vercel Image Optimization Transformations kotası (ücretsiz 5K/ay) aşıldığı için dönüşüm kapalı.
