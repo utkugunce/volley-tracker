@@ -166,4 +166,13 @@ with open(os.path.join(PUBLIC_DIR, "apple-icon.svg"), "w", encoding="utf-8") as 
     f.write(svg_content)
 print(f"Saved: {os.path.join(PUBLIC_DIR, 'apple-icon.svg')}")
 
+# E) Also update Next.js App Router segment files in src/app/
+APP_DIR = os.path.join(BASE_DIR, "src", "app")
+if os.path.exists(APP_DIR):
+    import shutil
+    shutil.copyfile(favicon_path, os.path.join(APP_DIR, "favicon.ico"))
+    shutil.copyfile(os.path.join(PUBLIC_DIR, "icon.svg"), os.path.join(APP_DIR, "icon.svg"))
+    shutil.copyfile(os.path.join(PUBLIC_DIR, "apple-icon.svg"), os.path.join(APP_DIR, "apple-icon.svg"))
+    print(f"Updated App Router icons in: {APP_DIR}")
+
 print("All brand assets generated successfully!")
