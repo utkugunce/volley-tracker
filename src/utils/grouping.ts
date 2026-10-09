@@ -306,32 +306,22 @@ export function getLeagueDisplayTitle(title: string, subTitle?: string): string 
 
     const strippedNorm = toBaseNorm(stripped);
     const titleNorm = toBaseNorm(cleanTitle);
-    if (strippedNorm === titleNorm || titleNorm.includes(strippedNorm) || strippedNorm.includes(titleNorm)) {
+    if (strippedNorm === titleNorm || (strippedNorm.length >= 6 && (titleNorm.includes(strippedNorm) || strippedNorm.includes(titleNorm)))) {
       return cleanTitle;
     }
     return `${cleanTitle} · ${stripped}`;
   }
 
-  // Başlığın kendisini tekrarlayan alt başlıklar (örn. "Genç Kızlar Süper Lig" vs "Genç Kızlar Süper Ligi")
-  const titleBase = toBaseNorm(cleanTitle);
-  const subBase = toBaseNorm(cleanSub);
-  if (titleBase === subBase || subBase.includes(titleBase) || titleBase.includes(subBase)) {
+  // Alt başlıktaki grup adını formatla ve standartlaştır (örn. "- A" -> "A Grubu", "Yıldız Kızlar B Grubu" -> "B Grubu")
+  const formattedSub = formatGroupName(cleanSub);
+  if (!formattedSub || formattedSub === "Tek Grup") {
     return cleanTitle;
   }
 
-  // Alt başlıktaki gereksiz lig / kategori öneklerini temizle (örn. "Yıldız Kızlar B Grubu ( Merkez )" -> "B Grubu (Merkez)")
-  const stripPrefixRegex = /^(?:(?:Genç|Yıldız|Küçük|Midi|Mini)\s+(?:Kız(?:lar)?|Erkek(?:ler)?|Kadın(?:lar)?)?\s*(?:Süper\s+Lig[iıİI]?|1\.\s*Lig[iıİI]?)?|(?:Süper\s+Lig|1\.\s*Lig)\s*(?:Genç|Yıldız)?\s*(?:Kız(?:lar)?)?)\s*[-–—:\s]*(?=(?:[A-Z0-9]\.?\s*Gr(?:up|ubu)?|Grup\s+[A-Z0-9]|[A-Z]\s*(?:\(|$|\s*Gr)))/i;
-  let formattedSub = cleanSub.replace(stripPrefixRegex, "").trim();
-  formattedSub = formattedSub.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")").replace(/^[-–—\s]+/, "");
-  if (/^[A-Z]$/i.test(formattedSub)) {
-    formattedSub = `${formattedSub.toUpperCase()} Grubu`;
-  } else if (/^[A-Z]\s+Gr$/i.test(formattedSub) || /\b[A-Z]\s+Gr\b/i.test(formattedSub)) {
-    formattedSub = formattedSub.replace(/\b([A-Z])\s+Gr\b/i, "$1 Grubu");
-  } else if (/^Grup\s+([A-Z0-9]+)/i.test(formattedSub)) {
-    formattedSub = formattedSub.replace(/^Grup\s+([A-Z0-9]+)/i, "$1 Grubu");
-  }
-
-  if (!formattedSub || formattedSub === "Tek Grup") {
+  // Başlığın kendisini tekrarlayan alt başlıklar (örn. "Genç Kızlar Süper Lig" vs "Genç Kızlar Süper Ligi")
+  const titleBase = toBaseNorm(cleanTitle);
+  const subBase = toBaseNorm(formattedSub);
+  if (titleBase === subBase || (subBase.length >= 6 && (titleBase.includes(subBase) || subBase.includes(titleBase)))) {
     return cleanTitle;
   }
 

@@ -104,6 +104,14 @@ def extract_group_name(c_text: str) -> str:
     cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s+Ligi\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^(?:Voleybol\s+)?(?:İl\s+)?Birinciliği\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^[-–—\s]+", "", cleaned).strip()
+    if re.match(r"^[A-Za-zÇĞİÖŞÜçğiöşü]$", cleaned):
+        cleaned = f"{cleaned.upper()} Grubu"
+    elif re.match(r"^[A-Za-zÇĞİÖŞÜçğiöşü]\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I):
+        m = re.match(r"^([A-Za-zÇĞİÖŞÜçğiöşü])", cleaned)
+        cleaned = f"{m.group(1).upper()} Grubu"
+    elif re.match(r"^\d+$", cleaned):
+        cleaned = f"{cleaned}. Grup"
     return cleaned or "1. Grup"
 
 def decode_html(resp: httpx.Response) -> str:
@@ -290,6 +298,18 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
                 return "Ayvalık Gelişim Spor Kulübü U16"
             if "kuzey ege" in rt:
                 return "Kuzey Ege Gelişim Spor Kulübü U16"
+        # Bursa Yıldız Kızlar Süper Lig (U16)
+        if ("bursa" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
+            # C Grubu -> Nilüfer Belediyespor - B U16
+            if ("c grubu" in gs or "- c" in gs or "-c" in gs or gs.endswith(" c")) and "nilufer" in rt:
+                if not any(x in rt for x in ["besevler", "olimpik", "dsi"]):
+                    return "Nilüfer Belediyespor - B U16"
+            # B Grubu -> Bursa Fethiye 1973 Spor Kulübü - B U16
+            if ("b grubu" in gs or "- b" in gs or "-b" in gs or gs.endswith(" b")) and "fethiye" in rt:
+                return "Bursa Fethiye 1973 Spor Kulübü - B U16"
+            # D Grubu -> Bursa Fethiye 1973 Spor Kulübü - A U16
+            if ("d grubu" in gs or "- d" in gs or "-d" in gs or gs.endswith(" d")) and "fethiye" in rt:
+                return "Bursa Fethiye 1973 Spor Kulübü - A U16"
         return None
 
     # Standings üzerinden ham -> çözülmüş/ayrıştırılmış isim haritası

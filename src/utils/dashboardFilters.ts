@@ -247,14 +247,16 @@ export function groupMatchesIntoSections(
 
   filteredMatches.forEach((m) => {
     const matchCity = m.city || dataCity || "Genel";
+    const formattedGroup = formatGroupName(m.group);
+    const hasGroup = formattedGroup !== "Tek Grup" && formattedGroup !== "";
     const groupKey = isAllCities
-      ? `${matchCity}::${m.category} - ${m.group}`
-      : `${m.category} - ${m.group}`;
+      ? `${matchCity}::${m.category}${hasGroup ? ` - ${formattedGroup}` : ""}`
+      : `${m.category}${hasGroup ? ` - ${formattedGroup}` : ""}`;
 
     if (!sections[groupKey]) {
       sections[groupKey] = {
         title: m.category,
-        subTitle: m.group,
+        subTitle: hasGroup ? formattedGroup : "",
         city: matchCity,
         matches: [],
       };

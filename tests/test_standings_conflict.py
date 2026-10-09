@@ -154,6 +154,39 @@ class TestStandingsConflictResolution(unittest.TestCase):
         self.assertEqual(standings["Yıldız Kızlar Süper Lig - 5. Grup"][0]["team"], "TED Ankara Kolejliler - B U16")
         self.assertEqual(matches[1]["home_team"], "TED Ankara Kolejliler - B U16")
 
+    def test_bursa_group_overrides(self):
+        """Bursa Yıldız Kızlar Süper Lig'de C grubundaki Nilüfer Belediyespor -> Nilüfer Belediyespor - B U16,
+        B grubundaki Bursa 1973 Fethiye Spor -> Bursa Fethiye 1973 Spor Kulübü - B U16 olarak çözülmeli."""
+        standings = {
+            "Yıldız Kızlar Süper Lig - - B": [
+                {"rank": 1, "team": "Bursa 1973 Fethiye Spor", "played": 1, "won": 0, "lost": 1, "points": 0}
+            ],
+            "Yıldız Kızlar Süper Lig - - C": [
+                {"rank": 1, "team": "Nilüfer Belediyespor", "played": 1, "won": 1, "lost": 0, "points": 3}
+            ],
+        }
+        matches = [
+            {
+                "category": "Yıldız Kızlar Süper Lig",
+                "group": "B Grubu",
+                "home_team": "Bursa 1973 Fethiye Spor",
+                "away_team": "Doruk Voleybol Spor Kulübü U16",
+            },
+            {
+                "category": "Yıldız Kızlar Süper Lig",
+                "group": "C Grubu",
+                "home_team": "Nilüfer Belediyespor",
+                "away_team": "Mesut Kökel Spor Kulübü U16",
+            },
+        ]
+        apply_volleybox_names(matches, standings, "Bursa")
+
+        self.assertEqual(standings["Yıldız Kızlar Süper Lig - - B"][0]["team"], "Bursa Fethiye 1973 Spor Kulübü - B U16")
+        self.assertEqual(matches[0]["home_team"], "Bursa Fethiye 1973 Spor Kulübü - B U16")
+
+        self.assertEqual(standings["Yıldız Kızlar Süper Lig - - C"][0]["team"], "Nilüfer Belediyespor - B U16")
+        self.assertEqual(matches[1]["home_team"], "Nilüfer Belediyespor - B U16")
+
     def test_live_data_has_zero_standings_conflicts(self):
         """Mevcut data/ dizinindeki tüm şehir dosyalarında 0 takım ismi çakışması olmalı."""
         conflicts = scan_for_standings_conflicts()

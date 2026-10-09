@@ -26,6 +26,14 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       ).toBe("Genç Kızlar 1. Ligi · 1. Grup");
     });
 
+    it("correctly handles raw dash groups like - A, - D, - E (e.g. Bursa)", () => {
+      expect(getLeagueDisplayTitle("Yıldız Kızlar Süper Lig", "- A")).toBe("Yıldız Kızlar Süper Lig · A Grubu");
+      expect(getLeagueDisplayTitle("Yıldız Kızlar Süper Lig", "- B")).toBe("Yıldız Kızlar Süper Lig · B Grubu");
+      expect(getLeagueDisplayTitle("Yıldız Kızlar Süper Lig", "- C")).toBe("Yıldız Kızlar Süper Lig · C Grubu");
+      expect(getLeagueDisplayTitle("Yıldız Kızlar Süper Lig", "- D")).toBe("Yıldız Kızlar Süper Lig · D Grubu");
+      expect(getLeagueDisplayTitle("Yıldız Kızlar Süper Lig", "- E")).toBe("Yıldız Kızlar Süper Lig · E Grubu");
+    });
+
     it("handles missing subtitle gracefully", () => {
       expect(getLeagueDisplayTitle("Genç Kızlar Süper Lig", "")).toBe("Genç Kızlar Süper Lig");
       expect(getLeagueDisplayTitle("Genç Kızlar Süper Lig", undefined)).toBe("Genç Kızlar Süper Lig");

@@ -32,6 +32,8 @@ describe("User Provided Volleybox Team Mappings", () => {
     { name: "SEYDİŞEHİR CİMNASTİK", city: "Konya", category: "Genç Kızlar Süper Lig", expectedId: "t42727" },
     { name: "TÜRMAK SPOR", city: "Konya", category: "Genç Kızlar Süper Lig", expectedId: "t48579" },
     { name: "VAKIF AKADEMİ", city: "Konya", category: "Genç Kızlar Süper Lig", expectedId: "t42729" },
+    { name: "Nilüfer Belediyespor - B U16", city: "Bursa", category: "Yıldız Kızlar Süper Lig", expectedId: "t2202" },
+    { name: "Bursa Fethiye 1973 Spor Kulübü - B U16", city: "Bursa", category: "Yıldız Kızlar Süper Lig", expectedId: "t54290" },
   ];
 
   for (const tc of testCases) {

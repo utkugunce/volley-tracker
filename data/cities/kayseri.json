@@ -29,7 +29,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - - A": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "KVK Voleybol Kulübü - B U18",
@@ -75,7 +75,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - - B": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Evola Spor Kulübü U18",
@@ -121,7 +121,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - A": [
+    "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
@@ -178,7 +178,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - B": [
+    "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "KVK Voleybol Kulübü U16",
@@ -235,7 +235,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - C": [
+    "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Kayseri Cimnastik Spor Kulübü - C U16",
@@ -292,7 +292,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - D": [
+    "Yıldız Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
         "team": "Kayseri Atletik Spor Kulübü",
@@ -349,7 +349,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Kayseri Cimnastik Spor Kulübü U18",
       "away_team": "KVK Voleybol Kulübü - B U18",
@@ -394,7 +394,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "2",
       "home_team": "Kayseri Atletik Spor Kulübü U18",
       "away_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
@@ -441,7 +441,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "3",
       "home_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
       "away_team": "Kayseri Cimnastik Spor Kulübü U18",
@@ -475,7 +475,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "4",
       "home_team": "Kayseri Atletik Spor Kulübü U18",
       "away_team": "KVK Voleybol Kulübü - B U18",
@@ -509,7 +509,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "5",
       "home_team": "Kayseri Atletik Spor Kulübü U18",
       "away_team": "Kayseri Cimnastik Spor Kulübü U18",
@@ -543,7 +543,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "1",
       "home_team": "Çınar Akademi Spor Kulübü U18",
       "away_team": "Evola Spor Kulübü U18",
@@ -588,7 +588,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "2",
       "home_team": "Erciyes Aslan Spor Kulübü",
       "away_team": "Çınar Akademi Spor Kulübü U18",
@@ -629,7 +629,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "3",
       "home_team": "Kayseri Voleybol Kulübü - A",
       "away_team": "Erciyes Aslan Spor Kulübü",
@@ -663,7 +663,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "4",
       "home_team": "Evola Spor Kulübü U18",
       "away_team": "Kayseri Voleybol Kulübü - A",
@@ -697,7 +697,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Kayseri Cimnastik Spor Kulübü - B U16",
       "away_team": "Kayseri Bahçelievler Spor Kulübü U16",
@@ -742,7 +742,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "2",
       "home_team": "Erciyes Aslan Spor Kulübü - B U16",
       "away_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
@@ -787,7 +787,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "3",
       "home_team": "Develi GSB Spor Kulübü U16",
       "away_team": "Erciyes Aslan Spor Kulübü - B U16",
@@ -828,7 +828,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "4",
       "home_team": "Kayseri Bahçelievler Spor Kulübü U16",
       "away_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
@@ -862,7 +862,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "5",
       "home_team": "Kayseri Cimnastik Spor Kulübü - B U16",
       "away_team": "Develi GSB Spor Kulübü U16",
@@ -896,7 +896,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "6",
       "home_team": "Develi GSB Spor Kulübü U16",
       "away_team": "Kayseri Bahçelievler Spor Kulübü U16",
@@ -930,7 +930,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "1",
       "home_team": "Çınar Akademi Spor Kulübü - B U16",
       "away_team": "Evola Spor Kulübü - B U16",
@@ -977,7 +977,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "2",
       "home_team": "KVK Voleybol Kulübü U16",
       "away_team": "Altıyıldız Spor Kulübü U16",
@@ -1022,7 +1022,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "3",
       "home_team": "Altıyıldız Spor Kulübü U16",
       "away_team": "Çınar Akademi Spor Kulübü - B U16",
@@ -1056,7 +1056,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "4",
       "home_team": "Çınar Akademi Spor Kulübü - B U16",
       "away_team": "Tomarza Belediye Spor Kulübü",
@@ -1090,7 +1090,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "5",
       "home_team": "Evola Spor Kulübü - B U16",
       "away_team": "Altıyıldız Spor Kulübü U16",
@@ -1124,7 +1124,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "6",
       "home_team": "Tomarza Belediye Spor Kulübü",
       "away_team": "KVK Voleybol Kulübü U16",
@@ -1158,7 +1158,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "1",
       "home_team": "Çınar Akademi Spor Kulübü U16",
       "away_team": "Evola Spor Kulübü U16",
@@ -1204,7 +1204,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "2",
       "home_team": "Erciyes Aslan Spor Kulübü - A",
       "away_team": "Kayseri Cimnastik Spor Kulübü - C U16",
@@ -1250,7 +1250,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "3",
       "home_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
       "away_team": "Erciyes Aslan Spor Kulübü - A",
@@ -1291,7 +1291,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "4",
       "home_team": "Evola Spor Kulübü U16",
       "away_team": "Kayseri Cimnastik Spor Kulübü - C U16",
@@ -1325,7 +1325,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "5",
       "home_team": "Erciyes Aslan Spor Kulübü - A",
       "away_team": "Çınar Akademi Spor Kulübü U16",
@@ -1359,7 +1359,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "1",
       "home_team": "Kayseri Cimnastik Spor Kulübü U16",
       "away_team": "Kayseri Atletik Spor Kulübü",
@@ -1393,7 +1393,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "2",
       "home_team": "Kayseri Voleybol Kulübü - B",
       "away_team": "Kayseri Doğa Koleji S.K.",

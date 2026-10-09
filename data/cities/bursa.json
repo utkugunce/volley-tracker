@@ -32,7 +32,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - - A": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "Bursa Koç Spor Kulübü - B U18",
@@ -89,7 +89,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - - B": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Eker Spor Kulübü U16",
@@ -146,7 +146,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - - C": [
+    "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Bursa Koç Spor Kulübü - A U18",
@@ -203,7 +203,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - - D": [
+    "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
         "team": "Nilüfer Belediyespor Eker",
@@ -249,7 +249,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - A": [
+    "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "Aktif Nesil Spor Kulübü U16",
@@ -317,7 +317,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - B": [
+    "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Eker Spor Kulübü - B U16",
@@ -385,7 +385,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - C": [
+    "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Bursa Osmangazi Belediye Spor",
@@ -399,7 +399,7 @@
       },
       {
         "rank": 2,
-        "team": "Nilüfer Belediyespor Eker",
+        "team": "Nilüfer Belediyespor - B U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -453,7 +453,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - D": [
+    "Yıldız Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
         "team": "DSİ Nilüfer Spor Kulübü U16",
@@ -510,7 +510,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - - E": [
+    "Yıldız Kızlar Süper Lig - E Grubu": [
       {
         "rank": 1,
         "team": "Kestel Belediye 1952 Spor Kulübü U16",
@@ -578,7 +578,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Bursa Fethiye 1973 Spor Kulübü U18",
       "away_team": "23 Nisan Spor Kulübü U18",
@@ -624,7 +624,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "2",
       "home_team": "Bursa Koç Spor Kulübü - B U18",
       "away_team": "Bursa Ayyıldız Spor Kulübü U18",
@@ -669,7 +669,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "1",
       "home_team": "MG Spor Kulübü U18",
       "away_team": "Güner Karakaya Spor Kulübü U18",
@@ -714,7 +714,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "2",
       "home_team": "Eker Spor Kulübü U16",
       "away_team": "Kestel Belediye 1952 Spor Kulübü U18",
@@ -759,7 +759,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "1",
       "home_team": "Bursa Koç Spor Kulübü - A U18",
       "away_team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
@@ -804,7 +804,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "2",
       "home_team": "Bursa Büyükşehir Belediyespor U18",
       "away_team": "Nilüfer Olimpik Spor Kulübü U18",
@@ -845,7 +845,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "1",
       "home_team": "Nilüfer Belediyespor Eker",
       "away_team": "Osmangazi Belediyespor U18",
@@ -890,7 +890,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "2",
       "home_team": "Doruk Voleybol Spor Kulübü U18",
       "away_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
@@ -931,7 +931,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Bursa Koç Spor Kulübü U16",
       "away_team": "Eker Spor Kulübü - A U16",
@@ -976,7 +976,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "2",
       "home_team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
       "away_team": "Aktif Nesil Spor Kulübü U16",
@@ -1021,7 +1021,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "3",
       "home_team": "MG Spor Kulübü U16",
       "away_team": "Güner Karakaya Spor Kulübü U16",
@@ -1068,7 +1068,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "4",
       "home_team": "Güner Karakaya Spor Kulübü U16",
       "away_team": "Eker Spor Kulübü - A U16",
@@ -1102,7 +1102,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "5",
       "home_team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
       "away_team": "MG Spor Kulübü U16",
@@ -1136,7 +1136,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- A",
+      "group": "A Grubu",
       "match_no": "6",
       "home_team": "Aktif Nesil Spor Kulübü U16",
       "away_team": "Bursa Koç Spor Kulübü U16",
@@ -1170,7 +1170,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "1",
       "home_team": "Bursa Genç Saray Spor Kulübü U16",
       "away_team": "23 Nisan Spor Kulübü U16",
@@ -1215,7 +1215,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "2",
       "home_team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
       "away_team": "Doruk Voleybol Spor Kulübü U16",
@@ -1232,7 +1232,7 @@
         "synced": true,
         "match_id": "401043",
         "url": "https://women.volleybox.net/tr/bursa-fethiye-1973-spor-kulubu-u16-doruk-voleybol-spor-kulubu-u16-c401043",
-        "host_name": "Bursa Fethiye 1973 Spor Kulübü U16",
+        "host_name": "Bursa Fethiye 1973 Spor Kulübü - B U16",
         "guest_name": "Doruk Voleybol Spor Kulübü U16",
         "score": "0 - 3",
         "has_score": true,
@@ -1260,7 +1260,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "3",
       "home_team": "Eker Spor Kulübü - B U16",
       "away_team": "Öncü Yıldız Spor Kulübü U16",
@@ -1305,7 +1305,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "4",
       "home_team": "Doruk Voleybol Spor Kulübü U16",
       "away_team": "Eker Spor Kulübü - B U16",
@@ -1339,7 +1339,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "5",
       "home_team": "23 Nisan Spor Kulübü U16",
       "away_team": "Öncü Yıldız Spor Kulübü U16",
@@ -1373,7 +1373,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- B",
+      "group": "B Grubu",
       "match_no": "6",
       "home_team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
       "away_team": "Bursa Genç Saray Spor Kulübü U16",
@@ -1407,7 +1407,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "1",
       "home_team": "Bursa Osmangazi Belediye Spor",
       "away_team": "Bursa Ayyıldız Spor Kulübü U16",
@@ -1452,9 +1452,9 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "2",
-      "home_team": "Nilüfer Belediyespor Eker",
+      "home_team": "Nilüfer Belediyespor - B U16",
       "away_team": "Mesut Kökel Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -1497,7 +1497,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "3",
       "home_team": "Hk Volleyball Academy Spor Kulübü U16",
       "away_team": "Oksijen Spor Kulübü U16",
@@ -1543,7 +1543,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "4",
       "home_team": "Hk Volleyball Academy Spor Kulübü U16",
       "away_team": "Bursa Osmangazi Belediye Spor",
@@ -1577,7 +1577,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "5",
       "home_team": "Bursa Ayyıldız Spor Kulübü U16",
       "away_team": "Mesut Kökel Spor Kulübü U16",
@@ -1611,10 +1611,10 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- C",
+      "group": "C Grubu",
       "match_no": "6",
       "home_team": "Oksijen Spor Kulübü U16",
-      "away_team": "Nilüfer Belediyespor Eker",
+      "away_team": "Nilüfer Belediyespor - B U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1645,7 +1645,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "1",
       "home_team": "Nilüfer Beşevler Spor Kulübü U16",
       "away_team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
@@ -1690,7 +1690,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "2",
       "home_team": "DSİ Nilüfer Spor Kulübü U16",
       "away_team": "Nilüfer Olimpik Spor Kulübü U16",
@@ -1735,7 +1735,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "3",
       "home_team": "Akademi16 Spor Kulübü U16",
       "away_team": "Nilüfer Beşevler Spor Kulübü U16",
@@ -1769,7 +1769,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- D",
+      "group": "D Grubu",
       "match_no": "4",
       "home_team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
       "away_team": "DSİ Nilüfer Spor Kulübü U16",
@@ -1803,7 +1803,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- E",
+      "group": "E Grubu",
       "match_no": "1",
       "home_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
       "away_team": "Kestel Belediye 1952 Spor Kulübü U16",
@@ -1848,7 +1848,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- E",
+      "group": "E Grubu",
       "match_no": "2",
       "home_team": "Bursa Büyükşehir Belediyespor U16",
       "away_team": "Nilüfer Belediyespor Eker (A)",
@@ -1895,7 +1895,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- E",
+      "group": "E Grubu",
       "match_no": "3",
       "home_team": "Kestel Belediye 1952 Spor Kulübü U16",
       "away_team": "Bursa Büyükşehir Belediyespor U16",
@@ -1929,7 +1929,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "- E",
+      "group": "E Grubu",
       "match_no": "4",
       "home_team": "Hürriyet Spor Kulübü U16",
       "away_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",

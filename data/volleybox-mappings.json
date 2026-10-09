@@ -2558,7 +2558,7 @@
     {
       "internal_name": "Nilüfer Belediye Spor Kulübü (B)",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Nilüfer Belediyespor Eker",
+      "matched_as": "Nilüfer Belediyespor - B U16",
       "volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "age_category": "U16",
       "confidence": "club_level_only",
@@ -2567,9 +2567,12 @@
       "local_logo": "/logos/nilufer-belediyespor-t2202.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_17398862933KgOQ.png",
       "aliases": [
-        "Nilüfer Belediye Spor Kulübü",
-        "Nilüfer Belediyespor",
-        "Nilüfer Belediyesi"
+        "Nilüfer Belediye Spor Kulübü (B)",
+        "Nilüfer Belediyespor (B)",
+        "Nilüfer Belediyesi (B)",
+        "Nilüfer Belediye Spor Kulübü - B",
+        "Nilüfer Belediyespor - B",
+        "Nilüfer Belediyespor - B U16"
       ]
     },
     {
@@ -8454,16 +8457,18 @@
       "city_slug": "bursa"
     },
     {
-      "internal_name": "Nilüfer Belediye Spor Kulübü",
+      "internal_name": "Nilüfer Belediye Spor Kulübü - B",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Nilüfer Belediyespor Eker - B",
+      "matched_as": "Nilüfer Belediyespor - B U16",
       "aliases": [
-        "Nilüfer Belediye Spor Kulübü",
-        "Nilüfer Belediyespor",
-        "Nilüfer Belediye Spor Kulübü - B U16",
+        "Nilüfer Belediye Spor Kulübü - B",
         "Nilüfer Belediyespor - B",
+        "Nilüfer Belediye Spor Kulübü - B U16",
+        "Nilüfer Belediyespor - B U16",
+        "Nilüfer Belediyespor Eker - B",
         "Nilüfer Belediyesi - B",
-        "Nilüfer Belediye Spor Kulübü - B"
+        "Nilüfer Belediye Spor Kulübü (B)",
+        "Nilüfer Belediyespor (B)"
       ],
       "age_category": "U16",
       "confidence": "verified",
@@ -9709,14 +9714,19 @@
       "internal_category": "Yıldız Kızlar Süper Lig",
       "city": "Bursa",
       "city_slug": "bursa",
-      "matched_as": "Bursa Fethiye 1973 Spor Kulübü U16",
-      "volleybox_url": "https://women.volleybox.net/bursa-fethiye-1973-spor-kulubu-u16-t44605",
+      "matched_as": "Bursa Fethiye 1973 Spor Kulübü - B U16",
+      "volleybox_url": "https://women.volleybox.net/bursa-fethiye-1973-spor-kulubu-u16-t54290",
       "age_category": "U16",
       "confidence": "verified",
+      "local_logo": "/logos/bursa-fethiye-1973-spor-kulubu-u16-t54290.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17891275462mqoP.png",
       "aliases": [
-        "Bursa Fethiye 1973 Spor Kulübü",
-        "Bursa Fethiye 1973 Spor Kulübü U16",
-        "Bursa Fethiye 1973 Spor Kulübü - B U16"
+        "Bursa Fethiye 1973 Spor Kulübü - B",
+        "Bursa Fethiye 1973 Spor Kulübü - B U16",
+        "Bursa 1973 Fethiye Spor - B",
+        "Bursa 1973 Fethiye Spor - B U16",
+        "Bursa Fethiye 1973 Spor Kulübü (B)",
+        "Bursa 1973 Fethiye Spor (B)"
       ],
       "verified_at": "2026-09-23"
     },
