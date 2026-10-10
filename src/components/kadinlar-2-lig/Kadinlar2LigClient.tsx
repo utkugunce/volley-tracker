@@ -29,8 +29,7 @@ import { Kadinlar2LigHomePortal } from "./Kadinlar2LigHomePortal";
 import { Kadinlar2LigCompare } from "./Kadinlar2LigCompare";
 import { Kadinlar2LigSidebar } from "./Kadinlar2LigSidebar";
 import { AppShell } from "@/components/layout/AppShell";
-import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
-import { convertK2MatchToMatch, getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
+import { getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
 import {
   expandKadinlar2LigData,
   type Kadinlar2LigCompactData,
@@ -69,10 +68,6 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     (selectedGroup === "all"
       ? data.gruplar[0]
       : data.gruplar.find((g) => g.grup_no === selectedGroup)) || data.gruplar[0];
-  const standardMatches = useMemo(
-    () => (data.tum_maclar || []).map(convertK2MatchToMatch),
-    [data.tum_maclar]
-  );
 
   // Bugün tarihi — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
   const [todayStr, setTodayStr] = useState("");
@@ -220,7 +215,6 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           onSelectTab={handleSelectTab}
         />
       }
-      rightSidebar={<MatchInspectorPanel match={selectedMatch} allMatches={standardMatches} />}
       footer={
         <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between">
           <span className="font-semibold text-slate-400">TVF Uzman Posta Kadınlar Voleybol 2. Ligi</span>
