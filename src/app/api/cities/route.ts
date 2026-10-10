@@ -37,7 +37,8 @@ export async function GET() {
 
     return NextResponse.json(sanitizedData, {
       headers: {
-        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=1800",
+        // Veri yalnızca deploy ile değişir; uzun CDN önbelleği Fast Origin Transfer kotasını korur.
+        "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
       },
     });
   } catch (error) {
