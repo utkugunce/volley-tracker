@@ -367,9 +367,9 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
           </div>
 
           {/* Takımlar ve Skor Alanı */}
-          <div className="grid grid-cols-5 items-center gap-2 pt-1">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 pt-1">
             {/* Ev Sahibi */}
-            <div className="col-span-2 flex flex-col items-center text-center space-y-1.5">
+            <div className="flex flex-col items-center text-center space-y-1.5 min-w-0">
               <TeamBadge name={match.home_team} logoUrl={homeLogo} size="md" />
               <Link prefetch={false}
                 href={`/takim/${homeSlug}`}
@@ -383,10 +383,10 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             </div>
 
             {/* Skor / VS */}
-            <div className="col-span-1 flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center shrink-0">
               {isFinished || isLive ? (
-                <div className="px-2.5 py-1 rounded-xl bg-canvas border border-line shadow-inner text-center font-mono font-scoreboard tabular-nums">
-                  <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                <div className="px-3 py-1.5 rounded-xl bg-canvas border border-line shadow-inner text-center font-mono font-scoreboard tabular-nums whitespace-nowrap">
+                  <span className="text-xl sm:text-2xl font-black text-white tracking-tight whitespace-nowrap">
                     {homeScore} : {awayScore}
                   </span>
                 </div>
@@ -398,7 +398,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             </div>
 
             {/* Deplasman */}
-            <div className="col-span-2 flex flex-col items-center text-center space-y-1.5">
+            <div className="flex flex-col items-center text-center space-y-1.5 min-w-0">
               <TeamBadge name={match.away_team} logoUrl={awayLogo} size="md" />
               <Link prefetch={false}
                 href={`/takim/${awaySlug}`}

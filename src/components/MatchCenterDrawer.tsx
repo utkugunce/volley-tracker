@@ -169,9 +169,9 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
               </div>
 
               {/* Takımlar ve Skor */}
-              <div className="grid grid-cols-5 items-center gap-2">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3">
                 {/* Ev Sahibi Takım */}
-                <div className="col-span-2 flex flex-col items-center text-center space-y-2">
+                <div className="flex flex-col items-center text-center space-y-2 min-w-0">
                   <TeamBadge name={match.home_team} logoUrl={homeLogo} size="lg" />
                   <Link prefetch={false}
                     href={`/takim/${homeSlug}`}
@@ -183,11 +183,11 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                 </div>
 
                 {/* Skor / VS */}
-                <div className="col-span-1 flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center shrink-0">
                   {isFinished ? (
                     <div className="flex flex-col items-center">
-                      <div className="px-3 py-1.5 rounded-2xl bg-slate-950/90 border border-slate-800 shadow-lg text-center font-mono font-scoreboard tabular-nums">
-                        <span className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                      <div className="px-3.5 py-1.5 rounded-2xl bg-slate-950/90 border border-slate-800 shadow-lg text-center font-mono font-scoreboard tabular-nums whitespace-nowrap">
+                        <span className="text-2xl sm:text-3xl font-black text-white tracking-tight whitespace-nowrap">
                           {match.home_score ?? 0} : {match.away_score ?? 0}
                         </span>
                       </div>
@@ -211,7 +211,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                 </div>
 
                 {/* Deplasman Takımı */}
-                <div className="col-span-2 flex flex-col items-center text-center space-y-2">
+                <div className="flex flex-col items-center text-center space-y-2 min-w-0">
                   <TeamBadge name={match.away_team} logoUrl={awayLogo} size="lg" />
                   <Link prefetch={false}
                     href={`/takim/${awaySlug}`}
