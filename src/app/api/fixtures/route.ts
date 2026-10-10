@@ -267,7 +267,9 @@ export async function GET(request: Request) {
     if (refresh === "1") {
       headers["Cache-Control"] = "no-store, no-cache, must-revalidate";
     } else {
-      headers["Cache-Control"] = "public, s-maxage=60, stale-while-revalidate=300";
+      // Veri yalnızca deploy ile değişir (data/*.json derleme paketinden okunur) ve her deploy CDN önbelleğini
+      // sıfırlar; kısa s-maxage yalnızca gereksiz Fast Origin Transfer üretiyordu.
+      headers["Cache-Control"] = "public, s-maxage=86400, stale-while-revalidate=604800";
     }
 
     return NextResponse.json(
