@@ -38,4 +38,13 @@ describe("Fixtures API Route", () => {
       process.env.ADMIN_TOKEN = originalAdmin;
     }
   });
+
+  it("keeps a short CDN TTL because fixtures come live from Supabase", async () => {
+    const req = new Request("http://localhost:3000/api/fixtures?city=istanbul");
+    const res = await GET(req);
+    const cacheControl = res.headers.get("Cache-Control") || "";
+    const sMaxAge = Number(/s-maxage=(\d+)/.exec(cacheControl)?.[1]);
+    expect(sMaxAge).toBeGreaterThan(0);
+    expect(sMaxAge).toBeLessThanOrEqual(300);
+  });
 });

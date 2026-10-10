@@ -267,9 +267,10 @@ export async function GET(request: Request) {
     if (refresh === "1") {
       headers["Cache-Control"] = "no-store, no-cache, must-revalidate";
     } else {
-      // Veri yalnızca deploy ile değişir (data/*.json derleme paketinden okunur) ve her deploy CDN önbelleğini
-      // sıfırlar; kısa s-maxage yalnızca gereksiz Fast Origin Transfer üretiyordu.
-      headers["Cache-Control"] = "public, s-maxage=86400, stale-while-revalidate=604800";
+      // Bu rota maçları ve puan durumunu deploy beklemeden Supabase'den (ve admin override'larından) okur,
+      // bu yüzden 24 saatlik CDN önbelleği deploy'suz importları ve elle düzeltmeleri gizliyordu.
+      // 5 dakikalık s-maxage skorları güncel tutar; eski 60 sn'ye göre origin trafiği yine ~5 kat azdır.
+      headers["Cache-Control"] = "public, s-maxage=300, stale-while-revalidate=600";
     }
 
     return NextResponse.json(
