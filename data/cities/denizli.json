@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T22:42:40.809947+03:00",
+  "updated_at": "2026-10-10T00:42:17.832018+00:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -133,17 +133,6 @@
     "Yıldız Kızlar Süper Lig - Gruplar": [
       {
         "rank": 1,
-        "team": "Tutku Spor Kulübü",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
         "team": "Damla Spor Kulübü",
         "played": 1,
         "won": 1,
@@ -154,8 +143,19 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 2,
         "team": "Hierapolis Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Denizli Büyükşehir Belediye S.K.",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -177,6 +177,17 @@
       },
       {
         "rank": 5,
+        "team": "Tutku Spor Kulübü",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Denizli Voleybol Spor Kulübü",
         "played": 1,
         "won": 0,
@@ -187,7 +198,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Denizli Gençlik Ve Spor İl Müdürlüğü S.K.",
         "played": 1,
         "won": 0,
@@ -198,7 +209,7 @@
         "form": []
       },
       {
-        "rank": 7,
+        "rank": 8,
         "team": "Merkez Akademi Spor Kulübü",
         "played": 1,
         "won": 0,
@@ -209,7 +220,7 @@
         "form": []
       },
       {
-        "rank": 8,
+        "rank": 9,
         "team": "Cavidil Spor Kulübü",
         "played": 1,
         "won": 0,
@@ -220,19 +231,8 @@
         "form": []
       },
       {
-        "rank": 9,
-        "team": "Anadolu Pars Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 10,
-        "team": "Denizli Büyükşehir Belediye S.K.",
+        "team": "Anadolu Pars Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -724,11 +724,15 @@
       "match_no": "5",
       "home_team": "Tutku Spor Kulübü",
       "away_team": "Denizli Büyükşehir Belediye S.K.",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "21-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -917,5 +921,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-09T22:47:21.550039"
+  "volleybox_sync_updated_at": "2026-10-10T00:44:07.822881"
 }

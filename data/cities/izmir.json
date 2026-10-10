@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T22:42:40.809947+03:00",
+  "updated_at": "2026-10-10T00:42:17.832018+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -240,24 +240,24 @@
       },
       {
         "rank": 4,
-        "team": "Dost Spor U18",
-        "played": 2,
-        "won": 0,
+        "team": "İzmirspor U18",
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 5,
-        "team": "İzmirspor U18",
-        "played": 2,
+        "team": "Dost Spor U18",
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -2485,11 +2485,16 @@
       "match_no": "8",
       "home_team": "İzmirspor U18",
       "away_team": "Dost Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "24-26",
+        "25-17",
+        "25-23",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402742",
@@ -6650,5 +6655,5 @@
     }
   ],
   "volleybox_synced_matches": 112,
-  "volleybox_sync_updated_at": "2026-10-09T22:47:23.833482"
+  "volleybox_sync_updated_at": "2026-10-10T00:44:07.809014"
 }
