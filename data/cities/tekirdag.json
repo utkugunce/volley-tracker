@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T11:24:37.698244+03:00",
+  "updated_at": "2026-10-10T18:25:56.016262+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -92,17 +92,28 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
-        "played": 2,
-        "won": 2,
+        "team": "Çorlu Belediyesi Spor Kulübü U16",
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Kapaklı Site Spor - B U16",
         "played": 2,
         "won": 2,
@@ -113,25 +124,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Çorlu Belediyesi Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Süleymanpaşa Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -182,6 +182,17 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Tekirdağ Basket Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Çağdaş Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -189,17 +200,6 @@
         "points": 6,
         "sets_won": 6,
         "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Tekirdağ Basket Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -215,6 +215,17 @@
       },
       {
         "rank": 4,
+        "team": "Süleymanpaşa Spor Kulübü - B U16",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 5,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Çorlu Yıldırım Spor Kulübü - B U16",
         "played": 2,
         "won": 1,
@@ -225,7 +236,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Tekirdağ Marmara Spor Kulübü U16",
         "played": 2,
         "won": 0,
@@ -236,49 +247,38 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Süleymanpaşa Spor Kulübü - B U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 7,
         "team": "Muratlı Yıldız 2012 Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "Çorlu GSB Spor Kulübü U16",
-        "played": 2,
-        "won": 2,
+        "team": "Kapaklı Site Spor U16",
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kapaklı Site Spor U16",
-        "played": 2,
+        "team": "Çorlu GSB Spor Kulübü U16",
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -940,11 +940,15 @@
       "match_no": "8",
       "home_team": "Süleymanpaşa Spor Kulübü U16",
       "away_team": "Çorlu Belediyesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "18-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403049",
@@ -1015,11 +1019,15 @@
       "match_no": "10",
       "home_team": "Çorlu Belediyesi Spor Kulübü U16",
       "away_team": "Tekirdağ Voleybol Akademi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-14",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1482,11 +1490,16 @@
       "match_no": "6",
       "home_team": "Süleymanpaşa Spor Kulübü - B U16",
       "away_team": "Tekirdağ Basket Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "25-21",
+        "16-25",
+        "10-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403056",
@@ -1523,11 +1536,15 @@
       "match_no": "7",
       "home_team": "Muratlı Yıldız 2012 Spor Kulübü U16",
       "away_team": "Süleymanpaşa Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "12-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1999,11 +2016,15 @@
       "match_no": "8",
       "home_team": "Kapaklı Site Spor U16",
       "away_team": "Çorlu GSB Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-17",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2158,5 +2179,5 @@
     }
   ],
   "volleybox_synced_matches": 23,
-  "volleybox_sync_updated_at": "2026-10-10T11:29:22.490981"
+  "volleybox_sync_updated_at": "2026-10-10T18:27:43.029358"
 }

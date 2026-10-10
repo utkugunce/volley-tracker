@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-10T11:24:37.698244+03:00",
+  "updated_at": "2026-10-10T18:25:56.016262+00:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 48,
+  "total_matches": 52,
   "source": "https://antalya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -830,7 +830,143 @@
       }
     },
     {
-      "id": "antalya-20260920-010",
+      "id": "antalya-20261101-010",
+      "city": "Antalya",
+      "date": "2026-11-01",
+      "time": "11:30",
+      "hall": "Alanya Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "10",
+      "home_team": "Alanya MASK Spor Kulübü U18",
+      "away_team": "Antalya 1907 Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "antalya-20261101-011",
+      "city": "Antalya",
+      "date": "2026-11-01",
+      "time": "12:30",
+      "hall": "Kepez Ç.A.S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "11",
+      "home_team": "Luna Spor Kulübü U18",
+      "away_team": "Alanya MASK Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "antalya-20261103-012",
+      "city": "Antalya",
+      "date": "2026-11-03",
+      "time": "18:30",
+      "hall": "Kepez Ç.A.S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "12",
+      "home_team": "Akdeniz Bilgi Spor Kulübü U18",
+      "away_team": "07 Zenit Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "antalya-20261110-013",
+      "city": "Antalya",
+      "date": "2026-11-10",
+      "time": "19:00",
+      "hall": "Döşemealtı S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "13",
+      "home_team": "Luna Spor Kulübü U18",
+      "away_team": "Antalya 1907 Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "antalya-20260920-014",
       "city": "Antalya",
       "date": "2026-09-20",
       "time": "15:00",
@@ -875,7 +1011,7 @@
       }
     },
     {
-      "id": "antalya-20260924-011",
+      "id": "antalya-20260924-015",
       "city": "Antalya",
       "date": "2026-09-24",
       "time": "19:00",
@@ -920,7 +1056,7 @@
       }
     },
     {
-      "id": "antalya-20260924-012",
+      "id": "antalya-20260924-016",
       "city": "Antalya",
       "date": "2026-09-24",
       "time": "20:30",
@@ -967,7 +1103,7 @@
       }
     },
     {
-      "id": "antalya-20260926-013",
+      "id": "antalya-20260926-017",
       "city": "Antalya",
       "date": "2026-09-26",
       "time": "13:30",
@@ -1012,7 +1148,7 @@
       }
     },
     {
-      "id": "antalya-20260927-014",
+      "id": "antalya-20260927-018",
       "city": "Antalya",
       "date": "2026-09-27",
       "time": "12:00",
@@ -1057,7 +1193,7 @@
       }
     },
     {
-      "id": "antalya-20261001-015",
+      "id": "antalya-20261001-019",
       "city": "Antalya",
       "date": "2026-10-01",
       "time": "18:30",
@@ -1103,7 +1239,7 @@
       }
     },
     {
-      "id": "antalya-20261004-016",
+      "id": "antalya-20261004-020",
       "city": "Antalya",
       "date": "2026-10-04",
       "time": "11:00",
@@ -1150,7 +1286,7 @@
       }
     },
     {
-      "id": "antalya-20260922-017",
+      "id": "antalya-20260922-021",
       "city": "Antalya",
       "date": "2026-09-22",
       "time": "18:30",
@@ -1195,7 +1331,7 @@
       }
     },
     {
-      "id": "antalya-20260922-018",
+      "id": "antalya-20260922-022",
       "city": "Antalya",
       "date": "2026-09-22",
       "time": "19:00",
@@ -1240,7 +1376,7 @@
       }
     },
     {
-      "id": "antalya-20260922-019",
+      "id": "antalya-20260922-023",
       "city": "Antalya",
       "date": "2026-09-22",
       "time": "20:00",
@@ -1285,7 +1421,7 @@
       }
     },
     {
-      "id": "antalya-20260922-020",
+      "id": "antalya-20260922-024",
       "city": "Antalya",
       "date": "2026-09-22",
       "time": "20:30",
@@ -1330,7 +1466,7 @@
       }
     },
     {
-      "id": "antalya-20260926-021",
+      "id": "antalya-20260926-025",
       "city": "Antalya",
       "date": "2026-09-26",
       "time": "13:00",
@@ -1375,7 +1511,7 @@
       }
     },
     {
-      "id": "antalya-20260926-022",
+      "id": "antalya-20260926-026",
       "city": "Antalya",
       "date": "2026-09-26",
       "time": "14:30",
@@ -1421,7 +1557,7 @@
       }
     },
     {
-      "id": "antalya-20260929-023",
+      "id": "antalya-20260929-027",
       "city": "Antalya",
       "date": "2026-09-29",
       "time": "18:30",
@@ -1466,7 +1602,7 @@
       }
     },
     {
-      "id": "antalya-20260929-024",
+      "id": "antalya-20260929-028",
       "city": "Antalya",
       "date": "2026-09-29",
       "time": "19:00",
@@ -1511,7 +1647,7 @@
       }
     },
     {
-      "id": "antalya-20261008-025",
+      "id": "antalya-20261008-029",
       "city": "Antalya",
       "date": "2026-10-08",
       "time": "18:30",
@@ -1556,7 +1692,7 @@
       }
     },
     {
-      "id": "antalya-20261008-026",
+      "id": "antalya-20261008-030",
       "city": "Antalya",
       "date": "2026-10-08",
       "time": "19:00",
@@ -1601,7 +1737,7 @@
       }
     },
     {
-      "id": "antalya-20261008-027",
+      "id": "antalya-20261008-031",
       "city": "Antalya",
       "date": "2026-10-08",
       "time": "20:00",
@@ -1646,7 +1782,7 @@
       }
     },
     {
-      "id": "antalya-20261008-028",
+      "id": "antalya-20261008-032",
       "city": "Antalya",
       "date": "2026-10-08",
       "time": "20:30",
@@ -1691,7 +1827,7 @@
       }
     },
     {
-      "id": "antalya-20261015-029",
+      "id": "antalya-20261015-033",
       "city": "Antalya",
       "date": "2026-10-15",
       "time": "19:00",
@@ -1732,7 +1868,7 @@
       }
     },
     {
-      "id": "antalya-20261017-030",
+      "id": "antalya-20261017-034",
       "city": "Antalya",
       "date": "2026-10-17",
       "time": "11:00",
@@ -1773,7 +1909,7 @@
       }
     },
     {
-      "id": "antalya-20260919-031",
+      "id": "antalya-20260919-035",
       "city": "Antalya",
       "date": "2026-09-19",
       "time": "13:00",
@@ -1819,7 +1955,7 @@
       }
     },
     {
-      "id": "antalya-20260925-032",
+      "id": "antalya-20260925-036",
       "city": "Antalya",
       "date": "2026-09-25",
       "time": "18:30",
@@ -1864,7 +2000,7 @@
       }
     },
     {
-      "id": "antalya-20260925-033",
+      "id": "antalya-20260925-037",
       "city": "Antalya",
       "date": "2026-09-25",
       "time": "19:00",
@@ -1910,7 +2046,7 @@
       }
     },
     {
-      "id": "antalya-20260925-034",
+      "id": "antalya-20260925-038",
       "city": "Antalya",
       "date": "2026-09-25",
       "time": "20:00",
@@ -1955,7 +2091,7 @@
       }
     },
     {
-      "id": "antalya-20260925-035",
+      "id": "antalya-20260925-039",
       "city": "Antalya",
       "date": "2026-09-25",
       "time": "20:30",
@@ -2002,7 +2138,7 @@
       }
     },
     {
-      "id": "antalya-20261002-036",
+      "id": "antalya-20261002-040",
       "city": "Antalya",
       "date": "2026-10-02",
       "time": "18:30",
@@ -2049,7 +2185,7 @@
       }
     },
     {
-      "id": "antalya-20261002-037",
+      "id": "antalya-20261002-041",
       "city": "Antalya",
       "date": "2026-10-02",
       "time": "19:00",
@@ -2095,7 +2231,7 @@
       }
     },
     {
-      "id": "antalya-20261013-038",
+      "id": "antalya-20261013-042",
       "city": "Antalya",
       "date": "2026-10-13",
       "time": "18:30",
@@ -2136,7 +2272,7 @@
       }
     },
     {
-      "id": "antalya-20261013-039",
+      "id": "antalya-20261013-043",
       "city": "Antalya",
       "date": "2026-10-13",
       "time": "19:00",
@@ -2177,7 +2313,7 @@
       }
     },
     {
-      "id": "antalya-20261015-040",
+      "id": "antalya-20261015-044",
       "city": "Antalya",
       "date": "2026-10-15",
       "time": "18:30",
@@ -2218,7 +2354,7 @@
       }
     },
     {
-      "id": "antalya-20261022-041",
+      "id": "antalya-20261022-045",
       "city": "Antalya",
       "date": "2026-10-22",
       "time": "18:30",
@@ -2259,7 +2395,7 @@
       }
     },
     {
-      "id": "antalya-20261022-042",
+      "id": "antalya-20261022-046",
       "city": "Antalya",
       "date": "2026-10-22",
       "time": "19:00",
@@ -2300,7 +2436,7 @@
       }
     },
     {
-      "id": "antalya-20260919-043",
+      "id": "antalya-20260919-047",
       "city": "Antalya",
       "date": "2026-09-19",
       "time": "10:30",
@@ -2345,7 +2481,7 @@
       }
     },
     {
-      "id": "antalya-20260919-044",
+      "id": "antalya-20260919-048",
       "city": "Antalya",
       "date": "2026-09-19",
       "time": "12:00",
@@ -2390,7 +2526,7 @@
       }
     },
     {
-      "id": "antalya-20260920-045",
+      "id": "antalya-20260920-049",
       "city": "Antalya",
       "date": "2026-09-20",
       "time": "10:30",
@@ -2435,7 +2571,7 @@
       }
     },
     {
-      "id": "antalya-20260920-046",
+      "id": "antalya-20260920-050",
       "city": "Antalya",
       "date": "2026-09-20",
       "time": "12:00",
@@ -2480,7 +2616,7 @@
       }
     },
     {
-      "id": "antalya-20261025-047",
+      "id": "antalya-20261025-051",
       "city": "Antalya",
       "date": "2026-10-25",
       "time": "10:00",
@@ -2521,7 +2657,7 @@
       }
     },
     {
-      "id": "antalya-20261025-048",
+      "id": "antalya-20261025-052",
       "city": "Antalya",
       "date": "2026-10-25",
       "time": "11:30",
@@ -2563,5 +2699,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-10T11:29:14.898007"
+  "volleybox_sync_updated_at": "2026-10-10T18:27:43.006093"
 }

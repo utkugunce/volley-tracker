@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T11:24:37.698244+03:00",
+  "updated_at": "2026-10-10T18:25:56.016262+00:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -198,6 +198,17 @@
       },
       {
         "rank": 2,
+        "team": "Çanakkale Barbarosspor U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Biga Ada Spor U16",
         "played": 2,
         "won": 1,
@@ -208,18 +219,18 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Çanakkale Barbarosspor U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 5,
+        "rank": 4,
+        "team": "Kepez Spor Kulübü U16",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "As Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -227,17 +238,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Kepez Spor Kulübü U16",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
         "form": []
       }
     ],
@@ -348,28 +348,28 @@
       {
         "rank": 1,
         "team": "Çan Kale Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Biga Gelişim Voleybol Kulübü U16",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Gökçeada Spor Kulübü U16",
+        "team": "Çanakkale Belediyespor U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -380,13 +380,13 @@
       },
       {
         "rank": 4,
-        "team": "Çanakkale Belediyespor U16",
-        "played": 0,
+        "team": "Gökçeada Spor Kulübü U16",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -632,11 +632,16 @@
       "match_no": "6",
       "home_team": "Kepez Spor Kulübü U16",
       "away_team": "Çanakkale Barbarosspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "26-24",
+        "11-25",
+        "17-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406683",
@@ -1537,11 +1542,15 @@
       "match_no": "3",
       "home_team": "Çan Kale Spor Kulübü U16",
       "away_team": "Gökçeada Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-20",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406688",
@@ -1578,11 +1587,16 @@
       "match_no": "4",
       "home_team": "Çanakkale Belediyespor U16",
       "away_team": "Biga Gelişim Voleybol Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-17",
+        "22-25",
+        "23-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406689",
@@ -1649,5 +1663,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-10T11:29:15.718857"
+  "volleybox_sync_updated_at": "2026-10-10T18:27:43.003383"
 }

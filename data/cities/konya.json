@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T11:24:37.698244+03:00",
+  "updated_at": "2026-10-10T18:25:56.016262+00:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -91,23 +91,23 @@
       {
         "rank": 3,
         "team": "Türmak Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 4,
         "team": "Anadolu Zirve Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 1,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -707,11 +707,16 @@
       "match_no": "3",
       "home_team": "Türmak Spor Kulübü U18",
       "away_team": "Anadolu Zirve Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-9",
+        "25-27",
+        "25-19",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1071,5 +1076,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-10T11:29:20.933575"
+  "volleybox_sync_updated_at": "2026-10-10T18:27:43.014464"
 }

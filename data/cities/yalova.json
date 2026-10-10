@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T11:24:37.698244+03:00",
+  "updated_at": "2026-10-10T18:25:56.016262+00:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -31,50 +31,50 @@
       {
         "rank": 1,
         "team": "Yalova Atakent Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Koru Akademi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Koru Akademi Spor Kulübü - B U18",
-        "played": 0,
+        "team": "Yalova Voleybol Spor Kulübü - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Yalova Voleybol Spor Kulübü - A U18",
-        "played": 0,
+        "team": "Koru Akademi Spor Kulübü - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Yalova Voleybol Spor Kulübü - B U18",
+        "team": "Yalova Voleybol Spor Kulübü - A U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -99,11 +99,15 @@
       "match_no": "1",
       "home_team": "Koru Akademi Spor Kulübü U18",
       "away_team": "Yalova Voleybol Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-12",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398307",
@@ -140,11 +144,15 @@
       "match_no": "2",
       "home_team": "Koru Akademi Spor Kulübü - B U18",
       "away_team": "Yalova Atakent Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "5-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398308",
@@ -908,5 +916,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-10T11:29:22.643928"
+  "volleybox_sync_updated_at": "2026-10-10T18:27:43.035698"
 }
