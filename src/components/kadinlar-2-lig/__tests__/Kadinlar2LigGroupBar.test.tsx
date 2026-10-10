@@ -12,33 +12,7 @@ describe("Kadinlar2LigGroupBar Component", () => {
       takim_sayisi: 12,
       mac_sayisi: 132,
       puan_durumu: [],
-      fikstur: [
-        {
-          id: "m1",
-          mac_no: "101",
-          grup_no: 1,
-          grup_adi: "1. Grup",
-          hafta: 1,
-          devre: 1,
-          tarih: "11.10.2026",
-          gun: "Pazar",
-          saat: "14:00",
-          sehir: "İSTANBUL",
-          salon: "50. Yıl Deniz Esinduy",
-          takim_a: "VakıfBank 2",
-          takim_b: "Eczacıbaşı 2",
-          takim_a_id: "t1",
-          takim_b_id: "t2",
-          takim_a_logo: "",
-          takim_b_logo: "",
-          set_a: "",
-          set_b: "",
-          skor: "",
-          set_sonuclari: "",
-          durum: "OYNANACAK",
-          mac_durumu_kod: "0",
-        },
-      ],
+      fikstur: [],
     },
     {
       grup_no: 2,
@@ -46,33 +20,7 @@ describe("Kadinlar2LigGroupBar Component", () => {
       takim_sayisi: 11,
       mac_sayisi: 110,
       puan_durumu: [],
-      fikstur: [
-        {
-          id: "m2",
-          mac_no: "201",
-          grup_no: 2,
-          grup_adi: "2. Grup",
-          hafta: 1,
-          devre: 1,
-          tarih: "11.10.2026",
-          gun: "Pazar",
-          saat: "16:00",
-          sehir: "İSTANBUL",
-          salon: "Burhan Felek",
-          takim_a: "Fenerbahçe 2",
-          takim_b: "Galatasaray 2",
-          takim_a_id: "t3",
-          takim_b_id: "t4",
-          takim_a_logo: "",
-          takim_b_logo: "",
-          set_a: "",
-          set_b: "",
-          skor: "",
-          set_sonuclari: "",
-          durum: "OYNANACAK",
-          mac_durumu_kod: "0",
-        },
-      ],
+      fikstur: [],
     },
     {
       grup_no: 11,
@@ -80,37 +28,11 @@ describe("Kadinlar2LigGroupBar Component", () => {
       takim_sayisi: 10,
       mac_sayisi: 90,
       puan_durumu: [],
-      fikstur: [
-        {
-          id: "m3",
-          mac_no: "1101",
-          grup_no: 11,
-          grup_adi: "11. Grup",
-          hafta: 1,
-          devre: 1,
-          tarih: "11.10.2026",
-          gun: "Pazar",
-          saat: "13:00",
-          sehir: "ANKARA",
-          salon: "Beştepe",
-          takim_a: "Karayolları",
-          takim_b: "TED Ankara",
-          takim_a_id: "t5",
-          takim_b_id: "t6",
-          takim_a_logo: "",
-          takim_b_logo: "",
-          set_a: "",
-          set_b: "",
-          skor: "",
-          set_sonuclari: "",
-          durum: "OYNANACAK",
-          mac_durumu_kod: "0",
-        },
-      ],
+      fikstur: [],
     },
   ];
 
-  it("başlangıçta dropdown menü butonunu ve seçili ilin gruplarını render eder", () => {
+  it("başlangıçta seçili grubun dropdown menü butonunu ve hızlı grup butonlarını render eder", () => {
     const handleSelect = vi.fn();
     render(
       <Kadinlar2LigGroupBar
@@ -120,67 +42,21 @@ describe("Kadinlar2LigGroupBar Component", () => {
       />
     );
 
-    // Dropdown butonu İstanbul'u göstermeli (Grup 1 İstanbul'a ait)
-    const dropdownBtn = screen.getByRole("button", { name: /İstanbul/i });
+    // Dropdown butonu seçili 1. Grup'u göstermeli
+    const dropdownBtn = screen.getByRole("button", { name: /1\. Grup/i });
     expect(dropdownBtn).toBeInTheDocument();
 
-    // İstanbul'a ait Grup 1 ve Grup 2 butonları görünmeli
-    expect(screen.getByTitle("Kadınlar 2. Ligi 1. Grup")).toBeInTheDocument();
-    expect(screen.getByTitle("Kadınlar 2. Ligi 2. Grup")).toBeInTheDocument();
-
-    // Ankara'ya ait Grup 11 başlangıçta görünmemeli (çünkü İstanbul seçili)
-    expect(screen.queryByTitle("Kadınlar 2. Ligi 11. Grup")).not.toBeInTheDocument();
-  });
-
-  it("dropdown açıldığında şehir araması yapılabilir ve Ankara seçilince 11. grup açılır", () => {
-    const handleSelect = vi.fn();
-    render(
-      <Kadinlar2LigGroupBar
-        groups={mockGroups}
-        selectedGroup={1}
-        onSelectGroup={handleSelect}
-      />
-    );
-
-    const dropdownBtn = screen.getByRole("button", { name: /İstanbul/i });
-    fireEvent.click(dropdownBtn);
-
-    // Arama inputu görünmeli
-    const searchInput = screen.getByPlaceholderText(/İl ara/i);
-    expect(searchInput).toBeInTheDocument();
-
-    // Ankara opsiyonu görünmeli ve tıklanmalı
-    const ankaraOption = screen.getByRole("option", { name: /Ankara/i });
-    expect(ankaraOption).toBeInTheDocument();
-    fireEvent.click(ankaraOption);
-
-    // handleSelect 11 için çağrılmış olmalı
-    expect(handleSelect).toHaveBeenCalledWith(11);
-  });
-
-  it("Tüm İller seçildiğinde tüm gruplar listelenir", () => {
-    const handleSelect = vi.fn();
-    render(
-      <Kadinlar2LigGroupBar
-        groups={mockGroups}
-        selectedGroup={1}
-        onSelectGroup={handleSelect}
-      />
-    );
-
-    const dropdownBtn = screen.getByRole("button", { name: /İstanbul/i });
-    fireEvent.click(dropdownBtn);
-
-    const tumIllerOption = screen.getByRole("option", { name: /Tüm İller/i });
-    fireEvent.click(tumIllerOption);
-
-    // Tüm gruplar görünmeli
+    // Hızlı grup butonları görünmeli
     expect(screen.getByTitle("Kadınlar 2. Ligi 1. Grup")).toBeInTheDocument();
     expect(screen.getByTitle("Kadınlar 2. Ligi 2. Grup")).toBeInTheDocument();
     expect(screen.getByTitle("Kadınlar 2. Ligi 11. Grup")).toBeInTheDocument();
+
+    // İl seçimi veya şehir filtresi bulunmamalı
+    expect(screen.queryByPlaceholderText(/İl ara/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Tüm İller/i)).not.toBeInTheDocument();
   });
 
-  it("Filtreleri Gizle / Aç butonu ile kategori ve grup bölümü açılıp kapatılabilir", () => {
+  it("dropdown açıldığında tüm gruplar listelenir ve grup seçildiğinde onSelectGroup tetiklenir", () => {
     const handleSelect = vi.fn();
     render(
       <Kadinlar2LigGroupBar
@@ -190,17 +66,67 @@ describe("Kadinlar2LigGroupBar Component", () => {
       />
     );
 
-    const toggleBtn = screen.getByRole("button", { name: /Filtreleri Gizle/i });
-    expect(toggleBtn).toBeInTheDocument();
+    const dropdownBtn = screen.getByRole("button", { name: /1\. Grup/i });
+    fireEvent.click(dropdownBtn);
 
-    // Gizle'ye bas
-    fireEvent.click(toggleBtn);
-    expect(screen.getByRole("button", { name: /Kategori & Grupları Aç/i })).toBeInTheDocument();
-    expect(screen.queryByTitle("Kadınlar 2. Ligi 1. Grup")).not.toBeInTheDocument();
+    // Dropdown popup başlığı ve seçenekleri görünmeli
+    expect(screen.getByText("Kadınlar 2. Ligi Grupları")).toBeInTheDocument();
+    const group11Option = screen.getByRole("option", { name: /11\. Grup/i });
+    expect(group11Option).toBeInTheDocument();
 
-    // Tekrar Aç'a bas
-    const openBtn = screen.getByRole("button", { name: /Kategori & Grupları Aç/i });
-    fireEvent.click(openBtn);
-    expect(screen.getByTitle("Kadınlar 2. Ligi 1. Grup")).toBeInTheDocument();
+    // 11. Grup'a tıkla
+    fireEvent.click(group11Option);
+    expect(handleSelect).toHaveBeenCalledWith(11);
+  });
+
+  it("hızlı grup butonuna tıklandığında onSelectGroup tetiklenir", () => {
+    const handleSelect = vi.fn();
+    render(
+      <Kadinlar2LigGroupBar
+        groups={mockGroups}
+        selectedGroup={1}
+        onSelectGroup={handleSelect}
+      />
+    );
+
+    const group2Btn = screen.getByTitle("Kadınlar 2. Ligi 2. Grup");
+    fireEvent.click(group2Btn);
+
+    expect(handleSelect).toHaveBeenCalledWith(2);
+  });
+
+  it("Tüm Gruplar seçildiğinde ve dropdown/hap butonlarından tıklandığında onSelectGroup('all') tetiklenir", () => {
+    const handleSelect = vi.fn();
+    const { rerender } = render(
+      <Kadinlar2LigGroupBar
+        groups={mockGroups}
+        selectedGroup={1}
+        onSelectGroup={handleSelect}
+      />
+    );
+
+    // Hızlı "Tüm Gruplar" butonuna tıkla
+    const allGroupsPill = screen.getByTitle("Kadınlar 2. Ligi Tüm Gruplar");
+    expect(allGroupsPill).toBeInTheDocument();
+    fireEvent.click(allGroupsPill);
+    expect(handleSelect).toHaveBeenCalledWith("all");
+
+    // selectedGroup="all" olduğunda dropdown butonunda "Tüm Gruplar" görünmeli
+    rerender(
+      <Kadinlar2LigGroupBar
+        groups={mockGroups}
+        selectedGroup="all"
+        onSelectGroup={handleSelect}
+      />
+    );
+    const dropdownBtn = screen.getByRole("button", { name: "Kadınlar 2. Ligi Tüm Gruplar" });
+    expect(dropdownBtn).toBeInTheDocument();
+
+    // Dropdown açıldığında "Tüm Gruplar" seçeneği bulunmalı
+    fireEvent.click(dropdownBtn);
+    const allOption = screen.getByRole("option", { name: /Tüm Gruplar/i });
+    expect(allOption).toBeInTheDocument();
+    fireEvent.click(allOption);
+    expect(handleSelect).toHaveBeenCalledWith("all");
   });
 });

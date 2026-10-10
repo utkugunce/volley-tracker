@@ -19,7 +19,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const path = `/kadinlar-2-ligi/${slug.join("/")}`;
   const { tab, groupNo } = parseKadinlar2LigRoute(path);
 
-  const groupLabel = groupNo > 1 ? ` (${groupNo}. Grup)` : "";
+  const groupLabel =
+    groupNo === "all"
+      ? " (Tüm Gruplar)"
+      : typeof groupNo === "number" && groupNo > 1
+      ? ` (${groupNo}. Grup)`
+      : "";
   let title = "TVF Uzman Posta Kadınlar 2. Ligi | Altyapı Voleybol";
   let description =
     "Türkiye Voleybol Federasyonu Uzman Posta Kadınlar 2. Ligi 16 grup resmi puan cetveli, fikstür, sonuçlar ve Volleybox kadroları.";
@@ -111,6 +116,10 @@ export function generateStaticParams() {
     params.push({ slug: ["puan-durumu", `grup-${g}`] });
     params.push({ slug: ["fikstur", `grup-${g}`] });
   }
+
+  // Tüm Gruplar parametreleri
+  params.push({ slug: ["puan-durumu", "tum-gruplar"] });
+  params.push({ slug: ["fikstur", "tum-gruplar"] });
 
   return params;
 }

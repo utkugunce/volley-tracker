@@ -135,4 +135,113 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
     expect(screen.getByText("Fenerbahçe 2")).toBeInTheDocument();
   });
+
+  it("Kadinlar2LigFixtures tüm gruplar seçildiğinde tüm grupların maçlarını listeler", () => {
+    const mockGroup2: Kadinlar2LigGroup = {
+      grup_no: 2,
+      grup_adi: "2. Grup",
+      takim_sayisi: 10,
+      mac_sayisi: 90,
+      puan_durumu: [],
+      fikstur: [
+        {
+          id: "k2-g2-1",
+          mac_no: "201",
+          grup_no: 2,
+          grup_adi: "2. Grup",
+          hafta: 1,
+          devre: 1,
+          tarih: "28.09.2026",
+          gun: "Pazartesi",
+          saat: "18:00",
+          sehir: "İSTANBUL",
+          salon: "50. Yıl",
+          takim_a: "Beşiktaş 2",
+          takim_b: "Sarıyer 2",
+          takim_a_id: "t7",
+          takim_b_id: "t8",
+          takim_a_logo: "",
+          takim_b_logo: "",
+          set_a: "",
+          set_b: "",
+          skor: "",
+          set_sonuclari: "",
+          durum: "OYNANACAK",
+          mac_durumu_kod: "0",
+        },
+      ],
+    };
+
+    render(
+      <Kadinlar2LigFixtures
+        groups={[mockGroup, mockGroup2]}
+        isAllGroups={true}
+        onSelectMatch={vi.fn()}
+      />
+    );
+
+    // Her iki gruptan takımlar görünmeli
+    expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
+    expect(screen.getByText("Beşiktaş 2")).toBeInTheDocument();
+    expect(screen.getAllByText(/1\. Grup/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/2\. Grup/i).length).toBeGreaterThan(0);
+  });
+
+  it("Kadinlar2LigFixtures Değişenler butonuna tıklandığında değişen maçı filtreleyip gösterir", () => {
+    const discrepancyMatch: Kadinlar2LigMatch = {
+      id: "k2-disc-1",
+      mac_no: "109",
+      grup_no: 10,
+      grup_adi: "10. Grup",
+      hafta: 3,
+      devre: 1,
+      tarih: "04.10.2026",
+      gun: "Pazar",
+      saat: "14:00",
+      sehir: "KOCAELİ",
+      salon: "Gölcük",
+      takim_a: "CADENCE BOYA GÖLCÜK İHSANİYE",
+      takim_b: "BOLU ATATÜRK ANADOLU LİSESİ",
+      takim_a_id: "t9",
+      takim_b_id: "t10",
+      takim_a_logo: "",
+      takim_b_logo: "",
+      set_a: "",
+      set_b: "",
+      skor: "",
+      set_sonuclari: "",
+      durum: "OYNANACAK",
+      mac_durumu_kod: "0",
+      discrepancy: {
+        has_diff: true,
+        details: "Tarih veya saat Volleybox ile farklı",
+      },
+    };
+
+    render(
+      <Kadinlar2LigFixtures
+        group={{
+          grup_no: 10,
+          grup_adi: "10. Grup",
+          takim_sayisi: 11,
+          mac_sayisi: 50,
+          puan_durumu: [],
+          fikstur: [discrepancyMatch, mockMatches[0]],
+        }}
+        onSelectMatch={vi.fn()}
+      />
+    );
+
+    // Değişenler butonunda (1) yazmalı
+    const discBtn = screen.getByRole("button", { name: /Değişenler \(1\)/i });
+    expect(discBtn).toBeInTheDocument();
+
+    // Değişenler butonuna tıkla
+    fireEvent.click(discBtn);
+
+    // Değişen maç görünmeli ve diğer normal maç filtrelenmeli
+    expect(screen.getByText(/Cadence Boya/i)).toBeInTheDocument();
+    expect(screen.queryByText("VakıfBank 2")).not.toBeInTheDocument();
+    expect(screen.queryByText("Karşılaşma Bulunamadı")).not.toBeInTheDocument();
+  });
 });

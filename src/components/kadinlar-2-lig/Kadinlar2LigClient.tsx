@@ -44,7 +44,7 @@ interface Kadinlar2LigClientProps {
   /** Sunucu sayfaları ISR çıktısını küçültmek için sıkıştırılmış veri geçirir. */
   initialData: Kadinlar2LigData | Kadinlar2LigCompactData;
   initialTab?: Kadinlar2LigTabType;
-  initialGroup?: number;
+  initialGroup?: number | "all";
 }
 
 export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
@@ -56,7 +56,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>(
     initialTab || "home"
   );
-  const [selectedGroup, setSelectedGroup] = useState<number>(initialGroup || 1);
+  const [selectedGroup, setSelectedGroup] = useState<number | "all">(initialGroup || 1);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
@@ -65,7 +65,10 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
   const { count: favoritesCount } = useFavorites();
 
-  const currentGroupData = data.gruplar.find((g) => g.grup_no === selectedGroup) || data.gruplar[0];
+  const currentGroupData =
+    (selectedGroup === "all"
+      ? data.gruplar[0]
+      : data.gruplar.find((g) => g.grup_no === selectedGroup)) || data.gruplar[0];
   const standardMatches = useMemo(
     () => (data.tum_maclar || []).map(convertK2MatchToMatch),
     [data.tum_maclar]
@@ -133,7 +136,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     }
   };
 
-  const handleSelectGroup = (gNo: number) => {
+  const handleSelectGroup = (gNo: number | "all") => {
     setSelectedGroup(gNo);
     if (typeof window !== "undefined") {
       const targetPath = getKadinlar2LigRoute(activeTab, gNo);
@@ -145,7 +148,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   };
 
   const handleSelectGroupFromAnywhere = (
-    gNo: number,
+    gNo: number | "all",
     tab?: "standings" | "fixtures"
   ) => {
     const targetTab = tab || "standings";
@@ -237,7 +240,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             16 Grup · {data.tum_maclar?.length || 0} Maç
           </span>
         </div>
-        {/* 2. Gruplar & İl Seçici Barı (Puan Cetveli veya Fikstür açıkken) */}
+        {/* 2. Grup Seçici Barı (Puan Cetveli veya Fikstür açıkken) */}
         {(activeTab === "standings" || activeTab === "fixtures") && (
           <Kadinlar2LigGroupBar
             groups={data.gruplar}
@@ -287,16 +290,28 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         {/* PUAN CETVELİ TABI */}
         {activeTab === "standings" && (
           <div className="space-y-8">
-            <Kadinlar2LigStandings
-              group={currentGroupData}
-              searchQuery={searchQuery}
-              showOnlyFavorites={showOnlyFavorites}
-            />
+            {selectedGroup === "all" ? (
+              <Kadinlar2LigLeaders
+                groups={data.gruplar}
+                onSelectGroup={handleSelectGroupFromAnywhere}
+                searchQuery={searchQuery}
+                showOnlyFavorites={showOnlyFavorites}
+              />
+            ) : (
+              <Kadinlar2LigStandings
+                group={currentGroupData}
+                searchQuery={searchQuery}
+                showOnlyFavorites={showOnlyFavorites}
+              />
+            )}
 
             {/* PUAN CETVELİ ALTINDA: GRUBA AİT MAÇLAR & FİKSTÜR */}
             <div className="space-y-4 pt-6 border-t border-slate-800/80">
               <Kadinlar2LigFixtures
-                group={currentGroupData}
+                group={selectedGroup === "all" ? undefined : currentGroupData}
+                groups={data.gruplar}
+                allMatches={data.tum_maclar}
+                isAllGroups={selectedGroup === "all"}
                 searchQuery={searchQuery}
                 showOnlyFavorites={showOnlyFavorites}
                 onSelectMatch={setSelectedMatch}
@@ -309,7 +324,10 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         {/* FİKSTÜR TABI */}
         {activeTab === "fixtures" && (
           <Kadinlar2LigFixtures
-            group={currentGroupData}
+            group={selectedGroup === "all" ? undefined : currentGroupData}
+            groups={data.gruplar}
+            allMatches={data.tum_maclar}
+            isAllGroups={selectedGroup === "all"}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
             onSelectMatch={setSelectedMatch}

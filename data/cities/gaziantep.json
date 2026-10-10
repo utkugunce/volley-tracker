@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T22:42:40.809947+03:00",
+  "updated_at": "2026-10-10T11:24:37.698244+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -30,6 +30,28 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
+        "team": "MERİNOS",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "ANADOLUGÜCÜ",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "ADRENALİN REKOR SPK",
         "played": 0,
         "won": 0,
@@ -40,18 +62,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "ANADOLUGÜCÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "team": "Antepia Spor Kulübü",
         "played": 0,
         "won": 0,
@@ -62,7 +73,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "AV. MAHMUT DÜŞÜN",
         "played": 0,
         "won": 0,
@@ -73,7 +84,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "GAZİANTEP BELEDİYE SPK",
         "played": 0,
         "won": 0,
@@ -84,19 +95,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "GVG 2023",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "MERİNOS",
+        "team": "GVG 2023",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -120,6 +120,28 @@
     "Genç Kızlar 1. Ligi - 1. Grup": [
       {
         "rank": 1,
+        "team": "MERİNOS",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "ANADOLUGÜCÜ",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "ADRENALİN REKOR SPK",
         "played": 0,
         "won": 0,
@@ -130,18 +152,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "ANADOLUGÜCÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "team": "Antepia Spor Kulübü",
         "played": 0,
         "won": 0,
@@ -152,7 +163,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "AV. MAHMUT DÜŞÜN",
         "played": 0,
         "won": 0,
@@ -163,7 +174,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "GAZİANTEP BELEDİYE SPK",
         "played": 0,
         "won": 0,
@@ -174,19 +185,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "GVG 2023",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "MERİNOS",
+        "team": "GVG 2023",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -210,6 +210,28 @@
     "Genç Kızlar 1. Ligi - Grup A": [
       {
         "rank": 1,
+        "team": "MERİNOS",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "ANADOLUGÜCÜ",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "ADRENALİN REKOR SPK",
         "played": 0,
         "won": 0,
@@ -220,18 +242,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "ANADOLUGÜCÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "team": "Antepia Spor Kulübü",
         "played": 0,
         "won": 0,
@@ -242,7 +253,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "AV. MAHMUT DÜŞÜN",
         "played": 0,
         "won": 0,
@@ -253,7 +264,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "GAZİANTEP BELEDİYE SPK",
         "played": 0,
         "won": 0,
@@ -264,19 +275,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "GVG 2023",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "MERİNOS",
+        "team": "GVG 2023",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -300,6 +300,28 @@
     "Genç Kızlar 1. Ligi - Mini Kızlar Grup A": [
       {
         "rank": 1,
+        "team": "MERİNOS",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "ANADOLUGÜCÜ",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "ADRENALİN REKOR SPK",
         "played": 0,
         "won": 0,
@@ -310,18 +332,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "ANADOLUGÜCÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "team": "Antepia Spor Kulübü",
         "played": 0,
         "won": 0,
@@ -332,7 +343,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "AV. MAHMUT DÜŞÜN",
         "played": 0,
         "won": 0,
@@ -343,7 +354,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "GAZİANTEP BELEDİYE SPK",
         "played": 0,
         "won": 0,
@@ -354,19 +365,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "GVG 2023",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "MERİNOS",
+        "team": "GVG 2023",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -503,11 +503,15 @@
       "match_no": "1",
       "home_team": "ANADOLUGÜCÜ",
       "away_team": "MERİNOS",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "20-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406706",
@@ -683,5 +687,5 @@
     }
   ],
   "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-10-09T22:47:21.906549"
+  "volleybox_sync_updated_at": "2026-10-10T11:29:16.448113"
 }

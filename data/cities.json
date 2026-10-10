@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-10T06:56:03.589748+00:00",
+  "updated_at": "2026-10-10T11:24:37.698244+03:00",
   "total_cities": 81,
   "active_cities": 33,
-  "total_matches": 1077,
+  "total_matches": 1056,
   "cities": [
     {
       "ilid": "1",
@@ -70,8 +70,8 @@
       "name": "Antalya",
       "slug": "antalya",
       "url": "https://antalya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (49 Maç Mevcut)",
-      "matches_count": 49,
+      "status": "Aktif (48 Maç Mevcut)",
+      "matches_count": 48,
       "standings_count": 5,
       "data_file": "data/cities/antalya.json"
     },
@@ -510,9 +510,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {

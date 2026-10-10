@@ -1,30 +1,14 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, useRef } from "react";
-import { MapPin, ChevronDown, Search, Check, Layers, X } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { ChevronDown, Check, Layers } from "lucide-react";
 import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
-import { trIncludes, trLower } from "@/utils/turkishLocale";
 
 interface Kadinlar2LigGroupBarProps {
   groups: Kadinlar2LigGroup[];
-  selectedGroup: number;
-  onSelectGroup: (groupNo: number) => void;
+  selectedGroup: number | "all";
+  onSelectGroup: (groupNo: number | "all") => void;
   allMatches?: Kadinlar2LigMatch[];
-}
-
-/**
- * TVF şehir isimlerini Türkçe kurallarına uygun biçimlendirir.
- * Örn: "ADANA" -> "Adana", "K.MARAŞ" -> "Kahramanmaraş", "İSTANBUL" -> "İstanbul"
- */
-function formatCityName(raw: string): string {
-  if (!raw) return "";
-  const trimmed = raw.trim();
-  const up = trimmed.toUpperCase();
-  if (up === "K.MARAŞ" || up === "KMARAS" || up === "KAHRAMANMARAŞ") {
-    return "Kahramanmaraş";
-  }
-  const lower = trimmed.toLocaleLowerCase("tr");
-  return lower.charAt(0).toLocaleUpperCase("tr") + lower.slice(1);
 }
 
 export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
@@ -33,351 +17,264 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
   onSelectGroup,
   allMatches,
 }) => {
-  // 1. İller ve Gruplar Arası İlişkiyi Haritalandır
-  const { distinctCities, cityToGroups, groupToCities } = useMemo(() => {
-    const cityMap = new Map<string, Set<number>>();
-    const groupMap = new Map<number, Set<string>>();
+  const [isGroupDropdownOpen, setIsGroupDropdownOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-    const matches =
-      allMatches && allMatches.length > 0
-        ? allMatches
-        : groups.flatMap((g) => g.fikstur || []);
+  const isAll = selectedGroup === "all";
+  const currentGroup = isAll
+    ? null
+    : groups.find((g) => g.grup_no === selectedGroup) || groups[0];
 
-    matches.forEach((m) => {
-      if (m.sehir && m.grup_no) {
-        const c = formatCityName(m.sehir);
-        if (c) {
-          if (!cityMap.has(c)) cityMap.set(c, new Set());
-          cityMap.get(c)!.add(m.grup_no);
-
-          if (!groupMap.has(m.grup_no)) groupMap.set(m.grup_no, new Set());
-          groupMap.get(m.grup_no)!.add(c);
-        }
-      }
-    });
-
-    const sortedCities = Array.from(cityMap.keys()).sort((a, b) =>
-      a.localeCompare(b, "tr", { numeric: true })
-    );
-
-    return {
-      distinctCities: sortedCities,
-      cityToGroups: cityMap,
-      groupToCities: groupMap,
-    };
-  }, [groups, allMatches]);
-
-  // Seçili İl Durumu (Varsayılan olarak geçerli grubun ilk şehri veya Tüm İller)
-  const [selectedCity, setSelectedCity] = useState<string>(() => {
-    const citiesOfCurrent = groupToCities.get(selectedGroup);
-    if (citiesOfCurrent && citiesOfCurrent.size > 0) {
-      return Array.from(citiesOfCurrent)[0];
-    }
-    return "Tüm İller";
-  });
-
-  const [isCityDropdownOpen, setIsCityDropdownOpen] = useState<boolean>(false);
-  const [citySearchTerm, setCitySearchTerm] = useState<string>("");
-  const [isCategoryGroupOpen, setIsCategoryGroupOpen] = useState<boolean>(true);
-  const cityDropdownRef = useRef<HTMLDivElement>(null);
+  const totalTeams = groups.reduce((sum, g) => sum + (g.takim_sayisi || 0), 0);
+  const totalMatches =
+    allMatches?.length || groups.reduce((sum, g) => sum + (g.mac_sayisi || 0), 0);
 
   // Dışarı tıklayınca dropdown'ı kapat
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
-        cityDropdownRef.current &&
-        !cityDropdownRef.current.contains(e.target as Node)
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
       ) {
-        setIsCityDropdownOpen(false);
+        setIsGroupDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Dışarıdan (URL veya başka bileşenden) selectedGroup değişirse şehri senkronize et
+  // ESC tuşu ile kapatma
   useEffect(() => {
-    if (selectedCity && selectedCity !== "Tüm İller") {
-      const allowedGroups = cityToGroups.get(selectedCity);
-      if (allowedGroups && !allowedGroups.has(selectedGroup)) {
-        const citiesOfNewGroup = groupToCities.get(selectedGroup);
-        if (citiesOfNewGroup && citiesOfNewGroup.size > 0) {
-          setSelectedCity(Array.from(citiesOfNewGroup)[0]);
-        } else {
-          setSelectedCity("Tüm İller");
-        }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isGroupDropdownOpen) {
+        setIsGroupDropdownOpen(false);
       }
-    }
-  }, [selectedGroup, cityToGroups, groupToCities, selectedCity]);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isGroupDropdownOpen]);
 
-  // İl Arama Filtresi (Türkçe karakter ve ASCII toleranslı)
-  const filteredCities = useMemo(() => {
-    const all = ["Tüm İller", ...distinctCities];
-    if (!citySearchTerm.trim()) return all;
-    const q = trLower(citySearchTerm).trim();
-    return all.filter((c) => trIncludes(c, q));
-  }, [distinctCities, citySearchTerm]);
-
-  // Şehir seçildiğinde
-  const handleCitySelect = (cityName: string) => {
-    setSelectedCity(cityName);
-    setIsCityDropdownOpen(false);
-    setCitySearchTerm("");
-    setIsCategoryGroupOpen(true); // "ili seçince altındaki kategori grup kısmı da açılsın"
-
-    if (cityName !== "Tüm İller") {
-      const groupsOfCity = cityToGroups.get(cityName);
-      if (groupsOfCity && groupsOfCity.size > 0) {
-        // Eğer seçili grup bu ilin gruplarında yoksa ilk grubu aktif yap
-        if (!groupsOfCity.has(selectedGroup)) {
-          const firstGrup = Array.from(groupsOfCity).sort((a, b) => a - b)[0];
-          onSelectGroup(firstGrup);
-        }
-      }
-    }
+  const handleGroupSelect = (groupNo: number | "all") => {
+    onSelectGroup(groupNo);
+    setIsGroupDropdownOpen(false);
   };
-
-  // Seçili şehre göre gösterilecek gruplar
-  const availableGroups = useMemo(() => {
-    if (!selectedCity || selectedCity === "Tüm İller") {
-      return groups;
-    }
-    const allowed = cityToGroups.get(selectedCity);
-    if (!allowed || allowed.size === 0) {
-      return groups;
-    }
-    return groups.filter((g) => allowed.has(g.grup_no));
-  }, [selectedCity, cityToGroups, groups]);
 
   return (
     <div
-      className={`glass-panel p-4 rounded-2xl border border-slate-800/80 shadow-card no-print space-y-3 relative ${
-        isCityDropdownOpen ? "z-30" : "z-10"
+      className={`glass-panel p-3.5 sm:p-4 rounded-2xl border border-slate-800/80 shadow-card no-print space-y-3 relative ${
+        isGroupDropdownOpen ? "z-30" : "z-10"
       }`}
     >
-      {/* 1. İL SEÇİMİ (Açılır Menü / Dropdown) */}
+      {/* 1. ÜST BAR: GRUP SEÇİMİ DROPDOWN MENÜSÜ & ÖZET BİLGİ */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
         <div className="flex items-center gap-2.5 flex-wrap">
           <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase flex items-center gap-1.5 shrink-0">
-            <MapPin size={13} className="text-ink-2 shrink-0" />
-            İL:
+            <Layers size={13} className="text-primary shrink-0" />
+            GRUP:
           </span>
 
-          {/* Şehir Seçim Dropdown Menüsü */}
-          <div className="relative" ref={cityDropdownRef}>
+          {/* Grup Seçim Dropdown Menüsü */}
+          <div className="relative" ref={dropdownRef}>
             <button
               type="button"
-              onClick={() => setIsCityDropdownOpen(!isCityDropdownOpen)}
-              aria-expanded={isCityDropdownOpen}
+              onClick={() => setIsGroupDropdownOpen(!isGroupDropdownOpen)}
+              aria-expanded={isGroupDropdownOpen}
               aria-haspopup="listbox"
-              aria-label={selectedCity || "İl Seçiniz"}
+              aria-label={
+                isAll
+                  ? "Kadınlar 2. Ligi Tüm Gruplar"
+                  : currentGroup
+                  ? `Kadınlar 2. Ligi ${currentGroup.grup_adi}`
+                  : "Grup Seçiniz"
+              }
               className="flex items-center justify-between gap-2.5 bg-slate-900/90 hover:bg-slate-850 text-white text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-700/80 hover:border-slate-600 transition-all shadow-sm active:scale-95 cursor-pointer min-w-[210px] sm:min-w-[240px] focus:outline-none focus:ring-1 focus:ring-primary/40"
             >
               <span className="flex items-center gap-2 truncate">
                 <span className="w-2 h-2 rounded-full bg-primary shrink-0 shadow-2xs" />
                 <span className="text-white font-extrabold truncate text-[13px]">
-                  {selectedCity || "Tüm İller"}
+                  {isAll
+                    ? "Tüm Gruplar (16 Grup)"
+                    : currentGroup?.grup_adi || `${selectedGroup}. Grup`}
                 </span>
               </span>
               <div className="flex items-center gap-1.5 shrink-0 text-slate-400">
                 <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300">
-                  {distinctCities.length} İl
+                  {isAll ? `${totalTeams} Takım` : `${currentGroup?.takim_sayisi || 0} Takım`}
                 </span>
                 <ChevronDown
                   size={14}
                   className={`transition-transform duration-200 text-slate-400 ${
-                    isCityDropdownOpen ? "rotate-180 text-ink-2" : ""
+                    isGroupDropdownOpen ? "rotate-180 text-primary" : ""
                   }`}
                 />
               </div>
             </button>
 
             {/* Dropdown Açılır Menü */}
-            {isCityDropdownOpen && (
+            {isGroupDropdownOpen && (
               <div className="absolute left-0 top-full mt-2 w-72 sm:w-80 bg-canvas border border-slate-700/90 rounded-2xl shadow-2xl z-50 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-                {/* Arama Inputu */}
-                <div className="p-2.5 border-b border-slate-800 bg-surface-muted">
-                  <div className="relative">
-                    <Search
-                      size={13}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-                    />
-                    <input
-                      type="text"
-                      placeholder="İl ara (örn: Ankara, İstanbul, İzmir)..."
-                      value={citySearchTerm}
-                      onChange={(e) => setCitySearchTerm(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Escape") {
-                          setIsCityDropdownOpen(false);
-                        } else if (e.key === "Enter" && filteredCities.length === 1) {
-                          handleCitySelect(filteredCities[0]);
-                        }
-                      }}
-                      className="w-full bg-slate-900/90 border border-slate-700/70 text-slate-200 text-xs rounded-xl pl-8 pr-7 py-1.5 focus:outline-none focus:border-primary/40 focus:ring-1 focus:ring-primary/40 placeholder-slate-500"
-                      autoFocus
-                    />
-                    {citySearchTerm && (
-                      <button
-                        type="button"
-                        onClick={() => setCitySearchTerm("")}
-                        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-0.5 rounded cursor-pointer"
-                        title="Temizle"
-                      >
-                        <X size={12} />
-                      </button>
-                    )}
-                  </div>
-                  <div className="flex items-center justify-between text-[10px] text-slate-400 px-1 pt-1.5">
-                    <span>İl Listesi</span>
-                    <span className="font-mono text-slate-400">
-                      {filteredCities.length} kayıt
-                    </span>
-                  </div>
+                <div className="p-2.5 border-b border-slate-800 bg-surface-muted flex items-center justify-between text-[11px] font-bold text-slate-300">
+                  <span className="flex items-center gap-1.5">
+                    <Layers size={13} className="text-primary" />
+                    <span>Kadınlar 2. Ligi Grupları</span>
+                  </span>
+                  <span className="font-mono text-[10px] text-slate-400">
+                    16 Grup · {totalTeams} Takım
+                  </span>
                 </div>
 
-                {/* Şehirler Listesi */}
+                {/* Gruplar Listesi */}
                 <div
-                  className="max-h-64 overflow-y-auto p-1.5 space-y-0.5 custom-scrollbar"
+                  className="max-h-72 overflow-y-auto p-1.5 space-y-0.5 custom-scrollbar"
                   role="listbox"
                 >
-                  {filteredCities.length === 0 ? (
-                    <div className="p-4 text-center text-xs text-slate-500">
-                      Eşleşen il bulunamadı.
+                  {/* Tüm Gruplar Opsiyonu */}
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected={isAll}
+                    onClick={() => handleGroupSelect("all")}
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                      isAll
+                        ? "bg-primary/20 text-white font-bold border border-primary/40"
+                        : "text-slate-300 hover:text-white hover:bg-slate-800/80"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2 truncate">
+                      <span
+                        className={`w-1.5 h-1.5 rounded-full ${
+                          isAll ? "bg-primary shadow-glow-primary" : "bg-slate-600"
+                        }`}
+                      />
+                      <span className="truncate">Tüm Gruplar</span>
+                    </span>
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800/90 text-slate-400 border border-slate-700/50">
+                        16 Grup
+                      </span>
+                      {isAll && <Check size={14} className="text-primary shrink-0" />}
                     </div>
-                  ) : (
-                    filteredCities.map((cityName) => {
-                      const isSelected = selectedCity === cityName;
-                      const groupCount =
-                        cityName === "Tüm İller"
-                          ? groups.length
-                          : cityToGroups.get(cityName)?.size || 0;
+                  </button>
 
-                      return (
-                        <button
-                          key={cityName}
-                          type="button"
-                          role="option"
-                          aria-selected={isSelected}
-                          onClick={() => handleCitySelect(cityName)}
-                          className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
-                            isSelected
-                              ? "bg-primary/20 text-ink-2 font-bold border border-primary/40"
-                              : "text-slate-300 hover:text-white hover:bg-slate-800/80"
-                          }`}
-                        >
-                          <span className="flex items-center gap-2 truncate">
-                            <span
-                              className={`w-1.5 h-1.5 rounded-full ${
-                                isSelected
-                                  ? "bg-primary shadow-glow-primary"
-                                  : "bg-slate-600"
-                              }`}
-                            />
-                            <span className="truncate">{cityName}</span>
+                  {groups.map((grp) => {
+                    const isSelected = selectedGroup === grp.grup_no;
+                    return (
+                      <button
+                        key={grp.grup_no}
+                        type="button"
+                        role="option"
+                        aria-selected={isSelected}
+                        onClick={() => handleGroupSelect(grp.grup_no)}
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                          isSelected
+                            ? "bg-primary/20 text-white font-bold border border-primary/40"
+                            : "text-slate-300 hover:text-white hover:bg-slate-800/80"
+                        }`}
+                      >
+                        <span className="flex items-center gap-2 truncate">
+                          <span
+                            className={`w-1.5 h-1.5 rounded-full ${
+                              isSelected
+                                ? "bg-primary shadow-glow-primary"
+                                : "bg-slate-600"
+                            }`}
+                          />
+                          <span className="truncate">{grp.grup_adi}</span>
+                        </span>
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-800/90 text-slate-400 border border-slate-700/50">
+                            {grp.takim_sayisi} Takım
                           </span>
-                          <div className="flex items-center gap-1.5 shrink-0">
-                            <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-slate-800/90 text-slate-400 border border-slate-700/50">
-                              {groupCount} Grup
-                            </span>
-                            {isSelected && (
-                              <Check
-                                size={14}
-                                className="text-ink-2 shrink-0"
-                              />
-                            )}
-                          </div>
-                        </button>
-                      );
-                    })
-                  )}
+                          {isSelected && (
+                            <Check
+                              size={14}
+                              className="text-primary shrink-0"
+                            />
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}
           </div>
         </div>
 
-        {/* Seçili İl ve Açılır/Kapanır Gösterge */}
-        {selectedCity && (
-          <div className="flex items-center gap-2 self-start sm:self-auto text-xs text-slate-400">
-            <span className="text-[11px] font-medium text-slate-400">
-              Seçili İl: <strong className="text-white font-bold">{selectedCity}</strong>
-            </span>
-            <button
-              type="button"
-              onClick={() => setIsCategoryGroupOpen(!isCategoryGroupOpen)}
-              className="text-[11px] font-semibold text-ink-2 hover:text-ink transition-colors flex items-center gap-1 cursor-pointer bg-slate-800/60 px-2.5 py-1 rounded-lg border border-slate-700/60"
-            >
-              <span>{isCategoryGroupOpen ? "Filtreleri Gizle" : "Kategori & Grupları Aç"}</span>
-              <ChevronDown
-                size={12}
-                className={`transition-transform duration-200 ${
-                  isCategoryGroupOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-          </div>
-        )}
+        {/* Sağ Taraf: Aktif Grup Bilgisi */}
+        <div className="flex items-center gap-2 self-start sm:self-auto text-xs text-slate-400">
+          <span className="text-[11px] font-medium text-slate-400">
+            Aktif:{" "}
+            <strong className="text-white font-bold">
+              {isAll ? "Tüm Gruplar" : currentGroup?.grup_adi}
+            </strong>
+          </span>
+          <span className="text-slate-600">•</span>
+          <span className="text-[11px] font-mono text-slate-400">
+            {isAll
+              ? `16 Grup • ${totalMatches} Maç`
+              : `${currentGroup?.takim_sayisi || 0} Takım • ${currentGroup?.mac_sayisi || 0} Maç`}
+          </span>
+        </div>
       </div>
 
-      {/* 2. KATEGORİ, LİG VE GRUP SEÇİCİ BÖLÜMÜ (İl seçilince açılır) */}
-      {isCategoryGroupOpen ? (
-        <div className="space-y-3 animate-in fade-in slide-in-from-top-1 duration-200">
-          {/* Lig Seçimi */}
-          <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px] flex items-center gap-1">
-              <Layers size={12} className="text-amber-400 shrink-0" />
-              Lig:
-            </span>
-            <button
-              type="button"
-              className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 bg-primary text-primary-fg shadow-glow-primary cursor-default"
-            >
-              <span>Kadınlar 2. Ligi</span>
-            </button>
-          </div>
+      {/* 2. HIZLI GRUP BUTONLARI (Pill Bar) */}
+      <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
+        <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[50px] shrink-0">
+          Gruplar:
+        </span>
 
-          {/* Grup Seçimi */}
-          {availableGroups.length > 0 && (
-            <div className="flex flex-wrap items-center gap-1.5 pt-2.5 border-t border-slate-800/80">
-              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase min-w-[55px] sm:min-w-[65px]">
-                Grup:
+        {/* Tüm Gruplar Hızlı Butonu */}
+        <button
+          type="button"
+          onClick={() => onSelectGroup("all")}
+          title="Kadınlar 2. Ligi Tüm Gruplar"
+          className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+            isAll
+              ? "bg-primary text-primary-fg shadow-glow-primary"
+              : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
+          }`}
+        >
+          <span>Tüm Gruplar</span>
+          <span
+            className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+              isAll
+                ? "bg-white/20 text-primary-fg"
+                : "bg-slate-800 text-slate-400 border border-slate-700/60"
+            }`}
+          >
+            {groups.length}
+          </span>
+        </button>
+
+        {groups.map((grp) => {
+          const isActive = selectedGroup === grp.grup_no;
+          return (
+            <button
+              key={grp.grup_no}
+              type="button"
+              onClick={() => onSelectGroup(grp.grup_no)}
+              title={`Kadınlar 2. Ligi ${grp.grup_adi}`}
+              className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+                isActive
+                  ? "bg-primary text-primary-fg shadow-glow-primary"
+                  : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
+              }`}
+            >
+              <span>Grup {grp.grup_no}</span>
+              <span
+                className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
+                  isActive
+                    ? "bg-white/20 text-primary-fg"
+                    : "bg-slate-800 text-slate-400 border border-slate-700/60"
+                }`}
+              >
+                {grp.takim_sayisi}
               </span>
-              {availableGroups.map((grp) => {
-                const isActive = selectedGroup === grp.grup_no;
-                return (
-                  <button
-                    key={grp.grup_no}
-                    type="button"
-                    onClick={() => onSelectGroup(grp.grup_no)}
-                    title={`Kadınlar 2. Ligi ${grp.grup_adi}`}
-                    className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
-                      isActive
-                        ? "bg-primary text-primary-fg shadow-glow-primary"
-                        : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
-                    }`}
-                  >
-                    <span>Grup {grp.grup_no}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
-                        isActive
-                          ? "bg-white/20 text-primary-fg"
-                          : "bg-slate-800 text-slate-400 border border-slate-700/60"
-                      }`}
-                    >
-                      {grp.takim_sayisi}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="p-3 text-center text-xs text-slate-400 bg-slate-900/50 rounded-xl border border-dashed border-slate-800">
-          Kategori ve grup filtreleri gizlendi. Açmak için yukarıdaki butona tıklayabilirsiniz.
-        </div>
-      )}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };

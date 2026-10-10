@@ -15,11 +15,20 @@ import { Kadinlar2LigTabType } from "@/components/kadinlar-2-lig/Kadinlar2LigHea
  */
 export const getKadinlar2LigRoute = (
   tab: Kadinlar2LigTabType,
-  groupNo?: number
+  groupNo?: number | "all"
 ): string => {
+  const isAllGroups = groupNo === "all";
   const isGroupSpecific =
-    (tab === "standings" || tab === "fixtures") && groupNo && groupNo > 1;
-  const groupSuffix = isGroupSpecific ? `/grup-${groupNo}` : "";
+    (tab === "standings" || tab === "fixtures") &&
+    typeof groupNo === "number" &&
+    groupNo > 1;
+
+  let groupSuffix = "";
+  if (isGroupSpecific) {
+    groupSuffix = `/grup-${groupNo}`;
+  } else if (isAllGroups) {
+    groupSuffix = "/tum-gruplar";
+  }
 
   switch (tab) {
     case "standings":
@@ -49,7 +58,7 @@ export const getKadinlar2LigRoute = (
  */
 export const parseKadinlar2LigRoute = (
   pathname: string
-): { tab: Kadinlar2LigTabType; groupNo: number } => {
+): { tab: Kadinlar2LigTabType; groupNo: number | "all" } => {
   const clean = pathname.replace(/^\/+|\/+$/g, "");
   const parts = clean.split("/").filter(Boolean);
 
@@ -58,7 +67,7 @@ export const parseKadinlar2LigRoute = (
   let second = parts[0] === "kadinlar-2-ligi" ? parts[2] : parts[1];
 
   let tab: Kadinlar2LigTabType = "home";
-  let groupNo = 1;
+  let groupNo: number | "all" = 1;
 
   if (!sub || sub === "anasayfa") {
     tab = "home";
@@ -80,8 +89,11 @@ export const parseKadinlar2LigRoute = (
     tab = "statu";
   }
 
-  // Grup numarası kontrolü: grup-1..16, g1..16, 1..16
-  if (second) {
+  // Tüm gruplar kontrolü
+  if (second === "tum-gruplar" || second === "all" || second === "tumu") {
+    groupNo = "all";
+  } else if (second) {
+    // Grup numarası kontrolü: grup-1..16, g1..16, 1..16
     const match = second.match(/^(?:grup-?|g)?(\d+)$/i);
     if (match) {
       const parsedG = parseInt(match[1], 10);

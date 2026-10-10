@@ -22,7 +22,10 @@ import { isMatchOverdueForScore } from "@/utils/calendar";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 
 interface Kadinlar2LigFixturesProps {
-  group: Kadinlar2LigGroup;
+  group?: Kadinlar2LigGroup;
+  groups?: Kadinlar2LigGroup[];
+  allMatches?: Kadinlar2LigMatch[];
+  isAllGroups?: boolean;
   searchQuery?: string;
   onSelectMatch?: (match: Match) => void;
   showOnlyFavorites?: boolean;
@@ -32,6 +35,9 @@ interface Kadinlar2LigFixturesProps {
 
 export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   group,
+  groups,
+  allMatches,
+  isAllGroups = false,
   searchQuery = "",
   onSelectMatch,
   showOnlyFavorites = false,
@@ -47,12 +53,25 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   const [selectedDate, setSelectedDate] = useState("all");
   const [todayIso, setTodayIso] = useState("");
 
+  const isAll = Boolean(isAllGroups || !group);
+
   useEffect(() => {
     const now = new Date();
-    setTodayIso(`${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`);
+    setTodayIso(
+      `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`
+    );
   }, []);
 
-  const matches = useMemo(() => group?.fikstur || [], [group?.fikstur]);
+  const matches = useMemo(() => {
+    if (isAll) {
+      if (allMatches && allMatches.length > 0) return allMatches;
+      if (groups && groups.length > 0) {
+        return groups.flatMap((g) => g.fikstur || []);
+      }
+      return group?.fikstur || [];
+    }
+    return group?.fikstur || [];
+  }, [isAll, allMatches, groups, group?.fikstur]);
 
   // Hafta listesi
   const weeks = useMemo(() => {
@@ -64,28 +83,44 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   }, [matches]);
 
   const fixtureDates = useMemo(() => {
-    return Array.from(new Set(matches.map((match) => convertK2MatchToMatch(match).date).filter((date) => date && date !== "TBD"))).sort();
+    return Array.from(
+      new Set(
+        matches
+          .map((match) => convertK2MatchToMatch(match).date)
+          .filter((date) => date && date !== "TBD")
+      )
+    ).sort();
   }, [matches]);
 
-  useEffect(() => {
-    if (!todayIso || fixtureDates.length === 0) return;
-    setSelectedDate((current) => current === "all" ? fixtureDates.find((date) => date >= todayIso) || "all" : current);
-  }, [todayIso, fixtureDates]);
-
   const dateCounts = useMemo(() => {
-    const scopedMatches = matches.filter((match) => selectedWeek === "all" || match.hafta === selectedWeek);
-    const matchesForDate = selectedDate === "all"
-      ? scopedMatches
-      : scopedMatches.filter((match) => convertK2MatchToMatch(match).date === selectedDate);
-    const finished = matchesForDate.filter((match) => match.durum === "BİTTİ" || (match.skor && match.skor.includes("-") && match.skor !== "- : -")).length;
-    return { all: matchesForDate.length, live: 0, finished, upcoming: matchesForDate.length - finished };
+    const scopedMatches = matches.filter(
+      (match) => selectedWeek === "all" || match.hafta === selectedWeek
+    );
+    const matchesForDate =
+      selectedDate === "all"
+        ? scopedMatches
+        : scopedMatches.filter(
+            (match) => convertK2MatchToMatch(match).date === selectedDate
+          );
+    const finished = matchesForDate.filter(
+      (match) =>
+        match.durum === "BİTTİ" ||
+        (match.skor && match.skor.includes("-") && match.skor !== "- : -")
+    ).length;
+    return {
+      all: matchesForDate.length,
+      live: 0,
+      finished,
+      upcoming: matchesForDate.length - finished,
+    };
   }, [matches, selectedWeek, selectedDate]);
 
   // Volleybox Eşleşme İstatistikleri (Tümü, Skorlu, Skorsuz, Girilmedi, Değişenler)
   const volleyboxStats = useMemo(() => {
     const total = matches.length;
     const scored = matches.filter(
-      (m) => m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -")
+      (m) =>
+        m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -")
     ).length;
     const unscored = matches.filter(
       (m) =>
@@ -105,11 +140,29 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     return { total, scored, unscored, unsynced, discrepancy };
   }, [matches]);
 
+  const handleVolleyboxFilterChange = (
+    filter: "all" | "scored" | "unscored" | "unsynced" | "discrepancy"
+  ) => {
+    setVolleyboxFilter(filter);
+    if (filter === "discrepancy") {
+      // Değişenler seçildiğinde tarih ve hafta filtrelerini sıfırla ki kullanıcı tüm değişen maçları anında görsün
+      setSelectedDate("all");
+      setSelectedWeek("all");
+    }
+  };
+
   // Filtrelenmiş maçlar
   const filteredMatches = useMemo(() => {
     return matches.filter((m) => {
-      if (selectedWeek !== "all" && m.hafta !== selectedWeek) return false;
-      if (selectedDate !== "all" && convertK2MatchToMatch(m).date !== selectedDate) return false;
+      // Değişenler filtresi etkinse ve belirli bir hafta seçilmediyse veya maç farklı tarihteyse kısıtlamayalım
+      if (volleyboxFilter !== "discrepancy") {
+        if (selectedWeek !== "all" && m.hafta !== selectedWeek) return false;
+        if (selectedDate !== "all" && convertK2MatchToMatch(m).date !== selectedDate) return false;
+      } else {
+        if (selectedWeek !== "all" && m.hafta !== selectedWeek) return false;
+        if (selectedDate !== "all" && convertK2MatchToMatch(m).date !== selectedDate) return false;
+      }
+
       if (statusFilter === "CANLI") return false;
       if (statusFilter !== "all" && m.durum !== statusFilter) return false;
       if (showOnlyFavorites) {
@@ -120,7 +173,9 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
         const inTeams = kadinlar2LigMatchHasTeamQuery(m, q);
         const inCity = m.sehir?.toLowerCase().includes(q);
         const inHall = m.salon?.toLowerCase().includes(q);
-        if (!inTeams && !inCity && !inHall) return false;
+        const inGroup =
+          m.grup_adi?.toLowerCase().includes(q) || `grup ${m.grup_no}`.includes(q);
+        if (!inTeams && !inCity && !inHall && !inGroup) return false;
       }
 
       // Volleybox filtreleri
@@ -154,16 +209,18 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     isFavorite,
   ]);
 
-  // Haftalara göre gruplama
-  const matchesByWeek = useMemo(() => {
-    const map = new Map<number, Kadinlar2LigMatch[]>();
-    filteredMatches.forEach((m) => {
-      const w = m.hafta || 1;
-      if (!map.has(w)) map.set(w, []);
-      map.get(w)!.push(m);
-    });
-    return Array.from(map.entries()).sort((a, b) => a[0] - b[0]);
-  }, [filteredMatches]);
+  // Sezon Takvimi İndir (.ics)
+  const handleDownloadSeasonIcs = () => {
+    const converted = filteredMatches.map(convertK2MatchToMatch);
+    const title = isAll
+      ? "Kadınlar 2. Ligi Tüm Gruplar Fikstürü"
+      : `Kadınlar 2. Ligi ${group?.grup_adi || ""} Fikstürü`;
+    const fileName = isAll
+      ? "kadinlar-2-ligi-tum-gruplar-fikstur.ics"
+      : `kadinlar-2-ligi-${group?.grup_no || 1}-grup-fikstur.ics`;
+    const ics = generateSeasonIcs(converted, title);
+    downloadIcsFile(fileName, ics);
+  };
 
   // Favori maç ID'leri
   const favoriteMatchIds = useMemo(() => {
@@ -179,15 +236,68 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     }
   };
 
-  // Sezon Takvimi İndir (.ics)
-  const handleDownloadSeasonIcs = () => {
-    const converted = filteredMatches.map(convertK2MatchToMatch);
-    const ics = generateSeasonIcs(
-      converted,
-      `Kadınlar 2. Ligi ${group.grup_adi} Fikstürü`
-    );
-    downloadIcsFile(`kadinlar-2-ligi-${group.grup_no}-grup-fikstur.ics`, ics);
-  };
+  // Gruplara veya haftalara göre bölümlendirme
+  const fixtureSections = useMemo(() => {
+    if (!isAll && group) {
+      // Tek bir grup seçili: Haftalara göre listele
+      const map = new Map<number, Kadinlar2LigMatch[]>();
+      filteredMatches.forEach((m) => {
+        const w = m.hafta || 1;
+        if (!map.has(w)) map.set(w, []);
+        map.get(w)!.push(m);
+      });
+      return Array.from(map.entries())
+        .sort((a, b) => a[0] - b[0])
+        .map(([weekNum, weekMatches]) => ({
+          key: `week-${weekNum}`,
+          label: `${group.grup_adi} · ${weekNum}. Hafta`,
+          matches: weekMatches,
+          standingsHref: getKadinlar2LigRoute("standings", group.grup_no),
+        }));
+    }
+
+    // Tüm Gruplar seçili:
+    // Eğer belirli bir hafta seçildiyse: Gruplara göre listele (1. Grup · X. Hafta...)
+    if (selectedWeek !== "all") {
+      const map = new Map<number, Kadinlar2LigMatch[]>();
+      filteredMatches.forEach((m) => {
+        const g = m.grup_no || 1;
+        if (!map.has(g)) map.set(g, []);
+        map.get(g)!.push(m);
+      });
+      return Array.from(map.entries())
+        .sort((a, b) => a[0] - b[0])
+        .map(([gNo, gMatches]) => {
+          const grp = groups?.find((g) => g.grup_no === gNo);
+          return {
+            key: `group-${gNo}-week-${selectedWeek}`,
+            label: `${grp?.grup_adi || `${gNo}. Grup`} · ${selectedWeek}. Hafta`,
+            matches: gMatches,
+            standingsHref: getKadinlar2LigRoute("standings", gNo),
+          };
+        });
+    }
+
+    // Hem Tüm Gruplar hem Tüm Haftalar seçildiyse:
+    // Gruplara göre listele (1. Grup · Fikstür...)
+    const map = new Map<number, Kadinlar2LigMatch[]>();
+    filteredMatches.forEach((m) => {
+      const g = m.grup_no || 1;
+      if (!map.has(g)) map.set(g, []);
+      map.get(g)!.push(m);
+    });
+    return Array.from(map.entries())
+      .sort((a, b) => a[0] - b[0])
+      .map(([gNo, gMatches]) => {
+        const grp = groups?.find((g) => g.grup_no === gNo);
+        return {
+          key: `group-${gNo}`,
+          label: `${grp?.grup_adi || `${gNo}. Grup`} · Fikstür (${gMatches.length} Maç)`,
+          matches: gMatches,
+          standingsHref: getKadinlar2LigRoute("standings", gNo),
+        };
+      });
+  }, [isAll, group, groups, filteredMatches, selectedWeek]);
 
   return (
     <div className="space-y-4">
@@ -291,7 +401,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
             <div className="flex items-center rounded-xl bg-slate-900/90 p-0.5 border border-slate-700/70">
               <button
                 type="button"
-                onClick={() => setVolleyboxFilter("all")}
+                onClick={() => handleVolleyboxFilterChange("all")}
                 className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
                   volleyboxFilter === "all"
                     ? "bg-slate-800 text-white font-bold shadow-xs"
@@ -302,7 +412,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
               </button>
               <button
                 type="button"
-                onClick={() => setVolleyboxFilter("scored")}
+                onClick={() => handleVolleyboxFilterChange("scored")}
                 className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
                   volleyboxFilter === "scored"
                     ? "bg-done text-done-fg font-bold shadow-xs"
@@ -313,7 +423,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
               </button>
               <button
                 type="button"
-                onClick={() => setVolleyboxFilter("unscored")}
+                onClick={() => handleVolleyboxFilterChange("unscored")}
                 className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
                   volleyboxFilter === "unscored"
                     ? "bg-amber-600 text-white font-bold shadow-xs"
@@ -324,7 +434,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
               </button>
               <button
                 type="button"
-                onClick={() => setVolleyboxFilter("unsynced")}
+                onClick={() => handleVolleyboxFilterChange("unsynced")}
                 className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all cursor-pointer ${
                   volleyboxFilter === "unsynced"
                     ? "bg-slate-700 text-white font-bold shadow-xs"
@@ -335,7 +445,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
               </button>
               <button
                 type="button"
-                onClick={() => setVolleyboxFilter("discrepancy")}
+                onClick={() => handleVolleyboxFilterChange("discrepancy")}
                 className={`px-2 py-1 rounded-lg text-[11px] font-semibold transition-all flex items-center gap-1 cursor-pointer ${
                   volleyboxFilter === "discrepancy"
                     ? "bg-amber-600 text-white font-bold shadow-xs"
@@ -350,13 +460,17 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
             </div>
 
             {/* Filtreleri Sıfırla */}
-            {(volleyboxFilter !== "all" || selectedWeek !== "all" || statusFilter !== "all") && (
+            {(volleyboxFilter !== "all" ||
+              selectedWeek !== "all" ||
+              statusFilter !== "all" ||
+              selectedDate !== "all") && (
               <button
                 type="button"
                 onClick={() => {
                   setVolleyboxFilter("all");
                   setSelectedWeek("all");
                   setStatusFilter("all");
+                  setSelectedDate("all");
                 }}
                 className="px-2 py-1 rounded-xl text-xs text-slate-400 hover:text-white hover:bg-slate-800/80 border border-slate-700/60 font-medium flex items-center gap-1 transition-all shrink-0 cursor-pointer active:scale-95"
               >
@@ -369,7 +483,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       </div>
 
       {/* 2. Altyapı kompakt fikstür akışı */}
-      {matchesByWeek.length === 0 ? (
+      {fixtureSections.length === 0 ? (
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-10 text-center space-y-2 shadow-card">
           <SearchX size={36} className="mx-auto text-slate-600" />
           <h3 className="text-sm font-bold text-white">Karşılaşma Bulunamadı</h3>
@@ -381,18 +495,18 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
         </div>
       ) : (
         <div className="space-y-4">
-          {matchesByWeek.map(([weekNum, weekMatches]) => (
+          {fixtureSections.map((sec) => (
             <LeagueSection
-              key={weekNum}
+              key={sec.key}
               leagueTitle="Kadınlar 2. Ligi"
-              sectionLabel={`${group.grup_adi} · ${weekNum}. Hafta`}
-              matches={weekMatches.map(convertK2MatchToMatch)}
+              sectionLabel={sec.label}
+              matches={sec.matches.map(convertK2MatchToMatch)}
               selectedMatchId={selectedMatchId}
               favorites={favoriteMatchIds}
               onToggleFavorite={handleToggleFavorite}
               onSelectMatch={onSelectMatch}
               mode="fixtures"
-              standingsHref={getKadinlar2LigRoute("standings", group.grup_no)}
+              standingsHref={sec.standingsHref}
             />
           ))}
         </div>

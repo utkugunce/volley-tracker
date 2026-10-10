@@ -85,6 +85,21 @@ describe("kadinlar2LigRoutes", () => {
         tab: "fixtures",
         groupNo: 8,
       });
+      expect(
+        parseKadinlar2LigRoute("/kadinlar-2-ligi/fikstur/tum-gruplar")
+      ).toEqual({
+        tab: "fixtures",
+        groupNo: "all",
+      });
+    });
+
+    it("handles all groups for getKadinlar2LigRoute", () => {
+      expect(getKadinlar2LigRoute("fixtures", "all")).toBe(
+        "/kadinlar-2-ligi/fikstur/tum-gruplar"
+      );
+      expect(getKadinlar2LigRoute("standings", "all")).toBe(
+        "/kadinlar-2-ligi/puan-durumu/tum-gruplar"
+      );
     });
 
     it("parses results, today, leaders, teams and statu tabs", () => {

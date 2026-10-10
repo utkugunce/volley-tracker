@@ -17,10 +17,10 @@ import { Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
 
 interface Kadinlar2LigSidebarProps {
   groups: Kadinlar2LigGroup[];
-  selectedGroup: number;
+  selectedGroup: number | "all";
   activeTab: Kadinlar2LigTabType;
   favoritesCount: number;
-  onSelectGroup: (groupNo: number) => void;
+  onSelectGroup: (groupNo: number | "all") => void;
   onSelectTab: (tab: Kadinlar2LigTabType) => void;
 }
 
@@ -155,6 +155,44 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
 
           {isGroupsOpen && (
             <div className="space-y-0.5 pt-1">
+              {/* Tüm Gruplar (1-16) */}
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => {
+                    onSelectGroup("all");
+                    onSelectTab("fixtures");
+                  }}
+                  className={`flex min-w-0 flex-1 items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
+                    selectedGroup === "all" &&
+                    (activeTab === "standings" || activeTab === "fixtures")
+                      ? "border-l-2 border-primary bg-primary/15 text-white font-bold"
+                      : "text-ink-2 hover:bg-panel hover:text-white"
+                  }`}
+                >
+                  <span className="truncate text-xs font-semibold">Tüm Gruplar (1-16)</span>
+                  <span className="font-mono text-[10px] text-ink-2 bg-canvas px-1.5 py-0.2 rounded border border-line">
+                    {groups.length} Grup
+                  </span>
+                </button>
+                <Link prefetch={false}
+                  href="/kadinlar-2-ligi/fikstur/tum-gruplar"
+                  onClick={() => {
+                    onSelectGroup("all");
+                    onSelectTab("fixtures");
+                  }}
+                  className={`rounded-lg p-1.5 transition ${
+                    selectedGroup === "all" && activeTab === "fixtures"
+                      ? "bg-primary/20 text-white border border-primary/40"
+                      : "text-ink-2 hover:bg-panel hover:text-ink"
+                  }`}
+                  title="Tüm Gruplar fikstürü"
+                  aria-label="Tüm Gruplar fikstürü"
+                >
+                  <CalendarDays size={13} />
+                </Link>
+              </div>
+
               {groups.map((group) => {
                 const isActive =
                   selectedGroup === group.grup_no &&
