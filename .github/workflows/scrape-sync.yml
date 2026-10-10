@@ -94,7 +94,7 @@ jobs:
           # kaybolmaz (her çalışma yeniden tarar ve repodaki veriyle karşılaştırır), bir sonraki uygun çalışmada
           # commit'lenir. Supabase importu her çalışmada yapıldığı için API'ler güncel kalır.
           # Elle/yönetici tetiklemesi (workflow_dispatch) bu sınırı atlar. Repo değişkeniyle değiştirilebilir; 0 = kapalı.
-          DATA_COMMIT_MIN_INTERVAL_HOURS: ${{ vars.DATA_COMMIT_MIN_INTERVAL_HOURS || '3' }}
+          DATA_COMMIT_MIN_INTERVAL_HOURS: ${{ vars.DATA_COMMIT_MIN_INTERVAL_HOURS || '6' }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
