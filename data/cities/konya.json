@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T18:25:56.016262+00:00",
+  "updated_at": "2026-10-11T15:33:32.688916+00:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -69,23 +69,23 @@
       {
         "rank": 1,
         "team": "Konya Anka Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
         "team": "Selçuklu Belediyespor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -161,23 +161,23 @@
       {
         "rank": 1,
         "team": "Diltaş Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Falcon Atletik Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
+        "sets_won": 4,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -746,11 +746,17 @@
       "match_no": "4",
       "home_team": "Konya Anka Spor Kulübü U18",
       "away_team": "Selçuklu Belediyespor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-18",
+        "14-25",
+        "25-23",
+        "18-25",
+        "15-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1019,11 +1025,16 @@
       "match_no": "3",
       "home_team": "Diltaş Spor Kulübü U18",
       "away_team": "Falcon Atletik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "27-25",
+        "17-25",
+        "25-18",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1076,5 +1087,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-10T18:27:43.014464"
+  "volleybox_sync_updated_at": "2026-10-11T15:35:19.745304"
 }

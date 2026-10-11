@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T18:25:56.016262+00:00",
+  "updated_at": "2026-10-11T15:33:32.688916+00:00",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -26,7 +26,7 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Mersin İhtisas Spor Kulübü U18",
+        "team": "MEV Toros Spor Kulübü U18",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -37,12 +37,12 @@
       },
       {
         "rank": 2,
-        "team": "MEV Toros Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "team": "Mersin İhtisas Spor Kulübü U18",
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -93,12 +93,12 @@
       {
         "rank": 7,
         "team": "Alsancak Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -539,11 +539,15 @@
       "match_no": "11",
       "home_team": "Alsancak Spor Kulübü U18",
       "away_team": "MEV Toros Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "9-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -596,5 +600,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-10T18:27:43.079506"
+  "volleybox_sync_updated_at": "2026-10-11T15:35:19.798413"
 }

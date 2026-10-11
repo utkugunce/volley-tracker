@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-11T01:47:29.399339+00:00",
+  "updated_at": "2026-10-11T15:33:32.688916+00:00",
   "total_cities": 81,
   "active_cities": 33,
-  "total_matches": 1075,
+  "total_matches": 1072,
   "cities": [
     {
       "ilid": "1",
@@ -70,8 +70,8 @@
       "name": "Antalya",
       "slug": "antalya",
       "url": "https://antalya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (67 Maç Mevcut)",
-      "matches_count": 67,
+      "status": "Aktif (64 Maç Mevcut)",
+      "matches_count": 64,
       "standings_count": 5,
       "data_file": "data/cities/antalya.json"
     },
@@ -272,7 +272,7 @@
       "url": "https://gaziantep.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (5 Maç Mevcut)",
       "matches_count": 5,
-      "standings_count": 5,
+      "standings_count": 2,
       "data_file": "data/cities/gaziantep.json"
     },
     {
