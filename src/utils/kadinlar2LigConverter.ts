@@ -1,6 +1,7 @@
 import { Kadinlar2LigMatch, Kadinlar2LigVolleybox } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { getVolleyboxTeamName } from "@/utils/volleybox";
+import { compareMatchTimes } from "@/utils/calendar";
 
 /** Altyapı eşleme dosyasındaki (volleybox-mappings.json) kategori adı. */
 export const K2_CATEGORY = "Kadınlar 2. Ligi";
@@ -142,3 +143,23 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     volleybox: volleyboxData as unknown as Match["volleybox"],
   };
 }
+
+/**
+ * Kadınlar 2. Ligi maçlarını saatine göre yukarıdan aşağıya (erken saatten geç saate) sıralar.
+ * Aynı saatteki maçlar için grup numarası ve maç numarası ikincil kriterdir.
+ */
+export function sortKadinlar2LigMatchesByTime(matches: Kadinlar2LigMatch[]): Kadinlar2LigMatch[] {
+  return [...matches].sort((a, b) => {
+    const timeDiff = compareMatchTimes(a.saat, b.saat);
+    if (timeDiff !== 0) return timeDiff;
+
+    const g1 = a.grup_no ?? 999;
+    const g2 = b.grup_no ?? 999;
+    if (g1 !== g2) return g1 - g2;
+
+    return (a.mac_no || "").localeCompare(b.mac_no || "");
+  });
+}
+
+export const sortMatchesByTime = sortKadinlar2LigMatchesByTime;
+

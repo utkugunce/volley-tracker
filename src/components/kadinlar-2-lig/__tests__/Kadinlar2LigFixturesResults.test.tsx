@@ -138,8 +138,8 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     // Saat görünümüne tıkla
     fireEvent.click(timeBtn);
 
-    // Saat görünümü başlığı ve maç bilgisi
-    expect(screen.getByText(/Saate Göre Sıralı/i)).toBeInTheDocument();
+    // Saat görünümünde LeagueSection Maç Sonuçları başlığı ve maç bilgisi
+    expect(screen.getAllByText(/Maç Sonuçları/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
     expect(screen.getByText("Eczacıbaşı 2")).toBeInTheDocument();
     expect(screen.getByText("1. Grup")).toBeInTheDocument();
@@ -271,7 +271,7 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
   });
 
   it("sortMatchesByTime maçları erken saatten geç saate yukarıdan aşağıya sıralar", async () => {
-    const { sortMatchesByTime } = await import("../Kadinlar2LigTimeView");
+    const { sortMatchesByTime } = await import("@/utils/kadinlar2LigConverter");
     const m1: Kadinlar2LigMatch = { ...mockMatches[0], id: "m1", saat: "16:00" };
     const m2: Kadinlar2LigMatch = { ...mockMatches[0], id: "m2", saat: "11:00", grup_no: 1 };
     const m3: Kadinlar2LigMatch = { ...mockMatches[0], id: "m3", saat: "14:30" };

@@ -6,8 +6,15 @@ import { Kadinlar2LigMatch, Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
-import { Kadinlar2LigTimeView } from "./Kadinlar2LigTimeView";
-import { convertK2MatchToMatch, getKadinlar2LigMatchTeamNames, isKadinlar2LigMatchFavorite, kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
+import {
+  convertK2MatchToMatch,
+  getKadinlar2LigMatchTeamNames,
+  isKadinlar2LigMatchFavorite,
+  kadinlar2LigMatchHasTeamQuery,
+  normalizeK2Date,
+  sortKadinlar2LigMatchesByTime,
+} from "@/utils/kadinlar2LigConverter";
+import { formatDateTurkish } from "@/utils/calendar";
 import { useFavorites } from "@/utils/useFavorites";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 
@@ -145,6 +152,21 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
       map.get(gNo)!.push(m);
     });
     return Array.from(map.entries()).sort((a, b) => a[0] - b[0]);
+  }, [filteredResults]);
+
+  // Tarihe göre gruplandırma (Saat Görünümünde "Tüm Sonuçlar" seçiliyse gün bazında bloklar için)
+  const resultsByDate = useMemo(() => {
+    const map = new Map<string, Kadinlar2LigMatch[]>();
+    filteredResults.forEach((m) => {
+      const d = normalizeK2Date(m.tarih) || "TBD";
+      if (!map.has(d)) map.set(d, []);
+      map.get(d)!.push(m);
+    });
+    return Array.from(map.entries()).sort((a, b) => {
+      if (a[0] === "TBD") return 1;
+      if (b[0] === "TBD") return -1;
+      return b[0].localeCompare(a[0]);
+    });
   }, [filteredResults]);
 
   // Favori maç ID'leri
@@ -314,14 +336,36 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
           )}
         </div>
       ) : viewMode === "time" ? (
-        <Kadinlar2LigTimeView
-          matches={filteredResults}
-          onSelectMatch={onSelectMatch}
-          selectedMatchId={selectedMatchId}
-          isFavorite={isFavorite}
-          onToggleFavorite={handleToggleFavorite}
-          selectedDate={selectedResultDate}
-        />
+        <div className="space-y-4">
+          {selectedResultDate !== "all" ? (
+            <LeagueSection
+              leagueTitle="Kadınlar 2. Ligi"
+              sectionLabel="Maç Sonuçları"
+              matches={sortKadinlar2LigMatchesByTime(filteredResults).map(convertK2MatchToMatch)}
+              selectedMatchId={selectedMatchId}
+              favorites={favoriteMatchIds}
+              onToggleFavorite={handleToggleFavorite}
+              onSelectMatch={onSelectMatch}
+              mode="results"
+              showGroupBadge={true}
+            />
+          ) : (
+            resultsByDate.map(([dateKey, dayMatches]) => (
+              <LeagueSection
+                key={dateKey}
+                leagueTitle="Kadınlar 2. Ligi"
+                sectionLabel={`${formatDateTurkish(dateKey) || dateKey} · Maç Sonuçları`}
+                matches={sortKadinlar2LigMatchesByTime(dayMatches).map(convertK2MatchToMatch)}
+                selectedMatchId={selectedMatchId}
+                favorites={favoriteMatchIds}
+                onToggleFavorite={handleToggleFavorite}
+                onSelectMatch={onSelectMatch}
+                mode="results"
+                showGroupBadge={true}
+              />
+            ))
+          )}
+        </div>
       ) : (
         <div className="space-y-4">
           {resultsByGroup.map(([gNo, groupMatches]) => {

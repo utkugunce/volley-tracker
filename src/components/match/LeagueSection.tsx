@@ -23,6 +23,7 @@ interface LeagueSectionProps {
   isCollapsed?: boolean;
   onToggleCollapse?: () => void;
   mode?: MatchRowMode;
+  showGroupBadge?: boolean;
 }
 
 export const LeagueSection: React.FC<LeagueSectionProps> = ({
@@ -40,6 +41,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
   isCollapsed: controlledCollapsed,
   onToggleCollapse,
   mode = "today",
+  showGroupBadge = false,
 }) => {
   const [localCollapsed, setLocalCollapsed] = useState(defaultCollapsed);
   const isCollapsed = controlledCollapsed ?? localCollapsed;
@@ -117,6 +119,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
               isFavorite={favorites.includes(m.id)}
               onToggleFavorite={onToggleFavorite}
               mode={mode}
+              showGroupBadge={showGroupBadge}
             />
           ))}
         </div>
