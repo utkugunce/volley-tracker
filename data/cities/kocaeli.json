@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T11:24:37.698244+03:00",
+  "updated_at": "2026-10-11T01:47:29.399339+00:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -36,6 +36,17 @@
     "Genç Kızlar Süper Lig - İzmit Grubu": [
       {
         "rank": 1,
+        "team": "Kocaeli Voleybol Akademi Spor Kulübü",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "İzmitspor",
         "played": 2,
         "won": 2,
@@ -46,7 +57,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Elite Spor",
         "played": 2,
         "won": 1,
@@ -57,30 +68,19 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Körfez Akademi",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 4,
         "sets_won": 5,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Nicomedia Akademi",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Kocaeli Voleybol Akademi Spor Kulübü",
+        "team": "Nicomedia Akademi",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -702,11 +702,15 @@
       "match_no": "11",
       "home_team": "Kocaeli Voleybol Akademi Spor Kulübü",
       "away_team": "Körfez Akademi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-20",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1562,5 +1566,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-10T11:29:20.905205"
+  "volleybox_sync_updated_at": "2026-10-11T01:49:18.354832"
 }

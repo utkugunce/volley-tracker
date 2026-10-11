@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T18:25:56.016262+00:00",
+  "updated_at": "2026-10-11T01:47:29.399339+00:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -101,6 +101,28 @@
       },
       {
         "rank": 2,
+        "team": "YEŞİL MARMARİS SPOR KULÜBÜ",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "DATÇA GENÇLİK VE SPOR KULÜBÜ",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "1907 MARMARİS VOLEYBOL",
         "played": 1,
         "won": 0,
@@ -108,28 +130,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "DATÇA GENÇLİK VE SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "YEŞİL MARMARİS SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -147,6 +147,17 @@
       },
       {
         "rank": 2,
+        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "MİLAS BELEDİYE SPOR A",
         "played": 1,
         "won": 0,
@@ -157,32 +168,21 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "MUĞLA SS VOLEYBOL SPOR KULÜBÜ",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "team": "FETHİYE VOLEYBOL SPOR",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -193,6 +193,17 @@
       },
       {
         "rank": 2,
+        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "FETHİYE ANKA SPOR",
         "played": 1,
         "won": 0,
@@ -203,25 +214,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "FETHİYE VOLEYBOL SPOR",
-        "played": 0,
+        "team": "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -602,11 +602,16 @@
       "match_no": "2",
       "home_team": "YEŞİL MARMARİS SPOR KULÜBÜ",
       "away_team": "DATÇA GENÇLİK VE SPOR KULÜBÜ",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-23",
+        "26-24",
+        "17-25",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -673,12 +678,12 @@
       "group": "C Grubu",
       "match_no": "2",
       "home_team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ",
-      "away_team": "MUĞLA SS VOLEYBOL SPOR KULÜBÜ",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
+      "away_team": "(H) - MUĞLA SS VOLEYBOL SPOR KULÜBÜ",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
       "set_scores": [],
-      "status": "upcoming",
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -746,11 +751,15 @@
       "match_no": "2",
       "home_team": "FETHİYE VOLEYBOL SPOR",
       "away_team": "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-7",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -769,5 +778,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-10T18:27:43.057698"
+  "volleybox_sync_updated_at": "2026-10-11T01:49:18.400016"
 }
