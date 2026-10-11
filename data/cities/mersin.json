@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T20:44:51.172591+03:00",
+  "updated_at": "2026-10-11T21:23:32.171459+03:00",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -27,49 +27,38 @@
       {
         "rank": 1,
         "team": "MEV Toros Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Mersin İhtisas Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
         "team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 4,
         "sets_lost": 4,
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 4,
         "team": "Tarsus Gelecek Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -80,25 +69,36 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 5,
         "team": "Tarsus Amerikan Koleji U18",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 7,
         "team": "Alsancak Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -463,11 +463,15 @@
       "match_no": "9",
       "home_team": "Tarsus Amerikan Koleji U18",
       "away_team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-20",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -497,11 +501,15 @@
       "match_no": "10",
       "home_team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
       "away_team": "Mersin İhtisas Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "25-27",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -531,11 +539,15 @@
       "match_no": "11",
       "home_team": "Alsancak Spor Kulübü U18",
       "away_team": "MEV Toros Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "9-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -588,5 +600,5 @@
     }
   ],
   "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-11T20:49:47.995066"
+  "volleybox_sync_updated_at": "2026-10-11T21:28:21.006352"
 }

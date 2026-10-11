@@ -36,7 +36,20 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
     const base = todayStr ? new Date(todayStr + "T00:00:00") : new Date();
     if (availableDates?.length) {
       const dayNames = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
-      return availableDates.slice(0, 5).map((dateStr) => {
+
+      // Sonuçlar şeridinde Bugün ve Dün her zaman ilk sıralarda yer alır
+      const dateSet = new Set<string>();
+      if (todayStr) {
+        dateSet.add(todayStr);
+        const yDate = new Date(`${todayStr}T00:00:00`);
+        yDate.setDate(yDate.getDate() - 1);
+        const yStr = `${yDate.getFullYear()}-${String(yDate.getMonth() + 1).padStart(2, "0")}-${String(yDate.getDate()).padStart(2, "0")}`;
+        dateSet.add(yStr);
+      }
+      availableDates.forEach((d) => dateSet.add(d));
+      const sortedAvailable = Array.from(dateSet).sort().reverse();
+
+      return sortedAvailable.slice(0, 5).map((dateStr) => {
         const date = new Date(`${dateStr}T00:00:00`);
         const dayOffset = Math.round((date.getTime() - base.getTime()) / 86400000);
         const label = dayOffset === 0

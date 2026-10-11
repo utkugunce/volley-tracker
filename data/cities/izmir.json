@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T20:44:51.172591+03:00",
+  "updated_at": "2026-10-11T21:23:32.171459+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -2857,54 +2857,13 @@
       "id": "izmir-20261018-047",
       "city": "İzmir",
       "date": "2026-10-18",
-      "time": "--:--",
-      "hall": "Vali Hüseyin Öğütcen S",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kız - A Gr",
-      "match_no": "7",
-      "home_team": "Volkan Güç Spor Kulübü - B U18",
-      "away_team": "Uzay 35 Voleybol Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "406714",
-        "url": "https://women.volleybox.net/tr/volkan-guc-spor-kulubu-b-u18-uzay-35-voleybol-kulubu-b-u18-c406714",
-        "host_name": "Volkan Güç Spor Kulübü - B U18",
-        "guest_name": "Uzay 35 Voleybol Kulübü - B U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-18",
-        "vb_time": null,
-        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": null,
-          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "izmir-20261018-048",
-      "city": "İzmir",
-      "date": "2026-10-18",
       "time": "14:30",
       "hall": "Menemen",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kız - A Gr",
-      "match_no": "8",
+      "match_no": "7",
       "home_team": "Bergama Belediyesi Spor Kulübü U18",
       "away_team": "Karşıyaka SK - B U18",
       "score": "- : -",
@@ -2931,6 +2890,47 @@
           "vb_date": "2026-10-18",
           "vb_time": null,
           "vb_hall": "Menemen Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "izmir-20261018-048",
+      "city": "İzmir",
+      "date": "2026-10-18",
+      "time": "16:30",
+      "hall": "Vali Hüseyin Öğütcen S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kız - A Gr",
+      "match_no": "8",
+      "home_team": "Volkan Güç Spor Kulübü - B U18",
+      "away_team": "Uzay 35 Voleybol Kulübü - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406714",
+        "url": "https://women.volleybox.net/tr/volkan-guc-spor-kulubu-b-u18-uzay-35-voleybol-kulubu-b-u18-c406714",
+        "host_name": "Volkan Güç Spor Kulübü - B U18",
+        "guest_name": "Uzay 35 Voleybol Kulübü - B U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-18",
+        "vb_time": null,
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": null,
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
           "details": null
         }
       }
@@ -6679,5 +6679,5 @@
     }
   ],
   "volleybox_synced_matches": 112,
-  "volleybox_sync_updated_at": "2026-10-11T20:49:47.471550"
+  "volleybox_sync_updated_at": "2026-10-11T21:28:20.647521"
 }
