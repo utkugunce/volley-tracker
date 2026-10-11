@@ -149,6 +149,7 @@ export async function getOverridesData(): Promise<OverridesData> {
  * Vercel sunucusuz salt-okunur disk hatası (EROFS) durumunda sessizce Blob ve bellek önbelleğini günceller.
  */
 export async function saveOverridesData(data: OverridesData): Promise<void> {
+  invalidateActiveOverrides();
   // Bellek önbelleğini hemen güncelle
   memoryOverridesCache = data;
 
@@ -280,6 +281,64 @@ export function applyOverridesToMatches(matches: Match[], customOverrides?: Reco
  * Asenkron maç skor ezme (Vercel Blob üzerinden en taze veriyi çekip uygular)
  */
 export async function applyOverridesToMatchesAsync(matches: Match[]): Promise<Match[]> {
-  const data = await getOverridesData();
-  return internalApply(matches, data.overrides);
+  const overrides = await getActiveOverrides();
+  return internalApply(matches, overrides);
+}
+
+/**
+ * Skor uygulamak için yalnızca aktif override'lar gerekir. Eskiden her /api/fixtures isteği
+ * sınırsız büyüyen denetim kaydını (override_audit_log) da çekip ayrıştırıyordu; bu hem Supabase
+ * hem Vercel Fluid Active CPU harcıyordu. Sonuç instance içinde kısa süre paylaşılır: aynı anda
+ * gelen CDN ıskaları tek sorguya iner. Admin kaydı (saveOverridesData) bu önbelleği hemen temizler.
+ */
+export const ACTIVE_OVERRIDES_TTL_MS = 30 * 1000;
+let activeOverridesMemo: { at: number; promise: Promise<Record<string, MatchOverride>> } | null = null;
+
+export function invalidateActiveOverrides(): void {
+  activeOverridesMemo = null;
+}
+
+async function fetchActiveOverrides(): Promise<Record<string, MatchOverride>> {
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const { data: rows, error } = await supabase
+      .from("manual_overrides")
+      .select("match_id, home_score, away_score, set_scores, status, updated_at, updated_by, reason");
+    if (!error) {
+      const overrides: Record<string, MatchOverride> = Object.fromEntries(
+        (rows || []).map((row) => [
+          row.match_id,
+          {
+            match_id: row.match_id,
+            home_score: row.home_score,
+            away_score: row.away_score,
+            set_scores: Array.isArray(row.set_scores) ? row.set_scores : [],
+            status: row.status || undefined,
+            updated_at: row.updated_at,
+            updated_by: row.updated_by,
+            reason: row.reason,
+          },
+        ])
+      );
+      memoryOverridesCache = { overrides, audit_log: memoryOverridesCache?.audit_log ?? [] };
+      return overrides;
+    }
+    console.warn("Supabase aktif override okuma hatası (tam okumaya dönülüyor):", error.message);
+  }
+  return (await getOverridesData()).overrides;
+}
+
+export function getActiveOverrides(): Promise<Record<string, MatchOverride>> {
+  const now = Date.now();
+  if (activeOverridesMemo && now - activeOverridesMemo.at < ACTIVE_OVERRIDES_TTL_MS) {
+    return activeOverridesMemo.promise;
+  }
+  const promise = fetchActiveOverrides();
+  const memo = { at: now, promise };
+  activeOverridesMemo = memo;
+  // Hata durumunda önbellekte bekletme; bir sonraki istek yeniden denesin.
+  promise.catch(() => {
+    if (activeOverridesMemo === memo) activeOverridesMemo = null;
+  });
+  return promise;
 }

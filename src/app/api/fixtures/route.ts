@@ -7,7 +7,7 @@ import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "@
 import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
-import { getSupabaseFixtures } from "@/utils/supabaseFixtures";
+import { getSupabaseFixturesCached } from "@/utils/supabaseFixtures";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
 import type { CityInfo, FixturesData, Match, StandingItem } from "@/types/fixture";
 
@@ -154,7 +154,7 @@ export async function GET(request: Request) {
 
     let data: FixturesData;
 
-    const supabaseData = await getSupabaseFixtures(citySlug);
+    const supabaseData = await getSupabaseFixturesCached(citySlug);
 
     if (supabaseData && Array.isArray(supabaseData.matches) && supabaseData.matches.length > 0) {
       data = supabaseData;
@@ -269,8 +269,8 @@ export async function GET(request: Request) {
     } else {
       // Bu rota maçları ve puan durumunu deploy beklemeden Supabase'den (ve admin override'larından) okur,
       // bu yüzden 24 saatlik CDN önbelleği deploy'suz importları ve elle düzeltmeleri gizliyordu.
-      // 5 dakikalık s-maxage skorları güncel tutar; eski 60 sn'ye göre origin trafiği yine ~5 kat azdır.
-      headers["Cache-Control"] = "public, s-maxage=300, stale-while-revalidate=600";
+      // s-maxage=270 + instance içi 30 sn paylaşım = yeni skorlar en geç ~5 dakikada görünür.
+      headers["Cache-Control"] = "public, s-maxage=270, stale-while-revalidate=600";
     }
 
     return NextResponse.json(
