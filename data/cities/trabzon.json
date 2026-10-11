@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T21:23:32.171459+03:00",
+  "updated_at": "2026-10-11T22:31:13.486674+03:00",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
@@ -30,46 +30,46 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "AKÇAABAT BELEDİYESİ S.K.",
-        "played": 0,
-        "won": 0,
+        "team": "İSKOFYA S.K. A",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "İSKOFYA S.K. A",
-        "played": 0,
-        "won": 0,
+        "team": "AKÇAABAT BELEDİYESİ S.K.",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "İSKOFYA S.K. B",
-        "played": 0,
+        "team": "REVUP",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "REVUP",
-        "played": 0,
+        "team": "İSKOFYA S.K. B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -88,11 +88,15 @@
       "match_no": "1",
       "home_team": "İSKOFYA S.K. A",
       "away_team": "İSKOFYA S.K. B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-8",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -122,11 +126,15 @@
       "match_no": "2",
       "home_team": "REVUP",
       "away_team": "AKÇAABAT BELEDİYESİ S.K.",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "19-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -213,5 +221,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-11T21:28:22.202544"
+  "volleybox_sync_updated_at": "2026-10-11T22:36:03.448032"
 }

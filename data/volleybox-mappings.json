@@ -15305,15 +15305,17 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Düzce",
       "city_slug": "duzce",
-      "matched_as": "Unica Düzce Voleybol",
+      "matched_as": "Düzce Voleybol SK",
       "volleybox_url": "https://women.volleybox.net/tr/duzce-voleybol-sk-t21292",
       "age_category": "A Takım",
       "confidence": "verified",
       "note": "Grup 10",
       "verified_at": "2026-09-25",
       "aliases": [
+        "Düzce Voleybol SK",
+        "Düzce Voleybol",
         "Unica Düzce Voleybol",
-        "Düzce Voleybol SK"
+        "DÜZCE VOLEYBOL"
       ],
       "logo_url": "/logos/duzce-voleybol-sk-t21292.png",
       "local_logo": "/logos/duzce-voleybol-sk-t21292.png"
@@ -15744,7 +15746,8 @@
         "ADANA B.ŞEHİR BELEDİYE SPOR",
         "ADANA B.ŞEHİR BELEDİYESİ SPOR",
         "Adana Büyükşehir Belediyespor Kulübü",
-        "ADANA B.ŞEHİR BLD. SPOR KULÜBÜ"
+        "ADANA B.ŞEHİR BLD. SPOR KULÜBÜ",
+        "Adana Büyükşehir Belediyespor"
       ],
       "logo_url": "/logos/adana-bsehir-bld-t13590.png",
       "local_logo": "/logos/adana-bsehir-bld-t13590.png"
@@ -15763,8 +15766,7 @@
       "aliases": [
         "ASEM",
         "Adana Sporcu Eğitim Merkezi Spor Kulübü",
-        "ADANA SPOR KULÜBÜCU EĞİTİM SPOR KULÜBÜ",
-        "Adana Büyükşehir Belediyespor Kulübü"
+        "ADANA SPOR KULÜBÜCU EĞİTİM SPOR KULÜBÜ"
       ],
       "logo_url": "/logos/adana-sporcu-egitim-merkezi-t30840.png",
       "local_logo": "/logos/adana-sporcu-egitim-merkezi-t30840.png"
@@ -15782,8 +15784,7 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "Adana Tenis Dağ ve Su Sporları Kulübü",
-        "ATDSK",
-        "Adana Büyükşehir Belediyespor Kulübü"
+        "ATDSK"
       ],
       "logo_url": "/logos/adana-tenis-dag-ve-su-sporlar-kulubu-t36049.png",
       "local_logo": "/logos/adana-tenis-dag-ve-su-sporlar-kulubu-t36049.png"
@@ -16267,13 +16268,16 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Elaziğ",
       "city_slug": "elazig",
-      "matched_as": "Ekol Spor Kulübü",
+      "matched_as": "Elazığ Ekol Spor",
       "volleybox_url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
       "age_category": "A Takım",
       "confidence": "verified",
       "note": "Grup 15",
       "verified_at": "2026-09-25",
       "aliases": [
+        "Elazığ Ekol Spor",
+        "MSE Filo Elazığ Ekol Spor",
+        "MSE Filo Elazığ Ekol Spor Kulübü",
         "MSE FİLO ELAZIĞ EKOL SPOR KULÜBÜ",
         "Ekol Spor Kulübü"
       ],
@@ -16472,7 +16476,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Şanliurfa",
       "city_slug": "sanliurfa",
-      "matched_as": "Siverek Belediye Spor Kulübü",
+      "matched_as": "Siverek Voleybol Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/siverek-belediye-spor-kulubu-t45575",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -16480,9 +16484,13 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "Siverek Voleybol Spor Kulübü",
+        "Siverek Voleybol SK",
         "Siverek Belediye Spor Kulübü",
         "Siverek Kadın Voleybol Takımı",
-        "SİVEREK BELEDİYE SPOR KULÜBÜ"
+        "SİVEREK BELEDİYE SPOR KULÜBÜ",
+        "SİVEREK BELEDİYE SPOR",
+        "Siverek Belediye Spor",
+        "Siverek Belediyespor"
       ],
       "logo_url": "/logos/siverek-belediye-spor-kulubu-t45575.png",
       "local_logo": "/logos/siverek-belediye-spor-kulubu-t45575.png"
