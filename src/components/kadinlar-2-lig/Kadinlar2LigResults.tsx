@@ -91,14 +91,16 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
     [finishedMatches]
   );
 
-  // Sonuçlanan maçların benzersiz tarihleri (YYYY-MM-DD)
+  // Sonuçlanan maçların benzersiz tarihleri + Bugün ve Dün (YYYY-MM-DD)
   const uniqueResultDates = useMemo(() => {
     const set = new Set<string>();
+    if (todayIso) set.add(todayIso);
+    if (yesterdayIso) set.add(yesterdayIso);
     standardFinishedMatches.forEach((match) => {
       if (match.date && match.date !== "TBD") set.add(match.date);
     });
     return Array.from(set).sort().reverse();
-  }, [standardFinishedMatches]);
+  }, [todayIso, yesterdayIso, standardFinishedMatches]);
 
   const dateCounts = useMemo(() => {
     const matchesForDate = selectedResultDate === "all"
