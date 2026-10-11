@@ -94,19 +94,26 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     m.durum === "BİTTİ" || (homeScore !== null && awayScore !== null);
 
   // Volleybox eşleşme ve tutarsızlık bilgisi
-  const volleyboxData: Kadinlar2LigVolleybox = m.volleybox || {
-    match_url: m.volleybox_url || null,
-    home_team_name: homeName,
-    away_team_name: awayName,
-    home_team_url: m.takim_a_volleybox_url || null,
-    away_team_url: m.takim_b_volleybox_url || null,
-    score: m.skor || null,
-    status: isFinished ? "finished" : "upcoming",
-    tournament_name: "TVF Uzman Posta Kadınlar 2. Ligi",
-    date: m.tarih || null,
-    time: m.saat || null,
-    discrepancy: m.discrepancy || null,
-  };
+  const volleyboxData: Kadinlar2LigVolleybox = m.volleybox
+    ? {
+        ...m.volleybox,
+        match_url: m.volleybox.url || m.volleybox.match_url || m.volleybox_url || null,
+        home_team_name: m.volleybox.home_team_name || m.volleybox.host_name || homeName,
+        away_team_name: m.volleybox.away_team_name || m.volleybox.guest_name || awayName,
+      }
+    : {
+        match_url: m.volleybox_url || null,
+        home_team_name: homeName,
+        away_team_name: awayName,
+        home_team_url: m.takim_a_volleybox_url || null,
+        away_team_url: m.takim_b_volleybox_url || null,
+        score: m.skor || null,
+        status: isFinished ? "finished" : "upcoming",
+        tournament_name: "TVF Uzman Posta Kadınlar 2. Ligi",
+        date: m.tarih || null,
+        time: m.saat || null,
+        discrepancy: m.discrepancy || null,
+      };
   if (m.discrepancy?.has_diff && !volleyboxData.discrepancy?.has_diff) {
     volleyboxData.discrepancy = m.discrepancy;
   }

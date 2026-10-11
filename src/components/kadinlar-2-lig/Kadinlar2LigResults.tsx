@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import { CheckCircle2, Star, History, SearchX, RotateCcw } from "lucide-react";
+import { CheckCircle2, Star, History, SearchX, RotateCcw, LayoutGrid, Flame } from "lucide-react";
 import { Kadinlar2LigMatch, Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
+import { Kadinlar2LigVolleyboxView } from "./Kadinlar2LigVolleyboxView";
 import { convertK2MatchToMatch, getKadinlar2LigMatchTeamNames, isKadinlar2LigMatchFavorite, kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
 import { useFavorites } from "@/utils/useFavorites";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
@@ -32,6 +33,27 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
   const { isFavorite, toggleFavorite } = useFavorites();
   const [selectedGroupFilter, setSelectedGroupFilter] = useState<number | "all">("all");
   const [selectedResultDate, setSelectedResultDate] = useState<string>("all");
+  const [viewMode, setViewMode] = useState<"groups" | "volleybox">("groups");
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("k2_results_view_mode");
+      if (saved === "volleybox" || saved === "groups") {
+        setViewMode(saved);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  const handleSelectViewMode = (mode: "groups" | "volleybox") => {
+    setViewMode(mode);
+    try {
+      localStorage.setItem("k2_results_view_mode", mode);
+    } catch {
+      // ignore
+    }
+  };
 
   // Bugün & Dün — yalnızca client tarafında hesaplanır (hydration error #418 önleme)
   const [todayIso, setTodayIso] = useState("");
@@ -170,6 +192,40 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
         </div>
 
         <div className="flex items-center gap-2.5 flex-wrap">
+          {/* Görünüm Seçici Butonları */}
+          <div className="flex items-center bg-slate-900 border border-slate-700/80 p-0.5 rounded-xl shadow-inner">
+            <button
+              type="button"
+              onClick={() => handleSelectViewMode("groups")}
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                viewMode === "groups"
+                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-xs font-bold"
+                  : "text-slate-400 hover:text-slate-200 border border-transparent"
+              }`}
+              title="16 Gruba göre ayrılmış klasik sonuç görünümü"
+            >
+              <LayoutGrid size={13} />
+              <span>Grup Görünümü</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => handleSelectViewMode("volleybox")}
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                viewMode === "volleybox"
+                  ? "bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-300 border border-amber-500/40 shadow-xs font-bold"
+                  : "text-slate-400 hover:text-slate-200 border border-transparent"
+              }`}
+              title="Volleybox maç sıralaması ve günlük kart görünümü"
+            >
+              <Flame
+                size={13}
+                className={viewMode === "volleybox" ? "text-amber-400" : "text-slate-400"}
+              />
+              <span>Volleybox Görünümü</span>
+            </button>
+          </div>
+
           {/* Grup Seçici */}
           <div className="flex items-center gap-1.5 text-xs">
             <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">
@@ -230,8 +286,8 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
         </div>
       </div>
 
-      {/* 3. Altyapı kompakt sonuç akışı */}
-      {resultsByGroup.length === 0 ? (
+      {/* 3. Sonuç Akışı (Grup Görünümü veya Volleybox Görünümü) */}
+      {filteredResults.length === 0 ? (
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-10 text-center space-y-3 shadow-card max-w-lg mx-auto my-6">
           <div className="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center mx-auto text-emerald-400 border border-slate-700">
             {selectedResultDate === yesterdayIso ? (
@@ -260,6 +316,15 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
             </button>
           )}
         </div>
+      ) : viewMode === "volleybox" ? (
+        <Kadinlar2LigVolleyboxView
+          matches={filteredResults}
+          onSelectMatch={onSelectMatch}
+          selectedMatchId={selectedMatchId}
+          isFavorite={isFavorite}
+          onToggleFavorite={handleToggleFavorite}
+          selectedDate={selectedResultDate}
+        />
       ) : (
         <div className="space-y-4">
           {resultsByGroup.map(([gNo, groupMatches]) => {

@@ -75,10 +75,16 @@ GENERIC_WORDS = {
 }
 
 
+def tr_lower(text: str) -> str:
+    if not text:
+        return ""
+    return text.replace("İ", "i").replace("I", "ı").lower()
+
+
 def normalize_name(name: str) -> str:
     if not name:
         return ""
-    s = name.strip().lower()
+    s = tr_lower(name.strip())
     # Türkçe karakter normalizasyonu
     s = (
         s.replace("ı", "i")
@@ -87,7 +93,6 @@ def normalize_name(name: str) -> str:
         .replace("ş", "s")
         .replace("ö", "o")
         .replace("ç", "c")
-        .replace("İ", "i")
     )
     s = s.replace(".", "")
     # Yaş kategorilerini ve kulüp eklerini temizle
@@ -113,7 +118,7 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
     """
     if not name:
         return "", None
-    s = name.strip().lower()
+    s = tr_lower(name.strip())
     s = (
         s.replace("ı", "i")
         .replace("ğ", "g")
@@ -121,7 +126,6 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
         .replace("ş", "s")
         .replace("ö", "o")
         .replace("ç", "c")
-        .replace("İ", "i")
     )
     s = s.replace(".", "")
     s = re.sub(r"\s+u\d+", "", s)
@@ -402,7 +406,7 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
 def normalize_hall_name(hall: str) -> str:
     if not hall:
         return ""
-    s = hall.strip().lower()
+    s = tr_lower(hall.strip())
     s = (
         s.replace("ı", "i")
         .replace("ğ", "g")
@@ -410,7 +414,6 @@ def normalize_hall_name(hall: str) -> str:
         .replace("ş", "s")
         .replace("ö", "o")
         .replace("ç", "c")
-        .replace("İ", "i")
     )
     s = re.sub(r"\b(spor|salonu|kompleksi|merkezi|sahasi|tesisleri|kucuk|buyuk)\b", " ", s)
     s = re.sub(r"[^a-z0-9\s]", " ", s)

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T15:33:32.688916+00:00",
+  "updated_at": "2026-10-11T20:44:51.172591+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -852,18 +852,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "402157",
+        "url": "https://women.volleybox.net/tr/antalya-1907-spor-kulubu-u18-antalya-simsek-gsk-u18-c402157",
+        "host_name": "Antalya 1907 Spor Kulübü U18",
+        "guest_name": "Antalya Şimşek GSK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-02",
+        "vb_time": "18:30",
+        "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "18:30",
+          "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
+          "details": null
         }
       }
     },
@@ -3110,6 +3117,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-11T15:35:19.737966"
+  "volleybox_synced_matches": 49,
+  "volleybox_sync_updated_at": "2026-10-11T20:49:42.107679"
 }

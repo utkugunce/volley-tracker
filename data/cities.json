@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-11T15:33:32.688916+00:00",
+  "updated_at": "2026-10-11T20:44:51.172591+03:00",
   "total_cities": 81,
   "active_cities": 33,
-  "total_matches": 1072,
+  "total_matches": 1067,
   "cities": [
     {
       "ilid": "1",
@@ -440,8 +440,8 @@
       "name": "Malatya",
       "slug": "malatya",
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (32 Maç Mevcut)",
-      "matches_count": 32,
+      "status": "Aktif (27 Maç Mevcut)",
+      "matches_count": 27,
       "standings_count": 1,
       "data_file": "data/cities/malatya.json"
     },

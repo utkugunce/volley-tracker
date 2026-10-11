@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T01:47:29.399339+00:00",
+  "updated_at": "2026-10-11T20:44:51.172591+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -480,18 +480,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "407389",
+        "url": "https://women.volleybox.net/tr/kocaeli-elite-spor-u18-kandra-voleybol-kulubu-u18-c407389",
+        "host_name": "Kocaeli Elite Spor U18",
+        "guest_name": "Kandıra Voleybol Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "18:30",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "18:30",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": null
         }
       }
     },
@@ -596,18 +603,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "407390",
+        "url": "https://women.volleybox.net/tr/zmit-yahya-kaptan-sk-u18-kocaeli-elite-spor-u18-c407390",
+        "host_name": "İzmit Yahya Kaptan SK U18",
+        "guest_name": "Kocaeli Elite Spor U18",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-09",
+        "vb_time": "18:30",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "18:30",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1565,6 +1579,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-11T01:49:18.354832"
+  "volleybox_synced_matches": 2,
+  "volleybox_sync_updated_at": "2026-10-11T20:49:47.927175"
 }

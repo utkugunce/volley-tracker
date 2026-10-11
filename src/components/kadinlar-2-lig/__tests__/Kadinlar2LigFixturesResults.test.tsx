@@ -120,6 +120,34 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.queryByText("Fenerbahçe 2")).not.toBeInTheDocument();
   });
 
+  it("Kadinlar2LigResults Volleybox görünümüne geçildiğinde Volleybox kartlarını ve sıralamasını render eder", () => {
+    const handleSelectMatch = vi.fn();
+    render(
+      <Kadinlar2LigResults
+        allMatches={mockMatches}
+        groups={[mockGroup]}
+        onSelectMatch={handleSelectMatch}
+      />
+    );
+
+    // Görünüm değiştirici butonları kontrol et
+    const vbBtn = screen.getByRole("button", { name: /Volleybox Görünümü/i });
+    expect(vbBtn).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /Grup Görünümü/i })).toBeInTheDocument();
+
+    // Volleybox görünümüne tıkla
+    fireEvent.click(vbBtn);
+
+    // Volleybox başlığı ve etiketi görünmeli
+    expect(screen.getByText(/Volleybox Sırası/i)).toBeInTheDocument();
+    expect(screen.getByText("Uzman Posta Kadınlar Voleybol 2. Ligi 2026/27")).toBeInTheDocument();
+    expect(screen.getByText("Daha Fazla Göster")).toBeInTheDocument();
+
+    // Kart tıklandığında onSelectMatch tetiklenmeli
+    fireEvent.click(screen.getByText("Daha Fazla Göster"));
+    expect(handleSelectMatch).toHaveBeenCalled();
+  });
+
   it("Kadinlar2LigTodayMatches altyapı tarih şeridi ve kompakt maç akışını kullanır", () => {
     render(
       <Kadinlar2LigTodayMatches
