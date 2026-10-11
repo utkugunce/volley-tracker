@@ -1,0 +1,33 @@
+# VPS'te: docker compose up -d
+# Caddy, altyapivoleybol.com.tr için Let's Encrypt sertifikasını kendisi alır.
+services:
+  web:
+    image: ghcr.io/utkugunce/volley-tracker:latest
+    restart: unless-stopped
+    env_file: .env
+    expose:
+      - "3000"
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+  # data/ güncellemeleri yeni imajla gelir; watchtower yeni :latest imajını 15 dakikada bir çeker.
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 900 --cleanup --label-enable
+volumes:
+  caddy_data:
+  caddy_config:

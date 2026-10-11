@@ -42,6 +42,9 @@ const securityHeaders = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Yedek barındırma (Docker/VPS) için: STANDALONE_BUILD=1 ile derlenince .next/standalone üretilir.
+  // Vercel derlemesi bu değişkeni görmediği için Vercel'deki davranış değişmez.
+  ...(process.env.STANDALONE_BUILD === "1" ? { output: "standalone" } : {}),
   outputFileTracingIncludes: {
     "/api/**/*": ["./data/**/*"],
     "/**/*": ["./data/**/*"],

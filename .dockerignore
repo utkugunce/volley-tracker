@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.github
+.vercel
+*.log
+tsconfig.tsbuildinfo
+tests
+docs
+DEVIR
+DEVIR-RAPORU.md
+scripts/__pycache__
+data/raw
+.env*
+!.env.example
