@@ -32,6 +32,7 @@ interface CompactMatchRowProps {
   isFavorite?: boolean;
   onToggleFavorite?: (id: string) => void;
   mode?: MatchRowMode;
+  showGroupBadge?: boolean;
 }
 
 export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
@@ -41,6 +42,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
   isFavorite = false,
   onToggleFavorite,
   mode = "today",
+  showGroupBadge = false,
 }) => {
   const isLive = match.status === "live";
   const isFinished = match.status === "finished" || (match.home_score !== null && match.home_score !== undefined);
@@ -197,6 +199,11 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               {match.away_team}
             </TeamVolleyboxLink>
           </div>
+          {showGroupBadge && match.group && (
+            <span className="truncate pl-6 text-[9px] font-semibold text-blue-400 leading-tight">
+              {match.group}
+            </span>
+          )}
           {mode === "fixtures" && match.hall && match.hall !== "TBD" && (
             <span className={`truncate pl-6 text-[9px] leading-tight ${discrepancy?.hall_diff ? "inline-flex rounded border border-amber-400/40 bg-amber-500/10 px-1 text-amber-200" : "text-slate-500"}`} title={discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}>
               {match.hall}

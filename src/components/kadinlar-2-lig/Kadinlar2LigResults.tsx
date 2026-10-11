@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import { CheckCircle2, Star, History, SearchX, RotateCcw, LayoutGrid, Flame } from "lucide-react";
+import { CheckCircle2, Star, History, SearchX, RotateCcw, LayoutGrid, Clock } from "lucide-react";
 import { Kadinlar2LigMatch, Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
-import { Kadinlar2LigVolleyboxView } from "./Kadinlar2LigVolleyboxView";
+import { Kadinlar2LigTimeView } from "./Kadinlar2LigTimeView";
 import { convertK2MatchToMatch, getKadinlar2LigMatchTeamNames, isKadinlar2LigMatchFavorite, kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
 import { useFavorites } from "@/utils/useFavorites";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
@@ -33,12 +33,12 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
   const { isFavorite, toggleFavorite } = useFavorites();
   const [selectedGroupFilter, setSelectedGroupFilter] = useState<number | "all">("all");
   const [selectedResultDate, setSelectedResultDate] = useState<string>("all");
-  const [viewMode, setViewMode] = useState<"groups" | "volleybox">("groups");
+  const [viewMode, setViewMode] = useState<"groups" | "time">("groups");
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem("k2_results_view_mode");
-      if (saved === "volleybox" || saved === "groups") {
+      if (saved === "time" || saved === "groups") {
         setViewMode(saved);
       }
     } catch {
@@ -46,7 +46,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
     }
   }, []);
 
-  const handleSelectViewMode = (mode: "groups" | "volleybox") => {
+  const handleSelectViewMode = (mode: "groups" | "time") => {
     setViewMode(mode);
     try {
       localStorage.setItem("k2_results_view_mode", mode);
@@ -192,7 +192,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
         </div>
 
         <div className="flex items-center gap-2.5 flex-wrap">
-          {/* Görünüm Seçici Butonları */}
+          {/* Görünüm Seçici Sekmeleri (Grup Görünümü / Saat Görünümü) */}
           <div className="flex items-center bg-slate-900 border border-slate-700/80 p-0.5 rounded-xl shadow-inner">
             <button
               type="button"
@@ -202,7 +202,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
                   ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-xs font-bold"
                   : "text-slate-400 hover:text-slate-200 border border-transparent"
               }`}
-              title="16 Gruba göre ayrılmış klasik sonuç görünümü"
+              title="16 Gruba göre ayrılmış maç sonuçları"
             >
               <LayoutGrid size={13} />
               <span>Grup Görünümü</span>
@@ -210,19 +210,16 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
 
             <button
               type="button"
-              onClick={() => handleSelectViewMode("volleybox")}
+              onClick={() => handleSelectViewMode("time")}
               className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-                viewMode === "volleybox"
-                  ? "bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-300 border border-amber-500/40 shadow-xs font-bold"
+                viewMode === "time"
+                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-xs font-bold"
                   : "text-slate-400 hover:text-slate-200 border border-transparent"
               }`}
-              title="Volleybox maç sıralaması ve günlük kart görünümü"
+              title="Günde saatine göre yukarıdan aşağıya sıralanmış maç sonuçları"
             >
-              <Flame
-                size={13}
-                className={viewMode === "volleybox" ? "text-amber-400" : "text-slate-400"}
-              />
-              <span>Volleybox Görünümü</span>
+              <Clock size={13} />
+              <span>Saat Görünümü</span>
             </button>
           </div>
 
@@ -316,8 +313,8 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
             </button>
           )}
         </div>
-      ) : viewMode === "volleybox" ? (
-        <Kadinlar2LigVolleyboxView
+      ) : viewMode === "time" ? (
+        <Kadinlar2LigTimeView
           matches={filteredResults}
           onSelectMatch={onSelectMatch}
           selectedMatchId={selectedMatchId}

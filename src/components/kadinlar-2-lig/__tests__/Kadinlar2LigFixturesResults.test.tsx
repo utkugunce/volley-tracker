@@ -120,7 +120,7 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.queryByText("Fenerbahçe 2")).not.toBeInTheDocument();
   });
 
-  it("Kadinlar2LigResults Volleybox görünümüne geçildiğinde Volleybox kartlarını ve sıralamasını render eder", () => {
+  it("Kadinlar2LigResults Saat görünümüne geçildiğinde saat sıralı maçları ve grup rozetlerini render eder", () => {
     const handleSelectMatch = vi.fn();
     render(
       <Kadinlar2LigResults
@@ -131,21 +131,18 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     );
 
     // Görünüm değiştirici butonları kontrol et
-    const vbBtn = screen.getByRole("button", { name: /Volleybox Görünümü/i });
-    expect(vbBtn).toBeInTheDocument();
+    const timeBtn = screen.getByRole("button", { name: /Saat Görünümü/i });
+    expect(timeBtn).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Grup Görünümü/i })).toBeInTheDocument();
 
-    // Volleybox görünümüne tıkla
-    fireEvent.click(vbBtn);
+    // Saat görünümüne tıkla
+    fireEvent.click(timeBtn);
 
-    // Volleybox başlığı ve etiketi görünmeli
-    expect(screen.getByText(/Volleybox Sırası/i)).toBeInTheDocument();
-    expect(screen.getByText("Uzman Posta Kadınlar Voleybol 2. Ligi 2026/27")).toBeInTheDocument();
-    expect(screen.getByText("Daha Fazla Göster")).toBeInTheDocument();
-
-    // Kart tıklandığında onSelectMatch tetiklenmeli
-    fireEvent.click(screen.getByText("Daha Fazla Göster"));
-    expect(handleSelectMatch).toHaveBeenCalled();
+    // Saat görünümü başlığı ve maç bilgisi
+    expect(screen.getByText(/Saate Göre Sıralı/i)).toBeInTheDocument();
+    expect(screen.getByText("VakıfBank 2")).toBeInTheDocument();
+    expect(screen.getByText("Eczacıbaşı 2")).toBeInTheDocument();
+    expect(screen.getByText("1. Grup")).toBeInTheDocument();
   });
 
   it("Kadinlar2LigTodayMatches altyapı tarih şeridi ve kompakt maç akışını kullanır", () => {
@@ -271,5 +268,17 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.getByText(/Cadence Boya/i)).toBeInTheDocument();
     expect(screen.queryByText("VakıfBank 2")).not.toBeInTheDocument();
     expect(screen.queryByText("Karşılaşma Bulunamadı")).not.toBeInTheDocument();
+  });
+
+  it("sortMatchesByTime maçları erken saatten geç saate yukarıdan aşağıya sıralar", async () => {
+    const { sortMatchesByTime } = await import("../Kadinlar2LigTimeView");
+    const m1: Kadinlar2LigMatch = { ...mockMatches[0], id: "m1", saat: "16:00" };
+    const m2: Kadinlar2LigMatch = { ...mockMatches[0], id: "m2", saat: "11:00", grup_no: 1 };
+    const m3: Kadinlar2LigMatch = { ...mockMatches[0], id: "m3", saat: "14:30" };
+    const m4: Kadinlar2LigMatch = { ...mockMatches[0], id: "m4", saat: "11:00", grup_no: 2 };
+    const m5: Kadinlar2LigMatch = { ...mockMatches[0], id: "m5", saat: "09:30" };
+
+    const sorted = sortMatchesByTime([m1, m2, m3, m4, m5]);
+    expect(sorted.map((m) => m.id)).toEqual(["m5", "m2", "m4", "m3", "m1"]);
   });
 });
