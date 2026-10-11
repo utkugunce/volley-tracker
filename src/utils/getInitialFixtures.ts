@@ -4,7 +4,9 @@ import { FixturesData, Match, StandingItem } from "@/types/fixture";
 import { isCityHidden } from "./cityHelper";
 import { isMatchScored } from "./matchScoring";
 
-const CACHE_TTL_MS = 60 * 1000;
+// data/*.json derleme paketinden okunur ve yalnızca yeni deploy ile değişir; üretimde instance
+// ömrü boyunca önbellekte tutmak her dakika 1+ MB JSON'u yeniden ayrıştırmayı (Fluid Active CPU) önler.
+const CACHE_TTL_MS = process.env.NODE_ENV === "production" ? Number.POSITIVE_INFINITY : 60 * 1000;
 let cachedAllData: { data: FixturesData; timestamp: number } | null = null;
 const cachedCityData = new Map<string, { data: FixturesData; timestamp: number }>();
 

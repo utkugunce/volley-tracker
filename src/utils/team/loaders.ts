@@ -2,7 +2,7 @@
 import fs from "fs";
 import path from "path";
 import { Match, StandingItem } from "@/types/fixture";
-import { applyOverridesToMatches } from "../overrides";
+import { applyOverridesToMatches, getOverridesDataSync, type MatchOverride } from "../overrides";
 import { TeamRostersDatabase } from "@/types/roster";
 import { isCityHidden } from "../cityHelper";
 import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
@@ -18,9 +18,30 @@ let cachedAllData: {
   matches: Match[];
   standingsByCity: Record<string, StandingsCityEntry>;
   timestamp: number;
+  overridesKey: string;
 } | null = null;
 
-const CACHE_TTL_MS = 60 * 1000; // 1 minute
+/** Override uygulanmamış, diskten okunmuş ham veri (deploy boyunca değişmez). */
+let rawAllData: {
+  matches: Match[];
+  standingsByCity: Record<string, StandingsCityEntry>;
+  timestamp: number;
+} | null = null;
+
+// data/*.json derleme paketinden okunur ve yalnızca yeni deploy ile değişir. Eskiden 1 dakikalık
+// TTL her dolduğunda 81 il + Kadınlar 2. Lig JSON'u yeniden ayrıştırılıyor ve yeni nesne kimliği
+// yüzünden takım slug indeksi (getSlugIndex) baştan kuruluyordu; tarayıcı botlarının tetiklediği
+// takım sayfası ISR üretimlerinde bu, Vercel Fluid Active CPU'nun ana tüketicisiydi.
+// Üretimde instance ömrü boyunca tutulur; geliştirmede scraper değişiklikleri için 1 dk kalır.
+const CACHE_TTL_MS = process.env.NODE_ENV === "production" ? Number.POSITIVE_INFINITY : 60 * 1000;
+
+/** Override kümesinin ucuz imzası: yalnızca bir override eklenir/değişirse yeniden uygulanır. */
+function getOverridesKey(overrides: Record<string, MatchOverride>): string {
+  return Object.values(overrides)
+    .map((o) => `${o.match_id}:${o.updated_at}`)
+    .sort()
+    .join("|");
+}
 
 let cachedRosters: TeamRostersDatabase | null = null;
 let rostersTimestamp = 0;
@@ -60,9 +81,28 @@ export function extractVolleyboxTeamId(url?: string): string | null {
 
 export function loadAllCityData() {
   const now = Date.now();
-  if (cachedAllData && now - cachedAllData.timestamp < CACHE_TTL_MS) {
+  const overrides = getOverridesDataSync().overrides;
+  const overridesKey = getOverridesKey(overrides);
+
+  if (!rawAllData || now - rawAllData.timestamp >= CACHE_TTL_MS) {
+    rawAllData = readAllCityDataFromDisk(now);
+    cachedAllData = null;
+  }
+
+  if (cachedAllData && cachedAllData.overridesKey === overridesKey) {
     return cachedAllData;
   }
+
+  cachedAllData = {
+    matches: applyOverridesToMatches(rawAllData.matches, overrides),
+    standingsByCity: rawAllData.standingsByCity,
+    timestamp: now,
+    overridesKey,
+  };
+  return cachedAllData;
+}
+
+function readAllCityDataFromDisk(now: number) {
 
   const citiesDir = path.join(process.cwd(), "data", "cities");
   const allMatches: Match[] = [];
@@ -178,11 +218,5 @@ export function loadAllCityData() {
     }
   }
 
-  cachedAllData = {
-    matches: applyOverridesToMatches(allMatches),
-    standingsByCity,
-    timestamp: now,
-  };
-
-  return cachedAllData;
+  return { matches: allMatches, standingsByCity, timestamp: now };
 }

@@ -24,7 +24,10 @@ export async function GET(request: Request) {
   }
 
   const db = getSupabaseAdmin();
-  const headers = { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300" };
+  // Her takım sayfası görüntülemesi (JS çalıştıran botlar dahil) bu uca istek atar; ~2.400 takım
+  // varyantı 60 sn'lik önbellekle sürekli fonksiyon çağrısı üretiyordu. Kulüp duyuru/kadro içeriği
+  // seyrek değişir: 10 dakika önbellek, arka planda 1 saate kadar yenileme.
+  const headers = { "Cache-Control": "public, s-maxage=600, stale-while-revalidate=3600" };
   if (!db) return NextResponse.json(EMPTY, { headers });
 
   const nowIso = `${new Date().toISOString().slice(0, 19)}Z`;
@@ -57,7 +60,7 @@ export async function GET(request: Request) {
   const error = ann.error || roster.error || notes.error;
   if (error) {
     if (!isMissingSchemaError(error)) console.error("[club] public content", error);
-    return NextResponse.json(EMPTY, { headers: { "Cache-Control": "public, s-maxage=30" } });
+    return NextResponse.json(EMPTY, { headers: { "Cache-Control": "public, s-maxage=300" } });
   }
 
   return NextResponse.json(

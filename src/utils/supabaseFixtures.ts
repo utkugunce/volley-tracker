@@ -95,3 +95,38 @@ export async function getSupabaseFixtures(
     standings,
   };
 }
+/**
+ * /api/fixtures için instance içi kısa paylaşım. Supabase'den gelen tüm iller yanıtı ~1 MB JSON'dur;
+ * CDN önbelleği düştüğünde farklı bölgelerden/sorgu varyantlarından aynı anda gelen ıskalar aynı
+ * veriyi tekrar tekrar ayrıştırıp Fluid Active CPU harcıyordu. 30 sn + CDN s-maxage=270 sn ile
+ * yeni skorlar en geç ~5 dakikada görünür.
+ */
+export const SUPABASE_FIXTURES_TTL_MS = 30 * 1000;
+const fixturesMemo = new Map<string, { at: number; promise: Promise<FixturesData | null> }>();
+
+export function getSupabaseFixturesCached(citySlug: string): Promise<FixturesData | null> {
+  const key = citySlug === "tumu" || citySlug === "turkiye" ? "all" : citySlug;
+  const now = Date.now();
+  const hit = fixturesMemo.get(key);
+  if (hit && now - hit.at < SUPABASE_FIXTURES_TTL_MS) return hit.promise;
+
+  const promise = getSupabaseFixtures(citySlug);
+  const entry = { at: now, promise };
+  fixturesMemo.set(key, entry);
+  // Boş/başarısız sonuçları önbellekte tutma (JSON fallback'e düşülen durumlar).
+  promise.then(
+    (data) => {
+      if ((!data || !Array.isArray(data.matches) || data.matches.length === 0) && fixturesMemo.get(key) === entry) {
+        fixturesMemo.delete(key);
+      }
+    },
+    () => {
+      if (fixturesMemo.get(key) === entry) fixturesMemo.delete(key);
+    }
+  );
+  return promise;
+}
+
+export function clearSupabaseFixturesCache(): void {
+  fixturesMemo.clear();
+}
