@@ -233,18 +233,32 @@ export function getVolleyboxMapping(
       if (ageMatch) return ageMatch;
     }
 
-    // 3. Şehir bazlı genel eşleşme fallback
+    // 3. Şehir bazlı genel eşleşme fallback (yaş kategorisi çelişmiyorsa)
     if (citySlug) {
       const matchCity = map.get(`${teamKey}::${citySlug}`);
-      if (matchCity) return matchCity;
+      if (matchCity) {
+        const candAge = matchCity.age_category?.toLowerCase() || extractAgeGroup(matchCity.internal_category);
+        if (!age || !candAge || age === candAge) {
+          return matchCity;
+        }
+      }
     }
   } else if (citySlug) {
     const matchCity = map.get(`${teamKey}::${citySlug}`);
     if (matchCity) return matchCity;
   }
 
-  // 4. Takım adıyla genel eşleşme fallback
-  return map.get(teamKey);
+  // 4. Takım adıyla genel eşleşme fallback (yaş kategorisi çelişmiyorsa)
+  const generalMatch = map.get(teamKey);
+  if (generalMatch && category) {
+    const age = extractAgeGroup(category);
+    const candAge = generalMatch.age_category?.toLowerCase() || extractAgeGroup(generalMatch.internal_category);
+    if (!age || !candAge || age === candAge) {
+      return generalMatch;
+    }
+    return undefined;
+  }
+  return generalMatch;
 }
 
 /**

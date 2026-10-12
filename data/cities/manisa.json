@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T14:44:15.960527+03:00",
+  "updated_at": "2026-10-12T16:59:56.214854+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -324,18 +324,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408179",
+        "url": "https://women.volleybox.net/tr/akhisar-lce-spor-kulubu-u18-manisa-buyuksehir-belediyespor-kulubu-u18-c408179",
+        "host_name": "Akhisar İlçe Spor Kulübü U18",
+        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "18:30",
+        "vb_hall": "Akhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "18:30",
+          "vb_hall": "Akhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -358,18 +365,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408180",
+        "url": "https://women.volleybox.net/tr/degerli-zamanlar-spor-kulubu-u18-salihli-degerli-zamanlar-spor-kulubu-u18-c408180",
+        "host_name": "Değerli Zamanlar Spor Kulübü U18",
+        "guest_name": "Salihli Değerli Zamanlar Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "19:00",
+        "vb_hall": "Yunusemre Çok Amaçlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "19:00",
+          "vb_hall": "Yunusemre Çok Amaçlı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -392,18 +406,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408181",
+        "url": "https://women.volleybox.net/tr/akhisar-spor-kulubu-u18-1922-salihli-spor-kulubu-u18-c408181",
+        "host_name": "Akhisar Spor Kulübü U18",
+        "guest_name": "1922 Salihli Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "20:15",
+        "vb_hall": "Akhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "20:15",
+          "vb_hall": "Akhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -561,18 +582,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408193",
+        "url": "https://women.volleybox.net/tr/turgutlu-belediyespor-u18-akhisargucu-spor-kulubu-u18-c408193",
+        "host_name": "Turgutlu Belediyespor U18",
+        "guest_name": "Akhisargücü Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "18:30",
+        "vb_hall": "Turgutlu Belediyesi Mimar Ferdi Zeyrek Spor Kompleksi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "18:30",
+          "vb_hall": "Turgutlu Belediyesi Mimar Ferdi Zeyrek Spor Kompleksi",
+          "details": null
         }
       }
     },
@@ -595,18 +623,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408194",
+        "url": "https://women.volleybox.net/tr/soma-lce-spor-kulubu-u18-yunusemre-belediyespor-u18-c408194",
+        "host_name": "Soma İlçe Spor Kulübü U18",
+        "guest_name": "Yunusemre Belediyespor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-13",
+        "vb_time": "18:30",
+        "vb_hall": "Vali Muzaffer Ecemiş Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-13",
+          "vb_time": "18:30",
+          "vb_hall": "Vali Muzaffer Ecemiş Spor Salonu",
+          "details": null
         }
       }
     },
@@ -629,22 +664,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408196",
+        "url": "https://women.volleybox.net/tr/sargol-akademi-spor-kulubu-u18-soma-belediye-spor-kulubu-u18-c408196",
+        "host_name": "Sarıgöl Akademi Spor Kulübü U18",
+        "guest_name": "Soma Belediye Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-14",
+        "vb_time": "19:00",
+        "vb_hall": "Sarıgöl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "19:00",
+          "vb_hall": "Sarıgöl Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-12T14:49:27.257234"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-10-12T17:05:12.540480"
 }

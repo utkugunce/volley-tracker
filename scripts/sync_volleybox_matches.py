@@ -65,7 +65,14 @@ CITY_STOPWORDS = {
     "istanbul", "izmir", "ankara", "bursa", "nigde", "yalova", "antalya", "duzce", 
     "adana", "konya", "samsun", "trabzon", "kocaeli", "sakarya", "tekirdag", 
     "mersin", "gaziantep", "kayseri", "denizli", "eskisehir", "turkiye",
-    "alanya", "manavgat", "kepez", "kemer", "gazipasa", "aydin"
+    "alanya", "manavgat", "kepez", "kemer", "gazipasa", "aydin", "kutahya",
+    "kahramanmaras", "balikesir", "canakkale", "manisa", "hatay", "giresun",
+    "afyon", "afyonkarahisar", "bilecik", "malatya", "usak", "kirsehir", "mugla",
+    "bolu", "corum", "edirne", "elazig", "erzincan", "erzurum", "isparta",
+    "kars", "kastamonu", "kirklareli", "mardin", "mus", "nevsehir", "ordu",
+    "rize", "siirt", "sinop", "sivas", "tokat", "tunceli", "sanliurfa", "van",
+    "yozgat", "zonguldak", "aksaray", "bayburt", "karaman", "kirikkale", "batman",
+    "sirnak", "bartin", "ardahan", "igdir", "karabuk", "kilis", "osmaniye", "tavsanli"
 }
 
 GENERIC_WORDS = {
@@ -85,6 +92,7 @@ def normalize_name(name: str) -> str:
     if not name:
         return ""
     s = tr_lower(name.strip())
+    s = re.sub(r"^\s*[\(\[]\s*h\s*[\)\]]\s*[-–—]?\s*", "", s, flags=re.IGNORECASE).strip()
     # Türkçe karakter normalizasyonu
     s = (
         s.replace("ı", "i")
@@ -119,6 +127,7 @@ def extract_team_meta(name: str) -> Tuple[str, Optional[str]]:
     if not name:
         return "", None
     s = tr_lower(name.strip())
+    s = re.sub(r"^\s*[\(\[]\s*h\s*[\)\]]\s*[-–—]?\s*", "", s, flags=re.IGNORECASE).strip()
     s = (
         s.replace("ı", "i")
         .replace("ğ", "g")
@@ -582,6 +591,14 @@ def match_tvf_with_vb(
     if tvf_match.get("id") == "yalova-20270105-024":
         for vb in vb_matches:
             if vb.get("match_id") == "399651" and (not used_vb_ids or "399651" not in used_vb_ids):
+                best_vb = vb
+                break
+
+    # Özel vaka: Kütahya 408160 numaralı maçta (2026-10-18 14:00 Tavşanlı B vs Kütahya Demirspor)
+    # Volleybox'a ev sahibi sehven Tavşanlı Belediyesi Spor Kulübü U18 (A) olarak girilmişse dahi bağla
+    if tvf_match.get("id") == "kutahya-20261018-002":
+        for vb in vb_matches:
+            if vb.get("match_id") == "408160" and (not used_vb_ids or "408160" not in used_vb_ids):
                 best_vb = vb
                 break
 

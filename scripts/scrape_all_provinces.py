@@ -76,6 +76,7 @@ OFFICIAL_CITIES = {
 EXCLUDED_SLUGS = {
     "adana",     # Kulüpler fikstürü/puan durumu henüz oluşmadı
     "kirikkale", # Yalnızca kurumlar arası turnuva mevcut, resmi altyapı ligi yok
+    "usak",      # Yalnızca büyük kadınlar ligi turnuvası mevcut, resmi altyapı ligi yok
 }
 
 # 2026-2027 sezonu başlangıç eşiği (öncesine ait maçlar eski sezon kabul edilir)
@@ -151,7 +152,9 @@ def build_volleybox_name_resolver():
 
     def norm(s):
         if not s: return ""
-        s = str(s).strip().replace("İ", "i").replace("I", "i").replace("ı", "i").lower().replace("\u0307", "")
+        s = str(s).strip()
+        s = re.sub(r"^\s*[\(\[]\s*h\s*[\)\]]\s*[-–—]?\s*", "", s, flags=re.IGNORECASE).strip()
+        s = s.replace("İ", "i").replace("I", "i").replace("ı", "i").lower().replace("\u0307", "")
         s = s.replace("ğ", "g").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ç", "c")
         s = s.replace("belediye spor", "belediyespor").replace("b.sehir", "buyuksehir").replace("bld.", "belediye")
         return s
@@ -434,8 +437,8 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
             keys_to_try.append(_norm(cat))
         keys_to_try.append("")
 
-        home_raw = str(m.get("home_team", "")).strip()
-        away_raw = str(m.get("away_team", "")).strip()
+        home_raw = re.sub(r"^\s*[\(\[]\s*h\s*[\)\]]\s*[-–—]?\s*", "", str(m.get("home_team", "")).strip(), flags=re.IGNORECASE).strip()
+        away_raw = re.sub(r"^\s*[\(\[]\s*h\s*[\)\]]\s*[-–—]?\s*", "", str(m.get("away_team", "")).strip(), flags=re.IGNORECASE).strip()
 
         # Ev sahibi takımı çöz
         home_resolved = _get_group_override(home_raw, f"{cat} - {grp}", m_city)
@@ -778,10 +781,10 @@ def scrape_single_city(city_info):
 
                                 raw_time = tds[2] or "--:--"
                                 raw_hall = tds[3] or "Açıklanacak"
-                                home = tds[4]
+                                home = re.sub(r"^\s*[\(\[]\s*h\s*[\)\]]\s*[-–—]?\s*", "", tds[4], flags=re.IGNORECASE).strip()
                                 score_h = tds[5]
                                 score_a = tds[6]
-                                away = tds[7]
+                                away = re.sub(r"^\s*[\(\[]\s*h\s*[\)\]]\s*[-–—]?\s*", "", tds[7], flags=re.IGNORECASE).strip()
                                 raw_sets = tds[8] if len(tds) > 8 else ""
 
                                 if "deneme" in home.lower() or "deneme" in away.lower() or "test" in home.lower() or "test" in away.lower():
@@ -872,8 +875,11 @@ def scrape_single_city(city_info):
                     cached_matches = []
                     cached_standings = {}
                 elif cached_matches or cached_standings:
+                    apply_volleybox_names(cached_matches, cached_standings, name)
                     city_matches = cached_matches
                     city_standings = cached_standings
+                    cached_data["matches"] = cached_matches
+                    cached_data["standings"] = cached_standings
                     data_file_rel = f"data/cities/{subdomain}.json"
                     cached_data["updated_at"] = datetime.now().astimezone().isoformat()
                     try:

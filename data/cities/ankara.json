@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T14:44:15.960527+03:00",
+  "updated_at": "2026-10-12T16:59:56.214854+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -737,7 +737,7 @@
       "group": "1. Grup",
       "match_no": "4",
       "home_team": "Anadolu Birlik Spor Kulübü",
-      "away_team": "(H) - Hakan Akışık",
+      "away_team": "Hakan Akışık Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -3503,7 +3503,7 @@
       "group": "6. Grup",
       "match_no": "1",
       "home_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
-      "away_team": "(H) - Hakan Akışık",
+      "away_team": "Hakan Akışık Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -3757,5 +3757,5 @@
     }
   ],
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-10-12T14:49:15.004826"
+  "volleybox_sync_updated_at": "2026-10-12T17:05:07.491574"
 }

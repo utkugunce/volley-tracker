@@ -83,7 +83,7 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
 
   // Açılır menüdeki filtrelenmiş 81 il
   const filteredDropdownCities = cities
-    .filter((c) => !isCityHidden(c.slug))
+    .filter((c) => !isCityHidden(c.slug) && !c.excluded)
     .filter((c) => {
       const term = trLower(searchTerm).trim();
       return (

@@ -100,6 +100,7 @@ export interface CityInfo {
   standings_count?: number;
   data_file?: string | null;
   last_updated?: string | null;
+  excluded?: boolean;
 }
 
 export type VolleyboxConfidence = "verified" | "club_level_only" | "broken";

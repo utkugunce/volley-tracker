@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T14:44:15.960527+03:00",
+  "updated_at": "2026-10-12T16:59:56.214854+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -25,7 +25,6 @@
       "18 Mart Ss.",
       "Bayramiç Ss.",
       "Biga S.S.",
-      "Eceabat",
       "Eceabat Ss",
       "Gelibolu S.S.",
       "Gökçeada Ss.",
@@ -742,7 +741,7 @@
       }
     },
     {
-      "id": "canakkale-20261004-012",
+      "id": "canakkale-20261004-009",
       "city": "Çanakkale",
       "date": "2026-10-04",
       "time": "14:00",
@@ -787,7 +786,7 @@
       }
     },
     {
-      "id": "canakkale-20261007-013",
+      "id": "canakkale-20261007-010",
       "city": "Çanakkale",
       "date": "2026-10-07",
       "time": "20:00",
@@ -832,7 +831,7 @@
       }
     },
     {
-      "id": "canakkale-20261009-015",
+      "id": "canakkale-20261009-011",
       "city": "Çanakkale",
       "date": "2026-10-09",
       "time": "20:00",
@@ -877,7 +876,7 @@
       }
     },
     {
-      "id": "canakkale-20261015-016",
+      "id": "canakkale-20261015-012",
       "city": "Çanakkale",
       "date": "2026-10-15",
       "time": "18:00",
@@ -918,7 +917,7 @@
       }
     },
     {
-      "id": "canakkale-20261016-017",
+      "id": "canakkale-20261016-013",
       "city": "Çanakkale",
       "date": "2026-10-16",
       "time": "20:00",
@@ -959,7 +958,7 @@
       }
     },
     {
-      "id": "canakkale-20260926-018",
+      "id": "canakkale-20260926-014",
       "city": "Çanakkale",
       "date": "2026-09-26",
       "time": "15:00",
@@ -1006,7 +1005,7 @@
       }
     },
     {
-      "id": "canakkale-20261001-019",
+      "id": "canakkale-20261001-015",
       "city": "Çanakkale",
       "date": "2026-10-01",
       "time": "20:00",
@@ -1052,7 +1051,7 @@
       }
     },
     {
-      "id": "canakkale-20261003-020",
+      "id": "canakkale-20261003-016",
       "city": "Çanakkale",
       "date": "2026-10-03",
       "time": "11:00",
@@ -1097,7 +1096,7 @@
       }
     },
     {
-      "id": "canakkale-20261005-021",
+      "id": "canakkale-20261005-017",
       "city": "Çanakkale",
       "date": "2026-10-05",
       "time": "20:00",
@@ -1143,7 +1142,7 @@
       }
     },
     {
-      "id": "canakkale-20261007-022",
+      "id": "canakkale-20261007-018",
       "city": "Çanakkale",
       "date": "2026-10-07",
       "time": "20:00",
@@ -1189,7 +1188,7 @@
       }
     },
     {
-      "id": "canakkale-20261009-023",
+      "id": "canakkale-20261009-019",
       "city": "Çanakkale",
       "date": "2026-10-09",
       "time": "20:00",
@@ -1235,7 +1234,7 @@
       }
     },
     {
-      "id": "canakkale-20261013-024",
+      "id": "canakkale-20261013-020",
       "city": "Çanakkale",
       "date": "2026-10-13",
       "time": "20:00",
@@ -1276,7 +1275,7 @@
       }
     },
     {
-      "id": "canakkale-20260926-025",
+      "id": "canakkale-20260926-021",
       "city": "Çanakkale",
       "date": "2026-09-26",
       "time": "12:00",
@@ -1322,7 +1321,7 @@
       }
     },
     {
-      "id": "canakkale-20260928-026",
+      "id": "canakkale-20260928-022",
       "city": "Çanakkale",
       "date": "2026-09-28",
       "time": "20:00",
@@ -1367,7 +1366,7 @@
       }
     },
     {
-      "id": "canakkale-20261010-027",
+      "id": "canakkale-20261010-023",
       "city": "Çanakkale",
       "date": "2026-10-10",
       "time": "12:00",
@@ -1412,7 +1411,7 @@
       }
     },
     {
-      "id": "canakkale-20261010-028",
+      "id": "canakkale-20261010-024",
       "city": "Çanakkale",
       "date": "2026-10-10",
       "time": "14:00",
@@ -1458,7 +1457,7 @@
       }
     },
     {
-      "id": "canakkale-20261014-029",
+      "id": "canakkale-20261014-025",
       "city": "Çanakkale",
       "date": "2026-10-14",
       "time": "18:00",
@@ -1500,5 +1499,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-12T14:49:17.904327"
+  "volleybox_sync_updated_at": "2026-10-12T17:05:08.270027"
 }
