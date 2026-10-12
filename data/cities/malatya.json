@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59:56.214854+03:00",
+  "updated_at": "2026-10-12T15:49:21.782109+00:00",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -280,7 +280,7 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "5",
-      "home_team": "(H) - Gençlik Spor Kulübü",
+      "home_team": "Kırşehir Gençlik Spor Kulübü U18",
       "away_team": "MALATYA VOLEYBOL SPOR KULÜBÜ",
       "score": "0 - 3",
       "home_score": 0,
@@ -397,7 +397,7 @@
       "group": "1. Grup",
       "match_no": "8",
       "home_team": "Gençlik Spor Kulübü B",
-      "away_team": "(H) - Gençlik Spor Kulübü",
+      "away_team": "Kırşehir Gençlik Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1075,5 +1075,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-12T17:05:12.511134"
+  "volleybox_sync_updated_at": "2026-10-12T15:51:15.326053"
 }
