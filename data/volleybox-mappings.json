@@ -191,7 +191,7 @@
     {
       "internal_name": "Marmara Akademi",
       "internal_category": "Genç Kızlar Süper Lig",
-      "matched_as": "Mehmet Erdem Marmara Akademi Spor Kulübü U18",
+      "matched_as": "Marmara Akademi Spor Kulübü U18",
       "volleybox_url": "https://women.volleybox.net/mehmet-erdem-marmara-akademi-spor-kulubu-u18-t41165",
       "age_category": "U18",
       "confidence": "verified",
@@ -200,7 +200,9 @@
       "local_logo": "/logos/mehmet-erdem-marmara-akademi-spor-kulubu-u18-t41165.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_17887833574Yj3y.png",
       "aliases": [
-        "Marmara Akademi Atletik Spor Kulübü U18"
+        "Marmara Akademi Atletik Spor Kulübü U18",
+        "Mehmet Erdem Marmara Akademi Spor Kulübü U18",
+        "Marmara Akademi Spor Kulübü U18"
       ]
     },
     {
@@ -608,7 +610,7 @@
     {
       "internal_name": "Marmara Akademi",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Mehmet Erdem Marmara Akademi Spor Kulübü U16",
+      "matched_as": "Marmara Akademi Spor Kulübü U16",
       "volleybox_url": "https://women.volleybox.net/mehmet-erdem-marmara-akademi-spor-kulubu-u16-t41445",
       "age_category": "U16",
       "confidence": "verified",
@@ -625,7 +627,9 @@
         "Akademi Atletik Spor U16",
         "Marmar Akademi Atletik Spor U16",
         "Marmara Akademi Atletik Spor Kulübü U16",
-        "Marmara Akademi Atletik Spor"
+        "Marmara Akademi Atletik Spor",
+        "Mehmet Erdem Marmara Akademi Spor Kulübü U16",
+        "Marmara Akademi Spor Kulübü U16"
       ]
     },
     {
@@ -11313,14 +11317,16 @@
       "internal_category": "Genç Kızlar Süper Lig",
       "city": "Manisa",
       "city_slug": "manisa",
-      "matched_as": "Vestel Manisa Büyükşehir Belediye Spor U18",
+      "matched_as": "Manisa Büyükşehir Belediye Spor U18",
       "volleybox_url": "https://women.volleybox.net/manisa-buyuksehir-belediyespor-kulubu-u18-t42471",
       "age_category": "U18",
       "confidence": "verified",
       "aliases": [
         "Manisa Büyükşehir Belediyespor Kulübü",
         "Manisa Büyükşehir Belediyespor Kulübü U18",
-        "Manisa Büyükşehir Belediye Spor Kulübü"
+        "Manisa Büyükşehir Belediye Spor Kulübü",
+        "Vestel Manisa Büyükşehir Belediye Spor U18",
+        "Manisa Büyükşehir Belediye Spor U18"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/manisa-buyuksehir-belediyespor-kulubu-u18-t42471.png",
@@ -14054,7 +14060,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "İstanbul",
       "city_slug": "i-stanbul",
-      "matched_as": "KHN Group Çekmeköy İstanbul SK",
+      "matched_as": "Çekmeköy İstanbul SK",
       "volleybox_url": "https://women.volleybox.net/tr/cekmekoy-stanbul-sk-t25888",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -14146,14 +14152,16 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "İstanbul",
       "city_slug": "i-stanbul",
-      "matched_as": "Vocalzone Kuzey Yıldızları",
+      "matched_as": "Kuzey Yıldızları Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/kuzey-yldzlar-spor-kulubu-t17187",
       "age_category": "A Takım",
       "confidence": "verified",
       "note": "Grup 3",
       "verified_at": "2026-09-25",
       "aliases": [
-        "Kuzey Yıldızları Spor Kulübü"
+        "Kuzey Yıldızları Spor Kulübü",
+        "Vocalzone Kuzey Yıldızları",
+        "Kuzey Yıldızları Speed Spor"
       ],
       "logo_url": "/logos/kuzey-yldzlar-spor-kulubu-t17187.png",
       "local_logo": "/logos/kuzey-yldzlar-spor-kulubu-t17187.png"
@@ -14163,7 +14171,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "İstanbul",
       "city_slug": "i-stanbul",
-      "matched_as": "Mehmet Erdem Marmara Akademi Spor Kulübü",
+      "matched_as": "Marmara Akademi Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/mehmet-erdem-marmara-akademi-t7348",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -14172,7 +14180,8 @@
       "aliases": [
         "Mehmet Erdem Marmara Akademi Spor Kulübü",
         "Marmara Akademi Atletik Spor Kulübü",
-        "Marmara Akademi"
+        "Marmara Akademi",
+        "Marmara Akademi Spor Kulübü"
       ],
       "logo_url": "/logos/mehmet-erdem-marmara-akademi-t7348.png",
       "local_logo": "/logos/mehmet-erdem-marmara-akademi-t7348.png"
@@ -14218,7 +14227,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "İstanbul",
       "city_slug": "i-stanbul",
-      "matched_as": "Nar Kumaşçılık Çengelköy Voleybol",
+      "matched_as": "Çengelköy Voleybol Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/nar-kumasclk-cengelkoy-voleybol-t16876",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -14311,7 +14320,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Balikesi̇r",
       "city_slug": "balikesi-r",
-      "matched_as": "Media First Ayvalık Gelişim Spor",
+      "matched_as": "Ayvalık Gelişim Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/ayvalk-gelisim-spor-kulubu-t16196",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -14613,7 +14622,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Mani̇sa",
       "city_slug": "mani-sa",
-      "matched_as": "Vestel Manisa Büyükşehir Belediye Spor II",
+      "matched_as": "Manisa Büyükşehir Belediye Spor II",
       "volleybox_url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-ii-t45562",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -14622,7 +14631,8 @@
       "aliases": [
         "Manisa Büyükşehir Belediyespor Kulübü II",
         "Vestel Manisa Büyükşehir Belediye Spor II",
-        "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR KULÜBÜ"
+        "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR KULÜBÜ",
+        "Manisa Büyükşehir Belediye Spor II"
       ],
       "logo_url": "/logos/manisa-buyuksehir-belediyespor-kulubu-ii-t45562.png",
       "local_logo": "/logos/manisa-buyuksehir-belediyespor-kulubu-ii-t45562.png"
@@ -15813,7 +15823,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Hatay",
       "city_slug": "hatay",
-      "matched_as": "arsaVev Hatay Voleybol Spor Kulübü",
+      "matched_as": "Hatay Voleybol Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/hatay-voleybol-spor-kulubu-t13604",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -15927,7 +15937,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Ordu",
       "city_slug": "ordu",
-      "matched_as": "Sigortamdeniz 52 Çamlık Spor",
+      "matched_as": "52 Çamlık Spor",
       "volleybox_url": "https://women.volleybox.net/tr/sigortamdeniz-52-camlk-spor-t7344",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -15937,7 +15947,8 @@
         "52 ÇAMLIK SPOR KULÜBÜ",
         "Sigortamdeniz 52 Çamlık Spor",
         "Ordu Merkezspor",
-        "52 Çamlık Spor"
+        "52 Çamlık Spor",
+        "52 Çamlık Spor Kulübü"
       ],
       "logo_url": "/logos/sigortamdeniz-52-camlk-spor-t7344.png",
       "local_logo": "/logos/sigortamdeniz-52-camlk-spor-t7344.png"
@@ -16268,7 +16279,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Elaziğ",
       "city_slug": "elazig",
-      "matched_as": "Elazığ Ekol Spor",
+      "matched_as": "MSE Filo Elazığ Ekol Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/elazg-ekol-spor-t36123",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -16384,7 +16395,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "Mardi̇n",
       "city_slug": "mardi-n",
-      "matched_as": "Mardin Margenç Spor",
+      "matched_as": "Margenç Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/mardin-margenc-spor-t28165",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -16392,7 +16403,8 @@
       "verified_at": "2026-09-25",
       "aliases": [
         "Margenç Spor Kulübü",
-        "Mardin Margenç Spor"
+        "Mardin Margenç Spor",
+        "Margenç Spor"
       ],
       "logo_url": "/logos/mardin-margenc-spor-t28165.png",
       "local_logo": "/logos/mardin-margenc-spor-t28165.png"
@@ -16519,7 +16531,7 @@
       "internal_category": "Yıldız Kızlar Süper Lig",
       "city": "İstanbul",
       "city_slug": "istanbul",
-      "matched_as": "Mehmet Erdem Marmara Akademi Spor Kulübü U16",
+      "matched_as": "Marmara Akademi Spor Kulübü U16",
       "volleybox_url": "https://women.volleybox.net/mehmet-erdem-marmara-akademi-spor-kulubu-u16-t41445",
       "age_category": "U16",
       "confidence": "verified",
@@ -16532,7 +16544,9 @@
         "Akademi Atletik Spor",
         "Akademi Atletik Spor U16",
         "Marmar Akademi Atletik Spor U16",
-        "Marmara Akademi Atletik Spor Kulübü U16"
+        "Marmara Akademi Atletik Spor Kulübü U16",
+        "Mehmet Erdem Marmara Akademi Spor Kulübü U16",
+        "Marmara Akademi Spor Kulübü U16"
       ]
     },
     {
@@ -16711,7 +16725,7 @@
       "internal_category": "Kadınlar 2. Ligi",
       "city": "İstanbul",
       "city_slug": "i-stanbul",
-      "matched_as": "Vocalzone Kuzey Yıldızları",
+      "matched_as": "Kuzey Yıldızları Spor Kulübü",
       "volleybox_url": "https://women.volleybox.net/tr/kuzey-yldzlar-spor-kulubu-t17187",
       "age_category": "A Takım",
       "confidence": "verified",
@@ -16720,7 +16734,8 @@
       "aliases": [
         "Vocalzone Kuzey Yıldızları",
         "Kuzey Yıldızları Spor Kulübü",
-        "KUZEY YILDIZLARI SPEED SPOR KULÜBÜ"
+        "KUZEY YILDIZLARI SPEED SPOR KULÜBÜ",
+        "Kuzey Yıldızları Speed Spor"
       ],
       "logo_url": "/logos/kuzey-yldzlar-spor-kulubu-t17187.png",
       "local_logo": "/logos/kuzey-yldzlar-spor-kulubu-t17187.png"
@@ -17264,23 +17279,23 @@
       "internal_name": "Genç Kızlar Süper Lig",
       "city": "Denizli",
       "city_slug": "denizli",
-      "matched_as": "Denizli Süper Ligi U18",
-      "volleybox_url": "https://women.volleybox.net/women-denizli-super-ligi-u18-2025-26-o42836",
+      "matched_as": "Denizli Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-denizli-super-ligi-u18-2026-27-o51580",
       "age_category": "U18",
       "confidence": "verified",
-      "season": "2025/26",
-      "verified_at": "2026-09-14"
+      "season": "2026/27",
+      "verified_at": "2026-10-12"
     },
     {
       "internal_name": "Yıldız Kızlar Süper Lig",
       "city": "Denizli",
       "city_slug": "denizli",
-      "matched_as": "Denizli Süper Ligi U16",
-      "volleybox_url": "https://women.volleybox.net/women-denizli-super-ligi-u16-2025-26-o43704",
+      "matched_as": "Denizli Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-denizli-super-ligi-u16-2026-27-o51581",
       "age_category": "U16",
       "confidence": "verified",
-      "season": "2025/26",
-      "verified_at": "2026-09-14"
+      "season": "2026/27",
+      "verified_at": "2026-10-12"
     },
     {
       "internal_name": "Genç Kızlar Süper Lig",
@@ -17398,17 +17413,6 @@
       "city_slug": "istanbul",
       "matched_as": "İstanbul 1. Lig 5. Bölge U18 2026/27",
       "volleybox_url": "https://women.volleybox.net/women-stanbul-ligi-5-bolge-u18-2026-27-o50894",
-      "age_category": "U18",
-      "confidence": "verified",
-      "season": "2026/27",
-      "verified_at": "2026-09-17"
-    },
-    {
-      "internal_name": "Genç Kızlar 1. Lig 1. Bölge",
-      "city": "İstanbul",
-      "city_slug": "istanbul",
-      "matched_as": "İstanbul 1. Lig 1. Bölge U18 2026/27",
-      "volleybox_url": "https://women.volleybox.net/women-stanbul-1-ligi-u18-2026-27-o50866",
       "age_category": "U18",
       "confidence": "verified",
       "season": "2026/27",

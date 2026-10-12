@@ -217,18 +217,36 @@ def build_volleybox_name_resolver():
 
 RESOLVE_TEAM_NAME = build_volleybox_name_resolver()
 
+def _normalize_txt(s: str) -> str:
+    if not s:
+        return ""
+    return (
+        str(s)
+        .strip()
+        .replace("İ", "i")
+        .replace("I", "i")
+        .replace("ı", "i")
+        .lower()
+        .replace("\u0307", "")
+        .replace("ğ", "g")
+        .replace("ü", "u")
+        .replace("ş", "s")
+        .replace("ö", "o")
+        .replace("ç", "c")
+    )
+
 def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str = "") -> bool:
     if not team:
         return False
-    t_clean = str(team).lower().replace("ı", "i").replace("İ", "i")
-    c_clean = str(city or "").lower().replace("ı", "i").replace("İ", "i")
-    g_clean = (str(category or "") + " " + str(group or "")).lower().replace("ı", "i").replace("İ", "i")
+    t_clean = _normalize_txt(team)
+    c_clean = _normalize_txt(city)
+    g_clean = _normalize_txt(f"{category} {group}")
 
-    if "cekildi" in t_clean or "çekildi" in str(team).lower():
+    if "cekildi" in t_clean:
         return True
 
     # Çanakkale U16 (Yıldız): UVM Akademi
-    if "canakkale" in c_clean and "uvm" in t_clean:
+    if ("canakkale" in c_clean or not c_clean) and "uvm" in t_clean:
         return True
 
     # Eskişehir U16 (Yıldız): Meryem Boz - B
@@ -236,7 +254,7 @@ def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str 
         return True
 
     # İstanbul 4. Bölge: Başakşehir Belediye / Başakşehir Bld
-    if "istanbul" in c_clean and "basaksehir" in t_clean and ("belediye" in t_clean or "bld" in t_clean) and "4. bolge" in g_clean:
+    if ("istanbul" in c_clean or not c_clean) and "basaksehir" in t_clean and ("belediye" in t_clean or "bld" in t_clean) and "4. bolge" in g_clean:
         return True
 
     return False
@@ -815,7 +833,10 @@ def scrape_single_city(city_info):
             "total_matches": len(city_matches),
             "source": f"https://{subdomain}.voleyboliltemsilciligi.com",
             "filters": {
-                "categories": ["Tümü", "Genç Kızlar Süper Lig"] if subdomain == "mersin" else ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
+                "categories": ["Tümü", "Genç Kızlar Süper Lig"] if subdomain == "mersin" else (
+                    ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Lig 1. Bölge", "Genç Kızlar 1. Lig 2. Bölge", "Genç Kızlar 1. Lig 3. Bölge", "Genç Kızlar 1. Lig 4. Bölge", "Genç Kızlar 1. Lig 5. Bölge", "Yıldız Kızlar Süper Lig"]
+                    if subdomain == "istanbul" else ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"]
+                ),
                 "age_groups": ["Tümü", "Genç"] if subdomain == "mersin" else ["Tümü", "Genç", "Yıldız"],
                 "genders": ["Kız"],
                 "halls": ["Tümü"] + sorted(list(halls_set)),
@@ -828,6 +849,9 @@ def scrape_single_city(city_info):
         city_payload["matches"] = merge_volleybox_data(city_matches, city_file)
         with open(city_file, "w", encoding="utf-8") as f:
             json.dump(city_payload, f, ensure_ascii=False, indent=2)
+        if subdomain == "istanbul":
+            with open(FIXTURES_JSON, "w", encoding="utf-8") as ff:
+                json.dump(city_payload, ff, ensure_ascii=False, indent=2)
         data_file_rel = f"data/cities/{subdomain}.json"
     else:
         # Eğer bu taramada yeni maç bulunamadıysa ama diskte önceden kaydedilmiş aktif veri varsa koru

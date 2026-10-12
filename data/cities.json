@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-12T10:58:03.786316+03:00",
+  "updated_at": "2026-10-12T14:44:15.960527+03:00",
   "total_cities": 81,
   "active_cities": 33,
-  "total_matches": 1091,
+  "total_matches": 1169,
   "cities": [
     {
       "ilid": "1",
@@ -50,7 +50,7 @@
       "name": "Amasya",
       "slug": "amasya",
       "url": "https://amasya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -170,8 +170,8 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (29 Maç Mevcut)",
-      "matches_count": 29,
+      "status": "Aktif (25 Maç Mevcut)",
+      "matches_count": 25,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
     },
@@ -240,7 +240,7 @@
       "name": "Erzincan",
       "slug": "erzincan",
       "url": "https://erzincan.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -260,8 +260,8 @@
       "name": "Eskişehir",
       "slug": "eskisehir",
       "url": "https://eskisehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (48 Maç Mevcut)",
-      "matches_count": 48,
+      "status": "Aktif (42 Maç Mevcut)",
+      "matches_count": 42,
       "standings_count": 7,
       "data_file": "data/cities/eskisehir.json"
     },
@@ -410,8 +410,8 @@
       "name": "Kocaeli",
       "slug": "kocaeli",
       "url": "https://kocaeli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (35 Maç Mevcut)",
-      "matches_count": 35,
+      "status": "Aktif (123 Maç Mevcut)",
+      "matches_count": 123,
       "standings_count": 2,
       "data_file": "data/cities/kocaeli.json"
     },
@@ -570,7 +570,7 @@
       "name": "Sinop",
       "slug": "sinop",
       "url": "https://sinop.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -600,7 +600,7 @@
       "name": "Tokat",
       "slug": "tokat",
       "url": "https://tokat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -630,7 +630,7 @@
       "name": "Şanlıurfa",
       "slug": "sanliurfa",
       "url": "https://sanliurfa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -650,7 +650,7 @@
       "name": "Van",
       "slug": "van",
       "url": "https://van.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -660,7 +660,7 @@
       "name": "Yozgat",
       "slug": "yozgat",
       "url": "https://yozgat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -680,7 +680,7 @@
       "name": "Aksaray",
       "slug": "aksaray",
       "url": "https://aksaray.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -690,7 +690,7 @@
       "name": "Bayburt",
       "slug": "bayburt",
       "url": "https://bayburt.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -700,7 +700,7 @@
       "name": "Karaman",
       "slug": "karaman",
       "url": "https://karaman.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -731,7 +731,7 @@
       "name": "Şırnak",
       "slug": "sirnak",
       "url": "https://sirnak.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -751,7 +751,7 @@
       "name": "Ardahan",
       "slug": "ardahan",
       "url": "https://ardahan.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -761,7 +761,7 @@
       "name": "Iğdır",
       "slug": "igdir",
       "url": "https://igdir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -791,7 +791,7 @@
       "name": "Kilis",
       "slug": "kilis",
       "url": "https://kilis.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

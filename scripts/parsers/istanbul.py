@@ -62,12 +62,30 @@ TEAM_STANDARDIZATION = {
     "İnsped": "İnsped",
 }
 
+def _normalize_txt(s: str) -> str:
+    if not s:
+        return ""
+    return (
+        str(s)
+        .strip()
+        .replace("İ", "i")
+        .replace("I", "i")
+        .replace("ı", "i")
+        .lower()
+        .replace("\u0307", "")
+        .replace("ğ", "g")
+        .replace("ü", "u")
+        .replace("ş", "s")
+        .replace("ö", "o")
+        .replace("ç", "c")
+    )
+
 def is_withdrawn_team(team: str, category: str = "", group: str = "") -> bool:
     if not team:
         return False
-    t_clean = team.lower().replace("ı", "i").replace("İ", "i")
-    g_clean = (category + " " + group).lower().replace("ı", "i").replace("İ", "i")
-    if "cekildi" in t_clean or "çekildi" in team.lower():
+    t_clean = _normalize_txt(team)
+    g_clean = _normalize_txt(f"{category} {group}")
+    if "cekildi" in t_clean:
         return True
     if "basaksehir" in t_clean and ("belediye" in t_clean or "bld" in t_clean) and "4. bolge" in g_clean:
         return True
@@ -200,7 +218,18 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
 
         for c_val, c_text in comps:
             group_name = extract_group_name(c_text)
-            standings_key = f"{cat_name} - {group_name}"
+            eff_cat_name = cat_name
+            eff_group_name = group_name
+
+            if kume_code == "GK1L":
+                reg_m = re.search(r"(\d+)\.\s*B[öo]lge", c_text, flags=re.I) or re.search(r"(\d+)\.\s*B[öo]lge", group_name, flags=re.I)
+                if reg_m:
+                    reg_num = reg_m.group(1)
+                    eff_cat_name = f"Genç Kızlar 1. Lig {reg_num}. Bölge"
+                    sub_grp = re.sub(r"^\d+\.\s*B[öo]lge\s*", "", group_name, flags=re.I).strip()
+                    eff_group_name = sub_grp if sub_grp else "Tek Grup"
+
+            standings_key = f"{eff_cat_name} - {eff_group_name}"
             logger.info(f"Grup verileri çekiliyor: {standings_key}")
 
             p_c = state.copy()
@@ -228,7 +257,7 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
                             tds = [clean_str(td.text) for td in tr.find_all("td")]
                             if len(tds) >= 8:
                                 team_name = standardize_team(tds[1])
-                                if is_withdrawn_team(team_name, cat_name, group_name):
+                                if is_withdrawn_team(team_name, eff_cat_name, eff_group_name):
                                     continue
                                 try:
                                     played = int(tds[2]) if tds[2].isdigit() else 0
@@ -279,7 +308,7 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
                                 away = standardize_team(tds[7])
                                 raw_sets = tds[8] if len(tds) > 8 else ""
 
-                                if is_withdrawn_team(home, cat_name, group_name) or is_withdrawn_team(away, cat_name, group_name):
+                                if is_withdrawn_team(home, eff_cat_name, eff_group_name) or is_withdrawn_team(away, eff_cat_name, eff_group_name):
                                     continue
 
                                 # SADECE TARİHİ AÇIKLANAN MAÇLAR: Tarihi henüz girilmemiş olanları atla
@@ -323,10 +352,10 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
                                     "date": iso_date,
                                     "time": time_str,
                                     "hall": hall_str,
-                                    "category": cat_name,
+                                    "category": eff_cat_name,
                                     "age_group": age_group,
                                     "gender": "Kız",
-                                    "group": group_name,
+                                    "group": eff_group_name,
                                     "match_no": s_no,
                                     "home_team": home,
                                     "away_team": away,
@@ -380,7 +409,16 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
         "total_matches": len(all_matches),
         "source": "https://istanbul.voleyboliltemsilciligi.com",
         "filters": {
-            "categories": ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
+            "categories": [
+                "Tümü",
+                "Genç Kızlar Süper Lig",
+                "Genç Kızlar 1. Lig 1. Bölge",
+                "Genç Kızlar 1. Lig 2. Bölge",
+                "Genç Kızlar 1. Lig 3. Bölge",
+                "Genç Kızlar 1. Lig 4. Bölge",
+                "Genç Kızlar 1. Lig 5. Bölge",
+                "Yıldız Kızlar Süper Lig"
+            ],
             "age_groups": ["Tümü", "Genç", "Yıldız"],
             "genders": ["Kız"],
             "halls": ["Tümü"] + halls_list,

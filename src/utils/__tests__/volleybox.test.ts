@@ -62,7 +62,7 @@ describe("volleybox utility", () => {
 
       const akademiAtletik = getVolleyboxMapping("Akademi Atletik", "Yıldız Kızlar Süper Lig", undefined, "İstanbul");
       expect(akademiAtletik).toBeDefined();
-      expect(akademiAtletik?.matched_as).toBe("Mehmet Erdem Marmara Akademi Spor Kulübü U16");
+      expect(akademiAtletik?.matched_as).toBe("Marmara Akademi Spor Kulübü U16");
 
       const tekirdagVoleybolAkademi = getVolleyboxMapping("Voleybol Akademi Tekirdağ Spor Kulübü", "Yıldız Kızlar Süper Lig", undefined, "Tekirdağ");
       expect(tekirdagVoleybolAkademi).toBeDefined();
@@ -433,9 +433,38 @@ describe("volleybox utility", () => {
     });
 
     it("returns correct tournament mapping for Istanbul 1. Lig regions", () => {
-      const istRegion5 = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 5. Bölge", "İstanbul");
-      expect(istRegion5).toBeDefined();
-      expect(istRegion5?.volleybox_url).toContain("women-stanbul-ligi-5-bolge-u18-2026-27-o50894");
+      const r1 = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 1. Bölge", "İstanbul");
+      expect(r1?.volleybox_url).toContain("women-stanbul-1-ligi-u18-2026-27-o50866");
+
+      const r2 = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 2. Bölge", "İstanbul");
+      expect(r2?.volleybox_url).toContain("women-stanbul-ligi-2-bolge-u18-2026-27-o50867");
+
+      const r3 = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 3. Bölge", "İstanbul");
+      expect(r3?.volleybox_url).toContain("women-stanbul-ligi-3-bolge-u18-2026-27-o50868");
+
+      const r4 = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 4. Bölge", "İstanbul");
+      expect(r4?.volleybox_url).toContain("women-stanbul-ligi-4-bolge-u18-2026-27-o50869");
+
+      const r5 = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 5. Bölge", "İstanbul");
+      expect(r5?.volleybox_url).toContain("women-stanbul-ligi-5-bolge-u18-2026-27-o50894");
+
+      // With (U18) age code appended
+      const r5WithAge = getVolleyboxLeagueMapping("Genç Kızlar 1. Lig 5. Bölge (U18)", "İstanbul");
+      expect(r5WithAge?.volleybox_url).toContain("women-stanbul-ligi-5-bolge-u18-2026-27-o50894");
+    });
+
+    it("returns correct tournament mapping for Denizli U18 and U16 2026/27", () => {
+      const denizliU18 = getVolleyboxLeagueMapping("Genç Kızlar Süper Lig", "Denizli");
+      expect(denizliU18).toBeDefined();
+      expect(denizliU18?.volleybox_url).toContain("women-denizli-super-ligi-u18-2026-27-o51580");
+      expect(denizliU18?.age_category).toBe("U18");
+      expect(denizliU18?.season).toBe("2026/27");
+
+      const denizliU16 = getVolleyboxLeagueMapping("Yıldız Kızlar Süper Lig", "Denizli");
+      expect(denizliU16).toBeDefined();
+      expect(denizliU16?.volleybox_url).toContain("women-denizli-super-ligi-u16-2026-27-o51581");
+      expect(denizliU16?.age_category).toBe("U16");
+      expect(denizliU16?.season).toBe("2026/27");
     });
 
     it("returns correct tournament mapping for Eskişehir Genç Kızlar Süper Lig (U18)", () => {

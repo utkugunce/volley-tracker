@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-12T10:58:03.786316+03:00",
+  "updated_at": "2026-10-12T14:44:15.960527+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 29,
+  "total_matches": 25,
   "source": "https://canakkale.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -284,17 +284,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "UVM Akademi Spor Kulübü U16",
-        "played": 4,
-        "won": 0,
-        "lost": 4,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 12,
         "form": []
       }
     ],
@@ -753,120 +742,6 @@
       }
     },
     {
-      "id": "canakkale-20260928-009",
-      "city": "Çanakkale",
-      "date": "2026-09-28",
-      "time": "20:00",
-      "hall": "18 Mart Ss.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
-      "match_no": "2",
-      "home_team": "(H) - Uvm Akademi Spor Kulübü",
-      "away_team": "Çanakkalespor U16",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "0-25",
-        "0-25",
-        "0-25"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "canakkale-20261002-010",
-      "city": "Çanakkale",
-      "date": "2026-10-02",
-      "time": "18:30",
-      "hall": "Eceabat",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
-      "match_no": "3",
-      "home_team": "Eceabat Spor Kulübü U16",
-      "away_team": "(H) - Uvm Akademi Spor Kulübü",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-0",
-        "25-0",
-        "25-0"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "canakkale-20261003-011",
-      "city": "Çanakkale",
-      "date": "2026-10-03",
-      "time": "13:00",
-      "hall": "18 Mart Ss.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
-      "match_no": "4",
-      "home_team": "(H) - Uvm Akademi Spor Kulübü",
-      "away_team": "Yeşil Bayramiç Spor Kulübü",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "0-25",
-        "0-25",
-        "0-25"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
       "id": "canakkale-20261004-012",
       "city": "Çanakkale",
       "date": "2026-10-04",
@@ -953,44 +828,6 @@
           "vb_time": "20:00",
           "vb_hall": "18 Mart Spor Salonu",
           "details": null
-        }
-      }
-    },
-    {
-      "id": "canakkale-20261009-014",
-      "city": "Çanakkale",
-      "date": "2026-10-09",
-      "time": "16:00",
-      "hall": "18 Mart Ss.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
-      "match_no": "7",
-      "home_team": "Çanakkale Belediyespor - B U16",
-      "away_team": "(H) - Uvm Akademi Spor Kulübü",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-0",
-        "25-0",
-        "25-0"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
         }
       }
     },
@@ -1663,5 +1500,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-12T11:03:11.852582"
+  "volleybox_sync_updated_at": "2026-10-12T14:49:17.904327"
 }

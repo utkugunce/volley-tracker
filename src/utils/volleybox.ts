@@ -342,6 +342,7 @@ export function getVolleyboxLeagueMapping(
   const map = customMap || getDefaultVolleyboxLeagueMap();
   const rawLeague = normalizeKey(leagueName);
   const leagueClean = rawLeague.split("·")[0].split(" - ")[0].trim();
+  const leagueBase = leagueClean.replace(/\s*\([uU]\d+\)/g, "").trim();
   const citySlug = normalizeCitySlug(city);
   const age = extractAgeGroup(leagueName);
 
@@ -352,7 +353,7 @@ export function getVolleyboxLeagueMapping(
     if (citySlug === "afyonkarahisar") candidateSlugs.push("afyon");
 
     for (const cSlug of candidateSlugs) {
-      const directCityMatch = map.get(`${leagueClean}::${cSlug}`);
+      const directCityMatch = map.get(`${leagueClean}::${cSlug}`) || map.get(`${leagueBase}::${cSlug}`);
       if (directCityMatch) return directCityMatch;
 
       if (age) {
@@ -367,7 +368,7 @@ export function getVolleyboxLeagueMapping(
   }
 
   // 2. Şehir belirtilmediyse genel lig adı veya yaş grubu
-  const directMatch = map.get(leagueClean);
+  const directMatch = map.get(leagueClean) || map.get(leagueBase);
   if (directMatch) return directMatch;
 
   if (age) {
