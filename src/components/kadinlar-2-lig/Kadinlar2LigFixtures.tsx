@@ -14,7 +14,14 @@ import { Kadinlar2LigGroup, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
-import { convertK2MatchToMatch, getKadinlar2LigMatchTeamNames, isKadinlar2LigMatchFavorite, kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
+import {
+  convertK2MatchToMatch,
+  getKadinlar2LigMatchTeamNames,
+  isKadinlar2LigMatchFavorite,
+  isKadinlar2LigMatchSynced,
+  kadinlar2LigMatchHasTeamQuery,
+  normalizeK2Date,
+} from "@/utils/kadinlar2LigConverter";
 import { generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { useFavorites } from "@/utils/useFavorites";
 import { PrintScheduleButton } from "@/components/PrintScheduleButton";
@@ -118,36 +125,53 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   // Volleybox Eşleşme İstatistikleri (Tümü, Skorlu, Skorsuz, Girilmedi, Değişenler)
   const volleyboxStats = useMemo(() => {
     const total = matches.length;
-    const scored = matches.filter(
-      (m) =>
-        m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -")
-    ).length;
-    const unscored = matches.filter(
-      (m) =>
-        Boolean(m.takim_a_volleybox_url && m.takim_b_volleybox_url) &&
-        m.durum !== "BİTTİ" &&
-        (!m.skor || !m.skor.includes("-") || m.skor === "- : -") &&
-        isMatchOverdueForScore(m.tarih)
-    ).length;
-    const unsynced = matches.filter(
-      (m) => !m.takim_a_volleybox_url || !m.takim_b_volleybox_url
-    ).length;
-    const discrepancy = matches.filter(
-      (m) =>
-        Boolean(m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff)
-    ).length;
+    let scored = 0;
+    let unscored = 0;
+    let unsynced = 0;
+    let discrepancy = 0;
+
+    matches.forEach((m) => {
+      const hasDiff = Boolean(
+        m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff
+      );
+      if (hasDiff) {
+        discrepancy++;
+      }
+
+      const isSynced = isKadinlar2LigMatchSynced(m);
+      if (!isSynced) {
+        unsynced++;
+        return;
+      }
+
+      const hasScore = Boolean(
+        m.volleybox?.has_score ||
+        (m.volleybox?.score && m.volleybox.score.includes("-") && m.volleybox.score !== "- : -")
+      );
+
+      if (hasScore) {
+        scored++;
+      } else {
+        const isoDate = m.volleybox?.vb_date || normalizeK2Date(m.tarih);
+        if (isMatchOverdueForScore(isoDate, todayIso)) {
+          unscored++;
+        }
+      }
+    });
 
     return { total, scored, unscored, unsynced, discrepancy };
-  }, [matches]);
+  }, [matches, todayIso]);
 
   const handleVolleyboxFilterChange = (
     filter: "all" | "scored" | "unscored" | "unsynced" | "discrepancy"
   ) => {
     setVolleyboxFilter(filter);
-    if (filter === "discrepancy") {
-      // Değişenler seçildiğinde tarih ve hafta filtrelerini sıfırla ki kullanıcı tüm değişen maçları anında görsün
+    if (filter === "discrepancy" || filter === "unsynced") {
+      // Değişenler veya Girilmedi seçildiğinde tarih ve hafta filtrelerini sıfırla ki kullanıcı tüm maçları anında görsün
       setSelectedDate("all");
       setSelectedWeek("all");
+    } else if (filter !== "all" && selectedDate !== "all") {
+      setSelectedDate("all");
     }
   };
 
@@ -179,17 +203,21 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       }
 
       // Volleybox filtreleri
-      const isScored =
-        m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor !== "- : -");
-      const isSynced = Boolean(m.takim_a_volleybox_url && m.takim_b_volleybox_url);
+      const isSynced = isKadinlar2LigMatchSynced(m);
+      const isScored = Boolean(
+        m.volleybox?.has_score ||
+        (m.volleybox?.score && m.volleybox.score.includes("-") && m.volleybox.score !== "- : -")
+      );
+      const isoDate = m.volleybox?.vb_date || normalizeK2Date(m.tarih);
+      const isOverdue = isMatchOverdueForScore(isoDate, todayIso);
       const hasDiscrepancy = Boolean(
         m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff
       );
 
-      if (volleyboxFilter === "scored" && !isScored) return false;
+      if (volleyboxFilter === "scored" && (!isSynced || !isScored)) return false;
       if (
         volleyboxFilter === "unscored" &&
-        (!isSynced || isScored || !isMatchOverdueForScore(m.tarih))
+        (!isSynced || isScored || !isOverdue)
       ) {
         return false;
       }
@@ -207,6 +235,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     searchQuery,
     volleyboxFilter,
     isFavorite,
+    todayIso,
   ]);
 
   // Sezon Takvimi İndir (.ics)
@@ -324,7 +353,10 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
 
             <button
               type="button"
-              onClick={() => setSelectedWeek("all")}
+              onClick={() => {
+                setSelectedWeek("all");
+                setSelectedDate("all");
+              }}
               className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                 selectedWeek === "all"
                   ? "bg-selected-strong text-white shadow-glow-selected font-bold"
@@ -341,7 +373,10 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                 <button
                   key={w}
                   type="button"
-                  onClick={() => setSelectedWeek(w)}
+                  onClick={() => {
+                    setSelectedWeek(w);
+                    setSelectedDate("all");
+                  }}
                   className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
                     isSelected
                       ? "bg-selected-strong text-white shadow-glow-selected font-bold"
@@ -418,6 +453,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                     ? "bg-done text-done-fg font-bold shadow-xs"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
+                title="Volleybox'ta kayıtlı ve skoru girilmiş maçlar"
               >
                 Skorlu ({volleyboxStats.scored})
               </button>
@@ -429,6 +465,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                     ? "bg-amber-600 text-white font-bold shadow-xs"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
+                title="Volleybox'ta kayıtlı ancak skoru henüz girilmemiş maçlar"
               >
                 Skorsuz ({volleyboxStats.unscored})
               </button>
@@ -440,6 +477,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                     ? "bg-slate-700 text-white font-bold shadow-xs"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
+                title="Volleybox'a henüz girilmemiş maçlar"
               >
                 Girilmedi ({volleyboxStats.unsynced})
               </button>
@@ -453,6 +491,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                     ? "text-amber-300 bg-amber-950/40 hover:bg-amber-900/60 border border-amber-700/50 font-bold"
                     : "text-slate-400 hover:text-slate-200"
                 }`}
+                title="TVF bülteni ile Volleybox arasında tarih, saat veya salon farkı olan maçlar"
               >
                 <AlertTriangle size={11} />
                 <span>Değişenler ({volleyboxStats.discrepancy})</span>

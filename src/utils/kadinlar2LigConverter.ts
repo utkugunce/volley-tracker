@@ -1,5 +1,5 @@
 import { Kadinlar2LigMatch, Kadinlar2LigVolleybox } from "@/types/kadinlar2Lig";
-import { Match } from "@/types/fixture";
+import { Match, VolleyboxMatchInfo } from "@/types/fixture";
 import { getVolleyboxTeamName } from "@/utils/volleybox";
 import { compareMatchTimes } from "@/utils/calendar";
 
@@ -70,6 +70,23 @@ export function normalizeK2Date(date: string | undefined): string {
 }
 
 /**
+ * Kadınlar 2. Ligi maçının Volleybox ile eşleşip eşleşmediğini (kayıtlı olup olmadığını) kontrol eder.
+ */
+export function isKadinlar2LigMatchSynced(m: Kadinlar2LigMatch): boolean {
+  if (typeof m.volleybox?.synced === "boolean") {
+    return m.volleybox.synced;
+  }
+  return Boolean(
+    m.volleybox?.match_id ||
+    m.volleybox?.url ||
+    (m.volleybox as { match_url?: string | null } | undefined)?.match_url ||
+    m.volleybox_url ||
+    m.discrepancy?.has_diff ||
+    m.volleybox?.discrepancy?.has_diff
+  );
+}
+
+/**
  * Kadınlar 2. Ligi maç nesnesini Altyapı FixtureTable ve MatchCenterDrawer ile
  * tam uyumlu standart Match tipine dönüştürür.
  */
@@ -95,29 +112,25 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     m.durum === "BİTTİ" || (homeScore !== null && awayScore !== null);
 
   // Volleybox eşleşme ve tutarsızlık bilgisi
-  const volleyboxData: Kadinlar2LigVolleybox = m.volleybox
-    ? {
-        ...m.volleybox,
-        match_url: m.volleybox.url || m.volleybox.match_url || m.volleybox_url || null,
-        home_team_name: m.volleybox.home_team_name || m.volleybox.host_name || homeName,
-        away_team_name: m.volleybox.away_team_name || m.volleybox.guest_name || awayName,
-      }
-    : {
-        match_url: m.volleybox_url || null,
-        home_team_name: homeName,
-        away_team_name: awayName,
-        home_team_url: m.takim_a_volleybox_url || null,
-        away_team_url: m.takim_b_volleybox_url || null,
-        score: m.skor || null,
-        status: isFinished ? "finished" : "upcoming",
-        tournament_name: "TVF Uzman Posta Kadınlar 2. Ligi",
-        date: m.tarih || null,
-        time: m.saat || null,
-        discrepancy: m.discrepancy || null,
-      };
-  if (m.discrepancy?.has_diff && !volleyboxData.discrepancy?.has_diff) {
-    volleyboxData.discrepancy = m.discrepancy;
-  }
+  const isVbSynced = isKadinlar2LigMatchSynced(m);
+  const vbUrl = m.volleybox?.url ?? m.volleybox?.match_url ?? m.volleybox_url ?? null;
+  const vbHasScore = typeof m.volleybox?.has_score === "boolean"
+    ? m.volleybox.has_score
+    : Boolean(m.volleybox?.score && m.volleybox.score !== "- : -");
+
+  const volleyboxData: VolleyboxMatchInfo = {
+    synced: isVbSynced,
+    match_id: m.volleybox?.match_id ?? null,
+    url: vbUrl,
+    host_name: m.volleybox?.host_name ?? m.volleybox?.home_team_name ?? homeName,
+    guest_name: m.volleybox?.guest_name ?? m.volleybox?.away_team_name ?? awayName,
+    score: m.volleybox?.score ?? null,
+    has_score: vbHasScore,
+    vb_date: m.volleybox?.vb_date ?? (m.volleybox?.date ? normalizeK2Date(m.volleybox.date) : null),
+    vb_time: m.volleybox?.vb_time ?? m.volleybox?.time ?? null,
+    vb_hall: m.volleybox?.vb_hall ?? null,
+    discrepancy: m.volleybox?.discrepancy || m.discrepancy || null,
+  };
 
   // DD.MM.YYYY tarihini standart YYYY-MM-DD formatına çevir
   const isoDate = normalizeK2Date(m.tarih);
@@ -140,7 +153,7 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     set_scores: setScores,
     home_score: homeScore,
     away_score: awayScore,
-    volleybox: volleyboxData as unknown as Match["volleybox"],
+    volleybox: volleyboxData,
   };
 }
 

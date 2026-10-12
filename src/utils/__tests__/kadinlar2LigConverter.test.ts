@@ -8,6 +8,7 @@ import {
   getKadinlar2LigTeamName,
   getKadinlar2LigTeamNameVariants,
   isKadinlar2LigMatchFavorite,
+  isKadinlar2LigMatchSynced,
   kadinlar2LigMatchHasTeamQuery,
 } from "../kadinlar2LigConverter";
 import { getVolleyboxMapping } from "../volleybox";
@@ -100,6 +101,51 @@ describe("Kadınlar 2. Ligi maç dönüştürücü", () => {
     expect(kadinlar2LigMatchHasTeamQuery(m, "belediyesi sk")).toBe(true);
     expect(kadinlar2LigMatchHasTeamQuery(m, "bld. spor")).toBe(true);
     expect(kadinlar2LigMatchHasTeamQuery(m, "yok böyle")).toBe(false);
+  });
+
+  it("isKadinlar2LigMatchSynced Volleybox eşleşme durumunu doğru tespit eder", () => {
+    // 1. Takım URL'leri olsa bile maç Volleybox'a girilmediyse (synced: false) false dönmeli
+    const unsyncedMatch = baseMatch({
+      takim_a_volleybox_url: "https://women.volleybox.net/team-a",
+      takim_b_volleybox_url: "https://women.volleybox.net/team-b",
+      volleybox: {
+        synced: false,
+        match_id: null,
+        url: null,
+        has_score: false,
+      },
+    });
+    expect(isKadinlar2LigMatchSynced(unsyncedMatch)).toBe(false);
+
+    const convertedUnsynced = convertK2MatchToMatch(unsyncedMatch);
+    expect(convertedUnsynced.volleybox?.synced).toBe(false);
+    expect(convertedUnsynced.volleybox?.has_score).toBe(false);
+
+    // 2. Volleybox ile eşleşmiş maçta (synced: true) true dönmeli
+    const syncedMatch = baseMatch({
+      volleybox: {
+        synced: true,
+        match_id: 397694,
+        url: "https://women.volleybox.net/match-397694",
+        has_score: true,
+        score: "3-0",
+      },
+    });
+    expect(isKadinlar2LigMatchSynced(syncedMatch)).toBe(true);
+
+    const convertedSynced = convertK2MatchToMatch(syncedMatch);
+    expect(convertedSynced.volleybox?.synced).toBe(true);
+    expect(convertedSynced.volleybox?.has_score).toBe(true);
+    expect(convertedSynced.volleybox?.match_id).toBe(397694);
+
+    // 3. volleybox alanı olmayan maçta false dönmeli
+    const noVbMatch = baseMatch({
+      takim_a_volleybox_url: "https://women.volleybox.net/team-a",
+      takim_b_volleybox_url: "https://women.volleybox.net/team-b",
+      volleybox: undefined,
+    });
+    expect(isKadinlar2LigMatchSynced(noVbMatch)).toBe(false);
+    expect(convertK2MatchToMatch(noVbMatch).volleybox?.synced).toBe(false);
   });
 });
 

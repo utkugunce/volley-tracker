@@ -50,11 +50,11 @@ export interface Kadinlar2LigTeam {
 /** Kadınlar 2. Lig JSON'unda bazı maçlara eklenen Volleybox eşleşme bilgisi. */
 export interface Kadinlar2LigVolleybox {
   synced?: boolean;
-  match_id?: string | number | null;
-  match_url?: string | null;
+  match_id?: number | string | null;
   url?: string | null;
-  host_name?: string;
-  guest_name?: string;
+  match_url?: string | null;
+  host_name?: string | null;
+  guest_name?: string | null;
   home_team_name?: string;
   away_team_name?: string;
   home_team_url?: string | null;
@@ -64,8 +64,8 @@ export interface Kadinlar2LigVolleybox {
   status?: string;
   tournament_name?: string;
   date?: string | null;
-  time?: string | null;
   vb_date?: string | null;
+  time?: string | null;
   vb_time?: string | null;
   vb_hall?: string | null;
   discrepancy?: DiscrepancyInfo | null;

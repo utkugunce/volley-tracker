@@ -34,6 +34,13 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
       mac_durumu_kod: "3",
       takim_a_volleybox_url: "https://women.volleybox.net/tr/vakifbank",
       takim_b_volleybox_url: "https://women.volleybox.net/tr/eczacibasi",
+      volleybox: {
+        synced: true,
+        match_id: "1001",
+        url: "https://women.volleybox.net/match/1001",
+        has_score: true,
+        score: "3-1",
+      },
     },
     {
       id: "k2-2",
@@ -59,6 +66,12 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
       set_sonuclari: "",
       durum: "OYNANACAK",
       mac_durumu_kod: "0",
+      volleybox: {
+        synced: false,
+        match_id: null,
+        url: null,
+        has_score: false,
+      },
     },
   ];
 
@@ -94,6 +107,28 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.getByText("Fenerbahçe 2")).toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: "TÜMÜ" })).toBeInTheDocument();
+  });
+
+  it("Volleybox 'Girilmedi' filtresi TVF'de olup Volleybox'a girilmemiş maçları listeler", () => {
+    const handleSelectMatch = vi.fn();
+    render(
+      <Kadinlar2LigFixtures
+        group={mockGroup}
+        onSelectMatch={handleSelectMatch}
+      />
+    );
+
+    // Girilmedi butonu görünmeli ve sayısı 1 olmalı (mockMatches[1])
+    const unsyncedBtn = screen.getByRole("button", { name: /Girilmedi/i });
+    expect(unsyncedBtn).toBeInTheDocument();
+    expect(unsyncedBtn).toHaveTextContent("Girilmedi (1)");
+
+    // Girilmedi butonuna tıklandığında sadece Volleybox'a girilmemiş maç görünmeli
+    fireEvent.click(unsyncedBtn);
+
+    expect(screen.getByText("Fenerbahçe 2")).toBeInTheDocument();
+    expect(screen.getByText("Galatasaray 2")).toBeInTheDocument();
+    expect(screen.queryByText("VakıfBank 2")).not.toBeInTheDocument();
   });
 
   it("Kadinlar2LigResults altyapı tarih şeridi ve kompakt maç akışını listeler", () => {
