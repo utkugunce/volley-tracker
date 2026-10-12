@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T10:58:03.786316+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -457,8 +457,8 @@
         "url": "https://women.volleybox.net/tr/tekirdag-basket-spor-kulubu-u18-cerkezkoy-voleybol-akademi-spor-kulubu-u18-c403026",
         "host_name": "Tekirdağ Basket Spor Kulübü U18",
         "guest_name": "Çerkezköy Voleybol Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-11",
         "vb_time": "16:00",
         "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
@@ -959,8 +959,8 @@
         "url": "https://women.volleybox.net/tr/suleymanpasa-spor-kulubu-u16-corlu-belediyesi-spor-kulubu-u16-c403049",
         "host_name": "Süleymanpaşa Spor Kulübü U16",
         "guest_name": "Çorlu Belediyesi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "19:30",
         "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
@@ -1492,8 +1492,8 @@
         "url": "https://women.volleybox.net/tr/suleymanpasa-spor-kulubu-b-u16-tekirdag-basket-spor-kulubu-u16-c403056",
         "host_name": "Süleymanpaşa Spor Kulübü - B U16",
         "guest_name": "Tekirdağ Basket Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "18:00",
         "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
@@ -2207,5 +2207,5 @@
     }
   ],
   "volleybox_synced_matches": 23,
-  "volleybox_sync_updated_at": "2026-10-11T22:36:03.443477"
+  "volleybox_sync_updated_at": "2026-10-12T11:03:19.415685"
 }

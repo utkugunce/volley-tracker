@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T07:14:11.553722+00:00",
+  "updated_at": "2026-10-12T10:58:03.786316+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -248,8 +248,8 @@
         "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u18-merinos-sk-u18-c406706",
         "host_name": "Anadolugücü Spor Kulübü U18",
         "guest_name": "Merinos SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-10",
         "vb_time": "09:30",
         "vb_hall": "Dumlupınar Spor Salonu",
@@ -332,8 +332,8 @@
         "url": "https://women.volleybox.net/tr/adrenalin-rekor-spor-kulubu-u18-antepia-spor-kulubu-u18-c406708",
         "host_name": "Adrenalin Rekor Spor Kulübü U18",
         "guest_name": "Antepia Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-10",
         "vb_time": "11:00",
         "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
@@ -566,5 +566,5 @@
     }
   ],
   "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-10-12T07:16:04.806302"
+  "volleybox_sync_updated_at": "2026-10-12T11:03:12.664529"
 }

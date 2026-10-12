@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T10:58:03.786316+03:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -114,8 +114,8 @@
         "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-u18-yalova-voleybol-spor-kulubu-b-u18-c398307",
         "host_name": "Koru Akademi Spor Kulübü U18",
         "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-10",
         "vb_time": "11:00",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
@@ -159,8 +159,8 @@
         "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-b-u18-yalova-atakent-spor-kulubu-u18-c398308",
         "host_name": "Koru Akademi Spor Kulübü - B U18",
         "guest_name": "Yalova Atakent Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-10",
         "vb_time": "13:00",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
@@ -916,5 +916,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-11T22:36:03.595061"
+  "volleybox_sync_updated_at": "2026-10-12T11:03:19.594755"
 }

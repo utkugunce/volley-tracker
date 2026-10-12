@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T10:58:03.786316+03:00",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -287,8 +287,8 @@
         "url": "https://women.volleybox.net/tr/duzce-1907-spor-kulubu-u18-duzce-ultraslan-spor-kulubu-u18-c404258",
         "host_name": "Düzce 1907 Spor Kulübü U18",
         "guest_name": "Düzce UltrAslan Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "19:30",
         "vb_hall": "Bahçeşehir Spor Salonu",
@@ -429,5 +429,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-11T22:35:56.868943"
+  "volleybox_sync_updated_at": "2026-10-12T11:03:11.878892"
 }

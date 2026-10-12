@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T10:58:03.786316+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -844,8 +844,8 @@
         "url": "https://women.volleybox.net/tr/karayollar-spor-kulubu-u18-anadolu-birlik-spor-kulubu-u18-c402141",
         "host_name": "Karayolları Spor Kulübü U18",
         "guest_name": "Anadolu Birlik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
@@ -1629,8 +1629,8 @@
         "url": "https://women.volleybox.net/tr/set-up-spor-kulubu-u18-ankara-buyuksehir-belediyesi-spor-kulubu-u18-c402145",
         "host_name": "SET UP Spor Kulübü U18",
         "guest_name": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "18:00",
         "vb_hall": "Batıkent Spor Salonu",
@@ -2064,8 +2064,8 @@
         "url": "https://women.volleybox.net/tr/ahmet-hamdi-tanpnar-ortaokulu-sk-u18-eryaman-gelisim-sk-u18-c402147",
         "host_name": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
         "guest_name": "Eryaman Gelişim SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
@@ -3750,5 +3750,5 @@
     }
   ],
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-10-11T22:35:55.468382"
+  "volleybox_sync_updated_at": "2026-10-12T11:03:10.294939"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T10:58:03.786316+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -2212,8 +2212,8 @@
         "url": "https://women.volleybox.net/tr/hatay-yldzlar-spor-kulubu-u18-vipark-genclik-ve-spor-u18-c401110",
         "host_name": "Hatay Yıldızlar Spor Kulübü U18",
         "guest_name": "Vipark Gençlik Ve Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-10",
         "vb_time": "16:00",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
@@ -2559,5 +2559,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-11T22:35:58.612778"
+  "volleybox_sync_updated_at": "2026-10-12T11:03:13.838853"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T07:14:11.553722+00:00",
+  "updated_at": "2026-10-12T10:58:03.786316+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -823,8 +823,8 @@
         "url": "https://women.volleybox.net/tr/bursa-buyuksehir-belediyespor-u18-nilufer-olimpik-spor-kulubu-u18-c404250",
         "host_name": "Bursa Büyükşehir Belediyespor U18",
         "guest_name": "Nilüfer Olimpik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "18:00",
         "vb_hall": "Naim Süleymanoğlu Spor Salonu",
@@ -913,8 +913,8 @@
         "url": "https://women.volleybox.net/tr/doruk-voleybol-spor-kulubu-u18-metin-kucukkenar-frtna16-spor-kulubu-u18-c404251",
         "host_name": "Doruk Voleybol Spor Kulübü U18",
         "guest_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "20:00",
         "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
@@ -2060,5 +2060,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-12T07:16:04.834313"
+  "volleybox_sync_updated_at": "2026-10-12T11:03:11.533069"
 }
