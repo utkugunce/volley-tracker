@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T07:14:11.553722+00:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -33,46 +33,46 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "BODRUM BELEDİYESİ BODRUM SPOR",
-        "played": 0,
-        "won": 0,
+        "team": "BODRUM İHTİSAS SPOR KULÜBÜ A",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "BODRUM DOĞUŞ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 3,
-        "team": "BODRUM İHTİSAS SPOR KULÜBÜ A",
-        "played": 0,
+        "team": "BODRUM İHTİSAS SPOR KULÜBÜ B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "BODRUM İHTİSAS SPOR KULÜBÜ B",
-        "played": 0,
+        "team": "BODRUM BELEDİYESİ BODRUM SPOR",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -496,11 +496,16 @@
       "match_no": "1",
       "home_team": "BODRUM DOĞUŞ SPOR KULÜBÜ",
       "away_team": "BODRUM İHTİSAS SPOR KULÜBÜ B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "20-25",
+        "25-18",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -530,11 +535,15 @@
       "match_no": "2",
       "home_team": "BODRUM İHTİSAS SPOR KULÜBÜ A",
       "away_team": "BODRUM BELEDİYESİ BODRUM SPOR",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-17",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -778,5 +787,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-11T22:36:01.911242"
+  "volleybox_sync_updated_at": "2026-10-12T07:16:04.827201"
 }

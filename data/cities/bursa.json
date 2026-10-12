@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T07:14:11.553722+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -389,12 +389,12 @@
       {
         "rank": 1,
         "team": "Bursa Osmangazi Belediye Spor",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
@@ -422,12 +422,12 @@
       {
         "rank": 4,
         "team": "Hk Volleyball Academy Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "sets_won": 2,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -1597,11 +1597,16 @@
       "match_no": "4",
       "home_team": "Hk Volleyball Academy Spor Kulübü U16",
       "away_team": "Bursa Osmangazi Belediye Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "13-25",
+        "25-23",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406675",
@@ -2055,5 +2060,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-11T22:35:56.586204"
+  "volleybox_sync_updated_at": "2026-10-12T07:16:04.834313"
 }

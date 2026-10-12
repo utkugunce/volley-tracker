@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T07:14:11.553722+00:00",
   "total_cities": 81,
   "active_cities": 33,
-  "total_matches": 1067,
+  "total_matches": 1071,
   "cities": [
     {
       "ilid": "1",
@@ -270,8 +270,8 @@
       "name": "Gaziantep",
       "slug": "gaziantep",
       "url": "https://gaziantep.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (5 Maç Mevcut)",
-      "matches_count": 5,
+      "status": "Aktif (9 Maç Mevcut)",
+      "matches_count": 9,
       "standings_count": 2,
       "data_file": "data/cities/gaziantep.json"
     },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T22:31:13.486674+03:00",
+  "updated_at": "2026-10-12T07:14:11.553722+00:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -68,6 +68,28 @@
       },
       {
         "rank": 4,
+        "team": "55 Matasyon Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Samsun Volley Team U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -78,7 +100,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 7,
         "team": "Bafra Akademi Gençlik SK U18",
         "played": 1,
         "won": 0,
@@ -89,7 +111,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 8,
         "team": "Bafra Vera Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -100,30 +122,8 @@
         "form": []
       },
       {
-        "rank": 7,
-        "team": "55 Matasyon Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 9,
-        "team": "Samsun Volley Team U18",
+        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -373,11 +373,16 @@
       "match_no": "4",
       "home_team": "55 Matasyon Spor Kulübü U18",
       "away_team": "Samsun Volley Team U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "22-25",
+        "26-24",
+        "26-24",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402768",
@@ -2896,5 +2901,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-11T22:36:03.241485"
+  "volleybox_sync_updated_at": "2026-10-12T07:16:04.840186"
 }
