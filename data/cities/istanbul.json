@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59:56.214854+03:00",
+  "updated_at": "2026-10-13T00:32:11.504639+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1480,23 +1480,43 @@
       {
         "rank": 1,
         "team": "Haliç Akademi",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "set_ratio": "MAX",
-        "points_won": 151,
-        "points_lost": 104,
-        "point_ratio": "1.452",
+        "points_won": 226,
+        "points_lost": 161,
+        "point_ratio": "1.404",
         "form": [
+          "W",
           "W",
           "W"
         ]
       },
       {
         "rank": 2,
+        "team": "Bağcılar Evren",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 8,
+        "sets_won": 9,
+        "sets_lost": 3,
+        "set_ratio": "3.000",
+        "points_won": 282,
+        "points_lost": 219,
+        "point_ratio": "1.288",
+        "form": [
+          "W",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Kuzey Işıkları SK U18",
         "played": 2,
         "won": 2,
@@ -1508,24 +1528,6 @@
         "points_won": 171,
         "points_lost": 125,
         "point_ratio": "1.368",
-        "form": [
-          "W",
-          "W"
-        ]
-      },
-      {
-        "rank": 3,
-        "team": "Bağcılar Evren",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 5,
-        "sets_won": 6,
-        "sets_lost": 2,
-        "set_ratio": "3.000",
-        "points_won": 186,
-        "points_lost": 151,
-        "point_ratio": "1.232",
         "form": [
           "W",
           "W"
@@ -1606,41 +1608,24 @@
       {
         "rank": 8,
         "team": "Avcılar Yankı",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
-        "sets_won": 2,
-        "sets_lost": 6,
+        "sets_won": 3,
+        "sets_lost": 9,
         "set_ratio": "0.333",
-        "points_won": 156,
-        "points_lost": 186,
-        "point_ratio": "0.839",
+        "points_won": 224,
+        "points_lost": 282,
+        "point_ratio": "0.794",
         "form": [
+          "L",
           "L",
           "L"
         ]
       },
       {
         "rank": 9,
-        "team": "Bizimkent İlkokulu Spor Kulübü U18",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 6,
-        "set_ratio": "0.167",
-        "points_won": 137,
-        "points_lost": 171,
-        "point_ratio": "0.801",
-        "form": [
-          "L",
-          "L"
-        ]
-      },
-      {
-        "rank": 10,
         "team": "FMV Işık Spor Kulübü U18",
         "played": 2,
         "won": 0,
@@ -1653,6 +1638,25 @@
         "points_lost": 175,
         "point_ratio": "0.754",
         "form": [
+          "L",
+          "L"
+        ]
+      },
+      {
+        "rank": 10,
+        "team": "Bizimkent İlkokulu Spor Kulübü U18",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 9,
+        "set_ratio": "0.111",
+        "points_won": 194,
+        "points_lost": 246,
+        "point_ratio": "0.789",
+        "form": [
+          "L",
           "L",
           "L"
         ]
@@ -1879,6 +1883,25 @@
       },
       {
         "rank": 3,
+        "team": "Ümraniye Belediyesi Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 3,
+        "set_ratio": "2.333",
+        "points_won": 242,
+        "points_lost": 165,
+        "point_ratio": "1.467",
+        "form": [
+          "W",
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Yeşilyurt Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -1896,7 +1919,7 @@
         ]
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Bizimkent Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -1911,24 +1934,6 @@
         "form": [
           "L",
           "W"
-        ]
-      },
-      {
-        "rank": 5,
-        "team": "Ümraniye Belediyesi Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 3,
-        "set_ratio": "1.333",
-        "points_won": 167,
-        "points_lost": 132,
-        "point_ratio": "1.265",
-        "form": [
-          "W",
-          "L"
         ]
       },
       {
@@ -2006,17 +2011,18 @@
       {
         "rank": 10,
         "team": "Başakşehir Belediyesi SK U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "set_ratio": "MIN",
-        "points_won": 55,
-        "points_lost": 150,
-        "point_ratio": "0.367",
+        "points_won": 88,
+        "points_lost": 225,
+        "point_ratio": "0.391",
         "form": [
+          "L",
           "L",
           "L"
         ]
@@ -6056,11 +6062,16 @@
       "match_no": "11",
       "home_team": "Avcılar Yankı",
       "away_team": "Bağcılar Evren",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-21",
+        "16-25",
+        "14-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -6090,11 +6101,15 @@
       "match_no": "12",
       "home_team": "Haliç Akademi",
       "away_team": "Bizimkent İlkokulu Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-23",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -6124,11 +6139,15 @@
       "match_no": "11",
       "home_team": "Başakşehir Belediyesi SK U16",
       "away_team": "Ümraniye Belediyesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "5-25",
+        "14-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408013",
@@ -7056,5 +7075,5 @@
     }
   ],
   "volleybox_synced_matches": 107,
-  "volleybox_sync_updated_at": "2026-10-12T17:05:09.858669"
+  "volleybox_sync_updated_at": "2026-10-13T00:34:10.481161"
 }

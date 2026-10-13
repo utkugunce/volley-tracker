@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59:56.214854+03:00",
+  "updated_at": "2026-10-13T00:32:11.504639+00:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -271,23 +271,23 @@
       },
       {
         "rank": 2,
+        "team": "Karayolları Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Ufuk Üniversitesi Üç Pas Spor Kulübü U16",
         "played": 2,
         "won": 1,
         "lost": 1,
         "points": 3,
         "sets_won": 4,
-        "sets_lost": 4,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Karayolları Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
         "sets_lost": 4,
         "form": []
       },
@@ -305,12 +305,12 @@
       {
         "rank": 5,
         "team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -374,6 +374,17 @@
     "Yıldız Kızlar Süper Lig - 3. Grup": [
       {
         "rank": 1,
+        "team": "TVF Spor Lisesi U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 8,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -384,7 +395,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Yedidağ Spor Kulübü",
         "played": 2,
         "won": 1,
@@ -392,17 +403,6 @@
         "points": 3,
         "sets_won": 4,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "TVF Spor Lisesi U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 5,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -419,12 +419,12 @@
       {
         "rank": 5,
         "team": "TED Ankara Kolejliler U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -488,17 +488,6 @@
       },
       {
         "rank": 2,
-        "team": "TEİAŞ Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
         "team": "SET UP Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -509,13 +498,24 @@
         "form": []
       },
       {
+        "rank": 3,
+        "team": "TEİAŞ Spor Kulübü U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
         "rank": 4,
         "team": "TED Ankara Kolejliler - B U16",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 6,
         "form": []
       },
@@ -568,23 +568,23 @@
       {
         "rank": 4,
         "team": "Maç Akademi Spor Kulübü U16",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
         "team": "Hakan Akışık Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -2447,11 +2447,15 @@
       "match_no": "5",
       "home_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
       "away_team": "Karayolları Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "16-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404233",
@@ -2976,11 +2980,15 @@
       "match_no": "5",
       "home_team": "TVF Spor Lisesi U16",
       "away_team": "TED Ankara Kolejliler U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-9",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404235",
@@ -3422,11 +3430,15 @@
       "match_no": "5",
       "home_team": "TED Ankara Kolejliler - B U16",
       "away_team": "TEİAŞ Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "27-25",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404239",
@@ -3686,11 +3698,15 @@
       "match_no": "5",
       "home_team": "Hakan Akışık Spor Kulübü U16",
       "away_team": "Maç Akademi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404241",
@@ -3757,5 +3773,5 @@
     }
   ],
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-10-12T17:05:07.491574"
+  "volleybox_sync_updated_at": "2026-10-13T00:34:10.496829"
 }

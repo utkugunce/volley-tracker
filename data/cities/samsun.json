@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59:56.214854+03:00",
+  "updated_at": "2026-10-13T00:32:11.504639+00:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -35,18 +35,18 @@
     "Genç Kızlar 1. Ligi - Samsun Genç Kadınlar İl Birinciliği A Grubu": [
       {
         "rank": 1,
-        "team": "Anadolu Voleybol Akademi SK - B U18",
-        "played": 1,
-        "won": 1,
+        "team": "19 Mayıs Gençlik Ve Spor U18",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "19 Mayıs Gençlik Ve Spor U18",
+        "team": "Anadolu Voleybol Akademi SK - B U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -101,7 +101,7 @@
       },
       {
         "rank": 7,
-        "team": "Bafra Akademi Gençlik SK U18",
+        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -112,7 +112,7 @@
       },
       {
         "rank": 8,
-        "team": "Bafra Vera Spor Kulübü U18",
+        "team": "Bafra Akademi Gençlik SK U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -123,13 +123,13 @@
       },
       {
         "rank": 9,
-        "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "played": 0,
+        "team": "Bafra Vera Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -419,11 +419,15 @@
       "match_no": "5",
       "home_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "away_team": "19 Mayıs Gençlik Ve Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "14-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402769",
@@ -2901,5 +2905,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-12T17:05:13.253391"
+  "volleybox_sync_updated_at": "2026-10-13T00:34:10.513881"
 }
