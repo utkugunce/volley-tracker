@@ -661,8 +661,8 @@
         "url": "https://women.volleybox.net/tr/gunyaka-spor-u16-balkesir-eka-spor-kulubu-b-u16-c406628",
         "host_name": "Günyaka Spor U16",
         "guest_name": "Balıkesir EKA Spor Kulubü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-12",
         "vb_time": "18:00",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -1413,5 +1413,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:08.817613"
+  "volleybox_sync_updated_at": "2026-10-13T14:57:27.624753"
 }
