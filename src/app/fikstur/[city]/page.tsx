@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const citySlug = slugify(city);
   const cityName = getCityNameFromSlug(citySlug);
 
-  const title = `${cityName} Voleybol Fikstürü ve Maç Takvimi — Altyapı Voleybol`;
+  const title = `${cityName} Voleybol Fikstürü ve Maç Takvimi`;
   const description = `${cityName} ili tüm voleybol altyapı ligleri güncel haftalık maç programı, salon bilgileri ve lig fikstürleri.`;
   const url = `https://altyapivoleybol.com.tr/fikstur/${citySlug}`;
 

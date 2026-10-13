@@ -14,7 +14,7 @@ import type { CalendarMatch } from "@/utils/takvim";
 export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export function generateMetadata(): Metadata {
-  const title = "Vodafone Sultanlar Ligi Takvimi — Altyapı Voleybol";
+  const title = "Vodafone Sultanlar Ligi Takvimi";
   const description =
     "Vodafone Sultanlar Ligi maçlarını ay takvimi üzerinde görün: gün gün maç saatleri, salonlar, yayıncı kanal ve skorlar. Fenerbahçe Medicana ve Zeren Spor maçlarını takvimine ekle.";
   const url = "https://altyapivoleybol.com.tr/takvim";

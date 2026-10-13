@@ -114,6 +114,40 @@ python scripts/scrape_all_provinces.py --force
 - Her iki script de kendi Volleybox maç senkronizasyonunu (`scripts/sync_volleybox_matches.py`) güvenli şekilde tamamlar.
 - Script tamamlandıktan sonra özet kullanıcıya bildirilir.
 
+## 🏙️ KURAL: Şehir Allowlist'i (`src/utils/citySlugs.ts`)
+
+> **UYGULAMA PRENSİBİ:** `src/utils/citySlugs.ts` **elle düzenlenmez**; `data/cities.json` ve `src/app` rota yapısından üretilir.
+
+- `src/proxy.ts` (middleware) geçersiz/gizli il adreslerini **gerçek HTTP 404** ile döndürür. Sayfa içindeki `notFound()` bunu yapamaz: `src/app/loading.tsx` Suspense kabuğunu 200 ile flush ettiği için status sonradan değiştirilemiyor (soft 404).
+- `proxy.ts` edge runtime'da çalıştığı için `fs` kullanamaz; il listesi bu yüzden statik bir modüle derlenir.
+- `data/cities.json`'a il eklenip/çıkarıldığında veya `src/app` altına **kökünde `page.tsx` olan** yeni bir rota dizini eklendiğinde:
+  ```bash
+  python scripts/generate_city_slugs.py
+  ```
+  ve üretilen dosya **aynı commit'te** gönderilmelidir. CI bunu `--check` ile doğrular:
+  ```bash
+  python scripts/generate_city_slugs.py --check   # bayatsa exit 1
+  ```
+- Gizli iller (`src/utils/hiddenCities.ts`) allowlist'e bilinçli olarak alınmaz → `/nigde`, `/usak`, `/kirikkale` 404 döner. İki liste arasındaki senkronu `src/utils/__tests__/citySlugs.test.ts` korur.
+- Kökünde yalnızca `[slug]/` bulunan dizinler (`takim`, `lig`, `api`, `auth`) statik rota **sayılmaz**; `/takim` gibi adresler şehir slug'ı gibi doğrulanır ve 404 alır.
+
+## 🏷️ KURAL: `<title>` içinde marka eki tek kez
+
+`src/app/layout.tsx` şu şablonu uygular: `title.template = "%s | Altyapı Voleybol"`.
+Bu yüzden sayfa metadata'larındaki **doküman başlığı** marka ekini İÇERMEMELİ:
+
+```ts
+// ❌ yanlış -> "İstanbul ... — Altyapı Voleybol | Altyapı Voleybol"
+const title = `${cityName} Voleybol Fikstürü — Altyapı Voleybol`;
+// ✅ doğru
+const title = `${cityName} Voleybol Fikstürü`;
+// ✅ şablon uygulanmasın isteniyorsa
+title: { absolute: "Altyapı Voleybol — TVF Fikstür ve Puan Durumu" }
+```
+
+`openGraph.title` ve `twitter.title` bu şablondan **etkilenmez**; orada marka eki serbesttir.
+Kuralı `src/__tests__/metadata-brand.test.ts` tüm `page.tsx` dosyalarını tarayarak zorlar.
+
 ## 📦 KURAL: Her Değişiklikten Sonra Commit + Push
 
 > **UYGULAMA PRENSİBİ:**

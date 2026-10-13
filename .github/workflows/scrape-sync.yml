@@ -68,6 +68,13 @@ jobs:
         run: |
           python scripts/validate_data_files.py
 
+      # data/cities.json'dan türetilen edge 404 allowlist'i (src/utils/citySlugs.ts).
+      # Yeni bir il eklenirse bu dosya da aynı commit'te güncellenmeli; aksi halde
+      # geçerli il adresleri proxy.ts'te 404 yer. CI'daki --check adımı bunu doğrular.
+      - name: Regenerate city slug allowlist
+        run: |
+          python scripts/generate_city_slugs.py
+
       - name: Check data freshness
         run: |
           python scripts/check_data_freshness.py
@@ -113,7 +120,7 @@ jobs:
               fi
             fi
           fi
-          git add data/
+          git add data/ src/utils/citySlugs.ts
           if git diff --staged --quiet; then
             echo 'No data changes to commit'
           else

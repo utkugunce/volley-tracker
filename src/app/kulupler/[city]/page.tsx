@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cityName = normCity.charAt(0).toUpperCase() + normCity.slice(1);
 
   return {
-    title: `${cityName} Voleybol Kulüpleri & Altyapı Rehberi — Altyapı Voleybol`,
+    title: `${cityName} Voleybol Kulüpleri & Altyapı Rehberi`,
     description: `${cityName} ilindeki resmi TVF lisanslı altyapı voleybol kulüpleri, ilçe dağılımları, yaş kategorileri ve spor salonları rehberi.`,
     openGraph: {
       title: `${cityName} Voleybol Kulüpleri Rehberi`,

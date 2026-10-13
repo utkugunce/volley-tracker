@@ -5,7 +5,7 @@ import { getInitialFixtures } from "@/utils/getInitialFixtures";
 export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export function generateMetadata(): Metadata {
-  const title = "81 İl Voleybol Grup ve Fikstür Giriş Durumu — Altyapı Voleybol";
+  const title = "81 İl Voleybol Grup ve Fikstür Giriş Durumu";
   const description = "81 il voleybol altyapı liglerinde hangi kategorilerin ve grupların Volleybox'a girildiğini, kısmi ve tamamlanmış fikstür durumlarını gösteren canlı renk kodlu takip tablosu.";
 
   const url = "https://altyapivoleybol.com.tr/grup-durumu";

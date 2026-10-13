@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const distName = district.charAt(0).toUpperCase() + district.slice(1);
 
   return {
-    title: `${distName} Voleybol Kulüpleri & Kurs Rehberi (${cityName}) — Altyapı Voleybol`,
+    title: `${distName} Voleybol Kulüpleri & Kurs Rehberi (${cityName})`,
     description: `${cityName} ${distName} bölgesindeki resmi lisanslı voleybol kulüpleri, altyapı seçmeleri, antrenman salonları, Midi, Küçük, Yıldız ve Genç lig takımları.`,
     keywords: [
       `${distName} voleybol kulüpleri`,
