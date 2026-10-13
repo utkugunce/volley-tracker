@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T07:37:08.745678+00:00",
+  "updated_at": "2026-10-13T13:47:32.026060+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -1149,14 +1149,14 @@
         "vb_time": "18:30",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-20",
           "vb_time": "18:30",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Vezirçiftliği / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -1190,14 +1190,14 @@
         "vb_time": "20:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-20",
           "vb_time": "20:00",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Vezirçiftliği / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -3890,18 +3890,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408131",
+        "url": "https://women.volleybox.net/tr/cayrova-belediyesi-egitim-sk-u18-darca-anadolu-spor-kulubu-u18-c408131",
+        "host_name": "Çayırova Belediyesi Eğitim SK U18",
+        "guest_name": "Darıca Anadolu Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-18",
+        "vb_time": "16:00",
+        "vb_hall": "Çayırova Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "16:00",
+          "vb_hall": "Çayırova Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-23 / VB: 2026-10-18) | Saat Değişti (TVF: 18:30 / VB: 16:00)"
         }
       }
     },
@@ -3924,18 +3931,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408132",
+        "url": "https://women.volleybox.net/tr/umut-can-spor-kulubu-u18-yelkenkaya-spor-kulubu-u18-c408132",
+        "host_name": "Umut Can Spor Kulübü U18",
+        "guest_name": "Yelkenkaya Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-18",
+        "vb_time": "17:30",
+        "vb_hall": "Çayırova Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "17:30",
+          "vb_hall": "Çayırova Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-23 / VB: 2026-10-18) | Saat Değişti (TVF: 20:00 / VB: 17:30)"
         }
       }
     },
@@ -4790,6 +4804,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-10-13T07:38:57.270959"
+  "volleybox_synced_matches": 34,
+  "volleybox_sync_updated_at": "2026-10-13T13:53:17.810626"
 }

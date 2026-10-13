@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59:56.214854+03:00",
+  "updated_at": "2026-10-13T13:47:32.026060+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -2315,7 +2315,7 @@
       "id": "hatay-20261029-051",
       "city": "Hatay",
       "date": "2026-10-29",
-      "time": "18:00",
+      "time": "14:00",
       "hall": "İsk. Sakarya S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2341,14 +2341,14 @@
         "vb_time": "18:00",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-29",
           "vb_time": "18:00",
           "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 14:00 / VB: 18:00)"
         }
       }
     },
@@ -2356,7 +2356,7 @@
       "id": "hatay-20261029-052",
       "city": "Hatay",
       "date": "2026-10-29",
-      "time": "19:30",
+      "time": "15:30",
       "hall": "İsk. Sakarya S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2382,14 +2382,14 @@
         "vb_time": "19:30",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-29",
           "vb_time": "19:30",
           "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 15:30 / VB: 19:30)"
         }
       }
     },
@@ -2559,5 +2559,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-12T17:05:09.356147"
+  "volleybox_sync_updated_at": "2026-10-13T13:53:11.623927"
 }

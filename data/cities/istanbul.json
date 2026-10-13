@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T00:32:11.504639+00:00",
+  "updated_at": "2026-10-13T13:47:32.026060+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -6869,47 +6869,6 @@
       }
     },
     {
-      "id": "ist-20261018-035",
-      "city": "İstanbul",
-      "date": "2026-10-18",
-      "time": "18:00",
-      "hall": "Tuzla Kafkale Spor Salonu",
-      "category": "Genç Kızlar 1. Lig 3. Bölge",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "1",
-      "home_team": "Balkan Yeşilbağlar Spor U18",
-      "away_team": "İstanbul Göztepe Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "408004",
-        "url": "https://women.volleybox.net/tr/balkan-yesilbaglar-spor-u18-stanbul-goztepe-akademi-spor-kulubu-u18-c408004",
-        "host_name": "Balkan Yeşilbağlar Spor U18",
-        "guest_name": "İstanbul Göztepe Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-18",
-        "vb_time": "18:00",
-        "vb_hall": "Tuzla Kafkale Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "18:00",
-          "vb_hall": "Tuzla Kafkale Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
       "id": "ist-20261018-079",
       "city": "İstanbul",
       "date": "2026-10-18",
@@ -6947,6 +6906,47 @@
           "vb_time": "18:00",
           "vb_hall": "Yakacık İTO Spor Salonu",
           "details": null
+        }
+      }
+    },
+    {
+      "id": "ist-20261018-035",
+      "city": "İstanbul",
+      "date": "2026-10-18",
+      "time": "18:30",
+      "hall": "Tuzla Kafkale Spor Salonu",
+      "category": "Genç Kızlar 1. Lig 3. Bölge",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "1",
+      "home_team": "Balkan Yeşilbağlar Spor U18",
+      "away_team": "İstanbul Göztepe Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "408004",
+        "url": "https://women.volleybox.net/tr/balkan-yesilbaglar-spor-u18-stanbul-goztepe-akademi-spor-kulubu-u18-c408004",
+        "host_name": "Balkan Yeşilbağlar Spor U18",
+        "guest_name": "İstanbul Göztepe Akademi Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-18",
+        "vb_time": "18:00",
+        "vb_hall": "Tuzla Kafkale Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "18:00",
+          "vb_hall": "Tuzla Kafkale Spor Salonu",
+          "details": "Saat Değişti (TVF: 18:30 / VB: 18:00)"
         }
       }
     },
@@ -6995,7 +6995,7 @@
       "id": "ist-20261018-033",
       "city": "İstanbul",
       "date": "2026-10-18",
-      "time": "19:30",
+      "time": "20:00",
       "hall": "Tuzla Kafkale Spor Salonu",
       "category": "Genç Kızlar 1. Lig 2. Bölge",
       "age_group": "Genç",
@@ -7021,14 +7021,14 @@
         "vb_time": "19:30",
         "vb_hall": "Tuzla Kafkale Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-18",
           "vb_time": "19:30",
           "vb_hall": "Tuzla Kafkale Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 20:00 / VB: 19:30)"
         }
       }
     },
@@ -7075,5 +7075,5 @@
     }
   ],
   "volleybox_synced_matches": 107,
-  "volleybox_sync_updated_at": "2026-10-13T00:34:10.481161"
+  "volleybox_sync_updated_at": "2026-10-13T13:53:12.807612"
 }
