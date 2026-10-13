@@ -114,6 +114,11 @@ python scripts/scrape_all_provinces.py --force
 - Her iki script de kendi Volleybox maç senkronizasyonunu (`scripts/sync_volleybox_matches.py`) güvenli şekilde tamamlar.
 - Script tamamlandıktan sonra özet kullanıcıya bildirilir.
 
+## 📦 KURAL: Her Değişiklikten Sonra Commit + Push
+
+> **UYGULAMA PRENSİBİ:**
+> Projede yapılan her kod, hata düzeltmesi veya yapılandırma değişikliğinden sonra (testlerin başarıyla tamamlanmasının ardından) değişiklikler anlamlı bir commit mesajı ile commit'lenip uzak depoya (`origin main`) push edilmelidir.
+
 
 <!-- BEGIN:nextjs-agent-rules -->
 
