@@ -51,6 +51,28 @@ describe("guardMutation (CSRF)", () => {
   it("farklı kaynaktan gelen isteği 403 ile reddeder", () => {
     expect(guardMutation(mk({ "content-type": "application/json", origin: "https://evil.test" }))?.status).toBe(403);
   });
+  it("sahte x-forwarded-host başlığı ile origin atlatmasını 403 ile engeller", () => {
+    expect(
+      guardMutation(
+        mk({
+          "content-type": "application/json",
+          origin: "https://attacker.com",
+          "x-forwarded-host": "attacker.com",
+        })
+      )?.status
+    ).toBe(403);
+  });
+  it("güvenilir x-forwarded-host ile eşleşen origin geçer", () => {
+    expect(
+      guardMutation(
+        mk({
+          "content-type": "application/json",
+          origin: "https://altyapivoleybol.com.tr",
+          "x-forwarded-host": "altyapivoleybol.com.tr",
+        })
+      )
+    ).toBeNull();
+  });
   it("aynı kaynak + JSON geçer", () => {
     expect(guardMutation(mk({ "content-type": "application/json", origin: "https://site.test" }))).toBeNull();
     expect(guardMutation(mk({ "content-type": "application/json" }))).toBeNull();

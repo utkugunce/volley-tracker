@@ -3,7 +3,11 @@
 
 -- Helper function to check user role
 create or replace function public.user_has_role(required_role text)
-returns boolean as $$
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
   begin
     -- Check app_metadata first (for admin)
     if required_role = 'admin' and auth.jwt() ->> 'role' = 'admin' then
@@ -16,11 +20,15 @@ returns boolean as $$
       where user_id = auth.uid() and role = required_role
     );
   end;
-$$ language plpgsql security definer;
+$$;
 
 -- Function to get current user's role
 create or replace function public.get_user_role()
-returns text as $$
+returns text
+language plpgsql
+security definer
+set search_path = public
+as $$
   declare
     user_role text;
   begin
@@ -36,7 +44,7 @@ returns text as $$
     
     return coalesce(user_role, 'viewer');
   end;
-$$ language plpgsql security definer;
+$$;
 
 -- MATCHES table policies
 drop policy if exists matches_select_policy on public.matches;
@@ -46,7 +54,7 @@ drop policy if exists matches_delete_policy on public.matches;
 
 create policy "matches_select_policy" on public.matches
   for select
-  to authenticated
+  to anon, authenticated
   using (true);
 
 create policy "matches_insert_policy" on public.matches

@@ -114,14 +114,18 @@ returns uuid as $$
     
     return queue_id;
   end;
-$$ language plpgsql security definer;
+$$ language plpgsql security definer set search_path = public;
 
 -- Function to mark notification as sent
 create or replace function public.mark_notification_sent(
   p_queue_id uuid,
   p_delivery_time_ms integer
 )
-returns void as $$
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
   declare
     queue_item record;
   begin
@@ -167,7 +171,11 @@ create or replace function public.mark_notification_failed(
   p_response_code integer default null,
   p_response_body text default null
 )
-returns void as $$
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
   declare
     queue_item record;
     next_attempt timestamptz;
@@ -262,7 +270,11 @@ returns table (
   priority integer,
   scheduled_for timestamptz,
   idempotency_key text
-) as $$
+)
+language plpgsql
+security definer
+set search_path = public
+as $$
   begin
     return query
     select 

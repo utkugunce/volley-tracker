@@ -27,7 +27,11 @@ create policy "matches_realtime_anon_policy" on public.matches
 
 -- Function to check if a user should receive realtime updates for a specific match
 create or replace function public.can_receive_realtime_match_updates(user_id uuid, match_id text)
-returns boolean as $$
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $$
   declare
     user_role text;
   begin
@@ -47,7 +51,7 @@ returns boolean as $$
     -- All authenticated users can receive updates
     return true;
   end;
-$$ language plpgsql security definer;
+$$;
 
 -- Grant realtime permissions
 grant usage on schema public to anon, authenticated;

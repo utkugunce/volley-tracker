@@ -237,6 +237,29 @@ export function rateLimited(retryAfterSeconds?: number): NextResponse {
   return response;
 }
 
+function isTrustedForwardedHost(host: string): boolean {
+  const cleanHost = host.split(":")[0].toLowerCase().trim();
+  if (
+    cleanHost === "localhost" ||
+    cleanHost === "127.0.0.1" ||
+    cleanHost === "altyapivoleybol.com.tr" ||
+    cleanHost === "www.altyapivoleybol.com.tr" ||
+    cleanHost.endsWith(".vercel.app") ||
+    cleanHost.endsWith(".test")
+  ) {
+    return true;
+  }
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  if (siteUrl) {
+    try {
+      if (new URL(siteUrl).hostname.toLowerCase() === cleanHost) return true;
+    } catch {
+      // ignore
+    }
+  }
+  return false;
+}
+
 /**
  * Çerez tabanlı oturumda CSRF savunması: JSON içerik türü zorunlu (basit form POST'ları geçemez)
  * ve Origin başlığı varsa aynı kaynak olmalı.
@@ -252,7 +275,10 @@ export function guardMutation(request: Request): NextResponse | null {
     }
     const forwardedHost = request.headers.get("x-forwarded-host");
     const allowed = new Set([requestOrigin]);
-    if (forwardedHost) allowed.add(`https://${forwardedHost}`);
+    if (forwardedHost && isTrustedForwardedHost(forwardedHost)) {
+      allowed.add(`https://${forwardedHost}`);
+      allowed.add(`http://${forwardedHost}`);
+    }
     if (!allowed.has(origin)) {
       return NextResponse.json({ error: "Geçersiz istek kaynağı" }, { status: 403 });
     }
