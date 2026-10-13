@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const citySlug = slugify(city);
   const cityName = getCityNameFromSlug(citySlug);
 
-  const title = `${cityName} Voleybol Grup ve Fikstür Giriş Durumu — Altyapı Voleybol`;
+  const title = `${cityName} Voleybol Grup ve Fikstür Giriş Durumu`;
   const description = `${cityName} ili voleybol altyapı liglerinde hangi kategorilerin ve grupların Volleybox'a girildiğini gösteren canlı renk kodlu takip tablosu.`;
   const url = `https://altyapivoleybol.com.tr/grup-durumu/${citySlug}`;
 

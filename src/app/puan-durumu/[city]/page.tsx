@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const citySlug = slugify(city);
   const cityName = getCityNameFromSlug(citySlug);
 
-  const title = `${cityName} Voleybol Puan Durumu ve Lig Sıralaması — Altyapı Voleybol`;
+  const title = `${cityName} Voleybol Puan Durumu ve Lig Sıralaması`;
   const description = `${cityName} ili TVF Genç ve Yıldız Kızlar Süper Lig güncel puan durumu, averajlar, galibiyet sayıları ve resmi sıralama tablosu.`;
   const url = `https://altyapivoleybol.com.tr/puan-durumu/${citySlug}`;
 

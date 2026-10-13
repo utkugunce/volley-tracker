@@ -7,7 +7,7 @@ import { TeamBadge } from "@/components/TeamBadge";
 import { Trophy, MapPin, Search, ArrowRight, ShieldCheck, ArrowLeft, Users } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Voleybol Kulüpleri Rehberi & İlçe Listesi — Altyapı Voleybol",
+  title: "Voleybol Kulüpleri Rehberi & İlçe Listesi",
   description:
     "İstanbul, Ankara, İzmir, Bursa ve Türkiye genelindeki lisanslı voleybol altyapı kulüpleri, yarıştıkları ligler, ilçe dağılımları ve antrenman salonları rehberi.",
   keywords: [

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const citySlug = slugify(city);
   const cityName = getCityNameFromSlug(citySlug);
 
-  const title = `${cityName} Voleybol Maç Sonuçları ve Skorlar — Altyapı Voleybol`;
+  const title = `${cityName} Voleybol Maç Sonuçları ve Skorlar`;
   const description = `${cityName} ili tüm voleybol kategorileri tamamlanan maç sonuçları, kesinleşen set skorları ve maç dökümleri.`;
   const url = `https://altyapivoleybol.com.tr/sonuclar/${citySlug}`;
 

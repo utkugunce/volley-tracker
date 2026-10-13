@@ -25,46 +25,46 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       : typeof groupNo === "number" && groupNo > 1
       ? ` (${groupNo}. Grup)`
       : "";
-  let title = "TVF Uzman Posta Kadınlar 2. Ligi | Altyapı Voleybol";
+  let title = "TVF Uzman Posta Kadınlar 2. Ligi";
   let description =
     "Türkiye Voleybol Federasyonu Uzman Posta Kadınlar 2. Ligi 16 grup resmi puan cetveli, fikstür, sonuçlar ve Volleybox kadroları.";
 
   switch (tab) {
     case "standings":
-      title = `TVF Kadınlar 2. Ligi Puan Durumu${groupLabel} — Altyapı Voleybol`;
+      title = `TVF Kadınlar 2. Ligi Puan Durumu${groupLabel}`;
       description = `Uzman Posta Kadınlar 2. Ligi${groupLabel} güncel puan durumu, averajlar, set farkları ve lig sıralaması.`;
       break;
     case "fixtures":
-      title = `TVF Kadınlar 2. Ligi Fikstür${groupLabel} — Altyapı Voleybol`;
+      title = `TVF Kadınlar 2. Ligi Fikstür${groupLabel}`;
       description = `Uzman Posta Kadınlar 2. Ligi${groupLabel} haftalık maç programı, salon bilgileri ve başlama saatleri.`;
       break;
     case "results":
-      title = "TVF Kadınlar 2. Ligi Maç Sonuçları ve Skorlar — Altyapı Voleybol";
+      title = "TVF Kadınlar 2. Ligi Maç Sonuçları ve Skorlar";
       description = "Uzman Posta Kadınlar 2. Ligi tamamlanan karşılaşmaların resmi set ve maç skorları.";
       break;
     case "today":
-      title = "TVF Kadınlar 2. Ligi Günün Maçları — Altyapı Voleybol";
+      title = "TVF Kadınlar 2. Ligi Günün Maçları";
       description = "Kadınlar 2. Ligi bugün oynanacak tüm karşılaşmalar, canlı takip ve salon bilgileri.";
       break;
     case "leaders":
-      title = "TVF Kadınlar 2. Ligi 16 Grup Liderleri & Yükselme Hattı — Altyapı Voleybol";
+      title = "TVF Kadınlar 2. Ligi 16 Grup Liderleri & Yükselme Hattı";
       description = "Kadınlar 2. Ligi 16 grubun lider takımları, çeyrek final yükselme hattı ve grup durumları.";
       break;
     case "teams":
-      title = "TVF Kadınlar 2. Ligi Takımları ve Kulüp Profilleri — Altyapı Voleybol";
+      title = "TVF Kadınlar 2. Ligi Takımları ve Kulüp Profilleri";
       description = "Kadınlar 2. Ligi'nde mücadele eden 160+ voleybol kulübü, maçları ve kadro bağlantıları.";
       break;
     case "karsilastir":
-      title = "TVF Kadınlar 2. Ligi Takım Karşılaştırması & H2H — Altyapı Voleybol";
+      title = "TVF Kadınlar 2. Ligi Takım Karşılaştırması & H2H";
       description = "Kadınlar 2. Ligi takımlarının kafa kafaya maçları, galibiyet oranları ve form durumu kıyaslaması.";
       break;
     case "statu":
-      title = "TVF Kadınlar 2. Ligi 2026-2027 Resmi Lig Statüsü — Altyapı Voleybol";
+      title = "TVF Kadınlar 2. Ligi 2026-2027 Resmi Lig Statüsü";
       description = "2026-2027 sezonu Uzman Posta Kadınlar 2. Ligi çeyrek final, yarı final, final ve yükselme statüsü.";
       break;
     case "home":
     default:
-      title = "TVF Uzman Posta Kadınlar 2. Ligi - Canlı Puan Durumu & Fikstür | Altyapı Voleybol";
+      title = "TVF Uzman Posta Kadınlar 2. Ligi - Canlı Puan Durumu & Fikstür";
       description = "Kadınlar 2. Ligi 16 grup canlı puan cetveli, haftalık maç fikstürleri ve Volleybox kadroları.";
       break;
   }

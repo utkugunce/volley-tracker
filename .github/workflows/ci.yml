@@ -34,8 +34,18 @@ jobs:
       - name: Check data freshness
         run: python scripts/check_data_freshness.py
 
+      # data/cities.json değiştiyse src/utils/citySlugs.ts (edge 404 allowlist'i)
+      # yeniden üretilmek zorunda; aksi halde geçersiz il adresleri 200 döner (soft 404).
+      - name: Check generated city allowlist is up to date
+        run: python scripts/generate_city_slugs.py --check
+
       - name: Run lint
         run: npm run lint
+
+      # next.config.mjs'te typescript.ignoreBuildErrors: true olduğu için tip hatası
+      # ne Vercel'de ne de build adımında yakalanır. Bu adım tek güvenlik ağı.
+      - name: Run typecheck
+        run: npm run typecheck
 
       - name: Run tests
         run: npm test

@@ -27,7 +27,7 @@ export async function generateMetadata({ searchParams }: ComparePageProps): Prom
       const url = `https://altyapivoleybol.com.tr/karsilastir?takim1=${encodeURIComponent(slug1)}&takim2=${encodeURIComponent(slug2)}`;
       const description = `${t1} ve ${t2} arasındaki geçmiş maç sonuçları, set skorları, form, set ve sayı ortalamaları ile lig puan durumu istatistikleri.`;
       return {
-        title: `${t1} vs ${t2} — Karşılaştırma | Altyapı Voleybol`,
+        title: `${t1} vs ${t2} — Karşılaştırma`,
         description,
         alternates: { canonical: url },
         openGraph: { title: `${t1} vs ${t2} — Takım Karşılaştırma`, description, url, type: "website" },
@@ -36,7 +36,7 @@ export async function generateMetadata({ searchParams }: ComparePageProps): Prom
   }
 
   return {
-    title: "İki Takım Karşılaştırma (Head-to-Head) | Altyapı Voleybol",
+    title: "İki Takım Karşılaştırma (Head-to-Head)",
     description:
       "Altyapı voleybol takımları arasında geçmiş maç sonuçlarını, form, set ve sayı ortalamalarını ve lig puan durumu istatistiklerini yan yana karşılaştırın.",
     alternates: { canonical: "https://altyapivoleybol.com.tr/karsilastir" },

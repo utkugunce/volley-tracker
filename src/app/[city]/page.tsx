@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const citySlug = slugify(city);
   const cityName = getCityNameFromSlug(citySlug);
 
-  const title = `${cityName} Voleybol Fikstür, Puan Durumu ve Sonuçlar — Altyapı Voleybol`;
+  const title = `${cityName} Voleybol Fikstür, Puan Durumu ve Sonuçlar`;
   const description = `${cityName} ili Genç ve Yıldız Kızlar Süper Lig haftalık maç bülteni, puan durumu, maç sonuçları ve fikstür programı.`;
   const url = `https://altyapivoleybol.com.tr/${citySlug}`;
 

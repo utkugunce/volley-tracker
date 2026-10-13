@@ -12,7 +12,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   if (!slug || slug.length === 0) {
-    return { title: "Lig Sayfası — Altyapı Voleybol" };
+    return { title: "Lig Sayfası" };
   }
 
   const citySlug = slug[0];
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (citySlug === "kadinlar-2-ligi" || leagueSlug === "kadinlar-2-ligi") {
     return {
-      title: "TVF Kadınlar 2. Ligi Puan Durumu & Fikstür — Altyapı Voleybol",
+      title: "TVF Kadınlar 2. Ligi Puan Durumu & Fikstür",
       description: "Türkiye Voleybol Federasyonu Uzman Posta Kadınlar 2. Ligi 16 grup canlı puan cetveli, fikstür ve sonuçlar.",
     };
   }
@@ -28,11 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const league = getLeagueData(citySlug, leagueSlug);
   if (!league) {
     return {
-      title: "Lig Bulunamadı — Altyapı Voleybol",
+      title: "Lig Bulunamadı",
     };
   }
 
-  const title = `${league.leagueName} Puan Durumu, Fikstür & İstatistikler — Altyapı Voleybol`;
+  const title = `${league.leagueName} Puan Durumu, Fikstür & İstatistikler`;
   const description = `${league.city} ili ${league.category} güncel puan durumu, fikstür maç programı, kesinleşmiş maç sonuçları ve kulüp istatistikleri.`;
   const canonicalUrl = `https://altyapivoleybol.com.tr/lig/${league.citySlug}/${league.leagueSlug}`;
 
