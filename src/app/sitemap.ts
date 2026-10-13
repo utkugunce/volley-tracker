@@ -167,7 +167,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "mersin",
     "samsun",
     "yalova",
-    "nigde",
     "kahramanmaras",
   ].filter((slug) => !isCityHidden(slug));
 

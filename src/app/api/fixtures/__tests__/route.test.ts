@@ -43,8 +43,17 @@ describe("Fixtures API Route", () => {
     const req = new Request("http://localhost:3000/api/fixtures?city=istanbul");
     const res = await GET(req);
     const cacheControl = res.headers.get("Cache-Control") || "";
+    expect(cacheControl).toContain("public");
     const sMaxAge = Number(/s-maxage=(\d+)/.exec(cacheControl)?.[1]);
     expect(sMaxAge).toBeGreaterThan(0);
     expect(sMaxAge).toBeLessThanOrEqual(300);
+    expect(cacheControl).toContain("stale-while-revalidate");
+  });
+
+  it("refresh=1 veya hata durumlarında no-store Cache-Control döner", async () => {
+    const req = new Request("http://localhost:3000/api/fixtures?city=istanbul&refresh=1");
+    const res = await GET(req);
+    const cacheControl = res.headers.get("Cache-Control") || "";
+    expect(cacheControl).toContain("no-store");
   });
 });

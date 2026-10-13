@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
+import { getActiveDataSource } from "@/utils/supabaseData";
+import { CITY_SLUGS } from "@/utils/citySlugs";
 
 interface DataSnapshot {
   file: string;
@@ -69,9 +71,12 @@ export async function GET() {
     {
       status: healthy ? "ok" : "degraded",
       checkedAt: new Date().toISOString(),
+      dataSource: getActiveDataSource(),
       data: {
         latestUpdatedAt,
         cityFiles,
+        activeCityFiles: cityFiles,
+        totalAllowedCities: CITY_SLUGS.length,
         cityMatches,
         snapshots,
       },

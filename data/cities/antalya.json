@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T13:47:32.026060+03:00",
+  "updated_at": "2026-10-13T23:21:15.575111+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -272,6 +272,17 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Akdeniz Bilgi Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Antalya DSİ Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -282,7 +293,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Antalya 1907 Spor Kulübü U16",
         "played": 2,
         "won": 2,
@@ -293,7 +304,18 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
+        "team": "07 Anka Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Antalyaspor U16",
         "played": 2,
         "won": 1,
@@ -304,30 +326,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Akdeniz Bilgi Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "07 Anka Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "07 Zenit Spor Kulübü U16",
+        "team": "07 Alya Spor U16",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -338,13 +338,13 @@
       },
       {
         "rank": 7,
-        "team": "07 Alya Spor U16",
-        "played": 1,
+        "team": "07 Zenit Spor Kulübü U16",
+        "played": 3,
         "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "lost": 3,
+        "points": 1,
+        "sets_won": 3,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -639,8 +639,8 @@
         "url": "https://women.volleybox.net/tr/akdeniz-bilgi-spor-kulubu-u18-alanya-mask-spor-kulubu-u18-c401031",
         "host_name": "Akdeniz Bilgi Spor Kulübü U18",
         "guest_name": "Alanya MASK Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-09-27",
         "vb_time": "12:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
@@ -2521,11 +2521,15 @@
       "match_no": "8",
       "home_team": "07 Zenit Spor Kulübü U16",
       "away_team": "Akdeniz Bilgi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "17-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402160",
@@ -2562,11 +2566,17 @@
       "match_no": "9",
       "home_team": "07 Alya Spor U16",
       "away_team": "07 Anka Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "25-21",
+        "24-26",
+        "25-18",
+        "16-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402161",
@@ -3223,5 +3233,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:08.448936"
+  "volleybox_sync_updated_at": "2026-10-13T23:26:09.393538"
 }

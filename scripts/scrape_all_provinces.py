@@ -18,6 +18,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 logger = logging.getLogger("ScraperSync")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+from scripts.atomic_write import atomic_write_json
 
 # Eğer mevcut ortamda httpx yoksa ve .venv mevcutsa otomatik .venv python ile çalıştır
 try:
@@ -606,11 +609,8 @@ def scrape_single_city(city_info):
             city_file = CITIES_DIR / "istanbul.json"
             ist_data["matches"] = merge_volleybox_data(matches, city_file)
             
-            with open(city_file, "w", encoding="utf-8") as f:
-                json.dump(ist_data, f, ensure_ascii=False, indent=2)
-                
-            with open(FIXTURES_JSON, "w", encoding="utf-8") as f:
-                json.dump(ist_data, f, ensure_ascii=False, indent=2)
+            atomic_write_json(city_file, ist_data, ensure_ascii=False, indent=2, min_keys=["matches"])
+            atomic_write_json(FIXTURES_JSON, ist_data, ensure_ascii=False, indent=2, min_keys=["matches"])
 
             return {
                 "ilid": "34",
@@ -850,11 +850,9 @@ def scrape_single_city(city_info):
         city_file = CITIES_DIR / f"{subdomain}.json"
         # Mevcut volleybox verilerini koru
         city_payload["matches"] = merge_volleybox_data(city_matches, city_file)
-        with open(city_file, "w", encoding="utf-8") as f:
-            json.dump(city_payload, f, ensure_ascii=False, indent=2)
+        atomic_write_json(city_file, city_payload, ensure_ascii=False, indent=2, min_keys=["matches"])
         if subdomain == "istanbul":
-            with open(FIXTURES_JSON, "w", encoding="utf-8") as ff:
-                json.dump(city_payload, ff, ensure_ascii=False, indent=2)
+            atomic_write_json(FIXTURES_JSON, city_payload, ensure_ascii=False, indent=2, min_keys=["matches"])
         data_file_rel = f"data/cities/{subdomain}.json"
     else:
         # Eğer bu taramada yeni maç bulunamadıysa ama diskte önceden kaydedilmiş aktif veri varsa koru
@@ -1051,8 +1049,7 @@ def main():
             "cities": results
         }
 
-    with open(CITIES_INDEX_JSON, "w", encoding="utf-8") as f:
-        json.dump(master_payload, f, ensure_ascii=False, indent=2)
+    atomic_write_json(CITIES_INDEX_JSON, master_payload, ensure_ascii=False, indent=2, min_keys=["cities"])
 
     # 81 il tarama zaman damgasını tüm aktif şehir JSON dosyalarına ve fixtures.json'a yansıt
     scan_timestamp = master_payload.get("updated_at")
@@ -1066,8 +1063,7 @@ def main():
                         with open(c_path, "r", encoding="utf-8") as cf:
                             c_data = json.load(cf)
                         c_data["updated_at"] = scan_timestamp
-                        with open(c_path, "w", encoding="utf-8") as cf:
-                            json.dump(c_data, cf, ensure_ascii=False, indent=2)
+                        atomic_write_json(c_path, c_data, ensure_ascii=False, indent=2, min_keys=["matches"])
                     except Exception as ex_sync:
                         logger.debug(f"{c_path.name} updated_at güncellenirken hata: {ex_sync}")
 
@@ -1076,8 +1072,7 @@ def main():
                 with open(FIXTURES_JSON, "r", encoding="utf-8") as ff:
                     f_data = json.load(ff)
                 f_data["updated_at"] = scan_timestamp
-                with open(FIXTURES_JSON, "w", encoding="utf-8") as ff:
-                    json.dump(f_data, ff, ensure_ascii=False, indent=2)
+                atomic_write_json(FIXTURES_JSON, f_data, ensure_ascii=False, indent=2, min_keys=["matches"])
             except Exception:
                 pass
 

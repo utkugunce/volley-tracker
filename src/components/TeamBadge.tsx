@@ -1,31 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useSyncExternalStore } from "react";
 import { trLower } from "@/utils/turkishLocale";
 import { slugify } from "@/utils/slugify";
-import teamColorsData from "@/data/team-colors.json";
+import teamPaletteData from "@/data/team-palette.json";
 
-interface TeamColorsSchema {
+interface TeamPaletteSchema {
   p: [string, string, string][]; // [borderHex, borderClass, bgClass]
-  t: Record<string, number>;
 }
 
-const colorsDb = teamColorsData as unknown as TeamColorsSchema;
-
-interface TeamBadgeProps {
-  name: string;
-  logoUrl?: string | null;
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
-  className?: string;
-}
-
-const SIZE_MAP = {
-  xs: "w-5 h-5 text-[9px]",
-  sm: "w-6 h-6 sm:w-7 sm:h-7 text-[10px]",
-  md: "w-8 h-8 sm:w-9 sm:h-9 text-xs",
-  lg: "w-11 h-11 sm:w-12 sm:h-12 text-sm",
-  xl: "w-16 h-16 sm:w-20 sm:h-20 text-xl font-black",
-};
+const colorsDb = teamPaletteData as unknown as TeamPaletteSchema;
 
 // Takım kimliği: Fileönü yüzeyi (koyu, düz) + marka renginde ince halka.
 // Metin HER ZAMAN `text-ink` (#EAF6FA) ve zemin koyu yüzey tonudur (≥ 10:1);
@@ -37,6 +21,89 @@ export interface TeamPalette {
   text: string;
   /** Logo görseli için kontrastlı açık plaka (koyu/kırmızı logolar koyu yüzeyde kaybolmasın). */
   plate: boolean;
+}
+
+interface TeamBadgeProps {
+  name: string;
+  logoUrl?: string | null;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  className?: string;
+  colorIdx?: number;
+  color?: string;
+  palette?: TeamPalette;
+}
+
+const SIZE_MAP = {
+  xs: "w-5 h-5 text-[9px]",
+  sm: "w-6 h-6 sm:w-7 sm:h-7 text-[10px]",
+  md: "w-8 h-8 sm:w-9 sm:h-9 text-xs",
+  lg: "w-11 h-11 sm:w-12 sm:h-12 text-sm",
+  xl: "w-16 h-16 sm:w-20 sm:h-20 text-xl font-black",
+};
+
+// Global durum ve lazy indeks haritası
+let colorIndexMap: Record<string, number> | null = null;
+let importPromise: Promise<Record<string, number>> | null = null;
+const listeners = new Set<() => void>();
+
+function notify() {
+  listeners.forEach((l) => l());
+}
+
+export function subscribeColorIndex(listener: () => void): () => void {
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+export function getColorIndexSnapshot(): boolean {
+  return colorIndexMap !== null;
+}
+
+const getServerSnapshot = (): boolean => false;
+
+/** İstemcide renk indeksinin yüklendiğini dinleyen kanca */
+export function useTeamColorIndexLoaded(): boolean {
+  return useSyncExternalStore(subscribeColorIndex, getColorIndexSnapshot, getServerSnapshot);
+}
+
+// Test ortamında (Vitest / Node) haritayı senkron başlat
+if (typeof window === "undefined" || process.env.NODE_ENV === "test") {
+  try {
+    colorIndexMap = require("../data/team-color-index.json");
+  } catch {
+    // derleme anında sessizce devam eder
+  }
+}
+
+/** Tembel indeks yükleyicisi */
+export function ensureColorIndexLoaded(): void {
+  if (colorIndexMap !== null || importPromise !== null) return;
+
+  if (typeof window !== "undefined") {
+    importPromise = import("@/data/team-color-index.json")
+      .then((mod) => {
+        colorIndexMap = (mod.default || mod) as Record<string, number>;
+        notify();
+        return colorIndexMap;
+      })
+      .catch(() => {
+        colorIndexMap = {};
+        return colorIndexMap;
+      });
+  }
+}
+
+// Tarayıcıda boşta kalma anında (requestIdleCallback) arka planda yüklemeyi tetikle
+if (typeof window !== "undefined") {
+  if ("requestIdleCallback" in window) {
+    (window as Window & { requestIdleCallback: (cb: () => void) => number }).requestIdleCallback(() => {
+      ensureColorIndexLoaded();
+    });
+  } else {
+    setTimeout(ensureColorIndexLoaded, 10);
+  }
 }
 
 export function getTeamColor(name: string = ""): TeamPalette {
@@ -65,8 +132,9 @@ export function getTeamColor(name: string = ""): TeamPalette {
     return { bg: "bg-purple-950", border: "border-purple-400", borderColor: "#a855f7", text: "text-ink", plate: true };
   }
 
-  // 1. Taranan 767 logo renk veritabanından eşleşme ara
-  if (colorsDb?.t && colorsDb?.p) {
+  // 1. Taranan logo renk veritabanından eşleşme ara
+  ensureColorIndexLoaded();
+  if (colorIndexMap && colorsDb?.p) {
     const s1 = slugify(safeName);
     const s2 = lower;
     const clean = lower
@@ -74,7 +142,7 @@ export function getTeamColor(name: string = ""): TeamPalette {
       .trim();
     const s3 = slugify(clean);
 
-    const idx = colorsDb.t[s1] ?? colorsDb.t[s2] ?? colorsDb.t[s3];
+    const idx = colorIndexMap[s1] ?? colorIndexMap[s2] ?? colorIndexMap[s3];
     if (idx !== undefined && colorsDb.p[idx]) {
       const [borderColor, borderClass, bgClass] = colorsDb.p[idx];
       return {
@@ -126,9 +194,39 @@ export const TeamBadge: React.FC<TeamBadgeProps> = ({
   name,
   size = "md",
   className = "",
+  colorIdx,
+  color,
+  palette: propPalette,
 }) => {
+  // İstemcide lazy index yüklendiğinde yeniden render tetikle
+  useTeamColorIndexLoaded();
+
   const sizeClass = SIZE_MAP[size] || SIZE_MAP.md;
-  const palette = getTeamColor(name);
+
+  let palette: TeamPalette;
+  if (propPalette) {
+    palette = propPalette;
+  } else if (colorIdx !== undefined && colorsDb?.p[colorIdx]) {
+    const [borderColor, borderClass, bgClass] = colorsDb.p[colorIdx];
+    palette = {
+      bg: bgClass,
+      border: borderClass,
+      borderColor,
+      text: "text-ink",
+      plate: false,
+    };
+  } else if (color) {
+    palette = {
+      bg: "bg-surface-raised",
+      border: "border-slate-300",
+      borderColor: color,
+      text: "text-ink",
+      plate: false,
+    };
+  } else {
+    palette = getTeamColor(name);
+  }
+
   const initials = getInitials(name);
 
   return (

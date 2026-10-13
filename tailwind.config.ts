@@ -1,6 +1,13 @@
 import type { Config } from "tailwindcss";
 
 import { PALETTES, SHADES, cssColor, paletteVar, semanticVar } from "./src/theme/palettes";
+import teamPalette from "./src/data/team-palette.json";
+
+const teamColorSafelist = Array.from(
+  new Set(
+    (teamPalette.p as [string, string, string][]).flatMap(([, border, bg]) => [border, bg])
+  )
+);
 
 const withAlpha = (v: string) => `rgb(var(${v}) / <alpha-value>)`;
 
@@ -13,6 +20,7 @@ const paletteColors = () =>
   );
 
 const config: Config = {
+  safelist: teamColorSafelist,
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",

@@ -45,9 +45,34 @@ const nextConfig = {
   // Yedek barındırma (Docker/VPS) için: STANDALONE_BUILD=1 ile derlenince .next/standalone üretilir.
   // Vercel derlemesi bu değişkeni görmediği için Vercel'deki davranış değişmez.
   ...(process.env.STANDALONE_BUILD === "1" ? { output: "standalone" } : {}),
+  // Vercel Deployment Storage (Hobby 10 GB): data/ her fonksiyona kopyalandığı için her deploy
+  // fonksiyon sayısı × ~8,5 MB yer kaplıyordu. Artık yalnızca çalışma anında fs ile okunan dosyalar,
+  // yalnızca ihtiyaç duyan rotalara eklenir:
+  // - data/raw (yalnızca scraper girdisi) hiçbir fonksiyona girmez.
+  // - data/team-rosters.json (~3,7 MB) yalnızca takım sayfalarına (/takim) girer.
+  // - data/volleybox-mappings.json `import` ile paketlenir; fs ile okunmaz.
   outputFileTracingIncludes: {
-    "/api/**/*": ["./data/**/*"],
-    "/**/*": ["./data/**/*"],
+    "/**/*": [
+      "./data/cities.json",
+      "./data/fixtures.json",
+      "./data/kadinlar_2_lig.json",
+      "./data/manual-overrides.json",
+      "./data/cities/**/*",
+    ],
+    "/takim/**/*": ["./data/team-rosters.json"],
+  },
+  outputFileTracingExcludes: {
+    "/**/*": ["./data/raw/**/*"],
+    // team-rosters.json, teamData barrel'ını import eden her rotaya otomatik izleniyordu; çalışma
+    // anında yalnızca getTeamDetailsBySlug (/takim) okur.
+    "/api/club/teams": ["./data/team-rosters.json"],
+    "/api/health": ["./data/team-rosters.json"],
+    "/istatistikler": ["./data/team-rosters.json"],
+    "/istatistikler/**/*": ["./data/team-rosters.json"],
+    "/karsilastir": ["./data/team-rosters.json"],
+    "/kulupler": ["./data/team-rosters.json"],
+    "/kulupler/**/*": ["./data/team-rosters.json"],
+    "/sitemap.xml": ["./data/team-rosters.json"],
   },
   typescript: {
     // CI ve yerel ortamda 'npm run typecheck' calistirildigi icin Vercel build suresini 35+ saniye kisaltmak amaciyla derleme sirasinda tsc atlanir

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { slugify } from "./slugify";
 import { HIDDEN_CITY_SLUGS, isCityHidden } from "./hiddenCities";
+import { isAllowedCitySlug } from "./cityRouteGuard";
 
 export { HIDDEN_CITY_SLUGS, isCityHidden };
 
@@ -51,6 +52,9 @@ export function isValidCitySlug(slug: string): boolean {
   const cleanSlug = slugify(slug);
   if (isCityHidden(cleanSlug)) return false;
   const cities = getAllCitiesList();
-  if (cities.length === 0) return true; // fallback if list not loaded yet
+  if (cities.length === 0) {
+    // data/cities.json okunamadıysa statik allowlist'i kullan (asla sessizce true dönme)
+    return isAllowedCitySlug(cleanSlug);
+  }
   return cities.some((c) => c.slug.toLowerCase() === cleanSlug);
 }

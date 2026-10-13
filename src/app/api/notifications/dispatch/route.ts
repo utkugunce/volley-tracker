@@ -4,6 +4,7 @@ import path from "path";
 import {
   getPushSubscriptions,
   sendWebPush,
+  sendWebPushBatch,
   StoredSubscription,
 } from "@/utils/webPush";
 import { applyOverridesToMatchesAsync } from "@/utils/overrides";
@@ -152,15 +153,11 @@ export async function POST(req: NextRequest) {
         },
       };
 
-      for (const sub of subscriptions) {
-        if (doesSubscriptionMatch(sub, match)) {
-          const res = await sendWebPush(sub, payload);
-          if (res.success) {
-            sentCount++;
-          } else {
-            failedCount++;
-          }
-        }
+      const matchingSubs = subscriptions.filter((sub) => doesSubscriptionMatch(sub, match));
+      if (matchingSubs.length > 0) {
+        const batchRes = await sendWebPushBatch(matchingSubs, payload);
+        sentCount += batchRes.sent;
+        failedCount += batchRes.failed;
       }
     }
 

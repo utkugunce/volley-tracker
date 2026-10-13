@@ -165,4 +165,62 @@ describe("webPush abonelik deposu (private Blob fallback)", () => {
     await webPush.savePushSubscription(makeSub("https://push.example.com/a"));
     expect(vi.mocked(put)).not.toHaveBeenCalled();
   });
+
+  it("removePushSubscriptionsBatch ile birden çok aboneliği tek seferde siler", async () => {
+    await webPush.savePushSubscription(makeSub("https://push.example.com/a"));
+    await webPush.savePushSubscription(makeSub("https://push.example.com/b"));
+    await webPush.savePushSubscription(makeSub("https://push.example.com/c"));
+
+    await webPush.removePushSubscriptionsBatch([
+      "https://push.example.com/a",
+      "https://push.example.com/c",
+    ]);
+
+    const remaining = await webPush.getPushSubscriptions();
+    expect(remaining.map((s) => s.endpoint)).toEqual(["https://push.example.com/b"]);
+  });
+
+  it("sendWebPushBatch 410 Gone veya 404 dönen ölü abonelikleri otomatik temizler", async () => {
+    process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY = "test-pub-key";
+    process.env.VAPID_PRIVATE_KEY = "test-priv-key";
+
+    const subGood = makeSub("https://push.example.com/good");
+    const subGone = makeSub("https://push.example.com/gone");
+    const sub404 = makeSub("https://push.example.com/notfound");
+
+    await webPush.savePushSubscription(subGood);
+    await webPush.savePushSubscription(subGone);
+    await webPush.savePushSubscription(sub404);
+
+    const webpushMock = (await import("web-push")).default;
+    vi.mocked(webpushMock.sendNotification).mockImplementation(async (subscription) => {
+      const ep = (subscription as { endpoint: string }).endpoint;
+      if (ep.includes("gone")) {
+        const err = new Error("Subscription expired") as Error & { statusCode: number };
+        err.statusCode = 410;
+        throw err;
+      }
+      if (ep.includes("notfound")) {
+        const err = new Error("Subscription not found") as Error & { statusCode: number };
+        err.statusCode = 404;
+        throw err;
+      }
+      return { statusCode: 201, body: "", headers: {} };
+    });
+
+    const result = await webPush.sendWebPushBatch(
+      [subGood, subGone, sub404],
+      { title: "Test", body: "Mesaj" }
+    );
+
+    expect(result.sent).toBe(1);
+    expect(result.failed).toBe(2);
+    expect(result.expiredEndpoints).toEqual([
+      "https://push.example.com/gone",
+      "https://push.example.com/notfound",
+    ]);
+
+    const remaining = await webPush.getPushSubscriptions();
+    expect(remaining.map((s) => s.endpoint)).toEqual(["https://push.example.com/good"]);
+  });
 });

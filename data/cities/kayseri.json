@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T13:47:32.026060+03:00",
+  "updated_at": "2026-10-13T23:21:15.575111+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -630,8 +630,8 @@
         "url": "https://women.volleybox.net/tr/erciyes-aslan-spor-kulubu-u18-cnar-akademi-spor-kulubu-u18-c402788",
         "host_name": "Erciyes Aslan Spor Kulübü U18",
         "guest_name": "Çınar Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-11",
         "vb_time": "19:30",
         "vb_hall": "Gevher Nesibe Spor Salonu",
@@ -1546,5 +1546,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:16.082120"
+  "volleybox_sync_updated_at": "2026-10-13T23:26:13.380268"
 }

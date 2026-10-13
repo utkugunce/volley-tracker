@@ -24,6 +24,7 @@ if BASE_DIR not in sys.path:
 
 from scripts.data_quality import validate_kadinlar_2_lig_data, print_validation_summary
 from scripts.k2l_volleybox_names import load_k2_mappings
+from scripts.atomic_write import atomic_write_json
 
 import httpx
 from bs4 import BeautifulSoup
@@ -569,8 +570,7 @@ def run_kadinlar_2_lig_scraper(silent: bool = False):
         payload_data["metadata"]["volleybox_synced_matches"] = synced_matches_count
         payload_data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
 
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload_data, f, ensure_ascii=False, indent=2)
+    atomic_write_json(OUTPUT_FILE, payload_data, ensure_ascii=False, indent=2, min_keys=["gruplar", "metadata"])
 
     validation_result = validate_kadinlar_2_lig_data(payload_data)
     print_validation_summary("Kadınlar 2. Lig", validation_result)

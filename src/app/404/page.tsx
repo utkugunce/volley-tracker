@@ -4,6 +4,11 @@ import { NotFoundView } from "@/components/NotFoundView";
 /**
  * proxy.ts'in (middleware) geçersiz şehir adresleri için rewrite ettiği hedef.
  *
+ * NOT (Next.js /404 Rezervasyonu):
+ *   Next.js `/404` yolunu dahili not-found rotası (app/not-found.tsx) olarak rezerve eder.
+ *   Dolayısıyla bu dosyadaki metadata doğrudan uygulanmaz; ancak proxy.ts'in rewrite hedefi
+ *   olarak geçerli bir App Router sayfasının bulunması için bu dosya mevcuttur.
+ *
  * Neden ayrı bir rota?
  *   `src/app/[city]/page.tsx` içindeki `notFound()` doğru çalışıyor, fakat
  *   `src/app/loading.tsx` Suspense kabuğunu HTTP 200 ile flush ettiği için

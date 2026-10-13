@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T13:47:32.026060+03:00",
+  "updated_at": "2026-10-13T23:21:15.575111+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -463,41 +463,7 @@
       }
     },
     {
-      "id": "gaziantep-20261018-007",
-      "city": "Gaziantep",
-      "date": "2026-10-18",
-      "time": "11:00",
-      "hall": "Dumlupınar",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "7",
-      "home_team": "ANADOLUGÜCÜ",
-      "away_team": "GAZİANTEP BELEDİYE SPK",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "gaziantep-20261017-008",
+      "id": "gaziantep-20261017-007",
       "city": "Gaziantep",
       "date": "2026-10-17",
       "time": "09:30",
@@ -538,7 +504,7 @@
       }
     },
     {
-      "id": "gaziantep-20261017-009",
+      "id": "gaziantep-20261017-008",
       "city": "Gaziantep",
       "date": "2026-10-17",
       "time": "11:00",
@@ -579,7 +545,7 @@
       }
     },
     {
-      "id": "gaziantep-20261018-010",
+      "id": "gaziantep-20261018-009",
       "city": "Gaziantep",
       "date": "2026-10-18",
       "time": "09:30",
@@ -618,8 +584,42 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "gaziantep-20261018-010",
+      "city": "Gaziantep",
+      "date": "2026-10-18",
+      "time": "11:00",
+      "hall": "Dumlupınar",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "4",
+      "home_team": "GAZİANTEP BELEDİYE SPK",
+      "away_team": "DOĞUŞ27",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:10.375814"
+  "volleybox_sync_updated_at": "2026-10-13T23:26:10.374289"
 }

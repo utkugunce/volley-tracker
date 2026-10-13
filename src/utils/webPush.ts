@@ -69,14 +69,16 @@ function getLegacyPublicBlobToken(): string | undefined {
 }
 
 export function initVapid(): boolean {
-  if (!DEFAULT_VAPID_PUBLIC_KEY || !DEFAULT_VAPID_PRIVATE_KEY) {
+  const pub = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || DEFAULT_VAPID_PUBLIC_KEY;
+  const priv = process.env.VAPID_PRIVATE_KEY || DEFAULT_VAPID_PRIVATE_KEY;
+  if (!pub || !priv) {
     return false;
   }
   try {
     webpush.setVapidDetails(
-      DEFAULT_VAPID_SUBJECT,
-      DEFAULT_VAPID_PUBLIC_KEY,
-      DEFAULT_VAPID_PRIVATE_KEY
+      process.env.VAPID_SUBJECT || DEFAULT_VAPID_SUBJECT,
+      pub,
+      priv
     );
     return true;
   } catch (err) {
@@ -353,33 +355,44 @@ export async function savePushSubscription(sub: StoredSubscription): Promise<voi
 }
 
 /**
- * Belirtilen endpoint'e sahip aboneliği siler.
+ * Birden fazla aboneliği tek bir toplu işlemle siler (410 Gone / 404 Not Found temizliği).
  */
-export async function removePushSubscription(endpoint: string): Promise<void> {
-  updateMemoryCache((current) => current.filter((item) => item.endpoint !== endpoint));
+export async function removePushSubscriptionsBatch(endpoints: string[]): Promise<void> {
+  if (!endpoints || endpoints.length === 0) return;
+  const endpointSet = new Set(endpoints);
+  updateMemoryCache((current) => current.filter((item) => !endpointSet.has(item.endpoint)));
 
   const supabase = getSupabaseAdmin();
   if (supabase) {
-    const { error } = await supabase.from("push_subscriptions").delete().eq("endpoint", endpoint);
+    const { error } = await supabase.from("push_subscriptions").delete().in("endpoint", endpoints);
     if (!error) return;
-    console.warn("Supabase push abonelik silme hatası (fallback'e dönülüyor):", error.message);
+    console.warn("Supabase toplu push abonelik silme hatası (fallback'e dönülüyor):", error.message);
   }
 
   const privateToken = getPrivateBlobToken();
   if (privateToken) {
     try {
-      await del(subscriptionBlobPath(endpoint), { token: privateToken });
+      await Promise.allSettled(
+        endpoints.map((endpoint) => del(subscriptionBlobPath(endpoint), { token: privateToken }))
+      );
       return;
     } catch (err) {
-      console.error("Vercel Blob abonelik silme hatası:", err);
+      console.error("Vercel Blob toplu abonelik silme hatası:", err);
     }
   }
 
   const local = readLocalSubscriptions();
-  const filtered = local.filter((item) => item.endpoint !== endpoint);
+  const filtered = local.filter((item) => !endpointSet.has(item.endpoint));
   if (filtered.length !== local.length) {
     writeLocalSubscriptions(filtered);
   }
+}
+
+/**
+ * Belirtilen endpoint'e sahip aboneliği siler.
+ */
+export async function removePushSubscription(endpoint: string): Promise<void> {
+  await removePushSubscriptionsBatch([endpoint]);
 }
 
 /**
@@ -420,4 +433,49 @@ export async function sendWebPush(
     }
     return { success: false, statusCode, error: message };
   }
+}
+
+/**
+ * Promise.allSettled ve yığın (batch) yapısıyla birden çok aboneye bildirim gönderir.
+ * 410 Gone / 404 Not Found dönen ölü abonelikleri yakalar ve tek bir toplu işlemle siler.
+ */
+export async function sendWebPushBatch(
+  subs: StoredSubscription[],
+  payload: { title: string; body: string; data?: unknown; tag?: string },
+  concurrency = 15
+): Promise<{ sent: number; failed: number; expiredEndpoints: string[] }> {
+  const expiredEndpoints: string[] = [];
+  let sent = 0;
+  let failed = 0;
+
+  for (let i = 0; i < subs.length; i += concurrency) {
+    const chunk = subs.slice(i, i + concurrency);
+    const results = await Promise.allSettled(
+      chunk.map(async (sub) => {
+        const res = await sendWebPush(sub, payload);
+        return { sub, res };
+      })
+    );
+
+    for (const r of results) {
+      if (r.status === "fulfilled") {
+        if (r.value.res.success) {
+          sent++;
+        } else {
+          failed++;
+          if (r.value.res.statusCode === 410 || r.value.res.statusCode === 404) {
+            expiredEndpoints.push(r.value.sub.endpoint);
+          }
+        }
+      } else {
+        failed++;
+      }
+    }
+  }
+
+  if (expiredEndpoints.length > 0) {
+    await removePushSubscriptionsBatch(expiredEndpoints);
+  }
+
+  return { sent, failed, expiredEndpoints };
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T13:47:32.026060+03:00",
+  "updated_at": "2026-10-13T23:21:15.575111+03:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -137,11 +137,11 @@
       {
         "rank": 1,
         "team": "Samsunspor U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -191,18 +191,18 @@
       },
       {
         "rank": 6,
-        "team": "Nova Spor Kulübü U18",
-        "played": 1,
+        "team": "Sam55 Spor Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Sam55 Spor Kulübü U18",
+        "team": "Nova Spor Kulübü U18",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -434,8 +434,8 @@
         "url": "https://women.volleybox.net/tr/samsun-gulizar-hasan-ylmaz-spor-lisesi-u18-19-mays-genclik-ve-spor-u18-c402769",
         "host_name": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
         "guest_name": "19 Mayıs Gençlik Ve Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-12",
         "vb_time": "19:30",
         "vb_hall": "Bahattin Ekinci Spor Salonu",
@@ -1885,8 +1885,8 @@
         "url": "https://women.volleybox.net/tr/samsunspor-u18-anadolu-voleybol-akademi-sk-u18-c402776",
         "host_name": "Samsunspor U18",
         "guest_name": "Anadolu Voleybol Akademi SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-06",
         "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
@@ -2096,11 +2096,15 @@
       "match_no": "9",
       "home_team": "Nova Spor Kulübü U18",
       "away_team": "Samsunspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "7-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402781",
@@ -2905,5 +2909,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:19.808969"
+  "volleybox_sync_updated_at": "2026-10-13T23:26:15.691571"
 }

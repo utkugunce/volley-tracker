@@ -31,6 +31,8 @@ LOGOS_DIR = os.path.join(BASE_DIR, "public", "logos")
 MAPPINGS_FILE = os.path.join(BASE_DIR, "data", "volleybox-mappings.json")
 K2_FILE = os.path.join(BASE_DIR, "data", "kadinlar_2_lig.json")
 OUTPUT_FILE = os.path.join(BASE_DIR, "src", "data", "team-colors.json")
+PALETTE_FILE = os.path.join(BASE_DIR, "src", "data", "team-palette.json")
+INDEX_FILE = os.path.join(BASE_DIR, "src", "data", "team-color-index.json")
 
 def tr_lower(text: str) -> str:
     if not text:
@@ -316,6 +318,22 @@ def main():
             palettes.append([pal["border"], pal["borderClass"], pal["bg"]])
         teams_index[team_key] = palette_idx_map[pal_tuple]
 
+    # Mevcut veriyi koruyarak birleştir (disk üzerinde tam logo seti olmadığında veri kaybını önler)
+    if os.path.exists(OUTPUT_FILE):
+        try:
+            with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+            existing_p = existing.get("p", [])
+            for team_key, p_idx in existing.get("t", {}).items():
+                if team_key not in teams_index and p_idx < len(existing_p):
+                    old_pal = tuple(existing_p[p_idx])
+                    if old_pal not in palette_idx_map:
+                        palette_idx_map[old_pal] = len(palettes)
+                        palettes.append(list(old_pal))
+                    teams_index[team_key] = palette_idx_map[old_pal]
+        except Exception:
+            pass
+
     compact_data = {
         "p": palettes,
         "t": teams_index
@@ -325,11 +343,29 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(compact_data, f, separators=(",", ":"), ensure_ascii=False)
+
+    # 8b. Görev 2: Palette (statik) ve Pruned Index (tembel yüklenen) dosyaları
+    palette_data = {"p": palettes}
+    with open(PALETTE_FILE, "w", encoding="utf-8") as f:
+        json.dump(palette_data, f, separators=(",", ":"), ensure_ascii=False)
+
+    pruned_index = {}
+    for k, idx in teams_index.items():
+        s = slugify(k)
+        if s == k:
+            pruned_index[k] = idx
+        elif s not in teams_index:
+            pruned_index[s] = idx
+
+    with open(INDEX_FILE, "w", encoding="utf-8") as f:
+        json.dump(pruned_index, f, separators=(",", ":"), ensure_ascii=False)
         
     file_size_kb = os.path.getsize(OUTPUT_FILE) / 1024
-    print(f"🎉 Başarıyla {len(teams_index)} takım/anahtar, {len(palettes)} benzersiz palet üretildi!")
-    print(f"📦 Kompakt dosya boyutu: {file_size_kb:.1f} KB")
-    print(f"📄 Kaydedildi: {OUTPUT_FILE}")
+    idx_size_kb = os.path.getsize(INDEX_FILE) / 1024
+    pal_size_kb = os.path.getsize(PALETTE_FILE) / 1024
+    print(f"🎉 Başarıyla {len(teams_index)} takım/anahtar ({len(pruned_index)} budanmış slug), {len(palettes)} benzersiz palet üretildi!")
+    print(f"📦 Dosya boyutları: colors={file_size_kb:.1f} KB, palette={pal_size_kb:.1f} KB, index={idx_size_kb:.1f} KB")
+    print(f"📄 Kaydedildi: {OUTPUT_FILE}, {PALETTE_FILE}, {INDEX_FILE}")
 
 if __name__ == "__main__":
     main()

@@ -292,7 +292,7 @@ export async function GET(request: Request) {
     console.error("API Error:", error);
     return NextResponse.json(
       { error: "Fikstür verisi okunurken hata oluştu." },
-      { status: 500 }
+      { status: 500, headers: { "Cache-Control": "no-store" } }
     );
   }
 }

@@ -69,4 +69,57 @@ describe("TeamBadge marka renkleri (Fileönü)", () => {
     const badge = screen.getByLabelText("Zeren Spor rozeti");
     expect(badge).toHaveStyle({ borderColor: "#a855f7" });
   });
+
+  it("colorIdx, color veya palette prop verildiğinde harita araması atlanır", () => {
+    const customPalette = {
+      bg: "bg-surface-raised",
+      border: "border-emerald-400",
+      borderColor: "#34d399",
+      text: "text-ink",
+      plate: false,
+    };
+    render(<TeamBadge name="Özel Takım" palette={customPalette} />);
+    expect(screen.getByLabelText("Özel Takım rozeti")).toHaveStyle({ borderColor: "#34d399" });
+
+    render(<TeamBadge name="İndeksli Takım" colorIdx={0} />);
+    expect(screen.getByLabelText("İndeksli Takım rozeti")).toBeInTheDocument();
+  });
+
+  it("BEKÇİ: hiçbir use client modülü team-color-index.json veya team-colors.json statik import etmez", () => {
+    const fs = require("fs");
+    const path = require("path");
+    const root = process.cwd();
+
+    function scanDir(dir: string): string[] {
+      const results: string[] = [];
+      for (const entry of fs.readdirSync(path.join(root, dir), { withFileTypes: true })) {
+        const rel = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+          if (entry.name === "__tests__" || entry.name === "node_modules") continue;
+          results.push(...scanDir(rel));
+        } else if (/\.(tsx?|jsx?)$/.test(entry.name)) {
+          results.push(rel);
+        }
+      }
+      return results;
+    }
+
+    const srcFiles = scanDir("src");
+    const violations: string[] = [];
+
+    for (const file of srcFiles) {
+      const content = fs.readFileSync(path.join(root, file), "utf-8");
+      if (content.includes('"use client"') || content.includes("'use client'")) {
+        // Statik import kuralı: import ... from ".*team-color-index.json" veya ".*team-colors.json"
+        if (/import\s+.*from\s+["'].*team-color-index\.json["']/.test(content)) {
+          violations.push(`${file} statik olarak team-color-index.json import ediyor!`);
+        }
+        if (/import\s+.*from\s+["'].*team-colors\.json["']/.test(content)) {
+          violations.push(`${file} statik olarak team-colors.json import ediyor!`);
+        }
+      }
+    }
+
+    expect(violations).toEqual([]);
+  });
 });

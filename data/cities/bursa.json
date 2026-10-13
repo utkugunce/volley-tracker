@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T13:47:32.026060+03:00",
+  "updated_at": "2026-10-13T23:21:15.575111+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -252,6 +252,17 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+        "team": "MG Spor Kulübü U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Aktif Nesil Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -262,7 +273,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Bursa Koç Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -273,7 +284,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Güner Karakaya Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -284,7 +295,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Eker Spor Kulübü - A U16",
         "played": 2,
         "won": 1,
@@ -295,25 +306,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "MG Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -981,7 +981,7 @@
       "city": "Bursa",
       "date": "2026-10-18",
       "time": "16:30",
-      "hall": "Çekirge",
+      "hall": "İnegöl",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -1369,8 +1369,8 @@
         "url": "https://women.volleybox.net/tr/guner-karakaya-spor-kulubu-u16-eker-spor-kulubu-u16-c406669",
         "host_name": "Güner Karakaya Spor Kulübü U16",
         "guest_name": "Eker Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-12",
         "vb_time": "20:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -1399,11 +1399,15 @@
       "match_no": "5",
       "home_team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
       "away_team": "MG Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "18-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406670",
@@ -2110,8 +2114,8 @@
         "url": "https://women.volleybox.net/tr/akademi16-spor-kulubu-u16-nilufer-besevler-spor-kulubu-u16-c406678",
         "host_name": "Akademi16 Spor Kulübü U16",
         "guest_name": "Nilüfer Beşevler Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-10-12",
         "vb_time": "18:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -2290,8 +2294,8 @@
         "url": "https://women.volleybox.net/tr/kestel-belediye-1952-spor-kulubu-u16-bursa-buyuksehir-belediyespor-u16-c406681",
         "host_name": "Kestel Belediye 1952 Spor Kulübü U16",
         "guest_name": "Bursa Büyükşehir Belediyespor U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-12",
         "vb_time": "19:00",
         "vb_hall": "Kestel Spor Salonu",
@@ -2350,5 +2354,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:09.182215"
+  "volleybox_sync_updated_at": "2026-10-13T23:26:09.790880"
 }

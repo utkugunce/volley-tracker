@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T13:47:32.026060+03:00",
+  "updated_at": "2026-10-13T23:21:15.575111+03:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -204,11 +204,11 @@
       {
         "rank": 1,
         "team": "Şehir Koleji Eğitim Kültür SK U16",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -237,12 +237,12 @@
       {
         "rank": 4,
         "team": "Esnova Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -271,6 +271,17 @@
       },
       {
         "rank": 2,
+        "team": "Esnova Spor Kulübü - B U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Eskişehir Ata Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -278,17 +289,6 @@
         "points": 4,
         "sets_won": 6,
         "sets_lost": 7,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Esnova Spor Kulübü - B U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -1484,11 +1484,15 @@
       "match_no": "7",
       "home_team": "Şehir Koleji Eğitim Kültür SK U16",
       "away_team": "Esnova Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-10",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406698",
@@ -1800,8 +1804,8 @@
         "url": "https://women.volleybox.net/tr/es-gunes-spor-kulubu-u16-esnova-spor-kulubu-b-u16-c404269",
         "host_name": "Es Güneş Spor Kulübü U16",
         "guest_name": "Esnova Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-05",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -2222,5 +2226,5 @@
     }
   ],
   "volleybox_synced_matches": 42,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:10.361881"
+  "volleybox_sync_updated_at": "2026-10-13T23:26:10.367161"
 }

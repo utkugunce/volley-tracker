@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T13:47:32.026060+03:00",
+  "updated_at": "2026-10-13T23:21:15.575111+03:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -341,11 +341,11 @@
       }
     },
     {
-      "id": "yalova-20261030-007",
+      "id": "yalova-20261028-007",
       "city": "Yalova",
-      "date": "2026-10-30",
+      "date": "2026-10-28",
       "time": "18:00",
-      "hall": "Açıklanacak",
+      "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -371,22 +371,22 @@
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": false,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-30",
           "vb_time": "18:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Açıklanacak / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
+          "details": "Tarih Değişti (TVF: 2026-10-28 / VB: 2026-10-30)"
         }
       }
     },
     {
-      "id": "yalova-20261030-008",
+      "id": "yalova-20261028-008",
       "city": "Yalova",
-      "date": "2026-10-30",
+      "date": "2026-10-28",
       "time": "20:00",
-      "hall": "Açıklanacak",
+      "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -412,13 +412,13 @@
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": false,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-30",
           "vb_time": "20:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Açıklanacak / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
+          "details": "Tarih Değişti (TVF: 2026-10-28 / VB: 2026-10-30)"
         }
       }
     },
@@ -916,5 +916,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-13T13:53:20.446144"
+  "volleybox_sync_updated_at": "2026-10-13T23:26:15.992218"
 }

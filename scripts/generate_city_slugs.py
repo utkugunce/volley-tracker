@@ -25,6 +25,9 @@ import json
 import sys
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 CITIES_JSON = BASE_DIR / "data" / "cities.json"
 TARGET = BASE_DIR / "src" / "utils" / "citySlugs.ts"
