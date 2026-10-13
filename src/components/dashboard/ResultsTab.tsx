@@ -235,6 +235,7 @@ export const ResultsTab: React.FC<ResultsTabProps> = ({
                           isCollapsed={Boolean(leagueCollapse.collapsed[leagueKey])}
                           onToggleCollapse={() => leagueCollapse.toggle(leagueKey)}
                           mode="results"
+                          showGroupBadge={true}
                         />
                       );
                     })}
