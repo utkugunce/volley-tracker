@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59:56.214854+03:00",
+  "updated_at": "2026-10-13T07:37:08.745678+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -275,33 +275,33 @@
       {
         "rank": 3,
         "team": "Güner Karakaya Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 5,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 4,
+        "team": "Eker Spor Kulübü - A U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "MG Spor Kulübü U16",
         "played": 1,
         "won": 0,
         "lost": 1,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Eker Spor Kulübü - A U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
         "sets_lost": 3,
         "form": []
       },
@@ -478,17 +478,28 @@
       },
       {
         "rank": 3,
-        "team": "Nilüfer Beşevler Spor Kulübü U16",
+        "team": "Akademi16 Spor Kulübü U16",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
+        "team": "Nilüfer Beşevler Spor Kulübü U16",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Nilüfer Olimpik Spor Kulübü U16",
         "played": 1,
         "won": 0,
@@ -497,40 +508,29 @@
         "sets_won": 0,
         "sets_lost": 3,
         "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Akademi16 Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - E Grubu": [
       {
         "rank": 1,
-        "team": "Kestel Belediye 1952 Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "Bursa Büyükşehir Belediyespor U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Bursa Büyükşehir Belediyespor U16",
-        "played": 1,
+        "team": "Kestel Belediye 1952 Spor Kulübü U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -1080,11 +1080,17 @@
       "match_no": "4",
       "home_team": "Güner Karakaya Spor Kulübü U16",
       "away_team": "Eker Spor Kulübü - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "27-25",
+        "25-17",
+        "23-25",
+        "14-25",
+        "9-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406669",
@@ -1815,11 +1821,17 @@
       "match_no": "3",
       "home_team": "Akademi16 Spor Kulübü U16",
       "away_team": "Nilüfer Beşevler Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-15",
+        "25-19",
+        "23-25",
+        "22-25",
+        "15-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406678",
@@ -1989,11 +2001,17 @@
       "match_no": "3",
       "home_team": "Kestel Belediye 1952 Spor Kulübü U16",
       "away_team": "Bursa Büyükşehir Belediyespor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-16",
+        "25-17",
+        "21-25",
+        "20-25",
+        "16-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406681",
@@ -2060,5 +2078,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-12T17:05:08.147562"
+  "volleybox_sync_updated_at": "2026-10-13T07:38:57.325323"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T16:59:56.214854+03:00",
+  "updated_at": "2026-10-13T07:37:08.745678+00:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -228,6 +228,17 @@
     "Yıldız Kızlar Süper Lig - B Grubu ( Merkez )": [
       {
         "rank": 1,
+        "team": "Günyaka Spor U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Bandırma Voleybol Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -238,7 +249,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
         "played": 1,
         "won": 0,
@@ -249,30 +260,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "BALIKESİR EKA SPOR B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "EBA Spor U16",
-        "played": 0,
+        "team": "BALIKESİR EKA SPOR B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Günyaka Spor U16",
+        "team": "EBA Spor U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -645,11 +645,16 @@
       "match_no": "2",
       "home_team": "Günyaka Spor U16",
       "away_team": "BALIKESİR EKA SPOR B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "22-25",
+        "25-22",
+        "25-21",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406628",
@@ -1408,5 +1413,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-12T17:05:08.007776"
+  "volleybox_sync_updated_at": "2026-10-13T07:38:57.323092"
 }

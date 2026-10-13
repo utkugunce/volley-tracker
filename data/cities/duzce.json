@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T00:32:11.504639+00:00",
+  "updated_at": "2026-10-13T07:37:08.745678+00:00",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -51,7 +51,7 @@
       },
       {
         "rank": 3,
-        "team": "Düzce Voleybol SK - A U18",
+        "team": "Düzce Voleybol SK U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -177,7 +177,7 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "1",
-      "home_team": "Düzce Voleybol SK - A U18",
+      "home_team": "Düzce Voleybol SK U18",
       "away_team": "Düzce 1907 Spor Kulübü U18",
       "score": "3 - 2",
       "home_score": 3,
@@ -316,7 +316,7 @@
       "group": "1. Grup",
       "match_no": "4",
       "home_team": "Düzce Atletik Spor Kulübü U18",
-      "away_team": "Düzce Voleybol SK - A U18",
+      "away_team": "Düzce Voleybol SK U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -356,7 +356,7 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "5",
-      "home_team": "Düzce Voleybol SK - A U18",
+      "home_team": "Düzce Voleybol SK U18",
       "away_team": "Düzce UltrAslan Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -429,5 +429,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-13T00:34:10.511448"
+  "volleybox_sync_updated_at": "2026-10-13T07:38:57.327593"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T00:32:11.504639+00:00",
+  "updated_at": "2026-10-13T07:37:08.745678+00:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -1736,48 +1736,7 @@
       }
     },
     {
-      "id": "ankara-20261020-027",
-      "city": "Ankara",
-      "date": "2026-10-20",
-      "time": "18:00",
-      "hall": "Mamak S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "3.Grup",
-      "match_no": "9",
-      "home_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-      "away_team": "TED Ankara Kolejliler U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "406606",
-        "url": "https://women.volleybox.net/tr/ankara-buyuksehir-belediyesi-spor-kulubu-u18-ted-ankara-kolejliler-u18-c406606",
-        "host_name": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-        "guest_name": "TED Ankara Kolejliler U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-20",
-        "vb_time": "18:00",
-        "vb_hall": "Mamak Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-20",
-          "vb_time": "18:00",
-          "vb_hall": "Mamak Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "ankara-20261021-028",
+      "id": "ankara-20261021-027",
       "city": "Ankara",
       "date": "2026-10-21",
       "time": "19:30",
@@ -1786,7 +1745,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "3.Grup",
-      "match_no": "10",
+      "match_no": "9",
       "home_team": "SET UP Spor Kulübü U18",
       "away_team": "Maç Akademi Spor Kulübü U18",
       "score": "- : -",
@@ -1814,6 +1773,40 @@
           "vb_time": "19:30",
           "vb_hall": "Mamak Spor Salonu",
           "details": null
+        }
+      }
+    },
+    {
+      "id": "ankara-20261022-028",
+      "city": "Ankara",
+      "date": "2026-10-22",
+      "time": "19:30",
+      "hall": "Mamak S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "3.Grup",
+      "match_no": "10",
+      "home_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
+      "away_team": "TED Ankara Kolejliler U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
         }
       }
     },
@@ -3772,6 +3765,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-10-13T00:34:10.496829"
+  "volleybox_synced_matches": 71,
+  "volleybox_sync_updated_at": "2026-10-13T07:38:57.304388"
 }
