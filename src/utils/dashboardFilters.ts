@@ -187,16 +187,21 @@ export function filterResultMatches(matches: Match[], opts: ResultFilterOptions)
   } = opts;
 
   return matches.filter((m) => {
-    if (!isMatchScored(m)) return false;
+    // Dünün sonuçlarına bakarken ("yesterday" alt sekmesi veya seçili tarih dün ise):
+    // Dün oynanmış maçlar henüz skoru girilmemiş olsa bile skorsuz olarak gösterilir.
+    const isYesterdayFilter =
+      resultsSubTab === "yesterday" ||
+      (selectedResultDate !== "all" && selectedResultDate === yesterdayStr);
 
-    // Sonuçlar seçilen tarih filtresi
-    if (selectedResultDate !== "all" && m.date !== selectedResultDate) {
-      return false;
-    }
+    if (isYesterdayFilter) {
+      if (m.date !== yesterdayStr) return false;
+    } else {
+      if (!isMatchScored(m)) return false;
 
-    // Sonuçlar alt sekme filtresi: "yesterday" seçildiyse sadece dünün maçlarını göster
-    if (resultsSubTab === "yesterday" && m.date !== yesterdayStr) {
-      return false;
+      // Sonuçlar seçilen tarih filtresi
+      if (selectedResultDate !== "all" && m.date !== selectedResultDate) {
+        return false;
+      }
     }
 
     if (showOnlyFavorites && !favorites.includes(m.id)) {

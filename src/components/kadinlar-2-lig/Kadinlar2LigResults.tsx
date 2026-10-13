@@ -82,13 +82,27 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
     return allMatches.filter(
       (m) =>
         m.durum === "BİTTİ" ||
-        (m.skor && m.skor.includes("-") && m.skor.trim() !== "-" && m.skor !== "- : -")
+        Boolean(m.skor && m.skor.includes("-") && m.skor.trim() !== "-" && m.skor !== "- : -")
     );
   }, [allMatches]);
 
-  const standardFinishedMatches = useMemo(
-    () => finishedMatches.map(convertK2MatchToMatch),
-    [finishedMatches]
+  // Sonuçlar görünümünde değerlendirilecek aday maçlar (Dün oynanmış ama skoru henüz girilmemiş maçlar da dahil)
+  const candidateMatches = useMemo(() => {
+    return allMatches.filter((m) => {
+      const isFinished =
+        m.durum === "BİTTİ" ||
+        Boolean(m.skor && m.skor.includes("-") && m.skor.trim() !== "-" && m.skor !== "- : -");
+      if (isFinished) return true;
+      if (yesterdayIso && normalizeK2Date(m.tarih) === yesterdayIso) {
+        return true;
+      }
+      return false;
+    });
+  }, [allMatches, yesterdayIso]);
+
+  const standardMatches = useMemo(
+    () => candidateMatches.map(convertK2MatchToMatch),
+    [candidateMatches]
   );
 
   // Sonuçlanan maçların benzersiz tarihleri + Bugün ve Dün (YYYY-MM-DD)
@@ -96,31 +110,40 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
     const set = new Set<string>();
     if (todayIso) set.add(todayIso);
     if (yesterdayIso) set.add(yesterdayIso);
-    standardFinishedMatches.forEach((match) => {
+    standardMatches.forEach((match) => {
       if (match.date && match.date !== "TBD") set.add(match.date);
     });
     return Array.from(set).sort().reverse();
-  }, [todayIso, yesterdayIso, standardFinishedMatches]);
+  }, [todayIso, yesterdayIso, standardMatches]);
 
   const dateCounts = useMemo(() => {
     const matchesForDate = selectedResultDate === "all"
-      ? standardFinishedMatches
-      : standardFinishedMatches.filter((match) => match.date === selectedResultDate);
+      ? standardMatches.filter((m) => m.status === "finished" || (m.home_score !== null && m.away_score !== null))
+      : standardMatches.filter((match) => match.date === selectedResultDate);
     return {
       all: matchesForDate.length,
       live: 0,
       finished: matchesForDate.length,
       upcoming: 0,
     };
-  }, [standardFinishedMatches, selectedResultDate]);
+  }, [standardMatches, selectedResultDate]);
 
   // Filtrelenmiş sonuçlar
   const filteredResults = useMemo(() => {
-    return finishedMatches.filter((m) => {
+    return candidateMatches.filter((m) => {
       const match = convertK2MatchToMatch(m);
 
       if (selectedGroupFilter !== "all" && m.grup_no !== selectedGroupFilter) return false;
-      if (selectedResultDate !== "all" && match.date !== selectedResultDate) return false;
+
+      // "all" seçiliyse sadece skorlu/biten maçları listele
+      if (selectedResultDate === "all") {
+        const isFinished =
+          m.durum === "BİTTİ" ||
+          Boolean(m.skor && m.skor.includes("-") && m.skor.trim() !== "-" && m.skor !== "- : -");
+        if (!isFinished) return false;
+      } else if (match.date !== selectedResultDate) {
+        return false;
+      }
 
       if (showOnlyFavorites) {
         if (!isKadinlar2LigMatchFavorite(m, isFavorite)) return false;
@@ -137,7 +160,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
       return true;
     });
   }, [
-    finishedMatches,
+    candidateMatches,
     selectedGroupFilter,
     selectedResultDate,
     showOnlyFavorites,
@@ -173,13 +196,13 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
 
   // Favori maç ID'leri
   const favoriteMatchIds = useMemo(() => {
-    return finishedMatches
+    return candidateMatches
       .filter((m) => isKadinlar2LigMatchFavorite(m, isFavorite))
       .map((m) => m.id);
-  }, [finishedMatches, isFavorite]);
+  }, [candidateMatches, isFavorite]);
 
   const handleToggleFavorite = (matchId: string) => {
-    const found = finishedMatches.find((m) => m.id === matchId);
+    const found = candidateMatches.find((m) => m.id === matchId);
     if (found) {
       toggleFavorite(getKadinlar2LigMatchTeamNames(found).home);
     }

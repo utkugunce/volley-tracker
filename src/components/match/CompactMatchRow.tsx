@@ -137,6 +137,10 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span className="text-[9px] font-medium text-slate-400 px-1">
             Ertelendi
           </span>
+        ) : mode === "results" ? (
+          <span className="text-[8px] font-semibold text-amber-400 px-1 tracking-tight" title="Oynandı, skor girişi bekleniyor">
+            Skor Bekleniyor
+          </span>
         ) : null}
 
         {discrepancy?.date_diff && discrepancy.vb_date && (

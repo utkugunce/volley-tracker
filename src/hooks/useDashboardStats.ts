@@ -51,8 +51,12 @@ export function useDashboardStats({
         .map((m) => m.date)
         .filter((d) => d && d !== "TBD")
     );
+    // Dün maç varsa (skorlu veya skorsuz), dünü de sonuçlar tarih listesine ekle
+    if (yesterdayStr && data.matches.some((m) => m.date === yesterdayStr)) {
+      set.add(yesterdayStr);
+    }
     return Array.from(set).sort().reverse();
-  }, [data]);
+  }, [data, yesterdayStr]);
 
   // Durum bazlı toplamlar (Sadece tarihi açıklanan maçlar)
   const counts = useMemo(() => {
@@ -73,9 +77,9 @@ export function useDashboardStats({
     return (data?.matches || []).filter((m) => m.status === "live").length;
   }, [data]);
 
-  // Dünün sonuçlanan maç sayısı
+  // Dünün sonuçlar sekmesinde gösterilecek maç sayısı (skorlu + skorsuz)
   const yesterdayResultsCount = useMemo(() => {
-    return (data?.matches || []).filter((m) => isMatchScored(m) && m.date === yesterdayStr).length;
+    return (data?.matches || []).filter((m) => m.date === yesterdayStr).length;
   }, [data, yesterdayStr]);
 
   // Türkiye genelindeki toplam biten / sonuçlanan maç sayısı
