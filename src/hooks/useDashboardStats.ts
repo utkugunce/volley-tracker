@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import type { FixturesData } from "@/types/fixture";
 import { isMatchScored } from "@/utils/matchScoring";
+import { isMatchPlayedOrScored } from "@/utils/calendar";
 import { computeVolleyboxStats } from "@/utils/dashboardFilters";
 import type { CityListItem } from "@/hooks/useCitiesList";
 
@@ -42,21 +43,17 @@ export function useDashboardStats({
     return citiesList.reduce((acc, c) => acc + (c.matches_count || 0), 0);
   }, [citiesList]);
 
-  // Sonuçlanan maçların benzersiz tarihleri (En yeni tarihten geriye doğru sıralı)
+  // Sonuçlanan veya oynanan maçların benzersiz tarihleri (En yeni tarihten geriye doğru sıralı)
   const uniqueResultDates = useMemo(() => {
     if (!data?.matches) return [];
     const set = new Set(
       data.matches
-        .filter(isMatchScored)
+        .filter((m) => isMatchPlayedOrScored(m, todayStr))
         .map((m) => m.date)
         .filter((d) => d && d !== "TBD")
     );
-    // Dün maç varsa (skorlu veya skorsuz), dünü de sonuçlar tarih listesine ekle
-    if (yesterdayStr && data.matches.some((m) => m.date === yesterdayStr)) {
-      set.add(yesterdayStr);
-    }
     return Array.from(set).sort().reverse();
-  }, [data, yesterdayStr]);
+  }, [data, todayStr]);
 
   // Durum bazlı toplamlar (Sadece tarihi açıklanan maçlar)
   const counts = useMemo(() => {

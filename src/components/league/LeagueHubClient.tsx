@@ -15,7 +15,7 @@ const SpotlightSearchModal = dynamic(
 );
 import { useFavorites } from "@/utils/useFavorites";
 import { generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
-import { compareMatchDateTime } from "@/utils/calendar";
+import { compareMatchDateTime, isMatchPlayedOrScored } from "@/utils/calendar";
 import { formatGroupName } from "@/utils/grouping";
 import { slugify } from "@/utils/slugify";
 import { downloadStandingsCsv } from "@/components/StandingsTable";
@@ -98,34 +98,28 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
     return counts;
   }, [league.upcomingMatches]);
 
-  // Sonuçlanan maçların benzersiz tarihleri (En yeni tarihten geriye doğru)
+  // Sonuçlanan veya oynanan maçların benzersiz tarihleri (En yeni tarihten geriye doğru)
   const uniqueResultDates = useMemo(() => {
     const set = new Set(
-      league.finishedMatches
+      league.matches
+        .filter((m) => isMatchPlayedOrScored(m, todayStr))
         .map((m) => m.date)
         .filter((d) => d && d !== "TBD")
     );
-    if (yesterdayStr && league.matches.some((m) => m.date === yesterdayStr)) {
-      set.add(yesterdayStr);
-    }
     return Array.from(set).sort().reverse();
-  }, [league.finishedMatches, league.matches, yesterdayStr]);
+  }, [league.matches, todayStr]);
 
   const resultDateCounts = useMemo(() => {
     const counts: { [dateStr: string]: number } = {};
-    league.finishedMatches.forEach((m) => {
-      if (m.date && m.date !== "TBD") {
-        counts[m.date] = (counts[m.date] || 0) + 1;
-      }
-    });
-    if (yesterdayStr) {
-      const yesterdayMatches = league.matches.filter((m) => m.date === yesterdayStr);
-      if (yesterdayMatches.length > 0) {
-        counts[yesterdayStr] = yesterdayMatches.length;
-      }
-    }
+    league.matches
+      .filter((m) => isMatchPlayedOrScored(m, todayStr))
+      .forEach((m) => {
+        if (m.date && m.date !== "TBD") {
+          counts[m.date] = (counts[m.date] || 0) + 1;
+        }
+      });
     return counts;
-  }, [league.finishedMatches, league.matches, yesterdayStr]);
+  }, [league.matches, todayStr]);
 
   // Gruplar listesi
   const groupNames = useMemo(() => {
@@ -160,18 +154,15 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
     return list;
   }, [league.upcomingMatches, selectedGroup, selectedFixtureDate, teamSearchQuery]);
 
-  // Seçili gruba ve tarihe göre filtrelenmiş sonuçlar (Dün seçiliyse skorsuz maçlar da dahil edilir)
+  // Seçili gruba ve tarihe göre filtrelenmiş sonuçlar (Seçilen tarihte oynanmış skorsuz maçlar da dahil edilir)
   const displayedFinishedMatches = useMemo(() => {
     let list =
-      selectedResultDate === yesterdayStr
-        ? league.matches.filter((m) => m.date === yesterdayStr)
+      selectedResultDate !== "all"
+        ? league.matches.filter((m) => m.date === selectedResultDate)
         : league.finishedMatches;
 
     if (selectedGroup !== "all") {
       list = list.filter((m) => m.group === selectedGroup || m.group?.includes(selectedGroup));
-    }
-    if (selectedResultDate !== "all" && selectedResultDate !== yesterdayStr) {
-      list = list.filter((m) => m.date === selectedResultDate);
     }
     if (teamSearchQuery.trim()) {
       const q = teamSearchQuery.toLowerCase();
@@ -184,7 +175,7 @@ export const LeagueHubClient: React.FC<LeagueHubClientProps> = ({
       );
     }
     return list;
-  }, [league.finishedMatches, league.matches, selectedGroup, selectedResultDate, yesterdayStr, teamSearchQuery]);
+  }, [league.finishedMatches, league.matches, selectedGroup, selectedResultDate, teamSearchQuery]);
 
   // Fikstür maçlarını gruplara göre düzenle (Anasayfadaki gibi FixtureTable formatında)
   const upcomingSections = useMemo(() => {

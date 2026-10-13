@@ -14,7 +14,7 @@ import {
   normalizeK2Date,
   sortKadinlar2LigMatchesByTime,
 } from "@/utils/kadinlar2LigConverter";
-import { formatDateTurkish } from "@/utils/calendar";
+import { formatDateTurkish, isMatchPassed } from "@/utils/calendar";
 import { useFavorites } from "@/utils/useFavorites";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 
@@ -86,19 +86,21 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
     );
   }, [allMatches]);
 
-  // Sonuçlar görünümünde değerlendirilecek aday maçlar (Dün oynanmış ama skoru henüz girilmemiş maçlar da dahil)
+  // Sonuçlar görünümünde değerlendirilecek aday maçlar (Tüm tarihlerde oynanmış veya skoru olan maçlar)
   const candidateMatches = useMemo(() => {
     return allMatches.filter((m) => {
       const isFinished =
         m.durum === "BİTTİ" ||
         Boolean(m.skor && m.skor.includes("-") && m.skor.trim() !== "-" && m.skor !== "- : -");
       if (isFinished) return true;
-      if (yesterdayIso && normalizeK2Date(m.tarih) === yesterdayIso) {
-        return true;
+      const isoDate = normalizeK2Date(m.tarih);
+      if (isoDate && isoDate !== "TBD") {
+        if (todayIso && isoDate < todayIso) return true;
+        if (isMatchPassed(isoDate, m.saat, "upcoming", todayIso)) return true;
       }
       return false;
     });
-  }, [allMatches, yesterdayIso]);
+  }, [allMatches, todayIso]);
 
   const standardMatches = useMemo(
     () => candidateMatches.map(convertK2MatchToMatch),

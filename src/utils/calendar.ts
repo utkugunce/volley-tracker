@@ -37,19 +37,30 @@ export function getCalendarIsoTimes(dateStr?: string, timeStr?: string): { start
   };
 }
 
+import { isMatchScored } from "./matchScoring";
+import type { Match } from "@/types/fixture";
+
 /**
  * Bir maçın tarihinin ve saatinin geçip geçmediğini kontrol eder.
  * Maç durumu "finished" ise veya maç tarihi/saati geride kalmışsa true döner.
  */
-export function isMatchPassed(dateStr?: string, timeStr?: string, status?: string): boolean {
+export function isMatchPassed(
+  dateStr?: string,
+  timeStr?: string,
+  status?: string,
+  todayStr?: string
+): boolean {
   if (status === "finished") return true;
   if (!dateStr || dateStr === "TBD") return false;
 
+  let today = todayStr;
   const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  const today = `${year}-${month}-${day}`;
+  if (!today) {
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    today = `${year}-${month}-${day}`;
+  }
 
   if (dateStr < today) return true;
   if (dateStr > today) return false;
@@ -67,6 +78,28 @@ export function isMatchPassed(dateStr?: string, timeStr?: string, status?: strin
   }
 
   return false;
+}
+
+/**
+ * Bir maçın oynanmış (tarihi/saati geçmiş) veya skoru girilmiş olup olmadığını belirler.
+ * Sonuçlar sekmesinde tarih listelerine dahil edilmek veya listelenmek için kullanılır.
+ */
+export function isMatchPlayedOrScored(
+  match: {
+    date?: string | null;
+    time?: string | null;
+    status?: string;
+    home_score?: number | null;
+    away_score?: number | null;
+    score?: string | null;
+    volleybox?: { has_score?: boolean; score?: string | null } | null;
+  },
+  todayStr?: string
+): boolean {
+  if (isMatchScored(match as Match) || match.status === "finished") {
+    return true;
+  }
+  return isMatchPassed(match.date || undefined, match.time || undefined, match.status, todayStr);
 }
 
 /**

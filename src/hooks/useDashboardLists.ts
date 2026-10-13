@@ -74,6 +74,7 @@ export function useDashboardLists({
       selectedResultDate,
       resultsSubTab,
       yesterdayStr,
+      todayStr,
       showOnlyFavorites,
       favorites,
       selectedCategory,
@@ -81,7 +82,7 @@ export function useDashboardLists({
       searchQuery,
       volleyboxFilter,
     });
-  }, [data, selectedResultDate, resultsSubTab, yesterdayStr, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
+  }, [data, selectedResultDate, resultsSubTab, yesterdayStr, todayStr, showOnlyFavorites, favorites, selectedCategory, selectedHall, searchQuery, volleyboxFilter]);
 
   // Sonuçlar için Şehir ve Lig bazlı hiyerarşik gruplama (İzmir başlığı altında U18 / U16 ve A Grubu / B Grubu)
   const resultsByCityAndLeague = useMemo<CityResultGroup[]>(() => {

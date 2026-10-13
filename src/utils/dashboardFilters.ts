@@ -164,6 +164,7 @@ export interface ResultFilterOptions {
   selectedResultDate: string;
   resultsSubTab: "all" | "yesterday";
   yesterdayStr: string;
+  todayStr?: string;
   showOnlyFavorites: boolean;
   favorites: string[];
   selectedCategory: string;
@@ -172,7 +173,7 @@ export interface ResultFilterOptions {
   volleyboxFilter: VolleyboxFilter;
 }
 
-/** Sadece skoru/sonucu olan maçlar için filtrelenmiş liste. */
+/** Sadece skoru/sonucu olan veya seçili tarihte oynanmış maçlar için filtrelenmiş liste. */
 export function filterResultMatches(matches: Match[], opts: ResultFilterOptions): Match[] {
   const {
     selectedResultDate,
@@ -187,21 +188,15 @@ export function filterResultMatches(matches: Match[], opts: ResultFilterOptions)
   } = opts;
 
   return matches.filter((m) => {
-    // Dünün sonuçlarına bakarken ("yesterday" alt sekmesi veya seçili tarih dün ise):
-    // Dün oynanmış maçlar henüz skoru girilmemiş olsa bile skorsuz olarak gösterilir.
-    const isYesterdayFilter =
-      resultsSubTab === "yesterday" ||
-      (selectedResultDate !== "all" && selectedResultDate === yesterdayStr);
-
-    if (isYesterdayFilter) {
+    // Sonuçlar sekmesinde belirli bir tarih seçildiyse ("yesterday" alt sekmesi veya tarih şeridinden herhangi bir tarih):
+    // O tarihte oynanmış maçlar henüz skoru girilmemiş olsa bile skorsuz ("Skor Bekleniyor") olarak gösterilir.
+    if (resultsSubTab === "yesterday") {
       if (m.date !== yesterdayStr) return false;
+    } else if (selectedResultDate !== "all") {
+      if (m.date !== selectedResultDate) return false;
     } else {
+      // "all" (Tüm Sonuçlar) modunda skoru olan maçları listele
       if (!isMatchScored(m)) return false;
-
-      // Sonuçlar seçilen tarih filtresi
-      if (selectedResultDate !== "all" && m.date !== selectedResultDate) {
-        return false;
-      }
     }
 
     if (showOnlyFavorites && !favorites.includes(m.id)) {

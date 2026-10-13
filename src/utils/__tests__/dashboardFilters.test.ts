@@ -130,14 +130,15 @@ describe("filterResultMatches", () => {
     expect(results.some((m) => m.id === "m-4")).toBe(false);
   });
 
-  it("dün dışındaki geçmiş bir tarih seçildiğinde skorsuz maçları dahil etmez", () => {
+  it("dün dışındaki geçmiş bir tarih seçildiğinde (selectedResultDate === pastStr) de skorsuz maçları dahil eder", () => {
     const results = filterResultMatches(matches, {
       ...defaultOpts,
       selectedResultDate: pastStr,
       resultsSubTab: "all",
     });
 
-    expect(results).toHaveLength(1);
-    expect(results[0].id).toBe("m-3");
+    expect(results).toHaveLength(2);
+    expect(results.map((m) => m.id)).toEqual(["m-3", "m-4"]);
+    expect(results.find((m) => m.id === "m-4")?.home_score).toBeNull();
   });
 });
