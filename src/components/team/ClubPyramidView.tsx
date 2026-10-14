@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 import Link from "next/link";
 import { GitMerge, ExternalLink, Sparkles } from "lucide-react";
-import type { TeamDetails } from "@/utils/team/types";
-import { buildClubPyramid } from "@/utils/team/clubPyramid";
+import type { TeamDetails, ClubPyramidData } from "@/utils/team/types";
 
 interface ClubPyramidViewProps {
   team: TeamDetails;
+  pyramid?: ClubPyramidData | null;
 }
 
-export const ClubPyramidView: React.FC<ClubPyramidViewProps> = ({ team }) => {
-  const pyramid = useMemo(() => buildClubPyramid(team), [team]);
+export const ClubPyramidView: React.FC<ClubPyramidViewProps> = ({ team, pyramid: propPyramid }) => {
+  const pyramid = propPyramid ?? team.pyramid;
 
   if (!pyramid || pyramid.tiers.length === 0) {
     return null;

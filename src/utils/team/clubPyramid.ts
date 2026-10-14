@@ -1,33 +1,17 @@
-import type { ClubSisterTeam, Player, TeamDetails } from "./types";
+import type {
+  ClubSisterTeam,
+  Player,
+  TeamDetails,
+  PyramidTierKey,
+  PyramidTier,
+  CrossoverPlayer,
+  ClubPyramidData,
+} from "./types";
 import { loadTeamRosters } from "./loaders";
 import { extractClubRoot } from "./sisters";
 import { slugify } from "../slugify";
 
-export type PyramidTierKey = "senior" | "u18" | "u16" | "u14_u12" | "other";
-
-export interface PyramidTier {
-  key: PyramidTierKey;
-  title: string;
-  badge: string;
-  badgeColor: string;
-  order: number;
-  teams: ClubSisterTeam[];
-}
-
-export interface CrossoverPlayer {
-  name: string;
-  profileUrl?: string | null;
-  position?: string;
-  teams: string[];
-  seasons: string[];
-}
-
-export interface ClubPyramidData {
-  clubName: string;
-  tiers: PyramidTier[];
-  totalTeams: number;
-  crossoverPlayers: CrossoverPlayer[];
-}
+export type { PyramidTierKey, PyramidTier, CrossoverPlayer, ClubPyramidData };
 
 function categorizeTeamTier(team: ClubSisterTeam): PyramidTierKey {
   const name = (team.teamName || "").toLowerCase();

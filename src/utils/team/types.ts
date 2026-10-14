@@ -71,6 +71,33 @@ export interface TeamDetails {
   clubTeams?: ClubSisterTeam[];
   roster?: Player[];
   volleyboxRoster?: TeamRosterRecord;
+  pyramid?: ClubPyramidData | null;
+}
+
+export type PyramidTierKey = "senior" | "u18" | "u16" | "u14_u12" | "other";
+
+export interface PyramidTier {
+  key: PyramidTierKey;
+  title: string;
+  badge: string;
+  badgeColor: string;
+  order: number;
+  teams: ClubSisterTeam[];
+}
+
+export interface CrossoverPlayer {
+  name: string;
+  profileUrl?: string | null;
+  position?: string;
+  teams: string[];
+  seasons: string[];
+}
+
+export interface ClubPyramidData {
+  clubName: string;
+  tiers: PyramidTier[];
+  totalTeams: number;
+  crossoverPlayers: CrossoverPlayer[];
 }
 
 export interface TeamListItem {

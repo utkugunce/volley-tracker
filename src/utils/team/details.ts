@@ -9,6 +9,7 @@ import { isCityHidden } from "../cityHelper";
 import { extractVolleyboxTeamId, loadAllCityData, loadTeamRosters } from "./loaders";
 import { extractClubRoot, findClubSisterTeams } from "./sisters";
 import { getSlugIndex } from "./slugIndex";
+import { buildClubPyramid } from "./clubPyramid";
 import type { OtherCityTeam, Player, TeamDetails, TeamMatchDetail, TeamStandingContext } from "./types";
 
 export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): TeamDetails | null {
@@ -303,5 +304,6 @@ export function getTeamDetailsBySlug(targetSlug: string, cityFilter?: string): T
     clubTeams,
     roster,
     volleyboxRoster,
+    pyramid: buildClubPyramid({ teamName: officialTeamName, clubTeams }),
   };
 }
