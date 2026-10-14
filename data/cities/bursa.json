@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T12:01:00.502141+03:00",
+  "updated_at": "2026-10-14T17:02:25.319685+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -252,6 +252,17 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+        "team": "Bursa Koç Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "MG Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -262,25 +273,14 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Aktif Nesil Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 3,
-        "team": "Bursa Koç Spor Kulübü U16",
-        "played": 1,
+        "team": "Aktif Nesil Spor Kulübü U16",
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -1444,11 +1444,15 @@
       "match_no": "6",
       "home_team": "Aktif Nesil Spor Kulübü U16",
       "away_team": "Bursa Koç Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "12-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406671",
@@ -2354,5 +2358,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-14T12:06:01.523065"
+  "volleybox_sync_updated_at": "2026-10-14T17:04:35.852946"
 }

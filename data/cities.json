@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-14T12:01:00.502141+03:00",
+  "updated_at": "2026-10-14T17:02:25.319685+00:00",
   "total_cities": 81,
   "active_cities": 33,
-  "total_matches": 1190,
+  "total_matches": 1197,
   "cities": [
     {
       "ilid": "1",
@@ -30,8 +30,8 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (12 Maç Mevcut)",
-      "matches_count": 12,
+      "status": "Aktif (16 Maç Mevcut)",
+      "matches_count": 16,
       "standings_count": 3,
       "data_file": "data/cities/afyon.json"
     },
@@ -62,7 +62,7 @@
       "url": "https://ankara.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (83 Maç Mevcut)",
       "matches_count": 83,
-      "standings_count": 10,
+      "standings_count": 23,
       "data_file": "data/cities/ankara.json"
     },
     {
@@ -330,8 +330,8 @@
       "name": "Mersin",
       "slug": "mersin",
       "url": "https://mersin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (12 Maç Mevcut)",
-      "matches_count": 12,
+      "status": "Aktif (15 Maç Mevcut)",
+      "matches_count": 15,
       "standings_count": 1,
       "data_file": "data/cities/mersin.json"
     },

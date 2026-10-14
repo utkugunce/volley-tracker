@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T12:01:00.502141+03:00",
+  "updated_at": "2026-10-14T17:02:25.319685+00:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -102,6 +102,17 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Yunusemre Belediyespor U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Turgutlu Belediyespor U18",
         "played": 2,
         "won": 2,
@@ -112,7 +123,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Akhisargücü Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -120,17 +131,6 @@
         "points": 4,
         "sets_won": 5,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Yunusemre Belediyespor U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -158,12 +158,12 @@
       {
         "rank": 6,
         "team": "Soma İlçe Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -631,11 +631,15 @@
       "match_no": "5",
       "home_team": "Soma İlçe Spor Kulübü U18",
       "away_team": "Yunusemre Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "15-25",
+        "24-26"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408194",
@@ -702,5 +706,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-14T12:06:13.167582"
+  "volleybox_sync_updated_at": "2026-10-14T17:04:35.856437"
 }
