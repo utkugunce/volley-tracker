@@ -6,6 +6,7 @@ import { applyOverridesToMatches, getOverridesDataSync, type MatchOverride } fro
 import { TeamRostersDatabase } from "@/types/roster";
 import { isCityHidden } from "../cityHelper";
 import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
+import { setActiveDataSource } from "../supabaseData";
 import type { StandingsCityEntry } from "./types";
 
 /** TVF Kadınlar 2. Ligi tarihleri "gg.aa.yyyy" gelir; uygulamanın geri kalanıyla uyumlu ve sıralanabilir ISO biçimine çevirir. */
@@ -56,6 +57,7 @@ export function loadTeamRosters(): TeamRostersDatabase {
     try {
       cachedRosters = JSON.parse(fs.readFileSync(rostersPath, "utf-8"));
       rostersTimestamp = now;
+      setActiveDataSource("json-fallback");
       return cachedRosters || {};
     } catch {
       return {};

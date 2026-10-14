@@ -65,10 +65,11 @@ describe("citySlugs — data/cities.json senkronizasyonu", () => {
     expect([...CITY_SLUGS].sort()).toEqual([...CITY_SLUG_SET].sort());
   });
 
-  it("gizli iller allowlist'te YOK — /nigde, /usak, /kirikkale gerçek 404 dönmeli", () => {
+  it("gizli iller allowlist'te YOK — /usak, /kirikkale gerçek 404 dönmeli", () => {
     for (const hidden of HIDDEN_CITY_SLUGS) {
       expect(CITY_SLUG_SET.has(hidden), `${hidden} allowlist'e sızmış`).toBe(false);
     }
+    expect(CITY_SLUG_SET.has("nigde")).toBe(true);
   });
 
   it("tüm slug'lar URL-güvenli ([a-z0-9-]) ve benzersiz", () => {

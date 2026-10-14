@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T06:02:59.324769+00:00",
+  "updated_at": "2026-10-14T10:47:01.412085+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -3761,18 +3761,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "397118",
+        "url": "https://women.volleybox.net/tr/ab-voleybol-akademi-u16-vakfbank-zmir-u16-c397118",
+        "host_name": "AB Voleybol Akademi U16",
+        "guest_name": "Vakıfbank İzmir U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-09-19",
+        "vb_time": "17:00",
+        "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-19",
+          "vb_time": "17:00",
+          "vb_hall": "Gaziemir Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3800,18 +3807,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "397119",
+        "url": "https://women.volleybox.net/tr/karsyaka-sk-u16-alfa-karsyaka-voleybol-spor-kulubu-u16-c397119",
+        "host_name": "Karşıyaka SK U16",
+        "guest_name": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-09-20",
+        "vb_time": "12:00",
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-20",
+          "vb_time": "12:00",
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3839,18 +3853,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "398203",
+        "url": "https://women.volleybox.net/tr/kzy-spor-kulubu-u16-ab-voleybol-akademi-u16-c398203",
+        "host_name": "KZY Spor Kulübü U16",
+        "guest_name": "AB Voleybol Akademi U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-09-23",
+        "vb_time": "20:00",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-23",
+          "vb_time": "20:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3877,18 +3898,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "398201",
+        "url": "https://women.volleybox.net/tr/vakfbank-zmir-u16-karsyaka-sk-u16-c398201",
+        "host_name": "Vakıfbank İzmir U16",
+        "guest_name": "Karşıyaka SK U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-09-25",
+        "vb_time": "20:00",
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-25",
+          "vb_time": "20:00",
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3915,18 +3943,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "401128",
+        "url": "https://women.volleybox.net/tr/karsyaka-sk-u16-kzy-spor-kulubu-u16-c401128",
+        "host_name": "Karşıyaka SK U16",
+        "guest_name": "KZY Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-09-28",
+        "vb_time": "18:30",
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-09-28",
+          "vb_time": "18:30",
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3953,18 +3988,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "401129",
+        "url": "https://women.volleybox.net/tr/alfa-karsyaka-voleybol-spor-kulubu-u16-vakfbank-zmir-u16-c401129",
+        "host_name": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
+        "guest_name": "Vakıfbank İzmir U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-02",
+        "vb_time": "20:00",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-02",
+          "vb_time": "20:00",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3991,18 +4033,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "402744",
+        "url": "https://women.volleybox.net/tr/ab-voleybol-akademi-u16-karsyaka-sk-u16-c402744",
+        "host_name": "AB Voleybol Akademi U16",
+        "guest_name": "Karşıyaka SK U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-05",
+        "vb_time": "20:00",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-05",
+          "vb_time": "20:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4029,18 +4078,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "402993",
+        "url": "https://women.volleybox.net/tr/kzy-spor-kulubu-u16-alfa-karsyaka-voleybol-spor-kulubu-u16-c402993",
+        "host_name": "KZY Spor Kulübü U16",
+        "guest_name": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-09",
+        "vb_time": "20:00",
+        "vb_hall": "Menemen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-09",
+          "vb_time": "20:00",
+          "vb_hall": "Menemen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4063,18 +4119,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408031",
+        "url": "https://women.volleybox.net/tr/vakfbank-zmir-u16-kzy-spor-kulubu-u16-c408031",
+        "host_name": "Vakıfbank İzmir U16",
+        "guest_name": "KZY Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-15",
+        "vb_time": "18:30",
+        "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "18:30",
+          "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4097,18 +4160,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "408032",
+        "url": "https://women.volleybox.net/tr/alfa-karsyaka-voleybol-spor-kulubu-u16-ab-voleybol-akademi-u16-c408032",
+        "host_name": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
+        "guest_name": "AB Voleybol Akademi U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-16",
+        "vb_time": "20:00",
+        "vb_hall": "Halkapınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "20:00",
+          "vb_hall": "Halkapınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -6804,6 +6874,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 124,
-  "volleybox_sync_updated_at": "2026-10-14T06:04:46.492906"
+  "volleybox_synced_matches": 134,
+  "volleybox_sync_updated_at": "2026-10-14T10:51:56.907014"
 }

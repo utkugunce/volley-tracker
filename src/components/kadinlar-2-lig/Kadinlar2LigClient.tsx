@@ -38,6 +38,8 @@ import {
   getKadinlar2LigRoute,
   parseKadinlar2LigRoute,
 } from "@/utils/kadinlar2LigRoutes";
+import { kadinlar2LigMatchToUnified } from "@/utils/unifiedAdapters";
+import type { UnifiedFixture } from "@/types/unified";
 
 interface Kadinlar2LigClientProps {
   /** Sunucu sayfaları ISR çıktısını küçültmek için sıkıştırılmış veri geçirir. */
@@ -84,9 +86,10 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   }, [data.tum_maclar, todayStr]);
 
   const resultsCount = useMemo(() => {
-    return (data.tum_maclar || []).filter(
-      (m) => m.durum === "BİTTİ" || (m.skor && m.skor.includes("-") && m.skor.trim() !== "-")
-    ).length;
+    return (data.tum_maclar || []).filter((m) => {
+      const u: UnifiedFixture = kadinlar2LigMatchToUnified(m);
+      return u.status === "finished";
+    }).length;
   }, [data.tum_maclar]);
 
   // Spotlight Arama Verileri

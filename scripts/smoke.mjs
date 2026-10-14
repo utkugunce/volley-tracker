@@ -33,7 +33,7 @@ function assert(condition, message) {
 async function runGroupA() {
   console.log("--- GRUP A: Gerçek 404 Denetimi (12 Adres) ---");
   const notFoundPaths = [
-    "/nigde",
+    "/bayburt",
     "/usak",
     "/kirikkale",
     "/definitely-not-a-page-xyz",
@@ -42,7 +42,7 @@ async function runGroupA() {
     "/lig",
     "/sonuclar/xyz-gecersiz",
     "/fikstur/foobar",
-    "/puan-durumu/nigde",
+    "/puan-durumu/bayburt",
     "/kulupler/olmayan-sehir-xyz",
     "/kulupler/olmayan-sehir/kadikoy",
   ];
@@ -71,6 +71,7 @@ async function runGroupB() {
     "/",
     "/istanbul",
     "/ankara",
+    "/nigde",
     "/all",
     "/fikstur",
     "/fikstur/istanbul",

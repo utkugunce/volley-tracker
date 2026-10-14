@@ -9,6 +9,7 @@ import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
 import { getSupabaseFixturesCached } from "@/utils/supabaseFixtures";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
+import { setActiveDataSource } from "@/utils/supabaseData";
 import type { CityInfo, FixturesData, Match, StandingItem } from "@/types/fixture";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
@@ -157,10 +158,13 @@ export async function GET(request: Request) {
     const supabaseData = await getSupabaseFixturesCached(citySlug);
 
     if (supabaseData && Array.isArray(supabaseData.matches) && supabaseData.matches.length > 0) {
+      setActiveDataSource("supabase");
       data = supabaseData;
     } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
+      setActiveDataSource("json-fallback");
       data = getInitialFixtures("all");
     } else {
+      setActiveDataSource("json-fallback");
       if (isCityHidden(citySlug)) {
         return NextResponse.json(
           { error: "Bu il için fikstür bulunamadı." },

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 import { isCityHidden } from "@/utils/cityHelper";
+import { loadCitiesWithFallback } from "@/utils/supabaseData";
 
 /** data/cities.json içindeki il kaydından bu rotanın okuduğu alanlar. */
 interface CityListEntry {
@@ -12,17 +13,17 @@ interface CityListEntry {
 
 export async function GET() {
   try {
+    const fallbackCities = await loadCitiesWithFallback();
     const filePath = path.join(process.cwd(), "data", "cities.json");
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json({
-        total_cities: 0,
-        active_cities: 0,
-        cities: [],
-      });
+    let data: { cities?: CityListEntry[]; updated_at?: string } = { cities: fallbackCities };
+    if (fs.existsSync(filePath)) {
+      try {
+        const fileContent = fs.readFileSync(filePath, "utf-8");
+        data = JSON.parse(fileContent);
+      } catch {
+        // fallbackCities kullanılır
+      }
     }
-
-    const fileContent = fs.readFileSync(filePath, "utf-8");
-    const data = JSON.parse(fileContent);
 
     // Canlıda gizlenen illeri filtrele
     const filteredCities = (data.cities || []).filter((c: CityListEntry) => !isCityHidden(c.slug));

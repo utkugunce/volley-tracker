@@ -71,7 +71,8 @@ describe("Route Sync & City URL Mapping", () => {
       expect(isValidCitySlug("ankara")).toBe(true);
       expect(isValidCitySlug("canakkale")).toBe(true);
       expect(isValidCitySlug("denizli")).toBe(true);
-      expect(isValidCitySlug("nigde")).toBe(false);
+      expect(isValidCitySlug("nigde")).toBe(true);
+      expect(isValidCitySlug("bayburt")).toBe(false);
       expect(isValidCitySlug("kirikkale")).toBe(false);
       expect(isValidCitySlug("usak")).toBe(false);
       expect(isValidCitySlug("hayali-sehir-xyz-123")).toBe(false);

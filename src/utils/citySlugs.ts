@@ -10,7 +10,7 @@
  * bir il eklenir de bu dosya yeniden üretilmezse test kırılır.
  *
  * Gizli iller (src/utils/hiddenCities.ts) listeye DAHİL DEĞİLDİR; böylece
- * /nigde, /usak, /kirikkale gerçek bir HTTP 404 döner.
+ * /usak, /kirikkale gerçek bir HTTP 404 döner.
  */
 
 /** data/cities.json'daki 81 ilden gizli olmayanların slug'ları (alfabetik). */
@@ -23,13 +23,11 @@ export const CITY_SLUGS: readonly string[] = [
   "amasya",
   "ankara",
   "antalya",
-  "ardahan",
   "artvin",
   "aydin",
   "balikesir",
   "bartin",
   "batman",
-  "bayburt",
   "bilecik",
   "bingol",
   "bitlis",
@@ -75,6 +73,7 @@ export const CITY_SLUGS: readonly string[] = [
   "mugla",
   "mus",
   "nevsehir",
+  "nigde",
   "ordu",
   "osmaniye",
   "rize",

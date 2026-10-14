@@ -27,6 +27,8 @@ import { useFavorites } from "@/utils/useFavorites";
 import { PrintScheduleButton } from "@/components/PrintScheduleButton";
 import { isMatchOverdueForScore } from "@/utils/calendar";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
+import { kadinlar2LigMatchToUnified } from "@/utils/unifiedAdapters";
+import type { UnifiedFixture } from "@/types/unified";
 
 interface Kadinlar2LigFixturesProps {
   group?: Kadinlar2LigGroup;
@@ -93,7 +95,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     return Array.from(
       new Set(
         matches
-          .map((match) => convertK2MatchToMatch(match).date)
+          .map((match) => kadinlar2LigMatchToUnified(match).date)
           .filter((date) => date && date !== "TBD")
       )
     ).sort();
@@ -107,7 +109,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       selectedDate === "all"
         ? scopedMatches
         : scopedMatches.filter(
-            (match) => convertK2MatchToMatch(match).date === selectedDate
+            (match) => kadinlar2LigMatchToUnified(match).date === selectedDate
           );
     const finished = matchesForDate.filter(
       (match) =>

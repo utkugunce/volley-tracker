@@ -2,9 +2,18 @@ import { Kadinlar2LigMatch, Kadinlar2LigVolleybox } from "@/types/kadinlar2Lig";
 import { Match, VolleyboxMatchInfo } from "@/types/fixture";
 import { getVolleyboxTeamName } from "@/utils/volleybox";
 import { compareMatchTimes } from "@/utils/calendar";
+import { kadinlar2LigMatchToUnified } from "./unifiedAdapters";
+import type { UnifiedFixture } from "@/types/unified";
 
 /** Altyapı eşleme dosyasındaki (volleybox-mappings.json) kategori adı. */
 export const K2_CATEGORY = "Kadınlar 2. Ligi";
+
+/**
+ * Kadınlar 2. Ligi maçını standart UnifiedFixture şemasına dönüştürür.
+ */
+export function convertK2MatchToUnified(m: Kadinlar2LigMatch): UnifiedFixture {
+  return kadinlar2LigMatchToUnified(m);
+}
 
 /**
  * Kadınlar 2. Ligi takım adını Altyapı ile aynı mekanizmayla (volleybox-mappings.json →
@@ -91,14 +100,17 @@ export function isKadinlar2LigMatchSynced(m: Kadinlar2LigMatch): boolean {
  * tam uyumlu standart Match tipine dönüştürür.
  */
 export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
-  const setScores = Array.from(
-    m.set_sonuclari?.matchAll(/\d{1,2}\s*[-:]\s*\d{1,2}/g) || [],
-    ([setScore]) => setScore.trim().replace(":", "-")
-  );
+  const unified = kadinlar2LigMatchToUnified(m);
+  const setScores = (unified.set_scores && unified.set_scores.length > 0)
+    ? unified.set_scores
+    : Array.from(
+        m.set_sonuclari?.matchAll(/\d{1,2}\s*[-:]\s*\d{1,2}/g) || [],
+        ([setScore]) => setScore.trim().replace(":", "-")
+      );
 
-  let homeScore: number | null = null;
-  let awayScore: number | null = null;
-  if (m.skor && m.skor.includes("-") && m.skor !== "- : -") {
+  let homeScore: number | null = unified.home_score ?? null;
+  let awayScore: number | null = unified.away_score ?? null;
+  if (homeScore === null && awayScore === null && m.skor && m.skor.includes("-") && m.skor !== "- : -") {
     const parts = m.skor.split("-").map((s) => parseInt(s.trim(), 10));
     if (!isNaN(parts[0]) && !isNaN(parts[1])) {
       homeScore = parts[0];

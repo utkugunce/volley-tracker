@@ -33,7 +33,7 @@ describe("proxy — şehir bekçisi gerçek 404 döner", () => {
     "/definitely-not-a-page-xyz",
     "/foobar-invalid-city",
     "/takim",
-    "/nigde",
+    "/bayburt",
     "/usak",
     "/kirikkale",
     "/sonuclar/xyz-gecersiz",
@@ -51,7 +51,7 @@ describe("proxy — şehir bekçisi gerçek 404 döner", () => {
   );
 
   it("rewrite hedefi sorgu dizesi taşımaz (cache anahtarı kirlenmez)", async () => {
-    const response = await proxy(req("/nigde?utm_source=x"));
+    const response = await proxy(req("/bayburt?utm_source=x"));
     const rewrite = response.headers.get("x-middleware-rewrite") ?? "";
     expect(response.status).toBe(404);
     expect(rewrite).not.toContain("utm_source");
@@ -62,6 +62,7 @@ describe("proxy — geçerli adresler dokunulmadan geçer", () => {
   const passedPaths = [
     "/",
     "/istanbul",
+    "/nigde",
     "/all",
     "/fikstur",
     "/fikstur/istanbul",

@@ -5,6 +5,8 @@ import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "@/utils/scrapeTrigger";
 
+import { loadKadinlar2LigWithFallback } from "@/utils/supabaseData";
+
 const refreshLimiter = new RateLimiter({
   name: "kadinlar-2-ligi-refresh",
   windowMs: 120 * 1000,
@@ -17,8 +19,6 @@ export async function GET(request: Request) {
     const refresh = searchParams.get("refresh");
     const groupParam = searchParams.get("grup");
     const searchParam = searchParams.get("q")?.toLowerCase();
-
-    const dataPath = path.join(process.cwd(), "data", "kadinlar_2_lig.json");
 
     if (refresh === "1" || refresh === "true") {
       const authError = requireConfiguredSecret(request, "ADMIN_TOKEN");
@@ -50,15 +50,15 @@ export async function GET(request: Request) {
       }
     }
 
-    if (!fs.existsSync(dataPath)) {
+    let data;
+    try {
+      data = await loadKadinlar2LigWithFallback();
+    } catch {
       return NextResponse.json(
         { error: "Kadınlar 2. Ligi verisi henüz oluşturulmamış." },
         { status: 404 }
       );
     }
-
-    const raw = fs.readFileSync(dataPath, "utf-8");
-    const data = JSON.parse(raw);
 
     // Filter by group if requested
     if (groupParam) {

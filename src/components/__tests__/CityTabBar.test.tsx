@@ -24,13 +24,13 @@ const mockCities: CityInfo[] = [
     standings_count: 9,
   },
   {
-    ilid: "51",
-    name: "Niğde",
-    slug: "nigde",
-    url: "https://nigde.voleyboliltemsilciligi.com",
-    status: "Aktif",
-    matches_count: 4,
-    standings_count: 1,
+    ilid: "71",
+    name: "Kırıkkale",
+    slug: "kirikkale",
+    url: "https://kirikkale.voleyboliltemsilciligi.com",
+    status: "Devre Dışı",
+    matches_count: 0,
+    standings_count: 0,
   },
 ];
 
@@ -50,7 +50,7 @@ describe("CityTabBar Component", () => {
     expect(screen.getByText("İstanbul")).toBeInTheDocument();
     expect(screen.getByText("İzmir")).toBeInTheDocument();
     expect(screen.getByText("Bursa")).toBeInTheDocument();
-    expect(screen.queryByText("Niğde")).not.toBeInTheDocument();
+    expect(screen.queryByText("Kırıkkale")).not.toBeInTheDocument();
   });
 
   it("calls onSelectCity when a tab is clicked", () => {

@@ -63,7 +63,7 @@ ENV/
 # OS
 Thumbs.db
 
-data/raw/*.html
+data/raw/
 data/.volleybox_names_cache.json
 .vercel
 scratch/

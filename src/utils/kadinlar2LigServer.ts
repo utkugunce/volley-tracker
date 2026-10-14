@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { Kadinlar2LigData } from "@/types/kadinlar2Lig";
+import { loadKadinlar2LigWithFallback } from "./supabaseData";
 
 /**
  * Sunucu tarafında Kadınlar 2. Ligi JSON verisini diskten okur.
@@ -15,4 +16,11 @@ export function getKadinlar2LigData(): Kadinlar2LigData {
   }
   const raw = fs.readFileSync(filePath, "utf-8");
   return JSON.parse(raw);
+}
+
+/**
+ * Önce Supabase'den önbellekli okur; erişilemezse data/kadinlar_2_lig.json disk yedeğine düşer.
+ */
+export async function getKadinlar2LigDataAsync(): Promise<Kadinlar2LigData> {
+  return loadKadinlar2LigWithFallback();
 }

@@ -127,3 +127,60 @@ export async function getSupabaseTeamRostersCached(): Promise<TeamRostersDatabas
 
   return null; // Kadro tablosu henüz yoksa JSON yedeğine düş
 }
+
+/**
+ * Şehir listesini önce Supabase'den (bellek içi önbellekle) okur,
+ * erişilemezse veya boş dönerse data/cities.json disk yedeğine düşer.
+ */
+export async function loadCitiesWithFallback(): Promise<CityEntry[]> {
+  try {
+    const fromSupabase = await getSupabaseCitiesCached();
+    if (fromSupabase && fromSupabase.length > 0) {
+      setActiveDataSource("supabase");
+      return fromSupabase;
+    }
+  } catch (err) {
+    console.warn("Supabase cities fallback:", err);
+  }
+  setActiveDataSource("json-fallback");
+  const { getAllCitiesList } = await import("./cityHelper");
+  return getAllCitiesList();
+}
+
+/**
+ * Kadınlar 2. Ligi verisini önce Supabase'den sorgular,
+ * bulunamazsa veya boşsa data/kadinlar_2_lig.json disk yedeğine düşer.
+ */
+export async function loadKadinlar2LigWithFallback(): Promise<Kadinlar2LigData> {
+  try {
+    const fromSupabase = await getSupabaseKadinlar2LigCached();
+    if (fromSupabase) {
+      setActiveDataSource("supabase");
+      return fromSupabase;
+    }
+  } catch (err) {
+    console.warn("Supabase K2 fallback:", err);
+  }
+  setActiveDataSource("json-fallback");
+  const { getKadinlar2LigData } = await import("./kadinlar2LigServer");
+  return getKadinlar2LigData();
+}
+
+/**
+ * Takım kadrolarını önce Supabase'den sorgular,
+ * bulunamazsa data/team-rosters.json disk yedeğine düşer.
+ */
+export async function loadTeamRostersWithFallback(): Promise<TeamRostersDatabase> {
+  try {
+    const fromSupabase = await getSupabaseTeamRostersCached();
+    if (fromSupabase && Object.keys(fromSupabase).length > 0) {
+      setActiveDataSource("supabase");
+      return fromSupabase;
+    }
+  } catch (err) {
+    console.warn("Supabase rosters fallback:", err);
+  }
+  setActiveDataSource("json-fallback");
+  const { loadTeamRosters } = await import("./team/loaders");
+  return loadTeamRosters();
+}

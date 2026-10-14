@@ -34,7 +34,7 @@ TARGET = BASE_DIR / "src" / "utils" / "citySlugs.ts"
 
 # src/utils/hiddenCities.ts ile aynı liste. Oradan import edilemez çünkü bu
 # script Node değil Python; iki yerin senkron kaldığını citySlugs.test.ts doğrular.
-HIDDEN_CITY_SLUGS = {"nigde", "kirikkale", "usak"}
+HIDDEN_CITY_SLUGS = {"kirikkale", "usak", "bayburt", "ardahan"}
 
 HEADER = '''/**
  * BU DOSYA OTOMATİK ÜRETİLİR — ELLE DÜZENLEMEYİN.
@@ -48,7 +48,7 @@ HEADER = '''/**
  * bir il eklenir de bu dosya yeniden üretilmezse test kırılır.
  *
  * Gizli iller (src/utils/hiddenCities.ts) listeye DAHİL DEĞİLDİR; böylece
- * /nigde, /usak, /kirikkale gerçek bir HTTP 404 döner.
+ * /usak, /kirikkale gerçek bir HTTP 404 döner.
  */
 
 /** data/cities.json'daki 81 ilden gizli olmayanların slug'ları (alfabetik). */

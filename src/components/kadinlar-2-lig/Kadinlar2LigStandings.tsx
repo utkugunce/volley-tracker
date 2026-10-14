@@ -10,6 +10,8 @@ import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { getKadinlar2LigTeamName, getKadinlar2LigTeamNameVariants, K2_CATEGORY } from "@/utils/kadinlar2LigConverter";
+import { kadinlar2LigTeamToUnified } from "@/utils/unifiedAdapters";
+import type { UnifiedStanding } from "@/types/unified";
 
 interface Kadinlar2LigStandingsProps {
   group: Kadinlar2LigGroup;
@@ -26,6 +28,10 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const teams = useMemo(() => group?.puan_durumu || [], [group?.puan_durumu]);
+  const unifiedStandings = useMemo<UnifiedStanding[]>(
+    () => teams.map(kadinlar2LigTeamToUnified),
+    [teams]
+  );
   const filteredTeams = useMemo(() => {
     return teams.filter((t) => {
       const displayName = getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name);

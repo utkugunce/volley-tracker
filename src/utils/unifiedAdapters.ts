@@ -52,9 +52,10 @@ export function kadinlar2LigMatchToUnified(m: Kadinlar2LigMatch): UnifiedFixture
     }
   }
 
-  const set_scores = m.set_sonuclari
-    ? m.set_sonuclari.split(",").map((s) => s.trim()).filter(Boolean)
-    : [];
+  const set_scores = Array.from(
+    m.set_sonuclari?.matchAll(/\d{1,2}\s*[-:]\s*\d{1,2}/g) || [],
+    ([setScore]) => setScore.trim().replace(":", "-")
+  );
 
   return {
     id: m.id || (m.mac_no ? `k2-${m.mac_no}` : `k2-${m.tarih}-${m.takim_a}-${m.takim_b}`),
@@ -124,6 +125,35 @@ export function kadinlar2LigTeamToUnified(t: Kadinlar2LigTeam): UnifiedStanding 
     point_ratio: t.spav,
     volleybox_url: t.volleybox_url,
     logo: t.logo,
+  };
+}
+
+import type { SultanlarMatch } from "@/utils/sultanlarIcs";
+
+/**
+ * Sultanlar Ligi maçını standart UnifiedFixture formatına dönüştürür.
+ */
+export function sultanlarMatchToUnified(m: SultanlarMatch): UnifiedFixture {
+  const isFinished = m.homeSets !== null && m.awaySets !== null;
+  return {
+    id: `${m.season}-${m.matchNo}`,
+    league: "sultanlar_ligi",
+    home_team: m.homeTeam,
+    away_team: m.awayTeam,
+    date: m.date,
+    time: m.time,
+    hall: m.venue,
+    city: m.city,
+    category: "Sultanlar Ligi",
+    gender: "Kadın",
+    match_no: String(m.matchNo),
+    score: isFinished ? `${m.homeSets} - ${m.awaySets}` : null,
+    home_score: m.homeSets,
+    away_score: m.awaySets,
+    set_scores: m.setScores
+      ? m.setScores.split(",").map((s) => s.trim()).filter(Boolean)
+      : [],
+    status: isFinished ? "finished" : "upcoming",
   };
 }
 
