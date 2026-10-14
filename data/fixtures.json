@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T12:01:00.502141+03:00",
+  "updated_at": "2026-10-14T23:51:58.471340+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1906,24 +1906,44 @@
       },
       {
         "rank": 4,
-        "team": "Yeşilyurt Spor Kulübü U16",
-        "played": 2,
+        "team": "Eyüpsultan Belediyesi SK - A U16",
+        "played": 3,
         "won": 2,
-        "lost": 0,
-        "points": 5,
+        "lost": 1,
+        "points": 6,
         "sets_won": 6,
-        "sets_lost": 2,
-        "set_ratio": "3.000",
-        "points_won": 178,
-        "points_lost": 164,
-        "point_ratio": "1.085",
+        "sets_lost": 3,
+        "set_ratio": "2.000",
+        "points_won": 201,
+        "points_lost": 171,
+        "point_ratio": "1.175",
         "form": [
+          "L",
           "W",
           "W"
         ]
       },
       {
         "rank": 5,
+        "team": "Yeşilyurt Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 5,
+        "set_ratio": "1.200",
+        "points_won": 226,
+        "points_lost": 239,
+        "point_ratio": "0.946",
+        "form": [
+          "W",
+          "W",
+          "L"
+        ]
+      },
+      {
+        "rank": 6,
         "team": "Bizimkent Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -1935,24 +1955,6 @@
         "points_won": 185,
         "points_lost": 146,
         "point_ratio": "1.267",
-        "form": [
-          "L",
-          "W"
-        ]
-      },
-      {
-        "rank": 6,
-        "team": "Eyüpsultan Belediyesi SK - A U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "set_ratio": "1.000",
-        "points_won": 126,
-        "points_lost": 123,
-        "point_ratio": "1.024",
         "form": [
           "L",
           "W"
@@ -2093,6 +2095,25 @@
       },
       {
         "rank": 4,
+        "team": "Türk Hava Yolları SK - B U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 3,
+        "set_ratio": "2.333",
+        "points_won": 231,
+        "points_lost": 202,
+        "point_ratio": "1.144",
+        "form": [
+          "W",
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
         "team": "İBB Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -2111,7 +2132,7 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Marmara Akademi Spor Kulübü U16",
         "played": 3,
         "won": 1,
@@ -2127,24 +2148,6 @@
           "L",
           "L",
           "W"
-        ]
-      },
-      {
-        "rank": 6,
-        "team": "Türk Hava Yolları SK - B U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 3,
-        "set_ratio": "1.333",
-        "points_won": 154,
-        "points_lost": 138,
-        "point_ratio": "1.116",
-        "form": [
-          "W",
-          "L"
         ]
       },
       {
@@ -2168,17 +2171,18 @@
       {
         "rank": 8,
         "team": "Ünsped Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 3,
-        "set_ratio": "0.333",
-        "points_won": 85,
-        "points_lost": 90,
-        "point_ratio": "0.944",
+        "sets_lost": 6,
+        "set_ratio": "0.167",
+        "points_won": 149,
+        "points_lost": 167,
+        "point_ratio": "0.892",
         "form": [
+          "L",
           "L"
         ]
       },
@@ -6509,11 +6513,15 @@
       "match_no": "14",
       "home_team": "Türk Hava Yolları SK - B U16",
       "away_team": "Ünsped Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-19",
+        "27-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408021",
@@ -6632,11 +6640,15 @@
       "match_no": "14",
       "home_team": "Yeşilyurt Spor Kulübü U16",
       "away_team": "Eyüpsultan Belediyesi SK - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "22-25",
+        "10-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408015",
@@ -7113,5 +7125,5 @@
     }
   ],
   "volleybox_synced_matches": 107,
-  "volleybox_sync_updated_at": "2026-10-14T12:05:58.014675"
+  "volleybox_sync_updated_at": "2026-10-14T23:53:53.537605"
 }

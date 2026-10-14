@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T12:01:00.502141+03:00",
+  "updated_at": "2026-10-14T23:51:58.471340+00:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -329,7 +329,7 @@
       },
       {
         "rank": 4,
-        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
+        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16 - A",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -340,7 +340,7 @@
       },
       {
         "rank": 5,
-        "team": "Edremit Belediyesi Gürespor Kulübü U16",
+        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16 - B",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -867,7 +867,7 @@
       "gender": "Kız",
       "group": "C Grubu ( Körfez )",
       "match_no": "3",
-      "home_team": "Edremit Belediyesi Gürespor Kulübü U16",
+      "home_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
       "away_team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
       "score": "0 - 3",
       "home_score": 0,
@@ -954,7 +954,7 @@
       "group": "C Grubu ( Körfez )",
       "match_no": "5",
       "home_team": "Ayvalıkgücü Belediye SK - B U16",
-      "away_team": "Edremit Belediyesi Gürespor Kulübü U16",
+      "away_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1339,5 +1339,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-10-14T12:06:01.145406"
+  "volleybox_sync_updated_at": "2026-10-14T23:53:53.598114"
 }
