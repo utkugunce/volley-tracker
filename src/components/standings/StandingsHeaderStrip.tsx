@@ -13,10 +13,18 @@ interface StandingsHeaderStripProps {
   activeContext: ParsedStandingContext | undefined;
   city?: string;
   items: StandingItem[];
+  showSimulator?: boolean;
+  onToggleSimulator?: () => void;
 }
 
 /** Başlık Şeridi: lig / grup adı, CSV indirme düğmesi ve takım sayısı. */
-export function StandingsHeaderStrip({ activeContext, city, items }: StandingsHeaderStripProps) {
+export function StandingsHeaderStrip({
+  activeContext,
+  city,
+  items,
+  showSimulator,
+  onToggleSimulator,
+}: StandingsHeaderStripProps) {
   return (
     <div className="bg-surface text-ink px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-line">
       <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
@@ -34,7 +42,18 @@ export function StandingsHeaderStrip({ activeContext, city, items }: StandingsHe
             : ""}
         </h2>
       </div>
-      <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+      <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+        {onToggleSimulator && (
+          <Button
+            variant={showSimulator ? "primary" : "secondary"}
+            size="sm"
+            onClick={onToggleSimulator}
+            className="cursor-pointer"
+            title="Kalan maçlar için puan simülasyonunu aç / kapat"
+          >
+            <span>{showSimulator ? "Simülatörü Kapat" : "Puan Simülatörü"}</span>
+          </Button>
+        )}
         {items.length > 0 && (
           <Button
             variant="secondary"
@@ -50,7 +69,7 @@ export function StandingsHeaderStrip({ activeContext, city, items }: StandingsHe
             aria-label="CSV İndir: puan durumunu CSV olarak indir"
           >
             <Download size={12} className="text-done mr-1" />
-            <span>CSV İndir</span>
+            <span className="hidden sm:inline">CSV İndir</span>
           </Button>
         )}
         <Badge tone="neutral" size="sm">

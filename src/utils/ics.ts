@@ -112,10 +112,14 @@ export function generateSeasonIcs(matches: Match[], calendarName: string): strin
   return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//volley-tracker//TR",
+    "PRODID:-//altyapivoleybol.com.tr//TR",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     `X-WR-CALNAME:${escapeIcsText(calendarName)}`,
+    `X-WR-CALDESC:${escapeIcsText(`${calendarName} - Canlı Maç Takvimi (Altyapı Voleybol)`)}`,
+    "X-WR-TIMEZONE:Europe/Istanbul",
+    "REFRESH-INTERVAL;VALUE=DURATION:PT1H",
+    "X-PUBLISHED-TTL:PT1H",
     ...events,
     "END:VCALENDAR",
   ].join("\r\n");

@@ -43,6 +43,7 @@ const TeamRosterView = dynamic(() => import("@/components/TeamRosterView").then(
   loading: () => <SkeletonCard lines={4} />,
 });
 import { trLower } from "@/utils/turkishLocale";
+import { ClubPyramidView } from "@/components/team/ClubPyramidView";
 import { getLeagueStandingsRoute, getLeagueFixtureRoute } from "@/utils/leagueRoutes";
 import { buildFormSeries, computeOpponentRecords, getTeamHalls } from "@/utils/teamStats";
 import { TeamFormChart } from "@/components/team/TeamFormChart";
@@ -50,6 +51,7 @@ import { TeamOpponentRecords } from "@/components/team/TeamOpponentRecords";
 import { TeamHallsCard } from "@/components/team/TeamHallsCard";
 import { T } from "@/components/T";
 import { SettingsControls } from "@/components/SettingsControls";
+import { CalendarSubscribeModal } from "@/components/takvim/CalendarSubscribeModal";
 
 // Marka kimliği: zemin Fileönü yüzeyi kalır; kulüp rengi yalnız ince çerçeve + düşük opaklıklı
 // dekoratif ışıma (metin içermez) ile verilir. Logo, kontrastlı açık plakada gösterilir (`logoPlate`).
@@ -139,6 +141,7 @@ interface TeamDetailClientProps {
 export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsSlot, clubSlot }) => {
   const [matchFilter, setMatchFilter] = useState<"all" | "finished" | "upcoming">("all");
   const [downloadingSeason, setDownloadingSeason] = useState(false);
+  const [showCalendarModal, setShowCalendarModal] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const isFav = isFavorite(team.teamName);
   const is2LigTeam = team.categories.some((c) => c.includes("Kadınlar 2. Ligi"));
@@ -246,13 +249,12 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
               <Button
                 variant="primary"
                 size="sm"
-                onClick={handleDownloadSeasonIcs}
-                loading={downloadingSeason}
+                onClick={() => setShowCalendarModal(true)}
                 className="font-bold cursor-pointer"
-                title="Tüm sezon maçlarını iCalendar (.ics) formatında indir"
+                title="Tüm sezon maçlarını Apple, Google veya Outlook takviminize ekleyin"
               >
-                <Download size={13} className="mr-1" />
-                <span className="hidden sm:inline">{downloadingSeason ? "İndiriliyor..." : "Sezonu Takvime Ekle"}</span>
+                <CalendarPlus size={13} className="mr-1 text-amber-300" />
+                <span className="hidden sm:inline">Takvime Abone Ol</span>
                 <span className="sm:hidden">Takvim</span>
               </Button>
             )}
@@ -317,63 +319,8 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                 </p>
               )}
 
-              {/* KULÜP TAKIMLARI (U18, U16, B, C vb.) */}
-              {team.clubTeams && team.clubTeams.length > 1 && (
-                <div className="mt-4 pt-3.5 border-t border-slate-800/80 space-y-2">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300">
-                    <Layers size={14} className="text-ink-2" />
-                    <span>Kulübün Diğer Takımları & Yaş Grupları ({team.clubTeams.length}):</span>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-2">
-                    {team.clubTeams.map((ct) =>
-                      ct.isCurrent ? (
-                        <div
-                          key={ct.slug + ct.city}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold bg-selected-strong text-white shadow-glow-selected"
-                          title="Şu an bu takımı görüntülüyorsunuz"
-                        >
-                          <span>{ct.teamName}</span>
-                          {ct.ageCategory && (
-                            <span className="bg-black/30 text-white text-[10px] px-1.5 py-0.2 rounded-md font-mono font-bold">
-                              {ct.ageCategory}
-                            </span>
-                          )}
-                          {ct.teamBranch && (
-                            <span className="bg-canvas/40 text-white text-[10px] px-1.5 py-0.2 rounded-md font-bold">
-                              {ct.teamBranch}
-                            </span>
-                          )}
-                          <span className="text-[10px] bg-canvas/40 px-1 rounded text-white font-medium">Mevcut</span>
-                        </div>
-                      ) : (
-                        <Link prefetch={false}
-                          key={ct.slug + ct.city}
-                          href={ct.path}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold glass-panel text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all shadow-xs active:scale-95 cursor-pointer"
-                          title={`${ct.teamName} detay sayfasını aç`}
-                        >
-                          <span>{ct.teamName}</span>
-                          {ct.ageCategory && (
-                            <span className="bg-sky-500/20 text-sky-300 border border-sky-500/40 text-[10px] px-1.5 py-0.2 rounded-md font-mono font-bold">
-                              {ct.ageCategory}
-                            </span>
-                          )}
-                          {ct.teamBranch && (
-                            <span className="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] px-1.5 py-0.2 rounded-md font-bold">
-                              {ct.teamBranch}
-                            </span>
-                          )}
-                          {ct.city !== team.city && (
-                            <span className="text-[10px] text-slate-400 font-normal">
-                              ({ct.city})
-                            </span>
-                          )}
-                        </Link>
-                      )
-                    )}
-                  </div>
-                </div>
-              )}
+              {/* KULÜP ALTYAPI PİRAMİDİ (Senior -> U18 -> U16 -> U14/U12 & Kadro Geçişleri) */}
+              <ClubPyramidView team={team} />
 
               {team.otherCities && team.otherCities.length > 0 && (
                 <div className="mt-3 pt-2.5 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
@@ -785,6 +732,16 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
           city={team.cities.length === 1 ? team.cities[0] : undefined}
         />
       </main>
+
+      {/* Canlı Takvim Abonelik Modalı */}
+      <CalendarSubscribeModal
+        teamName={team.teamName}
+        teamSlug={team.slug}
+        city={team.city}
+        isOpen={showCalendarModal}
+        onClose={() => setShowCalendarModal(false)}
+        onDownloadIcs={handleDownloadSeasonIcs}
+      />
     </div>
   );
 };

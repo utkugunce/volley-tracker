@@ -191,4 +191,22 @@ describe("gerçek veri (data/cities + Kadınlar 2. Ligi)", () => {
     const sumCats = a.categories.reduce((s, c) => s + a.lists[c].totals.teams, 0);
     expect(sumCats).toBe(all.totals.teams);
   });
+
+  it("haftanın panoraması: tie-break maçları, namağlup seriler ve yoğun salonları üretir", () => {
+    const all = a.lists.all;
+    expect(all.thrillingMatches.length).toBeGreaterThan(0);
+    for (const m of all.thrillingMatches) {
+      expect(["3 - 2", "2 - 3", "3-2", "2-3"]).toContain(m.score);
+      expect(m.totalPoints).toBeGreaterThan(0);
+    }
+
+    expect(all.busiestHalls.length).toBeGreaterThan(0);
+    for (const h of all.busiestHalls) {
+      expect(h.name.length).toBeGreaterThan(0);
+      expect(h.totalMatches).toBeGreaterThan(0);
+      expect(h.navigationUrl).toContain("google.com/maps");
+    }
+
+    expect(Array.isArray(all.cleanSweepTeams)).toBe(true);
+  });
 });

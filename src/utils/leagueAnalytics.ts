@@ -1,9 +1,11 @@
 import type { Match, StandingItem } from "@/types/fixture";
 import { slugify } from "./slugify";
 import { normalizeCitySlug } from "./volleybox";
+import { getHallNavigationUrl, getHallDetails } from "./halls";
 import {
   computeRecentForm,
   computeTeamStats,
+  parseSetScores,
   type RecentForm,
   type StatsMatchInput,
   type TeamStatsSummary,
@@ -100,12 +102,38 @@ export interface PlayoffGroupSummary {
   openCount: number;
 }
 
+export interface ThrillingMatch {
+  id: string;
+  homeTeam: string;
+  awayTeam: string;
+  date: string;
+  time: string;
+  hall: string;
+  city: string;
+  category: string;
+  score: string;
+  setScores: string[];
+  totalPoints: number;
+}
+
+export interface BusiestHall {
+  name: string;
+  city: string;
+  totalMatches: number;
+  upcomingCount: number;
+  navigationUrl: string;
+  metroTips?: string;
+}
+
 export interface LeagueLists {
   longestWinStreaks: MetricEntry[];
   bestSetRatio: MetricEntry[];
   bestForm: MetricEntry[];
   topScoring: MetricEntry[];
   topConceding: MetricEntry[];
+  cleanSweepTeams: MetricEntry[];
+  thrillingMatches: ThrillingMatch[];
+  busiestHalls: BusiestHall[];
   playoff: {
     groupsTotal: number;
     groupsCalculated: number;
@@ -188,7 +216,12 @@ function isActiveWinStreak(t: LeagueTeamEntry): boolean {
   return t.stats.streak?.type === "W" && t.stats.streak.length === t.stats.longestWinStreak;
 }
 
-function buildLists(teams: LeagueTeamEntry[], groups: LeagueGroupAnalysis[], topN: number): LeagueLists {
+function buildLists(
+  teams: LeagueTeamEntry[],
+  groups: LeagueGroupAnalysis[],
+  topN: number,
+  matches: Match[] = []
+): LeagueLists {
   const longestWinStreaks = teams
     .filter((t) => t.stats.longestWinStreak >= MIN_WIN_STREAK)
     .sort(
@@ -253,6 +286,81 @@ function buildLists(teams: LeagueTeamEntry[], groups: LeagueGroupAnalysis[], top
     .slice(0, topN)
     .map((t) => metric(t, t.stats.points?.avgAgainstPerSet ?? null, pointExtra(t)));
 
+  // Set Vermeyenler / Namağlup Seriler
+  const cleanSweepTeams = teams
+    .filter((t) => t.stats.played >= 2 && t.stats.setsAgainst === 0 && t.stats.setsFor > 0)
+    .sort((a, b) => b.stats.setsFor - a.stats.setsFor || b.stats.played - a.stats.played || byName(a, b))
+    .slice(0, topN)
+    .map((t) => metric(t, t.stats.setsFor, { setsAgainst: 0, wins: t.stats.wins }));
+
+  // En Çekişmeli Maçlar (5 Setlik Tie-Break Maçları)
+  const tiebreakMatches = (matches || []).filter((m) => {
+    if (m.status !== "finished") return false;
+    const hs = m.home_score;
+    const as = m.away_score;
+    if (typeof hs === "number" && typeof as === "number") {
+      return (hs === 3 && as === 2) || (hs === 2 && as === 3);
+    }
+    const sc = (m.score || "").trim();
+    return sc === "3 - 2" || sc === "2 - 3" || sc === "3-2" || sc === "2-3";
+  });
+
+  const thrillingMatches: ThrillingMatch[] = tiebreakMatches
+    .map((m) => {
+      const sets = parseSetScores(m.set_scores);
+      const totalPoints = sets.reduce((sum, [p1, p2]) => sum + p1 + p2, 0);
+      return {
+        id: m.id,
+        homeTeam: m.home_team,
+        awayTeam: m.away_team,
+        date: m.date,
+        time: m.time,
+        hall: m.hall,
+        city: m.city || "İstanbul",
+        category: m.category,
+        score: m.score || `${m.home_score} - ${m.away_score}`,
+        setScores: m.set_scores || [],
+        totalPoints,
+      };
+    })
+    .sort((a, b) => b.totalPoints - a.totalPoints || b.date.localeCompare(a.date))
+    .slice(0, 8);
+
+  // En Yoğun Salonlar
+  const hallCounts = new Map<string, { name: string; city: string; total: number; upcoming: number }>();
+  const EMPTY_NAMES = new Set(["", "tbd", "-", "belirtilmemiş", "belirtilmemis"]);
+
+  for (const m of matches || []) {
+    const rawName = (m.hall || "").trim();
+    if (EMPTY_NAMES.has(rawName.toLowerCase())) continue;
+    const key = slugify(rawName);
+    if (!key) continue;
+    const existing = hallCounts.get(key) || {
+      name: rawName,
+      city: m.city || "İstanbul",
+      total: 0,
+      upcoming: 0,
+    };
+    existing.total += 1;
+    if (m.status !== "finished") existing.upcoming += 1;
+    hallCounts.set(key, existing);
+  }
+
+  const busiestHalls: BusiestHall[] = Array.from(hallCounts.values())
+    .sort((a, b) => b.total - a.total)
+    .slice(0, 6)
+    .map((h) => {
+      const details = getHallDetails(h.name);
+      return {
+        name: details?.name || h.name,
+        city: h.city,
+        totalMatches: h.total,
+        upcomingCount: h.upcoming,
+        navigationUrl: getHallNavigationUrl(h.name, h.city),
+        metroTips: details?.metroTips,
+      };
+    });
+
   const playoffGroups: PlayoffGroupSummary[] = [];
   let calculated = 0;
   for (const g of groups) {
@@ -287,6 +395,9 @@ function buildLists(teams: LeagueTeamEntry[], groups: LeagueGroupAnalysis[], top
     bestForm,
     topScoring,
     topConceding,
+    cleanSweepTeams,
+    thrillingMatches,
+    busiestHalls,
     playoff: { groupsTotal: groups.length, groupsCalculated: calculated, groups: playoffGroups },
     totals: {
       teams: teams.length,
@@ -379,15 +490,18 @@ export function buildLeagueAnalytics(input: AnalyticsInput, options: { topN?: nu
     all: buildLists(
       groups.flatMap((g) => g.teams),
       groups,
-      topN
+      topN,
+      input.matches
     ),
   };
   for (const c of categories) {
     const gs = groups.filter((g) => g.category === c);
+    const catMatches = input.matches.filter((m) => m.category === c);
     lists[c] = buildLists(
       gs.flatMap((g) => g.teams),
       gs,
-      topN
+      topN,
+      catMatches
     );
   }
 

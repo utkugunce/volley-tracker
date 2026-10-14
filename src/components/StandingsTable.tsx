@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { FixtureTable } from "@/components/FixtureTable";
 import { sameGroup } from "@/utils/standingsForm";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
@@ -15,6 +15,7 @@ import { StandingsHeaderStrip } from "./standings/StandingsHeaderStrip";
 import { StandingsNoDataState } from "./standings/StandingsNoDataState";
 import { StandingsTableView } from "./standings/StandingsTableView";
 import { StandingsLegend } from "./standings/StandingsLegend";
+import { StandingsSimulatorView } from "./standings/StandingsSimulatorView";
 
 // Dış API'yi koru: testler ve diğer bileşenler bu dışa aktarımlara bağlı.
 export type { StandingsTeamContext } from "@/utils/standingsParsing";
@@ -32,6 +33,7 @@ interface StandingsTableProps {
 }
 
 export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city, matches, onSelectTeam }) => {
+  const [showSimulator, setShowSimulator] = useState(false);
   const {
     allKeys,
     distinctCities,
@@ -106,7 +108,26 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
       {/* Puan Durumu Tablosu veya Boş Durum */}
       <div className="rounded-2xl border border-line bg-surface shadow-card overflow-hidden">
         {/* Başlık Şeridi */}
-        <StandingsHeaderStrip activeContext={activeContext} city={city} items={items} />
+        <StandingsHeaderStrip
+          activeContext={activeContext}
+          city={city}
+          items={items}
+          showSimulator={showSimulator}
+          onToggleSimulator={() => setShowSimulator((prev) => !prev)}
+        />
+
+        {/* Simülatör Açıksa */}
+        {showSimulator && items.length > 0 && (
+          <div className="p-3 sm:p-4 border-b border-line bg-slate-950/40">
+            <StandingsSimulatorView
+              mode="altyapi"
+              altyapiRows={items}
+              altyapiMatches={matches || []}
+              cutoff={4}
+              onClose={() => setShowSimulator(false)}
+            />
+          </div>
+        )}
 
         {/* Tablo veya Boş Durum (Empty State) */}
         {items.length === 0 ? (

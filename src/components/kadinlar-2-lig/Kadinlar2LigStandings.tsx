@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { TeamBadge } from "@/components/TeamBadge";
 import Link from "next/link";
-import { ExternalLink, Trophy, ChevronRight, Download, Star, Swords, CheckCircle2, ShieldAlert } from "lucide-react";
+import { ExternalLink, Trophy, ChevronRight, Download, Star, Swords, CheckCircle2, ShieldAlert, Calculator } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
@@ -12,6 +12,7 @@ import { getVolleyboxMapping } from "@/utils/volleybox";
 import { getKadinlar2LigTeamName, getKadinlar2LigTeamNameVariants, K2_CATEGORY } from "@/utils/kadinlar2LigConverter";
 import { kadinlar2LigTeamToUnified } from "@/utils/unifiedAdapters";
 import type { UnifiedStanding } from "@/types/unified";
+import { StandingsSimulatorView } from "@/components/standings/StandingsSimulatorView";
 
 interface Kadinlar2LigStandingsProps {
   group: Kadinlar2LigGroup;
@@ -25,6 +26,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
   showOnlyFavorites = false,
 }) => {
   const [showDetailedStats, setShowDetailedStats] = useState(false);
+  const [showSimulator, setShowSimulator] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const teams = useMemo(() => group?.puan_durumu || [], [group?.puan_durumu]);
@@ -107,6 +109,21 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
           </div>
 
           <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+            {/* Puan Simülatörü Butonu */}
+            <button
+              onClick={() => setShowSimulator(!showSimulator)}
+              className={`inline-flex items-center gap-1 text-[11px] sm:text-xs font-semibold px-2.5 py-1 rounded-xl border transition-all cursor-pointer ${
+                showSimulator
+                  ? "bg-primary text-primary-fg border-primary shadow-glow-primary"
+                  : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border-slate-700/60"
+              }`}
+              title="Kalan maçları simüle et ve puan durumunu hesapla"
+            >
+              <Calculator size={12} className={showSimulator ? "text-primary-fg" : "text-primary"} />
+              <span className="hidden sm:inline">{showSimulator ? "Simülatörü Kapat" : "Puan Simülatörü"}</span>
+              <span className="sm:hidden">{showSimulator ? "Kapat" : "Simülatör"}</span>
+            </button>
+
             {/* Detaylı Skorlar Butonu */}
             <button
               onClick={() => setShowDetailedStats(!showDetailedStats)}
@@ -131,6 +148,19 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
             </span>
           </div>
         </div>
+
+        {/* Simülatör Açıksa */}
+        {showSimulator && (
+          <div className="p-3 sm:p-4 border-b border-slate-800/80 bg-slate-950/60">
+            <StandingsSimulatorView
+              mode="k2"
+              k2Rows={teams}
+              k2Matches={group.fikstur || []}
+              cutoff={2}
+              onClose={() => setShowSimulator(false)}
+            />
+          </div>
+        )}
 
         {/* 2. Puan Durumu Tablosu */}
         <div className="overflow-x-auto">

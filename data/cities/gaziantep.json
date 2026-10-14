@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T10:47:01.412085+03:00",
+  "updated_at": "2026-10-14T12:01:00.502141+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -429,10 +429,10 @@
       }
     },
     {
-      "id": "gaziantep-20261018-006",
+      "id": "gaziantep-20261017-006",
       "city": "Gaziantep",
-      "date": "2026-10-18",
-      "time": "09:30",
+      "date": "2026-10-17",
+      "time": "12:30",
       "hall": "Dumlupınar",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -473,47 +473,6 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "1",
-      "home_team": "MERİNOS (B)",
-      "away_team": "MERİNOS (A)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "407994",
-        "url": "https://women.volleybox.net/tr/merinos-sk-b-u16-merinos-sk-u16-c407994",
-        "host_name": "Merinos SK - B U16",
-        "guest_name": "Merinos SK U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-17",
-        "vb_time": "09:30",
-        "vb_hall": "Dumlupınar Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-17",
-          "vb_time": "09:30",
-          "vb_hall": "Dumlupınar Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "gaziantep-20261017-008",
-      "city": "Gaziantep",
-      "date": "2026-10-17",
-      "time": "11:00",
-      "hall": "Dumlupınar",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "2",
       "home_team": "DOĞUŞ27",
       "away_team": "Antepia Spor Kulübü",
       "score": "- : -",
@@ -533,14 +492,55 @@
         "vb_time": "11:00",
         "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-17",
           "vb_time": "11:00",
           "vb_hall": "Dumlupınar Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 09:30 / VB: 11:00)"
+        }
+      }
+    },
+    {
+      "id": "gaziantep-20261017-008",
+      "city": "Gaziantep",
+      "date": "2026-10-17",
+      "time": "09:30",
+      "hall": "Yurt Ss",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "2",
+      "home_team": "MERİNOS (B)",
+      "away_team": "MERİNOS (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "407994",
+        "url": "https://women.volleybox.net/tr/merinos-sk-b-u16-merinos-sk-u16-c407994",
+        "host_name": "Merinos SK - B U16",
+        "guest_name": "Merinos SK U16",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-17",
+        "vb_time": "09:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-10-17",
+          "vb_time": "09:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": "Salon Değişti (TVF: Yurt Ss / VB: Dumlupınar Spor Salonu)"
         }
       }
     },
@@ -549,7 +549,7 @@
       "city": "Gaziantep",
       "date": "2026-10-18",
       "time": "09:30",
-      "hall": "Yurt Ss",
+      "hall": "Dumlupınar",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -574,14 +574,14 @@
         "vb_time": "09:30",
         "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-18",
           "vb_time": "09:30",
           "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Dumlupınar / VB: Gaziantep Üniversitesi Yurt Spor Salonu)"
         }
       }
     },
@@ -590,7 +590,7 @@
       "city": "Gaziantep",
       "date": "2026-10-18",
       "time": "11:00",
-      "hall": "Dumlupınar",
+      "hall": "Yurt Ss",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -621,5 +621,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-14T10:51:53.420404"
+  "volleybox_sync_updated_at": "2026-10-14T12:06:02.769599"
 }

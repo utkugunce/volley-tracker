@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronLeft, BarChart3, Flame, Percent, TrendingUp, Target, ShieldAlert } from "lucide-react";
+import { ChevronLeft, BarChart3, Flame, Percent, TrendingUp, Target, ShieldAlert, Swords, ShieldCheck, Building2, MapPin, Navigation } from "lucide-react";
 import { getLeagueAnalytics } from "@/utils/leagueAnalyticsData";
 import { MIN_WIN_STREAK, type LeagueAnalytics } from "@/utils/leagueAnalytics";
 import { slugify } from "@/utils/slugify";
@@ -214,6 +214,140 @@ export function StatsPageView({ slug }: { slug?: string }) {
             )}
           />
         </div>
+
+        {/* HAFTANIN PANORAMASI: SET VERMEYENLER & EN ÇEKİŞMELİ MAÇLAR */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {/* Set Vermeyenler / Namağlup Takımlar */}
+          {lists.cleanSweepTeams && lists.cleanSweepTeams.length > 0 && (
+            <LeaderboardCard
+              id="lb-cleansweep"
+              title="Set Vermeyen Takımlar"
+              subtitle="Oynadığı tüm maçları set kaybetmeden kazananlar (en az 2 maç)"
+              icon={<ShieldCheck size={16} className="text-emerald-400" />}
+              entries={lists.cleanSweepTeams}
+              showCategory={showCategory}
+              renderValue={(e) => `${e.value} set`}
+              renderMeta={(e) => (
+                <span className="text-emerald-300 font-bold">
+                  {e.played} maçta 0 set kaybı ({e.extra?.wins}G)
+                </span>
+              )}
+            />
+          )}
+
+          {/* En Çekişmeli 5 Setlik Maçlar */}
+          {lists.thrillingMatches && lists.thrillingMatches.length > 0 && (
+            <section
+              aria-labelledby="lb-thrilling-title"
+              className="rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-card space-y-3"
+            >
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                  <Swords size={16} />
+                </div>
+                <div>
+                  <h2 id="lb-thrilling-title" className="text-sm font-bold text-ink">
+                    Haftanın En Çekişmeli Maçları
+                  </h2>
+                  <p className="text-[11px] text-ink-2">
+                    Tie-break&apos;e giden 5 setlik çekişmeler ve en yüksek sayılı karşılaşmalar
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                {lists.thrillingMatches.map((m) => (
+                  <div
+                    key={m.id}
+                    className="p-2.5 rounded-xl bg-surface-muted/60 border border-line hover:border-primary/40 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs"
+                  >
+                    <div className="min-w-0">
+                      <div className="font-bold text-ink truncate">
+                        {m.homeTeam} <span className="text-primary font-mono">{m.score}</span> {m.awayTeam}
+                      </div>
+                      <div className="text-[10px] text-ink-2 flex items-center gap-2 mt-0.5">
+                        <span>{m.date}</span>
+                        <span>•</span>
+                        <span className="truncate max-w-[200px]" title={m.hall}>{m.hall} ({m.city})</span>
+                      </div>
+                      {m.setScores && m.setScores.length > 0 && (
+                        <div className="text-[10px] font-mono text-slate-400 mt-0.5">
+                          ({m.setScores.join(", ")})
+                        </div>
+                      )}
+                    </div>
+
+                    {m.totalPoints > 0 && (
+                      <span className="shrink-0 self-start sm:self-center text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                        {m.totalPoints} Toplam Sayı
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+
+        {/* EN YOĞUN SALONLAR & YOL TARİFİ REHBERİ */}
+        {lists.busiestHalls && lists.busiestHalls.length > 0 && (
+          <section
+            aria-labelledby="busiest-halls-title"
+            className="rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-card space-y-3"
+          >
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-500/30">
+                <Building2 size={16} />
+              </div>
+              <div>
+                <h2 id="busiest-halls-title" className="text-sm font-bold text-ink">
+                  Voleybol Salon Rehberi & Yol Tarifi
+                </h2>
+                <p className="text-[11px] text-ink-2">
+                  Lig maçlarının en yoğun oynandığı spor salonları, maç sayıları ve harita yol tarifleri
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-1">
+              {lists.busiestHalls.map((h) => (
+                <div
+                  key={h.name}
+                  className="p-3 rounded-xl bg-surface-muted/60 border border-line flex flex-col justify-between gap-2.5"
+                >
+                  <div>
+                    <p className="text-xs font-bold text-ink line-clamp-1" title={h.name}>
+                      {h.name}
+                    </p>
+                    <p className="text-[11px] text-ink-2 mt-0.5">
+                      {h.city} • <strong className="text-ink font-mono">{h.totalMatches}</strong> maç
+                      {h.upcomingCount > 0 && (
+                        <span className="text-emerald-400 font-semibold ml-1">
+                          ({h.upcomingCount} gelecek)
+                        </span>
+                      )}
+                    </p>
+                    {h.metroTips && (
+                      <p className="text-[10px] text-slate-400 mt-1 line-clamp-2">
+                        🚇 {h.metroTips}
+                      </p>
+                    )}
+                  </div>
+
+                  <a
+                    href={h.navigationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-start inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
+                  >
+                    <Navigation size={11} />
+                    <span>Haritada Aç & Yol Tarifi</span>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         <PlayoffSummary playoff={lists.playoff} showCategory={showCategory} />
 
