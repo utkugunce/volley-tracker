@@ -3,17 +3,19 @@
 import React, { useState, useMemo, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { Kadinlar2LigData } from "@/types/kadinlar2Lig";
-import { Match } from "@/types/fixture";
+import { Match, StandingItem } from "@/types/fixture";
 import { useFavorites } from "@/utils/useFavorites";
 
-const MatchCenterDrawer = dynamic(
-  () => import("@/components/MatchCenterDrawer").then((mod) => mod.MatchCenterDrawer),
+const MobileMatchDrawer = dynamic(
+  () => import("@/components/MobileMatchDrawer").then((mod) => mod.MobileMatchDrawer),
   { ssr: false }
 );
 const SpotlightSearchModal = dynamic(
   () => import("@/components/SpotlightSearchModal").then((mod) => mod.SpotlightSearchModal),
   { ssr: false }
 );
+import { MatchInspectorPanel } from "@/components/match/MatchInspectorPanel";
+import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { slugify } from "@/utils/slugify";
 import { Kadinlar2LigHeader, Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
 import { Kadinlar2LigGroupBar } from "./Kadinlar2LigGroupBar";
@@ -29,7 +31,10 @@ import { Kadinlar2LigHomePortal } from "./Kadinlar2LigHomePortal";
 import { Kadinlar2LigCompare } from "./Kadinlar2LigCompare";
 import { Kadinlar2LigSidebar } from "./Kadinlar2LigSidebar";
 import { AppShell } from "@/components/layout/AppShell";
-import { getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
+import {
+  convertK2MatchToMatch,
+  getKadinlar2LigTeamName,
+} from "@/utils/kadinlar2LigConverter";
 import {
   expandKadinlar2LigData,
   type Kadinlar2LigCompactData,
@@ -61,10 +66,11 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
+  const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState<boolean>(false);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
 
-  const { count: favoritesCount } = useFavorites();
+  const { count: favoritesCount, isFavorite, toggleFavorite } = useFavorites();
 
   const currentGroupData =
     (selectedGroup === "all"
@@ -91,6 +97,33 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       return u.status === "finished";
     }).length;
   }, [data.tum_maclar]);
+
+  // Standart Match dizisi ve puan durumu haritası (MatchInspectorPanel ve MobileMatchDrawer uyumlu)
+  const convertedMatches: Match[] = useMemo(() => {
+    return (data.tum_maclar || []).map(convertK2MatchToMatch);
+  }, [data.tum_maclar]);
+
+  const standingsMap: Record<string, StandingItem[]> = useMemo(() => {
+    const res: Record<string, StandingItem[]> = {};
+    (data.gruplar || []).forEach((g) => {
+      const key = g.grup_adi || `Grup ${g.grup_no}`;
+      res[key] = (g.puan_durumu || []).map((t) => ({
+        rank: t.sira,
+        team: getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name),
+        played: t.o,
+        won: t.g,
+        lost: t.m,
+        points: t.p,
+        sets_won: t.as,
+        sets_lost: t.vs,
+        set_ratio: t.sav,
+        points_won: t.asp,
+        points_lost: t.vsp,
+        points_ratio: t.spav,
+      }));
+    });
+    return res;
+  }, [data.gruplar]);
 
   // Spotlight Arama Verileri
   const searchableTeams = useMemo(() => {
@@ -121,7 +154,6 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
-
 
   const handleSelectTab = (tab: Kadinlar2LigTabType) => {
     setActiveTab(tab);
@@ -162,6 +194,13 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleSelectMatch = (match: Match) => {
+    setSelectedMatch(match);
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      setIsMobileDrawerOpen(true);
+    }
+  };
+
   // Tarayıcı Geri/İleri butonları (popstate) dinleyicisi
   useEffect(() => {
     const handlePopState = () => {
@@ -194,18 +233,18 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       section="kadinlar-2-lig"
       header={
         <Kadinlar2LigHeader
-        metadata={data.metadata}
-        activeTab={activeTab}
-        onSelectTab={handleSelectTab}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        isLoading={isLoading}
-        todayMatchesCount={todayMatchesCount}
-        resultsCount={resultsCount}
-        favoritesCount={favoritesCount}
-        showOnlyFavorites={showOnlyFavorites}
-        onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
-        onOpenSearch={() => setIsSearchOpen(true)}
+          metadata={data.metadata}
+          activeTab={activeTab}
+          onSelectTab={handleSelectTab}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+          isLoading={isLoading}
+          todayMatchesCount={todayMatchesCount}
+          resultsCount={resultsCount}
+          favoritesCount={favoritesCount}
+          showOnlyFavorites={showOnlyFavorites}
+          onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
+          onOpenSearch={() => setIsSearchOpen(true)}
         />
       }
       leftSidebar={
@@ -218,6 +257,26 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           onSelectTab={handleSelectTab}
         />
       }
+      rightSidebar={
+        activeTab === "standings" ? undefined : (
+          <MatchInspectorPanel
+            match={selectedMatch}
+            allMatches={convertedMatches}
+            standings={standingsMap}
+            isLoading={isLoading}
+            onClose={() => setSelectedMatch(null)}
+            onToggleFavorite={(matchId) => {
+              const m = convertedMatches.find((x) => x.id === matchId);
+              if (m) toggleFavorite(m.home_team);
+            }}
+            isFavorite={
+              selectedMatch
+                ? isFavorite(selectedMatch.home_team) || isFavorite(selectedMatch.away_team)
+                : false
+            }
+          />
+        )
+      }
       footer={
         <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between">
           <span className="font-semibold text-slate-400">TVF Uzman Posta Kadınlar Voleybol 2. Ligi</span>
@@ -225,18 +284,44 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         </footer>
       }
     >
-
       <div className="flex flex-col space-y-3 px-1 pb-20 sm:space-y-4 sm:px-2 sm:pb-8 lg:px-0">
-        {/* Sayfa Semantik H1 Başlığı */}
-        <div className="flex items-center justify-between pb-1 border-b border-line">
-          <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
-            <span>TVF Kadınlar 2. Ligi — Canlı Puan Durumu & Fikstür</span>
-          </h1>
-          <span className="text-[11px] font-display tabular-nums text-primary font-bold bg-primary/10 px-2 py-0.5 rounded-full border border-primary/40">
-            16 Grup · {data.tum_maclar?.length || 0} Maç
-          </span>
-        </div>
+        {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
+        <PrimaryTeamWidget
+          matches={convertedMatches}
+          city="Kadınlar 2. Ligi"
+          onSelectMatch={handleSelectMatch}
+          availableTeams={searchableTeams}
+        />
+
+        {/* Sayfa Semantik H1 Başlığı (Anasayfa harici sekmelerde) */}
+        {activeTab !== "home" && (
+          <div className="flex items-center justify-between pb-1 border-b border-line">
+            <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-primary shrink-0" />
+              <span>
+                {activeTab === "standings"
+                  ? "TVF Kadınlar 2. Ligi — Canlı Puan Durumu & Fikstür"
+                  : activeTab === "fixtures"
+                  ? "TVF Kadınlar 2. Ligi — Tüm Fikstür & Program"
+                  : activeTab === "results"
+                  ? "TVF Kadınlar 2. Ligi — Maç Sonuçları"
+                  : activeTab === "today"
+                  ? "TVF Kadınlar 2. Ligi — Günün Maçları"
+                  : activeTab === "leaders"
+                  ? "TVF Kadınlar 2. Ligi — 16 Grup Durumu & Liderler"
+                  : activeTab === "teams"
+                  ? "TVF Kadınlar 2. Ligi — Kulüpler & Takımlar"
+                  : activeTab === "karsilastir"
+                  ? "TVF Kadınlar 2. Ligi — H2H Karşılaştır"
+                  : "TVF Kadınlar 2. Ligi — Resmi Statü & Rehber"}
+              </span>
+            </h1>
+            <span className="text-[11px] font-display tabular-nums text-primary font-bold bg-primary/10 px-2 py-0.5 rounded-full border border-primary/40">
+              16 Grup · {data.tum_maclar?.length || 0} Maç
+            </span>
+          </div>
+        )}
+
         {/* 2. Grup Seçici Barı (Puan Cetveli veya Fikstür açıkken) */}
         {(activeTab === "standings" || activeTab === "fixtures") && (
           <Kadinlar2LigGroupBar
@@ -246,13 +331,15 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             onSelectGroup={handleSelectGroup}
           />
         )}
+
         {/* ANASAYFA / CANLI HUB TABI */}
         {activeTab === "home" && (
           <Kadinlar2LigHomePortal
             data={data}
-            onNavigateTab={setActiveTab}
+            onNavigateTab={handleSelectTab}
             onSelectGroup={handleSelectGroupFromAnywhere}
-            onSelectMatch={setSelectedMatch}
+            onSelectMatch={handleSelectMatch}
+            selectedMatchId={selectedMatch?.id || null}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
           />
@@ -263,7 +350,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           <Kadinlar2LigTodayMatches
             allMatches={data.tum_maclar || []}
             groups={data.gruplar}
-            onSelectMatch={setSelectedMatch}
+            onSelectMatch={handleSelectMatch}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
@@ -276,7 +363,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           <Kadinlar2LigResults
             allMatches={data.tum_maclar || []}
             groups={data.gruplar}
-            onSelectMatch={setSelectedMatch}
+            onSelectMatch={handleSelectMatch}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
@@ -311,7 +398,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
                 isAllGroups={selectedGroup === "all"}
                 searchQuery={searchQuery}
                 showOnlyFavorites={showOnlyFavorites}
-                onSelectMatch={setSelectedMatch}
+                onSelectMatch={handleSelectMatch}
                 selectedMatchId={selectedMatch?.id || null}
               />
             </div>
@@ -327,7 +414,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             isAllGroups={selectedGroup === "all"}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
-            onSelectMatch={setSelectedMatch}
+            onSelectMatch={handleSelectMatch}
             selectedMatchId={selectedMatch?.id || null}
           />
         )}
@@ -364,12 +451,25 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         {activeTab === "statu" && <Kadinlar2LigStatuView />}
       </div>
 
-      {/* 4. Maç Detay ve Salon Çekmecesi */}
-      <MatchCenterDrawer
-        match={selectedMatch}
-        onClose={() => setSelectedMatch(null)}
-        city="Türkiye"
-      />
+      {/* 4. Mobil Maç Detayı: Alttan Açılan Çekmece (MobileMatchDrawer) */}
+      {isMobileDrawerOpen && selectedMatch && (
+        <MobileMatchDrawer
+          isOpen
+          match={selectedMatch}
+          onClose={() => setIsMobileDrawerOpen(false)}
+          allMatches={convertedMatches}
+          standings={standingsMap}
+          onToggleFavorite={(matchId) => {
+            const m = convertedMatches.find((x) => x.id === matchId);
+            if (m) toggleFavorite(m.home_team);
+          }}
+          isFavorite={
+            selectedMatch
+              ? isFavorite(selectedMatch.home_team) || isFavorite(selectedMatch.away_team)
+              : false
+          }
+        />
+      )}
 
       {/* 5. Spotlight Hızlı Arama Modalı (Ctrl+K) */}
       <SpotlightSearchModal
@@ -401,7 +501,6 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         todayMatchesCount={todayMatchesCount}
         resultsCount={resultsCount}
       />
-
     </AppShell>
   );
 };

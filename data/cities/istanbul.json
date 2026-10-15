@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:10:32.905648+03:00",
+  "updated_at": "2026-10-15T12:10:24.154693+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -6528,8 +6528,8 @@
         "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-b-u16-unsped-spor-kulubu-u16-c408021",
         "host_name": "Türk Hava Yolları SK - B U16",
         "guest_name": "Ünsped Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "18:00",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
@@ -6655,8 +6655,8 @@
         "url": "https://women.volleybox.net/tr/yesilyurt-spor-kulubu-u16-eyupsultan-belediyesi-sk-u16-c408015",
         "host_name": "Yeşilyurt Spor Kulübü U16",
         "guest_name": "Eyüpsultan Belediyesi SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "19:30",
         "vb_hall": "Tozkoparan Spor Salonu",
@@ -7125,5 +7125,5 @@
     }
   ],
   "volleybox_synced_matches": 107,
-  "volleybox_sync_updated_at": "2026-10-15T11:15:43.225747"
+  "volleybox_sync_updated_at": "2026-10-15T12:15:37.421051"
 }

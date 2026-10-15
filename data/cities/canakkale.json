@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:10:32.905648+03:00",
+  "updated_at": "2026-10-15T12:10:24.154693+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -1664,8 +1664,8 @@
         "url": "https://women.volleybox.net/tr/can-kale-spor-kulubu-u16-canakkale-belediyespor-b-u16-c406690",
         "host_name": "Çan Kale Spor Kulübü U16",
         "guest_name": "Çanakkale Belediyespor - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "18:00",
         "vb_hall": "Çan Spor Salonu",
@@ -1785,5 +1785,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-15T11:15:40.116919"
+  "volleybox_sync_updated_at": "2026-10-15T12:15:34.175761"
 }

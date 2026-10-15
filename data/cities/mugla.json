@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:10:32.905648+03:00",
+  "updated_at": "2026-10-15T12:10:24.154693+03:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -193,7 +193,7 @@
       },
       {
         "rank": 2,
-        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "team": "Fethiye Zirve Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -762,7 +762,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "1",
-      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "home_team": "Fethiye Zirve Spor Kulübü U18",
       "away_team": "Fethiye Anka Spor U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -843,5 +843,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-15T11:15:49.457995"
+  "volleybox_sync_updated_at": "2026-10-15T12:15:43.805376"
 }

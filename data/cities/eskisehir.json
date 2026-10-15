@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:10:32.905648+03:00",
+  "updated_at": "2026-10-15T12:10:24.154693+03:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -572,8 +572,8 @@
         "url": "https://women.volleybox.net/tr/sehir-koleji-egitim-kultur-sk-u18-eskisehir-peyman-sk-u18-c406694",
         "host_name": "Şehir Koleji Eğitim Kültür SK U18",
         "guest_name": "Eskişehir Peyman SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -998,8 +998,8 @@
         "url": "https://women.volleybox.net/tr/es-voleybol-akademi-spor-kulubu-u18-eskisehir-yldz-spor-kulubu-u18-c406692",
         "host_name": "Es Voleybol Akademi Spor Kulübü U18",
         "guest_name": "Eskişehir Yıldız Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "20:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -2406,5 +2406,5 @@
     }
   ],
   "volleybox_synced_matches": 42,
-  "volleybox_sync_updated_at": "2026-10-15T11:15:40.920709"
+  "volleybox_sync_updated_at": "2026-10-15T12:15:35.014508"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:10:32.905648+03:00",
+  "updated_at": "2026-10-15T12:10:24.154693+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -1117,8 +1117,8 @@
         "url": "https://women.volleybox.net/tr/altyldz-spor-kulubu-u16-cnar-akademi-spor-kulubu-b-u16-c408097",
         "host_name": "Altıyıldız Spor Kulübü U16",
         "guest_name": "Çınar Akademi Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "19:30",
         "vb_hall": "Gevher Nesibe Spor Salonu",
@@ -1422,8 +1422,8 @@
         "url": "https://women.volleybox.net/tr/evola-spor-kulubu-u16-kayseri-cimnastik-spor-kulubu-c-u16-c408105",
         "host_name": "Evola Spor Kulübü U16",
         "guest_name": "Kayseri Cimnastik Spor Kulübü - C U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "18:00",
         "vb_hall": "Gevher Nesibe Spor Salonu",
@@ -1564,5 +1564,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-15T11:15:46.661257"
+  "volleybox_sync_updated_at": "2026-10-15T12:15:40.975005"
 }

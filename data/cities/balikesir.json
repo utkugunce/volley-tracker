@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:10:32.905648+03:00",
+  "updated_at": "2026-10-15T12:10:24.154693+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -843,8 +843,8 @@
         "url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-u16-eba-spor-u16-c406629",
         "host_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
         "guest_name": "EBA Spor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:00",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -1688,8 +1688,8 @@
         "url": "https://women.volleybox.net/tr/susurluk-genclerbirligi-egitim-spor-kulubu-u16-bandrma-bordo-spor-kulubu-b-u16-c406646",
         "host_name": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
         "guest_name": "Bandırma Bordo Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "19:00",
         "vb_hall": "Susurluk Nimet Sadık Özyiğit Ortaokulu Spor Salonu",
@@ -1895,5 +1895,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-15T11:15:39.460349"
+  "volleybox_sync_updated_at": "2026-10-15T12:15:33.474992"
 }

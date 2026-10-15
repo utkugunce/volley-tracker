@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T11:10:32.905648+03:00",
+  "updated_at": "2026-10-15T12:10:24.154693+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -760,8 +760,8 @@
         "url": "https://women.volleybox.net/tr/sargol-akademi-spor-kulubu-u18-soma-belediye-spor-kulubu-u18-c408196",
         "host_name": "Sarıgöl Akademi Spor Kulübü U18",
         "guest_name": "Soma Belediye Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "19:00",
         "vb_hall": "Sarıgöl Spor Salonu",
@@ -881,5 +881,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-15T11:15:49.316577"
+  "volleybox_sync_updated_at": "2026-10-15T12:15:43.660672"
 }
