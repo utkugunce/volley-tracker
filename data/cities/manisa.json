@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 17,
+  "total_matches": 18,
   "source": "https://manisa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -334,8 +334,8 @@
         "url": "https://women.volleybox.net/tr/akhisar-lce-spor-kulubu-u18-manisa-buyuksehir-belediyespor-kulubu-u18-c408179",
         "host_name": "Akhisar İlçe Spor Kulübü U18",
         "guest_name": "Manisa Büyükşehir Belediyespor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:30",
         "vb_hall": "Akhisar Spor Salonu",
@@ -379,8 +379,8 @@
         "url": "https://women.volleybox.net/tr/degerli-zamanlar-spor-kulubu-u18-salihli-degerli-zamanlar-spor-kulubu-u18-c408180",
         "host_name": "Değerli Zamanlar Spor Kulübü U18",
         "guest_name": "Salihli Değerli Zamanlar Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "19:00",
         "vb_hall": "Yunusemre Çok Amaçlı Spor Salonu",
@@ -475,13 +475,47 @@
       "id": "manisa-20261021-008",
       "city": "Manisa",
       "date": "2026-10-21",
+      "time": "19:00",
+      "hall": "Ramiz Turan Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "8",
+      "home_team": "Salihli Değerli Zamanlar Spor Kulübü U18",
+      "away_team": "Akhisar Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "manisa-20261021-009",
+      "city": "Manisa",
+      "date": "2026-10-21",
       "time": "20:30",
       "hall": "Atatürk S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "8",
+      "match_no": "9",
       "home_team": "Manisa Büyükşehir Belediye Spor U18",
       "away_team": "Değerli Zamanlar Spor Kulübü U18",
       "score": "- : -",
@@ -506,7 +540,7 @@
       }
     },
     {
-      "id": "manisa-20261006-009",
+      "id": "manisa-20261006-010",
       "city": "Manisa",
       "date": "2026-10-06",
       "time": "19:00",
@@ -551,7 +585,7 @@
       }
     },
     {
-      "id": "manisa-20261006-010",
+      "id": "manisa-20261006-011",
       "city": "Manisa",
       "date": "2026-10-06",
       "time": "20:30",
@@ -596,7 +630,7 @@
       }
     },
     {
-      "id": "manisa-20261007-011",
+      "id": "manisa-20261007-012",
       "city": "Manisa",
       "date": "2026-10-07",
       "time": "18:30",
@@ -641,7 +675,7 @@
       }
     },
     {
-      "id": "manisa-20261013-012",
+      "id": "manisa-20261013-013",
       "city": "Manisa",
       "date": "2026-10-13",
       "time": "18:30",
@@ -670,8 +704,8 @@
         "url": "https://women.volleybox.net/tr/turgutlu-belediyespor-u18-akhisargucu-spor-kulubu-u18-c408193",
         "host_name": "Turgutlu Belediyespor U18",
         "guest_name": "Akhisargücü Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:30",
         "vb_hall": "Turgutlu Belediyesi Mimar Ferdi Zeyrek Spor Kompleksi",
@@ -688,7 +722,7 @@
       }
     },
     {
-      "id": "manisa-20261013-013",
+      "id": "manisa-20261013-014",
       "city": "Manisa",
       "date": "2026-10-13",
       "time": "18:30",
@@ -715,8 +749,8 @@
         "url": "https://women.volleybox.net/tr/soma-lce-spor-kulubu-u18-yunusemre-belediyespor-u18-c408194",
         "host_name": "Soma İlçe Spor Kulübü U18",
         "guest_name": "Yunusemre Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:30",
         "vb_hall": "Vali Muzaffer Ecemiş Spor Salonu",
@@ -733,7 +767,7 @@
       }
     },
     {
-      "id": "manisa-20261014-014",
+      "id": "manisa-20261014-015",
       "city": "Manisa",
       "date": "2026-10-14",
       "time": "19:00",
@@ -778,7 +812,7 @@
       }
     },
     {
-      "id": "manisa-20261020-015",
+      "id": "manisa-20261020-016",
       "city": "Manisa",
       "date": "2026-10-20",
       "time": "18:30",
@@ -812,7 +846,7 @@
       }
     },
     {
-      "id": "manisa-20261020-016",
+      "id": "manisa-20261020-017",
       "city": "Manisa",
       "date": "2026-10-20",
       "time": "20:30",
@@ -846,7 +880,7 @@
       }
     },
     {
-      "id": "manisa-20261021-017",
+      "id": "manisa-20261021-018",
       "city": "Manisa",
       "date": "2026-10-21",
       "time": "18:30",
@@ -881,5 +915,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:43.660672"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:09.664209"
 }

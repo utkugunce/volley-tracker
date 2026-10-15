@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -133,9 +133,9 @@
   },
   "matches": [
     {
-      "id": "sakarya-20261012-001",
+      "id": "sakarya-20261019-001",
       "city": "Sakarya",
-      "date": "2026-10-12",
+      "date": "2026-10-19",
       "time": "20:30",
       "hall": "Akyazı Cevat Ayhan Ss",
       "category": "Genç Kızlar Süper Lig",
@@ -162,21 +162,21 @@
         "vb_time": "20:30",
         "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-12",
           "vb_time": "20:30",
           "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-19 / VB: 2026-10-12)"
         }
       }
     },
     {
-      "id": "sakarya-20261015-002",
+      "id": "sakarya-20261022-002",
       "city": "Sakarya",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "time": "18:30",
       "hall": "Lütfü Yaman1",
       "category": "Genç Kızlar Süper Lig",
@@ -203,21 +203,21 @@
         "vb_time": "18:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-15",
           "vb_time": "18:30",
           "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-22 / VB: 2026-10-15)"
         }
       }
     },
     {
-      "id": "sakarya-20261015-003",
+      "id": "sakarya-20261022-003",
       "city": "Sakarya",
-      "date": "2026-10-15",
+      "date": "2026-10-22",
       "time": "20:30",
       "hall": "Lütfü Yaman1",
       "category": "Genç Kızlar Süper Lig",
@@ -244,21 +244,21 @@
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-15",
           "vb_time": "20:30",
           "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-22 / VB: 2026-10-15)"
         }
       }
     },
     {
-      "id": "sakarya-20261013-004",
+      "id": "sakarya-20261020-004",
       "city": "Sakarya",
-      "date": "2026-10-13",
+      "date": "2026-10-20",
       "time": "18:30",
       "hall": "Lütfü Yaman1",
       "category": "Genç Kızlar Süper Lig",
@@ -285,21 +285,21 @@
         "vb_time": "18:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-13",
           "vb_time": "18:30",
           "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-20 / VB: 2026-10-13)"
         }
       }
     },
     {
-      "id": "sakarya-20261013-005",
+      "id": "sakarya-20261020-005",
       "city": "Sakarya",
-      "date": "2026-10-13",
+      "date": "2026-10-20",
       "time": "20:30",
       "hall": "Lütfü Yaman1",
       "category": "Genç Kızlar Süper Lig",
@@ -326,21 +326,21 @@
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-13",
           "vb_time": "20:30",
           "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-20 / VB: 2026-10-13)"
         }
       }
     },
     {
-      "id": "sakarya-20261016-006",
+      "id": "sakarya-20261027-006",
       "city": "Sakarya",
-      "date": "2026-10-16",
+      "date": "2026-10-27",
       "time": "18:30",
       "hall": "Akyazı Cevat Ayhan Ss",
       "category": "Genç Kızlar Süper Lig",
@@ -367,18 +367,18 @@
         "vb_time": "18:30",
         "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-16",
           "vb_time": "18:30",
           "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-27 / VB: 2026-10-16)"
         }
       }
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:43.840601"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:09.760065"
 }

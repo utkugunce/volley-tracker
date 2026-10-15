@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -1395,18 +1395,18 @@
         "guest_name": "Burhaniye Belediye Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-13",
-        "vb_time": "19:00",
+        "vb_date": "2026-10-18",
+        "vb_time": "16:00",
         "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-13",
-          "vb_time": "19:00",
+          "vb_date": "2026-10-18",
+          "vb_time": "16:00",
           "vb_hall": "Ayvalık Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-18 / VB: 2026-10-13) | Saat Değişti (TVF: 16:00 / VB: 19:00)"
+          "details": null
         }
       }
     },
@@ -1895,5 +1895,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:33.474992"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:04.402269"
 }

@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "total_cities": 81,
   "active_cities": 34,
-  "total_matches": 1254,
+  "total_matches": 1246,
   "cities": [
     {
       "ilid": "1",
@@ -260,8 +260,8 @@
       "name": "Eskişehir",
       "slug": "eskisehir",
       "url": "https://eskisehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (47 Maç Mevcut)",
-      "matches_count": 47,
+      "status": "Aktif (54 Maç Mevcut)",
+      "matches_count": 54,
       "standings_count": 7,
       "data_file": "data/cities/eskisehir.json"
     },
@@ -340,8 +340,8 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (109 Maç Mevcut)",
-      "matches_count": 109,
+      "status": "Aktif (106 Maç Mevcut)",
+      "matches_count": 106,
       "standings_count": 15,
       "data_file": "data/cities/istanbul.json"
     },
@@ -450,8 +450,8 @@
       "name": "Manisa",
       "slug": "manisa",
       "url": "https://manisa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (17 Maç Mevcut)",
-      "matches_count": 17,
+      "status": "Aktif (18 Maç Mevcut)",
+      "matches_count": 18,
       "standings_count": 2,
       "data_file": "data/cities/manisa.json"
     },
@@ -480,8 +480,8 @@
       "name": "Muğla",
       "slug": "mugla",
       "url": "https://mugla.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (8 Maç Mevcut)",
-      "matches_count": 8,
+      "status": "Aktif (15 Maç Mevcut)",
+      "matches_count": 15,
       "standings_count": 11,
       "data_file": "data/cities/mugla.json"
     },
@@ -510,9 +510,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {

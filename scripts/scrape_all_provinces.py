@@ -256,7 +256,7 @@ def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str 
         return True
 
     # Eskişehir U16 (Yıldız): Meryem Boz - B
-    if "eskisehir" in c_clean and "meryem boz" in t_clean and ("- b" in t_clean or "(b)" in t_clean or " b" in t_clean):
+    if "eskisehir" in c_clean and "meryem boz" in t_clean and bool(re.search(r"[\(\s\-]b([\s\)]|$)", t_clean)):
         return True
 
     # İstanbul 4. Bölge: Başakşehir Belediye / Başakşehir Bld

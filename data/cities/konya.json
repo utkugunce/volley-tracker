@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -860,8 +860,8 @@
         "url": "https://women.volleybox.net/tr/konya-anka-spor-kulubu-u18-turmak-spor-kulubu-u18-c408152",
         "host_name": "Konya Anka Spor Kulübü U18",
         "guest_name": "Türmak Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "20:30",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
@@ -1364,5 +1364,5 @@
     }
   ],
   "volleybox_synced_matches": 14,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:43.460192"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:09.561201"
 }

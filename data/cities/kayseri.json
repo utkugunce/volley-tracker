@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -461,8 +461,8 @@
         "url": "https://women.volleybox.net/tr/zzet-oksuzkaya-orta-okulu-genclik-ve-spor-kulubu-u18-kayseri-cimnastik-spor-kulubu-u18-c408072",
         "host_name": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U18",
         "guest_name": "Kayseri Cimnastik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:00",
         "vb_hall": "Gevher Nesibe Spor Salonu",
@@ -506,8 +506,8 @@
         "url": "https://women.volleybox.net/tr/kayseri-atletik-spor-kulubu-u18-kvk-voleybol-kulubu-b-u18-c408076",
         "host_name": "Kayseri Atletik Spor Kulübü U18",
         "guest_name": "KVK Voleybol Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "19:30",
         "vb_hall": "Gevher Nesibe Spor Salonu",
@@ -1564,5 +1564,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:40.975005"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:08.307971"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -2111,8 +2111,8 @@
         "url": "https://women.volleybox.net/tr/nova-spor-kulubu-u18-samsunspor-u18-c402781",
         "host_name": "Nova Spor Kulübü U18",
         "guest_name": "Samsunspor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
@@ -2909,5 +2909,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:45.322879"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:10.515905"
 }

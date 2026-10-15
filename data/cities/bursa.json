@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -388,6 +388,17 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
+        "team": "Nilüfer Belediyespor - B U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Bursa Osmangazi Belediye Spor",
         "played": 2,
         "won": 2,
@@ -398,25 +409,14 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Nilüfer Belediyespor - B U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 3,
         "team": "Oksijen Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -1414,8 +1414,8 @@
         "url": "https://women.volleybox.net/tr/orhangazi-voleybol-ve-dagclk-spor-kulubu-u16-mg-spor-kulubu-u16-c406670",
         "host_name": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
         "guest_name": "MG Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "19:00",
         "vb_hall": "Orhangazi Spor Salonu",
@@ -1975,11 +1975,15 @@
       "match_no": "6",
       "home_team": "Oksijen Spor Kulübü U16",
       "away_team": "Nilüfer Belediyespor - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "3-25",
+        "10-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406677",
@@ -2363,5 +2367,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:33.828310"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:04.601000"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -29,7 +29,7 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Düzce Voleybol SK - A U18",
+        "team": "Düzce Voleybol SK U18",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -177,7 +177,7 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "1",
-      "home_team": "Düzce Voleybol SK - A U18",
+      "home_team": "Düzce Voleybol SK U18",
       "away_team": "Düzce 1907 Spor Kulübü U18",
       "score": "3 - 2",
       "home_score": 3,
@@ -316,7 +316,7 @@
       "group": "1. Grup",
       "match_no": "4",
       "home_team": "Düzce Atletik Spor Kulübü U18",
-      "away_team": "Düzce Voleybol SK - A U18",
+      "away_team": "Düzce Voleybol SK U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -332,8 +332,8 @@
         "url": "https://women.volleybox.net/tr/duzce-atletik-spor-kulubu-u18-duzce-voleybol-sk-u18-c404260",
         "host_name": "Düzce Atletik Spor Kulübü U18",
         "guest_name": "Düzce Voleybol SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-12",
         "vb_time": "19:30",
         "vb_hall": "Bahçeşehir Spor Salonu",
@@ -360,7 +360,7 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "5",
-      "home_team": "Düzce Voleybol SK - A U18",
+      "home_team": "Düzce Voleybol SK U18",
       "away_team": "Düzce UltrAslan Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -377,8 +377,8 @@
         "url": "https://women.volleybox.net/tr/duzce-voleybol-sk-u18-duzce-ultraslan-spor-kulubu-u18-c404261",
         "host_name": "Düzce Voleybol SK U18",
         "guest_name": "Düzce UltrAslan Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "19:30",
         "vb_hall": "Bahçeşehir Spor Salonu",
@@ -437,5 +437,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:34.203022"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:04.795584"
 }

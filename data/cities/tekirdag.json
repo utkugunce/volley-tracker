@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -502,8 +502,8 @@
         "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u18-corlu-belediyesi-spor-kulubu-u18-c408249",
         "host_name": "Çorlu GSB Spor Kulübü U18",
         "guest_name": "Çorlu Belediyesi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "19:00",
         "vb_hall": "Çorlu Spor Salonu",
@@ -2320,5 +2320,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:45.701430"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:10.705999"
 }

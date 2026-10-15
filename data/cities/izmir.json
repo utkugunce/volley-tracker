@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T12:10:24.154693+03:00",
+  "updated_at": "2026-10-15T19:31:06.445389+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -2163,8 +2163,8 @@
         "url": "https://women.volleybox.net/tr/zmir-ds-spor-u18-monza-spor-kulubu-u18-c408027",
         "host_name": "İzmir DSİ Spor U18",
         "guest_name": "Monza Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:30",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
@@ -2206,18 +2206,18 @@
         "guest_name": "Göksu Atletik Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-13",
+        "vb_date": "2026-10-16",
         "vb_time": "18:30",
         "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-13",
+          "vb_date": "2026-10-16",
           "vb_time": "18:30",
           "vb_hall": "Gaziemir Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-16 / VB: 2026-10-13)"
+          "details": null
         }
       }
     },
@@ -2616,8 +2616,8 @@
         "url": "https://women.volleybox.net/tr/arkas-spor-kulubu-u18-zmirspor-u18-c408029",
         "host_name": "Arkas Spor Kulübü U18",
         "guest_name": "İzmirspor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "20:00",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
@@ -4757,8 +4757,8 @@
         "url": "https://women.volleybox.net/tr/goztepe-sk-b-u16-alfa-gaziemir-voleybol-spor-kulubu-u16-c408033",
         "host_name": "Göztepe SK - B U16",
         "guest_name": "Alfa Gaziemir Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "20:00",
         "vb_hall": "Balçova Spor Salonu",
@@ -6788,8 +6788,8 @@
         "url": "https://women.volleybox.net/tr/dost-spor-u16-gelisim-koleji-sk-u16-c408044",
         "host_name": "Dost Spor U16",
         "guest_name": "Gelişim Koleji SK U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-13",
         "vb_time": "18:30",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -6894,5 +6894,5 @@
     }
   ],
   "volleybox_synced_matches": 134,
-  "volleybox_sync_updated_at": "2026-10-15T12:15:40.470180"
+  "volleybox_sync_updated_at": "2026-10-15T19:36:08.022766"
 }
