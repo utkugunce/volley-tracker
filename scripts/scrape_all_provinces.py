@@ -252,7 +252,7 @@ def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str 
         return True
 
     # Çanakkale U16 (Yıldız): UVM Akademi
-    if ("canakkale" in c_clean or not c_clean) and "uvm" in t_clean:
+    if "canakkale" in c_clean and "uvm" in t_clean:
         return True
 
     # Eskişehir U16 (Yıldız): Meryem Boz - B
@@ -260,7 +260,7 @@ def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str 
         return True
 
     # İstanbul 4. Bölge: Başakşehir Belediye / Başakşehir Bld
-    if ("istanbul" in c_clean or not c_clean) and "basaksehir" in t_clean and ("belediye" in t_clean or "bld" in t_clean) and "4. bolge" in g_clean:
+    if "istanbul" in c_clean and "basaksehir" in t_clean and ("belediye" in t_clean or "bld" in t_clean) and "4. bolge" in g_clean:
         return True
 
     return False

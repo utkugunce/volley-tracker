@@ -52,6 +52,36 @@ class TestWithdrawnTeams(unittest.TestCase):
     def test_explicit_cekildi_keyword(self):
         self.assertTrue(is_withdrawn_team("Herhangi Bir Takım (Çekildi)", city="Ankara"))
 
+    def test_canakkale_uvm_scoped_to_canakkale(self):
+        self.assertTrue(is_withdrawn_team("UVM Akademi", city="Çanakkale"))
+        self.assertFalse(is_withdrawn_team("UVM Akademi", city="Bursa"))
+
+    def test_istanbul_basaksehir_scoped_to_istanbul_and_group(self):
+        self.assertTrue(
+            is_withdrawn_team(
+                "Başakşehir Belediye",
+                city="İstanbul",
+                category="Genç Kızlar 1. Lig",
+                group="4. Bölge",
+            )
+        )
+        self.assertFalse(
+            is_withdrawn_team(
+                "Başakşehir Belediye",
+                city="İstanbul",
+                category="Genç Kızlar 1. Lig",
+                group="1. Bölge",
+            )
+        )
+        self.assertFalse(
+            is_withdrawn_team(
+                "Başakşehir Belediye",
+                city="Ankara",
+                category="Genç Kızlar 1. Lig",
+                group="4. Bölge",
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
