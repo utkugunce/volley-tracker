@@ -3,7 +3,7 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-10-14T17:03:37.383451",
+    "guncellenme_zamani": "2026-10-15T11:16:06.831184",
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 163,
     "toplam_mac_sayisi": 569,
@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 286,
-    "volleybox_sync_updated_at": "2026-10-14T17:03:37.383564"
+    "volleybox_sync_updated_at": "2026-10-15T11:17:11.482250"
   },
   "gruplar": [
     {
@@ -24009,14 +24009,14 @@
             "vb_time": "16:00",
             "vb_hall": "Hatay Merkez Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
-              "date_diff": false,
+              "has_diff": true,
+              "date_diff": true,
               "time_diff": false,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-10-18",
               "vb_time": "16:00",
               "vb_hall": "Hatay Merkez Spor Salonu",
-              "details": null
+              "details": "Tarih Değişti (TVF: 2026-10-17 / VB: 2026-10-18) | Salon Değişti (TVF: İSKENDERUN SPOR SALONU / VB: Hatay Merkez Spor Salonu)"
             }
           }
         },
@@ -28369,14 +28369,14 @@
             "vb_time": "13:00",
             "vb_hall": "Malatya Merkez Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
               "time_diff": false,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-10-18",
               "vb_time": "13:00",
               "vb_hall": "Malatya Merkez Spor Salonu",
-              "details": null
+              "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
             }
           }
         },
@@ -28420,14 +28420,14 @@
             "vb_time": "15:00",
             "vb_hall": "Malatya Merkez Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
               "time_diff": false,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-10-18",
               "vb_time": "15:00",
               "vb_hall": "Malatya Merkez Spor Salonu",
-              "details": null
+              "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
             }
           }
         },
@@ -30571,14 +30571,14 @@
             "vb_time": "13:00",
             "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
               "time_diff": false,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-10-17",
               "vb_time": "13:00",
               "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-              "details": null
+              "details": "Salon Değişti (TVF: ŞEHİTLİK KÖŞKLER KAPALI SPOR SALONU / VB: Şehit Polis Halit Gürsel Spor Salonu)"
             }
           }
         },
@@ -31090,14 +31090,14 @@
             "vb_time": "13:00",
             "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
               "time_diff": false,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-10-31",
               "vb_time": "13:00",
               "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-              "details": null
+              "details": "Salon Değişti (TVF: ŞEHİTLİK KÖŞKLER KAPALI SPOR SALONU / VB: Şehit Polis Halit Gürsel Spor Salonu)"
             }
           }
         },
@@ -42360,14 +42360,14 @@
         "vb_time": "13:00",
         "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-17",
           "vb_time": "13:00",
           "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: ŞEHİTLİK KÖŞKLER KAPALI SPOR SALONU / VB: Şehit Polis Halit Gürsel Spor Salonu)"
         }
       }
     },
@@ -42768,14 +42768,14 @@
         "vb_time": "16:00",
         "vb_hall": "Hatay Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-18",
           "vb_time": "16:00",
           "vb_hall": "Hatay Merkez Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-17 / VB: 2026-10-18) | Salon Değişti (TVF: İSKENDERUN SPOR SALONU / VB: Hatay Merkez Spor Salonu)"
         }
       }
     },
@@ -43737,14 +43737,14 @@
         "vb_time": "13:00",
         "vb_hall": "Malatya Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-18",
           "vb_time": "13:00",
           "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
         }
       }
     },
@@ -44655,14 +44655,14 @@
         "vb_time": "15:00",
         "vb_hall": "Malatya Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-18",
           "vb_time": "15:00",
           "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
         }
       }
     },
@@ -49772,14 +49772,14 @@
         "vb_time": "13:00",
         "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-31",
           "vb_time": "13:00",
           "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: ŞEHİTLİK KÖŞKLER KAPALI SPOR SALONU / VB: Şehit Polis Halit Gürsel Spor Salonu)"
         }
       }
     },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T12:01:00.502141+03:00",
+  "updated_at": "2026-10-15T11:10:32.905648+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -43,6 +43,17 @@
       },
       {
         "rank": 2,
+        "team": "Tutku Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Damla Spor Kulübü",
         "played": 1,
         "won": 1,
@@ -53,7 +64,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Anadolu Pars Spor Kulübü",
         "played": 2,
         "won": 1,
@@ -64,7 +75,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Hierapolis Spor Kulübü",
         "played": 2,
         "won": 0,
@@ -75,7 +86,18 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
+        "team": "Merkez Akademi Spor Kulübü",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 7,
         "team": "Denizli Aile Ve Sosyal Hizmetler Spor Kulübü",
         "played": 1,
         "won": 0,
@@ -86,30 +108,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Honaz Adil Akan Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Merkez Akademi Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Tutku Spor Kulübü",
+        "team": "Honaz Adil Akan Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -410,11 +410,15 @@
       "match_no": "5",
       "home_team": "Merkez Akademi Spor Kulübü",
       "away_team": "Tutku Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "26-28",
+        "12-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -945,5 +949,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-14T12:06:01.908862"
+  "volleybox_sync_updated_at": "2026-10-15T11:15:40.124419"
 }

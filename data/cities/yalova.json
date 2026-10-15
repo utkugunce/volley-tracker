@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T12:01:00.502141+03:00",
+  "updated_at": "2026-10-15T11:10:32.905648+03:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -426,8 +426,8 @@
       "id": "yalova-20261106-009",
       "city": "Yalova",
       "date": "2026-11-06",
-      "time": "18:00",
-      "hall": "Açıklanacak",
+      "time": "18:30",
+      "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -454,12 +454,12 @@
         "discrepancy": {
           "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-11-06",
           "vb_time": "18:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Açıklanacak / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
+          "details": "Saat Değişti (TVF: 18:30 / VB: 18:00)"
         }
       }
     },
@@ -467,8 +467,8 @@
       "id": "yalova-20261106-010",
       "city": "Yalova",
       "date": "2026-11-06",
-      "time": "20:00",
-      "hall": "Açıklanacak",
+      "time": "20:30",
+      "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -495,12 +495,12 @@
         "discrepancy": {
           "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-11-06",
           "vb_time": "20:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Açıklanacak / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
+          "details": "Saat Değişti (TVF: 20:30 / VB: 20:00)"
         }
       }
     },
@@ -916,5 +916,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-14T12:06:16.013671"
+  "volleybox_sync_updated_at": "2026-10-15T11:15:51.458629"
 }
