@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T16:36:38.691312+03:00",
+  "updated_at": "2026-10-16T22:45:53.514875+00:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -147,16 +147,27 @@
       {
         "rank": 1,
         "team": "TVF Spor Lisesi U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
+        "team": "TED Ankara Kolejliler U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
         "played": 3,
         "won": 2,
@@ -167,36 +178,25 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "TED Ankara Kolejliler U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "SET UP Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 5,
         "team": "Maç Akademi Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -2690,11 +2690,15 @@
       "match_no": "7",
       "home_team": "TED Ankara Kolejliler U18",
       "away_team": "SET UP Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-20",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404230",
@@ -2731,11 +2735,15 @@
       "match_no": "8",
       "home_team": "Maç Akademi Spor Kulübü U18",
       "away_team": "TVF Spor Lisesi U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "17-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404229",
@@ -5207,5 +5215,5 @@
     }
   ],
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-10-16T17:28:38.051273"
+  "volleybox_sync_updated_at": "2026-10-16T22:47:42.174757"
 }

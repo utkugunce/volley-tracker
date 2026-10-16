@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T16:36:38.691312+03:00",
+  "updated_at": "2026-10-16T22:45:53.514875+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -184,23 +184,23 @@
       {
         "rank": 4,
         "team": "Venüs Spor Kulübü U18",
-        "played": 3,
-        "won": 0,
+        "played": 4,
+        "won": 1,
         "lost": 3,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 9,
         "form": []
       },
       {
         "rank": 5,
         "team": "Göksu Atletik Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -264,6 +264,17 @@
     "Genç Kızlar 1. Ligi - Genç Kız - A Gr": [
       {
         "rank": 1,
+        "team": "Arkas Spor Kulübü U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Bergama Belediyesi Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -274,19 +285,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Karşıyaka SK - B U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
         "rank": 3,
-        "team": "Arkas Spor Kulübü U18",
+        "team": "Karşıyaka SK - B U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -330,7 +330,7 @@
       },
       {
         "rank": 7,
-        "team": "İZEGE Spor Kulübü - A U18",
+        "team": "Monza Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -341,13 +341,13 @@
       },
       {
         "rank": 8,
-        "team": "Monza Spor Kulübü U18",
-        "played": 1,
+        "team": "İZEGE Spor Kulübü - A U18",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -546,23 +546,23 @@
       {
         "rank": 2,
         "team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 7,
-        "sets_lost": 3,
+        "points": 8,
+        "sets_won": 10,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
         "team": "AB Voleybol Akademi U16",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 4,
+        "lost": 2,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -749,7 +749,7 @@
       },
       {
         "rank": 3,
-        "team": "Altınordu Voleybol U16",
+        "team": "Monza Spor Kulübü U16",
         "played": 5,
         "won": 2,
         "lost": 3,
@@ -760,24 +760,24 @@
       },
       {
         "rank": 4,
-        "team": "Narlıdere Belediyesi Spor Kulübü U16",
-        "played": 4,
+        "team": "Altınordu Voleybol U16",
+        "played": 5,
         "won": 2,
-        "lost": 2,
-        "points": 6,
-        "sets_won": 7,
-        "sets_lost": 6,
+        "lost": 3,
+        "points": 7,
+        "sets_won": 9,
+        "sets_lost": 11,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Monza Spor Kulübü U16",
-        "played": 4,
-        "won": 1,
+        "team": "Narlıdere Belediyesi Spor Kulübü U16",
+        "played": 5,
+        "won": 2,
         "lost": 3,
-        "points": 4,
-        "sets_won": 6,
-        "sets_lost": 10,
+        "points": 6,
+        "sets_won": 8,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -817,6 +817,17 @@
       },
       {
         "rank": 3,
+        "team": "Özay Voleybol Spor Kulübü U16",
+        "played": 5,
+        "won": 3,
+        "lost": 2,
+        "points": 7,
+        "sets_won": 10,
+        "sets_lost": 10,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Dalton Koleji Spor Kulübü U16",
         "played": 5,
         "won": 2,
@@ -827,7 +838,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Dost Spor U16",
         "played": 5,
         "won": 2,
@@ -838,25 +849,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Özay Voleybol Spor Kulübü U16",
-        "played": 4,
-        "won": 2,
-        "lost": 2,
-        "points": 4,
-        "sets_won": 7,
-        "sets_lost": 10,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Torbalı Gelişim Spor Kulübü U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -2193,11 +2193,15 @@
       "match_no": "10",
       "home_team": "Venüs Spor Kulübü U18",
       "away_team": "Göksu Atletik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-23",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408028",
@@ -2872,11 +2876,15 @@
       "match_no": "5",
       "home_team": "İZEGE Spor Kulübü - A U18",
       "away_team": "Arkas Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "18-25",
+        "26-28"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406711",
@@ -4159,11 +4167,17 @@
       "match_no": "10",
       "home_team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
       "away_team": "AB Voleybol Akademi U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "23-25",
+        "20-25",
+        "25-13",
+        "25-17",
+        "15-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408032",
@@ -6208,11 +6222,16 @@
       "match_no": "15",
       "home_team": "Monza Spor Kulübü U16",
       "away_team": "Narlıdere Belediyesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "20-25",
+        "25-23",
+        "25-18",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408043",
@@ -6888,11 +6907,15 @@
       "match_no": "15",
       "home_team": "Özay Voleybol Spor Kulübü U16",
       "away_team": "Torbalı Gelişim Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-13",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408047",
@@ -6918,5 +6941,5 @@
     }
   ],
   "volleybox_synced_matches": 134,
-  "volleybox_sync_updated_at": "2026-10-16T17:28:41.607913"
+  "volleybox_sync_updated_at": "2026-10-16T22:47:42.182011"
 }
