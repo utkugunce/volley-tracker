@@ -33,12 +33,33 @@ export async function getSupabaseFixtures(
   const supabase = getSupabaseAdmin();
   if (!supabase) return null;
 
-  let matchesQuery = supabase.from("matches").select("*").order("match_date");
-  if (citySlug !== "all" && citySlug !== "tumu" && citySlug !== "turkiye") {
+  const isAllCities = citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye";
+
+  let matchesQuery = supabase
+    .from("matches")
+    .select(
+      "id,city_slug,city_name,match_date,match_time,hall,category,age_group,gender,group_name,match_no,home_team,away_team,score,home_score,away_score,set_scores,status,volleybox,source_updated_at,updated_at"
+    )
+    .order("match_date");
+  if (!isAllCities) {
     matchesQuery = matchesQuery.eq("city_slug", citySlug);
   }
+  if (typeof (matchesQuery as { limit?: (n: number) => typeof matchesQuery }).limit === "function") {
+    matchesQuery = matchesQuery.limit(5000);
+  }
 
-  const { data: rows, error: matchesError } = await matchesQuery;
+  let standingsQuery = isAllCities
+    ? supabase.from("standings").select("city_slug,category,rows,source_updated_at,updated_at")
+    : supabase.from("standings").select("city_slug,category,rows,source_updated_at,updated_at").eq("city_slug", citySlug);
+  if (typeof (standingsQuery as { limit?: (n: number) => typeof standingsQuery }).limit === "function") {
+    standingsQuery = standingsQuery.limit(5000);
+  }
+
+  const [
+    { data: rows, error: matchesError },
+    { data: standingRows, error: standingsError },
+  ] = await Promise.all([matchesQuery, standingsQuery]);
+
   if (matchesError) {
     console.warn("Supabase fixtures okuma hatası (JSON fallback):", matchesError.message);
     return null;
@@ -51,19 +72,14 @@ export async function getSupabaseFixtures(
     if (slug) cityNames.set(slug, slug);
   }
 
-  const standingsQuery = citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye"
-    ? supabase.from("standings").select("*")
-    : supabase.from("standings").select("*").eq("city_slug", citySlug);
-  const { data: standingRows, error: standingsError } = await standingsQuery;
   if (standingsError) {
     console.warn("Supabase standings okuma hatası (boş standings kullanılıyor):", standingsError.message);
   }
 
   const standings: Record<string, StandingItem[]> = {};
   for (const row of standingRows || []) {
-    const isAll = citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye";
     const cityName = getCityNameFromSlug(row.city_slug);
-    const key = isAll
+    const key = isAllCities
       ? `${cityName} - ${row.category}`
       : row.category;
     standings[key] = Array.isArray(row.rows) ? row.rows : [];
@@ -71,11 +87,18 @@ export async function getSupabaseFixtures(
 
   const categories = Array.from(new Set(matches.map((match) => match.category).filter(Boolean)));
   const halls = Array.from(new Set(matches.map((match) => match.hall).filter(Boolean)));
-  const updatedAt = matches
-    .map((match) => (match as Match & { raw?: { source_updated_at?: string } }).raw?.source_updated_at)
-    .filter(Boolean)
-    .sort()
-    .pop() || new Date().toISOString();
+  const updatedAt =
+    (rows || [])
+      .map(
+        (r) =>
+          (r as { source_updated_at?: string; updated_at?: string; raw?: { source_updated_at?: string } })
+            .source_updated_at ||
+          (r as { raw?: { source_updated_at?: string } }).raw?.source_updated_at ||
+          (r as { updated_at?: string }).updated_at
+      )
+      .filter((v): v is string => Boolean(v))
+      .sort()
+      .pop() || new Date().toISOString();
 
   return {
     city: citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye"

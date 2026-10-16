@@ -44,27 +44,38 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
 }) => {
   const [groups, setGroups] = useState<GroupStatusItem[]>(initialGroups);
   const [loadingData, setLoadingData] = useState(false);
+  const [fetchError, setFetchError] = useState<string | null>(null);
+  const [retryKey, setRetryKey] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedStatus, setSelectedStatus] = useState<GroupStatusKey | "all">("all");
   const [cityFilter, setCityFilter] = useState(selectedCity || "all");
   const [expandedCities, setExpandedCities] = useState<Record<string, boolean>>({});
+
+  React.useEffect(() => {
+    setCityFilter(selectedCity || "all");
+  }, [selectedCity]);
 
   // Eğer initialGroups boşsa veya şehir değiştiyse API'den yükle
   React.useEffect(() => {
     let isMounted = true;
     const loadGroupStatuses = async () => {
       setLoadingData(true);
+      setFetchError(null);
       try {
         const query = cityFilter && cityFilter !== "all" ? `?city=${cityFilter}` : "";
         const res = await fetch(`/api/group-status${query}`);
-        if (res.ok) {
-          const json = await res.json();
-          if (isMounted && json.groups) {
-            setGroups(json.groups);
-          }
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        const json = await res.json();
+        if (isMounted && json.groups) {
+          setGroups(json.groups);
         }
       } catch (err) {
         console.error("Grup durumları yüklenirken hata oluştu:", err);
+        if (isMounted) {
+          setFetchError("Grup durum verileri yüklenirken bir bağlantı hatası oluştu.");
+        }
       } finally {
         if (isMounted) setLoadingData(false);
       }
@@ -74,7 +85,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
     return () => {
       isMounted = false;
     };
-  }, [cityFilter]);
+  }, [cityFilter, retryKey]);
 
   // Durum Sayaçları (Legend rozetleri için)
   const statusCounts = useMemo(() => {
@@ -340,6 +351,22 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
         <div className="text-center py-16 bg-slate-900/50 border border-slate-800 rounded-2xl">
           <RefreshCw size={28} className="animate-spin text-ink-2 mx-auto mb-3" />
           <p className="text-sm font-semibold text-slate-300">Grup ve lig durumları taranıyor...</p>
+        </div>
+      ) : fetchError ? (
+        <div className="text-center py-16 bg-rose-950/30 border border-rose-800/60 rounded-2xl p-6">
+          <AlertCircle size={32} className="text-rose-400 mx-auto mb-3" />
+          <h3 className="text-sm font-bold text-white mb-1">Veri Yüklenemedi</h3>
+          <p className="text-xs text-rose-200/80 max-w-sm mx-auto mb-4">
+            {fetchError}
+          </p>
+          <button
+            type="button"
+            onClick={() => setRetryKey((k) => k + 1)}
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-fg text-xs font-bold hover:bg-primary-hover transition-colors cursor-pointer"
+          >
+            <RefreshCw size={13} />
+            <span>Tekrar Dene</span>
+          </button>
         </div>
       ) : cityGroups.length === 0 ? (
         <div className="text-center py-16 bg-slate-900/50 border border-slate-800 rounded-2xl p-6">

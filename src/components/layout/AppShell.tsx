@@ -57,7 +57,7 @@ export const AppShell: React.FC<AppShellProps> = ({
     <div
       ref={rootRef}
       data-section={section}
-      className={`min-h-screen flex flex-col bg-[var(--portal-background)] text-ink font-sans antialiased selection:bg-selected-strong selection:text-white ${className}`}
+      className={`min-h-screen flex flex-col pb-20 lg:pb-0 bg-[var(--portal-background)] text-ink font-sans antialiased selection:bg-selected-strong selection:text-white ${className}`}
       style={{
         "--portal-background": ThemeTokens.background,
         "--portal-panel": ThemeTokens.panel,
@@ -74,7 +74,7 @@ export const AppShell: React.FC<AppShellProps> = ({
             <aside
               aria-label="Lig Navigasyonu"
               style={sidebarStyle}
-              className="hidden lg:block lg:col-span-3 xl:col-span-2.5 sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg"
+              className="hidden lg:block lg:col-span-3 xl:col-span-3 sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg"
             >
               {leftSidebar}
             </aside>
@@ -84,9 +84,9 @@ export const AppShell: React.FC<AppShellProps> = ({
             aria-label="Ana Maç Akışı ve İçerik"
             className={`w-full col-span-1 min-w-0 py-2 sm:py-3 space-y-4 ${
               leftSidebar && rightSidebar
-                ? "lg:col-span-6 xl:col-span-6.5"
+                ? "lg:col-span-6 xl:col-span-6"
                 : leftSidebar
-                ? "lg:col-span-9 xl:col-span-9.5"
+                ? "lg:col-span-9 xl:col-span-9"
                 : rightSidebar
                 ? "lg:col-span-9 xl:col-span-9"
                 : "lg:col-span-12"

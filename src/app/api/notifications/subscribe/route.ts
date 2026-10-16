@@ -18,11 +18,27 @@ const MAX_KEY_LENGTH = 512;
 const MAX_FAVORITES = 100;
 const MAX_FAVORITE_LENGTH = 200;
 
-/** Push endpoint'i https URL olmalı ve makul uzunlukta olmalıdır. */
+const ALLOWED_PUSH_HOSTS = new Set([
+  "fcm.googleapis.com",
+  "android.googleapis.com",
+  "updates.push.services.mozilla.com",
+  "web.push.apple.com",
+]);
+
+/** Push endpoint'i güvenli bir Web Push sağlayıcısına ait https URL olmalı ve makul uzunlukta olmalıdır (SSRF koruması). */
 function isValidEndpoint(value: unknown): value is string {
   if (typeof value !== "string" || !value || value.length > MAX_ENDPOINT_LENGTH) return false;
   try {
-    return new URL(value).protocol === "https:";
+    const parsed = new URL(value);
+    if (parsed.protocol !== "https:") return false;
+    const host = parsed.hostname.toLowerCase();
+    return (
+      ALLOWED_PUSH_HOSTS.has(host) ||
+      host.endsWith(".push.services.mozilla.com") ||
+      host.endsWith(".notify.windows.com") ||
+      host.endsWith(".push.apple.com") ||
+      host.endsWith(".fcm.googleapis.com")
+    );
   } catch {
     return false;
   }

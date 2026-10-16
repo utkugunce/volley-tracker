@@ -70,6 +70,8 @@ export interface FixturesData {
   slug?: string;
   title?: string;
   total_matches: number;
+  scored_matches?: number;
+  all_teams?: string[];
   unfiltered_total?: number;
   source: string;
   filters: {

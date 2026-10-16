@@ -290,6 +290,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             todayStr={todayStr}
             yesterdayStr={yesterdayStr}
             totalMatchesCount={data?.total_matches}
+            scoredMatchesCount={resultsCount}
           />
         ) : activeMainTab === "today" ? (
           /* ==================== GÜNÜN MAÇLARI — Sofascore Kompakt Maç Akışı ==================== */
@@ -419,8 +420,20 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
         cities={citiesList}
         categories={data?.filters?.categories || []}
         onSelectCity={handleSelectCity}
-        onSelectCategory={setSelectedCategory}
-        onSelectHall={setSelectedHall}
+        onSelectCategory={(cat) => {
+          void ensureFullData();
+          setSelectedCategory(cat);
+          if (activeMainTab !== "fixtures" && activeMainTab !== "results") {
+            handleSelectTab("fixtures");
+          }
+        }}
+        onSelectHall={(hall) => {
+          void ensureFullData();
+          setSelectedHall(hall);
+          if (activeMainTab !== "fixtures" && activeMainTab !== "results") {
+            handleSelectTab("fixtures");
+          }
+        }}
       />
     </MatchSelectionProvider>
   );

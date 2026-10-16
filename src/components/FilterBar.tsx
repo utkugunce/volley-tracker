@@ -152,7 +152,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 >
                   <span>{tab.label}</span>
                   <span
-                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-display font-semibold tabular-nums ${
+                    className={`text-[10px] px-1.5 py-0.5 rounded-full font-display font-semibold tabular-nums ${
                       isActive ? "bg-black/30 text-white" : "bg-slate-700 text-slate-300"
                     }`}
                   >
@@ -215,7 +215,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             <Search
               size={13}
               aria-hidden="true"
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
             />
             <input
               type="text"
@@ -223,16 +223,16 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Kulüp veya salon ara..."
               aria-label="Kulüp veya salon ara"
-              className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-8.5 pr-7 py-1.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/30 transition-all font-medium"
+              className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-9 pr-8 py-1.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/30 transition-all font-medium"
             />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => onSearchChange("")}
                 aria-label="Aramayı temizle"
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
+                className="absolute right-1 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-7 h-7 text-slate-400 hover:text-slate-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded-lg"
               >
-                <X size={12} aria-hidden="true" />
+                <X size={13} aria-hidden="true" />
               </button>
             )}
           </div>
@@ -263,7 +263,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           {onSelectVolleyboxFilter && (
             <div className="flex items-center bg-slate-900/80 border border-slate-800 rounded-xl p-0.5 text-xs" role="group" aria-label="Volleybox veri eşleşme filtresi">
               <span className="text-[11px] font-bold text-slate-400 px-2 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-2xs" aria-hidden="true"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-sm" aria-hidden="true"></span>
                 Volleybox:
               </span>
               <button
@@ -272,7 +272,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => onSelectVolleyboxFilter("all")}
                 className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-primary ${
                   volleyboxFilter === "all"
-                    ? "bg-slate-800 text-white shadow-xs font-bold border border-slate-700/60"
+                    ? "bg-slate-800 text-white shadow-sm font-bold border border-slate-700/60"
                     : "text-slate-400 hover:text-white"
                 }`}
               >
@@ -284,7 +284,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 onClick={() => onSelectVolleyboxFilter("scored")}
                 className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold transition-all flex items-center gap-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 ${
                   volleyboxFilter === "scored"
-                    ? "bg-emerald-600 text-white shadow-xs font-bold"
+                    ? "bg-emerald-600 text-white shadow-sm font-bold"
                     : "text-emerald-400 hover:bg-emerald-950/60"
                 }`}
                 title="Volleybox'ta skoru girilmiş maçlar"

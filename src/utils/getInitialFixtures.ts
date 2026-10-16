@@ -207,8 +207,8 @@ export function getInitialHomeFixtures(): FixturesData {
   );
 
   // 2. En son biten 16 maç
-  const scored = full.matches
-    .filter(isMatchScored)
+  const allScoredMatches = full.matches.filter(isMatchScored);
+  const scored = allScoredMatches
     .sort((a, b) => (b.date && a.date ? b.date.localeCompare(a.date) : 0))
     .slice(0, 16);
 
@@ -224,6 +224,14 @@ export function getInitialHomeFixtures(): FixturesData {
     if (m && m.id) matchMap.set(m.id, m);
   });
 
+  // Tüm benzersiz takım adları (Spotlight Arama ve Kulübüm widget'ı için)
+  const teamsSet = new Set<string>();
+  for (const m of full.matches) {
+    if (m.home_team) teamsSet.add(m.home_team);
+    if (m.away_team) teamsSet.add(m.away_team);
+  }
+  const allTeams = Array.from(teamsSet).sort((a, b) => a.localeCompare(b, "tr"));
+
   // Grup liderleri (her gruptan sadece ilk sıradaki takım)
   const homeStandings: Record<string, StandingItem[]> = {};
   if (full.standings) {
@@ -236,6 +244,8 @@ export function getInitialHomeFixtures(): FixturesData {
 
   return {
     ...full,
+    scored_matches: allScoredMatches.length,
+    all_teams: allTeams,
     matches: Array.from(matchMap.values()),
     standings: homeStandings,
   };

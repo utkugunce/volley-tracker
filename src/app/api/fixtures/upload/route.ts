@@ -5,6 +5,7 @@ import { execFile } from "child_process";
 import { promisify } from "util";
 import { timingSafeEqual } from "crypto";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
+import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { toErrorLike } from "@/utils/errors";
 
 const execFileAsync = promisify(execFile);
@@ -22,7 +23,15 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024;
 // İzin verilen resmi TVF alan adları allowlist deseni
 const ALLOWED_DOMAIN_REGEX = /^([a-z0-9-]+\.)*(voleyboliltemsilciligi\.com|tvf\.org\.tr)$/i;
 
-// Rate limiting (Upstash varsa dağıtık, yoksa bellek içi) (IP başına dakikada maksimum 5 istek)
+// Brute-force koruması: 5 dakikada 10 hatalı token denemesi -> 15 dakika blok
+const uploadAuthLimiter = new RateLimiter({
+  name: "fixtures-upload-auth",
+  windowMs: 5 * 60 * 1000,
+  maxRequests: 10,
+  blockDurationMs: 15 * 60 * 1000,
+});
+
+// Rate limiting (Upstash varsa dağıtık, yoksa bellek içi) (IP başına dakikada maksimum 5 yükleme isteği)
 const uploadLimiter = new RateLimiter({
   name: "fixtures-upload",
   windowMs: 60 * 1000,
@@ -43,27 +52,48 @@ function isValidAllowedUrl(urlString: string): boolean {
 
 export async function POST(request: Request) {
   try {
-    // 1. Admin Token Doğrulaması (x-admin-token header)
     const expectedToken = process.env.ADMIN_TOKEN;
-
-    if (!expectedToken) {
-      console.error("ADMIN_TOKEN ortam değişkeni tanımlı değil — upload endpoint devre dışı.");
+    if (!expectedToken && !process.env.NEXT_PUBLIC_SUPABASE_URL) {
+      console.error("ADMIN_TOKEN veya Supabase Auth tanımlı değil — upload endpoint devre dışı.");
       return NextResponse.json(
         { error: "Sunucu yapılandırma hatası: yükleme özelliği şu anda kullanılamıyor." },
         { status: 503 }
       );
     }
 
-    const providedToken = request.headers.get("x-admin-token");
-    if (!providedToken || !safeCompare(providedToken, expectedToken)) {
+    const clientIp = getClientIp(request);
+
+    // 1. Brute-force koruması (hatalı token denemelerini sınırlar)
+    const authLimitCheck = await uploadAuthLimiter.check(clientIp);
+    if (!authLimitCheck.allowed) {
+      return NextResponse.json(
+        { error: "Çok fazla hatalı giriş denemesi yapıldı. Lütfen daha sonra tekrar deneyin." },
+        { status: 429, headers: { "Retry-After": String(authLimitCheck.retryAfterSeconds || 900) } }
+      );
+    }
+
+    // 2. Admin Token / Supabase Oturum Doğrulaması
+    const providedToken =
+      request.headers.get("x-admin-token") ||
+      request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
+
+    const isTokenValid = Boolean(expectedToken && providedToken && safeCompare(providedToken, expectedToken));
+    let isJwtValid = false;
+    if (!isTokenValid) {
+      const authUser = await getAuthenticatedUser(request);
+      isJwtValid = Boolean(authUser && (authUser.role === "admin" || authUser.role === "editor"));
+    }
+
+    if (!isTokenValid && !isJwtValid) {
       return NextResponse.json(
         { error: "Yetkisiz erişim: Geçersiz veya eksik admin token." },
         { status: 401 }
       );
     }
 
-    // 2. Basit IP Bazlı Rate Limiting
-    const clientIp = getClientIp(request);
+    await uploadAuthLimiter.reset(clientIp);
+
+    // 3. Yükleme Hız Sınırı (Dakikada maksimum 5 geçerli yükleme isteği)
     const limitCheck = await uploadLimiter.check(clientIp);
     if (!limitCheck.allowed) {
       return NextResponse.json(

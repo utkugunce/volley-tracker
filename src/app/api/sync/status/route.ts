@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { timingSafeEqual } from "crypto";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
+import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { toErrorLike } from "@/utils/errors";
 
 function safeCompare(a: string, b: string): boolean {
@@ -12,17 +13,24 @@ function safeCompare(a: string, b: string): boolean {
 
 export async function GET(request: Request) {
   const adminToken = process.env.ADMIN_TOKEN;
-  if (!adminToken) {
-    return NextResponse.json(
-      { error: "Sunucu yapılandırması eksik: ADMIN_TOKEN ortam değişkeni tanımlanmamış." },
-      { status: 503 }
-    );
-  }
-
   const xAdmin = request.headers.get("x-admin-token");
   const authHeader = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
   const provided = xAdmin || authHeader;
-  if (!provided || !safeCompare(provided, adminToken)) {
+
+  const isLegacyAuthorized = Boolean(adminToken && provided && safeCompare(provided, adminToken));
+  let isJwtAuthorized = false;
+  if (!isLegacyAuthorized) {
+    const authUser = await getAuthenticatedUser(request);
+    isJwtAuthorized = Boolean(authUser && (authUser.role === "admin" || authUser.role === "editor"));
+  }
+
+  if (!isLegacyAuthorized && !isJwtAuthorized) {
+    if (!adminToken && !process.env.NEXT_PUBLIC_SUPABASE_URL) {
+      return NextResponse.json(
+        { error: "Sunucu yapılandırması eksik: ADMIN_TOKEN veya Supabase Auth tanımlanmamış." },
+        { status: 503 }
+      );
+    }
     return NextResponse.json({ error: "Yetkisiz erişim" }, { status: 401 });
   }
 

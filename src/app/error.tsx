@@ -49,7 +49,7 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
           <button
             type="button"
             onClick={() => reset()}
-            className="inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl bg-primary hover:bg-primary-hover text-white text-xs sm:text-sm font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-xl bg-primary hover:bg-primary-hover text-primary-fg text-xs sm:text-sm font-bold shadow-lg shadow-primary/20 transition-all active:scale-95 cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" aria-hidden="true" />
             <span>Tekrar Dene</span>

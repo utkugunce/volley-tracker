@@ -10,6 +10,7 @@ import { isCityHidden } from "@/utils/cityHelper";
 import { getSupabaseFixturesCached } from "@/utils/supabaseFixtures";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
 import { setActiveDataSource } from "@/utils/supabaseData";
+import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import type { CityInfo, FixturesData, Match, StandingItem } from "@/types/fixture";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
@@ -59,8 +60,13 @@ export async function GET(request: Request) {
       | undefined;
 
     if (refresh === "1") {
-      const authError = requireConfiguredSecret(request, "ADMIN_TOKEN");
-      if (authError) {
+      const secretAuthError = requireConfiguredSecret(request, "ADMIN_TOKEN");
+      let isAdminAuthorized = secretAuthError === null;
+      if (!isAdminAuthorized) {
+        const authUser = await getAuthenticatedUser(request);
+        isAdminAuthorized = Boolean(authUser && (authUser.role === "admin" || authUser.role === "editor"));
+      }
+      if (!isAdminAuthorized) {
         syncMeta = {
           attempted: false,
           success: true,

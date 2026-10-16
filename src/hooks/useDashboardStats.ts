@@ -23,13 +23,13 @@ export function useDashboardStats({
 }: UseDashboardStatsOptions) {
   // Tüm benzersiz takım isimleri (Spotlight Arama ve Kulübüm widget'ı için)
   const allTeamNames = useMemo(() => {
-    const set = new Set<string>();
+    const set = new Set<string>(Array.isArray(data?.all_teams) ? data.all_teams : []);
     (data?.matches || []).forEach((m) => {
       if (m.home_team) set.add(m.home_team);
       if (m.away_team) set.add(m.away_team);
     });
     return Array.from(set).sort((a, b) => a.localeCompare(b, "tr"));
-  }, [data?.matches]);
+  }, [data?.all_teams, data?.matches]);
 
   // Bugün oynanacak veya dünden skoru henüz girilmemiş maç sayısı (Header rozeti için)
   const todayMatchesCount = useMemo(() => {
@@ -66,7 +66,15 @@ export function useDashboardStats({
 
   // Sonuçlanan toplam maç sayısı (Header rozeti ve Sonuçlar sekmesi için)
   const resultsCount = useMemo(() => {
-    return (data?.matches || []).filter(isMatchScored).length;
+    const loadedMatches = data?.matches || [];
+    const loadedScored = loadedMatches.filter(isMatchScored).length;
+    if (
+      typeof data?.scored_matches === "number" &&
+      data.total_matches > loadedMatches.length
+    ) {
+      return Math.max(data.scored_matches, loadedScored);
+    }
+    return loadedScored;
   }, [data]);
 
   // Canlı maç sayısı

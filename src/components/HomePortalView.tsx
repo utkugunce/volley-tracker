@@ -38,6 +38,7 @@ interface HomePortalViewProps {
   todayStr: string;
   yesterdayStr: string;
   totalMatchesCount?: number;
+  scoredMatchesCount?: number;
 }
 
 export const HomePortalView: React.FC<HomePortalViewProps> = ({
@@ -54,6 +55,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
   todayStr,
   yesterdayStr,
   totalMatchesCount,
+  scoredMatchesCount,
 }) => {
   // Filtre sekmesi: "all" | "today" | "upcoming" | "finished"
   const [feedFilter, setFeedFilter] = useState<"all" | "today" | "upcoming" | "finished">("all");
@@ -61,8 +63,12 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
   // İstatistikler
   const stats = useMemo(() => {
     const totalMatches = totalMatchesCount ?? matches.length;
-    const scoredMatches = matches.filter(isMatchScored).length;
-    const upcomingMatches = totalMatches - scoredMatches;
+    const loadedScored = matches.filter(isMatchScored).length;
+    const scoredMatches =
+      typeof scoredMatchesCount === "number" && totalMatches > matches.length
+        ? Math.max(scoredMatchesCount, loadedScored)
+        : loadedScored;
+    const upcomingMatches = Math.max(totalMatches - scoredMatches, 0);
     const effectiveYesterday = yesterdayStr || (todayStr ? getYesterdayString(todayStr) : "");
     const todayCount = matches.filter((m) =>
       isTodayOrUnscoredYesterday(m.date, isMatchScored(m), todayStr, effectiveYesterday)
@@ -74,7 +80,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       upcomingMatches,
       todayCount,
     };
-  }, [matches, todayStr, yesterdayStr, totalMatchesCount]);
+  }, [matches, todayStr, yesterdayStr, totalMatchesCount, scoredMatchesCount]);
 
   // Bugünün Maçları (Bugünkü maçlar + dünden skoru henüz girilmemiş maçlar)
   const todayMatches = useMemo(() => {

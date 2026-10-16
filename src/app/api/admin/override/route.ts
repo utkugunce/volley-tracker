@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { timingSafeEqual } from "crypto";
+import { randomUUID, timingSafeEqual } from "crypto";
 import {
   getOverridesData,
   saveOverridesData,
@@ -77,17 +77,17 @@ async function verifyAdminToken(request: Request): Promise<{ authorized: boolean
     return { authorized: true };
   }
 
+  const authenticatedUser = await getAuthenticatedUser(request);
+  if (authenticatedUser && (authenticatedUser.role === "admin" || authenticatedUser.role === "editor")) {
+    await adminAuthLimiter.reset(clientIp);
+    return { authorized: true };
+  }
+
   if (expectedToken && legacyToken) {
     return {
       authorized: false,
       response: NextResponse.json({ error: "Yetkisiz işlem: Geçersiz admin token." }, { status: 401 }),
     };
-  }
-
-  const authenticatedUser = await getAuthenticatedUser(request);
-  if (authenticatedUser && (authenticatedUser.role === "admin" || authenticatedUser.role === "editor")) {
-    await adminAuthLimiter.reset(clientIp);
-    return { authorized: true };
   }
 
   if (!expectedToken && !process.env.NEXT_PUBLIC_SUPABASE_URL) {
@@ -196,7 +196,7 @@ export async function POST(request: Request) {
     currentData.overrides[safeMatchId] = newOverride;
 
     const auditEntry: AuditLogEntry = {
-      id: `audit-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+      id: randomUUID(),
       match_id: safeMatchId,
       action: isUpdate ? "update" : "create",
       timestamp: new Date().toISOString(),
@@ -257,7 +257,7 @@ export async function DELETE(request: Request) {
     delete currentData.overrides[safeMatchId];
 
     const auditEntry: AuditLogEntry = {
-      id: `audit-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+      id: randomUUID(),
       match_id: safeMatchId,
       action: "delete",
       timestamp: new Date().toISOString(),

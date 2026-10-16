@@ -70,6 +70,15 @@ export default function AdminPage() {
   // Bildirim Yönetimi
   const [notificationStatus, setNotificationStatus] = useState<NotificationQueueStatus | null>(null);
   const [notificationHistory, setNotificationHistory] = useState<NotificationHistory[]>([]);
+  const syncPollRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (syncPollRef.current) {
+        clearInterval(syncPollRef.current);
+      }
+    };
+  }, []);
 
   // Oturum açma kontrolü
   useEffect(() => {
@@ -93,14 +102,14 @@ export default function AdminPage() {
       const session = await supabase.auth.getSession();
       if (!session.data.session) return;
 
-      const token = session.data.session.access_token;
+      const accessToken = session.data.session.access_token;
 
       const [statusRes, historyRes] = await Promise.all([
         fetch("/api/notifications/queue?action=status", {
-          headers: { "x-admin-token": token },
+          headers: { Authorization: `Bearer ${accessToken}` },
         }),
         fetch("/api/notifications/queue?action=history&limit=10", {
-          headers: { "x-admin-token": token },
+          headers: { Authorization: `Bearer ${accessToken}` },
         }),
       ]);
 
@@ -128,7 +137,7 @@ export default function AdminPage() {
       // Supabase session token'ı Authorization header'ı olarak gönder
       const overrideRes = await fetch("/api/admin/override", {
         headers: { 
-          "Authorization": `Bearer ${authToken}`
+          Authorization: `Bearer ${authToken}`
         },
       });
 
@@ -157,7 +166,7 @@ export default function AdminPage() {
       try {
         const usersRes = await fetch("/api/admin/users", {
           headers: { 
-            "Authorization": `Bearer ${authToken}`
+            Authorization: `Bearer ${authToken}`
           },
         });
         if (usersRes.ok) {
@@ -231,7 +240,7 @@ export default function AdminPage() {
 
     try {
       const res = await fetch("/api/fixtures?city=all&refresh=1", {
-        headers: { "x-admin-token": token },
+        headers: { Authorization: `Bearer ${token}` },
       });
       const json = await res.json();
 
@@ -245,17 +254,19 @@ export default function AdminPage() {
 
         let pollCount = 0;
         const maxPolls = 30;
+        if (syncPollRef.current) clearInterval(syncPollRef.current);
         const intervalId = setInterval(async () => {
           pollCount++;
           try {
             const statusRes = await fetch("/api/sync/status", {
-              headers: { "x-admin-token": token },
+              headers: { Authorization: `Bearer ${token}` },
               cache: "no-store",
             });
             if (statusRes.ok) {
               const st = await statusRes.json();
               if (st.status === "completed") {
                 clearInterval(intervalId);
+                syncPollRef.current = null;
                 setSyncLoading(false);
                 setSyncStatus({
                   inProgress: false,
@@ -278,6 +289,7 @@ export default function AdminPage() {
 
           if (pollCount >= maxPolls) {
             clearInterval(intervalId);
+            syncPollRef.current = null;
             setSyncLoading(false);
             setSyncStatus({
               inProgress: false,
@@ -287,6 +299,7 @@ export default function AdminPage() {
             verifyAndFetchData(token);
           }
         }, 4000);
+        syncPollRef.current = intervalId;
       } else {
         setSyncLoading(false);
         setSyncStatus({
@@ -350,9 +363,8 @@ export default function AdminPage() {
       const res = await fetch("/api/admin/override", {
         method: "POST",
         headers: {
-          "Content-Transferred": "application/json",
           "Content-Type": "application/json",
-          "x-admin-token": token,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(payload),
       });
@@ -407,7 +419,7 @@ export default function AdminPage() {
     try {
       const res = await fetch(`/api/admin/override?match_id=${encodeURIComponent(matchId)}`, {
         method: "DELETE",
-        headers: { "x-admin-token": token },
+        headers: { Authorization: `Bearer ${token}` },
       });
 
       const resJson = await res.json();
@@ -447,7 +459,7 @@ export default function AdminPage() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-admin-token": token,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           email: newUserEmail,
@@ -463,7 +475,7 @@ export default function AdminPage() {
 
       // Kullanıcı listesini güncelle
       const usersRes = await fetch("/api/admin/users", {
-        headers: { "x-admin-token": token },
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (usersRes.ok) {
         const usersData = await usersRes.json();
@@ -491,7 +503,7 @@ export default function AdminPage() {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "x-admin-token": token,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ role: newRole }),
       });
@@ -503,7 +515,7 @@ export default function AdminPage() {
 
       // Kullanıcı listesini güncelle
       const usersRes = await fetch("/api/admin/users", {
-        headers: { "x-admin-token": token },
+        headers: { Authorization: `Bearer ${token}` },
       });
       if (usersRes.ok) {
         const usersData = await usersRes.json();
@@ -525,7 +537,7 @@ export default function AdminPage() {
     try {
       const res = await fetch(`/api/admin/users/${userId}`, {
         method: "DELETE",
-        headers: { "x-admin-token": token },
+        headers: { Authorization: `Bearer ${token}` },
       });
 
       const data = await res.json();

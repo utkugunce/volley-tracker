@@ -183,20 +183,25 @@ export async function saveOverridesData(data: OverridesData): Promise<void> {
       if (error) throw new Error(`Supabase override yazılamadı: ${error.message}`);
     }
     if (data.audit_log.length) {
-      const auditRows = data.audit_log.map((entry) => ({
-        id: entry.id,
-        match_id: entry.match_id,
-        action: entry.action,
-        timestamp: entry.timestamp,
-        updated_by: entry.updated_by,
-        reason: entry.reason,
-        old_value: entry.old_value || null,
-        new_value: entry.new_value || null,
-      }));
-      const { error } = await supabase
-        .from("override_audit_log")
-        .upsert(auditRows, { onConflict: "id" });
-      if (error) throw new Error(`Supabase audit log yazılamadı: ${error.message}`);
+      const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      const auditRows = data.audit_log
+        .filter((entry) => uuidRegex.test(entry.id))
+        .map((entry) => ({
+          id: entry.id,
+          match_id: entry.match_id,
+          action: entry.action,
+          timestamp: entry.timestamp,
+          updated_by: entry.updated_by,
+          reason: entry.reason,
+          old_value: entry.old_value || null,
+          new_value: entry.new_value || null,
+        }));
+      if (auditRows.length) {
+        const { error } = await supabase
+          .from("override_audit_log")
+          .upsert(auditRows, { onConflict: "id" });
+        if (error) throw new Error(`Supabase audit log yazılamadı: ${error.message}`);
+      }
     }
     return;
   }

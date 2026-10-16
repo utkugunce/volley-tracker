@@ -51,23 +51,6 @@ export interface MatchInspectorPanelProps {
 export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) => {
   const { match, className = "", isLoading = false } = props;
 
-  if (!match) {
-    return (
-      <div className={`flex flex-col items-center justify-center h-full p-6 text-center select-none bg-canvas ${className}`}>
-        <EmptyState
-          icon={<BarChart3 size={28} className="text-blue-400" />}
-          title="Detayları görüntülemek için bir maç seçin"
-          description="Skorboard, set sayıları dökümü, salon konumu, H2H form analizi ve mini puan durumunu anlık olarak inceleyin."
-        />
-        <div className="inline-flex items-center gap-1.5 text-[10px] text-blue-400 bg-blue-950/40 px-3 py-1 rounded-full border border-blue-800/50 font-medium mt-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-          Sofascore Maç Merkezi
-        </div>
-      </div>
-    );
-  }
-
-
   if (isLoading) {
     return (
       <div
@@ -82,6 +65,22 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) =
           <div className="h-8 w-full animate-pulse rounded bg-slate-800/60" />
         </div>
         <div className="h-28 w-full animate-pulse rounded-lg bg-slate-800/40" />
+      </div>
+    );
+  }
+
+  if (!match) {
+    return (
+      <div className={`flex flex-col items-center justify-center h-full p-6 text-center select-none bg-canvas ${className}`}>
+        <EmptyState
+          icon={<BarChart3 size={28} className="text-blue-400" />}
+          title="Detayları görüntülemek için bir maç seçin"
+          description="Skorboard, set sayıları dökümü, salon konumu, H2H form analizi ve mini puan durumunu anlık olarak inceleyin."
+        />
+        <div className="inline-flex items-center gap-1.5 text-[10px] text-blue-400 bg-blue-950/40 px-3 py-1 rounded-full border border-blue-800/50 font-medium mt-3">
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+          Sofascore Maç Merkezi
+        </div>
       </div>
     );
   }

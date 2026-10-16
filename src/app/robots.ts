@@ -31,7 +31,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: ["/", "/llms.txt"],
-        disallow: ["/admin", "/api/"],
+        disallow: ["/admin", "/api/", "/panel", "/giris"],
       },
       {
         userAgent: BLOCKED_BOTS,

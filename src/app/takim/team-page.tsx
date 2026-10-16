@@ -50,6 +50,14 @@ export async function buildTeamMetadata(slug: string, cityFilter?: string): Prom
       description: `${team.teamName} maç takvimi, skorları ve lig puan durumu.`,
       url: canonical,
       type: "website",
+      images: [
+        {
+          url: "/icon.svg",
+          width: 512,
+          height: 512,
+          alt: `${team.teamName} — Altyapı Voleybol`,
+        },
+      ],
     },
   };
 }

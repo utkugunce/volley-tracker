@@ -13,8 +13,7 @@ drop policy if exists matches_realtime_select_policy on public.matches;
 create policy "matches_realtime_select_policy" on public.matches
   for select
   to authenticated
-  using (true)
-  with check (true);
+  using (true);
 
 -- Policy: Anonymous users can only receive updates for non-sensitive match data
 drop policy if exists matches_realtime_anon_policy on public.matches;
@@ -22,8 +21,7 @@ drop policy if exists matches_realtime_anon_policy on public.matches;
 create policy "matches_realtime_anon_policy" on public.matches
   for select
   to anon
-  using (true)
-  with check (true);
+  using (true);
 
 -- Function to check if a user should receive realtime updates for a specific match
 create or replace function public.can_receive_realtime_match_updates(user_id uuid, match_id text)
@@ -38,9 +36,9 @@ as $$
     -- Get user role
     select role into user_role from public.user_roles where user_id = can_receive_realtime_match_updates.user_id;
     
-    -- If no role assigned, check app_metadata
+    -- If no role assigned, check raw_app_meta_data
     if user_role is null then
-      select app_metadata->>'role' into user_role 
+      select raw_app_meta_data->>'role' into user_role 
       from auth.users 
       where id = can_receive_realtime_match_updates.user_id;
     end if;
@@ -56,10 +54,6 @@ $$;
 -- Grant realtime permissions
 grant usage on schema public to anon, authenticated;
 grant select on all tables in schema public to anon, authenticated;
-
--- Enable realtime replication for matches table
--- This ensures that changes to matches table are broadcast via Realtime
-alter publication supabase_realtime add table public.matches;
 
 -- Add comment for documentation
 comment on function public.can_receive_realtime_match_updates is 'Checks if a user can receive realtime updates for a specific match. Currently all authenticated users can receive updates.';

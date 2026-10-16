@@ -8,9 +8,16 @@ language plpgsql
 security definer
 set search_path = public
 as $$
+  declare
+    jwt_role text;
   begin
+    jwt_role := coalesce(
+      auth.jwt() -> 'app_metadata' ->> 'role',
+      auth.jwt() -> 'user_metadata' ->> 'role',
+      auth.jwt() ->> 'role'
+    );
     -- Check app_metadata first (for admin)
-    if required_role = 'admin' and auth.jwt() ->> 'role' = 'admin' then
+    if required_role = 'admin' and jwt_role = 'admin' then
       return true;
     end if;
     
@@ -33,7 +40,11 @@ as $$
     user_role text;
   begin
     -- Check app_metadata first
-    user_role := auth.jwt() ->> 'role';
+    user_role := coalesce(
+      auth.jwt() -> 'app_metadata' ->> 'role',
+      auth.jwt() -> 'user_metadata' ->> 'role',
+      auth.jwt() ->> 'role'
+    );
     if user_role in ('admin', 'editor', 'viewer') then
       return user_role;
     end if;

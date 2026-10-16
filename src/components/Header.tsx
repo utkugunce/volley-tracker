@@ -63,7 +63,7 @@ export const Header: React.FC<HeaderProps> = ({
     : "--:--";
 
   return (
-    <header className="bg-canvas/90 backdrop-blur-xl text-white sticky top-0 z-30 shadow-2xl border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
+    <header className="bg-canvas/90 text-white border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
       {/* 1. Üst Flashscore Bar */}
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap min-[1200px]:flex-nowrap items-center justify-between border-b border-slate-800/60 gap-x-2 gap-y-1.5">
         {/* Logo & Brand & İl Seçici */}
@@ -94,7 +94,7 @@ export const Header: React.FC<HeaderProps> = ({
             title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
           >
             <span className="tracking-wide">{t("header.k2")}</span>
-            <span className="text-[10px] text-slate-400 px-1 py-0.2 rounded font-mono hidden sm:inline">{t("header.groups16")}</span>
+            <span className="text-[10px] text-slate-400 px-1 py-0.5 rounded font-mono hidden sm:inline">{t("header.groups16")}</span>
             <ArrowRight size={12} className="text-slate-400" />
           </Link>
         </div>
@@ -112,7 +112,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Search size={13} className="text-slate-400" aria-hidden="true" />
               <span className="hidden md:inline font-medium text-[11px] text-slate-400">{t("header.search")}</span>
-              <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-slate-400 bg-slate-900 px-1 py-0.2 rounded border border-slate-700" aria-hidden="true">
+              <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-slate-400 bg-slate-900 px-1 py-0.5 rounded border border-slate-700" aria-hidden="true">
                 ⌘K
               </kbd>
             </button>

@@ -163,15 +163,23 @@ export const CompareClient: React.FC<CompareClientProps> = ({
               <label htmlFor="team1-select" className="block text-xs font-bold text-slate-300">
                 1. Takım
               </label>
+              <input
+                type="search"
+                value={search1}
+                onChange={(e) => setSearch1(e.target.value)}
+                placeholder="1. takımı veya ili filtrele..."
+                aria-label="Birinci takım listesini filtrele"
+                className="w-full bg-slate-900/90 border border-slate-700/80 text-white placeholder:text-slate-500 rounded-xl px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              />
               <select
                 id="team1-select"
                 value={slug1}
                 onChange={(e) => handleApply(e.target.value, slug2)}
                 aria-label="Birinci takımı seçin"
-                className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
               >
-                <option value="">Takım seçin...</option>
-                {teamsList.map((t) => (
+                <option value="">Takım seçin... ({filteredTeams1.length})</option>
+                {filteredTeams1.map((t) => (
                   <option key={`t1-${t.slug}`} value={t.slug}>
                     {t.name} ({t.city})
                   </option>
@@ -197,15 +205,23 @@ export const CompareClient: React.FC<CompareClientProps> = ({
               <label htmlFor="team2-select" className="block text-xs font-bold text-slate-300">
                 2. Takım (Rakip)
               </label>
+              <input
+                type="search"
+                value={search2}
+                onChange={(e) => setSearch2(e.target.value)}
+                placeholder="2. takımı veya ili filtrele..."
+                aria-label="İkinci takım listesini filtrele"
+                className="w-full bg-slate-900/90 border border-slate-700/80 text-white placeholder:text-slate-500 rounded-xl px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+              />
               <select
                 id="team2-select"
                 value={slug2}
                 onChange={(e) => handleApply(slug1, e.target.value)}
                 aria-label="İkinci takımı seçin"
-                className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
               >
-                <option value="">Rakip takım seçin...</option>
-                {teamsList.map((t) => (
+                <option value="">Rakip takım seçin... ({filteredTeams2.length})</option>
+                {filteredTeams2.map((t) => (
                   <option key={`t2-${t.slug}`} value={t.slug}>
                     {t.name} ({t.city})
                   </option>
