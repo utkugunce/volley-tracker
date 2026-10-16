@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T19:31:06.445389+03:00",
+  "updated_at": "2026-10-16T11:13:37.119615+00:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -43,7 +43,7 @@
       },
       {
         "rank": 2,
-        "team": "Tutku Spor Kulübü",
+        "team": "Yeşil Çivril Belediye Spor Kulübü",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -54,6 +54,17 @@
       },
       {
         "rank": 3,
+        "team": "Tutku Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Damla Spor Kulübü",
         "played": 1,
         "won": 1,
@@ -64,7 +75,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Anadolu Pars Spor Kulübü",
         "played": 2,
         "won": 1,
@@ -75,18 +86,18 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Hierapolis Spor Kulübü",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Merkez Akademi Spor Kulübü",
         "played": 1,
         "won": 0,
@@ -97,7 +108,7 @@
         "form": []
       },
       {
-        "rank": 7,
+        "rank": 8,
         "team": "Denizli Aile Ve Sosyal Hizmetler Spor Kulübü",
         "played": 1,
         "won": 0,
@@ -108,19 +119,8 @@
         "form": []
       },
       {
-        "rank": 8,
-        "team": "Honaz Adil Akan Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 9,
-        "team": "Yeşil Çivril Belediye Spor Kulübü",
+        "team": "Honaz Adil Akan Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -448,11 +448,15 @@
       "match_no": "6",
       "home_team": "Hierapolis Spor Kulübü",
       "away_team": "Yeşil Çivril Belediye Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "13-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -949,5 +953,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-15T19:36:04.785818"
+  "volleybox_sync_updated_at": "2026-10-16T11:15:31.613824"
 }

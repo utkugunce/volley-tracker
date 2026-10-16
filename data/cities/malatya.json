@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-15T19:31:06.445389+03:00",
+  "updated_at": "2026-10-16T11:13:37.119615+00:00",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 27,
+  "total_matches": 63,
   "source": "https://malatya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,36 +22,37 @@
     ],
     "halls": [
       "Tümü",
-      "Merkez"
+      "Merkez",
+      "Orduzu Spor Salonu"
     ]
   },
   "standings": {
     "Genç Kızlar 1. Ligi - 1. Grup": [
       {
         "rank": 1,
-        "team": "Nicer Hotel Voleybol Kulübü",
+        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
         "played": 2,
         "won": 2,
         "lost": 0,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
+        "rank": 2,
+        "team": "Nicer Hotel Voleybol Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
         "rank": 3,
-        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
+        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -124,6 +125,834 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 6,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar A Grubu": [
+      {
+        "rank": 1,
+        "team": "Durucasu Abdurrahman Sertaş Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Malatya Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Özel Malatya Nesibe Aydın Yıldızlar",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar B Grubu": [
+      {
+        "rank": 1,
+        "team": "Akçadağ Fatih Fen Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Akmercan Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Doğanşehir Fen Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Şehit Serdar Selçuk Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar C Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Farabi Anadolu İmam Hatip Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Fuat Sezgin Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Malatya Spor Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Şehit Serdal Toprak Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar D Grubu": [
+      {
+        "rank": 1,
+        "team": "Beydağı Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Özel Malatya Mektebim Koleji",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Şehriban Günata Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Ted Malatya Kolleji Özel Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar E Grubu": [
+      {
+        "rank": 1,
+        "team": "Atatürk Kız Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Malatya Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Malatya Mehmet Ali Aydınlar Fen Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Malatya Final Kolleji",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar F Grubu": [
+      {
+        "rank": 1,
+        "team": "Mareşal Fevzi Çakmak Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Özel Girne Kolleji Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Mercan Kolleji",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar G Grubu": [
+      {
+        "rank": 1,
+        "team": "Cumhuriyet Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Özel Malatya Kanguru Kolleji",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Sadreddin Konevi Kız Anadolu İmam Hatip Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Yusuf Kenan Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar H Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - 1. Grup": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar A Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar B Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar C Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar D Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar E Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar F Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar G Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Okul Sporları Genç Kızlar H Grubu": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği": [
+      {
+        "rank": 1,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Özel Teksa Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ]
@@ -550,11 +1379,15 @@
       "match_no": "12",
       "home_team": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
       "away_team": "Nicer Hotel Voleybol Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-12",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1080,8 +1913,1232 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "malatya-20261019-028",
+      "city": "Malatya",
+      "date": "2026-10-19",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar A Grubu",
+      "match_no": "1",
+      "home_team": "Malatya Lisesi",
+      "away_team": "Özel Malatya Nesibe Aydın Yıldızlar",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261019-029",
+      "city": "Malatya",
+      "date": "2026-10-19",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar A Grubu",
+      "match_no": "2",
+      "home_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+      "away_team": "Durucasu Abdurrahman Sertaş Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261022-030",
+      "city": "Malatya",
+      "date": "2026-10-22",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar A Grubu",
+      "match_no": "3",
+      "home_team": "Durucasu Abdurrahman Sertaş Anadolu Lisesi",
+      "away_team": "Malatya Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261023-031",
+      "city": "Malatya",
+      "date": "2026-10-23",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar A Grubu",
+      "match_no": "4",
+      "home_team": "Özel Malatya Nesibe Aydın Yıldızlar",
+      "away_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261102-032",
+      "city": "Malatya",
+      "date": "2026-11-02",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar A Grubu",
+      "match_no": "5",
+      "home_team": "Malatya Lisesi",
+      "away_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261102-033",
+      "city": "Malatya",
+      "date": "2026-11-02",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar A Grubu",
+      "match_no": "6",
+      "home_team": "Durucasu Abdurrahman Sertaş Anadolu Lisesi",
+      "away_team": "Özel Malatya Nesibe Aydın Yıldızlar",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261019-034",
+      "city": "Malatya",
+      "date": "2026-10-19",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar B Grubu",
+      "match_no": "1",
+      "home_team": "Akçadağ Fatih Fen Lisesi",
+      "away_team": "Doğanşehir Fen Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261019-035",
+      "city": "Malatya",
+      "date": "2026-10-19",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar B Grubu",
+      "match_no": "2",
+      "home_team": "Akmercan Anadolu Lisesi",
+      "away_team": "Şehit Serdar Selçuk Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261023-036",
+      "city": "Malatya",
+      "date": "2026-10-23",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar B Grubu",
+      "match_no": "3",
+      "home_team": "Doğanşehir Fen Lisesi",
+      "away_team": "Akmercan Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261023-037",
+      "city": "Malatya",
+      "date": "2026-10-23",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar B Grubu",
+      "match_no": "4",
+      "home_team": "Şehit Serdar Selçuk Anadolu Lisesi",
+      "away_team": "Akçadağ Fatih Fen Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261102-038",
+      "city": "Malatya",
+      "date": "2026-11-02",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar B Grubu",
+      "match_no": "5",
+      "home_team": "Şehit Serdar Selçuk Anadolu Lisesi",
+      "away_team": "Doğanşehir Fen Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261102-039",
+      "city": "Malatya",
+      "date": "2026-11-02",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar B Grubu",
+      "match_no": "6",
+      "home_team": "Akçadağ Fatih Fen Lisesi",
+      "away_team": "Akmercan Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261020-040",
+      "city": "Malatya",
+      "date": "2026-10-20",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar C Grubu",
+      "match_no": "1",
+      "home_team": "Fuat Sezgin Anadolu Lisesi",
+      "away_team": "Battalgazi Farabi Anadolu İmam Hatip Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261020-041",
+      "city": "Malatya",
+      "date": "2026-10-20",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar C Grubu",
+      "match_no": "2",
+      "home_team": "Şehit Serdal Toprak Anadolu Lisesi",
+      "away_team": "Malatya Spor Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261026-042",
+      "city": "Malatya",
+      "date": "2026-10-26",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar C Grubu",
+      "match_no": "3",
+      "home_team": "Malatya Spor Lisesi",
+      "away_team": "Fuat Sezgin Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261026-043",
+      "city": "Malatya",
+      "date": "2026-10-26",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar C Grubu",
+      "match_no": "4",
+      "home_team": "Battalgazi Farabi Anadolu İmam Hatip Lisesi",
+      "away_team": "Şehit Serdal Toprak Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261103-044",
+      "city": "Malatya",
+      "date": "2026-11-03",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar C Grubu",
+      "match_no": "5",
+      "home_team": "Battalgazi Farabi Anadolu İmam Hatip Lisesi",
+      "away_team": "Malatya Spor Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261103-045",
+      "city": "Malatya",
+      "date": "2026-11-03",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar C Grubu",
+      "match_no": "6",
+      "home_team": "Şehit Serdal Toprak Anadolu Lisesi",
+      "away_team": "Fuat Sezgin Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261020-046",
+      "city": "Malatya",
+      "date": "2026-10-20",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar D Grubu",
+      "match_no": "1",
+      "home_team": "Şehriban Günata Anadolu Lisesi",
+      "away_team": "Beydağı Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261020-047",
+      "city": "Malatya",
+      "date": "2026-10-20",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar D Grubu",
+      "match_no": "2",
+      "home_team": "Ted Malatya Kolleji Özel Anadolu Lisesi",
+      "away_team": "Özel Malatya Mektebim Koleji",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261026-048",
+      "city": "Malatya",
+      "date": "2026-10-26",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar D Grubu",
+      "match_no": "3",
+      "home_team": "Özel Malatya Mektebim Koleji",
+      "away_team": "Şehriban Günata Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261026-049",
+      "city": "Malatya",
+      "date": "2026-10-26",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar D Grubu",
+      "match_no": "4",
+      "home_team": "Beydağı Anadolu Lisesi",
+      "away_team": "Ted Malatya Kolleji Özel Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261103-050",
+      "city": "Malatya",
+      "date": "2026-11-03",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar D Grubu",
+      "match_no": "5",
+      "home_team": "Şehriban Günata Anadolu Lisesi",
+      "away_team": "Ted Malatya Kolleji Özel Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261103-051",
+      "city": "Malatya",
+      "date": "2026-11-03",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar D Grubu",
+      "match_no": "6",
+      "home_team": "Özel Malatya Mektebim Koleji",
+      "away_team": "Beydağı Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261021-052",
+      "city": "Malatya",
+      "date": "2026-10-21",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar E Grubu",
+      "match_no": "1",
+      "home_team": "Malatya Anadolu Lisesi",
+      "away_team": "Malatya Mehmet Ali Aydınlar Fen Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261021-053",
+      "city": "Malatya",
+      "date": "2026-10-21",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar E Grubu",
+      "match_no": "2",
+      "home_team": "Atatürk Kız Anadolu Lisesi",
+      "away_team": "Özel Malatya Final Kolleji",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261027-054",
+      "city": "Malatya",
+      "date": "2026-10-27",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar E Grubu",
+      "match_no": "3",
+      "home_team": "Malatya Mehmet Ali Aydınlar Fen Lisesi",
+      "away_team": "Atatürk Kız Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261027-055",
+      "city": "Malatya",
+      "date": "2026-10-27",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar E Grubu",
+      "match_no": "4",
+      "home_team": "Özel Malatya Final Kolleji",
+      "away_team": "Malatya Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261104-056",
+      "city": "Malatya",
+      "date": "2026-11-04",
+      "time": "10:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar E Grubu",
+      "match_no": "5",
+      "home_team": "Malatya Anadolu Lisesi",
+      "away_team": "Atatürk Kız Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261104-057",
+      "city": "Malatya",
+      "date": "2026-11-04",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar E Grubu",
+      "match_no": "6",
+      "home_team": "Özel Malatya Final Kolleji",
+      "away_team": "Malatya Mehmet Ali Aydınlar Fen Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261021-058",
+      "city": "Malatya",
+      "date": "2026-10-21",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar F Grubu",
+      "match_no": "1",
+      "home_team": "Özel Girne Kolleji Anadolu Lisesi",
+      "away_team": "Mareşal Fevzi Çakmak Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261021-059",
+      "city": "Malatya",
+      "date": "2026-10-21",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar F Grubu",
+      "match_no": "2",
+      "home_team": "Özel Mercan Kolleji",
+      "away_team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261027-060",
+      "city": "Malatya",
+      "date": "2026-10-27",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar F Grubu",
+      "match_no": "3",
+      "home_team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
+      "away_team": "Özel Girne Kolleji Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261027-061",
+      "city": "Malatya",
+      "date": "2026-10-27",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar F Grubu",
+      "match_no": "4",
+      "home_team": "Mareşal Fevzi Çakmak Anadolu Lisesi",
+      "away_team": "Özel Mercan Kolleji",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261104-062",
+      "city": "Malatya",
+      "date": "2026-11-04",
+      "time": "13:00",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar F Grubu",
+      "match_no": "5",
+      "home_team": "Özel Girne Kolleji Anadolu Lisesi",
+      "away_team": "Özel Mercan Kolleji",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261104-063",
+      "city": "Malatya",
+      "date": "2026-11-04",
+      "time": "14:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları Genç Kızlar F Grubu",
+      "match_no": "6",
+      "home_team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
+      "away_team": "Mareşal Fevzi Çakmak Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-15T19:36:09.627456"
+  "volleybox_sync_updated_at": "2026-10-16T11:15:31.568735"
 }

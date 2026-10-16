@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T19:31:06.445389+03:00",
+  "updated_at": "2026-10-16T11:13:37.119615+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -320,35 +320,35 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Eker Spor Kulübü - B U16",
-        "played": 1,
-        "won": 1,
+        "team": "23 Nisan Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "23 Nisan Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "Eker Spor Kulübü - B U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 3,
         "team": "Doruk Voleybol Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "sets_won": 4,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -364,18 +364,18 @@
       },
       {
         "rank": 5,
-        "team": "Bursa Genç Saray Spor Kulübü U16",
-        "played": 1,
+        "team": "Öncü Yıldız Spor Kulübü U16",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Öncü Yıldız Spor Kulübü U16",
+        "team": "Bursa Genç Saray Spor Kulübü U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -535,6 +535,17 @@
       },
       {
         "rank": 3,
+        "team": "Hürriyet Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Nilüfer Belediyespor Eker (A)",
         "played": 1,
         "won": 0,
@@ -545,25 +556,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Hürriyet Spor Kulübü U16",
-        "played": 0,
+        "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -1624,11 +1624,16 @@
       "match_no": "4",
       "home_team": "Doruk Voleybol Spor Kulübü U16",
       "away_team": "Eker Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-16",
+        "19-25",
+        "22-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406672",
@@ -1665,11 +1670,15 @@
       "match_no": "5",
       "home_team": "23 Nisan Spor Kulübü U16",
       "away_team": "Öncü Yıldız Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-21",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406673",
@@ -1697,7 +1706,7 @@
       "id": "bursa-20261016-028",
       "city": "Bursa",
       "date": "2026-10-16",
-      "time": "18:00",
+      "time": "20:00",
       "hall": "Çekirge",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -2148,7 +2157,7 @@
       "id": "bursa-20261016-038",
       "city": "Bursa",
       "date": "2026-10-16",
-      "time": "20:00",
+      "time": "18:00",
       "hall": "Çekirge",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -2337,11 +2346,15 @@
       "match_no": "4",
       "home_team": "Hürriyet Spor Kulübü U16",
       "away_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-15",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406682",
@@ -2367,5 +2380,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-15T19:36:04.601000"
+  "volleybox_sync_updated_at": "2026-10-16T11:15:31.603939"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T19:31:06.445389+03:00",
+  "updated_at": "2026-10-16T11:13:37.119615+00:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -136,24 +136,24 @@
       },
       {
         "rank": 3,
-        "team": "Konya Anadolu Yıldızları Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
+        "team": "Ballas Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Ballas Spor Kulübü U18",
-        "played": 1,
+        "team": "Konya Anadolu Yıldızları Spor Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 2,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -1015,11 +1015,16 @@
       "match_no": "3",
       "home_team": "Konya Anadolu Yıldızları Spor Kulübü U18",
       "away_team": "Ballas Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "20-25",
+        "25-22",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408155",
@@ -1364,5 +1369,5 @@
     }
   ],
   "volleybox_synced_matches": 14,
-  "volleybox_sync_updated_at": "2026-10-15T19:36:09.561201"
+  "volleybox_sync_updated_at": "2026-10-16T11:15:31.543949"
 }
