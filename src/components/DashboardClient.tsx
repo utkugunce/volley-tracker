@@ -359,7 +359,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
             setStatusFilter("all");
-            handleSelectTab("today");
+            handleSelectTab(activeMainTab === "today" && !showOnlyFavorites && filters.statusFilter === "all" ? "home" : "today");
           } else if (tab === "live") {
             setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);

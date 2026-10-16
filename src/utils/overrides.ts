@@ -247,6 +247,94 @@ export async function saveOverridesData(data: OverridesData): Promise<void> {
 }
 
 /**
+ * Tek bir maç override kaydını ve audit log satırını atomik olarak kaydeder.
+ * Supabase aktifse tüm tabloyu silip yeniden yazmak yerine yalnızca hedef satırı upsert eder.
+ */
+export async function upsertSingleOverride(
+  override: MatchOverride,
+  auditEntry: AuditLogEntry,
+  fallbackData: OverridesData
+): Promise<void> {
+  invalidateActiveOverrides();
+  memoryOverridesCache = fallbackData;
+
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const { error: upsertErr } = await supabase.from("manual_overrides").upsert(
+      {
+        match_id: override.match_id,
+        home_score: override.home_score,
+        away_score: override.away_score,
+        set_scores: override.set_scores || [],
+        status: override.status || null,
+        updated_at: override.updated_at,
+        updated_by: override.updated_by,
+        reason: override.reason,
+      },
+      { onConflict: "match_id" }
+    );
+    if (upsertErr) throw new Error(`Supabase override yazılamadı: ${upsertErr.message}`);
+
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (uuidRegex.test(auditEntry.id)) {
+      const { error: auditErr } = await supabase.from("override_audit_log").insert({
+        id: auditEntry.id,
+        match_id: auditEntry.match_id,
+        action: auditEntry.action,
+        timestamp: auditEntry.timestamp,
+        updated_by: auditEntry.updated_by,
+        reason: auditEntry.reason,
+        old_value: auditEntry.old_value || null,
+        new_value: auditEntry.new_value || null,
+      });
+      if (auditErr) throw new Error(`Supabase audit log yazılamadı: ${auditErr.message}`);
+    }
+    return;
+  }
+
+  await saveOverridesData(fallbackData);
+}
+
+/**
+ * Tek bir maç override kaydını atomik olarak siler ve audit log satırını ekler.
+ */
+export async function deleteSingleOverride(
+  matchId: string,
+  auditEntry: AuditLogEntry,
+  fallbackData: OverridesData
+): Promise<void> {
+  invalidateActiveOverrides();
+  memoryOverridesCache = fallbackData;
+
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    const { error: delErr } = await supabase
+      .from("manual_overrides")
+      .delete()
+      .eq("match_id", matchId);
+    if (delErr) throw new Error(`Supabase override silinemedi: ${delErr.message}`);
+
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (uuidRegex.test(auditEntry.id)) {
+      const { error: auditErr } = await supabase.from("override_audit_log").insert({
+        id: auditEntry.id,
+        match_id: auditEntry.match_id,
+        action: auditEntry.action,
+        timestamp: auditEntry.timestamp,
+        updated_by: auditEntry.updated_by,
+        reason: auditEntry.reason,
+        old_value: auditEntry.old_value || null,
+        new_value: auditEntry.new_value || null,
+      });
+      if (auditErr) throw new Error(`Supabase audit log yazılamadı: ${auditErr.message}`);
+    }
+    return;
+  }
+
+  await saveOverridesData(fallbackData);
+}
+
+/**
  * Verilen maç listesine override skor ve durumlarını uygular.
  */
 function internalApply(matches: Match[], overrides: Record<string, MatchOverride>): Match[] {

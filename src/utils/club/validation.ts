@@ -123,6 +123,11 @@ export function validateRosterInput(input: unknown): ValidationResult<RosterInpu
   const birth = optionalInt(input.birth_year, 1950, currentYear, "Doğum yılı");
   if (!birth.ok) return birth;
 
+  const isStaff = input.is_staff === true;
+  if (!isStaff && birth.value !== null && birth.value > currentYear - 13 && input.guardian_consent !== true) {
+    return fail("13 yaşından küçük sporcular için veli/yasal temsilci izni teyidi zorunludur.");
+  }
+
   let position: string | null = null;
   if (typeof input.position === "string" && input.position.trim() !== "") {
     position = sanitizeString(input.position, LIMITS.position.max) || null;
@@ -136,7 +141,7 @@ export function validateRosterInput(input: unknown): ValidationResult<RosterInpu
       position,
       height_cm: height.value,
       birth_year: birth.value,
-      is_staff: input.is_staff === true,
+      is_staff: isStaff,
       is_visible: input.is_visible !== false,
     },
   };

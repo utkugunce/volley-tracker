@@ -212,9 +212,9 @@ export const Header: React.FC<HeaderProps> = ({
           <span>{t("nav.results")}</span>
           {typeof resultsCount === "number" && (
             <span
-              className={`text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-display font-semibold tabular-nums transition-colors ${
+              className={`text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded-full font-display font-semibold tabular-nums transition-colors ${
                 activeTab === "results"
-                  ? "bg-done text-done-fg shadow-xs"
+                  ? "bg-done text-done-fg shadow-sm"
                   : "bg-slate-800 text-slate-300 border border-slate-700/50"
               }`}
             >
@@ -324,7 +324,7 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <Sparkles size={13} className="text-amber-400" />
           <span>{t("nav.whichLeague")}</span>
-          <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-amber-500/20 text-amber-300 font-mono tracking-normal">YENİ</span>
+          <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-mono tracking-normal">YENİ</span>
         </Link>
 
       </nav>

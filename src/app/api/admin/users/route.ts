@@ -2,8 +2,19 @@ import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 import { toErrorLike } from "@/utils/errors";
+import { RateLimiter } from "@/utils/rateLimit";
+import { getRateLimitResponse, validateSameOrigin } from "@/utils/apiSecurity";
+
+const adminUsersLimiter = new RateLimiter({
+  name: "admin-users",
+  windowMs: 60 * 1000,
+  maxRequests: 30,
+});
 
 export async function GET(request: Request) {
+  const rateLimited = await getRateLimitResponse(request, adminUsersLimiter);
+  if (rateLimited) return rateLimited;
+
   const authenticatedUser = await getAuthenticatedUser(request);
   if (!authenticatedUser || authenticatedUser.role !== "admin") {
     return NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 });
@@ -15,14 +26,15 @@ export async function GET(request: Request) {
   }
 
   try {
-    // Get all users with their roles
-    const { data: users, error: usersError } = await supabase.auth.admin.listUsers();
+    // Get all users and roles in parallel
+    const [
+      { data: users, error: usersError },
+      { data: userRoles, error: rolesError },
+    ] = await Promise.all([
+      supabase.auth.admin.listUsers({ page: 1, perPage: 1000 }),
+      supabase.from("user_roles").select("user_id, role, created_at, updated_at"),
+    ]);
     if (usersError) throw usersError;
-
-    // Get user roles
-    const { data: userRoles, error: rolesError } = await supabase
-      .from("user_roles")
-      .select("user_id, role, created_at, updated_at");
     if (rolesError) throw rolesError;
 
     // Merge users with roles
@@ -49,6 +61,12 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const csrfError = validateSameOrigin(request);
+  if (csrfError) return csrfError;
+
+  const rateLimited = await getRateLimitResponse(request, adminUsersLimiter);
+  if (rateLimited) return rateLimited;
+
   const authenticatedUser = await getAuthenticatedUser(request);
   if (!authenticatedUser || authenticatedUser.role !== "admin") {
     return NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 });

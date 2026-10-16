@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { randomUUID, timingSafeEqual } from "crypto";
 import {
   getOverridesData,
-  saveOverridesData,
+  upsertSingleOverride,
+  deleteSingleOverride,
   MatchOverride,
   AuditLogEntry,
 } from "@/utils/overrides";
@@ -212,7 +213,7 @@ export async function POST(request: Request) {
       currentData.audit_log = currentData.audit_log.slice(0, 200);
     }
 
-    await saveOverridesData(currentData);
+    await upsertSingleOverride(newOverride, auditEntry, currentData);
 
     return NextResponse.json({
       success: true,
@@ -268,7 +269,7 @@ export async function DELETE(request: Request) {
     };
 
     currentData.audit_log.unshift(auditEntry);
-    await saveOverridesData(currentData);
+    await deleteSingleOverride(safeMatchId, auditEntry, currentData);
 
     return NextResponse.json({
       success: true,

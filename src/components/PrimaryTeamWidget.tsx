@@ -99,7 +99,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   if (!primaryTeam) {
     if (isDismissed) return null;
     return (
-      <div className="bg-canvas/60 hover:bg-canvas/80 border border-slate-800/80 rounded-xl px-3 py-1.5 flex items-center justify-between gap-2 text-xs transition-colors shadow-xs">
+      <div className="bg-canvas/60 hover:bg-canvas/80 border border-slate-800/80 rounded-xl px-3 py-1.5 flex items-center justify-between gap-2 text-xs transition-colors shadow-sm">
         <div className="flex items-center gap-2 min-w-0">
           <Star size={13} className="text-amber-400 fill-amber-400/20 shrink-0" />
           <span className="font-bold text-white text-[11px] shrink-0">
@@ -119,10 +119,11 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
           </button>
           <button
             onClick={() => setIsDismissed(true)}
-            className="text-slate-500 hover:text-slate-300 p-0.5"
+            className="text-slate-500 hover:text-slate-300 p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md"
             title="Kapat"
+            aria-label="Davet çubuğunu kapat"
           >
-            <X size={12} />
+            <X size={13} />
           </button>
         </div>
 
@@ -143,7 +144,8 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
                 </h3>
                 <button
                   onClick={() => setIsPicking(false)}
-                  className="p-1 text-slate-400 hover:text-white"
+                  className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-slate-400 hover:text-white"
+                  aria-label="Modalı kapat"
                 >
                   <X size={14} />
                 </button>
@@ -198,12 +200,12 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   const opponentLogo = opponentMapping?.local_logo || opponentMapping?.logo_url;
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-surface-muted to-slate-900 border border-amber-500/30 rounded-xl px-3 py-2 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+    <div className="bg-gradient-to-r from-slate-900 via-surface-muted to-slate-900 border border-amber-500/30 rounded-xl px-3 py-2 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
       {/* Sol: Kulüp Bilgisi */}
       <div className="flex items-center gap-2.5 min-w-0">
         <TeamBadge name={primaryTeam} logoUrl={teamLogo} size="xs" />
         <div className="min-w-0 flex items-center gap-1.5 flex-wrap">
-          <span className="px-1.5 py-0.2 rounded text-[9px] font-black uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
+          <span className="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
             Kulübüm
           </span>
           <Link prefetch={false}
@@ -241,10 +243,11 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
       <div className="flex items-center gap-1.5 self-end sm:self-auto">
         <button
           onClick={() => handleSetPrimaryTeam(null)}
-          className="p-1 rounded text-slate-500 hover:text-ink transition-colors"
+          className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-slate-500 hover:text-ink transition-colors"
           title="Kulüp seçimini kaldır"
+          aria-label="Kulüp seçimini kaldır"
         >
-          <X size={12} />
+          <X size={13} />
         </button>
       </div>
     </div>

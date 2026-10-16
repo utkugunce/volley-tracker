@@ -52,9 +52,10 @@ export async function buildTeamMetadata(slug: string, cityFilter?: string): Prom
       type: "website",
       images: [
         {
-          url: "/icon.svg",
-          width: 512,
-          height: 512,
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          type: "image/png",
           alt: `${team.teamName} — Altyapı Voleybol`,
         },
       ],

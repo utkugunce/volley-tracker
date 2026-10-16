@@ -78,6 +78,18 @@ describe("validateRosterInput", () => {
       ["birth_year", "height_cm", "is_staff", "is_visible", "name", "position", "shirt_number"].sort()
     );
   });
+  it("13 yaş altı sporcular için sunucu tarafında veli izni zorunludur", () => {
+    const under13Year = new Date().getFullYear() - 10;
+    const rejected = validateRosterInput({ name: "Elif Demir", birth_year: under13Year, is_staff: false });
+    expect(rejected.ok).toBe(false);
+    const accepted = validateRosterInput({
+      name: "Elif Demir",
+      birth_year: under13Year,
+      is_staff: false,
+      guardian_consent: true,
+    });
+    expect(accepted.ok).toBe(true);
+  });
 });
 
 describe("validateAnnouncementInput", () => {

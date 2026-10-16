@@ -2,11 +2,25 @@ import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 import { toErrorLike } from "@/utils/errors";
+import { RateLimiter } from "@/utils/rateLimit";
+import { getRateLimitResponse, validateSameOrigin } from "@/utils/apiSecurity";
+
+const adminUserMutationLimiter = new RateLimiter({
+  name: "admin-user-mutation",
+  windowMs: 60 * 1000,
+  maxRequests: 30,
+});
 
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ userId: string }> }
 ) {
+  const csrfError = validateSameOrigin(request);
+  if (csrfError) return csrfError;
+
+  const rateLimited = await getRateLimitResponse(request, adminUserMutationLimiter);
+  if (rateLimited) return rateLimited;
+
   const authenticatedUser = await getAuthenticatedUser(request);
   if (!authenticatedUser || authenticatedUser.role !== "admin") {
     return NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 });
@@ -79,6 +93,12 @@ export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ userId: string }> }
 ) {
+  const csrfError = validateSameOrigin(request);
+  if (csrfError) return csrfError;
+
+  const rateLimited = await getRateLimitResponse(request, adminUserMutationLimiter);
+  if (rateLimited) return rateLimited;
+
   const authenticatedUser = await getAuthenticatedUser(request);
   if (!authenticatedUser || authenticatedUser.role !== "admin") {
     return NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 });

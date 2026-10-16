@@ -119,7 +119,8 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         set_ratio: t.sav,
         points_won: t.asp,
         points_lost: t.vsp,
-        points_ratio: t.spav,
+        point_ratio: t.spav,
+        form: [],
       }));
     });
     return res;

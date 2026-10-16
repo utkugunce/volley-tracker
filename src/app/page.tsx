@@ -20,13 +20,13 @@ export function generateMetadata(): import("next").Metadata {
       description,
       type: "website",
       locale: "tr_TR",
-      images: [{ url: "/icon.svg", width: 512, height: 512, alt: "Altyapı Voleybol" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, type: "image/png", alt: "Altyapı Voleybol" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/icon.svg"],
+      images: ["/opengraph-image"],
     },
   };
 }

@@ -22,6 +22,7 @@ export function RosterTab({ club }: { club: string }) {
   const [form, setForm] = useState({ ...EMPTY });
   const [guardianConsent, setGuardianConsent] = useState(false);
   const [editingId, setEditingId] = useState<string | undefined>();
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -36,7 +37,7 @@ export function RosterTab({ club }: { club: string }) {
     }
     setBusy(true);
     setMsg(null);
-    const err = await save(form, editingId);
+    const err = await save({ ...form, guardian_consent: guardianConsent } as unknown as Partial<RosterEntry>, editingId);
     setBusy(false);
     if (err) setMsg(err);
     else {
@@ -48,6 +49,7 @@ export function RosterTab({ club }: { club: string }) {
 
   const startEdit = (p: RosterEntry) => {
     setEditingId(p.id);
+    setConfirmDeleteId(null);
     setGuardianConsent(false);
     setForm({
       name: p.name,
@@ -142,15 +144,37 @@ export function RosterTab({ club }: { club: string }) {
                 >
                   Düzenle
                 </button>
-                <button
-                  className={btnGhost}
-                  aria-label={`${p.name} kaydını sil`}
-                  onClick={async () => {
-                    if (window.confirm(`${p.name} silinsin mi?`)) setMsg(await remove(p.id));
-                  }}
-                >
-                  Sil
-                </button>
+                {confirmDeleteId === p.id ? (
+                  <>
+                    <button
+                      type="button"
+                      className="px-3 py-1.5 rounded-xl bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-300 text-xs font-bold transition-colors"
+                      aria-label={`${p.name} kaydını silmeyi onayla`}
+                      onClick={async () => {
+                        setConfirmDeleteId(null);
+                        setMsg(await remove(p.id));
+                      }}
+                    >
+                      Onayla
+                    </button>
+                    <button
+                      type="button"
+                      className={btnGhost}
+                      onClick={() => setConfirmDeleteId(null)}
+                    >
+                      İptal
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    type="button"
+                    className={btnGhost}
+                    aria-label={`${p.name} kaydını sil`}
+                    onClick={() => setConfirmDeleteId(p.id)}
+                  >
+                    Sil
+                  </button>
+                )}
               </div>
             </li>
           ))}

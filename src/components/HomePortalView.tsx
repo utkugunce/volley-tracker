@@ -519,7 +519,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                         }`}
                       >
                         <span className="truncate">{item.name}</span>
-                        <span className="text-[10px] font-mono text-slate-400 bg-slate-950 px-1.5 py-0.2 rounded-md shrink-0">
+                        <span className="text-[10px] font-mono text-slate-400 bg-slate-950 px-1.5 py-0.5 rounded-md shrink-0">
                           {item.matches_count}
                         </span>
                       </button>
@@ -535,7 +535,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             </div>
 
             {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
-            <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-xs">
+            <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-sm">
               <div className="flex items-center gap-2">
                 <Sparkles size={14} className="text-ink-2 shrink-0" />
                 <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
@@ -587,12 +587,12 @@ const MatchRow: React.FC<MatchRowProps> = ({
           onSelectMatch(match);
         }
       }}
-      className="group relative bg-canvas/70 hover:bg-panel border border-slate-800/80 hover:border-primary/40 rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-xs active:scale-[0.995]"
+      className="group relative bg-canvas/70 hover:bg-panel border border-slate-800/80 hover:border-primary/40 rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-sm active:scale-[0.995]"
     >
       {/* Üst Satır: Şehir, Lig ve Salon */}
       <div className="flex items-center justify-between gap-2 text-[10px] sm:text-[11px] text-slate-400 mb-1.5 pb-1 border-b border-slate-800/50">
         <div className="flex items-center gap-1.5 truncate">
-          <span className="font-bold text-sky-400 bg-sky-950/60 px-1.5 py-0.2 rounded border border-sky-800/40">
+          <span className="font-bold text-sky-400 bg-sky-950/60 px-1.5 py-0.5 rounded border border-sky-800/40">
             {match.city || "Genel"}
           </span>
           <span className="truncate text-slate-400">
@@ -613,7 +613,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
               e.stopPropagation();
               onToggleFavorite(match.id);
             }}
-            className={`p-1.5 min-w-[28px] min-h-[28px] flex items-center justify-center rounded-md transition-colors ${
+            className={`p-2 min-w-[36px] min-h-[36px] flex items-center justify-center rounded-md transition-colors ${
               isFavorite ? "text-amber-400" : "text-slate-400 hover:text-amber-400"
             }`}
             title={isFavorite ? "Favorilerden Çıkar" : "Favoriye Ekle"}

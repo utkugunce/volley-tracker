@@ -57,6 +57,14 @@ export default function AdminPage() {
   // Canlı Tarama (GitHub Actions / Local Scraper) Durumu
   const [syncLoading, setSyncLoading] = useState<boolean>(false);
   const [syncStatus, setSyncStatus] = useState<AdminSyncStatus | null>(null);
+  const [adminNotice, setAdminNotice] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  const showAdminNotice = (type: "success" | "error", message: string) => {
+    setAdminNotice({ type, message });
+    setTimeout(() => {
+      setAdminNotice((prev) => (prev?.message === message ? null : prev));
+    }, 4000);
+  };
 
   // Kullanıcı Yönetimi
   const [users, setUsers] = useState<AdminUser[]>([]);
@@ -442,9 +450,9 @@ export default function AdminPage() {
       }
 
       setEditingMatch(null);
-      alert("Override başarıyla kaldırıldı.");
+      showAdminNotice("success", "Override başarıyla kaldırıldı.");
     } catch (err) {
-      alert(`Hata: ${toErrorLike(err).message}`);
+      showAdminNotice("error", `Hata: ${toErrorLike(err).message}`);
     } finally {
       setSaveLoading(false);
     }
@@ -486,9 +494,9 @@ export default function AdminPage() {
       setNewUserEmail("");
       setNewUserPassword("");
       setNewUserRole("viewer");
-      alert("Kullanıcı başarıyla oluşturuldu.");
+      showAdminNotice("success", "Kullanıcı başarıyla oluşturuldu.");
     } catch (err) {
-      alert(`Hata: ${toErrorLike(err).message}`);
+      showAdminNotice("error", `Hata: ${toErrorLike(err).message}`);
     } finally {
       setUserOperationLoading(false);
     }
@@ -522,9 +530,9 @@ export default function AdminPage() {
         setUsers(usersData.users || []);
       }
 
-      alert("Rol başarıyla güncellendi.");
+      showAdminNotice("success", "Rol başarıyla güncellendi.");
     } catch (err) {
-      alert(`Hata: ${toErrorLike(err).message}`);
+      showAdminNotice("error", `Hata: ${toErrorLike(err).message}`);
     } finally {
       setUserOperationLoading(false);
     }
@@ -547,9 +555,9 @@ export default function AdminPage() {
 
       // Kullanıcı listesini güncelle
       setUsers((prev) => prev.filter((u) => u.id !== userId));
-      alert("Kullanıcı başarıyla silindi.");
+      showAdminNotice("success", "Kullanıcı başarıyla silindi.");
     } catch (err) {
-      alert(`Hata: ${toErrorLike(err).message}`);
+      showAdminNotice("error", `Hata: ${toErrorLike(err).message}`);
     } finally {
       setUserOperationLoading(false);
     }
@@ -634,6 +642,28 @@ export default function AdminPage() {
       {/* Canlı Senkronizasyon Durum Bildirimi (Yalnızca Admin Panelinde) */}
       {syncStatus && (
         <SyncStatusBanner setSyncStatus={setSyncStatus} syncStatus={syncStatus} />
+      )}
+
+      {/* Admin İşlem Bildirim Çubuğu */}
+      {adminNotice && (
+        <div
+          role={adminNotice.type === "error" ? "alert" : "status"}
+          className={`max-w-7xl w-full mx-auto mt-3 px-4 py-2.5 rounded-xl border text-xs font-bold flex items-center justify-between gap-3 ${
+            adminNotice.type === "error"
+              ? "bg-red-950/70 border-red-500/40 text-red-200"
+              : "bg-emerald-950/70 border-emerald-500/40 text-emerald-200"
+          }`}
+        >
+          <span>{adminNotice.message}</span>
+          <button
+            type="button"
+            onClick={() => setAdminNotice(null)}
+            className="text-slate-400 hover:text-white px-2 py-0.5 rounded"
+            aria-label="Bildirimi kapat"
+          >
+            ✕
+          </button>
+        </div>
       )}
 
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6">

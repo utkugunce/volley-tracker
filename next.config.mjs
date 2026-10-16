@@ -28,7 +28,7 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       "img-src 'self' https://*.volleybox.net data: blob:",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://www.googletagmanager.com",
+      `script-src 'self' 'unsafe-inline'${process.env.NODE_ENV !== "production" ? " 'unsafe-eval'" : ""} https://va.vercel-scripts.com https://www.googletagmanager.com`,
       "style-src 'self' 'unsafe-inline'",
       "connect-src 'self' https://*.vercel-storage.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com",
       "font-src 'self' data:",
