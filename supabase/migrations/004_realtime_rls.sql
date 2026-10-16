@@ -1,8 +1,19 @@
 -- Realtime RLS Policies and Security
 -- This migration adds Realtime-specific security policies
 
--- Enable Realtime for matches table
-alter publication supabase_realtime add table public.matches;
+-- Enable Realtime for matches table (idempotent)
+do $$
+begin
+  if not exists (
+    select 1
+    from pg_publication_tables
+    where pubname = 'supabase_realtime'
+      and schemaname = 'public'
+      and tablename = 'matches'
+  ) then
+    alter publication supabase_realtime add table public.matches;
+  end if;
+end $$;
 
 -- Realtime-specific RLS policies for matches
 -- These policies control which users can receive realtime updates
