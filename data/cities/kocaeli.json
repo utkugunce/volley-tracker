@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T19:31:06.445389+03:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -1156,16 +1156,16 @@
         "has_score": false,
         "vb_date": "2026-10-20",
         "vb_time": "18:30",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Vezirçiftliği Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-20",
           "vb_time": "18:30",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": "Salon Değişti (TVF: Vezirçiftliği / VB: Şampiyon Hasan Gemici Spor Salonu)"
+          "vb_hall": "Vezirçiftliği Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1197,16 +1197,16 @@
         "has_score": false,
         "vb_date": "2026-10-20",
         "vb_time": "20:00",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Vezirçiftliği Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-20",
           "vb_time": "20:00",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": "Salon Değişti (TVF: Vezirçiftliği / VB: Şampiyon Hasan Gemici Spor Salonu)"
+          "vb_hall": "Vezirçiftliği Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3954,18 +3954,18 @@
         "guest_name": "Darıca Anadolu Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-18",
-        "vb_time": "16:00",
+        "vb_date": "2026-10-23",
+        "vb_time": "20:00",
         "vb_hall": "Çayırova Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": true,
+          "date_diff": false,
           "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "16:00",
+          "vb_date": "2026-10-23",
+          "vb_time": "20:00",
           "vb_hall": "Çayırova Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-23 / VB: 2026-10-18) | Saat Değişti (TVF: 18:30 / VB: 16:00)"
+          "details": "Saat Değişti (TVF: 18:30 / VB: 20:00)"
         }
       }
     },
@@ -3995,18 +3995,18 @@
         "guest_name": "Yelkenkaya Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-18",
-        "vb_time": "17:30",
+        "vb_date": "2026-10-23",
+        "vb_time": "18:30",
         "vb_hall": "Çayırova Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": true,
+          "date_diff": false,
           "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "17:30",
+          "vb_date": "2026-10-23",
+          "vb_time": "18:30",
           "vb_hall": "Çayırova Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-23 / VB: 2026-10-18) | Saat Değişti (TVF: 20:00 / VB: 17:30)"
+          "details": "Saat Değişti (TVF: 20:00 / VB: 18:30)"
         }
       }
     },
@@ -5168,5 +5168,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-15T19:36:09.506119"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:42.864502"
 }

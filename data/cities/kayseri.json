@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T00:20:28.490658+00:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -684,8 +684,8 @@
         "url": "https://women.volleybox.net/tr/kvk-voleybol-kulubu-u18-erciyes-aslan-spor-kulubu-u18-c408089",
         "host_name": "KVK Voleybol Kulübü U18",
         "guest_name": "Erciyes Aslan Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "19:30",
         "vb_hall": "Gevher Nesibe Spor Salonu",
@@ -946,16 +946,16 @@
         "has_score": false,
         "vb_date": "2026-10-18",
         "vb_time": "13:30",
-        "vb_hall": "Gevher Nesibe Spor Salonu",
+        "vb_hall": "Develi Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-18",
           "vb_time": "13:30",
-          "vb_hall": "Gevher Nesibe Spor Salonu",
-          "details": "Salon Değişti (TVF: Develi S.S. / VB: Gevher Nesibe Spor Salonu)"
+          "vb_hall": "Develi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1568,5 +1568,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-16T00:22:24.209852"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:41.825708"
 }

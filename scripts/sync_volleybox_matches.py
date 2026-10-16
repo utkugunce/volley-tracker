@@ -412,6 +412,13 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
     return parsed_matches
 
 
+GENERIC_HALL_WORDS = {
+    "spor", "salonu", "salon", "kompleksi", "merkezi", "sahasi",
+    "tesisleri", "kucuk", "buyuk", "kapali", "ibb", "gsb", "tvf",
+    "meb", "bld", "belediye", "belediyesi", "ss"
+}
+
+
 def normalize_hall_name(hall: str) -> str:
     if not hall:
         return ""
@@ -424,7 +431,8 @@ def normalize_hall_name(hall: str) -> str:
         .replace("ö", "o")
         .replace("ç", "c")
     )
-    s = re.sub(r"\b(spor|salonu|kompleksi|merkezi|sahasi|tesisleri|kucuk|buyuk)\b", " ", s)
+    pattern = r"\b(" + "|".join(GENERIC_HALL_WORDS) + r")\b"
+    s = re.sub(pattern, " ", s)
     s = re.sub(r"[^a-z0-9\s]", " ", s)
     return " ".join(s.split())
 
@@ -438,15 +446,36 @@ def halls_match(tvf_hall: str, vb_hall: str) -> bool:
     if not t_clean or not v_clean:
         return True
 
-    # 4 karakter ve üzeri kelimelerin kontrolü
-    t_words = [w for w in t_clean.split() if len(w) >= 4]
-    if not t_words:
-        t_words = [w for w in t_clean.split() if len(w) >= 3]
-
-    if not t_words:
+    # 1. Tam veya kompakt (boşluksuz) eşitlik (örn: "hasandogan" == "hasan dogan")
+    t_comp = t_clean.replace(" ", "")
+    v_comp = v_clean.replace(" ", "")
+    if t_comp == v_comp:
         return True
 
-    return any(w in v_clean for w in t_words)
+    # 2. Kompakt alt dize kontrolü (en az 5 karakter)
+    if len(t_comp) >= 5 and len(v_comp) >= 5:
+        if t_comp in v_comp or v_comp in t_comp:
+            return True
+
+    # 3. Kelime bazlı çift yönlü kontrol
+    t_words = [w for w in t_clean.split() if len(w) >= 4] or [w for w in t_clean.split() if len(w) >= 3]
+    v_words = [w for w in v_clean.split() if len(w) >= 4] or [w for w in v_clean.split() if len(w) >= 3]
+
+    if any(w in v_clean for w in t_words):
+        return True
+    if any(w in t_clean for w in v_words):
+        return True
+
+    # 4. Parçalı kelimelerin birleşik kontrolü (örn. 'hasan' ve 'dogan' -> 'hasandogan')
+    v_key_words = [w for w in v_words if len(w) >= 4]
+    if v_key_words and all(w in t_comp for w in v_key_words):
+        return True
+
+    t_key_words = [w for w in t_words if len(w) >= 4]
+    if t_key_words and all(w in v_comp for w in t_key_words):
+        return True
+
+    return False
 
 
 def check_discrepancy(tvf_match: Dict[str, Any], vb_match: Dict[str, Any]) -> Dict[str, Any]:

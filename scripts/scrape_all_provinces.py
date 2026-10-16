@@ -333,6 +333,44 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
             # D Grubu -> Bursa Fethiye 1973 Spor Kulübü - A U16
             if ("d grubu" in gs or "- d" in gs or "-d" in gs or gs.endswith(" d")) and "fethiye" in rt:
                 return "Bursa Fethiye 1973 Spor Kulübü - A U16"
+        # Gaziantep Yıldız Kızlar Süper Lig (U16)
+        if ("gaziantep" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
+            if "merinos" in rt:
+                if bool(re.search(r"[\(\s\-]b([\s\)]|$)", rt)):
+                    return "Merinos SK - B U16"
+                return "Merinos SK U16"
+            if "zeugma" in rt:
+                if bool(re.search(r"[\(\s\-]b([\s\)]|$)", rt)):
+                    return "Zeugma Spor Kulübü - B U16"
+                return "Zeugma Spor Kulübü U16"
+            if "anadolugucu" in rt:
+                return "Anadolugücü Spor Kulübü U16"
+            if "antepia" in rt:
+                return "Antepia Spor Kulübü U16"
+            if "dogus" in rt or "dogus27" in rt:
+                return "Doğuş27 Spor Kulübü U16"
+            if "belediye" in rt:
+                return "Gaziantep Büyükşehir Belediyespor U16"
+            if "gvg" in rt or "gelisim" in rt:
+                return "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16"
+        # Gaziantep Genç Kızlar Süper Lig (U18)
+        if ("gaziantep" in ct or not ct) and ("genc" in gs or "u18" in gs or "gk" in gs):
+            if "adrenalin" in rt:
+                return "Adrenalin Rekor Spor Kulübü U18"
+            if "anadolugucu" in rt:
+                return "Anadolugücü Spor Kulübü U18"
+            if "antepia" in rt:
+                return "Antepia Spor Kulübü U18"
+            if "mahmut" in rt or "dusun" in rt:
+                return "Av. Mahmut Düşün MTAL U18"
+            if "belediye" in rt:
+                return "Gaziantep Büyükşehir Belediyespor U18"
+            if "gvg" in rt or "gelisim" in rt:
+                return "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18"
+            if "merinos" in rt:
+                return "Merinos SK U18"
+            if "zeugma" in rt:
+                return "Zeugma Spor Kulübü U18"
         return None
 
     # Standings üzerinden ham -> çözülmüş/ayrıştırılmış isim haritası

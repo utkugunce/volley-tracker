@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T19:31:06.445389+03:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -123,17 +123,17 @@
       {
         "rank": 1,
         "team": "İskenderun 12 Dev Adam Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Mas Smaç Spor Kulübü U18",
+        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -144,17 +144,28 @@
       },
       {
         "rank": 3,
-        "team": "İskenderun Yurdum Spor U18",
-        "played": 1,
-        "won": 0,
+        "team": "Mas Smaç Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 4,
+        "team": "İskenderun Yurdum Spor U18",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 3,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "İskenderun Tan Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -162,17 +173,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -251,17 +251,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-17",
-        "vb_time": "16:30",
+        "vb_time": "14:30",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-17",
-          "vb_time": "16:30",
+          "vb_time": "14:30",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:30 / VB: 16:30)"
+          "details": null
         }
       }
     },
@@ -292,17 +292,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-17",
-        "vb_time": "18:00",
+        "vb_time": "16:00",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-17",
-          "vb_time": "18:00",
+          "vb_time": "16:00",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Saat Değişti (TVF: 16:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -835,17 +835,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-17",
-        "vb_time": "15:00",
+        "vb_time": "13:00",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-17",
-          "vb_time": "15:00",
+          "vb_time": "13:00",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Saat Değişti (TVF: 13:00 / VB: 15:00)"
+          "details": null
         }
       }
     },
@@ -875,18 +875,18 @@
         "guest_name": "Antakya Güneş Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-17",
-        "vb_time": "13:00",
+        "vb_date": "2026-10-18",
+        "vb_time": "15:00",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-17",
-          "vb_time": "13:00",
+          "vb_date": "2026-10-18",
+          "vb_time": "15:00",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-18 / VB: 2026-10-17) | Saat Değişti (TVF: 15:00 / VB: 13:00)"
+          "details": null
         }
       }
     },
@@ -1322,11 +1322,16 @@
       "match_no": "3",
       "home_team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
       "away_team": "Mas Smaç Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "16-25",
+        "25-21",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401090",
@@ -1363,11 +1368,17 @@
       "match_no": "4",
       "home_team": "İskenderun Yurdum Spor U18",
       "away_team": "İskenderun 12 Dev Adam Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "23-25",
+        "25-17",
+        "25-21",
+        "8-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401091",
@@ -2338,17 +2349,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-29",
-        "vb_time": "18:00",
+        "vb_time": "14:00",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-29",
-          "vb_time": "18:00",
+          "vb_time": "14:00",
           "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -2379,17 +2390,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-10-29",
-        "vb_time": "19:30",
+        "vb_time": "15:30",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-29",
-          "vb_time": "19:30",
+          "vb_time": "15:30",
           "vb_hall": "İskenderun Sakarya Spor Salonu",
-          "details": "Saat Değişti (TVF: 15:30 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -2559,5 +2570,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-15T19:36:05.926393"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:39.870588"
 }

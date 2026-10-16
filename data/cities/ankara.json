@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T00:20:28.490658+00:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -2262,8 +2262,8 @@
         "url": "https://women.volleybox.net/tr/yedidag-spor-kulubu-u18-zeren-spor-kulubu-u18-c404228",
         "host_name": "Yedidağ Spor Kulübü U18",
         "guest_name": "Zeren Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "18:00",
         "vb_hall": "Batıkent Spor Salonu",
@@ -2307,8 +2307,8 @@
         "url": "https://women.volleybox.net/tr/caba-spor-kulubu-u18-baskent-arma-spor-u18-c404227",
         "host_name": "Çaba Spor Kulübü U18",
         "guest_name": "Başkent Arma Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
@@ -2826,18 +2826,18 @@
         "guest_name": "TED Ankara Kolejliler U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-20",
-        "vb_time": "18:00",
+        "vb_date": "2026-10-22",
+        "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-20",
-          "vb_time": "18:00",
+          "vb_date": "2026-10-22",
+          "vb_time": "19:30",
           "vb_hall": "Mamak Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-22 / VB: 2026-10-20) | Saat Değişti (TVF: 19:30 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -3140,8 +3140,8 @@
         "url": "https://women.volleybox.net/tr/temiz-enerji-birligi-spor-kulubu-u18-ahmet-hamdi-tanpnar-ortaokulu-sk-u18-c404232",
         "host_name": "Temiz Enerji Birliği Spor Kulübü U18",
         "guest_name": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
@@ -3185,8 +3185,8 @@
         "url": "https://women.volleybox.net/tr/ptt-spor-u18-lbank-u18-c404231",
         "host_name": "PTT Spor U18",
         "guest_name": "İlbank U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
@@ -5207,5 +5207,5 @@
     }
   ],
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-10-16T00:22:24.220451"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:38.051273"
 }

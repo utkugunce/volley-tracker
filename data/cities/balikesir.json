@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T11:13:37.119615+00:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -573,8 +573,8 @@
         "url": "https://women.volleybox.net/tr/karesi-hurriyet-spor-u16-balkesir-eka-spor-kulubu-u16-c406626",
         "host_name": "Karesi Hürriyet Spor U16",
         "guest_name": "Balıkesir EKA Spor Kulubü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "19:30",
         "vb_hall": "Şehit Turgut Solak Spor Salonu",
@@ -1172,8 +1172,8 @@
         "url": "https://women.volleybox.net/tr/ayvalkspor-u16-balkesir-buyuksehir-belediyespor-b-u16-c406637",
         "host_name": "Ayvalıkspor U16",
         "guest_name": "Balıkesir Büyükşehir Belediyespor Edremit U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "19:00",
         "vb_hall": "Ayvalık Spor Salonu",
@@ -1217,8 +1217,8 @@
         "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-b-u16-edremit-belediyesi-gurespor-kulubu-u16-c406638",
         "host_name": "Ayvalıkgücü Belediye SK - B U16",
         "guest_name": "Edremit Belediyesi Gürespor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "20:30",
         "vb_hall": "Ayvalık Spor Salonu",
@@ -1790,8 +1790,8 @@
         "url": "https://women.volleybox.net/tr/bandrma-voleybol-spor-kulubu-u16-bandrma-bordo-spor-kulubu-b-u16-c406648",
         "host_name": "Bandırma Voleybol Spor Kulübü U16",
         "guest_name": "Bandırma Bordo Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "19:00",
         "vb_hall": "Neriman Gençer Spor Salonu",
@@ -1911,5 +1911,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-16T11:15:31.601142"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:38.650762"
 }

@@ -73,6 +73,14 @@ export const POPULAR_HALLS: Record<string, HallInfo> = {
     parking: "Salon bünyesinde otopark alanı mevcuttur.",
     notes: "Bursa yerel voleybol ligleri merkezi.",
   },
+  "hasan dogan": {
+    name: "İBB Hasan Doğan Spor Kompleksi",
+    city: "İstanbul",
+    district: "Bahçelievler",
+    metroTips: "Yenibosna veya Ataköy-Şirinevler Metro/Metrobüs durağına yakın.",
+    parking: "Tesis içi otopark mevcuttur.",
+    notes: "İstanbul yerel lig karşılaşmalarına ev sahipliği yapar.",
+  },
 };
 
 /**
@@ -97,10 +105,12 @@ export function getHallNavigationUrl(hallName: string, city?: string): string {
 export function getHallDetails(hallName: string): HallInfo | null {
   if (!hallName) return null;
   const slug = slugify(hallName);
+  const compactSlug = slug.replace(/-/g, "");
 
   for (const [key, info] of Object.entries(POPULAR_HALLS)) {
     const keySlug = slugify(key);
-    if (slug.includes(keySlug)) {
+    const compactKey = keySlug.replace(/-/g, "");
+    if (slug.includes(keySlug) || (compactKey.length >= 4 && compactSlug.includes(compactKey))) {
       return info;
     }
   }

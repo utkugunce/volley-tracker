@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T00:20:28.490658+00:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -2635,8 +2635,8 @@
         "url": "https://women.volleybox.net/tr/luna-spor-kulubu-u16-antalya-1907-spor-kulubu-u16-c402162",
         "host_name": "Luna Spor Kulübü U16",
         "guest_name": "Antalya 1907 Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "18:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
@@ -3244,5 +3244,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-16T00:22:24.195239"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:38.437809"
 }

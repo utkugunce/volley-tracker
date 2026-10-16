@@ -22,6 +22,10 @@ describe("Hall Navigation & Transit Utilities", () => {
     const baskent = getHallDetails("Başkent Spor Salonu");
     expect(baskent).not.toBeNull();
     expect(baskent?.city).toBe("Ankara");
+
+    const hasanDogan = getHallDetails("İBB Hasandoğan Spor Salon");
+    expect(hasanDogan).not.toBeNull();
+    expect(hasanDogan?.city).toBe("İstanbul");
   });
 
   it("returns null for generic or unlisted halls", () => {

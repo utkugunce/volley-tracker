@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T19:31:06.445389+03:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -22,6 +22,7 @@
     ],
     "halls": [
       "Tümü",
+      "Anadolu Üniversitesi",
       "Kemal Unakıtan",
       "Şehit Anıl Gül"
     ]
@@ -832,7 +833,7 @@
       "city": "Eskişehir",
       "date": "2026-10-23",
       "time": "18:30",
-      "hall": "Şehit Anıl Gül",
+      "hall": "Anadolu Üniversitesi",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -857,14 +858,14 @@
         "vb_time": "18:30",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-23",
           "vb_time": "18:30",
           "vb_hall": "Şehit Anıl Gül Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Anadolu Üniversitesi / VB: Şehit Anıl Gül Spor Salonu)"
         }
       }
     },
@@ -1135,7 +1136,7 @@
       "city": "Eskişehir",
       "date": "2026-10-23",
       "time": "20:00",
-      "hall": "Şehit Anıl Gül",
+      "hall": "Anadolu Üniversitesi",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -1160,14 +1161,14 @@
         "vb_time": "20:00",
         "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-23",
           "vb_time": "20:00",
           "vb_hall": "Şehit Anıl Gül Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Anadolu Üniversitesi / VB: Şehit Anıl Gül Spor Salonu)"
         }
       }
     },
@@ -1858,18 +1859,18 @@
         "guest_name": "Esnova Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-23",
-        "vb_time": "20:00",
+        "vb_date": "2026-10-29",
+        "vb_time": "16:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-23",
-          "vb_time": "20:00",
+          "vb_date": "2026-10-29",
+          "vb_time": "16:00",
           "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-29 / VB: 2026-10-23) | Saat Değişti (TVF: 16:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -2253,18 +2254,18 @@
         "guest_name": "Eskişehir Ata Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-22",
-        "vb_time": "20:00",
-        "vb_hall": "Kemal Unakıtan Spor Salonu",
+        "vb_date": "2026-10-31",
+        "vb_time": "16:00",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-10-22",
-          "vb_time": "20:00",
-          "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-31 / VB: 2026-10-22) | Saat Değişti (TVF: 16:00 / VB: 20:00) | Salon Değişti (TVF: Şehit Anıl Gül / VB: Kemal Unakıtan Spor Salonu)"
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "16:00",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2294,18 +2295,18 @@
         "guest_name": "Meryem Boz Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-22",
-        "vb_time": "18:30",
+        "vb_date": "2026-10-31",
+        "vb_time": "18:00",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": true,
-          "vb_date": "2026-10-22",
-          "vb_time": "18:30",
+          "vb_date": "2026-10-31",
+          "vb_time": "18:00",
           "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-31 / VB: 2026-10-22) | Saat Değişti (TVF: 18:00 / VB: 18:30) | Salon Değişti (TVF: Şehit Anıl Gül / VB: Kemal Unakıtan Spor Salonu)"
+          "details": "Salon Değişti (TVF: Şehit Anıl Gül / VB: Kemal Unakıtan Spor Salonu)"
         }
       }
     },
@@ -2730,5 +2731,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-15T19:36:05.261192"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:39.324334"
 }

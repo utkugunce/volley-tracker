@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T11:13:37.119615+00:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -1031,8 +1031,8 @@
         "url": "https://women.volleybox.net/tr/konya-anadolu-yldzlar-spor-kulubu-u18-ballas-spor-kulubu-u18-c408155",
         "host_name": "Konya Anadolu Yıldızları Spor Kulübü U18",
         "guest_name": "Ballas Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "20:30",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
@@ -1274,17 +1274,17 @@
         "score": "3 - 1",
         "has_score": true,
         "vb_date": "2026-10-11",
-        "vb_time": "14:00",
+        "vb_time": "10:00",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-11",
-          "vb_time": "14:00",
+          "vb_time": "10:00",
           "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
-          "details": "Saat Değişti (TVF: 10:00 / VB: 14:00)"
+          "details": null
         }
       }
     },
@@ -1369,5 +1369,5 @@
     }
   ],
   "volleybox_synced_matches": 14,
-  "volleybox_sync_updated_at": "2026-10-16T11:15:31.543949"
+  "volleybox_sync_updated_at": "2026-10-16T17:28:42.916097"
 }

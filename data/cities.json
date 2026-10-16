@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-16T11:13:37.119615+00:00",
+  "updated_at": "2026-10-16T16:36:38.691312+03:00",
   "total_cities": 81,
   "active_cities": 34,
-  "total_matches": 1282,
+  "total_matches": 1340,
   "cities": [
     {
       "ilid": "1",
@@ -200,9 +200,9 @@
       "name": "Denizli",
       "slug": "denizli",
       "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (19 Maç Mevcut)",
-      "matches_count": 19,
-      "standings_count": 2,
+      "status": "Aktif (51 Maç Mevcut)",
+      "matches_count": 51,
+      "standings_count": 3,
       "data_file": "data/cities/denizli.json"
     },
     {
@@ -340,8 +340,8 @@
       "name": "İstanbul",
       "slug": "istanbul",
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (106 Maç Mevcut)",
-      "matches_count": 106,
+      "status": "Aktif (112 Maç Mevcut)",
+      "matches_count": 112,
       "standings_count": 15,
       "data_file": "data/cities/istanbul.json"
     },
@@ -510,9 +510,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (10 Maç Mevcut)",
-      "matches_count": 10,
-      "standings_count": 2,
+      "status": "Aktif (30 Maç Mevcut)",
+      "matches_count": 30,
+      "standings_count": 3,
       "data_file": "data/cities/nigde.json"
     },
     {

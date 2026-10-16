@@ -19198,6 +19198,439 @@
         "İzmirspor",
         "İzmir Spor Kulübü"
       ]
+    },
+    {
+      "internal_name": "URBAN CARE İSTANBUL ATEŞ SPOR",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i-stanbul",
+      "matched_as": "Urban Care Ateş Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/ates-spor-kulubu-t17185",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 3",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "URBAN CARE İSTANBUL ATEŞ SPOR KULÜBÜ",
+        "Urban Care Ateş Spor Kulübü"
+      ],
+      "logo_url": null,
+      "local_logo": null
+    },
+    {
+      "internal_name": "SUPERPOOL FINDIKLI 1974",
+      "internal_category": "Kadınlar 2. Ligi",
+      "city": "Si̇vas",
+      "city_slug": "si-vas",
+      "matched_as": "Superpool Fındıklı 1974 Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/tr/fndkl-1974-spor-kulubu-t37153",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "note": "Grup 14",
+      "verified_at": "2026-09-25",
+      "aliases": [
+        "Superpool Fındıklı 1974 Spor Kulübü"
+      ],
+      "logo_url": null,
+      "local_logo": null
+    },
+    {
+      "internal_name": "ANADOLUGÜCÜ",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Anadolugücü Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/anadolugucu-spor-kulubu-u16-t44724",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Anadolugücü",
+        "Anadolugücü SK",
+        "Anadolugücü U16"
+      ],
+      "synonyms": [
+        "Anadolugücü Spor Kulübü U16",
+        "Anadolugücü U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/anadolugucu-spor-kulubu-u16-t44724.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17714192179dnvs.png"
+    },
+    {
+      "internal_name": "Antepia Spor Kulübü",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Antepia Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/antepia-spor-kulubu-u16-t44725",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Antepia",
+        "Antepia SK",
+        "Antepia U16"
+      ],
+      "synonyms": [
+        "Antepia Spor Kulübü U16",
+        "Antepia U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/antepia-spor-kulubu-u16-t44725.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1766398182t8Rjr.png"
+    },
+    {
+      "internal_name": "DOĞUŞ27",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Doğuş27 Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/dogus27-spor-kulubu-u16-t44726",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Doğuş27",
+        "Doğuş 27",
+        "Doğuş27 SK",
+        "Doğuş27 U16"
+      ],
+      "synonyms": [
+        "Doğuş27 Spor Kulübü U16",
+        "Doğuş27 U16"
+      ],
+      "verified_at": "2026-10-16"
+    },
+    {
+      "internal_name": "GAZİANTEP BELEDİYE SPK",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Gaziantep Büyükşehir Belediyespor U16",
+      "volleybox_url": "https://women.volleybox.net/gaziantep-belediye-sk-u16-t44727",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Gaziantep Belediye",
+        "Gaziantep Bld",
+        "Gaziantep Bld.",
+        "Gaziantep Büyükşehir Belediyespor",
+        "Gaziantep Belediye SK U16",
+        "Gaziantep Büyükşehir Belediyespor U16"
+      ],
+      "synonyms": [
+        "Gaziantep Büyükşehir Belediyespor U16",
+        "Gaziantep Belediye SK U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/gaziantep-belediye-sk-u16-t44727.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1773649395zSl5Q.png"
+    },
+    {
+      "internal_name": "GVG 2023",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-t55228",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "GVG 2023",
+        "GVG2023",
+        "Gaziantep Voleybol Gelişim 2023",
+        "Gaziantep Voleybol Gelişim 2023 SK",
+        "Gaziantep Voleybol Gelişim 2023 U16"
+      ],
+      "synonyms": [
+        "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
+        "Gaziantep Voleybol Gelişim U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/gaziantep-voleybol-gelisim-2023-spor-kulubu-u16-t55228.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1791451692vIou9.png"
+    },
+    {
+      "internal_name": "MERİNOS (A)",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Merinos SK U16",
+      "volleybox_url": "https://women.volleybox.net/merinos-sk-u16-t41483",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MERİNOS",
+        "Merinos",
+        "Merinos (A)",
+        "Merinos A",
+        "Merinos SK",
+        "Merinos SK U16"
+      ],
+      "synonyms": [
+        "Merinos SK U16",
+        "Merinos U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/merinos-sk-u16-t41483.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1760517299Sm87o.png"
+    },
+    {
+      "internal_name": "MERİNOS (B)",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Merinos SK - B U16",
+      "volleybox_url": "https://women.volleybox.net/merinos-sk-b-u16-t44728",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Merinos (B)",
+        "Merinos B",
+        "Merinos SK B",
+        "Merinos SK - B",
+        "Merinos SK - B U16"
+      ],
+      "synonyms": [
+        "Merinos SK - B U16",
+        "Merinos B U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/merinos-sk-b-u16-t44728.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1766398553X0MMx.png"
+    },
+    {
+      "internal_name": "ZEUGMA (A)",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Zeugma Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/zeugma-spor-kulubu-u16-t41411",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "ZEUGMA",
+        "Zeugma",
+        "Zeugma (A)",
+        "Zeugma A",
+        "Zeugma SK",
+        "Zeugma Spor Kulübü",
+        "Zeugma Spor Kulübü U16"
+      ],
+      "synonyms": [
+        "Zeugma Spor Kulübü U16",
+        "Zeugma U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/zeugma-spor-kulubu-u16-t41411.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1785755322j5cEq.png"
+    },
+    {
+      "internal_name": "ZEUGMA (B)",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Zeugma Spor Kulübü - B U16",
+      "volleybox_url": "https://women.volleybox.net/zeugma-spor-kulubu-b-u16-t44730",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Zeugma (B)",
+        "Zeugma B",
+        "Zeugma SK B",
+        "Zeugma Spor Kulübü B",
+        "Zeugma Spor Kulübü - B",
+        "Zeugma Spor Kulübü - B U16"
+      ],
+      "synonyms": [
+        "Zeugma Spor Kulübü - B U16",
+        "Zeugma B U16"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/zeugma-spor-kulubu-b-u16-t44730.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17857553266RiGn.png"
+    },
+    {
+      "internal_name": "ADRENALİN REKOR SPK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Adrenalin Rekor Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/adrenalin-rekor-spor-kulubu-u18-t55225",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Adrenalin Rekor",
+        "Adrenalin Rekor SK",
+        "ADRENALİN REKOR SPK",
+        "Adrenalin Rekor Spor Kulübü"
+      ],
+      "synonyms": [
+        "Adrenalin Rekor Spor Kulübü U18",
+        "Adrenalin Rekor U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/adrenalin-rekor-spor-kulubu-u18-t55225.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1791451299s865D.png"
+    },
+    {
+      "internal_name": "ANADOLUGÜCÜ",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Anadolugücü Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/anadolugucu-spor-kulubu-u18-t55226",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Anadolugücü",
+        "Anadolugücü SK",
+        "Anadolugücü U18"
+      ],
+      "synonyms": [
+        "Anadolugücü Spor Kulübü U18",
+        "Anadolugücü U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/anadolugucu-spor-kulubu-u18-t55226.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1791451404Mt7d3.png"
+    },
+    {
+      "internal_name": "Antepia Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Antepia Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/antepia-spor-kulubu-u18-t42675",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Antepia",
+        "Antepia SK",
+        "Antepia U18"
+      ],
+      "synonyms": [
+        "Antepia Spor Kulübü U18",
+        "Antepia U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/antepia-spor-kulubu-u18-t42675.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1760516901KD5QK.png"
+    },
+    {
+      "internal_name": "AV. MAHMUT DÜŞÜN",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Av. Mahmut Düşün MTAL U18",
+      "volleybox_url": "https://women.volleybox.net/av-mahmut-dusun-mtal-u18-t55227",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "AV. MAHMUT DÜŞÜN",
+        "Av. Mahmut Düşün",
+        "Avukat Mahmut Düşün",
+        "Av. Mahmut Düşün MTAL"
+      ],
+      "synonyms": [
+        "Av. Mahmut Düşün MTAL U18",
+        "Av. Mahmut Düşün U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/av-mahmut-dusun-mtal-u18-t55227.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1791451414BXdM6.png"
+    },
+    {
+      "internal_name": "GAZİANTEP BELEDİYE SPK",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Gaziantep Büyükşehir Belediyespor U18",
+      "volleybox_url": "https://women.volleybox.net/gaziantep-belediye-sk-u18-t42685",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Gaziantep Belediye",
+        "Gaziantep Bld",
+        "Gaziantep Büyükşehir Belediyespor",
+        "Gaziantep Belediye SK U18"
+      ],
+      "synonyms": [
+        "Gaziantep Büyükşehir Belediyespor U18",
+        "Gaziantep Belediye SK U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/gaziantep-belediye-sk-u18-t42685.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1773649390A3xjn.png"
+    },
+    {
+      "internal_name": "GVG 2023",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/gaziantep-voleybol-gelisim-2023-spor-kulubu-u18-t42680",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "GVG 2023",
+        "GVG2023",
+        "Gaziantep Voleybol Gelişim 2023",
+        "Gaziantep Voleybol Gelişim 2023 SK",
+        "Gaziantep Voleybol Gelişim 2023 U18"
+      ],
+      "synonyms": [
+        "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
+        "Gaziantep Voleybol Gelişim U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/gaziantep-voleybol-gelisim-2023-spor-kulubu-u18-t42680.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1760517119Q9mcD.png"
+    },
+    {
+      "internal_name": "MERİNOS",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Merinos SK U18",
+      "volleybox_url": "https://women.volleybox.net/merinos-sk-u18-t41292",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "MERİNOS",
+        "Merinos",
+        "Merinos SK",
+        "Merinos SK U18"
+      ],
+      "synonyms": [
+        "Merinos SK U18",
+        "Merinos U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/merinos-sk-u18-t41292.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17605172900tyiD.png"
+    },
+    {
+      "internal_name": "ZEUGMA",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Zeugma Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/zeugma-spor-kulubu-a-u18-t42683",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "ZEUGMA",
+        "Zeugma",
+        "Zeugma SK",
+        "Zeugma Spor Kulübü",
+        "Zeugma Spor Kulübü U18"
+      ],
+      "synonyms": [
+        "Zeugma Spor Kulübü U18",
+        "Zeugma U18"
+      ],
+      "verified_at": "2026-10-16",
+      "local_logo": "/logos/zeugma-spor-kulubu-a-u18-t42683.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1785755312eCw3Y.png"
     }
   ],
   "leagues": [
