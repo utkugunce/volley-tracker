@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T22:45:53.514875+00:00",
+  "updated_at": "2026-10-17T06:51:44.085557+00:00",
   "city": "Düzce",
   "slug": "duzce",
   "title": "TVF Düzce Genç & Yıldız Kızlar Süper Lig",
@@ -41,11 +41,11 @@
       {
         "rank": 2,
         "team": "Düzce 1907 Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 4,
-        "sets_won": 5,
+        "points": 7,
+        "sets_won": 8,
         "sets_lost": 3,
         "form": []
       },
@@ -63,12 +63,12 @@
       {
         "rank": 4,
         "team": "Düzce Atletik Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -407,11 +407,15 @@
       "match_no": "6",
       "home_team": "Düzce Atletik Spor Kulübü U18",
       "away_team": "Düzce 1907 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "13-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "404263",
@@ -437,5 +441,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-16T22:47:42.201183"
+  "volleybox_sync_updated_at": "2026-10-17T06:53:33.845985"
 }

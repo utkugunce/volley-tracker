@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T16:36:38.691312+03:00",
+  "updated_at": "2026-10-17T06:51:44.085557+00:00",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -32,11 +32,11 @@
       {
         "rank": 1,
         "team": "Aydın Büyükşehir Belediyespor U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 2,
         "form": []
       },
@@ -76,12 +76,12 @@
       {
         "rank": 5,
         "team": "Aydın DSİ Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -419,11 +419,15 @@
       "match_no": "8",
       "home_team": "Aydın DSİ Spor Kulübü U18",
       "away_team": "Aydın Büyükşehir Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "8-25",
+        "7-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406611",
@@ -452,7 +456,7 @@
       "city": "Aydın",
       "date": "2026-10-19",
       "time": "19:00",
-      "hall": "Mimar Sinan S.S",
+      "hall": "Sks",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
@@ -941,5 +945,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-16T17:28:38.531876"
+  "volleybox_sync_updated_at": "2026-10-17T06:53:33.833417"
 }

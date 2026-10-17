@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T16:36:38.691312+03:00",
+  "updated_at": "2026-10-17T06:51:44.085557+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -47,16 +47,27 @@
       {
         "rank": 2,
         "team": "Çerkezköy Voleybol Akademi Spor Kulübü",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "sets_won": 7,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
+        "team": "Kapaklı Site Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Tekirdağ Basket Spor Kulübü",
         "played": 2,
         "won": 0,
@@ -67,7 +78,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Çorlu GSB SK",
         "played": 2,
         "won": 0,
@@ -75,17 +86,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Kapaklı Site Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -532,11 +532,16 @@
       "match_no": "5",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
       "away_team": "Kapaklı Site Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "22-25",
+        "25-17",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408250",
@@ -2320,5 +2325,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-10-16T17:28:43.936831"
+  "volleybox_sync_updated_at": "2026-10-17T06:53:33.800381"
 }
