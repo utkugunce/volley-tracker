@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T16:36:38.691312+03:00",
+  "updated_at": "2026-10-17T15:26:20.193004+00:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -182,12 +182,12 @@
       {
         "rank": 1,
         "team": "Çınar Akademi Spor Kulübü - B U16",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
-        "points": 4,
-        "sets_won": 5,
-        "sets_lost": 4,
+        "lost": 2,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -214,6 +214,17 @@
       },
       {
         "rank": 4,
+        "team": "Tomarza Belediye Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Altıyıldız Spor Kulübü U16",
         "played": 2,
         "won": 0,
@@ -221,17 +232,6 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Tomarza Belediye Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ],
@@ -1151,11 +1151,17 @@
       "match_no": "4",
       "home_team": "Çınar Akademi Spor Kulübü - B U16",
       "away_team": "Tomarza Belediye Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-21",
+        "25-22",
+        "22-25",
+        "21-25",
+        "14-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408100",
@@ -1568,5 +1574,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-16T17:28:41.825708"
+  "volleybox_sync_updated_at": "2026-10-17T15:28:13.681724"
 }

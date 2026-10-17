@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T06:51:44.085557+00:00",
+  "updated_at": "2026-10-17T15:26:20.193004+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -183,11 +183,11 @@
       {
         "rank": 1,
         "team": "Çağdaş Spor Kulübü U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 3,
         "form": []
       },
@@ -238,12 +238,12 @@
       {
         "rank": 6,
         "team": "Tekirdağ Marmara Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -1691,11 +1691,15 @@
       "match_no": "9",
       "home_team": "Tekirdağ Marmara Spor Kulübü U16",
       "away_team": "Çağdaş Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "11-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2325,5 +2329,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-10-17T06:53:33.800381"
+  "volleybox_sync_updated_at": "2026-10-17T15:28:13.683265"
 }
