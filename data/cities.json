@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-17T15:26:20.193004+00:00",
+  "updated_at": "2026-10-17T23:56:37.850765+00:00",
   "total_cities": 81,
-  "active_cities": 34,
-  "total_matches": 1354,
+  "active_cities": 35,
+  "total_matches": 1369,
   "cities": [
     {
       "ilid": "1",
@@ -250,10 +250,10 @@
       "name": "Erzurum",
       "slug": "erzurum",
       "url": "https://erzurum.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (3 Maç Mevcut)",
+      "matches_count": 3,
+      "standings_count": 3,
+      "data_file": "data/cities/erzurum.json"
     },
     {
       "ilid": "26",
@@ -440,8 +440,8 @@
       "name": "Malatya",
       "slug": "malatya",
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (63 Maç Mevcut)",
-      "matches_count": 63,
+      "status": "Aktif (75 Maç Mevcut)",
+      "matches_count": 75,
       "standings_count": 19,
       "data_file": "data/cities/malatya.json"
     },

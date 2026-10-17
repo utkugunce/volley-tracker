@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T15:26:20.193004+00:00",
+  "updated_at": "2026-10-17T23:56:37.850765+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -354,6 +354,17 @@
     "Genç Kızlar 1. Ligi - Genç Kız - B Gr": [
       {
         "rank": 1,
+        "team": "Özateş SK U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Altınordu Voleybol U18",
         "played": 1,
         "won": 1,
@@ -364,7 +375,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Dokuz Eylül Voleybol U18",
         "played": 1,
         "won": 1,
@@ -375,7 +386,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "KZY Bornova Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -386,7 +397,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Altekma SK U18",
         "played": 2,
         "won": 1,
@@ -397,7 +408,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "İzmir Altınay Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -405,17 +416,6 @@
         "points": 2,
         "sets_won": 3,
         "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Özateş SK U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -432,12 +432,12 @@
       {
         "rank": 8,
         "team": "Smyrna Voleybol Kulübü - B U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -3277,11 +3277,15 @@
       "match_no": "6",
       "home_team": "Smyrna Voleybol Kulübü - B U18",
       "away_team": "Özateş SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "19-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406715",
@@ -6950,5 +6954,5 @@
     }
   ],
   "volleybox_synced_matches": 134,
-  "volleybox_sync_updated_at": "2026-10-17T15:28:13.698937"
+  "volleybox_sync_updated_at": "2026-10-17T23:58:26.718855"
 }

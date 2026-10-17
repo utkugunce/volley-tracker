@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T06:51:44.085557+00:00",
+  "updated_at": "2026-10-17T23:56:37.850765+00:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -299,29 +299,29 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "1907 MARMARİS VOLEYBOL",
-        "played": 0,
-        "won": 0,
+        "team": "ARMUT ALAN AZ",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "ARMUT ALAN AZ",
-        "played": 0,
+        "team": "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
+        "team": "1907 MARMARİS VOLEYBOL",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -335,28 +335,28 @@
       {
         "rank": 1,
         "team": "BODRUM İHTİSAS SPOR KULÜBÜ A",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "MİLAS ALL STAR AKADEMİ",
-        "played": 0,
+        "team": "MİLAS BELEDİYE SPOR A",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "MİLAS BELEDİYE SPOR A",
+        "team": "MİLAS ALL STAR AKADEMİ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -440,45 +440,45 @@
       {
         "rank": 1,
         "team": "BODRUM BELEDİYESİ BODRUM SPOR",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "BODRUM DOĞUŞ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "BODRUM İHTİSAS SPOR KULÜBÜ B",
-        "played": 0,
+        "team": "MİLAS BELEDİYE SPOR B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "MİLAS BELEDİYE SPOR B",
-        "played": 0,
+        "team": "BODRUM İHTİSAS SPOR KULÜBÜ B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -923,11 +923,15 @@
       "match_no": "1",
       "home_team": "ARMUT ALAN AZ",
       "away_team": "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-22",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -957,11 +961,15 @@
       "match_no": "1",
       "home_team": "BODRUM İHTİSAS SPOR KULÜBÜ A",
       "away_team": "MİLAS BELEDİYE SPOR A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-20",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1025,11 +1033,15 @@
       "match_no": "1",
       "home_team": "BODRUM BELEDİYESİ BODRUM SPOR",
       "away_team": "BODRUM İHTİSAS SPOR KULÜBÜ B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-10",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1059,11 +1071,15 @@
       "match_no": "2",
       "home_team": "BODRUM DOĞUŞ SPOR KULÜBÜ",
       "away_team": "MİLAS BELEDİYE SPOR B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-10",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1082,5 +1098,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-17T06:53:33.834929"
+  "volleybox_sync_updated_at": "2026-10-17T23:58:26.726943"
 }
