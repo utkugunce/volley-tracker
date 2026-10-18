@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T16:36:38.691312+03:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -52,7 +52,7 @@
       },
       {
         "rank": 3,
-        "team": "Gaziantep Büyükşehir Belediyespor U18",
+        "team": "Zeugma Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -63,6 +63,17 @@
       },
       {
         "rank": 4,
+        "team": "Gaziantep Büyükşehir Belediyespor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Anadolugücü Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -73,41 +84,30 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
-        "played": 2,
-        "won": 0,
+        "rank": 6,
+        "team": "Adrenalin Rekor Spor Kulübü U18",
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 6,
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Adrenalin Rekor Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "Av. Mahmut Düşün MTAL U18",
-        "played": 0,
+        "team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
+        "played": 3,
         "won": 0,
-        "lost": 0,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 8,
-        "team": "Zeugma Spor Kulübü U18",
+        "team": "Av. Mahmut Düşün MTAL U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -120,6 +120,72 @@
     "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
+        "team": "Merinos SK U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Antepia Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Zeugma Spor Kulübü - B U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Zeugma Spor Kulübü U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Doğuş27 Spor Kulübü U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Merinos SK - B U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 7,
         "team": "Anadolugücü Spor Kulübü U16",
         "played": 0,
         "won": 0,
@@ -130,29 +196,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Antepia Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Doğuş27 Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
+        "rank": 8,
         "team": "Gaziantep Büyükşehir Belediyespor U16",
         "played": 0,
         "won": 0,
@@ -163,52 +207,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Merinos SK U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Merinos SK - B U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Zeugma Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 9,
-        "team": "Zeugma Spor Kulübü - B U16",
+        "team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -414,11 +414,16 @@
       "match_no": "5",
       "home_team": "Zeugma Spor Kulübü U18",
       "away_team": "Adrenalin Rekor Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-8",
+        "25-21",
+        "23-25",
+        "25-6"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406710",
@@ -455,11 +460,15 @@
       "match_no": "6",
       "home_team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
       "away_team": "Adrenalin Rekor Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "12-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -489,11 +498,15 @@
       "match_no": "1",
       "home_team": "Doğuş27 Spor Kulübü U16",
       "away_team": "Antepia Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "23-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407995",
@@ -530,11 +543,15 @@
       "match_no": "2",
       "home_team": "Merinos SK - B U16",
       "away_team": "Merinos SK U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407994",
@@ -571,11 +588,15 @@
       "match_no": "3",
       "home_team": "Zeugma Spor Kulübü U16",
       "away_team": "Zeugma Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "23-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407996",
@@ -635,5 +656,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-16T17:28:39.344465"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:34.987686"
 }

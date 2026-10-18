@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T06:51:44.085557+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -366,16 +366,27 @@
       {
         "rank": 1,
         "team": "Ayvalıkgücü Belediye SK U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Burhaniye Belediye Spor Kulübü U16",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Ayvalıkspor - B U16",
         "played": 1,
         "won": 0,
@@ -386,19 +397,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Ayvalık Gelişim Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Burhaniye Belediye Spor Kulübü U16",
+        "team": "Ayvalık Gelişim Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1399,11 +1399,16 @@
       "match_no": "2",
       "home_team": "Ayvalıkgücü Belediye SK U16",
       "away_team": "Burhaniye Belediye Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "25-13",
+        "20-25",
+        "25-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406640",
@@ -1916,5 +1921,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-17T06:53:33.840647"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:34.182938"
 }

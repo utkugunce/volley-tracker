@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T15:26:20.193004+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -460,14 +460,14 @@
         "vb_time": "18:30",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-06",
           "vb_time": "18:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Açıklanacak / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
         }
       }
     },
@@ -501,14 +501,14 @@
         "vb_time": "20:30",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-06",
           "vb_time": "20:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Açıklanacak / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
         }
       }
     },
@@ -924,5 +924,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-17T15:28:13.687891"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:40.517649"
 }

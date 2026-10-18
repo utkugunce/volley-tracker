@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T15:26:20.193004+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -42,6 +42,17 @@
       {
         "rank": 2,
         "team": "Kütahya Demirspor U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Tavşanlı Belediyesi Spor Kulübü - B U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -51,7 +62,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Kütahya Gelişim Akademi 43 Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -62,19 +73,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Tavşanlı Belediyesi Spor Kulübü - B U18",
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -190,11 +190,15 @@
       "match_no": "2",
       "home_team": "Tavşanlı Belediyesi Spor Kulübü - B U18",
       "away_team": "Kütahya Demirspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "24-26",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408160",
@@ -794,5 +798,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-17T15:28:13.719365"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:39.326654"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T15:26:20.193004+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -124,18 +124,18 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Develi GSB Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
+        "team": "Develi GSB Spor Kulübü U16",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -157,18 +157,18 @@
       },
       {
         "rank": 4,
-        "team": "Kayseri Bahçelievler Spor Kulübü U16",
-        "played": 1,
+        "team": "Erciyes Aslan Spor Kulübü - B U16",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Erciyes Aslan Spor Kulübü - B U16",
+        "team": "Kayseri Bahçelievler Spor Kulübü U16",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -181,6 +181,17 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Evola Spor Kulübü - B U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Çınar Akademi Spor Kulübü - B U16",
         "played": 3,
         "won": 1,
@@ -191,7 +202,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "KVK Voleybol Kulübü U16",
         "played": 1,
         "won": 1,
@@ -199,17 +210,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Evola Spor Kulübü - B U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
         "form": []
       },
       {
@@ -226,12 +226,12 @@
       {
         "rank": 5,
         "team": "Altıyıldız Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -260,6 +260,17 @@
       },
       {
         "rank": 3,
+        "team": "Çınar Akademi Spor Kulübü U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Kayseri Cimnastik Spor Kulübü - C U16",
         "played": 2,
         "won": 1,
@@ -270,25 +281,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Çınar Akademi Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
         "team": "Erciyes Aslan Spor Kulübü - A",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -890,11 +890,15 @@
       "match_no": "4",
       "home_team": "Kayseri Bahçelievler Spor Kulübü U16",
       "away_team": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "7-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408093",
@@ -1198,11 +1202,15 @@
       "match_no": "5",
       "home_team": "Evola Spor Kulübü - B U16",
       "away_team": "Altıyıldız Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-10",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408102",
@@ -1462,11 +1470,15 @@
       "match_no": "5",
       "home_team": "Erciyes Aslan Spor Kulübü - A",
       "away_team": "Çınar Akademi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "10-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408106",
@@ -1574,5 +1586,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-17T15:28:13.681724"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:37.918911"
 }

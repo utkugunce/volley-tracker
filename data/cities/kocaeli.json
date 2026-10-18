@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T09:27:42.762171+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -1009,18 +1009,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "409377",
+        "url": "https://women.volleybox.net/tr/kocaeli-elite-spor-u18-zmit-spor-u18-c409377",
+        "host_name": "Kocaeli Elite Spor U18",
+        "guest_name": "İzmit Spor U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-16",
+        "vb_time": "18:30",
+        "vb_hall": "Vezirçiftliği Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "18:30",
+          "vb_hall": "Vezirçiftliği Spor Salonu",
+          "details": null
         }
       }
     },
@@ -5031,6 +5038,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 31,
-  "volleybox_sync_updated_at": "2026-10-18T09:29:30.216405"
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-10-18T19:12:39.200559"
 }

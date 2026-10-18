@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T09:27:42.762171+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -77,11 +77,11 @@
       {
         "rank": 1,
         "team": "Hatay Voleybol Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -99,12 +99,12 @@
       {
         "rank": 3,
         "team": "Antakya Güneş Spor Kulübü - B U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -123,23 +123,23 @@
       {
         "rank": 1,
         "team": "İskenderun 12 Dev Adam Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 5,
-        "sets_won": 6,
-        "sets_lost": 2,
+        "points": 8,
+        "sets_won": 9,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
-        "played": 1,
+        "team": "İskenderun Yurdum Spor U18",
+        "played": 3,
         "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -155,24 +155,24 @@
       },
       {
         "rank": 4,
-        "team": "İskenderun Yurdum Spor U18",
+        "team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
         "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 1,
-        "sets_won": 3,
-        "sets_lost": 6,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 5,
         "team": "İskenderun Tan Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 1,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -874,11 +874,15 @@
       "match_no": "4",
       "home_team": "Hatay Voleybol Spor Kulübü U18",
       "away_team": "Antakya Güneş Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-11",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401078",
@@ -1427,11 +1431,16 @@
       "match_no": "5",
       "home_team": "İskenderun 12 Dev Adam Spor Kulübü U18",
       "away_team": "Dörtyol Dokuz Ocak Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-20",
+        "22-25",
+        "25-22",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401092",
@@ -1468,11 +1477,16 @@
       "match_no": "6",
       "home_team": "İskenderun Tan Spor Kulübü U18",
       "away_team": "İskenderun Yurdum Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "24-26",
+        "25-17",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401093",
@@ -2582,5 +2596,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-18T09:29:30.211914"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:35.619668"
 }

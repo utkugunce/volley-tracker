@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T06:51:44.085557+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -481,14 +481,14 @@
         "vb_time": "19:00",
         "vb_hall": "Mimar Sinan Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-19",
           "vb_time": "19:00",
           "vb_hall": "Mimar Sinan Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Sks / VB: Mimar Sinan Spor Salonu)"
         }
       }
     },
@@ -945,5 +945,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-17T06:53:33.833417"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:34.043022"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T09:27:42.762171+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -347,11 +347,11 @@
       {
         "rank": 2,
         "team": "Biga Gelişim Voleybol Kulübü U16",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 5,
         "form": []
       },
@@ -369,12 +369,12 @@
       {
         "rank": 4,
         "team": "Gökçeada Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 2,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ]
@@ -988,12 +988,12 @@
         "discrepancy": {
           "has_diff": true,
           "date_diff": false,
-          "time_diff": true,
-          "hall_diff": false,
+          "time_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-15",
           "vb_time": "18:00",
           "vb_hall": "Eceabat Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:30 / VB: 18:00)"
+          "details": "Salon Değişti (TVF: Açıklanacak / VB: Eceabat Spor Salonu)"
         }
       }
     },
@@ -1746,11 +1746,15 @@
       "match_no": "7",
       "home_team": "Biga Gelişim Voleybol Kulübü U16",
       "away_team": "Gökçeada Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-11",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1803,5 +1807,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-18T09:29:30.204726"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:34.529736"
 }

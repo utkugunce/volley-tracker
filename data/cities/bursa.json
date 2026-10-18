@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T22:45:53.514875+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -149,18 +149,18 @@
     "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "Bursa Koç Spor Kulübü - A U18",
-        "played": 1,
-        "won": 1,
+        "team": "Bursa Büyükşehir Belediyespor U18",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Bursa Büyükşehir Belediyespor U18",
+        "team": "Bursa Koç Spor Kulübü - A U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -183,12 +183,12 @@
       {
         "rank": 4,
         "team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -989,11 +989,15 @@
       "match_no": "3",
       "home_team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
       "away_team": "Bursa Büyükşehir Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "17-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2388,5 +2392,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-16T22:47:42.198620"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:34.355435"
 }

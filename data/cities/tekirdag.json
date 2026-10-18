@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T09:27:42.762171+00:00",
+  "updated_at": "2026-10-18T19:07:27.469807+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -36,11 +36,11 @@
       {
         "rank": 1,
         "team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -58,34 +58,34 @@
       {
         "rank": 3,
         "team": "Kapaklı Site Spor Kulübü",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 4,
         "team": "Tekirdağ Basket Spor Kulübü",
-        "played": 2,
-        "won": 0,
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
         "team": "Çorlu GSB SK",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -578,11 +578,15 @@
       "match_no": "6",
       "home_team": "Çorlu GSB SK",
       "away_team": "Tekirdağ Basket Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "16-25",
+        "25-27"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -612,11 +616,15 @@
       "match_no": "7",
       "home_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
       "away_team": "Kapaklı Site Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-19",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2356,5 +2364,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-10-18T09:29:30.236360"
+  "volleybox_sync_updated_at": "2026-10-18T19:12:40.413721"
 }
