@@ -10,13 +10,14 @@ import { useFavorites } from "@/utils/useFavorites";
 import {
   convertK2MatchToMatch,
   normalizeK2Date,
-  getKadinlar2LigMatchTeamNames,
   isKadinlar2LigMatchFavorite,
   kadinlar2LigMatchHasTeamQuery,
   sortKadinlar2LigMatchesByTime,
+  toggleKadinlar2LigMatchFavorite,
 } from "@/utils/kadinlar2LigConverter";
 import { formatDateTurkish } from "@/utils/calendar";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
+import { trIncludes } from "@/utils/turkishLocale";
 
 interface Kadinlar2LigTodayMatchesProps {
   allMatches: Kadinlar2LigMatch[];
@@ -107,11 +108,13 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
         if (!isKadinlar2LigMatchFavorite(m, isFavorite)) return false;
       }
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const inTeams = kadinlar2LigMatchHasTeamQuery(m, q);
-        const inCity = m.sehir.toLowerCase().includes(q);
-        const inHall = m.salon.toLowerCase().includes(q);
-        if (!inTeams && !inCity && !inHall) return false;
+        const inTeams = kadinlar2LigMatchHasTeamQuery(m, searchQuery);
+        const inCity = trIncludes(m.sehir || "", searchQuery);
+        const inHall = trIncludes(m.salon || "", searchQuery);
+        const inGroup =
+          trIncludes(m.grup_adi || "", searchQuery) ||
+          trIncludes(`Grup ${m.grup_no}`, searchQuery);
+        if (!inTeams && !inCity && !inHall && !inGroup) return false;
       }
       return true;
     });
@@ -148,7 +151,7 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
 
   const handleToggleFavorite = (matchId: string) => {
     const match = allMatches.find((item) => item.id === matchId);
-    if (match) toggleFavorite(getKadinlar2LigMatchTeamNames(match).home);
+    if (match) toggleKadinlar2LigMatchFavorite(match, isFavorite, toggleFavorite);
   };
 
   const selectStatus = (status: StatusFilterType) => setStatusFilter(status);

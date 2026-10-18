@@ -5,6 +5,7 @@ import { CalendarPlus, Star } from "lucide-react";
 import { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { downloadIcsFile, generateMatchIcs } from "@/utils/ics";
+import { isMatchPassed } from "@/utils/calendar";
 
 export type MatchRowMode = "today" | "results" | "fixtures";
 
@@ -137,7 +138,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span className="text-[9px] font-medium text-slate-400 px-1">
             Ertelendi
           </span>
-        ) : mode === "results" ? (
+        ) : mode === "results" || (mode === "today" && isMatchPassed(match.date, match.time, match.status)) ? (
           <span className="text-[8px] font-semibold text-amber-400 px-1 tracking-tight" title="Oynandı, skor girişi bekleniyor">
             Skor Bekleniyor
           </span>
@@ -221,7 +222,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
         </div>
 
         {/* Set Puanları Sütunları (Desktop/Geniş Ekran) */}
-        {parsedSets.length > 0 && (
+        {parsedSets.length > 0 ? (
           <div className="hidden sm:flex items-center gap-1.5 text-[10px] font-mono font-scoreboard tabular-nums pr-2.5 text-ink-2">
             {parsedSets.map((set, idx) => (
               <div key={idx} className="flex flex-col items-center justify-center leading-none gap-0.5">
@@ -246,7 +247,13 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               </div>
             ))}
           </div>
-        )}
+        ) : (mode === "results" || (mode === "today" && isMatchPassed(match.date, match.time, match.status))) && !isFinished ? (
+          <div className="hidden sm:flex items-center pr-2.5">
+            <span className="text-[10px] font-bold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-md whitespace-nowrap">
+              Skor Bekleniyor
+            </span>
+          </div>
+        ) : null}
 
         {/* Toplam Set Skoru */}
         <div className="w-[32px] shrink-0 flex flex-col items-center justify-center font-mono font-scoreboard tabular-nums leading-none gap-0.5 pl-1.5 border-l border-line/40">
@@ -256,6 +263,8 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                 ? "font-extrabold text-white"
                 : isFinished
                 ? "font-bold text-ink-2"
+                : mode === "results"
+                ? "font-bold text-amber-400/90"
                 : "font-semibold text-slate-400"
             }`}
           >
@@ -267,6 +276,8 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                 ? "font-extrabold text-white"
                 : isFinished
                 ? "font-bold text-ink-2"
+                : mode === "results"
+                ? "font-bold text-amber-400/90"
                 : "font-semibold text-slate-400"
             }`}
           >

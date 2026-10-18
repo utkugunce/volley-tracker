@@ -121,9 +121,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                     </div>
                   ) : (
                     topTeams.map((team) => {
-                      const vb = getVolleyboxMapping(team.takim_adi, K2_CATEGORY);
                       const displayName = getKadinlar2LigTeamName(team.takim_adi, team.volleybox_name);
-                      const logoSrc = (team.logo && !team.logo.includes("takimlogoyok")) ? team.logo : (vb?.local_logo || vb?.logo_url);
 
                       return (
                         <div

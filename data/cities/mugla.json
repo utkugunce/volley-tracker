@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T22:09:17.029861+03:00",
+  "updated_at": "2026-10-18T22:44:24.756582+03:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -229,29 +229,29 @@
     "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "FETHİYE ANKA SPOR",
-        "played": 0,
-        "won": 0,
+        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "FETHİYE VOLEYBOL SPOR",
-        "played": 0,
+        "team": "FETHİYE ANKA SPOR",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "team": "FETHİYE VOLEYBOL SPOR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -264,29 +264,29 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ B",
-        "played": 0,
-        "won": 0,
+        "team": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ A",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
-        "team": "MUĞLA SPOR",
-        "played": 0,
+        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ B",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ A",
+        "team": "MUĞLA SPOR",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -369,24 +369,24 @@
     "Yıldız Kızlar Süper Lig - E Grubu": [
       {
         "rank": 1,
-        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ A",
-        "played": 0,
-        "won": 0,
+        "team": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ B",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ B",
-        "played": 0,
+        "team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ A",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -855,26 +855,15 @@
       "match_no": "1",
       "home_team": "FETHİYE ANKA SPOR",
       "away_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "14-25",
+        "22-25"
+      ],
+      "status": "finished"
     },
     {
       "id": "mugla-20261018-010",
@@ -889,26 +878,16 @@
       "match_no": "1",
       "home_team": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ A",
       "away_team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "20-25",
+        "25-18",
+        "25-8",
+        "25-15"
+      ],
+      "status": "finished"
     },
     {
       "id": "mugla-20261017-011",
@@ -931,22 +910,7 @@
         "25-22",
         "25-19"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "mugla-20261017-012",
@@ -969,22 +933,7 @@
         "25-20",
         "25-12"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "mugla-20261018-013",
@@ -999,26 +948,15 @@
       "match_no": "1",
       "home_team": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ A",
       "away_team": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "20-25",
+        "22-25"
+      ],
+      "status": "finished"
     },
     {
       "id": "mugla-20261017-014",
@@ -1041,22 +979,7 @@
         "25-10",
         "25-14"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "mugla-20261017-015",
@@ -1079,24 +1002,7 @@
         "25-10",
         "25-16"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     }
-  ],
-  "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-18T22:14:49.674632"
+  ]
 }

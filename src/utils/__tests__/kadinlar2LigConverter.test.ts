@@ -10,6 +10,7 @@ import {
   isKadinlar2LigMatchFavorite,
   isKadinlar2LigMatchSynced,
   kadinlar2LigMatchHasTeamQuery,
+  toggleKadinlar2LigMatchFavorite,
 } from "../kadinlar2LigConverter";
 import { getVolleyboxMapping } from "../volleybox";
 import { Kadinlar2LigData, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
@@ -93,14 +94,36 @@ describe("Kadınlar 2. Ligi maç dönüştürücü", () => {
     expect(converted.away_team).toBe("Volleybox Adı");
   });
 
-  it("favori ve arama hem Volleybox hem TVF adıyla çalışır", () => {
+  it("favori ve arama hem Volleybox hem TVF adıyla ve Türkçe İ/ı duyarlılığıyla çalışır", () => {
     const m = baseMatch();
     expect(isKadinlar2LigMatchFavorite(m, (n) => n === "Arnavutköy Belediyesi SK")).toBe(true);
     expect(isKadinlar2LigMatchFavorite(m, (n) => n === "ARNAVUTKÖY BLD. SPOR")).toBe(true);
     expect(isKadinlar2LigMatchFavorite(m, () => false)).toBe(false);
     expect(kadinlar2LigMatchHasTeamQuery(m, "belediyesi sk")).toBe(true);
     expect(kadinlar2LigMatchHasTeamQuery(m, "bld. spor")).toBe(true);
+    expect(kadinlar2LigMatchHasTeamQuery(m, "bilinmeyen takim")).toBe(true);
     expect(kadinlar2LigMatchHasTeamQuery(m, "yok böyle")).toBe(false);
+  });
+
+  it("toggleKadinlar2LigMatchFavorite deplasman takımı favoriyse ev sahibini eklemek yerine deplasmanı çıkarır", () => {
+    const m = baseMatch();
+    const toggled: string[] = [];
+    // Sadece deplasman favorideyken:
+    toggleKadinlar2LigMatchFavorite(
+      m,
+      (name) => name === "BİLİNMEYEN TAKIM XYZ",
+      (name) => toggled.push(name)
+    );
+    expect(toggled).toEqual(["BİLİNMEYEN TAKIM XYZ"]);
+
+    // Hiçbiri favoride değilken ev sahibini ekler:
+    const toggledNone: string[] = [];
+    toggleKadinlar2LigMatchFavorite(
+      m,
+      () => false,
+      (name) => toggledNone.push(name)
+    );
+    expect(toggledNone).toEqual(["Arnavutköy Belediyesi SK"]);
   });
 
   it("isKadinlar2LigMatchSynced Volleybox eşleşme durumunu doğru tespit eder", () => {

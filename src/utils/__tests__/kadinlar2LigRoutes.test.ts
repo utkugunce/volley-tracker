@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   getKadinlar2LigRoute,
+  isValidKadinlar2LigSlug,
   parseKadinlar2LigRoute,
 } from "../kadinlar2LigRoutes";
 
@@ -35,6 +36,7 @@ describe("kadinlar2LigRoutes", () => {
       expect(getKadinlar2LigRoute("today")).toBe("/kadinlar-2-ligi/gunun-maclari");
       expect(getKadinlar2LigRoute("leaders")).toBe("/kadinlar-2-ligi/grup-durumu");
       expect(getKadinlar2LigRoute("teams")).toBe("/kadinlar-2-ligi/takimlar");
+      expect(getKadinlar2LigRoute("karsilastir")).toBe("/kadinlar-2-ligi/karsilastir");
       expect(getKadinlar2LigRoute("statu")).toBe("/kadinlar-2-ligi/statu");
     });
   });
@@ -102,7 +104,7 @@ describe("kadinlar2LigRoutes", () => {
       );
     });
 
-    it("parses results, today, leaders, teams and statu tabs", () => {
+    it("parses results, today, leaders, teams, karsilastir and statu tabs", () => {
       expect(parseKadinlar2LigRoute("/kadinlar-2-ligi/sonuclar")).toEqual({
         tab: "results",
         groupNo: 1,
@@ -123,10 +125,35 @@ describe("kadinlar2LigRoutes", () => {
         tab: "teams",
         groupNo: 1,
       });
+      expect(parseKadinlar2LigRoute("/kadinlar-2-ligi/karsilastir")).toEqual({
+        tab: "karsilastir",
+        groupNo: 1,
+      });
       expect(parseKadinlar2LigRoute("/kadinlar-2-ligi/statu")).toEqual({
         tab: "statu",
         groupNo: 1,
       });
+    });
+  });
+
+  describe("isValidKadinlar2LigSlug", () => {
+    it("accepts valid single-segment and group routes", () => {
+      expect(isValidKadinlar2LigSlug([])).toBe(true);
+      expect(isValidKadinlar2LigSlug(["puan-durumu"])).toBe(true);
+      expect(isValidKadinlar2LigSlug(["puan-durumu", "grup-1"])).toBe(true);
+      expect(isValidKadinlar2LigSlug(["puan-durumu", "grup-16"])).toBe(true);
+      expect(isValidKadinlar2LigSlug(["puan-durumu", "tum-gruplar"])).toBe(true);
+      expect(isValidKadinlar2LigSlug(["fikstur", "grup-12"])).toBe(true);
+      expect(isValidKadinlar2LigSlug(["karsilastir"])).toBe(true);
+      expect(isValidKadinlar2LigSlug(["statu"])).toBe(true);
+    });
+
+    it("rejects unknown subroutes or out-of-range group numbers", () => {
+      expect(isValidKadinlar2LigSlug(["rastgele-sayfa"])).toBe(false);
+      expect(isValidKadinlar2LigSlug(["puan-durumu", "grup-0"])).toBe(false);
+      expect(isValidKadinlar2LigSlug(["puan-durumu", "grup-17"])).toBe(false);
+      expect(isValidKadinlar2LigSlug(["puan-durumu", "grup-2", "ekstra"])).toBe(false);
+      expect(isValidKadinlar2LigSlug(["sonuclar", "grup-2"])).toBe(false);
     });
   });
 });

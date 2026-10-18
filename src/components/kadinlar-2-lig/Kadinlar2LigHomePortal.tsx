@@ -22,10 +22,12 @@ import {
   convertK2MatchToMatch,
   getKadinlar2LigTeamName,
   normalizeK2Date,
+  toggleKadinlar2LigMatchFavorite,
 } from "@/utils/kadinlar2LigConverter";
 import { isMatchScored } from "@/utils/matchScoring";
-import { compareMatchDateTime, formatDateTurkish } from "@/utils/calendar";
+import { compareMatchDateTime, formatDateTurkish, isMatchPassed } from "@/utils/calendar";
 import { getVolleyboxMapping } from "@/utils/volleybox";
+import { trIncludes } from "@/utils/turkishLocale";
 import { Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
 
 interface Kadinlar2LigHomePortalProps {
@@ -71,23 +73,6 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
     return (data.tum_maclar || []).map(convertK2MatchToMatch);
   }, [data.tum_maclar]);
 
-  // İstatistikler
-  const stats = useMemo(() => {
-    const totalMatches = convertedMatches.length;
-    const scoredMatches = convertedMatches.filter(isMatchScored).length;
-    const upcomingMatches = totalMatches - scoredMatches;
-    const todayCount = convertedMatches.filter((m) => m.date === todayIso).length;
-
-    return {
-      totalMatches,
-      scoredMatches,
-      upcomingMatches,
-      todayCount,
-      totalGroups: data.gruplar.length,
-      totalTeams: data.tum_takimlar.length,
-    };
-  }, [convertedMatches, todayIso, data.gruplar.length, data.tum_takimlar.length]);
-
   // Filtrelemeler (Grup, Arama, Favoriler)
   const matchesByGroupAndSearch = useMemo(() => {
     return convertedMatches.filter((m) => {
@@ -98,15 +83,35 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
         if (!isFavorite(m.home_team) && !isFavorite(m.away_team)) return false;
       }
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const inTeams = m.home_team.toLowerCase().includes(q) || m.away_team.toLowerCase().includes(q);
-        const inCity = (m.city || "").toLowerCase().includes(q);
-        const inHall = (m.hall || "").toLowerCase().includes(q);
-        if (!inTeams && !inCity && !inHall) return false;
+        const inTeams =
+          trIncludes(m.home_team, searchQuery) || trIncludes(m.away_team, searchQuery);
+        const inCity = trIncludes(m.city || "", searchQuery);
+        const inHall = trIncludes(m.hall || "", searchQuery);
+        const inGroup = trIncludes(m.group || "", searchQuery);
+        if (!inTeams && !inCity && !inHall && !inGroup) return false;
       }
       return true;
     });
   }, [convertedMatches, selectedGroupFilter, showOnlyFavorites, searchQuery, isFavorite]);
+
+  // İstatistikler (aktif grup ve arama filtresine duyarlı)
+  const stats = useMemo(() => {
+    const totalMatches = matchesByGroupAndSearch.length;
+    const scoredMatches = matchesByGroupAndSearch.filter(isMatchScored).length;
+    const upcomingMatches = totalMatches - scoredMatches;
+    const todayCount = todayIso
+      ? matchesByGroupAndSearch.filter((m) => m.date === todayIso).length
+      : 0;
+
+    return {
+      totalMatches,
+      scoredMatches,
+      upcomingMatches,
+      todayCount,
+      totalGroups: data.gruplar.length,
+      totalTeams: data.tum_takimlar.length,
+    };
+  }, [matchesByGroupAndSearch, todayIso, data.gruplar.length, data.tum_takimlar.length]);
 
   // Bugünün Maçları
   const todayMatches = useMemo(() => {
@@ -116,29 +121,31 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
       .sort((a, b) => compareMatchDateTime(a, b, "asc"));
   }, [matchesByGroupAndSearch, todayIso]);
 
-  // Yaklaşan Maçlar (Oynanmamış en yakın maçlar)
-  const upcomingMatches = useMemo(() => {
+  // Tüm Yaklaşan Maçlar & Önizleme (10 maç)
+  const allUpcomingMatches = useMemo(() => {
     return matchesByGroupAndSearch
       .filter((m) => !isMatchScored(m) && m.date !== todayIso)
-      .sort((a, b) => compareMatchDateTime(a, b, "asc"))
-      .slice(0, 10);
+      .sort((a, b) => compareMatchDateTime(a, b, "asc"));
   }, [matchesByGroupAndSearch, todayIso]);
 
-  // Son Biten Maçlar (En yeni skorlanan maçlar)
-  const recentResults = useMemo(() => {
+  const upcomingMatches = useMemo(() => allUpcomingMatches.slice(0, 10), [allUpcomingMatches]);
+
+  // Tüm Son Biten Maçlar & Önizleme (10 maç)
+  const allRecentResults = useMemo(() => {
     return matchesByGroupAndSearch
       .filter(isMatchScored)
-      .sort((a, b) => compareMatchDateTime(a, b, "desc"))
-      .slice(0, 10);
+      .sort((a, b) => compareMatchDateTime(a, b, "desc"));
   }, [matchesByGroupAndSearch]);
 
-  // Filtrelenmiş Liste (feedFilter !== 'all' olduğunda)
+  const recentResults = useMemo(() => allRecentResults.slice(0, 10), [allRecentResults]);
+
+  // Filtrelenmiş Liste (feedFilter !== 'all' olduğunda tüm eşleşen maçları göster)
   const displayMatches = useMemo(() => {
     if (feedFilter === "today") return todayMatches;
-    if (feedFilter === "finished") return recentResults;
-    if (feedFilter === "upcoming") return upcomingMatches;
+    if (feedFilter === "finished") return allRecentResults;
+    if (feedFilter === "upcoming") return allUpcomingMatches;
     return null;
-  }, [feedFilter, todayMatches, recentResults, upcomingMatches]);
+  }, [feedFilter, todayMatches, allRecentResults, allUpcomingMatches]);
 
   // Grup Liderleri (Çeyrek Final Hattı)
   const topTeamsPerGroup = useMemo(() => {
@@ -154,7 +161,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
 
   const handleToggleFavorite = (matchId: string) => {
     const m = convertedMatches.find((x) => x.id === matchId);
-    if (m) toggleFavorite(m.home_team);
+    if (m) toggleKadinlar2LigMatchFavorite(m, isFavorite, toggleFavorite);
   };
 
   return (
@@ -585,6 +592,11 @@ const MatchRow: React.FC<MatchRowProps> = ({
 
   const homeScore = match.home_score ?? match.score?.split("-")[0]?.trim();
   const awayScore = match.away_score ?? match.score?.split("-")[1]?.trim();
+  const homeNum = Number(homeScore);
+  const awayNum = Number(awayScore);
+  const homeWon = hasScore && !Number.isNaN(homeNum) && !Number.isNaN(awayNum) && homeNum > awayNum;
+  const awayWon = hasScore && !Number.isNaN(homeNum) && !Number.isNaN(awayNum) && awayNum > homeNum;
+  const formattedDate = match.date ? formatDateTurkish(match.date) || match.date : "TBD";
 
   return (
     <div
@@ -646,12 +658,20 @@ const MatchRow: React.FC<MatchRowProps> = ({
           <div className="flex items-center justify-between gap-2 min-w-0">
             <div className="flex items-center gap-2 min-w-0">
               <TeamBadge name={match.home_team} logoUrl={homeLogo} size="xs" />
-              <span className="text-xs sm:text-sm font-bold text-white group-hover:text-ink transition-colors truncate">
+              <span
+                className={`text-xs sm:text-sm font-bold group-hover:text-ink transition-colors truncate ${
+                  hasScore && !homeWon ? "text-slate-300 font-semibold" : "text-white"
+                }`}
+              >
                 {match.home_team}
               </span>
             </div>
             {hasScore && (
-              <span className="font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm text-emerald-400 pl-2">
+              <span
+                className={`font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm pl-2 ${
+                  homeWon ? "text-emerald-400" : "text-slate-400"
+                }`}
+              >
                 {homeScore}
               </span>
             )}
@@ -661,41 +681,57 @@ const MatchRow: React.FC<MatchRowProps> = ({
           <div className="flex items-center justify-between gap-2 min-w-0">
             <div className="flex items-center gap-2 min-w-0">
               <TeamBadge name={match.away_team} logoUrl={awayLogo} size="xs" />
-              <span className="text-xs sm:text-sm font-bold text-white group-hover:text-ink transition-colors truncate">
+              <span
+                className={`text-xs sm:text-sm font-bold group-hover:text-ink transition-colors truncate ${
+                  hasScore && !awayWon ? "text-slate-300 font-semibold" : "text-white"
+                }`}
+              >
                 {match.away_team}
               </span>
             </div>
             {hasScore && (
-              <span className="font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm text-emerald-400 pl-2">
+              <span
+                className={`font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm pl-2 ${
+                  awayWon ? "text-emerald-400" : "text-slate-400"
+                }`}
+              >
                 {awayScore}
               </span>
             )}
           </div>
         </div>
 
-        {/* Sağ: Skor veya Saat / Durum Kutusu */}
-        <div className="flex flex-col items-end justify-center shrink-0 min-w-[70px]">
+        {/* Sağ: Durum / Tarih / Set Skorları veya Saat Kutusu */}
+        <div className="flex flex-col items-end justify-center shrink-0 min-w-[76px] border-l border-slate-800/60 pl-2.5">
           {hasScore ? (
             <div className="text-right">
-              <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-950/80 border border-emerald-600/50 font-mono font-scoreboard tabular-nums font-bold text-xs text-emerald-300">
-                <span>{homeScore}</span>
-                <span>:</span>
-                <span>{awayScore}</span>
+              <div className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-emerald-950/60 border border-emerald-700/40 font-mono text-[10px] font-bold text-emerald-300">
+                <span>BİTTİ</span>
+              </div>
+              <div className="text-[10px] font-mono text-slate-400 mt-0.5 text-right">
+                {formattedDate}
               </div>
               {match.set_scores && match.set_scores.length > 0 && (
-                <div className="text-[9px] font-mono font-scoreboard tabular-nums text-slate-400 mt-1 max-w-[110px] truncate text-right">
+                <div className="text-[9px] font-mono font-scoreboard tabular-nums text-slate-400 mt-0.5 max-w-[115px] truncate text-right">
                   {match.set_scores.join(", ")}
                 </div>
               )}
             </div>
           ) : (
             <div className="text-right">
-              <div className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-800 border border-slate-700 font-mono font-bold text-xs text-slate-200">
-                <Clock size={11} className="text-ink-2" />
-                <span>{match.time || "--:--"}</span>
-              </div>
+              {match.date && isMatchPassed(match.date, match.time, match.status) ? (
+                <div className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-amber-950/60 border border-amber-600/40 text-[10px] font-bold text-amber-300">
+                  <Clock size={10} className="text-amber-400" />
+                  <span>Skor Bekleniyor</span>
+                </div>
+              ) : (
+                <div className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-800 border border-slate-700 font-mono font-bold text-xs text-slate-200">
+                  <Clock size={11} className="text-ink-2" />
+                  <span>{match.time || "--:--"}</span>
+                </div>
+              )}
               <div className="text-[10px] font-mono text-slate-400 mt-1 text-right">
-                {match.date || "TBD"}
+                {match.time ? `${match.time} • ` : ""}{formattedDate}
               </div>
             </div>
           )}

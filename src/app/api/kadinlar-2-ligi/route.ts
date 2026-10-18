@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "@/utils/scrapeTrigger";
-
 import { loadKadinlar2LigWithFallback } from "@/utils/supabaseData";
+import { kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
+import { trIncludes } from "@/utils/turkishLocale";
+import type { Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 
 const refreshLimiter = new RateLimiter({
   name: "kadinlar-2-ligi-refresh",
@@ -18,7 +18,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const refresh = searchParams.get("refresh");
     const groupParam = searchParams.get("grup");
-    const searchParam = searchParams.get("q")?.toLowerCase();
+    const searchParam = searchParams.get("q")?.trim();
 
     if (refresh === "1" || refresh === "true") {
       const authError = requireConfiguredSecret(request, "ADMIN_TOKEN");
@@ -80,11 +80,11 @@ export async function GET(request: Request) {
 
     // Filter matches if search requested
     if (searchParam) {
-      const filteredMatches = data.tum_maclar.filter((m: { takim_a: string; takim_b: string; sehir: string; salon: string }) =>
-        m.takim_a.toLowerCase().includes(searchParam) ||
-        m.takim_b.toLowerCase().includes(searchParam) ||
-        m.sehir.toLowerCase().includes(searchParam) ||
-        m.salon.toLowerCase().includes(searchParam)
+      const filteredMatches = data.tum_maclar.filter((m: Kadinlar2LigMatch) =>
+        kadinlar2LigMatchHasTeamQuery(m, searchParam) ||
+        trIncludes(m.sehir || "", searchParam) ||
+        trIncludes(m.salon || "", searchParam) ||
+        trIncludes(m.grup_adi || "", searchParam)
       );
       return NextResponse.json({
         ...data,

@@ -16,11 +16,11 @@ import { LeagueSection } from "@/components/match/LeagueSection";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import {
   convertK2MatchToMatch,
-  getKadinlar2LigMatchTeamNames,
   isKadinlar2LigMatchFavorite,
   isKadinlar2LigMatchSynced,
   kadinlar2LigMatchHasTeamQuery,
   normalizeK2Date,
+  toggleKadinlar2LigMatchFavorite,
 } from "@/utils/kadinlar2LigConverter";
 import { generateSeasonIcs, downloadIcsFile } from "@/utils/ics";
 import { useFavorites } from "@/utils/useFavorites";
@@ -28,6 +28,7 @@ import { PrintScheduleButton } from "@/components/PrintScheduleButton";
 import { isMatchOverdueForScore } from "@/utils/calendar";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 import { kadinlar2LigMatchToUnified } from "@/utils/unifiedAdapters";
+import { trIncludes } from "@/utils/turkishLocale";
 import type { UnifiedFixture } from "@/types/unified";
 
 interface Kadinlar2LigFixturesProps {
@@ -195,12 +196,12 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
         if (!isKadinlar2LigMatchFavorite(m, isFavorite)) return false;
       }
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const inTeams = kadinlar2LigMatchHasTeamQuery(m, q);
-        const inCity = m.sehir?.toLowerCase().includes(q);
-        const inHall = m.salon?.toLowerCase().includes(q);
+        const inTeams = kadinlar2LigMatchHasTeamQuery(m, searchQuery);
+        const inCity = trIncludes(m.sehir || "", searchQuery);
+        const inHall = trIncludes(m.salon || "", searchQuery);
         const inGroup =
-          m.grup_adi?.toLowerCase().includes(q) || `grup ${m.grup_no}`.includes(q);
+          trIncludes(m.grup_adi || "", searchQuery) ||
+          trIncludes(`Grup ${m.grup_no}`, searchQuery);
         if (!inTeams && !inCity && !inHall && !inGroup) return false;
       }
 
@@ -263,7 +264,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   const handleToggleFavorite = (matchId: string) => {
     const found = matches.find((m) => m.id === matchId);
     if (found) {
-      toggleFavorite(getKadinlar2LigMatchTeamNames(found).home);
+      toggleKadinlar2LigMatchFavorite(found, isFavorite, toggleFavorite);
     }
   };
 

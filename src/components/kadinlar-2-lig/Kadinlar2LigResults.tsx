@@ -8,15 +8,16 @@ import { LeagueSection } from "@/components/match/LeagueSection";
 import { DateNavigationRibbon } from "@/components/match/DateNavigationRibbon";
 import {
   convertK2MatchToMatch,
-  getKadinlar2LigMatchTeamNames,
   isKadinlar2LigMatchFavorite,
   kadinlar2LigMatchHasTeamQuery,
   normalizeK2Date,
   sortKadinlar2LigMatchesByTime,
+  toggleKadinlar2LigMatchFavorite,
 } from "@/utils/kadinlar2LigConverter";
 import { formatDateTurkish, isMatchPassed } from "@/utils/calendar";
 import { useFavorites } from "@/utils/useFavorites";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
+import { trIncludes } from "@/utils/turkishLocale";
 
 interface Kadinlar2LigResultsProps {
   allMatches: Kadinlar2LigMatch[];
@@ -86,7 +87,9 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
     );
   }, [allMatches]);
 
-  // Sonuçlar görünümünde değerlendirilecek aday maçlar (Tüm tarihlerde oynanmış veya skoru olan maçlar)
+  // Sonuçlar görünümünde değerlendirilecek aday maçlar:
+  // 1) Bitmiş veya skoru olan tüm maçlar
+  // 2) Bugün veya geçmiş tarihlerdeki tüm maçlar (henüz skoru girilmemiş olsa bile günün sonuçlarında "Skor Bekleniyor" olarak gösterilir)
   const candidateMatches = useMemo(() => {
     return allMatches.filter((m) => {
       const isFinished =
@@ -95,8 +98,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
       if (isFinished) return true;
       const isoDate = normalizeK2Date(m.tarih);
       if (isoDate && isoDate !== "TBD") {
-        if (todayIso && isoDate < todayIso) return true;
-        if (isMatchPassed(isoDate, m.saat, "upcoming", todayIso)) return true;
+        if (todayIso && isoDate <= todayIso) return true;
       }
       return false;
     });
@@ -120,15 +122,16 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
 
   const dateCounts = useMemo(() => {
     const matchesForDate = selectedResultDate === "all"
-      ? standardMatches.filter((m) => m.status === "finished" || (m.home_score !== null && m.away_score !== null))
+      ? standardMatches.filter((m) => m.status === "finished" || (m.home_score !== null && m.away_score !== null) || m.date === todayIso)
       : standardMatches.filter((match) => match.date === selectedResultDate);
+    const finished = matchesForDate.filter((m) => m.status === "finished" || (m.home_score !== null && m.away_score !== null)).length;
     return {
       all: matchesForDate.length,
       live: 0,
-      finished: matchesForDate.length,
-      upcoming: 0,
+      finished,
+      upcoming: matchesForDate.length - finished,
     };
-  }, [standardMatches, selectedResultDate]);
+  }, [standardMatches, selectedResultDate, todayIso]);
 
   // Filtrelenmiş sonuçlar
   const filteredResults = useMemo(() => {
@@ -137,12 +140,12 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
 
       if (selectedGroupFilter !== "all" && m.grup_no !== selectedGroupFilter) return false;
 
-      // "all" seçiliyse sadece skorlu/biten maçları listele
+      // "all" seçiliyse bitmiş maçları VE bugünün tüm maçlarını listele
       if (selectedResultDate === "all") {
         const isFinished =
           m.durum === "BİTTİ" ||
           Boolean(m.skor && m.skor.includes("-") && m.skor.trim() !== "-" && m.skor !== "- : -");
-        if (!isFinished) return false;
+        if (!isFinished && match.date !== todayIso) return false;
       } else if (match.date !== selectedResultDate) {
         return false;
       }
@@ -152,11 +155,13 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
       }
 
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const inTeams = kadinlar2LigMatchHasTeamQuery(m, q);
-        const inCity = m.sehir?.toLowerCase().includes(q);
-        const inHall = m.salon?.toLowerCase().includes(q);
-        if (!inTeams && !inCity && !inHall) return false;
+        const inTeams = kadinlar2LigMatchHasTeamQuery(m, searchQuery);
+        const inCity = trIncludes(m.sehir || "", searchQuery);
+        const inHall = trIncludes(m.salon || "", searchQuery);
+        const inGroup =
+          trIncludes(m.grup_adi || "", searchQuery) ||
+          trIncludes(`Grup ${m.grup_no}`, searchQuery);
+        if (!inTeams && !inCity && !inHall && !inGroup) return false;
       }
 
       return true;
@@ -168,6 +173,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
     showOnlyFavorites,
     searchQuery,
     isFavorite,
+    todayIso,
   ]);
 
   // Gruplara göre bölümlendirme
@@ -206,7 +212,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
   const handleToggleFavorite = (matchId: string) => {
     const found = candidateMatches.find((m) => m.id === matchId);
     if (found) {
-      toggleFavorite(getKadinlar2LigMatchTeamNames(found).home);
+      toggleKadinlar2LigMatchFavorite(found, isFavorite, toggleFavorite);
     }
   };
 
@@ -402,7 +408,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
                 key={gNo}
                 leagueTitle="Kadınlar 2. Ligi"
                 sectionLabel={`${grp?.grup_adi || `${gNo}. Grup`} · Maç Sonuçları`}
-                matches={groupMatches.map(convertK2MatchToMatch)}
+                matches={sortKadinlar2LigMatchesByTime(groupMatches).map(convertK2MatchToMatch)}
                 selectedMatchId={selectedMatchId}
                 favorites={favoriteMatchIds}
                 onToggleFavorite={handleToggleFavorite}

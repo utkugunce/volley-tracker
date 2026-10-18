@@ -125,7 +125,8 @@ const VALID_TABS_SET = new Set([
  * `/kadinlar-2-ligi/[...slug]` rotasındaki slug dizisinin geçerli bir 2. Lig alt rotası olup olmadığını doğrular.
  */
 export const isValidKadinlar2LigSlug = (slug: string[]): boolean => {
-  if (!slug || slug.length === 0 || slug.length > 2) return false;
+  if (!slug || slug.length === 0) return true;
+  if (slug.length > 2) return false;
   const first = slug[0];
   if (!VALID_TABS_SET.has(first)) return false;
 

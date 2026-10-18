@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-18T22:09:17.029861+03:00",
+  "updated_at": "2026-10-18T22:44:24.756582+03:00",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 4,
+  "total_matches": 6,
   "source": "https://trabzon.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -256,8 +256,44 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "trabzon-20261024-005",
+      "city": "Trabzon",
+      "date": "2026-10-24",
+      "time": "10:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "5",
+      "home_team": "REVUP Spor Kulübü U18",
+      "away_team": "İskofya Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
+    },
+    {
+      "id": "trabzon-20261024-006",
+      "city": "Trabzon",
+      "date": "2026-10-24",
+      "time": "12:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "6",
+      "home_team": "İskofya Spor Kulübü - B U18",
+      "away_team": "Akçaabat Belediyesi SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
     }
-  ],
-  "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-10-18T22:14:51.504592"
+  ]
 }

@@ -155,6 +155,39 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.queryByText("Fenerbahçe 2")).not.toBeInTheDocument();
   });
 
+  it("Kadinlar2LigResults günün bitmemiş maçlarını 'Skor Bekleniyor' rozeti ile listeler", () => {
+    const now = new Date();
+    const pad = (n: number) => String(n).padStart(2, "0");
+    const todayTR = `${pad(now.getDate())}.${pad(now.getMonth() + 1)}.${now.getFullYear()}`;
+
+    const todayUnfinishedMatch: Kadinlar2LigMatch = {
+      ...mockMatches[1],
+      id: "k2-today-unscored",
+      tarih: todayTR,
+      takim_a: "Galatasaray 2",
+      takim_b: "Beşiktaş 2",
+      skor: "- : -",
+      durum: "OYNANACAK",
+      mac_durumu_kod: "0",
+    };
+
+    render(
+      <Kadinlar2LigResults
+        allMatches={[mockMatches[0], todayUnfinishedMatch]}
+        groups={[mockGroup]}
+        onSelectMatch={vi.fn()}
+      />
+    );
+
+    // Bugünün henüz bitmemiş maçı sonuçlar listesinde görünmeli
+    expect(screen.getByText("Galatasaray 2")).toBeInTheDocument();
+    expect(screen.getByText("Beşiktaş 2")).toBeInTheDocument();
+
+    // 'Skor Bekleniyor' ifadesi görünmeli
+    const skorBekleniyorElements = screen.getAllByText(/Skor Bekleniyor/i);
+    expect(skorBekleniyorElements.length).toBeGreaterThan(0);
+  });
+
   it("Kadinlar2LigResults Saat görünümüne geçildiğinde saat sıralı maçları ve grup rozetlerini render eder", () => {
     const handleSelectMatch = vi.fn();
     render(

@@ -34,6 +34,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import {
   convertK2MatchToMatch,
   getKadinlar2LigTeamName,
+  toggleKadinlar2LigMatchFavorite,
 } from "@/utils/kadinlar2LigConverter";
 import {
   expandKadinlar2LigData,
@@ -58,19 +59,23 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
   initialTab,
   initialGroup,
 }) => {
-  const [data, setData] = useState<Kadinlar2LigData>(() => expandKadinlar2LigData(initialData));
+  const [data] = useState<Kadinlar2LigData>(() => expandKadinlar2LigData(initialData));
   const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>(
     initialTab || "home"
   );
   const [selectedGroup, setSelectedGroup] = useState<number | "all">(initialGroup || 1);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading] = useState<boolean>(false);
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState<boolean>(false);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [compareSlug1, setCompareSlug1] = useState<string | undefined>(undefined);
 
   const { count: favoritesCount, isFavorite, toggleFavorite } = useFavorites();
+
+  const totalTeamsCount =
+    data.metadata?.toplam_takim_sayisi || data.tum_takimlar?.length || 163;
 
   const currentGroupData =
     (selectedGroup === "all"
@@ -126,9 +131,15 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     return res;
   }, [data.gruplar]);
 
-  // Spotlight Arama Verileri
+  // Spotlight Arama Verileri (benzersiz takım listesi)
   const searchableTeams = useMemo(() => {
-    return (data.tum_takimlar || []).map((t) => getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name));
+    return Array.from(
+      new Set(
+        (data.tum_takimlar || []).map((t) =>
+          getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name)
+        )
+      )
+    );
   }, [data.tum_takimlar]);
 
   const searchableHalls = useMemo(() => {
@@ -164,6 +175,16 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       if (currentPath !== targetPath) {
         window.history.pushState({ tab, group: selectedGroup }, "", targetPath);
       }
+    }
+  };
+
+  const handleCompareTeam = (teamSlug: string) => {
+    setCompareSlug1(teamSlug);
+    setActiveTab("karsilastir");
+    if (typeof window !== "undefined") {
+      const targetUrl = `/kadinlar-2-ligi/karsilastir?takim1=${encodeURIComponent(teamSlug)}`;
+      window.history.pushState({ tab: "karsilastir", group: selectedGroup }, "", targetUrl);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -216,7 +237,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  // Sayfa ilk yüklendiğinde tarayıcı URL'ini kontrol et
+  // Sayfa ilk yüklendiğinde tarayıcı URL'ini ve query parametrelerini (?match=, ?takim1=) kontrol et
   useEffect(() => {
     if (typeof window !== "undefined") {
       const { tab, groupNo } = parseKadinlar2LigRoute(window.location.pathname);
@@ -226,8 +247,24 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       if (groupNo && !initialGroup) {
         setSelectedGroup(groupNo);
       }
+
+      const params = new URLSearchParams(window.location.search);
+      const matchParam = params.get("match");
+      if (matchParam) {
+        const foundMatch = convertedMatches.find((m) => m.id === matchParam);
+        if (foundMatch) {
+          setSelectedMatch(foundMatch);
+          if (window.innerWidth < 1024) {
+            setIsMobileDrawerOpen(true);
+          }
+        }
+      }
+      const takim1Param = params.get("takim1");
+      if (takim1Param) {
+        setCompareSlug1(takim1Param);
+      }
     }
-  }, [initialTab, initialGroup]);
+  }, [initialTab, initialGroup, convertedMatches]);
 
   return (
     <AppShell
@@ -254,6 +291,8 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           selectedGroup={selectedGroup}
           activeTab={activeTab}
           favoritesCount={favoritesCount}
+          showOnlyFavorites={showOnlyFavorites}
+          onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
           onSelectGroup={handleSelectGroup}
           onSelectTab={handleSelectTab}
         />
@@ -268,7 +307,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             onClose={() => setSelectedMatch(null)}
             onToggleFavorite={(matchId) => {
               const m = convertedMatches.find((x) => x.id === matchId);
-              if (m) toggleFavorite(m.home_team);
+              if (m) toggleKadinlar2LigMatchFavorite(m, isFavorite, toggleFavorite);
             }}
             isFavorite={
               selectedMatch
@@ -281,11 +320,30 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
       footer={
         <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between">
           <span className="font-semibold text-slate-400">TVF Uzman Posta Kadınlar Voleybol 2. Ligi</span>
-          <span className="mt-1 block sm:mt-0">16 Grup • {data.metadata?.toplam_takim_sayisi || 0} Kulüp</span>
+          <span className="mt-1 block sm:mt-0">
+            {data.metadata?.toplam_grup_sayisi || 16} Grup • {totalTeamsCount} Kulüp
+          </span>
         </footer>
       }
     >
       <div className="flex flex-col space-y-3 px-1 pb-20 sm:space-y-4 sm:px-2 sm:pb-8 lg:px-0">
+        {/* Aktif Arama Filtresi Çipi (Mobil & Masaüstü için görünür sıfırlama barı) */}
+        {searchQuery && (
+          <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-primary/10 border border-primary/30 text-xs text-slate-200">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="text-slate-400">Arama Filtresi:</span>
+              <strong className="text-white truncate">&ldquo;{searchQuery}&rdquo;</strong>
+            </div>
+            <button
+              type="button"
+              onClick={() => setSearchQuery("")}
+              className="shrink-0 px-2 py-0.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 text-[11px] font-semibold cursor-pointer"
+            >
+              Filtreyi Temizle ✕
+            </button>
+          </div>
+        )}
+
         {/* Desteklenen Kulüp (Primary Team VIP Widget) */}
         <PrimaryTeamWidget
           matches={convertedMatches}
@@ -387,6 +445,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
                 group={currentGroupData}
                 searchQuery={searchQuery}
                 showOnlyFavorites={showOnlyFavorites}
+                onCompareTeam={handleCompareTeam}
               />
             )}
 
@@ -435,6 +494,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           <Kadinlar2LigTeams
             teams={data.tum_takimlar}
             onSelectGroup={handleSelectGroupFromAnywhere}
+            onCompareTeam={handleCompareTeam}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
           />
@@ -444,12 +504,13 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         {activeTab === "karsilastir" && (
           <Kadinlar2LigCompare
             data={data}
+            initialSlug1={compareSlug1}
             onSelectGroup={handleSelectGroupFromAnywhere}
           />
         )}
 
         {/* RESMİ STATÜ & REHBER TABI */}
-        {activeTab === "statu" && <Kadinlar2LigStatuView />}
+        {activeTab === "statu" && <Kadinlar2LigStatuView totalTeams={totalTeamsCount} />}
       </div>
 
       {/* 4. Mobil Maç Detayı: Alttan Açılan Çekmece (MobileMatchDrawer) */}
@@ -462,7 +523,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           standings={standingsMap}
           onToggleFavorite={(matchId) => {
             const m = convertedMatches.find((x) => x.id === matchId);
-            if (m) toggleFavorite(m.home_team);
+            if (m) toggleKadinlar2LigMatchFavorite(m, isFavorite, toggleFavorite);
           }}
           isFavorite={
             selectedMatch
@@ -480,6 +541,13 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         halls={searchableHalls}
         cities={searchableCities}
         categories={searchableCategories}
+        onSelectCity={(citySlug) => {
+          const found = searchableCities.find((c) => c.slug === citySlug);
+          if (found) {
+            setSearchQuery(found.name);
+            handleSelectTab("fixtures");
+          }
+        }}
         onSelectCategory={(cat) => {
           const num = parseInt(cat.replace(/\D/g, ""), 10);
           if (num >= 1 && num <= 16) {
@@ -488,7 +556,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         }}
         onSelectHall={(hall) => {
           setSearchQuery(hall);
-          setActiveTab("fixtures");
+          handleSelectTab("fixtures");
         }}
       />
 
