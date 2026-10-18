@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-17T23:56:37.850765+00:00",
+  "updated_at": "2026-10-18T09:27:42.762171+00:00",
   "total_cities": 81,
   "active_cities": 35,
-  "total_matches": 1369,
+  "total_matches": 1365,
   "cities": [
     {
       "ilid": "1",
@@ -410,8 +410,8 @@
       "name": "Kocaeli",
       "slug": "kocaeli",
       "url": "https://kocaeli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (133 Maç Mevcut)",
-      "matches_count": 133,
+      "status": "Aktif (129 Maç Mevcut)",
+      "matches_count": 129,
       "standings_count": 2,
       "data_file": "data/cities/kocaeli.json"
     },

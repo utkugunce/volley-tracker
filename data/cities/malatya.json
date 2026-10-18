@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T23:56:37.850765+00:00",
+  "updated_at": "2026-10-18T09:27:42.762171+00:00",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -30,39 +30,50 @@
     "Genç Kızlar 1. Ligi - 1. Grup": [
       {
         "rank": 1,
-        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ",
-        "played": 2,
-        "won": 2,
+        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "team": "Nicer Hotel Voleybol Kulübü",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Nicer Hotel Voleybol Kulübü",
+        "team": "MALATYA VOLEYBOL SPOR KULÜBÜ",
         "played": 3,
         "won": 2,
         "lost": 1,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 4,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
+        "team": "MALDİA SPOR KULÜBÜ",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "91000 DEV SPOR KULÜBÜ",
         "played": 2,
         "won": 1,
@@ -73,36 +84,25 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Gençlik Spor Kulübü B",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "GENÇLİK SPOR KULÜBÜ A",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "MALDİA SPOR KULÜBÜ",
+        "team": "Gençlik Spor Kulübü B",
         "played": 3,
         "won": 1,
         "lost": 2,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 7,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "GENÇLİK SPOR KULÜBÜ A",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -1455,11 +1455,15 @@
       "match_no": "14",
       "home_team": "Nicer Hotel Voleybol Kulübü",
       "away_team": "GENÇLİK SPOR KULÜBÜ A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-13",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1489,11 +1493,15 @@
       "match_no": "15",
       "home_team": "Gençlik Spor Kulübü B",
       "away_team": "MALDİA SPOR KULÜBÜ",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "21-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1523,11 +1531,15 @@
       "match_no": "16",
       "home_team": "MALATYA VOLEYBOL SPOR KULÜBÜ",
       "away_team": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "24-26",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3552,5 +3564,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-17T23:58:26.703152"
+  "volleybox_sync_updated_at": "2026-10-18T09:29:30.247199"
 }

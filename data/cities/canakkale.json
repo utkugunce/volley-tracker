@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T15:26:20.193004+00:00",
+  "updated_at": "2026-10-18T09:27:42.762171+00:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -219,24 +219,24 @@
       },
       {
         "rank": 4,
-        "team": "Kepez Spor Kulübü U16",
-        "played": 4,
-        "won": 0,
-        "lost": 4,
-        "points": 0,
-        "sets_won": 2,
-        "sets_lost": 12,
+        "team": "As Spor Kulübü U16",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "As Spor Kulübü U16",
-        "played": 1,
+        "team": "Kepez Spor Kulübü U16",
+        "played": 5,
         "won": 0,
-        "lost": 1,
+        "lost": 5,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 2,
+        "sets_lost": 15,
         "form": []
       }
     ],
@@ -357,24 +357,24 @@
       },
       {
         "rank": 3,
-        "team": "Gökçeada Spor Kulübü U16",
-        "played": 2,
-        "won": 0,
+        "team": "Çanakkale Belediyespor U16",
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 6,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Çanakkale Belediyespor - B U16",
-        "played": 2,
+        "team": "Gökçeada Spor Kulübü U16",
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 6,
+        "sets_won": 2,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -712,11 +712,15 @@
       "match_no": "8",
       "home_team": "Kepez Spor Kulübü U16",
       "away_team": "As Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "15-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1610,7 +1614,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "4",
-      "home_team": "Çanakkale Belediyespor - B U16",
+      "home_team": "Çanakkale Belediyespor U16",
       "away_team": "Biga Gelişim Voleybol Kulübü U16",
       "score": "1 - 3",
       "home_score": 1,
@@ -1657,7 +1661,7 @@
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "5",
       "home_team": "Çan Kale Spor Kulübü U16",
-      "away_team": "Çanakkale Belediyespor - B U16",
+      "away_team": "Çanakkale Belediyespor U16",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1702,12 +1706,17 @@
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "6",
       "home_team": "Gökçeada Spor Kulübü U16",
-      "away_team": "Çanakkale Belediyespor - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "away_team": "Çanakkale Belediyespor U16",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "25-22",
+        "16-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1770,7 +1779,7 @@
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "8",
       "home_team": "Biga Gelişim Voleybol Kulübü U16",
-      "away_team": "Çanakkale Belediyespor - B U16",
+      "away_team": "Çanakkale Belediyespor U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1794,5 +1803,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-17T15:28:13.664101"
+  "volleybox_sync_updated_at": "2026-10-18T09:29:30.204726"
 }
