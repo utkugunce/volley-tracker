@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T19:07:27.469807+03:00",
+  "updated_at": "2026-10-18T22:09:17.029861+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -683,6 +683,40 @@
     "Genç Kızlar 1. Lig 2. Bölge - A Grubu": [
       {
         "rank": 1,
+        "team": "İstanbul Marmara Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 46,
+        "point_ratio": "1.630",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
+        "team": "Marmara Elit Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 54,
+        "point_ratio": "1.389",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "İstanbul Anadolu Olimpik SK U18",
         "played": 1,
         "won": 1,
@@ -699,7 +733,7 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "Tuzla New Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -716,68 +750,42 @@
         ]
       },
       {
-        "rank": 3,
-        "team": "2014 Maltepe Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "İstanbul Marmara Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Kartal Yıldızları Spor Kulübü U18",
-        "played": 0,
+        "team": "Tuzla Mercan Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 54,
+        "points_lost": 75,
+        "point_ratio": "0.720",
+        "form": [
+          "L"
+        ]
       },
       {
         "rank": 6,
-        "team": "Marmara Elit Spor Kulübü U18",
-        "played": 0,
+        "team": "Kartal Yıldızları Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 46,
+        "points_lost": 75,
+        "point_ratio": "0.613",
+        "form": [
+          "L"
+        ]
       },
       {
         "rank": 7,
-        "team": "Tuzla Mercan Spor Kulübü U18",
+        "team": "2014 Maltepe Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1053,6 +1061,40 @@
     "Genç Kızlar 1. Lig 3. Bölge - B Grubu": [
       {
         "rank": 1,
+        "team": "Balkan Yeşilbağlar Spor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 64,
+        "point_ratio": "1.172",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
+        "team": "İstanbul Göztepe Akademi Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 64,
+        "points_lost": 75,
+        "point_ratio": "0.853",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Arena Anka Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -1067,7 +1109,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "Ateş Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
@@ -1082,22 +1124,7 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Balkan Yeşilbağlar Spor U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 4,
+        "rank": 5,
         "team": "Çekmeköy İstanbul SK - B U18",
         "played": 0,
         "won": 0,
@@ -1112,23 +1139,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Dev Adım Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "İstanbul Göztepe Akademi Spor Kulübü U18",
+        "team": "Dev Adım Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1796,6 +1808,44 @@
       },
       {
         "rank": 8,
+        "team": "Tuzla Rekor Spor Kulübü U16",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 8,
+        "set_ratio": "0.375",
+        "points_won": 184,
+        "points_lost": 254,
+        "point_ratio": "0.724",
+        "form": [
+          "L",
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 9,
+        "team": "Sarıyer Konak Spor Kulübü U16",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 9,
+        "set_ratio": "0.222",
+        "points_won": 211,
+        "points_lost": 263,
+        "point_ratio": "0.802",
+        "form": [
+          "L",
+          "L",
+          "L"
+        ]
+      },
+      {
+        "rank": 10,
         "team": "Bahçelievler Belediyespor U16",
         "played": 3,
         "won": 0,
@@ -1809,42 +1859,6 @@
         "point_ratio": "0.714",
         "form": [
           "L",
-          "L",
-          "L"
-        ]
-      },
-      {
-        "rank": 9,
-        "team": "Sarıyer Konak Spor Kulübü U16",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
-        "set_ratio": "MIN",
-        "points_won": 107,
-        "points_lost": 150,
-        "point_ratio": "0.713",
-        "form": [
-          "L",
-          "L"
-        ]
-      },
-      {
-        "rank": 10,
-        "team": "Tuzla Rekor Spor Kulübü U16",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
-        "set_ratio": "MIN",
-        "points_won": 71,
-        "points_lost": 150,
-        "point_ratio": "0.473",
-        "form": [
           "L",
           "L"
         ]
@@ -6609,11 +6623,17 @@
       "match_no": "14",
       "home_team": "Tuzla Rekor Spor Kulübü U16",
       "away_team": "Sarıyer Konak Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "20-25",
+        "25-18",
+        "28-30",
+        "25-21",
+        "15-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408012",
@@ -6650,11 +6670,15 @@
       "match_no": "1",
       "home_team": "Balkan Yeşilbağlar Spor U18",
       "away_team": "İstanbul Göztepe Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-23",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408004",
@@ -6691,11 +6715,15 @@
       "match_no": "2",
       "home_team": "Marmara Elit Spor Kulübü U18",
       "away_team": "Tuzla Mercan Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-16",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408002",
@@ -6732,11 +6760,15 @@
       "match_no": "3",
       "home_team": "Kartal Yıldızları Spor Kulübü U18",
       "away_team": "İstanbul Marmara Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "16-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408003",
@@ -7293,5 +7325,5 @@
     }
   ],
   "volleybox_synced_matches": 101,
-  "volleybox_sync_updated_at": "2026-10-18T19:12:36.162836"
+  "volleybox_sync_updated_at": "2026-10-18T22:14:43.705276"
 }

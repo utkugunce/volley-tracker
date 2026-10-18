@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T19:07:27.469807+03:00",
+  "updated_at": "2026-10-18T22:09:17.029861+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -35,16 +35,27 @@
       {
         "rank": 1,
         "team": "Denizli Büyükşehir Belediye S.K.",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Anadolu Pars Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Tutku Spor Kulübü",
         "played": 1,
         "won": 1,
@@ -55,30 +66,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Honaz Adil Akan Spor Kulübü",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Damla Spor Kulübü",
-        "played": 1,
+        "team": "Yeşil Çivril Belediye Spor Kulübü",
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Anadolu Pars Spor Kulübü",
+        "team": "Honaz Adil Akan Spor Kulübü",
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -89,13 +89,13 @@
       },
       {
         "rank": 6,
-        "team": "Yeşil Çivril Belediye Spor Kulübü",
+        "team": "Damla Spor Kulübü",
         "played": 2,
         "won": 1,
         "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 3,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -930,11 +930,15 @@
       "match_no": "7",
       "home_team": "Honaz Adil Akan Spor Kulübü",
       "away_team": "Anadolu Pars Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "16-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -964,11 +968,15 @@
       "match_no": "8",
       "home_team": "Damla Spor Kulübü",
       "away_team": "Denizli Büyükşehir Belediye S.K.",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "21-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2873,5 +2881,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-18T19:12:34.534836"
+  "volleybox_sync_updated_at": "2026-10-18T22:14:40.688086"
 }

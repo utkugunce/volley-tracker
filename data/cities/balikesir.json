@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T19:07:27.469807+03:00",
+  "updated_at": "2026-10-18T22:09:17.029861+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -308,18 +308,18 @@
       },
       {
         "rank": 2,
-        "team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "team": "Ayvalıkgücü Belediye SK - B U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Ayvalıkgücü Belediye SK - B U16",
+        "team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -1252,11 +1252,15 @@
       "match_no": "6",
       "home_team": "Ayvalıkgücü Belediye SK - B U16",
       "away_team": "Edremit Belediyesi Altınoluk Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-17",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1921,5 +1925,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-18T19:12:34.182938"
+  "volleybox_sync_updated_at": "2026-10-18T22:14:40.036407"
 }
