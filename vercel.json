@@ -3,41 +3,5 @@
   "regions": [
     "fra1"
   ],
-  "ignoreCommand": "bash vercel-ignore-build.sh",
-  "redirects": [
-    {
-      "source": "/_next/image",
-      "has": [
-        {
-          "type": "query",
-          "key": "url",
-          "value": "^/(?<path>[^/\\\\].*)$"
-        }
-      ],
-      "destination": "/:path",
-      "permanent": true
-    },
-    {
-      "source": "/_vercel/image",
-      "has": [
-        {
-          "type": "query",
-          "key": "url",
-          "value": "^/(?<path>[^/\\\\].*)$"
-        }
-      ],
-      "destination": "/:path",
-      "permanent": true
-    },
-    {
-      "source": "/_next/image",
-      "destination": "/",
-      "permanent": false
-    },
-    {
-      "source": "/_vercel/image",
-      "destination": "/",
-      "permanent": false
-    }
-  ]
+  "ignoreCommand": "bash vercel-ignore-build.sh"
 }

@@ -88,6 +88,11 @@ const nextConfig = {
     // `no-restricted-imports` kuralı ve isr-kota testi next/image'ın geri gelmesini engeller.
     // Kullanılmayan remotePatterns kaldırıldı: uzak görseller optimize edilmeden, CSP img-src ile sınırlı.
     unoptimized: true,
+    // unoptimized:true Vercel'in /_next/image uç noktasını kapatmaz; eski dizinlenmiş URL'ler ve botlar
+    // dönüşüm tüketmeye devam ediyordu (17 Ekim 2026 kota %100). vercel.json redirects bu uç noktadan önce
+    // çalışmadığı için izin listeleri boşaltılır: optimizer her isteği dönüştürmeden 400 ile reddeder.
+    localPatterns: [],
+    remotePatterns: [],
   },
   async redirects() {
     // Eski `?city=<il>` adresleri (ör. /fikstur?city=istanbul) yol tabanlı sayfalara (/fikstur/istanbul) yönlenir.
