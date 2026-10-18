@@ -105,3 +105,40 @@ export const parseKadinlar2LigRoute = (
 
   return { tab, groupNo };
 };
+
+const VALID_TABS_SET = new Set([
+  "anasayfa",
+  "puan-durumu",
+  "fikstur",
+  "sonuclar",
+  "gunun-maclari",
+  "grup-durumu",
+  "liderler",
+  "takimlar",
+  "kulupler",
+  "karsilastir",
+  "h2h",
+  "statu",
+]);
+
+/**
+ * `/kadinlar-2-ligi/[...slug]` rotasındaki slug dizisinin geçerli bir 2. Lig alt rotası olup olmadığını doğrular.
+ */
+export const isValidKadinlar2LigSlug = (slug: string[]): boolean => {
+  if (!slug || slug.length === 0 || slug.length > 2) return false;
+  const first = slug[0];
+  if (!VALID_TABS_SET.has(first)) return false;
+
+  if (slug.length === 2) {
+    if (first !== "puan-durumu" && first !== "fikstur") return false;
+    const second = slug[1];
+    if (second === "tum-gruplar" || second === "all" || second === "tumu") return true;
+    const match = second.match(/^(?:grup-?|g)?(\d+)$/i);
+    if (!match) return false;
+    const gNum = parseInt(match[1], 10);
+    return gNum >= 1 && gNum <= 16;
+  }
+
+  return true;
+};
+

@@ -1,13 +1,21 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import { Calendar, Star } from "lucide-react";
+import { Calendar, Star, Clock, LayoutGrid } from "lucide-react";
 import { Kadinlar2LigMatch, Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Match } from "@/types/fixture";
 import { DateNavigationRibbon, StatusFilterType } from "@/components/match/DateNavigationRibbon";
 import { LeagueSection } from "@/components/match/LeagueSection";
 import { useFavorites } from "@/utils/useFavorites";
-import { convertK2MatchToMatch, normalizeK2Date, getKadinlar2LigMatchTeamNames, isKadinlar2LigMatchFavorite, kadinlar2LigMatchHasTeamQuery } from "@/utils/kadinlar2LigConverter";
+import {
+  convertK2MatchToMatch,
+  normalizeK2Date,
+  getKadinlar2LigMatchTeamNames,
+  isKadinlar2LigMatchFavorite,
+  kadinlar2LigMatchHasTeamQuery,
+  sortKadinlar2LigMatchesByTime,
+} from "@/utils/kadinlar2LigConverter";
+import { formatDateTurkish } from "@/utils/calendar";
 import { getKadinlar2LigRoute } from "@/utils/kadinlar2LigRoutes";
 
 interface Kadinlar2LigTodayMatchesProps {
@@ -57,6 +65,27 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
   }, [todayStr, initialSelectedDate]);
 
   const [selectedGroupFilter, setSelectedGroupFilter] = useState<number | "all">("all");
+  const [viewMode, setViewMode] = useState<"groups" | "time">("groups");
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("k2_today_view_mode");
+      if (saved === "time" || saved === "groups") {
+        setViewMode(saved);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  const handleSelectViewMode = (mode: "groups" | "time") => {
+    setViewMode(mode);
+    try {
+      localStorage.setItem("k2_today_view_mode", mode);
+    } catch {
+      // ignore
+    }
+  };
 
   const statusCounts = useMemo(() => {
     const matchesForDate = allMatches.filter((match) =>
@@ -98,6 +127,20 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
     return Array.from(grouped.entries()).sort(([groupA], [groupB]) => groupA - groupB);
   }, [filteredMatches]);
 
+  const matchesByDate = useMemo(() => {
+    const map = new Map<string, Kadinlar2LigMatch[]>();
+    filteredMatches.forEach((m) => {
+      const dateKey = normalizeK2Date(m.tarih) || "TBD";
+      if (!map.has(dateKey)) map.set(dateKey, []);
+      map.get(dateKey)!.push(m);
+    });
+    return Array.from(map.entries()).sort(([dA], [dB]) => {
+      if (dA === "TBD") return 1;
+      if (dB === "TBD") return -1;
+      return dA.localeCompare(dB);
+    });
+  }, [filteredMatches]);
+
   const favoriteMatchIds = useMemo(
     () => allMatches.filter((match) => isKadinlar2LigMatchFavorite(match, isFavorite)).map((match) => match.id),
     [allMatches, isFavorite]
@@ -122,7 +165,7 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
         availableDates={uniqueDates}
       />
 
-      {/* 2. Filtre Barı (Grup, Durum, Favoriler) */}
+      {/* 2. Filtre Barı (Grup, Görünüm Modu, Favoriler) */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-3 sm:p-4 shadow-card flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2.5 text-xs">
           {/* Grup Filtresi */}
@@ -142,6 +185,31 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
             </select>
           </div>
 
+          {/* Görünüm Modu: Gruplar vs Saate Göre */}
+          <div className="flex items-center gap-0.5 bg-slate-900 p-0.5 rounded-xl border border-slate-800">
+            <button
+              onClick={() => handleSelectViewMode("groups")}
+              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg font-semibold text-[11px] transition-colors cursor-pointer ${
+                viewMode === "groups"
+                  ? "bg-primary text-white shadow-xs"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <LayoutGrid size={11} />
+              <span>Gruplar</span>
+            </button>
+            <button
+              onClick={() => handleSelectViewMode("time")}
+              className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg font-semibold text-[11px] transition-colors cursor-pointer ${
+                viewMode === "time"
+                  ? "bg-primary text-white shadow-xs"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              <Clock size={11} />
+              <span>Saat</span>
+            </button>
+          </div>
         </div>
 
         {/* Favoriler Filtresi Butonu */}
@@ -162,7 +230,7 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
       </div>
 
       {/* 3. Maç Listesi */}
-      {matchesByGroup.length === 0 ? (
+      {filteredMatches.length === 0 ? (
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-10 text-center space-y-3 shadow-card">
           <Calendar size={36} className="mx-auto text-slate-600" />
           <h3 className="text-sm font-bold text-white">Bu filtrede maç bulunamadı</h3>
@@ -180,6 +248,45 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
             </button>
           )}
         </div>
+      ) : viewMode === "time" ? (
+        <div className="space-y-4">
+          {selectedDate !== "all" ? (
+            <LeagueSection
+              leagueTitle="Kadınlar 2. Ligi"
+              sectionLabel={
+                formatDateTurkish(selectedDate)
+                  ? `${formatDateTurkish(selectedDate)} · Günün Maçları`
+                  : "Günün Maçları"
+              }
+              matches={sortKadinlar2LigMatchesByTime(filteredMatches).map(convertK2MatchToMatch)}
+              selectedMatchId={selectedMatchId}
+              favorites={favoriteMatchIds}
+              onToggleFavorite={handleToggleFavorite}
+              onSelectMatch={onSelectMatch}
+              mode="today"
+              showGroupBadge={true}
+            />
+          ) : (
+            matchesByDate.map(([dateKey, dayMatches]) => (
+              <LeagueSection
+                key={dateKey}
+                leagueTitle="Kadınlar 2. Ligi"
+                sectionLabel={
+                  formatDateTurkish(dateKey)
+                    ? `${formatDateTurkish(dateKey)} · Günün Maçları`
+                    : `${dateKey} · Günün Maçları`
+                }
+                matches={sortKadinlar2LigMatchesByTime(dayMatches).map(convertK2MatchToMatch)}
+                selectedMatchId={selectedMatchId}
+                favorites={favoriteMatchIds}
+                onToggleFavorite={handleToggleFavorite}
+                onSelectMatch={onSelectMatch}
+                mode="today"
+                showGroupBadge={true}
+              />
+            ))
+          )}
+        </div>
       ) : (
         <div className="space-y-4">
           {matchesByGroup.map(([groupNo, groupMatches]) => (
@@ -187,7 +294,7 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
               key={groupNo}
               leagueTitle="Kadınlar 2. Ligi"
               sectionLabel={`Grup ${groupNo}`}
-              matches={groupMatches.map(convertK2MatchToMatch)}
+              matches={sortKadinlar2LigMatchesByTime(groupMatches).map(convertK2MatchToMatch)}
               selectedMatchId={selectedMatchId}
               favorites={favoriteMatchIds}
               onToggleFavorite={handleToggleFavorite}

@@ -6,6 +6,7 @@ import { compactKadinlar2LigData } from "@/utils/kadinlar2LigPayload";
 import {
   parseKadinlar2LigRoute,
   getKadinlar2LigRoute,
+  isValidKadinlar2LigSlug,
 } from "@/utils/kadinlar2LigRoutes";
 
 export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
@@ -16,6 +17,12 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  if (!slug || slug.length === 0 || !isValidKadinlar2LigSlug(slug)) {
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: true },
+    };
+  }
   const path = `/kadinlar-2-ligi/${slug.join("/")}`;
   const { tab, groupNo } = parseKadinlar2LigRoute(path);
 
@@ -52,7 +59,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       break;
     case "teams":
       title = "TVF Kadınlar 2. Ligi Takımları ve Kulüp Profilleri";
-      description = "Kadınlar 2. Ligi'nde mücadele eden 160+ voleybol kulübü, maçları ve kadro bağlantıları.";
+      description = "Kadınlar 2. Ligi'nde mücadele eden 163 voleybol kulübü, maçları ve kadro bağlantıları.";
       break;
     case "karsilastir":
       title = "TVF Kadınlar 2. Ligi Takım Karşılaştırması & H2H";
@@ -126,7 +133,7 @@ export function generateStaticParams() {
 
 export default async function Kadinlar2LigSlugPage({ params }: PageProps) {
   const { slug } = await params;
-  if (!slug || slug.length === 0) {
+  if (!slug || slug.length === 0 || !isValidKadinlar2LigSlug(slug)) {
     notFound();
   }
 

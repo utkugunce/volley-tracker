@@ -63,6 +63,24 @@ describe("Calendar & Match Time Sorting Utilities", () => {
       expect(compareMatchDateTime(matchTbd, matchKnown, "asc")).toBeGreaterThan(0);
       expect(compareMatchDateTime(matchKnown, matchTbd, "desc")).toBeLessThan(0);
     });
+
+    it("aynı saatteki maçlarda grup sayısı küçük olan önce gelir", () => {
+      const matchGrup1 = { date: "2026-10-18", time: "13:00", group: "Grup 1" };
+      const matchGrup2 = { date: "2026-10-18", time: "13:00", group: "Grup 2" };
+      const matchGrup16 = { date: "2026-10-18", time: "13:00", group: "Grup 16" };
+
+      expect(compareMatchDateTime(matchGrup1, matchGrup2, "asc")).toBeLessThan(0);
+      expect(compareMatchDateTime(matchGrup2, matchGrup16, "asc")).toBeLessThan(0);
+      expect(compareMatchDateTime(matchGrup16, matchGrup1, "asc")).toBeGreaterThan(0);
+    });
+
+    it("grup_no nümerik alanı tanımlı olduğunda da grup sayısı küçük olan önce gelir", () => {
+      const matchGrup1 = { date: "2026-10-18", time: "14:00", grup_no: 1 };
+      const matchGrup5 = { date: "2026-10-18", time: "14:00", grup_no: 5 };
+
+      expect(compareMatchDateTime(matchGrup1, matchGrup5, "asc")).toBeLessThan(0);
+      expect(compareMatchDateTime(matchGrup5, matchGrup1, "asc")).toBeGreaterThan(0);
+    });
   });
 
   describe("formatDateTurkish", () => {

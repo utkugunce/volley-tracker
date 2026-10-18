@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import type { Match, StandingItem } from "@/types/fixture";
 import type { Kadinlar2LigMatch, Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { TeamBadge } from "@/components/TeamBadge";
+import { getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
 import {
   simulateAltyapiStandings,
   simulateK2Standings,
@@ -148,8 +149,20 @@ export const StandingsSimulatorView: React.FC<StandingsSimulatorViewProps> = ({
             <div className="space-y-2 max-h-[380px] overflow-y-auto pr-1">
               {upcomingMatches.map((m) => {
                 const matchId = m.id;
-                const home = mode === "altyapi" ? (m as Match).home_team : (m as Kadinlar2LigMatch).takim_a;
-                const away = mode === "altyapi" ? (m as Match).away_team : (m as Kadinlar2LigMatch).takim_b;
+                const home =
+                  mode === "altyapi"
+                    ? (m as Match).home_team
+                    : getKadinlar2LigTeamName(
+                        (m as Kadinlar2LigMatch).takim_a,
+                        (m as Kadinlar2LigMatch).takim_a_volleybox_name
+                      );
+                const away =
+                  mode === "altyapi"
+                    ? (m as Match).away_team
+                    : getKadinlar2LigTeamName(
+                        (m as Kadinlar2LigMatch).takim_b,
+                        (m as Kadinlar2LigMatch).takim_b_volleybox_name
+                      );
                 const currentScore = simulations[matchId];
 
                 return (

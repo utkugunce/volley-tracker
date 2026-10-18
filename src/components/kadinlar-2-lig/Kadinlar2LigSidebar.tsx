@@ -7,8 +7,10 @@ import {
   CalendarDays,
   ChevronDown,
   ChevronRight,
+  FileText,
   Layers,
   Star,
+  Swords,
   Trophy,
   Users,
 } from "lucide-react";
@@ -20,6 +22,8 @@ interface Kadinlar2LigSidebarProps {
   selectedGroup: number | "all";
   activeTab: Kadinlar2LigTabType;
   favoritesCount: number;
+  showOnlyFavorites?: boolean;
+  onToggleFavoritesOnly?: () => void;
   onSelectGroup: (groupNo: number | "all") => void;
   onSelectTab: (tab: Kadinlar2LigTabType) => void;
 }
@@ -29,6 +33,8 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
   selectedGroup,
   activeTab,
   favoritesCount,
+  showOnlyFavorites = false,
+  onToggleFavoritesOnly,
   onSelectGroup,
   onSelectTab,
 }) => {
@@ -89,21 +95,30 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
               </Link>
 
               {/* Takip Edilen Kulüpler / Yıldızlı */}
-              <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-panel/60 hover:bg-panel border border-transparent hover:border-line text-ink transition-all">
+              <button
+                type="button"
+                onClick={() => onToggleFavoritesOnly?.()}
+                className={`flex w-full items-center justify-between px-2.5 py-1.5 rounded-lg border transition-all cursor-pointer ${
+                  showOnlyFavorites
+                    ? "bg-amber-500/20 border-amber-500/50 text-amber-200 font-bold"
+                    : "bg-panel/60 hover:bg-panel border-transparent hover:border-line text-ink"
+                }`}
+                title="Sadece takip ettiğim favori kulüpleri filtrele"
+              >
                 <span className="flex items-center gap-2">
-                  <Star size={12} className="text-amber-400" />
+                  <Star size={12} className={showOnlyFavorites ? "text-amber-400 fill-amber-400" : "text-amber-400"} />
                   <span className="font-medium text-[11px]">Takip Edilenler</span>
                 </span>
                 <span className="font-display text-[10px] font-semibold tabular-nums text-ink-2">
                   {favoritesCount}
                 </span>
-              </div>
+              </button>
 
               {/* 16 Grup Durumu */}
               <button
                 type="button"
                 onClick={() => onSelectTab("leaders")}
-                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all ${
+                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
                   activeTab === "leaders"
                     ? "border-l-2 border-primary bg-primary/10 text-ink font-bold"
                     : "text-slate-200 hover:bg-panel hover:text-white"
@@ -120,7 +135,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
               <button
                 type="button"
                 onClick={() => onSelectTab("teams")}
-                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all ${
+                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
                   activeTab === "teams"
                     ? "border-l-2 border-primary bg-primary/10 text-ink font-bold"
                     : "text-slate-200 hover:bg-panel hover:text-white"
@@ -129,6 +144,40 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                 <span className="flex items-center gap-2 font-medium text-[11px]">
                   <Users size={13} className="text-blue-300" />
                   <span>Kulüpler</span>
+                </span>
+                <ChevronRight size={12} className="text-ink-2" />
+              </button>
+
+              {/* H2H Karşılaştır */}
+              <button
+                type="button"
+                onClick={() => onSelectTab("karsilastir")}
+                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
+                  activeTab === "karsilastir"
+                    ? "border-l-2 border-primary bg-primary/10 text-ink font-bold"
+                    : "text-slate-200 hover:bg-panel hover:text-white"
+                }`}
+              >
+                <span className="flex items-center gap-2 font-medium text-[11px]">
+                  <Swords size={13} className="text-amber-300" />
+                  <span>Karşılaştır (H2H)</span>
+                </span>
+                <ChevronRight size={12} className="text-ink-2" />
+              </button>
+
+              {/* Resmi Statü & Rehber */}
+              <button
+                type="button"
+                onClick={() => onSelectTab("statu")}
+                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
+                  activeTab === "statu"
+                    ? "border-l-2 border-primary bg-primary/10 text-ink font-bold"
+                    : "text-slate-200 hover:bg-panel hover:text-white"
+                }`}
+              >
+                <span className="flex items-center gap-2 font-medium text-[11px]">
+                  <FileText size={13} className="text-emerald-300" />
+                  <span>Resmi Statü & Rehber</span>
                 </span>
                 <ChevronRight size={12} className="text-ink-2" />
               </button>
@@ -161,7 +210,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                   type="button"
                   onClick={() => {
                     onSelectGroup("all");
-                    onSelectTab("fixtures");
+                    onSelectTab(activeTab === "standings" ? "standings" : "fixtures");
                   }}
                   className={`flex min-w-0 flex-1 items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-all cursor-pointer ${
                     selectedGroup === "all" &&
@@ -177,7 +226,8 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                 </button>
                 <Link prefetch={false}
                   href="/kadinlar-2-ligi/fikstur/tum-gruplar"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
                     onSelectGroup("all");
                     onSelectTab("fixtures");
                   }}
@@ -218,7 +268,8 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                     </button>
                     <Link prefetch={false}
                       href={`/kadinlar-2-ligi/fikstur${group.grup_no > 1 ? `/grup-${group.grup_no}` : ""}`}
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.preventDefault();
                         onSelectGroup(group.grup_no);
                         onSelectTab("fixtures");
                       }}

@@ -39,6 +39,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
   initialSlug2,
   onSelectGroup,
 }) => {
+  void onSelectGroup;
   const allTeams = useMemo(() => data.tum_takimlar || [], [data.tum_takimlar]);
   const allMatches = useMemo(() => data.tum_maclar || [], [data.tum_maclar]);
 
@@ -55,15 +56,45 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
     [displayNames]
   );
 
+  const slugOf = useCallback(
+    (t: Kadinlar2LigTeam) => slugify(nameOf(t.takim_adi)),
+    [nameOf]
+  );
+
+  // Ev sahibi maçlarından takım şehri çıkarımı (tum_takimlar içinde sehir yoksa)
+  const teamCityMap = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const t of allTeams) {
+      if (t.sehir) map.set(t.takim_adi, t.sehir);
+    }
+    for (const m of allMatches) {
+      if (m.takim_a && m.sehir && !map.has(m.takim_a)) {
+        map.set(m.takim_a, m.sehir);
+      }
+    }
+    return map;
+  }, [allTeams, allMatches]);
+
+  const cityOf = useCallback(
+    (t: Kadinlar2LigTeam) => t.sehir || teamCityMap.get(t.takim_adi) || "",
+    [teamCityMap]
+  );
+
   // Varsayılan takım slug'ları
-  const defaultSlug1 = initialSlug1 || (allTeams[0] ? slugify(allTeams[0].takim_adi) : "");
-  const defaultSlug2 = initialSlug2 || (allTeams[1] ? slugify(allTeams[1].takim_adi) : "");
+  const defaultSlug1 = initialSlug1 || (allTeams[0] ? slugOf(allTeams[0]) : "");
+  const defaultSlug2 = initialSlug2 || (allTeams[1] ? slugOf(allTeams[1]) : "");
 
   const [slug1, setSlug1] = useState<string>(defaultSlug1);
   const [slug2, setSlug2] = useState<string>(defaultSlug2);
   const [search1, setSearch1] = useState<string>("");
   const [search2, setSearch2] = useState<string>("");
   const [copied, setCopied] = useState<boolean>(false);
+
+  // Prop'lardan gelen başlangıç slug'ları değişirse senkronize et
+  useEffect(() => {
+    if (initialSlug1) setSlug1(initialSlug1);
+    if (initialSlug2) setSlug2(initialSlug2);
+  }, [initialSlug1, initialSlug2]);
 
   // URL query parametrelerini kontrol et (sayfa ilk yüklendiğinde)
   useEffect(() => {
@@ -75,6 +106,19 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
       if (q2) setSlug2(q2);
     }
   }, []);
+
+  const findTeamBySlug = useCallback(
+    (slug: string): Kadinlar2LigTeam | undefined => {
+      if (!slug) return undefined;
+      const normalized = slugify(slug);
+      return allTeams.find(
+        (t) =>
+          slugOf(t) === normalized ||
+          slugify(t.takim_adi) === normalized
+      );
+    },
+    [allTeams, slugOf]
+  );
 
   const handleApply = (newSlug1: string, newSlug2: string) => {
     triggerHaptic("selection");
@@ -91,7 +135,9 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
 
   const handleSwap = () => {
     triggerHaptic("selection");
-    handleApply(slug2, slug1);
+    const s1 = team1 ? slugOf(team1) : slug1;
+    const s2 = team2 ? slugOf(team2) : slug2;
+    handleApply(s2, s1);
   };
 
   const handleShare = () => {
@@ -105,25 +151,37 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
 
   // Seçili takımlar
   const team1 = useMemo(() => {
-    return allTeams.find((t) => slugify(t.takim_adi) === slug1) || allTeams[0];
-  }, [allTeams, slug1]);
+    return findTeamBySlug(slug1) || allTeams[0];
+  }, [allTeams, slug1, findTeamBySlug]);
 
   const team2 = useMemo(() => {
-    return allTeams.find((t) => slugify(t.takim_adi) === slug2) || allTeams[1];
-  }, [allTeams, slug2]);
+    const found = findTeamBySlug(slug2);
+    if (found) return found;
+    return allTeams.find((t) => t.takim_id !== team1?.takim_id && t.grup_no === team1?.grup_no) || allTeams[1] || allTeams[0];
+  }, [allTeams, slug2, findTeamBySlug, team1]);
 
   // Filtrelenmiş takım listeleri
   const filteredTeams1 = useMemo(() => {
     if (!search1.trim()) return allTeams;
     const q = trLower(search1).trim();
-    return allTeams.filter((t) => trIncludes(t.takim_adi, q) || trIncludes(nameOf(t.takim_adi), q) || trIncludes(t.sehir || "", q));
-  }, [allTeams, search1, nameOf]);
+    return allTeams.filter(
+      (t) =>
+        trIncludes(t.takim_adi, q) ||
+        trIncludes(nameOf(t.takim_adi), q) ||
+        trIncludes(cityOf(t), q)
+    );
+  }, [allTeams, search1, nameOf, cityOf]);
 
   const filteredTeams2 = useMemo(() => {
     if (!search2.trim()) return allTeams;
     const q = trLower(search2).trim();
-    return allTeams.filter((t) => trIncludes(t.takim_adi, q) || trIncludes(nameOf(t.takim_adi), q) || trIncludes(t.sehir || "", q));
-  }, [allTeams, search2, nameOf]);
+    return allTeams.filter(
+      (t) =>
+        trIncludes(t.takim_adi, q) ||
+        trIncludes(nameOf(t.takim_adi), q) ||
+        trIncludes(cityOf(t), q)
+    );
+  }, [allTeams, search2, nameOf, cityOf]);
 
   // Takım maçları
   const getTeamMatches = useCallback((teamName?: string) => {
@@ -161,7 +219,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
         id: m.id,
         result: isWin ? "W" : "L",
         score: m.skor,
-        opponent,
+        opponent: nameOf(opponent),
         date: m.tarih,
       };
     });
@@ -169,11 +227,13 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
 
   const team1Form = useMemo(
     () => (team1 ? getTeamForm(team1Matches, team1.takim_adi) : []),
-    [team1Matches, team1]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [team1Matches, team1, nameOf]
   );
   const team2Form = useMemo(
     () => (team2 ? getTeamForm(team2Matches, team2.takim_adi) : []),
-    [team2Matches, team2]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [team2Matches, team2, nameOf]
   );
 
   // Takım istatistikleri
@@ -232,13 +292,25 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
     }).length;
   }, [headToHeadMatches, team1, team2]);
 
-  // Hızlı 2. Lig Eşleşmeleri
-  const quickMatchups = [
-    { name1: "Havran Bld.", name2: "Karşıyaka" },
-    { name1: "Zeren Spor", name2: "Bozüyük Bld." },
-    { name1: "Çukurova Bld.", name2: "Merinos" },
-    { name1: "Fethiye Bld.", name2: "Muğla Bld." },
-  ];
+  // Gerçek gruplardan öne çıkan zirve eşleşmeleri (1. vs 2. sıra)
+  const quickMatchups = useMemo(() => {
+    const list: { label1: string; label2: string; slug1: string; slug2: string; groupNo: number }[] = [];
+    for (const g of data.gruplar || []) {
+      const t1 = g.puan_durumu?.[0];
+      const t2 = g.puan_durumu?.[1];
+      if (t1 && t2) {
+        list.push({
+          label1: nameOf(t1.takim_adi),
+          label2: nameOf(t2.takim_adi),
+          slug1: slugOf(t1),
+          slug2: slugOf(t2),
+          groupNo: g.grup_no,
+        });
+      }
+      if (list.length >= 6) break;
+    }
+    return list;
+  }, [data.gruplar, nameOf, slugOf]);
 
   return (
     <div className="space-y-4 animate-in fade-in-50 duration-200">
@@ -283,23 +355,38 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
       </div>
 
       {/* 2. HIZLI EŞLEŞMELER */}
-      <div className="glass-panel rounded-2xl p-2.5 sm:p-3 border border-slate-800/90 shadow-sm flex items-center gap-2 overflow-x-auto no-scrollbar">
-        <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 flex items-center gap-1">
-          <Sparkles size={12} className="text-amber-400" />
-          Öne Çıkanlar:
-        </span>
-        {quickMatchups.map((m, idx) => (
-          <button
-            key={idx}
-            onClick={() => handleApply(slugify(m.name1), slugify(m.name2))}
-            className="px-2.5 py-1 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700/60 text-xs font-medium whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 shrink-0"
-          >
-            <span>{m.name1}</span>
-            <span className="text-ink-2 font-bold">vs</span>
-            <span>{m.name2}</span>
-          </button>
-        ))}
-      </div>
+      {quickMatchups.length > 0 && (
+        <div className="glass-panel rounded-2xl p-2.5 sm:p-3 border border-slate-800/90 shadow-sm flex items-center gap-2 overflow-x-auto no-scrollbar">
+          <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 flex items-center gap-1">
+            <Sparkles size={12} className="text-amber-400" />
+            Zirve Yarışı:
+          </span>
+          {quickMatchups.map((m, idx) => {
+            const isSelected =
+              team1 && team2 &&
+              ((slugOf(team1) === m.slug1 && slugOf(team2) === m.slug2) ||
+               (slugOf(team1) === m.slug2 && slugOf(team2) === m.slug1));
+            return (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => handleApply(m.slug1, m.slug2)}
+                className={`px-2.5 py-1 rounded-xl border text-xs font-medium whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 active:scale-95 shrink-0 ${
+                  isSelected
+                    ? "bg-primary/20 text-white border-primary/50 font-bold"
+                    : "bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border-slate-700/60"
+                }`}
+                title={`Grup ${m.groupNo} Liderlik Maçı: ${m.label1} vs ${m.label2}`}
+              >
+                <span className="text-[10px] font-mono text-primary font-bold">G{m.groupNo}</span>
+                <span>{m.label1}</span>
+                <span className="text-ink-2 font-bold">vs</span>
+                <span>{m.label2}</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
 
       {/* 3. TAKIM SEÇİCİLERİ VE VS ALANI */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 sm:p-6 shadow-card space-y-6">
@@ -313,28 +400,32 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
               <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
               <input
                 type="text"
-                placeholder="Takım ara..."
+                placeholder="Takım veya şehir ara..."
                 value={search1}
                 onChange={(e) => setSearch1(e.target.value)}
                 className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary/40"
               />
             </div>
             <select
-              value={slug1}
-              onChange={(e) => handleApply(e.target.value, slug2)}
+              value={team1 ? slugOf(team1) : slug1}
+              onChange={(e) => handleApply(e.target.value, team2 ? slugOf(team2) : slug2)}
               className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none focus:border-primary/40 cursor-pointer"
             >
-              {filteredTeams1.map((t) => (
-                <option key={t.takim_id} value={slugify(t.takim_adi)}>
-                  {nameOf(t.takim_adi)} ({t.grup_adi || `Grup ${t.grup_no}`}{t.sehir ? ` • ${t.sehir}` : ""})
-                </option>
-              ))}
+              {filteredTeams1.map((t) => {
+                const c = cityOf(t);
+                return (
+                  <option key={t.takim_id} value={slugOf(t)}>
+                    {nameOf(t.takim_adi)} ({t.grup_adi || `Grup ${t.grup_no}`}{c ? ` • ${c}` : ""})
+                  </option>
+                );
+              })}
             </select>
           </div>
 
           {/* VS & Takas Butonu */}
           <div className="md:col-span-1 flex flex-col items-center justify-center gap-2">
             <button
+              type="button"
               onClick={handleSwap}
               className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer shadow-md active:scale-95 group"
               title="Takımların yerini değiştir"
@@ -355,22 +446,25 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
               <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
               <input
                 type="text"
-                placeholder="Takım ara..."
+                placeholder="Takım veya şehir ara..."
                 value={search2}
                 onChange={(e) => setSearch2(e.target.value)}
                 className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary/40"
               />
             </div>
             <select
-              value={slug2}
-              onChange={(e) => handleApply(slug1, e.target.value)}
+              value={team2 ? slugOf(team2) : slug2}
+              onChange={(e) => handleApply(team1 ? slugOf(team1) : slug1, e.target.value)}
               className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-xs sm:text-sm text-white font-semibold focus:outline-none focus:border-primary/40 cursor-pointer"
             >
-              {filteredTeams2.map((t) => (
-                <option key={t.takim_id} value={slugify(t.takim_adi)}>
-                  {nameOf(t.takim_adi)} ({t.grup_adi || `Grup ${t.grup_no}`}{t.sehir ? ` • ${t.sehir}` : ""})
-                </option>
-              ))}
+              {filteredTeams2.map((t) => {
+                const c = cityOf(t);
+                return (
+                  <option key={t.takim_id} value={slugOf(t)}>
+                    {nameOf(t.takim_adi)} ({t.grup_adi || `Grup ${t.grup_no}`}{c ? ` • ${c}` : ""})
+                  </option>
+                );
+              })}
             </select>
           </div>
         </div>
@@ -384,14 +478,20 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 <TeamBadge name={nameOf(team1.takim_adi)} size="md" />
                 <div className="min-w-0">
                   <Link prefetch={false}
-                    href={`/takim/${slugify(team1.takim_adi)}`}
+                    href={`/takim/${slugOf(team1)}`}
                     className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >
                     {nameOf(team1.takim_adi)}
                   </Link>
                   <div className="text-[11px] text-slate-400 flex items-center gap-2">
-                    <span>{team1.grup_adi || `Grup ${team1.grup_no}`}</span>
-                    {team1.sehir && <><span>•</span><span>{team1.sehir}</span></>}
+                    <button
+                      type="button"
+                      onClick={() => onSelectGroup?.(team1.grup_no)}
+                      className="hover:text-ink transition-colors cursor-pointer"
+                    >
+                      {team1.grup_adi || `Grup ${team1.grup_no}`}
+                    </button>
+                    {cityOf(team1) && <><span>•</span><span>{cityOf(team1)}</span></>}
                   </div>
                 </div>
               </div>
@@ -407,14 +507,20 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 <TeamBadge name={nameOf(team2.takim_adi)} size="md" />
                 <div className="min-w-0">
                   <Link prefetch={false}
-                    href={`/takim/${slugify(team2.takim_adi)}`}
+                    href={`/takim/${slugOf(team2)}`}
                     className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
                   >
                     {nameOf(team2.takim_adi)}
                   </Link>
                   <div className="text-[11px] text-slate-400 flex items-center gap-2">
-                    <span>{team2.grup_adi || `Grup ${team2.grup_no}`}</span>
-                    {team2.sehir && <><span>•</span><span>{team2.sehir}</span></>}
+                    <button
+                      type="button"
+                      onClick={() => onSelectGroup?.(team2.grup_no)}
+                      className="hover:text-ink transition-colors cursor-pointer"
+                    >
+                      {team2.grup_adi || `Grup ${team2.grup_no}`}
+                    </button>
+                    {cityOf(team2) && <><span>•</span><span>{cityOf(team2)}</span></>}
                   </div>
                 </div>
               </div>

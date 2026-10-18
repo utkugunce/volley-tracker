@@ -1,6 +1,6 @@
 import type { Match, StandingItem } from "@/types/fixture";
 import type { Kadinlar2LigMatch, Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
-import { trLower } from "./turkishLocale";
+import { getKadinlar2LigTeamName } from "./kadinlar2LigConverter";
 
 export type SimulationScore = "3-0" | "3-1" | "3-2" | "2-3" | "1-3" | "0-3";
 
@@ -196,6 +196,7 @@ export function simulateK2Standings(
   const teamMap = new Map<
     string,
     {
+      rawKey: string;
       initialRank: number;
       team: string;
       played: number;
@@ -210,9 +211,12 @@ export function simulateK2Standings(
   >();
 
   for (const r of initialRows) {
-    teamMap.set(r.takim_adi.trim(), {
+    const rawKey = r.takim_adi.trim();
+    const displayName = getKadinlar2LigTeamName(r.takim_adi, r.volleybox_name) || rawKey;
+    teamMap.set(rawKey, {
+      rawKey,
       initialRank: r.sira,
-      team: r.takim_adi.trim(),
+      team: displayName,
       played: r.o,
       won: r.g,
       lost: r.m,
@@ -272,9 +276,11 @@ export function simulateK2Standings(
 
   return rows.map((r, idx) => {
     const rank = idx + 1;
-    const initialPts = initialPointsMap.get(r.team) ?? r.points;
+    const initialPts = initialPointsMap.get(r.rawKey) ?? r.points;
+    const { rawKey: _rawKey, ...rest } = r;
+    void _rawKey;
     return {
-      ...r,
+      ...rest,
       rank,
       diffRank: r.initialRank - rank,
       diffPoints: r.points - initialPts,

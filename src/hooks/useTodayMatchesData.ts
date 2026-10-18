@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import type { CityInfo, Match } from "@/types/fixture";
-import { formatDateTurkish, compareMatchTimes, isTodayOrUnscoredYesterday, getYesterdayString } from "@/utils/calendar";
+import { formatDateTurkish, compareMatchDateTime, isTodayOrUnscoredYesterday, getYesterdayString } from "@/utils/calendar";
 import { useFavorites } from "@/utils/useFavorites";
 import { isMatchScored } from "@/utils/matchScoring";
 import {
@@ -70,12 +70,7 @@ export function useTodayMatchesData({
     } else if (quickStatus === "favorites") {
       base = todayMatches.filter(isMatchFavorite);
     }
-    return [...base].sort((m1, m2) => {
-      if (m1.date !== m2.date) {
-        return m1.date.localeCompare(m2.date);
-      }
-      return compareMatchTimes(m1.time, m2.time);
-    });
+    return [...base].sort((m1, m2) => compareMatchDateTime(m1, m2, "asc"));
   }, [todayMatches, quickStatus, isMatchFavorite]);
 
   // Dashboard KPI Sayıları

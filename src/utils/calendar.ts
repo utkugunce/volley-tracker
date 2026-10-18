@@ -168,10 +168,11 @@ export function compareMatchTimes(t1?: string | null, t2?: string | null): numbe
  * İki maçı tarih ve saatine göre sıralar.
  * Aynı gün içindeki maçlar her zaman erken saat ilk olacak şekilde sıralanır.
  * dateOrder 'asc' ise eski tarihten yeni tarihe, 'desc' ise yeni tarihten eski tarihe dizer.
+ * Aynı tarihteki maçlarda erken saatteki maç ilk gelir. Aynı saatteki maçlarda ise grup sayısı küçük olan (Grup 1 < Grup 2) önce gösterilir.
  */
 export function compareMatchDateTime(
-  m1: { date?: string | null; time?: string | null },
-  m2: { date?: string | null; time?: string | null },
+  m1: { date?: string | null; time?: string | null; group?: string | null; grup_no?: number; match_no?: string | null },
+  m2: { date?: string | null; time?: string | null; group?: string | null; grup_no?: number; match_no?: string | null },
   dateOrder: "asc" | "desc" = "asc"
 ): number {
   const d1 = (m1.date || "").trim();
@@ -180,7 +181,11 @@ export function compareMatchDateTime(
   const isTbd1 = !d1 || d1 === "TBD";
   const isTbd2 = !d2 || d2 === "TBD";
 
-  if (isTbd1 && isTbd2) return compareMatchTimes(m1.time, m2.time);
+  if (isTbd1 && isTbd2) {
+    const timeDiff = compareMatchTimes(m1.time, m2.time);
+    if (timeDiff !== 0) return timeDiff;
+    return compareMatchGroupAndNo(m1, m2);
+  }
   if (isTbd1) return 1;
   if (isTbd2) return -1;
 
@@ -189,7 +194,26 @@ export function compareMatchDateTime(
   }
 
   // Aynı tarihte her zaman erken saatteki maç ilk gösterilir!
-  return compareMatchTimes(m1.time, m2.time);
+  const timeDiff = compareMatchTimes(m1.time, m2.time);
+  if (timeDiff !== 0) return timeDiff;
+
+  // Aynı saatteki karşılaşmalarda grup sayısı küçük olan önce gösterilir (örn: Grup 1 < Grup 2 < Grup 16)
+  return compareMatchGroupAndNo(m1, m2);
+}
+
+function compareMatchGroupAndNo(
+  m1: { group?: string | null; grup_no?: number; match_no?: string | null },
+  m2: { group?: string | null; grup_no?: number; match_no?: string | null }
+): number {
+  const g1Num = m1.grup_no ?? (m1.group ? parseInt(m1.group.match(/\d+/)?.[0] || "", 10) : NaN);
+  const g2Num = m2.grup_no ?? (m2.group ? parseInt(m2.group.match(/\d+/)?.[0] || "", 10) : NaN);
+  if (!isNaN(g1Num) && !isNaN(g2Num) && g1Num !== g2Num) {
+    return g1Num - g2Num;
+  }
+  if (m1.group && m2.group && m1.group !== m2.group) {
+    return m1.group.localeCompare(m2.group, "tr");
+  }
+  return (m1.match_no || "").localeCompare(m2.match_no || "");
 }
 
 /**

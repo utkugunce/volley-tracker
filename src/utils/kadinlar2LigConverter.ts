@@ -4,6 +4,7 @@ import { getVolleyboxTeamName } from "@/utils/volleybox";
 import { compareMatchTimes } from "@/utils/calendar";
 import { kadinlar2LigMatchToUnified } from "./unifiedAdapters";
 import type { UnifiedFixture } from "@/types/unified";
+import { trIncludes } from "./turkishLocale";
 
 /** Altyapı eşleme dosyasındaki (volleybox-mappings.json) kategori adı. */
 export const K2_CATEGORY = "Kadınlar 2. Ligi";
@@ -63,12 +64,47 @@ export function isKadinlar2LigMatchFavorite(
   ].some((name) => isFavorite(name));
 }
 
-/** Takım adı araması: hem Volleybox adı hem TVF adı üzerinden eşleşir. `query` küçük harfli olmalı. */
+/**
+ * Bir maç satırındaki yıldız butonuna tıklandığında doğru takımı favoriye ekler/çıkarır:
+ * - Ev sahibi favoriyse ev sahibini çıkarır
+ * - Yalnızca deplasman takımı favoriyse deplasman takımını çıkarır
+ * - İkisi de favori değilse ev sahibi takımı favoriye ekler
+ */
+export function toggleKadinlar2LigMatchFavorite(
+  m: Kadinlar2LigMatch | Match,
+  isFavorite: (teamName: string) => boolean,
+  toggleFavorite: (teamName: string) => void
+): void {
+  if ("takim_a" in m) {
+    const homeVariants = getKadinlar2LigTeamNameVariants(m.takim_a, m.takim_a_volleybox_name);
+    const awayVariants = getKadinlar2LigTeamNameVariants(m.takim_b, m.takim_b_volleybox_name);
+    const favHome = homeVariants.find((n) => isFavorite(n));
+    const favAway = awayVariants.find((n) => isFavorite(n));
+    if (favHome) {
+      toggleFavorite(favHome);
+    } else if (favAway) {
+      toggleFavorite(favAway);
+    } else if (homeVariants[0]) {
+      toggleFavorite(homeVariants[0]);
+    }
+    return;
+  }
+
+  if (isFavorite(m.home_team)) {
+    toggleFavorite(m.home_team);
+  } else if (isFavorite(m.away_team)) {
+    toggleFavorite(m.away_team);
+  } else {
+    toggleFavorite(m.home_team);
+  }
+}
+
+/** Takım adı araması: hem Volleybox adı hem TVF adı üzerinden Türkçe karakter duyarsız eşleşir. */
 export function kadinlar2LigMatchHasTeamQuery(m: Kadinlar2LigMatch, query: string): boolean {
   return [
     ...getKadinlar2LigTeamNameVariants(m.takim_a, m.takim_a_volleybox_name),
     ...getKadinlar2LigTeamNameVariants(m.takim_b, m.takim_b_volleybox_name),
-  ].some((name) => name.toLowerCase().includes(query));
+  ].some((name) => trIncludes(name, query));
 }
 
 export function normalizeK2Date(date: string | undefined): string {
@@ -178,8 +214,10 @@ export function sortKadinlar2LigMatchesByTime(matches: Kadinlar2LigMatch[]): Kad
     const timeDiff = compareMatchTimes(a.saat, b.saat);
     if (timeDiff !== 0) return timeDiff;
 
-    const g1 = a.grup_no ?? 999;
-    const g2 = b.grup_no ?? 999;
+    const g1Match = (a.grup_adi || "").match(/\d+/);
+    const g1 = a.grup_no ?? (g1Match ? parseInt(g1Match[0], 10) : 999);
+    const g2Match = (b.grup_adi || "").match(/\d+/);
+    const g2 = b.grup_no ?? (g2Match ? parseInt(g2Match[0], 10) : 999);
     if (g1 !== g2) return g1 - g2;
 
     return (a.mac_no || "").localeCompare(b.mac_no || "");

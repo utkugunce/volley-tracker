@@ -196,6 +196,48 @@ describe("Kadinlar2LigFixtures and Results Altyapı UI Tests", () => {
     expect(screen.getByText("Fenerbahçe 2")).toBeInTheDocument();
   });
 
+  it("Kadinlar2LigTodayMatches saat görünümüne geçildiğinde maçları saate göre sıralar ve aynı saatte grup sayısı küçük olanı öne alır", () => {
+    const matchG2: Kadinlar2LigMatch = {
+      ...mockMatches[0],
+      id: "match-g2",
+      grup_no: 2,
+      grup_adi: "Grup 2",
+      saat: "13:00",
+      tarih: "28.09.2026",
+      takim_a: "Grup 2 Takım A",
+      takim_b: "Grup 2 Takım B",
+    };
+    const matchG1: Kadinlar2LigMatch = {
+      ...mockMatches[0],
+      id: "match-g1",
+      grup_no: 1,
+      grup_adi: "Grup 1",
+      saat: "13:00",
+      tarih: "28.09.2026",
+      takim_a: "Grup 1 Takım A",
+      takim_b: "Grup 1 Takım B",
+    };
+    render(
+      <Kadinlar2LigTodayMatches
+        allMatches={[matchG2, matchG1]}
+        groups={[mockGroup]}
+        onSelectMatch={vi.fn()}
+      />
+    );
+
+    // Saat butonuna tıkla
+    const timeBtn = screen.getByRole("button", { name: /Saat/i });
+    fireEvent.click(timeBtn);
+
+    // Günün Maçları başlığı görünmeli
+    expect(screen.getByText(/Günün Maçları/i)).toBeInTheDocument();
+
+    // DOM'da Grup 1 maçının Grup 2 maçından önce geldiğini doğrula
+    const textA = screen.getByText("Grup 1 Takım A");
+    const textB = screen.getByText("Grup 2 Takım A");
+    expect(textA.compareDocumentPosition(textB)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
+  });
+
   it("Kadinlar2LigFixtures tüm gruplar seçildiğinde tüm grupların maçlarını listeler", () => {
     const mockGroup2: Kadinlar2LigGroup = {
       grup_no: 2,

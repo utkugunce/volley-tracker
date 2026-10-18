@@ -3,44 +3,40 @@
 import React, { useState, useMemo } from "react";
 import { TeamBadge } from "@/components/TeamBadge";
 import Link from "next/link";
-import { ExternalLink, Trophy, ChevronRight, Download, Star, Swords, CheckCircle2, ShieldAlert, Calculator } from "lucide-react";
+import { ExternalLink, Trophy, ChevronRight, Download, Star, Swords, Calculator } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { getKadinlar2LigTeamName, getKadinlar2LigTeamNameVariants, K2_CATEGORY } from "@/utils/kadinlar2LigConverter";
-import { kadinlar2LigTeamToUnified } from "@/utils/unifiedAdapters";
-import type { UnifiedStanding } from "@/types/unified";
+import { trIncludes } from "@/utils/turkishLocale";
 import { StandingsSimulatorView } from "@/components/standings/StandingsSimulatorView";
 
 interface Kadinlar2LigStandingsProps {
   group: Kadinlar2LigGroup;
   searchQuery?: string;
   showOnlyFavorites?: boolean;
+  onCompareTeam?: (teamSlug: string) => void;
 }
 
 export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
   group,
   searchQuery = "",
   showOnlyFavorites = false,
+  onCompareTeam,
 }) => {
   const [showDetailedStats, setShowDetailedStats] = useState(false);
   const [showSimulator, setShowSimulator] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const teams = useMemo(() => group?.puan_durumu || [], [group?.puan_durumu]);
-  const unifiedStandings = useMemo<UnifiedStanding[]>(
-    () => teams.map(kadinlar2LigTeamToUnified),
-    [teams]
-  );
   const filteredTeams = useMemo(() => {
     return teams.filter((t) => {
       const displayName = getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name);
       if (showOnlyFavorites && !getKadinlar2LigTeamNameVariants(t.takim_adi, t.volleybox_name).some((n) => isFavorite(n))) return false;
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        if (!t.takim_adi.toLowerCase().includes(q) && !displayName.toLowerCase().includes(q)) return false;
+        if (!trIncludes(t.takim_adi, searchQuery) && !trIncludes(displayName, searchQuery)) return false;
       }
       return true;
     });

@@ -98,7 +98,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           <div className="flex items-center gap-1.5 text-xs">
             <span className="font-extrabold text-white tracking-tight">Uzman Posta Kadınlar 2. Ligi</span>
             <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-primary/10 border border-primary/40 text-ink-2 font-mono font-bold hidden md:inline-block">
-              16 Grup • 167 Kulüp
+              {metadata?.toplam_grup_sayisi || 16} Grup • {metadata?.toplam_takim_sayisi || 163} Kulüp
             </span>
           </div>
         </div>

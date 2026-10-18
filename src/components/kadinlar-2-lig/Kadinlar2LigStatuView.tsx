@@ -15,7 +15,13 @@ import {
   Info,
 } from "lucide-react";
 
-export const Kadinlar2LigStatuView: React.FC = () => {
+interface Kadinlar2LigStatuViewProps {
+  totalTeams?: number;
+}
+
+export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
+  totalTeams = 163,
+}) => {
   const statuPdfUrl =
     "https://tvf.org.tr/_dosyalar/Liglerin_Statu_Arsivi/2026-2027/2026-2027_UzmanPosta2Lig_Kadinlar_Statusu.pdf";
 
@@ -33,7 +39,7 @@ export const Kadinlar2LigStatuView: React.FC = () => {
                 2026-2027 TVF Kadınlar 2. Lig Resmi Statüsü
               </h2>
               <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-mono font-bold">
-                16 Grup • 167 Kulüp
+                16 Grup • {totalTeams} Kulüp
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-0.5">

@@ -3,12 +3,12 @@
 import React, { useMemo } from "react";
 import Link from "next/link";
 import { TeamBadge } from "@/components/TeamBadge";
-import { Trophy, ArrowRight, Layers, CheckCircle2 } from "lucide-react";
+import { Layers } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
-import { getVolleyboxMapping } from "@/utils/volleybox";
-import { getKadinlar2LigTeamName, getKadinlar2LigTeamNameVariants, K2_CATEGORY } from "@/utils/kadinlar2LigConverter";
+import { getKadinlar2LigTeamName, getKadinlar2LigTeamNameVariants } from "@/utils/kadinlar2LigConverter";
+import { trIncludes } from "@/utils/turkishLocale";
 
 interface Kadinlar2LigLeadersProps {
   groups: Kadinlar2LigGroup[];
@@ -32,10 +32,9 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
         if (!hasFavTeam) return false;
       }
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const matchesName = group.grup_adi.toLowerCase().includes(q);
+        const matchesName = trIncludes(group.grup_adi, searchQuery) || trIncludes(`Grup ${group.grup_no}`, searchQuery);
         const matchesTeam = group.puan_durumu.some((t) =>
-          getKadinlar2LigTeamNameVariants(t.takim_adi, t.volleybox_name).some((n) => n.toLowerCase().includes(q))
+          getKadinlar2LigTeamNameVariants(t.takim_adi, t.volleybox_name).some((n) => trIncludes(n, searchQuery))
         );
         if (!matchesName && !matchesTeam) return false;
       }

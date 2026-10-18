@@ -3,17 +3,19 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { TeamBadge } from "@/components/TeamBadge";
-import { ExternalLink, Search, Trophy, ArrowRight, User, Star, Swords } from "lucide-react";
+import { ExternalLink, Star, Swords } from "lucide-react";
 import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { slugify } from "@/utils/slugify";
 import { useFavorites } from "@/utils/useFavorites";
 import { triggerHaptic } from "@/utils/haptics";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { getKadinlar2LigTeamName, getKadinlar2LigTeamNameVariants, K2_CATEGORY } from "@/utils/kadinlar2LigConverter";
+import { trIncludes } from "@/utils/turkishLocale";
 
 interface Kadinlar2LigTeamsProps {
   teams: Kadinlar2LigTeam[];
   onSelectGroup?: (groupNo: number) => void;
+  onCompareTeam?: (teamSlug: string) => void;
   searchQuery?: string;
   showOnlyFavorites?: boolean;
 }
@@ -21,6 +23,7 @@ interface Kadinlar2LigTeamsProps {
 export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
   teams,
   onSelectGroup,
+  onCompareTeam,
   searchQuery = "",
   showOnlyFavorites = false,
 }) => {
@@ -33,8 +36,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
       if (showOnlyFavorites && !getKadinlar2LigTeamNameVariants(t.takim_adi, t.volleybox_name).some((n) => isFavorite(n))) return false;
       if (filterGroup !== "all" && t.grup_no !== filterGroup) return false;
       if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        if (!t.takim_adi.toLowerCase().includes(q) && !displayName.toLowerCase().includes(q)) return false;
+        if (!trIncludes(t.takim_adi, searchQuery) && !trIncludes(displayName, searchQuery)) return false;
       }
       return true;
     });
@@ -79,9 +81,9 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
         {filteredTeams.map((team, idx) => {
           const vb = getVolleyboxMapping(team.takim_adi, K2_CATEGORY);
           const displayName = getKadinlar2LigTeamName(team.takim_adi, team.volleybox_name);
-          const logoSrc = (team.logo && !team.logo.includes("takimlogoyok")) ? team.logo : (vb?.local_logo || vb?.logo_url);
           const vbUrl = team.volleybox_url || vb?.volleybox_url;
           const isFav = isFavorite(displayName) || isFavorite(team.takim_adi);
+          const teamSlug = slugify(displayName);
 
           return (
             <div
@@ -91,7 +93,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3 min-w-0 flex-1">
                   <Link prefetch={false}
-                    href={`/takim/${slugify(displayName)}`}
+                    href={`/takim/${teamSlug}`}
                     className="shrink-0 hover:opacity-80 transition-opacity"
                     title={`${displayName} Kulüp Profili`}
                   >
@@ -101,7 +103,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5">
                       <Link prefetch={false}
-                        href={`/takim/${slugify(displayName)}`}
+                        href={`/takim/${teamSlug}`}
                         className="font-bold text-xs sm:text-sm text-slate-100 hover:text-ink transition-colors truncate block hover:underline underline-offset-2"
                         title={displayName !== team.takim_adi ? `${displayName} (TVF: ${team.takim_adi})` : `${displayName} Kulüp Profilini Aç`}
                       >
@@ -127,16 +129,19 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                         />
                       </button>
                     </div>
-                    <div className="flex items-center gap-1.5 mt-1 text-[11px] text-slate-400">
+                    <div className="flex items-center gap-1.5 mt-1 text-[11px] text-slate-400 flex-wrap">
                       <button
+                        type="button"
                         onClick={() => onSelectGroup?.(team.grup_no)}
-                        className="hover:text-ink transition-colors cursor-pointer"
+                        className="hover:text-ink transition-colors cursor-pointer font-semibold text-slate-300"
                       >
                         Grup {team.grup_no}
                       </button>
                       <span>•</span>
                       <span className="font-mono text-[10px]">
-                        {team.p > 0 ? `${team.p} Puan` : "Henüz maç yok"}
+                        {team.o > 0
+                          ? `#${team.sira} • ${team.g}G ${team.m}M • ${team.p} Puan`
+                          : "Henüz maç yok"}
                       </span>
                     </div>
                   </div>
@@ -146,7 +151,13 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
               {/* Butonlar */}
               <div className="grid grid-cols-3 gap-1.5 pt-2 border-t border-slate-800/60">
                 <Link prefetch={false}
-                  href={`/karsilastir?takim1=${slugify(displayName)}`}
+                  href={`/kadinlar-2-ligi/karsilastir?takim1=${teamSlug}`}
+                  onClick={(e) => {
+                    if (onCompareTeam) {
+                      e.preventDefault();
+                      onCompareTeam(teamSlug);
+                    }
+                  }}
                   className="py-1 px-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[10px] font-semibold text-center flex items-center justify-center gap-1 transition-all"
                   title="H2H Karşılaştır"
                 >
@@ -155,7 +166,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
                 </Link>
 
                 <Link prefetch={false}
-                  href={`/takim/${slugify(displayName)}`}
+                  href={`/takim/${teamSlug}`}
                   className="py-1 px-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[10px] font-semibold text-center transition-all"
                   title="Kadro ve Detaylar"
                 >
