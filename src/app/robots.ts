@@ -31,7 +31,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: ["/", "/llms.txt"],
-        disallow: ["/admin", "/api/", "/panel", "/giris"],
+        // /_next/image ve /_vercel/image: eski (7 Ekim öncesi) dizinlenmiş görsel URL'leri Image Optimization kotası tüketmesin.
+        disallow: ["/admin", "/api/", "/panel", "/giris", "/_next/image", "/_vercel/image"],
       },
       {
         userAgent: BLOCKED_BOTS,

@@ -100,6 +100,25 @@ describe("Vercel kota — Image Optimization kapalı", () => {
     const src = read("next.config.mjs");
     expect(src).toMatch(/images:\s*\{[\s\S]*?unoptimized:\s*true/);
   });
+
+  // unoptimized:true sayfalardaki <img>'leri düzeltir ama Vercel /_next/image uç noktasını açık bırakır;
+  // eski dizinlenmiş görsel URL'leri ve botlar dönüşüm tüketmeye devam ediyordu (17 Ekim 2026 %100).
+  it("vercel.json /_next/image ve /_vercel/image isteklerini optimizasyona ulaşmadan yönlendirir", () => {
+    const cfg = JSON.parse(read("vercel.json")) as {
+      redirects?: { source: string; destination: string; has?: { value?: string }[] }[];
+    };
+    const redirects = cfg.redirects ?? [];
+    for (const src of ["/_next/image", "/_vercel/image"]) {
+      const rules = redirects.filter((r) => r.source === src);
+      expect(rules.some((r) => r.has && r.destination === "/:path"), `${src} yerel yönlendirme`).toBe(true);
+      expect(rules.some((r) => !r.has), `${src} genel yönlendirme`).toBe(true);
+    }
+    // Açık yönlendirme yok: yakalanan yol // ile başlayamaz.
+    const re = new RegExp(redirects.find((r) => r.has)!.has![0].value!.replace("(?<path>", "("));
+    expect(re.test("/logos/a.png")).toBe(true);
+    expect(re.test("//evil.com/x.png")).toBe(false);
+    expect(re.test("https://evil.com/x.png")).toBe(false);
+  });
 });
 
 // Kaynak ağacı bir kez taranır; dosya içerikleri önbelleğe alınır (yük altında zaman aşımını önler).
