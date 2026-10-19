@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T10:26:06.256256+03:00",
+  "updated_at": "2026-10-19T19:14:06.306893+00:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -115,34 +115,34 @@
       {
         "rank": 1,
         "team": "Vakıf Akademi Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kadınhanı Gençlik Merkezi Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "team": "Ballas Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Ballas Spor Kulübü U18",
-        "played": 2,
+        "team": "Kadınhanı Gençlik Merkezi Spor Kulübü U18",
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
+        "sets_won": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -1061,11 +1061,16 @@
       "match_no": "4",
       "home_team": "Ballas Spor Kulübü U18",
       "away_team": "Kadınhanı Gençlik Merkezi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "21-25",
+        "25-22",
+        "25-10",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1095,11 +1100,15 @@
       "match_no": "5",
       "home_team": "Vakıf Akademi Spor Kulübü U18",
       "away_team": "Kadınhanı Gençlik Merkezi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-9",
+        "25-6"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1369,5 +1378,5 @@
     }
   ],
   "volleybox_synced_matches": 14,
-  "volleybox_sync_updated_at": "2026-10-19T10:31:34.153736"
+  "volleybox_sync_updated_at": "2026-10-19T19:16:03.115424"
 }

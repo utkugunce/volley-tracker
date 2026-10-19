@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T10:26:06.256256+03:00",
+  "updated_at": "2026-10-19T19:14:06.306893+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -822,7 +822,7 @@
       "id": "bursa-20261021-007",
       "city": "Bursa",
       "date": "2026-10-21",
-      "time": "18:00",
+      "time": "20:00",
       "hall": "Çekirge",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -1018,7 +1018,7 @@
       "id": "bursa-20261021-012",
       "city": "Bursa",
       "date": "2026-10-21",
-      "time": "20:00",
+      "time": "18:00",
       "hall": "Çekirge",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2392,5 +2392,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-19T10:31:25.475455"
+  "volleybox_sync_updated_at": "2026-10-19T19:16:03.175167"
 }

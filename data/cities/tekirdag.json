@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T10:26:06.256256+03:00",
+  "updated_at": "2026-10-19T19:14:06.306893+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -194,11 +194,11 @@
       {
         "rank": 2,
         "team": "Tekirdağ Basket Spor Kulübü U16",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 1,
         "form": []
       },
@@ -227,12 +227,12 @@
       {
         "rank": 5,
         "team": "Çorlu Yıldırım Spor Kulübü - B U16",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 2,
         "sets_won": 4,
-        "sets_lost": 5,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -676,9 +676,9 @@
       }
     },
     {
-      "id": "tekirdag-20261028-009",
+      "id": "tekirdag-20261026-009",
       "city": "Tekirdağ",
-      "date": "2026-10-28",
+      "date": "2026-10-26",
       "time": "20:30",
       "hall": "Çerkezköy S.S",
       "category": "Genç Kızlar Süper Lig",
@@ -1956,11 +1956,15 @@
       "match_no": "10",
       "home_team": "Tekirdağ Basket Spor Kulübü U16",
       "away_team": "Çorlu Yıldırım Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "26-24",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2056,40 +2060,6 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "13",
-      "home_team": "Süleymanpaşa Spor Kulübü - B U16",
-      "away_team": "Çorlu Yıldırım Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "tekirdag-20261024-043",
-      "city": "Tekirdağ",
-      "date": "2026-10-24",
-      "time": "--:--",
-      "hall": "Açıklanacak",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "14",
       "home_team": "Tekirdağ Basket Spor Kulübü U16",
       "away_team": "Tekirdağ Marmara Spor Kulübü U16",
       "score": "- : -",
@@ -2114,9 +2084,43 @@
       }
     },
     {
-      "id": "tekirdag-20261028-044",
+      "id": "tekirdag-20261027-043",
       "city": "Tekirdağ",
-      "date": "2026-10-28",
+      "date": "2026-10-27",
+      "time": "20:30",
+      "hall": "Atatürk Ss",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "14",
+      "home_team": "Süleymanpaşa Spor Kulübü - B U16",
+      "away_team": "Çorlu Yıldırım Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20261104-044",
+      "city": "Tekirdağ",
+      "date": "2026-11-04",
       "time": "19:00",
       "hall": "Çerkezköy S.S",
       "category": "Yıldız Kızlar Süper Lig",
@@ -2772,5 +2776,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-10-19T10:31:36.075932"
+  "volleybox_sync_updated_at": "2026-10-19T19:16:03.131348"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T10:26:06.256256+03:00",
+  "updated_at": "2026-10-19T19:14:06.306893+00:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -2647,41 +2647,7 @@
       }
     },
     {
-      "id": "eskisehir-20261024-052",
-      "city": "Eskişehir",
-      "date": "2026-10-24",
-      "time": "19:00",
-      "hall": "Şehit Anıl Gül",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "D Grubu",
-      "match_no": "8",
-      "home_team": "Eskişehir Voleybol Spor Kulübü U16",
-      "away_team": "Anadolu Üniversitesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "eskisehir-20261026-053",
+      "id": "eskisehir-20261026-052",
       "city": "Eskişehir",
       "date": "2026-10-26",
       "time": "18:30",
@@ -2690,7 +2656,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "D Grubu",
-      "match_no": "9",
+      "match_no": "8",
       "home_team": "Anadolu Üniversitesi Spor Kulübü U16",
       "away_team": "Eskişehir Yıldız Spor Kulübü U16",
       "score": "- : -",
@@ -2715,7 +2681,7 @@
       }
     },
     {
-      "id": "eskisehir-20261029-054",
+      "id": "eskisehir-20261029-053",
       "city": "Eskişehir",
       "date": "2026-10-29",
       "time": "14:00",
@@ -2724,9 +2690,43 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "D Grubu",
-      "match_no": "10",
+      "match_no": "9",
       "home_team": "Eskişehir Yıldız Spor Kulübü U16",
       "away_team": "Eskişehir Peyman Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261103-054",
+      "city": "Eskişehir",
+      "date": "2026-11-03",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "10",
+      "home_team": "Eskişehir Voleybol Spor Kulübü U16",
+      "away_team": "Anadolu Üniversitesi Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -2750,5 +2750,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-19T10:31:26.582630"
+  "volleybox_sync_updated_at": "2026-10-19T19:16:03.169046"
 }

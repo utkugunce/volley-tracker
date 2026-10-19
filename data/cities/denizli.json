@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-19T10:26:06.256256+03:00",
+  "updated_at": "2026-10-19T19:14:06.306893+00:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 62,
+  "total_matches": 81,
   "source": "https://denizli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -2222,7 +2222,585 @@
       }
     },
     {
-      "id": "denizli-20261005-045",
+      "id": "denizli-20261026-045",
+      "city": "Denizli",
+      "date": "2026-10-26",
+      "time": "10:00",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "33",
+      "home_team": "Erbakır Fen Lisesi",
+      "away_team": "Servergazi Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261026-046",
+      "city": "Denizli",
+      "date": "2026-10-26",
+      "time": "11:30",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "34",
+      "home_team": "Özel Ted Denizli Anadolu Lisesi",
+      "away_team": "Özel Bilim Kampüs A.L.",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261026-047",
+      "city": "Denizli",
+      "date": "2026-10-26",
+      "time": "13:00",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "35",
+      "home_team": "Güngör Aslan Anadolu Lisesi",
+      "away_team": "Yaşar Saniye Gemici Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261026-048",
+      "city": "Denizli",
+      "date": "2026-10-26",
+      "time": "14:30",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "36",
+      "home_team": "Özel Bitek Koleji Mtal",
+      "away_team": "Özel Denizli İstek Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261027-049",
+      "city": "Denizli",
+      "date": "2026-10-27",
+      "time": "10:00",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "37",
+      "home_team": "Özel Final Anadolu Lisesi",
+      "away_team": "Hasan Tekin Ada Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261027-050",
+      "city": "Denizli",
+      "date": "2026-10-27",
+      "time": "11:30",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "38",
+      "home_team": "Cumhuriyet Anadolu Lisesi",
+      "away_team": "Aydem Fen Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261027-051",
+      "city": "Denizli",
+      "date": "2026-10-27",
+      "time": "13:00",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "39",
+      "home_team": "Himmet Nimet Özçelik Anadolu Lisesi",
+      "away_team": "Denizli Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-052",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "10:00",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "40",
+      "home_team": "Irlıganlı Şehit Süleyman Acar Anadolu Lisesi",
+      "away_team": "Özel Kokpit Mtal",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-053",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "10:00",
+      "hall": "Mustafa Kaynak Al",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "41",
+      "home_team": "Servergazi Borsa İstanbul Kız Mtal",
+      "away_team": "Anafartalar Ticaret Mtal",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-054",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "10:00",
+      "hall": "Yaşar Kımıl Fen L",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "42",
+      "home_team": "Özel Denizli Ekobilim Koleji Anadolu Lisesi",
+      "away_team": "Odtü Gvo Özel Denizli Okulları",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-055",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "11:30",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "43",
+      "home_team": "Sarayköy Anadolu Lisesi",
+      "away_team": "Özel Çağdaş Atılım Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-056",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "11:30",
+      "hall": "Mustafa Kaynak Al",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "44",
+      "home_team": "Mustafa Kaynak Anadolu Lisesi",
+      "away_team": "Özel Doğru Referans Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-057",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "11:30",
+      "hall": "Yaşar Kımıl Fen L",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "45",
+      "home_team": "Denizli Bozkurt Spor Lisesi",
+      "away_team": "Pınar Baha Abalıoğlu Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-058",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "13:00",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "46",
+      "home_team": "Özel Elit Grup Albayrak Fen Lisesi",
+      "away_team": "Oya Ender Abalıoğlu Al",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-059",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "13:00",
+      "hall": "Mustafa Kaynak Al",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "47",
+      "home_team": "Anafartalar Anadolu Lisesi",
+      "away_team": "Özel Denizli Fen Bilimleri Ak.And.Lis.",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-060",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "13:00",
+      "hall": "Yaşar Kımıl Fen L",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "48",
+      "home_team": "Özel Denizli Koleji Anadolu Lisesi",
+      "away_team": "Naile Mehmet Ali Uyanık Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261030-061",
+      "city": "Denizli",
+      "date": "2026-10-30",
+      "time": "14:30",
+      "hall": "Yaşar Kımıl Fen L",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Okul Sporları - Genç Kızlar (A)",
+      "match_no": "49",
+      "home_team": "Servergazi Anadolu İmam Hatip Lisesi",
+      "away_team": "Filiz Abalıoğlu Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261005-062",
       "city": "Denizli",
       "date": "2026-10-05",
       "time": "20:00",
@@ -2260,7 +2838,7 @@
       }
     },
     {
-      "id": "denizli-20261008-046",
+      "id": "denizli-20261008-063",
       "city": "Denizli",
       "date": "2026-10-08",
       "time": "18:30",
@@ -2299,7 +2877,7 @@
       }
     },
     {
-      "id": "denizli-20261008-047",
+      "id": "denizli-20261008-064",
       "city": "Denizli",
       "date": "2026-10-08",
       "time": "20:00",
@@ -2337,7 +2915,7 @@
       }
     },
     {
-      "id": "denizli-20261008-048",
+      "id": "denizli-20261008-065",
       "city": "Denizli",
       "date": "2026-10-08",
       "time": "20:00",
@@ -2375,7 +2953,7 @@
       }
     },
     {
-      "id": "denizli-20261009-049",
+      "id": "denizli-20261009-066",
       "city": "Denizli",
       "date": "2026-10-09",
       "time": "20:00",
@@ -2413,7 +2991,7 @@
       }
     },
     {
-      "id": "denizli-20261010-050",
+      "id": "denizli-20261010-067",
       "city": "Denizli",
       "date": "2026-10-10",
       "time": "13:00",
@@ -2452,7 +3030,7 @@
       }
     },
     {
-      "id": "denizli-20261012-051",
+      "id": "denizli-20261012-068",
       "city": "Denizli",
       "date": "2026-10-12",
       "time": "18:30",
@@ -2490,7 +3068,7 @@
       }
     },
     {
-      "id": "denizli-20261012-052",
+      "id": "denizli-20261012-069",
       "city": "Denizli",
       "date": "2026-10-12",
       "time": "20:00",
@@ -2530,7 +3108,7 @@
       }
     },
     {
-      "id": "denizli-20261016-053",
+      "id": "denizli-20261016-070",
       "city": "Denizli",
       "date": "2026-10-16",
       "time": "18:30",
@@ -2569,7 +3147,7 @@
       }
     },
     {
-      "id": "denizli-20261016-054",
+      "id": "denizli-20261016-071",
       "city": "Denizli",
       "date": "2026-10-16",
       "time": "20:00",
@@ -2608,7 +3186,7 @@
       }
     },
     {
-      "id": "denizli-20261019-055",
+      "id": "denizli-20261019-072",
       "city": "Denizli",
       "date": "2026-10-19",
       "time": "18:30",
@@ -2642,7 +3220,7 @@
       }
     },
     {
-      "id": "denizli-20261019-056",
+      "id": "denizli-20261019-073",
       "city": "Denizli",
       "date": "2026-10-19",
       "time": "20:00",
@@ -2676,7 +3254,7 @@
       }
     },
     {
-      "id": "denizli-20261020-057",
+      "id": "denizli-20261020-074",
       "city": "Denizli",
       "date": "2026-10-20",
       "time": "20:00",
@@ -2710,7 +3288,7 @@
       }
     },
     {
-      "id": "denizli-20261021-058",
+      "id": "denizli-20261021-075",
       "city": "Denizli",
       "date": "2026-10-21",
       "time": "18:30",
@@ -2744,7 +3322,7 @@
       }
     },
     {
-      "id": "denizli-20261022-059",
+      "id": "denizli-20261022-076",
       "city": "Denizli",
       "date": "2026-10-22",
       "time": "18:30",
@@ -2778,7 +3356,7 @@
       }
     },
     {
-      "id": "denizli-20261022-060",
+      "id": "denizli-20261022-077",
       "city": "Denizli",
       "date": "2026-10-22",
       "time": "20:00",
@@ -2812,7 +3390,7 @@
       }
     },
     {
-      "id": "denizli-20261023-061",
+      "id": "denizli-20261023-078",
       "city": "Denizli",
       "date": "2026-10-23",
       "time": "20:00",
@@ -2846,7 +3424,7 @@
       }
     },
     {
-      "id": "denizli-20261023-062",
+      "id": "denizli-20261023-079",
       "city": "Denizli",
       "date": "2026-10-23",
       "time": "20:00",
@@ -2878,8 +3456,76 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "denizli-20261026-080",
+      "city": "Denizli",
+      "date": "2026-10-26",
+      "time": "18:30",
+      "hall": "Hacı Ahmet Paralı S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Gruplar",
+      "match_no": "19",
+      "home_team": "Denizli Büyükşehir Belediye S.K.",
+      "away_team": "Anadolu Pars Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "denizli-20261031-081",
+      "city": "Denizli",
+      "date": "2026-10-31",
+      "time": "13:00",
+      "hall": "Çivril Spor Salonu",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Gruplar",
+      "match_no": "20",
+      "home_team": "Yeşil Çivril Belediye Spor Kulübü",
+      "away_team": "Cavidil Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-19T10:31:25.807984"
+  "volleybox_sync_updated_at": "2026-10-19T19:16:03.186344"
 }
