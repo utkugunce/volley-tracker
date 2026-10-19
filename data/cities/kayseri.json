@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T22:44:24.756582+03:00",
+  "updated_at": "2026-10-19T10:26:06.256256+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -136,23 +136,23 @@
       {
         "rank": 2,
         "team": "Develi GSB Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
         "team": "Kayseri Cimnastik Spor Kulübü - B U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -935,11 +935,15 @@
       "match_no": "5",
       "home_team": "Kayseri Cimnastik Spor Kulübü - B U16",
       "away_team": "Develi GSB Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "12-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408094",
@@ -1586,5 +1590,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-18T22:49:54.947933"
+  "volleybox_sync_updated_at": "2026-10-19T10:31:31.825854"
 }

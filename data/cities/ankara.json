@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T22:44:24.756582+03:00",
+  "updated_at": "2026-10-19T10:26:06.256256+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -1881,7 +1881,7 @@
       "id": "ankara-20261021-007",
       "city": "Ankara",
       "date": "2026-10-21",
-      "time": "18:00",
+      "time": "19:30",
       "hall": "Mamak S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -1907,14 +1907,14 @@
         "vb_time": "18:00",
         "vb_hall": "Mamak Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-21",
           "vb_time": "18:00",
           "vb_hall": "Mamak Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
         }
       }
     },
@@ -2771,7 +2771,7 @@
       "id": "ankara-20261021-027",
       "city": "Ankara",
       "date": "2026-10-21",
-      "time": "19:30",
+      "time": "18:00",
       "hall": "Mamak S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2797,14 +2797,14 @@
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-21",
           "vb_time": "19:30",
           "vb_hall": "Mamak Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
         }
       }
     },
@@ -5215,5 +5215,5 @@
     }
   ],
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-10-18T22:49:50.488664"
+  "volleybox_sync_updated_at": "2026-10-19T10:31:23.951679"
 }

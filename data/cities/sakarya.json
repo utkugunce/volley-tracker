@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-18T22:44:24.756582+03:00",
+  "updated_at": "2026-10-19T10:26:06.256256+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 5,
+  "total_matches": 6,
   "source": "https://sakarya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -259,13 +259,54 @@
       "id": "sakarya-20261020-004",
       "city": "Sakarya",
       "date": "2026-10-20",
-      "time": "20:00",
+      "time": "18:30",
       "hall": "Lütfü Yaman1",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "1",
+      "home_team": "Sakarya Voleybol SK U18",
+      "away_team": "Sapanca Ayyıldız Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "408244",
+        "url": "https://women.volleybox.net/tr/sakarya-voleybol-sk-u18-sapanca-ayyldz-spor-kulubu-u18-c408244",
+        "host_name": "Sakarya Voleybol SK U18",
+        "guest_name": "Sapanca Ayyıldız Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-20",
+        "vb_time": "18:30",
+        "vb_hall": "Lütfü Yaman Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-20",
+          "vb_time": "18:30",
+          "vb_hall": "Lütfü Yaman Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261020-005",
+      "city": "Sakarya",
+      "date": "2026-10-20",
+      "time": "20:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "2",
       "home_team": "Sakarya Gelişim Spor Kulübü U18",
       "away_team": "Asaş Spor Kulübü U18",
       "score": "- : -",
@@ -285,19 +326,19 @@
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-20",
           "vb_time": "20:30",
           "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:00 / VB: 20:30)"
+          "details": null
         }
       }
     },
     {
-      "id": "sakarya-20261027-005",
+      "id": "sakarya-20261027-006",
       "city": "Sakarya",
       "date": "2026-10-27",
       "time": "18:30",
@@ -306,7 +347,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "2",
+      "match_no": "3",
       "home_team": "Asaş Spor Kulübü U18",
       "away_team": "Sakarya Voleybol SK U18",
       "score": "- : -",
@@ -338,6 +379,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-18T22:49:56.496348"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-10-19T10:31:34.514845"
 }

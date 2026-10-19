@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T05:59:39.171303+00:00",
+  "updated_at": "2026-10-19T10:26:06.256256+03:00",
   "total_cities": 81,
   "active_cities": 35,
-  "total_matches": 1378,
+  "total_matches": 1365,
   "cities": [
     {
       "ilid": "1",
@@ -432,7 +432,7 @@
       "url": "https://kutahya.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (16 Maç Mevcut)",
       "matches_count": 16,
-      "standings_count": 2,
+      "standings_count": 1,
       "data_file": "data/cities/kutahya.json"
     },
     {
@@ -440,8 +440,8 @@
       "name": "Malatya",
       "slug": "malatya",
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (75 Maç Mevcut)",
-      "matches_count": 75,
+      "status": "Aktif (63 Maç Mevcut)",
+      "matches_count": 63,
       "standings_count": 19,
       "data_file": "data/cities/malatya.json"
     },
@@ -540,8 +540,8 @@
       "name": "Sakarya",
       "slug": "sakarya",
       "url": "https://sakarya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (5 Maç Mevcut)",
-      "matches_count": 5,
+      "status": "Aktif (6 Maç Mevcut)",
+      "matches_count": 6,
       "standings_count": 2,
       "data_file": "data/cities/sakarya.json"
     },
@@ -610,8 +610,8 @@
       "name": "Trabzon",
       "slug": "trabzon",
       "url": "https://trabzon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
+      "status": "Aktif (4 Maç Mevcut)",
+      "matches_count": 4,
       "standings_count": 1,
       "data_file": "data/cities/trabzon.json"
     },
