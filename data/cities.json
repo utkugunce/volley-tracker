@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-19T19:14:06.306893+00:00",
+  "updated_at": "2026-10-20T04:36:51.123901+00:00",
   "total_cities": 81,
   "active_cities": 36,
-  "total_matches": 1398,
+  "total_matches": 1390,
   "cities": [
     {
       "ilid": "1",
@@ -432,7 +432,7 @@
       "url": "https://kutahya.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (16 Maç Mevcut)",
       "matches_count": 16,
-      "standings_count": 1,
+      "standings_count": 2,
       "data_file": "data/cities/kutahya.json"
     },
     {
@@ -440,8 +440,8 @@
       "name": "Malatya",
       "slug": "malatya",
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (63 Maç Mevcut)",
-      "matches_count": 63,
+      "status": "Aktif (75 Maç Mevcut)",
+      "matches_count": 75,
       "standings_count": 19,
       "data_file": "data/cities/malatya.json"
     },
@@ -510,9 +510,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {
