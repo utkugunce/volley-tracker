@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T14:55:46.077631+00:00",
+  "updated_at": "2026-10-20T23:07:34.946879+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -205,6 +205,17 @@
       },
       {
         "rank": 3,
+        "team": "Çorlu Yıldırım Spor Kulübü - B U16",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 9,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -215,7 +226,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Süleymanpaşa Spor Kulübü - B U16",
         "played": 3,
         "won": 1,
@@ -223,17 +234,6 @@
         "points": 3,
         "sets_won": 5,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Çorlu Yıldırım Spor Kulübü - B U16",
-        "played": 3,
-        "won": 1,
-        "lost": 2,
-        "points": 2,
-        "sets_won": 4,
-        "sets_lost": 8,
         "form": []
       },
       {
@@ -250,12 +250,12 @@
       {
         "rank": 7,
         "team": "Muratlı Yıldız 2012 Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -2267,11 +2267,16 @@
       "match_no": "11",
       "home_team": "Çorlu Yıldırım Spor Kulübü - B U16",
       "away_team": "Muratlı Yıldız 2012 Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-11",
+        "26-24",
+        "16-25",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3457,5 +3462,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-10-20T14:57:34.430757"
+  "volleybox_sync_updated_at": "2026-10-20T23:09:26.164769"
 }
