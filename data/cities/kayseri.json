@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T10:26:06.256256+03:00",
+  "updated_at": "2026-10-20T14:55:46.077631+00:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -43,24 +43,24 @@
       },
       {
         "rank": 2,
-        "team": "Kayseri Cimnastik Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
+        "team": "Kayseri Atletik Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Kayseri Atletik Spor Kulübü U18",
-        "played": 2,
+        "team": "Kayseri Cimnastik Spor Kulübü U18",
+        "played": 3,
         "won": 1,
-        "lost": 1,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 5,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -536,11 +536,16 @@
       "match_no": "5",
       "home_team": "Kayseri Atletik Spor Kulübü U18",
       "away_team": "Kayseri Cimnastik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-19",
+        "25-12",
+        "25-27",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408078",
@@ -1590,5 +1595,5 @@
     }
   ],
   "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-10-19T10:31:31.825854"
+  "volleybox_sync_updated_at": "2026-10-20T14:57:34.427729"
 }

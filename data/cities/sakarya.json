@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T19:14:06.306893+00:00",
+  "updated_at": "2026-10-20T14:55:46.077631+00:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -30,29 +30,29 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Alaağaç Spor U18",
-        "played": 0,
-        "won": 0,
+        "team": "Saraçhane 54 Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Fener Akademi Spor Kulübü U18",
-        "played": 0,
+        "team": "Alaağaç Spor U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Saraçhane 54 Spor Kulübü U18",
+        "team": "Fener Akademi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -145,11 +145,17 @@
       "match_no": "1",
       "home_team": "Alaağaç Spor U18",
       "away_team": "Saraçhane 54 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "27-25",
+        "22-25",
+        "25-20",
+        "6-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408237",
@@ -339,5 +345,5 @@
     }
   ],
   "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-19T19:16:03.148293"
+  "volleybox_sync_updated_at": "2026-10-20T14:57:34.448998"
 }
