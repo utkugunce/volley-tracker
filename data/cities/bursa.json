@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-19T19:14:06.306893+00:00",
+  "updated_at": "2026-10-21T07:27:33.285364+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 42,
+  "total_matches": 55,
   "source": "https://bursa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -58,17 +58,17 @@
       {
         "rank": 3,
         "team": "Bursa Fethiye 1973 Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
+        "points": 3,
+        "sets_won": 4,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Bursa Ayyıldız Spor Kulübü U18",
+        "team": "Oksijen Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -79,13 +79,13 @@
       },
       {
         "rank": 5,
-        "team": "Oksijen Spor Kulübü U18",
-        "played": 0,
+        "team": "Bursa Ayyıldız Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -206,17 +206,6 @@
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Doruk Voleybol Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
         "team": "Nilüfer Belediyespor Eker",
         "played": 1,
         "won": 1,
@@ -227,13 +216,24 @@
         "form": []
       },
       {
+        "rank": 2,
+        "team": "Doruk Voleybol Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
         "rank": 3,
         "team": "Osmangazi Belediyespor U18",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 3,
         "form": []
       },
@@ -673,11 +673,15 @@
       "match_no": "3",
       "home_team": "Oksijen Spor Kulübü U18",
       "away_team": "Bursa Fethiye 1973 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "7-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1151,11 +1155,15 @@
       "match_no": "3",
       "home_team": "Osmangazi Belediyespor U18",
       "away_team": "Doruk Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-17",
+        "28-26"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1481,7 +1489,109 @@
       }
     },
     {
-      "id": "bursa-20260926-023",
+      "id": "bursa-20261026-023",
+      "city": "Bursa",
+      "date": "2026-10-26",
+      "time": "20:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "7",
+      "home_team": "Bursa Koç Spor Kulübü U16",
+      "away_team": "Güner Karakaya Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261027-024",
+      "city": "Bursa",
+      "date": "2026-10-27",
+      "time": "18:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "8",
+      "home_team": "Aktif Nesil Spor Kulübü U16",
+      "away_team": "MG Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261027-025",
+      "city": "Bursa",
+      "date": "2026-10-27",
+      "time": "19:00",
+      "hall": "Orhangazi",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "9",
+      "home_team": "Eker Spor Kulübü - A U16",
+      "away_team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20260926-026",
       "city": "Bursa",
       "date": "2026-09-26",
       "time": "18:00",
@@ -1526,7 +1636,7 @@
       }
     },
     {
-      "id": "bursa-20260930-024",
+      "id": "bursa-20260930-027",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "18:00",
@@ -1571,7 +1681,7 @@
       }
     },
     {
-      "id": "bursa-20261001-025",
+      "id": "bursa-20261001-028",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:00",
@@ -1616,7 +1726,7 @@
       }
     },
     {
-      "id": "bursa-20261015-026",
+      "id": "bursa-20261015-029",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -1662,7 +1772,7 @@
       }
     },
     {
-      "id": "bursa-20261015-027",
+      "id": "bursa-20261015-030",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -1707,7 +1817,7 @@
       }
     },
     {
-      "id": "bursa-20261016-028",
+      "id": "bursa-20261016-031",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "20:00",
@@ -1752,7 +1862,109 @@
       }
     },
     {
-      "id": "bursa-20260928-029",
+      "id": "bursa-20261027-032",
+      "city": "Bursa",
+      "date": "2026-10-27",
+      "time": "20:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "7",
+      "home_team": "Eker Spor Kulübü - B U16",
+      "away_team": "23 Nisan Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261028-033",
+      "city": "Bursa",
+      "date": "2026-10-28",
+      "time": "16:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "8",
+      "home_team": "Öncü Yıldız Spor Kulübü U16",
+      "away_team": "Bursa Fethiye 1973 Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261029-034",
+      "city": "Bursa",
+      "date": "2026-10-29",
+      "time": "14:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "9",
+      "home_team": "Doruk Voleybol Spor Kulübü U16",
+      "away_team": "Bursa Genç Saray Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20260928-035",
       "city": "Bursa",
       "date": "2026-09-28",
       "time": "20:00",
@@ -1797,7 +2009,7 @@
       }
     },
     {
-      "id": "bursa-20261001-030",
+      "id": "bursa-20261001-036",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -1842,7 +2054,7 @@
       }
     },
     {
-      "id": "bursa-20261004-031",
+      "id": "bursa-20261004-037",
       "city": "Bursa",
       "date": "2026-10-04",
       "time": "19:30",
@@ -1888,7 +2100,7 @@
       }
     },
     {
-      "id": "bursa-20261011-032",
+      "id": "bursa-20261011-038",
       "city": "Bursa",
       "date": "2026-10-11",
       "time": "19:30",
@@ -1934,7 +2146,7 @@
       }
     },
     {
-      "id": "bursa-20261014-033",
+      "id": "bursa-20261014-039",
       "city": "Bursa",
       "date": "2026-10-14",
       "time": "20:00",
@@ -1980,7 +2192,7 @@
       }
     },
     {
-      "id": "bursa-20261015-034",
+      "id": "bursa-20261015-040",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -2025,7 +2237,109 @@
       }
     },
     {
-      "id": "bursa-20260930-035",
+      "id": "bursa-20261024-041",
+      "city": "Bursa",
+      "date": "2026-10-24",
+      "time": "19:00",
+      "hall": "Mudanya",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "7",
+      "home_team": "Mesut Kökel Spor Kulübü U16",
+      "away_team": "Hk Volleyball Academy Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261028-042",
+      "city": "Bursa",
+      "date": "2026-10-28",
+      "time": "14:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "8",
+      "home_team": "Nilüfer Belediyespor - B U16",
+      "away_team": "Bursa Ayyıldız Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261029-043",
+      "city": "Bursa",
+      "date": "2026-10-29",
+      "time": "16:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "9",
+      "home_team": "Oksijen Spor Kulübü U16",
+      "away_team": "Bursa Osmangazi Belediye Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20260930-044",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "20:00",
@@ -2070,7 +2384,7 @@
       }
     },
     {
-      "id": "bursa-20261001-036",
+      "id": "bursa-20261001-045",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -2115,7 +2429,7 @@
       }
     },
     {
-      "id": "bursa-20261012-037",
+      "id": "bursa-20261012-046",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "18:00",
@@ -2162,7 +2476,7 @@
       }
     },
     {
-      "id": "bursa-20261016-038",
+      "id": "bursa-20261016-047",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "18:00",
@@ -2207,7 +2521,75 @@
       }
     },
     {
-      "id": "bursa-20261001-039",
+      "id": "bursa-20261026-048",
+      "city": "Bursa",
+      "date": "2026-10-26",
+      "time": "18:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "5",
+      "home_team": "DSİ Nilüfer Spor Kulübü U16",
+      "away_team": "Akademi16 Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261028-049",
+      "city": "Bursa",
+      "date": "2026-10-28",
+      "time": "18:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "6",
+      "home_team": "Nilüfer Olimpik Spor Kulübü U16",
+      "away_team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261001-050",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -2252,7 +2634,7 @@
       }
     },
     {
-      "id": "bursa-20261001-040",
+      "id": "bursa-20261001-051",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -2299,7 +2681,7 @@
       }
     },
     {
-      "id": "bursa-20261012-041",
+      "id": "bursa-20261012-052",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "19:00",
@@ -2346,7 +2728,7 @@
       }
     },
     {
-      "id": "bursa-20261015-042",
+      "id": "bursa-20261015-053",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -2389,8 +2771,76 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "bursa-20261024-054",
+      "city": "Bursa",
+      "date": "2026-10-24",
+      "time": "13:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "E Grubu",
+      "match_no": "5",
+      "home_team": "Nilüfer Belediyespor Eker (A)",
+      "away_team": "Kestel Belediye 1952 Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261029-055",
+      "city": "Bursa",
+      "date": "2026-10-29",
+      "time": "18:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "E Grubu",
+      "match_no": "6",
+      "home_team": "Bursa Büyükşehir Belediyespor U16",
+      "away_team": "Hürriyet Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-19T19:16:03.175167"
+  "volleybox_sync_updated_at": "2026-10-21T07:29:25.652174"
 }

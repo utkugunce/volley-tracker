@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-19T10:26:06.256256+03:00",
+  "updated_at": "2026-10-21T07:27:33.285364+00:00",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 15,
+  "total_matches": 14,
   "source": "https://mersin.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -730,42 +730,8 @@
           "has_diff": false
         }
       }
-    },
-    {
-      "id": "mersin-20261023-015",
-      "city": "Mersin",
-      "date": "2026-10-23",
-      "time": "19:00",
-      "hall": "Mersinli Ahmet S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "15",
-      "home_team": "MEV Toros Spor Kulübü U18",
-      "away_team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-10-19T10:31:34.421849"
+  "volleybox_sync_updated_at": "2026-10-21T07:29:25.672188"
 }
