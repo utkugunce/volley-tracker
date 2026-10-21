@@ -50,7 +50,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
   const isPostponed = match.status === "postponed";
   const formattedDate = formatCompactMatchDate(match.date);
   const discrepancy = match.volleybox?.discrepancy;
-  const hasDiscrepancy = Boolean(discrepancy?.has_diff);
+  const hasDiscrepancy = Boolean(discrepancy?.has_diff) && !isFinished;
 
   const homeScore = match.home_score;
   const awayScore = match.away_score;
@@ -100,11 +100,11 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
       <div className="w-[74px] shrink-0 flex flex-col justify-center items-start leading-tight pr-1.5 border-r border-line/40">
         <span
           className={`font-mono font-scoreboard tabular-nums text-[11px] font-semibold px-1 py-0.5 rounded ${
-            discrepancy?.time_diff
+            !isFinished && discrepancy?.time_diff
               ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
               : "text-ink"
           }`}
-          title={discrepancy?.time_diff ? discrepancy.details || "Saat Volleybox kaydından farklı" : undefined}
+          title={!isFinished && discrepancy?.time_diff ? discrepancy.details || "Saat Volleybox kaydından farklı" : undefined}
         >
           {match.time || "--:--"}
         </span>
@@ -112,11 +112,11 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
         {/* Tarih (Biten, canlı, ertelenen veya planlanan tüm maçlarda gösterilir) */}
         <span
           className={`font-mono tabular-nums text-[9px] font-medium px-1 py-0.5 rounded ${
-            discrepancy?.date_diff
+            !isFinished && discrepancy?.date_diff
               ? "bg-amber-500/15 border border-amber-400/50 text-amber-200"
               : "text-ink-2"
           }`}
-          title={discrepancy?.date_diff ? discrepancy.details || "Tarih Volleybox kaydından farklı" : undefined}
+          title={!isFinished && discrepancy?.date_diff ? discrepancy.details || "Tarih Volleybox kaydından farklı" : undefined}
         >
           {formattedDate}
         </span>
@@ -144,17 +144,17 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           </span>
         ) : null}
 
-        {discrepancy?.date_diff && discrepancy.vb_date && (
+        {!isFinished && discrepancy?.date_diff && discrepancy.vb_date && (
           <span className="mt-0.5 rounded border border-amber-500/30 bg-amber-950/70 px-1 text-[8px] font-semibold text-amber-300">
             VB {discrepancy.vb_date.slice(5)}
           </span>
         )}
-        {discrepancy?.time_diff && discrepancy.vb_time && (
+        {!isFinished && discrepancy?.time_diff && discrepancy.vb_time && (
           <span className="mt-0.5 rounded border border-amber-500/30 bg-amber-950/70 px-1 text-[8px] font-semibold text-amber-300">
             VB {discrepancy.vb_time}
           </span>
         )}
-        {(isLive || isFinished || isPostponed) && discrepancy?.date_diff && discrepancy.vb_date && (
+        {!isFinished && (isLive || isPostponed) && discrepancy?.date_diff && discrepancy.vb_date && (
           <span className="mt-0.5 rounded border border-amber-500/40 bg-amber-500/15 px-1 text-[8px] font-semibold text-amber-200">
             {match.date?.slice(5)} / VB {discrepancy.vb_date.slice(5)}
           </span>
@@ -218,16 +218,16 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                 {match.hall && match.hall !== "TBD" && (
                   <span
                     className={`truncate ${
-                      discrepancy?.hall_diff
+                      !isFinished && discrepancy?.hall_diff
                         ? "inline-flex rounded border border-amber-400/40 bg-amber-500/10 px-1 text-amber-200 font-medium"
                         : "text-slate-400"
                     }`}
-                    title={discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}
+                    title={!isFinished && discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}
                   >
                     {match.hall}
                   </span>
                 )}
-                {discrepancy?.hall_diff && discrepancy.vb_hall && (
+                {!isFinished && discrepancy?.hall_diff && discrepancy.vb_hall && (
                   <span
                     className="truncate text-[8px] font-semibold leading-tight text-amber-300 shrink-0"
                     title={`Volleybox salonu: ${discrepancy.vb_hall}`}
@@ -245,11 +245,11 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                 </span>
               )}
               {mode === "fixtures" && match.hall && match.hall !== "TBD" && (
-                <span className={`truncate pl-6 text-[9px] leading-tight ${discrepancy?.hall_diff ? "inline-flex rounded border border-amber-400/40 bg-amber-500/10 px-1 text-amber-200" : "text-slate-500"}`} title={discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}>
+                <span className={`truncate pl-6 text-[9px] leading-tight ${!isFinished && discrepancy?.hall_diff ? "inline-flex rounded border border-amber-400/40 bg-amber-500/10 px-1 text-amber-200" : "text-slate-500"}`} title={!isFinished && discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}>
                   {match.hall}
                 </span>
               )}
-              {mode === "fixtures" && discrepancy?.hall_diff && discrepancy.vb_hall && (
+              {mode === "fixtures" && !isFinished && discrepancy?.hall_diff && discrepancy.vb_hall && (
                 <span className="truncate pl-6 text-[8px] font-semibold leading-tight text-amber-300" title={`Volleybox salonu: ${discrepancy.vb_hall}`}>
                   VB: {discrepancy.vb_hall}
                 </span>

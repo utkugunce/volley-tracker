@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T14:35:29.911891+03:00",
+  "updated_at": "2026-10-21T15:18:00.328143+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -297,14 +297,14 @@
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-20",
           "vb_time": "20:30",
           "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:00 / VB: 20:30)"
+          "details": null
         }
       }
     },
@@ -351,5 +351,5 @@
     }
   ],
   "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-21T14:40:52.264364"
+  "volleybox_sync_updated_at": "2026-10-21T15:23:53.369048"
 }

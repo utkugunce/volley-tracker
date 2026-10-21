@@ -62,7 +62,7 @@ export function getFixtureRowState(
   const formattedDate = formatRowDate(match.date);
   const isCopied = copiedId === match.id;
   const disc = match.volleybox?.discrepancy;
-  const hasDiff = Boolean(disc?.has_diff);
+  const hasDiff = Boolean(disc?.has_diff) && !isFinished;
   const forfeitInfo = getMatchForfeitInfo(match);
 
   const currentGroup = formatGroupName(match.group);

@@ -56,7 +56,7 @@ describe("CompactMatchRow", () => {
     expect(screen.getByLabelText("Test Ev rozeti")).toBeInTheDocument();
   });
 
-  it("boxes changed date, time, and hall values with the previous Volleybox values", () => {
+  it("boxes changed date, time, and hall values with the previous Volleybox values for upcoming matches", () => {
     const match = {
       id: "match-changed",
       home_team: "Test Ev",
@@ -64,7 +64,7 @@ describe("CompactMatchRow", () => {
       date: "2026-09-27",
       time: "14:00",
       hall: "Yeni Salon",
-      status: "finished",
+      status: "upcoming",
       volleybox: {
         discrepancy: {
           has_diff: true,
@@ -81,10 +81,42 @@ describe("CompactMatchRow", () => {
     const { container } = render(<CompactMatchRow match={match} mode="fixtures" />);
 
     expect(screen.getByText("VB 09-26")).toBeInTheDocument();
-    expect(screen.getByText("09-27 / VB 09-26")).toBeInTheDocument();
     expect(screen.getByText("VB 13:00")).toBeInTheDocument();
     expect(screen.getByText("VB: Eski Salon")).toBeInTheDocument();
     expect(container.querySelector("[data-match-row]")?.className).toContain("bg-amber-950/30");
+  });
+
+  it("does not show discrepancy badges or highlighting for finished matches even if discrepancy data exists", () => {
+    const finishedMatch = {
+      id: "match-changed-finished",
+      home_team: "Test Ev",
+      away_team: "Test Deplasman",
+      date: "2026-09-27",
+      time: "14:00",
+      hall: "Yeni Salon",
+      home_score: 3,
+      away_score: 0,
+      status: "finished",
+      volleybox: {
+        has_score: true,
+        discrepancy: {
+          has_diff: true,
+          date_diff: true,
+          time_diff: true,
+          hall_diff: true,
+          vb_date: "2026-09-26",
+          vb_time: "13:00",
+          vb_hall: "Eski Salon",
+        },
+      },
+    } as Match;
+
+    const { container } = render(<CompactMatchRow match={finishedMatch} mode="fixtures" />);
+
+    expect(screen.queryByText("VB 09-26")).not.toBeInTheDocument();
+    expect(screen.queryByText("VB 13:00")).not.toBeInTheDocument();
+    expect(screen.queryByText("VB: Eski Salon")).not.toBeInTheDocument();
+    expect(container.querySelector("[data-match-row]")?.className).not.toContain("bg-amber-950/30");
   });
 
   it("renders match date, time, and status for finished matches", () => {

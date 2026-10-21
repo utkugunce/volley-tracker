@@ -487,6 +487,27 @@ def check_discrepancy(tvf_match: Dict[str, Any], vb_match: Dict[str, Any]) -> Di
     vb_time = vb_match.get("time")
     vb_hall = vb_match.get("arena", "")
 
+    # 0. Eğer maçın skoru varsa veya oynanıp bittiyse (finished), bültendeki eski saat/tarih/salon farkı
+    # kullanıcı için düzeltilmesi gereken aktif bir çelişki ("değişen maç") değildir.
+    is_finished = (
+        tvf_match.get("status") in ("finished", "BİTTİ", "bitti")
+        or (tvf_match.get("home_score") is not None and tvf_match.get("away_score") is not None)
+        or (tvf_match.get("score") and str(tvf_match.get("score")).strip() not in ("- : -", "-:-", "", "vs", "TBD"))
+        or vb_match.get("has_score", False)
+        or (vb_match.get("score") and str(vb_match.get("score")).strip() not in ("- : -", "-:-", "", "vs"))
+    )
+    if is_finished:
+        return {
+            "has_diff": False,
+            "date_diff": False,
+            "time_diff": False,
+            "hall_diff": False,
+            "vb_date": vb_date or None,
+            "vb_time": vb_time if vb_time != "00:00" else None,
+            "vb_hall": vb_hall or None,
+            "details": None
+        }
+
     date_diff = False
     time_diff = False
     hall_diff = False
@@ -503,7 +524,13 @@ def check_discrepancy(tvf_match: Dict[str, Any], vb_match: Dict[str, Any]) -> Di
         details_list.append(f"Saat Değişti (TVF: {tvf_time} / VB: {vb_time})")
 
     # 3. Salon / Yer farkı
-    if tvf_hall and tvf_hall not in ("TBD", "Belirtilmedi", "-") and vb_hall:
+    placeholder_halls = {
+        "tbd", "belirtilmedi", "-", "", "açıklanacak", "aciklanacak",
+        "daha sonra açıklanacak", "daha sonra aciklanacak", "belli değil", "belli degil"
+    }
+    tvf_hall_clean = (tvf_hall or "").lower().strip()
+    vb_hall_clean = (vb_hall or "").lower().strip()
+    if tvf_hall and tvf_hall_clean not in placeholder_halls and vb_hall and vb_hall_clean not in placeholder_halls:
         if not halls_match(tvf_hall, vb_hall):
             hall_diff = True
             details_list.append(f"Salon Değişti (TVF: {tvf_hall} / VB: {vb_hall})")
@@ -877,7 +904,11 @@ def sync_kadinlar_2_lig_matches(
             "away_team": t_b,
             "date": d_str,
             "time": m.get("saat", ""),
-            "hall": m.get("salon", "")
+            "hall": m.get("salon", ""),
+            "status": m.get("durum", ""),
+            "score": m.get("skor", ""),
+            "home_score": m.get("ev_skor"),
+            "away_score": m.get("dep_skor")
         }
 
         # Takımın bilinen volleybox_name'i varsa alias setine ekle

@@ -33374,14 +33374,14 @@
             "vb_time": "16:00",
             "vb_hall": "Hatay Merkez Spor Salonu",
             "discrepancy": {
-              "has_diff": true,
-              "date_diff": true,
+              "has_diff": false,
+              "date_diff": false,
               "time_diff": false,
-              "hall_diff": true,
+              "hall_diff": false,
               "vb_date": "2026-10-18",
               "vb_time": "16:00",
               "vb_hall": "Hatay Merkez Spor Salonu",
-              "details": "Tarih Değişti (TVF: 2026-10-17 / VB: 2026-10-18) | Salon Değişti (TVF: İSKENDERUN SPOR SALONU / VB: Hatay Merkez Spor Salonu)"
+              "details": null
             }
           }
         },
@@ -36015,14 +36015,14 @@
             "vb_time": "13:00",
             "vb_hall": "Recep Kara Spor Salonu",
             "discrepancy": {
-              "has_diff": true,
+              "has_diff": false,
               "date_diff": false,
-              "time_diff": true,
+              "time_diff": false,
               "hall_diff": false,
               "vb_date": "2026-10-18",
               "vb_time": "13:00",
               "vb_hall": "Recep Kara Spor Salonu",
-              "details": "Saat Değişti (TVF: 17:00 / VB: 13:00)"
+              "details": null
             }
           }
         },
@@ -39327,14 +39327,14 @@
             "vb_time": "13:00",
             "vb_hall": "Malatya Merkez Spor Salonu",
             "discrepancy": {
-              "has_diff": true,
+              "has_diff": false,
               "date_diff": false,
               "time_diff": false,
-              "hall_diff": true,
+              "hall_diff": false,
               "vb_date": "2026-10-18",
               "vb_time": "13:00",
               "vb_hall": "Malatya Merkez Spor Salonu",
-              "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
+              "details": null
             }
           }
         },
@@ -39378,14 +39378,14 @@
             "vb_time": "15:00",
             "vb_hall": "Malatya Merkez Spor Salonu",
             "discrepancy": {
-              "has_diff": true,
+              "has_diff": false,
               "date_diff": false,
               "time_diff": false,
-              "hall_diff": true,
+              "hall_diff": false,
               "vb_date": "2026-10-18",
               "vb_time": "15:00",
               "vb_hall": "Malatya Merkez Spor Salonu",
-              "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
+              "details": null
             }
           }
         },
@@ -55563,14 +55563,14 @@
         "vb_time": "16:00",
         "vb_hall": "Hatay Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-18",
           "vb_time": "16:00",
           "vb_hall": "Hatay Merkez Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-17 / VB: 2026-10-18) | Salon Değişti (TVF: İSKENDERUN SPOR SALONU / VB: Hatay Merkez Spor Salonu)"
+          "details": null
         }
       }
     },
@@ -56481,14 +56481,14 @@
         "vb_time": "13:00",
         "vb_hall": "Malatya Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-18",
           "vb_time": "13:00",
           "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
+          "details": null
         }
       }
     },
@@ -57399,14 +57399,14 @@
         "vb_time": "15:00",
         "vb_hall": "Malatya Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-18",
           "vb_time": "15:00",
           "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": "Salon Değişti (TVF: MUHAMMED ALİ CLAY SPOR SALONU / VB: Malatya Merkez Spor Salonu)"
+          "details": null
         }
       }
     },
@@ -58215,14 +58215,14 @@
         "vb_time": "13:00",
         "vb_hall": "Recep Kara Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-18",
           "vb_time": "13:00",
           "vb_hall": "Recep Kara Spor Salonu",
-          "details": "Saat Değişti (TVF: 17:00 / VB: 13:00)"
+          "details": null
         }
       }
     },

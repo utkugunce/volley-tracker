@@ -64,9 +64,9 @@ export function computeVolleyboxStats(matches: Match[], todayStr: string): Volle
   const unscored = syncedMatches.filter(
     (m) => !m.volleybox?.has_score && isMatchOverdueForScore(m.volleybox?.vb_date || m.date, todayStr)
   ).length;
-  // Değişenler: İl bülteninde tarihi, saati veya salonu değişen maçlar
+  // Değişenler: İl bülteninde tarihi, saati veya salonu değişen maçlar (oynanmış/sonucu olan maçlar hariç)
   const discrepancy = syncedMatches.filter(
-    (m) => m.volleybox?.discrepancy?.has_diff
+    (m) => m.volleybox?.discrepancy?.has_diff && !isMatchScored(m) && m.status !== "finished"
   ).length;
   const unsynced = total - synced;
   const percent = total > 0 ? Math.round((synced / total) * 100) : 0;
@@ -145,10 +145,10 @@ export function filterFixtureMatches(matches: Match[], opts: FixtureFilterOption
     ) {
       return false;
     }
-    // Değişenler: İl temsilciliği bülteninde tarih, saat veya salonu değişenler
+    // Değişenler: İl temsilciliği bülteninde tarih, saat veya salonu değişenler (oynanmış/sonucu olan maçlar hariç)
     if (
       volleyboxFilter === "discrepancy" &&
-      (!m.volleybox?.synced || !m.volleybox?.discrepancy?.has_diff)
+      (!m.volleybox?.synced || !m.volleybox?.discrepancy?.has_diff || isMatchScored(m) || m.status === "finished")
     ) {
       return false;
     }
@@ -226,7 +226,7 @@ export function filterResultMatches(matches: Match[], opts: ResultFilterOptions)
     if (volleyboxFilter === "unsynced" && m.volleybox?.synced) {
       return false;
     }
-    if (volleyboxFilter === "discrepancy" && (!m.volleybox?.synced || !m.volleybox?.discrepancy?.has_diff)) {
+    if (volleyboxFilter === "discrepancy") {
       return false;
     }
 

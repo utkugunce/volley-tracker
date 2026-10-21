@@ -336,7 +336,7 @@ export const MatchCenterDrawer: React.FC<MatchCenterDrawerProps> = ({
                     </a>
                   )}
                 </div>
-                {match.volleybox.discrepancy?.has_diff && (
+                {match.volleybox.discrepancy?.has_diff && !isFinished && (
                   <div className="p-2.5 rounded-xl bg-amber-950/60 border border-amber-700/60 text-amber-300 text-xs flex items-center gap-2">
                     <AlertTriangle size={15} className="text-amber-400 shrink-0" />
                     <span>

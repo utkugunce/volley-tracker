@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-21T14:35:29.911891+03:00",
+  "updated_at": "2026-10-21T15:18:00.328143+03:00",
   "total_cities": 81,
   "active_cities": 38,
-  "total_matches": 1512,
+  "total_matches": 1532,
   "cities": [
     {
       "ilid": "1",
@@ -510,9 +510,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (10 Maç Mevcut)",
-      "matches_count": 10,
-      "standings_count": 2,
+      "status": "Aktif (30 Maç Mevcut)",
+      "matches_count": 30,
+      "standings_count": 3,
       "data_file": "data/cities/nigde.json"
     },
     {
@@ -600,7 +600,7 @@
       "name": "Tokat",
       "slug": "tokat",
       "url": "https://tokat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -661,7 +661,7 @@
       "name": "Yozgat",
       "slug": "yozgat",
       "url": "https://yozgat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -691,7 +691,7 @@
       "name": "Bayburt",
       "slug": "bayburt",
       "url": "https://bayburt.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -701,7 +701,7 @@
       "name": "Karaman",
       "slug": "karaman",
       "url": "https://karaman.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -732,7 +732,7 @@
       "name": "Şırnak",
       "slug": "sirnak",
       "url": "https://sirnak.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

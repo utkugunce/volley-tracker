@@ -134,23 +134,26 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
     let discrepancy = 0;
 
     matches.forEach((m) => {
+      const isSynced = isKadinlar2LigMatchSynced(m);
+      const hasScore = Boolean(
+        m.volleybox?.has_score ||
+        (m.volleybox?.score && m.volleybox.score.includes("-") && m.volleybox.score !== "- : -") ||
+        (m.skor && m.skor.includes("-") && m.skor !== "- : -")
+      );
+      const isFinished = m.durum === "BİTTİ";
+      const isFinishedOrScored = hasScore || isFinished;
+
       const hasDiff = Boolean(
-        m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff
+        (m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff) && !isFinishedOrScored
       );
       if (hasDiff) {
         discrepancy++;
       }
 
-      const isSynced = isKadinlar2LigMatchSynced(m);
       if (!isSynced) {
         unsynced++;
         return;
       }
-
-      const hasScore = Boolean(
-        m.volleybox?.has_score ||
-        (m.volleybox?.score && m.volleybox.score.includes("-") && m.volleybox.score !== "- : -")
-      );
 
       if (hasScore) {
         scored++;
@@ -209,12 +212,15 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
       const isSynced = isKadinlar2LigMatchSynced(m);
       const isScored = Boolean(
         m.volleybox?.has_score ||
-        (m.volleybox?.score && m.volleybox.score.includes("-") && m.volleybox.score !== "- : -")
+        (m.volleybox?.score && m.volleybox.score.includes("-") && m.volleybox.score !== "- : -") ||
+        (m.skor && m.skor.includes("-") && m.skor !== "- : -")
       );
+      const isFinished = m.durum === "BİTTİ";
+      const isFinishedOrScored = isScored || isFinished;
       const isoDate = m.volleybox?.vb_date || normalizeK2Date(m.tarih);
       const isOverdue = isMatchOverdueForScore(isoDate, todayIso);
       const hasDiscrepancy = Boolean(
-        m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff
+        (m.discrepancy?.has_diff || m.volleybox?.discrepancy?.has_diff) && !isFinishedOrScored
       );
 
       if (volleyboxFilter === "scored" && (!isSynced || !isScored)) return false;
