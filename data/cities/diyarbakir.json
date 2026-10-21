@@ -1,0 +1,318 @@
+{
+  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "city": "Diyarbakır",
+  "slug": "diyarbakir",
+  "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 6,
+  "source": "https://diyarbakir.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü",
+      "Bağlar Spor Kompleksi",
+      "Şehitlik"
+    ]
+  },
+  "standings": {
+    "Genç Kızlar 1. Ligi - Genç Kadın": [
+      {
+        "rank": 1,
+        "team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Diyarbakır Dicle Üniversitesi Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Diyarbakır Gençlik Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Diyarbakır İçkale Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Diyarbakır Sur Amed Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Megaron İnşaat Diyarbakır Spor",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Voleybolcular Spor Kulübü",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "diyarbakir-20261023-001",
+      "city": "Diyarbakır",
+      "date": "2026-10-23",
+      "time": "18:00",
+      "hall": "Bağlar Spor Kompleksi",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "1",
+      "home_team": "Voleybolcular Spor Kulübü",
+      "away_team": "Diyarbakır Gençlik Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261023-002",
+      "city": "Diyarbakır",
+      "date": "2026-10-23",
+      "time": "20:00",
+      "hall": "Bağlar Spor Kompleksi",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "2",
+      "home_team": "Diyarbakır Dicle Üniversitesi Spor Kulübü",
+      "away_team": "Diyarbakır İçkale Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261024-003",
+      "city": "Diyarbakır",
+      "date": "2026-10-24",
+      "time": "12:00",
+      "hall": "Şehitlik",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "3",
+      "home_team": "Diyarbakır İçkale Spor Kulübü",
+      "away_team": "Diyarbakır Sur Amed Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261024-004",
+      "city": "Diyarbakır",
+      "date": "2026-10-24",
+      "time": "14:00",
+      "hall": "Şehitlik",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "4",
+      "home_team": "Voleybolcular Spor Kulübü",
+      "away_team": "Diyarbakır Dicle Üniversitesi Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261025-005",
+      "city": "Diyarbakır",
+      "date": "2026-10-25",
+      "time": "15:00",
+      "hall": "Şehitlik",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "5",
+      "home_team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+      "away_team": "Diyarbakır Dicle Üniversitesi Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261025-006",
+      "city": "Diyarbakır",
+      "date": "2026-10-25",
+      "time": "17:00",
+      "hall": "Şehitlik",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "6",
+      "home_team": "Diyarbakır Gençlik Spor Kulübü",
+      "away_team": "Megaron İnşaat Diyarbakır Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-10-21T13:42:43.312725"
+}

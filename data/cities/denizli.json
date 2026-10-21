@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T11:01:59.157773+03:00",
+  "updated_at": "2026-10-21T13:37:03.660757+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -157,7 +157,7 @@
       },
       {
         "rank": 3,
-        "team": "Pınar Baha Abalıoğlu Anadolu Lisesi",
+        "team": "Nevzat Karaalp Anadolu Lisesi",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -168,29 +168,29 @@
       },
       {
         "rank": 4,
-        "team": "Özel Denizli Ekobilim Koleji Anadolu Lisesi",
+        "team": "Pınar Baha Abalıoğlu Anadolu Lisesi",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Özel Doğru Referans Anadolu Lisesi",
+        "team": "Özel Denizli (Mba) Anadolu Lisesi",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Özel Denizli Fen Bilimleri Ak.And.Lis.",
+        "team": "Nalan Kaynak Anadolu Lisesi",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -201,6 +201,50 @@
       },
       {
         "rank": 7,
+        "team": "Özel Denizli Ekobilim Koleji Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Özel Denizli Uğur Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 9,
+        "team": "Özel Doğru Referans Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 10,
+        "team": "Özel Denizli Fen Bilimleri Ak.And.Lis.",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 11,
         "team": "15 Temmuz Şehitler Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -211,7 +255,7 @@
         "form": []
       },
       {
-        "rank": 8,
+        "rank": 12,
         "team": "Anafartalar Ticaret Mtal",
         "played": 0,
         "won": 0,
@@ -222,7 +266,7 @@
         "form": []
       },
       {
-        "rank": 9,
+        "rank": 13,
         "team": "Aydem Fen Lisesi",
         "played": 0,
         "won": 0,
@@ -233,7 +277,7 @@
         "form": []
       },
       {
-        "rank": 10,
+        "rank": 14,
         "team": "Cumhuriyet Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -244,7 +288,7 @@
         "form": []
       },
       {
-        "rank": 11,
+        "rank": 15,
         "team": "Denizli Bozkurt Spor Lisesi",
         "played": 0,
         "won": 0,
@@ -255,7 +299,7 @@
         "form": []
       },
       {
-        "rank": 12,
+        "rank": 16,
         "team": "Denizli Lisesi",
         "played": 0,
         "won": 0,
@@ -266,7 +310,7 @@
         "form": []
       },
       {
-        "rank": 13,
+        "rank": 17,
         "team": "Erbakır Fen Lisesi",
         "played": 0,
         "won": 0,
@@ -277,7 +321,7 @@
         "form": []
       },
       {
-        "rank": 14,
+        "rank": 18,
         "team": "Filiz Abalıoğlu Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -288,7 +332,7 @@
         "form": []
       },
       {
-        "rank": 15,
+        "rank": 19,
         "team": "Güngör Aslan Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -299,7 +343,7 @@
         "form": []
       },
       {
-        "rank": 16,
+        "rank": 20,
         "team": "Hasan Tekin Ada Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -310,7 +354,7 @@
         "form": []
       },
       {
-        "rank": 17,
+        "rank": 21,
         "team": "Hilmi Özcan Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -321,7 +365,7 @@
         "form": []
       },
       {
-        "rank": 18,
+        "rank": 22,
         "team": "Himmet Nimet Özçelik Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -332,7 +376,7 @@
         "form": []
       },
       {
-        "rank": 19,
+        "rank": 23,
         "team": "Irlıganlı Şehit Süleyman Acar Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -343,7 +387,7 @@
         "form": []
       },
       {
-        "rank": 20,
+        "rank": 24,
         "team": "Naile Mehmet Ali Uyanık Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -354,29 +398,7 @@
         "form": []
       },
       {
-        "rank": 21,
-        "team": "Nalan Kaynak Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 22,
-        "team": "Nevzat Karaalp Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 23,
+        "rank": 25,
         "team": "Odtü Gvo Özel Denizli Okulları",
         "played": 0,
         "won": 0,
@@ -387,7 +409,7 @@
         "form": []
       },
       {
-        "rank": 24,
+        "rank": 26,
         "team": "Oya Ender Abalıoğlu Al",
         "played": 0,
         "won": 0,
@@ -398,7 +420,7 @@
         "form": []
       },
       {
-        "rank": 25,
+        "rank": 27,
         "team": "Özel Bilim Kampüs A.L.",
         "played": 0,
         "won": 0,
@@ -409,7 +431,7 @@
         "form": []
       },
       {
-        "rank": 26,
+        "rank": 28,
         "team": "Özel Bitek Koleji Mtal",
         "played": 0,
         "won": 0,
@@ -420,7 +442,7 @@
         "form": []
       },
       {
-        "rank": 27,
+        "rank": 29,
         "team": "Özel Çağdaş Atılım Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -431,18 +453,7 @@
         "form": []
       },
       {
-        "rank": 28,
-        "team": "Özel Denizli (Mba) Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 29,
+        "rank": 30,
         "team": "Özel Denizli İstek Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -453,19 +464,8 @@
         "form": []
       },
       {
-        "rank": 30,
-        "team": "Özel Denizli Koleji Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 31,
-        "team": "Özel Denizli Uğur Anadolu Lisesi",
+        "team": "Özel Denizli Koleji Anadolu Lisesi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1430,11 +1430,15 @@
       "match_no": "9",
       "home_team": "Özel Denizli Uğur Anadolu Lisesi",
       "away_team": "Nevzat Karaalp Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "3-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1532,11 +1536,15 @@
       "match_no": "12",
       "home_team": "Özel Denizli (Mba) Anadolu Lisesi",
       "away_team": "Nalan Kaynak Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-23",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3539,5 +3547,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-21T11:07:26.760238"
+  "volleybox_sync_updated_at": "2026-10-21T13:42:43.301269"
 }
