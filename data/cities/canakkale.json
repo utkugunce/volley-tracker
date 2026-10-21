@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T15:18:00.328143+03:00",
+  "updated_at": "2026-10-21T18:33:49.445439+00:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -248,45 +248,45 @@
       {
         "rank": 1,
         "team": "Çanakkale Belediyespor - B U16",
-        "played": 5,
-        "won": 5,
+        "played": 6,
+        "won": 6,
         "lost": 0,
-        "points": 15,
-        "sets_won": 15,
-        "sets_lost": 1,
+        "points": 18,
+        "sets_won": 18,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Yeşil Bayramiç Spor Kulübü",
-        "played": 5,
+        "team": "Çanakkalespor U16",
+        "played": 6,
         "won": 4,
-        "lost": 1,
+        "lost": 2,
         "points": 12,
-        "sets_won": 12,
-        "sets_lost": 4,
+        "sets_won": 14,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Çanakkalespor U16",
-        "played": 5,
-        "won": 3,
+        "team": "Yeşil Bayramiç Spor Kulübü",
+        "played": 6,
+        "won": 4,
         "lost": 2,
-        "points": 9,
-        "sets_won": 11,
-        "sets_lost": 6,
+        "points": 12,
+        "sets_won": 13,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 4,
         "team": "Eceabat Spor Kulübü U16",
-        "played": 5,
+        "played": 6,
         "won": 2,
-        "lost": 3,
+        "lost": 4,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -1162,11 +1162,16 @@
       "match_no": "15",
       "home_team": "Çanakkale Belediyespor - B U16",
       "away_team": "Yeşil Bayramiç Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "26-24",
+        "25-18",
+        "23-25",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1196,11 +1201,15 @@
       "match_no": "16",
       "home_team": "Eceabat Spor Kulübü U16",
       "away_team": "Çanakkalespor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "14-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1986,5 +1995,5 @@
     }
   ],
   "volleybox_synced_matches": 25,
-  "volleybox_sync_updated_at": "2026-10-21T15:23:43.207597"
+  "volleybox_sync_updated_at": "2026-10-21T18:35:54.521926"
 }

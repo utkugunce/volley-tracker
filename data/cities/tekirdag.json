@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T15:18:00.328143+03:00",
+  "updated_at": "2026-10-21T18:33:49.445439+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -94,23 +94,23 @@
       {
         "rank": 1,
         "team": "Çorlu Belediyesi Spor Kulübü U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 1,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
         "team": "Kapaklı Site Spor - B U16",
-        "played": 3,
+        "played": 4,
         "won": 3,
-        "lost": 0,
+        "lost": 1,
         "points": 8,
-        "sets_won": 9,
-        "sets_lost": 3,
+        "sets_won": 10,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -1390,11 +1390,16 @@
       "match_no": "16",
       "home_team": "Kapaklı Site Spor - B U16",
       "away_team": "Çorlu Belediyesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "25-19",
+        "25-27",
+        "27-29"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3462,5 +3467,5 @@
     }
   ],
   "volleybox_synced_matches": 33,
-  "volleybox_sync_updated_at": "2026-10-21T15:23:55.780790"
+  "volleybox_sync_updated_at": "2026-10-21T18:35:54.556389"
 }

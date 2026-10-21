@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T15:18:00.328143+03:00",
+  "updated_at": "2026-10-21T18:33:49.445439+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -3605,18 +3605,18 @@
       }
     },
     {
-      "id": "izmir-20261026-055",
+      "id": "izmir-20261028-055",
       "city": "İzmir",
-      "date": "2026-10-26",
+      "date": "2026-10-28",
       "time": "--:--",
-      "hall": "Vali Hüseyin Öğütcen S",
+      "hall": "Menemen",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kız - A Gr",
       "match_no": "9",
-      "home_team": "Karşıyaka SK - B U18",
-      "away_team": "Bal Spor Kulübü U18",
+      "home_team": "Volkan Güç Spor Kulübü U18",
+      "away_team": "İZEGE Spor Kulübü - A U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -3643,46 +3643,12 @@
       "city": "İzmir",
       "date": "2026-10-28",
       "time": "--:--",
-      "hall": "Menemen",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kız - A Gr",
-      "match_no": "10",
-      "home_team": "Volkan Güç Spor Kulübü U18",
-      "away_team": "İZEGE Spor Kulübü - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "izmir-20261028-057",
-      "city": "İzmir",
-      "date": "2026-10-28",
-      "time": "--:--",
       "hall": "Vali Hüseyin Öğütcen S",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kız - A Gr",
-      "match_no": "11",
+      "match_no": "10",
       "home_team": "Uzay 35 Voleybol Kulübü - B U18",
       "away_team": "Monza Spor Kulübü U18",
       "score": "- : -",
@@ -3707,9 +3673,43 @@
       }
     },
     {
-      "id": "izmir-20261031-058",
+      "id": "izmir-20261030-057",
       "city": "İzmir",
-      "date": "2026-10-31",
+      "date": "2026-10-30",
+      "time": "--:--",
+      "hall": "Vali Hüseyin Öğütcen S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kız - A Gr",
+      "match_no": "11",
+      "home_team": "Karşıyaka SK - B U18",
+      "away_team": "Bal Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261101-058",
+      "city": "İzmir",
+      "date": "2026-11-01",
       "time": "--:--",
       "hall": "Menemen",
       "category": "Genç Kızlar 1. Ligi",
@@ -8213,5 +8213,5 @@
     }
   ],
   "volleybox_synced_matches": 134,
-  "volleybox_sync_updated_at": "2026-10-21T15:23:49.811774"
+  "volleybox_sync_updated_at": "2026-10-21T18:35:54.585817"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T15:18:00.328143+03:00",
+  "updated_at": "2026-10-21T18:33:49.445439+00:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -195,23 +195,23 @@
       {
         "rank": 3,
         "team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
         "team": "Karesi Hürriyet Spor U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -433,28 +433,17 @@
     "Yıldız Kızlar Süper Lig - E Grubu ( Marmara )": [
       {
         "rank": 1,
-        "team": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
-        "played": 2,
-        "won": 2,
+        "team": "Gönen Karşıyakaspor U16",
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Gönen Karşıyakaspor U16",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 3,
         "team": "Bandırma Voleybol Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -462,6 +451,17 @@
         "points": 6,
         "sets_won": 6,
         "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -603,11 +603,15 @@
       "match_no": "3",
       "home_team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
       "away_team": "Karesi Hürriyet Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-15",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1883,11 +1887,16 @@
       "match_no": "9",
       "home_team": "Gönen Karşıyakaspor U16",
       "away_team": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-27",
+        "25-20",
+        "25-15",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1940,5 +1949,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-21T15:23:42.386700"
+  "volleybox_sync_updated_at": "2026-10-21T18:35:54.600685"
 }
