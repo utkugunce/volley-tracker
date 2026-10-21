@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-21T07:27:33.285364+00:00",
+  "updated_at": "2026-10-21T11:01:59.157773+03:00",
   "total_cities": 81,
   "active_cities": 36,
-  "total_matches": 1511,
+  "total_matches": 1514,
   "cities": [
     {
       "ilid": "1",
@@ -170,8 +170,8 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (33 Maç Mevcut)",
-      "matches_count": 33,
+      "status": "Aktif (38 Maç Mevcut)",
+      "matches_count": 38,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
     },
@@ -330,8 +330,8 @@
       "name": "Mersin",
       "slug": "mersin",
       "url": "https://mersin.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (14 Maç Mevcut)",
-      "matches_count": 14,
+      "status": "Aktif (18 Maç Mevcut)",
+      "matches_count": 18,
       "standings_count": 1,
       "data_file": "data/cities/mersin.json"
     },
@@ -420,8 +420,8 @@
       "name": "Konya",
       "slug": "konya",
       "url": "https://konya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (26 Maç Mevcut)",
-      "matches_count": 26,
+      "status": "Aktif (20 Maç Mevcut)",
+      "matches_count": 20,
       "standings_count": 10,
       "data_file": "data/cities/konya.json"
     },
@@ -432,7 +432,7 @@
       "url": "https://kutahya.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (16 Maç Mevcut)",
       "matches_count": 16,
-      "standings_count": 2,
+      "standings_count": 1,
       "data_file": "data/cities/kutahya.json"
     },
     {

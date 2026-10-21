@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T14:55:46.077631+00:00",
+  "updated_at": "2026-10-21T11:01:59.157773+03:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -740,14 +740,14 @@
         "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-29",
           "vb_time": "19:15",
           "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 19:15)"
         }
       }
     },
@@ -863,14 +863,14 @@
         "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-05",
           "vb_time": "19:15",
           "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 19:15)"
         }
       }
     },
@@ -1027,14 +1027,14 @@
         "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-10",
           "vb_time": "19:15",
           "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 19:15)"
         }
       }
     },
@@ -2216,14 +2216,14 @@
         "vb_time": "19:15",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-22",
           "vb_time": "19:15",
           "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 19:15)"
         }
       }
     },
@@ -2885,5 +2885,5 @@
     }
   ],
   "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-10-20T14:57:34.485326"
+  "volleybox_sync_updated_at": "2026-10-21T11:07:35.621923"
 }

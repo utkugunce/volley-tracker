@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T04:36:51.123901+00:00",
+  "updated_at": "2026-10-21T11:01:59.157773+03:00",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -30,6 +30,17 @@
     "Genç Kızlar 1. Ligi - 1. Grup": [
       {
         "rank": 1,
+        "team": "Nicer Hotel Voleybol Kulübü",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "MALATYA VOLEYBOL SPOR KULÜBÜ A",
         "played": 3,
         "won": 3,
@@ -37,17 +48,6 @@
         "points": 9,
         "sets_won": 9,
         "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Nicer Hotel Voleybol Kulübü",
-        "played": 4,
-        "won": 3,
-        "lost": 1,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 4,
         "form": []
       },
       {
@@ -108,12 +108,12 @@
       {
         "rank": 8,
         "team": "Maldia Spor Kulübü A",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -223,92 +223,92 @@
     "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar C Grubu": [
       {
         "rank": 1,
-        "team": "Battalgazi Farabi Anadolu İmam Hatip Lisesi",
-        "played": 0,
-        "won": 0,
+        "team": "Fuat Sezgin Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 2,
+        "sets_won": 2,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Fuat Sezgin Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
+        "team": "Şehit Serdal Toprak Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 2,
+        "sets_won": 2,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
         "team": "Malatya Spor Lisesi",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
+        "lost": 1,
+        "points": 1,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Şehit Serdal Toprak Anadolu Lisesi",
-        "played": 0,
+        "team": "Battalgazi Farabi Anadolu İmam Hatip Lisesi",
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
+        "lost": 1,
+        "points": 1,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - Okul Sporları Genç Kızlar D Grubu": [
       {
         "rank": 1,
-        "team": "Beydağı Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
+        "team": "Özel Malatya Mektebim Koleji",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 2,
+        "sets_won": 2,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Özel Malatya Mektebim Koleji",
-        "played": 0,
-        "won": 0,
+        "team": "Şehriban Günata Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 2,
+        "sets_won": 2,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Şehriban Günata Anadolu Lisesi",
-        "played": 0,
+        "team": "Beydağı Anadolu Lisesi",
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
+        "lost": 1,
+        "points": 1,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 4,
         "team": "Ted Malatya Kolleji Özel Anadolu Lisesi",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
-        "points": 0,
+        "lost": 1,
+        "points": 1,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 2,
         "form": []
       }
     ],
@@ -1569,11 +1569,15 @@
       "match_no": "17",
       "home_team": "Maldia Spor Kulübü A",
       "away_team": "Nicer Hotel Voleybol Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "8-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2363,11 +2367,14 @@
       "match_no": "1",
       "home_team": "Fuat Sezgin Anadolu Lisesi",
       "away_team": "Battalgazi Farabi Anadolu İmam Hatip Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2397,11 +2404,14 @@
       "match_no": "2",
       "home_team": "Şehit Serdal Toprak Anadolu Lisesi",
       "away_team": "Malatya Spor Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2567,11 +2577,14 @@
       "match_no": "1",
       "home_team": "Şehriban Günata Anadolu Lisesi",
       "away_team": "Beydağı Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2601,11 +2614,14 @@
       "match_no": "2",
       "home_team": "Ted Malatya Kolleji Özel Anadolu Lisesi",
       "away_team": "Özel Malatya Mektebim Koleji",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 2",
+      "home_score": 0,
+      "away_score": 2,
+      "set_scores": [
+        "22-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3576,5 +3592,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-20T04:38:44.192864"
+  "volleybox_sync_updated_at": "2026-10-21T11:07:34.056587"
 }

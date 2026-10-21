@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T23:07:34.946879+00:00",
+  "updated_at": "2026-10-21T11:01:59.157773+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -2314,18 +2314,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "407987",
+        "url": "https://women.volleybox.net/tr/kemer-sarp-spor-kulubu-u16-nova-spor-kulubu-u16-c407987",
+        "host_name": "Kemer Sarp Spor Kulübü U16",
+        "guest_name": "Nova Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "10:30",
+        "vb_hall": "Kemer B.T.S.S Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "10:30",
+          "vb_hall": "Kemer B.T.S.S Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-15 / VB: 2026-11-07)"
         }
       }
     },
@@ -3483,6 +3490,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-10-20T23:09:26.134475"
+  "volleybox_synced_matches": 64,
+  "volleybox_sync_updated_at": "2026-10-21T11:07:25.689009"
 }

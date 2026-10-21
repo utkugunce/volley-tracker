@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T14:55:46.077631+00:00",
+  "updated_at": "2026-10-21T11:01:59.157773+03:00",
   "city": "Bilecik",
   "slug": "bilecik",
   "title": "TVF Bilecik Genç & Yıldız Kızlar Süper Lig",
@@ -33,51 +33,51 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Bozüyük Belediyesi Eğitim Ve Spor Kulübü",
-        "played": 1,
-        "won": 1,
+        "team": "Bayırköy Belediye Spor Kulübü",
+        "played": 0,
+        "won": 0,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 0,
+        "sets_won": 0,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Söğüt Spor",
-        "played": 1,
-        "won": 1,
+        "team": "Bilecik Voley 11",
+        "played": 0,
+        "won": 0,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 0,
+        "sets_won": 0,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Lefke Akademi Spor Kulübü",
-        "played": 1,
+        "team": "Bozüyük Belediyesi Eğitim Ve Spor Kulübü",
+        "played": 0,
         "won": 0,
-        "lost": 1,
+        "lost": 0,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Bayırköy Belediye Spor Kulübü",
-        "played": 1,
+        "team": "Lefke Akademi Spor Kulübü",
+        "played": 0,
         "won": 0,
-        "lost": 1,
+        "lost": 0,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Bilecik Voley 11",
+        "team": "Söğüt Spor",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -102,15 +102,11 @@
       "match_no": "1",
       "home_team": "Söğüt Spor",
       "away_team": "Lefke Akademi Spor Kulübü",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-19",
-        "25-9",
-        "25-10"
-      ],
-      "status": "finished",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
       "volleybox": {
         "synced": true,
         "match_id": "406649",
@@ -147,15 +143,11 @@
       "match_no": "2",
       "home_team": "Bayırköy Belediye Spor Kulübü",
       "away_team": "Bozüyük Belediyesi Eğitim Ve Spor Kulübü",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "7-25",
-        "10-25",
-        "9-25"
-      ],
-      "status": "finished",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
       "volleybox": {
         "synced": true,
         "match_id": "406650",
@@ -919,5 +911,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-20T14:57:34.425292"
+  "volleybox_sync_updated_at": "2026-10-21T11:07:26.169100"
 }

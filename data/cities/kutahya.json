@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T04:36:51.123901+00:00",
+  "updated_at": "2026-10-21T11:01:59.157773+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -27,63 +27,6 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - A Grubu": [
-      {
-        "rank": 1,
-        "team": "Kütahya Belediyespor U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kütahya Demirspor U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Tavşanlı Belediyesi Spor Kulübü - B U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Kütahya Gelişim Akademi 43 Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
@@ -145,15 +88,11 @@
       "match_no": "1",
       "home_team": "Kütahya Demirspor U18",
       "away_team": "Kütahya Belediyespor U18",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "16-25",
-        "20-25",
-        "21-25"
-      ],
-      "status": "finished",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
       "volleybox": {
         "synced": true,
         "match_id": "408159",
@@ -190,15 +129,11 @@
       "match_no": "2",
       "home_team": "Tavşanlı Belediyesi Spor Kulübü - B U18",
       "away_team": "Kütahya Demirspor U18",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "22-25",
-        "24-26",
-        "17-25"
-      ],
-      "status": "finished",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
       "volleybox": {
         "synced": true,
         "match_id": "408160",
@@ -798,5 +733,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-20T04:38:44.245434"
+  "volleybox_sync_updated_at": "2026-10-21T11:07:34.051092"
 }
