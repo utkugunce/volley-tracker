@@ -45,6 +45,13 @@ if (!authenticatedUser || authenticatedUser.role !== "admin") {
 }
 ```
 
+## 🚀 KURAL: Otomatik Commit & Push (Auto Commit-Push)
+
+> **UYGULAMA PRENSİBİ:**
+> Projede tamamlanan her hata düzeltmesi (bugfix), yeni özellik/UI geliştirmesi veya veri güncellemesi sonrasında (testler ve gerekli kontroller tamamlandıktan sonra) **KULLANICIDAN EK TALEP BEKLENMEKSİZİN DEĞİŞİKLİKLER OTOMATİK OLARAK COMMIT EDİLİP `origin/main`'E PUSH EDİLMELİDİR**.
+
+---
+
 ## �🚨 KURAL: 81 İli Çekme & Senkronizasyon (Scrape 81 Provinces)
 
 > **UYGULAMA PRENSİBİ:**
