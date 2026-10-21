@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -821,8 +821,8 @@
         "url": "https://women.volleybox.net/tr/alanya-mask-spor-kulubu-u18-antalya-simsek-gsk-u18-c402156",
         "host_name": "Alanya MASK Spor Kulübü U18",
         "guest_name": "Antalya Şimşek GSK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-17",
         "vb_time": "11:30",
         "vb_hall": "Alanya Atatürk Spor Salonu",
@@ -2083,8 +2083,8 @@
         "url": "https://women.volleybox.net/tr/antalya-ac-koleji-spor-kulubu-u16-elit-akdeniz-spor-kulubu-u16-c402158",
         "host_name": "Antalya Açı Koleji Spor Kulübü U16",
         "guest_name": "Elit Akdeniz Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "19:00",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -2128,8 +2128,8 @@
         "url": "https://women.volleybox.net/tr/kemer-sarp-spor-kulubu-u16-vera-spor-kulubu-u16-c402159",
         "host_name": "Kemer Sarp Spor Kulübü U16",
         "guest_name": "Vera Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-17",
         "vb_time": "11:00",
         "vb_hall": "Kemer B.T.S.S Spor Salonu",
@@ -3491,5 +3491,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-21T13:42:41.824182"
+  "volleybox_sync_updated_at": "2026-10-21T14:40:46.266453"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -893,8 +893,8 @@
         "url": "https://women.volleybox.net/tr/ted-balkesir-koleji-sk-u16-bandrma-voleybol-spor-kulubu-u16-c406630",
         "host_name": "TED Balıkesir Koleji SK U16",
         "guest_name": "Bandırma Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-15",
         "vb_time": "18:00",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -1266,18 +1266,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411151",
+        "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-b-u16-edremit-belediyesi-altnoluk-spor-kulubu-u16-c411151",
+        "host_name": "Ayvalıkgücü Belediye SK - B U16",
+        "guest_name": "Edremit Belediyesi Altınoluk Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "17:30",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "17:30",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1423,8 +1430,8 @@
         "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-u16-burhaniye-belediye-spor-kulubu-u16-c406640",
         "host_name": "Ayvalıkgücü Belediye SK U16",
         "guest_name": "Burhaniye Belediye Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-18",
         "vb_time": "16:00",
         "vb_hall": "Ayvalık Spor Salonu",
@@ -1763,8 +1770,8 @@
         "url": "https://women.volleybox.net/tr/gonen-karsyakaspor-u16-bandrma-voleybol-spor-kulubu-u16-c406647",
         "host_name": "Gönen Karşıyakaspor U16",
         "guest_name": "Bandırma Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-14",
         "vb_time": "19:00",
         "vb_hall": "Gönen Fahri Dilmaç Spor Salonu",
@@ -1932,6 +1939,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-21T13:42:42.365357"
+  "volleybox_synced_matches": 21,
+  "volleybox_sync_updated_at": "2026-10-21T14:40:46.598647"
 }

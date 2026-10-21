@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -1844,20 +1844,20 @@
         "url": "https://women.volleybox.net/tr/bursa-fethiye-1973-spor-kulubu-u16-bursa-genc-saray-spor-kulubu-u16-c406674",
         "host_name": "Bursa Fethiye 1973 Spor Kulübü - B U16",
         "guest_name": "Bursa Genç Saray Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-16",
-        "vb_time": "18:00",
+        "vb_time": "20:00",
         "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-16",
-          "vb_time": "18:00",
+          "vb_time": "20:00",
           "vb_hall": "Çekirge Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:00 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -2275,7 +2275,7 @@
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "14:00",
-      "hall": "Açıklanacak",
+      "hall": "Çekirge",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -2503,20 +2503,20 @@
         "url": "https://women.volleybox.net/tr/bursa-fethiye-1973-spor-kulubu-u16-ds-nilufer-spor-kulubu-u16-c406680",
         "host_name": "Bursa Fethiye 1973 Spor Kulübü U16",
         "guest_name": "DSİ Nilüfer Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-16",
-        "vb_time": "20:00",
+        "vb_time": "18:00",
         "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-16",
-          "vb_time": "20:00",
+          "vb_time": "18:00",
           "vb_hall": "Çekirge Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 20:00)"
+          "details": null
         }
       }
     },
@@ -2842,5 +2842,5 @@
     }
   ],
   "volleybox_synced_matches": 34,
-  "volleybox_sync_updated_at": "2026-10-21T13:42:42.847331"
+  "volleybox_sync_updated_at": "2026-10-21T14:40:46.884597"
 }

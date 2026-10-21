@@ -146,6 +146,7 @@ export const FixturesTab: React.FC<FixturesTabProps> = ({
         <Virtuoso
           useWindowScroll
           data={fixturesByCity}
+          computeItemKey={(_, cityGroup) => cityGroup.city}
           increaseViewportBy={{ top: 600, bottom: 900 }}
           itemContent={(_, cityGroup) => {
             const isCityCollapsed = Boolean(cityCollapse.collapsed[cityGroup.city]);

@@ -201,6 +201,7 @@ export const ResultsTab: React.FC<ResultsTabProps> = ({
         <Virtuoso
           useWindowScroll
           data={resultsByCityAndLeague}
+          computeItemKey={(_, cityGroup) => cityGroup.city}
           increaseViewportBy={{ top: 600, bottom: 900 }}
           itemContent={(_, cityGroup) => {
             const isCityCollapsed = Boolean(cityCollapse.collapsed[cityGroup.city]);

@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
   "total_cities": 81,
-  "active_cities": 37,
-  "total_matches": 1527,
+  "active_cities": 38,
+  "total_matches": 1512,
   "cities": [
     {
       "ilid": "1",
@@ -320,10 +320,10 @@
       "name": "Isparta",
       "slug": "isparta",
       "url": "https://isparta.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (5 Maç Mevcut)",
+      "matches_count": 5,
+      "standings_count": 5,
+      "data_file": "data/cities/isparta.json"
     },
     {
       "ilid": "33",
@@ -510,9 +510,9 @@
       "name": "Niğde",
       "slug": "nigde",
       "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
+      "standings_count": 2,
       "data_file": "data/cities/nigde.json"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
   "city": "Bilecik",
   "slug": "bilecik",
   "title": "TVF Bilecik Genç & Yıldız Kızlar Süper Lig",
@@ -117,8 +117,8 @@
         "url": "https://women.volleybox.net/tr/sogut-spor-u18-lefke-akademi-spor-kulubu-u18-c406649",
         "host_name": "Söğüt Spor U18",
         "guest_name": "Lefke Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-17",
         "vb_time": "13:00",
         "vb_hall": "Söğüt Spor Salonu",
@@ -162,8 +162,8 @@
         "url": "https://women.volleybox.net/tr/bayrkoy-spor-kulubu-u18-bozuyuk-belediyesi-egitim-spor-kulubu-u18-c406650",
         "host_name": "Bayırköy Spor Kulübü U18",
         "guest_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-17",
         "vb_time": "16:00",
         "vb_hall": "Bayırköy Spor Salonu",
@@ -919,5 +919,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-21T13:42:42.408690"
+  "volleybox_sync_updated_at": "2026-10-21T14:40:46.639867"
 }

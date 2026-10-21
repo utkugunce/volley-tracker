@@ -56,7 +56,6 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
   return (
     <div
       className="rounded-xl border border-line bg-surface-muted overflow-hidden shadow-sm"
-      style={{ contentVisibility: "auto", containIntrinsicSize: "auto 320px" }}
     >
       {/* Lig Akordiyon Başlığı */}
       <div

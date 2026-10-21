@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -77,16 +77,27 @@
       {
         "rank": 1,
         "team": "Asaş Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Sakarya Gelişim Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Erenler Anadolu Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -97,19 +108,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Sakarya Voleybol SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Sakarya Gelişim Spor Kulübü U18",
+        "team": "Sakarya Voleybol SK U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -162,8 +162,8 @@
         "url": "https://women.volleybox.net/tr/alaagac-spor-u18-sarachane-54-spor-kulubu-u18-c408237",
         "host_name": "Alaağaç Spor U18",
         "guest_name": "Saraçhane 54 Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-19",
         "vb_time": "20:30",
         "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
@@ -274,11 +274,17 @@
       "match_no": "1",
       "home_team": "Sakarya Gelişim Spor Kulübü U18",
       "away_team": "Asaş Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "26-24",
+        "17-25",
+        "12-25",
+        "25-23",
+        "7-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408246",
@@ -345,5 +351,5 @@
     }
   ],
   "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-21T13:42:53.423669"
+  "volleybox_sync_updated_at": "2026-10-21T14:40:52.264364"
 }

@@ -392,6 +392,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
         <Virtuoso
           useWindowScroll
           data={cityGroups}
+          computeItemKey={(_, [cityName]) => cityName}
           increaseViewportBy={{ top: 600, bottom: 900 }}
           itemContent={(_, [cityName, items]) => {
             const isCollapsed = expandedCities[cityName] === false; // Varsayılan olarak açık

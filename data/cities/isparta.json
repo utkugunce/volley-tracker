@@ -1,0 +1,324 @@
+{
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
+  "city": "Isparta",
+  "slug": "isparta",
+  "title": "TVF Isparta Genç & Yıldız Kızlar Süper Lig",
+  "total_matches": 5,
+  "source": "https://isparta.voleyboliltemsilciligi.com",
+  "filters": {
+    "categories": [
+      "Tümü",
+      "Genç Kızlar Süper Lig",
+      "Genç Kızlar 1. Ligi",
+      "Yıldız Kızlar Süper Lig"
+    ],
+    "age_groups": [
+      "Tümü",
+      "Genç",
+      "Yıldız"
+    ],
+    "genders": [
+      "Kız"
+    ],
+    "halls": [
+      "Tümü",
+      "Işıkkent"
+    ]
+  },
+  "standings": {
+    "Genç Kızlar 1. Ligi - Cumhuriyet Kupası 3": [
+      {
+        "rank": 1,
+        "team": "Ahmet Melih Doğan Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Gülkent Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Cumhuriyet Kupası 2": [
+      {
+        "rank": 1,
+        "team": "Isparta Gazi Sosyal Bilimler Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Mustafa Kaçıkoç Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Cumhurite Kupası 1": [
+      {
+        "rank": 1,
+        "team": "Isparta Spor Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Şehit Ali Hekim Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Cumhuriyet Kupası 4": [
+      {
+        "rank": 1,
+        "team": "Gül Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Mürşide Ermumcu Ticaret Mesleki Ve Teknik Anadolu",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Cumhuriyet Kupası 5": [
+      {
+        "rank": 1,
+        "team": "Özel Doğa Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Tenzile Erdoğan Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ]
+  },
+  "matches": [
+    {
+      "id": "isparta-20261021-001",
+      "city": "Isparta",
+      "date": "2026-10-21",
+      "time": "12:00",
+      "hall": "Işıkkent",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Cumhuriyet Kupası 3",
+      "match_no": "1",
+      "home_team": "Ahmet Melih Doğan Anadolu Lisesi",
+      "away_team": "Gülkent Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "isparta-20261021-002",
+      "city": "Isparta",
+      "date": "2026-10-21",
+      "time": "10:30",
+      "hall": "Işıkkent",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Cumhuriyet Kupası 2",
+      "match_no": "1",
+      "home_team": "Mustafa Kaçıkoç Anadolu Lisesi",
+      "away_team": "Isparta Gazi Sosyal Bilimler Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "isparta-20261021-003",
+      "city": "Isparta",
+      "date": "2026-10-21",
+      "time": "09:00",
+      "hall": "Işıkkent",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Cumhurite Kupası 1",
+      "match_no": "1",
+      "home_team": "Isparta Spor Lisesi",
+      "away_team": "Şehit Ali Hekim Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "isparta-20261021-004",
+      "city": "Isparta",
+      "date": "2026-10-21",
+      "time": "13:30",
+      "hall": "Işıkkent",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Cumhuriyet Kupası 4",
+      "match_no": "1",
+      "home_team": "Mürşide Ermumcu Ticaret Mesleki Ve Teknik Anadolu",
+      "away_team": "Gül Mesleki Ve Teknik Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "isparta-20261021-005",
+      "city": "Isparta",
+      "date": "2026-10-21",
+      "time": "15:00",
+      "hall": "Işıkkent",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Cumhuriyet Kupası 5",
+      "match_no": "1",
+      "home_team": "Özel Doğa Anadolu Lisesi",
+      "away_team": "Tenzile Erdoğan Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    }
+  ],
+  "volleybox_synced_matches": 0,
+  "volleybox_sync_updated_at": "2026-10-21T14:40:48.516715"
+}

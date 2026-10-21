@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:37:03.660757+03:00",
+  "updated_at": "2026-10-21T14:35:29.911891+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -160,8 +160,8 @@
         "url": "https://women.volleybox.net/tr/kutahya-demirspor-u18-kutahya-belediyespor-u18-c408159",
         "host_name": "Kütahya Demirspor U18",
         "guest_name": "Kütahya Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-17",
         "vb_time": "14:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
@@ -205,8 +205,8 @@
         "url": "https://women.volleybox.net/tr/tavsanl-belediyesi-spor-kulubu-u18-kutahya-demirspor-u18-c408160",
         "host_name": "Tavşanlı Belediyesi Spor Kulübü U18",
         "guest_name": "Kütahya Demirspor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-18",
         "vb_time": "14:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
@@ -798,5 +798,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-21T13:42:53.159258"
+  "volleybox_sync_updated_at": "2026-10-21T14:40:51.937877"
 }
