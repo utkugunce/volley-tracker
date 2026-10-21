@@ -105,4 +105,25 @@ describe("CompactMatchRow", () => {
     expect(screen.getByText("14:00")).toBeInTheDocument();
     expect(screen.getByText("Bitti")).toBeInTheDocument();
   });
+
+  it("renders group and hall next to each other in results mode", () => {
+    const match = {
+      id: "match-results-group-hall",
+      home_team: "Nicomedia Akademi Spor Kulübü U18",
+      away_team: "5 Renk Spor Kulübü U18",
+      date: "2026-10-20",
+      time: "18:30",
+      group: "İzmit Grubu",
+      hall: "Vezirçiftliği",
+      home_score: 3,
+      away_score: 0,
+      status: "finished",
+    } as Match;
+
+    render(<CompactMatchRow match={match} mode="results" showGroupBadge={true} />);
+
+    expect(screen.getByText("İzmit Grubu")).toBeInTheDocument();
+    expect(screen.getByText("Vezirçiftliği")).toBeInTheDocument();
+    expect(screen.getByText("·")).toBeInTheDocument();
+  });
 });

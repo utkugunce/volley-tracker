@@ -204,20 +204,57 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               {match.away_team}
             </TeamVolleyboxLink>
           </div>
-          {showGroupBadge && match.group && (
-            <span className="truncate pl-6 text-[9px] font-semibold text-blue-400 leading-tight">
-              {match.group}
-            </span>
-          )}
-          {mode === "fixtures" && match.hall && match.hall !== "TBD" && (
-            <span className={`truncate pl-6 text-[9px] leading-tight ${discrepancy?.hall_diff ? "inline-flex rounded border border-amber-400/40 bg-amber-500/10 px-1 text-amber-200" : "text-slate-500"}`} title={discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}>
-              {match.hall}
-            </span>
-          )}
-          {mode === "fixtures" && discrepancy?.hall_diff && discrepancy.vb_hall && (
-            <span className="truncate pl-6 text-[8px] font-semibold leading-tight text-amber-300" title={`Volleybox salonu: ${discrepancy.vb_hall}`}>
-              VB: {discrepancy.vb_hall}
-            </span>
+          {mode === "results" ? (
+            ((showGroupBadge && match.group) || (match.hall && match.hall !== "TBD")) && (
+              <div className="flex items-center gap-1.5 truncate pl-6 text-[9px] leading-tight">
+                {showGroupBadge && match.group && (
+                  <span className="font-semibold text-blue-400 shrink-0">
+                    {match.group}
+                  </span>
+                )}
+                {showGroupBadge && match.group && match.hall && match.hall !== "TBD" && (
+                  <span className="text-slate-500 shrink-0">·</span>
+                )}
+                {match.hall && match.hall !== "TBD" && (
+                  <span
+                    className={`truncate ${
+                      discrepancy?.hall_diff
+                        ? "inline-flex rounded border border-amber-400/40 bg-amber-500/10 px-1 text-amber-200 font-medium"
+                        : "text-slate-400"
+                    }`}
+                    title={discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}
+                  >
+                    {match.hall}
+                  </span>
+                )}
+                {discrepancy?.hall_diff && discrepancy.vb_hall && (
+                  <span
+                    className="truncate text-[8px] font-semibold leading-tight text-amber-300 shrink-0"
+                    title={`Volleybox salonu: ${discrepancy.vb_hall}`}
+                  >
+                    VB: {discrepancy.vb_hall}
+                  </span>
+                )}
+              </div>
+            )
+          ) : (
+            <>
+              {showGroupBadge && match.group && (
+                <span className="truncate pl-6 text-[9px] font-semibold text-blue-400 leading-tight">
+                  {match.group}
+                </span>
+              )}
+              {mode === "fixtures" && match.hall && match.hall !== "TBD" && (
+                <span className={`truncate pl-6 text-[9px] leading-tight ${discrepancy?.hall_diff ? "inline-flex rounded border border-amber-400/40 bg-amber-500/10 px-1 text-amber-200" : "text-slate-500"}`} title={discrepancy?.hall_diff ? discrepancy.details || match.hall : match.hall}>
+                  {match.hall}
+                </span>
+              )}
+              {mode === "fixtures" && discrepancy?.hall_diff && discrepancy.vb_hall && (
+                <span className="truncate pl-6 text-[8px] font-semibold leading-tight text-amber-300" title={`Volleybox salonu: ${discrepancy.vb_hall}`}>
+                  VB: {discrepancy.vb_hall}
+                </span>
+              )}
+            </>
           )}
         </div>
 
