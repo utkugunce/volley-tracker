@@ -178,18 +178,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411668",
+        "url": "https://women.volleybox.net/tr/corum-genclik-spor-kulubu-u18-corum-arena-spor-u18-c411668",
+        "host_name": "Çorum Gençlik Spor Kulübü U18",
+        "guest_name": "Çorum Arena Spor U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-21",
+        "vb_time": "19:30",
+        "vb_hall": "Çorum Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-21",
+          "vb_time": "19:30",
+          "vb_hall": "Çorum Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -468,6 +475,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-22T16:52:37.811328"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-10-22T17:23:55.792130"
 }

@@ -5837,23 +5837,6 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_1789457757VKT68.png"
     },
     {
-      "internal_name": "Set Up",
-      "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "SET UP Spor Kulübü U18",
-      "volleybox_url": "https://women.volleybox.net/set-up-spor-kulubu-u18-t54230",
-      "age_category": "U16",
-      "confidence": "verified",
-      "note": null,
-      "verified_at": "2026-09-14",
-      "aliases": [
-        "SET UP Spor Kulübü",
-        "Set Up Spor",
-        "Set Up SK"
-      ],
-      "local_logo": "/logos/set-up-spor-kulubu-u18-t54230.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_17889448376L98r.png"
-    },
-    {
       "internal_name": "Genia İz Akademi",
       "internal_category": "Yıldız Kızlar Süper Lig",
       "matched_as": "Genia İz Akademi Spor Kulübü U16",
@@ -9019,24 +9002,6 @@
         "Edremit Belediyesi Gürespor Kulübü U16",
         "Edremit Belediyesi Gürespor Kulübü",
         "GÜRE SPOR"
-      ]
-    },
-    {
-      "internal_name": "Havran Belediyespor Kulübü U16",
-      "internal_category": "Yıldız Kızlar Süper Lig",
-      "city": "Balıkesir",
-      "city_slug": "balikesir",
-      "matched_as": "Havran Belediyespor Kulübü U16",
-      "volleybox_url": "https://women.volleybox.net/havran-belediyespor-kulubu-u16-t42311",
-      "age_category": "U16",
-      "confidence": "verified",
-      "note": "Auto-mapped from city roster",
-      "verified_at": "2026-09-24",
-      "local_logo": "/logos/havran-belediyespor-kulubu-u16-t42311.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_17599988035VvzN.png",
-      "aliases": [
-        "Havran Belediyespor Kulübü",
-        "Havran Belediyespor Kulübü U16"
       ]
     },
     {
@@ -22071,6 +22036,150 @@
         "Başkent Arma Spor U16",
         "Başkent Arma Spor (A)"
       ]
+    },
+    {
+      "internal_name": "SET UP Spor Kulübü U16",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "SET UP Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/set-up-spor-kulubu-u16-t54456",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "U16 Yıldız Kızlar Süper Lig",
+      "verified_at": "2026-10-22",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "SET UP Spor Kulübü U16",
+        "SET UP Spor Kulübü",
+        "Set Up",
+        "SET UP",
+        "SET UP U16"
+      ]
+    },
+    {
+      "internal_name": "Ahmet Hamdi Tanpınar Ortaokulu SK - B U16",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Ahmet Hamdi Tanpınar Ortaokulu SK - B U16",
+      "volleybox_url": "https://women.volleybox.net/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t54446",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "1. Grup B Takımı",
+      "verified_at": "2026-10-22",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "Ahmet Hamdi Tanpınar Ortaokulu SK - B U16",
+        "Ahmet Hamdi Tanpınar Ortaokulu SK - B",
+        "Ahmet Hamdi Tanpınar Ortaokulu SK B",
+        "Ahmet Hamdi Tanpınar - B"
+      ]
+    },
+    {
+      "internal_name": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+      "volleybox_url": "https://women.volleybox.net/ahmet-hamdi-tanpnar-ortaokulu-sk-u16-t41606",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "6. Grup A Takımı",
+      "verified_at": "2026-10-22",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "Ahmet Hamdi Tanpınar Ortaokulu SK U16",
+        "Ahmet Hamdi Tanpınar Ortaokulu SK",
+        "Ahmet Hamdi Tanpınar Ortaokulu SK - A",
+        "Ahmet Hamdi Tanpınar Ortaokulu SK - A U16"
+      ]
+    },
+    {
+      "internal_name": "Havran Belediyespor Kulübü U16",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "matched_as": "Havran Belediyespor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/havran-belediyespor-kulubu-u16-t42311",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Balıkesir Körfez U16",
+      "verified_at": "2026-10-22",
+      "local_logo": "/logos/havran-belediyespor-kulubu-u16-t42311.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_17599988035VvzN.png",
+      "aliases": [
+        "HAVRAN BELEDİYE SPOR",
+        "Havran Belediye Spor",
+        "Havran Belediyespor",
+        "Havran Belediyespor Kulübü U16",
+        "Havran Belediyespor Kulübü",
+        "HAVRAN BELEDİYESPOR KULÜBÜ"
+      ]
+    },
+    {
+      "internal_name": "BURDUR ALLSTAR SPOR KULÜBÜ",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Burdur",
+      "city_slug": "burdur",
+      "matched_as": "Burdur Allstar Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/burdur-allstar-spor-kulubu-u18-t55619",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-10-22",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "BURDUR ALLSTAR SPOR KULÜBÜ",
+        "Burdur Allstar Spor Kulübü",
+        "Burdur Allstar Spor Kulübü U18",
+        "Burdur Allstar"
+      ]
+    },
+    {
+      "internal_name": "BURDUR BELEDİYE SPOR KULÜBÜ",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Burdur",
+      "city_slug": "burdur",
+      "matched_as": "Burdur Belediyesi Gençlik ve Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/burdur-belediyesi-genclik-ve-spor-kulubu-u18-t55620",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-10-22",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "BURDUR BELEDİYE SPOR KULÜBÜ",
+        "Burdur Belediye Spor Kulübü",
+        "Burdur Belediyesi Gençlik ve Spor Kulübü U18",
+        "Burdur Belediyesi Gençlik ve Spor Kulübü",
+        "Burdur Belediye"
+      ]
+    },
+    {
+      "internal_name": "DESTAN BURDUR SPOR KULÜBÜ",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Burdur",
+      "city_slug": "burdur",
+      "matched_as": "Destan Burdur Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/destan-burdur-spor-kulubu-u18-t55621",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": null,
+      "verified_at": "2026-10-22",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "DESTAN BURDUR SPOR KULÜBÜ",
+        "Destan Burdur Spor Kulübü",
+        "Destan Burdur Spor Kulübü U18",
+        "Destan Burdur"
+      ]
     }
   ],
   "leagues": [
@@ -22938,6 +23047,28 @@
       "city_slug": "giresun",
       "matched_as": "Giresun Süper Ligi U18 2026/27",
       "volleybox_url": "https://women.volleybox.net/women-giresun-super-ligi-u18-2026-27-o51748",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "Burdur",
+      "city_slug": "burdur",
+      "matched_as": "Burdur Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-burdur-super-ligi-u18-2026-27-o51751",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Burdur",
+      "city_slug": "burdur",
+      "matched_as": "Burdur Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-burdur-super-ligi-u18-2026-27-o51751",
       "age_category": "U18",
       "confidence": "verified",
       "season": "2026/27",

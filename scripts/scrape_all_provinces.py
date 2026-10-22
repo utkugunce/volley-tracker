@@ -304,6 +304,18 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         if ("ankara" in ct or not ct) and ("4" in gs) and ("gen" not in gs):
             if "lbank" in rt:
                 return "İlbank - B U16"
+        # Ankara Yıldız Kızlar Süper Lig 5. Grup -> SET UP Spor Kulübü U16
+        if ("ankara" in ct or not ct) and ("5" in gs) and ("gen" not in gs):
+            if "set up" in rt:
+                return "SET UP Spor Kulübü U16"
+        # Ankara Yıldız Kızlar Süper Lig 1. Grup -> Ahmet Hamdi Tanpınar Ortaokulu SK - B U16
+        if ("ankara" in ct or not ct) and ("1" in gs) and ("gen" not in gs):
+            if "tanpinar" in rt or "tanpnar" in rt:
+                return "Ahmet Hamdi Tanpınar Ortaokulu SK - B U16"
+        # Ankara Yıldız Kızlar Süper Lig 6. Grup -> Ahmet Hamdi Tanpınar Ortaokulu SK U16
+        if ("ankara" in ct or not ct) and ("6" in gs) and ("gen" not in gs):
+            if "tanpinar" in rt or "tanpnar" in rt:
+                return "Ahmet Hamdi Tanpınar Ortaokulu SK U16"
         # Ankara Yıldız Kızlar Süper Lig 2. Grup -> Başkent Arma Spor - B U16
         if ("ankara" in ct or not ct) and ("2" in gs) and ("gen" not in gs):
             if "arma" in rt:
@@ -322,6 +334,8 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
                 return "TED Ankara Kolejliler - B U16"
         # Balıkesir Yıldız Kızlar Süper Lig (U16) Merkez & Körfez
         if ("balikesir" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
+            if "havran" in rt:
+                return "Havran Belediyespor Kulübü U16"
             if "altinoluk" in rt:
                 return "Edremit Belediyesi Altınoluk Spor Kulübü - B U16"
             if "merkez" in rt and ("buyuksehir" in rt or "belediye" in rt):
@@ -729,6 +743,7 @@ def scrape_single_city(city_info):
             ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
             ("GK1L", "Genç Kızlar 1. Ligi", "Genç"),
             ("YKSL", "Yıldız Kızlar Süper Lig", "Yıldız"),
+            ("YK1L", "Yıldız Kızlar Süper Lig", "Yıldız"),
         ]
 
     for kume_code, cat_name, age_group in target_kumes:
