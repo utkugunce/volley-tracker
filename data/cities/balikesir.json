@@ -782,18 +782,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411627",
+        "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-u16-balkesir-ds-spor-u16-c411627",
+        "host_name": "Balıkesir EKA Spor Kulubü U16",
+        "guest_name": "Balıkesir DSİ Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-26",
+        "vb_time": "18:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "18:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -816,18 +823,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411628",
+        "url": "https://women.volleybox.net/tr/karesi-hurriyet-spor-u16-balkesir-nets-basket-spor-kulubu-u16-c411628",
+        "host_name": "Karesi Hürriyet Spor U16",
+        "guest_name": "Balıkesir Nets Basket Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-26",
+        "vb_time": "19:30",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "19:30",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -850,18 +864,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411629",
+        "url": "https://women.volleybox.net/tr/balkesir-ds-spor-u16-balkesir-nets-basket-spor-kulubu-u16-c411629",
+        "host_name": "Balıkesir DSİ Spor U16",
+        "guest_name": "Balıkesir Nets Basket Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-29",
+        "vb_time": "18:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "18:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1195,18 +1216,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411630",
+        "url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-u16-balkesir-eka-spor-kulubu-b-u16-c411630",
+        "host_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
+        "guest_name": "Balıkesir EKA Spor Kulubü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-27",
+        "vb_time": "18:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-27",
+          "vb_time": "18:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2604,6 +2632,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-10-22T16:32:52.831703"
+  "volleybox_synced_matches": 39,
+  "volleybox_sync_updated_at": "2026-10-22T16:52:36.606173"
 }

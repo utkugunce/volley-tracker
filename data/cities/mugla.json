@@ -1364,18 +1364,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411498",
+        "url": "https://women.volleybox.net/tr/bodrum-belediyesi-bodrumspor-u16-bodrum-htisasspor-b-u16-c411498",
+        "host_name": "Bodrum Belediyesi Bodrumspor U16",
+        "guest_name": "Bodrum İhtisasspor - B U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-17",
+        "vb_time": "12:00",
+        "vb_hall": "Bodrum Bitez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-17",
+          "vb_time": "12:00",
+          "vb_hall": "Bodrum Bitez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1402,22 +1409,29 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411499",
+        "url": "https://women.volleybox.net/tr/bodrum-dogus-spor-u16-milas-belediye-spor-kulubu-b-u16-c411499",
+        "host_name": "Bodrum Doğuş Spor U16",
+        "guest_name": "Milas Belediye Spor Kulübü - B U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-17",
+        "vb_time": "16:30",
+        "vb_hall": "Bodrum Bitez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-17",
+          "vb_time": "16:30",
+          "vb_hall": "Bodrum Bitez Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-10-22T16:33:04.875249"
+  "volleybox_synced_matches": 15,
+  "volleybox_sync_updated_at": "2026-10-22T16:52:48.531916"
 }

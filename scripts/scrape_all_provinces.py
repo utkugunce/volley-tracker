@@ -304,6 +304,14 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         if ("ankara" in ct or not ct) and ("4" in gs) and ("gen" not in gs):
             if "lbank" in rt:
                 return "İlbank - B U16"
+        # Ankara Yıldız Kızlar Süper Lig 2. Grup -> Başkent Arma Spor - B U16
+        if ("ankara" in ct or not ct) and ("2" in gs) and ("gen" not in gs):
+            if "arma" in rt:
+                return "Başkent Arma Spor - B U16"
+        # Ankara Yıldız Kızlar Süper Lig 3. Grup -> Başkent Arma Spor - A U16
+        if ("ankara" in ct or not ct) and ("3" in gs) and ("gen" not in gs):
+            if "arma" in rt:
+                return "Başkent Arma Spor - A U16"
         # Ankara Yıldız Kızlar Süper Lig 3. Grup -> TED Ankara Kolejliler U16 (A Takımı)
         if ("ankara" in ct or not ct) and ("3" in gs) and ("gen" not in gs):
             if "ted" in rt or "kolej" in rt:

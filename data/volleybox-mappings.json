@@ -8392,24 +8392,6 @@
       "city_slug": "ankara"
     },
     {
-      "internal_name": "Başkent Arma Spor B",
-      "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Başkent Arma Spor - B U16",
-      "aliases": [
-        "Başkent Arma Spor B",
-        "Başkent Arma Spor - B",
-        "Başkent Arma Spor - B U16",
-        "Başkent Arma Spor U16"
-      ],
-      "age_category": "U16",
-      "confidence": "verified",
-      "local_logo": "/logos/baskent-arma-spor-u16-t41618.png",
-      "logo_url": null,
-      "volleybox_url": "https://women.volleybox.net/baskent-arma-spor-u16-t41618",
-      "city": "Ankara",
-      "city_slug": "ankara"
-    },
-    {
       "internal_name": "Nova Spor U15",
       "internal_category": "Yıldız Kızlar Süper Lig",
       "matched_as": "Nova Spor Kulübü U16",
@@ -22041,6 +22023,53 @@
       "aliases": [
         "Vega Atletik Spor Kulübü",
         "Vega Atletik Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Başkent Arma Spor - B U16",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Başkent Arma Spor - B U16",
+      "volleybox_url": "https://women.volleybox.net/baskent-arma-spor-u16-t54447",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "2. Grup B Takımı",
+      "verified_at": "2026-10-22",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "Başkent Arma Spor - B U16",
+        "Başkent Arma Spor - B",
+        "Başkent Arma Spor B U16",
+        "Başkent Arma Spor B",
+        "Başkent Arma - B",
+        "Başkent Arma - B U16",
+        "Başkent Arma Spor (B)"
+      ]
+    },
+    {
+      "internal_name": "Başkent Arma Spor - A U16",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Başkent Arma Spor U16",
+      "volleybox_url": "https://women.volleybox.net/baskent-arma-spor-u16-t41618",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "3. Grup A Takımı",
+      "verified_at": "2026-10-22",
+      "local_logo": "/logos/baskent-arma-spor-u16-t41618.png",
+      "logo_url": null,
+      "aliases": [
+        "Başkent Arma Spor - A U16",
+        "Başkent Arma Spor - A",
+        "Başkent Arma Spor A U16",
+        "Başkent Arma Spor A",
+        "Başkent Arma - A",
+        "Başkent Arma - A U16",
+        "Başkent Arma Spor U16",
+        "Başkent Arma Spor (A)"
       ]
     }
   ],
