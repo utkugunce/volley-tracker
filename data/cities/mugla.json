@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-22T13:31:43.444709+03:00",
+  "updated_at": "2026-10-22T16:25:00.372636+03:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 18,
+  "total_matches": 23,
   "source": "https://mugla.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -27,6 +27,7 @@
       "Bodrum Bitez Spor Salonu",
       "Fethiye E.S.S.",
       "Menteşe",
+      "Milas B.Ş.B.",
       "Ula Spor Salonu"
     ]
   },
@@ -576,7 +577,75 @@
       }
     },
     {
-      "id": "mugla-20261010-003",
+      "id": "mugla-20261024-003",
+      "city": "Muğla",
+      "date": "2026-10-24",
+      "time": "13:00",
+      "hall": "Bodrum Bitez Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "Bodrum Doğuş Spor U18",
+      "away_team": "Bodrum İhtisasspor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mugla-20261026-004",
+      "city": "Muğla",
+      "date": "2026-10-26",
+      "time": "19:30",
+      "hall": "Milas B.Ş.B.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Milas Belediye Spor Kulübü - B U18",
+      "away_team": "Bodrum Belediyesi Bodrumspor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mugla-20261010-005",
       "city": "Muğla",
       "date": "2026-10-10",
       "time": "14:00",
@@ -621,7 +690,7 @@
       }
     },
     {
-      "id": "mugla-20261010-004",
+      "id": "mugla-20261010-006",
       "city": "Muğla",
       "date": "2026-10-10",
       "time": "17:00",
@@ -667,7 +736,7 @@
       }
     },
     {
-      "id": "mugla-20261024-005",
+      "id": "mugla-20261024-007",
       "city": "Muğla",
       "date": "2026-10-24",
       "time": "14:30",
@@ -701,7 +770,7 @@
       }
     },
     {
-      "id": "mugla-20261024-006",
+      "id": "mugla-20261024-008",
       "city": "Muğla",
       "date": "2026-10-24",
       "time": "19:00",
@@ -735,7 +804,7 @@
       }
     },
     {
-      "id": "mugla-20261007-007",
+      "id": "mugla-20261007-009",
       "city": "Muğla",
       "date": "2026-10-07",
       "time": "19:00",
@@ -780,7 +849,7 @@
       }
     },
     {
-      "id": "mugla-20261010-008",
+      "id": "mugla-20261010-010",
       "city": "Muğla",
       "date": "2026-10-10",
       "time": "14:30",
@@ -821,7 +890,75 @@
       }
     },
     {
-      "id": "mugla-20261009-009",
+      "id": "mugla-20261024-011",
+      "city": "Muğla",
+      "date": "2026-10-24",
+      "time": "12:00",
+      "hall": "Menteşe",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "3",
+      "home_team": "Muğla Büyükşehir Belediyesi Spor Kulübü U18",
+      "away_team": "Milas Belediye Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mugla-20261027-012",
+      "city": "Muğla",
+      "date": "2026-10-27",
+      "time": "18:00",
+      "hall": "Menteşe",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "4",
+      "home_team": "Muğla SS Voleybol Spor Kulübü U18",
+      "away_team": "Muğla Sportif Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mugla-20261009-013",
       "city": "Muğla",
       "date": "2026-10-09",
       "time": "19:00",
@@ -866,7 +1003,7 @@
       }
     },
     {
-      "id": "mugla-20261010-010",
+      "id": "mugla-20261010-014",
       "city": "Muğla",
       "date": "2026-10-10",
       "time": "18:00",
@@ -911,7 +1048,7 @@
       }
     },
     {
-      "id": "mugla-20261023-011",
+      "id": "mugla-20261023-015",
       "city": "Muğla",
       "date": "2026-10-23",
       "time": "20:00",
@@ -945,7 +1082,41 @@
       }
     },
     {
-      "id": "mugla-20261018-012",
+      "id": "mugla-20261025-016",
+      "city": "Muğla",
+      "date": "2026-10-25",
+      "time": "12:30",
+      "hall": "Fethiye E.S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "D Grubu",
+      "match_no": "4",
+      "home_team": "Fethiye Anka Spor U18",
+      "away_team": "Fethiye Voleybol Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "mugla-20261018-017",
       "city": "Muğla",
       "date": "2026-10-18",
       "time": "16:00",
@@ -990,7 +1161,7 @@
       }
     },
     {
-      "id": "mugla-20261018-013",
+      "id": "mugla-20261018-018",
       "city": "Muğla",
       "date": "2026-10-18",
       "time": "14:30",
@@ -1036,7 +1207,7 @@
       }
     },
     {
-      "id": "mugla-20261017-014",
+      "id": "mugla-20261017-019",
       "city": "Muğla",
       "date": "2026-10-17",
       "time": "17:30",
@@ -1081,7 +1252,7 @@
       }
     },
     {
-      "id": "mugla-20261017-015",
+      "id": "mugla-20261017-020",
       "city": "Muğla",
       "date": "2026-10-17",
       "time": "15:00",
@@ -1126,7 +1297,7 @@
       }
     },
     {
-      "id": "mugla-20261018-016",
+      "id": "mugla-20261018-021",
       "city": "Muğla",
       "date": "2026-10-18",
       "time": "13:00",
@@ -1171,7 +1342,7 @@
       }
     },
     {
-      "id": "mugla-20261017-017",
+      "id": "mugla-20261017-022",
       "city": "Muğla",
       "date": "2026-10-17",
       "time": "12:00",
@@ -1193,30 +1364,23 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411498",
-        "url": "https://women.volleybox.net/tr/bodrum-belediyesi-bodrumspor-u16-bodrum-htisasspor-b-u16-c411498",
-        "host_name": "Bodrum Belediyesi Bodrumspor U16",
-        "guest_name": "Bodrum İhtisasspor - B U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-17",
-        "vb_time": "12:00",
-        "vb_hall": "Bodrum Bitez Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-17",
-          "vb_time": "12:00",
-          "vb_hall": "Bodrum Bitez Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
     {
-      "id": "mugla-20261017-018",
+      "id": "mugla-20261017-023",
       "city": "Muğla",
       "date": "2026-10-17",
       "time": "16:30",
@@ -1238,29 +1402,22 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411499",
-        "url": "https://women.volleybox.net/tr/bodrum-dogus-spor-u16-milas-belediye-spor-kulubu-b-u16-c411499",
-        "host_name": "Bodrum Doğuş Spor U16",
-        "guest_name": "Milas Belediye Spor Kulübü - B U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-17",
-        "vb_time": "16:30",
-        "vb_hall": "Bodrum Bitez Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-17",
-          "vb_time": "16:30",
-          "vb_hall": "Bodrum Bitez Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     }
   ],
-  "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-10-22T13:37:11.408568"
+  "volleybox_synced_matches": 13,
+  "volleybox_sync_updated_at": "2026-10-22T16:33:04.875249"
 }

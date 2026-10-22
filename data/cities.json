@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-22T13:31:43.444709+03:00",
+  "updated_at": "2026-10-22T16:25:00.372636+03:00",
   "total_cities": 81,
-  "active_cities": 35,
-  "total_matches": 1477,
+  "active_cities": 36,
+  "total_matches": 1451,
   "cities": [
     {
       "ilid": "1",
@@ -392,10 +392,10 @@
       "name": "Kırklareli",
       "slug": "kirklareli",
       "url": "https://kirklareli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (15 Maç Mevcut)",
+      "matches_count": 15,
+      "standings_count": 1,
+      "data_file": "data/cities/kirklareli.json"
     },
     {
       "ilid": "40",
@@ -442,9 +442,9 @@
       "name": "Malatya",
       "slug": "malatya",
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (75 Maç Mevcut)",
-      "matches_count": 75,
-      "standings_count": 19,
+      "status": "Aktif (27 Maç Mevcut)",
+      "matches_count": 27,
+      "standings_count": 1,
       "data_file": "data/cities/malatya.json"
     },
     {
@@ -482,8 +482,8 @@
       "name": "Muğla",
       "slug": "mugla",
       "url": "https://mugla.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (18 Maç Mevcut)",
-      "matches_count": 18,
+      "status": "Aktif (23 Maç Mevcut)",
+      "matches_count": 23,
       "standings_count": 11,
       "data_file": "data/cities/mugla.json"
     },
@@ -553,8 +553,8 @@
       "name": "Samsun",
       "slug": "samsun",
       "url": "https://samsun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (62 Maç Mevcut)",
-      "matches_count": 62,
+      "status": "Aktif (64 Maç Mevcut)",
+      "matches_count": 64,
       "standings_count": 2,
       "data_file": "data/cities/samsun.json"
     },
