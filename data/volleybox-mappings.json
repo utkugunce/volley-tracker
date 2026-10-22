@@ -19631,6 +19631,704 @@
       "verified_at": "2026-10-16",
       "local_logo": "/logos/zeugma-spor-kulubu-a-u18-t42683.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1785755312eCw3Y.png"
+    },
+    {
+      "internal_name": "BALIKESİR NETS BASKET",
+      "matched_as": "Balıkesir Nets Basket Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/balkesir-nets-basket-spor-kulubu-u16-t54636",
+      "city": "Balıkesir",
+      "city_slug": "balikesir",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "BALIKESİR NETS BASKET",
+        "Balıkesir Nets Basket",
+        "Nets Basket",
+        "Balıkesir Nets Basket SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Tuzla Rekor A",
+      "matched_as": "Tuzla Rekor Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tuzla-rekor-spor-kulubu-u18-t54159",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Tuzla Rekor A",
+        "Tuzla Rekor (A)",
+        "Tuzla Rekor",
+        "Tuzla Rekor Spor Kulübü - A U18"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Avcılar Yankı",
+      "matched_as": "Avcılar Yankı Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/avclar-yank-spor-kulubu-u18-t54205",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Avcılar Yankı",
+        "Avcılar Yankı Spor Kulübü",
+        "Avcılar Yankı SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Bağcılar Evren",
+      "matched_as": "Bağcılar Evren Spor U18",
+      "volleybox_url": "https://women.volleybox.net/bagclar-evren-spor-u18-t54203",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Bağcılar Evren",
+        "Bağcılar Evren Spor",
+        "Bağcılar Evren SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Beylikdüzü Beykent",
+      "matched_as": "Beylikdüzü Beykent Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/beylikduzu-beykent-spor-kulubu-u18-t54202",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Beylikdüzü Beykent",
+        "Beylikdüzü Beykent Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Haliç Akademi",
+      "matched_as": "Haliç Akademi SK U18",
+      "volleybox_url": "https://women.volleybox.net/halic-akademi-sk-u18-t54204",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Haliç Akademi",
+        "Haliç Akademi SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Konak",
+      "matched_as": "Sarıyer Konak Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/saryer-konak-spor-kulubu-a-u18-t41222",
+      "city": "İstanbul",
+      "city_slug": "istanbul",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Konak",
+        "Sarıyer Konak",
+        "Sarıyer Konak Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Arena SK",
+      "matched_as": "Çorum Arena Spor U18",
+      "volleybox_url": "https://women.volleybox.net/corum-arena-spor-u18-t43750",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Arena SK",
+        "Çorum Arena",
+        "Çorum Arena Spor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Bahçelievler SK",
+      "matched_as": "Çorum Bahçelievler Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/corum-bahcelievler-spor-kulubu-u18-t55546",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Bahçelievler SK",
+        "Çorum Bahçelievler",
+        "Çorum Bahçelievler Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Efor SK",
+      "matched_as": "Çorum Efor Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/corum-efor-spor-kulubu-u18-t43752",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Efor SK",
+        "Çorum Efor",
+        "Çorum Efor Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Çorum Gençlikspor",
+      "matched_as": "Çorum Gençlik Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/corum-genclik-spor-kulubu-u18-t55547",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Çorum Gençlikspor",
+        "Gençlikspor",
+        "Çorum Gençlik",
+        "Çorum Gençlik Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Mecitözü Doğuş SK",
+      "matched_as": "Mecitözü Doğuş Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/mecitozu-dogus-spor-kulubu-u18-t55548",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Mecitözü Doğuş SK",
+        "Mecitözü Doğuş",
+        "Mecitözü Doğuş Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Osmancık Belediye",
+      "matched_as": "Osmancık Belediyespor U18",
+      "volleybox_url": "https://women.volleybox.net/osmanck-belediyespor-u18-t41375",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Osmancık Belediye",
+        "Osmancık Belediyespor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Sungurlu Belediye",
+      "matched_as": "Sungurlu Belediyesi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/sungurlu-belediyesi-spor-kulubu-u18-t43753",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Sungurlu Belediye",
+        "Sungurlu Belediyesi",
+        "Sungurlu Belediyesi Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Denizli Aile Ve Sosyal Hizmetler Spor Kulübü",
+      "matched_as": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/denizli-aile-ve-sosyal-hizmetler-spor-kulubu-u18-t55357",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Denizli Aile Ve Sosyal Hizmetler Spor Kulübü",
+        "Aile Ve Sosyal Hizmetler"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Honaz Adil Akan Spor Kulübü",
+      "matched_as": "Honaz Adil Akan Ortaokulu SK U18",
+      "volleybox_url": "https://women.volleybox.net/honaz-adil-akan-ortaokulu-sk-u18-t42638",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Honaz Adil Akan Spor Kulübü",
+        "Honaz Adil Akan"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Cavidil Spor Kulübü",
+      "matched_as": "Cavidilspor U16",
+      "volleybox_url": "https://women.volleybox.net/cavidilspor-u16-t55360",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Cavidil Spor Kulübü",
+        "Cavidilspor",
+        "Cavidil SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Denizli Gençlik Ve Spor İl Müdürlüğü S.K.",
+      "matched_as": "Denizli GSİM SK U16",
+      "volleybox_url": "https://women.volleybox.net/denizli-gsm-sk-u16-t44503",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Denizli Gençlik Ve Spor İl Müdürlüğü S.K.",
+        "Denizli GSİM",
+        "Denizli GSİM SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Denizli Voleybol Spor Kulübü",
+      "matched_as": "Denizli Voleybol Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/denizli-voleybol-spor-kulubu-u16-t45190",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Denizli Voleybol Spor Kulübü",
+        "Denizli Voleybol"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Voleybolcular Spor Kulübü",
+      "matched_as": "Diyarbakır Voleybolcular Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/voleybolcular-spor-kulubu-u18-t43438",
+      "city": "Diyarbakır",
+      "city_slug": "diyarbakir",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Voleybolcular Spor Kulübü",
+        "Diyarbakır Voleybolcular",
+        "Diyarbakır Voleybolcular SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Diyarbakır Gençlik Spor Kulübü",
+      "matched_as": "Diyarbakır Gençlik Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/diyarbakr-genclik-spor-kulubu-a-u18-t43441",
+      "city": "Diyarbakır",
+      "city_slug": "diyarbakir",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Diyarbakır Gençlik Spor Kulübü",
+        "Diyarbakır Gençlik"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Diyarbakır Dicle Üniversitesi Spor Kulübü",
+      "matched_as": "Dicle Üniversitesi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/dicle-universitesi-spor-kulubu-u18-t43436",
+      "city": "Diyarbakır",
+      "city_slug": "diyarbakir",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Diyarbakır Dicle Üniversitesi Spor Kulübü",
+        "Dicle Üniversitesi",
+        "Dicle Üniversitesi SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Diyarbakır İçkale Spor Kulübü",
+      "matched_as": "Diyarbakır İçkale Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/diyarbakr-ckale-spor-kulubu-u18-t43437",
+      "city": "Diyarbakır",
+      "city_slug": "diyarbakir",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Diyarbakır İçkale Spor Kulübü",
+        "Diyarbakır İçkale",
+        "İçkale SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Diyarbakır Sur Amed Spor Kulübü",
+      "matched_as": "Sur Amed Spor U18",
+      "volleybox_url": "https://women.volleybox.net/sur-amed-spor-u18-t43443",
+      "city": "Diyarbakır",
+      "city_slug": "diyarbakir",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Diyarbakır Sur Amed Spor Kulübü",
+        "Sur Amed Spor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Giresun Gençlikspor (A)",
+      "matched_as": "Giresun Gençlik Ve Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/giresun-genclik-ve-spor-kulubu-a-u18-t44513",
+      "city": "Giresun",
+      "city_slug": "giresun",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Giresun Gençlikspor (A)",
+        "Giresun Gençlik Ve Spor Kulübü",
+        "Giresun Gençlikspor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Gençlik Spor (B)",
+      "matched_as": "Giresun Gençlik Ve Spor Kulübü - B U18",
+      "volleybox_url": "https://women.volleybox.net/giresun-genclik-ve-spor-kulubu-b-u18-t44514",
+      "city": "Giresun",
+      "city_slug": "giresun",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Gençlik Spor (B)",
+        "Giresun Gençlik Ve Spor Kulübü - B",
+        "Giresun Gençlikspor (B)"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Espiye VOLEYBOL SPOR KULÜBÜ",
+      "matched_as": "Espiye Voleybol Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/espiye-voleybol-kulubu-u18-t44512",
+      "city": "Giresun",
+      "city_slug": "giresun",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Espiye VOLEYBOL SPOR KULÜBÜ",
+        "Espiye Voleybol",
+        "Espiye Voleybol Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Voleybol Giresun S.K (A)",
+      "matched_as": "Giresunspor U18",
+      "volleybox_url": "https://women.volleybox.net/giresunspor-u18-t44515",
+      "city": "Giresun",
+      "city_slug": "giresun",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Voleybol Giresun S.K (A)",
+        "Voleybol Giresun",
+        "Giresunspor",
+        "Giresunspor U18"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "VOLEYBOL GİRESUN (B)",
+      "matched_as": "Giresunspor - B U18",
+      "volleybox_url": "https://women.volleybox.net/giresunspor-u18-t55570",
+      "city": "Giresun",
+      "city_slug": "giresun",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "VOLEYBOL GİRESUN (B)",
+        "Voleybol Giresun (B)",
+        "Giresunspor - B",
+        "Giresunspor B"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "BULANCAK KARADENİZ",
+      "matched_as": "Bulancak Karadenizspor U18",
+      "volleybox_url": "https://women.volleybox.net/bulancak-karadenizspor-u18-t44511",
+      "city": "Giresun",
+      "city_slug": "giresun",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "BULANCAK KARADENİZ",
+        "Bulancak Karadeniz",
+        "Bulancak Karadenizspor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "FETHİYE ANKA SPOR",
+      "matched_as": "Fethiye Anka Spor U16",
+      "volleybox_url": "https://women.volleybox.net/fethiye-anka-spor-u16-t46265",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "FETHİYE ANKA SPOR",
+        "Fethiye Anka Spor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Muğlatürk Fethiye Zirve Spor Kulübü",
+      "matched_as": "Muğlatürk Fethiye Zirve Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/fethiye-zirve-spor-kulubu-u16-t46267",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "Fethiye Zirve",
+        "Fethiye Zirve Spor Kulübü"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ A",
+      "matched_as": "Muğla Sportif Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/mugla-sportif-akademi-spor-kulubu-u16-t46263",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ A",
+        "Muğla Sportif Akademi",
+        "Muğla Sportif Akademi SK"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ B",
+      "matched_as": "Muğla Büyükşehir Belediyesi Spor Kulübü - B U16",
+      "volleybox_url": "https://women.volleybox.net/mugla-buyuksehir-belediyesi-spor-kulubu-u16-t55254",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ B",
+        "Muğla Bşb B",
+        "Muğla Büyükşehir B"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ A",
+      "matched_as": "Muğla Büyükşehir Belediyesi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/mugla-buyuksehir-belediyesi-spor-kulubu-u16-t46261",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MUĞLA BÜYÜKŞEHİR BELEDİYESİ SPOR KULÜBÜ A",
+        "Muğla Bşb",
+        "Muğla Büyükşehir"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ B",
+      "matched_as": "Muğla Sportif Akademi Spor Kulübü - B U16",
+      "volleybox_url": "https://women.volleybox.net/mugla-sportif-akademi-spor-kulubu-u16-t55257",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MUĞLA SPORTİF AKADEMİ SPOR KULÜBÜ B",
+        "Muğla Sportif Akademi B"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "ARMUT ALAN AZ",
+      "matched_as": "Armutalan AZ 2024 Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/armutalan-az-2024-spor-kulubu-u16-t55255",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "ARMUT ALAN AZ",
+        "Armutalan AZ",
+        "Armutalan AZ 2024"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
+      "matched_as": "Dalaman Master Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/dalaman-master-akademi-spor-kulubu-u16-t55256",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "DALAMAN MASTER AKADEMİ SPOR KULÜBÜ",
+        "Dalaman Master Akademi"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "BODRUM İHTİSAS SPOR KULÜBÜ A",
+      "matched_as": "Bodrum İhtisasspor U16",
+      "volleybox_url": "https://women.volleybox.net/bodrum-htisasspor-u16-t46255",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "BODRUM İHTİSAS SPOR KULÜBÜ A",
+        "Bodrum İhtisas A",
+        "Bodrum İhtisasspor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "MİLAS BELEDİYE SPOR A",
+      "matched_as": "Milas Belediye Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/milas-belediye-spor-kulubu-a-u16-t46249",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MİLAS BELEDİYE SPOR A",
+        "Milas Belediye Spor",
+        "Milas Belediyespor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "BODRUM BELEDİYESİ BODRUM SPOR",
+      "matched_as": "Bodrum Belediyesi Bodrumspor U16",
+      "volleybox_url": "https://women.volleybox.net/bodrum-belediyesi-bodrumspor-u16-t46254",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "BODRUM BELEDİYESİ BODRUM SPOR",
+        "Bodrumspor",
+        "Bodrum Belediyesi Bodrumspor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "BODRUM İHTİSAS SPOR KULÜBÜ B",
+      "matched_as": "Bodrum İhtisasspor - B U16",
+      "volleybox_url": "https://women.volleybox.net/bodrum-htisasspor-u16-t55259",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "BODRUM İHTİSAS SPOR KULÜBÜ B",
+        "Bodrum İhtisas B",
+        "Bodrum İhtisasspor B"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "BODRUM DOĞUŞ SPOR KULÜBÜ",
+      "matched_as": "Bodrum Doğuş Spor U16",
+      "volleybox_url": "https://women.volleybox.net/bodrum-dogus-spor-u16-t46247",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "BODRUM DOĞUŞ SPOR KULÜBÜ",
+        "Bodrum Doğuş",
+        "Bodrum Doğuş Spor"
+      ],
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "MİLAS BELEDİYE SPOR B",
+      "matched_as": "Milas Belediye Spor Kulübü - B U16",
+      "volleybox_url": "https://women.volleybox.net/milas-belediye-spor-kulubu-b-u16-t46250",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MİLAS BELEDİYE SPOR B",
+        "Milas Belediye Spor B",
+        "Milas Belediyespor B"
+      ],
+      "verified_at": "2026-10-22"
     }
   ],
   "leagues": [
@@ -20458,6 +21156,50 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-10-08"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Çorum",
+      "city_slug": "corum",
+      "matched_as": "Çorum Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-corum-super-ligi-u18-2026-27-o51734",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "Diyarbakır",
+      "city_slug": "diyarbakir",
+      "matched_as": "Diyarbakır Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-diyarbakr-super-ligi-u18-2026-27-o51747",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Diyarbakır",
+      "city_slug": "diyarbakir",
+      "matched_as": "Diyarbakır Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-diyarbakr-super-ligi-u18-2026-27-o51747",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Giresun",
+      "city_slug": "giresun",
+      "matched_as": "Giresun Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-giresun-super-ligi-u18-2026-27-o51748",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-22"
     }
   ]
 }

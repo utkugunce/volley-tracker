@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T09:42:39.852288+03:00",
+  "updated_at": "2026-10-22T13:31:43.444709+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -877,7 +877,7 @@
       "city": "Antalya",
       "date": "2026-11-02",
       "time": "18:30",
-      "hall": "Kepez Ç.A.S.S.",
+      "hall": "Döşemealtı S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -902,14 +902,14 @@
         "vb_time": "18:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-02",
           "vb_time": "18:30",
           "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
-          "details": null
+          "details": "Salon Değişti (TVF: Döşemealtı S.S. / VB: Kepez Çok Amaçlı Spor Salomı)"
         }
       }
     },
@@ -3000,7 +3000,7 @@
       "city": "Antalya",
       "date": "2026-11-02",
       "time": "19:00",
-      "hall": "Döşemealtı S.S.",
+      "hall": "Kepez Ç.A.S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
@@ -3025,14 +3025,14 @@
         "vb_time": "19:00",
         "vb_hall": "Döşemealtı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-02",
           "vb_time": "19:00",
           "vb_hall": "Döşemealtı Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Kepez Ç.A.S.S. / VB: Döşemealtı Spor Salonu)"
         }
       }
     },
@@ -3491,5 +3491,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-22T09:48:09.397575"
+  "volleybox_sync_updated_at": "2026-10-22T13:37:04.624607"
 }

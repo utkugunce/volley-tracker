@@ -69,7 +69,7 @@ describe("citySlugs — data/cities.json senkronizasyonu", () => {
     for (const hidden of HIDDEN_CITY_SLUGS) {
       expect(CITY_SLUG_SET.has(hidden), `${hidden} allowlist'e sızmış`).toBe(false);
     }
-    expect(CITY_SLUG_SET.has("nigde")).toBe(true);
+    expect(CITY_SLUG_SET.has("istanbul")).toBe(true);
   });
 
   it("tüm slug'lar URL-güvenli ([a-z0-9-]) ve benzersiz", () => {

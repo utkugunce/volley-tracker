@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-22T09:42:39.852288+03:00",
+  "updated_at": "2026-10-22T13:31:43.444709+03:00",
   "total_cities": 81,
-  "active_cities": 38,
-  "total_matches": 1557,
+  "active_cities": 35,
+  "total_matches": 1477,
   "cities": [
     {
       "ilid": "1",
@@ -60,8 +60,8 @@
       "name": "Ankara",
       "slug": "ankara",
       "url": "https://ankara.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (106 Maç Mevcut)",
-      "matches_count": 106,
+      "status": "Aktif (107 Maç Mevcut)",
+      "matches_count": 107,
       "standings_count": 23,
       "data_file": "data/cities/ankara.json"
     },
@@ -200,9 +200,9 @@
       "name": "Denizli",
       "slug": "denizli",
       "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (81 Maç Mevcut)",
-      "matches_count": 81,
-      "standings_count": 3,
+      "status": "Aktif (32 Maç Mevcut)",
+      "matches_count": 32,
+      "standings_count": 2,
       "data_file": "data/cities/denizli.json"
     },
     {
@@ -249,11 +249,12 @@
       "ilid": "25",
       "name": "Erzurum",
       "slug": "erzurum",
-      "url": "https://erzurum.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (3 Maç Mevcut)",
-      "matches_count": 3,
-      "standings_count": 3,
-      "data_file": "data/cities/erzurum.json"
+      "url": "erzurum.voleyboliltemsilciligi.com",
+      "status": "Devre Dışı",
+      "matches_count": 0,
+      "standings_count": 0,
+      "data_file": null,
+      "excluded": true
     },
     {
       "ilid": "26",
@@ -319,11 +320,12 @@
       "ilid": "32",
       "name": "Isparta",
       "slug": "isparta",
-      "url": "https://isparta.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (5 Maç Mevcut)",
-      "matches_count": 5,
-      "standings_count": 5,
-      "data_file": "data/cities/isparta.json"
+      "url": "isparta.voleyboliltemsilciligi.com",
+      "status": "Devre Dışı",
+      "matches_count": 0,
+      "standings_count": 0,
+      "data_file": null,
+      "excluded": true
     },
     {
       "ilid": "33",
@@ -410,8 +412,8 @@
       "name": "Kocaeli",
       "slug": "kocaeli",
       "url": "https://kocaeli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (129 Maç Mevcut)",
-      "matches_count": 129,
+      "status": "Aktif (133 Maç Mevcut)",
+      "matches_count": 133,
       "standings_count": 2,
       "data_file": "data/cities/kocaeli.json"
     },
@@ -450,8 +452,8 @@
       "name": "Manisa",
       "slug": "manisa",
       "url": "https://manisa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (18 Maç Mevcut)",
-      "matches_count": 18,
+      "status": "Aktif (17 Maç Mevcut)",
+      "matches_count": 17,
       "standings_count": 2,
       "data_file": "data/cities/manisa.json"
     },
@@ -480,8 +482,8 @@
       "name": "Muğla",
       "slug": "mugla",
       "url": "https://mugla.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (15 Maç Mevcut)",
-      "matches_count": 15,
+      "status": "Aktif (18 Maç Mevcut)",
+      "matches_count": 18,
       "standings_count": 11,
       "data_file": "data/cities/mugla.json"
     },
@@ -509,11 +511,12 @@
       "ilid": "51",
       "name": "Niğde",
       "slug": "nigde",
-      "url": "https://nigde.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
-      "matches_count": 30,
-      "standings_count": 3,
-      "data_file": "data/cities/nigde.json"
+      "url": "nigde.voleyboliltemsilciligi.com",
+      "status": "Devre Dışı",
+      "matches_count": 0,
+      "standings_count": 0,
+      "data_file": null,
+      "excluded": true
     },
     {
       "ilid": "52",
@@ -690,11 +693,12 @@
       "ilid": "69",
       "name": "Bayburt",
       "slug": "bayburt",
-      "url": "https://bayburt.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "url": "bayburt.voleyboliltemsilciligi.com",
+      "status": "Devre Dışı",
       "matches_count": 0,
       "standings_count": 0,
-      "data_file": null
+      "data_file": null,
+      "excluded": true
     },
     {
       "ilid": "70",
@@ -751,11 +755,12 @@
       "ilid": "75",
       "name": "Ardahan",
       "slug": "ardahan",
-      "url": "https://ardahan.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "url": "ardahan.voleyboliltemsilciligi.com",
+      "status": "Devre Dışı",
       "matches_count": 0,
       "standings_count": 0,
-      "data_file": null
+      "data_file": null,
+      "excluded": true
     },
     {
       "ilid": "76",

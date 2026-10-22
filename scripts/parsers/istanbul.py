@@ -60,6 +60,12 @@ TEAM_STANDARDIZATION = {
     "Thy B": "THY B",
     "İbb": "İBB",
     "İnsped": "İnsped",
+    "Avcılar Yankı": "Avcılar Yankı Spor Kulübü U18",
+    "Bağcılar Evren": "Bağcılar Evren Spor U18",
+    "Beylikdüzü Beykent": "Beylikdüzü Beykent Spor Kulübü U18",
+    "Haliç Akademi": "Haliç Akademi SK U18",
+    "Konak": "Sarıyer Konak Spor Kulübü U18",
+    "Tuzla Rekor A": "Tuzla Rekor Spor Kulübü U18",
 }
 
 def _normalize_txt(s: str) -> str:
@@ -217,6 +223,9 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
         logger.info(f"{cat_name} altında {len(comps)} grup bulundu.")
 
         for c_val, c_text in comps:
+            lower_comp = c_text.lower()
+            if any(kw in lower_comp for kw in ["kurumlar", "kurum", "kamu", "kamu spor", "okul spor", "okul", "şirket", "sirket", "veteran", "özel turnuva", "ozel turnuva", "cumhuriyet kupa", "kupa", "deneme", "test"]):
+                continue
             group_name = extract_group_name(c_text)
             eff_cat_name = cat_name
             eff_group_name = group_name

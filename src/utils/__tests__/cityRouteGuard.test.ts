@@ -72,6 +72,9 @@ describe("evaluateCityRoute — ENGELLENMELİ (gerçek 404)", () => {
     ["/bayburt", "unknown-city"],
     ["/usak", "unknown-city"],
     ["/kirikkale", "unknown-city"],
+    ["/nigde", "unknown-city"],
+    ["/erzurum", "unknown-city"],
+    ["/isparta", "unknown-city"],
     ["/sonuclar/xyz-gecersiz", "unknown-tab-city"],
     ["/fikstur/foobar", "unknown-tab-city"],
     ["/puan-durumu/bayburt", "unknown-tab-city"],
@@ -127,9 +130,9 @@ describe("evaluateCityRoute — GEÇMELİ (dokunulmaz)", () => {
     "/puan-durumu/ankara",
     "/gunun-maclari/bursa",
     "/grup-durumu/istanbul",
-    "/nigde",
-    "/fikstur/nigde",
-    "/puan-durumu/nigde",
+    "/antalya",
+    "/fikstur/antalya",
+    "/puan-durumu/antalya",
     "/kulupler/istanbul",
     "/kulupler/istanbul/kadikoy",
     "/kulupler/all",
@@ -163,7 +166,7 @@ describe("evaluateCityRoute — GEÇMELİ (dokunulmaz)", () => {
 
 describe("evaluateCityRoute — kararlılık", () => {
   it("aynı girdi her zaman aynı kararı verir (saf fonksiyon)", () => {
-    for (const p of ["/nigde", "/istanbul", "/sonuclar/xyz"]) {
+    for (const p of ["/antalya", "/istanbul", "/sonuclar/xyz"]) {
       expect(evaluateCityRoute(p)).toEqual(evaluateCityRoute(p));
     }
   });

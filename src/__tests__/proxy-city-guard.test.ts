@@ -36,6 +36,9 @@ describe("proxy — şehir bekçisi gerçek 404 döner", () => {
     "/bayburt",
     "/usak",
     "/kirikkale",
+    "/nigde",
+    "/erzurum",
+    "/isparta",
     "/sonuclar/xyz-gecersiz",
     "/fikstur/foobar",
     "/kulupler/olmayan-sehir-xyz",
@@ -62,7 +65,7 @@ describe("proxy — geçerli adresler dokunulmadan geçer", () => {
   const passedPaths = [
     "/",
     "/istanbul",
-    "/nigde",
+    "/ankara",
     "/all",
     "/fikstur",
     "/fikstur/istanbul",

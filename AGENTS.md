@@ -161,6 +161,15 @@ Kuralı `src/__tests__/metadata-brand.test.ts` tüm `page.tsx` dosyalarını tar
 > Projede yapılan her kod, hata düzeltmesi veya yapılandırma değişikliğinden sonra (testlerin başarıyla tamamlanmasının ardından) değişiklikler anlamlı bir commit mesajı ile commit'lenip uzak depoya (`origin main`) push edilmelidir.
 
 
+## 🚫 KURAL: Resmi Olmayan Turnuvaları Filtreleme (Okul Sporları, Kamu Sporları, Kurumlar Arası)
+
+> **UYGULAMA PRENSİBİ:**
+> Sitede **yalnızca TVF resmi kulüp altyapı ligleri** (Genç Kızlar Süper Lig/1. Lig, Yıldız Kızlar Süper Lig) yer alır.
+> Aşağıdaki kategoriler ve turnuvalar kesinlikle taranmaz, sitede gösterilmez ve her aşamada (scraper ve filtreler) filtrelenir:
+> - **Okul Sporları:** İsminde, liginde veya grubunda `"okul sporları"`, `"okul spor"`, `"okul"` geçen turnuva ve karşılaşmalar kesinlikle siteye eklenmez (Örn: Denizli, Malatya okul sporları).
+> - **Kamu Sporları:** İsminde, liginde veya grubunda `"kamu sporları"`, `"kamu spor"`, `"kamu"` geçen turnuvalar siteye eklenmez (Örn: Erzurum, Niğde).
+> - **Kurumlar Arası / Şirket / Özel Turnuvalar:** `"kurumlar arası"`, `"kurum"`, `"şirket"`, `"veteran"`, `"cumhuriyet kupası"` gibi altyapı kulüp ligi olmayan turnuvalar siteye eklenmez (Örn: Kırıkkale, Isparta, Uşak).
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know

@@ -34,7 +34,15 @@ TARGET = BASE_DIR / "src" / "utils" / "citySlugs.ts"
 
 # src/utils/hiddenCities.ts ile aynı liste. Oradan import edilemez çünkü bu
 # script Node değil Python; iki yerin senkron kaldığını citySlugs.test.ts doğrular.
-HIDDEN_CITY_SLUGS = {"kirikkale", "usak", "bayburt", "ardahan"}
+HIDDEN_CITY_SLUGS = {
+    "kirikkale",
+    "usak",
+    "nigde",
+    "erzurum",
+    "isparta",
+    "bayburt",
+    "ardahan",
+}
 
 HEADER = '''/**
  * BU DOSYA OTOMATİK ÜRETİLİR — ELLE DÜZENLEMEYİN.
