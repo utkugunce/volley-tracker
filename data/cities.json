@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-21T22:06:25.906271+03:00",
+  "updated_at": "2026-10-22T09:42:39.852288+03:00",
   "total_cities": 81,
   "active_cities": 38,
-  "total_matches": 1542,
+  "total_matches": 1557,
   "cities": [
     {
       "ilid": "1",
@@ -100,8 +100,8 @@
       "name": "Balıkesir",
       "slug": "balikesir",
       "url": "https://balikesir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (35 Maç Mevcut)",
-      "matches_count": 35,
+      "status": "Aktif (51 Maç Mevcut)",
+      "matches_count": 51,
       "standings_count": 7,
       "data_file": "data/cities/balikesir.json"
     },
@@ -550,8 +550,8 @@
       "name": "Samsun",
       "slug": "samsun",
       "url": "https://samsun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (63 Maç Mevcut)",
-      "matches_count": 63,
+      "status": "Aktif (62 Maç Mevcut)",
+      "matches_count": 62,
       "standings_count": 2,
       "data_file": "data/cities/samsun.json"
     },

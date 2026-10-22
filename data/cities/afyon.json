@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T01:26:30.669890+00:00",
+  "updated_at": "2026-10-22T09:42:39.852288+03:00",
   "city": "Afyonkarahisar",
   "slug": "afyon",
   "title": "TVF Afyonkarahisar Genç & Yıldız Kızlar Süper Lig",
@@ -524,18 +524,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411154",
+        "url": "https://women.volleybox.net/tr/cex-voleybol-spor-kulubu-u18-afyon-zirve-spor-kulubu-u18-c411154",
+        "host_name": "CEX Voleybol Spor Kulübü U18",
+        "guest_name": "Afyon Zirve Spor Kulübü U18",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "14:30",
+        "vb_hall": "Mustafa Abi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "14:30",
+          "vb_hall": "Mustafa Abi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -744,18 +751,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411155",
+        "url": "https://women.volleybox.net/tr/afyon-genclik-ve-spor-kulubu-u16-afyon-belediye-yuntas-sk-u16-c411155",
+        "host_name": "Afyon Gençlik Ve Spor Kulübü U16",
+        "guest_name": "Afyon Belediye Yüntaş SK U16",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-10",
+        "vb_time": "11:30",
+        "vb_hall": "Mustafa Abi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-10",
+          "vb_time": "11:30",
+          "vb_hall": "Mustafa Abi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -782,18 +796,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411156",
+        "url": "https://women.volleybox.net/tr/afyon-zirve-spor-kulubu-u16-ema-spor-kulubu-u16-c411156",
+        "host_name": "Afyon Zirve Spor Kulübü U16",
+        "guest_name": "E.M.A Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-10",
+        "vb_time": "13:00",
+        "vb_hall": "Mustafa Abi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-10",
+          "vb_time": "13:00",
+          "vb_hall": "Mustafa Abi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -866,6 +887,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 10,
-  "volleybox_sync_updated_at": "2026-10-22T01:28:28.255797"
+  "volleybox_synced_matches": 13,
+  "volleybox_sync_updated_at": "2026-10-22T09:48:06.508625"
 }

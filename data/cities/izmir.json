@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T01:26:30.669890+00:00",
+  "updated_at": "2026-10-22T09:42:39.852288+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -3016,10 +3016,10 @@
         "url": "https://women.volleybox.net/tr/dost-spor-u18-zmir-altnay-spor-kulubu-u18-c408030",
         "host_name": "Dost Spor U18",
         "guest_name": "İzmir Altınay Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-19",
-        "vb_time": null,
+        "vb_time": "20:00",
         "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -3027,7 +3027,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-19",
-          "vb_time": null,
+          "vb_time": "20:00",
           "vb_hall": "Balçova Spor Salonu",
           "details": null
         }
@@ -8213,5 +8213,5 @@
     }
   ],
   "volleybox_synced_matches": 134,
-  "volleybox_sync_updated_at": "2026-10-22T01:28:28.226693"
+  "volleybox_sync_updated_at": "2026-10-22T09:48:17.879602"
 }

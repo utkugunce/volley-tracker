@@ -3,7 +3,7 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-10-21T18:34:59.884717",
+    "guncellenme_zamani": "2026-10-22T09:48:37.768466",
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 163,
     "toplam_mac_sayisi": 803,
@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 643,
-    "volleybox_sync_updated_at": "2026-10-21T18:34:59.884861"
+    "volleybox_sync_updated_at": "2026-10-22T09:52:35.138252"
   },
   "gruplar": [
     {
@@ -1656,11 +1656,11 @@
               "has_diff": true,
               "date_diff": false,
               "time_diff": true,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-11-08",
               "vb_time": "21:00",
               "vb_hall": "Beylikdüzü Spor Kompleksi",
-              "details": "Saat Değişti (TVF: 20:00 / VB: 21:00)"
+              "details": "Saat Değişti (TVF: 16:00 / VB: 21:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
             }
           }
         },
@@ -3838,11 +3838,11 @@
               "has_diff": true,
               "date_diff": false,
               "time_diff": true,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-11-01",
               "vb_time": "17:00",
               "vb_hall": "Beylikdüzü Spor Kompleksi",
-              "details": "Saat Değişti (TVF: 16:00 / VB: 17:00)"
+              "details": "Saat Değişti (TVF: 16:00 / VB: 17:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
             }
           }
         },
@@ -3889,11 +3889,11 @@
               "has_diff": true,
               "date_diff": false,
               "time_diff": true,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-11-01",
               "vb_time": "19:00",
               "vb_hall": "Beylikdüzü Spor Kompleksi",
-              "details": "Saat Değişti (TVF: 18:00 / VB: 19:00)"
+              "details": "Saat Değişti (TVF: 18:00 / VB: 19:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
             }
           }
         },
@@ -4399,11 +4399,11 @@
               "has_diff": true,
               "date_diff": false,
               "time_diff": true,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-11-15",
               "vb_time": "17:00",
               "vb_hall": "Beylikdüzü Spor Kompleksi",
-              "details": "Saat Değişti (TVF: 16:00 / VB: 17:00)"
+              "details": "Saat Değişti (TVF: 16:00 / VB: 17:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
             }
           }
         },
@@ -4450,11 +4450,11 @@
               "has_diff": true,
               "date_diff": false,
               "time_diff": true,
-              "hall_diff": false,
+              "hall_diff": true,
               "vb_date": "2026-11-15",
               "vb_time": "19:00",
               "vb_hall": "Beylikdüzü Spor Kompleksi",
-              "details": "Saat Değişti (TVF: 18:00 / VB: 19:00)"
+              "details": "Saat Değişti (TVF: 18:00 / VB: 19:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
             }
           }
         },
@@ -36175,7 +36175,7 @@
               "vb_date": "2026-10-25",
               "vb_time": "15:00",
               "vb_hall": "Fındıklı Spor Salonu",
-              "details": "Saat Değişti (TVF: 14:00 / VB: 15:00)"
+              "details": "Saat Değişti (TVF: 16:00 / VB: 15:00)"
             }
           }
         },
@@ -36270,14 +36270,14 @@
             "vb_time": "14:00",
             "vb_hall": "Beşikdüzü Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
-              "time_diff": false,
+              "time_diff": true,
               "hall_diff": false,
               "vb_date": "2026-10-25",
               "vb_time": "14:00",
               "vb_hall": "Beşikdüzü Spor Salonu",
-              "details": null
+              "details": "Saat Değişti (TVF: 16:00 / VB: 14:00)"
             }
           }
         },
@@ -62091,7 +62091,7 @@
           "vb_date": "2026-10-25",
           "vb_time": "15:00",
           "vb_hall": "Fındıklı Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:00 / VB: 15:00)"
+          "details": "Saat Değişti (TVF: 16:00 / VB: 15:00)"
         }
       }
     },
@@ -62135,14 +62135,14 @@
         "vb_time": "14:00",
         "vb_hall": "Beşikdüzü Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-25",
           "vb_time": "14:00",
           "vb_hall": "Beşikdüzü Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 16:00 / VB: 14:00)"
         }
       }
     },
@@ -65490,11 +65490,11 @@
           "has_diff": true,
           "date_diff": false,
           "time_diff": true,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-01",
           "vb_time": "17:00",
           "vb_hall": "Beylikdüzü Spor Kompleksi",
-          "details": "Saat Değişti (TVF: 16:00 / VB: 17:00)"
+          "details": "Saat Değişti (TVF: 16:00 / VB: 17:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
         }
       }
     },
@@ -66255,11 +66255,11 @@
           "has_diff": true,
           "date_diff": false,
           "time_diff": true,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-01",
           "vb_time": "19:00",
           "vb_hall": "Beylikdüzü Spor Kompleksi",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 19:00)"
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
         }
       }
     },
@@ -70845,11 +70845,11 @@
           "has_diff": true,
           "date_diff": false,
           "time_diff": true,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-08",
           "vb_time": "21:00",
           "vb_hall": "Beylikdüzü Spor Kompleksi",
-          "details": "Saat Değişti (TVF: 20:00 / VB: 21:00)"
+          "details": "Saat Değişti (TVF: 16:00 / VB: 21:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
         }
       }
     },
@@ -76186,11 +76186,11 @@
           "has_diff": true,
           "date_diff": false,
           "time_diff": true,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-15",
           "vb_time": "17:00",
           "vb_hall": "Beylikdüzü Spor Kompleksi",
-          "details": "Saat Değişti (TVF: 16:00 / VB: 17:00)"
+          "details": "Saat Değişti (TVF: 16:00 / VB: 17:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
         }
       }
     },
@@ -76740,11 +76740,11 @@
           "has_diff": true,
           "date_diff": false,
           "time_diff": true,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-11-15",
           "vb_time": "19:00",
           "vb_hall": "Beylikdüzü Spor Kompleksi",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 19:00)"
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:00) | Salon Değişti (TVF: BÜYÜKÇEKMECE MİMAR SİNAN SPOR SALONU / VB: Beylikdüzü Spor Kompleksi)"
         }
       }
     },

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T22:06:25.906271+03:00",
+  "updated_at": "2026-10-22T09:42:39.852288+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -430,8 +430,8 @@
         "url": "https://women.volleybox.net/tr/zeugma-spor-kulubu-u18-adrenalin-rekor-spor-kulubu-u18-c406710",
         "host_name": "Zeugma Spor Kulübü U18",
         "guest_name": "Adrenalin Rekor Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-11",
         "vb_time": "12:30",
         "vb_hall": "Dumlupınar Spor Salonu",
@@ -771,5 +771,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-21T15:23:44.122981"
+  "volleybox_sync_updated_at": "2026-10-22T09:48:12.229767"
 }

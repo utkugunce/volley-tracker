@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T01:26:30.669890+00:00",
+  "updated_at": "2026-10-22T09:42:39.852288+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -291,8 +291,8 @@
         "url": "https://women.volleybox.net/tr/sakarya-gelisim-spor-kulubu-u18-asas-spor-kulubu-u18-c408246",
         "host_name": "Sakarya Gelişim Spor Kulübü U18",
         "guest_name": "Asaş Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-20",
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
@@ -351,5 +351,5 @@
     }
   ],
   "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-22T01:28:28.218030"
+  "volleybox_sync_updated_at": "2026-10-22T09:48:21.359247"
 }
