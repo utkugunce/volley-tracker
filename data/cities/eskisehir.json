@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T22:06:25.906271+03:00",
+  "updated_at": "2026-10-22T01:26:30.669890+00:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -156,7 +156,7 @@
       },
       {
         "rank": 4,
-        "team": "Es Voleybol Akademi Spor Kulübü - A U18",
+        "team": "Es Voleybol Akademi Spor Kulübü U18",
         "played": 3,
         "won": 0,
         "lost": 3,
@@ -180,7 +180,7 @@
       },
       {
         "rank": 2,
-        "team": "Anadolu Kolej Spor Kulübü U16",
+        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
         "played": 3,
         "won": 2,
         "lost": 1,
@@ -202,7 +202,7 @@
       },
       {
         "rank": 4,
-        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
         "played": 3,
         "won": 0,
         "lost": 3,
@@ -629,7 +629,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "eskisehir-20260923-007",
@@ -871,7 +886,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "eskisehir-20260923-013",
@@ -884,7 +914,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "1",
-      "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
+      "home_team": "Es Voleybol Akademi Spor Kulübü U18",
       "away_team": "Anadolu Kolej Spor Kulübü U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -977,7 +1007,7 @@
       "group": "B Grubu",
       "match_no": "3",
       "home_team": "Meryem Boz Spor Kulübü U18",
-      "away_team": "Es Voleybol Akademi Spor Kulübü - A U18",
+      "away_team": "Es Voleybol Akademi Spor Kulübü U18",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -1067,7 +1097,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "5",
-      "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
+      "home_team": "Es Voleybol Akademi Spor Kulübü U18",
       "away_team": "Eskişehir Yıldız Spor Kulübü U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -1198,7 +1228,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "2",
-      "home_team": "Anadolu Kolej Spor Kulübü U16",
+      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
       "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -1244,7 +1274,7 @@
       "group": "A Grubu",
       "match_no": "4",
       "home_team": "Eskişehir DSİ Bentspor U16",
-      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1288,8 +1318,8 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "8",
-      "home_team": "Anadolu Kolej Spor Kulübü U16",
-      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
+      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1333,7 +1363,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "9",
-      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
       "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
       "score": "0 - 3",
       "home_score": 0,
@@ -1379,7 +1409,7 @@
       "group": "A Grubu",
       "match_no": "10",
       "home_team": "Eskişehir DSİ Bentspor U16",
-      "away_team": "Anadolu Kolej Spor Kulübü U16",
+      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -2200,7 +2230,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "eskisehir-20261031-043",
@@ -2618,7 +2663,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "eskisehir-20261029-053",
@@ -2637,7 +2697,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "eskisehir-20261103-054",
@@ -2656,7 +2731,24 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 48,
+  "volleybox_sync_updated_at": "2026-10-22T01:28:28.235675"
 }

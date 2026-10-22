@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T22:06:25.906271+03:00",
+  "updated_at": "2026-10-22T01:26:30.669890+00:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -2883,5 +2883,7 @@
         }
       }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 63,
+  "volleybox_sync_updated_at": "2026-10-22T01:28:28.247207"
 }
