@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T16:25:00.372636+03:00",
+  "updated_at": "2026-10-22T19:34:29.126533+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -955,37 +955,41 @@
     "Genç Kızlar 1. Lig 3. Bölge - A Grubu": [
       {
         "rank": 1,
-        "team": "Anadolu Smaç Spor U18",
-        "played": 0,
-        "won": 0,
+        "team": "Çekmeköy İstanbul SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "set_ratio": "MAX",
+        "points_won": 76,
+        "points_lost": 66,
+        "point_ratio": "1.152",
+        "form": [
+          "W"
+        ]
       },
       {
         "rank": 2,
-        "team": "Ataşehir Yıldızları U18",
-        "played": 0,
+        "team": "Anadolu Smaç Spor U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 66,
+        "points_lost": 76,
+        "point_ratio": "0.868",
+        "form": [
+          "L"
+        ]
       },
       {
         "rank": 3,
-        "team": "Çekmeköy İstanbul SK U18",
+        "team": "Ataşehir Yıldızları U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -7032,18 +7036,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411472",
+        "url": "https://women.volleybox.net/tr/beylikduzu-beykent-spor-kulubu-u18-saryer-konak-spor-kulubu-u18-c411472",
+        "host_name": "Beylikdüzü Beykent Spor Kulübü U18",
+        "guest_name": "Sarıyer Konak Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-20",
+        "vb_time": "19:30",
+        "vb_hall": "Tozkoparan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-20",
+          "vb_time": "19:30",
+          "vb_hall": "Tozkoparan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -7151,11 +7162,15 @@
       "match_no": "1",
       "home_team": "Anadolu Smaç Spor U18",
       "away_team": "Çekmeköy İstanbul SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "24-26",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411465",
@@ -7444,22 +7459,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411683",
+        "url": "https://women.volleybox.net/tr/kuzey-isklar-sk-u18-tu-gelistirme-vakf-okullar-sk-u18-c411683",
+        "host_name": "Kuzey Işıkları SK U18",
+        "guest_name": "İTÜ Geliştirme Vakfı Okulları SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-24",
+        "vb_time": "15:30",
+        "vb_hall": "Halkalı Ata Sporları Merkezi",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-24",
+          "vb_time": "15:30",
+          "vb_hall": "Halkalı Ata Sporları Merkezi",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 113,
-  "volleybox_sync_updated_at": "2026-10-22T17:23:59.091066"
+  "volleybox_synced_matches": 115,
+  "volleybox_sync_updated_at": "2026-10-22T19:40:34.547827"
 }

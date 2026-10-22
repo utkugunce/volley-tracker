@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T16:25:00.372636+03:00",
+  "updated_at": "2026-10-22T19:34:29.126533+03:00",
   "city": "Çorum",
   "slug": "corum",
   "title": "TVF Çorum Genç & Yıldız Kızlar Süper Lig",
@@ -301,18 +301,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411669",
+        "url": "https://women.volleybox.net/tr/corum-efor-spor-kulubu-u18-corum-genclik-spor-kulubu-u18-c411669",
+        "host_name": "Çorum Efor Spor Kulübü U18",
+        "guest_name": "Çorum Gençlik Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-26",
+        "vb_time": "18:00",
+        "vb_hall": "Çorum Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "18:00",
+          "vb_hall": "Çorum Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -335,18 +342,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411670",
+        "url": "https://women.volleybox.net/tr/corum-arena-spor-u18-corum-bahcelievler-spor-kulubu-u18-c411670",
+        "host_name": "Çorum Arena Spor U18",
+        "guest_name": "Çorum Bahçelievler Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-26",
+        "vb_time": "19:30",
+        "vb_hall": "Çorum Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "19:30",
+          "vb_hall": "Çorum Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -459,22 +473,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411671",
+        "url": "https://women.volleybox.net/tr/mecitozu-dogus-spor-kulubu-u18-osmanck-belediyespor-u18-c411671",
+        "host_name": "Mecitözü Doğuş Spor Kulübü U18",
+        "guest_name": "Osmancık Belediyespor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-27",
+        "vb_time": "18:00",
+        "vb_hall": "Çorum Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-27",
+          "vb_time": "18:00",
+          "vb_hall": "Çorum Atatürk Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-22T17:23:55.792130"
+  "volleybox_synced_matches": 9,
+  "volleybox_sync_updated_at": "2026-10-22T19:40:32.834794"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T16:25:00.372636+03:00",
+  "updated_at": "2026-10-22T19:34:29.126533+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -1585,18 +1585,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411672",
+        "url": "https://women.volleybox.net/tr/denizli-buyuksehir-belediyespor-u16-denizli-anadolu-pars-gsk-u16-c411672",
+        "host_name": "Denizli Büyükşehir Belediyespor U16",
+        "guest_name": "Denizli Anadolu Pars GSK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-26",
+        "vb_time": "18:30",
+        "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "18:30",
+          "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1619,22 +1626,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411673",
+        "url": "https://women.volleybox.net/tr/yesil-civril-belediyespor-u16-cavidilspor-u16-c411673",
+        "host_name": "Yeşil Çivril Belediyespor U16",
+        "guest_name": "Cavidilspor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-31",
+        "vb_time": "13:00",
+        "vb_hall": "Çivril Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "13:00",
+          "vb_hall": "Çivril Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 30,
-  "volleybox_sync_updated_at": "2026-10-22T17:23:55.878635"
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-10-22T19:40:32.879306"
 }

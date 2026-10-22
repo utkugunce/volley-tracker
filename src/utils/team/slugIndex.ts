@@ -40,6 +40,16 @@ function slugKeysOf(team: string, mapping: VolleyboxMapping | undefined): Set<st
   const keys = new Set<string>([slugify(team)]);
   if (mapping?.matched_as) keys.add(slugify(mapping.matched_as));
   if (mapping?.internal_name) keys.add(slugify(mapping.internal_name));
+  if (mapping?.aliases) {
+    for (const alias of mapping.aliases) {
+      if (alias) keys.add(slugify(alias));
+    }
+  }
+  if (mapping?.synonyms) {
+    for (const syn of mapping.synonyms) {
+      if (syn) keys.add(slugify(syn));
+    }
+  }
   return keys;
 }
 

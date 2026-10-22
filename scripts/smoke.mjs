@@ -17,6 +17,19 @@ const BASE_URL = (process.env.BASE_URL || process.argv[2] || "https://altyapivol
 
 console.log(`\n🏐 [Smoke Test] Hedef Adres: ${BASE_URL}\n`);
 
+// Vercel Deployment Protection: korumalı adresler için isteğe bağlı bypass.
+// https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
+const BYPASS_SECRET = process.env.VERCEL_AUTOMATION_BYPASS_SECRET || "";
+if (BYPASS_SECRET) {
+  const nativeFetch = globalThis.fetch;
+  globalThis.fetch = (input, init = {}) => {
+    const headers = new Headers(init.headers || {});
+    headers.set("x-vercel-protection-bypass", BYPASS_SECRET);
+    return nativeFetch(input, { ...init, headers });
+  };
+  console.log("  ℹ️  Vercel protection bypass başlığı etkin.\n");
+}
+
 let failed = false;
 const failures = [];
 
@@ -31,11 +44,12 @@ function assert(condition, message) {
 }
 
 async function runGroupA() {
-  console.log("--- GRUP A: Gerçek 404 Denetimi (12 Adres) ---");
+  console.log("--- GRUP A: Gerçek 404 Denetimi (13 Adres) ---");
   const notFoundPaths = [
     "/bayburt",
     "/usak",
     "/kirikkale",
+    "/nigde",
     "/definitely-not-a-page-xyz",
     "/foobar-invalid-city",
     "/takim",
@@ -71,7 +85,7 @@ async function runGroupB() {
     "/",
     "/istanbul",
     "/ankara",
-    "/nigde",
+    "/izmir",
     "/all",
     "/fikstur",
     "/fikstur/istanbul",

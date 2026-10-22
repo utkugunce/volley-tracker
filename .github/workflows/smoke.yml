@@ -42,7 +42,13 @@ jobs:
 
       - name: Run Smoke Test
         env:
-          BASE_URL: ${{ inputs.base_url || github.event.deployment_status.target_url || 'https://altyapivoleybol.com.tr' }}
+          # Production deploy'larında deployment_status.target_url, Vercel'in
+          # giriş korumalı (*.vercel.app) adresidir ve 302 döner. Canlı alan
+          # adını test ediyoruz; elle tetiklemede base_url girdisi kullanılır.
+          BASE_URL: ${{ inputs.base_url || 'https://altyapivoleybol.com.tr' }}
+          # İsteğe bağlı: korumalı önizleme adresleri test edilecekse
+          # Vercel "Protection Bypass for Automation" sırrı.
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: node scripts/smoke.mjs
 
       - name: Create smoke failure alert
@@ -56,7 +62,8 @@ jobs:
 
           - Workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           - Commit: ${{ github.sha }}
-          - Hedef Adres: ${{ inputs.base_url || github.event.deployment_status.target_url || 'https://altyapivoleybol.com.tr' }}
+          - Hedef Adres: ${{ inputs.base_url || 'https://altyapivoleybol.com.tr' }}
+          - Deployment: ${{ github.event.deployment_status.target_url || '-' }}
           - Tarih: $(date -u +'%Y-%m-%d %H:%M UTC')
 
           Lütfen smoke test günlüklerini inceleyin (HTTP 404, HTTP 200, Başlık marka eki, CSS veya Bundle ihlalleri).

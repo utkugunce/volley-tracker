@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T16:25:00.372636+03:00",
+  "updated_at": "2026-10-22T19:34:29.126533+03:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -209,18 +209,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411674",
+        "url": "https://women.volleybox.net/tr/diyarbakr-ckale-spor-kulubu-u18-sur-amed-spor-u18-c411674",
+        "host_name": "Diyarbakır İçkale Spor Kulübü U18",
+        "guest_name": "Sur Amed Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-24",
+        "vb_time": "12:00",
+        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-24",
+          "vb_time": "12:00",
+          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -284,18 +291,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411675",
+        "url": "https://women.volleybox.net/tr/diyarbakr-buyuksehir-belediyespor-u18-dicle-universitesi-spor-kulubu-u18-c411675",
+        "host_name": "Diyarbakır Büyükşehir Belediyespor U18",
+        "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-25",
+        "vb_time": "15:00",
+        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "15:00",
+          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -318,22 +332,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411676",
+        "url": "https://women.volleybox.net/tr/diyarbakr-genclik-spor-kulubu-u18-megaron-nsaat-diyarbakr-spor-kulubu-u18-c411676",
+        "host_name": "Diyarbakır Gençlik Spor Kulübü U18",
+        "guest_name": "Megaron İnşaat Diyarbakır Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-25",
+        "vb_time": "17:00",
+        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "17:00",
+          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-10-22T17:23:55.894654"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-10-22T19:40:32.889064"
 }

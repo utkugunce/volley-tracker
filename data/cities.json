@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-22T16:25:00.372636+03:00",
+  "updated_at": "2026-10-22T19:34:29.126533+03:00",
   "total_cities": 81,
   "active_cities": 36,
-  "total_matches": 1451,
+  "total_matches": 1616,
   "cities": [
     {
       "ilid": "1",
@@ -30,8 +30,8 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (16 Maç Mevcut)",
-      "matches_count": 16,
+      "status": "Aktif (18 Maç Mevcut)",
+      "matches_count": 18,
       "standings_count": 3,
       "data_file": "data/cities/afyon.json"
     },
@@ -60,9 +60,9 @@
       "name": "Ankara",
       "slug": "ankara",
       "url": "https://ankara.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (107 Maç Mevcut)",
-      "matches_count": 107,
-      "standings_count": 23,
+      "status": "Aktif (193 Maç Mevcut)",
+      "matches_count": 193,
+      "standings_count": 46,
       "data_file": "data/cities/ankara.json"
     },
     {
@@ -150,9 +150,9 @@
       "name": "Burdur",
       "slug": "burdur",
       "url": "https://burdur.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
-      "standings_count": 1,
+      "status": "Aktif (30 Maç Mevcut)",
+      "matches_count": 30,
+      "standings_count": 3,
       "data_file": "data/cities/burdur.json"
     },
     {
@@ -352,9 +352,9 @@
       "name": "İzmir",
       "slug": "izmir",
       "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (160 Maç Mevcut)",
-      "matches_count": 160,
-      "standings_count": 17,
+      "status": "Aktif (208 Maç Mevcut)",
+      "matches_count": 208,
+      "standings_count": 22,
       "data_file": "data/cities/izmir.json"
     },
     {
@@ -424,7 +424,7 @@
       "url": "https://konya.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (26 Maç Mevcut)",
       "matches_count": 26,
-      "standings_count": 10,
+      "standings_count": 16,
       "data_file": "data/cities/konya.json"
     },
     {
@@ -452,8 +452,8 @@
       "name": "Manisa",
       "slug": "manisa",
       "url": "https://manisa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (17 Maç Mevcut)",
-      "matches_count": 17,
+      "status": "Aktif (22 Maç Mevcut)",
+      "matches_count": 22,
       "standings_count": 2,
       "data_file": "data/cities/manisa.json"
     },
@@ -464,7 +464,7 @@
       "url": "https://kahramanmaras.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (16 Maç Mevcut)",
       "matches_count": 16,
-      "standings_count": 2,
+      "standings_count": 6,
       "data_file": "data/cities/kahramanmaras.json"
     },
     {
