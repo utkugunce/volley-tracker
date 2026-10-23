@@ -170,6 +170,13 @@ Kuralı `src/__tests__/metadata-brand.test.ts` tüm `page.tsx` dosyalarını tar
 > - **Kamu Sporları:** İsminde, liginde veya grubunda `"kamu sporları"`, `"kamu spor"`, `"kamu"` geçen turnuvalar siteye eklenmez (Örn: Erzurum, Niğde).
 > - **Kurumlar Arası / Şirket / Özel Turnuvalar:** `"kurumlar arası"`, `"kurum"`, `"şirket"`, `"veteran"`, `"cumhuriyet kupası"` gibi altyapı kulüp ligi olmayan turnuvalar siteye eklenmez (Örn: Kırıkkale, Isparta, Uşak).
 
+## 🎯 KURAL: Tasarım, UX, DX ve AX İlkeleri
+
+> **UYGULAMA PRENSİBİ:**
+> - "Cut taglines, helper text and secondary labels. If a screen needs them to make sense, fix the layout."
+> - "Make the best decision that will elevate all three: the user experience (UX), developer experience (DX), and agent experience (AX) always, without breaking anything."
+
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
