@@ -2,11 +2,37 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { RefreshCw, Lock, X, CheckCircle2, AlertTriangle, Square, Clock } from "lucide-react";
+import {
+  RefreshCw,
+  Lock,
+  X,
+  CheckCircle2,
+  AlertTriangle,
+  Square,
+  Clock,
+  ExternalLink,
+  Check,
+  Circle,
+} from "lucide-react";
 
 export interface SyncRefreshButtonProps {
   onRefreshComplete?: () => void;
 }
+
+export interface SyncStageItem {
+  id: string;
+  label: string;
+  description: string;
+  status: "pending" | "in_progress" | "completed" | "failed";
+}
+
+const DEFAULT_STAGES: SyncStageItem[] = [
+  { id: "prep", label: "Sistem Hazırlığı", description: "Ortam ve scraper motoru başlatılıyor", status: "pending" },
+  { id: "provinces", label: "81 İl Altyapı", description: "TVF yerel il bültenleri taranıyor", status: "pending" },
+  { id: "k2lig", label: "Kadınlar 2. Ligi", description: "16 grup fikstür ve puan durumları çekiliyor", status: "pending" },
+  { id: "volleybox", label: "Volleybox Eşleştirme", description: "Kadrolar, maçlar ve skorlar senkronize ediliyor", status: "pending" },
+  { id: "finalize", label: "Kayıt & Canlıya Alma", description: "Veri doğrulama, Supabase ve site güncellemesi", status: "pending" },
+];
 
 type SyncPhase = "idle" | "password" | "running" | "completed" | "cancelled" | "error";
 
@@ -18,6 +44,8 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [statusMessage, setStatusMessage] = useState<string>("");
   const [activeStep, setActiveStep] = useState<string>("");
+  const [stages, setStages] = useState<SyncStageItem[]>(DEFAULT_STAGES);
+  const [htmlUrl, setHtmlUrl] = useState<string | undefined>(undefined);
   const [runId, setRunId] = useState<number | undefined>(undefined);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCancelling, setIsCancelling] = useState(false);
@@ -108,28 +136,37 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
           setRunId(initialRunId);
         }
 
+        if (data.htmlUrl) {
+          setHtmlUrl(data.htmlUrl);
+        }
+
         if (data.activeStep) {
           setActiveStep(data.activeStep);
+        }
+
+        if (Array.isArray(data.stages) && data.stages.length > 0) {
+          setStages(data.stages);
         }
 
         if (data.status === "completed") {
           stopPolling();
           if (data.conclusion === "cancelled") {
             setPhase("cancelled");
-            setStatusMessage("Çekim işlemi iptal edildi.");
+            setStatusMessage("Çekim işlemi kullanıcı tarafından iptal edildi.");
           } else if (data.conclusion === "failure") {
             setPhase("error");
             setStatusMessage(data.activeStep || "Çekim sırasında bir hata oluştu.");
           } else {
             setPhase("completed");
             setStatusMessage("81 İl Altyapı ve Kadınlar 2. Ligi verileri başarıyla güncellendi!");
+            setStages((prev) => prev.map((s) => ({ ...s, status: "completed" })));
             onRefreshComplete?.();
           }
         }
       } catch {
         // geçici ağ hatalarını yoksay, sonraki turda tekrar dene
       }
-    }, 3000);
+    }, 2500);
   };
 
   const handleStartSync = async (e: React.FormEvent) => {
@@ -162,6 +199,7 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
       setRunId(typeof data.runId === "number" ? data.runId : undefined);
       setActiveStep(data.activeStep || "81 İl ve Kadınlar 2. Ligi verileri çekiliyor...");
       setStatusMessage(data.message || "Çekim işlemi başlatıldı.");
+      setStages(DEFAULT_STAGES.map((s, idx) => ({ ...s, status: idx === 0 ? "in_progress" : "pending" })));
       setPhase("running");
       setIsSubmitting(false);
 
@@ -194,6 +232,9 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
       if (res.ok && data.ok) {
         setPhase("cancelled");
         setStatusMessage(data.message || "Çekim işlemi iptal edildi.");
+        setStages((prev) =>
+          prev.map((s) => (s.status === "in_progress" ? { ...s, status: "failed" } : s))
+        );
       } else {
         setErrorMessage(data.error || "İptal işlemi sırasında bir hata oluştu.");
       }
@@ -214,7 +255,7 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
 
   const modalContent = isModalOpen ? (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150"
       role="dialog"
       aria-modal="true"
       aria-labelledby="sync-refresh-modal-title"
@@ -224,9 +265,9 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
         }
       }}
     >
-      <div className="w-full max-w-md rounded-2xl bg-slate-900 border border-slate-700/80 shadow-2xl overflow-hidden text-white">
+      <div className="w-full max-w-lg rounded-2xl bg-slate-900 border border-slate-700/80 shadow-2xl overflow-hidden text-white flex flex-col max-h-[92vh]">
         {/* Modal Üst Başlık */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800 bg-slate-950/60">
+        <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-800 bg-slate-950/70 shrink-0">
           <div className="flex items-center gap-2.5">
             <div
               className={`p-2 rounded-xl border ${
@@ -242,11 +283,16 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
               <RefreshCw size={16} className={isRunning ? "animate-spin" : ""} />
             </div>
             <div>
-              <h2 id="sync-refresh-modal-title" className="text-sm font-bold text-white">
-                Verileri Yenile (81 İl &amp; 2. Lig)
+              <h2 id="sync-refresh-modal-title" className="text-sm font-bold text-white flex items-center gap-2">
+                <span>Verileri Yenile (81 İl &amp; 2. Lig)</span>
+                {isRunning && (
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 animate-pulse">
+                    CANLI
+                  </span>
+                )}
               </h2>
               <p className="text-[11px] text-slate-400">
-                TVF Altyapı Bültenleri, 2. Lig ve Volleybox Senkronizasyonu
+                TVF Altyapı Bültenleri, 2. Lig ve Volleybox Eşleştirmeleri
               </p>
             </div>
           </div>
@@ -261,12 +307,19 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
         </div>
 
         {/* Modal Gövdesi */}
-        <div className="p-5">
+        <div className="p-5 overflow-y-auto space-y-4">
           {phase === "password" && (
             <form onSubmit={handleStartSync} className="space-y-4">
-              <p className="text-xs text-slate-300 leading-relaxed">
-                81 ilin tamamı, Kadınlar 2. Ligi (16 Grup) ve Volleybox maç eşleştirmeleri baştan çekilecektir. İşlemi başlatmak için yetkili şifreyi girin:
-              </p>
+              <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 space-y-1.5 text-xs text-slate-300 leading-relaxed">
+                <div className="font-semibold text-white flex items-center gap-1.5">
+                  <span>⚡ Çekim Kapsamı:</span>
+                </div>
+                <ul className="space-y-1 text-slate-400 list-disc list-inside">
+                  <li>81 İlin tamamındaki TVF altyapı kulüp bültenleri</li>
+                  <li>TVF Kadınlar 2. Ligi (16 Grup, 160+ takım puan durumu &amp; fikstür)</li>
+                  <li>Volleybox maç sonuçları ve kadro eşleştirmeleri</li>
+                </ul>
+              </div>
 
               <div>
                 <label htmlFor="sync-password-input" className="block text-xs font-semibold text-slate-300 mb-1.5">
@@ -289,7 +342,7 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
                       if (errorMessage) setErrorMessage(null);
                     }}
                     placeholder="Şifreyi girin..."
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-mono tracking-wider"
                   />
                 </div>
               </div>
@@ -326,26 +379,124 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
 
           {phase === "running" && (
             <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-sky-950/50 border border-sky-800/70 space-y-3">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-300">
-                    <RefreshCw size={13} className="animate-spin text-sky-400" />
-                    Çekim İşlemi Devam Ediyor
-                  </span>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-mono font-semibold text-sky-200 bg-sky-900/60 px-2 py-0.5 rounded-full border border-sky-700/60">
-                    <Clock size={11} />
-                    {formatDuration(elapsedSeconds)}
-                  </span>
+              {/* Canlı Sayaç & Durum Kartı */}
+              <div className="p-3.5 rounded-xl bg-sky-950/40 border border-sky-800/60 flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <RefreshCw size={14} className="animate-spin text-sky-400 shrink-0" />
+                  <div>
+                    <div className="text-xs font-bold text-white">Çekim İşlemi Devam Ediyor</div>
+                    <div className="text-[11px] text-sky-300 font-medium line-clamp-1">
+                      {activeStep || "İşlemler yürütülüyor..."}
+                    </div>
+                  </div>
                 </div>
-
-                <p className="text-xs text-slate-200 font-medium">
-                  {activeStep || "81 İl ve Kadınlar 2. Ligi verileri çekiliyor..."}
-                </p>
-
-                <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-sky-400 rounded-full animate-pulse w-2/3" />
+                <div className="flex items-center gap-1 text-xs font-mono font-bold text-sky-200 bg-sky-900/60 px-2.5 py-1 rounded-lg border border-sky-700/60 shrink-0">
+                  <Clock size={12} />
+                  <span>{formatDuration(elapsedSeconds)}</span>
                 </div>
               </div>
+
+              {/* CANLI AŞAMA AKIŞI (Pipeline Progress Flow) */}
+              <div className="space-y-2 rounded-xl bg-slate-950/70 border border-slate-800 p-3.5">
+                <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2.5">
+                  Canlı Çekim Akışı
+                </div>
+
+                <div className="space-y-2.5">
+                  {stages.map((stage, idx) => {
+                    const isDone = stage.status === "completed";
+                    const isCur = stage.status === "in_progress";
+                    const isFail = stage.status === "failed";
+
+                    return (
+                      <div
+                        key={stage.id}
+                        className={`flex items-start gap-3 p-2.5 rounded-xl border transition-all ${
+                          isCur
+                            ? "bg-sky-950/40 border-sky-500/50 shadow-sm shadow-sky-500/10 ring-1 ring-sky-500/20"
+                            : isDone
+                            ? "bg-slate-900/60 border-emerald-900/40 text-slate-300"
+                            : isFail
+                            ? "bg-rose-950/40 border-rose-800/60"
+                            : "bg-slate-900/30 border-slate-800/60 opacity-60"
+                        }`}
+                      >
+                        {/* Sol İkon */}
+                        <div className="mt-0.5 shrink-0">
+                          {isDone ? (
+                            <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center">
+                              <Check size={12} strokeWidth={3} />
+                            </div>
+                          ) : isCur ? (
+                            <div className="w-5 h-5 rounded-full bg-sky-500/20 text-sky-400 border border-sky-500/40 flex items-center justify-center animate-spin">
+                              <RefreshCw size={11} />
+                            </div>
+                          ) : isFail ? (
+                            <div className="w-5 h-5 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/40 flex items-center justify-center">
+                              <AlertTriangle size={11} />
+                            </div>
+                          ) : (
+                            <div className="w-5 h-5 rounded-full bg-slate-800 text-slate-500 border border-slate-700 flex items-center justify-center text-[10px] font-mono">
+                              {idx + 1}
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Metinler */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between gap-2">
+                            <span
+                              className={`text-xs font-semibold truncate ${
+                                isCur ? "text-sky-200 font-bold" : isDone ? "text-slate-200" : "text-slate-400"
+                              }`}
+                            >
+                              {stage.label}
+                            </span>
+                            <span
+                              className={`text-[10px] px-2 py-0.5 rounded-full font-mono font-medium shrink-0 ${
+                                isDone
+                                  ? "bg-emerald-950 text-emerald-300 border border-emerald-800/60"
+                                  : isCur
+                                  ? "bg-sky-950 text-sky-300 border border-sky-700/60 animate-pulse"
+                                  : isFail
+                                  ? "bg-rose-950 text-rose-300 border border-rose-800/60"
+                                  : "bg-slate-800 text-slate-500 border border-slate-700/50"
+                              }`}
+                            >
+                              {isDone
+                                ? "Tamamlandı"
+                                : isCur
+                                ? "Çalışıyor"
+                                : isFail
+                                ? "Hata"
+                                : "Bekliyor"}
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-slate-400 mt-0.5 truncate">
+                            {isCur && activeStep ? activeStep : stage.description}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* GitHub Actions Terminal Linki */}
+              {htmlUrl && (
+                <div className="flex items-center justify-between text-xs px-3 py-2 rounded-xl bg-slate-950/60 border border-slate-800 text-slate-400">
+                  <span>Detaylı terminal logları:</span>
+                  <a
+                    href={htmlUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sky-400 hover:text-sky-300 font-semibold"
+                  >
+                    <span>GitHub Actions'ta İzle</span>
+                    <ExternalLink size={12} />
+                  </a>
+                </div>
+              )}
 
               {errorMessage && (
                 <div
@@ -357,11 +508,13 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
                 </div>
               )}
 
+              {/* Alt Butonlar: Arka Planda Çalıştır & İptal Et */}
               <div className="flex items-center justify-between gap-2 pt-1">
                 <button
                   type="button"
                   onClick={handleCloseModal}
                   className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors cursor-pointer"
+                  title="Pencereyi kapatır, çekim arka planda devam eder"
                 >
                   Arka Planda Çalıştır
                 </button>
@@ -381,19 +534,39 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
           {phase === "completed" && (
             <div className="space-y-4">
               <div className="flex items-start gap-3 p-4 rounded-xl bg-emerald-950/60 border border-emerald-800/80 text-emerald-200">
-                <CheckCircle2 size={18} className="text-emerald-400 shrink-0 mt-0.5" />
+                <CheckCircle2 size={20} className="text-emerald-400 shrink-0 mt-0.5" />
                 <div className="text-xs space-y-1">
-                  <div className="font-bold text-white">Çekim Tamamlandı</div>
+                  <div className="font-bold text-white text-sm">Çekim Başarıyla Tamamlandı!</div>
                   <p>{statusMessage}</p>
+                  <div className="text-[11px] text-emerald-300/80 font-mono pt-1">
+                    Toplam Süre: {formatDuration(elapsedSeconds)}
+                  </div>
                 </div>
               </div>
+
+              {/* Tamamlanan Aşamalar Listesi */}
+              <div className="space-y-1.5 rounded-xl bg-slate-950/60 border border-slate-800 p-3">
+                {stages.map((stage) => (
+                  <div
+                    key={stage.id}
+                    className="flex items-center justify-between text-xs text-slate-300 py-1 px-1.5"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Check size={13} className="text-emerald-400" />
+                      <span>{stage.label}</span>
+                    </span>
+                    <span className="text-[10px] text-emerald-400 font-mono">Hazır</span>
+                  </div>
+                ))}
+              </div>
+
               <div className="flex justify-end">
                 <button
                   type="button"
                   onClick={handleCloseModal}
-                  className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold transition-colors cursor-pointer"
+                  className="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors cursor-pointer shadow-sm"
                 >
-                  Kapat
+                  Tamam
                 </button>
               </div>
             </div>
@@ -402,9 +575,9 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
           {phase === "cancelled" && (
             <div className="space-y-4">
               <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-950/60 border border-amber-800/80 text-amber-200">
-                <AlertTriangle size={18} className="text-amber-400 shrink-0 mt-0.5" />
+                <AlertTriangle size={20} className="text-amber-400 shrink-0 mt-0.5" />
                 <div className="text-xs space-y-1">
-                  <div className="font-bold text-white">İşlem İptal Edildi</div>
+                  <div className="font-bold text-white text-sm">İşlem İptal Edildi</div>
                   <p>{statusMessage || "Çekim işlemi kullanıcı tarafından durduruldu."}</p>
                 </div>
               </div>
@@ -434,9 +607,9 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
           {phase === "error" && (
             <div className="space-y-4">
               <div className="flex items-start gap-3 p-4 rounded-xl bg-rose-950/60 border border-rose-800/80 text-rose-200">
-                <AlertTriangle size={18} className="text-rose-400 shrink-0 mt-0.5" />
+                <AlertTriangle size={20} className="text-rose-400 shrink-0 mt-0.5" />
                 <div className="text-xs space-y-1">
-                  <div className="font-bold text-white">Çekim Hatası</div>
+                  <div className="font-bold text-white text-sm">Çekim Hatası</div>
                   <p>{statusMessage || errorMessage || "İşlem sırasında bir hata oluştu."}</p>
                 </div>
               </div>
@@ -446,6 +619,7 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
                   onClick={() => {
                     setErrorMessage(null);
                     setPhase("password");
+                    setPassword("");
                   }}
                   className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition-colors cursor-pointer"
                 >
@@ -475,7 +649,7 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
         title={isRunning ? "Çekim devam ediyor (Durumu gör / İptal et)" : "Tüm verileri yenile (Şifreli)"}
         className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-all active:scale-95 cursor-pointer border no-print ${
           isRunning
-            ? "bg-sky-600/90 hover:bg-sky-500 text-white border-sky-400/60 shadow-sm"
+            ? "bg-sky-600/90 hover:bg-sky-500 text-white border-sky-400/60 shadow-sm animate-pulse"
             : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border-slate-700/60"
         }`}
       >

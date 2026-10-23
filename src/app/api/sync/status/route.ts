@@ -9,6 +9,94 @@ import {
   verifySyncPasswordFromValue,
 } from "@/utils/scrapeTrigger";
 
+export interface SyncStage {
+  id: string;
+  label: string;
+  description: string;
+  status: "pending" | "in_progress" | "completed" | "failed";
+}
+
+const DEFAULT_STAGES: Array<{ id: string; label: string; description: string }> = [
+  { id: "prep", label: "Sistem Hazırlığı", description: "Ortam ve scraper motoru başlatılıyor" },
+  { id: "provinces", label: "81 İl Altyapı", description: "TVF yerel il bültenleri taranıyor" },
+  { id: "k2lig", label: "Kadınlar 2. Ligi", description: "16 grup fikstür ve puan durumları çekiliyor" },
+  { id: "volleybox", label: "Volleybox Eşleştirme", description: "Kadrolar, maçlar ve skorlar senkronize ediliyor" },
+  { id: "finalize", label: "Kayıt & Canlıya Alma", description: "Veri doğrulama, Supabase ve site güncellemesi" },
+];
+
+function computeStagesFromGithubSteps(
+  steps: Array<{ name: string; status: string; conclusion?: string | null }>,
+  runStatus: string,
+  runConclusion?: string | null
+): SyncStage[] {
+  if (runStatus === "completed" && runConclusion === "success") {
+    return DEFAULT_STAGES.map((s) => ({ ...s, status: "completed" }));
+  }
+
+  const isProvRunning = steps.some((s) => (s.name.includes("81 provinces") || s.name.includes("Run TVF 81")) && s.status === "in_progress");
+  const isProvDone = steps.some((s) => (s.name.includes("81 provinces") || s.name.includes("Run TVF 81")) && s.status === "completed" && s.conclusion === "success");
+
+  const isK2Running = steps.some((s) => s.name.includes("Kadinlar 2. Lig") && s.status === "in_progress");
+  const isK2Done = steps.some((s) => s.name.includes("Kadinlar 2. Lig") && s.status === "completed" && s.conclusion === "success");
+
+  const isVboxRunning = steps.some((s) => s.name.includes("Sync Volleybox") && s.status === "in_progress");
+  const isVboxDone = steps.some((s) => s.name.includes("Sync Volleybox") && s.status === "completed" && s.conclusion === "success");
+
+  const isFinalRunning = steps.some((s) => (s.name.includes("Commit") || s.name.includes("Validate") || s.name.includes("Supabase") || s.name.includes("city slug")) && s.status === "in_progress");
+  const isFinalDone = steps.some((s) => s.name.includes("Commit") && s.status === "completed" && s.conclusion === "success");
+
+  let activeIdx = 0;
+  if (isFinalRunning || isFinalDone) activeIdx = 4;
+  else if (isVboxRunning || isVboxDone) activeIdx = 3;
+  else if (isK2Running || isK2Done) activeIdx = 2;
+  else if (isProvRunning || isProvDone) activeIdx = 1;
+  else activeIdx = 0;
+
+  return DEFAULT_STAGES.map((s, idx) => {
+    let status: SyncStage["status"] = "pending";
+    if (runConclusion === "failure" || runConclusion === "cancelled") {
+      if (idx < activeIdx) status = "completed";
+      else if (idx === activeIdx) status = "failed";
+      else status = "pending";
+    } else {
+      if (idx < activeIdx) status = "completed";
+      else if (idx === activeIdx) status = runStatus === "completed" ? "completed" : "in_progress";
+      else status = "pending";
+    }
+    return { ...s, status };
+  });
+}
+
+function computeStagesFromLocalJob(job: { status: string; conclusion?: string | null; activeStep: string }): SyncStage[] {
+  if (job.status === "completed" && job.conclusion === "success") {
+    return DEFAULT_STAGES.map((s) => ({ ...s, status: "completed" }));
+  }
+
+  const text = (job.activeStep || "").toLowerCase();
+  let activeIdx = 1;
+  if (text.includes("kadınlar") || text.includes("2. lig")) {
+    activeIdx = 2;
+  } else if (text.includes("volleybox")) {
+    activeIdx = 3;
+  } else if (text.includes("doğrulama") || text.includes("kayıt")) {
+    activeIdx = 4;
+  }
+
+  return DEFAULT_STAGES.map((s, idx) => {
+    let status: SyncStage["status"] = "pending";
+    if (job.conclusion === "failure" || job.conclusion === "cancelled") {
+      if (idx < activeIdx) status = "completed";
+      else if (idx === activeIdx) status = "failed";
+      else status = "pending";
+    } else {
+      if (idx < activeIdx) status = "completed";
+      else if (idx === activeIdx) status = job.status === "completed" ? "completed" : "in_progress";
+      else status = "pending";
+    }
+    return { ...s, status };
+  });
+}
+
 export async function GET(request: Request) {
   const adminToken = process.env.ADMIN_TOKEN;
   const provided = extractSyncPasswordFromRequest(request);
@@ -36,7 +124,6 @@ export async function GET(request: Request) {
     const nowMs = Date.now();
     const createdMs = new Date(localJob.createdAt).getTime();
     const updatedMs = new Date(localJob.updatedAt).getTime();
-    // Aktifse veya son 2 dakika içinde tamamlandıysa yerel durumu raporla
     if (localJob.status === "in_progress" || nowMs - updatedMs < 120_000) {
       const elapsedSeconds = Math.max(0, Math.floor((nowMs - createdMs) / 1000));
       const TOTAL_ESTIMATED_SECONDS = 480;
@@ -44,6 +131,8 @@ export async function GET(request: Request) {
         localJob.status === "completed"
           ? 0
           : Math.max(5, TOTAL_ESTIMATED_SECONDS - elapsedSeconds);
+
+      const stages = computeStagesFromLocalJob(localJob);
 
       return NextResponse.json({
         available: true,
@@ -54,6 +143,7 @@ export async function GET(request: Request) {
         createdAt: localJob.createdAt,
         updatedAt: localJob.updatedAt,
         activeStep: localJob.activeStep,
+        stages,
         elapsedSeconds,
         remainingSeconds,
         totalEstimatedSeconds: TOTAL_ESTIMATED_SECONDS,
@@ -68,7 +158,6 @@ export async function GET(request: Request) {
       error: "GITHUB_REPOSITORY ortam değişkeni yapılandırılmamış.",
     });
   }
-
   const ghToken = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN)?.trim();
   const headers: Record<string, string> = {
     Accept: "application/vnd.github+json",
@@ -121,14 +210,14 @@ export async function GET(request: Request) {
     }
 
     let activeStep = "";
-    if (latestRun.status === "in_progress" && latestRun.jobs_url) {
+    let rawSteps: Array<{ name: string; status: string; conclusion?: string | null }> = [];
+    if (latestRun.jobs_url) {
       try {
         const jobsRes = await fetch(latestRun.jobs_url, { headers, cache: "no-store" });
         if (jobsRes.ok) {
           const jobsData = await jobsRes.json();
-          const steps: Array<{ name: string; status: string }> =
-            jobsData.jobs?.[0]?.steps || [];
-          const runningStep = steps.find((s) => s.status === "in_progress");
+          rawSteps = jobsData.jobs?.[0]?.steps || [];
+          const runningStep = rawSteps.find((s) => s.status === "in_progress");
           if (runningStep) {
             if (runningStep.name.includes("81 provinces") || runningStep.name.includes("Run TVF 81")) {
               activeStep = "TVF 81 il bülteni taranıyor...";
@@ -150,6 +239,8 @@ export async function GET(request: Request) {
       }
     }
 
+    const stages = computeStagesFromGithubSteps(rawSteps, latestRun.status, latestRun.conclusion);
+
     const nowMs = Date.now();
     const createdMs = new Date(latestRun.created_at).getTime();
     const elapsedSeconds = Math.max(0, Math.floor((nowMs - createdMs) / 1000));
@@ -169,6 +260,7 @@ export async function GET(request: Request) {
       createdAt: latestRun.created_at,
       updatedAt: latestRun.updated_at,
       activeStep,
+      stages,
       elapsedSeconds,
       remainingSeconds,
       totalEstimatedSeconds: TOTAL_ESTIMATED_SECONDS,
