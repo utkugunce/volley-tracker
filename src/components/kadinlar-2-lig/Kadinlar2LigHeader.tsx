@@ -23,6 +23,7 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
 import { triggerHaptic } from "@/utils/haptics";
 import { SettingsControls } from "@/components/SettingsControls";
+import { SyncRefreshButton } from "@/components/SyncRefreshButton";
 
 export type Kadinlar2LigTabType =
   | "home"
@@ -213,6 +214,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           </div>
 
           {/* Tema + Dil */}
+          <SyncRefreshButton onRefreshComplete={() => window.location.reload()} />
           <SettingsControls />
 
           {/* Yazdır Butonu */}

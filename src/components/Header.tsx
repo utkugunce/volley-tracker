@@ -7,6 +7,7 @@ import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
 import { SettingsControls } from "@/components/SettingsControls";
+import { SyncRefreshButton } from "@/components/SyncRefreshButton";
 import { useLanguage } from "@/i18n/useLanguage";
 import { CityInfo } from "@/types/fixture";
 
@@ -47,6 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
   activeTab,
   onSelectTab,
   isLoading = false,
+  onRefresh,
   onOpenSearch,
 }) => {
   const { t } = useLanguage();
@@ -160,6 +162,7 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           {/* Tema + Dil */}
+          <SyncRefreshButton onRefreshComplete={onRefresh} />
           <SettingsControls />
 
           {/* Yazdır Butonu */}

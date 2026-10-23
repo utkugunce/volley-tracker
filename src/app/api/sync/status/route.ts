@@ -1,30 +1,26 @@
 import { NextResponse } from "next/server";
-import { timingSafeEqual } from "crypto";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import { toErrorLike } from "@/utils/errors";
-
-function safeCompare(a: string, b: string): boolean {
-  const bufA = Buffer.from(a);
-  const bufB = Buffer.from(b);
-  if (bufA.length !== bufB.length) return false;
-  return timingSafeEqual(bufA, bufB);
-}
+import {
+  extractSyncPasswordFromRequest,
+  getLocalFullScrapeJob,
+  normalizeGithubRepo,
+  verifySyncPasswordFromValue,
+} from "@/utils/scrapeTrigger";
 
 export async function GET(request: Request) {
   const adminToken = process.env.ADMIN_TOKEN;
-  const xAdmin = request.headers.get("x-admin-token");
-  const authHeader = request.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
-  const provided = xAdmin || authHeader;
+  const provided = extractSyncPasswordFromRequest(request);
 
-  const isLegacyAuthorized = Boolean(adminToken && provided && safeCompare(provided, adminToken));
+  const isLegacyOrSyncAuthorized = Boolean(provided && verifySyncPasswordFromValue(provided));
   let isJwtAuthorized = false;
-  if (!isLegacyAuthorized) {
+  if (!isLegacyOrSyncAuthorized) {
     const authUser = await getAuthenticatedUser(request);
     isJwtAuthorized = Boolean(authUser && (authUser.role === "admin" || authUser.role === "editor"));
   }
 
-  if (!isLegacyAuthorized && !isJwtAuthorized) {
+  if (!isLegacyOrSyncAuthorized && !isJwtAuthorized) {
     if (!adminToken && !process.env.NEXT_PUBLIC_SUPABASE_URL) {
       return NextResponse.json(
         { error: "Sunucu yapılandırması eksik: ADMIN_TOKEN veya Supabase Auth tanımlanmamış." },
@@ -34,7 +30,38 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Yetkisiz erişim" }, { status: 401 });
   }
 
-  const repo = process.env.GITHUB_REPOSITORY;
+  // 1. Yerel arka plan çekim görevi varsa öncelikle onu döndür
+  const localJob = getLocalFullScrapeJob();
+  if (localJob) {
+    const nowMs = Date.now();
+    const createdMs = new Date(localJob.createdAt).getTime();
+    const updatedMs = new Date(localJob.updatedAt).getTime();
+    // Aktifse veya son 2 dakika içinde tamamlandıysa yerel durumu raporla
+    if (localJob.status === "in_progress" || nowMs - updatedMs < 120_000) {
+      const elapsedSeconds = Math.max(0, Math.floor((nowMs - createdMs) / 1000));
+      const TOTAL_ESTIMATED_SECONDS = 480;
+      const remainingSeconds =
+        localJob.status === "completed"
+          ? 0
+          : Math.max(5, TOTAL_ESTIMATED_SECONDS - elapsedSeconds);
+
+      return NextResponse.json({
+        available: true,
+        mode: "local",
+        runId: localJob.id,
+        status: localJob.status,
+        conclusion: localJob.conclusion,
+        createdAt: localJob.createdAt,
+        updatedAt: localJob.updatedAt,
+        activeStep: localJob.activeStep,
+        elapsedSeconds,
+        remainingSeconds,
+        totalEstimatedSeconds: TOTAL_ESTIMATED_SECONDS,
+      });
+    }
+  }
+
+  const repo = normalizeGithubRepo(process.env.GITHUB_REPOSITORY);
   if (!repo) {
     return NextResponse.json({
       available: false,
@@ -103,7 +130,11 @@ export async function GET(request: Request) {
             jobsData.jobs?.[0]?.steps || [];
           const runningStep = steps.find((s) => s.status === "in_progress");
           if (runningStep) {
-            if (runningStep.name.includes("Run TVF")) {
+            if (runningStep.name.includes("81 provinces") || runningStep.name.includes("Run TVF 81")) {
+              activeStep = "TVF 81 il bülteni taranıyor...";
+            } else if (runningStep.name.includes("Kadinlar 2. Lig")) {
+              activeStep = "TVF Kadınlar 2. Ligi (16 Grup) taranıyor...";
+            } else if (runningStep.name.includes("Run TVF")) {
               activeStep = "TVF 81 il bülteni taranıyor...";
             } else if (runningStep.name.includes("Sync Volleybox")) {
               activeStep = "Volleybox maç ve skorları taranıyor...";
@@ -130,9 +161,10 @@ export async function GET(request: Request) {
 
     return NextResponse.json({
       available: true,
+      mode: "github_actions",
       runId: latestRun.id,
       status: latestRun.status, // "queued" | "in_progress" | "completed"
-      conclusion: latestRun.conclusion, // "success" | "failure" | null
+      conclusion: latestRun.conclusion, // "success" | "failure" | "cancelled" | null
       htmlUrl: latestRun.html_url,
       createdAt: latestRun.created_at,
       updatedAt: latestRun.updated_at,
