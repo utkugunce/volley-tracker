@@ -75,7 +75,7 @@ export async function POST(request: Request) {
       ok: false,
       error:
         dispatch.status === "not_configured"
-          ? "Çekim servisi yapılandırılmamış (GITHUB_TOKEN / GITHUB_REPOSITORY eksik)."
+          ? "Çekim servisi yapılandırılmamış (GITHUB_TOKEN eksik)."
           : `Çekim servisi başlatılamadı${dispatch.httpStatus ? ` (HTTP ${dispatch.httpStatus})` : ""}.`,
     },
     { status: 502 }

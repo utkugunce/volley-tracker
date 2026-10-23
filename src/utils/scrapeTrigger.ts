@@ -98,8 +98,8 @@ export function extractSyncPasswordFromRequest(request: Request, bodyPassword?: 
  */
 export async function dispatchScrapeWorkflow(): Promise<WorkflowDispatchResult> {
   const ghToken = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN)?.trim();
-  const repo = normalizeGithubRepo(process.env.GITHUB_REPOSITORY);
-  if (!ghToken || !repo) {
+  const repo = normalizeGithubRepo(process.env.GITHUB_REPOSITORY) || "utkugunce/volley-tracker";
+  if (!ghToken) {
     return { status: "not_configured" };
   }
 
@@ -302,8 +302,8 @@ export async function cancelScrapeWorkflow(runId?: number): Promise<WorkflowCanc
   }
 
   const ghToken = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN)?.trim();
-  const repo = normalizeGithubRepo(process.env.GITHUB_REPOSITORY);
-  if (!ghToken || !repo) {
+  const repo = normalizeGithubRepo(process.env.GITHUB_REPOSITORY) || "utkugunce/volley-tracker";
+  if (!ghToken) {
     return { status: "not_configured" };
   }
 
