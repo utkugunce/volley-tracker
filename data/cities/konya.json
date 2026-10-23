@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T14:57:39.943758+03:00",
+  "updated_at": "2026-10-23T13:26:32.608013+00:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -204,7 +204,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar 1. Ligi - Genç Kız Konya Ligi - A Grubu": [
+    "Genç Kızlar 1. Ligi - A Grubu": [
       {
         "rank": 1,
         "team": "Anadolu Zirve Spor Kulübü U18",
@@ -250,7 +250,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar 1. Ligi - Genç Kız Konya Ligi - B Grubu": [
+    "Genç Kızlar 1. Ligi - B Grubu": [
       {
         "rank": 1,
         "team": "Ballas Spor Kulübü U18",
@@ -515,249 +515,6 @@
       {
         "rank": 5,
         "team": "VAKIF AKADEMİ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Konya Ligi - A Grubu": [
-      {
-        "rank": 1,
-        "team": "Ballas Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Ereğli Sümer",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Karatay Belediye",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Konya Armada - A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Konya Ligi - B Grubu": [
-      {
-        "rank": 1,
-        "team": "Anadolu Zirve - B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Diltaş Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Karapınar ALBA",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Vakıf Akademi - B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Konya Ligi - C Grubu": [
-      {
-        "rank": 1,
-        "team": "Anadolu Zirve - A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Konya Anka - A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Seydişehir Cimnastik - A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Türmak Spor",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Konya Ligi - D Grubu": [
-      {
-        "rank": 1,
-        "team": "Konya Anka - B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Konya Armada - B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Seydişehir Cimnastik - B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Konya Ligi - E Grubu": [
-      {
-        "rank": 1,
-        "team": "Falcon Atletik",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "MSY Akademi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Sarayönü GMSK",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Konya Ligi - F Grubu": [
-      {
-        "rank": 1,
-        "team": "Anadolu Yıldızları",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Seydişehir Teknik",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Vakıf Akademi - A",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1884,5 +1641,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-23T15:03:35.942197"
+  "volleybox_sync_updated_at": "2026-10-23T13:28:42.297418"
 }

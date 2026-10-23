@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-23T14:57:39.943758+03:00",
+  "updated_at": "2026-10-23T13:26:32.608013+00:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 123,
+  "total_matches": 131,
   "source": "https://ankara.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -255,6 +255,96 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 12,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Final Etabı": [
+      {
+        "rank": 1,
+        "team": "Akademi Atletik Spor U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Ankara DSİ GSK U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Karayolları Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "İlbank U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "PTT Spor U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "TED Ankara Kolejliler U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "TVF Spor Lisesi U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Zeren Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ],
@@ -3324,7 +3414,279 @@
       }
     },
     {
-      "id": "ankara-20261102-039",
+      "id": "ankara-20261030-039",
+      "city": "Ankara",
+      "date": "2026-10-30",
+      "time": "18:00",
+      "hall": "Mamak S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "1",
+      "home_team": "PTT Spor U18",
+      "away_team": "Zeren Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261030-040",
+      "city": "Ankara",
+      "date": "2026-10-30",
+      "time": "19:30",
+      "hall": "Mamak S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "2",
+      "home_team": "Karayolları Spor Kulübü U18",
+      "away_team": "Akademi Atletik Spor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261102-041",
+      "city": "Ankara",
+      "date": "2026-11-02",
+      "time": "18:00",
+      "hall": "Batıkent S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "3",
+      "home_team": "İlbank U18",
+      "away_team": "TVF Spor Lisesi U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261102-042",
+      "city": "Ankara",
+      "date": "2026-11-02",
+      "time": "19:30",
+      "hall": "Batıkent S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "4",
+      "home_team": "Ankara DSİ GSK U18",
+      "away_team": "TED Ankara Kolejliler U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261112-043",
+      "city": "Ankara",
+      "date": "2026-11-12",
+      "time": "18:00",
+      "hall": "Batıkent S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "5",
+      "home_team": "İlbank U18",
+      "away_team": "TED Ankara Kolejliler U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261112-044",
+      "city": "Ankara",
+      "date": "2026-11-12",
+      "time": "18:00",
+      "hall": "Mamak S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "6",
+      "home_team": "Akademi Atletik Spor U18",
+      "away_team": "Zeren Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261112-045",
+      "city": "Ankara",
+      "date": "2026-11-12",
+      "time": "19:30",
+      "hall": "Batıkent S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "7",
+      "home_team": "Karayolları Spor Kulübü U18",
+      "away_team": "Ankara DSİ GSK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261112-046",
+      "city": "Ankara",
+      "date": "2026-11-12",
+      "time": "19:30",
+      "hall": "Mamak S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Etabı",
+      "match_no": "8",
+      "home_team": "TVF Spor Lisesi U18",
+      "away_team": "PTT Spor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ankara-20261102-047",
       "city": "Ankara",
       "date": "2026-11-02",
       "time": "18:00",
@@ -3365,7 +3727,7 @@
       }
     },
     {
-      "id": "ankara-20261102-040",
+      "id": "ankara-20261102-048",
       "city": "Ankara",
       "date": "2026-11-02",
       "time": "19:30",
@@ -3406,7 +3768,7 @@
       }
     },
     {
-      "id": "ankara-20261031-041",
+      "id": "ankara-20261031-049",
       "city": "Ankara",
       "date": "2026-10-31",
       "time": "18:00",
@@ -3447,7 +3809,7 @@
       }
     },
     {
-      "id": "ankara-20261101-042",
+      "id": "ankara-20261101-050",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "12:00",
@@ -3488,7 +3850,7 @@
       }
     },
     {
-      "id": "ankara-20261103-043",
+      "id": "ankara-20261103-051",
       "city": "Ankara",
       "date": "2026-11-03",
       "time": "19:30",
@@ -3529,7 +3891,7 @@
       }
     },
     {
-      "id": "ankara-20261101-044",
+      "id": "ankara-20261101-052",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "16:00",
@@ -3570,7 +3932,7 @@
       }
     },
     {
-      "id": "ankara-20261101-045",
+      "id": "ankara-20261101-053",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "17:30",
@@ -3611,7 +3973,7 @@
       }
     },
     {
-      "id": "ankara-20261103-046",
+      "id": "ankara-20261103-054",
       "city": "Ankara",
       "date": "2026-11-03",
       "time": "18:00",
@@ -3652,7 +4014,7 @@
       }
     },
     {
-      "id": "ankara-20261108-047",
+      "id": "ankara-20261108-055",
       "city": "Ankara",
       "date": "2026-11-08",
       "time": "18:00",
@@ -3686,7 +4048,7 @@
       }
     },
     {
-      "id": "ankara-20261108-048",
+      "id": "ankara-20261108-056",
       "city": "Ankara",
       "date": "2026-11-08",
       "time": "16:00",
@@ -3720,7 +4082,7 @@
       }
     },
     {
-      "id": "ankara-20261105-049",
+      "id": "ankara-20261105-057",
       "city": "Ankara",
       "date": "2026-11-05",
       "time": "18:00",
@@ -3761,7 +4123,7 @@
       }
     },
     {
-      "id": "ankara-20261105-050",
+      "id": "ankara-20261105-058",
       "city": "Ankara",
       "date": "2026-11-05",
       "time": "19:30",
@@ -3802,7 +4164,7 @@
       }
     },
     {
-      "id": "ankara-20261106-051",
+      "id": "ankara-20261106-059",
       "city": "Ankara",
       "date": "2026-11-06",
       "time": "18:00",
@@ -3843,7 +4205,7 @@
       }
     },
     {
-      "id": "ankara-20261106-052",
+      "id": "ankara-20261106-060",
       "city": "Ankara",
       "date": "2026-11-06",
       "time": "19:30",
@@ -3884,7 +4246,7 @@
       }
     },
     {
-      "id": "ankara-20261106-053",
+      "id": "ankara-20261106-061",
       "city": "Ankara",
       "date": "2026-11-06",
       "time": "19:30",
@@ -3925,7 +4287,7 @@
       }
     },
     {
-      "id": "ankara-20261107-054",
+      "id": "ankara-20261107-062",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "12:00",
@@ -3959,7 +4321,7 @@
       }
     },
     {
-      "id": "ankara-20261107-055",
+      "id": "ankara-20261107-063",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "18:00",
@@ -3993,7 +4355,7 @@
       }
     },
     {
-      "id": "ankara-20261101-056",
+      "id": "ankara-20261101-064",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "14:00",
@@ -4034,7 +4396,7 @@
       }
     },
     {
-      "id": "ankara-20261107-057",
+      "id": "ankara-20261107-065",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "18:00",
@@ -4068,7 +4430,7 @@
       }
     },
     {
-      "id": "ankara-20261108-058",
+      "id": "ankara-20261108-066",
       "city": "Ankara",
       "date": "2026-11-08",
       "time": "18:00",
@@ -4102,7 +4464,7 @@
       }
     },
     {
-      "id": "ankara-20261107-059",
+      "id": "ankara-20261107-067",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "10:00",
@@ -4136,7 +4498,7 @@
       }
     },
     {
-      "id": "ankara-20261107-060",
+      "id": "ankara-20261107-068",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "12:00",
@@ -4170,7 +4532,7 @@
       }
     },
     {
-      "id": "ankara-20261107-061",
+      "id": "ankara-20261107-069",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "14:00",
@@ -4204,7 +4566,7 @@
       }
     },
     {
-      "id": "ankara-20261106-062",
+      "id": "ankara-20261106-070",
       "city": "Ankara",
       "date": "2026-11-06",
       "time": "18:00",
@@ -4245,7 +4607,7 @@
       }
     },
     {
-      "id": "ankara-20261107-063",
+      "id": "ankara-20261107-071",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "10:00",
@@ -4279,7 +4641,7 @@
       }
     },
     {
-      "id": "ankara-20261107-064",
+      "id": "ankara-20261107-072",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "16:00",
@@ -4313,7 +4675,7 @@
       }
     },
     {
-      "id": "ankara-20261108-065",
+      "id": "ankara-20261108-073",
       "city": "Ankara",
       "date": "2026-11-08",
       "time": "10:00",
@@ -4347,7 +4709,7 @@
       }
     },
     {
-      "id": "ankara-20261108-066",
+      "id": "ankara-20261108-074",
       "city": "Ankara",
       "date": "2026-11-08",
       "time": "12:00",
@@ -4381,7 +4743,7 @@
       }
     },
     {
-      "id": "ankara-20261108-067",
+      "id": "ankara-20261108-075",
       "city": "Ankara",
       "date": "2026-11-08",
       "time": "14:00",
@@ -4415,7 +4777,7 @@
       }
     },
     {
-      "id": "ankara-20261107-068",
+      "id": "ankara-20261107-076",
       "city": "Ankara",
       "date": "2026-11-07",
       "time": "14:00",
@@ -4449,7 +4811,7 @@
       }
     },
     {
-      "id": "ankara-20261108-069",
+      "id": "ankara-20261108-077",
       "city": "Ankara",
       "date": "2026-11-08",
       "time": "16:00",
@@ -4483,7 +4845,7 @@
       }
     },
     {
-      "id": "ankara-20260921-070",
+      "id": "ankara-20260921-078",
       "city": "Ankara",
       "date": "2026-09-21",
       "time": "18:00",
@@ -4528,7 +4890,7 @@
       }
     },
     {
-      "id": "ankara-20260922-071",
+      "id": "ankara-20260922-079",
       "city": "Ankara",
       "date": "2026-09-22",
       "time": "18:00",
@@ -4574,7 +4936,7 @@
       }
     },
     {
-      "id": "ankara-20261003-072",
+      "id": "ankara-20261003-080",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "10:00",
@@ -4620,7 +4982,7 @@
       }
     },
     {
-      "id": "ankara-20261006-073",
+      "id": "ankara-20261006-081",
       "city": "Ankara",
       "date": "2026-10-06",
       "time": "18:00",
@@ -4665,7 +5027,7 @@
       }
     },
     {
-      "id": "ankara-20261012-074",
+      "id": "ankara-20261012-082",
       "city": "Ankara",
       "date": "2026-10-12",
       "time": "18:00",
@@ -4710,7 +5072,7 @@
       }
     },
     {
-      "id": "ankara-20261013-075",
+      "id": "ankara-20261013-083",
       "city": "Ankara",
       "date": "2026-10-13",
       "time": "18:00",
@@ -4755,7 +5117,7 @@
       }
     },
     {
-      "id": "ankara-20261028-076",
+      "id": "ankara-20261028-084",
       "city": "Ankara",
       "date": "2026-10-28",
       "time": "18:00",
@@ -4796,7 +5158,7 @@
       }
     },
     {
-      "id": "ankara-20261029-077",
+      "id": "ankara-20261029-085",
       "city": "Ankara",
       "date": "2026-10-29",
       "time": "19:30",
@@ -4837,7 +5199,7 @@
       }
     },
     {
-      "id": "ankara-20261101-078",
+      "id": "ankara-20261101-086",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "10:00",
@@ -4878,7 +5240,7 @@
       }
     },
     {
-      "id": "ankara-20261101-079",
+      "id": "ankara-20261101-087",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "12:00",
@@ -4919,7 +5281,7 @@
       }
     },
     {
-      "id": "ankara-20260921-080",
+      "id": "ankara-20260921-088",
       "city": "Ankara",
       "date": "2026-09-21",
       "time": "19:30",
@@ -4964,7 +5326,7 @@
       }
     },
     {
-      "id": "ankara-20260922-081",
+      "id": "ankara-20260922-089",
       "city": "Ankara",
       "date": "2026-09-22",
       "time": "18:00",
@@ -5009,7 +5371,7 @@
       }
     },
     {
-      "id": "ankara-20261006-082",
+      "id": "ankara-20261006-090",
       "city": "Ankara",
       "date": "2026-10-06",
       "time": "19:30",
@@ -5054,7 +5416,7 @@
       }
     },
     {
-      "id": "ankara-20261006-083",
+      "id": "ankara-20261006-091",
       "city": "Ankara",
       "date": "2026-10-06",
       "time": "19:30",
@@ -5099,7 +5461,7 @@
       }
     },
     {
-      "id": "ankara-20261013-084",
+      "id": "ankara-20261013-092",
       "city": "Ankara",
       "date": "2026-10-13",
       "time": "19:30",
@@ -5145,7 +5507,7 @@
       }
     },
     {
-      "id": "ankara-20261013-085",
+      "id": "ankara-20261013-093",
       "city": "Ankara",
       "date": "2026-10-13",
       "time": "19:30",
@@ -5191,7 +5553,7 @@
       }
     },
     {
-      "id": "ankara-20261028-086",
+      "id": "ankara-20261028-094",
       "city": "Ankara",
       "date": "2026-10-28",
       "time": "19:30",
@@ -5232,7 +5594,7 @@
       }
     },
     {
-      "id": "ankara-20261029-087",
+      "id": "ankara-20261029-095",
       "city": "Ankara",
       "date": "2026-10-29",
       "time": "14:00",
@@ -5273,7 +5635,7 @@
       }
     },
     {
-      "id": "ankara-20261105-088",
+      "id": "ankara-20261105-096",
       "city": "Ankara",
       "date": "2026-11-05",
       "time": "19:30",
@@ -5314,7 +5676,7 @@
       }
     },
     {
-      "id": "ankara-20261105-089",
+      "id": "ankara-20261105-097",
       "city": "Ankara",
       "date": "2026-11-05",
       "time": "19:30",
@@ -5355,7 +5717,7 @@
       }
     },
     {
-      "id": "ankara-20260921-090",
+      "id": "ankara-20260921-098",
       "city": "Ankara",
       "date": "2026-09-21",
       "time": "18:00",
@@ -5402,7 +5764,7 @@
       }
     },
     {
-      "id": "ankara-20260925-091",
+      "id": "ankara-20260925-099",
       "city": "Ankara",
       "date": "2026-09-25",
       "time": "18:00",
@@ -5448,7 +5810,7 @@
       }
     },
     {
-      "id": "ankara-20261003-092",
+      "id": "ankara-20261003-100",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "16:00",
@@ -5495,7 +5857,7 @@
       }
     },
     {
-      "id": "ankara-20261006-093",
+      "id": "ankara-20261006-101",
       "city": "Ankara",
       "date": "2026-10-06",
       "time": "18:00",
@@ -5540,7 +5902,7 @@
       }
     },
     {
-      "id": "ankara-20261012-094",
+      "id": "ankara-20261012-102",
       "city": "Ankara",
       "date": "2026-10-12",
       "time": "18:00",
@@ -5585,7 +5947,7 @@
       }
     },
     {
-      "id": "ankara-20261014-095",
+      "id": "ankara-20261014-103",
       "city": "Ankara",
       "date": "2026-10-14",
       "time": "19:30",
@@ -5630,7 +5992,7 @@
       }
     },
     {
-      "id": "ankara-20261029-096",
+      "id": "ankara-20261029-104",
       "city": "Ankara",
       "date": "2026-10-29",
       "time": "16:00",
@@ -5671,7 +6033,7 @@
       }
     },
     {
-      "id": "ankara-20261029-097",
+      "id": "ankara-20261029-105",
       "city": "Ankara",
       "date": "2026-10-29",
       "time": "18:00",
@@ -5712,7 +6074,7 @@
       }
     },
     {
-      "id": "ankara-20261105-098",
+      "id": "ankara-20261105-106",
       "city": "Ankara",
       "date": "2026-11-05",
       "time": "18:00",
@@ -5753,7 +6115,7 @@
       }
     },
     {
-      "id": "ankara-20261105-099",
+      "id": "ankara-20261105-107",
       "city": "Ankara",
       "date": "2026-11-05",
       "time": "18:00",
@@ -5794,7 +6156,7 @@
       }
     },
     {
-      "id": "ankara-20260922-100",
+      "id": "ankara-20260922-108",
       "city": "Ankara",
       "date": "2026-09-22",
       "time": "19:30",
@@ -5839,7 +6201,7 @@
       }
     },
     {
-      "id": "ankara-20260922-101",
+      "id": "ankara-20260922-109",
       "city": "Ankara",
       "date": "2026-09-22",
       "time": "19:30",
@@ -5885,7 +6247,7 @@
       }
     },
     {
-      "id": "ankara-20261003-102",
+      "id": "ankara-20261003-110",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "12:00",
@@ -5931,7 +6293,7 @@
       }
     },
     {
-      "id": "ankara-20261004-103",
+      "id": "ankara-20261004-111",
       "city": "Ankara",
       "date": "2026-10-04",
       "time": "16:00",
@@ -5977,7 +6339,7 @@
       }
     },
     {
-      "id": "ankara-20261026-104",
+      "id": "ankara-20261026-112",
       "city": "Ankara",
       "date": "2026-10-26",
       "time": "18:00",
@@ -6018,7 +6380,7 @@
       }
     },
     {
-      "id": "ankara-20261026-105",
+      "id": "ankara-20261026-113",
       "city": "Ankara",
       "date": "2026-10-26",
       "time": "18:00",
@@ -6059,7 +6421,7 @@
       }
     },
     {
-      "id": "ankara-20260925-106",
+      "id": "ankara-20260925-114",
       "city": "Ankara",
       "date": "2026-09-25",
       "time": "18:00",
@@ -6105,7 +6467,7 @@
       }
     },
     {
-      "id": "ankara-20260925-107",
+      "id": "ankara-20260925-115",
       "city": "Ankara",
       "date": "2026-09-25",
       "time": "19:30",
@@ -6150,7 +6512,7 @@
       }
     },
     {
-      "id": "ankara-20261003-108",
+      "id": "ankara-20261003-116",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "18:00",
@@ -6195,7 +6557,7 @@
       }
     },
     {
-      "id": "ankara-20261006-109",
+      "id": "ankara-20261006-117",
       "city": "Ankara",
       "date": "2026-10-06",
       "time": "19:30",
@@ -6240,7 +6602,7 @@
       }
     },
     {
-      "id": "ankara-20261012-110",
+      "id": "ankara-20261012-118",
       "city": "Ankara",
       "date": "2026-10-12",
       "time": "19:30",
@@ -6285,7 +6647,7 @@
       }
     },
     {
-      "id": "ankara-20261014-111",
+      "id": "ankara-20261014-119",
       "city": "Ankara",
       "date": "2026-10-14",
       "time": "18:00",
@@ -6331,7 +6693,7 @@
       }
     },
     {
-      "id": "ankara-20261028-112",
+      "id": "ankara-20261028-120",
       "city": "Ankara",
       "date": "2026-10-28",
       "time": "18:00",
@@ -6372,7 +6734,7 @@
       }
     },
     {
-      "id": "ankara-20261029-113",
+      "id": "ankara-20261029-121",
       "city": "Ankara",
       "date": "2026-10-29",
       "time": "19:30",
@@ -6413,7 +6775,7 @@
       }
     },
     {
-      "id": "ankara-20261101-114",
+      "id": "ankara-20261101-122",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "14:00",
@@ -6454,7 +6816,7 @@
       }
     },
     {
-      "id": "ankara-20261101-115",
+      "id": "ankara-20261101-123",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "18:00",
@@ -6495,7 +6857,7 @@
       }
     },
     {
-      "id": "ankara-20260921-116",
+      "id": "ankara-20260921-124",
       "city": "Ankara",
       "date": "2026-09-21",
       "time": "19:30",
@@ -6540,7 +6902,7 @@
       }
     },
     {
-      "id": "ankara-20260924-117",
+      "id": "ankara-20260924-125",
       "city": "Ankara",
       "date": "2026-09-24",
       "time": "19:30",
@@ -6585,7 +6947,7 @@
       }
     },
     {
-      "id": "ankara-20261003-118",
+      "id": "ankara-20261003-126",
       "city": "Ankara",
       "date": "2026-10-03",
       "time": "18:00",
@@ -6631,7 +6993,7 @@
       }
     },
     {
-      "id": "ankara-20261006-119",
+      "id": "ankara-20261006-127",
       "city": "Ankara",
       "date": "2026-10-06",
       "time": "18:00",
@@ -6677,7 +7039,7 @@
       }
     },
     {
-      "id": "ankara-20261012-120",
+      "id": "ankara-20261012-128",
       "city": "Ankara",
       "date": "2026-10-12",
       "time": "19:30",
@@ -6722,7 +7084,7 @@
       }
     },
     {
-      "id": "ankara-20261013-121",
+      "id": "ankara-20261013-129",
       "city": "Ankara",
       "date": "2026-10-13",
       "time": "18:00",
@@ -6768,7 +7130,7 @@
       }
     },
     {
-      "id": "ankara-20261028-122",
+      "id": "ankara-20261028-130",
       "city": "Ankara",
       "date": "2026-10-28",
       "time": "19:30",
@@ -6809,7 +7171,7 @@
       }
     },
     {
-      "id": "ankara-20261101-123",
+      "id": "ankara-20261101-131",
       "city": "Ankara",
       "date": "2026-11-01",
       "time": "16:00",
@@ -6851,5 +7213,5 @@
     }
   ],
   "volleybox_synced_matches": 107,
-  "volleybox_sync_updated_at": "2026-10-23T15:03:28.853842"
+  "volleybox_sync_updated_at": "2026-10-23T13:28:42.332057"
 }
