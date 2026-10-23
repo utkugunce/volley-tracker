@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-22T19:34:29.126533+03:00",
+  "updated_at": "2026-10-23T11:28:38.353476+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 5,
+  "total_matches": 9,
   "source": "https://sakarya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -23,7 +23,8 @@
     "halls": [
       "Tümü",
       "Akyazı Cevat Ayhan Ss",
-      "Lütfü Yaman1"
+      "Lütfü Yaman1",
+      "Sapanca S.S"
     ]
   },
   "standings": {
@@ -31,45 +32,45 @@
       {
         "rank": 1,
         "team": "Saraçhane 54 Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Alaağaç Spor U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 1,
-        "sets_won": 2,
+        "points": 5,
+        "sets_won": 6,
         "sets_lost": 3,
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Fener Akademi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "rank": 2,
+        "team": "Serdivan Belediyesi Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Serdivan Belediyesi Spor Kulübü U18",
-        "played": 0,
+        "rank": 3,
+        "team": "Alaağaç Spor U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Fener Akademi Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -192,11 +193,15 @@
       "match_no": "2",
       "home_team": "Serdivan Belediyesi Spor Kulübü U18",
       "away_team": "Alaağaç Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-13",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408239",
@@ -233,11 +238,16 @@
       "match_no": "3",
       "home_team": "Saraçhane 54 Spor Kulübü U18",
       "away_team": "Fener Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "23-25",
+        "25-22",
+        "25-16",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408243",
@@ -309,9 +319,9 @@
       }
     },
     {
-      "id": "sakarya-20261027-005",
+      "id": "sakarya-20261026-005",
       "city": "Sakarya",
-      "date": "2026-10-27",
+      "date": "2026-10-26",
       "time": "18:30",
       "hall": "Akyazı Cevat Ayhan Ss",
       "category": "Genç Kızlar Süper Lig",
@@ -338,18 +348,154 @@
         "vb_time": "18:30",
         "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-27",
           "vb_time": "18:30",
           "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-26 / VB: 2026-10-27)"
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261027-006",
+      "city": "Sakarya",
+      "date": "2026-10-27",
+      "time": "18:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "3",
+      "home_team": "Erenler Anadolu Voleybol Spor Kulübü U18",
+      "away_team": "Sakarya Gelişim Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261027-007",
+      "city": "Sakarya",
+      "date": "2026-10-27",
+      "time": "20:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "4",
+      "home_team": "Sapanca Ayyıldız Spor Kulübü U18",
+      "away_team": "Asaş Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261028-008",
+      "city": "Sakarya",
+      "date": "2026-10-28",
+      "time": "18:30",
+      "hall": "Lütfü Yaman1",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "5",
+      "home_team": "Sakarya Voleybol SK U18",
+      "away_team": "Erenler Anadolu Voleybol Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "sakarya-20261030-009",
+      "city": "Sakarya",
+      "date": "2026-10-30",
+      "time": "19:00",
+      "hall": "Sapanca S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "6",
+      "home_team": "Sapanca Ayyıldız Spor Kulübü U18",
+      "away_team": "Sakarya Gelişim Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
         }
       }
     }
   ],
   "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-22T19:40:37.914293"
+  "volleybox_sync_updated_at": "2026-10-23T11:34:56.344892"
 }

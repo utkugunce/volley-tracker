@@ -3,7 +3,7 @@
     "lig_adi": "Uzman Posta Kadınlar Voleybol 2. Ligi",
     "sezon": "2026-2027",
     "kategori": "Büyük Kadınlar",
-    "guncellenme_zamani": "2026-10-23T01:25:29.878796",
+    "guncellenme_zamani": "2026-10-23T11:35:14.779887",
     "toplam_grup_sayisi": 16,
     "toplam_takim_sayisi": 163,
     "toplam_mac_sayisi": 797,
@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 639,
-    "volleybox_sync_updated_at": "2026-10-23T01:25:29.878943"
+    "volleybox_sync_updated_at": "2026-10-23T11:38:50.162822"
   },
   "gruplar": [
     {
@@ -14332,14 +14332,14 @@
             "vb_time": "14:00",
             "vb_hall": "Uşak Kalfa Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
-              "date_diff": false,
-              "time_diff": false,
+              "has_diff": true,
+              "date_diff": true,
+              "time_diff": true,
               "hall_diff": false,
               "vb_date": "2026-10-25",
               "vb_time": "14:00",
               "vb_hall": "Uşak Kalfa Spor Salonu",
-              "details": null
+              "details": "Tarih Değişti (TVF: 2026-10-27 / VB: 2026-10-25) | Saat Değişti (TVF: 17:00 / VB: 14:00)"
             }
           }
         },
@@ -25239,7 +25239,7 @@
           "devre": 1,
           "tarih": "25.10.2026",
           "gun": "PAZAR",
-          "saat": "13:00",
+          "saat": "14:00",
           "sehir": "BOLU",
           "salon": "KARAÇAYIR SPOR SALONU",
           "takim_a": "BOLU ATATÜRK ANADOLU LİSESİ",
@@ -25270,14 +25270,14 @@
             "vb_time": "13:00",
             "vb_hall": "Karaçayır Spor Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
-              "time_diff": false,
+              "time_diff": true,
               "hall_diff": false,
               "vb_date": "2026-10-25",
               "vb_time": "13:00",
               "vb_hall": "Karaçayır Spor Salonu",
-              "details": null
+              "details": "Saat Değişti (TVF: 14:00 / VB: 13:00)"
             }
           }
         },
@@ -28676,14 +28676,14 @@
             "vb_time": "11:00",
             "vb_hall": "TVF Beştepe Voleybol Salonu",
             "discrepancy": {
-              "has_diff": false,
+              "has_diff": true,
               "date_diff": false,
-              "time_diff": false,
+              "time_diff": true,
               "hall_diff": false,
               "vb_date": "2026-10-25",
               "vb_time": "11:00",
               "vb_hall": "TVF Beştepe Voleybol Salonu",
-              "details": null
+              "details": "Saat Değişti (TVF: 19:00 / VB: 11:00)"
             }
           }
         },
@@ -29550,7 +29550,7 @@
               "vb_date": "2026-11-14",
               "vb_time": "20:00",
               "vb_hall": "TVF Beştepe Voleybol Salonu",
-              "details": "Saat Değişti (TVF: 19:00 / VB: 20:00)"
+              "details": "Saat Değişti (TVF: 16:00 / VB: 20:00)"
             }
           }
         },
@@ -31957,7 +31957,7 @@
               "vb_date": "2026-11-15",
               "vb_time": "20:00",
               "vb_hall": "TVF Selim Sırrı Tarcan Zeren Voleybol Salonu",
-              "details": "Saat Değişti (TVF: 19:00 / VB: 20:00)"
+              "details": "Saat Değişti (TVF: 16:00 / VB: 20:00)"
             }
           }
         },
@@ -42897,8 +42897,8 @@
           "grup_adi": "Grup 16",
           "hafta": 4,
           "devre": 1,
-          "tarih": "24.10.2026",
-          "gun": "CUMARTESİ",
+          "tarih": "25.10.2026",
+          "gun": "PAZAR",
           "saat": "15:00",
           "sehir": "MUŞ",
           "salon": "YENİ SPOR SALONU",
@@ -42937,7 +42937,7 @@
               "vb_date": "2026-10-25",
               "vb_time": "14:00",
               "vb_hall": "Muş Yeni Spor Salonu",
-              "details": "Saat Değişti (TVF: 13:00 / VB: 14:00)"
+              "details": "Saat Değişti (TVF: 15:00 / VB: 14:00)"
             }
           }
         },
@@ -59159,57 +59159,6 @@
       }
     },
     {
-      "id": "2lig_g16_m19_2892_2905",
-      "mac_no": "19",
-      "grup_no": 16,
-      "grup_adi": "Grup 16",
-      "hafta": 4,
-      "devre": 1,
-      "tarih": "24.10.2026",
-      "gun": "CUMARTESİ",
-      "saat": "15:00",
-      "sehir": "MUŞ",
-      "salon": "YENİ SPOR SALONU",
-      "takim_a": "MUŞ 1071 AKADEMİİ",
-      "takim_b": "SİLOPİ GELİŞİM FAALİYETLERİ",
-      "takim_a_id": "2892",
-      "takim_b_id": "2905",
-      "takim_a_logo": "/logos/mus-olimpik-spor-kulubu-t32179.png",
-      "takim_b_logo": "/logos/silopi-gelisim-faaliyetleri-t20790.png",
-      "set_a": "",
-      "set_b": "",
-      "skor": "- : -",
-      "set_sonuclari": "",
-      "durum": "OYNANACAK",
-      "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/mus-olimpik-spor-kulubu-t32179",
-      "takim_a_volleybox_name": "Muş 1071 Akademii Spor Kulübü",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/silopi-gelisim-faaliyetleri-t20790",
-      "takim_b_volleybox_name": "Silopi Gelişim Faaliyetleri Spor Kulübü",
-      "volleybox": {
-        "synced": true,
-        "match_id": "410516",
-        "url": "https://women.volleybox.net/tr/mus-1071-akademii-spor-kulubu-silopi-gelisim-faaliyetleri-spor-kulubu-c410516",
-        "host_name": "Muş 1071 Akademii Spor Kulübü",
-        "guest_name": "Silopi Gelişim Faaliyetleri Spor Kulübü",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-25",
-        "vb_time": "14:00",
-        "vb_hall": "Muş Yeni Spor Salonu",
-        "discrepancy": {
-          "has_diff": true,
-          "date_diff": false,
-          "time_diff": true,
-          "hall_diff": false,
-          "vb_date": "2026-10-25",
-          "vb_time": "14:00",
-          "vb_hall": "Muş Yeni Spor Salonu",
-          "details": "Saat Değişti (TVF: 13:00 / VB: 14:00)"
-        }
-      }
-    },
-    {
       "id": "2lig_g12_m18_2840_2913",
       "mac_no": "18",
       "grup_no": 12,
@@ -60274,57 +60223,6 @@
       }
     },
     {
-      "id": "2lig_g10_m33_2806_2808",
-      "mac_no": "33",
-      "grup_no": 10,
-      "grup_adi": "Grup 10",
-      "hafta": 6,
-      "devre": 1,
-      "tarih": "25.10.2026",
-      "gun": "PAZAR",
-      "saat": "13:00",
-      "sehir": "BOLU",
-      "salon": "KARAÇAYIR SPOR SALONU",
-      "takim_a": "BOLU ATATÜRK ANADOLU LİSESİ",
-      "takim_b": "BÜYÜK KARTEPE SPOR",
-      "takim_a_id": "2806",
-      "takim_b_id": "2808",
-      "takim_a_logo": "/logos/bolu-voleybol-spor-kulubu-t13647.png",
-      "takim_b_logo": "/logos/buyuk-kartepe-spor-t36192.png",
-      "set_a": "",
-      "set_b": "",
-      "skor": "- : -",
-      "set_sonuclari": "",
-      "durum": "OYNANACAK",
-      "mac_durumu_kod": "O",
-      "takim_a_volleybox_url": "https://women.volleybox.net/tr/bolu-voleybol-spor-kulubu-t13647",
-      "takim_a_volleybox_name": "Bolu Atatürk Anadolu Lisesi Spor Kulübü",
-      "takim_b_volleybox_url": "https://women.volleybox.net/tr/buyuk-kartepe-spor-t36192",
-      "takim_b_volleybox_name": "Büyük Kartepe Spor",
-      "volleybox": {
-        "synced": true,
-        "match_id": "410353",
-        "url": "https://women.volleybox.net/tr/bolu-voleybol-spor-kulubu-buyuk-kartepe-spor-c410353",
-        "host_name": "Bolu Atatürk Anadolu Lisesi Spor Kulübü",
-        "guest_name": "Büyük Kartepe Spor",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-25",
-        "vb_time": "13:00",
-        "vb_hall": "Karaçayır Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-25",
-          "vb_time": "13:00",
-          "vb_hall": "Karaçayır Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
       "id": "2lig_g10_m36_2875_2829",
       "mac_no": "36",
       "grup_no": 10,
@@ -60886,6 +60784,57 @@
       }
     },
     {
+      "id": "2lig_g10_m33_2806_2808",
+      "mac_no": "33",
+      "grup_no": 10,
+      "grup_adi": "Grup 10",
+      "hafta": 6,
+      "devre": 1,
+      "tarih": "25.10.2026",
+      "gun": "PAZAR",
+      "saat": "14:00",
+      "sehir": "BOLU",
+      "salon": "KARAÇAYIR SPOR SALONU",
+      "takim_a": "BOLU ATATÜRK ANADOLU LİSESİ",
+      "takim_b": "BÜYÜK KARTEPE SPOR",
+      "takim_a_id": "2806",
+      "takim_b_id": "2808",
+      "takim_a_logo": "/logos/bolu-voleybol-spor-kulubu-t13647.png",
+      "takim_b_logo": "/logos/buyuk-kartepe-spor-t36192.png",
+      "set_a": "",
+      "set_b": "",
+      "skor": "- : -",
+      "set_sonuclari": "",
+      "durum": "OYNANACAK",
+      "mac_durumu_kod": "O",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/bolu-voleybol-spor-kulubu-t13647",
+      "takim_a_volleybox_name": "Bolu Atatürk Anadolu Lisesi Spor Kulübü",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/buyuk-kartepe-spor-t36192",
+      "takim_b_volleybox_name": "Büyük Kartepe Spor",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410353",
+        "url": "https://women.volleybox.net/tr/bolu-voleybol-spor-kulubu-buyuk-kartepe-spor-c410353",
+        "host_name": "Bolu Atatürk Anadolu Lisesi Spor Kulübü",
+        "guest_name": "Büyük Kartepe Spor",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-25",
+        "vb_time": "13:00",
+        "vb_hall": "Karaçayır Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "13:00",
+          "vb_hall": "Karaçayır Spor Salonu",
+          "details": "Saat Değişti (TVF: 14:00 / VB: 13:00)"
+        }
+      }
+    },
+    {
       "id": "2lig_g14_m18_2899_2773",
       "mac_no": "18",
       "grup_no": 14,
@@ -61239,6 +61188,57 @@
           "vb_time": "16:00",
           "vb_hall": "Mersinli Ahmet Spor Salonu",
           "details": "Saat Değişti (TVF: 15:00 / VB: 16:00)"
+        }
+      }
+    },
+    {
+      "id": "2lig_g16_m19_2892_2905",
+      "mac_no": "19",
+      "grup_no": 16,
+      "grup_adi": "Grup 16",
+      "hafta": 4,
+      "devre": 1,
+      "tarih": "25.10.2026",
+      "gun": "PAZAR",
+      "saat": "15:00",
+      "sehir": "MUŞ",
+      "salon": "YENİ SPOR SALONU",
+      "takim_a": "MUŞ 1071 AKADEMİİ",
+      "takim_b": "SİLOPİ GELİŞİM FAALİYETLERİ",
+      "takim_a_id": "2892",
+      "takim_b_id": "2905",
+      "takim_a_logo": "/logos/mus-olimpik-spor-kulubu-t32179.png",
+      "takim_b_logo": "/logos/silopi-gelisim-faaliyetleri-t20790.png",
+      "set_a": "",
+      "set_b": "",
+      "skor": "- : -",
+      "set_sonuclari": "",
+      "durum": "OYNANACAK",
+      "mac_durumu_kod": "O",
+      "takim_a_volleybox_url": "https://women.volleybox.net/tr/mus-olimpik-spor-kulubu-t32179",
+      "takim_a_volleybox_name": "Muş 1071 Akademii Spor Kulübü",
+      "takim_b_volleybox_url": "https://women.volleybox.net/tr/silopi-gelisim-faaliyetleri-t20790",
+      "takim_b_volleybox_name": "Silopi Gelişim Faaliyetleri Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410516",
+        "url": "https://women.volleybox.net/tr/mus-1071-akademii-spor-kulubu-silopi-gelisim-faaliyetleri-spor-kulubu-c410516",
+        "host_name": "Muş 1071 Akademii Spor Kulübü",
+        "guest_name": "Silopi Gelişim Faaliyetleri Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-25",
+        "vb_time": "14:00",
+        "vb_hall": "Muş Yeni Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "14:00",
+          "vb_hall": "Muş Yeni Spor Salonu",
+          "details": "Saat Değişti (TVF: 15:00 / VB: 14:00)"
         }
       }
     },
@@ -62251,14 +62251,14 @@
         "vb_time": "11:00",
         "vb_hall": "TVF Beştepe Voleybol Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-25",
           "vb_time": "11:00",
           "vb_hall": "TVF Beştepe Voleybol Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:00 / VB: 11:00)"
         }
       }
     },
@@ -62404,14 +62404,14 @@
         "vb_time": "14:00",
         "vb_hall": "Uşak Kalfa Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-25",
           "vb_time": "14:00",
           "vb_hall": "Uşak Kalfa Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-27 / VB: 2026-10-25) | Saat Değişti (TVF: 17:00 / VB: 14:00)"
         }
       }
     },
@@ -73406,7 +73406,7 @@
           "vb_date": "2026-11-14",
           "vb_time": "20:00",
           "vb_hall": "TVF Beştepe Voleybol Salonu",
-          "details": "Saat Değişti (TVF: 19:00 / VB: 20:00)"
+          "details": "Saat Değişti (TVF: 16:00 / VB: 20:00)"
         }
       }
     },
@@ -76146,7 +76146,7 @@
           "vb_date": "2026-11-15",
           "vb_time": "20:00",
           "vb_hall": "TVF Selim Sırrı Tarcan Zeren Voleybol Salonu",
-          "details": "Saat Değişti (TVF: 19:00 / VB: 20:00)"
+          "details": "Saat Değişti (TVF: 16:00 / VB: 20:00)"
         }
       }
     },
