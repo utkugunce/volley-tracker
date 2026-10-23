@@ -106,17 +106,18 @@ def extract_group_name(c_text: str) -> str:
     cleaned = clean_str(c_text)
     # Sezon ve yıl ifadelerini baştan temizle (örn. "2026 - 2027 Voleybol Sezonu ...", "2026-2027 Sezonu ...")
     cleaned = re.sub(r"^\d{4}\s*[-/]\s*\d{4}(?:\s*voleybol)?(?:\s*sezonu)?\s*", "", cleaned, flags=re.I).strip()
+    # İl birinciliği ve şehir adlarını baştan temizle
+    cleaned = re.sub(r"^[A-Za-zÇĞİÖŞÜçğiöşü\s]+?(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler|Kadınlar)\s+", "", cleaned, flags=re.I).strip()
     # Kategori ve lig adlarını baştan temizle
-    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s+(?:1\.\s*Lig(?:i)?|Süper\s*Lig(?:i)?|Ligi)\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler|Kadınlar)\s+(?:1\.\s*Lig(?:i)?|Süper\s*Lig(?:i)?|Ligi)?\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^(?:Süper|1\.)\s*Lig(?:i)?\s*", "", cleaned, flags=re.I).strip()
-    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s+Ligi\s*", "", cleaned, flags=re.I).strip()
-    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler)\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler|Kadınlar)\s+Ligi\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^(?:Genç|Yıldız|Küçük|Midi)\s+(?:Kızlar|Erkekler|Kadınlar)\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^(?:Voleybol\s+)?(?:İl\s+)?Birinciliği\s*", "", cleaned, flags=re.I).strip()
+    cleaned = re.sub(r"^[A-Za-zÇĞİÖŞÜçğiöşü\s]+İl\s+Birinciliği\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^[-–—\s]+", "", cleaned).strip()
-    if re.match(r"^[A-Za-zÇĞİÖŞÜçğiöşü]$", cleaned):
-        cleaned = f"{cleaned.upper()} Grubu"
-    elif re.match(r"^[A-Za-zÇĞİÖŞÜçğiöşü]\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I):
-        m = re.match(r"^([A-Za-zÇĞİÖŞÜçğiöşü])", cleaned)
+    if re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I):
+        m = re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I)
         cleaned = f"{m.group(1).upper()} Grubu"
     elif re.match(r"^\d+$", cleaned):
         cleaned = f"{cleaned}. Grup"
@@ -730,6 +731,7 @@ def scrape_single_city(city_info):
         pass
 
     city_matches = []
+    seen_matches = set()
     city_standings = {}
     halls_set = set()
     match_counter = 1
@@ -743,7 +745,6 @@ def scrape_single_city(city_info):
             ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
             ("GK1L", "Genç Kızlar 1. Ligi", "Genç"),
             ("YKSL", "Yıldız Kızlar Süper Lig", "Yıldız"),
-            ("YK1L", "Yıldız Kızlar Süper Lig", "Yıldız"),
         ]
 
     for kume_code, cat_name, age_group in target_kumes:
@@ -784,6 +785,11 @@ def scrape_single_city(city_info):
                 continue
 
             group_name = extract_group_name(c_text)
+            if subdomain == "kocaeli":
+                if "gebze" in lower_comp:
+                    group_name = "A Grubu"
+                elif any(k in lower_comp for k in ["izmit", "korfez", "körfez"]):
+                    group_name = "B Grubu"
             standings_key = f"{cat_name} - {group_name}"
 
             p_c = state.copy()
@@ -874,6 +880,11 @@ def scrape_single_city(city_info):
                                 match_counter += 1
 
                                 set_scores = re.findall(r"\((\d+-\d+)\)", raw_sets) if raw_sets else []
+
+                                dedup_key = (iso_date, raw_time, home, away)
+                                if dedup_key in seen_matches:
+                                    continue
+                                seen_matches.add(dedup_key)
 
                                 city_matches.append({
                                     "id": match_id,

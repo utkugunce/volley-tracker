@@ -61,7 +61,7 @@ export function FixtureTableRow({
   return (
     <React.Fragment>
       {isFirstOfGroup && (
-        <tr className="select-none">
+        <tr >
           <td colSpan={10} className="py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-surface-muted/90 to-amber-500/10 border border-amber-500/30 text-amber-300 font-extrabold text-[11px] uppercase tracking-wider shadow-xs">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">

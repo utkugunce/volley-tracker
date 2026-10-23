@@ -97,7 +97,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full text-xs select-none bg-panel">
+    <div className="flex flex-col h-full text-xs bg-panel">
       {/* 1. Üst Başlık & Sofascore Lig Sayacı */}
       <div className="px-3.5 py-3 border-b border-line flex items-center justify-between bg-panel/90 sticky top-0 z-10 backdrop-blur-md">
         <div className="flex items-center gap-2">

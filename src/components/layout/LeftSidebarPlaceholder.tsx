@@ -37,7 +37,7 @@ export const LeftSidebarPlaceholder: React.FC<LeftSidebarPlaceholderProps> = ({
   const popularCitySlugs = ["istanbul", "ankara", "izmir", "bursa", "antalya", "eskisehir", "canakkale"];
 
   return (
-    <div className="flex flex-col h-full text-xs select-none">
+    <div className="flex flex-col h-full text-xs">
       {/* 1. Üst Başlık */}
       <div className="px-3.5 py-3 border-b border-line flex items-center justify-between bg-panel/90">
         <div className="flex items-center gap-2">

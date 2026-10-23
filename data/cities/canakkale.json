@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T10:35:24.907145+00:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -1666,8 +1666,8 @@
         "url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-spor-kulubu-u16-parion-spor-kulubu-u16-c411184",
         "host_name": "ÇOMÜ Spor Kulübü U16",
         "guest_name": "Parion Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "20:15",
         "vb_hall": "18 Mart Spor Salonu",
@@ -2090,5 +2090,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-23T10:37:25.175957"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:30.634866"
 }

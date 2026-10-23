@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
-  "total_matches": 115,
+  "total_matches": 129,
   "source": "https://istanbul.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -35,6 +35,7 @@
       "Sancaktepe Taha Akgül",
       "TVF 50. Yıl Deniz Esinduy",
       "Tozkoparan Spor Salonu",
+      "Tuzla Kafkale Spor Salon2",
       "Tuzla Kafkale Spor Salonu",
       "Yakacık İTO Spor Salonu",
       "Yeşilyurt Sk Kapalı Spor",
@@ -2392,7 +2393,7 @@
       }
     },
     {
-      "id": "ist-20260911-012",
+      "id": "ist-20260911-016",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "18:00",
@@ -2437,7 +2438,7 @@
       }
     },
     {
-      "id": "ist-20260911-013",
+      "id": "ist-20260911-017",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
@@ -2482,7 +2483,7 @@
       }
     },
     {
-      "id": "ist-20260911-014",
+      "id": "ist-20260911-018",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
@@ -2528,7 +2529,7 @@
       }
     },
     {
-      "id": "ist-20260911-015",
+      "id": "ist-20260911-019",
       "city": "İstanbul",
       "date": "2026-09-11",
       "time": "19:30",
@@ -2708,7 +2709,7 @@
       }
     },
     {
-      "id": "ist-20260914-073",
+      "id": "ist-20260914-087",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -2754,7 +2755,7 @@
       }
     },
     {
-      "id": "ist-20260914-074",
+      "id": "ist-20260914-088",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -2799,7 +2800,7 @@
       }
     },
     {
-      "id": "ist-20260914-102",
+      "id": "ist-20260914-116",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "18:00",
@@ -2844,7 +2845,7 @@
       }
     },
     {
-      "id": "ist-20260914-075",
+      "id": "ist-20260914-089",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:00",
@@ -2889,7 +2890,7 @@
       }
     },
     {
-      "id": "ist-20260914-076",
+      "id": "ist-20260914-090",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
@@ -2934,7 +2935,7 @@
       }
     },
     {
-      "id": "ist-20260914-088",
+      "id": "ist-20260914-102",
       "city": "İstanbul",
       "date": "2026-09-14",
       "time": "19:30",
@@ -2981,7 +2982,7 @@
       }
     },
     {
-      "id": "ist-20260915-103",
+      "id": "ist-20260915-117",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "18:00",
@@ -3028,7 +3029,7 @@
       }
     },
     {
-      "id": "ist-20260915-104",
+      "id": "ist-20260915-118",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:00",
@@ -3073,7 +3074,7 @@
       }
     },
     {
-      "id": "ist-20260915-077",
+      "id": "ist-20260915-091",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "19:30",
@@ -3118,7 +3119,7 @@
       }
     },
     {
-      "id": "ist-20260915-089",
+      "id": "ist-20260915-103",
       "city": "İstanbul",
       "date": "2026-09-15",
       "time": "20:30",
@@ -3163,7 +3164,7 @@
       }
     },
     {
-      "id": "ist-20260916-090",
+      "id": "ist-20260916-104",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
@@ -3208,7 +3209,7 @@
       }
     },
     {
-      "id": "ist-20260916-105",
+      "id": "ist-20260916-119",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "18:00",
@@ -3253,7 +3254,7 @@
       }
     },
     {
-      "id": "ist-20260916-091",
+      "id": "ist-20260916-105",
       "city": "İstanbul",
       "date": "2026-09-16",
       "time": "19:30",
@@ -3298,7 +3299,7 @@
       }
     },
     {
-      "id": "ist-20260917-058",
+      "id": "ist-20260917-072",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -3343,7 +3344,7 @@
       }
     },
     {
-      "id": "ist-20260917-059",
+      "id": "ist-20260917-073",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -3389,7 +3390,7 @@
       }
     },
     {
-      "id": "ist-20260917-092",
+      "id": "ist-20260917-106",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "18:00",
@@ -3434,7 +3435,7 @@
       }
     },
     {
-      "id": "ist-20260917-060",
+      "id": "ist-20260917-074",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3481,7 +3482,7 @@
       }
     },
     {
-      "id": "ist-20260917-061",
+      "id": "ist-20260917-075",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3526,7 +3527,7 @@
       }
     },
     {
-      "id": "ist-20260917-062",
+      "id": "ist-20260917-076",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3572,7 +3573,7 @@
       }
     },
     {
-      "id": "ist-20260917-106",
+      "id": "ist-20260917-120",
       "city": "İstanbul",
       "date": "2026-09-17",
       "time": "19:30",
@@ -3618,7 +3619,7 @@
       }
     },
     {
-      "id": "ist-20260921-016",
+      "id": "ist-20260921-020",
       "city": "İstanbul",
       "date": "2026-09-21",
       "time": "18:00",
@@ -3710,7 +3711,7 @@
       }
     },
     {
-      "id": "ist-20260921-017",
+      "id": "ist-20260921-021",
       "city": "İstanbul",
       "date": "2026-09-21",
       "time": "20:00",
@@ -3800,7 +3801,7 @@
       }
     },
     {
-      "id": "ist-20260922-031",
+      "id": "ist-20260922-040",
       "city": "İstanbul",
       "date": "2026-09-22",
       "time": "18:00",
@@ -3846,7 +3847,7 @@
       }
     },
     {
-      "id": "ist-20260922-044",
+      "id": "ist-20260922-054",
       "city": "İstanbul",
       "date": "2026-09-22",
       "time": "18:00",
@@ -3893,7 +3894,7 @@
       }
     },
     {
-      "id": "ist-20260922-045",
+      "id": "ist-20260922-055",
       "city": "İstanbul",
       "date": "2026-09-22",
       "time": "18:00",
@@ -3938,7 +3939,7 @@
       }
     },
     {
-      "id": "ist-20260922-027",
+      "id": "ist-20260922-036",
       "city": "İstanbul",
       "date": "2026-09-22",
       "time": "19:30",
@@ -3985,7 +3986,7 @@
       }
     },
     {
-      "id": "ist-20260922-046",
+      "id": "ist-20260922-056",
       "city": "İstanbul",
       "date": "2026-09-22",
       "time": "19:30",
@@ -4030,7 +4031,7 @@
       }
     },
     {
-      "id": "ist-20260922-051",
+      "id": "ist-20260922-062",
       "city": "İstanbul",
       "date": "2026-09-22",
       "time": "19:30",
@@ -4075,7 +4076,7 @@
       }
     },
     {
-      "id": "ist-20260923-018",
+      "id": "ist-20260923-022",
       "city": "İstanbul",
       "date": "2026-09-23",
       "time": "19:30",
@@ -4120,7 +4121,7 @@
       }
     },
     {
-      "id": "ist-20260924-019",
+      "id": "ist-20260924-023",
       "city": "İstanbul",
       "date": "2026-09-24",
       "time": "18:00",
@@ -4212,7 +4213,7 @@
       }
     },
     {
-      "id": "ist-20260925-020",
+      "id": "ist-20260925-024",
       "city": "İstanbul",
       "date": "2026-09-25",
       "time": "20:30",
@@ -4258,7 +4259,7 @@
       }
     },
     {
-      "id": "ist-20260926-035",
+      "id": "ist-20260926-044",
       "city": "İstanbul",
       "date": "2026-09-26",
       "time": "18:30",
@@ -4304,7 +4305,7 @@
       }
     },
     {
-      "id": "ist-20260926-021",
+      "id": "ist-20260926-025",
       "city": "İstanbul",
       "date": "2026-09-26",
       "time": "19:00",
@@ -4349,7 +4350,7 @@
       }
     },
     {
-      "id": "ist-20260927-052",
+      "id": "ist-20260927-063",
       "city": "İstanbul",
       "date": "2026-09-27",
       "time": "11:30",
@@ -4395,7 +4396,7 @@
       }
     },
     {
-      "id": "ist-20260928-093",
+      "id": "ist-20260928-107",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "18:00",
@@ -4441,7 +4442,7 @@
       }
     },
     {
-      "id": "ist-20260928-094",
+      "id": "ist-20260928-108",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "18:00",
@@ -4486,7 +4487,7 @@
       }
     },
     {
-      "id": "ist-20260928-063",
+      "id": "ist-20260928-077",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "19:30",
@@ -4531,7 +4532,7 @@
       }
     },
     {
-      "id": "ist-20260928-095",
+      "id": "ist-20260928-109",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "19:30",
@@ -4576,7 +4577,7 @@
       }
     },
     {
-      "id": "ist-20260928-107",
+      "id": "ist-20260928-121",
       "city": "İstanbul",
       "date": "2026-09-28",
       "time": "19:30",
@@ -4622,7 +4623,7 @@
       }
     },
     {
-      "id": "ist-20260929-078",
+      "id": "ist-20260929-092",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "18:00",
@@ -4667,7 +4668,7 @@
       }
     },
     {
-      "id": "ist-20260929-108",
+      "id": "ist-20260929-122",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "18:00",
@@ -4712,7 +4713,7 @@
       }
     },
     {
-      "id": "ist-20260929-079",
+      "id": "ist-20260929-093",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "19:30",
@@ -4757,7 +4758,7 @@
       }
     },
     {
-      "id": "ist-20260929-080",
+      "id": "ist-20260929-094",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "19:30",
@@ -4802,7 +4803,7 @@
       }
     },
     {
-      "id": "ist-20260929-109",
+      "id": "ist-20260929-123",
       "city": "İstanbul",
       "date": "2026-09-29",
       "time": "19:30",
@@ -4848,7 +4849,7 @@
       }
     },
     {
-      "id": "ist-20260930-096",
+      "id": "ist-20260930-110",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "18:00",
@@ -4893,7 +4894,7 @@
       }
     },
     {
-      "id": "ist-20260930-110",
+      "id": "ist-20260930-124",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "18:00",
@@ -4939,7 +4940,7 @@
       }
     },
     {
-      "id": "ist-20260930-054",
+      "id": "ist-20260930-066",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "19:30",
@@ -4985,7 +4986,7 @@
       }
     },
     {
-      "id": "ist-20260930-081",
+      "id": "ist-20260930-095",
       "city": "İstanbul",
       "date": "2026-09-30",
       "time": "19:30",
@@ -5030,7 +5031,7 @@
       }
     },
     {
-      "id": "ist-20261001-064",
+      "id": "ist-20261001-078",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "18:00",
@@ -5077,7 +5078,7 @@
       }
     },
     {
-      "id": "ist-20261001-111",
+      "id": "ist-20261001-125",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "18:00",
@@ -5122,7 +5123,7 @@
       }
     },
     {
-      "id": "ist-20261001-082",
+      "id": "ist-20261001-096",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "19:00",
@@ -5167,7 +5168,7 @@
       }
     },
     {
-      "id": "ist-20261001-065",
+      "id": "ist-20261001-079",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "19:30",
@@ -5212,7 +5213,7 @@
       }
     },
     {
-      "id": "ist-20261001-097",
+      "id": "ist-20261001-111",
       "city": "İstanbul",
       "date": "2026-10-01",
       "time": "19:30",
@@ -5257,7 +5258,7 @@
       }
     },
     {
-      "id": "ist-20261003-055",
+      "id": "ist-20261003-067",
       "city": "İstanbul",
       "date": "2026-10-03",
       "time": "18:00",
@@ -5302,7 +5303,7 @@
       }
     },
     {
-      "id": "ist-20261005-047",
+      "id": "ist-20261005-057",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "18:00",
@@ -5348,7 +5349,7 @@
       }
     },
     {
-      "id": "ist-20261005-056",
+      "id": "ist-20261005-068",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "18:00",
@@ -5395,7 +5396,7 @@
       }
     },
     {
-      "id": "ist-20261005-066",
+      "id": "ist-20261005-080",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "18:00",
@@ -5440,7 +5441,7 @@
       }
     },
     {
-      "id": "ist-20261005-048",
+      "id": "ist-20261005-058",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "19:30",
@@ -5487,7 +5488,7 @@
       }
     },
     {
-      "id": "ist-20261005-049",
+      "id": "ist-20261005-059",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "19:30",
@@ -5532,7 +5533,7 @@
       }
     },
     {
-      "id": "ist-20261005-067",
+      "id": "ist-20261005-081",
       "city": "İstanbul",
       "date": "2026-10-05",
       "time": "19:30",
@@ -5668,7 +5669,7 @@
       }
     },
     {
-      "id": "ist-20261006-022",
+      "id": "ist-20261006-026",
       "city": "İstanbul",
       "date": "2026-10-06",
       "time": "18:00",
@@ -5714,7 +5715,7 @@
       }
     },
     {
-      "id": "ist-20261006-023",
+      "id": "ist-20261006-027",
       "city": "İstanbul",
       "date": "2026-10-06",
       "time": "18:00",
@@ -5805,7 +5806,7 @@
       }
     },
     {
-      "id": "ist-20261006-024",
+      "id": "ist-20261006-028",
       "city": "İstanbul",
       "date": "2026-10-06",
       "time": "19:30",
@@ -5850,7 +5851,7 @@
       }
     },
     {
-      "id": "ist-20261006-028",
+      "id": "ist-20261006-037",
       "city": "İstanbul",
       "date": "2026-10-06",
       "time": "19:30",
@@ -5895,7 +5896,7 @@
       }
     },
     {
-      "id": "ist-20261006-057",
+      "id": "ist-20261006-069",
       "city": "İstanbul",
       "date": "2026-10-06",
       "time": "19:30",
@@ -5940,7 +5941,7 @@
       }
     },
     {
-      "id": "ist-20261006-025",
+      "id": "ist-20261006-029",
       "city": "İstanbul",
       "date": "2026-10-06",
       "time": "20:30",
@@ -5985,7 +5986,7 @@
       }
     },
     {
-      "id": "ist-20261007-026",
+      "id": "ist-20261007-030",
       "city": "İstanbul",
       "date": "2026-10-07",
       "time": "18:00",
@@ -6031,7 +6032,7 @@
       }
     },
     {
-      "id": "ist-20261007-053",
+      "id": "ist-20261007-064",
       "city": "İstanbul",
       "date": "2026-10-07",
       "time": "18:00",
@@ -6077,7 +6078,7 @@
       }
     },
     {
-      "id": "ist-20261007-029",
+      "id": "ist-20261007-038",
       "city": "İstanbul",
       "date": "2026-10-07",
       "time": "19:30",
@@ -6122,7 +6123,7 @@
       }
     },
     {
-      "id": "ist-20261012-068",
+      "id": "ist-20261012-082",
       "city": "İstanbul",
       "date": "2026-10-12",
       "time": "18:00",
@@ -6168,7 +6169,7 @@
       }
     },
     {
-      "id": "ist-20261012-069",
+      "id": "ist-20261012-083",
       "city": "İstanbul",
       "date": "2026-10-12",
       "time": "19:30",
@@ -6213,7 +6214,7 @@
       }
     },
     {
-      "id": "ist-20261012-098",
+      "id": "ist-20261012-112",
       "city": "İstanbul",
       "date": "2026-10-12",
       "time": "19:30",
@@ -6258,7 +6259,7 @@
       }
     },
     {
-      "id": "ist-20261013-083",
+      "id": "ist-20261013-097",
       "city": "İstanbul",
       "date": "2026-10-13",
       "time": "18:00",
@@ -6304,7 +6305,7 @@
       }
     },
     {
-      "id": "ist-20261013-112",
+      "id": "ist-20261013-126",
       "city": "İstanbul",
       "date": "2026-10-13",
       "time": "18:00",
@@ -6349,7 +6350,7 @@
       }
     },
     {
-      "id": "ist-20261013-113",
+      "id": "ist-20261013-127",
       "city": "İstanbul",
       "date": "2026-10-13",
       "time": "18:00",
@@ -6394,7 +6395,7 @@
       }
     },
     {
-      "id": "ist-20261013-084",
+      "id": "ist-20261013-098",
       "city": "İstanbul",
       "date": "2026-10-13",
       "time": "19:30",
@@ -6439,7 +6440,7 @@
       }
     },
     {
-      "id": "ist-20261013-099",
+      "id": "ist-20261013-113",
       "city": "İstanbul",
       "date": "2026-10-13",
       "time": "19:30",
@@ -6485,7 +6486,7 @@
       }
     },
     {
-      "id": "ist-20261013-114",
+      "id": "ist-20261013-128",
       "city": "İstanbul",
       "date": "2026-10-13",
       "time": "19:30",
@@ -6530,7 +6531,7 @@
       }
     },
     {
-      "id": "ist-20261014-115",
+      "id": "ist-20261014-129",
       "city": "İstanbul",
       "date": "2026-10-14",
       "time": "18:00",
@@ -6575,7 +6576,7 @@
       }
     },
     {
-      "id": "ist-20261014-085",
+      "id": "ist-20261014-099",
       "city": "İstanbul",
       "date": "2026-10-14",
       "time": "19:30",
@@ -6620,7 +6621,7 @@
       }
     },
     {
-      "id": "ist-20261014-100",
+      "id": "ist-20261014-114",
       "city": "İstanbul",
       "date": "2026-10-14",
       "time": "19:30",
@@ -6665,7 +6666,7 @@
       }
     },
     {
-      "id": "ist-20261018-086",
+      "id": "ist-20261018-100",
       "city": "İstanbul",
       "date": "2026-10-18",
       "time": "18:00",
@@ -6712,7 +6713,7 @@
       }
     },
     {
-      "id": "ist-20261018-042",
+      "id": "ist-20261018-052",
       "city": "İstanbul",
       "date": "2026-10-18",
       "time": "18:30",
@@ -6757,7 +6758,7 @@
       }
     },
     {
-      "id": "ist-20261018-036",
+      "id": "ist-20261018-045",
       "city": "İstanbul",
       "date": "2026-10-18",
       "time": "19:00",
@@ -6802,7 +6803,7 @@
       }
     },
     {
-      "id": "ist-20261018-037",
+      "id": "ist-20261018-046",
       "city": "İstanbul",
       "date": "2026-10-18",
       "time": "20:00",
@@ -6847,7 +6848,7 @@
       }
     },
     {
-      "id": "ist-20261018-038",
+      "id": "ist-20261018-048",
       "city": "İstanbul",
       "date": "2026-10-18",
       "time": "20:30",
@@ -6893,7 +6894,7 @@
       }
     },
     {
-      "id": "ist-20261020-030",
+      "id": "ist-20261020-039",
       "city": "İstanbul",
       "date": "2026-10-20",
       "time": "18:00",
@@ -6938,7 +6939,7 @@
       }
     },
     {
-      "id": "ist-20261020-032",
+      "id": "ist-20261020-041",
       "city": "İstanbul",
       "date": "2026-10-20",
       "time": "18:00",
@@ -6983,7 +6984,7 @@
       }
     },
     {
-      "id": "ist-20261020-033",
+      "id": "ist-20261020-042",
       "city": "İstanbul",
       "date": "2026-10-20",
       "time": "19:30",
@@ -7028,7 +7029,7 @@
       }
     },
     {
-      "id": "ist-20261020-070",
+      "id": "ist-20261020-084",
       "city": "İstanbul",
       "date": "2026-10-20",
       "time": "19:30",
@@ -7073,7 +7074,7 @@
       }
     },
     {
-      "id": "ist-20261021-087",
+      "id": "ist-20261021-101",
       "city": "İstanbul",
       "date": "2026-10-21",
       "time": "18:00",
@@ -7118,7 +7119,7 @@
       }
     },
     {
-      "id": "ist-20261021-071",
+      "id": "ist-20261021-085",
       "city": "İstanbul",
       "date": "2026-10-21",
       "time": "19:30",
@@ -7164,7 +7165,7 @@
       }
     },
     {
-      "id": "ist-20261022-039",
+      "id": "ist-20261022-049",
       "city": "İstanbul",
       "date": "2026-10-22",
       "time": "18:00",
@@ -7191,8 +7192,8 @@
         "url": "https://women.volleybox.net/tr/anadolu-smac-spor-u18-cekmekoy-stanbul-sk-u18-c411465",
         "host_name": "Anadolu Smaç Spor U18",
         "guest_name": "Çekmeköy İstanbul SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:00",
         "vb_hall": "Tozkoparan Spor Salonu",
@@ -7209,7 +7210,7 @@
       }
     },
     {
-      "id": "ist-20261022-101",
+      "id": "ist-20261022-115",
       "city": "İstanbul",
       "date": "2026-10-22",
       "time": "18:00",
@@ -7237,8 +7238,8 @@
         "url": "https://women.volleybox.net/tr/fenerbahce-u16-bizimkent-spor-kulubu-u16-c408016",
         "host_name": "Fenerbahçe U16",
         "guest_name": "Bizimkent Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:00",
         "vb_hall": "TVF 50. Yıl Deniz Esinduy Spor Salonu",
@@ -7255,7 +7256,7 @@
       }
     },
     {
-      "id": "ist-20261022-040",
+      "id": "ist-20261022-050",
       "city": "İstanbul",
       "date": "2026-10-22",
       "time": "18:30",
@@ -7283,8 +7284,8 @@
         "url": "https://women.volleybox.net/tr/alfa-spor-kulubu-u18-atasehir-yldzlar-u18-c411466",
         "host_name": "Alfa Spor Kulübü U18",
         "guest_name": "Ataşehir Yıldızları U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:30",
         "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
@@ -7301,7 +7302,7 @@
       }
     },
     {
-      "id": "ist-20261022-043",
+      "id": "ist-20261022-053",
       "city": "İstanbul",
       "date": "2026-10-22",
       "time": "19:30",
@@ -7329,8 +7330,8 @@
         "url": "https://women.volleybox.net/tr/kuzey-yldzlar-spor-kulubu-b-u18-turuncu-spor-kulubu-u18-c411468",
         "host_name": "Kuzey Yıldızları Spor Kulübü - B U18",
         "guest_name": "Turuncu Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "19:30",
         "vb_hall": "Tozkoparan Spor Salonu",
@@ -7347,7 +7348,7 @@
       }
     },
     {
-      "id": "ist-20261022-041",
+      "id": "ist-20261022-051",
       "city": "İstanbul",
       "date": "2026-10-22",
       "time": "20:00",
@@ -7374,8 +7375,8 @@
         "url": "https://women.volleybox.net/tr/ekol-spor-kulubu-u18-stanbul-anka-spor-u18-c411467",
         "host_name": "Ekol Spor Kulubü U18",
         "guest_name": "İstanbul Anka Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "20:00",
         "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
@@ -7392,7 +7393,7 @@
       }
     },
     {
-      "id": "ist-20261023-050",
+      "id": "ist-20261023-060",
       "city": "İstanbul",
       "date": "2026-10-23",
       "time": "18:00",
@@ -7433,7 +7434,7 @@
       }
     },
     {
-      "id": "ist-20261023-034",
+      "id": "ist-20261023-043",
       "city": "İstanbul",
       "date": "2026-10-23",
       "time": "21:00",
@@ -7474,7 +7475,7 @@
       }
     },
     {
-      "id": "ist-20261024-072",
+      "id": "ist-20261024-086",
       "city": "İstanbul",
       "date": "2026-10-24",
       "time": "15:30",
@@ -7513,8 +7514,484 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "ist-20261026-070",
+      "city": "İstanbul",
+      "date": "2026-10-26",
+      "time": "18:00",
+      "hall": "Tozkoparan Spor Salonu",
+      "category": "Genç Kızlar 1. Lig 4. Bölge",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "5",
+      "home_team": "Kovan Spor Kulübü U18",
+      "away_team": "Bahçelievler Voleybol Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261027-012",
+      "city": "İstanbul",
+      "date": "2026-10-27",
+      "time": "18:00",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "12",
+      "home_team": "Eczacıbaşı U18",
+      "away_team": "ES Voleybol U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261027-013",
+      "city": "İstanbul",
+      "date": "2026-10-27",
+      "time": "18:00",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "13",
+      "home_team": "Beşiktaş U18",
+      "away_team": "Yeşilyurt Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261027-014",
+      "city": "İstanbul",
+      "date": "2026-10-27",
+      "time": "19:30",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "14",
+      "home_team": "Ümraniye Belediyesi Spor Kulübü U18",
+      "away_team": "Pegasus Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261027-015",
+      "city": "İstanbul",
+      "date": "2026-10-27",
+      "time": "19:30",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "15",
+      "home_team": "Bizimkent Voleybol Spor Kulübü U18",
+      "away_team": "Beylikdüzü Voleybol 2021 U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261028-031",
+      "city": "İstanbul",
+      "date": "2026-10-28",
+      "time": "15:00",
+      "hall": "TVF 50. Yıl Deniz Esinduy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "16",
+      "home_team": "VakıfBank U18",
+      "away_team": "Fenerbahçe U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261028-032",
+      "city": "İstanbul",
+      "date": "2026-10-28",
+      "time": "15:00",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "17",
+      "home_team": "İBB Spor Kulübü U18",
+      "away_team": "Marmara Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261028-033",
+      "city": "İstanbul",
+      "date": "2026-10-28",
+      "time": "16:30",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "18",
+      "home_team": "Ünsped Spor Kulübü U18",
+      "away_team": "Eyüpsultan Belediyesi SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261028-034",
+      "city": "İstanbul",
+      "date": "2026-10-28",
+      "time": "18:00",
+      "hall": "Tozkoparan Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "19",
+      "home_team": "Bahçelievler Belediyespor ll U18",
+      "away_team": "Galatasaray U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261029-065",
+      "city": "İstanbul",
+      "date": "2026-10-29",
+      "time": "13:00",
+      "hall": "Tozkoparan Spor Salonu",
+      "category": "Genç Kızlar 1. Lig 4. Bölge",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "7",
+      "home_team": "Avrupa Voleybol Gelişim Spor Kulübü U18",
+      "away_team": "Bahçeşehir Avrupa Gelişim Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261029-035",
+      "city": "İstanbul",
+      "date": "2026-10-29",
+      "time": "19:30",
+      "hall": "Yeşilyurt Sk Kapalı Spor",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "20",
+      "home_team": "Güngören Voleybol Kulübü U18",
+      "away_team": "Türk Hava Yolları SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261030-071",
+      "city": "İstanbul",
+      "date": "2026-10-30",
+      "time": "18:00",
+      "hall": "Halkalı Ata 3. Spor Salonu",
+      "category": "Genç Kızlar 1. Lig 4. Bölge",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "6",
+      "home_team": "Küçükçekmece Voleybol Kulübü U18",
+      "away_team": "Real Elite Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261030-061",
+      "city": "İstanbul",
+      "date": "2026-10-30",
+      "time": "19:30",
+      "hall": "Şehit Mustafa Özel Spor Salonu",
+      "category": "Genç Kızlar 1. Lig 4. Bölge",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "8",
+      "home_team": "SET Voleybol Kulübü U18",
+      "away_team": "Sultangazi Olimpik Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "ist-20261031-047",
+      "city": "İstanbul",
+      "date": "2026-10-31",
+      "time": "18:30",
+      "hall": "Tuzla Kafkale Spor Salon2",
+      "category": "Genç Kızlar 1. Lig 2. Bölge",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Tuzla Rekor Spor Kulübü - B U18",
+      "away_team": "2014 Maltepe Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 115,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:43.935505"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:32.502243"
 }

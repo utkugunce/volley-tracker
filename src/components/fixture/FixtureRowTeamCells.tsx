@@ -63,7 +63,7 @@ export function FixtureScoreCell({ match, isFinished, forfeitInfo, cardBorderCla
           </div>
         ) : (
           <span
-            className="inline-flex items-center justify-center px-2 py-0.5 rounded-full font-bold text-[10px] tracking-wider bg-surface-raised text-ink-2 border border-line shadow-xs select-none"
+            className="inline-flex items-center justify-center px-2 py-0.5 rounded-full font-bold text-[10px] tracking-wider bg-surface-raised text-ink-2 border border-line shadow-xs"
             title="Karşılaşma"
           >
             VS

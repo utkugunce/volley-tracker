@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -2853,8 +2853,8 @@
         "url": "https://women.volleybox.net/tr/akdeniz-bilgi-spor-kulubu-u16-07-alya-spor-u16-c402163",
         "host_name": "Akdeniz Bilgi Spor Kulübü U16",
         "guest_name": "07 Alya Spor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:30",
         "vb_hall": "Kepez Çok Amaçlı Spor Salomı",
@@ -2899,8 +2899,8 @@
         "url": "https://women.volleybox.net/tr/antalya-1907-spor-kulubu-u16-07-anka-spor-kulubu-u16-c402164",
         "host_name": "Antalya 1907 Spor Kulübü U16",
         "guest_name": "07 Anka Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "19:00",
         "vb_hall": "Döşemealtı Spor Salonu",
@@ -3549,5 +3549,5 @@
     }
   ],
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:38.655421"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:29.373223"
 }

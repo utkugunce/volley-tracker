@@ -162,7 +162,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-slate-950/60 text-slate-400 font-bold border-b border-slate-800 uppercase text-[10px] sm:text-[11px] tracking-wider select-none">
+              <tr className="bg-slate-950/60 text-slate-400 font-bold border-b border-slate-800 uppercase text-[10px] sm:text-[11px] tracking-wider">
                 <th className="py-2.5 sm:py-3 px-2 text-center w-10 sm:w-12">#</th>
                 <th className="py-2.5 sm:py-3 px-3 min-w-[200px]">Takım</th>
                 <th className="py-2.5 sm:py-3 px-2 text-center w-9 sm:w-11" title="Oynanan Maç">O</th>

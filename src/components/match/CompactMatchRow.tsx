@@ -6,6 +6,7 @@ import { Match } from "@/types/fixture";
 import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { downloadIcsFile, generateMatchIcs } from "@/utils/ics";
 import { isMatchPassed } from "@/utils/calendar";
+import { formatGroupName } from "@/utils/grouping";
 
 export type MatchRowMode = "today" | "results" | "fixtures";
 
@@ -88,7 +89,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           onSelect?.(match);
         }
       }}
-      className={`group relative flex items-center min-h-[46px] px-2.5 py-1.5 transition-all cursor-pointer border-b border-line/50 select-none ${
+      className={`group relative flex items-center min-h-[46px] px-2.5 py-1.5 transition-all cursor-pointer border-b border-line/50 ${
         isSelected
           ? "bg-slate-800/80 border-l-2 border-l-blue-500 shadow-inner"
           : hasDiscrepancy
@@ -209,7 +210,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
               <div className="flex items-center gap-1.5 truncate pl-6 text-[9px] leading-tight">
                 {showGroupBadge && match.group && (
                   <span className="font-semibold text-blue-400 shrink-0">
-                    {match.group}
+                    {formatGroupName(match.group)}
                   </span>
                 )}
                 {showGroupBadge && match.group && match.hall && match.hall !== "TBD" && (
@@ -241,7 +242,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
             <>
               {showGroupBadge && match.group && (
                 <span className="truncate pl-6 text-[9px] font-semibold text-blue-400 leading-tight">
-                  {match.group}
+                  {formatGroupName(match.group)}
                 </span>
               )}
               {mode === "fixtures" && match.hall && match.hall !== "TBD" && (

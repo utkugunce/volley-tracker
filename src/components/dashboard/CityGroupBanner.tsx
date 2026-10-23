@@ -36,7 +36,7 @@ export const CityGroupBanner: React.FC<CityGroupBannerProps> = ({
         onToggle();
       }
     }}
-    className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-surface-muted to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer select-none group/city active:scale-[0.99]"
+    className="flex items-center justify-between bg-gradient-to-r from-slate-900/95 via-surface-muted to-slate-900/95 border border-sky-500/30 hover:border-sky-400/60 rounded-2xl px-3.5 sm:px-4 py-2.5 shadow-md transition-all cursor-pointer group/city active:scale-[0.99]"
     title={isCityCollapsed ? `${cityName} ${noun} göster` : `${cityName} ${noun} gizle`}
   >
     <div className="flex items-center gap-2.5">

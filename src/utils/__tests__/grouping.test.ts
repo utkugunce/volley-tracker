@@ -69,6 +69,14 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(formatGroupName("Tek Grup")).toBe("Tek Grup");
       expect(formatGroupName("")).toBe("Tek Grup");
     });
+
+    it("handles provincial and city-specific group formats (e.g. Samsun, Kocaeli)", () => {
+      expect(formatGroupName("Samsun Genç Kadınlar İl Birinciliği A Grubu")).toBe("A Grubu");
+      expect(formatGroupName("Samsun Genç Kadınlar İl Birinciliği B Grubu")).toBe("B Grubu");
+      expect(formatGroupName("Gebze Grubu")).toBe("A Grubu");
+      expect(formatGroupName("İzmit Grubu")).toBe("B Grubu");
+      expect(formatGroupName("Körfez Grubu")).toBe("B Grubu");
+    });
   });
 
   describe("formatLeagueCategoryTitle", () => {
@@ -76,6 +84,19 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(formatLeagueCategoryTitle("Genç Kızlar Süper Lig")).toBe("Genç Kızlar Süper Lig (U18)");
       expect(formatLeagueCategoryTitle("Yıldız Kızlar Süper Lig")).toBe("Yıldız Kızlar Süper Lig (U16)");
       expect(formatLeagueCategoryTitle("Küçük Kızlar")).toBe("Küçük Kızlar (U14)");
+    });
+
+    it("normalizes non-special cities to Süper Lig (U18/U16)", () => {
+      expect(formatLeagueCategoryTitle("Genç Kızlar 1. Ligi", "Genç", "Samsun")).toBe("Genç Kızlar Süper Lig (U18)");
+      expect(formatLeagueCategoryTitle("Genç Kızlar 1. Ligi", "Genç", "Burdur")).toBe("Genç Kızlar Süper Lig (U18)");
+      expect(formatLeagueCategoryTitle("Yıldız Kızlar Ligi", "Yıldız", "Afyon")).toBe("Yıldız Kızlar Süper Lig (U16)");
+    });
+
+    it("preserves 1. Lig for special cities (Ankara, İzmir, İstanbul)", () => {
+      expect(formatLeagueCategoryTitle("Genç Kızlar 1. Ligi", "Genç", "Ankara")).toBe("Genç Kızlar 1. Ligi (U18)");
+      expect(formatLeagueCategoryTitle("Genç Kızlar 1. Ligi", "Genç", "İzmir")).toBe("Genç Kızlar 1. Ligi (U18)");
+      expect(formatLeagueCategoryTitle("Genç Kızlar 1. Lig 1. Bölge", "Genç", "İstanbul")).toBe("Genç Kızlar 1. Lig 1. Bölge (U18)");
+      expect(formatLeagueCategoryTitle("Genç Kızlar Süper Lig", "Genç", "İstanbul")).toBe("Genç Kızlar Süper Lig (U18)");
     });
 
     it("does not duplicate age group code if already present", () => {

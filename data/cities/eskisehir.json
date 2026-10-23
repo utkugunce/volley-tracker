@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -863,16 +863,16 @@
         "has_score": false,
         "vb_date": "2026-10-23",
         "vb_time": "18:30",
-        "vb_hall": "Anadolu Üniversitesi Spor Salonu",
+        "vb_hall": "Tepebaşı Yunusemre Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-23",
           "vb_time": "18:30",
-          "vb_hall": "Anadolu Üniversitesi Spor Salonu",
-          "details": "Salon Değişti (TVF: Tepebaşı Yunusemre / VB: Anadolu Üniversitesi Spor Salonu)"
+          "vb_hall": "Tepebaşı Yunusemre Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1173,16 +1173,16 @@
         "has_score": false,
         "vb_date": "2026-10-23",
         "vb_time": "20:00",
-        "vb_hall": "Anadolu Üniversitesi Spor Salonu",
+        "vb_hall": "Tepebaşı Yunusemre Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-23",
           "vb_time": "20:00",
-          "vb_hall": "Anadolu Üniversitesi Spor Salonu",
-          "details": "Salon Değişti (TVF: Tepebaşı Yunusemre / VB: Anadolu Üniversitesi Spor Salonu)"
+          "vb_hall": "Tepebaşı Yunusemre Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2792,5 +2792,5 @@
     }
   ],
   "volleybox_synced_matches": 54,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:42.078260"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:31.226726"
 }

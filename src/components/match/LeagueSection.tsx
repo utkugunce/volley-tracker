@@ -68,7 +68,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
             toggleCollapsed();
           }
         }}
-        className="flex items-center justify-between px-3 py-2 bg-panel hover:bg-panel transition-colors cursor-pointer select-none border-b border-line/80"
+        className="flex items-center justify-between px-3 py-2 bg-panel hover:bg-panel transition-colors cursor-pointer border-b border-line/80"
       >
         <div className="flex items-center gap-2 min-w-0 flex-1 pr-2">
           <ChevronDown

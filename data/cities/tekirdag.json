@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -2403,8 +2403,8 @@
         "url": "https://women.volleybox.net/tr/muratl-yldz-2012-spor-kulubu-u16-cerkezkoy-voleybol-akademi-spor-kulubu-u16-c411511",
         "host_name": "Muratlı Yıldız 2012 Spor Kulübü U16",
         "guest_name": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "19:00",
         "vb_hall": "Muratlı Atatürk Spor Salonu",
@@ -3576,5 +3576,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:51.663400"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:37.266356"
 }

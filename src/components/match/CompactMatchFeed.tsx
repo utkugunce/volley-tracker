@@ -89,7 +89,7 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
     filteredMatches.forEach((m) => {
       const matchCity = m.city || city || "";
       const rawCategory = m.category || m.age_group || "Genel Lig";
-      const leagueTitle = formatLeagueCategoryTitle(rawCategory, m.age_group);
+      const leagueTitle = formatLeagueCategoryTitle(rawCategory, m.age_group, matchCity);
       const key = `${matchCity}::${leagueTitle}`;
 
       if (!map.has(key)) {

@@ -43,7 +43,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
   const [isGroupsOpen, setIsGroupsOpen] = useState(true);
 
   return (
-    <div className="flex h-full flex-col bg-panel text-xs select-none">
+    <div className="flex h-full flex-col bg-panel text-xs">
       {/* 1. Üst Başlık & Sofascore Lig Sayacı */}
       <div className="sticky top-0 z-10 border-b border-line bg-panel/95 px-3.5 py-3 backdrop-blur-md">
         <div className="flex items-center justify-between gap-2">

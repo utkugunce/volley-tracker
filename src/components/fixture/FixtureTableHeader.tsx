@@ -46,7 +46,7 @@ export function FixtureTableHeader({
         if (target.closest("a") || target.closest("button")) return;
         handleToggleCollapse();
       }}
-      className={`bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between select-none transition-colors ${
+      className={`bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between transition-colors ${
         isCollapsed ? "rounded-2xl" : "border-b border-slate-800/80"
       } ${isCollapsible ? "cursor-pointer hover:bg-slate-850/60" : ""}`}
       title={

@@ -34,7 +34,7 @@ export const RightSidebarPlaceholder: React.FC<RightSidebarPlaceholderProps> = (
 }) => {
   if (!selectedMatch) {
     return (
-      <div className="flex flex-col items-center justify-center h-full p-6 text-center select-none">
+      <div className="flex flex-col items-center justify-center h-full p-6 text-center">
         <div className="w-14 h-14 rounded-2xl bg-surface-muted border border-line flex items-center justify-center text-ink-2 mb-3 shadow-inner">
           <BarChart3 size={24} />
         </div>
@@ -55,7 +55,7 @@ export const RightSidebarPlaceholder: React.FC<RightSidebarPlaceholderProps> = (
   const awayScore = selectedMatch.away_score ?? "-";
 
   return (
-    <div className="flex flex-col h-full text-xs select-none">
+    <div className="flex flex-col h-full text-xs">
       {/* 1. Üst Başlık & Kontroller */}
       <div className="px-3.5 py-3 border-b border-line flex items-center justify-between bg-panel/90">
         <div className="flex items-center gap-2 truncate">

@@ -154,7 +154,7 @@ describe("CompactMatchRow", () => {
 
     render(<CompactMatchRow match={match} mode="results" showGroupBadge={true} />);
 
-    expect(screen.getByText("İzmit Grubu")).toBeInTheDocument();
+    expect(screen.getByText("B Grubu")).toBeInTheDocument();
     expect(screen.getByText("Vezirçiftliği")).toBeInTheDocument();
     expect(screen.getByText("·")).toBeInTheDocument();
   });

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -208,8 +208,8 @@
         "url": "https://women.volleybox.net/tr/serdivan-belediyesi-spor-kulubu-u18-alaagac-spor-u18-c408239",
         "host_name": "Serdivan Belediyesi Spor Kulübü U18",
         "guest_name": "Alaağaç Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
@@ -254,8 +254,8 @@
         "url": "https://women.volleybox.net/tr/sarachane-54-spor-kulubu-u18-fener-akademi-spor-kulubu-u18-c408243",
         "host_name": "Saraçhane 54 Spor Kulübü U18",
         "guest_name": "Fener Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
@@ -497,5 +497,5 @@
     }
   ],
   "volleybox_synced_matches": 5,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:49.429715"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:36.191976"
 }

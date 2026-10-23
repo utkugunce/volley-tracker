@@ -404,7 +404,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                 {/* Şehir Başlığı / Akordeon Barı */}
                 <div
                   onClick={() => toggleCityExpand(cityName)}
-                  className="flex items-center justify-between px-4 py-3 bg-slate-800/60 hover:bg-slate-800/90 transition-colors cursor-pointer select-none"
+                  className="flex items-center justify-between px-4 py-3 bg-slate-800/60 hover:bg-slate-800/90 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-2.5">
                     <MapPin size={16} className="text-ink-2" />

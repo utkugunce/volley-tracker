@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -1194,8 +1194,8 @@
         "url": "https://women.volleybox.net/tr/selcuklu-belediyespor-kulubu-u18-anadolu-zirve-spor-kulubu-u18-c411482",
         "host_name": "Selçuklu Belediyespor Kulübü U18",
         "guest_name": "Anadolu Zirve Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:30",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
@@ -1535,8 +1535,8 @@
         "url": "https://women.volleybox.net/tr/konya-anadolu-yldzlar-spor-kulubu-u18-vakf-akademi-spor-kulubu-u18-c411485",
         "host_name": "Konya Anadolu Yıldızları Spor Kulübü U18",
         "guest_name": "Vakıf Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "20:30",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
@@ -1884,5 +1884,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:48.947622"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:35.942197"
 }

@@ -71,7 +71,7 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) =
 
   if (!match) {
     return (
-      <div className={`flex flex-col items-center justify-center h-full p-6 text-center select-none bg-canvas ${className}`}>
+      <div className={`flex flex-col items-center justify-center h-full p-6 text-center bg-canvas ${className}`}>
         <EmptyState
           icon={<BarChart3 size={28} className="text-blue-400" />}
           title="Detayları görüntülemek için bir maç seçin"
@@ -279,7 +279,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   };
 
   return (
-    <div className={`flex flex-col h-full bg-canvas text-xs select-none motion-reduce:animate-none animate-[match-panel-fade_200ms_ease-out] ${className}`}>
+    <div className={`flex flex-col h-full bg-canvas text-xs motion-reduce:animate-none animate-[match-panel-fade_200ms_ease-out] ${className}`}>
       {/* 1. Üst Bar: Başlık, Favori & Kapat */}
       <div className="px-3.5 py-2.5 border-b border-line flex items-center justify-between bg-panel/90 shrink-0">
         <div className="flex items-center gap-2 min-w-0">

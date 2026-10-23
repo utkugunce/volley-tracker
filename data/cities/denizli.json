@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T14:57:39.943758+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -766,8 +766,8 @@
         "url": "https://women.volleybox.net/tr/honaz-adil-akan-ortaokulu-sk-u18-denizli-merkez-akademi-spor-kulubu-u18-c411429",
         "host_name": "Honaz Adil Akan Ortaokulu SK U18",
         "guest_name": "Denizli Merkez Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:30",
         "vb_hall": "Honaz Adil Akan Spor Salonu",
@@ -1432,8 +1432,8 @@
         "url": "https://women.volleybox.net/tr/denizli-gsm-sk-u16-yesil-civril-belediyespor-u16-c411447",
         "host_name": "Denizli GSİM SK U16",
         "guest_name": "Yeşil Çivril Belediyespor U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-22",
         "vb_time": "18:30",
         "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
@@ -1656,5 +1656,5 @@
     }
   ],
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:41.086630"
+  "volleybox_sync_updated_at": "2026-10-23T15:03:30.708592"
 }

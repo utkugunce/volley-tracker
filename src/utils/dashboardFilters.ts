@@ -1,6 +1,6 @@
 import type { Match, FixturesData } from "@/types/fixture";
 import { isMatchOverdueForScore, compareMatchDateTime } from "@/utils/calendar";
-import { formatGroupName } from "@/utils/grouping";
+import { formatGroupName, formatLeagueCategoryTitle } from "@/utils/grouping";
 import { AGE_CATEGORIES, classifyAgeCategory } from "@/utils/leagueHierarchy";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isMatchScored } from "@/utils/matchScoring";
@@ -249,13 +249,14 @@ export function groupMatchesIntoSections(
     const matchCity = m.city || dataCity || "Genel";
     const formattedGroup = formatGroupName(m.group);
     const hasGroup = formattedGroup !== "Tek Grup" && formattedGroup !== "";
+    const leagueTitle = formatLeagueCategoryTitle(m.category, m.age_group, matchCity);
     const groupKey = isAllCities
-      ? `${matchCity}::${m.category}${hasGroup ? ` - ${formattedGroup}` : ""}`
-      : `${m.category}${hasGroup ? ` - ${formattedGroup}` : ""}`;
+      ? `${matchCity}::${leagueTitle}${hasGroup ? ` - ${formattedGroup}` : ""}`
+      : `${leagueTitle}${hasGroup ? ` - ${formattedGroup}` : ""}`;
 
     if (!sections[groupKey]) {
       sections[groupKey] = {
-        title: m.category,
+        title: leagueTitle,
         subTitle: hasGroup ? formattedGroup : "",
         city: matchCity,
         matches: [],
