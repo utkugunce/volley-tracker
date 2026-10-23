@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T14:57:39.943758+03:00",
+  "updated_at": "2026-10-23T21:05:00.181887+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -226,7 +226,7 @@
       "id": "kutahya-20261023-003",
       "city": "Kütahya",
       "date": "2026-10-23",
-      "time": "19:00",
+      "time": "20:00",
       "hall": "Dumlupınar",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -252,14 +252,14 @@
         "vb_time": "19:00",
         "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-23",
           "vb_time": "19:00",
           "vb_hall": "Dumlupınar Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 20:00 / VB: 19:00)"
         }
       }
     },
@@ -798,5 +798,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-23T15:03:36.002617"
+  "volleybox_sync_updated_at": "2026-10-23T21:11:04.955944"
 }

@@ -161,6 +161,11 @@ export async function GET(request: Request) {
 
     let data: FixturesData;
 
+    const isBypassCache = refresh === "1" || searchParams.has("_t") || searchParams.has("t") || request.headers.get("cache-control")?.includes("no-cache");
+    if (isBypassCache) {
+      const { clearSupabaseFixturesCache } = await import("@/utils/supabaseFixtures");
+      clearSupabaseFixturesCache();
+    }
     const supabaseData = await getSupabaseFixturesCached(citySlug);
 
     if (supabaseData && Array.isArray(supabaseData.matches) && supabaseData.matches.length > 0) {
@@ -274,7 +279,7 @@ export async function GET(request: Request) {
     }
 
     const headers: Record<string, string> = {};
-    if (refresh === "1") {
+    if (refresh === "1" || searchParams.has("_t") || searchParams.has("t") || request.headers.get("cache-control")?.includes("no-cache")) {
       headers["Cache-Control"] = "no-store, no-cache, must-revalidate";
     } else {
       // Bu rota maçları ve puan durumunu deploy beklemeden Supabase'den (ve admin override'larından) okur,

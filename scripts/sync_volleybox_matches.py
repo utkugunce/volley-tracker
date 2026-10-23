@@ -258,6 +258,12 @@ def extract_tournament_id(url: str) -> Optional[str]:
     return m.group(1) if m else None
 
 
+def get_cffi_client(target: str = "chrome124"):
+    c = cffi_requests.Session(impersonate=target)
+    c.headers["Accept-Language"] = "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7"
+    return c
+
+
 def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, Any]]:
     tournament_id = extract_tournament_id(tournament_url)
     if not tournament_id:
@@ -268,12 +274,15 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
     client = None
     try:
         if HAS_CURL_CFFI:
-            client = cffi_requests.Session(impersonate="chrome120")
-            client.headers.update(HEADERS)
+            client = get_cffi_client("chrome124")
         else:
             client = httpx.Client(headers=HEADERS, timeout=15.0, follow_redirects=True)
 
         resp = client.get(matches_url, timeout=15.0)
+        if resp.status_code == 403 and HAS_CURL_CFFI:
+            client.close()
+            client = get_cffi_client("chrome120")
+            resp = client.get(matches_url, timeout=15.0)
         if resp.status_code == 429:
             print(f"  [UYARI] Volleybox hız sınırına (429) ulaşıldı ({tournament_url.split('/')[-1]}). Mevcut veriler korunuyor.")
             client.close()

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T14:57:39.943758+03:00",
+  "updated_at": "2026-10-23T21:05:00.181887+03:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -2384,18 +2384,18 @@
         "guest_name": "Nova Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-25",
-        "vb_time": "16:00",
-        "vb_hall": "Samsun Atatürk Spor Salonu",
+        "vb_date": "2026-10-29",
+        "vb_time": "13:00",
+        "vb_hall": "Bahattin Ekinci Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-10-25",
-          "vb_time": "16:00",
-          "vb_hall": "Samsun Atatürk Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-29 / VB: 2026-10-25) | Saat Değişti (TVF: 13:00 / VB: 16:00) | Salon Değişti (TVF: Bahattin Ekinci Ss / VB: Samsun Atatürk Spor Salonu)"
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "13:00",
+          "vb_hall": "Bahattin Ekinci Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2934,5 +2934,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-23T15:03:36.828715"
+  "volleybox_sync_updated_at": "2026-10-23T21:11:06.506056"
 }

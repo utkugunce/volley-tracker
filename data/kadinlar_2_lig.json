@@ -16,7 +16,7 @@
       "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047/matches"
     },
     "volleybox_synced_matches": 639,
-    "volleybox_sync_updated_at": "2026-10-23T13:27:42.783239"
+    "volleybox_sync_updated_at": "2026-10-23T20:59:05.002312"
   },
   "gruplar": [
     {
@@ -8646,14 +8646,14 @@
             "vb_time": "17:00",
             "vb_hall": "Yakacık İTO Spor Salonu",
             "discrepancy": {
-              "has_diff": true,
+              "has_diff": false,
               "date_diff": false,
-              "time_diff": true,
+              "time_diff": false,
               "hall_diff": false,
               "vb_date": "2026-11-01",
               "vb_time": "17:00",
               "vb_hall": "Yakacık İTO Spor Salonu",
-              "details": "Saat Değişti (TVF: 16:00 / VB: 17:00)"
+              "details": null
             }
           }
         },
@@ -8959,7 +8959,7 @@
               "vb_date": "2026-11-08",
               "vb_time": "14:00",
               "vb_hall": "Yakacık İTO Spor Salonu",
-              "details": "Saat Değişti (TVF: 13:00 / VB: 14:00)"
+              "details": "Saat Değişti (TVF: 17:00 / VB: 14:00)"
             }
           }
         },
@@ -65756,14 +65756,14 @@
         "vb_time": "17:00",
         "vb_hall": "Yakacık İTO Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-01",
           "vb_time": "17:00",
           "vb_hall": "Yakacık İTO Spor Salonu",
-          "details": "Saat Değişti (TVF: 16:00 / VB: 17:00)"
+          "details": null
         }
       }
     },
@@ -71016,7 +71016,7 @@
           "vb_date": "2026-11-08",
           "vb_time": "14:00",
           "vb_hall": "Yakacık İTO Spor Salonu",
-          "details": "Saat Değişti (TVF: 13:00 / VB: 14:00)"
+          "details": "Saat Değişti (TVF: 17:00 / VB: 14:00)"
         }
       }
     },

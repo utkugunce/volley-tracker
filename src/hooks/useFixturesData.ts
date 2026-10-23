@@ -51,7 +51,7 @@ export function useFixturesData({
           return true;
         }
 
-        const res = await fetch(`/api/fixtures?city=${currentCitySlug}`);
+        const res = await fetch(`/api/fixtures?city=${currentCitySlug}&_t=${Date.now()}`, { cache: "no-store", headers: { "Cache-Control": "no-cache" } });
         if (!res.ok) {
           console.warn("Tam il verisi arka planda alınamadı, mevcut veri korunuyor.");
           return false;

@@ -348,8 +348,8 @@ def main():
 
     # HTTP Client oluştur
     if HAS_CURL_CFFI:
-        session = cffi_requests.Session(impersonate="chrome120")
-        session.headers.update(HEADERS)
+        session = cffi_requests.Session(impersonate="chrome124")
+        session.headers["Accept-Language"] = "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7" 
     else:
         session = httpx.Client(headers=HEADERS, follow_redirects=True, timeout=15)
 

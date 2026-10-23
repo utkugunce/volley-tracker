@@ -60,8 +60,9 @@ def fetch_volleybox_teams():
     try:
         def fetch_teams():
             if HAS_CURL_CFFI:
-                s = cffi_requests.Session(impersonate="chrome120")
-                return s.get(volleybox_url, headers=HEADERS, timeout=20)
+                s = cffi_requests.Session(impersonate="chrome124")
+                s.headers["Accept-Language"] = "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7"
+                return s.get(volleybox_url, timeout=20)
             return httpx.get(volleybox_url, headers={"User-Agent": HEADERS["User-Agent"]}, timeout=20)
 
         r = fetch_with_retry("Volleybox teams fetch", fetch_teams, max_attempts=3, initial_delay=1.0)

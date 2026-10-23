@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T14:57:39.943758+03:00",
+  "updated_at": "2026-10-23T21:05:00.181887+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -3794,18 +3794,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411808",
+        "url": "https://women.volleybox.net/tr/umut-can-spor-kulubu-u18-darca-yldz-spor-kulubu-u18-c411808",
+        "host_name": "Umut Can Spor Kulübü U18",
+        "guest_name": "Darıca Yıldız Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-21",
+        "vb_time": "20:00",
+        "vb_hall": "Çayırova Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-21",
+          "vb_time": "20:00",
+          "vb_hall": "Çayırova Spor Salonu",
+          "details": null
         }
       }
     },
@@ -5274,6 +5281,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 40,
-  "volleybox_sync_updated_at": "2026-10-23T15:03:35.854133"
+  "volleybox_synced_matches": 41,
+  "volleybox_sync_updated_at": "2026-10-23T21:11:04.696429"
 }
