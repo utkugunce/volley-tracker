@@ -138,18 +138,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411532",
+        "url": "https://women.volleybox.net/tr/eskil-tuzgolu-spor-kulubu-u18-mba-aksaray-anka-spor-kulubu-b-u18-c411532",
+        "host_name": "Eskil Tuzgölü Spor Kulübü U18",
+        "guest_name": "MBA Aksaray Anka Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-26",
+        "vb_time": "18:30",
+        "vb_hall": "Aksaray Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "18:30",
+          "vb_hall": "Aksaray Merkez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -172,18 +179,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411533",
+        "url": "https://women.volleybox.net/tr/mba-aksaray-anka-spor-kulubu-c-u18-aksaray-egitim-futbol-spor-kulubu-u18-c411533",
+        "host_name": "MBA Aksaray Anka Spor Kulübü - C U18",
+        "guest_name": "Aksaray Eğitim Futbol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-26",
+        "vb_time": "20:00",
+        "vb_hall": "Aksaray Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "20:00",
+          "vb_hall": "Aksaray Merkez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -206,18 +220,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411534",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-maxipipe-spor-kulubu-u18-aksaray-yldz-spor-kulubu-u18-c411534",
+        "host_name": "Kuzeyboru Maxipipe Spor Kulübü U18",
+        "guest_name": "Aksaray Yıldız Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-27",
+        "vb_time": "20:00",
+        "vb_hall": "Aksaray Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-27",
+          "vb_time": "20:00",
+          "vb_hall": "Aksaray Merkez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -240,18 +261,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411535",
+        "url": "https://women.volleybox.net/tr/mba-aksaray-anka-spor-kulubu-u18-kuzeyboru-maxipipe-spor-kulubu-u18-c411535",
+        "host_name": "MBA Aksaray Anka Spor Kulübü U18",
+        "guest_name": "Kuzeyboru Maxipipe Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-29",
+        "vb_time": "10:00",
+        "vb_hall": "Dağılgan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "10:00",
+          "vb_hall": "Dağılgan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -274,18 +302,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411536",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-u18-eskil-tuzgolu-spor-kulubu-u18-c411536",
+        "host_name": "Kuzeyboru U18",
+        "guest_name": "Eskil Tuzgölü Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-29",
+        "vb_time": "13:00",
+        "vb_hall": "Dağılgan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "13:00",
+          "vb_hall": "Dağılgan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -308,18 +343,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411537",
+        "url": "https://women.volleybox.net/tr/aksaray-egitim-futbol-spor-kulubu-u18-mba-aksaray-anka-spor-kulubu-u18-c411537",
+        "host_name": "Aksaray Eğitim Futbol Spor Kulübü U18",
+        "guest_name": "MBA Aksaray Anka Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-29",
+        "vb_time": "14:30",
+        "vb_hall": "Dağılgan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "14:30",
+          "vb_hall": "Dağılgan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -342,18 +384,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411538",
+        "url": "https://women.volleybox.net/tr/mba-aksaray-anka-spor-kulubu-b-u18-mba-aksaray-anka-spor-kulubu-c-u18-c411538",
+        "host_name": "MBA Aksaray Anka Spor Kulübü - B U18",
+        "guest_name": "MBA Aksaray Anka Spor Kulübü - C U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-29",
+        "vb_time": "17:00",
+        "vb_hall": "Dağılgan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "17:00",
+          "vb_hall": "Dağılgan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -376,22 +425,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411539",
+        "url": "https://women.volleybox.net/tr/aksaray-yldz-spor-kulubu-u18-kuzeyboru-u18-c411539",
+        "host_name": "Aksaray Yıldız Spor Kulübü U18",
+        "guest_name": "Kuzeyboru U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-30",
+        "vb_time": "20:00",
+        "vb_hall": "Aksaray Merkez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-30",
+          "vb_time": "20:00",
+          "vb_hall": "Aksaray Merkez Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-23T15:03:27.403007"
+  "volleybox_synced_matches": 8,
+  "volleybox_sync_updated_at": "2026-10-23T15:20:55.377051"
 }

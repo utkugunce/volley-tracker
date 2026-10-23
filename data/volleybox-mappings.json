@@ -23073,6 +23073,28 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-10-22"
+    },
+    {
+      "internal_name": "Genç Kızlar 1. Ligi",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Aksaray Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-23"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Aksaray Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-aksaray-super-ligi-u18-2026-27-o51749",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-23"
     }
   ]
 }
