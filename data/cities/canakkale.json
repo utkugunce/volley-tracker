@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:35:40.422981+03:00",
+  "updated_at": "2026-10-23T10:35:24.907145+00:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -361,7 +361,7 @@
       },
       {
         "rank": 3,
-        "team": "Çanakkale Belediyespor U16",
+        "team": "Çanakkale Belediyespor - B U16",
         "played": 4,
         "won": 1,
         "lost": 3,
@@ -1871,7 +1871,7 @@
       "gender": "Kız",
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "4",
-      "home_team": "Çanakkale Belediyespor U16",
+      "home_team": "Çanakkale Belediyespor - B U16",
       "away_team": "Biga Gelişim Voleybol Kulübü U16",
       "score": "1 - 3",
       "home_score": 1,
@@ -1918,7 +1918,7 @@
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "5",
       "home_team": "Çan Kale Spor Kulübü U16",
-      "away_team": "Çanakkale Belediyespor U16",
+      "away_team": "Çanakkale Belediyespor - B U16",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1963,7 +1963,7 @@
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "6",
       "home_team": "Gökçeada Spor Kulübü U16",
-      "away_team": "Çanakkale Belediyespor U16",
+      "away_team": "Çanakkale Belediyespor - B U16",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -2054,7 +2054,7 @@
       "group": "Yıldız Kız İl Birinciliği D Grubu",
       "match_no": "8",
       "home_team": "Biga Gelişim Voleybol Kulübü U16",
-      "away_team": "Çanakkale Belediyespor U16",
+      "away_team": "Çanakkale Belediyespor - B U16",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -2090,5 +2090,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-23T12:41:40.943357"
+  "volleybox_sync_updated_at": "2026-10-23T10:37:25.175957"
 }
