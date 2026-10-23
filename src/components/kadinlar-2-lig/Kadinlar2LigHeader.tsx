@@ -24,6 +24,7 @@ import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
 import { triggerHaptic } from "@/utils/haptics";
 import { SettingsControls } from "@/components/SettingsControls";
 import { SyncRefreshButton } from "@/components/SyncRefreshButton";
+import { formatSyncDateTime } from "@/utils/formatSyncDate";
 
 export type Kadinlar2LigTabType =
   | "home"
@@ -66,6 +67,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
   onOpenSearch,
 }) => {
   const [showLinksModal, setShowLinksModal] = useState(false);
+  const syncDateTime = metadata?.guncellenme_zamani ? formatSyncDateTime(metadata.guncellenme_zamani) : null;
 
   const formattedTime = metadata?.guncellenme_zamani
     ? new Date(metadata.guncellenme_zamani).toLocaleTimeString("tr-TR", {
@@ -214,7 +216,21 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           </div>
 
           {/* Tema + Dil */}
-          <SyncRefreshButton onRefreshComplete={() => window.location.reload()} />
+          {syncDateTime && (
+            <span
+              className="inline-flex items-center gap-1.5 text-[10px] text-slate-400 whitespace-nowrap bg-slate-900/60 border border-slate-800/80 px-2 py-1 rounded-lg"
+              title={`Son çekim: ${syncDateTime.full}`}
+              aria-label={`Son çekim: ${syncDateTime.full}`}
+            >
+              <span className="sm:hidden">{syncDateTime.full}</span>
+              <span className="hidden sm:inline">Son çekim: <strong className="text-slate-200 font-mono font-medium">{syncDateTime.full}</strong></span>
+            </span>
+          )}
+
+          <SyncRefreshButton
+            onRefreshComplete={() => window.location.reload()}
+            lastSyncTime={metadata?.guncellenme_zamani}
+          />
           <SettingsControls />
 
           {/* Yazdır Butonu */}

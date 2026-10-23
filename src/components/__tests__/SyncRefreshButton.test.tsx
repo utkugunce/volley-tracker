@@ -8,12 +8,14 @@ describe("SyncRefreshButton", () => {
     vi.restoreAllMocks();
   });
 
-  it("opens password modal when Yenile button is clicked", () => {
-    render(<SyncRefreshButton />);
+  it("opens password modal when Yenile button is clicked and shows last sync date & time", () => {
+    render(<SyncRefreshButton lastSyncTime="2026-10-23T12:41:00.000Z" />);
     const btn = screen.getByRole("button", { name: "Verileri Yenile" });
     fireEvent.click(btn);
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
+    expect(screen.getByText("Son Çekim:")).toBeInTheDocument();
+    expect(screen.getByText(/23\.10\.2026 15:41/)).toBeInTheDocument();
     expect(screen.getByLabelText("İşlem Şifresi")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Çekimi Başlat" })).toBeDisabled();
   });

@@ -8,6 +8,7 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
 import { SettingsControls } from "@/components/SettingsControls";
 import { SyncRefreshButton } from "@/components/SyncRefreshButton";
+import { formatSyncDateTime } from "@/utils/formatSyncDate";
 import { useLanguage } from "@/i18n/useLanguage";
 import { CityInfo } from "@/types/fixture";
 
@@ -52,17 +53,20 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenSearch,
 }) => {
   const { t } = useLanguage();
-  const formattedTime = updatedAt
-    ? new Date(
-        updatedAt.includes("Z") || updatedAt.includes("+")
-          ? updatedAt
-          : `${updatedAt}+03:00`
-      ).toLocaleTimeString("tr-TR", {
-        hour: "2-digit",
-        minute: "2-digit",
-        timeZone: "Europe/Istanbul",
-      })
-    : "--:--";
+  const syncDateTime = updatedAt ? formatSyncDateTime(updatedAt) : null;
+  const formattedTime = syncDateTime?.full || "--:--";
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <header className="bg-canvas/90 text-white border-b border-slate-800/80 pt-[env(safe-area-inset-top,0px)]">
@@ -154,15 +158,15 @@ export const Header: React.FC<HeaderProps> = ({
           {/* PWA Uygulama Yükleme */}
           <PwaInstallPrompt />
 
-          {updatedAt && (
-            <span className="inline-flex text-[10px] text-slate-400 whitespace-nowrap" title={`Son güncelleme ${formattedTime}`} aria-label={`Son güncelleme ${formattedTime}`}>
-              <span className="sm:hidden">{formattedTime}</span>
-              <span className="hidden sm:inline">Son güncelleme {formattedTime}</span>
+          {syncDateTime && (
+            <span className="inline-flex items-center gap-1 text-[10px] text-slate-400 whitespace-nowrap bg-slate-900/60 border border-slate-800/80 px-2 py-1 rounded-lg" title={`Son çekim: ${syncDateTime.full}`} aria-label={`Son çekim: ${syncDateTime.full}`}>
+              <span className="sm:hidden">{syncDateTime.full}</span>
+              <span className="hidden sm:inline">Son çekim: <strong className="text-slate-200 font-mono font-medium">{syncDateTime.full}</strong></span>
             </span>
           )}
 
           {/* Tema + Dil */}
-          <SyncRefreshButton onRefreshComplete={onRefresh} />
+          <SyncRefreshButton onRefreshComplete={onRefresh} lastSyncTime={updatedAt} />
           <SettingsControls />
 
           {/* Yazdır Butonu */}

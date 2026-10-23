@@ -161,8 +161,8 @@ describe("Header Component", () => {
       />
     );
 
-    expect(screen.getByText("Son güncelleme 03:00")).toBeInTheDocument();
-    expect(screen.getByText("03:00")).toBeInTheDocument();
+    expect(screen.getAllByText(/01\.01\.2026 03:00/).length).toBeGreaterThan(0);
+
     expect(screen.getByRole("button", { name: /verileri yenile/i })).toBeInTheDocument();
   });
 
@@ -179,8 +179,8 @@ describe("Header Component", () => {
       />
     );
 
-    expect(screen.getByText("Son güncelleme 03:00")).toBeInTheDocument();
-    expect(screen.getByText("03:00")).toBeInTheDocument();
+    expect(screen.getAllByText(/01\.01\.2026 03:00/).length).toBeGreaterThan(0);
+
     expect(screen.queryByText(/Fikstür ve sonuçlar güncellendi/)).not.toBeInTheDocument();
   });
 

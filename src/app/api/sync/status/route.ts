@@ -143,6 +143,7 @@ export async function GET(request: Request) {
         createdAt: localJob.createdAt,
         updatedAt: localJob.updatedAt,
         activeStep: localJob.activeStep,
+        lastCompletedAt: localJob.status === "completed" ? localJob.updatedAt : null,
         stages,
         elapsedSeconds,
         remainingSeconds,
@@ -250,6 +251,13 @@ export async function GET(request: Request) {
         ? 0
         : Math.max(5, TOTAL_ESTIMATED_SECONDS - elapsedSeconds);
 
+    const lastCompletedAt =
+      latestRun.status === "completed"
+        ? latestRun.updated_at
+        : (latestPersistedSync?.finished_at as string | undefined) ||
+          (latestPersistedSync?.started_at as string | undefined) ||
+          latestRun.updated_at;
+
     return NextResponse.json({
       available: true,
       mode: "github_actions",
@@ -259,6 +267,7 @@ export async function GET(request: Request) {
       htmlUrl: latestRun.html_url,
       createdAt: latestRun.created_at,
       updatedAt: latestRun.updated_at,
+      lastCompletedAt,
       activeStep,
       stages,
       elapsedSeconds,

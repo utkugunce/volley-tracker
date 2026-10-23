@@ -15,8 +15,11 @@ import {
   Circle,
 } from "lucide-react";
 
+import { formatSyncDateTime } from "@/utils/formatSyncDate";
+
 export interface SyncRefreshButtonProps {
   onRefreshComplete?: () => void;
+  lastSyncTime?: string;
 }
 
 export interface SyncStageItem {
@@ -36,8 +39,9 @@ const DEFAULT_STAGES: SyncStageItem[] = [
 
 type SyncPhase = "idle" | "password" | "running" | "completed" | "cancelled" | "error";
 
-export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshComplete }) => {
+export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshComplete, lastSyncTime }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [lastSync, setLastSync] = useState<string | undefined>(lastSyncTime);
   const [phase, setPhase] = useState<SyncPhase>("idle");
   const [password, setPassword] = useState("");
   const [verifiedPassword, setVerifiedPassword] = useState("");
@@ -50,6 +54,12 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCancelling, setIsCancelling] = useState(false);
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
+
+  useEffect(() => {
+    if (lastSyncTime) setLastSync(lastSyncTime);
+  }, [lastSyncTime]);
+
+  const formattedLastSync = formatSyncDateTime(lastSync);
 
   const pollIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const timerIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -144,6 +154,10 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
           setActiveStep(data.activeStep);
         }
 
+        if (data.lastCompletedAt) {
+          setLastSync(data.lastCompletedAt);
+        }
+
         if (Array.isArray(data.stages) && data.stages.length > 0) {
           setStages(data.stages);
         }
@@ -158,6 +172,7 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
             setStatusMessage(data.activeStep || "Çekim sırasında bir hata oluştu.");
           } else {
             setPhase("completed");
+            setLastSync(new Date().toISOString());
             setStatusMessage("81 İl Altyapı ve Kadınlar 2. Ligi verileri başarıyla güncellendi!");
             setStages((prev) => prev.map((s) => ({ ...s, status: "completed" })));
             onRefreshComplete?.();
@@ -310,6 +325,17 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
         <div className="p-5 overflow-y-auto space-y-4">
           {phase === "password" && (
             <form onSubmit={handleStartSync} className="space-y-4">
+              {/* Son Çekim Tarih & Saat Bilgisi */}
+              <div className="flex items-center justify-between p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs">
+                <div className="flex items-center gap-2 text-slate-300">
+                  <Clock size={14} className="text-primary shrink-0" />
+                  <span className="text-slate-400 font-medium">Son Çekim:</span>
+                  <span className="font-bold text-white font-mono">{formattedLastSync.full}</span>
+                </div>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-emerald-400 border border-emerald-500/20 font-mono">
+                  Kayıtlı Veri
+                </span>
+              </div>
               <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 space-y-1.5 text-xs text-slate-300 leading-relaxed">
                 <div className="font-semibold text-white flex items-center gap-1.5">
                   <span>⚡ Çekim Kapsamı:</span>
@@ -394,6 +420,10 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
                   <Clock size={12} />
                   <span>{formatDuration(elapsedSeconds)}</span>
                 </div>
+              </div>
+
+              <div className="text-[11px] text-slate-400 flex items-center justify-between px-1">
+                <span>Önceki Çekim: <strong className="text-slate-300 font-mono">{formattedLastSync.full}</strong></span>
               </div>
 
               {/* CANLI AŞAMA AKIŞI (Pipeline Progress Flow) */}
@@ -538,8 +568,10 @@ export const SyncRefreshButton: React.FC<SyncRefreshButtonProps> = ({ onRefreshC
                 <div className="text-xs space-y-1">
                   <div className="font-bold text-white text-sm">Çekim Başarıyla Tamamlandı!</div>
                   <p>{statusMessage}</p>
-                  <div className="text-[11px] text-emerald-300/80 font-mono pt-1">
-                    Toplam Süre: {formatDuration(elapsedSeconds)}
+                  <div className="text-[11px] text-emerald-300 font-mono pt-1 flex items-center gap-3">
+                    <span>Son Çekim: {formattedLastSync.full}</span>
+                    <span>•</span>
+                    <span>Süre: {formatDuration(elapsedSeconds)}</span>
                   </div>
                 </div>
               </div>
