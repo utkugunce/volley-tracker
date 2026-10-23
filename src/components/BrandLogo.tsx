@@ -44,11 +44,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
               VOLEYBOL
             </span>
           </div>
-          {variant === "full" && (
-            <span className="text-[9px] font-semibold tracking-widest text-slate-400 uppercase mt-0.5 hidden sm:block">
-              Türkiye Altyapı Ligleri
-            </span>
-          )}
+          
         </div>
       )}
     </div>

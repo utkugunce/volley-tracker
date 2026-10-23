@@ -37,7 +37,6 @@ export function AdminHeader({ activeTab, auditLogs, handleLogout, handleTriggerL
               MANUEL DÜZELTME
             </span>
           </div>
-          <p className="text-[11px] text-slate-400">Veri Geçersiz Kılma ve Denetim Kaydı</p>
         </div>
       </div>
 

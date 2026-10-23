@@ -112,9 +112,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
             <h2 className="text-xl sm:text-2xl font-black text-ink tracking-tight">
               Çocuğum Hangi Voleybol Liginde Oynar?
             </h2>
-            <p className="text-xs sm:text-sm text-ink-2 max-w-2xl">
-              Doğum yılını ve ilçenizi seçin; 2026-2027 resmi TVF lig kategorisini, file yüksekliğini, top standardını ve çevrenizdeki altyapı kulüplerini anında görün.
-            </p>
+            
           </div>
           <div className="inline-flex items-center gap-1 self-start sm:self-center px-3 py-1.5 rounded-xl bg-canvas border border-line text-xs font-semibold text-ink-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -129,7 +127,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
           {/* Cinsiyet */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-ink-2 block">
-              1. Sporcu Cinsiyeti
+              Sporcu Cinsiyeti
             </label>
             <div className="grid grid-cols-2 gap-2">
               <button
@@ -160,7 +158,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
           {/* Doğum Yılı */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-ink-2 block">
-              2. Doğum Yılı
+              Doğum Yılı
             </label>
             <select
               value={birthYear}
@@ -178,7 +176,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
           {/* İlçe */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-ink-2 block">
-              3. Bulunduğunuz İlçe ({city})
+              Bulunduğunuz İlçe ({city})
             </label>
             <select
               value={district}

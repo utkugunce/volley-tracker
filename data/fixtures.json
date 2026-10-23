@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T21:05:00.181887+03:00",
+  "updated_at": "2026-10-24T01:37:44.904384+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -613,6 +613,40 @@
       },
       {
         "rank": 4,
+        "team": "Kuzey Yıldızları Spor Kulübü - A U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "set_ratio": "3.000",
+        "points_won": 90,
+        "points_lost": 90,
+        "point_ratio": "1.000",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
+        "team": "Dev Ataşehir Spor U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "set_ratio": "0.333",
+        "points_won": 90,
+        "points_lost": 90,
+        "point_ratio": "1.000",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 6,
         "team": "Blok Akademi Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -629,7 +663,7 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 7,
         "team": "Tuzla Rekor Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -646,7 +680,7 @@
         ]
       },
       {
-        "rank": 6,
+        "rank": 8,
         "team": "Beykoz Voleybol Kulübü U18",
         "played": 1,
         "won": 0,
@@ -661,36 +695,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 7,
-        "team": "Dev Ataşehir Spor U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Kuzey Yıldızları Spor Kulübü - A U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       }
     ],
     "Genç Kızlar 1. Lig 2. Bölge - A Grubu": [
@@ -7452,11 +7456,16 @@
       "match_no": "4",
       "home_team": "Dev Ataşehir Spor U18",
       "away_team": "Kuzey Yıldızları Spor Kulübü - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "21-25",
+        "25-15",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411464",
@@ -8097,5 +8106,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-23T21:10:52.967090"
+  "volleybox_sync_updated_at": "2026-10-24T01:43:36.172187"
 }

@@ -55,8 +55,8 @@ export default async function TakvimPage() {
       <div className="space-y-4 pb-6">
         <div>
           <h1 className="font-display font-extrabold text-ink text-xl sm:text-2xl tracking-tight">Vodafone Sultanlar Ligi Takvimi</h1>
-          <p className="text-xs sm:text-sm text-ink-2 mt-0.5">
-            Bir güne tıklayarak o günün maçlarını gör. Kaynak: TVF — yalnızca TVF&apos;nin yayınladığı haftalar gösterilir.
+          <p className="text-xs text-ink-2 mt-0.5 font-medium">
+            Kaynak: TVF resmi fikstür bülteni
           </p>
         </div>
         <TakvimCalendar matches={matches} loadError={loadError} />

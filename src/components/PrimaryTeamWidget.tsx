@@ -105,9 +105,6 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
           <span className="font-bold text-white text-[11px] shrink-0">
             Kulübünüzü Takip Edin
           </span>
-          <span className="text-[11px] text-slate-400 truncate hidden sm:inline">
-            • Desteklediğiniz altyapı kulübünün sıradaki maçını tek bakışta görün.
-          </span>
         </div>
 
         <div className="flex items-center gap-2 shrink-0">

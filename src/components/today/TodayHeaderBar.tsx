@@ -40,18 +40,10 @@ export function TodayHeaderBar({
       <div className="absolute top-0 right-1/4 w-96 h-28 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-surface-raised text-ink-2 border border-line uppercase tracking-wider">
-              <Flame size={12} className="text-warn" />
-              Günün Programı
-            </span>
-            <span className="text-xs text-slate-400 font-medium">
-              {city === "Tüm İller" ? "Türkiye Geneli" : city}
-            </span>
-          </div>
           <h1 className="text-base sm:text-lg font-black tracking-tight text-white flex items-center gap-2">
             <Calendar size={18} className="text-amber-400 shrink-0" />
             <span>Günün Maçları Takibi</span>
+            <span className="text-xs text-slate-400 font-medium font-mono">· {city === "Tüm İller" ? "Türkiye Geneli" : city}</span>
           </h1>
           <p className="text-xs text-slate-400 font-medium mt-0.5">{formattedToday}</p>
         </div>

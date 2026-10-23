@@ -134,9 +134,6 @@ export const CompareClient: React.FC<CompareClientProps> = ({
               <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 İki Takım Karşılaştırma (Head-to-Head)
               </h1>
-              <p className="text-xs text-slate-400">
-                Aralarındaki geçmiş maçlar, skorlar ve yan yana lig puan durumu istatistikleri
-              </p>
             </div>
           </div>
 

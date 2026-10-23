@@ -87,11 +87,6 @@ export const Header: React.FC<HeaderProps> = ({
             />
           )}
 
-          <div className="hdr-tagline hidden md:flex items-center gap-2 text-xs text-slate-400 min-w-0">
-            <span className="text-slate-600">•</span>
-            <span className="text-primary font-medium tracking-wide truncate">{t("header.leagueTagline")}</span>
-          </div>
-
           {/* Kadınlar 2. Ligi Sayfasına Geçiş Butonu */}
           <Link
             href="/kadinlar-2-ligi"

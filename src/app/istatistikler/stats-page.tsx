@@ -104,9 +104,7 @@ export function StatsPageView({ slug }: { slug?: string }) {
               <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 {category ? `${category} İstatistikleri` : <T k="stats.title" />}
               </h1>
-              <p className="text-xs text-slate-400">
-                Resmi fikstür ve puan durumu verisinden hesaplanır; veri olmayan bölümler gösterilmez.
-              </p>
+              
             </div>
           </div>
           <nav aria-label="Lig kategorisi" className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
