@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-22T19:34:29.126533+03:00",
+  "updated_at": "2026-10-23T01:24:21.206891+00:00",
   "total_cities": 81,
   "active_cities": 36,
-  "total_matches": 1616,
+  "total_matches": 1661,
   "cities": [
     {
       "ilid": "1",
@@ -392,9 +392,9 @@
       "name": "Kırklareli",
       "slug": "kirklareli",
       "url": "https://kirklareli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (15 Maç Mevcut)",
-      "matches_count": 15,
-      "standings_count": 1,
+      "status": "Aktif (60 Maç Mevcut)",
+      "matches_count": 60,
+      "standings_count": 2,
       "data_file": "data/cities/kirklareli.json"
     },
     {
@@ -779,7 +779,7 @@
       "url": "https://yalova.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (20 Maç Mevcut)",
       "matches_count": 20,
-      "standings_count": 1,
+      "standings_count": 2,
       "data_file": "data/cities/yalova.json"
     },
     {

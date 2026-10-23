@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T19:34:29.126533+03:00",
+  "updated_at": "2026-10-23T01:24:21.206891+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -205,6 +205,17 @@
       },
       {
         "rank": 3,
+        "team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Çorlu Yıldırım Spor Kulübü - B U16",
         "played": 4,
         "won": 2,
@@ -212,17 +223,6 @@
         "points": 5,
         "sets_won": 7,
         "sets_lost": 9,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -250,12 +250,12 @@
       {
         "rank": 7,
         "team": "Muratlı Yıldız 2012 Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -2388,11 +2388,15 @@
       "match_no": "12",
       "home_team": "Muratlı Yıldız 2012 Spor Kulübü U16",
       "away_team": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "11-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411511",
@@ -3572,5 +3576,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-22T19:40:39.061186"
+  "volleybox_sync_updated_at": "2026-10-23T01:26:28.088720"
 }

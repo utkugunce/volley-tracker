@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T19:34:29.126533+03:00",
+  "updated_at": "2026-10-23T01:24:21.206891+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -955,6 +955,23 @@
     "Genç Kızlar 1. Lig 3. Bölge - A Grubu": [
       {
         "rank": 1,
+        "team": "İstanbul Anka Spor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 51,
+        "point_ratio": "1.471",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Çekmeköy İstanbul SK U18",
         "played": 1,
         "won": 1,
@@ -971,7 +988,41 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
+        "team": "Ataşehir Yıldızları U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "set_ratio": "3.000",
+        "points_won": 92,
+        "points_lost": 85,
+        "point_ratio": "1.082",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
+        "team": "Alfa Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "set_ratio": "0.333",
+        "points_won": 85,
+        "points_lost": 92,
+        "point_ratio": "0.924",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 5,
         "team": "Anadolu Smaç Spor U18",
         "played": 1,
         "won": 0,
@@ -988,68 +1039,25 @@
         ]
       },
       {
-        "rank": 3,
-        "team": "Ataşehir Yıldızları U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Dev Anadolu Yıldızları U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Ekol Spor Kulubü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Alfa Spor Kulübü U18",
-        "played": 0,
+        "team": "Ekol Spor Kulubü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 51,
+        "points_lost": 75,
+        "point_ratio": "0.680",
+        "form": [
+          "L"
+        ]
       },
       {
         "rank": 7,
-        "team": "İstanbul Anka Spor U18",
+        "team": "Dev Anadolu Yıldızları U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1098,6 +1106,40 @@
       },
       {
         "rank": 2,
+        "team": "Turuncu Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "set_ratio": "3.000",
+        "points_won": 99,
+        "points_lost": 75,
+        "point_ratio": "1.320",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
+        "team": "Kuzey Yıldızları Spor Kulübü - B U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "set_ratio": "0.333",
+        "points_won": 75,
+        "points_lost": 99,
+        "point_ratio": "0.758",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "İstanbul Göztepe Akademi Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -1114,7 +1156,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "Arena Anka Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -1129,7 +1171,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Ateş Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
@@ -1144,7 +1186,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 7,
         "team": "Çekmeköy İstanbul SK - B U18",
         "played": 0,
         "won": 0,
@@ -1159,38 +1201,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Dev Adım Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Kuzey Yıldızları Spor Kulübü - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Turuncu Spor Kulübü U18",
+        "team": "Dev Adım Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1893,6 +1905,25 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Fenerbahçe - A U16",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 2,
+        "set_ratio": "4.500",
+        "points_won": 266,
+        "points_lost": 190,
+        "point_ratio": "1.400",
+        "form": [
+          "W",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "VakıfBank - B U16",
         "played": 2,
         "won": 2,
@@ -1904,24 +1935,6 @@
         "points_won": 150,
         "points_lost": 78,
         "point_ratio": "1.923",
-        "form": [
-          "W",
-          "W"
-        ]
-      },
-      {
-        "rank": 2,
-        "team": "Fenerbahçe - A U16",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
-        "set_ratio": "6.000",
-        "points_won": 170,
-        "points_lost": 120,
-        "point_ratio": "1.417",
         "form": [
           "W",
           "W"
@@ -1987,19 +2000,20 @@
       {
         "rank": 6,
         "team": "Bizimkent Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 4,
-        "sets_won": 5,
-        "sets_lost": 3,
-        "set_ratio": "1.667",
-        "points_won": 185,
-        "points_lost": 146,
-        "point_ratio": "1.267",
+        "sets_won": 6,
+        "sets_lost": 6,
+        "set_ratio": "1.000",
+        "points_won": 255,
+        "points_lost": 242,
+        "point_ratio": "1.054",
         "form": [
           "L",
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -7207,11 +7221,16 @@
       "match_no": "14",
       "home_team": "Fenerbahçe - A U16",
       "away_team": "Bizimkent Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "21-25",
+        "25-10",
+        "25-20",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408016",
@@ -7248,11 +7267,16 @@
       "match_no": "2",
       "home_team": "Alfa Spor Kulübü U18",
       "away_team": "Ataşehir Yıldızları U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-17",
+        "18-25",
+        "20-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411466",
@@ -7289,11 +7313,16 @@
       "match_no": "2",
       "home_team": "Kuzey Yıldızları Spor Kulübü - B U18",
       "away_team": "Turuncu Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "26-24",
+        "13-25",
+        "21-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411468",
@@ -7330,11 +7359,15 @@
       "match_no": "3",
       "home_team": "Ekol Spor Kulubü U18",
       "away_team": "İstanbul Anka Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "20-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411467",
@@ -7483,5 +7516,5 @@
     }
   ],
   "volleybox_synced_matches": 115,
-  "volleybox_sync_updated_at": "2026-10-22T19:40:34.547827"
+  "volleybox_sync_updated_at": "2026-10-23T01:26:28.075597"
 }

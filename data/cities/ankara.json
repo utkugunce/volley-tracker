@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T19:34:29.126533+03:00",
+  "updated_at": "2026-10-23T01:24:21.206891+00:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -159,23 +159,23 @@
       {
         "rank": 2,
         "team": "TED Ankara Kolejliler U18",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 7,
+        "points": 9,
+        "sets_won": 10,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
         "team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -1762,7 +1762,7 @@
     "Yıldız Kızlar Süper Lig - 7. Grup": [
       {
         "rank": 1,
-        "team": "Altındağ",
+        "team": "Etimesgut Belediyesi A",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -1773,6 +1773,17 @@
       },
       {
         "rank": 2,
+        "team": "Altındağ",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Altın Yıldızlar",
         "played": 1,
         "won": 0,
@@ -1783,30 +1794,19 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Atmosfer Academy A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Eryaman Yıldızları",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Etimesgut Belediyesi A",
+        "team": "Atmosfer Academy A",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1920,6 +1920,28 @@
     "Yıldız Kızlar Süper Lig - 9. Grup": [
       {
         "rank": 1,
+        "team": "Vega Voleybol A",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Çayyolu Akademi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Ahimesut",
         "played": 0,
         "won": 0,
@@ -1930,18 +1952,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Çayyolu Akademi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 4,
         "team": "İdeal Akademi A",
         "played": 0,
         "won": 0,
@@ -1952,7 +1963,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Nallıhan Futbol",
         "played": 0,
         "won": 0,
@@ -1963,7 +1974,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "New Stars",
         "played": 0,
         "won": 0,
@@ -1974,19 +1985,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Tek Akademi A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "Vega Voleybol A",
+        "team": "Tek Akademi A",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1999,6 +1999,28 @@
     "Yıldız Kızlar Süper Lig - 10. Grup": [
       {
         "rank": 1,
+        "team": "Polatlı Belediyesi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Dört Mevsim B",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Anadolu Academy B",
         "played": 0,
         "won": 0,
@@ -2009,7 +2031,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "Ankara Yurdum",
         "played": 0,
         "won": 0,
@@ -2020,18 +2042,7 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Dört Mevsim B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
+        "rank": 5,
         "team": "Kahramankazan Belediye",
         "played": 0,
         "won": 0,
@@ -2042,19 +2053,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Kalabagücü B",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Polatlı Belediyesi",
+        "team": "Kalabagücü B",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -4799,11 +4799,15 @@
       "match_no": "10",
       "home_team": "Ankara Büyükşehir Belediyesi Spor Kulübü U18",
       "away_team": "TED Ankara Kolejliler U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "21-25",
+        "10-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406606",
@@ -9032,11 +9036,15 @@
       "match_no": "2",
       "home_team": "Etimesgut Belediyesi A",
       "away_team": "Eryaman Yıldızları",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-19",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -9202,11 +9210,16 @@
       "match_no": "1",
       "home_team": "Vega Voleybol A",
       "away_team": "Çayyolu Akademi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-20",
+        "27-29",
+        "25-22",
+        "25-8"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -9304,11 +9317,16 @@
       "match_no": "1",
       "home_team": "Polatlı Belediyesi",
       "away_team": "Dört Mevsim B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "13-25",
+        "25-17",
+        "25-21",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -11283,5 +11301,5 @@
     }
   ],
   "volleybox_synced_matches": 107,
-  "volleybox_sync_updated_at": "2026-10-22T19:40:31.016861"
+  "volleybox_sync_updated_at": "2026-10-23T01:26:28.106874"
 }
