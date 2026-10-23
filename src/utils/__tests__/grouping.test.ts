@@ -70,12 +70,16 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(formatGroupName("")).toBe("Tek Grup");
     });
 
-    it("handles provincial and city-specific group formats (e.g. Samsun, Kocaeli)", () => {
+    it("handles provincial and city-specific group formats (e.g. Samsun, Kocaeli, Balıkesir)", () => {
       expect(formatGroupName("Samsun Genç Kadınlar İl Birinciliği A Grubu")).toBe("A Grubu");
       expect(formatGroupName("Samsun Genç Kadınlar İl Birinciliği B Grubu")).toBe("B Grubu");
       expect(formatGroupName("Gebze Grubu")).toBe("A Grubu");
       expect(formatGroupName("İzmit Grubu")).toBe("B Grubu");
       expect(formatGroupName("Körfez Grubu")).toBe("B Grubu");
+      expect(formatGroupName("D Grubu ( Körfez )")).toBe("D Grubu");
+      expect(formatGroupName("C Grubu ( Körfez )")).toBe("C Grubu");
+      expect(formatGroupName("A Grubu ( Merkez )")).toBe("A Grubu");
+      expect(formatGroupName("E Grubu ( Marmara )")).toBe("E Grubu");
     });
   });
 

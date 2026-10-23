@@ -22,10 +22,20 @@ export function formatGroupName(rawGroup?: string): string {
     return g;
   }
 
-  // Kocaeli specific: Gebze -> A Grubu, İzmit/Körfez -> B Grubu
+  // Strip trailing parenthetical details (e.g. "D Grubu ( Körfez )" -> "D Grubu", "A Grubu ( Merkez )" -> "A Grubu")
+  g = g.replace(/\s*\([^)]*\)\s*$/, "").trim();
+
+  // Single letter group: "A", "B", "A Grubu", "D Grubu", "A Gr", "A Grb."
+  const mCleanLetter = g.match(/^([A-Za-zÇĞİÖŞÜçğiöşü])(?:\s*(?:Gr\.?|Grubu?|Gurubu|Grb\.?))?$/i);
+  if (mCleanLetter) {
+    return `${mCleanLetter[1].toLocaleUpperCase("tr-TR")} Grubu`;
+  }
+
+  // Kocaeli specific standalone names: "Gebze Grubu" -> "A Grubu", "İzmit Grubu" / "Körfez Grubu" -> "B Grubu"
+  // Note: Only match when it's not already a letter group (e.g. not "D Grubu (Körfez)")
   const gLower = g.toLocaleLowerCase("tr-TR");
   if (gLower.includes("gebze")) return "A Grubu";
-  if (gLower.includes("izmit") || gLower.includes("körfez") || gLower.includes("korfez")) return "B Grubu";
+  if (gLower.includes("izmit") || /^(?:k[öo]rfez)(?:\s*grubu?)?$/i.test(gLower)) return "B Grubu";
 
   // Pattern: "Grup A", "Grup B", "Grup 1"
   const mGrupPrefix = g.match(/^Grup\s+([A-Za-zÇĞİÖŞÜçğiöşü0-9]+)$/i);

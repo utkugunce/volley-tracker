@@ -104,6 +104,8 @@ def clean_str(s: str) -> str:
 
 def extract_group_name(c_text: str) -> str:
     cleaned = clean_str(c_text)
+    # Parantez içindeki bölge eklerini temizle (örn. "( Merkez )", "( Körfez )", "( Marmara )")
+    cleaned = re.sub(r"\s*\([^)]*\)\s*$", "", cleaned).strip()
     # Sezon ve yıl ifadelerini baştan temizle (örn. "2026 - 2027 Voleybol Sezonu ...", "2026-2027 Sezonu ...")
     cleaned = re.sub(r"^\d{4}\s*[-/]\s*\d{4}(?:\s*voleybol)?(?:\s*sezonu)?\s*", "", cleaned, flags=re.I).strip()
     # İl birinciliği ve şehir adlarını baştan temizle
@@ -786,9 +788,10 @@ def scrape_single_city(city_info):
 
             group_name = extract_group_name(c_text)
             if subdomain == "kocaeli":
-                if "gebze" in lower_comp:
+                tr_comp = c_text.replace("İ", "i").replace("I", "ı").lower()
+                if "gebze" in tr_comp:
                     group_name = "A Grubu"
-                elif any(k in lower_comp for k in ["izmit", "korfez", "körfez"]):
+                elif any(k in tr_comp for k in ["izmit", "korfez", "körfez"]):
                     group_name = "B Grubu"
             standings_key = f"{cat_name} - {group_name}"
 
