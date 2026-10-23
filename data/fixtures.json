@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T14:57:39.943758+03:00",
+  "updated_at": "2026-10-23T17:21:09.903652+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1220,6 +1220,25 @@
     "Genç Kızlar 1. Lig 4. Bölge - A Grubu": [
       {
         "rank": 1,
+        "team": "Avcılar Demirorduspor Kulübü U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "set_ratio": "1.500",
+        "points_won": 218,
+        "points_lost": 201,
+        "point_ratio": "1.085",
+        "form": [
+          "L",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "SET Voleybol Kulübü U18",
         "played": 2,
         "won": 2,
@@ -1237,7 +1256,7 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Ulus Spor Akademisi U18",
         "played": 2,
         "won": 1,
@@ -1255,7 +1274,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Sultangazi Olimpik Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -1268,24 +1287,6 @@
         "points_lost": 40,
         "point_ratio": "1.875",
         "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "Avcılar Demirorduspor Kulübü U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
-        "set_ratio": "0.750",
-        "points_won": 143,
-        "points_lost": 149,
-        "point_ratio": "0.960",
-        "form": [
-          "L",
           "W"
         ]
       },
@@ -1310,17 +1311,18 @@
       {
         "rank": 6,
         "team": "Bahçelievler Belediyespor ll U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 3,
-        "set_ratio": "0.667",
-        "points_won": 95,
-        "points_lost": 105,
-        "point_ratio": "0.905",
+        "sets_lost": 6,
+        "set_ratio": "0.333",
+        "points_won": 147,
+        "points_lost": 180,
+        "point_ratio": "0.817",
         "form": [
+          "L",
           "L"
         ]
       },
@@ -7405,11 +7407,15 @@
       "match_no": "7",
       "home_team": "Bahçelievler Belediyespor ll U18",
       "away_team": "Avcılar Demirorduspor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "21-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411469",
@@ -7993,5 +7999,5 @@
     }
   ],
   "volleybox_synced_matches": 115,
-  "volleybox_sync_updated_at": "2026-10-23T15:03:27.387964"
+  "volleybox_sync_updated_at": "2026-10-23T17:23:15.582036"
 }

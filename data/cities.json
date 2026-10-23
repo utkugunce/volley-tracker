@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-23T13:26:32.608013+00:00",
+  "updated_at": "2026-10-23T17:21:09.903652+00:00",
   "total_cities": 81,
   "active_cities": 36,
-  "total_matches": 1516,
+  "total_matches": 1519,
   "cities": [
     {
       "ilid": "1",
@@ -20,7 +20,7 @@
       "name": "Adıyaman",
       "slug": "adiyaman",
       "url": "https://adiyaman.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -30,8 +30,8 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (18 Maç Mevcut)",
-      "matches_count": 18,
+      "status": "Aktif (21 Maç Mevcut)",
+      "matches_count": 21,
       "standings_count": 3,
       "data_file": "data/cities/afyon.json"
     },
@@ -40,7 +40,7 @@
       "name": "Ağrı",
       "slug": "agri",
       "url": "https://agri.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null
@@ -464,7 +464,7 @@
       "url": "https://kahramanmaras.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (16 Maç Mevcut)",
       "matches_count": 16,
-      "standings_count": 6,
+      "standings_count": 2,
       "data_file": "data/cities/kahramanmaras.json"
     },
     {
