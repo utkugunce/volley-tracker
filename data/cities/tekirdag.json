@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T11:25:58.809888+03:00",
+  "updated_at": "2026-10-24T16:11:06.676225+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -94,11 +94,11 @@
       {
         "rank": 1,
         "team": "Çorlu Belediyesi Spor Kulübü U16",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 2,
         "form": []
       },
@@ -171,12 +171,12 @@
       {
         "rank": 8,
         "team": "Liva Volley Spor Kulübü U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 2,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ],
@@ -263,11 +263,11 @@
       {
         "rank": 1,
         "team": "Kapaklı Site Spor U16",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 1,
         "form": []
       },
@@ -296,12 +296,12 @@
       {
         "rank": 4,
         "team": "Yıldızkent Fatih Korgancı Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -1505,11 +1505,15 @@
       "match_no": "18",
       "home_team": "Çorlu Belediyesi Spor Kulübü U16",
       "away_team": "Liva Volley Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-4",
+        "25-19",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411506",
@@ -3281,11 +3285,15 @@
       "match_no": "13",
       "home_team": "Kapaklı Site Spor U16",
       "away_team": "Yıldızkent Fatih Korgancı Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-20",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3576,5 +3584,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-24T11:30:05.507731"
+  "volleybox_sync_updated_at": "2026-10-24T16:17:25.352858"
 }

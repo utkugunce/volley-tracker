@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T11:25:58.809888+03:00",
+  "updated_at": "2026-10-24T16:11:06.676225+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -69,6 +69,17 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Selçuklu Belediyespor Kulübü U18",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 10,
+        "sets_won": 11,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Konya Anka Spor Kulübü U18",
         "played": 3,
         "won": 3,
@@ -79,25 +90,14 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Selçuklu Belediyespor Kulübü U18",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 7,
-        "sets_won": 8,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 3,
         "team": "Türmak Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 7,
+        "sets_lost": 10,
         "form": []
       },
       {
@@ -988,11 +988,15 @@
       "match_no": "7",
       "home_team": "Türmak Spor Kulübü U18",
       "away_team": "Selçuklu Belediyespor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "20-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411810",
@@ -1683,5 +1687,5 @@
     }
   ],
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-10-24T11:30:03.555319"
+  "volleybox_sync_updated_at": "2026-10-24T16:17:22.081486"
 }

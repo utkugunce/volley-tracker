@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T11:25:58.809888+03:00",
+  "updated_at": "2026-10-24T16:11:06.676225+03:00",
   "city": "Afyonkarahisar",
   "slug": "afyon",
   "title": "TVF Afyonkarahisar Genç & Yıldız Kızlar Süper Lig",
@@ -401,18 +401,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "412040",
+        "url": "https://women.volleybox.net/tr/stek-afyon-spor-kulubu-u18-afyon-belediye-yuntas-sk-b-u18-c412040",
+        "host_name": "İstek Afyon Spor Kulübü U18",
+        "guest_name": "Afyon Belediye Yüntaş SK - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-25",
+        "vb_time": "11:30",
+        "vb_hall": "Mustafa Abi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "11:30",
+          "vb_hall": "Mustafa Abi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -435,18 +442,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "412041",
+        "url": "https://women.volleybox.net/tr/ema-spor-kulubu-u18-sandkl-genclik-spor-u18-c412041",
+        "host_name": "E.M.A Spor Kulübü U18",
+        "guest_name": "Sandıklı Gençlik Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-25",
+        "vb_time": "14:30",
+        "vb_hall": "Mustafa Abi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "14:30",
+          "vb_hall": "Mustafa Abi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1101,6 +1115,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-10-24T11:29:51.911707"
+  "volleybox_synced_matches": 19,
+  "volleybox_sync_updated_at": "2026-10-24T16:17:03.873953"
 }

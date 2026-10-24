@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T11:25:58.809888+03:00",
+  "updated_at": "2026-10-24T16:11:06.676225+03:00",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
@@ -31,45 +31,45 @@
       {
         "rank": 1,
         "team": "İskofya Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Akçaabat Belediyesi SK U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 7,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
         "team": "REVUP Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 4,
         "team": "İskofya Spor Kulübü - B U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -270,11 +270,15 @@
       "match_no": "5",
       "home_team": "REVUP Spor Kulübü U18",
       "away_team": "İskofya Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "12-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411515",
@@ -311,11 +315,15 @@
       "match_no": "6",
       "home_team": "İskofya Spor Kulübü - B U18",
       "away_team": "Akçaabat Belediyesi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "1-25",
+        "12-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411516",
@@ -341,5 +349,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-24T11:30:05.515083"
+  "volleybox_sync_updated_at": "2026-10-24T16:17:25.380574"
 }
