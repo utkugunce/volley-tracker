@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-24T10:22:37.952326+03:00",
+  "updated_at": "2026-10-24T11:25:58.809888+03:00",
   "total_cities": 81,
   "active_cities": 36,
-  "total_matches": 1514,
+  "total_matches": 1518,
   "cities": [
     {
       "ilid": "1",
@@ -482,9 +482,9 @@
       "name": "Muğla",
       "slug": "mugla",
       "url": "https://mugla.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (19 Maç Mevcut)",
-      "matches_count": 19,
-      "standings_count": 10,
+      "status": "Aktif (23 Maç Mevcut)",
+      "matches_count": 23,
+      "standings_count": 11,
       "data_file": "data/cities/mugla.json"
     },
     {
