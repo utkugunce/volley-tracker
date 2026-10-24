@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
           <Link
             href="/kadinlar-2-ligi"
             prefetch={false}
-            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-colors border border-slate-700/70 ml-0.5 sm:ml-1 shrink-0 whitespace-nowrap"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-colors border border-slate-700/70 ml-1 shrink-0 whitespace-nowrap"
             title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
           >
             <span className="tracking-wide">{t("header.k2")}</span>
@@ -101,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Sağ Taraf: Arama, Favoriler, Ayarlar, Yazdır */}
-        <div className="flex items-center gap-1.5 sm:gap-2 ml-auto shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 ml-auto min-w-0">
           {/* Spotlight Arama Butonu */}
           {onOpenSearch && (
             <button
@@ -151,10 +151,10 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           {/* PWA Uygulama Yükleme */}
-          <PwaInstallPrompt />
+          <div className="hidden sm:contents"><PwaInstallPrompt /></div>
 
           {syncDateTime && (
-            <span className="inline-flex items-center gap-1 text-[10px] text-slate-400 whitespace-nowrap bg-slate-900/60 border border-slate-800/80 px-2 py-1 rounded-lg" title={`Son çekim: ${syncDateTime.full}`} aria-label={`Son çekim: ${syncDateTime.full}`}>
+            <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-slate-400 whitespace-nowrap bg-slate-900/60 border border-slate-800/80 px-2 py-1 rounded-lg" title={`Son çekim: ${syncDateTime.full}`} aria-label={`Son çekim: ${syncDateTime.full}`}>
               <span className="sm:hidden">{syncDateTime.full}</span>
               <span className="hidden sm:inline">Son çekim: <strong className="text-slate-200 font-mono font-medium">{syncDateTime.full}</strong></span>
             </span>

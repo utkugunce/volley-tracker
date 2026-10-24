@@ -73,6 +73,11 @@ export async function proxy(request: NextRequest) {
 
   const decision = evaluateCityRoute(pathname);
   if (decision.blocked) return cityNotFound(request);
+  if (decision.redirectTo) {
+    const url = request.nextUrl.clone();
+    url.pathname = decision.redirectTo;
+    return NextResponse.redirect(url, 308);
+  }
 
   if (needsSessionRefresh(pathname)) return refreshPanelSession(request);
 
@@ -100,5 +105,12 @@ export const config = {
     "/sonuclar/:tabCity",
     "/kulupler/:tabCity",
     "/kulupler/:tabCity/:district",
+
+    // Eski /{il}/{sekme} adresleri -> 308 /{sekme}/{il}
+    "/:legacyCity/fikstur",
+    "/:legacyCity/grup-durumu",
+    "/:legacyCity/gunun-maclari",
+    "/:legacyCity/puan-durumu",
+    "/:legacyCity/sonuclar",
   ],
 };

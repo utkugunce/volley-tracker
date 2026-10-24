@@ -217,7 +217,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           />
         }
         rightSidebar={
-          activeMainTab === "standings" ? undefined : (
+          activeMainTab === "standings" || !selectedMatch ? undefined : (
             <MatchInspectorPanel
               match={selectedMatch}
               allMatches={data?.matches || []}

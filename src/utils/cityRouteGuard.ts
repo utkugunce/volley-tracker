@@ -33,6 +33,8 @@ export interface CityRouteDecision {
   reason?: "unknown-city" | "hidden-city" | "unknown-tab-city";
   /** İncelenen segment. */
   segment?: string;
+  /** Doluysa istek bu yola 308 ile yönlendirilmeli (eski /{il}/{sekme} adresleri). */
+  redirectTo?: string;
 }
 
 const PASS: CityRouteDecision = { blocked: false };
@@ -95,6 +97,16 @@ export function evaluateCityRoute(pathname: string): CityRouteDecision {
     if (looksLikeFile(first)) return PASS; // favicon.ico, sw.js, llms.txt ...
     if (STATIC_ROOT_SEGMENTS.has(first)) return PASS; // /admin, /fikstur, /panel ...
     if (isAllowedCitySlug(first)) return PASS;
+    return { blocked: true, reason: "unknown-city", segment: first };
+  }
+
+  // 2a) Eski "/{il}/{sekme}" adresi -> kalıcı yönlendirme "/{sekme}/{il}".
+  //     Sayfa içi redirect() loading.tsx kabuğu flush edildikten sonra çalıştığı için
+  //     boş ekran gösteriyordu; burada stream başlamadan 308 döner.
+  if (segments.length === 2 && CITY_TAB_SEGMENTS.has(second) && !CITY_TAB_SEGMENTS.has(first) && !STATIC_ROOT_SEGMENTS.has(first)) {
+    if (isAllowedCitySlug(first)) {
+      return { blocked: false, redirectTo: `/${second}/${slugify(safeDecode(first))}` };
+    }
     return { blocked: true, reason: "unknown-city", segment: first };
   }
 

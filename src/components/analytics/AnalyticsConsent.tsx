@@ -93,47 +93,34 @@ export function CookieConsentBanner() {
     <aside
       role="region"
       aria-label="Çerez ve Gizlilik Tercihleri"
-      className="fixed bottom-0 inset-x-0 z-50 p-3 sm:p-4 bg-slate-950/95 border-t border-slate-800 backdrop-blur-md shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-300 no-print"
+      className="fixed inset-x-2 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:bottom-4 md:inset-x-auto md:right-4 md:max-w-md z-50 rounded-2xl p-3 bg-slate-950/95 border border-slate-800 backdrop-blur-md shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-300 no-print"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-sm">
-        <div className="flex items-start gap-3">
-          <div className="p-2 rounded-xl bg-primary/10 text-primary border border-primary/20 shrink-0 mt-0.5">
-            <Cookie size={18} aria-hidden="true" />
-          </div>
-          <div className="space-y-1">
-            <p className="font-semibold text-white text-xs sm:text-sm">
-              Gizliliğinize ve Tercihlerinize Saygı Duyuyoruz
-            </p>
-            <p className="text-xs text-slate-300 leading-relaxed max-w-3xl">
-              Sitemizde yalnızca temel teknik işlevler ve anonimleştirilmiş kullanım analitiği (Vercel Analytics) için çerez ve yerel depolama kullanılır. Reklam izleyicisi, üçüncü taraf profilleme veya kişisel veri satışı yapılmaz. Ayruntılı bilgi için{" "}
-              <Link
-                href="/gizlilik"
-                prefetch={false}
-                className="text-primary hover:underline font-semibold focus:outline-none focus:ring-1 focus:ring-primary rounded"
-              >
-                Gizlilik Politikası ve KVKK Aydınlatma Metni
-              </Link>
-              ’ni inceleyebilirsiniz.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 w-full md:w-auto shrink-0 pt-1 md:pt-0">
-          <button
-            type="button"
-            onClick={handleReject}
-            className="flex-1 md:flex-none px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400"
+      <div className="flex items-center gap-3 text-xs">
+        <Cookie size={16} className="text-primary shrink-0" aria-hidden="true" />
+        <p className="flex-1 min-w-0 text-slate-300 leading-snug">
+          Yalnızca anonim kullanım analitiği.{" "}
+          <Link
+            href="/gizlilik"
+            prefetch={false}
+            className="text-primary hover:underline font-semibold focus:outline-none focus:ring-1 focus:ring-primary rounded"
           >
-            Yalnızca Zorunlu
-          </button>
-          <button
-            type="button"
-            onClick={handleAccept}
-            className="flex-1 md:flex-none px-4 py-2 rounded-xl text-xs font-bold text-primary-fg bg-primary hover:bg-primary-hover shadow-glow-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            Analitiğe İzin Ver
-          </button>
-        </div>
+            Gizlilik
+          </Link>
+        </p>
+        <button
+          type="button"
+          onClick={handleReject}
+          className="shrink-0 px-3 py-2 rounded-xl font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400"
+        >
+          Reddet
+        </button>
+        <button
+          type="button"
+          onClick={handleAccept}
+          className="shrink-0 px-3 py-2 rounded-xl font-bold text-primary-fg bg-primary hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+        >
+          Kabul
+        </button>
       </div>
     </aside>
   );

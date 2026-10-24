@@ -4,7 +4,7 @@ import { Skeleton, SkeletonCard, SkeletonRegion, SkeletonTopBar } from "./Skelet
 
 /** Ana sayfa / il sayfaları: başlık, sekmeler ve maç listesi. */
 export const DashboardSkeleton: React.FC = () => (
-  <SkeletonRegion className="min-h-screen bg-canvas" label="Maç verileri yükleniyor">
+  <SkeletonRegion className="min-h-screen bg-canvas overflow-x-clip" label="Maç verileri yükleniyor">
     <div aria-hidden="true" className="bg-canvas/90 border-b border-slate-800">
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-3 flex items-center gap-3">
         <Skeleton className="h-9 w-9 rounded-full" />

@@ -89,7 +89,12 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       .filter((m) =>
         isTodayOrUnscoredYesterday(m.date, isMatchScored(m), todayStr, effectiveYesterday)
       )
-      .sort((a, b) => compareMatchDateTime(a, b, "asc"));
+      // Bugünün maçları önce; dünden skor bekleyenler sona.
+      .sort((a, b) => {
+        const aToday = a.date === todayStr ? 0 : 1;
+        const bToday = b.date === todayStr ? 0 : 1;
+        return aToday - bToday || compareMatchDateTime(a, b, "asc");
+      });
   }, [matches, todayStr, yesterdayStr]);
 
   // Son Biten Maçlar (En yeni 8 maç)
@@ -166,7 +171,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       </div>
 
       {/* 1. ÜST KONTROL BAR: FİLTRE HAPLARI & HIZLI İL SEÇİMİ */}
-      <div className="glass-panel rounded-2xl p-2.5 sm:p-3 border border-slate-800/90 flex flex-col md:flex-row md:items-center justify-between gap-2.5 shadow-sm">
+      <div className="glass-panel rounded-2xl p-2 sm:p-3 border border-slate-800/90 flex flex-col md:flex-row md:items-center justify-between gap-2.5 shadow-sm min-w-0">
         {/* Sol: Akış Filtreleri (Tümü, Bugün, Bitenler, Fikstür) */}
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
           <button
@@ -236,7 +241,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
         </div>
 
         {/* Sağ: Hızlı İl Geçiş Hapları */}
-        <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 border-t md:border-t-0 border-slate-800/60 pt-2 md:pt-0">
+        <div className="hidden md:flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5">
           <span className="text-[11px] font-semibold text-slate-400 mr-1 hidden sm:inline">İl:</span>
           <button
             type="button"
@@ -311,6 +316,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                       isFavorite={favorites.includes(match.id)}
                       onToggleFavorite={onToggleFavorite}
                       onSelectMatch={onSelectMatch}
+                        todayStr={todayStr}
                     />
                   ))}
                 </div>
@@ -343,6 +349,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                         isFavorite={favorites.includes(match.id)}
                         onToggleFavorite={onToggleFavorite}
                         onSelectMatch={onSelectMatch}
+                        todayStr={todayStr}
                       />
                     ))}
                   </div>
@@ -383,6 +390,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                         isFavorite={favorites.includes(match.id)}
                         onToggleFavorite={onToggleFavorite}
                         onSelectMatch={onSelectMatch}
+                        todayStr={todayStr}
                       />
                     ))
                   )}
@@ -419,6 +427,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                         isFavorite={favorites.includes(match.id)}
                         onToggleFavorite={onToggleFavorite}
                         onSelectMatch={onSelectMatch}
+                        todayStr={todayStr}
                       />
                     ))}
                   </div>
@@ -557,6 +566,7 @@ interface MatchRowProps {
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
   onSelectMatch: (m: Match) => void;
+  todayStr?: string;
 }
 
 const MatchRow: React.FC<MatchRowProps> = ({
@@ -564,7 +574,11 @@ const MatchRow: React.FC<MatchRowProps> = ({
   isFavorite,
   onToggleFavorite,
   onSelectMatch,
+  todayStr,
 }) => {
+  const yesterday = todayStr ? getYesterdayString(todayStr) : "";
+  const dateLabel =
+    match.date === todayStr ? "Bugün" : match.date === yesterday ? "Dün · skor bekleniyor" : match.date ? formatDateTurkish(match.date) : "TBD";
   const hasScore = isMatchScored(match);
   const forfeit = getMatchForfeitInfo(match);
 
@@ -683,8 +697,8 @@ const MatchRow: React.FC<MatchRowProps> = ({
                 <Clock size={11} className="text-ink-2" />
                 <span>{match.time || "--:--"}</span>
               </div>
-              <div className="text-[10px] font-mono text-slate-400 mt-1 text-right">
-                {match.date || "TBD"}
+              <div className={`text-[10px] mt-1 text-right whitespace-nowrap ${match.date === yesterday ? "text-warn" : "text-slate-400"}`}>
+                {dateLabel}
               </div>
             </div>
           )}

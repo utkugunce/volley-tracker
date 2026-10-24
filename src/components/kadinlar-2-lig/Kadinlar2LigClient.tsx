@@ -298,7 +298,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         />
       }
       rightSidebar={
-        activeTab === "standings" ? undefined : (
+        activeTab === "standings" || !selectedMatch ? undefined : (
           <MatchInspectorPanel
             match={selectedMatch}
             allMatches={convertedMatches}
