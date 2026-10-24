@@ -31,14 +31,14 @@ export function StandingsTableView({
         </caption>
         <thead>
           <tr className="bg-surface text-ink-2 font-bold uppercase text-[10px] sm:text-[11px] tracking-wider border-b border-line">
-            <th className="py-2.5 sm:py-3 px-1.5 sm:px-3 text-center w-12 sm:w-14">#</th>
+            <th className="py-2 sm:py-3 px-1 sm:px-2 text-center w-8 sm:w-12">#</th>
             <th className="py-2.5 sm:py-3 px-2 sm:px-4">Takım</th>
-            <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Oynanan Maç">O</th>
-            <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Galibiyet">G</th>
-            <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center w-8 sm:w-12" title="Mağlubiyet">M</th>
+            <th className="py-2 sm:py-3 px-1 sm:px-2 text-center w-7 sm:w-10" title="Oynanan Maç">O</th>
+            <th className="py-2 sm:py-3 px-1 sm:px-2 text-center w-7 sm:w-10" title="Galibiyet">G</th>
+            <th className="py-2 sm:py-3 px-1 sm:px-2 text-center w-7 sm:w-10" title="Mağlubiyet">M</th>
             <th className="py-2.5 sm:py-3 px-1.5 sm:px-2 text-center hidden sm:table-cell w-16" title="Set (Aldığı-Verdiği)">Set</th>
-            <th className="py-2.5 sm:py-3 px-2 sm:px-3 text-center w-12 sm:w-14 font-black text-ink" title="Puan">Puan</th>
-            <th className="py-2.5 sm:py-3 px-2 sm:px-4 text-center w-24 sm:w-28" title="Son 5 Maç Formu">Form</th>
+            <th className="py-2 sm:py-3 px-1.5 sm:px-3 text-center w-10 sm:w-14 font-black text-ink" title="Puan">Puan</th>
+            <th className="py-2 sm:py-3 px-2 sm:px-4 text-center hidden sm:table-cell sm:w-28" title="Son 5 Maç Formu">Form</th>
           </tr>
         </thead>
         <tbody>

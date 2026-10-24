@@ -126,7 +126,7 @@ export function StandingsRow({ row, isExpanded, activeContext, city, matches, to
         </td>
 
         {/* Form */}
-        <td className="py-2.5 sm:py-3 px-2 sm:px-4 text-center">
+        <td className="py-2 sm:py-3 px-1 sm:px-4 text-center hidden sm:table-cell">
           <FormDots form={summary.form} source={summary.formSource} />
         </td>
       </tr>
