@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T01:37:44.904384+03:00",
+  "updated_at": "2026-10-24T10:22:37.952326+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -30,7 +30,7 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Kütahya Belediyespor U18",
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -41,6 +41,17 @@
       },
       {
         "rank": 2,
+        "team": "Kütahya Belediyespor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Kütahya Demirspor U18",
         "played": 2,
         "won": 1,
@@ -51,7 +62,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Tavşanlı Belediyesi Spor Kulübü - B U18",
         "played": 1,
         "won": 0,
@@ -62,25 +73,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Kütahya Gelişim Akademi 43 Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
+        "team": "Kütahya Gelişim Akademi 43 Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -235,11 +235,15 @@
       "match_no": "3",
       "home_team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
       "away_team": "Kütahya Gelişim Akademi 43 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-15",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408164",
@@ -252,14 +256,14 @@
         "vb_time": "19:00",
         "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-23",
           "vb_time": "19:00",
           "vb_hall": "Dumlupınar Spor Salonu",
-          "details": "Saat Değişti (TVF: 20:00 / VB: 19:00)"
+          "details": null
         }
       }
     },
@@ -798,5 +802,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-24T01:43:47.716744"
+  "volleybox_sync_updated_at": "2026-10-24T10:28:57.459475"
 }

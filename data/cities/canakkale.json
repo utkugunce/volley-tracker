@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T01:37:44.904384+03:00",
+  "updated_at": "2026-10-24T10:22:37.952326+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -36,7 +36,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği A Grubu": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "AS SPOR KULÜBÜ",
@@ -82,7 +82,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği B Grubu": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Biga Çiçeklidede Spor Kulübü",
@@ -117,7 +117,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği C Grubu": [
+    "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Biga Gelişim Spor Kulübü",
@@ -152,7 +152,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Çanakkale Genç Kız İl Birinciliği D Grubu": [
+    "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
         "team": "Biga Ada Spor U18",
@@ -187,16 +187,16 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği A Grubu": [
+    "Yıldız Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "ÇOMÜ Spor Kulübü - B U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 1,
         "form": []
       },
       {
@@ -213,12 +213,12 @@
       {
         "rank": 3,
         "team": "Çanakkale Barbarosspor U16",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 5,
-        "sets_won": 6,
-        "sets_lost": 6,
+        "sets_won": 7,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -244,7 +244,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği B Grubu": [
+    "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Çanakkale Belediyespor - B U16",
@@ -290,7 +290,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği C Grubu": [
+    "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Parion Spor Kulübü U16",
@@ -336,7 +336,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Yıldız Kız İl Birinciliği D Grubu": [
+    "Yıldız Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
         "team": "Biga Gelişim Voleybol Kulübü U16",
@@ -361,7 +361,7 @@
       },
       {
         "rank": 3,
-        "team": "Çanakkale Belediyespor - B U16",
+        "team": "Çanakkale Belediyespor U16",
         "played": 4,
         "won": 1,
         "lost": 3,
@@ -393,7 +393,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Biga Ada Spor U16",
       "away_team": "Çanakkale Barbarosspor U16",
@@ -440,7 +440,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "2",
       "home_team": "As Spor Kulübü U16",
       "away_team": "ÇOMÜ Spor Kulübü - B U16",
@@ -485,7 +485,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "3",
       "home_team": "Kepez Spor Kulübü U16",
       "away_team": "Biga Ada Spor U16",
@@ -530,7 +530,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "4",
       "home_team": "ÇOMÜ Spor Kulübü - B U16",
       "away_team": "Kepez Spor Kulübü U16",
@@ -575,7 +575,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "5",
       "home_team": "Çanakkale Barbarosspor U16",
       "away_team": "ÇOMÜ Spor Kulübü - B U16",
@@ -620,7 +620,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "6",
       "home_team": "Kepez Spor Kulübü U16",
       "away_team": "Çanakkale Barbarosspor U16",
@@ -666,7 +666,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "7",
       "home_team": "Biga Ada Spor U16",
       "away_team": "Kepez Spor Kulübü U16",
@@ -712,7 +712,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "8",
       "home_team": "Kepez Spor Kulübü U16",
       "away_team": "As Spor Kulübü U16",
@@ -757,15 +757,20 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "9",
       "home_team": "ÇOMÜ Spor Kulübü - B U16",
       "away_team": "Çanakkale Barbarosspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-15",
+        "25-15",
+        "22-25",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411181",
@@ -798,7 +803,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "10",
       "home_team": "Çanakkale Barbarosspor U16",
       "away_team": "Biga Ada Spor U16",
@@ -839,7 +844,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "11",
       "home_team": "As Spor Kulübü U16",
       "away_team": "Kepez Spor Kulübü U16",
@@ -880,7 +885,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği A Grubu",
+      "group": "A Grubu",
       "match_no": "12",
       "home_team": "Çanakkale Barbarosspor U16",
       "away_team": "As Spor Kulübü U16",
@@ -921,7 +926,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "1",
       "home_team": "Çanakkale Belediyespor - B U16",
       "away_team": "Çanakkalespor U16",
@@ -967,7 +972,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "5",
       "home_team": "Yeşil Bayramiç Spor Kulübü",
       "away_team": "Eceabat Spor Kulübü U16",
@@ -1012,7 +1017,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "6",
       "home_team": "Çanakkalespor U16",
       "away_team": "Yeşil Bayramiç Spor Kulübü",
@@ -1057,7 +1062,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "8",
       "home_team": "Çanakkale Belediyespor - B U16",
       "away_team": "Eceabat Spor Kulübü U16",
@@ -1102,7 +1107,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "11",
       "home_team": "Eceabat Spor Kulübü U16",
       "away_team": "Çanakkale Belediyespor - B U16",
@@ -1147,7 +1152,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "12",
       "home_team": "Yeşil Bayramiç Spor Kulübü",
       "away_team": "Çanakkalespor U16",
@@ -1193,7 +1198,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "15",
       "home_team": "Çanakkale Belediyespor - B U16",
       "away_team": "Yeşil Bayramiç Spor Kulübü",
@@ -1239,7 +1244,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "16",
       "home_team": "Eceabat Spor Kulübü U16",
       "away_team": "Çanakkalespor U16",
@@ -1284,7 +1289,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği B Grubu",
+      "group": "B Grubu",
       "match_no": "17",
       "home_team": "Yeşil Bayramiç Spor Kulübü",
       "away_team": "Çanakkale Belediyespor - B U16",
@@ -1325,7 +1330,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "1",
       "home_team": "Biga Çiçeklidedespor U16",
       "away_team": "Parion Spor Kulübü U16",
@@ -1372,7 +1377,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "2",
       "home_team": "Nehir Spor Kulübü U16",
       "away_team": "ÇOMÜ Spor Kulübü U16",
@@ -1418,7 +1423,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "3",
       "home_team": "Parion Spor Kulübü U16",
       "away_team": "ÇOMÜ Spor Kulübü U16",
@@ -1463,7 +1468,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "4",
       "home_team": "ÇOMÜ Spor Kulübü U16",
       "away_team": "Nehir Spor Kulübü U16",
@@ -1509,7 +1514,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "5",
       "home_team": "Biga Çiçeklidedespor U16",
       "away_team": "ÇOMÜ Spor Kulübü U16",
@@ -1555,7 +1560,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "6",
       "home_team": "Biga Çiçeklidedespor U16",
       "away_team": "Nehir Spor Kulübü U16",
@@ -1601,7 +1606,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "7",
       "home_team": "Nehir Spor Kulübü U16",
       "away_team": "Parion Spor Kulübü U16",
@@ -1647,7 +1652,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "8",
       "home_team": "ÇOMÜ Spor Kulübü U16",
       "away_team": "Parion Spor Kulübü U16",
@@ -1692,7 +1697,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği C Grubu",
+      "group": "C Grubu",
       "match_no": "9",
       "home_team": "Nehir Spor Kulübü U16",
       "away_team": "Biga Çiçeklidedespor U16",
@@ -1733,7 +1738,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "1",
       "home_team": "Gökçeada Spor Kulübü U16",
       "away_team": "Biga Gelişim Voleybol Kulübü U16",
@@ -1779,7 +1784,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "2",
       "home_team": "Biga Gelişim Voleybol Kulübü U16",
       "away_team": "Çan Kale Spor Kulübü U16",
@@ -1824,7 +1829,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "3",
       "home_team": "Çan Kale Spor Kulübü U16",
       "away_team": "Gökçeada Spor Kulübü U16",
@@ -1869,9 +1874,9 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "4",
-      "home_team": "Çanakkale Belediyespor - B U16",
+      "home_team": "Çanakkale Belediyespor U16",
       "away_team": "Biga Gelişim Voleybol Kulübü U16",
       "score": "1 - 3",
       "home_score": 1,
@@ -1915,10 +1920,10 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "5",
       "home_team": "Çan Kale Spor Kulübü U16",
-      "away_team": "Çanakkale Belediyespor - B U16",
+      "away_team": "Çanakkale Belediyespor U16",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1960,10 +1965,10 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "6",
       "home_team": "Gökçeada Spor Kulübü U16",
-      "away_team": "Çanakkale Belediyespor - B U16",
+      "away_team": "Çanakkale Belediyespor U16",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -2006,7 +2011,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "7",
       "home_team": "Biga Gelişim Voleybol Kulübü U16",
       "away_team": "Gökçeada Spor Kulübü U16",
@@ -2051,10 +2056,10 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Yıldız Kız İl Birinciliği D Grubu",
+      "group": "D Grubu",
       "match_no": "8",
       "home_team": "Biga Gelişim Voleybol Kulübü U16",
-      "away_team": "Çanakkale Belediyespor - B U16",
+      "away_team": "Çanakkale Belediyespor U16",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -2090,5 +2095,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-24T01:43:40.687820"
+  "volleybox_sync_updated_at": "2026-10-24T10:28:50.035704"
 }

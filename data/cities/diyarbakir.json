@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T01:37:44.904384+03:00",
+  "updated_at": "2026-10-24T10:22:37.952326+03:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -41,6 +41,28 @@
       },
       {
         "rank": 2,
+        "team": "Dicle Üniversitesi Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Diyarbakır İçkale Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Diyarbakır Gençlik Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -51,30 +73,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Dicle Üniversitesi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "Diyarbakır İçkale Spor Kulübü U18",
+        "team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -166,11 +166,16 @@
       "match_no": "2",
       "home_team": "Dicle Üniversitesi Spor Kulübü U18",
       "away_team": "Diyarbakır İçkale Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-8",
+        "18-25",
+        "25-23",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411452",
@@ -360,5 +365,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-24T01:43:40.797491"
+  "volleybox_sync_updated_at": "2026-10-24T10:28:50.170197"
 }
