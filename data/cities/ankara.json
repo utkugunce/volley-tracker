@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T16:11:06.676225+03:00",
+  "updated_at": "2026-10-24T18:57:53.449580+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -3414,18 +3414,18 @@
       }
     },
     {
-      "id": "ankara-20261030-039",
+      "id": "ankara-20261028-039",
       "city": "Ankara",
-      "date": "2026-10-30",
-      "time": "18:00",
+      "date": "2026-10-28",
+      "time": "19:30",
       "hall": "Mamak S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Etabı",
       "match_no": "1",
-      "home_team": "PTT Spor U18",
-      "away_team": "Karayolları Spor Kulübü U18",
+      "home_team": "TED Ankara Kolejliler U18",
+      "away_team": "Akademi Atletik Spor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -3451,15 +3451,15 @@
       "id": "ankara-20261030-040",
       "city": "Ankara",
       "date": "2026-10-30",
-      "time": "19:30",
+      "time": "18:00",
       "hall": "Mamak S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Final Etabı",
       "match_no": "2",
-      "home_team": "TED Ankara Kolejliler U18",
-      "away_team": "Akademi Atletik Spor U18",
+      "home_team": "PTT Spor U18",
+      "away_team": "Karayolları Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -7242,9 +7242,9 @@
       }
     },
     {
-      "id": "ankara-20261028-130",
+      "id": "ankara-20261030-130",
       "city": "Ankara",
-      "date": "2026-10-28",
+      "date": "2026-10-30",
       "time": "19:30",
       "hall": "Mamak S.S.",
       "category": "Yıldız Kızlar Süper Lig",
@@ -7271,14 +7271,14 @@
         "vb_time": "19:30",
         "vb_hall": "Mamak Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-28",
           "vb_time": "19:30",
           "vb_hall": "Mamak Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-10-30 / VB: 2026-10-28)"
         }
       }
     },
@@ -7325,5 +7325,5 @@
     }
   ],
   "volleybox_synced_matches": 123,
-  "volleybox_sync_updated_at": "2026-10-24T16:17:06.924162"
+  "volleybox_sync_updated_at": "2026-10-24T19:04:03.924766"
 }

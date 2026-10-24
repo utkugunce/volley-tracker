@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T16:11:06.676225+03:00",
+  "updated_at": "2026-10-24T18:57:53.449580+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1549,6 +1549,25 @@
       },
       {
         "rank": 2,
+        "team": "Kuzey Işıkları SK U18",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 2,
+        "set_ratio": "4.500",
+        "points_won": 263,
+        "points_lost": 205,
+        "point_ratio": "1.283",
+        "form": [
+          "W",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Bağcılar Evren Spor U18",
         "played": 3,
         "won": 3,
@@ -1562,24 +1581,6 @@
         "point_ratio": "1.288",
         "form": [
           "W",
-          "W",
-          "W"
-        ]
-      },
-      {
-        "rank": 3,
-        "team": "Kuzey Işıkları SK U18",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
-        "set_ratio": "6.000",
-        "points_won": 171,
-        "points_lost": 125,
-        "point_ratio": "1.368",
-        "form": [
           "W",
           "W"
         ]
@@ -1606,19 +1607,20 @@
       {
         "rank": 5,
         "team": "İTÜ Geliştirme Vakfı Okulları SK U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "set_ratio": "1.000",
-        "points_won": 132,
-        "points_lost": 135,
-        "point_ratio": "0.978",
+        "sets_won": 4,
+        "sets_lost": 6,
+        "set_ratio": "0.667",
+        "points_won": 212,
+        "points_lost": 227,
+        "point_ratio": "0.934",
         "form": [
           "L",
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -7502,11 +7504,16 @@
       "match_no": "15",
       "home_team": "Kuzey Işıkları SK U18",
       "away_team": "İTÜ Geliştirme Vakfı Okulları SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "17-25",
+        "25-17",
+        "25-18",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411683",
@@ -8106,5 +8113,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-24T16:17:14.824129"
+  "volleybox_sync_updated_at": "2026-10-24T19:04:07.610690"
 }
