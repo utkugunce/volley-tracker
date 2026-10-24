@@ -142,10 +142,10 @@ export const CityTabBar: React.FC<CityTabBarProps> = ({
                 )}
                 {matchCount > 0 && (
                   <span
-                    className={`text-[10px] font-display font-semibold tabular-nums ${
+                    className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold tabular-nums border transition-colors ${
                       isSelected
-                        ? "text-primary-fg"
-                        : "text-ink-2"
+                        ? "bg-white/20 text-white border-white/30"
+                        : "bg-surface-raised text-slate-300 border-slate-700/60"
                     }`}
                   >
                     {matchCount}

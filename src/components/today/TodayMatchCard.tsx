@@ -8,6 +8,7 @@ import { LeagueVolleyboxLink } from "@/components/LeagueVolleyboxLink";
 import { getHallNavigationUrl } from "@/utils/halls";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { isMatchScored } from "@/utils/matchScoring";
+import { isHomeSetWin } from "@/utils/fixtureTable";
 import { getScoreText } from "@/utils/todayMatches";
 
 interface TodayMatchCardProps {
@@ -190,14 +191,22 @@ export function TodayMatchCard({
         {isFinished && m.set_scores && m.set_scores.length > 0 && (
           <div className="pt-2 border-t border-slate-800/80 flex items-center gap-1.5 flex-wrap">
             <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Setler:</span>
-            {m.set_scores.map((set, sIdx) => (
-              <span
-                key={sIdx}
-                className="px-2 py-0.5 rounded-md bg-slate-900/90 text-slate-200 text-[10px] font-mono font-scoreboard tabular-nums font-bold border border-slate-700/60 shadow-xs"
-              >
-                {set}
-              </span>
-            ))}
+            {m.set_scores.map((set, sIdx) => {
+              const isHomeWin = isHomeSetWin(set);
+              const isWinningSet = (homeWon && isHomeWin) || (awayWon && !isHomeWin);
+              return (
+                <span
+                  key={sIdx}
+                  className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-scoreboard tabular-nums font-bold border transition-colors shadow-xs ${
+                    isWinningSet
+                      ? "bg-emerald-950/70 text-emerald-300 border-emerald-500/40"
+                      : "bg-slate-900/90 text-slate-400 border-slate-700/60"
+                  }`}
+                >
+                  {set}
+                </span>
+              );
+            })}
             {forfeitInfo.isForfeit && (
               <span className="px-1.5 py-0.5 rounded text-[10px] font-black bg-amber-500/15 text-amber-300 border border-amber-500/30">
                 (Hükmen)
@@ -214,15 +223,19 @@ export function TodayMatchCard({
             href={getHallNavigationUrl(m.hall, m.city || (city === "Tüm İller" ? undefined : city))}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 min-w-0 truncate text-slate-300 hover:text-white group/hall transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 min-w-0 truncate text-slate-300 hover:text-white group/hall transition-colors cursor-pointer"
             title={`${m.hall} — Haritada Gör & Yol Tarifi Al`}
             onClick={(e) => e.stopPropagation()}
           >
-            <MapPin size={12} className="text-ink-2 group-hover/hall:scale-110 shrink-0 transition-transform" />
+            <span className="w-4 h-4 rounded-full bg-red-500/15 flex items-center justify-center text-red-400 group-hover/hall:bg-red-500 group-hover/hall:text-white transition-all shrink-0">
+              <MapPin size={10} />
+            </span>
             <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-primary font-medium">
               {m.hall}
             </span>
-            <Navigation size={10} className="text-slate-400 group-hover/hall:text-ink-2 shrink-0" />
+            <span className="hidden sm:inline-flex text-[10px] text-slate-400 group-hover/hall:text-red-300 transition-colors shrink-0">
+              (Yol Tarifi)
+            </span>
           </a>
         ) : (
           <div className="flex items-center gap-1.5 text-slate-500 min-w-0 truncate">

@@ -204,13 +204,14 @@ export function FixtureGridCard({
               <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Setler:</span>
               {match.set_scores.map((set, sIdx) => {
                 const isHomeSet = isHomeSetWin(set);
+                const isWinningSet = (homeWon && isHomeSet) || (awayWon && !isHomeSet);
                 return (
                   <span
                     key={sIdx}
-                    className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-scoreboard tabular-nums font-bold border shadow-xs ${
-                      isHomeSet
-                        ? "bg-surface-raised text-ink-2 border-line"
-                        : "bg-slate-900/90 text-slate-300 border-slate-700/60"
+                    className={`px-2 py-0.5 rounded-md text-[10px] font-mono font-scoreboard tabular-nums font-bold border transition-colors shadow-xs ${
+                      isWinningSet
+                        ? "bg-emerald-950/70 text-emerald-300 border-emerald-500/40"
+                        : "bg-slate-900/90 text-slate-400 border-slate-700/60"
                     }`}
                   >
                     {set}
@@ -233,12 +234,17 @@ export function FixtureGridCard({
               href={getHallNavigationUrl(match.hall, match.city || effectiveCity)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 min-w-0 truncate text-slate-300 hover:text-white group/hall transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 min-w-0 truncate text-slate-300 hover:text-white group/hall transition-colors cursor-pointer"
               title={`${match.hall} — Haritada Gör & Yol Tarifi Al`}
             >
-              <MapPin size={11} className="text-ink-2 group-hover/hall:scale-110 shrink-0 transition-transform" />
+              <span className="w-4 h-4 rounded-full bg-red-500/15 flex items-center justify-center text-red-400 group-hover/hall:bg-red-500 group-hover/hall:text-white transition-all shrink-0">
+                <MapPin size={10} />
+              </span>
               <span className="truncate underline decoration-slate-600 group-hover/hall:decoration-primary font-medium text-[11px]">
                 {match.hall}
+              </span>
+              <span className="hidden sm:inline-flex text-[10px] text-slate-400 group-hover/hall:text-red-300 transition-colors shrink-0">
+                (Yol Tarifi)
               </span>
             </a>
           ) : (

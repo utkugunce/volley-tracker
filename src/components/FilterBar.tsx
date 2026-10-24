@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Search, X, MapPin, AlertTriangle, CheckCircle2, History, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { getCategoryBirthYearRange } from "@/utils/categoryCalculator";
 
 interface FilterBarProps {
   categories: string[];
@@ -190,6 +191,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
       <div className="flex items-center gap-1 overflow-x-auto" role="tablist" aria-label="Lig filtreleri">
         {categories.map((cat) => {
           const isActive = selectedCategory === cat;
+          const birthYears = getCategoryBirthYearRange(cat);
           return (
             <button
               key={cat}
@@ -197,13 +199,24 @@ export const FilterBar: React.FC<FilterBarProps> = ({
               role="tab"
               aria-selected={isActive}
               onClick={() => onSelectCategory(cat)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 isActive
                   ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                   : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/60"
               }`}
             >
-              {cat}
+              <span>{cat}</span>
+              {birthYears && (
+                <span
+                  className={`text-[10px] font-mono px-1.5 py-0.2 rounded transition-colors ${
+                    isActive
+                      ? "bg-black/25 text-white/90"
+                      : "bg-slate-900/80 text-slate-400 border border-slate-700/50"
+                  }`}
+                >
+                  {birthYears}
+                </span>
+              )}
             </button>
           );
         })}

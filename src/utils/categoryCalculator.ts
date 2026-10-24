@@ -151,3 +151,18 @@ export function getAvailableBirthYears(): number[] {
     2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007,
   ];
 }
+
+/**
+ * Verilen lig/kategori adı için resmi TVF doğum yılı aralığını döner.
+ * Örn: "Küçük Kızlar" -> "2012-2013", "Midi" -> "2014-2015", "Genç" -> "2008-2009"
+ */
+export function getCategoryBirthYearRange(categoryName: string): string | null {
+  if (!categoryName) return null;
+  const lower = categoryName.toLowerCase();
+  if (lower.includes("mini")) return "2016-2017";
+  if (lower.includes("midi")) return "2014-2015";
+  if (lower.includes("küçük") || lower.includes("kucuk")) return "2012-2013";
+  if (lower.includes("yıldız") || lower.includes("yildiz")) return "2010-2011";
+  if (lower.includes("genç") || lower.includes("genc")) return "2008-2009";
+  return null;
+}
