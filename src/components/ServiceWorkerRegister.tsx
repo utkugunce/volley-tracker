@@ -29,6 +29,8 @@ export function ServiceWorkerRegister() {
         !isBlockedByAdBlocker &&
         (message.includes("ChunkLoadError") ||
           message.includes("Loading chunk") ||
+          message.includes("dynamically imported module") ||
+          message.includes("CSS_CHUNK_LOAD_FAILED") ||
           (message.includes("Refused to execute script") && message.includes("/_next/static/")));
 
       if (isChunkError && typeof window !== "undefined") {
