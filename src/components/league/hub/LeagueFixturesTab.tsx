@@ -11,7 +11,7 @@ import { LeagueData } from "@/utils/leagueData";
 export interface LeagueFixturesTabProps {
   displayedUpcomingMatches: Match[];
   favorites: string[];
-  fixtureDateCounts: { [dateStr: string]: number; };
+  fixtureDateCounts: { [dateStr: string]: number };
   league: LeagueData;
   selectedFixtureDate: string;
   setSelectedFixtureDate: React.Dispatch<React.SetStateAction<string>>;
@@ -21,14 +21,28 @@ export interface LeagueFixturesTabProps {
   todayStr: string;
   toggleFavorite: (teamName: string) => void;
   uniqueFixtureDates: string[];
-  upcomingSections: { title: string; subTitle: string; matches: Match[]; }[];
+  upcomingSections: { title: string; subTitle: string; matches: Match[] }[];
   yesterdayStr: string;
 }
 
-export function LeagueFixturesTab({ displayedUpcomingMatches, favorites, fixtureDateCounts, league, selectedFixtureDate, setSelectedFixtureDate, setSelectedMatch, setTeamSearchQuery, teamSearchQuery, todayStr, toggleFavorite, uniqueFixtureDates, upcomingSections, yesterdayStr }: LeagueFixturesTabProps) {
+export function LeagueFixturesTab({
+  displayedUpcomingMatches,
+  favorites,
+  fixtureDateCounts,
+  league,
+  selectedFixtureDate,
+  setSelectedFixtureDate,
+  setSelectedMatch,
+  setTeamSearchQuery,
+  teamSearchQuery,
+  todayStr,
+  toggleFavorite,
+  uniqueFixtureDates,
+  upcomingSections,
+  yesterdayStr,
+}: LeagueFixturesTabProps) {
   return (
     <div className="space-y-4">
-      {/* Flashscore Yatay Tarih Şeridi (Fikstür Modunda) */}
       {uniqueFixtureDates.length > 0 && (
         <DateRibbon
           dates={uniqueFixtureDates}
@@ -42,42 +56,42 @@ export function LeagueFixturesTab({ displayedUpcomingMatches, favorites, fixture
       )}
 
       {/* Arama ve Bilgi Kontrol Çubuğu */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface p-3 rounded-xl border border-line">
         <div className="flex items-center gap-2">
-          <Calendar size={18} className="text-ink-2" />
-          <h2 className="text-sm font-bold text-white">
+          <Calendar size={16} className="text-ink-2" />
+          <h2 className="text-xs sm:text-sm font-bold text-ink">
             Fikstür & Maç Programı ({displayedUpcomingMatches.length})
           </h2>
         </div>
 
         <div className="relative w-full sm:w-64">
-          <Search size={14} className="absolute left-3 top-2.5 text-slate-400" />
+          <Search size={14} className="absolute left-3 top-2.5 text-ink-3" />
           <input
             type="text"
             placeholder="Takım veya salon ara..."
             value={teamSearchQuery}
             onChange={(e) => setTeamSearchQuery(e.target.value)}
-            className="w-full pl-8 pr-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary"
+            className="w-full pl-8 pr-3 py-1.5 rounded-lg bg-surface-muted border border-line text-xs text-ink placeholder-ink-3 focus:outline-none focus:border-primary"
           />
         </div>
       </div>
 
       {/* Seçilen Tarihin Maçları Bilgi ve Kolay Geçiş Rozeti */}
       {selectedFixtureDate !== "all" && (
-        <div className="flex items-center justify-between bg-sky-950/40 border border-sky-800/60 rounded-xl px-3.5 py-2.5 text-xs text-sky-300 shadow-sm flex-wrap gap-2">
+        <div className="flex items-center justify-between bg-surface border border-line rounded-xl px-3.5 py-2.5 text-xs text-ink-2 flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <Calendar size={15} className="text-sky-400 shrink-0" />
+            <Calendar size={14} className="text-primary shrink-0" />
             <span>
-              <strong>Seçilen Tarih:</strong> {formatDateTurkish(selectedFixtureDate)}
+              <strong className="text-ink">Seçilen Tarih:</strong> {formatDateTurkish(selectedFixtureDate)}
             </span>
-            <span className="text-[11px] bg-sky-500/20 text-sky-200 border border-sky-500/30 px-2 py-0.5 rounded-full font-bold font-mono">
+            <span className="text-[11px] bg-surface-muted text-ink border border-line px-2 py-0.5 rounded-md font-bold font-mono tabular-nums">
               {displayedUpcomingMatches.length} Maç
             </span>
           </div>
           <button
             type="button"
             onClick={() => setSelectedFixtureDate("all")}
-            className="text-xs text-sky-400 hover:text-sky-200 font-semibold underline underline-offset-2 transition-colors cursor-pointer"
+            className="text-xs text-primary hover:underline font-semibold transition-colors cursor-pointer"
           >
             Tüm Fikstürü Göster ({league.stats.upcomingMatches})
           </button>
@@ -85,7 +99,7 @@ export function LeagueFixturesTab({ displayedUpcomingMatches, favorites, fixture
       )}
 
       {upcomingSections.length === 0 ? (
-        <div className="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-8 text-center text-slate-400 text-sm">
+        <div className="bg-surface border border-line rounded-xl p-8 text-center text-ink-3 text-sm">
           {selectedFixtureDate !== "all"
             ? `${formatDateTurkish(selectedFixtureDate)} tarihinde oynanacak maç bulunmuyor.`
             : teamSearchQuery

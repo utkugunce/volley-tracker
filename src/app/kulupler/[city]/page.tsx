@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getClubsByCity, getDistrictSummaries } from "@/utils/districtClubs";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { TeamBadge } from "@/components/TeamBadge";
-import { MapPin, ArrowLeft, ArrowRight, ShieldCheck, Trophy } from "lucide-react";
+import { MapPin, ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
 import { normalizeCitySlug } from "@/utils/volleybox";
 
 interface Props {
@@ -51,15 +51,15 @@ export default async function CityClubsPage({ params }: Props) {
         ]}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8 flex-1 w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 flex-1 w-full">
         {/* Üst Navigasyon */}
         <div className="flex items-center justify-between">
           <Link
             href="/kulupler"
             prefetch={false}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-ink-2 hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink-2 hover:text-ink bg-surface hover:bg-surface-raised border border-line px-3 py-1.5 rounded-lg transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>Tüm Kulüplere Dön</span>
           </Link>
           <Link
@@ -73,36 +73,36 @@ export default async function CityClubsPage({ params }: Props) {
         </div>
 
         {/* Hero */}
-        <div className="bg-gradient-to-br from-surface to-surface-muted border border-line rounded-3xl p-6 sm:p-8 shadow-card space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-            <ShieldCheck className="w-3.5 h-3.5" />
+        <div className="bg-surface border border-line rounded-xl p-5 sm:p-6 space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-muted text-ink-2 text-[11px] font-bold border border-line">
+            <ShieldCheck className="w-3.5 h-3.5 text-primary" />
             <span>{cityName} Altyapı Ağı</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black text-ink tracking-tight">
+          <h1 className="text-xl sm:text-3xl font-black text-ink tracking-tight">
             {cityName} Voleybol Kulüpleri
           </h1>
-          <p className="text-xs sm:text-sm text-ink-2 max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-ink-3 max-w-2xl leading-relaxed">
             {cityName} genelindeki {clubs.length} lisanslı voleybol kulübü, antrenman yapılan ilçeler ve yarıştıkları TVF lig kategorileri.
           </p>
         </div>
 
         {/* İlçe Hapları */}
         {districts.length > 0 && (
-          <div className="bg-surface rounded-2xl border border-line p-5 shadow-sm space-y-3">
-            <h2 className="text-xs font-black text-ink uppercase tracking-wider">
+          <div className="bg-surface rounded-xl border border-line p-4 sm:p-5 space-y-3">
+            <h2 className="text-xs font-bold text-ink uppercase tracking-wider">
               {cityName} İlçeleri
             </h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {districts.map((d) => (
                 <Link
                   key={d.slug}
                   href={`/kulupler/${normCity}/${d.slug}`}
                   prefetch={false}
-                  className="px-3 py-1.5 rounded-xl bg-surface-muted hover:bg-surface-raised border border-line text-xs font-semibold text-ink-2 hover:text-ink transition-all inline-flex items-center gap-1.5"
+                  className="px-2.5 py-1.5 rounded-lg bg-surface-muted hover:bg-surface-raised border border-line text-xs font-semibold text-ink-2 hover:text-ink transition-colors inline-flex items-center gap-1.5"
                 >
                   <span>{d.name}</span>
                   {d.clubCount > 0 && (
-                    <span className="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded bg-canvas text-ink-3">
+                    <span className="text-[10px] font-mono tabular-nums font-bold text-ink-3">
                       {d.clubCount}
                     </span>
                   )}
@@ -113,18 +113,18 @@ export default async function CityClubsPage({ params }: Props) {
         )}
 
         {/* Kulüp Listesi */}
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-black text-ink">
+            <h2 className="text-base sm:text-lg font-bold text-ink">
               {cityName} Kulüpleri ({clubs.length})
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {clubs.map((club) => (
               <div
                 key={`${club.citySlug}-${club.id}`}
-                className="group bg-surface hover:bg-surface-raised rounded-2xl border border-line hover:border-primary/50 p-4 transition-all shadow-sm flex flex-col justify-between space-y-3"
+                className="group bg-surface hover:bg-surface-raised rounded-xl border border-line hover:border-line-strong p-4 transition-colors flex flex-col justify-between space-y-3"
               >
                 <div className="space-y-2">
                   <div className="flex items-center gap-2.5 min-w-0">
@@ -150,7 +150,7 @@ export default async function CityClubsPage({ params }: Props) {
                       {club.categories.slice(0, 3).map((cat, idx) => (
                         <span
                           key={idx}
-                          className="text-[10px] px-2 py-0.5 rounded-md bg-surface-muted text-ink-2 border border-line truncate max-w-[140px]"
+                          className="text-[10px] px-2 py-0.5 rounded bg-surface-muted text-ink-2 border border-line truncate max-w-[140px]"
                         >
                           {cat.replace("TVF ", "").replace("Kızlar", "Kız")}
                         </span>
@@ -160,7 +160,7 @@ export default async function CityClubsPage({ params }: Props) {
                 </div>
 
                 <div className="pt-2 border-t border-line flex items-center justify-between text-xs">
-                  <span className="text-[11px] font-mono text-ink-3">
+                  <span className="text-[11px] font-mono tabular-nums text-ink-3">
                     {club.teams.length} Takım • {club.matchCount} Maç
                   </span>
                   <Link

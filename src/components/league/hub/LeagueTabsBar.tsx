@@ -15,82 +15,49 @@ export interface LeagueTabsBarProps {
 }
 
 export function LeagueTabsBar({ activeTab, groupNames, league, selectedGroup, setActiveTab, setSelectedGroup }: LeagueTabsBarProps) {
+  const tabs: { id: LeagueTabType; label: string; icon: React.ComponentType<{ size?: number }> }[] = [
+    { id: "standings", label: "Puan Durumu", icon: Trophy },
+    { id: "fixtures", label: `Fikstür (${league.stats.upcomingMatches})`, icon: Calendar },
+    { id: "results", label: `Sonuçlar (${league.stats.finishedMatches})`, icon: CheckCircle2 },
+    { id: "stats", label: "İstatistikler & Liderler", icon: Activity },
+    { id: "teams", label: `Takımlar (${league.stats.totalTeams})`, icon: Users },
+  ];
+
   return (
-    <div className="bg-surface-muted/95 border-b border-slate-800/80 sticky top-[57px] z-30 px-4 py-2.5 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
-        {/* Ana Sekmeler */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0 scrollbar-none text-xs">
-          <button
-            onClick={() => setActiveTab("standings")}
-            className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
-              activeTab === "standings"
-                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
-                : "text-slate-400 hover:text-white hover:bg-slate-800/70"
-            }`}
-          >
-            <Trophy size={14} />
-            <span>Puan Durumu</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab("fixtures")}
-            className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
-              activeTab === "fixtures"
-                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
-                : "text-slate-400 hover:text-white hover:bg-slate-800/70"
-            }`}
-          >
-            <Calendar size={14} />
-            <span>Fikstür ({league.stats.upcomingMatches})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab("results")}
-            className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
-              activeTab === "results"
-                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
-                : "text-slate-400 hover:text-white hover:bg-slate-800/70"
-            }`}
-          >
-            <CheckCircle2 size={14} />
-            <span>Sonuçlar ({league.stats.finishedMatches})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab("stats")}
-            className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
-              activeTab === "stats"
-                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
-                : "text-slate-400 hover:text-white hover:bg-slate-800/70"
-            }`}
-          >
-            <Activity size={14} />
-            <span>İstatistikler & Liderler</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTab("teams")}
-            className={`px-3.5 py-1.5 rounded-xl font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
-              activeTab === "teams"
-                ? "bg-selected-strong text-white font-bold shadow-glow-selected"
-                : "text-slate-400 hover:text-white hover:bg-slate-800/70"
-            }`}
-          >
-            <Users size={14} />
-            <span>Takımlar ({league.stats.totalTeams})</span>
-          </button>
+    <div className="bg-canvas border-b border-line sticky top-[49px] z-30 px-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-2">
+        {/* Ana Sekmeler (FotMob Bottom-Indicator Strip) */}
+        <div className="flex items-center gap-1 overflow-x-auto scrollbar-none text-xs">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-3.5 py-2.5 font-semibold flex items-center gap-1.5 border-b-2 transition-colors cursor-pointer shrink-0 ${
+                  isActive
+                    ? "border-primary text-ink font-bold"
+                    : "border-transparent text-ink-3 hover:text-ink-2"
+                }`}
+              >
+                <Icon size={13} />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Grup Filtresi (Birden fazla grup varsa göster) */}
         {groupNames.length > 1 && (
-          <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none text-xs shrink-0">
-            <span className="text-[11px] text-slate-400 font-semibold mr-1">Grup:</span>
+          <div className="flex items-center gap-1 overflow-x-auto scrollbar-none text-xs py-1.5 shrink-0">
+            <span className="text-[11px] text-ink-3 font-semibold mr-1">Grup:</span>
             <button
               onClick={() => setSelectedGroup("all")}
-              className={`px-2.5 py-1 rounded-lg font-semibold transition-colors cursor-pointer shrink-0 ${
+              className={`px-2.5 py-1 rounded-md font-semibold transition-colors cursor-pointer shrink-0 ${
                 selectedGroup === "all"
-                  ? "bg-sky-500/20 text-sky-300 border border-sky-500/40"
-                  : "bg-slate-800/80 text-slate-400 hover:text-white"
+                  ? "bg-primary text-primary-fg font-bold"
+                  : "bg-surface text-ink-2 hover:text-ink border border-line"
               }`}
             >
               Tüm Gruplar
@@ -99,10 +66,10 @@ export function LeagueTabsBar({ activeTab, groupNames, league, selectedGroup, se
               <button
                 key={g}
                 onClick={() => setSelectedGroup(g)}
-                className={`px-2.5 py-1 rounded-lg font-semibold transition-colors cursor-pointer shrink-0 ${
+                className={`px-2.5 py-1 rounded-md font-semibold transition-colors cursor-pointer shrink-0 ${
                   selectedGroup === g
-                    ? "bg-sky-500/20 text-sky-300 border border-sky-500/40"
-                    : "bg-slate-800/80 text-slate-400 hover:text-white"
+                    ? "bg-primary text-primary-fg font-bold"
+                    : "bg-surface text-ink-2 hover:text-ink border border-line"
                 }`}
               >
                 {g}

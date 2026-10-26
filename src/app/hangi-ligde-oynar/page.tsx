@@ -1,10 +1,9 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Header } from "@/components/Header";
 import { LeagueFinderWidget } from "@/components/LeagueFinderWidget";
 import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { Trophy, HelpCircle, ArrowLeft, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Trophy, HelpCircle, ArrowLeft, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Çocuğum Hangi Voleybol Liginde Oynar? — 2026-2027 TVF Yaş Kategorileri",
@@ -63,15 +62,15 @@ export default function HangiLigdeOynarPage() {
         ]}
       />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8 flex-1">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 flex-1 w-full">
         {/* Üst Navigasyon */}
         <div className="flex items-center justify-between">
           <Link
             href="/"
             prefetch={false}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-ink-2 hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink-2 hover:text-ink bg-surface hover:bg-surface-raised border border-line px-3 py-1.5 rounded-lg transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>Ana Sayfaya Dön</span>
           </Link>
           <Link
@@ -88,15 +87,15 @@ export default function HangiLigdeOynarPage() {
         <LeagueFinderWidget />
 
         {/* 2026-2027 Resmi TVF Altyapı Tablosu */}
-        <div className="bg-surface rounded-2xl border border-line p-6 shadow-card space-y-4">
+        <div className="bg-surface rounded-xl border border-line p-5 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-line">
             <div className="flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-amber-400" />
-              <h2 className="text-lg font-bold text-ink">
+              <Trophy className="w-4 h-4 text-primary" />
+              <h2 className="text-sm sm:text-base font-bold text-ink">
                 2026-2027 TVF Resmi Yaş Kategorileri Özeti
               </h2>
             </div>
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-surface-muted text-ink-2 border border-line">
+            <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-surface-muted text-ink-2 border border-line">
               Resmi Federasyon Standardı
             </span>
           </div>
@@ -104,61 +103,61 @@ export default function HangiLigdeOynarPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-xs text-left border-collapse">
               <thead>
-                <tr className="bg-surface-muted text-ink-2 uppercase font-extrabold text-[11px] border-b border-line">
-                  <th className="py-3 px-3">Kategori</th>
-                  <th className="py-3 px-3">Doğum Yılları</th>
-                  <th className="py-3 px-3">Yaş Aralığı</th>
-                  <th className="py-3 px-3">File Boyu (Kız)</th>
-                  <th className="py-3 px-3">File Boyu (Erkek)</th>
-                  <th className="py-3 px-3">Top No</th>
-                  <th className="py-3 px-3">Libero</th>
+                <tr className="bg-surface-muted text-ink-3 uppercase font-bold text-[11px] border-b border-line">
+                  <th className="py-2.5 px-3">Kategori</th>
+                  <th className="py-2.5 px-3">Doğum Yılları</th>
+                  <th className="py-2.5 px-3">Yaş Aralığı</th>
+                  <th className="py-2.5 px-3">File Boyu (Kız)</th>
+                  <th className="py-2.5 px-3">File Boyu (Erkek)</th>
+                  <th className="py-2.5 px-3">Top No</th>
+                  <th className="py-2.5 px-3">Libero</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-line text-ink font-medium">
                 <tr className="hover:bg-surface-raised transition-colors">
-                  <td className="py-3 px-3 font-bold text-ink">Mini Voleybol</td>
-                  <td className="py-3 px-3 font-mono">2016 - 2017</td>
-                  <td className="py-3 px-3">9 - 10 Yaş</td>
-                  <td className="py-3 px-3">2.00 m</td>
-                  <td className="py-3 px-3">2.00 m</td>
-                  <td className="py-3 px-3">4 No (Hafif)</td>
-                  <td className="py-3 px-3 text-ink-3">Yok</td>
+                  <td className="py-2.5 px-3 font-bold text-ink">Mini Voleybol</td>
+                  <td className="py-2.5 px-3 font-mono">2016 - 2017</td>
+                  <td className="py-2.5 px-3">9 - 10 Yaş</td>
+                  <td className="py-2.5 px-3 font-mono">2.00 m</td>
+                  <td className="py-2.5 px-3 font-mono">2.00 m</td>
+                  <td className="py-2.5 px-3">4 No (Hafif)</td>
+                  <td className="py-2.5 px-3 text-ink-3">Yok</td>
                 </tr>
                 <tr className="hover:bg-surface-raised transition-colors">
-                  <td className="py-3 px-3 font-bold text-ink">Midi Voleybol</td>
-                  <td className="py-3 px-3 font-mono">2014 - 2015</td>
-                  <td className="py-3 px-3">11 - 12 Yaş</td>
-                  <td className="py-3 px-3 font-semibold text-primary">2.10 m</td>
-                  <td className="py-3 px-3 font-semibold text-sky-400">2.15 m</td>
-                  <td className="py-3 px-3">4 No Standart</td>
-                  <td className="py-3 px-3 text-ink-3">Yok</td>
+                  <td className="py-2.5 px-3 font-bold text-ink">Midi Voleybol</td>
+                  <td className="py-2.5 px-3 font-mono">2014 - 2015</td>
+                  <td className="py-2.5 px-3">11 - 12 Yaş</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-primary">2.10 m</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-ink-2">2.15 m</td>
+                  <td className="py-2.5 px-3">4 No Standart</td>
+                  <td className="py-2.5 px-3 text-ink-3">Yok</td>
                 </tr>
                 <tr className="hover:bg-surface-raised transition-colors">
-                  <td className="py-3 px-3 font-bold text-ink">Küçükler</td>
-                  <td className="py-3 px-3 font-mono">2012 - 2013</td>
-                  <td className="py-3 px-3">13 - 14 Yaş</td>
-                  <td className="py-3 px-3 font-semibold text-primary">2.15 m</td>
-                  <td className="py-3 px-3 font-semibold text-sky-400">2.24 m</td>
-                  <td className="py-3 px-3">5 No Maç Topu</td>
-                  <td className="py-3 px-3 text-emerald-400 font-bold">Var (Serbest)</td>
+                  <td className="py-2.5 px-3 font-bold text-ink">Küçükler</td>
+                  <td className="py-2.5 px-3 font-mono">2012 - 2013</td>
+                  <td className="py-2.5 px-3">13 - 14 Yaş</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-primary">2.15 m</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-ink-2">2.24 m</td>
+                  <td className="py-2.5 px-3">5 No Maç Topu</td>
+                  <td className="py-2.5 px-3 text-done font-bold">Var (Serbest)</td>
                 </tr>
                 <tr className="hover:bg-surface-raised transition-colors">
-                  <td className="py-3 px-3 font-bold text-ink">Yıldızlar</td>
-                  <td className="py-3 px-3 font-mono">2010 - 2011</td>
-                  <td className="py-3 px-3">15 - 16 Yaş</td>
-                  <td className="py-3 px-3 font-semibold text-primary">2.24 m</td>
-                  <td className="py-3 px-3 font-semibold text-sky-400">2.35 m</td>
-                  <td className="py-3 px-3">5 No Maç Topu</td>
-                  <td className="py-3 px-3 text-emerald-400 font-bold">Var</td>
+                  <td className="py-2.5 px-3 font-bold text-ink">Yıldızlar</td>
+                  <td className="py-2.5 px-3 font-mono">2010 - 2011</td>
+                  <td className="py-2.5 px-3">15 - 16 Yaş</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-primary">2.24 m</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-ink-2">2.35 m</td>
+                  <td className="py-2.5 px-3">5 No Maç Topu</td>
+                  <td className="py-2.5 px-3 text-done font-bold">Var</td>
                 </tr>
                 <tr className="hover:bg-surface-raised transition-colors">
-                  <td className="py-3 px-3 font-bold text-ink">Gençler</td>
-                  <td className="py-3 px-3 font-mono">2008 - 2009</td>
-                  <td className="py-3 px-3">17 - 18 Yaş</td>
-                  <td className="py-3 px-3 font-semibold text-primary">2.24 m</td>
-                  <td className="py-3 px-3 font-semibold text-sky-400">2.43 m</td>
-                  <td className="py-3 px-3">5 No Maç Topu</td>
-                  <td className="py-3 px-3 text-emerald-400 font-bold">Var</td>
+                  <td className="py-2.5 px-3 font-bold text-ink">Gençler</td>
+                  <td className="py-2.5 px-3 font-mono">2008 - 2009</td>
+                  <td className="py-2.5 px-3">17 - 18 Yaş</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-primary">2.24 m</td>
+                  <td className="py-2.5 px-3 font-mono font-semibold text-ink-2">2.43 m</td>
+                  <td className="py-2.5 px-3">5 No Maç Topu</td>
+                  <td className="py-2.5 px-3 text-done font-bold">Var</td>
                 </tr>
               </tbody>
             </table>
@@ -166,21 +165,21 @@ export default function HangiLigdeOynarPage() {
         </div>
 
         {/* Sık Sorulan Sorular */}
-        <div className="bg-surface rounded-2xl border border-line p-6 shadow-card space-y-4">
+        <div className="bg-surface rounded-xl border border-line p-5 space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-line">
-            <HelpCircle className="w-5 h-5 text-primary" />
-            <h2 className="text-lg font-bold text-ink">
+            <HelpCircle className="w-4 h-4 text-primary" />
+            <h2 className="text-sm sm:text-base font-bold text-ink">
               Altyapı Ligleri & Lisans Hakkında Sıkça Sorulanlar
             </h2>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {FAQ_ITEMS.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-surface-muted/60 p-4 rounded-xl border border-line space-y-1.5"
+                className="bg-surface-muted p-3.5 rounded-lg border border-line space-y-1"
               >
-                <h3 className="text-sm font-bold text-ink">
+                <h3 className="text-xs sm:text-sm font-bold text-ink">
                   {item.question}
                 </h3>
                 <p className="text-xs text-ink-2 leading-relaxed font-normal">

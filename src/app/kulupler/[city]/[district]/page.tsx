@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { getClubsByDistrict, getDistrictSummaries } from "@/utils/districtClubs";
 import { BreadcrumbJsonLd, SportsClubJsonLd, FaqJsonLd } from "@/components/JsonLd";
 import { TeamBadge } from "@/components/TeamBadge";
@@ -9,11 +8,8 @@ import {
   MapPin,
   ArrowLeft,
   ArrowRight,
-  ShieldCheck,
-  Trophy,
   Navigation,
   Building2,
-  Calendar,
   MessageCircle,
 } from "lucide-react";
 import { normalizeCitySlug } from "@/utils/volleybox";
@@ -58,7 +54,6 @@ export default async function DistrictClubsPage({ params }: Props) {
   const districtName = currentDistSummary?.name || (district.charAt(0).toUpperCase() + district.slice(1));
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://altyapivoleybol.com.tr";
 
-  // Bu ilçedeki spor salonlarını bul
   const districtVenues = venuesData.filter((v) => {
     const vDist = (v.district || "").toLowerCase();
     const target = districtName.toLowerCase();
@@ -88,7 +83,6 @@ export default async function DistrictClubsPage({ params }: Props) {
       />
       <FaqJsonLd items={faqItems} />
 
-      {/* Her kulüp için SportsClub Schema */}
       {clubs.slice(0, 10).map((c) => (
         <SportsClubJsonLd
           key={c.id}
@@ -100,15 +94,15 @@ export default async function DistrictClubsPage({ params }: Props) {
         />
       ))}
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8 flex-1 w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 flex-1 w-full">
         {/* Üst Navigasyon */}
         <div className="flex items-center justify-between">
           <Link
             href={`/kulupler/${normCity}`}
             prefetch={false}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-ink-2 hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink-2 hover:text-ink bg-surface hover:bg-surface-raised border border-line px-3 py-1.5 rounded-lg transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>{cityName} İlçelerine Dön</span>
           </Link>
           <Link
@@ -122,33 +116,31 @@ export default async function DistrictClubsPage({ params }: Props) {
         </div>
 
         {/* Hero */}
-        <div className="bg-gradient-to-br from-surface to-surface-muted border border-line rounded-3xl p-6 sm:p-8 shadow-card space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-            <MapPin className="w-3.5 h-3.5" />
+        <div className="bg-surface border border-line rounded-xl p-5 sm:p-6 space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-muted text-ink-2 text-[11px] font-bold border border-line">
+            <MapPin className="w-3.5 h-3.5 text-primary" />
             <span>{cityName} • {districtName} Bölgesi</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-black text-ink tracking-tight">
+          <h1 className="text-xl sm:text-3xl font-black text-ink tracking-tight">
             {districtName} Voleybol Kulüpleri & Kurs Rehberi
           </h1>
-          <p className="text-xs sm:text-sm text-ink-2 max-w-2xl leading-relaxed">
+          <p className="text-xs sm:text-sm text-ink-3 max-w-2xl leading-relaxed">
             {districtName} ilçesinde antrenman yapan, TVF 2026-2027 resmi altyapı liglerinde mücadele eden spor kulüpleri, spor salonları ve takımlar.
           </p>
         </div>
 
         {/* Kulüp Listesi */}
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-black text-ink">
+            <h2 className="text-base sm:text-lg font-bold text-ink">
               {districtName} Bölgesindeki Kulüpler ({clubs.length})
             </h2>
-            <span className="text-xs text-ink-3">
-              Resmi TVF Tescilli
-            </span>
+            <span className="text-xs text-ink-3">Resmi TVF Tescilli</span>
           </div>
 
           {clubs.length === 0 ? (
-            <div className="bg-surface rounded-2xl border border-dashed border-line p-8 text-center space-y-2">
-              <Building2 className="w-8 h-8 text-ink-3 mx-auto" />
+            <div className="bg-surface rounded-xl border border-line p-8 text-center space-y-2">
+              <Building2 className="w-7 h-7 text-ink-3 mx-auto" />
               <p className="text-sm font-bold text-ink">
                 Bu ilçede doğrudan kayıtlı kulüp henüz listelenmedi.
               </p>
@@ -165,7 +157,7 @@ export default async function DistrictClubsPage({ params }: Props) {
               </Link>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {clubs.map((club) => {
                 const prefilledMsg = encodeURIComponent(
                   `Merhaba, ${club.name} kulübünüzün altyapı takımları ve spor okulu antrenmanları hakkında bilgi almak istiyorum.`
@@ -174,7 +166,7 @@ export default async function DistrictClubsPage({ params }: Props) {
                 return (
                   <div
                     key={`${club.citySlug}-${club.id}`}
-                    className="group bg-surface hover:bg-surface-raised rounded-2xl border border-line hover:border-primary/50 p-4 transition-all shadow-sm flex flex-col justify-between space-y-3"
+                    className="group bg-surface hover:bg-surface-raised rounded-xl border border-line hover:border-line-strong p-4 transition-colors flex flex-col justify-between space-y-3"
                   >
                     <div className="space-y-2">
                       <div className="flex items-center gap-2.5 min-w-0">
@@ -199,7 +191,7 @@ export default async function DistrictClubsPage({ params }: Props) {
                           {club.categories.slice(0, 3).map((cat, idx) => (
                             <span
                               key={idx}
-                              className="text-[10px] px-2 py-0.5 rounded-md bg-surface-muted text-ink-2 border border-line truncate max-w-[140px]"
+                              className="text-[10px] px-2 py-0.5 rounded bg-surface-muted text-ink-2 border border-line truncate max-w-[140px]"
                             >
                               {cat.replace("TVF ", "").replace("Kızlar", "Kız")}
                             </span>
@@ -213,7 +205,7 @@ export default async function DistrictClubsPage({ params }: Props) {
                         href={`https://wa.me/?text=${prefilledMsg}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[11px] font-bold transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-done/10 hover:bg-done/20 text-done border border-done/30 text-[11px] font-bold transition-colors cursor-pointer"
                         title="WhatsApp üzerinden bilgi almak için mesaj taslağı oluştur"
                       >
                         <MessageCircle className="w-3 h-3" />
@@ -238,24 +230,24 @@ export default async function DistrictClubsPage({ params }: Props) {
 
         {/* Bu İlçedeki Spor Salonları */}
         {districtVenues.length > 0 && (
-          <div className="bg-surface rounded-2xl border border-line p-6 shadow-card space-y-4">
+          <div className="bg-surface rounded-xl border border-line p-5 space-y-4">
             <div className="flex items-center justify-between border-b border-line pb-3">
               <div className="flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-black text-ink">
+                <Building2 className="w-4 h-4 text-primary" />
+                <h2 className="text-sm sm:text-base font-bold text-ink">
                   {districtName} Bölgesi Spor Salonları
                 </h2>
               </div>
-              <span className="text-xs font-mono text-ink-3">
+              <span className="text-xs font-mono tabular-nums text-ink-3">
                 {districtVenues.length} Tesis
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
               {districtVenues.map((v) => (
                 <div
                   key={v.id}
-                  className="bg-surface-muted/60 rounded-xl p-4 border border-line space-y-2 flex flex-col justify-between"
+                  className="bg-surface-muted rounded-lg p-3.5 border border-line space-y-2 flex flex-col justify-between"
                 >
                   <div className="space-y-1">
                     <h3 className="font-bold text-sm text-ink">{v.name}</h3>
@@ -269,7 +261,7 @@ export default async function DistrictClubsPage({ params }: Props) {
                     )}
                   </div>
 
-                  <div className="pt-2 flex items-center justify-between border-t border-line/60">
+                  <div className="pt-2 flex items-center justify-between border-t border-line">
                     <span className="text-[11px] font-mono text-ink-3">
                       {v.capacity}
                     </span>
@@ -292,8 +284,8 @@ export default async function DistrictClubsPage({ params }: Props) {
         )}
 
         {/* Diğer İlçelere Geçiş */}
-        <div className="bg-surface rounded-2xl border border-line p-5 shadow-sm space-y-3">
-          <h2 className="text-xs font-black text-ink uppercase tracking-wider">
+        <div className="bg-surface rounded-xl border border-line p-4 sm:p-5 space-y-3">
+          <h2 className="text-xs font-bold text-ink uppercase tracking-wider">
             {cityName} Diğer Voleybol İlçeleri
           </h2>
           <div className="flex flex-wrap gap-1.5">

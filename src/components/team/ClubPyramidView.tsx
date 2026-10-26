@@ -18,32 +18,30 @@ export const ClubPyramidView: React.FC<ClubPyramidViewProps> = ({ team, pyramid:
   }
 
   return (
-    <div className="mt-4 pt-3.5 border-t border-slate-800/80 space-y-3">
+    <div className="mt-4 pt-3.5 border-t border-line space-y-3">
       {/* Başlık */}
       <div className="flex items-center justify-between flex-wrap gap-2">
-        <div className="flex items-center gap-2 text-xs font-bold text-slate-200">
-          <GitMerge size={14} className="text-emerald-400" />
+        <div className="flex items-center gap-2 text-xs font-bold text-ink">
+          <GitMerge size={14} className="text-primary" />
           <span>Kulüp Altyapı Piramidi ({pyramid.totalTeams} Takım)</span>
         </div>
-        <span className="text-[11px] text-slate-400 font-mono">
+        <span className="text-[11px] text-ink-3 font-mono">
           {pyramid.clubName}
         </span>
       </div>
 
-      {/* Piramit Kademeleri (Senior -> U18 -> U16 -> U14/U12 -> Diğer) */}
-      <div className="space-y-2.5">
+      {/* Piramit Kademeleri */}
+      <div className="space-y-2">
         {pyramid.tiers.map((tier) => (
           <div
             key={tier.key}
-            className="rounded-xl border border-slate-800/80 bg-slate-900/40 p-2.5 space-y-1.5 transition-colors hover:border-slate-700/80"
+            className="rounded-lg border border-line bg-surface-muted p-2.5 space-y-1.5"
           >
             <div className="flex items-center justify-between">
-              <span
-                className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${tier.badgeColor}`}
-              >
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-surface text-ink-2 border border-line">
                 {tier.badge} · {tier.title}
               </span>
-              <span className="text-[10px] text-slate-400 font-mono">
+              <span className="text-[10px] text-ink-3 font-mono tabular-nums">
                 {tier.teams.length} takım
               </span>
             </div>
@@ -53,21 +51,21 @@ export const ClubPyramidView: React.FC<ClubPyramidViewProps> = ({ team, pyramid:
                 ct.isCurrent ? (
                   <div
                     key={ct.slug + ct.city}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold bg-selected-strong text-white shadow-glow-selected"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-bold bg-primary text-primary-fg"
                     title="Şu an bu takımı görüntülüyorsunuz"
                   >
                     <span>{ct.teamName}</span>
                     {ct.ageCategory && (
-                      <span className="bg-black/30 text-white text-[10px] px-1.5 py-0.2 rounded-md font-mono font-bold">
+                      <span className="bg-black/25 text-white text-[10px] px-1.5 py-0.2 rounded font-mono font-bold">
                         {ct.ageCategory}
                       </span>
                     )}
                     {ct.teamBranch && (
-                      <span className="bg-canvas/40 text-white text-[10px] px-1.5 py-0.2 rounded-md font-bold">
+                      <span className="bg-black/25 text-white text-[10px] px-1.5 py-0.2 rounded font-bold">
                         {ct.teamBranch}
                       </span>
                     )}
-                    <span className="text-[10px] bg-canvas/40 px-1 rounded text-white font-medium">
+                    <span className="text-[10px] bg-black/25 px-1 rounded text-white font-medium">
                       Mevcut
                     </span>
                   </div>
@@ -76,22 +74,22 @@ export const ClubPyramidView: React.FC<ClubPyramidViewProps> = ({ team, pyramid:
                     prefetch={false}
                     key={ct.slug + ct.city}
                     href={ct.path}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold glass-panel text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all shadow-xs active:scale-95 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold bg-surface text-ink-2 hover:text-ink hover:bg-surface-raised border border-line transition-colors cursor-pointer"
                     title={`${ct.teamName} detay sayfasını aç`}
                   >
                     <span>{ct.teamName}</span>
                     {ct.ageCategory && (
-                      <span className="bg-sky-500/20 text-sky-300 border border-sky-500/40 text-[10px] px-1.5 py-0.2 rounded-md font-mono font-bold">
+                      <span className="bg-surface-muted text-ink-3 border border-line text-[10px] px-1.5 py-0.2 rounded font-mono font-bold">
                         {ct.ageCategory}
                       </span>
                     )}
                     {ct.teamBranch && (
-                      <span className="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] px-1.5 py-0.2 rounded-md font-bold">
+                      <span className="bg-surface-muted text-ink-2 border border-line text-[10px] px-1.5 py-0.2 rounded font-bold">
                         {ct.teamBranch}
                       </span>
                     )}
                     {ct.city !== team.city && (
-                      <span className="text-[10px] text-slate-400 font-normal">
+                      <span className="text-[10px] text-ink-3 font-normal">
                         ({ct.city})
                       </span>
                     )}
@@ -103,31 +101,31 @@ export const ClubPyramidView: React.FC<ClubPyramidViewProps> = ({ team, pyramid:
         ))}
       </div>
 
-      {/* Kadro Geçişi Yapan Oyuncular (Çifte Kategori) */}
+      {/* Kadro Geçişi Yapan Oyuncular */}
       {pyramid.crossoverPlayers.length > 0 && (
-        <div className="rounded-xl border border-purple-500/20 bg-purple-950/20 p-2.5 space-y-2 mt-2">
-          <div className="flex items-center gap-1.5 text-xs font-bold text-purple-300">
-            <Sparkles size={13} className="text-purple-400" />
+        <div className="rounded-lg border border-line bg-surface-muted p-2.5 space-y-2 mt-2">
+          <div className="flex items-center gap-1.5 text-xs font-bold text-ink">
+            <Sparkles size={13} className="text-primary" />
             <span>Kadro Geçişleri & Çifte Kategori Oyuncuları ({pyramid.crossoverPlayers.length})</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {pyramid.crossoverPlayers.map((p, idx) => (
               <div
                 key={idx}
-                className="flex items-center justify-between text-xs bg-slate-900/70 border border-purple-500/20 rounded-lg p-2"
+                className="flex items-center justify-between text-xs bg-surface border border-line rounded-md p-2"
               >
                 <div className="space-y-0.5 min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <span className="font-semibold text-slate-100 truncate">
+                    <span className="font-semibold text-ink truncate">
                       {p.name}
                     </span>
                     {p.position && (
-                      <span className="text-[10px] font-mono px-1 py-0.2 rounded bg-slate-800 text-purple-300 border border-purple-500/30">
+                      <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-surface-muted text-ink-2 border border-line">
                         {p.position}
                       </span>
                     )}
                   </div>
-                  <div className="text-[10px] text-slate-400 truncate">
+                  <div className="text-[10px] text-ink-3 truncate">
                     {p.teams.join(" ⇄ ")}
                   </div>
                 </div>
@@ -136,7 +134,7 @@ export const ClubPyramidView: React.FC<ClubPyramidViewProps> = ({ team, pyramid:
                     href={p.profileUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-2 text-slate-400 hover:text-purple-300 transition-colors flex-shrink-0"
+                    className="ml-2 text-ink-3 hover:text-primary transition-colors flex-shrink-0"
                     title="Volleybox profili"
                   >
                     <ExternalLink size={13} />

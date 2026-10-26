@@ -7,10 +7,8 @@ import {
   Sparkles,
   MapPin,
   ArrowRight,
-  Share2,
   Check,
   Shield,
-  HelpCircle,
   MessageCircle,
 } from "lucide-react";
 import { calculateVolleyCategory } from "@/utils/categoryCalculator";
@@ -65,20 +63,19 @@ interface LeagueFinderWidgetProps {
   compact?: boolean;
 }
 
-export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
-  compact = false,
-}) => {
+export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = () => {
   const [gender, setGender] = useState<"Kız" | "Erkek">("Kız");
   const [birthYear, setBirthYear] = useState<number>(2014);
   const [district, setDistrict] = useState<string>("Kadıköy");
-  const [city, setCity] = useState<string>("İstanbul");
+  const [city] = useState<string>("İstanbul");
   const [copied, setCopied] = useState<boolean>(false);
 
   const category = useMemo(() => {
     return calculateVolleyCategory(birthYear, gender);
   }, [birthYear, gender]);
 
-  const districtSlug = district.toLowerCase()
+  const districtSlug = district
+    .toLowerCase()
     .replace(/ğ/g, "g")
     .replace(/ü/g, "u")
     .replace(/ş/g, "s")
@@ -100,29 +97,28 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
   };
 
   return (
-    <div className="bg-surface/90 backdrop-blur-md rounded-2xl border border-line shadow-card overflow-hidden">
+    <div className="bg-surface rounded-xl border border-line overflow-hidden">
       {/* Başlık Alanı */}
-      <div className="p-5 sm:p-6 border-b border-line bg-surface-muted">
+      <div className="p-4 sm:p-5 border-b border-line bg-surface-muted">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-surface text-ink-2 text-[11px] font-bold border border-line">
+              <Sparkles className="w-3.5 h-3.5 text-primary" />
               <span>İnteraktif Yaş & Kategori Bulucu</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold hero-heading-gradient tracking-tight">
+            <h2 className="text-lg sm:text-xl font-black text-ink tracking-tight">
               Çocuğum Hangi Voleybol Liginde Oynar?
             </h2>
-            
           </div>
-          <div className="inline-flex items-center gap-1 self-start sm:self-center px-3 py-1.5 rounded-xl bg-canvas border border-line text-xs font-semibold text-ink-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <div className="inline-flex items-center gap-1.5 self-start sm:self-center px-2.5 py-1 rounded-md bg-surface border border-line text-xs font-semibold text-ink-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-done" />
             <span>2026-2027 Sezonu</span>
           </div>
         </div>
       </div>
 
       {/* Kontrol / Seçim Alanı */}
-      <div className="p-5 sm:p-6 space-y-6">
+      <div className="p-4 sm:p-5 space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {/* Cinsiyet */}
           <div className="space-y-1.5">
@@ -133,24 +129,24 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
               <button
                 type="button"
                 onClick={() => setGender("Kız")}
-                className={`py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer ${
+                className={`py-2 px-3 rounded-lg text-xs font-bold border transition-colors cursor-pointer ${
                   gender === "Kız"
-                    ? "bg-rose-500/15 border-rose-500/40 text-rose-300 shadow-sm"
+                    ? "bg-primary text-primary-fg border-primary"
                     : "bg-surface-muted border-line text-ink-2 hover:bg-surface-raised"
                 }`}
               >
-                👧 Kız Sporcu
+                Kız Sporcu
               </button>
               <button
                 type="button"
                 onClick={() => setGender("Erkek")}
-                className={`py-2.5 px-3 rounded-xl text-xs sm:text-sm font-bold border transition-all cursor-pointer ${
+                className={`py-2 px-3 rounded-lg text-xs font-bold border transition-colors cursor-pointer ${
                   gender === "Erkek"
-                    ? "bg-sky-500/15 border-sky-500/40 text-sky-300 shadow-sm"
+                    ? "bg-primary text-primary-fg border-primary"
                     : "bg-surface-muted border-line text-ink-2 hover:bg-surface-raised"
                 }`}
               >
-                👦 Erkek Sporcu
+                Erkek Sporcu
               </button>
             </div>
           </div>
@@ -163,10 +159,10 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
             <select
               value={birthYear}
               onChange={(e) => setBirthYear(Number(e.target.value))}
-              className="w-full bg-surface-muted border border-line rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-ink focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary shadow-sm"
+              className="w-full bg-surface-muted border border-line rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-ink focus:outline-none focus:border-primary"
             >
               {BIRTH_YEARS.map((y) => (
-                <option key={y} value={y} className="bg-canvas text-ink">
+                <option key={y} value={y} className="bg-surface text-ink">
                   {y} Doğumlu ({2026 - y} Yaş)
                 </option>
               ))}
@@ -181,10 +177,10 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
             <select
               value={district}
               onChange={(e) => setDistrict(e.target.value)}
-              className="w-full bg-surface-muted border border-line rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-ink focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary shadow-sm"
+              className="w-full bg-surface-muted border border-line rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold text-ink focus:outline-none focus:border-primary"
             >
               {ISTANBUL_DISTRICTS.map((d) => (
-                <option key={d} value={d} className="bg-canvas text-ink">
+                <option key={d} value={d} className="bg-surface text-ink">
                   {d}
                 </option>
               ))}
@@ -193,21 +189,21 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
         </div>
 
         {/* Sonuç Kartı */}
-        <div className="bg-canvas/80 border border-line rounded-xl p-5 sm:p-6 shadow-sm space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-line pb-4">
+        <div className="bg-surface-muted border border-line rounded-xl p-4 sm:p-5 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-line pb-3.5">
             <div className="space-y-1">
-              <span className="text-xs font-bold text-ink-3 uppercase tracking-wider block">
+              <span className="text-[11px] font-bold text-ink-3 uppercase tracking-wider block">
                 2026 - 2027 Sezonu Uygun Kategori
               </span>
               <div className="flex items-center gap-2.5 flex-wrap">
-                <Trophy className="w-6 h-6 text-amber-400" />
-                <h3 className="text-2xl sm:text-3xl font-bold text-ink">
+                <Trophy className="w-5 h-5 text-primary" />
+                <h3 className="text-xl sm:text-2xl font-black text-ink">
                   {category.name}
                 </h3>
-                <span className="text-xs font-bold px-3 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/25">
+                <span className="text-xs font-bold px-2.5 py-0.5 rounded-md bg-primary/15 text-primary border border-primary/25">
                   {category.ageRange}
                 </span>
-                <span className="text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full bg-surface-muted text-ink-2 border border-line">
+                <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-md bg-surface text-ink-2 border border-line">
                   {category.code}
                 </span>
               </div>
@@ -223,26 +219,26 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
           </div>
 
           {/* 4 Önemli Teknik Kriter */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-            <div className="bg-surface-muted p-3.5 rounded-xl border border-line">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+            <div className="bg-surface p-3 rounded-lg border border-line">
               <span className="text-ink-3 block font-medium">Doğum Yılları</span>
-              <span className="text-ink font-bold mt-1 block text-sm">
+              <span className="text-ink font-bold mt-1 block text-sm font-mono">
                 {category.birthYears}
               </span>
             </div>
-            <div className="bg-surface-muted p-3.5 rounded-xl border border-line">
+            <div className="bg-surface p-3 rounded-lg border border-line">
               <span className="text-ink-3 block font-medium">Resmi File Boyu</span>
-              <span className="text-primary font-bold mt-1 block text-sm">
+              <span className="text-primary font-bold mt-1 block text-sm font-mono">
                 {category.netHeight}
               </span>
             </div>
-            <div className="bg-surface-muted p-3.5 rounded-xl border border-line">
+            <div className="bg-surface p-3 rounded-lg border border-line">
               <span className="text-ink-3 block font-medium">Top Standardı</span>
               <span className="text-ink font-bold mt-1 block truncate text-xs" title={category.ballType}>
                 {category.ballType}
               </span>
             </div>
-            <div className="bg-surface-muted p-3.5 rounded-xl border border-line">
+            <div className="bg-surface p-3 rounded-lg border border-line">
               <span className="text-ink-3 block font-medium">Libero / Format</span>
               <span className="text-ink font-bold mt-1 block truncate text-xs" title={category.liberoRule}>
                 {category.liberoRule}
@@ -251,9 +247,9 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
           </div>
 
           {/* Açıklama & Antrenör Tavsiyesi */}
-          <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3.5 space-y-1.5 text-xs text-amber-200">
-            <div className="flex items-center gap-1.5 font-bold text-amber-300">
-              <Shield className="w-4 h-4 text-amber-400" />
+          <div className="bg-surface border border-line rounded-lg p-3.5 space-y-1 text-xs text-ink-2">
+            <div className="flex items-center gap-1.5 font-bold text-ink">
+              <Shield className="w-4 h-4 text-primary" />
               <span>Lig Statüsü & Antrenör Tavsiyesi:</span>
             </div>
             <p className="leading-relaxed font-normal">
@@ -262,29 +258,29 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
           </div>
 
           {/* Aksiyon Butonları & İlçe Kulüpleri */}
-          <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-xs text-ink-2">
               <MapPin className="w-4 h-4 text-primary shrink-0" />
               <span>
-                <strong>{city} / {district}</strong> ilçesindeki voleybol kulüplerini inceleyebilirsiniz.
+                <strong className="text-ink">{city} / {district}</strong> ilçesindeki voleybol kulüplerini inceleyebilirsiniz.
               </span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-2.5">
+            <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
                 onClick={handleCopyMessage}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-muted hover:bg-surface-raised border border-line text-xs font-bold text-ink transition-colors cursor-pointer active:scale-95"
+                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface hover:bg-surface-raised border border-line text-xs font-bold text-ink transition-colors cursor-pointer"
                 title="Kulübe sormak için hazır veli mesajını panoya kopyala"
               >
                 {copied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                    <span className="text-emerald-400">Mesaj Kopyalandı!</span>
+                    <Check className="w-3.5 h-3.5 text-done" />
+                    <span className="text-done">Mesaj Kopyalandı!</span>
                   </>
                 ) : (
                   <>
-                    <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                    <MessageCircle className="w-3.5 h-3.5 text-done" />
                     <span>Hazır Kulüp Mesajını Al</span>
                   </>
                 )}
@@ -293,7 +289,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
               <Link
                 href={`/kulupler/istanbul/${districtSlug}`}
                 prefetch={false}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-all shadow-sm active:scale-95"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary hover:bg-primary-hover text-primary-fg text-xs font-bold transition-colors"
               >
                 <span>{district} Kulüplerini Gör</span>
                 <ArrowRight className="w-3.5 h-3.5" />

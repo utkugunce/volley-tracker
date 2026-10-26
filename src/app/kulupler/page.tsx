@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getAllClubs, getDistrictSummaries } from "@/utils/districtClubs";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { TeamBadge } from "@/components/TeamBadge";
-import { Trophy, MapPin, Search, ArrowRight, ShieldCheck, ArrowLeft, Users } from "lucide-react";
+import { MapPin, ArrowRight, ShieldCheck, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Voleybol Kulüpleri Rehberi & İlçe Listesi",
@@ -42,15 +42,15 @@ export default function KuluplerIndexPage() {
         ]}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8 flex-1 w-full">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 flex-1 w-full">
         {/* Üst Navigasyon */}
         <div className="flex items-center justify-between">
           <Link
             href="/"
             prefetch={false}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-ink-2 hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink-2 hover:text-ink bg-surface hover:bg-surface-raised border border-line px-3 py-1.5 rounded-lg transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3.5 h-3.5" />
             <span>Ana Sayfaya Dön</span>
           </Link>
           <Link
@@ -64,35 +64,35 @@ export default function KuluplerIndexPage() {
         </div>
 
         {/* Hero Bölümü */}
-        <div className="bg-gradient-to-br from-surface to-surface-muted border border-line rounded-3xl p-6 sm:p-8 shadow-card space-y-4">
+        <div className="bg-surface border border-line rounded-xl p-5 sm:p-6 space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
-                <ShieldCheck className="w-3.5 h-3.5" />
+            <div className="space-y-1.5">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-muted text-ink-2 text-[11px] font-bold border border-line">
+                <ShieldCheck className="w-3.5 h-3.5 text-primary" />
                 <span>Türkiye Altyapı Kulüpleri Dizini</span>
               </div>
-              <h1 className="text-2xl sm:text-4xl font-black text-ink tracking-tight">
+              <h1 className="text-xl sm:text-3xl font-black text-ink tracking-tight">
                 Voleybol Kulüpleri & İlçe Rehberi
               </h1>
-              <p className="text-xs sm:text-sm text-ink-2 max-w-2xl leading-relaxed">
+              <p className="text-xs sm:text-sm text-ink-3 max-w-2xl leading-relaxed">
                 İstanbul, Ankara, İzmir, Bursa ve Türkiye genelinde TVF resmi altyapı liglerinde yarışan kulüplerin profilleri, altyapı takımları ve ilçe bazlı dağılımı.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 shrink-0">
-              <div className="bg-canvas/80 border border-line p-3.5 rounded-2xl text-center">
-                <span className="block text-2xl font-black text-ink font-mono">
+            <div className="grid grid-cols-2 gap-2.5 shrink-0">
+              <div className="bg-surface-muted border border-line p-3 rounded-lg text-center min-w-[92px]">
+                <span className="block text-xl font-black text-ink font-mono tabular-nums">
                   {allClubs.length}
                 </span>
-                <span className="text-[11px] font-bold text-ink-3 uppercase tracking-wider">
+                <span className="text-[10px] font-bold text-ink-3 uppercase tracking-wider">
                   Kulüp
                 </span>
               </div>
-              <div className="bg-canvas/80 border border-line p-3.5 rounded-2xl text-center">
-                <span className="block text-2xl font-black text-primary font-mono">
+              <div className="bg-surface-muted border border-line p-3 rounded-lg text-center min-w-[92px]">
+                <span className="block text-xl font-black text-primary font-mono tabular-nums">
                   81
                 </span>
-                <span className="text-[11px] font-bold text-ink-3 uppercase tracking-wider">
+                <span className="text-[10px] font-bold text-ink-3 uppercase tracking-wider">
                   İl Temsilciliği
                 </span>
               </div>
@@ -101,11 +101,11 @@ export default function KuluplerIndexPage() {
         </div>
 
         {/* İstanbul İlçe Hızlı Filtresi (SEO Odaklı) */}
-        <div className="bg-surface rounded-2xl border border-line p-5 sm:p-6 shadow-sm space-y-3">
-          <div className="flex items-center justify-between border-b border-line pb-3">
+        <div className="bg-surface rounded-xl border border-line p-4 sm:p-5 space-y-3">
+          <div className="flex items-center justify-between border-b border-line pb-2.5">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-primary" />
-              <h2 className="text-sm font-black text-ink uppercase tracking-wider">
+              <h2 className="text-xs sm:text-sm font-bold text-ink uppercase tracking-wider">
                 İstanbul İlçe Voleybol Kulüpleri
               </h2>
             </div>
@@ -117,16 +117,16 @@ export default function KuluplerIndexPage() {
               Tüm İstanbul →
             </Link>
           </div>
-          <div className="flex flex-wrap gap-2 pt-1">
+          <div className="flex flex-wrap gap-1.5 pt-0.5">
             {istanbulDistricts.map((d) => (
               <Link
                 key={d.slug}
                 href={`/kulupler/istanbul/${d.slug}`}
                 prefetch={false}
-                className="px-3 py-1.5 rounded-xl bg-surface-muted hover:bg-surface-raised border border-line text-xs font-semibold text-ink-2 hover:text-ink transition-all inline-flex items-center gap-1.5 active:scale-95"
+                className="px-2.5 py-1.5 rounded-lg bg-surface-muted hover:bg-surface-raised border border-line text-xs font-semibold text-ink-2 hover:text-ink transition-colors inline-flex items-center gap-1.5"
               >
                 <span>{d.name}</span>
-                <span className="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded bg-canvas text-ink-3">
+                <span className="text-[10px] font-mono tabular-nums font-bold text-ink-3">
                   {d.clubCount}
                 </span>
               </Link>
@@ -136,9 +136,9 @@ export default function KuluplerIndexPage() {
 
         {/* Ankara & İzmir İlçe Filtreleri */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-surface rounded-2xl border border-line p-5 shadow-sm space-y-3">
+          <div className="bg-surface rounded-xl border border-line p-4 sm:p-5 space-y-3">
             <div className="flex items-center justify-between border-b border-line pb-2.5">
-              <span className="text-xs font-black text-ink uppercase tracking-wider">
+              <span className="text-xs font-bold text-ink uppercase tracking-wider">
                 Ankara Voleybol İlçeleri
               </span>
               <Link
@@ -163,9 +163,9 @@ export default function KuluplerIndexPage() {
             </div>
           </div>
 
-          <div className="bg-surface rounded-2xl border border-line p-5 shadow-sm space-y-3">
+          <div className="bg-surface rounded-xl border border-line p-4 sm:p-5 space-y-3">
             <div className="flex items-center justify-between border-b border-line pb-2.5">
-              <span className="text-xs font-black text-ink uppercase tracking-wider">
+              <span className="text-xs font-bold text-ink uppercase tracking-wider">
                 İzmir Voleybol İlçeleri
               </span>
               <Link
@@ -192,9 +192,9 @@ export default function KuluplerIndexPage() {
         </div>
 
         {/* Kulüpler Listesi Izgarası */}
-        <div className="space-y-4">
+        <div className="space-y-3.5">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-black text-ink">
+            <h2 className="text-base sm:text-lg font-bold text-ink">
               Öne Çıkan Altyapı Kulüpleri ({allClubs.length})
             </h2>
             <span className="text-xs text-ink-3">
@@ -202,11 +202,11 @@ export default function KuluplerIndexPage() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {allClubs.slice(0, 48).map((club) => (
               <div
                 key={`${club.citySlug}-${club.id}`}
-                className="group bg-surface hover:bg-surface-raised rounded-2xl border border-line hover:border-primary/50 p-4 transition-all shadow-sm hover:shadow-card flex flex-col justify-between space-y-3"
+                className="group bg-surface hover:bg-surface-raised rounded-xl border border-line hover:border-line-strong p-4 transition-colors flex flex-col justify-between space-y-3"
               >
                 <div className="space-y-2">
                   <div className="flex items-start justify-between gap-2">
@@ -234,13 +234,13 @@ export default function KuluplerIndexPage() {
                       {club.categories.slice(0, 3).map((cat, idx) => (
                         <span
                           key={idx}
-                          className="text-[10px] px-2 py-0.5 rounded-md bg-surface-muted text-ink-2 border border-line truncate max-w-[140px]"
+                          className="text-[10px] px-2 py-0.5 rounded bg-surface-muted text-ink-2 border border-line truncate max-w-[140px]"
                         >
                           {cat.replace("TVF ", "").replace("Kızlar", "Kız")}
                         </span>
                       ))}
                       {club.categories.length > 3 && (
-                        <span className="text-[10px] px-1.5 py-0.5 rounded-md bg-surface-muted text-ink-3">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-surface-muted text-ink-3">
                           +{club.categories.length - 3}
                         </span>
                       )}
@@ -249,7 +249,7 @@ export default function KuluplerIndexPage() {
                 </div>
 
                 <div className="pt-2 border-t border-line flex items-center justify-between text-xs">
-                  <span className="text-[11px] font-mono text-ink-3">
+                  <span className="text-[11px] font-mono tabular-nums text-ink-3">
                     {club.teams.length} Takım • {club.matchCount} Maç
                   </span>
                   <Link

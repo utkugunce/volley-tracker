@@ -11,10 +11,6 @@ const H = 96;
 const PAD_X = 16;
 const PAD_Y = 14;
 
-/**
- * Son maçların (en fazla 10) set farkına göre maç puanı (0–3) grafiği.
- * Saf SVG; istemci JS'i gerektirmez. En az 2 maç yoksa hiçbir şey çizmez.
- */
 export const TeamFormChart: React.FC<TeamFormChartProps> = ({ series }) => {
   if (series.length < 2) return null;
 
@@ -27,12 +23,12 @@ export const TeamFormChart: React.FC<TeamFormChartProps> = ({ series }) => {
 
   return (
     <section aria-labelledby="team-form-title" className="space-y-3">
-      <h2 id="team-form-title" className="text-lg font-bold text-white flex items-center gap-2">
-        <Activity size={18} className="text-primary" />
+      <h2 id="team-form-title" className="text-sm sm:text-base font-bold text-ink flex items-center gap-2">
+        <Activity size={16} className="text-primary" />
         <span>Form Grafiği</span>
-        <span className="text-xs font-normal text-slate-400">(son {series.length} maç)</span>
+        <span className="text-xs font-normal text-ink-3">(son {series.length} maç)</span>
       </h2>
-      <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-4 shadow-md">
+      <div className="bg-surface border border-line rounded-xl p-4">
         <svg
           viewBox={`0 0 ${W} ${H}`}
           className="w-full h-auto max-h-40"
@@ -41,20 +37,20 @@ export const TeamFormChart: React.FC<TeamFormChartProps> = ({ series }) => {
         >
           {[0, 1, 2, 3].map((v) => (
             <g key={v}>
-              <line x1={PAD_X} x2={W - PAD_X} y1={yFor(v)} y2={yFor(v)} stroke="#1B3550" strokeWidth="1" strokeDasharray="3 4" />
-              <text x={2} y={yFor(v) + 3} fontSize="8" fill="#94a3b8">
+              <line x1={PAD_X} x2={W - PAD_X} y1={yFor(v)} y2={yFor(v)} stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="3 4" />
+              <text x={2} y={yFor(v) + 3} fontSize="8" fill="#8B949E">
                 {v}
               </text>
             </g>
           ))}
-          <path d={path} fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeLinejoin="round" />
+          <path d={path} fill="none" stroke="#8B949E" strokeWidth="1.5" strokeLinejoin="round" />
           {coords.map(({ x, y, p }) => (
-            <circle key={p.id} cx={x} cy={y} r="4.5" fill={p.result === "W" ? "#9BE15D" : "#f87171"}>
+            <circle key={p.id} cx={x} cy={y} r="4.5" fill={p.result === "W" ? "#10B981" : "#F87171"}>
               <title>{`${p.date} • ${p.opponent} • ${p.score} (${p.result === "W" ? "G" : "M"}, ${p.points} puan)`}</title>
             </circle>
           ))}
         </svg>
-        <p className="mt-2 text-[11px] text-slate-400">
+        <p className="mt-2 text-[11px] text-ink-3">
           Puan: 3 = farklı galibiyet (3-0, 3-1), 2 = 3-2 galibiyet, 1 = 2-3 mağlubiyet, 0 = diğer mağlubiyetler. Eski maç solda.
         </p>
       </div>

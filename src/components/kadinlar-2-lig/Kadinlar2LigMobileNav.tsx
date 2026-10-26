@@ -65,7 +65,7 @@ export const Kadinlar2LigMobileNav: React.FC<Kadinlar2LigMobileNavProps> = ({
   return (
     <nav
       aria-label="Mobil Alt Menü"
-      className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-panel border-t border-line px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] shadow-[0_-6px_24px_rgba(0,0,0,0.5)] transition-all duration-200"
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-line px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))]"
     >
       <div className="flex items-center justify-between max-w-2xl mx-auto w-full gap-0.5">
         {navItems.map((item) => {
@@ -76,21 +76,21 @@ export const Kadinlar2LigMobileNav: React.FC<Kadinlar2LigMobileNavProps> = ({
             <button
               key={item.id}
               onClick={() => onSelectTab(item.id)}
-              className={`relative flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all duration-150 cursor-pointer ${
+              className={`relative flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-1 rounded-lg transition-colors cursor-pointer ${
                 isActive
-                  ? "text-primary font-bold scale-105"
-                  : "text-slate-400 hover:text-slate-200 font-medium"
+                  ? "text-ink font-bold"
+                  : "text-ink-3 hover:text-ink-2 font-medium"
               }`}
             >
               <div className="relative">
                 <Icon
-                  size={19}
+                  size={18}
                   className={`transition-colors ${
-                    isActive ? "text-primary fill-primary/20" : "text-slate-400"
+                    isActive ? "text-primary" : "text-ink-3"
                   }`}
                 />
                 {item.badge !== undefined && item.badge > 0 && (
-                  <span className="absolute -top-1.5 -right-2 min-w-[15px] h-3.5 px-0.5 text-primary text-[10px] font-display font-bold flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-2.5 min-w-[14px] h-3.5 px-0.5 text-primary text-[9px] font-mono tabular-nums font-bold flex items-center justify-center">
                     {item.badge > 99 ? "99+" : item.badge}
                   </span>
                 )}
@@ -99,7 +99,7 @@ export const Kadinlar2LigMobileNav: React.FC<Kadinlar2LigMobileNavProps> = ({
                 {item.label}
               </span>
               {isActive && (
-                <span className="absolute bottom-0 w-6 h-0.5 rounded-full bg-primary shadow-glow-primary" />
+                <span className="absolute top-0 w-6 h-0.5 rounded-full bg-primary" />
               )}
             </button>
           );
