@@ -313,25 +313,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411675",
-        "url": "https://women.volleybox.net/tr/diyarbakr-buyuksehir-belediyespor-u18-dicle-universitesi-spor-kulubu-u18-c411675",
-        "host_name": "Diyarbakır Büyükşehir Belediyespor U18",
-        "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-25",
-        "vb_time": "15:00",
-        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-25",
-          "vb_time": "15:00",
-          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -380,5 +373,7 @@
         }
       }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 5,
+  "volleybox_sync_updated_at": "2026-10-26T14:37:52.017807"
 }

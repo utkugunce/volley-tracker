@@ -476,18 +476,18 @@
         "guest_name": "Kütahya Demirspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-01",
-        "vb_time": "11:00",
+        "vb_date": "2026-10-30",
+        "vb_time": "19:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "11:00",
+          "vb_date": "2026-10-30",
+          "vb_time": "19:00",
           "vb_hall": "Kütahya Yeni Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-30 / VB: 2026-11-01) | Saat Değişti (TVF: 19:00 / VB: 11:00)"
+          "details": null
         }
       }
     },
@@ -558,18 +558,18 @@
         "guest_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-30",
-        "vb_time": "19:00",
+        "vb_date": "2026-11-01",
+        "vb_time": "13:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-30",
-          "vb_time": "19:00",
+          "vb_date": "2026-11-01",
+          "vb_time": "13:00",
           "vb_hall": "Kütahya Yeni Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-01 / VB: 2026-10-30) | Saat Değişti (TVF: 13:00 / VB: 19:00)"
+          "details": null
         }
       }
     },
@@ -768,17 +768,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-01",
-        "vb_time": "12:30",
+        "vb_time": "10:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-01",
-          "vb_time": "12:30",
+          "vb_time": "10:00",
           "vb_hall": "Kütahya Yeni Spor Salonu",
-          "details": "Saat Değişti (TVF: 10:00 / VB: 12:30)"
+          "details": null
         }
       }
     },
@@ -809,21 +809,21 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-01",
-        "vb_time": "14:00",
+        "vb_time": "14:30",
         "vb_hall": "Kütahya Yeni Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-01",
-          "vb_time": "14:00",
+          "vb_time": "14:30",
           "vb_hall": "Kütahya Yeni Spor Salonu",
-          "details": "Saat Değişti (TVF: 14:30 / VB: 14:00)"
+          "details": null
         }
       }
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-26T13:32:01.697735"
+  "volleybox_sync_updated_at": "2026-10-26T14:38:03.365341"
 }

@@ -504,18 +504,18 @@
         "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-10-28",
-        "vb_time": "19:00",
+        "vb_date": "2026-11-01",
+        "vb_time": "14:00",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-10-28",
-          "vb_time": "19:00",
+          "vb_date": "2026-11-01",
+          "vb_time": "14:00",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-01 / VB: 2026-10-28) | Saat Değişti (TVF: 14:00 / VB: 19:00)"
+          "details": null
         }
       }
     },
@@ -545,18 +545,18 @@
         "guest_name": "Yalova Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-06",
+        "vb_date": "2026-11-05",
         "vb_time": "18:30",
-        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": true,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": true,
-          "vb_date": "2026-11-06",
+          "vb_date": "2026-11-05",
           "vb_time": "18:30",
-          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-05 / VB: 2026-11-06) | Salon Değişti (TVF: Ş.O.A.Spor Salonu / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": "Salon Değişti (TVF: Ş.O.A.Spor Salonu / VB: Şehit Osman Altınkuyu Spor Salonu)"
         }
       }
     },
@@ -586,18 +586,18 @@
         "guest_name": "Koru Akademi Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-06",
+        "vb_date": "2026-11-05",
         "vb_time": "20:30",
-        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+        "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": true,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": true,
-          "vb_date": "2026-11-06",
+          "vb_date": "2026-11-05",
           "vb_time": "20:30",
-          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-05 / VB: 2026-11-06) | Salon Değişti (TVF: Ş.O.A.Spor Salonu / VB: Yalova 90. Yıl Kapalı Spor Salonu)"
+          "vb_hall": "Şehit Osman Altınkuyu Spor Salonu",
+          "details": "Salon Değişti (TVF: Ş.O.A.Spor Salonu / VB: Şehit Osman Altınkuyu Spor Salonu)"
         }
       }
     },
@@ -1013,5 +1013,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-26T13:32:03.224898"
+  "volleybox_sync_updated_at": "2026-10-26T14:38:06.290453"
 }

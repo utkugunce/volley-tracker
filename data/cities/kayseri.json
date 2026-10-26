@@ -2041,18 +2041,18 @@
         "guest_name": "İzzet Öksüzkaya Orta Okulu Gençlik ve Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-11",
-        "vb_time": "19:30",
+        "vb_date": "2026-11-08",
+        "vb_time": "15:00",
         "vb_hall": "Gevher Nesibe Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-11",
-          "vb_time": "19:30",
+          "vb_date": "2026-11-08",
+          "vb_time": "15:00",
           "vb_hall": "Gevher Nesibe Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-08 / VB: 2026-11-11) | Saat Değişti (TVF: 15:00 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -2434,5 +2434,7 @@
         }
       }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 48,
+  "volleybox_sync_updated_at": "2026-10-26T14:38:00.658727"
 }
