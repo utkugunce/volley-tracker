@@ -1,131 +1,134 @@
-name: TVF Scraper Sync
-
-on:
-  workflow_dispatch:
-
-# Üst üste binen çalışmalar aynı anda commit/push yapmasın
-concurrency:
-  group: scrape-sync
-  cancel-in-progress: true
-
-permissions:
-  contents: write
-  issues: write
-
-jobs:
-  scrape-and-sync:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-
-      - name: Set up Python
-        uses: actions/setup-python@v7
-        with:
-          python-version: '3.11'
-          cache: 'pip'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install httpx beautifulsoup4 curl_cffi
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: '22'
-          cache: npm
-
-      - name: Install Node dependencies
-        run: npm ci
-
-      - name: Run TVF 81 provinces scraper
-        run: |
-          python scripts/scrape_all_provinces.py --force
-
-      - name: Run TVF Kadinlar 2. Lig scraper
-        run: |
-          python scripts/scrape_kadinlar_2_lig.py
-
-      - name: Sync Volleybox matches & scores
-        run: |
-          python scripts/sync_volleybox_matches.py
-
-      - name: Check standings team name conflicts
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          python scripts/check_standings_conflicts.py
-
-      - name: Validate generated data files
-        run: |
-          python scripts/validate_data_files.py
-
-      # data/cities.json'dan türetilen edge 404 allowlist'i (src/utils/citySlugs.ts).
-      # Yeni bir il eklenirse bu dosya da aynı commit'te güncellenmeli; aksi halde
-      # geçerli il adresleri proxy.ts'te 404 yer. CI'daki --check adımı bunu doğrular.
-      - name: Regenerate city slug allowlist
-        run: |
-          python scripts/generate_city_slugs.py
-
-      - name: Check data freshness
-        run: |
-          python scripts/check_data_freshness.py
-
-      - name: Import synchronized data into Supabase
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: npm run supabase:import
-
-      # Yalnızca zaman damgası (updated_at vb.) değişen dosyaları geri al: içerik aynıysa commit'e girmez.
-      - name: Skip timestamp-only data changes
-        continue-on-error: true
-        run: |
-          python scripts/skip_timestamp_only_changes.py --heartbeat-hours 12
-
-      - name: Commit and push changes
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATA_COMMIT_MIN_INTERVAL_HOURS: ${{ vars.DATA_COMMIT_MIN_INTERVAL_HOURS || '6' }}
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          # Yalnızca data/ içeriği gerçekten değiştiyse commit at (izlenen dosyada değişiklik veya yeni dosya).
-          if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard -- data/)" ]; then
-            echo 'No data changes to commit'
-            exit 0
-          fi
-          git add data/ src/utils/citySlugs.ts
-          if git diff --staged --quiet; then
-            echo 'No data changes to commit'
-          else
-            git commit -m 'chore(data): manuel TVF fikstur ve 2. lig senkronizasyonu [skip ci]'
-            git push
-          fi
-
-      - name: Create sync failure alert
-        if: failure()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          TITLE="⚠️ TVF sync failed $(date -u +'%Y-%m-%d %H:%M UTC')"
-          BODY=$(cat <<EOF
-          TVF senkronizasyonu başarısız oldu.
-
-          - Workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          - Commit: ${{ github.sha }}
-          - Tarih: $(date -u +'%Y-%m-%d %H:%M UTC')
-
-          Lütfen ilgili logları inceleyin ve scrape/validation adımlarını doğrulayın.
-          EOF
-          )
-          EXISTING=$(gh issue list --state open --label automation \
-            --search "TVF sync failed in:title" --json number,title \
-            --jq '[.[] | select(.title | contains("TVF sync failed"))][0].number // empty')
-          if [ -n "$EXISTING" ]; then
-            echo "Açık issue #$EXISTING zaten var; yeni issue açılmıyor, yorum ekleniyor."
-            gh issue comment "$EXISTING" --body "$BODY"
-          else
-            gh issue create --title "$TITLE" --body "$BODY" --label automation
-          fi
+name: TVF Scraper Sync
+
+on:
+  schedule:
+    # Her gün saat 12:00 TSİ (09:00 UTC)
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+# Üst üste binen çalışmalar aynı anda commit/push yapmasın
+concurrency:
+  group: scrape-sync
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scrape-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install httpx beautifulsoup4 curl_cffi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Run TVF 81 provinces scraper
+        run: |
+          python scripts/scrape_all_provinces.py --force
+
+      - name: Run TVF Kadinlar 2. Lig scraper
+        run: |
+          python scripts/scrape_kadinlar_2_lig.py
+
+      - name: Sync Volleybox matches & scores
+        run: |
+          python scripts/sync_volleybox_matches.py
+
+      - name: Check standings team name conflicts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/check_standings_conflicts.py
+
+      - name: Validate generated data files
+        run: |
+          python scripts/validate_data_files.py
+
+      # data/cities.json'dan türetilen edge 404 allowlist'i (src/utils/citySlugs.ts).
+      # Yeni bir il eklenirse bu dosya da aynı commit'te güncellenmeli; aksi halde
+      # geçerli il adresleri proxy.ts'te 404 yer. CI'daki --check adımı bunu doğrular.
+      - name: Regenerate city slug allowlist
+        run: |
+          python scripts/generate_city_slugs.py
+
+      - name: Check data freshness
+        run: |
+          python scripts/check_data_freshness.py
+
+      - name: Import synchronized data into Supabase
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run supabase:import
+
+      # Yalnızca zaman damgası (updated_at vb.) değişen dosyaları geri al: içerik aynıysa commit'e girmez.
+      - name: Skip timestamp-only data changes
+        continue-on-error: true
+        run: |
+          python scripts/skip_timestamp_only_changes.py --heartbeat-hours 12
+
+      - name: Commit and push changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DATA_COMMIT_MIN_INTERVAL_HOURS: ${{ vars.DATA_COMMIT_MIN_INTERVAL_HOURS || '6' }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Yalnızca data/ içeriği gerçekten değiştiyse commit at (izlenen dosyada değişiklik veya yeni dosya).
+          if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard -- data/)" ]; then
+            echo 'No data changes to commit'
+            exit 0
+          fi
+          git add data/ src/utils/citySlugs.ts
+          if git diff --staged --quiet; then
+            echo 'No data changes to commit'
+          else
+            git commit -m 'chore(data): manuel TVF fikstur ve 2. lig senkronizasyonu [skip ci]'
+            git push
+          fi
+
+      - name: Create sync failure alert
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="⚠️ TVF sync failed $(date -u +'%Y-%m-%d %H:%M UTC')"
+          BODY=$(cat <<EOF
+          TVF senkronizasyonu başarısız oldu.
+
+          - Workflow: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          - Commit: ${{ github.sha }}
+          - Tarih: $(date -u +'%Y-%m-%d %H:%M UTC')
+
+          Lütfen ilgili logları inceleyin ve scrape/validation adımlarını doğrulayın.
+          EOF
+          )
+          EXISTING=$(gh issue list --state open --label automation \
+            --search "TVF sync failed in:title" --json number,title \
+            --jq '[.[] | select(.title | contains("TVF sync failed"))][0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            echo "Açık issue #$EXISTING zaten var; yeni issue açılmıyor, yorum ekleniyor."
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --label automation
+          fi
