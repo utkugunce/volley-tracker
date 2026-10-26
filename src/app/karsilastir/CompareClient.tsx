@@ -7,11 +7,8 @@ import { useRouter } from "next/navigation";
 import {
   Swords,
   ChevronLeft,
-  Trophy,
   ArrowRightLeft,
   Calendar,
-  MapPin,
-  CheckCircle2,
   ExternalLink,
   Share2,
   Check,
@@ -21,6 +18,7 @@ import {
 } from "lucide-react";
 import { TeamListItem, HeadToHeadComparison } from "@/utils/teamData";
 import { FormBadge } from "@/components/FormBadge";
+import { VolleyMatchRow } from "@/components/match/VolleyMatchRow";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import type { CompareStatsData } from "@/utils/compareStats";
 import { CompareStatsTable } from "@/components/stats/CompareStatsTable";
@@ -32,7 +30,6 @@ interface CompareClientProps {
   initialSlug1?: string;
   initialSlug2?: string;
   comparison?: HeadToHeadComparison | null;
-  /** Sunucuda hesaplanan yan yana istatistikler (yoksa bölüm gizlenir). */
   statsData?: CompareStatsData | null;
 }
 
@@ -71,7 +68,6 @@ export const CompareClient: React.FC<CompareClientProps> = ({
     }
   };
 
-  // Filtrelenmiş takım listeleri
   const filteredTeams1 = useMemo(() => {
     if (!search1.trim()) return teamsList;
     const q = trLower(search1).trim();
@@ -95,16 +91,19 @@ export const CompareClient: React.FC<CompareClientProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans pb-16">
+    <div className="min-h-screen bg-canvas text-ink font-sans pb-16">
       {/* 1. ÜST NAVİGASYON */}
-      <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link prefetch={false}
+      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line/70">
+        <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between">
+          <Link
+            prefetch={false}
             href="/"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink-2 hover:text-white bg-surface-muted/70 hover:bg-surface-muted px-3 py-1.5 rounded-lg border border-line/70 transition-colors"
           >
-            <ChevronLeft size={16} />
-            <span><T k="common.home" /></span>
+            <ChevronLeft size={15} />
+            <span>
+              <T k="common.home" />
+            </span>
           </Link>
 
           <div className="flex items-center gap-2">
@@ -112,7 +111,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
             {slug1 && slug2 && (
               <button
                 onClick={handleShare}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink hover:text-white bg-surface-muted/70 hover:bg-surface-muted border border-line/70 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
                 title="Karşılaştırma linkini kopyala"
               >
                 {copied ? <Check size={13} className="text-emerald-400" /> : <Share2 size={13} />}
@@ -125,29 +124,29 @@ export const CompareClient: React.FC<CompareClientProps> = ({
 
       <main className="max-w-6xl mx-auto px-4 pt-6 space-y-6">
         {/* 2. SAYFA BAŞLIĞI VE TAKIM SEÇİCİ BÖLÜMÜ */}
-        <section className="bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xl">
+        <section className="bg-surface border border-line/70 rounded-2xl p-5 sm:p-6">
           <div className="flex items-center gap-2.5 mb-2">
-            <div className="p-2 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
-              <Swords size={20} />
+            <div className="p-2 rounded-xl bg-primary/15 text-primary border border-primary/30">
+              <Swords size={19} />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 İki Takım Karşılaştırma (Head-to-Head)
               </h1>
             </div>
           </div>
 
           {/* Hızlı Eşleşmeler */}
-          <div className="mt-4 pt-4 border-t border-slate-800/80 flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-slate-400 font-medium">Popüler Karşılaştırmalar:</span>
+          <div className="mt-4 pt-4 border-t border-line/60 flex flex-wrap items-center gap-2 text-xs">
+            <span className="text-ink-3 font-medium">Popüler Karşılaştırmalar:</span>
             {quickMatchups.map((m, idx) => (
               <button
                 key={idx}
                 onClick={() => handleApply(m.slug1, m.slug2)}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-muted/70 hover:bg-surface-muted text-ink-2 hover:text-white border border-line/60 transition-colors cursor-pointer"
               >
                 <span>{m.name1}</span>
-                <span className="text-amber-400 font-bold">vs</span>
+                <span className="text-primary font-semibold">vs</span>
                 <span>{m.name2}</span>
               </button>
             ))}
@@ -157,7 +156,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
           <div className="mt-5 grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-3">
             {/* 1. Takım Seçimi */}
             <div className="space-y-1.5">
-              <label htmlFor="team1-select" className="block text-xs font-bold text-slate-300">
+              <label htmlFor="team1-select" className="block text-xs font-semibold text-ink-2">
                 1. Takım
               </label>
               <input
@@ -166,14 +165,14 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 onChange={(e) => setSearch1(e.target.value)}
                 placeholder="1. takımı veya ili filtrele..."
                 aria-label="Birinci takım listesini filtrele"
-                className="w-full bg-slate-900/90 border border-slate-700/80 text-white placeholder:text-slate-500 rounded-xl px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full bg-surface-muted/80 border border-line/70 text-white placeholder:text-ink-3 rounded-xl px-3 py-1.5 text-xs focus:outline-none focus:border-primary/50 transition-colors"
               />
               <select
                 id="team1-select"
                 value={slug1}
                 onChange={(e) => handleApply(e.target.value, slug2)}
                 aria-label="Birinci takımı seçin"
-                className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full bg-surface-muted border border-line/70 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-none focus:border-primary/50 transition-colors"
               >
                 <option value="">Takım seçin... ({filteredTeams1.length})</option>
                 {filteredTeams1.map((t) => (
@@ -191,7 +190,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 disabled={!slug1 && !slug2}
                 aria-label="Takımların yerini değiştir"
                 title="Takımları yer değiştir"
-                className="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 shadow-sm transition-all cursor-pointer disabled:opacity-40"
+                className="p-2.5 rounded-xl bg-surface-muted hover:bg-panel text-ink-2 hover:text-white border border-line/70 transition-colors cursor-pointer disabled:opacity-40"
               >
                 <ArrowRightLeft size={16} />
               </button>
@@ -199,7 +198,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
 
             {/* 2. Takım Seçimi */}
             <div className="space-y-1.5">
-              <label htmlFor="team2-select" className="block text-xs font-bold text-slate-300">
+              <label htmlFor="team2-select" className="block text-xs font-semibold text-ink-2">
                 2. Takım (Rakip)
               </label>
               <input
@@ -208,14 +207,14 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 onChange={(e) => setSearch2(e.target.value)}
                 placeholder="2. takımı veya ili filtrele..."
                 aria-label="İkinci takım listesini filtrele"
-                className="w-full bg-slate-900/90 border border-slate-700/80 text-white placeholder:text-slate-500 rounded-xl px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full bg-surface-muted/80 border border-line/70 text-white placeholder:text-ink-3 rounded-xl px-3 py-1.5 text-xs focus:outline-none focus:border-primary/50 transition-colors"
               />
               <select
                 id="team2-select"
                 value={slug2}
                 onChange={(e) => handleApply(slug1, e.target.value)}
                 aria-label="İkinci takımı seçin"
-                className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                className="w-full bg-surface-muted border border-line/70 text-white rounded-xl px-3 py-2 text-sm font-medium focus:outline-none focus:border-primary/50 transition-colors"
               >
                 <option value="">Rakip takım seçin... ({filteredTeams2.length})</option>
                 {filteredTeams2.map((t) => (
@@ -232,7 +231,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
         {comparison ? (
           <>
             {/* Karşılaşma Kartı Banner */}
-            <section className="bg-gradient-to-r from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <section className="bg-surface border border-line/70 rounded-2xl p-6">
               <div className="grid grid-cols-1 sm:grid-cols-[1fr,auto,1fr] items-center gap-6 text-center">
                 {/* 1. Takım */}
                 <div className="flex flex-col items-center">
@@ -243,31 +242,32 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       className="!w-20 !h-20 sm:!w-24 sm:!h-24 text-2xl sm:text-3xl"
                     />
                   </div>
-                  <Link prefetch={false}
+                  <Link
+                    prefetch={false}
                     href={`/takim/${comparison.team1.slug}`}
-                    className="text-lg sm:text-xl font-black text-white hover:text-ink transition-colors flex items-center gap-1.5 justify-center"
+                    className="text-lg sm:text-xl font-bold text-white hover:text-primary transition-colors flex items-center gap-1.5 justify-center"
                   >
                     <span>{comparison.team1.teamName}</span>
-                    <ExternalLink size={14} className="text-slate-400" />
+                    <ExternalLink size={14} className="text-ink-3" />
                   </Link>
-                  <span className="text-xs text-slate-400 mt-0.5">{comparison.team1.city}</span>
+                  <span className="text-xs text-ink-3 mt-0.5">{comparison.team1.city}</span>
                   <div className="mt-2.5 flex flex-col items-center gap-1">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Son Form</span>
+                    <span className="text-[10px] uppercase font-semibold tracking-wider text-ink-3">Son Form</span>
                     <FormBadge matches={comparison.team1.form} />
                   </div>
                 </div>
 
                 {/* VS Rozeti & Özet Skor */}
                 <div className="flex flex-col items-center justify-center px-4 py-2">
-                  <div className="w-12 h-12 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-black text-sm mb-2 shadow-inner">
+                  <div className="w-11 h-11 rounded-xl bg-surface-muted border border-line/70 flex items-center justify-center text-ink-2 font-bold text-xs font-mono mb-2">
                     VS
                   </div>
-                  <div className="text-2xl sm:text-3xl font-black font-mono tracking-tight text-white">
-                    <span className="text-blue-400">{comparison.summary.team1Wins}</span>
-                    <span className="text-slate-500 mx-2">-</span>
+                  <div className="text-2xl sm:text-3xl font-bold font-mono tabular-nums tracking-tight text-white">
+                    <span className="text-primary">{comparison.summary.team1Wins}</span>
+                    <span className="text-ink-3 mx-2">-</span>
                     <span className="text-selected-text">{comparison.summary.team2Wins}</span>
                   </div>
-                  <span className="text-[11px] font-semibold text-slate-400 mt-1 uppercase tracking-wider">
+                  <span className="text-[11px] font-semibold text-ink-3 mt-1 uppercase tracking-wider">
                     {comparison.summary.totalMatches} Maç
                   </span>
                 </div>
@@ -281,30 +281,31 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                       className="!w-20 !h-20 sm:!w-24 sm:!h-24 text-2xl sm:text-3xl"
                     />
                   </div>
-                  <Link prefetch={false}
+                  <Link
+                    prefetch={false}
                     href={`/takim/${comparison.team2.slug}`}
-                    className="text-lg sm:text-xl font-black text-white hover:text-ink transition-colors flex items-center gap-1.5 justify-center"
+                    className="text-lg sm:text-xl font-bold text-white hover:text-primary transition-colors flex items-center gap-1.5 justify-center"
                   >
                     <span>{comparison.team2.teamName}</span>
-                    <ExternalLink size={14} className="text-slate-400" />
+                    <ExternalLink size={14} className="text-ink-3" />
                   </Link>
-                  <span className="text-xs text-slate-400 mt-0.5">{comparison.team2.city}</span>
+                  <span className="text-xs text-ink-3 mt-0.5">{comparison.team2.city}</span>
                   <div className="mt-2.5 flex flex-col items-center gap-1">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Son Form</span>
+                    <span className="text-[10px] uppercase font-semibold tracking-wider text-ink-3">Son Form</span>
                     <FormBadge matches={comparison.team2.form} />
                   </div>
                 </div>
               </div>
 
               {/* Set Oranı Çubuğu */}
-              <div className="mt-6 pt-4 border-t border-slate-800/80 max-w-md mx-auto">
-                <div className="flex justify-between text-xs font-bold text-slate-400 mb-1.5">
+              <div className="mt-6 pt-4 border-t border-line/60 max-w-md mx-auto">
+                <div className="flex justify-between text-xs font-semibold text-ink-3 mb-1.5 font-mono tabular-nums">
                   <span>{comparison.summary.team1SetsWon} Kazanılan Set</span>
-                  <span className="text-slate-500">Toplam Set</span>
+                  <span className="font-sans">Toplam Set</span>
                   <span>{comparison.summary.team2SetsWon} Kazanılan Set</span>
                 </div>
                 {comparison.summary.team1SetsWon + comparison.summary.team2SetsWon > 0 ? (
-                  <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700">
+                  <div className="w-full h-2 bg-surface-muted rounded-full overflow-hidden flex gap-0.5">
                     <div
                       style={{
                         width: `${
@@ -313,7 +314,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                           100
                         }%`,
                       }}
-                      className="bg-blue-500 transition-all"
+                      className="bg-primary transition-all"
                     />
                     <div
                       style={{
@@ -327,67 +328,70 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                     />
                   </div>
                 ) : (
-                  <div className="w-full h-2 bg-slate-800 rounded-full" />
+                  <div className="w-full h-2 bg-surface-muted rounded-full" />
                 )}
               </div>
             </section>
 
             {/* GÜÇ DENGESİ & RADAR İSTATİSTİK KARŞILAŞTIRMASI */}
-            <section className="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-5 sm:p-6 shadow-xl space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-800/80 pb-3 gap-2">
+            <section className="bg-surface border border-line/70 rounded-2xl p-5 sm:p-6 space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-line/60 pb-3 gap-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-surface-raised border border-line flex items-center justify-center text-ink-2">
+                  <div className="w-7 h-7 rounded-lg bg-surface-muted border border-line/70 flex items-center justify-center text-primary">
                     <Activity size={16} />
                   </div>
                   <div>
-                    <h2 className="text-sm font-bold text-white uppercase tracking-wider">
+                    <h2 className="text-sm font-semibold text-white uppercase tracking-wider">
                       Güç Dengesi & Performans Radarı
                     </h2>
-                    <p className="text-[11px] text-slate-400">Sofascore & Instat Tarzı 5 Boyutlu Güç Karşılaştırması</p>
+                    <p className="text-[11px] text-ink-3">5 Boyutlu Güç Karşılaştırması</p>
                   </div>
                 </div>
-                {/* Lejant */}
                 <div className="flex items-center gap-3 text-xs">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-primary"></span>
-                    <span className="font-bold text-primary truncate max-w-[120px]">{comparison.team1.teamName}</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                    <span className="font-semibold text-primary truncate max-w-[120px]">{comparison.team1.teamName}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-selected"></span>
-                    <span className="font-bold text-selected-text truncate max-w-[120px]">{comparison.team2.teamName}</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-selected" />
+                    <span className="font-semibold text-selected-text truncate max-w-[120px]">{comparison.team2.teamName}</span>
                   </div>
                 </div>
               </div>
 
-              {/* 5 Boyutlu Metriklerin Hesaplanması */}
               {(() => {
-                // 1. Galibiyet Oranı
-                const t1WinRate = comparison.team1.stats.played > 0
-                  ? Math.round((comparison.team1.stats.wins / comparison.team1.stats.played) * 100)
-                  : 50;
-                const t2WinRate = comparison.team2.stats.played > 0
-                  ? Math.round((comparison.team2.stats.wins / comparison.team2.stats.played) * 100)
-                  : 50;
+                const t1WinRate =
+                  comparison.team1.stats.played > 0
+                    ? Math.round((comparison.team1.stats.wins / comparison.team1.stats.played) * 100)
+                    : 50;
+                const t2WinRate =
+                  comparison.team2.stats.played > 0
+                    ? Math.round((comparison.team2.stats.wins / comparison.team2.stats.played) * 100)
+                    : 50;
 
-                // 2. Form Gücü (Son 5 Maç)
                 const t1FormWins = comparison.team1.form.filter((f) => f.result === "W").length;
                 const t1FormRate = Math.round((t1FormWins / (comparison.team1.form.length || 1)) * 100);
                 const t2FormWins = comparison.team2.form.filter((f) => f.result === "W").length;
                 const t2FormRate = Math.round((t2FormWins / (comparison.team2.form.length || 1)) * 100);
 
-                // 3. Set Verimliliği (H2H + Sezon)
-                const t1SetSum = (comparison.summary.team1SetsWon + 1) / (comparison.summary.team1SetsWon + comparison.summary.team2SetsWon + 2);
+                const t1SetSum =
+                  (comparison.summary.team1SetsWon + 1) /
+                  (comparison.summary.team1SetsWon + comparison.summary.team2SetsWon + 2);
                 const t1SetRate = Math.round(t1SetSum * 100);
                 const t2SetRate = 100 - t1SetRate;
 
-                // 4. Doğrudan Eşleşme (H2H Üstünlüğü)
                 const h2hTotal = comparison.summary.team1Wins + comparison.summary.team2Wins;
                 const t1H2hRate = h2hTotal > 0 ? Math.round((comparison.summary.team1Wins / h2hTotal) * 100) : 50;
                 const t2H2hRate = h2hTotal > 0 ? 100 - t1H2hRate : 50;
 
-                // 5. Puan Kapasitesi
-                const t1PtsRate = Math.min(100, Math.round(((comparison.team1.stats.wins * 3) / ((comparison.team1.stats.played || 1) * 3)) * 100));
-                const t2PtsRate = Math.min(100, Math.round(((comparison.team2.stats.wins * 3) / ((comparison.team2.stats.played || 1) * 3)) * 100));
+                const t1PtsRate = Math.min(
+                  100,
+                  Math.round(((comparison.team1.stats.wins * 3) / ((comparison.team1.stats.played || 1) * 3)) * 100)
+                );
+                const t2PtsRate = Math.min(
+                  100,
+                  Math.round(((comparison.team2.stats.wins * 3) / ((comparison.team2.stats.played || 1) * 3)) * 100)
+                );
 
                 const t1Metrics = [t1WinRate, t1FormRate, t1SetRate, t1H2hRate, t1PtsRate];
                 const t2Metrics = [t2WinRate, t2FormRate, t2SetRate, t2H2hRate, t2PtsRate];
@@ -395,7 +399,6 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 const t1Score = Math.round(t1Metrics.reduce((a, b) => a + b, 0) / 5);
                 const t2Score = Math.round(t2Metrics.reduce((a, b) => a + b, 0) / 5);
 
-                // Radar SVG Hesaplaması
                 const center = 100;
                 const maxR = 75;
                 const axesLabels = ["Galibiyet", "Form (Son 5)", "Set Oranı", "H2H Üstünlük", "Puan Gücü"];
@@ -427,11 +430,9 @@ export const CompareClient: React.FC<CompareClientProps> = ({
 
                 return (
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                    {/* Sol / Orta: Radar Grafiği */}
                     <div className="lg:col-span-6 flex flex-col items-center justify-center relative">
                       <div className="relative w-64 h-64 sm:w-72 sm:h-72">
                         <svg className="w-full h-full overflow-visible" viewBox="0 0 200 200">
-                          {/* Izgara Web Katmanları */}
                           {[0.25, 0.5, 0.75, 1.0].map((level) => (
                             <polygon
                               key={level}
@@ -444,7 +445,6 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                             />
                           ))}
 
-                          {/* 5 Eksen Çizgileri */}
                           {[0, 1, 2, 3, 4].map((idx) => {
                             const angle = -Math.PI / 2 + (idx * 2 * Math.PI) / 5;
                             const x2 = center + maxR * Math.cos(angle);
@@ -463,25 +463,22 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                             );
                           })}
 
-                          {/* Takım 1 Poligonu (Sky Blue) */}
                           <polygon
                             points={getPolygon(t1Metrics)}
-                            fill="rgba(45, 212, 192, 0.3)"
-                            stroke="#2DD4C0"
+                            fill="rgba(255, 107, 44, 0.25)"
+                            stroke="#FF6B2C"
                             strokeWidth="2"
                             className="transition-all duration-700"
                           />
 
-                          {/* Takım 2 Poligonu (Indigo) */}
                           <polygon
                             points={getPolygon(t2Metrics)}
-                            fill="rgba(127, 180, 255, 0.3)"
+                            fill="rgba(127, 180, 255, 0.25)"
                             stroke="#7FB4FF"
                             strokeWidth="2"
                             className="transition-all duration-700"
                           />
 
-                          {/* Eksen Etiketleri */}
                           {axesLabels.map((lbl, idx) => {
                             const angle = -Math.PI / 2 + (idx * 2 * Math.PI) / 5;
                             const r = maxR + 18;
@@ -494,7 +491,7 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                                 y={y}
                                 textAnchor="middle"
                                 dominantBaseline="central"
-                                fill="#A9C3D1"
+                                fill="#94A3B8"
                                 fontSize="9"
                                 fontWeight="bold"
                               >
@@ -504,66 +501,88 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                           })}
                         </svg>
 
-                        {/* Merkez Güç Puanı Rozeti */}
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <div className="bg-slate-950/90 border border-slate-700/80 px-2.5 py-1 rounded-xl shadow-lg text-center flex items-center gap-1.5 font-mono text-xs font-black">
+                          <div className="bg-canvas/95 border border-line px-2.5 py-1 rounded-xl text-center flex items-center gap-1.5 font-mono tabular-nums text-xs font-bold">
                             <span className="text-primary">{t1Score}</span>
-                            <span className="text-slate-600">vs</span>
+                            <span className="text-ink-3">vs</span>
                             <span className="text-selected-text">{t2Score}</span>
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* Sağ: Detaylı Karşılaştırma Barları */}
                     <div className="lg:col-span-6 space-y-4 text-xs">
-                      {/* 1. Galibiyet Oranı */}
                       <div>
-                        <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-primary font-mono font-black">%{t1WinRate} ({comparison.team1.stats.wins}G / {comparison.team1.stats.played}M)</span>
-                          <span className="text-slate-400 font-medium">Sezon Galibiyet Oranı</span>
-                          <span className="text-selected-text font-mono font-black">%{t2WinRate} ({comparison.team2.stats.wins}G / {comparison.team2.stats.played}M)</span>
+                        <div className="flex justify-between font-semibold text-ink-2 mb-1">
+                          <span className="text-primary font-mono tabular-nums font-bold">
+                            %{t1WinRate} ({comparison.team1.stats.wins}G / {comparison.team1.stats.played}M)
+                          </span>
+                          <span className="text-ink-3 font-medium">Sezon Galibiyet Oranı</span>
+                          <span className="text-selected-text font-mono tabular-nums font-bold">
+                            %{t2WinRate} ({comparison.team2.stats.wins}G / {comparison.team2.stats.played}M)
+                          </span>
                         </div>
-                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-primary transition-all duration-500" />
-                          <div style={{ width: `${100 - Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }} className="bg-selected transition-all duration-500" />
+                        <div className="w-full h-2 bg-surface-muted rounded-full overflow-hidden flex gap-0.5">
+                          <div
+                            style={{ width: `${Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }}
+                            className="bg-primary transition-all duration-500"
+                          />
+                          <div
+                            style={{ width: `${100 - Math.round((t1WinRate / (t1WinRate + t2WinRate || 1)) * 100)}%` }}
+                            className="bg-selected transition-all duration-500"
+                          />
                         </div>
                       </div>
 
-                      {/* 2. Son 5 Maç Başarısı */}
                       <div>
-                        <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-primary font-mono font-black">%{t1FormRate} ({t1FormWins}/5)</span>
-                          <span className="text-slate-400 font-medium">Son 5 Maç Form Gücü</span>
-                          <span className="text-selected-text font-mono font-black">%{t2FormRate} ({t2FormWins}/5)</span>
+                        <div className="flex justify-between font-semibold text-ink-2 mb-1">
+                          <span className="text-primary font-mono tabular-nums font-bold">
+                            %{t1FormRate} ({t1FormWins}/5)
+                          </span>
+                          <span className="text-ink-3 font-medium">Son 5 Maç Form Gücü</span>
+                          <span className="text-selected-text font-mono tabular-nums font-bold">
+                            %{t2FormRate} ({t2FormWins}/5)
+                          </span>
                         </div>
-                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-primary transition-all duration-500" />
-                          <div style={{ width: `${100 - Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }} className="bg-selected transition-all duration-500" />
+                        <div className="w-full h-2 bg-surface-muted rounded-full overflow-hidden flex gap-0.5">
+                          <div
+                            style={{ width: `${Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }}
+                            className="bg-primary transition-all duration-500"
+                          />
+                          <div
+                            style={{ width: `${100 - Math.round((t1FormRate / (t1FormRate + t2FormRate || 1)) * 100)}%` }}
+                            className="bg-selected transition-all duration-500"
+                          />
                         </div>
                       </div>
 
-                      {/* 3. Set Verimliliği */}
                       <div>
-                        <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-primary font-mono font-black">{comparison.summary.team1SetsWon} Set</span>
-                          <span className="text-slate-400 font-medium">H2H Set Üstünlüğü</span>
-                          <span className="text-selected-text font-mono font-black">{comparison.summary.team2SetsWon} Set</span>
+                        <div className="flex justify-between font-semibold text-ink-2 mb-1">
+                          <span className="text-primary font-mono tabular-nums font-bold">
+                            {comparison.summary.team1SetsWon} Set
+                          </span>
+                          <span className="text-ink-3 font-medium">H2H Set Üstünlüğü</span>
+                          <span className="text-selected-text font-mono tabular-nums font-bold">
+                            {comparison.summary.team2SetsWon} Set
+                          </span>
                         </div>
-                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
-                          <div style={{ width: `${t1SetRate}%` }} className="bg-gradient-to-r from-sky-400 to-blue-500 transition-all duration-500" />
+                        <div className="w-full h-2 bg-surface-muted rounded-full overflow-hidden flex gap-0.5">
+                          <div style={{ width: `${t1SetRate}%` }} className="bg-primary transition-all duration-500" />
                           <div style={{ width: `${t2SetRate}%` }} className="bg-selected transition-all duration-500" />
                         </div>
                       </div>
 
-                      {/* 4. Doğrudan Galibiyet */}
                       <div>
-                        <div className="flex justify-between font-bold text-slate-300 mb-1">
-                          <span className="text-primary font-mono font-black">{comparison.summary.team1Wins} Galibiyet</span>
-                          <span className="text-slate-400 font-medium">Aralarındaki Maçlar</span>
-                          <span className="text-selected-text font-mono font-black">{comparison.summary.team2Wins} Galibiyet</span>
+                        <div className="flex justify-between font-semibold text-ink-2 mb-1">
+                          <span className="text-primary font-mono tabular-nums font-bold">
+                            {comparison.summary.team1Wins} Galibiyet
+                          </span>
+                          <span className="text-ink-3 font-medium">Aralarındaki Maçlar</span>
+                          <span className="text-selected-text font-mono tabular-nums font-bold">
+                            {comparison.summary.team2Wins} Galibiyet
+                          </span>
                         </div>
-                        <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden flex border border-slate-700/80">
+                        <div className="w-full h-2 bg-surface-muted rounded-full overflow-hidden flex gap-0.5">
                           <div style={{ width: `${t1H2hRate}%` }} className="bg-primary transition-all duration-500" />
                           <div style={{ width: `${t2H2hRate}%` }} className="bg-selected transition-all duration-500" />
                         </div>
@@ -583,122 +602,77 @@ export const CompareClient: React.FC<CompareClientProps> = ({
               />
             )}
 
-            {/* 4. ARALARINDAKİ MAÇLAR (H2H) */}
+            {/* 4. ARALARINDAKİ MAÇLAR (H2H — Standart VolleyMatchRow) */}
             <section className="space-y-3">
               <div className="flex items-center justify-between">
-                <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                  <Calendar size={18} className="text-ink-2" />
+                <h2 className="text-base font-bold text-white flex items-center gap-2">
+                  <Calendar size={17} className="text-primary" />
                   <span>Aralarındaki Maçlar ({comparison.matches.length})</span>
                 </h2>
               </div>
 
               {comparison.matches.length === 0 ? (
-                <div className="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-6 text-center">
-                  <AlertCircle size={28} className="mx-auto text-amber-400 mb-2 opacity-80" />
-                  <p className="text-sm font-semibold text-slate-300">
+                <div className="bg-surface border border-line/70 rounded-2xl p-6 text-center">
+                  <AlertCircle size={26} className="mx-auto text-amber-400 mb-2 opacity-80" />
+                  <p className="text-sm font-semibold text-white">
                     Bu takımlar bu sezon henüz karşılaşmadı
                   </p>
-                  <p className="text-xs text-slate-400 mt-1 max-w-md mx-auto">
+                  <p className="text-xs text-ink-3 mt-1 max-w-md mx-auto">
                     {comparison.isSameGroup
                       ? "Aynı grupta yer alıyorlar ancak fikstürdeki maçları henüz oynanmamış olabilir."
                       : "Bu takımlar bu sezon aynı grupta yer almıyor — aralarındaki maç bulunamadı."}
                   </p>
                 </div>
               ) : (
-                <div className="space-y-2.5">
-                  {comparison.matches.map((m) => {
-                    const isFinished = m.status === "finished";
-                    return (
-                      <div
-                        key={m.id}
-                        className="bg-slate-800/60 hover:bg-slate-800/90 border border-slate-700/80 rounded-xl p-4 transition-all"
-                      >
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                          {/* Tarih & Salon */}
-                          <div className="text-xs text-slate-400">
-                            <div className="font-bold text-slate-300 font-mono">
-                              {m.date} {m.time ? `• ${m.time}` : ""}
-                            </div>
-                            <div className="flex items-center gap-1 mt-0.5 text-slate-400">
-                              <MapPin size={11} className="text-ink-2" />
-                              <span>{m.hall || "Salon Belirtilmedi"}</span>
-                              {m.category && <span>({m.category})</span>}
-                            </div>
-                          </div>
-
-                          {/* Takımlar ve Skor */}
-                          <div className="flex items-center justify-center gap-3 self-center sm:self-auto font-semibold text-sm">
-                            <span
-                              className={`${
-                                m.winner === "team1"
-                                  ? "text-emerald-400 font-black"
-                                  : "text-slate-200"
-                              }`}
-                            >
-                              {m.homeTeam}
-                            </span>
-
-                            <div className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-700 font-mono font-black text-sm">
-                              {isFinished && m.homeScore !== undefined && m.awayScore !== undefined ? (
-                                <span>
-                                  {m.homeScore} - {m.awayScore}
-                                </span>
-                              ) : (
-                                <span className="text-xs text-amber-400">Oynanacak</span>
-                              )}
-                            </div>
-
-                            <span
-                              className={`${
-                                m.winner === "team2"
-                                  ? "text-emerald-400 font-black"
-                                  : "text-slate-200"
-                              }`}
-                            >
-                              {m.awayTeam}
-                            </span>
-                          </div>
-
-                          {/* Set Detayları veya Durum */}
-                          <div className="text-right text-xs">
-                            {m.setScores && m.setScores.length > 0 ? (
-                              <div className="text-[11px] text-slate-400 font-mono">
-                                Setler: {m.setScores.join(", ")}
-                              </div>
-                            ) : (
-                              <span className="text-slate-500 text-[11px]">
-                                {isFinished ? "Sonuçlandı" : "Planlandı"}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                <div className="rounded-xl bg-surface border border-line/70 divide-y divide-line/50 overflow-hidden">
+                  {comparison.matches.map((m) => (
+                    <VolleyMatchRow
+                      key={m.id}
+                      match={{
+                        id: m.id,
+                        date: m.date,
+                        time: m.time || "",
+                        hall: m.hall || "",
+                        category: m.category || "",
+                        age_group: "",
+                        gender: "Kız",
+                        group: "",
+                        match_no: "",
+                        home_team: m.homeTeam,
+                        away_team: m.awayTeam,
+                        home_score: m.homeScore ?? null,
+                        away_score: m.awayScore ?? null,
+                        set_scores: m.setScores,
+                        status: m.status,
+                      }}
+                      leagueLabel={m.category}
+                      showHall={true}
+                    />
+                  ))}
                 </div>
               )}
             </section>
 
             {/* 5. YAN YANA PUAN DURUMU İSTATİSTİKLERİ */}
-            <section className="space-y-3 pt-4">
+            <section className="space-y-3 pt-2">
               <div className="flex items-center justify-between">
-                <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-                  <Activity size={18} className="text-ink-2" />
+                <h2 className="text-base font-bold text-white flex items-center gap-2">
+                  <Activity size={17} className="text-primary" />
                   <span>Puan Durumu İstatistikleri</span>
                 </h2>
                 {comparison.isSameGroup ? (
-                  <span className="text-xs font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-2.5 py-0.5 rounded-full">
+                  <span className="text-xs font-semibold text-done bg-done/10 border border-done/30 px-2.5 py-0.5 rounded-full">
                     Aynı Gruptalar: {comparison.sharedGroup?.groupName}
                   </span>
                 ) : (
-                  <span className="text-xs font-semibold text-amber-400 bg-amber-950/60 border border-amber-800 px-2.5 py-0.5 rounded-full">
+                  <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2.5 py-0.5 rounded-full">
                     Farklı Gruplar / Ligler
                   </span>
                 )}
               </div>
 
               {!comparison.isSameGroup && (
-                <div className="bg-amber-950/20 border border-amber-500/30 rounded-xl p-3.5 text-xs text-amber-200 flex items-start gap-2">
+                <div className="bg-surface border border-line/70 rounded-xl p-3.5 text-xs text-ink-2 flex items-start gap-2">
                   <AlertCircle size={16} className="text-amber-400 shrink-0 mt-0.5" />
                   <span>
                     Bu takımlar bu sezon aynı grupta yer almıyor — aralarındaki maç bulunamadı veya farklı kategorilerde yarışıyorlar. Aşağıda her iki takımın kendi gruplarındaki güncel performansları yer almaktadır.
@@ -706,143 +680,81 @@ export const CompareClient: React.FC<CompareClientProps> = ({
                 </div>
               )}
 
-              {/* Yan Yana İstatistik Kartları */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* 1. Takım İstatistikleri */}
-                <div className="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-5 shadow-lg space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-700/80 pb-3">
-                    <div>
-                      <h3 className="text-base font-bold text-white">{comparison.team1.teamName}</h3>
-                      <span className="text-xs text-slate-400">{comparison.team1.city}</span>
+                {[comparison.team1, comparison.team2].map((tm, teamIdx) => (
+                  <div key={teamIdx} className="bg-surface border border-line/70 rounded-2xl p-5 space-y-4">
+                    <div className="flex items-center justify-between border-b border-line/60 pb-3">
+                      <div>
+                        <h3 className="text-base font-bold text-white">{tm.teamName}</h3>
+                        <span className="text-xs text-ink-3">{tm.city}</span>
+                      </div>
+                      <Link
+                        prefetch={false}
+                        href={`/takim/${tm.slug}`}
+                        className="text-xs text-primary hover:underline flex items-center gap-1 font-semibold"
+                      >
+                        <span>Profil</span>
+                        <ChevronRight size={13} />
+                      </Link>
                     </div>
-                    <Link prefetch={false}
-                      href={`/takim/${comparison.team1.slug}`}
-                      className="text-xs text-selected-text hover:underline flex items-center gap-1 font-semibold"
-                    >
-                      <span>Profil</span>
-                      <ChevronRight size={13} />
-                    </Link>
-                  </div>
 
-                  {comparison.team1.standingsContexts.length > 0 ? (
-                    <div className="space-y-3">
-                      {comparison.team1.standingsContexts.map((ctx, idx) => {
-                        const row = ctx.standingRow;
-                        return (
-                          <div key={idx} className="bg-slate-900/60 rounded-xl p-3.5 border border-slate-700/50">
-                            <div className="text-xs font-semibold text-slate-300 mb-2">
-                              {ctx.category} • {ctx.groupName}
-                            </div>
-                            <div className="grid grid-cols-6 gap-2 text-center text-xs">
-                              <div>
-                                <div className="text-slate-400 text-[10px]">Sıra</div>
-                                <div className="font-bold text-white mt-0.5">#{row.rank}</div>
+                    {tm.standingsContexts.length > 0 ? (
+                      <div className="space-y-2.5">
+                        {tm.standingsContexts.map((ctx, idx) => {
+                          const row = ctx.standingRow;
+                          return (
+                            <div key={idx} className="bg-surface-muted/50 rounded-xl p-3.5 border border-line/60">
+                              <div className="text-xs font-semibold text-ink mb-2">
+                                {ctx.category} • {ctx.groupName}
                               </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">O</div>
-                                <div className="font-bold text-white mt-0.5">{row.played}</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">G</div>
-                                <div className="font-bold text-emerald-400 mt-0.5">{row.won}</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">M</div>
-                                <div className="font-bold text-form-loss mt-0.5">{row.lost}</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">Set</div>
-                                <div className="font-bold text-slate-200 mt-0.5">
-                                  {row.sets_won}:{row.sets_lost}
+                              <div className="grid grid-cols-6 gap-2 text-center text-xs font-mono tabular-nums">
+                                <div>
+                                  <div className="text-ink-3 text-[10px] font-sans">Sıra</div>
+                                  <div className="font-bold text-white mt-0.5">#{row.rank}</div>
+                                </div>
+                                <div>
+                                  <div className="text-ink-3 text-[10px] font-sans">O</div>
+                                  <div className="font-bold text-white mt-0.5">{row.played}</div>
+                                </div>
+                                <div>
+                                  <div className="text-ink-3 text-[10px] font-sans">G</div>
+                                  <div className="font-bold text-done mt-0.5">{row.won}</div>
+                                </div>
+                                <div>
+                                  <div className="text-ink-3 text-[10px] font-sans">M</div>
+                                  <div className="font-bold text-form-loss mt-0.5">{row.lost}</div>
+                                </div>
+                                <div>
+                                  <div className="text-ink-3 text-[10px] font-sans">Set</div>
+                                  <div className="font-bold text-ink mt-0.5">
+                                    {row.sets_won}:{row.sets_lost}
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="text-ink-3 text-[10px] font-sans">Puan</div>
+                                  <div className="font-bold text-primary mt-0.5">{row.points}</div>
                                 </div>
                               </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">Puan</div>
-                                <div className="font-black text-amber-400 mt-0.5">{row.points}</div>
-                              </div>
                             </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <p className="text-xs text-slate-400">Bu takım için puan durumu verisi açıklanmamış.</p>
-                  )}
-                </div>
-
-                {/* 2. Takım İstatistikleri */}
-                <div className="bg-slate-800/60 border border-slate-700/80 rounded-2xl p-5 shadow-lg space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-700/80 pb-3">
-                    <div>
-                      <h3 className="text-base font-bold text-white">{comparison.team2.teamName}</h3>
-                      <span className="text-xs text-slate-400">{comparison.team2.city}</span>
-                    </div>
-                    <Link prefetch={false}
-                      href={`/takim/${comparison.team2.slug}`}
-                      className="text-xs text-selected-text hover:underline flex items-center gap-1 font-semibold"
-                    >
-                      <span>Profil</span>
-                      <ChevronRight size={13} />
-                    </Link>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <p className="text-xs text-ink-3">Bu takım için puan durumu verisi açıklanmamış.</p>
+                    )}
                   </div>
-
-                  {comparison.team2.standingsContexts.length > 0 ? (
-                    <div className="space-y-3">
-                      {comparison.team2.standingsContexts.map((ctx, idx) => {
-                        const row = ctx.standingRow;
-                        return (
-                          <div key={idx} className="bg-slate-900/60 rounded-xl p-3.5 border border-slate-700/50">
-                            <div className="text-xs font-semibold text-slate-300 mb-2">
-                              {ctx.category} • {ctx.groupName}
-                            </div>
-                            <div className="grid grid-cols-6 gap-2 text-center text-xs">
-                              <div>
-                                <div className="text-slate-400 text-[10px]">Sıra</div>
-                                <div className="font-bold text-white mt-0.5">#{row.rank}</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">O</div>
-                                <div className="font-bold text-white mt-0.5">{row.played}</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">G</div>
-                                <div className="font-bold text-emerald-400 mt-0.5">{row.won}</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">M</div>
-                                <div className="font-bold text-form-loss mt-0.5">{row.lost}</div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">Set</div>
-                                <div className="font-bold text-slate-200 mt-0.5">
-                                  {row.sets_won}:{row.sets_lost}
-                                </div>
-                              </div>
-                              <div>
-                                <div className="text-slate-400 text-[10px]">Puan</div>
-                                <div className="font-black text-amber-400 mt-0.5">{row.points}</div>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <p className="text-xs text-slate-400">Bu takım için puan durumu verisi açıklanmamış.</p>
-                  )}
-                </div>
+                ))}
               </div>
             </section>
           </>
         ) : (
-          /* Takım Seçilmediğinde Gösterilecek Karşılama Ekranı */
-          <div className="bg-slate-800/30 border border-slate-700/60 rounded-2xl p-10 text-center space-y-4">
-            <div className="w-16 h-16 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mx-auto text-amber-400 shadow-inner">
-              <Swords size={32} />
+          <div className="bg-surface border border-line/70 rounded-2xl p-10 text-center space-y-4">
+            <div className="w-14 h-14 rounded-2xl bg-surface-muted border border-line/70 flex items-center justify-center mx-auto text-primary">
+              <Swords size={28} />
             </div>
             <div className="max-w-md mx-auto">
-              <h2 className="text-lg font-bold text-white">Karşılaştırmak için İki Takım Seçin</h2>
-              <p className="text-xs text-slate-400 mt-1">
+              <h2 className="text-base font-bold text-white">Karşılaştırmak için İki Takım Seçin</h2>
+              <p className="text-xs text-ink-3 mt-1">
                 Yukarıdaki açılır listelerden karşılaştırmak istediğiniz iki takımı seçerek aralarındaki geçmiş maçları, set skorlarını ve puan durumu tablosunu anında görüntüleyebilirsiniz.
               </p>
             </div>

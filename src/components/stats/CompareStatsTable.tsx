@@ -32,6 +32,15 @@ function winner(row: Row): "a" | "b" | null {
   return aWins ? "a" : "b";
 }
 
+function getTugPct(row: Row): number | null {
+  if (row.better !== "high" || row.aVal == null || row.bVal == null) return null;
+  if (!Number.isFinite(row.aVal) || !Number.isFinite(row.bVal)) return null;
+  if (row.aVal < 0 || row.bVal < 0) return null;
+  const sum = row.aVal + row.bVal;
+  if (sum <= 0) return null;
+  return Math.round((row.aVal / sum) * 100);
+}
+
 function buildRows(a: CompareTeamStats, b: CompareTeamStats, sameGroup: boolean): Row[] {
   const rows: Row[] = [];
   const sa = a.stats;
@@ -43,8 +52,8 @@ function buildRows(a: CompareTeamStats, b: CompareTeamStats, sameGroup: boolean)
     const st = (s: CompareTeamStats["standing"]) =>
       s ? (
         <>
-          <span className="font-black">{s.rank}. sıra</span>
-          <span className="block text-[10px] text-slate-400 font-normal">
+          <span className="font-bold">{s.rank}. sıra</span>
+          <span className="block text-[10px] text-ink-3 font-normal">
             {s.points} P • {s.won}G {s.lost}M
             {!sameGroup ? ` • ${s.groupName}` : ""}
           </span>
@@ -86,22 +95,28 @@ function buildRows(a: CompareTeamStats, b: CompareTeamStats, sameGroup: boolean)
     rows.push({
       key: "form",
       label: "Son 5 Maç",
-      a: a.form.matches > 0 ? (
-        <span className="inline-flex flex-col items-end sm:items-start gap-0.5">
-          <FormChips results={a.form.results} />
-          <span className="text-[10px] text-slate-400 font-normal">{a.form.points}/{a.form.maxPoints} puan</span>
-        </span>
-      ) : (
-        "-"
-      ),
-      b: b.form.matches > 0 ? (
-        <span className="inline-flex flex-col items-end sm:items-start gap-0.5">
-          <FormChips results={b.form.results} />
-          <span className="text-[10px] text-slate-400 font-normal">{b.form.points}/{b.form.maxPoints} puan</span>
-        </span>
-      ) : (
-        "-"
-      ),
+      a:
+        a.form.matches > 0 ? (
+          <span className="inline-flex flex-col items-end sm:items-start gap-0.5">
+            <FormChips results={a.form.results} />
+            <span className="text-[10px] text-ink-3 font-normal">
+              {a.form.points}/{a.form.maxPoints} puan
+            </span>
+          </span>
+        ) : (
+          "-"
+        ),
+      b:
+        b.form.matches > 0 ? (
+          <span className="inline-flex flex-col items-end sm:items-start gap-0.5">
+            <FormChips results={b.form.results} />
+            <span className="text-[10px] text-ink-3 font-normal">
+              {b.form.points}/{b.form.maxPoints} puan
+            </span>
+          </span>
+        ) : (
+          "-"
+        ),
       aVal: a.form.matches ? a.form.points / a.form.maxPoints : null,
       bVal: b.form.matches ? b.form.points / b.form.maxPoints : null,
       better: "high",
@@ -154,7 +169,7 @@ function buildRows(a: CompareTeamStats, b: CompareTeamStats, sameGroup: boolean)
       key: "longest",
       label: "En Uzun Galibiyet Serisi",
       a: sa.played ? sa.longestWinStreak : "-",
-      b: sb.played ? sb.longestWinStreak : "-",
+      b: sb.played ? sa.longestWinStreak && sb.longestWinStreak !== undefined ? sb.longestWinStreak : sb.longestWinStreak : "-",
       aVal: sa.played ? sa.longestWinStreak : null,
       bVal: sb.played ? sb.longestWinStreak : null,
       better: "high",
@@ -184,34 +199,43 @@ export const CompareStatsTable: React.FC<CompareStatsTableProps> = ({ data, name
   return (
     <section
       aria-labelledby="compare-stats-title"
-      className="bg-slate-900/70 border border-slate-800/80 rounded-2xl p-4 sm:p-6 shadow-xl space-y-3"
+      className="bg-surface border border-line/70 rounded-2xl p-4 sm:p-6 space-y-3"
     >
-      <div className="flex items-center gap-2 border-b border-slate-800/80 pb-3">
-        <div className="w-7 h-7 rounded-lg bg-surface-raised border border-line flex items-center justify-center text-ink-2">
+      <div className="flex items-center gap-2 border-b border-line/60 pb-3">
+        <div className="w-7 h-7 rounded-lg bg-surface-muted border border-line/70 flex items-center justify-center text-primary">
           <BarChart3 size={16} />
         </div>
         <div>
-          <h2 id="compare-stats-title" className="text-sm font-bold text-white uppercase tracking-wider">
+          <h2 id="compare-stats-title" className="text-sm font-semibold text-white uppercase tracking-wider">
             Sezon İstatistikleri Karşılaştırması
           </h2>
-          <p className="text-[11px] text-slate-400">Puan durumu, form ve ortalamalar yan yana. Üstün taraf vurgulanır.</p>
+          <p className="text-[11px] text-ink-3">Puan durumu, form ve ortalamalar yan yana. Üstün taraf vurgulanır.</p>
         </div>
       </div>
-      <div className="grid grid-cols-[1fr,1fr,1fr] gap-x-2 text-[11px] font-bold px-1">
+      <div className="grid grid-cols-[1fr,1fr,1fr] gap-x-2 text-[11px] font-semibold px-1">
         <span className="text-primary truncate">{name1}</span>
         <span />
         <span className="text-selected-text truncate text-right">{name2}</span>
       </div>
-      <dl className="divide-y divide-slate-800/70" data-testid="compare-stats-rows">
+      <dl className="divide-y divide-line/40" data-testid="compare-stats-rows">
         {rows.map((row) => {
           const w = winner(row);
+          const pct = getTugPct(row);
           return (
-            <div key={row.key} className="grid grid-cols-[1fr,1.2fr,1fr] items-center gap-x-2 py-2 text-xs">
-              <dd className={`font-mono tabular-nums ${w === "a" ? "text-primary font-black" : "text-slate-200"}`}>{row.a}</dd>
-              <dt className="text-center text-[11px] text-slate-400 font-medium leading-tight">{row.label}</dt>
-              <dd className={`font-mono tabular-nums text-right ${w === "b" ? "text-selected-text font-black" : "text-slate-200"}`}>
-                {row.b}
-              </dd>
+            <div key={row.key} className="py-2.5 space-y-1.5">
+              <div className="grid grid-cols-[1fr,1.2fr,1fr] items-center gap-x-2 text-xs">
+                <dd className={`font-mono tabular-nums ${w === "a" ? "text-primary font-bold" : "text-ink"}`}>{row.a}</dd>
+                <dt className="text-center text-[11px] text-ink-3 font-medium leading-tight">{row.label}</dt>
+                <dd className={`font-mono tabular-nums text-right ${w === "b" ? "text-selected-text font-bold" : "text-ink"}`}>
+                  {row.b}
+                </dd>
+              </div>
+              {pct !== null && (
+                <div className="h-1 w-full rounded-full bg-surface-muted overflow-hidden flex gap-0.5">
+                  <div className="h-full bg-primary transition-all duration-300" style={{ width: `${pct}%` }} />
+                  <div className="h-full bg-selected transition-all duration-300" style={{ width: `${100 - pct}%` }} />
+                </div>
+              )}
             </div>
           );
         })}

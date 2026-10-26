@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronLeft, BarChart3, Flame, Percent, TrendingUp, Target, ShieldAlert, Swords, ShieldCheck, Building2, MapPin, Navigation } from "lucide-react";
+import { ChevronLeft, BarChart3, Flame, Percent, TrendingUp, Target, ShieldAlert, Swords, ShieldCheck, Building2, Navigation } from "lucide-react";
 import { getLeagueAnalytics } from "@/utils/leagueAnalyticsData";
 import { MIN_WIN_STREAK, type LeagueAnalytics } from "@/utils/leagueAnalytics";
 import { slugify } from "@/utils/slugify";
@@ -12,19 +12,14 @@ import { PlayoffSummary } from "@/components/stats/PlayoffSummary";
 import { SettingsControls } from "@/components/SettingsControls";
 import { T } from "@/components/T";
 
-/**
- * Lig geneli analiz sayfası (/istatistikler ve /istatistikler/[kategori]).
- * Tamamen sunucu bileşenidir: istemciye JavaScript/JSON gönderilmez, ISR ile CDN'den servis edilir.
- */
 const SITE_URL = "https://altyapivoleybol.com.tr";
 
 export function categorySlug(category: string): string {
   return slugify(category);
 }
 
-/** Kategori adı ("Genç Kızlar Süper Lig") yol parçasından çözülür; bilinmeyen yol null döner. */
 export function resolveCategory(analytics: LeagueAnalytics, slug?: string): string | null | undefined {
-  if (!slug) return undefined; // "tümü"
+  if (!slug) return undefined;
   return analytics.categories.find((c) => categorySlug(c) === slug) ?? null;
 }
 
@@ -75,18 +70,21 @@ export function StatsPageView({ slug }: { slug?: string }) {
     lists.topScoring.length === 0;
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 font-sans pb-16">
-      <header className="sticky top-0 z-40 bg-surface-muted/95 backdrop-blur-md border-b border-slate-800 shadow-md">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link prefetch={false}
+    <div className="min-h-screen bg-canvas text-ink font-sans pb-16">
+      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-md border-b border-line/70">
+        <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between">
+          <Link
+            prefetch={false}
             href="/"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink-2 hover:text-white bg-surface-muted/70 hover:bg-surface-muted px-3 py-1.5 rounded-lg border border-line/70 transition-colors"
           >
-            <ChevronLeft size={16} />
-            <span><T k="common.home" /></span>
+            <ChevronLeft size={15} />
+            <span>
+              <T k="common.home" />
+            </span>
           </Link>
           <div className="flex items-center gap-3">
-            <Link prefetch={false} href="/karsilastir" className="text-xs font-bold text-primary hover:underline">
+            <Link prefetch={false} href="/karsilastir" className="text-xs font-semibold text-primary hover:underline">
               <T k="stats.compareLink" />
             </Link>
             <SettingsControls />
@@ -95,29 +93,28 @@ export function StatsPageView({ slug }: { slug?: string }) {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 pt-6 space-y-6">
-        <section className="bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-5 sm:p-7 shadow-xl">
+        <section className="bg-surface border border-line/70 rounded-2xl p-5 sm:p-6">
           <div className="flex items-center gap-2.5 mb-3">
             <div className="p-2 rounded-xl bg-primary/15 text-primary border border-primary/30">
-              <BarChart3 size={20} />
+              <BarChart3 size={19} />
             </div>
             <div>
-              <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 {category ? `${category} İstatistikleri` : <T k="stats.title" />}
               </h1>
-              
             </div>
           </div>
-          <nav aria-label="Lig kategorisi" className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
+          <nav aria-label="Lig kategorisi" className="flex gap-1.5 overflow-x-auto pb-1 -mx-1 px-1">
             {tabs.map((t) => (
               <Link
                 key={t.href}
                 href={t.href}
                 prefetch={false}
                 aria-current={t.active ? "page" : undefined}
-                className={`shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg border transition-colors ${
+                className={`shrink-0 text-xs font-semibold px-3 py-1.5 rounded-lg border transition-colors ${
                   t.active
                     ? "bg-primary text-primary-fg border-primary"
-                    : "bg-slate-800/80 text-slate-300 border-slate-700 hover:text-white hover:bg-slate-700"
+                    : "bg-surface-muted/70 text-ink-2 border-line/60 hover:text-white hover:bg-surface-muted"
                 }`}
               >
                 {t.label}
@@ -125,23 +122,23 @@ export function StatsPageView({ slug }: { slug?: string }) {
             ))}
           </nav>
           <dl className="mt-4 grid grid-cols-3 gap-2 text-center">
-            <div className="bg-slate-900/60 rounded-xl p-2.5">
-              <dt className="text-[10px] text-slate-400">Takım</dt>
-              <dd className="text-base font-black text-white tabular-nums">{lists.totals.teams}</dd>
+            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-2.5">
+              <dt className="text-[10px] font-semibold uppercase tracking-wider text-ink-3">Takım</dt>
+              <dd className="text-base font-bold font-mono text-white tabular-nums mt-0.5">{lists.totals.teams}</dd>
             </div>
-            <div className="bg-slate-900/60 rounded-xl p-2.5">
-              <dt className="text-[10px] text-slate-400">Grup</dt>
-              <dd className="text-base font-black text-white tabular-nums">{lists.totals.groups}</dd>
+            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-2.5">
+              <dt className="text-[10px] font-semibold uppercase tracking-wider text-ink-3">Grup</dt>
+              <dd className="text-base font-bold font-mono text-white tabular-nums mt-0.5">{lists.totals.groups}</dd>
             </div>
-            <div className="bg-slate-900/60 rounded-xl p-2.5">
-              <dt className="text-[10px] text-slate-400">Oynanan Maç</dt>
-              <dd className="text-base font-black text-white tabular-nums">{lists.totals.finishedMatches}</dd>
+            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-2.5">
+              <dt className="text-[10px] font-semibold uppercase tracking-wider text-ink-3">Oynanan Maç</dt>
+              <dd className="text-base font-bold font-mono text-white tabular-nums mt-0.5">{lists.totals.finishedMatches}</dd>
             </div>
           </dl>
         </section>
 
         {noData && (
-          <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/60 rounded-2xl p-6 text-center">
+          <p className="text-sm text-ink-3 bg-surface border border-line/70 rounded-2xl p-6 text-center">
             Bu kategori için henüz yeterli maç verisi yok. Maçlar oynandıkça sıralamalar burada görünecek.
           </p>
         )}
@@ -156,7 +153,7 @@ export function StatsPageView({ slug }: { slug?: string }) {
             showCategory={showCategory}
             renderValue={(e) => `${e.value} galibiyet`}
             renderMeta={(e) =>
-              e.extra?.active ? <span className="text-emerald-300 font-bold">Seri devam ediyor</span> : <>{e.played} maçta</>
+              e.extra?.active ? <span className="text-done font-semibold">Seri devam ediyor</span> : <>{e.played} maçta</>
             }
           />
           <LeaderboardCard
@@ -215,39 +212,37 @@ export function StatsPageView({ slug }: { slug?: string }) {
 
         {/* HAFTANIN PANORAMASI: SET VERMEYENLER & EN ÇEKİŞMELİ MAÇLAR */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {/* Set Vermeyenler / Namağlup Takımlar */}
           {lists.cleanSweepTeams && lists.cleanSweepTeams.length > 0 && (
             <LeaderboardCard
               id="lb-cleansweep"
               title="Set Vermeyen Takımlar"
               subtitle="Oynadığı tüm maçları set kaybetmeden kazananlar (en az 2 maç)"
-              icon={<ShieldCheck size={16} className="text-emerald-400" />}
+              icon={<ShieldCheck size={16} className="text-done" />}
               entries={lists.cleanSweepTeams}
               showCategory={showCategory}
               renderValue={(e) => `${e.value} set`}
               renderMeta={(e) => (
-                <span className="text-emerald-300 font-bold">
+                <span className="text-done font-semibold">
                   {e.played} maçta 0 set kaybı ({e.extra?.wins}G)
                 </span>
               )}
             />
           )}
 
-          {/* En Çekişmeli 5 Setlik Maçlar */}
           {lists.thrillingMatches && lists.thrillingMatches.length > 0 && (
             <section
               aria-labelledby="lb-thrilling-title"
-              className="rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-card space-y-3"
+              className="rounded-2xl border border-line/70 bg-surface p-4 sm:p-5 space-y-3"
             >
               <div className="flex items-center gap-2">
-                <div className="p-1.5 rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                <div className="p-1.5 rounded-xl bg-surface-muted border border-line/70 text-primary">
                   <Swords size={16} />
                 </div>
                 <div>
-                  <h2 id="lb-thrilling-title" className="text-sm font-bold text-ink">
+                  <h2 id="lb-thrilling-title" className="text-sm font-semibold text-white">
                     Haftanın En Çekişmeli Maçları
                   </h2>
-                  <p className="text-[11px] text-ink-2">
+                  <p className="text-[11px] text-ink-3">
                     Tie-break&apos;e giden 5 setlik çekişmeler ve en yüksek sayılı karşılaşmalar
                   </p>
                 </div>
@@ -257,26 +252,28 @@ export function StatsPageView({ slug }: { slug?: string }) {
                 {lists.thrillingMatches.map((m) => (
                   <div
                     key={m.id}
-                    className="p-2.5 rounded-xl bg-surface-muted/60 border border-line hover:border-primary/40 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs"
+                    className="p-2.5 rounded-xl bg-surface-muted/50 border border-line/60 hover:border-line transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs"
                   >
                     <div className="min-w-0">
-                      <div className="font-bold text-ink truncate">
-                        {m.homeTeam} <span className="text-primary font-mono">{m.score}</span> {m.awayTeam}
+                      <div className="font-semibold text-white truncate">
+                        {m.homeTeam} <span className="text-primary font-mono tabular-nums font-bold">{m.score}</span> {m.awayTeam}
                       </div>
-                      <div className="text-[10px] text-ink-2 flex items-center gap-2 mt-0.5">
-                        <span>{m.date}</span>
+                      <div className="text-[10px] text-ink-3 flex items-center gap-2 mt-0.5">
+                        <span className="font-mono tabular-nums">{m.date}</span>
                         <span>•</span>
-                        <span className="truncate max-w-[200px]" title={m.hall}>{m.hall} ({m.city})</span>
+                        <span className="truncate max-w-[200px]" title={m.hall}>
+                          {m.hall} ({m.city})
+                        </span>
                       </div>
                       {m.setScores && m.setScores.length > 0 && (
-                        <div className="text-[10px] font-mono text-slate-400 mt-0.5">
+                        <div className="text-[10px] font-mono tabular-nums text-ink-3 mt-0.5">
                           ({m.setScores.join(", ")})
                         </div>
                       )}
                     </div>
 
                     {m.totalPoints > 0 && (
-                      <span className="shrink-0 self-start sm:self-center text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                      <span className="shrink-0 self-start sm:self-center text-[10px] font-mono tabular-nums font-semibold px-2 py-0.5 rounded-md bg-surface-muted text-ink border border-line/70">
                         {m.totalPoints} Toplam Sayı
                       </span>
                     )}
@@ -291,17 +288,17 @@ export function StatsPageView({ slug }: { slug?: string }) {
         {lists.busiestHalls && lists.busiestHalls.length > 0 && (
           <section
             aria-labelledby="busiest-halls-title"
-            className="rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-card space-y-3"
+            className="rounded-2xl border border-line/70 bg-surface p-4 sm:p-5 space-y-3"
           >
             <div className="flex items-center gap-2">
-              <div className="p-1.5 rounded-xl bg-sky-500/15 text-sky-400 border border-sky-500/30">
+              <div className="p-1.5 rounded-xl bg-surface-muted border border-line/70 text-primary">
                 <Building2 size={16} />
               </div>
               <div>
-                <h2 id="busiest-halls-title" className="text-sm font-bold text-ink">
+                <h2 id="busiest-halls-title" className="text-sm font-semibold text-white">
                   Voleybol Salon Rehberi & Yol Tarifi
                 </h2>
-                <p className="text-[11px] text-ink-2">
+                <p className="text-[11px] text-ink-3">
                   Lig maçlarının en yoğun oynandığı spor salonları, maç sayıları ve harita yol tarifleri
                 </p>
               </div>
@@ -311,22 +308,22 @@ export function StatsPageView({ slug }: { slug?: string }) {
               {lists.busiestHalls.map((h) => (
                 <div
                   key={h.name}
-                  className="p-3 rounded-xl bg-surface-muted/60 border border-line flex flex-col justify-between gap-2.5"
+                  className="p-3 rounded-xl bg-surface-muted/50 border border-line/60 flex flex-col justify-between gap-2.5"
                 >
                   <div>
-                    <p className="text-xs font-bold text-ink line-clamp-1" title={h.name}>
+                    <p className="text-xs font-semibold text-white line-clamp-1" title={h.name}>
                       {h.name}
                     </p>
-                    <p className="text-[11px] text-ink-2 mt-0.5">
-                      {h.city} • <strong className="text-ink font-mono">{h.totalMatches}</strong> maç
+                    <p className="text-[11px] text-ink-3 mt-0.5">
+                      {h.city} • <strong className="text-ink font-mono tabular-nums">{h.totalMatches}</strong> maç
                       {h.upcomingCount > 0 && (
-                        <span className="text-emerald-400 font-semibold ml-1">
+                        <span className="text-done font-semibold ml-1">
                           ({h.upcomingCount} gelecek)
                         </span>
                       )}
                     </p>
                     {h.metroTips && (
-                      <p className="text-[10px] text-slate-400 mt-1 line-clamp-2">
+                      <p className="text-[10px] text-ink-3 mt-1 line-clamp-2">
                         🚇 {h.metroTips}
                       </p>
                     )}
@@ -336,7 +333,7 @@ export function StatsPageView({ slug }: { slug?: string }) {
                     href={h.navigationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="self-start inline-flex items-center gap-1.5 text-[11px] font-bold px-2.5 py-1 rounded-lg bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors"
+                    className="self-start inline-flex items-center gap-1.5 text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-primary/15 text-primary hover:bg-primary/25 transition-colors"
                   >
                     <Navigation size={11} />
                     <span>Haritada Aç & Yol Tarifi</span>
@@ -349,7 +346,7 @@ export function StatsPageView({ slug }: { slug?: string }) {
 
         <PlayoffSummary playoff={lists.playoff} showCategory={showCategory} />
 
-        <p className="text-[11px] text-slate-500 leading-relaxed">
+        <p className="text-[11px] text-ink-3 leading-relaxed">
           Sıralamalar, puan durumu gruplarındaki takımlar ve bu gruplarda oynanmış maçlar üzerinden hesaplanır. Çok az maç oynamış
           takımların değerleri değişkendir; bu nedenle liste başına asgari maç sayısı uygulanır. Sayı ortalamaları yalnızca set skorları
           eksiksiz girilmiş, hükmen olmayan maçlardan hesaplanır.
