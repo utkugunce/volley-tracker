@@ -121,6 +121,7 @@ export interface VolleyboxMapping {
   logo_url?: string | null;
   local_logo?: string | null;
   note?: string | null;
+  status_override?: "teams_only" | string;
   verified_at?: string;
 }
 

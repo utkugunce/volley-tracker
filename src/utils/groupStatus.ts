@@ -231,7 +231,7 @@ export function computeGroupStatusList(
         const parts = standingsKey.split(" - ");
         city = parts[0]?.trim() || city;
         category = parts[1]?.trim() || category;
-        if (parts[2]) group = normalizeGroupName(parts[2]);
+        if (parts.length > 2) group = normalizeGroupName(parts.slice(2).join(" - "));
       }
 
       const citySlug = slugify(city);
@@ -306,7 +306,7 @@ export function computeGroupStatusList(
     ).length;
     const teamsCount = item.teamsSet.size;
 
-    const statusKey = evaluateGroupStatus({
+    const computedStatusKey = evaluateGroupStatus({
       total,
       dated,
       synced: accounted,
@@ -314,8 +314,17 @@ export function computeGroupStatusList(
       teamsCount,
     });
 
-    const cfg = GROUP_STATUS_CONFIGS[statusKey];
     const mapping = getVolleyboxLeagueMapping(item.category, item.city);
+    let statusKey = computedStatusKey;
+    if (
+      (mapping?.status_override === "teams_only" ||
+        (item.citySlug === "kirklareli" && (mapping?.volleybox_url || "").includes("krklareli"))) &&
+      synced === 0
+    ) {
+      statusKey = "teams_only";
+    }
+
+    const cfg = GROUP_STATUS_CONFIGS[statusKey];
 
     results.push({
       id: key,

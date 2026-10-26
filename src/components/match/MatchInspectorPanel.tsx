@@ -377,6 +377,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
               {isFinished || isLive ? (
                 <div className="px-3.5 py-1.5 rounded-xl bg-surface-muted border border-line/70 text-center font-mono font-scoreboard tabular-nums whitespace-nowrap">
                   <span className="text-xl sm:text-2xl font-bold tracking-tight whitespace-nowrap flex items-center justify-center gap-1.5">
+                    <span className="sr-only">{homeScore} : {awayScore}</span>
                     <span className={homeWon ? "text-emerald-400 font-black" : "text-white"}>{homeScore}</span>
                     <span className="text-ink-3">:</span>
                     <span className={awayWon ? "text-emerald-400 font-black" : "text-white"}>{awayScore}</span>

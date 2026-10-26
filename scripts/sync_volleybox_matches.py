@@ -557,6 +557,25 @@ def check_discrepancy(tvf_match: Dict[str, Any], vb_match: Dict[str, Any]) -> Di
     }
 
 
+def vb_round_to_tr_group_aliases(r_name: str) -> List[str]:
+    if not r_name:
+        return []
+    res = [r_name.lower().strip()]
+    # 'Semi Final - Group A' -> 'Yarı Final - A Grubu'
+    m_semi = re.search(r"semi\s*final\s*-\s*group\s*([a-z0-9]+)", r_name, re.I)
+    if m_semi:
+        grp_letter = m_semi.group(1).upper()
+        res.append(f"yarı final - {grp_letter} grubu".lower())
+        res.append(f"yari final - {grp_letter} grubu".lower())
+        res.append(f"yarı final {grp_letter} grubu".lower())
+    m_grp = re.search(r"group\s*([a-z0-9]+)", r_name, re.I)
+    if m_grp and not m_semi:
+        grp_letter = m_grp.group(1).upper()
+        res.append(f"{grp_letter} grubu".lower())
+        if grp_letter.isdigit():
+            res.append(f"{grp_letter}. grup".lower())
+    return res
+
 def match_tvf_with_vb(
     tvf_match: Dict[str, Any], 
     vb_matches: List[Dict[str, Any]], 
@@ -1148,6 +1167,13 @@ def main():
             if age_cat:
                 add_vb_matches(vb_tournaments, f"{city}::{age_cat}", vb_matches)
                 add_vb_matches(vb_tournaments, f"{normalize_name(city)}::{age_cat}", vb_matches)
+        # Round bazlı grupları da indeksle (örn: Semi Final - Group A -> Yarı Final - A Grubu)
+        for m_item in vb_matches:
+            r_name = m_item.get("round", "")
+            for r_alias in vb_round_to_tr_group_aliases(r_name):
+                add_vb_matches(vb_tournaments, f"{r_alias}::{city}", [m_item])
+                add_vb_matches(vb_tournaments, normalize_tourn_key(r_alias, city), [m_item])
+
         time.sleep(0.8)
 
     # 3. data/fixtures.json senkronizasyonu

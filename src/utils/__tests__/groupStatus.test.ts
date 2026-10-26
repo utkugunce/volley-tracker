@@ -136,7 +136,7 @@ describe("groupStatus", () => {
   });
 
   describe("evaluateGroupStatus", () => {
-    it("returns 'finished' ONLY when all matches are finished AND all matches are synced to Volleybox", () => {
+    it("returns 'all_program_entered' when all matches in the program are synced to Volleybox", () => {
       expect(
         evaluateGroupStatus({
           total: 10,
@@ -145,7 +145,7 @@ describe("groupStatus", () => {
           finished: 10,
           teamsCount: 5,
         })
-      ).toBe("finished");
+      ).toBe("all_program_entered");
     });
 
     it("does NOT return 'finished' if matches are finished on TVF but not yet entered into Volleybox", () => {

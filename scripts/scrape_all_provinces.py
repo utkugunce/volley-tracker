@@ -118,11 +118,25 @@ def extract_group_name(c_text: str) -> str:
     cleaned = re.sub(r"^(?:Voleybol\s+)?(?:İl\s+)?Birinciliği\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^[A-Za-zÇĞİÖŞÜçğiöşü\s]+İl\s+Birinciliği\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^[-–—\s]+", "", cleaned).strip()
+    is_yari_final = bool(re.search(r"yarı\s*final|yari\s*final", cleaned, flags=re.I))
+    is_final = not is_yari_final and bool(re.search(r"\bfinal\b", cleaned, flags=re.I))
+    is_klasman = bool(re.search(r"klasman", cleaned, flags=re.I))
+
+    prefix = ""
+    if is_yari_final:
+        prefix = "Yarı Final - "
+    elif is_final:
+        prefix = "Final - "
+    elif is_klasman:
+        prefix = "Klasman - "
+
     if re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I):
         m = re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I)
-        cleaned = f"{m.group(1).upper()} Grubu"
+        cleaned = f"{prefix}{m.group(1).upper()} Grubu"
     elif re.match(r"^\d+$", cleaned):
-        cleaned = f"{cleaned}. Grup"
+        cleaned = f"{prefix}{cleaned}. Grup"
+    elif prefix and not cleaned.startswith(prefix):
+        cleaned = f"{prefix}{cleaned}"
     return cleaned or "1. Grup"
 
 def decode_html(resp: httpx.Response) -> str:
@@ -303,6 +317,14 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         rt = _norm(raw_team)
         gs = _norm(group_str)
         ct = _norm(city)
+        # İzmir Genç Kızlar Süper Lig (U18) -> Karşıyaka normal A takımıdır
+        if ("izmir" in ct or not ct) and ("genc" in gs or "u18" in gs or "gk" in gs) and "super" in gs:
+            if "karsiyaka" in rt:
+                return "Karşıyaka SK U18"
+        # İzmir Yıldız Kızlar Süper Lig (U16) -> Karşıyaka U16 (Endo Karşıyaka değil)
+        if ("izmir" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
+            if "karsiyaka" in rt and not any(x in rt for x in ["alfa", "gonen"]):
+                return "Karşıyaka U16"
         # Ankara Yıldız Kızlar Süper Lig 4. Grup -> İlbank - B U16
         if ("ankara" in ct or not ct) and ("4" in gs) and ("gen" not in gs):
             if "lbank" in rt:

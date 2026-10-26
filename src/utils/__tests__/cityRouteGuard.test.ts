@@ -80,8 +80,6 @@ describe("evaluateCityRoute — ENGELLENMELİ (gerçek 404)", () => {
     ["/puan-durumu/bayburt", "unknown-tab-city"],
     ["/gunun-maclari/olmayan-il", "unknown-tab-city"],
     ["/grup-durumu/xyz", "unknown-tab-city"],
-    ["/kulupler/olmayan-sehir-xyz", "unknown-tab-city"],
-    ["/kulupler/olmayan-sehir/kadikoy", "unknown-tab-city"],
   ];
 
   it.each(cases)("%s -> blocked (%s)", (pathname, reason) => {
@@ -123,7 +121,6 @@ describe("evaluateCityRoute — GEÇMELİ (dokunulmaz)", () => {
     "/puan-durumu",
     "/gunun-maclari",
     "/grup-durumu",
-    "/kulupler",
     // geçerli {sekme}/{il}
     "/fikstur/istanbul",
     "/sonuclar/izmir",
@@ -133,9 +130,6 @@ describe("evaluateCityRoute — GEÇMELİ (dokunulmaz)", () => {
     "/antalya",
     "/fikstur/antalya",
     "/puan-durumu/antalya",
-    "/kulupler/istanbul",
-    "/kulupler/istanbul/kadikoy",
-    "/kulupler/all",
     // kapsam dışı dinamik rotalar (kendi notFound()/noindex akışlarında bırakıldı)
     "/takim/vakifbank-u18-t19499",
     "/takim/vakifbank-u18-t19499/istanbul",

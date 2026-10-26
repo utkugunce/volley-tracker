@@ -3578,7 +3578,7 @@
     {
       "internal_name": "KARŞIYAKA",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Endo Karşıyaka",
+      "matched_as": "Karşıyaka U16",
       "volleybox_url": "https://women.volleybox.net/karsyaka-sk-t2101",
       "age_category": "U16",
       "confidence": "club_level_only",
@@ -3591,13 +3591,18 @@
         "İnfo Yatırım Karşıyaka",
         "Karşıyaka Medicalpoint",
         "Karşıyaka Asrın Grup",
-        "DYO Karşıyaka"
+        "DYO Karşıyaka",
+        "Endo Karşıyaka",
+        "Karşıyaka U16"
+      ],
+      "synonyms": [
+        "Endo Karşıyaka"
       ]
     },
     {
       "internal_name": "Karşıyaka",
       "internal_category": "Yıldız Kızlar Süper Lig",
-      "matched_as": "Endo Karşıyaka",
+      "matched_as": "Karşıyaka U16",
       "volleybox_url": "https://women.volleybox.net/karsyaka-sk-t2101",
       "age_category": "U16",
       "confidence": "club_level_only",
@@ -3610,7 +3615,12 @@
         "İnfo Yatırım Karşıyaka",
         "Karşıyaka Medicalpoint",
         "Karşıyaka Asrın Grup",
-        "DYO Karşıyaka"
+        "DYO Karşıyaka",
+        "Endo Karşıyaka",
+        "Karşıyaka U16"
+      ],
+      "synonyms": [
+        "Endo Karşıyaka"
       ]
     },
     {
@@ -23219,6 +23229,30 @@
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-10-23"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Kırklareli",
+      "city_slug": "kirklareli",
+      "matched_as": "Kırklareli Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-krklareli-super-ligi-u18-2026-27-o51846",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-26",
+      "status_override": "teams_only"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Kırklareli",
+      "city_slug": "kirklareli",
+      "matched_as": "Kırklareli Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-krklareli-super-ligi-u16-2026-27-o51847",
+      "age_category": "U16",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-26",
+      "status_override": "teams_only"
     }
   ]
 }
