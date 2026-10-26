@@ -62,13 +62,13 @@ export function FixtureTableRow({
     <React.Fragment>
       {isFirstOfGroup && (
         <tr >
-          <td colSpan={10} className="py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-surface-muted/90 to-amber-500/10 border border-amber-500/30 text-amber-300 font-extrabold text-[11px] uppercase tracking-wider shadow-xs">
+          <td colSpan={10} className="py-2 px-3.5 rounded-lg bg-surface-muted border border-line/60 text-ink font-bold text-[11px] uppercase tracking-wider">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-glow-amber"></span>
-                <span className="text-amber-300 font-black tracking-wide">{currentGroup}</span>
+                <span className="w-2 h-2 rounded-full bg-primary"></span>
+                <span className="text-white font-bold tracking-wide">{currentGroup}</span>
               </div>
-              <span className="text-[10px] font-mono text-amber-200/80 font-bold bg-slate-950/80 px-2.5 py-0.5 rounded-md border border-amber-500/30">
+              <span className="text-[10px] font-mono tabular-nums text-ink-3 font-medium">
                 {matchesInGroupCount} Maç
               </span>
             </div>
@@ -79,7 +79,7 @@ export function FixtureTableRow({
         onClick={() => onSelectMatch?.(match)}
         className={`group transition-all duration-200 ${
           onSelectMatch ? "cursor-pointer" : ""
-        } hover:shadow-card hover:-translate-y-0.5`}
+        } hover:bg-surface-raised/40`}
       >
         {/* ⭐ Favori */}
         <FixtureFavoriteCell

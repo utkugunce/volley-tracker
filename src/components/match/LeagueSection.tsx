@@ -91,7 +91,7 @@ export const LeagueSection: React.FC<LeagueSectionProps> = ({
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
-          <span className="font-mono text-[10px] font-semibold text-blue-400 bg-canvas px-2 py-0.5 rounded border border-line">
+          <span className="font-mono text-[11px] font-medium tabular-nums text-ink-3">
             {matches.length} Maç
           </span>
 

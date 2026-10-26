@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T13:25:44.728233+03:00",
+  "updated_at": "2026-10-26T14:31:34.825165+03:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -41,6 +41,28 @@
       },
       {
         "rank": 2,
+        "team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Megaron İnşaat Diyarbakır Spor",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Diyarbakır İçkale Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -51,7 +73,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "Dicle Üniversitesi Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -62,47 +84,25 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Sur Amed Spor U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Diyarbakır Gençlik Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
-        "played": 0,
+        "team": "Diyarbakır Gençlik Spor Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Megaron İnşaat Diyarbakır Spor",
-        "played": 0,
+        "team": "Sur Amed Spor U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -301,13 +301,17 @@
       "gender": "Kız",
       "group": "Genç Kadın",
       "match_no": "5",
-      "home_team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
-      "away_team": "Dicle Üniversitesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "home_team": "Sur Amed Spor U18",
+      "away_team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411675",
@@ -344,11 +348,15 @@
       "match_no": "6",
       "home_team": "Diyarbakır Gençlik Spor Kulübü U18",
       "away_team": "Megaron İnşaat Diyarbakır Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "5-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411676",
@@ -372,7 +380,5 @@
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-26T13:31:55.780648"
+  ]
 }

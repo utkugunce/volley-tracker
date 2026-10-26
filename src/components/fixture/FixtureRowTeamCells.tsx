@@ -23,7 +23,7 @@ export function FixtureHomeTeamCell({ match, city, won: homeWon, isFinished, car
           city={match.city || city}
           className={`text-xs ${
             homeWon
-              ? "font-black text-white drop-shadow-xs"
+              ? "font-bold text-white"
               : isFinished
               ? "font-normal text-slate-400"
               : "font-bold text-slate-100 group-hover:text-white transition-colors"
@@ -47,14 +47,14 @@ export function FixtureScoreCell({ match, isFinished, forfeitInfo, cardBorderCla
       <div className="flex items-center justify-center">
         {isFinished ? (
           <div className="inline-flex flex-col items-center">
-            <span className="inline-block px-2 py-0.5 rounded-lg font-mono font-scoreboard tabular-nums font-black text-xs text-done tracking-wider">
+            <span className="inline-block px-2 py-0.5 rounded-lg font-mono font-scoreboard tabular-nums font-bold text-xs text-white tracking-wider">
               {match.home_score !== null && match.home_score !== undefined && match.away_score !== null && match.away_score !== undefined
                 ? `${match.home_score} - ${match.away_score}`
                 : match.score || "- : -"}
             </span>
             {forfeitInfo.isForfeit && (
               <span
-                className="text-[9px] font-black uppercase tracking-wider text-amber-300 bg-amber-950/90 border border-amber-600/70 px-1.5 py-0.2 rounded mt-0.5 shadow-xs"
+                className="text-[9px] font-bold uppercase tracking-wider text-warn mt-0.5"
                 title={forfeitInfo.reason || "TVF kuralı gereği hükmen galibiyet"}
               >
                 Hükmen
@@ -63,7 +63,7 @@ export function FixtureScoreCell({ match, isFinished, forfeitInfo, cardBorderCla
           </div>
         ) : (
           <span
-            className="inline-flex items-center justify-center px-2 py-0.5 rounded-full font-bold text-[10px] tracking-wider bg-surface-raised text-ink-2 border border-line shadow-xs"
+            className="inline-flex items-center justify-center font-mono text-[11px] text-ink-3"
             title="Karşılaşma"
           >
             VS
@@ -85,7 +85,7 @@ export function FixtureAwayTeamCell({ match, city, won: awayWon, isFinished, car
           city={match.city || city}
           className={`text-xs ${
             awayWon
-              ? "font-black text-white drop-shadow-xs"
+              ? "font-bold text-white"
               : isFinished
               ? "font-normal text-slate-400"
               : "font-bold text-slate-100 group-hover:text-white transition-colors"
@@ -107,10 +107,10 @@ export function FixtureSetScoresCell({ match, isFinished, forfeitInfo, cardBorde
             return (
               <span
                 key={sIdx}
-                className={`font-mono font-scoreboard tabular-nums text-[10px] px-1.5 py-0.5 rounded-md border font-bold shadow-2xs ${
+                className={`font-mono font-scoreboard tabular-nums text-[11px] px-1 py-0.5 rounded ${
                   isHomeSet
-                    ? "bg-surface-raised text-ink-2 border-line"
-                    : "bg-slate-900/90 text-slate-300 border-slate-700/60"
+                    ? "text-ink font-semibold"
+                    : "text-ink-3 font-normal"
                 }`}
               >
                 {set}

@@ -29,7 +29,7 @@ export function StandingsHeaderStrip({
     <div className="bg-surface text-ink px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-line">
       <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
         <Trophy size={15} className="text-warn shrink-0" />
-        <h2 className="text-xs sm:text-sm font-extrabold tracking-tight truncate">
+        <h2 className="text-xs sm:text-sm font-bold tracking-tight truncate">
           <LeagueVolleyboxLink
             league={activeContext?.leagueFullName || ""}
             city={activeContext?.city || city}

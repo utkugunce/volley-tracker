@@ -167,10 +167,10 @@ body {
     transform: translateY(0);
   }
   .glass-panel {
-    background: rgb(var(--glass-rgb) / 0.78);
+    background: var(--surface);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
-    border: 1px solid rgb(var(--edge-rgb) / 0.08);
+    border: 1px solid rgb(var(--edge-rgb) / 0.06);
   }
 
   .glass-card {

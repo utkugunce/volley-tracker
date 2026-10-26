@@ -194,7 +194,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             />
 
             {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
-            {activeMainTab !== "home" && (
+            {false && activeMainTab !== "home" && (
               <CityTabBar
                 currentCitySlug={currentCitySlug}
                 onSelectCity={handleSelectCity}

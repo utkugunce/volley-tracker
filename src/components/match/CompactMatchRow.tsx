@@ -91,10 +91,10 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
       }}
       className={`group relative flex items-center min-h-[46px] px-2.5 py-1.5 transition-all cursor-pointer border-b border-line/50 ${
         isSelected
-          ? "bg-slate-800/80 border-l-2 border-l-blue-500 shadow-inner"
+          ? "bg-primary/10 border-l-2 border-l-primary"
           : hasDiscrepancy
           ? "bg-amber-950/30 border-l-2 border-l-amber-400 hover:bg-amber-950/50"
-          : "hover:bg-panel/80 bg-surface-muted"
+          : "hover:bg-surface-raised/70 bg-surface"
       }`}
     >
       {/* 1. Sol Kısım: Saat, Tarih ve Durum */}
@@ -209,7 +209,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
             ((showGroupBadge && match.group) || (match.hall && match.hall !== "TBD")) && (
               <div className="flex items-center gap-1.5 truncate pl-6 text-[9px] leading-tight">
                 {showGroupBadge && match.group && (
-                  <span className="font-semibold text-blue-400 shrink-0">
+                  <span className="font-semibold text-ink-2 shrink-0">
                     {formatGroupName(match.group)}
                   </span>
                 )}
@@ -241,7 +241,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           ) : (
             <>
               {showGroupBadge && match.group && (
-                <span className="truncate pl-6 text-[9px] font-semibold text-blue-400 leading-tight">
+                <span className="truncate pl-6 text-[9px] font-semibold text-ink-2 leading-tight">
                   {formatGroupName(match.group)}
                 </span>
               )}
@@ -268,8 +268,8 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                   mode === "today" && isLive && idx === parsedSets.length - 1
                     ? "bg-blue-500/10 text-blue-300 font-semibold"
                     : set.home !== null && set.away !== null && set.home > set.away
-                    ? "bg-emerald-500/10 text-emerald-400 font-bold"
-                    : "text-slate-500 font-normal"
+                    ? "text-ink font-semibold"
+                    : "text-ink-3 font-normal"
                 }`}>
                   {set.home ?? "-"}
                 </span>
@@ -277,8 +277,8 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                   mode === "today" && isLive && idx === parsedSets.length - 1
                     ? "bg-blue-500/10 text-blue-300 font-semibold"
                     : set.home !== null && set.away !== null && set.away > set.home
-                    ? "bg-emerald-500/10 text-emerald-400 font-bold"
-                    : "text-slate-500 font-normal"
+                    ? "text-ink font-semibold"
+                    : "text-ink-3 font-normal"
                 }`}>
                   {set.away ?? "-"}
                 </span>
@@ -298,7 +298,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span
             className={`text-xs ${
               homeWon
-                ? "font-extrabold text-white"
+                ? "font-bold text-white"
                 : isFinished
                 ? "font-bold text-ink-2"
                 : mode === "results"
@@ -311,7 +311,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span
             className={`text-xs ${
               awayWon
-                ? "font-extrabold text-white"
+                ? "font-bold text-white"
                 : isFinished
                 ? "font-bold text-ink-2"
                 : mode === "results"

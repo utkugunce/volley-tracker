@@ -46,7 +46,7 @@ export function FixtureTableHeader({
         if (target.closest("a") || target.closest("button")) return;
         handleToggleCollapse();
       }}
-      className={`bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 text-white px-4 py-2.5 flex items-center justify-between transition-colors ${
+      className={`bg-surface text-white px-4 py-2.5 flex items-center justify-between transition-colors ${
         isCollapsed ? "rounded-2xl" : "border-b border-slate-800/80"
       } ${isCollapsible ? "cursor-pointer hover:bg-slate-850/60" : ""}`}
       title={
@@ -61,10 +61,10 @@ export function FixtureTableHeader({
         <div className="w-5 h-5 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center text-primary shrink-0 shadow-xs">
           <Trophy size={12} className="text-primary" />
         </div>
-        <h3 className="font-extrabold text-xs tracking-tight text-white uppercase flex items-center gap-1.5">
+        <h3 className="font-bold text-xs tracking-tight text-white uppercase flex items-center gap-1.5">
           {/* Şehir Başlığı: Tüm İller seçildiğinde görseldeki yere hangi il olduğu yazılır */}
           {showCityBadge && effectiveCity && !title.toLowerCase().startsWith(effectiveCity.toLowerCase()) && (
-            <span className="text-sky-400 font-black tracking-wide">
+            <span className="text-primary font-bold tracking-wide">
               {effectiveCity.toUpperCase()} •
             </span>
           )}
@@ -121,7 +121,7 @@ export function FixtureTableHeader({
             <PrintScheduleButton />
           </>
         )}
-        <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-900/90 px-2 py-0.5 rounded-lg border border-slate-800">
+        <span className="text-[11px] font-mono tabular-nums font-medium text-ink-3">
           {matches.length} Maç
         </span>
 
