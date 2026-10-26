@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
-import { computeLocalDateString } from "@/utils/dashboardFilters";
+import { getIstanbulDateString } from "@/utils/calendar";
 
 /**
- * Bugün & Dün tarihleri — sadece client tarafında hesaplanır.
- * useMemo yerine useEffect kullanılır: SSR (UTC) vs istemci (UTC+3) timezone farkından
- * kaynaklanan React hydration error #418 (metin uyuşmazlığı) önlenir.
+ * Bugün & Dün tarihleri — Türkiye saat dilimi (Europe/Istanbul, UTC+3) baz alınarak
+ * hem SSR (sunucu) hem istemcide tutarlı ve anında hazır şekilde hesaplanır.
  */
 export function useTodayYesterday() {
-  const [todayStr, setTodayStr] = useState("");
-  const [yesterdayStr, setYesterdayStr] = useState("");
+  const [todayStr, setTodayStr] = useState(() => getIstanbulDateString(0));
+  const [yesterdayStr, setYesterdayStr] = useState(() => getIstanbulDateString(1));
 
   useEffect(() => {
-    setTodayStr(computeLocalDateString(0));
-    setYesterdayStr(computeLocalDateString(1));
+    setTodayStr(getIstanbulDateString(0));
+    setYesterdayStr(getIstanbulDateString(1));
   }, []);
 
   return { todayStr, yesterdayStr };

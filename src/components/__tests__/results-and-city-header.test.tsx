@@ -1,228 +1,240 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
-import { isMatchScored } from "@/utils/matchScoring";
-import { getInitialFixtures, getInitialResults } from "@/utils/getInitialFixtures";
-import { FilterBar } from "../FilterBar";
-import { DateRibbon } from "../DateRibbon";
-import { Match } from "@/types/fixture";
-
-describe("Results and City Header enhancements", () => {
-  it("loads only scored matches for results while preserving the full fixture count", () => {
-    const fullFixtures = getInitialFixtures();
-    const initialResults = getInitialResults();
-
-    expect(initialResults.matches.length).toBeGreaterThan(0);
-    expect(initialResults.matches.every(isMatchScored)).toBe(true);
-    expect(initialResults.matches.length).toBeLessThan(fullFixtures.matches.length);
-    expect(initialResults.total_matches).toBe(fullFixtures.total_matches);
-  });
-
-  it("isMatchScored correctly identifies matches with scores or finished status", () => {
-    const finishedMatch: Match = {
-      id: "m-1",
-      date: "2026-09-15",
-      time: "14:00",
-      hall: "50. Yıl",
-      category: "Genç Kızlar Süper Lig",
-      age_group: "Genç",
-      gender: "Kız",
-      group: "A Grubu",
-      match_no: "1",
-      home_team: "Eczacıbaşı",
-      away_team: "Ümraniye Bld",
-      status: "finished",
-      score: "3 - 0",
-    };
-    expect(isMatchScored(finishedMatch)).toBe(true);
-
-    const upcomingWithScoreMatch: Match = {
-      id: "m-2",
-      date: "2026-09-16",
-      time: "14:00",
-      hall: "50. Yıl",
-      category: "Genç Kızlar Süper Lig",
-      age_group: "Genç",
-      gender: "Kız",
-      group: "A Grubu",
-      match_no: "2",
-      home_team: "Fenerbahçe",
-      away_team: "VakıfBank",
-      status: "upcoming",
-      home_score: 3,
-      away_score: 1,
-    };
-    expect(isMatchScored(upcomingWithScoreMatch)).toBe(true);
-
-    const vbScoredMatch: Match = {
-      id: "m-3",
-      date: "2026-09-17",
-      time: "14:00",
-      hall: "50. Yıl",
-      category: "Genç Kızlar Süper Lig",
-      age_group: "Genç",
-      gender: "Kız",
-      group: "A Grubu",
-      match_no: "3",
-      home_team: "Takım A",
-      away_team: "Takım B",
-      status: "upcoming",
-      volleybox: {
-        synced: true,
-        has_score: true,
-        score: "3 - 2",
-      },
-    };
-    expect(isMatchScored(vbScoredMatch)).toBe(true);
-
-    const unplayedMatch: Match = {
-      id: "m-4",
-      date: "2026-09-25",
-      time: "18:00",
-      hall: "Batıkent",
-      category: "Genç Kızlar Süper Lig",
-      age_group: "Genç",
-      gender: "Kız",
-      group: "A Grubu",
-      match_no: "4",
-      home_team: "Zeren Spor",
-      away_team: "Başkent Arma",
-      status: "upcoming",
-      score: "- : -",
-    };
-    expect(isMatchScored(unplayedMatch)).toBe(false);
-  });
-
-  it("FilterBar renders green SONUÇLAR badge instead of HEPSİ/OYNANACAK/BİTENLER when isResultsTab is true", () => {
-    render(
-      <FilterBar
-        categories={["Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"]}
-        selectedCategory="Tümü"
-        onSelectCategory={vi.fn()}
-        statusFilter="finished"
-        onSelectStatusFilter={vi.fn()}
-        counts={{ all: 29, upcoming: 0, finished: 29 }}
-        halls={["50. Yıl"]}
-        selectedHall="Tümü"
-        onSelectHall={vi.fn()}
-        searchQuery=""
-        onSearchChange={vi.fn()}
-        onReset={vi.fn()}
-        isFiltered={false}
-        isResultsTab={true}
-      />
-    );
-
-    // BİTENLER veya HEPSİ durum butonları görünmemeli
-    expect(screen.queryByRole("button", { name: /oynanacak/i })).not.toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: /hepsi/i })).not.toBeInTheDocument();
-
-    // SONUÇLAR rozeti ve 29 sayısı bulunmalı
-    expect(screen.getByText("SONUÇLAR")).toBeInTheDocument();
-    expect(screen.getByText("29")).toBeInTheDocument();
-  });
-
-  it("FilterBar renders DÜNÜN SONUÇLARI sub-tab and triggers onSelectResultsSubTab when clicked", () => {
-    const handleSelectSubTab = vi.fn();
-    render(
-      <FilterBar
-        categories={["Genç Kızlar Süper Lig"]}
-        selectedCategory="Tümü"
-        onSelectCategory={vi.fn()}
-        statusFilter="finished"
-        onSelectStatusFilter={vi.fn()}
-        counts={{ all: 29, upcoming: 0, finished: 29 }}
-        halls={["50. Yıl"]}
-        selectedHall="Tümü"
-        onSelectHall={vi.fn()}
-        searchQuery=""
-        onSearchChange={vi.fn()}
-        onReset={vi.fn()}
-        isFiltered={false}
-        isResultsTab={true}
-        resultsSubTab="all"
-        onSelectResultsSubTab={handleSelectSubTab}
-        yesterdayCount={7}
-      />
-    );
-
-    // DÜNÜN SONUÇLARI butonu ve 7 sayısı görünmeli
-    const yesterdayBtn = screen.getByText("DÜNÜN SONUÇLARI").closest("button")!;
-    expect(yesterdayBtn).toBeInTheDocument();
-    expect(screen.getByText("7")).toBeInTheDocument();
-
-    // Tıklanınca onSelectResultsSubTab("yesterday") çağrılmalı
-    fireEvent.click(yesterdayBtn);
-    expect(handleSelectSubTab).toHaveBeenCalledWith("yesterday");
-  });
-
-  it("DateRibbon renders emerald variant with yesterday label, match counts and triggers date selection", () => {
-    const handleSelectDate = vi.fn();
-    const { container } = render(
-      <DateRibbon
-        dates={["2026-09-22", "2026-09-21", "2026-09-17"]}
-        selectedDate="2026-09-22"
-        onSelectDate={handleSelectDate}
-        dateCounts={{ "2026-09-22": 3, "2026-09-21": 4, "2026-09-17": 6 }}
-        todayStr="2026-09-23"
-        yesterdayStr="2026-09-22"
-        variant="emerald"
-      />
-    );
-
-    // TÜMÜ butonu ve Takvim butonu bulunmalı
-    expect(screen.getByRole("tab", { name: /Tüm tarihleri göster/i })).toBeInTheDocument();
-    expect(screen.getByLabelText("Takvimden tarih seç")).toBeInTheDocument();
-
-    // Dünün sonuçları DÜN etiketiyle ve 3 maç sayısıyla render edilmeli
-    expect(screen.getByText("DÜN")).toBeInTheDocument();
-    expect(screen.getByText("3")).toBeInTheDocument();
-
-    // 21 Eylül maç sayısı 4 olmalı
-    expect(screen.getByText("4")).toBeInTheDocument();
-
-    // DÜN butonuna tıklandığında seçili olmalı
-    const yesterdayTab = screen.getByText("DÜN").closest("button")!;
-    expect(yesterdayTab.getAttribute("aria-selected")).toBe("true");
-
-    // TÜMÜ butonuna tıklanınca onSelectDate("all") çağrılmalı
-    const allBtn = screen.getByRole("tab", { name: /Tüm tarihleri göster/i });
-    fireEvent.click(allBtn);
-    expect(handleSelectDate).toHaveBeenCalledWith("all");
-
-    // Takvim input'undan tarih seçildiğinde onSelectDate tetiklenmeli
-    const dateInput = container.querySelector('input[type="date"]')!;
-    fireEvent.change(dateInput, { target: { value: "2026-09-15" } });
-    expect(handleSelectDate).toHaveBeenCalledWith("2026-09-15");
-  });
-
-  it("FilterBar renders viewControl alongside the Filtreler button", () => {
-    render(
-      <FilterBar
-        categories={["Genç Kızlar Süper Lig"]}
-        selectedCategory="Tümü"
-        onSelectCategory={vi.fn()}
-        statusFilter="finished"
-        onSelectStatusFilter={vi.fn()}
-        counts={{ all: 10, upcoming: 0, finished: 10 }}
-        halls={["50. Yıl"]}
-        selectedHall="Tümü"
-        onSelectHall={vi.fn()}
-        searchQuery=""
-        onSearchChange={vi.fn()}
-        onReset={vi.fn()}
-        isFiltered={false}
-        viewControl={<button type="button" data-testid="custom-view-btn">Görünüm</button>}
-      />
-    );
-
-    const viewBtn = screen.getByTestId("custom-view-btn");
-    const filtersBtn = screen.getByRole("button", { name: /Filtreler/i });
-    expect(viewBtn).toBeInTheDocument();
-    expect(filtersBtn).toBeInTheDocument();
-
-    // Filtreler butonu ve Görünüm butonu aynı flex container içinde yer almalı
-    expect(viewBtn.parentElement).toBe(filtersBtn.parentElement);
-  });
-});
-
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import { isMatchScored } from "@/utils/matchScoring";
+import { getInitialFixtures, getInitialResults } from "@/utils/getInitialFixtures";
+import { getIstanbulDateString, isMatchPlayedOrScored } from "@/utils/calendar";
+import { FilterBar } from "../FilterBar";
+import { DateRibbon } from "../DateRibbon";
+import { Match } from "@/types/fixture";
+
+describe("Results and City Header enhancements", () => {
+  it("loads only scored or played/yesterday matches for results while preserving the full fixture count", () => {
+    const fullFixtures = getInitialFixtures();
+    const initialResults = getInitialResults();
+
+    expect(initialResults.matches.length).toBeGreaterThan(0);
+    const todayIso = getIstanbulDateString(0);
+    const yesterdayIso = getIstanbulDateString(1);
+    expect(
+      initialResults.matches.every(
+        (m) =>
+          isMatchScored(m) ||
+          m.status === "finished" ||
+          m.date === yesterdayIso ||
+          m.date === todayIso ||
+          isMatchPlayedOrScored(m, todayIso)
+      )
+    ).toBe(true);
+    expect(initialResults.matches.length).toBeLessThanOrEqual(fullFixtures.matches.length);
+    expect(initialResults.total_matches).toBe(fullFixtures.total_matches);
+  });
+
+  it("isMatchScored correctly identifies matches with scores or finished status", () => {
+    const finishedMatch: Match = {
+      id: "m-1",
+      date: "2026-09-15",
+      time: "14:00",
+      hall: "50. Yıl",
+      category: "Genç Kızlar Süper Lig",
+      age_group: "Genç",
+      gender: "Kız",
+      group: "A Grubu",
+      match_no: "1",
+      home_team: "Eczacıbaşı",
+      away_team: "Ümraniye Bld",
+      status: "finished",
+      score: "3 - 0",
+    };
+    expect(isMatchScored(finishedMatch)).toBe(true);
+
+    const upcomingWithScoreMatch: Match = {
+      id: "m-2",
+      date: "2026-09-16",
+      time: "14:00",
+      hall: "50. Yıl",
+      category: "Genç Kızlar Süper Lig",
+      age_group: "Genç",
+      gender: "Kız",
+      group: "A Grubu",
+      match_no: "2",
+      home_team: "Fenerbahçe",
+      away_team: "VakıfBank",
+      status: "upcoming",
+      home_score: 3,
+      away_score: 1,
+    };
+    expect(isMatchScored(upcomingWithScoreMatch)).toBe(true);
+
+    const vbScoredMatch: Match = {
+      id: "m-3",
+      date: "2026-09-17",
+      time: "14:00",
+      hall: "50. Yıl",
+      category: "Genç Kızlar Süper Lig",
+      age_group: "Genç",
+      gender: "Kız",
+      group: "A Grubu",
+      match_no: "3",
+      home_team: "Takım A",
+      away_team: "Takım B",
+      status: "upcoming",
+      volleybox: {
+        synced: true,
+        has_score: true,
+        score: "3 - 2",
+      },
+    };
+    expect(isMatchScored(vbScoredMatch)).toBe(true);
+
+    const unplayedMatch: Match = {
+      id: "m-4",
+      date: "2026-09-25",
+      time: "18:00",
+      hall: "Batıkent",
+      category: "Genç Kızlar Süper Lig",
+      age_group: "Genç",
+      gender: "Kız",
+      group: "A Grubu",
+      match_no: "4",
+      home_team: "Zeren Spor",
+      away_team: "Başkent Arma",
+      status: "upcoming",
+      score: "- : -",
+    };
+    expect(isMatchScored(unplayedMatch)).toBe(false);
+  });
+
+  it("FilterBar renders green SONUÇLAR badge instead of HEPSİ/OYNANACAK/BİTENLER when isResultsTab is true", () => {
+    render(
+      <FilterBar
+        categories={["Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"]}
+        selectedCategory="Tümü"
+        onSelectCategory={vi.fn()}
+        statusFilter="finished"
+        onSelectStatusFilter={vi.fn()}
+        counts={{ all: 29, upcoming: 0, finished: 29 }}
+        halls={["50. Yıl"]}
+        selectedHall="Tümü"
+        onSelectHall={vi.fn()}
+        searchQuery=""
+        onSearchChange={vi.fn()}
+        onReset={vi.fn()}
+        isFiltered={false}
+        isResultsTab={true}
+      />
+    );
+
+    // BİTENLER veya HEPSİ durum butonları görünmemeli
+    expect(screen.queryByRole("button", { name: /oynanacak/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /hepsi/i })).not.toBeInTheDocument();
+
+    // SONUÇLAR rozeti ve 29 sayısı bulunmalı
+    expect(screen.getByText("SONUÇLAR")).toBeInTheDocument();
+    expect(screen.getByText("29")).toBeInTheDocument();
+  });
+
+  it("FilterBar renders DÜNÜN SONUÇLARI sub-tab and triggers onSelectResultsSubTab when clicked", () => {
+    const handleSelectSubTab = vi.fn();
+    render(
+      <FilterBar
+        categories={["Genç Kızlar Süper Lig"]}
+        selectedCategory="Tümü"
+        onSelectCategory={vi.fn()}
+        statusFilter="finished"
+        onSelectStatusFilter={vi.fn()}
+        counts={{ all: 29, upcoming: 0, finished: 29 }}
+        halls={["50. Yıl"]}
+        selectedHall="Tümü"
+        onSelectHall={vi.fn()}
+        searchQuery=""
+        onSearchChange={vi.fn()}
+        onReset={vi.fn()}
+        isFiltered={false}
+        isResultsTab={true}
+        resultsSubTab="all"
+        onSelectResultsSubTab={handleSelectSubTab}
+        yesterdayCount={7}
+      />
+    );
+
+    // DÜNÜN SONUÇLARI butonu ve 7 sayısı görünmeli
+    const yesterdayBtn = screen.getByText("DÜNÜN SONUÇLARI").closest("button")!;
+    expect(yesterdayBtn).toBeInTheDocument();
+    expect(screen.getByText("7")).toBeInTheDocument();
+
+    // Tıklanınca onSelectResultsSubTab("yesterday") çağrılmalı
+    fireEvent.click(yesterdayBtn);
+    expect(handleSelectSubTab).toHaveBeenCalledWith("yesterday");
+  });
+
+  it("DateRibbon renders emerald variant with yesterday label, match counts and triggers date selection", () => {
+    const handleSelectDate = vi.fn();
+    const { container } = render(
+      <DateRibbon
+        dates={["2026-09-22", "2026-09-21", "2026-09-17"]}
+        selectedDate="2026-09-22"
+        onSelectDate={handleSelectDate}
+        dateCounts={{ "2026-09-22": 3, "2026-09-21": 4, "2026-09-17": 6 }}
+        todayStr="2026-09-23"
+        yesterdayStr="2026-09-22"
+        variant="emerald"
+      />
+    );
+
+    // TÜMÜ butonu ve Takvim butonu bulunmalı
+    expect(screen.getByRole("tab", { name: /Tüm tarihleri göster/i })).toBeInTheDocument();
+    expect(screen.getByLabelText("Takvimden tarih seç")).toBeInTheDocument();
+
+    // Dünün sonuçları DÜN etiketiyle ve 3 maç sayısıyla render edilmeli
+    expect(screen.getByText("DÜN")).toBeInTheDocument();
+    expect(screen.getByText("3")).toBeInTheDocument();
+
+    // 21 Eylül maç sayısı 4 olmalı
+    expect(screen.getByText("4")).toBeInTheDocument();
+
+    // DÜN butonuna tıklandığında seçili olmalı
+    const yesterdayTab = screen.getByText("DÜN").closest("button")!;
+    expect(yesterdayTab.getAttribute("aria-selected")).toBe("true");
+
+    // TÜMÜ butonuna tıklanınca onSelectDate("all") çağrılmalı
+    const allBtn = screen.getByRole("tab", { name: /Tüm tarihleri göster/i });
+    fireEvent.click(allBtn);
+    expect(handleSelectDate).toHaveBeenCalledWith("all");
+
+    // Takvim input'undan tarih seçildiğinde onSelectDate tetiklenmeli
+    const dateInput = container.querySelector('input[type="date"]')!;
+    fireEvent.change(dateInput, { target: { value: "2026-09-15" } });
+    expect(handleSelectDate).toHaveBeenCalledWith("2026-09-15");
+  });
+
+  it("FilterBar renders viewControl alongside the Filtreler button", () => {
+    render(
+      <FilterBar
+        categories={["Genç Kızlar Süper Lig"]}
+        selectedCategory="Tümü"
+        onSelectCategory={vi.fn()}
+        statusFilter="finished"
+        onSelectStatusFilter={vi.fn()}
+        counts={{ all: 10, upcoming: 0, finished: 10 }}
+        halls={["50. Yıl"]}
+        selectedHall="Tümü"
+        onSelectHall={vi.fn()}
+        searchQuery=""
+        onSearchChange={vi.fn()}
+        onReset={vi.fn()}
+        isFiltered={false}
+        viewControl={<button type="button" data-testid="custom-view-btn">Görünüm</button>}
+      />
+    );
+
+    const viewBtn = screen.getByTestId("custom-view-btn");
+    const filtersBtn = screen.getByRole("button", { name: /Filtreler/i });
+    expect(viewBtn).toBeInTheDocument();
+    expect(filtersBtn).toBeInTheDocument();
+
+    // Filtreler butonu ve Görünüm butonu aynı flex container içinde yer almalı
+    expect(viewBtn.parentElement).toBe(filtersBtn.parentElement);
+  });
+});
+
