@@ -996,12 +996,12 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="TVF İl Temsilcilikleri Canlı Veri Çekici")
     parser.add_argument("--city", default=None, help="Yalnızca belirli bir ili tara (ör: istanbul, izmir)")
-    parser.add_argument("--force", "-f", action="store_true", help="30 dakika bekleme kuralını yoksay ve zorla çalıştır")
+    parser.add_argument("--force", "-f", action="store_true", help="1 saat (60 dakika) bekleme kuralını yoksay ve zorla çalıştır")
     args = parser.parse_args()
 
-    COOLDOWN_MINUTES = 30
+    COOLDOWN_MINUTES = 60
 
-    # 30 Dakika Kontrolü: İki çekme arasında minimum 30 dk olmalı. Sadece --force veya tek il taramasında atlanır.
+    # 1 Saat Kontrolü: İki çekme arasında minimum 60 dk olmalı. Sadece --force veya tek il taramasında atlanır.
     if not args.force and not args.city and CITIES_INDEX_JSON.exists():
         try:
             with open(CITIES_INDEX_JSON, "r", encoding="utf-8") as f:
@@ -1017,7 +1017,7 @@ def main():
                         elapsed_min = max(0.0, elapsed_seconds / 60)
                         remaining_min = COOLDOWN_MINUTES - elapsed_min
                         print("=" * 80)
-                        print(f"⏳ [KORUMA] 81 il taraması için iki çekme arasında minimum {COOLDOWN_MINUTES} dakika olmalıdır.")
+                        print(f"⏳ [KORUMA] 81 il taraması için iki çekme arasında minimum 1 saat ({COOLDOWN_MINUTES} dakika) olmalıdır.")
                         print(f"   Son tarama : {elapsed_min:.1f} dakika önce yapıldı ({last_dt.strftime('%H:%M:%S')}).")
                         print(f"   Kalan süre : {remaining_min:.1f} dakika beklenmesi gerekiyor.")
                         print(f"   ⚠️ Tarama atlandı. Bu kural yalnızca manuel kullanıcı talebinde bozulabilir.")
@@ -1028,7 +1028,7 @@ def main():
             logger.warning(f"Son tarama zamanı kontrol edilirken hata: {e}")
 
     if args.force and not args.city:
-        print("⚡ [MANUEL TALEP] 30 dakika bekleme kuralı manuel olarak aşıldı, tam tarama başlatılıyor...")
+        print("⚡ [MANUEL TALEP] 1 saat bekleme kuralı manuel olarak aşıldı, tam tarama başlatılıyor...")
 
     print("=" * 80)
     print("🏆 TVF 81 İL VOLEYBOL İL TEMSİLCİLİĞİ CANLI TARAMA VE VERİ MOTORU")

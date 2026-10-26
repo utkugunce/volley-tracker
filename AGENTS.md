@@ -59,20 +59,20 @@ if (!authenticatedUser || authenticatedUser.role !== "admin") {
 
 ---
 
-## ⏱️ 30 Dakika Minimum Bekleme Sınırı (Cooldown Kuralı)
+## ⏱️ 1 Saat Minimum Bekleme Sınırı (Cooldown Kuralı)
 
-> **ÖNEMLİ:** 81 ilin taranması işlemlerinde iki çekme arasında **minimum 30 dakika** süre bulunmalıdır.
+> **ÖNEMLİ:** 81 ilin taranması işlemlerinde iki çekme arasında **minimum 1 saat (60 dakika)** süre bulunmalıdır.
 
 ### 🔒 Kuralın İşleyişi:
 1. **Otomatik Tetiklemelerde:**
    - Kod, UI veya veri değişikliği sonrası otomatik çalıştırmalarda normal komut (`python scripts/scrape_all_provinces.py`) çalıştırılır.
-   - Script içinde dahili 30 dakika kontrolü bulunur. Son taramadan bu yana 30 dakika dolmamışsa tarama yapılmaz; kalan bekleme süresi terminalde gösterilir ve işlem güvenle atlanır.
+   - Script içinde dahili 1 saat (60 dakika) kontrolü bulunur. Son taramadan bu yana 1 saat dolmamışsa tarama yapılmaz; kalan bekleme süresi terminalde gösterilir ve işlem güvenle atlanır.
    - Agent, otomatik geliştirme adımlarında **kesinlikle `--force` parametresini KULLANMAZ**.
-   - Tarama atlandığında kullanıcıya *"Son tarama X dakika önce yapıldığı için (30 dk bekleme kuralı gereğince) 81 il taraması atlandı."* şeklinde özet geçilir.
+   - Tarama atlandığında kullanıcıya *"Son tarama X dakika önce yapıldığı için (1 saat bekleme kuralı gereğince) 81 il taraması atlandı."* şeklinde özet geçilir.
 
 2. **İstisna (Kuralın Bozulabileceği Tek Durum):**
    - Bu kural **YALNIZCA KULLANICI AÇIKÇA MANUEL OLARAK İSTERSE** bozulabilir.
-   - Örnek kullanıcı istekleri: *"30 dakikayı bekleme hemen çek"*, *"zorla güncelle"*, *"verileri yine de çek"*, *"force scrape"*, *"81 ili şimdi çek"*.
+   - Örnek kullanıcı istekleri: *"1 saati bekleme hemen çek"*, *"30 dakikayı bekleme hemen çek"*, *"zorla güncelle"*, *"verileri yine de çek"*, *"force scrape"*, *"81 ili şimdi çek"*.
    - Yalnızca bu durumda `--force` parametresi kullanılır:
      ```powershell
      python scripts/scrape_all_provinces.py --force
@@ -100,13 +100,13 @@ Aşağıdaki gibi basit ve salt konuşma/danışma odaklı promptlarda **SCRAPER
 
 ### Çalıştırılacak Komutlar:
 
-- **Standart / Otomatik Komut (30 dk kontrolü devrededir):**
+- **Standart / Otomatik Komut (1 saat kontrolü devrededir):**
 ```powershell
 python scripts/scrape_all_provinces.py
 ```
 *(veya sanal ortam için: `.venv\Scripts\python.exe scripts/scrape_all_provinces.py`)*
 
-- **Manuel İstek Üzerine Zorlayarak Çalıştırma (30 dk kuralını atlar):**
+- **Manuel İstek Üzerine Zorlayarak Çalıştırma (1 saat kuralını atlar):**
 ```powershell
 python scripts/scrape_all_provinces.py --force
 ```

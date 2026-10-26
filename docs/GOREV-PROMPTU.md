@@ -421,4 +421,4 @@ ve mümkünse davranışı **canlı/preview üzerinde** doğrulayın — birim t
 - `main`'e doğrudan push etmeyin[cite: 1].
 - `revalidate` sürelerini kısaltmayın veya `generateStaticParams`'i doldurmayın — `src/app/__tests__/isr-kota.test.ts` bunu bilerek kilitliyor (Vercel ISR Write kotası)[cite: 1].
 - Gerçek veriyi temsil eden bir değere sabit fallback bağlamayın (`|| 4`, `|| 81` ...) — `docs/audit-hardcoded-fallbacks.md` ve `no-silent-fallbacks.test.tsx` bunu kilitliyor[cite: 1].
-- `AGENTS.md`'deki "her değişiklikten sonra 81 ili çek" kuralını otomatik adımlarda `--force` ile aşmayın (30 dk cooldown bilinçli; TVF sitelerine 18 thread ile istek atılıyor)[cite: 1].
+- `AGENTS.md`'deki "her değişiklikten sonra 81 ili çek" kuralını otomatik adımlarda `--force` ile aşmayın (1 saat cooldown bilinçli; TVF sitelerine 18 thread ile istek atılıyor)[cite: 1].
