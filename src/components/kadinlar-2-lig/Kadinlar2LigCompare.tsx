@@ -317,11 +317,11 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
       {/* 1. ÜST BAŞLIK VE KONTROL PANELİ */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center text-ink-2 shrink-0 shadow-xs">
+          <div className="w-10 h-10 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center text-ink-2 shrink-0 shadow-xs">
             <Swords size={20} />
           </div>
           <div>
-            <h2 className="text-sm sm:text-base font-extrabold text-white tracking-tight flex items-center gap-2">
+            <h2 className="text-sm sm:text-base font-bold text-white tracking-tight flex items-center gap-2">
               <span>Kadınlar 2. Ligi Kulüp Karşılaştırması</span>
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/10 text-ink-2 font-bold border border-primary/40 font-mono">
                 H2H
@@ -432,7 +432,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
             >
               <ArrowRightLeft size={16} className="group-hover:rotate-180 transition-transform duration-300" />
             </button>
-            <span className="text-xs font-black font-mono text-ink-2 tracking-widest uppercase">
+            <span className="text-xs font-bold font-mono text-ink-2 tracking-widest uppercase">
               VS
             </span>
           </div>
@@ -479,7 +479,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 <div className="min-w-0">
                   <Link prefetch={false}
                     href={`/takim/${slugOf(team1)}`}
-                    className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
+                    className="text-sm font-bold text-white hover:text-ink transition-colors truncate block"
                   >
                     {nameOf(team1.takim_adi)}
                   </Link>
@@ -497,7 +497,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
               </div>
               <div className="text-right shrink-0">
                 <span className="text-[10px] font-bold text-slate-500 uppercase block">Grup Sırası</span>
-                <span className="text-lg font-black font-mono text-emerald-400">#{team1.sira}</span>
+                <span className="text-lg font-bold font-mono tabular-nums text-emerald-400">#{team1.sira}</span>
               </div>
             </div>
 
@@ -508,7 +508,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                 <div className="min-w-0">
                   <Link prefetch={false}
                     href={`/takim/${slugOf(team2)}`}
-                    className="text-sm font-extrabold text-white hover:text-ink transition-colors truncate block"
+                    className="text-sm font-bold text-white hover:text-ink transition-colors truncate block"
                   >
                     {nameOf(team2.takim_adi)}
                   </Link>
@@ -526,7 +526,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
               </div>
               <div className="text-right shrink-0">
                 <span className="text-[10px] font-bold text-slate-500 uppercase block">Grup Sırası</span>
-                <span className="text-lg font-black font-mono text-emerald-400">#{team2.sira}</span>
+                <span className="text-lg font-bold font-mono tabular-nums text-emerald-400">#{team2.sira}</span>
               </div>
             </div>
           </div>
@@ -537,7 +537,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
       {team1 && team2 && stats1 && stats2 && (
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 sm:p-5 shadow-card space-y-4">
           <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-            <h3 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-tight flex items-center gap-2">
+            <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-tight flex items-center gap-2">
               <Activity size={14} className="text-ink-2" />
               <span>Sezon Performansı Karşılaştırması</span>
             </h3>
@@ -580,11 +580,11 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
 
             {/* Puan Tablosu Puanı */}
             <div className="grid grid-cols-3 py-2 border-b border-slate-800/60 text-center items-center">
-              <span className="font-mono font-black text-ink-2 text-sm">
+              <span className="font-mono font-bold tabular-nums text-ink-2 text-sm">
                 {team1.p} P
               </span>
               <span className="text-slate-400 text-[11px]">Toplam Puan</span>
-              <span className="font-mono font-black text-cyan-400 text-sm">
+              <span className="font-mono font-bold tabular-nums text-cyan-400 text-sm">
                 {team2.p} P
               </span>
             </div>
@@ -630,7 +630,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
         <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
           <div className="flex items-center gap-2">
             <Calendar size={14} className="text-ink-2" />
-            <h3 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-tight">
+            <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-tight">
               Aralarındaki Karşılaşmalar ({headToHeadMatches.length})
             </h3>
           </div>
@@ -673,7 +673,7 @@ export const Kadinlar2LigCompare: React.FC<Kadinlar2LigCompareProps> = ({
                     <span className={m.takim_a === team1?.takim_adi ? "text-ink-2 font-bold" : ""}>
                       {nameOf(m.takim_a)}
                     </span>
-                    <span className="font-mono font-black text-sm px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-white">
+                    <span className="font-mono font-bold tabular-nums text-sm px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-white">
                       {isFinished && m.skor ? m.skor : "vs"}
                     </span>
                     <span className={m.takim_b === team2?.takim_adi ? "text-cyan-300 font-bold" : ""}>

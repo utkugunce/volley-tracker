@@ -98,7 +98,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
 
           {/* Lig Rozeti */}
           <div className="flex items-center gap-1.5 text-xs">
-            <span className="font-extrabold text-white tracking-tight">Uzman Posta Kadınlar 2. Ligi</span>
+            <span className="font-bold text-white tracking-tight">Uzman Posta Kadınlar 2. Ligi</span>
             <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-primary/10 border border-primary/40 text-ink-2 font-mono font-bold hidden md:inline-block">
               {metadata?.toplam_grup_sayisi || 16} Grup • {metadata?.toplam_takim_sayisi || 163} Kulüp
             </span>
@@ -246,9 +246,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Anasayfa / Canlı Hub */}
           <button
             onClick={() => onSelectTab("home")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "home"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -259,9 +259,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Günün Maçları */}
           <button
             onClick={() => onSelectTab("today")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "today"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -277,9 +277,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Sonuçlar */}
           <button
             onClick={() => onSelectTab("results")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "results"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -301,9 +301,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Fikstür */}
           <button
             onClick={() => onSelectTab("fixtures")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "fixtures"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -314,9 +314,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Puan Cetveli */}
           <button
             onClick={() => onSelectTab("standings")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "standings"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -327,9 +327,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* 16 Grup Durumu */}
           <button
             onClick={() => onSelectTab("leaders")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "leaders"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -340,9 +340,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Kulüpler */}
           <button
             onClick={() => onSelectTab("teams")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "teams"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -353,9 +353,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Karşılaştır (H2H) */}
           <button
             onClick={() => onSelectTab("karsilastir")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "karsilastir"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >
@@ -366,9 +366,9 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           {/* Statü & Rehber */}
           <button
             onClick={() => onSelectTab("statu")}
-            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+            className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "statu"
-                ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+                ? "border-primary text-white bg-primary/10 shadow-sm"
                 : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
             }`}
           >

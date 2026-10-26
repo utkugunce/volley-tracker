@@ -366,7 +366,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                 setSelectedWeek("all");
                 setSelectedDate("all");
               }}
-              className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer ${
                 selectedWeek === "all"
                   ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                   : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
@@ -386,7 +386,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                     setSelectedWeek(w);
                     setSelectedDate("all");
                   }}
-                  className={`px-2.5 py-1 rounded-xl text-xs font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer ${
                     isSelected
                       ? "bg-selected-strong text-white shadow-glow-selected font-bold"
                       : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white border border-slate-700/50"
@@ -406,7 +406,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
                 onClick={onToggleFavoritesOnly}
                 className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-xl border transition-all cursor-pointer ${
                   showOnlyFavorites
-                    ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-glow-amber font-bold border-amber-400"
+                    ? "bg-warn text-black shadow-glow-amber font-bold border-amber-400"
                     : "bg-slate-800/80 text-slate-300 hover:text-white border-slate-700/60 hover:bg-slate-700/80"
                 }`}
                 title="Sadece takip ettiğim kulüplerin maçlarını listele"

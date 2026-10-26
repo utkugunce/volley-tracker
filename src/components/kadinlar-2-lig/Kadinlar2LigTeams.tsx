@@ -47,7 +47,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
       {/* 1. Üst Bilgi Kartı */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
         <div>
-          <h2 className="text-sm sm:text-base font-extrabold text-white flex items-center gap-2">
+          <h2 className="text-sm sm:text-base font-bold text-white flex items-center gap-2">
             <span>Kadınlar 2. Ligi Kulüpleri</span>
             <span className="text-xs px-2 py-0.5 rounded-full bg-slate-900 border border-slate-700 text-slate-300 font-mono">
               {filteredTeams.length} / {teams.length} Takım

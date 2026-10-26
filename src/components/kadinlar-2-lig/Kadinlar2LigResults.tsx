@@ -237,7 +237,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
             <CheckCircle2 size={16} />
           </div>
           <div>
-            <h2 className="text-xs sm:text-sm font-extrabold text-white tracking-tight">
+            <h2 className="text-xs sm:text-sm font-bold text-white tracking-tight">
               Tamamlanan Maç Sonuçları
             </h2>
             <span className="text-[11px] text-slate-400 font-medium">
@@ -308,7 +308,7 @@ export const Kadinlar2LigResults: React.FC<Kadinlar2LigResultsProps> = ({
               onClick={onToggleFavoritesOnly}
               className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-xl border transition-all cursor-pointer ${
                 showOnlyFavorites
-                  ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-glow-amber font-bold border-amber-400"
+                  ? "bg-warn text-black shadow-glow-amber font-bold border-amber-400"
                   : "bg-slate-800/80 text-slate-300 hover:text-white border-slate-700/60 hover:bg-slate-700/80"
               }`}
               title="Sadece takip ettiğim kulüplerin sonuçlarını listele"

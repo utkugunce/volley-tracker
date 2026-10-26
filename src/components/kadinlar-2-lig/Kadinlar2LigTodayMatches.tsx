@@ -221,7 +221,7 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
             onClick={onToggleFavoritesOnly}
             className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-xl border transition-all cursor-pointer ${
               showOnlyFavorites
-                ? "bg-gradient-to-r from-amber-400 to-amber-500 text-black shadow-glow-amber font-bold"
+                ? "bg-warn text-black shadow-glow-amber font-bold"
                 : "bg-slate-800/80 text-slate-300 hover:text-white border-slate-700/60 hover:bg-slate-700/80"
             }`}
             title="Sadece takip ettiğim kulüplerin maçlarını listele"

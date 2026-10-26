@@ -78,7 +78,7 @@ export const Kadinlar2LigMobileNav: React.FC<Kadinlar2LigMobileNavProps> = ({
               onClick={() => onSelectTab(item.id)}
               className={`relative flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all duration-150 cursor-pointer ${
                 isActive
-                  ? "text-primary font-black scale-105"
+                  ? "text-primary font-bold scale-105"
                   : "text-slate-400 hover:text-slate-200 font-medium"
               }`}
             >

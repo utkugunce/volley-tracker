@@ -51,7 +51,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
             <Layers size={18} />
           </div>
           <div>
-            <h2 className="text-sm sm:text-base font-extrabold text-white tracking-tight">
+            <h2 className="text-sm sm:text-base font-bold hero-heading-gradient tracking-tight">
               16 Grup İlerlemesi, Liderler ve Çeyrek Final Hattı
             </h2>
             <p className="text-xs text-slate-400">
@@ -87,7 +87,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                 <div className="flex items-center justify-between border-b border-slate-800/80 pb-2.5 mb-2.5">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-primary"></span>
-                    <h3 className="font-extrabold text-xs sm:text-sm text-white uppercase tracking-tight">
+                    <h3 className="font-bold text-xs sm:text-sm text-white uppercase tracking-tight">
                       {group.grup_adi}
                     </h3>
                   </div>
@@ -149,7 +149,7 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
                           </div>
                           <div className="flex items-center gap-2 shrink-0 font-mono text-[11px]">
                             <span className="text-slate-400">{team.g}G</span>
-                            <span className="font-black text-white bg-slate-950 px-1.5 py-0.2 rounded border border-slate-800">
+                            <span className="font-bold tabular-nums text-white bg-slate-950 px-1.5 py-0.2 rounded border border-slate-800">
                               {team.p}P
                             </span>
                           </div>
@@ -164,13 +164,13 @@ export const Kadinlar2LigLeaders: React.FC<Kadinlar2LigLeadersProps> = ({
               <div className="grid grid-cols-2 gap-1.5 pt-2 border-t border-slate-800/60">
                 <button
                   onClick={() => onSelectGroup(group.grup_no, "standings")}
-                  className="py-1.5 px-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all text-center cursor-pointer active:scale-95"
+                  className="py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] text-center cursor-pointer active:scale-[0.98]"
                 >
                   Puan Cetveli
                 </button>
                 <button
                   onClick={() => onSelectGroup(group.grup_no, "fixtures")}
-                  className="py-1.5 px-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-all text-center cursor-pointer active:scale-95"
+                  className="py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] text-center cursor-pointer active:scale-[0.98]"
                 >
                   Fikstür
                 </button>

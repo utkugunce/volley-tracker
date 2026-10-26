@@ -35,7 +35,7 @@ export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
           </div>
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <h2 className="text-base sm:text-lg font-black text-white tracking-tight">
+              <h2 className="text-base sm:text-lg font-bold hero-heading-gradient tracking-tight">
                 2026-2027 TVF Kadınlar 2. Lig Resmi Statüsü
               </h2>
               <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 font-mono font-bold">
@@ -65,12 +65,12 @@ export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col justify-between relative overflow-hidden group">
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-black uppercase tracking-wider text-ink-2 bg-primary/10 px-2 py-0.5 rounded-md border border-primary/30">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-ink-2 bg-primary/10 px-2 py-0.5 rounded-md border border-primary/30">
                 1. Aşama
               </span>
               <span className="text-[10px] font-mono text-slate-400">16 Grup</span>
             </div>
-            <h3 className="text-sm font-extrabold text-white">Lig Etabı (Grup Maçları)</h3>
+            <h3 className="text-sm font-bold text-white">Lig Etabı (Grup Maçları)</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
               İki devreli deplasmanlı lig usulü. Her grubun <span className="text-emerald-400 font-bold">ilk 2 takımı</span> Çeyrek Final&apos;e yükselir.
             </p>
@@ -88,12 +88,12 @@ export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col justify-between relative overflow-hidden group">
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-black uppercase tracking-wider text-amber-400 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-500/30">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-500/30">
                 2. Aşama
               </span>
               <span className="text-[10px] font-mono text-slate-400">8 Grup</span>
             </div>
-            <h3 className="text-sm font-extrabold text-white">Çeyrek Final Etabı</h3>
+            <h3 className="text-sm font-bold text-white">Çeyrek Final Etabı</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
               32 takım 4&apos;erli 8 gruba (A-H) ayrılır. Tarafsız sahada tek devreli lig oynanır. İlk 2&apos;ler Yarı Final&apos;e çıkar.
             </p>
@@ -111,12 +111,12 @@ export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col justify-between relative overflow-hidden group">
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-black uppercase tracking-wider text-sky-400 bg-sky-950/40 px-2 py-0.5 rounded-md border border-sky-500/30">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-sky-400 bg-sky-950/40 px-2 py-0.5 rounded-md border border-sky-500/30">
                 3. Aşama
               </span>
               <span className="text-[10px] font-mono text-slate-400">4 Grup</span>
             </div>
-            <h3 className="text-sm font-extrabold text-white">Yarı Final Etabı</h3>
+            <h3 className="text-sm font-bold text-white">Yarı Final Etabı</h3>
             <p className="text-xs text-slate-400 leading-relaxed">
               16 takım 4&apos;erli 4 gruba (A-D) ayrılır. Tek devreli lig usulü sonucunda ilk 2&apos;ler Final Etabı&apos;na kalır.
             </p>
@@ -131,24 +131,24 @@ export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
         </div>
 
         {/* Aşama 4: Final Etabı */}
-        <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 shadow-card flex flex-col justify-between relative overflow-hidden group bg-gradient-to-b from-amber-500/10 to-transparent">
+        <div className="glass-panel border border-amber-500/30 rounded-2xl p-4 shadow-card flex flex-col justify-between relative overflow-hidden group bg-surface-muted">
           <div className="space-y-2.5">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-black uppercase tracking-wider text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded-md border border-amber-500/40">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded-md border border-amber-500/40">
                 4. Aşama (Final)
               </span>
               <span className="text-[10px] font-mono text-amber-400 font-bold">2 Grup</span>
             </div>
-            <h3 className="text-sm font-extrabold text-white flex items-center gap-1.5">
+            <h3 className="text-sm font-bold text-white flex items-center gap-1.5">
               <Trophy size={14} className="text-primary shrink-0" />
               <span>Final Etabı</span>
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              8 takım 4&apos;erli 2 gruba ayrılır. Her iki grubun <span className="text-amber-300 font-bold">1. ve 2.</span> olan takımları <span className="text-white font-black underline decoration-amber-400">1. Lig&apos;e</span> terfi eder!
+              8 takım 4&apos;erli 2 gruba ayrılır. Her iki grubun <span className="text-amber-300 font-bold">1. ve 2.</span> olan takımları <span className="text-white font-bold underline decoration-amber-400">1. Lig&apos;e</span> terfi eder!
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
-            <span className="text-amber-400 font-extrabold flex items-center gap-1">
+            <span className="text-amber-400 font-bold flex items-center gap-1">
               🏆 4 Takım 1. Lig&apos;e
             </span>
             <span className="text-slate-400 text-[10px]">Şampiyonlar</span>
@@ -162,7 +162,7 @@ export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 sm:p-5 shadow-card space-y-3">
           <div className="flex items-center gap-2 border-b border-slate-800/80 pb-2.5">
             <Award size={16} className="text-amber-400" />
-            <h3 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider">
+            <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
               Resmi TVF Puanlama Sistemi (Madde 10)
             </h3>
           </div>
@@ -204,7 +204,7 @@ export const Kadinlar2LigStatuView: React.FC<Kadinlar2LigStatuViewProps> = ({
         <div className="glass-panel border border-slate-800/80 rounded-2xl p-4 sm:p-5 shadow-card space-y-3">
           <div className="flex items-center gap-2 border-b border-slate-800/80 pb-2.5">
             <Info size={16} className="text-sky-400" />
-            <h3 className="text-xs sm:text-sm font-extrabold text-white uppercase tracking-wider">
+            <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
               Kritik Statü Maddeleri
             </h3>
           </div>

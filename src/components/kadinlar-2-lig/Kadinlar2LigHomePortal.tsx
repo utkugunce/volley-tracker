@@ -29,6 +29,7 @@ import { compareMatchDateTime, formatDateTurkish, isMatchPassed } from "@/utils/
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { trIncludes } from "@/utils/turkishLocale";
 import { Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
+import { ScrollReveal } from "@/components/common/ScrollReveal";
 
 interface Kadinlar2LigHomePortalProps {
   data: Kadinlar2LigData;
@@ -283,7 +284,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
         {feedFilter !== "all" ? (
           <div className="space-y-3">
             <div className="flex items-center justify-between pb-1 border-b border-slate-800/60">
-              <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wide flex items-center gap-2">
+              <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wide flex items-center gap-2">
                 <span>
                   {feedFilter === "today"
                     ? "Bugünün Maçları"
@@ -337,7 +338,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-2.5 h-2.5 rounded-full bg-done" />
-                    <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+                    <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
                       <span>Bugünün Maçları</span>
                       <span className="text-ink-2 font-display tabular-nums">({todayMatches.length})</span>
                     </h2>
@@ -369,7 +370,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                   <div className="w-5 h-5 rounded-md bg-surface-raised border border-line flex items-center justify-center text-ink-2">
                     <Calendar size={12} />
                   </div>
-                  <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider">
+                  <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                     Yaklaşan Fikstür
                   </h2>
                 </div>
@@ -411,7 +412,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     <div className="w-5 h-5 rounded-md bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
                       <CheckCircle2 size={12} />
                     </div>
-                    <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider">
+                    <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                       Son Biten Maçlar & Skorlar
                     </h2>
                   </div>
@@ -441,7 +442,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             )}
 
             {/* ================= ALT KISIM: 2 KOLONLU WİDGET VE BİLGİ PANELİ ================= */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
+            <ScrollReveal delayMs={60}><div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
               {/* 1. KART: ZİRVE YARIŞI / GRUP LİDERLERİ */}
               <div className="glass-panel rounded-2xl p-3.5 border border-slate-800/80 shadow-sm space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-800/70 pb-2">
@@ -449,7 +450,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     <div className="w-5 h-5 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
                       <Trophy size={12} />
                     </div>
-                    <h3 className="text-xs font-black text-white uppercase tracking-wider">
+                    <h3 className="text-xs font-bold text-white uppercase tracking-wider">
                       Grup Liderleri (Çeyrek Final Hattı)
                     </h3>
                   </div>
@@ -481,7 +482,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                       <div
                         key={grp.grup_no}
                         onClick={() => onSelectGroup(grp.grup_no, "standings")}
-                        className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-amber-500/40 transition-colors flex items-center justify-between gap-2 text-xs cursor-pointer"
+                        className="p-2.5 rounded-lg bg-slate-900/60 border border-slate-800/80 hover:border-amber-500/40 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] flex items-center justify-between gap-2 text-xs cursor-pointer"
                       >
                         <div className="min-w-0 flex items-center gap-2">
                           <span className="font-bold text-[10px] text-ink-2 bg-slate-800/80 px-1.5 py-0.5 rounded border border-slate-700/50 shrink-0">
@@ -516,11 +517,11 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
               </div>
 
               {/* 2. KART: RESMİ STATÜ & 1. LİG'E YÜKSELME SİSTEMİ */}
-              <div className="glass-panel rounded-2xl p-4 border border-slate-800/90 shadow-card bg-gradient-to-br from-amber-500/10 via-slate-900/60 to-slate-900/80 space-y-3 flex flex-col justify-between">
+              <div className="glass-panel rounded-2xl p-4 border border-slate-800/90 shadow-card bg-surface-muted space-y-3 flex flex-col justify-between">
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 text-amber-400">
                     <Sparkles size={16} />
-                    <h3 className="font-black text-xs uppercase tracking-wider text-white">
+                    <h3 className="font-bold text-xs uppercase tracking-wider text-white">
                       1. Lig&apos;e Yükselme Sistemi
                     </h3>
                   </div>
@@ -528,11 +529,11 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     16 gruptan ilk 2 sırayı alan <strong className="text-white">32 takım</strong> Çeyrek Final&apos;e yükselir. Çeyrek final, yarı final ve final etapları sonucunda <strong className="text-amber-300">4 takım Arabica Coffee House Kadınlar 1. Ligi</strong>&apos;ne yükselir.
                   </p>
                   <div className="grid grid-cols-2 gap-2 pt-1 text-[11px]">
-                    <div className="p-2 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <div className="p-2 rounded-lg bg-slate-950/60 border border-slate-800">
                       <span className="block text-slate-400 text-[10px]">Çeyrek Final</span>
                       <strong className="text-white">32 Kulüp (8x4)</strong>
                     </div>
-                    <div className="p-2 rounded-xl bg-slate-950/60 border border-slate-800">
+                    <div className="p-2 rounded-lg bg-slate-950/60 border border-slate-800">
                       <span className="block text-slate-400 text-[10px]">1. Lig Bileti</span>
                       <strong className="text-amber-300">4 Kulüp</strong>
                     </div>
@@ -550,8 +551,10 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
               </div>
             </div>
 
+            </ScrollReveal>
+
             {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
-            <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-xs">
+            <div className="rounded-2xl p-3 bg-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-xs">
               <div className="flex items-center gap-2">
                 <Sparkles size={14} className="text-ink-2 shrink-0" />
                 <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
@@ -609,7 +612,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
           onSelectMatch(match);
         }
       }}
-      className={`group relative bg-canvas/70 hover:bg-panel border rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-xs active:scale-[0.995] ${
+      className={`group relative bg-canvas/70 hover:bg-panel border rounded-xl p-2.5 sm:p-3 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer shadow-xs active:scale-[0.98] ${
         isSelected
           ? "border-primary/60 ring-2 ring-primary/40 bg-panel"
           : "border-slate-800/80 hover:border-primary/40"
@@ -668,7 +671,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
             </div>
             {hasScore && (
               <span
-                className={`font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm pl-2 ${
+                className={`font-mono font-scoreboard tabular-nums font-bold text-xs sm:text-sm pl-2 ${
                   homeWon ? "text-emerald-400" : "text-slate-400"
                 }`}
               >
@@ -691,7 +694,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
             </div>
             {hasScore && (
               <span
-                className={`font-mono font-scoreboard tabular-nums font-black text-xs sm:text-sm pl-2 ${
+                className={`font-mono font-scoreboard tabular-nums font-bold text-xs sm:text-sm pl-2 ${
                   awayWon ? "text-emerald-400" : "text-slate-400"
                 }`}
               >

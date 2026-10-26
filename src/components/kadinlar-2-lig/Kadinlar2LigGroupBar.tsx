@@ -91,7 +91,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
             >
               <span className="flex items-center gap-2 truncate">
                 <span className="w-2 h-2 rounded-full bg-primary shrink-0 shadow-2xs" />
-                <span className="text-white font-extrabold truncate text-[13px]">
+                <span className="text-white font-bold truncate text-[13px]">
                   {isAll
                     ? "Tüm Gruplar (16 Grup)"
                     : currentGroup?.grup_adi || `${selectedGroup}. Grup`}
@@ -229,7 +229,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
           type="button"
           onClick={() => onSelectGroup("all")}
           title="Kadınlar 2. Ligi Tüm Gruplar"
-          className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+          className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] flex items-center gap-1.5 cursor-pointer ${
             isAll
               ? "bg-primary text-primary-fg shadow-glow-primary"
               : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"
@@ -255,7 +255,7 @@ export const Kadinlar2LigGroupBar: React.FC<Kadinlar2LigGroupBarProps> = ({
               type="button"
               onClick={() => onSelectGroup(grp.grup_no)}
               title={`Kadınlar 2. Ligi ${grp.grup_adi}`}
-              className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all duration-150 flex items-center gap-1.5 cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] flex items-center gap-1.5 cursor-pointer ${
                 isActive
                   ? "bg-primary text-primary-fg shadow-glow-primary"
                   : "glass-panel text-slate-300 hover:text-white hover:bg-slate-800/70 border border-slate-700/60"

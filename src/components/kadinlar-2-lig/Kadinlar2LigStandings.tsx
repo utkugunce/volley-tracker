@@ -94,12 +94,12 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
       {/* Puan Durumu Tablosu Kartı */}
       <div className="glass-panel border border-slate-800/80 rounded-2xl shadow-card overflow-hidden">
         {/* 1. Başlık Şeridi (Altyapı ile Birebir) */}
-        <div className="bg-gradient-to-r from-slate-900/90 via-surface-muted/90 to-slate-900/90 text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-slate-800/80">
+        <div className="bg-surface-muted text-white px-3 sm:px-4 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-slate-800/80">
           <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
             <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center text-primary shrink-0 shadow-xs">
               <Trophy size={13} className="text-primary" />
             </div>
-            <h2 className="text-xs sm:text-sm font-extrabold tracking-tight truncate uppercase">
+            <h2 className="text-xs sm:text-sm font-bold tracking-tight truncate uppercase">
               KADINLAR 2. LİGİ • {group.grup_adi} - PUAN DURUMU
             </h2>
           </div>
@@ -180,7 +180,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                     <th className="py-2.5 px-2 text-center text-form-loss bg-slate-900/40 hidden xl:table-cell" title="0-3 Mağlubiyet">0-3</th>
                   </>
                 )}
-                <th className="py-2.5 sm:py-3 px-2 text-center w-12 sm:w-16 bg-slate-900/80 font-black text-white" title="Puan">P</th>
+                <th className="py-2.5 sm:py-3 px-2 text-center w-12 sm:w-16 bg-slate-900/80 font-bold text-white" title="Puan">P</th>
                 <th className="py-2.5 sm:py-3 px-3 text-right w-28 sm:w-36">İşlem</th>
               </tr>
             </thead>
@@ -210,7 +210,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                       {/* Sıra Numarası */}
                       <td className="py-2 sm:py-2.5 px-2 text-center">
                         <span
-                          className={`font-black font-mono text-xs ${
+                          className={`font-bold font-mono tabular-nums text-xs ${
                             isPlayoff
                               ? "text-primary"
                               : isRelegation
@@ -317,7 +317,7 @@ export const Kadinlar2LigStandings: React.FC<Kadinlar2LigStandingsProps> = ({
                             )}
 
                             {/* Puan (Vurgulu) */}
-                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-black text-white bg-slate-900/80 text-xs sm:text-sm">
+                            <td className="py-2 sm:py-2.5 px-2 text-center font-mono font-bold tabular-nums text-white bg-slate-900/80 text-xs sm:text-sm">
                               {team.p}
                             </td>
 
