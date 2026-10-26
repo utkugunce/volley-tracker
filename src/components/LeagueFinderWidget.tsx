@@ -102,14 +102,14 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
   return (
     <div className="bg-surface/90 backdrop-blur-md rounded-2xl border border-line shadow-card overflow-hidden">
       {/* Başlık Alanı */}
-      <div className="p-5 sm:p-6 border-b border-line bg-gradient-to-r from-surface to-surface-muted">
+      <div className="p-5 sm:p-6 border-b border-line bg-surface-muted">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="space-y-1">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
               <Sparkles className="w-3.5 h-3.5" />
               <span>İnteraktif Yaş & Kategori Bulucu</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-ink tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-bold hero-heading-gradient tracking-tight">
               Çocuğum Hangi Voleybol Liginde Oynar?
             </h2>
             
@@ -193,7 +193,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
         </div>
 
         {/* Sonuç Kartı */}
-        <div className="bg-gradient-to-br from-surface to-canvas border border-line rounded-2xl p-5 sm:p-6 shadow-sm space-y-4">
+        <div className="bg-canvas/80 border border-line rounded-xl p-5 sm:p-6 shadow-sm space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-line pb-4">
             <div className="space-y-1">
               <span className="text-xs font-bold text-ink-3 uppercase tracking-wider block">
@@ -201,7 +201,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
               </span>
               <div className="flex items-center gap-2.5 flex-wrap">
                 <Trophy className="w-6 h-6 text-amber-400" />
-                <h3 className="text-2xl sm:text-3xl font-black text-ink">
+                <h3 className="text-2xl sm:text-3xl font-bold text-ink">
                   {category.name}
                 </h3>
                 <span className="text-xs font-bold px-3 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/25">
@@ -232,7 +232,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = ({
             </div>
             <div className="bg-surface-muted p-3.5 rounded-xl border border-line">
               <span className="text-ink-3 block font-medium">Resmi File Boyu</span>
-              <span className="text-primary font-black mt-1 block text-sm">
+              <span className="text-primary font-bold mt-1 block text-sm">
                 {category.netHeight}
               </span>
             </div>

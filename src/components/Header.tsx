@@ -183,9 +183,9 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("home")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeTab === "home"
-              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-primary/10 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -202,9 +202,9 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("results")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeTab === "results"
-              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-primary/10 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -227,9 +227,9 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("today")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeTab === "today"
-              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-primary/10 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -246,9 +246,9 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("fixtures")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeTab === "fixtures"
-              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-primary/10 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -265,9 +265,9 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("standings")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeTab === "standings"
-              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-primary/10 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -279,9 +279,9 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("group-status")}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeTab === "group-status"
-              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-primary/10 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >
@@ -294,9 +294,9 @@ export const Header: React.FC<HeaderProps> = ({
           href="/takvim"
           prefetch={false}
           aria-current={activeTab === "calendar" ? "page" : undefined}
-          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-all cursor-pointer whitespace-nowrap active:scale-95 duration-200 ${
+          className={`flex items-center gap-1.5 sm:gap-2 py-2 sm:py-2.5 px-2.5 sm:px-4 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap active:scale-[0.98] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeTab === "calendar"
-              ? "border-primary text-white bg-gradient-to-t from-primary/10 to-slate-800/50 shadow-sm"
+              ? "border-primary text-white bg-primary/10 shadow-sm"
               : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/30"
           }`}
         >

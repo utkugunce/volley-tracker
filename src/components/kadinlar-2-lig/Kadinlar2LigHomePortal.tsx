@@ -168,9 +168,9 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
     <div className="space-y-4 animate-in fade-in-50 duration-200">
       {/* Sayfa Başlığı (Semantik H1 & Canlı Gösterge) */}
       <div className="flex items-center justify-between pb-1">
-        <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
+        <h1 className="text-sm sm:text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-done shrink-0" />
-          <span>TVF Kadınlar 2. Ligi Maç Merkezi & Bülteni</span>
+          <span className="hero-heading-gradient">TVF Kadınlar 2. Ligi Maç Merkezi & Bülteni</span>
         </h1>
         <span className="text-[11px] font-display tabular-nums text-ink-2">
           {selectedGroupFilter === "all" ? "16 Grup" : `Grup ${selectedGroupFilter}`} · {stats.totalMatches} Maç
@@ -184,7 +184,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("all")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "all"
                 ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -199,7 +199,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("today")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "today"
                 ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -217,7 +217,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("finished")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "finished"
                 ? "bg-done text-done-fg font-bold"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -233,7 +233,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("upcoming")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "upcoming"
                 ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"

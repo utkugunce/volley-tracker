@@ -92,7 +92,7 @@ export default function HangiLigdeOynarPage() {
           <div className="flex items-center justify-between pb-3 border-b border-line">
             <div className="flex items-center gap-2">
               <Trophy className="w-5 h-5 text-amber-400" />
-              <h2 className="text-lg font-black text-ink">
+              <h2 className="text-lg font-bold text-ink">
                 2026-2027 TVF Resmi Yaş Kategorileri Özeti
               </h2>
             </div>
@@ -169,7 +169,7 @@ export default function HangiLigdeOynarPage() {
         <div className="bg-surface rounded-2xl border border-line p-6 shadow-card space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-line">
             <HelpCircle className="w-5 h-5 text-primary" />
-            <h2 className="text-lg font-black text-ink">
+            <h2 className="text-lg font-bold text-ink">
               Altyapı Ligleri & Lisans Hakkında Sıkça Sorulanlar
             </h2>
           </div>

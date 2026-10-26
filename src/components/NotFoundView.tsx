@@ -23,11 +23,11 @@ export function NotFoundView() {
       <div className="max-w-lg mx-auto w-full my-auto text-center py-12 px-4 space-y-6">
         {/* Voleybol rozeti & 404 göstergesi */}
         <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-primary/10 border border-primary/20 text-primary shadow-glow-primary">
-          <span className="font-display font-black text-3xl tracking-tight">404</span>
+          <span className="font-display font-bold text-3xl tracking-tight">404</span>
         </div>
 
         <div className="space-y-2">
-          <h1 className="text-2xl sm:text-3xl font-black text-ink tracking-tight font-display">
+          <h1 className="text-2xl sm:text-3xl font-bold hero-heading-gradient tracking-tight font-display">
             Top Çizgi Dışında Kaldı!
           </h1>
           <p className="text-xs sm:text-sm text-ink-2 leading-relaxed">

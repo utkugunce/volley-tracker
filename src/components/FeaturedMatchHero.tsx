@@ -111,7 +111,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
   const copyShareText = `TVF ${featuredMatch.city || city} ${featuredMatch.category} (${featuredMatch.group}):\n${featuredMatch.home_team} vs ${featuredMatch.away_team}\n🗓 ${featuredMatch.date} ${featuredMatch.time}\n📍 ${featuredMatch.hall}`;
 
   return (
-    <div className="relative rounded-3xl border border-primary/25 bg-gradient-to-br from-slate-900/95 via-canvas/95 to-slate-950 p-5 sm:p-7 overflow-hidden shadow-2xl transition-all duration-300 mb-6 group">
+    <div className="relative rounded-3xl border border-primary/25 bg-surface p-5 sm:p-7 overflow-hidden shadow-2xl transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] mb-6 group">
       {/* Voleybol Sahası Arka Plan Çizgileri Deseni (SVG Neon Court Overlay) */}
       <div className="absolute inset-0 pointer-events-none opacity-5 overflow-hidden">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -195,11 +195,11 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
           {isFinished ? (
             <div className="flex flex-col items-center gap-1.5">
               <div className="flex items-center gap-2">
-                <span className={`text-3xl sm:text-4xl font-mono font-scoreboard tabular-nums font-black ${homeWon ? "text-white" : "text-slate-400"}`}>
+                <span className={`text-3xl sm:text-4xl font-mono font-scoreboard tabular-nums font-bold ${homeWon ? "text-white" : "text-slate-400"}`}>
                   {featuredMatch.home_score ?? 0}
                 </span>
                 <span className="text-xl sm:text-2xl font-mono font-scoreboard tabular-nums font-bold text-slate-600">-</span>
-                <span className={`text-3xl sm:text-4xl font-mono font-scoreboard tabular-nums font-black ${awayWon ? "text-white" : "text-slate-400"}`}>
+                <span className={`text-3xl sm:text-4xl font-mono font-scoreboard tabular-nums font-bold ${awayWon ? "text-white" : "text-slate-400"}`}>
                   {featuredMatch.away_score ?? 0}
                 </span>
               </div>
@@ -227,7 +227,7 @@ export const FeaturedMatchHero: React.FC<FeaturedMatchHeroProps> = ({
                 VS
               </div>
               <div className="text-center mt-1">
-                <div className="text-sm sm:text-base font-mono font-scoreboard tabular-nums font-black text-slate-200">
+                <div className="text-sm sm:text-base font-mono font-scoreboard tabular-nums font-bold text-slate-200">
                   {featuredMatch.time === "--:--" ? "Saat TBD" : featuredMatch.time}
                 </div>
                 <div className="text-[11px] font-medium text-slate-400">

@@ -23,6 +23,7 @@ import { isMatchScored } from "@/utils/matchScoring";
 import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { LeagueFinderWidget } from "@/components/LeagueFinderWidget";
+import { ScrollReveal } from "@/components/common/ScrollReveal";
 
 interface HomePortalViewProps {
   matches: Match[];
@@ -161,9 +162,9 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
     <div className="space-y-4 animate-in fade-in-50 duration-200">
       {/* Sayfa Başlığı (Semantik H1 & Canlı Gösterge) */}
       <div className="flex items-center justify-between pb-1">
-        <h1 className="text-sm sm:text-base font-black text-white uppercase tracking-wider flex items-center gap-2">
+        <h1 className="text-sm sm:text-base font-bold uppercase tracking-wider flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full bg-done shrink-0" />
-          <span>TVF Altyapı Maç Merkezi & Bülteni</span>
+          <span className="hero-heading-gradient">TVF Altyapı Maç Merkezi & Bülteni</span>
         </h1>
         <span className="text-[11px] font-display tabular-nums text-ink-2">
           {city === "all" ? "81 İl" : city} · {stats.totalMatches} Maç
@@ -177,7 +178,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("all")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "all"
                 ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -192,7 +193,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("today")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "today"
                 ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -210,7 +211,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("finished")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "finished"
                 ? "bg-done text-done-fg font-bold"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -226,7 +227,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("upcoming")}
-            className={`px-3 py-1.5 min-h-[38px] rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[38px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "upcoming"
                 ? "bg-selected-strong text-white font-bold shadow-glow-selected"
                 : "bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white"
@@ -277,7 +278,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           {feedFilter !== "all" ? (
             <div className="space-y-3">
               <div className="flex items-center justify-between pb-1 border-b border-slate-800/60">
-                <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wide flex items-center gap-2">
+                <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wide flex items-center gap-2">
                   <span>
                     {feedFilter === "today"
                       ? "Bugünün Maçları"
@@ -331,7 +332,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full bg-done" />
-                      <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+                      <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
                         <span>Bugünün Maçları</span>
                         <span className="text-ink-2 font-display tabular-nums">({todayMatches.length})</span>
                       </h2>
@@ -363,7 +364,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     <div className="w-5 h-5 rounded-md bg-surface-raised border border-line flex items-center justify-center text-ink-2">
                       <Calendar size={12} />
                     </div>
-                    <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider">
+                    <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                       Yaklaşan Fikstür
                     </h2>
                   </div>
@@ -405,7 +406,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                       <div className="w-5 h-5 rounded-md bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
                         <CheckCircle2 size={12} />
                       </div>
-                      <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider">
+                      <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
                         Son Biten Maçlar & Skorlar
                       </h2>
                     </div>
@@ -444,7 +445,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                       <div className="w-5 h-5 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
                         <Trophy size={12} />
                       </div>
-                      <h3 className="text-xs font-black text-white uppercase tracking-wider">
+                      <h3 className="text-xs font-bold text-white uppercase tracking-wider">
                         Grup Liderleri
                       </h3>
                     </div>
@@ -501,7 +502,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     <div className="w-5 h-5 rounded-md bg-sky-500/20 border border-sky-500/30 flex items-center justify-center text-sky-400">
                       <Globe size={12} />
                     </div>
-                    <h3 className="text-xs font-black text-white uppercase tracking-wider">
+                    <h3 className="text-xs font-bold text-white uppercase tracking-wider">
                       Aktif İller Fikstürü
                     </h3>
                   </div>
@@ -540,11 +541,11 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
 
             {/* İNTERAKTİF YAŞ & KATEGORİ HESAPLAYICI */}
             <div className="pt-2">
-              <LeagueFinderWidget />
+              <ScrollReveal><LeagueFinderWidget /></ScrollReveal>
             </div>
 
             {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
-            <div className="rounded-2xl p-3 bg-gradient-to-r from-slate-900 to-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-sm">
+            <div className="rounded-2xl p-3 bg-surface-muted border border-slate-800/80 text-[11px] text-slate-300 flex items-center justify-between gap-2 shadow-sm">
               <div className="flex items-center gap-2">
                 <Sparkles size={14} className="text-ink-2 shrink-0" />
                 <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
@@ -601,7 +602,7 @@ const MatchRow: React.FC<MatchRowProps> = ({
           onSelectMatch(match);
         }
       }}
-      className="group relative bg-canvas/70 hover:bg-panel border border-slate-800/80 hover:border-primary/40 rounded-xl p-2.5 sm:p-3 transition-all duration-150 cursor-pointer shadow-sm active:scale-[0.995]"
+      className="group relative bg-canvas/70 hover:bg-panel border border-slate-800/80 hover:border-primary/40 rounded-xl p-2.5 sm:p-3 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer shadow-sm active:scale-[0.98]"
     >
       {/* Üst Satır: Şehir, Lig ve Salon */}
       <div className="flex items-center justify-between gap-2 text-[10px] sm:text-[11px] text-slate-400 mb-1.5 pb-1 border-b border-slate-800/50">

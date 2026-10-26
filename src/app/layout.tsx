@@ -116,6 +116,12 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
       <body className="min-h-screen bg-canvas text-ink font-sans antialiased selection:bg-selected-strong selection:text-white">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-3 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-primary-fg focus:text-xs focus:font-semibold focus:shadow-lg"
+        >
+          Ana içeriğe atla
+        </a>
         <GlobalJsonLd />
         {children}
         <AnalyticsConsentWrapper />

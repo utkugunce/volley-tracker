@@ -81,7 +81,7 @@ export const AppShell: React.FC<AppShellProps> = ({
           )}
 
           <main
-            aria-label="Ana Maç Akışı ve İçerik"
+            id="main-content" aria-label="Ana Maç Akışı ve İçerik"
             className={`w-full col-span-1 min-w-0 py-2 sm:py-3 space-y-4 ${
               leftSidebar && rightSidebar
                 ? "lg:col-span-6 xl:col-span-6"
