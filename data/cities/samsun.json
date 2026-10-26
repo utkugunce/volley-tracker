@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -615,8 +615,8 @@
         "url": "https://women.volleybox.net/tr/atakum-atlm-spor-kulubu-u18-samsun-gulizar-hasan-ylmaz-spor-lisesi-u18-c402783",
         "host_name": "Atakum Atılım Spor Kulübü U18",
         "guest_name": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "17:00",
         "vb_hall": "Mustafa Dağıstanlı Spor Salonu",
@@ -2271,8 +2271,8 @@
         "url": "https://women.volleybox.net/tr/vezirkopru-genclik-spor-kulubu-u18-atakum-atlm-spor-kulubu-b-u18-c403002",
         "host_name": "Vezirköprü Gençlik Spor Kulübü U18",
         "guest_name": "Atakum Atılım Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "13:00",
         "vb_hall": "Köprülü Mehmet Paşa Spor Salonu",
@@ -2316,8 +2316,8 @@
         "url": "https://women.volleybox.net/tr/terme-genclik-ve-spor-lce-mudurlugu-sk-u18-anadolu-voleybol-akademi-sk-u18-c403003",
         "host_name": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
         "guest_name": "Anadolu Voleybol Akademi SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "13:00",
         "vb_hall": "Terme Spor Salonu",
@@ -2954,5 +2954,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:23.869141"
+  "volleybox_sync_updated_at": "2026-10-26T13:32:02.707733"
 }

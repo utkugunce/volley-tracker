@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Kırşehir",
   "slug": "kirsehir",
   "title": "TVF Kırşehir Genç & Yıldız Kızlar Süper Lig",
@@ -1004,8 +1004,8 @@
         "url": "https://women.volleybox.net/tr/krsehir-akademi-spor-kulubu-b-u16-krsehir-genclik-spor-kulubu-u16-c401476",
         "host_name": "Kırşehir Akademi Spor Kulübü - B U16",
         "guest_name": "Kırşehir Gençlik Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "10:00",
         "vb_hall": "Kırşehir Spor Salonu",
@@ -1049,8 +1049,8 @@
         "url": "https://women.volleybox.net/tr/krsehir-akademi-spor-kulubu-u16-cumhuriyet-spor-kulubu-u16-c401477",
         "host_name": "Kırşehir Akademi Spor Kulübü U16",
         "guest_name": "Kırşehir Cumhuriyet Ortaokulu Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "11:30",
         "vb_hall": "Kırşehir Spor Salonu",
@@ -1691,5 +1691,5 @@
     }
   ],
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:19.657548"
+  "volleybox_sync_updated_at": "2026-10-26T13:32:00.444373"
 }

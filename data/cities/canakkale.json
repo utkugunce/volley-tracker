@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -777,8 +777,8 @@
         "url": "https://women.volleybox.net/tr/canakkale-onsekiz-mart-universitesi-spor-kulubu-b-u16-canakkale-barbarosspor-u16-c411181",
         "host_name": "ÇOMÜ Spor Kulübü - B U16",
         "guest_name": "Çanakkale Barbarosspor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "20:15",
         "vb_hall": "18 Mart Spor Salonu",
@@ -2103,5 +2103,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:11.981559"
+  "volleybox_sync_updated_at": "2026-10-26T13:31:55.705846"
 }

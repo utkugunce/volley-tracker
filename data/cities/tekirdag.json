@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -1528,8 +1528,8 @@
         "url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-kulubu-u16-liva-volley-spor-kulubu-u16-c411506",
         "host_name": "Çorlu Belediyesi Spor Kulübü U16",
         "guest_name": "Liva Volley Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "15:00",
         "vb_hall": "Ergene Spor Salonu",
@@ -3614,5 +3614,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:24.718665"
+  "volleybox_sync_updated_at": "2026-10-26T13:32:03.131203"
 }

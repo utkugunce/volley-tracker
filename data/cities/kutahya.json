@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -250,8 +250,8 @@
         "url": "https://women.volleybox.net/tr/kutahya-genclik-ve-spor-l-mudurlugu-sk-b-u18-kutahya-gelisim-akademi-43-spor-kulubu-u18-c408164",
         "host_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
         "guest_name": "Kütahya Gelişim Akademi 43 Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "19:00",
         "vb_hall": "Dumlupınar Spor Salonu",
@@ -295,8 +295,8 @@
         "url": "https://women.volleybox.net/tr/kutahya-gelisim-akademi-43-spor-kulubu-u18-kutahya-belediyespor-u18-c408165",
         "host_name": "Kütahya Gelişim Akademi 43 Spor Kulübü U18",
         "guest_name": "Kütahya Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "11:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
@@ -340,8 +340,8 @@
         "url": "https://women.volleybox.net/tr/kutahya-genclik-ve-spor-l-mudurlugu-sk-u18-tavsanl-belediyesi-spor-kulubu-b-u18-c408166",
         "host_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
         "guest_name": "Tavşanlı Belediyesi Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "12:30",
         "vb_hall": "Kütahya Yeni Spor Salonu",
@@ -601,8 +601,8 @@
         "url": "https://women.volleybox.net/tr/kutahya-belediyespor-b-u18-simav-seref-koleji-spor-kulubu-u18-c408172",
         "host_name": "Kütahya Belediyespor - B U18",
         "guest_name": "Simav Şeref Koleji Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "14:00",
         "vb_hall": "Kütahya Yeni Spor Salonu",
@@ -825,5 +825,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:21.737269"
+  "volleybox_sync_updated_at": "2026-10-26T13:32:01.697735"
 }

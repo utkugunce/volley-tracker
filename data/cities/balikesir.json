@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -750,8 +750,8 @@
         "url": "https://women.volleybox.net/tr/karesi-hurriyet-spor-u16-balkesir-ds-spor-u16-c411160",
         "host_name": "Karesi Hürriyet Spor U16",
         "guest_name": "Balıkesir DSİ Spor U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "19:30",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -1678,8 +1678,8 @@
         "url": "https://women.volleybox.net/tr/burhaniye-oren-pegasus-spor-kulubu-u16-ayvalkspor-u16-c411165",
         "host_name": "Burhaniye Ören Pegasus Spor Kulübü U16",
         "guest_name": "Ayvalıkspor U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "20:30",
         "vb_hall": "Burhaniye Atatürk Spor Salonu",
@@ -1942,8 +1942,8 @@
         "url": "https://women.volleybox.net/tr/burhaniye-belediye-spor-kulubu-u16-ayvalk-gelisim-spor-kulubu-u16-c411167",
         "host_name": "Burhaniye Belediye Spor Kulübü U16",
         "guest_name": "Ayvalık Gelişim Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "19:00",
         "vb_hall": "Burhaniye Atatürk Spor Salonu",
@@ -2742,5 +2742,5 @@
     }
   ],
   "volleybox_synced_matches": 51,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:10.777689"
+  "volleybox_sync_updated_at": "2026-10-26T13:31:55.082735"
 }

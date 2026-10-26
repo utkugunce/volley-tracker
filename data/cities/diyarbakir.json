@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -136,8 +136,8 @@
         "url": "https://women.volleybox.net/tr/diyarbakr-voleybolcular-spor-kulubu-u18-diyarbakr-genclik-spor-kulubu-u18-c411451",
         "host_name": "Diyarbakır Voleybolcular Spor Kulübü U18",
         "guest_name": "Diyarbakır Gençlik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "18:00",
         "vb_hall": "Bağlar Belediyesi Spor Salonu",
@@ -182,8 +182,8 @@
         "url": "https://women.volleybox.net/tr/dicle-universitesi-spor-kulubu-u18-diyarbakr-ckale-spor-kulubu-u18-c411452",
         "host_name": "Dicle Üniversitesi Spor Kulübü U18",
         "guest_name": "Diyarbakır İçkale Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "20:00",
         "vb_hall": "Bağlar Belediyesi Spor Salonu",
@@ -227,8 +227,8 @@
         "url": "https://women.volleybox.net/tr/diyarbakr-ckale-spor-kulubu-u18-sur-amed-spor-u18-c411674",
         "host_name": "Diyarbakır İçkale Spor Kulübü U18",
         "guest_name": "Sur Amed Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "12:00",
         "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
@@ -273,8 +273,8 @@
         "url": "https://women.volleybox.net/tr/diyarbakr-voleybolcular-spor-kulubu-u18-dicle-universitesi-spor-kulubu-u18-c411453",
         "host_name": "Diyarbakır Voleybolcular Spor Kulübü U18",
         "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "14:00",
         "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
@@ -374,5 +374,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:12.144251"
+  "volleybox_sync_updated_at": "2026-10-26T13:31:55.780648"
 }

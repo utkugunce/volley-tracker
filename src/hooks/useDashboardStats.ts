@@ -67,7 +67,7 @@ export function useDashboardStats({
   // Sonuçlanan toplam maç sayısı (Header rozeti ve Sonuçlar sekmesi için)
   const resultsCount = useMemo(() => {
     const loadedMatches = data?.matches || [];
-    const loadedScored = loadedMatches.filter(isMatchScored).length;
+    const loadedScored = loadedMatches.filter((m) => isMatchPlayedOrScored(m, todayStr)).length;
     if (
       typeof data?.scored_matches === "number" &&
       data.total_matches > loadedMatches.length
@@ -75,7 +75,7 @@ export function useDashboardStats({
       return Math.max(data.scored_matches, loadedScored);
     }
     return loadedScored;
-  }, [data]);
+  }, [data, todayStr]);
 
   // Canlı maç sayısı
   const liveMatchesCount = useMemo(() => {

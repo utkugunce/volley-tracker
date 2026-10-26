@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -1649,8 +1649,8 @@
         "url": "https://women.volleybox.net/tr/denizli-anadolu-pars-gsk-u16-denizli-voleybol-spor-kulubu-u16-c411449",
         "host_name": "Denizli Anadolu Pars GSK U16",
         "guest_name": "Denizli Voleybol Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 2",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "20:00",
         "vb_hall": "Hacı Ahmet Paralı Spor Salonu",
@@ -1694,8 +1694,8 @@
         "url": "https://women.volleybox.net/tr/denizli-tutku-gsk-u16-hierapolis-spor-kulubu-u16-c411450",
         "host_name": "Denizli Tutku GSK U16",
         "guest_name": "Hierapolis Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "20:00",
         "vb_hall": "KYK Spor Salonu",
@@ -1829,5 +1829,5 @@
     }
   ],
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:12.120056"
+  "volleybox_sync_updated_at": "2026-10-26T13:31:55.770912"
 }

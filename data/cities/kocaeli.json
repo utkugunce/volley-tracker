@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -3935,8 +3935,8 @@
         "url": "https://women.volleybox.net/tr/cayrova-belediyesi-egitim-sk-u18-darca-anadolu-spor-kulubu-u18-c408131",
         "host_name": "Çayırova Belediyesi Eğitim SK U18",
         "guest_name": "Darıca Anadolu Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "18:30",
         "vb_hall": "Çayırova Spor Salonu",
@@ -3981,8 +3981,8 @@
         "url": "https://women.volleybox.net/tr/umut-can-spor-kulubu-u18-yelkenkaya-spor-kulubu-u18-c408132",
         "host_name": "Umut Can Spor Kulübü U18",
         "guest_name": "Yelkenkaya Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "20:00",
         "vb_hall": "Çayırova Spor Salonu",
@@ -5292,5 +5292,5 @@
     }
   ],
   "volleybox_synced_matches": 41,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:21.433688"
+  "volleybox_sync_updated_at": "2026-10-26T13:32:01.514841"
 }

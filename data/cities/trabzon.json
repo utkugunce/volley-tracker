@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
@@ -285,8 +285,8 @@
         "url": "https://women.volleybox.net/tr/revup-spor-kulubu-u18-skofya-spor-kulubu-u18-c411515",
         "host_name": "REVUP Spor Kulübü U18",
         "guest_name": "İskofya Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "10:00",
         "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
@@ -330,8 +330,8 @@
         "url": "https://women.volleybox.net/tr/skofya-spor-kulubu-b-u18-akcaabat-belediyesi-sk-u18-c411516",
         "host_name": "İskofya Spor Kulübü - B U18",
         "guest_name": "Akçaabat Belediyesi SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "12:00",
         "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
@@ -349,5 +349,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:24.735869"
+  "volleybox_sync_updated_at": "2026-10-26T13:32:03.146207"
 }

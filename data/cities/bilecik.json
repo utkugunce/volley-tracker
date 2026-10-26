@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Bilecik",
   "slug": "bilecik",
   "title": "TVF Bilecik Genç & Yıldız Kızlar Süper Lig",
@@ -208,8 +208,8 @@
         "url": "https://women.volleybox.net/tr/bilecik-voley-11-spor-kulubu-u18-bayrkoy-spor-kulubu-u18-c406651",
         "host_name": "Bilecik Voley 11 Spor Kulübü U18",
         "guest_name": "Bayırköy Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "11:00",
         "vb_hall": "Bilecik İstasyon Spor Salonu",
@@ -253,8 +253,8 @@
         "url": "https://women.volleybox.net/tr/bozuyuk-belediyesi-egitim-spor-kulubu-u18-sogut-spor-u18-c406652",
         "host_name": "Bozüyük Belediyesi Eğitim Spor Kulübü U18",
         "guest_name": "Söğüt Spor U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "16:00",
         "vb_hall": "Bozüyük Merkez Spor Salonu",
@@ -928,5 +928,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:10.818136"
+  "volleybox_sync_updated_at": "2026-10-26T13:31:55.101033"
 }

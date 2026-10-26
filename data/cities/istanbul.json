@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -7428,8 +7428,8 @@
         "url": "https://women.volleybox.net/tr/bahcelievler-belediyespor-ll-u18-avclar-demirorduspor-kulubu-u18-c411469",
         "host_name": "Bahçelievler Belediyespor ll U18",
         "guest_name": "Avcılar Demirorduspor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "18:00",
         "vb_hall": "Şehit Mustafa Özel Spor Kompleksi",
@@ -7473,9 +7473,9 @@
         "match_id": "411464",
         "url": "https://women.volleybox.net/tr/dev-atasehir-spor-u18-kuzey-yldzlar-spor-kulubu-a-u18-c411464",
         "host_name": "Dev Ataşehir Spor U18",
-        "guest_name": "Kuzey Yıldızları Spor Kulübü - A U18",
-        "score": null,
-        "has_score": false,
+        "guest_name": "Kuzey Yıldızları Spor Kulübü U18",
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "21:00",
         "vb_hall": "Nuri Cıngıllıoğlu Spor Salonu",
@@ -7520,8 +7520,8 @@
         "url": "https://women.volleybox.net/tr/kuzey-isklar-sk-u18-tu-gelistirme-vakf-okullar-sk-u18-c411683",
         "host_name": "Kuzey Işıkları SK U18",
         "guest_name": "İTÜ Geliştirme Vakfı Okulları SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "15:30",
         "vb_hall": "Halkalı Ata Sporları Merkezi",
@@ -8113,5 +8113,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:15.595252"
+  "volleybox_sync_updated_at": "2026-10-26T13:31:58.258086"
 }

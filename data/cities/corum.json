@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Çorum",
   "slug": "corum",
   "title": "TVF Çorum Genç & Yıldız Kızlar Süper Lig",
@@ -228,8 +228,8 @@
         "url": "https://women.volleybox.net/tr/corum-arena-spor-u18-corum-efor-spor-kulubu-u18-c411415",
         "host_name": "Çorum Arena Spor U18",
         "guest_name": "Çorum Efor Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "18:00",
         "vb_hall": "Çorum Atatürk Spor Salonu",
@@ -501,5 +501,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:12.030744"
+  "volleybox_sync_updated_at": "2026-10-26T13:31:55.728997"
 }

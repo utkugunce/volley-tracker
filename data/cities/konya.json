@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T12:41:00.838051+03:00",
+  "updated_at": "2026-10-26T13:25:44.728233+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -1007,8 +1007,8 @@
         "url": "https://women.volleybox.net/tr/turmak-spor-kulubu-u18-selcuklu-belediyespor-kulubu-u18-c411810",
         "host_name": "Türmak Spor Kulübü U18",
         "guest_name": "Selçuklu Belediyespor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "12:00",
         "vb_hall": "75. Yıl Spor Salonu",
@@ -1366,8 +1366,8 @@
         "url": "https://women.volleybox.net/tr/vakf-akademi-spor-kulubu-u18-ballas-spor-kulubu-u18-c411486",
         "host_name": "Vakıf Akademi Spor Kulübü U18",
         "guest_name": "Ballas Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-24",
         "vb_time": "18:00",
         "vb_hall": "75. Yıl Spor Salonu",
@@ -1699,5 +1699,5 @@
     }
   ],
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-10-26T12:47:21.640514"
+  "volleybox_sync_updated_at": "2026-10-26T13:32:01.635465"
 }

@@ -117,17 +117,35 @@ describe("filterResultMatches", () => {
     expect(results.map((m) => m.id)).toContain("m-2");
   });
 
-  it("tüm sonuçlar sekmesinde (all) skoru olmayan maçları filtreler ve sadece bitenleri gösterir", () => {
-    const results = filterResultMatches(matches, {
+  it("tüm sonuçlar sekmesinde (all) oynanmış veya skoru olan maçları listeler, gelecekteki maçları filtreler", () => {
+    const futureMatch: Match = {
+      id: "m-future",
+      match_no: "105",
+      category: "Genç Kızlar Süper Lig",
+      age_group: "Genç",
+      gender: "Kız",
+      group: "A Grubu",
+      date: "2026-10-30",
+      time: "14:00",
+      hall: "TVF 50. Yıl",
+      home_team: "Eczacıbaşı",
+      away_team: "VakıfBank",
+      home_score: null,
+      away_score: null,
+      status: "upcoming",
+    };
+
+    const results = filterResultMatches([...matches, futureMatch], {
       ...defaultOpts,
       selectedResultDate: "all",
       resultsSubTab: "all",
+      todayStr,
     });
 
-    expect(results).toHaveLength(2);
-    expect(results.map((m) => m.id)).toEqual(["m-1", "m-3"]);
-    expect(results.some((m) => m.id === "m-2")).toBe(false);
-    expect(results.some((m) => m.id === "m-4")).toBe(false);
+    // m-1, m-2 (dün), m-3, m-4 (geçmiş) oynandığı için sonuçlarda listelenir; m-future (gelecek) elenir
+    expect(results).toHaveLength(4);
+    expect(results.map((m) => m.id)).toEqual(["m-1", "m-2", "m-3", "m-4"]);
+    expect(results.some((m) => m.id === "m-future")).toBe(false);
   });
 
   it("dün dışındaki geçmiş bir tarih seçildiğinde (selectedResultDate === pastStr) de skorsuz maçları dahil eder", () => {
