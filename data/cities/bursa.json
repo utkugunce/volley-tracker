@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T18:57:53.449580+03:00",
+  "updated_at": "2026-10-26T11:33:30.666999+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -410,6 +410,17 @@
       },
       {
         "rank": 3,
+        "team": "Hk Volleyball Academy Spor Kulübü U16",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 5,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Oksijen Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -420,7 +431,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Bursa Ayyıldız Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -431,25 +442,14 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Hk Volleyball Academy Spor Kulübü U16",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 2,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
         "rank": 6,
         "team": "Mesut Kökel Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -457,11 +457,11 @@
       {
         "rank": 1,
         "team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -501,12 +501,12 @@
       {
         "rank": 5,
         "team": "Nilüfer Olimpik Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -2368,11 +2368,15 @@
       "match_no": "7",
       "home_team": "Mesut Kökel Spor Kulübü U16",
       "away_team": "Hk Volleyball Academy Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "4-25",
+        "8-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411179",
@@ -2673,11 +2677,15 @@
       "match_no": "5",
       "home_team": "Nilüfer Olimpik Spor Kulübü U16",
       "away_team": "Bursa Fethiye 1973 Spor Kulübü - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "14-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411657",
@@ -3015,5 +3023,5 @@
     }
   ],
   "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-10-24T19:04:05.441165"
+  "volleybox_sync_updated_at": "2026-10-26T11:39:36.845837"
 }

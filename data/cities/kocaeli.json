@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T18:57:53.449580+03:00",
+  "updated_at": "2026-10-26T11:33:30.666999+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -29,6 +29,7 @@
       "Dilovası Ss",
       "Gebze Ss",
       "H.Gemici S.S.",
+      "H.İbrahim Ss",
       "Kandıra",
       "Vezirçiftliği",
       "Çayırova Ss"
@@ -1397,7 +1398,7 @@
       "city": "Kocaeli",
       "date": "2026-10-26",
       "time": "20:00",
-      "hall": "H.Gemici S.S.",
+      "hall": "H.İbrahim Ss",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -5291,5 +5292,5 @@
     }
   ],
   "volleybox_synced_matches": 41,
-  "volleybox_sync_updated_at": "2026-10-24T19:04:10.932415"
+  "volleybox_sync_updated_at": "2026-10-26T11:39:43.499196"
 }

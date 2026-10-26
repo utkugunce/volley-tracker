@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T18:57:53.449580+03:00",
+  "updated_at": "2026-10-26T11:33:30.666999+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -201,24 +201,24 @@
       },
       {
         "rank": 2,
-        "team": "Biga Ada Spor U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 7,
-        "sets_won": 8,
-        "sets_lost": 4,
+        "team": "Çanakkale Barbarosspor U16",
+        "played": 5,
+        "won": 3,
+        "lost": 2,
+        "points": 8,
+        "sets_won": 10,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Çanakkale Barbarosspor U16",
+        "team": "Biga Ada Spor U16",
         "played": 4,
         "won": 2,
         "lost": 2,
-        "points": 5,
-        "sets_won": 7,
-        "sets_lost": 9,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -248,11 +248,11 @@
       {
         "rank": 1,
         "team": "Çanakkale Belediyespor - B U16",
-        "played": 6,
-        "won": 6,
+        "played": 7,
+        "won": 7,
         "lost": 0,
-        "points": 18,
-        "sets_won": 18,
+        "points": 21,
+        "sets_won": 21,
         "sets_lost": 2,
         "form": []
       },
@@ -270,12 +270,12 @@
       {
         "rank": 3,
         "team": "Yeşil Bayramiç Spor Kulübü",
-        "played": 6,
+        "played": 7,
         "won": 4,
-        "lost": 2,
+        "lost": 3,
         "points": 12,
         "sets_won": 13,
-        "sets_lost": 7,
+        "sets_lost": 10,
         "form": []
       },
       {
@@ -807,11 +807,15 @@
       "match_no": "10",
       "home_team": "Çanakkale Barbarosspor U16",
       "away_team": "Biga Ada Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-8",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411660",
@@ -1293,11 +1297,15 @@
       "match_no": "17",
       "home_team": "Yeşil Bayramiç Spor Kulübü",
       "away_team": "Çanakkale Belediyespor - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "21-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411663",
@@ -2095,5 +2103,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-24T19:04:05.754009"
+  "volleybox_sync_updated_at": "2026-10-26T11:39:37.205266"
 }

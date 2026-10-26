@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T18:57:53.449580+03:00",
+  "updated_at": "2026-10-26T11:33:30.666999+03:00",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -92,24 +92,24 @@
       },
       {
         "rank": 7,
-        "team": "Alsancak Spor Kulübü U18",
-        "played": 3,
-        "won": 0,
+        "team": "Toroslar Belediye Spor Kulübü U18",
+        "played": 4,
+        "won": 1,
         "lost": 3,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 9,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 10,
         "form": []
       },
       {
         "rank": 8,
-        "team": "Toroslar Belediye Spor Kulübü U18",
-        "played": 3,
+        "team": "Alsancak Spor Kulübü U18",
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 9,
+        "sets_won": 2,
+        "sets_lost": 12,
         "form": []
       }
     ]
@@ -762,11 +762,16 @@
       "match_no": "15",
       "home_team": "Toroslar Belediye Spor Kulübü U18",
       "away_team": "Alsancak Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "20-25",
+        "25-18",
+        "25-17",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411823",
@@ -956,5 +961,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-10-24T19:04:11.316865"
+  "volleybox_sync_updated_at": "2026-10-26T11:39:44.128438"
 }
