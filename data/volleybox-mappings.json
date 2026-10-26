@@ -944,7 +944,13 @@
       "verified_at": "2026-09-14",
       "local_logo": "/logos/kuzeyboru-u18-t42920.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1761221749xR7SC.png",
-      "aliases": []
+      "aliases": [
+        "Kuzeyboru Spor Kulübü",
+        "Kuzeyboru SK",
+        "Kuzeyboru U18"
+      ],
+      "city": "Aksaray",
+      "city_slug": "aksaray"
     },
     {
       "internal_name": "Kuzeyboru",
@@ -22179,6 +22185,124 @@
         "Destan Burdur Spor Kulübü",
         "Destan Burdur Spor Kulübü U18",
         "Destan Burdur"
+      ]
+    },
+    {
+      "internal_name": "Eskil Tuzgölü Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Eskil Tuzgölü Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/eskil-tuzgolu-spor-kulubu-u18-t55571",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-10-26",
+      "aliases": [
+        "Eskil Tuzgölü SK",
+        "Eskil Tuzgölü",
+        "Eskil Tuzgölü Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Aksaray Anka Spor Kulübü (A)",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "MBA Aksaray Anka Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/aksaray-anka-spor-a-u18-t42915",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-10-26",
+      "aliases": [
+        "Aksaray Anka Spor Kulübü",
+        "Aksaray Anka SK",
+        "MBA Aksaray Anka Spor Kulübü",
+        "MBA Aksaray Anka Spor Kulübü U18",
+        "Aksaray Anka Spor Kulübü - A",
+        "Aksaray Anka SK (A)"
+      ]
+    },
+    {
+      "internal_name": "Aksaray Anka Spor Kulübü (B)",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "MBA Aksaray Anka Spor Kulübü - B U18",
+      "volleybox_url": "https://women.volleybox.net/aksaray-anka-spor-b-u18-t42916",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-10-26",
+      "aliases": [
+        "MBA Aksaray Anka Spor Kulübü - B U18",
+        "Aksaray Anka Spor Kulübü - B",
+        "Aksaray Anka SK (B)",
+        "Aksaray Anka (B)"
+      ]
+    },
+    {
+      "internal_name": "Aksaray Anka Spor Kulübü (C)",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "MBA Aksaray Anka Spor Kulübü - C U18",
+      "volleybox_url": "https://women.volleybox.net/aksaray-anka-spor-c-u18-t42917",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-10-26",
+      "aliases": [
+        "MBA Aksaray Anka Spor Kulübü - C U18",
+        "Aksaray Anka Spor Kulübü - C",
+        "Aksaray Anka SK (C)",
+        "Aksaray Anka (C)"
+      ]
+    },
+    {
+      "internal_name": "Aksaray Eğitim Futbol Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Aksaray Eğitim Futbol Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/aksaray-egitim-futbol-spor-kulubu-u18-t42922",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-10-26",
+      "aliases": [
+        "Aksaray Eğitim Futbol SK",
+        "Aksaray Eğitim Spor Kulübü",
+        "Aksaray Eğitim Futbol Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Kuzeyboru Maxipipe Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Kuzeyboru Maxipipe Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/kuzeyboru-maxipipe-spor-kulubu-u18-t42919",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-10-26",
+      "aliases": [
+        "Kuzeyboru Maxipipe SK",
+        "Kuzeyboru Maxipipe Spor Kulübü U18",
+        "Kuzeyboru Maxipipe"
+      ]
+    },
+    {
+      "internal_name": "Yıldız Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Aksaray Yıldız Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/yldz-spor-kulubu-u18-t42921",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-10-26",
+      "aliases": [
+        "Aksaray Yıldız Spor Kulübü",
+        "Aksaray Yıldız SK",
+        "Aksaray Yıldız Spor Kulübü U18",
+        "Yıldız SK"
       ]
     }
   ],

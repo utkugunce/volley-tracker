@@ -259,6 +259,23 @@ describe("volleybox utility", () => {
       const bor = getVolleyboxMapping("Bor Belediye Spor Kulübü", "Genç Kızlar Süper Lig");
       expect(bor).toBeDefined();
       expect(bor?.volleybox_url).toContain("bor-belediyespor-u18-t48235");
+
+      // Aksaray
+      const eskil = getVolleyboxMapping("Eskil Tuzgölü Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Aksaray");
+      expect(eskil).toBeDefined();
+      expect(eskil?.volleybox_url).toContain("eskil-tuzgolu-spor-kulubu-u18-t55571");
+
+      const ankaA = getVolleyboxMapping("Aksaray Anka Spor Kulübü (A)", "Genç Kızlar Süper Lig", undefined, "Aksaray");
+      expect(ankaA).toBeDefined();
+      expect(ankaA?.volleybox_url).toContain("aksaray-anka-spor-a-u18-t42915");
+
+      const kuzeyboru = getVolleyboxMapping("Kuzeyboru Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Aksaray");
+      expect(kuzeyboru).toBeDefined();
+      expect(kuzeyboru?.volleybox_url).toContain("kuzeyboru-u18-t42920");
+
+      const yildizSk = getVolleyboxMapping("Yıldız Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Aksaray");
+      expect(yildizSk).toBeDefined();
+      expect(yildizSk?.volleybox_url).toContain("yldz-spor-kulubu-u18-t42921");
     });
 
     it("returns undefined for an unknown/unmapped team", () => {
