@@ -793,6 +793,10 @@ def scrape_single_city(city_info):
                     group_name = "A Grubu"
                 elif any(k in tr_comp for k in ["izmit", "korfez", "körfez"]):
                     group_name = "B Grubu"
+            elif subdomain == "antalya":
+                tr_comp = c_text.replace("İ", "i").replace("I", "ı").lower()
+                if "doğu" in tr_comp or "dogu" in tr_comp:
+                    group_name = "C Grubu"
             standings_key = f"{cat_name} - {group_name}"
 
             p_c = state.copy()

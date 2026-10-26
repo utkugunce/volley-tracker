@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:33:30.666999+03:00",
+  "updated_at": "2026-10-26T12:41:00.838051+03:00",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -243,7 +243,48 @@
       }
     },
     {
-      "id": "aksaray-20261029-004",
+      "id": "aksaray-20261028-004",
+      "city": "Aksaray",
+      "date": "2026-10-28",
+      "time": "17:00",
+      "hall": "Dağılgan S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "4",
+      "home_team": "Aksaray Eğitim Futbol Spor Kulübü",
+      "away_team": "Aksaray Anka Spor Kulübü (A)",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "411537",
+        "url": "https://women.volleybox.net/tr/aksaray-egitim-futbol-spor-kulubu-u18-mba-aksaray-anka-spor-kulubu-u18-c411537",
+        "host_name": "Aksaray Eğitim Futbol Spor Kulübü U18",
+        "guest_name": "MBA Aksaray Anka Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-29",
+        "vb_time": "14:30",
+        "vb_hall": "Dağılgan Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "14:30",
+          "vb_hall": "Dağılgan Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-28 / VB: 2026-10-29) | Saat Değişti (TVF: 17:00 / VB: 14:30)"
+        }
+      }
+    },
+    {
+      "id": "aksaray-20261029-005",
       "city": "Aksaray",
       "date": "2026-10-29",
       "time": "10:00",
@@ -252,7 +293,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "4",
+      "match_no": "5",
       "home_team": "Aksaray Anka Spor Kulübü (A)",
       "away_team": "Kuzeyboru Maxipipe Spor Kulübü",
       "score": "- : -",
@@ -284,7 +325,7 @@
       }
     },
     {
-      "id": "aksaray-20261029-005",
+      "id": "aksaray-20261029-006",
       "city": "Aksaray",
       "date": "2026-10-29",
       "time": "13:00",
@@ -293,7 +334,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "5",
+      "match_no": "6",
       "home_team": "Kuzeyboru Spor Kulübü",
       "away_team": "Eskil Tuzgölü Spor Kulübü",
       "score": "- : -",
@@ -319,47 +360,6 @@
           "hall_diff": false,
           "vb_date": "2026-10-29",
           "vb_time": "13:00",
-          "vb_hall": "Dağılgan Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "aksaray-20261029-006",
-      "city": "Aksaray",
-      "date": "2026-10-29",
-      "time": "14:30",
-      "hall": "Dağılgan S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "6",
-      "home_team": "Aksaray Eğitim Futbol Spor Kulübü",
-      "away_team": "Aksaray Anka Spor Kulübü (A)",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411537",
-        "url": "https://women.volleybox.net/tr/aksaray-egitim-futbol-spor-kulubu-u18-mba-aksaray-anka-spor-kulubu-u18-c411537",
-        "host_name": "Aksaray Eğitim Futbol Spor Kulübü U18",
-        "guest_name": "MBA Aksaray Anka Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-29",
-        "vb_time": "14:30",
-        "vb_hall": "Dağılgan Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-29",
-          "vb_time": "14:30",
           "vb_hall": "Dağılgan Spor Salonu",
           "details": null
         }
@@ -449,5 +449,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-26T11:39:33.241241"
+  "volleybox_sync_updated_at": "2026-10-26T12:47:05.754286"
 }

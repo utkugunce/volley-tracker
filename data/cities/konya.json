@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:33:30.666999+03:00",
+  "updated_at": "2026-10-26T12:41:00.838051+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -35,11 +35,11 @@
       {
         "rank": 1,
         "team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -57,12 +57,12 @@
       {
         "rank": 3,
         "team": "Ereğli Arel Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -116,23 +116,23 @@
       {
         "rank": 1,
         "team": "Vakıf Akademi Spor Kulübü U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Ballas Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 5,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -173,11 +173,11 @@
       {
         "rank": 2,
         "team": "Falcon Atletik Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 2,
-        "sets_won": 4,
+        "points": 5,
+        "sets_won": 7,
         "sets_lost": 5,
         "form": []
       },
@@ -195,12 +195,12 @@
       {
         "rank": 4,
         "team": "Seydişehir Cimnastik Spor U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -674,11 +674,15 @@
       "match_no": "4",
       "home_team": "Ereğli Arel Spor Kulübü U18",
       "away_team": "Karapınar Anadolu Leoparları Birlik Akademi SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "19-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411809",
@@ -1347,11 +1351,15 @@
       "match_no": "7",
       "home_team": "Vakıf Akademi Spor Kulübü U18",
       "away_team": "Ballas Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-22",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411486",
@@ -1616,11 +1624,15 @@
       "match_no": "6",
       "home_team": "Seydişehir Cimnastik Spor U18",
       "away_team": "Falcon Atletik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "19-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411813",
@@ -1687,5 +1699,5 @@
     }
   ],
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-10-26T11:39:43.683362"
+  "volleybox_sync_updated_at": "2026-10-26T12:47:21.640514"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:33:30.666999+03:00",
+  "updated_at": "2026-10-26T12:41:00.838051+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -360,7 +360,7 @@
         "form": []
       }
     ],
-    "Yıldız Kızlar Süper Lig - Doğu Grubu": [
+    "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Alanya MASK Spor Kulübü",
@@ -3212,7 +3212,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "1",
       "home_team": "Manavgat Belediyespor U16",
       "away_team": "Alanya MASK Spor Kulübü",
@@ -3257,7 +3257,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "2",
       "home_team": "Net Voleybol Akademi Spor Kulübü U16",
       "away_team": "Alanya Belediyespor U16",
@@ -3302,7 +3302,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "3",
       "home_team": "Alanya MASK Spor Kulübü",
       "away_team": "Net Voleybol Akademi Spor Kulübü U16",
@@ -3347,7 +3347,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "4",
       "home_team": "Alanya Belediyespor U16",
       "away_team": "Manavgat Belediyespor U16",
@@ -3392,7 +3392,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "5",
       "home_team": "Alanya MASK Spor Kulübü",
       "away_team": "Alanya Belediyespor U16",
@@ -3411,8 +3411,8 @@
         "url": "https://women.volleybox.net/tr/alanya-mask-spor-kulubu-u16-alanya-belediyespor-u16-c402165",
         "host_name": "Alanya MASK Spor Kulübü U16",
         "guest_name": "Alanya Belediyespor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "10:00",
         "vb_hall": "Alanya Atatürk Spor Salonu",
@@ -3437,7 +3437,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "6",
       "home_team": "ON Hotels Erse Spor Kulübü U16",
       "away_team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
@@ -3456,8 +3456,8 @@
         "url": "https://women.volleybox.net/tr/erse-spor-kulubu-u16-gazipasa-genclerbirligi-spor-kulubu-u16-c402166",
         "host_name": "ON Hotels Erse Spor Kulübü U16",
         "guest_name": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "11:30",
         "vb_hall": "Alanya Atatürk Spor Salonu",
@@ -3482,7 +3482,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "7",
       "home_team": "Manavgat Belediyespor U16",
       "away_team": "ON Hotels Erse Spor Kulübü U16",
@@ -3523,7 +3523,7 @@
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
       "gender": "Kız",
-      "group": "Doğu Grubu",
+      "group": "C Grubu",
       "match_no": "8",
       "home_team": "Net Voleybol Akademi Spor Kulübü U16",
       "away_team": "Manavgat Belediyespor U16",
@@ -3557,5 +3557,5 @@
     }
   ],
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-10-26T11:39:35.526868"
+  "volleybox_sync_updated_at": "2026-10-26T12:47:09.708924"
 }

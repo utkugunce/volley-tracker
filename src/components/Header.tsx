@@ -7,7 +7,6 @@ import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
 import { SettingsControls } from "@/components/SettingsControls";
-import { SyncRefreshButton } from "@/components/SyncRefreshButton";
 import { formatSyncDateTime } from "@/utils/formatSyncDate";
 import { useLanguage } from "@/i18n/useLanguage";
 import { CityInfo } from "@/types/fixture";
@@ -161,7 +160,6 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           {/* Tema + Dil */}
-          <SyncRefreshButton onRefreshComplete={onRefresh} lastSyncTime={updatedAt} />
           <SettingsControls />
 
           {/* Yazdır Butonu */}

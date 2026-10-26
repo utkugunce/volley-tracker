@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:33:30.666999+03:00",
+  "updated_at": "2026-10-26T12:41:00.838051+03:00",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -778,8 +778,8 @@
         "url": "https://women.volleybox.net/tr/toroslar-belediye-spor-kulubu-u18-alsancak-spor-kulubu-u18-c411823",
         "host_name": "Toroslar Belediye Spor Kulübü U18",
         "guest_name": "Alsancak Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "10:00",
         "vb_hall": "Mersinli Ahmet Spor Salonu",
@@ -961,5 +961,5 @@
     }
   ],
   "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-10-26T11:39:44.128438"
+  "volleybox_sync_updated_at": "2026-10-26T12:47:22.138783"
 }

@@ -36,6 +36,8 @@ export function formatGroupName(rawGroup?: string): string {
   const gLower = g.toLocaleLowerCase("tr-TR");
   if (gLower.includes("gebze")) return "A Grubu";
   if (gLower.includes("izmit") || /^(?:k[öo]rfez)(?:\s*grubu?)?$/i.test(gLower)) return "B Grubu";
+  // Antalya U16 specific: "Doğu Grubu" -> "C Grubu"
+  if (gLower.includes("doğu") || gLower.includes("dogu")) return "C Grubu";
 
   // Pattern: "Grup A", "Grup B", "Grup 1"
   const mGrupPrefix = g.match(/^Grup\s+([A-Za-zÇĞİÖŞÜçğiöşü0-9]+)$/i);

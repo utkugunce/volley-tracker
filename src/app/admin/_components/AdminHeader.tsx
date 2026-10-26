@@ -43,16 +43,6 @@ export function AdminHeader({ activeTab, auditLogs, handleLogout, handleTriggerL
       <div className="flex items-center gap-2" role="tablist" aria-label="Yönetim sekmeleri">
         <button
           type="button"
-          onClick={handleTriggerLiveSync}
-          disabled={syncLoading}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-sky-600 hover:bg-sky-500 text-white disabled:opacity-50 cursor-pointer shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
-          title="81 il bültenini ve Volleybox verilerini canlı tara"
-        >
-          <RefreshCw size={13} className={syncLoading ? "animate-spin" : ""} />
-          <span>{syncLoading ? "Taranıyor..." : "Canlı Tara"}</span>
-        </button>
-        <button
-          type="button"
           role="tab"
           aria-selected={activeTab === "matches"}
           onClick={() => setActiveTab("matches")}

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:33:30.666999+03:00",
+  "updated_at": "2026-10-26T12:41:00.838051+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -822,8 +822,8 @@
         "url": "https://women.volleybox.net/tr/canakkale-barbarosspor-u16-biga-ada-spor-u16-c411660",
         "host_name": "Çanakkale Barbarosspor U16",
         "guest_name": "Biga Ada Spor U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "17:00",
         "vb_hall": "Çanakkale Gençlik ve Sporcu Kamp Eğitim Merkezi",
@@ -1312,8 +1312,8 @@
         "url": "https://women.volleybox.net/tr/yesil-bayramic-sk-u16-canakkale-belediyespor-b-u16-c411663",
         "host_name": "Yeşil Bayramiç SK U16",
         "guest_name": "Çanakkale Belediyespor - B U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "18:00",
         "vb_hall": "Bayramiç Spor Salonu",
@@ -2103,5 +2103,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-26T11:39:37.205266"
+  "volleybox_sync_updated_at": "2026-10-26T12:47:11.981559"
 }

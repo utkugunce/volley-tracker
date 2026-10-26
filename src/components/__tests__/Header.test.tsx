@@ -148,7 +148,7 @@ describe("Header Component", () => {
     expect(header?.className).toContain("pt-[env(safe-area-inset-top,0px)]");
   });
 
-  it("shows data freshness and password-protected refresh button", () => {
+  it("shows data freshness and does not render a site refresh button", () => {
     render(
       <Header
         updatedAt="2026-01-01T00:00:00.000Z"
@@ -163,7 +163,7 @@ describe("Header Component", () => {
 
     expect(screen.getAllByText(/01\.01\.2026 03:00/).length).toBeGreaterThan(0);
 
-    expect(screen.getByRole("button", { name: /verileri yenile/i })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /verileri yenile/i })).not.toBeInTheDocument();
   });
 
   it("formats update times consistently in the Istanbul timezone", () => {

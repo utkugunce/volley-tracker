@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:33:30.666999+03:00",
+  "updated_at": "2026-10-26T12:41:00.838051+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -2692,8 +2692,8 @@
         "url": "https://women.volleybox.net/tr/nilufer-olimpik-spor-kulubu-u16-bursa-fethiye-1973-spor-kulubu-u16-c411657",
         "host_name": "Nilüfer Olimpik Spor Kulübü U16",
         "guest_name": "Bursa Fethiye 1973 Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "16:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -3023,5 +3023,5 @@
     }
   ],
   "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-10-26T11:39:36.845837"
+  "volleybox_sync_updated_at": "2026-10-26T12:47:11.396170"
 }

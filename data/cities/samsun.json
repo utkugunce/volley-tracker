@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T11:33:30.666999+03:00",
+  "updated_at": "2026-10-26T12:41:00.838051+03:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -660,8 +660,8 @@
         "url": "https://women.volleybox.net/tr/anadolu-voleybol-akademi-sk-b-u18-samsun-buyuksehir-belediyesi-spor-kulubu-u18-c402784",
         "host_name": "Anadolu Voleybol Akademi SK - B U18",
         "guest_name": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "11:00",
         "vb_hall": "Bahattin Ekinci Spor Salonu",
@@ -705,8 +705,8 @@
         "url": "https://women.volleybox.net/tr/bafra-vera-spor-kulubu-u18-samsun-volley-team-u18-c402785",
         "host_name": "Bafra Vera Spor Kulübü U18",
         "guest_name": "Samsun Volley Team U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "13:00",
         "vb_hall": "Bafra Spor Salonu",
@@ -2361,8 +2361,8 @@
         "url": "https://women.volleybox.net/tr/anadolu-voleybol-akademi-sk-u18-vezirkopru-genclik-spor-kulubu-u18-c403004",
         "host_name": "Anadolu Voleybol Akademi SK U18",
         "guest_name": "Vezirköprü Gençlik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "13:00",
         "vb_hall": "Bahattin Ekinci Spor Salonu",
@@ -2954,5 +2954,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-26T11:39:45.119283"
+  "volleybox_sync_updated_at": "2026-10-26T12:47:23.869141"
 }

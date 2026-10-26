@@ -50,7 +50,9 @@ describe("Grouping & Group Name Formatting Utilities", () => {
 
     it("cleans league prefix from full group names", () => {
       expect(formatGroupName("Yıldız Kızlar B Grubu")).toBe("B Grubu");
-      expect(formatGroupName("Yıldız Kızlar Doğu Grubu")).toBe("Doğu Grubu");
+      expect(formatGroupName("Yıldız Kızlar Doğu Grubu")).toBe("C Grubu");
+      expect(formatGroupName("Doğu Grubu")).toBe("C Grubu");
+      expect(formatGroupName("Doğu")).toBe("C Grubu");
       expect(formatGroupName("Genç Kızlar A Grubu")).toBe("A Grubu");
     });
 

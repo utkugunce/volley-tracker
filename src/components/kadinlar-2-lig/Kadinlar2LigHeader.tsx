@@ -23,7 +23,6 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
 import { triggerHaptic } from "@/utils/haptics";
 import { SettingsControls } from "@/components/SettingsControls";
-import { SyncRefreshButton } from "@/components/SyncRefreshButton";
 import { formatSyncDateTime } from "@/utils/formatSyncDate";
 
 export type Kadinlar2LigTabType =
@@ -227,10 +226,6 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
             </span>
           )}
 
-          <SyncRefreshButton
-            onRefreshComplete={() => window.location.reload()}
-            lastSyncTime={metadata?.guncellenme_zamani}
-          />
           <SettingsControls />
 
           {/* Yazdır Butonu */}

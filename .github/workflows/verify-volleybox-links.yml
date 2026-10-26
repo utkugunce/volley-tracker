@@ -1,9 +1,6 @@
 name: Verify Volleybox Links
 
 on:
-  schedule:
-    # Her Pazartesi sabahı 08:00 UTC
-    - cron: '0 8 * * 1'
   workflow_dispatch:
 
 permissions:
