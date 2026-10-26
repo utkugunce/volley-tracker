@@ -126,11 +126,13 @@ export const STATIC_ROOT_SEGMENTS: ReadonlySet<string> = new Set([
   "gunun-maclari",
   "hangi-ligde-oynar",
   "istatistikler",
+  "kadinlar-1-ligi",
   "kadinlar-2-ligi",
   "karsilastir",
   "kulupler",
   "panel",
   "puan-durumu",
   "sonuclar",
+  "sultanlar-ligi",
   "takvim",
 ]);

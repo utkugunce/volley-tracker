@@ -10,6 +10,7 @@ import { SettingsControls } from "@/components/SettingsControls";
 import { formatSyncDateTime } from "@/utils/formatSyncDate";
 import { useLanguage } from "@/i18n/useLanguage";
 import { CityInfo } from "@/types/fixture";
+import { LeagueSwitcher } from "@/components/layout/LeagueSwitcher";
 
 interface HeaderProps {
   city?: string;
@@ -59,26 +60,7 @@ export const Header: React.FC<HeaderProps> = ({
           <BrandLogo onClick={() => onSelectTab("home")} />
 
           {/* Apple Sports / FotMob Tarzı Bütünleşik Lig Seçici (Segmented League Switcher) */}
-          <div
-            className="hidden sm:inline-flex items-center p-0.5 rounded-lg bg-surface-muted border border-line/60 text-xs"
-            role="group"
-            aria-label="Lig Seçici"
-          >
-            <span className="px-2.5 py-1 rounded-md bg-surface-raised text-white font-semibold tracking-tight">
-              Altyapı (81 İl)
-            </span>
-            <Link
-              href="/kadinlar-2-ligi"
-              prefetch={false}
-              className="px-2.5 py-1 rounded-md text-ink-2 hover:text-white font-medium transition-colors flex items-center gap-1 whitespace-nowrap"
-              title="TVF Kadınlar 2. Ligi Sayfasına Geç (16 Grup, 167 Kulüp)"
-            >
-              <span>{t("header.k2")}</span>
-              <span className="text-[10px] text-ink-3 font-mono hidden lg:inline">
-                ({t("header.groups16")})
-              </span>
-            </Link>
-          </div>
+          <LeagueSwitcher activeLeague="altyapi" className="hidden sm:inline-flex" />
 
           {/* 81 İl Seçici Açılır Menü */}
           {onSelectCity && (

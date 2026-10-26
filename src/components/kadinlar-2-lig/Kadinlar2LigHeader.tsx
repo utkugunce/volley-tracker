@@ -13,6 +13,7 @@ import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
 import { triggerHaptic } from "@/utils/haptics";
 import { SettingsControls } from "@/components/SettingsControls";
 import { formatSyncDateTime } from "@/utils/formatSyncDate";
+import { LeagueSwitcher } from "@/components/layout/LeagueSwitcher";
 
 export type Kadinlar2LigTabType =
   | "home"
@@ -64,26 +65,7 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           <BrandLogo onClick={() => onSelectTab("home")} />
 
           {/* Apple Sports / FotMob Tarzı Bütünleşik Lig Seçici (Segmented League Switcher) */}
-          <div
-            className="inline-flex items-center p-0.5 rounded-lg bg-surface-muted border border-line/60 text-xs"
-            role="group"
-            aria-label="Lig Seçici"
-          >
-            <Link
-              href="/"
-              prefetch={false}
-              className="px-2.5 py-1 rounded-md text-ink-2 hover:text-white font-medium transition-colors whitespace-nowrap"
-              title="Altyapı Yerel Ligler Takip Sayfasına Dön"
-            >
-              Altyapı (81 İl)
-            </Link>
-            <span className="px-2.5 py-1 rounded-md bg-surface-raised text-white font-semibold tracking-tight flex items-center gap-1 whitespace-nowrap">
-              <span>Kadınlar 2. Ligi</span>
-              <span className="text-[10px] text-ink-3 font-mono hidden md:inline">
-                ({metadata?.toplam_grup_sayisi || 16} Grup)
-              </span>
-            </span>
-          </div>
+          <LeagueSwitcher activeLeague="2-lig" />
         </div>
 
         {/* Sağ Taraf: Arama, Favoriler, Kaynaklar, Son Çekim, Ayarlar, Yazdır */}

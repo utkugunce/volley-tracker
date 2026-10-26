@@ -82,6 +82,30 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
             <div className="space-y-0.5 pt-0.5">
               <Link
                 prefetch={false}
+                href="/sultanlar-ligi"
+                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg hover:bg-surface-raised/60 text-ink-2 hover:text-white transition-colors group"
+              >
+                <span className="flex items-center gap-2 truncate">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+                  <span className="font-medium text-[11px] truncate">Vodafone Sultanlar Ligi</span>
+                </span>
+                <span className="text-[10px] text-amber-400 font-mono shrink-0">Süper Lig →</span>
+              </Link>
+
+              <Link
+                prefetch={false}
+                href="/kadinlar-1-ligi"
+                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg hover:bg-surface-raised/60 text-ink-2 hover:text-white transition-colors group"
+              >
+                <span className="flex items-center gap-2 truncate">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                  <span className="font-medium text-[11px] truncate">KFC Kadınlar 1. Ligi</span>
+                </span>
+                <span className="text-[10px] text-ink-3 font-mono shrink-0">A & B Grubu →</span>
+              </Link>
+
+              <Link
+                prefetch={false}
                 href="/"
                 className="flex items-center justify-between px-2.5 py-1.5 rounded-lg hover:bg-surface-raised/60 text-ink-2 hover:text-white transition-colors group"
               >

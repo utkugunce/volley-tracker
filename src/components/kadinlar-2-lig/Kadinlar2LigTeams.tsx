@@ -18,6 +18,7 @@ interface Kadinlar2LigTeamsProps {
   onCompareTeam?: (teamSlug: string) => void;
   searchQuery?: string;
   showOnlyFavorites?: boolean;
+  compareBasePath?: string;
 }
 
 export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
@@ -26,6 +27,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
   onCompareTeam,
   searchQuery = "",
   showOnlyFavorites = false,
+  compareBasePath = "/kadinlar-2-ligi/karsilastir",
 }) => {
   const [filterGroup, setFilterGroup] = useState<number | "all">("all");
   const { isFavorite, toggleFavorite } = useFavorites();
@@ -163,7 +165,7 @@ export const Kadinlar2LigTeams: React.FC<Kadinlar2LigTeamsProps> = ({
               <div className="grid grid-cols-3 gap-1.5 pt-2 border-t border-line">
                 <Link
                   prefetch={false}
-                  href={`/kadinlar-2-ligi/karsilastir?takim1=${teamSlug}`}
+                  href={`${compareBasePath}?takim1=${teamSlug}`}
                   onClick={(e) => {
                     if (onCompareTeam) {
                       e.preventDefault();

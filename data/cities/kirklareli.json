@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T14:31:34.825165+03:00",
+  "updated_at": "2026-10-26T15:58:06.100119+03:00",
   "city": "Kırklareli",
   "slug": "kirklareli",
   "title": "TVF Kırklareli Genç & Yıldız Kızlar Süper Lig",
@@ -216,15 +216,15 @@
       "id": "kirklareli-20261030-001",
       "city": "Kırklareli",
       "date": "2026-10-30",
-      "time": "18:30",
-      "hall": "Lüleburgaz Ss.",
+      "time": "20:00",
+      "hall": "Kırklareli Atatürk Ss",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "1",
-      "home_team": "Akademi Spor Kulübü D",
-      "away_team": "Akım Koleji Spor Kulübü",
+      "home_team": "Kırklareli Gençlik Spor Kulübü",
+      "away_team": "Akademi Spor Kulübü C",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -247,18 +247,18 @@
       }
     },
     {
-      "id": "kirklareli-20261030-002",
+      "id": "kirklareli-20261031-002",
       "city": "Kırklareli",
-      "date": "2026-10-30",
-      "time": "20:00",
-      "hall": "Kırklareli Atatürk Ss",
+      "date": "2026-10-31",
+      "time": "15:00",
+      "hall": "Lüleburgaz Ss.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "2",
-      "home_team": "Kırklareli Gençlik Spor Kulübü",
-      "away_team": "Akademi Spor Kulübü C",
+      "home_team": "Akademi Spor Kulübü D",
+      "away_team": "Akım Koleji Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -2254,5 +2254,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-26T14:38:00.667085"
+  "volleybox_sync_updated_at": "2026-10-26T16:04:40.711600"
 }

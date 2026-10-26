@@ -626,28 +626,34 @@ export const CompareClient: React.FC<CompareClientProps> = ({
               ) : (
                 <div className="rounded-xl bg-surface border border-line/70 divide-y divide-line/50 overflow-hidden">
                   {comparison.matches.map((m) => (
-                    <VolleyMatchRow
-                      key={m.id}
-                      match={{
-                        id: m.id,
-                        date: m.date,
-                        time: m.time || "",
-                        hall: m.hall || "",
-                        category: m.category || "",
-                        age_group: "",
-                        gender: "Kız",
-                        group: "",
-                        match_no: "",
-                        home_team: m.homeTeam,
-                        away_team: m.awayTeam,
-                        home_score: m.homeScore ?? null,
-                        away_score: m.awayScore ?? null,
-                        set_scores: m.setScores,
-                        status: m.status,
-                      }}
-                      leagueLabel={m.category}
-                      showHall={true}
-                    />
+                    <div key={m.id}>
+                      <VolleyMatchRow
+                        match={{
+                          id: m.id,
+                          date: m.date,
+                          time: m.time || "",
+                          hall: m.hall || "",
+                          category: m.category || "",
+                          age_group: "",
+                          gender: "Kız",
+                          group: "",
+                          match_no: "",
+                          home_team: m.homeTeam,
+                          away_team: m.awayTeam,
+                          home_score: m.homeScore ?? null,
+                          away_score: m.awayScore ?? null,
+                          set_scores: m.setScores,
+                          status: m.status,
+                        }}
+                        leagueLabel={m.category}
+                        showHall={true}
+                      />
+                      {m.setScores && m.setScores.length > 0 && (
+                        <div className="px-3.5 py-1 text-[11px] font-mono text-ink-3 bg-surface-raised/20 border-t border-line/30">
+                          Setler: {m.setScores.join(", ")}
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               )}
