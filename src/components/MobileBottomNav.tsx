@@ -72,7 +72,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   return (
     <nav
       aria-label="Mobil Alt Menü"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-panel border-t border-line lg:hidden px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] shadow-[0_-6px_24px_rgba(0,0,0,0.5)] transition-all duration-200"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-panel border-t border-line lg:hidden px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] transition-colors duration-150"
     >
       <div className="flex items-center justify-between max-w-lg mx-auto w-full gap-0.5">
         {navItems.map((item) => {
@@ -94,23 +94,23 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
               key={item.id}
               type="button"
               onClick={() => onSelectTab(item.id)}
-              className={`relative flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-all duration-150 cursor-pointer ${
+              className={`relative flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors duration-150 cursor-pointer ${
                 isActive
                   ? item.isLive
-                    ? "text-live font-bold scale-105"
-                    : "text-selected-text font-bold scale-105"
+                    ? "text-live font-semibold"
+                    : "text-primary font-semibold"
                   : "text-ink-2 hover:text-ink font-medium"
               }`}
             >
               <div className="relative">
                 <Icon
-                  size={20}
+                  size={19}
                   className={`transition-colors ${
                     isActive
                       ? item.isLive
-                        ? "text-live fill-live/20"
-                        : "text-selected-text fill-selected-text/20"
-                      : "text-ink-2"
+                        ? "text-live"
+                        : "text-primary"
+                      : "text-ink-3"
                   }`}
                 />
                 {item.isLive && liveCount > 0 && (
@@ -120,7 +120,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                   </span>
                 )}
                 {item.badge !== undefined && item.badge > 0 && !item.isLive && (
-                  <span className="absolute -top-1.5 -right-2 min-w-[15px] h-3.5 px-0.5 text-selected-text text-[10px] font-display font-bold flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-2.5 min-w-[15px] h-3.5 px-0.5 text-primary text-[9px] font-mono tabular-nums font-bold flex items-center justify-center">
                     {item.badge > 99 ? "99+" : item.badge}
                   </span>
                 )}
@@ -130,8 +130,8 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
               </span>
               {isActive && (
                 <span
-                  className={`absolute bottom-0 w-6 h-0.5 rounded-full ${
-                    item.isLive ? "bg-live" : "bg-selected"
+                  className={`absolute top-0 w-5 h-0.5 rounded-full ${
+                    item.isLive ? "bg-live" : "bg-primary"
                   }`}
                 />
               )}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Match, StandingItem } from "@/types/fixture";
 import { TeamBadge } from "@/components/TeamBadge";
 import { SetScoreMatrix } from "./SetScoreMatrix";
+import { ShareMatchCardModal } from "./ShareMatchCardModal";
 import {
   Trophy,
   MapPin,
@@ -22,7 +23,7 @@ import {
   Copy,
   Check,
   Link2,
-  Layers,
+  Share2,
   ChevronRight,
 } from "lucide-react";
 import { getHallNavigationUrl } from "@/utils/halls";
@@ -58,13 +59,13 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) =
         aria-label="Maç detayları yükleniyor"
         className={`flex h-full flex-col gap-3 overflow-hidden bg-canvas p-3 ${className}`}
       >
-        <div className="h-6 w-48 shrink-0 animate-pulse rounded bg-slate-800" />
-        <div className="h-28 w-full shrink-0 animate-pulse rounded-lg bg-slate-800/60" />
+        <div className="h-6 w-48 shrink-0 animate-pulse rounded bg-surface-muted" />
+        <div className="h-28 w-full shrink-0 animate-pulse rounded-lg bg-surface-muted/60" />
         <div className="space-y-2">
-          <div className="h-8 w-full animate-pulse rounded bg-slate-800/60" />
-          <div className="h-8 w-full animate-pulse rounded bg-slate-800/60" />
+          <div className="h-8 w-full animate-pulse rounded bg-surface-muted/60" />
+          <div className="h-8 w-full animate-pulse rounded bg-surface-muted/60" />
         </div>
-        <div className="h-28 w-full animate-pulse rounded-lg bg-slate-800/40" />
+        <div className="h-28 w-full animate-pulse rounded-lg bg-surface-muted/40" />
       </div>
     );
   }
@@ -73,12 +74,12 @@ export const MatchInspectorPanel: React.FC<MatchInspectorPanelProps> = (props) =
     return (
       <div className={`flex flex-col items-center justify-center h-full p-6 text-center bg-canvas ${className}`}>
         <EmptyState
-          icon={<BarChart3 size={28} className="text-blue-400" />}
+          icon={<BarChart3 size={28} className="text-primary" />}
           title="Detayları görüntülemek için bir maç seçin"
           description="Skorboard, set sayıları dökümü, salon konumu, H2H form analizi ve mini puan durumunu anlık olarak inceleyin."
         />
-        <div className="inline-flex items-center gap-1.5 text-[10px] text-blue-400 bg-blue-950/40 px-3 py-1 rounded-full border border-blue-800/50 font-medium mt-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+        <div className="inline-flex items-center gap-1.5 text-[10px] text-ink-2 bg-surface px-3 py-1 rounded-full border border-line/70 font-medium mt-3">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
           Sofascore Maç Merkezi
         </div>
       </div>
@@ -98,6 +99,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   className = "",
 }) => {
   const [activeTab, setActiveTab] = useState<"overview" | "h2h" | "standings">("overview");
+  const [showShareModal, setShowShareModal] = useState(false);
   const [copyFeedback, setCopyFeedback] = useState<{
     action: "text" | "link";
     status: "success" | "error";
@@ -110,8 +112,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
     };
   }, []);
 
-  // 1. Boş Durum (Empty State)
-  // Maç Bilgileri Hesaplamaları
   const isLive = match.status === "live";
   const isFinished =
     match.status === "finished" ||
@@ -126,7 +126,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   const homeWon = isFinished && homeScore > awayScore;
   const awayWon = isFinished && awayScore > homeScore;
 
-  // Maç Durumu Başlık Metni
   const getStatusLabel = () => {
     if (isLive) {
       const setsPlayed = match.set_scores ? match.set_scores.length : 0;
@@ -139,7 +138,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
   const statusLabel = getStatusLabel();
 
-  // Volleybox Mappings
   const homeMapping = getVolleyboxMapping(match.home_team, match.category, undefined, effectiveCity);
   const awayMapping = getVolleyboxMapping(match.away_team, match.category, undefined, effectiveCity);
   const homeLogo = homeMapping?.local_logo || homeMapping?.logo_url;
@@ -147,7 +145,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   const homeSlug = slugify(homeMapping?.matched_as || match.home_team);
   const awaySlug = slugify(awayMapping?.matched_as || match.away_team);
 
-  // Sekme 2: H2H & Form Hesaplamaları
   const homeFormMatches = useMemo(() => {
     return allMatches
       .filter(
@@ -188,7 +185,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
       });
   }, [allMatches, match.away_team, match.id]);
 
-  // Geçmiş Karşılaşmalar (H2H)
   const previousH2H = useMemo(() => {
     return allMatches
       .filter(
@@ -201,7 +197,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
       .slice(0, 5);
   }, [allMatches, match.home_team, match.away_team, match.id]);
 
-  // Sekme 3: Mini Puan Durumu Bulma
   const groupStandingData = useMemo(() => {
     if (!standings || Object.keys(standings).length === 0) return null;
 
@@ -248,7 +243,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
     copyFeedbackTimeout.current = setTimeout(() => setCopyFeedback(null), 2000);
   };
 
-  // Hızlı Aksiyon: Metin Kopyala
   const handleCopy = () => {
     triggerHaptic("light");
     const scoreStr = isFinished
@@ -265,7 +259,6 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
     void copyToClipboard(url.toString(), "link");
   };
 
-  // Hızlı Aksiyon: Takvim (.ics)
   const handleDownloadIcs = () => {
     triggerHaptic("medium");
     if (!match.date || match.date === "TBD") {
@@ -281,10 +274,10 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
   return (
     <div className={`flex flex-col h-full bg-canvas text-xs motion-reduce:animate-none animate-[match-panel-fade_200ms_ease-out] ${className}`}>
       {/* 1. Üst Bar: Başlık, Favori & Kapat */}
-      <div className="px-3.5 py-2.5 border-b border-line flex items-center justify-between bg-panel/90 shrink-0">
+      <div className="px-3.5 py-2.5 border-b border-line/70 flex items-center justify-between bg-surface shrink-0">
         <div className="flex items-center gap-2 min-w-0">
-          <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
-          <span className="font-bold text-white text-[12px] truncate">
+          <span className="w-1.5 h-3.5 rounded-full bg-primary shrink-0" />
+          <span className="font-semibold text-white text-[12px] truncate">
             {formatLeagueCategoryTitle(match.category, match.age_group) || "Maç Detayı"}
           </span>
         </div>
@@ -293,7 +286,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             <button
               type="button"
               onClick={() => onToggleFavorite(match.id)}
-              className="p-1.5 rounded-lg text-ink-2 hover:text-amber-400 hover:bg-surface-muted transition-colors"
+              className="p-1.5 rounded-lg text-ink-3 hover:text-amber-400 hover:bg-surface-muted transition-colors cursor-pointer"
               title="Favoriye Ekle"
               aria-label="Favoriye Ekle"
             >
@@ -304,7 +297,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             <button
               type="button"
               onClick={onClose}
-              className="p-1.5 rounded-lg text-ink-2 hover:text-white hover:bg-surface-muted transition-colors"
+              className="p-1.5 rounded-lg text-ink-3 hover:text-white hover:bg-surface-muted transition-colors cursor-pointer"
               title="Kapat"
               aria-label="Kapat"
             >
@@ -317,37 +310,34 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
       {/* Kaydırılabilir Gövde */}
       <div className="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-3">
         {/* Üst Bilgi Kartı: Lig, Tarih, Salon */}
-        <div className="bg-surface-muted rounded-xl border border-line p-3 space-y-2">
+        <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-2">
           <div className="flex items-center justify-between text-[11px] text-ink-2">
             <span className="font-semibold text-white truncate">
               {match.category} {match.group ? `• ${formatGroupName(match.group)}` : ""}
             </span>
-            <span className="text-[10px] text-ink-2 font-mono shrink-0">
+            <span className="text-[10px] text-ink-3 font-mono tabular-nums shrink-0">
               #{match.match_no}
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-2 text-[10px] text-ink-2 pt-1 border-t border-line/60">
+          <div className="grid grid-cols-2 gap-2 text-[10px] text-ink-2 pt-1.5 border-t border-line/50">
             <div className="flex items-center gap-1.5 truncate">
-              <Calendar size={12} className="text-blue-400 shrink-0" />
-              <span className="truncate">{match.date}</span>
+              <Calendar size={12} className="text-ink-3 shrink-0" />
+              <span className="truncate font-mono tabular-nums">{match.date}</span>
             </div>
             <div className="flex items-center gap-1.5 truncate">
-              <Clock size={12} className="text-blue-400 shrink-0" />
-              <span className="truncate">{match.time || "Program"}</span>
+              <Clock size={12} className="text-ink-3 shrink-0" />
+              <span className="truncate font-mono tabular-nums">{match.time || "Program"}</span>
             </div>
-            <div className="col-span-2 flex items-center gap-1.5 text-slate-200">
-              <MapPin size={12} className="text-ink-2 shrink-0" />
+            <div className="col-span-2 flex items-center gap-1.5 text-ink">
+              <MapPin size={12} className="text-ink-3 shrink-0" />
               <span className="truncate">{match.hall || "Salon Açıklanacak"}</span>
             </div>
           </div>
         </div>
 
-        {/* 2. Skorboard Başlığı (Büyük Logolar, İsimler, Set Skoru, Durum) */}
-        <div className="bg-gradient-to-b from-panel to-surface-muted rounded-2xl border border-line p-4 shadow-md relative overflow-hidden space-y-3">
-          {/* Ambient Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-16 bg-blue-500/10 blur-2xl pointer-events-none" />
-
+        {/* 2. Skorboard Başlığı (FotMob / Apple Sports Mat Yüzey) */}
+        <div className="bg-surface rounded-2xl border border-line/80 p-4 space-y-3">
           {/* Maç Durumu Rozeti */}
           <div className="flex items-center justify-center">
             {isLive ? (
@@ -370,10 +360,11 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             {/* Ev Sahibi */}
             <div className="flex flex-col items-center text-center space-y-1.5 min-w-0">
               <TeamBadge name={match.home_team} logoUrl={homeLogo} size="md" />
-              <Link prefetch={false}
+              <Link
+                prefetch={false}
                 href={`/takim/${homeSlug}`}
-                className={`text-[11px] sm:text-xs font-bold transition-colors line-clamp-2 leading-tight ${
-                  homeWon ? "text-white" : "text-slate-200 hover:text-blue-400"
+                className={`text-[11px] sm:text-xs transition-colors line-clamp-2 leading-tight ${
+                  homeWon ? "font-bold text-white" : "font-medium text-ink-2 hover:text-white"
                 }`}
                 title={match.home_team}
               >
@@ -384,13 +375,13 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             {/* Skor / VS */}
             <div className="flex flex-col items-center justify-center shrink-0">
               {isFinished || isLive ? (
-                <div className="px-3 py-1.5 rounded-xl bg-canvas border border-line shadow-inner text-center font-mono font-scoreboard tabular-nums whitespace-nowrap">
-                  <span className="text-xl sm:text-2xl font-black text-white tracking-tight whitespace-nowrap">
+                <div className="px-3.5 py-1.5 rounded-xl bg-surface-muted border border-line/70 text-center font-mono font-scoreboard tabular-nums whitespace-nowrap">
+                  <span className="text-xl sm:text-2xl font-bold text-white tracking-tight whitespace-nowrap">
                     {homeScore} : {awayScore}
                   </span>
                 </div>
               ) : (
-                <div className="w-9 h-9 rounded-xl bg-panel border border-line flex items-center justify-center font-black text-amber-400 text-xs font-mono shadow-xs">
+                <div className="w-9 h-9 rounded-xl bg-surface-muted border border-line/70 flex items-center justify-center font-bold text-ink-2 text-xs font-mono">
                   VS
                 </div>
               )}
@@ -399,10 +390,11 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             {/* Deplasman */}
             <div className="flex flex-col items-center text-center space-y-1.5 min-w-0">
               <TeamBadge name={match.away_team} logoUrl={awayLogo} size="md" />
-              <Link prefetch={false}
+              <Link
+                prefetch={false}
                 href={`/takim/${awaySlug}`}
-                className={`text-[11px] sm:text-xs font-bold transition-colors line-clamp-2 leading-tight ${
-                  awayWon ? "text-white" : "text-slate-200 hover:text-blue-400"
+                className={`text-[11px] sm:text-xs transition-colors line-clamp-2 leading-tight ${
+                  awayWon ? "font-bold text-white" : "font-medium text-ink-2 hover:text-white"
                 }`}
                 title={match.away_team}
               >
@@ -412,12 +404,11 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
           </div>
         </div>
 
-        {/* 3. Voleybol Set Matrisi Tablosu */}
+        {/* 3. Voleybol Set Matrisi Tablosu & Momentum Çubuğu */}
         <SetScoreMatrix match={match} />
 
         {/* 4. Bağlamsal Sekmeler (Tabs) */}
         <div className="space-y-3">
-          {/* Sekme Seçici */}
           <SegmentedControl
             options={[
               { value: "overview", label: "Genel Bakış" },
@@ -428,22 +419,21 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
             onValueChange={(val) => setActiveTab(val as "overview" | "h2h" | "standings")}
           />
 
-
           {/* Sekme 1: Genel Bakış */}
           {activeTab === "overview" && (
             <div className="space-y-2.5">
               {/* Salon Konumu & Yol Tarifi */}
-              <div className="bg-surface-muted rounded-xl border border-line p-3 space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-bold text-white">
+              <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-2">
+                <div className="flex items-center justify-between text-[11px] font-semibold text-white">
                   <span className="flex items-center gap-1.5">
-                    <MapPin size={13} className="text-ink-2" />
+                    <MapPin size={13} className="text-ink-3" />
                     <span>Müsabaka Salonu</span>
                   </span>
-                  <span className="text-[10px] text-ink-2 font-normal">
+                  <span className="text-[10px] text-ink-3 font-normal">
                     {effectiveCity}
                   </span>
                 </div>
-                <p className="text-[11px] text-ink font-medium leading-relaxed">
+                <p className="text-[11px] text-ink-2 font-medium leading-relaxed">
                   {match.hall || "Salon bilgisi sisteme girilmemiştir."}
                 </p>
                 {match.hall && match.hall !== "TBD" && (
@@ -451,26 +441,26 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                     href={getHallNavigationUrl(match.hall, effectiveCity)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-panel hover:bg-panel border border-line text-[11px] text-blue-400 hover:text-blue-300 font-semibold transition-all group"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-muted hover:bg-panel border border-line/70 text-[11px] text-primary hover:text-primary-hover font-semibold transition-all group"
                   >
                     <Navigation size={12} className="group-hover:translate-x-0.5 transition-transform" />
                     <span>Google Haritalarda Aç</span>
-                    <ExternalLink size={10} className="text-ink-2" />
+                    <ExternalLink size={10} className="text-ink-3" />
                   </a>
                 )}
               </div>
 
               {/* Maç Hakemleri */}
-              <div className="bg-surface-muted rounded-xl border border-line p-3 space-y-2">
-                <div className="flex items-center gap-1.5 text-[11px] font-bold text-white">
+              <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-2">
+                <div className="flex items-center gap-1.5 text-[11px] font-semibold text-white">
                   <UserCheck size={13} className="text-emerald-400" />
                   <span>Maç Hakemleri</span>
                 </div>
                 {match.referee_1 || match.referee_2 ? (
                   <div className="grid grid-cols-2 gap-2 text-[10px]">
                     {match.referee_1 && (
-                      <div className="bg-panel p-2 rounded-lg border border-line/80">
-                        <span className="text-ink-2 block text-[9px] uppercase font-bold">
+                      <div className="bg-surface-muted/60 p-2 rounded-lg border border-line/60">
+                        <span className="text-ink-3 block text-[9px] uppercase font-semibold">
                           1. Hakem
                         </span>
                         <span className="text-white font-semibold truncate block mt-0.5">
@@ -479,8 +469,8 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                       </div>
                     )}
                     {match.referee_2 && (
-                      <div className="bg-panel p-2 rounded-lg border border-line/80">
-                        <span className="text-ink-2 block text-[9px] uppercase font-bold">
+                      <div className="bg-surface-muted/60 p-2 rounded-lg border border-line/60">
+                        <span className="text-ink-3 block text-[9px] uppercase font-semibold">
                           2. Hakem
                         </span>
                         <span className="text-white font-semibold truncate block mt-0.5">
@@ -490,7 +480,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                     )}
                   </div>
                 ) : (
-                  <p className="text-[10px] text-ink-2 bg-panel p-2 rounded-lg border border-line/60">
+                  <p className="text-[10px] text-ink-3 bg-surface-muted/40 p-2 rounded-lg border border-line/50">
                     Hakem ataması TVF bülteninde henüz açıklanmadı.
                   </p>
                 )}
@@ -502,22 +492,30 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                   href={match.volleybox.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-2.5 rounded-xl bg-surface-muted hover:bg-panel border border-line text-[11px] text-white transition-all group"
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-surface hover:bg-surface-muted border border-line/70 text-[11px] text-white transition-all group"
                 >
                   <span className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400" />
                     <span className="font-semibold">Volleybox Maç Raporu</span>
                   </span>
-                  <ExternalLink size={12} className="text-ink-2 group-hover:text-white" />
+                  <ExternalLink size={12} className="text-ink-3 group-hover:text-white" />
                 </a>
               )}
 
-              {/* Hızlı Aksiyonlar */}
+              {/* Hızlı Aksiyonlar (2x2 Grid: Skor Kartı Paylaş, Takvime Ekle, Metni Kopyala, Bağlantıyı Kopyala) */}
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <button
                   type="button"
+                  onClick={() => setShowShareModal(true)}
+                  className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-primary/15 hover:bg-primary/25 text-primary text-[10px] font-semibold border border-primary/30 transition-colors cursor-pointer"
+                >
+                  <Share2 size={12} />
+                  <span>Skor Kartı Paylaş</span>
+                </button>
+                <button
+                  type="button"
                   onClick={handleDownloadIcs}
-                  className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-surface-muted hover:bg-panel text-slate-200 text-[10px] font-semibold border border-line transition-colors"
+                  className="flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-surface hover:bg-surface-muted text-ink text-[10px] font-semibold border border-line/70 transition-colors cursor-pointer"
                 >
                   <CalendarPlus size={12} className="text-amber-400" />
                   <span>Takvime Ekle</span>
@@ -525,18 +523,20 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-surface-muted hover:bg-panel text-[10px] font-semibold border border-line transition-colors ${copyFeedback?.action === "text" && copyFeedback.status === "success" ? "text-emerald-400" : "text-slate-200"}`}
+                  className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-surface hover:bg-surface-muted text-[10px] font-semibold border border-line/70 transition-colors cursor-pointer ${copyFeedback?.action === "text" && copyFeedback.status === "success" ? "text-emerald-400" : "text-ink"}`}
                 >
-                  {copyFeedback?.action === "text" ? copyFeedback.status === "success" ? (
-                    <>
-                      <Check size={12} className="text-emerald-400" />
-                      <span>Kopyalandı! ✓</span>
-                    </>
+                  {copyFeedback?.action === "text" ? (
+                    copyFeedback.status === "success" ? (
+                      <>
+                        <Check size={12} className="text-emerald-400" />
+                        <span>Kopyalandı! ✓</span>
+                      </>
+                    ) : (
+                      <span className="text-live">Kopyalanamadı</span>
+                    )
                   ) : (
-                    <span className="text-live">Kopyalanamadı</span>
-                  ) : (
                     <>
-                      <Copy size={12} className="text-blue-400" />
+                      <Copy size={12} className="text-ink-2" />
                       <span>Metni Kopyala</span>
                     </>
                   )}
@@ -544,18 +544,20 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                 <button
                   type="button"
                   onClick={handleCopyLink}
-                  className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-surface-muted hover:bg-panel text-[10px] font-semibold border border-line transition-colors ${copyFeedback?.action === "link" && copyFeedback.status === "success" ? "text-emerald-400" : "text-slate-200"}`}
+                  className={`flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-surface hover:bg-surface-muted text-[10px] font-semibold border border-line/70 transition-colors cursor-pointer ${copyFeedback?.action === "link" && copyFeedback.status === "success" ? "text-emerald-400" : "text-ink"}`}
                 >
-                  {copyFeedback?.action === "link" ? copyFeedback.status === "success" ? (
-                    <>
-                      <Check size={12} className="text-emerald-400" />
-                      <span>Kopyalandı! ✓</span>
-                    </>
+                  {copyFeedback?.action === "link" ? (
+                    copyFeedback.status === "success" ? (
+                      <>
+                        <Check size={12} className="text-emerald-400" />
+                        <span>Kopyalandı! ✓</span>
+                      </>
+                    ) : (
+                      <span className="text-live">Kopyalanamadı</span>
+                    )
                   ) : (
-                    <span className="text-live">Kopyalanamadı</span>
-                  ) : (
                     <>
-                      <Link2 size={12} className="text-blue-400" />
+                      <Link2 size={12} className="text-ink-2" />
                       <span>Bağlantıyı Kopyala</span>
                     </>
                   )}
@@ -568,19 +570,19 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
           {activeTab === "h2h" && (
             <div className="space-y-2.5">
               {/* Takımların Form Grafiği (Son 5 Maç) */}
-              <div className="bg-surface-muted rounded-xl border border-line p-3 space-y-3">
-                <div className="text-[11px] font-bold text-white flex items-center gap-1.5">
-                  <BarChart3 size={13} className="text-blue-400" />
+              <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-3">
+                <div className="text-[11px] font-semibold text-white flex items-center gap-1.5">
+                  <BarChart3 size={13} className="text-primary" />
                   <span>Son 5 Maç Formu</span>
                 </div>
 
                 {/* Ev Sahibi Formu */}
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between text-[10px]">
-                    <span className="text-slate-200 font-semibold truncate max-w-[180px]">
+                    <span className="text-ink font-semibold truncate max-w-[180px]">
                       {match.home_team}
                     </span>
-                    <span className="text-ink-2 font-mono">
+                    <span className="text-ink-3 font-mono tabular-nums">
                       {homeFormMatches.filter((f) => f.won).length}G -{" "}
                       {homeFormMatches.filter((f) => !f.won).length}M
                     </span>
@@ -591,10 +593,10 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                         <span
                           key={i}
                           title={`${f.date}: ${f.resultScore} vs ${f.opponent}`}
-                          className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold font-mono transition-transform hover:scale-110 ${
+                          className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-semibold font-mono transition-colors ${
                             f.won
-                              ? "bg-transparent text-done border border-done"
-                              : "bg-transparent text-form-loss border border-form-loss"
+                              ? "bg-done/10 text-done border border-done/40"
+                              : "bg-form-loss/10 text-form-loss border border-form-loss/40"
                           }`}
                         >
                           {f.won ? "G" : "M"}
@@ -602,17 +604,17 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                       ))}
                     </div>
                   ) : (
-                    <div className="text-[10px] text-ink-2">Önceki maç kaydı bulunamadı.</div>
+                    <div className="text-[10px] text-ink-3">Önceki maç kaydı bulunamadı.</div>
                   )}
                 </div>
 
                 {/* Deplasman Formu */}
                 <div className="space-y-1.5 pt-2 border-t border-line/50">
                   <div className="flex items-center justify-between text-[10px]">
-                    <span className="text-slate-200 font-semibold truncate max-w-[180px]">
+                    <span className="text-ink font-semibold truncate max-w-[180px]">
                       {match.away_team}
                     </span>
-                    <span className="text-ink-2 font-mono">
+                    <span className="text-ink-3 font-mono tabular-nums">
                       {awayFormMatches.filter((f) => f.won).length}G -{" "}
                       {awayFormMatches.filter((f) => !f.won).length}M
                     </span>
@@ -623,10 +625,10 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                         <span
                           key={i}
                           title={`${f.date}: ${f.resultScore} vs ${f.opponent}`}
-                          className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-bold font-mono transition-transform hover:scale-110 ${
+                          className={`w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-semibold font-mono transition-colors ${
                             f.won
-                              ? "bg-transparent text-done border border-done"
-                              : "bg-transparent text-form-loss border border-form-loss"
+                              ? "bg-done/10 text-done border border-done/40"
+                              : "bg-form-loss/10 text-form-loss border border-form-loss/40"
                           }`}
                         >
                           {f.won ? "G" : "M"}
@@ -634,21 +636,22 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                       ))}
                     </div>
                   ) : (
-                    <div className="text-[10px] text-ink-2">Önceki maç kaydı bulunamadı.</div>
+                    <div className="text-[10px] text-ink-3">Önceki maç kaydı bulunamadı.</div>
                   )}
                 </div>
               </div>
 
               {/* Önceki Karşılaşmalar (H2H) */}
-              <div className="bg-surface-muted rounded-xl border border-line p-3 space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-bold text-white">
+              <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-2">
+                <div className="flex items-center justify-between text-[11px] font-semibold text-white">
                   <span className="flex items-center gap-1.5">
-                    <Swords size={13} className="text-amber-400" />
+                    <Swords size={13} className="text-primary" />
                     <span>Önceki Karşılaşmalar</span>
                   </span>
-                  <Link prefetch={false}
+                  <Link
+                    prefetch={false}
                     href={`/karsilastir?takim1=${homeSlug}&takim2=${awaySlug}`}
-                    className="text-[10px] text-amber-400 hover:text-amber-300 font-semibold inline-flex items-center gap-1"
+                    className="text-[10px] text-primary hover:text-primary-hover font-semibold inline-flex items-center gap-1"
                   >
                     <span>Analiz</span>
                     <ChevronRight size={11} />
@@ -660,22 +663,22 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                     {previousH2H.map((prevMatch) => (
                       <div
                         key={prevMatch.id}
-                        className="bg-panel p-2 rounded-lg border border-line/80 flex items-center justify-between text-[10px]"
+                        className="bg-surface-muted/60 p-2 rounded-lg border border-line/60 flex items-center justify-between text-[10px]"
                       >
                         <div className="min-w-0 pr-2">
-                          <span className="text-ink-2 block text-[9px]">{prevMatch.date}</span>
+                          <span className="text-ink-3 block text-[9px] font-mono tabular-nums">{prevMatch.date}</span>
                           <span className="text-white font-medium truncate block">
                             {prevMatch.home_team} - {prevMatch.away_team}
                           </span>
                         </div>
-                        <span className="font-mono font-bold text-white px-2 py-0.5 rounded bg-surface-muted border border-line shrink-0">
+                        <span className="font-mono font-scoreboard tabular-nums font-bold text-white px-2 py-0.5 rounded bg-canvas border border-line/70 shrink-0">
                           {prevMatch.home_score ?? 0} : {prevMatch.away_score ?? 0}
                         </span>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[10px] text-ink-2 bg-panel p-2 rounded-lg border border-line/60">
+                  <p className="text-[10px] text-ink-3 bg-surface-muted/40 p-2 rounded-lg border border-line/50">
                     Bu sezon iki takım arasında daha önce oynanmış müsabaka bulunmamaktadır.
                   </p>
                 )}
@@ -685,15 +688,15 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
           {/* Sekme 3: Grup Durumu (Mini Puan Durumu) */}
           {activeTab === "standings" && (
-            <div className="bg-surface-muted rounded-xl border border-line overflow-hidden space-y-2">
-              <div className="p-3 pb-0 flex items-center justify-between text-[11px] font-bold text-white">
+            <div className="bg-surface rounded-xl border border-line/70 overflow-hidden space-y-2">
+              <div className="p-3 pb-0 flex items-center justify-between text-[11px] font-semibold text-white">
                 <span className="flex items-center gap-1.5">
                   <Trophy size={13} className="text-primary" />
                   <span className="truncate max-w-[200px]">
                     {groupStandingData ? formatGroupName(groupStandingData.groupName) : "Grup Puan Durumu"}
                   </span>
                 </span>
-                <span className="text-[9px] bg-blue-950/60 text-blue-300 border border-blue-800/50 px-1.5 py-0.5 rounded font-mono">
+                <span className="text-[9px] text-ink-3 font-mono uppercase tracking-wider">
                   Mini Tablo
                 </span>
               </div>
@@ -702,7 +705,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                 <div className="overflow-x-auto">
                   <table className="w-full text-[11px] text-left border-collapse">
                     <thead>
-                      <tr className="bg-panel text-ink-2 text-[10px] border-y border-line font-bold uppercase">
+                      <tr className="bg-surface-muted/70 text-ink-3 text-[10px] border-y border-line/60 font-semibold uppercase">
                         <th className="py-1.5 px-2 text-center w-6">#</th>
                         <th className="py-1.5 px-2 text-left">Takım</th>
                         <th className="py-1.5 px-1.5 text-center font-mono w-7" title="Oynanan Maç">O</th>
@@ -724,11 +727,11 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                             key={idx}
                             className={`transition-colors ${
                               isSelectedTeam
-                                ? "bg-blue-600/15 font-bold text-white"
-                                : "hover:bg-panel/40 text-slate-200"
+                                ? "bg-primary/10 font-semibold text-white"
+                                : "hover:bg-surface-muted/40 text-ink-2"
                             }`}
                           >
-                            <td className="py-1.5 px-2 text-center font-mono text-[10px] text-ink-2">
+                            <td className="py-1.5 px-2 text-center font-mono tabular-nums text-[10px] text-ink-3">
                               {item.rank || idx + 1}
                             </td>
                             <td className="py-1.5 px-2">
@@ -739,16 +742,16 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                                 </span>
                               </div>
                             </td>
-                            <td className="py-1.5 px-1.5 text-center font-mono text-[10px] text-ink-2">
+                            <td className="py-1.5 px-1.5 text-center font-mono tabular-nums text-[10px] text-ink-2">
                               {item.played}
                             </td>
-                            <td className="py-1.5 px-1.5 text-center font-mono text-[10px] text-emerald-400">
+                            <td className="py-1.5 px-1.5 text-center font-mono tabular-nums text-[10px] text-done">
                               {item.won}
                             </td>
-                            <td className="py-1.5 px-1.5 text-center font-mono text-[10px] text-form-loss">
+                            <td className="py-1.5 px-1.5 text-center font-mono tabular-nums text-[10px] text-form-loss">
                               {item.lost}
                             </td>
-                            <td className="py-1.5 px-2 text-center font-mono font-bold text-white text-[11px] bg-panel/30">
+                            <td className="py-1.5 px-2 text-center font-mono tabular-nums font-bold text-white text-[11px] bg-surface-muted/30">
                               {item.points}
                             </td>
                           </tr>
@@ -758,7 +761,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                   </table>
                 </div>
               ) : (
-                <div className="p-3 text-center text-[10px] text-ink-2">
+                <div className="p-3 text-center text-[10px] text-ink-3">
                   Bu maçtaki takımlara ait grup puan durumu henüz bültende yer almamaktadır.
                 </div>
               )}
@@ -766,6 +769,15 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
           )}
         </div>
       </div>
+
+      {/* Paylaşılabilir Skor Kartı Modalı */}
+      <ShareMatchCardModal
+        match={match}
+        isOpen={showShareModal}
+        onClose={() => setShowShareModal(false)}
+        homeLogo={homeLogo}
+        awayLogo={awayLogo}
+      />
     </div>
   );
 };

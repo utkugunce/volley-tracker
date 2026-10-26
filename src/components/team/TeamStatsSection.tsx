@@ -12,10 +12,10 @@ interface TeamStatsSectionProps {
 }
 
 const StatCard: React.FC<{ label: string; value: React.ReactNode; hint?: string }> = ({ label, value, hint }) => (
-  <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-3 text-center">
-    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{label}</p>
-    <p className="text-lg font-black text-white mt-1 tabular-nums">{value}</p>
-    {hint && <p className="text-[10px] text-slate-400 mt-0.5">{hint}</p>}
+  <div className="bg-surface border border-line/70 rounded-xl p-3 text-center">
+    <p className="text-[10px] font-semibold text-ink-3 uppercase tracking-wider">{label}</p>
+    <p className="text-lg font-bold font-mono text-white mt-1 tabular-nums">{value}</p>
+    {hint && <p className="text-[10px] text-ink-3 mt-0.5">{hint}</p>}
   </div>
 );
 
@@ -24,13 +24,13 @@ const SplitRow: React.FC<{ label: string; split: RecordSplit }> = ({ label, spli
   return (
     <div>
       <div className="flex justify-between text-xs mb-1">
-        <span className="font-semibold text-slate-300">{label}</span>
-        <span className="font-mono text-slate-200">
-          {split.wins}G – {split.losses}M <span className="text-slate-400">(%{pct})</span>
+        <span className="font-semibold text-ink-2">{label}</span>
+        <span className="font-mono tabular-nums text-ink">
+          {split.wins}G – {split.losses}M <span className="text-ink-3">(%{pct})</span>
         </span>
       </div>
-      <div className="h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700/80" role="img" aria-label={`${label}: %${pct} galibiyet`}>
-        <div className="h-full bg-primary" style={{ width: `${pct}%` }} />
+      <div className="h-1.5 bg-surface-muted rounded-full overflow-hidden" role="img" aria-label={`${label}: %${pct} galibiyet`}>
+        <div className="h-full bg-primary rounded-full" style={{ width: `${pct}%` }} />
       </div>
     </div>
   );
@@ -38,14 +38,14 @@ const SplitRow: React.FC<{ label: string; split: RecordSplit }> = ({ label, spli
 
 const DistRow: React.FC<{ label: string; count: number; total: number; tone: "win" | "loss" }> = ({ label, count, total, tone }) => (
   <div className="flex items-center gap-2 text-xs">
-    <span className="w-8 font-mono font-bold text-slate-300">{label}</span>
-    <div className="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700/80">
+    <span className="w-8 font-mono font-semibold tabular-nums text-ink-2">{label}</span>
+    <div className="flex-1 h-1.5 bg-surface-muted rounded-full overflow-hidden">
       <div
-        className={tone === "win" ? "h-full bg-emerald-400" : "h-full bg-form-loss"}
+        className={tone === "win" ? "h-full bg-done rounded-full" : "h-full bg-form-loss rounded-full"}
         style={{ width: `${total > 0 ? Math.round((count / total) * 100) : 0}%` }}
       />
     </div>
-    <span className="w-5 text-right font-mono text-slate-200">{count}</span>
+    <span className="w-5 text-right font-mono tabular-nums text-ink">{count}</span>
   </div>
 );
 
@@ -63,8 +63,8 @@ export const TeamStatsSection: React.FC<TeamStatsSectionProps> = ({ stats, playo
 
   return (
     <section aria-labelledby="team-stats-title" className="space-y-4">
-      <h2 id="team-stats-title" className="text-lg font-bold text-white flex items-center gap-2">
-        <BarChart3 size={18} className="text-primary" />
+      <h2 id="team-stats-title" className="text-base font-bold text-white flex items-center gap-2">
+        <BarChart3 size={17} className="text-primary" />
         <span>İstatistikler</span>
       </h2>
 
@@ -103,15 +103,15 @@ export const TeamStatsSection: React.FC<TeamStatsSectionProps> = ({ stats, playo
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {hasBothSplits && (
-              <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-4 space-y-3">
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Ev / Deplasman</p>
+              <div className="bg-surface border border-line/70 rounded-xl p-4 space-y-3">
+                <p className="text-[10px] font-semibold text-ink-3 uppercase tracking-wider">Ev / Deplasman</p>
                 {stats.home && <SplitRow label="Ev sahibi" split={stats.home} />}
                 {stats.away && <SplitRow label="Deplasman" split={stats.away} />}
               </div>
             )}
             {hasDistribution && (
-              <div className="bg-slate-800/60 border border-slate-700/80 rounded-xl p-4 space-y-2">
-                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Sonuç Dağılımı</p>
+              <div className="bg-surface border border-line/70 rounded-xl p-4 space-y-2.5">
+                <p className="text-[10px] font-semibold text-ink-3 uppercase tracking-wider">Sonuç Dağılımı</p>
                 <div className="grid grid-cols-2 gap-x-4 gap-y-2">
                   <div className="space-y-2">
                     {(["3-0", "3-1", "3-2"] as const).map((k) => (
@@ -125,7 +125,7 @@ export const TeamStatsSection: React.FC<TeamStatsSectionProps> = ({ stats, playo
                   </div>
                 </div>
                 {(stats.otherResults > 0 || stats.forfeits > 0) && (
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-[10px] text-ink-3">
                     {stats.otherResults > 0 ? `${stats.otherResults} maç farklı formatta oynandı. ` : ""}
                     {stats.forfeits > 0 ? `${stats.forfeits} hükmen sonuç sayı ortalamasına dahil değil.` : ""}
                   </p>
@@ -140,8 +140,8 @@ export const TeamStatsSection: React.FC<TeamStatsSectionProps> = ({ stats, playo
         <TeamPlayoffCard key={p.groupName} info={p} />
       ))}
 
-      <p className="text-xs text-slate-400">
-        <Link href="/istatistikler" prefetch={false} className="font-bold text-primary hover:underline">
+      <p className="text-xs text-ink-3">
+        <Link href="/istatistikler" prefetch={false} className="font-semibold text-primary hover:underline">
           Lig geneli istatistikler →
         </Link>
       </p>

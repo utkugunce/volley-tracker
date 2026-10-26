@@ -9,8 +9,6 @@ import {
   Users,
   Trophy,
   ArrowRight,
-  Sparkles,
-  Command,
 } from "lucide-react";
 import { TeamBadge } from "./TeamBadge";
 import { slugify } from "@/utils/slugify";
@@ -52,23 +50,22 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 }) => {
   const router = useRouter();
   const [query, setQuery] = useState("");
+  const [typeFilter, setTypeFilter] = useState<"all" | "team" | "city" | "hall">("all");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  // Otomatik focus
   useEffect(() => {
     if (isOpen) {
       setQuery("");
+      setTypeFilter("all");
       setSelectedIndex(0);
       setTimeout(() => inputRef.current?.focus(), 50);
     }
   }, [isOpen]);
 
-  // Arama sonuçları
   const results = useMemo<SpotlightItem[]>(() => {
     const q = trLower(query).trim();
     if (!q) {
-      // Varsayılan popüler aramalar / öneriler
       const quickTeams = teams.slice(0, 5).map((t) => {
         const mapping = getVolleyboxMapping(t);
         return {
@@ -83,81 +80,100 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
           },
         };
       });
-      return quickTeams;
+      return quickTeams.filter((item) => typeFilter === "all" || item.type === typeFilter);
     }
 
     const items: SpotlightItem[] = [];
 
     // 1. Takımlar
-    teams.forEach((t) => {
-      if (trIncludes(t, q)) {
-        const mapping = getVolleyboxMapping(t);
-        items.push({
-          id: `team-${t}`,
-          type: "team",
-          title: t,
-          subtitle: "Takım Profili ve Fikstürü",
-          logo: mapping?.local_logo || mapping?.logo_url,
-          action: () => {
-            router.push(`/takim/${slugify(mapping?.matched_as || t)}`);
-            onClose();
-          },
-        });
-      }
-    });
+    if (typeFilter === "all" || typeFilter === "team") {
+      teams.forEach((t) => {
+        if (trIncludes(t, q)) {
+          const mapping = getVolleyboxMapping(t);
+          items.push({
+            id: `team-${t}`,
+            type: "team",
+            title: t,
+            subtitle: "Takım Profili ve Fikstürü",
+            logo: mapping?.local_logo || mapping?.logo_url,
+            action: () => {
+              router.push(`/takim/${slugify(mapping?.matched_as || t)}`);
+              onClose();
+            },
+          });
+        }
+      });
+    }
 
     // 2. Salonlar
-    halls.forEach((h) => {
-      if (h !== "Tümü" && trIncludes(h, q)) {
-        items.push({
-          id: `hall-${h}`,
-          type: "hall",
-          title: h,
-          subtitle: "Müsabaka Salonu",
-          action: () => {
-            onSelectHall?.(h);
-            onClose();
-          },
-        });
-      }
-    });
+    if (typeFilter === "all" || typeFilter === "hall") {
+      halls.forEach((h) => {
+        if (h !== "Tümü" && trIncludes(h, q)) {
+          items.push({
+            id: `hall-${h}`,
+            type: "hall",
+            title: h,
+            subtitle: "Müsabaka Salonu",
+            action: () => {
+              onSelectHall?.(h);
+              onClose();
+            },
+          });
+        }
+      });
+    }
 
     // 3. Şehirler
-    cities.forEach((c) => {
-      if (trIncludes(c.name, q)) {
-        items.push({
-          id: `city-${c.slug}`,
-          type: "city",
-          title: `${c.name} İl Temsilciliği`,
-          subtitle: "Şehir Fikstürüne Geç",
-          action: () => {
-            onSelectCity?.(c.slug);
-            onClose();
-          },
-        });
-      }
-    });
+    if (typeFilter === "all" || typeFilter === "city") {
+      cities.forEach((c) => {
+        if (trIncludes(c.name, q)) {
+          items.push({
+            id: `city-${c.slug}`,
+            type: "city",
+            title: `${c.name} İl Temsilciliği`,
+            subtitle: "Şehir Fikstürüne Geç",
+            action: () => {
+              onSelectCity?.(c.slug);
+              onClose();
+            },
+          });
+        }
+      });
+    }
 
-    // 4. Kategoriler
-    categories.forEach((cat) => {
-      if (cat !== "Tümü" && trIncludes(cat, q)) {
+    // 4. Kategoriler & Kadınlar 2. Ligi kısayolu
+    if (typeFilter === "all") {
+      if (trIncludes("TVF Kadınlar 2. Ligi", q) || trIncludes("2. Lig", q)) {
         items.push({
-          id: `cat-${cat}`,
+          id: "cat-kadinlar-2-ligi",
           type: "category",
-          title: cat,
-          subtitle: "Lig / Kategori Filtresi",
+          title: "TVF Kadınlar 2. Ligi (16 Grup)",
+          subtitle: "Ulusal Lig Paneline Geç",
           action: () => {
-            onSelectCategory?.(cat);
+            router.push("/kadinlar-2-ligi");
             onClose();
           },
         });
       }
-    });
+      categories.forEach((cat) => {
+        if (cat !== "Tümü" && trIncludes(cat, q)) {
+          items.push({
+            id: `cat-${cat}`,
+            type: "category",
+            title: cat,
+            subtitle: "Lig / Kategori Filtresi",
+            action: () => {
+              onSelectCategory?.(cat);
+              onClose();
+            },
+          });
+        }
+      });
+    }
 
     return items.slice(0, 15);
-  }, [query, teams, halls, cities, categories, router, onClose, onSelectHall, onSelectCity, onSelectCategory]);
+  }, [query, typeFilter, teams, halls, cities, categories, router, onClose, onSelectHall, onSelectCity, onSelectCategory]);
 
-  // Klavye kısayolları (ArrowUp, ArrowDown, Enter, ESC)
   useEffect(() => {
     if (!isOpen) return;
 
@@ -190,16 +206,16 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label="Hızlı Arama"
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-start justify-center pt-16 sm:pt-24 p-3 animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-start justify-center pt-16 sm:pt-24 p-3 animate-in fade-in duration-150"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-xl bg-canvas border border-slate-700/80 rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh]"
+        className="w-full max-w-xl bg-surface border border-line rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Arama Input Alanı */}
-        <div className="relative flex items-center px-4 py-3.5 border-b border-slate-800 bg-slate-950/60">
-          <Search size={18} className="text-slate-400 shrink-0 mr-3" aria-hidden="true" />
+        <div className="relative flex items-center px-4 py-3 border-b border-line/70 bg-surface-muted/40">
+          <Search size={17} className="text-ink-3 shrink-0 mr-3" aria-hidden="true" />
           <input
             ref={inputRef}
             type="text"
@@ -210,26 +226,57 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
               setSelectedIndex(0);
             }}
             placeholder="Takım, salon veya şehir ara..."
-            className="w-full bg-transparent text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none"
+            className="w-full bg-transparent text-sm sm:text-base text-white placeholder-ink-3 focus:outline-none"
           />
           {query ? (
             <button
               type="button"
               onClick={() => setQuery("")}
               aria-label="Aramayı temizle"
-              className="p-1 rounded-lg text-slate-400 hover:text-white"
+              className="p-1 rounded-lg text-ink-3 hover:text-white cursor-pointer"
             >
-              <X size={16} aria-hidden="true" />
+              <X size={15} aria-hidden="true" />
             </button>
           ) : (
-            <kbd className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded border border-slate-700" aria-hidden="true">
+            <kbd
+              className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono text-ink-3 bg-surface-muted px-2 py-0.5 rounded border border-line/70"
+              aria-hidden="true"
+            >
               ESC
             </kbd>
           )}
         </div>
 
+        {/* Hızlı Tür Filtresi Şeridi */}
+        <div className="px-3 py-1.5 border-b border-line/50 bg-surface flex items-center gap-1 text-[11px]">
+          {(
+            [
+              { id: "all", label: "Tümü" },
+              { id: "team", label: "Takımlar" },
+              { id: "city", label: "Şehirler" },
+              { id: "hall", label: "Salonlar" },
+            ] as const
+          ).map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              onClick={() => {
+                setTypeFilter(f.id);
+                setSelectedIndex(0);
+              }}
+              className={`px-2.5 py-1 rounded-lg transition-colors cursor-pointer ${
+                typeFilter === f.id
+                  ? "bg-primary text-primary-fg font-semibold"
+                  : "text-ink-2 hover:text-white hover:bg-surface-muted/60 font-medium"
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
         {/* Sonuç Listesi */}
-        <div className="flex-1 overflow-y-auto p-2 space-y-1">
+        <div className="flex-1 overflow-y-auto p-2 space-y-0.5">
           {results.length > 0 ? (
             results.map((item, idx) => {
               const isSelected = idx === selectedIndex;
@@ -241,35 +288,35 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
                     item.action();
                   }}
                   onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`p-2.5 rounded-2xl flex items-center justify-between gap-3 cursor-pointer transition-colors ${
+                  className={`p-2.5 rounded-xl flex items-center justify-between gap-3 cursor-pointer transition-colors ${
                     isSelected
-                      ? "bg-slate-800 text-white"
-                      : "text-slate-300 hover:bg-slate-900/60"
+                      ? "bg-surface-muted text-white"
+                      : "text-ink-2 hover:bg-surface-muted/50 hover:text-white"
                   }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     {item.type === "team" ? (
                       <TeamBadge name={item.title} logoUrl={item.logo} size="sm" />
                     ) : item.type === "hall" ? (
-                      <div className="w-7 h-7 rounded-full bg-primary/15 text-primary flex items-center justify-center shrink-0 border border-primary/30">
+                      <div className="w-7 h-7 rounded-lg bg-surface-muted text-ink-2 flex items-center justify-center shrink-0 border border-line/70">
                         <MapPin size={13} />
                       </div>
                     ) : item.type === "city" ? (
-                      <div className="w-7 h-7 rounded-full bg-sky-500/15 text-sky-400 flex items-center justify-center shrink-0 border border-sky-500/30">
+                      <div className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center shrink-0">
                         <Trophy size={13} />
                       </div>
                     ) : (
-                      <div className="w-7 h-7 rounded-full bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+                      <div className="w-7 h-7 rounded-lg bg-surface-muted text-ink-2 flex items-center justify-center shrink-0 border border-line/70">
                         <Users size={13} />
                       </div>
                     )}
 
                     <div className="min-w-0">
-                      <div className="text-xs sm:text-sm font-bold truncate">
+                      <div className="text-xs sm:text-sm font-semibold text-white truncate">
                         {item.title}
                       </div>
                       {item.subtitle && (
-                        <div className="text-[10px] text-slate-400 truncate">
+                        <div className="text-[10px] text-ink-3 truncate">
                           {item.subtitle}
                         </div>
                       )}
@@ -279,21 +326,21 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
                   <ArrowRight
                     size={14}
                     className={`shrink-0 transition-transform ${
-                      isSelected ? "text-primary translate-x-1" : "text-slate-600"
+                      isSelected ? "text-primary translate-x-0.5" : "text-ink-3"
                     }`}
                   />
                 </div>
               );
             })
           ) : (
-            <div className="py-12 text-center text-xs text-slate-400">
+            <div className="py-12 text-center text-xs text-ink-3">
               &quot;{query}&quot; için eşleşen takım, salon veya şehir bulunamadı.
             </div>
           )}
         </div>
 
         {/* Alt Kısayol Bilgilendirmesi */}
-        <div className="px-4 py-2 bg-slate-950/80 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500">
+        <div className="px-4 py-2 bg-surface-muted/40 border-t border-line/60 flex items-center justify-between text-[11px] text-ink-3">
           <div className="flex items-center gap-3">
             <span>↑↓ ile Gezin</span>
             <span>↵ ile Seç</span>

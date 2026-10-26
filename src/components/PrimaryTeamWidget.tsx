@@ -6,12 +6,8 @@ import { Match } from "@/types/fixture";
 import { TeamBadge } from "./TeamBadge";
 import {
   Star,
-  Clock,
-  Calendar,
   ChevronRight,
-  CheckCircle2,
   X,
-  Sparkles,
 } from "lucide-react";
 import { slugify } from "@/utils/slugify";
 import { getVolleyboxMapping } from "@/utils/volleybox";
@@ -36,7 +32,6 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   const [searchQuery, setSearchQuery] = useState("");
   const [isDismissed, setIsDismissed] = useState(false);
 
-  // localStorage'dan kayıtlı birincil takımı oku
   useEffect(() => {
     try {
       const saved = localStorage.getItem("tvf_primary_team");
@@ -63,7 +58,6 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
     }
   };
 
-  // Birincil takıma ait maçlar
   const teamMatches = useMemo(() => {
     if (!primaryTeam) return [];
     const lower = trLower(primaryTeam).trim();
@@ -74,14 +68,29 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
     );
   }, [matches, primaryTeam]);
 
-  // Sıradaki maç
+  const seasonRecord = useMemo(() => {
+    if (!primaryTeam) return { wins: 0, losses: 0 };
+    const lower = trLower(primaryTeam).trim();
+    let wins = 0;
+    let losses = 0;
+    teamMatches.forEach((m) => {
+      if (m.status === "finished" || (m.home_score !== null && m.home_score !== undefined && m.away_score !== null && m.away_score !== undefined)) {
+        const isHome = trLower(m.home_team).trim() === lower;
+        const h = m.home_score ?? 0;
+        const a = m.away_score ?? 0;
+        if ((isHome && h > a) || (!isHome && a > h)) wins += 1;
+        else if (h !== a) losses += 1;
+      }
+    });
+    return { wins, losses };
+  }, [teamMatches, primaryTeam]);
+
   const nextMatch = useMemo(() => {
     return teamMatches.find(
       (m) => m.status !== "finished" && m.date && m.date !== "TBD"
     );
   }, [teamMatches]);
 
-  // Takım listesi (Arama için)
   const candidateTeams = useMemo(() => {
     const list =
       availableTeams.length > 0
@@ -95,14 +104,13 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
     return list.filter((t) => trIncludes(t, q)).slice(0, 24);
   }, [availableTeams, matches, searchQuery]);
 
-  // Takım seçilmediyse ve kapatılmadıysa: Minimal, tek satırlık şık davet çubuğu
   if (!primaryTeam) {
     if (isDismissed) return null;
     return (
-      <div className="bg-canvas/60 hover:bg-canvas/80 border border-slate-800/80 rounded-xl px-3 py-1.5 flex items-center justify-between gap-2 text-xs transition-colors shadow-sm">
+      <div className="bg-surface border border-line/70 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs transition-colors">
         <div className="flex items-center gap-2 min-w-0">
           <Star size={13} className="text-amber-400 fill-amber-400/20 shrink-0" />
-          <span className="font-bold text-white text-[11px] shrink-0">
+          <span className="font-semibold text-white text-[11px] shrink-0">
             Kulübünüzü Takip Edin
           </span>
         </div>
@@ -110,13 +118,13 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setIsPicking(true)}
-            className="text-[11px] font-bold text-ink-2 hover:text-ink underline underline-offset-2 cursor-pointer transition-colors"
+            className="text-[11px] font-semibold text-primary hover:underline underline-offset-2 cursor-pointer transition-colors"
           >
             Kulüp Seç
           </button>
           <button
             onClick={() => setIsDismissed(true)}
-            className="text-slate-500 hover:text-slate-300 p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md"
+            className="text-ink-3 hover:text-ink p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md cursor-pointer"
             title="Kapat"
             aria-label="Davet çubuğunu kapat"
           >
@@ -124,24 +132,23 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
           </button>
         </div>
 
-        {/* Takım Seçim Modalı */}
         {isPicking && (
           <div
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in"
+            className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in"
             onClick={() => setIsPicking(false)}
           >
             <div
-              className="bg-surface-muted border border-slate-700 rounded-2xl p-4 max-w-md w-full shadow-2xl space-y-3 max-h-[80vh] flex flex-col"
+              className="bg-surface border border-line rounded-2xl p-4 max-w-md w-full shadow-2xl space-y-3 max-h-[80vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between border-b border-slate-800 pb-2">
-                <h3 className="text-xs font-bold text-white flex items-center gap-1.5 uppercase tracking-wide">
+              <div className="flex items-center justify-between border-b border-line/70 pb-2">
+                <h3 className="text-xs font-semibold text-white flex items-center gap-1.5 uppercase tracking-wide">
                   <Star size={13} className="text-amber-400 fill-amber-400" />
                   <span>Favori Kulübünüzü Seçin</span>
                 </h3>
                 <button
                   onClick={() => setIsPicking(false)}
-                  className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-slate-400 hover:text-white"
+                  className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-ink-3 hover:text-white cursor-pointer"
                   aria-label="Modalı kapat"
                 >
                   <X size={14} />
@@ -153,7 +160,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Kulüp adı ara (örn: Fenerbahçe, VakıfBank, Zeren)..."
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-primary/40"
+                className="w-full bg-surface-muted border border-line/70 rounded-xl px-3 py-2 text-xs text-white placeholder-ink-3 focus:outline-none focus:border-primary/50"
                 autoFocus
               />
 
@@ -165,13 +172,13 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
                     <button
                       key={team}
                       onClick={() => handleSetPrimaryTeam(team)}
-                      className="w-full text-left p-2 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-800/80 hover:border-slate-700 flex items-center gap-2.5 transition-colors cursor-pointer"
+                      className="w-full text-left p-2 rounded-xl bg-surface-muted/50 hover:bg-surface-muted border border-line/60 flex items-center gap-2.5 transition-colors cursor-pointer"
                     >
                       <TeamBadge name={team} logoUrl={logo} size="xs" />
-                      <span className="text-xs font-bold text-slate-200 truncate flex-1">
+                      <span className="text-xs font-semibold text-ink truncate flex-1">
                         {team}
                       </span>
-                      <ChevronRight size={12} className="text-slate-500" />
+                      <ChevronRight size={12} className="text-ink-3" />
                     </button>
                   );
                 })}
@@ -183,7 +190,6 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
     );
   }
 
-  // Birincil takım seçildiyse: Ultra-kompakt VIP Şerit
   const mapping = getVolleyboxMapping(primaryTeam, undefined, undefined, city);
   const teamLogo = mapping?.local_logo || mapping?.logo_url;
   const teamSlug = slugify(mapping?.matched_as || primaryTeam);
@@ -197,20 +203,26 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   const opponentLogo = opponentMapping?.local_logo || opponentMapping?.logo_url;
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-surface-muted to-slate-900 border border-amber-500/30 rounded-xl px-3 py-2 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-      {/* Sol: Kulüp Bilgisi */}
+    <div className="bg-surface border border-line/70 rounded-xl px-3.5 py-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+      {/* Sol: Kulüp Bilgisi + Sezon Karnesi */}
       <div className="flex items-center gap-2.5 min-w-0">
         <TeamBadge name={primaryTeam} logoUrl={teamLogo} size="xs" />
-        <div className="min-w-0 flex items-center gap-1.5 flex-wrap">
-          <span className="px-1.5 py-0.5 rounded text-[9px] font-black uppercase bg-amber-500/20 text-amber-300 border border-amber-500/30">
+        <div className="min-w-0 flex items-center gap-2 flex-wrap">
+          <span className="px-1.5 py-0.5 rounded text-[9px] font-semibold uppercase bg-primary/15 text-primary">
             Kulübüm
           </span>
-          <Link prefetch={false}
+          <Link
+            prefetch={false}
             href={`/takim/${teamSlug}`}
-            className="font-bold text-white hover:text-amber-300 transition-colors truncate"
+            className="font-semibold text-white hover:text-primary transition-colors truncate"
           >
             {primaryTeam}
           </Link>
+          {(seasonRecord.wins > 0 || seasonRecord.losses > 0) && (
+            <span className="font-mono tabular-nums text-[10px] text-ink-3">
+              ({seasonRecord.wins}G - {seasonRecord.losses}M)
+            </span>
+          )}
         </div>
       </div>
 
@@ -220,18 +232,18 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
           role="button"
           tabIndex={0}
           onClick={() => onSelectMatch?.(nextMatch)}
-          className="flex items-center gap-2 cursor-pointer hover:text-ink transition-colors bg-slate-950/60 border border-slate-800/80 px-2.5 py-1 rounded-lg self-start sm:self-auto"
+          className="flex items-center gap-2 cursor-pointer hover:bg-surface-muted transition-colors bg-surface-muted/60 border border-line/60 px-2.5 py-1 rounded-lg self-start sm:self-auto"
         >
-          <span className="text-[10px] font-bold text-sky-400 uppercase">Sıradaki:</span>
+          <span className="text-[10px] font-semibold text-ink-3 uppercase">Sıradaki:</span>
           {opponent && <TeamBadge name={opponent} logoUrl={opponentLogo} size="xs" />}
-          <span className="font-bold text-white truncate max-w-[140px]">vs {opponent}</span>
-          <span className="text-[10px] text-slate-400 font-mono">
+          <span className="font-semibold text-white truncate max-w-[140px]">vs {opponent}</span>
+          <span className="text-[10px] text-ink-3 font-mono tabular-nums">
             {nextMatch.date} {nextMatch.time}
           </span>
-          <ChevronRight size={11} className="text-slate-500" />
+          <ChevronRight size={11} className="text-ink-3" />
         </div>
       ) : (
-        <div className="text-[11px] text-slate-500 font-medium">
+        <div className="text-[11px] text-ink-3 font-medium">
           Bekleyen maç bulunmuyor
         </div>
       )}
@@ -240,7 +252,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
       <div className="flex items-center gap-1.5 self-end sm:self-auto">
         <button
           onClick={() => handleSetPrimaryTeam(null)}
-          className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-slate-500 hover:text-ink transition-colors"
+          className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-md text-ink-3 hover:text-ink transition-colors cursor-pointer"
           title="Kulüp seçimini kaldır"
           aria-label="Kulüp seçimini kaldır"
         >
