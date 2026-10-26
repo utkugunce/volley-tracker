@@ -304,7 +304,16 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
             allMatches={convertedMatches}
             standings={standingsMap}
             isLoading={isLoading}
-            onClose={() => setSelectedMatch(null)}
+            onClose={() => {
+              setSelectedMatch(null);
+              if (typeof window !== "undefined") {
+                const u = new URL(window.location.href);
+                if (u.searchParams.has("match")) {
+                  u.searchParams.delete("match");
+                  window.history.replaceState({}, "", u.toString());
+                }
+              }
+            }}
             onToggleFavorite={(matchId) => {
               const m = convertedMatches.find((x) => x.id === matchId);
               if (m) toggleKadinlar2LigMatchFavorite(m, isFavorite, toggleFavorite);

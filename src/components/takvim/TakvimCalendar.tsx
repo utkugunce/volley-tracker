@@ -36,8 +36,25 @@ export const TakvimCalendar: React.FC<TakvimCalendarProps> = ({
   todayOverride,
   initialDateOverride,
 }) => {
-  const byDate = useMemo(() => groupMatchesByDate(matches), [matches]);
+  const [selectedLeague, setSelectedLeague] = useState<string>("Tümü");
 
+  const filteredMatches = useMemo(
+    () => (selectedLeague === "Tümü" ? matches : matches.filter((m) => m.league === selectedLeague)),
+    [matches, selectedLeague]
+  );
+  const byDate = useMemo(() => groupMatchesByDate(filteredMatches), [filteredMatches]);
+
+  const leagueTabs = useMemo(() => {
+    const sultanlarCount = matches.filter((m) => m.league === "Sultanlar Ligi").length;
+    const k1Count = matches.filter((m) => m.league === "1. Lig").length;
+    const k2Count = matches.filter((m) => m.league === "2. Lig").length;
+    return [
+      { id: "Tümü", label: "Tüm Ligler", count: matches.length },
+      { id: "Sultanlar Ligi", label: "Sultanlar Ligi", count: sultanlarCount },
+      { id: "1. Lig", label: "KFC 1. Lig", count: k1Count },
+      { id: "2. Lig", label: "2. Lig", count: k2Count },
+    ].filter((t) => t.id === "Tümü" || t.count > 0);
+  }, [matches]);
   const [today, setToday] = useState<string | null>(null);
   const [selected, setSelected] = useState<string>("");
   const [month, setMonth] = useState<string>("");
@@ -95,6 +112,29 @@ export const TakvimCalendar: React.FC<TakvimCalendarProps> = ({
           TVF fikstürü şu an alınamadı; maçlar listelenemiyor. Biraz sonra tekrar deneyin.
         </div>
       )}
+
+      {/* Lig Filtreleme Butonları */}
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1" role="tablist" aria-label="Lig seçimi">
+        {leagueTabs.map((tab) => (
+          <button
+            key={tab.id}
+            type="button"
+            role="tab"
+            aria-selected={selectedLeague === tab.id}
+            onClick={() => setSelectedLeague(tab.id)}
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer ${
+              selectedLeague === tab.id
+                ? "bg-primary text-primary-fg font-bold shadow-xs"
+                : "bg-surface border border-line text-ink-2 hover:bg-surface-raised hover:text-white"
+            }`}
+          >
+            <span>{tab.label}</span>
+            <span className="ml-1.5 text-[10px] font-mono opacity-80">
+              ({tab.count})
+            </span>
+          </button>
+        ))}
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] gap-4 items-start">
         {/* ==================== AY IZGARASI ==================== */}
@@ -233,9 +273,20 @@ const MatchRow: React.FC<{ match: CalendarMatch }> = ({ match }) => {
         <span className="font-mono font-scoreboard tabular-nums text-white text-xs font-semibold">
           {match.time || "Saat açıklanmadı"}
         </span>
-        <span className="flex items-center gap-2">
-          {match.week && <span>{match.week}. hafta</span>}
-          {played && <span className="text-[10px] font-semibold text-done">Bitti</span>}
+        <span className="flex items-center gap-1.5 flex-wrap">
+          {match.league && (
+            <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded border ${
+              match.league === "Sultanlar Ligi"
+                ? "bg-amber-500/15 text-amber-300 border-amber-500/30"
+                : match.league === "1. Lig"
+                ? "bg-purple-500/15 text-purple-300 border-purple-500/30"
+                : "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+            }`}>
+              {match.league}
+            </span>
+          )}
+          {match.week && <span>{match.week.includes("Hafta") ? match.week : `${match.week}. hafta`}</span>}
+          {played && <span className="text-[10px] font-semibold text-emerald-400">Bitti</span>}
         </span>
       </div>
 
@@ -251,7 +302,7 @@ const MatchRow: React.FC<{ match: CalendarMatch }> = ({ match }) => {
         </div>
         <span
           data-testid="home-score"
-          className={`font-mono font-scoreboard tabular-nums text-sm text-right ${homeWon ? "font-bold text-white" : "font-medium text-ink-3"}`}
+          className={`font-mono font-scoreboard tabular-nums text-sm text-right ${homeWon ? "font-extrabold text-emerald-400" : "font-medium text-ink-3"}`}
         >
           {played ? match.homeSets : ""}
         </span>
@@ -266,7 +317,7 @@ const MatchRow: React.FC<{ match: CalendarMatch }> = ({ match }) => {
         </div>
         <span
           data-testid="away-score"
-          className={`font-mono font-scoreboard tabular-nums text-sm text-right ${awayWon ? "font-bold text-white" : "font-medium text-ink-3"}`}
+          className={`font-mono font-scoreboard tabular-nums text-sm text-right ${awayWon ? "font-extrabold text-emerald-400" : "font-medium text-ink-3"}`}
         >
           {played ? match.awaySets : ""}
         </span>

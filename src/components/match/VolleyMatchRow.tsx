@@ -169,10 +169,10 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
               const aWin = set.home !== null && set.away !== null && set.away > set.home;
               return (
                 <div key={idx} className="flex flex-col items-center justify-center leading-tight gap-1 min-w-[16px]">
-                  <span className={hWin ? "text-ink font-semibold" : "text-ink-3 font-normal"}>
+                  <span className={hWin ? "text-emerald-400 font-bold" : "text-ink-3 font-normal"}>
                     {set.home ?? "-"}
                   </span>
-                  <span className={aWin ? "text-ink font-semibold" : "text-ink-3 font-normal"}>
+                  <span className={aWin ? "text-emerald-400 font-bold" : "text-ink-3 font-normal"}>
                     {set.away ?? "-"}
                   </span>
                 </div>
@@ -186,7 +186,7 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
           <span
             className={`text-xs sm:text-sm ${
               homeWon
-                ? "font-bold text-white"
+                ? "font-extrabold text-emerald-400"
                 : hasScore
                 ? "font-medium text-ink-2"
                 : "font-medium text-ink-3"
@@ -197,7 +197,7 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
           <span
             className={`text-xs sm:text-sm ${
               awayWon
-                ? "font-bold text-white"
+                ? "font-extrabold text-emerald-400"
                 : hasScore
                 ? "font-medium text-ink-2"
                 : "font-medium text-ink-3"

@@ -823,16 +823,18 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
     return synced_count, total_count
 
 
-def sync_kadinlar_2_lig_matches(
-    k2_path: Path,
+def sync_league_json_matches(
+    json_path: Path,
+    league_name: str,
+    default_league_url: str,
     vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
     team_alias_map: Dict[str, set] = None
 ) -> Tuple[int, int]:
     """
-    data/kadinlar_2_lig.json dosyasındaki 16 grubun maçlarını
-    Volleybox Kadınlar 2. Ligi turnuva maçlarıyla eşleştirir ve doğrular.
+    Lig JSON dosyasındaki maçları Volleybox turnuva maçlarıyla eşleştirir ve doğrular.
+    (Sultanlar Ligi, KFC Kadınlar 1. Ligi, Uzman Posta Kadınlar 2. Ligi)
     """
-    if not k2_path.exists():
+    if not json_path.exists():
         return 0, 0
 
     if vb_tournaments is None:
@@ -859,30 +861,27 @@ def sync_kadinlar_2_lig_matches(
         except Exception:
             pass
 
-    with open(k2_path, "r", encoding="utf-8") as f:
+    with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # 2. Lig turnuva maçlarını al
+    # Turnuva maçlarını al
+    search_key = league_name.lower()
     vb_matches = (
-        vb_tournaments.get(normalize_tourn_key("Kadınlar 2. Ligi", "Türkiye"))
-        or vb_tournaments.get("kadınlar 2. ligi::türkiye")
-        or vb_tournaments.get("kadinlar 2. ligi::turkiye")
-        or vb_tournaments.get("kadinlar 2. ligi")
-        or vb_tournaments.get("kadınlar 2. ligi")
+        vb_tournaments.get(normalize_tourn_key(league_name, "Türkiye"))
+        or vb_tournaments.get(search_key)
         or []
     )
     if not vb_matches:
         for k, v in vb_tournaments.items():
-            if "2. lig" in k:
+            if search_key in k or (("sultanlar" in search_key) and "sultanlar" in k) or (("1. lig" in search_key) and "1. lig" in k) or (("2. lig" in search_key) and "2. lig" in k):
                 vb_matches = v
                 break
 
-    if not vb_matches:
-        league_url = "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047"
-        vb_matches = fetch_volleybox_tournament_matches(league_url)
+    if not vb_matches and default_league_url:
+        vb_matches = fetch_volleybox_tournament_matches(default_league_url)
 
     if not vb_matches:
-        print("  ⚠️ Kadınlar 2. Ligi Volleybox maçları temin edilemedi.")
+        print(f"  ⚠️ {league_name} Volleybox maçları temin edilemedi.")
         return 0, len(data.get("tum_maclar", []))
 
     matches = data.get("tum_maclar", [])
@@ -906,6 +905,8 @@ def sync_kadinlar_2_lig_matches(
             parts = tarih.split(".")
             if len(parts) == 3:
                 d_str = f"{parts[2]}-{parts[1]}-{parts[0]}"
+        elif "-" in tarih:
+            d_str = tarih
 
         tvf_m = {
             "id": m.get("id"),
@@ -946,7 +947,6 @@ def sync_kadinlar_2_lig_matches(
                 "vb_hall": matched_vb.get("arena") or None,
                 "discrepancy": discrepancy
             }
-            # Eğer Volleybox'ta skor girilmişse ve TVF skoru henüz yoksa skoru zenginleştir
             if matched_vb.get("has_score") and matched_vb.get("score"):
                 if not m.get("skor") or m.get("skor") == "- : -":
                     m["skor"] = matched_vb.get("score")
@@ -979,17 +979,26 @@ def sync_kadinlar_2_lig_matches(
                 new_fikstur.append(gm)
         grp["fikstur"] = new_fikstur
 
-    data["tum_maclar"] = matches
-    if "metadata" not in data:
-        data["metadata"] = {}
-    data["metadata"]["volleybox_synced_matches"] = synced_count
-    data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
+    if "metadata" in data:
+        data["metadata"]["volleybox_eslesme_sayisi"] = synced_count
 
-    with open(k2_path, "w", encoding="utf-8") as f:
+    with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
     return synced_count, total_count
 
+def sync_kadinlar_2_lig_matches(
+    k2_path: Path,
+    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
+    team_alias_map: Dict[str, set] = None
+) -> Tuple[int, int]:
+    return sync_league_json_matches(
+        k2_path,
+        "Kadınlar 2. Ligi",
+        "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
+        vb_tournaments,
+        team_alias_map
+    )
 
 def main():
     import argparse
@@ -1163,8 +1172,22 @@ def main():
     # 5. data/kadinlar_2_lig.json senkronizasyonu
     if not args.skip_kadinlar_2_lig and K2_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-2-ligi", "2lig", "turkiye"]):
         print("\n🔄 data/kadinlar_2_lig.json senkronize ediliyor...")
-        k2_synced, k2_total = sync_kadinlar_2_lig_matches(K2_FILE, vb_tournaments, team_alias_map)
+        k2_synced, k2_total = sync_league_json_matches(K2_FILE, "Kadınlar 2. Ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047", vb_tournaments, team_alias_map)
         print(f"✅ Kadınlar 2. Ligi: {k2_synced} / {k2_total} maç Volleybox ile eşleşti ve doğrulandı!")
+
+    # 6. data/kadinlar_1_lig.json senkronizasyonu
+    K1_FILE = DATA_DIR / "kadinlar_1_lig.json"
+    if K1_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-1-ligi", "1lig", "turkiye"]):
+        print("\n🔄 data/kadinlar_1_lig.json senkronize ediliyor...")
+        k1_synced, k1_total = sync_league_json_matches(K1_FILE, "KFC Kadınlar 1. Ligi", "https://women.volleybox.net/tr/women-turkiye-kfc-kadinlar-1-ligi-2026-27-o45046", vb_tournaments, team_alias_map)
+        print(f"✅ KFC Kadınlar 1. Ligi: {k1_synced} / {k1_total} maç Volleybox ile eşleşti ve doğrulandı!")
+
+    # 7. data/sultanlar_ligi.json senkronizasyonu
+    SULTANLAR_FILE = DATA_DIR / "sultanlar_ligi.json"
+    if SULTANLAR_FILE.exists() and (not args.city or args.city.lower() in ["sultanlar-ligi", "sultanlar", "turkiye"]):
+        print("\n🔄 data/sultanlar_ligi.json senkronize ediliyor...")
+        sult_synced, sult_total = sync_league_json_matches(SULTANLAR_FILE, "Vodafone Sultanlar Ligi", "https://women.volleybox.net/tr/women-turkiye-vodafone-sultanlar-ligi-2026-27-o44991", vb_tournaments, team_alias_map)
+        print(f"✅ Vodafone Sultanlar Ligi: {sult_synced} / {sult_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     print("\n" + "=" * 75)
     print("🎉 VOLLEYBOX MAÇ SENKRONİZASYONU BAŞARIYLA TAMAMLANDI!")

@@ -41,7 +41,6 @@ describe("proxy — şehir bekçisi gerçek 404 döner", () => {
     "/isparta",
     "/sonuclar/xyz-gecersiz",
     "/fikstur/foobar",
-    "/kulupler/olmayan-sehir-xyz",
   ];
 
   it.each(blockedPaths.map((p) => [p] as [string]))(
@@ -70,7 +69,6 @@ describe("proxy — geçerli adresler dokunulmadan geçer", () => {
     "/fikstur",
     "/fikstur/istanbul",
     "/sonuclar/izmir",
-    "/kulupler/istanbul/kadikoy",
     "/takim/vakifbank-u18-t19499",
     "/lig/istanbul/genc-kizlar",
     "/kadinlar-2-ligi/puan-durumu",
@@ -119,10 +117,9 @@ describe("proxy — matcher kapsamı", () => {
 
   it("şehir bekçisinin ihtiyaç duyduğu tüm rotaları kapsar", () => {
     expect(matcher).toContain("/:cityCandidate");
-    for (const tab of ["fikstur", "grup-durumu", "gunun-maclari", "puan-durumu", "sonuclar", "kulupler"]) {
+    for (const tab of ["fikstur", "grup-durumu", "gunun-maclari", "puan-durumu", "sonuclar"]) {
       expect(matcher, `/${tab}/:tabCity matcher'da yok`).toContain(`/${tab}/:tabCity`);
     }
-    expect(matcher).toContain("/kulupler/:tabCity/:district");
   });
 
   it("orijinal oturum-yenileme kapsamı korunuyor", () => {

@@ -286,14 +286,7 @@ export const LeagueFinderWidget: React.FC<LeagueFinderWidgetProps> = () => {
                 )}
               </button>
 
-              <Link
-                href={`/kulupler/istanbul/${districtSlug}`}
-                prefetch={false}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-primary hover:bg-primary-hover text-primary-fg text-xs font-bold transition-colors"
-              >
-                <span>{district} Kulüplerini Gör</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+
             </div>
           </div>
         </div>

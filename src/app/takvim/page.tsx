@@ -5,18 +5,16 @@ import { TakvimeEkle, type TakvimSubscription } from "@/components/takvim/Takvim
 import { SULTANLAR_FEEDS, fetchSultanlarMatches } from "@/utils/sultanlarIcs";
 import { toCalendarMatch } from "@/utils/takvimData";
 import type { CalendarMatch } from "@/utils/takvim";
+import { getKadinlar1LigData } from "@/utils/kadinlar1LigServer";
+import { getKadinlar2LigData } from "@/utils/kadinlar2LigServer";
+import type { Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 
-/**
- * Vodafone Sultanlar Ligi takvimi. Sayfa istek başına üretilmez: ISR ile 1 saatte bir yenilenir
- * (Vercel yazma kotası). Veri, .ics akışlarıyla aynı TVF okuyucusundan gelir; "bugün" ve seçili gün
- * tarayıcıda hesaplanır, bu yüzden sunucu çıktısı kişiye/zamana göre değişmez.
- */
 export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
 
 export function generateMetadata(): Metadata {
-  const title = "Vodafone Sultanlar Ligi Takvimi";
+  const title = "Voleybol Fikstür ve Maç Takvimi";
   const description =
-    "Vodafone Sultanlar Ligi maçlarını ay takvimi üzerinde görün: gün gün maç saatleri, salonlar, yayıncı kanal ve skorlar. Fenerbahçe Medicana ve Zeren Spor maçlarını takvimine ekle.";
+    "Vodafone Sultanlar Ligi, KFC Kadınlar 1. Ligi ve Kadınlar 2. Ligi maçlarını ay takvimi üzerinde gün gün saatleri, salonları ve sonuçlarıyla takip edin.";
   const url = "https://altyapivoleybol.com.tr/takvim";
   return {
     title,
@@ -38,14 +36,81 @@ const SUBSCRIPTIONS: TakvimSubscription[] = SULTANLAR_FEEDS.map((f) => ({
   label: SUBSCRIPTION_LABELS[f.slug] ?? f.slug,
 }));
 
-async function loadMatches(): Promise<{ matches: CalendarMatch[]; loadError: boolean }> {
-  try {
-    // cache: null → fetch'e önbellek bayrağı verilmez; sayfa dinamik olmaz, çıktıyı `revalidate` önbelleğe alır.
-    const all = await fetchSultanlarMatches(fetch, { cache: null });
-    return { matches: all.map(toCalendarMatch), loadError: false };
-  } catch {
-    return { matches: [], loadError: true };
+function parseTurkishDateToIso(tarihStr?: string): string {
+  if (!tarihStr) return "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(tarihStr)) return tarihStr;
+  const parts = tarihStr.split(".");
+  if (parts.length === 3) {
+    const [d, m, y] = parts;
+    const year = y.length === 2 ? `20${y}` : y;
+    return `${year}-${m.padStart(2, "0")}-${d.padStart(2, "0")}`;
   }
+  return "";
+}
+
+function kadinlarMatchToCalendar(m: Kadinlar2LigMatch, leagueName: string): CalendarMatch | null {
+  const isoDate = parseTurkishDateToIso(m.tarih);
+  if (!isoDate) return null;
+
+  const homeScore = m.set_a ? parseInt(m.set_a, 10) : null;
+  const awayScore = m.set_b ? parseInt(m.set_b, 10) : null;
+
+  return {
+    id: m.id || `${leagueName}-${m.mac_no}-${m.grup_no}`,
+    date: isoDate,
+    time: m.saat || "",
+    week: m.hafta ? `${m.hafta}. Hafta` : m.grup_adi || "",
+    home: m.takim_a_volleybox_name || m.takim_a,
+    away: m.takim_b_volleybox_name || m.takim_b,
+    venue: m.salon || "",
+    city: m.sehir || "",
+    broadcaster: "",
+    homeSets: isNaN(homeScore as number) ? null : homeScore,
+    awaySets: isNaN(awayScore as number) ? null : awayScore,
+    setScores: m.set_sonuclari || "",
+    league: leagueName,
+  };
+}
+
+async function loadMatches(): Promise<{ matches: CalendarMatch[]; loadError: boolean }> {
+  const allMatches: CalendarMatch[] = [];
+  let errorCount = 0;
+
+  // 1. Sultanlar Ligi
+  try {
+    const all = await fetchSultanlarMatches(fetch, { cache: null });
+    const sultanlarMatches = all.map(toCalendarMatch).map((m) => ({ ...m, league: "Sultanlar Ligi" }));
+    allMatches.push(...sultanlarMatches);
+  } catch {
+    errorCount++;
+  }
+
+  // 2. KFC Kadınlar 1. Ligi
+  try {
+    const k1Data = getKadinlar1LigData();
+    const k1List = (k1Data.tum_maclar || [])
+      .map((m) => kadinlarMatchToCalendar(m, "1. Lig"))
+      .filter((m): m is CalendarMatch => m !== null);
+    allMatches.push(...k1List);
+  } catch {
+    // 1. lig opsiyonel hata yönetimi
+  }
+
+  // 3. Uzman Posta Kadınlar 2. Ligi
+  try {
+    const k2Data = getKadinlar2LigData();
+    const k2List = (k2Data.tum_maclar || [])
+      .map((m) => kadinlarMatchToCalendar(m, "2. Lig"))
+      .filter((m): m is CalendarMatch => m !== null);
+    allMatches.push(...k2List);
+  } catch {
+    // 2. lig opsiyonel hata yönetimi
+  }
+
+  return {
+    matches: allMatches,
+    loadError: errorCount > 0 && allMatches.length === 0,
+  };
 }
 
 export default async function TakvimPage() {
@@ -54,9 +119,11 @@ export default async function TakvimPage() {
     <TakvimShell>
       <div className="space-y-4 pb-6">
         <div>
-          <h1 className="font-display font-extrabold text-ink text-xl sm:text-2xl tracking-tight">Vodafone Sultanlar Ligi Takvimi</h1>
+          <h1 className="font-display font-extrabold text-ink text-xl sm:text-2xl tracking-tight">
+            Voleybol Ligleri Maç Takvimi
+          </h1>
           <p className="text-xs text-ink-2 mt-0.5 font-medium">
-            Kaynak: TVF resmi fikstür bülteni
+            Vodafone Sultanlar Ligi, KFC Kadınlar 1. Ligi ve Kadınlar 2. Ligi resmi TVF bültenleri
           </p>
         </div>
         <TakvimCalendar matches={matches} loadError={loadError} />

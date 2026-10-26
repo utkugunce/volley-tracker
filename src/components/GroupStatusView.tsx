@@ -133,7 +133,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
   const toggleCityExpand = (cityName: string) => {
     setExpandedCities((prev) => ({
       ...prev,
-      [cityName]: !prev[cityName],
+      [cityName]: prev[cityName] === false ? true : false,
     }));
   };
 
@@ -146,7 +146,11 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
   };
 
   const collapseAll = () => {
-    setExpandedCities({});
+    const next: Record<string, boolean> = {};
+    for (const [cityName] of cityGroups) {
+      next[cityName] = false;
+    }
+    setExpandedCities(next);
   };
 
   return (

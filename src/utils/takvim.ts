@@ -39,6 +39,7 @@ export interface CalendarMatch {
   homeSets: number | null;
   awaySets: number | null;
   setScores: string;
+  league?: string;
 }
 
 export interface GridDay {

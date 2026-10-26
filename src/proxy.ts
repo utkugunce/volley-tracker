@@ -103,8 +103,6 @@ export const config = {
     "/gunun-maclari/:tabCity",
     "/puan-durumu/:tabCity",
     "/sonuclar/:tabCity",
-    "/kulupler/:tabCity",
-    "/kulupler/:tabCity/:district",
 
     // Eski /{il}/{sekme} adresleri -> 308 /{sekme}/{il}
     "/:legacyCity/fikstur",

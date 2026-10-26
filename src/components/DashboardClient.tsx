@@ -217,13 +217,22 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           />
         }
         rightSidebar={
-          activeMainTab === "standings" || !selectedMatch ? undefined : (
+          activeMainTab === "standings" || activeMainTab === "group-status" || !selectedMatch ? undefined : (
             <MatchInspectorPanel
               match={selectedMatch}
               allMatches={data?.matches || []}
               standings={data?.standings}
               isLoading={loading}
-              onClose={() => setSelectedMatch(null)}
+              onClose={() => {
+                setSelectedMatch(null);
+                if (typeof window !== "undefined") {
+                  const u = new URL(window.location.href);
+                  if (u.searchParams.has("match")) {
+                    u.searchParams.delete("match");
+                    window.history.replaceState({}, "", u.toString());
+                  }
+                }
+              }}
               onToggleFavorite={toggleFavorite}
               isFavorite={selectedMatch ? favorites.includes(selectedMatch.id) : false}
             />

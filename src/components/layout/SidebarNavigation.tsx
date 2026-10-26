@@ -8,8 +8,7 @@ import {
   MapPin,
   ChevronDown,
   Layers,
-  Sparkles,
-  Shield,
+  PanelLeftClose,
 } from "lucide-react";
 import { CityInfo, Match } from "@/types/fixture";
 import { buildLeagueHierarchy } from "@/utils/leagueHierarchy";
@@ -23,6 +22,7 @@ interface SidebarNavigationProps {
   onSelectCategory?: (category: string) => void;
   favoritesCount?: number;
   totalMatches?: number;
+  onToggleCollapse?: () => void;
 }
 
 export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
@@ -34,6 +34,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
   onSelectCategory,
   favoritesCount = 0,
   totalMatches = 0,
+  onToggleCollapse,
 }) => {
   const [isFavoritesOpen, setIsFavoritesOpen] = useState(true);
   const [expandedCities, setExpandedCities] = useState<Record<string, boolean>>({
@@ -87,16 +88,29 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
     <div className="flex flex-col h-full text-xs bg-surface">
       {/* 1. Üst Başlık */}
       <div className="px-3.5 py-3 border-b border-line/60 flex items-center justify-between bg-surface sticky top-0 z-10">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           <Trophy size={14} className="text-primary shrink-0" />
-          <div>
-            <h2 className="font-bold text-white text-[13px] tracking-tight leading-tight">Lig Ağacı</h2>
-            <p className="text-[10px] text-ink-3">TVF Altyapı Hiyerarşisi</p>
+          <div className="min-w-0">
+            <h2 className="font-bold text-white text-[13px] tracking-tight leading-tight truncate">Lig Ağacı</h2>
+            <p className="text-[10px] text-ink-3 truncate">TVF Altyapı Hiyerarşisi</p>
           </div>
         </div>
-        <span className="text-[11px] font-mono tabular-nums font-medium text-ink-3">
-          {totalMatches > 0 ? `${totalMatches} Maç` : "81 İl"}
-        </span>
+        <div className="flex items-center gap-1.5 shrink-0">
+          <span className="text-[11px] font-mono tabular-nums font-medium text-ink-3">
+            {totalMatches > 0 ? `${totalMatches} Maç` : "81 İl"}
+          </span>
+          {onToggleCollapse && (
+            <button
+              type="button"
+              onClick={onToggleCollapse}
+              className="p-1 rounded-md text-ink-3 hover:text-white hover:bg-surface-raised transition-colors cursor-pointer"
+              title="Lig Ağacını Daralt"
+              aria-label="Lig Ağacını Daralt"
+            >
+              <PanelLeftClose size={14} />
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto custom-scrollbar p-2.5 space-y-3">
@@ -163,30 +177,6 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                   <span className="font-medium text-[11px] truncate">TVF Kadınlar 2. Ligi</span>
                 </span>
                 <span className="text-[10px] text-ink-3 font-mono shrink-0">16 Grup →</span>
-              </Link>
-
-              <Link
-                href="/kulupler"
-                prefetch={false}
-                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg hover:bg-surface-raised/60 text-ink-2 hover:text-white transition-colors group"
-              >
-                <span className="flex items-center gap-2 truncate">
-                  <Shield size={12} className="text-ink-3 shrink-0" />
-                  <span className="font-medium text-[11px] truncate">Kulüpler Rehberi</span>
-                </span>
-                <span className="text-[10px] text-ink-3 font-mono shrink-0">İl / İlçe →</span>
-              </Link>
-
-              <Link
-                href="/hangi-ligde-oynar"
-                prefetch={false}
-                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg hover:bg-surface-raised/60 text-ink-2 hover:text-white transition-colors group"
-              >
-                <span className="flex items-center gap-2 truncate">
-                  <Sparkles size={12} className="text-primary shrink-0" />
-                  <span className="font-medium text-[11px] truncate">Hangi Ligde Oynar?</span>
-                </span>
-                <span className="text-[10px] text-ink-3 font-mono shrink-0">Rehber →</span>
               </Link>
             </div>
           )}

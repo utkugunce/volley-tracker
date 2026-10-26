@@ -131,11 +131,8 @@ export function evaluateGroupStatus(params: {
 }): GroupStatusKey {
   const { total, dated, synced, finished, teamsCount } = params;
 
-  // "Lig Bitti" demek için il temsilciliği sitesindeki ilgili ligin tüm maçlarının
-  // oynanmış bitmiş (finished === total) ve Volleybox'a girilmiş olması (synced === total) gerekir.
-  if (total > 0 && finished === total && synced === total) {
-    return "finished";
-  }
+  // Fikstürde/programda yer alan tüm maçlar Volleybox'a girilmişse
+  // "Lig Bitti" yerine daima "Programdaki tüm maçlar girildi" denir.
   if (total > 0 && synced === total) {
     return "all_program_entered";
   }

@@ -117,12 +117,7 @@ export function evaluateCityRoute(pathname: string): CityRouteDecision {
     return { blocked: true, reason: "unknown-tab-city", segment: second };
   }
 
-  // 3) "/kulupler/{il}/{ilce}": yalnızca il segmenti doğrulanır.
-  if (segments.length === 3 && first === "kulupler") {
-    if (looksLikeFile(second)) return PASS;
-    if (isAllowedCitySlug(second)) return PASS;
-    return { blocked: true, reason: "unknown-tab-city", segment: second };
-  }
+
 
   // Geri kalan her şey (çok segmentli rotalar, /takim/*, /lig/*, /api/*) dokunulmadan geçer.
   void third;

@@ -3,6 +3,7 @@
 import React from "react";
 import { Search, X, MapPin, AlertTriangle, CheckCircle2, History, SlidersHorizontal, ChevronDown } from "lucide-react";
 import { getCategoryBirthYearRange } from "@/utils/categoryCalculator";
+import { sortCategoryList } from "@/utils/grouping";
 
 interface FilterBarProps {
   categories: string[];
@@ -76,6 +77,29 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     Number(selectedHall !== "Tümü") +
     Number(searchQuery.trim().length > 0) +
     Number(volleyboxFilter !== "all");
+
+  const sortedCats = React.useMemo(() => sortCategoryList(categories), [categories]);
+
+  const categoryGroups = React.useMemo(() => {
+    const allBtn = sortedCats.filter((c) => c === "Tümü");
+    const genc = sortedCats.filter((c) => c !== "Tümü" && (c.toLowerCase().includes("genç") || c.toLowerCase().includes("u18")));
+    const yildiz = sortedCats.filter((c) => c !== "Tümü" && (c.toLowerCase().includes("yıldız") || c.toLowerCase().includes("u16")));
+    const other = sortedCats.filter(
+      (c) =>
+        c !== "Tümü" &&
+        !c.toLowerCase().includes("genç") &&
+        !c.toLowerCase().includes("u18") &&
+        !c.toLowerCase().includes("yıldız") &&
+        !c.toLowerCase().includes("u16")
+    );
+
+    return [
+      { id: "all", label: "", items: allBtn },
+      { id: "genc", label: "Genç Kızlar (U18)", items: genc },
+      { id: "yildiz", label: "Yıldız Kızlar (U16)", items: yildiz },
+      { id: "other", label: "Diğer Ligler", items: other },
+    ].filter((g) => g.items.length > 0);
+  }, [sortedCats]);
 
   const statusTabs = [
     { id: "all", label: "HEPSİ", count: counts.all },
@@ -188,38 +212,55 @@ export const FilterBar: React.FC<FilterBarProps> = ({
       {/* 2. Salon, Takım Arama ve Volleybox Filtreleri */}
       {filtersOpen && (
       <div className="space-y-3">
-      <div className="flex items-center gap-1 overflow-x-auto" role="tablist" aria-label="Lig filtreleri">
-        {categories.map((cat) => {
-          const isActive = selectedCategory === cat;
-          const birthYears = getCategoryBirthYearRange(cat);
-          return (
-            <button
-              key={cat}
-              type="button"
-              role="tab"
-              aria-selected={isActive}
-              onClick={() => onSelectCategory(cat)}
-              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                isActive
-                  ? "bg-selected-strong text-white font-bold shadow-glow-selected"
-                  : "bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/60"
-              }`}
-            >
-              <span>{cat}</span>
-              {birthYears && (
-                <span
-                  className={`text-[10px] font-mono px-1.5 py-0.2 rounded transition-colors ${
+      {/* Gruplandırılmış ve Hiyerarşik Sıralı Kategori Filtreleri */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Lig filtreleri">
+        {categoryGroups.map((group) => (
+          <div
+            key={group.id}
+            className={`flex items-center gap-1.5 shrink-0 p-1 rounded-2xl border ${
+              group.id === "all"
+                ? "border-transparent bg-transparent"
+                : "border-slate-800/80 bg-slate-900/60 shadow-xs"
+            }`}
+          >
+            {group.label && (
+              <span className="text-[10px] uppercase font-bold text-slate-400 px-2 py-0.5 tracking-wider shrink-0">
+                {group.label}:
+              </span>
+            )}
+            {group.items.map((cat) => {
+              const isActive = selectedCategory === cat;
+              const birthYears = getCategoryBirthYearRange(cat);
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => onSelectCategory(cat)}
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                     isActive
-                      ? "bg-black/25 text-white/90"
-                      : "bg-slate-900/80 text-slate-400 border border-slate-700/50"
+                      ? "bg-selected-strong text-white font-bold shadow-glow-selected"
+                      : "bg-slate-800/70 text-slate-300 hover:bg-slate-700/80 hover:text-white border border-slate-700/60"
                   }`}
                 >
-                  {birthYears}
-                </span>
-              )}
-            </button>
-          );
-        })}
+                  <span>{cat}</span>
+                  {birthYears && (
+                    <span
+                      className={`text-[10px] font-mono px-1.5 py-0.2 rounded transition-colors ${
+                        isActive
+                          ? "bg-black/25 text-white/90"
+                          : "bg-slate-900/80 text-slate-400 border border-slate-700/50"
+                      }`}
+                    >
+                      {birthYears}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        ))}
       </div>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 pt-0.5">
         <div className="flex flex-wrap items-center gap-2 flex-1">

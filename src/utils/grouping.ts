@@ -213,15 +213,40 @@ export function extractRegionFromGroup(groupName?: string): string | null {
   return match ? match[1].replace(/\s+/g, " ").trim() : null;
 }
 
-function getCategoryRank(cat: string, ageGroup?: string): number {
+export function getCategoryCombinedScore(cat: string, ageGroup?: string): number {
+  if (cat === "Tümü") return 0;
   const s = `${cat} ${ageGroup || ""}`.toLowerCase();
-  if (s.includes("genç") || s.includes("u18")) return 1;
-  if (s.includes("yıldız") || s.includes("u16")) return 2;
-  if (s.includes("küçük") || s.includes("u14")) return 3;
-  if (s.includes("midi") || s.includes("u13")) return 4;
-  if (s.includes("mini") || s.includes("u12")) return 5;
-  if (s.includes("erkek")) return 6;
-  return 7;
+  
+  if (s.includes("genç") || s.includes("u18")) {
+    if (s.includes("süper")) return 10;
+    if (s.includes("1. lig") || s.includes("1.lig") || s.includes("1. ligi")) return 11;
+    if (s.includes("2. lig") || s.includes("2.lig") || s.includes("2. ligi")) return 12;
+    return 15;
+  }
+  if (s.includes("yıldız") || s.includes("u16")) {
+    if (s.includes("süper")) return 20;
+    if (s.includes("1. lig") || s.includes("1.lig") || s.includes("1. ligi")) return 21;
+    if (s.includes("2. lig") || s.includes("2.lig") || s.includes("2. ligi")) return 22;
+    return 25;
+  }
+  if (s.includes("küçük") || s.includes("u14")) return 30;
+  if (s.includes("midi") || s.includes("u13")) return 40;
+  if (s.includes("mini") || s.includes("u12")) return 50;
+  if (s.includes("erkek")) return 60;
+  return 70;
+}
+
+export function sortCategoryList(categories: string[]): string[] {
+  return [...categories].sort((a, b) => {
+    const scoreA = getCategoryCombinedScore(a);
+    const scoreB = getCategoryCombinedScore(b);
+    if (scoreA !== scoreB) return scoreA - scoreB;
+    return a.localeCompare(b, "tr", { numeric: true });
+  });
+}
+
+function getCategoryRank(cat: string, ageGroup?: string): number {
+  return getCategoryCombinedScore(cat, ageGroup);
 }
 
 function getTierRank(cat: string): number {

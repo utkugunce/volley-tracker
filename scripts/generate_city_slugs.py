@@ -79,7 +79,6 @@ export const CITY_TAB_SEGMENTS: ReadonlySet<string> = new Set([
   "fikstur",
   "grup-durumu",
   "gunun-maclari",
-  "kulupler",
   "puan-durumu",
   "sonuclar",
 ]);

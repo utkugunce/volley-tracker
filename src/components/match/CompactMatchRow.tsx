@@ -268,7 +268,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                   mode === "today" && isLive && idx === parsedSets.length - 1
                     ? "bg-blue-500/10 text-blue-300 font-semibold"
                     : set.home !== null && set.away !== null && set.home > set.away
-                    ? "text-ink font-semibold"
+                    ? "text-emerald-400 font-bold"
                     : "text-ink-3 font-normal"
                 }`}>
                   {set.home ?? "-"}
@@ -277,7 +277,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
                   mode === "today" && isLive && idx === parsedSets.length - 1
                     ? "bg-blue-500/10 text-blue-300 font-semibold"
                     : set.home !== null && set.away !== null && set.away > set.home
-                    ? "text-ink font-semibold"
+                    ? "text-emerald-400 font-bold"
                     : "text-ink-3 font-normal"
                 }`}>
                   {set.away ?? "-"}
@@ -298,7 +298,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span
             className={`text-xs ${
               homeWon
-                ? "font-bold text-white"
+                ? "font-extrabold text-emerald-400"
                 : isFinished
                 ? "font-bold text-ink-2"
                 : mode === "results"
@@ -311,7 +311,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
           <span
             className={`text-xs ${
               awayWon
-                ? "font-bold text-white"
+                ? "font-extrabold text-emerald-400"
                 : isFinished
                 ? "font-bold text-ink-2"
                 : mode === "results"

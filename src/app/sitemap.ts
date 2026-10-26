@@ -71,19 +71,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.8,
     },
-    // Voleybol Yaş & Kategori Hesaplayıcı & Kulüpler Dizini
-    {
-      url: `${baseUrl}/hangi-ligde-oynar`,
-      lastModified: dataUpdatedAt,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/kulupler`,
-      lastModified: dataUpdatedAt,
-      changeFrequency: "daily",
-      priority: 0.95,
-    },
+
     // Kadınlar 2. Ligi Rotaları
     {
       url: `${baseUrl}/kadinlar-2-ligi`,
@@ -203,25 +191,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  // İlçe bazlı kulüp rehberi rotaları (İstanbul, Ankara, İzmir, Bursa)
-  const clubCities = ["istanbul", "ankara", "izmir", "bursa"];
-  const clubCityRoutes: MetadataRoute.Sitemap = clubCities.flatMap((cSlug) => {
-    const districts = getDistrictSummaries(cSlug).filter((d) => d.clubCount > 0);
-    return [
-      {
-        url: `${baseUrl}/kulupler/${cSlug}`,
-        lastModified: dataUpdatedAt,
-        changeFrequency: "weekly" as const,
-        priority: 0.9,
-      },
-      ...districts.map((d) => ({
-        url: `${baseUrl}/kulupler/${cSlug}/${d.slug}`,
-        lastModified: dataUpdatedAt,
-        changeFrequency: "weekly" as const,
-        priority: 0.85,
-      })),
-    ];
-  });
 
-  return [...staticRoutes, ...statsRoutes, ...teamRoutes, ...cityRoutes, ...clubCityRoutes];
+
+  return [...staticRoutes, ...statsRoutes, ...teamRoutes, ...cityRoutes];
 }

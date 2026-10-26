@@ -9,6 +9,8 @@ import {
   Calendar,
   CheckCircle2,
   ChevronRight,
+  ArrowRight,
+  Activity,
   Globe,
   Sparkles,
 } from "lucide-react";
@@ -315,23 +317,43 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           </div>
         ) : (
           <div className="space-y-5">
-            {/* BÖLÜM 1: BUGÜNÜN MAÇLARI */}
-            {todayMatches.length > 0 && (
-              <div className="space-y-2">
-                <div className="flex items-center justify-between px-0.5">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-done" />
-                    <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                      <span>Bugünün Maçları</span>
-                      <span className="text-ink-3 font-display tabular-nums font-normal">({todayMatches.length})</span>
-                    </h2>
+            {/* BÖLÜM 1: BUGÜNÜN MAÇLARI (BELİRGİN SPOTLIGHT HERO KARTI) */}
+            {todayMatches.length > 0 ? (
+              <div className="relative rounded-2xl p-3.5 sm:p-4 bg-gradient-to-b from-surface-raised/90 via-surface to-surface border-2 border-emerald-500/40 shadow-xl overflow-hidden space-y-3">
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
+                
+                {/* Spotlight Başlık Şeridi */}
+                <div className="flex items-center justify-between gap-2 border-b border-line/60 pb-2.5 relative z-10">
+                  <div className="flex items-center gap-2.5">
+                    <span className="relative flex h-3 w-3">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+                    </span>
+                    <div>
+                      <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
+                        <span>Günün Maç Programı & Canlı Skorlar</span>
+                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-mono font-bold">
+                          {todayMatches.length} Maç
+                        </span>
+                      </h2>
+                      <p className="text-[11px] text-ink-3 font-medium">
+                        {formatDateTurkish(todayStr)} · TVF Canlı Altyapı Bülteni
+                      </p>
+                    </div>
                   </div>
-                  <span className="text-[11px] font-mono text-ink-3 font-medium">
-                    {formatDateTurkish(todayStr)}
-                  </span>
+
+                  <button
+                    type="button"
+                    onClick={() => onNavigateTab("today")}
+                    className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1 cursor-pointer shrink-0"
+                  >
+                    <span>Günün Maçları Tabı</span>
+                    <ArrowRight size={13} />
+                  </button>
                 </div>
 
-                <div className="space-y-1.5">
+                {/* Maç Listesi */}
+                <div className="space-y-1.5 relative z-10">
                   {todayMatches.map((match) => (
                     <VolleyMatchRow
                       key={match.id}
@@ -343,6 +365,28 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     />
                   ))}
                 </div>
+              </div>
+            ) : (
+              <div className="rounded-2xl p-4 sm:p-5 bg-surface border border-line/70 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left shadow-md">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Calendar size={18} />
+                  </div>
+                  <div>
+                    <h3 className="text-xs sm:text-sm font-bold text-white">Bugün İçin Planlanmış Maç Bulunmuyor</h3>
+                    <p className="text-[11px] text-ink-3 mt-0.5">
+                      Günün TVF bülteninde resmi karşılaşma yok. Yaklaşan fikstür ve sonuçları inceleyebilirsiniz.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => onNavigateTab("fixtures")}
+                  className="px-3.5 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover text-xs font-semibold shrink-0 cursor-pointer transition-colors shadow-md flex items-center gap-1.5"
+                >
+                  <span>Fikstüre Git</span>
+                  <ArrowRight size={13} />
+                </button>
               </div>
             )}
 

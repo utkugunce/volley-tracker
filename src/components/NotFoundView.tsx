@@ -62,12 +62,12 @@ export function NotFoundView() {
             <span>Puan Durumu</span>
           </Link>
           <Link
-            href="/kulupler"
+            href="/takvim"
             prefetch={false}
             className="flex items-center gap-2.5 p-3 rounded-xl bg-surface hover:bg-surface-raised border border-line text-xs font-semibold text-ink transition-colors active:scale-95"
           >
-            <Shield className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
-            <span>Kulüpler Rehberi</span>
+            <Calendar className="w-4 h-4 text-primary shrink-0" aria-hidden="true" />
+            <span>Maç Takvimi</span>
           </Link>
         </div>
 

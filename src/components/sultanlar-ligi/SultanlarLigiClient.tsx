@@ -192,6 +192,13 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
 
   const handleCloseInspector = () => {
     setSelectedMatch(null);
+    if (typeof window !== "undefined") {
+      const u = new URL(window.location.href);
+      if (u.searchParams.has("match")) {
+        u.searchParams.delete("match");
+        window.history.replaceState({}, "", u.toString());
+      }
+    }
   };
 
   const handleCloseMobileDrawer = () => {

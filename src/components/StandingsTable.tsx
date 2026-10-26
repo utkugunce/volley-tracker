@@ -34,6 +34,7 @@ interface StandingsTableProps {
 
 export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city, matches, onSelectTeam }) => {
   const [showSimulator, setShowSimulator] = useState(false);
+  const [matchesLayout, setMatchesLayout] = useState<"split" | "results" | "fixtures">("split");
   const {
     allKeys,
     distinctCities,
@@ -147,26 +148,76 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
         <StandingsLegend />
       </div>
 
-      {/* Puan Durumu Altında: Sonuçlar */}
-      {finishedMatches.length > 0 && (
-        <FixtureTable
-          title="Oynanan Maç Sonuçları"
-          subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
-          matches={finishedMatches}
-          city={activeContext?.city || city}
-          showCityBadge={false}
-        />
-      )}
+      {/* Puan Durumu Altında: Sonuçlar & Fikstür Tek Ekrana Sığdırma (Yan Yana 2 Sütun Grid) */}
+      {(finishedMatches.length > 0 || upcomingMatches.length > 0) && (
+        <div className="space-y-3 pt-2">
+          {/* Görünüm Modu / Sekme Seçici */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-ink-3">
+              Grup Maç Programı & Skorlar
+            </span>
+            <div className="inline-flex items-center p-0.5 rounded-xl bg-surface border border-line text-xs font-semibold self-start sm:self-auto shadow-xs">
+              <button
+                type="button"
+                onClick={() => setMatchesLayout("split")}
+                className={`px-3 py-1 rounded-lg text-[11px] transition-colors cursor-pointer ${
+                  matchesLayout === "split"
+                    ? "bg-primary text-primary-fg font-bold shadow-xs"
+                    : "text-ink-2 hover:text-white"
+                }`}
+              >
+                Yan Yana ({finishedMatches.length + upcomingMatches.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setMatchesLayout("results")}
+                className={`px-3 py-1 rounded-lg text-[11px] transition-colors cursor-pointer ${
+                  matchesLayout === "results"
+                    ? "bg-primary text-primary-fg font-bold shadow-xs"
+                    : "text-ink-2 hover:text-white"
+                }`}
+              >
+                Sonuçlar ({finishedMatches.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setMatchesLayout("fixtures")}
+                className={`px-3 py-1 rounded-lg text-[11px] transition-colors cursor-pointer ${
+                  matchesLayout === "fixtures"
+                    ? "bg-primary text-primary-fg font-bold shadow-xs"
+                    : "text-ink-2 hover:text-white"
+                }`}
+              >
+                Fikstür ({upcomingMatches.length})
+              </button>
+            </div>
+          </div>
 
-      {/* Puan Durumu Altında: Fikstür */}
-      {upcomingMatches.length > 0 && (
-        <FixtureTable
-          title="Fikstür & Gelecek Maç Programı"
-          subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
-          matches={upcomingMatches}
-          city={activeContext?.city || city}
-          showCityBadge={false}
-        />
+          <div className={matchesLayout === "split" ? "grid grid-cols-1 lg:grid-cols-2 gap-3.5 items-start" : "space-y-3"}>
+            {(matchesLayout === "split" || matchesLayout === "results") && finishedMatches.length > 0 && (
+              <div className="min-w-0">
+                <FixtureTable
+                  title="Oynanan Maç Sonuçları"
+                  subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
+                  matches={finishedMatches}
+                  city={activeContext?.city || city}
+                  showCityBadge={false}
+                />
+              </div>
+            )}
+            {(matchesLayout === "split" || matchesLayout === "fixtures") && upcomingMatches.length > 0 && (
+              <div className="min-w-0">
+                <FixtureTable
+                  title="Fikstür & Gelecek Program"
+                  subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
+                  matches={upcomingMatches}
+                  city={activeContext?.city || city}
+                  showCityBadge={false}
+                />
+              </div>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );

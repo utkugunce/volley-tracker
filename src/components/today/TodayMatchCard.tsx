@@ -139,7 +139,7 @@ export function TodayMatchCard({
               <span
                 className={`inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-lg text-sm transition-all ${
                   homeWon
-                    ? "text-done font-black"
+                    ? "text-emerald-400 font-black"
                     : "bg-slate-800/90 text-slate-400 border border-slate-700/60"
                 }`}
               >
@@ -175,7 +175,7 @@ export function TodayMatchCard({
               <span
                 className={`inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-lg text-sm transition-all ${
                   awayWon
-                    ? "text-done font-black"
+                    ? "text-emerald-400 font-black"
                     : "bg-slate-800/90 text-slate-400 border border-slate-700/60"
                 }`}
               >

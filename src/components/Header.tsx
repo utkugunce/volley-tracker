@@ -254,23 +254,7 @@ export const Header: React.FC<HeaderProps> = ({
           <span>{t("nav.calendar")}</span>
         </Link>
 
-        <Link
-          href="/kulupler"
-          prefetch={false}
-          className="flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 border-transparent text-ink-2 hover:text-white transition-colors cursor-pointer whitespace-nowrap"
-          title="İl ve İlçe Bazlı Voleybol Kulüpleri Rehberi"
-        >
-          <span>{t("nav.clubs")}</span>
-        </Link>
 
-        <Link
-          href="/hangi-ligde-oynar"
-          prefetch={false}
-          className="flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 border-transparent text-ink-2 hover:text-white transition-colors cursor-pointer whitespace-nowrap"
-          title="TVF 2026-2027 Yaş Kategorisi ve File Yüksekliği Hesaplama Aracı"
-        >
-          <span>{t("nav.whichLeague")}</span>
-        </Link>
       </nav>
     </header>
   );
