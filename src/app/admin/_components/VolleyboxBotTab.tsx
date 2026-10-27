@@ -32,8 +32,13 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
   const [botStatus, setBotStatus] = useState<BotStatusResponse | null>(null);
   const [actionLoading, setActionLoading] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [screenshotError, setScreenshotError] = useState<boolean>(false);
 
   const logContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    setScreenshotError(false);
+  }, [botStatus?.screenshotMtime]);
 
   const fetchPreview = useCallback(async () => {
     if (!token) return;
@@ -475,12 +480,13 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
           </div>
 
           <div className="bg-slate-950 border border-slate-800 rounded-xl h-80 flex items-center justify-center overflow-hidden relative">
-            {screenshotUrl ? (
+            {screenshotUrl && !screenshotError ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={screenshotUrl}
                 alt="Volleybox Bot Canlı Tarayıcı Görünümü"
                 className="w-full h-full object-contain"
+                onError={() => setScreenshotError(true)}
               />
             ) : (
               <div className="text-slate-500 text-xs text-center px-6">

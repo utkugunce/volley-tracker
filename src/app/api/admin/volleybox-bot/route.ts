@@ -268,6 +268,15 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
   return Array.from(byTourn.values());
 }
 
+function resolvePythonCommand(): string {
+  if (process.env.PYTHON_BIN) return process.env.PYTHON_BIN;
+  const venvPyWin = path.join(process.cwd(), ".venv", "Scripts", "python.exe");
+  const venvPyNix = path.join(process.cwd(), ".venv", "bin", "python");
+  if (fs.existsSync(venvPyWin)) return venvPyWin;
+  if (fs.existsSync(venvPyNix)) return venvPyNix;
+  return process.platform === "win32" ? "python" : "python3";
+}
+
 function appendLog(runner: InternalBotRunner, rawLine: string) {
   const line = rawLine.trim();
   if (!line) return;
@@ -369,7 +378,7 @@ export async function GET(request: Request) {
     return NextResponse.json({
       total_tournaments: tournaments.length,
       total_missing: totalMissing,
-      has_saved_auth: fs.existsSync(authFile) || fs.existsSync(profileDir),
+      has_saved_auth: fs.existsSync(authFile),
       tournaments,
     });
   }
@@ -382,7 +391,13 @@ export async function GET(request: Request) {
     ...runner.state,
     hasScreenshot,
     screenshotMtime,
-    hasSavedAuth: fs.existsSync(authFile) || fs.existsSync(profileDir),
+    hasSavedAuth:
+      fs.existsSync(authFile) ||
+      Boolean(
+        process.env.VOLLEYBOX_COOKIE ||
+        process.env.VOLLEYBOX_COOKIES ||
+        (process.env.VOLLEYBOX_USERNAME && process.env.VOLLEYBOX_PASSWORD)
+      ),
     isLocalRuntime: process.env.NODE_ENV === "development",
   });
 }
@@ -407,16 +422,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, state: runner.state });
   }
 
-  if (process.env.NODE_ENV !== "development") {
-    return NextResponse.json(
-      {
-        error:
-          "Playwright tarayıcı botu yalnızca yerel geliştirme ortamında (localhost) çalıştırılabilir.",
-      },
-      { status: 400 }
-    );
-  }
-
   if (runner.state.status === "running" && runner.proc) {
     return NextResponse.json(
       { error: "Volleybox botu şu anda zaten çalışıyor.", state: runner.state },
@@ -429,7 +434,8 @@ export async function POST(request: Request) {
   const city = String(body.city || "all").trim();
   const limit = Math.max(1, Math.min(200, Number(body.limit) || 25));
   const delay = Math.max(3, Math.min(60, Number(body.delay) || 8));
-  const headless = Boolean(body.headless);
+  const isServerWithoutDisplay = process.platform !== "win32" && !process.env.DISPLAY;
+  const headless = isServerWithoutDisplay ? true : Boolean(body.headless);
 
   const scriptPath = path.join(
     /*turbopackIgnore: true*/ process.cwd(),
@@ -440,6 +446,9 @@ export async function POST(request: Request) {
 
   if (mode === "login") {
     args.push("--login");
+    if (headless) {
+      args.push("--headless");
+    }
   } else {
     if (city && city !== "all") {
       args.push("--city", city);
@@ -476,12 +485,19 @@ export async function POST(request: Request) {
   };
   runner.nextLogId = 1;
 
+  const pyCmd = resolvePythonCommand();
   appendLog(
     runner,
-    `🚀 Komut başlatıldı: python scripts/push_volleybox_matches.py ${args.slice(1).join(" ")}`
+    `🚀 Komut başlatıldı: ${pyCmd} scripts/push_volleybox_matches.py ${args.slice(1).join(" ")}`
   );
+  if (isServerWithoutDisplay && (mode === "push" || mode === "login")) {
+    appendLog(
+      runner,
+      "ℹ️ Sunucu ortamında tarayıcı arka planda (headless) çalışıyor. Ekran görüntülerini sağdaki canlı pencereden anlık izleyebilirsiniz."
+    );
+  }
 
-  const child = spawn("python", args, {
+  const child = spawn(pyCmd, args, {
     cwd: process.cwd(),
     windowsHide: false,
     env: { ...process.env, PYTHONIOENCODING: "utf-8", PYTHONUNBUFFERED: "1" },
@@ -512,7 +528,10 @@ export async function POST(request: Request) {
   child.on("error", (err) => {
     runner.proc = null;
     runner.state.status = "failed";
-    appendLog(runner, `❌ Bot başlatılamadı: ${err.message}`);
+    const msg = `❌ Bot başlatılamadı (${pyCmd}): ${err.message}. Render/sunucu üzerinde Python ve Playwright kurulu olduğundan emin olun.`;
+    appendLog(runner, msg);
+    runner.state.currentStep = msg;
+    runner.state.updatedAt = new Date().toISOString();
   });
 
   child.on("close", (code) => {

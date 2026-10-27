@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-27T14:49:49.634524+03:00",
+  "updated_at": "2026-10-27T15:55:52.562330+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 21,
+  "total_matches": 22,
   "source": "https://manisa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -529,10 +529,10 @@
       }
     },
     {
-      "id": "manisa-20261028-009",
+      "id": "manisa-20261029-009",
       "city": "Manisa",
-      "date": "2026-10-28",
-      "time": "15:00",
+      "date": "2026-10-29",
+      "time": "16:00",
       "hall": "Ramiz Turan Ss",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -545,35 +545,13 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411817",
-        "url": "https://women.volleybox.net/tr/salihli-degerli-zamanlar-spor-kulubu-u18-akhisar-lce-spor-kulubu-u18-c411817",
-        "host_name": "Salihli Değerli Zamanlar Spor Kulübü U18",
-        "guest_name": "Akhisar İlçe Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-28",
-        "vb_time": "15:00",
-        "vb_hall": "Ramiz Turan Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-28",
-          "vb_time": "15:00",
-          "vb_hall": "Ramiz Turan Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "upcoming"
     },
     {
-      "id": "manisa-20261028-010",
+      "id": "manisa-20261029-010",
       "city": "Manisa",
-      "date": "2026-10-28",
-      "time": "17:00",
+      "date": "2026-10-29",
+      "time": "18:00",
       "hall": "Ramiz Turan Ss",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -586,29 +564,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411818",
-        "url": "https://women.volleybox.net/tr/1922-salihli-spor-kulubu-u18-manisa-buyuksehir-belediyespor-kulubu-u18-c411818",
-        "host_name": "1922 Salihli Spor Kulübü U18",
-        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-28",
-        "vb_time": "17:00",
-        "vb_hall": "Ramiz Turan Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-28",
-          "vb_time": "17:00",
-          "vb_hall": "Ramiz Turan Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "manisa-20261006-011",
@@ -1099,8 +1055,25 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "manisa-20261103-022",
+      "city": "Manisa",
+      "date": "2026-11-03",
+      "time": "19:30",
+      "hall": "Sarıgöl Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "12",
+      "home_team": "Sarıgöl Akademi Spor Kulübü U18",
+      "away_team": "Soma İlçe Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
     }
-  ],
-  "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-27T14:58:45.973210"
+  ]
 }

@@ -11,7 +11,17 @@ export interface AuthenticatedUser {
 function getAccessToken(request: Request): string | null {
   const legacyHeader = request.headers.get("x-admin-token");
   const authorization = request.headers.get("authorization");
-  return authorization?.match(/^Bearer\s+(.+)$/i)?.[1] || legacyHeader || null;
+  const bearerToken = authorization?.match(/^Bearer\s+(.+)$/i)?.[1];
+  if (bearerToken) return bearerToken;
+  if (legacyHeader) return legacyHeader;
+  try {
+    const url = new URL(request.url);
+    const queryToken = url.searchParams.get("token");
+    if (queryToken) return queryToken;
+  } catch {
+    // ignore
+  }
+  return null;
 }
 
 function isAppRole(value: unknown): value is AppRole {
