@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T15:55:52.562330+03:00",
+  "updated_at": "2026-10-27T16:29:16.109371",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
@@ -26,7 +26,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Ereğli": [
+    "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
         "team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
@@ -61,7 +61,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Çaycuma": [
+    "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
         "team": "Çaycuma Spor Kulübü U18",
@@ -96,7 +96,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Merkez": [
+    "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
         "team": "Zonguldak As Spor Kulübü U18",
@@ -199,7 +199,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Ereğli",
+      "group": "A Grubu",
       "match_no": "1",
       "home_team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
       "away_team": "KYAL Spor Kulübü U18",
@@ -226,5 +226,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-27T16:03:29.514892"
+  "volleybox_sync_updated_at": "2026-10-27T16:36:37.982353"
 }

@@ -82,6 +82,12 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(formatGroupName("C Grubu ( Körfez )")).toBe("C Grubu");
       expect(formatGroupName("A Grubu ( Merkez )")).toBe("A Grubu");
       expect(formatGroupName("E Grubu ( Marmara )")).toBe("E Grubu");
+      expect(formatGroupName("Ereğli Grubu")).toBe("A Grubu");
+      expect(formatGroupName("Ereğli")).toBe("A Grubu");
+      expect(formatGroupName("Çaycuma Grubu")).toBe("B Grubu");
+      expect(formatGroupName("Çaycuma")).toBe("B Grubu");
+      expect(formatGroupName("Merkez Grubu")).toBe("C Grubu");
+      expect(formatGroupName("Merkez")).toBe("C Grubu");
     });
   });
 

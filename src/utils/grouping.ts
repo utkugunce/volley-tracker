@@ -80,6 +80,10 @@ export function formatGroupName(rawGroup?: string): string {
   if (gLower.includes("izmit") || /^(?:k[öo]rfez)(?:\s*grubu?)?$/i.test(gLower)) return "B Grubu";
   // Antalya U16 specific: "Doğu Grubu" -> "C Grubu"
   if (gLower.includes("doğu") || gLower.includes("dogu")) return "C Grubu";
+  // Zonguldak U18 specific: "Ereğli Grubu" -> "A Grubu", "Çaycuma Grubu" -> "B Grubu", "Merkez Grubu" -> "C Grubu"
+  if (/^(?:karadeniz\s+)?ere[gğ]li(?:\s*grubu?)?$/i.test(gLower) || gLower.includes("ereğli grubu") || gLower.includes("eregli grubu")) return "A Grubu";
+  if (/^çaycuma(?:\s*grubu?)?$/i.test(gLower) || /^caycuma(?:\s*grubu?)?$/i.test(gLower) || gLower.includes("çaycuma grubu") || gLower.includes("caycuma grubu")) return "B Grubu";
+  if (/^merkez(?:\s*grubu?)?$/i.test(gLower) || gLower.includes("merkez grubu")) return "C Grubu";
 
   // Pattern: "Grup A", "Grup B", "Grup 1"
   const mGrupPrefix = g.match(/^Grup\s+([A-Za-zÇĞİÖŞÜçğiöşü0-9]+)$/i);

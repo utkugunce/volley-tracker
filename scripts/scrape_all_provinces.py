@@ -887,6 +887,16 @@ def scrape_single_city(city_info):
                 tr_comp = c_text.replace("İ", "i").replace("I", "ı").lower()
                 if "doğu" in tr_comp or "dogu" in tr_comp:
                     group_name = "C Grubu"
+            elif subdomain == "zonguldak":
+                tr_comp = c_text.replace("İ", "i").replace("I", "ı").lower()
+                tr_grp = group_name.replace("İ", "i").replace("I", "ı").lower()
+                if age_group == "Genç" or "genc" in cat_name.lower() or kume_code in ["GKSL", "GK1L"]:
+                    if any(k in tr_comp or k in tr_grp for k in ["eregli", "ereğli"]):
+                        group_name = "A Grubu"
+                    elif any(k in tr_comp or k in tr_grp for k in ["caycuma", "çaycuma"]):
+                        group_name = "B Grubu"
+                    elif "merkez" in tr_comp or "merkez" in tr_grp:
+                        group_name = "C Grubu"
             standings_key = f"{cat_name} - {group_name}"
 
             p_c = state.copy()
