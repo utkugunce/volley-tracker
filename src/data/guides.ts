@@ -44,6 +44,220 @@ export interface GuideArticle {
 
 export const GUIDE_ARTICLES: GuideArticle[] = [
   {
+    slug: "tvf-2026-2027-altyapi-faaliyet-programi-ve-kontenjanlari",
+    title: "2026-2027 TVF Altyapı Faaliyet Programı ve İl Kontenjanları",
+    shortTitle: "Faaliyet Programı & Kontenjanlar",
+    category: "Ligler & Turnuvalar",
+    categorySlug: "ligler",
+    description:
+      "TVF resmi 2026-2027 Altyapı Türkiye Birinciliği faaliyet programı: Genç, Yıldız, Küçük ve Midi yaş kategorileri, il kontenjanları, grup, play-off, yarı final ve finallere yükselme statüsü.",
+    keywords: [
+      "tvf altyapı faaliyet programı 2026 2027",
+      "voleybol altyapı il kontenjanları",
+      "genç kızlar türkiye şampiyonası kontenjanı",
+      "yıldız erkekler voleybol türkiye finalleri",
+      "küçük kızlar türkiye birinciliği statüsü",
+      "midi voleybol 32 takım final",
+      "voleybol altyapı file yükseklikleri 2026 2027",
+      "tvf altyapı türkiye birinciliği pdf",
+    ],
+    readTime: "7 dk okuma",
+    publishedAt: "2026-10-27",
+    updatedAt: "2026-10-27",
+    featured: true,
+    summary:
+      "Türkiye Voleybol Federasyonu (TVF) resmi 2026-2027 Altyapı Faaliyet Programı\'nı ilan etti. Genç ve Yıldızlarda 16 takımlı 4 aşamalı sistem uygulanırken; Küçük ve Midilerde 32 takımlı Festival formatında dev finaller oynanacak.",
+    tableOfContents: [
+      { id: "genel-yapi", title: "1. 2026-2027 Altyapı Şampiyona Piramidi ve Formatlar" },
+      { id: "genc-statu", title: "2. Genç Kızlar ve Genç Erkekler Statüsü (2008+)" },
+      { id: "yildiz-statu", title: "3. Yıldız Kızlar ve Yıldız Erkekler Statüsü (2010+)" },
+      { id: "kucuk-statu", title: "4. Küçük Kızlar ve Küçük Erkekler Statüsü (2012+)" },
+      { id: "midi-statu", title: "5. Midi Kızlar ve Midi Erkekler Statüsü (2014+)" },
+      { id: "kontenjan-ozeti", title: "6. Büyük İllerin (İstanbul, Ankara, İzmir, Bursa vb.) Kontenjanları" },
+      { id: "resmi-kurallar", title: "7. File Yükseklikleri, Süreler ve 4 Takımlı Lig Şartı" },
+    ],
+    sections: [
+      {
+        id: "genel-yapi",
+        title: "1. 2026-2027 Altyapı Şampiyona Piramidi ve Formatlar",
+        content:
+          "Türkiye Voleybol Federasyonu (TVF), 2026-2027 sezonu Altyapı Türkiye Birinciliği Faaliyet Programı\'nı resmi olarak yayımladı. Programa göre yaş kategorileri iki farklı turnuva mimarisine ayrılmıştır:\n\n1) 4 Aşamalı Model (Genç & Yıldız): Grup Birinciliği (77/76 İlin 1.\'leri) → Yarı Final (16 Takım / 4 Grup) → Play-Off (Ankara, İstanbul, İzmir, Bursa) → Final Etabı (16 Takım / 6 Gün).\n\n2) 2 Aşamalı Doğrudan Model (Küçük & Midi): Grup Birinciliği → Doğrudan Finaller (32 Takım / 7 Gün). Küçük ve Midi kategorilerinde yarı final ve play-off turları bulunmaz; grup birinciliğini geçen 16 takım doğrudan finallere yükselir.",
+        highlights: [
+          "Genç & Yıldız Finalleri: 16 Takım / 6 Gün süren turnuva formatı.",
+          "Küçük & Midi Finalleri: 32 Takım / 7 Gün süren geniş katılımlı Festival Voleybol formatı.",
+          "Asgari Lig Şartı: Grup Birinciliğine katılabilmek için o ilde en az 4 takımlı yerel lig yapılması zorunludur.",
+        ],
+      },
+      {
+        id: "genc-statu",
+        title: "2. Genç Kızlar ve Genç Erkekler Statüsü (2008+)",
+        content:
+          "2008 ve daha yukarı doğumlu sporcuların mücadele ettiği Gençler kategorisinde file yükseklikleri Genç Kızlarda 2.24 m, Genç Erkeklerde 2.43 m olarak uygulanır.",
+        highlights: [
+          "Genç Kız Doğrudan Final (8 Takım): İstanbul 1, 2, 3, 4, 5 (5 Takım), Ankara 1., İzmir 1., Bursa 1.",
+          "Genç Kız Play-Off (8 Takımdan 4\'ü Finale): Ankara 2, 3., İstanbul 6, 7., İzmir 2, 3., Bursa 2, 3. (4\'erli 2 grup).",
+          "Genç Kız Grup Birinciliği: Ankara, İstanbul, İzmir, Bursa hariç 77 ilin 1.\'leri mücadele eder; 16 takım Yarı Finale, yarı finallerden 4 takım Finale çıkar.",
+          "Genç Erkek Doğrudan Final (8 Takım): Ankara 1, 2, 3, 4 (4 Takım), İstanbul 1, 2 (2 Takım), İzmir 1, 2 (2 Takım).",
+          "Genç Erkek Play-Off (8 Takımdan 4\'ü Finale): Ankara 5, 6., İstanbul 3, 4., İzmir 3, 4., Bursa 1, 2.",
+          "Genç Erkek Grup Birinciliği: 77 ilin 1.\'leri katılır; 16 takım Yarı Finale, 4 takım Finale yükselir.",
+        ],
+        table: {
+          caption: "Gençler Kategorisi Katılım ve Yükselme Tablosu (2026-2027)",
+          headers: ["Aşama", "Genç Kızlar Katılımcılar", "Genç Erkekler Katılımcılar", "Finale Çıkan Takım"],
+          rows: [
+            ["Doğrudan Final", "İstanbul (5), Ankara (1), İzmir (1), Bursa (1)", "Ankara (4), İstanbul (2), İzmir (2)", "8 Takım (Doğrudan)"],
+            ["Play-Off Etabı", "Ankara (2), İstanbul (2), İzmir (2), Bursa (2)", "Ankara (2), İstanbul (2), İzmir (2), Bursa (2)", "4 Takım (Grupların 1. ve 2.\'leri)"],
+            ["Yarı Final Etabı", "Grup birinciliğinden gelen 16 takım (4 grup)", "Grup birinciliğinden gelen 16 takım (4 grup)", "4 Takım (Grup 1.\'leri)"],
+            ["Grup Birinciliği", "77 İlin (4 büyük il hariç) 1.\'leri", "77 İlin (4 büyük il hariç) 1.\'leri", "16 Takım (Yarı Finale)"],
+            ["Final Şampiyonası", "16 Takım / 6 Gün", "16 Takım / 6 Gün", "Türkiye Şampiyonu"],
+          ],
+        },
+      },
+      {
+        id: "yildiz-statu",
+        title: "3. Yıldız Kızlar ve Yıldız Erkekler Statüsü (2010+)",
+        content:
+          "2010 ve daha yukarı doğumlu sporcuların yer aldığı Yıldızlar kategorisinde file yüksekliği Yıldız Kızlarda 2.24 m, Yıldız Erkeklerde 2.43 m olarak belirlenmiştir.",
+        highlights: [
+          "Yıldız Kız Doğrudan Final (8 Takım): İstanbul (1, 2, 3, 4, 5 - 5 Takım), Ankara (1.), İzmir (1.), Bursa (1.).",
+          "Yıldız Kız Play-Off (8 Takımdan 4\'ü Finale): Ankara 2, 3., İstanbul 6, 7., İzmir 2, 3., Bursa 2, 3.",
+          "Yıldız Kız Grup Birinciliği: 76 ilin 1.\'leri katılır (4 büyük il hariç); 16 takım Yarı Finale çıkar.",
+          "Yıldız Erkek Doğrudan Final (8 Takım): Ankara 1, 2, 3, 4 (4 Takım), İstanbul 1, 2, 3 (3 Takım), İzmir 1. (1 Takım).",
+          "Yıldız Erkek Play-Off (8 Takımdan 4\'ü Finale): Ankara 5, 6., İstanbul 4, 5., İzmir 2, 3., Bursa 1, 2.",
+          "Yıldız Erkek Grup Birinciliği: 76 ilin 1.\'leri katılır; 16 takım Yarı Finale çıkar.",
+        ],
+        table: {
+          caption: "Yıldızlar Kategorisi Kontenjan ve Final Dağılımı",
+          headers: ["Kategori", "Doğrudan Final Kotaları", "Play-Off Kontenjanları", "Grup Aşaması"],
+          rows: [
+            ["Yıldız Kızlar (2010+)", "İstanbul: 5, Ankara: 1, İzmir: 1, Bursa: 1 (Toplam 8)", "Ank (2), İst (2), İzm (2), Bur (2) → 4\'ü Finale", "76 İl 1.\'si → 16 Yarı Final → 4 Final"],
+            ["Yıldız Erkekler (2010+)", "Ankara: 4, İstanbul: 3, İzmir: 1 (Toplam 8)", "Ank (2), İst (2), İzm (2), Bur (2) → 4\'ü Finale", "76 İl 1.\'si → 16 Yarı Final → 4 Final"],
+          ],
+        },
+      },
+      {
+        id: "kucuk-statu",
+        title: "4. Küçük Kızlar ve Küçük Erkekler Statüsü (2012+)",
+        content:
+          "Küçükler kategorisinde (2012 ve yukarısı doğumlular) Türkiye Finalleri 32 takımın katılımıyla 7 gün boyunca oynanır. File yükseklikleri Küçük Kızlarda 2.24 m, Küçük Erkeklerde 2.43 m\'dir. Bu kategoride yarı final ve play-off kademeleri bulunmaz; doğrudan final ve grup birinciliğinden finale yükselme uygulanır.",
+        highlights: [
+          "Küçük Kız Doğrudan Final (16 Takım): İstanbul (6), Ankara (3), Bursa (2), İzmir (1), Kocaeli (1), Kayseri (1), Mersin (1), Tekirdağ (1).",
+          "Küçük Kız Grup Birinciliği: Ankara 4., İstanbul 7., İzmir 2., Bursa 3., Kocaeli 2., Kayseri 2., Mersin 2., Tekirdağ 2. ile 73 ilin 1.\'leri katılır → 16 takım doğrudan Finale yükselir.",
+          "Küçük Erkek Doğrudan Final (16 Takım): İstanbul (6), Ankara (4), Bursa (2), İzmir (1), KKTC/Kıbrıs (1), Manisa (1), Tekirdağ (1).",
+          "Küçük Erkek Grup Birinciliği: Ankara 5., İstanbul 7., İzmir 2., Bursa 3., KKTC/Kıbrıs 2., Manisa 2., Tekirdağ 2. ile 75 ilin 1.\'leri katılır → 16 takım doğrudan Finale yükselir.",
+        ],
+        table: {
+          caption: "Küçükler 32 Takımlı Final Etabı Doğrudan Katılım Kotaları",
+          headers: ["İl", "Küçük Kız Doğrudan Kontenjan", "Küçük Erkek Doğrudan Kontenjan", "Grup Aşamasına Giren Sıra"],
+          rows: [
+            ["İstanbul", "6 Takım (1, 2, 3, 4, 5, 6)", "6 Takım (1, 2, 3, 4, 5, 6)", "İstanbul 7.\'si"],
+            ["Ankara", "3 Takım (1, 2, 3)", "4 Takım (1, 2, 3, 4)", "Kız: Ankara 4. / Erkek: Ankara 5."],
+            ["Bursa", "2 Takım (1, 2)", "2 Takım (1, 2)", "Bursa 3.\'sü"],
+            ["İzmir", "1 Takım (1.)", "1 Takım (1.)", "İzmir 2.\'si"],
+            ["Tekirdağ", "1 Takım (1.)", "1 Takım (1.)", "Tekirdağ 2.\'si"],
+            ["Kocaeli / Kayseri / Mersin", "1\'er Takım (1.\'ler)", "-", "İl 2.\'leri"],
+            ["Manisa / Kıbrıs (KKTC)", "-", "1\'er Takım (1.\'ler)", "İl/Ülke 2.\'leri"],
+          ],
+        },
+      },
+      {
+        id: "midi-statu",
+        title: "5. Midi Kızlar ve Midi Erkekler Statüsü (2014+)",
+        content:
+          "2014 ve daha yukarı doğumlu sporcuların yer aldığı Midi kategorisi, voleybol altyapısının en kalabalık ve coşkulu ligidir. Finaller 32 takımın katılımıyla 7 gün sürer. File yükseklikleri Midi Kızlarda 2.15 m, Midi Erkeklerde 2.24 m (Finalde 2.24+ m) olarak uygulanır.",
+        highlights: [
+          "Midi Kız Doğrudan Final (16 Takım): İstanbul (5), Ankara (2), Antalya (2), Kayseri (2), İzmir (1), Bursa (1), Aydın (1), Kastamonu (1), Eskişehir (1).",
+          "Midi Kız Grup Birinciliği: Ankara 3., İstanbul 6., İzmir 2., Bursa 2., Antalya 3., Aydın 2., Kayseri 3., Kastamonu 2., Eskişehir 2. ile 72 ilin 1.\'leri katılır → 16 takım Finale çıkar.",
+          "Midi Erkek Doğrudan Final (16 Takım): İstanbul (4), Ankara (3), Bursa (2), Tekirdağ (2), İzmir (1), Kırklareli (1), Konya (1), Manisa (1), Adana (1).",
+          "Midi Erkek Grup Birinciliği: Ankara 4., İstanbul 5., İzmir 2., Bursa 3., Kırklareli 2., Tekirdağ 3., Konya 2., Manisa 2., Adana 2. ile 72 ilin 1.\'leri katılır → 16 takım Finale çıkar.",
+        ],
+        table: {
+          caption: "Midi Voleybol Türkiye Finalleri Kontenjan Dağılımı",
+          headers: ["Kategori", "Doğrudan Katılan İller ve Kontenjanları", "Grup Merkezlerine Katılan Ekstra Takımlar", "Final Yapısı"],
+          rows: [
+            [
+              "Midi Kızlar (2014+)",
+              "İstanbul (5), Ankara (2), Antalya (2), Kayseri (2), İzmir (1), Bursa (1), Aydın (1), Kastamonu (1), Eskişehir (1) [Toplam 16]",
+              "Ankara 3, İstanbul 6, İzmir 2, Bursa 2, Antalya 3, Aydın 2, Kayseri 3, Kastamonu 2, Eskişehir 2 + 72 İl 1.\'leri",
+              "32 Takım / 7 Gün",
+            ],
+            [
+              "Midi Erkekler (2014+)",
+              "İstanbul (4), Ankara (3), Bursa (2), Tekirdağ (2), İzmir (1), Kırklareli (1), Konya (1), Manisa (1), Adana (1) [Toplam 16]",
+              "Ankara 4, İstanbul 5, İzmir 2, Bursa 3, Kırklareli 2, Tekirdağ 3, Konya 2, Manisa 2, Adana 2 + 72 İl 1.\'leri",
+              "32 Takım / 7 Gün",
+            ],
+          ],
+        },
+      },
+      {
+        id: "kontenjan-ozeti",
+        title: "6. Büyük İllerin (İstanbul, Ankara, İzmir, Bursa vb.) Kontenjanları",
+        content:
+          "TVF\'nin altyapı faaliyet programında illerin kontenjanları, o ildeki faal kulüp sayısı ve geçmiş sezonlardaki Türkiye dereceleri göz önüne alınarak tahsis edilmiştir. Özellikle İstanbul, Ankara, İzmir ve Bursa tüm kategorilerde doğrudan veya play-off kontenjanlarıyla başı çekmektedir. Midi ve Küçük kategorilerinde ise Antalya, Kayseri, Tekirdağ, Kocaeli, Manisa, Konya, Kırklareli ve KKTC de doğrudan final kotalarına dahil edilmiştir.",
+        highlights: [
+          "İstanbul: Genç Kız (5), Yıldız Kız (5), Küçük Kız (6), Midi Kız (5) doğrudan final kontenjanına sahiptir.",
+          "Ankara: Genç Erkek (4), Yıldız Erkek (4), Küçük Erkek (4) doğrudan final kontenjanıyla erkek voleybolunun merkezidir.",
+          "Antalya & Kayseri: Midi Kızlarda 2\'şer doğrudan final kontenjanıyla Anadolu\'nun en güçlü voleybol merkezleri arasındadır.",
+          "Tekirdağ: Hem Küçük Kız (1) hem Küçük Erkek (1) hem de Midi Erkeklerde (2) doğrudan final vizesi alarak Trakya voleybolunun yükselen gücü olmuştur.",
+        ],
+      },
+      {
+        id: "resmi-kurallar",
+        title: "7. File Yükseklikleri, Süreler ve 4 Takımlı Lig Şartı",
+        content:
+          "TVF Altyapı Türkiye Birinciliği müsabakalarında uygulanacak teknik kurallar ve asgari kriterler şunlardır:\n\n1) 4 Takımlı Lig Şartı: Bir ilin grup birinciliğine takım gönderebilmesi için kendi yerel mahalli liginde o kategoride en az 4 takımın yer aldığı resmi lig düzenlenmiş ve tamamlanmış olması şarttır. 4 takımdan az olan kategoriler grup birinciliğine katılamaz.\n\n2) Müsabaka Süreleri: Genç ve Yıldız finalleri 6 gün, Küçük ve Midi finalleri ise 7 gün boyunca oynanır.\n\n3) Resmi File Boyları: Genç Kız (2.24 m), Genç Erkek (2.43 m), Yıldız Kız (2.24 m), Yıldız Erkek (2.43 m), Küçük Kız (2.24 m), Küçük Erkek (2.43 m), Midi Kız (2.15 m), Midi Erkek (2.24 m / 2.24+ m).",
+      },
+    ],
+    faqs: [
+      {
+        question: "Genç Kızlar Türkiye Şampiyonası\'na İstanbul\'dan kaç takım katılır?",
+        answer:
+          "TVF 2026-2027 faaliyet programına göre İstanbul\'dan ilk 5 takım doğrudan finallere, 6. ve 7. takımlar ise Play-Off etabına katılır.",
+      },
+      {
+        question: "Küçükler ve Midi kategorilerinde yarı final var mı?",
+        answer:
+          "Hayır. Küçükler ve Midi kategorilerinde yarı final ve play-off aşamaları yoktur. Grup birinciliğini geçen 16 takım, doğrudan finallere katılma hakkı olan 16 takımla birleşerek 32 takımlı Türkiye Finallerini (7 gün) oynar.",
+      },
+      {
+        question: "Bir ilin Türkiye Şampiyonası grup maçlarına gidebilmesi için kaç takım gerekir?",
+        answer:
+          "TVF kuralı gereği ilgili ilde o yaş kategorisinde en az 4 takımlı resmi bir ligin tamamlanmış olması zorunludur.",
+      },
+      {
+        question: "2026-2027 resmi faaliyet programı PDF belgesine nereden ulaşabilirim?",
+        answer:
+          "TVF\'nin resmi sunucularındaki \'2026-2027-Voleybol-Sezonu-Altyapı-Faaliyet-Programı.pdf\' belgesinden güncel statü metnine ulaşılabilir.",
+      },
+    ],
+    relatedSlugs: [
+      "turkiye-sampiyonasi-statu-ve-finaller",
+      "tvf-altyapi-yas-kategorileri-ve-kurallari",
+      "puan-durumu-ve-averaj-hesaplama",
+    ],
+    internalLinks: [
+      {
+        title: "Türkiye Şampiyonası Finalleri Rehberi",
+        url: "/rehber/turkiye-sampiyonasi-statu-ve-finaller",
+        description: "Festival Voleybol, şampiyona piramidi ve turnuva detayları.",
+        badge: "Statü Kılavuzu",
+      },
+      {
+        title: "Yaş Grupları & Kurallar",
+        url: "/rehber/tvf-altyapi-yas-kategorileri-ve-kurallari",
+        description: "Doğum yılları, file boyları, top numaraları ve libero kuralları.",
+        badge: "Yaş Grupları",
+      },
+      {
+        title: "81 İl Canlı Puan Durumu",
+        url: "/puan-durumu",
+        description: "İlinizdeki takımların şampiyona yolundaki güncel puan ve averaj sıralaması.",
+        badge: "Puan Durumu",
+      },
+    ],
+  },
+  {
     slug: "puan-durumu-ve-averaj-hesaplama",
     title: "Voleybolda Puan Durumu ve Averaj Nasıl Hesaplanır?",
     shortTitle: "Puan Durumu ve Averaj",
@@ -218,10 +432,10 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
           caption: "2026-2027 Sezonu TVF Yaş Kategorisi Eşleştirme Tablosu",
           headers: ["Kategori", "Doğum Yılları", "Yaş Aralığı", "Libero İzni", "File Boyu (Kız/Erkek)"],
           rows: [
-            ["Mini Voleybol", "2016 - 2017", "9 - 10 Yaş", "YASAK", "2.00 m / 2.00 m"],
-            ["Midi Voleybol", "2014 - 2015", "11 - 12 Yaş", "YASAK", "2.10 m / 2.15 m"],
-            ["Küçükler", "2012 - 2013", "13 - 14 Yaş", "SERBEST (İsteğe Bağlı)", "2.15 m / 2.24 m"],
-            ["Yıldızlar", "2010 - 2011", "15 - 16 Yaş", "SERBEST", "2.24 m / 2.35 m"],
+            ["Mini Voleybol", "2016 - 2017", "9 - 10 Yaş", "YASAK", "2.00 m / 2.00 m (Şenlik & Mahalli)"],
+            ["Midi Voleybol", "2014 - 2015", "11 - 12 Yaş", "YASAK", "2.15 m / 2.24 m (Final 2.24+ m)"],
+            ["Küçükler", "2012 - 2013", "13 - 14 Yaş", "SERBEST (İsteğe Bağlı)", "2.24 m / 2.43 m"],
+            ["Yıldızlar", "2010 - 2011", "15 - 16 Yaş", "SERBEST", "2.24 m / 2.43 m"],
             ["Gençler", "2008 - 2009", "17 - 18 Yaş", "SERBEST", "2.24 m / 2.43 m"],
           ],
         },
@@ -232,10 +446,10 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
         content:
           "Farklı yaş gruplarının fiziksel gelişimine uygun olarak resmi file yükseklikleri kademeli olarak yükseltilir. Nizami file yüksekliği filenin ortasından ölçülür; kenarlardaki yükseklik ortadaki yükseklikten en fazla 2 cm fazla olabilir.",
         highlights: [
-          "Mini Voleybol: 2.00 m (Kız ve Erkek ortak)",
-          "Midi Kızlar: 2.10 m | Midi Erkekler: 2.15 m",
-          "Küçük Kızlar: 2.15 m | Küçük Erkekler: 2.24 m",
-          "Yıldız Kızlar: 2.24 m | Yıldız Erkekler: 2.35 m",
+          "Mini Voleybol: 2.00 m (Kız ve Erkek ortak mahalli hazırlık standardı)",
+          "Midi Kızlar: 2.15 m | Midi Erkekler: 2.24 m (TVF Türkiye Birinciliği Resmi Standardı)",
+          "Küçük Kızlar: 2.24 m | Küçük Erkekler: 2.43 m (TVF Türkiye Birinciliği Resmi Standardı)",
+          "Yıldız Kızlar: 2.24 m | Yıldız Erkekler: 2.43 m (TVF Türkiye Birinciliği Resmi Standardı)",
           "Genç Kızlar: 2.24 m | Genç Erkekler: 2.43 m (FIVB Yetişkin Standardı)",
         ],
       },

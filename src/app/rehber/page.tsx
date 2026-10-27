@@ -91,6 +91,13 @@ export default function RehberPage() {
           {/* Hızlı Kısayol Rozetleri */}
           <div className="pt-2 flex flex-wrap gap-2">
             <Link
+              href="/rehber/tvf-2026-2027-altyapi-faaliyet-programi-ve-kontenjanlari"
+              prefetch={false}
+              className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary transition-colors"
+            >
+              <span>📅 2026-2027 Faaliyet Programı & Kontenjanlar</span>
+            </Link>
+            <Link
               href="/rehber/puan-durumu-ve-averaj-hesaplama"
               prefetch={false}
               className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-surface-muted hover:bg-canvas border border-line text-ink transition-colors"
