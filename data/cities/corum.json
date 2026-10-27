@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:14:59.520738+03:00",
+  "updated_at": "2026-10-27T23:08:15.006116+03:00",
   "city": "Çorum",
   "slug": "corum",
   "title": "TVF Çorum Genç & Yıldız Kızlar Süper Lig",
@@ -76,23 +76,23 @@
       {
         "rank": 1,
         "team": "Osmancık Belediyespor U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Mecitözü Doğuş Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -479,11 +479,15 @@
       "match_no": "3",
       "home_team": "Mecitözü Doğuş Spor Kulübü U18",
       "away_team": "Osmancık Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "16-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411671",
@@ -509,5 +513,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-27T17:23:29.276961"
+  "volleybox_sync_updated_at": "2026-10-27T23:15:12.607925"
 }

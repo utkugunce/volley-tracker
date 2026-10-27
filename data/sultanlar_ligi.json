@@ -14,7 +14,9 @@
       "tvf_fsw_portal": "https://tvf.org.tr/lig/sultanlar-ligi",
       "volleybox_turnuva": "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086",
       "volleybox_maclar": "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086/matches"
-    }
+    },
+    "volleybox_synced_matches": 77,
+    "volleybox_sync_updated_at": "2026-10-27T23:15:21.863241"
   },
   "gruplar": [
     {
@@ -430,7 +432,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+          "volleybox": {
+            "synced": true,
+            "match_id": "390158",
+            "url": "https://women.volleybox.net/tr/nilufer-belediyespor-eczacbas-spor-kulubu-c390158",
+            "host_name": "Nilüfer Belediyespor Eker",
+            "guest_name": "Eczacıbaşı Peron İstanbul",
+            "score": "2 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-03",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-03",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m2_2955_2956",
@@ -459,7 +483,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_a_volleybox_name": "VakıfBank",
-          "takim_b_volleybox_name": "Beşiktaş"
+          "takim_b_volleybox_name": "Beşiktaş",
+          "volleybox": {
+            "synced": true,
+            "match_id": "390160",
+            "url": "https://women.volleybox.net/tr/vakfbank-besiktas-c390160",
+            "host_name": "VakıfBank",
+            "guest_name": "Beşiktaş",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-03",
+            "vb_time": "14:00",
+            "vb_hall": "Vakıfbank Spor Sarayı",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-03",
+              "vb_time": "14:00",
+              "vb_hall": "Vakıfbank Spor Sarayı",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m4_2959_2960",
@@ -488,7 +534,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_a_volleybox_name": "Kuzeyboru",
-          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "390166",
+            "url": "https://women.volleybox.net/tr/kuzeyboru-afyon-belediye-yuntas-spor-kulubu-c390166",
+            "host_name": "Kuzeyboru",
+            "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "score": "2 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-04",
+            "vb_time": "14:00",
+            "vb_hall": "Aksaray Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-04",
+              "vb_time": "14:00",
+              "vb_hall": "Aksaray Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m5_2961_2962",
@@ -517,7 +585,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_a_volleybox_name": "İlbank",
-          "takim_b_volleybox_name": "Göztepe Yuppo"
+          "takim_b_volleybox_name": "Göztepe Yuppo",
+          "volleybox": {
+            "synced": true,
+            "match_id": "390165",
+            "url": "https://women.volleybox.net/tr/lbank-goztepe-sk-c390165",
+            "host_name": "İlbank",
+            "guest_name": "Göztepe Yuppo",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-04",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-04",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m3_2957_2958",
@@ -546,7 +636,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_a_volleybox_name": "Fenerbahçe Medicana",
-          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "390161",
+            "url": "https://women.volleybox.net/tr/fenerbahce-manisa-buyuksehir-belediyespor-kulubu-c390161",
+            "host_name": "Fenerbahçe Medicana",
+            "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "score": "3 - 0",
+            "has_score": true,
+            "vb_date": "2026-10-04",
+            "vb_time": "13:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-04",
+              "vb_time": "13:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m7_2965_2966",
@@ -575,7 +687,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_a_volleybox_name": "Türk Hava Yolları SK",
-          "takim_b_volleybox_name": "Galatasaray Daikin"
+          "takim_b_volleybox_name": "Galatasaray Daikin",
+          "volleybox": {
+            "synced": true,
+            "match_id": "390162",
+            "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-galatasaray-c390162",
+            "host_name": "Türk Hava Yolları SK",
+            "guest_name": "Galatasaray Daikin",
+            "score": "3 - 2",
+            "has_score": true,
+            "vb_date": "2026-10-04",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-04",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m6_2963_2964",
@@ -604,7 +738,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-          "takim_b_volleybox_name": "Zeren Spor Kulübü"
+          "takim_b_volleybox_name": "Zeren Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "390159",
+            "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-zeren-spor-kulubu-c390159",
+            "host_name": "Aras Kargo Spor Kulübü",
+            "guest_name": "Zeren Spor Kulübü",
+            "score": "3 - 0",
+            "has_score": true,
+            "vb_date": "2026-10-04",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-04",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m8_2960_2965",
@@ -633,7 +789,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-          "takim_b_volleybox_name": "Türk Hava Yolları SK"
+          "takim_b_volleybox_name": "Türk Hava Yolları SK",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398606",
+            "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-turk-hava-yollar-sk-c398606",
+            "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "guest_name": "Türk Hava Yolları SK",
+            "score": "1 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-11",
+            "vb_time": "15:00",
+            "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-11",
+              "vb_time": "15:00",
+              "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m9_2964_2961",
@@ -662,7 +840,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_a_volleybox_name": "Zeren Spor Kulübü",
-          "takim_b_volleybox_name": "İlbank"
+          "takim_b_volleybox_name": "İlbank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398609",
+            "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-lbank-c398609",
+            "host_name": "Zeren Spor Kulübü",
+            "guest_name": "İlbank",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-11",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-11",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m10_2954_2963",
@@ -691,7 +891,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398608",
+            "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-aras-kargo-spor-kulubu-c398608",
+            "host_name": "Eczacıbaşı Peron İstanbul",
+            "guest_name": "Aras Kargo Spor Kulübü",
+            "score": "3 - 0",
+            "has_score": true,
+            "vb_date": "2026-10-11",
+            "vb_time": "16:00",
+            "vb_hall": "Eczacıbaşı Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-11",
+              "vb_time": "16:00",
+              "vb_hall": "Eczacıbaşı Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m11_2966_2953",
@@ -720,7 +942,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_a_volleybox_name": "Galatasaray Daikin",
-          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398605",
+            "url": "https://women.volleybox.net/tr/galatasaray-nilufer-belediyespor-c398605",
+            "host_name": "Galatasaray Daikin",
+            "guest_name": "Nilüfer Belediyespor Eker",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-11",
+            "vb_time": "13:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-11",
+              "vb_time": "13:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m12_2956_2957",
@@ -749,7 +993,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_a_volleybox_name": "Beşiktaş",
-          "takim_b_volleybox_name": "Fenerbahçe Medicana"
+          "takim_b_volleybox_name": "Fenerbahçe Medicana",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398611",
+            "url": "https://women.volleybox.net/tr/besiktas-fenerbahce-c398611",
+            "host_name": "Beşiktaş",
+            "guest_name": "Fenerbahçe Medicana",
+            "score": "2 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-11",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-11",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m13_2962_2955",
@@ -778,7 +1044,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_a_volleybox_name": "Göztepe Yuppo",
-          "takim_b_volleybox_name": "VakıfBank"
+          "takim_b_volleybox_name": "VakıfBank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398607",
+            "url": "https://women.volleybox.net/tr/goztepe-sk-vakfbank-c398607",
+            "host_name": "Göztepe Yuppo",
+            "guest_name": "VakıfBank",
+            "score": "0 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-11",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-11",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m14_2958_2959",
@@ -807,7 +1095,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-          "takim_b_volleybox_name": "Kuzeyboru"
+          "takim_b_volleybox_name": "Kuzeyboru",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398610",
+            "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-kuzeyboru-c398610",
+            "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "guest_name": "Kuzeyboru",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-11",
+            "vb_time": "16:00",
+            "vb_hall": "Muradiye Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-11",
+              "vb_time": "16:00",
+              "vb_hall": "Muradiye Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m15_2959_2965",
@@ -836,7 +1146,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_a_volleybox_name": "Kuzeyboru",
-          "takim_b_volleybox_name": "Türk Hava Yolları SK"
+          "takim_b_volleybox_name": "Türk Hava Yolları SK",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398612",
+            "url": "https://women.volleybox.net/tr/kuzeyboru-turk-hava-yollar-sk-c398612",
+            "host_name": "Kuzeyboru",
+            "guest_name": "Türk Hava Yolları SK",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-14",
+            "vb_time": "14:00",
+            "vb_hall": "Aksaray Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-14",
+              "vb_time": "14:00",
+              "vb_hall": "Aksaray Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m16_2961_2954",
@@ -865,7 +1197,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_a_volleybox_name": "İlbank",
-          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398617",
+            "url": "https://women.volleybox.net/tr/lbank-eczacbas-spor-kulubu-c398617",
+            "host_name": "İlbank",
+            "guest_name": "Eczacıbaşı Peron İstanbul",
+            "score": "0 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-14",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-14",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m17_2953_2960",
@@ -894,7 +1248,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398614",
+            "url": "https://women.volleybox.net/tr/nilufer-belediyespor-afyon-belediye-yuntas-spor-kulubu-c398614",
+            "host_name": "Nilüfer Belediyespor Eker",
+            "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "score": "3 - 0",
+            "has_score": true,
+            "vb_date": "2026-10-14",
+            "vb_time": "18:00",
+            "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-14",
+              "vb_time": "18:00",
+              "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m18_2957_2962",
@@ -923,7 +1299,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_a_volleybox_name": "Fenerbahçe Medicana",
-          "takim_b_volleybox_name": "Göztepe Yuppo"
+          "takim_b_volleybox_name": "Göztepe Yuppo",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398616",
+            "url": "https://women.volleybox.net/tr/fenerbahce-goztepe-sk-c398616",
+            "host_name": "Fenerbahçe Medicana",
+            "guest_name": "Göztepe Yuppo",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-10-31",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": true,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-31",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": "Tarih Değişti (TVF: 2026-10-14 / VB: 2026-10-31)"
+            }
+          }
         },
         {
           "id": "sultanlar_m19_2955_2964",
@@ -952,7 +1350,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_a_volleybox_name": "VakıfBank",
-          "takim_b_volleybox_name": "Zeren Spor Kulübü"
+          "takim_b_volleybox_name": "Zeren Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398615",
+            "url": "https://women.volleybox.net/tr/vakfbank-zeren-spor-kulubu-c398615",
+            "host_name": "VakıfBank",
+            "guest_name": "Zeren Spor Kulübü",
+            "score": "3 - 0",
+            "has_score": true,
+            "vb_date": "2026-10-14",
+            "vb_time": "19:00",
+            "vb_hall": "Vakıfbank Spor Sarayı",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-14",
+              "vb_time": "19:00",
+              "vb_hall": "Vakıfbank Spor Sarayı",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m20_2963_2966",
@@ -981,7 +1401,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-          "takim_b_volleybox_name": "Galatasaray Daikin"
+          "takim_b_volleybox_name": "Galatasaray Daikin",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398613",
+            "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-galatasaray-c398613",
+            "host_name": "Aras Kargo Spor Kulübü",
+            "guest_name": "Galatasaray Daikin",
+            "score": "3 - 2",
+            "has_score": true,
+            "vb_date": "2026-10-14",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-14",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m21_2958_2956",
@@ -1010,7 +1452,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-          "takim_b_volleybox_name": "Beşiktaş"
+          "takim_b_volleybox_name": "Beşiktaş",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398618",
+            "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-besiktas-c398618",
+            "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "guest_name": "Beşiktaş",
+            "score": "1 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-14",
+            "vb_time": "19:00",
+            "vb_hall": "Muradiye Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-14",
+              "vb_time": "19:00",
+              "vb_hall": "Muradiye Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m22_2960_2963",
@@ -1039,7 +1503,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398621",
+            "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-aras-kargo-spor-kulubu-c398621",
+            "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "guest_name": "Aras Kargo Spor Kulübü",
+            "score": "1 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-18",
+            "vb_time": "15:00",
+            "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-18",
+              "vb_time": "15:00",
+              "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m23_2964_2957",
@@ -1068,7 +1554,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_a_volleybox_name": "Zeren Spor Kulübü",
-          "takim_b_volleybox_name": "Fenerbahçe Medicana"
+          "takim_b_volleybox_name": "Fenerbahçe Medicana",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398620",
+            "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-fenerbahce-c398620",
+            "host_name": "Zeren Spor Kulübü",
+            "guest_name": "Fenerbahçe Medicana",
+            "score": "0 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-18",
+            "vb_time": "15:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-18",
+              "vb_time": "15:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m24_2954_2955",
@@ -1097,7 +1605,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-          "takim_b_volleybox_name": "VakıfBank"
+          "takim_b_volleybox_name": "VakıfBank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398625",
+            "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-vakfbank-c398625",
+            "host_name": "Eczacıbaşı Peron İstanbul",
+            "guest_name": "VakıfBank",
+            "score": "2 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-18",
+            "vb_time": "18:00",
+            "vb_hall": "Eczacıbaşı Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-18",
+              "vb_time": "18:00",
+              "vb_hall": "Eczacıbaşı Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m25_2956_2959",
@@ -1126,7 +1656,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_a_volleybox_name": "Beşiktaş",
-          "takim_b_volleybox_name": "Kuzeyboru"
+          "takim_b_volleybox_name": "Kuzeyboru",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398619",
+            "url": "https://women.volleybox.net/tr/besiktas-kuzeyboru-c398619",
+            "host_name": "Beşiktaş",
+            "guest_name": "Kuzeyboru",
+            "score": "2 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-18",
+            "vb_time": "13:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-18",
+              "vb_time": "13:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m26_2965_2953",
@@ -1155,7 +1707,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_a_volleybox_name": "Türk Hava Yolları SK",
-          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398622",
+            "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-nilufer-belediyespor-c398622",
+            "host_name": "Türk Hava Yolları SK",
+            "guest_name": "Nilüfer Belediyespor Eker",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-18",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-18",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m27_2966_2961",
@@ -1184,7 +1758,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_a_volleybox_name": "Galatasaray Daikin",
-          "takim_b_volleybox_name": "İlbank"
+          "takim_b_volleybox_name": "İlbank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398624",
+            "url": "https://women.volleybox.net/tr/galatasaray-lbank-c398624",
+            "host_name": "Galatasaray Daikin",
+            "guest_name": "İlbank",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-18",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-18",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m28_2962_2958",
@@ -1213,7 +1809,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_a_volleybox_name": "Göztepe Yuppo",
-          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398623",
+            "url": "https://women.volleybox.net/tr/goztepe-sk-manisa-buyuksehir-belediyespor-kulubu-c398623",
+            "host_name": "Göztepe Yuppo",
+            "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "score": "3 - 0",
+            "has_score": true,
+            "vb_date": "2026-10-18",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-18",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m29_2959_2953",
@@ -1242,7 +1860,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_a_volleybox_name": "Kuzeyboru",
-          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398628",
+            "url": "https://women.volleybox.net/tr/kuzeyboru-nilufer-belediyespor-c398628",
+            "host_name": "Kuzeyboru",
+            "guest_name": "Nilüfer Belediyespor Eker",
+            "score": "3 - 2",
+            "has_score": true,
+            "vb_date": "2026-10-25",
+            "vb_time": "14:00",
+            "vb_hall": "Aksaray Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-25",
+              "vb_time": "14:00",
+              "vb_hall": "Aksaray Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m30_2961_2960",
@@ -1271,7 +1911,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_a_volleybox_name": "İlbank",
-          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398631",
+            "url": "https://women.volleybox.net/tr/lbank-afyon-belediye-yuntas-spor-kulubu-c398631",
+            "host_name": "İlbank",
+            "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-25",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-25",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m31_2956_2962",
@@ -1300,7 +1962,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_a_volleybox_name": "Beşiktaş",
-          "takim_b_volleybox_name": "Göztepe Yuppo"
+          "takim_b_volleybox_name": "Göztepe Yuppo",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398626",
+            "url": "https://women.volleybox.net/tr/besiktas-goztepe-sk-c398626",
+            "host_name": "Beşiktaş",
+            "guest_name": "Göztepe Yuppo",
+            "score": "1 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-25",
+            "vb_time": "13:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-25",
+              "vb_time": "13:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m32_2957_2954",
@@ -1329,7 +2013,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_a_volleybox_name": "Fenerbahçe Medicana",
-          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398632",
+            "url": "https://women.volleybox.net/tr/fenerbahce-eczacbas-spor-kulubu-c398632",
+            "host_name": "Fenerbahçe Medicana",
+            "guest_name": "Eczacıbaşı Peron İstanbul",
+            "score": "3 - 1",
+            "has_score": true,
+            "vb_date": "2026-10-25",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-25",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m33_2955_2966",
@@ -1358,7 +2064,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_a_volleybox_name": "VakıfBank",
-          "takim_b_volleybox_name": "Galatasaray Daikin"
+          "takim_b_volleybox_name": "Galatasaray Daikin",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398627",
+            "url": "https://women.volleybox.net/tr/vakfbank-galatasaray-c398627",
+            "host_name": "VakıfBank",
+            "guest_name": "Galatasaray Daikin",
+            "score": "3 - 0",
+            "has_score": true,
+            "vb_date": "2026-10-25",
+            "vb_time": "14:00",
+            "vb_hall": "Vakıfbank Spor Sarayı",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-25",
+              "vb_time": "14:00",
+              "vb_hall": "Vakıfbank Spor Sarayı",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m34_2963_2965",
@@ -1387,7 +2115,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-          "takim_b_volleybox_name": "Türk Hava Yolları SK"
+          "takim_b_volleybox_name": "Türk Hava Yolları SK",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398629",
+            "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-turk-hava-yollar-sk-c398629",
+            "host_name": "Aras Kargo Spor Kulübü",
+            "guest_name": "Türk Hava Yolları SK",
+            "score": "1 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-25",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-25",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m35_2958_2964",
@@ -1416,7 +2166,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-          "takim_b_volleybox_name": "Zeren Spor Kulübü"
+          "takim_b_volleybox_name": "Zeren Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "398630",
+            "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-zeren-spor-kulubu-c398630",
+            "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "guest_name": "Zeren Spor Kulübü",
+            "score": "2 - 3",
+            "has_score": true,
+            "vb_date": "2026-10-25",
+            "vb_time": "16:00",
+            "vb_hall": "Muradiye Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-10-25",
+              "vb_time": "16:00",
+              "vb_hall": "Muradiye Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m36_2960_2955",
@@ -1445,7 +2217,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-          "takim_b_volleybox_name": "VakıfBank"
+          "takim_b_volleybox_name": "VakıfBank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "402019",
+            "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-vakfbank-c402019",
+            "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "guest_name": "VakıfBank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-01",
+            "vb_time": "15:00",
+            "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-01",
+              "vb_time": "15:00",
+              "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m37_2964_2956",
@@ -1474,7 +2268,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_a_volleybox_name": "Zeren Spor Kulübü",
-          "takim_b_volleybox_name": "Beşiktaş"
+          "takim_b_volleybox_name": "Beşiktaş",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409774",
+            "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-besiktas-c409774",
+            "host_name": "Zeren Spor Kulübü",
+            "guest_name": "Beşiktaş",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-01",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-01",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m78_2953_2963",
@@ -1503,7 +2319,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409776",
+            "url": "https://women.volleybox.net/tr/nilufer-belediyespor-aras-kargo-spor-kulubu-c409776",
+            "host_name": "Nilüfer Belediyespor Eker",
+            "guest_name": "Aras Kargo Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-01",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-01",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m39_2954_2958",
@@ -1532,7 +2370,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "406565",
+            "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-manisa-buyuksehir-belediyespor-kulubu-c406565",
+            "host_name": "Eczacıbaşı Peron İstanbul",
+            "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-01",
+            "vb_time": "16:00",
+            "vb_hall": "Eczacıbaşı Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-01",
+              "vb_time": "16:00",
+              "vb_hall": "Eczacıbaşı Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m40_2965_2961",
@@ -1561,7 +2421,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_a_volleybox_name": "Türk Hava Yolları SK",
-          "takim_b_volleybox_name": "İlbank"
+          "takim_b_volleybox_name": "İlbank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409775",
+            "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-lbank-c409775",
+            "host_name": "Türk Hava Yolları SK",
+            "guest_name": "İlbank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-01",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-01",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m41_2966_2957",
@@ -1590,7 +2472,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_a_volleybox_name": "Galatasaray Daikin",
-          "takim_b_volleybox_name": "Fenerbahçe Medicana"
+          "takim_b_volleybox_name": "Fenerbahçe Medicana",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409767",
+            "url": "https://women.volleybox.net/tr/galatasaray-fenerbahce-c409767",
+            "host_name": "Galatasaray Daikin",
+            "guest_name": "Fenerbahçe Medicana",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-01",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-01",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m42_2962_2959",
@@ -1619,7 +2523,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_a_volleybox_name": "Göztepe Yuppo",
-          "takim_b_volleybox_name": "Kuzeyboru"
+          "takim_b_volleybox_name": "Kuzeyboru",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409777",
+            "url": "https://women.volleybox.net/tr/goztepe-sk-kuzeyboru-c409777",
+            "host_name": "Göztepe Yuppo",
+            "guest_name": "Kuzeyboru",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-01",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-01",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m43_2959_2963",
@@ -1648,7 +2574,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_a_volleybox_name": "Kuzeyboru",
-          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409778",
+            "url": "https://women.volleybox.net/tr/kuzeyboru-aras-kargo-spor-kulubu-c409778",
+            "host_name": "Kuzeyboru",
+            "guest_name": "Aras Kargo Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-04",
+            "vb_time": "18:00",
+            "vb_hall": "Aksaray Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-04",
+              "vb_time": "18:00",
+              "vb_hall": "Aksaray Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m44_2956_2954",
@@ -1677,7 +2625,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_a_volleybox_name": "Beşiktaş",
-          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+          "volleybox": {
+            "synced": true,
+            "match_id": "406566",
+            "url": "https://women.volleybox.net/tr/besiktas-eczacbas-spor-kulubu-c406566",
+            "host_name": "Beşiktaş",
+            "guest_name": "Eczacıbaşı Peron İstanbul",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-04",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-04",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m45_2955_2965",
@@ -1706,7 +2676,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_a_volleybox_name": "VakıfBank",
-          "takim_b_volleybox_name": "Türk Hava Yolları SK"
+          "takim_b_volleybox_name": "Türk Hava Yolları SK",
+          "volleybox": {
+            "synced": true,
+            "match_id": "402020",
+            "url": "https://women.volleybox.net/tr/vakfbank-turk-hava-yollar-sk-c402020",
+            "host_name": "VakıfBank",
+            "guest_name": "Türk Hava Yolları SK",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-04",
+            "vb_time": "19:00",
+            "vb_hall": "Vakıfbank Spor Sarayı",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-04",
+              "vb_time": "19:00",
+              "vb_hall": "Vakıfbank Spor Sarayı",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m46_2962_2964",
@@ -1735,7 +2727,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_a_volleybox_name": "Göztepe Yuppo",
-          "takim_b_volleybox_name": "Zeren Spor Kulübü"
+          "takim_b_volleybox_name": "Zeren Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409779",
+            "url": "https://women.volleybox.net/tr/goztepe-sk-zeren-spor-kulubu-c409779",
+            "host_name": "Göztepe Yuppo",
+            "guest_name": "Zeren Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-04",
+            "vb_time": "17:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-04",
+              "vb_time": "17:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m47_2958_2966",
@@ -1764,7 +2778,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-          "takim_b_volleybox_name": "Galatasaray Daikin"
+          "takim_b_volleybox_name": "Galatasaray Daikin",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409781",
+            "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-galatasaray-c409781",
+            "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "guest_name": "Galatasaray Daikin",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-04",
+            "vb_time": "16:30",
+            "vb_hall": "Muradiye Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-04",
+              "vb_time": "16:30",
+              "vb_hall": "Muradiye Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m48_2961_2953",
@@ -1793,7 +2829,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_a_volleybox_name": "İlbank",
-          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409780",
+            "url": "https://women.volleybox.net/tr/lbank-nilufer-belediyespor-c409780",
+            "host_name": "İlbank",
+            "guest_name": "Nilüfer Belediyespor Eker",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-05",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-05",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m49_2957_2960",
@@ -1822,7 +2880,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_a_volleybox_name": "Fenerbahçe Medicana",
-          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409768",
+            "url": "https://women.volleybox.net/tr/fenerbahce-afyon-belediye-yuntas-spor-kulubu-c409768",
+            "host_name": "Fenerbahçe Medicana",
+            "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-05",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-05",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m50_2960_2958",
@@ -1851,7 +2931,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409785",
+            "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-manisa-buyuksehir-belediyespor-kulubu-c409785",
+            "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-08",
+            "vb_time": "15:00",
+            "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-08",
+              "vb_time": "15:00",
+              "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m51_2964_2959",
@@ -1880,7 +2982,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_a_volleybox_name": "Zeren Spor Kulübü",
-          "takim_b_volleybox_name": "Kuzeyboru"
+          "takim_b_volleybox_name": "Kuzeyboru",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410232",
+            "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-kuzeyboru-c410232",
+            "host_name": "Zeren Spor Kulübü",
+            "guest_name": "Kuzeyboru",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-08",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-08",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m52_2953_2955",
@@ -1909,7 +3033,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-          "takim_b_volleybox_name": "VakıfBank"
+          "takim_b_volleybox_name": "VakıfBank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "402021",
+            "url": "https://women.volleybox.net/tr/nilufer-belediyespor-vakfbank-c402021",
+            "host_name": "Nilüfer Belediyespor Eker",
+            "guest_name": "VakıfBank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-08",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-08",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m53_2954_2962",
@@ -1938,7 +3084,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-          "takim_b_volleybox_name": "Göztepe Yuppo"
+          "takim_b_volleybox_name": "Göztepe Yuppo",
+          "volleybox": {
+            "synced": true,
+            "match_id": "406569",
+            "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-goztepe-sk-c406569",
+            "host_name": "Eczacıbaşı Peron İstanbul",
+            "guest_name": "Göztepe Yuppo",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-08",
+            "vb_time": "18:00",
+            "vb_hall": "Eczacıbaşı Spor Salonu",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": false,
+              "time_diff": true,
+              "hall_diff": false,
+              "vb_date": "2026-11-08",
+              "vb_time": "18:00",
+              "vb_hall": "Eczacıbaşı Spor Salonu",
+              "details": "Saat Değişti (TVF: 15:00 / VB: 18:00)"
+            }
+          }
         },
         {
           "id": "sultanlar_m54_2966_2956",
@@ -1967,7 +3135,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_a_volleybox_name": "Galatasaray Daikin",
-          "takim_b_volleybox_name": "Beşiktaş"
+          "takim_b_volleybox_name": "Beşiktaş",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410233",
+            "url": "https://women.volleybox.net/tr/galatasaray-besiktas-c410233",
+            "host_name": "Galatasaray Daikin",
+            "guest_name": "Beşiktaş",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-08",
+            "vb_time": "14:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-08",
+              "vb_time": "14:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m55_2965_2957",
@@ -1996,7 +3186,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_a_volleybox_name": "Türk Hava Yolları SK",
-          "takim_b_volleybox_name": "Fenerbahçe Medicana"
+          "takim_b_volleybox_name": "Fenerbahçe Medicana",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409769",
+            "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-fenerbahce-c409769",
+            "host_name": "Türk Hava Yolları SK",
+            "guest_name": "Fenerbahçe Medicana",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-08",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-08",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m56_2963_2961",
@@ -2025,7 +3237,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-          "takim_b_volleybox_name": "İlbank"
+          "takim_b_volleybox_name": "İlbank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410234",
+            "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-lbank-c410234",
+            "host_name": "Aras Kargo Spor Kulübü",
+            "guest_name": "İlbank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-08",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-08",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m57_2959_2961",
@@ -2054,7 +3288,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_a_volleybox_name": "Kuzeyboru",
-          "takim_b_volleybox_name": "İlbank"
+          "takim_b_volleybox_name": "İlbank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410235",
+            "url": "https://women.volleybox.net/tr/kuzeyboru-lbank-c410235",
+            "host_name": "Kuzeyboru",
+            "guest_name": "İlbank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-15",
+            "vb_time": "14:00",
+            "vb_hall": "Aksaray Spor Salonu",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": false,
+              "time_diff": true,
+              "hall_diff": false,
+              "vb_date": "2026-11-15",
+              "vb_time": "14:00",
+              "vb_hall": "Aksaray Spor Salonu",
+              "details": "Saat Değişti (TVF: 17:00 / VB: 14:00)"
+            }
+          }
         },
         {
           "id": "sultanlar_m58_2964_2954",
@@ -2083,7 +3339,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_a_volleybox_name": "Zeren Spor Kulübü",
-          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+          "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+          "volleybox": {
+            "synced": true,
+            "match_id": "406570",
+            "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-eczacbas-spor-kulubu-c406570",
+            "host_name": "Zeren Spor Kulübü",
+            "guest_name": "Eczacıbaşı Peron İstanbul",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-15",
+            "vb_time": "17:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": false,
+              "time_diff": true,
+              "hall_diff": false,
+              "vb_date": "2026-11-15",
+              "vb_time": "17:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": "Saat Değişti (TVF: 14:00 / VB: 17:00)"
+            }
+          }
         },
         {
           "id": "sultanlar_m59_2957_2953",
@@ -2112,7 +3390,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_a_volleybox_name": "Fenerbahçe Medicana",
-          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409770",
+            "url": "https://women.volleybox.net/tr/fenerbahce-nilufer-belediyespor-c409770",
+            "host_name": "Fenerbahçe Medicana",
+            "guest_name": "Nilüfer Belediyespor Eker",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-15",
+            "vb_time": "13:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-15",
+              "vb_time": "13:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m60_2956_2960",
@@ -2141,7 +3441,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_a_volleybox_name": "Beşiktaş",
-          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410237",
+            "url": "https://women.volleybox.net/tr/besiktas-afyon-belediye-yuntas-spor-kulubu-c410237",
+            "host_name": "Beşiktaş",
+            "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-15",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-15",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m61_2955_2963",
@@ -2170,7 +3492,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_a_volleybox_name": "VakıfBank",
-          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "402022",
+            "url": "https://women.volleybox.net/tr/vakfbank-aras-kargo-spor-kulubu-c402022",
+            "host_name": "VakıfBank",
+            "guest_name": "Aras Kargo Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-15",
+            "vb_time": "14:00",
+            "vb_hall": "Vakıfbank Spor Sarayı",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-15",
+              "vb_time": "14:00",
+              "vb_hall": "Vakıfbank Spor Sarayı",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m62_2962_2966",
@@ -2199,7 +3543,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_a_volleybox_name": "Göztepe Yuppo",
-          "takim_b_volleybox_name": "Galatasaray Daikin"
+          "takim_b_volleybox_name": "Galatasaray Daikin",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410238",
+            "url": "https://women.volleybox.net/tr/goztepe-sk-galatasaray-c410238",
+            "host_name": "Göztepe Yuppo",
+            "guest_name": "Galatasaray Daikin",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-15",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-15",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m63_2958_2965",
@@ -2228,7 +3594,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-          "takim_b_volleybox_name": "Türk Hava Yolları SK"
+          "takim_b_volleybox_name": "Türk Hava Yolları SK",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410236",
+            "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-turk-hava-yollar-sk-c410236",
+            "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "guest_name": "Türk Hava Yolları SK",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-15",
+            "vb_time": "16:00",
+            "vb_hall": "Muradiye Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-15",
+              "vb_time": "16:00",
+              "vb_hall": "Muradiye Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m67_2954_2959",
@@ -2257,7 +3645,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-          "takim_b_volleybox_name": "Kuzeyboru"
+          "takim_b_volleybox_name": "Kuzeyboru",
+          "volleybox": {
+            "synced": true,
+            "match_id": "406571",
+            "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-kuzeyboru-c406571",
+            "host_name": "Eczacıbaşı Peron İstanbul",
+            "guest_name": "Kuzeyboru",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-22",
+            "vb_time": "19:00",
+            "vb_hall": "Eczacıbaşı Spor Salonu",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": true,
+              "time_diff": true,
+              "hall_diff": false,
+              "vb_date": "2026-11-22",
+              "vb_time": "19:00",
+              "vb_hall": "Eczacıbaşı Spor Salonu",
+              "details": "Tarih Değişti (TVF: 2026-11-21 / VB: 2026-11-22) | Saat Değişti (TVF: 14:00 / VB: 19:00)"
+            }
+          }
         },
         {
           "id": "sultanlar_m70_2963_2957",
@@ -2286,7 +3696,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-          "takim_b_volleybox_name": "Fenerbahçe Medicana"
+          "takim_b_volleybox_name": "Fenerbahçe Medicana",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409771",
+            "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-fenerbahce-c409771",
+            "host_name": "Aras Kargo Spor Kulübü",
+            "guest_name": "Fenerbahçe Medicana",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-22",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": true,
+              "time_diff": true,
+              "hall_diff": false,
+              "vb_date": "2026-11-22",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": "Tarih Değişti (TVF: 2026-11-21 / VB: 2026-11-22) | Saat Değişti (TVF: 15:00 / VB: 16:00)"
+            }
+          }
         },
         {
           "id": "sultanlar_m64_2960_2962",
@@ -2315,7 +3747,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-          "takim_b_volleybox_name": "Göztepe Yuppo"
+          "takim_b_volleybox_name": "Göztepe Yuppo",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410239",
+            "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-goztepe-sk-c410239",
+            "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "guest_name": "Göztepe Yuppo",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-22",
+            "vb_time": "15:00",
+            "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-22",
+              "vb_time": "15:00",
+              "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m65_2961_2955",
@@ -2344,7 +3798,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_a_volleybox_name": "İlbank",
-          "takim_b_volleybox_name": "VakıfBank"
+          "takim_b_volleybox_name": "VakıfBank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "402023",
+            "url": "https://women.volleybox.net/tr/lbank-vakfbank-c402023",
+            "host_name": "İlbank",
+            "guest_name": "VakıfBank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-22",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-22",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m66_2953_2958",
@@ -2373,7 +3849,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+          "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410240",
+            "url": "https://women.volleybox.net/tr/nilufer-belediyespor-manisa-buyuksehir-belediyespor-kulubu-c410240",
+            "host_name": "Nilüfer Belediyespor Eker",
+            "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-22",
+            "vb_time": "16:00",
+            "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-22",
+              "vb_time": "16:00",
+              "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m68_2966_2964",
@@ -2402,7 +3900,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_a_volleybox_name": "Galatasaray Daikin",
-          "takim_b_volleybox_name": "Zeren Spor Kulübü"
+          "takim_b_volleybox_name": "Zeren Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410241",
+            "url": "https://women.volleybox.net/tr/galatasaray-zeren-spor-kulubu-c410241",
+            "host_name": "Galatasaray Daikin",
+            "guest_name": "Zeren Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-22",
+            "vb_time": "13:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-22",
+              "vb_time": "13:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m69_2965_2956",
@@ -2431,7 +3951,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_a_volleybox_name": "Türk Hava Yolları SK",
-          "takim_b_volleybox_name": "Beşiktaş"
+          "takim_b_volleybox_name": "Beşiktaş",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410242",
+            "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-besiktas-c410242",
+            "host_name": "Türk Hava Yolları SK",
+            "guest_name": "Beşiktaş",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-22",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-22",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m71_2959_2955",
@@ -2460,7 +4002,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
           "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
           "takim_a_volleybox_name": "Kuzeyboru",
-          "takim_b_volleybox_name": "VakıfBank"
+          "takim_b_volleybox_name": "VakıfBank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "402024",
+            "url": "https://women.volleybox.net/tr/kuzeyboru-vakfbank-c402024",
+            "host_name": "Kuzeyboru",
+            "guest_name": "VakıfBank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-28",
+            "vb_time": "14:00",
+            "vb_hall": "Aksaray Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-28",
+              "vb_time": "14:00",
+              "vb_hall": "Aksaray Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m72_2964_2960",
@@ -2489,7 +4053,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
           "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
           "takim_a_volleybox_name": "Zeren Spor Kulübü",
-          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+          "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410245",
+            "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-afyon-belediye-yuntas-spor-kulubu-c410245",
+            "host_name": "Zeren Spor Kulübü",
+            "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-29",
+            "vb_time": "14:00",
+            "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-29",
+              "vb_time": "14:00",
+              "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m73_2954_2966",
@@ -2518,7 +4104,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
           "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
           "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-          "takim_b_volleybox_name": "Galatasaray Daikin"
+          "takim_b_volleybox_name": "Galatasaray Daikin",
+          "volleybox": {
+            "synced": true,
+            "match_id": "406573",
+            "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-galatasaray-c406573",
+            "host_name": "Eczacıbaşı Peron İstanbul",
+            "guest_name": "Galatasaray Daikin",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-29",
+            "vb_time": "18:00",
+            "vb_hall": "Eczacıbaşı Spor Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-29",
+              "vb_time": "18:00",
+              "vb_hall": "Eczacıbaşı Spor Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m74_2957_2961",
@@ -2547,7 +4155,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
           "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
           "takim_a_volleybox_name": "Fenerbahçe Medicana",
-          "takim_b_volleybox_name": "İlbank"
+          "takim_b_volleybox_name": "İlbank",
+          "volleybox": {
+            "synced": true,
+            "match_id": "409772",
+            "url": "https://women.volleybox.net/tr/fenerbahce-lbank-c409772",
+            "host_name": "Fenerbahçe Medicana",
+            "guest_name": "İlbank",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-29",
+            "vb_time": "13:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-29",
+              "vb_time": "13:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m75_2956_2953",
@@ -2576,7 +4206,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
           "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
           "takim_a_volleybox_name": "Beşiktaş",
-          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+          "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410244",
+            "url": "https://women.volleybox.net/tr/besiktas-nilufer-belediyespor-c410244",
+            "host_name": "Beşiktaş",
+            "guest_name": "Nilüfer Belediyespor Eker",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-29",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+            "discrepancy": {
+              "has_diff": false,
+              "date_diff": false,
+              "time_diff": false,
+              "hall_diff": false,
+              "vb_date": "2026-11-29",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+              "details": null
+            }
+          }
         },
         {
           "id": "sultanlar_m76_2962_2965",
@@ -2605,7 +4257,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
           "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
           "takim_a_volleybox_name": "Göztepe Yuppo",
-          "takim_b_volleybox_name": "Türk Hava Yolları SK"
+          "takim_b_volleybox_name": "Türk Hava Yolları SK",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410246",
+            "url": "https://women.volleybox.net/tr/goztepe-sk-turk-hava-yollar-sk-c410246",
+            "host_name": "Göztepe Yuppo",
+            "guest_name": "Türk Hava Yolları SK",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-29",
+            "vb_time": "19:00",
+            "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": false,
+              "time_diff": true,
+              "hall_diff": false,
+              "vb_date": "2026-11-29",
+              "vb_time": "19:00",
+              "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+              "details": "Saat Değişti (TVF: 17:00 / VB: 19:00)"
+            }
+          }
         },
         {
           "id": "sultanlar_m77_2958_2963",
@@ -2634,7 +4308,29 @@
           "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
           "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
           "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+          "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+          "volleybox": {
+            "synced": true,
+            "match_id": "410243",
+            "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-aras-kargo-spor-kulubu-c410243",
+            "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+            "guest_name": "Aras Kargo Spor Kulübü",
+            "score": null,
+            "has_score": false,
+            "vb_date": "2026-11-29",
+            "vb_time": "13:00",
+            "vb_hall": "Muradiye Spor Salonu",
+            "discrepancy": {
+              "has_diff": true,
+              "date_diff": false,
+              "time_diff": true,
+              "hall_diff": false,
+              "vb_date": "2026-11-29",
+              "vb_time": "13:00",
+              "vb_hall": "Muradiye Spor Salonu",
+              "details": "Saat Değişti (TVF: 16:00 / VB: 13:00)"
+            }
+          }
         }
       ]
     }
@@ -2667,7 +4363,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+      "volleybox": {
+        "synced": true,
+        "match_id": "390158",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-eczacbas-spor-kulubu-c390158",
+        "host_name": "Nilüfer Belediyespor Eker",
+        "guest_name": "Eczacıbaşı Peron İstanbul",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-03",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m2_2955_2956",
@@ -2696,7 +4414,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_a_volleybox_name": "VakıfBank",
-      "takim_b_volleybox_name": "Beşiktaş"
+      "takim_b_volleybox_name": "Beşiktaş",
+      "volleybox": {
+        "synced": true,
+        "match_id": "390160",
+        "url": "https://women.volleybox.net/tr/vakfbank-besiktas-c390160",
+        "host_name": "VakıfBank",
+        "guest_name": "Beşiktaş",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-03",
+        "vb_time": "14:00",
+        "vb_hall": "Vakıfbank Spor Sarayı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-03",
+          "vb_time": "14:00",
+          "vb_hall": "Vakıfbank Spor Sarayı",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m4_2959_2960",
@@ -2725,7 +4465,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_a_volleybox_name": "Kuzeyboru",
-      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "390166",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-afyon-belediye-yuntas-spor-kulubu-c390166",
+        "host_name": "Kuzeyboru",
+        "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-04",
+        "vb_time": "14:00",
+        "vb_hall": "Aksaray Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "14:00",
+          "vb_hall": "Aksaray Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m5_2961_2962",
@@ -2754,7 +4516,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_a_volleybox_name": "İlbank",
-      "takim_b_volleybox_name": "Göztepe Yuppo"
+      "takim_b_volleybox_name": "Göztepe Yuppo",
+      "volleybox": {
+        "synced": true,
+        "match_id": "390165",
+        "url": "https://women.volleybox.net/tr/lbank-goztepe-sk-c390165",
+        "host_name": "İlbank",
+        "guest_name": "Göztepe Yuppo",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-04",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m3_2957_2958",
@@ -2783,7 +4567,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_a_volleybox_name": "Fenerbahçe Medicana",
-      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "390161",
+        "url": "https://women.volleybox.net/tr/fenerbahce-manisa-buyuksehir-belediyespor-kulubu-c390161",
+        "host_name": "Fenerbahçe Medicana",
+        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-04",
+        "vb_time": "13:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "13:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m7_2965_2966",
@@ -2812,7 +4618,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_a_volleybox_name": "Türk Hava Yolları SK",
-      "takim_b_volleybox_name": "Galatasaray Daikin"
+      "takim_b_volleybox_name": "Galatasaray Daikin",
+      "volleybox": {
+        "synced": true,
+        "match_id": "390162",
+        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-galatasaray-c390162",
+        "host_name": "Türk Hava Yolları SK",
+        "guest_name": "Galatasaray Daikin",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-04",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m6_2963_2964",
@@ -2841,7 +4669,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-      "takim_b_volleybox_name": "Zeren Spor Kulübü"
+      "takim_b_volleybox_name": "Zeren Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "390159",
+        "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-zeren-spor-kulubu-c390159",
+        "host_name": "Aras Kargo Spor Kulübü",
+        "guest_name": "Zeren Spor Kulübü",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-04",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m8_2960_2965",
@@ -2870,7 +4720,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-      "takim_b_volleybox_name": "Türk Hava Yolları SK"
+      "takim_b_volleybox_name": "Türk Hava Yolları SK",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398606",
+        "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-turk-hava-yollar-sk-c398606",
+        "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "guest_name": "Türk Hava Yolları SK",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-11",
+        "vb_time": "15:00",
+        "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "15:00",
+          "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m9_2964_2961",
@@ -2899,7 +4771,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_a_volleybox_name": "Zeren Spor Kulübü",
-      "takim_b_volleybox_name": "İlbank"
+      "takim_b_volleybox_name": "İlbank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398609",
+        "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-lbank-c398609",
+        "host_name": "Zeren Spor Kulübü",
+        "guest_name": "İlbank",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-11",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m10_2954_2963",
@@ -2928,7 +4822,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398608",
+        "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-aras-kargo-spor-kulubu-c398608",
+        "host_name": "Eczacıbaşı Peron İstanbul",
+        "guest_name": "Aras Kargo Spor Kulübü",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-11",
+        "vb_time": "16:00",
+        "vb_hall": "Eczacıbaşı Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "16:00",
+          "vb_hall": "Eczacıbaşı Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m11_2966_2953",
@@ -2957,7 +4873,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_a_volleybox_name": "Galatasaray Daikin",
-      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398605",
+        "url": "https://women.volleybox.net/tr/galatasaray-nilufer-belediyespor-c398605",
+        "host_name": "Galatasaray Daikin",
+        "guest_name": "Nilüfer Belediyespor Eker",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-11",
+        "vb_time": "13:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "13:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m12_2956_2957",
@@ -2986,7 +4924,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_a_volleybox_name": "Beşiktaş",
-      "takim_b_volleybox_name": "Fenerbahçe Medicana"
+      "takim_b_volleybox_name": "Fenerbahçe Medicana",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398611",
+        "url": "https://women.volleybox.net/tr/besiktas-fenerbahce-c398611",
+        "host_name": "Beşiktaş",
+        "guest_name": "Fenerbahçe Medicana",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-11",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m13_2962_2955",
@@ -3015,7 +4975,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_a_volleybox_name": "Göztepe Yuppo",
-      "takim_b_volleybox_name": "VakıfBank"
+      "takim_b_volleybox_name": "VakıfBank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398607",
+        "url": "https://women.volleybox.net/tr/goztepe-sk-vakfbank-c398607",
+        "host_name": "Göztepe Yuppo",
+        "guest_name": "VakıfBank",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-11",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m14_2958_2959",
@@ -3044,7 +5026,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-      "takim_b_volleybox_name": "Kuzeyboru"
+      "takim_b_volleybox_name": "Kuzeyboru",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398610",
+        "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-kuzeyboru-c398610",
+        "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "guest_name": "Kuzeyboru",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-11",
+        "vb_time": "16:00",
+        "vb_hall": "Muradiye Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-11",
+          "vb_time": "16:00",
+          "vb_hall": "Muradiye Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m15_2959_2965",
@@ -3073,7 +5077,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_a_volleybox_name": "Kuzeyboru",
-      "takim_b_volleybox_name": "Türk Hava Yolları SK"
+      "takim_b_volleybox_name": "Türk Hava Yolları SK",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398612",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-turk-hava-yollar-sk-c398612",
+        "host_name": "Kuzeyboru",
+        "guest_name": "Türk Hava Yolları SK",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-14",
+        "vb_time": "14:00",
+        "vb_hall": "Aksaray Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "14:00",
+          "vb_hall": "Aksaray Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m16_2961_2954",
@@ -3102,7 +5128,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_a_volleybox_name": "İlbank",
-      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398617",
+        "url": "https://women.volleybox.net/tr/lbank-eczacbas-spor-kulubu-c398617",
+        "host_name": "İlbank",
+        "guest_name": "Eczacıbaşı Peron İstanbul",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-14",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m17_2953_2960",
@@ -3131,7 +5179,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398614",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-afyon-belediye-yuntas-spor-kulubu-c398614",
+        "host_name": "Nilüfer Belediyespor Eker",
+        "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-14",
+        "vb_time": "18:00",
+        "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "18:00",
+          "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m18_2957_2962",
@@ -3160,7 +5230,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_a_volleybox_name": "Fenerbahçe Medicana",
-      "takim_b_volleybox_name": "Göztepe Yuppo"
+      "takim_b_volleybox_name": "Göztepe Yuppo",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398616",
+        "url": "https://women.volleybox.net/tr/fenerbahce-goztepe-sk-c398616",
+        "host_name": "Fenerbahçe Medicana",
+        "guest_name": "Göztepe Yuppo",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-31",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-14 / VB: 2026-10-31)"
+        }
+      }
     },
     {
       "id": "sultanlar_m19_2955_2964",
@@ -3189,7 +5281,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_a_volleybox_name": "VakıfBank",
-      "takim_b_volleybox_name": "Zeren Spor Kulübü"
+      "takim_b_volleybox_name": "Zeren Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398615",
+        "url": "https://women.volleybox.net/tr/vakfbank-zeren-spor-kulubu-c398615",
+        "host_name": "VakıfBank",
+        "guest_name": "Zeren Spor Kulübü",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-14",
+        "vb_time": "19:00",
+        "vb_hall": "Vakıfbank Spor Sarayı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "19:00",
+          "vb_hall": "Vakıfbank Spor Sarayı",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m20_2963_2966",
@@ -3218,7 +5332,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-      "takim_b_volleybox_name": "Galatasaray Daikin"
+      "takim_b_volleybox_name": "Galatasaray Daikin",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398613",
+        "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-galatasaray-c398613",
+        "host_name": "Aras Kargo Spor Kulübü",
+        "guest_name": "Galatasaray Daikin",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-14",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m21_2958_2956",
@@ -3247,7 +5383,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-      "takim_b_volleybox_name": "Beşiktaş"
+      "takim_b_volleybox_name": "Beşiktaş",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398618",
+        "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-besiktas-c398618",
+        "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "guest_name": "Beşiktaş",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-14",
+        "vb_time": "19:00",
+        "vb_hall": "Muradiye Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "19:00",
+          "vb_hall": "Muradiye Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m22_2960_2963",
@@ -3276,7 +5434,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398621",
+        "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-aras-kargo-spor-kulubu-c398621",
+        "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "guest_name": "Aras Kargo Spor Kulübü",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "15:00",
+        "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "15:00",
+          "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m23_2964_2957",
@@ -3305,7 +5485,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_a_volleybox_name": "Zeren Spor Kulübü",
-      "takim_b_volleybox_name": "Fenerbahçe Medicana"
+      "takim_b_volleybox_name": "Fenerbahçe Medicana",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398620",
+        "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-fenerbahce-c398620",
+        "host_name": "Zeren Spor Kulübü",
+        "guest_name": "Fenerbahçe Medicana",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "15:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "15:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m24_2954_2955",
@@ -3334,7 +5536,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-      "takim_b_volleybox_name": "VakıfBank"
+      "takim_b_volleybox_name": "VakıfBank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398625",
+        "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-vakfbank-c398625",
+        "host_name": "Eczacıbaşı Peron İstanbul",
+        "guest_name": "VakıfBank",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "18:00",
+        "vb_hall": "Eczacıbaşı Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "18:00",
+          "vb_hall": "Eczacıbaşı Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m25_2956_2959",
@@ -3363,7 +5587,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_a_volleybox_name": "Beşiktaş",
-      "takim_b_volleybox_name": "Kuzeyboru"
+      "takim_b_volleybox_name": "Kuzeyboru",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398619",
+        "url": "https://women.volleybox.net/tr/besiktas-kuzeyboru-c398619",
+        "host_name": "Beşiktaş",
+        "guest_name": "Kuzeyboru",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "13:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "13:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m26_2965_2953",
@@ -3392,7 +5638,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_a_volleybox_name": "Türk Hava Yolları SK",
-      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398622",
+        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-nilufer-belediyespor-c398622",
+        "host_name": "Türk Hava Yolları SK",
+        "guest_name": "Nilüfer Belediyespor Eker",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m27_2966_2961",
@@ -3421,7 +5689,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_a_volleybox_name": "Galatasaray Daikin",
-      "takim_b_volleybox_name": "İlbank"
+      "takim_b_volleybox_name": "İlbank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398624",
+        "url": "https://women.volleybox.net/tr/galatasaray-lbank-c398624",
+        "host_name": "Galatasaray Daikin",
+        "guest_name": "İlbank",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m28_2962_2958",
@@ -3450,7 +5740,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_a_volleybox_name": "Göztepe Yuppo",
-      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398623",
+        "url": "https://women.volleybox.net/tr/goztepe-sk-manisa-buyuksehir-belediyespor-kulubu-c398623",
+        "host_name": "Göztepe Yuppo",
+        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m29_2959_2953",
@@ -3479,7 +5791,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_a_volleybox_name": "Kuzeyboru",
-      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398628",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-nilufer-belediyespor-c398628",
+        "host_name": "Kuzeyboru",
+        "guest_name": "Nilüfer Belediyespor Eker",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "14:00",
+        "vb_hall": "Aksaray Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "14:00",
+          "vb_hall": "Aksaray Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m30_2961_2960",
@@ -3508,7 +5842,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_a_volleybox_name": "İlbank",
-      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398631",
+        "url": "https://women.volleybox.net/tr/lbank-afyon-belediye-yuntas-spor-kulubu-c398631",
+        "host_name": "İlbank",
+        "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m31_2956_2962",
@@ -3537,7 +5893,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_a_volleybox_name": "Beşiktaş",
-      "takim_b_volleybox_name": "Göztepe Yuppo"
+      "takim_b_volleybox_name": "Göztepe Yuppo",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398626",
+        "url": "https://women.volleybox.net/tr/besiktas-goztepe-sk-c398626",
+        "host_name": "Beşiktaş",
+        "guest_name": "Göztepe Yuppo",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "13:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "13:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m32_2957_2954",
@@ -3566,7 +5944,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_a_volleybox_name": "Fenerbahçe Medicana",
-      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398632",
+        "url": "https://women.volleybox.net/tr/fenerbahce-eczacbas-spor-kulubu-c398632",
+        "host_name": "Fenerbahçe Medicana",
+        "guest_name": "Eczacıbaşı Peron İstanbul",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m33_2955_2966",
@@ -3595,7 +5995,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_a_volleybox_name": "VakıfBank",
-      "takim_b_volleybox_name": "Galatasaray Daikin"
+      "takim_b_volleybox_name": "Galatasaray Daikin",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398627",
+        "url": "https://women.volleybox.net/tr/vakfbank-galatasaray-c398627",
+        "host_name": "VakıfBank",
+        "guest_name": "Galatasaray Daikin",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "14:00",
+        "vb_hall": "Vakıfbank Spor Sarayı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "14:00",
+          "vb_hall": "Vakıfbank Spor Sarayı",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m34_2963_2965",
@@ -3624,7 +6046,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-      "takim_b_volleybox_name": "Türk Hava Yolları SK"
+      "takim_b_volleybox_name": "Türk Hava Yolları SK",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398629",
+        "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-turk-hava-yollar-sk-c398629",
+        "host_name": "Aras Kargo Spor Kulübü",
+        "guest_name": "Türk Hava Yolları SK",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m35_2958_2964",
@@ -3653,7 +6097,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-      "takim_b_volleybox_name": "Zeren Spor Kulübü"
+      "takim_b_volleybox_name": "Zeren Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "398630",
+        "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-zeren-spor-kulubu-c398630",
+        "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "guest_name": "Zeren Spor Kulübü",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "16:00",
+        "vb_hall": "Muradiye Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "16:00",
+          "vb_hall": "Muradiye Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m36_2960_2955",
@@ -3682,7 +6148,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-      "takim_b_volleybox_name": "VakıfBank"
+      "takim_b_volleybox_name": "VakıfBank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402019",
+        "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-vakfbank-c402019",
+        "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "guest_name": "VakıfBank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-01",
+        "vb_time": "15:00",
+        "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "15:00",
+          "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m37_2964_2956",
@@ -3711,7 +6199,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_a_volleybox_name": "Zeren Spor Kulübü",
-      "takim_b_volleybox_name": "Beşiktaş"
+      "takim_b_volleybox_name": "Beşiktaş",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409774",
+        "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-besiktas-c409774",
+        "host_name": "Zeren Spor Kulübü",
+        "guest_name": "Beşiktaş",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-01",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m78_2953_2963",
@@ -3740,7 +6250,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409776",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-aras-kargo-spor-kulubu-c409776",
+        "host_name": "Nilüfer Belediyespor Eker",
+        "guest_name": "Aras Kargo Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-01",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m39_2954_2958",
@@ -3769,7 +6301,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406565",
+        "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-manisa-buyuksehir-belediyespor-kulubu-c406565",
+        "host_name": "Eczacıbaşı Peron İstanbul",
+        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-01",
+        "vb_time": "16:00",
+        "vb_hall": "Eczacıbaşı Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "16:00",
+          "vb_hall": "Eczacıbaşı Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m40_2965_2961",
@@ -3798,7 +6352,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_a_volleybox_name": "Türk Hava Yolları SK",
-      "takim_b_volleybox_name": "İlbank"
+      "takim_b_volleybox_name": "İlbank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409775",
+        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-lbank-c409775",
+        "host_name": "Türk Hava Yolları SK",
+        "guest_name": "İlbank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-01",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m41_2966_2957",
@@ -3827,7 +6403,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_a_volleybox_name": "Galatasaray Daikin",
-      "takim_b_volleybox_name": "Fenerbahçe Medicana"
+      "takim_b_volleybox_name": "Fenerbahçe Medicana",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409767",
+        "url": "https://women.volleybox.net/tr/galatasaray-fenerbahce-c409767",
+        "host_name": "Galatasaray Daikin",
+        "guest_name": "Fenerbahçe Medicana",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-01",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m42_2962_2959",
@@ -3856,7 +6454,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_a_volleybox_name": "Göztepe Yuppo",
-      "takim_b_volleybox_name": "Kuzeyboru"
+      "takim_b_volleybox_name": "Kuzeyboru",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409777",
+        "url": "https://women.volleybox.net/tr/goztepe-sk-kuzeyboru-c409777",
+        "host_name": "Göztepe Yuppo",
+        "guest_name": "Kuzeyboru",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-01",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m43_2959_2963",
@@ -3885,7 +6505,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_a_volleybox_name": "Kuzeyboru",
-      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409778",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-aras-kargo-spor-kulubu-c409778",
+        "host_name": "Kuzeyboru",
+        "guest_name": "Aras Kargo Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-04",
+        "vb_time": "18:00",
+        "vb_hall": "Aksaray Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "18:00",
+          "vb_hall": "Aksaray Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m44_2956_2954",
@@ -3914,7 +6556,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_a_volleybox_name": "Beşiktaş",
-      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406566",
+        "url": "https://women.volleybox.net/tr/besiktas-eczacbas-spor-kulubu-c406566",
+        "host_name": "Beşiktaş",
+        "guest_name": "Eczacıbaşı Peron İstanbul",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-04",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m45_2955_2965",
@@ -3943,7 +6607,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_a_volleybox_name": "VakıfBank",
-      "takim_b_volleybox_name": "Türk Hava Yolları SK"
+      "takim_b_volleybox_name": "Türk Hava Yolları SK",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402020",
+        "url": "https://women.volleybox.net/tr/vakfbank-turk-hava-yollar-sk-c402020",
+        "host_name": "VakıfBank",
+        "guest_name": "Türk Hava Yolları SK",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-04",
+        "vb_time": "19:00",
+        "vb_hall": "Vakıfbank Spor Sarayı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "19:00",
+          "vb_hall": "Vakıfbank Spor Sarayı",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m46_2962_2964",
@@ -3972,7 +6658,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_a_volleybox_name": "Göztepe Yuppo",
-      "takim_b_volleybox_name": "Zeren Spor Kulübü"
+      "takim_b_volleybox_name": "Zeren Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409779",
+        "url": "https://women.volleybox.net/tr/goztepe-sk-zeren-spor-kulubu-c409779",
+        "host_name": "Göztepe Yuppo",
+        "guest_name": "Zeren Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-04",
+        "vb_time": "17:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "17:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m47_2958_2966",
@@ -4001,7 +6709,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-      "takim_b_volleybox_name": "Galatasaray Daikin"
+      "takim_b_volleybox_name": "Galatasaray Daikin",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409781",
+        "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-galatasaray-c409781",
+        "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "guest_name": "Galatasaray Daikin",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-04",
+        "vb_time": "16:30",
+        "vb_hall": "Muradiye Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "16:30",
+          "vb_hall": "Muradiye Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m48_2961_2953",
@@ -4030,7 +6760,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_a_volleybox_name": "İlbank",
-      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409780",
+        "url": "https://women.volleybox.net/tr/lbank-nilufer-belediyespor-c409780",
+        "host_name": "İlbank",
+        "guest_name": "Nilüfer Belediyespor Eker",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-05",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m49_2957_2960",
@@ -4059,7 +6811,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_a_volleybox_name": "Fenerbahçe Medicana",
-      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409768",
+        "url": "https://women.volleybox.net/tr/fenerbahce-afyon-belediye-yuntas-spor-kulubu-c409768",
+        "host_name": "Fenerbahçe Medicana",
+        "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-05",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m50_2960_2958",
@@ -4088,7 +6862,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409785",
+        "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-manisa-buyuksehir-belediyespor-kulubu-c409785",
+        "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-08",
+        "vb_time": "15:00",
+        "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "15:00",
+          "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m51_2964_2959",
@@ -4117,7 +6913,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_a_volleybox_name": "Zeren Spor Kulübü",
-      "takim_b_volleybox_name": "Kuzeyboru"
+      "takim_b_volleybox_name": "Kuzeyboru",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410232",
+        "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-kuzeyboru-c410232",
+        "host_name": "Zeren Spor Kulübü",
+        "guest_name": "Kuzeyboru",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-08",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m52_2953_2955",
@@ -4146,7 +6964,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-      "takim_b_volleybox_name": "VakıfBank"
+      "takim_b_volleybox_name": "VakıfBank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402021",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-vakfbank-c402021",
+        "host_name": "Nilüfer Belediyespor Eker",
+        "guest_name": "VakıfBank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-08",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m53_2954_2962",
@@ -4175,7 +7015,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-      "takim_b_volleybox_name": "Göztepe Yuppo"
+      "takim_b_volleybox_name": "Göztepe Yuppo",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406569",
+        "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-goztepe-sk-c406569",
+        "host_name": "Eczacıbaşı Peron İstanbul",
+        "guest_name": "Göztepe Yuppo",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-08",
+        "vb_time": "18:00",
+        "vb_hall": "Eczacıbaşı Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "18:00",
+          "vb_hall": "Eczacıbaşı Spor Salonu",
+          "details": "Saat Değişti (TVF: 15:00 / VB: 18:00)"
+        }
+      }
     },
     {
       "id": "sultanlar_m54_2966_2956",
@@ -4204,7 +7066,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_a_volleybox_name": "Galatasaray Daikin",
-      "takim_b_volleybox_name": "Beşiktaş"
+      "takim_b_volleybox_name": "Beşiktaş",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410233",
+        "url": "https://women.volleybox.net/tr/galatasaray-besiktas-c410233",
+        "host_name": "Galatasaray Daikin",
+        "guest_name": "Beşiktaş",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-08",
+        "vb_time": "14:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "14:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m55_2965_2957",
@@ -4233,7 +7117,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_a_volleybox_name": "Türk Hava Yolları SK",
-      "takim_b_volleybox_name": "Fenerbahçe Medicana"
+      "takim_b_volleybox_name": "Fenerbahçe Medicana",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409769",
+        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-fenerbahce-c409769",
+        "host_name": "Türk Hava Yolları SK",
+        "guest_name": "Fenerbahçe Medicana",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-08",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m56_2963_2961",
@@ -4262,7 +7168,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-      "takim_b_volleybox_name": "İlbank"
+      "takim_b_volleybox_name": "İlbank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410234",
+        "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-lbank-c410234",
+        "host_name": "Aras Kargo Spor Kulübü",
+        "guest_name": "İlbank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-08",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m57_2959_2961",
@@ -4291,7 +7219,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_a_volleybox_name": "Kuzeyboru",
-      "takim_b_volleybox_name": "İlbank"
+      "takim_b_volleybox_name": "İlbank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410235",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-lbank-c410235",
+        "host_name": "Kuzeyboru",
+        "guest_name": "İlbank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-15",
+        "vb_time": "14:00",
+        "vb_hall": "Aksaray Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "14:00",
+          "vb_hall": "Aksaray Spor Salonu",
+          "details": "Saat Değişti (TVF: 17:00 / VB: 14:00)"
+        }
+      }
     },
     {
       "id": "sultanlar_m58_2964_2954",
@@ -4320,7 +7270,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_b_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_a_volleybox_name": "Zeren Spor Kulübü",
-      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul"
+      "takim_b_volleybox_name": "Eczacıbaşı Peron İstanbul",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406570",
+        "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-eczacbas-spor-kulubu-c406570",
+        "host_name": "Zeren Spor Kulübü",
+        "guest_name": "Eczacıbaşı Peron İstanbul",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-15",
+        "vb_time": "17:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "17:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": "Saat Değişti (TVF: 14:00 / VB: 17:00)"
+        }
+      }
     },
     {
       "id": "sultanlar_m59_2957_2953",
@@ -4349,7 +7321,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_a_volleybox_name": "Fenerbahçe Medicana",
-      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409770",
+        "url": "https://women.volleybox.net/tr/fenerbahce-nilufer-belediyespor-c409770",
+        "host_name": "Fenerbahçe Medicana",
+        "guest_name": "Nilüfer Belediyespor Eker",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-15",
+        "vb_time": "13:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "13:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m60_2956_2960",
@@ -4378,7 +7372,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_a_volleybox_name": "Beşiktaş",
-      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410237",
+        "url": "https://women.volleybox.net/tr/besiktas-afyon-belediye-yuntas-spor-kulubu-c410237",
+        "host_name": "Beşiktaş",
+        "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-15",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m61_2955_2963",
@@ -4407,7 +7423,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_a_volleybox_name": "VakıfBank",
-      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402022",
+        "url": "https://women.volleybox.net/tr/vakfbank-aras-kargo-spor-kulubu-c402022",
+        "host_name": "VakıfBank",
+        "guest_name": "Aras Kargo Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-15",
+        "vb_time": "14:00",
+        "vb_hall": "Vakıfbank Spor Sarayı",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "14:00",
+          "vb_hall": "Vakıfbank Spor Sarayı",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m62_2962_2966",
@@ -4436,7 +7474,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_a_volleybox_name": "Göztepe Yuppo",
-      "takim_b_volleybox_name": "Galatasaray Daikin"
+      "takim_b_volleybox_name": "Galatasaray Daikin",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410238",
+        "url": "https://women.volleybox.net/tr/goztepe-sk-galatasaray-c410238",
+        "host_name": "Göztepe Yuppo",
+        "guest_name": "Galatasaray Daikin",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-15",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m63_2958_2965",
@@ -4465,7 +7525,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-      "takim_b_volleybox_name": "Türk Hava Yolları SK"
+      "takim_b_volleybox_name": "Türk Hava Yolları SK",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410236",
+        "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-turk-hava-yollar-sk-c410236",
+        "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "guest_name": "Türk Hava Yolları SK",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-15",
+        "vb_time": "16:00",
+        "vb_hall": "Muradiye Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "16:00",
+          "vb_hall": "Muradiye Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m67_2954_2959",
@@ -4494,7 +7576,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_b_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-      "takim_b_volleybox_name": "Kuzeyboru"
+      "takim_b_volleybox_name": "Kuzeyboru",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406571",
+        "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-kuzeyboru-c406571",
+        "host_name": "Eczacıbaşı Peron İstanbul",
+        "guest_name": "Kuzeyboru",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-22",
+        "vb_time": "19:00",
+        "vb_hall": "Eczacıbaşı Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "19:00",
+          "vb_hall": "Eczacıbaşı Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-21 / VB: 2026-11-22) | Saat Değişti (TVF: 14:00 / VB: 19:00)"
+        }
+      }
     },
     {
       "id": "sultanlar_m70_2963_2957",
@@ -4523,7 +7627,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_b_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_a_volleybox_name": "Aras Kargo Spor Kulübü",
-      "takim_b_volleybox_name": "Fenerbahçe Medicana"
+      "takim_b_volleybox_name": "Fenerbahçe Medicana",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409771",
+        "url": "https://women.volleybox.net/tr/aras-kargo-spor-kulubu-fenerbahce-c409771",
+        "host_name": "Aras Kargo Spor Kulübü",
+        "guest_name": "Fenerbahçe Medicana",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-22",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": "Tarih Değişti (TVF: 2026-11-21 / VB: 2026-11-22) | Saat Değişti (TVF: 15:00 / VB: 16:00)"
+        }
+      }
     },
     {
       "id": "sultanlar_m64_2960_2962",
@@ -4552,7 +7678,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_b_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_a_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
-      "takim_b_volleybox_name": "Göztepe Yuppo"
+      "takim_b_volleybox_name": "Göztepe Yuppo",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410239",
+        "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-spor-kulubu-goztepe-sk-c410239",
+        "host_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "guest_name": "Göztepe Yuppo",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-22",
+        "vb_time": "15:00",
+        "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "15:00",
+          "vb_hall": "Prof. Dr. Veysel Eroğlu Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m65_2961_2955",
@@ -4581,7 +7729,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_a_volleybox_name": "İlbank",
-      "takim_b_volleybox_name": "VakıfBank"
+      "takim_b_volleybox_name": "VakıfBank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402023",
+        "url": "https://women.volleybox.net/tr/lbank-vakfbank-c402023",
+        "host_name": "İlbank",
+        "guest_name": "VakıfBank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-22",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m66_2953_2958",
@@ -4610,7 +7780,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_b_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_a_volleybox_name": "Nilüfer Belediyespor Eker",
-      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü"
+      "takim_b_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410240",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-manisa-buyuksehir-belediyespor-kulubu-c410240",
+        "host_name": "Nilüfer Belediyespor Eker",
+        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-22",
+        "vb_time": "16:00",
+        "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "16:00",
+          "vb_hall": "TVF Cengiz Göllü Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m68_2966_2964",
@@ -4639,7 +7831,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_b_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_a_volleybox_name": "Galatasaray Daikin",
-      "takim_b_volleybox_name": "Zeren Spor Kulübü"
+      "takim_b_volleybox_name": "Zeren Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410241",
+        "url": "https://women.volleybox.net/tr/galatasaray-zeren-spor-kulubu-c410241",
+        "host_name": "Galatasaray Daikin",
+        "guest_name": "Zeren Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-22",
+        "vb_time": "13:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "13:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m69_2965_2956",
@@ -4668,7 +7882,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_b_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_a_volleybox_name": "Türk Hava Yolları SK",
-      "takim_b_volleybox_name": "Beşiktaş"
+      "takim_b_volleybox_name": "Beşiktaş",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410242",
+        "url": "https://women.volleybox.net/tr/turk-hava-yollar-sk-besiktas-c410242",
+        "host_name": "Türk Hava Yolları SK",
+        "guest_name": "Beşiktaş",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-22",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-22",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m71_2959_2955",
@@ -4697,7 +7933,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
       "takim_b_volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
       "takim_a_volleybox_name": "Kuzeyboru",
-      "takim_b_volleybox_name": "VakıfBank"
+      "takim_b_volleybox_name": "VakıfBank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "402024",
+        "url": "https://women.volleybox.net/tr/kuzeyboru-vakfbank-c402024",
+        "host_name": "Kuzeyboru",
+        "guest_name": "VakıfBank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-28",
+        "vb_time": "14:00",
+        "vb_hall": "Aksaray Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "14:00",
+          "vb_hall": "Aksaray Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m72_2964_2960",
@@ -4726,7 +7984,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
       "takim_b_volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
       "takim_a_volleybox_name": "Zeren Spor Kulübü",
-      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü"
+      "takim_b_volleybox_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410245",
+        "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-afyon-belediye-yuntas-spor-kulubu-c410245",
+        "host_name": "Zeren Spor Kulübü",
+        "guest_name": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-29",
+        "vb_time": "14:00",
+        "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "14:00",
+          "vb_hall": "TVF Ziraat Bankkart Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m73_2954_2966",
@@ -4755,7 +8035,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
       "takim_b_volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
       "takim_a_volleybox_name": "Eczacıbaşı Peron İstanbul",
-      "takim_b_volleybox_name": "Galatasaray Daikin"
+      "takim_b_volleybox_name": "Galatasaray Daikin",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406573",
+        "url": "https://women.volleybox.net/tr/eczacbas-spor-kulubu-galatasaray-c406573",
+        "host_name": "Eczacıbaşı Peron İstanbul",
+        "guest_name": "Galatasaray Daikin",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-29",
+        "vb_time": "18:00",
+        "vb_hall": "Eczacıbaşı Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "18:00",
+          "vb_hall": "Eczacıbaşı Spor Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m74_2957_2961",
@@ -4784,7 +8086,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
       "takim_b_volleybox_url": "https://women.volleybox.net/lbank-t2495",
       "takim_a_volleybox_name": "Fenerbahçe Medicana",
-      "takim_b_volleybox_name": "İlbank"
+      "takim_b_volleybox_name": "İlbank",
+      "volleybox": {
+        "synced": true,
+        "match_id": "409772",
+        "url": "https://women.volleybox.net/tr/fenerbahce-lbank-c409772",
+        "host_name": "Fenerbahçe Medicana",
+        "guest_name": "İlbank",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-29",
+        "vb_time": "13:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "13:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m75_2956_2953",
@@ -4813,7 +8137,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/besiktas-t2041",
       "takim_b_volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
       "takim_a_volleybox_name": "Beşiktaş",
-      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker"
+      "takim_b_volleybox_name": "Nilüfer Belediyespor Eker",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410244",
+        "url": "https://women.volleybox.net/tr/besiktas-nilufer-belediyespor-c410244",
+        "host_name": "Beşiktaş",
+        "guest_name": "Nilüfer Belediyespor Eker",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-29",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Burhan Felek Voleybol Salonu",
+          "details": null
+        }
+      }
     },
     {
       "id": "sultanlar_m76_2962_2965",
@@ -4842,7 +8188,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
       "takim_b_volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
       "takim_a_volleybox_name": "Göztepe Yuppo",
-      "takim_b_volleybox_name": "Türk Hava Yolları SK"
+      "takim_b_volleybox_name": "Türk Hava Yolları SK",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410246",
+        "url": "https://women.volleybox.net/tr/goztepe-sk-turk-hava-yollar-sk-c410246",
+        "host_name": "Göztepe Yuppo",
+        "guest_name": "Türk Hava Yolları SK",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-29",
+        "vb_time": "19:00",
+        "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "19:00",
+          "vb_hall": "TVF Atatürk Voleybol Salonu Vestel Spor Kompleksi",
+          "details": "Saat Değişti (TVF: 17:00 / VB: 19:00)"
+        }
+      }
     },
     {
       "id": "sultanlar_m77_2958_2963",
@@ -4871,7 +8239,29 @@
       "takim_a_volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
       "takim_b_volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
       "takim_a_volleybox_name": "Manisa Büyükşehir Belediyespor Kulübü",
-      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü"
+      "takim_b_volleybox_name": "Aras Kargo Spor Kulübü",
+      "volleybox": {
+        "synced": true,
+        "match_id": "410243",
+        "url": "https://women.volleybox.net/tr/manisa-buyuksehir-belediyespor-kulubu-aras-kargo-spor-kulubu-c410243",
+        "host_name": "Manisa Büyükşehir Belediyespor Kulübü",
+        "guest_name": "Aras Kargo Spor Kulübü",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-29",
+        "vb_time": "13:00",
+        "vb_hall": "Muradiye Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-29",
+          "vb_time": "13:00",
+          "vb_hall": "Muradiye Spor Salonu",
+          "details": "Saat Değişti (TVF: 16:00 / VB: 13:00)"
+        }
+      }
     }
   ],
   "tum_takimlar": [

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:14:59.520738+03:00",
+  "updated_at": "2026-10-27T23:08:15.006116+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -137,23 +137,23 @@
       {
         "rank": 4,
         "team": "Soma Belediye Spor Kulübü U18",
-        "played": 3,
-        "won": 1,
+        "played": 4,
+        "won": 2,
         "lost": 2,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 7,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
         "team": "Soma İlçe Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -1072,11 +1072,15 @@
       "match_no": "11",
       "home_team": "Soma Belediye Spor Kulübü U18",
       "away_team": "Soma İlçe Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-12",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411822",
@@ -1136,5 +1140,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-27T17:23:35.290167"
+  "volleybox_sync_updated_at": "2026-10-27T23:15:16.546240"
 }

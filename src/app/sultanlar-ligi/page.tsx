@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 86400; // 24 hours ISR cache
+export const revalidate = 300;
 
 export default function SultanlarLigiPage() {
   const data = compactKadinlar2LigData(getSultanlarLigiData());

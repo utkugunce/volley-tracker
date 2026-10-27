@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:14:59.520738+03:00",
+  "updated_at": "2026-10-27T23:08:15.006116+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -48,6 +48,25 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
+        "team": "Eczacıbaşı U18",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 225,
+        "points_lost": 124,
+        "point_ratio": "1.815",
+        "form": [
+          "W",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Milan Atletik",
         "played": 3,
         "won": 3,
@@ -66,93 +85,79 @@
         ]
       },
       {
-        "rank": 2,
-        "team": "Eczacıbaşı U18",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 150,
-        "points_lost": 70,
-        "point_ratio": "2.143",
-        "form": [
-          "W",
-          "W"
-        ]
-      },
-      {
         "rank": 3,
         "team": "Beşiktaş U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 1,
-        "set_ratio": "6.000",
-        "points_won": 174,
-        "points_lost": 102,
-        "point_ratio": "1.706",
+        "set_ratio": "9.000",
+        "points_won": 249,
+        "points_lost": 147,
+        "point_ratio": "1.694",
         "form": [
+          "W",
           "W",
           "W"
         ]
       },
       {
         "rank": 4,
-        "team": "ES Voleybol U18",
-        "played": 2,
-        "won": 1,
+        "team": "Ümraniye Belediyesi Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 3,
-        "set_ratio": "1.333",
-        "points_won": 157,
-        "points_lost": 157,
-        "point_ratio": "1.000",
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "set_ratio": "1.500",
+        "points_won": 209,
+        "points_lost": 185,
+        "point_ratio": "1.130",
         "form": [
+          "L",
           "W",
-          "L"
+          "W"
         ]
       },
       {
         "rank": 5,
-        "team": "Yeşilyurt Spor Kulübü II",
-        "played": 2,
+        "team": "Beylikdüzü Voleybol 2021 U18",
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
-        "set_ratio": "0.750",
-        "points_won": 162,
-        "points_lost": 152,
-        "point_ratio": "1.066",
+        "sets_won": 4,
+        "sets_lost": 6,
+        "set_ratio": "0.667",
+        "points_won": 205,
+        "points_lost": 222,
+        "point_ratio": "0.923",
         "form": [
-          "W",
-          "L"
+          "L",
+          "L",
+          "W"
         ]
       },
       {
         "rank": 6,
-        "team": "Ümraniye Belediyesi Spor Kulübü U18",
-        "played": 2,
+        "team": "ES Voleybol U18",
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
-        "set_ratio": "0.750",
-        "points_won": 134,
-        "points_lost": 150,
-        "point_ratio": "0.893",
+        "sets_won": 4,
+        "sets_lost": 6,
+        "set_ratio": "0.667",
+        "points_won": 211,
+        "points_lost": 232,
+        "point_ratio": "0.909",
         "form": [
+          "W",
           "L",
-          "W"
+          "L"
         ]
       },
       {
@@ -176,18 +181,19 @@
       },
       {
         "rank": 8,
-        "team": "Beylikdüzü Voleybol 2021 U18",
-        "played": 2,
-        "won": 0,
+        "team": "Yeşilyurt Spor Kulübü II",
+        "played": 3,
+        "won": 1,
         "lost": 2,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 6,
-        "set_ratio": "0.167",
-        "points_won": 130,
-        "points_lost": 176,
-        "point_ratio": "0.739",
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
+        "set_ratio": "0.429",
+        "points_won": 207,
+        "points_lost": 227,
+        "point_ratio": "0.912",
         "form": [
+          "W",
           "L",
           "L"
         ]
@@ -195,17 +201,18 @@
       {
         "rank": 9,
         "team": "Bizimkent Voleybol Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
-        "set_ratio": "0.167",
-        "points_won": 119,
-        "points_lost": 172,
-        "point_ratio": "0.692",
+        "sets_lost": 9,
+        "set_ratio": "0.111",
+        "points_won": 165,
+        "points_lost": 247,
+        "point_ratio": "0.668",
         "form": [
+          "L",
           "L",
           "L"
         ]
@@ -213,17 +220,18 @@
       {
         "rank": 10,
         "team": "Pegasus Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "set_ratio": "MIN",
-        "points_won": 54,
-        "points_lost": 150,
-        "point_ratio": "0.360",
+        "points_won": 89,
+        "points_lost": 225,
+        "point_ratio": "0.396",
         "form": [
+          "L",
           "L",
           "L"
         ]
@@ -7598,11 +7606,15 @@
       "match_no": "12",
       "home_team": "Eczacıbaşı U18",
       "away_team": "ES Voleybol U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-20",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411779",
@@ -7639,11 +7651,15 @@
       "match_no": "13",
       "home_team": "Beşiktaş U18",
       "away_team": "Yeşilyurt Spor Kulübü II",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-16",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411780",
@@ -7680,11 +7696,15 @@
       "match_no": "14",
       "home_team": "Ümraniye Belediyesi Spor Kulübü U18",
       "away_team": "Pegasus Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-10",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411781",
@@ -7721,11 +7741,15 @@
       "match_no": "15",
       "home_team": "Bizimkent Voleybol Spor Kulübü U18",
       "away_team": "Beylikdüzü Voleybol 2021 U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "10-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411782",
@@ -8120,5 +8144,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-27T17:23:27.282566"
+  "volleybox_sync_updated_at": "2026-10-27T23:15:10.811986"
 }

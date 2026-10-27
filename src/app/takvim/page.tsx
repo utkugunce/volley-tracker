@@ -9,7 +9,7 @@ import { getKadinlar1LigData } from "@/utils/kadinlar1LigServer";
 import { getKadinlar2LigData } from "@/utils/kadinlar2LigServer";
 import type { Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 
-export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
+export const revalidate = 1800;
 
 export function generateMetadata(): Metadata {
   const title = "Voleybol Fikstür ve Maç Takvimi";

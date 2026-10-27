@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-27T17:14:59.520738+03:00",
+  "updated_at": "2026-10-27T23:08:15.006116+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 51,
+  "total_matches": 49,
   "source": "https://balikesir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -26,7 +26,6 @@
       "Burhaniye Atatürk Ss.",
       "Edremit Ss.",
       "Gönen Fahri Dilmaç Ss.",
-      "Havran Kocaseyit Ss.",
       "Kurtdereli Ss.",
       "R.Gencer Ss.",
       "Susurluk Nimet S O.O. Ss.",
@@ -174,23 +173,23 @@
       {
         "rank": 1,
         "team": "Balıkesir DSİ Spor U16",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Balıkesir EKA Spor Kulubü U16",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -241,6 +240,17 @@
       },
       {
         "rank": 2,
+        "team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Günyaka Spor U16",
         "played": 3,
         "won": 2,
@@ -248,17 +258,6 @@
         "points": 6,
         "sets_won": 6,
         "sets_lost": 4,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 4,
-        "sets_won": 5,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -274,7 +273,7 @@
       },
       {
         "rank": 5,
-        "team": "Balıkesir EKA Spor Kulubü - B U16",
+        "team": "TED Balıkesir Koleji SK U16",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -285,13 +284,13 @@
       },
       {
         "rank": 6,
-        "team": "TED Balıkesir Koleji SK U16",
-        "played": 2,
+        "team": "Balıkesir EKA Spor Kulubü - B U16",
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -445,34 +444,34 @@
       },
       {
         "rank": 2,
-        "team": "Bandırma Voleybol Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
         "team": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 7,
+        "points": 9,
+        "sets_won": 10,
         "sets_lost": 4,
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 3,
         "team": "Bandırma Bordo Spor Kulübü U16",
         "played": 4,
         "won": 2,
         "lost": 2,
         "points": 6,
         "sets_won": 8,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Bandırma Voleybol Spor Kulübü U16",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 6,
         "form": []
       },
@@ -780,11 +779,15 @@
       "match_no": "7",
       "home_team": "Balıkesir EKA Spor Kulubü U16",
       "away_team": "Balıkesir DSİ Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "12-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411627",
@@ -1226,11 +1229,15 @@
       "match_no": "8",
       "home_team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
       "away_team": "Balıkesir EKA Spor Kulubü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-20",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411630",
@@ -1964,48 +1971,7 @@
       }
     },
     {
-      "id": "balikesir-20261028-034",
-      "city": "Balıkesir",
-      "date": "2026-10-28",
-      "time": "20:30",
-      "hall": "Havran Kocaseyit Ss.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "D Grubu",
-      "match_no": "5",
-      "home_team": "Havran Belediyespor Kulübü U16",
-      "away_team": "Ayvalık Gelişim Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411635",
-        "url": "https://women.volleybox.net/tr/havran-belediyespor-kulubu-u16-ayvalk-gelisim-spor-kulubu-u16-c411635",
-        "host_name": "Havran Belediyespor Kulübü U16",
-        "guest_name": "Ayvalık Gelişim Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-28",
-        "vb_time": "20:30",
-        "vb_hall": "Havran Kocaseyit Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-28",
-          "vb_time": "20:30",
-          "vb_hall": "Havran Kocaseyit Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "balikesir-20261029-035",
+      "id": "balikesir-20261029-034",
       "city": "Balıkesir",
       "date": "2026-10-29",
       "time": "19:00",
@@ -2014,7 +1980,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "D Grubu",
-      "match_no": "6",
+      "match_no": "5",
       "home_team": "Ayvalıkspor - B U16",
       "away_team": "Burhaniye Belediye Spor Kulübü U16",
       "score": "- : -",
@@ -2046,7 +2012,7 @@
       }
     },
     {
-      "id": "balikesir-20261029-036",
+      "id": "balikesir-20261029-035",
       "city": "Balıkesir",
       "date": "2026-10-29",
       "time": "20:30",
@@ -2055,7 +2021,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "D Grubu",
-      "match_no": "7",
+      "match_no": "6",
       "home_team": "Ayvalıkgücü Belediye SK U16",
       "away_team": "Ayvalık Gelişim Spor Kulübü U16",
       "score": "- : -",
@@ -2087,48 +2053,7 @@
       }
     },
     {
-      "id": "balikesir-20261030-037",
-      "city": "Balıkesir",
-      "date": "2026-10-30",
-      "time": "20:30",
-      "hall": "Havran Kocaseyit Ss.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "D Grubu",
-      "match_no": "8",
-      "home_team": "Havran Belediyespor Kulübü U16",
-      "away_team": "Kuzey Ege Gelişim Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411638",
-        "url": "https://women.volleybox.net/tr/havran-belediyespor-kulubu-u16-kuzey-ege-gelisim-spor-kulubu-u16-c411638",
-        "host_name": "Havran Belediyespor Kulübü U16",
-        "guest_name": "Kuzey Ege Gelişim Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-30",
-        "vb_time": "20:30",
-        "vb_hall": "Havran Kocaseyit Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-30",
-          "vb_time": "20:30",
-          "vb_hall": "Havran Kocaseyit Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "balikesir-20261005-038",
+      "id": "balikesir-20261005-036",
       "city": "Balıkesir",
       "date": "2026-10-05",
       "time": "19:00",
@@ -2174,7 +2099,7 @@
       }
     },
     {
-      "id": "balikesir-20261005-039",
+      "id": "balikesir-20261005-037",
       "city": "Balıkesir",
       "date": "2026-10-05",
       "time": "20:30",
@@ -2219,7 +2144,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-040",
+      "id": "balikesir-20261007-038",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "19:00",
@@ -2265,7 +2190,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-041",
+      "id": "balikesir-20261007-039",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "20:30",
@@ -2310,7 +2235,7 @@
       }
     },
     {
-      "id": "balikesir-20261013-042",
+      "id": "balikesir-20261013-040",
       "city": "Balıkesir",
       "date": "2026-10-13",
       "time": "19:00",
@@ -2355,7 +2280,7 @@
       }
     },
     {
-      "id": "balikesir-20261014-043",
+      "id": "balikesir-20261014-041",
       "city": "Balıkesir",
       "date": "2026-10-14",
       "time": "19:00",
@@ -2400,7 +2325,7 @@
       }
     },
     {
-      "id": "balikesir-20261015-044",
+      "id": "balikesir-20261015-042",
       "city": "Balıkesir",
       "date": "2026-10-15",
       "time": "19:00",
@@ -2445,7 +2370,7 @@
       }
     },
     {
-      "id": "balikesir-20261019-045",
+      "id": "balikesir-20261019-043",
       "city": "Balıkesir",
       "date": "2026-10-19",
       "time": "19:00",
@@ -2490,7 +2415,7 @@
       }
     },
     {
-      "id": "balikesir-20261021-046",
+      "id": "balikesir-20261021-044",
       "city": "Balıkesir",
       "date": "2026-10-21",
       "time": "19:00",
@@ -2536,7 +2461,7 @@
       }
     },
     {
-      "id": "balikesir-20261022-047",
+      "id": "balikesir-20261022-045",
       "city": "Balıkesir",
       "date": "2026-10-22",
       "time": "19:00",
@@ -2581,7 +2506,7 @@
       }
     },
     {
-      "id": "balikesir-20261026-048",
+      "id": "balikesir-20261026-046",
       "city": "Balıkesir",
       "date": "2026-10-26",
       "time": "19:00",
@@ -2626,7 +2551,7 @@
       }
     },
     {
-      "id": "balikesir-20261027-049",
+      "id": "balikesir-20261027-047",
       "city": "Balıkesir",
       "date": "2026-10-27",
       "time": "19:00",
@@ -2638,11 +2563,15 @@
       "match_no": "12",
       "home_team": "Susurluk Gençlerbirliği Eğitim Spor Kulübü U16",
       "away_team": "Bandırma Voleybol Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "26-24",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411640",
@@ -2667,7 +2596,7 @@
       }
     },
     {
-      "id": "balikesir-20261029-050",
+      "id": "balikesir-20261029-048",
       "city": "Balıkesir",
       "date": "2026-10-29",
       "time": "19:00",
@@ -2708,7 +2637,7 @@
       }
     },
     {
-      "id": "balikesir-20261030-051",
+      "id": "balikesir-20261030-049",
       "city": "Balıkesir",
       "date": "2026-10-30",
       "time": "19:00",
@@ -2749,6 +2678,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 51,
-  "volleybox_sync_updated_at": "2026-10-27T17:23:28.853174"
+  "volleybox_synced_matches": 49,
+  "volleybox_sync_updated_at": "2026-10-27T23:15:12.320743"
 }

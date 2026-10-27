@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:14:59.520738+03:00",
+  "updated_at": "2026-10-27T23:08:15.006116+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -173,23 +173,23 @@
       {
         "rank": 2,
         "team": "Falcon Atletik Spor Kulübü U18",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 5,
-        "sets_won": 7,
-        "sets_lost": 5,
+        "points": 8,
+        "sets_won": 10,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
         "team": "Konya Armada Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
-        "sets_won": 5,
-        "sets_lost": 6,
+        "sets_won": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -1755,11 +1755,16 @@
       "match_no": "7",
       "home_team": "Konya Armada Spor Kulübü U18",
       "away_team": "Falcon Atletik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "25-12",
+        "19-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411814",
@@ -1826,5 +1831,5 @@
     }
   ],
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-10-27T17:23:35.139440"
+  "volleybox_sync_updated_at": "2026-10-27T23:15:16.466196"
 }

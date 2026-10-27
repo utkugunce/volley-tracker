@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
+export const revalidate = 300;
 
 export default function Kadinlar2LigPage() {
   // Grup fikstürleri tum_maclar'ın kopyası: ISR çıktısını küçültmek için indekslenmiş hâli gönderilir.

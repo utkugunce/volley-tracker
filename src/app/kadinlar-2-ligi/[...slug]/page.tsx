@@ -9,7 +9,7 @@ import {
   isValidKadinlar2LigSlug,
 } from "@/utils/kadinlar2LigRoutes";
 
-export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
+export const revalidate = 300;
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;

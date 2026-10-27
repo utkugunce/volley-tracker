@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T17:14:59.520738+03:00",
+  "updated_at": "2026-10-27T23:08:15.006116+03:00",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -41,7 +41,7 @@
       },
       {
         "rank": 2,
-        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
+        "team": "Kuzeyboru Maxipipe Spor Kulübü U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -52,6 +52,17 @@
       },
       {
         "rank": 3,
+        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Aksaray Eğitim Futbol Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -62,7 +73,18 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
+        "team": "Aksaray Yıldız Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Eskil Tuzgölü Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -73,7 +95,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 7,
         "team": "MBA Aksaray Anka Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -84,30 +106,8 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "Kuzeyboru Maxipipe Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Kuzeyboru U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 8,
-        "team": "Aksaray Yıldız Spor Kulübü U18",
+        "team": "Kuzeyboru U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -222,11 +222,15 @@
       "match_no": "3",
       "home_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
       "away_team": "Aksaray Yıldız Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-20",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411534",
@@ -254,7 +258,7 @@
       "id": "aksaray-20261028-004",
       "city": "Aksaray",
       "date": "2026-10-28",
-      "time": "17:00",
+      "time": "18:30",
       "hall": "Dağılgan S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -280,14 +284,14 @@
         "vb_time": "17:00",
         "vb_hall": "Dağılgan Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-10-28",
           "vb_time": "17:00",
           "vb_hall": "Dağılgan Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:30 / VB: 17:00)"
         }
       }
     },
@@ -457,5 +461,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-27T17:23:27.339547"
+  "volleybox_sync_updated_at": "2026-10-27T23:15:10.845701"
 }

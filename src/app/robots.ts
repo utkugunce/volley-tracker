@@ -1,10 +1,8 @@
 import { MetadataRoute } from "next";
 
 /**
- * Yalnızca model eğitimi veya SEO veri satışı için tarayan botlar engellenir. Her deploy ISR önbelleğini
- * sıfırladığı için bu botların 2400+ takım sayfasını yeniden taraması Vercel Fast Origin Transfer
- * kotasını tüketiyordu. Arama motorları ve yapay zekâ arama botları (Googlebot, Bingbot,
- * OAI-SearchBot, PerplexityBot vb.) etkilenmez.
+ * Yalnızca model eğitimi veya SEO veri satışı için tarayan botlar engellenir.
+ * Arama motorları ve yapay zekâ arama botları (Googlebot, Bingbot, OAI-SearchBot, PerplexityBot vb.) serbesttir.
  */
 const BLOCKED_BOTS = [
   "GPTBot",
@@ -31,8 +29,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: ["/", "/llms.txt"],
-        // /_next/image ve /_vercel/image: eski (7 Ekim öncesi) dizinlenmiş görsel URL'leri Image Optimization kotası tüketmesin.
-        disallow: ["/admin", "/api/", "/panel", "/giris", "/_next/image", "/_vercel/image"],
+        disallow: ["/admin", "/api/", "/panel", "/giris"],
       },
       {
         userAgent: BLOCKED_BOTS,

@@ -1,7 +1,7 @@
 import { DashboardClient } from "@/components/DashboardClient";
 import { getInitialHomeFixtures } from "@/utils/getInitialFixtures";
 
-export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
+export const revalidate = 900;
 
 export function generateMetadata(): import("next").Metadata {
   const title = "Altyapı Voleybol — TVF Fikstür ve Puan Durumu";

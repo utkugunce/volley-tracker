@@ -59,7 +59,7 @@ describe("/rehber Sayfa ve SEO Testleri", () => {
     });
 
     expect(meta.title).toBe("Voleybolda Puan Durumu ve Averaj Nasıl Hesaplanır?");
-    expect(meta.openGraph?.type).toBe("article");
+    expect((meta.openGraph as Record<string, unknown>)?.type).toBe("article");
   });
 
   it("generateMetadata bulunamayan slug için güvenli başlık döner", async () => {

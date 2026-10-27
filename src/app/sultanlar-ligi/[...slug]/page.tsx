@@ -9,7 +9,7 @@ import {
   isValidSultanlarLigiSlug,
 } from "@/utils/sultanlarLigiRoutes";
 
-export const revalidate = 86400; // 24 hours ISR cache
+export const revalidate = 300;
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;

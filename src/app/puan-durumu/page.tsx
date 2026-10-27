@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { DashboardClient } from "@/components/DashboardClient";
 import { getInitialFixtures } from "@/utils/getInitialFixtures";
 
-export const revalidate = 86400; // 24 hours ISR cache (Vercel kota)
+export const revalidate = 900;
 
 export function generateMetadata(): Metadata {
   const title = "TVF Canlı Puan Durumu ve Lig Sıralaması";
