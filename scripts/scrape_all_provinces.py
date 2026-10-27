@@ -251,15 +251,14 @@ def build_volleybox_name_resolver():
 
         if ct and c and (nn, c, ct) in lookup_exact: return lookup_exact[(nn, c, ct)]
         if ct and age and (nn, age, ct) in lookup_age_city: return lookup_age_city[(nn, age, ct)]
-        if c and (nn, c) in lookup_cat: return lookup_cat[(nn, c)]
-        if age and (nn, age) in lookup_age: return lookup_age[(nn, age)]
-
-        # Fallback: Yalnızca yaş kategorisi çelişmiyorsa kabul et (örn: U16 liginde U18 takım dönülmez)
         if ct and (nn, ct) in lookup_city:
             cand = lookup_city[(nn, ct)]
             cand_age = extract_age(cand)
             if not age or not cand_age or age == cand_age:
                 return cand
+        if c and (nn, c) in lookup_cat: return lookup_cat[(nn, c)]
+        if age and (nn, age) in lookup_age: return lookup_age[(nn, age)]
+
         if nn in lookup_general:
             cand = lookup_general[nn]
             cand_age = extract_age(cand)
@@ -449,6 +448,11 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
                 return "Merinos SK U18"
             if "zeugma" in rt:
                 return "Zeugma Spor Kulübü U18"
+        # Çorum Genç Kızlar Süper Lig (U18)
+        if ("corum" in ct or "çorum" in ct) and ("genc" in gs or "u18" in gs or "gk" in gs or not gs):
+            if any(k in rt for k in ["genclik", "kahramanmaras", "genclikspor"]):
+                return "Çorum Gençlik Spor Kulübü U18"
+
         return None
 
     # Standings üzerinden ham -> çözülmüş/ayrıştırılmış isim haritası

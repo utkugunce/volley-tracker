@@ -62,7 +62,7 @@
       },
       {
         "rank": 4,
-        "team": "Kahramanmaraş Gençlikspor U18",
+        "team": "Çorum Gençlik Spor Kulübü U18",
         "played": 3,
         "won": 0,
         "lost": 3,
@@ -166,7 +166,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "2",
-      "home_team": "Kahramanmaraş Gençlikspor U18",
+      "home_team": "Çorum Gençlik Spor Kulübü U18",
       "away_team": "Çorum Arena Spor U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -257,7 +257,7 @@
       "group": "A Grubu",
       "match_no": "4",
       "home_team": "Çorum Bahçelievler Spor Kulübü U18",
-      "away_team": "Kahramanmaraş Gençlikspor U18",
+      "away_team": "Çorum Gençlik Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -273,8 +273,8 @@
         "url": "https://women.volleybox.net/tr/corum-bahcelievler-spor-kulubu-u18-corum-genclik-spor-kulubu-u18-c411416",
         "host_name": "Çorum Bahçelievler Spor Kulübü U18",
         "guest_name": "Çorum Gençlik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-23",
         "vb_time": "19:30",
         "vb_hall": "Çorum Atatürk Spor Salonu",
@@ -302,7 +302,7 @@
       "group": "A Grubu",
       "match_no": "5",
       "home_team": "Çorum Efor Spor Kulübü U18",
-      "away_team": "Kahramanmaraş Gençlikspor U18",
+      "away_team": "Çorum Gençlik Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -509,5 +509,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-27T11:51:34.076298"
+  "volleybox_sync_updated_at": "2026-10-27T12:20:19.435443"
 }
