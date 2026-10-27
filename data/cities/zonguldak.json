@@ -210,18 +210,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413307",
+        "url": "https://women.volleybox.net/tr/karadeniz-eregli-voleybol-spor-kulubu-b-u18-kyal-spor-kulubu-u18-c413307",
+        "host_name": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
+        "guest_name": "KYAL Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "14:00",
+        "vb_hall": "Ereğli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "14:00",
+          "vb_hall": "Ereğli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -244,22 +251,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413308",
+        "url": "https://women.volleybox.net/tr/mec-spor-kulubu-u18-zonguldak-as-spor-kulubu-u18-c413308",
+        "host_name": "MEC Spor Kulübü U18",
+        "guest_name": "Zonguldak As Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "14:00",
+        "vb_hall": "Kozlu Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "14:00",
+          "vb_hall": "Kozlu Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-27T23:15:17.288383"
+  "volleybox_synced_matches": 2,
+  "volleybox_sync_updated_at": "2026-10-27T23:53:51.352491"
 }

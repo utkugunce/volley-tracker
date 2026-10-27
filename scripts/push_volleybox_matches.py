@@ -984,9 +984,11 @@ def fill_and_submit_match_on_page(
                 const terms = [];
                 if (p.hall) {
                     terms.push(p.hall);
-                    const words = p.hall.split(/\\s+/).filter(w => w.length >= 3);
-                    if (words.length > 0 && words[0] !== p.hall) {
-                        terms.push(words[0]);
+                    const cleanHall = p.hall.replace(/^Kdz\\.?\\s*/i, '').replace(/\\bSs\\b/i, '').trim();
+                    if (cleanHall && !terms.includes(cleanHall)) terms.push(cleanHall);
+                    const words = p.hall.split(/[\\s\\.]+/).filter(w => w.length >= 3);
+                    for (const w of words) {
+                        if (!terms.includes(w)) terms.push(w);
                     }
                 }
                 if (p.city && !terms.includes(p.city)) {
@@ -998,23 +1000,35 @@ def fill_and_submit_match_on_page(
                         let res = await window.jQuery.ajax({
                             type: 'POST',
                             url: (window.basedir || '/') + 'ajax/get_tags_ajax',
-                            data: { searched_items: 'arenas', term: t, continent: 0 },
+                            data: { searchedItems: 'arenas', limitSubitems: 6, continent: 0, ground: 'I', query: t },
                             dataType: 'json'
                         });
-                        if (!Array.isArray(res) || res.length === 0) {
-                            res = await window.jQuery.ajax({
-                                type: 'GET',
-                                url: (window.basedir || '/') + 'ajax/get_tags_ajax',
-                                data: { searched_items: 'arenas', term: t, continent: 0 },
-                                dataType: 'json'
-                            });
-                        }
                         if (Array.isArray(res)) {
                             for (const item of res) {
                                 const id = String(item.id || item.value || '');
-                                const label = String(item.label || item.name || item.value || '');
-                                if (id && label) {
+                                const label = String(item.search || item.label || item.name || '');
+                                if (id && id !== '-2' && label) {
                                     candidates.push({ id, label, value: id, source: 'tags_ajax' });
+                                }
+                            }
+                        }
+                    } catch(e) {}
+                }
+
+                if (candidates.length === 0) {
+                    try {
+                        let res = await window.jQuery.ajax({
+                            type: 'POST',
+                            url: (window.basedir || '/') + 'ajax/get_tags_ajax',
+                            data: { searchedItems: 'arenas', limitSubitems: 6, continent: 0, ground: 'I', query: 'Spor Salonu' },
+                            dataType: 'json'
+                        });
+                        if (Array.isArray(res)) {
+                            for (const item of res) {
+                                const id = String(item.id || item.value || '');
+                                const label = String(item.search || item.label || item.name || '');
+                                if (id && id !== '-2' && label) {
+                                    candidates.push({ id, label, value: id, source: 'fallback_ajax' });
                                 }
                             }
                         }
