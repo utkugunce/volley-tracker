@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T11:44:08.410558+03:00",
+  "updated_at": "2026-10-27T13:19:27.137313+03:00",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
@@ -250,8 +250,8 @@
         "url": "https://women.volleybox.net/tr/kahramanmaras-genclikspor-u18-elbistan-altnsk-spor-kulubu-u18-c408054",
         "host_name": "Kahramanmaraş Gençlikspor U18",
         "guest_name": "Elbistan Altınışık Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "12:00",
         "vb_hall": "Batıpark Spor Salonu",
@@ -296,8 +296,8 @@
         "url": "https://women.volleybox.net/tr/vesta-spor-kulubu-u18-kahramanmaras-buyuksehir-belediye-spor-kulubu-b-u18-c408052",
         "host_name": "Vesta Spor Kulübü U18",
         "guest_name": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "14:00",
         "vb_hall": "Batıpark Spor Salonu",
@@ -634,8 +634,8 @@
         "url": "https://women.volleybox.net/tr/vesta-spor-kulubu-b-u18-gazi-spor-kulubu-u18-c408063",
         "host_name": "Vesta Spor Kulübü - B U18",
         "guest_name": "Gazi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "10:00",
         "vb_hall": "Batıpark Spor Salonu",
@@ -821,5 +821,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-10-27T11:51:40.971203"
+  "volleybox_sync_updated_at": "2026-10-27T13:26:48.693075"
 }

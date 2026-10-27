@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T11:44:08.410558+03:00",
+  "updated_at": "2026-10-27T13:19:27.137313+03:00",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -147,8 +147,8 @@
         "url": "https://women.volleybox.net/tr/eskil-tuzgolu-spor-kulubu-u18-mba-aksaray-anka-spor-kulubu-b-u18-c411532",
         "host_name": "Eskil Tuzgölü Spor Kulübü U18",
         "guest_name": "MBA Aksaray Anka Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "18:30",
         "vb_hall": "Aksaray Merkez Spor Salonu",
@@ -192,8 +192,8 @@
         "url": "https://women.volleybox.net/tr/mba-aksaray-anka-spor-kulubu-c-u18-aksaray-egitim-futbol-spor-kulubu-u18-c411533",
         "host_name": "MBA Aksaray Anka Spor Kulübü - C U18",
         "guest_name": "Aksaray Eğitim Futbol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "20:00",
         "vb_hall": "Aksaray Merkez Spor Salonu",
@@ -457,5 +457,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-27T11:51:30.239302"
+  "volleybox_sync_updated_at": "2026-10-27T13:26:43.277045"
 }

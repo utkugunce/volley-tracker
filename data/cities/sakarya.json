@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T11:44:08.410558+03:00",
+  "updated_at": "2026-10-27T13:19:27.137313+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -434,16 +434,16 @@
         "has_score": false,
         "vb_date": "2026-10-27",
         "vb_time": "20:30",
-        "vb_hall": "Lütfü Yaman Spor Salonu",
+        "vb_hall": "Sapanca Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-10-27",
           "vb_time": "20:30",
-          "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": "Salon Değişti (TVF: Sapanca S.S / VB: Lütfü Yaman Spor Salonu)"
+          "vb_hall": "Sapanca Spor Salonu",
+          "details": null
         }
       }
     },
@@ -531,5 +531,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-27T11:51:43.444665"
+  "volleybox_sync_updated_at": "2026-10-27T13:26:50.046480"
 }

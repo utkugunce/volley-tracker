@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T11:44:08.410558+03:00",
+  "updated_at": "2026-10-27T13:19:27.137313+03:00",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
@@ -29,7 +29,7 @@
     "Genç Kızlar Süper Lig - Ereğli": [
       {
         "rank": 1,
-        "team": "Kdz Ereğli Voleybol Spor Kulübü A",
+        "team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -40,7 +40,7 @@
       },
       {
         "rank": 2,
-        "team": "Kdz Ereğli Voleybol Spor Kulübü B",
+        "team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -51,7 +51,7 @@
       },
       {
         "rank": 3,
-        "team": "MEHMET ALİ VE KADRİ YILMAZ AND.LİS.S.K",
+        "team": "KYAL Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -64,7 +64,7 @@
     "Genç Kızlar Süper Lig - Çaycuma": [
       {
         "rank": 1,
-        "team": "Çaycuma Spor Kulübü (A)",
+        "team": "Çaycuma Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -75,7 +75,7 @@
       },
       {
         "rank": 2,
-        "team": "DEVREK MSA VOLEYBOL SPOR KULÜBÜ (A)",
+        "team": "Devrek MSA Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -86,7 +86,7 @@
       },
       {
         "rank": 3,
-        "team": "TOGA SPOR KULÜBÜ",
+        "team": "TOGA Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -99,7 +99,7 @@
     "Genç Kızlar Süper Lig - Merkez": [
       {
         "rank": 1,
-        "team": "Zonguldak As Spor Kulübü Derneği",
+        "team": "Zonguldak As Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -110,7 +110,7 @@
       },
       {
         "rank": 2,
-        "team": "ZONGULDAK GSİM SPOR KULÜBÜ",
+        "team": "Zonguldak GSİM Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -121,7 +121,7 @@
       },
       {
         "rank": 3,
-        "team": "ZONGULDAK MEC SPOR KULÜBÜ",
+        "team": "MEC Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -134,7 +134,7 @@
     "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "MERKEZ TOPBAŞI SPOR KULÜBÜ",
+        "team": "Merkez Topbaşı Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -145,7 +145,7 @@
       },
       {
         "rank": 2,
-        "team": "ZONGULDAK AS SPOR KULÜBÜ DERNEĞİ",
+        "team": "Zonguldak As Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -156,7 +156,7 @@
       },
       {
         "rank": 3,
-        "team": "ZONGULDAK GSİM SPOR KULÜBÜ (A)",
+        "team": "Zonguldak GSİM Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -167,7 +167,7 @@
       },
       {
         "rank": 4,
-        "team": "Zonguldak Gsim Spor Kulübü (B)",
+        "team": "Zonguldak GSİM Spor Kulübü - B U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -178,7 +178,7 @@
       },
       {
         "rank": 5,
-        "team": "Zonguldak Mec Spor Kulübü (A)",
+        "team": "MEC Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -201,8 +201,8 @@
       "gender": "Kız",
       "group": "Ereğli",
       "match_no": "1",
-      "home_team": "Kdz Ereğli Voleybol Spor Kulübü B",
-      "away_team": "MEHMET ALİ VE KADRİ YILMAZ AND.LİS.S.K",
+      "home_team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
+      "away_team": "KYAL Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -226,5 +226,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-27T11:51:44.937423"
+  "volleybox_sync_updated_at": "2026-10-27T13:26:50.795938"
 }

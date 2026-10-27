@@ -22322,6 +22322,249 @@
         "Aksaray Yıldız Spor Kulübü U18",
         "Yıldız SK"
       ]
+    },
+    {
+      "internal_name": "Çaycuma Spor Kulübü (A)",
+      "matched_as": "Çaycuma Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/caycuma-spor-kulubu-u18-t48685",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Çaycuma Spor Kulübü (A)",
+        "Çaycuma Spor Kulübü",
+        "Çaycuma SK",
+        "Çaycuma Spor"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "DEVREK MSA VOLEYBOL SPOR KULÜBÜ (A)",
+      "matched_as": "Devrek MSA Voleybol Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/devrek-msa-voleybol-spor-kulubu-u18-t55750",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "DEVREK MSA VOLEYBOL SPOR KULÜBÜ (A)",
+        "Devrek MSA Voleybol Spor Kulübü (A)",
+        "Devrek MSA",
+        "Devrek MSA Voleybol"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Kdz Ereğli Voleybol Spor Kulübü A",
+      "matched_as": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/karadeniz-eregli-voleybol-spor-kulubu-u18-t48674",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Kdz Ereğli Voleybol Spor Kulübü A",
+        "Kdz. Ereğli Voleybol Spor Kulübü A",
+        "Kdz Ereğli Voleybol",
+        "Karadeniz Ereğli Voleybol",
+        "Kdz Ereğli Voleybol Spor Kulübü (A)"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Kdz Ereğli Voleybol Spor Kulübü B",
+      "matched_as": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
+      "volleybox_url": "https://women.volleybox.net/tr/karadeniz-eregli-voleybol-spor-kulubu-u18-t55752",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Kdz Ereğli Voleybol Spor Kulübü B",
+        "Kdz. Ereğli Voleybol Spor Kulübü B",
+        "Kdz Ereğli Voleybol Spor Kulübü (B)",
+        "Karadeniz Ereğli Voleybol - B"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "MEHMET ALİ VE KADRİ YILMAZ AND.LİS.S.K",
+      "matched_as": "KYAL Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/kyal-spor-kulubu-u18-t55753",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "MEHMET ALİ VE KADRİ YILMAZ AND.LİS.S.K",
+        "Mehmet Ali ve Kadri Yılmaz Anadolu Lisesi",
+        "KYAL Spor Kulübü",
+        "KYAL SK",
+        "KYAL"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "ZONGULDAK MEC SPOR KULÜBÜ",
+      "matched_as": "MEC Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/mec-spor-kulubu-u18-t55756",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "ZONGULDAK MEC SPOR KULÜBÜ",
+        "Zonguldak Mec Spor Kulübü",
+        "MEC Spor Kulübü",
+        "MEC SK",
+        "Mec Spor"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "TOGA SPOR KULÜBÜ",
+      "matched_as": "TOGA Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/toga-spor-kulubu-u18-t55751",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "TOGA SPOR KULÜBÜ",
+        "Toga Spor Kulübü",
+        "TOGA SK",
+        "Toga SK"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Zonguldak As Spor Kulübü Derneği",
+      "matched_as": "Zonguldak As Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/zonguldak-as-spor-kulubu-u18-t55754",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "Zonguldak As Spor Kulübü Derneği",
+        "Zonguldak As Spor",
+        "As Spor Kulübü",
+        "Zonguldak As SK"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "ZONGULDAK GSİM SPOR KULÜBÜ",
+      "matched_as": "Zonguldak GSİM Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/tr/zonguldak-gsm-spor-kulubu-u18-t55755",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "age_category": "U18",
+      "confidence": "verified",
+      "aliases": [
+        "ZONGULDAK GSİM SPOR KULÜBÜ",
+        "Zonguldak Gsim Spor Kulübü",
+        "Zonguldak GSİM",
+        "Zonguldak GSK",
+        "GSİM Spor Kulübü"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Zonguldak Mec Spor Kulübü (A)",
+      "matched_as": "MEC Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tr/mec-spor-kulubu-u16-t55761",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Zonguldak Mec Spor Kulübü (A)",
+        "Zonguldak Mec Spor Kulübü",
+        "MEC Spor Kulübü U16",
+        "MEC SK U16",
+        "MEC Spor"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "MERKEZ TOPBAŞI SPOR KULÜBÜ",
+      "matched_as": "Merkez Topbaşı Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tr/merkez-topbas-spor-kulubu-u16-t55757",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "MERKEZ TOPBAŞI SPOR KULÜBÜ",
+        "Merkez Topbaşı Spor Kulübü",
+        "Topbaşı SK",
+        "Merkez Topbaşı SK"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "ZONGULDAK AS SPOR KULÜBÜ DERNEĞ",
+      "matched_as": "Zonguldak As Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tr/zonguldak-as-spor-kulubu-u16-t55758",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "ZONGULDAK AS SPOR KULÜBÜ DERNEĞ",
+        "Zonguldak As Spor Kulübü Derneği",
+        "Zonguldak As Spor",
+        "As Spor U16"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "ZONGULDAK GSİM SPOR KULÜBÜ (A)",
+      "matched_as": "Zonguldak GSİM Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/tr/zonguldak-gsm-spor-kulubu-u16-t55759",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "ZONGULDAK GSİM SPOR KULÜBÜ (A)",
+        "Zonguldak Gsim Spor Kulübü (A)",
+        "Zonguldak GSİM (A)",
+        "Zonguldak GSİM U16"
+      ],
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Zonguldak Gsim Spor Kulübü (B)",
+      "matched_as": "Zonguldak GSİM Spor Kulübü - B U16",
+      "volleybox_url": "https://women.volleybox.net/tr/zonguldak-gsm-spor-kulubu-u16-t55760",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "age_category": "U16",
+      "confidence": "verified",
+      "aliases": [
+        "Zonguldak Gsim Spor Kulübü (B)",
+        "Zonguldak GSİM Spor Kulübü (B)",
+        "Zonguldak GSİM - B",
+        "Zonguldak GSİM - B U16"
+      ],
+      "verified_at": "2026-10-27"
     }
   ],
   "leagues": [
@@ -23280,6 +23523,28 @@
       "matched_as": "Türkiye Kadınlar Voleybol 1. Ligi 2026/27",
       "volleybox_url": "https://women.volleybox.net/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
       "age_category": "A Takım",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Genç Kızlar Süper Lig",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "matched_as": "Zonguldak Süper Ligi U18 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-zonguldak-super-ligi-u18-2026-27-o51856",
+      "age_category": "U18",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Yıldız Kızlar Süper Lig",
+      "city": "Zonguldak",
+      "city_slug": "zonguldak",
+      "matched_as": "Zonguldak Süper Ligi U16 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-zonguldak-super-ligi-u16-2026-27-o51857",
+      "age_category": "U16",
       "confidence": "verified",
       "season": "2026/27",
       "verified_at": "2026-10-27"

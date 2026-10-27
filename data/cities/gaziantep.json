@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T11:44:08.410558+03:00",
+  "updated_at": "2026-10-27T13:19:27.137313+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -511,18 +511,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413213",
+        "url": "https://women.volleybox.net/tr/gaziantep-buyuksehir-belediyespor-u18-adrenalin-rekor-spor-kulubu-u18-c413213",
+        "host_name": "Gaziantep Büyükşehir Belediyespor U18",
+        "guest_name": "Adrenalin Rekor Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-31",
+        "vb_time": "09:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "09:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -545,18 +552,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413214",
+        "url": "https://women.volleybox.net/tr/av-mahmut-dusun-mtal-u18-gaziantep-voleybol-gelisim-2023-spor-kulubu-u18-c413214",
+        "host_name": "Av. Mahmut Düşün MTAL U18",
+        "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-10-31",
+        "vb_time": "11:00",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "11:00",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -579,18 +593,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413215",
+        "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u18-adrenalin-rekor-spor-kulubu-u18-c413215",
+        "host_name": "Anadolugücü Spor Kulübü U18",
+        "guest_name": "Adrenalin Rekor Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-01",
+        "vb_time": "09:30",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "09:30",
+          "vb_hall": "Dumlupınar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -613,18 +634,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413216",
+        "url": "https://women.volleybox.net/tr/av-mahmut-dusun-mtal-u18-zeugma-spor-kulubu-u18-c413216",
+        "host_name": "Av. Mahmut Düşün MTAL U18",
+        "guest_name": "Zeugma Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-01",
+        "vb_time": "11:00",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "11:00",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "details": null
         }
       }
     },
@@ -944,6 +972,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-10-27T11:51:35.019367"
+  "volleybox_synced_matches": 17,
+  "volleybox_sync_updated_at": "2026-10-27T13:26:45.951827"
 }

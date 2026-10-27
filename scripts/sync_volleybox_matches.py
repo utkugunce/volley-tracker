@@ -446,6 +446,18 @@ def normalize_hall_name(hall: str) -> str:
     return " ".join(s.split())
 
 
+HALL_ALIASES = {
+    "soa": "sehit osman altinkuyu",
+    "s o a": "sehit osman altinkuyu",
+    "sehit osman altinkuyu": "sehit osman altinkuyu",
+    "sh t solak": "sehit turgut solak",
+    "sht solak": "sehit turgut solak",
+    "sehit turgut solak": "sehit turgut solak",
+    "h gemici": "hasan gemici",
+    "hasan gemici": "hasan gemici",
+}
+
+
 def halls_match(tvf_hall: str, vb_hall: str) -> bool:
     if not tvf_hall or not vb_hall:
         return True
@@ -455,27 +467,43 @@ def halls_match(tvf_hall: str, vb_hall: str) -> bool:
     if not t_clean or not v_clean:
         return True
 
-    # 1. Tam veya kompakt (boşluksuz) eşitlik (örn: "hasandogan" == "hasan dogan")
+    # 0. Bilinen salon takma adları / kısaltmaları
     t_comp = t_clean.replace(" ", "")
     v_comp = v_clean.replace(" ", "")
+    t_alias = HALL_ALIASES.get(t_comp) or HALL_ALIASES.get(t_clean) or t_clean
+    v_alias = HALL_ALIASES.get(v_comp) or HALL_ALIASES.get(v_clean) or v_clean
+    if t_alias == v_alias:
+        return True
+
+    # 1. Tam veya kompakt (boşluksuz) eşitlik (örn: "hasandogan" == "hasan dogan")
     if t_comp == v_comp:
         return True
 
-    # 2. Kompakt alt dize kontrolü (en az 5 karakter)
+    # 2. Akronim / Baş harf eşleşmesi (örn: "soa" -> "sehit osman altinkuyu")
+    t_words = [w for w in t_clean.split() if w]
+    v_words = [w for w in v_clean.split() if w]
+    t_initials = "".join(w[0] for w in t_words)
+    v_initials = "".join(w[0] for w in v_words)
+    if len(t_comp) >= 2 and (t_comp == v_initials or t_initials == v_comp):
+        return True
+    if len(v_comp) >= 2 and (v_comp == t_initials or v_initials == t_comp):
+        return True
+
+    # 3. Kompakt alt dize kontrolü (en az 5 karakter)
     if len(t_comp) >= 5 and len(v_comp) >= 5:
         if t_comp in v_comp or v_comp in t_comp:
             return True
 
-    # 3. Kelime bazlı çift yönlü kontrol
-    t_words = [w for w in t_clean.split() if len(w) >= 4] or [w for w in t_clean.split() if len(w) >= 3]
-    v_words = [w for w in v_clean.split() if len(w) >= 4] or [w for w in v_clean.split() if len(w) >= 3]
+    # 4. Kelime bazlı çift yönlü kontrol
+    t_w = [w for w in t_words if len(w) >= 4] or [w for w in t_words if len(w) >= 3]
+    v_w = [w for w in v_words if len(w) >= 4] or [w for w in v_words if len(w) >= 3]
 
-    if any(w in v_clean for w in t_words):
+    if any(w in v_clean for w in t_w):
         return True
-    if any(w in t_clean for w in v_words):
+    if any(w in t_clean for w in v_w):
         return True
 
-    # 4. Parçalı kelimelerin birleşik kontrolü (örn. 'hasan' ve 'dogan' -> 'hasandogan')
+    # 5. Parçalı kelimelerin birleşik kontrolü (örn. 'hasan' ve 'dogan' -> 'hasandogan')
     v_key_words = [w for w in v_words if len(w) >= 4]
     if v_key_words and all(w in t_comp for w in v_key_words):
         return True

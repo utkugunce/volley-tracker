@@ -310,6 +310,10 @@ def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str 
     if "istanbul" in c_clean and "basaksehir" in t_clean and ("belediye" in t_clean or "bld" in t_clean) and "4. bolge" in g_clean:
         return True
 
+    # Ankara U18 (Genç) Süper Lig: Hakan Akışık
+    if "ankara" in c_clean and "akisik" in t_clean and "genc kizlar super" in g_clean:
+        return True
+
     return False
 
 def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
@@ -452,6 +456,40 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         if ("corum" in ct or "çorum" in ct) and ("genc" in gs or "u18" in gs or "gk" in gs or not gs):
             if any(k in rt for k in ["genclik", "kahramanmaras", "genclikspor"]):
                 return "Çorum Gençlik Spor Kulübü U18"
+
+        # Zonguldak Genç Kızlar Süper Lig (U18)
+        if "zonguldak" in ct and ("genc" in gs or "u18" in gs or "gk" in gs or not gs):
+            if "eregli" in rt:
+                if bool(re.search(r"[\(\s\-]b([\s\)]|$)", rt)):
+                    return "Karadeniz Ereğli Voleybol Spor Kulübü - B U18"
+                return "Karadeniz Ereğli Voleybol Spor Kulübü U18"
+            if "devrek" in rt or "msa" in rt:
+                return "Devrek MSA Voleybol Spor Kulübü U18"
+            if "caycuma" in rt:
+                return "Çaycuma Spor Kulübü U18"
+            if "toga" in rt:
+                return "TOGA Spor Kulübü U18"
+            if "kadri" in rt or "yilmaz" in rt or "kyal" in rt:
+                return "KYAL Spor Kulübü U18"
+            if "mec" in rt:
+                return "MEC Spor Kulübü U18"
+            if "as spor" in rt:
+                return "Zonguldak As Spor Kulübü U18"
+            if "gsim" in rt:
+                return "Zonguldak GSİM Spor Kulübü U18"
+
+        # Zonguldak Yıldız Kızlar Süper Lig (U16)
+        if "zonguldak" in ct and ("yildiz" in gs or "u16" in gs or "yk" in gs):
+            if "topbasi" in rt:
+                return "Merkez Topbaşı Spor Kulübü U16"
+            if "as spor" in rt:
+                return "Zonguldak As Spor Kulübü U16"
+            if "mec" in rt:
+                return "MEC Spor Kulübü U16"
+            if "gsim" in rt:
+                if bool(re.search(r"[\(\s\-]b([\s\)]|$)", rt)):
+                    return "Zonguldak GSİM Spor Kulübü - B U16"
+                return "Zonguldak GSİM Spor Kulübü U16"
 
         return None
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T11:44:08.410558+03:00",
+  "updated_at": "2026-10-27T13:19:27.137313+03:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -1180,8 +1180,8 @@
         "url": "https://women.volleybox.net/tr/fethiye-anka-spor-u18-fethiye-voleybol-spor-kulubu-u18-c411835",
         "host_name": "Fethiye Anka Spor U18",
         "guest_name": "Fethiye Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-25",
         "vb_time": "12:30",
         "vb_hall": "Fethiye Eski Spor Salonu",
@@ -1515,5 +1515,5 @@
     }
   ],
   "volleybox_synced_matches": 23,
-  "volleybox_sync_updated_at": "2026-10-27T11:51:43.360142"
+  "volleybox_sync_updated_at": "2026-10-27T13:26:49.990069"
 }
