@@ -41,6 +41,7 @@ import random
 import shutil
 import subprocess
 import argparse
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 
@@ -72,6 +73,29 @@ AUTH_STATE_FILE = DATA_DIR / ".volleybox_auth.json"
 BROWSER_PROFILE_DIR = DATA_DIR / ".volleybox_browser_profile"
 LIVE_SCREENSHOT_FILE = DATA_DIR / ".volleybox_bot_live.png"
 LIVE_STATUS_FILE = DATA_DIR / ".volleybox_bot_status.json"
+
+
+def load_env_files():
+    """Projeye ait .env.local ve .env dosyalarını okuyup os.environ'a yükler."""
+    project_root = DATA_DIR.parent
+    for name in [".env.local", ".env"]:
+        p = project_root / name
+        if p.exists():
+            try:
+                for line in p.read_text(encoding="utf-8").splitlines():
+                    line = line.strip()
+                    if not line or line.startswith("#") or "=" not in line:
+                        continue
+                    k, v = line.split("=", 1)
+                    k = k.strip()
+                    v = v.strip().strip("'\"")
+                    if k and k not in os.environ:
+                        os.environ[k] = v
+            except Exception:
+                pass
+
+
+load_env_files()
 
 
 def log_step(msg: str):
@@ -182,25 +206,55 @@ def try_env_credentials_login(page, context) -> bool:
         save_live_screenshot(page)
         time.sleep(0.5)
 
-        for btn_sel in [
-            "button[type='submit']",
-            "input[type='submit']",
-            "form button",
-            "form input[type='submit']",
-        ]:
-            btn = page.locator(btn_sel)
-            if btn.count() > 0 and btn.first.is_visible():
-                btn.first.click()
-                break
+        # 1. Parola alanında Enter'a bas
+        if pwd_loc.count() > 0:
+            try:
+                pwd_loc.first.press("Enter")
+            except Exception:
+                pass
+
+        # 2. Parola kutusunun altındaki 'Giriş' butonuna tıkla (navbar linkini atlamak için Y pozisyonu kontrol edilir)
+        page.evaluate("""() => {
+            const pwd = document.querySelector('input[type="password"]');
+            if (!pwd) return;
+            const pwdRect = pwd.getBoundingClientRect();
+            const parent = pwd.closest('form') || pwd.parentElement?.parentElement;
+
+            const formBtn = parent ? parent.querySelector('button, input[type="submit"], [type="submit"], a.btn, .btn') : null;
+            if (formBtn) {
+                formBtn.click();
+                return;
+            }
+
+            const belowBtn = Array.from(document.querySelectorAll('button, a, div[role="button"]')).find(el => {
+                const rect = el.getBoundingClientRect();
+                return rect.top > pwdRect.top && (el.textContent || '').toLowerCase().includes('giriş');
+            });
+            if (belowBtn) {
+                belowBtn.click();
+            }
+        }""")
+
         log_step("🚀 Giriş formu gönderildi, yanıt kontrol ediliyor...")
-        time.sleep(3.0)
+        time.sleep(4.0)
         save_live_screenshot(page)
 
-        uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
-        if uid and uid > 0:
-            context.storage_state(path=str(AUTH_STATE_FILE))
-            log_step(f"🎉 Giriş başarılı! (Volleybox userId: {uid}) Oturum kaydedildi.")
-            return True
+        for _ in range(10):
+            try:
+                uid = page.evaluate("""() => {
+                    if (typeof window.userId !== 'undefined' && Number(window.userId) > 0) return Number(window.userId);
+                    const logout = document.querySelector('a[href*="logout"], a[href*="/logout"]');
+                    if (logout) return 1;
+                    if (!window.location.pathname.includes('/login') && !document.querySelector('input[type="password"]')) return 1;
+                    return 0;
+                }""")
+                if uid and uid > 0:
+                    context.storage_state(path=str(AUTH_STATE_FILE))
+                    log_step(f"🎉 Giriş başarılı! (Volleybox userId: {uid}) Oturum kaydedildi.")
+                    return True
+            except Exception:
+                pass
+            time.sleep(1.0)
     except Exception as e:
         log_step(f"⚠️ Otomatik giriş adımı notu: {e}")
     return False
@@ -245,6 +299,15 @@ def parse_match_sets(m: Dict[str, Any]) -> Tuple[int, int]:
             return hi, ai
 
     return 0, 0
+
+
+def is_past_unscored_match(m_date: str, h_sets: int, a_sets: int, forfeit: bool) -> bool:
+    """
+    Volleybox geçmiş maçların skorsuz eklenmesine izin vermez.
+    Maç tarihi geçmişte ve herhangi bir skor/hükmen bilgisi yoksa True döner.
+    """
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    return m_date < today_str and h_sets == 0 and a_sets == 0 and not forfeit
 
 
 def build_team_alias_map(mappings_data: Dict[str, Any]) -> Dict[str, set]:
@@ -366,6 +429,11 @@ def collect_unsynced_matches(
                 continue
 
             h_sets, a_sets = parse_match_sets(m)
+            is_forfeit = is_forfeit_match(m)
+            if is_past_unscored_match(m_date, h_sets, a_sets, is_forfeit):
+                # Volleybox geçmişte oynanan maçların skorsuz girilmesine izin vermez
+                continue
+
             item = {
                 "id": m.get("id"),
                 "city": city_name,
@@ -380,7 +448,7 @@ def collect_unsynced_matches(
                 "date": m_date,
                 "time": m.get("time") if m.get("time") and m.get("time") != "--:--" else "",
                 "hall": m.get("hall") if m.get("hall") and m.get("hall") not in ("TBD", "-") else "",
-                "forfeit": is_forfeit_match(m),
+                "forfeit": is_forfeit,
                 "raw_match": m,
             }
             by_tournament.setdefault(t_url, []).append(item)
@@ -416,6 +484,11 @@ def collect_unsynced_matches(
             if not re.match(r"^\d{4}-\d{2}-\d{2}$", d_str):
                 continue
             h_sets, a_sets = parse_match_sets(m)
+            is_forfeit = is_forfeit_match(m)
+            if is_past_unscored_match(d_str, h_sets, a_sets, is_forfeit):
+                # Volleybox geçmişte oynanan maçların skorsuz girilmesine izin vermez
+                continue
+
             item = {
                 "id": m.get("id"),
                 "city": "Türkiye",
@@ -430,7 +503,7 @@ def collect_unsynced_matches(
                 "date": d_str,
                 "time": m.get("saat") if m.get("saat") and m.get("saat") != "--:--" else "",
                 "hall": m.get("salon") if m.get("salon") and m.get("salon") not in ("TBD", "-") else "",
-                "forfeit": is_forfeit_match(m),
+                "forfeit": is_forfeit,
                 "raw_match": {
                     "id": m.get("id"),
                     "home_team": m.get("takim_a", ""),
@@ -606,6 +679,14 @@ def fill_and_submit_match_on_page(
     Açık olan Volleybox turnuva /matches sayfasında '+ Ekle' formunu açar,
     görseldeki alanları doldurur ve gönderir.
     """
+    if is_past_unscored_match(
+        match_item["date"],
+        match_item.get("home_sets", 0),
+        match_item.get("away_sets", 0),
+        match_item.get("forfeit", False),
+    ):
+        return False, f"Volleybox geçmiş maçların skorsuz eklenmesine izin vermez ({match_item['date']})"
+
     # 1. Form görünür değilse '+ Ekle' (#add-match-trigger) butonuna tıkla
     form_visible = page.evaluate(
         """() => {
