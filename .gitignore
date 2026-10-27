@@ -65,5 +65,7 @@ Thumbs.db
 
 data/raw/
 data/.volleybox_names_cache.json
+data/.volleybox_auth.json
+data/.volleybox_browser_profile/
 .vercel
 scratch/
