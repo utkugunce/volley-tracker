@@ -24,7 +24,7 @@ const mockGroups: Kadinlar2LigGroup[] = [
 ];
 
 describe("Kadinlar2LigSidebar Component (Stage 2 Integration)", () => {
-  it("renders header with total match count and title", () => {
+  it("renders header with total team count and title", () => {
     render(
       <Kadinlar2LigSidebar
         groups={mockGroups}
@@ -36,9 +36,9 @@ describe("Kadinlar2LigSidebar Component (Stage 2 Integration)", () => {
       />
     );
 
-    expect(screen.getByText("Kadınlar 2. Lig")).toBeDefined();
-    expect(screen.getByText("16 Grup Hiyerarşisi")).toBeDefined();
-    expect(screen.getByText("111 Maç")).toBeDefined();
+    expect(screen.getByText("Lig Ağacı")).toBeDefined();
+    expect(screen.getByText("Uzman Posta Kadınlar 2. Ligi")).toBeDefined();
+    expect(screen.getByText("22 Takım")).toBeDefined();
   });
 
   it("renders bridge navigation link to TVF Altyapı Ligleri (81 İl)", () => {
@@ -58,8 +58,7 @@ describe("Kadinlar2LigSidebar Component (Stage 2 Integration)", () => {
     expect(altyapiLink.getAttribute("href")).toBe("/");
   });
 
-  it("triggers onSelectTab when quick access items are clicked", () => {
-    const handleSelectTab = vi.fn();
+  it("renders bridge navigation links to Sultanlar and 1. Lig", () => {
     render(
       <Kadinlar2LigSidebar
         groups={mockGroups}
@@ -67,20 +66,20 @@ describe("Kadinlar2LigSidebar Component (Stage 2 Integration)", () => {
         activeTab="standings"
         favoritesCount={0}
         onSelectGroup={vi.fn()}
-        onSelectTab={handleSelectTab}
+        onSelectTab={vi.fn()}
       />
     );
 
-    const leadersBtn = screen.getByRole("button", { name: /16 Grup Durumu/i });
-    fireEvent.click(leadersBtn);
-    expect(handleSelectTab).toHaveBeenCalledWith("leaders");
+    const sultanlarLink = screen.getByRole("link", { name: /Vodafone Sultanlar Ligi/i });
+    expect(sultanlarLink).toBeDefined();
+    expect(sultanlarLink.getAttribute("href")).toBe("/sultanlar-ligi");
 
-    const teamsBtn = screen.getByRole("button", { name: /Kulüpler/i });
-    fireEvent.click(teamsBtn);
-    expect(handleSelectTab).toHaveBeenCalledWith("teams");
+    const lig1Link = screen.getByRole("link", { name: /KFC Kadınlar 1. Ligi/i });
+    expect(lig1Link).toBeDefined();
+    expect(lig1Link.getAttribute("href")).toBe("/kadinlar-1-ligi");
   });
 
-  it("triggers onSelectGroup and onSelectTab when a group button is clicked", () => {
+  it("triggers onSelectGroup when a group button is clicked", () => {
     const handleSelectGroup = vi.fn();
     const handleSelectTab = vi.fn();
 
@@ -88,7 +87,7 @@ describe("Kadinlar2LigSidebar Component (Stage 2 Integration)", () => {
       <Kadinlar2LigSidebar
         groups={mockGroups}
         selectedGroup={1}
-        activeTab="fixtures"
+        activeTab="home"
         favoritesCount={1}
         onSelectGroup={handleSelectGroup}
         onSelectTab={handleSelectTab}
@@ -100,5 +99,26 @@ describe("Kadinlar2LigSidebar Component (Stage 2 Integration)", () => {
 
     expect(handleSelectGroup).toHaveBeenCalledWith(2);
     expect(handleSelectTab).toHaveBeenCalledWith("standings");
+  });
+
+  it("calls onToggleCollapse when collapse button is clicked", () => {
+    const handleToggleCollapse = vi.fn();
+
+    render(
+      <Kadinlar2LigSidebar
+        groups={mockGroups}
+        selectedGroup={1}
+        activeTab="standings"
+        favoritesCount={1}
+        onSelectGroup={vi.fn()}
+        onSelectTab={vi.fn()}
+        onToggleCollapse={handleToggleCollapse}
+      />
+    );
+
+    const collapseBtn = screen.getByRole("button", { name: /Lig Ağacını Daralt/i });
+    fireEvent.click(collapseBtn);
+
+    expect(handleToggleCollapse).toHaveBeenCalledTimes(1);
   });
 });

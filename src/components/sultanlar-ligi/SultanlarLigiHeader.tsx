@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   ExternalLink,
   Search,
   Star,
   Printer,
+  Trophy,
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
@@ -48,15 +50,21 @@ export const SultanlarLigiHeader: React.FC<SultanlarLigiHeaderProps> = ({
 
   return (
     <header className="bg-canvas text-white sticky top-0 z-30 border-b border-line/70 pt-[env(safe-area-inset-top,0px)]">
-      {/* 1. Üst Global Bar: Marka + Segmented League Switcher + Sağ Kontroller */}
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-line/50 gap-2">
-        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+      {/* 1. Üst Global Bar: Marka + Segmented League Switcher + Lig Rozeti + Sağ Kontroller */}
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap min-[1200px]:flex-nowrap items-center justify-between border-b border-line/50 gap-x-2.5 gap-y-1.5">
+        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap min-[1200px]:flex-nowrap min-[1200px]:min-w-0 min-[1200px]:[&>*:not(.hdr-tagline)]:shrink-0">
           <BrandLogo onClick={() => onSelectTab("home")} />
           <LeagueSwitcher activeLeague="sultanlar" />
+
+          {/* Lig Bilgi Rozeti */}
+          <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface text-xs font-semibold text-white border border-line/60">
+            <Trophy size={13} className="text-amber-400" />
+            <span>14 Takım • Tek Grup</span>
+          </div>
         </div>
 
         {/* Sağ Taraf: Arama, Favoriler, Kaynaklar, Son Çekim, Ayarlar, Yazdır */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 ml-auto min-w-0">
           {onOpenSearch && (
             <button
               type="button"
@@ -188,48 +196,25 @@ export const SultanlarLigiHeader: React.FC<SultanlarLigiHeaderProps> = ({
         </div>
       </div>
 
-      {/* 2. Alt Sekme Çubuğu (Navigation Tabs) */}
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between gap-3 overflow-x-auto no-scrollbar">
-        <nav className="flex items-center gap-1 sm:gap-1.5 shrink-0" aria-label="Sultanlar Ligi Sekmeleri">
+      {/* 2. ANA SEKMELER: ÇERÇEVESİZ, DÜŞÜK GÜRÜLTÜLÜ FOTMOB / APPLE SPORTS TAB ŞERİDİ */}
+      <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center justify-between gap-2">
+        <nav
+          aria-label="Sultanlar Ligi Sekmeleri"
+          className="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-semibold overflow-x-auto no-scrollbar"
+        >
           <button
             type="button"
             onClick={() => {
               triggerHaptic();
               onSelectTab("home");
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "home"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
+                ? "border-primary text-white"
+                : "border-transparent text-ink-2 hover:text-white"
             }`}
           >
-            <span>Genel Bakış</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => {
-              triggerHaptic();
-              onSelectTab("today");
-            }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
-              activeTab === "today"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
-            }`}
-          >
-            <span>Günün Maçları</span>
-            {todayMatchesCount > 0 && (
-              <span
-                className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold ${
-                  activeTab === "today"
-                    ? "bg-black/20 text-white"
-                    : "bg-emerald-500/20 text-emerald-400"
-                }`}
-              >
-                {todayMatchesCount}
-              </span>
-            )}
+            <span>ANASAYFA</span>
           </button>
 
           <button
@@ -238,22 +223,36 @@ export const SultanlarLigiHeader: React.FC<SultanlarLigiHeaderProps> = ({
               triggerHaptic();
               onSelectTab("results");
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "results"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
+                ? "border-primary text-white"
+                : "border-transparent text-ink-2 hover:text-white"
             }`}
           >
-            <span>Sonuçlar</span>
+            <span>SONUÇLAR</span>
             {resultsCount > 0 && (
-              <span
-                className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold ${
-                  activeTab === "results"
-                    ? "bg-black/20 text-white"
-                    : "bg-surface-raised text-ink-3"
-                }`}
-              >
+              <span className="text-[10px] font-display font-medium tabular-nums text-ink-3">
                 {resultsCount}
+              </span>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              triggerHaptic();
+              onSelectTab("today");
+            }}
+            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              activeTab === "today"
+                ? "border-primary text-white"
+                : "border-transparent text-ink-2 hover:text-white"
+            }`}
+          >
+            <span>GÜNÜN MAÇLARI</span>
+            {todayMatchesCount > 0 && (
+              <span className="text-[10px] text-ink-3 font-display font-medium tabular-nums">
+                {todayMatchesCount}
               </span>
             )}
           </button>
@@ -264,20 +263,14 @@ export const SultanlarLigiHeader: React.FC<SultanlarLigiHeaderProps> = ({
               triggerHaptic();
               onSelectTab("fixtures");
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "fixtures"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
+                ? "border-primary text-white"
+                : "border-transparent text-ink-2 hover:text-white"
             }`}
           >
-            <span>Fikstür</span>
-            <span
-              className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold ${
-                activeTab === "fixtures"
-                  ? "bg-black/20 text-white"
-                  : "bg-surface-raised text-ink-3"
-              }`}
-            >
+            <span>FİKSTÜR</span>
+            <span className="text-[10px] text-ink-3 font-display font-medium tabular-nums">
               {metadata?.toplam_mac_sayisi || 77}
             </span>
           </button>
@@ -288,52 +281,13 @@ export const SultanlarLigiHeader: React.FC<SultanlarLigiHeaderProps> = ({
               triggerHaptic();
               onSelectTab("standings");
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "standings"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
+                ? "border-primary text-white"
+                : "border-transparent text-ink-2 hover:text-white"
             }`}
           >
-            <span>Puan Durumu</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => {
-              triggerHaptic();
-              onSelectTab("teams");
-            }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
-              activeTab === "teams"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
-            }`}
-          >
-            <span>Kulüpler</span>
-            <span
-              className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold ${
-                activeTab === "teams"
-                  ? "bg-black/20 text-white"
-                  : "bg-surface-raised text-ink-3"
-              }`}
-            >
-              {metadata?.toplam_takim_sayisi || 14}
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => {
-              triggerHaptic();
-              onSelectTab("karsilastir");
-            }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
-              activeTab === "karsilastir"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
-            }`}
-          >
-            <span>Karşılaştır</span>
+            <span>PUAN DURUMU</span>
           </button>
 
           <button
@@ -342,26 +296,42 @@ export const SultanlarLigiHeader: React.FC<SultanlarLigiHeaderProps> = ({
               triggerHaptic();
               onSelectTab("statu");
             }}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "statu"
-                ? "bg-primary text-primary-fg shadow-xs"
-                : "text-ink-2 hover:text-white hover:bg-surface"
+                ? "border-primary text-white"
+                : "border-transparent text-ink-2 hover:text-white"
             }`}
           >
-            <span>Statü</span>
+            <span>STATÜ</span>
           </button>
+
+          <Link
+            href="/takvim"
+            prefetch={false}
+            className="flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 border-transparent text-ink-2 hover:text-white transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          >
+            <span>TAKVİM</span>
+          </Link>
         </nav>
 
-        {/* Canlı Takım / Maç Filtre Girişi */}
-        <div className="relative shrink-0 w-36 sm:w-52">
+        {/* Canlı Filtreleme Arama Input (Masaüstü) */}
+        <div className="relative hidden lg:block w-48 shrink-0 py-1">
+          <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-3" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Takım / salon ara..."
-            className="w-full bg-surface text-ink placeholder-ink-3 text-xs pl-7 pr-3 py-1.5 rounded-lg border border-line/60 focus:outline-hidden focus:border-primary transition-colors"
+            placeholder="Takım, salon ara..."
+            className="w-full bg-surface border border-line/60 rounded-lg pl-7 pr-2.5 py-1 text-xs text-ink placeholder-ink-3 focus:outline-none focus:border-primary/40 transition-colors"
           />
-          <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-ink-3" />
+          {searchQuery && (
+            <button
+              onClick={() => onSearchChange("")}
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-ink-3 hover:text-white px-1 cursor-pointer"
+            >
+              ✕
+            </button>
+          )}
         </div>
       </div>
     </header>

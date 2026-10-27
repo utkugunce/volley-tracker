@@ -6,14 +6,9 @@ import {
   BarChart3,
   CalendarDays,
   ChevronDown,
-  ChevronRight,
-  FileText,
-  Layers,
   Star,
-  Swords,
   Trophy,
   PanelLeftClose,
-  Users,
 } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
 import { Kadinlar2LigTabType } from "./Kadinlar2LigHeader";
@@ -42,24 +37,27 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
   onToggleCollapse,
 }) => {
   const totalMatches = groups.reduce((sum, group) => sum + group.mac_sayisi, 0);
+  const totalTeams = groups.reduce((sum, group) => sum + group.takim_sayisi, 0);
   const [isFavoritesOpen, setIsFavoritesOpen] = useState(true);
   const [isGroupsOpen, setIsGroupsOpen] = useState(true);
 
   return (
     <div className="flex h-full flex-col bg-surface text-xs">
-      {/* 1. Üst Başlık */}
+      {/* 1. Üst Başlık (Altyapı Standart Lig Ağacı) */}
       <div className="sticky top-0 z-10 border-b border-line/60 bg-surface px-3.5 py-3">
         <div className="flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 min-w-0">
             <Trophy size={14} className="text-primary shrink-0" />
-            <div>
-              <h2 className="font-bold leading-tight tracking-tight text-white text-[13px]">Kadınlar 2. Lig</h2>
-              <p className="text-[10px] text-ink-3">16 Grup Hiyerarşisi</p>
+            <div className="min-w-0">
+              <h2 className="font-bold leading-tight tracking-tight text-white text-[13px] truncate">
+                Lig Ağacı
+              </h2>
+              <p className="text-[10px] text-ink-3 truncate">Uzman Posta Kadınlar 2. Ligi</p>
             </div>
           </div>
           <div className="flex items-center gap-1.5 shrink-0">
             <span className="font-mono tabular-nums text-[11px] font-medium text-ink-3">
-              {totalMatches} Maç
+              {totalTeams} Takım
             </span>
             {onToggleCollapse && (
               <button
@@ -78,7 +76,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
       </div>
 
       <div className="custom-scrollbar flex-1 space-y-3 overflow-y-auto p-2.5">
-        {/* 1. BÖLÜM: HIZLI ERİŞİM & GEÇİŞLER */}
+        {/* 1. BÖLÜM: HIZLI ERİŞİM & DİĞER LİGLER */}
         <div className="space-y-1 pb-2 border-b border-line/50">
           <button
             type="button"
@@ -87,7 +85,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
           >
             <span className="flex items-center gap-1.5">
               <Star size={12} className="text-warn" />
-              <span>Hızlı Erişim</span>
+              <span>Ligler & Rehberler</span>
             </span>
             <ChevronDown
               size={12}
@@ -127,94 +125,45 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                 className="flex items-center justify-between px-2.5 py-1.5 rounded-lg hover:bg-surface-raised/60 text-ink-2 hover:text-white transition-colors group"
               >
                 <span className="flex items-center gap-2 truncate">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0" />
                   <span className="font-medium text-[11px] truncate">TVF Altyapı Ligleri</span>
                 </span>
                 <span className="text-[10px] text-ink-3 font-display tabular-nums shrink-0">81 İl →</span>
               </Link>
 
-              <button
-                type="button"
-                onClick={() => onToggleFavoritesOnly?.()}
-                className={`flex w-full items-center justify-between px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer ${
-                  showOnlyFavorites
-                    ? "bg-warn/15 text-warn font-bold"
-                    : "hover:bg-surface-raised/60 text-ink-2 hover:text-white"
-                }`}
-                title="Sadece takip ettiğim favori kulüpleri filtrele"
+              <Link
+                prefetch={false}
+                href="/takvim"
+                className="flex items-center justify-between px-2.5 py-1.5 rounded-lg hover:bg-surface-raised/60 text-ink-2 hover:text-white transition-colors group"
               >
-                <span className="flex items-center gap-2">
-                  <Star size={12} className={showOnlyFavorites ? "text-warn fill-warn" : "text-warn"} />
-                  <span className="font-medium text-[11px]">Takip Edilenler</span>
+                <span className="flex items-center gap-2 truncate">
+                  <CalendarDays size={13} className="text-primary shrink-0" />
+                  <span className="font-medium text-[11px] truncate">Voleybol Takvimi</span>
                 </span>
-                <span className="font-display text-[10px] font-semibold tabular-nums text-ink-3">
-                  {favoritesCount}
-                </span>
-              </button>
+                <span className="text-[10px] text-ink-3 font-mono shrink-0">Ajanda →</span>
+              </Link>
 
-              <button
-                type="button"
-                onClick={() => onSelectTab("leaders")}
-                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-colors cursor-pointer ${
-                  activeTab === "leaders"
-                    ? "bg-primary/15 text-primary font-bold"
-                    : "text-ink-2 hover:bg-surface-raised/60 hover:text-white"
-                }`}
-              >
-                <span className="flex items-center gap-2 font-medium text-[11px]">
-                  <Layers size={13} className="text-current opacity-80" />
-                  <span>16 Grup Durumu</span>
-                </span>
-                <ChevronRight size={12} className="text-ink-3" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => onSelectTab("teams")}
-                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-colors cursor-pointer ${
-                  activeTab === "teams"
-                    ? "bg-primary/15 text-primary font-bold"
-                    : "text-ink-2 hover:bg-surface-raised/60 hover:text-white"
-                }`}
-              >
-                <span className="flex items-center gap-2 font-medium text-[11px]">
-                  <Users size={13} className="text-current opacity-80" />
-                  <span>Kulüpler</span>
-                </span>
-                <ChevronRight size={12} className="text-ink-3" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => onSelectTab("karsilastir")}
-                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-colors cursor-pointer ${
-                  activeTab === "karsilastir"
-                    ? "bg-primary/15 text-primary font-bold"
-                    : "text-ink-2 hover:bg-surface-raised/60 hover:text-white"
-                }`}
-              >
-                <span className="flex items-center gap-2 font-medium text-[11px]">
-                  <Swords size={13} className="text-current opacity-80" />
-                  <span>Karşılaştır (H2H)</span>
-                </span>
-                <ChevronRight size={12} className="text-ink-3" />
-              </button>
-
-              <button
-                type="button"
-                onClick={() => onSelectTab("statu")}
-                className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-colors cursor-pointer ${
-                  activeTab === "statu"
-                    ? "bg-primary/15 text-primary font-bold"
-                    : "text-ink-2 hover:bg-surface-raised/60 hover:text-white"
-                }`}
-              >
-                <span className="flex items-center gap-2 font-medium text-[11px]">
-                  <FileText size={13} className="text-current opacity-80" />
-                  <span>Resmi Statü & Rehber</span>
-                </span>
-                <ChevronRight size={12} className="text-ink-3" />
-              </button>
+              {/* Favori Filtresi Kısayolu */}
+              {onToggleFavoritesOnly && (
+                <button
+                  type="button"
+                  onClick={() => onToggleFavoritesOnly?.()}
+                  className={`flex w-full items-center justify-between px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer ${
+                    showOnlyFavorites
+                      ? "bg-warn/15 text-warn font-bold"
+                      : "hover:bg-surface-raised/60 text-ink-2 hover:text-white"
+                  }`}
+                  title="Sadece takip ettiğim favori kulüpleri filtrele"
+                >
+                  <span className="flex items-center gap-2">
+                    <Star size={12} className={showOnlyFavorites ? "text-warn fill-warn" : "text-warn"} />
+                    <span className="font-medium text-[11px]">Takip Edilenler</span>
+                  </span>
+                  <span className="font-display text-[10px] font-semibold tabular-nums text-ink-3">
+                    {favoritesCount}
+                  </span>
+                </button>
+              )}
             </div>
           )}
         </div>
@@ -228,7 +177,7 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
           >
             <span className="flex items-center gap-1.5">
               <BarChart3 size={12} className="text-primary" />
-              <span>Grup Seçimi (16 Grup)</span>
+              <span>Lig Grupları (16 Grup)</span>
             </span>
             <ChevronDown
               size={12}
@@ -243,17 +192,18 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
                   type="button"
                   onClick={() => {
                     onSelectGroup("all");
-                    onSelectTab(activeTab === "standings" ? "standings" : "fixtures");
+                    if (activeTab !== "standings" && activeTab !== "fixtures") {
+                      onSelectTab("standings");
+                    }
                   }}
                   className={`flex min-w-0 flex-1 items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-colors cursor-pointer ${
-                    selectedGroup === "all" &&
-                    (activeTab === "standings" || activeTab === "fixtures")
-                      ? "bg-primary/15 text-white font-bold"
+                    selectedGroup === "all"
+                      ? "bg-primary text-primary-fg font-bold shadow-xs"
                       : "text-ink-2 hover:bg-surface-raised/50 hover:text-white"
                   }`}
                 >
                   <span className="truncate text-xs font-medium">Tüm Gruplar (1-16)</span>
-                  <span className="font-mono tabular-nums text-[10px] text-ink-3">
+                  <span className="font-mono tabular-nums text-[10px] opacity-80">
                     {groups.length} Grup
                   </span>
                 </button>
@@ -278,24 +228,31 @@ export const Kadinlar2LigSidebar: React.FC<Kadinlar2LigSidebarProps> = ({
               </div>
 
               {groups.map((group) => {
-                const isActive =
-                  selectedGroup === group.grup_no &&
-                  (activeTab === "standings" || activeTab === "fixtures");
+                const isSelected = selectedGroup === group.grup_no;
                 return (
                   <div key={group.grup_no} className="flex items-center gap-1">
                     <button
                       type="button"
                       onClick={() => {
                         onSelectGroup(group.grup_no);
-                        onSelectTab("standings");
+                        if (activeTab !== "standings" && activeTab !== "fixtures") {
+                          onSelectTab("standings");
+                        }
                       }}
                       className={`flex min-w-0 flex-1 items-center justify-between rounded-lg px-2.5 py-1.5 text-left transition-colors cursor-pointer ${
-                        isActive
-                          ? "bg-primary/15 text-white font-bold"
+                        isSelected
+                          ? "bg-primary/20 text-white font-bold border border-primary/40"
                           : "text-ink-2 hover:bg-surface-raised/50 hover:text-white"
                       }`}
                     >
-                      <span className="truncate text-xs font-medium">Grup {group.grup_no}</span>
+                      <div className="flex items-center gap-2 truncate">
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                            isSelected ? "bg-primary" : "bg-ink-3"
+                          }`}
+                        />
+                        <span className="truncate text-xs font-medium">Grup {group.grup_no}</span>
+                      </div>
                       <span className="font-mono tabular-nums text-[10px] text-ink-3">
                         {group.takim_sayisi} Takım
                       </span>

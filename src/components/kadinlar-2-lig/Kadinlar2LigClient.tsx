@@ -61,7 +61,9 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 }) => {
   const [data] = useState<Kadinlar2LigData>(() => expandKadinlar2LigData(initialData));
   const [activeTab, setActiveTab] = useState<Kadinlar2LigTabType>(
-    initialTab || "home"
+    initialTab === "teams" || initialTab === "karsilastir" || initialTab === "leaders"
+      ? "standings"
+      : initialTab || "home"
   );
   const [selectedGroup, setSelectedGroup] = useState<number | "all">(initialGroup || 1);
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -273,6 +275,8 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
         <Kadinlar2LigHeader
           metadata={data.metadata}
           activeTab={activeTab}
+          selectedGroup={selectedGroup}
+          onSelectGroup={handleSelectGroup}
           onSelectTab={handleSelectTab}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
@@ -297,8 +301,8 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
           onSelectTab={handleSelectTab}
         />
       }
-      rightSidebar={
-        activeTab === "standings" || !selectedMatch ? undefined : (
+      inspector={
+        selectedMatch ? (
           <MatchInspectorPanel
             match={selectedMatch}
             allMatches={convertedMatches}
@@ -324,12 +328,12 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
                 : false
             }
           />
-        )
+        ) : null
       }
       footer={
-        <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between">
+        <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between border-t border-line/60 bg-surface/50">
           <span className="font-semibold text-slate-400">TVF Uzman Posta Kadınlar Voleybol 2. Ligi</span>
-          <span className="mt-1 block sm:mt-0">
+          <span className="mt-1 block sm:mt-0 font-mono">
             {data.metadata?.toplam_grup_sayisi || 16} Grup • {totalTeamsCount} Kulüp
           </span>
         </footer>

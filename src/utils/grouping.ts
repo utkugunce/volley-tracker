@@ -16,6 +16,48 @@ export function formatGroupName(rawGroup?: string): string {
     return "Tek Grup";
   }
 
+  // Yarı Final / Y.Final Kontrolü (örn: "Y.Final-B Gr", "Yarı Final - B Grubu", "Yarı Final B Grubu", "Y.Final B")
+  const isYariFinal = /y(?:ar[ıi]|\.)\s*final/i.test(g) || /y-final/i.test(g);
+  if (isYariFinal) {
+    const letterMatch = g.match(/(?<!\p{L})([A-Za-zÇĞİÖŞÜçğiöşü])(?:\s*(?:Gr\.?|Grubu?|Gurubu|Grb\.?))?$/iu);
+    if (letterMatch) {
+      const letter = letterMatch[1].toLocaleUpperCase("tr-TR");
+      return `Yarı Final ${letter} Grubu`;
+    }
+    const numMatch = g.match(/\b(\d+)\.?\s*(?:Gr\.?|Grup)?$/i);
+    if (numMatch) {
+      return `Yarı Final ${numMatch[1]}. Grup`;
+    }
+    return "Yarı Final Grubu";
+  }
+
+  // Final Kontrolü: "Final - A Grubu", "Final A Grubu", "Final Etabı"
+  const isFinal = !isYariFinal && /\bfinal\b/i.test(g);
+  if (isFinal) {
+    if (/final\s*etab[ıi]/i.test(g)) return "Final Etabı";
+    if (/final\s*grubu?/i.test(g) && !/(?<!\p{L})[A-Za-zÇĞİÖŞÜçğiöşü]\s*Gr/i.test(g)) return "Final Grubu";
+    const letterMatch = g.match(/(?<!\p{L})([A-Za-zÇĞİÖŞÜçğiöşü])(?:\s*(?:Gr\.?|Grubu?|Gurubu|Grb\.?))?$/iu);
+    if (letterMatch) {
+      const letter = letterMatch[1].toLocaleUpperCase("tr-TR");
+      return `Final ${letter} Grubu`;
+    }
+    const numMatch = g.match(/\b(\d+)\.?\s*(?:Gr\.?|Grup)?$/i);
+    if (numMatch) {
+      return `Final ${numMatch[1]}. Grup`;
+    }
+  }
+
+  // Klasman Kontrolü
+  if (/klasman/i.test(g)) {
+    if (/klasman\s*etab[ıi]/i.test(g)) return "Klasman Etabı";
+    if (/klasman\s*grubu?/i.test(g) && !/(?<!\p{L})[A-Za-zÇĞİÖŞÜçğiöşü]\s*Gr/i.test(g)) return "Klasman Grubu";
+    const letterMatch = g.match(/(?<!\p{L})([A-Za-zÇĞİÖŞÜçğiöşü])(?:\s*(?:Gr\.?|Grubu?|Gurubu|Grb\.?))?$/iu);
+    if (letterMatch) {
+      const letter = letterMatch[1].toLocaleUpperCase("tr-TR");
+      return `Klasman ${letter} Grubu`;
+    }
+  }
+
   // Normalization for "2.Grup" -> "2. Grup"
   g = g.replace(/^(\d+)\.\s*Grup/i, "$1. Grup");
   if (/^\d+\.\s*Grup$/i.test(g)) {

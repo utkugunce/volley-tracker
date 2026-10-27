@@ -7,6 +7,7 @@ import {
   Search,
   Star,
   Printer,
+  Layers,
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Kadinlar2LigMetadata } from "@/types/kadinlar2Lig";
@@ -29,6 +30,8 @@ export type Kadinlar2LigTabType =
 interface Kadinlar2LigHeaderProps {
   metadata: Kadinlar2LigMetadata;
   activeTab: Kadinlar2LigTabType;
+  selectedGroup?: number | "all";
+  onSelectGroup?: (group: number | "all") => void;
   onSelectTab: (tab: Kadinlar2LigTabType) => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
@@ -44,6 +47,8 @@ interface Kadinlar2LigHeaderProps {
 export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
   metadata,
   activeTab,
+  selectedGroup = "all",
+  onSelectGroup,
   onSelectTab,
   searchQuery,
   onSearchChange,
@@ -59,33 +64,56 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
 
   return (
     <header className="bg-canvas text-white sticky top-0 z-30 border-b border-line/70 pt-[env(safe-area-inset-top,0px)]">
-      {/* 1. Üst Global Bar: Marka + Bütünleşik Lig Seçici (Altyapı / 2. Lig) */}
-      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex items-center justify-between border-b border-line/50 gap-2">
-        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap">
+      {/* 1. Üst Global Bar: Marka + Segmented League Switcher + Grup Seçici + Sağ Kontroller */}
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap min-[1200px]:flex-nowrap items-center justify-between border-b border-line/50 gap-x-2.5 gap-y-1.5">
+        <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap min-[1200px]:flex-nowrap min-[1200px]:min-w-0 min-[1200px]:[&>*:not(.hdr-tagline)]:shrink-0">
           <BrandLogo onClick={() => onSelectTab("home")} />
-
-          {/* Apple Sports / FotMob Tarzı Bütünleşik Lig Seçici (Segmented League Switcher) */}
           <LeagueSwitcher activeLeague="2-lig" />
+
+          {/* 16 Grup Seçici Açılır Menü (CitySelector Standardında) */}
+          {onSelectGroup && (
+            <div className="relative">
+              <select
+                value={selectedGroup ?? "all"}
+                onChange={(e) => {
+                  const v = e.target.value === "all" ? "all" : Number(e.target.value);
+                  onSelectGroup(v as number | "all");
+                }}
+                aria-label="2. Lig Grup Seçici"
+                className="bg-surface hover:bg-surface-raised text-white text-xs font-semibold px-2.5 py-1.5 rounded-lg border border-line/70 transition-colors cursor-pointer focus:outline-none focus:border-primary shadow-xs"
+              >
+                <option value="all">Tüm Gruplar (16 Grup)</option>
+                {Array.from({ length: 16 }, (_, i) => i + 1).map((gNo) => (
+                  <option key={gNo} value={gNo}>
+                    {gNo}. Grup
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
         </div>
 
         {/* Sağ Taraf: Arama, Favoriler, Kaynaklar, Son Çekim, Ayarlar, Yazdır */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2 ml-auto min-w-0">
           {onOpenSearch && (
             <button
+              type="button"
               onClick={onOpenSearch}
               className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg bg-surface hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-colors active:scale-[0.98] cursor-pointer"
-              title="Hızlı Arama (Ctrl + K)"
+              title="Kadınlar 2. Ligi Takım, Maç ve Salon Arama (Ctrl + K)"
             >
               <Search size={13} className="text-ink-3" />
-              <span className="hidden md:inline font-medium text-[11px]">Ara</span>
+              <span className="hidden md:inline font-medium text-[11px]">Hızlı Arama</span>
               <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-ink-3 px-1">
                 ⌘K
               </kbd>
             </button>
           )}
 
+          {/* Favori Filtrele Butonu */}
           {onToggleFavoritesOnly && (
             <button
+              type="button"
               onClick={() => {
                 triggerHaptic();
                 onToggleFavoritesOnly();
@@ -95,113 +123,121 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
                   ? "bg-warn text-black font-bold"
                   : "bg-surface text-ink-2 hover:text-white hover:bg-surface-raised border border-line/60"
               }`}
-              title="Sadece Favori Kulüplerimi Göster"
+              title={showOnlyFavorites ? "Tüm takımları göster" : "Sadece favori takımları göster"}
             >
               <Star
                 size={13}
                 className={showOnlyFavorites ? "fill-black text-black" : "text-warn"}
               />
-              <span className="hidden sm:inline">Favoriler</span>
+              <span className="hidden md:inline">Favoriler</span>
               {favoritesCount > 0 && (
-                <span className="text-[10px] font-mono tabular-nums opacity-85">
+                <span
+                  className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold ${
+                    showOnlyFavorites ? "bg-black/20 text-black" : "bg-warn/20 text-warn"
+                  }`}
+                >
                   {favoritesCount}
                 </span>
               )}
             </button>
           )}
 
-          {/* Resmi Kaynaklar Açılır Menü */}
+          {/* Resmi Kaynaklar Dropdown / Buton */}
           <div className="relative">
             <button
+              type="button"
               onClick={() => setShowLinksModal(!showLinksModal)}
-              className="p-1.5 min-w-[32px] min-h-[32px] flex items-center justify-center rounded-lg bg-surface text-ink-2 hover:text-white hover:bg-surface-raised transition-colors active:scale-[0.98] border border-line/60"
-              title="Resmi TVF ve Volleybox Bağlantıları"
-              aria-label="Resmi Bağlantılar"
+              className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-lg bg-surface hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-colors cursor-pointer"
+              title="Resmi TVF ve Volleybox Sayfaları"
             >
-              <ExternalLink size={14} />
+              <ExternalLink size={12} className="text-primary" />
+              <span className="hidden lg:inline text-[11px] font-medium">Kaynaklar</span>
             </button>
 
             {showLinksModal && (
-              <div
-                className="absolute right-0 mt-2 w-72 bg-surface border border-line/80 rounded-2xl shadow-2xl p-3 z-50 animate-in fade-in zoom-in-95 duration-150"
-                onClick={() => setShowLinksModal(false)}
-              >
-                <div className="text-[10px] font-bold text-ink-3 uppercase tracking-wider mb-2 px-1">
-                  Resmi Veri Kaynakları
+              <>
+                <div
+                  className="fixed inset-0 z-40"
+                  onClick={() => setShowLinksModal(false)}
+                />
+                <div className="absolute right-0 mt-2 w-72 bg-surface-raised border border-line rounded-xl shadow-xl p-2 z-50 text-xs">
+                  <div className="p-2 border-b border-line">
+                    <p className="font-bold text-ink">Kadınlar 2. Ligi</p>
+                    <p className="text-[11px] text-ink-3">Resmi TVF ve Volleybox Verileri</p>
+                  </div>
+                  <div className="py-1">
+                    <a
+                      href={metadata?.resmi_kaynaklar?.tvf_puan_durumu || "https://tvf.org.tr/lig/kadinlar-2-ligi"}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-between p-2 rounded-lg hover:bg-surface text-ink hover:text-primary transition-colors"
+                    >
+                      <span>TVF Resmi Puan Durumu</span>
+                      <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href={metadata?.resmi_kaynaklar?.tvf_fikstur || "https://tvf.org.tr/lig/kadinlar-2-ligi"}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-between p-2 rounded-lg hover:bg-surface text-ink hover:text-primary transition-colors"
+                    >
+                      <span>TVF Resmi Fikstür</span>
+                      <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href="https://women.volleybox.net/tr/tournaments/turkey"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center justify-between p-2 rounded-lg hover:bg-surface text-ink hover:text-primary transition-colors"
+                    >
+                      <span>Volleybox Türkiye Turnuvaları</span>
+                      <ExternalLink size={12} />
+                    </a>
+                  </div>
                 </div>
-                <div className="space-y-1.5">
-                  <a
-                    href={metadata.resmi_kaynaklar.tvf_puan_durumu}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between p-2 rounded-lg bg-surface-muted hover:bg-surface-raised border border-line/50 text-xs text-ink hover:text-white transition-colors"
-                  >
-                    <span>TVF Resmi Puan Durumu</span>
-                    <ExternalLink size={12} className="text-ink-3" />
-                  </a>
-                  <a
-                    href={metadata.resmi_kaynaklar.tvf_fikstur}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between p-2 rounded-lg bg-surface-muted hover:bg-surface-raised border border-line/50 text-xs text-ink hover:text-white transition-colors"
-                  >
-                    <span>TVF Resmi Fikstür</span>
-                    <ExternalLink size={12} className="text-ink-3" />
-                  </a>
-                  <a
-                    href="https://tvf.org.tr/_dosyalar/Liglerin_Statu_Arsivi/2026-2027/2026-2027_UzmanPosta2Lig_Kadinlar_Statusu.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between p-2 rounded-lg bg-primary/10 hover:bg-primary/20 border border-primary/40 text-xs text-primary hover:text-white transition-colors font-semibold"
-                  >
-                    <span>2026-2027 Lig Statüsü (PDF)</span>
-                    <ExternalLink size={12} className="text-ink-2" />
-                  </a>
-                  <a
-                    href={metadata.resmi_kaynaklar.volleybox_turnuva}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between p-2 rounded-lg bg-surface-muted hover:bg-surface-raised border border-line/50 text-xs text-ink hover:text-white transition-colors"
-                  >
-                    <span>Volleybox Kadroları</span>
-                    <ExternalLink size={12} className="text-ink-3" />
-                  </a>
-                </div>
-              </div>
+              </>
             )}
           </div>
 
+          {/* Son Güncelleme Rozeti */}
           {syncDateTime && (
-            <span
-              className="hidden sm:inline-flex items-center gap-1 text-[10px] text-ink-3 whitespace-nowrap px-1.5 py-1"
-              title={`Son çekim: ${syncDateTime.full}`}
-              aria-label={`Son çekim: ${syncDateTime.full}`}
+            <div
+              className="hidden min-[1100px]:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface text-[11px] font-mono text-ink-3 border border-line/60"
+              title={`Son otomatik TVF senkronizasyonu: ${syncDateTime.full}`}
             >
-              <span className="sm:hidden">{syncDateTime.full}</span>
-              <span className="hidden sm:inline">
-                Son çekim: <strong className="text-ink-2 font-mono font-medium">{syncDateTime.full}</strong>
-              </span>
-            </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>TVF Canlı: {syncDateTime.full}</span>
+            </div>
           )}
 
-          <SettingsControls />
-
-          <button
-            onClick={() => window.print()}
-            className="hidden sm:flex p-1.5 min-w-[32px] min-h-[32px] items-center justify-center rounded-lg bg-surface text-ink-2 hover:text-white hover:bg-surface-raised transition-colors active:scale-[0.98] no-print border border-line/60"
-            title="Yazdır"
-            aria-label="Yazdır"
-          >
-            <Printer size={14} />
-          </button>
+          {/* Ayarlar & Yazdır */}
+          <div className="flex items-center gap-1">
+            <SettingsControls />
+            <button
+              type="button"
+              onClick={() => window.print()}
+              aria-label="Yazdır"
+              className="p-1.5 rounded-lg bg-surface hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-colors cursor-pointer hidden sm:flex"
+              title="Sayfayı Yazdır (Ctrl + P)"
+            >
+              <Printer size={14} />
+            </button>
+          </div>
         </div>
       </div>
 
       {/* 2. ANA SEKMELER: ÇERÇEVESİZ, DÜŞÜK GÜRÜLTÜLÜ FOTMOB / APPLE SPORTS TAB ŞERİDİ */}
       <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center justify-between gap-2">
-        <div className="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-semibold overflow-x-auto no-scrollbar">
+        <nav
+          aria-label="2. Lig Sekmeleri"
+          className="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-semibold overflow-x-auto no-scrollbar"
+        >
           <button
-            onClick={() => onSelectTab("home")}
+            type="button"
+            onClick={() => {
+              triggerHaptic();
+              onSelectTab("home");
+            }}
             className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "home"
                 ? "border-primary text-white"
@@ -212,23 +248,11 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           </button>
 
           <button
-            onClick={() => onSelectTab("today")}
-            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              activeTab === "today"
-                ? "border-primary text-white"
-                : "border-transparent text-ink-2 hover:text-white"
-            }`}
-          >
-            <span>GÜNÜN MAÇLARI</span>
-            {todayMatchesCount > 0 && (
-              <span className="text-[10px] font-display font-medium tabular-nums text-ink-3">
-                {todayMatchesCount}
-              </span>
-            )}
-          </button>
-
-          <button
-            onClick={() => onSelectTab("results")}
+            type="button"
+            onClick={() => {
+              triggerHaptic();
+              onSelectTab("results");
+            }}
             className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "results"
                 ? "border-primary text-white"
@@ -244,7 +268,31 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
           </button>
 
           <button
-            onClick={() => onSelectTab("fixtures")}
+            type="button"
+            onClick={() => {
+              triggerHaptic();
+              onSelectTab("today");
+            }}
+            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              activeTab === "today"
+                ? "border-primary text-white"
+                : "border-transparent text-ink-2 hover:text-white"
+            }`}
+          >
+            <span>GÜNÜN MAÇLARI</span>
+            {todayMatchesCount > 0 && (
+              <span className="text-[10px] text-ink-3 font-display font-medium tabular-nums">
+                {todayMatchesCount}
+              </span>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              triggerHaptic();
+              onSelectTab("fixtures");
+            }}
             className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "fixtures"
                 ? "border-primary text-white"
@@ -252,63 +300,49 @@ export const Kadinlar2LigHeader: React.FC<Kadinlar2LigHeaderProps> = ({
             }`}
           >
             <span>FİKSTÜR</span>
+            <span className="text-[10px] text-ink-3 font-display font-medium tabular-nums">
+              {metadata?.toplam_mac_sayisi || 1100}
+            </span>
           </button>
 
           <button
-            onClick={() => onSelectTab("standings")}
+            type="button"
+            onClick={() => {
+              triggerHaptic();
+              onSelectTab("standings");
+            }}
             className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "standings"
                 ? "border-primary text-white"
                 : "border-transparent text-ink-2 hover:text-white"
             }`}
           >
-            <span>PUAN CETVELİ</span>
+            <span>PUAN DURUMU</span>
           </button>
 
           <button
-            onClick={() => onSelectTab("leaders")}
-            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              activeTab === "leaders"
-                ? "border-primary text-white"
-                : "border-transparent text-ink-2 hover:text-white"
-            }`}
-          >
-            <span>GRUP DURUMU</span>
-          </button>
-
-          <button
-            onClick={() => onSelectTab("teams")}
-            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              activeTab === "teams"
-                ? "border-primary text-white"
-                : "border-transparent text-ink-2 hover:text-white"
-            }`}
-          >
-            <span>KULÜPLER</span>
-          </button>
-
-          <button
-            onClick={() => onSelectTab("karsilastir")}
-            className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              activeTab === "karsilastir"
-                ? "border-primary text-white"
-                : "border-transparent text-ink-2 hover:text-white"
-            }`}
-          >
-            <span>KARŞILAŞTIR</span>
-          </button>
-
-          <button
-            onClick={() => onSelectTab("statu")}
+            type="button"
+            onClick={() => {
+              triggerHaptic();
+              onSelectTab("statu");
+            }}
             className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
               activeTab === "statu"
                 ? "border-primary text-white"
                 : "border-transparent text-ink-2 hover:text-white"
             }`}
           >
-            <span>STATÜ & REHBER</span>
+            <span>STATÜ</span>
           </button>
-        </div>
+
+          <Link
+            href="/takvim"
+            prefetch={false}
+            className="flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 border-transparent text-ink-2 hover:text-white transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          >
+            <span>TAKVİM</span>
+          </Link>
+        </nav>
 
         {/* Canlı Filtreleme Arama Input (Masaüstü) */}
         <div className="relative hidden lg:block w-48 shrink-0 py-1">

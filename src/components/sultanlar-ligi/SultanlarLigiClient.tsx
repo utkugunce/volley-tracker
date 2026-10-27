@@ -22,12 +22,10 @@ import { SultanlarLigiSidebar } from "./SultanlarLigiSidebar";
 import { SultanlarLigiStandings } from "./SultanlarLigiStandings";
 import { SultanlarLigiStatuView } from "./SultanlarLigiStatuView";
 import { Kadinlar2LigFixtures } from "@/components/kadinlar-2-lig/Kadinlar2LigFixtures";
-import { Kadinlar2LigTeams } from "@/components/kadinlar-2-lig/Kadinlar2LigTeams";
 import { Kadinlar2LigTodayMatches } from "@/components/kadinlar-2-lig/Kadinlar2LigTodayMatches";
 import { Kadinlar2LigResults } from "@/components/kadinlar-2-lig/Kadinlar2LigResults";
 import { Kadinlar2LigMobileNav } from "@/components/kadinlar-2-lig/Kadinlar2LigMobileNav";
 import { Kadinlar2LigHomePortal } from "@/components/kadinlar-2-lig/Kadinlar2LigHomePortal";
-import { Kadinlar2LigCompare } from "@/components/kadinlar-2-lig/Kadinlar2LigCompare";
 import { AppShell } from "@/components/layout/AppShell";
 import {
   convertK2MatchToMatch,
@@ -56,13 +54,14 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
   initialTab,
 }) => {
   const [data] = useState<Kadinlar2LigData>(() => expandKadinlar2LigData(initialData));
-  const [activeTab, setActiveTab] = useState<SultanlarTabType>(initialTab || "home");
+  const [activeTab, setActiveTab] = useState<SultanlarTabType>(
+    initialTab === "teams" || initialTab === "karsilastir" ? "standings" : initialTab || "home"
+  );
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState<boolean>(false);
   const [showOnlyFavorites, setShowOnlyFavorites] = useState<boolean>(false);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [compareSlug1, setCompareSlug1] = useState<string | undefined>(undefined);
 
   const { count: favoritesCount, isFavorite, toggleFavorite } = useFavorites();
 
@@ -104,46 +103,43 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
         won: t.g,
         lost: t.m,
         points: t.p,
-        sets_won: t.as,
-        sets_lost: t.vs,
-        set_ratio: t.sav,
-        points_won: t.asp,
-        points_lost: t.vsp,
-        point_ratio: t.spav,
-        form: [],
+        sets_for: t.as,
+        sets_against: t.vs,
+        points_for: t.asp,
+        points_against: t.vsp,
       }));
     });
     return res;
   }, [data.gruplar]);
 
-  // Spotlight Arama Verileri
   const searchableTeams = useMemo(() => {
-    return Array.from(
-      new Set(
-        (data.tum_takimlar || []).map((t) =>
-          getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name)
-        )
-      )
-    );
+    return (data.tum_takimlar || []).map((t) => t.takim_adi);
   }, [data.tum_takimlar]);
 
   const searchableHalls = useMemo(() => {
-    return Array.from(new Set((data.tum_maclar || []).map((m) => m.salon).filter(Boolean)));
+    const set = new Set<string>();
+    (data.tum_maclar || []).forEach((m) => {
+      if (m.salon) set.add(m.salon);
+    });
+    return Array.from(set);
   }, [data.tum_maclar]);
 
   const searchableCities = useMemo(() => {
-    const unique = Array.from(new Set((data.tum_maclar || []).map((m) => m.sehir).filter(Boolean)));
-    return unique.map((c) => ({ name: c, slug: slugify(c) }));
+    const set = new Set<string>();
+    (data.tum_maclar || []).forEach((m) => {
+      if (m.il) set.add(m.il);
+    });
+    return Array.from(set);
   }, [data.tum_maclar]);
 
   const searchableCategories = useMemo(() => {
-    return ["Vodafone Sultanlar Ligi", "Lig Etabı"];
+    return ["Vodafone Sultanlar Ligi"];
   }, []);
 
-  // Spotlight Kısayolu (Ctrl+K / Cmd+K)
+  // Klavye kısayolu (Cmd+K / Ctrl+K) Spotlight Arama
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setIsSearchOpen((prev) => !prev);
       }
@@ -153,23 +149,14 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
   }, []);
 
   const handleSelectTab = (tab: SultanlarTabType) => {
-    setActiveTab(tab);
+    const safeTab = tab === "teams" || tab === "karsilastir" ? "standings" : tab;
+    setActiveTab(safeTab);
     if (typeof window !== "undefined") {
-      const targetPath = getSultanlarLigiRoute(tab);
+      const targetPath = getSultanlarLigiRoute(safeTab);
       const currentPath = window.location.pathname;
       if (currentPath !== targetPath) {
-        window.history.pushState({ tab }, "", targetPath);
+        window.history.pushState({ tab: safeTab }, "", targetPath);
       }
-    }
-  };
-
-  const handleCompareTeam = (teamSlug: string) => {
-    setCompareSlug1(teamSlug);
-    setActiveTab("karsilastir");
-    if (typeof window !== "undefined") {
-      const targetUrl = `/sultanlar-ligi/karsilastir?takim1=${encodeURIComponent(teamSlug)}`;
-      window.history.pushState({ tab: "karsilastir" }, "", targetUrl);
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -177,7 +164,7 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
   useEffect(() => {
     const handlePopState = () => {
       const { tab } = parseSultanlarLigiRoute(window.location.pathname);
-      setActiveTab(tab);
+      setActiveTab(tab === "teams" || tab === "karsilastir" ? "standings" : tab);
     };
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
@@ -211,6 +198,7 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
 
   return (
     <AppShell
+      section="sultanlar"
       header={
         <SultanlarLigiHeader
           metadata={data.metadata}
@@ -226,7 +214,7 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
           onOpenSearch={() => setIsSearchOpen(true)}
         />
       }
-      sidebar={
+      leftSidebar={
         <SultanlarLigiSidebar
           groups={data.gruplar}
           activeTab={activeTab}
@@ -243,14 +231,25 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
             onClose={handleCloseInspector}
             isFavorite={isFavorite(selectedMatch.home_team) || isFavorite(selectedMatch.away_team)}
             onToggleFavorite={() => handleToggleFavoriteMatch(selectedMatch)}
-            standingsMap={standingsMap}
-            matches={convertedMatches}
+            standings={standingsMap}
+            allMatches={convertedMatches}
           />
         ) : null
       }
+      footer={
+        <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between border-t border-line/60 bg-surface/50">
+          <span className="font-semibold text-slate-400">TVF Vodafone Sultanlar Ligi</span>
+          <span className="mt-1 block sm:mt-0 font-mono">14 Kulüp • Canlı Fikstür ve Puan Durumu</span>
+        </footer>
+      }
     >
-      <div className="space-y-6">
-        <PrimaryTeamWidget />
+      <div className="flex flex-col space-y-3 px-1 pb-20 sm:space-y-4 sm:px-2 sm:pb-8 lg:px-0">
+        <PrimaryTeamWidget
+          matches={convertedMatches}
+          city="Sultanlar Ligi"
+          onSelectMatch={handleSelectMatch}
+          availableTeams={searchableTeams}
+        />
 
         {/* GENEL BAKIŞ / PORTAL TABI */}
         {activeTab === "home" && (
@@ -291,14 +290,14 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
           />
         )}
 
-        {/* PUAN CETVELİ TABI */}
+        {/* PUAN DURUMU TABI: TABLO + ALTINDA OYNANAN & FİKSTÜR MAÇLARI */}
         {activeTab === "standings" && (
           <div className="space-y-8">
             <SultanlarLigiStandings
               group={currentGroupData}
               searchQuery={searchQuery}
               showOnlyFavorites={showOnlyFavorites}
-              onCompareTeam={handleCompareTeam}
+              onCompareTeam={() => handleSelectTab("standings")}
             />
 
             {/* PUAN CETVELİ ALTINDA: FİKSTÜR */}
@@ -331,71 +330,45 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
           />
         )}
 
-        {/* KULÜPLER TABI */}
-        {activeTab === "teams" && (
-          <Kadinlar2LigTeams
-            teams={data.tum_takimlar}
-            onSelectGroup={() => handleSelectTab("standings")}
-            onCompareTeam={handleCompareTeam}
-            searchQuery={searchQuery}
-            showOnlyFavorites={showOnlyFavorites}
-            compareBasePath="/sultanlar-ligi/karsilastir"
-          />
-        )}
-
-        {/* H2H KARŞILAŞTIR TABI */}
-        {activeTab === "karsilastir" && (
-          <Kadinlar2LigCompare
-            data={data}
-            initialSlug1={compareSlug1}
-            onSelectGroup={() => handleSelectTab("standings")}
-          />
-        )}
-
-        {/* STATÜ TABI */}
-        {activeTab === "statu" && (
-          <SultanlarLigiStatuView totalTeams={data.tum_takimlar?.length || 14} />
-        )}
+        {/* RESMİ STATÜ TABI */}
+        {activeTab === "statu" && <SultanlarLigiStatuView />}
       </div>
 
-      {/* MOBİL ALT GEÇİŞ MENÜSÜ */}
+      {/* MOBİL ALT MENÜ (SOFASCORE STANDARDI) */}
       <Kadinlar2LigMobileNav
         activeTab={activeTab}
         onSelectTab={handleSelectTab}
-        todayCount={todayMatchesCount}
+        todayMatchesCount={todayMatchesCount}
+        resultsCount={resultsCount}
       />
 
-      {/* MOBİL MAÇ DETAY DRAWER */}
-      <MobileMatchDrawer
-        isOpen={isMobileDrawerOpen}
-        onClose={handleCloseMobileDrawer}
-        match={selectedMatch}
-        isFavorite={
-          selectedMatch
-            ? isFavorite(selectedMatch.home_team) || isFavorite(selectedMatch.away_team)
-            : false
-        }
-        onToggleFavorite={() => selectedMatch && handleToggleFavoriteMatch(selectedMatch)}
-        standingsMap={standingsMap}
-        matches={convertedMatches}
-      />
+      {/* MOBİL MAÇ DETAY ÇEKMECESİ */}
+      {isMobileDrawerOpen && selectedMatch && (
+        <MobileMatchDrawer
+          isOpen
+          match={selectedMatch}
+          onClose={handleCloseMobileDrawer}
+          allMatches={convertedMatches}
+          standings={standingsMap}
+          onToggleFavorite={(mId) => {
+            const m = convertedMatches.find((x) => x.id === mId);
+            if (m) toggleKadinlar2LigMatchFavorite(m.id);
+          }}
+          isFavorite={isFavorite(selectedMatch.home_team) || isFavorite(selectedMatch.away_team)}
+        />
+      )}
 
       {/* SPOTLIGHT GLOBAL ARAMA MODALI */}
       <SpotlightSearchModal
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
-        matches={convertedMatches}
         teams={searchableTeams}
         halls={searchableHalls}
         cities={searchableCities}
         categories={searchableCategories}
-        onSelectMatch={(m) => {
-          handleSelectMatch(m);
-          setIsSearchOpen(false);
-        }}
         onSelectTeam={(t) => {
           setSearchQuery(t);
-          handleSelectTab("teams");
+          handleSelectTab("standings");
           setIsSearchOpen(false);
         }}
       />
