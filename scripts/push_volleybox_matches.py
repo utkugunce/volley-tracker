@@ -416,6 +416,15 @@ def collect_unsynced_matches(
             if cf not in (normalize_name(city_name), normalize_name(city_slug), city_slug.lower()):
                 return
 
+        # İldeki turnuva bazlı normal grupları önceden tespit et
+        city_tourn_groups: Dict[str, set] = {}
+        for cm in data.get("matches", []):
+            cu = resolve_match_tournament_url(cm, city_name, tourn_lookup)
+            if cu:
+                cg = (cm.get("group") or "").strip()
+                if cg and not re.search(r"\b(?:final|yar[ıi]\s*final)\b", cg, re.I):
+                    city_tourn_groups.setdefault(cu, set()).add(cg.lower())
+
         for m in data.get("matches", []):
             vb = m.get("volleybox") or {}
             if vb.get("synced"):
@@ -434,12 +443,16 @@ def collect_unsynced_matches(
                 # Volleybox geçmişte oynanan maçların skorsuz girilmesine izin vermez
                 continue
 
+            tourn_grps = city_tourn_groups.get(t_url, set())
+            is_single = (len(tourn_grps) <= 1) or any("tek" in g for g in tourn_grps)
+
             item = {
                 "id": m.get("id"),
                 "city": city_name,
                 "city_slug": city_slug,
                 "category": m.get("category", ""),
                 "group": m.get("group", ""),
+                "is_single_group": is_single,
                 "home_team": m.get("home_team", ""),
                 "away_team": m.get("away_team", ""),
                 "home_sets": h_sets,
@@ -629,10 +642,15 @@ def resolve_team_for_match(
     return None
 
 
-def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
+def match_option_for_round(
+    group_name: str,
+    options: List[Dict[str, str]],
+    is_single_group: bool = False,
+) -> Optional[Dict[str, str]]:
     """
     '- Tur seçin -' menüsündeki seçeneklerden maça uygun turu/grubu seçer.
-    Öncelikli olarak sade 'Group A', 'Group 1' gibi temiz eşleşmeleri seçer;
+    Tek gruplu liglerde '1st round' (id: 139) seçilir.
+    Çok gruplu liglerde ise 'Group A', 'Group 1' gibi temiz eşleşmeler seçilir;
     asla 'CEV - Group ...' seçeneklerine sapmaz.
     """
     valid_opts = [
@@ -648,25 +666,43 @@ def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Op
     non_cev_opts = [o for o in valid_opts if not re.search(r"\bcev\b", str(o.get("label") or ""), re.I)]
     opts = non_cev_opts if non_cev_opts else valid_opts
 
-    g_clean = (group_name or "").lower().strip()
-    if not g_clean:
+    def find_1st_round() -> Optional[Dict[str, str]]:
+        # 1. Birebir '1st round' / 'First Round'
         for opt in opts:
-            lbl_l = str(opt.get("label") or "").lower().strip()
-            if lbl_l in ("regular season", "normal sezon", "main tournament"):
+            lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+            if lbl in ("1st round", "1st-round", "first round"):
+                return opt
+        # 2. Volleybox ID '139' (standart 1st round id'si)
+        for opt in opts:
+            if str(opt.get("value") or opt.get("id") or "").strip() == "139":
+                return opt
+        # 3. '1st round' içeren ama grup/final eki olmayan
+        for opt in opts:
+            lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+            if "1st round" in lbl and "group" not in lbl and "final" not in lbl:
+                return opt
+        # 4. 'round 1'
+        for opt in opts:
+            lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+            if lbl in ("round 1", "round-1"):
+                return opt
+        # 5. Regular Season / Normal Sezon
+        for opt in opts:
+            lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+            if lbl in ("regular season", "normal sezon", "main tournament"):
                 return opt
         return opts[0]
 
+    g_clean = (group_name or "").lower().strip()
     is_semi = bool(re.search(r"\b(?:yar[ıi]\s*final|semi[\s\-]final)\b", g_clean, re.I))
     is_final = bool(re.search(r"\bfinal\b", g_clean, re.I)) and not is_semi
 
-    m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
-    num_token = (m_num.group(1) or m_num.group(2) or m_num.group(3)).strip() if m_num else None
-
-    m_letter = re.search(r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b|^(?:grup\s*)?([a-z])$", g_clean, re.I)
-    letter_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).strip().upper() if m_letter else None
-
     # 1. Yarı Final durumları
     if is_semi:
+        m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
+        num_token = (m_num.group(1) or m_num.group(2) or m_num.group(3)).strip() if m_num else None
+        m_letter = re.search(r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b|^(?:grup\s*)?([a-z])$", g_clean, re.I)
+        letter_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).strip().upper() if m_letter else None
         target = letter_token or num_token
         if target:
             for opt in opts:
@@ -688,6 +724,10 @@ def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Op
 
     # 2. Final durumları
     if is_final:
+        m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
+        num_token = (m_num.group(1) or m_num.group(2) or m_num.group(3)).strip() if m_num else None
+        m_letter = re.search(r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b|^(?:grup\s*)?([a-z])$", g_clean, re.I)
+        letter_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).strip().upper() if m_letter else None
         target = letter_token or num_token
         if target:
             for opt in opts:
@@ -711,57 +751,51 @@ def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Op
             if "final" in lbl:
                 return opt
 
-    # 3. Harf Grubu (örn: 'A Grubu', 'B Grb.', 'C Grubu') -> Kesin 'Group A', 'Group B'
+    # 3. Tek gruplu ligler veya 'Tek Grup' / grup belirtilmemiş durumlar -> Kesinlikle '1st round'
+    if is_single_group or not g_clean or "tek" in g_clean or g_clean in ("normal sezon", "regular season", "1. etap"):
+        return find_1st_round()
+
+    m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
+    num_token = (m_num.group(1) or m_num.group(2) or m_num.group(3)).strip() if m_num else None
+
+    m_letter = re.search(r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b|^(?:grup\s*)?([a-z])$", g_clean, re.I)
+    letter_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).strip().upper() if m_letter else None
+
+    # 4. Harf Grubu (örn: 'A Grubu', 'B Grb.', 'C Grubu') -> Kesin 'Group A', 'Group B'
     if letter_token:
         expected_vb = f"group {letter_token}".lower()
         expected_tr = f"{letter_token} grubu".lower()
-        # a) Birebir eşleşme ('Group A' veya 'A Grubu')
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if lbl in (expected_vb, expected_tr):
                 return opt
-        # b) Başında 'Group <letter>' geçen
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if re.match(rf"^group\s*{re.escape(letter_token)}\b", lbl, re.I):
                 return opt
-        # c) Kelime olarak 'Group <letter>' geçen
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if re.search(rf"\bgroup\s*{re.escape(letter_token)}\b", lbl, re.I):
                 return opt
 
-    # 4. Sayı Grubu (örn: '1. Grup', '2.Grup', '10. Grup') -> Kesin 'Group 1', 'Group 2'
+    # 5. Sayı Grubu (örn: '1. Grup', '2.Grup', '10. Grup') -> Kesin 'Group 1', 'Group 2'
     if num_token:
         expected_vb = f"group {num_token}".lower()
         expected_tr = f"{num_token}. grup".lower()
-        # a) Birebir eşleşme ('Group 1' veya '1. Grup')
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if lbl in (expected_vb, expected_tr):
                 return opt
-        # b) Başında 'Group <num>' geçen
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if re.match(rf"^group\s*{re.escape(num_token)}\b", lbl, re.I):
                 return opt
-        # c) Kelime olarak 'Group <num>' geçen
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if re.search(rf"\bgroup\s*{re.escape(num_token)}\b", lbl, re.I):
                 return opt
 
-    # 5. Regular Season / Normal Sezon veya Tek Grup
-    for opt in opts:
-        lbl = str(opt.get("label") or "").strip().lower()
-        if lbl in ("regular season", "normal sezon", "main tournament"):
-            return opt
-    for opt in opts:
-        lbl = str(opt.get("label") or "").strip().lower()
-        if "regular season" in lbl or "normal sezon" in lbl:
-            return opt
-
-    return opts[0]
+    return find_1st_round()
 
 
 def match_option_for_arena(tvf_hall: str, options: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
@@ -1060,7 +1094,23 @@ def fill_and_submit_match_on_page(
             seen_round_vals.add(rv)
             round_options.append(ro)
 
-    round_opt = match_option_for_round(match_item.get("group", ""), round_options)
+    # Tek grup kontrolü: maç verisinden, turnuva gruplarından veya sayfadaki mevcut maç turlarından tespit et
+    page_rounds_lower = [str(r).lower() for r in form_data.get("pageRounds", {}).values()]
+    has_page_1st_round = any("1st round" in r for r in page_rounds_lower)
+    has_page_letter_or_num = any(re.search(r"\bgroup\s*[a-z0-9]+\b", r) for r in page_rounds_lower)
+
+    is_single_group = bool(
+        match_item.get("is_single_group")
+        or (has_page_1st_round and not has_page_letter_or_num)
+        or "tek" in (match_item.get("group") or "").lower()
+        or not (match_item.get("group") or "").strip()
+    )
+
+    round_opt = match_option_for_round(
+        match_item.get("group", ""),
+        round_options,
+        is_single_group=is_single_group,
+    )
 
     # Saha sorgulamasını çalıştır (salon adı, ilk kelimeler, şehir ve ev sahibi takıma göre)
     ajax_arenas = []

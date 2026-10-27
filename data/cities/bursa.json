@@ -769,18 +769,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413319",
+        "url": "https://women.volleybox.net/tr/bursa-ayyldz-spor-kulubu-u18-23-nisan-spor-kulubu-u18-c413319",
+        "host_name": "Bursa Ayyıldız Spor Kulübü U18",
+        "guest_name": "23 Nisan Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-02",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -803,18 +810,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413320",
+        "url": "https://women.volleybox.net/tr/bursa-koc-spor-kulubu-b-u18-oksijen-spor-kulubu-u18-c413320",
+        "host_name": "Bursa Koç Spor Kulübü - B U18",
+        "guest_name": "Oksijen Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-05",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1018,18 +1032,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413321",
+        "url": "https://women.volleybox.net/tr/mg-spor-kulubu-u18-ds-nilufer-spor-kulubu-u18-c413321",
+        "host_name": "MG Spor Kulübü U18",
+        "guest_name": "DSİ Nilüfer Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-03",
+        "vb_time": "18:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "18:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1052,18 +1073,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413322",
+        "url": "https://women.volleybox.net/tr/guner-karakaya-spor-kulubu-u18-kestel-belediye-1952-spor-kulubu-u18-c413322",
+        "host_name": "Güner Karakaya Spor Kulübü U18",
+        "guest_name": "Kestel Belediye 1952 Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-03",
+        "vb_time": "19:00",
+        "vb_hall": "Kestel Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "19:00",
+          "vb_hall": "Kestel Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1266,18 +1294,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413323",
+        "url": "https://women.volleybox.net/tr/bursa-buyuksehir-belediyespor-u18-bursa-genc-saray-spor-kulubu-u18-c413323",
+        "host_name": "Bursa Büyükşehir Belediyespor U18",
+        "guest_name": "Bursa Genç Saray Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-02",
+        "vb_time": "18:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "18:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1300,18 +1335,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413324",
+        "url": "https://women.volleybox.net/tr/nilufer-olimpik-spor-kulubu-u18-negol-orhaniye-voleybol-sk-u18-c413324",
+        "host_name": "Nilüfer Olimpik Spor Kulübü U18",
+        "guest_name": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-04",
+        "vb_time": "19:00",
+        "vb_hall": "İnegöl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "19:00",
+          "vb_hall": "İnegöl Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1514,18 +1556,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413325",
+        "url": "https://women.volleybox.net/tr/metin-kucukkenar-frtna16-spor-kulubu-u18-osmangazi-belediyespor-u18-c413325",
+        "host_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
+        "guest_name": "Osmangazi Belediyespor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-03",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1548,18 +1597,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413326",
+        "url": "https://women.volleybox.net/tr/nilufer-belediyespor-u18-doruk-voleybol-spor-kulubu-u18-c413326",
+        "host_name": "Nilüfer Belediyespor U18",
+        "guest_name": "Doruk Voleybol Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-05",
+        "vb_time": "20:00",
+        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "20:00",
+          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3318,6 +3374,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:38.175617"
+  "volleybox_synced_matches": 63,
+  "volleybox_sync_updated_at": "2026-10-28T00:28:04.250055"
 }
