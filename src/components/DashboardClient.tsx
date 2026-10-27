@@ -336,7 +336,13 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
           />
         ) : activeMainTab === "standings" ? (
           /* ==================== PUAN DURUMU SEKMESİ ==================== */
-          <StandingsTab data={data} activeStandings={activeStandings} />
+          <StandingsTab
+            data={data}
+            activeStandings={activeStandings}
+            onSelectMatch={handleSelectMatch}
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+          />
         ) : (
           /* ==================== GRUP DURUMU SEKMESİ (VOLLEYBOX) ==================== */
           <div>

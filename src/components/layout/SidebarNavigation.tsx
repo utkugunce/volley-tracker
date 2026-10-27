@@ -103,11 +103,12 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
             <button
               type="button"
               onClick={onToggleCollapse}
-              className="p-1 rounded-md text-ink-3 hover:text-white hover:bg-surface-raised transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-surface-raised/80 hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-all cursor-pointer text-[11px] font-semibold active:scale-95"
               title="Lig Ağacını Daralt"
               aria-label="Lig Ağacını Daralt"
             >
-              <PanelLeftClose size={14} />
+              <PanelLeftClose size={13} className="text-primary" />
+              <span>Daralt</span>
             </button>
           )}
         </div>

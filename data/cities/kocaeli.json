@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T09:37:24.404542+03:00",
+  "updated_at": "2026-10-27T10:38:55.100830+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -105,6 +105,17 @@
       },
       {
         "rank": 7,
+        "team": "5 Renk Spor Kulübü U18",
+        "played": 5,
+        "won": 2,
+        "lost": 3,
+        "points": 6,
+        "sets_won": 8,
+        "sets_lost": 9,
+        "form": []
+      },
+      {
+        "rank": 8,
         "team": "Kocaeli 19 Mayıs Spor Kulübü U18",
         "played": 5,
         "won": 2,
@@ -115,25 +126,14 @@
         "form": []
       },
       {
-        "rank": 8,
+        "rank": 9,
         "team": "Kocaeli Elite Spor U18",
-        "played": 4,
+        "played": 5,
         "won": 1,
-        "lost": 3,
+        "lost": 4,
         "points": 4,
         "sets_won": 5,
-        "sets_lost": 9,
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "5 Renk Spor Kulübü U18",
-        "played": 4,
-        "won": 1,
-        "lost": 3,
-        "points": 3,
-        "sets_won": 5,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -272,6 +272,17 @@
       },
       {
         "rank": 9,
+        "team": "Dilovası Belediye Spor Kulübü U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 10,
         "team": "Umut Can Spor Kulübü U18",
         "played": 4,
         "won": 0,
@@ -282,25 +293,14 @@
         "form": []
       },
       {
-        "rank": 10,
-        "team": "Dilovası Belediye Spor Kulübü U18",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
         "rank": 11,
         "team": "Darıca Anadolu Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 12,
+        "sets_won": 1,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -1406,11 +1406,15 @@
       "match_no": "25",
       "home_team": "5 Renk Spor Kulübü U18",
       "away_team": "Kocaeli Elite Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "28-26",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -4011,11 +4015,16 @@
       "match_no": "18",
       "home_team": "Dilovası Belediye Spor Kulübü U18",
       "away_team": "Darıca Anadolu Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "23-25",
+        "25-17",
+        "25-12",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -5292,5 +5301,5 @@
     }
   ],
   "volleybox_synced_matches": 41,
-  "volleybox_sync_updated_at": "2026-10-27T09:43:49.507607"
+  "volleybox_sync_updated_at": "2026-10-27T10:46:28.669611"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T09:37:24.404542+03:00",
+  "updated_at": "2026-10-27T10:38:55.100830+03:00",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -30,51 +30,51 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "MBA Aksaray Anka Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
-        "played": 0,
+        "team": "Aksaray Eğitim Futbol Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Aksaray Eğitim Futbol Spor Kulübü U18",
-        "played": 0,
+        "team": "Eskil Tuzgölü Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Eskil Tuzgölü Spor Kulübü U18",
+        "team": "MBA Aksaray Anka Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -132,11 +132,15 @@
       "match_no": "1",
       "home_team": "Eskil Tuzgölü Spor Kulübü U18",
       "away_team": "MBA Aksaray Anka Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "16-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411532",
@@ -173,11 +177,15 @@
       "match_no": "2",
       "home_team": "MBA Aksaray Anka Spor Kulübü - C U18",
       "away_team": "Aksaray Eğitim Futbol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-20",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411533",
@@ -449,5 +457,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-10-27T09:43:38.578468"
+  "volleybox_sync_updated_at": "2026-10-27T10:46:16.935495"
 }

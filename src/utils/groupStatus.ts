@@ -1,6 +1,7 @@
 import { Match } from "@/types/fixture";
 import { getVolleyboxLeagueMapping } from "@/utils/volleybox";
 import { slugify } from "@/utils/slugify";
+import { getCategoryCombinedScore } from "@/utils/grouping";
 
 export type GroupStatusKey =
   | "all_dated_entered"
@@ -171,6 +172,13 @@ export interface StandingRowLike {
   team?: string;
   team_name?: string;
   name?: string;
+}
+
+export function getGroupStageRank(groupName: string): number {
+  const g = groupName.toLowerCase();
+  if (g.includes("final") && !g.includes("yarı") && !g.includes("yari") && !g.includes("semi")) return 3;
+  if (g.includes("yarı") || g.includes("yari") || g.includes("semi") || g.includes("play-off") || g.includes("playoff")) return 2;
+  return 1;
 }
 
 export function computeGroupStatusList(
@@ -347,12 +355,23 @@ export function computeGroupStatusList(
     });
   }
 
-  // Sıralama: Şehir alfabetik -> Kategori -> Grup
+
+  // Sıralama: Şehir alfabetik -> Kategori Hiyerarşisi (Süper Lig > 1. Lig) -> Grup Aşaması (Ön Eleme > Yarı Final > Final) -> Grup Adı
   return results.sort((a, b) => {
     const cityCmp = a.city.localeCompare(b.city, "tr");
     if (cityCmp !== 0) return cityCmp;
-    const catCmp = a.category.localeCompare(b.category, "tr");
+
+    const scoreA = getCategoryCombinedScore(a.category);
+    const scoreB = getCategoryCombinedScore(b.category);
+    if (scoreA !== scoreB) return scoreA - scoreB;
+
+    const catCmp = a.category.localeCompare(b.category, "tr", { numeric: true });
     if (catCmp !== 0) return catCmp;
-    return a.group.localeCompare(b.group, "tr");
+
+    const stageA = getGroupStageRank(a.group);
+    const stageB = getGroupStageRank(b.group);
+    if (stageA !== stageB) return stageA - stageB;
+
+    return a.group.localeCompare(b.group, "tr", { numeric: true });
   });
 }

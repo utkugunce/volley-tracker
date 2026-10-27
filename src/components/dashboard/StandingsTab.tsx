@@ -10,13 +10,24 @@ const StandingsTable = dynamic(
   { loading: TabViewLoading }
 );
 
+import type { Match } from "@/types/fixture";
+
 interface StandingsTabProps {
   data: FixturesData | undefined;
   activeStandings: NonNullable<FixturesData["standings"]>;
+  onSelectMatch?: (match: Match) => void;
+  favorites?: string[];
+  onToggleFavorite?: (id: string) => void;
 }
 
 /** PUAN DURUMU SEKMESİ */
-export const StandingsTab: React.FC<StandingsTabProps> = ({ data, activeStandings }) => (
+export const StandingsTab: React.FC<StandingsTabProps> = ({
+  data,
+  activeStandings,
+  onSelectMatch,
+  favorites = [],
+  onToggleFavorite,
+}) => (
   <div className="space-y-4">
     <h1 className="font-display text-lg sm:text-xl font-bold text-ink">
       {data?.city && data.city !== "Tüm İller"
@@ -28,6 +39,9 @@ export const StandingsTab: React.FC<StandingsTabProps> = ({ data, activeStanding
         standingsData={activeStandings}
         city={data?.city}
         matches={data?.matches || []}
+        onSelectMatch={onSelectMatch}
+        favorites={favorites}
+        onToggleFavorite={onToggleFavorite}
       />
     ) : (
       <div className="text-center py-12 bg-gradient-to-br from-canvas via-surface-muted to-panel border border-slate-800 rounded-2xl p-6 max-w-md mx-auto my-8 shadow-xl">

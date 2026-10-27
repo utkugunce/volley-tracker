@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { FixtureTable } from "@/components/FixtureTable";
+import { LeagueSection } from "@/components/match/LeagueSection";
 import { sameGroup } from "@/utils/standingsForm";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { StandingItem, Match } from "@/types/fixture";
@@ -30,9 +30,20 @@ interface StandingsTableProps {
   city?: string;
   matches?: Match[];
   onSelectTeam?: (team: StandingItem, context: StandingsTeamContext) => void;
+  onSelectMatch?: (match: Match) => void;
+  favorites?: string[];
+  onToggleFavorite?: (id: string) => void;
 }
 
-export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, city, matches, onSelectTeam }) => {
+export const StandingsTable: React.FC<StandingsTableProps> = ({
+  standingsData,
+  city,
+  matches,
+  onSelectTeam,
+  onSelectMatch,
+  favorites = [],
+  onToggleFavorite,
+}) => {
   const [showSimulator, setShowSimulator] = useState(false);
   const [matchesLayout, setMatchesLayout] = useState<"split" | "results" | "fixtures">("split");
   const {
@@ -196,23 +207,31 @@ export const StandingsTable: React.FC<StandingsTableProps> = ({ standingsData, c
           <div className={matchesLayout === "split" ? "grid grid-cols-1 lg:grid-cols-2 gap-3.5 items-start" : "space-y-3"}>
             {(matchesLayout === "split" || matchesLayout === "results") && finishedMatches.length > 0 && (
               <div className="min-w-0">
-                <FixtureTable
-                  title="Oynanan Maç Sonuçları"
-                  subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
+                <LeagueSection
+                  leagueTitle={activeContext?.leagueFullName || "Voleybol Ligi"}
+                  sectionLabel={activeContext?.displayGroup ? `${activeContext.displayGroup} · Biten Sonuçlar` : "Biten Sonuçlar"}
+                  cityName={activeContext?.city || city}
                   matches={finishedMatches}
-                  city={activeContext?.city || city}
-                  showCityBadge={false}
+                  mode="results"
+                  showGroupBadge={false}
+                  onSelectMatch={onSelectMatch}
+                  favorites={favorites}
+                  onToggleFavorite={onToggleFavorite}
                 />
               </div>
             )}
             {(matchesLayout === "split" || matchesLayout === "fixtures") && upcomingMatches.length > 0 && (
               <div className="min-w-0">
-                <FixtureTable
-                  title="Fikstür & Gelecek Program"
-                  subTitle={`${activeContext?.leagueFullName || ""} ${activeContext?.displayGroup || ""}`.trim()}
+                <LeagueSection
+                  leagueTitle={activeContext?.leagueFullName || "Voleybol Ligi"}
+                  sectionLabel={activeContext?.displayGroup ? `${activeContext.displayGroup} · Gelecek Fikstür` : "Gelecek Fikstür"}
+                  cityName={activeContext?.city || city}
                   matches={upcomingMatches}
-                  city={activeContext?.city || city}
-                  showCityBadge={false}
+                  mode="fixtures"
+                  showGroupBadge={false}
+                  onSelectMatch={onSelectMatch}
+                  favorites={favorites}
+                  onToggleFavorite={onToggleFavorite}
                 />
               </div>
             )}

@@ -127,12 +127,12 @@ export const AppShell: React.FC<AppShellProps> = ({
           <button
             type="button"
             onClick={handleToggleLeftCollapse}
-            className="hidden lg:inline-flex fixed left-3 top-20 z-30 items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-surface hover:bg-surface-raised border border-line text-ink-2 hover:text-white shadow-lg transition-all active:scale-95 cursor-pointer text-xs font-semibold"
+            className="hidden lg:inline-flex fixed left-3 top-20 z-30 items-center gap-2 px-3 py-2 rounded-xl bg-surface/95 backdrop-blur-md hover:bg-surface-raised border border-primary/40 text-primary hover:text-white shadow-xl transition-all active:scale-95 cursor-pointer text-xs font-bold animate-in fade-in-50 duration-200"
             title="Lig Ağacını Göster"
             aria-label="Lig Ağacını Göster"
           >
-            <PanelLeftOpen size={14} className="text-primary" />
-            <span className="text-[11px] font-bold">Lig Ağacı</span>
+            <PanelLeftOpen size={15} className="text-primary" />
+            <span className="text-xs font-bold">Lig Ağacını Aç</span>
           </button>
         )}
 

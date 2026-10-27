@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Star } from "lucide-react";
+import { Star, MapPin } from "lucide-react";
 import { Match } from "@/types/fixture";
 import { TeamBadge } from "@/components/TeamBadge";
 import { formatDateTurkish, getYesterdayString, isMatchPassed } from "@/utils/calendar";
@@ -105,22 +105,29 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
 
       {/* 2. Orta Sütun: Bağlam Başlığı + Alt Alta 2 Takım */}
       <div className="flex-1 min-w-0 px-3 flex flex-col justify-center gap-1">
-        {/* Bağlam Satırı (Şehir · Lig/Grup · Salon — Çerçevesiz, Düşük Gürültülü) */}
-        <div className="flex items-center gap-1.5 text-[10px] text-ink-3 truncate leading-none pb-0.5">
-          <span className="font-semibold text-ink-2 shrink-0">
+        {/* Bağlam Satırı (ŞEHİR ROZETİ · LİG BAŞLIĞI · GRUP · SALON) */}
+        <div className="flex items-center gap-1.5 text-[10px] text-ink-3 truncate leading-none pb-1">
+          {/* Şehir Rozeti - Belirgin ve Vurgulu */}
+          <span className="px-1.5 py-0.5 rounded font-black text-[10px] bg-sky-500/15 text-sky-300 border border-sky-500/30 uppercase tracking-wider shrink-0">
             {match.city || "Genel"}
           </span>
-          <span>·</span>
-          <span className="truncate">
-            {match.category
-              ? `${match.category}${match.group ? ` • ${match.group}` : ""}`
-              : match.group || leagueFallback || "Voleybol Ligi"}
+          {/* Lig Adı - Parlak Beyaz, Kalın ve Vurgulu */}
+          <span className="font-bold text-white text-[11px] truncate tracking-tight">
+            {match.category || leagueFallback || "Voleybol Ligi"}
           </span>
+          {/* Grup Bilgisi - Vurgulu Amber Rozet */}
+          {match.group && (
+            <span className="px-1.5 py-0.5 rounded font-semibold text-[10px] bg-amber-500/15 text-amber-300 border border-amber-500/25 shrink-0">
+              {match.group}
+            </span>
+          )}
+          {/* Salon Bilgisi */}
           {match.hall && match.hall !== "TBD" && (
             <>
-              <span className="hidden md:inline">·</span>
-              <span className="hidden md:inline truncate text-ink-3/80">
-                {match.hall}
+              <span className="hidden md:inline text-ink-3/60">·</span>
+              <span className="hidden md:inline-flex items-center gap-1 truncate text-ink-3/90 text-[10px]">
+                <MapPin size={10} className="shrink-0 text-ink-3" />
+                <span className="truncate">{match.hall}</span>
               </span>
             </>
           )}

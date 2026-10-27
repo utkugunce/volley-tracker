@@ -8,6 +8,7 @@ import {
   Flame,
   Calendar,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   ArrowRight,
   Activity,
@@ -151,6 +152,37 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
     return null;
   }, [feedFilter, todayMatches, recentResults, upcomingMatches]);
 
+  const cityScrollRef = React.useRef<HTMLDivElement>(null);
+
+  const scrollCities = (delta: number) => {
+    if (cityScrollRef.current) {
+      cityScrollRef.current.scrollBy({ left: delta, behavior: "smooth" });
+    }
+  };
+
+  const handleDragScroll = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    let isDown = true;
+    const startX = e.pageX - el.offsetLeft;
+    const scrollLeft = el.scrollLeft;
+
+    const onMouseMove = (ev: MouseEvent) => {
+      if (!isDown) return;
+      ev.preventDefault();
+      const x = ev.pageX - el.offsetLeft;
+      el.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    };
+
+    const onMouseUp = () => {
+      isDown = false;
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+  };
+
   return (
     <div className="space-y-4 animate-in fade-in-50 duration-200">
       {/* Sayfa Başlığı (Semantik H1 & Canlı Gösterge) */}
@@ -165,13 +197,20 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       </div>
 
       {/* 1. ÜST KONTROL BAR: FOTMOB / APPLE SPORTS SEGMENTED FİLTRE */}
-      <div className="glass-panel rounded-2xl p-2 sm:p-2.5 border border-line/70 flex flex-col md:flex-row md:items-center justify-between gap-2 min-w-0">
+      <div className="glass-panel rounded-2xl p-2 sm:p-2.5 border border-line/70 flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 min-w-0">
         {/* Sol: Akış Filtreleri (Tümü, Bugün, Bitenler, Fikstür) */}
-        <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5">
+        <div
+          onWheel={(e) => {
+            if (e.deltaY !== 0) {
+              e.currentTarget.scrollLeft += e.deltaY;
+            }
+          }}
+          className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 shrink-0"
+        >
           <button
             type="button"
             onClick={() => setFeedFilter("all")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "all"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
@@ -186,7 +225,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("today")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "today"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
@@ -204,7 +243,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("finished")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "finished"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
@@ -220,7 +259,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("upcoming")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
               feedFilter === "upcoming"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
@@ -234,34 +273,66 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           </button>
         </div>
 
-        {/* Sağ: Hızlı İl Geçiş Hapları */}
-        <div className="hidden md:flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5">
-          <span className="text-[11px] font-medium text-ink-3 mr-1 hidden sm:inline">İl:</span>
+        {/* Sağ: Hızlı İl Geçiş Hapları (Yatay Kaydırılabilir ve Ok Destekli) */}
+        <div className="hidden md:flex items-center gap-1 min-w-0 flex-1 justify-end">
+          <span className="text-[11px] font-medium text-ink-3 mr-1 shrink-0 hidden xl:inline">İl:</span>
+          
           <button
             type="button"
-            onClick={() => onSelectCity("all")}
-            className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
-              currentCitySlug === "all"
-                ? "bg-primary/15 text-primary font-bold"
-                : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
-            }`}
+            onClick={() => scrollCities(-150)}
+            className="p-1 rounded-md text-ink-3 hover:text-white hover:bg-surface-raised transition-colors shrink-0 cursor-pointer"
+            title="Sola kaydır"
+            aria-label="İlleri sola kaydır"
           >
-            Tümü
+            <ChevronLeft size={14} />
           </button>
-          {activeCities.slice(0, 5).map((c) => (
+
+          <div
+            ref={cityScrollRef}
+            onWheel={(e) => {
+              if (e.deltaY !== 0) {
+                e.currentTarget.scrollLeft += e.deltaY;
+              }
+            }}
+            onMouseDown={handleDragScroll}
+            className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 min-w-0 max-w-full cursor-grab active:cursor-grabbing scroll-smooth select-none"
+          >
             <button
-              key={c.slug}
               type="button"
-              onClick={() => onSelectCity(c.slug)}
-              className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
-                currentCitySlug === c.slug
-                  ? "bg-primary/15 text-primary font-bold"
+              onClick={() => onSelectCity("all")}
+              className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                currentCitySlug === "all"
+                  ? "bg-primary/20 text-primary font-bold border border-primary/30"
                   : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
               }`}
             >
-              {c.name}
+              Tümü
             </button>
-          ))}
+            {activeCities.map((c) => (
+              <button
+                key={c.slug}
+                type="button"
+                onClick={() => onSelectCity(c.slug)}
+                className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                  currentCitySlug === c.slug
+                    ? "bg-primary/20 text-primary font-bold border border-primary/30"
+                    : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
+                }`}
+              >
+                {c.name}
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => scrollCities(150)}
+            className="p-1 rounded-md text-ink-3 hover:text-white hover:bg-surface-raised transition-colors shrink-0 cursor-pointer"
+            title="Sağa kaydır"
+            aria-label="İlleri sağa kaydır"
+          >
+            <ChevronRight size={14} />
+          </button>
         </div>
       </div>
 

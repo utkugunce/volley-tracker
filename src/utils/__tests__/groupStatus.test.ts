@@ -1,9 +1,11 @@
+import { isU18Category, isU16Category } from "@/components/GroupStatusView";
 import { describe, it, expect } from "vitest";
 import {
   GROUP_STATUS_CONFIGS,
   GROUP_STATUS_LIST,
   evaluateGroupStatus,
   computeGroupStatusList,
+  getGroupStageRank,
 } from "@/utils/groupStatus";
 import { getAppRoute, parseAppRoute } from "@/components/DashboardClient";
 import { Match } from "@/types/fixture";
@@ -359,6 +361,131 @@ describe("groupStatus", () => {
         tab: "group-status",
         city: "ankara",
       });
+    });
+  });
+
+  describe("Category and Group Hierarchy Ordering (Süper Lig > 1. Lig, Ön Eleme > Yarı Final > Final)", () => {
+    it("orders stages correctly with getGroupStageRank", () => {
+      expect(getGroupStageRank("A Grubu")).toBe(1);
+      expect(getGroupStageRank("1. Grup")).toBe(1);
+      expect(getGroupStageRank("Yarı Final - A Grubu")).toBe(2);
+      expect(getGroupStageRank("Yarı Final - B Grubu")).toBe(2);
+      expect(getGroupStageRank("Play-Off Grubu")).toBe(2);
+      expect(getGroupStageRank("Final Grubu")).toBe(3);
+      expect(getGroupStageRank("Final")).toBe(3);
+    });
+
+    it("sorts Genç Kızlar Süper Lig before Genç Kızlar 1. Ligi and preliminary groups before semi-finals", () => {
+      const dummyMatches: Match[] = [
+        {
+          id: "m_g1_a",
+          city: "İzmir",
+          category: "Genç Kızlar 1. Ligi",
+          age_group: "Genç",
+          group: "A Grubu",
+          home_team: "Takım 1",
+          away_team: "Takım 2",
+          status: "upcoming",
+        },
+        {
+          id: "m_gs_semi_a",
+          city: "İzmir",
+          category: "Genç Kızlar Süper Lig",
+          age_group: "Genç",
+          group: "Yarı Final - A Grubu",
+          home_team: "Takım 3",
+          away_team: "Takım 4",
+          status: "upcoming",
+        },
+        {
+          id: "m_gs_b",
+          city: "İzmir",
+          category: "Genç Kızlar Süper Lig",
+          age_group: "Genç",
+          group: "B Grubu",
+          home_team: "Takım 5",
+          away_team: "Takım 6",
+          status: "upcoming",
+        },
+        {
+          id: "m_gs_a",
+          city: "İzmir",
+          category: "Genç Kızlar Süper Lig",
+          age_group: "Genç",
+          group: "A Grubu",
+          home_team: "Takım 7",
+          away_team: "Takım 8",
+          status: "upcoming",
+        },
+        {
+          id: "m_ys_a",
+          city: "İzmir",
+          category: "Yıldız Kızlar Süper Lig",
+          age_group: "Yıldız",
+          group: "A Grubu",
+          home_team: "Takım 9",
+          away_team: "Takım 10",
+          status: "upcoming",
+        },
+        {
+          id: "m_y1_a",
+          city: "İzmir",
+          category: "Yıldız Kızlar 1. Ligi",
+          age_group: "Yıldız",
+          group: "A Grubu",
+          home_team: "Takım 11",
+          away_team: "Takım 12",
+          status: "upcoming",
+        },
+      ];
+
+      const list = computeGroupStatusList(dummyMatches);
+      expect(list).toHaveLength(6);
+
+      // Verify exact order
+      // 1. Genç Kızlar Süper Lig - A Grubu
+      expect(list[0].category).toBe("Genç Kızlar Süper Lig");
+      expect(list[0].group).toBe("A Grubu");
+
+      // 2. Genç Kızlar Süper Lig - B Grubu
+      expect(list[1].category).toBe("Genç Kızlar Süper Lig");
+      expect(list[1].group).toBe("B Grubu");
+
+      // 3. Genç Kızlar Süper Lig - Yarı Final - A Grubu
+      expect(list[2].category).toBe("Genç Kızlar Süper Lig");
+      expect(list[2].group).toBe("Yarı Final - A Grubu");
+
+      // 4. Genç Kızlar 1. Ligi - A Grubu
+      expect(list[3].category).toBe("Genç Kızlar 1. Ligi");
+      expect(list[3].group).toBe("A Grubu");
+
+      // 5. Yıldız Kızlar Süper Lig - A Grubu
+      expect(list[4].category).toBe("Yıldız Kızlar Süper Lig");
+      expect(list[4].group).toBe("A Grubu");
+
+      // 6. Yıldız Kızlar 1. Ligi - A Grubu
+      expect(list[5].category).toBe("Yıldız Kızlar 1. Ligi");
+      expect(list[5].group).toBe("A Grubu");
+    });
+  });
+
+  describe("GroupStatusView age category classification helpers", () => {
+    it("correctly identifies U18 / Genç Kızlar categories", () => {
+      expect(isU18Category("Genç Kızlar Süper Lig")).toBe(true);
+      expect(isU18Category("Genç Kızlar 1. Ligi")).toBe(true);
+      expect(isU18Category("Genç Kızlar (U18)")).toBe(true);
+      expect(isU18Category("U18 Genç")).toBe(true);
+      expect(isU18Category("Yıldız Kızlar Süper Lig")).toBe(false);
+      expect(isU18Category("Küçük Kızlar")).toBe(false);
+    });
+
+    it("correctly identifies U16 / Yıldız Kızlar categories", () => {
+      expect(isU16Category("Yıldız Kızlar Süper Lig")).toBe(true);
+      expect(isU16Category("Yıldız Kızlar 1. Ligi")).toBe(true);
+      expect(isU16Category("Yıldız Kızlar (U16)")).toBe(true);
+      expect(isU16Category("U16 Yıldız")).toBe(true);
+      expect(isU16Category("Genç Kızlar Süper Lig")).toBe(false);
+      expect(isU16Category("Midi Kızlar")).toBe(false);
     });
   });
 });

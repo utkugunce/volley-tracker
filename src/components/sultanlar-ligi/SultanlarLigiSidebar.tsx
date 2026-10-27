@@ -11,6 +11,7 @@ import {
   Star,
   Swords,
   Trophy,
+  PanelLeftClose,
   Users,
 } from "lucide-react";
 import { Kadinlar2LigGroup } from "@/types/kadinlar2Lig";
@@ -32,6 +33,7 @@ export const SultanlarLigiSidebar: React.FC<SultanlarLigiSidebarProps> = ({
   showOnlyFavorites = false,
   onToggleFavoritesOnly,
   onSelectTab,
+  onToggleCollapse,
 }) => {
   const totalMatches = groups.reduce((sum, group) => sum + group.mac_sayisi, 0);
   const totalTeams = groups.reduce((sum, group) => sum + group.takim_sayisi, 0);
@@ -51,9 +53,23 @@ export const SultanlarLigiSidebar: React.FC<SultanlarLigiSidebarProps> = ({
               <p className="text-[10px] text-ink-3">Vodafone Sultanlar Ligi</p>
             </div>
           </div>
-          <span className="font-mono tabular-nums text-[11px] font-medium text-ink-3">
-            {totalTeams} Takım
-          </span>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <span className="font-mono tabular-nums text-[11px] font-medium text-ink-3">
+              {totalTeams} Takım
+            </span>
+            {onToggleCollapse && (
+              <button
+                type="button"
+                onClick={onToggleCollapse}
+                className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-surface-raised/80 hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-all cursor-pointer text-[11px] font-semibold active:scale-95"
+                title="Lig Ağacını Daralt"
+                aria-label="Lig Ağacını Daralt"
+              >
+                <PanelLeftClose size={13} className="text-primary" />
+                <span>Daralt</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
