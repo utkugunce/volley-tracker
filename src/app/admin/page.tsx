@@ -223,6 +223,20 @@ export default function AdminPage() {
     }
   };
 
+  const handleTokenLogin = async (tokenStr: string) => {
+    setLoading(true);
+    setAuthError(null);
+    try {
+      setToken(tokenStr);
+      await verifyAndFetchData(tokenStr);
+    } catch (error) {
+      setAuthError(toErrorLike(error).message || "Token doğrulaması başarısız.");
+      setIsAuthenticated(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleLogout = async () => {
     setIsAuthenticated(false);
     setToken("");
@@ -620,6 +634,7 @@ export default function AdminPage() {
         loading={loading}
         setAuthEmail={setAuthEmail}
         setAuthPassword={setAuthPassword}
+        handleTokenLogin={handleTokenLogin}
       />
     );
   }
