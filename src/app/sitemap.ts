@@ -5,6 +5,7 @@ import { getLeagueAnalytics } from "@/utils/leagueAnalyticsData";
 import { slugify } from "@/utils/slugify";
 import { parseScanTimestamp, readDataJson } from "@/utils/dataTimestamps";
 import { getDistrictSummaries } from "@/utils/districtClubs";
+import { getAllGuides } from "@/data/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://altyapivoleybol.com.tr";
@@ -191,7 +192,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
+  // Programmatic SEO: Voleybol Rehberi Rotaları
+  const guideRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/rehber`,
+      lastModified: dataUpdatedAt,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    ...getAllGuides().map((guide) => ({
+      url: `${baseUrl}/rehber/${guide.slug}`,
+      lastModified: new Date(guide.updatedAt),
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    })),
+  ];
 
-
-  return [...staticRoutes, ...statsRoutes, ...teamRoutes, ...cityRoutes];
+  return [...staticRoutes, ...statsRoutes, ...teamRoutes, ...cityRoutes, ...guideRoutes];
 }

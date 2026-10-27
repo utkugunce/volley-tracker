@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Printer, Star, Search } from "lucide-react";
+import { Printer, Star, Search, BookOpen } from "lucide-react";
 import { CitySelector } from "@/components/CitySelector";
 import { BrandLogo } from "@/components/BrandLogo";
 import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
@@ -254,6 +254,16 @@ export const Header: React.FC<HeaderProps> = ({
           <span>{t("nav.calendar")}</span>
         </Link>
 
+        {/* Voleybol Rehberi & Programmatic SEO (ayrı rota: /rehber) */}
+        <Link
+          href="/rehber"
+          prefetch={false}
+          className="flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] border-transparent text-ink-2 hover:text-white"
+          title="Voleybol Bilgi Bankası, Kurallar ve Statüler Rehberi"
+        >
+          <BookOpen size={13} className="text-ink-3" />
+          <span>{t("nav.guide")}</span>
+        </Link>
 
       </nav>
     </header>
