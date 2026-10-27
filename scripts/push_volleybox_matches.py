@@ -544,6 +544,91 @@ def match_option_for_team(
     return best_opt
 
 
+def resolve_team_for_match(
+    tvf_team: str,
+    team_alias_map: Dict[str, set],
+    mappings_data: Optional[Dict[str, Any]] = None,
+    select_options: Optional[List[Dict[str, str]]] = None,
+    page_teams: Optional[Dict[str, str]] = None,
+    age_group: str = "",
+) -> Optional[Dict[str, str]]:
+    """
+    TVF takımını Volleybox takım ID'si ve adına dönüştürür.
+    Sırasıyla:
+      1. Sayfadaki <select> seçenekleri (varsa)
+      2. Sayfadaki maç kartlarında bulunan takımlar (varsa)
+      3. mappings_data['mappings'] listesindeki eşleştirmeler
+    Dönüş formatı: {'id': '<id>', 'label': '<name>'}
+    """
+    clean_tvf = (tvf_team or "").strip()
+    if not clean_tvf:
+        return None
+    synonyms = team_alias_map.get(clean_tvf.lower(), set())
+
+    # 1. <select> seçenekleri
+    if select_options:
+        opt = match_option_for_team(clean_tvf, select_options, team_alias_map)
+        if opt:
+            return {"id": str(opt["value"]), "label": str(opt["label"])}
+
+    # 2. Sayfadaki maç kartlarından çıkarılan takımlar
+    if page_teams:
+        best_tid = None
+        best_tname = None
+        best_sc = 0
+        for tid, tname in page_teams.items():
+            sc = team_match_score(clean_tvf, tname, synonyms)
+            if sc >= 70 and sc > best_sc:
+                best_sc = sc
+                best_tid = tid
+                best_tname = tname
+        if best_tid and best_tname:
+            return {"id": str(best_tid), "label": str(best_tname)}
+
+    # 3. mappings_data['mappings'] listesi
+    if mappings_data:
+        is_u18 = "genç" in age_group.lower() or "u18" in age_group.lower()
+        is_u16 = "yıldız" in age_group.lower() or "u16" in age_group.lower()
+        best_opt = None
+        best_score = 0
+
+        for m in mappings_data.get("mappings", []):
+            matched_as = (m.get("matched_as") or "").strip()
+            aliases = m.get("aliases") or []
+            url = m.get("volleybox_url") or ""
+            mat = re.search(r"[-/]t(\d+)", url)
+            if not mat:
+                continue
+            tid = mat.group(1)
+
+            # Doğrudan takma ad / isim eşleşmesi
+            if clean_tvf.lower() == matched_as.lower() or any(clean_tvf.lower() == a.lower().strip() for a in aliases):
+                sc = 100
+                if is_u18 and "u18" in matched_as.lower():
+                    sc += 10
+                elif is_u16 and "u16" in matched_as.lower():
+                    sc += 10
+            else:
+                sc = team_match_score(clean_tvf, matched_as, synonyms)
+                for a in aliases:
+                    a_sc = team_match_score(clean_tvf, a, synonyms)
+                    if a_sc > sc:
+                        sc = a_sc
+                if is_u18 and "u18" in matched_as.lower() and sc >= 70:
+                    sc += 5
+                elif is_u16 and "u16" in matched_as.lower() and sc >= 70:
+                    sc += 5
+
+            if sc >= 70 and sc > best_score:
+                best_score = sc
+                best_opt = {"id": tid, "label": matched_as, "score": sc}
+
+        if best_opt:
+            return {"id": best_opt["id"], "label": best_opt["label"]}
+
+    return None
+
+
 def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
     """
     '- Tur seçin -' menüsündeki seçeneklerden maça uygun turu/grubu seçer.
@@ -673,11 +758,12 @@ def fill_and_submit_match_on_page(
     page,
     match_item: Dict[str, Any],
     team_alias_map: Dict[str, set],
+    mappings_data: Optional[Dict[str, Any]] = None,
     inspect_only: bool = False,
 ) -> Tuple[bool, str]:
     """
     Açık olan Volleybox turnuva /matches sayfasında '+ Ekle' formunu açar,
-    görseldeki alanları doldurur ve gönderir.
+    görseldeki alanları (autocompleter veya select) doldurur ve '+ Ekle' (#submit_button_hall) butonuna basar.
     """
     if is_past_unscored_match(
         match_item["date"],
@@ -713,23 +799,96 @@ def fill_and_submit_match_on_page(
             return False, "Sayfada 'Ekle' (#add-match-trigger) butonu bulunamadı"
         time.sleep(1.0)
 
-    # 2. Form içindeki tüm <select> menülerinin seçeneklerini oku
-    form_meta = page.evaluate(
+    # 2. Form içindeki alanları, <select> menülerini ve sayfadaki mevcut maç kartlarını tara
+    form_data = page.evaluate(
         """() => {
             const root = document.querySelector('#add_match_container, #add_match_form') || document;
             const selects = Array.from(root.querySelectorAll('select')).filter(s => s.offsetParent !== null);
-            return selects.map((s, idx) => ({
+            const selectMeta = selects.map((s, idx) => ({
                 idx,
                 name: s.getAttribute('name') || '',
                 id: s.getAttribute('id') || '',
                 firstLabel: s.options.length > 0 ? s.options[0].text.trim() : '',
                 options: Array.from(s.options).map(o => ({ value: o.value, label: o.text.trim() }))
             }));
+
+            const pageTeams = {};
+            const pageRounds = {};
+            const pageArenas = {};
+            document.querySelectorAll('[data-hid_host_id]').forEach(el => {
+                const hid = el.getAttribute('data-hid_host_id');
+                const hname = el.getAttribute('data-hid_host_name');
+                const gid = el.getAttribute('data-hid_guest_id');
+                const gname = el.getAttribute('data-hid_guest_name');
+                const rid = el.getAttribute('data-hid_round_id');
+                const rname = el.getAttribute('data-hid_round_name');
+                const aid = el.getAttribute('data-hid_arena_id');
+                const aname = el.getAttribute('data-hid_arena_name');
+
+                if (hid && hname) pageTeams[hid] = hname;
+                if (gid && gname) pageTeams[gid] = gname;
+                if (rid && rname) pageRounds[rid] = rname;
+                if (aid && aname) pageArenas[aid] = aname;
+            });
+
+            const tournId = document.querySelector('input[name="tournament_id"]')?.value || '';
+
+            return {
+                selectMeta,
+                pageTeams,
+                pageRounds,
+                pageArenas,
+                tournId,
+            };
         }"""
     )
 
-    if not form_meta:
-        return False, "Maç ekleme formundaki seçim menüleri (<select>) yüklenemedi"
+    # 3. Tur ve saha listesini AJAX ile sorgula (sayfada hiç maç yoksa bile turları getirir)
+    ajax_rounds = []
+    ajax_arenas = []
+    if form_data.get("tournId"):
+        try:
+            ajax_rounds = page.evaluate(
+                """async (tid) => {
+                    if (!window.jQuery || !tid) return [];
+                    try {
+                        const res = await window.jQuery.ajax({
+                            type: 'POST',
+                            url: (window.basedir || '/') + 'ajax/get_match_rounds_ajax',
+                            data: { tournament_id: tid, term: '' },
+                            dataType: 'json'
+                        });
+                        return Array.isArray(res) ? res : [];
+                    } catch (e) {
+                        return [];
+                    }
+                }""",
+                form_data["tournId"],
+            )
+        except Exception:
+            pass
+
+    if match_item.get("hall"):
+        try:
+            ajax_arenas = page.evaluate(
+                """async (hall) => {
+                    if (!window.jQuery || !hall) return [];
+                    try {
+                        const res = await window.jQuery.ajax({
+                            type: 'POST',
+                            url: (window.basedir || '/') + 'ajax/get_tags_ajax',
+                            data: { searched_items: 'arenas', term: hall, continent: 0 },
+                            dataType: 'json'
+                        });
+                        return Array.isArray(res) ? res : [];
+                    } catch (e) {
+                        return [];
+                    }
+                }""",
+                match_item["hall"],
+            )
+        except Exception:
+            pass
 
     # Menüleri ilk seçeneğin metnine veya name özelliğine göre sınıflandır
     host_select = None
@@ -738,12 +897,17 @@ def fill_and_submit_match_on_page(
     guest_sets_select = None
     round_select = None
     arena_select = None
+    set_select_candidates = []
 
-    set_Select_candidates = []
-    for s in form_meta:
+    for s in form_data.get("selectMeta", []):
         fl = s["firstLabel"].lower()
         nm = s["name"].lower()
-        if "ev sahibi" in fl or "host" in fl or "host_id" in nm or "host_team" in nm or "team1" in nm:
+        sid = s["id"].lower()
+        if "host_sets" in nm or "matchhostsetautocompleter" in sid:
+            host_sets_select = s
+        elif "guest_sets" in nm or "matchguestsetautocompleter" in sid:
+            guest_sets_select = s
+        elif "ev sahibi" in fl or "host" in fl or "host_id" in nm or "host_team" in nm or "team1" in nm:
             host_select = s
         elif "deplasman" in fl or "guest" in fl or "away" in fl or "guest_id" in nm or "guest_team" in nm or "team2" in nm:
             guest_select = s
@@ -752,50 +916,88 @@ def fill_and_submit_match_on_page(
         elif "saha seç" in fl or "arena" in fl or "hall" in fl or "arena" in nm or "hall" in nm:
             arena_select = s
         elif any(o["label"] in ("0", "1", "2", "3") for o in s["options"]) and len(s["options"]) <= 7:
-            set_Select_candidates.append(s)
+            set_select_candidates.append(s)
 
-    if len(set_Select_candidates) >= 2:
-        host_sets_select = set_Select_candidates[0]
-        guest_sets_select = set_Select_candidates[1]
+    if not host_sets_select and len(set_select_candidates) >= 1:
+        host_sets_select = set_select_candidates[0]
+    if not guest_sets_select and len(set_select_candidates) >= 2:
+        guest_sets_select = set_select_candidates[1]
 
-    if not host_select or not guest_select:
-        return False, f"Ev sahibi veya deplasman menüsü tespit edilemedi (bulunan menüler: {[s['firstLabel'] for s in form_meta]})"
-
-    # 3. Ev sahibi ve deplasman takımlarını eşleştir
-    host_opt = match_option_for_team(match_item["home_team"], host_select["options"], team_alias_map)
+    # 4. Ev sahibi ve deplasman takımlarını eşleştir (select, DOM veya mappings_data)
+    age_cat = match_item.get("category", "") or match_item.get("age_group", "")
+    host_opt = resolve_team_for_match(
+        match_item["home_team"],
+        team_alias_map,
+        mappings_data=mappings_data,
+        select_options=host_select["options"] if host_select else None,
+        page_teams=form_data.get("pageTeams"),
+        age_group=age_cat,
+    )
     if not host_opt:
         return (
             False,
-            f"Ev sahibi takım turnuva kadrosunda bulunamadı: '{match_item['home_team']}' "
-            f"(Mevcut: {[o['label'] for o in host_select['options'] if not o['label'].startswith('-')]})",
+            f"Ev sahibi takım Volleybox eşleştirmelerinde bulunamadı: '{match_item['home_team']}'",
         )
 
-    guest_opt = match_option_for_team(match_item["away_team"], guest_select["options"], team_alias_map)
+    guest_opt = resolve_team_for_match(
+        match_item["away_team"],
+        team_alias_map,
+        mappings_data=mappings_data,
+        select_options=guest_select["options"] if guest_select else None,
+        page_teams=form_data.get("pageTeams"),
+        age_group=age_cat,
+    )
     if not guest_opt:
         return (
             False,
-            f"Deplasman takımı turnuva kadrosunda bulunamadı: '{match_item['away_team']}' "
-            f"(Mevcut: {[o['label'] for o in guest_select['options'] if not o['label'].startswith('-')]})",
+            f"Deplasman takımı Volleybox eşleştirmelerinde bulunamadı: '{match_item['away_team']}'",
         )
 
-    # 4. Tur ve Saha eşleştirmesi
-    round_opt = match_option_for_round(match_item.get("group", ""), round_select["options"]) if round_select else None
-    arena_opt = match_option_for_arena(match_item.get("hall", ""), arena_select["options"]) if arena_select else None
+    # 5. Tur ve Saha eşleştirmesi
+    round_options = []
+    if round_select and round_select.get("options"):
+        round_options.extend(round_select["options"])
+    for rid, rname in form_data.get("pageRounds", {}).items():
+        round_options.append({"value": str(rid), "label": str(rname)})
+    for r in ajax_rounds:
+        r_id = str(r.get("id") or r.get("value") or "")
+        r_lbl = str(r.get("label") or r.get("name") or r.get("value") or "")
+        if r_id and r_lbl:
+            round_options.append({"value": r_id, "label": r_lbl})
 
-    # 5. Form alanlarını tarayıcıda doldur
+    round_opt = match_option_for_round(match_item.get("group", ""), round_options)
+
+    arena_options = []
+    if arena_select and arena_select.get("options"):
+        arena_options.extend(arena_select["options"])
+    for aid, aname in form_data.get("pageArenas", {}).items():
+        arena_options.append({"value": str(aid), "label": str(aname)})
+    for a in ajax_arenas:
+        a_id = str(a.get("id") or a.get("value") or "")
+        a_lbl = str(a.get("label") or a.get("name") or a.get("value") or "")
+        if a_id and a_lbl:
+            arena_options.append({"value": a_id, "label": a_lbl})
+
+    arena_opt = match_option_for_arena(match_item.get("hall", ""), arena_options)
+
+    # 6. Form alanlarını tarayıcıda doldur
     payload = {
-        "hostIdx": host_select["idx"],
-        "hostVal": host_opt["value"],
-        "guestIdx": guest_select["idx"],
-        "guestVal": guest_opt["value"],
+        "hostId": host_opt["id"],
+        "hostName": host_opt["label"],
+        "guestId": guest_opt["id"],
+        "guestName": guest_opt["label"],
+        "hostSelectIdx": host_select["idx"] if host_select else None,
+        "guestSelectIdx": guest_select["idx"] if guest_select else None,
         "hostSetsIdx": host_sets_select["idx"] if host_sets_select else None,
-        "hostSetsVal": str(match_item["home_sets"]),
+        "hostSets": str(match_item["home_sets"]),
         "guestSetsIdx": guest_sets_select["idx"] if guest_sets_select else None,
-        "guestSetsVal": str(match_item["away_sets"]),
-        "roundIdx": round_select["idx"] if (round_select and round_opt) else None,
-        "roundVal": round_opt["value"] if round_opt else None,
-        "arenaIdx": arena_select["idx"] if (arena_select and arena_opt) else None,
-        "arenaVal": arena_opt["value"] if arena_opt else None,
+        "guestSets": str(match_item["away_sets"]),
+        "roundId": round_opt["value"] if round_opt else None,
+        "roundName": round_opt["label"] if round_opt else None,
+        "roundSelectIdx": round_select["idx"] if (round_select and round_opt) else None,
+        "arenaId": arena_opt["value"] if arena_opt else None,
+        "arenaName": arena_opt["label"] if arena_opt else None,
+        "arenaSelectIdx": arena_select["idx"] if (arena_select and arena_opt) else None,
         "date": match_item["date"],
         "time": match_item["time"] or "",
         "forfeit": bool(match_item["forfeit"]),
@@ -805,56 +1007,66 @@ def fill_and_submit_match_on_page(
     page.evaluate(
         """(p) => {
             const root = document.querySelector('#add_match_container, #add_match_form') || document;
-            const selects = Array.from(root.querySelectorAll('select')).filter(s => s.offsetParent !== null);
 
-            function setSelect(idx, val) {
-                if (idx === null || idx === undefined || !selects[idx] || !val) return;
-                const el = selects[idx];
+            function setVal(el, val) {
+                if (!el || val === undefined || val === null) return;
                 el.value = val;
+                el.dispatchEvent(new Event('input', { bubbles: true }));
                 el.dispatchEvent(new Event('change', { bubbles: true }));
                 if (window.jQuery) {
-                    window.jQuery(el).val(val).trigger('change');
+                    window.jQuery(el).val(val).trigger('input').trigger('change');
                 }
             }
 
-            setSelect(p.hostIdx, p.hostVal);
-            setSelect(p.guestIdx, p.guestVal);
-            setSelect(p.hostSetsIdx, p.hostSetsVal);
-            setSelect(p.guestSetsIdx, p.guestSetsVal);
-            setSelect(p.roundIdx, p.roundVal);
-            setSelect(p.arenaIdx, p.arenaVal);
+            // 1. Host & Guest Autocompleter inputs (Volleybox standardı)
+            const hostIdInp = root.querySelector('input[name="host_id"]');
+            const hostNameInp = root.querySelector('#matchHostAutocompleter');
+            if (hostIdInp) setVal(hostIdInp, p.hostId);
+            if (hostNameInp) setVal(hostNameInp, p.hostName);
 
-            const inputs = Array.from(root.querySelectorAll('input')).filter(i => i.offsetParent !== null);
-            for (const inp of inputs) {
-                const ph = (inp.getAttribute('placeholder') || '').toLowerCase();
-                const nm = (inp.getAttribute('name') || '').toLowerCase();
-                const tp = (inp.getAttribute('type') || '').toLowerCase();
-                if (ph.includes('tarih') || ph.includes('date') || nm.includes('date') || tp === 'date') {
-                    inp.value = p.date;
-                    inp.dispatchEvent(new Event('input', { bubbles: true }));
-                    inp.dispatchEvent(new Event('change', { bubbles: true }));
-                    if (window.jQuery) window.jQuery(inp).val(p.date).trigger('change');
-                } else if (ph.includes('saat') || ph.includes('time') || ph.includes('hour') || nm.includes('time') || nm.includes('hour') || tp === 'time') {
-                    if (p.time) {
-                        inp.value = p.time;
-                        inp.dispatchEvent(new Event('input', { bubbles: true }));
-                        inp.dispatchEvent(new Event('change', { bubbles: true }));
-                        if (window.jQuery) window.jQuery(inp).val(p.time).trigger('change');
-                    }
-                }
-            }
+            const guestIdInp = root.querySelector('input[name="guest_id"]');
+            const guestNameInp = root.querySelector('#matchGuestAutocompleter');
+            if (guestIdInp) setVal(guestIdInp, p.guestId);
+            if (guestNameInp) setVal(guestNameInp, p.guestName);
 
-            // Hükmen (walkover) anahtarı
-            const checkboxes = Array.from(root.querySelectorAll('input[type="checkbox"]'));
-            for (const cb of checkboxes) {
-                const nm = (cb.getAttribute('name') || '').toLowerCase();
-                const parentText = (cb.closest('label, div')?.textContent || '').toLowerCase();
-                if (nm.includes('walkover') || parentText.includes('hükmen') || parentText.includes('walkover')) {
-                    if (cb.checked !== p.forfeit) {
-                        cb.click();
-                    }
-                    break;
-                }
+            // 2. Selects (Menü modu veya set sayıları)
+            const selects = Array.from(root.querySelectorAll('select')).filter(s => s.offsetParent !== null);
+            if (p.hostSelectIdx !== null && selects[p.hostSelectIdx]) setVal(selects[p.hostSelectIdx], p.hostId);
+            if (p.guestSelectIdx !== null && selects[p.guestSelectIdx]) setVal(selects[p.guestSelectIdx], p.guestId);
+
+            const hostSetsEl = root.querySelector('select[name="host_sets"], #matchHostSetAutocompleter')
+                || (p.hostSetsIdx !== null && selects[p.hostSetsIdx] ? selects[p.hostSetsIdx] : null);
+            if (hostSetsEl) setVal(hostSetsEl, p.hostSets);
+
+            const guestSetsEl = root.querySelector('select[name="guest_sets"], #matchGuestSetAutocompleter')
+                || (p.guestSetsIdx !== null && selects[p.guestSetsIdx] ? selects[p.guestSetsIdx] : null);
+            if (guestSetsEl) setVal(guestSetsEl, p.guestSets);
+
+            // 3. Date & Time
+            const dateInp = root.querySelector('input#date, input[name="date"]');
+            if (dateInp) setVal(dateInp, p.date);
+
+            const timeInp = root.querySelector('input#match_hour, input[name="hour_time"], input[name="time"]');
+            if (timeInp && p.time) setVal(timeInp, p.time);
+
+            // 4. Round
+            const roundIdInp = root.querySelector('input[name="round_id"]');
+            const roundNameInp = root.querySelector('#matchRoundAutocompleter');
+            if (roundIdInp && p.roundId) setVal(roundIdInp, p.roundId);
+            if (roundNameInp && p.roundName) setVal(roundNameInp, p.roundName);
+            if (p.roundSelectIdx !== null && selects[p.roundSelectIdx] && p.roundId) setVal(selects[p.roundSelectIdx], p.roundId);
+
+            // 5. Arena
+            const arenaIdInp = root.querySelector('input[name="arena_id"]');
+            const arenaNameInp = root.querySelector('#matchArenaAutocompleter');
+            if (arenaIdInp && p.arenaId) setVal(arenaIdInp, p.arenaId);
+            if (arenaNameInp && p.arenaName) setVal(arenaNameInp, p.arenaName);
+            if (p.arenaSelectIdx !== null && selects[p.arenaSelectIdx] && p.arenaId) setVal(selects[p.arenaSelectIdx], p.arenaId);
+
+            // 6. Walkover / Hükmen
+            const walkover = root.querySelector('input#walkover, input[name="walkover"]');
+            if (walkover && walkover.checked !== p.forfeit) {
+                walkover.click();
             }
         }""",
         payload,
@@ -875,7 +1087,9 @@ def fill_and_submit_match_on_page(
                     if (hInp && gInp) {
                         hInp.value = parts[0];
                         gInp.value = parts[1];
+                        hInp.dispatchEvent(new Event('input', { bubbles: true }));
                         hInp.dispatchEvent(new Event('change', { bubbles: true }));
+                        gInp.dispatchEvent(new Event('input', { bubbles: true }));
                         gInp.dispatchEvent(new Event('change', { bubbles: true }));
                     }
                 }
@@ -899,22 +1113,39 @@ def fill_and_submit_match_on_page(
         input("   👉 Tarayıcıda formu kontrol edin. Devam etmek için Enter'a basın...")
         return True, summary
 
-    # 6. '+ Ekle' (#submit_button_hall) butonuna tıkla
-    submitted = page.evaluate(
-        """() => {
-            const root = document.querySelector('#add_match_container, #add_match_form') || document;
-            const btn = root.querySelector('#submit_button_hall, button[type="submit"], input[type="submit"]')
-                || Array.from(root.querySelectorAll('button, a')).find(el => {
-                    const t = (el.textContent || '').trim();
-                    return t.includes('Ekle') || t.includes('Add');
-                });
-            if (btn) {
-                btn.click();
-                return true;
-            }
-            return false;
-        }"""
-    )
+    # 7. '+ Ekle' (#submit_button_hall) butonuna tıkla
+    submitted = False
+    try:
+        btn_loc = page.locator("#submit_button_hall, button[type='submit']")
+        if btn_loc.count() > 0 and btn_loc.first.is_visible():
+            btn_loc.first.click()
+            submitted = True
+    except Exception:
+        pass
+
+    if not submitted:
+        submitted = page.evaluate(
+            """() => {
+                const root = document.querySelector('#add_match_container, #add_match_form') || document;
+                const btn = root.querySelector('#submit_button_hall, button[type="submit"], input[type="submit"]')
+                    || Array.from(root.querySelectorAll('button, a')).find(el => {
+                        const t = (el.textContent || '').trim();
+                        return t === 'Ekle' || t === '+ Ekle' || t.includes('Ekle') || t.includes('Add');
+                    });
+                if (btn) {
+                    btn.click();
+                    return true;
+                }
+                const form = document.querySelector('#add_match_form');
+                if (form) {
+                    if (window.jQuery) window.jQuery(form).submit();
+                    else form.submit();
+                    return true;
+                }
+                return false;
+            }"""
+        )
+
     if not submitted:
         return False, "Form içindeki '+ Ekle' (#submit_button_hall) gönderme butonu bulunamadı"
 
@@ -923,7 +1154,7 @@ def fill_and_submit_match_on_page(
     # Hata mesajı var mı kontrol et
     err_text = page.evaluate(
         """() => {
-            const err = document.querySelector('#add_match_form p.errors, #add_match_container .formError, .ui-dialog-content');
+            const err = document.querySelector('#add_match_form p.errors, #add_match_container .formError, .ui-dialog-content, .error-message');
             return err && err.offsetParent !== null ? err.textContent.trim() : '';
         }"""
     )
@@ -1133,6 +1364,7 @@ def main():
                     page,
                     m_item,
                     team_alias_map,
+                    mappings_data=mappings_data,
                     inspect_only=args.inspect_form,
                 )
                 if ok:

@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
-import { spawn, type ChildProcess } from "child_process";
+import { spawn, spawnSync, type ChildProcess } from "child_process";
 import { timingSafeEqual } from "crypto";
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
+import { normalizeGithubRepo } from "@/utils/scrapeTrigger";
 import mappingsJson from "../../../../../data/volleybox-mappings.json";
 
 export interface VolleyboxBotLogEntry {
@@ -285,6 +286,67 @@ function resolvePythonCommand(): string {
   return process.platform === "win32" ? "python" : "python3";
 }
 
+function isPythonAvailable(): boolean {
+  try {
+    const cmd = resolvePythonCommand();
+    const res = spawnSync(cmd, ["--version"], {
+      encoding: "utf-8",
+      timeout: 2500,
+      windowsHide: true,
+    });
+    return res.status === 0;
+  } catch {
+    return false;
+  }
+}
+
+export const VOLLEYBOX_BOT_WORKFLOW_FILE = "volleybox-bot.yml";
+
+export async function dispatchVolleyboxBotWorkflow(params: {
+  city?: string;
+  limit?: number;
+  delay?: number;
+  dry_run?: boolean;
+}): Promise<{ status: "dispatched" | "not_configured" | "failed"; error?: string }> {
+  const ghToken = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN)?.trim();
+  const repo = normalizeGithubRepo(process.env.GITHUB_REPOSITORY) || "utkugunce/volley-tracker";
+  if (!ghToken) {
+    return { status: "not_configured" };
+  }
+
+  try {
+    const dispatchRes = await fetch(
+      `https://api.github.com/repos/${repo}/actions/workflows/${VOLLEYBOX_BOT_WORKFLOW_FILE}/dispatches`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${ghToken}`,
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "User-Agent": "VolleyTracker-App",
+        },
+        body: JSON.stringify({
+          ref: "main",
+          inputs: {
+            city: params.city || "all",
+            limit: String(params.limit || 25),
+            delay: String(params.delay || 8),
+            dry_run: Boolean(params.dry_run),
+          },
+        }),
+      }
+    );
+
+    if (dispatchRes.ok || dispatchRes.status === 204) {
+      return { status: "dispatched" };
+    }
+    const errBody = await dispatchRes.text();
+    return { status: "failed", error: `HTTP ${dispatchRes.status}: ${errBody}` };
+  } catch (e) {
+    return { status: "failed", error: e instanceof Error ? e.message : String(e) };
+  }
+}
+
 function appendLog(runner: InternalBotRunner, rawLine: string) {
   const line = rawLine.trim();
   if (!line) return;
@@ -492,6 +554,76 @@ export async function POST(request: Request) {
     logs: [],
   };
   runner.nextLogId = 1;
+
+  if (!isPythonAvailable()) {
+    const ghRes = await dispatchVolleyboxBotWorkflow({
+      city,
+      limit,
+      delay,
+      dry_run: mode === "dry-run",
+    });
+
+    if (ghRes.status === "dispatched") {
+      runner.state.status = "running";
+      runner.state.mode = mode;
+      runner.state.currentStep = "🚀 Bot GitHub Actions bulut ortamında tetiklendi...";
+      appendLog(
+        runner,
+        "ℹ️ Render web sunucusunda Python motoru bulunmadığı için bot GitHub Actions bulut ortamında başlatıldı."
+      );
+      appendLog(
+        runner,
+        `🚀 İşlem Parametreleri: İl=${city}, Limit=${limit}, Gecikme=${delay}s, Mod=${mode}`
+      );
+      appendLog(
+        runner,
+        "☁️ GitHub Actions üzerinde Playwright & Chromium ile maçlar otomatik taranıp eklenecektir."
+      );
+      appendLog(
+        runner,
+        "🔗 Canlı çalışma akışını GitHub deponuzun 'Actions' sekmesinden takip edebilirsiniz."
+      );
+      return NextResponse.json({ ok: true, state: runner.state, dispatchedToGithub: true });
+    }
+
+    runner.state.status = "failed";
+    const msg = "Render sunucusunda Python motoru bulunamadı.";
+    runner.state.currentStep = msg;
+    appendLog(runner, `❌ ${msg}`);
+    appendLog(runner, "");
+    appendLog(
+      runner,
+      "💡 Render varsayılan olarak yalnızca Node.js barındırdığı için botu çalıştırmanın 2 kolay yolu:"
+    );
+    appendLog(runner, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+    appendLog(runner, "1️⃣ BİLGİSAYARINIZDAN ÇALIŞTIRIN (Önerilen & En Kolayı):");
+    appendLog(runner, "   Kendi bilgisayarınızda terminal açıp şu komutu çalıştırabilirsiniz:");
+    appendLog(
+      runner,
+      `   npm run push:volleybox${city && city !== "all" ? ` -- --city ${city}` : ""}`
+    );
+    appendLog(
+      runner,
+      "   (Böylece tarayıcı bilgisayarınızda açılır, Cloudflare engeline takılmaz ve eklenen maçlar otomatik siteye senkronize edilir)"
+    );
+    appendLog(runner, "");
+    appendLog(runner, "2️⃣ BULUTTA PANEL ÜZERİNDEN ÇALIŞTIRIN (GitHub Actions):");
+    appendLog(runner, "   Render Dashboard -> Environment Variables bölümüne GITHUB_TOKEN tanımlayın.");
+    appendLog(
+      runner,
+      "   Token eklendiğinde paneldeki 'Botu Başlat' butonu arka planda GitHub Actions bulut işini otomatik tetikleyecektir."
+    );
+    appendLog(runner, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+
+    return NextResponse.json(
+      {
+        error:
+          "Render sunucusunda Python motoru bulunamadı. Panelden bulutta çalıştırmak için Render Dashboard'a GITHUB_TOKEN ekleyebilir veya yerel terminalinizden 'npm run push:volleybox' komutunu çalıştırabilirsiniz.",
+        state: runner.state,
+      },
+      { status: 400 }
+    );
+  }
 
   const pyCmd = resolvePythonCommand();
   appendLog(
