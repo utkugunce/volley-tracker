@@ -13,6 +13,7 @@ vi.mock("next/link", () => ({
 }));
 
 import AdminPage from "../page";
+import { VolleyboxBotTab } from "../_components/VolleyboxBotTab";
 
 // Auth atlanmaz: yalnız giriş (oturumsuz) ekranının render'ı ve tema sınıfları denetlenir.
 describe("Admin sayfası (oturumsuz giriş ekranı)", () => {
@@ -37,5 +38,21 @@ describe("Admin sayfası (oturumsuz giriş ekranı)", () => {
     const src = fs.readFileSync(require("path").join(__dirname, "../page.tsx"), "utf8");
     expect(src).not.toMatch(/bg-red-500 text-white/);
     expect(src).not.toMatch(/bg-blue-500 text-white/);
+  });
+
+  it("VolleyboxBotTab canlı konsol, canlı tarayıcı görünümü ve kontrol düğmelerini render eder", () => {
+    render(<VolleyboxBotTab token="" />);
+    expect(
+      screen.getByRole("heading", { name: /Volleybox Otomatik Maç Ekleme Botu/ })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Canlı İşlem Günlüğü \(Adım Adım Bot Hareketleri\)/)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Canlı Tarayıcı Görünümü \(Volleybox Form Ekranı\)/)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /Botu Başlat \(Maçları Ekle\)/ })
+    ).toBeInTheDocument();
   });
 });

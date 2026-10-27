@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-27T13:19:27.137313+03:00",
+  "updated_at": "2026-10-27T14:49:49.634524+03:00",
   "total_cities": 81,
   "active_cities": 37,
-  "total_matches": 1587,
+  "total_matches": 1607,
   "cities": [
     {
       "ilid": "1",
@@ -170,8 +170,8 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (38 Maç Mevcut)",
-      "matches_count": 38,
+      "status": "Aktif (50 Maç Mevcut)",
+      "matches_count": 50,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
     },
@@ -210,8 +210,8 @@
       "name": "Diyarbakır",
       "slug": "diyarbakir",
       "url": "https://diyarbakir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (6 Maç Mevcut)",
-      "matches_count": 6,
+      "status": "Aktif (14 Maç Mevcut)",
+      "matches_count": 14,
       "standings_count": 1,
       "data_file": "data/cities/diyarbakir.json"
     },
@@ -372,7 +372,7 @@
       "name": "Kastamonu",
       "slug": "kastamonu",
       "url": "https://kastamonu.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
+      "status": "Bağlantı Zaman Aşımı",
       "matches_count": 0,
       "standings_count": 0,
       "data_file": null

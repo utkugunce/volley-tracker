@@ -20,6 +20,7 @@ import { TeamsTab } from "./_components/TeamsTab";
 import { UsersTab } from "./_components/UsersTab";
 import { NotificationsTab } from "./_components/NotificationsTab";
 import { SyncTab } from "./_components/SyncTab";
+import { VolleyboxBotTab } from "./_components/VolleyboxBotTab";
 import { AddUserModal } from "./_components/AddUserModal";
 import { EditOverrideModal } from "./_components/EditOverrideModal";
 
@@ -715,6 +716,8 @@ export default function AdminPage() {
             overrides={overrides}
             users={users}
           />
+        ) : activeTab === "volleybox-bot" ? (
+          <VolleyboxBotTab token={token} />
         ) : null}
       </main>
 

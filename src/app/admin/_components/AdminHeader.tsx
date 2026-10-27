@@ -127,6 +127,19 @@ export function AdminHeader({ activeTab, auditLogs, handleLogout, handleTriggerL
         <button
           type="button"
           role="tab"
+          aria-selected={activeTab === "volleybox-bot"}
+          onClick={() => setActiveTab("volleybox-bot")}
+          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+            activeTab === "volleybox-bot"
+              ? "bg-done text-done-fg font-bold shadow-sm"
+              : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+          }`}
+        >
+          🤖 Volleybox Botu
+        </button>
+        <button
+          type="button"
+          role="tab"
           aria-selected={activeTab === "clubs"}
           onClick={() => setActiveTab("clubs")}
           className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${

@@ -67,5 +67,7 @@ data/raw/
 data/.volleybox_names_cache.json
 data/.volleybox_auth.json
 data/.volleybox_browser_profile/
+data/.volleybox_bot_live.png
+data/.volleybox_bot_status.json
 .vercel
 scratch/

@@ -70,6 +70,24 @@ from scripts.sync_volleybox_matches import (
 
 AUTH_STATE_FILE = DATA_DIR / ".volleybox_auth.json"
 BROWSER_PROFILE_DIR = DATA_DIR / ".volleybox_browser_profile"
+LIVE_SCREENSHOT_FILE = DATA_DIR / ".volleybox_bot_live.png"
+LIVE_STATUS_FILE = DATA_DIR / ".volleybox_bot_status.json"
+
+
+def log_step(msg: str):
+    """Satırı anında stdout'a basar (panel canlı konsolu için flush=True)."""
+    print(msg, flush=True)
+
+
+def save_live_screenshot(page):
+    """Tarayıcının o anki ekran görüntüsünü panelde canlı izleme için kaydeder."""
+    try:
+        tmp_path = LIVE_SCREENSHOT_FILE.with_suffix(".tmp.png")
+        page.screenshot(path=str(tmp_path), full_page=False)
+        tmp_path.replace(LIVE_SCREENSHOT_FILE)
+    except Exception:
+        pass
+
 
 
 def ensure_playwright():
@@ -422,8 +440,8 @@ def run_login_flow():
     ensure_playwright()
     from playwright.sync_api import sync_playwright
 
-    print("\n🔐 Volleybox oturum açma penceresi başlatılıyor...")
-    print("👉 Açılan tarayıcıda Volleybox hesabınıza giriş yapın. Giriş algılandığında oturum otomatik kaydedilecektir.\n")
+    log_step("\n🔐 Volleybox oturum açma penceresi başlatılıyor...")
+    log_step("👉 Açılan tarayıcıda Volleybox hesabınıza giriş yapın. Giriş algılandığında oturum otomatik kaydedilecektir.\n")
 
     BROWSER_PROFILE_DIR.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
@@ -436,14 +454,18 @@ def run_login_flow():
         )
         page = context.pages[0] if context.pages else context.new_page()
         page.goto("https://women.volleybox.net/tr/login", wait_until="domcontentloaded")
+        save_live_screenshot(page)
 
         logged_in = False
-        for _ in range(300):  # 5 dakika bekle
+        for i in range(300):  # 5 dakika bekle
             try:
+                if i % 3 == 0:
+                    save_live_screenshot(page)
                 uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
                 if uid and uid > 0:
                     logged_in = True
-                    print(f"✅ Giriş başarılı! (Volleybox userId: {uid})")
+                    save_live_screenshot(page)
+                    log_step(f"✅ Giriş başarılı! (Volleybox userId: {uid})")
                     break
             except Exception:
                 pass
@@ -451,11 +473,12 @@ def run_login_flow():
 
         if logged_in:
             context.storage_state(path=str(AUTH_STATE_FILE))
-            print(f"💾 Oturum kaydedildi: {AUTH_STATE_FILE}")
+            log_step(f"💾 Oturum kaydedildi: {AUTH_STATE_FILE}")
         else:
-            print("⚠️ Giriş zaman aşımına uğradı veya tamamlanmadı.")
+            log_step("⚠️ Giriş zaman aşımına uğradı veya tamamlanmadı.")
 
         context.close()
+
 
 
 def fill_and_submit_match_on_page(
@@ -672,8 +695,11 @@ def fill_and_submit_match_on_page(
         + (" | HÜKMEN" if match_item["forfeit"] else "")
     )
 
+    log_step(f"   📝 Form dolduruldu -> {summary}")
+    save_live_screenshot(page)
+
     if inspect_only:
-        print(f"   👀 [İNCELEME MODU] Form dolduruldu: {summary}")
+        log_step(f"   👀 [İNCELEME MODU] Form dolduruldu: {summary}")
         input("   👉 Tarayıcıda formu kontrol edin. Devam etmek için Enter'a basın...")
         return True, summary
 
@@ -697,6 +723,7 @@ def fill_and_submit_match_on_page(
         return False, "Form içindeki '+ Ekle' (#submit_button_hall) gönderme butonu bulunamadı"
 
     time.sleep(2.5)
+    save_live_screenshot(page)
     # Hata mesajı var mı kontrol et
     err_text = page.evaluate(
         """() => {
@@ -714,6 +741,7 @@ def main():
     parser = argparse.ArgumentParser(description="Sitedeki eksik maçları Volleybox'a otomatik ekleyen Playwright botu")
     parser.add_argument("--city", default=None, help="Sadece belirli bir ili/ligi işle (örn: zonguldak, afyon, kocaeli, istanbul)")
     parser.add_argument("--dry-run", action="store_true", help="Tarayıcı açmadan eklenecek eksik maçları listele")
+    parser.add_argument("--json-preview", action="store_true", help="Eksik maçları JSON olarak çıktı ver")
     parser.add_argument("--login", action="store_true", help="Volleybox hesabına giriş yapıp oturumu kaydet")
     parser.add_argument("--inspect-form", action="store_true", help="Formu doldurup '+ Ekle'ye basmadan önce onay bekle")
     parser.add_argument("--include-pro", action="store_true", help="Profesyonel ligleri (Sultanlar, 1. Lig, 2. Lig) dahil et")
@@ -727,7 +755,7 @@ def main():
         return
 
     if not MAPPINGS_FILE.exists():
-        print(f"❌ Hata: {MAPPINGS_FILE} bulunamadı!")
+        log_step(f"❌ Hata: {MAPPINGS_FILE} bulunamadı!")
         sys.exit(1)
 
     with open(MAPPINGS_FILE, "r", encoding="utf-8") as f:
@@ -738,36 +766,77 @@ def main():
     by_tournament = collect_unsynced_matches(tourn_lookup, city_filter=args.city, include_pro=args.include_pro)
 
     total_candidates = sum(len(v) for v in by_tournament.values())
-    print("\n" + "=" * 78)
-    print("🤖 VOLLEYBOX OTOMATİK MAÇ EKLEME BOTU (push_volleybox_matches.py)")
-    print("=" * 78)
 
-    if total_candidates == 0:
-        print("✅ Harika! Seçilen kapsamda Volleybox'ta eksik olan hiçbir maç bulunmuyor.")
+    if args.json_preview:
+        tournaments_out = []
+        for t_url, m_list in by_tournament.items():
+            slug = t_url.rstrip("/").split("/")[-1]
+            tournaments_out.append({
+                "tournament_url": t_url,
+                "tournament_slug": slug,
+                "city": m_list[0]["city"],
+                "city_slug": m_list[0]["city_slug"],
+                "category": m_list[0]["category"],
+                "missing_count": len(m_list),
+                "matches": [
+                    {
+                        "id": m["id"],
+                        "date": m["date"],
+                        "time": m["time"] or "--:--",
+                        "home_team": m["home_team"],
+                        "away_team": m["away_team"],
+                        "score": f"{m['home_sets']}-{m['away_sets']}",
+                        "group": m["group"] or "-",
+                        "hall": m["hall"] or "-",
+                        "forfeit": bool(m["forfeit"]),
+                    }
+                    for m in m_list
+                ],
+            })
+        print(
+            json.dumps(
+                {
+                    "total_tournaments": len(tournaments_out),
+                    "total_missing": total_candidates,
+                    "has_saved_auth": AUTH_STATE_FILE.exists() or BROWSER_PROFILE_DIR.exists(),
+                    "tournaments": tournaments_out,
+                },
+                ensure_ascii=False,
+            ),
+            flush=True,
+        )
         return
 
-    print(f"📋 Toplam {len(by_tournament)} turnuvada {total_candidates} adet Volleybox'ta olmayan maç tespit edildi.\n")
+    log_step("\n" + "=" * 78)
+    log_step("🤖 VOLLEYBOX OTOMATİK MAÇ EKLEME BOTU (push_volleybox_matches.py)")
+    log_step("=" * 78)
+
+    if total_candidates == 0:
+        log_step("✅ Harika! Seçilen kapsamda Volleybox'ta eksik olan hiçbir maç bulunmuyor.")
+        return
+
+    log_step(f"📋 Toplam {len(by_tournament)} turnuvada {total_candidates} adet Volleybox'ta olmayan maç tespit edildi.\n")
 
     for t_url, m_list in by_tournament.items():
         slug = t_url.rstrip("/").split("/")[-1]
         city_label = m_list[0]["city"]
         cat_label = m_list[0]["category"]
-        print(f"🏆 {city_label} — {cat_label} ({slug}) [{len(m_list)} eksik maç]:")
+        log_step(f"🏆 {city_label} — {cat_label} ({slug}) [{len(m_list)} eksik maç]:")
         for idx, m in enumerate(m_list[:10], 1):
             sc = f"{m['home_sets']}-{m['away_sets']}" if (m["home_sets"] or m["away_sets"]) else "0-0"
             hukmen = " [HÜKMEN]" if m["forfeit"] else ""
-            print(
+            log_step(
                 f"   {idx:>2}. {m['date']} {m['time'] or '--:--'} | "
                 f"{m['home_team']} ({sc}) {m['away_team']} | "
                 f"Tur: {m['group'] or '-'} | Saha: {m['hall'] or '-'}{hukmen}"
             )
         if len(m_list) > 10:
-            print(f"   ... ve {len(m_list) - 10} maç daha.")
-        print()
+            log_step(f"   ... ve {len(m_list) - 10} maç daha.")
+        log_step("")
 
     if args.dry_run:
-        print("ℹ️ '--dry-run' (önizleme) modu aktif olduğu için Volleybox'a gönderim yapılmadı.")
-        print("👉 Gönderimi başlatmak için '--dry-run' parametresi olmadan çalıştırabilirsiniz.")
+        log_step("ℹ️ '--dry-run' (önizleme) modu aktif olduğu için Volleybox'a gönderim yapılmadı.")
+        log_step("👉 Gönderimi başlatmak için '--dry-run' parametresi olmadan çalıştırabilirsiniz.")
         return
 
     ensure_playwright()
@@ -796,41 +865,48 @@ def main():
             used_vb_ids: set = set()
 
             matches_url = to_tr_matches_url(t_url)
-            print(f"\n🌐 Turnuva sayfası açılıyor: {matches_url}")
+            log_step(f"\n🌐 Turnuva sayfası açılıyor: {matches_url}")
             page.goto(matches_url, wait_until="domcontentloaded")
             time.sleep(2.0)
+            save_live_screenshot(page)
 
             # Giriş kontrolü
             uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
             if not uid or uid <= 0:
-                print("🔐 Volleybox oturumu açık değil. Lütfen açılan tarayıcıda giriş yapın...")
+                log_step("🔐 Volleybox oturumu açık değil. Lütfen açılan tarayıcıda giriş yapın...")
                 page.goto("https://women.volleybox.net/tr/login", wait_until="domcontentloaded")
-                for _ in range(180):
+                save_live_screenshot(page)
+                for i in range(180):
                     try:
+                        if i % 3 == 0:
+                            save_live_screenshot(page)
                         uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
                         if uid and uid > 0:
                             context.storage_state(path=str(AUTH_STATE_FILE))
-                            print(f"✅ Giriş algılandı (userId={uid}), turnuva sayfasına dönülüyor...")
+                            log_step(f"✅ Giriş algılandı (userId={uid}), turnuva sayfasına dönülüyor...")
                             break
                     except Exception:
                         pass
                     time.sleep(1.0)
                 if not uid or uid <= 0:
-                    print("❌ Volleybox girişi yapılmadığı için işlem durduruldu.")
+                    log_step("❌ Volleybox girişi yapılmadığı için işlem durduruldu.")
                     context.close()
                     return
                 page.goto(matches_url, wait_until="domcontentloaded")
                 time.sleep(2.0)
+                save_live_screenshot(page)
 
             for m_item in m_list:
                 if added_total >= args.limit:
-                    print(f"⏹️ Maksimum maç ekleme sınırına ({args.limit}) ulaşıldı.")
+                    log_step(f"⏹️ Maksimum maç ekleme sınırına ({args.limit}) ulaşıldı.")
                     break
+
+                log_step(f"🔎 Kontrol ediliyor: {m_item['home_team']} vs {m_item['away_team']} ({m_item['date']} {m_item['time'] or '--:--'})")
 
                 # Canlı listede zaten varsa atla
                 already_on_vb = match_tvf_with_vb(m_item["raw_match"], live_vb_matches, team_alias_map, used_vb_ids)
                 if already_on_vb:
-                    print(f"   ⏭️ Zaten Volleybox'ta mevcut, atlanıyor: {m_item['home_team']} vs {m_item['away_team']} ({already_on_vb['url']})")
+                    log_step(f"   ⏭️ Zaten Volleybox'ta mevcut, atlanıyor: {m_item['home_team']} vs {m_item['away_team']} ({already_on_vb['url']})")
                     touched_cities.add(m_item["city_slug"])
                     continue
 
@@ -843,21 +919,23 @@ def main():
                 if ok:
                     added_total += 1
                     touched_cities.add(m_item["city_slug"])
-                    print(f"   ✅ [{added_total}/{args.limit}] Eklendi: {msg}")
+                    log_step(f"   ✅ [{added_total}/{args.limit}] Eklendi: {msg}")
                     wait_sec = args.delay + random.uniform(0.5, 3.0)
+                    log_step(f"   ⏳ Hız sınırı koruması: {wait_sec:.1f} sn bekleniyor...")
                     time.sleep(wait_sec)
                 else:
-                    print(f"   ⚠️ Atlandı ({m_item['home_team']} vs {m_item['away_team']}): {msg}")
+                    log_step(f"   ⚠️ Atlandı ({m_item['home_team']} vs {m_item['away_team']}): {msg}")
 
         context.close()
 
     # Eklenen maçların Volleybox linklerini JSON dosyalarına kaydetmek için senkronizasyonu çalıştır
     if touched_cities and not args.inspect_form:
-        print("\n🔄 Yeni eklenen maçların Volleybox bağlantıları sitemizle senkronize ediliyor...")
+        log_step("\n🔄 Yeni eklenen maçların Volleybox bağlantıları sitemizle senkronize ediliyor...")
         for c_slug in sorted(touched_cities):
             subprocess.call([sys.executable, str(BASE_DIR / "scripts" / "sync_volleybox_matches.py"), "--city", c_slug])
 
-    print(f"\n🎉 İşlem tamamlandı! Toplam {added_total} yeni maç Volleybox'a eklendi.")
+    log_step(f"\n🎉 İşlem tamamlandı! Toplam {added_total} yeni maç Volleybox'a eklendi.")
+
 
 
 if __name__ == "__main__":
