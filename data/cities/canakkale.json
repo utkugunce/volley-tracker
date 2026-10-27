@@ -947,7 +947,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261102-014",
@@ -966,7 +981,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261103-015",
@@ -985,7 +1015,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261104-016",
@@ -1004,7 +1049,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261106-017",
@@ -1023,7 +1083,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20260926-018",
@@ -1450,7 +1525,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261104-028",
@@ -1469,7 +1559,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20260926-029",
@@ -1896,7 +2001,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261101-039",
@@ -1915,7 +2035,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20260926-040",
@@ -2298,7 +2433,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261102-049",
@@ -2317,7 +2467,22 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "canakkale-20261105-050",
@@ -2336,7 +2501,24 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 38,
+  "volleybox_sync_updated_at": "2026-10-27T17:23:29.256572"
 }
