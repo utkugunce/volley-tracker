@@ -589,6 +589,9 @@ def vb_round_to_tr_group_aliases(r_name: str) -> List[str]:
     if not r_name:
         return []
     res = [r_name.lower().strip()]
+    # CEV turlarını yerel ligler için alias üretmeye dahil etme
+    if re.search(r"\bcev\b", r_name, re.I):
+        return res
     # 'Semi Final - Group A' -> 'Yarı Final - A Grubu'
     m_semi = re.search(r"semi\s*final\s*-\s*group\s*([a-z0-9]+)", r_name, re.I)
     if m_semi:

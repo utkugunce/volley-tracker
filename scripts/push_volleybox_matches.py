@@ -632,7 +632,8 @@ def resolve_team_for_match(
 def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
     """
     '- Tur seçin -' menüsündeki seçeneklerden maça uygun turu/grubu seçer.
-    Eğer turnuvada tek bir tur varsa (örn. Regular Season / Normal Sezon) doğrudan onu seçer.
+    Öncelikli olarak sade 'Group A', 'Group 1' gibi temiz eşleşmeleri seçer;
+    asla 'CEV - Group ...' seçeneklerine sapmaz.
     """
     valid_opts = [
         o for o in options
@@ -643,23 +644,124 @@ def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Op
     if len(valid_opts) == 1:
         return valid_opts[0]
 
+    # Yerel ve altyapı liglerinde CEV seçeneklerini tamamen hariç tut
+    non_cev_opts = [o for o in valid_opts if not re.search(r"\bcev\b", str(o.get("label") or ""), re.I)]
+    opts = non_cev_opts if non_cev_opts else valid_opts
+
     g_clean = (group_name or "").lower().strip()
-    if g_clean:
-        # Örn: "A Grubu" -> "Group A", "1. Grup" -> "Group 1"
-        m_letter = re.search(r"\b([a-z0-9])\s*grubu\b|\bgrup\s*([a-z0-9])\b|\b(\d+)\.\s*grup\b", g_clean, re.I)
-        target_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).lower() if m_letter else None
-
-        for opt in valid_opts:
-            lbl = opt["label"].lower().strip()
-            aliases = vb_round_to_tr_group_aliases(lbl)
-            if g_clean in aliases or g_clean == lbl:
+    if not g_clean:
+        for opt in opts:
+            lbl_l = str(opt.get("label") or "").lower().strip()
+            if lbl_l in ("regular season", "normal sezon", "main tournament"):
                 return opt
-            if target_token:
-                if re.search(rf"\b(group|grup)\s*{re.escape(target_token)}\b|\b{re.escape(target_token)}\s*grubu\b", lbl, re.I):
-                    return opt
+        return opts[0]
 
-    # Grup belirtilmemişse ilk turu (genellikle Regular Season / 1. Etap) seç
-    return valid_opts[0]
+    is_semi = bool(re.search(r"\b(?:yar[ıi]\s*final|semi[\s\-]final)\b", g_clean, re.I))
+    is_final = bool(re.search(r"\bfinal\b", g_clean, re.I)) and not is_semi
+
+    m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
+    num_token = (m_num.group(1) or m_num.group(2) or m_num.group(3)).strip() if m_num else None
+
+    m_letter = re.search(r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b|^(?:grup\s*)?([a-z])$", g_clean, re.I)
+    letter_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).strip().upper() if m_letter else None
+
+    # 1. Yarı Final durumları
+    if is_semi:
+        target = letter_token or num_token
+        if target:
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if lbl in (f"semi final - group {target}".lower(), f"semi-final - group {target}".lower(), f"semi final group {target}".lower()):
+                    return opt
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if "semi" in lbl and f"group {target}".lower() in lbl:
+                    return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if lbl in ("semi final", "semi finals", "semi-final"):
+                return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if "semi" in lbl:
+                return opt
+
+    # 2. Final durumları
+    if is_final:
+        target = letter_token or num_token
+        if target:
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if lbl in (f"final - group {target}".lower(), f"final group {target}".lower()):
+                    return opt
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if "final" in lbl and f"group {target}".lower() in lbl:
+                    return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if lbl in ("final round", "final", "finals"):
+                return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if "final" in lbl and "group" not in lbl:
+                return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if "final" in lbl:
+                return opt
+
+    # 3. Harf Grubu (örn: 'A Grubu', 'B Grb.', 'C Grubu') -> Kesin 'Group A', 'Group B'
+    if letter_token:
+        expected_vb = f"group {letter_token}".lower()
+        expected_tr = f"{letter_token} grubu".lower()
+        # a) Birebir eşleşme ('Group A' veya 'A Grubu')
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if lbl in (expected_vb, expected_tr):
+                return opt
+        # b) Başında 'Group <letter>' geçen
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if re.match(rf"^group\s*{re.escape(letter_token)}\b", lbl, re.I):
+                return opt
+        # c) Kelime olarak 'Group <letter>' geçen
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if re.search(rf"\bgroup\s*{re.escape(letter_token)}\b", lbl, re.I):
+                return opt
+
+    # 4. Sayı Grubu (örn: '1. Grup', '2.Grup', '10. Grup') -> Kesin 'Group 1', 'Group 2'
+    if num_token:
+        expected_vb = f"group {num_token}".lower()
+        expected_tr = f"{num_token}. grup".lower()
+        # a) Birebir eşleşme ('Group 1' veya '1. Grup')
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if lbl in (expected_vb, expected_tr):
+                return opt
+        # b) Başında 'Group <num>' geçen
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if re.match(rf"^group\s*{re.escape(num_token)}\b", lbl, re.I):
+                return opt
+        # c) Kelime olarak 'Group <num>' geçen
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if re.search(rf"\bgroup\s*{re.escape(num_token)}\b", lbl, re.I):
+                return opt
+
+    # 5. Regular Season / Normal Sezon veya Tek Grup
+    for opt in opts:
+        lbl = str(opt.get("label") or "").strip().lower()
+        if lbl in ("regular season", "normal sezon", "main tournament"):
+            return opt
+    for opt in opts:
+        lbl = str(opt.get("label") or "").strip().lower()
+        if "regular season" in lbl or "normal sezon" in lbl:
+            return opt
+
+    return opts[0]
 
 
 def match_option_for_arena(tvf_hall: str, options: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
@@ -939,16 +1041,24 @@ def fill_and_submit_match_on_page(
         )
 
     # 6. Tur ve Saha eşleştirmesi
-    round_options = []
+    raw_round_options = []
     if round_select and round_select.get("options"):
-        round_options.extend(round_select["options"])
+        raw_round_options.extend(round_select["options"])
     for rid, rname in form_data.get("pageRounds", {}).items():
-        round_options.append({"value": str(rid), "label": str(rname)})
+        raw_round_options.append({"value": str(rid), "label": str(rname)})
     for r in ajax_rounds:
         r_id = str(r.get("id") or r.get("value") or "")
         r_lbl = str(r.get("label") or r.get("name") or r.get("value") or "")
         if r_id and r_lbl:
-            round_options.append({"value": r_id, "label": r_lbl})
+            raw_round_options.append({"value": r_id, "label": r_lbl})
+
+    seen_round_vals = set()
+    round_options = []
+    for ro in raw_round_options:
+        rv = str(ro.get("value") or "").strip()
+        if rv and rv not in seen_round_vals:
+            seen_round_vals.add(rv)
+            round_options.append(ro)
 
     round_opt = match_option_for_round(match_item.get("group", ""), round_options)
 
