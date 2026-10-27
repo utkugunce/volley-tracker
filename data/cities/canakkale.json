@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T17:07:50.773377+03:00",
+  "updated_at": "2026-10-27T09:37:24.404542+03:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -224,23 +224,23 @@
       {
         "rank": 4,
         "team": "As Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
         "team": "Kepez Spor Kulübü U16",
-        "played": 5,
-        "won": 0,
+        "played": 6,
+        "won": 1,
         "lost": 5,
-        "points": 0,
-        "sets_won": 2,
-        "sets_lost": 15,
+        "points": 2,
+        "sets_won": 5,
+        "sets_lost": 17,
         "form": []
       }
     ],
@@ -852,11 +852,17 @@
       "match_no": "11",
       "home_team": "As Spor Kulübü U16",
       "away_team": "Kepez Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-11",
+        "23-25",
+        "18-25",
+        "25-13",
+        "13-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411661",
@@ -2103,5 +2109,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-26T17:14:23.801672"
+  "volleybox_sync_updated_at": "2026-10-27T09:43:41.973800"
 }

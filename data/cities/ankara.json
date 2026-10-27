@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T17:07:50.773377+03:00",
+  "updated_at": "2026-10-27T09:37:24.404542+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -258,7 +258,7 @@
         "form": []
       }
     ],
-    "Genç Kızlar Süper Lig - Final Etabı": [
+    "Genç Kızlar Süper Lig - Final - Final Etabı": [
       {
         "rank": 1,
         "team": "Akademi Atletik Spor U18",
@@ -1538,46 +1538,46 @@
     "Yıldız Kızlar Süper Lig - 4. Grup": [
       {
         "rank": 1,
-        "team": "Ankara DSİ GSK U16",
-        "played": 2,
+        "team": "İlbank - B U16",
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
+        "sets_won": 7,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 2,
-        "team": "İlbank - B U16",
-        "played": 2,
-        "won": 1,
+        "team": "Zeren Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 7,
         "sets_lost": 4,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Zeren Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
+        "team": "Ankara DSİ GSK U16",
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 4,
         "form": []
       },
       {
         "rank": 4,
         "team": "Genia İz Akademi Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -3412,7 +3412,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "1",
       "home_team": "TED Ankara Kolejliler U18",
       "away_team": "Akademi Atletik Spor U18",
@@ -3453,7 +3453,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "2",
       "home_team": "PTT Spor U18",
       "away_team": "Karayolları Spor Kulübü U18",
@@ -3494,7 +3494,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "3",
       "home_team": "Zeren Spor Kulübü U18",
       "away_team": "TVF Spor Lisesi U18",
@@ -3535,7 +3535,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "4",
       "home_team": "Ankara DSİ GSK U18",
       "away_team": "İlbank U18",
@@ -3576,7 +3576,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "5",
       "home_team": "İlbank U18",
       "away_team": "TED Ankara Kolejliler U18",
@@ -3617,7 +3617,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "6",
       "home_team": "Akademi Atletik Spor U18",
       "away_team": "Zeren Spor Kulübü U18",
@@ -3658,7 +3658,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "7",
       "home_team": "Karayolları Spor Kulübü U18",
       "away_team": "Ankara DSİ GSK U18",
@@ -3699,7 +3699,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final Etabı",
+      "group": "Final - Final Etabı",
       "match_no": "8",
       "home_team": "TVF Spor Lisesi U18",
       "away_team": "PTT Spor U18",
@@ -6837,11 +6837,15 @@
       "match_no": "5",
       "home_team": "Zeren Spor Kulübü U16",
       "away_team": "Ankara DSİ GSK U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-22",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411608",
@@ -6878,11 +6882,15 @@
       "match_no": "6",
       "home_team": "Genia İz Akademi Spor Kulübü U16",
       "away_team": "İlbank - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "9-25",
+        "8-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411609",
@@ -7699,5 +7707,5 @@
     }
   ],
   "volleybox_synced_matches": 137,
-  "volleybox_sync_updated_at": "2026-10-26T17:14:19.797496"
+  "volleybox_sync_updated_at": "2026-10-27T09:43:40.170863"
 }

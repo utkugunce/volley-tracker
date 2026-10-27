@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T17:07:50.773377+03:00",
+  "updated_at": "2026-10-27T09:37:24.404542+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -133,6 +133,17 @@
     "Yıldız Kızlar Süper Lig - Gruplar": [
       {
         "rank": 1,
+        "team": "Denizli Büyükşehir Belediye S.K.",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Tutku Spor Kulübü",
         "played": 5,
         "won": 3,
@@ -143,7 +154,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Denizli Voleybol Spor Kulübü U16",
         "played": 5,
         "won": 3,
@@ -154,7 +165,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Damla Spor Kulübü",
         "played": 3,
         "won": 3,
@@ -165,25 +176,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Denizli Büyükşehir Belediye S.K.",
+        "rank": 5,
+        "team": "Anadolu Pars Spor Kulübü",
         "played": 4,
         "won": 3,
         "lost": 1,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Anadolu Pars Spor Kulübü",
-        "played": 3,
-        "won": 3,
-        "lost": 0,
         "points": 7,
-        "sets_won": 9,
-        "sets_lost": 4,
+        "sets_won": 10,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -1745,11 +1745,16 @@
       "match_no": "19",
       "home_team": "Denizli Büyükşehir Belediye S.K.",
       "away_team": "Anadolu Pars Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-17",
+        "25-16",
+        "20-25",
+        "25-17"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411672",
@@ -1857,5 +1862,5 @@
     }
   ],
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-10-26T17:14:23.953995"
+  "volleybox_sync_updated_at": "2026-10-27T09:43:42.116756"
 }

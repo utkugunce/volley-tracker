@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T17:07:50.773377+03:00",
+  "updated_at": "2026-10-27T09:37:24.404542+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -253,16 +253,27 @@
       {
         "rank": 1,
         "team": "Bursa Koç Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Güner Karakaya Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 5,
+        "sets_won": 8,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "MG Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -273,7 +284,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Aktif Nesil Spor Kulübü U16",
         "played": 2,
         "won": 1,
@@ -281,17 +292,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Güner Karakaya Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 5,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -468,23 +468,23 @@
       {
         "rank": 2,
         "team": "DSİ Nilüfer Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
         "team": "Akademi16 Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 2,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -1578,11 +1578,17 @@
       "match_no": "7",
       "home_team": "Bursa Koç Spor Kulübü U16",
       "away_team": "Güner Karakaya Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-20",
+        "25-15",
+        "21-25",
+        "23-25",
+        "13-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411649",
@@ -2722,11 +2728,15 @@
       "match_no": "6",
       "home_team": "DSİ Nilüfer Spor Kulübü U16",
       "away_team": "Akademi16 Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-19",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411658",
@@ -3023,5 +3033,5 @@
     }
   ],
   "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-10-26T17:14:23.119024"
+  "volleybox_sync_updated_at": "2026-10-27T09:43:41.812896"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T17:07:50.773377+03:00",
+  "updated_at": "2026-10-27T09:37:24.404542+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -78,6 +78,17 @@
       {
         "rank": 1,
         "team": "Asaş Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 5,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Sakarya Voleybol SK U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -87,7 +98,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Sakarya Gelişim Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -98,19 +109,8 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Erenler Anadolu Voleybol Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Sakarya Voleybol SK U18",
+        "team": "Erenler Anadolu Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -331,11 +331,17 @@
       "match_no": "2",
       "home_team": "Asaş Spor Kulübü U18",
       "away_team": "Sakarya Voleybol SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-15",
+        "21-25",
+        "22-25",
+        "25-23",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408247",
@@ -525,5 +531,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-26T17:14:38.625253"
+  "volleybox_sync_updated_at": "2026-10-27T09:43:50.092123"
 }

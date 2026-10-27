@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T17:07:50.773377+03:00",
+  "updated_at": "2026-10-27T09:37:24.404542+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -206,24 +206,24 @@
       },
       {
         "rank": 4,
-        "team": "Balıkesir Nets Basket Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "team": "Karesi Hürriyet Spor U16",
+        "played": 4,
+        "won": 1,
+        "lost": 3,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Karesi Hürriyet Spor U16",
-        "played": 3,
+        "team": "Balıkesir Nets Basket Spor Kulübü U16",
+        "played": 2,
         "won": 0,
-        "lost": 3,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -435,11 +435,11 @@
       {
         "rank": 1,
         "team": "Gönen Karşıyakaspor U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 2,
         "form": []
       },
@@ -479,12 +479,12 @@
       {
         "rank": 5,
         "team": "Bandırma Gelişim Basketbol Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -821,11 +821,15 @@
       "match_no": "8",
       "home_team": "Karesi Hürriyet Spor U16",
       "away_team": "Balıkesir Nets Basket Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-11",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411628",
@@ -2589,11 +2593,15 @@
       "match_no": "11",
       "home_team": "Bandırma Gelişim Basketbol Spor Kulübü U16",
       "away_team": "Gönen Karşıyakaspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "20-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411639",
@@ -2742,5 +2750,5 @@
     }
   ],
   "volleybox_synced_matches": 51,
-  "volleybox_sync_updated_at": "2026-10-26T17:14:22.378989"
+  "volleybox_sync_updated_at": "2026-10-27T09:43:41.533014"
 }
