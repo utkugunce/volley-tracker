@@ -35,7 +35,7 @@ export function formatGroupName(rawGroup?: string): string {
   const isFinal = !isYariFinal && /\bfinal\b/i.test(g);
   if (isFinal) {
     if (/final\s*etab[ıi]/i.test(g)) return "Final Etabı";
-    if (/final\s*grubu?/i.test(g) && !/(?<!\p{L})[A-Za-zÇĞİÖŞÜçğiöşü]\s*Gr/i.test(g)) return "Final Grubu";
+    if (/final\s*grubu?/i.test(g) && !/(?<!\p{L})[A-Za-zÇĞİÖŞÜçğiöşü]\s*Gr/iu.test(g)) return "Final Grubu";
     const letterMatch = g.match(/(?<!\p{L})([A-Za-zÇĞİÖŞÜçğiöşü])(?:\s*(?:Gr\.?|Grubu?|Gurubu|Grb\.?))?$/iu);
     if (letterMatch) {
       const letter = letterMatch[1].toLocaleUpperCase("tr-TR");
@@ -50,7 +50,7 @@ export function formatGroupName(rawGroup?: string): string {
   // Klasman Kontrolü
   if (/klasman/i.test(g)) {
     if (/klasman\s*etab[ıi]/i.test(g)) return "Klasman Etabı";
-    if (/klasman\s*grubu?/i.test(g) && !/(?<!\p{L})[A-Za-zÇĞİÖŞÜçğiöşü]\s*Gr/i.test(g)) return "Klasman Grubu";
+    if (/klasman\s*grubu?/i.test(g) && !/(?<!\p{L})[A-Za-zÇĞİÖŞÜçğiöşü]\s*Gr/iu.test(g)) return "Klasman Grubu";
     const letterMatch = g.match(/(?<!\p{L})([A-Za-zÇĞİÖŞÜçğiöşü])(?:\s*(?:Gr\.?|Grubu?|Gurubu|Grb\.?))?$/iu);
     if (letterMatch) {
       const letter = letterMatch[1].toLocaleUpperCase("tr-TR");

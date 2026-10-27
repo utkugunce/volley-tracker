@@ -103,10 +103,13 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
         won: t.g,
         lost: t.m,
         points: t.p,
-        sets_for: t.as,
-        sets_against: t.vs,
-        points_for: t.asp,
-        points_against: t.vsp,
+        sets_won: t.as,
+        sets_lost: t.vs,
+        set_ratio: t.sav,
+        points_won: t.asp,
+        points_lost: t.vsp,
+        point_ratio: t.spav,
+        form: [],
       }));
     });
     return res;
@@ -125,11 +128,8 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
   }, [data.tum_maclar]);
 
   const searchableCities = useMemo(() => {
-    const set = new Set<string>();
-    (data.tum_maclar || []).forEach((m) => {
-      if (m.il) set.add(m.il);
-    });
-    return Array.from(set);
+    const unique = Array.from(new Set((data.tum_maclar || []).map((m) => m.sehir).filter(Boolean)));
+    return unique.map((c) => ({ name: c, slug: slugify(c) }));
   }, [data.tum_maclar]);
 
   const searchableCategories = useMemo(() => {
@@ -193,7 +193,7 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
   };
 
   const handleToggleFavoriteMatch = (match: Match) => {
-    toggleKadinlar2LigMatchFavorite(match.id);
+    toggleKadinlar2LigMatchFavorite(match, isFavorite, toggleFavorite);
   };
 
   return (
@@ -352,7 +352,7 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
           standings={standingsMap}
           onToggleFavorite={(mId) => {
             const m = convertedMatches.find((x) => x.id === mId);
-            if (m) toggleKadinlar2LigMatchFavorite(m.id);
+            if (m) toggleKadinlar2LigMatchFavorite(m, isFavorite, toggleFavorite);
           }}
           isFavorite={isFavorite(selectedMatch.home_team) || isFavorite(selectedMatch.away_team)}
         />
@@ -366,9 +366,7 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
         halls={searchableHalls}
         cities={searchableCities}
         categories={searchableCategories}
-        onSelectTeam={(t) => {
-          setSearchQuery(t);
-          handleSelectTab("standings");
+        onSelectCity={() => {
           setIsSearchOpen(false);
         }}
       />

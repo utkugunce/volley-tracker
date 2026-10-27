@@ -8,17 +8,16 @@ describe("ErrorBoundary & GlobalError Components", () => {
 
   beforeEach(() => {
     sessionStorage.clear();
-    // @ts-expect-error mock window.location
-    delete window.location;
-    window.location = {
+    delete (window as unknown as { location?: unknown }).location;
+    (window as unknown as { location: unknown }).location = {
       ...originalLocation,
       reload: vi.fn(),
       href: "http://localhost:3000",
-    } as unknown as Location;
+    };
   });
 
   afterEach(() => {
-    window.location = originalLocation;
+    (window as unknown as { location: unknown }).location = originalLocation;
     vi.restoreAllMocks();
   });
 

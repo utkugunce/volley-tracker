@@ -135,6 +135,7 @@ export interface VolleyboxLeagueMapping {
   confidence: VolleyboxConfidence;
   season?: string;
   note?: string | null;
+  status_override?: "teams_only" | string;
   verified_at?: string;
 }
 

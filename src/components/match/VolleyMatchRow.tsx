@@ -12,22 +12,36 @@ import { getVolleyboxMapping } from "@/utils/volleybox";
 export interface VolleyMatchRowProps {
   match: Match;
   isSelected?: boolean;
-  isFavorite: boolean;
-  onToggleFavorite: (id: string) => void;
-  onSelectMatch: (m: Match) => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: (id: string) => void;
+  onSelectMatch?: (m: Match) => void;
   todayStr?: string;
   leagueFallback?: string;
+  cityName?: string;
+  city?: string;
+  leagueLabel?: string;
+  showHall?: boolean;
+  showDate?: boolean;
+  showGroupBadge?: boolean;
 }
 
 export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
   match,
   isSelected = false,
-  isFavorite,
-  onToggleFavorite,
-  onSelectMatch,
+  isFavorite = false,
+  onToggleFavorite = () => {},
+  onSelectMatch = () => {},
   todayStr,
   leagueFallback,
+  cityName,
+  city,
+  leagueLabel,
+  showHall,
+  showDate,
+  showGroupBadge,
 }) => {
+  const effectiveCity = cityName || city || match.city;
+  const effectiveLeague = leagueLabel || leagueFallback || match.category;
   const yesterday = todayStr ? getYesterdayString(todayStr) : "";
   const hasScore = isMatchScored(match);
   const forfeit = getMatchForfeitInfo(match);
@@ -41,9 +55,9 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
       ? formatDateTurkish(match.date)
       : "Program";
 
-  const mappingCategory = leagueFallback || match.category;
-  const homeMapping = getVolleyboxMapping(match.home_team, mappingCategory, undefined, match.city);
-  const awayMapping = getVolleyboxMapping(match.away_team, mappingCategory, undefined, match.city);
+  const mappingCategory = effectiveLeague;
+  const homeMapping = getVolleyboxMapping(match.home_team, mappingCategory, undefined, effectiveCity);
+  const awayMapping = getVolleyboxMapping(match.away_team, mappingCategory, undefined, effectiveCity);
   const homeLogo = homeMapping?.local_logo || homeMapping?.logo_url;
   const awayLogo = awayMapping?.local_logo || awayMapping?.logo_url;
 
@@ -109,11 +123,11 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
         <div className="flex items-center gap-1.5 text-[10px] text-ink-3 truncate leading-none pb-1">
           {/* Şehir Rozeti - Belirgin ve Vurgulu */}
           <span className="px-1.5 py-0.5 rounded font-black text-[10px] bg-sky-500/15 text-sky-300 border border-sky-500/30 uppercase tracking-wider shrink-0">
-            {match.city || "Genel"}
+            {effectiveCity || "Genel"}
           </span>
           {/* Lig Adı - Parlak Beyaz, Kalın ve Vurgulu */}
           <span className="font-bold text-white text-[11px] truncate tracking-tight">
-            {match.category || leagueFallback || "Voleybol Ligi"}
+            {effectiveLeague || "Voleybol Ligi"}
           </span>
           {/* Grup Bilgisi - Vurgulu Amber Rozet */}
           {match.group && (

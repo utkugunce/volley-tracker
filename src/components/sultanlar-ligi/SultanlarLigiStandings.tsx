@@ -221,8 +221,8 @@ export const SultanlarLigiStandings: React.FC<SultanlarLigiStandingsProps> = ({
                   const isFav = getKadinlar2LigTeamNameVariants(team.takim_adi, team.volleybox_name).some((n) => isFavorite(n));
                   const teamSlug = slugify(team.takim_adi);
 
-                  const vb = getVolleyboxMapping(team.takim_adi, team.volleybox_url);
-                  const vbUrl = team.volleybox_url || vb?.url;
+                  const vb = getVolleyboxMapping(team.takim_adi, "Vodafone Sultanlar Ligi");
+                  const vbUrl = team.volleybox_url || vb?.volleybox_url;
 
                   return (
                     <tr
@@ -261,7 +261,7 @@ export const SultanlarLigiStandings: React.FC<SultanlarLigiStandingsProps> = ({
                             type="button"
                             onClick={() => {
                               triggerHaptic();
-                              toggleFavorite(displayName, K2_CATEGORY);
+                              toggleFavorite(displayName);
                             }}
                             className="text-ink-4 hover:text-warn transition-colors shrink-0 p-0.5"
                             title={isFav ? "Favorilerden Çıkar" : "Favorilere Ekle"}
@@ -272,12 +272,7 @@ export const SultanlarLigiStandings: React.FC<SultanlarLigiStandingsProps> = ({
                             />
                           </button>
 
-                          <TeamBadge
-                            teamName={team.takim_adi}
-                            category="Sultanlar Ligi"
-                            size="sm"
-                            className="shrink-0"
-                          />
+                          <TeamBadge name={team.takim_adi} size="sm" className="shrink-0" />
 
                           <div className="min-w-0 flex flex-col">
                             <span className="font-semibold text-ink truncate text-xs sm:text-[13px] leading-tight">
@@ -322,12 +317,12 @@ export const SultanlarLigiStandings: React.FC<SultanlarLigiStandingsProps> = ({
                       {/* Detaylı Skorlar */}
                       {showDetailedStats && (
                         <>
-                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-2 bg-surface-raised/40 hidden xl:table-cell">{team.g_3_0}</td>
-                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-2 bg-surface-raised/40 hidden xl:table-cell">{team.g_3_1}</td>
-                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-2 bg-surface-raised/40 hidden xl:table-cell">{team.g_3_2}</td>
-                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-3 bg-surface-raised/40 hidden xl:table-cell">{team.m_2_3}</td>
-                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-3 bg-surface-raised/40 hidden xl:table-cell">{team.m_1_3}</td>
-                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-3 bg-surface-raised/40 hidden xl:table-cell">{team.m_0_3}</td>
+                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-2 bg-surface-raised/40 hidden xl:table-cell">{team.a3_0}</td>
+                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-2 bg-surface-raised/40 hidden xl:table-cell">{team.a3_1}</td>
+                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-2 bg-surface-raised/40 hidden xl:table-cell">{team.a3_2}</td>
+                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-3 bg-surface-raised/40 hidden xl:table-cell">{team.v2_3}</td>
+                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-3 bg-surface-raised/40 hidden xl:table-cell">{team.v1_3}</td>
+                          <td className="py-2 px-2 text-center font-mono tabular-nums text-ink-3 bg-surface-raised/40 hidden xl:table-cell">{team.v0_3}</td>
                         </>
                       )}
 

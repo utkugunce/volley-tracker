@@ -330,7 +330,7 @@ describe("groupStatus", () => {
         },
       ];
 
-      const list = computeGroupStatusList(dummyMatches);
+      const list = computeGroupStatusList(dummyMatches as unknown as Match[]);
       expect(list).toHaveLength(1);
       expect(list[0].city).toBe("İstanbul");
       expect(list[0].group).toBe("A Grubu");
@@ -376,7 +376,7 @@ describe("groupStatus", () => {
     });
 
     it("sorts Genç Kızlar Süper Lig before Genç Kızlar 1. Ligi and preliminary groups before semi-finals", () => {
-      const dummyMatches: Match[] = [
+      const dummyMatches = [
         {
           id: "m_g1_a",
           city: "İzmir",
@@ -439,7 +439,7 @@ describe("groupStatus", () => {
         },
       ];
 
-      const list = computeGroupStatusList(dummyMatches);
+      const list = computeGroupStatusList(dummyMatches as unknown as Match[]);
       expect(list).toHaveLength(6);
 
       // Verify exact order
