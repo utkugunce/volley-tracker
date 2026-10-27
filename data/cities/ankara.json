@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T15:55:52.562330+03:00",
+  "updated_at": "2026-10-27T17:14:59.520738+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -3950,18 +3950,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "413273",
+        "url": "https://women.volleybox.net/tr/eryaman-gelisim-sk-u18-hedef-akademi-spor-kulubu-u18-c413273",
+        "host_name": "Eryaman Gelişim SK U18",
+        "guest_name": "Hedef Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-01",
+        "vb_time": "17:30",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-11-01",
+          "vb_time": "17:30",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": "Salon Değişti (TVF: Ulubey Sporcu Fabrikası / VB: Batıkent Spor Salonu)"
         }
       }
     },
@@ -7611,7 +7618,5 @@
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 136,
-  "volleybox_sync_updated_at": "2026-10-27T16:03:22.481340"
+  ]
 }

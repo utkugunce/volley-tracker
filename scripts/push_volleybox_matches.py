@@ -663,17 +663,24 @@ def match_option_for_round(group_name: str, options: List[Dict[str, str]]) -> Op
 
 
 def match_option_for_arena(tvf_hall: str, options: List[Dict[str, str]]) -> Optional[Dict[str, str]]:
-    """'- Saha seçin -' menüsündeki seçeneklerden salonu eşleştirir."""
-    if not tvf_hall:
+    """
+    '- Saha seçin -' menüsündeki seçeneklerden salonu eşleştirir.
+    Volleybox formunda arena_id zorunlu olduğundan, salon birebir bulunamazsa
+    turnuva/şehir/takım sahalarından ilk geçerli olanı seçer.
+    """
+    valid_opts = [
+        o for o in options
+        if str(o.get("value") or "").strip() not in ("", "0") and not str(o.get("label") or "").strip().startswith("-")
+    ]
+    if not valid_opts:
         return None
-    for opt in options:
-        val = str(opt.get("value") or "").strip()
-        label = str(opt.get("label") or "").strip()
-        if not val or val == "0" or label.startswith("-"):
-            continue
-        if halls_match(tvf_hall, label):
-            return opt
-    return None
+
+    if tvf_hall:
+        for opt in valid_opts:
+            if halls_match(tvf_hall, opt["label"]):
+                return opt
+
+    return valid_opts[0]
 
 
 def to_tr_matches_url(url: str) -> str:
@@ -868,29 +875,7 @@ def fill_and_submit_match_on_page(
         except Exception:
             pass
 
-    if match_item.get("hall"):
-        try:
-            ajax_arenas = page.evaluate(
-                """async (hall) => {
-                    if (!window.jQuery || !hall) return [];
-                    try {
-                        const res = await window.jQuery.ajax({
-                            type: 'POST',
-                            url: (window.basedir || '/') + 'ajax/get_tags_ajax',
-                            data: { searched_items: 'arenas', term: hall, continent: 0 },
-                            dataType: 'json'
-                        });
-                        return Array.isArray(res) ? res : [];
-                    } catch (e) {
-                        return [];
-                    }
-                }""",
-                match_item["hall"],
-            )
-        except Exception:
-            pass
-
-    # Menüleri ilk seçeneğin metnine veya name özelliğine göre sınıflandır
+    # 4. Formdaki <select> menülerini sınıflandır
     host_select = None
     guest_select = None
     host_sets_select = None
@@ -923,7 +908,7 @@ def fill_and_submit_match_on_page(
     if not guest_sets_select and len(set_select_candidates) >= 2:
         guest_sets_select = set_select_candidates[1]
 
-    # 4. Ev sahibi ve deplasman takımlarını eşleştir (select, DOM veya mappings_data)
+    # 5. Ev sahibi ve deplasman takımlarını eşleştir (select, DOM veya mappings_data)
     age_cat = match_item.get("category", "") or match_item.get("age_group", "")
     host_opt = resolve_team_for_match(
         match_item["home_team"],
@@ -953,7 +938,7 @@ def fill_and_submit_match_on_page(
             f"Deplasman takımı Volleybox eşleştirmelerinde bulunamadı: '{match_item['away_team']}'",
         )
 
-    # 5. Tur ve Saha eşleştirmesi
+    # 6. Tur ve Saha eşleştirmesi
     round_options = []
     if round_select and round_select.get("options"):
         round_options.extend(round_select["options"])
@@ -966,6 +951,86 @@ def fill_and_submit_match_on_page(
             round_options.append({"value": r_id, "label": r_lbl})
 
     round_opt = match_option_for_round(match_item.get("group", ""), round_options)
+
+    # Saha sorgulamasını çalıştır (salon adı, ilk kelimeler, şehir ve ev sahibi takıma göre)
+    ajax_arenas = []
+    try:
+        ajax_arenas = page.evaluate(
+            """async (p) => {
+                const candidates = [];
+                if (!window.jQuery) return candidates;
+
+                // 1. Ev sahibi takımın bu sezondaki kayıtlı salonu
+                if (p.hostId) {
+                    try {
+                        const resp = await window.jQuery.ajax({
+                            type: 'POST',
+                            url: (window.basedir || '/') + 'ajax/get_arena_team_in_season',
+                            data: { team_id: p.hostId, season_id: '127' },
+                            dataType: 'xml'
+                        });
+                        const code = window.jQuery('response code', resp).text();
+                        if (code === '1') {
+                            const aid = window.jQuery('response arena_id', resp).text();
+                            const aname = window.jQuery('response arena_name', resp).text();
+                            if (aid && aname) {
+                                candidates.push({ id: aid, label: aname, value: aid, source: 'host_team' });
+                            }
+                        }
+                    } catch(e) {}
+                }
+
+                // 2. get_tags_ajax üzerinden salon ve şehir terimlerini ara
+                const terms = [];
+                if (p.hall) {
+                    terms.push(p.hall);
+                    const words = p.hall.split(/\\s+/).filter(w => w.length >= 3);
+                    if (words.length > 0 && words[0] !== p.hall) {
+                        terms.push(words[0]);
+                    }
+                }
+                if (p.city && !terms.includes(p.city)) {
+                    terms.push(p.city);
+                }
+
+                for (const t of terms) {
+                    try {
+                        let res = await window.jQuery.ajax({
+                            type: 'POST',
+                            url: (window.basedir || '/') + 'ajax/get_tags_ajax',
+                            data: { searched_items: 'arenas', term: t, continent: 0 },
+                            dataType: 'json'
+                        });
+                        if (!Array.isArray(res) || res.length === 0) {
+                            res = await window.jQuery.ajax({
+                                type: 'GET',
+                                url: (window.basedir || '/') + 'ajax/get_tags_ajax',
+                                data: { searched_items: 'arenas', term: t, continent: 0 },
+                                dataType: 'json'
+                            });
+                        }
+                        if (Array.isArray(res)) {
+                            for (const item of res) {
+                                const id = String(item.id || item.value || '');
+                                const label = String(item.label || item.name || item.value || '');
+                                if (id && label) {
+                                    candidates.push({ id, label, value: id, source: 'tags_ajax' });
+                                }
+                            }
+                        }
+                    } catch(e) {}
+                }
+
+                return candidates;
+            }""",
+            {
+                "hall": match_item.get("hall", ""),
+                "city": match_item.get("city", ""),
+                "hostId": host_opt.get("id"),
+            },
+        )
+    except Exception as e:
+        log_step(f"   ⚠️ Saha sorgulama notu: {e}")
 
     arena_options = []
     if arena_select and arena_select.get("options"):
@@ -1114,6 +1179,29 @@ def fill_and_submit_match_on_page(
         return True, summary
 
     # 7. '+ Ekle' (#submit_button_hall) butonuna tıkla
+    last_response_data = {}
+    def on_response(response):
+        if "add_match" in response.url:
+            try:
+                last_response_data["url"] = response.url
+                last_response_data["status"] = response.status
+                last_response_data["text"] = response.text()
+            except Exception:
+                pass
+
+    page.on("response", on_response)
+
+    last_request_data = {}
+    def on_request(request):
+        if "add_match" in request.url:
+            try:
+                last_request_data["url"] = request.url
+                last_request_data["post_data"] = request.post_data
+            except Exception:
+                pass
+
+    page.on("request", on_request)
+
     submitted = False
     try:
         btn_loc = page.locator("#submit_button_hall, button[type='submit']")
@@ -1151,15 +1239,54 @@ def fill_and_submit_match_on_page(
 
     time.sleep(2.5)
     save_live_screenshot(page)
-    # Hata mesajı var mı kontrol et
-    err_text = page.evaluate(
+
+    if last_request_data:
+        log_step(f"   📤 Sunucuya gönderilen POST: {last_request_data.get('post_data')}")
+    if last_response_data:
+        log_step(f"   📥 Sunucu yanıtı ({last_response_data.get('status')}): {last_response_data.get('text')}")
+
+    # Hata mesajı var mı detaylı kontrol et
+    errors_detail = page.evaluate(
         """() => {
-            const err = document.querySelector('#add_match_form p.errors, #add_match_container .formError, .ui-dialog-content, .error-message');
-            return err && err.offsetParent !== null ? err.textContent.trim() : '';
+            const list = [];
+            const form = document.querySelector('#add_match_form');
+            if (form && window.jQuery) {
+                const v = window.jQuery(form).data('validator');
+                if (v && v.errorList) {
+                    v.errorList.forEach(e => {
+                        list.push({
+                            text: e.message,
+                            forAttr: e.element ? (e.element.name || e.element.id) : '',
+                            id: 'validator_errorList',
+                            prev: '',
+                            parent: ''
+                        });
+                    });
+                }
+            }
+            document.querySelectorAll('.error, label.error, span.error, p.errors, .formError, .error-message, .ui-dialog-content').forEach(el => {
+                if (el.offsetParent !== null && (el.textContent || '').trim().length > 0) {
+                    list.push({
+                        text: el.textContent.trim(),
+                        forAttr: el.getAttribute('for') || '',
+                        id: el.id || '',
+                        prev: el.previousElementSibling ? (el.previousElementSibling.name || el.previousElementSibling.id) : '',
+                        parent: el.parentElement ? (el.parentElement.className || el.parentElement.id) : ''
+                    });
+                }
+            });
+            return list;
         }"""
     )
-    if err_text:
-        return False, f"Volleybox form uyarısı: {err_text}"
+    if errors_detail:
+        log_step(f"   ⚠️ Hata detayları: {errors_detail}")
+        err_msg = ", ".join([f"{e.get('forAttr') or e.get('prev') or e.get('parent')}: {e['text']}" for e in errors_detail])
+        return False, f"Volleybox form uyarısı: {err_msg}"
+
+    if last_response_data and "<match_id>" in last_response_data.get("text", ""):
+        m_id = re.search(r"<match_id>(\d+)</match_id>", last_response_data["text"])
+        if m_id:
+            summary += f" [VB ID: {m_id.group(1)}]"
 
     return True, summary
 

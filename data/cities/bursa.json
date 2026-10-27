@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T15:55:52.562330+03:00",
+  "updated_at": "2026-10-27T17:14:59.520738+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -767,22 +767,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20261105-006",
@@ -801,22 +786,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20261007-007",
@@ -1016,22 +986,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20261103-012",
@@ -1050,22 +1005,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20261007-013",
@@ -1264,22 +1204,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20261104-018",
@@ -1298,22 +1223,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20261007-019",
@@ -1512,22 +1422,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20261105-024",
@@ -1546,22 +1441,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "bursa-20260928-025",
@@ -3303,7 +3183,5 @@
         }
       }
     }
-  ],
-  "volleybox_synced_matches": 55,
-  "volleybox_sync_updated_at": "2026-10-27T16:03:23.510391"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T15:55:52.562330+03:00",
+  "updated_at": "2026-10-27T17:14:59.520738+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -678,22 +678,7 @@
         "25-20",
         "25-16"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261026-009",
@@ -716,22 +701,7 @@
         "25-18",
         "25-15"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20260926-010",
@@ -1488,22 +1458,7 @@
         "25-10",
         "25-16"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261024-027",
@@ -1572,22 +1527,7 @@
         "20-25",
         "25-19"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261024-029",
@@ -1610,22 +1550,7 @@
         "14-25",
         "18-25"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261031-030",
@@ -1644,22 +1569,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-031",
@@ -1678,22 +1588,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-032",
@@ -1712,22 +1607,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-033",
@@ -1746,22 +1626,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-034",
@@ -1780,22 +1645,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-035",
@@ -1814,22 +1664,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-036",
@@ -1848,22 +1683,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-037",
@@ -1882,22 +1702,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20260926-038",
@@ -2467,22 +2272,7 @@
         "25-21",
         "25-19"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261027-051",
@@ -2501,22 +2291,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261027-052",
@@ -2535,22 +2310,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-053",
@@ -2569,22 +2329,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-054",
@@ -2603,22 +2348,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-055",
@@ -2637,22 +2367,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-056",
@@ -2671,22 +2386,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-057",
@@ -2705,22 +2405,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261110-058",
@@ -2739,22 +2424,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20260926-059",
@@ -3319,22 +2989,7 @@
         "25-20",
         "25-16"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261024-072",
@@ -3358,22 +3013,7 @@
         "19-25",
         "16-25"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261024-073",
@@ -3396,22 +3036,7 @@
         "22-25",
         "11-25"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261031-074",
@@ -3430,22 +3055,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-075",
@@ -3464,22 +3074,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261031-076",
@@ -3498,22 +3093,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-077",
@@ -3532,22 +3112,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-078",
@@ -3566,22 +3131,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tekirdag-20261107-079",
@@ -3600,24 +3150,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     }
-  ],
-  "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-27T16:03:29.371999"
+  ]
 }
