@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 15,
+  "total_matches": 17,
   "source": "https://gaziantep.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -497,7 +497,7 @@
       "city": "Gaziantep",
       "date": "2026-10-31",
       "time": "09:30",
-      "hall": "Yurt Ss",
+      "hall": "Dumlupınar",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -531,7 +531,7 @@
       "city": "Gaziantep",
       "date": "2026-10-31",
       "time": "11:00",
-      "hall": "Yurt Ss",
+      "hall": "Dumlupınar",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -561,7 +561,75 @@
       }
     },
     {
-      "id": "gaziantep-20261017-009",
+      "id": "gaziantep-20261101-009",
+      "city": "Gaziantep",
+      "date": "2026-11-01",
+      "time": "09:30",
+      "hall": "Dumlupınar",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "9",
+      "home_team": "Anadolugücü Spor Kulübü U18",
+      "away_team": "Adrenalin Rekor Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "gaziantep-20261101-010",
+      "city": "Gaziantep",
+      "date": "2026-11-01",
+      "time": "11:00",
+      "hall": "Yurt Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "10",
+      "home_team": "Av. Mahmut Düşün MTAL U18",
+      "away_team": "Zeugma Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "gaziantep-20261017-011",
       "city": "Gaziantep",
       "date": "2026-10-17",
       "time": "09:30",
@@ -606,7 +674,7 @@
       }
     },
     {
-      "id": "gaziantep-20261017-010",
+      "id": "gaziantep-20261017-012",
       "city": "Gaziantep",
       "date": "2026-10-17",
       "time": "09:30",
@@ -651,7 +719,7 @@
       }
     },
     {
-      "id": "gaziantep-20261018-011",
+      "id": "gaziantep-20261018-013",
       "city": "Gaziantep",
       "date": "2026-10-18",
       "time": "09:30",
@@ -696,7 +764,7 @@
       }
     },
     {
-      "id": "gaziantep-20261018-012",
+      "id": "gaziantep-20261018-014",
       "city": "Gaziantep",
       "date": "2026-10-18",
       "time": "11:00",
@@ -743,7 +811,7 @@
       }
     },
     {
-      "id": "gaziantep-20261024-013",
+      "id": "gaziantep-20261024-015",
       "city": "Gaziantep",
       "date": "2026-10-24",
       "time": "09:30",
@@ -784,7 +852,7 @@
       }
     },
     {
-      "id": "gaziantep-20261024-014",
+      "id": "gaziantep-20261024-016",
       "city": "Gaziantep",
       "date": "2026-10-24",
       "time": "09:30",
@@ -829,7 +897,7 @@
       }
     },
     {
-      "id": "gaziantep-20261024-015",
+      "id": "gaziantep-20261024-017",
       "city": "Gaziantep",
       "date": "2026-10-24",
       "time": "11:00",
@@ -877,5 +945,5 @@
     }
   ],
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:21.183637"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:35.019367"
 }

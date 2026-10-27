@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -34,7 +34,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - Final - Final Grubu": [
+    "Genç Kızlar Süper Lig - Final Grubu": [
       {
         "rank": 1,
         "team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
@@ -350,7 +350,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "1",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
       "away_team": "Çorlu GSB SK",
@@ -395,7 +395,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "2",
       "home_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
       "away_team": "Tekirdağ Basket Spor Kulübü",
@@ -440,7 +440,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "3",
       "home_team": "Tekirdağ Basket Spor Kulübü",
       "away_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
@@ -485,7 +485,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "4",
       "home_team": "Çorlu GSB SK",
       "away_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
@@ -530,7 +530,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "5",
       "home_team": "Çerkezköy Voleybol Akademi Spor Kulübü",
       "away_team": "Kapaklı Site Spor Kulübü",
@@ -576,7 +576,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "6",
       "home_team": "Çorlu GSB SK",
       "away_team": "Tekirdağ Basket Spor Kulübü",
@@ -621,7 +621,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "7",
       "home_team": "Çorlu Belediyesi Gençlik Ve Spor Kulübü",
       "away_team": "Kapaklı Site Spor Kulübü",
@@ -666,7 +666,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "8",
       "home_team": "Kapaklı Site Spor Kulübü",
       "away_team": "Tekirdağ Basket Spor Kulübü",
@@ -704,7 +704,7 @@
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "Final - Final Grubu",
+      "group": "Final Grubu",
       "match_no": "9",
       "home_team": "Kapaklı Site Spor Kulübü",
       "away_team": "Çorlu GSB SK",
@@ -3619,5 +3619,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:30.188587"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:44.564555"
 }

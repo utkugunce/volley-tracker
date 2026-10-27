@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -836,8 +836,8 @@
         "url": "https://women.volleybox.net/tr/karesi-hurriyet-spor-u16-balkesir-nets-basket-spor-kulubu-u16-c411628",
         "host_name": "Karesi Hürriyet Spor U16",
         "guest_name": "Balıkesir Nets Basket Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "19:30",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
@@ -2608,8 +2608,8 @@
         "url": "https://women.volleybox.net/tr/bandrma-gelisim-basketbol-spor-kulubu-u16-gonen-karsyakaspor-u16-c411639",
         "host_name": "Bandırma Gelişim Basketbol Spor Kulübü U16",
         "guest_name": "Gönen Karşıyakaspor U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "19:00",
         "vb_hall": "Neriman Gençer Spor Salonu",
@@ -2750,5 +2750,5 @@
     }
   ],
   "volleybox_synced_matches": 51,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:19.943821"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:33.334141"
 }

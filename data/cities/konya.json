@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -1052,8 +1052,8 @@
         "url": "https://women.volleybox.net/tr/konya-anka-spor-kulubu-u18-anadolu-zirve-spor-kulubu-u18-c411811",
         "host_name": "Konya Anka Spor Kulübü U18",
         "guest_name": "Anadolu Zirve Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "20:30",
         "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
@@ -1805,5 +1805,5 @@
     }
   ],
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:28.755367"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:42.671553"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -348,8 +348,8 @@
         "url": "https://women.volleybox.net/tr/asas-spor-kulubu-u18-sakarya-voleybol-sk-u18-c408247",
         "host_name": "Asaş Spor Kulübü U18",
         "guest_name": "Sakarya Voleybol SK U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "18:30",
         "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
@@ -411,7 +411,7 @@
       "city": "Sakarya",
       "date": "2026-10-27",
       "time": "20:30",
-      "hall": "Lütfü Yaman1",
+      "hall": "Sapanca S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -436,14 +436,14 @@
         "vb_time": "20:30",
         "vb_hall": "Lütfü Yaman Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": false,
+          "hall_diff": true,
           "vb_date": "2026-10-27",
           "vb_time": "20:30",
           "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "details": "Salon Değişti (TVF: Sapanca S.S / VB: Lütfü Yaman Spor Salonu)"
         }
       }
     },
@@ -531,5 +531,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:29.300845"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:43.444665"
 }

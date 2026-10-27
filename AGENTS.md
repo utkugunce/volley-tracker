@@ -178,6 +178,24 @@ Kuralı `src/__tests__/metadata-brand.test.ts` tüm `page.tsx` dosyalarını tar
 > **UYGULAMA PRENSİBİ:**
 > Projede yapılan her kod, hata düzeltmesi veya yapılandırma değişikliğinden sonra (testlerin başarıyla tamamlanmasının ardından) değişiklikler anlamlı bir commit mesajı ile commit'lenip uzak depoya (`origin main`) push edilmelidir.
 
+### 🛡️ Push Öncesi & Sonrası CI Doğrulama Protokolü:
+Next.js `next.config.mjs` dosyasında `typescript.ignoreBuildErrors: true` tanımlı olduğundan, yerel `next build` tip hatalarını yakalamaz. GitHub Actions CI ise `npm run typecheck` (`tsc --noEmit`) adımını zorunlu güvenlik ağı olarak çalıştırır.
+Geliştiriciden/kullanıcıdan önce olası hataların anında yakalanması için her push öncesi ve sonrası şu sıra **ZORUNLUDUR**:
+
+1. **Push Öncesi Kontroller:**
+   - `npm run typecheck` (0 TypeScript hatası olmalıdır)
+   - `npm run lint` (0 ESLint hatası/uyarısı)
+   - `npm test` (Vitest testleri eksiksiz geçmelidir)
+   - `python scripts/generate_city_slugs.py --check`
+   - `python scripts/validate_data_files.py`
+
+2. **Push Sonrası CI Takibi:**
+   - Push işleminden hemen sonra `gh run list --limit 2` veya `gh run watch` ile GitHub Actions CI akışı terminalden takip edilmeli, yeşil (success) olduğu bizzat doğrulanmalıdır.
+   - Olası bir CI aksaklığında kullanıcıya bildirim gitmeden agent anında müdahale edip düzeltmelidir.
+
+
+
+
 
 ## 🚫 KURAL: Resmi Olmayan Turnuvaları Filtreleme (Okul Sporları, Kamu Sporları, Kurumlar Arası)
 

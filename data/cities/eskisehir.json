@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -2703,8 +2703,8 @@
         "url": "https://women.volleybox.net/tr/anadolu-universitesi-spor-kulubu-u16-eskisehir-yldz-spor-kulubu-u16-c411680",
         "host_name": "Anadolu Üniversitesi Spor Kulübü U16",
         "guest_name": "Eskişehir Yıldız Spor Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "18:30",
         "vb_hall": "Kemal Unakıtan Spor Salonu",
@@ -2804,5 +2804,5 @@
     }
   ],
   "volleybox_synced_matches": 54,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:21.112590"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:34.908362"
 }

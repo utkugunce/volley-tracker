@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -7568,8 +7568,8 @@
         "url": "https://women.volleybox.net/tr/kovan-spor-kulubu-u18-bahcelievler-voleybol-kulubu-u18-c411777",
         "host_name": "Kovan Spor Kulübü U18",
         "guest_name": "Bahçelievler Voleybol Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "1 - 3",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "18:00",
         "vb_hall": "Tozkoparan Spor Salonu",
@@ -8120,5 +8120,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:16.855928"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:30.093842"
 }

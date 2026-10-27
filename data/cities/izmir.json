@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T10:38:55.100830+03:00",
+  "updated_at": "2026-10-27T11:44:08.410558+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -4444,8 +4444,8 @@
         "url": "https://women.volleybox.net/tr/ozates-sk-u18-dost-spor-c-u18-c412708",
         "host_name": "Özateş SK U18",
         "guest_name": "Dost Spor - C U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "18:30",
         "vb_hall": "Balçova Spor Salonu",
@@ -4490,8 +4490,8 @@
         "url": "https://women.volleybox.net/tr/altnordu-voleybol-b-u18-kzy-bornova-spor-kulubu-b-u18-c412709",
         "host_name": "Altınordu Voleybol - B U18",
         "guest_name": "KZY Bornova Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "20:00",
         "vb_hall": "Bornova Vali Hüseyin Öğütcen Spor Salonu",
@@ -4985,8 +4985,8 @@
         "url": "https://women.volleybox.net/tr/dost-spor-b-u18-efor-genclik-spor-kulubu-u18-c412749",
         "host_name": "Dost Spor - B U18",
         "guest_name": "Efor Gençlik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "20:00",
         "vb_hall": "Balçova Spor Salonu",
@@ -8593,8 +8593,8 @@
         "url": "https://women.volleybox.net/tr/rota-koleji-sk-u16-parla-voleybol-kulubu-u16-c412773",
         "host_name": "Rota Koleji SK U16",
         "guest_name": "Parla Voleybol Kulübü U16",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-26",
         "vb_time": "20:00",
         "vb_hall": "Halkapınar Spor Salonu",
@@ -8981,5 +8981,5 @@
     }
   ],
   "volleybox_synced_matches": 173,
-  "volleybox_sync_updated_at": "2026-10-27T10:46:27.043937"
+  "volleybox_sync_updated_at": "2026-10-27T11:51:40.717673"
 }
