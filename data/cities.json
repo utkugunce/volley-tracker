@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-27T15:55:52.562330+03:00",
+  "updated_at": "2026-10-27T15:00:46.248439+00:00",
   "total_cities": 81,
   "active_cities": 37,
-  "total_matches": 1616,
+  "total_matches": 1615,
   "cities": [
     {
       "ilid": "1",
@@ -392,8 +392,8 @@
       "name": "Kırklareli",
       "slug": "kirklareli",
       "url": "https://kirklareli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (60 Maç Mevcut)",
-      "matches_count": 60,
+      "status": "Aktif (59 Maç Mevcut)",
+      "matches_count": 59,
       "standings_count": 2,
       "data_file": "data/cities/kirklareli.json"
     },

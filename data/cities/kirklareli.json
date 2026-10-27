@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-27T15:55:52.562330+03:00",
+  "updated_at": "2026-10-27T15:00:46.248439+00:00",
   "city": "Kırklareli",
   "slug": "kirklareli",
   "title": "TVF Kırklareli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 60,
+  "total_matches": 59,
   "source": "https://kirklareli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -213,18 +213,18 @@
   },
   "matches": [
     {
-      "id": "kirklareli-20261030-001",
+      "id": "kirklareli-20261031-001",
       "city": "Kırklareli",
-      "date": "2026-10-30",
-      "time": "20:00",
-      "hall": "Kırklareli Atatürk Ss",
+      "date": "2026-10-31",
+      "time": "15:00",
+      "hall": "Lüleburgaz Ss.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "1",
-      "home_team": "Kırklareli Gençlik Spor Kulübü",
-      "away_team": "Akademi Spor Kulübü C",
+      "home_team": "Akademi Spor Kulübü D",
+      "away_team": "Akım Koleji Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -250,47 +250,13 @@
       "id": "kirklareli-20261031-002",
       "city": "Kırklareli",
       "date": "2026-10-31",
-      "time": "15:00",
-      "hall": "Lüleburgaz Ss.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "2",
-      "home_team": "Akademi Spor Kulübü D",
-      "away_team": "Akım Koleji Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "kirklareli-20261031-003",
-      "city": "Kırklareli",
-      "date": "2026-10-31",
       "time": "17:00",
       "hall": "Lüleburgaz Ss.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "3",
+      "match_no": "2",
       "home_team": "Akademi Spor Kulübü B",
       "away_team": "Akademi Spor Kulübü A",
       "score": "- : -",
@@ -315,7 +281,7 @@
       }
     },
     {
-      "id": "kirklareli-20261105-004",
+      "id": "kirklareli-20261105-003",
       "city": "Kırklareli",
       "date": "2026-11-05",
       "time": "18:00",
@@ -324,7 +290,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "4",
+      "match_no": "3",
       "home_team": "Akademi Spor Kulübü A",
       "away_team": "Akademi Spor Kulübü C",
       "score": "- : -",
@@ -349,7 +315,7 @@
       }
     },
     {
-      "id": "kirklareli-20261107-005",
+      "id": "kirklareli-20261107-004",
       "city": "Kırklareli",
       "date": "2026-11-07",
       "time": "16:00",
@@ -358,7 +324,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "5",
+      "match_no": "4",
       "home_team": "Akademi Spor Kulübü D",
       "away_team": "Akademi Spor Kulübü B",
       "score": "- : -",
@@ -383,7 +349,7 @@
       }
     },
     {
-      "id": "kirklareli-20261112-006",
+      "id": "kirklareli-20261112-005",
       "city": "Kırklareli",
       "date": "2026-11-12",
       "time": "19:00",
@@ -392,9 +358,43 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "6",
+      "match_no": "5",
       "home_team": "Akım Koleji Spor Kulübü",
       "away_team": "Kırklareli Gençlik Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kirklareli-20261114-006",
+      "city": "Kırklareli",
+      "date": "2026-11-14",
+      "time": "14:00",
+      "hall": "Lüleburgaz Ss.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "6",
+      "home_team": "Akım Koleji Spor Kulübü",
+      "away_team": "Akademi Spor Kulübü B",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -420,47 +420,13 @@
       "id": "kirklareli-20261114-007",
       "city": "Kırklareli",
       "date": "2026-11-14",
-      "time": "14:00",
-      "hall": "Lüleburgaz Ss.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "7",
-      "home_team": "Akım Koleji Spor Kulübü",
-      "away_team": "Akademi Spor Kulübü B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "kirklareli-20261114-008",
-      "city": "Kırklareli",
-      "date": "2026-11-14",
       "time": "16:00",
       "hall": "Lüleburgaz Ss.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "8",
+      "match_no": "7",
       "home_team": "Akademi Spor Kulübü C",
       "away_team": "Akademi Spor Kulübü D",
       "score": "- : -",
@@ -485,7 +451,7 @@
       }
     },
     {
-      "id": "kirklareli-20261117-009",
+      "id": "kirklareli-20261117-008",
       "city": "Kırklareli",
       "date": "2026-11-17",
       "time": "19:30",
@@ -494,9 +460,43 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "9",
+      "match_no": "8",
       "home_team": "Kırklareli Gençlik Spor Kulübü",
       "away_team": "Akademi Spor Kulübü A",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kirklareli-20261121-009",
+      "city": "Kırklareli",
+      "date": "2026-11-21",
+      "time": "13:00",
+      "hall": "Lüleburgaz Ss.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "9",
+      "home_team": "Akademi Spor Kulübü B",
+      "away_team": "Kırklareli Gençlik Spor Kulübü",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -522,47 +522,13 @@
       "id": "kirklareli-20261121-010",
       "city": "Kırklareli",
       "date": "2026-11-21",
-      "time": "13:00",
-      "hall": "Lüleburgaz Ss.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "10",
-      "home_team": "Akademi Spor Kulübü B",
-      "away_team": "Kırklareli Gençlik Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "kirklareli-20261121-011",
-      "city": "Kırklareli",
-      "date": "2026-11-21",
       "time": "15:00",
       "hall": "Lüleburgaz Ss.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "11",
+      "match_no": "10",
       "home_team": "Akademi Spor Kulübü D",
       "away_team": "Akademi Spor Kulübü A",
       "score": "- : -",
@@ -587,7 +553,7 @@
       }
     },
     {
-      "id": "kirklareli-20261124-012",
+      "id": "kirklareli-20261124-011",
       "city": "Kırklareli",
       "date": "2026-11-24",
       "time": "18:30",
@@ -596,9 +562,43 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "12",
+      "match_no": "11",
       "home_team": "Akademi Spor Kulübü C",
       "away_team": "Akım Koleji Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kirklareli-20261128-012",
+      "city": "Kırklareli",
+      "date": "2026-11-28",
+      "time": "14:00",
+      "hall": "Lüleburgaz Ss.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "12",
+      "home_team": "Akademi Spor Kulübü B",
+      "away_team": "Akademi Spor Kulübü C",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -624,47 +624,13 @@
       "id": "kirklareli-20261128-013",
       "city": "Kırklareli",
       "date": "2026-11-28",
-      "time": "14:00",
-      "hall": "Lüleburgaz Ss.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "13",
-      "home_team": "Akademi Spor Kulübü B",
-      "away_team": "Akademi Spor Kulübü C",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "kirklareli-20261128-014",
-      "city": "Kırklareli",
-      "date": "2026-11-28",
       "time": "16:00",
       "hall": "Lüleburgaz Ss.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "14",
+      "match_no": "13",
       "home_team": "Akademi Spor Kulübü A",
       "away_team": "Akım Koleji Spor Kulübü",
       "score": "- : -",
@@ -689,7 +655,7 @@
       }
     },
     {
-      "id": "kirklareli-20261202-015",
+      "id": "kirklareli-20261202-014",
       "city": "Kırklareli",
       "date": "2026-12-02",
       "time": "19:30",
@@ -698,7 +664,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
-      "match_no": "15",
+      "match_no": "14",
       "home_team": "Kırklareli Gençlik Spor Kulübü",
       "away_team": "Akademi Spor Kulübü D",
       "score": "- : -",
@@ -723,7 +689,7 @@
       }
     },
     {
-      "id": "kirklareli-20270202-016",
+      "id": "kirklareli-20270202-015",
       "city": "Kırklareli",
       "date": "2027-02-02",
       "time": "18:30",
@@ -757,7 +723,7 @@
       }
     },
     {
-      "id": "kirklareli-20270203-017",
+      "id": "kirklareli-20270203-016",
       "city": "Kırklareli",
       "date": "2027-02-03",
       "time": "18:30",
@@ -791,7 +757,7 @@
       }
     },
     {
-      "id": "kirklareli-20270203-018",
+      "id": "kirklareli-20270203-017",
       "city": "Kırklareli",
       "date": "2027-02-03",
       "time": "20:00",
@@ -825,7 +791,7 @@
       }
     },
     {
-      "id": "kirklareli-20270204-019",
+      "id": "kirklareli-20270204-018",
       "city": "Kırklareli",
       "date": "2027-02-04",
       "time": "18:30",
@@ -859,7 +825,7 @@
       }
     },
     {
-      "id": "kirklareli-20270205-020",
+      "id": "kirklareli-20270205-019",
       "city": "Kırklareli",
       "date": "2027-02-05",
       "time": "18:30",
@@ -893,7 +859,7 @@
       }
     },
     {
-      "id": "kirklareli-20270206-021",
+      "id": "kirklareli-20270206-020",
       "city": "Kırklareli",
       "date": "2027-02-06",
       "time": "16:00",
@@ -927,7 +893,7 @@
       }
     },
     {
-      "id": "kirklareli-20270206-022",
+      "id": "kirklareli-20270206-021",
       "city": "Kırklareli",
       "date": "2027-02-06",
       "time": "18:00",
@@ -961,7 +927,7 @@
       }
     },
     {
-      "id": "kirklareli-20270208-023",
+      "id": "kirklareli-20270208-022",
       "city": "Kırklareli",
       "date": "2027-02-08",
       "time": "19:30",
@@ -995,7 +961,7 @@
       }
     },
     {
-      "id": "kirklareli-20270209-024",
+      "id": "kirklareli-20270209-023",
       "city": "Kırklareli",
       "date": "2027-02-09",
       "time": "19:30",
@@ -1029,7 +995,7 @@
       }
     },
     {
-      "id": "kirklareli-20270210-025",
+      "id": "kirklareli-20270210-024",
       "city": "Kırklareli",
       "date": "2027-02-10",
       "time": "19:30",
@@ -1063,7 +1029,7 @@
       }
     },
     {
-      "id": "kirklareli-20270211-026",
+      "id": "kirklareli-20270211-025",
       "city": "Kırklareli",
       "date": "2027-02-11",
       "time": "19:30",
@@ -1097,7 +1063,7 @@
       }
     },
     {
-      "id": "kirklareli-20270212-027",
+      "id": "kirklareli-20270212-026",
       "city": "Kırklareli",
       "date": "2027-02-12",
       "time": "19:30",
@@ -1131,7 +1097,7 @@
       }
     },
     {
-      "id": "kirklareli-20270213-028",
+      "id": "kirklareli-20270213-027",
       "city": "Kırklareli",
       "date": "2027-02-13",
       "time": "14:00",
@@ -1165,7 +1131,7 @@
       }
     },
     {
-      "id": "kirklareli-20270213-029",
+      "id": "kirklareli-20270213-028",
       "city": "Kırklareli",
       "date": "2027-02-13",
       "time": "16:00",
@@ -1199,7 +1165,7 @@
       }
     },
     {
-      "id": "kirklareli-20270213-030",
+      "id": "kirklareli-20270213-029",
       "city": "Kırklareli",
       "date": "2027-02-13",
       "time": "19:30",
@@ -1233,7 +1199,7 @@
       }
     },
     {
-      "id": "kirklareli-20270215-031",
+      "id": "kirklareli-20270215-030",
       "city": "Kırklareli",
       "date": "2027-02-15",
       "time": "19:30",
@@ -1267,7 +1233,7 @@
       }
     },
     {
-      "id": "kirklareli-20270217-032",
+      "id": "kirklareli-20270217-031",
       "city": "Kırklareli",
       "date": "2027-02-17",
       "time": "19:30",
@@ -1301,7 +1267,7 @@
       }
     },
     {
-      "id": "kirklareli-20270218-033",
+      "id": "kirklareli-20270218-032",
       "city": "Kırklareli",
       "date": "2027-02-18",
       "time": "19:30",
@@ -1335,7 +1301,7 @@
       }
     },
     {
-      "id": "kirklareli-20270219-034",
+      "id": "kirklareli-20270219-033",
       "city": "Kırklareli",
       "date": "2027-02-19",
       "time": "19:30",
@@ -1369,7 +1335,7 @@
       }
     },
     {
-      "id": "kirklareli-20270220-035",
+      "id": "kirklareli-20270220-034",
       "city": "Kırklareli",
       "date": "2027-02-20",
       "time": "14:00",
@@ -1403,7 +1369,7 @@
       }
     },
     {
-      "id": "kirklareli-20270224-036",
+      "id": "kirklareli-20270224-035",
       "city": "Kırklareli",
       "date": "2027-02-24",
       "time": "19:30",
@@ -1437,7 +1403,7 @@
       }
     },
     {
-      "id": "kirklareli-20270225-037",
+      "id": "kirklareli-20270225-036",
       "city": "Kırklareli",
       "date": "2027-02-25",
       "time": "19:30",
@@ -1471,7 +1437,7 @@
       }
     },
     {
-      "id": "kirklareli-20270226-038",
+      "id": "kirklareli-20270226-037",
       "city": "Kırklareli",
       "date": "2027-02-26",
       "time": "19:30",
@@ -1505,7 +1471,7 @@
       }
     },
     {
-      "id": "kirklareli-20270227-039",
+      "id": "kirklareli-20270227-038",
       "city": "Kırklareli",
       "date": "2027-02-27",
       "time": "13:00",
@@ -1539,7 +1505,7 @@
       }
     },
     {
-      "id": "kirklareli-20270227-040",
+      "id": "kirklareli-20270227-039",
       "city": "Kırklareli",
       "date": "2027-02-27",
       "time": "14:30",
@@ -1573,7 +1539,7 @@
       }
     },
     {
-      "id": "kirklareli-20270302-041",
+      "id": "kirklareli-20270302-040",
       "city": "Kırklareli",
       "date": "2027-03-02",
       "time": "19:30",
@@ -1607,7 +1573,7 @@
       }
     },
     {
-      "id": "kirklareli-20270303-042",
+      "id": "kirklareli-20270303-041",
       "city": "Kırklareli",
       "date": "2027-03-03",
       "time": "19:30",
@@ -1641,7 +1607,7 @@
       }
     },
     {
-      "id": "kirklareli-20270304-043",
+      "id": "kirklareli-20270304-042",
       "city": "Kırklareli",
       "date": "2027-03-04",
       "time": "19:30",
@@ -1675,7 +1641,7 @@
       }
     },
     {
-      "id": "kirklareli-20270305-044",
+      "id": "kirklareli-20270305-043",
       "city": "Kırklareli",
       "date": "2027-03-05",
       "time": "19:30",
@@ -1709,7 +1675,7 @@
       }
     },
     {
-      "id": "kirklareli-20270305-045",
+      "id": "kirklareli-20270305-044",
       "city": "Kırklareli",
       "date": "2027-03-05",
       "time": "19:30",
@@ -1743,7 +1709,7 @@
       }
     },
     {
-      "id": "kirklareli-20270315-046",
+      "id": "kirklareli-20270315-045",
       "city": "Kırklareli",
       "date": "2027-03-15",
       "time": "18:30",
@@ -1777,7 +1743,7 @@
       }
     },
     {
-      "id": "kirklareli-20270316-047",
+      "id": "kirklareli-20270316-046",
       "city": "Kırklareli",
       "date": "2027-03-16",
       "time": "18:30",
@@ -1811,7 +1777,7 @@
       }
     },
     {
-      "id": "kirklareli-20270318-048",
+      "id": "kirklareli-20270318-047",
       "city": "Kırklareli",
       "date": "2027-03-18",
       "time": "18:30",
@@ -1845,7 +1811,7 @@
       }
     },
     {
-      "id": "kirklareli-20270320-049",
+      "id": "kirklareli-20270320-048",
       "city": "Kırklareli",
       "date": "2027-03-20",
       "time": "13:00",
@@ -1879,7 +1845,7 @@
       }
     },
     {
-      "id": "kirklareli-20270320-050",
+      "id": "kirklareli-20270320-049",
       "city": "Kırklareli",
       "date": "2027-03-20",
       "time": "14:30",
@@ -1913,7 +1879,7 @@
       }
     },
     {
-      "id": "kirklareli-20270322-051",
+      "id": "kirklareli-20270322-050",
       "city": "Kırklareli",
       "date": "2027-03-22",
       "time": "19:00",
@@ -1947,7 +1913,7 @@
       }
     },
     {
-      "id": "kirklareli-20270323-052",
+      "id": "kirklareli-20270323-051",
       "city": "Kırklareli",
       "date": "2027-03-23",
       "time": "18:30",
@@ -1981,7 +1947,7 @@
       }
     },
     {
-      "id": "kirklareli-20270324-053",
+      "id": "kirklareli-20270324-052",
       "city": "Kırklareli",
       "date": "2027-03-24",
       "time": "19:00",
@@ -2015,7 +1981,7 @@
       }
     },
     {
-      "id": "kirklareli-20270325-054",
+      "id": "kirklareli-20270325-053",
       "city": "Kırklareli",
       "date": "2027-03-25",
       "time": "19:30",
@@ -2049,7 +2015,7 @@
       }
     },
     {
-      "id": "kirklareli-20270326-055",
+      "id": "kirklareli-20270326-054",
       "city": "Kırklareli",
       "date": "2027-03-26",
       "time": "19:00",
@@ -2083,7 +2049,7 @@
       }
     },
     {
-      "id": "kirklareli-20270327-056",
+      "id": "kirklareli-20270327-055",
       "city": "Kırklareli",
       "date": "2027-03-27",
       "time": "13:00",
@@ -2117,7 +2083,7 @@
       }
     },
     {
-      "id": "kirklareli-20270327-057",
+      "id": "kirklareli-20270327-056",
       "city": "Kırklareli",
       "date": "2027-03-27",
       "time": "14:30",
@@ -2151,7 +2117,7 @@
       }
     },
     {
-      "id": "kirklareli-20270329-058",
+      "id": "kirklareli-20270329-057",
       "city": "Kırklareli",
       "date": "2027-03-29",
       "time": "19:00",
@@ -2185,7 +2151,7 @@
       }
     },
     {
-      "id": "kirklareli-20270330-059",
+      "id": "kirklareli-20270330-058",
       "city": "Kırklareli",
       "date": "2027-03-30",
       "time": "18:00",
@@ -2219,7 +2185,7 @@
       }
     },
     {
-      "id": "kirklareli-20270331-060",
+      "id": "kirklareli-20270331-059",
       "city": "Kırklareli",
       "date": "2027-03-31",
       "time": "19:00",
@@ -2254,5 +2220,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-27T17:23:34.468348"
+  "volleybox_sync_updated_at": "2026-10-27T15:03:29.039524"
 }
