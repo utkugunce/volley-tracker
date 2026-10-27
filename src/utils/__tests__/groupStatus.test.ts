@@ -368,7 +368,7 @@ describe("groupStatus", () => {
     it("orders stages correctly with getGroupStageRank", () => {
       expect(getGroupStageRank("A Grubu")).toBe(1);
       expect(getGroupStageRank("1. Grup")).toBe(1);
-      expect(getGroupStageRank("Yarı Final - A Grubu")).toBe(2);
+      expect(getGroupStageRank("Yarı Final A Grubu")).toBe(2);
       expect(getGroupStageRank("Yarı Final - B Grubu")).toBe(2);
       expect(getGroupStageRank("Play-Off Grubu")).toBe(2);
       expect(getGroupStageRank("Final Grubu")).toBe(3);
@@ -392,7 +392,7 @@ describe("groupStatus", () => {
           city: "İzmir",
           category: "Genç Kızlar Süper Lig",
           age_group: "Genç",
-          group: "Yarı Final - A Grubu",
+          group: "Yarı Final A Grubu",
           home_team: "Takım 3",
           away_team: "Takım 4",
           status: "upcoming",
@@ -451,9 +451,9 @@ describe("groupStatus", () => {
       expect(list[1].category).toBe("Genç Kızlar Süper Lig");
       expect(list[1].group).toBe("B Grubu");
 
-      // 3. Genç Kızlar Süper Lig - Yarı Final - A Grubu
+      // 3. Genç Kızlar Süper Lig - Yarı Final A Grubu
       expect(list[2].category).toBe("Genç Kızlar Süper Lig");
-      expect(list[2].group).toBe("Yarı Final - A Grubu");
+      expect(list[2].group).toBe("Yarı Final A Grubu");
 
       // 4. Genç Kızlar 1. Ligi - A Grubu
       expect(list[3].category).toBe("Genç Kızlar 1. Ligi");

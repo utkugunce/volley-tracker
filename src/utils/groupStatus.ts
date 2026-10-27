@@ -1,7 +1,7 @@
 import { Match } from "@/types/fixture";
 import { getVolleyboxLeagueMapping } from "@/utils/volleybox";
 import { slugify } from "@/utils/slugify";
-import { getCategoryCombinedScore } from "@/utils/grouping";
+import { getCategoryCombinedScore, formatGroupName } from "@/utils/grouping";
 
 export type GroupStatusKey =
   | "all_dated_entered"
@@ -160,7 +160,7 @@ export function normalizeGroupName(rawGroup?: string): string {
   const trimmed = rawGroup.trim();
   // Standardize common group variants
   if (/^[a-z]$/i.test(trimmed)) return `${trimmed.toUpperCase()} Grubu`;
-  return trimmed;
+  return formatGroupName(trimmed);
 }
 
 /**
@@ -237,9 +237,43 @@ export function computeGroupStatusList(
 
       if (standingsKey.includes(" - ")) {
         const parts = standingsKey.split(" - ");
-        city = parts[0]?.trim() || city;
-        category = parts[1]?.trim() || category;
-        if (parts.length > 2) group = normalizeGroupName(parts.slice(2).join(" - "));
+        const firstPart = parts[0]?.trim() || "";
+        const isCity = [
+          "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
+          "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale",
+          "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum",
+          "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin",
+          "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli",
+          "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş",
+          "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop", "Sivas",
+          "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat",
+          "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak",
+          "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
+        ].some((c) => c.toLocaleLowerCase("tr-TR") === firstPart.toLocaleLowerCase("tr-TR"));
+
+        if (isCity) {
+          city = firstPart;
+          category = parts[1]?.trim() || category;
+          group = normalizeGroupName(parts.slice(2).join(" - "));
+        } else {
+          category = firstPart;
+          group = normalizeGroupName(parts.slice(1).join(" - "));
+          for (const row of teamRows) {
+            const teamName = (row.team || row.team_name || row.name || "").trim().toLowerCase();
+            if (!teamName) continue;
+            const matchWithTeam = matches.find(
+              (m) =>
+                m.home_team.toLowerCase().includes(teamName) ||
+                m.away_team.toLowerCase().includes(teamName) ||
+                teamName.includes(m.home_team.toLowerCase()) ||
+                teamName.includes(m.away_team.toLowerCase())
+            );
+            if (matchWithTeam?.city) {
+              city = matchWithTeam.city;
+              break;
+            }
+          }
+        }
       }
 
       const citySlug = slugify(city);

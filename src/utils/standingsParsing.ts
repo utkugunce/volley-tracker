@@ -1,3 +1,4 @@
+import { formatGroupName } from "@/utils/grouping";
 export const TURKISH_CITIES = [
   "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
   "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale",
@@ -210,7 +211,10 @@ export function parseStandingKey(rawKey: string, defaultCity?: string): ParsedSt
   // Parantez içi ve tire kenarı boşluklarını düzelt (örn: "( Merkez+Marmara)" -> "(Merkez+Marmara)")
   cleaned = cleaned.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")").replace(/^[-–—\s]+/, "");
 
-  if (/^[A-Z]$/i.test(cleaned)) {
+  const formatted = formatGroupName(cleaned || groupPart);
+  if (formatted && formatted !== "Tek Grup") {
+    cleaned = formatted;
+  } else if (/^[A-Z]$/i.test(cleaned)) {
     cleaned = `${cleaned.toUpperCase()} Grubu`;
   } else if (/^[A-Z]\s+Gr$/i.test(cleaned) || /\b[A-Z]\s+Gr\b/i.test(cleaned)) {
     cleaned = cleaned.replace(/\b([A-Z])\s+Gr\b/i, "$1 Grubu");

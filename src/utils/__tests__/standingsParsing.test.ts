@@ -56,4 +56,21 @@ describe("parseStandingKey", () => {
     expect(CITY_SLUG_TO_NAME["afyon"]).toBe("Afyonkarahisar");
     expect(CITY_SLUG_TO_NAME["duzce"]).toBe("Düzce");
   });
+
+  it("yarı final gruplarını sadece B Grubu yerine Yarı Final B Grubu olarak ayrıştırır", () => {
+    const resYari1 = parseStandingKey("İzmir - Genç Kızlar Süper Lig - Y.Final-B Gr");
+    expect(resYari1.displayGroup).toBe("Yarı Final B Grubu");
+
+    const resYari2 = parseStandingKey("Genç Kızlar Süper Lig - Yarı Final - B Grubu", "İzmir");
+    expect(resYari2.displayGroup).toBe("Yarı Final B Grubu");
+
+    const resYari3 = parseStandingKey("Genç Kızlar Süper Lig - Yarı Final B Grubu", "İzmir");
+    expect(resYari3.displayGroup).toBe("Yarı Final B Grubu");
+
+    const resYariA = parseStandingKey("İzmir - Yıldız Kızlar Süper Lig - Y.Final-A Gr");
+    expect(resYariA.displayGroup).toBe("Yarı Final A Grubu");
+
+    const resFinal = parseStandingKey("Ankara - Genç Kızlar Süper Lig - Final - Final Etabı");
+    expect(resFinal.displayGroup).toBe("Final Etabı");
+  });
 });

@@ -118,25 +118,51 @@ def extract_group_name(c_text: str) -> str:
     cleaned = re.sub(r"^(?:Voleybol\s+)?(?:İl\s+)?Birinciliği\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^[A-Za-zÇĞİÖŞÜçğiöşü\s]+İl\s+Birinciliği\s*", "", cleaned, flags=re.I).strip()
     cleaned = re.sub(r"^[-–—\s]+", "", cleaned).strip()
-    is_yari_final = bool(re.search(r"yarı\s*final|yari\s*final", cleaned, flags=re.I))
-    is_final = not is_yari_final and bool(re.search(r"\bfinal\b", cleaned, flags=re.I))
-    is_klasman = bool(re.search(r"klasman", cleaned, flags=re.I))
+    is_yari_final = (
+        bool(re.search(r"y(?:ar[ıi]|\.)\s*final|y-final", c_text, flags=re.I)) or
+        bool(re.search(r"y(?:ar[ıi]|\.)\s*final|y-final", cleaned, flags=re.I))
+    )
+    is_final = not is_yari_final and (
+        bool(re.search(r"\bfinal\b", c_text, flags=re.I)) or
+        bool(re.search(r"\bfinal\b", cleaned, flags=re.I))
+    )
+    is_klasman = bool(re.search(r"klasman", c_text, flags=re.I)) or bool(re.search(r"klasman", cleaned, flags=re.I))
 
-    prefix = ""
     if is_yari_final:
-        prefix = "Yarı Final - "
-    elif is_final:
-        prefix = "Final - "
-    elif is_klasman:
-        prefix = "Klasman - "
+        m = re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I)
+        if m:
+            return f"Yarı Final {m.group(1).upper()} Grubu"
+        m_num = re.search(r"\b(\d+)\.?\s*(?:Grup|Gr\.?)?$", cleaned, flags=re.I)
+        if m_num:
+            return f"Yarı Final {m_num.group(1)}. Grup"
+        return "Yarı Final Grubu"
+
+    if is_final:
+        if re.search(r"etab[ıi]", cleaned, flags=re.I):
+            return "Final Etabı"
+        if re.search(r"grubu?", cleaned, flags=re.I) and not re.search(r"\b[A-Za-zÇĞİÖŞÜçğiöşü]\s*Gr", cleaned, flags=re.I):
+            return "Final Grubu"
+        m = re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I)
+        if m:
+            return f"Final {m.group(1).upper()} Grubu"
+        m_num = re.search(r"\b(\d+)\.?\s*(?:Grup|Gr\.?)?$", cleaned, flags=re.I)
+        if m_num:
+            return f"Final {m_num.group(1)}. Grup"
+        return "Final Grubu"
+
+    if is_klasman:
+        if re.search(r"etab[ıi]", cleaned, flags=re.I):
+            return "Klasman Etabı"
+        m = re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I)
+        if m:
+            return f"Klasman {m.group(1).upper()} Grubu"
+        return "Klasman Grubu"
 
     if re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I):
         m = re.search(r"\b([A-Za-zÇĞİÖŞÜçğiöşü])\s*(?:Gr\.?|Grubu?|Gurubu)?$", cleaned, flags=re.I)
-        cleaned = f"{prefix}{m.group(1).upper()} Grubu"
+        cleaned = f"{m.group(1).upper()} Grubu"
     elif re.match(r"^\d+$", cleaned):
-        cleaned = f"{prefix}{cleaned}. Grup"
-    elif prefix and not cleaned.startswith(prefix):
-        cleaned = f"{prefix}{cleaned}"
+        cleaned = f"{cleaned}. Grup"
     return cleaned or "1. Grup"
 
 def decode_html(resp: httpx.Response) -> str:
