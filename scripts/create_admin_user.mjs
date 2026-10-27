@@ -20,6 +20,22 @@ import { dirname, join } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const envPath = join(__dirname, "..", ".env");
+const envLocalPath = join(__dirname, "..", ".env.local");
+
+const loadEnvFile = (p) => {
+  try {
+    const envContent = readFileSync(p, "utf-8");
+    envContent.split(/\r?\n/).forEach((line) => {
+      const [key, ...valueParts] = line.split("=");
+      if (key && valueParts.length > 0) {
+        process.env[key.trim()] = valueParts.join("=").trim();
+      }
+    });
+  } catch {}
+};
+
+loadEnvFile(envPath);
+loadEnvFile(envLocalPath);
 
 try {
   const envContent = readFileSync(envPath, "utf-8");
@@ -30,7 +46,7 @@ try {
     }
   });
 } catch (error) {
-  console.warn(".env dosyası bulunamadı veya okunamadı, ortam değişkenleri kullanılacak.");
+  // env loaded via loadEnvFile
 }
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
