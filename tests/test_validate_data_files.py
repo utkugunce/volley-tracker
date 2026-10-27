@@ -10,6 +10,8 @@ class TestValidateDataFiles(unittest.TestCase):
         mock_validate_file.side_effect = [
             {"valid": False, "errors": ["bad city data"], "summary": "City index validation failed"},
             {"valid": True, "errors": [], "summary": "Second-division data validated"},
+            {"valid": True, "errors": [], "summary": "Sultanlar Ligi data validated"},
+            {"valid": True, "errors": [], "summary": "Kadınlar 1. Lig data validated"},
         ]
 
         with self.assertRaises(SystemExit) as context:

@@ -118,7 +118,25 @@ python scripts/scrape_all_provinces.py --force
   python scripts/scrape_kadinlar_2_lig.py
   ```
   `data/kadinlar_2_lig.json` ve ilgili Volleybox eşleşmelerini bağımsız olarak günceller.
-- Her iki script de kendi Volleybox maç senkronizasyonunu (`scripts/sync_volleybox_matches.py`) güvenli şekilde tamamlar.
+- **TVF Vodafone Sultanlar Ligi:** Sultanlar Ligi verilerini bağımsız çekmek için:
+  ```powershell
+  python scripts/scrape_sultanlar_ligi.py
+  ```
+  `data/sultanlar_ligi.json` ve Volleybox maçlarını günceller.
+- **TVF KFC Kadınlar 1. Ligi:** Kadınlar 1. Ligi verilerini bağımsız çekmek için:
+  ```powershell
+  python scripts/scrape_kadinlar_1_lig.py
+  ```
+  `data/kadinlar_1_lig.json` ve Volleybox maçlarını günceller.
+- **Profesyonel Ligler (Birleşik Çalıştırıcı):** Sultanlar Ligi ve Kadınlar 1. Ligi'ni (veya `--all` ile 2. Lig dahil) birlikte çekmek için:
+  ```powershell
+  python scripts/scrape_pro_leagues.py
+  # veya npm komutları:
+  npm run scrape:pro
+  npm run scrape:sultanlar-ligi
+  npm run scrape:kadinlar-1-lig
+  ```
+- Tüm scriptler kendi Volleybox maç senkronizasyonunu (`scripts/sync_volleybox_matches.py`) güvenli şekilde tamamlar.
 - Script tamamlandıktan sonra özet kullanıcıya bildirilir.
 
 ## 🏙️ KURAL: Şehir Allowlist'i (`src/utils/citySlugs.ts`)

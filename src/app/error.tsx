@@ -51,6 +51,7 @@ export default function ErrorBoundary({ error, reset }: ErrorProps) {
 
   const handleHome = () => {
     if (typeof window !== "undefined") {
+      // eslint-disable-next-line @next/next/no-location-assign-relative-destination
       window.location.href = "/";
     }
   };

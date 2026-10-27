@@ -20,11 +20,19 @@ def main():
     results = [
         ("81 il", validate_file("data/cities.json", "cities")),
         ("Kadınlar 2. Lig", validate_file("data/kadinlar_2_lig.json", "kadinlar_2_lig")),
+        ("Vodafone Sultanlar Ligi", validate_file("data/sultanlar_ligi.json", "sultanlar_ligi")),
+        ("KFC Kadınlar 1. Ligi", validate_file("data/kadinlar_1_lig.json", "kadinlar_1_lig")),
     ]
     for label, result in results:
         print_validation_summary(label, result)
 
-    freshness_issues = collect_freshness_issues(["data/cities.json", "data/kadinlar_2_lig.json"], max_age_hours=24)
+    freshness_files = [
+        "data/cities.json",
+        "data/kadinlar_2_lig.json",
+        "data/sultanlar_ligi.json",
+        "data/kadinlar_1_lig.json",
+    ]
+    freshness_issues = collect_freshness_issues(freshness_files, max_age_hours=24)
     if freshness_issues:
         print("\n📊 Data freshness validation: FAILED")
         for issue in freshness_issues:

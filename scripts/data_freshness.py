@@ -104,6 +104,8 @@ def main() -> None:
     files = [
         "data/cities.json",
         "data/kadinlar_2_lig.json",
+        "data/sultanlar_ligi.json",
+        "data/kadinlar_1_lig.json",
     ]
     issues = collect_freshness_issues(files, max_age_hours=24)
     if issues:

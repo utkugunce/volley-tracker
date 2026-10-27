@@ -23253,6 +23253,28 @@
       "season": "2026/27",
       "verified_at": "2026-10-26",
       "status_override": "teams_only"
+    },
+    {
+      "internal_name": "Vodafone Sultanlar Ligi",
+      "city": "Türkiye",
+      "city_slug": "turkiye",
+      "matched_as": "Vodafone Sultanlar Ligi 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-vodafone-sultanlar-ligi-2026-27-o45086",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "KFC Kadınlar 1. Ligi",
+      "city": "Türkiye",
+      "city_slug": "turkiye",
+      "matched_as": "Türkiye Kadınlar Voleybol 1. Ligi 2026/27",
+      "volleybox_url": "https://women.volleybox.net/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
+      "age_category": "A Takım",
+      "confidence": "verified",
+      "season": "2026/27",
+      "verified_at": "2026-10-27"
     }
   ]
 }

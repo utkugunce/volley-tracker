@@ -15,7 +15,10 @@
     "validate:data": "python scripts/validate_data_files.py",
     "scrape": "python scripts/scrape_all_provinces.py",
     "scrape:provinces": "python scripts/scrape_all_provinces.py",
+    "scrape:sultanlar-ligi": "python scripts/scrape_sultanlar_ligi.py",
+    "scrape:kadinlar-1-lig": "python scripts/scrape_kadinlar_1_lig.py",
     "scrape:kadinlar-2-lig": "python scripts/scrape_kadinlar_2_lig.py",
+    "scrape:pro": "python scripts/scrape_pro_leagues.py",
     "sync:volleybox": "python scripts/sync_volleybox_matches.py",
     "supabase:import": "node scripts/import_json_to_supabase.mjs",
     "create-admin": "node scripts/create_admin_user.mjs"

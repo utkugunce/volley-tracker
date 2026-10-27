@@ -999,7 +999,8 @@ def sync_league_json_matches(
         grp["fikstur"] = new_fikstur
 
     if "metadata" in data:
-        data["metadata"]["volleybox_eslesme_sayisi"] = synced_count
+        data["metadata"]["volleybox_synced_matches"] = synced_count
+        data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
 
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -1015,6 +1016,62 @@ def sync_kadinlar_2_lig_matches(
         k2_path,
         "Kadınlar 2. Ligi",
         "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
+        vb_tournaments,
+        team_alias_map
+    )
+
+
+def sync_kadinlar_1_lig_matches(
+    k1_path: Path,
+    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
+    team_alias_map: Dict[str, set] = None
+) -> Tuple[int, int]:
+    return sync_league_json_matches(
+        k1_path,
+        "KFC Kadınlar 1. Ligi",
+        "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
+        vb_tournaments,
+        team_alias_map
+    )
+
+
+def sync_sultanlar_ligi_matches(
+    sultanlar_path: Path,
+    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
+    team_alias_map: Dict[str, set] = None
+) -> Tuple[int, int]:
+    return sync_league_json_matches(
+        sultanlar_path,
+        "Vodafone Sultanlar Ligi",
+        "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086",
+        vb_tournaments,
+        team_alias_map
+    )
+
+
+def sync_kadinlar_1_lig_matches(
+    k1_path: Path,
+    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
+    team_alias_map: Dict[str, set] = None
+) -> Tuple[int, int]:
+    return sync_league_json_matches(
+        k1_path,
+        "KFC Kadınlar 1. Ligi",
+        "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
+        vb_tournaments,
+        team_alias_map
+    )
+
+
+def sync_sultanlar_ligi_matches(
+    sultanlar_path: Path,
+    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
+    team_alias_map: Dict[str, set] = None
+) -> Tuple[int, int]:
+    return sync_league_json_matches(
+        sultanlar_path,
+        "Vodafone Sultanlar Ligi",
+        "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086",
         vb_tournaments,
         team_alias_map
     )
@@ -1205,14 +1262,14 @@ def main():
     K1_FILE = DATA_DIR / "kadinlar_1_lig.json"
     if K1_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-1-ligi", "1lig", "turkiye"]):
         print("\n🔄 data/kadinlar_1_lig.json senkronize ediliyor...")
-        k1_synced, k1_total = sync_league_json_matches(K1_FILE, "KFC Kadınlar 1. Ligi", "https://women.volleybox.net/tr/women-turkiye-kfc-kadinlar-1-ligi-2026-27-o45046", vb_tournaments, team_alias_map)
+        k1_synced, k1_total = sync_league_json_matches(K1_FILE, "KFC Kadınlar 1. Ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210", vb_tournaments, team_alias_map)
         print(f"✅ KFC Kadınlar 1. Ligi: {k1_synced} / {k1_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     # 7. data/sultanlar_ligi.json senkronizasyonu
     SULTANLAR_FILE = DATA_DIR / "sultanlar_ligi.json"
     if SULTANLAR_FILE.exists() and (not args.city or args.city.lower() in ["sultanlar-ligi", "sultanlar", "turkiye"]):
         print("\n🔄 data/sultanlar_ligi.json senkronize ediliyor...")
-        sult_synced, sult_total = sync_league_json_matches(SULTANLAR_FILE, "Vodafone Sultanlar Ligi", "https://women.volleybox.net/tr/women-turkiye-vodafone-sultanlar-ligi-2026-27-o44991", vb_tournaments, team_alias_map)
+        sult_synced, sult_total = sync_league_json_matches(SULTANLAR_FILE, "Vodafone Sultanlar Ligi", "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086", vb_tournaments, team_alias_map)
         print(f"✅ Vodafone Sultanlar Ligi: {sult_synced} / {sult_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     print("\n" + "=" * 75)

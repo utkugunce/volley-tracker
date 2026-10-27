@@ -2,13 +2,14 @@
 TVF KFC Kadınlar 1. Ligi Scraper & Volleybox Eşleştirici
 ---------------------------------------------------------
 KFC Kadınlar 1. Ligi (Grup A & Grup B) resmi puan cetvelini ve fikstürünü TVF Livewire servisinden çeker,
-data/kadinlar_1_lig.json dosyasını oluşturur.
+data/kadinlar_1_lig.json dosyasını oluşturur ve Volleybox maçlarıyla senkronize eder.
 """
 
 import sys
 import os
 import re
 import json
+from pathlib import Path
 from datetime import datetime
 
 # Windows terminal UTF-8 encoding support
@@ -35,12 +36,148 @@ HEADERS = {
     "X-Livewire": "true",
 }
 
+KNOWN_KADINLAR_1_LIG_VOLLEYBOX = {
+    # --- GRUP A ---
+    "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR": ("https://women.volleybox.net/aydn-buyuksehir-belediyespor-t6309", "Aydın Büyükşehir Belediyespor"),
+    "AYDIN BUYUKSEHIR BELEDIYE SPOR": ("https://women.volleybox.net/aydn-buyuksehir-belediyespor-t6309", "Aydın Büyükşehir Belediyespor"),
+    "AYDIN BŞ. BLD.": ("https://women.volleybox.net/aydn-buyuksehir-belediyespor-t6309", "Aydın Büyükşehir Belediyespor"),
+    "AYDIN BS. BLD.": ("https://women.volleybox.net/aydn-buyuksehir-belediyespor-t6309", "Aydın Büyükşehir Belediyespor"),
+    
+    "KARŞIYAKA": ("https://women.volleybox.net/karsyaka-sk-t2101", "Endo Karşıyaka"),
+    "KARSIYAKA": ("https://women.volleybox.net/karsyaka-sk-t2101", "Endo Karşıyaka"),
+    "ENDO KARŞIYAKA": ("https://women.volleybox.net/karsyaka-sk-t2101", "Endo Karşıyaka"),
+    "ENDO KARSIYAKA": ("https://women.volleybox.net/karsyaka-sk-t2101", "Endo Karşıyaka"),
+    
+    "BAHÇELİEVLER BELEDİYE SPOR": ("https://women.volleybox.net/bahcelievler-belediyespor-t10062", "Bahçelievler Belediyespor"),
+    "BAHCELIEVLER BELEDIYE SPOR": ("https://women.volleybox.net/bahcelievler-belediyespor-t10062", "Bahçelievler Belediyespor"),
+    "BAHÇELİEVLER BELEDİYESPOR": ("https://women.volleybox.net/bahcelievler-belediyespor-t10062", "Bahçelievler Belediyespor"),
+    "BAHCELIEVLER BELEDIYESPOR": ("https://women.volleybox.net/bahcelievler-belediyespor-t10062", "Bahçelievler Belediyespor"),
+    
+    "DENİZLİ BÜYÜKŞEHİR BELEDİYE SPOR": ("https://women.volleybox.net/denizli-buyuksehir-belediyespor-t17128", "Denizli Büyükşehir Belediyespor"),
+    "DENIZLI BUYUKSEHIR BELEDIYE SPOR": ("https://women.volleybox.net/denizli-buyuksehir-belediyespor-t17128", "Denizli Büyükşehir Belediyespor"),
+    "DENİZLİ BŞ. BLD.": ("https://women.volleybox.net/denizli-buyuksehir-belediyespor-t17128", "Denizli Büyükşehir Belediyespor"),
+    
+    "YEŞİLYURT": ("https://women.volleybox.net/yesilyurt-t2332", "Yeşilyurt Spor Kulübü"),
+    "YESILYURT": ("https://women.volleybox.net/yesilyurt-t2332", "Yeşilyurt Spor Kulübü"),
+    "YEŞİLYURT SPOR KULÜBÜ": ("https://women.volleybox.net/yesilyurt-t2332", "Yeşilyurt Spor Kulübü"),
+    
+    "İBB SPOR KULÜBÜ": ("https://women.volleybox.net/bb-spor-kulubu-t2999", "İBB Spor Kulübü"),
+    "IBB SPOR KULUBU": ("https://women.volleybox.net/bb-spor-kulubu-t2999", "İBB Spor Kulübü"),
+    "İSTANBUL BŞ. BLD.": ("https://women.volleybox.net/bb-spor-kulubu-t2999", "İBB Spor Kulübü"),
+    "İBB": ("https://women.volleybox.net/bb-spor-kulubu-t2999", "İBB Spor Kulübü"),
+    
+    "AKHİSAR BELEDİYESPOR": ("https://women.volleybox.net/akhisar-belediyespor-kulubu-t16792", "Akhisar Belediyespor Kulübü"),
+    "AKHISAR BELEDIYESPOR": ("https://women.volleybox.net/akhisar-belediyespor-kulubu-t16792", "Akhisar Belediyespor Kulübü"),
+    "AKHİSAR BELEDİYESPOR KULÜBÜ": ("https://women.volleybox.net/akhisar-belediyespor-kulubu-t16792", "Akhisar Belediyespor Kulübü"),
+    
+    "ECZACIBAŞI": ("https://women.volleybox.net/eczacbas-ii-t13581", "Eczacıbaşı II"),
+    "ECZACIBASI": ("https://women.volleybox.net/eczacbas-ii-t13581", "Eczacıbaşı II"),
+    "ECZACIBAŞI II": ("https://women.volleybox.net/eczacbas-ii-t13581", "Eczacıbaşı II"),
+    "ECZACIBASI II": ("https://women.volleybox.net/eczacbas-ii-t13581", "Eczacıbaşı II"),
+    
+    "BODRUM BELEDİYESİ BODRUMSPOR": ("https://women.volleybox.net/bodrum-belediyesi-bodrumspor-t19927", "Bodrum Belediyesi Bodrumspor"),
+    "BODRUM BELEDIYESI BODRUMSPOR": ("https://women.volleybox.net/bodrum-belediyesi-bodrumspor-t19927", "Bodrum Belediyesi Bodrumspor"),
+    "BODRUMSPOR": ("https://women.volleybox.net/bodrum-belediyesi-bodrumspor-t19927", "Bodrum Belediyesi Bodrumspor"),
+    
+    "ATEŞ WIND POWER BERGAMA BELEDİYESİ SPOR": ("https://women.volleybox.net/bergama-belediyesi-gsk-t7365", "Ateş Wind Power Bergama Belediyespor"),
+    "ATES WIND POWER BERGAMA BELEDIYESI SPOR": ("https://women.volleybox.net/bergama-belediyesi-gsk-t7365", "Ateş Wind Power Bergama Belediyespor"),
+    "BERGAMA BELEDİYESPOR": ("https://women.volleybox.net/bergama-belediyesi-gsk-t7365", "Ateş Wind Power Bergama Belediyespor"),
+    "BERGAMA BELEDIYESPOR": ("https://women.volleybox.net/bergama-belediyesi-gsk-t7365", "Ateş Wind Power Bergama Belediyespor"),
+    
+    "VAKIFBANK": ("https://women.volleybox.net/vakfbank-ii-t7387", "Vakıfbank II"),
+    "VAKIFBANK II": ("https://women.volleybox.net/vakfbank-ii-t7387", "Vakıfbank II"),
+    
+    "İZMİR DSİ": ("https://women.volleybox.net/zmir-ds-spor-t16172", "İzmir DSİ Spor"),
+    "IZMIR DSI": ("https://women.volleybox.net/zmir-ds-spor-t16172", "İzmir DSİ Spor"),
+    "İZMİR DSİ SPOR": ("https://women.volleybox.net/zmir-ds-spor-t16172", "İzmir DSİ Spor"),
+    
+    "FENERBAHÇE MEDICANA": ("https://women.volleybox.net/fenerbahce-ll-t10043", "Fenerbahçe Medicana II"),
+    "FENERBAHCE MEDICANA": ("https://women.volleybox.net/fenerbahce-ll-t10043", "Fenerbahçe Medicana II"),
+    "FENERBAHÇE II": ("https://women.volleybox.net/fenerbahce-ll-t10043", "Fenerbahçe Medicana II"),
+    "FENERBAHCE II": ("https://women.volleybox.net/fenerbahce-ll-t10043", "Fenerbahçe Medicana II"),
+    
+    "ALTINORDU": ("https://women.volleybox.net/altnordu-voleybol-t11785", "Altınordu Voleybol"),
+    "ALTINORDU VOLEYBOL": ("https://women.volleybox.net/altnordu-voleybol-t11785", "Altınordu Voleybol"),
+
+    # --- GRUP B ---
+    "MERİNOS VOLEYBOL": ("https://women.volleybox.net/merinos-sk-t7345", "Merinos SK"),
+    "MERINOS VOLEYBOL": ("https://women.volleybox.net/merinos-sk-t7345", "Merinos SK"),
+    "MERİNOS SK": ("https://women.volleybox.net/merinos-sk-t7345", "Merinos SK"),
+    "MERİNOS": ("https://women.volleybox.net/merinos-sk-t7345", "Merinos SK"),
+    
+    "PTT": ("https://women.volleybox.net/ptt-spor-t6614", "PTT Spor"),
+    "PTT SPOR": ("https://women.volleybox.net/ptt-spor-t6614", "PTT Spor"),
+    
+    "KUZEYBORU MAXİPİPE SPOR": ("https://women.volleybox.net/kuzeyboru-ll-t38907", "Kuzeyboru Maxipipe Spor Kulübü"),
+    "KUZEYBORU MAXIPIPE SPOR": ("https://women.volleybox.net/kuzeyboru-ll-t38907", "Kuzeyboru Maxipipe Spor Kulübü"),
+    "KUZEYBORU II": ("https://women.volleybox.net/kuzeyboru-ll-t38907", "Kuzeyboru Maxipipe Spor Kulübü"),
+    
+    "MURATPAŞA BLD. AÇI KOLEJİ": ("https://women.volleybox.net/muratpasa-bld-ac-koleji-t15600", "Muratpaşa Belediyespor Açı Koleji"),
+    "MURATPASA BLD. ACI KOLEJI": ("https://women.volleybox.net/muratpasa-bld-ac-koleji-t15600", "Muratpaşa Belediyespor Açı Koleji"),
+    "MURATPAŞA BELEDİYESPOR AÇI KOLEJİ": ("https://women.volleybox.net/muratpasa-bld-ac-koleji-t15600", "Muratpaşa Belediyespor Açı Koleji"),
+    
+    "KARAYOLLARI": ("https://women.volleybox.net/karayollar-spor-kulubu-t3000", "Karayolları Spor Kulübü"),
+    "KARAYOLLARI SPOR KULÜBÜ": ("https://women.volleybox.net/karayollar-spor-kulubu-t3000", "Karayolları Spor Kulübü"),
+    
+    "07 MEGA SPOR": ("https://women.volleybox.net/07-mega-spor-kulubu-t16892", "07 Mega Spor Kulübü"),
+    "07 MEGA SPOR KULÜBÜ": ("https://women.volleybox.net/07-mega-spor-kulubu-t16892", "07 Mega Spor Kulübü"),
+    
+    "İBA KİMYA TED ANKARA KOLEJLİLER": ("https://women.volleybox.net/ted-ankara-kolejliler-t2285", "İba Kimya TED Ankara Kolejliler"),
+    "IBA KIMYA TED ANKARA KOLEJLILER": ("https://women.volleybox.net/ted-ankara-kolejliler-t2285", "İba Kimya TED Ankara Kolejliler"),
+    "TED ANKARA KOLEJLİLER": ("https://women.volleybox.net/ted-ankara-kolejliler-t2285", "İba Kimya TED Ankara Kolejliler"),
+    "TED KOLEJLİLER": ("https://women.volleybox.net/ted-ankara-kolejliler-t2285", "İba Kimya TED Ankara Kolejliler"),
+    
+    "TRENDY HOTELS MANAVGAT BELEDİYE SPOR": ("https://women.volleybox.net/trendy-hotels-manavgat-belediyespor-t22708", "Trendy Hotels Manavgat Belediyespor"),
+    "TRENDY HOTELS MANAVGAT BELEDIYE SPOR": ("https://women.volleybox.net/trendy-hotels-manavgat-belediyespor-t22708", "Trendy Hotels Manavgat Belediyespor"),
+    "MANAVGAT BELEDİYESPOR": ("https://women.volleybox.net/trendy-hotels-manavgat-belediyespor-t22708", "Trendy Hotels Manavgat Belediyespor"),
+    "MANAVGAT BELEDIYESPOR": ("https://women.volleybox.net/trendy-hotels-manavgat-belediyespor-t22708", "Trendy Hotels Manavgat Belediyespor"),
+    
+    "SAKARYA VOLEYBOL": ("https://women.volleybox.net/sakarya-voleybol-t12299", "Sakarya Voleybol SK"),
+    "SAKARYA VOLEYBOL SK": ("https://women.volleybox.net/sakarya-voleybol-t12299", "Sakarya Voleybol SK"),
+    
+    "NİLÜFER BELEDİYESPOR": ("https://women.volleybox.net/nilufer-belediyespor-ii-t13582", "Nilüfer Belediyespor II"),
+    "NILUFER BELEDIYESPOR": ("https://women.volleybox.net/nilufer-belediyespor-ii-t13582", "Nilüfer Belediyespor II"),
+    "NİLÜFER BELEDİYESPOR II": ("https://women.volleybox.net/nilufer-belediyespor-ii-t13582", "Nilüfer Belediyespor II"),
+    
+    "BÜYÜKŞEHİR BELEDİYESİ ANKARA SPOR": ("https://women.volleybox.net/buyuksehir-belediyesi-ankara-spor-t18653", "Ankara Büyükşehir Belediyesi Spor Kulübü"),
+    "BUYUKSEHIR BELEDIYESI ANKARA SPOR": ("https://women.volleybox.net/buyuksehir-belediyesi-ankara-spor-t18653", "Ankara Büyükşehir Belediyesi Spor Kulübü"),
+    "ANKARA BÜYÜKŞEHİR BLD.": ("https://women.volleybox.net/buyuksehir-belediyesi-ankara-spor-t18653", "Ankara Büyükşehir Belediyesi Spor Kulübü"),
+    "ANKARA BŞ. BLD.": ("https://women.volleybox.net/buyuksehir-belediyesi-ankara-spor-t18653", "Ankara Büyükşehir Belediyesi Spor Kulübü"),
+    
+    "ALFEMO ZEREN SPOR": ("https://women.volleybox.net/zeren-spor-kulubu-ii-t29358", "Alfemo Zeren Spor"),
+    "ZEREN SPOR II": ("https://women.volleybox.net/zeren-spor-kulubu-ii-t29358", "Alfemo Zeren Spor"),
+    
+    "İLBANK": ("https://women.volleybox.net/lbank-ll-t16681", "İlbank ll"),
+    "ILBANK": ("https://women.volleybox.net/lbank-ll-t16681", "İlbank ll"),
+    "İLBANK II": ("https://women.volleybox.net/lbank-ll-t16681", "İlbank ll"),
+    
+    "SİGORTA SHOP SPOR": ("https://women.volleybox.net/kecioren-belediyesi-sigortashop-spor-kulubu-t13477", "Sigorta Shop Spor Kulübü"),
+    "SIGORTA SHOP SPOR": ("https://women.volleybox.net/kecioren-belediyesi-sigortashop-spor-kulubu-t13477", "Sigorta Shop Spor Kulübü"),
+    "SİGORTA SHOP": ("https://women.volleybox.net/kecioren-belediyesi-sigortashop-spor-kulubu-t13477", "Sigorta Shop Spor Kulübü"),
+    "SIGORTA SHOP": ("https://women.volleybox.net/kecioren-belediyesi-sigortashop-spor-kulubu-t13477", "Sigorta Shop Spor Kulübü"),
+}
+
 def clean_text(val):
     if not val:
         return ""
     if isinstance(val, str):
         return val.strip()
     return str(val).strip()
+
+def get_volleybox_info(team_name: str):
+    clean = clean_text(team_name)
+    if not clean:
+        return None
+    info = KNOWN_KADINLAR_1_LIG_VOLLEYBOX.get(clean.upper()) or KNOWN_KADINLAR_1_LIG_VOLLEYBOX.get(clean)
+    if info:
+        return info
+    # Try normalized keys
+    norm = clean.upper().replace("İ", "I").replace("Ğ", "G").replace("Ü", "U").replace("Ş", "S").replace("Ö", "O").replace("Ç", "C")
+    for k, v in KNOWN_KADINLAR_1_LIG_VOLLEYBOX.items():
+        k_norm = k.upper().replace("İ", "I").replace("Ğ", "G").replace("Ü", "U").replace("Ş", "S").replace("Ö", "O").replace("Ç", "C")
+        if norm == k_norm:
+            return v
+    return None
 
 def extract_standings(snap_dict, group_no: int, group_name: str):
     lp = snap_dict.get("data", {}).get("leaguePoints", [])
@@ -59,6 +196,9 @@ def extract_standings(snap_dict, group_no: int, group_name: str):
                             t = item
                         if t:
                             t_name = clean_text(t.get("TAKIMADI", ""))
+                            vb_info = get_volleybox_info(t_name)
+                            vb_url = vb_info[0] if vb_info else None
+                            vb_name = vb_info[1] if vb_info else t_name
                             
                             teams.append({
                                 "sira": int(t.get("SNO", 0)) if str(t.get("SNO", "0")).isdigit() else 0,
@@ -84,8 +224,8 @@ def extract_standings(snap_dict, group_no: int, group_name: str):
                                 "sezon": clean_text(t.get("SEZON", "2026-2027")),
                                 "grup_no": group_no,
                                 "grup_adi": group_name,
-                                "volleybox_url": None,
-                                "volleybox_name": t_name,
+                                "volleybox_url": vb_url,
+                                "volleybox_name": vb_name,
                             })
     return teams
 
@@ -112,6 +252,8 @@ def extract_fixtures(snap_dict, group_no: int, group_name: str):
                                     
                                     t_a = clean_text(m.get("ATAKIMI", ""))
                                     t_b = clean_text(m.get("BTAKIMI", ""))
+                                    vb_a = get_volleybox_info(t_a)
+                                    vb_b = get_volleybox_info(t_b)
                                     
                                     matches.append({
                                         "id": f"k1l_g{group_no}_m{m.get('MACNO', '')}_{m.get('ATAKIMIID', '')}_{m.get('BTAKIMIID', '')}",
@@ -137,10 +279,10 @@ def extract_fixtures(snap_dict, group_no: int, group_name: str):
                                         "set_sonuclari": set_sonuclari,
                                         "durum": "BİTTİ" if (set_a != "" and set_b != "") else "OYNANACAK",
                                         "mac_durumu_kod": str(m.get("MACDURUMU", "")),
-                                        "takim_a_volleybox_url": None,
-                                        "takim_b_volleybox_url": None,
-                                        "takim_a_volleybox_name": t_a,
-                                        "takim_b_volleybox_name": t_b,
+                                        "takim_a_volleybox_url": vb_a[0] if vb_a else None,
+                                        "takim_b_volleybox_url": vb_b[0] if vb_b else None,
+                                        "takim_a_volleybox_name": vb_a[1] if vb_a else t_a,
+                                        "takim_b_volleybox_name": vb_b[1] if vb_b else t_b,
                                     })
     return matches
 
@@ -253,7 +395,9 @@ def run_kadinlar_1_lig_scraper():
     all_teams = teams_a + teams_b
     all_matches = matches_a + matches_b
     finished_count = sum(1 for m in all_matches if m["durum"] == "BİTTİ")
-    print(f"  🏁 Toplam: {len(all_teams)} Takım, {len(all_matches)} Maç ({finished_count} Tamamlandı)")
+    matched_teams_count = sum(1 for t in all_teams if t.get("volleybox_url"))
+    
+    print(f"  🏁 Toplam: {len(all_teams)} Takım ({matched_teams_count} Volleybox eşleşti), {len(all_matches)} Maç ({finished_count} Tamamlandı)")
     
     payload = {
         "metadata": {
@@ -264,13 +408,13 @@ def run_kadinlar_1_lig_scraper():
             "toplam_grup_sayisi": 2,
             "toplam_takim_sayisi": len(all_teams),
             "toplam_mac_sayisi": len(all_matches),
-            "volleybox_eslesme_sayisi": sum(1 for t in all_teams if t.get("volleybox_url")),
+            "volleybox_eslesme_sayisi": matched_teams_count,
             "resmi_kaynaklar": {
                 "tvf_puan_durumu": "https://tvf.org.tr/lig/kadinlar-1-ligi?sekme=puan-durumu",
                 "tvf_fikstur": "https://tvf.org.tr/lig/kadinlar-1-ligi?sekme=fikstur",
                 "tvf_fsw_portal": "https://tvf.org.tr/lig/kadinlar-1-ligi",
-                "volleybox_turnuva": "https://women.volleybox.net/tr/tournaments/turkey",
-                "volleybox_maclar": "https://women.volleybox.net/tr/tournaments/turkey",
+                "volleybox_turnuva": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
+                "volleybox_maclar": "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210/matches",
             },
         },
         "gruplar": [
@@ -299,6 +443,19 @@ def run_kadinlar_1_lig_scraper():
     print(f"\n🎉 Kadınlar 1. Ligi verisi kaydedildi -> {OUTPUT_FILE}")
     return True
 
-if __name__ == "__main__":
+def main():
     success = run_kadinlar_1_lig_scraper()
-    sys.exit(0 if success else 1)
+    if success:
+        try:
+            from scripts.sync_volleybox_matches import sync_kadinlar_1_lig_matches
+            print("\n🏐 Volleybox Kadınlar 1. Ligi maçları senkronize ediliyor...")
+            k1_path = Path(OUTPUT_FILE)
+            synced, total = sync_kadinlar_1_lig_matches(k1_path)
+            print(f"✅ KFC Kadınlar 1. Ligi: {synced} / {total} maç Volleybox ile eşleşti ve doğrulandı!")
+        except Exception as e:
+            print(f"⚠️ Volleybox maç senkronizasyonu atlandı: {e}")
+    return success
+
+if __name__ == "__main__":
+    ok = main()
+    sys.exit(0 if ok else 1)

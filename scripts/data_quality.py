@@ -86,10 +86,10 @@ def validate_city_index(payload: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def validate_kadinlar_2_lig_data(payload: Dict[str, Any]) -> Dict[str, Any]:
+def validate_league_data(payload: Dict[str, Any], league_name: str = "League") -> Dict[str, Any]:
     errors: List[str] = []
     if not isinstance(payload, dict):
-        return {"valid": False, "errors": ["2. Lig payload is missing or invalid."], "summary": "Second-division validation failed: payload not found."}
+        return {"valid": False, "errors": [f"{league_name} payload is missing or invalid."], "summary": f"{league_name} validation failed: payload not found."}
 
     metadata = payload.get("metadata")
     if not isinstance(metadata, dict):
@@ -120,10 +120,14 @@ def validate_kadinlar_2_lig_data(payload: Dict[str, Any]) -> Dict[str, Any]:
         "valid": valid,
         "errors": errors,
         "summary": (
-            f"Second-division data validated: {len(groups)} groups, {total_teams} teams, {match_count} matches."
-            if valid else f"Second-division validation failed: {' '.join(errors)}"
+            f"{league_name} data validated: {len(groups)} groups, {total_teams} teams, {match_count} matches."
+            if valid else f"{league_name} validation failed: {' '.join(errors)}"
         ),
     }
+
+
+def validate_kadinlar_2_lig_data(payload: Dict[str, Any]) -> Dict[str, Any]:
+    return validate_league_data(payload, "Kadınlar 2. Lig")
 
 
 def validate_file(path: str, kind: str) -> Dict[str, Any]:
@@ -140,6 +144,9 @@ def validate_file(path: str, kind: str) -> Dict[str, Any]:
         return validate_city_index(data)
     if kind == "kadinlar_2_lig":
         return validate_kadinlar_2_lig_data(data)
+    if kind in ("sultanlar_ligi", "kadinlar_1_lig", "league"):
+        label = "Sultanlar Ligi" if kind == "sultanlar_ligi" else ("Kadınlar 1. Lig" if kind == "kadinlar_1_lig" else "League")
+        return validate_league_data(data, label)
     return {"valid": False, "errors": [f"Unsupported validation kind: {kind}"], "summary": f"Unsupported validation kind: {kind}"}
 
 
