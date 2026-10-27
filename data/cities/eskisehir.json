@@ -1307,25 +1307,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "401387",
-        "url": "https://women.volleybox.net/tr/eskisehir-ds-bentspor-u16-beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-c401387",
-        "host_name": "Eskişehir DSİ Bentspor U16",
-        "guest_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-28",
-        "vb_time": "18:30",
-        "vb_hall": "Şehit Anıl Gül Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-28",
-          "vb_time": "18:30",
-          "vb_hall": "Şehit Anıl Gül Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1352,25 +1345,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "404267",
-        "url": "https://women.volleybox.net/tr/anadolu-kolej-spor-kulubu-u16-beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-c404267",
-        "host_name": "Anadolu Kolej Spor Kulübü U16",
-        "guest_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-07",
-        "vb_time": "20:00",
-        "vb_hall": "Kemal Unakıtan Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-07",
-          "vb_time": "20:00",
-          "vb_hall": "Kemal Unakıtan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1397,25 +1383,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "406695",
-        "url": "https://women.volleybox.net/tr/beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-es-voleybol-akademi-spor-kulubu-b-u16-c406695",
-        "host_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
-        "guest_name": "Es Voleybol Akademi Spor Kulübü - B U16",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-18",
-        "vb_time": "18:30",
-        "vb_hall": "Şehit Anıl Gül Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "18:30",
-          "vb_hall": "Şehit Anıl Gül Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -2803,6 +2782,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 54,
-  "volleybox_sync_updated_at": "2026-10-27T14:58:37.416891"
+  "volleybox_synced_matches": 51,
+  "volleybox_sync_updated_at": "2026-10-27T16:03:23.951476"
 }

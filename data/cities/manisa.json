@@ -545,7 +545,29 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "411817",
+        "url": "https://women.volleybox.net/tr/salihli-degerli-zamanlar-spor-kulubu-u18-akhisar-lce-spor-kulubu-u18-c411817",
+        "host_name": "Salihli Değerli Zamanlar Spor Kulübü U18",
+        "guest_name": "Akhisar İlçe Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-28",
+        "vb_time": "15:00",
+        "vb_hall": "Ramiz Turan Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-28",
+          "vb_time": "15:00",
+          "vb_hall": "Ramiz Turan Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-29 / VB: 2026-10-28) | Saat Değişti (TVF: 16:00 / VB: 15:00)"
+        }
+      }
     },
     {
       "id": "manisa-20261029-010",
@@ -564,7 +586,29 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "411818",
+        "url": "https://women.volleybox.net/tr/1922-salihli-spor-kulubu-u18-manisa-buyuksehir-belediyespor-kulubu-u18-c411818",
+        "host_name": "1922 Salihli Spor Kulübü U18",
+        "guest_name": "Manisa Büyükşehir Belediyespor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-10-28",
+        "vb_time": "17:00",
+        "vb_hall": "Ramiz Turan Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-10-28",
+          "vb_time": "17:00",
+          "vb_hall": "Ramiz Turan Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-10-29 / VB: 2026-10-28) | Saat Değişti (TVF: 18:00 / VB: 17:00)"
+        }
+      }
     },
     {
       "id": "manisa-20261006-011",
@@ -1073,7 +1117,24 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming"
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
-  ]
+  ],
+  "volleybox_synced_matches": 21,
+  "volleybox_sync_updated_at": "2026-10-27T16:03:28.455024"
 }
