@@ -223,6 +223,10 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
             <p className="text-xs text-slate-400 mt-1">
               Sitemizde yer alan ancak Volleybox&apos;ta henüz bulunmayan maçları seçilen turnuvanın formuna otomatik doldurup ekler.
             </p>
+            <p className="text-[11px] text-amber-400/90 font-medium mt-1 flex items-center gap-1.5">
+              <span>⚠️</span>
+              <span>Volleybox kuralı: Geçmiş tarihli maçlar yalnızca skoru girilmişse kuyruğa dahil edilir; skorsuz geçmiş maçlar atlanır.</span>
+            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">

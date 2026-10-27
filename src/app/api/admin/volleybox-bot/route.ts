@@ -243,6 +243,14 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
           Boolean(m?.forfeit) ||
           /[\(\[]\s*h\s*[\)\]]|hükmen|hukmen/i.test(`${m?.home_team || ""} ${m?.away_team || ""} ${m?.score || ""}`);
 
+        const todayStr = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Istanbul" }).format(new Date());
+        const isPast = mDate < todayStr;
+        const hasScore = hScore > 0 || aScore > 0 || isForfeit;
+        if (isPast && !hasScore) {
+          // Volleybox geçmişte oynanan maçların skorsuz girilmesine izin vermez
+          continue;
+        }
+
         entry.matches.push({
           id: String(m?.id || `${citySlug}-${entry.matches.length}`),
           city: cityName,
@@ -265,7 +273,7 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
     }
   }
 
-  return Array.from(byTourn.values());
+  return Array.from(byTourn.values()).filter((t) => t.missing_count > 0);
 }
 
 function resolvePythonCommand(): string {
