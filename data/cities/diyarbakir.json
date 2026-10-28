@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-28T15:36:24.133723+00:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -453,7 +453,7 @@
       "id": "diyarbakir-20261029-009",
       "city": "Diyarbakır",
       "date": "2026-10-29",
-      "time": "13:00",
+      "time": "12:00",
       "hall": "Şehitlik",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
@@ -487,7 +487,7 @@
       "id": "diyarbakir-20261029-010",
       "city": "Diyarbakır",
       "date": "2026-10-29",
-      "time": "15:00",
+      "time": "14:00",
       "hall": "Şehitlik",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
@@ -655,5 +655,5 @@
     }
   ],
   "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:38.471861"
+  "volleybox_sync_updated_at": "2026-10-28T15:39:11.602517"
 }

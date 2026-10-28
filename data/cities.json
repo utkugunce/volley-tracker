@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-28T15:36:24.133723+00:00",
   "total_cities": 81,
   "active_cities": 37,
-  "total_matches": 1615,
+  "total_matches": 1634,
   "cities": [
     {
       "ilid": "1",
@@ -30,8 +30,8 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (21 Maç Mevcut)",
-      "matches_count": 21,
+      "status": "Aktif (26 Maç Mevcut)",
+      "matches_count": 26,
       "standings_count": 3,
       "data_file": "data/cities/afyon.json"
     },
@@ -100,8 +100,8 @@
       "name": "Balıkesir",
       "slug": "balikesir",
       "url": "https://balikesir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (49 Maç Mevcut)",
-      "matches_count": 49,
+      "status": "Aktif (58 Maç Mevcut)",
+      "matches_count": 58,
       "standings_count": 7,
       "data_file": "data/cities/balikesir.json"
     },
@@ -190,9 +190,9 @@
       "name": "Çorum",
       "slug": "corum",
       "url": "https://corum.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (9 Maç Mevcut)",
-      "matches_count": 9,
-      "standings_count": 2,
+      "status": "Aktif (11 Maç Mevcut)",
+      "matches_count": 11,
+      "standings_count": 3,
       "data_file": "data/cities/corum.json"
     },
     {
@@ -452,8 +452,8 @@
       "name": "Manisa",
       "slug": "manisa",
       "url": "https://manisa.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (22 Maç Mevcut)",
-      "matches_count": 22,
+      "status": "Aktif (26 Maç Mevcut)",
+      "matches_count": 26,
       "standings_count": 2,
       "data_file": "data/cities/manisa.json"
     },
@@ -462,8 +462,8 @@
       "name": "Kahramanmaraş",
       "slug": "kahramanmaras",
       "url": "https://kahramanmaras.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (16 Maç Mevcut)",
-      "matches_count": 16,
+      "status": "Aktif (15 Maç Mevcut)",
+      "matches_count": 15,
       "standings_count": 2,
       "data_file": "data/cities/kahramanmaras.json"
     },

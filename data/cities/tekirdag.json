@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-28T15:36:24.133723+00:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -2566,7 +2566,7 @@
       "id": "tekirdag-20261031-053",
       "city": "Tekirdağ",
       "date": "2026-10-31",
-      "time": "11:00",
+      "time": "11:30",
       "hall": "Beyza Adalı Ss",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3427,7 +3427,7 @@
       "id": "tekirdag-20261031-074",
       "city": "Tekirdağ",
       "date": "2026-10-31",
-      "time": "13:00",
+      "time": "13:30",
       "hall": "Beyza Adalı Ss",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3629,5 +3629,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:46.923808"
+  "volleybox_sync_updated_at": "2026-10-28T15:39:11.636683"
 }

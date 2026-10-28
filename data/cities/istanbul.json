@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-28T15:36:24.133723+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -240,18 +240,19 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Fenerbahçe U18",
-        "played": 3,
-        "won": 3,
+        "team": "VakıfBank U18",
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 226,
-        "points_lost": 149,
-        "point_ratio": "1.517",
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 2,
+        "set_ratio": "6.000",
+        "points_won": 340,
+        "points_lost": 240,
+        "point_ratio": "1.417",
         "form": [
+          "W",
           "W",
           "W",
           "W"
@@ -259,25 +260,46 @@
       },
       {
         "rank": 2,
-        "team": "VakıfBank U18",
-        "played": 3,
+        "team": "Fenerbahçe U18",
+        "played": 4,
         "won": 3,
-        "lost": 0,
+        "lost": 1,
         "points": 9,
-        "sets_won": 9,
-        "sets_lost": 1,
-        "set_ratio": "9.000",
-        "points_won": 242,
-        "points_lost": 156,
-        "point_ratio": "1.551",
+        "sets_won": 10,
+        "sets_lost": 3,
+        "set_ratio": "3.333",
+        "points_won": 310,
+        "points_lost": 247,
+        "point_ratio": "1.255",
         "form": [
           "W",
           "W",
-          "W"
+          "W",
+          "L"
         ]
       },
       {
         "rank": 3,
+        "team": "İBB Spor Kulübü U18",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 5,
+        "set_ratio": "1.800",
+        "points_won": 317,
+        "points_lost": 298,
+        "point_ratio": "1.064",
+        "form": [
+          "W",
+          "W",
+          "L",
+          "W"
+        ]
+      },
+      {
+        "rank": 4,
         "team": "Eyüpsultan Belediyesi SK U18",
         "played": 3,
         "won": 2,
@@ -296,41 +318,23 @@
         ]
       },
       {
-        "rank": 4,
-        "team": "İBB Spor Kulübü U18",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 5,
-        "set_ratio": "1.200",
-        "points_won": 241,
-        "points_lost": 237,
-        "point_ratio": "1.017",
-        "form": [
-          "W",
-          "W",
-          "L"
-        ]
-      },
-      {
         "rank": 5,
         "team": "Marmara Akademi Spor Kulübü",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 5,
         "sets_won": 6,
-        "sets_lost": 6,
-        "set_ratio": "1.000",
-        "points_won": 238,
-        "points_lost": 241,
-        "point_ratio": "0.988",
+        "sets_lost": 9,
+        "set_ratio": "0.667",
+        "points_won": 299,
+        "points_lost": 317,
+        "point_ratio": "0.943",
         "form": [
           "L",
           "W",
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -7786,11 +7790,16 @@
       "match_no": "16",
       "home_team": "VakıfBank U18",
       "away_team": "Fenerbahçe U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "23-25",
+        "25-18",
+        "25-22",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411783",
@@ -7827,11 +7836,15 @@
       "match_no": "17",
       "home_team": "İBB Spor Kulübü U18",
       "away_team": "Marmara Akademi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "26-24",
+        "25-19",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411784",
@@ -8144,5 +8157,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:41.919686"
+  "volleybox_sync_updated_at": "2026-10-28T15:39:11.651106"
 }
