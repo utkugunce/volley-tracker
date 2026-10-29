@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-29T15:42:34.611847+00:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -158,6 +158,17 @@
       },
       {
         "rank": 3,
+        "team": "Atakum Atılım Spor Kulübü - B U18",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
         "played": 3,
         "won": 2,
@@ -168,30 +179,19 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Atakum Atılım Spor Kulübü - B U18",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 4,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "İlkkıvılcım Havza SK U18",
-        "played": 3,
-        "won": 1,
+        "team": "Nova Spor Kulübü U18",
+        "played": 4,
+        "won": 2,
         "lost": 2,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 6,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 8,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Nova Spor Kulübü U18",
+        "team": "İlkkıvılcım Havza SK U18",
         "played": 3,
         "won": 1,
         "lost": 2,
@@ -2391,11 +2391,17 @@
       "match_no": "15",
       "home_team": "Atakum Atılım Spor Kulübü - B U18",
       "away_team": "Nova Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "25-21",
+        "25-21",
+        "24-26",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403005",
@@ -2954,5 +2960,5 @@
     }
   ],
   "volleybox_synced_matches": 64,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:46.721160"
+  "volleybox_sync_updated_at": "2026-10-29T15:45:07.772856"
 }

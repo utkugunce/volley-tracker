@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-29T15:42:34.611847+00:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -343,7 +343,7 @@
     "Genç Kızlar Süper Lig - Yarı Final B Grubu": [
       {
         "rank": 1,
-        "team": "Gelişim Koleji SK U18",
+        "team": "Rota Koleji SK",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -354,7 +354,7 @@
       },
       {
         "rank": 2,
-        "team": "Göztepe SK U18",
+        "team": "Gelişim Koleji SK U18",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -365,6 +365,17 @@
       },
       {
         "rank": 3,
+        "team": "Göztepe SK U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Arkas Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -375,7 +386,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 5,
         "team": "Monza Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -386,30 +397,19 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Mavişehir Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Özay Voleybol Spor Kulübü U18",
-        "played": 0,
+        "team": "Mavişehir Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 7,
-        "team": "Rota Koleji SK",
+        "team": "Özay Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -455,6 +455,28 @@
       },
       {
         "rank": 4,
+        "team": "Volkan Güç Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Uzay 35 Voleybol Kulübü - B U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 5,
+        "sets_won": 7,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Bergama Belediyesi Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -465,47 +487,25 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Volkan Güç Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 2,
-        "sets_won": 4,
-        "sets_lost": 5,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Uzay 35 Voleybol Kulübü - B U18",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 2,
-        "sets_won": 4,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
         "rank": 7,
         "team": "İZEGE Spor Kulübü - A U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 8,
         "team": "Monza Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -534,23 +534,23 @@
       },
       {
         "rank": 3,
+        "team": "Altekma SK U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 7,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Dokuz Eylül Voleybol U18",
         "played": 2,
         "won": 1,
         "lost": 1,
         "points": 4,
         "sets_won": 5,
-        "sets_lost": 4,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Altekma SK U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 4,
         "sets_lost": 4,
         "form": []
       },
@@ -579,12 +579,12 @@
       {
         "rank": 7,
         "team": "İzmir Altınay Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 2,
-        "sets_won": 3,
-        "sets_lost": 5,
+        "sets_won": 4,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -3382,11 +3382,15 @@
       "match_no": "3",
       "home_team": "Rota Koleji SK",
       "away_team": "Mavişehir Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-21",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412764",
@@ -3913,11 +3917,15 @@
       "match_no": "9",
       "home_team": "Volkan Güç Spor Kulübü U18",
       "away_team": "İZEGE Spor Kulübü - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "27-25",
+        "25-15",
+        "25-23"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412704",
@@ -3954,11 +3962,15 @@
       "match_no": "10",
       "home_team": "Uzay 35 Voleybol Kulübü - B U18",
       "away_team": "Monza Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-10",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412705",
@@ -4535,11 +4547,16 @@
       "match_no": "11",
       "home_team": "Altekma SK U18",
       "away_team": "İzmir Altınay Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-16",
+        "25-14",
+        "23-25",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412710",
@@ -9014,5 +9031,5 @@
     }
   ],
   "volleybox_synced_matches": 174,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:44.064872"
+  "volleybox_sync_updated_at": "2026-10-29T15:45:07.763664"
 }
