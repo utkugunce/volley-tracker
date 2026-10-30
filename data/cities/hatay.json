@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-30T15:25:30.371927+00:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -191,11 +191,11 @@
       {
         "rank": 2,
         "team": "Hatay Yıldızlar Spor Kulübü U18",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 4,
         "form": []
       },
@@ -213,12 +213,12 @@
       {
         "rank": 4,
         "team": "Es Akademi Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ]
@@ -2411,11 +2411,15 @@
       "match_no": "8",
       "home_team": "Hatay Yıldızlar Spor Kulübü U18",
       "away_team": "Es Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-20",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401115",
@@ -2605,5 +2609,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:40.098280"
+  "volleybox_sync_updated_at": "2026-10-30T15:28:02.881494"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T15:42:34.611847+00:00",
+  "updated_at": "2026-10-30T15:25:30.371927+00:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -37,11 +37,11 @@
       {
         "rank": 1,
         "team": "Manisa Büyükşehir Belediye Spor U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
         "form": []
       },
@@ -81,12 +81,12 @@
       {
         "rank": 5,
         "team": "1922 Salihli Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -633,11 +633,15 @@
       "match_no": "11",
       "home_team": "1922 Salihli Spor Kulübü U18",
       "away_team": "Manisa Büyükşehir Belediye Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "19-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411818",
@@ -1399,5 +1403,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-29T15:45:07.819214"
+  "volleybox_sync_updated_at": "2026-10-30T15:28:02.917151"
 }

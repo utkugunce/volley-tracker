@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T15:42:34.611847+00:00",
+  "updated_at": "2026-10-30T15:25:30.371927+00:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -513,6 +513,17 @@
     "Yıldız Kızlar Süper Lig - E Grubu": [
       {
         "rank": 1,
+        "team": "Bursa Büyükşehir Belediyespor U16",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 7,
+        "sets_won": 9,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Kestel Belediye 1952 Spor Kulübü U16",
         "played": 3,
         "won": 2,
@@ -523,25 +534,14 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Bursa Büyükşehir Belediyespor U16",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 4,
-        "sets_won": 6,
-        "sets_lost": 4,
-        "form": []
-      },
-      {
         "rank": 3,
         "team": "Hürriyet Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -1055,9 +1055,9 @@
       }
     },
     {
-      "id": "bursa-20261103-012",
+      "id": "bursa-20261105-012",
       "city": "Bursa",
-      "date": "2026-11-03",
+      "date": "2026-11-05",
       "time": "19:00",
       "hall": "Kestel",
       "category": "Genç Kızlar Süper Lig",
@@ -1073,25 +1073,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "413322",
-        "url": "https://women.volleybox.net/tr/guner-karakaya-spor-kulubu-u18-kestel-belediye-1952-spor-kulubu-u18-c413322",
-        "host_name": "Güner Karakaya Spor Kulübü U18",
-        "guest_name": "Kestel Belediye 1952 Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-03",
-        "vb_time": "19:00",
-        "vb_hall": "Kestel Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-03",
-          "vb_time": "19:00",
-          "vb_hall": "Kestel Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3362,11 +3355,15 @@
       "match_no": "6",
       "home_team": "Bursa Büyükşehir Belediyespor U16",
       "away_team": "Hürriyet Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-14",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411659",
@@ -3391,6 +3388,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-10-29T15:45:07.832161"
+  "volleybox_synced_matches": 62,
+  "volleybox_sync_updated_at": "2026-10-30T15:28:02.929731"
 }

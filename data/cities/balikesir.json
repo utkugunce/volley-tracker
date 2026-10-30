@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T15:36:24.133723+00:00",
+  "updated_at": "2026-10-30T15:25:30.371927+00:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -230,6 +230,17 @@
     "Yıldız Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
+        "team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 10,
+        "sets_won": 11,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Bandırma Voleybol Spor Kulübü U16",
         "played": 3,
         "won": 3,
@@ -240,25 +251,14 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 7,
-        "sets_won": 8,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 3,
         "team": "Günyaka Spor U16",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -367,34 +367,34 @@
       {
         "rank": 1,
         "team": "Ayvalıkgücü Belediye SK U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Ayvalık Gelişim Spor Kulübü U16",
-        "played": 1,
+        "team": "Burhaniye Belediye Spor Kulübü U16",
+        "played": 3,
         "won": 1,
-        "lost": 0,
+        "lost": 2,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "sets_won": 5,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Burhaniye Belediye Spor Kulübü U16",
+        "team": "Ayvalık Gelişim Spor Kulübü U16",
         "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 0,
-        "sets_won": 2,
-        "sets_lost": 6,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
         "form": []
       },
       {
@@ -411,12 +411,12 @@
       {
         "rank": 5,
         "team": "Ayvalıkspor - B U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -445,24 +445,24 @@
       },
       {
         "rank": 3,
-        "team": "Bandırma Bordo Spor Kulübü U16",
-        "played": 4,
-        "won": 2,
+        "team": "Bandırma Voleybol Spor Kulübü U16",
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 6,
-        "sets_won": 8,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 6,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Bandırma Voleybol Spor Kulübü U16",
-        "played": 4,
+        "team": "Bandırma Bordo Spor Kulübü U16",
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 6,
-        "sets_won": 6,
-        "sets_lost": 6,
+        "sets_won": 8,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -1264,11 +1264,15 @@
       "match_no": "10",
       "home_team": "Günyaka Spor U16",
       "away_team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "14-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411632",
@@ -2180,11 +2184,15 @@
       "match_no": "5",
       "home_team": "Ayvalıkspor - B U16",
       "away_team": "Burhaniye Belediye Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "12-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411636",
@@ -2221,11 +2229,15 @@
       "match_no": "6",
       "home_team": "Ayvalıkgücü Belediye SK U16",
       "away_team": "Ayvalık Gelişim Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "26-24",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411637",
@@ -2873,11 +2885,15 @@
       "match_no": "13",
       "home_team": "Bandırma Voleybol Spor Kulübü U16",
       "away_team": "Bandırma Bordo Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "26-24",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411641",
@@ -2978,5 +2994,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-28T15:39:11.673098"
+  "volleybox_sync_updated_at": "2026-10-30T15:28:02.934102"
 }

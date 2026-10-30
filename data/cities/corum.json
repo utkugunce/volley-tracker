@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-28T15:36:24.133723+00:00",
+  "updated_at": "2026-10-30T15:25:30.371927+00:00",
   "city": "Çorum",
   "slug": "corum",
   "title": "TVF Çorum Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 11,
+  "total_matches": 13,
   "source": "https://corum.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -108,6 +108,52 @@
       }
     ],
     "Genç Kızlar Süper Lig - Yarı Final Grubu": [
+      {
+        "rank": 1,
+        "team": "Osmancık Belediyespor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Çorum Arena Spor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Mecitözü Doğuş Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Çorum Bahçelievler Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - Final Grubu": [
       {
         "rank": 1,
         "team": "Çorum Arena Spor U18",
@@ -574,11 +620,17 @@
       "match_no": "1",
       "home_team": "Mecitözü Doğuş Spor Kulübü U18",
       "away_team": "Çorum Arena Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "25-19",
+        "26-24",
+        "15-25",
+        "12-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -608,6 +660,78 @@
       "match_no": "2",
       "home_team": "Osmancık Belediyespor U18",
       "away_team": "Çorum Bahçelievler Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-14",
+        "26-24"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261102-012",
+      "city": "Çorum",
+      "date": "2026-11-02",
+      "time": "18:00",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "1",
+      "home_team": "Çorum Bahçelievler Spor Kulübü U18",
+      "away_team": "Mecitözü Doğuş Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261102-013",
+      "city": "Çorum",
+      "date": "2026-11-02",
+      "time": "19:30",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "2",
+      "home_team": "Çorum Arena Spor U18",
+      "away_team": "Osmancık Belediyespor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -631,5 +755,5 @@
     }
   ],
   "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-10-28T15:39:11.631676"
+  "volleybox_sync_updated_at": "2026-10-30T15:28:02.885517"
 }

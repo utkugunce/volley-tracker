@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T15:42:34.611847+00:00",
+  "updated_at": "2026-10-30T15:25:30.371927+00:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -297,11 +297,11 @@
       {
         "rank": 1,
         "team": "Es Güneş Spor Kulübü U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
@@ -330,12 +330,12 @@
       {
         "rank": 4,
         "team": "Meryem Boz Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
         "sets_won": 3,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -2315,11 +2315,15 @@
       "match_no": "8",
       "home_team": "Meryem Boz Spor Kulübü U16",
       "away_team": "Es Güneş Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "23-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411679",
@@ -2875,5 +2879,5 @@
     }
   ],
   "volleybox_synced_matches": 54,
-  "volleybox_sync_updated_at": "2026-10-29T15:45:07.843257"
+  "volleybox_sync_updated_at": "2026-10-30T15:28:02.940657"
 }
