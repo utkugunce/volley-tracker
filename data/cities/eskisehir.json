@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-30T15:25:30.371927+00:00",
+  "updated_at": "2026-10-31T14:54:54.604830+00:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 55,
+  "total_matches": 57,
   "source": "https://eskisehir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -89,23 +89,23 @@
       {
         "rank": 2,
         "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 7,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
         "team": "Eskişehir Ata Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
@@ -404,6 +404,52 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 9,
+        "form": []
+      }
+    ],
+    "Yıldız Kızlar Süper Lig - Yarı Final C Grubu": [
+      {
+        "rank": 1,
+        "team": "Es Güneş Spor Kulübü U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Es Voleybol Akademi Spor Kulübü - A U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Es Voleybol Akademi Spor Kulübü - B U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ]
@@ -922,11 +968,15 @@
       "match_no": "6",
       "home_team": "Eskişehir Ata Spor Kulübü U18",
       "away_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "20-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411677",
@@ -2876,8 +2926,76 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "eskisehir-20261105-056",
+      "city": "Eskişehir",
+      "date": "2026-11-05",
+      "time": "18:30",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final C Grubu",
+      "match_no": "1",
+      "home_team": "Es Voleybol Akademi Spor Kulübü - A U16",
+      "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261105-057",
+      "city": "Eskişehir",
+      "date": "2026-11-05",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final C Grubu",
+      "match_no": "2",
+      "home_team": "Es Güneş Spor Kulübü U16",
+      "away_team": "Eskişehir Çağdaş Kolejliler Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 54,
-  "volleybox_sync_updated_at": "2026-10-30T15:28:02.940657"
+  "volleybox_sync_updated_at": "2026-10-31T14:57:31.741018"
 }

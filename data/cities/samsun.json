@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T15:25:30.371927+00:00",
+  "updated_at": "2026-10-31T14:54:54.604830+00:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -159,27 +159,38 @@
       {
         "rank": 3,
         "team": "Atakum Atılım Spor Kulübü - B U18",
-        "played": 4,
-        "won": 2,
+        "played": 5,
+        "won": 3,
         "lost": 2,
-        "points": 7,
-        "sets_won": 8,
+        "points": 10,
+        "sets_won": 11,
         "sets_lost": 7,
         "form": []
       },
       {
         "rank": 4,
         "team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
         "sets_won": 7,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 5,
+        "team": "İlkkıvılcım Havza SK U18",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Nova Spor Kulübü U18",
         "played": 4,
         "won": 2,
@@ -190,25 +201,14 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "İlkkıvılcım Havza SK U18",
-        "played": 3,
-        "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 6,
-        "form": []
-      },
-      {
         "rank": 7,
         "team": "Sam55 Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       },
       {
@@ -2401,11 +2401,15 @@
       "match_no": "16",
       "home_team": "Sam55 Spor Kulübü U18",
       "away_team": "Atakum Atılım Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "13-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403006",
@@ -2442,11 +2446,15 @@
       "match_no": "17",
       "home_team": "İlkkıvılcım Havza SK U18",
       "away_team": "Terme Gençlik Ve Spor İlçe Müdürlüğü SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-21",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403007",
@@ -2923,5 +2931,5 @@
     }
   ],
   "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-10-30T15:28:02.870236"
+  "volleybox_sync_updated_at": "2026-10-31T14:57:31.668469"
 }

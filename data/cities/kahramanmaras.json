@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-30T15:25:30.371927+00:00",
+  "updated_at": "2026-10-31T14:54:54.604830+00:00",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 15,
+  "total_matches": 19,
   "source": "https://kahramanmaras.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -29,6 +29,17 @@
     "Genç Kızlar 1. Ligi - A Grubu": [
       {
         "rank": 1,
+        "team": "Vesta Spor Kulübü U18",
+        "played": 4,
+        "won": 4,
+        "lost": 0,
+        "points": 11,
+        "sets_won": 12,
+        "sets_lost": 5,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Elbistan Altınışık Spor Kulübü U18",
         "played": 4,
         "won": 3,
@@ -36,17 +47,6 @@
         "points": 9,
         "sets_won": 10,
         "sets_lost": 5,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Vesta Spor Kulübü U18",
-        "played": 3,
-        "won": 3,
-        "lost": 0,
-        "points": 8,
-        "sets_won": 9,
-        "sets_lost": 4,
         "form": []
       },
       {
@@ -74,12 +74,12 @@
       {
         "rank": 5,
         "team": "Türkoğlu 20 Nisan Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 3,
-        "sets_won": 3,
-        "sets_lost": 6,
+        "sets_won": 4,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -115,6 +115,98 @@
         "points": 1,
         "sets_won": 2,
         "sets_lost": 6,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Yarı Final Grubu": [
+      {
+        "rank": 1,
+        "team": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Vesta Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Gazi Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Elbistan Altınışık Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Final Grubu": [
+      {
+        "rank": 1,
+        "team": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Elbistan Altınışık Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Gazi Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Vesta Spor Kulübü U18",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
         "form": []
       }
     ]
@@ -544,11 +636,16 @@
       "match_no": "10",
       "home_team": "Vesta Spor Kulübü U18",
       "away_team": "Türkoğlu 20 Nisan Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-13",
+        "25-20",
+        "18-25",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408059",
@@ -790,8 +887,152 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "kahramanmaras-20261031-016",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-31",
+      "time": "12:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final Grubu",
+      "match_no": "1",
+      "home_team": "Vesta Spor Kulübü U18",
+      "away_team": "Gazi Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-15",
+        "25-15",
+        "25-18"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261031-017",
+      "city": "Kahramanmaraş",
+      "date": "2026-10-31",
+      "time": "14:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final Grubu",
+      "match_no": "2",
+      "home_team": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
+      "away_team": "Elbistan Altınışık Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-16",
+        "25-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261101-018",
+      "city": "Kahramanmaraş",
+      "date": "2026-11-01",
+      "time": "12:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "1",
+      "home_team": "Gazi Spor Kulübü U18",
+      "away_team": "Elbistan Altınışık Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "kahramanmaras-20261101-019",
+      "city": "Kahramanmaraş",
+      "date": "2026-11-01",
+      "time": "14:00",
+      "hall": "Batıpark S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "2",
+      "home_team": "Vesta Spor Kulübü U18",
+      "away_team": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-10-30T15:28:02.878024"
+  "volleybox_sync_updated_at": "2026-10-31T14:57:31.675917"
 }

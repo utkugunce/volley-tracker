@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T15:25:30.371927+00:00",
+  "updated_at": "2026-10-31T14:54:54.604830+00:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -424,11 +424,11 @@
       {
         "rank": 1,
         "team": "Gönen Karşıyakaspor U16",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 2,
         "form": []
       },
@@ -479,12 +479,12 @@
       {
         "rank": 6,
         "team": "Bandırma Bordo Spor Kulübü - B U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -2930,11 +2930,15 @@
       "match_no": "14",
       "home_team": "Bandırma Bordo Spor Kulübü - B U16",
       "away_team": "Gönen Karşıyakaspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "6-25",
+        "19-25",
+        "19-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411642",
@@ -2994,5 +2998,5 @@
     }
   ],
   "volleybox_synced_matches": 48,
-  "volleybox_sync_updated_at": "2026-10-30T15:28:02.934102"
+  "volleybox_sync_updated_at": "2026-10-31T14:57:31.734457"
 }

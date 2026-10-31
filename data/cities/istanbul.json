@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T15:25:30.371927+00:00",
+  "updated_at": "2026-10-31T14:54:54.604830+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1242,6 +1242,25 @@
     "Genç Kızlar 1. Lig 4. Bölge - A Grubu": [
       {
         "rank": 1,
+        "team": "SET Voleybol Kulübü U18",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 8,
+        "sets_won": 9,
+        "sets_lost": 2,
+        "set_ratio": "4.500",
+        "points_won": 260,
+        "points_lost": 176,
+        "point_ratio": "1.477",
+        "form": [
+          "W",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Avcılar Demirorduspor Kulübü U18",
         "played": 3,
         "won": 2,
@@ -1255,24 +1274,6 @@
         "point_ratio": "1.085",
         "form": [
           "L",
-          "W",
-          "W"
-        ]
-      },
-      {
-        "rank": 2,
-        "team": "SET Voleybol Kulübü U18",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 5,
-        "sets_won": 6,
-        "sets_lost": 2,
-        "set_ratio": "3.000",
-        "points_won": 185,
-        "points_lost": 148,
-        "point_ratio": "1.250",
-        "form": [
           "W",
           "W"
         ]
@@ -1298,18 +1299,19 @@
       {
         "rank": 4,
         "team": "Sultangazi Olimpik Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
+        "lost": 1,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 0,
-        "set_ratio": "MAX",
-        "points_won": 75,
-        "points_lost": 40,
-        "point_ratio": "1.875",
+        "sets_lost": 3,
+        "set_ratio": "1.000",
+        "points_won": 103,
+        "points_lost": 115,
+        "point_ratio": "0.896",
         "form": [
-          "W"
+          "W",
+          "L"
         ]
       },
       {
@@ -1462,6 +1464,24 @@
       },
       {
         "rank": 2,
+        "team": "Küçükçekmece Voleybol Kulübü U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 5,
+        "sets_won": 6,
+        "sets_lost": 2,
+        "set_ratio": "3.000",
+        "points_won": 181,
+        "points_lost": 138,
+        "point_ratio": "1.312",
+        "form": [
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 3,
         "team": "Bahçelievler Voleybol Kulübü U18",
         "played": 2,
         "won": 1,
@@ -1479,7 +1499,7 @@
         ]
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Atakent Elit Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -1494,23 +1514,6 @@
         "form": [
           "W",
           "L"
-        ]
-      },
-      {
-        "rank": 4,
-        "team": "Küçükçekmece Voleybol Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 2,
-        "set_ratio": "1.500",
-        "points_won": 106,
-        "points_lost": 91,
-        "point_ratio": "1.165",
-        "form": [
-          "W"
         ]
       },
       {
@@ -1534,17 +1537,18 @@
       {
         "rank": 6,
         "team": "Real Elite Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "set_ratio": "MIN",
-        "points_won": 43,
-        "points_lost": 75,
-        "point_ratio": "0.573",
+        "points_won": 90,
+        "points_lost": 150,
+        "point_ratio": "0.600",
         "form": [
+          "L",
           "L"
         ]
       }
@@ -8072,11 +8076,15 @@
       "match_no": "6",
       "home_team": "Küçükçekmece Voleybol Kulübü U18",
       "away_team": "Real Elite Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-12",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411778",
@@ -8113,11 +8121,15 @@
       "match_no": "8",
       "home_team": "SET Voleybol Kulübü U18",
       "away_team": "Sultangazi Olimpik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-11",
+        "25-9"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411775",
@@ -8728,5 +8740,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-30T15:28:02.907764"
+  "volleybox_sync_updated_at": "2026-10-31T14:57:31.707818"
 }

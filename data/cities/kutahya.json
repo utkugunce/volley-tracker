@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-10-29T15:42:34.611847+00:00",
+  "updated_at": "2026-10-31T14:54:54.604830+00:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 16,
+  "total_matches": 13,
   "source": "https://kutahya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -88,16 +88,27 @@
       {
         "rank": 1,
         "team": "Kütahya Belediyespor - B U18",
-        "played": 1,
+        "played": 2,
         "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Simav Şeref Koleji Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -105,28 +116,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Tavşanlı Belediyesi Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ]
@@ -612,89 +601,7 @@
       }
     },
     {
-      "id": "kutahya-20261025-012",
-      "city": "Kütahya",
-      "date": "2026-10-25",
-      "time": "14:00",
-      "hall": "Yeni Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "2",
-      "home_team": "Tavşanlı Belediyesi Spor Kulübü U18",
-      "away_team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "408173",
-        "url": "https://women.volleybox.net/tr/tavsanl-belediyesi-spor-kulubu-u18-kutahya-genclik-ve-spor-l-mudurlugu-sk-b-u18-c408173",
-        "host_name": "Tavşanlı Belediyesi Spor Kulübü U18",
-        "guest_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-25",
-        "vb_time": "14:00",
-        "vb_hall": "Kütahya Yeni Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-25",
-          "vb_time": "14:00",
-          "vb_hall": "Kütahya Yeni Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "kutahya-20261031-013",
-      "city": "Kütahya",
-      "date": "2026-10-31",
-      "time": "12:30",
-      "hall": "Yeni Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "3",
-      "home_team": "Simav Şeref Koleji Spor Kulübü U18",
-      "away_team": "Tavşanlı Belediyesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "408175",
-        "url": "https://women.volleybox.net/tr/simav-seref-koleji-spor-kulubu-u18-tavsanl-belediyesi-spor-kulubu-u18-c408175",
-        "host_name": "Simav Şeref Koleji Spor Kulübü U18",
-        "guest_name": "Tavşanlı Belediyesi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-10-31",
-        "vb_time": "15:30",
-        "vb_hall": "Kütahya Yeni Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-31",
-          "vb_time": "15:30",
-          "vb_hall": "Kütahya Yeni Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "kutahya-20261031-014",
+      "id": "kutahya-20261031-012",
       "city": "Kütahya",
       "date": "2026-10-31",
       "time": "14:00",
@@ -706,11 +613,17 @@
       "match_no": "4",
       "home_team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
       "away_team": "Kütahya Belediyespor - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "25-12",
+        "11-25",
+        "25-19",
+        "18-25",
+        "15-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "408174",
@@ -735,48 +648,7 @@
       }
     },
     {
-      "id": "kutahya-20261101-015",
-      "city": "Kütahya",
-      "date": "2026-11-01",
-      "time": "10:00",
-      "hall": "Yeni Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "5",
-      "home_team": "Kütahya Belediyespor - B U18",
-      "away_team": "Tavşanlı Belediyesi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "408176",
-        "url": "https://women.volleybox.net/tr/kutahya-belediyespor-b-u18-tavsanl-belediyesi-spor-kulubu-u18-c408176",
-        "host_name": "Kütahya Belediyespor - B U18",
-        "guest_name": "Tavşanlı Belediyesi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-01",
-        "vb_time": "10:00",
-        "vb_hall": "Kütahya Yeni Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "10:00",
-          "vb_hall": "Kütahya Yeni Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "kutahya-20261101-016",
+      "id": "kutahya-20261101-013",
       "city": "Kütahya",
       "date": "2026-11-01",
       "time": "14:30",
@@ -817,6 +689,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-10-29T15:45:07.817602"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-10-31T14:57:31.715815"
 }

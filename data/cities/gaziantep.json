@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-10-31T14:54:54.604830+00:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -164,6 +164,17 @@
       },
       {
         "rank": 5,
+        "team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Gaziantep Büyükşehir Belediyespor U16",
         "played": 1,
         "won": 1,
@@ -174,18 +185,18 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Doğuş27 Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
-        "sets_won": 2,
-        "sets_lost": 6,
+        "sets_won": 3,
+        "sets_lost": 9,
         "form": []
       },
       {
-        "rank": 7,
+        "rank": 8,
         "team": "Zeugma Spor Kulübü - B U16",
         "played": 1,
         "won": 0,
@@ -196,7 +207,7 @@
         "form": []
       },
       {
-        "rank": 8,
+        "rank": 9,
         "team": "Merinos SK - B U16",
         "played": 2,
         "won": 0,
@@ -204,17 +215,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ]
@@ -851,11 +851,16 @@
       "match_no": "5",
       "home_team": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U16",
       "away_team": "Doğuş27 Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "27-25",
+        "16-25",
+        "25-19",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411455",
@@ -973,5 +978,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:38.970601"
+  "volleybox_sync_updated_at": "2026-10-31T14:57:31.641137"
 }
