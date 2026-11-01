@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:54:54.604830+00:00",
+  "updated_at": "2026-11-01T15:32:58.052751+00:00",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -162,11 +162,11 @@
       {
         "rank": 1,
         "team": "Diltaş Spor Kulübü U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 1,
         "form": []
       },
@@ -195,12 +195,12 @@
       {
         "rank": 4,
         "team": "Seydişehir Cimnastik Spor U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -1809,11 +1809,15 @@
       "match_no": "8",
       "home_team": "Diltaş Spor Kulübü U18",
       "away_team": "Seydişehir Cimnastik Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-20",
+        "25-16",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413220",
@@ -1839,5 +1843,5 @@
     }
   ],
   "volleybox_synced_matches": 29,
-  "volleybox_sync_updated_at": "2026-10-31T14:57:31.737974"
+  "volleybox_sync_updated_at": "2026-11-01T15:35:38.997939"
 }

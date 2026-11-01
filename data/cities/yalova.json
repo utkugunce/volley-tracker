@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T15:25:30.371927+00:00",
+  "updated_at": "2026-11-01T15:32:58.052751+00:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -30,6 +30,17 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
+        "team": "Yalova Voleybol Spor Kulübü - A U18",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Koru Akademi Spor Kulübü U18",
         "played": 4,
         "won": 3,
@@ -37,17 +48,6 @@
         "points": 9,
         "sets_won": 9,
         "sets_lost": 4,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Yalova Voleybol Spor Kulübü - A U18",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -64,12 +64,12 @@
       {
         "rank": 4,
         "team": "Yalova Voleybol Spor Kulübü - B U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -496,11 +496,15 @@
       "match_no": "8",
       "home_team": "Yalova Voleybol Spor Kulübü - A U18",
       "away_team": "Yalova Voleybol Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-10",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398314",
@@ -1018,5 +1022,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-10-30T15:28:02.879380"
+  "volleybox_sync_updated_at": "2026-11-01T15:35:38.989876"
 }

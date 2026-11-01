@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:54:54.604830+00:00",
+  "updated_at": "2026-11-01T15:32:58.052751+00:00",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -319,23 +319,23 @@
       {
         "rank": 3,
         "team": "Biga Çiçeklidedespor U16",
-        "played": 4,
-        "won": 1,
+        "played": 5,
+        "won": 2,
         "lost": 3,
-        "points": 4,
-        "sets_won": 6,
-        "sets_lost": 10,
+        "points": 6,
+        "sets_won": 9,
+        "sets_lost": 12,
         "form": []
       },
       {
         "rank": 4,
         "team": "ÇOMÜ Spor Kulübü U16",
-        "played": 5,
+        "played": 6,
         "won": 0,
-        "lost": 5,
-        "points": 0,
-        "sets_won": 3,
-        "sets_lost": 15,
+        "lost": 6,
+        "points": 1,
+        "sets_won": 5,
+        "sets_lost": 18,
         "form": []
       }
     ],
@@ -365,23 +365,23 @@
       {
         "rank": 3,
         "team": "Çanakkale Belediyespor U16",
-        "played": 4,
-        "won": 1,
+        "played": 5,
+        "won": 2,
         "lost": 3,
-        "points": 3,
-        "sets_won": 5,
+        "points": 6,
+        "sets_won": 8,
         "sets_lost": 10,
         "form": []
       },
       {
         "rank": 4,
         "team": "Gökçeada Spor Kulübü U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 2,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -2054,11 +2054,17 @@
       "match_no": "11",
       "home_team": "ÇOMÜ Spor Kulübü U16",
       "away_team": "Biga Çiçeklidedespor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-21",
+        "17-25",
+        "25-14",
+        "18-25",
+        "11-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2452,11 +2458,15 @@
       "match_no": "9",
       "home_team": "Çanakkale Belediyespor U16",
       "away_team": "Gökçeada Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2543,5 +2553,5 @@
     }
   ],
   "volleybox_synced_matches": 38,
-  "volleybox_sync_updated_at": "2026-10-31T14:57:31.685570"
+  "volleybox_sync_updated_at": "2026-11-01T15:35:38.977718"
 }

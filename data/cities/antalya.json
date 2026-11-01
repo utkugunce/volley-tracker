@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T15:42:34.611847+00:00",
+  "updated_at": "2026-11-01T15:32:58.052751+00:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -295,6 +295,17 @@
       },
       {
         "rank": 3,
+        "team": "Antalya DSİ Spor Kulübü U16",
+        "played": 4,
+        "won": 3,
+        "lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "07 Anka Spor Kulübü U16",
         "played": 4,
         "won": 3,
@@ -302,17 +313,6 @@
         "points": 6,
         "sets_won": 10,
         "sets_lost": 9,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Antalya DSİ Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -340,12 +340,12 @@
       {
         "rank": 7,
         "team": "07 Alya Spor U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 1,
-        "sets_won": 3,
-        "sets_lost": 9,
+        "sets_won": 4,
+        "sets_lost": 12,
         "form": []
       },
       {
@@ -883,7 +883,7 @@
       "id": "antalya-20261102-011",
       "city": "Antalya",
       "date": "2026-11-02",
-      "time": "18:30",
+      "time": "19:00",
       "hall": "Döşemealtı S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -3030,11 +3030,16 @@
       "match_no": "15",
       "home_team": "07 Alya Spor U16",
       "away_team": "Antalya DSİ Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "28-26",
+        "23-25",
+        "18-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411624",
@@ -3062,7 +3067,7 @@
       "id": "antalya-20261102-060",
       "city": "Antalya",
       "date": "2026-11-02",
-      "time": "19:00",
+      "time": "18:30",
       "hall": "Kepez Ç.A.S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -3576,5 +3581,5 @@
     }
   ],
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-10-29T15:45:07.827491"
+  "volleybox_sync_updated_at": "2026-11-01T15:35:39.025311"
 }

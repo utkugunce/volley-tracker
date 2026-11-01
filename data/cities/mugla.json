@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:54:54.604830+00:00",
+  "updated_at": "2026-11-01T15:32:58.052751+00:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -241,24 +241,24 @@
       },
       {
         "rank": 2,
-        "team": "Fethiye Anka Spor U16",
+        "team": "FETHİYE VOLEYBOL SPOR",
         "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
         "form": []
       },
       {
         "rank": 3,
-        "team": "FETHİYE VOLEYBOL SPOR",
-        "played": 0,
+        "team": "Fethiye Anka Spor U16",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -266,11 +266,11 @@
       {
         "rank": 1,
         "team": "Muğla Sportif Akademi Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 1,
         "form": []
       },
@@ -288,12 +288,12 @@
       {
         "rank": 3,
         "team": "MUĞLA SPOR",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -382,23 +382,23 @@
       {
         "rank": 2,
         "team": "Muğla Büyükşehir Belediyesi Spor Kulübü U16",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
         "team": "MUĞLA SS VOLEYBOL SPOR KULÜBÜ",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -440,6 +440,17 @@
     "Yıldız Kızlar Süper Lig - G Grubu": [
       {
         "rank": 1,
+        "team": "Bodrum Doğuş Spor U16",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Bodrum Belediyesi Bodrumspor U16",
         "played": 1,
         "won": 1,
@@ -450,30 +461,19 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Bodrum Doğuş Spor U16",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 3,
-        "team": "Milas Belediye Spor Kulübü - B U16",
-        "played": 1,
+        "team": "Bodrum İhtisasspor - B U16",
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Bodrum İhtisasspor - B U16",
+        "team": "Milas Belediye Spor Kulübü - B U16",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -1281,11 +1281,15 @@
       "match_no": "2",
       "home_team": "FETHİYE VOLEYBOL SPOR",
       "away_team": "Fethiye Anka Spor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-21",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1361,11 +1365,15 @@
       "match_no": "2",
       "home_team": "MUĞLA SPOR",
       "away_team": "Muğla Sportif Akademi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "13-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1598,11 +1606,11 @@
       "match_no": "2",
       "home_team": "MUĞLA SS VOLEYBOL SPOR KULÜBÜ",
       "away_team": "Muğla Büyükşehir Belediyesi Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
       "set_scores": [],
-      "status": "upcoming",
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1756,11 +1764,15 @@
       "match_no": "3",
       "home_team": "Bodrum Doğuş Spor U16",
       "away_team": "Bodrum İhtisasspor - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-22",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1813,5 +1825,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-10-31T14:57:31.671959"
+  "volleybox_sync_updated_at": "2026-11-01T15:35:39.032233"
 }

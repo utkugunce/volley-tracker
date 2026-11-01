@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:54:54.604830+00:00",
+  "updated_at": "2026-11-01T15:32:58.052751+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -769,6 +769,40 @@
       },
       {
         "rank": 4,
+        "team": "2014 Maltepe Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "set_ratio": "1.500",
+        "points_won": 96,
+        "points_lost": 110,
+        "point_ratio": "0.873",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 5,
+        "team": "Tuzla Rekor Spor Kulübü - B U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "set_ratio": "0.667",
+        "points_won": 110,
+        "points_lost": 96,
+        "point_ratio": "1.146",
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 6,
         "team": "Tuzla New Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -785,7 +819,7 @@
         ]
       },
       {
-        "rank": 5,
+        "rank": 7,
         "team": "Tuzla Mercan Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -802,7 +836,7 @@
         ]
       },
       {
-        "rank": 6,
+        "rank": 8,
         "team": "Kartal Yıldızları Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -817,36 +851,6 @@
         "form": [
           "L"
         ]
-      },
-      {
-        "rank": 7,
-        "team": "2014 Maltepe Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Tuzla Rekor Spor Kulübü - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
       }
     ],
     "Genç Kızlar 1. Lig 2. Bölge - B Grubu": [
@@ -8166,11 +8170,17 @@
       "match_no": "4",
       "home_team": "Tuzla Rekor Spor Kulübü - B U18",
       "away_team": "2014 Maltepe Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "25-14",
+        "24-26",
+        "25-15",
+        "22-25",
+        "14-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411774",
@@ -8740,5 +8750,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-10-31T14:57:31.632936"
+  "volleybox_sync_updated_at": "2026-11-01T15:35:38.944682"
 }
