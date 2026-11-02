@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useMemo } from "react";
-import { Calendar } from "lucide-react";
+import React, { useMemo, useRef, useEffect, useCallback } from "react";
+import { Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 
 export type StatusFilterType = "all" | "live" | "finished" | "upcoming";
 
@@ -33,11 +33,13 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
   showStatusFilters = true,
   dateMatchCounts,
 }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const daysCarousel = useMemo(() => {
     const base = todayStr ? new Date(todayStr + "T00:00:00") : new Date();
-    if (availableDates?.length) {
-      const dayNames = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
+    const dayNames = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
 
+    if (availableDates?.length) {
       const dateSet = new Set<string>();
       if (todayStr) {
         dateSet.add(todayStr);
@@ -46,10 +48,25 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
         const yStr = `${yDate.getFullYear()}-${String(yDate.getMonth() + 1).padStart(2, "0")}-${String(yDate.getDate()).padStart(2, "0")}`;
         dateSet.add(yStr);
       }
-      availableDates.forEach((d) => dateSet.add(d));
-      const sortedAvailable = Array.from(dateSet).sort().reverse();
+      availableDates.forEach((d) => {
+        if (d && d !== "TBD" && /^\d{4}-\d{2}-\d{2}$/.test(d)) {
+          dateSet.add(d);
+        }
+      });
+      if (selectedDate && selectedDate !== "all" && /^\d{4}-\d{2}-\d{2}$/.test(selectedDate)) {
+        dateSet.add(selectedDate);
+      }
 
-      return sortedAvailable.slice(0, 5).map((dateStr) => {
+      // Çağıran bileşenin sıralama yönünü koru (ResultsTab azalan, Fikstür artan)
+      const isCallerDescending =
+        availableDates.length >= 2 &&
+        availableDates[0].localeCompare(availableDates[availableDates.length - 1]) > 0;
+
+      const sortedAvailable = Array.from(dateSet).sort((a, b) =>
+        isCallerDescending ? b.localeCompare(a) : a.localeCompare(b)
+      );
+
+      return sortedAvailable.map((dateStr) => {
         const date = new Date(`${dateStr}T00:00:00`);
         const dayOffset = Math.round((date.getTime() - base.getTime()) / 86400000);
         const label =
@@ -57,6 +74,8 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
             ? "BUGÜN"
             : dayOffset === -1
             ? "DÜN"
+            : dayOffset === 1
+            ? "YARIN"
             : `${String(date.getDate()).padStart(2, "0")} ${dayNames[date.getDay()]}`;
         return {
           dateStr,
@@ -67,8 +86,8 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
       });
     }
 
-    const offsets = [-2, -1, 0, 1, 2];
-    const dayNames = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
+    // Fallback: 15 günlük kayan pencere [-7 gün geçmiş .. +7 gün gelecek]
+    const offsets = [-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7];
 
     return offsets.map((offset) => {
       const d = new Date(base);
@@ -85,7 +104,7 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
       else if (offset === 1) label = "YARIN";
       else label = `${dd} ${dayNames[d.getDay()]}`;
 
-      const shortDay = offset === 0 || offset === -1 || offset === 1 ? `${dd}.${mm}` : "";
+      const shortDay = `${dd}.${mm}`;
 
       return {
         dateStr,
@@ -94,12 +113,39 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
         isToday: offset === 0,
       };
     });
-  }, [todayStr, availableDates]);
+  }, [todayStr, availableDates, selectedDate]);
+
+  const handleScroll = useCallback((direction: "left" | "right") => {
+    if (scrollRef.current) {
+      if (typeof scrollRef.current.scrollBy === "function") {
+        scrollRef.current.scrollBy({
+          left: direction === "left" ? -180 : 180,
+          behavior: "smooth",
+        });
+      } else {
+        scrollRef.current.scrollLeft += direction === "left" ? -180 : 180;
+      }
+    }
+  }, []);
+
+  // Seçilen tarih değiştiğinde butonu görünür alana ortala
+  useEffect(() => {
+    const targetDate = selectedDate !== "all" ? selectedDate : todayStr;
+    if (targetDate && scrollRef.current) {
+      const activeEl = scrollRef.current.querySelector<HTMLElement>(`[data-date="${targetDate}"]`);
+      if (activeEl && typeof activeEl.scrollIntoView === "function") {
+        const frameId = requestAnimationFrame(() => {
+          activeEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        });
+        return () => cancelAnimationFrame(frameId);
+      }
+    }
+  }, [selectedDate, todayStr, daysCarousel]);
 
   return (
     <div className="sticky top-0 z-20 bg-surface/95 backdrop-blur-md border border-line/70 rounded-xl p-2 space-y-2 mb-3">
-      {/* 1. Tarih Şeridi: [-2, Dün, Bugün, Yarın, +2] + DatePicker */}
-      <div className="flex items-center justify-between gap-1 sm:gap-2">
+      {/* 1. Tarih Şeridi: Oklar + Günler Bandı + DatePicker */}
+      <div className="flex items-center justify-between gap-1 sm:gap-1.5">
         {/* Tümü Butonu */}
         <button
           type="button"
@@ -113,8 +159,22 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
           TÜMÜ
         </button>
 
+        {/* Sol Kaydırma Oku */}
+        <button
+          type="button"
+          onClick={() => handleScroll("left")}
+          className="hidden sm:flex items-center justify-center p-1 rounded-lg text-ink-3 hover:text-white hover:bg-surface-muted transition-colors shrink-0 cursor-pointer"
+          aria-label="Önceki tarihler"
+          title="Önceki tarihler"
+        >
+          <ChevronLeft size={16} />
+        </button>
+
         {/* Günler Bandı */}
-        <div className="flex-1 flex items-center justify-center gap-1 overflow-x-auto no-scrollbar py-0.5">
+        <div
+          ref={scrollRef}
+          className="flex-1 flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 scroll-smooth"
+        >
           {daysCarousel.map((item) => {
             const isSelected = selectedDate === item.dateStr;
             const dayMatchCount = dateMatchCounts?.[item.dateStr] ?? 0;
@@ -122,11 +182,12 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
             return (
               <button
                 key={item.dateStr}
+                data-date={item.dateStr}
                 type="button"
                 onClick={() => onSelectDate(item.dateStr)}
-                className={`relative flex flex-col items-center justify-center px-2 sm:px-3 py-1 rounded-lg text-xs transition-colors cursor-pointer min-w-[54px] ${
+                className={`relative flex flex-col items-center justify-center px-2.5 sm:px-3 py-1 rounded-lg text-xs transition-colors cursor-pointer min-w-[54px] shrink-0 ${
                   isSelected
-                    ? "bg-primary text-primary-fg font-semibold"
+                    ? "bg-primary text-primary-fg font-semibold shadow-xs"
                     : item.isToday
                     ? "bg-surface-muted text-primary border border-primary/40 font-semibold"
                     : "bg-surface-muted/60 text-ink-2 hover:text-white border border-line/60 font-medium"
@@ -149,6 +210,17 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
             );
           })}
         </div>
+
+        {/* Sağ Kaydırma Oku */}
+        <button
+          type="button"
+          onClick={() => handleScroll("right")}
+          className="hidden sm:flex items-center justify-center p-1 rounded-lg text-ink-3 hover:text-white hover:bg-surface-muted transition-colors shrink-0 cursor-pointer"
+          aria-label="Sonraki tarihler"
+          title="Sonraki tarihler"
+        >
+          <ChevronRight size={16} />
+        </button>
 
         {/* Takvim İkonu ve Date Picker */}
         <label className="relative p-2 rounded-lg bg-surface-muted/70 border border-line/60 hover:border-line text-ink-2 hover:text-white transition-colors cursor-pointer shrink-0">

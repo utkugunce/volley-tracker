@@ -71,6 +71,21 @@ export const FixturesTab: React.FC<FixturesTabProps> = ({
     isFiltered,
   } = filters;
 
+  const { availableDates, dateMatchCounts } = React.useMemo(() => {
+    const countsMap: Record<string, number> = {};
+    const set = new Set<string>();
+    (data?.matches || []).forEach((m) => {
+      if (m.date && m.date !== "TBD" && /^\d{4}-\d{2}-\d{2}$/.test(m.date)) {
+        set.add(m.date);
+        countsMap[m.date] = (countsMap[m.date] || 0) + 1;
+      }
+    });
+    return {
+      availableDates: Array.from(set).sort(),
+      dateMatchCounts: countsMap,
+    };
+  }, [data?.matches]);
+
   return (
     <div>
       {/* Sonuçlar sayfasıyla aynı hızlı tarih şeridi */}
@@ -87,6 +102,8 @@ export const FixturesTab: React.FC<FixturesTabProps> = ({
           upcoming: counts.upcoming,
         }}
         showStatusFilters={false}
+        availableDates={availableDates}
+        dateMatchCounts={dateMatchCounts}
       />
 
       {/* Flashscore Filtre Barı (HEPSİ / OYNANACAK / BİTENLER) */}

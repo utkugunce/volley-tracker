@@ -147,6 +147,17 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
     rows[nextIndex].focus();
   };
 
+  const effectiveAvailableDates = useMemo(() => {
+    if (availableDates && availableDates.length > 0) return availableDates;
+    const set = new Set<string>();
+    matches.forEach((m) => {
+      if (m.date && m.date !== "TBD" && /^\d{4}-\d{2}-\d{2}$/.test(m.date)) {
+        set.add(m.date);
+      }
+    });
+    return Array.from(set).sort();
+  }, [availableDates, matches]);
+
   return (
     <div ref={feedRef} className="space-y-3" onKeyDown={handleFeedKeyDown}>
       <DateNavigationRibbon
@@ -156,7 +167,7 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
         statusFilter={statusFilter}
         onSelectStatusFilter={setStatusFilter}
         counts={counts}
-        availableDates={availableDates}
+        availableDates={effectiveAvailableDates}
         showStatusFilters={viewMode !== "results"}
         dateMatchCounts={dateMatchCounts}
       />

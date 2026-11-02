@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T10:07:39.438247+03:00",
+  "updated_at": "2026-11-02T13:00:20.075759+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -3326,18 +3326,18 @@
       }
     },
     {
-      "id": "izmir-20261113-048",
+      "id": "izmir-20261116-048",
       "city": "İzmir",
-      "date": "2026-11-13",
+      "date": "2026-11-16",
       "time": "--:--",
-      "hall": "Gaziemir Spor Salonu",
+      "hall": "Vali Hüseyin Öğütcen S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Yarı Final A Grubu",
       "match_no": "8",
-      "home_team": "İzmir Altınay Spor Kulübü U18",
-      "away_team": "Altınordu Voleybol U18",
+      "home_team": "Volkan Güç Spor Kulübü U18",
+      "away_team": "Göztepe SK - B U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -3360,18 +3360,18 @@
       }
     },
     {
-      "id": "izmir-20261116-049",
+      "id": "izmir-20261118-049",
       "city": "İzmir",
-      "date": "2026-11-16",
+      "date": "2026-11-18",
       "time": "--:--",
-      "hall": "Vali Hüseyin Öğütcen S",
+      "hall": "Gaziemir Spor Salonu",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Yarı Final A Grubu",
       "match_no": "9",
-      "home_team": "Volkan Güç Spor Kulübü U18",
-      "away_team": "Göztepe SK - B U18",
+      "home_team": "İzmir Altınay Spor Kulübü U18",
+      "away_team": "Altınordu Voleybol U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -9559,5 +9559,5 @@
     }
   ],
   "volleybox_synced_matches": 174,
-  "volleybox_sync_updated_at": "2026-11-02T10:08:45.855133"
+  "volleybox_sync_updated_at": "2026-11-02T13:01:33.415310"
 }

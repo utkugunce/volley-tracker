@@ -313,6 +313,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             todayStr={todayStr}
             yesterdayStr={yesterdayStr}
             city={data?.city}
+            availableDates={uniqueResultDates}
           />
         ) : activeMainTab === "fixtures" ? (
           /* ==================== FİKSTÜR SEKMESİ ==================== */

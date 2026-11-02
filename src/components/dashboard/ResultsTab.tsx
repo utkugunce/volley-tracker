@@ -83,6 +83,16 @@ export const ResultsTab: React.FC<ResultsTabProps> = ({
     isFiltered,
   } = filters;
 
+  const dateMatchCounts = React.useMemo(() => {
+    const countsMap: Record<string, number> = {};
+    (data?.matches || []).forEach((m) => {
+      if (m.date && m.date !== "TBD" && /^\d{4}-\d{2}-\d{2}$/.test(m.date)) {
+        countsMap[m.date] = (countsMap[m.date] || 0) + 1;
+      }
+    });
+    return countsMap;
+  }, [data?.matches]);
+
   return (
     <div>
       {/* Flashscore Yatay Tarih Şeridi (Sonuçlar Modunda - Zümrüt Yeşili Temalı) */}
@@ -104,6 +114,7 @@ export const ResultsTab: React.FC<ResultsTabProps> = ({
         statusFilter="finished"
         onSelectStatusFilter={() => {}}
         counts={{ all: resultsCount, live: 0, finished: resultsCount, upcoming: 0 }}
+        dateMatchCounts={dateMatchCounts}
       />
 
       {/* Flashscore Filtre Barı (Sonuçlar Modunda) */}
