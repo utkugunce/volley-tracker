@@ -310,10 +310,14 @@ def collect_unsynced_matches(
             if cf not in (normalize_name(city_name), normalize_name(city_slug), city_slug.lower()):
                 return
 
-        # İldeki turnuva bazlı normal grupları ve yarı final alt gruplarını önceden tespit et
+        # İldeki turnuva bazlı normal grupları, yarı final ve finalleri önceden tespit et
         city_tourn_groups: Dict[str, set] = {}
         city_tourn_has_semi: Dict[str, bool] = {}
         city_tourn_semi_subgroups: Dict[str, bool] = {}
+        city_tourn_semi_winners: Dict[str, set] = {}
+        city_tourn_semi_losers: Dict[str, set] = {}
+        city_tourn_final_match_ids: Dict[str, List[str]] = {}
+
         for cm in data.get("matches", []):
             cu = resolve_match_tournament_url(cm, city_name, tourn_lookup)
             if cu:
@@ -325,6 +329,22 @@ def collect_unsynced_matches(
                         city_tourn_has_semi[cu] = True
                         if re.search(r"\b[a-z]\s*(?:grubu|grup)\b|\bgrup\s+[a-z]\b|\b[a-z]$", cg, re.I):
                             city_tourn_semi_subgroups[cu] = True
+
+                        # Yarı final maçının galibi ve mağlubunu tespit et
+                        cm_h_sets, cm_a_sets = parse_match_sets(cm)
+                        cm_home = (cm.get("home_team") or "").strip().lower()
+                        cm_away = (cm.get("away_team") or "").strip().lower()
+                        if cm_home and cm_away:
+                            if cm_h_sets > cm_a_sets and (cm_h_sets >= 3 or cm.get("status") == "finished"):
+                                city_tourn_semi_winners.setdefault(cu, set()).add(cm_home)
+                                city_tourn_semi_losers.setdefault(cu, set()).add(cm_away)
+                            elif cm_a_sets > cm_h_sets and (cm_a_sets >= 3 or cm.get("status") == "finished"):
+                                city_tourn_semi_winners.setdefault(cu, set()).add(cm_away)
+                                city_tourn_semi_losers.setdefault(cu, set()).add(cm_home)
+                    elif re.search(r"\bfinal\b", cg, re.I):
+                        mid = str(cm.get("id") or "")
+                        if mid:
+                            city_tourn_final_match_ids.setdefault(cu, []).append(mid)
 
         for m in data.get("matches", []):
             vb = m.get("volleybox") or {}
@@ -349,6 +369,33 @@ def collect_unsynced_matches(
             has_semi = city_tourn_has_semi.get(t_url, False)
             has_semi_subgroups = city_tourn_semi_subgroups.get(t_url, False)
 
+            m_group = (m.get("group") or "").strip()
+            is_semi_match = bool(re.search(r"\b(?:yar[ıi]\s*final|semi[\s\-]final)\b", m_group, re.I))
+            is_final_stage = bool(re.search(r"\bfinal\b", m_group, re.I)) and not is_semi_match
+
+            # 3.lük maçı tespiti:
+            # 1. Açıkça '3.lük', '3-4', 'üçüncülük' yazıyorsa
+            is_3rd = bool(re.search(r"\b(?:3(?:rd|\.?l[üu]k)?\s*(?:place|ma[çc][ıi]|final)?|3\s*[\-\/]\s*4|third\s*place|[üu]?[üu]nc[üu]l[üu]k)\b", m_group, re.I))
+
+            m_home_lower = (m.get("home_team") or "").strip().lower()
+            m_away_lower = (m.get("away_team") or "").strip().lower()
+
+            # 2. Yarı finalde A/B grubu yoksa (tek maçlık eleme usulü) ve final etabındaysa:
+            #    Yarı finalin kazananları final, kaybedenleri 3rd place match!
+            if is_final_stage and not has_semi_subgroups and (has_semi or city_slug == "corum"):
+                semi_win = city_tourn_semi_winners.get(t_url, set())
+                semi_lose = city_tourn_semi_losers.get(t_url, set())
+                if semi_lose and (m_home_lower in semi_lose and m_away_lower in semi_lose):
+                    is_3rd = True
+                elif semi_win and (m_home_lower in semi_win and m_away_lower in semi_win):
+                    is_3rd = False
+                elif not is_3rd and not semi_lose:
+                    # Yarı finaller henüz oynanmamışsa maç sırasına bak (ilk maç 3.lük, ikinci maç final)
+                    fn_ids = city_tourn_final_match_ids.get(t_url, [])
+                    mid = str(m.get("id") or "")
+                    if len(fn_ids) == 2 and mid == fn_ids[0]:
+                        is_3rd = True
+
             item = {
                 "id": m.get("id"),
                 "city": city_name,
@@ -358,6 +405,7 @@ def collect_unsynced_matches(
                 "is_single_group": is_single,
                 "has_semi": has_semi,
                 "has_semi_subgroups": has_semi_subgroups,
+                "is_third_place": is_3rd,
                 "home_team": m.get("home_team", ""),
                 "away_team": m.get("away_team", ""),
                 "home_sets": h_sets,
@@ -554,6 +602,7 @@ def match_option_for_round(
     has_semi: Optional[bool] = None,
     has_semi_subgroups: Optional[bool] = None,
     city_slug: Optional[str] = None,
+    is_third_place: bool = False,
 ) -> Optional[Dict[str, str]]:
     """
     '- Tur seçin -' menüsündeki seçeneklerden maça uygun turu/grubu seçer.
@@ -561,7 +610,9 @@ def match_option_for_round(
     1. Yarı Final A/B/C/D Grubu -> Semi Final - Group A/B/C/D
     2. Yarı finalde A/B grubu yoksa (örn: Çorum, Kahramanmaraş 'Yarı Final Grubu'):
        -> Tek maçlık 'Semi Final' seçilir (asla grup seçeneğine gitmez).
-    3. Final Grubu:
+    3. Final Grubu / Eleme Etabı:
+       - Yarı finalin kaybedenleri -> '3rd place match' (Üçüncülük maçı)
+       - Yarı finalin kazananları -> 'Final' (tek maç grup değil)
        - Yarı finalde A/B grubu yoksa veya Çorum gibi tek maçlık eleme usulüyse:
          -> Tek maçlık 'Final' seçilir.
        - Aksi takdirde (grup aşamasından sonra oynanan Final Grubu, örn: Tekirdağ):
@@ -612,7 +663,54 @@ def match_option_for_round(
 
     g_clean = (group_name or "").lower().strip()
     is_semi = bool(re.search(r"\b(?:yar[ıi]\s*final|semi[\s\-]final)\b", g_clean, re.I))
-    is_final = bool(re.search(r"\bfinal\b", g_clean, re.I)) and not is_semi
+
+    # 3.lük maçı tespiti: parametre veya grup adı üzerinden
+    is_3rd = is_third_place or bool(
+        re.search(
+            r"\b(?:3(?:rd|\.?l[üu]k)?\s*(?:place|ma[çc][ıi]|final)?|3\s*[\-\/]\s*4|third\s*place|[üu]?[üu]nc[üu]l[üu]k)\b",
+            g_clean,
+            re.I,
+        )
+    )
+    is_final = bool(re.search(r"\bfinal\b", g_clean, re.I)) and not is_semi and not is_3rd
+
+    # 0. 3rd Place Match (Üçüncülük Maçı: Yarı finalin kaybedenleri)
+    if is_3rd:
+        # 1. Birebir '3rd place match' / '3rd place'
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if lbl in (
+                "3rd place match",
+                "3rd place",
+                "third place match",
+                "third place",
+                "3rd - 4th place",
+                "3rd-4th place match",
+                "3rd/4th place match",
+                "match for 3rd place",
+                "match for 3rd-4th place",
+                "3rd place final",
+            ):
+                return opt
+        # 2. '3rd' veya 'third' ve 'place' içeren seçenek
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if ("3rd" in lbl or "third" in lbl) and "place" in lbl:
+                return opt
+        # 3. '3rd' veya 'third' veya '3-4' içeren seçenek
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if any(k in lbl for k in ("3rd", "third", "3-4", "3.-4.", "3/4")):
+                return opt
+        # 4. Fallback: Eğer sayfada 3rd place seçeneği açılmamışsa Final veya Final Round'a fallback
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if lbl in ("final", "finals"):
+                return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if "final" in lbl:
+                return opt
 
     # 1. Yarı Final durumları
     if is_semi:
@@ -717,7 +815,15 @@ def match_option_for_round(
                     return opt
             for opt in opts:
                 lbl = str(opt.get("label") or "").strip().lower()
-                if "final" in lbl and "round" not in lbl and "group" not in lbl and "grup" not in lbl:
+                if (
+                    "final" in lbl
+                    and "round" not in lbl
+                    and "group" not in lbl
+                    and "grup" not in lbl
+                    and "semi" not in lbl
+                    and "3rd" not in lbl
+                    and "third" not in lbl
+                ):
                     return opt
             # Geri dönüş: Eğer sadece 'Final Round' varsa
             for opt in opts:
@@ -1110,6 +1216,7 @@ def fill_and_submit_match_on_page(
         has_semi=match_item.get("has_semi"),
         has_semi_subgroups=match_item.get("has_semi_subgroups"),
         city_slug=match_item.get("city_slug"),
+        is_third_place=match_item.get("is_third_place", False),
     )
 
     # Saha sorgulamasını çalıştır (salon adı, ilk kelimeler, şehir ve ev sahibi takıma göre)

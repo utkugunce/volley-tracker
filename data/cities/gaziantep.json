@@ -693,18 +693,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414749",
+        "url": "https://women.volleybox.net/c414749",
+        "host_name": "Adrenalin Rekor Spor Kulübü U18",
+        "guest_name": "Av. Mahmut Düşün MTAL U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "09:30",
+        "vb_hall": "Dumlupınar",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "09:30",
+          "vb_hall": "Dumlupınar",
+          "details": null
         }
       }
     },
@@ -727,18 +734,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414750",
+        "url": "https://women.volleybox.net/c414750",
+        "host_name": "Av. Mahmut Düşün MTAL U18",
+        "guest_name": "Anadolugücü Spor Kulübü U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-08",
+        "vb_time": "12:30",
+        "vb_hall": "Dumlupınar",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "12:30",
+          "vb_hall": "Dumlupınar",
+          "details": null
         }
       }
     },
@@ -761,18 +775,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414751",
+        "url": "https://women.volleybox.net/c414751",
+        "host_name": "Merinos SK U18",
+        "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-08",
+        "vb_time": "12:30",
+        "vb_hall": "Yurt Ss",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "12:30",
+          "vb_hall": "Yurt Ss",
+          "details": null
         }
       }
     },
@@ -1097,6 +1118,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-11-02T15:52:14.622182"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-11-02T17:04:00.666369"
 }

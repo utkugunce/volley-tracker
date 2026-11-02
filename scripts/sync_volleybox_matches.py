@@ -608,6 +608,9 @@ def vb_round_to_tr_group_aliases(r_name: str) -> List[str]:
     # Tek maçlık 'Semi Final' / 'Semi-Final' -> 'Yarı Final Grubu', 'Yarı Final'
     if re.search(r"^semi[\s\-]finals?$", r_name.strip(), re.I):
         res.extend(["yarı final grubu", "yari final grubu", "yarı final", "yari final", "yarı final etabı", "yari final etabi"])
+    # 3rd place match -> 'Final Grubu', 'Final', '3.lük maçı', '3-4 maçı', 'üçüncülük maçı'
+    if any(k in r_name.lower() for k in ("3rd", "third", "3-4", "3.-4.", "3/4")):
+        res.extend(["final grubu", "final etabı", "final etabi", "final", "3.lük maçı", "3-4 maçı", "üçüncülük maçı", "3rd place", "3rd place match"])
     # 'Final Round' -> 'Final Grubu', 'Final Etabı'
     if "final round" in r_name.lower() or "finals round" in r_name.lower():
         res.extend(["final grubu", "final etabı", "final etabi", "final"])
