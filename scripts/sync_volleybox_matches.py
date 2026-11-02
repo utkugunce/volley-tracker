@@ -595,13 +595,25 @@ def vb_round_to_tr_group_aliases(r_name: str) -> List[str]:
     # '1st round' -> 'tek grup', '1. etap', 'normal sezon'
     if "1st round" in r_name.lower() or "first round" in r_name.lower():
         res.extend(["tek grup", "1. etap", "1. tur", "normal sezon", "regular season"])
-    # 'Semi Final - Group A' -> 'Yarı Final - A Grubu'
+    # 'Semi Final - Group A' -> 'Yarı Final - A Grubu', 'Yarı Final A Grubu'
     m_semi = re.search(r"semi\s*final\s*-\s*group\s*([a-z0-9]+)", r_name, re.I)
     if m_semi:
         grp_letter = m_semi.group(1).upper()
         res.append(f"yarı final - {grp_letter} grubu".lower())
         res.append(f"yari final - {grp_letter} grubu".lower())
         res.append(f"yarı final {grp_letter} grubu".lower())
+        res.append(f"yari final {grp_letter} grubu".lower())
+        res.append(f"yarı final {grp_letter}".lower())
+        res.append(f"yari final {grp_letter}".lower())
+    # Tek maçlık 'Semi Final' / 'Semi-Final' -> 'Yarı Final Grubu', 'Yarı Final'
+    if re.search(r"^semi[\s\-]finals?$", r_name.strip(), re.I):
+        res.extend(["yarı final grubu", "yari final grubu", "yarı final", "yari final", "yarı final etabı", "yari final etabi"])
+    # 'Final Round' -> 'Final Grubu', 'Final Etabı'
+    if "final round" in r_name.lower() or "finals round" in r_name.lower():
+        res.extend(["final grubu", "final etabı", "final etabi", "final"])
+    # Tek maçlık 'Final' -> 'Final Grubu', 'Final'
+    if re.search(r"^finals?$", r_name.strip(), re.I):
+        res.extend(["final grubu", "final etabı", "final etabi", "final"])
     m_grp = re.search(r"group\s*([a-z0-9]+)", r_name, re.I)
     if m_grp and not m_semi:
         grp_letter = m_grp.group(1).upper()

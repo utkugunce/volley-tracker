@@ -310,14 +310,21 @@ def collect_unsynced_matches(
             if cf not in (normalize_name(city_name), normalize_name(city_slug), city_slug.lower()):
                 return
 
-        # İldeki turnuva bazlı normal grupları önceden tespit et
+        # İldeki turnuva bazlı normal grupları ve yarı final alt gruplarını önceden tespit et
         city_tourn_groups: Dict[str, set] = {}
+        city_tourn_has_semi: Dict[str, bool] = {}
+        city_tourn_semi_subgroups: Dict[str, bool] = {}
         for cm in data.get("matches", []):
             cu = resolve_match_tournament_url(cm, city_name, tourn_lookup)
             if cu:
                 cg = (cm.get("group") or "").strip()
-                if cg and not re.search(r"\b(?:final|yar[ıi]\s*final)\b", cg, re.I):
-                    city_tourn_groups.setdefault(cu, set()).add(cg.lower())
+                if cg:
+                    if not re.search(r"\b(?:final|yar[ıi]\s*final)\b", cg, re.I):
+                        city_tourn_groups.setdefault(cu, set()).add(cg.lower())
+                    if re.search(r"\byar[ıi]\s*final\b", cg, re.I):
+                        city_tourn_has_semi[cu] = True
+                        if re.search(r"\b[a-z]\s*(?:grubu|grup)\b|\bgrup\s+[a-z]\b|\b[a-z]$", cg, re.I):
+                            city_tourn_semi_subgroups[cu] = True
 
         for m in data.get("matches", []):
             vb = m.get("volleybox") or {}
@@ -339,6 +346,8 @@ def collect_unsynced_matches(
 
             tourn_grps = city_tourn_groups.get(t_url, set())
             is_single = (len(tourn_grps) <= 1) or any("tek" in g for g in tourn_grps)
+            has_semi = city_tourn_has_semi.get(t_url, False)
+            has_semi_subgroups = city_tourn_semi_subgroups.get(t_url, False)
 
             item = {
                 "id": m.get("id"),
@@ -347,6 +356,8 @@ def collect_unsynced_matches(
                 "category": m.get("category", ""),
                 "group": m.get("group", ""),
                 "is_single_group": is_single,
+                "has_semi": has_semi,
+                "has_semi_subgroups": has_semi_subgroups,
                 "home_team": m.get("home_team", ""),
                 "away_team": m.get("away_team", ""),
                 "home_sets": h_sets,
@@ -540,12 +551,23 @@ def match_option_for_round(
     group_name: str,
     options: List[Dict[str, str]],
     is_single_group: bool = False,
+    has_semi: Optional[bool] = None,
+    has_semi_subgroups: Optional[bool] = None,
+    city_slug: Optional[str] = None,
 ) -> Optional[Dict[str, str]]:
     """
     '- Tur seçin -' menüsündeki seçeneklerden maça uygun turu/grubu seçer.
-    Tek gruplu liglerde '1st round' (id: 139) seçilir.
-    Çok gruplu liglerde ise 'Group A', 'Group 1' gibi temiz eşleşmeler seçilir;
-    asla 'CEV - Group ...' seçeneklerine sapmaz.
+    Kullanıcı Kuralları:
+    1. Yarı Final A/B/C/D Grubu -> Semi Final - Group A/B/C/D
+    2. Yarı finalde A/B grubu yoksa (örn: Çorum, Kahramanmaraş 'Yarı Final Grubu'):
+       -> Tek maçlık 'Semi Final' seçilir (asla grup seçeneğine gitmez).
+    3. Final Grubu:
+       - Yarı finalde A/B grubu yoksa veya Çorum gibi tek maçlık eleme usulüyse:
+         -> Tek maçlık 'Final' seçilir.
+       - Aksi takdirde (grup aşamasından sonra oynanan Final Grubu, örn: Tekirdağ):
+         -> 'Final Round' seçilir.
+    4. Tek gruplu liglerde '1st round' (id: 139) seçilir.
+    5. Normal çok gruplu liglerde 'Group A', 'Group 1' seçilir.
     """
     valid_opts = [
         o for o in options
@@ -593,23 +615,57 @@ def match_option_for_round(
 
     # 1. Yarı Final durumları
     if is_semi:
-        m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
-        num_token = (m_num.group(1) or m_num.group(2) or m_num.group(3)).strip() if m_num else None
-        m_letter = re.search(r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b|^(?:grup\s*)?([a-z])$", g_clean, re.I)
-        letter_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).strip().upper() if m_letter else None
+        # Alt grup harfi veya sayısı var mı? (örn: 'Yarı Final A Grubu', 'Yarı Final B Grubu', 'Semi Final - Group A')
+        m_letter = re.search(
+            r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b",
+            g_clean,
+            re.I,
+        )
+        if not m_letter:
+            m_letter = re.search(r"\b(?:yar[ıi]\s*final|semi[\s\-]final)\s*[\-_]?\s*([a-z])\b", g_clean, re.I)
+
+        m_num = re.search(
+            r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b",
+            g_clean,
+            re.I,
+        )
+
+        letter_token = (m_letter.group(1) or m_letter.group(2)).strip().upper() if m_letter else None
+        num_token = (m_num.group(1) or m_num.group(2)).strip() if m_num else None
         target = letter_token or num_token
+
         if target:
+            # Yarı Final A Grubu=Semi Final - Group A, Yarı Final B Grubu=Semi Final - Group B vb.
             for opt in opts:
                 lbl = str(opt.get("label") or "").strip().lower()
-                if lbl in (f"semi final - group {target}".lower(), f"semi-final - group {target}".lower(), f"semi final group {target}".lower()):
+                if lbl in (
+                    f"semi final - group {target}".lower(),
+                    f"semi-final - group {target}".lower(),
+                    f"semi final group {target}".lower(),
+                ):
                     return opt
             for opt in opts:
                 lbl = str(opt.get("label") or "").strip().lower()
                 if "semi" in lbl and f"group {target}".lower() in lbl:
                     return opt
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if f"group {target}".lower() in lbl:
+                    return opt
+
+        # EĞER YARI FİNALDE A GRUBU B GRUBU FALAN YAZMIYORSA:
+        # Çorum'daki gibi tek maçlık 'Semi Final' girilir (asla grup seçeneği seçilmez)
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if lbl in ("semi final", "semi finals", "semi-final"):
+                return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if "semi" in lbl and "final" in lbl and "group" not in lbl and "grup" not in lbl:
+                return opt
+        for opt in opts:
+            lbl = str(opt.get("label") or "").strip().lower()
+            if "semi" in lbl and "group" not in lbl and "grup" not in lbl:
                 return opt
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
@@ -618,24 +674,71 @@ def match_option_for_round(
 
     # 2. Final durumları
     if is_final:
-        m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
-        num_token = (m_num.group(1) or m_num.group(2) or m_num.group(3)).strip() if m_num else None
-        m_letter = re.search(r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b|^(?:grup\s*)?([a-z])$", g_clean, re.I)
-        letter_token = (m_letter.group(1) or m_letter.group(2) or m_letter.group(3)).strip().upper() if m_letter else None
-        target = letter_token or num_token
-        if target:
+        # Final altında alt grup harfi veya numarası var mı? (örn: Final A Grubu)
+        m_letter = re.search(
+            r"\b([a-z])\s*(?:grubu|grb\.?|grup)\b|\bgrup\s+([a-z])\b",
+            g_clean,
+            re.I,
+        )
+        letter_token = (m_letter.group(1) or m_letter.group(2)).strip().upper() if m_letter else None
+        if letter_token:
             for opt in opts:
                 lbl = str(opt.get("label") or "").strip().lower()
-                if lbl in (f"final - group {target}".lower(), f"final group {target}".lower()):
+                if lbl in (f"final - group {letter_token}".lower(), f"final group {letter_token}".lower()):
                     return opt
             for opt in opts:
                 lbl = str(opt.get("label") or "").strip().lower()
-                if "final" in lbl and f"group {target}".lower() in lbl:
+                if "final" in lbl and f"group {letter_token}".lower() in lbl:
                     return opt
-        for opt in opts:
-            lbl = str(opt.get("label") or "").strip().lower()
-            if lbl in ("final round", "final", "finals"):
-                return opt
+
+        # Tek maçlık final mi (Çorum, Kahramanmaraş vb.), yoksa grup usulü Final Grubu mu (Tekirdağ vb.)?
+        # Kural: Yarı finalde A/B grubu yoksa veya Çorum gibi tek maçlıksa -> Tek maçlık 'Final'
+        c_slug = (city_slug or "").strip().lower()
+        is_knockout_final = (
+            c_slug in ("corum", "kahramanmaras")
+            or (has_semi is True and has_semi_subgroups is False)
+            or g_clean in ("final", "finals")
+        )
+
+        # Eğer has_semi bilgisi verilmemişse, seçeneklerde 'Semi Final' olup 'Group' olmaması da tek maç göstergesidir
+        if not is_knockout_final and has_semi is None:
+            opts_labels = [str(o.get("label") or "").lower() for o in opts]
+            has_opt_semi_group = any("semi" in o and "group" in o for o in opts_labels)
+            has_opt_semi_single = any(o in ("semi final", "semi finals", "semi-final") for o in opts_labels)
+            if has_opt_semi_single and not has_opt_semi_group:
+                is_knockout_final = True
+
+        if is_knockout_final:
+            # Çorum'daki final grubu = Final (tek maç grup değil)
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if lbl in ("final", "finals"):
+                    return opt
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if "final" in lbl and "round" not in lbl and "group" not in lbl and "grup" not in lbl:
+                    return opt
+            # Geri dönüş: Eğer sadece 'Final Round' varsa
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if lbl in ("final round", "finals round"):
+                    return opt
+        else:
+            # Grup usulü final: Final Grubu = Final Round
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if lbl in ("final round", "finals round", "final-round"):
+                    return opt
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if "final round" in lbl:
+                    return opt
+            # Geri dönüş: 'Final'
+            for opt in opts:
+                lbl = str(opt.get("label") or "").strip().lower()
+                if lbl in ("final", "finals"):
+                    return opt
+
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
             if "final" in lbl and "group" not in lbl:
@@ -996,6 +1099,9 @@ def fill_and_submit_match_on_page(
         match_item.get("group", ""),
         round_options,
         is_single_group=is_single_group,
+        has_semi=match_item.get("has_semi"),
+        has_semi_subgroups=match_item.get("has_semi_subgroups"),
+        city_slug=match_item.get("city_slug"),
     )
 
     # Saha sorgulamasını çalıştır (salon adı, ilk kelimeler, şehir ve ev sahibi takıma göre)

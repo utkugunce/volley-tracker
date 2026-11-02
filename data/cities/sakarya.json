@@ -291,18 +291,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414624",
+        "url": "https://women.volleybox.net/c414624",
+        "host_name": "Fener Akademi Spor Kulübü U18",
+        "guest_name": "Serdivan Belediyesi Spor Kulübü U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-03",
+        "vb_time": "18:30",
+        "vb_hall": "Lütfü Yaman1",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "18:30",
+          "vb_hall": "Lütfü Yaman1",
+          "details": null
         }
       }
     },
@@ -325,18 +332,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414625",
+        "url": "https://women.volleybox.net/c414625",
+        "host_name": "Serdivan Belediyesi Spor Kulübü U18",
+        "guest_name": "Saraçhane 54 Spor Kulübü U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-05",
+        "vb_time": "20:30",
+        "vb_hall": "Lütfü Yaman1",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "20:30",
+          "vb_hall": "Lütfü Yaman1",
+          "details": null
         }
       }
     },
@@ -667,18 +681,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414626",
+        "url": "https://women.volleybox.net/c414626",
+        "host_name": "Sakarya Gelişim Spor Kulübü U18",
+        "guest_name": "Sakarya Voleybol SK U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-03",
+        "vb_time": "20:30",
+        "vb_hall": "Lütfü Yaman1",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "20:30",
+          "vb_hall": "Lütfü Yaman1",
+          "details": null
         }
       }
     },
@@ -701,22 +722,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414627",
+        "url": "https://women.volleybox.net/c414627",
+        "host_name": "Erenler Anadolu Voleybol Spor Kulübü U18",
+        "guest_name": "Sapanca Ayyıldız Spor Kulübü U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-05",
+        "vb_time": "18:30",
+        "vb_hall": "Lütfü Yaman1",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "18:30",
+          "vb_hall": "Lütfü Yaman1",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 9,
-  "volleybox_sync_updated_at": "2026-11-02T15:52:14.702817"
+  "volleybox_synced_matches": 13,
+  "volleybox_sync_updated_at": "2026-11-02T16:06:31.760625"
 }
