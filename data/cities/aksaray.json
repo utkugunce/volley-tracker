@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T17:15:36.051785+03:00",
+  "updated_at": "2026-11-02T18:57:39.985770+00:00",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -30,24 +30,24 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
-        "played": 2,
-        "won": 2,
+        "team": "Kuzeyboru Maxipipe Spor Kulübü U18",
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kuzeyboru Maxipipe Spor Kulübü U18",
-        "played": 2,
+        "team": "MBA Aksaray Anka Spor Kulübü - B U18",
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -108,12 +108,12 @@
       {
         "rank": 8,
         "team": "Aksaray Eğitim Futbol Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -492,11 +492,15 @@
       "match_no": "9",
       "home_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
       "away_team": "Aksaray Eğitim Futbol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-2",
+        "25-14",
+        "25-7"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -526,11 +530,15 @@
       "match_no": "10",
       "home_team": "MBA Aksaray Anka Spor Kulübü - B U18",
       "away_team": "Kuzeyboru Maxipipe Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "13-25",
+        "16-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -753,5 +761,5 @@
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-11-02T17:16:51.697728"
+  "volleybox_sync_updated_at": "2026-11-02T19:00:10.724534"
 }

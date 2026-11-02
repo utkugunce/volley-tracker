@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T17:15:36.051785+03:00",
+  "updated_at": "2026-11-02T18:57:39.985770+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -1247,17 +1247,18 @@
       {
         "rank": 1,
         "team": "SET Voleybol Kulübü U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 8,
-        "sets_won": 9,
+        "points": 11,
+        "sets_won": 12,
         "sets_lost": 2,
-        "set_ratio": "4.500",
-        "points_won": 260,
-        "points_lost": 176,
-        "point_ratio": "1.477",
+        "set_ratio": "6.000",
+        "points_won": 335,
+        "points_lost": 202,
+        "point_ratio": "1.658",
         "form": [
+          "W",
           "W",
           "W",
           "W"
@@ -1357,17 +1358,18 @@
       {
         "rank": 7,
         "team": "Küçükçekmece Voleybol Kulübü - B U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "set_ratio": "MIN",
-        "points_won": 64,
-        "points_lost": 150,
-        "point_ratio": "0.427",
+        "points_won": 90,
+        "points_lost": 225,
+        "point_ratio": "0.400",
         "form": [
+          "L",
           "L",
           "L"
         ]
@@ -1450,6 +1452,25 @@
     "Genç Kızlar 1. Lig 4. Bölge - C Grubu": [
       {
         "rank": 1,
+        "team": "Küçükçekmece Voleybol Kulübü U18",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 8,
+        "sets_won": 9,
+        "sets_lost": 2,
+        "set_ratio": "4.500",
+        "points_won": 256,
+        "points_lost": 182,
+        "point_ratio": "1.407",
+        "form": [
+          "W",
+          "W",
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Ernilvolley Spor Kulübü U18",
         "played": 2,
         "won": 2,
@@ -1461,24 +1482,6 @@
         "points_won": 168,
         "points_lost": 128,
         "point_ratio": "1.313",
-        "form": [
-          "W",
-          "W"
-        ]
-      },
-      {
-        "rank": 2,
-        "team": "Küçükçekmece Voleybol Kulübü U18",
-        "played": 2,
-        "won": 2,
-        "lost": 0,
-        "points": 5,
-        "sets_won": 6,
-        "sets_lost": 2,
-        "set_ratio": "3.000",
-        "points_won": 181,
-        "points_lost": 138,
-        "point_ratio": "1.312",
         "form": [
           "W",
           "W"
@@ -1505,18 +1508,19 @@
       {
         "rank": 4,
         "team": "Atakent Elit Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 3,
-        "set_ratio": "1.000",
-        "points_won": 122,
-        "points_lost": 118,
-        "point_ratio": "1.034",
+        "sets_lost": 6,
+        "set_ratio": "0.500",
+        "points_won": 166,
+        "points_lost": 193,
+        "point_ratio": "0.860",
         "form": [
           "W",
+          "L",
           "L"
         ]
       },
@@ -8217,11 +8221,15 @@
       "match_no": "7",
       "home_team": "Atakent Elit Spor Kulübü U18",
       "away_team": "Küçükçekmece Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "17-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414691",
@@ -8258,11 +8266,15 @@
       "match_no": "9",
       "home_team": "Küçükçekmece Voleybol Kulübü - B U18",
       "away_team": "SET Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "11-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414693",
@@ -8862,5 +8874,5 @@
     }
   ],
   "volleybox_synced_matches": 145,
-  "volleybox_sync_updated_at": "2026-11-02T17:16:51.845384"
+  "volleybox_sync_updated_at": "2026-11-02T19:00:10.662163"
 }

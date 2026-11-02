@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T17:15:36.051785+03:00",
+  "updated_at": "2026-11-02T18:57:39.985770+00:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -77,16 +77,27 @@
       {
         "rank": 1,
         "team": "Hatay Voleybol Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 2,
+        "team": "Yıldızlar Samandağ Spor Kulübü U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Yükseliş Akademi Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -97,7 +108,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Antakya Güneş Spor Kulübü - B U18",
         "played": 2,
         "won": 1,
@@ -105,17 +116,6 @@
         "points": 2,
         "sets_won": 3,
         "sets_lost": 5,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Yıldızlar Samandağ Spor Kulübü U18",
-        "played": 2,
-        "won": 0,
-        "lost": 2,
-        "points": 1,
-        "sets_won": 2,
-        "sets_lost": 6,
         "form": []
       }
     ],
@@ -325,47 +325,6 @@
       "gender": "Kız",
       "group": "A Grb.",
       "match_no": "3",
-      "home_team": "Samandağ Anka Spor Kulübü U18",
-      "away_team": "Defne Lider Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "401066",
-        "url": "https://women.volleybox.net/tr/samandag-anka-spor-kulubu-u18-defne-lider-akademi-spor-kulubu-u18-c401066",
-        "host_name": "Samandağ Anka Spor Kulübü U18",
-        "guest_name": "Defne Lider Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-05",
-        "vb_time": "18:00",
-        "vb_hall": "TOKİ Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-05",
-          "vb_time": "18:00",
-          "vb_hall": "TOKİ Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "hatay-20261105-004",
-      "city": "Hatay",
-      "date": "2026-11-05",
-      "time": "19:30",
-      "hall": "Toki S.S",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grb.",
-      "match_no": "4",
       "home_team": "Serinyol Yıldızlar Spor Kulübü U18",
       "away_team": "Antakya Güneş Spor Kulübü U18",
       "score": "- : -",
@@ -391,6 +350,47 @@
           "hall_diff": false,
           "vb_date": "2026-11-05",
           "vb_time": "19:30",
+          "vb_hall": "TOKİ Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "hatay-20261105-004",
+      "city": "Hatay",
+      "date": "2026-11-05",
+      "time": "19:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "4",
+      "home_team": "Samandağ Anka Spor Kulübü U18",
+      "away_team": "Defne Lider Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "401066",
+        "url": "https://women.volleybox.net/tr/samandag-anka-spor-kulubu-u18-defne-lider-akademi-spor-kulubu-u18-c401066",
+        "host_name": "Samandağ Anka Spor Kulübü U18",
+        "guest_name": "Defne Lider Akademi Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-05",
+        "vb_time": "18:00",
+        "vb_hall": "TOKİ Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "18:00",
           "vb_hall": "TOKİ Spor Salonu",
           "details": null
         }
@@ -571,47 +571,6 @@
       "gender": "Kız",
       "group": "A Grb.",
       "match_no": "9",
-      "home_team": "Defne Lider Akademi Spor Kulübü U18",
-      "away_team": "Samandağ Anka Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "401072",
-        "url": "https://women.volleybox.net/tr/defne-lider-akademi-spor-kulubu-u18-samandag-anka-spor-kulubu-u18-c401072",
-        "host_name": "Defne Lider Akademi Spor Kulübü U18",
-        "guest_name": "Samandağ Anka Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-24",
-        "vb_time": "18:00",
-        "vb_hall": "TOKİ Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-24",
-          "vb_time": "18:00",
-          "vb_hall": "TOKİ Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "hatay-20261124-010",
-      "city": "Hatay",
-      "date": "2026-11-24",
-      "time": "19:30",
-      "hall": "Toki S.S",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grb.",
-      "match_no": "10",
       "home_team": "Antakya Güneş Spor Kulübü U18",
       "away_team": "Serinyol Yıldızlar Spor Kulübü U18",
       "score": "- : -",
@@ -637,6 +596,47 @@
           "hall_diff": false,
           "vb_date": "2026-11-24",
           "vb_time": "19:30",
+          "vb_hall": "TOKİ Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "hatay-20261124-010",
+      "city": "Hatay",
+      "date": "2026-11-24",
+      "time": "19:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "10",
+      "home_team": "Defne Lider Akademi Spor Kulübü U18",
+      "away_team": "Samandağ Anka Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "401072",
+        "url": "https://women.volleybox.net/tr/defne-lider-akademi-spor-kulubu-u18-samandag-anka-spor-kulubu-u18-c401072",
+        "host_name": "Defne Lider Akademi Spor Kulübü U18",
+        "guest_name": "Samandağ Anka Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-24",
+        "vb_time": "18:00",
+        "vb_hall": "TOKİ Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-24",
+          "vb_time": "18:00",
           "vb_hall": "TOKİ Spor Salonu",
           "details": null
         }
@@ -960,11 +960,15 @@
       "match_no": "6",
       "home_team": "Yıldızlar Samandağ Spor Kulübü U18",
       "away_team": "Hatay Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401081",
@@ -2609,5 +2613,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-02T17:16:51.831138"
+  "volleybox_sync_updated_at": "2026-11-02T19:00:10.770881"
 }

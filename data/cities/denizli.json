@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T17:15:36.051785+03:00",
+  "updated_at": "2026-11-02T18:57:39.985770+00:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -76,6 +76,17 @@
       },
       {
         "rank": 5,
+        "team": "Denizli Merkez Akademi Spor Kulübü U18",
+        "played": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 6,
+        "sets_won": 8,
+        "sets_lost": 8,
+        "form": []
+      },
+      {
+        "rank": 6,
         "team": "Denizli Damlaspor Kulübü U18",
         "played": 3,
         "won": 2,
@@ -86,7 +97,7 @@
         "form": []
       },
       {
-        "rank": 6,
+        "rank": 7,
         "team": "Denizli Büyükşehir Belediyespor U18 - B",
         "played": 3,
         "won": 1,
@@ -94,17 +105,6 @@
         "points": 4,
         "sets_won": 5,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Denizli Merkez Akademi Spor Kulübü U18",
-        "played": 3,
-        "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 5,
-        "sets_lost": 8,
         "form": []
       },
       {
@@ -121,12 +121,12 @@
       {
         "rank": 9,
         "team": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -939,11 +939,15 @@
       "match_no": "16",
       "home_team": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
       "away_team": "Denizli Merkez Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "4-25",
+        "4-25",
+        "6-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2050,5 +2054,5 @@
     }
   ],
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-02T17:16:51.792557"
+  "volleybox_sync_updated_at": "2026-11-02T19:00:10.672823"
 }
