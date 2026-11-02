@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T14:12:38.386903+03:00",
+  "updated_at": "2026-11-02T15:51:03.527992+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -289,126 +289,6 @@
       {
         "rank": 2,
         "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - A Grubu": [
-      {
-        "rank": 1,
-        "team": "Kütahya Belediye Spor Kulübü (B)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kütahya Gençlik Ve Spor İl Müdürlüğü Spor (A)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - B Grubu": [
-      {
-        "rank": 1,
-        "team": "Kütahya Belediye Spor Kulübü (B)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kütahya Gençlik Ve Spor İl Müdürlüğü Spor (A)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Yarı Final A Grubu": [
-      {
-        "rank": 1,
-        "team": "Kütahya Belediye Spor Kulübü (B)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kütahya Gençlik Ve Spor İl Müdürlüğü Spor (A)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Yarı Final B Grubu": [
-      {
-        "rank": 1,
-        "team": "Kütahya Belediye Spor Kulübü (B)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kütahya Gençlik Ve Spor İl Müdürlüğü Spor (A)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Final Grubu": [
-      {
-        "rank": 1,
-        "team": "Kütahya Belediye Spor Kulübü (B)",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Kütahya Gençlik Ve Spor İl Müdürlüğü Spor (A)",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1145,5 +1025,5 @@
     }
   ],
   "volleybox_synced_matches": 12,
-  "volleybox_sync_updated_at": "2026-11-02T14:13:52.334662"
+  "volleybox_sync_updated_at": "2026-11-02T15:52:14.683155"
 }

@@ -444,6 +444,73 @@ export async function POST(request: Request) {
   const action = String(body.action || "start");
   const runner = getRunner();
 
+  if (action === "mark_synced") {
+    const citySlug = String(body.city_slug || "").trim().toLowerCase();
+    const matchId = body.match_id ? String(body.match_id) : null;
+    const tournamentUrl = body.tournament_url ? String(body.tournament_url) : null;
+
+    if (!citySlug) {
+      return NextResponse.json({ error: "İl slug parametresi zorunludur." }, { status: 400 });
+    }
+
+    const dataDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "data");
+    const cityFile = path.join(dataDir, "cities", `${citySlug}.json`);
+    if (!fs.existsSync(cityFile)) {
+      return NextResponse.json({ error: "Şehir veri dosyası bulunamadı." }, { status: 404 });
+    }
+
+    try {
+      const cityData = JSON.parse(fs.readFileSync(cityFile, "utf-8"));
+      let updatedCount = 0;
+      let syncedCount = 0;
+
+      for (const m of cityData.matches || []) {
+        let shouldMark = false;
+        if (matchId && m.id === matchId) {
+          shouldMark = true;
+        } else if (!matchId) {
+          shouldMark = true;
+        }
+
+        if (shouldMark && !m.volleybox?.synced) {
+          m.volleybox = {
+            synced: true,
+            match_id: m.volleybox?.match_id || "",
+            url: tournamentUrl || m.volleybox?.url || "https://women.volleybox.net",
+            host_name: m.home_team || "",
+            guest_name: m.away_team || "",
+            score: m.score || "0-0",
+            has_score: (m.home_score || 0) > 0 || (m.away_score || 0) > 0,
+            vb_date: m.date,
+            vb_time: m.time || "",
+            vb_hall: m.hall || "",
+          };
+          updatedCount++;
+        }
+
+        if (m.volleybox?.synced) {
+          syncedCount++;
+        }
+      }
+
+      cityData.volleybox_synced_matches = syncedCount;
+      cityData.volleybox_sync_updated_at = new Date().toISOString();
+      fs.writeFileSync(cityFile, JSON.stringify(cityData, null, 2), "utf-8");
+
+      return NextResponse.json({
+        ok: true,
+        updatedCount,
+        syncedCount,
+        tournaments: collectMissingMatchesPreview("all"),
+      });
+    } catch (e) {
+      return NextResponse.json(
+        { error: `Dosya güncellenirken hata: ${e instanceof Error ? e.message : String(e)}` },
+        { status: 500 }
+      );
+    }
+  }
+
   if (action === "stop") {
     if (runner.proc) {
       killChildProcess(runner.proc);

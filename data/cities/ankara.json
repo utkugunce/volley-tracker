@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T14:12:38.386903+03:00",
+  "updated_at": "2026-11-02T15:51:03.527992+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -193,7 +193,7 @@
     "Genç Kızlar Süper Lig - 4.Grup": [
       {
         "rank": 1,
-        "team": "PTT Spor II",
+        "team": "PTT Spor U18",
         "played": 4,
         "won": 4,
         "lost": 0,
@@ -272,7 +272,7 @@
       },
       {
         "rank": 3,
-        "team": "PTT Spor II",
+        "team": "PTT Spor U18",
         "played": 1,
         "won": 0,
         "lost": 1,
@@ -520,19 +520,14 @@
       },
       {
         "rank": 3,
-        "team": "Eryaman Gençlik SK",
+        "team": "Eryaman Gelişim SK - B U18",
         "played": 1,
         "won": 0,
         "lost": 1,
         "points": 1,
         "sets_won": 2,
         "sets_lost": 3,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/eryaman-gelisim-sk-b-u18-t41729",
-          "matched_as": "Eryaman Gelişim SK - B U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 4,
@@ -1425,12 +1420,7 @@
         "points": 12,
         "sets_won": 12,
         "sets_lost": 1,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/ptt-spor-u16-t41422",
-          "matched_as": "PTT Spor U16",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 2,
@@ -2930,7 +2920,7 @@
       "gender": "Kız",
       "group": "4.Grup",
       "match_no": "2",
-      "home_team": "PTT Spor II",
+      "home_team": "PTT Spor U18",
       "away_team": "Eryaman Gençlik SK",
       "score": "3 - 0",
       "home_score": 3,
@@ -3021,7 +3011,7 @@
       "group": "4.Grup",
       "match_no": "4",
       "home_team": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
-      "away_team": "PTT Spor II",
+      "away_team": "PTT Spor U18",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -3201,7 +3191,7 @@
       "gender": "Kız",
       "group": "4.Grup",
       "match_no": "8",
-      "home_team": "PTT Spor II",
+      "home_team": "PTT Spor U18",
       "away_team": "İlbank III",
       "score": "3 - 0",
       "home_score": 3,
@@ -3293,7 +3283,7 @@
       "group": "4.Grup",
       "match_no": "10",
       "home_team": "Ahmet Hamdi Tanpınar Ortaokulu SK U18",
-      "away_team": "PTT Spor II",
+      "away_team": "PTT Spor U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -3382,7 +3372,7 @@
       "gender": "Kız",
       "group": "Final Etabı",
       "match_no": "2",
-      "home_team": "PTT Spor II",
+      "home_team": "PTT Spor U18",
       "away_team": "Karayolları Spor Kulübü U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -3633,7 +3623,7 @@
       "group": "Final Etabı",
       "match_no": "8",
       "home_team": "TVF Spor Lisesi",
-      "away_team": "PTT Spor II",
+      "away_team": "PTT Spor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -4177,7 +4167,7 @@
       "gender": "Kız",
       "group": "3. Grup",
       "match_no": "2",
-      "home_team": "Eryaman Gençlik SK",
+      "home_team": "Eryaman Gelişim SK - B U18",
       "away_team": "Hedef Ankara Spor Kulübü U18",
       "score": "2 - 3",
       "home_score": 2,
@@ -4293,7 +4283,7 @@
       "group": "3. Grup",
       "match_no": "5",
       "home_team": "Altındağ Spor Kulübü U18",
-      "away_team": "Eryaman Gençlik SK",
+      "away_team": "Eryaman Gelişim SK - B U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -8088,5 +8078,5 @@
     }
   ],
   "volleybox_synced_matches": 135,
-  "volleybox_sync_updated_at": "2026-11-02T14:45:00.892269"
+  "volleybox_sync_updated_at": "2026-11-02T15:52:14.565449"
 }

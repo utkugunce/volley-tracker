@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T14:12:38.386903+03:00",
+  "updated_at": "2026-11-02T15:51:03.527992+03:00",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
@@ -457,18 +457,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414620",
+        "url": "https://women.volleybox.net/c414620",
+        "host_name": "İskofya Spor Kulübü - B U18",
+        "guest_name": "REVUP Spor Kulübü U18",
+        "score": "- : -",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "14:00",
+        "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "14:00",
+          "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -491,18 +498,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414621",
+        "url": "https://women.volleybox.net/c414621",
+        "host_name": "İskofya Spor Kulübü U18",
+        "guest_name": "Akçaabat Belediyesi SK U18",
+        "score": "- : -",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "16:00",
+        "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "16:00",
+          "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     },
@@ -525,18 +539,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414622",
+        "url": "https://women.volleybox.net/c414622",
+        "host_name": "Akçaabat Belediyesi SK U18",
+        "guest_name": "İskofya Spor Kulübü - B U18",
+        "score": "- : -",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "11:00",
+        "vb_hall": "Akçaabat Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "11:00",
+          "vb_hall": "Akçaabat Spor Salonu",
+          "details": null
         }
       }
     },
@@ -559,22 +580,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "414623",
+        "url": "https://women.volleybox.net/c414623",
+        "host_name": "İskofya Spor Kulübü U18",
+        "guest_name": "REVUP Spor Kulübü U18",
+        "score": "- : -",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "14:00",
+        "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "14:00",
+          "vb_hall": "Mehmet Akif Ersoy Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-11-02T14:13:52.396688"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-11-02T15:52:14.718257"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T14:12:38.386903+03:00",
+  "updated_at": "2026-11-02T15:51:03.527992+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
@@ -32,35 +32,25 @@
     "Genç Kızlar Süper Lig - Gruplar": [
       {
         "rank": 1,
-        "team": "Denizli Büyükşehir Belediye S.K.",
+        "team": "Denizli Büyükşehir Belediyespor U18 - A",
         "played": 3,
         "won": 3,
         "lost": 0,
         "points": 9,
         "sets_won": 9,
         "sets_lost": 0,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/denizli-buyuksehir-belediyespor-u18-t42634",
-          "matched_as": "Denizli Büyükşehir Belediyespor U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 2,
-        "team": "Anadolu Pars Spor Kulübü",
+        "team": "Denizli Anadolu Pars GSK U18",
         "played": 4,
         "won": 3,
         "lost": 1,
         "points": 9,
         "sets_won": 9,
         "sets_lost": 3,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/denizli-anadolu-pars-gsk-u18-t42636",
-          "matched_as": "Denizli Anadolu Pars GSK U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 3,
@@ -71,92 +61,62 @@
         "points": 9,
         "sets_won": 11,
         "sets_lost": 8,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/honaz-adil-akan-ortaokulu-sk-u18-t42638",
-          "matched_as": "Honaz Adil Akan Ortaokulu SK U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 4,
-        "team": "Tutku Spor Kulübü",
+        "team": "Denizli Tutku GSK U18",
         "played": 3,
         "won": 2,
         "lost": 1,
         "points": 6,
         "sets_won": 6,
         "sets_lost": 3,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/denizli-tutku-gsk-u18-t42635",
-          "matched_as": "Denizli Tutku GSK U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 5,
-        "team": "Damla Spor Kulübü",
+        "team": "Denizli Damlaspor Kulübü U18",
         "played": 3,
         "won": 2,
         "lost": 1,
         "points": 5,
         "sets_won": 6,
         "sets_lost": 6,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/denizli-damlaspor-kulubu-u18-t43518",
-          "matched_as": "Denizli Damlaspor Kulübü U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 6,
-        "team": "Yeşil Çivril Belediye Spor Kulübü",
+        "team": "Denizli Büyükşehir Belediyespor U18 - B",
         "played": 3,
         "won": 1,
         "lost": 2,
         "points": 4,
         "sets_won": 5,
         "sets_lost": 6,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/yesil-civril-belediyespor-u18-t42641",
-          "matched_as": "Yeşil Çivril Belediyespor U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 7,
-        "team": "Merkez Akademi Spor Kulübü",
+        "team": "Denizli Merkez Akademi Spor Kulübü U18",
         "played": 3,
         "won": 1,
         "lost": 2,
         "points": 3,
         "sets_won": 5,
         "sets_lost": 8,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/denizli-merkez-akademi-spor-kulubu-u18-t55358",
-          "matched_as": "Denizli Merkez Akademi Spor Kulübü U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 8,
-        "team": "Hierapolis Spor Kulübü",
+        "team": "Hierapolis Spor Kulübü U18",
         "played": 4,
         "won": 0,
         "lost": 4,
         "points": 0,
         "sets_won": 1,
         "sets_lost": 12,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/hierapolis-spor-kulubu-t42195",
-          "matched_as": "Hierapolis Spor Kulübü U18",
-          "confidence": "verified"
-        }
+        "form": []
       },
       {
         "rank": 9,
@@ -167,12 +127,7 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 6,
-        "form": [],
-        "volleybox": {
-          "url": "https://women.volleybox.net/denizli-aile-ve-sosyal-hizmetler-spor-kulubu-u18-t55357",
-          "matched_as": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
-          "confidence": "verified"
-        }
+        "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - Gruplar": [
@@ -300,8 +255,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "1",
-      "home_team": "Denizli Büyükşehir Belediye S.K.",
-      "away_team": "Anadolu Pars Spor Kulübü",
+      "home_team": "Denizli Büyükşehir Belediyespor U18",
+      "away_team": "Denizli Anadolu Pars GSK U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -346,7 +301,7 @@
       "group": "Gruplar",
       "match_no": "2",
       "home_team": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
-      "away_team": "Denizli Büyükşehir Belediye S.K.",
+      "away_team": "Denizli Büyükşehir Belediyespor U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -390,8 +345,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "3",
-      "home_team": "Anadolu Pars Spor Kulübü",
-      "away_team": "Hierapolis Spor Kulübü",
+      "home_team": "Denizli Anadolu Pars GSK U18",
+      "away_team": "Hierapolis Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -435,8 +390,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "4",
-      "home_team": "Hierapolis Spor Kulübü",
-      "away_team": "Damla Spor Kulübü",
+      "home_team": "Hierapolis Spor Kulübü U18",
+      "away_team": "Denizli Damlaspor Kulübü U18",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -481,8 +436,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "5",
-      "home_team": "Merkez Akademi Spor Kulübü",
-      "away_team": "Tutku Spor Kulübü",
+      "home_team": "Denizli Merkez Akademi Spor Kulübü U18",
+      "away_team": "Denizli Tutku GSK U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -526,8 +481,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "6",
-      "home_team": "Hierapolis Spor Kulübü",
-      "away_team": "Yeşil Çivril Belediye Spor Kulübü",
+      "home_team": "Hierapolis Spor Kulübü U18",
+      "away_team": "Denizli Büyükşehir Belediyespor U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -572,7 +527,7 @@
       "group": "Gruplar",
       "match_no": "7",
       "home_team": "Honaz Adil Akan Ortaokulu SK U18",
-      "away_team": "Anadolu Pars Spor Kulübü",
+      "away_team": "Denizli Anadolu Pars GSK U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -616,8 +571,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "8",
-      "home_team": "Damla Spor Kulübü",
-      "away_team": "Denizli Büyükşehir Belediye S.K.",
+      "home_team": "Denizli Damlaspor Kulübü U18",
+      "away_team": "Denizli Büyükşehir Belediyespor U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -661,7 +616,7 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "9",
-      "home_team": "Yeşil Çivril Belediye Spor Kulübü",
+      "home_team": "Denizli Büyükşehir Belediyespor U18",
       "away_team": "Honaz Adil Akan Ortaokulu SK U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -706,8 +661,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "10",
-      "home_team": "Merkez Akademi Spor Kulübü",
-      "away_team": "Yeşil Çivril Belediye Spor Kulübü",
+      "home_team": "Denizli Merkez Akademi Spor Kulübü U18",
+      "away_team": "Denizli Büyükşehir Belediyespor U18",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -753,8 +708,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "11",
-      "home_team": "Anadolu Pars Spor Kulübü",
-      "away_team": "Tutku Spor Kulübü",
+      "home_team": "Denizli Anadolu Pars GSK U18",
+      "away_team": "Denizli Tutku GSK U18",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -799,7 +754,7 @@
       "group": "Gruplar",
       "match_no": "12",
       "home_team": "Honaz Adil Akan Ortaokulu SK U18",
-      "away_team": "Merkez Akademi Spor Kulübü",
+      "away_team": "Denizli Merkez Akademi Spor Kulübü U18",
       "score": "3 - 2",
       "home_score": 3,
       "away_score": 2,
@@ -845,7 +800,7 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "13",
-      "home_team": "Damla Spor Kulübü",
+      "home_team": "Denizli Damlaspor Kulübü U18",
       "away_team": "Honaz Adil Akan Ortaokulu SK U18",
       "score": "3 - 2",
       "home_score": 3,
@@ -892,8 +847,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "14",
-      "home_team": "Hierapolis Spor Kulübü",
-      "away_team": "Tutku Spor Kulübü",
+      "home_team": "Hierapolis Spor Kulübü U18",
+      "away_team": "Denizli Tutku GSK U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -983,7 +938,7 @@
       "group": "Gruplar",
       "match_no": "16",
       "home_team": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
-      "away_team": "Merkez Akademi Spor Kulübü",
+      "away_team": "Denizli Merkez Akademi Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1016,8 +971,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "17",
-      "home_team": "Anadolu Pars Spor Kulübü",
-      "away_team": "Yeşil Çivril Belediye Spor Kulübü",
+      "home_team": "Denizli Anadolu Pars GSK U18",
+      "away_team": "Denizli Büyükşehir Belediyespor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1050,7 +1005,7 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "18",
-      "home_team": "Tutku Spor Kulübü",
+      "home_team": "Denizli Tutku GSK U18",
       "away_team": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -1084,8 +1039,8 @@
       "gender": "Kız",
       "group": "Gruplar",
       "match_no": "19",
-      "home_team": "Denizli Büyükşehir Belediye S.K.",
-      "away_team": "Merkez Akademi Spor Kulübü",
+      "home_team": "Denizli Büyükşehir Belediyespor U18",
+      "away_team": "Denizli Merkez Akademi Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -2095,5 +2050,5 @@
     }
   ],
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-02T14:44:51.488399"
+  "volleybox_sync_updated_at": "2026-11-02T15:52:14.608239"
 }

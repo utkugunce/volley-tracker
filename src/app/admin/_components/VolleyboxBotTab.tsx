@@ -91,6 +91,8 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
     return () => clearInterval(timer);
   }, [botStatus?.status, fetchStatus]);
 
+
+
   // Yeni log geldiğinde terminal kutusunu otomatik en alta kaydır
   useEffect(() => {
     if (logContainerRef.current) {
@@ -156,6 +158,41 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
         setBotStatus((prev) => ({ ...(prev || {}), ...data.state }));
       }
       fetchPreview();
+    } catch (err) {
+      setErrorMsg(toErrorLike(err).message || "İşlem başarısız");
+    } finally {
+      setActionLoading(false);
+    }
+  };
+
+  const handleMarkSynced = async (citySlug: string, tournamentUrl?: string, matchId?: string) => {
+    if (!token || actionLoading) return;
+    setActionLoading(true);
+    setErrorMsg(null);
+    try {
+      const res = await fetch("/api/admin/volleybox-bot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          action: "mark_synced",
+          city_slug: citySlug,
+          tournament_url: tournamentUrl,
+          match_id: matchId,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "İşlem başarısız.");
+      }
+      if (data.tournaments) {
+        setTournaments(data.tournaments);
+        setTotalMissing(data.tournaments.reduce((acc: number, t: TournamentMissingSummary) => acc + t.missing_count, 0));
+      } else {
+        fetchPreview();
+      }
     } catch (err) {
       setErrorMsg(toErrorLike(err).message || "İşlem başarısız");
     } finally {
@@ -574,16 +611,29 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                     </a>
                   </div>
 
-                  <button
-                    type="button"
-                    disabled={isRunning || actionLoading || isLocalBlocked}
-                    onClick={() => triggerBotAction("push", t.city_slug)}
-                    className="px-3 py-1.5 rounded-lg bg-done hover:bg-done/90 text-done-fg text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer"
-                    title={isLocalBlocked ? "Bot sadece yerel ortamda (localhost) çalışır" : undefined}
-                  >
-                    <Play size={12} />
-                    Sadece {t.city} Maçlarını Ekle ({t.missing_count})
-                  </button>
+                  <div className="flex items-center gap-1.5">
+                    <button
+                      type="button"
+                      disabled={actionLoading || isRunning}
+                      onClick={() => handleMarkSynced(t.city_slug, t.tournament_url)}
+                      className="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer border border-slate-700"
+                      title="Bu turnuvanın maçlarını Volleybox'a eklenmiş olarak işaretler ve kuyruktan çıkarır"
+                    >
+                      <CheckCircle2 size={12} className="text-emerald-400" />
+                      Tümünü Eklendi Say
+                    </button>
+
+                    <button
+                      type="button"
+                      disabled={isRunning || actionLoading || isLocalBlocked}
+                      onClick={() => triggerBotAction("push", t.city_slug)}
+                      className="px-3 py-1.5 rounded-lg bg-done hover:bg-done/90 text-done-fg text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer"
+                      title={isLocalBlocked ? "Bot sadece yerel ortamda (localhost) çalışır" : undefined}
+                    >
+                      <Play size={12} />
+                      Sadece {t.city} Maçlarını Ekle ({t.missing_count})
+                    </button>
+                  </div>
                 </div>
 
                 <div className="overflow-x-auto">
@@ -595,7 +645,8 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                         <th className="py-2 px-2 text-center">Set</th>
                         <th className="py-2 px-3">Deplasman</th>
                         <th className="py-2 px-3">Tur / Grup</th>
-                        <th className="py-2 pl-3">Saha</th>
+                        <th className="py-2 px-3">Saha</th>
+                        <th className="py-2 pl-3 text-right">İşlem</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/60">
@@ -623,7 +674,18 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                           </td>
                           <td className="py-2 px-3 font-semibold text-white">{m.away_team}</td>
                           <td className="py-2 px-3 text-slate-300">{m.group}</td>
-                          <td className="py-2 pl-3 text-slate-400">{m.hall}</td>
+                          <td className="py-2 px-3 text-slate-400">{m.hall}</td>
+                          <td className="py-2 pl-3 text-right">
+                            <button
+                              type="button"
+                              disabled={actionLoading || isRunning}
+                              onClick={() => handleMarkSynced(t.city_slug, t.tournament_url, m.id)}
+                              className="px-2 py-0.5 rounded bg-slate-800 hover:bg-emerald-950/60 hover:text-emerald-300 text-slate-400 border border-slate-700 hover:border-emerald-500/40 text-[11px] font-medium transition-colors cursor-pointer"
+                              title="Bu maçı eklendi olarak işaretleyip kuyruktan çıkar"
+                            >
+                              ✓ Eklendi Say
+                            </button>
+                          </td>
                         </tr>
                       ))}
                     </tbody>

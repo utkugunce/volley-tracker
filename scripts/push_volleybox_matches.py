@@ -1351,6 +1351,78 @@ def fill_and_submit_match_on_page(
     return True, summary
 
 
+def mark_match_as_synced_locally(city_slug: str, match_item: Dict[str, Any], vb_info: Dict[str, Any]):
+    """
+    Volleybox'a yeni eklenen veya sayfada zaten mevcut olduğu tespit edilen maçı
+    data/cities/{city_slug}.json dosyasına anında 'synced: True' olarak işler.
+    Böylece kuyruktan anında düşer ve Cloudflare 403 engellerinden etkilenmez.
+    """
+    city_file = CITIES_DIR / f"{city_slug}.json"
+    if not city_file.exists():
+        return
+
+    try:
+        with open(city_file, "r", encoding="utf-8") as f:
+            city_data = json.load(f)
+
+        raw = match_item.get("raw_match") or {}
+        m_id = raw.get("id") or match_item.get("id")
+        m_date = raw.get("date") or match_item.get("date")
+        home = raw.get("home_team") or match_item.get("home_team")
+        away = raw.get("away_team") or match_item.get("away_team")
+
+        updated = False
+        synced_count = 0
+        for m in city_data.get("matches", []):
+            is_target = False
+            if m_id and m.get("id") == m_id:
+                is_target = True
+            elif (
+                m.get("date") == m_date
+                and m.get("home_team") == home
+                and m.get("away_team") == away
+            ):
+                is_target = True
+
+            if is_target:
+                m_vid = str(vb_info.get("match_id") or "")
+                m_url = vb_info.get("url") or (f"https://women.volleybox.net/c{m_vid}" if m_vid else "")
+                m["volleybox"] = {
+                    "synced": True,
+                    "match_id": m_vid,
+                    "url": m_url,
+                    "host_name": vb_info.get("host_name") or home,
+                    "guest_name": vb_info.get("guest_name") or away,
+                    "score": vb_info.get("score") or f"{match_item.get('home_sets', 0)} - {match_item.get('away_sets', 0)}",
+                    "has_score": bool(vb_info.get("has_score", match_item.get("home_sets", 0) > 0 or match_item.get("away_sets", 0) > 0)),
+                    "vb_date": m_date,
+                    "vb_time": raw.get("time") or match_item.get("time") or "",
+                    "vb_hall": raw.get("hall") or match_item.get("hall") or "",
+                    "discrepancy": {
+                        "has_diff": False,
+                        "date_diff": False,
+                        "time_diff": False,
+                        "hall_diff": False,
+                        "vb_date": m_date,
+                        "vb_time": raw.get("time") or match_item.get("time") or "",
+                        "vb_hall": raw.get("hall") or match_item.get("hall") or "",
+                        "details": None,
+                    }
+                }
+                updated = True
+
+            if m.get("volleybox", {}).get("synced"):
+                synced_count += 1
+
+        if updated:
+            city_data["volleybox_synced_matches"] = synced_count
+            with open(city_file, "w", encoding="utf-8") as f:
+                json.dump(city_data, f, ensure_ascii=False, indent=2)
+            log_step(f"   💾 {city_file.name} güncellendi: Maç anında 'synced: True' olarak kaydedildi.")
+    except Exception as e:
+        log_step(f"   ⚠️ Yerel dosya güncellenirken hata: {e}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sitedeki eksik maçları Volleybox'a otomatik ekleyen Playwright botu")
     parser.add_argument("--city", default=None, help="Sadece belirli bir ili/ligi işle (örn: zonguldak, afyon, kocaeli, istanbul)")
@@ -1542,6 +1614,14 @@ def main():
                 already_on_vb = match_tvf_with_vb(m_item["raw_match"], live_vb_matches, team_alias_map, used_vb_ids)
                 if already_on_vb:
                     log_step(f"   ⏭️ Zaten Volleybox'ta mevcut, atlanıyor: {m_item['home_team']} vs {m_item['away_team']} ({already_on_vb['url']})")
+                    mark_match_as_synced_locally(m_item["city_slug"], m_item, {
+                        "match_id": already_on_vb.get("id"),
+                        "url": already_on_vb.get("url"),
+                        "host_name": already_on_vb.get("host_name"),
+                        "guest_name": already_on_vb.get("guest_name"),
+                        "score": already_on_vb.get("score"),
+                        "has_score": already_on_vb.get("has_score"),
+                    })
                     touched_cities.add(m_item["city_slug"])
                     continue
 
@@ -1556,6 +1636,19 @@ def main():
                     added_total += 1
                     touched_cities.add(m_item["city_slug"])
                     log_step(f"   ✅ [{added_total}/{args.limit}] Eklendi: {msg}")
+
+                    # Maç eklendiği an yerel JSON dosyasına yaz ki kuyruktan anında düşsün
+                    m_id_match = re.search(r"\[VB ID:\s*(\d+)\]", msg)
+                    new_vb_id = m_id_match.group(1) if m_id_match else ""
+                    mark_match_as_synced_locally(m_item["city_slug"], m_item, {
+                        "match_id": new_vb_id,
+                        "url": f"https://women.volleybox.net/c{new_vb_id}" if new_vb_id else "",
+                        "host_name": m_item.get("home_team"),
+                        "guest_name": m_item.get("away_team"),
+                        "score": f"{m_item.get('home_sets', 0)} - {m_item.get('away_sets', 0)}",
+                        "has_score": m_item.get("home_sets", 0) > 0 or m_item.get("away_sets", 0) > 0,
+                    })
+
                     wait_sec = args.delay + random.uniform(0.5, 3.0)
                     log_step(f"   ⏳ Hız sınırı koruması: {wait_sec:.1f} sn bekleniyor...")
                     time.sleep(wait_sec)
