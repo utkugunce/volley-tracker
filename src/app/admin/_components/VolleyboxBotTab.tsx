@@ -21,7 +21,7 @@ interface BotStatusResponse extends VolleyboxBotJobState {
 
 export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
   const [selectedCity, setSelectedCity] = useState<string>("all");
-  const [limit, setLimit] = useState<number>(10);
+  const [limit, setLimit] = useState<number>(25);
   const [delay, setDelay] = useState<number>(8);
   const [headless, setHeadless] = useState<boolean>(false);
 
