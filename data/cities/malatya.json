@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T00:13:25.503931+03:00",
+  "updated_at": "2026-11-02T10:07:39.438247+03:00",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -96,23 +96,23 @@
       {
         "rank": 7,
         "team": "Gençlik Spor Kulübü B",
-        "played": 5,
-        "won": 1,
+        "played": 6,
+        "won": 2,
         "lost": 4,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 7,
         "sets_lost": 12,
         "form": []
       },
       {
         "rank": 8,
         "team": "Maldia Spor Kulübü A",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       },
       {
@@ -868,11 +868,15 @@
       "match_no": "20",
       "home_team": "Maldia Spor Kulübü A",
       "away_team": "Gençlik Spor Kulübü B",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "19-25",
+        "26-28"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2183,5 +2187,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-28T00:20:45.617346"
+  "volleybox_sync_updated_at": "2026-11-02T10:08:45.962220"
 }

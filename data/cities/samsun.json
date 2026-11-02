@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:54:54.604830+00:00",
+  "updated_at": "2026-11-02T10:07:39.438247+03:00",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -91,11 +91,11 @@
       {
         "rank": 6,
         "team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
-        "played": 3,
-        "won": 0,
+        "played": 4,
+        "won": 1,
         "lost": 3,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 9,
         "form": []
       },
@@ -124,12 +124,12 @@
       {
         "rank": 9,
         "team": "Bafra Vera Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -780,11 +780,15 @@
       "match_no": "13",
       "home_team": "Samsun Büyükşehir Belediyesi Spor Kulübü U18",
       "away_team": "Bafra Vera Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-14",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402789",
@@ -2931,5 +2935,5 @@
     }
   ],
   "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-10-31T14:57:31.668469"
+  "volleybox_sync_updated_at": "2026-11-02T10:08:46.009886"
 }

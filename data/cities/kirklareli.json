@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:54:54.604830+00:00",
+  "updated_at": "2026-11-02T10:07:39.438247+03:00",
   "city": "Kırklareli",
   "slug": "kirklareli",
   "title": "TVF Kırklareli Genç & Yıldız Kızlar Süper Lig",
@@ -33,7 +33,7 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Akım Koleji Spor Kulübü",
+        "team": "Akademi Spor Kulübü A",
         "played": 1,
         "won": 1,
         "lost": 0,
@@ -44,6 +44,17 @@
       },
       {
         "rank": 2,
+        "team": "Akım Koleji Spor Kulübü",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Akademi Spor Kulübü D",
         "played": 1,
         "won": 0,
@@ -54,25 +65,14 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Akademi Spor Kulübü A",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
         "team": "Akademi Spor Kulübü B",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -263,11 +263,15 @@
       "match_no": "2",
       "home_team": "Akademi Spor Kulübü B",
       "away_team": "Akademi Spor Kulübü A",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "9-25",
+        "16-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2224,5 +2228,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-10-31T14:57:31.646605"
+  "volleybox_sync_updated_at": "2026-11-02T10:08:45.902424"
 }

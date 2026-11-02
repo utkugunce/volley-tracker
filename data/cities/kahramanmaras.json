@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T14:54:54.604830+00:00",
+  "updated_at": "2026-11-02T10:07:39.438247+03:00",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
@@ -168,45 +168,45 @@
       {
         "rank": 1,
         "team": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Elbistan Altınışık Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 3,
         "team": "Gazi Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
         "team": "Vesta Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -977,11 +977,16 @@
       "match_no": "1",
       "home_team": "Gazi Spor Kulübü U18",
       "away_team": "Elbistan Altınışık Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "22-25",
+        "28-26",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1011,11 +1016,16 @@
       "match_no": "2",
       "home_team": "Vesta Spor Kulübü U18",
       "away_team": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "25-23",
+        "23-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1034,5 +1044,5 @@
     }
   ],
   "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-10-31T14:57:31.675917"
+  "volleybox_sync_updated_at": "2026-11-02T10:08:45.882739"
 }

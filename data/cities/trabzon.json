@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-01T15:32:58.052751+00:00",
+  "updated_at": "2026-11-02T10:07:39.438247+03:00",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 8,
+  "total_matches": 12,
   "source": "https://trabzon.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -437,8 +437,144 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "trabzon-20261107-009",
+      "city": "Trabzon",
+      "date": "2026-11-07",
+      "time": "14:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "9",
+      "home_team": "İskofya Spor Kulübü - B U18",
+      "away_team": "REVUP Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261107-010",
+      "city": "Trabzon",
+      "date": "2026-11-07",
+      "time": "16:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "10",
+      "home_team": "İskofya Spor Kulübü U18",
+      "away_team": "Akçaabat Belediyesi SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261114-011",
+      "city": "Trabzon",
+      "date": "2026-11-14",
+      "time": "11:00",
+      "hall": "Akçaabat",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "11",
+      "home_team": "Akçaabat Belediyesi SK U18",
+      "away_team": "İskofya Spor Kulübü - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "trabzon-20261114-012",
+      "city": "Trabzon",
+      "date": "2026-11-14",
+      "time": "14:00",
+      "hall": "M.Akif Ersoy",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "12",
+      "home_team": "İskofya Spor Kulübü U18",
+      "away_team": "REVUP Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 8,
-  "volleybox_sync_updated_at": "2026-11-01T15:35:39.001018"
+  "volleybox_sync_updated_at": "2026-11-02T10:08:46.035421"
 }
