@@ -905,7 +905,11 @@
       "verified_at": "2026-09-14",
       "local_logo": "/logos/ptt-spor-u16-t41422.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1758024056oAlW0.png",
-      "aliases": []
+      "aliases": [
+        "PTT Spor II",
+        "PTT Spor 2",
+        "PTT Spor U16"
+      ]
     },
     {
       "internal_name": "Aydın B.Ş.B.",
@@ -6190,7 +6194,9 @@
         "Volkan Güç - B",
         "Volkan Güç B",
         "Volkan Güç Spor Kulübü - B",
-        "Volkan Güç Spor Kulübü - B U18"
+        "Volkan Güç Spor Kulübü - B U18",
+        "Volkan Güç B U18",
+        "Volkan Güç Spor Kulübü U18"
       ],
       "synonyms": [
         "Volkan Güç Spor Kulübü - B U18",
@@ -6215,7 +6221,9 @@
         "Volkan Güç",
         "VOLKAN GÜÇ",
         "Volkan Güç B",
-        "Volkan Güç Spor Kulübü - B"
+        "Volkan Güç Spor Kulübü - B",
+        "Volkan Güç B U18",
+        "Volkan Güç Spor Kulübü U18"
       ],
       "synonyms": [
         "Volkan Güç Spor Kulübü - B U18",
@@ -19838,7 +19846,9 @@
       "confidence": "verified",
       "aliases": [
         "Denizli Aile Ve Sosyal Hizmetler Spor Kulübü",
-        "Aile Ve Sosyal Hizmetler"
+        "Aile Ve Sosyal Hizmetler",
+        "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
+        "Denizli Aile ve Sosyal Hizmetler"
       ],
       "verified_at": "2026-10-22"
     },
@@ -19853,7 +19863,9 @@
       "confidence": "verified",
       "aliases": [
         "Honaz Adil Akan Spor Kulübü",
-        "Honaz Adil Akan"
+        "Honaz Adil Akan",
+        "Honaz Adil Akan Ortaokulu SK U18",
+        "Honaz Adil Akan Ortaokulu"
       ],
       "verified_at": "2026-10-22"
     },
@@ -22565,6 +22577,199 @@
         "Zonguldak GSİM - B U16"
       ],
       "verified_at": "2026-10-27"
+    },
+    {
+      "internal_name": "Denizli Büyükşehir Belediye S.K.",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Denizli Büyükşehir Belediyespor U18",
+      "volleybox_url": "https://women.volleybox.net/denizli-buyuksehir-belediyespor-u18-t42634",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Denizli U18 Genç Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Denizli B.Şehir Bld.",
+        "Denizli Büyükşehir Belediyespor",
+        "Denizli BBSK",
+        "Denizli Büyükşehir Belediyespor U18"
+      ]
+    },
+    {
+      "internal_name": "Anadolu Pars Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Denizli Anadolu Pars GSK U18",
+      "volleybox_url": "https://women.volleybox.net/denizli-anadolu-pars-gsk-u18-t42636",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Denizli U18 Genç Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Anadolu Pars GSK",
+        "Denizli Anadolu Pars",
+        "Anadolu Pars",
+        "Denizli Anadolu Pars GSK U18"
+      ]
+    },
+    {
+      "internal_name": "Damla Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Denizli Damlaspor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/denizli-damlaspor-kulubu-u18-t43518",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Denizli U18 Genç Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Damlaspor",
+        "Denizli Damlaspor",
+        "Damla SK",
+        "Denizli Damlaspor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Hierapolis Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Hierapolis Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/hierapolis-spor-kulubu-t42195",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Denizli U18 Genç Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Hierapolis SK",
+        "Hierapolis",
+        "Hierapolis Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Merkez Akademi Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Denizli Merkez Akademi Spor Kulübü U18",
+      "volleybox_url": "https://women.volleybox.net/denizli-merkez-akademi-spor-kulubu-u18-t55358",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Denizli U18 Genç Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Merkez Akademi SK",
+        "Denizli Merkez Akademi",
+        "Merkez Akademi",
+        "Denizli Merkez Akademi Spor Kulübü U18"
+      ]
+    },
+    {
+      "internal_name": "Tutku Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Denizli Tutku GSK U18",
+      "volleybox_url": "https://women.volleybox.net/denizli-tutku-gsk-u18-t42635",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Denizli U18 Genç Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Tutku GSK",
+        "Denizli Tutku",
+        "Tutku SK",
+        "Denizli Tutku GSK U18"
+      ]
+    },
+    {
+      "internal_name": "Yeşil Çivril Belediye Spor Kulübü",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Yeşil Çivril Belediyespor U18",
+      "volleybox_url": "https://women.volleybox.net/yesil-civril-belediyespor-u18-t42641",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Denizli U18 Genç Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Yeşil Çivril Bld.",
+        "Yeşil Çivril Belediyespor",
+        "Çivril Bld.",
+        "Çivril Belediyespor",
+        "Yeşil Çivril Belediyespor U18"
+      ]
+    },
+    {
+      "internal_name": "PTT Spor U16",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "PTT Spor U16",
+      "volleybox_url": "https://women.volleybox.net/ptt-spor-u16-t41422",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Ankara U16 Yıldız Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "PTT Spor II",
+        "PTT Spor 2",
+        "PTT II",
+        "PTT 2",
+        "PTT Spor - II",
+        "PTT U16",
+        "PTT"
+      ]
+    },
+    {
+      "internal_name": "PTT Spor II",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "PTT Spor U16",
+      "volleybox_url": "https://women.volleybox.net/ptt-spor-u16-t41422",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Ankara U16 Yıldız Kızlar Süper Lig",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "PTT Spor U16",
+        "PTT Spor 2"
+      ]
+    },
+    {
+      "internal_name": "Volkan Güç B U18",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Volkan Güç Spor Kulübü - B U18",
+      "volleybox_url": "https://women.volleybox.net/volkan-guc-spor-kulubu-u18-t53592",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "İzmir Genç Kızlar 1. Ligi",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Volkan Güç B",
+        "Volkan Güç - B",
+        "Volkan Güç Spor Kulübü U18",
+        "Volkan Güç Spor Kulübü - B",
+        "Volkan Güç Spor Kulübü - B U18",
+        "Volkan Güç"
+      ]
     }
   ],
   "leagues": [

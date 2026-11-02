@@ -444,14 +444,19 @@
       },
       {
         "rank": 3,
-        "team": "Volkan Güç Spor Kulübü U18",
+        "team": "Volkan Güç B U18",
         "played": 3,
         "won": 2,
         "lost": 1,
         "points": 5,
         "sets_won": 7,
         "sets_lost": 5,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/volkan-guc-spor-kulubu-u18-t53592",
+          "matched_as": "Volkan Güç Spor Kulübü - B U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 4,
@@ -3765,7 +3770,7 @@
       "group": "A Grubu",
       "match_no": "1",
       "home_team": "Arkas Spor Kulübü U18",
-      "away_team": "Volkan Güç Spor Kulübü U18",
+      "away_team": "Volkan Güç B U18",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -4084,7 +4089,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "8",
-      "home_team": "Volkan Güç Spor Kulübü U18",
+      "home_team": "Volkan Güç B U18",
       "away_team": "Uzay 35 Voleybol Kulübü - B U18",
       "score": "3 - 2",
       "home_score": 3,
@@ -4131,7 +4136,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "9",
-      "home_team": "Volkan Güç Spor Kulübü U18",
+      "home_team": "Volkan Güç B U18",
       "away_team": "İZEGE Spor Kulübü - A U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -9559,5 +9564,5 @@
     }
   ],
   "volleybox_synced_matches": 174,
-  "volleybox_sync_updated_at": "2026-11-02T14:13:52.258175"
+  "volleybox_sync_updated_at": "2026-11-02T14:45:09.462578"
 }

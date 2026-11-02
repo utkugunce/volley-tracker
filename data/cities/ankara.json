@@ -1413,14 +1413,19 @@
     "Yıldız Kızlar Süper Lig - 2. Grup": [
       {
         "rank": 1,
-        "team": "PTT Spor II",
+        "team": "PTT Spor U16",
         "played": 4,
         "won": 4,
         "lost": 0,
         "points": 12,
         "sets_won": 12,
         "sets_lost": 1,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/ptt-spor-u16-t41422",
+          "matched_as": "PTT Spor U16",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 2,
@@ -6156,7 +6161,7 @@
       "gender": "Kız",
       "group": "2. Grup",
       "match_no": "2",
-      "home_team": "PTT Spor II",
+      "home_team": "PTT Spor U16",
       "away_team": "Çaba Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -6247,7 +6252,7 @@
       "group": "2. Grup",
       "match_no": "4",
       "home_team": "Eryaman Gelişim SK U16",
-      "away_team": "PTT Spor II",
+      "away_team": "PTT Spor U16",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -6291,7 +6296,7 @@
       "gender": "Kız",
       "group": "2. Grup",
       "match_no": "5",
-      "home_team": "PTT Spor II",
+      "home_team": "PTT Spor U16",
       "away_team": "TVF Spor Lisesi - B U16",
       "score": "3 - 1",
       "home_score": 3,
@@ -6384,7 +6389,7 @@
       "group": "2. Grup",
       "match_no": "7",
       "home_team": "Başkent Arma Spor - B U16",
-      "away_team": "PTT Spor II",
+      "away_team": "PTT Spor U16",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -8078,5 +8083,5 @@
     }
   ],
   "volleybox_synced_matches": 135,
-  "volleybox_sync_updated_at": "2026-11-02T14:13:52.092171"
+  "volleybox_sync_updated_at": "2026-11-02T14:45:00.892269"
 }

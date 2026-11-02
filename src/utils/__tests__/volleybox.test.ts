@@ -756,6 +756,67 @@ describe("volleybox utility", () => {
       expect(revup?.matched_as).toBe("REVUP Spor Kulübü U18");
       expect(revup?.volleybox_url).toContain("t55266");
     });
+
+    it("resolves Denizli U18 teams correctly in Genç Kızlar Süper Lig", () => {
+      const bbsk = getVolleyboxMapping("Denizli Büyükşehir Belediye S.K.", "Genç Kızlar Süper Lig", undefined, "Denizli");
+      expect(bbsk).toBeDefined();
+      expect(bbsk?.matched_as).toBe("Denizli Büyükşehir Belediyespor U18");
+      expect(bbsk?.volleybox_url).toContain("t42634");
+
+      const pars = getVolleyboxMapping("Anadolu Pars Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Denizli");
+      expect(pars).toBeDefined();
+      expect(pars?.matched_as).toBe("Denizli Anadolu Pars GSK U18");
+      expect(pars?.volleybox_url).toContain("t42636");
+
+      const damla = getVolleyboxMapping("Damla Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Denizli");
+      expect(damla).toBeDefined();
+      expect(damla?.matched_as).toBe("Denizli Damlaspor Kulübü U18");
+      expect(damla?.volleybox_url).toContain("t43518");
+
+      const hierapolis = getVolleyboxMapping("Hierapolis Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Denizli");
+      expect(hierapolis).toBeDefined();
+      expect(hierapolis?.matched_as).toBe("Hierapolis Spor Kulübü U18");
+      expect(hierapolis?.volleybox_url).toContain("t42195");
+
+      const merkez = getVolleyboxMapping("Merkez Akademi Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Denizli");
+      expect(merkez).toBeDefined();
+      expect(merkez?.matched_as).toBe("Denizli Merkez Akademi Spor Kulübü U18");
+      expect(merkez?.volleybox_url).toContain("t55358");
+
+      const tutku = getVolleyboxMapping("Tutku Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Denizli");
+      expect(tutku).toBeDefined();
+      expect(tutku?.matched_as).toBe("Denizli Tutku GSK U18");
+      expect(tutku?.volleybox_url).toContain("t42635");
+
+      const civril = getVolleyboxMapping("Yeşil Çivril Belediye Spor Kulübü", "Genç Kızlar Süper Lig", undefined, "Denizli");
+      expect(civril).toBeDefined();
+      expect(civril?.matched_as).toBe("Yeşil Çivril Belediyespor U18");
+      expect(civril?.volleybox_url).toContain("t42641");
+    });
+
+    it("resolves Ankara U16 PTT Spor U16 to PTT Spor U16", () => {
+      const pttU16 = getVolleyboxMapping("PTT Spor U16", "Yıldız Kızlar Süper Lig", undefined, "Ankara");
+      expect(pttU16).toBeDefined();
+      expect(pttU16?.matched_as).toBe("PTT Spor U16");
+      expect(pttU16?.volleybox_url).toBe("https://women.volleybox.net/ptt-spor-u16-t41422");
+
+      const pttII = getVolleyboxMapping("PTT Spor II", "Yıldız Kızlar Süper Lig", undefined, "Ankara");
+      expect(pttII).toBeDefined();
+      expect(pttII?.matched_as).toBe("PTT Spor U16");
+      expect(pttII?.volleybox_url).toBe("https://women.volleybox.net/ptt-spor-u16-t41422");
+    });
+
+    it("resolves İzmir 1. Lig U18 Volkan Güç B U18 to Volkan Güç Spor Kulübü - B U18", () => {
+      const volkanB = getVolleyboxMapping("Volkan Güç B U18", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(volkanB).toBeDefined();
+      expect(volkanB?.matched_as).toBe("Volkan Güç Spor Kulübü - B U18");
+      expect(volkanB?.volleybox_url).toBe("https://women.volleybox.net/volkan-guc-spor-kulubu-u18-t53592");
+
+      const volkanAlias = getVolleyboxMapping("Volkan Güç Spor Kulübü U18", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(volkanAlias).toBeDefined();
+      expect(volkanAlias?.matched_as).toBe("Volkan Güç Spor Kulübü - B U18");
+      expect(volkanAlias?.volleybox_url).toBe("https://women.volleybox.net/volkan-guc-spor-kulubu-u18-t53592");
+    });
   });
 });
 

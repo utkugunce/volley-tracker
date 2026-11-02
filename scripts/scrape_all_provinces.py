@@ -350,10 +350,38 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         if ("izmir" in ct or not ct) and ("genc" in gs or "u18" in gs or "gk" in gs) and "super" in gs:
             if "karsiyaka" in rt:
                 return "Karşıyaka SK U18"
+        # İzmir Genç Kızlar 1. Ligi (U18) -> Volkan Güç B U18
+        if ("izmir" in ct or not ct) and ("1. lig" in gs or "1.lig" in gs or "1. ligi" in gs) and ("genc" in gs or "u18" in gs or "gk" in gs):
+            if "volkan" in rt:
+                return "Volkan Güç B U18"
         # İzmir Yıldız Kızlar Süper Lig (U16) -> Karşıyaka U16 (Endo Karşıyaka değil)
         if ("izmir" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
             if "karsiyaka" in rt and not any(x in rt for x in ["alfa", "gonen"]):
                 return "Karşıyaka U16"
+        # Ankara Yıldız Kızlar Süper Lig -> PTT Spor U16 (PTT Spor II değil)
+        if ("ankara" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
+            if "ptt" in rt:
+                return "PTT Spor U16"
+        # Denizli Genç Kızlar Süper Lig (U18)
+        if ("denizli" in ct or not ct) and ("genc" in gs or "u18" in gs or "gk" in gs):
+            if "buyuksehir" in rt or "belediye" in rt:
+                return "Denizli Büyükşehir Belediyespor U18"
+            if "pars" in rt:
+                return "Denizli Anadolu Pars GSK U18"
+            if "damla" in rt:
+                return "Denizli Damlaspor Kulübü U18"
+            if "hierapolis" in rt:
+                return "Hierapolis Spor Kulübü U18"
+            if "merkez akademi" in rt:
+                return "Denizli Merkez Akademi Spor Kulübü U18"
+            if "tutku" in rt:
+                return "Denizli Tutku GSK U18"
+            if "civril" in rt:
+                return "Yeşil Çivril Belediyespor U18"
+            if "aile" in rt:
+                return "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18"
+            if "honaz" in rt or "adil akan" in rt:
+                return "Honaz Adil Akan Ortaokulu SK U18"
         # Ankara Yıldız Kızlar Süper Lig 4. Grup -> İlbank - B U16
         if ("ankara" in ct or not ct) and ("4" in gs) and ("gen" not in gs):
             if "lbank" in rt:

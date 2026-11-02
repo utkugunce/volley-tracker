@@ -551,9 +551,9 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
           </div>
         ) : (
           <div className="space-y-4">
-            {visibleTournaments.map((t) => (
+            {visibleTournaments.map((t, tIdx) => (
               <div
-                key={t.tournament_url}
+                key={`${t.tournament_url}-${t.category}-${tIdx}`}
                 className="bg-slate-950/70 border border-slate-800 rounded-xl p-4"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -599,8 +599,8 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-800/60">
-                      {t.matches.slice(0, 15).map((m) => (
-                        <tr key={m.id} className="hover:bg-slate-900/60">
+                      {t.matches.slice(0, 15).map((m, mIdx) => (
+                        <tr key={`${t.tournament_slug}-${m.id}-${mIdx}`} className="hover:bg-slate-900/60">
                           <td className="py-2 pr-3 font-mono text-slate-300 whitespace-nowrap">
                             {m.date} <span className="text-slate-500">{m.time}</span>
                           </td>

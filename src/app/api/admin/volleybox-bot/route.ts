@@ -169,9 +169,7 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
 
   const byTourn = new Map<string, TournamentMissingSummary>();
   const dataDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "data");
-  const filesToRead: Array<{ filePath: string; fallbackCity: string }> = [
-    { filePath: path.join(dataDir, "fixtures.json"), fallbackCity: "İstanbul" },
-  ];
+  const filesToRead: Array<{ filePath: string; fallbackCity: string }> = [];
 
   const citiesDir = path.join(dataDir, "cities");
   if (fs.existsSync(citiesDir)) {
@@ -184,6 +182,15 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
       }
     }
   }
+  // Eğer cities dizini yoksa veya boşsa geriye dönük uyumluluk için fixtures.json oku
+  if (filesToRead.length === 0) {
+    const legacyFixtures = path.join(dataDir, "fixtures.json");
+    if (fs.existsSync(legacyFixtures)) {
+      filesToRead.push({ filePath: legacyFixtures, fallbackCity: "İstanbul" });
+    }
+  }
+
+  const seenMatchIds = new Set<string>();
 
   const filterNorm = cityFilter && cityFilter !== "all" ? normTr(cityFilter) : "";
 
@@ -251,8 +258,12 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
           continue;
         }
 
+        const matchId = String(m?.id || `${citySlug}-${entry.matches.length}`);
+        if (seenMatchIds.has(matchId)) continue;
+        seenMatchIds.add(matchId);
+
         entry.matches.push({
-          id: String(m?.id || `${citySlug}-${entry.matches.length}`),
+          id: matchId,
           city: cityName,
           city_slug: citySlug,
           category: cat,

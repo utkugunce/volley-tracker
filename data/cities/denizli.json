@@ -39,7 +39,12 @@
         "points": 9,
         "sets_won": 9,
         "sets_lost": 0,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/denizli-buyuksehir-belediyespor-u18-t42634",
+          "matched_as": "Denizli Büyükşehir Belediyespor U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 2,
@@ -50,7 +55,12 @@
         "points": 9,
         "sets_won": 9,
         "sets_lost": 3,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/denizli-anadolu-pars-gsk-u18-t42636",
+          "matched_as": "Denizli Anadolu Pars GSK U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 3,
@@ -61,7 +71,12 @@
         "points": 9,
         "sets_won": 11,
         "sets_lost": 8,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/honaz-adil-akan-ortaokulu-sk-u18-t42638",
+          "matched_as": "Honaz Adil Akan Ortaokulu SK U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 4,
@@ -72,7 +87,12 @@
         "points": 6,
         "sets_won": 6,
         "sets_lost": 3,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/denizli-tutku-gsk-u18-t42635",
+          "matched_as": "Denizli Tutku GSK U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 5,
@@ -83,7 +103,12 @@
         "points": 5,
         "sets_won": 6,
         "sets_lost": 6,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/denizli-damlaspor-kulubu-u18-t43518",
+          "matched_as": "Denizli Damlaspor Kulübü U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 6,
@@ -94,7 +119,12 @@
         "points": 4,
         "sets_won": 5,
         "sets_lost": 6,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/yesil-civril-belediyespor-u18-t42641",
+          "matched_as": "Yeşil Çivril Belediyespor U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 7,
@@ -105,7 +135,12 @@
         "points": 3,
         "sets_won": 5,
         "sets_lost": 8,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/denizli-merkez-akademi-spor-kulubu-u18-t55358",
+          "matched_as": "Denizli Merkez Akademi Spor Kulübü U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 8,
@@ -116,7 +151,12 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 12,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/hierapolis-spor-kulubu-t42195",
+          "matched_as": "Hierapolis Spor Kulübü U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 9,
@@ -127,7 +167,12 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 6,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/denizli-aile-ve-sosyal-hizmetler-spor-kulubu-u18-t55357",
+          "matched_as": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
+          "confidence": "verified"
+        }
       }
     ],
     "Yıldız Kızlar Süper Lig - Gruplar": [
@@ -2050,5 +2095,5 @@
     }
   ],
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-02T14:13:52.179674"
+  "volleybox_sync_updated_at": "2026-11-02T14:44:51.488399"
 }
