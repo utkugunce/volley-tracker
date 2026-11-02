@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { TakvimShell } from "@/components/takvim/TakvimShell";
 import { TakvimCalendar } from "@/components/takvim/TakvimCalendar";
 import { TakvimeEkle, type TakvimSubscription } from "@/components/takvim/TakvimeEkle";
@@ -125,6 +126,17 @@ export default async function TakvimPage() {
           <p className="text-xs text-ink-2 mt-0.5 font-medium">
             Vodafone Sultanlar Ligi, KFC Kadınlar 1. Ligi ve Kadınlar 2. Ligi resmi TVF bültenleri
           </p>
+        </div>
+                <div className="flex items-center justify-between flex-wrap gap-2 p-3 rounded-xl bg-surface border border-line text-xs">
+          <span className="text-ink-2">
+            ℹ️ TVF 81 İl Altyapı (Genç ve Yıldız Kızlar) maçları ve sonuçları:
+          </span>
+          <Link
+            href="/gunun-maclari"
+            className="font-bold text-primary hover:text-white flex items-center gap-1 shrink-0"
+          >
+            <span>Altyapı Maçları & Tarih Şeridi →</span>
+          </Link>
         </div>
         <TakvimCalendar matches={matches} loadError={loadError} />
         <TakvimeEkle subscriptions={SUBSCRIPTIONS} />

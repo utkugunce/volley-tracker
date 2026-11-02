@@ -114,4 +114,34 @@ describe("HomePortalView Component", () => {
       expect(onSelectCity).toHaveBeenCalledWith("istanbul");
     }
   });
+
+  it("renders quick date pills and navigates to today tab when a date is clicked", () => {
+    const onNavigateTab = vi.fn();
+    const onSelectDate = vi.fn();
+
+    render(
+      <HomePortalView
+        matches={mockMatches}
+        city="Tüm İller"
+        currentCitySlug="all"
+        onSelectCity={vi.fn()}
+        citiesList={mockCitiesList}
+        standings={{}}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+        onSelectMatch={vi.fn()}
+        onNavigateTab={onNavigateTab}
+        todayStr="2026-09-24"
+        yesterdayStr="2026-09-23"
+        onSelectDate={onSelectDate}
+      />
+    );
+
+    expect(screen.getByText(/Tarihler:/i)).toBeInTheDocument();
+    const todayBtn = screen.getByTitle(/2026-09-24 maçlarını görüntüle/i);
+    expect(todayBtn).toBeInTheDocument();
+    fireEvent.click(todayBtn);
+    expect(onSelectDate).toHaveBeenCalledWith("2026-09-24");
+    expect(onNavigateTab).toHaveBeenCalledWith("today");
+  });
 });

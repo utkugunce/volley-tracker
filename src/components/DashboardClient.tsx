@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Header } from "@/components/Header";
 import { CityTabBar } from "@/components/CityTabBar";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -158,11 +158,27 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
     activeStandings,
   } = useDashboardLists({ data, filters, favorites, todayStr, yesterdayStr, isAllCities });
 
+  // Tüm geçerli maç tarihleri (Günün Maçları tarih şeridinde geçmiş ve gelecek tüm günlerin listelenmesi için)
+  const allAvailableDates = useMemo(() => {
+    if (!data?.matches) return [];
+    const set = new Set<string>();
+    data.matches.forEach((m) => {
+      if (m.date && m.date !== "TBD" && /^\d{4}-\d{2}-\d{2}$/.test(m.date)) {
+        set.add(m.date);
+      }
+    });
+    return Array.from(set).sort().reverse();
+  }, [data?.matches]);
+
   // Şehir ve lig bazlı gizleme / daraltma durumları (Collapse / Accordion)
-  const resultCityCollapse = useCollapseControls(resultCityKeys);
-  const resultLeagueCollapse = useCollapseControls(allResultLeagueKeys);
-  const fixtureCityCollapse = useCollapseControls(fixtureCityKeys);
-  const fixtureLeagueCollapse = useCollapseControls(allFixtureLeagueKeys);
+  // Belirli bir tarih seçildiğinde iller otomatik açık gelir (defaultCollapsed: false)
+  const isResultDateFiltered = filters.selectedResultDate !== "all";
+  const resultCityCollapse = useCollapseControls(resultCityKeys, !isResultDateFiltered);
+  const resultLeagueCollapse = useCollapseControls(allResultLeagueKeys, false);
+
+  const isFixtureDateFiltered = filters.selectedDate !== "all";
+  const fixtureCityCollapse = useCollapseControls(fixtureCityKeys, !isFixtureDateFiltered);
+  const fixtureLeagueCollapse = useCollapseControls(allFixtureLeagueKeys, false);
 
   return (
     <MatchSelectionProvider matches={data?.matches || []} initialMatchId={selectedMatch?.id}>
@@ -301,6 +317,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             yesterdayStr={yesterdayStr}
             totalMatchesCount={data?.total_matches}
             scoredMatchesCount={resultsCount}
+            onSelectDate={filters.setSelectedDate}
           />
         ) : activeMainTab === "today" ? (
           /* ==================== GÜNÜN MAÇLARI — Sofascore Kompakt Maç Akışı ==================== */
@@ -313,7 +330,9 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             todayStr={todayStr}
             yesterdayStr={yesterdayStr}
             city={data?.city}
-            availableDates={uniqueResultDates}
+            availableDates={allAvailableDates}
+            selectedDate={filters.selectedDate !== "all" ? filters.selectedDate : undefined}
+            onSelectDate={filters.setSelectedDate}
           />
         ) : activeMainTab === "fixtures" ? (
           /* ==================== FİKSTÜR SEKMESİ ==================== */

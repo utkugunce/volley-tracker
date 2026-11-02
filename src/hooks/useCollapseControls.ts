@@ -6,10 +6,17 @@ import { useState, useMemo, useCallback } from "react";
  * `defaultCollapsed`: varsayılan olarak daraltılmış (gizli) mi gelsin (varsayılan: true).
  */
 export function useCollapseControls(keys: string[], defaultCollapsed: boolean = true) {
+  const [prevDefault, setPrevDefault] = useState(defaultCollapsed);
   // overrides: kullanıcının manuel olarak açtığı (false) veya kapattığı (true) durumlar
   const [overrides, setOverrides] = useState<Record<string, boolean>>({});
   // bulkState: kullanıcının "Tümünü Göster" (expanded) veya "Tümünü Gizle" (collapsed) butonuna basıp basmadığı
   const [bulkState, setBulkState] = useState<"expanded" | "collapsed" | null>(null);
+
+  if (defaultCollapsed !== prevDefault) {
+    setPrevDefault(defaultCollapsed);
+    setOverrides({});
+    setBulkState(null);
+  }
 
   const isKeyCollapsed = useCallback(
     (key: string): boolean => {

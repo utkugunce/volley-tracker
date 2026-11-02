@@ -21,6 +21,8 @@ interface CompactMatchFeedProps {
   viewMode?: MatchRowMode;
   initialDate?: string;
   availableDates?: string[];
+  selectedDate?: string;
+  onSelectDate?: (date: string) => void;
 }
 
 export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
@@ -34,10 +36,14 @@ export const CompactMatchFeed: React.FC<CompactMatchFeedProps> = ({
   viewMode = "today",
   initialDate,
   availableDates,
+  selectedDate: controlledDate,
+  onSelectDate: controlledOnSelectDate,
 }) => {
-  const [selectedDate, setSelectedDate] = useState<string>(() =>
+  const [internalDate, setInternalDate] = useState<string>(() =>
     initialDate ?? (viewMode === "today" ? todayStr || "all" : "all")
   );
+  const selectedDate = controlledDate !== undefined ? controlledDate : internalDate;
+  const setSelectedDate = controlledOnSelectDate || setInternalDate;
   const [statusFilter, setStatusFilter] = useState<StatusFilterType>(() =>
     viewMode === "results" ? "finished" : viewMode === "fixtures" ? "upcoming" : "all"
   );

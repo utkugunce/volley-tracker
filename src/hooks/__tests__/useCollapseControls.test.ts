@@ -82,4 +82,19 @@ describe("useCollapseControls", () => {
     expect(result.current.collapsed["a"]).toBe(false);
     expect(result.current.collapsed["b"]).toBe(false);
   });
+
+  it("resets and dynamically expands when defaultCollapsed changes from true to false", () => {
+    const keys = ["istanbul", "ankara"];
+    let defaultCollapsed = true;
+    const { result, rerender } = renderHook(() => useCollapseControls(keys, defaultCollapsed));
+
+    expect(result.current.areAllCollapsed).toBe(true);
+
+    defaultCollapsed = false;
+    rerender();
+
+    expect(result.current.areAllCollapsed).toBe(false);
+    expect(result.current.collapsed["istanbul"]).toBe(false);
+    expect(result.current.collapsed["ankara"]).toBe(false);
+  });
 });

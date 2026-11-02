@@ -45,7 +45,12 @@ export function useFixturesData({
     const request = (async () => {
       try {
         const cached = clientCityCache.get(currentCitySlug);
-        if (cached && (cached.matches?.length || 0) > (data?.matches?.length || 0)) {
+        // Sadece tam ve güncel önbellek varsa kullan; 1700 altındaki eski/kısmi önbelleği atla
+        if (
+          cached &&
+          (cached.matches?.length || 0) > (data?.matches?.length || 0) &&
+          (currentCitySlug !== "all" || (cached.matches?.length || 0) >= 1700)
+        ) {
           setData(cached);
           setIsPartialData(false);
           return true;

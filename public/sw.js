@@ -1,7 +1,7 @@
 // public/sw.js — Altyapı Voleybol Service Worker
-const CACHE_NAME = "altyapi-voleybol-v5";
+const CACHE_NAME = "altyapi-voleybol-v6";
 // Son görülen fikstür/il verisi ayrı bir önbellekte tutulur (çevrimdışıyken gösterilir).
-const DATA_CACHE_NAME = "altyapi-voleybol-data-v1";
+const DATA_CACHE_NAME = "altyapi-voleybol-data-v2";
 const DATA_CACHE_MAX_ENTRIES = 40;
 const STATIC_CACHE_MAX_ENTRIES = 60;
 const OFFLINE_URL = "/offline.html";

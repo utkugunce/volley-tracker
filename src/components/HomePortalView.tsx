@@ -43,6 +43,7 @@ interface HomePortalViewProps {
   yesterdayStr: string;
   totalMatchesCount?: number;
   scoredMatchesCount?: number;
+  onSelectDate?: (date: string) => void;
 }
 
 export const HomePortalView: React.FC<HomePortalViewProps> = ({
@@ -60,6 +61,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
   yesterdayStr,
   totalMatchesCount,
   scoredMatchesCount,
+  onSelectDate,
 }) => {
   const [feedFilter, setFeedFilter] = useState<"all" | "today" | "upcoming" | "finished">("all");
 
@@ -96,6 +98,38 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
         return aToday - bToday || compareMatchDateTime(a, b, "asc");
       });
   }, [matches, todayStr, yesterdayStr]);
+
+  const quickDatePills = useMemo(() => {
+    const base = todayStr ? new Date(`${todayStr}T00:00:00`) : new Date();
+    const dayNames = ["Paz", "Pzt", "Sal", "Çar", "Per", "Cum", "Cmt"];
+    // -7 günden +2 güne kadar (26 Ekim - 4 Kasım)
+    const offsets = [-7, -6, -5, -4, -3, -2, -1, 0, 1, 2];
+    const countsMap = new Map<string, number>();
+    for (const m of matches) {
+      if (m.date) countsMap.set(m.date, (countsMap.get(m.date) || 0) + 1);
+    }
+
+    return offsets.map((offset) => {
+      const d = new Date(base);
+      d.setDate(base.getDate() + offset);
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const dd = String(d.getDate()).padStart(2, "0");
+      const dateStr = `${yyyy}-${mm}-${dd}`;
+      const count = countsMap.get(dateStr) || 0;
+      const isToday = offset === 0;
+      const isYesterday = offset === -1;
+      const label = isToday ? "BUGÜN" : isYesterday ? "DÜN" : `${dd} ${dayNames[d.getDay()]}`;
+
+      return {
+        dateStr,
+        label,
+        shortDay: `${dd}.${mm}`,
+        count,
+        isToday,
+      };
+    });
+  }, [matches, todayStr]);
 
   const recentResults = useMemo(() => {
     return matches
@@ -421,6 +455,42 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     <span>Günün Maçları Tabı</span>
                     <ArrowRight size={13} />
                   </button>
+                </div>
+
+                {/* Hızlı Gün Seçici (26-31 Ekim ve 1-4 Kasım Maçları) */}
+                <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 relative z-10">
+                  <span className="text-[10px] text-ink-3 uppercase font-bold tracking-wider shrink-0 mr-0.5">
+                    Tarihler:
+                  </span>
+                  {quickDatePills.map((pill) => (
+                    <button
+                      key={pill.dateStr}
+                      type="button"
+                      onClick={() => {
+                        onSelectDate?.(pill.dateStr);
+                        onNavigateTab("today");
+                      }}
+                      className={`px-2 py-0.5 rounded-lg text-[11px] font-medium transition-all shrink-0 cursor-pointer flex items-center gap-1 border ${
+                        pill.isToday
+                          ? "bg-emerald-500/25 text-emerald-300 border-emerald-500/50 font-bold"
+                          : "bg-surface-muted/90 text-ink hover:text-white hover:bg-surface-raised border-line/60"
+                      }`}
+                      title={`${pill.dateStr} maçlarını görüntüle (${pill.count} Maç)`}
+                    >
+                      <span>{pill.label}</span>
+                      {pill.count > 0 && (
+                        <span
+                          className={`px-1 py-0.2 rounded text-[10px] font-mono tabular-nums ${
+                            pill.isToday
+                              ? "bg-emerald-500/30 text-emerald-200"
+                              : "bg-surface-raised/80 text-ink-3"
+                          }`}
+                        >
+                          {pill.count}
+                        </span>
+                      )}
+                    </button>
+                  ))}
                 </div>
 
                 {/* Maç Listesi */}

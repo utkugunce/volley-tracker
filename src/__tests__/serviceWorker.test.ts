@@ -104,13 +104,13 @@ describe("service worker (public/sw.js)", () => {
 
   it("etkinleştirmede eski önbellekleri siler, güncel ve veri önbelleğini korur", async () => {
     const { listeners, stores } = loadWorker(network);
-    stores.set("altyapi-voleybol-v4", new Map());
     stores.set("altyapi-voleybol-v5", new Map());
-    stores.set("altyapi-voleybol-data-v1", new Map());
+    stores.set("altyapi-voleybol-v6", new Map());
+    stores.set("altyapi-voleybol-data-v2", new Map());
     let p: Promise<unknown> = Promise.resolve();
     listeners.activate({ waitUntil: (x: Promise<unknown>) => (p = x) });
     await p;
-    expect([...stores.keys()].sort()).toEqual(["altyapi-voleybol-data-v1", "altyapi-voleybol-v5"]);
+    expect([...stores.keys()].sort()).toEqual(["altyapi-voleybol-data-v2", "altyapi-voleybol-v6"]);
   });
 
   it("bildirim, kimlik doğrulama, yönetim ve POST istekleri ele alınmaz", async () => {
@@ -178,7 +178,7 @@ describe("service worker (public/sw.js)", () => {
 
     const unknown = await (await dispatchFetch(listeners, req("/takim/yok", { mode: "navigate" })))!;
     expect(await unknown.text()).toBe("asset:/offline.html");
-    expect([...stores.keys()]).toContain("altyapi-voleybol-v5");
+    expect([...stores.keys()]).toContain("altyapi-voleybol-v6");
   });
 
   it("veri önbelleği en fazla 40 kayıt tutar", async () => {
@@ -188,6 +188,6 @@ describe("service worker (public/sw.js)", () => {
       await new Promise((r) => setTimeout(r, 2));
     }
     await new Promise((r) => setTimeout(r, 30));
-    expect(stores.get("altyapi-voleybol-data-v1")!.size).toBeLessThanOrEqual(40);
+    expect(stores.get("altyapi-voleybol-data-v2")!.size).toBeLessThanOrEqual(40);
   });
 });
