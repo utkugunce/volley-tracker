@@ -1,10 +1,9 @@
 import fs from "fs";
 import path from "path";
-import { spawn, spawnSync, type ChildProcess } from "child_process";
+import { spawn, type ChildProcess } from "child_process";
 import { timingSafeEqual } from "crypto";
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
-import { normalizeGithubRepo } from "@/utils/scrapeTrigger";
 import mappingsJson from "../../../../../data/volleybox-mappings.json";
 
 export interface VolleyboxBotLogEntry {
@@ -286,67 +285,6 @@ function resolvePythonCommand(): string {
   return process.platform === "win32" ? "python" : "python3";
 }
 
-function isPythonAvailable(): boolean {
-  try {
-    const cmd = resolvePythonCommand();
-    const res = spawnSync(cmd, ["--version"], {
-      encoding: "utf-8",
-      timeout: 2500,
-      windowsHide: true,
-    });
-    return res.status === 0;
-  } catch {
-    return false;
-  }
-}
-
-export const VOLLEYBOX_BOT_WORKFLOW_FILE = "volleybox-bot.yml";
-
-export async function dispatchVolleyboxBotWorkflow(params: {
-  city?: string;
-  limit?: number;
-  delay?: number;
-  dry_run?: boolean;
-}): Promise<{ status: "dispatched" | "not_configured" | "failed"; error?: string }> {
-  const ghToken = (process.env.GITHUB_TOKEN || process.env.GH_TOKEN)?.trim();
-  const repo = normalizeGithubRepo(process.env.GITHUB_REPOSITORY) || "utkugunce/volley-tracker";
-  if (!ghToken) {
-    return { status: "not_configured" };
-  }
-
-  try {
-    const dispatchRes = await fetch(
-      `https://api.github.com/repos/${repo}/actions/workflows/${VOLLEYBOX_BOT_WORKFLOW_FILE}/dispatches`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${ghToken}`,
-          Accept: "application/vnd.github+json",
-          "X-GitHub-Api-Version": "2022-11-28",
-          "User-Agent": "VolleyTracker-App",
-        },
-        body: JSON.stringify({
-          ref: "main",
-          inputs: {
-            city: params.city || "all",
-            limit: String(params.limit || 25),
-            delay: String(params.delay || 8),
-            dry_run: Boolean(params.dry_run),
-          },
-        }),
-      }
-    );
-
-    if (dispatchRes.ok || dispatchRes.status === 204) {
-      return { status: "dispatched" };
-    }
-    const errBody = await dispatchRes.text();
-    return { status: "failed", error: `HTTP ${dispatchRes.status}: ${errBody}` };
-  } catch (e) {
-    return { status: "failed", error: e instanceof Error ? e.message : String(e) };
-  }
-}
-
 function appendLog(runner: InternalBotRunner, rawLine: string) {
   const line = rawLine.trim();
   if (!line) return;
@@ -416,6 +354,16 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 });
   }
 
+  if (process.env.NODE_ENV !== "development") {
+    return NextResponse.json(
+      {
+        error:
+          "Volleybox tarayıcı botu Playwright tarayıcı otomasyonu kullandığı için yalnızca yerel geliştirme ortamında (localhost:3000) veya bilgisayarınızın terminalinde (npm run push:volleybox) çalıştırılabilir. Canlı sunucuda (Render) tarayıcı açılamaz.",
+      },
+      { status: 400 }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const action = searchParams.get("action") || "status";
   const dataDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "data");
@@ -461,13 +409,7 @@ export async function GET(request: Request) {
     ...runner.state,
     hasScreenshot,
     screenshotMtime,
-    hasSavedAuth:
-      fs.existsSync(authFile) ||
-      Boolean(
-        process.env.VOLLEYBOX_COOKIE ||
-        process.env.VOLLEYBOX_COOKIES ||
-        (process.env.VOLLEYBOX_USERNAME && process.env.VOLLEYBOX_PASSWORD)
-      ),
+    hasSavedAuth: fs.existsSync(authFile) || fs.existsSync(profileDir),
     isLocalRuntime: process.env.NODE_ENV === "development",
   });
 }
@@ -475,6 +417,16 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   if (!(await isAuthorizedAdmin(request))) {
     return NextResponse.json({ error: "Yetkisiz işlem" }, { status: 401 });
+  }
+
+  if (process.env.NODE_ENV !== "development") {
+    return NextResponse.json(
+      {
+        error:
+          "Volleybox tarayıcı botu Playwright tarayıcı otomasyonu kullandığı için yalnızca yerel geliştirme ortamında (localhost:3000) veya bilgisayarınızın terminalinde (npm run push:volleybox) çalıştırılabilir. Canlı sunucuda (Render) tarayıcı açılamaz.",
+      },
+      { status: 400 }
+    );
   }
 
   const body = await request.json().catch(() => ({}));
@@ -504,8 +456,7 @@ export async function POST(request: Request) {
   const city = String(body.city || "all").trim();
   const limit = Math.max(1, Math.min(200, Number(body.limit) || 25));
   const delay = Math.max(3, Math.min(60, Number(body.delay) || 8));
-  const isServerWithoutDisplay = process.platform !== "win32" && !process.env.DISPLAY;
-  const headless = isServerWithoutDisplay ? true : Boolean(body.headless);
+  const headless = Boolean(body.headless);
 
   const scriptPath = path.join(
     /*turbopackIgnore: true*/ process.cwd(),
@@ -555,87 +506,12 @@ export async function POST(request: Request) {
   };
   runner.nextLogId = 1;
 
-  if (!isPythonAvailable()) {
-    const ghRes = await dispatchVolleyboxBotWorkflow({
-      city,
-      limit,
-      delay,
-      dry_run: mode === "dry-run",
-    });
-
-    if (ghRes.status === "dispatched") {
-      runner.state.status = "running";
-      runner.state.mode = mode;
-      runner.state.currentStep = "🚀 Bot GitHub Actions bulut ortamında tetiklendi...";
-      appendLog(
-        runner,
-        "ℹ️ Render web sunucusunda Python motoru bulunmadığı için bot GitHub Actions bulut ortamında başlatıldı."
-      );
-      appendLog(
-        runner,
-        `🚀 İşlem Parametreleri: İl=${city}, Limit=${limit}, Gecikme=${delay}s, Mod=${mode}`
-      );
-      appendLog(
-        runner,
-        "☁️ GitHub Actions üzerinde Playwright & Chromium ile maçlar otomatik taranıp eklenecektir."
-      );
-      appendLog(
-        runner,
-        "🔗 Canlı çalışma akışını GitHub deponuzun 'Actions' sekmesinden takip edebilirsiniz."
-      );
-      return NextResponse.json({ ok: true, state: runner.state, dispatchedToGithub: true });
-    }
-
-    runner.state.status = "failed";
-    const msg = "Render sunucusunda Python motoru bulunamadı.";
-    runner.state.currentStep = msg;
-    appendLog(runner, `❌ ${msg}`);
-    appendLog(runner, "");
-    appendLog(
-      runner,
-      "💡 Render varsayılan olarak yalnızca Node.js barındırdığı için botu çalıştırmanın 2 kolay yolu:"
-    );
-    appendLog(runner, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-    appendLog(runner, "1️⃣ BİLGİSAYARINIZDAN ÇALIŞTIRIN (Önerilen & En Kolayı):");
-    appendLog(runner, "   Kendi bilgisayarınızda terminal açıp şu komutu çalıştırabilirsiniz:");
-    appendLog(
-      runner,
-      `   npm run push:volleybox${city && city !== "all" ? ` -- --city ${city}` : ""}`
-    );
-    appendLog(
-      runner,
-      "   (Böylece tarayıcı bilgisayarınızda açılır, Cloudflare engeline takılmaz ve eklenen maçlar otomatik siteye senkronize edilir)"
-    );
-    appendLog(runner, "");
-    appendLog(runner, "2️⃣ BULUTTA PANEL ÜZERİNDEN ÇALIŞTIRIN (GitHub Actions):");
-    appendLog(runner, "   Render Dashboard -> Environment Variables bölümüne GITHUB_TOKEN tanımlayın.");
-    appendLog(
-      runner,
-      "   Token eklendiğinde paneldeki 'Botu Başlat' butonu arka planda GitHub Actions bulut işini otomatik tetikleyecektir."
-    );
-    appendLog(runner, "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-
-    return NextResponse.json(
-      {
-        error:
-          "Render sunucusunda Python motoru bulunamadı. Panelden bulutta çalıştırmak için Render Dashboard'a GITHUB_TOKEN ekleyebilir veya yerel terminalinizden 'npm run push:volleybox' komutunu çalıştırabilirsiniz.",
-        state: runner.state,
-      },
-      { status: 400 }
-    );
-  }
-
   const pyCmd = resolvePythonCommand();
   appendLog(
     runner,
     `🚀 Komut başlatıldı: ${pyCmd} scripts/push_volleybox_matches.py ${args.slice(1).join(" ")}`
   );
-  if (isServerWithoutDisplay && (mode === "push" || mode === "login")) {
-    appendLog(
-      runner,
-      "ℹ️ Sunucu ortamında tarayıcı arka planda (headless) çalışıyor. Ekran görüntülerini sağdaki canlı pencereden anlık izleyebilirsiniz."
-    );
-  }
+  
 
   const child = spawn(pyCmd, args, {
     cwd: process.cwd(),
@@ -668,7 +544,7 @@ export async function POST(request: Request) {
   child.on("error", (err) => {
     runner.proc = null;
     runner.state.status = "failed";
-    const msg = `❌ Bot başlatılamadı (${pyCmd}): ${err.message}. Render/sunucu üzerinde Python ve Playwright kurulu olduğundan emin olun.`;
+    const msg = `❌ Bot başlatılamadı (${pyCmd}): ${err.message}. Bilgisayarınızda Python ve Playwright kurulu olduğundan emin olun.`;
     appendLog(runner, msg);
     runner.state.currentStep = msg;
     runner.state.updatedAt = new Date().toISOString();

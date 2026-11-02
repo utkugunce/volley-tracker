@@ -141,7 +141,7 @@ def ensure_playwright():
 
 
 def apply_saved_auth(context):
-    """Kayıtlı auth dosyasından veya VOLLEYBOX_COOKIE ortam değişkeninden oturum çerezlerini yükler."""
+    """Kayıtlı auth dosyasından oturum çerezlerini yükler."""
     if AUTH_STATE_FILE.exists():
         try:
             with open(AUTH_STATE_FILE, "r", encoding="utf-8") as f:
@@ -152,112 +152,6 @@ def apply_saved_auth(context):
                     log_step(f"🔑 {len(cookies)} adet oturum çerezi {AUTH_STATE_FILE.name} dosyasından yüklendi.")
         except Exception as e:
             log_step(f"⚠️ Oturum dosyası okunurken hata: {e}")
-
-    env_cookie = os.environ.get("VOLLEYBOX_COOKIE") or os.environ.get("VOLLEYBOX_COOKIES")
-    if env_cookie:
-        try:
-            parsed_cookies = []
-            for part in env_cookie.split(";"):
-                part = part.strip()
-                if not part or "=" not in part:
-                    continue
-                k, v = part.split("=", 1)
-                parsed_cookies.append({
-                    "name": k.strip(),
-                    "value": v.strip(),
-                    "domain": ".volleybox.net",
-                    "path": "/",
-                })
-            if parsed_cookies:
-                context.add_cookies(parsed_cookies)
-                log_step(f"🔑 {len(parsed_cookies)} adet çerez VOLLEYBOX_COOKIE ortam değişkeninden yüklendi.")
-        except Exception as e:
-            log_step(f"⚠️ VOLLEYBOX_COOKIE ayrıştırılamadı: {e}")
-
-
-def try_env_credentials_login(page, context) -> bool:
-    """VOLLEYBOX_USERNAME ve VOLLEYBOX_PASSWORD tanımlıysa otomatik login dener."""
-    username = (
-        os.environ.get("VOLLEYBOX_USERNAME")
-        or os.environ.get("VOLLEYBOX_EMAIL")
-        or os.environ.get("VOLLEYBOX_USER")
-    )
-    password = os.environ.get("VOLLEYBOX_PASSWORD") or os.environ.get("VOLLEYBOX_PASS")
-    if not username or not password:
-        return False
-
-    log_step("🔑 Ortam değişkenlerinden Volleybox hesap bilgileri tespit edildi, otomatik form dolduruluyor...")
-    try:
-        page.wait_for_selector("input[type='password']", timeout=8000)
-        for sel in [
-            "input[name='login']",
-            "input[name='email']",
-            "input[name='username']",
-            "input[type='email']",
-            "input[type='text']",
-        ]:
-            loc = page.locator(sel)
-            if loc.count() > 0 and loc.first.is_visible():
-                loc.first.fill(username)
-                break
-        pwd_loc = page.locator("input[name='password'], input[type='password']")
-        if pwd_loc.count() > 0:
-            pwd_loc.first.fill(password)
-        save_live_screenshot(page)
-        time.sleep(0.5)
-
-        # 1. Parola alanında Enter'a bas
-        if pwd_loc.count() > 0:
-            try:
-                pwd_loc.first.press("Enter")
-            except Exception:
-                pass
-
-        # 2. Parola kutusunun altındaki 'Giriş' butonuna tıkla (navbar linkini atlamak için Y pozisyonu kontrol edilir)
-        page.evaluate("""() => {
-            const pwd = document.querySelector('input[type="password"]');
-            if (!pwd) return;
-            const pwdRect = pwd.getBoundingClientRect();
-            const parent = pwd.closest('form') || pwd.parentElement?.parentElement;
-
-            const formBtn = parent ? parent.querySelector('button, input[type="submit"], [type="submit"], a.btn, .btn') : null;
-            if (formBtn) {
-                formBtn.click();
-                return;
-            }
-
-            const belowBtn = Array.from(document.querySelectorAll('button, a, div[role="button"]')).find(el => {
-                const rect = el.getBoundingClientRect();
-                return rect.top > pwdRect.top && (el.textContent || '').toLowerCase().includes('giriş');
-            });
-            if (belowBtn) {
-                belowBtn.click();
-            }
-        }""")
-
-        log_step("🚀 Giriş formu gönderildi, yanıt kontrol ediliyor...")
-        time.sleep(4.0)
-        save_live_screenshot(page)
-
-        for _ in range(10):
-            try:
-                uid = page.evaluate("""() => {
-                    if (typeof window.userId !== 'undefined' && Number(window.userId) > 0) return Number(window.userId);
-                    const logout = document.querySelector('a[href*="logout"], a[href*="/logout"]');
-                    if (logout) return 1;
-                    if (!window.location.pathname.includes('/login') && !document.querySelector('input[type="password"]')) return 1;
-                    return 0;
-                }""")
-                if uid and uid > 0:
-                    context.storage_state(path=str(AUTH_STATE_FILE))
-                    log_step(f"🎉 Giriş başarılı! (Volleybox userId: {uid}) Oturum kaydedildi.")
-                    return True
-            except Exception:
-                pass
-            time.sleep(1.0)
-    except Exception as e:
-        log_step(f"⚠️ Otomatik giriş adımı notu: {e}")
-    return False
 
 
 def is_forfeit_match(m: Dict[str, Any]) -> bool:
@@ -835,12 +729,7 @@ def run_login_flow():
 
     log_step("\n🔐 Volleybox oturum açma işlemi başlatılıyor...")
 
-    is_headless = False
-    if sys.platform != "win32" and not os.environ.get("DISPLAY"):
-        is_headless = True
-        log_step("ℹ️ Sunucu ortamında tarayıcı arka planda (headless) başlatıldı.")
-    else:
-        log_step("👉 Açılan tarayıcıda Volleybox hesabınıza giriş yapın. Giriş algılandığında oturum otomatik kaydedilecektir.\n")
+    log_step("👉 Açılan tarayıcıda Volleybox hesabınıza giriş yapın. Giriş algılandığında oturum otomatik kaydedilecektir.\n")
 
     chromium_args = [
         "--disable-blink-features=AutomationControlled",
@@ -857,7 +746,7 @@ def run_login_flow():
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
             user_data_dir=str(BROWSER_PROFILE_DIR),
-            headless=is_headless,
+            headless=False,
             viewport={"width": 1280, "height": 860},
             locale="tr-TR",
             timezone_id="Europe/Istanbul",
@@ -869,11 +758,8 @@ def run_login_flow():
         time.sleep(2.0)
         save_live_screenshot(page)
 
-        # Önce ortam değişkenlerinden otomatik giriş dene
-        logged_in = try_env_credentials_login(page, context)
-
-        if not logged_in:
-            for i in range(180):  # 3 dakika bekle
+        logged_in = False
+        for i in range(180):  # 3 dakika bekle
                 try:
                     if i % 3 == 0:
                         save_live_screenshot(page)
@@ -1623,24 +1509,22 @@ def main():
                 time.sleep(2.0)
                 save_live_screenshot(page)
 
-                logged_in = try_env_credentials_login(page, context)
-                if not logged_in:
-                    for i in range(120):
-                        try:
-                            if i % 3 == 0:
-                                save_live_screenshot(page)
-                            uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
-                            if uid and uid > 0:
-                                context.storage_state(path=str(AUTH_STATE_FILE))
-                                log_step(f"✅ Giriş algılandı (userId={uid}), turnuva sayfasına dönülüyor...")
-                                break
-                        except Exception:
-                            pass
-                        time.sleep(1.0)
+                for i in range(120):
+                    try:
+                        if i % 3 == 0:
+                            save_live_screenshot(page)
+                        uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
+                        if uid and uid > 0:
+                            context.storage_state(path=str(AUTH_STATE_FILE))
+                            log_step(f"✅ Giriş algılandı (userId={uid}), turnuva sayfasına dönülüyor...")
+                            break
+                    except Exception:
+                        pass
+                    time.sleep(1.0)
                 if not uid or uid <= 0:
                     uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
                 if not uid or uid <= 0:
-                    log_step("❌ Volleybox girişi yapılmadığı için işlem durduruldu. Render Dashboard üzerinden VOLLEYBOX_USERNAME ve VOLLEYBOX_PASSWORD veya VOLLEYBOX_COOKIE tanımlayabilirsiniz.")
+                    log_step("❌ Volleybox girişi yapılmadığı için işlem durduruldu. Lütfen önce 'npm run push:volleybox -- --login' ile yerel tarayıcıda oturum açın.")
                     context.close()
                     return
                 page.goto(matches_url, wait_until="domcontentloaded")

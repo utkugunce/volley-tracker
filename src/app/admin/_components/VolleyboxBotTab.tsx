@@ -164,6 +164,7 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
   };
 
   const isRunning = botStatus?.status === "running";
+  const isLocalBlocked = botStatus?.isLocalRuntime === false;
   const visibleTournaments =
     selectedCity === "all"
       ? tournaments
@@ -233,9 +234,13 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
             <button
               type="button"
               onClick={() => triggerBotAction("login")}
-              disabled={isRunning || actionLoading}
+              disabled={isRunning || actionLoading || isLocalBlocked}
               className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer"
-              title="Volleybox hesabınıza tarayıcıda giriş yapıp oturumu kaydeder"
+              title={
+                isLocalBlocked
+                  ? "Bot sadece yerel ortamda (localhost) çalışır"
+                  : "Volleybox hesabınıza tarayıcıda giriş yapıp oturumu kaydeder"
+              }
             >
               <KeyRound size={14} className="text-amber-400" />
               {botStatus?.hasSavedAuth ? "Oturumu Yenile" : "Volleybox Girişi Aç"}
@@ -244,8 +249,9 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
             <button
               type="button"
               onClick={() => triggerBotAction("dry-run")}
-              disabled={isRunning || actionLoading}
+              disabled={isRunning || actionLoading || isLocalBlocked}
               className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer"
+              title={isLocalBlocked ? "Bot sadece yerel ortamda (localhost) çalışır" : undefined}
             >
               <Eye size={14} className="text-sky-400" />
               Önizleme Çalıştır (--dry-run)
@@ -265,8 +271,9 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
               <button
                 type="button"
                 onClick={() => triggerBotAction("push")}
-                disabled={actionLoading || totalMissing === 0}
+                disabled={actionLoading || totalMissing === 0 || isLocalBlocked}
                 className="px-4 py-2 rounded-xl bg-done hover:bg-done/90 text-done-fg text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer"
+                title={isLocalBlocked ? "Bot sadece yerel ortamda (localhost) çalışır" : undefined}
               >
                 <Play size={14} />
                 Botu Başlat (Maçları Ekle)
@@ -274,6 +281,18 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
             )}
           </div>
         </div>
+
+        {isLocalBlocked && (
+          <div className="mb-4 p-3.5 rounded-xl bg-sky-950/40 border border-sky-500/30 text-sky-200 text-xs flex items-start gap-2.5">
+            <span className="text-base shrink-0">💻</span>
+            <div>
+              <p className="font-bold text-white">Yerel Çalışma Modu (Localhost)</p>
+              <p className="mt-0.5 text-sky-300/90 leading-relaxed">
+                Volleybox botu Playwright tarayıcı otomasyonu kullandığı için canlı sunucuda (Render) çalıştırılamaz. Botu çalıştırmak için projeyi yerel bilgisayarınızda açabilir (<code className="px-1.5 py-0.5 rounded bg-sky-900/60 font-mono text-white">npm run dev</code> ardından <code className="px-1.5 py-0.5 rounded bg-sky-900/60 font-mono text-white">http://localhost:3000/admin</code>) veya doğrudan terminalinizden <code className="px-1.5 py-0.5 rounded bg-sky-900/60 font-mono text-white">npm run push:volleybox</code> komutunu verebilirsiniz.
+              </p>
+            </div>
+          </div>
+        )}
 
         {errorMsg && (
           <div
@@ -557,9 +576,10 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
 
                   <button
                     type="button"
-                    disabled={isRunning || actionLoading}
+                    disabled={isRunning || actionLoading || isLocalBlocked}
                     onClick={() => triggerBotAction("push", t.city_slug)}
                     className="px-3 py-1.5 rounded-lg bg-done hover:bg-done/90 text-done-fg text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer"
+                    title={isLocalBlocked ? "Bot sadece yerel ortamda (localhost) çalışır" : undefined}
                   >
                     <Play size={12} />
                     Sadece {t.city} Maçlarını Ekle ({t.missing_count})
