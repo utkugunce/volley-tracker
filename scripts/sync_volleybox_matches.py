@@ -592,9 +592,9 @@ def vb_round_to_tr_group_aliases(r_name: str) -> List[str]:
     # CEV turlarını yerel ligler için alias üretmeye dahil etme
     if re.search(r"\bcev\b", r_name, re.I):
         return res
-    # '1st round' -> 'tek grup', '1. etap', 'normal sezon'
-    if "1st round" in r_name.lower() or "first round" in r_name.lower():
-        res.extend(["tek grup", "1. etap", "1. tur", "normal sezon", "regular season"])
+    # '1st round' -> 'tek grup', '1. etap', 'normal sezon', 'gruplar' (A/B grubu yazmayan durumlar)
+    if "1st round" in r_name.lower() or "first round" in r_name.lower() or r_name.strip() == "139":
+        res.extend(["tek grup", "1. etap", "1. tur", "normal sezon", "regular season", "gruplar", "grup", "genç kadın", "gelişim süper ligi", "yıldız kız süper lig"])
     # 'Semi Final - Group A' -> 'Yarı Final - A Grubu', 'Yarı Final A Grubu'
     m_semi = re.search(r"semi\s*final\s*-\s*group\s*([a-z0-9]+)", r_name, re.I)
     if m_semi:

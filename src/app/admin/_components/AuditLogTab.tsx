@@ -21,9 +21,9 @@ export function AuditLogTab({ auditLogs }: AuditLogTabProps) {
         </div>
       ) : (
         <div className="space-y-3">
-          {auditLogs.map((log) => (
+          {auditLogs.map((log, index) => (
             <div
-              key={log.id}
+              key={`${log.id}-${index}`}
               className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs space-y-1.5"
             >
               <div className="flex flex-wrap items-center justify-between gap-2">

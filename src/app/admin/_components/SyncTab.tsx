@@ -49,9 +49,9 @@ export function SyncTab({ auditLogs, matches, overrides, users }: SyncTabProps) 
             {auditLogs
               .filter(log => log.action.includes("sync") || log.action.includes("import"))
               .slice(0, 10)
-              .map((log) => (
+              .map((log, index) => (
                 <div
-                  key={log.id}
+                  key={`${log.id}-${index}`}
                   className="flex items-center justify-between p-2 bg-slate-700/50 rounded-lg text-xs"
                 >
                   <div className="flex-1 min-w-0">

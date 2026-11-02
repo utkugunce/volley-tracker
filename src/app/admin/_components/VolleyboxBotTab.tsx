@@ -504,9 +504,9 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                 <p>Bot başlatıldığında hangi turnuvaya girdiği, hangi takımları ve skorları seçtiği burada saniye saniye listelenir.</p>
               </div>
             ) : (
-              botStatus.logs.map((log) => (
+              botStatus.logs.map((log, lIdx) => (
                 <div
-                  key={log.id}
+                  key={`${log.id}-${lIdx}`}
                   className={`leading-relaxed break-words ${
                     log.level === "success"
                       ? "text-emerald-300 font-semibold"

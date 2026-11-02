@@ -866,6 +866,12 @@ def scrape_single_city(city_info):
         target_kumes = [
             ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
         ]
+    elif subdomain == "manisa":
+        # Manisa Genç Kızlar 1. Ligi okul sporları içerdiğinden hariç tutuldu
+        target_kumes = [
+            ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
+            ("YKSL", "Yıldız Kızlar Süper Lig", "Yıldız"),
+        ]
     else:
         target_kumes = [
             ("GKSL", "Genç Kızlar Süper Lig", "Genç"),
@@ -908,6 +914,9 @@ def scrape_single_city(city_info):
                 "şirket", "sirket", "veteran", "özel turnuva", "ozel turnuva",
                 "cumhuriyet kupa", "kupa", "deneme", "test"
             ]):
+                continue
+
+            if subdomain == "manisa" and ("1. lig" in cat_name.lower() or "gk1l" in kume_code.lower()):
                 continue
 
             group_name = extract_group_name(c_text)
@@ -1059,8 +1068,10 @@ def scrape_single_city(city_info):
             "source": f"https://{subdomain}.voleyboliltemsilciligi.com",
             "filters": {
                 "categories": ["Tümü", "Genç Kızlar Süper Lig"] if subdomain == "mersin" else (
-                    ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Lig 1. Bölge", "Genç Kızlar 1. Lig 2. Bölge", "Genç Kızlar 1. Lig 3. Bölge", "Genç Kızlar 1. Lig 4. Bölge", "Genç Kızlar 1. Lig 5. Bölge", "Yıldız Kızlar Süper Lig"]
-                    if subdomain == "istanbul" else ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"]
+                    ["Tümü", "Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"] if subdomain == "manisa" else (
+                        ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Lig 1. Bölge", "Genç Kızlar 1. Lig 2. Bölge", "Genç Kızlar 1. Lig 3. Bölge", "Genç Kızlar 1. Lig 4. Bölge", "Genç Kızlar 1. Lig 5. Bölge", "Yıldız Kızlar Süper Lig"]
+                        if subdomain == "istanbul" else ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"]
+                    )
                 ),
                 "age_groups": ["Tümü", "Genç"] if subdomain == "mersin" else ["Tümü", "Genç", "Yıldız"],
                 "genders": ["Kız"],

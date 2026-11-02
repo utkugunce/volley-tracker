@@ -86,13 +86,13 @@ export function MatchesTab({ cities, filteredMatches, filterOverriddenOnly, over
                   </td>
                 </tr>
               ) : (
-                filteredMatches.map((m) => {
+                filteredMatches.map((m, mIdx) => {
                   const hasOverride = !!overrides[m.id];
                   const ov = overrides[m.id];
 
                   return (
                     <tr
-                      key={m.id}
+                      key={`${m.id}-${mIdx}`}
                       className={`hover:bg-slate-800/50 transition-colors ${
                         hasOverride ? "bg-amber-950/20" : ""
                       }`}

@@ -73,9 +73,9 @@ export function NotificationsTab({ fetchNotificationStatus, notificationHistory,
           </div>
         ) : (
           <div className="space-y-2">
-            {notificationHistory.slice(0, 10).map((item) => (
+            {notificationHistory.slice(0, 10).map((item, index) => (
               <div
-                key={item.id}
+                key={`${item.id}-${index}`}
                 className="flex items-center justify-between p-2 bg-slate-700/50 rounded-lg text-xs"
               >
                 <div className="flex-1 min-w-0">

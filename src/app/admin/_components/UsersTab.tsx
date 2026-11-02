@@ -46,8 +46,8 @@ export function UsersTab({ handleDeleteUser, handleUpdateUserRole, setShowAddUse
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
-                <tr key={user.id} className="border-b border-slate-800 hover:bg-slate-800/50">
+              {users.map((user, index) => (
+                <tr key={`${user.id}-${index}`} className="border-b border-slate-800 hover:bg-slate-800/50">
                   <td className="py-2 px-3 text-white">{user.email}</td>
                   <td className="py-2 px-3">
                     <select

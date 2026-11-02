@@ -607,7 +607,8 @@ def match_option_for_round(
             lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
             if lbl in ("regular season", "normal sezon", "main tournament"):
                 return opt
-        return opts[0]
+        # 6. Volleybox ID '139' evrensel 1st round id'sidir
+        return {"value": "139", "label": "1st round", "id": "139"}
 
     g_clean = (group_name or "").lower().strip()
     is_semi = bool(re.search(r"\b(?:yar[ıi]\s*final|semi[\s\-]final)\b", g_clean, re.I))
@@ -748,8 +749,14 @@ def match_option_for_round(
             if "final" in lbl:
                 return opt
 
-    # 3. Tek gruplu ligler veya 'Tek Grup' / grup belirtilmemiş durumlar -> Kesinlikle '1st round'
-    if is_single_group or not g_clean or "tek" in g_clean or g_clean in ("normal sezon", "regular season", "1. etap"):
+    # 3. 'Gruplar', 'Tek Grup', grup belirtilmemiş veya A/B/1. grup yazmayan durumlar -> Kesinlikle '1st round'
+    if (
+        is_single_group
+        or not g_clean
+        or "tek" in g_clean
+        or "gruplar" in g_clean
+        or g_clean in ("normal sezon", "regular season", "1. etap", "grup", "grupları")
+    ):
         return find_1st_round()
 
     m_num = re.search(r"\b(\d+)\s*\.?\s*grup\b|\bgrup\s+(\d+)\b|^(?:grup\s*)?(\d+)$", g_clean, re.I)
@@ -1092,6 +1099,7 @@ def fill_and_submit_match_on_page(
         match_item.get("is_single_group")
         or (has_page_1st_round and not has_page_letter_or_num)
         or "tek" in (match_item.get("group") or "").lower()
+        or "gruplar" in (match_item.get("group") or "").lower()
         or not (match_item.get("group") or "").strip()
     )
 

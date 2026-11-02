@@ -3,13 +3,12 @@
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 28,
+  "total_matches": 26,
   "source": "https://manisa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
       "Tümü",
       "Genç Kızlar Süper Lig",
-      "Genç Kızlar 1. Ligi",
       "Yıldız Kızlar Süper Lig"
     ],
     "age_groups": [
@@ -27,7 +26,6 @@
       "M.F.Zeyrek S.Kompleksi",
       "Ramiz Turan Ss",
       "Sarıgöl Ss",
-      "Selendi İlçe Spor Salonu",
       "Vali Muzaffer Ecemiş S.S.",
       "Çok Amaçlı S.S."
     ]
@@ -166,52 +164,6 @@
         "points": 0,
         "sets_won": 0,
         "sets_lost": 12,
-        "form": []
-      }
-    ],
-    "Genç Kızlar 1. Ligi - 1. Grup": [
-      {
-        "rank": 1,
-        "team": "Ahmetli Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Özel Salihli Bahçeşehir Koleji Al",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Salihli Hafsa Sultan Kız Mtal",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Sarıgöl Milli Egemenlik Çpal",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ]
@@ -1312,74 +1264,6 @@
       "match_no": "14",
       "home_team": "Yunusemre Belediyespor U18",
       "away_team": "Turgutlu Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "manisa-20261102-027",
-      "city": "Manisa",
-      "date": "2026-11-02",
-      "time": "11:00",
-      "hall": "Selendi İlçe Spor Salonu",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "1",
-      "home_team": "Selendi Anadolu Lisesi",
-      "away_team": "Selendi Mtal",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "manisa-20261102-028",
-      "city": "Manisa",
-      "date": "2026-11-02",
-      "time": "14:30",
-      "hall": "Çok Amaçlı S.S.",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "1",
-      "home_team": "Manisa Lisesi",
-      "away_team": "Şehzadeler Gediz Anadolu Lisesi",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
