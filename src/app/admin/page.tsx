@@ -731,7 +731,7 @@ export default function AdminPage() {
             overrides={overrides}
             users={users}
           />
-        ) : activeTab === "volleybox-bot" ? (
+        ) : activeTab === "volleybox-bot" && (process.env.NODE_ENV === "development" || (typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"))) ? (
           <VolleyboxBotTab token={token} />
         ) : null}
       </main>

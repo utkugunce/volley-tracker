@@ -20,6 +20,24 @@ export interface AdminHeaderProps {
 }
 
 export function AdminHeader({ activeTab, auditLogs, handleLogout, handleTriggerLiveSync, matches, setActiveTab, syncLoading, teamsByCategory, users }: AdminHeaderProps) {
+  const [isLocal, setIsLocal] = React.useState<boolean>(() => {
+    if (process.env.NODE_ENV === "development") return true;
+    if (typeof window !== "undefined") {
+      return window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+    }
+    return false;
+  });
+
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsLocal(
+        process.env.NODE_ENV === "development" ||
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"
+      );
+    }
+  }, []);
+
   return (
     <header className="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3 sticky top-0 z-20">
       <div className="flex items-center gap-3">
@@ -124,19 +142,21 @@ export function AdminHeader({ activeTab, auditLogs, handleLogout, handleTriggerL
           <RefreshCw size={13} />
           Sync Geçmişi
         </button>
-        <button
-          type="button"
-          role="tab"
-          aria-selected={activeTab === "volleybox-bot"}
-          onClick={() => setActiveTab("volleybox-bot")}
-          className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-            activeTab === "volleybox-bot"
-              ? "bg-done text-done-fg font-bold shadow-sm"
-              : "bg-slate-800 text-slate-300 hover:bg-slate-700"
-          }`}
-        >
-          🤖 Volleybox Botu
-        </button>
+        {isLocal && (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === "volleybox-bot"}
+            onClick={() => setActiveTab("volleybox-bot")}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              activeTab === "volleybox-bot"
+                ? "bg-done text-done-fg font-bold shadow-sm"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700"
+            }`}
+          >
+            🤖 Volleybox Botu
+          </button>
+        )}
         <button
           type="button"
           role="tab"
