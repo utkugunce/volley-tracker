@@ -86,8 +86,11 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
       });
     }
 
-    // Fallback: 15 günlük kayan pencere [-7 gün geçmiş .. +7 gün gelecek]
-    const offsets = [-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7];
+    // Fallback: 29 günlük kayan pencere [-14 gün geçmiş .. +14 gün gelecek]
+    const offsets = [
+      -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4,
+      5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+    ];
 
     return offsets.map((offset) => {
       const d = new Date(base);

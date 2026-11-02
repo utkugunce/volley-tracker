@@ -42,18 +42,36 @@ export async function getSupabaseCitiesCached(): Promise<CityEntry[] | null> {
   }
 
   try {
-    const { data, error } = await supabase
-      .from("matches")
-      .select("city_slug, city_name")
-      .not("city_slug", "is", null);
+    const PAGE_SIZE = 1000;
+    let allRows: { city_slug: string; city_name: string | null }[] = [];
+    let from = 0;
+    let hasMore = true;
 
-    if (error || !data || data.length === 0) {
-      setActiveDataSource("json-fallback");
-      return null;
+    while (hasMore) {
+      const { data, error } = await supabase
+        .from("matches")
+        .select("city_slug, city_name")
+        .not("city_slug", "is", null)
+        .order("city_slug")
+        .range(from, from + PAGE_SIZE - 1);
+
+      if (error || !data || data.length === 0) {
+        if (allRows.length === 0) {
+          setActiveDataSource("json-fallback");
+          return null;
+        }
+        break;
+      }
+      allRows = allRows.concat(data);
+      if (data.length < PAGE_SIZE) {
+        hasMore = false;
+      } else {
+        from += PAGE_SIZE;
+      }
     }
 
     const cityMap = new Map<string, string>();
-    for (const row of data) {
+    for (const row of allRows) {
       if (row.city_slug) {
         cityMap.set(row.city_slug, row.city_name || row.city_slug);
       }

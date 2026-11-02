@@ -2,6 +2,14 @@ import { getCityNameFromSlug } from "@/utils/cityHelper";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 import type { FixturesData, Match, StandingItem } from "@/types/fixture";
 
+interface StandingRow {
+  city_slug: string;
+  category: string;
+  rows: StandingItem[];
+  source_updated_at?: string;
+  updated_at?: string;
+}
+
 function toMatch(row: Record<string, unknown>): Match {
   const raw = row.raw && typeof row.raw === "object" ? row.raw : {};
   return {
@@ -35,46 +43,87 @@ export async function getSupabaseFixtures(
 
   const isAllCities = citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye";
 
-  let matchesQuery = supabase
-    .from("matches")
-    .select(
-      "id,city_slug,city_name,match_date,match_time,hall,category,age_group,gender,group_name,match_no,home_team,away_team,score,home_score,away_score,set_scores,status,volleybox,source_updated_at,updated_at"
-    )
-    .order("match_date");
-  if (!isAllCities) {
-    matchesQuery = matchesQuery.eq("city_slug", citySlug);
-  }
-  if (typeof (matchesQuery as { limit?: (n: number) => typeof matchesQuery }).limit === "function") {
-    matchesQuery = matchesQuery.limit(5000);
-  }
+  // PostgREST max rows per request is 1000. For large datasets (e.g. all cities),
+  // we must paginate using .range() to fetch all records.
+  const PAGE_SIZE = 1000;
 
-  let standingsQuery = isAllCities
-    ? supabase.from("standings").select("city_slug,category,rows,source_updated_at,updated_at")
-    : supabase.from("standings").select("city_slug,category,rows,source_updated_at,updated_at").eq("city_slug", citySlug);
-  if (typeof (standingsQuery as { limit?: (n: number) => typeof standingsQuery }).limit === "function") {
-    standingsQuery = standingsQuery.limit(5000);
-  }
+  const fetchMatches = async (): Promise<Record<string, unknown>[] | null> => {
+    let allRows: Record<string, unknown>[] = [];
+    let from = 0;
+    let hasMore = true;
 
-  const [
-    { data: rows, error: matchesError },
-    { data: standingRows, error: standingsError },
-  ] = await Promise.all([matchesQuery, standingsQuery]);
+    while (hasMore) {
+      let query = supabase
+        .from("matches")
+        .select(
+          "id,city_slug,city_name,match_date,match_time,hall,category,age_group,gender,group_name,match_no,home_team,away_team,score,home_score,away_score,set_scores,status,volleybox,source_updated_at,updated_at"
+        )
+        .order("match_date");
+      if (!isAllCities) {
+        query = query.eq("city_slug", citySlug);
+      }
+      query = query.range(from, from + PAGE_SIZE - 1);
 
-  if (matchesError) {
-    console.warn("Supabase fixtures okuma hatası (JSON fallback):", matchesError.message);
+      const { data: pageRows, error } = await query;
+      if (error) {
+        console.warn("Supabase fixtures okuma hatası (JSON fallback):", error.message);
+        return null;
+      }
+      if (!pageRows || pageRows.length === 0) {
+        break;
+      }
+      allRows = allRows.concat(pageRows as Record<string, unknown>[]);
+      if (pageRows.length < PAGE_SIZE) {
+        hasMore = false;
+      } else {
+        from += PAGE_SIZE;
+      }
+    }
+    return allRows;
+  };
+
+  const fetchStandings = async (): Promise<StandingRow[]> => {
+    let allStandingRows: StandingRow[] = [];
+    let from = 0;
+    let hasMore = true;
+
+    while (hasMore) {
+      let query = isAllCities
+        ? supabase.from("standings").select("city_slug,category,rows,source_updated_at,updated_at").order("city_slug")
+        : supabase.from("standings").select("city_slug,category,rows,source_updated_at,updated_at").eq("city_slug", citySlug);
+      query = query.range(from, from + PAGE_SIZE - 1);
+
+      const { data: pageRows, error } = await query;
+      if (error) {
+        console.warn("Supabase standings okuma hatası (boş standings kullanılıyor):", error.message);
+        break;
+      }
+      if (!pageRows || pageRows.length === 0) {
+        break;
+      }
+      allStandingRows = allStandingRows.concat(pageRows as unknown as StandingRow[]);
+      if (pageRows.length < PAGE_SIZE) {
+        hasMore = false;
+      } else {
+        from += PAGE_SIZE;
+      }
+    }
+    return allStandingRows;
+  };
+
+  const [rows, standingRows] = await Promise.all([fetchMatches(), fetchStandings()]);
+
+  if (!rows) {
     return null;
   }
 
-  const matches = (rows || []).map((row) => toMatch(row as Record<string, unknown>));
+  const matches = rows.map((row) => toMatch(row as Record<string, unknown>));
   const cityNames = new Map<string, string>();
   for (const match of matches) {
     const slug = String((match as Match & { city?: string }).city || "");
     if (slug) cityNames.set(slug, slug);
   }
 
-  if (standingsError) {
-    console.warn("Supabase standings okuma hatası (boş standings kullanılıyor):", standingsError.message);
-  }
 
   const standings: Record<string, StandingItem[]> = {};
   for (const row of standingRows || []) {
