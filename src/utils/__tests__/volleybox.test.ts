@@ -817,6 +817,30 @@ describe("volleybox utility", () => {
       expect(volkanAlias?.matched_as).toBe("Volkan Güç Spor Kulübü - B U18");
       expect(volkanAlias?.volleybox_url).toBe("https://women.volleybox.net/volkan-guc-spor-kulubu-u18-t53592");
     });
+
+    it("resolves İzmir 1. Lig U18 Arkas Spor B U18 to Arkas Spor Kulübü - B U18", () => {
+      const arkasB = getVolleyboxMapping("Arkas Spor B U18", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(arkasB).toBeDefined();
+      expect(arkasB?.matched_as).toBe("Arkas Spor Kulübü - B U18");
+      expect(arkasB?.volleybox_url).toContain("t53580");
+
+      const arkasAlias = getVolleyboxMapping("Arkas Spor Kulübü U18", "Genç Kızlar 1. Ligi", undefined, "İzmir");
+      expect(arkasAlias).toBeDefined();
+      expect(arkasAlias?.matched_as).toBe("Arkas Spor Kulübü - B U18");
+      expect(arkasAlias?.volleybox_url).toContain("t53580");
+    });
+
+    it("resolves Ankara 1. Lig U18 Eryaman Gençlik to Eryaman Gelişim SK - B U18", () => {
+      const eryaman1 = getVolleyboxMapping("Eryaman Gençlik", "Genç Kızlar 1. Ligi", undefined, "Ankara");
+      expect(eryaman1).toBeDefined();
+      expect(eryaman1?.matched_as).toBe("Eryaman Gelişim SK - B U18");
+      expect(eryaman1?.volleybox_url).toBe("https://women.volleybox.net/eryaman-gelisim-sk-b-u18-t41729");
+
+      const eryaman2 = getVolleyboxMapping("Eryaman Gençlik SK", "Genç Kızlar 1. Ligi", undefined, "Ankara");
+      expect(eryaman2).toBeDefined();
+      expect(eryaman2?.matched_as).toBe("Eryaman Gelişim SK - B U18");
+      expect(eryaman2?.volleybox_url).toBe("https://women.volleybox.net/eryaman-gelisim-sk-b-u18-t41729");
+    });
   });
 });
 

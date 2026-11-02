@@ -350,14 +350,20 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
         if ("izmir" in ct or not ct) and ("genc" in gs or "u18" in gs or "gk" in gs) and "super" in gs:
             if "karsiyaka" in rt:
                 return "Karşıyaka SK U18"
-        # İzmir Genç Kızlar 1. Ligi (U18) -> Volkan Güç B U18
+        # İzmir Genç Kızlar 1. Ligi (U18) -> Arkas Spor B U18 ve Volkan Güç B U18
         if ("izmir" in ct or not ct) and ("1. lig" in gs or "1.lig" in gs or "1. ligi" in gs) and ("genc" in gs or "u18" in gs or "gk" in gs):
             if "volkan" in rt:
                 return "Volkan Güç B U18"
+            if "arkas" in rt:
+                return "Arkas Spor B U18"
         # İzmir Yıldız Kızlar Süper Lig (U16) -> Karşıyaka U16 (Endo Karşıyaka değil)
         if ("izmir" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
             if "karsiyaka" in rt and not any(x in rt for x in ["alfa", "gonen"]):
                 return "Karşıyaka U16"
+        # Ankara Genç Kızlar 1. Ligi (U18) -> Eryaman Gelişim SK - B U18
+        if ("ankara" in ct or not ct) and ("1. lig" in gs or "1.lig" in gs or "1. ligi" in gs) and ("genc" in gs or "u18" in gs or "gk" in gs):
+            if "eryaman" in rt and not any(x in rt for x in ["yildiz", "guclu", "gucu"]):
+                return "Eryaman Gelişim SK - B U18"
         # Ankara Yıldız Kızlar Süper Lig -> PTT Spor U16 (PTT Spor II değil)
         if ("ankara" in ct or not ct) and ("yildiz" in gs or "u16" in gs or "yk" in gs):
             if "ptt" in rt:

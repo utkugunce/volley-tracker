@@ -6138,7 +6138,11 @@
         "Arkas Spor Kulübü - B",
         "Arkas Spor Kulübü - B U18",
         "Arkas Spor - B U18",
-        "Arkas Spor B"
+        "Arkas Spor B",
+        "Arkas Spor B U18",
+        "Arkas B U18",
+        "Arkas Spor Kulübü U18",
+        "Arkas"
       ],
       "synonyms": [
         "Arkas Spor Kulübü - B U18",
@@ -6165,7 +6169,12 @@
         "ARKAS",
         "Arkas B",
         "Arkas Spor Kulübü - B",
-        "Arkas Spor Kulübü - B U18"
+        "Arkas Spor Kulübü - B U18",
+        "Arkas Spor B U18",
+        "Arkas Spor B",
+        "Arkas B U18",
+        "Arkas - B",
+        "Arkas Spor Kulübü U18"
       ],
       "synonyms": [
         "Arkas Spor Kulübü - B U18",
@@ -20635,7 +20644,10 @@
         "Eryaman Gelişim SK U18",
         "Eryaman Gelişim SK - B U18",
         "Eryaman Gelişim SK",
-        "Eryaman Gelişim SK - B"
+        "Eryaman Gelişim SK - B",
+        "Eryaman Gençlik",
+        "Eryaman Gençlik SK",
+        "Eryaman Gençlik Spor Kulübü"
       ]
     },
     {
@@ -22769,6 +22781,70 @@
         "Volkan Güç Spor Kulübü - B",
         "Volkan Güç Spor Kulübü - B U18",
         "Volkan Güç"
+      ]
+    },
+    {
+      "internal_name": "Arkas Spor B U18",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "izmir",
+      "matched_as": "Arkas Spor Kulübü - B U18",
+      "volleybox_url": "https://women.volleybox.net/arkas-spor-u18-t53580",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "İzmir Genç Kızlar 1. Ligi Arkas B U18",
+      "verified_at": "2026-11-02",
+      "local_logo": "/logos/arkas-spor-u18-t53580.png",
+      "aliases": [
+        "Arkas Spor B U18",
+        "Arkas Spor B",
+        "Arkas B U18",
+        "Arkas B",
+        "Arkas - B",
+        "Arkas Spor Kulübü U18",
+        "Arkas Spor Kulübü - B",
+        "Arkas Spor Kulübü - B U18",
+        "Arkas"
+      ]
+    },
+    {
+      "internal_name": "Eryaman Gençlik",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Eryaman Gelişim SK - B U18",
+      "volleybox_url": "https://women.volleybox.net/eryaman-gelisim-sk-b-u18-t41729",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Ankara Genç Kızlar 1. Ligi Eryaman Gençlik = Eryaman Gelişim SK - B U18",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Eryaman Gençlik",
+        "Eryaman Gençlik SK",
+        "Eryaman Gençlik Spor Kulübü",
+        "Eryaman Gelişim SK - B U18",
+        "Eryaman Gelişim SK U18"
+      ]
+    },
+    {
+      "internal_name": "Eryaman Gençlik SK",
+      "internal_category": "Genç Kızlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Eryaman Gelişim SK - B U18",
+      "volleybox_url": "https://women.volleybox.net/eryaman-gelisim-sk-b-u18-t41729",
+      "age_category": "U18",
+      "confidence": "verified",
+      "note": "Ankara Genç Kızlar 1. Ligi Eryaman Gençlik = Eryaman Gelişim SK - B U18",
+      "verified_at": "2026-11-02",
+      "local_logo": null,
+      "aliases": [
+        "Eryaman Gençlik",
+        "Eryaman Gençlik SK",
+        "Eryaman Gençlik Spor Kulübü",
+        "Eryaman Gelişim SK - B U18",
+        "Eryaman Gelişim SK U18"
       ]
     }
   ],

@@ -433,14 +433,19 @@
       },
       {
         "rank": 2,
-        "team": "Arkas Spor Kulübü U18",
+        "team": "Arkas Spor B U18",
         "played": 3,
         "won": 3,
         "lost": 0,
         "points": 9,
         "sets_won": 9,
         "sets_lost": 1,
-        "form": []
+        "form": [],
+        "volleybox": {
+          "url": "https://women.volleybox.net/arkas-spor-u18-t53580",
+          "matched_as": "Arkas Spor Kulübü - B U18",
+          "confidence": "verified"
+        }
       },
       {
         "rank": 3,
@@ -3769,7 +3774,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "1",
-      "home_team": "Arkas Spor Kulübü U18",
+      "home_team": "Arkas Spor B U18",
       "away_team": "Volkan Güç B U18",
       "score": "3 - 1",
       "home_score": 3,
@@ -3955,7 +3960,7 @@
       "group": "A Grubu",
       "match_no": "5",
       "home_team": "İZEGE Spor Kulübü - A U18",
-      "away_team": "Arkas Spor Kulübü U18",
+      "away_team": "Arkas Spor B U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -4271,7 +4276,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "12",
-      "home_team": "Arkas Spor Kulübü U18",
+      "home_team": "Arkas Spor B U18",
       "away_team": "Bergama Belediyesi Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
