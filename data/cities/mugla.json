@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T15:51:03.527992+03:00",
+  "updated_at": "2026-11-02T17:15:36.051785+03:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -36,11 +36,11 @@
       {
         "rank": 1,
         "team": "Bodrum İhtisasspor U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -69,12 +69,12 @@
       {
         "rank": 4,
         "team": "Milas Belediye Spor Kulübü - B U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 1,
         "sets_won": 2,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -301,11 +301,11 @@
       {
         "rank": 1,
         "team": "Armutalan AZ 2024 Spor Kulübü U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -323,12 +323,12 @@
       {
         "rank": 3,
         "team": "1907 MARMARİS VOLEYBOL",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -336,11 +336,11 @@
       {
         "rank": 1,
         "team": "Bodrum İhtisasspor U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -358,12 +358,12 @@
       {
         "rank": 3,
         "team": "MİLAS ALL STAR AKADEMİ",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
@@ -405,29 +405,29 @@
     "Yıldız Kızlar Süper Lig - F Grubu": [
       {
         "rank": 1,
-        "team": "DATÇA GENÇLİK VE SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
+        "team": "Marmaris Belediyesi Gençlik Ve Spor Kulübü",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Marmaris Belediyesi Gençlik Ve Spor Kulübü",
-        "played": 0,
+        "team": "YEŞİL MARMARİS SPOR KULÜBÜ",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "YEŞİL MARMARİS SPOR KULÜBÜ",
+        "team": "DATÇA GENÇLİK VE SPOR KULÜBÜ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -440,7 +440,7 @@
     "Yıldız Kızlar Süper Lig - G Grubu": [
       {
         "rank": 1,
-        "team": "Bodrum Doğuş Spor U16",
+        "team": "Bodrum Belediyesi Bodrumspor U16",
         "played": 2,
         "won": 2,
         "lost": 0,
@@ -451,12 +451,12 @@
       },
       {
         "rank": 2,
-        "team": "Bodrum Belediyesi Bodrumspor U16",
-        "played": 1,
-        "won": 1,
+        "team": "Bodrum Doğuş Spor U16",
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -474,12 +474,12 @@
       {
         "rank": 4,
         "team": "Milas Belediye Spor Kulübü - B U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ]
@@ -674,11 +674,15 @@
       "match_no": "5",
       "home_team": "Milas Belediye Spor Kulübü - B U18",
       "away_team": "Bodrum İhtisasspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "20-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1448,11 +1452,15 @@
       "match_no": "2",
       "home_team": "1907 MARMARİS VOLEYBOL",
       "away_team": "Armutalan AZ 2024 Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "21-25",
+        "22-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1527,11 +1535,15 @@
       "match_no": "2",
       "home_team": "MİLAS ALL STAR AKADEMİ",
       "away_team": "Bodrum İhtisasspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "4-25",
+        "9-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1640,11 +1652,15 @@
       "match_no": "1",
       "home_team": "YEŞİL MARMARİS SPOR KULÜBÜ",
       "away_team": "Marmaris Belediyesi Gençlik Ve Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "7-25",
+        "17-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1802,11 +1818,15 @@
       "match_no": "4",
       "home_team": "Milas Belediye Spor Kulübü - B U16",
       "away_team": "Bodrum Belediyesi Bodrumspor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "11-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1825,5 +1845,5 @@
     }
   ],
   "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-11-02T15:52:14.699566"
+  "volleybox_sync_updated_at": "2026-11-02T17:16:51.973119"
 }

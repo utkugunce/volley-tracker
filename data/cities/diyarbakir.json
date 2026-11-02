@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T15:51:03.527992+03:00",
+  "updated_at": "2026-11-02T17:15:36.051785+03:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -304,18 +304,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414762",
+        "url": "https://women.volleybox.net/c414762",
+        "host_name": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+        "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-28",
+        "vb_time": "15:00",
+        "vb_hall": "Şehitlik",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-28",
+          "vb_time": "15:00",
+          "vb_hall": "Şehitlik",
+          "details": null
         }
       }
     },
@@ -342,18 +349,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414763",
+        "url": "https://women.volleybox.net/c414763",
+        "host_name": "Megaron İnşaat Diyarbakır Spor",
+        "guest_name": "Diyarbakır Voleybolcular Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-28",
+        "vb_time": "17:00",
+        "vb_hall": "Şehitlik",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-28",
+          "vb_time": "17:00",
+          "vb_hall": "Şehitlik",
+          "details": null
         }
       }
     },
@@ -382,18 +396,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414764",
+        "url": "https://women.volleybox.net/c414764",
+        "host_name": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+        "guest_name": "Diyarbakır Voleybolcular Spor Kulübü U18",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-29",
+        "vb_time": "12:00",
+        "vb_hall": "Şehitlik",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "12:00",
+          "vb_hall": "Şehitlik",
+          "details": null
         }
       }
     },
@@ -420,18 +441,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414765",
+        "url": "https://women.volleybox.net/c414765",
+        "host_name": "Megaron İnşaat Diyarbakır Spor",
+        "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-29",
+        "vb_time": "14:00",
+        "vb_hall": "Şehitlik",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-29",
+          "vb_time": "14:00",
+          "vb_hall": "Şehitlik",
+          "details": null
         }
       }
     },
@@ -458,18 +486,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414766",
+        "url": "https://women.volleybox.net/c414766",
+        "host_name": "Diyarbakır Voleybolcular Spor Kulübü U18",
+        "guest_name": "Diyarbakır İçkale Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-31",
+        "vb_time": "15:00",
+        "vb_hall": "Şehitlik",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "15:00",
+          "vb_hall": "Şehitlik",
+          "details": null
         }
       }
     },
@@ -496,18 +531,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414767",
+        "url": "https://women.volleybox.net/c414767",
+        "host_name": "Diyarbakır İçkale Spor Kulübü U18",
+        "guest_name": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "15:00",
+        "vb_hall": "Ş.Halit Gürsel",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "15:00",
+          "vb_hall": "Ş.Halit Gürsel",
+          "details": null
         }
       }
     },
@@ -534,22 +576,29 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414768",
+        "url": "https://women.volleybox.net/c414768",
+        "host_name": "Dicle Üniversitesi Spor Kulübü U18",
+        "guest_name": "Diyarbakır Gençlik Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "17:00",
+        "vb_hall": "Ş.Halit Gürsel",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "17:00",
+          "vb_hall": "Ş.Halit Gürsel",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 4,
-  "volleybox_sync_updated_at": "2026-11-02T15:52:14.612848"
+  "volleybox_synced_matches": 11,
+  "volleybox_sync_updated_at": "2026-11-02T17:16:51.799456"
 }
