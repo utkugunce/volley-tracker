@@ -8737,7 +8737,12 @@
       "verified_at": "2026-09-20",
       "local_logo": null,
       "logo_url": "/media/upload/teams/1789839412J0dVw.png",
-      "aliases": []
+      "aliases": [
+        "Balıkesir Voleybol Akademi Spor",
+        "Balıkesir Voleybol Akademi Spor Kulübü",
+        "Balıkesir Voleybol Akademi Spor Kulübü U18",
+        "BALIKESİR VOLEYBOL SPOR"
+      ]
     },
     {
       "internal_name": "Bandırma Bordo Spor Kulübü - B U16",
@@ -12221,18 +12226,21 @@
       "logo_url": "https://volleybox.net/media/upload/teams/big_17599209115dqrg.png"
     },
     {
-      "internal_name": "Balıkesir Voleybol Akademi Spor Kulübü U18",
+      "internal_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
       "internal_category": "Yıldız Kızlar Süper Lig",
       "city": "Balıkesir",
       "city_slug": "balikesir",
-      "matched_as": "Balıkesir Voleybol Akademi Spor Kulübü U16",
+      "matched_as": "Balıkesir Voleybol Spor Kulübü U16",
       "volleybox_url": "https://women.volleybox.net/balkesir-voleybol-spor-kulubu-u16-t42297",
       "age_category": "U16",
       "confidence": "verified",
       "aliases": [
         "Balıkesir Voleybol Akademi Spor Kulübü",
         "Balıkesir Voleybol Akademi Spor Kulübü U18",
-        "Balıkesir Voleybol Akademi Spor Kulübü U16"
+        "Balıkesir Voleybol Akademi Spor Kulübü U16",
+        "Balıkesir Voleybol Akademi Spor",
+        "Balıkesir Voleybol Spor Kulübü U16",
+        "Balıkesir Voleybol Spor Kulübü"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/balkesir-voleybol-spor-kulubu-u16-t42297.png",

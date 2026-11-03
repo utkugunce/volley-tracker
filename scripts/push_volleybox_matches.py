@@ -580,6 +580,7 @@ def resolve_team_for_match(
         best_score = 0
 
         for m in mappings_data.get("mappings", []):
+            in_name = (m.get("internal_name") or "").strip()
             matched_as = (m.get("matched_as") or "").strip()
             aliases = m.get("aliases") or []
             url = m.get("volleybox_url") or ""
@@ -589,7 +590,11 @@ def resolve_team_for_match(
             tid = mat.group(1)
 
             # Doğrudan takma ad / isim eşleşmesi
-            if clean_tvf.lower() == matched_as.lower() or any(clean_tvf.lower() == a.lower().strip() for a in aliases):
+            if (
+                clean_tvf.lower() == matched_as.lower()
+                or clean_tvf.lower() == in_name.lower()
+                or any(clean_tvf.lower() == a.lower().strip() for a in aliases)
+            ):
                 sc = 100
                 if is_u18 and "u18" in matched_as.lower():
                     sc += 10
