@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T13:23:35.241640+03:00",
+  "updated_at": "2026-11-03T14:34:27.319832+03:00",
   "city": "Afyonkarahisar",
   "slug": "afyon",
   "title": "TVF Afyonkarahisar Genç & Yıldız Kızlar Süper Lig",
@@ -88,7 +88,7 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Afyon Belediye Yüntaş Spor Kulübü- A",
+        "team": "Afyon Belediye Yüntaş SK U18",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -573,7 +573,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "2",
-      "home_team": "Afyon Belediye Yüntaş Spor Kulübü- A",
+      "home_team": "Afyon Belediye Yüntaş SK U18",
       "away_team": "Cex Spor Kulübü",
       "score": "3 - 0",
       "home_score": 3,
@@ -619,7 +619,7 @@
       "group": "B Grubu",
       "match_no": "3",
       "home_team": "Afyon Kartal Spor Kulubü",
-      "away_team": "Afyon Belediye Yüntaş Spor Kulübü- A",
+      "away_team": "Afyon Belediye Yüntaş SK U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -749,7 +749,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "6",
-      "home_team": "Afyon Belediye Yüntaş Spor Kulübü- A",
+      "home_team": "Afyon Belediye Yüntaş SK U18",
       "away_team": "Afyon Zirve Spor Kulübü",
       "score": "3 - 1",
       "home_score": 3,
@@ -1332,5 +1332,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-03T13:24:41.711134"
+  "volleybox_sync_updated_at": "2026-11-03T14:41:55.715536"
 }

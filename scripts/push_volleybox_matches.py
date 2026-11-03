@@ -180,6 +180,9 @@ def is_forfeit_match(m: Dict[str, Any]) -> bool:
     if m.get("forfeit") or m.get("is_forfeit") or m.get("walkover"):
         return True
 
+    if m.get("mac_durumu_kod") == "H" or "hükmen" in str(m.get("durum", "")).lower():
+        return True
+
     for field in ("home_team", "away_team", "score", "status", "note"):
         val = str(m.get(field) or "")
         if re.search(r"[\(\[]\s*h\s*[\)\]]|hükmen|hukmen", val, flags=re.IGNORECASE):
@@ -201,6 +204,16 @@ def parse_match_sets(m: Dict[str, Any]) -> Tuple[int, int]:
     if h is not None and a is not None:
         try:
             hi, ai = int(h), int(a)
+            if 0 <= hi <= 3 and 0 <= ai <= 3 and (hi > 0 or ai > 0):
+                return hi, ai
+        except (ValueError, TypeError):
+            pass
+
+    sa = m.get("set_a")
+    sb = m.get("set_b")
+    if sa is not None and sb is not None:
+        try:
+            hi, ai = int(sa), int(sb)
             if 0 <= hi <= 3 and 0 <= ai <= 3 and (hi > 0 or ai > 0):
                 return hi, ai
         except (ValueError, TypeError):
@@ -525,11 +538,26 @@ def collect_unsynced_matches(
             }
             by_tournament.setdefault(t_url, []).append(item)
 
-    if CITIES_DIR.exists():
-        for cj in sorted(CITIES_DIR.glob("*.json")):
-            process_city_file(cj, cj.stem.capitalize())
-    else:
-        process_city_file(FIXTURES_FILE, "İstanbul")
+    PRO_SLUGS_MAP = {
+        "sultanlar-ligi": ["sultanlar", "sultanlar-ligi", "sultanlar_ligi", "vodafone-sultanlar-ligi"],
+        "kadinlar-1-ligi": ["kadinlar-1", "kadinlar-1-lig", "kadinlar-1-ligi", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi"],
+        "kadinlar-2-ligi": ["kadinlar-2", "kadinlar-2-lig", "kadinlar-2-ligi", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig"],
+    }
+    all_pro_slugs = set()
+    for slist in PRO_SLUGS_MAP.values():
+        all_pro_slugs.update(slist)
+    all_pro_slugs.update(["pro", "pro-leagues", "profesyonel"])
+
+    cf_lower = (city_filter or "").lower().strip()
+    is_pro_filter_only = bool(city_filter and cf_lower in all_pro_slugs)
+
+    # Şehir dosyalarını tara (eğer salt profesyonel lig filtresi girilmemişse)
+    if not is_pro_filter_only:
+        if CITIES_DIR.exists():
+            for cj in sorted(CITIES_DIR.glob("*.json")):
+                process_city_file(cj, cj.stem.capitalize())
+        else:
+            process_city_file(FIXTURES_FILE, "İstanbul")
 
     pro_configs = [
         (K2_FILE, "Kadınlar 2. Ligi", "kadinlar-2-ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047"),
@@ -537,8 +565,15 @@ def collect_unsynced_matches(
         (DATA_DIR / "sultanlar_ligi.json", "Vodafone Sultanlar Ligi", "sultanlar-ligi", "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086"),
     ]
     for p_file, p_name, p_slug, p_url in pro_configs:
-        should_run = include_pro or (city_filter and city_filter.lower() in (p_slug, normalize_name(p_name)))
-        if not should_run or not p_file.exists():
+        if city_filter:
+            p_aliases = PRO_SLUGS_MAP.get(p_slug, []) + [p_slug, normalize_name(p_name), p_name.lower()]
+            is_match = (cf_lower in p_aliases) or (cf_lower in ("pro", "pro-leagues", "profesyonel"))
+            if not is_match:
+                continue
+        elif not include_pro:
+            continue
+
+        if not p_file.exists():
             continue
         with open(p_file, "r", encoding="utf-8") as f:
             pdata = json.load(f)
@@ -547,7 +582,7 @@ def collect_unsynced_matches(
             if vb.get("synced"):
                 continue
 
-            m_id = str(m.get("id") or f"{city_slug}_{m.get('home_team')}_{m.get('away_team')}_{m.get('date')}")
+            m_id = str(m.get("id") or f"{p_slug}_{m.get('takim_a')}_{m.get('takim_b')}_{m.get('tarih')}")
             if m_id in seen_match_ids:
                 continue
             if not ignore_quarantine and m_id in quarantine_data:
@@ -569,17 +604,48 @@ def collect_unsynced_matches(
                 # Volleybox geçmişte oynanan maçların skorsuz girilmesine izin vermez
                 continue
 
+            # Set detay skorlarını ayrıştır (örn: "(25-12) (25-12) (25-16)")
+            set_scores_list = []
+            raw_scores = m.get("set_sonuclari") or m.get("set_scores") or []
+            if isinstance(raw_scores, str) and raw_scores.strip():
+                set_scores_list = re.findall(r"\d+\s*[-:]\s*\d+", raw_scores)
+            elif isinstance(raw_scores, list):
+                set_scores_list = [str(s) for s in raw_scores]
+
+            # Takım ID'lerini doğrudan maç verisindeki Volleybox URL'lerinden çek
+            home_vb_url = m.get("takim_a_volleybox_url") or ""
+            away_vb_url = m.get("takim_b_volleybox_url") or ""
+            home_vb_id = None
+            away_vb_id = None
+            if home_vb_url:
+                mat_h = re.search(r"[-/]t(\d+)", home_vb_url)
+                if mat_h:
+                    home_vb_id = mat_h.group(1)
+            if away_vb_url:
+                mat_a = re.search(r"[-/]t(\d+)", away_vb_url)
+                if mat_a:
+                    away_vb_id = mat_a.group(1)
+
+            grp_name = m.get("grup_adi") or m.get("grup") or ""
+            sehir = m.get("sehir") or "Türkiye"
+
             item = {
                 "id": m.get("id"),
-                "city": "Türkiye",
+                "city": sehir,
                 "city_slug": p_slug,
                 "category": p_name,
-                "group": m.get("grup", ""),
+                "group": grp_name,
+                "week": m.get("hafta"),
+                "is_single_group": (p_slug == "sultanlar-ligi"),
                 "home_team": m.get("takim_a", ""),
                 "away_team": m.get("takim_b", ""),
+                "home_team_vb_id": home_vb_id,
+                "home_team_vb_name": m.get("takim_a_volleybox_name") or "",
+                "away_team_vb_id": away_vb_id,
+                "away_team_vb_name": m.get("takim_b_volleybox_name") or "",
                 "home_sets": h_sets,
                 "away_sets": a_sets,
-                "set_scores": m.get("setler") or [],
+                "set_scores": set_scores_list,
                 "date": d_str,
                 "time": m.get("saat") if m.get("saat") and m.get("saat") != "--:--" else "",
                 "hall": m.get("salon") if m.get("salon") and m.get("salon") not in ("TBD", "-") else "",
@@ -694,18 +760,33 @@ def resolve_team_for_match(
     page_teams: Optional[Dict[str, str]] = None,
     age_group: str = "",
     city_slug: str = "",
+    direct_vb_id: Optional[str] = None,
+    direct_vb_name: Optional[str] = None,
 ) -> Optional[Dict[str, str]]:
     """
     TVF takımını Volleybox takım ID'si ve adına dönüştürür.
     Sırasıyla:
+      0. Doğrudan maç verisindeki Volleybox ID'si (varsa - profesyonel ligler)
       1. Sayfadaki <select> seçenekleri (varsa)
       2. Sayfadaki maç kartlarında bulunan takımlar (varsa)
       3. mappings_data['mappings'] listesindeki eşleştirmeler
     Dönüş formatı: {'id': '<id>', 'label': '<name>'}
     """
     clean_tvf = (tvf_team or "").strip()
-    if not clean_tvf:
+    if not clean_tvf and not direct_vb_id:
         return None
+
+    # 0. Doğrudan Volleybox ID'si verilmişse (profesyonel ligler)
+    if direct_vb_id:
+        lbl = direct_vb_name or clean_tvf
+        if select_options:
+            for opt in select_options:
+                if str(opt.get("value") or "").strip() == str(direct_vb_id):
+                    lbl = str(opt.get("label") or lbl)
+                    break
+        elif page_teams and str(direct_vb_id) in page_teams:
+            lbl = page_teams[str(direct_vb_id)]
+        return {"id": str(direct_vb_id), "label": str(lbl)}
 
     # Hızlı önbellek kontrolü (sayfa seçenekleri yokken mapping-tabanlı sorgular için)
     cache_key = None
@@ -825,6 +906,7 @@ def match_option_for_round(
     has_semi_subgroups: Optional[bool] = None,
     city_slug: Optional[str] = None,
     is_third_place: bool = False,
+    week: Optional[Any] = None,
 ) -> Optional[Dict[str, str]]:
     """
     '- Tur seçin -' menüsündeki seçeneklerden maça uygun turu/grubu seçer.
@@ -1077,6 +1159,21 @@ def match_option_for_round(
             if "final" in lbl:
                 return opt
 
+    c_slug_norm = (city_slug or "").lower()
+    is_sultanlar = "sultanlar" in c_slug_norm or g_clean in ("lig etabı", "lig etabi")
+    if is_sultanlar:
+        if week:
+            w_str = str(week).strip()
+            for opt in opts:
+                lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+                if "regular season" in lbl and re.search(rf"\b{w_str}(?:st|nd|rd|th)?\s*round\b", lbl):
+                    return opt
+            for opt in opts:
+                lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+                if "regular season" in lbl and f"{w_str}" in lbl:
+                    return opt
+        return find_1st_round()
+
     # 3. 'Gruplar', 'Tek Grup', grup belirtilmemiş veya A/B/1. grup yazmayan durumlar -> Kesinlikle '1st round'
     if (
         is_single_group
@@ -1084,7 +1181,7 @@ def match_option_for_round(
         or not g_clean
         or "tek" in g_clean
         or "gruplar" in g_clean
-        or g_clean in ("normal sezon", "regular season", "1. etap", "grup", "grupları")
+        or g_clean in ("normal sezon", "regular season", "1. etap", "grup", "grupları", "lig etabı", "lig etabi")
     ):
         return find_1st_round()
 
@@ -1096,6 +1193,18 @@ def match_option_for_round(
 
     # 4. Harf Grubu (örn: 'A Grubu', 'B Grb.', 'C Grubu') -> Kesin 'Group A', 'Group B'
     if letter_token:
+        # KFC Kadınlar 1. Ligi için hafta eşleştirmesi (örn: '1st round - Group A', '2nd round - Group B')
+        if week:
+            w_str = str(week).strip()
+            for opt in opts:
+                lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+                if f"group {letter_token}".lower() in lbl and re.search(rf"\b{w_str}(?:st|nd|rd|th)?\s*round\b", lbl):
+                    return opt
+            for opt in opts:
+                lbl = str(opt.get("label") or opt.get("name") or "").strip().lower()
+                if f"group {letter_token}".lower() in lbl and f"{w_str}" in lbl:
+                    return opt
+
         expected_vb = f"group {letter_token}".lower()
         expected_tr = f"{letter_token} grubu".lower()
         for opt in opts:
@@ -1121,11 +1230,11 @@ def match_option_for_round(
                 return opt
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
-            if re.match(rf"^group\s*{re.escape(num_token)}\b", lbl, re.I):
+            if re.match(rf"^group\s*0?{re.escape(num_token)}\b", lbl, re.I):
                 return opt
         for opt in opts:
             lbl = str(opt.get("label") or "").strip().lower()
-            if re.search(rf"\bgroup\s*{re.escape(num_token)}\b", lbl, re.I):
+            if re.search(rf"\bgroup\s*0?{re.escape(num_token)}\b", lbl, re.I):
                 return opt
 
     return find_1st_round()
@@ -1385,6 +1494,8 @@ def fill_and_submit_match_on_page(
         page_teams=form_data.get("pageTeams"),
         age_group=age_cat,
         city_slug=match_city_slug,
+        direct_vb_id=match_item.get("home_team_vb_id"),
+        direct_vb_name=match_item.get("home_team_vb_name"),
     )
     if not host_opt:
         return (
@@ -1400,6 +1511,8 @@ def fill_and_submit_match_on_page(
         page_teams=form_data.get("pageTeams"),
         age_group=age_cat,
         city_slug=match_city_slug,
+        direct_vb_id=match_item.get("away_team_vb_id"),
+        direct_vb_name=match_item.get("away_team_vb_name"),
     )
     if not guest_opt:
         return (
@@ -1449,6 +1562,7 @@ def fill_and_submit_match_on_page(
         has_semi_subgroups=match_item.get("has_semi_subgroups"),
         city_slug=match_item.get("city_slug"),
         is_third_place=match_item.get("is_third_place", False),
+        week=match_item.get("week"),
     )
 
     # Saha sorgulamasını çalıştır (salon adı, ilk kelimeler, şehir ve ev sahibi takıma göre)
@@ -1832,16 +1946,32 @@ def fill_and_submit_match_on_page(
 def mark_match_as_synced_locally(city_slug: str, match_item: Dict[str, Any], vb_info: Dict[str, Any]):
     """
     Volleybox'a yeni eklenen veya sayfada zaten mevcut olduğu tespit edilen maçı
-    data/cities/{city_slug}.json dosyasına anında 'synced: True' olarak işler.
+    ilgili il veya profesyonel lig JSON dosyasına anında 'synced: True' olarak işler.
     Böylece kuyruktan anında düşer ve Cloudflare 403 engellerinden etkilenmez.
     """
-    city_file = CITIES_DIR / f"{city_slug}.json"
-    if not city_file.exists():
+    c_slug_lower = (city_slug or "").lower().strip()
+    is_pro = c_slug_lower in (
+        "kadinlar-2-ligi", "kadinlar-2", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig",
+        "kadinlar-1-ligi", "kadinlar-1", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi",
+        "sultanlar-ligi", "sultanlar", "sultanlar_ligi", "vodafone-sultanlar-ligi",
+    )
+
+    if is_pro:
+        if c_slug_lower in ("kadinlar-2-ligi", "kadinlar-2", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig"):
+            target_file = K2_FILE
+        elif c_slug_lower in ("kadinlar-1-ligi", "kadinlar-1", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi"):
+            target_file = DATA_DIR / "kadinlar_1_lig.json"
+        else:
+            target_file = DATA_DIR / "sultanlar_ligi.json"
+    else:
+        target_file = CITIES_DIR / f"{city_slug}.json"
+
+    if not target_file.exists():
         return
 
     try:
-        with open(city_file, "r", encoding="utf-8") as f:
-            city_data = json.load(f)
+        with open(target_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
         raw = match_item.get("raw_match") or {}
         m_id = raw.get("id") or match_item.get("id")
@@ -1849,61 +1979,102 @@ def mark_match_as_synced_locally(city_slug: str, match_item: Dict[str, Any], vb_
         home = raw.get("home_team") or match_item.get("home_team")
         away = raw.get("away_team") or match_item.get("away_team")
 
+        m_vid = str(vb_info.get("match_id") or "")
+        m_url = vb_info.get("url") or (f"https://women.volleybox.net/c{m_vid}" if m_vid else "")
+        vb_obj = {
+            "synced": True,
+            "match_id": m_vid,
+            "url": m_url,
+            "host_name": vb_info.get("host_name") or home,
+            "guest_name": vb_info.get("guest_name") or away,
+            "score": vb_info.get("score") or f"{match_item.get('home_sets', 0)} - {match_item.get('away_sets', 0)}",
+            "has_score": bool(vb_info.get("has_score", match_item.get("home_sets", 0) > 0 or match_item.get("away_sets", 0) > 0)),
+            "vb_date": m_date,
+            "vb_time": raw.get("time") or match_item.get("time") or "",
+            "vb_hall": raw.get("hall") or match_item.get("hall") or "",
+            "discrepancy": {
+                "has_diff": False,
+                "date_diff": False,
+                "time_diff": False,
+                "hall_diff": False,
+                "vb_date": m_date,
+                "vb_time": raw.get("time") or match_item.get("time") or "",
+                "vb_hall": raw.get("hall") or match_item.get("hall") or "",
+                "details": None,
+            }
+        }
+
         updated = False
-        synced_count = 0
-        for m in city_data.get("matches", []):
-            is_target = False
-            if m_id and m.get("id") == m_id:
-                is_target = True
-            elif (
-                m.get("date") == m_date
-                and m.get("home_team") == home
-                and m.get("away_team") == away
-            ):
-                is_target = True
 
-            if is_target:
-                m_vid = str(vb_info.get("match_id") or "")
-                m_url = vb_info.get("url") or (f"https://women.volleybox.net/c{m_vid}" if m_vid else "")
-                m["volleybox"] = {
-                    "synced": True,
-                    "match_id": m_vid,
-                    "url": m_url,
-                    "host_name": vb_info.get("host_name") or home,
-                    "guest_name": vb_info.get("guest_name") or away,
-                    "score": vb_info.get("score") or f"{match_item.get('home_sets', 0)} - {match_item.get('away_sets', 0)}",
-                    "has_score": bool(vb_info.get("has_score", match_item.get("home_sets", 0) > 0 or match_item.get("away_sets", 0) > 0)),
-                    "vb_date": m_date,
-                    "vb_time": raw.get("time") or match_item.get("time") or "",
-                    "vb_hall": raw.get("hall") or match_item.get("hall") or "",
-                    "discrepancy": {
-                        "has_diff": False,
-                        "date_diff": False,
-                        "time_diff": False,
-                        "hall_diff": False,
-                        "vb_date": m_date,
-                        "vb_time": raw.get("time") or match_item.get("time") or "",
-                        "vb_hall": raw.get("hall") or match_item.get("hall") or "",
-                        "details": None,
-                    }
-                }
-                updated = True
+        if is_pro:
+            def pro_match_filter(pm):
+                if m_id and pm.get("id") == m_id:
+                    return True
+                p_tarih = pm.get("tarih") or pm.get("date") or ""
+                if "." in p_tarih:
+                    parts = p_tarih.split(".")
+                    if len(parts) == 3:
+                        p_tarih = f"{parts[2]}-{parts[1]}-{parts[0]}"
+                p_h = pm.get("takim_a") or pm.get("home_team") or ""
+                p_a = pm.get("takim_b") or pm.get("away_team") or ""
+                return (p_tarih == m_date and p_h == home and p_a == away)
 
-            if m.get("volleybox", {}).get("synced"):
-                synced_count += 1
+            for pm in data.get("tum_maclar", []):
+                if pro_match_filter(pm):
+                    pm["volleybox"] = vb_obj
+                    updated = True
 
-        if updated:
-            city_data["volleybox_synced_matches"] = synced_count
-            with open(city_file, "w", encoding="utf-8") as f:
-                json.dump(city_data, f, ensure_ascii=False, indent=2)
-            log_step(f"   💾 {city_file.name} güncellendi: Maç anında 'synced: True' olarak kaydedildi.")
+            for g in data.get("gruplar", []):
+                for pm in g.get("fikstur", []):
+                    if pro_match_filter(pm):
+                        pm["volleybox"] = vb_obj
+
+            if updated:
+                synced_count = sum(1 for pm in data.get("tum_maclar", []) if pm.get("volleybox", {}).get("synced"))
+                if "metadata" not in data:
+                    data["metadata"] = {}
+                data["metadata"]["volleybox_synced_matches"] = synced_count
+                data["metadata"]["volleybox_sync_updated_at"] = datetime.now().isoformat()
+                with open(target_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                log_step(f"   💾 {target_file.name} güncellendi: Maç anında 'synced: True' olarak kaydedildi.")
+        else:
+            synced_count = 0
+            for m in data.get("matches", []):
+                is_target = False
+                if m_id and m.get("id") == m_id:
+                    is_target = True
+                elif (
+                    m.get("date") == m_date
+                    and m.get("home_team") == home
+                    and m.get("away_team") == away
+                ):
+                    is_target = True
+
+                if is_target:
+                    m["volleybox"] = vb_obj
+                    updated = True
+
+                if m.get("volleybox", {}).get("synced"):
+                    synced_count += 1
+
+            if updated:
+                data["volleybox_synced_matches"] = synced_count
+                with open(target_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=2)
+                log_step(f"   💾 {target_file.name} güncellendi: Maç anında 'synced: True' olarak kaydedildi.")
     except Exception as e:
         log_step(f"   ⚠️ Yerel dosya güncellenirken hata: {e}")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Sitedeki eksik maçları Volleybox'a otomatik ekleyen Playwright botu")
-    parser.add_argument("--city", default=None, help="Sadece belirli bir ili/ligi işle (örn: zonguldak, afyon, kocaeli, istanbul)")
+    parser.add_argument("--city", default=None, help="Sadece belirli bir ili/ligi işle (örn: zonguldak, afyon, kadinlar-2-ligi, sultanlar)")
+    parser.add_argument("--league", choices=["sultanlar", "kadinlar-1", "kadinlar-2", "pro"], default=None, help="Profesyonel lig seçimi (sultanlar, kadinlar-1, kadinlar-2, pro)")
+    parser.add_argument("--sultanlar", action="store_true", help="Sadece Vodafone Sultanlar Ligi maçlarını işle")
+    parser.add_argument("--kadinlar-1", "--1-lig", dest="kadinlar_1", action="store_true", help="Sadece KFC Kadınlar 1. Ligi maçlarını işle")
+    parser.add_argument("--kadinlar-2", "--2-lig", dest="kadinlar_2", action="store_true", help="Sadece Kadınlar 2. Ligi maçlarını işle")
+    parser.add_argument("--pro", action="store_true", help="Tüm profesyonel ligleri (Sultanlar, 1. Lig, 2. Lig) işle")
     parser.add_argument("--dry-run", action="store_true", help="Tarayıcı açmadan eklenecek eksik maçları listele")
     parser.add_argument("--json-preview", action="store_true", help="Eksik maçları JSON olarak çıktı ver")
     parser.add_argument("--login", action="store_true", help="Volleybox hesabına giriş yapıp oturumu kaydet")
@@ -1915,6 +2086,16 @@ def main():
     parser.add_argument("--retry-quarantine", action="store_true", help="Karantinadaki maçları da işleme dahil et")
     parser.add_argument("--clear-quarantine", action="store_true", help="Karantina listesini sıfırla ve çık")
     args = parser.parse_args()
+
+    # Profesyonel lig kısayol bayraklarını city filtresine dönüştür
+    if args.sultanlar or args.league == "sultanlar":
+        args.city = "sultanlar-ligi"
+    elif args.kadinlar_1 or args.league == "kadinlar-1":
+        args.city = "kadinlar-1-ligi"
+    elif args.kadinlar_2 or args.league == "kadinlar-2":
+        args.city = "kadinlar-2-ligi"
+    elif args.pro or args.league == "pro":
+        args.city = "pro"
 
     if args.clear_quarantine:
         cnt = clear_quarantine()

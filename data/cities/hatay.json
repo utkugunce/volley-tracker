@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T13:23:35.241640+03:00",
+  "updated_at": "2026-11-03T14:34:27.319832+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -341,17 +341,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-05",
-        "vb_time": "19:30",
+        "vb_time": "18:00",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-05",
-          "vb_time": "19:30",
+          "vb_time": "18:00",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -382,17 +382,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-05",
-        "vb_time": "18:00",
+        "vb_time": "19:30",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-05",
-          "vb_time": "18:00",
+          "vb_time": "19:30",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -587,17 +587,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-24",
-        "vb_time": "19:30",
+        "vb_time": "18:00",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-24",
-          "vb_time": "19:30",
+          "vb_time": "18:00",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -628,17 +628,17 @@
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-24",
-        "vb_time": "18:00",
+        "vb_time": "19:30",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-24",
-          "vb_time": "18:00",
+          "vb_time": "19:30",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -2613,5 +2613,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-03T13:24:41.817483"
+  "volleybox_sync_updated_at": "2026-11-03T14:41:57.085290"
 }

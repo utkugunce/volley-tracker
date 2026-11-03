@@ -195,6 +195,8 @@ def evaluate_bot_health(
                 mappings_data=mappings_data,
                 age_group=age_cat,
                 city_slug=c_slug,
+                direct_vb_id=item.get("home_team_vb_id"),
+                direct_vb_name=item.get("home_team_vb_name"),
             )
             guest_opt = resolve_team_for_match(
                 item["away_team"],
@@ -202,6 +204,8 @@ def evaluate_bot_health(
                 mappings_data=mappings_data,
                 age_group=age_cat,
                 city_slug=c_slug,
+                direct_vb_id=item.get("away_team_vb_id"),
+                direct_vb_name=item.get("away_team_vb_name"),
             )
 
             has_issue = False
@@ -362,13 +366,28 @@ def print_cli_report(report: Dict[str, Any]) -> None:
 
 def main():
     parser = argparse.ArgumentParser(description="Volleybox Bot Sağlık & Eşleştirme Denetleyicisi")
-    parser.add_argument("--city", "-c", type=str, default=None, help="Yalnızca belirtilen şehri denetle")
+    parser.add_argument("--city", "-c", type=str, default=None, help="Yalnızca belirtilen şehri/ligi denetle")
+    parser.add_argument("--league", choices=["sultanlar", "kadinlar-1", "kadinlar-2", "pro"], default=None, help="Profesyonel lig seçimi")
+    parser.add_argument("--sultanlar", action="store_true", help="Sadece Vodafone Sultanlar Ligi'ni denetle")
+    parser.add_argument("--kadinlar-1", "--1-lig", dest="kadinlar_1", action="store_true", help="Sadece KFC Kadınlar 1. Ligi'ni denetle")
+    parser.add_argument("--kadinlar-2", "--2-lig", dest="kadinlar_2", action="store_true", help="Sadece Kadınlar 2. Ligi'ni denetle")
+    parser.add_argument("--pro", action="store_true", help="Tüm profesyonel ligleri denetle")
     parser.add_argument("--json", action="store_true", help="JSON formatında çıktı bas")
     parser.add_argument("--quarantine-add", type=str, default=None, help="Belirtilen maç ID'sini karantinaya ekle")
     parser.add_argument("--reason", type=str, default="Manuel karantina", help="Karantinaya ekleme gerekçesi")
     parser.add_argument("--quarantine-remove", type=str, default=None, help="Belirtilen maç ID'sini karantinadan çıkar")
     parser.add_argument("--clear-quarantine", action="store_true", help="Tüm karantina listesini temizle")
     args = parser.parse_args()
+
+    # Profesyonel lig kısayol bayraklarını city filtresine dönüştür
+    if args.sultanlar or args.league == "sultanlar":
+        args.city = "sultanlar-ligi"
+    elif args.kadinlar_1 or args.league == "kadinlar-1":
+        args.city = "kadinlar-1-ligi"
+    elif args.kadinlar_2 or args.league == "kadinlar-2":
+        args.city = "kadinlar-2-ligi"
+    elif args.pro or args.league == "pro":
+        args.city = "pro"
 
     if args.clear_quarantine:
         cleared = clear_quarantine()

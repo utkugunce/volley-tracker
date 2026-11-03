@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T13:23:35.241640+03:00",
+  "updated_at": "2026-11-03T14:34:27.319832+03:00",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -821,15 +821,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407995",
-        "url": "https://women.volleybox.net/tr/dogus27-spor-kulubu-u16-antepia-spor-kulubu-u16-c407995",
-        "host_name": "Doğuş27 Spor Kulübü U16",
-        "guest_name": "Antepia Spor Kulübü U16",
+        "match_id": "407994",
+        "url": "https://women.volleybox.net/tr/merinos-sk-b-u16-merinos-sk-u16-c407994",
+        "host_name": "Merinos SK - B U16",
+        "guest_name": "Merinos SK U16",
         "score": "0 - 3",
         "has_score": true,
         "vb_date": "2026-10-17",
         "vb_time": "09:30",
-        "vb_hall": "Dumlupınar Spor Salonu",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -837,7 +837,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-17",
           "vb_time": "09:30",
-          "vb_hall": "Dumlupınar Spor Salonu",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
           "details": null
         }
       }
@@ -866,15 +866,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407994",
-        "url": "https://women.volleybox.net/tr/merinos-sk-b-u16-merinos-sk-u16-c407994",
-        "host_name": "Merinos SK - B U16",
-        "guest_name": "Merinos SK U16",
+        "match_id": "407995",
+        "url": "https://women.volleybox.net/tr/dogus27-spor-kulubu-u16-antepia-spor-kulubu-u16-c407995",
+        "host_name": "Doğuş27 Spor Kulübü U16",
+        "guest_name": "Antepia Spor Kulübü U16",
         "score": "0 - 3",
         "has_score": true,
         "vb_date": "2026-10-17",
         "vb_time": "09:30",
-        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -882,7 +882,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-17",
           "vb_time": "09:30",
-          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
+          "vb_hall": "Dumlupınar Spor Salonu",
           "details": null
         }
       }
@@ -1119,5 +1119,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-03T13:24:41.809033"
+  "volleybox_sync_updated_at": "2026-11-03T14:41:56.837342"
 }

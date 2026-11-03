@@ -1196,9 +1196,20 @@ def main():
         if args.skip_kadinlar_2_lig and is_k2:
             continue
         if args.city:
-            if args.city.lower() in [c_slug.lower(), c_norm, c_name.lower()]:
-                target_leagues.append(l)
-            elif is_k2 and args.city.lower() in ["kadinlar-2-ligi", "2lig", "turkiye"]:
+            cf = args.city.lower().strip()
+            is_sultanlar = "sultanlar" in internal_name
+            is_k1 = "kfc" in internal_name or "kadınlar 1" in internal_name or "kadinlar 1" in internal_name
+            is_k2 = "2. lig" in internal_name or "kadinlar 2" in internal_name
+
+            c_aliases = [c_slug.lower(), c_norm, c_name.lower()]
+            if is_sultanlar:
+                c_aliases.extend(["sultanlar", "sultanlar-ligi", "sultanlar_ligi", "vodafone-sultanlar-ligi"])
+            if is_k1:
+                c_aliases.extend(["kadinlar-1", "kadinlar-1-lig", "kadinlar-1-ligi", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi"])
+            if is_k2:
+                c_aliases.extend(["kadinlar-2", "kadinlar-2-lig", "kadinlar-2-ligi", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig"])
+
+            if cf in c_aliases or (cf in ("pro", "pro-leagues", "profesyonel") and (is_sultanlar or is_k1 or is_k2)):
                 target_leagues.append(l)
         elif args.all:
             target_leagues.append(l)
@@ -1287,21 +1298,24 @@ def main():
                 print(f"✅ {city_json.name:<18} : {c_synced} / {c_total} maç Volleybox ile eşleşti.")
 
     # 5. data/kadinlar_2_lig.json senkronizasyonu
-    if not args.skip_kadinlar_2_lig and K2_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-2-ligi", "2lig", "turkiye"]):
+    K2_ALIASES = ["kadinlar-2-ligi", "kadinlar-2", "kadinlar-2-lig", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig", "turkiye", "pro", "profesyonel"]
+    if not args.skip_kadinlar_2_lig and K2_FILE.exists() and (not args.city or args.city.lower() in K2_ALIASES):
         print("\n🔄 data/kadinlar_2_lig.json senkronize ediliyor...")
         k2_synced, k2_total = sync_league_json_matches(K2_FILE, "Kadınlar 2. Ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047", vb_tournaments, team_alias_map)
         print(f"✅ Kadınlar 2. Ligi: {k2_synced} / {k2_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     # 6. data/kadinlar_1_lig.json senkronizasyonu
     K1_FILE = DATA_DIR / "kadinlar_1_lig.json"
-    if K1_FILE.exists() and (not args.city or args.city.lower() in ["kadinlar-1-ligi", "1lig", "turkiye"]):
+    K1_ALIASES = ["kadinlar-1-ligi", "kadinlar-1", "kadinlar-1-lig", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi", "turkiye", "pro", "profesyonel"]
+    if K1_FILE.exists() and (not args.city or args.city.lower() in K1_ALIASES):
         print("\n🔄 data/kadinlar_1_lig.json senkronize ediliyor...")
         k1_synced, k1_total = sync_league_json_matches(K1_FILE, "KFC Kadınlar 1. Ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210", vb_tournaments, team_alias_map)
         print(f"✅ KFC Kadınlar 1. Ligi: {k1_synced} / {k1_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     # 7. data/sultanlar_ligi.json senkronizasyonu
     SULTANLAR_FILE = DATA_DIR / "sultanlar_ligi.json"
-    if SULTANLAR_FILE.exists() and (not args.city or args.city.lower() in ["sultanlar-ligi", "sultanlar", "turkiye"]):
+    SULTANLAR_ALIASES = ["sultanlar-ligi", "sultanlar", "sultanlar_ligi", "vodafone-sultanlar-ligi", "turkiye", "pro", "profesyonel"]
+    if SULTANLAR_FILE.exists() and (not args.city or args.city.lower() in SULTANLAR_ALIASES):
         print("\n🔄 data/sultanlar_ligi.json senkronize ediliyor...")
         sult_synced, sult_total = sync_league_json_matches(SULTANLAR_FILE, "Vodafone Sultanlar Ligi", "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086", vb_tournaments, team_alias_map)
         print(f"✅ Vodafone Sultanlar Ligi: {sult_synced} / {sult_total} maç Volleybox ile eşleşti ve doğrulandı!")

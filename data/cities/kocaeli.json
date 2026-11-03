@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T13:23:35.241640+03:00",
+  "updated_at": "2026-11-03T14:34:27.319832+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
@@ -330,15 +330,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407778",
-        "url": "https://women.volleybox.net/tr/korfez-akademi-sk-u18-golcuk-belediye-spor-kulubu-u18-c407778",
-        "host_name": "Körfez Akademi SK U18",
-        "guest_name": "Gölcük Belediye Spor Kulübü U18",
-        "score": "3 - 0",
+        "match_id": "407776",
+        "url": "https://women.volleybox.net/tr/zmit-yahya-kaptan-sk-u18-nicomedia-akademi-spor-kulubu-u18-c407776",
+        "host_name": "İzmit Yahya Kaptan SK U18",
+        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
+        "score": "0 - 3",
         "has_score": true,
         "vb_date": "2026-10-06",
         "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -346,7 +346,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-06",
           "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
           "details": null
         }
       }
@@ -375,15 +375,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407776",
-        "url": "https://women.volleybox.net/tr/zmit-yahya-kaptan-sk-u18-nicomedia-akademi-spor-kulubu-u18-c407776",
-        "host_name": "İzmit Yahya Kaptan SK U18",
-        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
-        "score": "0 - 3",
+        "match_id": "407778",
+        "url": "https://women.volleybox.net/tr/korfez-akademi-sk-u18-golcuk-belediye-spor-kulubu-u18-c407778",
+        "host_name": "Körfez Akademi SK U18",
+        "guest_name": "Gölcük Belediye Spor Kulübü U18",
+        "score": "3 - 0",
         "has_score": true,
         "vb_date": "2026-10-06",
         "vb_time": "18:30",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -391,7 +391,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-06",
           "vb_time": "18:30",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "vb_hall": "Derince Spor Salonu",
           "details": null
         }
       }
@@ -421,15 +421,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407781",
-        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-siyah-kugular-spor-kulubu-u18-c407781",
-        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "guest_name": "Siyah Kuğular Spor Kulübü U18",
+        "match_id": "407780",
+        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-kocaeli-anka-spor-kulubu-u18-c407780",
+        "host_name": "5 Renk Spor Kulübü U18",
+        "guest_name": "Kocaeli Anka Spor Kulübü U18",
         "score": "1 - 3",
         "has_score": true,
         "vb_date": "2026-10-06",
         "vb_time": "20:00",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -437,7 +437,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-06",
           "vb_time": "20:00",
-          "vb_hall": "Derince Spor Salonu",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
           "details": null
         }
       }
@@ -467,15 +467,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407780",
-        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-kocaeli-anka-spor-kulubu-u18-c407780",
-        "host_name": "5 Renk Spor Kulübü U18",
-        "guest_name": "Kocaeli Anka Spor Kulübü U18",
+        "match_id": "407781",
+        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-siyah-kugular-spor-kulubu-u18-c407781",
+        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "guest_name": "Siyah Kuğular Spor Kulübü U18",
         "score": "1 - 3",
         "has_score": true,
         "vb_date": "2026-10-06",
         "vb_time": "20:00",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -483,7 +483,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-06",
           "vb_time": "20:00",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "vb_hall": "Derince Spor Salonu",
           "details": null
         }
       }
@@ -602,15 +602,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407783",
-        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c407783",
-        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-        "score": "0 - 3",
+        "match_id": "407390",
+        "url": "https://women.volleybox.net/tr/zmit-yahya-kaptan-sk-u18-kocaeli-elite-spor-u18-c407390",
+        "host_name": "Kocaeli Elite Spor U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "score": "2 - 3",
         "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -618,7 +618,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-09",
           "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
           "details": null
         }
       }
@@ -649,15 +649,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407390",
-        "url": "https://women.volleybox.net/tr/zmit-yahya-kaptan-sk-u18-kocaeli-elite-spor-u18-c407390",
-        "host_name": "Kocaeli Elite Spor U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
-        "score": "2 - 3",
+        "match_id": "407783",
+        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c407783",
+        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "score": "0 - 3",
         "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "18:30",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -665,7 +665,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-09",
           "vb_time": "18:30",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "vb_hall": "Derince Spor Salonu",
           "details": null
         }
       }
@@ -694,15 +694,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407785",
-        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-5-renk-spor-kulubu-u18-c407785",
-        "host_name": "Körfez Vaveyla Spor Kulübü U18",
-        "guest_name": "5 Renk Spor Kulübü U18",
-        "score": "0 - 3",
+        "match_id": "407784",
+        "url": "https://women.volleybox.net/tr/zmit-spor-u18-korfez-akademi-sk-u18-c407784",
+        "host_name": "İzmit Spor U18",
+        "guest_name": "Körfez Akademi SK U18",
+        "score": "3 - 2",
         "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "20:00",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -710,7 +710,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-09",
           "vb_time": "20:00",
-          "vb_hall": "Derince Spor Salonu",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
           "details": null
         }
       }
@@ -741,15 +741,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "407784",
-        "url": "https://women.volleybox.net/tr/zmit-spor-u18-korfez-akademi-sk-u18-c407784",
-        "host_name": "İzmit Spor U18",
-        "guest_name": "Körfez Akademi SK U18",
-        "score": "3 - 2",
+        "match_id": "407785",
+        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-5-renk-spor-kulubu-u18-c407785",
+        "host_name": "Körfez Vaveyla Spor Kulübü U18",
+        "guest_name": "5 Renk Spor Kulübü U18",
+        "score": "0 - 3",
         "has_score": true,
         "vb_date": "2026-10-09",
         "vb_time": "20:00",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -757,7 +757,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-09",
           "vb_time": "20:00",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "vb_hall": "Derince Spor Salonu",
           "details": null
         }
       }
@@ -1056,15 +1056,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "408140",
-        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c408140",
-        "host_name": "Siyah Kuğular Spor Kulübü U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
-        "score": "3 - 0",
+        "match_id": "408138",
+        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-kocaeli-19-mays-spor-kulubu-u18-c408138",
+        "host_name": "5 Renk Spor Kulübü U18",
+        "guest_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "score": "1 - 3",
         "has_score": true,
         "vb_date": "2026-10-16",
         "vb_time": "20:00",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_hall": "Vezirçiftliği Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1072,7 +1072,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-16",
           "vb_time": "20:00",
-          "vb_hall": "Başiskele Spor Salonu",
+          "vb_hall": "Vezirçiftliği Spor Salonu",
           "details": null
         }
       }
@@ -1102,15 +1102,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "408138",
-        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-kocaeli-19-mays-spor-kulubu-u18-c408138",
-        "host_name": "5 Renk Spor Kulübü U18",
-        "guest_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "score": "1 - 3",
+        "match_id": "408140",
+        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c408140",
+        "host_name": "Siyah Kuğular Spor Kulübü U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "score": "3 - 0",
         "has_score": true,
         "vb_date": "2026-10-16",
         "vb_time": "20:00",
-        "vb_hall": "Vezirçiftliği Spor Salonu",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1118,7 +1118,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-16",
           "vb_time": "20:00",
-          "vb_hall": "Vezirçiftliği Spor Salonu",
+          "vb_hall": "Başiskele Spor Salonu",
           "details": null
         }
       }
@@ -1147,15 +1147,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "411146",
-        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-korfez-vaveyla-spor-kulubu-u18-c411146",
-        "host_name": "Gölcük Belediye Spor Kulübü U18",
-        "guest_name": "Körfez Vaveyla Spor Kulübü U18",
+        "match_id": "408141",
+        "url": "https://women.volleybox.net/tr/nicomedia-akademi-spor-kulubu-u18-5-renk-spor-kulubu-u18-c408141",
+        "host_name": "Nicomedia Akademi Spor Kulübü U18",
+        "guest_name": "5 Renk Spor Kulübü U18",
         "score": "3 - 0",
         "has_score": true,
         "vb_date": "2026-10-20",
         "vb_time": "18:30",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_hall": "Vezirçiftliği Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1163,7 +1163,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-20",
           "vb_time": "18:30",
-          "vb_hall": "Başiskele Spor Salonu",
+          "vb_hall": "Vezirçiftliği Spor Salonu",
           "details": null
         }
       }
@@ -1192,15 +1192,15 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "408141",
-        "url": "https://women.volleybox.net/tr/nicomedia-akademi-spor-kulubu-u18-5-renk-spor-kulubu-u18-c408141",
-        "host_name": "Nicomedia Akademi Spor Kulübü U18",
-        "guest_name": "5 Renk Spor Kulübü U18",
+        "match_id": "411146",
+        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-korfez-vaveyla-spor-kulubu-u18-c411146",
+        "host_name": "Gölcük Belediye Spor Kulübü U18",
+        "guest_name": "Körfez Vaveyla Spor Kulübü U18",
         "score": "3 - 0",
         "has_score": true,
         "vb_date": "2026-10-20",
         "vb_time": "18:30",
-        "vb_hall": "Vezirçiftliği Spor Salonu",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -1208,7 +1208,7 @@
           "hall_diff": false,
           "vb_date": "2026-10-20",
           "vb_time": "18:30",
-          "vb_hall": "Vezirçiftliği Spor Salonu",
+          "vb_hall": "Başiskele Spor Salonu",
           "details": null
         }
       }
@@ -1782,18 +1782,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415087",
+        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-kocaeli-19-mays-spor-kulubu-u18-c415087",
+        "host_name": "Kocaeli Anka Spor Kulübü U18",
+        "guest_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-02",
+        "vb_time": "18:30",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "18:30",
+          "vb_hall": "Derince Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1822,23 +1829,23 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "415087",
-        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-kocaeli-19-mays-spor-kulubu-u18-c415087",
-        "host_name": "Kocaeli Anka Spor Kulübü U18",
-        "guest_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-02",
+        "match_id": "415089",
+        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-kocaeli-elite-spor-u18-c415089",
+        "host_name": "Gölcük Belediye Spor Kulübü U18",
+        "guest_name": "Kocaeli Elite Spor U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-06",
         "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-02",
+          "vb_date": "2026-11-06",
           "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
+          "vb_hall": "Başiskele Spor Salonu",
           "details": null
         }
       }
@@ -1868,23 +1875,23 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "415106",
-        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415106",
-        "host_name": "Körfez Vaveyla Spor Kulübü U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "match_id": "415090",
+        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-siyah-kugular-spor-kulubu-u18-c415090",
+        "host_name": "Kandıra Voleybol Kulübü U18",
+        "guest_name": "Siyah Kuğular Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-17",
-        "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_date": "2026-11-06",
+        "vb_time": "19:00",
+        "vb_hall": "Kandıra Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-17",
-          "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
+          "vb_date": "2026-11-06",
+          "vb_time": "19:00",
+          "vb_hall": "Kandıra Spor Salonu",
           "details": null
         }
       }
@@ -1909,24 +1916,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415089",
-        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-kocaeli-elite-spor-u18-c415089",
-        "host_name": "Gölcük Belediye Spor Kulübü U18",
-        "guest_name": "Kocaeli Elite Spor U18",
+        "match_id": "415091",
+        "url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-u18-5-renk-spor-kulubu-u18-c415091",
+        "host_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "guest_name": "5 Renk Spor Kulübü U18",
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-06",
-        "vb_time": "18:30",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_time": "20:00",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-11-06",
-          "vb_time": "18:30",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "vb_time": "20:00",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Saat Değişti (TVF: 18:30 / VB: 20:00) | Salon Değişti (TVF: Başiskele Ss / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -1950,24 +1957,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415090",
-        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-siyah-kugular-spor-kulubu-u18-c415090",
-        "host_name": "Kandıra Voleybol Kulübü U18",
-        "guest_name": "Siyah Kuğular Spor Kulübü U18",
+        "match_id": "415092",
+        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415092",
+        "host_name": "Gölcük Belediye Spor Kulübü U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-06",
-        "vb_time": "19:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_date": "2026-11-07",
+        "vb_time": "14:00",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": false,
-          "time_diff": false,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": true,
-          "vb_date": "2026-11-06",
-          "vb_time": "19:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Kandıra / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_date": "2026-11-07",
+          "vb_time": "14:00",
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-06 / VB: 2026-11-07) | Saat Değişti (TVF: 19:00 / VB: 14:00) | Salon Değişti (TVF: Kandıra / VB: Başiskele Spor Salonu)"
         }
       }
     },
@@ -1991,24 +1998,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415091",
-        "url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-u18-5-renk-spor-kulubu-u18-c415091",
-        "host_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "5 Renk Spor Kulübü U18",
+        "match_id": "415093",
+        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-kocaeli-elite-spor-u18-c415093",
+        "host_name": "Kocaeli Anka Spor Kulübü U18",
+        "guest_name": "Kocaeli Elite Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-06",
-        "vb_time": "20:00",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_date": "2026-11-07",
+        "vb_time": "15:30",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-06",
-          "vb_time": "20:00",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-07",
+          "vb_time": "15:30",
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-06 / VB: 2026-11-07) | Saat Değişti (TVF: 20:00 / VB: 15:30) | Salon Değişti (TVF: H.Gemici S.S. / VB: Derince Spor Salonu)"
         }
       }
     },
@@ -2032,24 +2039,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415092",
-        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415092",
-        "host_name": "Gölcük Belediye Spor Kulübü U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "match_id": "415094",
+        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-zmit-spor-u18-c415094",
+        "host_name": "Kandıra Voleybol Kulübü U18",
+        "guest_name": "İzmit Spor U18",
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-07",
-        "vb_time": "14:00",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_time": "16:00",
+        "vb_hall": "Kandıra Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-11-07",
-          "vb_time": "14:00",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "vb_time": "16:00",
+          "vb_hall": "Kandıra Spor Salonu",
+          "details": "Saat Değişti (TVF: 14:00 / VB: 16:00) | Salon Değişti (TVF: Başiskele Ss / VB: Kandıra Spor Salonu)"
         }
       }
     },
@@ -2072,18 +2079,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415095",
+        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-kocaeli-elite-spor-u18-c415095",
+        "host_name": "Körfez Vaveyla Spor Kulübü U18",
+        "guest_name": "Kocaeli Elite Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-10",
+        "vb_time": "18:30",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-10",
+          "vb_time": "18:30",
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-07 / VB: 2026-11-10) | Saat Değişti (TVF: 14:00 / VB: 18:30)"
         }
       }
     },
@@ -2107,24 +2121,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415093",
-        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-kocaeli-elite-spor-u18-c415093",
+        "match_id": "415096",
+        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415096",
         "host_name": "Kocaeli Anka Spor Kulübü U18",
-        "guest_name": "Kocaeli Elite Spor U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-07",
-        "vb_time": "15:30",
+        "vb_date": "2026-11-10",
+        "vb_time": "20:00",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-07",
-          "vb_time": "15:30",
+          "vb_date": "2026-11-10",
+          "vb_time": "20:00",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-07 / VB: 2026-11-10) | Saat Değişti (TVF: 15:30 / VB: 20:00)"
         }
       }
     },
@@ -2148,24 +2162,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415094",
-        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-zmit-spor-u18-c415094",
+        "match_id": "415097",
+        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-korfez-akademi-sk-u18-c415097",
         "host_name": "Kandıra Voleybol Kulübü U18",
-        "guest_name": "İzmit Spor U18",
+        "guest_name": "Körfez Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-07",
-        "vb_time": "16:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_date": "2026-11-13",
+        "vb_time": "18:30",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": false,
-          "time_diff": false,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": true,
-          "vb_date": "2026-11-07",
-          "vb_time": "16:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Kandıra / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_date": "2026-11-13",
+          "vb_time": "18:30",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-07 / VB: 2026-11-13) | Saat Değişti (TVF: 16:00 / VB: 18:30) | Salon Değişti (TVF: Kandıra / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -2189,24 +2203,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415095",
-        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-kocaeli-elite-spor-u18-c415095",
-        "host_name": "Körfez Vaveyla Spor Kulübü U18",
-        "guest_name": "Kocaeli Elite Spor U18",
+        "match_id": "415099",
+        "url": "https://women.volleybox.net/tr/nicomedia-akademi-spor-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415099",
+        "host_name": "Nicomedia Akademi Spor Kulübü U18",
+        "guest_name": "Gölcük Belediye Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-10",
-        "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_date": "2026-11-13",
+        "vb_time": "20:00",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-10",
-          "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-13",
+          "vb_time": "20:00",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-10 / VB: 2026-11-13) | Saat Değişti (TVF: 18:30 / VB: 20:00) | Salon Değişti (TVF: Derince S.S / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -2230,24 +2244,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415096",
-        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415096",
-        "host_name": "Kocaeli Anka Spor Kulübü U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "match_id": "415100",
+        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-kocaeli-elite-spor-u18-c415100",
+        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "guest_name": "Kocaeli Elite Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-10",
-        "vb_time": "20:00",
+        "vb_date": "2026-11-14",
+        "vb_time": "16:00",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-10",
-          "vb_time": "20:00",
+          "vb_date": "2026-11-14",
+          "vb_time": "16:00",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-10 / VB: 2026-11-14) | Saat Değişti (TVF: 20:00 / VB: 16:00)"
         }
       }
     },
@@ -2270,18 +2284,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415101",
+        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415101",
+        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-16",
+        "vb_time": "18:30",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-11-16",
+          "vb_time": "18:30",
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-13 / VB: 2026-11-16) | Salon Değişti (TVF: Başiskele Ss / VB: Derince Spor Salonu)"
         }
       }
     },
@@ -2305,24 +2326,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415097",
-        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-korfez-akademi-sk-u18-c415097",
-        "host_name": "Kandıra Voleybol Kulübü U18",
-        "guest_name": "Körfez Akademi SK U18",
+        "match_id": "415102",
+        "url": "https://women.volleybox.net/tr/zmit-spor-u18-5-renk-spor-kulubu-u18-c415102",
+        "host_name": "İzmit Spor U18",
+        "guest_name": "5 Renk Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-13",
+        "vb_date": "2026-11-16",
         "vb_time": "18:30",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-13",
+          "vb_date": "2026-11-16",
           "vb_time": "18:30",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-13 / VB: 2026-11-16)"
         }
       }
     },
@@ -2346,24 +2367,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415099",
-        "url": "https://women.volleybox.net/tr/nicomedia-akademi-spor-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415099",
-        "host_name": "Nicomedia Akademi Spor Kulübü U18",
+        "match_id": "415103",
+        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415103",
+        "host_name": "Kandıra Voleybol Kulübü U18",
         "guest_name": "Gölcük Belediye Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-13",
-        "vb_time": "20:00",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_date": "2026-11-16",
+        "vb_time": "19:00",
+        "vb_hall": "Kandıra Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-13",
-          "vb_time": "20:00",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-16",
+          "vb_time": "19:00",
+          "vb_hall": "Kandıra Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-13 / VB: 2026-11-16) | Saat Değişti (TVF: 20:00 / VB: 19:00) | Salon Değişti (TVF: H.Gemici S.S. / VB: Kandıra Spor Salonu)"
         }
       }
     },
@@ -2387,24 +2408,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415100",
-        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-kocaeli-elite-spor-u18-c415100",
-        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "guest_name": "Kocaeli Elite Spor U18",
+        "match_id": "415104",
+        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415104",
+        "host_name": "Körfez Vaveyla Spor Kulübü U18",
+        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
-        "vb_time": "16:00",
+        "vb_date": "2026-11-16",
+        "vb_time": "20:00",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-14",
-          "vb_time": "16:00",
+          "vb_date": "2026-11-16",
+          "vb_time": "20:00",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-16) | Saat Değişti (TVF: 16:00 / VB: 20:00)"
         }
       }
     },
@@ -2428,24 +2449,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415101",
-        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415101",
-        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "match_id": "415105",
+        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-korfez-akademi-sk-u18-c415105",
+        "host_name": "Siyah Kuğular Spor Kulübü U18",
+        "guest_name": "Körfez Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-16",
+        "vb_date": "2026-11-17",
         "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-16",
+          "hall_diff": true,
+          "vb_date": "2026-11-17",
           "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-16 / VB: 2026-11-17) | Salon Değişti (TVF: Derince S.S / VB: Başiskele Spor Salonu)"
         }
       }
     },
@@ -2469,24 +2490,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415102",
-        "url": "https://women.volleybox.net/tr/zmit-spor-u18-5-renk-spor-kulubu-u18-c415102",
-        "host_name": "İzmit Spor U18",
-        "guest_name": "5 Renk Spor Kulübü U18",
+        "match_id": "415106",
+        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415106",
+        "host_name": "Körfez Vaveyla Spor Kulübü U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-16",
+        "vb_date": "2026-11-17",
         "vb_time": "18:30",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-16",
+          "hall_diff": true,
+          "vb_date": "2026-11-17",
           "vb_time": "18:30",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-16 / VB: 2026-11-17) | Salon Değişti (TVF: H.Gemici S.S. / VB: Derince Spor Salonu)"
         }
       }
     },
@@ -2510,24 +2531,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415103",
-        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415103",
-        "host_name": "Kandıra Voleybol Kulübü U18",
-        "guest_name": "Gölcük Belediye Spor Kulübü U18",
+        "match_id": "415108",
+        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415108",
+        "host_name": "Kocaeli Anka Spor Kulübü U18",
+        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-16",
-        "vb_time": "19:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_date": "2026-11-17",
+        "vb_time": "20:00",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": false,
-          "time_diff": false,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": true,
-          "vb_date": "2026-11-16",
-          "vb_time": "19:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Kandıra / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_date": "2026-11-17",
+          "vb_time": "20:00",
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-16 / VB: 2026-11-17) | Saat Değişti (TVF: 19:00 / VB: 20:00) | Salon Değişti (TVF: Kandıra / VB: Derince Spor Salonu)"
         }
       }
     },
@@ -2551,24 +2572,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415104",
-        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415104",
-        "host_name": "Körfez Vaveyla Spor Kulübü U18",
-        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "match_id": "415109",
+        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-5-renk-spor-kulubu-u18-c415109",
+        "host_name": "Kandıra Voleybol Kulübü U18",
+        "guest_name": "5 Renk Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-16",
-        "vb_time": "20:00",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_date": "2026-11-18",
+        "vb_time": "19:00",
+        "vb_hall": "Kandıra Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-16",
-          "vb_time": "20:00",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-18",
+          "vb_time": "19:00",
+          "vb_hall": "Kandıra Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-16 / VB: 2026-11-18) | Saat Değişti (TVF: 20:00 / VB: 19:00) | Salon Değişti (TVF: Derince S.S / VB: Kandıra Spor Salonu)"
         }
       }
     },
@@ -2592,24 +2613,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415105",
-        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-korfez-akademi-sk-u18-c415105",
-        "host_name": "Siyah Kuğular Spor Kulübü U18",
+        "match_id": "415110",
+        "url": "https://women.volleybox.net/tr/nicomedia-akademi-spor-kulubu-u18-korfez-akademi-sk-u18-c415110",
+        "host_name": "Nicomedia Akademi Spor Kulübü U18",
         "guest_name": "Körfez Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-17",
-        "vb_time": "18:30",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_date": "2026-11-18",
+        "vb_time": "20:00",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-17",
-          "vb_time": "18:30",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-18",
+          "vb_time": "20:00",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-17 / VB: 2026-11-18) | Saat Değişti (TVF: 18:30 / VB: 20:00) | Salon Değişti (TVF: Başiskele Ss / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -2632,18 +2653,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415112",
+        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-5-renk-spor-kulubu-u18-c415112",
+        "host_name": "Siyah Kuğular Spor Kulübü U18",
+        "guest_name": "5 Renk Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-19",
+        "vb_time": "18:30",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": false,
+          "hall_diff": true,
+          "vb_date": "2026-11-19",
+          "vb_time": "18:30",
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-17 / VB: 2026-11-19) | Salon Değişti (TVF: Derince S.S / VB: Başiskele Spor Salonu)"
         }
       }
     },
@@ -2667,24 +2695,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415108",
-        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415108",
+        "match_id": "415113",
+        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415113",
         "host_name": "Kocaeli Anka Spor Kulübü U18",
-        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-17",
-        "vb_time": "20:00",
+        "vb_date": "2026-11-19",
+        "vb_time": "18:30",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-17",
-          "vb_time": "20:00",
+          "vb_date": "2026-11-19",
+          "vb_time": "18:30",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-17 / VB: 2026-11-19) | Saat Değişti (TVF: 20:00 / VB: 18:30)"
         }
       }
     },
@@ -2708,24 +2736,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415109",
-        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-5-renk-spor-kulubu-u18-c415109",
-        "host_name": "Kandıra Voleybol Kulübü U18",
-        "guest_name": "5 Renk Spor Kulübü U18",
+        "match_id": "415114",
+        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415114",
+        "host_name": "Gölcük Belediye Spor Kulübü U18",
+        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-18",
-        "vb_time": "19:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_date": "2026-11-19",
+        "vb_time": "20:00",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
           "has_diff": true,
-          "date_diff": false,
-          "time_diff": false,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": true,
-          "vb_date": "2026-11-18",
-          "vb_time": "19:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Kandıra / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_date": "2026-11-19",
+          "vb_time": "20:00",
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-18 / VB: 2026-11-19) | Saat Değişti (TVF: 19:00 / VB: 20:00) | Salon Değişti (TVF: Kandıra / VB: Başiskele Spor Salonu)"
         }
       }
     },
@@ -2749,24 +2777,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415110",
-        "url": "https://women.volleybox.net/tr/nicomedia-akademi-spor-kulubu-u18-korfez-akademi-sk-u18-c415110",
-        "host_name": "Nicomedia Akademi Spor Kulübü U18",
-        "guest_name": "Körfez Akademi SK U18",
+        "match_id": "415115",
+        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-kocaeli-anka-spor-kulubu-u18-c415115",
+        "host_name": "Kandıra Voleybol Kulübü U18",
+        "guest_name": "Kocaeli Anka Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-18",
-        "vb_time": "20:00",
+        "vb_date": "2026-11-22",
+        "vb_time": "18:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-18",
-          "vb_time": "20:00",
+          "vb_date": "2026-11-22",
+          "vb_time": "18:00",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-18 / VB: 2026-11-22) | Saat Değişti (TVF: 20:00 / VB: 18:00)"
         }
       }
     },
@@ -2790,24 +2818,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415112",
-        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-5-renk-spor-kulubu-u18-c415112",
-        "host_name": "Siyah Kuğular Spor Kulübü U18",
-        "guest_name": "5 Renk Spor Kulübü U18",
+        "match_id": "415116",
+        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415116",
+        "host_name": "Körfez Vaveyla Spor Kulübü U18",
+        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-19",
+        "vb_date": "2026-11-23",
         "vb_time": "18:30",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-19",
+          "hall_diff": true,
+          "vb_date": "2026-11-23",
           "vb_time": "18:30",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-19 / VB: 2026-11-23) | Salon Değişti (TVF: Başiskele Ss / VB: Derince Spor Salonu)"
         }
       }
     },
@@ -2831,24 +2859,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415113",
-        "url": "https://women.volleybox.net/tr/kocaeli-anka-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415113",
-        "host_name": "Kocaeli Anka Spor Kulübü U18",
-        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
+        "match_id": "415117",
+        "url": "https://women.volleybox.net/tr/korfez-akademi-sk-u18-kocaeli-anka-spor-kulubu-u18-c415117",
+        "host_name": "Körfez Akademi SK U18",
+        "guest_name": "Kocaeli Anka Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-19",
+        "vb_date": "2026-11-24",
         "vb_time": "18:30",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-19",
+          "vb_date": "2026-11-24",
           "vb_time": "18:30",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-19 / VB: 2026-11-24)"
         }
       }
     },
@@ -2872,24 +2900,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415114",
-        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415114",
-        "host_name": "Gölcük Belediye Spor Kulübü U18",
-        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "match_id": "415118",
+        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415118",
+        "host_name": "Kandıra Voleybol Kulübü U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-19",
-        "vb_time": "20:00",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_date": "2026-11-24",
+        "vb_time": "18:30",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-19",
-          "vb_time": "20:00",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-24",
+          "vb_time": "18:30",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-19 / VB: 2026-11-24) | Saat Değişti (TVF: 20:00 / VB: 18:30) | Salon Değişti (TVF: Başiskele Ss / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -2913,24 +2941,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415115",
-        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-kocaeli-anka-spor-kulubu-u18-c415115",
-        "host_name": "Kandıra Voleybol Kulübü U18",
-        "guest_name": "Kocaeli Anka Spor Kulübü U18",
+        "match_id": "415120",
+        "url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415120",
+        "host_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-22",
-        "vb_time": "18:00",
+        "vb_date": "2026-11-24",
+        "vb_time": "20:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-22",
-          "vb_time": "18:00",
+          "vb_date": "2026-11-24",
+          "vb_time": "20:00",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-22 / VB: 2026-11-24) | Saat Değişti (TVF: 18:00 / VB: 20:00)"
         }
       }
     },
@@ -2954,24 +2982,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415116",
-        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415116",
-        "host_name": "Körfez Vaveyla Spor Kulübü U18",
-        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
+        "match_id": "415121",
+        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415121",
+        "host_name": "Siyah Kuğular Spor Kulübü U18",
+        "guest_name": "Gölcük Belediye Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-23",
+        "vb_date": "2026-11-26",
         "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-23",
+          "hall_diff": true,
+          "vb_date": "2026-11-26",
           "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-23 / VB: 2026-11-26) | Salon Değişti (TVF: Derince S.S / VB: Başiskele Spor Salonu)"
         }
       }
     },
@@ -2995,24 +3023,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415117",
-        "url": "https://women.volleybox.net/tr/korfez-akademi-sk-u18-kocaeli-anka-spor-kulubu-u18-c415117",
-        "host_name": "Körfez Akademi SK U18",
-        "guest_name": "Kocaeli Anka Spor Kulübü U18",
+        "match_id": "415122",
+        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415122",
+        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-24",
+        "vb_date": "2026-11-26",
         "vb_time": "18:30",
         "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-24",
+          "vb_date": "2026-11-26",
           "vb_time": "18:30",
           "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-24 / VB: 2026-11-26)"
         }
       }
     },
@@ -3036,24 +3064,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415118",
-        "url": "https://women.volleybox.net/tr/kandra-voleybol-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415118",
-        "host_name": "Kandıra Voleybol Kulübü U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "match_id": "415123",
+        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-korfez-akademi-sk-u18-c415123",
+        "host_name": "5 Renk Spor Kulübü U18",
+        "guest_name": "Körfez Akademi SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-24",
+        "vb_date": "2026-11-26",
         "vb_time": "18:30",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-24",
+          "vb_date": "2026-11-26",
           "vb_time": "18:30",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-24 / VB: 2026-11-26)"
         }
       }
     },
@@ -3077,24 +3105,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415120",
-        "url": "https://women.volleybox.net/tr/kocaeli-voleybol-akademi-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415120",
-        "host_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
+        "match_id": "415124",
+        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-kandra-voleybol-kulubu-u18-c415124",
+        "host_name": "Körfez Vaveyla Spor Kulübü U18",
+        "guest_name": "Kandıra Voleybol Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-24",
+        "vb_date": "2026-11-26",
         "vb_time": "20:00",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-24",
+          "hall_diff": true,
+          "vb_date": "2026-11-26",
           "vb_time": "20:00",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-24 / VB: 2026-11-26) | Salon Değişti (TVF: H.Gemici S.S. / VB: Derince Spor Salonu)"
         }
       }
     },
@@ -3118,24 +3146,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415121",
-        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415121",
-        "host_name": "Siyah Kuğular Spor Kulübü U18",
-        "guest_name": "Gölcük Belediye Spor Kulübü U18",
+        "match_id": "415125",
+        "url": "https://women.volleybox.net/tr/kocaeli-elite-spor-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415125",
+        "host_name": "Kocaeli Elite Spor U18",
+        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-26",
-        "vb_time": "18:30",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_time": "20:00",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-11-26",
-          "vb_time": "18:30",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "vb_time": "20:00",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Saat Değişti (TVF: 18:30 / VB: 20:00) | Salon Değişti (TVF: Başiskele Ss / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -3159,24 +3187,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415122",
-        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-nicomedia-akademi-spor-kulubu-u18-c415122",
-        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
+        "match_id": "415126",
+        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-kocaeli-anka-spor-kulubu-u18-c415126",
+        "host_name": "Siyah Kuğular Spor Kulübü U18",
+        "guest_name": "Kocaeli Anka Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-26",
+        "vb_date": "2026-11-27",
         "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-26",
+          "hall_diff": true,
+          "vb_date": "2026-11-27",
           "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-26 / VB: 2026-11-27) | Salon Değişti (TVF: Derince S.S / VB: Başiskele Spor Salonu)"
         }
       }
     },
@@ -3200,24 +3228,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415123",
-        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-korfez-akademi-sk-u18-c415123",
-        "host_name": "5 Renk Spor Kulübü U18",
-        "guest_name": "Körfez Akademi SK U18",
+        "match_id": "415127",
+        "url": "https://women.volleybox.net/tr/zmit-spor-u18-golcuk-belediye-spor-kulubu-u18-c415127",
+        "host_name": "İzmit Spor U18",
+        "guest_name": "Gölcük Belediye Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-26",
+        "vb_date": "2026-11-27",
         "vb_time": "18:30",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-26",
+          "vb_date": "2026-11-27",
           "vb_time": "18:30",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-26 / VB: 2026-11-27)"
         }
       }
     },
@@ -3241,24 +3269,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415124",
-        "url": "https://women.volleybox.net/tr/korfez-vaveyla-spor-kulubu-u18-kandra-voleybol-kulubu-u18-c415124",
-        "host_name": "Körfez Vaveyla Spor Kulübü U18",
-        "guest_name": "Kandıra Voleybol Kulübü U18",
+        "match_id": "415128",
+        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415128",
+        "host_name": "5 Renk Spor Kulübü U18",
+        "guest_name": "Gölcük Belediye Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-26",
-        "vb_time": "20:00",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_date": "2026-11-28",
+        "vb_time": "13:00",
+        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-26",
-          "vb_time": "20:00",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-28",
+          "vb_time": "13:00",
+          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-26 / VB: 2026-11-28) | Saat Değişti (TVF: 20:00 / VB: 13:00) | Salon Değişti (TVF: Derince S.S / VB: Şampiyon Hasan Gemici Spor Salonu)"
         }
       }
     },
@@ -3282,24 +3310,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415125",
-        "url": "https://women.volleybox.net/tr/kocaeli-elite-spor-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415125",
-        "host_name": "Kocaeli Elite Spor U18",
-        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "match_id": "415129",
+        "url": "https://women.volleybox.net/tr/zmit-spor-u18-kocaeli-anka-spor-kulubu-u18-c415129",
+        "host_name": "İzmit Spor U18",
+        "guest_name": "Kocaeli Anka Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-26",
-        "vb_time": "20:00",
+        "vb_date": "2026-11-28",
+        "vb_time": "14:30",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-26",
-          "vb_time": "20:00",
+          "vb_date": "2026-11-28",
+          "vb_time": "14:30",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-26 / VB: 2026-11-28) | Saat Değişti (TVF: 20:00 / VB: 14:30)"
         }
       }
     },
@@ -3323,24 +3351,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415126",
-        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-kocaeli-anka-spor-kulubu-u18-c415126",
-        "host_name": "Siyah Kuğular Spor Kulübü U18",
-        "guest_name": "Kocaeli Anka Spor Kulübü U18",
+        "match_id": "415131",
+        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-kandra-voleybol-kulubu-u18-c415131",
+        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
+        "guest_name": "Kandıra Voleybol Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-27",
+        "vb_date": "2026-11-30",
         "vb_time": "18:30",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_hall": "Derince Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-27",
+          "hall_diff": true,
+          "vb_date": "2026-11-30",
           "vb_time": "18:30",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "vb_hall": "Derince Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-27 / VB: 2026-11-30) | Salon Değişti (TVF: Başiskele Ss / VB: Derince Spor Salonu)"
         }
       }
     },
@@ -3364,24 +3392,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415127",
-        "url": "https://women.volleybox.net/tr/zmit-spor-u18-golcuk-belediye-spor-kulubu-u18-c415127",
-        "host_name": "İzmit Spor U18",
-        "guest_name": "Gölcük Belediye Spor Kulübü U18",
+        "match_id": "415132",
+        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-korfez-vaveyla-spor-kulubu-u18-c415132",
+        "host_name": "Siyah Kuğular Spor Kulübü U18",
+        "guest_name": "Körfez Vaveyla Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-27",
+        "vb_date": "2026-12-01",
         "vb_time": "18:30",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_hall": "Başiskele Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-27",
+          "hall_diff": true,
+          "vb_date": "2026-12-01",
           "vb_time": "18:30",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-27 / VB: 2026-12-01) | Salon Değişti (TVF: H.Gemici S.S. / VB: Başiskele Spor Salonu)"
         }
       }
     },
@@ -3405,24 +3433,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415128",
-        "url": "https://women.volleybox.net/tr/5-renk-spor-kulubu-u18-golcuk-belediye-spor-kulubu-u18-c415128",
-        "host_name": "5 Renk Spor Kulübü U18",
-        "guest_name": "Gölcük Belediye Spor Kulübü U18",
+        "match_id": "415133",
+        "url": "https://women.volleybox.net/tr/kocaeli-elite-spor-u18-nicomedia-akademi-spor-kulubu-u18-c415133",
+        "host_name": "Kocaeli Elite Spor U18",
+        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-28",
-        "vb_time": "13:00",
+        "vb_date": "2026-12-01",
+        "vb_time": "18:30",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-28",
-          "vb_time": "13:00",
+          "vb_date": "2026-12-01",
+          "vb_time": "18:30",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-28 / VB: 2026-12-01) | Saat Değişti (TVF: 13:00 / VB: 18:30)"
         }
       }
     },
@@ -3446,24 +3474,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415129",
-        "url": "https://women.volleybox.net/tr/zmit-spor-u18-kocaeli-anka-spor-kulubu-u18-c415129",
-        "host_name": "İzmit Spor U18",
-        "guest_name": "Kocaeli Anka Spor Kulübü U18",
+        "match_id": "415134",
+        "url": "https://women.volleybox.net/tr/zmit-yahya-kaptan-sk-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415134",
+        "host_name": "İzmit Yahya Kaptan SK U18",
+        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-28",
-        "vb_time": "14:30",
+        "vb_date": "2026-12-01",
+        "vb_time": "20:00",
         "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
           "hall_diff": false,
-          "vb_date": "2026-11-28",
-          "vb_time": "14:30",
+          "vb_date": "2026-12-01",
+          "vb_time": "20:00",
           "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-28 / VB: 2026-12-01) | Saat Değişti (TVF: 14:30 / VB: 20:00)"
         }
       }
     },
@@ -3486,25 +3514,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415131",
-        "url": "https://women.volleybox.net/tr/kocaeli-19-mays-spor-kulubu-u18-kandra-voleybol-kulubu-u18-c415131",
-        "host_name": "Kocaeli 19 Mayıs Spor Kulübü U18",
-        "guest_name": "Kandıra Voleybol Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-30",
-        "vb_time": "18:30",
-        "vb_hall": "Derince Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-30",
-          "vb_time": "18:30",
-          "vb_hall": "Derince Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3527,25 +3548,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415132",
-        "url": "https://women.volleybox.net/tr/siyah-kugular-spor-kulubu-u18-korfez-vaveyla-spor-kulubu-u18-c415132",
-        "host_name": "Siyah Kuğular Spor Kulübü U18",
-        "guest_name": "Körfez Vaveyla Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-12-01",
-        "vb_time": "18:30",
-        "vb_hall": "Başiskele Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-12-01",
-          "vb_time": "18:30",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3568,25 +3582,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415133",
-        "url": "https://women.volleybox.net/tr/kocaeli-elite-spor-u18-nicomedia-akademi-spor-kulubu-u18-c415133",
-        "host_name": "Kocaeli Elite Spor U18",
-        "guest_name": "Nicomedia Akademi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-12-01",
-        "vb_time": "18:30",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-12-01",
-          "vb_time": "18:30",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3609,25 +3616,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415134",
-        "url": "https://women.volleybox.net/tr/zmit-yahya-kaptan-sk-u18-kocaeli-voleybol-akademi-spor-kulubu-u18-c415134",
-        "host_name": "İzmit Yahya Kaptan SK U18",
-        "guest_name": "Kocaeli Voleybol Akademi Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-12-01",
-        "vb_time": "20:00",
-        "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-12-01",
-          "vb_time": "20:00",
-          "vb_hall": "Şampiyon Hasan Gemici Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -4796,16 +4796,16 @@
         "has_score": false,
         "vb_date": "2026-11-03",
         "vb_time": "19:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_hall": "Dilovası Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-11-03",
           "vb_time": "19:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Dilovası Ss / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_hall": "Dilovası Spor Salonu",
+          "details": null
         }
       }
     },
@@ -4878,16 +4878,16 @@
         "has_score": false,
         "vb_date": "2026-11-04",
         "vb_time": "19:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_hall": "Dilovası Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-11-04",
           "vb_time": "19:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Dilovası Ss / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_hall": "Dilovası Spor Salonu",
+          "details": null
         }
       }
     },
@@ -5247,16 +5247,16 @@
         "has_score": false,
         "vb_date": "2026-11-09",
         "vb_time": "19:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_hall": "Dilovası Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-11-09",
           "vb_time": "19:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Dilovası Ss / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_hall": "Dilovası Spor Salonu",
+          "details": null
         }
       }
     },
@@ -5575,16 +5575,16 @@
         "has_score": false,
         "vb_date": "2026-11-14",
         "vb_time": "14:00",
-        "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
+        "vb_hall": "Dilovası Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-11-14",
           "vb_time": "14:00",
-          "vb_hall": "Şehit Halil İbrahim Eriç Kapalı Spor Salonu",
-          "details": "Salon Değişti (TVF: Dilovası Ss / VB: Şehit Halil İbrahim Eriç Kapalı Spor Salonu)"
+          "vb_hall": "Dilovası Spor Salonu",
+          "details": null
         }
       }
     },
@@ -6000,5 +6000,5 @@
     }
   ],
   "volleybox_synced_matches": 129,
-  "volleybox_sync_updated_at": "2026-11-03T13:24:41.889688"
+  "volleybox_sync_updated_at": "2026-11-03T14:41:59.079297"
 }
