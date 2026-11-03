@@ -646,6 +646,13 @@ def get_direct_team_maps(mappings_data: Dict[str, Any]) -> Tuple[Dict[str, Dict[
         label = m.get("matched_as") or m.get("internal_name") or ""
         c_raw = (m.get("city_slug") or m.get("city") or "").lower().strip()
         c_norm = re.sub(r"[^a-z0-9]", "", c_raw)
+        age_cat = (m.get("age_category") or "").strip().lower()
+        if not age_cat:
+            if "u18" in label.lower():
+                age_cat = "u18"
+            elif "u16" in label.lower():
+                age_cat = "u16"
+
         entry = {
             "id": tid,
             "label": label,
@@ -653,17 +660,24 @@ def get_direct_team_maps(mappings_data: Dict[str, Any]) -> Tuple[Dict[str, Dict[
             "matched_as": label,
             "internal_name": m.get("internal_name") or "",
             "aliases": m.get("aliases") or [],
+            "age_category": age_cat,
             "raw_mapping": m,
         }
         in_name = (m.get("internal_name") or "").strip().lower()
         matched = (m.get("matched_as") or "").strip().lower()
-        if in_name:
-            direct_map[in_name] = entry
-        if matched:
-            direct_map[matched] = entry
+
+        def register_direct(name_key: str):
+            if not name_key:
+                return
+            if age_cat:
+                direct_map[(name_key, age_cat)] = entry
+            if name_key not in direct_map:
+                direct_map[name_key] = entry
+
+        register_direct(in_name)
+        register_direct(matched)
         for a in m.get("aliases") or []:
-            if a:
-                direct_map[a.strip().lower()] = entry
+            register_direct(a.strip().lower())
         if c_norm:
             city_map.setdefault(c_norm, []).append(entry)
 
@@ -738,8 +752,9 @@ def resolve_team_for_match(
             "turkey",
         ) or "ligi" in city_slug.lower()
 
-        # Doğrudan tam isim veya takma ad (O(1) lookup)
-        d_hit = direct_map.get(clean_tvf.lower())
+        # Doğrudan tam isim veya takma ad (O(1) lookup - yaş grubu öncelikli)
+        norm_age = "u16" if ("yıldız" in age_group.lower() or "u16" in age_group.lower()) else ("u18" if ("genç" in age_group.lower() or "u18" in age_group.lower()) else "")
+        d_hit = (direct_map.get((clean_tvf.lower(), norm_age)) if norm_age else None) or direct_map.get(clean_tvf.lower())
         if d_hit:
             d_city = d_hit.get("city", "")
             if is_national_league or not norm_c_slug or not d_city or d_city == norm_c_slug or d_city == "turkiye":

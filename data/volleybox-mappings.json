@@ -22882,6 +22882,69 @@
         "Afyon Belediye Yüntaş Spor Kulübü- A U18",
         "Afyon Belediye Yüntaş Spor Kulübü - A U18"
       ]
+    },
+    {
+      "internal_name": "FETHİYE VOLEYBOL SPOR",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "matched_as": "Fethiye Voleybol Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/fethiye-voleybol-spor-kulubu-u16-t46266",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Kullanıcı talebiyle eklendi (FETHİYE VOLEYBOL SPOR U16)",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "Fethiye Voleybol Spor",
+        "Fethiye Voleybol Spor Kulübü U16",
+        "Fethiye Voleybol SK U16",
+        "Fethiye Voleybol U16"
+      ]
+    },
+    {
+      "internal_name": "MUĞLA SPOR",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "matched_as": "Muğlaspor U16",
+      "volleybox_url": "https://women.volleybox.net/muglaspor-u16-t46264",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Kullanıcı talebiyle eklendi (MUĞLA SPOR U16)",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "Muğlaspor",
+        "Muğla Spor",
+        "Muğlaspor U16",
+        "Muğla Spor Kulübü U16",
+        "Muglaspor U16"
+      ]
+    },
+    {
+      "internal_name": "MİLAS ALL STAR AKADEMİ",
+      "internal_category": "Yıldız Kızlar Süper Lig",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "matched_as": "Milas All Star Akademi Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/milas-all-star-akademi-spor-kulubu-u16-t46248",
+      "age_category": "U16",
+      "confidence": "verified",
+      "note": "Kullanıcı talebiyle eklendi (MİLAS ALL STAR AKADEMİ U16)",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": null,
+      "aliases": [
+        "Milas All Star Akademi",
+        "Milas All Star Akademi Spor Kulübü",
+        "Milas All Star Akademi U16",
+        "Milas All Star Akademi Spor Kulübü U16",
+        "Milas All Star SK U16",
+        "Milas All Star"
+      ]
     }
   ],
   "leagues": [
