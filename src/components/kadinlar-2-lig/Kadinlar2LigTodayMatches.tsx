@@ -27,6 +27,9 @@ interface Kadinlar2LigTodayMatchesProps {
   onToggleFavoritesOnly?: () => void;
   searchQuery?: string;
   selectedMatchId?: string | null;
+  leagueTitle?: string;
+  leagueCategory?: string;
+  isSingleGroup?: boolean;
 }
 
 export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> = ({
@@ -37,11 +40,23 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
   onToggleFavoritesOnly,
   searchQuery = "",
   selectedMatchId,
+  leagueTitle,
+  leagueCategory,
+  isSingleGroup = false,
 }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const [todayStr, setTodayStr] = useState("");
   const [selectedDate, setSelectedDate] = useState("all");
   const [statusFilter, setStatusFilter] = useState<StatusFilterType>("all");
+
+  const toMatch = useMemo(() => {
+    return (m: Kadinlar2LigMatch) =>
+      convertK2MatchToMatch(m, {
+        category: leagueCategory || leagueTitle,
+        age_group: "Büyük Kadınlar",
+        gender: "Kadın",
+      });
+  }, [leagueCategory, leagueTitle]);
 
   useEffect(() => {
     const now = new Date();
@@ -172,21 +187,23 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
       <div className="glass-panel border border-slate-800/80 rounded-2xl p-3 sm:p-4 shadow-card flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2.5 text-xs">
           {/* Grup Filtresi */}
-          <div className="flex items-center gap-1.5">
-            <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Grup:</span>
-            <select
-              value={selectedGroupFilter}
-              onChange={(e) => setSelectedGroupFilter(e.target.value === "all" ? "all" : Number(e.target.value))}
-              className="bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-primary/40 cursor-pointer"
-            >
-              <option value="all">Tüm Gruplar (1-16)</option>
-              {groups.map((g) => (
-                <option key={g.grup_no} value={g.grup_no}>
-                  {g.grup_adi} ({g.takim_sayisi} Takım)
-                </option>
-              ))}
-            </select>
-          </div>
+          {!isSingleGroup && groups.length > 1 && (
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Grup:</span>
+              <select
+                value={selectedGroupFilter}
+                onChange={(e) => setSelectedGroupFilter(e.target.value === "all" ? "all" : Number(e.target.value))}
+                className="bg-slate-900 border border-slate-700/80 rounded-xl px-2.5 py-1 text-xs text-slate-200 focus:outline-none focus:border-primary/40 cursor-pointer"
+              >
+                <option value="all">Tüm Gruplar (1-{groups.length})</option>
+                {groups.map((g) => (
+                  <option key={g.grup_no} value={g.grup_no}>
+                    {g.grup_adi} ({g.takim_sayisi} Takım)
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
           {/* Görünüm Modu: Gruplar vs Saate Göre */}
           <div className="flex items-center gap-0.5 bg-slate-900 p-0.5 rounded-xl border border-slate-800">
@@ -255,37 +272,37 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
         <div className="space-y-4">
           {selectedDate !== "all" ? (
             <LeagueSection
-              leagueTitle="Kadınlar 2. Ligi"
+              leagueTitle={leagueTitle || "Kadınlar 2. Ligi"}
               sectionLabel={
                 formatDateTurkish(selectedDate)
                   ? `${formatDateTurkish(selectedDate)} · Günün Maçları`
                   : "Günün Maçları"
               }
-              matches={sortKadinlar2LigMatchesByTime(filteredMatches).map(convertK2MatchToMatch)}
+              matches={sortKadinlar2LigMatchesByTime(filteredMatches).map(toMatch)}
               selectedMatchId={selectedMatchId}
               favorites={favoriteMatchIds}
               onToggleFavorite={handleToggleFavorite}
               onSelectMatch={onSelectMatch}
               mode="today"
-              showGroupBadge={true}
+              showGroupBadge={!isSingleGroup}
             />
           ) : (
             matchesByDate.map(([dateKey, dayMatches]) => (
               <LeagueSection
                 key={dateKey}
-                leagueTitle="Kadınlar 2. Ligi"
+                leagueTitle={leagueTitle || "Kadınlar 2. Ligi"}
                 sectionLabel={
                   formatDateTurkish(dateKey)
                     ? `${formatDateTurkish(dateKey)} · Günün Maçları`
                     : `${dateKey} · Günün Maçları`
                 }
-                matches={sortKadinlar2LigMatchesByTime(dayMatches).map(convertK2MatchToMatch)}
+                matches={sortKadinlar2LigMatchesByTime(dayMatches).map(toMatch)}
                 selectedMatchId={selectedMatchId}
                 favorites={favoriteMatchIds}
                 onToggleFavorite={handleToggleFavorite}
                 onSelectMatch={onSelectMatch}
                 mode="today"
-                showGroupBadge={true}
+                showGroupBadge={!isSingleGroup}
               />
             ))
           )}
@@ -295,15 +312,21 @@ export const Kadinlar2LigTodayMatches: React.FC<Kadinlar2LigTodayMatchesProps> =
           {matchesByGroup.map(([groupNo, groupMatches]) => (
             <LeagueSection
               key={groupNo}
-              leagueTitle="Kadınlar 2. Ligi"
-              sectionLabel={`Grup ${groupNo}`}
-              matches={sortKadinlar2LigMatchesByTime(groupMatches).map(convertK2MatchToMatch)}
+              leagueTitle={leagueTitle || "Kadınlar 2. Ligi"}
+              sectionLabel={isSingleGroup ? "Lig Etabı" : `Grup ${groupNo}`}
+              matches={sortKadinlar2LigMatchesByTime(groupMatches).map(toMatch)}
               selectedMatchId={selectedMatchId}
               favorites={favoriteMatchIds}
               onToggleFavorite={handleToggleFavorite}
               onSelectMatch={onSelectMatch}
               mode="today"
-              standingsHref={getKadinlar2LigRoute("standings", groupNo)}
+              standingsHref={
+                isSingleGroup || leagueCategory?.includes("Sultanlar")
+                  ? "/sultanlar-ligi?tab=standings"
+                  : leagueCategory?.includes("1. Lig")
+                  ? `/kadinlar-1-ligi?tab=standings&grup=${groupNo}`
+                  : getKadinlar2LigRoute("standings", groupNo)
+              }
             />
           ))}
         </div>

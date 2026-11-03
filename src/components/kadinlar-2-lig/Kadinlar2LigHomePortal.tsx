@@ -36,6 +36,9 @@ interface Kadinlar2LigHomePortalProps {
   selectedMatchId?: string | null;
   searchQuery?: string;
   showOnlyFavorites?: boolean;
+  leagueTitle?: string;
+  leagueCategory?: string;
+  isSingleGroup?: boolean;
 }
 
 export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
@@ -46,6 +49,9 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
   selectedMatchId,
   searchQuery = "",
   showOnlyFavorites = false,
+  leagueTitle,
+  leagueCategory,
+  isSingleGroup = false,
 }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const [feedFilter, setFeedFilter] = useState<"all" | "today" | "upcoming" | "finished">("all");
@@ -66,8 +72,14 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
   }, [todayStr]);
 
   const convertedMatches = useMemo(() => {
-    return (data.tum_maclar || []).map(convertK2MatchToMatch);
-  }, [data.tum_maclar]);
+    return (data.tum_maclar || []).map((m) =>
+      convertK2MatchToMatch(m, {
+        category: leagueCategory || (data.metadata?.kategori ? data.metadata.kategori : undefined),
+        age_group: "Büyük Kadınlar",
+        gender: "Kadın",
+      })
+    );
+  }, [data.tum_maclar, leagueCategory, data.metadata?.kategori]);
 
   const matchesByGroupAndSearch = useMemo(() => {
     return convertedMatches.filter((m) => {
@@ -235,35 +247,43 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
           </button>
         </div>
 
-        {/* Sağ: Hızlı Grup Geçiş Hapları */}
-        <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 border-t md:border-t-0 border-line/50 pt-2 md:pt-0">
-          <span className="text-[11px] font-medium text-ink-3 mr-1 hidden sm:inline">Grup:</span>
-          <button
-            type="button"
-            onClick={() => setSelectedGroupFilter("all")}
-            className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
-              selectedGroupFilter === "all"
-                ? "bg-primary/15 text-primary font-bold"
-                : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
-            }`}
-          >
-            Tümü
-          </button>
-          {data.gruplar.map((g) => (
+        {/* Sağ: Hızlı Grup Geçiş Hapları veya Tek Grup Bilgisi */}
+        {isSingleGroup || data.gruplar.length <= 1 ? (
+          <div className="flex items-center gap-2 py-0.5 border-t md:border-t-0 border-line/50 pt-2 md:pt-0">
+            <span className="text-[11px] font-mono font-semibold text-primary">
+              {stats.totalTeams} Takım · {stats.totalMatches} Maç
+            </span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 border-t md:border-t-0 border-line/50 pt-2 md:pt-0">
+            <span className="text-[11px] font-medium text-ink-3 mr-1 hidden sm:inline">Grup:</span>
             <button
-              key={g.grup_no}
               type="button"
-              onClick={() => setSelectedGroupFilter(g.grup_no)}
+              onClick={() => setSelectedGroupFilter("all")}
               className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
-                selectedGroupFilter === g.grup_no
+                selectedGroupFilter === "all"
                   ? "bg-primary/15 text-primary font-bold"
                   : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
               }`}
             >
-              Grup {g.grup_no}
+              Tümü
             </button>
-          ))}
-        </div>
+            {data.gruplar.map((g) => (
+              <button
+                key={g.grup_no}
+                type="button"
+                onClick={() => setSelectedGroupFilter(g.grup_no)}
+                className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap cursor-pointer ${
+                  selectedGroupFilter === g.grup_no
+                    ? "bg-primary/15 text-primary font-bold"
+                    : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
+                }`}
+              >
+                Grup {g.grup_no}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* 2. ANA İÇERİK DÜZENİ */}
@@ -312,7 +332,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     onToggleFavorite={handleToggleFavorite}
                     onSelectMatch={onSelectMatch}
                     todayStr={todayIso}
-                    leagueFallback="Kadınlar 2. Ligi"
+                    leagueFallback={leagueTitle || leagueCategory || "Kadınlar 2. Ligi"}
                   />
                 ))}
               </div>
@@ -346,7 +366,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                       onToggleFavorite={handleToggleFavorite}
                       onSelectMatch={onSelectMatch}
                       todayStr={todayIso}
-                      leagueFallback="Kadınlar 2. Ligi"
+                      leagueFallback={leagueTitle || leagueCategory || "Kadınlar 2. Ligi"}
                     />
                   ))}
                 </div>
@@ -387,7 +407,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                       onToggleFavorite={handleToggleFavorite}
                       onSelectMatch={onSelectMatch}
                       todayStr={todayIso}
-                      leagueFallback="Kadınlar 2. Ligi"
+                      leagueFallback={leagueTitle || leagueCategory || "Kadınlar 2. Ligi"}
                     />
                   ))
                 )}
@@ -424,7 +444,7 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                       onToggleFavorite={handleToggleFavorite}
                       onSelectMatch={onSelectMatch}
                       todayStr={todayIso}
-                      leagueFallback="Kadınlar 2. Ligi"
+                      leagueFallback={leagueTitle || leagueCategory || "Kadınlar 2. Ligi"}
                     />
                   ))}
                 </div>
@@ -434,21 +454,25 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
             {/* ALT KISIM: 2 KOLONLU WIDGET PANELİ */}
             <ScrollReveal delayMs={60}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
-                {/* 1. KART: GRUP LİDERLERİ */}
+                {/* 1. KART: GRUP LİDERLERİ / ZİRVE YARIŞI */}
                 <div className="glass-panel rounded-2xl p-3.5 border border-line/70 space-y-3">
                   <div className="flex items-center justify-between border-b border-line/50 pb-2">
                     <div className="flex items-center gap-2">
                       <Trophy size={14} className="text-primary" />
                       <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-                        Grup Liderleri (Çeyrek Final Hattı)
+                        {isSingleGroup
+                          ? "Zirve Yarışı (Şampiyonluk & Play-Off)"
+                          : leagueCategory?.includes("1. Lig")
+                          ? "Grup Liderleri (Yarı Final Hattı)"
+                          : "Grup Liderleri (Çeyrek Final Hattı)"}
                       </h3>
                     </div>
                     <button
                       type="button"
-                      onClick={() => onNavigateTab("leaders")}
+                      onClick={() => onNavigateTab("standings")}
                       className="text-[11px] text-ink-2 hover:text-white font-semibold cursor-pointer transition-colors"
                     >
-                      Tüm Gruplar →
+                      {isSingleGroup ? "Puan Cetveli →" : "Tüm Gruplar →"}
                     </button>
                   </div>
 
@@ -456,76 +480,161 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                     className="space-y-1.5 max-h-60 overflow-y-auto custom-scrollbar pr-1"
                     tabIndex={0}
                     role="region"
-                    aria-label="Grup liderleri"
+                    aria-label="Liderler"
                   >
-                    {topTeamsPerGroup.map((grp) => {
-                      const leaderName = grp.leader
-                        ? getKadinlar2LigTeamName(grp.leader.takim_adi, grp.leader.volleybox_name)
-                        : null;
-                      const mapping = leaderName
-                        ? getVolleyboxMapping(leaderName, "Kadınlar 2. Ligi")
-                        : null;
-                      const logo = mapping?.local_logo || mapping?.logo_url;
+                    {isSingleGroup ? (
+                      (data.gruplar[0]?.puan_durumu || []).slice(0, 4).map((t) => {
+                        const teamName = getKadinlar2LigTeamName(
+                          t.takim_adi,
+                          t.volleybox_name,
+                          leagueCategory || "Vodafone Sultanlar Ligi"
+                        );
+                        const mapping = getVolleyboxMapping(
+                          teamName,
+                          leagueCategory || "Vodafone Sultanlar Ligi"
+                        );
+                        const logo = mapping?.local_logo || mapping?.logo_url || t.logo;
 
-                      return (
-                        <div
-                          key={grp.grup_no}
-                          onClick={() => onSelectGroup(grp.grup_no, "standings")}
-                          className="p-2 rounded-lg bg-surface-muted/70 border border-line/40 hover:border-primary/40 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] flex items-center justify-between gap-2 text-xs cursor-pointer"
-                        >
-                          <div className="min-w-0 flex items-center gap-2">
-                            <span className="font-mono font-semibold text-[10px] text-ink-3 w-12 shrink-0">
-                              Grup {grp.grup_no}
-                            </span>
-                            {leaderName ? (
-                              <>
-                                <TeamBadge name={leaderName} logoUrl={logo} size="xs" />
-                                <div className="font-semibold text-white truncate text-xs">
-                                  {leaderName}
-                                </div>
-                              </>
-                            ) : (
-                              <span className="text-xs text-ink-3">-</span>
-                            )}
-                          </div>
-
-                          {grp.leader && (
+                        return (
+                          <div
+                            key={t.takim_adi}
+                            onClick={() => onNavigateTab("standings")}
+                            className="p-2 rounded-lg bg-surface-muted/70 border border-line/40 hover:border-primary/40 transition-colors duration-300 flex items-center justify-between gap-2 text-xs cursor-pointer"
+                          >
+                            <div className="min-w-0 flex items-center gap-2">
+                              <span className="font-mono font-semibold text-[10px] text-ink-3 w-8 shrink-0">
+                                #{t.sira}
+                              </span>
+                              <TeamBadge name={teamName} logoUrl={logo} size="xs" />
+                              <div className="font-semibold text-white truncate text-xs">
+                                {teamName}
+                              </div>
+                            </div>
                             <div className="flex items-center gap-2 shrink-0 font-mono tabular-nums text-[11px]">
                               <span className="text-ink-3">
-                                {grp.leader.g}G-{grp.leader.m}M
+                                {t.g}G-{t.m}M
                               </span>
                               <span className="font-bold text-ink">
-                                {grp.leader.p}P
+                                {t.p}P
                               </span>
                             </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                          </div>
+                        );
+                      })
+                    ) : (
+                      topTeamsPerGroup.map((grp) => {
+                        const leaderName = grp.leader
+                          ? getKadinlar2LigTeamName(
+                              grp.leader.takim_adi,
+                              grp.leader.volleybox_name,
+                              leagueCategory || "Kadınlar 2. Ligi"
+                            )
+                          : null;
+                        const mapping = leaderName
+                          ? getVolleyboxMapping(leaderName, leagueCategory || "Kadınlar 2. Ligi")
+                          : null;
+                        const logo = mapping?.local_logo || mapping?.logo_url;
+
+                        return (
+                          <div
+                            key={grp.grup_no}
+                            onClick={() => onSelectGroup(grp.grup_no, "standings")}
+                            className="p-2 rounded-lg bg-surface-muted/70 border border-line/40 hover:border-primary/40 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] flex items-center justify-between gap-2 text-xs cursor-pointer"
+                          >
+                            <div className="min-w-0 flex items-center gap-2">
+                              <span className="font-mono font-semibold text-[10px] text-ink-3 w-12 shrink-0">
+                                Grup {grp.grup_no}
+                              </span>
+                              {leaderName ? (
+                                <>
+                                  <TeamBadge name={leaderName} logoUrl={logo} size="xs" />
+                                  <div className="font-semibold text-white truncate text-xs">
+                                    {leaderName}
+                                  </div>
+                                </>
+                              ) : (
+                                <span className="text-xs text-ink-3">-</span>
+                              )}
+                            </div>
+
+                            {grp.leader && (
+                              <div className="flex items-center gap-2 shrink-0 font-mono tabular-nums text-[11px]">
+                                <span className="text-ink-3">
+                                  {grp.leader.g}G-{grp.leader.m}M
+                                </span>
+                                <span className="font-bold text-ink">
+                                  {grp.leader.p}P
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })
+                    )}
                   </div>
                 </div>
 
-                {/* 2. KART: RESMİ STATÜ & 1. LİG'E YÜKSELME SİSTEMİ */}
+                {/* 2. KART: RESMİ STATÜ & PLAY-OFF SİSTEMİ */}
                 <div className="glass-panel rounded-2xl p-4 border border-line/70 bg-surface space-y-3 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 text-primary">
                       <Sparkles size={15} />
                       <h3 className="font-bold text-xs uppercase tracking-wider text-white">
-                        1. Lig&apos;e Yükselme Sistemi
+                        {isSingleGroup
+                          ? "Sultanlar Ligi Şampiyonluk & Play-Off"
+                          : leagueCategory?.includes("1. Lig")
+                          ? "Sultanlar Ligi'ne Yükselme Sistemi"
+                          : "1. Lig'e Yükselme Sistemi"}
                       </h3>
                     </div>
-                    <p className="text-[11px] text-ink-2 leading-relaxed">
-                      16 gruptan ilk 2 sırayı alan <strong className="text-white">32 takım</strong> Çeyrek Final&apos;e yükselir. Çeyrek final, yarı final ve final etapları sonucunda <strong className="text-white">4 takım Arabica Coffee House Kadınlar 1. Ligi</strong>&apos;ne yükselir.
-                    </p>
+                    {isSingleGroup ? (
+                      <p className="text-[11px] text-ink-2 leading-relaxed">
+                        Normal lig etabını ilk 4 sırada tamamlayan takımlar <strong className="text-white">Şampiyonluk Play-Off (1-4)</strong> etabına, 5-8 sıradaki takımlar <strong className="text-white">Klasman Play-Off (5-8)</strong> etabına kalır. Normal sezonu son 2 sırada bitiren takımlar 1. Lig&apos;e düşer.
+                      </p>
+                    ) : leagueCategory?.includes("1. Lig") ? (
+                      <p className="text-[11px] text-ink-2 leading-relaxed">
+                        A ve B gruplarında ilk 4 sırayı alan toplam <strong className="text-white">8 takım Yarı Final</strong> etabına yükselir. Final etabı sonunda ilk 2 sırayı alan takımlar <strong className="text-white">Vodafone Sultanlar Ligi</strong>&apos;ne yükselir.
+                      </p>
+                    ) : (
+                      <p className="text-[11px] text-ink-2 leading-relaxed">
+                        16 gruptan ilk 2 sırayı alan <strong className="text-white">32 takım</strong> Çeyrek Final&apos;e yükselir. Çeyrek final, yarı final ve final etapları sonucunda <strong className="text-white">4 takım Arabica Coffee House Kadınlar 1. Ligi</strong>&apos;ne yükselir.
+                      </p>
+                    )}
                     <div className="grid grid-cols-2 gap-2 pt-1 text-[11px]">
-                      <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
-                        <span className="block text-ink-3 text-[10px]">Çeyrek Final</span>
-                        <strong className="text-white font-mono">32 Kulüp (8x4)</strong>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
-                        <span className="block text-ink-3 text-[10px]">1. Lig Bileti</span>
-                        <strong className="text-primary font-mono">4 Kulüp</strong>
-                      </div>
+                      {isSingleGroup ? (
+                        <>
+                          <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
+                            <span className="block text-ink-3 text-[10px]">Play-Off Hattı</span>
+                            <strong className="text-white font-mono">İlk 4 Kulüp (1-4)</strong>
+                          </div>
+                          <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
+                            <span className="block text-ink-3 text-[10px]">Klasman Etabı</span>
+                            <strong className="text-primary font-mono">5-8. Sıralar</strong>
+                          </div>
+                        </>
+                      ) : leagueCategory?.includes("1. Lig") ? (
+                        <>
+                          <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
+                            <span className="block text-ink-3 text-[10px]">Yarı Final</span>
+                            <strong className="text-white font-mono">8 Kulüp (2x4)</strong>
+                          </div>
+                          <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
+                            <span className="block text-ink-3 text-[10px]">Sultanlar Ligi Bileti</span>
+                            <strong className="text-primary font-mono">2 Kulüp</strong>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
+                            <span className="block text-ink-3 text-[10px]">Çeyrek Final</span>
+                            <strong className="text-white font-mono">32 Kulüp (8x4)</strong>
+                          </div>
+                          <div className="p-2.5 rounded-lg bg-surface-muted/70 border border-line/40">
+                            <span className="block text-ink-3 text-[10px]">1. Lig Bileti</span>
+                            <strong className="text-primary font-mono">4 Kulüp</strong>
+                          </div>
+                        </>
+                      )}
                     </div>
                   </div>
 
@@ -547,7 +656,11 @@ export const Kadinlar2LigHomePortal: React.FC<Kadinlar2LigHomePortalProps> = ({
                 <Sparkles size={14} className="text-primary shrink-0" />
                 <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
               </div>
-              <span className="font-mono font-semibold text-ink shrink-0">16 Grup Canlı Takip</span>
+              <span className="font-mono font-semibold text-ink shrink-0">
+                {isSingleGroup
+                  ? `${stats.totalTeams} Takım Tek Grup`
+                  : `${data.gruplar.length} Grup Canlı Takip`}
+              </span>
             </div>
           </div>
         )}

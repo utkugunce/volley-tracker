@@ -107,7 +107,7 @@ export const Kadinlar2LigClient: React.FC<Kadinlar2LigClientProps> = ({
 
   // Standart Match dizisi ve puan durumu haritası (MatchInspectorPanel ve MobileMatchDrawer uyumlu)
   const convertedMatches: Match[] = useMemo(() => {
-    return (data.tum_maclar || []).map(convertK2MatchToMatch);
+    return (data.tum_maclar || []).map((m) => convertK2MatchToMatch(m));
   }, [data.tum_maclar]);
 
   const standingsMap: Record<string, StandingItem[]> = useMemo(() => {

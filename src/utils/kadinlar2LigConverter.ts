@@ -6,6 +6,12 @@ import { kadinlar2LigMatchToUnified } from "./unifiedAdapters";
 import type { UnifiedFixture } from "@/types/unified";
 import { trIncludes } from "./turkishLocale";
 
+export interface ConvertMatchOptions {
+  category?: string;
+  age_group?: string;
+  gender?: string;
+}
+
 /** Altyapı eşleme dosyasındaki (volleybox-mappings.json) kategori adı. */
 export const K2_CATEGORY = "Kadınlar 2. Ligi";
 
@@ -17,7 +23,7 @@ export function convertK2MatchToUnified(m: Kadinlar2LigMatch): UnifiedFixture {
 }
 
 /**
- * Kadınlar 2. Ligi takım adını Altyapı ile aynı mekanizmayla (volleybox-mappings.json →
+ * Kadınlar 2. Ligi / Profesyonel lig takım adını Altyapı ile aynı mekanizmayla (volleybox-mappings.json →
  * `getVolleyboxTeamName` → `matched_as`) Volleybox resmi adına çevirir.
  *
  * Öncelik: (1) scraper'ın JSON'a yazdığı `volleybox_name`, (2) eşleme dosyası (`matched_as`),
@@ -25,11 +31,12 @@ export function convertK2MatchToUnified(m: Kadinlar2LigMatch): UnifiedFixture {
  */
 export function getKadinlar2LigTeamName(
   takimAdi: string | null | undefined,
-  volleyboxName?: string | null
+  volleyboxName?: string | null,
+  category?: string
 ): string {
   const vbName = volleyboxName?.trim();
   if (vbName) return vbName;
-  return getVolleyboxTeamName(takimAdi || "", K2_CATEGORY);
+  return getVolleyboxTeamName(takimAdi || "", category || K2_CATEGORY);
 }
 
 /**
@@ -38,18 +45,22 @@ export function getKadinlar2LigTeamName(
  */
 export function getKadinlar2LigTeamNameVariants(
   takimAdi: string | null | undefined,
-  volleyboxName?: string | null
+  volleyboxName?: string | null,
+  category?: string
 ): string[] {
   const raw = (takimAdi || "").trim();
-  const display = getKadinlar2LigTeamName(raw, volleyboxName);
+  const display = getKadinlar2LigTeamName(raw, volleyboxName, category);
   return display && display !== raw ? [display, raw] : [raw];
 }
 
 /** Bir maçın iki takımı için görüntülenecek (Volleybox) adlar. */
-export function getKadinlar2LigMatchTeamNames(m: Kadinlar2LigMatch): { home: string; away: string } {
+export function getKadinlar2LigMatchTeamNames(
+  m: Kadinlar2LigMatch,
+  category?: string
+): { home: string; away: string } {
   return {
-    home: getKadinlar2LigTeamName(m.takim_a, m.takim_a_volleybox_name),
-    away: getKadinlar2LigTeamName(m.takim_b, m.takim_b_volleybox_name),
+    home: getKadinlar2LigTeamName(m.takim_a, m.takim_a_volleybox_name, category),
+    away: getKadinlar2LigTeamName(m.takim_b, m.takim_b_volleybox_name, category),
   };
 }
 
@@ -132,10 +143,14 @@ export function isKadinlar2LigMatchSynced(m: Kadinlar2LigMatch): boolean {
 }
 
 /**
- * Kadınlar 2. Ligi maç nesnesini Altyapı FixtureTable ve MatchCenterDrawer ile
+ * Kadınlar 2. Ligi / Profesyonel lig maç nesnesini Altyapı FixtureTable ve MatchCenterDrawer ile
  * tam uyumlu standart Match tipine dönüştürür.
  */
-export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
+export function convertK2MatchToMatch(
+  m: Kadinlar2LigMatch,
+  options?: ConvertMatchOptions | number
+): Match {
+  const opts = typeof options === "object" && options !== null ? options : undefined;
   const unified = kadinlar2LigMatchToUnified(m);
   const setScores = (unified.set_scores && unified.set_scores.length > 0)
     ? unified.set_scores
@@ -154,7 +169,27 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     }
   }
 
-  const { home: homeName, away: awayName } = getKadinlar2LigMatchTeamNames(m);
+  // Lig / Kategori tespiti (options öncelikli, ardından id / grup_adi)
+  let resolvedCategory = opts?.category;
+  if (!resolvedCategory) {
+    if (m.id?.startsWith("sultanlar") || m.grup_adi?.includes("Sultanlar") || (m as { lig?: string }).lig?.includes("Sultanlar")) {
+      resolvedCategory = "Vodafone Sultanlar Ligi";
+    } else if (m.id?.startsWith("k1") || m.grup_adi?.includes("1. Lig") || (m as { lig?: string }).lig?.includes("1. Lig")) {
+      resolvedCategory = "KFC Kadınlar 1. Ligi";
+    } else {
+      resolvedCategory = "Kadınlar 2. Ligi";
+    }
+  }
+
+  const isSultanlar = resolvedCategory.includes("Sultanlar");
+  const isK1 = resolvedCategory.includes("1. Lig") || resolvedCategory.includes("1. Ligi");
+  const isK2 = resolvedCategory.includes("2. Lig") || resolvedCategory.includes("2. Ligi");
+  const isPro = isSultanlar || isK1 || isK2;
+
+  const resolvedAgeGroup = opts?.age_group || (isPro ? "Büyük Kadınlar" : "Genç");
+  const resolvedGender = opts?.gender || (isPro ? "Kadın" : "Kız");
+
+  const { home: homeName, away: awayName } = getKadinlar2LigMatchTeamNames(m, resolvedCategory);
 
   const isFinished =
     m.durum === "BİTTİ" || (homeScore !== null && awayScore !== null);
@@ -191,9 +226,9 @@ export function convertK2MatchToMatch(m: Kadinlar2LigMatch): Match {
     hall: m.salon || "",
     home_team: homeName,
     away_team: awayName,
-    category: "Kadınlar 2. Ligi",
-    age_group: "Genç",
-    gender: "Kız",
+    category: resolvedCategory,
+    age_group: resolvedAgeGroup,
+    gender: resolvedGender,
     group: m.grup_adi || `Grup ${m.grup_no}`,
     city: m.sehir || "Türkiye",
     status: isFinished ? "finished" : "upcoming",

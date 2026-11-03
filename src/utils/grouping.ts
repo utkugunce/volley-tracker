@@ -172,6 +172,18 @@ export function formatLeagueCategoryTitle(
   if (!category && !ageGroup) return "";
   const cat = (category || "").trim();
   const lowerCat = cat.toLowerCase();
+
+  // Profesyonel Ligler Altyapı şablonlarına (Süper Lig U18 vb.) girmemelidir
+  if (lowerCat.includes("sultanlar")) {
+    return "Vodafone Sultanlar Ligi";
+  }
+  if (lowerCat.includes("kadinlar 1") || lowerCat.includes("kadınlar 1")) {
+    return "KFC Kadınlar 1. Ligi";
+  }
+  if (lowerCat.includes("kadinlar 2") || lowerCat.includes("kadınlar 2")) {
+    return "Uzman Posta Kadınlar 2. Ligi";
+  }
+
   const lowerAge = (ageGroup || "").toLowerCase();
   const lowerCity = (city || "").toLowerCase().trim();
 

@@ -89,7 +89,13 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
   }, [data.tum_maclar]);
 
   const convertedMatches: Match[] = useMemo(() => {
-    return (data.tum_maclar || []).map(convertK2MatchToMatch);
+    return (data.tum_maclar || []).map((m) =>
+      convertK2MatchToMatch(m, {
+        category: "Vodafone Sultanlar Ligi",
+        age_group: "Büyük Kadınlar",
+        gender: "Kadın",
+      })
+    );
   }, [data.tum_maclar]);
 
   const standingsMap: Record<string, StandingItem[]> = useMemo(() => {
@@ -98,7 +104,7 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
       const key = g.grup_adi || "Lig Etabı";
       res[key] = (g.puan_durumu || []).map((t) => ({
         rank: t.sira,
-        team: getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name),
+        team: getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name, "Vodafone Sultanlar Ligi"),
         played: t.o,
         won: t.g,
         lost: t.m,
@@ -261,6 +267,9 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
             selectedMatchId={selectedMatch?.id || null}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
+            leagueTitle="Vodafone Sultanlar Ligi"
+            leagueCategory="Vodafone Sultanlar Ligi"
+            isSingleGroup={true}
           />
         )}
 
@@ -274,6 +283,9 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
             selectedMatchId={selectedMatch?.id || null}
+            leagueTitle="Vodafone Sultanlar Ligi"
+            leagueCategory="Vodafone Sultanlar Ligi"
+            isSingleGroup={true}
           />
         )}
 
@@ -287,6 +299,9 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
             selectedMatchId={selectedMatch?.id || null}
+            leagueTitle="Vodafone Sultanlar Ligi"
+            leagueCategory="Vodafone Sultanlar Ligi"
+            isSingleGroup={true}
           />
         )}
 
@@ -311,6 +326,9 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
                 showOnlyFavorites={showOnlyFavorites}
                 onSelectMatch={handleSelectMatch}
                 selectedMatchId={selectedMatch?.id || null}
+                leagueTitle="Vodafone Sultanlar Ligi"
+                leagueCategory="Vodafone Sultanlar Ligi"
+                isSingleGroup={true}
               />
             </div>
           </div>
@@ -327,6 +345,9 @@ export const SultanlarLigiClient: React.FC<SultanlarLigiClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onSelectMatch={handleSelectMatch}
             selectedMatchId={selectedMatch?.id || null}
+            leagueTitle="Vodafone Sultanlar Ligi"
+            leagueCategory="Vodafone Sultanlar Ligi"
+            isSingleGroup={true}
           />
         )}
 

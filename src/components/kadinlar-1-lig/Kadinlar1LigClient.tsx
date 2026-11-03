@@ -98,7 +98,13 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
   }, [data.tum_maclar]);
 
   const convertedMatches: Match[] = useMemo(() => {
-    return (data.tum_maclar || []).map(convertK2MatchToMatch);
+    return (data.tum_maclar || []).map((m) =>
+      convertK2MatchToMatch(m, {
+        category: "KFC Kadınlar 1. Ligi",
+        age_group: "Büyük Kadınlar",
+        gender: "Kadın",
+      })
+    );
   }, [data.tum_maclar]);
 
   const standingsMap: Record<string, StandingItem[]> = useMemo(() => {
@@ -107,7 +113,7 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
       const key = g.grup_adi || `Grup ${g.grup_no}`;
       res[key] = (g.puan_durumu || []).map((t) => ({
         rank: t.sira,
-        team: getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name),
+        team: getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name, "KFC Kadınlar 1. Ligi"),
         played: t.o,
         won: t.g,
         lost: t.m,
@@ -295,6 +301,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             selectedMatchId={selectedMatch?.id || null}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
+            leagueTitle="KFC Kadınlar 1. Ligi"
+            leagueCategory="KFC Kadınlar 1. Ligi"
           />
         )}
 
@@ -308,6 +316,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
             selectedMatchId={selectedMatch?.id || null}
+            leagueTitle="KFC Kadınlar 1. Ligi"
+            leagueCategory="KFC Kadınlar 1. Ligi"
           />
         )}
 
@@ -321,6 +331,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
             selectedMatchId={selectedMatch?.id || null}
+            leagueTitle="KFC Kadınlar 1. Ligi"
+            leagueCategory="KFC Kadınlar 1. Ligi"
           />
         )}
 
@@ -345,6 +357,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
                 showOnlyFavorites={showOnlyFavorites}
                 onSelectMatch={handleSelectMatch}
                 selectedMatchId={selectedMatch?.id || null}
+                leagueTitle="KFC Kadınlar 1. Ligi"
+                leagueCategory="KFC Kadınlar 1. Ligi"
               />
             </div>
           </div>
@@ -361,6 +375,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onSelectMatch={handleSelectMatch}
             selectedMatchId={selectedMatch?.id || null}
+            leagueTitle="KFC Kadınlar 1. Ligi"
+            leagueCategory="KFC Kadınlar 1. Ligi"
           />
         )}
 

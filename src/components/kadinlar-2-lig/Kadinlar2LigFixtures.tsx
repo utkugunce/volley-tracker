@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useCallback } from "react";
 import {
   Calendar,
   Star,
@@ -41,6 +41,9 @@ interface Kadinlar2LigFixturesProps {
   showOnlyFavorites?: boolean;
   onToggleFavoritesOnly?: () => void;
   selectedMatchId?: string | null;
+  leagueTitle?: string;
+  leagueCategory?: string;
+  isSingleGroup?: boolean;
 }
 
 export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
@@ -53,6 +56,9 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   showOnlyFavorites = false,
   onToggleFavoritesOnly,
   selectedMatchId,
+  leagueTitle,
+  leagueCategory,
+  isSingleGroup = false,
 }) => {
   const { isFavorite, toggleFavorite } = useFavorites();
   const [selectedWeek, setSelectedWeek] = useState<number | "all">("all");
@@ -64,6 +70,15 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
   const [todayIso, setTodayIso] = useState("");
 
   const isAll = Boolean(isAllGroups || !group);
+
+  const toMatch = useMemo(() => {
+    return (m: Kadinlar2LigMatch) =>
+      convertK2MatchToMatch(m, {
+        category: leagueCategory || leagueTitle,
+        age_group: "Büyük Kadınlar",
+        gender: "Kadın",
+      });
+  }, [leagueCategory, leagueTitle]);
 
   useEffect(() => {
     const now = new Date();
@@ -249,13 +264,19 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
 
   // Sezon Takvimi İndir (.ics)
   const handleDownloadSeasonIcs = () => {
-    const converted = filteredMatches.map(convertK2MatchToMatch);
-    const title = isAll
-      ? "Kadınlar 2. Ligi Tüm Gruplar Fikstürü"
-      : `Kadınlar 2. Ligi ${group?.grup_adi || ""} Fikstürü`;
-    const fileName = isAll
-      ? "kadinlar-2-ligi-tum-gruplar-fikstur.ics"
-      : `kadinlar-2-ligi-${group?.grup_no || 1}-grup-fikstur.ics`;
+    const converted = filteredMatches.map(toMatch);
+    const leagueName = leagueTitle || "Kadınlar 2. Ligi";
+    const title = isSingleGroup
+      ? `${leagueName} Sezon Fikstürü`
+      : isAll
+      ? `${leagueName} Tüm Gruplar Fikstürü`
+      : `${leagueName} ${group?.grup_adi || ""} Fikstürü`;
+    const slug = leagueName.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    const fileName = isSingleGroup
+      ? `${slug}-fikstur.ics`
+      : isAll
+      ? `${slug}-tum-gruplar-fikstur.ics`
+      : `${slug}-${group?.grup_no || 1}-grup-fikstur.ics`;
     const ics = generateSeasonIcs(converted, title);
     downloadIcsFile(fileName, ics);
   };
@@ -276,6 +297,34 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
 
   // Gruplara veya haftalara göre bölümlendirme
   const fixtureSections = useMemo(() => {
+    const getStandingsHref = (gNo?: number) => {
+      if (isSingleGroup || leagueCategory?.includes("Sultanlar")) {
+        return "/sultanlar-ligi?tab=standings";
+      }
+      if (leagueCategory?.includes("1. Lig")) {
+        return gNo ? `/kadinlar-1-ligi?tab=standings&grup=${gNo}` : "/kadinlar-1-ligi?tab=standings";
+      }
+      return getKadinlar2LigRoute("standings", gNo);
+    };
+
+    if (isSingleGroup) {
+      // Tek grup (Sultanlar Ligi vb.): Doğrudan haftalara göre listele
+      const map = new Map<number, Kadinlar2LigMatch[]>();
+      filteredMatches.forEach((m) => {
+        const w = m.hafta || 1;
+        if (!map.has(w)) map.set(w, []);
+        map.get(w)!.push(m);
+      });
+      return Array.from(map.entries())
+        .sort((a, b) => a[0] - b[0])
+        .map(([weekNum, weekMatches]) => ({
+          key: `week-${weekNum}`,
+          label: `${weekNum}. Hafta Karşılaşmaları`,
+          matches: weekMatches,
+          standingsHref: getStandingsHref(1),
+        }));
+    }
+
     if (!isAll && group) {
       // Tek bir grup seçili: Haftalara göre listele
       const map = new Map<number, Kadinlar2LigMatch[]>();
@@ -290,7 +339,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
           key: `week-${weekNum}`,
           label: `${group.grup_adi} · ${weekNum}. Hafta`,
           matches: weekMatches,
-          standingsHref: getKadinlar2LigRoute("standings", group.grup_no),
+          standingsHref: getStandingsHref(group.grup_no),
         }));
     }
 
@@ -311,7 +360,7 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
             key: `group-${gNo}-week-${selectedWeek}`,
             label: `${grp?.grup_adi || `${gNo}. Grup`} · ${selectedWeek}. Hafta`,
             matches: gMatches,
-            standingsHref: getKadinlar2LigRoute("standings", gNo),
+            standingsHref: getStandingsHref(gNo),
           };
         });
     }
@@ -332,10 +381,10 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
           key: `group-${gNo}`,
           label: `${grp?.grup_adi || `${gNo}. Grup`} · Fikstür (${gMatches.length} Maç)`,
           matches: gMatches,
-          standingsHref: getKadinlar2LigRoute("standings", gNo),
+          standingsHref: getStandingsHref(gNo),
         };
       });
-  }, [isAll, group, groups, filteredMatches, selectedWeek]);
+  }, [isAll, isSingleGroup, group, groups, filteredMatches, selectedWeek, leagueCategory]);
 
   return (
     <div className="space-y-4">
@@ -546,9 +595,9 @@ export const Kadinlar2LigFixtures: React.FC<Kadinlar2LigFixturesProps> = ({
           {fixtureSections.map((sec) => (
             <LeagueSection
               key={sec.key}
-              leagueTitle="Kadınlar 2. Ligi"
+              leagueTitle={leagueTitle || "Kadınlar 2. Ligi"}
               sectionLabel={sec.label}
-              matches={sec.matches.map(convertK2MatchToMatch)}
+              matches={sec.matches.map(toMatch)}
               selectedMatchId={selectedMatchId}
               favorites={favoriteMatchIds}
               onToggleFavorite={handleToggleFavorite}
