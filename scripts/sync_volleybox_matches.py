@@ -173,32 +173,35 @@ def clean_for_stopword_compare(name: str) -> str:
 
 
 def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
+    t_norm = normalize_name(tvf_name)
+    v_norm = normalize_name(vb_name)
+    tvf_base, tvf_letter = extract_team_meta(tvf_name)
+    vb_base, vb_letter = extract_team_meta(vb_name)
+
     # 0. Doğrudan veya Synonym / Alias Eşleşmesi (En Yüksek Öncelik):
     for syn in synonyms:
         s_norm = normalize_name(syn)
-        v_norm = normalize_name(vb_name)
-        if s_norm and v_norm and s_norm == v_norm:
+        if s_norm and t_norm and s_norm == t_norm:
             # Sadece şehir stopword'ü ise tam isim eşitliğini kontrol et
-            if s_norm in CITY_STOPWORDS or v_norm in CITY_STOPWORDS:
+            if s_norm in CITY_STOPWORDS or t_norm in CITY_STOPWORDS:
                 if (
-                    syn.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
-                    or clean_for_stopword_compare(syn) == clean_for_stopword_compare(vb_name)
+                    syn.lower().replace(" ", "") == tvf_name.lower().replace(" ", "")
+                    or clean_for_stopword_compare(syn) == clean_for_stopword_compare(tvf_name)
                 ):
                     return 100
             else:
                 return 100
 
         s_base, s_letter = extract_team_meta(syn)
-        vb_base, vb_letter = extract_team_meta(vb_name)
-        if s_base and vb_base:
-            if (s_base == vb_base or s_base.replace(" ", "") == vb_base.replace(" ", "")):
-                letter_compat = (s_letter == vb_letter) or (s_letter in (None, "a") and vb_letter in (None, "a"))
+        if s_base and tvf_base:
+            if (s_base == tvf_base or s_base.replace(" ", "") == tvf_base.replace(" ", "")):
+                letter_compat = (s_letter == tvf_letter) or (s_letter in (None, "a") and tvf_letter in (None, "a"))
                 if letter_compat:
-                    if s_base not in CITY_STOPWORDS and vb_base not in CITY_STOPWORDS:
+                    if s_base not in CITY_STOPWORDS and tvf_base not in CITY_STOPWORDS:
                         return 100
                     elif (
-                        syn.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
-                        or clean_for_stopword_compare(syn) == clean_for_stopword_compare(vb_name)
+                        syn.lower().replace(" ", "") == tvf_name.lower().replace(" ", "")
+                        or clean_for_stopword_compare(syn) == clean_for_stopword_compare(tvf_name)
                     ):
                         return 100
 
