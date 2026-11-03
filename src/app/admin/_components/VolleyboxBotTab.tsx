@@ -397,15 +397,32 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
 
   const isRunning = botStatus?.status === "running";
   const isLocalBlocked = botStatus?.isLocalRuntime === false;
+
+  const PRO_SLUGS = ["kadinlar-2-ligi", "kadinlar-1-ligi", "sultanlar-ligi"];
+
+  const proTournaments = tournaments.filter((t) => PRO_SLUGS.includes(t.city_slug));
+  const cityTournaments = tournaments.filter((t) => !PRO_SLUGS.includes(t.city_slug));
+
+  const proMissingCount = proTournaments.reduce((acc, t) => acc + t.missing_count, 0);
+  const cityMissingCount = cityTournaments.reduce((acc, t) => acc + t.missing_count, 0);
+
+  const k2Tournament = tournaments.find((t) => t.city_slug === "kadinlar-2-ligi");
+  const k1Tournament = tournaments.find((t) => t.city_slug === "kadinlar-1-ligi");
+  const sultanlarTournament = tournaments.find((t) => t.city_slug === "sultanlar-ligi");
+
   const visibleTournaments =
     selectedCity === "all"
       ? tournaments
-      : tournaments.filter((t) => t.city_slug === selectedCity);
+      : selectedCity === "pro"
+        ? proTournaments
+        : selectedCity === "altyapi"
+          ? cityTournaments
+          : tournaments.filter((t) => t.city_slug === selectedCity);
 
-  // Benzersiz il listesi
+  // Benzersiz il listesi (Altyapı illeri)
   const cityOptions = Array.from(
     new Map(
-      tournaments.map((t) => [
+      cityTournaments.map((t) => [
         t.city_slug,
         {
           slug: t.city_slug,
@@ -416,7 +433,7 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
         },
       ])
     ).values()
-  );
+  ).sort((a, b) => a.name.localeCompare(b.name, "tr"));
 
   const screenshotUrl =
     botStatus?.hasScreenshot && botStatus?.screenshotMtime
@@ -552,12 +569,27 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
               disabled={isRunning}
               className="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-primary"
             >
-              <option value="all">Tüm İller ({totalMissing} Eksik Maç)</option>
-              {cityOptions.map((c) => (
-                <option key={c.slug} value={c.slug}>
-                  {c.name} ({c.count} Eksik Maç)
+              <option value="all">Tüm Turnuvalar ({totalMissing} Eksik Maç)</option>
+              <option value="pro">⭐ Tüm Profesyonel Ligler ({proMissingCount} Eksik Maç)</option>
+              <option value="altyapi">🏙️ Tüm Altyapı İlleri ({cityMissingCount} Eksik Maç)</option>
+              <optgroup label="🏐 Profesyonel Ligler">
+                <option value="kadinlar-2-ligi">
+                  TVF Kadınlar 2. Ligi ({k2Tournament?.missing_count || 0} Eksik Maç)
                 </option>
-              ))}
+                <option value="kadinlar-1-ligi">
+                  KFC Kadınlar 1. Ligi ({k1Tournament?.missing_count || 0} Eksik Maç)
+                </option>
+                <option value="sultanlar-ligi">
+                  Vodafone Sultanlar Ligi ({sultanlarTournament?.missing_count || 0} Eksik Maç)
+                </option>
+              </optgroup>
+              <optgroup label="🏙️ Altyapı İlleri (81 İl)">
+                {cityOptions.map((c) => (
+                  <option key={c.slug} value={c.slug}>
+                    {c.name} ({c.count} Eksik Maç)
+                  </option>
+                ))}
+              </optgroup>
             </select>
           </div>
 
@@ -623,6 +655,77 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
               <option value="headless">Arka Plan (Sadece Panel Canlı Ekranı)</option>
             </select>
           </div>
+        </div>
+
+        {/* HIZLI KAPSAM & LİG FİLTRESİ (PILLS) */}
+        <div className="mt-3 flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-800/60 text-xs">
+          <span className="text-[11px] font-bold text-slate-400 mr-1">Filtre:</span>
+          <button
+            type="button"
+            onClick={() => setSelectedCity("all")}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              selectedCity === "all"
+                ? "bg-slate-700 text-white shadow-sm"
+                : "bg-slate-900/90 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
+            }`}
+          >
+            Tümü ({totalMissing})
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedCity("pro")}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1 ${
+              selectedCity === "pro"
+                ? "bg-purple-600 text-white shadow-sm"
+                : "bg-slate-900/90 text-purple-300 hover:text-white hover:bg-purple-950/60 border border-purple-500/30"
+            }`}
+          >
+            ⭐ Tüm Pro Ligler ({proMissingCount})
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedCity("kadinlar-2-ligi")}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1 ${
+              selectedCity === "kadinlar-2-ligi"
+                ? "bg-emerald-600 text-white shadow-sm"
+                : "bg-slate-900/90 text-emerald-300 hover:text-white hover:bg-emerald-950/60 border border-emerald-500/30"
+            }`}
+          >
+            🏐 Kadınlar 2. Lig ({k2Tournament?.missing_count || 0})
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedCity("kadinlar-1-ligi")}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1 ${
+              selectedCity === "kadinlar-1-ligi"
+                ? "bg-sky-600 text-white shadow-sm"
+                : "bg-slate-900/90 text-sky-300 hover:text-white hover:bg-sky-950/60 border border-sky-500/30"
+            }`}
+          >
+            🏐 Kadınlar 1. Lig ({k1Tournament?.missing_count || 0})
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedCity("sultanlar-ligi")}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1 ${
+              selectedCity === "sultanlar-ligi"
+                ? "bg-amber-600 text-white shadow-sm"
+                : "bg-slate-900/90 text-amber-300 hover:text-white hover:bg-amber-950/60 border border-amber-500/30"
+            }`}
+          >
+            🏐 Sultanlar Ligi ({sultanlarTournament?.missing_count || 0})
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedCity("altyapi")}
+            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all cursor-pointer flex items-center gap-1 ${
+              selectedCity === "altyapi"
+                ? "bg-slate-700 text-white shadow-sm"
+                : "bg-slate-900/90 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800"
+            }`}
+          >
+            🏙️ Altyapı İlleri ({cityMissingCount})
+          </button>
         </div>
 
         {/* ANLIK İŞLEM VE SAYAÇLAR */}
@@ -1071,7 +1174,7 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-xs font-black text-white">
-                      🏆 {t.city} — {t.category}
+                      🏆 {t.city === t.category ? t.category : `${t.city} — ${t.category}`}
                     </span>
                     <span className="text-[11px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
                       {t.missing_count} Eksik Maç
@@ -1106,7 +1209,7 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                       title={isLocalBlocked ? "Bot sadece yerel ortamda (localhost) çalışır" : undefined}
                     >
                       <Play size={12} />
-                      Sadece {t.city} Maçlarını Ekle ({t.missing_count})
+                      Sadece {PRO_SLUGS.includes(t.city_slug) ? t.category : t.city} Maçlarını Ekle ({t.missing_count})
                     </button>
                   </div>
                 </div>

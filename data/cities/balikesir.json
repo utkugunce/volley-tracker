@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T14:34:27.319832+03:00",
+  "updated_at": "2026-11-03T15:49:29.082866+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -872,9 +872,9 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "406627",
-        "url": "https://women.volleybox.net/tr/bandrma-voleybol-spor-kulubu-u16-balkesir-buyuksehir-belediyespor-u16-c406627",
-        "host_name": "Bandırma Voleybol Spor Kulübü U16",
+        "match_id": "415218",
+        "url": "https://women.volleybox.net/tr/balkesir-voleybol-akademi-spor-kulubu-u16-balkesir-buyuksehir-belediyespor-u16-c415218",
+        "host_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
         "guest_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
         "score": "3 - 2",
         "has_score": true,
@@ -1009,10 +1009,10 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "406630",
-        "url": "https://women.volleybox.net/tr/ted-balkesir-koleji-sk-u16-bandrma-voleybol-spor-kulubu-u16-c406630",
+        "match_id": "415219",
+        "url": "https://women.volleybox.net/tr/ted-balkesir-koleji-sk-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415219",
         "host_name": "TED Balıkesir Koleji SK U16",
-        "guest_name": "Bandırma Voleybol Spor Kulübü U16",
+        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
         "score": "1 - 3",
         "has_score": true,
         "vb_date": "2026-10-15",
@@ -1099,9 +1099,9 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "411162",
-        "url": "https://women.volleybox.net/tr/bandrma-voleybol-spor-kulubu-u16-gunyaka-spor-u16-c411162",
-        "host_name": "Bandırma Voleybol Spor Kulübü U16",
+        "match_id": "415220",
+        "url": "https://women.volleybox.net/tr/balkesir-voleybol-akademi-spor-kulubu-u16-gunyaka-spor-u16-c415220",
+        "host_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
         "guest_name": "Günyaka Spor U16",
         "score": "3 - 0",
         "has_score": true,
@@ -1144,14 +1144,14 @@
       "status": "finished",
       "volleybox": {
         "synced": true,
-        "match_id": "415220",
-        "url": "https://women.volleybox.net/tr/balkesir-voleybol-akademi-spor-kulubu-u16-gunyaka-spor-u16-c415220",
-        "host_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
-        "guest_name": "Günyaka Spor U16",
-        "score": "3 - 0",
+        "match_id": "411163",
+        "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-b-u16-eba-spor-u16-c411163",
+        "host_name": "Balıkesir EKA Spor Kulubü - B U16",
+        "guest_name": "EBA Spor U16",
+        "score": "0 - 3",
         "has_score": true,
         "vb_date": "2026-10-22",
-        "vb_time": "18:00",
+        "vb_time": "19:30",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
           "has_diff": false,
@@ -1159,7 +1159,7 @@
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-10-22",
-          "vb_time": "18:00",
+          "vb_time": "19:30",
           "vb_hall": "Kurtdereli Kapalı Spor Salonu",
           "details": null
         }
@@ -1316,10 +1316,10 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "414769",
-        "url": "https://women.volleybox.net/tr/eba-spor-u16-bandrma-voleybol-spor-kulubu-u16-c414769",
+        "match_id": "415221",
+        "url": "https://women.volleybox.net/tr/eba-spor-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415221",
         "host_name": "EBA Spor U16",
-        "guest_name": "Bandırma Voleybol Spor Kulübü U16",
+        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-03",
@@ -1357,24 +1357,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415221",
-        "url": "https://women.volleybox.net/tr/eba-spor-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415221",
-        "host_name": "EBA Spor U16",
-        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
+        "match_id": "414770",
+        "url": "https://women.volleybox.net/tr/ted-balkesir-koleji-sk-u16-balkesir-eka-spor-kulubu-b-u16-c414770",
+        "host_name": "TED Balıkesir Koleji SK U16",
+        "guest_name": "Balıkesir EKA Spor Kulubü - B U16",
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-03",
-        "vb_time": "19:00",
-        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+        "vb_time": "19:30",
+        "vb_hall": "Halkalı Osman Solakoğlu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
-          "hall_diff": true,
+          "time_diff": false,
+          "hall_diff": false,
           "vb_date": "2026-11-03",
-          "vb_time": "19:00",
-          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:30 / VB: 19:00) | Salon Değişti (TVF: Şh.T.Solak S.S/ Küçük S. / VB: Kurtdereli Kapalı Spor Salonu)"
+          "vb_time": "19:30",
+          "vb_hall": "Halkalı Osman Solakoğlu Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1398,10 +1398,10 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "414771",
-        "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-b-u16-bandrma-voleybol-spor-kulubu-u16-c414771",
+        "match_id": "415222",
+        "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-b-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415222",
         "host_name": "Balıkesir EKA Spor Kulubü - B U16",
-        "guest_name": "Bandırma Voleybol Spor Kulübü U16",
+        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-05",
@@ -1439,24 +1439,24 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415222",
-        "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-b-u16-balkesir-voleybol-akademi-spor-kulubu-u16-c415222",
-        "host_name": "Balıkesir EKA Spor Kulubü - B U16",
-        "guest_name": "Balıkesir Voleybol Akademi Spor Kulübü U16",
+        "match_id": "414772",
+        "url": "https://women.volleybox.net/tr/balkesir-buyuksehir-belediyespor-u16-ted-balkesir-koleji-sk-u16-c414772",
+        "host_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
+        "guest_name": "TED Balıkesir Koleji SK U16",
         "score": null,
         "has_score": false,
         "vb_date": "2026-11-05",
-        "vb_time": "18:00",
+        "vb_time": "19:30",
         "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-05",
-          "vb_time": "18:00",
+          "vb_time": "19:30",
           "vb_hall": "Kurtdereli Kapalı Spor Salonu",
-          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
+          "details": null
         }
       }
     },
@@ -3068,5 +3068,5 @@
     }
   ],
   "volleybox_synced_matches": 58,
-  "volleybox_sync_updated_at": "2026-11-03T14:41:56.284973"
+  "volleybox_sync_updated_at": "2026-11-03T15:57:24.131686"
 }

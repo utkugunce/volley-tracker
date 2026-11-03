@@ -55,4 +55,20 @@ describe("Admin sayfası (oturumsuz giriş ekranı)", () => {
       screen.getByRole("button", { name: /Botu Başlat \(Maçları Ekle\)/ })
     ).toBeInTheDocument();
   });
+
+  it("VolleyboxBotTab profesyonel lig seçeneklerini ve hızlı filtre haplarını içerir", () => {
+    render(<VolleyboxBotTab token="" />);
+    const select = screen.getByLabelText("Hedef İl / Turnuva");
+    expect(select).toBeInTheDocument();
+    expect(screen.getByText(/⭐ Tüm Profesyonel Ligler/)).toBeInTheDocument();
+    expect(screen.getByText(/TVF Kadınlar 2\. Ligi/)).toBeInTheDocument();
+    expect(screen.getByText(/KFC Kadınlar 1\. Ligi/)).toBeInTheDocument();
+    expect(screen.getByText(/Vodafone Sultanlar Ligi/)).toBeInTheDocument();
+
+    // Hızlı filtre butonları
+    expect(screen.getByRole("button", { name: /⭐ Tüm Pro Ligler/ })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /🏐 Kadınlar 2\. Lig/ })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /🏐 Kadınlar 1\. Lig/ })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /🏐 Sultanlar Ligi/ })).toBeInTheDocument();
+  });
 });
