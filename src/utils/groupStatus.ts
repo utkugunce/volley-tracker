@@ -359,8 +359,7 @@ export function computeGroupStatusList(
     const mapping = getVolleyboxLeagueMapping(item.category, item.city);
     let statusKey = computedStatusKey;
     if (
-      (mapping?.status_override === "teams_only" ||
-        (item.citySlug === "kirklareli" && (mapping?.volleybox_url || "").includes("krklareli"))) &&
+      mapping?.status_override === "teams_only" &&
       synced === 0
     ) {
       statusKey = "teams_only";
