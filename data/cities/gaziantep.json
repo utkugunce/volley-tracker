@@ -521,8 +521,8 @@
         "url": "https://women.volleybox.net/tr/gaziantep-buyuksehir-belediyespor-u18-adrenalin-rekor-spor-kulubu-u18-c413213",
         "host_name": "Gaziantep Büyükşehir Belediyespor U18",
         "guest_name": "Adrenalin Rekor Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-10-31",
         "vb_time": "09:30",
         "vb_hall": "Dumlupınar Spor Salonu",
@@ -566,8 +566,8 @@
         "url": "https://women.volleybox.net/tr/av-mahmut-dusun-mtal-u18-gaziantep-voleybol-gelisim-2023-spor-kulubu-u18-c413214",
         "host_name": "Av. Mahmut Düşün MTAL U18",
         "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-10-31",
         "vb_time": "11:00",
         "vb_hall": "Dumlupınar Spor Salonu",
@@ -612,8 +612,8 @@
         "url": "https://women.volleybox.net/tr/anadolugucu-spor-kulubu-u18-adrenalin-rekor-spor-kulubu-u18-c413215",
         "host_name": "Anadolugücü Spor Kulübü U18",
         "guest_name": "Adrenalin Rekor Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 1",
+        "has_score": true,
         "vb_date": "2026-11-01",
         "vb_time": "09:30",
         "vb_hall": "Dumlupınar Spor Salonu",
@@ -695,14 +695,14 @@
       "volleybox": {
         "synced": true,
         "match_id": "414749",
-        "url": "https://women.volleybox.net/c414749",
+        "url": "https://women.volleybox.net/tr/adrenalin-rekor-spor-kulubu-u18-av-mahmut-dusun-mtal-u18-c414749",
         "host_name": "Adrenalin Rekor Spor Kulübü U18",
         "guest_name": "Av. Mahmut Düşün MTAL U18",
-        "score": "0 - 0",
+        "score": null,
         "has_score": false,
         "vb_date": "2026-11-07",
         "vb_time": "09:30",
-        "vb_hall": "Dumlupınar",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -710,7 +710,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-07",
           "vb_time": "09:30",
-          "vb_hall": "Dumlupınar",
+          "vb_hall": "Dumlupınar Spor Salonu",
           "details": null
         }
       }
@@ -736,14 +736,14 @@
       "volleybox": {
         "synced": true,
         "match_id": "414750",
-        "url": "https://women.volleybox.net/c414750",
+        "url": "https://women.volleybox.net/tr/av-mahmut-dusun-mtal-u18-anadolugucu-spor-kulubu-u18-c414750",
         "host_name": "Av. Mahmut Düşün MTAL U18",
         "guest_name": "Anadolugücü Spor Kulübü U18",
-        "score": "0 - 0",
+        "score": null,
         "has_score": false,
         "vb_date": "2026-11-08",
         "vb_time": "12:30",
-        "vb_hall": "Dumlupınar",
+        "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -751,7 +751,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-08",
           "vb_time": "12:30",
-          "vb_hall": "Dumlupınar",
+          "vb_hall": "Dumlupınar Spor Salonu",
           "details": null
         }
       }
@@ -777,14 +777,14 @@
       "volleybox": {
         "synced": true,
         "match_id": "414751",
-        "url": "https://women.volleybox.net/c414751",
+        "url": "https://women.volleybox.net/tr/merinos-sk-u18-gaziantep-voleybol-gelisim-2023-spor-kulubu-u18-c414751",
         "host_name": "Merinos SK U18",
         "guest_name": "Gaziantep Voleybol Gelişim 2023 Spor Kulübü U18",
-        "score": "0 - 0",
+        "score": null,
         "has_score": false,
         "vb_date": "2026-11-08",
         "vb_time": "12:30",
-        "vb_hall": "Yurt Ss",
+        "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
         "discrepancy": {
           "has_diff": false,
           "date_diff": false,
@@ -792,7 +792,7 @@
           "hall_diff": false,
           "vb_date": "2026-11-08",
           "vb_time": "12:30",
-          "vb_hall": "Yurt Ss",
+          "vb_hall": "Gaziantep Üniversitesi Yurt Spor Salonu",
           "details": null
         }
       }
@@ -1119,5 +1119,5 @@
     }
   ],
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-03T10:24:14.999143"
+  "volleybox_sync_updated_at": "2026-11-03T10:49:56.828397"
 }

@@ -646,18 +646,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411829",
+        "url": "https://women.volleybox.net/tr/milas-belediye-spor-kulubu-b-u18-bodrum-belediyesi-bodrumspor-u18-c411829",
+        "host_name": "Milas Belediye Spor Kulübü - B U18",
+        "guest_name": "Bodrum Belediyesi Bodrumspor U18",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-30",
+        "vb_time": "19:30",
+        "vb_hall": "Milas Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-30",
+          "vb_time": "19:30",
+          "vb_hall": "Milas Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1032,18 +1039,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "411833",
+        "url": "https://women.volleybox.net/tr/mugla-ss-voleybol-spor-kulubu-u18-mugla-sportif-akademi-spor-kulubu-u18-c411833",
+        "host_name": "Muğla SS Voleybol Spor Kulübü U18",
+        "guest_name": "Muğla Sportif Akademi Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-02",
+        "vb_time": "18:00",
+        "vb_hall": "Menteşe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "18:00",
+          "vb_hall": "Menteşe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1844,6 +1858,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 21,
-  "volleybox_sync_updated_at": "2026-11-03T10:24:15.647085"
+  "volleybox_synced_matches": 23,
+  "volleybox_sync_updated_at": "2026-11-03T10:50:05.815617"
 }

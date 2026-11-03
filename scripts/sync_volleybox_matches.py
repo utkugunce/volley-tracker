@@ -258,7 +258,7 @@ def extract_tournament_id(url: str) -> Optional[str]:
     return m.group(1) if m else None
 
 
-def get_cffi_client(target: str = "chrome124"):
+def get_cffi_client(target: str = "safari17_0"):
     c = cffi_requests.Session(impersonate=target)
     c.headers["Accept-Language"] = "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7"
     return c
@@ -274,15 +274,23 @@ def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, An
     client = None
     try:
         if HAS_CURL_CFFI:
-            client = get_cffi_client("chrome124")
+            resp = None
+            for imp in ["safari17_0", "chrome124", "safari15_5", "chrome120"]:
+                try:
+                    if client:
+                        client.close()
+                    client = get_cffi_client(imp)
+                    resp = client.get(matches_url, timeout=15.0)
+                    if resp.status_code == 200:
+                        break
+                except Exception:
+                    continue
+            if resp is None:
+                return []
         else:
             client = httpx.Client(headers=HEADERS, timeout=15.0, follow_redirects=True)
-
-        resp = client.get(matches_url, timeout=15.0)
-        if resp.status_code == 403 and HAS_CURL_CFFI:
-            client.close()
-            client = get_cffi_client("chrome120")
             resp = client.get(matches_url, timeout=15.0)
+
         if resp.status_code == 429:
             print(f"  [UYARI] Volleybox hız sınırına (429) ulaşıldı ({tournament_url.split('/')[-1]}). Mevcut veriler korunuyor.")
             client.close()
@@ -1065,34 +1073,6 @@ def sync_kadinlar_2_lig_matches(
         k2_path,
         "Kadınlar 2. Ligi",
         "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
-        vb_tournaments,
-        team_alias_map
-    )
-
-
-def sync_kadinlar_1_lig_matches(
-    k1_path: Path,
-    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
-    team_alias_map: Dict[str, set] = None
-) -> Tuple[int, int]:
-    return sync_league_json_matches(
-        k1_path,
-        "KFC Kadınlar 1. Ligi",
-        "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
-        vb_tournaments,
-        team_alias_map
-    )
-
-
-def sync_sultanlar_ligi_matches(
-    sultanlar_path: Path,
-    vb_tournaments: Dict[str, List[Dict[str, Any]]] = None,
-    team_alias_map: Dict[str, set] = None
-) -> Tuple[int, int]:
-    return sync_league_json_matches(
-        sultanlar_path,
-        "Vodafone Sultanlar Ligi",
-        "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086",
         vb_tournaments,
         team_alias_map
     )

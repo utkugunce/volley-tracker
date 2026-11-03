@@ -355,14 +355,14 @@
         "vb_time": "19:30",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-05",
           "vb_time": "19:30",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
         }
       }
     },
@@ -396,14 +396,14 @@
         "vb_time": "18:00",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-05",
           "vb_time": "18:00",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
         }
       }
     },
@@ -601,14 +601,14 @@
         "vb_time": "19:30",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-24",
           "vb_time": "19:30",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
         }
       }
     },
@@ -642,14 +642,14 @@
         "vb_time": "18:00",
         "vb_hall": "TOKİ Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
+          "time_diff": true,
           "hall_diff": false,
           "vb_date": "2026-11-24",
           "vb_time": "18:00",
           "vb_hall": "TOKİ Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 19:30 / VB: 18:00)"
         }
       }
     },
@@ -2441,8 +2441,8 @@
         "url": "https://women.volleybox.net/tr/hatay-yldzlar-spor-kulubu-u18-es-akademi-spor-kulubu-u18-c401115",
         "host_name": "Hatay Yıldızlar Spor Kulübü U18",
         "guest_name": "Es Akademi Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-29",
         "vb_time": "15:30",
         "vb_hall": "İskenderun Sakarya Spor Salonu",
@@ -2624,5 +2624,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-03T10:24:15.078710"
+  "volleybox_sync_updated_at": "2026-11-03T10:49:58.132406"
 }
