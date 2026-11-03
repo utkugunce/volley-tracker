@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T17:04:31.966047+03:00",
+  "updated_at": "2026-11-03T16:42:50.869887+00:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -577,29 +577,29 @@
     "Genç Kızlar 1. Ligi - 4. Grup": [
       {
         "rank": 1,
-        "team": "Anadolu Birlik Spor Kulübü",
-        "played": 0,
-        "won": 0,
+        "team": "Başkent Zirve Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Başkent Zirve Spor Kulübü - B U18",
-        "played": 0,
+        "team": "CAS Akademi Spor Kulübü - A U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "CAS Akademi Spor Kulübü - A U18",
+        "team": "Anadolu Birlik Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -4527,11 +4527,15 @@
       "match_no": "1",
       "home_team": "Başkent Zirve Spor Kulübü - B U18",
       "away_team": "CAS Akademi Spor Kulübü - A U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "27-25",
+        "25-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411580",
@@ -8332,5 +8336,5 @@
     }
   ],
   "volleybox_synced_matches": 125,
-  "volleybox_sync_updated_at": "2026-11-03T17:06:16.678315"
+  "volleybox_sync_updated_at": "2026-11-03T16:45:57.833149"
 }
