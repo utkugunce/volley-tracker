@@ -317,6 +317,7 @@ def collect_unsynced_matches(
     ve geçerli bir tarihi + Volleybox turnuva URL'si olan maçları turnuva bazında toplar.
     """
     by_tournament: Dict[str, List[Dict[str, Any]]] = {}
+    seen_match_ids = set()
 
     def process_city_file(path: Path, default_city: str):
         if not path.exists():
@@ -371,6 +372,11 @@ def collect_unsynced_matches(
             vb = m.get("volleybox") or {}
             if vb.get("synced"):
                 continue
+
+            m_id = str(m.get("id") or f"{city_slug}_{m.get('home_team')}_{m.get('away_team')}_{m.get('date')}")
+            if m_id in seen_match_ids:
+                continue
+            seen_match_ids.add(m_id)
             m_date = str(m.get("date") or "").strip()
             if not m_date or m_date.upper() == "TBD" or not re.match(r"^\d{4}-\d{2}-\d{2}$", m_date):
                 continue
@@ -440,10 +446,11 @@ def collect_unsynced_matches(
             }
             by_tournament.setdefault(t_url, []).append(item)
 
-    process_city_file(FIXTURES_FILE, "İstanbul")
     if CITIES_DIR.exists():
         for cj in sorted(CITIES_DIR.glob("*.json")):
             process_city_file(cj, cj.stem.capitalize())
+    else:
+        process_city_file(FIXTURES_FILE, "İstanbul")
 
     pro_configs = [
         (K2_FILE, "Kadınlar 2. Ligi", "kadinlar-2-ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047"),
@@ -460,6 +467,11 @@ def collect_unsynced_matches(
             vb = m.get("volleybox") or {}
             if vb.get("synced"):
                 continue
+
+            m_id = str(m.get("id") or f"{city_slug}_{m.get('home_team')}_{m.get('away_team')}_{m.get('date')}")
+            if m_id in seen_match_ids:
+                continue
+            seen_match_ids.add(m_id)
             tarih = str(m.get("tarih") or "").strip()
             d_str = ""
             if "." in tarih:
@@ -538,6 +550,7 @@ def resolve_team_for_match(
     select_options: Optional[List[Dict[str, str]]] = None,
     page_teams: Optional[Dict[str, str]] = None,
     age_group: str = "",
+    city_slug: str = "",
 ) -> Optional[Dict[str, str]]:
     """
     TVF takımını Volleybox takım ID'si ve adına dönüştürür.
@@ -559,18 +572,22 @@ def resolve_team_for_match(
             return {"id": str(opt["value"]), "label": str(opt["label"])}
 
     # 2. Sayfadaki maç kartlarından çıkarılan takımlar
+    candidate_page = None
     if page_teams:
         best_tid = None
         best_tname = None
         best_sc = 0
         for tid, tname in page_teams.items():
             sc = team_match_score(clean_tvf, tname, synonyms)
+            if sc == 100:
+                # Tam eşleşme varsa doğrudan dön
+                return {"id": str(tid), "label": str(tname)}
             if sc >= 70 and sc > best_sc:
                 best_sc = sc
                 best_tid = tid
                 best_tname = tname
         if best_tid and best_tname:
-            return {"id": str(best_tid), "label": str(best_tname)}
+            candidate_page = (best_sc, best_tid, best_tname)
 
     # 3. mappings_data['mappings'] listesi
     if mappings_data:
@@ -579,7 +596,23 @@ def resolve_team_for_match(
         best_opt = None
         best_score = 0
 
+        is_national_league = city_slug.lower() in (
+            "kadinlar-2-ligi",
+            "sultanlar-ligi",
+            "kadinlar-1-ligi",
+            "turkiye",
+            "turkey",
+        ) or "ligi" in city_slug.lower()
+
         for m in mappings_data.get("mappings", []):
+            m_city = (m.get("city_slug") or m.get("city") or "").lower().strip()
+            # İl koruması: Maç yerel il ligi ise farklı ildeki takımı seçme (Hatay takımının İstanbul'a yazılmasını engeller!)
+            if not is_national_league and m_city and city_slug:
+                norm_m_city = re.sub(r"[^a-z0-9]", "", m_city)
+                norm_c_slug = re.sub(r"[^a-z0-9]", "", city_slug.lower())
+                if norm_m_city and norm_c_slug and norm_m_city != norm_c_slug and norm_m_city != "turkiye":
+                    continue
+
             in_name = (m.get("internal_name") or "").strip()
             matched_as = (m.get("matched_as") or "").strip()
             aliases = m.get("aliases") or []
@@ -615,8 +648,13 @@ def resolve_team_for_match(
                 best_score = sc
                 best_opt = {"id": tid, "label": matched_as, "score": sc}
 
-        if best_opt:
+        if best_opt and (not candidate_page or best_opt["score"] >= candidate_page[0]):
             return {"id": best_opt["id"], "label": best_opt["label"]}
+        elif candidate_page:
+            return {"id": str(candidate_page[1]), "label": str(candidate_page[2])}
+
+    elif candidate_page:
+        return {"id": str(candidate_page[1]), "label": str(candidate_page[2])}
 
     return None
 
@@ -1179,6 +1217,7 @@ def fill_and_submit_match_on_page(
 
     # 5. Ev sahibi ve deplasman takımlarını eşleştir (select, DOM veya mappings_data)
     age_cat = match_item.get("category", "") or match_item.get("age_group", "")
+    match_city_slug = match_item.get("city_slug", "")
     host_opt = resolve_team_for_match(
         match_item["home_team"],
         team_alias_map,
@@ -1186,6 +1225,7 @@ def fill_and_submit_match_on_page(
         select_options=host_select["options"] if host_select else None,
         page_teams=form_data.get("pageTeams"),
         age_group=age_cat,
+        city_slug=match_city_slug,
     )
     if not host_opt:
         return (
@@ -1200,6 +1240,7 @@ def fill_and_submit_match_on_page(
         select_options=guest_select["options"] if guest_select else None,
         page_teams=form_data.get("pageTeams"),
         age_group=age_cat,
+        city_slug=match_city_slug,
     )
     if not guest_opt:
         return (
@@ -1613,6 +1654,10 @@ def fill_and_submit_match_on_page(
     )
     if errors_detail:
         log_step(f"   ⚠️ Hata detayları: {errors_detail}")
+        # "Maç zaten var." veya "already exists" uyarısı gelirse maç önceden Volleybox'a girilmiş demektir.
+        if any("zaten var" in str(e.get("text", "")).lower() or "already exists" in str(e.get("text", "")).lower() for e in errors_detail):
+            log_step("   ℹ️ Maç Volleybox'ta zaten mevcut. Başarılı (senkronize edilmiş) sayılıyor.")
+            return True, f"Volleybox'ta maç zaten mevcut (eklendi sayıldı): {summary}"
         err_msg = ", ".join([f"{e.get('forAttr') or e.get('prev') or e.get('parent')}: {e['text']}" for e in errors_detail])
         return False, f"Volleybox form uyarısı: {err_msg}"
 
