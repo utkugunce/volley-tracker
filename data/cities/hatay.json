@@ -87,6 +87,17 @@
       },
       {
         "rank": 2,
+        "team": "Yıldızlar Samandağ Spor Kulübü U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Yükseliş Akademi Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -97,7 +108,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Antakya Güneş Spor Kulübü - B U18",
         "played": 2,
         "won": 1,
