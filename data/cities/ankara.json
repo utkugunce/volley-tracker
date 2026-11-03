@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T10:23:03.552942+03:00",
+  "updated_at": "2026-11-03T12:19:46.779399+03:00",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -3436,8 +3436,8 @@
         "url": "https://women.volleybox.net/tr/zeren-spor-kulubu-u18-tvf-spor-lisesi-u18-c412685",
         "host_name": "Zeren Spor Kulübü U18",
         "guest_name": "TVF Spor Lisesi U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-11-02",
         "vb_time": "18:00",
         "vb_hall": "Batıkent Spor Salonu",
@@ -3690,8 +3690,8 @@
         "url": "https://women.volleybox.net/tr/yesilcam-voleybol-2023-sk-u18-tms-voleybol-spor-kulubu-u18-c411573",
         "host_name": "Yeşilçam Voleybol 2023 SK U18",
         "guest_name": "TMS Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-02",
         "vb_time": "18:00",
         "vb_hall": "Refika Aksoy İlkokulu Spor Salonu",
@@ -3735,8 +3735,8 @@
         "url": "https://women.volleybox.net/tr/ankara-basketbol-spor-kulubu-b-u18-atmosfer-academy-spor-kulubu-u18-c411574",
         "host_name": "Ankara Basketbol Spor Kulübü - B U18",
         "guest_name": "Atmosfer Academy Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-02",
         "vb_time": "19:30",
         "vb_hall": "Refika Aksoy İlkokulu Spor Salonu",
@@ -8187,5 +8187,5 @@
     }
   ],
   "volleybox_synced_matches": 148,
-  "volleybox_sync_updated_at": "2026-11-03T11:33:18.750396"
+  "volleybox_sync_updated_at": "2026-11-03T12:27:27.072833"
 }

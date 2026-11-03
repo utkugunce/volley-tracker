@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T10:23:03.552942+03:00",
+  "updated_at": "2026-11-03T12:19:46.779399+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -59,7 +59,7 @@
       },
       {
         "rank": 3,
-        "team": "Balıkesir Voleybol Akademi Spor",
+        "team": "Balıkesir Voleybol Akademi Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -241,7 +241,7 @@
       },
       {
         "rank": 2,
-        "team": "Balıkesir Voleybol Akademi Spor",
+        "team": "Balıkesir Voleybol Spor Kulübü U16",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -857,7 +857,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "1",
-      "home_team": "Balıkesir Voleybol Akademi Spor",
+      "home_team": "Balıkesir Voleybol Spor Kulübü U16",
       "away_team": "Balıkesir Büyükşehir Belediyespor Merkez U16",
       "score": "3 - 2",
       "home_score": 3,
@@ -989,7 +989,7 @@
       "group": "B Grubu",
       "match_no": "4",
       "home_team": "TED Balıkesir Koleji SK U16",
-      "away_team": "Balıkesir Voleybol Akademi Spor",
+      "away_team": "Balıkesir Voleybol Spor Kulübü U16",
       "score": "1 - 3",
       "home_score": 1,
       "away_score": 3,
@@ -1072,7 +1072,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "6",
-      "home_team": "Balıkesir Voleybol Akademi Spor",
+      "home_team": "Balıkesir Voleybol Spor Kulübü U16",
       "away_team": "Günyaka Spor U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -1287,7 +1287,7 @@
       "group": "B Grubu",
       "match_no": "11",
       "home_team": "EBA Spor U16",
-      "away_team": "Balıkesir Voleybol Akademi Spor",
+      "away_team": "Balıkesir Voleybol Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -1362,7 +1362,7 @@
       "group": "B Grubu",
       "match_no": "13",
       "home_team": "Balıkesir EKA Spor Kulubü - B U16",
-      "away_team": "Balıkesir Voleybol Akademi Spor",
+      "away_team": "Balıkesir Voleybol Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -3033,5 +3033,5 @@
     }
   ],
   "volleybox_synced_matches": 53,
-  "volleybox_sync_updated_at": "2026-11-03T11:34:21.918354"
+  "volleybox_sync_updated_at": "2026-11-03T12:27:28.627817"
 }

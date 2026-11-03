@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T10:23:03.552942+03:00",
+  "updated_at": "2026-11-03T12:19:46.779399+03:00",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -462,8 +462,8 @@
         "url": "https://women.volleybox.net/tr/aksaray-yldz-spor-kulubu-u18-kuzeyboru-u18-c411539",
         "host_name": "Aksaray Yıldız Spor Kulübü U18",
         "guest_name": "Kuzeyboru U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-10-30",
         "vb_time": "20:00",
         "vb_hall": "Aksaray Merkez Spor Salonu",
@@ -507,8 +507,8 @@
         "url": "https://women.volleybox.net/tr/kuzeyboru-maxipipe-spor-kulubu-u18-aksaray-egitim-futbol-spor-kulubu-u18-c414601",
         "host_name": "Kuzeyboru Maxipipe Spor Kulübü U18",
         "guest_name": "Aksaray Eğitim Futbol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-02",
         "vb_time": "18:30",
         "vb_hall": "Aksaray Merkez Spor Salonu",
@@ -552,8 +552,8 @@
         "url": "https://women.volleybox.net/tr/mba-aksaray-anka-spor-kulubu-b-u18-kuzeyboru-maxipipe-spor-kulubu-u18-c414602",
         "host_name": "MBA Aksaray Anka Spor Kulübü - B U18",
         "guest_name": "Kuzeyboru Maxipipe Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-02",
         "vb_time": "20:00",
         "vb_hall": "Aksaray Merkez Spor Salonu",
@@ -817,5 +817,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-03T10:49:51.010364"
+  "volleybox_sync_updated_at": "2026-11-03T12:27:25.313248"
 }
