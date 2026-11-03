@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T17:15:36.051785+03:00",
+  "updated_at": "2026-11-03T10:23:03.552942+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -46,6 +46,17 @@
       },
       {
         "rank": 2,
+        "team": "23 Nisan Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Bursa Fethiye 1973 Spor Kulübü",
         "played": 2,
         "won": 1,
@@ -53,17 +64,6 @@
         "points": 3,
         "sets_won": 4,
         "sets_lost": 3,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "23 Nisan Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 4,
         "form": []
       },
       {
@@ -80,12 +80,12 @@
       {
         "rank": 5,
         "team": "Bursa Ayyıldız Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -149,18 +149,18 @@
     "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "Bursa Koç Spor Kulübü - A U18",
-        "played": 2,
-        "won": 2,
+        "team": "Bursa Büyükşehir Belediyespor U18",
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Bursa Büyükşehir Belediyespor U18",
+        "team": "Bursa Koç Spor Kulübü - A U18",
         "played": 2,
         "won": 2,
         "lost": 0,
@@ -194,12 +194,12 @@
       {
         "rank": 5,
         "team": "Bursa Genç Saray Spor Kulübü U18",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -763,11 +763,15 @@
       "match_no": "5",
       "home_team": "Bursa Ayyıldız Spor Kulübü U18",
       "away_team": "23 Nisan Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "14-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413319",
@@ -1281,11 +1285,15 @@
       "match_no": "5",
       "home_team": "Bursa Büyükşehir Belediyespor U18",
       "away_team": "Bursa Genç Saray Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-14",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413323",
@@ -3389,5 +3397,5 @@
     }
   ],
   "volleybox_synced_matches": 62,
-  "volleybox_sync_updated_at": "2026-11-02T17:16:51.766211"
+  "volleybox_sync_updated_at": "2026-11-03T10:24:14.692831"
 }

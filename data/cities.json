@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-02T17:15:36.051785+03:00",
+  "updated_at": "2026-11-03T10:23:03.552942+03:00",
   "total_cities": 81,
   "active_cities": 37,
-  "total_matches": 1714,
+  "total_matches": 1726,
   "cities": [
     {
       "ilid": "1",
@@ -352,8 +352,8 @@
       "name": "İzmir",
       "slug": "izmir",
       "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (188 Maç Mevcut)",
-      "matches_count": 188,
+      "status": "Aktif (200 Maç Mevcut)",
+      "matches_count": 200,
       "standings_count": 17,
       "data_file": "data/cities/izmir.json"
     },
