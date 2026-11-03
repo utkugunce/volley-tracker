@@ -73,4 +73,12 @@ describe("parseStandingKey", () => {
     const resFinal = parseStandingKey("Ankara - Genç Kızlar Süper Lig - Final - Final Etabı");
     expect(resFinal.displayGroup).toBe("Final Etabı");
   });
+
+  it("Kırklareli için 1. Grup olarak gelen tek grubu Tek Grup olarak ayrıştırır", () => {
+    const res1 = parseStandingKey("kirklareli - Genç Kızlar Süper Lig - 1. Grup");
+    expect(res1.displayGroup).toBe("Tek Grup");
+
+    const res2 = parseStandingKey("Genç Kızlar Süper Lig - 1. Grup", "Kırklareli");
+    expect(res2.displayGroup).toBe("Tek Grup");
+  });
 });

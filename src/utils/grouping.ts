@@ -4,11 +4,17 @@ import { Match } from "@/types/fixture";
  * Normalizes raw group strings (e.g. "Genç Kız - A Gr", "Yıldız Kızlar B Grubu", "1. Grup")
  * to clean, readable group titles (e.g. "A Grubu", "B Grubu", "1. Grup", "Doğu Grubu").
  */
-export function formatGroupName(rawGroup?: string): string {
+export function formatGroupName(rawGroup?: string, city?: string): string {
   if (!rawGroup || rawGroup.trim() === "" || rawGroup.trim() === "Tek Grup") {
     return "Tek Grup";
   }
   let g = rawGroup.trim();
+
+  // Kırklareli istisnası: Tek grup olmasına rağmen il temsilciliği "1. Grup" yazmıştır
+  const cLower = (city || "").toLocaleLowerCase("tr-TR");
+  if ((cLower === "kırklareli" || cLower === "kirklareli") && (/^1\.\s*Grup$/i.test(g) || g.toLowerCase() === "1. grup")) {
+    return "Tek Grup";
+  }
 
   // Strip region if present at start (e.g. "1. Bölge A Grubu" -> "A Grubu")
   g = g.replace(/^\d+\.\s*B[öo]lge\s*/i, "").trim();

@@ -691,18 +691,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415193",
+        "url": "https://women.volleybox.net/tr/milas-belediye-spor-kulubu-b-u18-bodrum-htisasspor-u18-c415193",
+        "host_name": "Milas Belediye Spor Kulübü - B U18",
+        "guest_name": "Bodrum İhtisasspor U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "11:00",
+        "vb_hall": "Milas Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "11:00",
+          "vb_hall": "Milas Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1476,18 +1483,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415195",
+        "url": "https://women.volleybox.net/tr/1907-marmaris-voleybol-spor-kulubu-u18-armutalan-az-2024-spor-kulubu-u16-c415195",
+        "host_name": "1907 Marmaris Voleybol Spor Kulübü U18",
+        "guest_name": "Armutalan AZ 2024 Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "14:30",
+        "vb_hall": "Amiral Orhan Aydın Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "14:30",
+          "vb_hall": "Amiral Orhan Aydın Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1638,18 +1652,25 @@
       "set_scores": [],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415196",
+        "url": "https://women.volleybox.net/tr/mugla-ss-voleybol-spor-kulubu-u18-mugla-buyuksehir-belediyesi-spor-kulubu-u16-c415196",
+        "host_name": "Muğla SS Voleybol Spor Kulübü U18",
+        "guest_name": "Muğla Büyükşehir Belediyesi Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-31",
+        "vb_time": "14:30",
+        "vb_hall": "Menteşe Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "14:30",
+          "vb_hall": "Menteşe Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1676,18 +1697,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415198",
+        "url": "https://women.volleybox.net/tr/yesil-marmaris-spor-kulubu-u18-marmaris-belediyesi-gsk-u18-c415198",
+        "host_name": "Yeşil Marmaris Spor Kulübü U18",
+        "guest_name": "Marmaris Belediyesi GSK U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "17:30",
+        "vb_hall": "Amiral Orhan Aydın Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "17:30",
+          "vb_hall": "Amiral Orhan Aydın Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1804,18 +1832,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415199",
+        "url": "https://women.volleybox.net/tr/bodrum-dogus-spor-u16-bodrum-htisasspor-b-u16-c415199",
+        "host_name": "Bodrum Doğuş Spor U16",
+        "guest_name": "Bodrum İhtisasspor - B U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-31",
+        "vb_time": "18:00",
+        "vb_hall": "Bodrum Bitez Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "18:00",
+          "vb_hall": "Bodrum Bitez Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1842,22 +1877,29 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415200",
+        "url": "https://women.volleybox.net/tr/milas-belediye-spor-kulubu-b-u16-bodrum-belediyesi-bodrumspor-u16-c415200",
+        "host_name": "Milas Belediye Spor Kulübü - B U16",
+        "guest_name": "Bodrum Belediyesi Bodrumspor U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "18:00",
+        "vb_hall": "Milas Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "18:00",
+          "vb_hall": "Milas Atatürk Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 23,
-  "volleybox_sync_updated_at": "2026-11-03T12:27:45.492123"
+  "volleybox_synced_matches": 29,
+  "volleybox_sync_updated_at": "2026-11-03T12:32:31.346731"
 }

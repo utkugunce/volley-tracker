@@ -211,8 +211,13 @@ export function parseStandingKey(rawKey: string, defaultCity?: string): ParsedSt
   // Parantez içi ve tire kenarı boşluklarını düzelt (örn: "( Merkez+Marmara)" -> "(Merkez+Marmara)")
   cleaned = cleaned.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")").replace(/^[-–—\s]+/, "");
 
-  const formatted = formatGroupName(cleaned || groupPart);
-  if (formatted && formatted !== "Tek Grup") {
+  const formatted = formatGroupName(cleaned || groupPart, city);
+  const cityLower = (city || "").toLocaleLowerCase("tr-TR");
+  const isKirklareli = cityLower === "kırklareli" || cityLower === "kirklareli";
+
+  if (isKirklareli && (/^1\.\s*Grup$/i.test(cleaned) || cleaned === "1. Grup" || formatted === "Tek Grup")) {
+    cleaned = "Tek Grup";
+  } else if (formatted && formatted !== "Tek Grup") {
     cleaned = formatted;
   } else if (/^[A-Z]$/i.test(cleaned)) {
     cleaned = `${cleaned.toUpperCase()} Grubu`;

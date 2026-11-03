@@ -392,11 +392,13 @@ def collect_unsynced_matches(
                 continue
 
             tourn_grps = city_tourn_groups.get(t_url, set())
-            is_single = (len(tourn_grps) <= 1) or any("tek" in g for g in tourn_grps)
+            is_single = (len(tourn_grps) <= 1) or any("tek" in g for g in tourn_grps) or (city_slug == "kirklareli")
             has_semi = city_tourn_has_semi.get(t_url, False)
             has_semi_subgroups = city_tourn_semi_subgroups.get(t_url, False)
 
             m_group = (m.get("group") or "").strip()
+            if city_slug == "kirklareli" and m_group in ("1. Grup", "1.Grup", "1. grup"):
+                m_group = "Tek Grup"
             is_semi_match = bool(re.search(r"\b(?:yar[ıi]\s*final|semi[\s\-]final)\b", m_group, re.I))
             is_final_stage = bool(re.search(r"\bfinal\b", m_group, re.I)) and not is_semi_match
 
@@ -922,6 +924,7 @@ def match_option_for_round(
     # 3. 'Gruplar', 'Tek Grup', grup belirtilmemiş veya A/B/1. grup yazmayan durumlar -> Kesinlikle '1st round'
     if (
         is_single_group
+        or (city_slug == "kirklareli")
         or not g_clean
         or "tek" in g_clean
         or "gruplar" in g_clean
@@ -1275,6 +1278,7 @@ def fill_and_submit_match_on_page(
 
     is_single_group = bool(
         match_item.get("is_single_group")
+        or (match_item.get("city_slug") == "kirklareli")
         or (has_page_1st_round and not has_page_letter_or_num)
         or "tek" in (match_item.get("group") or "").lower()
         or "gruplar" in (match_item.get("group") or "").lower()

@@ -1000,18 +1000,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415185",
+        "url": "https://women.volleybox.net/tr/tarsus-gelecek-spor-kulubu-u18-alsancak-spor-kulubu-u18-c415185",
+        "host_name": "Tarsus Gelecek Spor Kulübü U18",
+        "guest_name": "Alsancak Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-31",
+        "vb_time": "11:00",
+        "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "11:00",
+          "vb_hall": "Mersinli Ahmet Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1038,18 +1045,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415186",
+        "url": "https://women.volleybox.net/tr/tarsus-amerikan-koleji-u18-volgem-spor-kulubu-u18-c415186",
+        "host_name": "Tarsus Amerikan Koleji U18",
+        "guest_name": "MEV Toros Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-02",
+        "vb_time": "17:15",
+        "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "17:15",
+          "vb_hall": "Mersinli Ahmet Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1072,18 +1086,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415188",
+        "url": "https://women.volleybox.net/tr/mezitli-belediyesi-genclik-ve-spor-kulubu-u18-mersin-htisas-spor-kulubu-u18-c415188",
+        "host_name": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
+        "guest_name": "Mersin İhtisas Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-03",
+        "vb_time": "17:15",
+        "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "17:15",
+          "vb_hall": "Mersinli Ahmet Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1106,22 +1127,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415189",
+        "url": "https://women.volleybox.net/tr/yenisehir-genclerbirligi-spor-kulubu-u18-toroslar-belediye-spor-kulubu-u18-c415189",
+        "host_name": "Yenişehir Gençlerbirliği Spor Kulübü U18",
+        "guest_name": "Toroslar Belediye Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-04",
+        "vb_time": "17:15",
+        "vb_hall": "Mersinli Ahmet Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "17:15",
+          "vb_hall": "Mersinli Ahmet Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-11-03T12:27:45.407948"
+  "volleybox_synced_matches": 23,
+  "volleybox_sync_updated_at": "2026-11-03T12:29:43.862154"
 }

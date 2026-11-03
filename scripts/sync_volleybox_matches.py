@@ -779,6 +779,8 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
         )
 
         grp = m.get("group", "")
+        if (city or "").lower() in ("kırklareli", "kirklareli") and (grp or "").lower() in ("1. grup", "1.grup"):
+            grp = "Tek Grup"
         vb_m_list = None
         if grp:
             vb_m_list = vb_tournaments.get(normalize_tourn_key(grp, city)) or vb_tournaments.get(f"{grp}::{city}".lower())

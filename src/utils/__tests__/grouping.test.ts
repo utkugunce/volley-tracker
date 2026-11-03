@@ -88,6 +88,9 @@ describe("Grouping & Group Name Formatting Utilities", () => {
       expect(formatGroupName("Çaycuma")).toBe("B Grubu");
       expect(formatGroupName("Merkez Grubu")).toBe("C Grubu");
       expect(formatGroupName("Merkez")).toBe("C Grubu");
+      // Kırklareli istisnası: tek grup olmasına rağmen 1. Grup yazılmıştır
+      expect(formatGroupName("1. Grup", "Kırklareli")).toBe("Tek Grup");
+      expect(formatGroupName("1.Grup", "kirklareli")).toBe("Tek Grup");
     });
   });
 

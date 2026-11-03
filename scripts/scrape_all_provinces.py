@@ -940,6 +940,10 @@ def scrape_single_city(city_info):
                         group_name = "B Grubu"
                     elif "merkez" in tr_comp or "merkez" in tr_grp:
                         group_name = "C Grubu"
+            elif subdomain == "kirklareli":
+                # Kırklareli il temsilciliği tek grup olmasına rağmen sehven '1. Grup' yazmıştır
+                if group_name in ("1. Grup", "1.Grup", "1. grup", "Grup 1", "Grup 1.", "1. Grup ( Merkez )"):
+                    group_name = "Tek Grup"
             standings_key = f"{cat_name} - {group_name}"
 
             p_c = state.copy()

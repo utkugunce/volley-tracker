@@ -495,18 +495,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415216",
+        "url": "https://women.volleybox.net/tr/afyon-belediye-yuntas-sk-b-u18-ema-spor-kulubu-u18-c415216",
+        "host_name": "Afyon Belediye Yüntaş SK - B U18",
+        "guest_name": "E.M.A Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-31",
+        "vb_time": "13:00",
+        "vb_hall": "Mustafa Abi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "13:00",
+          "vb_hall": "Mustafa Abi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1324,6 +1331,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 19,
-  "volleybox_sync_updated_at": "2026-11-03T12:27:25.163812"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-11-03T12:38:54.132241"
 }
