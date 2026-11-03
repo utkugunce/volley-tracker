@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T15:49:29.082866+03:00",
+  "updated_at": "2026-11-03T17:04:31.966047+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -364,25 +364,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "414779",
-        "url": "https://women.volleybox.net/tr/kapakl-site-spor-u18-corlu-gsb-spor-kulubu-u18-c414779",
-        "host_name": "Kapaklı Site Spor U18",
-        "guest_name": "Çorlu GSB Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-26",
-        "vb_time": "19:00",
-        "vb_hall": "Çerkezköy Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-26",
-          "vb_time": "19:00",
-          "vb_hall": "Çerkezköy Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -3832,6 +3825,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-11-03T15:57:27.056864"
+  "volleybox_synced_matches": 70,
+  "volleybox_sync_updated_at": "2026-11-03T17:06:19.897052"
 }

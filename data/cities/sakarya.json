@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T15:49:29.082866+03:00",
+  "updated_at": "2026-11-03T17:04:31.966047+03:00",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -420,25 +420,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "408247",
-        "url": "https://women.volleybox.net/tr/asas-spor-kulubu-u18-sakarya-voleybol-sk-u18-c408247",
-        "host_name": "Asaş Spor Kulübü U18",
-        "guest_name": "Sakarya Voleybol SK U18",
-        "score": "2 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-26",
-        "vb_time": "18:30",
-        "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-26",
-          "vb_time": "18:30",
-          "vb_hall": "Akyazı Cevat Ayhan Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -467,25 +460,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411836",
-        "url": "https://women.volleybox.net/tr/erenler-anadolu-voleybol-spor-kulubu-u18-sakarya-gelisim-spor-kulubu-u18-c411836",
-        "host_name": "Erenler Anadolu Voleybol Spor Kulübü U18",
-        "guest_name": "Sakarya Gelişim Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-27",
-        "vb_time": "18:30",
-        "vb_hall": "Lütfü Yaman Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-27",
-          "vb_time": "18:30",
-          "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -512,25 +498,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411837",
-        "url": "https://women.volleybox.net/tr/sapanca-ayyldz-spor-kulubu-u18-asas-spor-kulubu-u18-c411837",
-        "host_name": "Sapanca Ayyıldız Spor Kulübü U18",
-        "guest_name": "Asaş Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-27",
-        "vb_time": "20:30",
-        "vb_hall": "Sapanca Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-27",
-          "vb_time": "20:30",
-          "vb_hall": "Sapanca Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -557,25 +536,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411838",
-        "url": "https://women.volleybox.net/tr/sakarya-voleybol-sk-u18-erenler-anadolu-voleybol-spor-kulubu-u18-c411838",
-        "host_name": "Sakarya Voleybol SK U18",
-        "guest_name": "Erenler Anadolu Voleybol Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-28",
-        "vb_time": "18:30",
-        "vb_hall": "Lütfü Yaman Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-28",
-          "vb_time": "18:30",
-          "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -602,25 +574,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411839",
-        "url": "https://women.volleybox.net/tr/sapanca-ayyldz-spor-kulubu-u18-sakarya-gelisim-spor-kulubu-u18-c411839",
-        "host_name": "Sapanca Ayyıldız Spor Kulübü U18",
-        "guest_name": "Sakarya Gelişim Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-30",
-        "vb_time": "19:00",
-        "vb_hall": "Sapanca Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-30",
-          "vb_time": "19:00",
-          "vb_hall": "Sapanca Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -647,25 +612,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "414626",
-        "url": "https://women.volleybox.net/tr/sakarya-gelisim-spor-kulubu-u18-sakarya-voleybol-sk-u18-c414626",
-        "host_name": "Sakarya Gelişim Spor Kulübü U18",
-        "guest_name": "Sakarya Voleybol SK U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-03",
-        "vb_time": "20:30",
-        "vb_hall": "Lütfü Yaman Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-03",
-          "vb_time": "20:30",
-          "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -688,25 +646,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "414627",
-        "url": "https://women.volleybox.net/tr/erenler-anadolu-voleybol-spor-kulubu-u18-sapanca-ayyldz-spor-kulubu-u18-c414627",
-        "host_name": "Erenler Anadolu Voleybol Spor Kulübü U18",
-        "guest_name": "Sapanca Ayyıldız Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-05",
-        "vb_time": "18:30",
-        "vb_hall": "Lütfü Yaman Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": false,
-          "vb_date": "2026-11-05",
-          "vb_time": "18:30",
-          "vb_hall": "Lütfü Yaman Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-03 / VB: 2026-11-05) | Saat Değişti (TVF: 20:30 / VB: 18:30)"
+          "has_diff": false
         }
       }
     },
@@ -745,6 +696,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-11-03T15:57:26.763123"
+  "volleybox_synced_matches": 6,
+  "volleybox_sync_updated_at": "2026-11-03T17:06:19.774195"
 }

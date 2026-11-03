@@ -369,7 +369,7 @@ def main():
     parser.add_argument("--city", "-c", type=str, default=None, help="Yalnızca belirtilen şehri/ligi denetle")
     parser.add_argument("--league", choices=["sultanlar", "kadinlar-1", "kadinlar-2", "pro"], default=None, help="Profesyonel lig seçimi")
     parser.add_argument("--sultanlar", action="store_true", help="Sadece Vodafone Sultanlar Ligi'ni denetle")
-    parser.add_argument("--kadinlar-1", "--1-lig", dest="kadinlar_1", action="store_true", help="Sadece KFC Kadınlar 1. Ligi'ni denetle")
+    parser.add_argument("--kadinlar-1", "--1-lig", dest="kadinlar_1", action="store_true", help="Sadece Arabica Coffee House Kadınlar Voleybol 1. Ligi'ni denetle")
     parser.add_argument("--kadinlar-2", "--2-lig", dest="kadinlar_2", action="store_true", help="Sadece Kadınlar 2. Ligi'ni denetle")
     parser.add_argument("--pro", action="store_true", help="Tüm profesyonel ligleri denetle")
     parser.add_argument("--json", action="store_true", help="JSON formatında çıktı bas")

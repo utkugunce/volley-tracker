@@ -85,7 +85,7 @@ export const Kadinlar1LigHeader: React.FC<Kadinlar1LigHeaderProps> = ({
               type="button"
               onClick={onOpenSearch}
               className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg bg-surface hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-colors active:scale-[0.98] cursor-pointer"
-              title="KFC Kadınlar 1. Ligi Takım, Maç ve Salon Arama (Ctrl + K)"
+              title="Arabica Coffee House Kadınlar Voleybol 1. Ligi Takım, Maç ve Salon Arama (Ctrl + K)"
             >
               <Search size={13} className="text-ink-3" />
               <span className="hidden md:inline font-medium text-[11px]">Hızlı Arama</span>
@@ -147,7 +147,7 @@ export const Kadinlar1LigHeader: React.FC<Kadinlar1LigHeaderProps> = ({
                 />
                 <div className="absolute right-0 mt-2 w-72 bg-surface-raised border border-line rounded-xl shadow-xl p-2 z-50 text-xs">
                   <div className="p-2 border-b border-line">
-                    <p className="font-bold text-ink">KFC Kadınlar 1. Ligi</p>
+                    <p className="font-bold text-ink">Arabica Coffee House Kadınlar Voleybol 1. Ligi</p>
                     <p className="text-[11px] text-ink-3">Resmi TVF ve Volleybox Verileri</p>
                   </div>
                   <div className="py-1">

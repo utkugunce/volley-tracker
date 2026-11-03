@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T15:49:29.082866+03:00",
+  "updated_at": "2026-11-03T17:04:31.966047+03:00",
   "city": "Kahramanmaraş",
   "slug": "kahramanmaras",
   "title": "TVF Kahramanmaraş Genç & Yıldız Kızlar Süper Lig",
@@ -688,25 +688,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "408063",
-        "url": "https://women.volleybox.net/tr/vesta-spor-kulubu-b-u18-gazi-spor-kulubu-u18-c408063",
-        "host_name": "Vesta Spor Kulübü - B U18",
-        "guest_name": "Gazi Spor Kulübü U18",
-        "score": "2 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-25",
-        "vb_time": "10:00",
-        "vb_hall": "Batıpark Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-25",
-          "vb_time": "10:00",
-          "vb_hall": "Batıpark Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -735,25 +728,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "408066",
-        "url": "https://women.volleybox.net/tr/kahramanmaras-buyuksehir-belediye-spor-kulubu-u18-gazi-spor-kulubu-u18-c408066",
-        "host_name": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
-        "guest_name": "Gazi Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-26",
-        "vb_time": "18:00",
-        "vb_hall": "Batıpark Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-26",
-          "vb_time": "18:00",
-          "vb_hall": "Batıpark Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -776,25 +762,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "408068",
-        "url": "https://women.volleybox.net/tr/kahramanmaras-buyuksehir-belediye-spor-kulubu-u18-vesta-spor-kulubu-b-u18-c408068",
-        "host_name": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
-        "guest_name": "Vesta Spor Kulübü - B U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-29",
-        "vb_time": "20:00",
-        "vb_hall": "Batıpark Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-29",
-          "vb_time": "20:00",
-          "vb_hall": "Batıpark Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -988,25 +967,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415075",
-        "url": "https://women.volleybox.net/tr/vesta-spor-kulubu-u18-kahramanmaras-buyuksehir-belediye-spor-kulubu-u18-c415075",
-        "host_name": "Vesta Spor Kulübü U18",
-        "guest_name": "Kahramanmaraş Büyükşehir Belediye Spor Kulübü U18",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-01",
-        "vb_time": "14:00",
-        "vb_hall": "Batıpark Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "14:00",
-          "vb_hall": "Batıpark Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -1034,29 +1006,22 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "415074",
-        "url": "https://women.volleybox.net/tr/gazi-spor-kulubu-u18-elbistan-altnsk-spor-kulubu-u18-c415074",
-        "host_name": "Gazi Spor Kulübü U18",
-        "guest_name": "Elbistan Altınışık Spor Kulübü U18",
-        "score": "1 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-01",
-        "vb_time": "12:00",
-        "vb_hall": "Batıpark Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "12:00",
-          "vb_hall": "Batıpark Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     }
   ],
-  "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-11-03T15:57:25.822311"
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-11-03T17:06:19.166026"
 }

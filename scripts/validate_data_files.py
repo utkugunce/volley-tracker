@@ -21,7 +21,7 @@ def main():
         ("81 il", validate_file("data/cities.json", "cities")),
         ("Kadınlar 2. Lig", validate_file("data/kadinlar_2_lig.json", "kadinlar_2_lig")),
         ("Vodafone Sultanlar Ligi", validate_file("data/sultanlar_ligi.json", "sultanlar_ligi")),
-        ("KFC Kadınlar 1. Ligi", validate_file("data/kadinlar_1_lig.json", "kadinlar_1_lig")),
+        ("Arabica Coffee House Kadınlar Voleybol 1. Ligi", validate_file("data/kadinlar_1_lig.json", "kadinlar_1_lig")),
     ]
     for label, result in results:
         print_validation_summary(label, result)

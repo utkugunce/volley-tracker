@@ -25,7 +25,7 @@ export const LeagueSwitcher: React.FC<LeagueSwitcherProps> = ({
       key: "1-lig",
       label: "1. Lig",
       href: "/kadinlar-1-ligi",
-      title: "KFC Kadınlar 1. Ligi (A & B Grubu) — Puan Durumu & Fikstür",
+      title: "Arabica Coffee House Kadınlar Voleybol 1. Ligi (A & B Grubu) — Puan Durumu & Fikstür",
     },
     {
       key: "2-lig",

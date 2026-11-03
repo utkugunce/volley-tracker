@@ -777,6 +777,41 @@ def normalize_tourn_key(cat: str, city: str) -> str:
     return f"{k}::{c}"
 
 
+def is_synced_vb_valid(tvf_match: Dict[str, Any], vb: Dict[str, Any], team_alias_map: Dict[str, set]) -> bool:
+    """Senkronize edilmiş bir Volleybox maçının TVF maçının takımlarıyla uyumlu olup olmadığını doğrular."""
+    if not vb or not vb.get("synced"):
+        return False
+    tvf_h = str(tvf_match.get("home_team") or "").strip()
+    tvf_a = str(tvf_match.get("away_team") or "").strip()
+    vb_h = str(vb.get("host_name") or "").strip()
+    vb_a = str(vb.get("guest_name") or "").strip()
+    if not tvf_h or not tvf_a or not vb_h or not vb_a:
+        return False
+    syn_h = team_alias_map.get(tvf_h.lower(), set())
+    syn_a = team_alias_map.get(tvf_a.lower(), set())
+    s_dir = (team_match_score(tvf_h, vb_h, syn_h) >= 50 and team_match_score(tvf_a, vb_a, syn_a) >= 50)
+    s_rev = (team_match_score(tvf_h, vb_a, syn_h) >= 50 and team_match_score(tvf_a, vb_h, syn_a) >= 50)
+    return s_dir or s_rev
+
+
+def _empty_vb() -> Dict[str, Any]:
+    return {
+        "synced": False,
+        "match_id": None,
+        "url": None,
+        "host_name": None,
+        "guest_name": None,
+        "score": None,
+        "has_score": False,
+        "vb_date": None,
+        "vb_time": None,
+        "vb_hall": None,
+        "discrepancy": {
+            "has_diff": False
+        }
+    }
+
+
 def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[str, Any]]], team_alias_map: Dict[str, set]) -> Tuple[int, int]:
     if not fixtures_path.exists():
         return 0, 0
@@ -803,56 +838,47 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
         grp = m.get("group", "")
         if (city or "").lower() in ("kırklareli", "kirklareli") and (grp or "").lower() in ("1. grup", "1.grup"):
             grp = "Tek Grup"
-        vb_m_list = None
-        if grp:
-            vb_m_list = vb_tournaments.get(normalize_tourn_key(grp, city)) or vb_tournaments.get(f"{grp}::{city}".lower())
 
-        if not vb_m_list:
+        vb_m_list = None
+        # 1. Öncelik: Belirli turnuva kategorisi (örn: "Genç Kızlar 1. Lig 4. Bölge", "Genç Kızlar Süper Lig")
+        if cat:
             tourn_key = normalize_tourn_key(cat, city)
             vb_m_list = vb_tournaments.get(tourn_key) or vb_tournaments.get(f"{cat}::{city}".lower())
 
+        # 2. Öncelik: Kategori + Grup birleşimi (örn: "Genç Kızlar 1. Lig - A Grubu")
+        if not vb_m_list and cat and grp:
+            combined_key = normalize_tourn_key(f"{cat} - {grp}", city)
+            vb_m_list = vb_tournaments.get(combined_key) or vb_tournaments.get(f"{cat} - {grp}::{city}".lower())
+
+        # 3. Öncelik: Jenerik olmayan özel grup ismi (örn: "Final Grubu", "Tek Grup")
+        GENERIC_GROUPS = {"a grubu", "b grubu", "c grubu", "d grubu", "e grubu", "f grubu", "1. grup", "2. grup", "grup a", "grup b"}
+        if not vb_m_list and grp and grp.lower().strip() not in GENERIC_GROUPS:
+            vb_m_list = vb_tournaments.get(normalize_tourn_key(grp, city)) or vb_tournaments.get(f"{grp}::{city}".lower())
+
+        # 4. Öncelik: İl ve yaş grubu havuzu
         if not vb_m_list and age_code:
             vb_m_list = (
                 vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
                 or vb_tournaments.get(f"{city}::{age_code}".lower()) 
             )
+
+        # 5. Son çare: Jenerik grup adı (sadece başka hiçbir turnuva bulunamadıysa)
+        if not vb_m_list and grp:
+            vb_m_list = vb_tournaments.get(normalize_tourn_key(grp, city)) or vb_tournaments.get(f"{grp}::{city}".lower())
+
         if not vb_m_list:
             old_vb = m.get("volleybox", {})
-            if old_vb.get("synced"):
+            if old_vb.get("synced") and is_synced_vb_valid(m, old_vb, team_alias_map):
                 vb_d = str(old_vb.get("vb_date") or "")
                 vb_url = str(old_vb.get("url") or "")
                 # Eski sezona (2025/26) ait hatalı eşleşmeleri temizle
                 if vb_d.startswith("2025") or vb_d.startswith("2024") or "-2025-26-" in vb_url:
-                    m["volleybox"] = {
-                        "synced": False,
-                        "match_id": None,
-                        "url": None,
-                        "host_name": None,
-                        "guest_name": None,
-                        "score": None,
-                        "has_score": False,
-                        "vb_date": None,
-                        "vb_time": None,
-                        "vb_hall": None,
-                        "discrepancy": {"has_diff": False}
-                    }
+                    m["volleybox"] = _empty_vb()
                 else:
                     # Mevcut doğrulanmış 2026/27 eşleşmesini koru
                     synced_count += 1
             else:
-                m["volleybox"] = {
-                    "synced": False,
-                    "match_id": None,
-                    "url": None,
-                    "host_name": None,
-                    "guest_name": None,
-                    "score": None,
-                    "has_score": False,
-                    "vb_date": None,
-                    "vb_time": None,
-                    "vb_hall": None,
-                    "discrepancy": {"has_diff": False}
-                }
+                m["volleybox"] = _empty_vb()
             continue
 
         matched_vb = match_tvf_with_vb(m, vb_m_list, team_alias_map, used_vb_ids)
@@ -873,21 +899,11 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
             }
             synced_count += 1
         else:
-            m["volleybox"] = {
-                "synced": False,
-                "match_id": None,
-                "url": None,
-                "host_name": None,
-                "guest_name": None,
-                "score": None,
-                "has_score": False,
-                "vb_date": None,
-                "vb_time": None,
-                "vb_hall": None,
-                "discrepancy": {
-                    "has_diff": False
-                }
-            }
+            old_vb = m.get("volleybox", {})
+            if old_vb.get("synced") and is_synced_vb_valid(m, old_vb, team_alias_map):
+                synced_count += 1
+            else:
+                m["volleybox"] = _empty_vb()
 
 
     # Manuel düzeltmeleri (manual overrides) koru - scrape işlemi elle girilen skorları ezemez
@@ -932,7 +948,7 @@ def sync_league_json_matches(
 ) -> Tuple[int, int]:
     """
     Lig JSON dosyasındaki maçları Volleybox turnuva maçlarıyla eşleştirir ve doğrular.
-    (Sultanlar Ligi, KFC Kadınlar 1. Ligi, Uzman Posta Kadınlar 2. Ligi)
+    (Sultanlar Ligi, Arabica Coffee House Kadınlar Voleybol 1. Ligi, Uzman Posta Kadınlar 2. Ligi)
     """
     if not json_path.exists():
         return 0, 0
@@ -1109,6 +1125,7 @@ def sync_kadinlar_1_lig_matches(
 ) -> Tuple[int, int]:
     return sync_league_json_matches(
         k1_path,
+        "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
         "KFC Kadınlar 1. Ligi",
         "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
         vb_tournaments,
@@ -1217,14 +1234,14 @@ def main():
         if args.city:
             cf = args.city.lower().strip()
             is_sultanlar = "sultanlar" in internal_name
-            is_k1 = "kfc" in internal_name or "kadınlar 1" in internal_name or "kadinlar 1" in internal_name
+            is_k1 = "arabica" in internal_name or "kfc" in internal_name or "kadınlar 1" in internal_name or "kadinlar 1" in internal_name
             is_k2 = "2. lig" in internal_name or "kadinlar 2" in internal_name
 
             c_aliases = [c_slug.lower(), c_norm, c_name.lower()]
             if is_sultanlar:
                 c_aliases.extend(["sultanlar", "sultanlar-ligi", "sultanlar_ligi", "vodafone-sultanlar-ligi"])
             if is_k1:
-                c_aliases.extend(["kadinlar-1", "kadinlar-1-lig", "kadinlar-1-ligi", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi"])
+                c_aliases.extend(["kadinlar-1", "kadinlar-1-lig", "kadinlar-1-ligi", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi"])
             if is_k2:
                 c_aliases.extend(["kadinlar-2", "kadinlar-2-lig", "kadinlar-2-ligi", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig"])
 
@@ -1292,8 +1309,15 @@ def main():
         for m_item in vb_matches:
             r_name = m_item.get("round", "")
             for r_alias in vb_round_to_tr_group_aliases(r_name):
-                add_vb_matches(vb_tournaments, f"{r_alias}::{city}", [m_item])
-                add_vb_matches(vb_tournaments, normalize_tourn_key(r_alias, city), [m_item])
+                # Turnuvaya özgü grup anahtarı
+                add_vb_matches(vb_tournaments, f"{internal_name} - {r_alias}::{city}", [m_item])
+                add_vb_matches(vb_tournaments, normalize_tourn_key(f"{internal_name} - {r_alias}", city), [m_item])
+                # Yalnızca jenerik olmayan turlar (Final, Yarı Final) genel il havuzuna eklenir;
+                # 'A Grubu', 'B Grubu' gibi jenerik harfler birden çok turnuvayı kirletmesin
+                GENERIC_R_ALIASES = ("a grubu", "b grubu", "c grubu", "d grubu", "e grubu", "f grubu", "1. grup", "2. grup", "grup a", "grup b")
+                if r_alias not in GENERIC_R_ALIASES:
+                    add_vb_matches(vb_tournaments, f"{r_alias}::{city}", [m_item])
+                    add_vb_matches(vb_tournaments, normalize_tourn_key(r_alias, city), [m_item])
 
         time.sleep(0.8)
 
@@ -1325,11 +1349,17 @@ def main():
 
     # 6. data/kadinlar_1_lig.json senkronizasyonu
     K1_FILE = DATA_DIR / "kadinlar_1_lig.json"
-    K1_ALIASES = ["kadinlar-1-ligi", "kadinlar-1", "kadinlar-1-lig", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi", "turkiye", "pro", "profesyonel"]
+    K1_ALIASES = ["kadinlar-1-ligi", "kadinlar-1", "kadinlar-1-lig", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi", "turkiye", "pro", "profesyonel"]
     if K1_FILE.exists() and (not args.city or args.city.lower() in K1_ALIASES):
         print("\n🔄 data/kadinlar_1_lig.json senkronize ediliyor...")
-        k1_synced, k1_total = sync_league_json_matches(K1_FILE, "KFC Kadınlar 1. Ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210", vb_tournaments, team_alias_map)
-        print(f"✅ KFC Kadınlar 1. Ligi: {k1_synced} / {k1_total} maç Volleybox ile eşleşti ve doğrulandı!")
+        k1_synced, k1_total = sync_league_json_matches(
+            K1_FILE,
+            "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
+            "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
+            vb_tournaments,
+            team_alias_map
+        )
+        print(f"✅ Arabica Coffee House Kadınlar Voleybol 1. Ligi: {k1_synced} / {k1_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     # 7. data/sultanlar_ligi.json senkronizasyonu
     SULTANLAR_FILE = DATA_DIR / "sultanlar_ligi.json"

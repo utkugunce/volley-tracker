@@ -62,7 +62,7 @@ describe("Admin sayfası (oturumsuz giriş ekranı)", () => {
     expect(select).toBeInTheDocument();
     expect(screen.getByText(/⭐ Tüm Profesyonel Ligler/)).toBeInTheDocument();
     expect(screen.getByText(/TVF Kadınlar 2\. Ligi/)).toBeInTheDocument();
-    expect(screen.getByText(/KFC Kadınlar 1\. Ligi/)).toBeInTheDocument();
+    expect(screen.getByText(/Arabica Coffee House Kadınlar Voleybol 1\. Ligi/)).toBeInTheDocument();
     expect(screen.getByText(/Vodafone Sultanlar Ligi/)).toBeInTheDocument();
 
     // Hızlı filtre butonları

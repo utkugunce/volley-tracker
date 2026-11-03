@@ -540,7 +540,7 @@ def collect_unsynced_matches(
 
     PRO_SLUGS_MAP = {
         "sultanlar-ligi": ["sultanlar", "sultanlar-ligi", "sultanlar_ligi", "vodafone-sultanlar-ligi"],
-        "kadinlar-1-ligi": ["kadinlar-1", "kadinlar-1-lig", "kadinlar-1-ligi", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi"],
+        "kadinlar-1-ligi": ["kadinlar-1", "kadinlar-1-lig", "kadinlar-1-ligi", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi"],
         "kadinlar-2-ligi": ["kadinlar-2", "kadinlar-2-lig", "kadinlar-2-ligi", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig"],
     }
     all_pro_slugs = set()
@@ -561,7 +561,7 @@ def collect_unsynced_matches(
 
     pro_configs = [
         (K2_FILE, "Kadınlar 2. Ligi", "kadinlar-2-ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047"),
-        (DATA_DIR / "kadinlar_1_lig.json", "KFC Kadınlar 1. Ligi", "kadinlar-1-ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210"),
+        (DATA_DIR / "kadinlar_1_lig.json", "Arabica Coffee House Kadınlar Voleybol 1. Ligi", "kadinlar-1-ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210"),
         (DATA_DIR / "sultanlar_ligi.json", "Vodafone Sultanlar Ligi", "sultanlar-ligi", "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086"),
     ]
     for p_file, p_name, p_slug, p_url in pro_configs:
@@ -1193,7 +1193,7 @@ def match_option_for_round(
 
     # 4. Harf Grubu (örn: 'A Grubu', 'B Grb.', 'C Grubu') -> Kesin 'Group A', 'Group B'
     if letter_token:
-        # KFC Kadınlar 1. Ligi için hafta eşleştirmesi (örn: '1st round - Group A', '2nd round - Group B')
+        # Arabica Coffee House Kadınlar Voleybol 1. Ligi için hafta eşleştirmesi (örn: '1st round - Group A', '2nd round - Group B')
         if week:
             w_str = str(week).strip()
             for opt in opts:
@@ -1952,14 +1952,14 @@ def mark_match_as_synced_locally(city_slug: str, match_item: Dict[str, Any], vb_
     c_slug_lower = (city_slug or "").lower().strip()
     is_pro = c_slug_lower in (
         "kadinlar-2-ligi", "kadinlar-2", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig",
-        "kadinlar-1-ligi", "kadinlar-1", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi",
+        "kadinlar-1-ligi", "kadinlar-1", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi",
         "sultanlar-ligi", "sultanlar", "sultanlar_ligi", "vodafone-sultanlar-ligi",
     )
 
     if is_pro:
         if c_slug_lower in ("kadinlar-2-ligi", "kadinlar-2", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig"):
             target_file = K2_FILE
-        elif c_slug_lower in ("kadinlar-1-ligi", "kadinlar-1", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi"):
+        elif c_slug_lower in ("kadinlar-1-ligi", "kadinlar-1", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi"):
             target_file = DATA_DIR / "kadinlar_1_lig.json"
         else:
             target_file = DATA_DIR / "sultanlar_ligi.json"
@@ -2042,7 +2042,7 @@ def mark_match_as_synced_locally(city_slug: str, match_item: Dict[str, Any], vb_
             synced_count = 0
             for m in data.get("matches", []):
                 is_target = False
-                if m_id and m.get("id") == m_id:
+                if m_id and m.get("id") == m_id and m.get("home_team") == home and m.get("away_team") == away:
                     is_target = True
                 elif (
                     m.get("date") == m_date
@@ -2072,7 +2072,7 @@ def main():
     parser.add_argument("--city", default=None, help="Sadece belirli bir ili/ligi işle (örn: zonguldak, afyon, kadinlar-2-ligi, sultanlar)")
     parser.add_argument("--league", choices=["sultanlar", "kadinlar-1", "kadinlar-2", "pro"], default=None, help="Profesyonel lig seçimi (sultanlar, kadinlar-1, kadinlar-2, pro)")
     parser.add_argument("--sultanlar", action="store_true", help="Sadece Vodafone Sultanlar Ligi maçlarını işle")
-    parser.add_argument("--kadinlar-1", "--1-lig", dest="kadinlar_1", action="store_true", help="Sadece KFC Kadınlar 1. Ligi maçlarını işle")
+    parser.add_argument("--kadinlar-1", "--1-lig", dest="kadinlar_1", action="store_true", help="Sadece Arabica Coffee House Kadınlar Voleybol 1. Ligi maçlarını işle")
     parser.add_argument("--kadinlar-2", "--2-lig", dest="kadinlar_2", action="store_true", help="Sadece Kadınlar 2. Ligi maçlarını işle")
     parser.add_argument("--pro", action="store_true", help="Tüm profesyonel ligleri (Sultanlar, 1. Lig, 2. Lig) işle")
     parser.add_argument("--dry-run", action="store_true", help="Tarayıcı açmadan eklenecek eksik maçları listele")

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T15:49:29.082866+03:00",
+  "updated_at": "2026-11-03T17:04:31.966047+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
@@ -1202,25 +1202,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415182",
-        "url": "https://women.volleybox.net/tr/yunusemre-belediyespor-u18-turgutlu-belediyespor-u18-c415182",
-        "host_name": "Yunusemre Belediyespor U18",
-        "guest_name": "Turgutlu Belediyespor U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-05",
-        "vb_time": "20:30",
-        "vb_hall": "Manisa Atatürk Kapalı Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
-          "hall_diff": true,
-          "vb_date": "2026-11-05",
-          "vb_time": "20:30",
-          "vb_hall": "Manisa Atatürk Kapalı Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-03 / VB: 2026-11-05) | Saat Değişti (TVF: 19:00 / VB: 20:30) | Salon Değişti (TVF: Akhisar S.S. / VB: Manisa Atatürk Kapalı Spor Salonu)"
+          "has_diff": false
         }
       }
     },
@@ -1293,6 +1286,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 22,
-  "volleybox_sync_updated_at": "2026-11-03T15:57:26.685906"
+  "volleybox_synced_matches": 21,
+  "volleybox_sync_updated_at": "2026-11-03T17:06:19.603907"
 }

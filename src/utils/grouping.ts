@@ -177,8 +177,13 @@ export function formatLeagueCategoryTitle(
   if (lowerCat.includes("sultanlar")) {
     return "Vodafone Sultanlar Ligi";
   }
-  if (lowerCat.includes("kadinlar 1") || lowerCat.includes("kadınlar 1")) {
-    return "KFC Kadınlar 1. Ligi";
+  if (
+    lowerCat.includes("arabica") ||
+    lowerCat.includes("kadinlar 1") ||
+    lowerCat.includes("kadınlar 1") ||
+    lowerCat.includes("kfc")
+  ) {
+    return "Arabica Coffee House Kadınlar Voleybol 1. Ligi";
   }
   if (lowerCat.includes("kadinlar 2") || lowerCat.includes("kadınlar 2")) {
     return "Uzman Posta Kadınlar 2. Ligi";

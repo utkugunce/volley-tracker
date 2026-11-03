@@ -123,7 +123,7 @@ python scripts/scrape_all_provinces.py --force
   python scripts/scrape_sultanlar_ligi.py
   ```
   `data/sultanlar_ligi.json` ve Volleybox maçlarını günceller.
-- **TVF KFC Kadınlar 1. Ligi:** Kadınlar 1. Ligi verilerini bağımsız çekmek için:
+- **TVF Arabica Coffee House Kadınlar Voleybol 1. Ligi:** Kadınlar 1. Ligi verilerini bağımsız çekmek için:
   ```powershell
   python scripts/scrape_kadinlar_1_lig.py
   ```

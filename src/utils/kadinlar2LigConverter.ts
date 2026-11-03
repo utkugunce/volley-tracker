@@ -174,15 +174,26 @@ export function convertK2MatchToMatch(
   if (!resolvedCategory) {
     if (m.id?.startsWith("sultanlar") || m.grup_adi?.includes("Sultanlar") || (m as { lig?: string }).lig?.includes("Sultanlar")) {
       resolvedCategory = "Vodafone Sultanlar Ligi";
-    } else if (m.id?.startsWith("k1") || m.grup_adi?.includes("1. Lig") || (m as { lig?: string }).lig?.includes("1. Lig")) {
-      resolvedCategory = "KFC Kadınlar 1. Ligi";
+    } else if (
+      m.id?.startsWith("k1") ||
+      m.grup_adi?.includes("1. Lig") ||
+      m.grup_adi?.includes("1.Lig") ||
+      (m as { lig?: string }).lig?.includes("1. Lig") ||
+      (m as { lig?: string }).lig?.includes("1.Lig") ||
+      (m as { lig?: string }).lig?.includes("Arabica")
+    ) {
+      resolvedCategory = "Arabica Coffee House Kadınlar Voleybol 1. Ligi";
     } else {
       resolvedCategory = "Kadınlar 2. Ligi";
     }
   }
 
   const isSultanlar = resolvedCategory.includes("Sultanlar");
-  const isK1 = resolvedCategory.includes("1. Lig") || resolvedCategory.includes("1. Ligi");
+  const isK1 =
+    resolvedCategory.includes("1. Lig") ||
+    resolvedCategory.includes("1.Lig") ||
+    resolvedCategory.includes("Arabica") ||
+    resolvedCategory.includes("KFC");
   const isK2 = resolvedCategory.includes("2. Lig") || resolvedCategory.includes("2. Ligi");
   const isPro = isSultanlar || isK1 || isK2;
 

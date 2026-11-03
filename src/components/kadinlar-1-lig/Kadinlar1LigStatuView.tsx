@@ -30,14 +30,14 @@ export const Kadinlar1LigStatuView: React.FC<Kadinlar1LigStatuViewProps> = ({
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <h2 className="text-base sm:text-lg font-bold text-ink tracking-tight">
-                2026-2027 TVF KFC Kadınlar 1. Ligi Resmi Statüsü
+                2026-2027 TVF Arabica Coffee House Kadınlar Voleybol 1. Ligi Resmi Statüsü
               </h2>
               <span className="text-[11px] px-2 py-0.5 rounded-md bg-surface-muted text-ink-2 border border-line font-mono tabular-nums font-bold">
                 2 Grup (A & B) • {totalTeams} Kulüp
               </span>
             </div>
             <p className="text-xs text-ink-3 mt-0.5">
-              Türkiye Voleybol Federasyonu KFC Kadınlar 1. Ligi lig etabı, yarı final/final yükselme ve düşme kuralları
+              Türkiye Voleybol Federasyonu Arabica Coffee House Kadınlar Voleybol 1. Ligi lig etabı, yarı final/final yükselme ve düşme kuralları
             </p>
           </div>
         </div>

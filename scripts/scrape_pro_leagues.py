@@ -1,13 +1,13 @@
 """
 TVF Profesyonel Ligler Scraper & Volleybox Eşleştirici
 -------------------------------------------------------
-Vodafone Sultanlar Ligi ve KFC Kadınlar 1. Ligi (ve isteğe bağlı Kadınlar 2. Ligi)
+Vodafone Sultanlar Ligi ve Arabica Coffee House Kadınlar Voleybol 1. Ligi (ve isteğe bağlı Kadınlar 2. Ligi)
 resmi TVF puan durumlarını ve fikstürlerini çeker, Volleybox maçlarıyla senkronize eder.
 
 Kullanım:
     python scripts/scrape_pro_leagues.py              # Sultanlar Ligi ve 1. Lig (Varsayılan)
     python scripts/scrape_pro_leagues.py --sultanlar  # Yalnızca Sultanlar Ligi
-    python scripts/scrape_pro_leagues.py --1-lig      # Yalnızca KFC Kadınlar 1. Ligi
+    python scripts/scrape_pro_leagues.py --1-lig      # Yalnızca Arabica Coffee House Kadınlar Voleybol 1. Ligi
     python scripts/scrape_pro_leagues.py --2-lig      # Yalnızca Kadınlar 2. Ligi
     python scripts/scrape_pro_leagues.py --all        # Sultanlar + 1. Lig + 2. Lig
 """
@@ -36,7 +36,7 @@ from scripts.scrape_kadinlar_2_lig import main as run_kadinlar_2
 def main():
     parser = argparse.ArgumentParser(description="TVF Profesyonel Ligler Scraper")
     parser.add_argument("--sultanlar", action="store_true", help="Yalnızca Vodafone Sultanlar Ligi'ni çek")
-    parser.add_argument("--1-lig", dest="kadinlar_1", action="store_true", help="Yalnızca KFC Kadınlar 1. Ligi'ni çek")
+    parser.add_argument("--1-lig", dest="kadinlar_1", action="store_true", help="Yalnızca Arabica Coffee House Kadınlar Voleybol 1. Ligi'ni çek")
     parser.add_argument("--2-lig", dest="kadinlar_2", action="store_true", help="Yalnızca Kadınlar 2. Ligi'ni çek")
     parser.add_argument("--all", action="store_true", help="Sultanlar + 1. Lig + 2. Lig tamamını çek")
     args = parser.parse_args()
@@ -66,7 +66,7 @@ def main():
 
     if run_k1:
         print("\n" + "#" * 70)
-        print("⚡ 2. KFC KADINLAR 1. LİGİ")
+        print("⚡ 2. ARABICA COFFEE HOUSE KADINLAR VOLEYBOL 1. LİGİ")
         print("#" * 70)
         try:
             results["Kadınlar 1. Ligi"] = run_kadinlar_1()

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T15:49:29.082866+03:00",
+  "updated_at": "2026-11-03T17:04:31.966047+03:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -213,25 +213,18 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": true,
-        "match_id": "411674",
-        "url": "https://women.volleybox.net/tr/diyarbakr-ckale-spor-kulubu-u18-sur-amed-spor-u18-c411674",
-        "host_name": "Diyarbakır İçkale Spor Kulübü U18",
-        "guest_name": "Sur Amed Spor U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-24",
-        "vb_time": "12:00",
-        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-24",
-          "vb_time": "12:00",
-          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -617,25 +610,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "411675",
-        "url": "https://women.volleybox.net/tr/diyarbakr-buyuksehir-belediyespor-u18-dicle-universitesi-spor-kulubu-u18-c411675",
-        "host_name": "Sur Amed Spor U18",
-        "guest_name": "Diyarbakır Büyükşehir Belediyespor U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-25",
-        "vb_time": "15:00",
-        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-25",
-          "vb_time": "15:00",
-          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     },
@@ -726,29 +712,22 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "411453",
-        "url": "https://women.volleybox.net/tr/diyarbakr-voleybolcular-spor-kulubu-u18-dicle-universitesi-spor-kulubu-u18-c411453",
-        "host_name": "Diyarbakır Voleybolcular Spor Kulübü U18",
-        "guest_name": "Dicle Üniversitesi Spor Kulübü U18",
-        "score": "3 - 1",
-        "has_score": true,
-        "vb_date": "2026-10-24",
-        "vb_time": "14:00",
-        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-24",
-          "vb_time": "14:00",
-          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
-          "details": null
+          "has_diff": false
         }
       }
     }
   ],
-  "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-11-03T15:57:24.494963"
+  "volleybox_synced_matches": 10,
+  "volleybox_sync_updated_at": "2026-11-03T17:06:17.170179"
 }

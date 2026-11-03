@@ -58,7 +58,7 @@ export const Kadinlar1LigSidebar: React.FC<Kadinlar1LigSidebarProps> = ({
               <h2 className="font-bold leading-tight tracking-tight text-white text-[13px] truncate">
                 Lig Ağacı
               </h2>
-              <p className="text-[10px] text-ink-3 truncate">KFC Kadınlar 1. Ligi</p>
+              <p className="text-[10px] text-ink-3 truncate">Arabica Kadınlar 1. Ligi</p>
             </div>
           </div>
           <div className="flex items-center gap-1.5 shrink-0">

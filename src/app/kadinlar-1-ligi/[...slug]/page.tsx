@@ -33,47 +33,47 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ? " (B Grubu)"
       : " (A Grubu)";
 
-  let title = "TVF KFC Kadınlar 1. Ligi";
+  let title = "Arabica Coffee House Kadınlar Voleybol 1. Ligi";
   let description =
-    "Türkiye Voleybol Federasyonu KFC Kadınlar 1. Ligi A ve B grubu resmi puan cetveli, fikstür, sonuçlar ve Volleybox kadroları.";
+    "Türkiye Voleybol Federasyonu Arabica Coffee House Kadınlar Voleybol 1. Ligi A ve B grubu resmi puan cetveli, fikstür, sonuçlar ve Volleybox kadroları.";
 
   switch (tab) {
     case "standings":
-      title = `TVF Kadınlar 1. Ligi Puan Durumu${groupLabel}`;
-      description = `KFC Kadınlar 1. Ligi${groupLabel} güncel puan durumu, averajlar, set farkları ve lig sıralaması.`;
+      title = `Arabica Kadınlar 1. Ligi Puan Durumu${groupLabel}`;
+      description = `Arabica Coffee House Kadınlar Voleybol 1. Ligi${groupLabel} güncel puan durumu, averajlar, set farkları ve lig sıralaması.`;
       break;
     case "fixtures":
-      title = `TVF Kadınlar 1. Ligi Fikstür${groupLabel}`;
-      description = `KFC Kadınlar 1. Ligi${groupLabel} haftalık maç programı, salon bilgileri ve başlama saatleri.`;
+      title = `Arabica Kadınlar 1. Ligi Fikstür${groupLabel}`;
+      description = `Arabica Coffee House Kadınlar Voleybol 1. Ligi${groupLabel} haftalık maç programı, salon bilgileri ve başlama saatleri.`;
       break;
     case "results":
-      title = "TVF Kadınlar 1. Ligi Maç Sonuçları ve Skorlar";
-      description = "KFC Kadınlar 1. Ligi tamamlanan karşılaşmaların resmi set ve maç skorları.";
+      title = "Arabica Kadınlar 1. Ligi Maç Sonuçları ve Skorlar";
+      description = "Arabica Coffee House Kadınlar Voleybol 1. Ligi tamamlanan karşılaşmaların resmi set ve maç skorları.";
       break;
     case "today":
-      title = "TVF Kadınlar 1. Ligi Günün Maçları";
+      title = "Arabica Kadınlar 1. Ligi Günün Maçları";
       description = "Kadınlar 1. Ligi bugün oynanacak tüm karşılaşmalar, canlı takip ve salon bilgileri.";
       break;
     case "leaders":
-      title = "TVF Kadınlar 1. Ligi 2 Grup Durumu & Liderler";
+      title = "Arabica Kadınlar 1. Ligi 2 Grup Durumu & Liderler";
       description = "Kadınlar 1. Ligi A ve B grubu lider takımları, play-off yükselme hattı ve grup durumları.";
       break;
     case "teams":
-      title = "TVF Kadınlar 1. Ligi Takımları ve Kulüp Profilleri";
+      title = "Arabica Kadınlar 1. Ligi Takımları ve Kulüp Profilleri";
       description = "Kadınlar 1. Ligi'nde mücadele eden 28 voleybol kulübü, maçları ve kadro bağlantıları.";
       break;
     case "karsilastir":
-      title = "TVF Kadınlar 1. Ligi Takım Karşılaştırması & H2H";
+      title = "Arabica Kadınlar 1. Ligi Takım Karşılaştırması & H2H";
       description = "Kadınlar 1. Ligi takımlarının kafa kafaya maçları, galibiyet oranları ve form durumu kıyaslaması.";
       break;
     case "statu":
-      title = "TVF Kadınlar 1. Ligi 2026-2027 Resmi Lig Statüsü";
-      description = "2026-2027 sezonu KFC Kadınlar 1. Ligi yarı final, final etabı ve Sultanlar Ligi'ne yükselme statüsü.";
+      title = "Arabica Kadınlar 1. Ligi 2026-2027 Resmi Lig Statüsü";
+      description = "2026-2027 sezonu Arabica Coffee House Kadınlar Voleybol 1. Ligi yarı final, final etabı ve Sultanlar Ligi'ne yükselme statüsü.";
       break;
     case "home":
     default:
-      title = "TVF KFC Kadınlar 1. Ligi — Canlı Puan Durumu & Fikstür";
-      description = "Kadınlar 1. Ligi 2 grup canlı puan cetveli, haftalık maç fikstürleri ve Volleybox kadroları.";
+      title = "Arabica Coffee House Kadınlar Voleybol 1. Ligi — Canlı Puan Durumu & Fikstür";
+      description = "Arabica Coffee House Kadınlar Voleybol 1. Ligi 2 grup canlı puan cetveli, haftalık maç fikstürleri ve Volleybox kadroları.";
       break;
   }
 

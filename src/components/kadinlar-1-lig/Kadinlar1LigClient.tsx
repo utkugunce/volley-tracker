@@ -100,7 +100,7 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
   const convertedMatches: Match[] = useMemo(() => {
     return (data.tum_maclar || []).map((m) =>
       convertK2MatchToMatch(m, {
-        category: "KFC Kadınlar 1. Ligi",
+        category: "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
         age_group: "Büyük Kadınlar",
         gender: "Kadın",
       })
@@ -113,7 +113,7 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
       const key = g.grup_adi || `Grup ${g.grup_no}`;
       res[key] = (g.puan_durumu || []).map((t) => ({
         rank: t.sira,
-        team: getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name, "KFC Kadınlar 1. Ligi"),
+        team: getKadinlar2LigTeamName(t.takim_adi, t.volleybox_name, "Arabica Coffee House Kadınlar Voleybol 1. Ligi"),
         played: t.o,
         won: t.g,
         lost: t.m,
@@ -148,7 +148,7 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
   }, [data.tum_maclar]);
 
   const searchableCategories = useMemo(() => {
-    return ["KFC Kadınlar 1. Ligi"];
+    return ["Arabica Coffee House Kadınlar Voleybol 1. Ligi"];
   }, []);
 
   // Klavye kısayolu (Cmd+K / Ctrl+K) Spotlight Arama
@@ -266,7 +266,7 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
       }
       footer={
         <footer className="px-4 py-4 text-center text-xs text-slate-500 sm:flex sm:items-center sm:justify-between border-t border-line/60 bg-surface/50">
-          <span className="font-semibold text-slate-400">TVF KFC Kadınlar 1. Ligi</span>
+          <span className="font-semibold text-slate-400">TVF Arabica Coffee House Kadınlar Voleybol 1. Ligi</span>
           <span className="mt-1 block sm:mt-0 font-mono">2 Grup (A & B) • 28 Kulüp</span>
         </footer>
       }
@@ -301,8 +301,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             selectedMatchId={selectedMatch?.id || null}
             searchQuery={searchQuery}
             showOnlyFavorites={showOnlyFavorites}
-            leagueTitle="KFC Kadınlar 1. Ligi"
-            leagueCategory="KFC Kadınlar 1. Ligi"
+            leagueTitle="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
+            leagueCategory="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
           />
         )}
 
@@ -316,8 +316,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
             selectedMatchId={selectedMatch?.id || null}
-            leagueTitle="KFC Kadınlar 1. Ligi"
-            leagueCategory="KFC Kadınlar 1. Ligi"
+            leagueTitle="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
+            leagueCategory="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
           />
         )}
 
@@ -331,8 +331,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onToggleFavoritesOnly={() => setShowOnlyFavorites((prev) => !prev)}
             selectedMatchId={selectedMatch?.id || null}
-            leagueTitle="KFC Kadınlar 1. Ligi"
-            leagueCategory="KFC Kadınlar 1. Ligi"
+            leagueTitle="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
+            leagueCategory="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
           />
         )}
 
@@ -357,8 +357,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
                 showOnlyFavorites={showOnlyFavorites}
                 onSelectMatch={handleSelectMatch}
                 selectedMatchId={selectedMatch?.id || null}
-                leagueTitle="KFC Kadınlar 1. Ligi"
-                leagueCategory="KFC Kadınlar 1. Ligi"
+                leagueTitle="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
+                leagueCategory="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
               />
             </div>
           </div>
@@ -375,8 +375,8 @@ export const Kadinlar1LigClient: React.FC<Kadinlar1LigClientProps> = ({
             showOnlyFavorites={showOnlyFavorites}
             onSelectMatch={handleSelectMatch}
             selectedMatchId={selectedMatch?.id || null}
-            leagueTitle="KFC Kadınlar 1. Ligi"
-            leagueCategory="KFC Kadınlar 1. Ligi"
+            leagueTitle="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
+            leagueCategory="Arabica Coffee House Kadınlar Voleybol 1. Ligi"
           />
         )}
 

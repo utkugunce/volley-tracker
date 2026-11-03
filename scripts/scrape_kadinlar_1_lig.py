@@ -1,7 +1,7 @@
 """
-TVF KFC Kadınlar 1. Ligi Scraper & Volleybox Eşleştirici
+TVF Arabica Coffee House Kadınlar Voleybol 1. Ligi Scraper & Volleybox Eşleştirici
 ---------------------------------------------------------
-KFC Kadınlar 1. Ligi (Grup A & Grup B) resmi puan cetvelini ve fikstürünü TVF Livewire servisinden çeker,
+Arabica Coffee House Kadınlar Voleybol 1. Ligi (Grup A & Grup B) resmi puan cetvelini ve fikstürünü TVF Livewire servisinden çeker,
 data/kadinlar_1_lig.json dosyasını oluşturur ve Volleybox maçlarıyla senkronize eder.
 """
 
@@ -288,7 +288,7 @@ def extract_fixtures(snap_dict, group_no: int, group_name: str):
 
 def run_kadinlar_1_lig_scraper():
     print("=" * 70)
-    print("🏐 TVF KFC KADINLAR 1. LİGİ VERİ SENKRONİZASYONU")
+    print("🏐 TVF ARABICA COFFEE HOUSE KADINLAR VOLEYBOL 1. LİGİ VERİ SENKRONİZASYONU")
     print("=" * 70)
     
     os.makedirs(DATA_DIR, exist_ok=True)
@@ -401,7 +401,7 @@ def run_kadinlar_1_lig_scraper():
     
     payload = {
         "metadata": {
-            "lig_adi": "KFC Kadınlar 1. Ligi",
+            "lig_adi": "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
             "sezon": "2026-2027",
             "kategori": "Kadınlar 1. Ligi",
             "guncellenme_zamani": datetime.now().isoformat(),
@@ -451,7 +451,7 @@ def main():
             print("\n🏐 Volleybox Kadınlar 1. Ligi maçları senkronize ediliyor...")
             k1_path = Path(OUTPUT_FILE)
             synced, total = sync_kadinlar_1_lig_matches(k1_path)
-            print(f"✅ KFC Kadınlar 1. Ligi: {synced} / {total} maç Volleybox ile eşleşti ve doğrulandı!")
+            print(f"✅ Arabica Coffee House Kadınlar Voleybol 1. Ligi: {synced} / {total} maç Volleybox ile eşleşti ve doğrulandı!")
         except Exception as e:
             print(f"⚠️ Volleybox maç senkronizasyonu atlandı: {e}")
     return success

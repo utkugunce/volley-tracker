@@ -13,7 +13,7 @@ describe("Volleybox Bot Route Pro Leagues Config", () => {
 
     const k1 = PRO_LEAGUES_CONFIG.find((p) => p.slug === "kadinlar-1-ligi");
     expect(k1).toBeDefined();
-    expect(k1?.name).toBe("KFC Kadınlar 1. Ligi");
+    expect(k1?.name).toBe("Arabica Coffee House Kadınlar Voleybol 1. Ligi");
     expect(k1?.url).toContain("o45210");
     expect(k1?.aliases).toContain("1-lig");
 

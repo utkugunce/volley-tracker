@@ -4,19 +4,19 @@ import { getKadinlar1LigData } from "@/utils/kadinlar1LigServer";
 import { compactKadinlar2LigData } from "@/utils/kadinlar2LigPayload";
 
 export const metadata: Metadata = {
-  title: "TVF KFC Kadınlar 1. Ligi — Canlı Puan Durumu & Fikstür",
+  title: "Arabica Coffee House Kadınlar Voleybol 1. Ligi — Canlı Puan Durumu & Fikstür",
   description:
-    "Türkiye Voleybol Federasyonu KFC Kadınlar 1. Ligi A ve B grubu resmi puan cetveli, haftalık maç fikstürleri, salon bilgileri ve Volleybox kadroları.",
+    "Türkiye Voleybol Federasyonu Arabica Coffee House Kadınlar Voleybol 1. Ligi A ve B grubu resmi puan cetveli, haftalık maç fikstürleri, salon bilgileri ve Volleybox kadroları.",
   alternates: {
     canonical: "https://altyapivoleybol.com.tr/kadinlar-1-ligi",
   },
   openGraph: {
-    title: "TVF KFC Kadınlar 1. Ligi — Canlı Puan Durumu & Fikstür",
+    title: "Arabica Coffee House Kadınlar Voleybol 1. Ligi — Canlı Puan Durumu & Fikstür",
     description:
-      "TVF Kadınlar 1. Ligi 2 grup puan durumu, fikstür, sonuçlar ve Volleybox eşleşmeleri.",
+      "Arabica Coffee House Kadınlar Voleybol 1. Ligi 2 grup puan durumu, fikstür, sonuçlar ve Volleybox eşleşmeleri.",
     type: "website",
     url: "https://altyapivoleybol.com.tr/kadinlar-1-ligi",
-    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "TVF Kadınlar 1. Ligi" }],
+    images: [{ url: "/icon.svg", width: 512, height: 512, alt: "Arabica Coffee House Kadınlar Voleybol 1. Ligi" }],
   },
 };
 

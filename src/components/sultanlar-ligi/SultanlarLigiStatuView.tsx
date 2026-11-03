@@ -132,7 +132,7 @@ export const SultanlarLigiStatuView: React.FC<SultanlarLigiStatuViewProps> = ({
             </div>
             <h3 className="text-sm font-bold text-ink">1. Lig&apos;e Düşme</h3>
             <p className="text-xs text-ink-2 leading-relaxed">
-              Lig etabını (normal sezonu) 13. ve 14. sırada bitiren son 2 kulüp doğrudan KFC Kadınlar 1. Ligi&apos;ne düşer.
+              Lig etabını (normal sezonu) 13. ve 14. sırada bitiren son 2 kulüp doğrudan Arabica Coffee House Kadınlar Voleybol 1. Ligi&apos;ne düşer.
             </p>
           </div>
           <div className="mt-4 pt-2.5 border-t border-line flex items-center justify-between text-[11px]">
@@ -140,7 +140,7 @@ export const SultanlarLigiStatuView: React.FC<SultanlarLigiStatuViewProps> = ({
               <ShieldAlert size={12} />
               13. ve 14. Sıra
             </span>
-            <span className="text-ink-3 text-[10px]">KFC Kadınlar 1. Ligi</span>
+            <span className="text-ink-3 text-[10px]">Arabica Kadınlar 1. Ligi</span>
           </div>
         </div>
       </div>

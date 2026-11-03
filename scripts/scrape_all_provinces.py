@@ -657,6 +657,22 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
             away_resolved = RESOLVE_TEAM_NAME(away_raw, cat, m_city)
         m["away_team"] = away_resolved
 
+def are_teams_compatible(tvf_h: str, tvf_a: str, vb_h: str, vb_a: str) -> bool:
+    """TVF takımları ile Volleybox takımlarının temel isim benzerliğini doğrular."""
+    if not tvf_h or not tvf_a or not vb_h or not vb_a:
+        return False
+    def _c(s: str) -> str:
+        s = s.lower().replace("ı", "i").replace("ğ", "g").replace("ü", "u").replace("ş", "s").replace("ö", "o").replace("ç", "c").replace("i̇", "i")
+        s = re.sub(r"\bu\d+\b", "", s)
+        s = re.sub(r"[^a-z0-9]", "", s)
+        return s
+    th, ta, vh, va = _c(tvf_h), _c(tvf_a), _c(vb_h), _c(vb_a)
+    if not th or not ta or not vh or not va:
+        return False
+    dir_match = (th in vh or vh in th) and (ta in va or va in ta)
+    rev_match = (th in va or va in th) and (ta in vh or vh in ta)
+    return dir_match or rev_match
+
 def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
     """Mevcut dosyadaki volleybox verilerini yeni taranan mac listesine aktar.
     Boylece scraper calistiktan sonra synced volleybox bilgileri kaybolmaz."""
@@ -677,21 +693,53 @@ def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
     for em in existing_matches:
         vb = em.get("volleybox")
         if vb and vb.get("synced"):
-            key = (em.get("home_team", "").strip(), em.get("away_team", "").strip(), em.get("date", ""))
-            vb_lookup[key] = vb
-            # id bazli yedek anahtar
-            if em.get("id"):
-                vb_lookup[em["id"]] = vb
+            h = em.get("home_team", "").strip()
+            a = em.get("away_team", "").strip()
+            vh = (vb.get("host_name") or "").strip()
+            va = (vb.get("guest_name") or "").strip()
+            # Yalnızca takımları birbiriyle uyumlu olan kayıtları sakla
+            if are_teams_compatible(h, a, vh, va):
+                key = (h, a, em.get("date", ""))
+                vb_lookup[key] = vb
+                # id bazlı yedek anahtarda da takım isimlerini sakla
+                if em.get("id"):
+                    vb_lookup[em["id"]] = (vb, h, a)
 
-    if not vb_lookup:
-        return new_matches
+    empty_vb = {
+        "synced": False,
+        "match_id": None,
+        "url": None,
+        "host_name": None,
+        "guest_name": None,
+        "score": None,
+        "has_score": False,
+        "vb_date": None,
+        "vb_time": None,
+        "vb_hall": None,
+        "discrepancy": {"has_diff": False}
+    }
 
     merged_count = 0
     for nm in new_matches:
+        h = nm.get("home_team", "").strip()
+        a = nm.get("away_team", "").strip()
+
+        # Eğer zaten synced görünüyorsa ama takımlar uyuşmuyorsa sıfırla
         if nm.get("volleybox", {}).get("synced"):
-            continue  # Zaten synced, dokunma
-        key = (nm.get("home_team", "").strip(), nm.get("away_team", "").strip(), nm.get("date", ""))
-        vb = vb_lookup.get(key) or vb_lookup.get(nm.get("id"))
+            vh = nm["volleybox"].get("host_name", "").strip()
+            va = nm["volleybox"].get("guest_name", "").strip()
+            if not are_teams_compatible(h, a, vh, va):
+                nm["volleybox"] = empty_vb.copy()
+            else:
+                continue
+
+        key = (h, a, nm.get("date", ""))
+        vb = vb_lookup.get(key)
+        if not vb and nm.get("id") in vb_lookup:
+            cand_vb, cand_h, cand_a = vb_lookup[nm["id"]]
+            if are_teams_compatible(h, a, cand_vb.get("host_name", ""), cand_vb.get("guest_name", "")):
+                vb = cand_vb
+
         if vb:
             nm["volleybox"] = vb
             merged_count += 1

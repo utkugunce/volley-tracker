@@ -74,7 +74,7 @@ describe("Kadinlar2LigSidebar Component (Stage 2 Integration)", () => {
     expect(sultanlarLink).toBeDefined();
     expect(sultanlarLink.getAttribute("href")).toBe("/sultanlar-ligi");
 
-    const lig1Link = screen.getByRole("link", { name: /KFC Kadınlar 1. Ligi/i });
+    const lig1Link = screen.getByRole("link", { name: /Arabica Kadınlar 1. Ligi/i });
     expect(lig1Link).toBeDefined();
     expect(lig1Link.getAttribute("href")).toBe("/kadinlar-1-ligi");
   });

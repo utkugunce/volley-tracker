@@ -15,7 +15,7 @@ export const revalidate = 1800;
 export function generateMetadata(): Metadata {
   const title = "Voleybol Fikstür ve Maç Takvimi";
   const description =
-    "Vodafone Sultanlar Ligi, KFC Kadınlar 1. Ligi ve Kadınlar 2. Ligi maçlarını ay takvimi üzerinde gün gün saatleri, salonları ve sonuçlarıyla takip edin.";
+    "Vodafone Sultanlar Ligi, Arabica Coffee House Kadınlar Voleybol 1. Ligi ve Kadınlar 2. Ligi maçlarını ay takvimi üzerinde gün gün saatleri, salonları ve sonuçlarıyla takip edin.";
   const url = "https://altyapivoleybol.com.tr/takvim";
   return {
     title,
@@ -86,7 +86,7 @@ async function loadMatches(): Promise<{ matches: CalendarMatch[]; loadError: boo
     errorCount++;
   }
 
-  // 2. KFC Kadınlar 1. Ligi
+  // 2. Arabica Coffee House Kadınlar Voleybol 1. Ligi
   try {
     const k1Data = getKadinlar1LigData();
     const k1List = (k1Data.tum_maclar || [])
@@ -124,7 +124,7 @@ export default async function TakvimPage() {
             Voleybol Ligleri Maç Takvimi
           </h1>
           <p className="text-xs text-ink-2 mt-0.5 font-medium">
-            Vodafone Sultanlar Ligi, KFC Kadınlar 1. Ligi ve Kadınlar 2. Ligi resmi TVF bültenleri
+            Vodafone Sultanlar Ligi, Arabica Coffee House Kadınlar Voleybol 1. Ligi ve Kadınlar 2. Ligi resmi TVF bültenleri
           </p>
         </div>
                 <div className="flex items-center justify-between flex-wrap gap-2 p-3 rounded-xl bg-surface border border-line text-xs">

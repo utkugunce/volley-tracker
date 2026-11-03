@@ -51,7 +51,7 @@ export const TakvimCalendar: React.FC<TakvimCalendarProps> = ({
     return [
       { id: "Tümü", label: "Tüm Ligler", count: matches.length },
       { id: "Sultanlar Ligi", label: "Sultanlar Ligi", count: sultanlarCount },
-      { id: "1. Lig", label: "KFC 1. Lig", count: k1Count },
+      { id: "1. Lig", label: "Arabica 1. Lig", count: k1Count },
       { id: "2. Lig", label: "2. Lig", count: k2Count },
     ].filter((t) => t.id === "Tümü" || t.count > 0);
   }, [matches]);

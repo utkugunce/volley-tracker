@@ -90,7 +90,7 @@ export const Kadinlar1LigStandings: React.FC<Kadinlar1LigStandingsProps> = ({
     const csvContent = "data:text/csv;charset=utf-8," + encodeURIComponent(BOM + [header, ...rows].join("\n"));
     const link = document.createElement("a");
     link.setAttribute("href", csvContent);
-    link.setAttribute("download", `KFC_Kadinlar_1_Ligi_${groupLabel.replace(/\s+/g, "_")}_Puan_Durumu.csv`);
+    link.setAttribute("download", `Arabica_Kadinlar_1_Ligi_${groupLabel.replace(/\s+/g, "_")}_Puan_Durumu.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -108,7 +108,7 @@ export const Kadinlar1LigStandings: React.FC<Kadinlar1LigStandingsProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-sm sm:text-base font-bold text-ink">
-                  KFC Kadınlar 1. Ligi
+                  Arabica Coffee House Kadınlar Voleybol 1. Ligi
                 </h2>
                 <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-primary/10 text-primary border border-primary/20">
                   {groupLabel}

@@ -150,11 +150,11 @@ export const PRO_LEAGUES_CONFIG: ProLeagueConfig[] = [
   },
   {
     file: "kadinlar_1_lig.json",
-    name: "KFC Kadınlar 1. Ligi",
+    name: "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
     slug: "kadinlar-1-ligi",
-    category: "KFC Kadınlar 1. Ligi",
+    category: "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
     url: "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
-    aliases: ["kadinlar-1-ligi", "kadinlar-1-lig", "kadinlar-1", "1-lig", "1.lig", "1lig", "kfc-kadinlar-1-ligi"],
+    aliases: ["kadinlar-1-ligi", "kadinlar-1-lig", "kadinlar-1", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi"],
   },
   {
     file: "sultanlar_ligi.json",
@@ -329,7 +329,7 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
     }
   }
 
-  // Profesyonel Ligleri Ekle (Kadınlar 2. Ligi, KFC Kadınlar 1. Ligi, Vodafone Sultanlar Ligi)
+  // Profesyonel Ligleri Ekle (Kadınlar 2. Ligi, Arabica Coffee House Kadınlar Voleybol 1. Ligi, Vodafone Sultanlar Ligi)
   const shouldScanPro = filterNorm === "" || isProOnlyFilter;
   if (shouldScanPro) {
     for (const pConfig of PRO_LEAGUES_CONFIG) {

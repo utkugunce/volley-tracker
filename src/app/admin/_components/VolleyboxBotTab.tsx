@@ -577,7 +577,7 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
                   TVF Kadınlar 2. Ligi ({k2Tournament?.missing_count || 0} Eksik Maç)
                 </option>
                 <option value="kadinlar-1-ligi">
-                  KFC Kadınlar 1. Ligi ({k1Tournament?.missing_count || 0} Eksik Maç)
+                  Arabica Coffee House Kadınlar Voleybol 1. Ligi ({k1Tournament?.missing_count || 0} Eksik Maç)
                 </option>
                 <option value="sultanlar-ligi">
                   Vodafone Sultanlar Ligi ({sultanlarTournament?.missing_count || 0} Eksik Maç)

@@ -5,7 +5,7 @@ import { Kadinlar2LigData } from "@/types/kadinlar2Lig";
 export type Kadinlar1LigData = Kadinlar2LigData;
 
 /**
- * Sunucu tarafında KFC Kadınlar 1. Ligi JSON verisini diskten okur.
+ * Sunucu tarafında Arabica Coffee House Kadınlar Voleybol 1. Ligi JSON verisini diskten okur.
  * Yalnızca sunucu bileşenlerinde (Server Components / Route Handlers) kullanılmalıdır.
  */
 export function getKadinlar1LigData(): Kadinlar1LigData {

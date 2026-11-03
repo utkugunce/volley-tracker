@@ -21,7 +21,7 @@ export const Kadinlar1LigGroupBar: React.FC<Kadinlar1LigGroupBarProps> = ({
     <div
       className={`bg-surface border border-line rounded-xl p-1.5 flex items-center justify-between gap-2 overflow-x-auto no-scrollbar shadow-xs ${className}`}
       role="region"
-      aria-label="KFC Kadınlar 1. Ligi Grup Seçimi"
+      aria-label="Arabica Coffee House Kadınlar Voleybol 1. Ligi Grup Seçimi"
     >
       <div className="flex items-center gap-1.5 shrink-0">
         <span className="text-[11px] font-bold text-ink-3 uppercase tracking-wider px-2 py-1 hidden sm:inline">
