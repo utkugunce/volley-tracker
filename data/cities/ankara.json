@@ -4733,18 +4733,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415017",
+        "url": "https://women.volleybox.net/tr/mamak-gelisim-spor-kulubu-b-u18-baskent-cankayagucu-u18-c415017",
+        "host_name": "Mamak Gelişim Spor Kulübü - B U18",
+        "guest_name": "Başkent Çankayagücü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-16",
+        "vb_time": "14:00",
+        "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-16",
+          "vb_time": "14:00",
+          "vb_hall": "Batıkent Spor Salonu",
+          "details": null
         }
       }
     },
@@ -5188,7 +5195,7 @@
         "synced": true,
         "match_id": "411762",
         "url": "https://women.volleybox.net/tr/nallhan-belediyesi-cayrhan-spor-kulubu-u18-ankaura-spor-kulubu-u18-c411762",
-        "host_name": "Nallıhan Belediyesi Çayırhan Spor Kulübü U18",
+        "host_name": "Çayırhan Spor Kulübü U18",
         "guest_name": "Ankaura Spor Kulübü U18",
         "score": null,
         "has_score": false,
@@ -8179,6 +8186,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 147,
-  "volleybox_sync_updated_at": "2026-11-03T10:49:52.855733"
+  "volleybox_synced_matches": 148,
+  "volleybox_sync_updated_at": "2026-11-03T11:33:18.750396"
 }

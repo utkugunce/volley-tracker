@@ -493,18 +493,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415021",
+        "url": "https://women.volleybox.net/c415021",
+        "host_name": "Hierapolis Spor Kulübü U18",
+        "guest_name": "Denizli Büyükşehir Belediyespor U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-15",
+        "vb_time": "18:30",
+        "vb_hall": "Hacı Ahmet Paralı S.S.",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "18:30",
+          "vb_hall": "Hacı Ahmet Paralı S.S.",
+          "details": null
         }
       }
     },
@@ -621,18 +628,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415022",
+        "url": "https://women.volleybox.net/c415022",
+        "host_name": "Denizli Büyükşehir Belediyespor U18",
+        "guest_name": "Honaz Adil Akan Ortaokulu SK U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-17",
+        "vb_time": "13:00",
+        "vb_hall": "Çivril Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-17",
+          "vb_time": "13:00",
+          "vb_hall": "Çivril Spor Salonu",
+          "details": null
         }
       }
     },
@@ -661,18 +675,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415023",
+        "url": "https://women.volleybox.net/c415023",
+        "host_name": "Denizli Merkez Akademi Spor Kulübü U18",
+        "guest_name": "Denizli Büyükşehir Belediyespor U18",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-20",
+        "vb_time": "18:30",
+        "vb_hall": "Hacı Ahmet Paralı S.S.",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-20",
+          "vb_time": "18:30",
+          "vb_hall": "Hacı Ahmet Paralı S.S.",
+          "details": null
         }
       }
     },
@@ -928,18 +949,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415025",
+        "url": "https://women.volleybox.net/c415025",
+        "host_name": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
+        "guest_name": "Denizli Merkez Akademi Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-02",
+        "vb_time": "18:30",
+        "vb_hall": "Hacı Ahmet Paralı S.S.",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-02",
+          "vb_time": "18:30",
+          "vb_hall": "Hacı Ahmet Paralı S.S.",
+          "details": null
         }
       }
     },
@@ -1003,18 +1031,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "415026",
+        "url": "https://women.volleybox.net/c415026",
+        "host_name": "Denizli Tutku GSK U18",
+        "guest_name": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-04",
+        "vb_time": "18:30",
+        "vb_hall": "Hacı Ahmet Paralı S.S.",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "18:30",
+          "vb_hall": "Hacı Ahmet Paralı S.S.",
+          "details": null
         }
       }
     },
@@ -1037,18 +1072,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
+        "synced": true,
+        "match_id": "",
+        "url": "",
+        "host_name": "Denizli Büyükşehir Belediyespor U18",
+        "guest_name": "Denizli Merkez Akademi Spor Kulübü U18",
+        "score": "0 - 0",
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-04",
+        "vb_time": "20:00",
+        "vb_hall": "Hacı Ahmet Paralı S.S.",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-04",
+          "vb_time": "20:00",
+          "vb_hall": "Hacı Ahmet Paralı S.S.",
+          "details": null
         }
       }
     },
@@ -2032,6 +2074,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 33,
+  "volleybox_synced_matches": 39,
   "volleybox_sync_updated_at": "2026-11-03T10:49:56.084805"
 }

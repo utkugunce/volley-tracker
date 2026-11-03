@@ -103,6 +103,27 @@ def log_step(msg: str):
     print(msg, flush=True)
 
 
+def safe_goto(page, url: str, timeout: int = 60000, wait_until: str = "domcontentloaded", max_retries: int = 2) -> bool:
+    """Sayfayı zaman aşımına ve ağ takılmalarına karşı korumalı ve yeniden denemeli açar."""
+    for attempt in range(1, max_retries + 1):
+        try:
+            page.goto(url, wait_until=wait_until, timeout=timeout)
+            return True
+        except Exception as e:
+            log_step(f"   ⚠️ Sayfa açılırken gecikme/uyarı ({attempt}/{max_retries} - {url}): {e}")
+            if attempt < max_retries:
+                time.sleep(2.0)
+            else:
+                # Son deneme: commit seviyesinde (sunucu yanıt verdiği ilk an) devam et
+                try:
+                    page.goto(url, wait_until="commit", timeout=timeout)
+                    return True
+                except Exception as ex2:
+                    log_step(f"   ❌ Sayfa yüklenemedi: {url} ({ex2})")
+                    return False
+    return False
+
+
 def save_live_screenshot(page):
     """Tarayıcının o anki ekran görüntüsünü panelde canlı izleme için kaydeder."""
     try:
@@ -970,7 +991,12 @@ def run_login_flow():
         )
         apply_saved_auth(context)
         page = context.pages[0] if context.pages else context.new_page()
-        page.goto("https://women.volleybox.net/tr/login", wait_until="domcontentloaded")
+        page.set_default_navigation_timeout(60000)
+        page.set_default_timeout(45000)
+        if not safe_goto(page, "https://women.volleybox.net/tr/login"):
+            log_step("❌ Giriş sayfası açılamadı.")
+            context.close()
+            return
         time.sleep(2.0)
         save_live_screenshot(page)
 
@@ -1461,34 +1487,40 @@ def fill_and_submit_match_on_page(
 
     # 7. '+ Ekle' (#submit_button_hall) butonuna tıkla
     last_response_data = {}
+    last_request_data = {}
+
     def on_response(response):
-        if "add_match" in response.url:
-            try:
+        try:
+            if "add_match" in response.url:
                 last_response_data["url"] = response.url
                 last_response_data["status"] = response.status
-                last_response_data["text"] = response.text()
-            except Exception:
-                pass
+        except Exception:
+            pass
 
-    page.on("response", on_response)
-
-    last_request_data = {}
     def on_request(request):
-        if "add_match" in request.url:
-            try:
+        try:
+            if "add_match" in request.url:
                 last_request_data["url"] = request.url
                 last_request_data["post_data"] = request.post_data
-            except Exception:
-                pass
+        except Exception:
+            pass
 
+    page.on("response", on_response)
     page.on("request", on_request)
 
     submitted = False
+    captured_response = None
     try:
         btn_loc = page.locator("#submit_button_hall, button[type='submit']")
         if btn_loc.count() > 0 and btn_loc.first.is_visible():
-            btn_loc.first.click()
-            submitted = True
+            try:
+                with page.expect_response(lambda r: "add_match" in r.url, timeout=5000) as resp_info:
+                    btn_loc.first.click()
+                    submitted = True
+                captured_response = resp_info.value
+            except Exception:
+                # expect_response timeout olsa dahi buton tıklandı sayılabilir
+                submitted = True
     except Exception:
         pass
 
@@ -1514,6 +1546,21 @@ def fill_and_submit_match_on_page(
                 return false;
             }"""
         )
+
+    # Event listener'ları temizle (hafıza sızıntısı ve eşzamanlı çakışmaları engeller)
+    try:
+        page.remove_listener("response", on_response)
+        page.remove_listener("request", on_request)
+    except Exception:
+        pass
+
+    if captured_response:
+        try:
+            last_response_data["url"] = captured_response.url
+            last_response_data["status"] = captured_response.status
+            last_response_data["text"] = captured_response.text()
+        except Exception:
+            pass
 
     if not submitted:
         return False, "Form içindeki '+ Ekle' (#submit_button_hall) gönderme butonu bulunamadı"
@@ -1779,6 +1826,8 @@ def main():
         )
         apply_saved_auth(context)
         page = context.pages[0] if context.pages else context.new_page()
+        page.set_default_navigation_timeout(60000)
+        page.set_default_timeout(45000)
 
         for t_url, m_list in by_tournament.items():
             if added_total >= args.limit:
@@ -1790,7 +1839,9 @@ def main():
 
             matches_url = to_tr_matches_url(t_url)
             log_step(f"\n🌐 Turnuva sayfası açılıyor: {matches_url}")
-            page.goto(matches_url, wait_until="domcontentloaded")
+            if not safe_goto(page, matches_url):
+                log_step(f"⚠️ Turnuva sayfası ({matches_url}) açılamadı veya zaman aşımına uğradı. Bir sonraki turnuvaya geçiliyor...")
+                continue
             time.sleep(2.0)
             save_live_screenshot(page)
 
@@ -1798,7 +1849,9 @@ def main():
             uid = page.evaluate("() => (typeof window.userId !== 'undefined' ? Number(window.userId) : 0)")
             if not uid or uid <= 0:
                 log_step("🔐 Volleybox oturumu açık değil. Giriş sayfasına yönlendiriliyor...")
-                page.goto("https://women.volleybox.net/tr/login", wait_until="domcontentloaded")
+                if not safe_goto(page, "https://women.volleybox.net/tr/login"):
+                    log_step("❌ Giriş sayfası açılamadı, turnuva atlanıyor...")
+                    continue
                 time.sleep(2.0)
                 save_live_screenshot(page)
 
@@ -1820,7 +1873,9 @@ def main():
                     log_step("❌ Volleybox girişi yapılmadığı için işlem durduruldu. Lütfen önce 'npm run push:volleybox -- --login' ile yerel tarayıcıda oturum açın.")
                     context.close()
                     return
-                page.goto(matches_url, wait_until="domcontentloaded")
+                if not safe_goto(page, matches_url):
+                    log_step(f"⚠️ Turnuva sayfası ({matches_url}) açılamadı, bir sonraki turnuvaya geçiliyor...")
+                    continue
                 time.sleep(2.0)
                 save_live_screenshot(page)
 

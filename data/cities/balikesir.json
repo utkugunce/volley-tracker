@@ -779,18 +779,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415019",
+        "url": "https://women.volleybox.net/tr/balkesir-eka-spor-kulubu-u16-balkesir-ds-spor-u16-c415019",
+        "host_name": "Balıkesir EKA Spor Kulubü U16",
+        "guest_name": "Balıkesir DSİ Spor U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-26",
+        "vb_time": "18:00",
+        "vb_hall": "Kurtdereli Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-26",
+          "vb_time": "18:00",
+          "vb_hall": "Kurtdereli Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3025,6 +3032,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 52,
-  "volleybox_sync_updated_at": "2026-11-03T10:49:54.367196"
+  "volleybox_synced_matches": 53,
+  "volleybox_sync_updated_at": "2026-11-03T11:34:21.918354"
 }
