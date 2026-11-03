@@ -8714,15 +8714,22 @@
       "internal_category": "Yıldız Kızlar Süper Lig - Yıldız Kızlar B Grubu ( Merkez )",
       "city": "Balıkesir",
       "city_slug": "balikesir",
-      "matched_as": "Bandırma Voleybol Spor Kulübü U16",
-      "volleybox_url": "https://women.volleybox.net/bandrma-voleybol-kulubu-u16-t42315",
+      "matched_as": "Balıkesir Voleybol Spor Kulübü U16",
+      "volleybox_url": "https://women.volleybox.net/balkesir-voleybol-spor-kulubu-u16-t42297",
       "age_category": "U16",
       "confidence": "verified",
       "note": "Auto-mapped from city roster",
       "verified_at": "2026-09-20",
-      "local_logo": null,
-      "logo_url": "/media/upload/teams/1759920989PpPb0.png",
-      "aliases": []
+      "local_logo": "/logos/balkesir-voleybol-spor-kulubu-u16-t42297.png",
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1766399299l8B1c.png",
+      "aliases": [
+        "BALIKESİR VOLEYBOL SPOR",
+        "Balıkesir Voleybol Spor Kulübü U16",
+        "Balıkesir Voleybol Akademi Spor Kulübü U16",
+        "Balıkesir Voleybol Akademi Spor",
+        "Balıkesir Voleybol Spor Kulübü"
+      ],
+      "team_id": "42297"
     },
     {
       "internal_name": "BALIKESİR VOLEYBOL SPOR",
@@ -8796,10 +8803,14 @@
       "local_logo": "/logos/bandrma-voleybol-kulubu-u16-t42315.png",
       "logo_url": "https://volleybox.net/media/upload/teams/big_1759920989PpPb0.png",
       "aliases": [
-        "Bandırma Voleybol Spor Kulübü U16",
+        "BANDIRMA VOLEYBOL SPOR",
+        "Bandırma Voleybol",
+        "Bandırma Voleybol SK U16",
+        "Bandırma Voleybol Spor",
         "Bandırma Voleybol Spor Kulübü",
-        "BANDIRMA VOLEYBOL SPOR"
-      ]
+        "Bandırma Voleybol Spor Kulübü U16"
+      ],
+      "team_id": "42315"
     },
     {
       "internal_name": "BANDIRMA ÇELİK SPOR",
@@ -12241,16 +12252,21 @@
       "age_category": "U16",
       "confidence": "verified",
       "aliases": [
-        "Balıkesir Voleybol Akademi Spor Kulübü",
-        "Balıkesir Voleybol Akademi Spor Kulübü U18",
-        "Balıkesir Voleybol Akademi Spor Kulübü U16",
+        "BALIKESİR VOLEYBOL SPOR",
+        "Balıkesir Voleybol",
+        "Balıkesir Voleybol Akademi",
         "Balıkesir Voleybol Akademi Spor",
-        "Balıkesir Voleybol Spor Kulübü U16",
-        "Balıkesir Voleybol Spor Kulübü"
+        "Balıkesir Voleybol Akademi Spor Kulübü",
+        "Balıkesir Voleybol Akademi Spor Kulübü U16",
+        "Balıkesir Voleybol Akademi Spor Kulübü U18",
+        "Balıkesir Voleybol Spor",
+        "Balıkesir Voleybol Spor Kulübü",
+        "Balıkesir Voleybol Spor Kulübü U16"
       ],
       "verified_at": "2026-09-24",
       "local_logo": "/logos/balkesir-voleybol-spor-kulubu-u16-t42297.png",
-      "logo_url": "https://volleybox.net/media/upload/teams/big_1766399299l8B1c.png"
+      "logo_url": "https://volleybox.net/media/upload/teams/big_1766399299l8B1c.png",
+      "team_id": "42297"
     },
     {
       "internal_name": "BANDIRMA BORDO SPOR A",
@@ -18609,10 +18625,14 @@
       "local_logo": null,
       "logo_url": null,
       "aliases": [
-        "Bandırma Voleybol Spor Kulübü U16",
+        "BANDIRMA VOLEYBOL SPOR",
+        "Bandırma Voleybol",
+        "Bandırma Voleybol SK U16",
+        "Bandırma Voleybol Spor",
         "Bandırma Voleybol Spor Kulübü",
-        "BANDIRMA VOLEYBOL SPOR"
-      ]
+        "Bandırma Voleybol Spor Kulübü U16"
+      ],
+      "team_id": "42315"
     },
     {
       "internal_name": "Balıkesir Büyükşehir Belediyespor Merkez U16",
@@ -22944,6 +22964,762 @@
         "Milas All Star Akademi Spor Kulübü U16",
         "Milas All Star SK U16",
         "Milas All Star"
+      ]
+    },
+    {
+      "internal_name": "VAKIFBANK",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "VakıfBank",
+      "volleybox_url": "https://women.volleybox.net/vakfbank-t2309",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682955.png",
+      "aliases": [
+        "VakıfBank",
+        "VAKIFBANK"
+      ]
+    },
+    {
+      "internal_name": "FENERBAHÇE MEDICANA",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Fenerbahçe Medicana",
+      "volleybox_url": "https://women.volleybox.net/fenerbahce-t2110",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682957.png",
+      "aliases": [
+        "Fenerbahçe Medicana",
+        "FENERBAHÇE MEDICANA"
+      ]
+    },
+    {
+      "internal_name": "TÜRK HAVA YOLLARI",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Türk Hava Yolları SK",
+      "volleybox_url": "https://women.volleybox.net/turk-hava-yollar-sk-t5656",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682965.png",
+      "aliases": [
+        "Türk Hava Yolları SK",
+        "TÜRK HAVA YOLLARI"
+      ]
+    },
+    {
+      "internal_name": "ECZACIBAŞI PERON İSTANBUL",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Eczacıbaşı Peron İstanbul",
+      "volleybox_url": "https://women.volleybox.net/eczacbas-dynavit-t2102",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682954.png",
+      "aliases": [
+        "Eczacıbaşı Peron İstanbul",
+        "ECZACIBAŞI PERON İSTANBUL"
+      ]
+    },
+    {
+      "internal_name": "ARAS KARGO",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İzmir",
+      "city_slug": "i̇zmir",
+      "matched_as": "Aras Kargo Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/aras-kargo-spor-kulubu-t23393",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682963.png",
+      "aliases": [
+        "Aras Kargo Spor Kulübü",
+        "ARAS KARGO"
+      ]
+    },
+    {
+      "internal_name": "GÖZTEPE YUPPO",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İzmir",
+      "city_slug": "i̇zmir",
+      "matched_as": "Göztepe Yuppo",
+      "volleybox_url": "https://women.volleybox.net/goztepe-sk-t2789",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682962.png",
+      "aliases": [
+        "Göztepe Yuppo",
+        "GÖZTEPE YUPPO"
+      ]
+    },
+    {
+      "internal_name": "KUZEYBORU",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Kuzeyboru",
+      "volleybox_url": "https://women.volleybox.net/kuzeyboru-t7366",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682959.png",
+      "aliases": [
+        "Kuzeyboru",
+        "KUZEYBORU"
+      ]
+    },
+    {
+      "internal_name": "GALATASARAY DAIKIN",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Galatasaray Daikin",
+      "volleybox_url": "https://women.volleybox.net/galatasaray-daikin-t2114",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682966.png",
+      "aliases": [
+        "Galatasaray Daikin",
+        "GALATASARAY DAIKIN"
+      ]
+    },
+    {
+      "internal_name": "BEŞİKTAŞ",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Beşiktaş",
+      "volleybox_url": "https://women.volleybox.net/besiktas-t2041",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682956.png",
+      "aliases": [
+        "Beşiktaş",
+        "BEŞİKTAŞ"
+      ]
+    },
+    {
+      "internal_name": "İLBANK",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "İlbank",
+      "volleybox_url": "https://women.volleybox.net/lbank-t2495",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682961.png",
+      "aliases": [
+        "İlbank",
+        "İLBANK"
+      ]
+    },
+    {
+      "internal_name": "ZEREN SPOR",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Zeren Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-t20927",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682964.png",
+      "aliases": [
+        "Zeren Spor Kulübü",
+        "ZEREN SPOR"
+      ]
+    },
+    {
+      "internal_name": "NİLÜFER BELEDİYESPOR EKER",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Nilüfer Belediyespor Eker",
+      "volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-t2202",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682953.png",
+      "aliases": [
+        "Nilüfer Belediyespor Eker",
+        "NİLÜFER BELEDİYESPOR EKER"
+      ]
+    },
+    {
+      "internal_name": "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "Manisa",
+      "city_slug": "manisa",
+      "matched_as": "Manisa Büyükşehir Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/manisa-bbsk-t23887",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682958.png",
+      "aliases": [
+        "Manisa Büyükşehir Belediyespor Kulübü",
+        "MANİSA BÜYÜKŞEHİR BELEDİYE SPOR"
+      ]
+    },
+    {
+      "internal_name": "SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ",
+      "internal_category": "Vodafone Sultanlar Ligi",
+      "city": "Afyonkarahisar",
+      "city_slug": "afyonkarahisar",
+      "matched_as": "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/afyon-belediye-yuntas-sk-t31955",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF Vodafone Sultanlar Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7682960.png",
+      "aliases": [
+        "Sinnada Hotels Afyon Belediye Yüntaş Spor Kulübü",
+        "SİNNADA HOTELS AFYON BELEDİYE YÜNTAŞ"
+      ]
+    },
+    {
+      "internal_name": "BAHÇELİEVLER BELEDİYE SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Bahçelievler Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/bahcelievler-belediyespor-t10062",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702677.png",
+      "aliases": [
+        "Bahçelievler Belediyespor",
+        "BAHÇELİEVLER BELEDİYE SPOR"
+      ]
+    },
+    {
+      "internal_name": "KARŞIYAKA",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "i̇zmir",
+      "matched_as": "Endo Karşıyaka",
+      "volleybox_url": "https://women.volleybox.net/karsyaka-sk-t2101",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702688.png",
+      "aliases": [
+        "Endo Karşıyaka",
+        "KARŞIYAKA"
+      ]
+    },
+    {
+      "internal_name": "DENİZLİ BÜYÜKŞEHİR BELEDİYE SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Denizli",
+      "city_slug": "denizli",
+      "matched_as": "Denizli Büyükşehir Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/denizli-buyuksehir-belediyespor-t17128",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702680.png",
+      "aliases": [
+        "Denizli Büyükşehir Belediyespor",
+        "DENİZLİ BÜYÜKŞEHİR BELEDİYE SPOR"
+      ]
+    },
+    {
+      "internal_name": "YEŞİLYURT",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Yeşilyurt Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/yesilyurt-t2332",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702698.png",
+      "aliases": [
+        "Yeşilyurt Spor Kulübü",
+        "YEŞİLYURT"
+      ]
+    },
+    {
+      "internal_name": "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Aydın",
+      "city_slug": "aydin",
+      "matched_as": "Aydın Büyükşehir Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/aydn-buyuksehir-belediyespor-t6309",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702676.png",
+      "aliases": [
+        "Aydın Büyükşehir Belediyespor",
+        "AYDIN BÜYÜKŞEHİR BELEDİYE SPOR"
+      ]
+    },
+    {
+      "internal_name": "İBB SPOR KULÜBÜ",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "İBB Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/bb-spor-kulubu-t2999",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702684.png",
+      "aliases": [
+        "İBB Spor Kulübü",
+        "İBB SPOR KULÜBÜ"
+      ]
+    },
+    {
+      "internal_name": "ECZACIBAŞI",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Eczacıbaşı II",
+      "volleybox_url": "https://women.volleybox.net/eczacbas-ii-t13581",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702681.png",
+      "aliases": [
+        "Eczacıbaşı II",
+        "ECZACIBAŞI"
+      ]
+    },
+    {
+      "internal_name": "AKHİSAR BELEDİYESPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Manisa",
+      "city_slug": "manisa",
+      "matched_as": "Akhisar Belediyespor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/akhisar-belediyespor-kulubu-t16792",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702672.png",
+      "aliases": [
+        "Akhisar Belediyespor Kulübü",
+        "AKHİSAR BELEDİYESPOR"
+      ]
+    },
+    {
+      "internal_name": "BODRUM BELEDİYESİ BODRUMSPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Muğla",
+      "city_slug": "mugla",
+      "matched_as": "Bodrum Belediyesi Bodrumspor",
+      "volleybox_url": "https://women.volleybox.net/bodrum-belediyesi-bodrumspor-t19927",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702678.png",
+      "aliases": [
+        "Bodrum Belediyesi Bodrumspor",
+        "BODRUM BELEDİYESİ BODRUMSPOR"
+      ]
+    },
+    {
+      "internal_name": "VAKIFBANK",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Vakıfbank II",
+      "volleybox_url": "https://women.volleybox.net/vakfbank-ii-t7387",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702697.png",
+      "aliases": [
+        "Vakıfbank II",
+        "VAKIFBANK"
+      ]
+    },
+    {
+      "internal_name": "İZMİR DSİ",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "i̇zmir",
+      "matched_as": "İzmir DSİ Spor",
+      "volleybox_url": "https://women.volleybox.net/zmir-ds-spor-t16172",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702686.png",
+      "aliases": [
+        "İzmir DSİ Spor",
+        "İZMİR DSİ"
+      ]
+    },
+    {
+      "internal_name": "ATEŞ WIND POWER BERGAMA BELEDİYESİ SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "i̇zmir",
+      "matched_as": "Ateş Wind Power Bergama Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/bergama-belediyesi-gsk-t7365",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702675.png",
+      "aliases": [
+        "Ateş Wind Power Bergama Belediyespor",
+        "ATEŞ WIND POWER BERGAMA BELEDİYESİ SPOR"
+      ]
+    },
+    {
+      "internal_name": "FENERBAHÇE MEDICANA",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İstanbul",
+      "city_slug": "i̇stanbul",
+      "matched_as": "Fenerbahçe Medicana II",
+      "volleybox_url": "https://women.volleybox.net/fenerbahce-ll-t10043",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702682.png",
+      "aliases": [
+        "Fenerbahçe Medicana II",
+        "FENERBAHÇE MEDICANA"
+      ]
+    },
+    {
+      "internal_name": "ALTINORDU",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "İzmir",
+      "city_slug": "i̇zmir",
+      "matched_as": "Altınordu Voleybol",
+      "volleybox_url": "https://women.volleybox.net/altnordu-voleybol-t11785",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7702674.png",
+      "aliases": [
+        "Altınordu Voleybol",
+        "ALTINORDU"
+      ]
+    },
+    {
+      "internal_name": "MERİNOS VOLEYBOL",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Gaziantep",
+      "city_slug": "gaziantep",
+      "matched_as": "Merinos SK",
+      "volleybox_url": "https://women.volleybox.net/merinos-sk-t7345",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712691.png",
+      "aliases": [
+        "Merinos SK",
+        "MERİNOS VOLEYBOL"
+      ]
+    },
+    {
+      "internal_name": "KUZEYBORU MAXİPİPE SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Aksaray",
+      "city_slug": "aksaray",
+      "matched_as": "Kuzeyboru Maxipipe Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/kuzeyboru-ll-t38907",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712689.png",
+      "aliases": [
+        "Kuzeyboru Maxipipe Spor Kulübü",
+        "KUZEYBORU MAXİPİPE SPOR"
+      ]
+    },
+    {
+      "internal_name": "PTT",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "PTT Spor",
+      "volleybox_url": "https://women.volleybox.net/ptt-spor-t6614",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712694.png",
+      "aliases": [
+        "PTT Spor",
+        "PTT"
+      ]
+    },
+    {
+      "internal_name": "07 MEGA SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "07 Mega Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/07-mega-spor-kulubu-t16892",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712671.png",
+      "aliases": [
+        "07 Mega Spor Kulübü",
+        "07 MEGA SPOR"
+      ]
+    },
+    {
+      "internal_name": "MURATPAŞA BLD. AÇI KOLEJİ",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "Muratpaşa Belediyespor Açı Koleji",
+      "volleybox_url": "https://women.volleybox.net/muratpasa-bld-ac-koleji-t15600",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712692.png",
+      "aliases": [
+        "Muratpaşa Belediyespor Açı Koleji",
+        "MURATPAŞA BLD. AÇI KOLEJİ"
+      ]
+    },
+    {
+      "internal_name": "KARAYOLLARI",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Karayolları Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/karayollar-spor-kulubu-t3000",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712687.png",
+      "aliases": [
+        "Karayolları Spor Kulübü",
+        "KARAYOLLARI"
+      ]
+    },
+    {
+      "internal_name": "İBA KİMYA TED ANKARA KOLEJLİLER",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "İba Kimya TED Ankara Kolejliler",
+      "volleybox_url": "https://women.volleybox.net/ted-ankara-kolejliler-t2285",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712683.png",
+      "aliases": [
+        "İba Kimya TED Ankara Kolejliler",
+        "İBA KİMYA TED ANKARA KOLEJLİLER"
+      ]
+    },
+    {
+      "internal_name": "TRENDY HOTELS MANAVGAT BELEDİYE SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Antalya",
+      "city_slug": "antalya",
+      "matched_as": "Trendy Hotels Manavgat Belediyespor",
+      "volleybox_url": "https://women.volleybox.net/trendy-hotels-manavgat-belediyespor-t22708",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712690.png",
+      "aliases": [
+        "Trendy Hotels Manavgat Belediyespor",
+        "TRENDY HOTELS MANAVGAT BELEDİYE SPOR"
+      ]
+    },
+    {
+      "internal_name": "SAKARYA VOLEYBOL",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Sakarya",
+      "city_slug": "sakarya",
+      "matched_as": "Sakarya Voleybol SK",
+      "volleybox_url": "https://women.volleybox.net/sakarya-voleybol-t12299",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712695.png",
+      "aliases": [
+        "Sakarya Voleybol SK",
+        "SAKARYA VOLEYBOL"
+      ]
+    },
+    {
+      "internal_name": "BÜYÜKŞEHİR BELEDİYESİ ANKARA SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Ankara Büyükşehir Belediyesi Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/buyuksehir-belediyesi-ankara-spor-t18653",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712679.png",
+      "aliases": [
+        "Ankara Büyükşehir Belediyesi Spor Kulübü",
+        "BÜYÜKŞEHİR BELEDİYESİ ANKARA SPOR"
+      ]
+    },
+    {
+      "internal_name": "NİLÜFER BELEDİYESPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Bursa",
+      "city_slug": "bursa",
+      "matched_as": "Nilüfer Belediyespor II",
+      "volleybox_url": "https://women.volleybox.net/nilufer-belediyespor-ii-t13582",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712693.png",
+      "aliases": [
+        "Nilüfer Belediyespor II",
+        "NİLÜFER BELEDİYESPOR"
+      ]
+    },
+    {
+      "internal_name": "İLBANK",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "İlbank ll",
+      "volleybox_url": "https://women.volleybox.net/lbank-ll-t16681",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712685.png",
+      "aliases": [
+        "İlbank ll",
+        "İLBANK"
+      ]
+    },
+    {
+      "internal_name": "ALFEMO ZEREN SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Alfemo Zeren Spor",
+      "volleybox_url": "https://women.volleybox.net/zeren-spor-kulubu-ii-t29358",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712673.png",
+      "aliases": [
+        "Alfemo Zeren Spor",
+        "ALFEMO ZEREN SPOR"
+      ]
+    },
+    {
+      "internal_name": "SİGORTA SHOP SPOR",
+      "internal_category": "KFC Kadınlar 1. Ligi",
+      "city": "Ankara",
+      "city_slug": "ankara",
+      "matched_as": "Sigorta Shop Spor Kulübü",
+      "volleybox_url": "https://women.volleybox.net/kecioren-belediyesi-sigortashop-spor-kulubu-t13477",
+      "age_category": "Büyük Kadınlar",
+      "confidence": "verified",
+      "note": "TVF KFC Kadınlar 1. Ligi resmi takımı",
+      "verified_at": "2026-11-03",
+      "local_logo": null,
+      "logo_url": "https://tvfportal.com/TakimLogo/7712696.png",
+      "aliases": [
+        "Sigorta Shop Spor Kulübü",
+        "SİGORTA SHOP SPOR"
       ]
     }
   ],

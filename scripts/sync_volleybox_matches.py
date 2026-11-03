@@ -178,35 +178,54 @@ def team_match_score(tvf_name: str, vb_name: str, synonyms: set) -> int:
     tvf_base, tvf_letter = extract_team_meta(tvf_name)
     vb_base, vb_letter = extract_team_meta(vb_name)
 
-    # 0. Doğrudan veya Synonym / Alias Eşleşmesi (En Yüksek Öncelik):
+    # 0. Doğrudan TVF adı ile Volleybox adı eşitliği:
+    if t_norm and v_norm and t_norm == v_norm:
+        if t_norm in CITY_STOPWORDS or v_norm in CITY_STOPWORDS:
+            if (
+                tvf_name.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
+                or clean_for_stopword_compare(tvf_name) == clean_for_stopword_compare(vb_name)
+            ):
+                return 100
+        else:
+            return 100
+
+    if tvf_base and vb_base and (tvf_base == vb_base or tvf_base.replace(" ", "") == vb_base.replace(" ", "")):
+        letter_compat = (tvf_letter == vb_letter) or (tvf_letter in (None, "a") and vb_letter in (None, "a"))
+        if letter_compat:
+            if tvf_base not in CITY_STOPWORDS and vb_base not in CITY_STOPWORDS:
+                return 100
+            elif (
+                tvf_name.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
+                or clean_for_stopword_compare(tvf_name) == clean_for_stopword_compare(vb_name)
+            ):
+                return 100
+
+    # 1. Synonym / Alias Eşleşmesi (En Yüksek Öncelik):
     for syn in synonyms:
         s_norm = normalize_name(syn)
-        if s_norm and t_norm and s_norm == t_norm:
+        if s_norm and v_norm and s_norm == v_norm:
             # Sadece şehir stopword'ü ise tam isim eşitliğini kontrol et
-            if s_norm in CITY_STOPWORDS or t_norm in CITY_STOPWORDS:
+            if s_norm in CITY_STOPWORDS or v_norm in CITY_STOPWORDS:
                 if (
-                    syn.lower().replace(" ", "") == tvf_name.lower().replace(" ", "")
-                    or clean_for_stopword_compare(syn) == clean_for_stopword_compare(tvf_name)
+                    syn.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
+                    or clean_for_stopword_compare(syn) == clean_for_stopword_compare(vb_name)
                 ):
                     return 100
             else:
                 return 100
 
         s_base, s_letter = extract_team_meta(syn)
-        if s_base and tvf_base:
-            if (s_base == tvf_base or s_base.replace(" ", "") == tvf_base.replace(" ", "")):
-                letter_compat = (s_letter == tvf_letter) or (s_letter in (None, "a") and tvf_letter in (None, "a"))
+        if s_base and vb_base:
+            if (s_base == vb_base or s_base.replace(" ", "") == vb_base.replace(" ", "")):
+                letter_compat = (s_letter == vb_letter) or (s_letter in (None, "a") and vb_letter in (None, "a"))
                 if letter_compat:
-                    if s_base not in CITY_STOPWORDS and tvf_base not in CITY_STOPWORDS:
+                    if s_base not in CITY_STOPWORDS and vb_base not in CITY_STOPWORDS:
                         return 100
                     elif (
-                        syn.lower().replace(" ", "") == tvf_name.lower().replace(" ", "")
-                        or clean_for_stopword_compare(syn) == clean_for_stopword_compare(tvf_name)
+                        syn.lower().replace(" ", "") == vb_name.lower().replace(" ", "")
+                        or clean_for_stopword_compare(syn) == clean_for_stopword_compare(vb_name)
                     ):
                         return 100
-
-    tvf_base, tvf_letter = extract_team_meta(tvf_name)
-    vb_base, vb_letter = extract_team_meta(vb_name)
 
     if not tvf_base or not vb_base:
         return 0
