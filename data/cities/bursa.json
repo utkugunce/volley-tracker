@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-03T12:19:46.779399+03:00",
+  "updated_at": "2026-11-03T13:23:35.241640+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 70,
+  "total_matches": 72,
   "source": "https://bursa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -2082,7 +2082,75 @@
       }
     },
     {
-      "id": "bursa-20260926-035",
+      "id": "bursa-20261113-035",
+      "city": "Bursa",
+      "date": "2026-11-13",
+      "time": "19:00",
+      "hall": "Orhangazi",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "11",
+      "home_team": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
+      "away_team": "Güner Karakaya Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20261113-036",
+      "city": "Bursa",
+      "date": "2026-11-13",
+      "time": "20:00",
+      "hall": "Çekirge",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "12",
+      "home_team": "MG Spor Kulübü",
+      "away_team": "Bursa Koç Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "bursa-20260926-037",
       "city": "Bursa",
       "date": "2026-09-26",
       "time": "18:00",
@@ -2127,7 +2195,7 @@
       }
     },
     {
-      "id": "bursa-20260930-036",
+      "id": "bursa-20260930-038",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "18:00",
@@ -2172,7 +2240,7 @@
       }
     },
     {
-      "id": "bursa-20261001-037",
+      "id": "bursa-20261001-039",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:00",
@@ -2217,7 +2285,7 @@
       }
     },
     {
-      "id": "bursa-20261015-038",
+      "id": "bursa-20261015-040",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -2263,7 +2331,7 @@
       }
     },
     {
-      "id": "bursa-20261015-039",
+      "id": "bursa-20261015-041",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -2308,7 +2376,7 @@
       }
     },
     {
-      "id": "bursa-20261016-040",
+      "id": "bursa-20261016-042",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "20:00",
@@ -2353,7 +2421,7 @@
       }
     },
     {
-      "id": "bursa-20261027-041",
+      "id": "bursa-20261027-043",
       "city": "Bursa",
       "date": "2026-10-27",
       "time": "20:00",
@@ -2398,7 +2466,7 @@
       }
     },
     {
-      "id": "bursa-20261028-042",
+      "id": "bursa-20261028-044",
       "city": "Bursa",
       "date": "2026-10-28",
       "time": "14:00",
@@ -2443,7 +2511,7 @@
       }
     },
     {
-      "id": "bursa-20261028-043",
+      "id": "bursa-20261028-045",
       "city": "Bursa",
       "date": "2026-10-28",
       "time": "16:00",
@@ -2489,7 +2557,7 @@
       }
     },
     {
-      "id": "bursa-20261112-044",
+      "id": "bursa-20261112-046",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "18:00",
@@ -2530,7 +2598,7 @@
       }
     },
     {
-      "id": "bursa-20261112-045",
+      "id": "bursa-20261112-047",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "20:00",
@@ -2571,7 +2639,7 @@
       }
     },
     {
-      "id": "bursa-20261113-046",
+      "id": "bursa-20261113-048",
       "city": "Bursa",
       "date": "2026-11-13",
       "time": "18:00",
@@ -2612,7 +2680,7 @@
       }
     },
     {
-      "id": "bursa-20260928-047",
+      "id": "bursa-20260928-049",
       "city": "Bursa",
       "date": "2026-09-28",
       "time": "20:00",
@@ -2657,7 +2725,7 @@
       }
     },
     {
-      "id": "bursa-20261001-048",
+      "id": "bursa-20261001-050",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -2702,7 +2770,7 @@
       }
     },
     {
-      "id": "bursa-20261004-049",
+      "id": "bursa-20261004-051",
       "city": "Bursa",
       "date": "2026-10-04",
       "time": "19:30",
@@ -2748,7 +2816,7 @@
       }
     },
     {
-      "id": "bursa-20261011-050",
+      "id": "bursa-20261011-052",
       "city": "Bursa",
       "date": "2026-10-11",
       "time": "19:30",
@@ -2794,7 +2862,7 @@
       }
     },
     {
-      "id": "bursa-20261014-051",
+      "id": "bursa-20261014-053",
       "city": "Bursa",
       "date": "2026-10-14",
       "time": "20:00",
@@ -2840,7 +2908,7 @@
       }
     },
     {
-      "id": "bursa-20261015-052",
+      "id": "bursa-20261015-054",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "18:00",
@@ -2885,7 +2953,7 @@
       }
     },
     {
-      "id": "bursa-20261024-053",
+      "id": "bursa-20261024-055",
       "city": "Bursa",
       "date": "2026-10-24",
       "time": "19:00",
@@ -2930,7 +2998,7 @@
       }
     },
     {
-      "id": "bursa-20261029-054",
+      "id": "bursa-20261029-056",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "14:00",
@@ -2975,7 +3043,7 @@
       }
     },
     {
-      "id": "bursa-20261029-055",
+      "id": "bursa-20261029-057",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "16:00",
@@ -3020,7 +3088,7 @@
       }
     },
     {
-      "id": "bursa-20261107-056",
+      "id": "bursa-20261107-058",
       "city": "Bursa",
       "date": "2026-11-07",
       "time": "19:30",
@@ -3061,7 +3129,7 @@
       }
     },
     {
-      "id": "bursa-20261112-057",
+      "id": "bursa-20261112-059",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "20:00",
@@ -3102,7 +3170,7 @@
       }
     },
     {
-      "id": "bursa-20260930-058",
+      "id": "bursa-20260930-060",
       "city": "Bursa",
       "date": "2026-09-30",
       "time": "20:00",
@@ -3147,7 +3215,7 @@
       }
     },
     {
-      "id": "bursa-20261001-059",
+      "id": "bursa-20261001-061",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "20:00",
@@ -3192,7 +3260,7 @@
       }
     },
     {
-      "id": "bursa-20261012-060",
+      "id": "bursa-20261012-062",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "18:00",
@@ -3239,7 +3307,7 @@
       }
     },
     {
-      "id": "bursa-20261016-061",
+      "id": "bursa-20261016-063",
       "city": "Bursa",
       "date": "2026-10-16",
       "time": "18:00",
@@ -3284,7 +3352,7 @@
       }
     },
     {
-      "id": "bursa-20261025-062",
+      "id": "bursa-20261025-064",
       "city": "Bursa",
       "date": "2026-10-25",
       "time": "16:00",
@@ -3329,7 +3397,7 @@
       }
     },
     {
-      "id": "bursa-20261026-063",
+      "id": "bursa-20261026-065",
       "city": "Bursa",
       "date": "2026-10-26",
       "time": "18:00",
@@ -3374,7 +3442,7 @@
       }
     },
     {
-      "id": "bursa-20261001-064",
+      "id": "bursa-20261001-066",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -3419,7 +3487,7 @@
       }
     },
     {
-      "id": "bursa-20261001-065",
+      "id": "bursa-20261001-067",
       "city": "Bursa",
       "date": "2026-10-01",
       "time": "18:30",
@@ -3466,7 +3534,7 @@
       }
     },
     {
-      "id": "bursa-20261012-066",
+      "id": "bursa-20261012-068",
       "city": "Bursa",
       "date": "2026-10-12",
       "time": "19:00",
@@ -3513,7 +3581,7 @@
       }
     },
     {
-      "id": "bursa-20261015-067",
+      "id": "bursa-20261015-069",
       "city": "Bursa",
       "date": "2026-10-15",
       "time": "20:00",
@@ -3558,7 +3626,7 @@
       }
     },
     {
-      "id": "bursa-20261024-068",
+      "id": "bursa-20261024-070",
       "city": "Bursa",
       "date": "2026-10-24",
       "time": "13:00",
@@ -3604,7 +3672,7 @@
       }
     },
     {
-      "id": "bursa-20261029-069",
+      "id": "bursa-20261029-071",
       "city": "Bursa",
       "date": "2026-10-29",
       "time": "18:00",
@@ -3649,7 +3717,7 @@
       }
     },
     {
-      "id": "bursa-20261112-070",
+      "id": "bursa-20261112-072",
       "city": "Bursa",
       "date": "2026-11-12",
       "time": "18:00",
@@ -3691,5 +3759,5 @@
     }
   ],
   "volleybox_synced_matches": 70,
-  "volleybox_sync_updated_at": "2026-11-03T12:44:39.322119"
+  "volleybox_sync_updated_at": "2026-11-03T13:24:41.768894"
 }

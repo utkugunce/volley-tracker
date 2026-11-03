@@ -1,7 +1,23 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import { Play, Square, RefreshCw, KeyRound, Eye, Terminal, CheckCircle2, AlertTriangle, ExternalLink } from "lucide-react";
+import {
+  Play,
+  Square,
+  RefreshCw,
+  KeyRound,
+  Eye,
+  Terminal,
+  CheckCircle2,
+  AlertTriangle,
+  ExternalLink,
+  ShieldAlert,
+  Sparkles,
+  Trash2,
+  ArrowRight,
+  Activity,
+  Check,
+} from "lucide-react";
 import { toErrorLike } from "@/utils/errors";
 import type {
   VolleyboxBotJobState,
@@ -19,6 +35,52 @@ interface BotStatusResponse extends VolleyboxBotJobState {
   isLocalRuntime?: boolean;
 }
 
+interface CandidateSuggestion {
+  team_id: string;
+  name: string;
+  url: string;
+  city: string;
+  score: number;
+}
+
+interface MissingTeamItem {
+  team_name: string;
+  city: string;
+  city_slug: string;
+  category: string;
+  match_count: number;
+  blocked_matches: string[];
+  suggestions: CandidateSuggestion[];
+}
+
+interface QuarantinedMatchItem {
+  id: string;
+  city: string;
+  city_slug: string;
+  category: string;
+  home_team: string;
+  away_team: string;
+  date: string;
+  time: string;
+  tournament_url: string;
+  reason: string;
+  failed_at: string;
+  attempts: number;
+}
+
+interface BotHealthReport {
+  generated_at: string;
+  city_filter: string;
+  total_candidates: number;
+  ready_count: number;
+  quarantined_count: number;
+  missing_teams_count: number;
+  blocked_by_missing_teams: number;
+  health_score_pct: number;
+  missing_teams: MissingTeamItem[];
+  quarantined_matches: QuarantinedMatchItem[];
+}
+
 export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
   const [selectedCity, setSelectedCity] = useState<string>("all");
   const [limit, setLimit] = useState<number>(25);
@@ -34,11 +96,143 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [screenshotError, setScreenshotError] = useState<boolean>(false);
 
+  // Bot Sağlık & Ön Teşhis State'leri
+  const [healthReport, setHealthReport] = useState<BotHealthReport | null>(null);
+  const [healthLoading, setHealthLoading] = useState<boolean>(false);
+  const [targetTeamIdInput, setTargetTeamIdInput] = useState<Record<string, string>>({});
+  const [aliasSubmitting, setAliasSubmitting] = useState<Record<string, boolean>>({});
+  const [successToast, setSuccessToast] = useState<string | null>(null);
+
   const logContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setScreenshotError(false);
   }, [botStatus?.screenshotMtime]);
+
+  const fetchHealthReport = useCallback(async () => {
+    if (!token) return;
+    try {
+      const res = await fetch("/api/admin/volleybox-bot?action=health", {
+        headers: { Authorization: `Bearer ${token}` },
+        cache: "no-store",
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.report) {
+          setHealthReport(data.report);
+        }
+      }
+    } catch (err) {
+      console.error("Sağlık raporu alınamadı:", err);
+    }
+  }, [token]);
+
+  const runHealthCheck = async () => {
+    if (!token || healthLoading) return;
+    setHealthLoading(true);
+    setErrorMsg(null);
+    try {
+      const res = await fetch("/api/admin/volleybox-bot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ action: "health_check" }),
+      });
+      const data = await res.json();
+      if (res.ok && data.report) {
+        setHealthReport(data.report);
+        setSuccessToast("Sağlık denetimi başarıyla tamamlandı!");
+        setTimeout(() => setSuccessToast(null), 4000);
+      } else if (data.error) {
+        setErrorMsg(data.error);
+      }
+    } catch (err) {
+      setErrorMsg(`Sağlık denetimi hatası: ${toErrorLike(err).message}`);
+    } finally {
+      setHealthLoading(false);
+    }
+  };
+
+  const handleQuickAlias = async (teamName: string, targetId: string) => {
+    if (!token || !teamName || !targetId) return;
+    setAliasSubmitting((prev) => ({ ...prev, [teamName]: true }));
+    setErrorMsg(null);
+    try {
+      const res = await fetch("/api/admin/volleybox-bot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          action: "add_alias",
+          team_name: teamName,
+          target_team_id: targetId,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        if (data.report) {
+          setHealthReport(data.report);
+        }
+        setSuccessToast(data.message || `"${teamName}" başarıyla eşleştirildi!`);
+        setTimeout(() => setSuccessToast(null), 4000);
+        fetchPreview();
+      } else {
+        setErrorMsg(data.error || "Eşleştirme yapılamadı.");
+      }
+    } catch (err) {
+      setErrorMsg(`Eşleştirme hatası: ${toErrorLike(err).message}`);
+    } finally {
+      setAliasSubmitting((prev) => ({ ...prev, [teamName]: false }));
+    }
+  };
+
+  const handleRemoveFromQuarantine = async (matchId: string) => {
+    if (!token || !matchId) return;
+    try {
+      const res = await fetch("/api/admin/volleybox-bot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ action: "quarantine_remove", match_id: matchId }),
+      });
+      if (res.ok) {
+        setSuccessToast("Maç karantinadan çıkarıldı.");
+        setTimeout(() => setSuccessToast(null), 3000);
+        fetchHealthReport();
+        fetchPreview();
+      }
+    } catch (err) {
+      setErrorMsg(`Karantina hatası: ${toErrorLike(err).message}`);
+    }
+  };
+
+  const handleClearQuarantine = async () => {
+    if (!token) return;
+    try {
+      const res = await fetch("/api/admin/volleybox-bot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ action: "quarantine_clear" }),
+      });
+      if (res.ok) {
+        setSuccessToast("Tüm karantina listesi temizlendi.");
+        setTimeout(() => setSuccessToast(null), 3000);
+        fetchHealthReport();
+        fetchPreview();
+      }
+    } catch (err) {
+      setErrorMsg(`Karantina temizleme hatası: ${toErrorLike(err).message}`);
+    }
+  };
 
   const fetchPreview = useCallback(async () => {
     if (!token) return;
@@ -79,7 +273,8 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
   useEffect(() => {
     fetchPreview();
     fetchStatus();
-  }, [fetchPreview, fetchStatus]);
+    fetchHealthReport();
+  }, [fetchPreview, fetchStatus, fetchHealthReport]);
 
   // Bot çalışırken her 1.2 saniyede bir, boşta iken her 5 saniyede bir durumu güncelle
   useEffect(() => {
@@ -478,6 +673,286 @@ export function VolleyboxBotTab({ token }: VolleyboxBotTabProps) {
             </span>
           )}
         </div>
+      </div>
+
+      {/* BAŞARI BİLDİRİMİ (TOAST) */}
+      {successToast && (
+        <div className="p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 text-xs font-semibold flex items-center justify-between gap-2 shadow-lg animate-in fade-in">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 size={16} className="text-emerald-400 shrink-0" />
+            <span>{successToast}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setSuccessToast(null)}
+            className="text-emerald-400 hover:text-white text-xs px-2 py-0.5"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
+      {/* 🩺 BOT SAĞLIK & ÖN TEŞHİS PANELİ */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <div>
+            <h3 className="text-sm font-bold text-white flex items-center gap-2">
+              <Activity size={16} className="text-emerald-400" />
+              Bot Sağlık &amp; Ön Teşhis Merkezi
+              {healthReport && (
+                <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+                  Sağlık Skoru: %{healthReport.health_score_pct}
+                </span>
+              )}
+            </h3>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Tarayıcıyı açmadan saniyeler içinde tüm maçları denetler; eksik takımları tespit eder ve hatalı eşleşmeleri karantinaya alır.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            {healthReport && healthReport.quarantined_count > 0 && (
+              <button
+                type="button"
+                onClick={handleClearQuarantine}
+                className="px-3 py-1.5 rounded-lg bg-red-950/80 hover:bg-red-900 text-red-200 border border-red-500/30 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                title="Karantinaya alınmış tüm maç kayıtlarını sıfırlar"
+              >
+                <Trash2 size={13} />
+                Karantinayı Temizle ({healthReport.quarantined_count})
+              </button>
+            )}
+
+            <button
+              type="button"
+              onClick={runHealthCheck}
+              disabled={healthLoading}
+              className="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5 transition-colors disabled:opacity-50 cursor-pointer shadow"
+            >
+              <RefreshCw size={13} className={healthLoading ? "animate-spin" : ""} />
+              {healthLoading ? "Denetleniyor..." : "Hızlı Sağlık Taraması Yap"}
+            </button>
+          </div>
+        </div>
+
+        {/* SAĞLIK METRİKLERİ */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="bg-slate-950/70 border border-emerald-500/30 rounded-xl p-3">
+            <div className="text-[11px] text-slate-400 flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+              Gönderime %100 Hazır
+            </div>
+            <div className="text-lg font-black text-emerald-400 mt-0.5">
+              {healthReport ? healthReport.ready_count : "—"}
+              {healthReport && healthReport.total_candidates > 0 && (
+                <span className="text-xs text-slate-400 font-normal ml-1">
+                  (%{healthReport.health_score_pct})
+                </span>
+              )}
+            </div>
+          </div>
+
+          <div className="bg-slate-950/70 border border-amber-500/30 rounded-xl p-3">
+            <div className="text-[11px] text-slate-400 flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-amber-400 inline-block"></span>
+              Eksik Takım Eşleşmesi
+            </div>
+            <div className="text-lg font-black text-amber-400 mt-0.5">
+              {healthReport ? healthReport.missing_teams_count : "—"}
+              <span className="text-xs text-slate-400 font-normal ml-1">
+                ({healthReport ? healthReport.blocked_by_missing_teams : 0} maç bekliyor)
+              </span>
+            </div>
+          </div>
+
+          <div className="bg-slate-950/70 border border-red-500/30 rounded-xl p-3">
+            <div className="text-[11px] text-slate-400 flex items-center gap-1">
+              <span className="w-2 h-2 rounded-full bg-red-400 inline-block"></span>
+              Karantinadaki Maçlar
+            </div>
+            <div className="text-lg font-black text-red-400 mt-0.5">
+              {healthReport ? healthReport.quarantined_count : 0}
+            </div>
+          </div>
+
+          <div className="bg-slate-950/70 border border-slate-800 rounded-xl p-3">
+            <div className="text-[11px] text-slate-400">Son Denetim Zamanı</div>
+            <div className="text-xs font-semibold text-slate-300 mt-1 truncate">
+              {healthReport?.generated_at
+                ? new Date(healthReport.generated_at).toLocaleTimeString("tr-TR")
+                : "Henüz yapılmadı"}
+            </div>
+          </div>
+        </div>
+
+        {/* EKSİK TAKIMLAR VE HIZLI EŞLEŞTİRME TABLOSU */}
+        {healthReport && healthReport.missing_teams && healthReport.missing_teams.length > 0 && (
+          <div className="mt-5 border-t border-slate-800 pt-4">
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles size={14} className="text-amber-400" />
+                Eşleştirilmesi Gereken Takımlar ({healthReport.missing_teams.length} Takım)
+              </h4>
+              <span className="text-[11px] text-slate-400">
+                Aşağıdaki önerilerden birine tıklayarak veya ID girerek tek tıkla eşleştirebilirsiniz.
+              </span>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr className="border-b border-slate-800 text-[11px] text-slate-400 uppercase">
+                    <th className="py-2 pr-3">Sitedeki Takım Adı</th>
+                    <th className="py-2 px-3">İl / Kategori</th>
+                    <th className="py-2 px-2 text-center">Engellenen Maç</th>
+                    <th className="py-2 px-3">Önerilen Volleybox Takımları</th>
+                    <th className="py-2 px-3">Hedef Takım ID</th>
+                    <th className="py-2 pl-3 text-right">İşlem</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-800/60">
+                  {healthReport.missing_teams.slice(0, 20).map((t) => {
+                    const currentTargetId =
+                      targetTeamIdInput[t.team_name] ?? (t.suggestions[0]?.team_id || "");
+                    const isSubmitting = aliasSubmitting[t.team_name] || false;
+
+                    return (
+                      <tr key={t.team_name} className="hover:bg-slate-800/30">
+                        <td className="py-2.5 pr-3 font-semibold text-white">
+                          <span className="text-amber-400 mr-1.5">🚩</span>
+                          {t.team_name}
+                        </td>
+                        <td className="py-2.5 px-3 text-slate-400">
+                          {t.city} • <span className="text-slate-500">{t.category}</span>
+                        </td>
+                        <td className="py-2.5 px-2 text-center">
+                          <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold text-[11px] border border-amber-500/30">
+                            {t.match_count} maç
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3">
+                          <div className="flex flex-wrap gap-1.5 max-w-md">
+                            {t.suggestions.length > 0 ? (
+                              t.suggestions.map((s) => (
+                                <button
+                                  key={s.team_id || s.name}
+                                  type="button"
+                                  onClick={() =>
+                                    setTargetTeamIdInput((prev) => ({
+                                      ...prev,
+                                      [t.team_name]: s.team_id,
+                                    }))
+                                  }
+                                  className={`text-[10px] font-medium px-2 py-0.5 rounded-md border flex items-center gap-1 transition-all cursor-pointer ${
+                                    currentTargetId === s.team_id
+                                      ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/50 shadow-sm"
+                                      : "bg-slate-800 hover:bg-slate-700 text-slate-300 border-slate-700"
+                                  }`}
+                                  title={`${s.name} (${s.city || "Türkiye"}) - Tıkla ve seç`}
+                                >
+                                  <span>{s.name}</span>
+                                  <span className="text-[9px] text-slate-400">
+                                    (ID: {s.team_id})
+                                  </span>
+                                  {currentTargetId === s.team_id && (
+                                    <Check size={11} className="text-emerald-400 shrink-0" />
+                                  )}
+                                </button>
+                              ))
+                            ) : (
+                              <span className="text-slate-500 text-[11px] italic">
+                                Otomatik öneri bulunamadı
+                              </span>
+                            )}
+                          </div>
+                        </td>
+                        <td className="py-2.5 px-3">
+                          <input
+                            type="text"
+                            value={currentTargetId}
+                            onChange={(e) =>
+                              setTargetTeamIdInput((prev) => ({
+                                ...prev,
+                                [t.team_name]: e.target.value.trim(),
+                              }))
+                            }
+                            placeholder="Örn: 40248"
+                            className="w-24 bg-slate-950 border border-slate-700 rounded px-2 py-1 text-xs text-white focus:outline-none focus:border-emerald-500 font-mono"
+                          />
+                        </td>
+                        <td className="py-2.5 pl-3 text-right">
+                          <button
+                            type="button"
+                            disabled={!currentTargetId || isSubmitting}
+                            onClick={() => handleQuickAlias(t.team_name, currentTargetId)}
+                            className="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold inline-flex items-center gap-1 transition-colors disabled:opacity-40 cursor-pointer shadow"
+                            title="Bu takımı Volleybox eşleştirmelerine ekler"
+                          >
+                            <Sparkles size={11} />
+                            {isSubmitting ? "Ekleniyor..." : "Eşleştir"}
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+
+              {healthReport.missing_teams.length > 20 && (
+                <div className="p-2 text-center text-xs text-slate-500 border-t border-slate-800">
+                  ... ve {healthReport.missing_teams.length - 20} eksik takım daha.
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* KARANTİNA YÖNETİMİ */}
+        {healthReport && healthReport.quarantined_matches && healthReport.quarantined_matches.length > 0 && (
+          <div className="mt-5 border-t border-slate-800 pt-4">
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <h4 className="text-xs font-bold text-red-400 uppercase tracking-wider flex items-center gap-1.5">
+                <ShieldAlert size={14} />
+                Karantinaya Alınan Maçlar ({healthReport.quarantined_matches.length} Maç)
+              </h4>
+              <span className="text-[11px] text-slate-400">
+                Form hatası veya takım uyuşmazlığı nedeniyle atlanan maçlar.
+              </span>
+            </div>
+
+            <div className="space-y-2 max-h-60 overflow-y-auto">
+              {healthReport.quarantined_matches.map((q) => (
+                <div
+                  key={q.id}
+                  className="bg-slate-950/80 border border-red-500/20 rounded-lg p-2.5 flex flex-wrap items-center justify-between gap-2 text-xs"
+                >
+                  <div className="min-w-0">
+                    <div className="font-semibold text-white flex items-center gap-2">
+                      <span className="text-slate-400">[{q.city}]</span>
+                      <span>
+                        {q.home_team} vs {q.away_team}
+                      </span>
+                      <span className="text-slate-500 text-[11px]">({q.date})</span>
+                    </div>
+                    <div className="text-[11px] text-red-300/90 mt-0.5 truncate">
+                      Gerekçe: {q.reason} (Deneme: {q.attempts})
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveFromQuarantine(q.id)}
+                    className="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 text-[11px] font-medium flex items-center gap-1 cursor-pointer transition-colors"
+                    title="Bu maçı karantinadan çıkarır ve bir sonraki bot çalışmasında yeniden denenmesini sağlar"
+                  >
+                    <ArrowRight size={11} />
+                    Karantinadan Çıkar
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* CANLI İZLEME PANELİ: TERMİNAL GÜNLÜĞÜ + CANLI TARAYICI EKRANI */}

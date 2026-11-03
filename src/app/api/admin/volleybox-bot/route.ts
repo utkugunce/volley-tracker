@@ -400,6 +400,34 @@ export async function GET(request: Request) {
     }
   }
 
+  if (action === "health") {
+    const reportFile = path.join(dataDir, "bot_health_report.json");
+    const quarantineFile = path.join(dataDir, "bot_quarantine.json");
+    let report: unknown = null;
+    let quarantine: Record<string, unknown> = {};
+
+    if (fs.existsSync(reportFile)) {
+      try {
+        report = JSON.parse(fs.readFileSync(reportFile, "utf-8"));
+      } catch {
+        // ignore
+      }
+    }
+    if (fs.existsSync(quarantineFile)) {
+      try {
+        quarantine = JSON.parse(fs.readFileSync(quarantineFile, "utf-8"));
+      } catch {
+        // ignore
+      }
+    }
+
+    return NextResponse.json({
+      ok: true,
+      report,
+      quarantine,
+    });
+  }
+
   if (action === "preview") {
     const city = searchParams.get("city") || "all";
     const tournaments = collectMissingMatchesPreview(city);
@@ -443,6 +471,138 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));
   const action = String(body.action || "start");
   const runner = getRunner();
+
+  // 1. JSON & Veri Yönetim Aksiyonları (Tarayıcı gerektirmez)
+  if (action === "health_check") {
+    const pyCmd = resolvePythonCommand();
+    const scriptPath = path.join(/*turbopackIgnore: true*/ process.cwd(), "scripts", "check_bot_health.py");
+    try {
+      const child = spawn(pyCmd, [scriptPath], {
+        cwd: process.cwd(),
+        env: { ...process.env, PYTHONIOENCODING: "utf-8", PYTHONUNBUFFERED: "1" },
+      });
+      await new Promise<void>((resolve, reject) => {
+        child.on("close", (code) => {
+          if (code === 0) resolve();
+          else reject(new Error(`Check exited with code ${code}`));
+        });
+        child.on("error", reject);
+      });
+      const reportFile = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "bot_health_report.json");
+      const report = fs.existsSync(reportFile) ? JSON.parse(fs.readFileSync(reportFile, "utf-8")) : null;
+      return NextResponse.json({ ok: true, report });
+    } catch (err) {
+      return NextResponse.json(
+        { error: `Sağlık denetimi çalıştırılamadı: ${err instanceof Error ? err.message : String(err)}` },
+        { status: 500 }
+      );
+    }
+  }
+
+  if (action === "add_alias") {
+    const teamName = String(body.team_name || "").trim();
+    const targetTeamId = String(body.target_team_id || "").trim();
+    if (!teamName || !targetTeamId) {
+      return NextResponse.json({ error: "team_name ve target_team_id zorunludur." }, { status: 400 });
+    }
+
+    const mappingsPath = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "volleybox-mappings.json");
+    if (!fs.existsSync(mappingsPath)) {
+      return NextResponse.json({ error: "volleybox-mappings.json bulunamadı." }, { status: 404 });
+    }
+
+    try {
+      const rawData = JSON.parse(fs.readFileSync(mappingsPath, "utf-8"));
+      interface TeamMappingEntry {
+        team_id?: string | number;
+        volleybox_url?: string;
+        matched_as?: string;
+        internal_name?: string;
+        aliases?: string[];
+      }
+      let targetMapping: TeamMappingEntry | null = null;
+      for (const m of (rawData.mappings || []) as TeamMappingEntry[]) {
+        const url = m.volleybox_url || "";
+        const mId = m.team_id ? String(m.team_id) : (url.match(/[-/]t(\d+)/)?.[1] ?? "");
+        if (mId === targetTeamId) {
+          targetMapping = m;
+          break;
+        }
+      }
+
+      if (!targetMapping) {
+        return NextResponse.json(
+          { error: `ID (${targetTeamId}) ile eşleşen Volleybox takımı bulunamadı.` },
+          { status: 404 }
+        );
+      }
+
+      if (!Array.isArray(targetMapping.aliases)) {
+        targetMapping.aliases = [];
+      }
+      if (!targetMapping.aliases.includes(teamName)) {
+        targetMapping.aliases.push(teamName);
+      }
+
+      fs.writeFileSync(mappingsPath, JSON.stringify(rawData, null, 2), "utf-8");
+
+      // Raporu arka planda hızlıca güncelle
+      const pyCmd = resolvePythonCommand();
+      const scriptPath = path.join(/*turbopackIgnore: true*/ process.cwd(), "scripts", "check_bot_health.py");
+      try {
+        const child = spawn(pyCmd, [scriptPath], {
+          cwd: process.cwd(),
+          env: { ...process.env, PYTHONIOENCODING: "utf-8", PYTHONUNBUFFERED: "1" },
+        });
+        await new Promise<void>((resolve) => {
+          child.on("close", () => resolve());
+          child.on("error", () => resolve());
+        });
+      } catch {
+        // ignore
+      }
+
+      const reportFile = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "bot_health_report.json");
+      const report = fs.existsSync(reportFile) ? JSON.parse(fs.readFileSync(reportFile, "utf-8")) : null;
+
+      return NextResponse.json({
+        ok: true,
+        message: `"${teamName}" takımı "${targetMapping.matched_as || targetMapping.internal_name}" profiline başarıyla eklendi.`,
+        report,
+      });
+    } catch (e) {
+      return NextResponse.json(
+        { error: `Eşleştirme eklenemedi: ${e instanceof Error ? e.message : String(e)}` },
+        { status: 500 }
+      );
+    }
+  }
+
+  if (action === "quarantine_remove") {
+    const matchId = String(body.match_id || "").trim();
+    if (!matchId) {
+      return NextResponse.json({ error: "match_id zorunludur." }, { status: 400 });
+    }
+    const qFile = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "bot_quarantine.json");
+    if (fs.existsSync(qFile)) {
+      try {
+        const qData = JSON.parse(fs.readFileSync(qFile, "utf-8"));
+        delete qData[matchId];
+        fs.writeFileSync(qFile, JSON.stringify(qData, null, 2), "utf-8");
+      } catch {
+        // ignore
+      }
+    }
+    return NextResponse.json({ ok: true, match_id: matchId });
+  }
+
+  if (action === "quarantine_clear") {
+    const qFile = path.join(/*turbopackIgnore: true*/ process.cwd(), "data", "bot_quarantine.json");
+    if (fs.existsSync(qFile)) {
+      fs.unlinkSync(qFile);
+    }
+    return NextResponse.json({ ok: true, cleared: true });
+  }
 
   if (action === "mark_synced") {
     const citySlug = String(body.city_slug || "").trim().toLowerCase();

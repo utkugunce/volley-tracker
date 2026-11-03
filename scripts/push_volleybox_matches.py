@@ -307,17 +307,92 @@ def resolve_match_tournament_url(m: Dict[str, Any], city: str, tourn_lookup: Dic
     return None
 
 
+QUARANTINE_FILE = DATA_DIR / "bot_quarantine.json"
+
+
+def load_quarantine() -> Dict[str, Any]:
+    """Karantinaya alınmış maçları yükler."""
+    if not QUARANTINE_FILE.exists():
+        return {}
+    try:
+        with open(QUARANTINE_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_quarantine(data: Dict[str, Any]) -> None:
+    """Karantina dosyasını atomik olarak kaydeder."""
+    tmp = QUARANTINE_FILE.with_suffix(".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    tmp.replace(QUARANTINE_FILE)
+
+
+def add_to_quarantine(
+    match_id: str,
+    reason: str,
+    city: str = "",
+    home_team: str = "",
+    away_team: str = "",
+    date: str = "",
+    tournament_url: str = "",
+) -> None:
+    """Bir maçı karantinaya ekler veya deneme sayısını artırır."""
+    if not match_id:
+        return
+    q = load_quarantine()
+    existing = q.get(match_id, {})
+    attempts = existing.get("attempts", 0) + 1
+    q[match_id] = {
+        "match_id": match_id,
+        "reason": reason,
+        "city": city or existing.get("city", ""),
+        "home_team": home_team or existing.get("home_team", ""),
+        "away_team": away_team or existing.get("away_team", ""),
+        "date": date or existing.get("date", ""),
+        "tournament_url": tournament_url or existing.get("tournament_url", ""),
+        "failed_at": datetime.now().isoformat(),
+        "attempts": attempts,
+    }
+    save_quarantine(q)
+
+
+def remove_from_quarantine(match_id: str) -> bool:
+    """Bir maçı karantinadan kaldırır."""
+    if not match_id:
+        return False
+    q = load_quarantine()
+    if match_id in q:
+        del q[match_id]
+        save_quarantine(q)
+        return True
+    return False
+
+
+def clear_quarantine() -> int:
+    """Tüm karantina kayıtlarını temizler."""
+    q = load_quarantine()
+    count = len(q)
+    if QUARANTINE_FILE.exists():
+        QUARANTINE_FILE.unlink(missing_ok=True)
+    return count
+
+
 def collect_unsynced_matches(
     tourn_lookup: Dict[str, str],
     city_filter: Optional[str] = None,
     include_pro: bool = False,
+    ignore_quarantine: bool = False,
 ) -> Dict[str, List[Dict[str, Any]]]:
     """
     Sitemizdeki JSON dosyalarından henüz Volleybox'ta olmayan (synced == False)
     ve geçerli bir tarihi + Volleybox turnuva URL'si olan maçları turnuva bazında toplar.
+    Karantinadaki maçlar varsayılan olarak atlanır (ignore_quarantine=True ile dahil edilebilir).
     """
     by_tournament: Dict[str, List[Dict[str, Any]]] = {}
     seen_match_ids = set()
+    quarantine_data = load_quarantine() if not ignore_quarantine else {}
 
     def process_city_file(path: Path, default_city: str):
         if not path.exists():
@@ -375,6 +450,8 @@ def collect_unsynced_matches(
 
             m_id = str(m.get("id") or f"{city_slug}_{m.get('home_team')}_{m.get('away_team')}_{m.get('date')}")
             if m_id in seen_match_ids:
+                continue
+            if not ignore_quarantine and m_id in quarantine_data:
                 continue
             seen_match_ids.add(m_id)
             m_date = str(m.get("date") or "").strip()
@@ -473,6 +550,8 @@ def collect_unsynced_matches(
             m_id = str(m.get("id") or f"{city_slug}_{m.get('home_team')}_{m.get('away_team')}_{m.get('date')}")
             if m_id in seen_match_ids:
                 continue
+            if not ignore_quarantine and m_id in quarantine_data:
+                continue
             seen_match_ids.add(m_id)
             tarih = str(m.get("tarih") or "").strip()
             d_str = ""
@@ -545,6 +624,54 @@ def match_option_for_team(
     return best_opt
 
 
+_RESOLVE_CACHE: Dict[Tuple[str, str, str], Optional[Dict[str, str]]] = {}
+_DIRECT_TEAM_MAP: Optional[Dict[str, Dict[str, Any]]] = None
+_CITY_SCOPED_MAP: Optional[Dict[str, List[Dict[str, Any]]]] = None
+
+
+def get_direct_team_maps(mappings_data: Dict[str, Any]) -> Tuple[Dict[str, Dict[str, Any]], Dict[str, List[Dict[str, Any]]]]:
+    global _DIRECT_TEAM_MAP, _CITY_SCOPED_MAP
+    if _DIRECT_TEAM_MAP is not None and _CITY_SCOPED_MAP is not None:
+        return _DIRECT_TEAM_MAP, _CITY_SCOPED_MAP
+
+    direct_map: Dict[str, Dict[str, Any]] = {}
+    city_map: Dict[str, List[Dict[str, Any]]] = {}
+
+    for m in mappings_data.get("mappings", []):
+        url = m.get("volleybox_url") or ""
+        mat = re.search(r"[-/]t(\d+)", url)
+        if not mat:
+            continue
+        tid = mat.group(1)
+        label = m.get("matched_as") or m.get("internal_name") or ""
+        c_raw = (m.get("city_slug") or m.get("city") or "").lower().strip()
+        c_norm = re.sub(r"[^a-z0-9]", "", c_raw)
+        entry = {
+            "id": tid,
+            "label": label,
+            "city": c_norm,
+            "matched_as": label,
+            "internal_name": m.get("internal_name") or "",
+            "aliases": m.get("aliases") or [],
+            "raw_mapping": m,
+        }
+        in_name = (m.get("internal_name") or "").strip().lower()
+        matched = (m.get("matched_as") or "").strip().lower()
+        if in_name:
+            direct_map[in_name] = entry
+        if matched:
+            direct_map[matched] = entry
+        for a in m.get("aliases") or []:
+            if a:
+                direct_map[a.strip().lower()] = entry
+        if c_norm:
+            city_map.setdefault(c_norm, []).append(entry)
+
+    _DIRECT_TEAM_MAP = direct_map
+    _CITY_SCOPED_MAP = city_map
+    return direct_map, city_map
+
+
 def resolve_team_for_match(
     tvf_team: str,
     team_alias_map: Dict[str, set],
@@ -565,6 +692,14 @@ def resolve_team_for_match(
     clean_tvf = (tvf_team or "").strip()
     if not clean_tvf:
         return None
+
+    # Hızlı önbellek kontrolü (sayfa seçenekleri yokken mapping-tabanlı sorgular için)
+    cache_key = None
+    if not select_options and not page_teams:
+        cache_key = (clean_tvf.lower(), (age_group or "").lower(), (city_slug or "").lower())
+        if cache_key in _RESOLVE_CACHE:
+            return _RESOLVE_CACHE[cache_key]
+
     synonyms = team_alias_map.get(clean_tvf.lower(), set())
 
     # 1. <select> seçenekleri
@@ -593,11 +728,8 @@ def resolve_team_for_match(
 
     # 3. mappings_data['mappings'] listesi
     if mappings_data:
-        is_u18 = "genç" in age_group.lower() or "u18" in age_group.lower()
-        is_u16 = "yıldız" in age_group.lower() or "u16" in age_group.lower()
-        best_opt = None
-        best_score = 0
-
+        direct_map, city_map = get_direct_team_maps(mappings_data)
+        norm_c_slug = re.sub(r"[^a-z0-9]", "", (city_slug or "").lower())
         is_national_league = city_slug.lower() in (
             "kadinlar-2-ligi",
             "sultanlar-ligi",
@@ -606,15 +738,25 @@ def resolve_team_for_match(
             "turkey",
         ) or "ligi" in city_slug.lower()
 
-        for m in mappings_data.get("mappings", []):
-            m_city = (m.get("city_slug") or m.get("city") or "").lower().strip()
-            # İl koruması: Maç yerel il ligi ise farklı ildeki takımı seçme (Hatay takımının İstanbul'a yazılmasını engeller!)
-            if not is_national_league and m_city and city_slug:
-                norm_m_city = re.sub(r"[^a-z0-9]", "", m_city)
-                norm_c_slug = re.sub(r"[^a-z0-9]", "", city_slug.lower())
-                if norm_m_city and norm_c_slug and norm_m_city != norm_c_slug and norm_m_city != "turkiye":
-                    continue
+        # Doğrudan tam isim veya takma ad (O(1) lookup)
+        d_hit = direct_map.get(clean_tvf.lower())
+        if d_hit:
+            d_city = d_hit.get("city", "")
+            if is_national_league or not norm_c_slug or not d_city or d_city == norm_c_slug or d_city == "turkiye":
+                res = {"id": d_hit["id"], "label": d_hit["label"]}
+                if cache_key:
+                    _RESOLVE_CACHE[cache_key] = res
+                return res
 
+        # Doğrudan eşleşmediyse, sadece ilgili şehrin takımlarını tara
+        search_pool = mappings_data.get("mappings", []) if is_national_league or not norm_c_slug else [e["raw_mapping"] for e in city_map.get(norm_c_slug, [])]
+
+        is_u18 = "genç" in age_group.lower() or "u18" in age_group.lower()
+        is_u16 = "yıldız" in age_group.lower() or "u16" in age_group.lower()
+        best_opt = None
+        best_score = 0
+
+        for m in search_pool:
             in_name = (m.get("internal_name") or "").strip()
             matched_as = (m.get("matched_as") or "").strip()
             aliases = m.get("aliases") or []
@@ -624,39 +766,38 @@ def resolve_team_for_match(
                 continue
             tid = mat.group(1)
 
-            # Doğrudan takma ad / isim eşleşmesi
-            if (
-                clean_tvf.lower() == matched_as.lower()
-                or clean_tvf.lower() == in_name.lower()
-                or any(clean_tvf.lower() == a.lower().strip() for a in aliases)
-            ):
-                sc = 100
-                if is_u18 and "u18" in matched_as.lower():
-                    sc += 10
-                elif is_u16 and "u16" in matched_as.lower():
-                    sc += 10
-            else:
-                sc = team_match_score(clean_tvf, matched_as, synonyms)
-                for a in aliases:
-                    a_sc = team_match_score(clean_tvf, a, synonyms)
-                    if a_sc > sc:
-                        sc = a_sc
-                if is_u18 and "u18" in matched_as.lower() and sc >= 70:
-                    sc += 5
-                elif is_u16 and "u16" in matched_as.lower() and sc >= 70:
-                    sc += 5
+            # İsim / takma ad benzerlik skoru
+            sc = team_match_score(clean_tvf, matched_as, synonyms)
+            for a in aliases:
+                a_sc = team_match_score(clean_tvf, a, synonyms)
+                if a_sc > sc:
+                    sc = a_sc
+            if is_u18 and "u18" in matched_as.lower() and sc >= 70:
+                sc += 5
+            elif is_u16 and "u16" in matched_as.lower() and sc >= 70:
+                sc += 5
 
             if sc >= 70 and sc > best_score:
                 best_score = sc
                 best_opt = {"id": tid, "label": matched_as, "score": sc}
+                if sc >= 105:
+                    break
 
+        result = None
         if best_opt and (not candidate_page or best_opt["score"] >= candidate_page[0]):
-            return {"id": best_opt["id"], "label": best_opt["label"]}
+            result = {"id": best_opt["id"], "label": best_opt["label"]}
         elif candidate_page:
-            return {"id": str(candidate_page[1]), "label": str(candidate_page[2])}
+            result = {"id": str(candidate_page[1]), "label": str(candidate_page[2])}
+
+        if cache_key:
+            _RESOLVE_CACHE[cache_key] = result
+        return result
 
     elif candidate_page:
-        return {"id": str(candidate_page[1]), "label": str(candidate_page[2])}
+        result = {"id": str(candidate_page[1]), "label": str(candidate_page[2])}
+        if cache_key:
+            _RESOLVE_CACHE[cache_key] = result
+        return result
 
     return None
 
@@ -1756,7 +1897,14 @@ def main():
     parser.add_argument("--limit", type=int, default=25, help="Tek çalıştırmada eklenecek maksimum maç sayısı (varsayılan: 25)")
     parser.add_argument("--delay", type=float, default=8.0, help="Maç eklemeleri arasındaki bekleme süresi (saniye, varsayılan: 8.0)")
     parser.add_argument("--headless", action="store_true", help="Tarayıcıyı arka planda (görünmez) çalıştır")
+    parser.add_argument("--retry-quarantine", action="store_true", help="Karantinadaki maçları da işleme dahil et")
+    parser.add_argument("--clear-quarantine", action="store_true", help="Karantina listesini sıfırla ve çık")
     args = parser.parse_args()
+
+    if args.clear_quarantine:
+        cnt = clear_quarantine()
+        log_step(f"✅ {cnt} adet maç karantinadan temizlendi.")
+        return
 
     if args.login:
         run_login_flow()
@@ -1771,7 +1919,12 @@ def main():
 
     team_alias_map = build_team_alias_map(mappings_data)
     tourn_lookup = build_tournament_lookup(mappings_data)
-    by_tournament = collect_unsynced_matches(tourn_lookup, city_filter=args.city, include_pro=args.include_pro)
+    by_tournament = collect_unsynced_matches(
+        tourn_lookup,
+        city_filter=args.city,
+        include_pro=args.include_pro,
+        ignore_quarantine=args.retry_quarantine,
+    )
 
     total_candidates = sum(len(v) for v in by_tournament.values())
 
@@ -1955,17 +2108,26 @@ def main():
                     touched_cities.add(m_item["city_slug"])
                     continue
 
-                ok, msg = fill_and_submit_match_on_page(
-                    page,
-                    m_item,
-                    team_alias_map,
-                    mappings_data=mappings_data,
-                    inspect_only=args.inspect_form,
-                )
+                try:
+                    ok, msg = fill_and_submit_match_on_page(
+                        page,
+                        m_item,
+                        team_alias_map,
+                        mappings_data=mappings_data,
+                        inspect_only=args.inspect_form,
+                    )
+                except Exception as sub_err:
+                    ok = False
+                    msg = f"Form hatası / istisna: {sub_err}"
+
+                m_mid = str(m_item.get("id") or "")
                 if ok:
                     added_total += 1
                     touched_cities.add(m_item["city_slug"])
                     log_step(f"   ✅ [{added_total}/{args.limit}] Eklendi: {msg}")
+
+                    if m_mid:
+                        remove_from_quarantine(m_mid)
 
                     # Maç eklendiği an yerel JSON dosyasına yaz ki kuyruktan anında düşsün
                     m_id_match = re.search(r"\[VB ID:\s*(\d+)\]", msg)
@@ -1984,6 +2146,16 @@ def main():
                     time.sleep(wait_sec)
                 else:
                     log_step(f"   ⚠️ Atlandı ({m_item['home_team']} vs {m_item['away_team']}): {msg}")
+                    if m_mid:
+                        add_to_quarantine(
+                            m_mid,
+                            reason=msg,
+                            city=m_item.get("city", ""),
+                            home_team=m_item.get("home_team", ""),
+                            away_team=m_item.get("away_team", ""),
+                            date=m_item.get("date", ""),
+                            tournament_url=t_url,
+                        )
 
         context.close()
 

@@ -21,6 +21,7 @@
     "scrape:pro": "python scripts/scrape_pro_leagues.py",
     "sync:volleybox": "python scripts/sync_volleybox_matches.py",
     "push:volleybox": "python scripts/push_volleybox_matches.py",
+    "check:bot": "python scripts/check_bot_health.py",
     "supabase:import": "node scripts/import_json_to_supabase.mjs",
     "create-admin": "node scripts/create_admin_user.mjs"
   },

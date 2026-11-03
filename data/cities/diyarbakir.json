@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-03T12:19:46.779399+03:00",
+  "updated_at": "2026-11-03T13:23:35.241640+03:00",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 11,
+  "total_matches": 15,
   "source": "https://diyarbakir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -597,8 +597,144 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "diyarbakir-20261104-012",
+      "city": "Diyarbakır",
+      "date": "2026-11-04",
+      "time": "18:00",
+      "hall": "Ş.Halit Gürsel",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "12",
+      "home_team": "Diyarbakır Gençlik Spor Kulübü U18",
+      "away_team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261104-013",
+      "city": "Diyarbakır",
+      "date": "2026-11-04",
+      "time": "20:00",
+      "hall": "Ş.Halit Gürsel",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "13",
+      "home_team": "Megaron İnşaat Diyarbakır Spor",
+      "away_team": "Diyarbakır İçkale Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261105-014",
+      "city": "Diyarbakır",
+      "date": "2026-11-05",
+      "time": "18:00",
+      "hall": "Ş.Halit Gürsel",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "14",
+      "home_team": "Diyarbakır Büyükşehir Belediye Spor Kulübü",
+      "away_team": "Megaron İnşaat Diyarbakır Spor",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "diyarbakir-20261105-015",
+      "city": "Diyarbakır",
+      "date": "2026-11-05",
+      "time": "20:00",
+      "hall": "Ş.Halit Gürsel",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Genç Kadın",
+      "match_no": "15",
+      "home_team": "Diyarbakır İçkale Spor Kulübü U18",
+      "away_team": "Diyarbakır Gençlik Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 11,
-  "volleybox_sync_updated_at": "2026-11-03T12:27:30.343778"
+  "volleybox_sync_updated_at": "2026-11-03T13:24:41.794593"
 }

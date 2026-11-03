@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T12:19:46.779399+03:00",
+  "updated_at": "2026-11-03T13:23:35.241640+03:00",
   "city": "Kırklareli",
   "slug": "kirklareli",
   "title": "TVF Kırklareli Genç & Yıldız Kızlar Süper Lig",
@@ -1470,18 +1470,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415240",
+        "url": "https://women.volleybox.net/tr/duzce-genclik-spor-u16-krklareli-genclik-spor-kulubu-c415240",
+        "host_name": "Düzce Gençlik Spor U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-26",
+        "vb_time": "19:30",
+        "vb_hall": "Pınarhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-26",
+          "vb_time": "19:30",
+          "vb_hall": "Pınarhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2234,6 +2241,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 1,
-  "volleybox_sync_updated_at": "2026-11-03T12:27:39.115766"
+  "volleybox_synced_matches": 2,
+  "volleybox_sync_updated_at": "2026-11-03T13:24:41.873389"
 }
