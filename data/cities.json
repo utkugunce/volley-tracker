@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-03T17:04:31.966047+03:00",
+  "updated_at": "2026-11-04T10:04:21.194845+03:00",
   "total_cities": 81,
-  "active_cities": 37,
-  "total_matches": 1760,
+  "active_cities": 38,
+  "total_matches": 1805,
   "cities": [
     {
       "ilid": "1",
@@ -60,8 +60,8 @@
       "name": "Ankara",
       "slug": "ankara",
       "url": "https://ankara.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (157 Maç Mevcut)",
-      "matches_count": 157,
+      "status": "Aktif (161 Maç Mevcut)",
+      "matches_count": 161,
       "standings_count": 24,
       "data_file": "data/cities/ankara.json"
     },
@@ -200,8 +200,8 @@
       "name": "Denizli",
       "slug": "denizli",
       "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (41 Maç Mevcut)",
-      "matches_count": 41,
+      "status": "Aktif (46 Maç Mevcut)",
+      "matches_count": 46,
       "standings_count": 2,
       "data_file": "data/cities/denizli.json"
     },
@@ -261,9 +261,9 @@
       "name": "Eskişehir",
       "slug": "eskisehir",
       "url": "https://eskisehir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (57 Maç Mevcut)",
-      "matches_count": 57,
-      "standings_count": 9,
+      "status": "Aktif (67 Maç Mevcut)",
+      "matches_count": 67,
+      "standings_count": 13,
       "data_file": "data/cities/eskisehir.json"
     },
     {
@@ -352,8 +352,8 @@
       "name": "İzmir",
       "slug": "izmir",
       "url": "https://izmir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (200 Maç Mevcut)",
-      "matches_count": 200,
+      "status": "Aktif (214 Maç Mevcut)",
+      "matches_count": 214,
       "standings_count": 17,
       "data_file": "data/cities/izmir.json"
     },
@@ -603,10 +603,10 @@
       "name": "Tokat",
       "slug": "tokat",
       "url": "https://tokat.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Fikstür Açıklanmadı",
-      "matches_count": 0,
-      "standings_count": 0,
-      "data_file": null
+      "status": "Aktif (12 Maç Mevcut)",
+      "matches_count": 12,
+      "standings_count": 3,
+      "data_file": "data/cities/tokat.json"
     },
     {
       "ilid": "61",

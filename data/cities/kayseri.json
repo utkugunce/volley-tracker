@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T17:04:31.966047+03:00",
+  "updated_at": "2026-11-04T10:04:21.194845+03:00",
   "city": "Kayseri",
   "slug": "kayseri",
   "title": "TVF Kayseri Genç & Yıldız Kızlar Süper Lig",
@@ -193,16 +193,27 @@
       {
         "rank": 2,
         "team": "Evola Spor Kulübü - B U16",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
-        "points": 5,
-        "sets_won": 6,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 8,
+        "sets_lost": 5,
         "form": []
       },
       {
         "rank": 3,
+        "team": "Tomarza Belediye Spor Kulübü",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 4,
+        "sets_won": 6,
+        "sets_lost": 7,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Çınar Akademi Spor Kulübü - B U16",
         "played": 3,
         "won": 1,
@@ -210,17 +221,6 @@
         "points": 5,
         "sets_won": 7,
         "sets_lost": 7,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Tomarza Belediye Spor Kulübü",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 2,
-        "sets_won": 3,
-        "sets_lost": 5,
         "form": []
       },
       {
@@ -307,11 +307,11 @@
       {
         "rank": 2,
         "team": "Kayseri Atletik Spor Kulübü",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 4,
+        "points": 6,
+        "sets_won": 7,
         "sets_lost": 4,
         "form": []
       },
@@ -329,12 +329,12 @@
       {
         "rank": 4,
         "team": "Kayseri Doğa Koleji S.K.",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -1596,11 +1596,17 @@
       "match_no": "7",
       "home_team": "Tomarza Belediye Spor Kulübü",
       "away_team": "Evola Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "18-25",
+        "25-17",
+        "25-19",
+        "19-25",
+        "15-12"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411795",
@@ -2398,11 +2404,15 @@
       "match_no": "6",
       "home_team": "Kayseri Atletik Spor Kulübü",
       "away_team": "Kayseri Doğa Koleji S.K.",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "27-25",
+        "25-20",
+        "26-24"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2421,5 +2431,5 @@
     }
   ],
   "volleybox_synced_matches": 43,
-  "volleybox_sync_updated_at": "2026-11-03T17:06:19.236818"
+  "volleybox_sync_updated_at": "2026-11-04T10:05:27.100639"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T17:04:31.966047+03:00",
+  "updated_at": "2026-11-04T10:04:21.194845+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -93,12 +93,12 @@
       {
         "rank": 1,
         "team": "MG Spor Kulübü",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 0,
+        "lost": 1,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -115,12 +115,12 @@
       {
         "rank": 3,
         "team": "DSİ Nilüfer Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
+        "points": 2,
+        "sets_won": 4,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -217,18 +217,18 @@
       },
       {
         "rank": 2,
-        "team": "Doruk Voleybol Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
+        "team": "Osmangazi Belediyespor U18",
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Osmangazi Belediyespor U18",
+        "team": "Doruk Voleybol Spor Kulübü U18",
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -240,12 +240,12 @@
       {
         "rank": 4,
         "team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -1030,11 +1030,17 @@
       "match_no": "5",
       "home_team": "MG Spor Kulübü",
       "away_team": "DSİ Nilüfer Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "29-27",
+        "20-25",
+        "19-25",
+        "25-22",
+        "14-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413321",
@@ -1558,11 +1564,15 @@
       "match_no": "5",
       "home_team": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
       "away_team": "Osmangazi Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "10-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413325",
@@ -3745,5 +3755,5 @@
     }
   ],
   "volleybox_synced_matches": 68,
-  "volleybox_sync_updated_at": "2026-11-03T17:06:16.990307"
+  "volleybox_sync_updated_at": "2026-11-04T10:05:26.916409"
 }

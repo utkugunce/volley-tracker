@@ -1126,7 +1126,6 @@ def sync_kadinlar_1_lig_matches(
     return sync_league_json_matches(
         k1_path,
         "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
-        "KFC Kadınlar 1. Ligi",
         "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
         vb_tournaments,
         team_alias_map

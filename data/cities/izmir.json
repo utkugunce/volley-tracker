@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-03T17:04:31.966047+03:00",
+  "updated_at": "2026-11-04T10:04:21.194845+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 200,
+  "total_matches": 214,
   "source": "https://izmir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -344,11 +344,11 @@
       {
         "rank": 1,
         "team": "Rota Koleji SK",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -377,22 +377,22 @@
       {
         "rank": 4,
         "team": "Arkas Spor Kulübü - B U18",
-        "played": 1,
-        "won": 0,
+        "played": 2,
+        "won": 1,
         "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 5,
-        "team": "Monza Spor Kulübü U18",
+        "team": "Özay Voleybol Spor Kulübü U18",
         "played": 1,
         "won": 0,
         "lost": 1,
         "points": 0,
-        "sets_won": 0,
+        "sets_won": 1,
         "sets_lost": 3,
         "form": []
       },
@@ -409,13 +409,13 @@
       },
       {
         "rank": 7,
-        "team": "Özay Voleybol Spor Kulübü U18",
-        "played": 0,
+        "team": "Monza Spor Kulübü U18",
+        "played": 2,
         "won": 0,
-        "lost": 0,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -3392,7 +3392,41 @@
       }
     },
     {
-      "id": "izmir-20261118-049",
+      "id": "izmir-20261117-049",
+      "city": "İzmir",
+      "date": "2026-11-17",
+      "time": "--:--",
+      "hall": "Balçova",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final A Grubu",
+      "match_no": "9",
+      "home_team": "Göztepe SK - B U18",
+      "away_team": "İzmir DSİ Spor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261118-050",
       "city": "İzmir",
       "date": "2026-11-18",
       "time": "--:--",
@@ -3401,7 +3435,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Yarı Final A Grubu",
-      "match_no": "9",
+      "match_no": "10",
       "home_team": "İzmir Altınay Spor Kulübü U18",
       "away_team": "Altınordu Voleybol U18",
       "score": "- : -",
@@ -3433,7 +3467,75 @@
       }
     },
     {
-      "id": "izmir-20261027-050",
+      "id": "izmir-20261123-051",
+      "city": "İzmir",
+      "date": "2026-11-23",
+      "time": "--:--",
+      "hall": "Balçova",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final A Grubu",
+      "match_no": "11",
+      "home_team": "İzmir Altınay Spor Kulübü U18",
+      "away_team": "Parla Voleybol Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261123-052",
+      "city": "İzmir",
+      "date": "2026-11-23",
+      "time": "--:--",
+      "hall": "Vali Hüseyin Öğütcen S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final A Grubu",
+      "match_no": "12",
+      "home_team": "Altınordu Voleybol U18",
+      "away_team": "Karşıyaka SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261027-053",
       "city": "İzmir",
       "date": "2026-10-27",
       "time": "20:00",
@@ -3478,7 +3580,7 @@
       }
     },
     {
-      "id": "izmir-20261027-051",
+      "id": "izmir-20261027-054",
       "city": "İzmir",
       "date": "2026-10-27",
       "time": "20:00",
@@ -3523,7 +3625,7 @@
       }
     },
     {
-      "id": "izmir-20261028-052",
+      "id": "izmir-20261028-055",
       "city": "İzmir",
       "date": "2026-10-28",
       "time": "18:30",
@@ -3568,7 +3670,7 @@
       }
     },
     {
-      "id": "izmir-20261103-053",
+      "id": "izmir-20261103-056",
       "city": "İzmir",
       "date": "2026-11-03",
       "time": "20:00",
@@ -3580,11 +3682,16 @@
       "match_no": "4",
       "home_team": "Özay Voleybol Spor Kulübü U18",
       "away_team": "Arkas Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "24-26",
+        "25-20",
+        "13-25",
+        "25-27"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412765",
@@ -3609,7 +3716,7 @@
       }
     },
     {
-      "id": "izmir-20261103-054",
+      "id": "izmir-20261103-057",
       "city": "İzmir",
       "date": "2026-11-03",
       "time": "20:00",
@@ -3621,11 +3728,15 @@
       "match_no": "5",
       "home_team": "Monza Spor Kulübü U18",
       "away_team": "Rota Koleji SK",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "8-25",
+        "8-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412766",
@@ -3650,7 +3761,7 @@
       }
     },
     {
-      "id": "izmir-20261108-055",
+      "id": "izmir-20261108-058",
       "city": "İzmir",
       "date": "2026-11-08",
       "time": "17:00",
@@ -3691,7 +3802,7 @@
       }
     },
     {
-      "id": "izmir-20261112-056",
+      "id": "izmir-20261112-059",
       "city": "İzmir",
       "date": "2026-11-12",
       "time": "--:--",
@@ -3732,7 +3843,7 @@
       }
     },
     {
-      "id": "izmir-20261112-057",
+      "id": "izmir-20261112-060",
       "city": "İzmir",
       "date": "2026-11-12",
       "time": "--:--",
@@ -3773,7 +3884,7 @@
       }
     },
     {
-      "id": "izmir-20261116-058",
+      "id": "izmir-20261116-061",
       "city": "İzmir",
       "date": "2026-11-16",
       "time": "--:--",
@@ -3814,7 +3925,109 @@
       }
     },
     {
-      "id": "izmir-20260922-059",
+      "id": "izmir-20261119-062",
+      "city": "İzmir",
+      "date": "2026-11-19",
+      "time": "--:--",
+      "hall": "Gaziemir Spor Salonu",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final B Grubu",
+      "match_no": "10",
+      "home_team": "Özay Voleybol Spor Kulübü U18",
+      "away_team": "Rota Koleji SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261123-063",
+      "city": "İzmir",
+      "date": "2026-11-23",
+      "time": "--:--",
+      "hall": "Balçova",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final B Grubu",
+      "match_no": "11",
+      "home_team": "Göztepe SK U18",
+      "away_team": "Mavişehir Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261123-064",
+      "city": "İzmir",
+      "date": "2026-11-23",
+      "time": "--:--",
+      "hall": "Menemen",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final B Grubu",
+      "match_no": "12",
+      "home_team": "Arkas Spor Kulübü - B U18",
+      "away_team": "Gelişim Koleji SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20260922-065",
       "city": "İzmir",
       "date": "2026-09-22",
       "time": "20:00",
@@ -3853,7 +4066,7 @@
       }
     },
     {
-      "id": "izmir-20260925-060",
+      "id": "izmir-20260925-066",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "20:00",
@@ -3893,7 +4106,7 @@
       }
     },
     {
-      "id": "izmir-20260927-061",
+      "id": "izmir-20260927-067",
       "city": "İzmir",
       "date": "2026-09-27",
       "time": "11:30",
@@ -3939,7 +4152,7 @@
       }
     },
     {
-      "id": "izmir-20260927-062",
+      "id": "izmir-20260927-068",
       "city": "İzmir",
       "date": "2026-09-27",
       "time": "15:30",
@@ -3985,7 +4198,7 @@
       }
     },
     {
-      "id": "izmir-20261016-063",
+      "id": "izmir-20261016-069",
       "city": "İzmir",
       "date": "2026-10-16",
       "time": "18:30",
@@ -4023,7 +4236,7 @@
       }
     },
     {
-      "id": "izmir-20261017-064",
+      "id": "izmir-20261017-070",
       "city": "İzmir",
       "date": "2026-10-17",
       "time": "12:00",
@@ -4068,7 +4281,7 @@
       }
     },
     {
-      "id": "izmir-20261018-065",
+      "id": "izmir-20261018-071",
       "city": "İzmir",
       "date": "2026-10-18",
       "time": "11:00",
@@ -4113,7 +4326,7 @@
       }
     },
     {
-      "id": "izmir-20261018-066",
+      "id": "izmir-20261018-072",
       "city": "İzmir",
       "date": "2026-10-18",
       "time": "16:30",
@@ -4153,7 +4366,7 @@
       }
     },
     {
-      "id": "izmir-20261028-067",
+      "id": "izmir-20261028-073",
       "city": "İzmir",
       "date": "2026-10-28",
       "time": "18:30",
@@ -4191,7 +4404,7 @@
       }
     },
     {
-      "id": "izmir-20261028-068",
+      "id": "izmir-20261028-074",
       "city": "İzmir",
       "date": "2026-10-28",
       "time": "20:00",
@@ -4236,7 +4449,7 @@
       }
     },
     {
-      "id": "izmir-20261030-069",
+      "id": "izmir-20261030-075",
       "city": "İzmir",
       "date": "2026-10-30",
       "time": "20:00",
@@ -4281,7 +4494,7 @@
       }
     },
     {
-      "id": "izmir-20261101-070",
+      "id": "izmir-20261101-076",
       "city": "İzmir",
       "date": "2026-11-01",
       "time": "11:30",
@@ -4319,7 +4532,7 @@
       }
     },
     {
-      "id": "izmir-20261111-071",
+      "id": "izmir-20261111-077",
       "city": "İzmir",
       "date": "2026-11-11",
       "time": "--:--",
@@ -4360,7 +4573,7 @@
       }
     },
     {
-      "id": "izmir-20261113-072",
+      "id": "izmir-20261113-078",
       "city": "İzmir",
       "date": "2026-11-13",
       "time": "--:--",
@@ -4401,7 +4614,7 @@
       }
     },
     {
-      "id": "izmir-20261114-073",
+      "id": "izmir-20261114-079",
       "city": "İzmir",
       "date": "2026-11-14",
       "time": "13:30",
@@ -4435,7 +4648,7 @@
       }
     },
     {
-      "id": "izmir-20261115-074",
+      "id": "izmir-20261115-080",
       "city": "İzmir",
       "date": "2026-11-15",
       "time": "--:--",
@@ -4469,7 +4682,7 @@
       }
     },
     {
-      "id": "izmir-20260926-075",
+      "id": "izmir-20260926-081",
       "city": "İzmir",
       "date": "2026-09-26",
       "time": "10:00",
@@ -4509,7 +4722,7 @@
       }
     },
     {
-      "id": "izmir-20260926-076",
+      "id": "izmir-20260926-082",
       "city": "İzmir",
       "date": "2026-09-26",
       "time": "13:00",
@@ -4547,7 +4760,7 @@
       }
     },
     {
-      "id": "izmir-20260926-077",
+      "id": "izmir-20260926-083",
       "city": "İzmir",
       "date": "2026-09-26",
       "time": "16:00",
@@ -4586,7 +4799,7 @@
       }
     },
     {
-      "id": "izmir-20260926-078",
+      "id": "izmir-20260926-084",
       "city": "İzmir",
       "date": "2026-09-26",
       "time": "17:30",
@@ -4624,7 +4837,7 @@
       }
     },
     {
-      "id": "izmir-20261017-079",
+      "id": "izmir-20261017-085",
       "city": "İzmir",
       "date": "2026-10-17",
       "time": "10:30",
@@ -4670,7 +4883,7 @@
       }
     },
     {
-      "id": "izmir-20261017-080",
+      "id": "izmir-20261017-086",
       "city": "İzmir",
       "date": "2026-10-17",
       "time": "17:30",
@@ -4715,7 +4928,7 @@
       }
     },
     {
-      "id": "izmir-20261018-081",
+      "id": "izmir-20261018-087",
       "city": "İzmir",
       "date": "2026-10-18",
       "time": "10:00",
@@ -4762,7 +4975,7 @@
       }
     },
     {
-      "id": "izmir-20261018-082",
+      "id": "izmir-20261018-088",
       "city": "İzmir",
       "date": "2026-10-18",
       "time": "14:00",
@@ -4807,7 +5020,7 @@
       }
     },
     {
-      "id": "izmir-20261026-083",
+      "id": "izmir-20261026-089",
       "city": "İzmir",
       "date": "2026-10-26",
       "time": "18:30",
@@ -4853,7 +5066,7 @@
       }
     },
     {
-      "id": "izmir-20261026-084",
+      "id": "izmir-20261026-090",
       "city": "İzmir",
       "date": "2026-10-26",
       "time": "20:00",
@@ -4899,7 +5112,7 @@
       }
     },
     {
-      "id": "izmir-20261028-085",
+      "id": "izmir-20261028-091",
       "city": "İzmir",
       "date": "2026-10-28",
       "time": "20:00",
@@ -4945,7 +5158,7 @@
       }
     },
     {
-      "id": "izmir-20261030-086",
+      "id": "izmir-20261030-092",
       "city": "İzmir",
       "date": "2026-10-30",
       "time": "18:30",
@@ -4990,7 +5203,7 @@
       }
     },
     {
-      "id": "izmir-20261110-087",
+      "id": "izmir-20261110-093",
       "city": "İzmir",
       "date": "2026-11-10",
       "time": "--:--",
@@ -5031,7 +5244,7 @@
       }
     },
     {
-      "id": "izmir-20261114-088",
+      "id": "izmir-20261114-094",
       "city": "İzmir",
       "date": "2026-11-14",
       "time": "--:--",
@@ -5072,7 +5285,7 @@
       }
     },
     {
-      "id": "izmir-20261115-089",
+      "id": "izmir-20261115-095",
       "city": "İzmir",
       "date": "2026-11-15",
       "time": "--:--",
@@ -5113,11 +5326,11 @@
       }
     },
     {
-      "id": "izmir-20261116-090",
+      "id": "izmir-20261118-096",
       "city": "İzmir",
-      "date": "2026-11-16",
+      "date": "2026-11-18",
       "time": "--:--",
-      "hall": "Açıklanacak",
+      "hall": "Gaziemir Spor Salonu",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
@@ -5132,13 +5345,13 @@
       "status": "upcoming",
       "volleybox": {
         "synced": true,
-        "match_id": "415062",
-        "url": "https://women.volleybox.net/tr/zmir-altnay-spor-kulubu-b-u18-altnordu-voleybol-b-u18-c415062",
-        "host_name": "İzmir Altınay Spor Kulübü - B U18",
-        "guest_name": "Altınordu Voleybol - B U18",
+        "match_id": "414649",
+        "url": "https://women.volleybox.net/tr/zmir-altnay-spor-kulubu-u18-altnordu-voleybol-u18-c414649",
+        "host_name": "İzmir Altınay Spor Kulübü U18",
+        "guest_name": "Altınordu Voleybol U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-16",
+        "vb_date": "2026-11-18",
         "vb_time": null,
         "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
@@ -5146,7 +5359,7 @@
           "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-16",
+          "vb_date": "2026-11-18",
           "vb_time": null,
           "vb_hall": "Gaziemir Spor Salonu",
           "details": null
@@ -5154,7 +5367,7 @@
       }
     },
     {
-      "id": "izmir-20260922-091",
+      "id": "izmir-20260922-097",
       "city": "İzmir",
       "date": "2026-09-22",
       "time": "20:00",
@@ -5201,7 +5414,7 @@
       }
     },
     {
-      "id": "izmir-20260927-092",
+      "id": "izmir-20260927-098",
       "city": "İzmir",
       "date": "2026-09-27",
       "time": "12:30",
@@ -5247,7 +5460,7 @@
       }
     },
     {
-      "id": "izmir-20260927-093",
+      "id": "izmir-20260927-099",
       "city": "İzmir",
       "date": "2026-09-27",
       "time": "14:00",
@@ -5292,7 +5505,7 @@
       }
     },
     {
-      "id": "izmir-20260928-094",
+      "id": "izmir-20260928-100",
       "city": "İzmir",
       "date": "2026-09-28",
       "time": "20:00",
@@ -5330,7 +5543,7 @@
       }
     },
     {
-      "id": "izmir-20261005-095",
+      "id": "izmir-20261005-101",
       "city": "İzmir",
       "date": "2026-10-05",
       "time": "18:30",
@@ -5377,7 +5590,7 @@
       }
     },
     {
-      "id": "izmir-20261006-096",
+      "id": "izmir-20261006-102",
       "city": "İzmir",
       "date": "2026-10-06",
       "time": "18:30",
@@ -5416,7 +5629,7 @@
       }
     },
     {
-      "id": "izmir-20261006-097",
+      "id": "izmir-20261006-103",
       "city": "İzmir",
       "date": "2026-10-06",
       "time": "20:00",
@@ -5454,7 +5667,7 @@
       }
     },
     {
-      "id": "izmir-20261011-098",
+      "id": "izmir-20261011-104",
       "city": "İzmir",
       "date": "2026-10-11",
       "time": "10:00",
@@ -5501,7 +5714,7 @@
       }
     },
     {
-      "id": "izmir-20261026-099",
+      "id": "izmir-20261026-105",
       "city": "İzmir",
       "date": "2026-10-26",
       "time": "20:00",
@@ -5546,7 +5759,7 @@
       }
     },
     {
-      "id": "izmir-20261027-100",
+      "id": "izmir-20261027-106",
       "city": "İzmir",
       "date": "2026-10-27",
       "time": "20:00",
@@ -5592,7 +5805,7 @@
       }
     },
     {
-      "id": "izmir-20261101-101",
+      "id": "izmir-20261101-107",
       "city": "İzmir",
       "date": "2026-11-01",
       "time": "10:00",
@@ -5637,7 +5850,7 @@
       }
     },
     {
-      "id": "izmir-20261101-102",
+      "id": "izmir-20261101-108",
       "city": "İzmir",
       "date": "2026-11-01",
       "time": "14:00",
@@ -5682,7 +5895,7 @@
       }
     },
     {
-      "id": "izmir-20261113-103",
+      "id": "izmir-20261113-109",
       "city": "İzmir",
       "date": "2026-11-13",
       "time": "--:--",
@@ -5723,7 +5936,7 @@
       }
     },
     {
-      "id": "izmir-20261114-104",
+      "id": "izmir-20261114-110",
       "city": "İzmir",
       "date": "2026-11-14",
       "time": "--:--",
@@ -5764,7 +5977,7 @@
       }
     },
     {
-      "id": "izmir-20261115-105",
+      "id": "izmir-20261115-111",
       "city": "İzmir",
       "date": "2026-11-15",
       "time": "--:--",
@@ -5805,7 +6018,7 @@
       }
     },
     {
-      "id": "izmir-20261117-106",
+      "id": "izmir-20261117-112",
       "city": "İzmir",
       "date": "2026-11-17",
       "time": "--:--",
@@ -5846,7 +6059,7 @@
       }
     },
     {
-      "id": "izmir-20260919-107",
+      "id": "izmir-20260919-113",
       "city": "İzmir",
       "date": "2026-09-19",
       "time": "17:00",
@@ -5891,7 +6104,7 @@
       }
     },
     {
-      "id": "izmir-20260920-108",
+      "id": "izmir-20260920-114",
       "city": "İzmir",
       "date": "2026-09-20",
       "time": "12:00",
@@ -5937,7 +6150,7 @@
       }
     },
     {
-      "id": "izmir-20260923-109",
+      "id": "izmir-20260923-115",
       "city": "İzmir",
       "date": "2026-09-23",
       "time": "20:00",
@@ -5983,7 +6196,7 @@
       }
     },
     {
-      "id": "izmir-20260925-110",
+      "id": "izmir-20260925-116",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "20:00",
@@ -6028,7 +6241,7 @@
       }
     },
     {
-      "id": "izmir-20260928-111",
+      "id": "izmir-20260928-117",
       "city": "İzmir",
       "date": "2026-09-28",
       "time": "18:30",
@@ -6073,7 +6286,7 @@
       }
     },
     {
-      "id": "izmir-20261002-112",
+      "id": "izmir-20261002-118",
       "city": "İzmir",
       "date": "2026-10-02",
       "time": "20:00",
@@ -6118,7 +6331,7 @@
       }
     },
     {
-      "id": "izmir-20261005-113",
+      "id": "izmir-20261005-119",
       "city": "İzmir",
       "date": "2026-10-05",
       "time": "20:00",
@@ -6163,7 +6376,7 @@
       }
     },
     {
-      "id": "izmir-20261009-114",
+      "id": "izmir-20261009-120",
       "city": "İzmir",
       "date": "2026-10-09",
       "time": "20:00",
@@ -6208,7 +6421,7 @@
       }
     },
     {
-      "id": "izmir-20261015-115",
+      "id": "izmir-20261015-121",
       "city": "İzmir",
       "date": "2026-10-15",
       "time": "18:30",
@@ -6254,7 +6467,7 @@
       }
     },
     {
-      "id": "izmir-20261016-116",
+      "id": "izmir-20261016-122",
       "city": "İzmir",
       "date": "2026-10-16",
       "time": "20:00",
@@ -6301,7 +6514,7 @@
       }
     },
     {
-      "id": "izmir-20260915-117",
+      "id": "izmir-20260915-123",
       "city": "İzmir",
       "date": "2026-09-15",
       "time": "20:00",
@@ -6347,7 +6560,7 @@
       }
     },
     {
-      "id": "izmir-20260917-118",
+      "id": "izmir-20260917-124",
       "city": "İzmir",
       "date": "2026-09-17",
       "time": "20:00",
@@ -6394,7 +6607,7 @@
       }
     },
     {
-      "id": "izmir-20260920-119",
+      "id": "izmir-20260920-125",
       "city": "İzmir",
       "date": "2026-09-20",
       "time": "16:00",
@@ -6439,7 +6652,7 @@
       }
     },
     {
-      "id": "izmir-20260924-120",
+      "id": "izmir-20260924-126",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "18:30",
@@ -6484,7 +6697,7 @@
       }
     },
     {
-      "id": "izmir-20260924-121",
+      "id": "izmir-20260924-127",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "20:00",
@@ -6529,7 +6742,7 @@
       }
     },
     {
-      "id": "izmir-20260926-122",
+      "id": "izmir-20260926-128",
       "city": "İzmir",
       "date": "2026-09-26",
       "time": "16:00",
@@ -6574,7 +6787,7 @@
       }
     },
     {
-      "id": "izmir-20261001-123",
+      "id": "izmir-20261001-129",
       "city": "İzmir",
       "date": "2026-10-01",
       "time": "20:00",
@@ -6619,7 +6832,7 @@
       }
     },
     {
-      "id": "izmir-20261003-124",
+      "id": "izmir-20261003-130",
       "city": "İzmir",
       "date": "2026-10-03",
       "time": "10:00",
@@ -6665,7 +6878,7 @@
       }
     },
     {
-      "id": "izmir-20261004-125",
+      "id": "izmir-20261004-131",
       "city": "İzmir",
       "date": "2026-10-04",
       "time": "16:00",
@@ -6711,7 +6924,7 @@
       }
     },
     {
-      "id": "izmir-20261009-126",
+      "id": "izmir-20261009-132",
       "city": "İzmir",
       "date": "2026-10-09",
       "time": "18:30",
@@ -6756,7 +6969,7 @@
       }
     },
     {
-      "id": "izmir-20261010-127",
+      "id": "izmir-20261010-133",
       "city": "İzmir",
       "date": "2026-10-10",
       "time": "11:30",
@@ -6801,7 +7014,7 @@
       }
     },
     {
-      "id": "izmir-20261010-128",
+      "id": "izmir-20261010-134",
       "city": "İzmir",
       "date": "2026-10-10",
       "time": "16:00",
@@ -6846,7 +7059,7 @@
       }
     },
     {
-      "id": "izmir-20261013-129",
+      "id": "izmir-20261013-135",
       "city": "İzmir",
       "date": "2026-10-13",
       "time": "20:00",
@@ -6893,7 +7106,7 @@
       }
     },
     {
-      "id": "izmir-20261014-130",
+      "id": "izmir-20261014-136",
       "city": "İzmir",
       "date": "2026-10-14",
       "time": "18:30",
@@ -6939,7 +7152,7 @@
       }
     },
     {
-      "id": "izmir-20261014-131",
+      "id": "izmir-20261014-137",
       "city": "İzmir",
       "date": "2026-10-14",
       "time": "20:00",
@@ -6984,7 +7197,7 @@
       }
     },
     {
-      "id": "izmir-20260916-132",
+      "id": "izmir-20260916-138",
       "city": "İzmir",
       "date": "2026-09-16",
       "time": "18:30",
@@ -7029,7 +7242,7 @@
       }
     },
     {
-      "id": "izmir-20260919-133",
+      "id": "izmir-20260919-139",
       "city": "İzmir",
       "date": "2026-09-19",
       "time": "12:00",
@@ -7074,7 +7287,7 @@
       }
     },
     {
-      "id": "izmir-20260921-134",
+      "id": "izmir-20260921-140",
       "city": "İzmir",
       "date": "2026-09-21",
       "time": "20:00",
@@ -7120,7 +7333,7 @@
       }
     },
     {
-      "id": "izmir-20260924-135",
+      "id": "izmir-20260924-141",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "20:00",
@@ -7166,7 +7379,7 @@
       }
     },
     {
-      "id": "izmir-20260924-136",
+      "id": "izmir-20260924-142",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "20:00",
@@ -7213,7 +7426,7 @@
       }
     },
     {
-      "id": "izmir-20260925-137",
+      "id": "izmir-20260925-143",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "18:30",
@@ -7258,7 +7471,7 @@
       }
     },
     {
-      "id": "izmir-20260928-138",
+      "id": "izmir-20260928-144",
       "city": "İzmir",
       "date": "2026-09-28",
       "time": "20:00",
@@ -7303,7 +7516,7 @@
       }
     },
     {
-      "id": "izmir-20260928-139",
+      "id": "izmir-20260928-145",
       "city": "İzmir",
       "date": "2026-09-28",
       "time": "20:00",
@@ -7349,7 +7562,7 @@
       }
     },
     {
-      "id": "izmir-20261001-140",
+      "id": "izmir-20261001-146",
       "city": "İzmir",
       "date": "2026-10-01",
       "time": "18:30",
@@ -7394,7 +7607,7 @@
       }
     },
     {
-      "id": "izmir-20261006-141",
+      "id": "izmir-20261006-147",
       "city": "İzmir",
       "date": "2026-10-06",
       "time": "18:30",
@@ -7440,7 +7653,7 @@
       }
     },
     {
-      "id": "izmir-20261007-142",
+      "id": "izmir-20261007-148",
       "city": "İzmir",
       "date": "2026-10-07",
       "time": "20:00",
@@ -7485,7 +7698,7 @@
       }
     },
     {
-      "id": "izmir-20261008-143",
+      "id": "izmir-20261008-149",
       "city": "İzmir",
       "date": "2026-10-08",
       "time": "20:00",
@@ -7530,7 +7743,7 @@
       }
     },
     {
-      "id": "izmir-20261015-144",
+      "id": "izmir-20261015-150",
       "city": "İzmir",
       "date": "2026-10-15",
       "time": "18:30",
@@ -7577,7 +7790,7 @@
       }
     },
     {
-      "id": "izmir-20261015-145",
+      "id": "izmir-20261015-151",
       "city": "İzmir",
       "date": "2026-10-15",
       "time": "18:30",
@@ -7622,7 +7835,7 @@
       }
     },
     {
-      "id": "izmir-20261015-146",
+      "id": "izmir-20261015-152",
       "city": "İzmir",
       "date": "2026-10-15",
       "time": "20:00",
@@ -7667,7 +7880,7 @@
       }
     },
     {
-      "id": "izmir-20260915-147",
+      "id": "izmir-20260915-153",
       "city": "İzmir",
       "date": "2026-09-15",
       "time": "18:30",
@@ -7713,7 +7926,7 @@
       }
     },
     {
-      "id": "izmir-20260916-148",
+      "id": "izmir-20260916-154",
       "city": "İzmir",
       "date": "2026-09-16",
       "time": "18:30",
@@ -7758,7 +7971,7 @@
       }
     },
     {
-      "id": "izmir-20260921-149",
+      "id": "izmir-20260921-155",
       "city": "İzmir",
       "date": "2026-09-21",
       "time": "18:30",
@@ -7805,7 +8018,7 @@
       }
     },
     {
-      "id": "izmir-20260924-150",
+      "id": "izmir-20260924-156",
       "city": "İzmir",
       "date": "2026-09-24",
       "time": "18:30",
@@ -7851,7 +8064,7 @@
       }
     },
     {
-      "id": "izmir-20260925-151",
+      "id": "izmir-20260925-157",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "20:00",
@@ -7896,7 +8109,7 @@
       }
     },
     {
-      "id": "izmir-20260929-152",
+      "id": "izmir-20260929-158",
       "city": "İzmir",
       "date": "2026-09-29",
       "time": "18:30",
@@ -7941,7 +8154,7 @@
       }
     },
     {
-      "id": "izmir-20261001-153",
+      "id": "izmir-20261001-159",
       "city": "İzmir",
       "date": "2026-10-01",
       "time": "18:30",
@@ -7987,7 +8200,7 @@
       }
     },
     {
-      "id": "izmir-20261002-154",
+      "id": "izmir-20261002-160",
       "city": "İzmir",
       "date": "2026-10-02",
       "time": "18:30",
@@ -8032,7 +8245,7 @@
       }
     },
     {
-      "id": "izmir-20261004-155",
+      "id": "izmir-20261004-161",
       "city": "İzmir",
       "date": "2026-10-04",
       "time": "15:00",
@@ -8078,7 +8291,7 @@
       }
     },
     {
-      "id": "izmir-20261007-156",
+      "id": "izmir-20261007-162",
       "city": "İzmir",
       "date": "2026-10-07",
       "time": "18:30",
@@ -8125,7 +8338,7 @@
       }
     },
     {
-      "id": "izmir-20261007-157",
+      "id": "izmir-20261007-163",
       "city": "İzmir",
       "date": "2026-10-07",
       "time": "20:00",
@@ -8170,7 +8383,7 @@
       }
     },
     {
-      "id": "izmir-20261008-158",
+      "id": "izmir-20261008-164",
       "city": "İzmir",
       "date": "2026-10-08",
       "time": "18:30",
@@ -8217,7 +8430,7 @@
       }
     },
     {
-      "id": "izmir-20261014-159",
+      "id": "izmir-20261014-165",
       "city": "İzmir",
       "date": "2026-10-14",
       "time": "20:00",
@@ -8263,7 +8476,7 @@
       }
     },
     {
-      "id": "izmir-20261015-160",
+      "id": "izmir-20261015-166",
       "city": "İzmir",
       "date": "2026-10-15",
       "time": "20:00",
@@ -8309,7 +8522,7 @@
       }
     },
     {
-      "id": "izmir-20261016-161",
+      "id": "izmir-20261016-167",
       "city": "İzmir",
       "date": "2026-10-16",
       "time": "18:30",
@@ -8355,7 +8568,7 @@
       }
     },
     {
-      "id": "izmir-20260917-162",
+      "id": "izmir-20260917-168",
       "city": "İzmir",
       "date": "2026-09-17",
       "time": "20:00",
@@ -8400,7 +8613,7 @@
       }
     },
     {
-      "id": "izmir-20260918-163",
+      "id": "izmir-20260918-169",
       "city": "İzmir",
       "date": "2026-09-18",
       "time": "20:00",
@@ -8447,7 +8660,7 @@
       }
     },
     {
-      "id": "izmir-20260918-164",
+      "id": "izmir-20260918-170",
       "city": "İzmir",
       "date": "2026-09-18",
       "time": "20:00",
@@ -8492,7 +8705,7 @@
       }
     },
     {
-      "id": "izmir-20260921-165",
+      "id": "izmir-20260921-171",
       "city": "İzmir",
       "date": "2026-09-21",
       "time": "20:00",
@@ -8537,7 +8750,7 @@
       }
     },
     {
-      "id": "izmir-20260925-166",
+      "id": "izmir-20260925-172",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "18:30",
@@ -8584,7 +8797,7 @@
       }
     },
     {
-      "id": "izmir-20260925-167",
+      "id": "izmir-20260925-173",
       "city": "İzmir",
       "date": "2026-09-25",
       "time": "20:00",
@@ -8629,7 +8842,7 @@
       }
     },
     {
-      "id": "izmir-20261001-168",
+      "id": "izmir-20261001-174",
       "city": "İzmir",
       "date": "2026-10-01",
       "time": "20:00",
@@ -8674,7 +8887,7 @@
       }
     },
     {
-      "id": "izmir-20261004-169",
+      "id": "izmir-20261004-175",
       "city": "İzmir",
       "date": "2026-10-04",
       "time": "11:30",
@@ -8719,7 +8932,7 @@
       }
     },
     {
-      "id": "izmir-20261004-170",
+      "id": "izmir-20261004-176",
       "city": "İzmir",
       "date": "2026-10-04",
       "time": "17:00",
@@ -8766,7 +8979,7 @@
       }
     },
     {
-      "id": "izmir-20261007-171",
+      "id": "izmir-20261007-177",
       "city": "İzmir",
       "date": "2026-10-07",
       "time": "20:00",
@@ -8811,7 +9024,7 @@
       }
     },
     {
-      "id": "izmir-20261010-172",
+      "id": "izmir-20261010-178",
       "city": "İzmir",
       "date": "2026-10-10",
       "time": "13:30",
@@ -8857,7 +9070,7 @@
       }
     },
     {
-      "id": "izmir-20261011-173",
+      "id": "izmir-20261011-179",
       "city": "İzmir",
       "date": "2026-10-11",
       "time": "11:30",
@@ -8903,7 +9116,7 @@
       }
     },
     {
-      "id": "izmir-20261013-174",
+      "id": "izmir-20261013-180",
       "city": "İzmir",
       "date": "2026-10-13",
       "time": "18:30",
@@ -8948,7 +9161,7 @@
       }
     },
     {
-      "id": "izmir-20261014-175",
+      "id": "izmir-20261014-181",
       "city": "İzmir",
       "date": "2026-10-14",
       "time": "18:30",
@@ -8994,7 +9207,7 @@
       }
     },
     {
-      "id": "izmir-20261016-176",
+      "id": "izmir-20261016-182",
       "city": "İzmir",
       "date": "2026-10-16",
       "time": "20:00",
@@ -9039,7 +9252,7 @@
       }
     },
     {
-      "id": "izmir-20261027-177",
+      "id": "izmir-20261027-183",
       "city": "İzmir",
       "date": "2026-10-27",
       "time": "18:30",
@@ -9084,7 +9297,7 @@
       }
     },
     {
-      "id": "izmir-20261029-178",
+      "id": "izmir-20261029-184",
       "city": "İzmir",
       "date": "2026-10-29",
       "time": "18:30",
@@ -9129,7 +9342,7 @@
       }
     },
     {
-      "id": "izmir-20261029-179",
+      "id": "izmir-20261029-185",
       "city": "İzmir",
       "date": "2026-10-29",
       "time": "20:00",
@@ -9174,7 +9387,7 @@
       }
     },
     {
-      "id": "izmir-20261105-180",
+      "id": "izmir-20261105-186",
       "city": "İzmir",
       "date": "2026-11-05",
       "time": "20:00",
@@ -9215,7 +9428,7 @@
       }
     },
     {
-      "id": "izmir-20261107-181",
+      "id": "izmir-20261107-187",
       "city": "İzmir",
       "date": "2026-11-07",
       "time": "13:30",
@@ -9256,7 +9469,7 @@
       }
     },
     {
-      "id": "izmir-20261110-182",
+      "id": "izmir-20261110-188",
       "city": "İzmir",
       "date": "2026-11-10",
       "time": "--:--",
@@ -9297,7 +9510,7 @@
       }
     },
     {
-      "id": "izmir-20261112-183",
+      "id": "izmir-20261112-189",
       "city": "İzmir",
       "date": "2026-11-12",
       "time": "--:--",
@@ -9338,7 +9551,7 @@
       }
     },
     {
-      "id": "izmir-20261114-184",
+      "id": "izmir-20261114-190",
       "city": "İzmir",
       "date": "2026-11-14",
       "time": "--:--",
@@ -9379,7 +9592,7 @@
       }
     },
     {
-      "id": "izmir-20261115-185",
+      "id": "izmir-20261115-191",
       "city": "İzmir",
       "date": "2026-11-15",
       "time": "--:--",
@@ -9420,7 +9633,109 @@
       }
     },
     {
-      "id": "izmir-20261026-186",
+      "id": "izmir-20261118-192",
+      "city": "İzmir",
+      "date": "2026-11-18",
+      "time": "--:--",
+      "hall": "Vali Hüseyin Öğütcen S",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final A Grubu",
+      "match_no": "10",
+      "home_team": "Karşıyaka U16",
+      "away_team": "Göztepe SK - A U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261119-193",
+      "city": "İzmir",
+      "date": "2026-11-19",
+      "time": "--:--",
+      "hall": "Menemen",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final A Grubu",
+      "match_no": "11",
+      "home_team": "Gelişim Koleji SK U16",
+      "away_team": "İzmir DSİ Spor U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261120-194",
+      "city": "İzmir",
+      "date": "2026-11-20",
+      "time": "--:--",
+      "hall": "Gaziemir Spor Salonu",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final A Grubu",
+      "match_no": "12",
+      "home_team": "AB Voleybol Akademi U16",
+      "away_team": "Monza Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261026-195",
       "city": "İzmir",
       "date": "2026-10-26",
       "time": "20:00",
@@ -9466,7 +9781,7 @@
       }
     },
     {
-      "id": "izmir-20261027-187",
+      "id": "izmir-20261027-196",
       "city": "İzmir",
       "date": "2026-10-27",
       "time": "20:00",
@@ -9512,7 +9827,7 @@
       }
     },
     {
-      "id": "izmir-20261030-188",
+      "id": "izmir-20261030-197",
       "city": "İzmir",
       "date": "2026-10-30",
       "time": "20:00",
@@ -9559,7 +9874,7 @@
       }
     },
     {
-      "id": "izmir-20261102-189",
+      "id": "izmir-20261102-198",
       "city": "İzmir",
       "date": "2026-11-02",
       "time": "20:00",
@@ -9606,7 +9921,7 @@
       }
     },
     {
-      "id": "izmir-20261105-190",
+      "id": "izmir-20261105-199",
       "city": "İzmir",
       "date": "2026-11-05",
       "time": "20:00",
@@ -9647,7 +9962,7 @@
       }
     },
     {
-      "id": "izmir-20261109-191",
+      "id": "izmir-20261109-200",
       "city": "İzmir",
       "date": "2026-11-09",
       "time": "--:--",
@@ -9688,7 +10003,7 @@
       }
     },
     {
-      "id": "izmir-20261112-192",
+      "id": "izmir-20261112-201",
       "city": "İzmir",
       "date": "2026-11-12",
       "time": "--:--",
@@ -9729,7 +10044,7 @@
       }
     },
     {
-      "id": "izmir-20261114-193",
+      "id": "izmir-20261114-202",
       "city": "İzmir",
       "date": "2026-11-14",
       "time": "--:--",
@@ -9770,7 +10085,7 @@
       }
     },
     {
-      "id": "izmir-20261116-194",
+      "id": "izmir-20261116-203",
       "city": "İzmir",
       "date": "2026-11-16",
       "time": "--:--",
@@ -9811,7 +10126,109 @@
       }
     },
     {
-      "id": "izmir-20261027-195",
+      "id": "izmir-20261116-204",
+      "city": "İzmir",
+      "date": "2026-11-16",
+      "time": "20:00",
+      "hall": "Halkapınar Küçük",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final B Grubu",
+      "match_no": "10",
+      "home_team": "Dokuz Eylül Voleybol U16",
+      "away_team": "Alfa Karşıyaka Voleybol Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261117-205",
+      "city": "İzmir",
+      "date": "2026-11-17",
+      "time": "--:--",
+      "hall": "Halkapınar Küçük",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final B Grubu",
+      "match_no": "11",
+      "home_team": "Parla Voleybol Kulübü - A U16",
+      "away_team": "Özay Voleybol Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261125-206",
+      "city": "İzmir",
+      "date": "2026-11-25",
+      "time": "--:--",
+      "hall": "Gaziemir Spor Salonu",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final B Grubu",
+      "match_no": "12",
+      "home_team": "İzmir Altınay Spor Kulübü U16",
+      "away_team": "Rota Koleji SK",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261027-207",
       "city": "İzmir",
       "date": "2026-10-27",
       "time": "18:30",
@@ -9856,7 +10273,7 @@
       }
     },
     {
-      "id": "izmir-20261029-196",
+      "id": "izmir-20261029-208",
       "city": "İzmir",
       "date": "2026-10-29",
       "time": "20:00",
@@ -9903,7 +10320,7 @@
       }
     },
     {
-      "id": "izmir-20261104-197",
+      "id": "izmir-20261104-209",
       "city": "İzmir",
       "date": "2026-11-04",
       "time": "20:30",
@@ -9944,7 +10361,7 @@
       }
     },
     {
-      "id": "izmir-20261109-198",
+      "id": "izmir-20261109-210",
       "city": "İzmir",
       "date": "2026-11-09",
       "time": "--:--",
@@ -9985,7 +10402,7 @@
       }
     },
     {
-      "id": "izmir-20261112-199",
+      "id": "izmir-20261112-211",
       "city": "İzmir",
       "date": "2026-11-12",
       "time": "--:--",
@@ -10026,7 +10443,7 @@
       }
     },
     {
-      "id": "izmir-20261114-200",
+      "id": "izmir-20261114-212",
       "city": "İzmir",
       "date": "2026-11-14",
       "time": "--:--",
@@ -10065,8 +10482,76 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "izmir-20261118-213",
+      "city": "İzmir",
+      "date": "2026-11-18",
+      "time": "--:--",
+      "hall": "Halkapınar Küçük",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final C Grubu",
+      "match_no": "7",
+      "home_team": "Arkas Spor Kulübü U16",
+      "away_team": "Forza Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261119-214",
+      "city": "İzmir",
+      "date": "2026-11-19",
+      "time": "20:00",
+      "hall": "Halkapınar Küçük",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Yarı Final C Grubu",
+      "match_no": "8",
+      "home_team": "Volkan Güç Spor Kulübü U16",
+      "away_team": "Alfa Gaziemir Voleybol Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 185,
-  "volleybox_sync_updated_at": "2026-11-03T17:06:19.111593"
+  "volleybox_sync_updated_at": "2026-11-04T10:05:27.071326"
 }

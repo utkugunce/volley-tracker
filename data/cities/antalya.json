@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T17:04:31.966047+03:00",
+  "updated_at": "2026-11-04T10:04:21.194845+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -59,16 +59,27 @@
       {
         "rank": 3,
         "team": "07 Zenit Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 2,
-        "lost": 1,
+        "lost": 2,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 4,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 4,
+        "team": "Akdeniz Bilgi Spor Kulübü U18",
+        "played": 2,
+        "won": 1,
+        "lost": 1,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 5,
         "team": "Luna Spor Kulübü U18",
         "played": 3,
         "won": 1,
@@ -79,7 +90,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 6,
         "team": "Antalya 1907 Spor Kulübü U18",
         "played": 3,
         "won": 1,
@@ -87,17 +98,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Akdeniz Bilgi Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -127,11 +127,11 @@
       {
         "rank": 2,
         "team": "Antalya Açı Koleji Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
@@ -160,12 +160,12 @@
       {
         "rank": 5,
         "team": "Nova Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 2,
         "sets_won": 4,
-        "sets_lost": 8,
+        "sets_lost": 11,
         "form": []
       },
       {
@@ -942,11 +942,15 @@
       "match_no": "12",
       "home_team": "Akdeniz Bilgi Spor Kulübü U18",
       "away_team": "07 Zenit Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-23",
+        "25-17",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407979",
@@ -1475,11 +1479,15 @@
       "match_no": "10",
       "home_team": "Nova Spor Kulübü U18",
       "away_team": "Antalya Açı Koleji Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "15-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407983",
@@ -3595,5 +3603,5 @@
     }
   ],
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-11-03T17:06:16.737723"
+  "volleybox_sync_updated_at": "2026-11-04T10:05:26.865556"
 }

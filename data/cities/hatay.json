@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T17:04:31.966047+03:00",
+  "updated_at": "2026-11-04T10:04:21.194845+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -88,23 +88,23 @@
       {
         "rank": 2,
         "team": "Yükseliş Akademi Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
         "team": "Antakya Güneş Spor Kulübü - B U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 2,
         "sets_won": 3,
-        "sets_lost": 5,
+        "sets_lost": 8,
         "form": []
       },
       {
@@ -180,11 +180,11 @@
       {
         "rank": 1,
         "team": "Vipark Gençlik Ve Spor U18",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
@@ -202,12 +202,12 @@
       {
         "rank": 3,
         "team": "İskenderun Voleybol Akademi Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
-        "points": 2,
+        "lost": 3,
+        "points": 0,
         "sets_won": 4,
-        "sets_lost": 8,
+        "sets_lost": 11,
         "form": []
       },
       {
@@ -919,11 +919,15 @@
       "match_no": "5",
       "home_team": "Yükseliş Akademi Spor Kulübü U18",
       "away_team": "Antakya Güneş Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-14",
+        "25-22"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401080",
@@ -2374,11 +2378,15 @@
       "match_no": "7",
       "home_team": "İskenderun Voleybol Akademi Spor Kulübü U18",
       "away_team": "Vipark Gençlik Ve Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401114",
@@ -2613,5 +2621,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-03T17:06:17.407761"
+  "volleybox_sync_updated_at": "2026-11-04T10:05:26.999426"
 }
