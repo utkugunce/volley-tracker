@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-04T16:41:24.917808+00:00",
   "total_cities": 81,
   "active_cities": 38,
-  "total_matches": 1684,
+  "total_matches": 1679,
   "cities": [
     {
       "ilid": "1",
@@ -30,8 +30,8 @@
       "name": "Afyonkarahisar",
       "slug": "afyon",
       "url": "https://afyon.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (26 Maç Mevcut)",
-      "matches_count": 26,
+      "status": "Aktif (21 Maç Mevcut)",
+      "matches_count": 21,
       "standings_count": 3,
       "data_file": "data/cities/afyon.json"
     },
@@ -344,7 +344,7 @@
       "url": "https://istanbul.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (0 Maç Mevcut)",
       "matches_count": 0,
-      "standings_count": 15,
+      "standings_count": 61,
       "data_file": "data/cities/istanbul.json"
     },
     {
