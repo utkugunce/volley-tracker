@@ -23737,6 +23737,21 @@
         "Eczacıbaşı II",
         "Eczacıbaşı 2"
       ]
+    },
+    {
+      "internal_name": "Akademi Spor Kulübü B",
+      "internal_category": "Genç Kızlar Süper Lig",
+      "city": "Kırklareli",
+      "city_slug": "kirklareli",
+      "matched_as": "Lüleburgaz Akademi Spor B U18",
+      "volleybox_url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+      "age_category": "U18",
+      "confidence": "verified",
+      "verified_at": "2026-11-04",
+      "aliases": [
+        "Akademi Spor Kulübü B",
+        "Lüleburgaz Akademi Spor B U18"
+      ]
     }
   ],
   "leagues": [

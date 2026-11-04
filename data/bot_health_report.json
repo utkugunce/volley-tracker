@@ -1,45 +1,13 @@
 {
-  "generated_at": "2026-11-04T14:25:03.967309",
+  "generated_at": "2026-11-04T15:12:13.717882",
   "city_filter": "all",
   "total_candidates": 166,
-  "ready_count": 103,
+  "ready_count": 106,
   "quarantined_count": 0,
-  "missing_teams_count": 16,
-  "blocked_by_missing_teams": 103,
-  "health_score_pct": 62.0,
+  "missing_teams_count": 15,
+  "blocked_by_missing_teams": 89,
+  "health_score_pct": 63.9,
   "missing_teams": [
-    {
-      "team_name": "Akademi Spor Kulübü B",
-      "city": "Kırklareli",
-      "city_slug": "kirklareli",
-      "category": "Genç Kızlar Süper Lig",
-      "match_count": 14,
-      "blocked_matches": [
-        "kirklareli-20261031-002",
-        "kirklareli-20261107-004",
-        "kirklareli-20261114-006",
-        "kirklareli-20261121-009",
-        "kirklareli-20261128-012",
-        "kirklareli-20270202-015",
-        "kirklareli-20270206-021",
-        "kirklareli-20270209-023",
-        "kirklareli-20270218-032",
-        "kirklareli-20270225-036",
-        "kirklareli-20270305-043",
-        "kirklareli-20270320-049",
-        "kirklareli-20270322-050",
-        "kirklareli-20270327-056"
-      ],
-      "suggestions": [
-        {
-          "team_id": "40248",
-          "name": "Kırklareli Gençlik Spor Kulübü",
-          "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
-          "city": "Kirklareli̇",
-          "score": 99
-        }
-      ]
-    },
     {
       "team_name": "Akademi Spor Kulübü A",
       "city": "Kırklareli",
@@ -68,6 +36,13 @@
           "name": "Kırklareli Gençlik Spor Kulübü",
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
+          "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
           "score": 99
         }
       ]
@@ -100,6 +75,13 @@
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
           "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
+          "score": 99
         }
       ]
     },
@@ -126,6 +108,13 @@
           "name": "Kırklareli Gençlik Spor Kulübü",
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
+          "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
           "score": 99
         }
       ]
@@ -154,6 +143,13 @@
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
           "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
+          "score": 99
         }
       ]
     },
@@ -180,6 +176,13 @@
           "name": "Kırklareli Gençlik Spor Kulübü",
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
+          "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
           "score": 99
         }
       ]
@@ -208,6 +211,13 @@
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
           "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
+          "score": 99
         }
       ]
     },
@@ -235,6 +245,13 @@
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
           "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
+          "score": 99
         }
       ]
     },
@@ -258,6 +275,13 @@
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
           "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
+          "score": 99
         }
       ]
     },
@@ -279,6 +303,13 @@
           "name": "Kırklareli Gençlik Spor Kulübü",
           "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-t40248",
           "city": "Kirklareli̇",
+          "score": 99
+        },
+        {
+          "team_id": "42429",
+          "name": "Lüleburgaz Akademi Spor B U18",
+          "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-t42429",
+          "city": "Kırklareli",
           "score": 99
         }
       ]
@@ -601,8 +632,8 @@
       "city": "Kırklareli",
       "category": "Genç Kızlar Süper Lig",
       "total_matches": 13,
-      "ready_matches": 0,
-      "blocked_matches": 13
+      "ready_matches": 1,
+      "blocked_matches": 12
     },
     {
       "tournament_url": "https://women.volleybox.net/women-krklareli-super-ligi-u16-2026-27-o51847",
@@ -610,8 +641,8 @@
       "city": "Kırklareli",
       "category": "Yıldız Kızlar Süper Lig",
       "total_matches": 45,
-      "ready_matches": 1,
-      "blocked_matches": 44
+      "ready_matches": 3,
+      "blocked_matches": 42
     },
     {
       "tournament_url": "https://women.volleybox.net/women-kocaeli-super-ligi-u18-2026-27-o51464",
@@ -1697,6 +1728,32 @@
       "tournament_url": "https://women.volleybox.net/women-zmir-super-ligi-u16-2026-27-o49397"
     },
     {
+      "id": "kirklareli-20261121-009",
+      "city": "Kırklareli",
+      "city_slug": "kirklareli",
+      "category": "Genç Kızlar Süper Lig",
+      "home_team": "Akademi Spor Kulübü B",
+      "away_team": "Kırklareli Gençlik Spor Kulübü",
+      "date": "2026-11-21",
+      "time": "13:00",
+      "resolved_home": "Lüleburgaz Akademi Spor B U18",
+      "resolved_guest": "Kırklareli Gençlik Spor Kulübü",
+      "tournament_url": "https://women.volleybox.net/women-krklareli-super-ligi-u18-2026-27-o51846"
+    },
+    {
+      "id": "kirklareli-20270202-015",
+      "city": "Kırklareli",
+      "city_slug": "kirklareli",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Akademi Spor Kulübü B",
+      "away_team": "Kırklareli Gençlik Spor Kulübü A",
+      "date": "2027-02-02",
+      "time": "18:30",
+      "resolved_home": "Lüleburgaz Akademi Spor B U18",
+      "resolved_guest": "Kırklareli Gençlik Spor Kulübü",
+      "tournament_url": "https://women.volleybox.net/women-krklareli-super-ligi-u16-2026-27-o51847"
+    },
+    {
       "id": "kirklareli-20270226-037",
       "city": "Kırklareli",
       "city_slug": "kirklareli",
@@ -1706,6 +1763,19 @@
       "date": "2027-02-26",
       "time": "19:30",
       "resolved_home": "Kırklareli Gençlik Spor Kulübü",
+      "resolved_guest": "Kırklareli Gençlik Spor Kulübü",
+      "tournament_url": "https://women.volleybox.net/women-krklareli-super-ligi-u16-2026-27-o51847"
+    },
+    {
+      "id": "kirklareli-20270327-056",
+      "city": "Kırklareli",
+      "city_slug": "kirklareli",
+      "category": "Yıldız Kızlar Süper Lig",
+      "home_team": "Akademi Spor Kulübü B",
+      "away_team": "Pınarhisar Gençlik Spor Kulübü",
+      "date": "2027-03-27",
+      "time": "14:30",
+      "resolved_home": "Lüleburgaz Akademi Spor B U18",
       "resolved_guest": "Kırklareli Gençlik Spor Kulübü",
       "tournament_url": "https://women.volleybox.net/women-krklareli-super-ligi-u16-2026-27-o51847"
     },
@@ -1928,45 +1998,6 @@
       "time": "17:15",
       "resolved_home": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
       "resolved_guest": "Toroslar Belediye Spor Kulübü U18",
-      "tournament_url": "https://women.volleybox.net/women-mersin-super-ligi-u18-2026-27-o51071"
-    },
-    {
-      "id": "mersin-20261111-026",
-      "city": "Mersin",
-      "city_slug": "mersin",
-      "category": "Genç Kızlar Süper Lig",
-      "home_team": "Mersin İhtisas Spor Kulübü U18",
-      "away_team": "MEV Toros Spor Kulübü U18",
-      "date": "2026-11-11",
-      "time": "17:15",
-      "resolved_home": "Mersin İhtisas Spor Kulübü U18",
-      "resolved_guest": "MEV Toros Spor Kulübü U18",
-      "tournament_url": "https://women.volleybox.net/women-mersin-super-ligi-u18-2026-27-o51071"
-    },
-    {
-      "id": "mersin-20261112-027",
-      "city": "Mersin",
-      "city_slug": "mersin",
-      "category": "Genç Kızlar Süper Lig",
-      "home_team": "Yenişehir Gençlerbirliği Spor Kulübü U18",
-      "away_team": "Tarsus Gelecek Spor Kulübü U18",
-      "date": "2026-11-12",
-      "time": "17:15",
-      "resolved_home": "Yenişehir Gençlerbirliği Spor Kulübü U18",
-      "resolved_guest": "Tarsus Gelecek Spor Kulübü U18",
-      "tournament_url": "https://women.volleybox.net/women-mersin-super-ligi-u18-2026-27-o51071"
-    },
-    {
-      "id": "mersin-20261120-028",
-      "city": "Mersin",
-      "city_slug": "mersin",
-      "category": "Genç Kızlar Süper Lig",
-      "home_team": "Tarsus Amerikan Koleji U18",
-      "away_team": "Alsancak Spor Kulübü U18",
-      "date": "2026-11-20",
-      "time": "17:15",
-      "resolved_home": "Tarsus Amerikan Koleji U18",
-      "resolved_guest": "Alsancak Spor Kulübü U18",
       "tournament_url": "https://women.volleybox.net/women-mersin-super-ligi-u18-2026-27-o51071"
     }
   ]
