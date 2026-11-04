@@ -12,7 +12,7 @@ export interface AppShellProps {
   inspector?: React.ReactNode;
   footer?: React.ReactNode;
   className?: string;
-  section?: "altyapi" | "kadinlar-2-lig" | "sultanlar" | "kadinlar-1-lig";
+  section?: "altyapi";
 }
 
 export const AppShell: React.FC<AppShellProps> = ({

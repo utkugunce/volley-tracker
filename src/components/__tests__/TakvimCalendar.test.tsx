@@ -100,7 +100,7 @@ describe("TakvimCalendar", () => {
   it("maçsız günü seçince boş durum gösterir", () => {
     render(<TakvimCalendar matches={MATCHES} todayOverride="2026-10-04" />);
     fireEvent.click(cell("2026-10-06"));
-    expect(screen.getByTestId("empty-state")).toHaveTextContent("Bu günde Sultanlar Ligi maçı yok");
+    expect(screen.getByTestId("empty-state")).toHaveTextContent("Bu günde maç yok");
     expect(screen.queryAllByTestId("match-row")).toHaveLength(0);
     expect(screen.getByTestId("selected-day-label")).toHaveTextContent("6 Ekim 2026 Salı");
   });

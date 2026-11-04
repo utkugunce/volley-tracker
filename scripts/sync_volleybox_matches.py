@@ -964,7 +964,7 @@ def sync_league_json_matches(
 ) -> Tuple[int, int]:
     """
     Lig JSON dosyasındaki maçları Volleybox turnuva maçlarıyla eşleştirir ve doğrular.
-    (Sultanlar Ligi, Arabica Coffee House Kadınlar Voleybol 1. Ligi, Uzman Posta Kadınlar 2. Ligi)
+    (81 İl TVF Altyapı Ligleri: Genç Kızlar Süper/1. Lig, Yıldız Kızlar Süper Lig)
     """
     if not json_path.exists():
         return 0, 0
@@ -1266,7 +1266,7 @@ def main():
         elif args.all:
             target_leagues.append(l)
         else:
-            if c_slug.lower() in active_city_names or c_norm in active_city_names or is_k2 or is_national_tournament:
+            if not is_k2 and not is_national_tournament and (c_slug.lower() in active_city_names or c_norm in active_city_names):
                 target_leagues.append(l)
 
     print(f"📋 Toplam {len(target_leagues)} aktif ({CURRENT_SEASON} sezonu) turnuva taranıyor...")

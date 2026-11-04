@@ -112,11 +112,11 @@ export default function RehberPage() {
               <span>🏐 2026-2027 Yaş Grupları</span>
             </Link>
             <Link
-              href="/rehber/kadinlar-2-lig-statu-ve-playoff"
+              href="/rehber/turkiye-sampiyonasi-statu-ve-finaller"
               prefetch={false}
               className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-surface-muted hover:bg-canvas border border-line text-ink transition-colors"
             >
-              <span>🏆 Kadınlar 2. Lig Statüsü</span>
+              <span>🏆 Türkiye Şampiyonası Statüsü</span>
             </Link>
             <Link
               href="/rehber/voleybol-lisansi-nasil-cikarilir"

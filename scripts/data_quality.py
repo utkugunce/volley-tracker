@@ -122,10 +122,6 @@ def validate_league_data(payload: Dict[str, Any], league_name: str = "League") -
     }
 
 
-def validate_kadinlar_2_lig_data(payload: Dict[str, Any]) -> Dict[str, Any]:
-    return validate_league_data(payload, "Kadınlar 2. Lig")
-
-
 def validate_file(path: str, kind: str) -> Dict[str, Any]:
     if not os.path.exists(path):
         return {"valid": False, "errors": [f"{kind} data file is missing: {path}"], "summary": f"{kind} validation failed: file missing."}
@@ -138,11 +134,8 @@ def validate_file(path: str, kind: str) -> Dict[str, Any]:
 
     if kind == "cities":
         return validate_city_index(data)
-    if kind == "kadinlar_2_lig":
-        return validate_kadinlar_2_lig_data(data)
-    if kind in ("sultanlar_ligi", "kadinlar_1_lig", "league"):
-        label = "Sultanlar Ligi" if kind == "sultanlar_ligi" else ("Kadınlar 1. Lig" if kind == "kadinlar_1_lig" else "League")
-        return validate_league_data(data, label)
+    if kind == "league":
+        return validate_league_data(data, "League")
     return {"valid": False, "errors": [f"Unsupported validation kind: {kind}"], "summary": f"Unsupported validation kind: {kind}"}
 
 

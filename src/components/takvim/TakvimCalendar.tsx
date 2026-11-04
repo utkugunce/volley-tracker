@@ -45,24 +45,6 @@ export const TakvimCalendar: React.FC<TakvimCalendarProps> = ({
   const byDate = useMemo(() => groupMatchesByDate(filteredMatches), [filteredMatches]);
 
   const leagueTabs = useMemo(() => {
-    const proLeagues = [
-      { id: "Sultanlar Ligi", label: "Sultanlar Ligi" },
-      { id: "1. Lig", label: "Arabica 1. Lig" },
-      { id: "2. Lig", label: "2. Lig" },
-    ];
-    const hasPro = matches.some((m) => proLeagues.some((p) => p.id === m.league));
-
-    if (hasPro) {
-      return [
-        { id: "Tümü", label: "Tüm Ligler", count: matches.length },
-        ...proLeagues.map((p) => ({
-          id: p.id,
-          label: p.label,
-          count: matches.filter((m) => m.league === p.id).length,
-        })),
-      ].filter((t) => t.id === "Tümü" || t.count > 0);
-    }
-
     const categories = Array.from(new Set(matches.map((m) => m.league).filter(Boolean))) as string[];
     return [
       { id: "Tümü", label: "Tüm Kategoriler", count: matches.length },
@@ -263,7 +245,7 @@ export const TakvimCalendar: React.FC<TakvimCalendarProps> = ({
           {selectedMatches.length === 0 ? (
             <div data-testid="empty-state" className="flex flex-col items-center text-center gap-2 px-6 py-10 text-ink-3">
               <CalendarX2 size={26} aria-hidden="true" className="text-ink-3" />
-              <p className="text-sm font-semibold text-white">Bu günde Sultanlar Ligi maçı yok</p>
+              <p className="text-sm font-semibold text-white">Bu günde maç yok</p>
               <p className="text-xs">Maç olan günler takvimde sayı rozetiyle işaretlidir.</p>
             </div>
           ) : (

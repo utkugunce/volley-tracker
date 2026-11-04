@@ -29,7 +29,6 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LOGOS_DIR = os.path.join(BASE_DIR, "public", "logos")
 MAPPINGS_FILE = os.path.join(BASE_DIR, "data", "volleybox-mappings.json")
-K2_FILE = os.path.join(BASE_DIR, "data", "kadinlar_2_lig.json")
 OUTPUT_FILE = os.path.join(BASE_DIR, "src", "data", "team-colors.json")
 PALETTE_FILE = os.path.join(BASE_DIR, "src", "data", "team-palette.json")
 INDEX_FILE = os.path.join(BASE_DIR, "src", "data", "team-color-index.json")

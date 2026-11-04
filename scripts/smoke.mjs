@@ -98,7 +98,6 @@ async function runGroupB() {
     "/kulupler/istanbul/kadikoy",
     "/takim/vakifbank-u18-t19499",
     "/lig/istanbul/genc-kizlar",
-    "/kadinlar-2-ligi",
     "/istatistikler",
     "/hangi-ligde-oynar",
     "/karsilastir",
@@ -146,7 +145,6 @@ async function runGroupC() {
     "/kulupler/istanbul",
     "/takvim",
     "/karsilastir",
-    "/kadinlar-2-ligi/puan-durumu",
   ];
 
   for (const p of titlePages) {
