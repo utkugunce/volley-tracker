@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:04:21.194845+03:00",
+  "updated_at": "2026-11-04T11:28:58.269251+03:00",
   "city": "Tokat",
   "slug": "tokat",
   "title": "TVF Tokat Genç & Yıldız Kızlar Süper Lig",
@@ -26,99 +26,7 @@
     ]
   },
   "standings": {
-    "Genç Kızlar Süper Lig - 1. Grup": [
-      {
-        "rank": 1,
-        "team": "MEKTEBİM SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
     "Genç Kızlar 1. Ligi - 1. Grup": [
-      {
-        "rank": 1,
-        "team": "MEKTEBİM SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
         "team": "MEKTEBİM SPOR KULÜBÜ",
@@ -172,7 +80,7 @@
       "date": "2026-11-08",
       "time": "16:00",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -206,7 +114,7 @@
       "date": "2026-11-08",
       "time": "18:00",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -240,7 +148,7 @@
       "date": "2026-11-15",
       "time": "18:00",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -274,7 +182,7 @@
       "date": "2026-11-15",
       "time": "19:30",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -308,7 +216,7 @@
       "date": "2026-11-22",
       "time": "16:00",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -342,7 +250,7 @@
       "date": "2026-11-22",
       "time": "17:30",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -376,7 +284,7 @@
       "date": "2026-11-29",
       "time": "18:00",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -410,7 +318,7 @@
       "date": "2026-11-29",
       "time": "19:30",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -444,7 +352,7 @@
       "date": "2026-12-06",
       "time": "13:00",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -478,7 +386,7 @@
       "date": "2026-12-06",
       "time": "14:30",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -512,7 +420,7 @@
       "date": "2026-12-13",
       "time": "16:00",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -546,7 +454,7 @@
       "date": "2026-12-13",
       "time": "17:30",
       "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar Süper Lig",
+      "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
@@ -576,5 +484,5 @@
     }
   ],
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-04T10:05:27.222889"
+  "volleybox_sync_updated_at": "2026-11-04T11:37:19.019229"
 }

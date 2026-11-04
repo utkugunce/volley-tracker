@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:04:21.194845+03:00",
+  "updated_at": "2026-11-04T11:28:58.269251+03:00",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -611,9 +611,9 @@
       }
     },
     {
-      "id": "yalova-20261113-011",
+      "id": "yalova-20261111-011",
       "city": "Yalova",
-      "date": "2026-11-13",
+      "date": "2026-11-11",
       "time": "18:30",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
@@ -640,21 +640,21 @@
         "vb_time": "18:30",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-13",
           "vb_time": "18:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-11 / VB: 2026-11-13)"
         }
       }
     },
     {
-      "id": "yalova-20261113-012",
+      "id": "yalova-20261111-012",
       "city": "Yalova",
-      "date": "2026-11-13",
+      "date": "2026-11-11",
       "time": "20:30",
       "hall": "90.Yıl S.S.",
       "category": "Genç Kızlar Süper Lig",
@@ -681,14 +681,14 @@
         "vb_time": "20:30",
         "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
+          "has_diff": true,
+          "date_diff": true,
           "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-13",
           "vb_time": "20:30",
           "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
-          "details": null
+          "details": "Tarih Değişti (TVF: 2026-11-11 / VB: 2026-11-13)"
         }
       }
     },
@@ -697,7 +697,7 @@
       "city": "Yalova",
       "date": "2026-11-20",
       "time": "18:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -738,7 +738,7 @@
       "city": "Yalova",
       "date": "2026-11-20",
       "time": "20:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -779,7 +779,7 @@
       "city": "Yalova",
       "date": "2026-11-27",
       "time": "18:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -820,7 +820,7 @@
       "city": "Yalova",
       "date": "2026-11-27",
       "time": "20:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -861,7 +861,7 @@
       "city": "Yalova",
       "date": "2026-12-04",
       "time": "18:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -902,7 +902,7 @@
       "city": "Yalova",
       "date": "2026-12-04",
       "time": "20:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -943,7 +943,7 @@
       "city": "Yalova",
       "date": "2026-12-11",
       "time": "18:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -957,18 +957,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398326",
+        "url": "https://women.volleybox.net/tr/yalova-voleybol-spor-kulubu-u18-yalova-atakent-spor-kulubu-u18-c398326",
+        "host_name": "Yalova Voleybol Spor Kulübü U18",
+        "guest_name": "Yalova Atakent Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-11",
+        "vb_time": "20:30",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-12-11",
+          "vb_time": "20:30",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": "Saat Değişti (TVF: 18:30 / VB: 20:30)"
         }
       }
     },
@@ -977,7 +984,7 @@
       "city": "Yalova",
       "date": "2026-12-11",
       "time": "20:30",
-      "hall": "90.Yıl S.S.",
+      "hall": "Açıklanacak",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -991,22 +998,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "398325",
+        "url": "https://women.volleybox.net/tr/koru-akademi-spor-kulubu-b-u18-yalova-voleybol-spor-kulubu-b-u18-c398325",
+        "host_name": "Koru Akademi Spor Kulübü - B U18",
+        "guest_name": "Yalova Voleybol Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-11",
+        "vb_time": "18:30",
+        "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-12-11",
+          "vb_time": "18:30",
+          "vb_hall": "Yalova 90. Yıl Kapalı Spor Salonu",
+          "details": "Saat Değişti (TVF: 20:30 / VB: 18:30)"
         }
       }
     }
   ],
-  "volleybox_synced_matches": 18,
-  "volleybox_sync_updated_at": "2026-11-04T10:05:27.240386"
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-11-04T11:37:19.113453"
 }

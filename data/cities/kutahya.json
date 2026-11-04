@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:04:21.194845+03:00",
+  "updated_at": "2026-11-04T11:28:58.269251+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -947,18 +947,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415180",
+        "url": "https://women.volleybox.net/tr/kutahya-genclik-ve-spor-l-mudurlugu-sk-b-u18-kutahya-belediyespor-u18-c415180",
+        "host_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
+        "guest_name": "Kütahya Belediyespor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-08",
+        "vb_time": "14:00",
+        "vb_hall": "Kütahya Yeni Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-08",
+          "vb_time": "14:00",
+          "vb_hall": "Kütahya Yeni Spor Salonu",
+          "details": null
         }
       }
     },
@@ -981,18 +988,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415179",
+        "url": "https://women.volleybox.net/tr/kutahya-demirspor-u18-kutahya-genclik-ve-spor-l-mudurlugu-sk-b-u18-c415179",
+        "host_name": "Kütahya Demirspor U18",
+        "guest_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-06",
+        "vb_time": "19:30",
+        "vb_hall": "Kütahya Yeni Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": true,
+          "vb_date": "2026-11-06",
+          "vb_time": "19:30",
+          "vb_hall": "Kütahya Yeni Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-13 / VB: 2026-11-06) | Saat Değişti (TVF: 19:00 / VB: 19:30) | Salon Değişti (TVF: Dumlupınar / VB: Kütahya Yeni Spor Salonu)"
         }
       }
     },
@@ -1038,6 +1052,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 14,
-  "volleybox_sync_updated_at": "2026-11-04T10:05:27.153450"
+  "volleybox_synced_matches": 16,
+  "volleybox_sync_updated_at": "2026-11-04T11:37:17.010989"
 }

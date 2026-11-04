@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:04:21.194845+03:00",
+  "updated_at": "2026-11-04T11:28:58.269251+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -1047,8 +1047,8 @@
         "url": "https://women.volleybox.net/tr/mg-spor-kulubu-u18-ds-nilufer-spor-kulubu-u18-c413321",
         "host_name": "MG Spor Kulübü U18",
         "guest_name": "DSİ Nilüfer Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "2 - 3",
+        "has_score": true,
         "vb_date": "2026-11-03",
         "vb_time": "18:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -1579,8 +1579,8 @@
         "url": "https://women.volleybox.net/tr/metin-kucukkenar-frtna16-spor-kulubu-u18-osmangazi-belediyespor-u18-c413325",
         "host_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U18",
         "guest_name": "Osmangazi Belediyespor U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-03",
         "vb_time": "20:00",
         "vb_hall": "Çekirge Spor Salonu",
@@ -3474,18 +3474,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "402167",
+        "url": "https://women.volleybox.net/tr/metin-kucukkenar-frtna16-spor-kulubu-u16-kestel-belediye-1952-spor-kulubu-u16-c402167",
+        "host_name": "Metin Küçükkenar Fırtına16 Spor Kulübü U16",
+        "guest_name": "Kestel Belediye 1952 Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-01",
+        "vb_time": "18:30",
+        "vb_hall": "Kestel Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-01",
+          "vb_time": "18:30",
+          "vb_hall": "Kestel Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3514,18 +3521,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "401049",
+        "url": "https://women.volleybox.net/tr/bursa-buyuksehir-belediyespor-u16-nilufer-belediyespor-u16-c401049",
+        "host_name": "Bursa Büyükşehir Belediyespor U16",
+        "guest_name": "Nilüfer Belediyespor U16",
+        "score": "3 - 2",
+        "has_score": true,
+        "vb_date": "2026-10-01",
+        "vb_time": "18:30",
+        "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-01",
+          "vb_time": "18:30",
+          "vb_hall": "Nilüfer 100. Yıl Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3754,6 +3768,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 68,
-  "volleybox_sync_updated_at": "2026-11-04T10:05:26.916409"
+  "volleybox_synced_matches": 70,
+  "volleybox_sync_updated_at": "2026-11-04T11:37:07.829613"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:04:21.194845+03:00",
+  "updated_at": "2026-11-04T11:28:58.269251+03:00",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -184,7 +184,7 @@
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Fethiye Zirve Spor Kulübü U18",
+        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
         "played": 2,
         "won": 2,
         "lost": 0,
@@ -1079,7 +1079,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "1",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Fethiye Anka Spor U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1169,7 +1169,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "3",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Dalaman Master Akademi Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1697,18 +1697,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415198",
+        "url": "https://women.volleybox.net/tr/yesil-marmaris-spor-kulubu-u18-marmaris-belediyesi-gsk-u18-c415198",
+        "host_name": "Yeşil Marmaris Spor Kulübü U18",
+        "guest_name": "Marmaris Belediyesi GSK U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "17:30",
+        "vb_hall": "Amiral Orhan Aydın Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "17:30",
+          "vb_hall": "Amiral Orhan Aydın Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1893,6 +1900,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 28,
-  "volleybox_sync_updated_at": "2026-11-04T10:05:27.184151"
+  "volleybox_synced_matches": 29,
+  "volleybox_sync_updated_at": "2026-11-04T11:37:17.506926"
 }

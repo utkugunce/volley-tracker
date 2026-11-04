@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:04:21.194845+03:00",
+  "updated_at": "2026-11-04T11:28:58.269251+03:00",
   "city": "Aksaray",
   "slug": "aksaray",
   "title": "TVF Aksaray Genç & Yıldız Kızlar Süper Lig",
@@ -52,6 +52,17 @@
       },
       {
         "rank": 3,
+        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "MBA Aksaray Anka Spor Kulübü U18",
         "played": 2,
         "won": 1,
@@ -62,19 +73,8 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Aksaray Yıldız Spor Kulübü U18",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
-        "team": "MBA Aksaray Anka Spor Kulübü - C U18",
+        "team": "Aksaray Yıldız Spor Kulübü U18",
         "played": 2,
         "won": 1,
         "lost": 1,
@@ -86,12 +86,12 @@
       {
         "rank": 6,
         "team": "Eskil Tuzgölü Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 1,
-        "lost": 1,
+        "lost": 2,
         "points": 3,
         "sets_won": 3,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -574,7 +574,7 @@
       "city": "Aksaray",
       "date": "2026-11-03",
       "time": "18:30",
-      "hall": "Merkez Spor Salonu",
+      "hall": "Dağılgan S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
@@ -582,11 +582,15 @@
       "match_no": "11",
       "home_team": "Eskil Tuzgölü Spor Kulübü U18",
       "away_team": "MBA Aksaray Anka Spor Kulübü - C U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "16-25",
+        "17-25",
+        "24-26"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414603",
@@ -817,5 +821,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-04T10:05:26.809836"
+  "volleybox_sync_updated_at": "2026-11-04T11:37:05.123401"
 }

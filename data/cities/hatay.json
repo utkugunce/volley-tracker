@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T10:04:21.194845+03:00",
+  "updated_at": "2026-11-04T11:28:58.269251+03:00",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -934,8 +934,8 @@
         "url": "https://women.volleybox.net/tr/yukselis-akademi-spor-kulubu-u18-antakya-gunes-spor-kulubu-b-u18-c401080",
         "host_name": "Yükseliş Akademi Spor Kulübü U18",
         "guest_name": "Antakya Güneş Spor Kulübü - B U18",
-        "score": null,
-        "has_score": false,
+        "score": "3 - 0",
+        "has_score": true,
         "vb_date": "2026-11-03",
         "vb_time": "18:00",
         "vb_hall": "TOKİ Spor Salonu",
@@ -979,8 +979,8 @@
         "url": "https://women.volleybox.net/tr/yldzlar-samandag-spor-kulubu-u18-hatay-voleybol-spor-kulubu-u18-c401081",
         "host_name": "Yıldızlar Samandağ Spor Kulübü U18",
         "guest_name": "Hatay Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
+        "score": "0 - 3",
+        "has_score": true,
         "vb_date": "2026-11-03",
         "vb_time": "19:30",
         "vb_hall": "TOKİ Spor Salonu",
@@ -2621,5 +2621,5 @@
     }
   ],
   "volleybox_synced_matches": 56,
-  "volleybox_sync_updated_at": "2026-11-04T10:05:26.999426"
+  "volleybox_sync_updated_at": "2026-11-04T11:37:09.497394"
 }
