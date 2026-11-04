@@ -46,6 +46,7 @@ export interface Match {
   referee_1?: string;
   referee_2?: string;
   set_durations?: string[];
+  is_overridden?: boolean;
 }
 
 export interface StandingItem {

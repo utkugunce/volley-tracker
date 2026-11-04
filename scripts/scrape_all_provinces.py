@@ -1390,5 +1390,29 @@ def main():
     except Exception as vb_ex:
         print(f"Volleybox maç senkronizasyonu atlandı: {vb_ex}")
 
+    # Supabase veritabanı senkronizasyonunu otomatik çalıştır (kimlik bilgileri mevcutsa)
+    try:
+        import subprocess
+        supabase_script = BASE_DIR / "scripts" / "import_json_to_supabase.mjs"
+        env_local = BASE_DIR / ".env.local"
+        has_supabase_env = bool(os.environ.get("SUPABASE_SERVICE_ROLE_KEY")) or (
+            env_local.exists() and "SUPABASE_SERVICE_ROLE_KEY" in env_local.read_text(encoding="utf-8", errors="ignore")
+        )
+        if supabase_script.exists() and has_supabase_env:
+            print("🔄 Supabase veritabanı güncel JSON verileriyle senkronize ediliyor...")
+            res_sb = subprocess.run(
+                ["node", str(supabase_script)],
+                cwd=str(BASE_DIR),
+                capture_output=True,
+                text=True,
+                timeout=120,
+            )
+            if res_sb.returncode == 0:
+                print("✅ Supabase senkronizasyonu başarıyla tamamlandı!")
+            else:
+                print(f"⚠️ Supabase senkronizasyonu uyarı ile tamamlandı: {res_sb.stderr.strip()}")
+    except Exception as sb_ex:
+        print(f"Supabase senkronizasyonu atlandı: {sb_ex}")
+
 if __name__ == "__main__":
     main()

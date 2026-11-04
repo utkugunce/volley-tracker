@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T12:22:37.713407+03:00",
+  "updated_at": "2026-11-04T13:35:45.045431+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -3765,7 +3765,48 @@
       }
     },
     {
-      "id": "tekirdag-20261107-077",
+      "id": "tekirdag-20261106-077",
+      "city": "Tekirdağ",
+      "date": "2026-11-06",
+      "time": "20:00",
+      "hall": "Çorlu Ss",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "C Grubu",
+      "match_no": "19",
+      "home_team": "Çorlu GSB Spor Kulübü U16",
+      "away_team": "Çağdaş Spor Kulübü - B U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "414807",
+        "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u16-cagdas-spor-kulubu-b-u16-c414807",
+        "host_name": "Çorlu GSB Spor Kulübü U16",
+        "guest_name": "Çağdaş Spor Kulübü - B U16",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-07",
+        "vb_time": "18:30",
+        "vb_hall": "Çorlu Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": true,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "18:30",
+          "vb_hall": "Çorlu Spor Salonu",
+          "details": "Tarih Değişti (TVF: 2026-11-06 / VB: 2026-11-07) | Saat Değişti (TVF: 20:00 / VB: 18:30)"
+        }
+      }
+    },
+    {
+      "id": "tekirdag-20261107-078",
       "city": "Tekirdağ",
       "date": "2026-11-07",
       "time": "19:00",
@@ -3774,7 +3815,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "C Grubu",
-      "match_no": "19",
+      "match_no": "20",
       "home_team": "Tekirdağ Voleybol İhtisas Kulübü U16",
       "away_team": "Arges Voleybol Spor Kulübü U16",
       "score": "- : -",
@@ -3802,47 +3843,6 @@
           "vb_time": "19:00",
           "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
           "details": null
-        }
-      }
-    },
-    {
-      "id": "tekirdag-20261114-078",
-      "city": "Tekirdağ",
-      "date": "2026-11-14",
-      "time": "--:--",
-      "hall": "Çorlu Ss",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "C Grubu",
-      "match_no": "20",
-      "home_team": "Çorlu GSB Spor Kulübü U16",
-      "away_team": "Çağdaş Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "414807",
-        "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u16-cagdas-spor-kulubu-b-u16-c414807",
-        "host_name": "Çorlu GSB Spor Kulübü U16",
-        "guest_name": "Çağdaş Spor Kulübü - B U16",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-07",
-        "vb_time": "18:30",
-        "vb_hall": "Çorlu Spor Salonu",
-        "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-07",
-          "vb_time": "18:30",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-07)"
         }
       }
     },
@@ -3889,5 +3889,5 @@
     }
   ],
   "volleybox_synced_matches": 79,
-  "volleybox_sync_updated_at": "2026-11-04T12:31:00.324026"
+  "volleybox_sync_updated_at": "2026-11-04T13:42:51.989540"
 }
