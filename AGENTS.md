@@ -91,7 +91,7 @@ Aşağıdaki gibi basit ve salt konuşma/danışma odaklı promptlarda **SCRAPER
 - Kod veya stil (TSX, CSS, Python vb.) üzerinde değişiklik/ekleme yapıldığında.
 - Yeni bir özellik veya sayfa/bileşen geliştirildiğinde.
 - Hata düzeltme veya refactoring yapıldığında.
-- Kullanıcı doğrudan "verileri çek", "senkronize et", "81 ili güncelle" gibi bir talepte bulunduğunda (kullanıcı açıkça manuel talep ettiğinde `--force` parametresi kullanılabilir).
+- Kullanıcı doğrudan "ligleri çek", "verileri çek", "senkronize et", "81 ili güncelle" gibi bir talepte bulunduğunda (kullanıcı açıkça manuel talep ettiğinde gerektiğinde `--force` parametresi kullanılabilir). Bu tür genel isteklerde **KESİNLİKLE SADECE 81 İL ALTYAPI TARAMASI** (`python scripts/scrape_all_provinces.py`) çalıştırılır.
 
 ### ❓ Tereddüt & Belirsizlik Durumu:
 - Bir promptun veri çekmeyi gerektirip gerektirmediği konusunda herhangi bir şüphe veya belirsizlik yaşanırsa varsayımda bulunulmamalı, **doğrudan kullanıcıya sorulmalıdır** (*"81 il verilerini de güncelleyeyim mi?"*).
@@ -112,7 +112,7 @@ python scripts/scrape_all_provinces.py --force
 ```
 
 ### Detaylar:
-- **Altyapı (81 İl) Taraması:** Bu komut 81 ilin TVF bültenlerini eşzamanlı (multi-threaded) olarak tarar. `data/cities/*.json`, `data/cities.json` ve `data/fixtures.json` dosyalarını günceller.
+- **"Ligleri Çek" Kuralı & Altyapı (81 İl) Taraması:** Kullanıcı "ligleri çek" veya "verileri çek" dediğinde **YALNIZCA 81 İL ALTYAPI TARAMASI** çalıştırılır (`python scripts/scrape_all_provinces.py`). Bu komut 81 ilin TVF bültenlerini eşzamanlı (multi-threaded) olarak tarar; `data/cities/*.json`, `data/cities.json` ve `data/fixtures.json` dosyalarını günceller.
 - **Profesyonel Ligler (Sultanlar Ligi, Kadınlar 1. Ligi, Kadınlar 2. Ligi):** Profesyonel ligler bağımsız `pro-volley` projesine (`C:\projects\pro-volley`) taşınmıştır. `volley-tracker` sitesi yalnızca TVF resmi kulüp altyapı liglerine odaklıdır.
 - Script kendi Volleybox maç senkronizasyonunu (`scripts/sync_volleybox_matches.py`) güvenli şekilde tamamlar.
 - Script tamamlandıktan sonra özet kullanıcıya bildirilir.
