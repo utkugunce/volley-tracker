@@ -314,6 +314,10 @@ def is_withdrawn_team(team: str, city: str = "", category: str = "", group: str 
     if "ankara" in c_clean and "akisik" in t_clean and "genc kizlar super" in g_clean:
         return True
 
+    # Afyon U16 (Yıldız): İstek Afyon Spor Kulubü
+    if ("afyon" in c_clean or "afyonkarahisar" in c_clean) and "istek" in t_clean and ("yildiz" in g_clean or "u16" in g_clean or "yk" in g_clean):
+        return True
+
     return False
 
 def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
@@ -429,6 +433,8 @@ def apply_volleybox_names(matches: list, standings: dict, city_name: str = ""):
             if "merkez" in rt and ("buyuksehir" in rt or "belediye" in rt):
                 return "Balıkesir Büyükşehir Belediyespor Merkez U16"
             if "edremit" in rt and ("buyuksehir" in rt or "belediye" in rt):
+                if "gure" in rt:
+                    return "Edremit Belediyesi Gürespor Kulübü U16"
                 return "Balıkesir Büyükşehir Belediyespor Edremit - B U16"
             if "dsi" in rt:
                 return "Balıkesir DSİ Spor U16"

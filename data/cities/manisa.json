@@ -640,18 +640,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415765",
+        "url": "https://women.volleybox.net/tr/1922-salihli-spor-kulubu-u18-salihli-degerli-zamanlar-spor-kulubu-u18-c415765",
+        "host_name": "1922 Salihli Spor Kulübü U18",
+        "guest_name": "Salihli Değerli Zamanlar Spor Kulübü U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-03",
+        "vb_time": "18:30",
+        "vb_hall": "Ramiz Turan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "18:30",
+          "vb_hall": "Ramiz Turan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -674,18 +681,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415766",
+        "url": "https://women.volleybox.net/tr/degerli-zamanlar-spor-kulubu-u18-akhisar-lce-spor-kulubu-u18-c415766",
+        "host_name": "Değerli Zamanlar Spor Kulübü U18",
+        "guest_name": "Akhisar İlçe Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-05",
+        "vb_time": "18:30",
+        "vb_hall": "Manisa Atatürk Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "18:30",
+          "vb_hall": "Manisa Atatürk Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1211,18 +1225,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415767",
+        "url": "https://women.volleybox.net/tr/akhisargucu-spor-kulubu-u18-soma-belediye-spor-kulubu-u18-c415767",
+        "host_name": "Akhisargücü Spor Kulübü U18",
+        "guest_name": "Soma Belediye Spor Kulübü U18",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-11-03",
+        "vb_time": "19:00",
+        "vb_hall": "Akhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "19:00",
+          "vb_hall": "Akhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1249,18 +1270,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415768",
+        "url": "https://women.volleybox.net/tr/sargol-akademi-spor-kulubu-u18-soma-lce-spor-kulubu-u18-c415768",
+        "host_name": "Sarıgöl Akademi Spor Kulübü U18",
+        "guest_name": "Soma İlçe Spor Kulübü U18",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-03",
+        "vb_time": "19:30",
+        "vb_hall": "Sarıgöl Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "19:30",
+          "vb_hall": "Sarıgöl Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1306,6 +1334,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 22,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:54.476228"
+  "volleybox_synced_matches": 26,
+  "volleybox_sync_updated_at": "2026-11-04T16:10:33.970927"
 }

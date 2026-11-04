@@ -186,17 +186,6 @@
         "sets_won": 5,
         "sets_lost": 12,
         "form": []
-      },
-      {
-        "rank": 5,
-        "team": "İstek Afyon Spor Kulubü",
-        "played": 3,
-        "won": 0,
-        "lost": 3,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 9,
-        "form": []
       }
     ]
   },
@@ -792,51 +781,6 @@
       }
     },
     {
-      "id": "afyon-20261003-014",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-03",
-      "time": "11:30",
-      "hall": "Tınaztepe S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız Süper Lig",
-      "match_no": "1",
-      "home_team": "İstek Afyon Spor Kulubü",
-      "away_team": "Afyon Belediye Yüntaş Spor Kulübü",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "14-25",
-        "9-25",
-        "11-25"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "406592",
-        "url": "https://women.volleybox.net/tr/stek-afyon-spor-kulubu-u16-afyon-belediye-yuntas-sk-u16-c406592",
-        "host_name": "İstek Afyon Spor Kulübü U16",
-        "guest_name": "Afyon Belediye Yüntaş SK U16",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-03",
-        "vb_time": "11:30",
-        "vb_hall": "Tınaztepe Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-03",
-          "vb_time": "11:30",
-          "vb_hall": "Tınaztepe Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
       "id": "afyon-20261003-015",
       "city": "Afyonkarahisar",
       "date": "2026-10-03",
@@ -876,51 +820,6 @@
           "hall_diff": false,
           "vb_date": "2026-10-03",
           "vb_time": "16:00",
-          "vb_hall": "Tınaztepe Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "afyon-20261007-016",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-07",
-      "time": "18:30",
-      "hall": "Tınaztepe S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız Süper Lig",
-      "match_no": "3",
-      "home_team": "E.M.A Spor Kulübü U16",
-      "away_team": "İstek Afyon Spor Kulubü",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-14",
-        "25-21",
-        "25-11"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "407976",
-        "url": "https://women.volleybox.net/tr/ema-spor-kulubu-u16-stek-afyon-spor-kulubu-u16-c407976",
-        "host_name": "E.M.A Spor Kulübü U16",
-        "guest_name": "İstek Afyon Spor Kulübü U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-07",
-        "vb_time": "18:30",
-        "vb_hall": "Tınaztepe Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-07",
-          "vb_time": "18:30",
           "vb_hall": "Tınaztepe Spor Salonu",
           "details": null
         }
@@ -1110,40 +1009,6 @@
       }
     },
     {
-      "id": "afyon-20261017-021",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-17",
-      "time": "14:30",
-      "hall": "Mustafa Abi S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız Süper Lig",
-      "match_no": "8",
-      "home_team": "İstek Afyon Spor Kulubü",
-      "away_team": "Afyon Zirve Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
       "id": "afyon-20261024-022",
       "city": "Afyonkarahisar",
       "date": "2026-10-24",
@@ -1186,85 +1051,6 @@
           "vb_time": "10:00",
           "vb_hall": "Mustafa Abi Spor Salonu",
           "details": null
-        }
-      }
-    },
-    {
-      "id": "afyon-20261024-023",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-24",
-      "time": "14:30",
-      "hall": "Mustafa Abi S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız Süper Lig",
-      "match_no": "10",
-      "home_team": "Afyon Gençlik Ve Spor Kulübü U16",
-      "away_team": "İstek Afyon Spor Kulubü",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-0",
-        "25-0",
-        "25-0"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411757",
-        "url": "https://women.volleybox.net/tr/afyon-genclik-ve-spor-kulubu-u16-stek-afyon-spor-kulubu-u16-c411757",
-        "host_name": "Afyon Gençlik Ve Spor Kulübü U16",
-        "guest_name": "İstek Afyon Spor Kulübü U16",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-24",
-        "vb_time": "14:30",
-        "vb_hall": "Mustafa Abi Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-24",
-          "vb_time": "14:30",
-          "vb_hall": "Mustafa Abi Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "afyon-20261026-024",
-      "city": "Afyonkarahisar",
-      "date": "2026-10-26",
-      "time": "20:00",
-      "hall": "Çiğiltepe S.S.",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "Yıldız Kız Süper Lig",
-      "match_no": "11",
-      "home_team": "Afyon Zirve Spor Kulübü",
-      "away_team": "İstek Afyon Spor Kulubü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
         }
       }
     },
