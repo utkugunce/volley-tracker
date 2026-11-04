@@ -2,7 +2,6 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { execFile, execFileSync } from "child_process";
 import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "../scrapeTrigger";
 import { GET as fixturesGet } from "@/app/api/fixtures/route";
-import { GET as kadinlarGet } from "@/app/api/kadinlar-2-ligi/route";
 import { POST as triggerPost } from "@/app/api/sync/trigger/route";
 import { POST as cancelPost } from "@/app/api/sync/cancel/route";
 
@@ -82,16 +81,7 @@ describe("scrapeTrigger", () => {
     expect(vi.mocked(execFileSync)).not.toHaveBeenCalled();
   });
 
-  it("/api/kadinlar-2-ligi?refresh=1 üretim modunda Python çalıştırmaz", async () => {
-    process.env.ADMIN_TOKEN = "admin-secret";
-    const req = new Request("http://localhost:3000/api/kadinlar-2-ligi?refresh=1", {
-      headers: { authorization: "Bearer admin-secret", "x-forwarded-for": "198.51.100.11" },
-    });
-    const res = await kadinlarGet(req);
-    expect([200, 404]).toContain(res.status);
-    expect(vi.mocked(execFile)).not.toHaveBeenCalled();
-    expect(vi.mocked(execFileSync)).not.toHaveBeenCalled();
-  });
+
 
   it("/api/sync/trigger yanlış şifre ile 401 döner, doğru şifre (845780) ile çekimi tetikler", async () => {
     process.env.GITHUB_TOKEN = "gh-test";

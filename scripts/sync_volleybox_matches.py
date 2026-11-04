@@ -1356,34 +1356,7 @@ def main():
             if c_total > 0:
                 print(f"✅ {city_json.name:<18} : {c_synced} / {c_total} maç Volleybox ile eşleşti.")
 
-    # 5. data/kadinlar_2_lig.json senkronizasyonu
-    K2_ALIASES = ["kadinlar-2-ligi", "kadinlar-2", "kadinlar-2-lig", "kadinlar_2_ligi", "2-lig", "2.lig", "2lig", "turkiye", "pro", "profesyonel"]
-    if not args.skip_kadinlar_2_lig and K2_FILE.exists() and (not args.city or args.city.lower() in K2_ALIASES):
-        print("\n🔄 data/kadinlar_2_lig.json senkronize ediliyor...")
-        k2_synced, k2_total = sync_league_json_matches(K2_FILE, "Kadınlar 2. Ligi", "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047", vb_tournaments, team_alias_map)
-        print(f"✅ Kadınlar 2. Ligi: {k2_synced} / {k2_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
-    # 6. data/kadinlar_1_lig.json senkronizasyonu
-    K1_FILE = DATA_DIR / "kadinlar_1_lig.json"
-    K1_ALIASES = ["kadinlar-1-ligi", "kadinlar-1", "kadinlar-1-lig", "kadinlar_1_ligi", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi", "turkiye", "pro", "profesyonel"]
-    if K1_FILE.exists() and (not args.city or args.city.lower() in K1_ALIASES):
-        print("\n🔄 data/kadinlar_1_lig.json senkronize ediliyor...")
-        k1_synced, k1_total = sync_league_json_matches(
-            K1_FILE,
-            "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
-            "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
-            vb_tournaments,
-            team_alias_map
-        )
-        print(f"✅ Arabica Coffee House Kadınlar Voleybol 1. Ligi: {k1_synced} / {k1_total} maç Volleybox ile eşleşti ve doğrulandı!")
-
-    # 7. data/sultanlar_ligi.json senkronizasyonu
-    SULTANLAR_FILE = DATA_DIR / "sultanlar_ligi.json"
-    SULTANLAR_ALIASES = ["sultanlar-ligi", "sultanlar", "sultanlar_ligi", "vodafone-sultanlar-ligi", "turkiye", "pro", "profesyonel"]
-    if SULTANLAR_FILE.exists() and (not args.city or args.city.lower() in SULTANLAR_ALIASES):
-        print("\n🔄 data/sultanlar_ligi.json senkronize ediliyor...")
-        sult_synced, sult_total = sync_league_json_matches(SULTANLAR_FILE, "Vodafone Sultanlar Ligi", "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086", vb_tournaments, team_alias_map)
-        print(f"✅ Vodafone Sultanlar Ligi: {sult_synced} / {sult_total} maç Volleybox ile eşleşti ve doğrulandı!")
 
     print("\n" + "=" * 75)
     print("🎉 VOLLEYBOX MAÇ SENKRONİZASYONU BAŞARIYLA TAMAMLANDI!")

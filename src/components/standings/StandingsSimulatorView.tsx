@@ -2,23 +2,18 @@
 
 import React, { useState, useMemo } from "react";
 import type { Match, StandingItem } from "@/types/fixture";
-import type { Kadinlar2LigMatch, Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { TeamBadge } from "@/components/TeamBadge";
-import { getKadinlar2LigTeamName } from "@/utils/kadinlar2LigConverter";
 import {
   simulateAltyapiStandings,
-  simulateK2Standings,
   type SimulationScore,
   type SimulatedStandingRow,
 } from "@/utils/standingsSimulator";
 import { Calculator, RotateCcw, ChevronUp, ChevronDown, Check, Sparkles, X } from "lucide-react";
 
 interface StandingsSimulatorViewProps {
-  mode: "altyapi" | "k2";
+  mode?: "altyapi";
   altyapiRows?: StandingItem[];
   altyapiMatches?: Match[];
-  k2Rows?: Kadinlar2LigTeam[];
-  k2Matches?: Kadinlar2LigMatch[];
   cutoff?: number;
   onClose?: () => void;
 }
@@ -26,11 +21,8 @@ interface StandingsSimulatorViewProps {
 const SCORES: SimulationScore[] = ["3-0", "3-1", "3-2", "2-3", "1-3", "0-3"];
 
 export const StandingsSimulatorView: React.FC<StandingsSimulatorViewProps> = ({
-  mode,
   altyapiRows = [],
   altyapiMatches = [],
-  k2Rows = [],
-  k2Matches = [],
   cutoff = 4,
   onClose,
 }) => {
@@ -38,34 +30,19 @@ export const StandingsSimulatorView: React.FC<StandingsSimulatorViewProps> = ({
 
   // Kalan oynanmamış maçlar
   const upcomingMatches = useMemo(() => {
-    if (mode === "altyapi") {
-      const teamSet = new Set(altyapiRows.map((r) => r.team.trim()));
-      return altyapiMatches.filter(
-        (m) =>
-          m.status !== "finished" &&
-          (!m.score || m.score === "- : -" || m.score.toLowerCase() === "vs") &&
-          teamSet.has(m.home_team.trim()) &&
-          teamSet.has(m.away_team.trim())
-      );
-    } else {
-      const teamSet = new Set(k2Rows.map((r) => r.takim_adi.trim()));
-      return k2Matches.filter(
-        (m) =>
-          m.durum !== "BİTTİ" &&
-          (!m.skor || m.skor === "- : -") &&
-          teamSet.has(m.takim_a.trim()) &&
-          teamSet.has(m.takim_b.trim())
-      );
-    }
-  }, [mode, altyapiRows, altyapiMatches, k2Rows, k2Matches]);
+    const teamSet = new Set(altyapiRows.map((r) => r.team.trim()));
+    return altyapiMatches.filter(
+      (m) =>
+        m.status !== "finished" &&
+        (!m.score || m.score === "- : -" || m.score.toLowerCase() === "vs") &&
+        teamSet.has(m.home_team.trim()) &&
+        teamSet.has(m.away_team.trim())
+    );
+  }, [altyapiRows, altyapiMatches]);
 
   const simulatedRows: SimulatedStandingRow[] = useMemo(() => {
-    if (mode === "altyapi") {
-      return simulateAltyapiStandings(altyapiRows, simulations, upcomingMatches as Match[]);
-    } else {
-      return simulateK2Standings(k2Rows, simulations, upcomingMatches as Kadinlar2LigMatch[]);
-    }
-  }, [mode, altyapiRows, k2Rows, simulations, upcomingMatches]);
+    return simulateAltyapiStandings(altyapiRows, simulations, upcomingMatches);
+  }, [altyapiRows, simulations, upcomingMatches]);
 
   const handleSetScore = (matchId: string, score: SimulationScore) => {
     setSimulations((prev) => {
@@ -120,8 +97,8 @@ export const StandingsSimulatorView: React.FC<StandingsSimulatorViewProps> = ({
           {onClose && (
             <button
               onClick={onClose}
-              className="p-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white border border-slate-700 transition-colors"
-              title="Simülatörü Kapat"
+              className="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors cursor-pointer"
+              aria-label="Simülatörü Kapat"
             >
               <X size={16} />
             </button>
@@ -149,20 +126,8 @@ export const StandingsSimulatorView: React.FC<StandingsSimulatorViewProps> = ({
             <div className="space-y-2 max-h-[380px] overflow-y-auto pr-1">
               {upcomingMatches.map((m) => {
                 const matchId = m.id;
-                const home =
-                  mode === "altyapi"
-                    ? (m as Match).home_team
-                    : getKadinlar2LigTeamName(
-                        (m as Kadinlar2LigMatch).takim_a,
-                        (m as Kadinlar2LigMatch).takim_a_volleybox_name
-                      );
-                const away =
-                  mode === "altyapi"
-                    ? (m as Match).away_team
-                    : getKadinlar2LigTeamName(
-                        (m as Kadinlar2LigMatch).takim_b,
-                        (m as Kadinlar2LigMatch).takim_b_volleybox_name
-                      );
+                const home = m.home_team;
+                const away = m.away_team;
                 const currentScore = simulations[matchId];
 
                 return (
@@ -238,75 +203,71 @@ export const StandingsSimulatorView: React.FC<StandingsSimulatorViewProps> = ({
           <div className="overflow-x-auto rounded-xl border border-slate-700/80 bg-slate-950/70">
             <table className="w-full text-xs text-left">
               <thead>
-                <tr className="border-b border-slate-800 bg-slate-900/80 text-slate-400 text-[10px] uppercase font-bold tracking-wider">
-                  <th className="py-2 px-2 text-center w-10">Sıra</th>
-                  <th className="py-2 px-2">Takım</th>
-                  <th className="py-2 px-1.5 text-center w-8">O</th>
-                  <th className="py-2 px-1.5 text-center w-8">G</th>
-                  <th className="py-2 px-1.5 text-center w-8">M</th>
-                  <th className="py-2 px-2 text-center w-12 hidden sm:table-cell">Set</th>
-                  <th className="py-2 px-2 text-center w-12 bg-slate-800/80 font-black text-white">Puan</th>
-                  <th className="py-2 px-2 text-center w-14">Fark</th>
+                <tr className="border-b border-slate-800 bg-slate-900/80 text-[11px] text-slate-400">
+                  <th className="py-2.5 pl-3 pr-1 w-10 text-center font-bold">Sıra</th>
+                  <th className="py-2.5 px-2 font-bold">Takım</th>
+                  <th className="py-2.5 px-2 text-center font-bold w-10">O</th>
+                  <th className="py-2.5 px-2 text-center font-bold w-10">G</th>
+                  <th className="py-2.5 px-2 text-center font-bold w-10">M</th>
+                  <th className="py-2.5 px-2 text-center font-bold w-12 text-primary">P</th>
+                  <th className="py-2.5 px-2 text-center font-bold w-14 hidden sm:table-cell">Set</th>
+                  <th className="py-2.5 pr-3 pl-2 text-center font-bold w-12">Değişim</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/60">
                 {simulatedRows.map((row) => {
                   const isPlayoff = row.rank <= cutoff;
-                  const rankDiff = row.diffRank;
-                  const ptsDiff = row.diffPoints;
+                  const rankDiff = row.initialRank - row.rank;
 
                   return (
                     <tr
                       key={row.team}
                       className={`transition-colors ${
                         isPlayoff
-                          ? "bg-primary/5 hover:bg-primary/10 border-l-4 border-l-primary"
-                          : "hover:bg-slate-800/30 border-l-4 border-l-transparent"
+                          ? "bg-emerald-950/15 hover:bg-emerald-950/25"
+                          : "hover:bg-slate-900/60"
                       }`}
                     >
-                      <td className="py-2 px-2 text-center font-mono font-bold text-white">
-                        <span className={isPlayoff ? "text-primary" : "text-slate-400"}>#{row.rank}</span>
+                      <td className="py-2 pl-3 pr-1 text-center font-mono font-bold text-xs">
+                        <span
+                          className={`inline-flex items-center justify-center w-6 h-6 rounded-lg ${
+                            isPlayoff
+                              ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40"
+                              : "text-slate-400"
+                          }`}
+                        >
+                          {row.rank}
+                        </span>
                       </td>
                       <td className="py-2 px-2">
                         <div className="flex items-center gap-1.5 min-w-0">
                           <TeamBadge name={row.team} size="xs" />
-                          <span className="font-semibold text-white truncate max-w-[150px] sm:max-w-[180px]">
-                            {row.team}
-                          </span>
+                          <span className="font-semibold text-white truncate text-xs">{row.team}</span>
                         </div>
                       </td>
-                      <td className="py-2 px-1.5 text-center font-mono text-slate-300">{row.played}</td>
-                      <td className="py-2 px-1.5 text-center font-mono text-done font-bold">{row.won}</td>
-                      <td className="py-2 px-1.5 text-center font-mono text-form-loss">{row.lost}</td>
-                      <td className="py-2 px-2 text-center font-mono text-slate-400 hidden sm:table-cell">
-                        {row.setsWon}:{row.setsLost}
-                      </td>
-                      <td className="py-2 px-2 text-center font-mono font-black text-white bg-slate-900/60">
+                      <td className="py-2 px-2 text-center font-mono text-slate-300">{row.played}</td>
+                      <td className="py-2 px-2 text-center font-mono text-emerald-400 font-semibold">{row.won}</td>
+                      <td className="py-2 px-2 text-center font-mono text-rose-400">{row.lost}</td>
+                      <td className="py-2 px-2 text-center font-mono font-black text-sm text-primary">
                         {row.points}
                       </td>
-                      <td className="py-2 px-2 text-center">
-                        <div className="flex items-center justify-center gap-1">
-                          {rankDiff > 0 && (
-                            <span className="inline-flex items-center text-[10px] font-bold text-done">
-                              <ChevronUp size={12} />
-                              +{rankDiff}
-                            </span>
-                          )}
-                          {rankDiff < 0 && (
-                            <span className="inline-flex items-center text-[10px] font-bold text-form-loss">
-                              <ChevronDown size={12} />
-                              {rankDiff}
-                            </span>
-                          )}
-                          {rankDiff === 0 && ptsDiff === 0 && (
-                            <span className="text-slate-600 text-[11px]">-</span>
-                          )}
-                          {ptsDiff > 0 && (
-                            <span className="text-[9px] font-mono text-primary font-bold bg-primary/10 px-1 rounded">
-                              +{ptsDiff}p
-                            </span>
-                          )}
-                        </div>
+                      <td className="py-2 px-2 text-center font-mono text-slate-400 text-[11px] hidden sm:table-cell">
+                        {row.setsWon}:{row.setsLost}
+                      </td>
+                      <td className="py-2 pr-3 pl-2 text-center font-mono font-bold text-xs">
+                        {rankDiff > 0 ? (
+                          <span className="inline-flex items-center gap-0.5 text-emerald-400 bg-emerald-950/50 px-1 py-0.5 rounded text-[10px]">
+                            <ChevronUp size={12} />
+                            +{rankDiff}
+                          </span>
+                        ) : rankDiff < 0 ? (
+                          <span className="inline-flex items-center gap-0.5 text-rose-400 bg-rose-950/50 px-1 py-0.5 rounded text-[10px]">
+                            <ChevronDown size={12} />
+                            {rankDiff}
+                          </span>
+                        ) : (
+                          <span className="text-slate-600 text-[10px]">-</span>
+                        )}
                       </td>
                     </tr>
                   );

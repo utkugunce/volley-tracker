@@ -39,7 +39,7 @@ export async function GET() {
   const citiesDir = path.join(root, "cities");
   const snapshots: DataSnapshot[] = [
     readSnapshot(path.join(root, "fixtures.json"), "data/fixtures.json"),
-    readSnapshot(path.join(root, "kadinlar_2_lig.json"), "data/kadinlar_2_lig.json"),
+    readSnapshot(path.join(root, "cities.json"), "data/cities.json"),
   ];
 
   let cityFiles = 0;

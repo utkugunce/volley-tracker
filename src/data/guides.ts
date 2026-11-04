@@ -369,7 +369,7 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
           "Hayır, voleybolda averaj çıkarma yöntemiyle değil bölme yöntemiyle hesaplandığı için set averajı eksiye düşmez; her zaman pozitif bir katsayıdır.",
       },
     ],
-    relatedSlugs: ["tvf-altyapi-yas-kategorileri-ve-kurallari", "turkiye-sampiyonasi-statu-ve-finaller", "kadinlar-2-lig-statu-ve-playoff"],
+    relatedSlugs: ["tvf-altyapi-yas-kategorileri-ve-kurallari", "turkiye-sampiyonasi-statu-ve-finaller"],
     internalLinks: [
       {
         title: "Canlı Altyapı Puan Durumu",
@@ -601,96 +601,6 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
         url: "/fikstur",
         description: "Devam eden yerel lig maçlarının salon, tarih ve saat bilgilerine ulaşın.",
         badge: "Fikstür",
-      },
-    ],
-  },
-  {
-    slug: "kadinlar-2-lig-statu-ve-playoff",
-    title: "TVF Kadınlar 2. Ligi Statüsü, Play-Off ve Finallere Yükselme Sistemi",
-    shortTitle: "Kadınlar 2. Lig Statüsü",
-    category: "Ligler & Turnuvalar",
-    categorySlug: "ligler",
-    description:
-      "TVF Kadınlar 2. Voleybol Ligi statüsü: 16 grup, çeyrek final ve yarı final etabı, finallerden Kadınlar 1. Ligi'ne yükselen 4 kulübün belirlenme süreci.",
-    keywords: [
-      "tvf kadınlar 2 lig statüsü",
-      "kadınlar 2 lig play off nasıl oynanır",
-      "kadınlar 2 lig çeyrek final grupları",
-      "1 lige yükselme maçları voleybol",
-      "kadınlar 2 lig küme düşme",
-    ],
-    readTime: "5 dk okuma",
-    publishedAt: "2026-10-22",
-    updatedAt: "2026-10-27",
-    featured: true,
-    summary:
-      "Türkiye'nin 16 grubunda 160'tan fazla kulübün yer aldığı devasa Kadınlar 2. Ligi'nde normal sezon, çeyrek final, yarı final ve final etaplarıyla Kadınlar 1. Ligi'ne çıkacak 4 takım belirlenir.",
-    tableOfContents: [
-      { id: "lig-yapisi", title: "1. 16 Gruplu Normal Sezon Yapısı" },
-      { id: "ceyrek-final", title: "2. Çeyrek Final Kuraları ve Eşleşmeler" },
-      { id: "yari-final", title: "3. Yarı Final Aşaması" },
-      { id: "final-etabi", title: "4. Final Etabı ve 1. Lig'e Yükselen 4 Takım" },
-      { id: "kume-dusme", title: "5. Küme Düşme Baremleri" },
-    ],
-    sections: [
-      {
-        id: "lig-yapisi",
-        title: "1. 16 Gruplu Normal Sezon Yapısı",
-        content:
-          "TVF Kadınlar 2. Ligi coğrafi yakınlık esasına göre 16 gruba ayrılmıştır. Gruplarda çift devreli deplasmanlı lig usulü uygulanır. Normal sezon sonunda gruplarında ilk 2 sırayı alan takımlar Çeyrek Final oynamaya hak kazanır.",
-        highlights: [
-          "Toplam 16 Grup ve 160'ın üzerinde aktif kadın voleybol kulübü mücadele eder.",
-          "Grup 1. ve 2.'leri olmak üzere toplam 32 takım Çeyrek Final etabına yükselir.",
-        ],
-      },
-      {
-        id: "ceyrek-final",
-        title: "2. Çeyrek Final Kuraları ve Eşleşmeler",
-        content:
-          "Çeyrek finale kalan 32 takım, TVF tarafından kura çekimiyle 4'erli 8 gruba ayrılır. Federasyonca belirlenen tarafsız illerde tek devreli lig usulü turnuva maçları oynanır. Gruplarında 1. ve 2. olan 16 takım Yarı Final etabına yükselir.",
-      },
-      {
-        id: "yari-final",
-        title: "3. Yarı Final Aşaması",
-        content:
-          "Yarı finale yükselen 16 takım 4'erli 4 gruba dağıtılır. Tarafsız merkezde 3 gün süren tek devreli müsabakalar sonucunda gruplarında ilk ikiye giren 8 takım Türkiye Final Etabına adını yazdırır.",
-      },
-      {
-        id: "final-etabi",
-        title: "4. Final Etabı ve 1. Lig'e Yükselen 4 Takım",
-        content:
-          "Final etabı 4'erli 2 grup halinde oynanır (1. Grup ve 2. Grup). Tek devreli lig maçları sonunda her iki grubun 1. ve 2. sıralarını elde eden toplam 4 kulüp, bir sonraki sezon TVF Kadınlar 1. Ligi'nde mücadele etme hakkı kazanır.",
-      },
-      {
-        id: "kume-dusme",
-        title: "5. Küme Düşme Baremleri",
-        content:
-          "Gruplarında son sıralarda yer alan takımlar yerel il mahalli liglerine düşer. İki maça mazeretsiz çıkmayan veya ligden çekilen kulüpler doğrudan düşürülür.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Kadınlar 2. Ligi'nden 1. Lig'e kaç takım yükselir?",
-        answer: "Final etabı sonunda her iki final grubunun ilk iki sırasını alan toplam 4 takım Kadınlar 1. Ligi'ne yükselir.",
-      },
-      {
-        question: "Kadınlar 2. Ligi'nde maçlar nerede oynanır?",
-        answer: "Normal sezon maçları kulüplerin kendi salonlarında ev sahibi/deplasman usulü, play-off etapları ise TVF'nin belirlediği tarafsız şehir merkezlerinde oynanır.",
-      },
-    ],
-    relatedSlugs: ["puan-durumu-ve-averaj-hesaplama", "tvf-altyapi-yas-kategorileri-ve-kurallari", "istanbul-voleybol-altyapi-ligleri-rehberi"],
-    internalLinks: [
-      {
-        title: "Kadınlar 2. Ligi Özel Portalı",
-        url: "/kadinlar-2-ligi",
-        description: "16 grup, puan durumları, fikstür ve sonuçların tamamı tek ekranda.",
-        badge: "K2 Portalı",
-      },
-      {
-        title: "Kadınlar 2. Lig Resmi Statü Sayfası",
-        url: "/kadinlar-2-ligi/statu",
-        description: "Federasyonun güncel resmi talimat metni ve yükselme şeması.",
-        badge: "Resmi Statü",
       },
     ],
   },

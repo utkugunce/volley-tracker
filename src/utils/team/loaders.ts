@@ -1,19 +1,12 @@
-/** Takım verisi yükleyicileri: 81 il + Kadınlar 2. Lig maç/puan durumu ve kadro önbellekleri. */
+/** Takım verisi yükleyicileri: 81 il maç/puan durumu ve kadro önbellekleri. */
 import fs from "fs";
 import path from "path";
-import { Match, StandingItem } from "@/types/fixture";
+import { Match } from "@/types/fixture";
 import { applyOverridesToMatches, getOverridesDataSync, type MatchOverride } from "../overrides";
 import { TeamRostersDatabase } from "@/types/roster";
 import { isCityHidden } from "../cityHelper";
-import { Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import { setActiveDataSource } from "../supabaseData";
 import type { StandingsCityEntry } from "./types";
-
-/** TVF Kadınlar 2. Ligi tarihleri "gg.aa.yyyy" gelir; uygulamanın geri kalanıyla uyumlu ve sıralanabilir ISO biçimine çevirir. */
-function normalizeK2Date(raw?: string): string {
-  const m = (raw || "").trim().match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
-  return m ? `${m[3]}-${m[2]}-${m[1]}` : raw || "";
-}
 
 let cachedAllData: {
   matches: Match[];
@@ -29,11 +22,7 @@ let rawAllData: {
   timestamp: number;
 } | null = null;
 
-// data/*.json derleme paketinden okunur ve yalnızca yeni deploy ile değişir. Eskiden 1 dakikalık
-// TTL her dolduğunda 81 il + Kadınlar 2. Lig JSON'u yeniden ayrıştırılıyor ve yeni nesne kimliği
-// yüzünden takım slug indeksi (getSlugIndex) baştan kuruluyordu; tarayıcı botlarının tetiklediği
-// takım sayfası ISR üretimlerinde bu, Vercel Fluid Active CPU'nun ana tüketicisiydi.
-// Üretimde instance ömrü boyunca tutulur; geliştirmede scraper değişiklikleri için 1 dk kalır.
+// data/*.json derleme paketinden okunur ve yalnızca yeni deploy ile değişir.
 const CACHE_TTL_MS = process.env.NODE_ENV === "production" ? Number.POSITIVE_INFINITY : 60 * 1000;
 
 /** Override kümesinin ucuz imzası: yalnızca bir override eklenir/değişirse yeniden uygulanır. */
@@ -58,12 +47,12 @@ export function loadTeamRosters(): TeamRostersDatabase {
       cachedRosters = JSON.parse(fs.readFileSync(rostersPath, "utf-8"));
       rostersTimestamp = now;
       setActiveDataSource("json-fallback");
-      return cachedRosters || {};
-    } catch {
-      return {};
+      return cachedRosters!;
+    } catch (e) {
+      console.error("Error reading team-rosters.json:", e);
     }
   }
-  return {};
+  return cachedRosters || {};
 }
 
 export function extractVolleyboxTeamId(url?: string): string | null {
@@ -81,42 +70,70 @@ export function extractVolleyboxTeamId(url?: string): string | null {
   return null;
 }
 
-export function loadAllCityData() {
+export function loadAllCityData(): {
+  matches: Match[];
+  standingsByCity: Record<string, StandingsCityEntry>;
+  timestamp: number;
+} {
   const now = Date.now();
   const overrides = getOverridesDataSync().overrides;
-  const overridesKey = getOverridesKey(overrides);
+  const currentOverridesKey = getOverridesKey(overrides);
 
-  if (!rawAllData || now - rawAllData.timestamp >= CACHE_TTL_MS) {
-    rawAllData = readAllCityDataFromDisk(now);
-    cachedAllData = null;
-  }
-
-  if (cachedAllData && cachedAllData.overridesKey === overridesKey) {
+  if (
+    cachedAllData &&
+    now - cachedAllData.timestamp < CACHE_TTL_MS &&
+    cachedAllData.overridesKey === currentOverridesKey
+  ) {
     return cachedAllData;
   }
 
+  // Ham veri önbellekte varsa disk I/O yapmadan doğrudan override'ı uygula
+  if (rawAllData && now - rawAllData.timestamp < CACHE_TTL_MS) {
+    const patchedMatches = applyOverridesToMatches(rawAllData.matches, overrides);
+    cachedAllData = {
+      matches: patchedMatches,
+      standingsByCity: rawAllData.standingsByCity,
+      timestamp: now,
+      overridesKey: currentOverridesKey,
+    };
+    return cachedAllData;
+  }
+
+  // 1. Ham veriyi diskten yükle
+  const raw = readRawDataFromDisk(now);
+  rawAllData = raw;
+
+  // 2. Override'ları uygula ve önbellekle
+  const patchedMatches = applyOverridesToMatches(raw.matches, overrides);
   cachedAllData = {
-    matches: applyOverridesToMatches(rawAllData.matches, overrides),
-    standingsByCity: rawAllData.standingsByCity,
+    matches: patchedMatches,
+    standingsByCity: raw.standingsByCity,
     timestamp: now,
-    overridesKey,
+    overridesKey: currentOverridesKey,
   };
+
   return cachedAllData;
 }
 
-function readAllCityDataFromDisk(now: number) {
-
-  const citiesDir = path.join(process.cwd(), "data", "cities");
+/** Diskten salt JSON dosyalarını okur (override uygulamaz). */
+function readRawDataFromDisk(now: number): {
+  matches: Match[];
+  standingsByCity: Record<string, StandingsCityEntry>;
+  timestamp: number;
+} {
   const allMatches: Match[] = [];
   const standingsByCity: Record<string, StandingsCityEntry> = {};
 
+  const citiesDir = path.join(process.cwd(), "data", "cities");
   if (fs.existsSync(citiesDir)) {
-    const files = fs.readdirSync(citiesDir).filter((f) => f.endsWith(".json"));
+    const files = fs.readdirSync(citiesDir);
     for (const file of files) {
-      const fileSlug = file.replace(".json", "");
+      if (!file.endsWith(".json")) continue;
+      const fileSlug = file.replace(/\.json$/, "");
       if (isCityHidden(fileSlug)) continue;
+
+      const fullPath = path.join(citiesDir, file);
       try {
-        const fullPath = path.join(citiesDir, file);
         const content = fs.readFileSync(fullPath, "utf-8");
         const parsed = JSON.parse(content);
         const cityName = parsed.city || fileSlug;
@@ -143,82 +160,7 @@ function readAllCityDataFromDisk(now: number) {
     }
   }
 
-  // TVF Kadınlar 2. Ligi Verilerini Yükle
-  const k2Path = path.join(process.cwd(), "data", "kadinlar_2_lig.json");
-  if (fs.existsSync(k2Path)) {
-    try {
-      const k2Content = fs.readFileSync(k2Path, "utf-8");
-      const k2 = JSON.parse(k2Content);
-
-      // 1. Karşılaşmalar
-      if (Array.isArray(k2.tum_maclar)) {
-        for (const m of k2.tum_maclar) {
-          const setScores = m.set_sonuclari
-            ? m.set_sonuclari.split(",").map((s: string) => s.trim()).filter(Boolean)
-            : [];
-          let homeScore: number | null = null;
-          let awayScore: number | null = null;
-          if (m.skor && m.skor.includes("-") && m.skor !== "- : -") {
-            const parts = m.skor.split("-").map((s: string) => parseInt(s.trim(), 10));
-            if (!isNaN(parts[0]) && !isNaN(parts[1])) {
-              homeScore = parts[0];
-              awayScore = parts[1];
-            }
-          }
-          allMatches.push({
-            id: m.id || `2lig_${m.grup_no}_${m.mac_no}`,
-            match_no: m.mac_no || "",
-            date: normalizeK2Date(m.tarih),
-            time: m.saat || "",
-            hall: m.salon || "",
-            home_team: m.takim_a,
-            away_team: m.takim_b,
-            category: "Kadınlar 2. Ligi",
-            age_group: "Genç",
-            gender: "Kız",
-            group: m.grup_adi || `Grup ${m.grup_no}`,
-            city: m.sehir || "Türkiye",
-            status: m.durum === "BİTTİ" ? "finished" : "upcoming",
-            score: m.skor && m.skor !== "- : -" ? m.skor : undefined,
-            set_scores: setScores,
-            home_score: homeScore,
-            away_score: awayScore,
-          });
-        }
-      }
-
-      // 2. Gruplar ve Puan Durumları
-      if (Array.isArray(k2.gruplar)) {
-        if (!standingsByCity["TVF Kadınlar 2. Ligi"]) {
-          standingsByCity["TVF Kadınlar 2. Ligi"] = {
-            city: "TVF Kadınlar 2. Ligi",
-            standings: {},
-          };
-        }
-        for (const g of k2.gruplar) {
-          const groupName = g.grup_adi || `Grup ${g.grup_no}`;
-          const table: StandingItem[] = (g.puan_durumu || []).map((t: Kadinlar2LigTeam) => ({
-            rank: t.sira || 0,
-            team: t.takim_adi,
-            played: t.o || 0,
-            won: t.g || 0,
-            lost: t.m || 0,
-            points: t.p || 0,
-            sets_won: t.as || 0,
-            sets_lost: t.vs || 0,
-            set_ratio: String(t.sav || "0"),
-            points_won: t.asp || 0,
-            points_lost: t.vsp || 0,
-            point_ratio: String(t.spav || "0"),
-            form: [],
-          }));
-          standingsByCity["TVF Kadınlar 2. Ligi"].standings[groupName] = table;
-        }
-      }
-    } catch (err) {
-      console.error("Error loading kadinlar_2_lig.json in teamData:", err);
-    }
-  }
-
   return { matches: allMatches, standingsByCity, timestamp: now };
 }
+
+export const loadAllData = loadAllCityData;

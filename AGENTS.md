@@ -113,30 +113,8 @@ python scripts/scrape_all_provinces.py --force
 
 ### Detaylar:
 - **Altyapı (81 İl) Taraması:** Bu komut 81 ilin TVF bültenlerini eşzamanlı (multi-threaded) olarak tarar. `data/cities/*.json`, `data/cities.json` ve `data/fixtures.json` dosyalarını günceller.
-- **TVF Kadınlar 2. Ligi (Ayrı / Bağımsız Scraper):** Kadınlar 2. Ligi verilerini bağımsız çekmek için:
-  ```powershell
-  python scripts/scrape_kadinlar_2_lig.py
-  ```
-  `data/kadinlar_2_lig.json` ve ilgili Volleybox eşleşmelerini bağımsız olarak günceller.
-- **TVF Vodafone Sultanlar Ligi:** Sultanlar Ligi verilerini bağımsız çekmek için:
-  ```powershell
-  python scripts/scrape_sultanlar_ligi.py
-  ```
-  `data/sultanlar_ligi.json` ve Volleybox maçlarını günceller.
-- **TVF Arabica Coffee House Kadınlar Voleybol 1. Ligi:** Kadınlar 1. Ligi verilerini bağımsız çekmek için:
-  ```powershell
-  python scripts/scrape_kadinlar_1_lig.py
-  ```
-  `data/kadinlar_1_lig.json` ve Volleybox maçlarını günceller.
-- **Profesyonel Ligler (Birleşik Çalıştırıcı):** Sultanlar Ligi ve Kadınlar 1. Ligi'ni (veya `--all` ile 2. Lig dahil) birlikte çekmek için:
-  ```powershell
-  python scripts/scrape_pro_leagues.py
-  # veya npm komutları:
-  npm run scrape:pro
-  npm run scrape:sultanlar-ligi
-  npm run scrape:kadinlar-1-lig
-  ```
-- Tüm scriptler kendi Volleybox maç senkronizasyonunu (`scripts/sync_volleybox_matches.py`) güvenli şekilde tamamlar.
+- **Profesyonel Ligler (Sultanlar Ligi, Kadınlar 1. Ligi, Kadınlar 2. Ligi):** Profesyonel ligler bağımsız `pro-volley` projesine (`C:\projects\pro-volley`) taşınmıştır. `volley-tracker` sitesi yalnızca TVF resmi kulüp altyapı liglerine odaklıdır.
+- Script kendi Volleybox maç senkronizasyonunu (`scripts/sync_volleybox_matches.py`) güvenli şekilde tamamlar.
 - Script tamamlandıktan sonra özet kullanıcıya bildirilir.
 
 ## 🏙️ KURAL: Şehir Allowlist'i (`src/utils/citySlugs.ts`)

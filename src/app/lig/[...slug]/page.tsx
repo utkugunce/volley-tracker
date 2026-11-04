@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
 import { getLeagueData } from "@/utils/leagueData";
@@ -21,13 +21,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const citySlug = slug[0];
   const leagueSlug = slug.length > 1 ? slug[1] : slug[0];
-
-  if (citySlug === "kadinlar-2-ligi" || leagueSlug === "kadinlar-2-ligi") {
-    return {
-      title: "TVF Kadınlar 2. Ligi Puan Durumu & Fikstür",
-      description: "Türkiye Voleybol Federasyonu Uzman Posta Kadınlar 2. Ligi 16 grup canlı puan cetveli, fikstür ve sonuçlar.",
-    };
-  }
 
   const league = getLeagueData(citySlug, leagueSlug);
   if (!league) {
@@ -88,8 +81,6 @@ export function generateStaticParams() {
     }
   } catch {}
 
-  params.push({ slug: ["kadinlar-2-ligi"] });
-
   return params;
 }
 
@@ -101,11 +92,6 @@ export default async function LeagueSlugPage({ params }: PageProps) {
 
   const citySlug = slug[0];
   const leagueSlug = slug.length > 1 ? slug[1] : slug[0];
-
-  // Kadınlar 2. Ligi için doğrudan /kadinlar-2-ligi sayfasına yönlendir
-  if (citySlug === "kadinlar-2-ligi" || leagueSlug === "kadinlar-2-ligi") {
-    redirect("/kadinlar-2-ligi");
-  }
 
   const league = getLeagueData(citySlug, leagueSlug);
   if (!league) {

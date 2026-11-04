@@ -149,29 +149,12 @@ describe("play-off özeti: tam fikstürlü 6 takımlı grup", () => {
   });
 });
 
-describe("Kadınlar 2. Ligi kesiti", () => {
-  it("ilk 2 kullanılır", () => {
-    const a = buildLeagueAnalytics({
-      matches: [],
-      standings: [
-        {
-          city: K2_STANDINGS_CITY,
-          groupName: "Grup 1",
-          rows: [row("A", 1, 0, 0), row("B", 2, 0, 0), row("C", 3, 0, 0)],
-        },
-      ],
-    });
-    expect(a.groups[0].cutoff).toBe(2);
-    expect(a.groups[0].category).toBe("Kadınlar 2. Ligi");
-  });
-});
-
-describe("gerçek veri (data/cities + Kadınlar 2. Ligi)", () => {
+describe("gerçek veri (data/cities)", () => {
   const a = getLeagueAnalytics();
 
   it("kategorileri ve grupları üretir", () => {
     expect(a.groups.length).toBeGreaterThan(50);
-    expect(a.categories).toEqual(expect.arrayContaining(["Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig", "Kadınlar 2. Ligi"]));
+    expect(a.categories).toEqual(expect.arrayContaining(["Genç Kızlar Süper Lig", "Yıldız Kızlar Süper Lig"]));
   });
 
   it("listelerde NaN/Infinity veya negatif değer yok", () => {

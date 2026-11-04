@@ -3,10 +3,8 @@ import {
   getScorePointsAndSets,
   compareStandingsFivb,
   simulateAltyapiStandings,
-  simulateK2Standings,
 } from "../standingsSimulator";
 import type { StandingItem, Match } from "@/types/fixture";
-import type { Kadinlar2LigTeam, Kadinlar2LigMatch } from "@/types/kadinlar2Lig";
 
 describe("standingsSimulator", () => {
   it("FIVB puan ve set kuralını doğru hesaplar", () => {
@@ -18,48 +16,51 @@ describe("standingsSimulator", () => {
     expect(getScorePointsAndSets("0-3")).toEqual({ homePoints: 0, awayPoints: 3, homeSets: 0, awaySets: 3 });
   });
 
-  it("önce galibiyet sayısına, sonra puana ve set averajına göre sıralar", () => {
-    const a = { won: 5, points: 14, setRatio: 2.5, pointRatio: 1.2, team: "Takım A" };
-    const b = { won: 4, points: 15, setRatio: 3.0, pointRatio: 1.3, team: "Takım B" };
-    // Takım A daha çok galibiyet aldığı için puanı az olsa bile önce gelir
-    expect(compareStandingsFivb(a, b)).toBeLessThan(0);
+  it("FIVB sıralama kriterlerine göre doğru sıralar (puan > galibiyet > set oranı > sayı oranı)", () => {
+    const rows = [
+      { team: "Takım B", points: 9, won: 3, setRatio: 3.0, pointRatio: 1.2 },
+      { team: "Takım A", points: 10, won: 3, setRatio: 2.5, pointRatio: 1.1 },
+      { team: "Takım C", points: 9, won: 3, setRatio: 4.0, pointRatio: 1.0 }, // Takım B ile aynı puan ve galibiyet, daha iyi set oranı
+    ];
 
-    // Eşit galibiyette çok puan alan önce gelir
-    const c = { won: 4, points: 12, setRatio: 1.5, pointRatio: 1.0, team: "Takım C" };
-    expect(compareStandingsFivb(b, c)).toBeLessThan(0);
+    rows.sort(compareStandingsFivb);
+
+    expect(rows[0].team).toBe("Takım A"); // 10 puan
+    expect(rows[1].team).toBe("Takım C"); // 9 puan, 4.0 set oranı
+    expect(rows[2].team).toBe("Takım B"); // 9 puan, 3.0 set oranı
   });
 
-  it("altyapı maç simülasyonunda sıralama ve puan değişimlerini doğru yansıtır", () => {
+  it("Altyapı maç simülasyonunu doğru uygular ve sıralamayı günceller", () => {
     const initialRows: StandingItem[] = [
       {
         rank: 1,
-        team: "Fenerbahçe",
+        team: "VakıfBank",
         played: 2,
         won: 2,
         lost: 0,
         points: 6,
         sets_won: 6,
         sets_lost: 0,
-        set_ratio: "MAX",
+        set_ratio: "999999",
         points_won: 150,
         points_lost: 100,
-        point_ratio: "1.500",
-        form: ["W", "W"],
+        point_ratio: "1.5",
+        form: [],
       },
       {
         rank: 2,
-        team: "VakıfBank",
+        team: "Fenerbahçe",
         played: 2,
         won: 1,
         lost: 1,
-        points: 4,
-        sets_won: 5,
+        points: 3,
+        sets_won: 3,
         sets_lost: 3,
-        set_ratio: "1.667",
-        points_won: 180,
-        points_lost: 160,
-        point_ratio: "1.125",
-        form: ["W", "L"],
+        set_ratio: "1.0",
+        points_won: 130,
+        points_lost: 130,
+        point_ratio: "1.0",
+        form: [],
       },
       {
         rank: 3,
@@ -70,48 +71,52 @@ describe("standingsSimulator", () => {
         points: 3,
         sets_won: 3,
         sets_lost: 3,
-        set_ratio: "1.000",
-        points_won: 140,
-        points_lost: 140,
-        point_ratio: "1.000",
-        form: ["L", "W"],
+        set_ratio: "1.0",
+        points_won: 120,
+        points_lost: 130,
+        point_ratio: "0.923",
+        form: [],
       },
     ];
 
     const upcomingMatches: Match[] = [
       {
         id: "m1",
-        home_team: "Eczacıbaşı",
-        away_team: "Fenerbahçe",
-        date: "2026-10-20",
-        time: "14:00",
-        hall: "Burhan Felek",
-        category: "Genç Kızlar Süper Lig",
+        match_no: "1",
         age_group: "Genç",
         gender: "Kız",
+        home_team: "Eczacıbaşı",
+        away_team: "Fenerbahçe",
+        category: "Genç Kızlar",
         group: "A Grubu",
-        match_no: "10",
+        city: "İstanbul",
         status: "upcoming",
+        date: "2026-10-30",
+        time: "15:00",
+        hall: "Burhan Felek",
       },
       {
         id: "m2",
-        home_team: "VakıfBank",
-        away_team: "Eczacıbaşı",
-        date: "2026-10-25",
-        time: "16:00",
-        hall: "VakıfBank Spor Sarayı",
-        category: "Genç Kızlar Süper Lig",
+        match_no: "2",
         age_group: "Genç",
         gender: "Kız",
+        home_team: "VakıfBank",
+        away_team: "Eczacıbaşı",
+        category: "Genç Kızlar",
         group: "A Grubu",
-        match_no: "11",
+        city: "İstanbul",
         status: "upcoming",
+        date: "2026-11-05",
+        time: "15:00",
+        hall: "VakıfBank Spor Sarayı",
       },
     ];
 
-    // Eczacıbaşı Fenerbahçe'yi 3-0 yenerse
-    const sim = simulateAltyapiStandings(initialRows, { m1: "3-0" }, upcomingMatches);
-    const ecza = sim.find((r) => r.team === "Eczacıbaşı")!;
+    // Simülasyon 1: Eczacıbaşı Fenerbahçe'yi 3-1 yensin
+    const sim1 = simulateAltyapiStandings(initialRows, { m1: "3-1" }, upcomingMatches);
+
+    // Eczacıbaşı 3 puan aldı, 6 puana çıktı ve Fenerbahçe'yi geçti
+    const ecza = sim1.find((r) => r.team === "Eczacıbaşı")!;
     expect(ecza.played).toBe(3);
     expect(ecza.won).toBe(2);
     expect(ecza.points).toBe(6);
@@ -123,92 +128,5 @@ describe("standingsSimulator", () => {
     expect(leader.team).toBe("Eczacıbaşı");
     expect(leader.rank).toBe(1);
     expect(leader.diffRank).toBe(2); // 3. sıradan 1. sıraya yükseldi
-  });
-
-  it("Kadınlar 2. Ligi için simülasyonu doğru çalıştırır", () => {
-    const k2Rows: Kadinlar2LigTeam[] = [
-      {
-        sira: 1,
-        takim_id: "1",
-        takim_adi: "Takım 1",
-        o: 1,
-        g: 1,
-        m: 0,
-        p: 3,
-        as: 3,
-        vs: 0,
-        sav: "MAX",
-        asp: 75,
-        vsp: 50,
-        spav: "1.5",
-        a3_0: 1,
-        a3_1: 0,
-        a3_2: 0,
-        v2_3: 0,
-        v1_3: 0,
-        v0_3: 0,
-        logo: "",
-        sezon: "2026-2027",
-        grup_no: 1,
-      },
-      {
-        sira: 2,
-        takim_id: "2",
-        takim_adi: "Takım 2",
-        o: 1,
-        g: 0,
-        m: 1,
-        p: 0,
-        as: 0,
-        vs: 3,
-        sav: "0",
-        asp: 50,
-        vsp: 75,
-        spav: "0.66",
-        a3_0: 0,
-        a3_1: 0,
-        a3_2: 0,
-        v2_3: 0,
-        v1_3: 0,
-        v0_3: 1,
-        logo: "",
-        sezon: "2026-2027",
-        grup_no: 1,
-      },
-    ];
-
-    const k2Matches: Kadinlar2LigMatch[] = [
-      {
-        id: "k2-1",
-        mac_no: "101",
-        grup_no: 1,
-        grup_adi: "Grup 1",
-        hafta: 2,
-        devre: 1,
-        tarih: "2026-10-25",
-        gun: "Pazar",
-        saat: "14:00",
-        sehir: "İstanbul",
-        salon: "50. Yıl",
-        takim_a: "Takım 2",
-        takim_b: "Takım 1",
-        takim_a_id: "2",
-        takim_b_id: "1",
-        takim_a_logo: "",
-        takim_b_logo: "",
-        set_a: "",
-        set_b: "",
-        skor: "- : -",
-        set_sonuclari: "",
-        durum: "OYNANACAK",
-        mac_durumu_kod: "0",
-      },
-    ];
-
-    // Takım 2, Takım 1'i 3-0 yenerse: Takım 2 (1G, 3P, set 3:3), Takım 1 (1G, 3P, set 3:3)
-    const res = simulateK2Standings(k2Rows, { "k2-1": "3-0" }, k2Matches);
-    expect(res.length).toBe(2);
-    expect(res[0].won).toBe(1);
-    expect(res[0].points).toBe(3);
   });
 });

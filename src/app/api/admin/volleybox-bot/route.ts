@@ -130,42 +130,6 @@ function normTr(s: string): string {
     .trim();
 }
 
-export interface ProLeagueConfig {
-  file: string;
-  name: string;
-  slug: string;
-  category: string;
-  url: string;
-  aliases: string[];
-}
-
-export const PRO_LEAGUES_CONFIG: ProLeagueConfig[] = [
-  {
-    file: "kadinlar_2_lig.json",
-    name: "TVF Kadınlar 2. Ligi",
-    slug: "kadinlar-2-ligi",
-    category: "Kadınlar 2. Ligi",
-    url: "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-2-ligi-2026-27-o45047",
-    aliases: ["kadinlar-2-ligi", "kadinlar-2-lig", "kadinlar-2", "2-lig", "2.lig", "2lig"],
-  },
-  {
-    file: "kadinlar_1_lig.json",
-    name: "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
-    slug: "kadinlar-1-ligi",
-    category: "Arabica Coffee House Kadınlar Voleybol 1. Ligi",
-    url: "https://women.volleybox.net/tr/women-turkiye-kadnlar-voleybol-1-ligi-2026-27-o45210",
-    aliases: ["kadinlar-1-ligi", "kadinlar-1-lig", "kadinlar-1", "1-lig", "1.lig", "1lig", "arabica-kadinlar-1-ligi", "arabica", "kfc-kadinlar-1-ligi"],
-  },
-  {
-    file: "sultanlar_ligi.json",
-    name: "Vodafone Sultanlar Ligi",
-    slug: "sultanlar-ligi",
-    category: "Vodafone Sultanlar Ligi",
-    url: "https://women.volleybox.net/tr/women-vodafone-sultanlar-ligi-2026-27-o45086",
-    aliases: ["sultanlar-ligi", "sultanlar_ligi", "sultanlar", "vodafone-sultanlar-ligi"],
-  },
-];
-
 function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSummary[] {
   const leagues = (
     mappingsJson as {
@@ -230,15 +194,6 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
   const todayStr = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Istanbul" }).format(new Date());
 
   const filterNorm = cityFilter && cityFilter !== "all" ? normTr(cityFilter) : "";
-  const allProAliases = new Set<string>(["pro", "pro-leagues", "profesyonel"]);
-  for (const p of PRO_LEAGUES_CONFIG) {
-    allProAliases.add(normTr(p.slug));
-    allProAliases.add(normTr(p.name));
-    for (const a of p.aliases) allProAliases.add(normTr(a));
-  }
-  const isProOnlyFilter = filterNorm !== "" && allProAliases.has(filterNorm);
-
-  if (!isProOnlyFilter) {
     for (const { filePath, fallbackCity } of filesToRead) {
       if (!fs.existsSync(filePath)) continue;
       try {
@@ -327,116 +282,6 @@ function collectMissingMatchesPreview(cityFilter?: string): TournamentMissingSum
         // ignore malformed city json
       }
     }
-  }
-
-  // Profesyonel Ligleri Ekle (Kadınlar 2. Ligi, Arabica Coffee House Kadınlar Voleybol 1. Ligi, Vodafone Sultanlar Ligi)
-  const shouldScanPro = filterNorm === "" || isProOnlyFilter;
-  if (shouldScanPro) {
-    for (const pConfig of PRO_LEAGUES_CONFIG) {
-      if (filterNorm && filterNorm !== "pro" && filterNorm !== "pro-leagues" && filterNorm !== "profesyonel") {
-        const matchesThis =
-          filterNorm === normTr(pConfig.slug) ||
-          filterNorm === normTr(pConfig.name) ||
-          pConfig.aliases.some((a) => normTr(a) === filterNorm);
-        if (!matchesThis) continue;
-      }
-
-      const pPath = path.join(dataDir, pConfig.file);
-      if (!fs.existsSync(pPath)) continue;
-
-      try {
-        const pRaw = JSON.parse(fs.readFileSync(pPath, "utf-8"));
-        const matches = Array.isArray(pRaw.tum_maclar) ? pRaw.tum_maclar : [];
-
-        for (const m of matches) {
-          if (m?.volleybox?.synced) continue;
-
-          let mDate = String(m?.tarih || m?.date || "").trim();
-          if (mDate.includes(".")) {
-            const parts = mDate.split(".");
-            if (parts.length === 3) {
-              const year = parts[2].length === 4 ? parts[2] : `20${parts[2]}`;
-              mDate = `${year}-${parts[1].padStart(2, "0")}-${parts[0].padStart(2, "0")}`;
-            }
-          }
-          if (!/^\d{4}-\d{2}-\d{2}$/.test(mDate)) continue;
-
-          let hScore = 0;
-          let aScore = 0;
-          if (m?.set_a != null && m?.set_b != null) {
-            hScore = Number(m.set_a) || 0;
-            aScore = Number(m.set_b) || 0;
-          } else if (m?.home_score != null && m?.away_score != null) {
-            hScore = Number(m.home_score) || 0;
-            aScore = Number(m.away_score) || 0;
-          }
-
-          const isForfeit =
-            Boolean(m?.forfeit) ||
-            m?.mac_durumu_kod === "H" ||
-            /hükmen|hukmen/i.test(
-              `${m?.durum || ""} ${m?.takim_a || ""} ${m?.takim_b || ""} ${m?.home_team || ""} ${m?.away_team || ""}`
-            );
-
-          const hasScore = hScore > 0 || aScore > 0 || isForfeit;
-          const isPast = mDate < todayStr;
-          if (isPast && !hasScore) {
-            // Volleybox geçmişte oynanan maçların skorsuz girilmesine izin vermez
-            continue;
-          }
-
-          const matchId = String(m?.id || `${pConfig.slug}-${byTourn.get(pConfig.url)?.matches.length || 0}`);
-          if (seenMatchIds.has(matchId)) continue;
-          seenMatchIds.add(matchId);
-
-          if (!byTourn.has(pConfig.url)) {
-            const slug = pConfig.url.replace(/\/+$/, "").split("/").pop() || pConfig.slug;
-            byTourn.set(pConfig.url, {
-              tournament_url: pConfig.url,
-              tournament_slug: slug,
-              city: pConfig.name,
-              city_slug: pConfig.slug,
-              category: pConfig.category,
-              missing_count: 0,
-              matches: [],
-            });
-          }
-
-          const entry = byTourn.get(pConfig.url)!;
-          const scoreStr = m?.skor || (hasScore ? `${hScore}-${aScore}` : "0-0");
-          const groupName = String(m?.grup_adi || (m?.hafta ? `${m.hafta}. Hafta` : "-"));
-          const hallName = String(m?.salon || m?.hall || "-");
-          const homeName = String(m?.takim_a || m?.home_team || "");
-          const awayName = String(m?.takim_b || m?.away_team || "");
-          const timeStr =
-            m?.saat && m.saat !== "--:--"
-              ? String(m.saat)
-              : m?.time && m.time !== "--:--"
-                ? String(m.time)
-                : "--:--";
-
-          entry.matches.push({
-            id: matchId,
-            city: String(m?.sehir || pConfig.name),
-            city_slug: pConfig.slug,
-            category: pConfig.category,
-            group: groupName,
-            date: mDate,
-            time: timeStr,
-            home_team: homeName,
-            away_team: awayName,
-            score: scoreStr,
-            hall: hallName !== "TBD" ? hallName : "-",
-            forfeit: isForfeit,
-            tournament_url: pConfig.url,
-          });
-          entry.missing_count = entry.matches.length;
-        }
-      } catch {
-        // ignore malformed pro json
-      }
-    }
-  }
 
   return Array.from(byTourn.values()).filter((t) => t.missing_count > 0);
 }
@@ -769,93 +614,7 @@ export async function POST(request: Request) {
 
     const dataDir = path.join(/*turbopackIgnore: true*/ process.cwd(), "data");
 
-    // 1. Profesyonel Lig Kontrolü
-    const matchedPro = PRO_LEAGUES_CONFIG.find(
-      (p) => p.slug === citySlug || p.aliases.map((a) => normTr(a)).includes(normTr(citySlug))
-    );
-
-    if (matchedPro) {
-      const proFilePath = path.join(dataDir, matchedPro.file);
-      if (!fs.existsSync(proFilePath)) {
-        return NextResponse.json({ error: `${matchedPro.name} veri dosyası bulunamadı.` }, { status: 404 });
-      }
-
-      try {
-        const pData = JSON.parse(fs.readFileSync(proFilePath, "utf-8"));
-        let updatedCount = 0;
-        let syncedCount = 0;
-
-        interface MatchLike {
-          id?: string;
-          tarih?: string;
-          date?: string;
-          saat?: string;
-          time?: string;
-          takim_a?: string;
-          home_team?: string;
-          takim_b?: string;
-          away_team?: string;
-          skor?: string;
-          score?: string;
-          set_a?: string | number;
-          set_b?: string | number;
-          salon?: string;
-          hall?: string;
-          volleybox?: Record<string, unknown>;
-        }
-
-        const updateMatchList = (list: unknown) => {
-          if (!Array.isArray(list)) return;
-          for (const m of list as MatchLike[]) {
-            const isTarget = matchId ? String(m.id) === matchId : true;
-            if (isTarget && !m.volleybox?.synced) {
-              m.volleybox = {
-                synced: true,
-                match_id: m.volleybox?.match_id || "",
-                url: tournamentUrl || m.volleybox?.url || matchedPro.url,
-                host_name: m.takim_a || m.home_team || "",
-                guest_name: m.takim_b || m.away_team || "",
-                score: m.skor || (m.set_a != null ? `${m.set_a}-${m.set_b}` : "0-0"),
-                has_score: Boolean(m.set_a || m.set_b),
-                vb_date: m.tarih || m.date || "",
-                vb_time: m.saat || m.time || "",
-                vb_hall: m.salon || m.hall || "",
-              };
-              updatedCount++;
-            }
-            if (m.volleybox?.synced) {
-              syncedCount++;
-            }
-          }
-        };
-
-        updateMatchList(pData.tum_maclar);
-        if (Array.isArray(pData.gruplar)) {
-          for (const g of pData.gruplar) {
-            updateMatchList(g.fikstur);
-          }
-        }
-
-        if (!pData.metadata) pData.metadata = {};
-        pData.metadata.volleybox_synced_matches = syncedCount;
-        pData.metadata.volleybox_sync_updated_at = new Date().toISOString();
-        fs.writeFileSync(proFilePath, JSON.stringify(pData, null, 2), "utf-8");
-
-        return NextResponse.json({
-          ok: true,
-          updatedCount,
-          syncedCount,
-          tournaments: collectMissingMatchesPreview("all"),
-        });
-      } catch (e) {
-        return NextResponse.json(
-          { error: `Pro lig dosyası güncellenirken hata: ${e instanceof Error ? e.message : String(e)}` },
-          { status: 500 }
-        );
-      }
-    }
-
-    // 2. Altyapı Şehir Dosyası Kontrolü
+    // Altyapı Şehir Dosyası Kontrolü
     const cityFile = path.join(dataDir, "cities", `${citySlug}.json`);
     if (!fs.existsSync(cityFile)) {
       return NextResponse.json({ error: "Şehir veri dosyası bulunamadı." }, { status: 404 });

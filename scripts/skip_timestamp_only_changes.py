@@ -15,7 +15,7 @@ Ne yapar?
 
   - İçerik gerçekten değiştiyse dosyaya DOKUNMAZ (yeni zaman damgasıyla commit'lenir).
   - "Heartbeat" dosyaları (`HEARTBEAT_FILES`: `check_data_freshness.py` ile 24 saat
-    sınırı denetlenen `cities.json` ve `kadinlar_2_lig.json`) için HEAD'deki zaman
+    sınırı denetlenen `cities.json`) için HEAD'deki zaman
     damgası heartbeat süresinden (varsayılan 12 saat) eskiyse dosyaya DOKUNMAZ;
     böylece içerik değişmese de bu dosyalar en geç 12 saatte bir tazelenir ve
     CI'daki freshness kontrolü hiçbir zaman bayat veriyle karşılaşmaz.
@@ -42,7 +42,7 @@ from scripts.data_freshness import parse_timestamp  # noqa: E402
 VOLATILE_KEYS = frozenset({"updated_at", "volleybox_sync_updated_at", "guncellenme_zamani"})
 DEFAULT_HEARTBEAT_HOURS = 12.0
 # `scripts/check_data_freshness.py` (24 saat sınırı) bu dosyaları denetler; yalnızca bunlar heartbeat ister.
-HEARTBEAT_FILES = frozenset({"data/cities.json", "data/kadinlar_2_lig.json"})
+HEARTBEAT_FILES = frozenset({"data/cities.json"})
 
 
 def strip_volatile(obj: Any) -> Any:
@@ -144,7 +144,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="Yalnızca zaman damgası değişen veri dosyalarını geri al")
     parser.add_argument("--heartbeat-hours", type=float, default=DEFAULT_HEARTBEAT_HOURS,
-                        help="cities.json / kadinlar_2_lig.json için HEAD'deki zaman damgası bu süreden eskiyse yenisi yine de commit'lenir (varsayılan: 12)")
+                        help="cities.json için HEAD'deki zaman damgası bu süreden eskiyse yenisi yine de commit'lenir (varsayılan: 12)")
     parser.add_argument("--dry-run", action="store_true", help="Dosyalara dokunmadan sadece raporla")
     args = parser.parse_args(argv)
 

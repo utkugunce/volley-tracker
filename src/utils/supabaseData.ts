@@ -1,6 +1,5 @@
 import { getSupabaseAdmin } from "./supabaseAdmin";
 import type { CityEntry } from "./cityHelper";
-import type { Kadinlar2LigData } from "@/types/kadinlar2Lig";
 import type { TeamRostersDatabase } from "@/types/roster";
 
 export type ActiveDataSource = "supabase" | "json-fallback";
@@ -23,7 +22,6 @@ interface CacheEntry<T> {
 }
 
 let citiesCache: CacheEntry<CityEntry[]> | null = null;
-let k2Cache: CacheEntry<Kadinlar2LigData> | null = null;
 let rostersCache: CacheEntry<TeamRostersDatabase> | null = null;
 
 /**
@@ -42,38 +40,19 @@ export async function getSupabaseCitiesCached(): Promise<CityEntry[] | null> {
   }
 
   try {
-    const PAGE_SIZE = 1000;
-    let allRows: { city_slug: string; city_name: string | null }[] = [];
-    let from = 0;
-    let hasMore = true;
+    const { data: matches, error } = await supabase
+      .from("matches")
+      .select("city, city_slug");
 
-    while (hasMore) {
-      const { data, error } = await supabase
-        .from("matches")
-        .select("city_slug, city_name")
-        .not("city_slug", "is", null)
-        .order("city_slug")
-        .range(from, from + PAGE_SIZE - 1);
-
-      if (error || !data || data.length === 0) {
-        if (allRows.length === 0) {
-          setActiveDataSource("json-fallback");
-          return null;
-        }
-        break;
-      }
-      allRows = allRows.concat(data);
-      if (data.length < PAGE_SIZE) {
-        hasMore = false;
-      } else {
-        from += PAGE_SIZE;
-      }
+    if (error || !matches || matches.length === 0) {
+      setActiveDataSource("json-fallback");
+      return null;
     }
 
     const cityMap = new Map<string, string>();
-    for (const row of allRows) {
-      if (row.city_slug) {
-        cityMap.set(row.city_slug, row.city_name || row.city_slug);
+    for (const m of matches) {
+      if (m.city_slug && m.city && !cityMap.has(m.city_slug)) {
+        cityMap.set(m.city_slug, m.city);
       }
     }
 
@@ -88,41 +67,6 @@ export async function getSupabaseCitiesCached(): Promise<CityEntry[] | null> {
     return cities;
   } catch (err) {
     console.warn("Supabase cities okuma hatası:", err);
-    setActiveDataSource("json-fallback");
-    return null;
-  }
-}
-
-/**
- * Supabase üzerinden Kadınlar 2. Ligi verisini sorgular; erişilemezse null döner.
- */
-export async function getSupabaseKadinlar2LigCached(): Promise<Kadinlar2LigData | null> {
-  const now = Date.now();
-  if (k2Cache && now - k2Cache.at < CACHE_TTL_MS) {
-    return k2Cache.data;
-  }
-
-  const supabase = getSupabaseAdmin();
-  if (!supabase) {
-    setActiveDataSource("json-fallback");
-    return null;
-  }
-
-  try {
-    const { data: matches, error } = await supabase
-      .from("matches")
-      .select("*")
-      .eq("category", "Kadınlar 2. Lig");
-
-    if (error || !matches || matches.length === 0) {
-      setActiveDataSource("json-fallback");
-      return null;
-    }
-
-    // Supabase verisi mevcut
-    setActiveDataSource("supabase");
-    return null; // Tam şema dönüşümü yoksa güvenle JSON fallback'e bırak
-  } catch {
     setActiveDataSource("json-fallback");
     return null;
   }
@@ -163,25 +107,6 @@ export async function loadCitiesWithFallback(): Promise<CityEntry[]> {
   setActiveDataSource("json-fallback");
   const { getAllCitiesList } = await import("./cityHelper");
   return getAllCitiesList();
-}
-
-/**
- * Kadınlar 2. Ligi verisini önce Supabase'den sorgular,
- * bulunamazsa veya boşsa data/kadinlar_2_lig.json disk yedeğine düşer.
- */
-export async function loadKadinlar2LigWithFallback(): Promise<Kadinlar2LigData> {
-  try {
-    const fromSupabase = await getSupabaseKadinlar2LigCached();
-    if (fromSupabase) {
-      setActiveDataSource("supabase");
-      return fromSupabase;
-    }
-  } catch (err) {
-    console.warn("Supabase K2 fallback:", err);
-  }
-  setActiveDataSource("json-fallback");
-  const { getKadinlar2LigData } = await import("./kadinlar2LigServer");
-  return getKadinlar2LigData();
 }
 
 /**

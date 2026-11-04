@@ -3,7 +3,7 @@ import type { VolleyboxMatchInfo } from "./fixture";
 /**
  * Ortak Lig Türü
  */
-export type LeagueType = "altyapi" | "kadinlar_2_lig" | "sultanlar_ligi";
+export type LeagueType = "altyapi";
 
 /**
  * Tüm lig modülleri (Altyapı, Kadınlar 2. Ligi, Sultanlar Ligi) için standart maç modeli.

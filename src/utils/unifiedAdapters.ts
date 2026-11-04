@@ -1,5 +1,4 @@
 import type { Match, StandingItem } from "@/types/fixture";
-import type { Kadinlar2LigMatch, Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
 import type { UnifiedFixture, UnifiedStanding, TeamAliasMapping } from "@/types/unified";
 
 /**
@@ -30,63 +29,6 @@ export function matchToUnified(m: Match): UnifiedFixture {
 }
 
 /**
- * Kadınlar 2. Ligi maçını standart UnifiedFixture formatına dönüştürür.
- */
-export function kadinlar2LigMatchToUnified(m: Kadinlar2LigMatch): UnifiedFixture {
-  const status: UnifiedFixture["status"] = m.durum === "BİTTİ" ? "finished" : "upcoming";
-
-  let home_score: number | null = null;
-  let away_score: number | null = null;
-  if (m.set_a && m.set_b) {
-    const parsedA = parseInt(m.set_a, 10);
-    const parsedB = parseInt(m.set_b, 10);
-    if (!isNaN(parsedA) && !isNaN(parsedB)) {
-      home_score = parsedA;
-      away_score = parsedB;
-    }
-  } else if (m.skor && m.skor.includes("-")) {
-    const parts = m.skor.split("-").map((s) => parseInt(s.trim(), 10));
-    if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
-      home_score = parts[0];
-      away_score = parts[1];
-    }
-  }
-
-  const set_scores = Array.from(
-    m.set_sonuclari?.matchAll(/\d{1,2}\s*[-:]\s*\d{1,2}/g) || [],
-    ([setScore]) => setScore.trim().replace(":", "-")
-  );
-
-  return {
-    id: m.id || (m.mac_no ? `k2-${m.mac_no}` : `k2-${m.tarih}-${m.takim_a}-${m.takim_b}`),
-    league: "kadinlar_2_lig",
-    home_team: m.takim_a,
-    away_team: m.takim_b,
-    date: m.tarih,
-    time: m.saat,
-    hall: m.salon,
-    city: m.sehir,
-    category: "Kadınlar 2. Lig",
-    gender: "Kadın",
-    group: m.grup_adi,
-    match_no: m.mac_no,
-    score: m.skor,
-    home_score,
-    away_score,
-    set_scores,
-    status,
-    volleybox: m.volleybox
-      ? {
-          synced: Boolean(m.volleybox.synced),
-          match_id: m.volleybox.match_id,
-          url: m.volleybox.url || m.volleybox.match_url,
-          score: m.volleybox.score,
-        }
-      : null,
-  };
-}
-
-/**
  * Altyapı StandingItem nesnesini standart UnifiedStanding formatına dönüştürür.
  */
 export function standingItemToUnified(s: StandingItem): UnifiedStanding {
@@ -103,57 +45,6 @@ export function standingItemToUnified(s: StandingItem): UnifiedStanding {
     points_won: s.points_won,
     points_lost: s.points_lost,
     point_ratio: s.point_ratio,
-  };
-}
-
-/**
- * Kadınlar 2. Ligi takım puan durumu satırını standart UnifiedStanding formatına dönüştürür.
- */
-export function kadinlar2LigTeamToUnified(t: Kadinlar2LigTeam): UnifiedStanding {
-  return {
-    rank: t.sira,
-    team_name: t.takim_adi,
-    played: t.o,
-    won: t.g,
-    lost: t.m,
-    points: t.p,
-    sets_won: t.as,
-    sets_lost: t.vs,
-    set_ratio: t.sav,
-    points_won: t.asp,
-    points_lost: t.vsp,
-    point_ratio: t.spav,
-    volleybox_url: t.volleybox_url,
-    logo: t.logo,
-  };
-}
-
-import type { SultanlarMatch } from "@/utils/sultanlarIcs";
-
-/**
- * Sultanlar Ligi maçını standart UnifiedFixture formatına dönüştürür.
- */
-export function sultanlarMatchToUnified(m: SultanlarMatch): UnifiedFixture {
-  const isFinished = m.homeSets !== null && m.awaySets !== null;
-  return {
-    id: `${m.season}-${m.matchNo}`,
-    league: "sultanlar_ligi",
-    home_team: m.homeTeam,
-    away_team: m.awayTeam,
-    date: m.date,
-    time: m.time,
-    hall: m.venue,
-    city: m.city,
-    category: "Sultanlar Ligi",
-    gender: "Kadın",
-    match_no: String(m.matchNo),
-    score: isFinished ? `${m.homeSets} - ${m.awaySets}` : null,
-    home_score: m.homeSets,
-    away_score: m.awaySets,
-    set_scores: m.setScores
-      ? m.setScores.split(",").map((s) => s.trim()).filter(Boolean)
-      : [],
-    status: isFinished ? "finished" : "upcoming",
   };
 }
 

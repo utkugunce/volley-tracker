@@ -1,17 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { 
   Trophy, 
   Star, 
   MapPin, 
   ChevronRight, 
   ChevronDown, 
-  Flame, 
   Layers,
-  Sparkles,
-  ExternalLink
+  Sparkles
 } from "lucide-react";
 import { CityInfo } from "@/types/fixture";
 
@@ -80,19 +77,6 @@ export const LeftSidebarPlaceholder: React.FC<LeftSidebarPlaceholderProps> = ({
                   {favoritesCount}
                 </span>
               </div>
-
-              {/* Kadınlar 2. Ligi Hızlı Bağlantısı */}
-              <Link
-                href="/kadinlar-2-ligi"
-                prefetch={false}
-                className="flex items-center justify-between px-2 py-1.5 rounded-lg bg-purple-950/40 hover:bg-purple-950/70 border border-purple-800/40 text-purple-200 transition-all group"
-              >
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-fuchsia-400" />
-                  <span className="font-semibold group-hover:text-white">TVF Kadınlar 2. Ligi</span>
-                </span>
-                <span className="text-[10px] text-purple-400 font-mono">16 Grup →</span>
-              </Link>
             </div>
           )}
         </div>

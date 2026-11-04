@@ -11,16 +11,6 @@ interface CityIndexPayload {
   total_matches?: unknown;
 }
 
-interface Kadinlar2LigPayload {
-  metadata?: {
-    toplam_grup_sayisi?: unknown;
-    toplam_takim_sayisi?: unknown;
-    toplam_mac_sayisi?: unknown;
-  } | null;
-  gruplar?: unknown;
-  tum_maclar?: unknown;
-}
-
 function toNumber(value: unknown, fallback = 0): number {
   const parsed = Number(value ?? fallback);
   return Number.isFinite(parsed) ? parsed : fallback;
@@ -67,60 +57,5 @@ export function validateCityIndex(input: unknown): DataValidationResult {
     summary: valid
       ? `City index validated: ${cities.length} cities, ${activeCities} active, ${totalMatches} matches.`
       : `City index validation failed: ${errors.join(" ")}`,
-  };
-}
-
-export function validateKadinlar2LigData(input: unknown): DataValidationResult {
-  const errors: string[] = [];
-
-  if (!input || typeof input !== "object") {
-    return {
-      valid: false,
-      errors: ["Kadinlar 2. Lig payload is missing or invalid."],
-      summary: "Second-division validation failed: payload not found.",
-    };
-  }
-
-  const payload = input as Kadinlar2LigPayload;
-
-  if (!payload.metadata || typeof payload.metadata !== "object") {
-    errors.push("metadata is missing or incomplete.");
-  }
-
-  const groups: Record<string, unknown>[] = Array.isArray(payload.gruplar) ? payload.gruplar : [];
-  if (groups.length === 0) {
-    errors.push("gruplar array is empty.");
-  }
-
-  if (payload.metadata?.toplam_grup_sayisi != null && toNumber(payload.metadata.toplam_grup_sayisi) !== groups.length) {
-    errors.push(`toplam_grup_sayisi mismatch: expected ${groups.length}, got ${payload.metadata.toplam_grup_sayisi}.`);
-  }
-
-  const totalTeams = groups.reduce(
-    (sum: number, group: Record<string, unknown>) => sum + (Array.isArray(group?.puan_durumu) ? (group.puan_durumu as unknown[]).length : 0),
-    0
-  );
-  if (payload.metadata?.toplam_takim_sayisi != null && toNumber(payload.metadata.toplam_takim_sayisi) !== totalTeams) {
-    errors.push(`toplam_takim_sayisi mismatch: expected ${totalTeams}, got ${payload.metadata.toplam_takim_sayisi}.`);
-  }
-
-  const allMatches: unknown[] = Array.isArray(payload.tum_maclar) ? payload.tum_maclar : [];
-  const fixtureMatches = groups.reduce(
-    (sum: number, group: Record<string, unknown>) => sum + (Array.isArray(group?.fikstur) ? (group.fikstur as unknown[]).length : 0),
-    0
-  );
-  const matchCount = allMatches.length > 0 ? allMatches.length : fixtureMatches;
-
-  if (payload.metadata?.toplam_mac_sayisi != null && toNumber(payload.metadata.toplam_mac_sayisi) !== matchCount) {
-    errors.push(`toplam_mac_sayisi mismatch: expected ${matchCount}, got ${payload.metadata.toplam_mac_sayisi}.`);
-  }
-
-  const valid = errors.length === 0;
-  return {
-    valid,
-    errors,
-    summary: valid
-      ? `Second-division data validated: ${groups.length} groups, ${totalTeams} teams, ${matchCount} matches.`
-      : `Second-division data validation failed: ${errors.join(" ")}`,
   };
 }

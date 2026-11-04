@@ -84,9 +84,6 @@ def main():
     vb_integrity = validate_volleybox_sync_integrity()
     results = [
         ("81 il", validate_file("data/cities.json", "cities")),
-        ("Kadınlar 2. Lig", validate_file("data/kadinlar_2_lig.json", "kadinlar_2_lig")),
-        ("Vodafone Sultanlar Ligi", validate_file("data/sultanlar_ligi.json", "sultanlar_ligi")),
-        ("Arabica Coffee House Kadınlar Voleybol 1. Ligi", validate_file("data/kadinlar_1_lig.json", "kadinlar_1_lig")),
         ("Volleybox Maç Eşleşme Bütünlüğü", vb_integrity),
     ]
     for label, result in results:
@@ -94,9 +91,6 @@ def main():
 
     freshness_files = [
         "data/cities.json",
-        "data/kadinlar_2_lig.json",
-        "data/sultanlar_ligi.json",
-        "data/kadinlar_1_lig.json",
     ]
     freshness_issues = collect_freshness_issues(freshness_files, max_age_hours=24)
     if freshness_issues:

@@ -4,7 +4,6 @@ import { isCityHidden } from "@/utils/cityHelper";
 import { getLeagueAnalytics } from "@/utils/leagueAnalyticsData";
 import { slugify } from "@/utils/slugify";
 import { parseScanTimestamp, readDataJson } from "@/utils/dataTimestamps";
-import { getDistrictSummaries } from "@/utils/districtClubs";
 import { getAllGuides } from "@/data/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,8 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // tüm URL'ler (2400+ takım sayfası) "değişti" görünüyor ve tarayıcılar hepsini yeniden tarıyordu;
   // her tarama yeni deploy'un boş ISR önbelleğinde sayfa üretip ISR Write tüketiyordu.
   const dataUpdatedAt = parseScanTimestamp(readDataJson("data/cities.json")?.updated_at);
-  const k2Meta = readDataJson("data/kadinlar_2_lig.json")?.metadata as Record<string, unknown> | undefined;
-  const k2UpdatedAt = parseScanTimestamp(k2Meta?.guncellenme_zamani) ?? dataUpdatedAt;
 
   // Ana statik sayfalar ve sekmeler
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -70,56 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/istatistikler`,
       lastModified: dataUpdatedAt,
       changeFrequency: "daily",
-      priority: 0.8,
-    },
-
-    // Kadınlar 2. Ligi Rotaları
-    {
-      url: `${baseUrl}/kadinlar-2-ligi`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "daily",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/kadinlar-2-ligi/puan-durumu`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/kadinlar-2-ligi/fikstur`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/kadinlar-2-ligi/sonuclar`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/kadinlar-2-ligi/gunun-maclari`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/kadinlar-2-ligi/grup-durumu`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/kadinlar-2-ligi/takimlar`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/kadinlar-2-ligi/statu`,
-      lastModified: k2UpdatedAt,
-      changeFrequency: "monthly",
       priority: 0.8,
     },
   ];

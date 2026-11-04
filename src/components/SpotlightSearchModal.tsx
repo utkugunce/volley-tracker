@@ -143,18 +143,6 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
     // 4. Kategoriler & Kadınlar 2. Ligi kısayolu
     if (typeFilter === "all") {
-      if (trIncludes("TVF Kadınlar 2. Ligi", q) || trIncludes("2. Lig", q)) {
-        items.push({
-          id: "cat-kadinlar-2-ligi",
-          type: "category",
-          title: "TVF Kadınlar 2. Ligi (16 Grup)",
-          subtitle: "Ulusal Lig Paneline Geç",
-          action: () => {
-            router.push("/kadinlar-2-ligi");
-            onClose();
-          },
-        });
-      }
       categories.forEach((cat) => {
         if (cat !== "Tümü" && trIncludes(cat, q)) {
           items.push({

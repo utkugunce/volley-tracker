@@ -237,28 +237,14 @@ export function startLocalFullScrapeJob(): LocalScrapeJobState {
       if (code1 !== 0) {
         job.state.status = "completed";
         job.state.conclusion = "failure";
-        job.state.activeStep = "81 İl taraması sırasında hata oluştu.";
-        job.state.updatedAt = new Date().toISOString();
-        return;
-      }
-
-      job.state.activeStep = "Kadınlar 2. Ligi (16 Grup) ve Volleybox taranıyor (2/2)...";
-      job.state.updatedAt = new Date().toISOString();
-
-      const script2 = path.join(/*turbopackIgnore: true*/ process.cwd(), "scripts/scrape_kadinlar_2_lig.py");
-      const code2 = await spawnScriptStep(job, [script2]);
-      if (job.cancelled) return;
-      if (code2 !== 0) {
-        job.state.status = "completed";
-        job.state.conclusion = "failure";
-        job.state.activeStep = "Kadınlar 2. Ligi taraması sırasında hata oluştu.";
+        job.state.activeStep = "81 İl altyapı taraması sırasında hata oluştu.";
         job.state.updatedAt = new Date().toISOString();
         return;
       }
 
       job.state.status = "completed";
       job.state.conclusion = "success";
-      job.state.activeStep = "Tüm veriler (81 İl ve 2. Lig) başarıyla güncellendi!";
+      job.state.activeStep = "Tüm altyapı verileri (81 İl) başarıyla güncellendi!";
       job.state.updatedAt = new Date().toISOString();
     } catch (err) {
       if (job.cancelled) return;

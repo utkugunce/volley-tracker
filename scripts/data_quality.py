@@ -8,10 +8,6 @@ SCRAPE_CONFIG = {
         "name": "81 il",
         "path": "data/cities.json",
     },
-    "kadinlar_2_lig": {
-        "name": "Kadınlar 2. Lig",
-        "path": "data/kadinlar_2_lig.json",
-    },
 }
 
 

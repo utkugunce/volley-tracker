@@ -126,7 +126,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
   const [showCalendarModal, setShowCalendarModal] = useState(false);
   const { isFavorite, toggleFavorite } = useFavorites();
   const isFav = isFavorite(team.teamName);
-  const is2LigTeam = team.categories.some((c) => c.includes("Kadınlar 2. Ligi"));
+  const is2LigTeam = false;
   const brand = getClubBrandColors(team.teamName, is2LigTeam);
 
   const formSeries = useMemo(() => buildFormSeries(team.matches), [team.matches]);
@@ -173,18 +173,6 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
               </span>
             </Link>
 
-            {is2LigTeam && (
-              <Link
-                href="/kadinlar-2-ligi"
-                prefetch={false}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-white bg-primary/10 hover:bg-primary/20 px-3 py-1.5 rounded-lg border border-primary/30 transition-colors"
-                title="TVF Kadınlar 2. Ligi Paneli"
-              >
-                <Trophy size={13} className="text-primary" />
-                <span className="hidden sm:inline">2. Lig Paneli</span>
-                <span className="sm:hidden">2. Lig</span>
-              </Link>
-            )}
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
@@ -417,13 +405,7 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
                         );
                       })()}
                       <span className="text-xs text-ink-3 font-normal">
-                        {ctx.city === "TVF Kadınlar 2. Ligi" ? (
-                          <Link href="/kadinlar-2-ligi" prefetch={false} className="text-primary hover:underline">
-                            (TVF Kadınlar 2. Ligi)
-                          </Link>
-                        ) : (
-                          `(${ctx.city})`
-                        )}
+`(${ctx.city})`
                       </span>
                     </div>
 

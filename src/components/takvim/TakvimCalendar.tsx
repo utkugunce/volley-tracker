@@ -45,14 +45,32 @@ export const TakvimCalendar: React.FC<TakvimCalendarProps> = ({
   const byDate = useMemo(() => groupMatchesByDate(filteredMatches), [filteredMatches]);
 
   const leagueTabs = useMemo(() => {
-    const sultanlarCount = matches.filter((m) => m.league === "Sultanlar Ligi").length;
-    const k1Count = matches.filter((m) => m.league === "1. Lig").length;
-    const k2Count = matches.filter((m) => m.league === "2. Lig").length;
+    const proLeagues = [
+      { id: "Sultanlar Ligi", label: "Sultanlar Ligi" },
+      { id: "1. Lig", label: "Arabica 1. Lig" },
+      { id: "2. Lig", label: "2. Lig" },
+    ];
+    const hasPro = matches.some((m) => proLeagues.some((p) => p.id === m.league));
+
+    if (hasPro) {
+      return [
+        { id: "Tümü", label: "Tüm Ligler", count: matches.length },
+        ...proLeagues.map((p) => ({
+          id: p.id,
+          label: p.label,
+          count: matches.filter((m) => m.league === p.id).length,
+        })),
+      ].filter((t) => t.id === "Tümü" || t.count > 0);
+    }
+
+    const categories = Array.from(new Set(matches.map((m) => m.league).filter(Boolean))) as string[];
     return [
-      { id: "Tümü", label: "Tüm Ligler", count: matches.length },
-      { id: "Sultanlar Ligi", label: "Sultanlar Ligi", count: sultanlarCount },
-      { id: "1. Lig", label: "Arabica 1. Lig", count: k1Count },
-      { id: "2. Lig", label: "2. Lig", count: k2Count },
+      { id: "Tümü", label: "Tüm Kategoriler", count: matches.length },
+      ...categories.map((cat) => ({
+        id: cat,
+        label: cat,
+        count: matches.filter((m) => m.league === cat).length,
+      })),
     ].filter((t) => t.id === "Tümü" || t.count > 0);
   }, [matches]);
   const [today, setToday] = useState<string | null>(null);

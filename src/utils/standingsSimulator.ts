@@ -1,6 +1,4 @@
 import type { Match, StandingItem } from "@/types/fixture";
-import type { Kadinlar2LigMatch, Kadinlar2LigTeam } from "@/types/kadinlar2Lig";
-import { getKadinlar2LigTeamName } from "./kadinlar2LigConverter";
 
 export type SimulationScore = "3-0" | "3-1" | "3-2" | "2-3" | "1-3" | "0-3";
 
@@ -59,37 +57,42 @@ export function getScorePointsAndSets(score: SimulationScore): {
   }
 }
 
-function parseRatio(val: string | number | undefined): number {
-  if (typeof val === "number") return val;
-  if (!val) return 0;
-  if (val === "MAX" || val === "Infinity") return 999999;
-  const num = parseFloat(val.replace(",", "."));
-  return isNaN(num) ? 0 : num;
-}
-
 /**
- * Standart FIVB / TVF Voleybol Sıralama Kriterleri:
- * 1. Galibiyet Sayısı (Won) - Azalan
- * 2. Puan (Points) - Azalan
- * 3. Set Averajı (Sets Won / Sets Lost) - Azalan
- * 4. Sayı Averajı (Points Won / Points Lost) - Azalan
- * 5. Takım Adı (Alfabetik)
+ * FIVB Sıralama Kriterleri:
+ * 1. Puan (Points) - Büyük olan üstte
+ * 2. Galibiyet (Matches Won) - Büyük olan üstte
+ * 3. Set Oranı (Sets Won / Sets Lost) - Büyük olan üstte
+ * 4. Sayı Oranı (Points Won / Points Lost) - Büyük olan üstte
+ * 5. Takım adı (Alfabetik)
  */
 export function compareStandingsFivb(
-  a: { won: number; points: number; setRatio: number; pointRatio: number; team: string },
-  b: { won: number; points: number; setRatio: number; pointRatio: number; team: string }
+  a: {
+    points: number;
+    won: number;
+    setRatio: number;
+    pointRatio: number;
+    team: string;
+  },
+  b: {
+    points: number;
+    won: number;
+    setRatio: number;
+    pointRatio: number;
+    team: string;
+  }
 ): number {
-  if (a.won !== b.won) return b.won - a.won;
-  if (a.points !== b.points) return b.points - a.points;
-  if (Math.abs(a.setRatio - b.setRatio) > 0.0001) return b.setRatio - a.setRatio;
-  if (Math.abs(a.pointRatio - b.pointRatio) > 0.0001) return b.pointRatio - a.pointRatio;
+  if (b.points !== a.points) return b.points - a.points;
+  if (b.won !== a.won) return b.won - a.won;
+  if (Math.abs(b.setRatio - a.setRatio) > 0.0001) return b.setRatio - a.setRatio;
+  if (Math.abs(b.pointRatio - a.pointRatio) > 0.0001) return b.pointRatio - a.pointRatio;
   return a.team.localeCompare(b.team, "tr");
 }
 
 /**
- * Altyapı StandingItem dizisini simüle eder.
+ * Verilen mevcut puan durumu ve oynanacak maçların simülasyon skorlarına göre
+ * yeni puan durumunu ve sıra/puan farklarını hesaplar.
  */
-export function simulateAltyapiStandings(
+export function simulateStandings(
   initialRows: StandingItem[],
   simulations: Record<string, SimulationScore>,
   upcomingMatches: Match[]
@@ -110,10 +113,12 @@ export function simulateAltyapiStandings(
     }
   >();
 
+  // Başlangıç değerlerini doldur
   for (const r of initialRows) {
-    teamMap.set(r.team.trim(), {
+    const rawKey = r.team.trim();
+    teamMap.set(rawKey, {
       initialRank: r.rank,
-      team: r.team.trim(),
+      team: r.team,
       played: r.played,
       won: r.won,
       lost: r.lost,
@@ -185,105 +190,4 @@ export function simulateAltyapiStandings(
   });
 }
 
-/**
- * Kadınlar 2. Ligi Kadinlar2LigTeam dizisini simüle eder.
- */
-export function simulateK2Standings(
-  initialRows: Kadinlar2LigTeam[],
-  simulations: Record<string, SimulationScore>,
-  upcomingMatches: Kadinlar2LigMatch[]
-): SimulatedStandingRow[] {
-  const teamMap = new Map<
-    string,
-    {
-      rawKey: string;
-      initialRank: number;
-      team: string;
-      played: number;
-      won: number;
-      lost: number;
-      points: number;
-      setsWon: number;
-      setsLost: number;
-      pointsWon: number;
-      pointsLost: number;
-    }
-  >();
-
-  for (const r of initialRows) {
-    const rawKey = r.takim_adi.trim();
-    const displayName = getKadinlar2LigTeamName(r.takim_adi, r.volleybox_name) || rawKey;
-    teamMap.set(rawKey, {
-      rawKey,
-      initialRank: r.sira,
-      team: displayName,
-      played: r.o,
-      won: r.g,
-      lost: r.m,
-      points: r.p,
-      setsWon: r.as,
-      setsLost: r.vs,
-      pointsWon: r.asp,
-      pointsLost: r.vsp,
-    });
-  }
-
-  for (const m of upcomingMatches) {
-    const score = simulations[m.id];
-    if (!score) continue;
-
-    const homeTeam = m.takim_a.trim();
-    const awayTeam = m.takim_b.trim();
-    const home = teamMap.get(homeTeam);
-    const away = teamMap.get(awayTeam);
-    if (!home || !away) continue;
-
-    const res = getScorePointsAndSets(score);
-
-    home.played += 1;
-    home.points += res.homePoints;
-    home.setsWon += res.homeSets;
-    home.setsLost += res.awaySets;
-    if (res.homePoints > res.awayPoints) {
-      home.won += 1;
-      away.lost += 1;
-    } else {
-      home.lost += 1;
-      away.won += 1;
-    }
-
-    away.played += 1;
-    away.points += res.awayPoints;
-    away.setsWon += res.awaySets;
-    away.setsLost += res.homeSets;
-  }
-
-  const rows = Array.from(teamMap.values()).map((t) => {
-    const setRatio = t.setsLost === 0 ? (t.setsWon > 0 ? 999999 : 0) : t.setsWon / t.setsLost;
-    const pointRatio = t.pointsLost === 0 ? (t.pointsWon > 0 ? 999999 : 0) : t.pointsWon / t.pointsLost;
-    return {
-      ...t,
-      setRatio,
-      setRatioDisplay: t.setsLost === 0 ? (t.setsWon > 0 ? "MAX" : "0.000") : setRatio.toFixed(3),
-      pointRatio,
-      pointRatioDisplay: t.pointsLost === 0 ? (t.pointsWon > 0 ? "MAX" : "0.000") : pointRatio.toFixed(3),
-    };
-  });
-
-  rows.sort(compareStandingsFivb);
-
-  const initialPointsMap = new Map(initialRows.map((r) => [r.takim_adi.trim(), r.p]));
-
-  return rows.map((r, idx) => {
-    const rank = idx + 1;
-    const initialPts = initialPointsMap.get(r.rawKey) ?? r.points;
-    const { rawKey: _rawKey, ...rest } = r;
-    void _rawKey;
-    return {
-      ...rest,
-      rank,
-      diffRank: r.initialRank - rank,
-      diffPoints: r.points - initialPts,
-    };
-  });
-}
+export const simulateAltyapiStandings = simulateStandings;

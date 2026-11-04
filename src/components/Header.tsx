@@ -10,7 +10,6 @@ import { SettingsControls } from "@/components/SettingsControls";
 import { formatSyncDateTime } from "@/utils/formatSyncDate";
 import { useLanguage } from "@/i18n/useLanguage";
 import { CityInfo } from "@/types/fixture";
-import { LeagueSwitcher } from "@/components/layout/LeagueSwitcher";
 
 interface HeaderProps {
   city?: string;
@@ -60,7 +59,6 @@ export const Header: React.FC<HeaderProps> = ({
           <BrandLogo onClick={() => onSelectTab("home")} />
 
           {/* Apple Sports / FotMob Tarzı Bütünleşik Lig Seçici (Segmented League Switcher) */}
-          <LeagueSwitcher activeLeague="altyapi" className="hidden sm:inline-flex" />
 
           {/* 81 İl Seçici Açılır Menü */}
           {onSelectCity && (

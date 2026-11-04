@@ -39,6 +39,7 @@ describe("proxy — şehir bekçisi gerçek 404 döner", () => {
     "/nigde",
     "/erzurum",
     "/isparta",
+    "/kadinlar-2-ligi",
     "/sonuclar/xyz-gecersiz",
     "/fikstur/foobar",
   ];
@@ -71,7 +72,6 @@ describe("proxy — geçerli adresler dokunulmadan geçer", () => {
     "/sonuclar/izmir",
     "/takim/vakifbank-u18-t19499",
     "/lig/istanbul/genc-kizlar",
-    "/kadinlar-2-ligi/puan-durumu",
     "/admin",
     "/404",
     "/icon.svg",

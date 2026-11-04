@@ -132,17 +132,17 @@ export function calculateVolleyCategory(
   // 2007 ve öncesi
   return {
     code: "Senior",
-    name: "Büyükler / Kadınlar 2. Lig",
+    name: "Büyükler / Mahalli Ligler",
     ageRange: "19 Yaş ve Üzeri",
     birthYears: `${birthYear} ve öncesi`,
     netHeight: gender === "Kız" ? "2.24 m" : "2.43 m",
     ballType: "Resmi 5 numara maç topu",
     liberoRule: "Libero kuralı uygulanır",
     courtSize: "9x9 m nizami saha",
-    leagueType: "TVF Kadınlar 2. Ligi / 1. Lig / Bölgesel Lig",
-    description: "Profesyonel ve amatör büyükler ligi kategorisidir. TVF Kadınlar 2. Ligi 16 gruptan oluşur.",
-    advice: "Platformumuz üzerinden Kadınlar 2. Ligi'ndeki 16 grubun tüm maç fikstürlerini ve anlık puan durumlarını takip edebilirsiniz.",
-    targetCategorySlug: "kadinlar-2-ligi",
+    leagueType: "Bölgesel Lig / Mahalli Büyükler",
+    description: "Büyükler ve mahalli lig kategorisidir.",
+    advice: "Platformumuz üzerinden 81 ilin voleybol altyapı ligleri ve puan durumlarını takip edebilirsiniz.",
+    targetCategorySlug: "genc",
   };
 }
 

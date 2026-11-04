@@ -5,8 +5,6 @@ import { slugify } from "./slugify";
  * 
  * Examples:
  * - ("Genç Kızlar Süper Lig", "İstanbul") -> "/lig/istanbul/genc-kizlar-super-lig"
- * - ("TVF Kadınlar 2. Ligi", undefined) -> "/kadinlar-2-ligi"
- * - ("TVF Kadınlar 2. Ligi - Grup 3", undefined) -> "/kadinlar-2-ligi/grup-3"
  */
 export function getLeagueRoute(leagueName?: string, city?: string): string {
   if (!leagueName) {
@@ -17,23 +15,6 @@ export function getLeagueRoute(leagueName?: string, city?: string): string {
   }
 
   const cleanLeague = leagueName.trim();
-
-  // TVF Kadınlar 2. Ligi kontrolü
-  if (
-    cleanLeague.includes("Kadınlar 2. Lig") ||
-    cleanLeague.includes("Kadınlar 2.Lig") ||
-    cleanLeague.includes("Kadınlar 2. Ligi") ||
-    city === "TVF Kadınlar 2. Ligi"
-  ) {
-    const groupMatch = cleanLeague.match(/(?:Grup\s*|grup-?|g)(\d+)/i);
-    if (groupMatch) {
-      const gNo = parseInt(groupMatch[1], 10);
-      if (gNo >= 1 && gNo <= 16) {
-        return `/kadinlar-2-ligi/grup-${gNo}`;
-      }
-    }
-    return "/kadinlar-2-ligi";
-  }
 
   // Eğer lig isminde şehir prefix'i varsa ("İstanbul • Genç Kızlar Süper Lig" veya "İzmir - Yıldız Kızlar")
   let effectiveCity = city;
@@ -78,13 +59,6 @@ export function getLeagueRoute(leagueName?: string, city?: string): string {
  */
 export function getLeagueStandingsRoute(leagueName?: string, city?: string): string {
   const base = getLeagueRoute(leagueName, city);
-  if (base.startsWith("/kadinlar-2-ligi")) {
-    const groupMatch = base.match(/grup-(\d+)/);
-    if (groupMatch) {
-      return `/kadinlar-2-ligi/puan-durumu/grup-${groupMatch[1]}`;
-    }
-    return "/kadinlar-2-ligi/puan-durumu";
-  }
 
   if (base.startsWith("/lig/")) {
     return `${base}?tab=standings`;
@@ -102,13 +76,6 @@ export function getLeagueStandingsRoute(leagueName?: string, city?: string): str
  */
 export function getLeagueFixtureRoute(leagueName?: string, city?: string): string {
   const base = getLeagueRoute(leagueName, city);
-  if (base.startsWith("/kadinlar-2-ligi")) {
-    const groupMatch = base.match(/grup-(\d+)/);
-    if (groupMatch) {
-      return `/kadinlar-2-ligi/fikstur/grup-${groupMatch[1]}`;
-    }
-    return "/kadinlar-2-ligi/fikstur";
-  }
 
   if (base.startsWith("/lig/")) {
     return `${base}?tab=fixtures`;

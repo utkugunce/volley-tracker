@@ -5,8 +5,6 @@ import { AppShell } from "../AppShell";
 import { ThemeTokens } from "../ThemeTokens";
 import tailwindConfig from "../../../../tailwind.config";
 import { buildThemeVarsCss } from "@/theme/palettes";
-import fs from "fs";
-import path from "path";
 
 describe("Fileönü Tasarım Sistemi Sözleşmesi", () => {
   it("ThemeTokens doğru Fileönü hex değerlerini içerir", () => {
@@ -56,42 +54,5 @@ describe("Fileönü Tasarım Sistemi Sözleşmesi", () => {
     );
     const root = container.firstElementChild as HTMLElement;
     expect(root.getAttribute("data-section")).toBe("altyapi");
-  });
-
-  it("AppShell section='kadinlar-2-lig' verildiğinde data-section özniteliğini günceller", () => {
-    const { container } = render(
-      <AppShell header={<div>Header</div>} section="kadinlar-2-lig">
-        <div>İçerik</div>
-      </AppShell>
-    );
-    const root = container.firstElementChild as HTMLElement;
-    expect(root.getAttribute("data-section")).toBe("kadinlar-2-lig");
-  });
-
-  it("globals.css dosyasında Fileönü kök ve Kadınlar 2. Lig token tanımları mevcuttur", () => {
-    const cssPath = path.resolve(__dirname, "../../../app/globals.css");
-    const css = fs.readFileSync(cssPath, "utf-8");
-    expect(css).toContain("--canvas: #07131f;");
-    expect(css).toContain('--primary: #2dd4c0;');
-    expect(css).toContain('[data-section="kadinlar-2-lig"]');
-    expect(css).toContain('--primary: #d98bff;');
-  });
-});
-
-describe("Kadınlar 2. Lig orkide kapsamı", () => {
-  it("Kadınlar 2. Lig bölümü kırmızı/pembe marka sınıfı taşımaz", () => {
-    const dir = path.resolve(__dirname, "../../kadinlar-2-lig");
-    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".tsx"));
-    expect(files.length).toBeGreaterThan(0);
-    for (const f of files) {
-      const src = fs.readFileSync(path.join(dir, f), "utf-8");
-      expect(src, f).not.toMatch(/shadow-glow-red|from-red-600|to-rose-600|bg-pink-500|bg-rose-500\b/);
-    }
-  });
-
-  it("bölüm token bloğu rank-mid'i maviye çevirir", () => {
-    const css = fs.readFileSync(path.resolve(__dirname, "../../../app/globals.css"), "utf-8");
-    const block = css.slice(css.indexOf('[data-section="kadinlar-2-lig"]'));
-    expect(block).toContain("--rank-mid-rgb: 127 180 255;");
   });
 });
