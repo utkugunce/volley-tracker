@@ -16,7 +16,7 @@ export interface NotificationQueueStatus {
   failed: number;
 }
 
-export type AdminTab = "matches" | "audit" | "users" | "notifications" | "sync" | "teams" | "clubs" | "volleybox-bot";
+export type AdminTab = "matches" | "audit" | "users" | "notifications" | "sync" | "teams" | "clubs";
 
 export type AdminUserRole = "admin" | "editor" | "viewer";
 
