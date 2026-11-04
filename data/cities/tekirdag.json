@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T14:16:23.941593+03:00",
+  "updated_at": "2026-11-04T15:48:17.379811+03:00",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -2936,18 +2936,18 @@
         "guest_name": "Çerkezköy Voleybol Akademi Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-07",
+        "vb_date": "2026-11-14",
         "vb_time": "16:45",
         "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-07",
+          "vb_date": "2026-11-14",
           "vb_time": "16:45",
           "vb_hall": "Çorlu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-07)"
+          "details": null
         }
       }
     },
@@ -3790,18 +3790,18 @@
         "guest_name": "Çağdaş Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-07",
-        "vb_time": "18:30",
+        "vb_date": "2026-11-06",
+        "vb_time": "20:00",
         "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-07",
-          "vb_time": "18:30",
+          "vb_date": "2026-11-06",
+          "vb_time": "20:00",
           "vb_hall": "Çorlu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-06 / VB: 2026-11-07) | Saat Değişti (TVF: 20:00 / VB: 18:30)"
+          "details": null
         }
       }
     },
@@ -3872,22 +3872,22 @@
         "guest_name": "Yıldızkent Fatih Korgancı Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-07",
-        "vb_time": "15:00",
+        "vb_date": "2026-11-14",
+        "vb_time": null,
         "vb_hall": "Çorlu Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-07",
-          "vb_time": "15:00",
+          "vb_date": "2026-11-14",
+          "vb_time": null,
           "vb_hall": "Çorlu Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-14 / VB: 2026-11-07)"
+          "details": null
         }
       }
     }
   ],
   "volleybox_synced_matches": 79,
-  "volleybox_sync_updated_at": "2026-11-04T14:23:53.099674"
+  "volleybox_sync_updated_at": "2026-11-04T15:55:59.594845"
 }

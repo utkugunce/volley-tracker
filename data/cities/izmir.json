@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T14:16:23.941593+03:00",
+  "updated_at": "2026-11-04T15:48:17.379811+03:00",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -5435,18 +5435,18 @@
         "guest_name": "Altınordu Voleybol - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-16",
+        "vb_date": "2026-11-18",
         "vb_time": null,
         "vb_hall": "Gaziemir Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
+          "has_diff": false,
+          "date_diff": false,
           "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-16",
+          "vb_date": "2026-11-18",
           "vb_time": null,
           "vb_hall": "Gaziemir Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-18 / VB: 2026-11-16)"
+          "details": null
         }
       }
     },
@@ -6150,16 +6150,16 @@
         "has_score": false,
         "vb_date": "2026-11-17",
         "vb_time": null,
-        "vb_hall": "Halkapınar Spor Salonu",
+        "vb_hall": "Balçova Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
           "time_diff": false,
-          "hall_diff": true,
+          "hall_diff": false,
           "vb_date": "2026-11-17",
           "vb_time": null,
-          "vb_hall": "Halkapınar Spor Salonu",
-          "details": "Salon Değişti (TVF: Balçova / VB: Halkapınar Spor Salonu)"
+          "vb_hall": "Balçova Spor Salonu",
+          "details": null
         }
       }
     },
@@ -10651,5 +10651,5 @@
     }
   ],
   "volleybox_synced_matches": 199,
-  "volleybox_sync_updated_at": "2026-11-04T14:23:32.217629"
+  "volleybox_sync_updated_at": "2026-11-04T15:55:34.372268"
 }

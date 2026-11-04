@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T14:16:23.941593+03:00",
+  "updated_at": "2026-11-04T15:48:17.379811+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -2110,18 +2110,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415712",
+        "url": "https://women.volleybox.net/tr/orhangazi-voleybol-ve-dagclk-spor-kulubu-u16-guner-karakaya-spor-kulubu-u16-c415712",
+        "host_name": "Orhangazi Voleybol Ve Dağcılık Spor Kulübü U16",
+        "guest_name": "Güner Karakaya Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-13",
+        "vb_time": "19:00",
+        "vb_hall": "Orhangazi Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-13",
+          "vb_time": "19:00",
+          "vb_hall": "Orhangazi Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2144,18 +2151,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415713",
+        "url": "https://women.volleybox.net/tr/mg-spor-kulubu-u16-bursa-koc-spor-kulubu-u16-c415713",
+        "host_name": "MG Spor Kulübü U16",
+        "guest_name": "Bursa Koç Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-13",
+        "vb_time": "20:00",
+        "vb_hall": "Çekirge Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-13",
+          "vb_time": "20:00",
+          "vb_hall": "Çekirge Spor Salonu",
+          "details": null
         }
       }
     },
@@ -3768,6 +3782,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 70,
-  "volleybox_sync_updated_at": "2026-11-04T14:23:14.443108"
+  "volleybox_synced_matches": 72,
+  "volleybox_sync_updated_at": "2026-11-04T15:55:18.876122"
 }
