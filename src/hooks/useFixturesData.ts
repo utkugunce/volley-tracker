@@ -5,6 +5,18 @@ import { toErrorLike } from "@/utils/errors";
 // İstemci tarafı şehir verisi önbelleği (Tekrar tıklanan iller 0ms anında açılır)
 const clientCityCache = new Map<string, FixturesData>();
 
+function matchIdentityKey(m: Match): string {
+  return `${m.date || ""}|${(m.home_team || "").trim()}|${(m.away_team || "").trim()}`;
+}
+
+function isSameFixtureMatch(a: Match, b: Match): boolean {
+  return (
+    (a.home_team || "").trim() === (b.home_team || "").trim() &&
+    (a.away_team || "").trim() === (b.away_team || "").trim() &&
+    (a.date || "") === (b.date || "")
+  );
+}
+
 /**
  * SSR (initialData) veya mevcut ekranda skoru zaten gelmiş ("finished") bir maçın,
  * arka plandaki gecikmeli bir API/önbellek yanıtıyla tekrar skorsuz ("upcoming" / "Skor Bekleniyor")
@@ -22,22 +34,28 @@ export function preserveScoredMatches(
   }
 
   const scoredById = new Map<string, Match>();
+  const scoredByKey = new Map<string, Match>();
   for (const cm of current.matches) {
-    if (!cm?.id) continue;
+    if (!cm) continue;
     const hasScore =
       cm.status === "finished" ||
       (cm.home_score !== null && cm.home_score !== undefined && cm.away_score !== null && cm.away_score !== undefined);
     if (hasScore) {
-      scoredById.set(cm.id, cm);
+      if (cm.id) scoredById.set(cm.id, cm);
+      if (cm.home_team && cm.away_team) scoredByKey.set(matchIdentityKey(cm), cm);
     }
   }
 
-  if (scoredById.size === 0) return incoming;
+  if (scoredById.size === 0 && scoredByKey.size === 0) return incoming;
 
   let changed = false;
   const merged = incoming.matches.map((im) => {
-    if (!im?.id || im.is_overridden) return im;
-    const prev = scoredById.get(im.id);
+    if (!im || im.is_overridden) return im;
+    const candidateById = im.id ? scoredById.get(im.id) : undefined;
+    const prev =
+      candidateById && isSameFixtureMatch(im, candidateById)
+        ? candidateById
+        : scoredByKey.get(matchIdentityKey(im));
     if (!prev) return im;
 
     const incomingHasScore =

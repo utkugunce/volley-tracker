@@ -41,6 +41,18 @@ function normalizeCitySlug(str: string): string {
     .trim();
 }
 
+function matchIdentityKey(m: Match): string {
+  return `${m.date || ""}|${(m.home_team || "").trim()}|${(m.away_team || "").trim()}`;
+}
+
+function isSameFixtureMatch(a: Match, b: Match): boolean {
+  return (
+    (a.home_team || "").trim() === (b.home_team || "").trim() &&
+    (a.away_team || "").trim() === (b.away_team || "").trim() &&
+    (a.date || "") === (b.date || "")
+  );
+}
+
 function reconcileWithLocalFixtures(supabaseData: FixturesData, citySlug: string): FixturesData {
   try {
     const targetSlug = citySlug === "tumu" || citySlug === "turkiye" ? "all" : citySlug;
@@ -50,14 +62,22 @@ function reconcileWithLocalFixtures(supabaseData: FixturesData, citySlug: string
     }
 
     const localById = new Map<string, Match>();
+    const localByKey = new Map<string, Match>();
     for (const lm of localData.matches) {
       if (lm?.id) localById.set(lm.id, lm);
+      if (lm?.home_team && lm?.away_team) localByKey.set(matchIdentityKey(lm), lm);
     }
 
-    const seenIds = new Set<string>();
+    const seenKeys = new Set<string>();
     const mergedMatches = supabaseData.matches.map((sm) => {
-      if (sm.id) seenIds.add(sm.id);
-      const lm = sm.id ? localById.get(sm.id) : undefined;
+      const sKey = matchIdentityKey(sm);
+      seenKeys.add(sKey);
+
+      const candidateById = sm.id ? localById.get(sm.id) : undefined;
+      const lm =
+        candidateById && isSameFixtureMatch(sm, candidateById)
+          ? candidateById
+          : localByKey.get(sKey);
       if (!lm) return sm;
 
       const supaHasScore =
@@ -96,7 +116,8 @@ function reconcileWithLocalFixtures(supabaseData: FixturesData, citySlug: string
     });
 
     for (const lm of localData.matches) {
-      if (lm?.id && !seenIds.has(lm.id)) {
+      const lKey = matchIdentityKey(lm);
+      if (lm?.id && !seenKeys.has(lKey)) {
         mergedMatches.push(lm);
       }
     }

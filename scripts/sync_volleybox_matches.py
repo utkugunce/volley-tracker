@@ -671,12 +671,53 @@ def vb_round_to_tr_group_aliases(r_name: str) -> List[str]:
             res.append(f"{grp_letter}. grup".lower())
     return res
 
-def match_tvf_with_vb(
-    tvf_match: Dict[str, Any], 
-    vb_matches: List[Dict[str, Any]], 
+_TEAM_SCORE_MEMO: Dict[Tuple[str, str], int] = {}
+
+
+def is_hijacked_by_another_city_team(
+    tvf_team: str,
+    vb_team: str,
+    score: int,
+    city_teams: Optional[set],
     team_alias_map: Dict[str, set],
-    used_vb_ids: Optional[set] = None
-) -> Optional[Dict[str, Any]]:
+) -> bool:
+    """
+    Eğer tvf_team ile vb_team yalnızca bulanık (score < 100) eşleştiyse ve aynı il+kategorideki
+    BAŞKA bir takım vb_team ile 100 tam puanla eşleşiyorsa (örn: 'Karşıyaka U16' vs 'Alfa Karşıyaka U16',
+    'Körfez Akademi U18' vs 'Körfez Vaveyla U18', 'Burhaniye Bld U16' vs 'Burhaniye Ören Pegasus U16',
+    'Anadolu Marmara U18' vs 'İstanbul Marmara U18'), bu bulanık eşleşmeyi reddeder.
+    """
+    if score >= 100 or not city_teams:
+        return False
+    for ot in city_teams:
+        if ot == tvf_team:
+            continue
+        m_key = (ot, vb_team)
+        cached = _TEAM_SCORE_MEMO.get(m_key)
+        if cached is None:
+            ot_syn = team_alias_map.get(ot.lower().strip(), set())
+            cached = team_match_score(ot, vb_team, ot_syn)
+            _TEAM_SCORE_MEMO[m_key] = cached
+        if cached == 100:
+            return True
+    return False
+
+
+def compute_tvf_vb_match_score(
+    tvf_match: Dict[str, Any],
+    vb: Dict[str, Any],
+    team_alias_map: Dict[str, set],
+    city_teams: Optional[set] = None,
+) -> Optional[Tuple[int, int]]:
+    """
+    Bir TVF maçı ile bir Volleybox maçının eşleşme puanını (total_score, -diff_days) hesaplar.
+    Uyumsuzsa veya rövanş/farklı kulüp çakışması varsa None döner.
+    """
+    if tvf_match.get("id") == "yalova-20270105-024" and vb.get("match_id") == "399651":
+        return (999, 0)
+    if tvf_match.get("id") == "kutahya-20261018-002" and vb.get("match_id") == "408160":
+        return (999, 0)
+
     tvf_home = tvf_match.get("home_team", "")
     tvf_away = tvf_match.get("away_team", "")
     tvf_date = tvf_match.get("date", "")
@@ -684,102 +725,101 @@ def match_tvf_with_vb(
     home_synonyms = team_alias_map.get(tvf_home.lower().strip(), set())
     away_synonyms = team_alias_map.get(tvf_away.lower().strip(), set())
 
+    vb_host = vb.get("host_name", "")
+    vb_guest = vb.get("guest_name", "")
+    vb_date = vb.get("date", "")
+
+    s_dir_h = team_match_score(tvf_home, vb_host, home_synonyms)
+    s_dir_a = team_match_score(tvf_away, vb_guest, away_synonyms)
+    if s_dir_h >= 70 and is_hijacked_by_another_city_team(tvf_home, vb_host, s_dir_h, city_teams, team_alias_map):
+        s_dir_h = 0
+    if s_dir_a >= 70 and is_hijacked_by_another_city_team(tvf_away, vb_guest, s_dir_a, city_teams, team_alias_map):
+        s_dir_a = 0
+    direct_compatible = (s_dir_h >= 70 and s_dir_a >= 70)
+
+    s_rev_h = team_match_score(tvf_home, vb_guest, home_synonyms)
+    s_rev_a = team_match_score(tvf_away, vb_host, away_synonyms)
+    if s_rev_h >= 70 and is_hijacked_by_another_city_team(tvf_home, vb_guest, s_rev_h, city_teams, team_alias_map):
+        s_rev_h = 0
+    if s_rev_a >= 70 and is_hijacked_by_another_city_team(tvf_away, vb_host, s_rev_a, city_teams, team_alias_map):
+        s_rev_a = 0
+    rev_compatible = (s_rev_h >= 70 and s_rev_a >= 70)
+
+    if not (direct_compatible or rev_compatible):
+        return None
+
+    if vb_date:
+        try:
+            d_vb = datetime.strptime(vb_date, "%Y-%m-%d")
+            if d_vb.year < 2026 or (d_vb.year == 2026 and d_vb.month < 8):
+                return None
+        except Exception:
+            if str(vb_date).startswith("2025") or str(vb_date).startswith("2024") or str(vb_date).startswith("2023"):
+                return None
+
+    diff_days = 999
+    if tvf_date and vb_date and tvf_date != "TBD":
+        try:
+            d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
+            d2 = datetime.strptime(vb_date, "%Y-%m-%d")
+            diff_days = abs((d1 - d2).days)
+            if diff_days > 30:
+                return None
+            if d1.year >= 2026 and d2.year < 2026:
+                return None
+        except Exception:
+            pass
+
+    # Ev sahibi ve deplasman ters ise (rev_compatible), yalnızca aynı gün veya +-1 gün fark varsa kabul et.
+    # Aksi halde ilk devre maçı, 2-3 hafta sonraki rövanş maçının Volleybox kaydını çalar!
+    if not direct_compatible and diff_days > 1:
+        return None
+
+    # Bulanık takım eşleşmesinde (puan < 100) tarih 1 günden fazla sapıyorsa reddet.
+    if direct_compatible and (s_dir_h < 100 or s_dir_a < 100) and diff_days > 1:
+        return None
+
+    if direct_compatible:
+        base_team_score = s_dir_h + s_dir_a + 10
+    else:
+        base_team_score = s_rev_h + s_rev_a
+
+    if tvf_date and vb_date and tvf_date != "TBD":
+        if diff_days == 0:
+            date_score = 200
+        elif diff_days == 1:
+            date_score = 80
+        elif diff_days <= 7:
+            date_score = 30
+        elif diff_days <= 14:
+            date_score = 10
+        elif diff_days <= 30:
+            date_score = 2
+        else:
+            return None
+    else:
+        date_score = 20
+
+    return (base_team_score + date_score, -diff_days)
+
+
+def match_tvf_with_vb(
+    tvf_match: Dict[str, Any], 
+    vb_matches: List[Dict[str, Any]], 
+    team_alias_map: Dict[str, set],
+    used_vb_ids: Optional[set] = None,
+    city_teams: Optional[set] = None,
+) -> Optional[Dict[str, Any]]:
     best_vb = None
-    best_score = -1
+    best_rank = (-1, -9999)
 
     for vb in vb_matches:
         if used_vb_ids and vb["match_id"] in used_vb_ids:
             continue
-
-        vb_host = vb["host_name"]
-        vb_guest = vb["guest_name"]
-        vb_date = vb.get("date", "")
-
-        s_dir_h = team_match_score(tvf_home, vb_host, home_synonyms)
-        s_dir_a = team_match_score(tvf_away, vb_guest, away_synonyms)
-        direct_compatible = (s_dir_h >= 70 and s_dir_a >= 70)
-
-        s_rev_h = team_match_score(tvf_home, vb_guest, home_synonyms)
-        s_rev_a = team_match_score(tvf_away, vb_host, away_synonyms)
-        rev_compatible = (s_rev_h >= 70 and s_rev_a >= 70)
-
-        if not (direct_compatible or rev_compatible):
-            continue
-
-        # Sezon yılı ve tarih uyumluluğu kontrolü:
-        # TVF fikstürleri 2026/27 sezonuna aittir (Ağustos 2026 - Temmuz 2027).
-        # Volleybox'taki 2025 veya daha eski tarihli maçlar ASLA 2026/27 maçlarıyla eşleşemez!
-        if vb_date:
-            try:
-                d_vb = datetime.strptime(vb_date, "%Y-%m-%d")
-                if d_vb.year < 2026 or (d_vb.year == 2026 and d_vb.month < 8):
-                    continue
-            except Exception:
-                if str(vb_date).startswith("2025") or str(vb_date).startswith("2024") or str(vb_date).startswith("2023"):
-                    continue
-
-        if tvf_date and vb_date and tvf_date != "TBD":
-            try:
-                d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
-                d2 = datetime.strptime(vb_date, "%Y-%m-%d")
-                diff = abs((d1 - d2).days)
-                if diff > 30:
-                    continue
-                if d1.year >= 2026 and d2.year < 2026:
-                    continue
-            except Exception:
-                pass
-
-        if direct_compatible:
-            base_team_score = s_dir_h + s_dir_a + 5
-        else:
-            base_team_score = s_rev_h + s_rev_a
-
-        date_score = 0
-        if tvf_date and vb_date and tvf_date != "TBD":
-            if tvf_date == vb_date:
-                date_score = 100
-            else:
-                try:
-                    d1 = datetime.strptime(tvf_date, "%Y-%m-%d")
-                    d2 = datetime.strptime(vb_date, "%Y-%m-%d")
-                    diff = abs((d1 - d2).days)
-                    if diff == 1:
-                        date_score = 50
-                    elif diff <= 7:
-                        date_score = 25
-                    elif diff <= 14:
-                        date_score = 10
-                    elif diff <= 30:
-                        date_score = 2
-                    else:
-                        continue
-                except Exception:
-                    pass
-        else:
-            date_score = 20
-
-        total_score = base_team_score + date_score
-        if total_score > best_score:
-            best_score = total_score
+        rank = compute_tvf_vb_match_score(tvf_match, vb, team_alias_map, city_teams)
+        if rank and rank > best_rank:
+            best_rank = rank
             best_vb = vb
-
-    # Özel vaka: Yalova 399651 numaralı maçta (2027-01-05 20:00 Koru Akademi) deplasman takımı
-    # Volleybox'a sehven Yalova Voleybol olarak girilmişse dahi 2027-01-05 20:00 maçını bağla
-    # (Böylece 2027-02-02'deki 400387 no'lu maç sonraki rövanş maçına kalır)
-    if tvf_match.get("id") == "yalova-20270105-024":
-        for vb in vb_matches:
-            if vb.get("match_id") == "399651" and (not used_vb_ids or "399651" not in used_vb_ids):
-                best_vb = vb
-                break
-
-    # Özel vaka: Kütahya 408160 numaralı maçta (2026-10-18 14:00 Tavşanlı B vs Kütahya Demirspor)
-    # Volleybox'a ev sahibi sehven Tavşanlı Belediyesi Spor Kulübü U18 (A) olarak girilmişse dahi bağla
-    if tvf_match.get("id") == "kutahya-20261018-002":
-        for vb in vb_matches:
-            if vb.get("match_id") == "408160" and (not used_vb_ids or "408160" not in used_vb_ids):
-                best_vb = vb
-                break
 
     if best_vb and used_vb_ids is not None:
         used_vb_ids.add(best_vb["match_id"])
@@ -793,21 +833,24 @@ def normalize_tourn_key(cat: str, city: str) -> str:
     return f"{k}::{c}"
 
 
-def is_synced_vb_valid(tvf_match: Dict[str, Any], vb: Dict[str, Any], team_alias_map: Dict[str, set]) -> bool:
-    """Senkronize edilmiş bir Volleybox maçının TVF maçının takımlarıyla uyumlu olup olmadığını doğrular."""
+def is_synced_vb_valid(
+    tvf_match: Dict[str, Any],
+    vb: Dict[str, Any],
+    team_alias_map: Dict[str, set],
+    city_teams: Optional[set] = None,
+) -> bool:
+    """Senkronize edilmiş bir Volleybox maçının TVF maçının takımları ve tarihiyle uyumlu olup olmadığını doğrular."""
     if not vb or not vb.get("synced"):
         return False
-    tvf_h = str(tvf_match.get("home_team") or "").strip()
-    tvf_a = str(tvf_match.get("away_team") or "").strip()
-    vb_h = str(vb.get("host_name") or "").strip()
-    vb_a = str(vb.get("guest_name") or "").strip()
-    if not tvf_h or not tvf_a or not vb_h or not vb_a:
+    vb_candidate = {
+        "match_id": vb.get("match_id"),
+        "host_name": str(vb.get("host_name") or "").strip(),
+        "guest_name": str(vb.get("guest_name") or "").strip(),
+        "date": str(vb.get("vb_date") or vb.get("date") or "").strip(),
+    }
+    if not vb_candidate["host_name"] or not vb_candidate["guest_name"]:
         return False
-    syn_h = team_alias_map.get(tvf_h.lower(), set())
-    syn_a = team_alias_map.get(tvf_a.lower(), set())
-    s_dir = (team_match_score(tvf_h, vb_h, syn_h) >= 50 and team_match_score(tvf_a, vb_a, syn_a) >= 50)
-    s_rev = (team_match_score(tvf_h, vb_a, syn_h) >= 50 and team_match_score(tvf_a, vb_h, syn_a) >= 50)
-    return s_dir or s_rev
+    return compute_tvf_vb_match_score(tvf_match, vb_candidate, team_alias_map, city_teams) is not None
 
 
 def _empty_vb() -> Dict[str, Any]:
@@ -840,64 +883,93 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
     total_count = len(matches)
     used_vb_ids = set()
 
+    # Kategori bazında ildeki tüm takımları topla (bulanık eşleşmelerin başka kulübü çalmasını önlemek için)
+    teams_by_cat: Dict[str, set] = {}
     for m in matches:
+        c_key = m.get("category", "")
+        if m.get("home_team"):
+            teams_by_cat.setdefault(c_key, set()).add(m["home_team"])
+        if m.get("away_team"):
+            teams_by_cat.setdefault(c_key, set()).add(m["away_team"])
+    for grp_key, rows in (data.get("standings") or {}).items():
+        c_key = grp_key.split(" - ")[0] if " - " in grp_key else grp_key
+        if isinstance(rows, list):
+            for r in rows:
+                if isinstance(r, dict) and r.get("team"):
+                    teams_by_cat.setdefault(c_key, set()).add(r["team"])
+
+    def _find_vb_list_for_match(m: Dict[str, Any]) -> Optional[List[Dict[str, Any]]]:
         cat = m.get("category", "")
         city = m.get("city") or ("İstanbul" if fixtures_path.name == "fixtures.json" else fixtures_path.stem)
-        
-        # Uygun Volleybox turnuvasını bul (Kategori, İl ve Yaş Grubu esnekliğiyle)
         age_group = m.get("age_group", "")
         age_code = (
             "u18" if "genç" in age_group.lower() or "genc" in age_group.lower() or "u18" in cat.lower() or "genç" in cat.lower()
             else ("u16" if "yıldız" in age_group.lower() or "yildiz" in age_group.lower() or "u16" in cat.lower() or "yıldız" in cat.lower() else "")
         )
-
         grp = m.get("group", "")
         if (city or "").lower() in ("kırklareli", "kirklareli") and (grp or "").lower() in ("1. grup", "1.grup"):
             grp = "Tek Grup"
 
         vb_m_list = None
-        # 1. Öncelik: Belirli turnuva kategorisi (örn: "Genç Kızlar 1. Lig 4. Bölge", "Genç Kızlar Süper Lig")
         if cat:
             tourn_key = normalize_tourn_key(cat, city)
             vb_m_list = vb_tournaments.get(tourn_key) or vb_tournaments.get(f"{cat}::{city}".lower())
-
-        # 2. Öncelik: Kategori + Grup birleşimi (örn: "Genç Kızlar 1. Lig - A Grubu")
         if not vb_m_list and cat and grp:
             combined_key = normalize_tourn_key(f"{cat} - {grp}", city)
             vb_m_list = vb_tournaments.get(combined_key) or vb_tournaments.get(f"{cat} - {grp}::{city}".lower())
-
-        # 3. Öncelik: Jenerik olmayan özel grup ismi (örn: "Final Grubu", "Tek Grup")
         GENERIC_GROUPS = {"a grubu", "b grubu", "c grubu", "d grubu", "e grubu", "f grubu", "1. grup", "2. grup", "grup a", "grup b"}
         if not vb_m_list and grp and grp.lower().strip() not in GENERIC_GROUPS:
             vb_m_list = vb_tournaments.get(normalize_tourn_key(grp, city)) or vb_tournaments.get(f"{grp}::{city}".lower())
-
-        # 4. Öncelik: İl ve yaş grubu havuzu
         if not vb_m_list and age_code:
             vb_m_list = (
                 vb_tournaments.get(f"{normalize_name(city)}::{age_code}".lower())
-                or vb_tournaments.get(f"{city}::{age_code}".lower()) 
+                or vb_tournaments.get(f"{city}::{age_code}".lower())
             )
-
-        # 5. Son çare: Jenerik grup adı (sadece başka hiçbir turnuva bulunamadıysa)
         if not vb_m_list and grp:
             vb_m_list = vb_tournaments.get(normalize_tourn_key(grp, city)) or vb_tournaments.get(f"{grp}::{city}".lower())
+        return vb_m_list
+
+    # Global en yüksek puanlı eşleştirme (sıralı açgözlü eşleştirmenin rövanş maçlarını çalmasını önler)
+    all_candidates = []
+    match_vb_lists: Dict[int, Optional[List[Dict[str, Any]]]] = {}
+    for m_idx, m in enumerate(matches):
+        cat = m.get("category", "")
+        city_teams = teams_by_cat.get(cat, set())
+        vb_m_list = _find_vb_list_for_match(m)
+        match_vb_lists[m_idx] = vb_m_list
+        if not vb_m_list:
+            continue
+        for vb in vb_m_list:
+            rank = compute_tvf_vb_match_score(m, vb, team_alias_map, city_teams)
+            if rank is not None:
+                all_candidates.append((rank[0], rank[1], m_idx, vb["match_id"], vb))
+
+    all_candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    assigned_by_idx: Dict[int, Dict[str, Any]] = {}
+    for score_val, neg_diff, m_idx, vb_id, vb in all_candidates:
+        if m_idx not in assigned_by_idx and vb_id not in used_vb_ids:
+            assigned_by_idx[m_idx] = vb
+            used_vb_ids.add(vb_id)
+
+    for m_idx, m in enumerate(matches):
+        cat = m.get("category", "")
+        city_teams = teams_by_cat.get(cat, set())
+        vb_m_list = match_vb_lists.get(m_idx)
 
         if not vb_m_list:
             old_vb = m.get("volleybox", {})
-            if old_vb.get("synced") and is_synced_vb_valid(m, old_vb, team_alias_map):
+            if old_vb.get("synced") and is_synced_vb_valid(m, old_vb, team_alias_map, city_teams):
                 vb_d = str(old_vb.get("vb_date") or "")
                 vb_url = str(old_vb.get("url") or "")
-                # Eski sezona (2025/26) ait hatalı eşleşmeleri temizle
                 if vb_d.startswith("2025") or vb_d.startswith("2024") or "-2025-26-" in vb_url:
                     m["volleybox"] = _empty_vb()
                 else:
-                    # Mevcut doğrulanmış 2026/27 eşleşmesini koru
                     synced_count += 1
             else:
                 m["volleybox"] = _empty_vb()
             continue
 
-        matched_vb = match_tvf_with_vb(m, vb_m_list, team_alias_map, used_vb_ids)
+        matched_vb = assigned_by_idx.get(m_idx)
         if matched_vb:
             discrepancy = check_discrepancy(m, matched_vb)
             m["volleybox"] = {
@@ -916,7 +988,13 @@ def sync_fixtures_file(fixtures_path: Path, vb_tournaments: Dict[str, List[Dict[
             synced_count += 1
         else:
             old_vb = m.get("volleybox", {})
-            if old_vb.get("synced") and is_synced_vb_valid(m, old_vb, team_alias_map):
+            old_vb_id = old_vb.get("match_id")
+            if (
+                old_vb.get("synced")
+                and old_vb_id not in used_vb_ids
+                and is_synced_vb_valid(m, old_vb, team_alias_map, city_teams)
+            ):
+                used_vb_ids.add(old_vb_id)
                 synced_count += 1
             else:
                 m["volleybox"] = _empty_vb()

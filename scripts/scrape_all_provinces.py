@@ -701,9 +701,6 @@ def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
             if are_teams_compatible(h, a, vh, va):
                 key = (h, a, em.get("date", ""))
                 vb_lookup[key] = vb
-                # id bazlı yedek anahtarda da takım isimlerini sakla
-                if em.get("id"):
-                    vb_lookup[em["id"]] = (vb, h, a)
 
     empty_vb = {
         "synced": False,
@@ -735,10 +732,6 @@ def merge_volleybox_data(new_matches: list, existing_file: Path) -> list:
 
         key = (h, a, nm.get("date", ""))
         vb = vb_lookup.get(key)
-        if not vb and nm.get("id") in vb_lookup:
-            cand_vb, cand_h, cand_a = vb_lookup[nm["id"]]
-            if are_teams_compatible(h, a, cand_vb.get("host_name", ""), cand_vb.get("guest_name", "")):
-                vb = cand_vb
 
         if vb:
             nm["volleybox"] = vb

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T13:35:45.045431+03:00",
+  "updated_at": "2026-11-04T14:16:23.941593+03:00",
   "city": "Giresun",
   "slug": "giresun",
   "title": "TVF Giresun Genç & Yıldız Kızlar Süper Lig",
@@ -238,25 +238,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415036",
-        "url": "https://women.volleybox.net/tr/giresun-genclik-ve-spor-kulubu-u18-giresunspor-u18-c415036",
-        "host_name": "Giresun Gençlik Ve Spor Kulübü U18",
-        "guest_name": "Giresunspor U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
-        "vb_time": "12:00",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-14",
-          "vb_time": "12:00",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-25 / VB: 2026-11-14)"
+          "has_diff": false
         }
       }
     },
@@ -279,25 +272,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415037",
-        "url": "https://women.volleybox.net/tr/giresun-genclik-ve-spor-kulubu-b-u18-giresunspor-b-u18-c415037",
-        "host_name": "Giresun Gençlik Ve Spor Kulübü - B U18",
-        "guest_name": "Giresunspor - B U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
-        "vb_time": "13:30",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-14",
-          "vb_time": "13:30",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-25 / VB: 2026-11-14)"
+          "has_diff": false
         }
       }
     },
@@ -320,25 +306,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415039",
-        "url": "https://women.volleybox.net/tr/bulancak-karadenizspor-u18-espiye-voleybol-kulubu-u18-c415039",
-        "host_name": "Bulancak Karadenizspor U18",
-        "guest_name": "Espiye Voleybol Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-14",
-        "vb_time": "15:00",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-14",
-          "vb_time": "15:00",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-25 / VB: 2026-11-14)"
+          "has_diff": false
         }
       }
     },
@@ -361,25 +340,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415040",
-        "url": "https://women.volleybox.net/tr/giresunspor-b-u18-giresun-genclik-ve-spor-kulubu-u18-c415040",
-        "host_name": "Giresunspor - B U18",
-        "guest_name": "Giresun Gençlik Ve Spor Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-15",
-        "vb_time": "12:00",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-15",
-          "vb_time": "12:00",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-31 / VB: 2026-11-15)"
+          "has_diff": false
         }
       }
     },
@@ -402,25 +374,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415041",
-        "url": "https://women.volleybox.net/tr/bulancak-karadenizspor-u18-giresunspor-u18-c415041",
-        "host_name": "Bulancak Karadenizspor U18",
-        "guest_name": "Giresunspor U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-15",
-        "vb_time": "13:30",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-15",
-          "vb_time": "13:30",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-10-31 / VB: 2026-11-15)"
+          "has_diff": false
         }
       }
     },
@@ -477,25 +442,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415042",
-        "url": "https://women.volleybox.net/tr/giresun-genclik-ve-spor-kulubu-u18-bulancak-karadenizspor-u18-c415042",
-        "host_name": "Giresun Gençlik Ve Spor Kulübü U18",
-        "guest_name": "Bulancak Karadenizspor U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-17",
-        "vb_time": "12:00",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-17",
-          "vb_time": "12:00",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-01 / VB: 2026-11-17)"
+          "has_diff": false
         }
       }
     },
@@ -518,25 +476,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415043",
-        "url": "https://women.volleybox.net/tr/giresunspor-b-u18-espiye-voleybol-kulubu-u18-c415043",
-        "host_name": "Giresunspor - B U18",
-        "guest_name": "Espiye Voleybol Kulübü U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-17",
-        "vb_time": "13:30",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-17",
-          "vb_time": "13:30",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-01 / VB: 2026-11-17)"
+          "has_diff": false
         }
       }
     },
@@ -559,25 +510,18 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": true,
-        "match_id": "415044",
-        "url": "https://women.volleybox.net/tr/giresunspor-u18-giresun-genclik-ve-spor-kulubu-b-u18-c415044",
-        "host_name": "Giresunspor U18",
-        "guest_name": "Giresun Gençlik Ve Spor Kulübü - B U18",
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-17",
-        "vb_time": "15:00",
-        "vb_hall": "19 Eylül Spor Salonu",
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-17",
-          "vb_time": "15:00",
-          "vb_hall": "19 Eylül Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-01 / VB: 2026-11-17)"
+          "has_diff": false
         }
       }
     },
@@ -825,18 +769,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415036",
+        "url": "https://women.volleybox.net/tr/giresun-genclik-ve-spor-kulubu-u18-giresunspor-u18-c415036",
+        "host_name": "Giresun Gençlik Ve Spor Kulübü U18",
+        "guest_name": "Giresunspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "12:00",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "12:00",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -859,18 +810,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415037",
+        "url": "https://women.volleybox.net/tr/giresun-genclik-ve-spor-kulubu-b-u18-giresunspor-b-u18-c415037",
+        "host_name": "Giresun Gençlik Ve Spor Kulübü - B U18",
+        "guest_name": "Giresunspor - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "13:30",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "13:30",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -893,18 +851,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415039",
+        "url": "https://women.volleybox.net/tr/bulancak-karadenizspor-u18-espiye-voleybol-kulubu-u18-c415039",
+        "host_name": "Bulancak Karadenizspor U18",
+        "guest_name": "Espiye Voleybol Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "15:00",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "15:00",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -927,18 +892,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415040",
+        "url": "https://women.volleybox.net/tr/giresunspor-b-u18-giresun-genclik-ve-spor-kulubu-u18-c415040",
+        "host_name": "Giresunspor - B U18",
+        "guest_name": "Giresun Gençlik Ve Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-15",
+        "vb_time": "12:00",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "12:00",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -961,18 +933,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415041",
+        "url": "https://women.volleybox.net/tr/bulancak-karadenizspor-u18-giresunspor-u18-c415041",
+        "host_name": "Bulancak Karadenizspor U18",
+        "guest_name": "Giresunspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-15",
+        "vb_time": "13:30",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-15",
+          "vb_time": "13:30",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -995,18 +974,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415042",
+        "url": "https://women.volleybox.net/tr/giresun-genclik-ve-spor-kulubu-u18-bulancak-karadenizspor-u18-c415042",
+        "host_name": "Giresun Gençlik Ve Spor Kulübü U18",
+        "guest_name": "Bulancak Karadenizspor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-17",
+        "vb_time": "12:00",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "12:00",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1029,18 +1015,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415043",
+        "url": "https://women.volleybox.net/tr/giresunspor-b-u18-espiye-voleybol-kulubu-u18-c415043",
+        "host_name": "Giresunspor - B U18",
+        "guest_name": "Espiye Voleybol Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-17",
+        "vb_time": "13:30",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "13:30",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1063,18 +1056,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415044",
+        "url": "https://women.volleybox.net/tr/giresunspor-u18-giresun-genclik-ve-spor-kulubu-b-u18-c415044",
+        "host_name": "Giresunspor U18",
+        "guest_name": "Giresun Gençlik Ve Spor Kulübü - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-17",
+        "vb_time": "15:00",
+        "vb_hall": "19 Eylül Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "15:00",
+          "vb_hall": "19 Eylül Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1203,5 +1203,5 @@
     }
   ],
   "volleybox_synced_matches": 17,
-  "volleybox_sync_updated_at": "2026-11-04T13:42:36.880295"
+  "volleybox_sync_updated_at": "2026-11-04T14:23:18.642622"
 }
