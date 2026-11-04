@@ -24,22 +24,37 @@ from typing import Dict, Any, List, Optional, Tuple
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
-# Eğer mevcut ortamda bs4/httpx yoksa ve .venv mevcutsa otomatik .venv python ile çalıştır
+# bs4 ve httpx opsiyonel import (salt eşleşme kontrolü ve doğrulama için modül import edildiğinde CI ortamında hata vermemesi için)
 try:
     from bs4 import BeautifulSoup
-    import httpx
-    try:
-        from curl_cffi import requests as cffi_requests
-        HAS_CURL_CFFI = True
-    except ImportError:
-        cffi_requests = None
-        HAS_CURL_CFFI = False
 except ImportError:
-    venv_py = BASE_DIR / ".venv" / ("Scripts" if sys.platform == "win32" else "bin") / ("python.exe" if sys.platform == "win32" else "python")
-    if venv_py.exists():
-        import subprocess
-        sys.exit(subprocess.call([str(venv_py)] + sys.argv))
-    raise
+    BeautifulSoup = None
+
+try:
+    import httpx
+except ImportError:
+    httpx = None
+
+try:
+    from curl_cffi import requests as cffi_requests
+    HAS_CURL_CFFI = True
+except ImportError:
+    cffi_requests = None
+    HAS_CURL_CFFI = False
+
+
+def ensure_scraper_dependencies():
+    """Web scraping yapılacaksa bs4/httpx bağımlılıklarını doğrular, gerekirse .venv'e delege eder."""
+    global BeautifulSoup, httpx
+    if BeautifulSoup is None or httpx is None:
+        venv_py = BASE_DIR / ".venv" / ("Scripts" if sys.platform == "win32" else "bin") / ("python.exe" if sys.platform == "win32" else "python")
+        if venv_py.exists():
+            import subprocess
+            sys.exit(subprocess.call([str(venv_py)] + sys.argv))
+        if BeautifulSoup is None:
+            raise ImportError("No module named 'bs4'. Volleybox taraması için 'pip install beautifulsoup4' gereklidir.")
+        if httpx is None:
+            raise ImportError("No module named 'httpx'. Volleybox taraması için 'pip install httpx' gereklidir.")
 
 DATA_DIR = BASE_DIR / "data"
 MAPPINGS_FILE = DATA_DIR / "volleybox-mappings.json"
@@ -287,6 +302,7 @@ def get_cffi_client(target: str = "safari17_0"):
 
 
 def fetch_volleybox_tournament_matches(tournament_url: str) -> List[Dict[str, Any]]:
+    ensure_scraper_dependencies()
     tournament_id = extract_tournament_id(tournament_url)
     if not tournament_id:
         return []
@@ -1146,6 +1162,7 @@ def sync_sultanlar_ligi_matches(
     )
 
 def main():
+    ensure_scraper_dependencies()
     import argparse
     parser = argparse.ArgumentParser(description="TVF - Volleybox Maç Senkronizasyonu")
     parser.add_argument("--city", default=None, help="Belirli bir şehri senkronize et (örn: istanbul, izmir)")
