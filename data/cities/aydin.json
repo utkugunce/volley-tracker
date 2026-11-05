@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:09:51.975877",
+  "updated_at": "2026-11-05T16:57:14.571125",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -962,7 +962,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T14:09:51.977314+00:00",
-  "last_success_at": "2026-11-05T14:09:51.977314+00:00",
-  "content_changed_at": "2026-11-05T14:09:51.977314+00:00"
+  "last_attempt_at": "2026-11-05T16:57:14.571885+00:00",
+  "last_success_at": "2026-11-05T16:57:14.571885+00:00",
+  "content_changed_at": "2026-11-05T14:09:51.977314+00:00",
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.724206"
 }

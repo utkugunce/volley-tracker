@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:58:17.662085",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
@@ -100,7 +100,7 @@
     "Genç Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "Zonguldak As Spor Kulübü U18",
+        "team": "MEC Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -111,7 +111,7 @@
       },
       {
         "rank": 2,
-        "team": "Zonguldak GSİM Spor Kulübü U18",
+        "team": "Zonguldak As Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -122,7 +122,7 @@
       },
       {
         "rank": 3,
-        "team": "MEC Spor Kulübü U18",
+        "team": "Zonguldak GSİM Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -135,7 +135,7 @@
     "Yıldız Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Merkez Topbaşı Spor Kulübü U16",
+        "team": "MEC Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -146,7 +146,7 @@
       },
       {
         "rank": 2,
-        "team": "Zonguldak As Spor Kulübü U16",
+        "team": "Merkez Topbaşı Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -157,7 +157,7 @@
       },
       {
         "rank": 3,
-        "team": "Zonguldak GSİM Spor Kulübü U16",
+        "team": "Zonguldak As Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -168,7 +168,7 @@
       },
       {
         "rank": 4,
-        "team": "Zonguldak GSİM Spor Kulübü - B U16",
+        "team": "Zonguldak GSİM Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -179,7 +179,7 @@
       },
       {
         "rank": 5,
-        "team": "MEC Spor Kulübü U16",
+        "team": "Zonguldak GSİM Spor Kulübü - B U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -274,6 +274,9 @@
       }
     }
   ],
+  "last_attempt_at": "2026-11-05T16:58:17.662398+00:00",
+  "last_success_at": "2026-11-05T16:58:17.662398+00:00",
+  "content_changed_at": "2026-11-05T16:58:17.662398+00:00",
   "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:59.957784"
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.516861"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:13:21.252429",
+  "updated_at": "2026-11-05T16:58:11.572135",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -362,7 +362,22 @@
         "25-22",
         "25-20"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tekirdag-20260927-002",
@@ -385,7 +400,22 @@
         "25-13",
         "25-19"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tekirdag-20261011-003",
@@ -453,7 +483,22 @@
         "12-25",
         "10-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tekirdag-20261014-005",
@@ -522,7 +567,22 @@
         "16-25",
         "25-27"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tekirdag-20261018-007",
@@ -545,7 +605,22 @@
         "25-19",
         "25-22"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tekirdag-20261025-008",
@@ -613,7 +688,22 @@
         "25-18",
         "25-15"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "tekirdag-20260926-010",
@@ -3756,7 +3846,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T14:13:21.262375+00:00",
-  "last_success_at": "2026-11-05T14:13:21.262375+00:00",
-  "content_changed_at": "2026-11-05T14:13:21.262375+00:00"
+  "last_attempt_at": "2026-11-05T16:58:11.574341+00:00",
+  "last_success_at": "2026-11-05T16:58:11.574341+00:00",
+  "content_changed_at": "2026-11-05T14:13:21.262375+00:00",
+  "volleybox_synced_matches": 73,
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.685663"
 }
