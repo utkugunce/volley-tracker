@@ -64,3 +64,8 @@ Doğrulama sonuçları PR açıklamasında ve görev raporunda ayrıca belirtili
 - Python: 37 test geçti. Typecheck, lint, veri bütünlüğü, şehir listesi ve üretim derlemesi geçti.
 - Tarayıcı: 6 senaryo geçti (320/390/1440px, açık/koyu tema, klavye dialog odağı, temel metin/yüzey kontrastı, %200 CSS yakınlaştırma).
 - Yeni sağlık ölçümü mevcut snapshot'ta 35 şehir dosyasının 24 saatten eski olduğunu saptıyor ve 503/degraded dönüyor. Bu, dosyalar mevcut diye sağlıklı sayan eski davranışın düzeltilmesidir. Kaynakların gerçekten yeniden okunması ayrı veri güncelleme işlemidir; kod PR'ında üretim JSON verileri veya tarihleri değiştirilmedi.
+
+
+## Güncel main ile eşitleme
+
+Çalışma sırasında main'e gelen `89628814` rehber/veri güncellemesi korundu. CODEX.md çakışması aynı yüklenen rehberin düzeltilmiş sürümüyle çözüldü. Güncel indeks 1.846 maç içeriyor; 24 saatten eski şehir snapshot sayısı 35'ten 19'a indi. Sağlık kontrolü kalan eski dosyalar için degraded dönmeye devam eder. Bu veriler kod çalışmasının ürettiği yeni tarama değil, main'den gelen mevcut güncellemedir.

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Denizli",
   "slug": "denizli",
   "title": "TVF Denizli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 46,
+  "total_matches": 47,
   "source": "https://denizli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -33,17 +33,28 @@
       {
         "rank": 1,
         "team": "Denizli Büyükşehir Belediyespor U18 - A",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Denizli Anadolu Pars GSK U18",
+        "played": 5,
+        "won": 4,
+        "lost": 1,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Denizli Tutku GSK U18",
         "played": 4,
         "won": 3,
         "lost": 1,
@@ -53,7 +64,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Honaz Adil Akan Ortaokulu SK U18",
         "played": 5,
         "won": 3,
@@ -64,25 +75,14 @@
         "form": []
       },
       {
-        "rank": 4,
-        "team": "Denizli Tutku GSK U18",
-        "played": 3,
-        "won": 2,
-        "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 3,
-        "form": []
-      },
-      {
         "rank": 5,
         "team": "Denizli Merkez Akademi Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 6,
         "sets_won": 8,
-        "sets_lost": 8,
+        "sets_lost": 11,
         "form": []
       },
       {
@@ -99,12 +99,12 @@
       {
         "rank": 7,
         "team": "Denizli Büyükşehir Belediyespor U18 - B",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 4,
         "sets_won": 5,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -121,18 +121,29 @@
       {
         "rank": 9,
         "team": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
     "Yıldız Kızlar Süper Lig - Gruplar": [
       {
         "rank": 1,
+        "team": "Damla Spor Kulübü",
+        "played": 5,
+        "won": 5,
+        "lost": 0,
+        "points": 15,
+        "sets_won": 15,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Denizli Büyükşehir Belediye S.K.",
         "played": 5,
         "won": 4,
@@ -143,7 +154,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Tutku Spor Kulübü",
         "played": 5,
         "won": 3,
@@ -154,7 +165,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 4,
         "team": "Denizli Voleybol Spor Kulübü U16",
         "played": 5,
         "won": 3,
@@ -162,17 +173,6 @@
         "points": 10,
         "sets_won": 12,
         "sets_lost": 8,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Damla Spor Kulübü",
-        "played": 3,
-        "won": 3,
-        "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 1,
         "form": []
       },
       {
@@ -189,23 +189,23 @@
       {
         "rank": 6,
         "team": "Anadolu Pars Spor Kulübü",
-        "played": 4,
+        "played": 5,
         "won": 3,
-        "lost": 1,
+        "lost": 2,
         "points": 7,
         "sets_won": 10,
-        "sets_lost": 7,
+        "sets_lost": 10,
         "form": []
       },
       {
         "rank": 7,
         "team": "Hierapolis Spor Kulübü",
-        "played": 3,
+        "played": 4,
         "won": 1,
-        "lost": 2,
+        "lost": 3,
         "points": 3,
         "sets_won": 4,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -984,11 +984,15 @@
       "match_no": "17",
       "home_team": "Denizli Anadolu Pars GSK U18",
       "away_team": "Denizli Büyükşehir Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-21",
+        "25-3"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415429",
@@ -1025,11 +1029,15 @@
       "match_no": "18",
       "home_team": "Denizli Tutku GSK U18",
       "away_team": "Denizli Aile ve Sosyal Hizmetler Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-8",
+        "25-11",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415026",
@@ -1066,11 +1074,15 @@
       "match_no": "19",
       "home_team": "Denizli Büyükşehir Belediyespor U18",
       "away_team": "Denizli Merkez Akademi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-14",
+        "25-19"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2034,11 +2046,15 @@
       "match_no": "20",
       "home_team": "Damla Spor Kulübü",
       "away_team": "Anadolu Pars Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-21",
+        "28-26"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412694",
@@ -2120,11 +2136,15 @@
       "match_no": "22",
       "home_team": "Hierapolis Spor Kulübü",
       "away_team": "Damla Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "19-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2242,8 +2262,42 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "denizli-20261114-047",
+      "city": "Denizli",
+      "date": "2026-11-14",
+      "time": "13:00",
+      "hall": "Çivril Spor Salonu",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "Gruplar",
+      "match_no": "26",
+      "home_team": "Yeşil Çivril Belediye Spor Kulübü",
+      "away_team": "Hierapolis Spor Kulübü",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 39,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:21.547417"
+  "volleybox_sync_updated_at": "2026-11-05T16:08:55.517487"
 }

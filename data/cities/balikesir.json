@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
@@ -342,7 +342,7 @@
       },
       {
         "rank": 5,
-        "team": "Edremit Belediyesi Gürespor Kulübü U16",
+        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
         "played": 4,
         "won": 1,
         "lost": 3,
@@ -353,7 +353,7 @@
       },
       {
         "rank": 6,
-        "team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
+        "team": "Edremit Belediyesi Gürespor Kulübü U16",
         "played": 4,
         "won": 0,
         "lost": 4,
@@ -1585,18 +1585,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406635",
+        "url": "https://women.volleybox.net/tr/edremit-belediyesi-gurespor-kulubu-u16-edremit-belediyesi-altnoluk-spor-kulubu-u16-c406635",
+        "host_name": "Edremit Belediyesi Gürespor Kulübü U16",
+        "guest_name": "Edremit Belediyesi Altınoluk Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "20:30",
+        "vb_hall": "Edremit Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "20:30",
+          "vb_hall": "Edremit Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1668,18 +1675,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406638",
+        "url": "https://women.volleybox.net/tr/ayvalkgucu-belediye-sk-b-u16-edremit-belediyesi-gurespor-kulubu-u16-c406638",
+        "host_name": "Ayvalıkgücü Belediye SK - B U16",
+        "guest_name": "Edremit Belediyesi Gürespor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-15",
+        "vb_time": "20:30",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-15",
+          "vb_time": "20:30",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1875,8 +1889,8 @@
       "gender": "Kız",
       "group": "C Grubu",
       "match_no": "10",
-      "home_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
-      "away_team": "Edremit Belediyesi Gürespor Kulübü U16",
+      "home_team": "Edremit Belediyesi Gürespor Kulübü U16",
+      "away_team": "Balıkesir Büyükşehir Belediyespor Edremit - B U16",
       "score": "2 - 3",
       "home_score": 2,
       "away_score": 3,
@@ -1889,18 +1903,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411634",
+        "url": "https://women.volleybox.net/tr/edremit-belediyesi-gurespor-kulubu-u16-balkesir-buyuksehir-belediyespor-b-u16-c411634",
+        "host_name": "Edremit Belediyesi Gürespor Kulübü U16",
+        "guest_name": "Balıkesir Büyükşehir Belediyespor Edremit U16",
+        "score": "2 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-27",
+        "vb_time": "20:30",
+        "vb_hall": "Edremit Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-27",
+          "vb_time": "20:30",
+          "vb_hall": "Edremit Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1927,18 +1948,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414773",
+        "url": "https://women.volleybox.net/tr/edremit-belediyesi-gurespor-kulubu-u16-burhaniye-oren-pegasus-spor-kulubu-u16-c414773",
+        "host_name": "Edremit Belediyesi Gürespor Kulübü U16",
+        "guest_name": "Burhaniye Ören Pegasus Spor Kulübü U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-11-03",
+        "vb_time": "19:00",
+        "vb_hall": "Edremit Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-03",
+          "vb_time": "19:00",
+          "vb_hall": "Edremit Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2007,18 +2035,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "414775",
+        "url": "https://women.volleybox.net/tr/ayvalkspor-u16-edremit-belediyesi-gurespor-kulubu-u16-c414775",
+        "host_name": "Ayvalıkspor U16",
+        "guest_name": "Edremit Belediyesi Gürespor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-05",
+        "vb_time": "19:00",
+        "vb_hall": "Ayvalık Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "19:00",
+          "vb_hall": "Ayvalık Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2305,7 +2340,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "7",
-      "home_team": "Burhaniye Ören Pegasus Spor Kulübü U16",
+      "home_team": "Burhaniye Belediye Spor Kulübü U16",
       "away_team": "Kuzey Ege Gelişim Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
@@ -3048,6 +3083,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 52,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:16.447174"
+  "volleybox_synced_matches": 57,
+  "volleybox_sync_updated_at": "2026-11-05T16:08:53.210216"
 }

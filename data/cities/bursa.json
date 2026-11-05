@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -171,23 +171,23 @@
       },
       {
         "rank": 3,
-        "team": "Nilüfer Olimpik Spor Kulübü U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
+        "team": "Nilüfer Olimpik Spor Kulübü U18",
         "played": 2,
         "won": 0,
         "lost": 2,
         "points": 0,
-        "sets_won": 0,
+        "sets_won": 1,
         "sets_lost": 6,
         "form": []
       },
@@ -1343,11 +1343,16 @@
       "match_no": "6",
       "home_team": "Nilüfer Olimpik Spor Kulübü U18",
       "away_team": "Mehmet Ege İnşaat Orhaniyespor Voleybol Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "15-25",
+        "25-11",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413324",
@@ -3783,5 +3788,5 @@
     }
   ],
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:18.876122"
+  "volleybox_sync_updated_at": "2026-11-05T16:08:54.149620"
 }
