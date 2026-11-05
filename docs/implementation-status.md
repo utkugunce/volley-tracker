@@ -69,3 +69,12 @@ Doğrulama sonuçları PR açıklamasında ve görev raporunda ayrıca belirtili
 ## Güncel main ile eşitleme
 
 Çalışma sırasında main'e gelen `89628814` rehber/veri güncellemesi korundu. CODEX.md çakışması aynı yüklenen rehberin düzeltilmiş sürümüyle çözüldü. Güncel indeks 1.846 maç içeriyor; 24 saatten eski şehir snapshot sayısı 35'ten 19'a indi. Sağlık kontrolü kalan eski dosyalar için degraded dönmeye devam eder. Bu veriler kod çalışmasının ürettiği yeni tarama değil, main'den gelen mevcut güncellemedir.
+
+
+## Sınırlı veri yenilemesi ve güvenli çalışma modu
+
+`--local-only --stale-only --workers 4` ile yalnızca eski şehir snapshot'ları yenilendi; Volleybox veya Supabase senkronizasyonu çalıştırılmadı. 19 eski dosyadan 10'u yenilenebildi. Kalan dokuz şehir: Bilecik, Giresun, Zonguldak, Kayseri, Aksaray, Çanakkale, Yalova, Malatya, Kahramanmaraş. Kaynak zaman aşımı, 522 ve boş tablo yanıtlarında eski dosyalar korundu. Toplam maç sayısı kaynakların güncel görünümüyle 1.816 oldu. Bunlar sağlıklı/güncelmiş gibi işaretlenmez.
+
+Python testleri 40'a çıktı. Yeni testler, yerel modun kimlik bilgileri mevcutken dahi uzak entegrasyon çalıştırmadığını ve kategori HTTP hatasında önceki tam snapshot'ın korunduğunu doğrular. Zamanlanmış workflow da TVF toplamasını yerel modla yapar; entegrasyon adımları ayrıca tanımlıdır. Otomatik `--force` kaldırıldı.
+
+CI tarayıcı kurulum adımı beklemeye takıldığı için resmi GitHub Ubuntu 24.04 imajında hazır Google Chrome kullanılır; ek tarayıcı indirmesi yapılmaz. Canlı Supabase bağlantısı ve GitHub dal koruması yetkisi hâlâ dış ön koşuldur.

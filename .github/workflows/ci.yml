@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     
     steps:
       - name: Checkout repository
@@ -79,10 +79,12 @@ jobs:
             exit 1
           fi
 
-      - name: Install browser
-        run: python -m playwright install --with-deps chromium
+      - name: Check installed browser
+        run: google-chrome --version
 
       - name: Production browser checks
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
         run: |
           npm start > /tmp/volley-server.log 2>&1 &
           server_pid=$!
