@@ -819,7 +819,9 @@ def scrape_single_city(city_info):
                         "name": name,
                         "slug": subdomain,
                         "url": puan_url,
-                        "status": status_lbl,
+                        "status": f"Önbellek: {fallback_status} — {status_lbl}",
+                        "fetch_status": "cached",
+                        "fetch_error": fallback_status,
                         "matches_count": m_count,
                         "standings_count": s_count,
                         "data_file": f"data/cities/{subdomain}.json"
@@ -868,7 +870,7 @@ def scrape_single_city(city_info):
     # Diğer iller
     client = httpx.Client(
         headers={"User-Agent": HEADERS["User-Agent"]},
-        timeout=httpx.Timeout(connect=3.0, read=5.0, write=5.0, pool=5.0),
+        timeout=httpx.Timeout(connect=10.0, read=15.0, write=10.0, pool=10.0),
         follow_redirects=True,
     )
     
@@ -900,9 +902,10 @@ def scrape_single_city(city_info):
     p["ctl00$icerik$ddlsbe"] = "B"
     try:
         r_b = client.post(puan_url, data=p, headers=HEADERS)
+        r_b.raise_for_status()
         update_state(state, decode_html(r_b))
     except Exception:
-        pass
+        return get_fallback_result("Kadın kategorisi okunamadı")
 
     city_matches = []
     seen_matches = set()
@@ -936,10 +939,11 @@ def scrape_single_city(city_info):
         p_k["ctl00$icerik$ddlskume"] = kume_code
         try:
             r_k = client.post(puan_url, data=p_k, headers=HEADERS)
+            r_k.raise_for_status()
             r_k_text = decode_html(r_k)
             update_state(state, r_k_text)
         except Exception:
-            continue
+            return get_fallback_result("Kategori okunamadı; kısmi veri kaydedilmedi")
 
         tokens = r_k_text.split("|")
         comps = []
@@ -1003,10 +1007,11 @@ def scrape_single_city(city_info):
             p_c["ctl00$icerik$ddlSyarismaadi"] = c_val
             try:
                 r_c = client.post(puan_url, data=p_c, headers=HEADERS)
+                r_c.raise_for_status()
                 r_c_text = decode_html(r_c)
                 update_state(state, r_c_text)
             except Exception:
-                continue
+                return get_fallback_result("Grup okunamadı; kısmi veri kaydedilmedi")
 
             tokens_c = r_c_text.split("|")
             for k in range(len(tokens_c)):
@@ -1108,6 +1113,7 @@ def scrape_single_city(city_info):
                                     "status": status,
                                 })
 
+    used_cache = False
     data_file_rel = None
     if city_matches or city_standings:
         apply_volleybox_names(city_matches, city_standings, name)
@@ -1158,6 +1164,7 @@ def scrape_single_city(city_info):
                     cached_matches = []
                     cached_standings = {}
                 elif cached_matches or cached_standings:
+                    used_cache = True
                     apply_volleybox_names(cached_matches, cached_standings, name)
                     city_matches = cached_matches
                     city_standings = cached_standings
@@ -1183,18 +1190,21 @@ def scrape_single_city(city_info):
         "name": name,
         "slug": subdomain,
         "url": puan_url,
-        "status": status_label,
+        "status": f"Önbellek: kaynak yeni veri döndürmedi — {status_label}" if used_cache else status_label,
         "matches_count": len(city_matches),
         "standings_count": len(city_standings),
         "data_file": data_file_rel
     }
 
-def main():
+def main(argv=None):
     import argparse
     parser = argparse.ArgumentParser(description="TVF İl Temsilcilikleri Canlı Veri Çekici")
     parser.add_argument("--city", default=None, help="Yalnızca belirli bir ili tara (ör: istanbul, izmir)")
     parser.add_argument("--force", "-f", action="store_true", help="1 saat (60 dakika) bekleme kuralını yoksay ve zorla çalıştır")
-    args = parser.parse_args()
+    parser.add_argument("--local-only", action="store_true", help="Yalnızca yerel TVF JSON verisini güncelle; Volleybox ve Supabase senkronizasyonunu çalıştırma")
+    parser.add_argument("--stale-only", action="store_true", help="Yalnızca 24 saatten eski aktif şehir snapshotlarını yenile")
+    parser.add_argument("--workers", type=int, choices=range(1, 19), default=6, help="Eşzamanlı şehir sayısı (varsayılan: 6)")
+    args = parser.parse_args(argv)
 
     COOLDOWN_MINUTES = 60
 
@@ -1254,6 +1264,19 @@ def main():
             if target_city:
                 if target_city not in [subdomain, ilid, name.lower()]:
                     continue
+            if args.stale_only:
+                from scripts.data_freshness import is_data_fresh_enough
+                candidate = CITIES_DIR / f"{subdomain}.json"
+                if not candidate.exists():
+                    continue
+                try:
+                    snapshot = json.loads(candidate.read_text(encoding="utf-8"))
+                    if snapshot.get("last_success_at"):
+                        snapshot["updated_at"] = snapshot["last_success_at"]
+                    if is_data_fresh_enough(snapshot):
+                        continue
+                except (ValueError, OSError):
+                    pass
             cities.append({"name": name, "ilid": ilid, "url": url})
 
     def get_id(x):
@@ -1270,7 +1293,7 @@ def main():
     active_city_count = 0
     total_matches_all = 0
 
-    with ThreadPoolExecutor(max_workers=18) as executor:
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
         future_to_city = {executor.submit(scrape_single_city, c): c for c in cities}
         for future in as_completed(future_to_city):
             completed_count += 1
@@ -1299,12 +1322,13 @@ def main():
     if sys.stdout.isatty():
         sys.stdout.write("\n")
     print("\n" + "=" * 80)
-    print("🎉 81 İLİN TARAMASI BAŞARIYLA TAMAMLANDI!")
+    cached_count = sum("Önbellek" in str(c.get("status", "")) for c in results)
+    print(f"Tarama tamamlandı: {len(results)} il sorgulandı, {cached_count} ilde eski veri korundu.")
     print("=" * 80)
     
     results.sort(key=lambda x: int(x["ilid"]) if str(x["ilid"]).isdigit() else 999)
     
-    if args.city and CITIES_INDEX_JSON.exists():
+    if (args.city or args.stale_only) and CITIES_INDEX_JSON.exists():
         try:
             with open(CITIES_INDEX_JSON, "r", encoding="utf-8") as f:
                 existing_payload = json.load(f)
@@ -1361,6 +1385,10 @@ def main():
         for ac in active_list:
             print(f"  * [{int(ac['ilid']):02d}] {ac['name']:<14} : {ac['matches_count']} Maç | {ac['standings_count']} Puan Tablosu ({ac['status']})")
     print("=" * 80 + "\n")
+
+    if args.local_only:
+        print("Yerel veri güncellemesi tamamlandı; Volleybox ve Supabase senkronizasyonları çalıştırılmadı.")
+        return
 
     # Volleybox maç senkronizasyonunu otomatik çalıştır
     try:

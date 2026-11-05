@@ -157,3 +157,12 @@ python -m pytest tests/e2e/visual_smoke.py -q
 ```
 
 E2E testleri yalnızca yerel uygulamayı okur; scraping veya veri yazımı yapmaz. Sistem Chromium'u için `CHROMIUM_PATH=/usr/bin/chromium` kullanılabilir. Sabit şehir test verileri `tests/fixtures/cities/` altında tutulur; saatlik `data/` güncellemeleri birim testlerini değiştirmez. Güncel veri kontrolleri ayrı CI adımlarıdır.
+
+
+### Eski şehir verilerini yerel yenileme
+
+```bash
+python scripts/scrape_all_provinces.py --local-only --stale-only --workers 4
+```
+
+Bu komut yalnızca 24 saatten eski mevcut şehir snapshot'larını seçer; diğer şehirleri korur, 60 dakika sınırını aşmaz ve Volleybox/Supabase entegrasyonlarını çalıştırmaz. Başarısız kaynak okumaları `Önbellek` durumuyla raporlanır; eski verinin tarihi başarı tarihi gibi yenilenmez. Zamanlanmış workflow da TVF toplamasını `--local-only` ile çalıştırır; Volleybox ve Supabase adımları workflow'da ayrı ve açıkça tanımlıdır.
