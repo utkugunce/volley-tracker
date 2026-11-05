@@ -2,7 +2,7 @@
 
 ## GitHub yönetici ayarı
 
-`main` dalı için bir ruleset oluşturun: pull request zorunlu olsun, force push ve silme kapalı olsun, CI işinin `build` kontrolü başarılı olmadan birleştirme yapılmasın. Etkin yönetici/bypass istisnalarını kurum politikasına göre sınırlayın. Bu ayarlar depoya bir dosya eklemekle etkinleşmez.
+`main` dalı için bir ruleset oluşturun: pull request zorunlu olsun, force push ve silme kapalı olsun, CI işinin `CI validation` kontrolü başarılı olmadan birleştirme yapılmasın. Etkin yönetici/bypass istisnalarını kurum politikasına göre sınırlayın. Bu ayarlar depoya bir dosya eklemekle etkinleşmez.
 
 ## Veri ve test ayrımı
 
