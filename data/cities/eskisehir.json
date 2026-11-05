@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -156,7 +156,7 @@
       },
       {
         "rank": 4,
-        "team": "Es Voleybol Akademi Spor Kulübü U18",
+        "team": "Es Voleybol Akademi Spor Kulübü - A U18",
         "played": 3,
         "won": 0,
         "lost": 3,
@@ -283,7 +283,7 @@
       },
       {
         "rank": 2,
-        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
+        "team": "Anadolu Kolej Spor Kulübü U16",
         "played": 3,
         "won": 2,
         "lost": 1,
@@ -305,7 +305,7 @@
       },
       {
         "rank": 4,
-        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
+        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
         "played": 3,
         "won": 0,
         "lost": 3,
@@ -535,7 +535,7 @@
     "Yıldız Kızlar Süper Lig - Yarı Final B Grubu": [
       {
         "rank": 1,
-        "team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+        "team": "Anadolu Kolej Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1206,7 +1206,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "1",
-      "home_team": "Es Voleybol Akademi Spor Kulübü U18",
+      "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
       "away_team": "Anadolu Kolej Spor Kulübü U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -1299,7 +1299,7 @@
       "group": "B Grubu",
       "match_no": "3",
       "home_team": "Meryem Boz Spor Kulübü U18",
-      "away_team": "Es Voleybol Akademi Spor Kulübü U18",
+      "away_team": "Es Voleybol Akademi Spor Kulübü - A U18",
       "score": "3 - 1",
       "home_score": 3,
       "away_score": 1,
@@ -1389,7 +1389,7 @@
       "gender": "Kız",
       "group": "B Grubu",
       "match_no": "5",
-      "home_team": "Es Voleybol Akademi Spor Kulübü U18",
+      "home_team": "Es Voleybol Akademi Spor Kulübü - A U18",
       "away_team": "Eskişehir Yıldız Spor Kulübü U18",
       "score": "0 - 3",
       "home_score": 0,
@@ -1739,7 +1739,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "2",
-      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
+      "home_team": "Anadolu Kolej Spor Kulübü U16",
       "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -1785,7 +1785,7 @@
       "group": "A Grubu",
       "match_no": "4",
       "home_team": "Eskişehir DSİ Bentspor U16",
-      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
+      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
       "away_score": 0,
@@ -1793,121 +1793,6 @@
         "25-6",
         "25-17",
         "25-13"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "eskisehir-20261007-028",
-      "city": "Eskişehir",
-      "date": "2026-10-07",
-      "time": "20:00",
-      "hall": "Kemal Unakıtan",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "8",
-      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
-      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-14",
-        "25-13",
-        "25-13"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "eskisehir-20261018-029",
-      "city": "Eskişehir",
-      "date": "2026-10-18",
-      "time": "18:30",
-      "hall": "Şehit Anıl Gül",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "9",
-      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - B",
-      "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "13-25",
-        "19-25",
-        "21-25"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "eskisehir-20261018-030",
-      "city": "Eskişehir",
-      "date": "2026-10-18",
-      "time": "20:00",
-      "hall": "Şehit Anıl Gül",
-      "category": "Yıldız Kızlar Süper Lig",
-      "age_group": "Yıldız",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "10",
-      "home_team": "Eskişehir DSİ Bentspor U16",
-      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16 - A",
-      "score": "3 - 1",
-      "home_score": 3,
-      "away_score": 1,
-      "set_scores": [
-        "25-16",
-        "21-25",
-        "25-22",
-        "25-15"
       ],
       "status": "finished",
       "volleybox": {
@@ -1928,6 +1813,142 @@
           "hall_diff": false,
           "vb_date": "2026-09-28",
           "vb_time": "18:30",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261007-028",
+      "city": "Eskişehir",
+      "date": "2026-10-07",
+      "time": "20:00",
+      "hall": "Kemal Unakıtan",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "8",
+      "home_team": "Anadolu Kolej Spor Kulübü U16",
+      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-13",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": true,
+        "match_id": "404267",
+        "url": "https://women.volleybox.net/tr/anadolu-kolej-spor-kulubu-u16-beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-c404267",
+        "host_name": "Anadolu Kolej Spor Kulübü U16",
+        "guest_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "20:00",
+        "vb_hall": "Kemal Unakıtan Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "20:00",
+          "vb_hall": "Kemal Unakıtan Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261018-029",
+      "city": "Eskişehir",
+      "date": "2026-10-18",
+      "time": "18:30",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "9",
+      "home_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+      "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "19-25",
+        "21-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406695",
+        "url": "https://women.volleybox.net/tr/beyhan-rfat-ckloglu-anadolu-lisesi-spor-kulubu-u16-es-voleybol-akademi-spor-kulubu-b-u16-c406695",
+        "host_name": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+        "guest_name": "Es Voleybol Akademi Spor Kulübü - B U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "18:30",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "18:30",
+          "vb_hall": "Şehit Anıl Gül Spor Salonu",
+          "details": null
+        }
+      }
+    },
+    {
+      "id": "eskisehir-20261018-030",
+      "city": "Eskişehir",
+      "date": "2026-10-18",
+      "time": "20:00",
+      "hall": "Şehit Anıl Gül",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "10",
+      "home_team": "Eskişehir DSİ Bentspor U16",
+      "away_team": "Anadolu Kolej Spor Kulübü U16",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-16",
+        "21-25",
+        "25-22",
+        "25-15"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406697",
+        "url": "https://women.volleybox.net/tr/eskisehir-ds-bentspor-u16-anadolu-kolej-spor-kulubu-u16-c406697",
+        "host_name": "Eskişehir DSİ Bentspor U16",
+        "guest_name": "Anadolu Kolej Spor Kulübü U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-18",
+        "vb_time": "20:00",
+        "vb_hall": "Şehit Anıl Gül Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-18",
+          "vb_time": "20:00",
           "vb_hall": "Şehit Anıl Gül Spor Salonu",
           "details": null
         }
@@ -3412,7 +3433,7 @@
       "group": "Yarı Final B Grubu",
       "match_no": "2",
       "home_team": "Eskişehir Yıldız Spor Kulübü U16",
-      "away_team": "Beyhan Rıfat Çıkılıoğlu Anadolu Lisesi Spor Kulübü U16",
+      "away_team": "Anadolu Kolej Spor Kulübü U16",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -3551,6 +3572,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 54,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:23.157078"
+  "volleybox_synced_matches": 57,
+  "volleybox_sync_updated_at": "2026-11-05T16:08:56.436664"
 }

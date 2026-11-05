@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Kırklareli",
   "slug": "kirklareli",
   "title": "TVF Kırklareli Genç & Yıldız Kızlar Süper Lig",
@@ -280,18 +280,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "415797",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-luleburgaz-akademi-spor-u18-c415797",
+        "host_name": "Lüleburgaz Akademi Spor - B U18",
+        "guest_name": "Lüleburgaz Akademi Spor U18",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-31",
+        "vb_time": "17:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "17:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -314,18 +321,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415798",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u18-luleburgaz-akademi-spor-c-u18-c415798",
+        "host_name": "Lüleburgaz Akademi Spor U18",
+        "guest_name": "Lüleburgaz Akademi Spor - C U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "14:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "14:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -348,18 +362,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415799",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-d-u18-luleburgaz-akademi-spor-b-u18-c415799",
+        "host_name": "Lüleburgaz Akademi Spor - D U18",
+        "guest_name": "Lüleburgaz Akademi Spor - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-07",
+        "vb_time": "16:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "16:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -423,18 +444,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415800",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akm-koleji-sk-u18-luleburgaz-akademi-spor-b-u18-c415800",
+        "host_name": "Lüleburgaz Akım Koleji SK U18",
+        "guest_name": "Lüleburgaz Akademi Spor - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "14:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "14:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -457,18 +485,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415801",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-c-u18-luleburgaz-akademi-spor-d-u18-c415801",
+        "host_name": "Lüleburgaz Akademi Spor - C U18",
+        "guest_name": "Lüleburgaz Akademi Spor - D U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-14",
+        "vb_time": "16:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-14",
+          "vb_time": "16:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -491,18 +526,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415802",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-u18-luleburgaz-akademi-spor-u18-c415802",
+        "host_name": "Kırklareli Gençlik Spor Kulübü U18",
+        "guest_name": "Lüleburgaz Akademi Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-17",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-17",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -525,18 +567,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415803",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-krklareli-genclik-spor-kulubu-u18-c415803",
+        "host_name": "Lüleburgaz Akademi Spor - B U18",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "13:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "13:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -559,18 +608,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415804",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-d-u18-luleburgaz-akademi-spor-u18-c415804",
+        "host_name": "Lüleburgaz Akademi Spor - D U18",
+        "guest_name": "Lüleburgaz Akademi Spor U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-21",
+        "vb_time": "15:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-21",
+          "vb_time": "15:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -593,18 +649,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415805",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-c-u18-luleburgaz-akm-koleji-sk-u18-c415805",
+        "host_name": "Lüleburgaz Akademi Spor - C U18",
+        "guest_name": "Lüleburgaz Akım Koleji SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-24",
+        "vb_time": "18:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-24",
+          "vb_time": "18:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -627,18 +690,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415806",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u18-luleburgaz-akademi-spor-c-u18-c415806",
+        "host_name": "Lüleburgaz Akademi Spor - B U18",
+        "guest_name": "Lüleburgaz Akademi Spor - C U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "14:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "14:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -661,18 +731,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415807",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u18-luleburgaz-akm-koleji-sk-u18-c415807",
+        "host_name": "Lüleburgaz Akademi Spor U18",
+        "guest_name": "Lüleburgaz Akım Koleji SK U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-28",
+        "vb_time": "16:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-28",
+          "vb_time": "16:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -695,18 +772,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415808",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-u18-luleburgaz-akademi-spor-d-u18-c415808",
+        "host_name": "Kırklareli Gençlik Spor Kulübü U18",
+        "guest_name": "Lüleburgaz Akademi Spor - D U18",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-12-02",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-12-02",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -729,18 +813,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415809",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u16-krklareli-genclik-spor-kulubu-u16-c415809",
+        "host_name": "Lüleburgaz Akademi Spor - B U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-02",
+        "vb_time": "18:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-02",
+          "vb_time": "18:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -763,18 +854,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415810",
+        "url": "https://women.volleybox.net/tr/krklareli-fen-bilimleri-koleji-sk-u16-vize-spor-kulubu-u16-c415810",
+        "host_name": "Kırklareli Fen Bilimleri Koleji SK U16",
+        "guest_name": "Vize Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-03",
+        "vb_time": "18:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-03",
+          "vb_time": "18:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -797,18 +895,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415811",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-b-u16-luleburgaz-akademi-spor-u16-c415811",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - B U16",
+        "guest_name": "Lüleburgaz Akademi Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-03",
+        "vb_time": "20:00",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-03",
+          "vb_time": "20:00",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -831,18 +936,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415813",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akm-koleji-sk-u16-krklareli-genclik-spor-kulubu-c-u16-c415813",
+        "host_name": "Lüleburgaz Akım Koleji SK U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - C U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-04",
+        "vb_time": "18:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-04",
+          "vb_time": "18:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -865,18 +977,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415814",
+        "url": "https://women.volleybox.net/tr/pnarhisar-genclik-spor-kulubu-u16-ulusder-spor-kulubu-u16-c415814",
+        "host_name": "Pınarhisar Gençlik Spor Kulübü U16",
+        "guest_name": "ULUSDER Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-05",
+        "vb_time": "18:30",
+        "vb_hall": "Pınarhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-05",
+          "vb_time": "18:30",
+          "vb_hall": "Pınarhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -899,18 +1018,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415815",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u16-pnarhisar-genclik-spor-kulubu-u16-c415815",
+        "host_name": "Lüleburgaz Akademi Spor U16",
+        "guest_name": "Pınarhisar Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-06",
+        "vb_time": "16:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-06",
+          "vb_time": "16:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -933,18 +1059,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415816",
+        "url": "https://women.volleybox.net/tr/ulusder-spor-kulubu-u16-luleburgaz-akademi-spor-b-u16-c415816",
+        "host_name": "ULUSDER Spor Kulübü U16",
+        "guest_name": "Lüleburgaz Akademi Spor - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-06",
+        "vb_time": "18:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-06",
+          "vb_time": "18:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -967,18 +1100,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415817",
+        "url": "https://women.volleybox.net/tr/vize-spor-kulubu-u16-luleburgaz-akm-koleji-sk-u16-c415817",
+        "host_name": "Vize Spor Kulübü U16",
+        "guest_name": "Lüleburgaz Akım Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-08",
+        "vb_time": "19:30",
+        "vb_hall": "Vize Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-08",
+          "vb_time": "19:30",
+          "vb_hall": "Vize Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1001,18 +1141,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415818",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u16-krklareli-fen-bilimleri-koleji-sk-u16-c415818",
+        "host_name": "Lüleburgaz Akademi Spor - B U16",
+        "guest_name": "Kırklareli Fen Bilimleri Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-09",
+        "vb_time": "19:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-09",
+          "vb_time": "19:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1035,18 +1182,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415819",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-c-u16-krklareli-genclik-spor-kulubu-b-u16-c415819",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - C U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-10",
+        "vb_time": "19:30",
+        "vb_hall": "Babaeski Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-10",
+          "vb_time": "19:30",
+          "vb_hall": "Babaeski Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1069,18 +1223,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415820",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akm-koleji-sk-u16-krklareli-genclik-spor-kulubu-u16-c415820",
+        "host_name": "Lüleburgaz Akım Koleji SK U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-11",
+        "vb_time": "19:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-11",
+          "vb_time": "19:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1103,18 +1264,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415821",
+        "url": "https://women.volleybox.net/tr/pnarhisar-genclik-spor-kulubu-u16-krklareli-genclik-spor-kulubu-c-u16-c415821",
+        "host_name": "Pınarhisar Gençlik Spor Kulübü U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - C U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-12",
+        "vb_time": "19:30",
+        "vb_hall": "Pınarhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-12",
+          "vb_time": "19:30",
+          "vb_hall": "Pınarhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1137,18 +1305,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415822",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-b-u16-vize-spor-kulubu-u16-c415822",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - B U16",
+        "guest_name": "Vize Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-13",
+        "vb_time": "14:00",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-13",
+          "vb_time": "14:00",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1171,18 +1346,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415823",
+        "url": "https://women.volleybox.net/tr/ulusder-spor-kulubu-u16-luleburgaz-akademi-spor-u16-c415823",
+        "host_name": "ULUSDER Spor Kulübü U16",
+        "guest_name": "Lüleburgaz Akademi Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-13",
+        "vb_time": "16:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-13",
+          "vb_time": "16:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1205,18 +1387,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415824",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-u16-krklareli-fen-bilimleri-koleji-sk-u16-c415824",
+        "host_name": "Kırklareli Gençlik Spor Kulübü U16",
+        "guest_name": "Kırklareli Fen Bilimleri Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-13",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-13",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1239,18 +1428,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415825",
+        "url": "https://women.volleybox.net/tr/krklareli-fen-bilimleri-koleji-sk-u16-luleburgaz-akm-koleji-sk-u16-c415825",
+        "host_name": "Kırklareli Fen Bilimleri Koleji SK U16",
+        "guest_name": "Lüleburgaz Akım Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-15",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-15",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1273,18 +1469,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415826",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-c-u16-ulusder-spor-kulubu-u16-c415826",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - C U16",
+        "guest_name": "ULUSDER Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-17",
+        "vb_time": "19:30",
+        "vb_hall": "Babaeski Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-17",
+          "vb_time": "19:30",
+          "vb_hall": "Babaeski Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1307,18 +1510,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415827",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u16-luleburgaz-akademi-spor-b-u16-c415827",
+        "host_name": "Lüleburgaz Akademi Spor U16",
+        "guest_name": "Lüleburgaz Akademi Spor - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-18",
+        "vb_time": "19:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-18",
+          "vb_time": "19:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1341,18 +1551,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415828",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-u16-krklareli-genclik-spor-kulubu-b-u16-c415828",
+        "host_name": "Kırklareli Gençlik Spor Kulübü U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-19",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-19",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1375,18 +1592,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415830",
+        "url": "https://women.volleybox.net/tr/vize-spor-kulubu-u16-pnarhisar-genclik-spor-kulubu-u16-c415830",
+        "host_name": "Vize Spor Kulübü U16",
+        "guest_name": "Pınarhisar Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-20",
+        "vb_time": "14:00",
+        "vb_hall": "Vize Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-20",
+          "vb_time": "14:00",
+          "vb_hall": "Vize Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1409,18 +1633,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415831",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-b-u16-krklareli-fen-bilimleri-koleji-sk-u16-c415831",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - B U16",
+        "guest_name": "Kırklareli Fen Bilimleri Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-24",
+        "vb_time": "19:30",
+        "vb_hall": "Babaeski Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-24",
+          "vb_time": "19:30",
+          "vb_hall": "Babaeski Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1443,18 +1674,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415832",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u16-luleburgaz-akm-koleji-sk-u16-c415832",
+        "host_name": "Lüleburgaz Akademi Spor - B U16",
+        "guest_name": "Lüleburgaz Akım Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-25",
+        "vb_time": "19:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-25",
+          "vb_time": "19:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1477,18 +1715,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415833",
+        "url": "https://women.volleybox.net/tr/pnarhisar-genclik-spor-kulubu-u16-krklareli-genclik-spor-kulubu-u16-c415833",
+        "host_name": "Pınarhisar Gençlik Spor Kulübü U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-26",
+        "vb_time": "19:30",
+        "vb_hall": "Pınarhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-26",
+          "vb_time": "19:30",
+          "vb_hall": "Pınarhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1511,18 +1756,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415834",
+        "url": "https://women.volleybox.net/tr/ulusder-spor-kulubu-u16-vize-spor-kulubu-u16-c415834",
+        "host_name": "ULUSDER Spor Kulübü U16",
+        "guest_name": "Vize Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-27",
+        "vb_time": "13:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-27",
+          "vb_time": "13:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1545,18 +1797,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415835",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u16-krklareli-genclik-spor-kulubu-c-u16-c415835",
+        "host_name": "Lüleburgaz Akademi Spor U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - C U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-02-27",
+        "vb_time": "14:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-02-27",
+          "vb_time": "14:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1579,18 +1838,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415836",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-u16-ulusder-spor-kulubu-u16-c415836",
+        "host_name": "Kırklareli Gençlik Spor Kulübü U16",
+        "guest_name": "ULUSDER Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-02",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-02",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1613,18 +1879,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415837",
+        "url": "https://women.volleybox.net/tr/krklareli-fen-bilimleri-koleji-sk-u16-pnarhisar-genclik-spor-kulubu-u16-c415837",
+        "host_name": "Kırklareli Fen Bilimleri Koleji SK U16",
+        "guest_name": "Pınarhisar Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-03",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-03",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1647,18 +1920,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415838",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akm-koleji-sk-u16-krklareli-genclik-spor-kulubu-b-u16-c415838",
+        "host_name": "Lüleburgaz Akım Koleji SK U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-04",
+        "vb_time": "19:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-04",
+          "vb_time": "19:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1681,18 +1961,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415840",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-c-u16-luleburgaz-akademi-spor-b-u16-c415840",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - C U16",
+        "guest_name": "Lüleburgaz Akademi Spor - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-05",
+        "vb_time": "19:30",
+        "vb_hall": "Babaeski Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-05",
+          "vb_time": "19:30",
+          "vb_hall": "Babaeski Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1715,18 +2002,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415841",
+        "url": "https://women.volleybox.net/tr/vize-spor-kulubu-u16-luleburgaz-akademi-spor-u16-c415841",
+        "host_name": "Vize Spor Kulübü U16",
+        "guest_name": "Lüleburgaz Akademi Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-05",
+        "vb_time": "19:30",
+        "vb_hall": "Vize Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-05",
+          "vb_time": "19:30",
+          "vb_hall": "Vize Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1749,18 +2043,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415842",
+        "url": "https://women.volleybox.net/tr/pnarhisar-genclik-spor-kulubu-u16-luleburgaz-akm-koleji-sk-u16-c415842",
+        "host_name": "Pınarhisar Gençlik Spor Kulübü U16",
+        "guest_name": "Lüleburgaz Akım Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-15",
+        "vb_time": "18:30",
+        "vb_hall": "Pınarhisar Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-15",
+          "vb_time": "18:30",
+          "vb_hall": "Pınarhisar Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1783,18 +2084,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415843",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-c-u16-vize-spor-kulubu-u16-c415843",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - C U16",
+        "guest_name": "Vize Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-16",
+        "vb_time": "18:30",
+        "vb_hall": "Babaeski Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-16",
+          "vb_time": "18:30",
+          "vb_hall": "Babaeski Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1817,18 +2125,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415844",
+        "url": "https://women.volleybox.net/tr/ulusder-spor-kulubu-u16-krklareli-fen-bilimleri-koleji-sk-u16-c415844",
+        "host_name": "ULUSDER Spor Kulübü U16",
+        "guest_name": "Kırklareli Fen Bilimleri Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-18",
+        "vb_time": "18:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-18",
+          "vb_time": "18:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1851,18 +2166,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415845",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u16-krklareli-genclik-spor-kulubu-u16-c415845",
+        "host_name": "Lüleburgaz Akademi Spor U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-20",
+        "vb_time": "13:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-20",
+          "vb_time": "13:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1885,18 +2207,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415846",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u16-krklareli-genclik-spor-kulubu-b-u16-c415846",
+        "host_name": "Lüleburgaz Akademi Spor - B U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-20",
+        "vb_time": "14:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-20",
+          "vb_time": "14:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1919,18 +2248,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415847",
+        "url": "https://women.volleybox.net/tr/vize-spor-kulubu-u16-luleburgaz-akademi-spor-b-u16-c415847",
+        "host_name": "Vize Spor Kulübü U16",
+        "guest_name": "Lüleburgaz Akademi Spor - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-22",
+        "vb_time": "19:00",
+        "vb_hall": "Vize Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-22",
+          "vb_time": "19:00",
+          "vb_hall": "Vize Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1953,18 +2289,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415848",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akm-koleji-sk-u16-ulusder-spor-kulubu-u16-c415848",
+        "host_name": "Lüleburgaz Akım Koleji SK U16",
+        "guest_name": "ULUSDER Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-23",
+        "vb_time": "18:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-23",
+          "vb_time": "18:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1987,18 +2330,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415849",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-b-u16-pnarhisar-genclik-spor-kulubu-u16-c415849",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - B U16",
+        "guest_name": "Pınarhisar Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-24",
+        "vb_time": "19:00",
+        "vb_hall": "Babaeski Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-24",
+          "vb_time": "19:00",
+          "vb_hall": "Babaeski Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2021,18 +2371,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415850",
+        "url": "https://women.volleybox.net/tr/krklareli-fen-bilimleri-koleji-sk-u16-luleburgaz-akademi-spor-u16-c415850",
+        "host_name": "Kırklareli Fen Bilimleri Koleji SK U16",
+        "guest_name": "Lüleburgaz Akademi Spor U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-25",
+        "vb_time": "19:30",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-25",
+          "vb_time": "19:30",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2055,18 +2412,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415851",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-u16-krklareli-genclik-spor-kulubu-c-u16-c415851",
+        "host_name": "Kırklareli Gençlik Spor Kulübü U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - C U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-26",
+        "vb_time": "19:00",
+        "vb_hall": "Kırklareli Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-26",
+          "vb_time": "19:00",
+          "vb_hall": "Kırklareli Atatürk Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2089,18 +2453,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415852",
+        "url": "https://women.volleybox.net/tr/ulusder-spor-kulubu-u16-krklareli-genclik-spor-kulubu-b-u16-c415852",
+        "host_name": "ULUSDER Spor Kulübü U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü - B U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-27",
+        "vb_time": "13:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-27",
+          "vb_time": "13:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2123,18 +2494,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415854",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-b-u16-pnarhisar-genclik-spor-kulubu-u16-c415854",
+        "host_name": "Lüleburgaz Akademi Spor - B U16",
+        "guest_name": "Pınarhisar Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-27",
+        "vb_time": "14:30",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-27",
+          "vb_time": "14:30",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2157,18 +2535,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415855",
+        "url": "https://women.volleybox.net/tr/krklareli-genclik-spor-kulubu-c-u16-krklareli-fen-bilimleri-koleji-sk-u16-c415855",
+        "host_name": "Kırklareli Gençlik Spor Kulübü - C U16",
+        "guest_name": "Kırklareli Fen Bilimleri Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-29",
+        "vb_time": "19:00",
+        "vb_hall": "Babaeski Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-29",
+          "vb_time": "19:00",
+          "vb_hall": "Babaeski Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2191,18 +2576,25 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415856",
+        "url": "https://women.volleybox.net/tr/luleburgaz-akademi-spor-u16-luleburgaz-akm-koleji-sk-u16-c415856",
+        "host_name": "Lüleburgaz Akademi Spor U16",
+        "guest_name": "Lüleburgaz Akım Koleji SK U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-30",
+        "vb_time": "18:00",
+        "vb_hall": "Lüleburgaz Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-30",
+          "vb_time": "18:00",
+          "vb_hall": "Lüleburgaz Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2225,22 +2617,29 @@
       "set_scores": [],
       "status": "upcoming",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "415857",
+        "url": "https://women.volleybox.net/tr/vize-spor-kulubu-u16-krklareli-genclik-spor-kulubu-u16-c415857",
+        "host_name": "Vize Spor Kulübü U16",
+        "guest_name": "Kırklareli Gençlik Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2027-03-31",
+        "vb_time": "19:00",
+        "vb_hall": "Vize Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2027-03-31",
+          "vb_time": "19:00",
+          "vb_hall": "Vize Spor Salonu",
+          "details": null
         }
       }
     }
   ],
-  "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:36.011919"
+  "volleybox_synced_matches": 59,
+  "volleybox_sync_updated_at": "2026-11-05T16:09:10.441067"
 }

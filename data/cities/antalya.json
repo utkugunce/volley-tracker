@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -363,7 +363,7 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
-        "team": "Alanya MASK Spor Kulübü U18",
+        "team": "Alanya MASK Spor Kulübü",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -3261,7 +3261,7 @@
       "group": "C Grubu",
       "match_no": "1",
       "home_team": "Manavgat Belediyespor U16",
-      "away_team": "Alanya MASK Spor Kulübü U18",
+      "away_team": "Alanya MASK Spor Kulübü",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -3350,7 +3350,7 @@
       "gender": "Kız",
       "group": "C Grubu",
       "match_no": "3",
-      "home_team": "Alanya MASK Spor Kulübü U18",
+      "home_team": "Alanya MASK Spor Kulübü",
       "away_team": "Net Voleybol Akademi Spor Kulübü U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -3440,7 +3440,7 @@
       "gender": "Kız",
       "group": "C Grubu",
       "match_no": "5",
-      "home_team": "Alanya MASK Spor Kulübü U18",
+      "home_team": "Alanya MASK Spor Kulübü",
       "away_team": "Alanya Belediyespor U16",
       "score": "3 - 0",
       "home_score": 3,
@@ -3603,5 +3603,5 @@
     }
   ],
   "volleybox_synced_matches": 71,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:13.344005"
+  "volleybox_sync_updated_at": "2026-11-05T16:08:51.966896"
 }

@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Kocaeli",
   "slug": "kocaeli",
   "title": "TVF Kocaeli Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 133,
+  "total_matches": 132,
   "source": "https://kocaeli.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -195,24 +195,24 @@
       },
       {
         "rank": 2,
-        "team": "Darıca Yıldız Spor Kulübü U18",
-        "played": 5,
-        "won": 4,
+        "team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
+        "played": 7,
+        "won": 6,
         "lost": 1,
-        "points": 12,
-        "sets_won": 13,
-        "sets_lost": 3,
+        "points": 18,
+        "sets_won": 18,
+        "sets_lost": 6,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
-        "played": 5,
-        "won": 4,
+        "team": "Darıca Yıldız Spor Kulübü U18",
+        "played": 6,
+        "won": 5,
         "lost": 1,
-        "points": 12,
-        "sets_won": 12,
-        "sets_lost": 6,
+        "points": 15,
+        "sets_won": 16,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -250,17 +250,28 @@
       },
       {
         "rank": 7,
-        "team": "Darıca Kuzey Yıldızı SK U18",
-        "played": 4,
-        "won": 1,
+        "team": "Dilovası Belediye Spor Kulübü U18",
+        "played": 5,
+        "won": 2,
         "lost": 3,
-        "points": 4,
-        "sets_won": 5,
-        "sets_lost": 9,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 10,
         "form": []
       },
       {
         "rank": 8,
+        "team": "Darıca Kuzey Yıldızı SK U18",
+        "played": 5,
+        "won": 1,
+        "lost": 4,
+        "points": 4,
+        "sets_won": 5,
+        "sets_lost": 12,
+        "form": []
+      },
+      {
+        "rank": 9,
         "team": "Dev Ay Spor Kulübü U18",
         "played": 3,
         "won": 1,
@@ -271,36 +282,25 @@
         "form": []
       },
       {
-        "rank": 9,
-        "team": "Dilovası Belediye Spor Kulübü U18",
-        "played": 3,
-        "won": 1,
-        "lost": 2,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 7,
-        "form": []
-      },
-      {
         "rank": 10,
         "team": "Umut Can Spor Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 0,
-        "lost": 5,
+        "lost": 6,
         "points": 0,
         "sets_won": 2,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       },
       {
         "rank": 11,
         "team": "Darıca Anadolu Spor Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 0,
-        "lost": 5,
+        "lost": 6,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 15,
+        "sets_lost": 18,
         "form": []
       }
     ]
@@ -2024,53 +2024,12 @@
       "city": "Kocaeli",
       "date": "2026-11-07",
       "time": "14:00",
-      "hall": "Başiskele Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "B Grubu",
-      "match_no": "39",
-      "home_team": "Gölcük Belediye Spor Kulübü U18",
-      "away_team": "İzmit Yahya Kaptan SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415092",
-        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415092",
-        "host_name": "Gölcük Belediye Spor Kulübü U18",
-        "guest_name": "İzmit Yahya Kaptan SK U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-07",
-        "vb_time": "14:00",
-        "vb_hall": "Başiskele Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-07",
-          "vb_time": "14:00",
-          "vb_hall": "Başiskele Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "kocaeli-20261107-040",
-      "city": "Kocaeli",
-      "date": "2026-11-07",
-      "time": "14:00",
       "hall": "Derince S.S",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "40",
+      "match_no": "39",
       "home_team": "Körfez Vaveyla Spor Kulübü U18",
       "away_team": "Kocaeli 19 Mayıs Spor Kulübü U18",
       "score": "- : -",
@@ -2102,7 +2061,7 @@
       }
     },
     {
-      "id": "kocaeli-20261107-041",
+      "id": "kocaeli-20261107-040",
       "city": "Kocaeli",
       "date": "2026-11-07",
       "time": "15:30",
@@ -2111,7 +2070,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "41",
+      "match_no": "40",
       "home_team": "Kocaeli Anka Spor Kulübü U18",
       "away_team": "Kocaeli Elite Spor U18",
       "score": "- : -",
@@ -2143,7 +2102,7 @@
       }
     },
     {
-      "id": "kocaeli-20261107-042",
+      "id": "kocaeli-20261107-041",
       "city": "Kocaeli",
       "date": "2026-11-07",
       "time": "16:00",
@@ -2152,7 +2111,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "B Grubu",
-      "match_no": "42",
+      "match_no": "41",
       "home_team": "Kandıra Voleybol Kulübü U18",
       "away_team": "İzmit Spor U18",
       "score": "- : -",
@@ -2180,6 +2139,47 @@
           "vb_time": "16:00",
           "vb_hall": "Kandıra Spor Salonu",
           "details": null
+        }
+      }
+    },
+    {
+      "id": "kocaeli-20261107-042",
+      "city": "Kocaeli",
+      "date": "2026-11-07",
+      "time": "16:30",
+      "hall": "Başiskele Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "42",
+      "home_team": "Gölcük Belediye Spor Kulübü U18",
+      "away_team": "İzmit Yahya Kaptan SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "415092",
+        "url": "https://women.volleybox.net/tr/golcuk-belediye-spor-kulubu-u18-zmit-yahya-kaptan-sk-u18-c415092",
+        "host_name": "Gölcük Belediye Spor Kulübü U18",
+        "guest_name": "İzmit Yahya Kaptan SK U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-07",
+        "vb_time": "14:00",
+        "vb_hall": "Başiskele Spor Salonu",
+        "discrepancy": {
+          "has_diff": true,
+          "date_diff": false,
+          "time_diff": true,
+          "hall_diff": false,
+          "vb_date": "2026-11-07",
+          "vb_time": "14:00",
+          "vb_hall": "Başiskele Spor Salonu",
+          "details": "Saat Değişti (TVF: 16:30 / VB: 14:00)"
         }
       }
     },
@@ -4809,11 +4809,15 @@
       "match_no": "26",
       "home_team": "Dilovası Belediye Spor Kulübü U18",
       "away_team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "19-25",
+        "18-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415144",
@@ -4850,11 +4854,15 @@
       "match_no": "27",
       "home_team": "Darıca Anadolu Spor Kulübü U18",
       "away_team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "8-25",
+        "7-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415145",
@@ -4891,11 +4899,15 @@
       "match_no": "28",
       "home_team": "Dilovası Belediye Spor Kulübü U18",
       "away_team": "Umut Can Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-14",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415147",
@@ -4932,11 +4944,15 @@
       "match_no": "29",
       "home_team": "Darıca Kuzey Yıldızı SK U18",
       "away_team": "Darıca Yıldız Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "14-25",
+        "21-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415148",
@@ -5084,48 +5100,7 @@
       }
     },
     {
-      "id": "kocaeli-20261107-111",
-      "city": "Kocaeli",
-      "date": "2026-11-07",
-      "time": "17:30",
-      "hall": "Gebze Ss",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
-      "match_no": "33",
-      "home_team": "Gebze Gençlik Voleybol Kulübü U18",
-      "away_team": "Darıca Kuzey Yıldızı SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415153",
-        "url": "https://women.volleybox.net/tr/gebze-genclik-voleybol-kulubu-u18-darca-kuzey-yldz-sk-u18-c415153",
-        "host_name": "Gebze Gençlik Voleybol Kulübü U18",
-        "guest_name": "Darıca Kuzey Yıldızı SK U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-07",
-        "vb_time": "17:30",
-        "vb_hall": "Gebze Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-07",
-          "vb_time": "17:30",
-          "vb_hall": "Gebze Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "kocaeli-20261108-112",
+      "id": "kocaeli-20261108-111",
       "city": "Kocaeli",
       "date": "2026-11-08",
       "time": "13:00",
@@ -5134,7 +5109,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "34",
+      "match_no": "33",
       "home_team": "Yelkenkaya Spor Kulübü U18",
       "away_team": "Darıca Yıldız Spor Kulübü U18",
       "score": "- : -",
@@ -5166,7 +5141,7 @@
       }
     },
     {
-      "id": "kocaeli-20261108-113",
+      "id": "kocaeli-20261108-112",
       "city": "Kocaeli",
       "date": "2026-11-08",
       "time": "14:30",
@@ -5175,7 +5150,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "35",
+      "match_no": "34",
       "home_team": "Darıca Anadolu Spor Kulübü U18",
       "away_team": "Umut Can Spor Kulübü U18",
       "score": "- : -",
@@ -5207,7 +5182,7 @@
       }
     },
     {
-      "id": "kocaeli-20261108-114",
+      "id": "kocaeli-20261108-113",
       "city": "Kocaeli",
       "date": "2026-11-08",
       "time": "16:00",
@@ -5216,7 +5191,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "36",
+      "match_no": "35",
       "home_team": "Darıca Kuzey Yıldızı SK U18",
       "away_team": "Çayırova Belediyesi Eğitim SK U18",
       "score": "- : -",
@@ -5248,7 +5223,7 @@
       }
     },
     {
-      "id": "kocaeli-20261109-115",
+      "id": "kocaeli-20261109-114",
       "city": "Kocaeli",
       "date": "2026-11-09",
       "time": "19:00",
@@ -5257,7 +5232,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "37",
+      "match_no": "36",
       "home_team": "Dilovası Belediye Spor Kulübü U18",
       "away_team": "Gebze Gençlik Voleybol Kulübü U18",
       "score": "- : -",
@@ -5289,7 +5264,7 @@
       }
     },
     {
-      "id": "kocaeli-20261110-116",
+      "id": "kocaeli-20261110-115",
       "city": "Kocaeli",
       "date": "2026-11-10",
       "time": "18:30",
@@ -5298,7 +5273,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "38",
+      "match_no": "37",
       "home_team": "Gebze Olimpik Spor Kulübü U18",
       "away_team": "Dev Ay Spor Kulübü U18",
       "score": "- : -",
@@ -5330,7 +5305,7 @@
       }
     },
     {
-      "id": "kocaeli-20261111-117",
+      "id": "kocaeli-20261111-116",
       "city": "Kocaeli",
       "date": "2026-11-11",
       "time": "18:30",
@@ -5339,7 +5314,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "39",
+      "match_no": "38",
       "home_team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
       "away_team": "Umut Can Spor Kulübü U18",
       "score": "- : -",
@@ -5371,7 +5346,7 @@
       }
     },
     {
-      "id": "kocaeli-20261111-118",
+      "id": "kocaeli-20261111-117",
       "city": "Kocaeli",
       "date": "2026-11-11",
       "time": "20:00",
@@ -5380,7 +5355,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "40",
+      "match_no": "39",
       "home_team": "Yelkenkaya Spor Kulübü U18",
       "away_team": "Çayırova Belediyesi Eğitim SK U18",
       "score": "- : -",
@@ -5412,7 +5387,7 @@
       }
     },
     {
-      "id": "kocaeli-20261112-119",
+      "id": "kocaeli-20261112-118",
       "city": "Kocaeli",
       "date": "2026-11-12",
       "time": "18:30",
@@ -5421,7 +5396,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "41",
+      "match_no": "40",
       "home_team": "Dev Ay Spor Kulübü U18",
       "away_team": "Umut Can Spor Kulübü U18",
       "score": "- : -",
@@ -5453,7 +5428,7 @@
       }
     },
     {
-      "id": "kocaeli-20261112-120",
+      "id": "kocaeli-20261112-119",
       "city": "Kocaeli",
       "date": "2026-11-12",
       "time": "20:00",
@@ -5462,7 +5437,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "42",
+      "match_no": "41",
       "home_team": "Gebze Gençlik Voleybol Kulübü U18",
       "away_team": "Darıca Yıldız Spor Kulübü U18",
       "score": "- : -",
@@ -5494,7 +5469,7 @@
       }
     },
     {
-      "id": "kocaeli-20261113-121",
+      "id": "kocaeli-20261113-120",
       "city": "Kocaeli",
       "date": "2026-11-13",
       "time": "18:30",
@@ -5503,7 +5478,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "43",
+      "match_no": "42",
       "home_team": "Darıca Anadolu Spor Kulübü U18",
       "away_team": "Gebze Gençlik Voleybol Kulübü U18",
       "score": "- : -",
@@ -5535,7 +5510,7 @@
       }
     },
     {
-      "id": "kocaeli-20261113-122",
+      "id": "kocaeli-20261113-121",
       "city": "Kocaeli",
       "date": "2026-11-13",
       "time": "20:00",
@@ -5544,7 +5519,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "44",
+      "match_no": "43",
       "home_team": "Darıca Kuzey Yıldızı SK U18",
       "away_team": "Dev Ay Spor Kulübü U18",
       "score": "- : -",
@@ -5576,7 +5551,7 @@
       }
     },
     {
-      "id": "kocaeli-20261114-123",
+      "id": "kocaeli-20261114-122",
       "city": "Kocaeli",
       "date": "2026-11-14",
       "time": "14:00",
@@ -5585,7 +5560,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "45",
+      "match_no": "44",
       "home_team": "Dilovası Belediye Spor Kulübü U18",
       "away_team": "Gebze Olimpik Spor Kulübü U18",
       "score": "- : -",
@@ -5617,7 +5592,7 @@
       }
     },
     {
-      "id": "kocaeli-20261115-124",
+      "id": "kocaeli-20261115-123",
       "city": "Kocaeli",
       "date": "2026-11-15",
       "time": "13:00",
@@ -5626,7 +5601,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "46",
+      "match_no": "45",
       "home_team": "Yelkenkaya Spor Kulübü U18",
       "away_team": "Dev Ay Spor Kulübü U18",
       "score": "- : -",
@@ -5658,7 +5633,7 @@
       }
     },
     {
-      "id": "kocaeli-20261115-125",
+      "id": "kocaeli-20261115-124",
       "city": "Kocaeli",
       "date": "2026-11-15",
       "time": "14:30",
@@ -5667,7 +5642,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "47",
+      "match_no": "46",
       "home_team": "Darıca Anadolu Spor Kulübü U18",
       "away_team": "Gebze Olimpik Spor Kulübü U18",
       "score": "- : -",
@@ -5699,7 +5674,7 @@
       }
     },
     {
-      "id": "kocaeli-20261115-126",
+      "id": "kocaeli-20261115-125",
       "city": "Kocaeli",
       "date": "2026-11-15",
       "time": "16:00",
@@ -5708,7 +5683,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "48",
+      "match_no": "47",
       "home_team": "Darıca Kuzey Yıldızı SK U18",
       "away_team": "Dilovası Belediye Spor Kulübü U18",
       "score": "- : -",
@@ -5740,7 +5715,7 @@
       }
     },
     {
-      "id": "kocaeli-20261117-127",
+      "id": "kocaeli-20261117-126",
       "city": "Kocaeli",
       "date": "2026-11-17",
       "time": "18:30",
@@ -5749,7 +5724,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "49",
+      "match_no": "48",
       "home_team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
       "away_team": "Gebze Gençlik Voleybol Kulübü U18",
       "score": "- : -",
@@ -5781,7 +5756,7 @@
       }
     },
     {
-      "id": "kocaeli-20261117-128",
+      "id": "kocaeli-20261117-127",
       "city": "Kocaeli",
       "date": "2026-11-17",
       "time": "20:00",
@@ -5790,7 +5765,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "50",
+      "match_no": "49",
       "home_team": "Darıca Yıldız Spor Kulübü U18",
       "away_team": "Çayırova Belediyesi Eğitim SK U18",
       "score": "- : -",
@@ -5822,7 +5797,7 @@
       }
     },
     {
-      "id": "kocaeli-20261119-129",
+      "id": "kocaeli-20261119-128",
       "city": "Kocaeli",
       "date": "2026-11-19",
       "time": "18:30",
@@ -5831,7 +5806,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "51",
+      "match_no": "50",
       "home_team": "Umut Can Spor Kulübü U18",
       "away_team": "Gebze Gençlik Voleybol Kulübü U18",
       "score": "- : -",
@@ -5863,7 +5838,7 @@
       }
     },
     {
-      "id": "kocaeli-20261120-130",
+      "id": "kocaeli-20261120-129",
       "city": "Kocaeli",
       "date": "2026-11-20",
       "time": "18:30",
@@ -5872,7 +5847,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "52",
+      "match_no": "51",
       "home_team": "Darıca Yıldız Spor Kulübü U18",
       "away_team": "Dev Ay Spor Kulübü U18",
       "score": "- : -",
@@ -5904,7 +5879,7 @@
       }
     },
     {
-      "id": "kocaeli-20261120-131",
+      "id": "kocaeli-20261120-130",
       "city": "Kocaeli",
       "date": "2026-11-20",
       "time": "20:00",
@@ -5913,7 +5888,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "53",
+      "match_no": "52",
       "home_team": "Darıca Çınaraltı Gençlik ve Spor Kulübü U18",
       "away_team": "Gebze Olimpik Spor Kulübü U18",
       "score": "- : -",
@@ -5945,7 +5920,7 @@
       }
     },
     {
-      "id": "kocaeli-20261124-132",
+      "id": "kocaeli-20261124-131",
       "city": "Kocaeli",
       "date": "2026-11-24",
       "time": "18:30",
@@ -5954,7 +5929,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "54",
+      "match_no": "53",
       "home_team": "Yelkenkaya Spor Kulübü U18",
       "away_team": "Dilovası Belediye Spor Kulübü U18",
       "score": "- : -",
@@ -5986,7 +5961,7 @@
       }
     },
     {
-      "id": "kocaeli-20261124-133",
+      "id": "kocaeli-20261124-132",
       "city": "Kocaeli",
       "date": "2026-11-24",
       "time": "20:00",
@@ -5995,7 +5970,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "55",
+      "match_no": "54",
       "home_team": "Darıca Anadolu Spor Kulübü U18",
       "away_team": "Darıca Kuzey Yıldızı SK U18",
       "score": "- : -",
@@ -6027,6 +6002,6 @@
       }
     }
   ],
-  "volleybox_synced_matches": 133,
-  "volleybox_sync_updated_at": "2026-11-04T16:14:31.562526"
+  "volleybox_synced_matches": 132,
+  "volleybox_sync_updated_at": "2026-11-05T16:09:20.132539"
 }

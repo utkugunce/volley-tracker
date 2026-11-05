@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Manisa",
   "slug": "manisa",
   "title": "TVF Manisa Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 26,
+  "total_matches": 31,
   "source": "https://manisa.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -24,6 +24,7 @@
       "Akhisar S.S.",
       "Atatürk S.S.",
       "M.F.Zeyrek S.Kompleksi",
+      "Muradiye S.S.",
       "Ramiz Turan Ss",
       "Sarıgöl Ss",
       "Vali Muzaffer Ecemiş S.S.",
@@ -704,7 +705,75 @@
       }
     },
     {
-      "id": "manisa-20261006-013",
+      "id": "manisa-20261112-013",
+      "city": "Manisa",
+      "date": "2026-11-12",
+      "time": "19:00",
+      "hall": "Muradiye S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "14",
+      "home_team": "Değerli Zamanlar Spor Kulübü U18",
+      "away_team": "1922 Salihli Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "manisa-20261112-014",
+      "city": "Manisa",
+      "date": "2026-11-12",
+      "time": "19:00",
+      "hall": "Ramiz Turan Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "15",
+      "home_team": "Salihli Değerli Zamanlar Spor Kulübü U18",
+      "away_team": "Manisa Büyükşehir Belediye Spor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "manisa-20261006-015",
       "city": "Manisa",
       "date": "2026-10-06",
       "time": "19:00",
@@ -749,7 +818,7 @@
       }
     },
     {
-      "id": "manisa-20261006-014",
+      "id": "manisa-20261006-016",
       "city": "Manisa",
       "date": "2026-10-06",
       "time": "20:30",
@@ -794,7 +863,7 @@
       }
     },
     {
-      "id": "manisa-20261007-015",
+      "id": "manisa-20261007-017",
       "city": "Manisa",
       "date": "2026-10-07",
       "time": "18:30",
@@ -839,7 +908,7 @@
       }
     },
     {
-      "id": "manisa-20261013-016",
+      "id": "manisa-20261013-018",
       "city": "Manisa",
       "date": "2026-10-13",
       "time": "18:30",
@@ -886,7 +955,7 @@
       }
     },
     {
-      "id": "manisa-20261013-017",
+      "id": "manisa-20261013-019",
       "city": "Manisa",
       "date": "2026-10-13",
       "time": "18:30",
@@ -931,7 +1000,7 @@
       }
     },
     {
-      "id": "manisa-20261014-018",
+      "id": "manisa-20261014-020",
       "city": "Manisa",
       "date": "2026-10-14",
       "time": "19:00",
@@ -976,7 +1045,7 @@
       }
     },
     {
-      "id": "manisa-20261020-019",
+      "id": "manisa-20261020-021",
       "city": "Manisa",
       "date": "2026-10-20",
       "time": "18:30",
@@ -1022,7 +1091,7 @@
       }
     },
     {
-      "id": "manisa-20261020-020",
+      "id": "manisa-20261020-022",
       "city": "Manisa",
       "date": "2026-10-20",
       "time": "20:30",
@@ -1067,7 +1136,7 @@
       }
     },
     {
-      "id": "manisa-20261021-021",
+      "id": "manisa-20261021-023",
       "city": "Manisa",
       "date": "2026-10-21",
       "time": "18:30",
@@ -1112,7 +1181,7 @@
       }
     },
     {
-      "id": "manisa-20261027-022",
+      "id": "manisa-20261027-024",
       "city": "Manisa",
       "date": "2026-10-27",
       "time": "19:00",
@@ -1157,7 +1226,7 @@
       }
     },
     {
-      "id": "manisa-20261027-023",
+      "id": "manisa-20261027-025",
       "city": "Manisa",
       "date": "2026-10-27",
       "time": "19:00",
@@ -1202,7 +1271,7 @@
       }
     },
     {
-      "id": "manisa-20261103-024",
+      "id": "manisa-20261103-026",
       "city": "Manisa",
       "date": "2026-11-03",
       "time": "19:00",
@@ -1248,7 +1317,7 @@
       }
     },
     {
-      "id": "manisa-20261103-025",
+      "id": "manisa-20261103-027",
       "city": "Manisa",
       "date": "2026-11-03",
       "time": "19:30",
@@ -1293,7 +1362,7 @@
       }
     },
     {
-      "id": "manisa-20261105-026",
+      "id": "manisa-20261105-028",
       "city": "Manisa",
       "date": "2026-11-05",
       "time": "20:30",
@@ -1332,8 +1401,110 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "manisa-20261111-029",
+      "city": "Manisa",
+      "date": "2026-11-11",
+      "time": "21:00",
+      "hall": "Sarıgöl Ss",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "15",
+      "home_team": "Sarıgöl Akademi Spor Kulübü U18",
+      "away_team": "Akhisargücü Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "manisa-20261112-030",
+      "city": "Manisa",
+      "date": "2026-11-12",
+      "time": "18:00",
+      "hall": "Vali Muzaffer Ecemiş S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "16",
+      "home_team": "Soma Belediye Spor Kulübü U18",
+      "away_team": "Yunusemre Belediyespor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "manisa-20261112-031",
+      "city": "Manisa",
+      "date": "2026-11-12",
+      "time": "20:30",
+      "hall": "Vali Muzaffer Ecemiş S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "17",
+      "home_team": "Soma İlçe Spor Kulübü U18",
+      "away_team": "Turgutlu Belediyespor U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
   "volleybox_synced_matches": 26,
-  "volleybox_sync_updated_at": "2026-11-04T16:10:33.970927"
+  "volleybox_sync_updated_at": "2026-11-05T16:09:20.822305"
 }

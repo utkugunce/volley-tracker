@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:01:35.171527+03:00",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -995,18 +995,18 @@
         "guest_name": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
         "score": null,
         "has_score": false,
-        "vb_date": "2026-11-06",
-        "vb_time": "19:30",
+        "vb_date": "2026-11-13",
+        "vb_time": "19:00",
         "vb_hall": "Dumlupınar Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
-          "date_diff": true,
-          "time_diff": true,
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
           "hall_diff": false,
-          "vb_date": "2026-11-06",
-          "vb_time": "19:30",
+          "vb_date": "2026-11-13",
+          "vb_time": "19:00",
           "vb_hall": "Dumlupınar Spor Salonu",
-          "details": "Tarih Değişti (TVF: 2026-11-13 / VB: 2026-11-06) | Saat Değişti (TVF: 19:00 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -1053,5 +1053,5 @@
     }
   ],
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:54.226434"
+  "volleybox_sync_updated_at": "2026-11-05T16:09:20.594189"
 }
