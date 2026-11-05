@@ -14,13 +14,6 @@ function getAccessToken(request: Request): string | null {
   const bearerToken = authorization?.match(/^Bearer\s+(.+)$/i)?.[1];
   if (bearerToken) return bearerToken;
   if (legacyHeader) return legacyHeader;
-  try {
-    const url = new URL(request.url);
-    const queryToken = url.searchParams.get("token");
-    if (queryToken) return queryToken;
-  } catch {
-    // ignore
-  }
   return null;
 }
 
@@ -37,11 +30,6 @@ export async function getAuthenticatedUser(
 
   const { data, error } = await supabase.auth.getUser(token);
   if (error || !data.user) return null;
-
-  const metadataRole = data.user.app_metadata?.role;
-  if (isAppRole(metadataRole)) {
-    return { user: data.user, role: metadataRole };
-  }
 
   const { data: roleRow, error: roleError } = await supabase
     .from("user_roles")

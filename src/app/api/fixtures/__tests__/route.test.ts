@@ -1,3 +1,5 @@
+// @vitest-environment node
+import "../../../../../tests/fixtures/citySnapshot";
 import { describe, it, expect } from "vitest";
 import { GET } from "../route";
 

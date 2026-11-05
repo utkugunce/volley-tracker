@@ -69,10 +69,10 @@ export function useDashboardStats({
     const loadedMatches = data?.matches || [];
     const loadedScored = loadedMatches.filter((m) => isMatchPlayedOrScored(m, todayStr)).length;
     if (
-      typeof data?.scored_matches === "number" &&
+      typeof data?.results_count === "number" &&
       data.total_matches > loadedMatches.length
     ) {
-      return Math.max(data.scored_matches, loadedScored);
+      return Math.max(data.results_count!, loadedScored);
     }
     return loadedScored;
   }, [data, todayStr]);

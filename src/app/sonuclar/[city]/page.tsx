@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import { DashboardClient } from "@/components/DashboardClient";
 
-import { getInitialResults } from "@/utils/getInitialFixtures";
+import { getInitialResults } from "@/utils/loadFixtures";
 
 import { getCityNameFromSlug, isValidCitySlug, getAllCitiesList } from "@/utils/cityHelper";
 
@@ -114,7 +114,7 @@ export default async function CityResultsPage({ params }: PageProps) {
 
 
 
-  const initialData = getInitialResults(citySlug);
+  const initialData = await getInitialResults(citySlug);
 
   return <DashboardClient initialData={initialData} initialTab="results" initialCity={citySlug} />;
 

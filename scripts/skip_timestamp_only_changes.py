@@ -3,7 +3,7 @@
 Yalnızca zaman damgası değişen veri dosyalarını geri alır (commit gürültüsünü önler).
 
 Neden?
-  `scrape-sync.yml` her çalışmada (30 dk) tüm `data/**/*.json` dosyalarını yeniden
+  `scrape-sync.yml` her çalışmada (60 dk) tüm `data/**/*.json` dosyalarını yeniden
   yazar; içerik aynı olsa bile `updated_at`, `volleybox_sync_updated_at` ve
   `guncellenme_zamani` alanları değiştiği için git her seferinde ~30 dosyada fark
   görür ve büyük JSON dosyalarının yeni bir sürümünü commit'ler.
@@ -39,10 +39,10 @@ if str(BASE_DIR) not in sys.path:
 from scripts.data_freshness import parse_timestamp  # noqa: E402
 
 # Her çalışmada değişen, içerik taşımayan alanlar (herhangi bir derinlikte).
-VOLATILE_KEYS = frozenset({"updated_at", "volleybox_sync_updated_at", "guncellenme_zamani"})
+VOLATILE_KEYS = frozenset({"updated_at", "volleybox_sync_updated_at", "guncellenme_zamani", "last_attempt_at", "last_success_at", "content_changed_at"})
 DEFAULT_HEARTBEAT_HOURS = 12.0
 # `scripts/check_data_freshness.py` (24 saat sınırı) bu dosyaları denetler; yalnızca bunlar heartbeat ister.
-HEARTBEAT_FILES = frozenset({"data/cities.json"})
+HEARTBEAT_FILES = frozenset({"data/cities.json", "data/fixtures.json", "data/scrape-status.json"})
 
 
 def strip_volatile(obj: Any) -> Any:
@@ -121,7 +121,7 @@ def process(repo: Path, heartbeat_hours: float, dry_run: bool = False, data_dir:
 
         if strip_volatile(old_payload) != strip_volatile(new_payload):
             kept_changed.append(rel)
-        elif should_restore(old_payload, new_payload, heartbeat_hours, needs_heartbeat=rel in HEARTBEAT_FILES):
+        elif should_restore(old_payload, new_payload, heartbeat_hours, needs_heartbeat=rel in HEARTBEAT_FILES or rel.startswith("data/cities/")):
             if not dry_run:
                 res = _git(["checkout", "HEAD", "--", rel], repo)
                 if res.returncode != 0:

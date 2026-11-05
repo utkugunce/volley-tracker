@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect } from "vitest";
 import { buildClubPyramid } from "../team/clubPyramid";
 type PyramidInput = Parameters<typeof buildClubPyramid>[0];

@@ -1,3 +1,5 @@
+import { RateLimiter } from "@/utils/rateLimit";
+import { getRateLimitResponse, validateSameOrigin } from "@/utils/apiSecurity";
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import {
@@ -8,7 +10,14 @@ import {
   verifySyncPasswordFromValue,
 } from "@/utils/scrapeTrigger";
 
+const limiter = new RateLimiter({ name: "sync-trigger", windowMs: 60_000, maxRequests: 5 });
+
 export async function POST(request: Request) {
+  const originError = validateSameOrigin(request);
+  if (originError) return originError;
+  const limited = await getRateLimitResponse(request, limiter);
+  if (limited) return limited;
+
   let bodyPassword: string | undefined;
   try {
     const body = await request.json();
@@ -45,7 +54,7 @@ export async function POST(request: Request) {
         status: job.status,
         activeStep: job.activeStep,
         startedAt: job.createdAt,
-        message: "81 İl Altyapı ve Kadınlar 2. Ligi çekim işlemi başlatıldı.",
+        message: "81 İl Altyapı çekim işlemi başlatıldı.",
       });
     } catch (err) {
       return NextResponse.json(
@@ -64,9 +73,9 @@ export async function POST(request: Request) {
       ok: true,
       mode: "github_actions",
       status: "in_progress",
-      activeStep: "81 İl ve Kadınlar 2. Ligi taraması başlatılıyor...",
+      activeStep: "81 İl Altyapı taraması başlatılıyor...",
       startedAt: new Date().toISOString(),
-      message: "81 İl Altyapı ve Kadınlar 2. Ligi çekim işlemi başlatıldı.",
+      message: "81 İl Altyapı çekim işlemi başlatıldı.",
     });
   }
 

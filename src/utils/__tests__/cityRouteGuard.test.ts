@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, expect, it } from "vitest";
 import { evaluateCityRoute, isAllowedCitySlug, splitPathname } from "@/utils/cityRouteGuard";
 import { CITY_SLUGS, STATIC_ROOT_SEGMENTS } from "@/utils/citySlugs";

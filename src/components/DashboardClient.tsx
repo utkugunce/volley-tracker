@@ -173,11 +173,11 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
   // Şehir ve lig bazlı gizleme / daraltma durumları (Collapse / Accordion)
   // Belirli bir tarih seçildiğinde iller otomatik açık gelir (defaultCollapsed: false)
   const isResultDateFiltered = filters.selectedResultDate !== "all";
-  const resultCityCollapse = useCollapseControls(resultCityKeys, !isResultDateFiltered);
+  const resultCityCollapse = useCollapseControls(resultCityKeys, !isResultDateFiltered && currentCitySlug === "all");
   const resultLeagueCollapse = useCollapseControls(allResultLeagueKeys, false);
 
   const isFixtureDateFiltered = filters.selectedDate !== "all";
-  const fixtureCityCollapse = useCollapseControls(fixtureCityKeys, !isFixtureDateFiltered);
+  const fixtureCityCollapse = useCollapseControls(fixtureCityKeys, !isFixtureDateFiltered && currentCitySlug === "all");
   const fixtureLeagueCollapse = useCollapseControls(allFixtureLeagueKeys, false);
 
   return (
@@ -316,7 +316,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             todayStr={todayStr}
             yesterdayStr={yesterdayStr}
             totalMatchesCount={data?.total_matches}
-            scoredMatchesCount={resultsCount}
+            scoredMatchesCount={data.scored_matches ?? data.matches.filter(isMatchScored).length}
             onSelectDate={filters.setSelectedDate}
           />
         ) : activeMainTab === "today" ? (

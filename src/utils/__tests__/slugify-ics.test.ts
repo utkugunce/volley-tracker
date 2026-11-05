@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect } from "vitest";
 import { slugify } from "../slugify";
 import { generateMatchIcs, generateSeasonIcs } from "../ics";

@@ -76,8 +76,8 @@ describe("HomePortalView Component", () => {
       />
     );
 
-    // 1. Canlı Hub başlığı ve filtre butonları
-    expect(screen.getByText(/Canlı Hub/i)).toBeInTheDocument();
+    // 1. Maç Merkezi başlığı ve filtre butonları
+    expect(screen.getByRole("button", { name: /Maç Merkezi/i })).toBeInTheDocument();
     expect(screen.getAllByText(/Bugün/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/Biten Skorlar/i)).toBeInTheDocument();
 

@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { GET, POST } from "../route";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";

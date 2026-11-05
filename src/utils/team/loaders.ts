@@ -5,7 +5,6 @@ import { Match } from "@/types/fixture";
 import { applyOverridesToMatches, getOverridesDataSync, type MatchOverride } from "../overrides";
 import { TeamRostersDatabase } from "@/types/roster";
 import { isCityHidden } from "../cityHelper";
-import { setActiveDataSource } from "../supabaseData";
 import type { StandingsCityEntry } from "./types";
 
 let cachedAllData: {
@@ -46,7 +45,6 @@ export function loadTeamRosters(): TeamRostersDatabase {
     try {
       cachedRosters = JSON.parse(fs.readFileSync(rostersPath, "utf-8"));
       rostersTimestamp = now;
-      setActiveDataSource("json-fallback");
       return cachedRosters!;
     } catch (e) {
       console.error("Error reading team-rosters.json:", e);

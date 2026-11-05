@@ -4,16 +4,6 @@ import type { TeamRostersDatabase } from "@/types/roster";
 
 export type ActiveDataSource = "supabase" | "json-fallback";
 
-let activeDataSource: ActiveDataSource = "json-fallback";
-
-export function getActiveDataSource(): ActiveDataSource {
-  return activeDataSource;
-}
-
-export function setActiveDataSource(source: ActiveDataSource): void {
-  activeDataSource = source;
-}
-
 const CACHE_TTL_MS = 60 * 1000;
 
 interface CacheEntry<T> {
@@ -35,7 +25,6 @@ export async function getSupabaseCitiesCached(): Promise<CityEntry[] | null> {
 
   const supabase = getSupabaseAdmin();
   if (!supabase) {
-    setActiveDataSource("json-fallback");
     return null;
   }
 
@@ -45,7 +34,6 @@ export async function getSupabaseCitiesCached(): Promise<CityEntry[] | null> {
       .select("city, city_slug");
 
     if (error || !matches || matches.length === 0) {
-      setActiveDataSource("json-fallback");
       return null;
     }
 
@@ -63,11 +51,9 @@ export async function getSupabaseCitiesCached(): Promise<CityEntry[] | null> {
     }));
 
     citiesCache = { at: now, data: cities };
-    setActiveDataSource("supabase");
     return cities;
   } catch (err) {
     console.warn("Supabase cities okuma hatası:", err);
-    setActiveDataSource("json-fallback");
     return null;
   }
 }
@@ -83,7 +69,6 @@ export async function getSupabaseTeamRostersCached(): Promise<TeamRostersDatabas
 
   const supabase = getSupabaseAdmin();
   if (!supabase) {
-    setActiveDataSource("json-fallback");
     return null;
   }
 
@@ -98,13 +83,11 @@ export async function loadCitiesWithFallback(): Promise<CityEntry[]> {
   try {
     const fromSupabase = await getSupabaseCitiesCached();
     if (fromSupabase && fromSupabase.length > 0) {
-      setActiveDataSource("supabase");
       return fromSupabase;
     }
   } catch (err) {
     console.warn("Supabase cities fallback:", err);
   }
-  setActiveDataSource("json-fallback");
   const { getAllCitiesList } = await import("./cityHelper");
   return getAllCitiesList();
 }
@@ -117,13 +100,11 @@ export async function loadTeamRostersWithFallback(): Promise<TeamRostersDatabase
   try {
     const fromSupabase = await getSupabaseTeamRostersCached();
     if (fromSupabase && Object.keys(fromSupabase).length > 0) {
-      setActiveDataSource("supabase");
       return fromSupabase;
     }
   } catch (err) {
     console.warn("Supabase rosters fallback:", err);
   }
-  setActiveDataSource("json-fallback");
   const { loadTeamRosters } = await import("./team/loaders");
   return loadTeamRosters();
 }

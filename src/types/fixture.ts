@@ -66,12 +66,17 @@ export interface StandingItem {
 }
 
 export interface FixturesData {
+  last_attempt_at?: string;
+  last_success_at?: string;
+  content_changed_at?: string;
+  data_source?: "supabase" | "json-fallback";
   updated_at: string;
   city?: string;
   slug?: string;
   title?: string;
   total_matches: number;
   scored_matches?: number;
+  results_count?: number;
   all_teams?: string[];
   unfiltered_total?: number;
   source: string;

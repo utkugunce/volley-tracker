@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import type { FixturesData, Match } from "@/types/fixture";
+import { TimedCache } from "@/utils/timedCache";
 import { toErrorLike } from "@/utils/errors";
 
 // İstemci tarafı şehir verisi önbelleği (Tekrar tıklanan iller 0ms anında açılır)
-const clientCityCache = new Map<string, FixturesData>();
+const clientCityCache = new TimedCache<FixturesData>();
 
 function matchIdentityKey(m: Match): string {
   return `${m.date || ""}|${(m.home_team || "").trim()}|${(m.away_team || "").trim()}`;
@@ -130,11 +131,11 @@ export function useFixturesData({
     const request = (async () => {
       try {
         const cached = clientCityCache.get(currentCitySlug);
-        // Sadece tam ve güncel önbellek varsa kullan; 1700 altındaki eski/kısmi önbelleği atla
+        // Yalnızca tam veri kümesi içeren, süresi dolmamış önbelleği kullan.
         if (
           cached &&
           (cached.matches?.length || 0) > (data?.matches?.length || 0) &&
-          (currentCitySlug !== "all" || (cached.matches?.length || 0) >= 1700)
+          cached.total_matches === cached.matches.length
         ) {
           setData(cached);
           setIsPartialData(false);
@@ -150,7 +151,7 @@ export function useFixturesData({
           return false;
         }
         const json: FixturesData = await res.json();
-        if (json && Array.isArray(json.matches) && json.matches.length > 0) {
+        if (json && Array.isArray(json.matches)) {
           setData((prev) => {
             const reconciled = preserveScoredMatches(json, prev);
             clientCityCache.set(currentCitySlug, reconciled);
@@ -169,13 +170,6 @@ export function useFixturesData({
     fullDataRequestRef.current = request;
     return request;
   }, [currentCitySlug, data?.matches?.length, isPartialData]);
-
-  // Başlangıç verisi kısmi (partial) ise sayfa açılır açılmaz arka planda tam veriyi sessizce tamamla
-  useEffect(() => {
-    if (initialDataPartial && isPartialData) {
-      void ensureFullData();
-    }
-  }, [ensureFullData, initialDataPartial, isPartialData]);
 
   /** İl verisini önbellekten (anında) ya da API'den yükler. */
   const loadCityData = useCallback(async (slug: string) => {

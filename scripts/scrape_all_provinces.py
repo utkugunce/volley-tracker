@@ -20,6 +20,7 @@ logger = logging.getLogger("ScraperSync")
 BASE_DIR = Path(__file__).resolve().parent.parent
 if str(BASE_DIR) not in sys.path:
     sys.path.insert(0, str(BASE_DIR))
+from scripts.source_snapshot import write_source_snapshot, record_scan_status
 from scripts.atomic_write import atomic_write_json
 
 # Eğer mevcut ortamda httpx yoksa ve .venv mevcutsa otomatik .venv python ile çalıştır
@@ -848,8 +849,8 @@ def scrape_single_city(city_info):
             city_file = CITIES_DIR / "istanbul.json"
             ist_data["matches"] = merge_volleybox_data(matches, city_file)
             
-            atomic_write_json(city_file, ist_data, ensure_ascii=False, indent=2, min_keys=["matches"])
-            atomic_write_json(FIXTURES_JSON, ist_data, ensure_ascii=False, indent=2, min_keys=["matches"])
+            write_source_snapshot(city_file, ist_data)
+            write_source_snapshot(FIXTURES_JSON, ist_data)
 
             return {
                 "ilid": "34",
@@ -1134,9 +1135,9 @@ def scrape_single_city(city_info):
         city_file = CITIES_DIR / f"{subdomain}.json"
         # Mevcut volleybox verilerini koru
         city_payload["matches"] = merge_volleybox_data(city_matches, city_file)
-        atomic_write_json(city_file, city_payload, ensure_ascii=False, indent=2, min_keys=["matches"])
+        write_source_snapshot(city_file, city_payload)
         if subdomain == "istanbul":
-            atomic_write_json(FIXTURES_JSON, city_payload, ensure_ascii=False, indent=2, min_keys=["matches"])
+            write_source_snapshot(FIXTURES_JSON, city_payload)
         data_file_rel = f"data/cities/{subdomain}.json"
     else:
         # Eğer bu taramada yeni maç bulunamadıysa ama diskte önceden kaydedilmiş aktif veri varsa koru
@@ -1163,7 +1164,7 @@ def scrape_single_city(city_info):
                     cached_data["matches"] = cached_matches
                     cached_data["standings"] = cached_standings
                     data_file_rel = f"data/cities/{subdomain}.json"
-                    cached_data["updated_at"] = datetime.now().astimezone().isoformat()
+                    cached_data["last_attempt_at"] = datetime.now().astimezone().isoformat()
                     try:
                         with open(city_file, "w", encoding="utf-8") as f:
                             json.dump(cached_data, f, ensure_ascii=False, indent=2)
@@ -1229,12 +1230,15 @@ def main():
     print("=" * 80)
     print("🏆 TVF 81 İL VOLEYBOL İL TEMSİLCİLİĞİ CANLI TARAMA VE VERİ MOTORU")
     print("=" * 80)
+    status_path = BASE_DIR / "data" / "scrape-status.json"
+    record_scan_status(status_path, "running")
     print("📡 Merkezi il dizini (https://voleyboliltemsilciligi.com/api/cities) sorgulanıyor...")
     
     try:
         r = httpx.get("https://voleyboliltemsilciligi.com/api/cities", timeout=12.0)
         cities_raw = r.json()
     except Exception as e:
+        record_scan_status(status_path, "failure")
         print(f"❌ Hata: TVF Merkezi API'sine ulaşılamadı: {e}")
         return
 
@@ -1335,30 +1339,11 @@ def main():
 
     atomic_write_json(CITIES_INDEX_JSON, master_payload, ensure_ascii=False, indent=2, min_keys=["cities"])
 
-    # 81 il tarama zaman damgasını tüm aktif şehir JSON dosyalarına ve fixtures.json'a yansıt
-    scan_timestamp = master_payload.get("updated_at")
-    if scan_timestamp:
-        for c_info in master_payload.get("cities", []):
-            df_rel = c_info.get("data_file")
-            if df_rel:
-                c_path = BASE_DIR / df_rel
-                if c_path.exists():
-                    try:
-                        with open(c_path, "r", encoding="utf-8") as cf:
-                            c_data = json.load(cf)
-                        c_data["updated_at"] = scan_timestamp
-                        atomic_write_json(c_path, c_data, ensure_ascii=False, indent=2, min_keys=["matches"])
-                    except Exception as ex_sync:
-                        logger.debug(f"{c_path.name} updated_at güncellenirken hata: {ex_sync}")
-
-        if FIXTURES_JSON.exists():
-            try:
-                with open(FIXTURES_JSON, "r", encoding="utf-8") as ff:
-                    f_data = json.load(ff)
-                f_data["updated_at"] = scan_timestamp
-                atomic_write_json(FIXTURES_JSON, f_data, ensure_ascii=False, indent=2, min_keys=["matches"])
-            except Exception:
-                pass
+    # A scan attempt must not make a failed/cached city's data appear fresh.
+    successful = all(not any(term in str(c.get("status", "")).lower() for term in
+                         ("hata", "http", "önbellek", "zaman aşımı")) for c in results)
+    record_scan_status(status_path, "success" if successful else "partial",
+                       [{"slug": c["slug"], "status": c["status"]} for c in results])
 
     validation_result = validate_city_index(master_payload)
     print_validation_summary("81 il", validation_result)

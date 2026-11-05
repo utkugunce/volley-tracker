@@ -155,8 +155,8 @@ body {
   }
 
   .scroll-reveal-section {
-    opacity: 0;
-    transform: translateY(16px);
+    opacity: 1;
+    transform: none;
     transition:
       opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
       transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -581,4 +581,14 @@ html, body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Keyboard and touch affordances apply in both themes. */
+:where(button, summary, [role="button"], a):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+@media (pointer: coarse) {
+  button, summary, [role="button"] { min-height: 44px; }
+  button[aria-label], button[title] { min-width: 44px; }
 }

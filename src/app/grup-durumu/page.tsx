@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { DashboardClient } from "@/components/DashboardClient";
-import { getInitialFixtures } from "@/utils/getInitialFixtures";
+import { getInitialFixturesResolved as getInitialFixtures } from "@/utils/loadFixtures";
 
 export const revalidate = 900;
 
@@ -31,7 +31,7 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default function GroupStatusPage() {
-  const initialData = getInitialFixtures();
+export default async function GroupStatusPage() {
+  const initialData = await getInitialFixtures();
   return <DashboardClient initialData={initialData} initialTab="group-status" />;
 }

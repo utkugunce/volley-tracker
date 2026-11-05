@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect } from "vitest";
 import { filterResultMatches, filterFixtureMatches, computeVolleyboxStats } from "../dashboardFilters";
 import type { Match } from "@/types/fixture";

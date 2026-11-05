@@ -107,7 +107,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   if (!primaryTeam) {
     if (isDismissed) return null;
     return (
-      <div className="bg-surface border border-line/70 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs transition-colors">
+      <div className="bg-surface border border-line/70 rounded-xl px-3 py-1 sm:py-2 flex items-center justify-between gap-2 text-xs transition-colors">
         <div className="flex items-center gap-2 min-w-0">
           <Star size={13} className="text-amber-400 fill-amber-400/20 shrink-0" />
           <span className="font-semibold text-white text-[11px] shrink-0">
@@ -118,7 +118,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setIsPicking(true)}
-            className="text-[11px] font-semibold text-primary hover:underline underline-offset-2 cursor-pointer transition-colors"
+            className="min-h-11 text-[11px] font-semibold text-primary hover:underline underline-offset-2 cursor-pointer transition-colors"
           >
             Kulüp Seç
           </button>
@@ -203,7 +203,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   const opponentLogo = opponentMapping?.local_logo || opponentMapping?.logo_url;
 
   return (
-    <div className="bg-surface border border-line/70 rounded-xl px-3.5 py-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+    <div className="bg-surface border border-line/70 rounded-xl px-3 py-1 sm:py-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
       {/* Sol: Kulüp Bilgisi + Sezon Karnesi */}
       <div className="flex items-center gap-2.5 min-w-0">
         <TeamBadge name={primaryTeam} logoUrl={teamLogo} size="xs" />

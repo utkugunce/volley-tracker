@@ -1,3 +1,5 @@
+import { RateLimiter } from "@/utils/rateLimit";
+import { getRateLimitResponse, validateSameOrigin } from "@/utils/apiSecurity";
 import { NextResponse } from "next/server";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
 import {
@@ -6,7 +8,14 @@ import {
   verifySyncPasswordFromValue,
 } from "@/utils/scrapeTrigger";
 
+const limiter = new RateLimiter({ name: "sync-cancel", windowMs: 60_000, maxRequests: 5 });
+
 export async function POST(request: Request) {
+  const originError = validateSameOrigin(request);
+  if (originError) return originError;
+  const limited = await getRateLimitResponse(request, limiter);
+  if (limited) return limited;
+
   let bodyPassword: string | undefined;
   let runId: number | undefined;
   try {

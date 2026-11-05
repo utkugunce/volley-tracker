@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
       {/* 1. Üst Global Bar: Marka + Bütünleşik Lig Seçici (Altyapı / 2. Lig) + İl Seçici */}
       <div className="max-w-screen-2xl mx-auto px-3 sm:px-4 py-2 flex flex-wrap min-[1200px]:flex-nowrap items-center justify-between border-b border-line/50 gap-x-2.5 gap-y-1.5">
         <div className="flex items-center gap-2.5 sm:gap-3 flex-wrap min-[1200px]:flex-nowrap min-[1200px]:min-w-0 min-[1200px]:[&>*:not(.hdr-tagline)]:shrink-0">
-          <BrandLogo onClick={() => onSelectTab("home")} />
+          <BrandLogo variant="compact" onClick={() => onSelectTab("home")} />
 
           {/* Apple Sports / FotMob Tarzı Bütünleşik Lig Seçici (Segmented League Switcher) */}
 
@@ -129,7 +129,11 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
           )}
 
-          <SettingsControls />
+          <div className="hidden sm:block"><SettingsControls /></div>
+          <details className="relative sm:hidden">
+            <summary className="min-h-11 flex items-center px-2 cursor-pointer rounded-lg text-xs text-ink-2">Ayarlar</summary>
+            <div className="absolute right-0 top-full z-50 p-3 bg-surface border border-line rounded-xl shadow-xl"><SettingsControls /></div>
+          </details>
 
           <button
             onClick={() => window.print()}

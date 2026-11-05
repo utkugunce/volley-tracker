@@ -140,10 +140,10 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
 
   const upcomingMatches = useMemo(() => {
     const valid = matches
-      .filter((m) => !isMatchScored(m) && m.date && m.date !== "TBD" && !isMatchPassed(m.date, m.time, m.status))
+      .filter((m) => !isMatchScored(m) && m.date && m.date !== todayStr && m.date !== yesterdayStr && m.date !== "TBD" && !isMatchPassed(m.date, m.time, m.status))
       .sort((a, b) => compareMatchDateTime(a, b, "asc"));
     return valid.slice(0, 8);
-  }, [matches]);
+  }, [matches, todayStr, yesterdayStr]);
 
   const activeCities = useMemo(() => {
     return citiesList
@@ -220,7 +220,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
   return (
     <div className="space-y-4 animate-in fade-in-50 duration-200">
       {/* Sayfa Başlığı (Semantik H1 & Canlı Gösterge) */}
-      <div className="flex items-center justify-between pb-1">
+      <div className="hidden sm:flex items-center justify-between pb-1">
         <h1 className="text-sm sm:text-base font-bold uppercase tracking-wider flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
           <span className="hero-heading-gradient">TVF Altyapı Maç Merkezi & Bülteni</span>
@@ -231,7 +231,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
       </div>
 
       {/* 1. ÜST KONTROL BAR: FOTMOB / APPLE SPORTS SEGMENTED FİLTRE */}
-      <div className="glass-panel rounded-2xl p-2 sm:p-2.5 border border-line/70 flex flex-col lg:flex-row lg:items-center justify-between gap-2.5 min-w-0">
+      <div className="hidden sm:flex glass-panel rounded-2xl p-2 sm:p-2.5 border border-line/70 flex-col lg:flex-row lg:items-center justify-between gap-2.5 min-w-0">
         {/* Sol: Akış Filtreleri (Tümü, Bugün, Bitenler, Fikstür) */}
         <div
           onWheel={(e) => {
@@ -239,7 +239,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
               e.currentTarget.scrollLeft += e.deltaY;
             }
           }}
-          className="flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 shrink-0"
+          className="hidden sm:flex items-center gap-1 overflow-x-auto no-scrollbar py-0.5 shrink-0"
         >
           <button
             type="button"
@@ -250,7 +250,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
             }`}
           >
-            <span>Canlı Hub</span>
+            <span>Maç Merkezi</span>
             <span className="text-[10px] font-display font-semibold tabular-nums opacity-80">
               {stats.totalMatches}
             </span>
@@ -436,13 +436,13 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     </span>
                     <div>
                       <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
-                        <span>Günün Maç Programı & Canlı Skorlar</span>
+                        <span>Günün Maç Programı & Skorlar</span>
                         <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-mono font-bold">
                           {todayMatches.length} Maç
                         </span>
                       </h2>
                       <p className="text-[11px] text-ink-3 font-medium">
-                        {formatDateTurkish(todayStr)} · TVF Canlı Altyapı Bülteni
+                        {formatDateTurkish(todayStr)} · TVF Altyapı Bülteni
                       </p>
                     </div>
                   </div>
@@ -452,7 +452,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     onClick={() => onNavigateTab("today")}
                     className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1 cursor-pointer shrink-0"
                   >
-                    <span>Günün Maçları Tabı</span>
+                    <span>Tüm Maçlar</span>
                     <ArrowRight size={13} />
                   </button>
                 </div>
@@ -465,6 +465,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                   {quickDatePills.map((pill) => (
                     <button
                       key={pill.dateStr}
+                      aria-label={`${pill.label}, ${pill.count} maç`}
                       type="button"
                       onClick={() => {
                         onSelectDate?.(pill.dateStr);
@@ -495,7 +496,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
 
                 {/* Maç Listesi */}
                 <div className="space-y-1.5 relative z-10">
-                  {todayMatches.map((match) => (
+                  {todayMatches.slice(0, 8).map((match) => (
                     <VolleyMatchRow
                       key={match.id}
                       match={match}
@@ -505,6 +506,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                       todayStr={todayStr}
                     />
                   ))}
+                  {todayMatches.length > 8 && <button type="button" className="w-full min-h-11 text-sm font-semibold text-primary" onClick={() => onNavigateTab("today")}>Tüm {todayMatches.length} maçı göster →</button>}
                 </div>
               </div>
             ) : (
@@ -723,7 +725,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 <Sparkles size={14} className="text-primary shrink-0" />
                 <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
               </div>
-              <span className="font-mono font-semibold text-ink shrink-0">81 İl Canlı Takip</span>
+              <span className="font-mono font-semibold text-ink shrink-0">81 İl Takibi</span>
             </div>
           </div>
         )}

@@ -1,5 +1,5 @@
 import { DashboardClient } from "@/components/DashboardClient";
-import { getInitialHomeFixtures } from "@/utils/getInitialFixtures";
+import { getInitialHomeFixtures } from "@/utils/loadFixtures";
 
 export const revalidate = 900;
 
@@ -31,7 +31,7 @@ export function generateMetadata(): import("next").Metadata {
   };
 }
 
-export default function Page() {
-  const initialData = getInitialHomeFixtures();
+export default async function Page() {
+  const initialData = await getInitialHomeFixtures();
   return <DashboardClient initialData={initialData} initialTab="home" initialCity="all" initialDataPartial={true} />;
 }

@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect } from "vitest";
 import { getAppRoute, parseAppRoute } from "@/components/DashboardClient";
 import { getCityNameFromSlug, isValidCitySlug } from "@/utils/cityHelper";
