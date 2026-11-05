@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:57:45.678934",
+  "updated_at": "2026-11-05T18:28:02.851444",
   "city": "Eskişehir",
   "slug": "eskisehir",
   "title": "TVF Eskişehir Genç & Yıldız Kızlar Süper Lig",
@@ -581,29 +581,29 @@
     "Yıldız Kızlar Süper Lig - Yarı Final C Grubu": [
       {
         "rank": 1,
-        "team": "Es Güneş Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
+        "team": "Es Voleybol Akademi Spor Kulübü - A U16",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Es Voleybol Akademi Spor Kulübü - A U16",
-        "played": 0,
+        "team": "Es Voleybol Akademi Spor Kulübü - B U16",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "Es Voleybol Akademi Spor Kulübü - B U16",
+        "team": "Es Güneş Spor Kulübü U16",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -3433,11 +3433,16 @@
       "match_no": "1",
       "home_team": "Es Voleybol Akademi Spor Kulübü - A U16",
       "away_team": "Es Voleybol Akademi Spor Kulübü - B U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-12",
+        "22-25",
+        "25-15",
+        "25-20"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414685",
@@ -3537,9 +3542,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T16:57:45.680696+00:00",
-  "last_success_at": "2026-11-05T16:57:45.680696+00:00",
-  "content_changed_at": "2026-11-05T16:57:45.680696+00:00",
+  "last_attempt_at": "2026-11-05T18:28:02.856304+00:00",
+  "last_success_at": "2026-11-05T18:28:02.856304+00:00",
+  "content_changed_at": "2026-11-05T18:28:02.856304+00:00",
   "volleybox_synced_matches": 52,
-  "volleybox_sync_updated_at": "2026-11-05T16:59:43.584647"
+  "volleybox_sync_updated_at": "2026-11-05T18:29:47.998150"
 }
