@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-05T16:58:17.997500+00:00",
+  "updated_at": "2026-11-05T18:28:29.214790+00:00",
   "total_cities": 81,
   "active_cities": 38,
-  "total_matches": 1848,
+  "total_matches": 1851,
   "cities": [
     {
       "ilid": "1",
@@ -110,7 +110,7 @@
       "name": "Bilecik",
       "slug": "bilecik",
       "url": "https://bilecik.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)",
+      "status": "Aktif (20 Maç Mevcut)",
       "matches_count": 20,
       "standings_count": 1,
       "data_file": "data/cities/bilecik.json"
@@ -170,7 +170,7 @@
       "name": "Çanakkale",
       "slug": "canakkale",
       "url": "https://canakkale.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (56 Maç Mevcut)",
+      "status": "Aktif (56 Maç Mevcut)",
       "matches_count": 56,
       "standings_count": 8,
       "data_file": "data/cities/canakkale.json"
@@ -200,7 +200,7 @@
       "name": "Denizli",
       "slug": "denizli",
       "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (47 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (47 Maç Mevcut)",
       "matches_count": 47,
       "standings_count": 2,
       "data_file": "data/cities/denizli.json"
@@ -210,8 +210,8 @@
       "name": "Diyarbakır",
       "slug": "diyarbakir",
       "url": "https://diyarbakir.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (15 Maç Mevcut)",
-      "matches_count": 15,
+      "status": "Aktif (10 Maç Mevcut)",
+      "matches_count": 10,
       "standings_count": 1,
       "data_file": "data/cities/diyarbakir.json"
     },
@@ -442,9 +442,9 @@
       "name": "Malatya",
       "slug": "malatya",
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (58 Maç Mevcut)",
-      "matches_count": 58,
-      "standings_count": 1,
+      "status": "Aktif (66 Maç Mevcut)",
+      "matches_count": 66,
+      "standings_count": 4,
       "data_file": "data/cities/malatya.json"
     },
     {

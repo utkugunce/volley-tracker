@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:58:08.714551",
+  "updated_at": "2026-11-05T18:28:20.130127",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -58,12 +58,12 @@
       {
         "rank": 3,
         "team": "55 Matasyon Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 1,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 2,
         "form": []
       },
       {
@@ -102,12 +102,12 @@
       {
         "rank": 7,
         "team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 6,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -825,11 +825,16 @@
       "match_no": "14",
       "home_team": "Samsun Gülizar-Hasan Yılmaz Spor Lisesi U18",
       "away_team": "55 Matasyon Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "25-15",
+        "20-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "402790",
@@ -2934,9 +2939,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T16:58:08.716314+00:00",
-  "last_success_at": "2026-11-05T16:58:08.716314+00:00",
-  "content_changed_at": "2026-11-05T14:15:07.387855+00:00",
+  "last_attempt_at": "2026-11-05T18:28:20.132126+00:00",
+  "last_success_at": "2026-11-05T18:28:20.132126+00:00",
+  "content_changed_at": "2026-11-05T18:28:20.132126+00:00",
   "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-11-05T16:59:43.703804"
+  "volleybox_sync_updated_at": "2026-11-05T18:29:48.128706"
 }

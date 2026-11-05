@@ -1,5 +1,5 @@
 {
-  "last_attempt_at": "2026-11-05T16:57:01.452959+00:00",
+  "last_attempt_at": "2026-11-05T18:27:25.857770+00:00",
   "last_success_at": null,
   "status": "partial",
   "cities": [
@@ -45,7 +45,7 @@
     },
     {
       "slug": "bilecik",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
+      "status": "Aktif (20 Maç Mevcut)"
     },
     {
       "slug": "bingol",
@@ -69,7 +69,7 @@
     },
     {
       "slug": "canakkale",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (56 Maç Mevcut)"
+      "status": "Aktif (56 Maç Mevcut)"
     },
     {
       "slug": "cankiri",
@@ -81,11 +81,11 @@
     },
     {
       "slug": "denizli",
-      "status": "Aktif (47 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (47 Maç Mevcut)"
     },
     {
       "slug": "diyarbakir",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (15 Maç Mevcut)"
+      "status": "Aktif (10 Maç Mevcut)"
     },
     {
       "slug": "edirne",
@@ -177,7 +177,7 @@
     },
     {
       "slug": "malatya",
-      "status": "Aktif (58 Maç Mevcut)"
+      "status": "Aktif (66 Maç Mevcut)"
     },
     {
       "slug": "manisa",

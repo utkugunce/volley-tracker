@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-05T14:09:53.057586",
+  "updated_at": "2026-11-05T18:27:52.691319",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 15,
+  "total_matches": 10,
   "source": "https://diyarbakir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -43,11 +43,11 @@
       {
         "rank": 2,
         "team": "Diyarbakır Voleybolcular Spor Kulübü U18",
-        "played": 5,
-        "won": 4,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 11,
-        "sets_won": 12,
+        "points": 8,
+        "sets_won": 9,
         "sets_lost": 6,
         "form": []
       },
@@ -55,22 +55,22 @@
         "rank": 3,
         "team": "Diyarbakır Büyükşehir Belediyespor U18",
         "played": 4,
-        "won": 3,
-        "lost": 1,
-        "points": 10,
-        "sets_won": 11,
-        "sets_lost": 4,
+        "won": 2,
+        "lost": 2,
+        "points": 7,
+        "sets_won": 8,
+        "sets_lost": 7,
         "form": []
       },
       {
         "rank": 4,
         "team": "Dicle Üniversitesi Spor Kulübü U18",
-        "played": 5,
-        "won": 2,
+        "played": 4,
+        "won": 1,
         "lost": 3,
-        "points": 6,
-        "sets_won": 8,
-        "sets_lost": 10,
+        "points": 3,
+        "sets_won": 5,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -81,17 +81,6 @@
         "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 12,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Diyarbakır İçkale Spor Kulübü U18",
-        "played": 4,
-        "won": 0,
-        "lost": 4,
-        "points": 0,
-        "sets_won": 1,
         "sets_lost": 12,
         "form": []
       }
@@ -144,53 +133,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261023-002",
-      "city": "Diyarbakır",
-      "date": "2026-10-23",
-      "time": "20:00",
-      "hall": "Bağlar Spor Kompleksi",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kadın",
-      "match_no": "2",
-      "home_team": "Dicle Üniversitesi Spor Kulübü U18",
-      "away_team": "Diyarbakır İçkale Spor Kulübü U18",
-      "score": "3 - 1",
-      "home_score": 3,
-      "away_score": 1,
-      "set_scores": [
-        "25-8",
-        "18-25",
-        "25-23",
-        "25-19"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411452",
-        "url": "https://women.volleybox.net/tr/dicle-universitesi-spor-kulubu-u18-diyarbakr-ckale-spor-kulubu-u18-c411452",
-        "host_name": "Dicle Üniversitesi Spor Kulübü U18",
-        "guest_name": "Diyarbakır İçkale Spor Kulübü U18",
-        "score": "3 - 1",
-        "has_score": true,
-        "vb_date": "2026-10-23",
-        "vb_time": "20:00",
-        "vb_hall": "Bağlar Belediyesi Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-23",
-          "vb_time": "20:00",
-          "vb_hall": "Bağlar Belediyesi Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "diyarbakir-20261024-003",
+      "id": "diyarbakir-20261024-002",
       "city": "Diyarbakır",
       "date": "2026-10-24",
       "time": "14:00",
@@ -199,7 +142,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "3",
+      "match_no": "2",
       "home_team": "Diyarbakır Voleybolcular Spor Kulübü U18",
       "away_team": "Dicle Üniversitesi Spor Kulübü U18",
       "score": "3 - 1",
@@ -236,7 +179,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261025-004",
+      "id": "diyarbakir-20261025-003",
       "city": "Diyarbakır",
       "date": "2026-10-25",
       "time": "17:00",
@@ -245,7 +188,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "4",
+      "match_no": "3",
       "home_team": "Diyarbakır Gençlik Spor Kulübü U18",
       "away_team": "Megaron İnşaat Diyarbakır Spor",
       "score": "0 - 3",
@@ -281,7 +224,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261028-005",
+      "id": "diyarbakir-20261028-004",
       "city": "Diyarbakır",
       "date": "2026-10-28",
       "time": "15:00",
@@ -290,7 +233,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "5",
+      "match_no": "4",
       "home_team": "Diyarbakır Büyükşehir Belediyespor U18",
       "away_team": "Dicle Üniversitesi Spor Kulübü U18",
       "score": "3 - 1",
@@ -327,7 +270,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261028-006",
+      "id": "diyarbakir-20261028-005",
       "city": "Diyarbakır",
       "date": "2026-10-28",
       "time": "17:00",
@@ -336,7 +279,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "6",
+      "match_no": "5",
       "home_team": "Megaron İnşaat Diyarbakır Spor",
       "away_team": "Diyarbakır Voleybolcular Spor Kulübü U18",
       "score": "3 - 0",
@@ -372,7 +315,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261029-007",
+      "id": "diyarbakir-20261029-006",
       "city": "Diyarbakır",
       "date": "2026-10-29",
       "time": "12:00",
@@ -381,7 +324,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "7",
+      "match_no": "6",
       "home_team": "Diyarbakır Büyükşehir Belediyespor U18",
       "away_team": "Diyarbakır Voleybolcular Spor Kulübü U18",
       "score": "2 - 3",
@@ -419,7 +362,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261029-008",
+      "id": "diyarbakir-20261029-007",
       "city": "Diyarbakır",
       "date": "2026-10-29",
       "time": "14:00",
@@ -428,7 +371,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "8",
+      "match_no": "7",
       "home_team": "Megaron İnşaat Diyarbakır Spor",
       "away_team": "Dicle Üniversitesi Spor Kulübü U18",
       "score": "3 - 0",
@@ -464,97 +407,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261031-009",
-      "city": "Diyarbakır",
-      "date": "2026-10-31",
-      "time": "15:00",
-      "hall": "Şehitlik",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kadın",
-      "match_no": "9",
-      "home_team": "Diyarbakır Voleybolcular Spor Kulübü U18",
-      "away_team": "Diyarbakır İçkale Spor Kulübü U18",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-14",
-        "25-13",
-        "25-19"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "414766",
-        "url": "https://women.volleybox.net/tr/diyarbakr-voleybolcular-spor-kulubu-u18-diyarbakr-ckale-spor-kulubu-u18-c414766",
-        "host_name": "Diyarbakır Voleybolcular Spor Kulübü U18",
-        "guest_name": "Diyarbakır İçkale Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-31",
-        "vb_time": "15:00",
-        "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-31",
-          "vb_time": "15:00",
-          "vb_hall": "Şehitlik Çok Amaçlı Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "diyarbakir-20261101-010",
-      "city": "Diyarbakır",
-      "date": "2026-11-01",
-      "time": "15:00",
-      "hall": "Ş.Halit Gürsel",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kadın",
-      "match_no": "10",
-      "home_team": "Diyarbakır İçkale Spor Kulübü U18",
-      "away_team": "Diyarbakır Büyükşehir Belediyespor U18",
-      "score": "0 - 3",
-      "home_score": 0,
-      "away_score": 3,
-      "set_scores": [
-        "11-25",
-        "12-25",
-        "20-25"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "414767",
-        "url": "https://women.volleybox.net/tr/diyarbakr-ckale-spor-kulubu-u18-diyarbakr-buyuksehir-belediyespor-u18-c414767",
-        "host_name": "Diyarbakır İçkale Spor Kulübü U18",
-        "guest_name": "Diyarbakır Büyükşehir Belediyespor U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-01",
-        "vb_time": "15:00",
-        "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "15:00",
-          "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "diyarbakir-20261101-011",
+      "id": "diyarbakir-20261101-008",
       "city": "Diyarbakır",
       "date": "2026-11-01",
       "time": "17:00",
@@ -563,7 +416,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "11",
+      "match_no": "8",
       "home_team": "Dicle Üniversitesi Spor Kulübü U18",
       "away_team": "Diyarbakır Gençlik Spor Kulübü U18",
       "score": "3 - 0",
@@ -599,7 +452,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261104-012",
+      "id": "diyarbakir-20261104-009",
       "city": "Diyarbakır",
       "date": "2026-11-04",
       "time": "18:00",
@@ -608,7 +461,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "12",
+      "match_no": "9",
       "home_team": "Diyarbakır Gençlik Spor Kulübü U18",
       "away_team": "Diyarbakır Büyükşehir Belediyespor U18",
       "score": "0 - 3",
@@ -644,52 +497,7 @@
       }
     },
     {
-      "id": "diyarbakir-20261104-013",
-      "city": "Diyarbakır",
-      "date": "2026-11-04",
-      "time": "20:00",
-      "hall": "Ş.Halit Gürsel",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kadın",
-      "match_no": "13",
-      "home_team": "Megaron İnşaat Diyarbakır Spor",
-      "away_team": "Diyarbakır İçkale Spor Kulübü U18",
-      "score": "3 - 0",
-      "home_score": 3,
-      "away_score": 0,
-      "set_scores": [
-        "25-0",
-        "25-0",
-        "25-0"
-      ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415718",
-        "url": "https://women.volleybox.net/tr/megaron-nsaat-diyarbakr-spor-kulubu-u18-diyarbakr-ckale-spor-kulubu-u18-c415718",
-        "host_name": "Megaron İnşaat Diyarbakır Spor Kulübü U18",
-        "guest_name": "Diyarbakır İçkale Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-04",
-        "vb_time": "20:00",
-        "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-04",
-          "vb_time": "20:00",
-          "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "diyarbakir-20261105-014",
+      "id": "diyarbakir-20261105-010",
       "city": "Diyarbakır",
       "date": "2026-11-05",
       "time": "18:00",
@@ -698,14 +506,18 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Genç Kadın",
-      "match_no": "14",
+      "match_no": "10",
       "home_team": "Diyarbakır Büyükşehir Belediyespor U18",
       "away_team": "Megaron İnşaat Diyarbakır Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "11-25",
+        "14-25",
+        "23-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415719",
@@ -728,52 +540,11 @@
           "details": null
         }
       }
-    },
-    {
-      "id": "diyarbakir-20261105-015",
-      "city": "Diyarbakır",
-      "date": "2026-11-05",
-      "time": "20:00",
-      "hall": "Ş.Halit Gürsel",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Genç Kadın",
-      "match_no": "15",
-      "home_team": "Diyarbakır İçkale Spor Kulübü U18",
-      "away_team": "Diyarbakır Gençlik Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415720",
-        "url": "https://women.volleybox.net/tr/diyarbakr-ckale-spor-kulubu-u18-diyarbakr-genclik-spor-kulubu-u18-c415720",
-        "host_name": "Diyarbakır İçkale Spor Kulübü U18",
-        "guest_name": "Diyarbakır Gençlik Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-05",
-        "vb_time": "20:00",
-        "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-05",
-          "vb_time": "20:00",
-          "vb_hall": "Şehit Polis Halit Gürsel Spor Salonu",
-          "details": null
-        }
-      }
     }
   ],
-  "last_attempt_at": "2026-11-05T16:57:37.211741+00:00",
-  "last_success_at": "2026-11-05T14:09:53.058993+00:00",
-  "content_changed_at": "2026-11-05T14:09:53.058993+00:00",
-  "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-11-05T16:59:43.520794"
+  "last_attempt_at": "2026-11-05T18:27:52.692739+00:00",
+  "last_success_at": "2026-11-05T18:27:52.692739+00:00",
+  "content_changed_at": "2026-11-05T18:27:52.692739+00:00",
+  "volleybox_synced_matches": 10,
+  "volleybox_sync_updated_at": "2026-11-05T18:29:47.926658"
 }

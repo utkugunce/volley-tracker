@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:57:48.055680+00:00",
+  "updated_at": "2026-11-05T18:28:03.369891+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -872,6 +872,23 @@
     "Genç Kızlar 1. Lig 2. Bölge - B Grubu": [
       {
         "rank": 1,
+        "team": "Anadolu Marmara SK U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "set_ratio": "MAX",
+        "points_won": 75,
+        "points_lost": 41,
+        "point_ratio": "1.829",
+        "form": [
+          "W"
+        ]
+      },
+      {
+        "rank": 2,
         "team": "Pendik Akademi Voleybol Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -888,7 +905,7 @@
         ]
       },
       {
-        "rank": 2,
+        "rank": 3,
         "team": "Pendik Güzelyalı Voleybol Kulübü U18",
         "played": 1,
         "won": 0,
@@ -905,38 +922,25 @@
         ]
       },
       {
-        "rank": 3,
-        "team": "Ada Yıldızları Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "Anadolu Marmara SK U18",
-        "played": 0,
+        "team": "Emin Murat Güneş İstanbul Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
-        "set_ratio": "0",
-        "points_won": 0,
-        "points_lost": 0,
-        "point_ratio": "0",
-        "form": []
+        "sets_lost": 3,
+        "set_ratio": "MIN",
+        "points_won": 41,
+        "points_lost": 75,
+        "point_ratio": "0.547",
+        "form": [
+          "L"
+        ]
       },
       {
         "rank": 5,
-        "team": "Emin Murat Güneş İstanbul Spor Kulübü U18",
+        "team": "Ada Yıldızları Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -8626,11 +8630,15 @@
       "match_no": "2",
       "home_team": "Emin Murat Güneş İstanbul Spor Kulübü U18",
       "away_team": "Anadolu Marmara SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "17-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -8812,9 +8820,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T16:57:48.064613+00:00",
-  "last_success_at": "2026-11-05T16:57:48.064613+00:00",
-  "content_changed_at": "2026-11-05T16:57:48.064613+00:00",
+  "last_attempt_at": "2026-11-05T18:28:03.378413+00:00",
+  "last_success_at": "2026-11-05T18:28:03.378413+00:00",
+  "content_changed_at": "2026-11-05T18:28:03.378413+00:00",
   "volleybox_synced_matches": 134,
-  "volleybox_sync_updated_at": "2026-11-05T16:59:43.348245"
+  "volleybox_sync_updated_at": "2026-11-05T18:29:47.738150"
 }
