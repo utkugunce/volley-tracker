@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Match, StandingItem } from "@/types/fixture";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
 import { MatchInspectorPanel } from "./match/MatchInspectorPanel";
 
 export interface MobileMatchDrawerProps {
@@ -23,6 +24,8 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
   onToggleFavorite,
   isFavorite = false,
 }) => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useDialogFocus(isOpen && Boolean(match), dialogRef);
   const [dragY, setDragY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const touchStartY = useRef(0);
@@ -78,6 +81,8 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
 
       {/* 2. Alttan Açılan Çekmece (Bottom Sheet Sheet Drawer) */}
       <div
+        ref={dialogRef}
+        tabIndex={-1}
         role="dialog"
         aria-modal="true"
         aria-label="Maç Detayı"

@@ -1,6 +1,7 @@
+// @vitest-environment node
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { execFile, execFileSync } from "child_process";
-import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "../scrapeTrigger";
+import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper, verifySyncPasswordFromValue } from "../scrapeTrigger";
 import { GET as fixturesGet } from "@/app/api/fixtures/route";
 import { POST as triggerPost } from "@/app/api/sync/trigger/route";
 import { POST as cancelPost } from "@/app/api/sync/cancel/route";
@@ -35,6 +36,11 @@ describe("scrapeTrigger", () => {
     }
   });
 
+  it("does not accept the former default password when unconfigured", () => {
+    delete process.env.ADMIN_TOKEN;
+    expect(verifySyncPasswordFromValue("845780")).toBe(false);
+  });
+
   it("geliştirme ortamı dışında yerel scraper'a izin vermez ve Python çalıştırmaz", async () => {
     expect(process.env.NODE_ENV).not.toBe("development");
     expect(isLocalScrapeAllowed()).toBe(false);
@@ -50,6 +56,7 @@ describe("scrapeTrigger", () => {
   });
 
   it("token ve repo varsa scrape-sync.yml workflow_dispatch çağrısı yapar", async () => {
+    process.env.SYNC_PASSWORD = "test-sync-password";
     process.env.GITHUB_TOKEN = "gh-test";
     process.env.GITHUB_REPOSITORY = "owner/repo";
     const fetchMock = vi.fn(async () => new Response(null, { status: 204 }));
@@ -64,6 +71,7 @@ describe("scrapeTrigger", () => {
 
   it("/api/fixtures?refresh=1 üretim modunda istek içinde Python çalıştırmaz, workflow'u tetikler", async () => {
     process.env.ADMIN_TOKEN = "admin-secret";
+    process.env.SYNC_PASSWORD = "test-sync-password";
     process.env.GITHUB_TOKEN = "gh-test";
     process.env.GITHUB_REPOSITORY = "owner/repo";
     const fetchMock = vi.fn(async () => new Response(null, { status: 204 }));
@@ -83,7 +91,8 @@ describe("scrapeTrigger", () => {
 
 
 
-  it("/api/sync/trigger yanlış şifre ile 401 döner, doğru şifre (845780) ile çekimi tetikler", async () => {
+  it("/api/sync/trigger yanlış şifre ile 401 döner, yapılandırılmış şifre ile çekimi tetikler", async () => {
+    process.env.SYNC_PASSWORD = "test-sync-password";
     process.env.GITHUB_TOKEN = "gh-test";
     process.env.GITHUB_REPOSITORY = "owner/repo";
     const fetchMock = vi.fn(async () => new Response(null, { status: 204 }));
@@ -100,7 +109,7 @@ describe("scrapeTrigger", () => {
     const okReq = new Request("http://localhost:3000/api/sync/trigger", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password: "845780" }),
+      body: JSON.stringify({ password: "test-sync-password" }),
     });
     const okRes = await triggerPost(okReq);
     expect(okRes.status).toBe(200);
@@ -109,7 +118,8 @@ describe("scrapeTrigger", () => {
     expect(body.mode).toBe("github_actions");
   });
 
-  it("/api/sync/cancel doğru şifre (845780) ile çalışan GitHub Actions işini iptal eder", async () => {
+  it("/api/sync/cancel yapılandırılmış şifre ile çalışan GitHub Actions işini iptal eder", async () => {
+    process.env.SYNC_PASSWORD = "test-sync-password";
     process.env.GITHUB_TOKEN = "gh-test";
     process.env.GITHUB_REPOSITORY = "owner/repo";
     const fetchMock = vi.fn(async (url: string) => {
@@ -126,7 +136,7 @@ describe("scrapeTrigger", () => {
     const req = new Request("http://localhost:3000/api/sync/cancel", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password: "845780" }),
+      body: JSON.stringify({ password: "test-sync-password" }),
     });
     const res = await cancelPost(req);
     expect(res.status).toBe(200);

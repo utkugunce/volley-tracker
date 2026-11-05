@@ -31,17 +31,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
+    let active = true;
+    let generation = 0;
+    const updateRole = async (current: Session | null) => {
+      const requestId = ++generation;
+      setRole("viewer");
+      if (!current) return;
+      try {
+        const response = await fetch("/api/auth/me", { headers: { Authorization: `Bearer ${current.access_token}` }, cache: "no-store" });
+        const body = await response.json();
+        if (active && requestId === generation && response.ok && ["admin", "editor", "viewer"].includes(body.role)) setRole(body.role);
+      } catch { /* The server remains authoritative; failed lookup grants no privileges. */ }
+    };
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
       
-      // Get role from user metadata
-      if (session?.user) {
-        const userRole = session.user.app_metadata?.role as AppRole || "viewer";
-        setRole(userRole);
-      }
-      
+      void updateRole(session);
+
       setLoading(false);
     });
 
@@ -52,17 +60,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setSession(session);
       setUser(session?.user ?? null);
       
-      if (session?.user) {
-        const userRole = session.user.app_metadata?.role as AppRole || "viewer";
-        setRole(userRole);
-      } else {
-        setRole("viewer");
-      }
-      
+      void updateRole(session);
+
       setLoading(false);
     });
 
-    return () => subscription.unsubscribe();
+    return () => { active = false; subscription.unsubscribe(); };
   }, [supabase]);
 
   const signIn = async (email: string, password: string) => {

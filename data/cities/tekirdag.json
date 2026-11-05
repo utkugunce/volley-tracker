@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T14:13:21.252429",
   "city": "Tekirdağ",
   "slug": "tekirdag",
   "title": "TVF Tekirdağ Genç & Yıldız Kızlar Süper Lig",
@@ -362,29 +362,7 @@
         "25-22",
         "25-20"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "401146",
-        "url": "https://women.volleybox.net/tr/cerkezkoy-voleybol-akademi-spor-kulubu-u18-corlu-gsb-spor-kulubu-u18-c401146",
-        "host_name": "Çerkezköy Voleybol Akademi Spor Kulübü U18",
-        "guest_name": "Çorlu GSB Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-27",
-        "vb_time": "12:15",
-        "vb_hall": "Çerkezköy Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-27",
-          "vb_time": "12:15",
-          "vb_hall": "Çerkezköy Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20260927-002",
@@ -407,29 +385,7 @@
         "25-13",
         "25-19"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "401147",
-        "url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-kulubu-u18-tekirdag-basket-spor-kulubu-u18-c401147",
-        "host_name": "Çorlu Belediyesi Spor Kulübü U18",
-        "guest_name": "Tekirdağ Basket Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-09-27",
-        "vb_time": "15:15",
-        "vb_hall": "Çorlu Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-09-27",
-          "vb_time": "15:15",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261011-003",
@@ -497,29 +453,7 @@
         "12-25",
         "10-25"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "408249",
-        "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u18-corlu-belediyesi-spor-kulubu-u18-c408249",
-        "host_name": "Çorlu GSB Spor Kulübü U18",
-        "guest_name": "Çorlu Belediyesi Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-13",
-        "vb_time": "19:00",
-        "vb_hall": "Çorlu Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-13",
-          "vb_time": "19:00",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261014-005",
@@ -588,29 +522,7 @@
         "16-25",
         "25-27"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411500",
-        "url": "https://women.volleybox.net/tr/corlu-gsb-spor-kulubu-u18-tekirdag-basket-spor-kulubu-u18-c411500",
-        "host_name": "Çorlu GSB Spor Kulübü U18",
-        "guest_name": "Tekirdağ Basket Spor Kulübü U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-10-18",
-        "vb_time": "11:45",
-        "vb_hall": "Çorlu Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "11:45",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261018-007",
@@ -633,29 +545,7 @@
         "25-19",
         "25-22"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411501",
-        "url": "https://women.volleybox.net/tr/corlu-belediyesi-spor-kulubu-u18-kapakl-site-spor-u18-c411501",
-        "host_name": "Çorlu Belediyesi Spor Kulübü U18",
-        "guest_name": "Kapaklı Site Spor U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-18",
-        "vb_time": "15:15",
-        "vb_hall": "Çorlu Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-18",
-          "vb_time": "15:15",
-          "vb_hall": "Çorlu Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20261025-008",
@@ -723,29 +613,7 @@
         "25-18",
         "25-15"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "414779",
-        "url": "https://women.volleybox.net/tr/kapakl-site-spor-u18-corlu-gsb-spor-kulubu-u18-c414779",
-        "host_name": "Kapaklı Site Spor U18",
-        "guest_name": "Çorlu GSB Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-26",
-        "vb_time": "19:00",
-        "vb_hall": "Çerkezköy Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-26",
-          "vb_time": "19:00",
-          "vb_hall": "Çerkezköy Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "tekirdag-20260926-010",
@@ -3888,6 +3756,7 @@
       }
     }
   ],
-  "volleybox_synced_matches": 79,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:59.594845"
+  "last_attempt_at": "2026-11-05T14:13:21.262375+00:00",
+  "last_success_at": "2026-11-05T14:13:21.262375+00:00",
+  "content_changed_at": "2026-11-05T14:13:21.262375+00:00"
 }

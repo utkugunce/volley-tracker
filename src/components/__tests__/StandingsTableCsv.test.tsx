@@ -98,6 +98,7 @@ describe("Puan Durumu CSV Dışa Aktarma (GÖREV 7)", () => {
         />
       );
 
+      fireEvent.click(screen.getByText(/İşlemler ·/));
       const downloadButton = screen.getByRole("button", {
         name: "CSV İndir: puan durumunu CSV olarak indir",
       });
@@ -129,6 +130,7 @@ describe("Puan Durumu CSV Dışa Aktarma (GÖREV 7)", () => {
         />
       );
 
+      fireEvent.click(screen.getByText(/İşlemler ·/));
       const downloadButton = screen.getByRole("button", {
         name: "CSV İndir: puan durumunu CSV olarak indir",
       });

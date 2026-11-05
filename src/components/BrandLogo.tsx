@@ -16,6 +16,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
   return (
     <div
       onClick={onClick}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      onKeyDown={onClick ? (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); onClick(); } } : undefined}
       className={`inline-flex items-center gap-2.5 select-none ${
         onClick ? "cursor-pointer group" : ""
       } ${className}`}
@@ -40,7 +43,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
             <span className="bg-primary/15 text-primary border border-primary/40 font-display font-bold text-xs sm:text-[13px] tracking-wider uppercase px-2 py-0.5 rounded-md">
               ALTYAPI
             </span>
-            <span className="text-white text-base sm:text-lg font-black tracking-tight font-sans">
+            <span className={`${variant === "compact" ? "hidden sm:inline" : ""} text-white text-base sm:text-lg font-black tracking-tight font-sans`}>
               VOLEYBOL
             </span>
           </div>

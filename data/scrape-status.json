@@ -1,0 +1,63 @@
+{
+  "last_attempt_at": "2026-11-05T14:12:02.771997+00:00",
+  "last_success_at": null,
+  "status": "partial",
+  "cities": [
+    {
+      "slug": "bilecik",
+      "status": "Önbellek: Bağlantı Zaman Aşımı — Aktif (20 Maç Mevcut)"
+    },
+    {
+      "slug": "burdur",
+      "status": "Aktif (6 Maç Mevcut)"
+    },
+    {
+      "slug": "canakkale",
+      "status": "Önbellek: Bağlantı Zaman Aşımı — Aktif (56 Maç Mevcut)"
+    },
+    {
+      "slug": "giresun",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (29 Maç Mevcut)"
+    },
+    {
+      "slug": "hatay",
+      "status": "Aktif (32 Maç Mevcut)"
+    },
+    {
+      "slug": "kayseri",
+      "status": "Önbellek: Bağlantı Zaman Aşımı — Aktif (48 Maç Mevcut)"
+    },
+    {
+      "slug": "malatya",
+      "status": "Önbellek: Bağlantı Zaman Aşımı — Aktif (58 Maç Mevcut)"
+    },
+    {
+      "slug": "kahramanmaras",
+      "status": "Önbellek: Bağlantı Zaman Aşımı — Aktif (19 Maç Mevcut)"
+    },
+    {
+      "slug": "samsun",
+      "status": "Aktif (63 Maç Mevcut)"
+    },
+    {
+      "slug": "tekirdag",
+      "status": "Aktif (79 Maç Mevcut)"
+    },
+    {
+      "slug": "trabzon",
+      "status": "Aktif (12 Maç Mevcut)"
+    },
+    {
+      "slug": "zonguldak",
+      "status": "Önbellek: Bağlantı Zaman Aşımı — Aktif (2 Maç Mevcut)"
+    },
+    {
+      "slug": "aksaray",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (16 Maç Mevcut)"
+    },
+    {
+      "slug": "yalova",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
+    }
+  ]
+}

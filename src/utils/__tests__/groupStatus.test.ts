@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { isU18Category, isU16Category } from "@/components/GroupStatusView";
 import { describe, it, expect } from "vitest";
 import {

@@ -1,17 +1,11 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import { applyOverridesToMatches, applyOverridesToMatchesAsync } from "@/utils/overrides";
 import { RateLimiter, getClientIp } from "@/utils/rateLimit";
 import { dispatchScrapeWorkflow, isLocalScrapeAllowed, runLocalScraper } from "@/utils/scrapeTrigger";
 import { requireConfiguredSecret } from "@/utils/apiSecurity";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
 import { isCityHidden } from "@/utils/cityHelper";
-import { getSupabaseFixturesCached } from "@/utils/supabaseFixtures";
-import { getInitialFixtures } from "@/utils/getInitialFixtures";
-import { setActiveDataSource } from "@/utils/supabaseData";
+import { loadFixtures } from "@/utils/loadFixtures";
 import { getAuthenticatedUser } from "@/utils/supabaseAuth";
-import type { CityInfo, FixturesData, Match, StandingItem } from "@/types/fixture";
 
 // Max 2 refresh triggers per 2 minutes per IP to prevent GitHub Actions / server load abuse
 const refreshLimiter = new RateLimiter({
@@ -39,103 +33,6 @@ function normalizeCitySlug(str: string): string {
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .trim();
-}
-
-function matchIdentityKey(m: Match): string {
-  return `${m.date || ""}|${(m.home_team || "").trim()}|${(m.away_team || "").trim()}`;
-}
-
-function isSameFixtureMatch(a: Match, b: Match): boolean {
-  return (
-    (a.home_team || "").trim() === (b.home_team || "").trim() &&
-    (a.away_team || "").trim() === (b.away_team || "").trim() &&
-    (a.date || "") === (b.date || "")
-  );
-}
-
-function reconcileWithLocalFixtures(supabaseData: FixturesData, citySlug: string): FixturesData {
-  try {
-    const targetSlug = citySlug === "tumu" || citySlug === "turkiye" ? "all" : citySlug;
-    const localData = getInitialFixtures(targetSlug);
-    if (!localData || !Array.isArray(localData.matches) || localData.matches.length === 0) {
-      return supabaseData;
-    }
-
-    const localById = new Map<string, Match>();
-    const localByKey = new Map<string, Match>();
-    for (const lm of localData.matches) {
-      if (lm?.id) localById.set(lm.id, lm);
-      if (lm?.home_team && lm?.away_team) localByKey.set(matchIdentityKey(lm), lm);
-    }
-
-    const seenKeys = new Set<string>();
-    const mergedMatches = supabaseData.matches.map((sm) => {
-      const sKey = matchIdentityKey(sm);
-      seenKeys.add(sKey);
-
-      const candidateById = sm.id ? localById.get(sm.id) : undefined;
-      const lm =
-        candidateById && isSameFixtureMatch(sm, candidateById)
-          ? candidateById
-          : localByKey.get(sKey);
-      if (!lm) return sm;
-
-      const supaHasScore =
-        sm.status === "finished" ||
-        (sm.home_score !== null && sm.home_score !== undefined && sm.away_score !== null && sm.away_score !== undefined);
-      const localHasScore =
-        lm.status === "finished" ||
-        (lm.home_score !== null && lm.home_score !== undefined && lm.away_score !== null && lm.away_score !== undefined);
-
-      if (!supaHasScore && localHasScore) {
-        return {
-          ...sm,
-          score: lm.score,
-          home_score: lm.home_score,
-          away_score: lm.away_score,
-          set_scores: lm.set_scores && lm.set_scores.length > 0 ? lm.set_scores : sm.set_scores,
-          status: lm.status || "finished",
-          forfeit: lm.forfeit ?? sm.forfeit,
-          volleybox: lm.volleybox?.synced ? lm.volleybox : sm.volleybox,
-        };
-      }
-      if ((!sm.set_scores || sm.set_scores.length === 0) && lm.set_scores && lm.set_scores.length > 0) {
-        return {
-          ...sm,
-          set_scores: lm.set_scores,
-          volleybox: lm.volleybox?.synced ? lm.volleybox : sm.volleybox,
-        };
-      }
-      if (!sm.volleybox?.synced && lm.volleybox?.synced) {
-        return {
-          ...sm,
-          volleybox: lm.volleybox,
-        };
-      }
-      return sm;
-    });
-
-    for (const lm of localData.matches) {
-      const lKey = matchIdentityKey(lm);
-      if (lm?.id && !seenKeys.has(lKey)) {
-        mergedMatches.push(lm);
-      }
-    }
-
-    const latestUpdatedAt =
-      localData.updated_at && (!supabaseData.updated_at || new Date(localData.updated_at) > new Date(supabaseData.updated_at))
-        ? localData.updated_at
-        : supabaseData.updated_at;
-
-    return {
-      ...supabaseData,
-      updated_at: latestUpdatedAt,
-      total_matches: mergedMatches.length,
-      matches: mergedMatches,
-    };
-  } catch {
-    return supabaseData;
-  }
 }
 
 export async function GET(request: Request) {
@@ -235,105 +132,14 @@ export async function GET(request: Request) {
       }
     }
 
-    // Doğru resmi il ismini bul (cities.json üzerinden)
-    let officialCityName = citySlug;
-    let globalScanTime: string | null = null;
-    try {
-      const citiesIndexPath = path.join(process.cwd(), "data", "cities.json");
-      if (fs.existsSync(citiesIndexPath)) {
-        const citiesData = JSON.parse(fs.readFileSync(citiesIndexPath, "utf-8"));
-        if (citiesData?.updated_at) {
-          globalScanTime = citiesData.updated_at;
-        }
-        const found = (citiesData.cities || []).find(
-          (c: CityInfo) => c.slug === citySlug || c.ilid === rawCity || c.slug === rawCity.toLowerCase()
-        );
-        if (found) {
-          officialCityName = found.name;
-        }
-      }
-    } catch {
-      // fallback
-    }
-
-    let data: FixturesData;
-
+    if (isCityHidden(citySlug)) return NextResponse.json({ error: "Bu il için fikstür bulunamadı." }, { status: 404 });
     const isBypassCache = refresh === "1" || searchParams.has("_t") || searchParams.has("t") || request.headers.get("cache-control")?.includes("no-cache");
     if (isBypassCache) {
       const { clearSupabaseFixturesCache } = await import("@/utils/supabaseFixtures");
       clearSupabaseFixturesCache();
     }
-    const supabaseData = await getSupabaseFixturesCached(citySlug);
-
-    if (supabaseData && Array.isArray(supabaseData.matches) && supabaseData.matches.length > 0) {
-      setActiveDataSource("supabase");
-      data = reconcileWithLocalFixtures(supabaseData, citySlug);
-    } else if (citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye") {
-      setActiveDataSource("json-fallback");
-      data = getInitialFixtures("all");
-    } else {
-      setActiveDataSource("json-fallback");
-      if (isCityHidden(citySlug)) {
-        return NextResponse.json(
-          { error: "Bu il için fikstür bulunamadı." },
-          { status: 404 }
-        );
-      }
-
-      let filePath = path.join(process.cwd(), "data", "fixtures.json");
-      if (citySlug && citySlug !== "istanbul") {
-        const citySpecificPath = path.join(process.cwd(), "data", "cities", `${citySlug}.json`);
-        if (fs.existsSync(citySpecificPath)) {
-          filePath = citySpecificPath;
-        } else {
-          // İlgili ilde henüz fikstür açıklanmamış
-          return NextResponse.json({
-            city: officialCityName,
-            slug: citySlug,
-            title: `TVF ${officialCityName} Genç & Yıldız Kızlar Süper Lig`,
-            updated_at: new Date().toISOString(),
-            total_matches: 0,
-            unfiltered_total: 0,
-            source: `https://${citySlug}.voleyboliltemsilciligi.com`,
-            filters: {
-              categories: ["Tümü", "Genç Kızlar Süper Lig", "Genç Kızlar 1. Ligi", "Yıldız Kızlar Süper Lig"],
-              age_groups: ["Tümü", "Genç", "Yıldız"],
-              genders: ["Kız"],
-              halls: ["Tümü"],
-            },
-            matches: [],
-            standings: {},
-            note: "Bu ilin TVF temsilciliği yeni sezon bültenini henüz girmemiştir.",
-            sync: syncMeta,
-          });
-        }
-      }
-
-      if (!fs.existsSync(filePath)) {
-        const fallback = getInitialFixtures(citySlug);
-        if (fallback && Array.isArray(fallback.matches) && fallback.matches.length > 0) {
-          data = fallback;
-        } else {
-          return NextResponse.json(
-            {
-              error: "fixtures.json bulunamadı. Lütfen önce scraper'ı çalıştırın.",
-              matches: [],
-              total_matches: 0,
-            },
-            { status: 404 }
-          );
-        }
-      } else {
-        const fileContent = fs.readFileSync(filePath, "utf-8");
-        data = JSON.parse(fileContent);
-        if (globalScanTime && (!data.updated_at || new Date(globalScanTime) > new Date(data.updated_at))) {
-          data.updated_at = globalScanTime;
-        }
-      }
-    }
-
-    let rawMatches = data.matches || [];
-    let matches = await applyOverridesToMatchesAsync(rawMatches);
+    const data = await loadFixtures(citySlug);
+    let matches = data.matches;
 
     if (category && category !== "Tümü") {
       matches = matches.filter((m) => m.category === category);
@@ -390,9 +196,13 @@ export async function GET(request: Request) {
         city: data.city || "İstanbul",
         title: data.title || "TVF İstanbul Genç & Yıldız Kızlar Süper Lig",
         updated_at: data.updated_at,
+        last_attempt_at: data.last_attempt_at,
+        last_success_at: data.last_success_at,
+        content_changed_at: data.content_changed_at,
         total_matches: matches.length,
         unfiltered_total: data.total_matches,
         source: data.source,
+        data_source: data.data_source,
         filters: data.filters,
         matches,
         standings: data.standings || {},

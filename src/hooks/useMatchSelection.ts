@@ -44,7 +44,7 @@ export function useMatchSelection(matches: Match[] | undefined) {
       if (prev && matches.some((m) => m.id === prev.id)) {
         return prev;
       }
-      return findDefaultSelectedMatch(matches, urlMatchId);
+      return urlMatchId ? findDefaultSelectedMatch(matches, urlMatchId) : null;
     });
   }, [matches]);
 

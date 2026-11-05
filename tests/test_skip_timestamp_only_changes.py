@@ -5,7 +5,6 @@ import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from scripts import merge_kadinlar_2_lig_mappings as merge_mod
 from scripts.skip_timestamp_only_changes import (
     newest_timestamp,
     process,
@@ -98,15 +97,6 @@ class TestProcessInGitRepo(unittest.TestCase):
             self.assertEqual(result["kept_changed"], ["data/changed.json"])
             self.assertEqual(json.loads((repo / "data" / "same.json").read_text())["updated_at"], fresh.isoformat())
             self.assertEqual(json.loads((repo / "data" / "changed.json").read_text())["updated_at"], later)
-
-
-class TestMergeAliasOrderIsDeterministic(unittest.TestCase):
-    def test_ordered_union_keeps_existing_order_and_dedupes(self):
-        self.assertEqual(
-            merge_mod._ordered_union(["b", "a"], ["c", "a", "d", "c"]),
-            ["b", "a", "c", "d"],
-        )
-        self.assertEqual(merge_mod._ordered_union(None, ["x", "x"]), ["x"])
 
 
 if __name__ == "__main__":

@@ -91,7 +91,7 @@ export const AppShell: React.FC<AppShellProps> = ({
 
   const mainColClass =
     hasLeft && hasRight
-      ? "lg:col-span-6 xl:col-span-6"
+      ? "lg:col-span-7 xl:col-span-7"
       : hasLeft
       ? "lg:col-span-9 xl:col-span-9"
       : hasRight
@@ -141,7 +141,7 @@ export const AppShell: React.FC<AppShellProps> = ({
             <aside
               aria-label="Lig Navigasyonu"
               style={sidebarStyle}
-              className="hidden lg:block lg:col-span-3 xl:col-span-3 sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg transition-all duration-300"
+              className={`${hasRight ? "lg:col-span-2 xl:col-span-2" : "lg:col-span-3 xl:col-span-3"} hidden lg:block sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg transition-all duration-300`}
             >
               {renderedLeftSidebar}
             </aside>

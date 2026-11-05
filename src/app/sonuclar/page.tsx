@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { DashboardClient } from "@/components/DashboardClient";
-import { getInitialResults } from "@/utils/getInitialFixtures";
+import { getInitialResults } from "@/utils/loadFixtures";
 
 export const revalidate = 900;
 
@@ -31,7 +31,7 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default function ResultsPage() {
-  const initialData = getInitialResults();
+export default async function ResultsPage() {
+  const initialData = await getInitialResults();
   return <DashboardClient initialData={initialData} initialTab="results" initialDataPartial />;
 }

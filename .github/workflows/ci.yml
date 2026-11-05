@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     
     steps:
       - name: Checkout repository
@@ -27,6 +27,12 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Python test dependencies
+        run: python -m pip install -r scripts/requirements.txt pytest==9.0.2
+
+      - name: Python tests
+        run: python -m pytest tests -q
 
       - name: Validate generated data files
         run: python scripts/validate_data_files.py
@@ -72,3 +78,26 @@ jobs:
             echo "Build failed - .next directory not found"
             exit 1
           fi
+
+      - name: Check installed browser
+        run: google-chrome --version
+
+      - name: Production browser checks
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
+        run: |
+          npm start > /tmp/volley-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://localhost:3000/ > /dev/null; then break; fi
+            sleep 1
+          done
+          python -m pytest tests/e2e/visual_smoke.py -q
+
+      - name: Browser artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-checks
+          path: /tmp/volley-e2e

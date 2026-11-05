@@ -30,10 +30,10 @@ export function StandingsHeaderStrip({
 
   return (
     <>
-      <div className="bg-surface text-ink px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between gap-2 sm:gap-3 border-b border-line/70">
-        <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+      <div className="bg-surface text-ink px-3 sm:px-4 py-2 sm:py-3 flex flex-wrap items-center justify-between gap-2 sm:gap-3 border-b border-line/70">
+        <div className="flex items-center gap-2 sm:gap-2.5 min-w-0 w-full xl:w-auto xl:flex-1">
           <Trophy size={15} className="text-primary shrink-0" />
-          <h2 className="text-xs sm:text-sm font-bold tracking-tight truncate">
+          <h2 className="text-xs sm:text-sm font-bold tracking-tight break-words">
             <LeagueVolleyboxLink
               league={activeContext?.leagueFullName || ""}
               city={activeContext?.city || city}
@@ -46,7 +46,9 @@ export function StandingsHeaderStrip({
               : ""}
           </h2>
         </div>
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <details className="relative shrink-0">
+          <summary className="cursor-pointer min-h-11 flex items-center rounded-lg border border-line px-3 text-xs font-semibold">İşlemler · {items.length} Takım</summary>
+          <div className="absolute right-0 top-full mt-1 z-30 p-3 bg-surface border border-line rounded-xl shadow-xl flex flex-col gap-2 min-w-48">
           {onToggleSimulator && (
             <Button
               variant={showSimulator ? "primary" : "secondary"}
@@ -92,7 +94,8 @@ export function StandingsHeaderStrip({
           <Badge tone="neutral" size="sm">
             {`${items.length} Takım`}
           </Badge>
-        </div>
+          </div>
+        </details>
       </div>
 
       <ShareStandingsCardModal

@@ -93,7 +93,7 @@ export function CookieConsentBanner() {
     <aside
       role="region"
       aria-label="Çerez ve Gizlilik Tercihleri"
-      className="fixed inset-x-2 bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] md:bottom-4 md:inset-x-auto md:right-4 md:max-w-md z-50 rounded-2xl p-3 bg-slate-950/95 border border-slate-800 backdrop-blur-md shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-300 no-print"
+      className="mx-2 mb-20 md:mb-0 md:mx-0 md:fixed md:bottom-4 md:inset-x-auto md:right-4 md:max-w-md z-50 rounded-2xl p-3 bg-slate-950/95 border border-slate-800 backdrop-blur-md shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-300 no-print"
     >
       <div className="flex items-center gap-3 text-xs">
         <Cookie size={16} className="text-primary shrink-0" aria-hidden="true" />

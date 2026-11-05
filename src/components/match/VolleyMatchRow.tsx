@@ -87,11 +87,12 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
       tabIndex={0}
       onClick={() => onSelectMatch(match)}
       onKeyDown={(e) => {
-        if (e.key === "Enter" || e.key === " ") {
+        if (e.target === e.currentTarget && (e.key === "Enter" || e.key === " ")) {
           e.preventDefault();
           onSelectMatch(match);
         }
       }}
+      aria-label={`${match.home_team} – ${match.away_team}, ${dateLabel} ${match.time || ""}`}
       className={`group relative flex items-center bg-surface hover:bg-surface-raised/70 border rounded-xl px-3 py-2.5 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] cursor-pointer active:scale-[0.98] ${
         isSelected
           ? "border-primary/60 bg-primary/5"
@@ -99,7 +100,7 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
       }`}
     >
       {/* 1. Sol Sütun: Saat, Tarih ve Durum (Sıfır Kutu/Çerçeve) */}
-      <div className="w-[66px] sm:w-[74px] shrink-0 flex flex-col justify-center pr-2.5 border-r border-line/40 leading-tight">
+      <div className="w-[46px] sm:w-[74px] shrink-0 flex flex-col justify-center pr-2.5 border-r border-line/40 leading-tight">
         <span className="font-mono font-scoreboard tabular-nums text-xs font-semibold text-ink">
           {match.time || "--:--"}
         </span>
@@ -118,7 +119,7 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
       </div>
 
       {/* 2. Orta Sütun: Bağlam Başlığı + Alt Alta 2 Takım */}
-      <div className="flex-1 min-w-0 px-3 flex flex-col justify-center gap-1">
+      <div className="flex-1 min-w-0 px-2 sm:px-3 flex flex-col justify-center gap-1">
         {/* Bağlam Satırı (ŞEHİR ROZETİ · LİG BAŞLIĞI · GRUP · SALON) */}
         <div className="flex items-center gap-1.5 text-[10px] text-ink-3 truncate leading-none pb-1">
           {/* Şehir Rozeti - Belirgin ve Vurgulu */}
@@ -126,7 +127,7 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
             {effectiveCity || "Genel"}
           </span>
           {/* Lig Adı - Parlak Beyaz, Kalın ve Vurgulu */}
-          <span className="font-bold text-white text-[11px] truncate tracking-tight">
+          <span className="font-bold text-ink text-[11px] truncate tracking-tight">
             {effectiveLeague || "Voleybol Ligi"}
           </span>
           {/* Grup Bilgisi - Vurgulu Amber Rozet */}
@@ -151,7 +152,7 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
         <div className="flex items-center gap-2 min-w-0">
           <TeamBadge name={match.home_team} logoUrl={homeLogo} size="xs" />
           <span
-            className={`text-xs sm:text-[13px] truncate transition-colors ${
+            className={`text-xs sm:text-[13px] line-clamp-2 sm:line-clamp-1 break-words transition-colors ${
               homeWon
                 ? "font-semibold text-white"
                 : hasScore
@@ -167,7 +168,7 @@ export const VolleyMatchRow: React.FC<VolleyMatchRowProps> = ({
         <div className="flex items-center gap-2 min-w-0">
           <TeamBadge name={match.away_team} logoUrl={awayLogo} size="xs" />
           <span
-            className={`text-xs sm:text-[13px] truncate transition-colors ${
+            className={`text-xs sm:text-[13px] line-clamp-2 sm:line-clamp-1 break-words transition-colors ${
               awayWon
                 ? "font-semibold text-white"
                 : hasScore

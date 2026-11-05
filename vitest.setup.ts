@@ -4,7 +4,9 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 
-vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
+if (typeof HTMLCanvasElement !== 'undefined') {
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockReturnValue(null);
+}
 
 // Testler gerçek data/ dosyalarına (manual-overrides.json, push-subscriptions.json) yazmasın:
 // her test dosyası için geçici bir dizine yönlendir.

@@ -55,7 +55,7 @@ scripts/scrape_all_provinces.py ──► scripts/sync_volleybox_matches.py
 ```
 
 ### Çift Modlu Veri Mimarisi (Dual-Mode Resilience)
-- **Supabase Öncelikli:** `SUPABASE_URL` ve `SUPABASE_SERVICE_ROLE_KEY` tanımlıysa maçlar, puan durumları, kullanıcı rolleri Supabase üzerinden yönetilir.
+- **Supabase Öncelikli:** `NEXT_PUBLIC_SUPABASE_URL` ve `SUPABASE_SERVICE_ROLE_KEY` tanımlıysa maçlar, puan durumları, kullanıcı rolleri Supabase üzerinden yönetilir.
 - **JSON Fallback:** Supabase yapılandırılmamışsa veya erişilemezse uygulama kesintisiz olarak `data/cities/*.json` ve `data/fixtures.json` dosyaları üzerinden çalışmaya devam eder.
 
 ### Kısmi Başlangıç Yüklemesi (Home Performance Optimization)
@@ -94,7 +94,7 @@ volley-tracker/
 │   │   ├── karsilastir/        # İki takımı kafa kafaya karşılaştırma ekranı
 │   │   ├── admin/              # Kullanıcı rolleri ve maç override yönetim paneli
 │   │   ├── api/                # Next.js Serverless API rotaları (/api/fixtures, /api/sync...)
-│   │   └── proxy.ts            # Edge middleware: geçersiz il isteklerine sert 404
+│   ├── proxy.ts                # Geçersiz il isteklerine gerçek HTTP 404
 │   ├── components/             # Yeniden kullanılabilir UI bileşenleri
 │   │   ├── FixtureTable.tsx    # Fikstür ve maç satırları tablosu
 │   │   ├── StandingsTable.tsx  # TVF resmi puan durumu ve form göstergeleri
@@ -131,18 +131,13 @@ volley-tracker/
 - Bu kuralı `src/__tests__/metadata-brand.test.ts` zorunlu kılar.
 
 ### 🛑 Kural 3: 81 İl Scraper Cooldown (1 Saat Kuralı)
-- Kod, stil veya veri değişikliği içeren promptların sonunda 81 il taraması (`python scripts/scrape_all_provinces.py`) çalıştırılır.
+- Kod doğrulaması canlı veri güncellemesinden ayrıdır. 81 il taraması yalnızca saatlik workflow veya açık veri güncelleme talebiyle çalıştırılır.
 - İki çekme arasında **en az 60 dakika (1 saat)** bulunmalıdır. Script içinde dahili cooldown kontrolü vardır; süre dolmamışsa işlem güvenle atlanır.
 - **Kullanıcı açıkça manuel olarak istemedikçe** (*"hemen çek"*, *"force"*, *"zorla güncelle"* vb.) script'e **asla `--force` bayrağı verilmez**.
 
-### 🛑 Kural 4: Otomatik Commit ve Push Protokolü
-Projede tamamlanan her özellik, refactor veya hata düzeltmesinden sonra değişiklikler otomatik olarak commit edilip `origin/main`'e push edilir. Push öncesi şu doğrulama sırası zorunludur:
-1. `npm run typecheck` (`tsc --noEmit` — 0 hata)
-2. `npm run lint` (`eslint .` — 0 hata/uyarı)
-3. `npm test` (Tüm Vitest testleri yeşil olmalı)
-4. `python scripts/generate_city_slugs.py --check`
-5. `python scripts/validate_data_files.py`
-6. `git commit -m "..." && git push origin main`
+### 🛑 Kural 4: Özellik Dalı, PR ve CI
+
+Kod değişikliklerini özellik dalında commit edin; doğrudan `main` dalına push etmeyin. PR üzerinden inceleme ve başarılı CI gereklidir. Kontroller: `npm run typecheck`, `npm run lint`, `npm test`, `python -m pytest tests -q`, `python scripts/generate_city_slugs.py --check`, `python scripts/validate_data_files.py`, üretim derlemesi ve arayüz değişikliklerinde tarayıcı kontrolleri. Dal koruması GitHub yönetici ayarından ayrıca etkinleştirilir.
 
 ### 🛑 Kural 5: "Fileönü" Tasarım Sistemi ve Tipografi
 - Voleybol filesi ve gece salonu konseptine dayalı koyu tema:
@@ -186,3 +181,11 @@ python scripts/validate_data_files.py
 python scripts/sync_volleybox_matches.py
 ```
 
+
+## 7. Güncel Veri ve Güvenlik Sözleşmesi
+
+- SSR/API ortak `src/utils/loadFixtures.ts` yükleyicisini kullanır; Supabase verisi yerel skorlarla tamamlanır ve manuel düzeltmeler son uygulanır.
+- JWT metadata yerine `user_roles` tablosu yetkilidir. RLS için `008_authoritative_roles.sql` migration'ı dağıtımda uygulanmalıdır.
+- Senkronizasyon parolası yapılandırılmamışsa parola erişimi kapalıdır; varsayılan parola yoktur. URL üzerinden erişim jetonu kabul edilmez.
+- Sağlık kontrolü yerel snapshot kapsamını ve güncelliğini ölçer. Başarısız tarama kaynak tarihini yenilemez.
+- Güncel uygulama kaydı: [docs/implementation-status.md](docs/implementation-status.md).

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DashboardClient } from "@/components/DashboardClient";
-import { getInitialFixtures } from "@/utils/getInitialFixtures";
+import { getInitialFixturesResolved as getInitialFixtures } from "@/utils/loadFixtures";
 import { getCityNameFromSlug, isValidCitySlug, getAllCitiesList } from "@/utils/cityHelper";
 import { slugify } from "@/utils/slugify";
 
@@ -57,6 +57,6 @@ export default async function CityLandingPage({ params }: PageProps) {
     notFound();
   }
 
-  const initialData = getInitialFixtures(citySlug);
+  const initialData = await getInitialFixtures(citySlug);
   return <DashboardClient initialData={initialData} initialTab="home" initialCity={citySlug} />;
 }

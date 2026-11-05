@@ -7,7 +7,6 @@ import { timingSafeEqual } from "crypto";
 const execFileAsync = promisify(execFile);
 
 export const SCRAPE_WORKFLOW_FILE = "scrape-sync.yml";
-export const DEFAULT_SYNC_PASSWORD = "845780";
 
 export type WorkflowDispatchResult =
   | { status: "dispatched" }
@@ -58,14 +57,14 @@ function safeCompareStrings(a: string, b: string): boolean {
 
 /**
  * Yenile / İptal / Durum isteklerinde şifre veya admin token doğrulaması yapar.
- * Varsayılan şifre: process.env.SYNC_PASSWORD || "845780".
+ * Yapılandırılmamış parola üzerinden erişim kapalıdır.
  */
 export function verifySyncPasswordFromValue(provided: string | null | undefined): boolean {
   if (!provided) return false;
   const trimmed = provided.trim();
   if (!trimmed) return false;
 
-  const syncPassword = (process.env.SYNC_PASSWORD || DEFAULT_SYNC_PASSWORD).trim();
+  const syncPassword = process.env.SYNC_PASSWORD?.trim();
   if (syncPassword && safeCompareStrings(trimmed, syncPassword)) {
     return true;
   }
@@ -200,7 +199,7 @@ function spawnScriptStep(job: InternalLocalJob, args: string[]): Promise<number 
 }
 
 /**
- * Yerel geliştirme ortamında 81 İl (--force) ve Kadınlar 2. Ligi taramalarını
+ * Yerel geliştirme ortamında 81 il altyapı taramasını
  * arka planda sırayla başlatır ve iptal edilebilir şekilde izler.
  */
 export function startLocalFullScrapeJob(): LocalScrapeJobState {
@@ -219,7 +218,7 @@ export function startLocalFullScrapeJob(): LocalScrapeJobState {
       id: Date.now(),
       status: "in_progress",
       conclusion: null,
-      activeStep: "81 İl Altyapı bültenleri ve Volleybox taranıyor (1/2)...",
+      activeStep: "81 İl Altyapı bültenleri ve Volleybox taranıyor ...",
       createdAt: nowIso,
       updatedAt: nowIso,
     },
@@ -232,7 +231,7 @@ export function startLocalFullScrapeJob(): LocalScrapeJobState {
   (async () => {
     try {
       const script1 = path.join(/*turbopackIgnore: true*/ process.cwd(), "scripts/scrape_all_provinces.py");
-      const code1 = await spawnScriptStep(job, [script1, "--force"]);
+      const code1 = await spawnScriptStep(job, [script1]);
       if (job.cancelled) return;
       if (code1 !== 0) {
         job.state.status = "completed";

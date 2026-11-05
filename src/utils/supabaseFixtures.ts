@@ -1,3 +1,4 @@
+import { reportDataEvent } from "./dataEvents";
 import { getCityNameFromSlug } from "@/utils/cityHelper";
 import { getSupabaseAdmin } from "@/utils/supabaseAdmin";
 import type { FixturesData, Match, StandingItem } from "@/types/fixture";
@@ -66,7 +67,7 @@ export async function getSupabaseFixtures(
 
       const { data: pageRows, error } = await query;
       if (error) {
-        console.warn("Supabase fixtures okuma hatası (JSON fallback):", error.message);
+        reportDataEvent("remote-error", "fixtures");
         return null;
       }
       if (!pageRows || pageRows.length === 0) {
@@ -95,7 +96,7 @@ export async function getSupabaseFixtures(
 
       const { data: pageRows, error } = await query;
       if (error) {
-        console.warn("Supabase standings okuma hatası (boş standings kullanılıyor):", error.message);
+        reportDataEvent("remote-error", "standings");
         break;
       }
       if (!pageRows || pageRows.length === 0) {
@@ -147,7 +148,7 @@ export async function getSupabaseFixtures(
       )
       .filter((v): v is string => Boolean(v))
       .sort()
-      .pop() || new Date().toISOString();
+      .pop() || new Date(0).toISOString();
 
   return {
     city: citySlug === "all" || citySlug === "tumu" || citySlug === "turkiye"

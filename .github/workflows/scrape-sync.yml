@@ -72,7 +72,7 @@ jobs:
 
         run: |
 
-          python scripts/scrape_all_provinces.py --force
+          python scripts/scrape_all_provinces.py --local-only
 
       - name: Sync Volleybox matches & scores
 
@@ -166,7 +166,7 @@ jobs:
 
           else
 
-            git commit -m 'chore(data): manuel TVF fikstur ve 2. lig senkronizasyonu [skip ci]'
+            git commit -m 'chore(data): TVF altyapi verilerini yenile [skip ci]'
 
             git push
 

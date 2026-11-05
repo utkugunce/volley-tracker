@@ -45,7 +45,7 @@ export async function GET(request: Request) {
         email: user.email,
         created_at: user.created_at,
         last_sign_in_at: user.last_sign_in_at,
-        role: roleData?.role || user.app_metadata?.role || "viewer",
+        role: roleData?.role || "viewer",
         role_updated_at: roleData?.updated_at,
       };
     });

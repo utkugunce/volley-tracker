@@ -59,7 +59,7 @@ python scripts/scrape_all_provinces.py
 ```
 
 > [!NOTE]
-> **AI Asistanı & Geliştirici Kuralı:** Proje üzerinde kod geliştirme, UI/tasarım değişiklikleri, hata düzeltmeleri veya veri senkronizasyonu yapıldığında adım sonunda otomatik olarak `python scripts/scrape_all_provinces.py` çalıştırılır. İki çekme arasında **minimum 30 dakika** kuralı vardır (son çekim üzerinden 30 dk geçmediyse tarama atlanır; bu kural yalnızca kullanıcı manuel olarak `--force` istediğinde aşılabilir). Detaylar için [AGENTS.md](AGENTS.md) dosyasına bakabilirsiniz.
+> **Geliştirme ve veri güncelleme ayrı işlemlerdir.** Kod kontrolleri canlı kaynaklara yazmadan çalışır. 81 il taraması saatlik workflow veya açık veri güncelleme talebiyle yapılır; iki tarama arasında minimum 60 dakika vardır. `--force` yalnızca açık kullanıcı talebiyle kullanılabilir.
 
 ### 4. Arayüzü Başlatma (Next.js)
 ```bash
@@ -129,3 +129,40 @@ Projede yönetim ve bülten yükleme güvenliği için ortam değişkenleri kull
 
 ## 📄 Lisans
 MIT
+
+
+## Geliştirme ve veri sözleşmesi
+
+- Uygulama ve import betiği `NEXT_PUBLIC_SUPABASE_URL` okur. GitHub Actions secret adı `SUPABASE_URL` olarak kalır; workflow bunu `NEXT_PUBLIC_SUPABASE_URL` değişkenine bağlar. Tarayıcı oturumu ayrıca `NEXT_PUBLIC_SUPABASE_ANON_KEY`, sunucu ise `SUPABASE_SERVICE_ROLE_KEY` ister.
+- SSR ve `/api/fixtures` aynı `loadFixtures` yükleyicisini kullanır: Supabase → yerelde bilinen skorların korunması → manuel düzeltmeler. Uzak okuma başarısızsa yerel JSON kullanılır. Her yanıt kendi `data_source` bilgisini taşır.
+- `/api/health` yerel snapshot kapsamını ve 24 saatlik güncelliğini denetler; Supabase veya scraper erişiminin canlı testi değildir.
+- `updated_at` kaynak snapshot zamanıdır. `last_attempt_at`, `last_success_at` ve `content_changed_at` ayrı tutulur. Başarısız tarama eski verinin tarihini yenilemez.
+- Kod değişiklikleri özellik dalı ve PR ile incelenir. `main` için gerekli CI kontrolleri ve dal koruması GitHub yönetici ayarlarında etkinleştirilmelidir; depodaki dosyalar bunu tek başına etkinleştirmez.
+
+### Test komutları
+
+```bash
+npm ci
+python -m pip install -r scripts/requirements.txt pytest==9.0.2
+npm run typecheck
+npm run lint
+npm test
+python -m pytest tests -q
+python scripts/generate_city_slugs.py --check
+python scripts/validate_data_files.py
+npm run build
+# Ayrı terminalde npm start çalışırken:
+python -m playwright install chromium
+python -m pytest tests/e2e/visual_smoke.py -q
+```
+
+E2E testleri yalnızca yerel uygulamayı okur; scraping veya veri yazımı yapmaz. Sistem Chromium'u için `CHROMIUM_PATH=/usr/bin/chromium` kullanılabilir. Sabit şehir test verileri `tests/fixtures/cities/` altında tutulur; saatlik `data/` güncellemeleri birim testlerini değiştirmez. Güncel veri kontrolleri ayrı CI adımlarıdır.
+
+
+### Eski şehir verilerini yerel yenileme
+
+```bash
+python scripts/scrape_all_provinces.py --local-only --stale-only --workers 4
+```
+
+Bu komut yalnızca 24 saatten eski mevcut şehir snapshot'larını seçer; diğer şehirleri korur, 60 dakika sınırını aşmaz ve Volleybox/Supabase entegrasyonlarını çalıştırmaz. Başarısız kaynak okumaları `Önbellek` durumuyla raporlanır; eski verinin tarihi başarı tarihi gibi yenilenmez. Zamanlanmış workflow da TVF toplamasını `--local-only` ile çalıştırır; Volleybox ve Supabase adımları workflow'da ayrı ve açıkça tanımlıdır.

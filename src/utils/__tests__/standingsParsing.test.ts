@@ -1,3 +1,4 @@
+// @vitest-environment node
 import { describe, it, expect } from "vitest";
 import { parseStandingKey, CITY_SLUG_TO_NAME } from "@/utils/standingsParsing";
 

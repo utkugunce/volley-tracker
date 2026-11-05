@@ -186,6 +186,8 @@ export const DateNavigationRibbon: React.FC<DateNavigationRibbonProps> = ({
               <button
                 key={item.dateStr}
                 data-date={item.dateStr}
+                aria-pressed={isSelected}
+                aria-label={`${item.label} ${item.shortDay}, ${dayMatchCount} maç`}
                 type="button"
                 onClick={() => onSelectDate(item.dateStr)}
                 className={`relative flex flex-col items-center justify-center px-2.5 sm:px-3 py-1 rounded-lg text-xs transition-colors cursor-pointer min-w-[54px] shrink-0 ${
