@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:13:29.863196",
+  "updated_at": "2026-11-05T16:58:08.249021",
   "city": "Trabzon",
   "slug": "trabzon",
   "title": "TVF Trabzon Genç & Yıldız Kızlar Süper Lig",
@@ -603,7 +603,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T14:13:29.864241+00:00",
-  "last_success_at": "2026-11-05T14:13:29.864241+00:00",
-  "content_changed_at": "2026-11-05T14:13:29.864241+00:00"
+  "last_attempt_at": "2026-11-05T16:58:08.249511+00:00",
+  "last_success_at": "2026-11-05T16:58:08.249511+00:00",
+  "content_changed_at": "2026-11-05T14:13:29.864241+00:00",
+  "volleybox_synced_matches": 12,
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.385579"
 }

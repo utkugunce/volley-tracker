@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-05T14:13:38.184552",
+  "updated_at": "2026-11-05T16:57:45.876695",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 32,
+  "total_matches": 56,
   "source": "https://hatay.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -22,10 +22,103 @@
     ],
     "halls": [
       "Tümü",
+      "Toki S.S",
       "İsk. Sakarya S.S"
     ]
   },
   "standings": {
+    "Genç Kızlar Süper Lig - A Grb.": [
+      {
+        "rank": 1,
+        "team": "Antakya Güneş Spor Kulübü U18",
+        "played": 2,
+        "won": 2,
+        "lost": 0,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Defne Lider Akademi Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Samandağ Anka Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Serinyol Yıldızlar Spor Kulübü U18",
+        "played": 2,
+        "won": 0,
+        "lost": 2,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 6,
+        "form": []
+      }
+    ],
+    "Genç Kızlar Süper Lig - B Grb.": [
+      {
+        "rank": 1,
+        "team": "Hatay Voleybol Spor Kulübü U18",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Yükseliş Akademi Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Antakya Güneş Spor Kulübü - B U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 8,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Yıldızlar Samandağ Spor Kulübü U18",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 9,
+        "form": []
+      }
+    ],
     "Genç Kızlar Süper Lig - C Grb.": [
       {
         "rank": 1,
@@ -132,7 +225,861 @@
   },
   "matches": [
     {
-      "id": "hatay-20261003-001",
+      "id": "hatay-20261017-001",
+      "city": "Hatay",
+      "date": "2026-10-17",
+      "time": "14:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "1",
+      "home_team": "Antakya Güneş Spor Kulübü U18",
+      "away_team": "Samandağ Anka Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-14",
+        "25-16",
+        "25-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261017-002",
+      "city": "Hatay",
+      "date": "2026-10-17",
+      "time": "16:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "2",
+      "home_team": "Defne Lider Akademi Spor Kulübü U18",
+      "away_team": "Serinyol Yıldızlar Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-12",
+        "25-9"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261105-003",
+      "city": "Hatay",
+      "date": "2026-11-05",
+      "time": "18:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "3",
+      "home_team": "Serinyol Yıldızlar Spor Kulübü U18",
+      "away_team": "Antakya Güneş Spor Kulübü U18",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "4-25",
+        "5-25",
+        "3-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261105-004",
+      "city": "Hatay",
+      "date": "2026-11-05",
+      "time": "19:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "4",
+      "home_team": "Samandağ Anka Spor Kulübü U18",
+      "away_team": "Defne Lider Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261117-005",
+      "city": "Hatay",
+      "date": "2026-11-17",
+      "time": "15:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "5",
+      "home_team": "Antakya Güneş Spor Kulübü U18",
+      "away_team": "Defne Lider Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261117-006",
+      "city": "Hatay",
+      "date": "2026-11-17",
+      "time": "16:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "6",
+      "home_team": "Serinyol Yıldızlar Spor Kulübü U18",
+      "away_team": "Samandağ Anka Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261119-007",
+      "city": "Hatay",
+      "date": "2026-11-19",
+      "time": "15:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "7",
+      "home_team": "Samandağ Anka Spor Kulübü U18",
+      "away_team": "Antakya Güneş Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261119-008",
+      "city": "Hatay",
+      "date": "2026-11-19",
+      "time": "16:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "8",
+      "home_team": "Serinyol Yıldızlar Spor Kulübü U18",
+      "away_team": "Defne Lider Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261124-009",
+      "city": "Hatay",
+      "date": "2026-11-24",
+      "time": "18:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "9",
+      "home_team": "Antakya Güneş Spor Kulübü U18",
+      "away_team": "Serinyol Yıldızlar Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261124-010",
+      "city": "Hatay",
+      "date": "2026-11-24",
+      "time": "19:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "10",
+      "home_team": "Defne Lider Akademi Spor Kulübü U18",
+      "away_team": "Samandağ Anka Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261126-011",
+      "city": "Hatay",
+      "date": "2026-11-26",
+      "time": "18:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "11",
+      "home_team": "Defne Lider Akademi Spor Kulübü U18",
+      "away_team": "Antakya Güneş Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261126-012",
+      "city": "Hatay",
+      "date": "2026-11-26",
+      "time": "19:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grb.",
+      "match_no": "12",
+      "home_team": "Samandağ Anka Spor Kulübü U18",
+      "away_team": "Serinyol Yıldızlar Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261006-013",
+      "city": "Hatay",
+      "date": "2026-10-06",
+      "time": "18:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "1",
+      "home_team": "Yükseliş Akademi Spor Kulübü U18",
+      "away_team": "Hatay Voleybol Spor Kulübü U18",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261006-014",
+      "city": "Hatay",
+      "date": "2026-10-06",
+      "time": "19:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "2",
+      "home_team": "Antakya Güneş Spor Kulübü - B U18",
+      "away_team": "Yıldızlar Samandağ Spor Kulübü U18",
+      "score": "3 - 2",
+      "home_score": 3,
+      "away_score": 2,
+      "set_scores": [
+        "27-29",
+        "30-28",
+        "25-23",
+        "18-25",
+        "15-10"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261017-015",
+      "city": "Hatay",
+      "date": "2026-10-17",
+      "time": "13:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "3",
+      "home_team": "Yıldızlar Samandağ Spor Kulübü U18",
+      "away_team": "Yükseliş Akademi Spor Kulübü U18",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "19-25",
+        "15-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261018-016",
+      "city": "Hatay",
+      "date": "2026-10-18",
+      "time": "15:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "4",
+      "home_team": "Hatay Voleybol Spor Kulübü U18",
+      "away_team": "Antakya Güneş Spor Kulübü - B U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-11",
+        "25-13"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261103-017",
+      "city": "Hatay",
+      "date": "2026-11-03",
+      "time": "18:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "5",
+      "home_team": "Yükseliş Akademi Spor Kulübü U18",
+      "away_team": "Antakya Güneş Spor Kulübü - B U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-11",
+        "25-14",
+        "25-22"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261103-018",
+      "city": "Hatay",
+      "date": "2026-11-03",
+      "time": "19:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "6",
+      "home_team": "Yıldızlar Samandağ Spor Kulübü U18",
+      "away_team": "Hatay Voleybol Spor Kulübü U18",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "0-25",
+        "0-25",
+        "0-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261107-019",
+      "city": "Hatay",
+      "date": "2026-11-07",
+      "time": "16:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "7",
+      "home_team": "Hatay Voleybol Spor Kulübü U18",
+      "away_team": "Yükseliş Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261107-020",
+      "city": "Hatay",
+      "date": "2026-11-07",
+      "time": "17:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "8",
+      "home_team": "Yıldızlar Samandağ Spor Kulübü U18",
+      "away_team": "Antakya Güneş Spor Kulübü - B U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261117-021",
+      "city": "Hatay",
+      "date": "2026-11-17",
+      "time": "12:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "9",
+      "home_team": "Antakya Güneş Spor Kulübü - B U18",
+      "away_team": "Hatay Voleybol Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261117-022",
+      "city": "Hatay",
+      "date": "2026-11-17",
+      "time": "13:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "10",
+      "home_team": "Yükseliş Akademi Spor Kulübü U18",
+      "away_team": "Yıldızlar Samandağ Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261119-023",
+      "city": "Hatay",
+      "date": "2026-11-19",
+      "time": "12:00",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "11",
+      "home_team": "Antakya Güneş Spor Kulübü - B U18",
+      "away_team": "Yükseliş Akademi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261119-024",
+      "city": "Hatay",
+      "date": "2026-11-19",
+      "time": "13:30",
+      "hall": "Toki S.S",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "B Grb.",
+      "match_no": "12",
+      "home_team": "Hatay Voleybol Spor Kulübü U18",
+      "away_team": "Yıldızlar Samandağ Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "hatay-20261003-025",
       "city": "Hatay",
       "date": "2026-10-03",
       "time": "16:00",
@@ -177,7 +1124,7 @@
       }
     },
     {
-      "id": "hatay-20261003-002",
+      "id": "hatay-20261003-026",
       "city": "Hatay",
       "date": "2026-10-03",
       "time": "17:30",
@@ -223,7 +1170,7 @@
       }
     },
     {
-      "id": "hatay-20261015-003",
+      "id": "hatay-20261015-027",
       "city": "Hatay",
       "date": "2026-10-15",
       "time": "18:00",
@@ -269,7 +1216,7 @@
       }
     },
     {
-      "id": "hatay-20261015-004",
+      "id": "hatay-20261015-028",
       "city": "Hatay",
       "date": "2026-10-15",
       "time": "19:30",
@@ -316,7 +1263,7 @@
       }
     },
     {
-      "id": "hatay-20261017-005",
+      "id": "hatay-20261017-029",
       "city": "Hatay",
       "date": "2026-10-17",
       "time": "17:00",
@@ -362,7 +1309,7 @@
       }
     },
     {
-      "id": "hatay-20261017-006",
+      "id": "hatay-20261017-030",
       "city": "Hatay",
       "date": "2026-10-17",
       "time": "18:30",
@@ -408,7 +1355,7 @@
       }
     },
     {
-      "id": "hatay-20261105-007",
+      "id": "hatay-20261105-031",
       "city": "Hatay",
       "date": "2026-11-05",
       "time": "18:00",
@@ -449,7 +1396,7 @@
       }
     },
     {
-      "id": "hatay-20261105-008",
+      "id": "hatay-20261105-032",
       "city": "Hatay",
       "date": "2026-11-05",
       "time": "19:30",
@@ -490,7 +1437,7 @@
       }
     },
     {
-      "id": "hatay-20261107-009",
+      "id": "hatay-20261107-033",
       "city": "Hatay",
       "date": "2026-11-07",
       "time": "16:00",
@@ -531,7 +1478,7 @@
       }
     },
     {
-      "id": "hatay-20261107-010",
+      "id": "hatay-20261107-034",
       "city": "Hatay",
       "date": "2026-11-07",
       "time": "17:30",
@@ -572,7 +1519,7 @@
       }
     },
     {
-      "id": "hatay-20261117-011",
+      "id": "hatay-20261117-035",
       "city": "Hatay",
       "date": "2026-11-17",
       "time": "18:00",
@@ -613,7 +1560,7 @@
       }
     },
     {
-      "id": "hatay-20261117-012",
+      "id": "hatay-20261117-036",
       "city": "Hatay",
       "date": "2026-11-17",
       "time": "19:30",
@@ -654,7 +1601,7 @@
       }
     },
     {
-      "id": "hatay-20261121-013",
+      "id": "hatay-20261121-037",
       "city": "Hatay",
       "date": "2026-11-21",
       "time": "13:00",
@@ -695,7 +1642,7 @@
       }
     },
     {
-      "id": "hatay-20261121-014",
+      "id": "hatay-20261121-038",
       "city": "Hatay",
       "date": "2026-11-21",
       "time": "14:30",
@@ -736,7 +1683,7 @@
       }
     },
     {
-      "id": "hatay-20261124-015",
+      "id": "hatay-20261124-039",
       "city": "Hatay",
       "date": "2026-11-24",
       "time": "18:00",
@@ -777,7 +1724,7 @@
       }
     },
     {
-      "id": "hatay-20261124-016",
+      "id": "hatay-20261124-040",
       "city": "Hatay",
       "date": "2026-11-24",
       "time": "19:30",
@@ -818,7 +1765,7 @@
       }
     },
     {
-      "id": "hatay-20261201-017",
+      "id": "hatay-20261201-041",
       "city": "Hatay",
       "date": "2026-12-01",
       "time": "18:00",
@@ -859,7 +1806,7 @@
       }
     },
     {
-      "id": "hatay-20261201-018",
+      "id": "hatay-20261201-042",
       "city": "Hatay",
       "date": "2026-12-01",
       "time": "19:30",
@@ -900,7 +1847,7 @@
       }
     },
     {
-      "id": "hatay-20261203-019",
+      "id": "hatay-20261203-043",
       "city": "Hatay",
       "date": "2026-12-03",
       "time": "18:00",
@@ -941,7 +1888,7 @@
       }
     },
     {
-      "id": "hatay-20261203-020",
+      "id": "hatay-20261203-044",
       "city": "Hatay",
       "date": "2026-12-03",
       "time": "19:30",
@@ -982,7 +1929,7 @@
       }
     },
     {
-      "id": "hatay-20261006-021",
+      "id": "hatay-20261006-045",
       "city": "Hatay",
       "date": "2026-10-06",
       "time": "18:00",
@@ -1027,7 +1974,7 @@
       }
     },
     {
-      "id": "hatay-20261006-022",
+      "id": "hatay-20261006-046",
       "city": "Hatay",
       "date": "2026-10-06",
       "time": "19:30",
@@ -1072,7 +2019,7 @@
       }
     },
     {
-      "id": "hatay-20261008-023",
+      "id": "hatay-20261008-047",
       "city": "Hatay",
       "date": "2026-10-08",
       "time": "19:30",
@@ -1119,7 +2066,7 @@
       }
     },
     {
-      "id": "hatay-20261010-024",
+      "id": "hatay-20261010-048",
       "city": "Hatay",
       "date": "2026-10-10",
       "time": "16:00",
@@ -1164,7 +2111,7 @@
       }
     },
     {
-      "id": "hatay-20261022-025",
+      "id": "hatay-20261022-049",
       "city": "Hatay",
       "date": "2026-10-22",
       "time": "18:00",
@@ -1210,7 +2157,7 @@
       }
     },
     {
-      "id": "hatay-20261022-026",
+      "id": "hatay-20261022-050",
       "city": "Hatay",
       "date": "2026-10-22",
       "time": "19:30",
@@ -1255,7 +2202,7 @@
       }
     },
     {
-      "id": "hatay-20261029-027",
+      "id": "hatay-20261029-051",
       "city": "Hatay",
       "date": "2026-10-29",
       "time": "14:00",
@@ -1300,7 +2247,7 @@
       }
     },
     {
-      "id": "hatay-20261029-028",
+      "id": "hatay-20261029-052",
       "city": "Hatay",
       "date": "2026-10-29",
       "time": "15:30",
@@ -1345,7 +2292,7 @@
       }
     },
     {
-      "id": "hatay-20261112-029",
+      "id": "hatay-20261112-053",
       "city": "Hatay",
       "date": "2026-11-12",
       "time": "18:00",
@@ -1386,7 +2333,7 @@
       }
     },
     {
-      "id": "hatay-20261112-030",
+      "id": "hatay-20261112-054",
       "city": "Hatay",
       "date": "2026-11-12",
       "time": "19:30",
@@ -1427,7 +2374,7 @@
       }
     },
     {
-      "id": "hatay-20261119-031",
+      "id": "hatay-20261119-055",
       "city": "Hatay",
       "date": "2026-11-19",
       "time": "18:00",
@@ -1468,7 +2415,7 @@
       }
     },
     {
-      "id": "hatay-20261119-032",
+      "id": "hatay-20261119-056",
       "city": "Hatay",
       "date": "2026-11-19",
       "time": "19:30",
@@ -1509,7 +2456,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T14:13:38.194080+00:00",
-  "last_success_at": "2026-11-05T14:13:38.194080+00:00",
-  "content_changed_at": "2026-11-05T14:13:38.194080+00:00"
+  "last_attempt_at": "2026-11-05T16:57:45.878078+00:00",
+  "last_success_at": "2026-11-05T16:57:45.878078+00:00",
+  "content_changed_at": "2026-11-05T16:57:45.878078+00:00",
+  "volleybox_synced_matches": 32,
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.363925"
 }

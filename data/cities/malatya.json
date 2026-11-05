@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T16:57:55.270980",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -2186,6 +2186,9 @@
       }
     }
   ],
+  "last_attempt_at": "2026-11-05T16:57:55.271739+00:00",
+  "last_success_at": "2026-11-05T16:57:55.271739+00:00",
+  "content_changed_at": "2026-11-05T16:57:55.271739+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:54.232626"
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.565538"
 }

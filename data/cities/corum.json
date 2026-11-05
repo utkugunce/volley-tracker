@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-05T14:10:00.550332",
+  "updated_at": "2026-11-05T16:57:27.894415",
   "city": "Çorum",
   "slug": "corum",
   "title": "TVF Çorum Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 7,
+  "total_matches": 13,
   "source": "https://corum.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -26,6 +26,52 @@
     ]
   },
   "standings": {
+    "Genç Kızlar Süper Lig - A Grubu": [
+      {
+        "rank": 1,
+        "team": "Çorum Arena Spor U18",
+        "played": 3,
+        "won": 3,
+        "lost": 0,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Çorum Bahçelievler Spor Kulübü U18",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 4,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Çorum Efor Spor Kulübü U18",
+        "played": 3,
+        "won": 1,
+        "lost": 2,
+        "points": 3,
+        "sets_won": 4,
+        "sets_lost": 6,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Çorum Gençlik Spor Kulübü U18",
+        "played": 3,
+        "won": 0,
+        "lost": 3,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 9,
+        "form": []
+      }
+    ],
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
@@ -159,6 +205,235 @@
       "id": "corum-20261019-001",
       "city": "Çorum",
       "date": "2026-10-19",
+      "time": "19:30",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "1",
+      "home_team": "Çorum Efor Spor Kulübü U18",
+      "away_team": "Çorum Bahçelievler Spor Kulübü U18",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "25-23",
+        "13-25",
+        "13-25",
+        "24-26"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261021-002",
+      "city": "Çorum",
+      "date": "2026-10-21",
+      "time": "19:30",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "2",
+      "home_team": "Çorum Gençlik Spor Kulübü U18",
+      "away_team": "Çorum Arena Spor U18",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "19-25",
+        "13-25",
+        "14-25"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261023-003",
+      "city": "Çorum",
+      "date": "2026-10-23",
+      "time": "18:00",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "3",
+      "home_team": "Çorum Arena Spor U18",
+      "away_team": "Çorum Efor Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-12",
+        "25-19",
+        "25-7"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261023-004",
+      "city": "Çorum",
+      "date": "2026-10-23",
+      "time": "19:30",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "4",
+      "home_team": "Çorum Bahçelievler Spor Kulübü U18",
+      "away_team": "Çorum Gençlik Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-18",
+        "25-20",
+        "25-16"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261026-005",
+      "city": "Çorum",
+      "date": "2026-10-26",
+      "time": "18:00",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "5",
+      "home_team": "Çorum Efor Spor Kulübü U18",
+      "away_team": "Çorum Gençlik Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-17",
+        "25-16",
+        "25-16"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261027-006",
+      "city": "Çorum",
+      "date": "2026-10-27",
+      "time": "19:30",
+      "hall": "Atatürk S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "6",
+      "home_team": "Çorum Arena Spor U18",
+      "away_team": "Çorum Bahçelievler Spor Kulübü U18",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-21",
+        "25-22",
+        "25-11"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "corum-20261019-007",
+      "city": "Çorum",
+      "date": "2026-10-19",
       "time": "18:00",
       "hall": "Atatürk S.S.",
       "category": "Genç Kızlar Süper Lig",
@@ -201,7 +476,7 @@
       }
     },
     {
-      "id": "corum-20261021-002",
+      "id": "corum-20261021-008",
       "city": "Çorum",
       "date": "2026-10-21",
       "time": "18:00",
@@ -246,7 +521,7 @@
       }
     },
     {
-      "id": "corum-20261027-003",
+      "id": "corum-20261027-009",
       "city": "Çorum",
       "date": "2026-10-27",
       "time": "18:00",
@@ -291,7 +566,7 @@
       }
     },
     {
-      "id": "corum-20261029-004",
+      "id": "corum-20261029-010",
       "city": "Çorum",
       "date": "2026-10-29",
       "time": "18:00",
@@ -338,7 +613,7 @@
       }
     },
     {
-      "id": "corum-20261029-005",
+      "id": "corum-20261029-011",
       "city": "Çorum",
       "date": "2026-10-29",
       "time": "19:30",
@@ -383,7 +658,7 @@
       }
     },
     {
-      "id": "corum-20261102-006",
+      "id": "corum-20261102-012",
       "city": "Çorum",
       "date": "2026-11-02",
       "time": "18:00",
@@ -429,7 +704,7 @@
       }
     },
     {
-      "id": "corum-20261102-007",
+      "id": "corum-20261102-013",
       "city": "Çorum",
       "date": "2026-11-02",
       "time": "19:30",
@@ -475,7 +750,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T14:10:00.554994+00:00",
-  "last_success_at": "2026-11-05T14:10:00.554994+00:00",
-  "content_changed_at": "2026-11-05T14:10:00.554994+00:00"
+  "last_attempt_at": "2026-11-05T16:57:27.894858+00:00",
+  "last_success_at": "2026-11-05T16:57:27.894858+00:00",
+  "content_changed_at": "2026-11-05T16:57:27.894858+00:00",
+  "volleybox_synced_matches": 7,
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.669950"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T14:10:15.443272",
+  "updated_at": "2026-11-05T16:57:36.203505",
   "city": "Gaziantep",
   "slug": "gaziantep",
   "title": "TVF Gaziantep Genç & Yıldız Kızlar Süper Lig",
@@ -1118,7 +1118,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T14:10:15.448134+00:00",
-  "last_success_at": "2026-11-05T14:10:15.448134+00:00",
-  "content_changed_at": "2026-11-05T14:10:15.448134+00:00"
+  "last_attempt_at": "2026-11-05T16:57:36.204305+00:00",
+  "last_success_at": "2026-11-05T16:57:36.204305+00:00",
+  "content_changed_at": "2026-11-05T14:10:15.448134+00:00",
+  "volleybox_synced_matches": 20,
+  "volleybox_sync_updated_at": "2026-11-05T16:59:43.391811"
 }
