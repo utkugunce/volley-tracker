@@ -19,3 +19,13 @@ Temel koyu/açık tema korunur. Mobil takım adları iki satıra yayılabilir, t
 ## Veritabanı geçişi
 
 `008_authoritative_roles.sql` uygulanmalıdır. Eski RLS yardımcıları JWT metadata rollerini de kabul ediyordu; yeni migration yalnızca `public.user_roles` okur ve `search_path` sabitler. Uygulama da aynı tabloyu kullanır. Canlı Supabase bağlantısı/anahtarı bu ortamda yoktur; migration canlı veritabanına uygulanmış sayılmaz. Önce mevcut yöneticilerin `user_roles` satırları olduğunu doğrulayın; ilk yönetici scripti bu tabloyu kullanır.
+
+## main koruması için veri PR akışı
+
+Gerekli durum kontrolü adı **CI validation** olmalıdır. `build` adı Docker işinde de kullanıldığı için bu kuralda kullanılmaz. Veri toplayıcı, her çalışma için ayrı `automation/tvf-data-<run>-<attempt>` dalı açar ve main'e PR gönderir; doğrudan main push'u ve `[skip ci]` kaldırılmıştır. PR kendiliğinden birleştirilmez.
+
+GITHUB_TOKEN ile açılan PR diğer workflow'ları otomatik tetiklemez. Bu nedenle toplayıcı, CI'ı veri dalı üzerinde `workflow_dispatch` ile açıkça başlatır. Test edilen commit üzerinde `CI validation` kontrolü oluşur. Bunun için toplayıcıya `contents: write`, `pull-requests: write`, `actions: write` verilmiştir; genel repository izinlerini genişletmek gerekmez.
+
+GitHub Settings → Actions → General → Workflow permissions altında **Allow GitHub Actions to create and approve pull requests** açık olmalıdır. Mevcut entegrasyon bu ayarı okuyamadığı için panelden doğrulama gerekir. Hiçbir bypass aktörü eklenmesi gerekmez. Veri PR'ı birleştirildikten sonra Supabase aktarımı `supabase-import.yml` ile yalnızca main üzerinde çalışır; PR oluşturulmadan önce veritabanı güncellenmez.
+
+Kurala `CI validation` eklendikten ve veri botunun PR izni açıldıktan sonra kural Active yapılabilir. Yeni veri PR'ları başarılı kontrolden sonra kullanıcı tarafından birleştirilir; bu akışta otomatik veri toplama sürer, canlıya alma onaylı PR birleştirmesine bağlıdır.

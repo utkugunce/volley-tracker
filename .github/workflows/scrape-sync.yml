@@ -16,11 +16,15 @@ concurrency:
 
   group: scrape-sync
 
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
 
   contents: write
+
+  pull-requests: write
+
+  actions: write
 
   issues: write
 
@@ -35,6 +39,9 @@ jobs:
       - name: Checkout repository
 
         uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
 
@@ -114,16 +121,6 @@ jobs:
 
           python scripts/check_data_freshness.py
 
-      - name: Import synchronized data into Supabase
-
-        env:
-
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-
-        run: npm run supabase:import
-
       # Yalnızca zaman damgası (updated_at vb.) değişen dosyaları geri al: içerik aynıysa commit'e girmez.
 
       - name: Skip timestamp-only data changes
@@ -134,43 +131,10 @@ jobs:
 
           python scripts/skip_timestamp_only_changes.py --heartbeat-hours 12
 
-      - name: Commit and push changes
-
+      - name: Open data pull request and request CI
         env:
-
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          DATA_COMMIT_MIN_INTERVAL_HOURS: ${{ vars.DATA_COMMIT_MIN_INTERVAL_HOURS || '6' }}
-
-        run: |
-
-          git config --global user.name 'github-actions[bot]'
-
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-          # Yalnızca data/ içeriği gerçekten değiştiyse commit at (izlenen dosyada değişiklik veya yeni dosya).
-
-          if git diff --quiet -- data/ && [ -z "$(git ls-files --others --exclude-standard -- data/)" ]; then
-
-            echo 'No data changes to commit'
-
-            exit 0
-
-          fi
-
-          git add data/ src/utils/citySlugs.ts
-
-          if git diff --staged --quiet; then
-
-            echo 'No data changes to commit'
-
-          else
-
-            git commit -m 'chore(data): TVF altyapi verilerini yenile [skip ci]'
-
-            git push
-
-          fi
+        run: python scripts/publish_data_pr.py
 
       - name: Create sync failure alert
 

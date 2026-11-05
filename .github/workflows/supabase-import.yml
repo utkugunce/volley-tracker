@@ -1,0 +1,32 @@
+name: Import approved data into Supabase
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/cities/**'
+      - 'data/fixtures.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: supabase-approved-data-import
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Import reviewed main snapshot
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run supabase:import
