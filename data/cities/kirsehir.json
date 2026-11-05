@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T14:09:51.379482",
   "city": "Kırşehir",
   "slug": "kirsehir",
   "title": "TVF Kırşehir Genç & Yıldız Kızlar Süper Lig",
@@ -1710,6 +1710,7 @@
       }
     }
   ],
-  "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:36.607982"
+  "last_attempt_at": "2026-11-05T14:09:51.383495+00:00",
+  "last_success_at": "2026-11-05T14:09:51.383495+00:00",
+  "content_changed_at": "2026-11-05T14:09:51.383495+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T14:09:53.057586",
   "city": "Diyarbakır",
   "slug": "diyarbakir",
   "title": "TVF Diyarbakır Genç & Yıldız Kızlar Süper Lig",
@@ -31,6 +31,17 @@
     "Genç Kızlar 1. Ligi - Genç Kadın": [
       {
         "rank": 1,
+        "team": "Megaron İnşaat Diyarbakır Spor",
+        "played": 4,
+        "won": 4,
+        "lost": 0,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Diyarbakır Voleybolcular Spor Kulübü U18",
         "played": 5,
         "won": 4,
@@ -41,24 +52,13 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Megaron İnşaat Diyarbakır Spor",
-        "played": 3,
-        "won": 3,
-        "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 3,
         "team": "Diyarbakır Büyükşehir Belediyespor U18",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 7,
-        "sets_won": 8,
+        "points": 10,
+        "sets_won": 11,
         "sets_lost": 4,
         "form": []
       },
@@ -75,24 +75,24 @@
       },
       {
         "rank": 5,
-        "team": "Diyarbakır İçkale Spor Kulübü U18",
-        "played": 3,
+        "team": "Diyarbakır Gençlik Spor Kulübü U18",
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
-        "sets_won": 1,
-        "sets_lost": 9,
+        "sets_won": 0,
+        "sets_lost": 12,
         "form": []
       },
       {
         "rank": 6,
-        "team": "Diyarbakır Gençlik Spor Kulübü U18",
-        "played": 3,
+        "team": "Diyarbakır İçkale Spor Kulübü U18",
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 9,
+        "sets_won": 1,
+        "sets_lost": 12,
         "form": []
       }
     ]
@@ -611,11 +611,15 @@
       "match_no": "12",
       "home_team": "Diyarbakır Gençlik Spor Kulübü U18",
       "away_team": "Diyarbakır Büyükşehir Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "17-25",
+        "15-25",
+        "9-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415717",
@@ -652,11 +656,15 @@
       "match_no": "13",
       "home_team": "Megaron İnşaat Diyarbakır Spor",
       "away_team": "Diyarbakır İçkale Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415718",
@@ -763,6 +771,7 @@
       }
     }
   ],
-  "volleybox_synced_matches": 15,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:21.705270"
+  "last_attempt_at": "2026-11-05T14:09:53.058993+00:00",
+  "last_success_at": "2026-11-05T14:09:53.058993+00:00",
+  "content_changed_at": "2026-11-05T14:09:53.058993+00:00"
 }

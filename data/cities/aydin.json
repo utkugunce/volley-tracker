@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T15:48:17.379811+03:00",
+  "updated_at": "2026-11-05T14:09:51.975877",
   "city": "Aydın",
   "slug": "aydin",
   "title": "TVF Aydın Genç & Yıldız Kızlar Süper Lig",
@@ -22,6 +22,7 @@
     ],
     "halls": [
       "Tümü",
+      "Aydın Lisesi S.",
       "Mimar Sinan S.S",
       "Sks",
       "Söke S.S."
@@ -883,53 +884,12 @@
       "city": "Aydın",
       "date": "2026-11-30",
       "time": "19:00",
-      "hall": "Mimar Sinan S.S",
+      "hall": "Aydın Lisesi S.",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "19",
-      "home_team": "Efeler Altın Smaç Spor Kulübü U18",
-      "away_team": "Söke Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "406623",
-        "url": "https://women.volleybox.net/tr/efeler-altn-smac-spor-kulubu-u18-soke-voleybol-spor-kulubu-u18-c406623",
-        "host_name": "Efeler Altın Smaç Spor Kulübü U18",
-        "guest_name": "Söke Voleybol Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-30",
-        "vb_time": "19:00",
-        "vb_hall": "Mimar Sinan Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-30",
-          "vb_time": "19:00",
-          "vb_hall": "Mimar Sinan Spor Salonu",
-          "details": null
-        }
-      }
-    },
-    {
-      "id": "aydin-20261130-020",
-      "city": "Aydın",
-      "date": "2026-11-30",
-      "time": "20:30",
-      "hall": "Mimar Sinan S.S",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "20",
       "home_team": "Aydın DSİ Spor Kulübü U18",
       "away_team": "Aydın Gençlik Ve Spor İl Müdürlüğü Spor Kulübü U18",
       "score": "- : -",
@@ -959,8 +919,50 @@
           "details": null
         }
       }
+    },
+    {
+      "id": "aydin-20261130-020",
+      "city": "Aydın",
+      "date": "2026-11-30",
+      "time": "19:00",
+      "hall": "Mimar Sinan S.S",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "1. Grup",
+      "match_no": "20",
+      "home_team": "Efeler Altın Smaç Spor Kulübü U18",
+      "away_team": "Söke Voleybol Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": true,
+        "match_id": "406623",
+        "url": "https://women.volleybox.net/tr/efeler-altn-smac-spor-kulubu-u18-soke-voleybol-spor-kulubu-u18-c406623",
+        "host_name": "Efeler Altın Smaç Spor Kulübü U18",
+        "guest_name": "Söke Voleybol Spor Kulübü U18",
+        "score": null,
+        "has_score": false,
+        "vb_date": "2026-11-30",
+        "vb_time": "19:00",
+        "vb_hall": "Mimar Sinan Spor Salonu",
+        "discrepancy": {
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-30",
+          "vb_time": "19:00",
+          "vb_hall": "Mimar Sinan Spor Salonu",
+          "details": null
+        }
+      }
     }
   ],
-  "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-04T15:55:13.626802"
+  "last_attempt_at": "2026-11-05T14:09:51.977314+00:00",
+  "last_success_at": "2026-11-05T14:09:51.977314+00:00",
+  "content_changed_at": "2026-11-05T14:09:51.977314+00:00"
 }
