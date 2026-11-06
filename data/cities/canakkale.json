@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T18:27:48.305152",
+  "updated_at": "2026-11-06T14:02:47.561720",
   "city": "Çanakkale",
   "slug": "canakkale",
   "title": "TVF Çanakkale Genç & Yıldız Kızlar Süper Lig",
@@ -343,12 +343,12 @@
       {
         "rank": 1,
         "team": "Çan Kale Spor Kulübü U16",
-        "played": 5,
+        "played": 6,
         "won": 5,
-        "lost": 0,
-        "points": 15,
+        "lost": 1,
+        "points": 12,
         "sets_won": 15,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -376,11 +376,11 @@
       {
         "rank": 4,
         "team": "Gökçeada Spor Kulübü U16",
-        "played": 5,
-        "won": 0,
+        "played": 6,
+        "won": 1,
         "lost": 5,
         "points": 0,
-        "sets_won": 2,
+        "sets_won": 5,
         "sets_lost": 15,
         "form": []
       }
@@ -1350,18 +1350,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "402984",
+        "url": "https://women.volleybox.net/tr/yesil-bayramic-sk-u16-eceabat-spor-kulubu-u16-c402984",
+        "host_name": "Yeşil Bayramiç SK U16",
+        "guest_name": "Eceabat Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-04",
+        "vb_time": "14:00",
+        "vb_hall": "Bayramiç Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-04",
+          "vb_time": "14:00",
+          "vb_hall": "Bayramiç Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1388,18 +1395,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "402986",
+        "url": "https://women.volleybox.net/tr/canakkalespor-u16-yesil-bayramic-sk-u16-c402986",
+        "host_name": "Çanakkalespor U16",
+        "guest_name": "Yeşil Bayramiç SK U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-07",
+        "vb_time": "20:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-07",
+          "vb_time": "20:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1517,18 +1531,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406686",
+        "url": "https://women.volleybox.net/tr/yesil-bayramic-sk-u16-canakkalespor-u16-c406686",
+        "host_name": "Yeşil Bayramiç SK U16",
+        "guest_name": "Çanakkalespor U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-16",
+        "vb_time": "20:00",
+        "vb_hall": "Bayramiç Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-16",
+          "vb_time": "20:00",
+          "vb_hall": "Bayramiç Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1556,18 +1577,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411182",
+        "url": "https://women.volleybox.net/tr/canakkale-belediyespor-b-u16-yesil-bayramic-sk-u16-c411182",
+        "host_name": "Çanakkale Belediyespor - B U16",
+        "guest_name": "Yeşil Bayramiç SK U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-21",
+        "vb_time": "18:15",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-21",
+          "vb_time": "18:15",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1639,18 +1667,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411663",
+        "url": "https://women.volleybox.net/tr/yesil-bayramic-sk-u16-canakkale-belediyespor-b-u16-c411663",
+        "host_name": "Yeşil Bayramiç SK U16",
+        "guest_name": "Çanakkale Belediyespor - B U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-25",
+        "vb_time": "18:00",
+        "vb_hall": "Bayramiç Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-25",
+          "vb_time": "18:00",
+          "vb_hall": "Bayramiç Spor Salonu",
+          "details": null
         }
       }
     },
@@ -1677,18 +1712,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414729",
+        "url": "https://women.volleybox.net/tr/eceabat-spor-kulubu-u16-yesil-bayramic-sk-u16-c414729",
+        "host_name": "Eceabat Spor Kulübü U16",
+        "guest_name": "Yeşil Bayramiç SK U16",
+        "score": "0 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-31",
+        "vb_time": "12:00",
+        "vb_hall": "Eceabat Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-31",
+          "vb_time": "12:00",
+          "vb_hall": "Eceabat Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2484,18 +2526,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406689",
+        "url": "https://women.volleybox.net/tr/canakkale-belediyespor-b-u16-biga-gelisim-voleybol-kulubu-u16-c406689",
+        "host_name": "Çanakkale Belediyespor U16",
+        "guest_name": "Biga Gelişim Voleybol Kulübü U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-10",
+        "vb_time": "14:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-10",
+          "vb_time": "14:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2522,18 +2571,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "406690",
+        "url": "https://women.volleybox.net/tr/can-kale-spor-kulubu-u16-canakkale-belediyespor-b-u16-c406690",
+        "host_name": "Çan Kale Spor Kulübü U16",
+        "guest_name": "Çanakkale Belediyespor U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-10-14",
+        "vb_time": "18:00",
+        "vb_hall": "Çan Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-14",
+          "vb_time": "18:00",
+          "vb_hall": "Çan Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2561,18 +2617,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411185",
+        "url": "https://women.volleybox.net/tr/gokceada-spor-kulubu-u16-canakkale-belediyespor-b-u16-c411185",
+        "host_name": "Gökçeada Spor Kulübü U16",
+        "guest_name": "Çanakkale Belediyespor U16",
+        "score": "1 - 3",
+        "has_score": true,
+        "vb_date": "2026-10-17",
+        "vb_time": "12:00",
+        "vb_hall": "Gökçeada Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-17",
+          "vb_time": "12:00",
+          "vb_hall": "Gökçeada Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2645,18 +2708,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "411187",
+        "url": "https://women.volleybox.net/tr/biga-gelisim-voleybol-kulubu-u16-canakkale-belediyespor-u16-c411187",
+        "host_name": "Biga Gelişim Voleybol Kulübü U16",
+        "guest_name": "Çanakkale Belediyespor U16",
+        "score": "3 - 1",
+        "has_score": true,
+        "vb_date": "2026-10-20",
+        "vb_time": "18:00",
+        "vb_hall": "Biga Kapalı Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-10-20",
+          "vb_time": "18:00",
+          "vb_hall": "Biga Kapalı Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2683,18 +2753,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "synced": true,
+        "match_id": "414734",
+        "url": "https://women.volleybox.net/tr/canakkale-belediyespor-u16-gokceada-spor-kulubu-u16-c414734",
+        "host_name": "Çanakkale Belediyespor U16",
+        "guest_name": "Gökçeada Spor Kulübü U16",
+        "score": "3 - 0",
+        "has_score": true,
+        "vb_date": "2026-11-01",
+        "vb_time": "12:00",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-01",
+          "vb_time": "12:00",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2766,18 +2843,25 @@
       ],
       "status": "finished",
       "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
+        "synced": true,
+        "match_id": "414736",
+        "url": "https://women.volleybox.net/tr/canakkale-belediyespor-u16-can-kale-spor-kulubu-u16-c414736",
+        "host_name": "Çanakkale Belediyespor U16",
+        "guest_name": "Çan Kale Spor Kulübü U16",
         "score": null,
         "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
+        "vb_date": "2026-11-05",
+        "vb_time": "18:15",
+        "vb_hall": "18 Mart Spor Salonu",
         "discrepancy": {
-          "has_diff": false
+          "has_diff": false,
+          "date_diff": false,
+          "time_diff": false,
+          "hall_diff": false,
+          "vb_date": "2026-11-05",
+          "vb_time": "18:15",
+          "vb_hall": "18 Mart Spor Salonu",
+          "details": null
         }
       }
     },
@@ -2794,11 +2878,15 @@
       "match_no": "12",
       "home_team": "Gökçeada Spor Kulübü U16",
       "away_team": "Çan Kale Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415716",
@@ -2823,9 +2911,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T18:27:48.310004+00:00",
-  "last_success_at": "2026-11-05T18:27:48.310004+00:00",
-  "content_changed_at": "2026-11-05T18:27:48.310004+00:00",
-  "volleybox_synced_matches": 44,
-  "volleybox_sync_updated_at": "2026-11-05T18:29:48.086159"
+  "last_attempt_at": "2026-11-06T11:02:47.585991+00:00",
+  "last_success_at": "2026-11-06T11:02:47.585991+00:00",
+  "content_changed_at": "2026-11-06T11:02:47.585991+00:00",
+  "volleybox_synced_matches": 56,
+  "volleybox_sync_updated_at": "2026-11-06T14:10:12.739486"
 }

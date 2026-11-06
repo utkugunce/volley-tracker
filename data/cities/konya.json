@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:01:35.171527+03:00",
+  "updated_at": "2026-11-06T14:03:00.888496",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -2156,6 +2156,9 @@
       }
     }
   ],
+  "last_attempt_at": "2026-11-06T11:03:00.941934+00:00",
+  "last_success_at": "2026-11-06T11:03:00.941934+00:00",
+  "content_changed_at": "2026-11-06T11:03:00.941934+00:00",
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-11-05T16:09:20.497002"
+  "volleybox_sync_updated_at": "2026-11-06T14:10:40.252785"
 }
