@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:01:35.171527+03:00",
+  "updated_at": "2026-11-06T14:02:53.665150",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -1322,6 +1322,9 @@
       }
     }
   ],
+  "last_attempt_at": "2026-11-06T11:02:53.705991+00:00",
+  "last_success_at": "2026-11-06T11:02:53.705991+00:00",
+  "content_changed_at": "2026-11-06T11:02:53.705991+00:00",
   "volleybox_synced_matches": 27,
-  "volleybox_sync_updated_at": "2026-11-05T16:09:21.118722"
+  "volleybox_sync_updated_at": "2026-11-06T14:10:41.652925"
 }

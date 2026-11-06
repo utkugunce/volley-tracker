@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T18:28:20.130127",
+  "updated_at": "2026-11-06T14:03:11.001456",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -862,8 +862,8 @@
       "id": "samsun-20261107-015",
       "city": "Samsun",
       "date": "2026-11-07",
-      "time": "14:00",
-      "hall": "Atatürk Ss.",
+      "time": "13:00",
+      "hall": "Bahattin Ekinci Ss",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
@@ -888,14 +888,14 @@
         "vb_time": "14:00",
         "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-11-07",
           "vb_time": "14:00",
           "vb_hall": "Samsun Atatürk Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 13:00 / VB: 14:00) | Salon Değişti (TVF: Bahattin Ekinci Ss / VB: Samsun Atatürk Spor Salonu)"
         }
       }
     },
@@ -2532,8 +2532,8 @@
       "id": "samsun-20261108-054",
       "city": "Samsun",
       "date": "2026-11-08",
-      "time": "16:00",
-      "hall": "Atatürk Ss.",
+      "time": "11:00",
+      "hall": "Bahattin Ekinci Ss",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
@@ -2558,14 +2558,14 @@
         "vb_time": "16:00",
         "vb_hall": "Samsun Atatürk Spor Salonu",
         "discrepancy": {
-          "has_diff": false,
+          "has_diff": true,
           "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
+          "time_diff": true,
+          "hall_diff": true,
           "vb_date": "2026-11-08",
           "vb_time": "16:00",
           "vb_hall": "Samsun Atatürk Spor Salonu",
-          "details": null
+          "details": "Saat Değişti (TVF: 11:00 / VB: 16:00) | Salon Değişti (TVF: Bahattin Ekinci Ss / VB: Samsun Atatürk Spor Salonu)"
         }
       }
     },
@@ -2939,9 +2939,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-05T18:28:20.132126+00:00",
-  "last_success_at": "2026-11-05T18:28:20.132126+00:00",
-  "content_changed_at": "2026-11-05T18:28:20.132126+00:00",
+  "last_attempt_at": "2026-11-06T11:03:11.033906+00:00",
+  "last_success_at": "2026-11-06T11:03:11.033906+00:00",
+  "content_changed_at": "2026-11-06T11:03:11.033906+00:00",
   "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-11-05T18:29:48.128706"
+  "volleybox_sync_updated_at": "2026-11-06T14:10:45.013925"
 }
