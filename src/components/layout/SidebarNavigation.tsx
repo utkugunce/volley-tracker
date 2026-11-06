@@ -119,6 +119,8 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
           <button
             type="button"
             onClick={() => setIsFavoritesOpen(!isFavoritesOpen)}
+            aria-expanded={isFavoritesOpen}
+            aria-controls="sidebar-favorites"
             className="w-full flex items-center justify-between text-[11px] font-bold text-ink-3 hover:text-white px-2 py-1 rounded transition-colors cursor-pointer"
           >
             <span className="flex items-center gap-1.5 uppercase tracking-wider text-[10px]">
@@ -132,7 +134,7 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
           </button>
 
           {isFavoritesOpen && (
-            <div className="space-y-0.5 pt-0.5">
+            <div id="sidebar-favorites" className="space-y-0.5 pt-0.5">
               <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg text-ink-2">
                 <span className="flex items-center gap-2">
                   <Star size={12} className="text-warn" />
@@ -181,8 +183,11 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
 
               return (
                 <div key={cityNode.citySlug} className="rounded-lg overflow-hidden">
-                  <div
-                    className={`flex items-center justify-between py-1.5 px-2.5 rounded-lg transition-colors cursor-pointer ${
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={`sidebar-city-${cityNode.citySlug}`}
+                    className={`w-full flex items-center justify-between py-1.5 px-2.5 rounded-lg text-left transition-colors cursor-pointer ${
                       isCityActive
                         ? "bg-primary/15 text-white font-semibold"
                         : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
@@ -210,24 +215,31 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                     <span className="font-mono tabular-nums text-[10px] text-ink-3 shrink-0 ml-1">
                       {cityNode.totalMatches}
                     </span>
-                  </div>
+                  </button>
 
                   {isExpanded && (
-                    <div className="pl-4 pr-1 py-1 space-y-0.5 border-l border-line/50 ml-3.5 my-0.5">
+                    <div
+                      id={`sidebar-city-${cityNode.citySlug}`}
+                      className="pl-4 pr-1 py-1 space-y-0.5 border-l border-line/50 ml-3.5 my-0.5"
+                    >
                       {cityNode.categories.map((cat) => {
                         const catId = `${cityNode.citySlug}-${cat.key}`;
+                        const catControlId = `sidebar-category-${catId.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
                         const isCatExpanded = Boolean(expandedCategories[catId]);
                         const isCatSelected = selectedCategory === cat.label || selectedCategory === cat.shortLabel;
 
                         return (
                           <div key={cat.key} className="space-y-0.5">
-                            <div
+                            <button
+                              type="button"
+                              aria-expanded={cat.groups.length > 0 ? isCatExpanded : undefined}
+                              aria-controls={cat.groups.length > 0 ? catControlId : undefined}
                               onClick={() => {
                                 if (onSelectCity) onSelectCity(cityNode.citySlug);
                                 handleCategoryClick(cat.label);
                                 toggleCategoryExpand(catId);
                               }}
-                              className={`flex items-center justify-between py-1 px-2 rounded-md transition-colors text-[11px] cursor-pointer ${
+                              className={`w-full flex items-center justify-between py-1 px-2 rounded-md transition-colors text-[11px] text-left cursor-pointer ${
                                 isCatSelected
                                   ? "bg-primary/15 text-primary font-semibold"
                                   : "text-ink-2 hover:text-white hover:bg-surface-raised/40"
@@ -247,10 +259,13 @@ export const SidebarNavigation: React.FC<SidebarNavigationProps> = ({
                               <span className="text-[10px] font-mono tabular-nums text-ink-3">
                                 {cat.matchesCount}
                               </span>
-                            </div>
+                            </button>
 
                             {isCatExpanded && cat.groups.length > 0 && (
-                              <div className="pl-3.5 py-0.5 space-y-0.5 border-l border-line/40 ml-2">
+                              <div
+                                id={catControlId}
+                                className="pl-3.5 py-0.5 space-y-0.5 border-l border-line/40 ml-2"
+                              >
                                 {cat.groups.map((group) => {
                                   const isGroupSelected = selectedCategory === group.filterValue || selectedCategory === group.name;
 

@@ -72,7 +72,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   return (
     <nav
       aria-label="Mobil Alt Menü"
-      className="fixed bottom-0 left-0 right-0 z-50 bg-panel border-t border-line lg:hidden px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] transition-colors duration-150"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-panel border-t border-line lg:hidden px-1 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom,0px))] transition-colors duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
     >
       <div className="flex items-center justify-between max-w-lg mx-auto w-full gap-0.5">
         {navItems.map((item) => {
@@ -94,7 +94,8 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
               key={item.id}
               type="button"
               onClick={() => onSelectTab(item.id)}
-              className={`relative flex-1 min-w-0 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-colors duration-150 cursor-pointer ${
+              aria-pressed={isActive}
+              className={`relative flex-1 min-w-0 min-h-11 flex flex-col items-center justify-center py-1 px-1 rounded-xl transition-[transform,color,background-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] cursor-pointer ${
                 isActive
                   ? item.isLive
                     ? "text-live font-semibold"
@@ -120,16 +121,17 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                   </span>
                 )}
                 {item.badge !== undefined && item.badge > 0 && !item.isLive && (
-                  <span className="absolute -top-1.5 -right-2.5 min-w-[15px] h-3.5 px-0.5 text-primary text-[9px] font-mono tabular-nums font-bold flex items-center justify-center">
+                  <span className="absolute -top-1.5 -right-2.5 min-w-4 h-4 px-0.5 text-primary text-xs font-display tabular-nums font-bold flex items-center justify-center">
                     {item.badge > 99 ? "99+" : item.badge}
                   </span>
                 )}
               </div>
-              <span className="text-[10px] tracking-tight mt-0.5 truncate text-center w-full">
+              <span className="text-xs tracking-tight mt-0.5 truncate text-center w-full">
                 {item.label}
               </span>
               {isActive && (
                 <span
+                  aria-hidden="true"
                   className={`absolute top-0 w-5 h-0.5 rounded-full ${
                     item.isLive ? "bg-live" : "bg-primary"
                   }`}

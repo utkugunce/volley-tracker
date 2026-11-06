@@ -11,9 +11,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ArrowRight,
-  Activity,
   Globe,
-  Sparkles,
 } from "lucide-react";
 import {
   formatDateTurkish,
@@ -218,20 +216,20 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in-50 duration-200">
+    <div className="space-y-4 animate-in fade-in-50 duration-300">
       {/* Sayfa Başlığı (Semantik H1 & Canlı Gösterge) */}
-      <div className="hidden sm:flex items-center justify-between pb-1">
-        <h1 className="text-sm sm:text-base font-bold uppercase tracking-wider flex items-center gap-2">
+      <div className="flex items-center justify-between gap-3 pb-1">
+        <h1 className="text-lg sm:text-xl font-bold flex items-center gap-2 min-w-0">
           <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-          <span className="hero-heading-gradient">TVF Altyapı Maç Merkezi & Bülteni</span>
+          <span className="hero-heading-gradient truncate">TVF altyapı maç merkezi</span>
         </h1>
-        <span className="text-[11px] font-display tabular-nums text-ink-3">
-          {city === "all" ? "81 İl" : city} · {stats.totalMatches} Maç
+        <span className="text-xs font-display tabular-nums text-ink-3 shrink-0">
+          {currentCitySlug === "all" ? "81 il" : city} · {stats.totalMatches} maç
         </span>
       </div>
 
       {/* 1. ÜST KONTROL BAR: FOTMOB / APPLE SPORTS SEGMENTED FİLTRE */}
-      <div className="hidden sm:flex glass-panel rounded-2xl p-2 sm:p-2.5 border border-line/70 flex-col lg:flex-row lg:items-center justify-between gap-2.5 min-w-0">
+      <div className="hidden sm:flex glass-panel rounded-2xl p-2 sm:p-3 border border-line/70 flex-col lg:flex-row lg:items-center justify-between gap-3 min-w-0">
         {/* Sol: Akış Filtreleri (Tümü, Bugün, Bitenler, Fikstür) */}
         <div
           onWheel={(e) => {
@@ -244,14 +242,14 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("all")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-2 min-h-10 rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               feedFilter === "all"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
             }`}
           >
             <span>Maç Merkezi</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums opacity-80">
+            <span className="text-xs font-display font-semibold tabular-nums opacity-80">
               {stats.totalMatches}
             </span>
           </button>
@@ -259,16 +257,16 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("today")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-2 min-h-10 rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               feedFilter === "today"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
             }`}
           >
             <Flame size={13} className={feedFilter === "today" ? "text-primary-fg" : "text-primary"} />
-            <span>Bugün</span>
+            <span>Güncel</span>
             {stats.todayCount > 0 && (
-              <span className="text-[10px] font-display font-semibold tabular-nums opacity-80">
+              <span className="text-xs font-display font-semibold tabular-nums opacity-80">
                 {stats.todayCount}
               </span>
             )}
@@ -277,7 +275,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("finished")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-2 min-h-10 rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               feedFilter === "finished"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
@@ -285,7 +283,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           >
             <CheckCircle2 size={13} className={feedFilter === "finished" ? "text-primary-fg" : "text-done"} />
             <span>Biten Skorlar</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums opacity-80">
+            <span className="text-xs font-display font-semibold tabular-nums opacity-80">
               {stats.scoredMatches}
             </span>
           </button>
@@ -293,7 +291,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <button
             type="button"
             onClick={() => setFeedFilter("upcoming")}
-            className={`px-3 py-1.5 min-h-[36px] rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+            className={`px-3 py-2 min-h-10 rounded-lg text-xs font-semibold shrink-0 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.98] cursor-pointer whitespace-nowrap flex items-center gap-2 ${
               feedFilter === "upcoming"
                 ? "bg-primary text-primary-fg font-bold"
                 : "text-ink-2 hover:text-white hover:bg-surface-raised/60"
@@ -301,7 +299,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           >
             <Calendar size={13} className={feedFilter === "upcoming" ? "text-primary-fg" : "text-ink-2"} />
             <span>Gelecek Maçlar</span>
-            <span className="text-[10px] font-display font-semibold tabular-nums opacity-80">
+            <span className="text-xs font-display font-semibold tabular-nums opacity-80">
               {stats.upcomingMatches}
             </span>
           </button>
@@ -309,7 +307,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
 
         {/* Sağ: Hızlı İl Geçiş Hapları (Yatay Kaydırılabilir ve Ok Destekli) */}
         <div className="hidden md:flex items-center gap-1 min-w-0 flex-1 justify-end">
-          <span className="text-[11px] font-medium text-ink-3 mr-1 shrink-0 hidden xl:inline">İl:</span>
+          <span className="text-xs font-medium text-ink-3 mr-1 shrink-0 hidden xl:inline">İl:</span>
           
           <button
             type="button"
@@ -334,7 +332,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
             <button
               type="button"
               onClick={() => onSelectCity("all")}
-              className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+              className={`px-3 py-1 min-h-10 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                 currentCitySlug === "all"
                   ? "bg-primary/20 text-primary font-bold border border-primary/30"
                   : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
@@ -347,7 +345,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 key={c.slug}
                 type="button"
                 onClick={() => onSelectCity(c.slug)}
-                className={`px-2.5 py-1 min-h-[32px] rounded-lg text-[11px] font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
+                className={`px-3 py-1 min-h-10 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap shrink-0 cursor-pointer ${
                   currentCitySlug === c.slug
                     ? "bg-primary/20 text-primary font-bold border border-primary/30"
                     : "text-ink-2 hover:text-white hover:bg-surface-raised/50"
@@ -401,12 +399,12 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 <p className="text-xs font-semibold text-ink mb-1">
                   Bu filtreye ait maç bulunamadı.
                 </p>
-                <p className="text-[11px] text-ink-3">
+                <p className="text-xs text-ink-3">
                   Diğer sekmeleri veya farklı bir ili seçerek maçları listeleyebilirsiniz.
                 </p>
               </div>
             ) : (
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 {(displayMatches || []).map((match) => (
                   <VolleyMatchRow
                     key={match.id}
@@ -424,25 +422,24 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
           <div className="space-y-5">
             {/* BÖLÜM 1: BUGÜNÜN MAÇLARI (BELİRGİN SPOTLIGHT HERO KARTI) */}
             {todayMatches.length > 0 ? (
-              <div className="relative rounded-2xl p-3.5 sm:p-4 bg-gradient-to-b from-surface-raised/90 via-surface to-surface border-2 border-emerald-500/40 shadow-xl overflow-hidden space-y-3">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/15 rounded-full blur-2xl pointer-events-none" />
+              <div className="relative rounded-2xl p-4 bg-surface border border-primary/30 shadow-xl overflow-hidden space-y-3">
                 
                 {/* Spotlight Başlık Şeridi */}
                 <div className="flex items-center justify-between gap-2 border-b border-line/60 pb-2.5 relative z-10">
                   <div className="flex items-center gap-2.5">
                     <span className="relative flex h-3 w-3">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-60" />
+                      <span className="relative inline-flex rounded-full h-3 w-3 bg-primary" />
                     </span>
                     <div>
-                      <h2 className="text-xs sm:text-sm font-black text-white uppercase tracking-wider flex items-center gap-2">
-                        <span>Günün Maç Programı & Skorlar</span>
-                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-mono font-bold">
-                          {todayMatches.length} Maç
+                      <h2 className="text-base sm:text-lg font-bold text-white flex flex-wrap items-center gap-2">
+                        <span>Güncel maçlar ve beklenen skorlar</span>
+                        <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/30 text-xs font-mono font-bold">
+                          {todayMatches.length} maç
                         </span>
                       </h2>
-                      <p className="text-[11px] text-ink-3 font-medium">
-                        {formatDateTurkish(todayStr)} · TVF Altyapı Bülteni
+                      <p className="text-xs text-ink-3 font-medium">
+                        {formatDateTurkish(todayStr)} · Bugün ve skoru beklenen maçlar
                       </p>
                     </div>
                   </div>
@@ -450,7 +447,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                   <button
                     type="button"
                     onClick={() => onNavigateTab("today")}
-                    className="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1 cursor-pointer shrink-0"
+                    className="text-xs font-bold text-primary hover:text-white transition-colors duration-300 flex items-center gap-1 cursor-pointer shrink-0"
                   >
                     <span>Tüm Maçlar</span>
                     <ArrowRight size={13} />
@@ -459,9 +456,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
 
                 {/* Hızlı Gün Seçici (26-31 Ekim ve 1-4 Kasım Maçları) */}
                 <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 relative z-10">
-                  <span className="text-[10px] text-ink-3 uppercase font-bold tracking-wider shrink-0 mr-0.5">
-                    Tarihler:
-                  </span>
+                  <span className="sr-only">Tarihler:</span>
                   {quickDatePills.map((pill) => (
                     <button
                       key={pill.dateStr}
@@ -471,9 +466,9 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                         onSelectDate?.(pill.dateStr);
                         onNavigateTab("today");
                       }}
-                      className={`px-2 py-0.5 rounded-lg text-[11px] font-medium transition-all shrink-0 cursor-pointer flex items-center gap-1 border ${
+                      className={`px-2 py-1 rounded-lg text-xs font-medium transition-colors duration-300 shrink-0 cursor-pointer flex items-center gap-1 border ${
                         pill.isToday
-                          ? "bg-emerald-500/25 text-emerald-300 border-emerald-500/50 font-bold"
+                          ? "bg-primary/15 text-primary border-primary/40 font-bold"
                           : "bg-surface-muted/90 text-ink hover:text-white hover:bg-surface-raised border-line/60"
                       }`}
                       title={`${pill.dateStr} maçlarını görüntüle (${pill.count} Maç)`}
@@ -481,9 +476,9 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                       <span>{pill.label}</span>
                       {pill.count > 0 && (
                         <span
-                          className={`px-1 py-0.2 rounded text-[10px] font-mono tabular-nums ${
+                          className={`px-1 py-0.5 rounded text-xs font-mono tabular-nums ${
                             pill.isToday
-                              ? "bg-emerald-500/30 text-emerald-200"
+                              ? "bg-primary/20 text-primary"
                               : "bg-surface-raised/80 text-ink-3"
                           }`}
                         >
@@ -495,7 +490,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 </div>
 
                 {/* Maç Listesi */}
-                <div className="space-y-1.5 relative z-10">
+                <div className="space-y-2 relative z-10">
                   {todayMatches.slice(0, 8).map((match) => (
                     <VolleyMatchRow
                       key={match.id}
@@ -516,8 +511,8 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                     <Calendar size={18} />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-white">Bugün İçin Planlanmış Maç Bulunmuyor</h3>
-                    <p className="text-[11px] text-ink-3 mt-0.5">
+                    <h3 className="text-base font-bold text-white">Bugün için planlanmış maç bulunmuyor</h3>
+                    <p className="text-xs text-ink-3 mt-1">
                       Günün TVF bülteninde resmi karşılaşma yok. Yaklaşan fikstür ve sonuçları inceleyebilirsiniz.
                     </p>
                   </div>
@@ -525,7 +520,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 <button
                   type="button"
                   onClick={() => onNavigateTab("fixtures")}
-                  className="px-3.5 py-1.5 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover text-xs font-semibold shrink-0 cursor-pointer transition-colors shadow-md flex items-center gap-1.5"
+                  className="px-3 py-2 min-h-10 rounded-xl bg-primary text-primary-fg hover:bg-primary-hover text-xs font-semibold shrink-0 cursor-pointer transition-colors duration-300 shadow-md flex items-center gap-2"
                 >
                   <span>Fikstüre Git</span>
                   <ArrowRight size={13} />
@@ -538,7 +533,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
               <div className="flex items-center justify-between px-0.5">
                 <div className="flex items-center gap-2">
                   <Calendar size={14} className="text-primary" />
-                  <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
+                  <h2 className="text-base font-bold text-white">
                     Yaklaşan Fikstür
                   </h2>
                 </div>
@@ -552,7 +547,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 </button>
               </div>
 
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 {upcomingMatches.length === 0 ? (
                   <div className="text-center py-6 bg-surface border border-line/60 rounded-2xl text-xs text-ink-3">
                     Yakın tarihte planlanmış yeni maç bulunmuyor.
@@ -578,7 +573,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 <div className="flex items-center justify-between px-0.5">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 size={14} className="text-done" />
-                    <h2 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">
+                    <h2 className="text-base font-bold text-white">
                       Son Biten Maçlar & Skorlar
                     </h2>
                   </div>
@@ -592,7 +587,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                   </button>
                 </div>
 
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   {recentResults.map((match) => (
                     <VolleyMatchRow
                       key={match.id}
@@ -609,28 +604,28 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
 
             {/* ALT KISIM: 2 KOLONLU WIDGET PANELİ */}
             <ScrollReveal delayMs={50}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                 {/* 1. KART: GRUP LİDERLERİ */}
                 {groupLeaders.length > 0 && (
-                  <div className="glass-panel rounded-2xl p-3.5 border border-line/70 space-y-3">
+                  <div className="glass-panel rounded-2xl p-4 border border-line/70 space-y-3">
                     <div className="flex items-center justify-between border-b border-line/50 pb-2">
                       <div className="flex items-center gap-2">
                         <Trophy size={14} className="text-primary" />
-                        <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+                        <h3 className="text-sm font-bold text-white">
                           Grup Liderleri
                         </h3>
                       </div>
                       <button
                         type="button"
                         onClick={() => onNavigateTab("standings")}
-                        className="text-[11px] text-ink-2 hover:text-white font-semibold cursor-pointer transition-colors"
+                        className="text-xs text-ink-2 hover:text-white font-semibold cursor-pointer transition-colors duration-300"
                       >
                         Puan Durumu →
                       </button>
                     </div>
 
                     <div
-                      className="space-y-1.5 max-h-60 overflow-y-auto custom-scrollbar pr-1"
+                      className="space-y-2 max-h-60 overflow-y-auto custom-scrollbar pr-1"
                       tabIndex={0}
                       role="region"
                       aria-label="Grup liderleri"
@@ -650,7 +645,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                                 <div className="font-semibold text-white truncate text-xs">
                                   {lead.team}
                                 </div>
-                                <div className="text-[10px] text-ink-3 truncate">
+                                <div className="text-xs text-ink-3 truncate">
                                   {lead.groupTitle.replace("TVF ", "").replace(" 2026-2027", "")}
                                 </div>
                               </div>
@@ -660,7 +655,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                               <div className="text-ink font-bold text-xs">
                                 {lead.points} P
                               </div>
-                              <div className="text-[10px] text-ink-3">
+                              <div className="text-xs text-ink-3">
                                 {lead.won}/{lead.played} G
                               </div>
                             </div>
@@ -672,15 +667,15 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                 )}
 
                 {/* 2. KART: AKTİF İLLER FİKSTÜR ERİŞİMİ */}
-                <div className="glass-panel rounded-2xl p-3.5 border border-line/70 space-y-3">
+                <div className="glass-panel rounded-2xl p-4 border border-line/70 space-y-3">
                   <div className="flex items-center justify-between border-b border-line/50 pb-2">
                     <div className="flex items-center gap-2">
                       <Globe size={14} className="text-primary" />
-                      <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+                      <h3 className="text-sm font-bold text-white">
                         Aktif İller Fikstürü
                       </h3>
                     </div>
-                    <span className="text-[10px] font-mono tabular-nums text-ink-3">
+                    <span className="text-xs font-mono tabular-nums text-ink-3">
                       {activeCities.length} İl
                     </span>
                   </div>
@@ -703,7 +698,7 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
                           }`}
                         >
                           <span className="truncate">{item.name}</span>
-                          <span className="text-[10px] font-mono tabular-nums text-ink-3 shrink-0">
+                          <span className="text-xs font-mono tabular-nums text-ink-3 shrink-0">
                             {item.matches_count}
                           </span>
                         </button>
@@ -719,14 +714,6 @@ export const HomePortalView: React.FC<HomePortalViewProps> = ({
               <ScrollReveal><LeagueFinderWidget /></ScrollReveal>
             </div>
 
-            {/* 3. KART: HIZLI PLATFORM BİLGİSİ */}
-            <div className="rounded-2xl p-3 bg-surface border border-line/60 text-[11px] text-ink-2 flex items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <Sparkles size={14} className="text-primary shrink-0" />
-                <span>TVF Resmi Bülteni & Volleybox Entegrasyonu</span>
-              </div>
-              <span className="font-mono font-semibold text-ink shrink-0">81 İl Takibi</span>
-            </div>
           </div>
         )}
       </div>

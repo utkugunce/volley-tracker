@@ -177,9 +177,11 @@ describe("MatchInspectorPanel Component", () => {
       />
     );
 
-    const h2hTab = screen.getByRole("button", { name: "H2H & Form" });
+    const h2hTab = screen.getByRole("tab", { name: "H2H & Form" });
     fireEvent.click(h2hTab);
 
+    expect(h2hTab).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("tabpanel")).toHaveAttribute("aria-labelledby", "match-inspector-h2h-tab");
     expect(screen.getByText("Son 5 Maç Formu")).toBeInTheDocument();
     expect(screen.getByText("Önceki Karşılaşmalar")).toBeInTheDocument();
     expect(screen.getByText("0 : 3")).toBeInTheDocument(); // Önceki maç skoru
@@ -194,7 +196,7 @@ describe("MatchInspectorPanel Component", () => {
       />
     );
 
-    const standingsTab = screen.getByRole("button", { name: "Grup Durumu" });
+    const standingsTab = screen.getByRole("tab", { name: "Grup Durumu" });
     fireEvent.click(standingsTab);
 
     expect(screen.getByText("A Grubu")).toBeInTheDocument();

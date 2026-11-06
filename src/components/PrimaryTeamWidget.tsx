@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { Match } from "@/types/fixture";
 import { TeamBadge } from "./TeamBadge";
@@ -13,6 +13,7 @@ import { slugify } from "@/utils/slugify";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { triggerHaptic } from "@/utils/haptics";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
 
 interface PrimaryTeamWidgetProps {
   matches: Match[];
@@ -31,6 +32,54 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
   const [isPicking, setIsPicking] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isDismissed, setIsDismissed] = useState(false);
+  const pickerDialogRef = useRef<HTMLDivElement | null>(null);
+  useDialogFocus(isPicking, pickerDialogRef);
+
+  useEffect(() => {
+    if (!isPicking) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsPicking(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isPicking]);
+
+  useEffect(() => {
+    if (!isPicking || !window.matchMedia?.("(min-width: 1024px)").matches) return;
+    const dialog = pickerDialogRef.current;
+    if (!dialog) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusable = () =>
+      Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), a[href], input:not([disabled]), select, textarea, [tabindex="0"]'
+        )
+      ).filter((element) => element.getClientRects().length > 0);
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const elements = focusable();
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (!first) {
+        event.preventDefault();
+        dialog.focus();
+      } else if (event.shiftKey && (document.activeElement === first || document.activeElement === dialog)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    dialog.addEventListener("keydown", trapFocus);
+    return () => {
+      dialog.removeEventListener("keydown", trapFocus);
+      document.body.style.overflow = overflow;
+      if (previous?.isConnected) previous.focus();
+    };
+  }, [isPicking]);
 
   useEffect(() => {
     try {
@@ -138,11 +187,16 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
             onClick={() => setIsPicking(false)}
           >
             <div
+              ref={pickerDialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="primary-team-picker-title"
+              tabIndex={-1}
               className="bg-surface border border-line rounded-2xl p-4 max-w-md w-full shadow-2xl space-y-3 max-h-[80vh] flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between border-b border-line/70 pb-2">
-                <h3 className="text-xs font-semibold text-white flex items-center gap-1.5 uppercase tracking-wide">
+                <h3 id="primary-team-picker-title" className="text-xs font-semibold text-white flex items-center gap-1.5 uppercase tracking-wide">
                   <Star size={13} className="text-amber-400 fill-amber-400" />
                   <span>Favori Kulübünüzü Seçin</span>
                 </h3>
@@ -157,6 +211,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
 
               <input
                 type="text"
+                aria-label="Kulüp adı ara"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Kulüp adı ara (örn: Fenerbahçe, VakıfBank, Zeren)..."
@@ -228,11 +283,12 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
 
       {/* Orta / Sağ: Sıradaki Maç Özeti */}
       {nextMatch ? (
-        <div
-          role="button"
-          tabIndex={0}
+        <button
+          type="button"
           onClick={() => onSelectMatch?.(nextMatch)}
-          className="flex items-center gap-2 cursor-pointer hover:bg-surface-muted transition-colors bg-surface-muted/60 border border-line/60 px-2.5 py-1 rounded-lg self-start sm:self-auto"
+          disabled={!onSelectMatch}
+          aria-label={`${primaryTeam} takımının sıradaki maçını aç`}
+          className="flex items-center gap-2 text-left cursor-pointer hover:bg-surface-muted transition-colors bg-surface-muted/60 border border-line/60 px-2.5 py-1 rounded-lg self-start sm:self-auto disabled:cursor-default disabled:opacity-70"
         >
           <span className="text-[10px] font-semibold text-ink-3 uppercase">Sıradaki:</span>
           {opponent && <TeamBadge name={opponent} logoUrl={opponentLogo} size="xs" />}
@@ -241,7 +297,7 @@ export const PrimaryTeamWidget: React.FC<PrimaryTeamWidgetProps> = ({
             {nextMatch.date} {nextMatch.time}
           </span>
           <ChevronRight size={11} className="text-ink-3" />
-        </div>
+        </button>
       ) : (
         <div className="text-[11px] text-ink-3 font-medium">
           Bekleyen maç bulunmuyor

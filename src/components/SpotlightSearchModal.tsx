@@ -15,6 +15,7 @@ import { slugify } from "@/utils/slugify";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { triggerHaptic } from "@/utils/haptics";
 import { trLower, trIncludes } from "@/utils/turkishLocale";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
 
 interface SpotlightItem {
   id: string;
@@ -24,6 +25,9 @@ interface SpotlightItem {
   action: () => void;
   logo?: string | null;
 }
+
+const getResultDomId = (id: string) =>
+  `spotlight-result-${id.replace(/[^a-zA-Z0-9_-]/g, "-")}`;
 
 interface SpotlightSearchModalProps {
   isOpen: boolean;
@@ -53,6 +57,45 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
   const [typeFilter, setTypeFilter] = useState<"all" | "team" | "city" | "hall">("all");
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  useDialogFocus(isOpen, dialogRef);
+
+  useEffect(() => {
+    if (!isOpen || !window.matchMedia?.("(min-width: 1024px)").matches) return;
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusable = () =>
+      Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), a[href], input:not([disabled]), select, textarea, [tabindex="0"]'
+        )
+      ).filter((element) => element.getClientRects().length > 0);
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const elements = focusable();
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (!first) {
+        event.preventDefault();
+        dialog.focus();
+      } else if (event.shiftKey && (document.activeElement === first || document.activeElement === dialog)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    dialog.addEventListener("keydown", trapFocus);
+    return () => {
+      dialog.removeEventListener("keydown", trapFocus);
+      document.body.style.overflow = overflow;
+      if (previous?.isConnected) previous.focus();
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {
@@ -168,13 +211,13 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
-      } else if (e.key === "ArrowDown") {
+      } else if (e.target === inputRef.current && e.key === "ArrowDown") {
         e.preventDefault();
         setSelectedIndex((prev) => (prev + 1) % Math.max(1, results.length));
-      } else if (e.key === "ArrowUp") {
+      } else if (e.target === inputRef.current && e.key === "ArrowUp") {
         e.preventDefault();
         setSelectedIndex((prev) => (prev - 1 + results.length) % Math.max(1, results.length));
-      } else if (e.key === "Enter") {
+      } else if (e.target === inputRef.current && e.key === "Enter") {
         e.preventDefault();
         if (results[selectedIndex]) {
           triggerHaptic("selection");
@@ -191,16 +234,19 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
 
   return (
     <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Hızlı Arama"
       className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-start justify-center pt-16 sm:pt-24 p-3 animate-in fade-in duration-150"
       onClick={onClose}
     >
       <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="spotlight-search-title"
+        tabIndex={-1}
         className="w-full max-w-xl bg-surface border border-line rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh]"
         onClick={(e) => e.stopPropagation()}
       >
+        <h2 id="spotlight-search-title" className="sr-only">Hızlı arama</h2>
         {/* Arama Input Alanı */}
         <div className="relative flex items-center px-4 py-3 border-b border-line/70 bg-surface-muted/40">
           <Search size={17} className="text-ink-3 shrink-0 mr-3" aria-hidden="true" />
@@ -208,6 +254,11 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
             ref={inputRef}
             type="text"
             value={query}
+            role="combobox"
+            aria-autocomplete="list"
+            aria-expanded={results.length > 0}
+            aria-controls="spotlight-search-results"
+            aria-activedescendant={results[selectedIndex] ? getResultDomId(results[selectedIndex].id) : undefined}
             aria-label="Takım, salon veya şehir ara"
             onChange={(e) => {
               setQuery(e.target.value);
@@ -252,6 +303,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
                 setTypeFilter(f.id);
                 setSelectedIndex(0);
               }}
+              aria-pressed={typeFilter === f.id}
               className={`px-2.5 py-1 rounded-lg transition-colors cursor-pointer ${
                 typeFilter === f.id
                   ? "bg-primary text-primary-fg font-semibold"
@@ -264,19 +316,28 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
         </div>
 
         {/* Sonuç Listesi */}
-        <div className="flex-1 overflow-y-auto p-2 space-y-0.5">
+        <div
+          id="spotlight-search-results"
+          role="listbox"
+          aria-label="Arama sonuçları"
+          className="flex-1 overflow-y-auto p-2 space-y-0.5"
+        >
           {results.length > 0 ? (
             results.map((item, idx) => {
               const isSelected = idx === selectedIndex;
               return (
-                <div
+                <button
+                  type="button"
                   key={item.id}
+                  id={getResultDomId(item.id)}
+                  role="option"
+                  aria-selected={isSelected}
                   onClick={() => {
                     triggerHaptic("selection");
                     item.action();
                   }}
                   onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`p-2.5 rounded-xl flex items-center justify-between gap-3 cursor-pointer transition-colors ${
+                  className={`w-full p-2.5 rounded-xl flex items-center justify-between gap-3 text-left cursor-pointer transition-colors ${
                     isSelected
                       ? "bg-surface-muted text-white"
                       : "text-ink-2 hover:bg-surface-muted/50 hover:text-white"
@@ -317,7 +378,7 @@ export const SpotlightSearchModal: React.FC<SpotlightSearchModalProps> = ({
                       isSelected ? "text-primary translate-x-0.5" : "text-ink-3"
                     }`}
                   />
-                </div>
+                </button>
               );
             })
           ) : (
