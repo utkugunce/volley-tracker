@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T18:28:15.376135",
+  "updated_at": "2026-11-06T16:27:33.342177",
   "city": "Sakarya",
   "slug": "sakarya",
   "title": "TVF Sakarya Genç & Yıldız Kızlar Süper Lig",
@@ -34,23 +34,23 @@
       {
         "rank": 1,
         "team": "Serdivan Belediyesi Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Saraçhane 54 Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 5,
         "sets_won": 6,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       },
       {
@@ -327,11 +327,15 @@
       "match_no": "5",
       "home_team": "Serdivan Belediyesi Spor Kulübü U18",
       "away_team": "Saraçhane 54 Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-10",
+        "25-21",
+        "25-18"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414625",
@@ -1362,9 +1366,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-06T14:03:11.984299+03:00",
-  "last_success_at": "2026-11-05T18:28:15.376928+00:00",
-  "content_changed_at": "2026-11-05T18:28:15.376928+00:00",
+  "last_attempt_at": "2026-11-06T16:27:33.342996+00:00",
+  "last_success_at": "2026-11-06T16:27:33.342996+00:00",
+  "content_changed_at": "2026-11-06T16:27:33.342996+00:00",
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-11-06T14:10:42.747657"
+  "volleybox_sync_updated_at": "2026-11-06T16:28:47.313027"
 }
