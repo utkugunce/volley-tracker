@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:58:16.095454",
+  "updated_at": "2026-11-06T16:27:41.736317",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -64,23 +64,23 @@
       {
         "rank": 4,
         "team": "Yalova Voleybol Spor Kulübü - B U18",
-        "played": 3,
-        "won": 0,
+        "played": 4,
+        "won": 1,
         "lost": 3,
-        "points": 1,
-        "sets_won": 2,
+        "points": 4,
+        "sets_won": 5,
         "sets_lost": 9,
         "form": []
       },
       {
         "rank": 5,
         "team": "Koru Akademi Spor Kulübü - B U18",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -586,11 +586,15 @@
       "match_no": "10",
       "home_team": "Yalova Voleybol Spor Kulübü - B U18",
       "away_team": "Koru Akademi Spor Kulübü - B U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-14",
+        "25-11"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "398316",
@@ -1025,9 +1029,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-06T14:03:24.997563+03:00",
-  "last_success_at": "2026-11-05T16:58:16.096284+00:00",
-  "content_changed_at": "2026-11-05T16:58:16.096284+00:00",
+  "last_attempt_at": "2026-11-06T16:27:41.737188+00:00",
+  "last_success_at": "2026-11-06T16:27:41.737188+00:00",
+  "content_changed_at": "2026-11-06T16:27:41.737188+00:00",
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-06T14:10:48.331335"
+  "volleybox_sync_updated_at": "2026-11-06T16:28:47.175565"
 }
