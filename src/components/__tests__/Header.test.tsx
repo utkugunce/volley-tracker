@@ -86,6 +86,8 @@ describe("Header Component", () => {
 
     const homeButton = screen.getByText("ANASAYFA").closest("button")!;
     expect(homeButton.className).toContain("border-primary text-white");
+    expect(homeButton).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByText("SONUÇLAR").closest("button")).toHaveAttribute("aria-pressed", "false");
   });
 
   it("activeTab='today' olduğunda yalnızca GÜNÜN MAÇLARI sekmesini aktif gösterir", () => {
@@ -105,6 +107,8 @@ describe("Header Component", () => {
     const todayButton = screen.getByText("GÜNÜN MAÇLARI").closest("button")!;
     expect(homeButton.className).not.toContain("border-primary text-white");
     expect(todayButton.className).toContain("border-primary text-white");
+    expect(homeButton).toHaveAttribute("aria-pressed", "false");
+    expect(todayButton).toHaveAttribute("aria-pressed", "true");
   });
 
   it("activeTab='results' olduğunda SONUÇLAR sekmesini aktif stilde gösterir", () => {

@@ -14,10 +14,24 @@ export interface SegmentedControlProps {
   /** Called when the pointer or focus reaches an option, before it is chosen. Use it to start loading what that option shows. */
   onOptionIntent?: (value: string) => void;
   className?: string;
+  /** Use tab semantics when the control switches visible panels. */
+  semantics?: "group" | "tabs";
+  /** Stable prefix used to associate tabs with their tab panels. */
+  idPrefix?: string;
 }
 
-export default function SegmentedControl({ options, value, onValueChange, label, onOptionIntent, className }: SegmentedControlProps) {
+export default function SegmentedControl({
+  options,
+  value,
+  onValueChange,
+  label,
+  onOptionIntent,
+  className,
+  semantics = "group",
+  idPrefix,
+}: SegmentedControlProps) {
   const id = useId();
+  const controlId = idPrefix ?? id;
   const reduced = useReducedMotion();
   const track = useRef<HTMLDivElement>(null);
 
@@ -41,13 +55,15 @@ export default function SegmentedControl({ options, value, onValueChange, label,
   const first = useRef(true);
   useEffect(() => {
     const node = track.current;
-    const button = node?.querySelector<HTMLElement>('[aria-pressed="true"]');
+    const button = node?.querySelector<HTMLElement>(
+      semantics === "tabs" ? '[aria-selected="true"]' : '[aria-pressed="true"]'
+    );
     if (!node || !button || node.scrollWidth <= node.clientWidth) { first.current = false; return; }
     const room = 20, start = button.offsetLeft - room, end = button.offsetLeft + button.offsetWidth + room - node.clientWidth;
     const left = node.scrollLeft > start ? start : node.scrollLeft < end ? end : node.scrollLeft;
     if (left !== node.scrollLeft) node.scrollTo({ left: Math.max(0, left), behavior: first.current || reduced ? "auto" : "smooth" });
     first.current = false;
-  }, [value, reduced]);
+  }, [value, reduced, semantics]);
 
   // Arrow keys, Home and End move the selection like a tab list; only the selected option is a tab stop.
   const selectedIndex = Math.max(0, options.findIndex(option => option.value === value));
@@ -62,9 +78,24 @@ export default function SegmentedControl({ options, value, onValueChange, label,
     track.current?.querySelector<HTMLElement>(`[data-value="${CSS.escape(options[target].value)}"]`)?.focus({ preventScroll: true });
   };
 
-  return <div className={`${styles.root} ${className ?? ""}`} role="group" aria-label={label}>
+  return <div className={`${styles.root} ${className ?? ""}`} role={semantics === "tabs" ? "tablist" : "group"} aria-label={label}>
     <LayoutGroup id={id}><motion.div ref={track} layoutScroll className={styles.track}>
-      {options.map((option, index) => <button key={option.value} id={`${id}-${option.value}`} className={styles.button} type="button" data-value={option.value} aria-pressed={value === option.value} tabIndex={index === selectedIndex ? 0 : -1} onClick={() => onValueChange(option.value)} onKeyDown={onKeyDown} onPointerEnter={onOptionIntent ? () => onOptionIntent(option.value) : undefined} onFocus={onOptionIntent ? () => onOptionIntent(option.value) : undefined}>
+      {options.map((option, index) => <button
+        key={option.value}
+        id={`${controlId}-${option.value}-tab`}
+        className={styles.button}
+        type="button"
+        role={semantics === "tabs" ? "tab" : undefined}
+        data-value={option.value}
+        aria-selected={semantics === "tabs" ? value === option.value : undefined}
+        aria-pressed={semantics === "group" ? value === option.value : undefined}
+        aria-controls={semantics === "tabs" ? `${controlId}-${option.value}-panel` : undefined}
+        tabIndex={index === selectedIndex ? 0 : -1}
+        onClick={() => onValueChange(option.value)}
+        onKeyDown={onKeyDown}
+        onPointerEnter={onOptionIntent ? () => onOptionIntent(option.value) : undefined}
+        onFocus={onOptionIntent ? () => onOptionIntent(option.value) : undefined}
+      >
         {value === option.value && <motion.span className={styles.selection} layoutId="selection" layoutDependency={value} transition={reduced ? { duration: 0 } : motionTokens.spring.morph} aria-hidden="true" />}
         <span className={styles.label}>{option.label}{option.accessory}</span>
       </button>)}

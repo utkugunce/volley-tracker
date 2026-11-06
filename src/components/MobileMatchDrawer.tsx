@@ -71,7 +71,7 @@ export const MobileMatchDrawer: React.FC<MobileMatchDrawerProps> = ({
   if (!isOpen || !match) return null;
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden flex flex-col justify-end">
+    <div className="fixed inset-0 z-50 xl:hidden flex flex-col justify-end">
       {/* 1. Arka Plan Karartması (Backdrop) */}
       <div
         className="fixed inset-0 bg-black/75 backdrop-blur-xs transition-opacity duration-300 motion-reduce:animate-none animate-[drawer-backdrop-in_200ms_ease-out]"

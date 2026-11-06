@@ -307,46 +307,46 @@ export const TeamDetailClient: React.FC<TeamDetailClientProps> = ({ team, statsS
           </div>
 
           {/* KPI İstatistik Şeridi & Sezon Donut Grafiği */}
-          <div className="relative z-10 grid grid-cols-2 sm:grid-cols-6 gap-2.5 mt-5 pt-4 border-t border-line/60 items-center">
-            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-3 text-center">
-              <span className="text-[10px] font-semibold text-ink-3 uppercase tracking-wider block">
+          <div className="relative z-10 grid grid-cols-2 sm:grid-cols-12 gap-2 mt-5 pt-4 border-t border-line/60 items-stretch">
+            <div className="sm:col-span-3 bg-surface-muted/50 border border-line/60 rounded-xl p-4 text-left">
+              <span className="text-xs font-semibold text-ink-3 uppercase tracking-wider block">
                 Toplam Maç
               </span>
-              <span className="text-xl font-bold text-white font-mono tabular-nums mt-0.5 block">
+              <span className="text-2xl font-bold text-white font-mono tabular-nums mt-1 block">
                 {team.stats.totalMatches}
               </span>
             </div>
-            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-3 text-center">
-              <span className="text-[10px] font-semibold text-done uppercase tracking-wider block">
+            <div className="sm:col-span-3 bg-surface-muted/50 border border-line/60 rounded-xl p-4 text-left">
+              <span className="text-xs font-semibold text-done uppercase tracking-wider block">
                 Galibiyet
               </span>
-              <span className="text-xl font-bold text-done font-mono tabular-nums mt-0.5 block">
+              <span className="text-2xl font-bold text-done font-mono tabular-nums mt-1 block">
                 {team.stats.wins}
               </span>
             </div>
-            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-3 text-center">
-              <span className="text-[10px] font-semibold text-form-loss uppercase tracking-wider block">
+            <div className="sm:col-span-2 border-b border-line/60 p-3 text-left sm:border-b-0 sm:border-l">
+              <span className="text-xs font-semibold text-form-loss uppercase tracking-wider block">
                 Mağlubiyet
               </span>
-              <span className="text-xl font-bold text-form-loss font-mono tabular-nums mt-0.5 block">
+              <span className="text-lg font-bold text-form-loss font-mono tabular-nums mt-1 block">
                 {team.stats.losses}
               </span>
             </div>
-            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-3 text-center">
-              <span className="text-[10px] font-semibold text-amber-400 uppercase tracking-wider block">
+            <div className="sm:col-span-2 border-b border-line/60 p-3 text-left sm:border-b-0 sm:border-l">
+              <span className="text-xs font-semibold text-warn uppercase tracking-wider block">
                 Kalan Maç
               </span>
-              <span className="text-xl font-bold text-amber-400 font-mono tabular-nums mt-0.5 block">
+              <span className="text-lg font-bold text-warn font-mono tabular-nums mt-1 block">
                 {team.stats.upcoming}
               </span>
             </div>
-            <div className="bg-surface-muted/50 border border-line/60 rounded-xl p-3 text-center">
-              <span className="text-[10px] font-semibold text-ink-3 uppercase tracking-wider block">
+            <div className="sm:col-span-2 p-3 text-left sm:border-l sm:border-line/60">
+              <span className="text-xs font-semibold text-ink-3 uppercase tracking-wider block">
                 Son 5 Form
               </span>
-              <FormBadge matches={team.form} className="justify-center mt-2" />
+              <FormBadge matches={team.form} className="mt-2" />
             </div>
-            <div className="col-span-2 sm:col-span-1">
+            <div className="col-span-2 sm:col-span-12">
               <WinLossDonut wins={team.stats.wins} losses={team.stats.losses} />
             </div>
           </div>

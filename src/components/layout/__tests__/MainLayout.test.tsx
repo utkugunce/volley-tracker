@@ -136,8 +136,10 @@ describe("Sofascore 3-Kolonlu MainLayout ve MatchSelection Mimarisi", () => {
       asides.forEach((aside) => {
         expect(aside.className).toContain("bg-[var(--portal-panel)]");
         expect(aside.className).toContain("border-[var(--portal-border)]");
-        expect(aside.className).toContain("hidden lg:block");
       });
+      expect(asides[0].className).toContain("hidden lg:block");
+      expect(asides[1].className).toContain("hidden xl:block");
+      expect(container.querySelector("main")?.className).toContain("lg:col-span-9 xl:col-span-7");
     });
   });
 

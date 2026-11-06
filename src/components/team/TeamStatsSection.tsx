@@ -11,11 +11,11 @@ interface TeamStatsSectionProps {
   playoff?: TeamPlayoffInfo[];
 }
 
-const StatCard: React.FC<{ label: string; value: React.ReactNode; hint?: string }> = ({ label, value, hint }) => (
-  <div className="bg-surface border border-line/70 rounded-xl p-3 text-center">
-    <p className="text-[10px] font-semibold text-ink-3 uppercase tracking-wider">{label}</p>
-    <p className="text-lg font-bold font-mono text-white mt-1 tabular-nums">{value}</p>
-    {hint && <p className="text-[10px] text-ink-3 mt-0.5">{hint}</p>}
+const StatCard: React.FC<{ label: string; value: React.ReactNode; hint?: string; primary?: boolean }> = ({ label, value, hint, primary = false }) => (
+  <div className={primary ? "bg-surface border border-line/70 rounded-xl p-4 sm:col-span-2 text-left" : "border-l border-line/70 px-4 py-2 text-left"}>
+    <p className="text-xs font-semibold text-ink-3 uppercase tracking-wider">{label}</p>
+    <p className={`${primary ? "text-2xl" : "text-lg"} font-bold font-mono text-white mt-1 tabular-nums`}>{value}</p>
+    {hint && <p className="text-xs text-ink-3 mt-1">{hint}</p>}
   </div>
 );
 
@@ -70,8 +70,8 @@ export const TeamStatsSection: React.FC<TeamStatsSectionProps> = ({ stats, playo
 
       {stats.played > 0 && (
         <>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
-            <StatCard label="Galibiyet Oranı" value={`%${Math.round((stats.winRate ?? 0) * 100)}`} hint={`${stats.wins}G / ${stats.played} maç`} />
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-y-3">
+            <StatCard primary label="Galibiyet Oranı" value={`%${Math.round((stats.winRate ?? 0) * 100)}`} hint={`${stats.wins}G / ${stats.played} maç`} />
             <StatCard
               label="Set Ortalaması"
               value={`${fmt(stats.avgSetsForPerMatch, 2)} – ${fmt(stats.avgSetsAgainstPerMatch, 2)}`}

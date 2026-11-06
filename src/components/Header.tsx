@@ -77,12 +77,12 @@ export const Header: React.FC<HeaderProps> = ({
               type="button"
               onClick={onOpenSearch}
               aria-label={t("header.search")}
-              className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg bg-surface hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-colors active:scale-[0.98] cursor-pointer"
+              className="flex min-h-11 min-w-11 sm:min-h-9 sm:min-w-0 items-center justify-center gap-1.5 text-xs px-3 py-2 sm:py-1.5 rounded-lg bg-surface hover:bg-surface-raised text-ink-2 hover:text-white border border-line/60 transition-[transform,color,background-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] cursor-pointer"
               title="Hızlı Arama (Ctrl + K)"
             >
               <Search size={13} className="text-ink-3" aria-hidden="true" />
-              <span className="hidden md:inline font-medium text-[11px]">{t("header.search")}</span>
-              <kbd className="hidden md:inline-flex items-center text-[9px] font-mono text-ink-3 px-1" aria-hidden="true">
+              <span className="hidden md:inline font-medium text-xs">{t("header.search")}</span>
+              <kbd className="hidden md:inline-flex items-center text-xs font-display text-ink-3 px-1" aria-hidden="true">
                 ⌘K
               </kbd>
             </button>
@@ -93,7 +93,8 @@ export const Header: React.FC<HeaderProps> = ({
               type="button"
               onClick={onToggleFavoritesOnly}
               aria-label={t("header.favorites")}
-              className={`flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-colors active:scale-[0.98] cursor-pointer ${
+              aria-pressed={showOnlyFavorites}
+              className={`flex min-h-11 min-w-11 sm:min-h-9 sm:min-w-0 items-center justify-center gap-1.5 text-xs font-semibold px-3 py-2 sm:py-1.5 rounded-lg transition-[transform,color,background-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] cursor-pointer ${
                 showOnlyFavorites
                   ? "bg-warn text-black font-bold"
                   : "bg-surface text-ink-2 hover:text-white hover:bg-surface-raised border border-line/60"
@@ -107,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
               />
               <span className="hidden sm:inline">{t("header.favorites")}</span>
               {favoritesCount > 0 && (
-                <span className="text-[10px] font-mono tabular-nums opacity-85">
+                <span className="text-xs font-display tabular-nums opacity-85">
                   {favoritesCount}
                 </span>
               )}
@@ -149,12 +150,13 @@ export const Header: React.FC<HeaderProps> = ({
       {/* 2. ANA SEKMELER: ÇERÇEVESİZ, DÜŞÜK GÜRÜLTÜLÜ FOTMOB / APPLE SPORTS TAB ŞERİDİ */}
       <nav
         aria-label="Sayfa ana sekmeleri"
-        className="max-w-screen-2xl mx-auto px-2 sm:px-4 flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs font-semibold overflow-x-auto no-scrollbar"
+        className="max-w-screen-2xl mx-auto px-2 sm:px-4 hidden lg:flex items-center gap-1 sm:gap-2 text-xs font-semibold overflow-x-auto no-scrollbar"
       >
         <button
           type="button"
           onClick={() => onSelectTab("home")}
-          className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          aria-pressed={activeTab === "home"}
+          className={`flex items-center gap-1.5 py-2.5 px-3 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             activeTab === "home"
               ? "border-primary text-white"
               : "border-transparent text-ink-2 hover:text-white"
@@ -171,7 +173,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("results")}
-          className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          aria-pressed={activeTab === "results"}
+          className={`flex items-center gap-1.5 py-2.5 px-3 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             activeTab === "results"
               ? "border-primary text-white"
               : "border-transparent text-ink-2 hover:text-white"
@@ -188,7 +191,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("today")}
-          className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          aria-pressed={activeTab === "today"}
+          className={`flex items-center gap-1.5 py-2.5 px-3 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             activeTab === "today"
               ? "border-primary text-white"
               : "border-transparent text-ink-2 hover:text-white"
@@ -205,7 +209,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("fixtures")}
-          className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          aria-pressed={activeTab === "fixtures"}
+          className={`flex items-center gap-1.5 py-2.5 px-3 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             activeTab === "fixtures"
               ? "border-primary text-white"
               : "border-transparent text-ink-2 hover:text-white"
@@ -222,7 +227,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("standings")}
-          className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          aria-pressed={activeTab === "standings"}
+          className={`flex items-center gap-1.5 py-2.5 px-3 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             activeTab === "standings"
               ? "border-primary text-white"
               : "border-transparent text-ink-2 hover:text-white"
@@ -234,7 +240,8 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           type="button"
           onClick={() => onSelectTab("group-status")}
-          className={`flex items-center gap-1.5 py-2.5 px-2.5 sm:px-3.5 text-[11px] sm:text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          aria-pressed={activeTab === "group-status"}
+          className={`flex items-center gap-1.5 py-2.5 px-3 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors cursor-pointer whitespace-nowrap duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             activeTab === "group-status"
               ? "border-primary text-white"
               : "border-transparent text-ink-2 hover:text-white"

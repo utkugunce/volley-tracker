@@ -1,10 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Layers, X } from "lucide-react";
 import { SidebarNavigation } from "@/components/layout/SidebarNavigation";
 import type { Match } from "@/types/fixture";
 import type { CityListItem } from "@/hooks/useCitiesList";
+import { useDialogFocus } from "@/hooks/useDialogFocus";
 
 interface MobileLeaguesMenuProps {
   cities: CityListItem[];
@@ -29,38 +30,61 @@ export const MobileLeaguesMenu: React.FC<MobileLeaguesMenuProps> = ({
   onSelectCity,
   onSelectCategory,
   onClose,
-}) => (
-  <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden flex flex-col animate-in fade-in duration-200">
-    <div className="flex items-center justify-between px-4 py-3 bg-panel border-b border-line">
-      <div className="flex items-center gap-2">
-        <Layers size={18} className="text-blue-400" />
-        <h2 className="text-sm font-bold text-white">Lig Navigasyonu</h2>
+}) => {
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  useDialogFocus(true, dialogRef);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-leagues-title"
+      tabIndex={-1}
+      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm lg:hidden flex flex-col animate-in fade-in duration-200"
+    >
+      <div className="flex items-center justify-between px-4 py-3 bg-panel border-b border-line">
+        <div className="flex items-center gap-2">
+          <Layers size={18} className="text-blue-400" />
+          <h2 id="mobile-leagues-title" className="text-sm font-bold text-white">
+            Lig Navigasyonu
+          </h2>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          className="p-1.5 rounded-lg text-ink-2 hover:text-white hover:bg-surface-muted transition-colors"
+          aria-label="Kapat"
+        >
+          <X size={18} />
+        </button>
       </div>
-      <button
-        onClick={onClose}
-        className="p-1.5 rounded-lg text-ink-2 hover:text-white hover:bg-surface-muted transition-colors"
-        aria-label="Kapat"
-      >
-        <X size={18} />
-      </button>
+      <div className="flex-1 overflow-y-auto p-3 bg-canvas">
+        <SidebarNavigation
+          cities={cities}
+          currentCity={currentCitySlug}
+          onSelectCity={(city) => {
+            onSelectCity(city);
+            onClose();
+          }}
+          matches={matches}
+          selectedCategory={selectedCategory}
+          onSelectCategory={(cat) => {
+            onSelectCategory(cat);
+            onClose();
+          }}
+          favoritesCount={favoritesCount}
+          totalMatches={totalMatches}
+        />
+      </div>
     </div>
-    <div className="flex-1 overflow-y-auto p-3 bg-canvas">
-      <SidebarNavigation
-        cities={cities}
-        currentCity={currentCitySlug}
-        onSelectCity={(city) => {
-          onSelectCity(city);
-          onClose();
-        }}
-        matches={matches}
-        selectedCategory={selectedCategory}
-        onSelectCategory={(cat) => {
-          onSelectCategory(cat);
-          onClose();
-        }}
-        favoritesCount={favoritesCount}
-        totalMatches={totalMatches}
-      />
-    </div>
-  </div>
-);
+  );
+};
