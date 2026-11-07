@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T14:02:45.171439",
+  "updated_at": "2026-11-07T18:10:42.370016",
   "city": "Bilecik",
   "slug": "bilecik",
   "title": "TVF Bilecik Genç & Yıldız Kızlar Süper Lig",
@@ -45,28 +45,28 @@
       {
         "rank": 2,
         "team": "Bilecik Voley 11",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 2,
         "form": []
       },
       {
         "rank": 3,
         "team": "Söğüt Spor",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 3,
         "form": []
       },
       {
         "rank": 4,
-        "team": "Bayırköy Belediye Spor Kulübü",
+        "team": "Lefke Akademi Spor Kulübü",
         "played": 2,
         "won": 0,
         "lost": 2,
@@ -77,13 +77,13 @@
       },
       {
         "rank": 5,
-        "team": "Lefke Akademi Spor Kulübü",
-        "played": 1,
+        "team": "Bayırköy Belediye Spor Kulübü",
+        "played": 3,
         "won": 0,
-        "lost": 1,
+        "lost": 3,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 3,
+        "sets_won": 1,
+        "sets_lost": 9,
         "form": []
       }
     ]
@@ -365,11 +365,15 @@
       "match_no": "7",
       "home_team": "Bayırköy Belediye Spor Kulübü",
       "away_team": "Söğüt Spor",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "19-25",
+        "20-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406655",
@@ -406,11 +410,16 @@
       "match_no": "8",
       "home_team": "Bilecik Voley 11",
       "away_team": "Lefke Akademi Spor Kulübü",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-20",
+        "25-11",
+        "23-25",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "406656",
@@ -927,9 +936,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-06T11:02:45.184556+00:00",
-  "last_success_at": "2026-11-06T11:02:45.184556+00:00",
-  "content_changed_at": "2026-11-06T11:02:45.184556+00:00",
+  "last_attempt_at": "2026-11-07T15:10:42.392062+00:00",
+  "last_success_at": "2026-11-07T15:10:42.392062+00:00",
+  "content_changed_at": "2026-11-07T15:10:42.392062+00:00",
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-06T14:10:10.990941"
+  "volleybox_sync_updated_at": "2026-11-07T18:18:16.827002"
 }

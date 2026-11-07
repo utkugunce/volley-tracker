@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:58:06.192363",
+  "updated_at": "2026-11-07T18:11:20.779686",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -186,7 +186,7 @@
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Fethiye Zirve Spor Kulübü U18",
+        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
         "played": 2,
         "won": 2,
         "lost": 0,
@@ -1251,7 +1251,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "1",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Fethiye Anka Spor U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1341,7 +1341,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "3",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Dalaman Master Akademi Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1465,7 +1465,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "6",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Fethiye Voleybol Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -2161,9 +2161,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-06T14:03:09.523405+03:00",
-  "last_success_at": "2026-11-05T16:58:06.193594+00:00",
-  "content_changed_at": "2026-11-05T16:58:06.193594+00:00",
+  "last_attempt_at": "2026-11-07T15:11:20.825326+00:00",
+  "last_success_at": "2026-11-07T15:11:20.825326+00:00",
+  "content_changed_at": "2026-11-07T15:11:20.825326+00:00",
   "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-11-06T14:10:42.427890"
+  "volleybox_sync_updated_at": "2026-11-07T18:18:47.285739"
 }

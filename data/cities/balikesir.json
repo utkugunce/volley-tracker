@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-06T14:02:44.961472",
+  "updated_at": "2026-11-07T18:10:45.107362",
   "city": "Balıkesir",
   "slug": "balikesir",
   "title": "TVF Balıkesir Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 64,
+  "total_matches": 65,
   "source": "https://balikesir.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -174,11 +174,11 @@
       {
         "rank": 1,
         "team": "Balıkesir DSİ Spor U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 9,
-        "sets_won": 9,
+        "points": 12,
+        "sets_won": 12,
         "sets_lost": 0,
         "form": []
       },
@@ -218,12 +218,12 @@
       {
         "rank": 5,
         "team": "Balıkesir Nets Basket Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ],
@@ -298,6 +298,17 @@
     "Yıldız Kızlar Süper Lig - C Grubu": [
       {
         "rank": 1,
+        "team": "Ayvalıkspor U16",
+        "played": 4,
+        "won": 4,
+        "lost": 0,
+        "points": 12,
+        "sets_won": 12,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
         "team": "Burhaniye Ören Pegasus Spor Kulübü U16",
         "played": 5,
         "won": 4,
@@ -305,17 +316,6 @@
         "points": 11,
         "sets_won": 12,
         "sets_lost": 6,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Ayvalıkspor U16",
-        "played": 3,
-        "won": 3,
-        "lost": 0,
-        "points": 9,
-        "sets_won": 9,
-        "sets_lost": 0,
         "form": []
       },
       {
@@ -354,12 +354,12 @@
       {
         "rank": 6,
         "team": "Edremit Belediyesi Gürespor Kulübü U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
-        "points": 1,
+        "lost": 5,
+        "points": 0,
         "sets_won": 2,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ],
@@ -847,7 +847,45 @@
       }
     },
     {
-      "id": "balikesir-20261101-009",
+      "id": "balikesir-20261029-009",
+      "city": "Balıkesir",
+      "date": "2026-10-29",
+      "time": "16:00",
+      "hall": "Kurtdereli Ss.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "9",
+      "home_team": "Balıkesir DSİ Spor U16",
+      "away_team": "Balıkesir Nets Basket Spor Kulübü U16",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "balikesir-20261101-010",
       "city": "Balıkesir",
       "date": "2026-11-01",
       "time": "10:00",
@@ -856,7 +894,7 @@
       "age_group": "Yıldız",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "9",
+      "match_no": "10",
       "home_team": "Balıkesir Nets Basket Spor Kulübü U16",
       "away_team": "Mehmet Şeref Eğinlioğlu Ortaokulu SK U16",
       "score": "0 - 3",
@@ -885,7 +923,7 @@
       }
     },
     {
-      "id": "balikesir-20261004-010",
+      "id": "balikesir-20261004-011",
       "city": "Balıkesir",
       "date": "2026-10-04",
       "time": "17:00",
@@ -932,7 +970,7 @@
       }
     },
     {
-      "id": "balikesir-20261012-011",
+      "id": "balikesir-20261012-012",
       "city": "Balıkesir",
       "date": "2026-10-12",
       "time": "18:00",
@@ -978,7 +1016,7 @@
       }
     },
     {
-      "id": "balikesir-20261013-012",
+      "id": "balikesir-20261013-013",
       "city": "Balıkesir",
       "date": "2026-10-13",
       "time": "18:00",
@@ -1023,7 +1061,7 @@
       }
     },
     {
-      "id": "balikesir-20261015-013",
+      "id": "balikesir-20261015-014",
       "city": "Balıkesir",
       "date": "2026-10-15",
       "time": "18:00",
@@ -1069,7 +1107,7 @@
       }
     },
     {
-      "id": "balikesir-20261019-014",
+      "id": "balikesir-20261019-015",
       "city": "Balıkesir",
       "date": "2026-10-19",
       "time": "18:00",
@@ -1114,7 +1152,7 @@
       }
     },
     {
-      "id": "balikesir-20261022-015",
+      "id": "balikesir-20261022-016",
       "city": "Balıkesir",
       "date": "2026-10-22",
       "time": "18:00",
@@ -1159,7 +1197,7 @@
       }
     },
     {
-      "id": "balikesir-20261022-016",
+      "id": "balikesir-20261022-017",
       "city": "Balıkesir",
       "date": "2026-10-22",
       "time": "19:30",
@@ -1204,7 +1242,7 @@
       }
     },
     {
-      "id": "balikesir-20261027-017",
+      "id": "balikesir-20261027-018",
       "city": "Balıkesir",
       "date": "2026-10-27",
       "time": "18:00",
@@ -1249,7 +1287,7 @@
       }
     },
     {
-      "id": "balikesir-20261027-018",
+      "id": "balikesir-20261027-019",
       "city": "Balıkesir",
       "date": "2026-10-27",
       "time": "19:30",
@@ -1290,7 +1328,7 @@
       }
     },
     {
-      "id": "balikesir-20261029-019",
+      "id": "balikesir-20261029-020",
       "city": "Balıkesir",
       "date": "2026-10-29",
       "time": "18:00",
@@ -1335,7 +1373,7 @@
       }
     },
     {
-      "id": "balikesir-20261103-020",
+      "id": "balikesir-20261103-021",
       "city": "Balıkesir",
       "date": "2026-11-03",
       "time": "19:00",
@@ -1381,7 +1419,7 @@
       }
     },
     {
-      "id": "balikesir-20261103-021",
+      "id": "balikesir-20261103-022",
       "city": "Balıkesir",
       "date": "2026-11-03",
       "time": "19:30",
@@ -1427,7 +1465,7 @@
       }
     },
     {
-      "id": "balikesir-20261105-022",
+      "id": "balikesir-20261105-023",
       "city": "Balıkesir",
       "date": "2026-11-05",
       "time": "18:00",
@@ -1472,7 +1510,7 @@
       }
     },
     {
-      "id": "balikesir-20261105-023",
+      "id": "balikesir-20261105-024",
       "city": "Balıkesir",
       "date": "2026-11-05",
       "time": "19:30",
@@ -1513,7 +1551,7 @@
       }
     },
     {
-      "id": "balikesir-20261109-024",
+      "id": "balikesir-20261109-025",
       "city": "Balıkesir",
       "date": "2026-11-09",
       "time": "19:30",
@@ -1547,7 +1585,7 @@
       }
     },
     {
-      "id": "balikesir-20261006-025",
+      "id": "balikesir-20261006-026",
       "city": "Balıkesir",
       "date": "2026-10-06",
       "time": "19:00",
@@ -1592,7 +1630,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-026",
+      "id": "balikesir-20261007-027",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "19:00",
@@ -1639,7 +1677,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-027",
+      "id": "balikesir-20261007-028",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "20:30",
@@ -1684,7 +1722,7 @@
       }
     },
     {
-      "id": "balikesir-20261015-028",
+      "id": "balikesir-20261015-029",
       "city": "Balıkesir",
       "date": "2026-10-15",
       "time": "19:00",
@@ -1729,7 +1767,7 @@
       }
     },
     {
-      "id": "balikesir-20261015-029",
+      "id": "balikesir-20261015-030",
       "city": "Balıkesir",
       "date": "2026-10-15",
       "time": "20:30",
@@ -1774,7 +1812,7 @@
       }
     },
     {
-      "id": "balikesir-20261018-030",
+      "id": "balikesir-20261018-031",
       "city": "Balıkesir",
       "date": "2026-10-18",
       "time": "17:30",
@@ -1819,7 +1857,7 @@
       }
     },
     {
-      "id": "balikesir-20261021-031",
+      "id": "balikesir-20261021-032",
       "city": "Balıkesir",
       "date": "2026-10-21",
       "time": "19:00",
@@ -1865,7 +1903,7 @@
       }
     },
     {
-      "id": "balikesir-20261023-032",
+      "id": "balikesir-20261023-033",
       "city": "Balıkesir",
       "date": "2026-10-23",
       "time": "20:30",
@@ -1910,7 +1948,7 @@
       }
     },
     {
-      "id": "balikesir-20261027-033",
+      "id": "balikesir-20261027-034",
       "city": "Balıkesir",
       "date": "2026-10-27",
       "time": "19:00",
@@ -1955,7 +1993,7 @@
       }
     },
     {
-      "id": "balikesir-20261027-034",
+      "id": "balikesir-20261027-035",
       "city": "Balıkesir",
       "date": "2026-10-27",
       "time": "20:30",
@@ -2002,7 +2040,7 @@
       }
     },
     {
-      "id": "balikesir-20261103-035",
+      "id": "balikesir-20261103-036",
       "city": "Balıkesir",
       "date": "2026-11-03",
       "time": "19:00",
@@ -2047,7 +2085,7 @@
       }
     },
     {
-      "id": "balikesir-20261103-036",
+      "id": "balikesir-20261103-037",
       "city": "Balıkesir",
       "date": "2026-11-03",
       "time": "20:30",
@@ -2093,7 +2131,7 @@
       }
     },
     {
-      "id": "balikesir-20261105-037",
+      "id": "balikesir-20261105-038",
       "city": "Balıkesir",
       "date": "2026-11-05",
       "time": "19:00",
@@ -2105,11 +2143,15 @@
       "match_no": "13",
       "home_team": "Ayvalıkspor U16",
       "away_team": "Edremit Belediyesi Gürespor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "414775",
@@ -2134,7 +2176,7 @@
       }
     },
     {
-      "id": "balikesir-20261110-038",
+      "id": "balikesir-20261110-039",
       "city": "Balıkesir",
       "date": "2026-11-10",
       "time": "19:00",
@@ -2168,7 +2210,7 @@
       }
     },
     {
-      "id": "balikesir-20261110-039",
+      "id": "balikesir-20261110-040",
       "city": "Balıkesir",
       "date": "2026-11-10",
       "time": "20:30",
@@ -2202,7 +2244,7 @@
       }
     },
     {
-      "id": "balikesir-20261006-040",
+      "id": "balikesir-20261006-041",
       "city": "Balıkesir",
       "date": "2026-10-06",
       "time": "20:30",
@@ -2247,7 +2289,7 @@
       }
     },
     {
-      "id": "balikesir-20261018-041",
+      "id": "balikesir-20261018-042",
       "city": "Balıkesir",
       "date": "2026-10-18",
       "time": "16:00",
@@ -2293,7 +2335,7 @@
       }
     },
     {
-      "id": "balikesir-20261021-042",
+      "id": "balikesir-20261021-043",
       "city": "Balıkesir",
       "date": "2026-10-21",
       "time": "20:30",
@@ -2338,7 +2380,7 @@
       }
     },
     {
-      "id": "balikesir-20261023-043",
+      "id": "balikesir-20261023-044",
       "city": "Balıkesir",
       "date": "2026-10-23",
       "time": "19:00",
@@ -2384,7 +2426,7 @@
       }
     },
     {
-      "id": "balikesir-20261029-044",
+      "id": "balikesir-20261029-045",
       "city": "Balıkesir",
       "date": "2026-10-29",
       "time": "19:00",
@@ -2429,7 +2471,7 @@
       }
     },
     {
-      "id": "balikesir-20261029-045",
+      "id": "balikesir-20261029-046",
       "city": "Balıkesir",
       "date": "2026-10-29",
       "time": "20:30",
@@ -2474,7 +2516,7 @@
       }
     },
     {
-      "id": "balikesir-20261104-046",
+      "id": "balikesir-20261104-047",
       "city": "Balıkesir",
       "date": "2026-11-04",
       "time": "20:30",
@@ -2512,7 +2554,7 @@
       }
     },
     {
-      "id": "balikesir-20261105-047",
+      "id": "balikesir-20261105-048",
       "city": "Balıkesir",
       "date": "2026-11-05",
       "time": "20:30",
@@ -2557,7 +2599,7 @@
       }
     },
     {
-      "id": "balikesir-20261109-048",
+      "id": "balikesir-20261109-049",
       "city": "Balıkesir",
       "date": "2026-11-09",
       "time": "20:30",
@@ -2591,7 +2633,7 @@
       }
     },
     {
-      "id": "balikesir-20261112-049",
+      "id": "balikesir-20261112-050",
       "city": "Balıkesir",
       "date": "2026-11-12",
       "time": "20:30",
@@ -2625,7 +2667,7 @@
       }
     },
     {
-      "id": "balikesir-20261005-050",
+      "id": "balikesir-20261005-051",
       "city": "Balıkesir",
       "date": "2026-10-05",
       "time": "19:00",
@@ -2671,7 +2713,7 @@
       }
     },
     {
-      "id": "balikesir-20261005-051",
+      "id": "balikesir-20261005-052",
       "city": "Balıkesir",
       "date": "2026-10-05",
       "time": "20:30",
@@ -2716,7 +2758,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-052",
+      "id": "balikesir-20261007-053",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "19:00",
@@ -2762,7 +2804,7 @@
       }
     },
     {
-      "id": "balikesir-20261007-053",
+      "id": "balikesir-20261007-054",
       "city": "Balıkesir",
       "date": "2026-10-07",
       "time": "20:30",
@@ -2807,7 +2849,7 @@
       }
     },
     {
-      "id": "balikesir-20261013-054",
+      "id": "balikesir-20261013-055",
       "city": "Balıkesir",
       "date": "2026-10-13",
       "time": "19:00",
@@ -2852,7 +2894,7 @@
       }
     },
     {
-      "id": "balikesir-20261014-055",
+      "id": "balikesir-20261014-056",
       "city": "Balıkesir",
       "date": "2026-10-14",
       "time": "19:00",
@@ -2897,7 +2939,7 @@
       }
     },
     {
-      "id": "balikesir-20261015-056",
+      "id": "balikesir-20261015-057",
       "city": "Balıkesir",
       "date": "2026-10-15",
       "time": "19:00",
@@ -2942,7 +2984,7 @@
       }
     },
     {
-      "id": "balikesir-20261019-057",
+      "id": "balikesir-20261019-058",
       "city": "Balıkesir",
       "date": "2026-10-19",
       "time": "19:00",
@@ -2987,7 +3029,7 @@
       }
     },
     {
-      "id": "balikesir-20261021-058",
+      "id": "balikesir-20261021-059",
       "city": "Balıkesir",
       "date": "2026-10-21",
       "time": "19:00",
@@ -3033,7 +3075,7 @@
       }
     },
     {
-      "id": "balikesir-20261022-059",
+      "id": "balikesir-20261022-060",
       "city": "Balıkesir",
       "date": "2026-10-22",
       "time": "19:00",
@@ -3078,7 +3120,7 @@
       }
     },
     {
-      "id": "balikesir-20261026-060",
+      "id": "balikesir-20261026-061",
       "city": "Balıkesir",
       "date": "2026-10-26",
       "time": "19:00",
@@ -3123,7 +3165,7 @@
       }
     },
     {
-      "id": "balikesir-20261027-061",
+      "id": "balikesir-20261027-062",
       "city": "Balıkesir",
       "date": "2026-10-27",
       "time": "19:00",
@@ -3168,7 +3210,7 @@
       }
     },
     {
-      "id": "balikesir-20261029-062",
+      "id": "balikesir-20261029-063",
       "city": "Balıkesir",
       "date": "2026-10-29",
       "time": "19:00",
@@ -3213,7 +3255,7 @@
       }
     },
     {
-      "id": "balikesir-20261030-063",
+      "id": "balikesir-20261030-064",
       "city": "Balıkesir",
       "date": "2026-10-30",
       "time": "19:00",
@@ -3258,7 +3300,7 @@
       }
     },
     {
-      "id": "balikesir-20261103-064",
+      "id": "balikesir-20261103-065",
       "city": "Balıkesir",
       "date": "2026-11-03",
       "time": "19:00",
@@ -3303,9 +3345,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-06T11:02:44.980365+00:00",
-  "last_success_at": "2026-11-06T11:02:44.980365+00:00",
-  "content_changed_at": "2026-11-06T11:02:44.980365+00:00",
+  "last_attempt_at": "2026-11-07T15:10:45.136553+00:00",
+  "last_success_at": "2026-11-07T15:10:45.136553+00:00",
+  "content_changed_at": "2026-11-07T15:10:45.136553+00:00",
   "volleybox_synced_matches": 57,
-  "volleybox_sync_updated_at": "2026-11-06T14:10:10.895811"
+  "volleybox_sync_updated_at": "2026-11-07T18:18:16.740284"
 }

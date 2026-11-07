@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T14:02:56.654305",
+  "updated_at": "2026-11-07T18:11:06.498619",
   "city": "İzmir",
   "slug": "izmir",
   "title": "TVF İzmir Genç & Yıldız Kızlar Süper Lig",
@@ -1022,11 +1022,11 @@
       {
         "rank": 1,
         "team": "Göztepe SK - A U16",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 0,
         "form": []
       },
@@ -1077,12 +1077,12 @@
       {
         "rank": 6,
         "team": "Monza Spor Kulübü U16",
-        "played": 1,
+        "played": 2,
         "won": 0,
-        "lost": 1,
+        "lost": 2,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 3,
+        "sets_lost": 6,
         "form": []
       }
     ],
@@ -3392,41 +3392,7 @@
       }
     },
     {
-      "id": "izmir-20261117-049",
-      "city": "İzmir",
-      "date": "2026-11-17",
-      "time": "--:--",
-      "hall": "Balçova",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "Yarı Final A Grubu",
-      "match_no": "9",
-      "home_team": "Göztepe SK - B U18",
-      "away_team": "İzmir DSİ Spor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "izmir-20261118-050",
+      "id": "izmir-20261118-049",
       "city": "İzmir",
       "date": "2026-11-18",
       "time": "--:--",
@@ -3435,7 +3401,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Yarı Final A Grubu",
-      "match_no": "10",
+      "match_no": "9",
       "home_team": "İzmir Altınay Spor Kulübü U18",
       "away_team": "Altınordu Voleybol U18",
       "score": "- : -",
@@ -3467,7 +3433,7 @@
       }
     },
     {
-      "id": "izmir-20261123-051",
+      "id": "izmir-20261123-050",
       "city": "İzmir",
       "date": "2026-11-23",
       "time": "--:--",
@@ -3476,7 +3442,7 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Yarı Final A Grubu",
-      "match_no": "11",
+      "match_no": "10",
       "home_team": "İzmir Altınay Spor Kulübü U18",
       "away_team": "Parla Voleybol Kulübü U18",
       "score": "- : -",
@@ -3501,7 +3467,7 @@
       }
     },
     {
-      "id": "izmir-20261123-052",
+      "id": "izmir-20261123-051",
       "city": "İzmir",
       "date": "2026-11-23",
       "time": "--:--",
@@ -3510,9 +3476,43 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "Yarı Final A Grubu",
-      "match_no": "12",
+      "match_no": "11",
       "home_team": "Altınordu Voleybol U18",
       "away_team": "Karşıyaka SK U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "izmir-20261124-052",
+      "city": "İzmir",
+      "date": "2026-11-24",
+      "time": "--:--",
+      "hall": "Balçova",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Yarı Final A Grubu",
+      "match_no": "12",
+      "home_team": "Göztepe SK - B U18",
+      "away_team": "İzmir DSİ Spor U18",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
@@ -9550,11 +9550,15 @@
       "match_no": "5",
       "home_team": "Monza Spor Kulübü U16",
       "away_team": "Göztepe SK - A U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "10-25",
+        "10-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "412771",
@@ -10664,9 +10668,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-06T11:02:56.701274+00:00",
-  "last_success_at": "2026-11-06T11:02:56.701274+00:00",
-  "content_changed_at": "2026-11-06T11:02:56.701274+00:00",
+  "last_attempt_at": "2026-11-07T15:11:06.530537+00:00",
+  "last_success_at": "2026-11-07T15:11:06.530537+00:00",
+  "content_changed_at": "2026-11-07T15:11:06.530537+00:00",
   "volleybox_synced_matches": 199,
-  "volleybox_sync_updated_at": "2026-11-06T14:10:24.030396"
+  "volleybox_sync_updated_at": "2026-11-07T18:18:33.811304"
 }
