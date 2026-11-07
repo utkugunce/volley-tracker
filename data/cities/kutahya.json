@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:01:35.171527+03:00",
+  "updated_at": "2026-11-07T15:16:26.746869",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -123,23 +123,23 @@
       {
         "rank": 1,
         "team": "Kütahya Belediyespor U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Kütahya Demirspor U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -907,11 +907,16 @@
       "match_no": "1",
       "home_team": "Kütahya Belediyespor U18",
       "away_team": "Kütahya Demirspor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-20",
+        "25-19",
+        "15-25",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -1052,7 +1057,9 @@
       }
     }
   ],
+  "last_attempt_at": "2026-11-07T15:16:26.747433+00:00",
+  "last_success_at": "2026-11-07T15:16:26.747433+00:00",
+  "content_changed_at": "2026-11-07T15:16:26.747433+00:00",
   "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-06T14:10:40.437512",
-  "last_attempt_at": "2026-11-06T14:03:03.809742+03:00"
+  "volleybox_sync_updated_at": "2026-11-07T15:18:00.162179"
 }
