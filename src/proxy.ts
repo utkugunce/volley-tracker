@@ -1,17 +1,22 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { evaluateCityRoute } from "@/utils/cityRouteGuard";
+import { evaluateSecurity, applySecurityHeaders } from "@/utils/securityGuard";
 
 /**
- * İki bağımsız görev:
+ * Üç bağımsız görev:
  *
- * 1) ŞEHİR ROTASI BEKÇİSİ (HTTP 404)
+ * 1) GÜVENLİK, DOS VE HIZ SINIRI BEKÇİSİ (Rate Limiting & Security Guard)
+ *    Zararlı tarayıcıları, aşırı sorgu seli (cache-buster flood) ve IP başına
+ *    aşırı istekleri (DDoS / brute-force) engeller, güvenlik başlıklarını uygular.
+ *
+ * 2) ŞEHİR ROTASI BEKÇİSİ (HTTP 404)
  *    Geçersiz/gizli il adreslerini stream başlamadan önce gerçek bir 404'e
  *    çevirir. Sayfa içindeki `notFound()` bunu yapamaz: `src/app/loading.tsx`
  *    Suspense kabuğunu 200 ile flush ettiği için status kodu sonradan
  *    değiştirilemiyor (soft 404). Ayrıntı: src/utils/cityRouteGuard.ts
  *
- * 2) SUPABASE OTURUM YENİLEME
+ * 3) SUPABASE OTURUM YENİLEME
  *    Yalnızca panel/giriş rotalarında Supabase oturum çerezini yeniler (süresi
  *    dolan erişim jetonu). Herkese açık sayfalar bu eşleşmenin dışındadır ve
  *    etkilenmez — özellikle ISR önbelleğini bozmamak için `no-store` başlığı
@@ -69,19 +74,29 @@ async function refreshPanelSession(request: NextRequest): Promise<NextResponse> 
 }
 
 export async function proxy(request: NextRequest) {
+  // 1. Güvenlik, DoS ve Hız Sınırı (Rate Limiting) Kontrolü
+  const sec = await evaluateSecurity(request);
+  if (sec.blocked && sec.response) {
+    return applySecurityHeaders(sec.response);
+  }
+
   const { pathname } = request.nextUrl;
 
   const decision = evaluateCityRoute(pathname);
-  if (decision.blocked) return cityNotFound(request);
+  if (decision.blocked) return applySecurityHeaders(cityNotFound(request));
   if (decision.redirectTo) {
     const url = request.nextUrl.clone();
     url.pathname = decision.redirectTo;
-    return NextResponse.redirect(url, 308);
+    return applySecurityHeaders(NextResponse.redirect(url, 308));
   }
 
-  if (needsSessionRefresh(pathname)) return refreshPanelSession(request);
+  if (needsSessionRefresh(pathname)) {
+    const sessionRes = await refreshPanelSession(request);
+    return applySecurityHeaders(sessionRes);
+  }
 
-  return NextResponse.next();
+  const nextRes = NextResponse.next();
+  return applySecurityHeaders(nextRes);
 }
 
 export const config = {
@@ -110,5 +125,8 @@ export const config = {
     "/:legacyCity/gunun-maclari",
     "/:legacyCity/puan-durumu",
     "/:legacyCity/sonuclar",
+
+    // (3) DoS ve Bot Güvenlik Kalkanı: Tüm API rotaları
+    "/api/:path*",
   ],
 };

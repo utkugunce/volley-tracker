@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: volley-tracker
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    region: frankfurt
+    scaling:
+      minInstances: 1
+      maxInstances: 2 # Üst sınır: DoS/saldırı anında instance sayısının kontrolsüz artışını engeller
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: STANDALONE_BUILD
+        value: 1
+      - key: NODE_ENV
+        value: production
