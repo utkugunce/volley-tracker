@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:25:49.459639",
+  "updated_at": "2026-11-08T15:40:17.781787",
   "city": "Kırşehir",
   "slug": "kirsehir",
   "title": "TVF Kırşehir Genç & Yıldız Kızlar Süper Lig",
@@ -109,23 +109,23 @@
       {
         "rank": 2,
         "team": "Kırşehir Gençlik Spor Kulübü U16",
-        "played": 5,
-        "won": 3,
+        "played": 6,
+        "won": 4,
         "lost": 2,
-        "points": 9,
-        "sets_won": 12,
+        "points": 12,
+        "sets_won": 15,
         "sets_lost": 10,
         "form": []
       },
       {
         "rank": 3,
         "team": "Kızıközü Spor Kulübü U16",
-        "played": 3,
-        "won": 3,
+        "played": 4,
+        "won": 4,
         "lost": 0,
-        "points": 8,
-        "sets_won": 9,
-        "sets_lost": 3,
+        "points": 10,
+        "sets_won": 12,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -153,23 +153,23 @@
       {
         "rank": 6,
         "team": "Kırşehir Şehit Ömer Halisdemir Spor Kulübü U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 9,
+        "lost": 4,
+        "points": 1,
+        "sets_won": 3,
+        "sets_lost": 12,
         "form": []
       },
       {
         "rank": 7,
         "team": "Kırşehir Cumhuriyet Ortaokulu Spor Kulübü U16",
-        "played": 4,
+        "played": 5,
         "won": 0,
-        "lost": 4,
+        "lost": 5,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 12,
+        "sets_lost": 15,
         "form": []
       }
     ]
@@ -1445,11 +1445,17 @@
       "match_no": "15",
       "home_team": "Kırşehir Şehit Ömer Halisdemir Spor Kulübü U16",
       "away_team": "Kızıközü Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "20-25",
+        "26-24",
+        "25-20",
+        "20-25",
+        "12-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401486",
@@ -1486,11 +1492,15 @@
       "match_no": "16",
       "home_team": "Kırşehir Cumhuriyet Ortaokulu Spor Kulübü U16",
       "away_team": "Kırşehir Gençlik Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "12-25",
+        "23-25",
+        "11-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "401487",
@@ -1720,9 +1730,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-08T09:25:49.475702+00:00",
-  "last_success_at": "2026-11-08T09:25:49.475702+00:00",
-  "content_changed_at": "2026-11-08T09:25:49.475702+00:00",
+  "last_attempt_at": "2026-11-08T15:40:17.784859+00:00",
+  "last_success_at": "2026-11-08T15:40:17.784859+00:00",
+  "content_changed_at": "2026-11-08T15:40:17.784859+00:00",
   "volleybox_synced_matches": 36,
-  "volleybox_sync_updated_at": "2026-11-08T12:33:06.497446"
+  "volleybox_sync_updated_at": "2026-11-08T15:42:04.497149"
 }
