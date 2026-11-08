@@ -34,6 +34,7 @@ export interface RateLimiterOptions {
 
 const UPSTASH_TIMEOUT_MS = 1500;
 const KEY_PREFIX = "rl";
+const MAX_LOCAL_RECORDS = 5000;
 
 interface UpstashConfig {
   url: string;
@@ -117,6 +118,17 @@ export class RateLimiter {
    * Bellek içi (örnek başına) kontrol. Senkron ve yalnızca tek süreç içinde geçerlidir.
    */
   checkLocal(key: string): RateLimitResult {
+    // Bounded memory protection: prevent unbounded growth during massive IP attacks
+    if (this.records.size > MAX_LOCAL_RECORDS) {
+      this.cleanup();
+      if (this.records.size > MAX_LOCAL_RECORDS) {
+        const keysToDelete = Array.from(this.records.keys()).slice(0, Math.floor(MAX_LOCAL_RECORDS / 4));
+        for (const k of keysToDelete) {
+          this.records.delete(k);
+        }
+      }
+    }
+
     const now = Date.now();
     const record = this.records.get(key);
 
@@ -245,6 +257,9 @@ export class RateLimiter {
  * Extracts client IP from standard proxy headers
  */
 export function getClientIp(request: Request): string {
+  const cfConnectingIp = request.headers.get("cf-connecting-ip")?.trim();
+  if (cfConnectingIp) return cfConnectingIp;
+
   const forwarded = request.headers.get("x-forwarded-for");
   if (forwarded) {
     const firstIp = forwarded.split(",")[0].trim();

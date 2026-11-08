@@ -30,7 +30,7 @@ Bu belge, **Altyapı Voleybol** (`altyapivoleybol.com.tr`) projesinin mimarisini
 | **Veritabanı & Backend** | Supabase (PostgreSQL + RLS + GoTrue Auth) | Çift modlu mimari: Supabase yokken yerel JSON fallback |
 | **Scraper & Veri İşleme** | Python 3.10+ (`httpx`, `beautifulsoup4`) | 81 ili multi-threaded paralel tarama |
 | **Test & Kalite** | Vitest 5, React Testing Library, ESLint 9 | Birim, entegrasyon ve snapshot testleri |
-| **Edge & Proxy** | Next.js Edge Middleware (`src/proxy.ts`) | İl rota güvenliği (geçersiz il isteklerine sert 404) |
+| **Edge & Proxy** | Next.js Edge Middleware (`src/proxy.ts`) | İl rota güvenliği (404), DoS/Bot kalkanı ve Rate Limiting |
 | **PWA & Bildirimler** | Service Worker, Web Push (`web-push`) | `public/sw.js`, `manifest.json`, favori maç push bildirimleri |
 | **Dağıtım** | Vercel (Production) + GitHub Actions CI/CD | Saatlik otomatik cron veri senkronizasyonu |
 
