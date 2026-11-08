@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:11:27.179884",
+  "updated_at": "2026-11-08T12:26:05.616627",
   "city": "Zonguldak",
   "slug": "zonguldak",
   "title": "TVF Zonguldak Genç & Yıldız Kızlar Süper Lig",
@@ -30,29 +30,29 @@
     "Genç Kızlar Süper Lig - A Grubu": [
       {
         "rank": 1,
-        "team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
-        "played": 0,
+        "team": "KYAL Spor Kulübü U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 3,
-        "team": "KYAL Spor Kulübü U18",
+        "team": "Karadeniz Ereğli Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -101,23 +101,23 @@
       {
         "rank": 1,
         "team": "MEC Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
         "form": []
       },
       {
         "rank": 2,
         "team": "Zonguldak As Spor Kulübü U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -204,11 +204,15 @@
       "match_no": "1",
       "home_team": "Karadeniz Ereğli Voleybol Spor Kulübü - B U18",
       "away_team": "KYAL Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-7",
+        "25-13"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413307",
@@ -245,11 +249,16 @@
       "match_no": "1",
       "home_team": "MEC Spor Kulübü U18",
       "away_team": "Zonguldak As Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-22",
+        "17-25",
+        "25-15",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "413308",
@@ -274,9 +283,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-07T15:11:27.214453+00:00",
-  "last_success_at": "2026-11-07T15:11:27.214453+00:00",
-  "content_changed_at": "2026-11-07T15:11:27.214453+00:00",
+  "last_attempt_at": "2026-11-08T09:26:05.638103+00:00",
+  "last_success_at": "2026-11-08T09:26:05.638103+00:00",
+  "content_changed_at": "2026-11-08T09:26:05.638103+00:00",
   "volleybox_synced_matches": 2,
-  "volleybox_sync_updated_at": "2026-11-07T18:18:52.906048"
+  "volleybox_sync_updated_at": "2026-11-08T12:33:23.482332"
 }

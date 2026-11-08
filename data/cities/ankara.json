@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:10:42.147424",
+  "updated_at": "2026-11-08T12:25:26.471211",
   "city": "Ankara",
   "slug": "ankara",
   "title": "TVF Ankara Genç & Yıldız Kızlar Süper Lig",
@@ -983,6 +983,28 @@
       },
       {
         "rank": 2,
+        "team": "Ankaura Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Nallıhan Belediyesi Çayırhan Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Anıttepe Ata Spor Kulübü U18",
         "played": 1,
         "won": 0,
@@ -993,18 +1015,7 @@
         "form": []
       },
       {
-        "rank": 3,
-        "team": "Ankaura Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
+        "rank": 5,
         "team": "Başkent Alsancak Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -1015,19 +1026,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "Başkent Çankayagücü - B U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 6,
-        "team": "Nallıhan Belediyesi Çayırhan Spor Kulübü U18",
+        "team": "Başkent Çankayagücü - B U18",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -1209,6 +1209,28 @@
     "Genç Kızlar 1. Ligi - 12. Grup": [
       {
         "rank": 1,
+        "team": "Tiger Academy Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 3,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Zirve Altyapı Spor Kulübü U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 2,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "AHTO Voleybol Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -1219,7 +1241,7 @@
         "form": []
       },
       {
-        "rank": 2,
+        "rank": 4,
         "team": "Ankara Yurdum Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -1230,7 +1252,7 @@
         "form": []
       },
       {
-        "rank": 3,
+        "rank": 5,
         "team": "Başkent Ata Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -1241,7 +1263,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 6,
         "team": "Başkent Köklü Spor Kulübü U18",
         "played": 0,
         "won": 0,
@@ -1252,30 +1274,8 @@
         "form": []
       },
       {
-        "rank": 5,
-        "team": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Tiger Academy Spor Kulübü U18",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 7,
-        "team": "Zirve Altyapı Spor Kulübü U18",
+        "team": "MKE Ankaragücü Temiz Enerji Birliği Spor Kulübü",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -5997,11 +5997,15 @@
       "match_no": "2",
       "home_team": "Nallıhan Belediyesi Çayırhan Spor Kulübü U18",
       "away_team": "Ankaura Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "22-25",
+        "11-25",
+        "13-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411762",
@@ -6640,11 +6644,17 @@
       "match_no": "1",
       "home_team": "Zirve Altyapı Spor Kulübü U18",
       "away_team": "Tiger Academy Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "13-25",
+        "6-25",
+        "25-12",
+        "25-19",
+        "7-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "411769",
@@ -6942,7 +6952,7 @@
       "id": "ankara-20261113-123",
       "city": "Ankara",
       "date": "2026-11-13",
-      "time": "18:00",
+      "time": "19:30",
       "hall": "Batıkent S.S.",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
@@ -6968,14 +6978,14 @@
         "vb_time": "19:30",
         "vb_hall": "Batıkent Spor Salonu",
         "discrepancy": {
-          "has_diff": true,
+          "has_diff": false,
           "date_diff": false,
-          "time_diff": true,
+          "time_diff": false,
           "hall_diff": false,
           "vb_date": "2026-11-13",
           "vb_time": "19:30",
           "vb_hall": "Batıkent Spor Salonu",
-          "details": "Saat Değişti (TVF: 18:00 / VB: 19:30)"
+          "details": null
         }
       }
     },
@@ -9709,9 +9719,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-07T15:10:42.184354+00:00",
-  "last_success_at": "2026-11-07T15:10:42.184354+00:00",
-  "content_changed_at": "2026-11-07T15:10:42.184354+00:00",
+  "last_attempt_at": "2026-11-08T09:25:26.493389+00:00",
+  "last_success_at": "2026-11-08T09:25:26.493389+00:00",
+  "content_changed_at": "2026-11-08T09:25:26.493389+00:00",
   "volleybox_synced_matches": 148,
-  "volleybox_sync_updated_at": "2026-11-07T18:18:12.919281"
+  "volleybox_sync_updated_at": "2026-11-08T12:32:44.233927"
 }

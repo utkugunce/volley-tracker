@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:11:12.531492",
+  "updated_at": "2026-11-08T12:25:52.149608",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -162,23 +162,23 @@
       {
         "rank": 1,
         "team": "Diltaş Spor Kulübü U18",
-        "played": 4,
-        "won": 4,
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
-        "sets_lost": 1,
+        "points": 14,
+        "sets_won": 15,
+        "sets_lost": 3,
         "form": []
       },
       {
         "rank": 2,
         "team": "Falcon Atletik Spor Kulübü U18",
-        "played": 4,
+        "played": 5,
         "won": 3,
-        "lost": 1,
-        "points": 8,
-        "sets_won": 10,
-        "sets_lost": 6,
+        "lost": 2,
+        "points": 9,
+        "sets_won": 12,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -2136,11 +2136,17 @@
       "match_no": "10",
       "home_team": "Falcon Atletik Spor Kulübü U18",
       "away_team": "Diltaş Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 3",
+      "home_score": 2,
+      "away_score": 3,
+      "set_scores": [
+        "23-25",
+        "25-16",
+        "18-25",
+        "25-17",
+        "7-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415754",
@@ -2165,9 +2171,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-07T15:11:12.635446+00:00",
-  "last_success_at": "2026-11-07T15:11:12.635446+00:00",
-  "content_changed_at": "2026-11-07T15:11:12.635446+00:00",
+  "last_attempt_at": "2026-11-08T09:25:52.204706+00:00",
+  "last_success_at": "2026-11-08T09:25:52.204706+00:00",
+  "content_changed_at": "2026-11-08T09:25:52.204706+00:00",
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-11-07T18:18:45.772487"
+  "volleybox_sync_updated_at": "2026-11-08T12:33:16.773005"
 }

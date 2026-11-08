@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:11:36.109892+03:00",
+  "updated_at": "2026-11-08T12:26:17.313743+03:00",
   "total_cities": 81,
   "active_cities": 40,
   "total_matches": 1968,
@@ -110,7 +110,7 @@
       "name": "Bilecik",
       "slug": "bilecik",
       "url": "https://bilecik.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (20 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)",
       "matches_count": 20,
       "standings_count": 1,
       "data_file": "data/cities/bilecik.json"
@@ -190,7 +190,7 @@
       "name": "Çorum",
       "slug": "corum",
       "url": "https://corum.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (13 Maç Mevcut)",
+      "status": "Aktif (13 Maç Mevcut)",
       "matches_count": 13,
       "standings_count": 4,
       "data_file": "data/cities/corum.json"
@@ -200,7 +200,7 @@
       "name": "Denizli",
       "slug": "denizli",
       "url": "https://denizli.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (47 Maç Mevcut)",
+      "status": "Aktif (47 Maç Mevcut)",
       "matches_count": 47,
       "standings_count": 2,
       "data_file": "data/cities/denizli.json"
@@ -271,7 +271,7 @@
       "name": "Gaziantep",
       "slug": "gaziantep",
       "url": "https://gaziantep.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (44 Maç Mevcut)",
+      "status": "Aktif (44 Maç Mevcut)",
       "matches_count": 44,
       "standings_count": 2,
       "data_file": "data/cities/gaziantep.json"
@@ -281,7 +281,7 @@
       "name": "Giresun",
       "slug": "giresun",
       "url": "https://giresun.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (30 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (30 Maç Mevcut)",
       "matches_count": 30,
       "standings_count": 1,
       "data_file": "data/cities/giresun.json"
@@ -311,7 +311,7 @@
       "name": "Hatay",
       "slug": "hatay",
       "url": "https://hatay.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (56 Maç Mevcut)",
+      "status": "Aktif (56 Maç Mevcut)",
       "matches_count": 56,
       "standings_count": 4,
       "data_file": "data/cities/hatay.json"
@@ -444,7 +444,7 @@
       "url": "https://malatya.voleyboliltemsilciligi.com/PuanDurumu",
       "status": "Aktif (66 Maç Mevcut)",
       "matches_count": 66,
-      "standings_count": 4,
+      "standings_count": 2,
       "data_file": "data/cities/malatya.json"
     },
     {
@@ -777,7 +777,7 @@
       "name": "Yalova",
       "slug": "yalova",
       "url": "https://yalova.voleyboliltemsilciligi.com/PuanDurumu",
-      "status": "Aktif (20 Maç Mevcut)",
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)",
       "matches_count": 20,
       "standings_count": 2,
       "data_file": "data/cities/yalova.json"

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:11:13.181875",
+  "updated_at": "2026-11-08T12:25:53.851940",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
@@ -131,6 +131,94 @@
     "Genç Kızlar 1. Ligi - Eleme": [
       {
         "rank": 1,
+        "team": "Akmercan Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 2,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 2,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Şehit Serdal Toprak Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 2,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Şehriban Günata Anadolu Lisesi",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 2,
+        "sets_won": 2,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Malatya Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 0,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 0,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "İbni Haldun Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 1,
+        "sets_won": 0,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 8,
+        "team": "Yusuf Kenan Anadolu Lisesi",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 2,
+        "form": []
+      },
+      {
+        "rank": 9,
         "team": "Akçadağ Fatih Fen Lisesi",
         "played": 0,
         "won": 0,
@@ -141,18 +229,7 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "Akmercan Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
+        "rank": 10,
         "team": "Atatürk Kız Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -163,7 +240,7 @@
         "form": []
       },
       {
-        "rank": 4,
+        "rank": 11,
         "team": "Battalgazi Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -174,7 +251,7 @@
         "form": []
       },
       {
-        "rank": 5,
+        "rank": 12,
         "team": "Beydağı Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -185,29 +262,7 @@
         "form": []
       },
       {
-        "rank": 6,
-        "team": "İbni Haldun Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Malatya Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 8,
+        "rank": 13,
         "team": "Malatya Lisesi",
         "played": 0,
         "won": 0,
@@ -218,7 +273,7 @@
         "form": []
       },
       {
-        "rank": 9,
+        "rank": 14,
         "team": "Malatya Spor Lisesi",
         "played": 0,
         "won": 0,
@@ -229,7 +284,7 @@
         "form": []
       },
       {
-        "rank": 10,
+        "rank": 15,
         "team": "Mareşal Fevzi Çakmak Anadolu Lisesi",
         "played": 0,
         "won": 0,
@@ -240,419 +295,8 @@
         "form": []
       },
       {
-        "rank": 11,
-        "team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 12,
-        "team": "Özel Malatya Kanguru Kolleji",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 13,
-        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 14,
-        "team": "Şehit Serdal Toprak Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 15,
-        "team": "Şehriban Günata Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 16,
-        "team": "Yusuf Kenan Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - 1. Grup": [
-      {
-        "rank": 1,
-        "team": "Akçadağ Fatih Fen Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Akmercan Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Atatürk Kız Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Battalgazi Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Beydağı Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "İbni Haldun Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Malatya Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Malatya Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "Malatya Spor Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 10,
-        "team": "Mareşal Fevzi Çakmak Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 11,
-        "team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 12,
         "team": "Özel Malatya Kanguru Kolleji",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 13,
-        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 14,
-        "team": "Şehit Serdal Toprak Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 15,
-        "team": "Şehriban Günata Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 16,
-        "team": "Yusuf Kenan Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - Eleme": [
-      {
-        "rank": 1,
-        "team": "Akçadağ Fatih Fen Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Akmercan Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Atatürk Kız Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Battalgazi Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Beydağı Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "İbni Haldun Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Malatya Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 8,
-        "team": "Malatya Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 9,
-        "team": "Malatya Spor Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 10,
-        "team": "Mareşal Fevzi Çakmak Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 11,
-        "team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 12,
-        "team": "Özel Malatya Kanguru Kolleji",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 13,
-        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 14,
-        "team": "Şehit Serdal Toprak Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 15,
-        "team": "Şehriban Günata Anadolu Lisesi",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 16,
-        "team": "Yusuf Kenan Anadolu Lisesi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2733,11 +2377,14 @@
       "match_no": "1",
       "home_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
       "away_team": "İbni Haldun Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-8"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2767,11 +2414,14 @@
       "match_no": "2",
       "home_team": "Akmercan Anadolu Lisesi",
       "away_team": "Yusuf Kenan Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2801,11 +2451,14 @@
       "match_no": "3",
       "home_team": "Şehit Serdal Toprak Anadolu Lisesi",
       "away_team": "Özel 14 Mart Mesleki Ve Teknik Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-16",
+        "25-16"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2835,11 +2488,14 @@
       "match_no": "4",
       "home_team": "Şehriban Günata Anadolu Lisesi",
       "away_team": "Malatya Anadolu Lisesi",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "2 - 0",
+      "home_score": 2,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-14"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -2993,9 +2649,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-07T15:11:13.229503+00:00",
-  "last_success_at": "2026-11-07T15:11:13.229503+00:00",
-  "content_changed_at": "2026-11-07T15:11:13.229503+00:00",
+  "last_attempt_at": "2026-11-08T09:25:53.868502+00:00",
+  "last_success_at": "2026-11-08T09:25:53.868502+00:00",
+  "content_changed_at": "2026-11-08T09:25:53.868502+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-07T18:18:45.983264"
+  "volleybox_sync_updated_at": "2026-11-08T12:33:16.968464"
 }
