@@ -104,6 +104,16 @@ Kuralı `src/__tests__/metadata-brand.test.ts` tüm `page.tsx` dosyalarını tar
 > - "Make the best decision that will elevate all three: the user experience (UX), developer experience (DX), and agent experience (AX) always, without breaking anything."
 
 
+## 🛡️ KURAL: DoS, Bot ve Maliyet Koruması (Rate Limiting, Cache Busters & Bot Kalkanı)
+
+> **UYGULAMA PRENSİBİ:**
+> Sunucusuz ve bulut barındırma platformlarında (Render, Vercel) kontrolsüz bot trafiği ve L7 DoS saldırıları sürpriz maliyetlere yol açabilir.
+> - Tüm gelen istekler `src/proxy.ts` ve `src/utils/securityGuard.ts` üzerinden hız sınırı (rate limiting) ve bot denetimine tabidir.
+> - Yeni eklenen tüm API rotaları (`/api/*`) IP başına dakikada 60 istekle; hassas rotalar (`/api/auth/*`, `/api/sync/*`, veri yükleme) dakikada 15 istekle sınırlandırılır.
+> - Aşırı uzun (>500 karakter) veya aşırı sayıda (>10) sorgu parametresi içeren cache-buster saldırıları 400 ile engellenir.
+> - Bilinen zararlı tarayıcı User-Agent kalıpları (`sqlmap`, `nikto`, `wpscan` vb.) doğrudan 403 ile engellenir.
+> - Harici sağlayıcılar (Render / Cloudflare) için kılavuz: `docs/SECURITY_AND_COST_PROTECTION.md`.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 ## This is NOT the Next.js you know
