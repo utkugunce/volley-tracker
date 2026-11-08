@@ -1,5 +1,5 @@
 {
-  "last_attempt_at": "2026-11-07T15:10:30.404637+00:00",
+  "last_attempt_at": "2026-11-08T09:25:17.460837+00:00",
   "last_success_at": null,
   "status": "partial",
   "cities": [
@@ -45,7 +45,7 @@
     },
     {
       "slug": "bilecik",
-      "status": "Aktif (20 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
     },
     {
       "slug": "bingol",
@@ -77,11 +77,11 @@
     },
     {
       "slug": "corum",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (13 Maç Mevcut)"
+      "status": "Aktif (13 Maç Mevcut)"
     },
     {
       "slug": "denizli",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (47 Maç Mevcut)"
+      "status": "Aktif (47 Maç Mevcut)"
     },
     {
       "slug": "diyarbakir",
@@ -109,11 +109,11 @@
     },
     {
       "slug": "gaziantep",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (44 Maç Mevcut)"
+      "status": "Aktif (44 Maç Mevcut)"
     },
     {
       "slug": "giresun",
-      "status": "Aktif (30 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (30 Maç Mevcut)"
     },
     {
       "slug": "gumushane",
@@ -125,7 +125,7 @@
     },
     {
       "slug": "hatay",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (56 Maç Mevcut)"
+      "status": "Aktif (56 Maç Mevcut)"
     },
     {
       "slug": "isparta",
@@ -309,7 +309,7 @@
     },
     {
       "slug": "yalova",
-      "status": "Aktif (20 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
     },
     {
       "slug": "karabuk",

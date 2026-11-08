@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:11:21.185001",
+  "updated_at": "2026-11-08T12:25:59.916239",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -136,18 +136,18 @@
     "Genç Kızlar 1. Ligi - B Grubu": [
       {
         "rank": 1,
-        "team": "Samsunspor U18",
-        "played": 4,
-        "won": 4,
+        "team": "Vezirköprü Gençlik Spor Kulübü U18",
+        "played": 5,
+        "won": 5,
         "lost": 0,
-        "points": 12,
-        "sets_won": 12,
+        "points": 15,
+        "sets_won": 15,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Vezirköprü Gençlik Spor Kulübü U18",
+        "team": "Samsunspor U18",
         "played": 4,
         "won": 4,
         "lost": 0,
@@ -181,12 +181,12 @@
       {
         "rank": 5,
         "team": "İlkkıvılcım Havza SK U18",
-        "played": 4,
+        "played": 5,
         "won": 2,
-        "lost": 2,
+        "lost": 3,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       },
       {
@@ -2543,11 +2543,15 @@
       "match_no": "18",
       "home_team": "Vezirköprü Gençlik Spor Kulübü U18",
       "away_team": "İlkkıvılcım Havza SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-10",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "403009",
@@ -2982,9 +2986,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-07T15:11:21.234729+00:00",
-  "last_success_at": "2026-11-07T15:11:21.234729+00:00",
-  "content_changed_at": "2026-11-07T15:11:21.234729+00:00",
+  "last_attempt_at": "2026-11-08T09:25:59.940953+00:00",
+  "last_success_at": "2026-11-08T09:25:59.940953+00:00",
+  "content_changed_at": "2026-11-08T09:25:59.940953+00:00",
   "volleybox_synced_matches": 63,
-  "volleybox_sync_updated_at": "2026-11-07T18:18:49.591777"
+  "volleybox_sync_updated_at": "2026-11-08T12:33:19.974477"
 }
