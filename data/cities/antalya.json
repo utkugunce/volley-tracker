@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:25:29.543547",
+  "updated_at": "2026-11-09T19:17:49.094825",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
@@ -376,6 +376,17 @@
       },
       {
         "rank": 2,
+        "team": "Net Voleybol Akademi Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -383,17 +394,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Net Voleybol Akademi Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -421,12 +421,12 @@
       {
         "rank": 6,
         "team": "Manavgat Belediyespor U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ]
@@ -4205,11 +4205,15 @@
       "match_no": "8",
       "home_team": "Net Voleybol Akademi Spor Kulübü U16",
       "away_team": "Manavgat Belediyespor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-22",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407993",
@@ -4472,9 +4476,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-08T09:25:29.564223+00:00",
-  "last_success_at": "2026-11-08T09:25:29.564223+00:00",
-  "content_changed_at": "2026-11-08T09:25:29.564223+00:00",
+  "last_attempt_at": "2026-11-09T19:17:49.097663+00:00",
+  "last_success_at": "2026-11-09T19:17:49.097663+00:00",
+  "content_changed_at": "2026-11-09T19:17:49.097663+00:00",
   "volleybox_synced_matches": 70,
-  "volleybox_sync_updated_at": "2026-11-08T12:32:45.710656"
+  "volleybox_sync_updated_at": "2026-11-09T19:20:22.294512"
 }

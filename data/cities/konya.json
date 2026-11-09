@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:25:52.149608",
+  "updated_at": "2026-11-09T19:18:27.069281",
   "city": "Konya",
   "slug": "konya",
   "title": "TVF Konya Genç & Yıldız Kızlar Süper Lig",
@@ -69,24 +69,24 @@
     "Genç Kızlar Süper Lig - B Grubu": [
       {
         "rank": 1,
-        "team": "Konya Anka Spor Kulübü U18",
-        "played": 4,
+        "team": "Selçuklu Belediyespor Kulübü U18",
+        "played": 5,
         "won": 4,
-        "lost": 0,
-        "points": 11,
-        "sets_won": 12,
-        "sets_lost": 2,
+        "lost": 1,
+        "points": 13,
+        "sets_won": 14,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Selçuklu Belediyespor Kulübü U18",
-        "played": 4,
-        "won": 3,
+        "team": "Konya Anka Spor Kulübü U18",
+        "played": 5,
+        "won": 4,
         "lost": 1,
-        "points": 10,
-        "sets_won": 11,
-        "sets_lost": 3,
+        "points": 11,
+        "sets_won": 13,
+        "sets_lost": 5,
         "form": []
       },
       {
@@ -126,17 +126,28 @@
       },
       {
         "rank": 2,
-        "team": "Ballas Spor Kulübü U18",
-        "played": 4,
+        "team": "Kadınhanı Gençlik Merkezi Spor Kulübü U18",
+        "played": 6,
         "won": 2,
-        "lost": 2,
+        "lost": 4,
         "points": 6,
-        "sets_won": 6,
-        "sets_lost": 8,
+        "sets_won": 7,
+        "sets_lost": 13,
         "form": []
       },
       {
         "rank": 3,
+        "team": "Ballas Spor Kulübü U18",
+        "played": 5,
+        "won": 2,
+        "lost": 3,
+        "points": 3,
+        "sets_won": 6,
+        "sets_lost": 11,
+        "form": []
+      },
+      {
+        "rank": 4,
         "team": "Konya Anadolu Yıldızları Spor Kulübü U18",
         "played": 4,
         "won": 1,
@@ -144,17 +155,6 @@
         "points": 3,
         "sets_won": 5,
         "sets_lost": 9,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Kadınhanı Gençlik Merkezi Spor Kulübü U18",
-        "played": 5,
-        "won": 1,
-        "lost": 4,
-        "points": 3,
-        "sets_won": 4,
-        "sets_lost": 13,
         "form": []
       }
     ],
@@ -1168,11 +1168,16 @@
       "match_no": "10",
       "home_team": "Selçuklu Belediyespor Kulübü U18",
       "away_team": "Konya Anka Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "19-25",
+        "25-17",
+        "25-18",
+        "25-15"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415750",
@@ -1651,11 +1656,15 @@
       "match_no": "10",
       "home_team": "Kadınhanı Gençlik Merkezi Spor Kulübü U18",
       "away_team": "Ballas Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-0",
+        "25-0",
+        "25-0"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415752",
@@ -2171,9 +2180,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-08T09:25:52.204706+00:00",
-  "last_success_at": "2026-11-08T09:25:52.204706+00:00",
-  "content_changed_at": "2026-11-08T09:25:52.204706+00:00",
+  "last_attempt_at": "2026-11-09T19:18:27.070890+00:00",
+  "last_success_at": "2026-11-09T19:18:27.070890+00:00",
+  "content_changed_at": "2026-11-09T19:18:27.070890+00:00",
   "volleybox_synced_matches": 35,
-  "volleybox_sync_updated_at": "2026-11-08T12:33:16.773005"
+  "volleybox_sync_updated_at": "2026-11-09T19:20:22.305533"
 }

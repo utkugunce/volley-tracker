@@ -1,5 +1,5 @@
 {
-  "last_attempt_at": "2026-11-08T09:25:17.460837+00:00",
+  "last_attempt_at": "2026-11-09T19:17:27.931031+00:00",
   "last_success_at": null,
   "status": "partial",
   "cities": [
@@ -25,7 +25,7 @@
     },
     {
       "slug": "ankara",
-      "status": "Aktif (185 Maç Mevcut)"
+      "status": "Aktif (184 Maç Mevcut)"
     },
     {
       "slug": "antalya",
@@ -45,7 +45,7 @@
     },
     {
       "slug": "bilecik",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
+      "status": "Aktif (20 Maç Mevcut)"
     },
     {
       "slug": "bingol",
@@ -69,7 +69,7 @@
     },
     {
       "slug": "canakkale",
-      "status": "Aktif (56 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (56 Maç Mevcut)"
     },
     {
       "slug": "cankiri",
@@ -77,7 +77,7 @@
     },
     {
       "slug": "corum",
-      "status": "Aktif (13 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (13 Maç Mevcut)"
     },
     {
       "slug": "denizli",
@@ -109,7 +109,7 @@
     },
     {
       "slug": "gaziantep",
-      "status": "Aktif (44 Maç Mevcut)"
+      "status": "Aktif (47 Maç Mevcut)"
     },
     {
       "slug": "giresun",
@@ -125,7 +125,7 @@
     },
     {
       "slug": "hatay",
-      "status": "Aktif (56 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (56 Maç Mevcut)"
     },
     {
       "slug": "isparta",
@@ -137,11 +137,11 @@
     },
     {
       "slug": "istanbul",
-      "status": "Aktif (160 Maç Mevcut)"
+      "status": "Aktif (159 Maç Mevcut)"
     },
     {
       "slug": "izmir",
-      "status": "Aktif (214 Maç Mevcut)"
+      "status": "Aktif (217 Maç Mevcut)"
     },
     {
       "slug": "kars",
@@ -161,11 +161,11 @@
     },
     {
       "slug": "kirsehir",
-      "status": "Aktif (36 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (36 Maç Mevcut)"
     },
     {
       "slug": "kocaeli",
-      "status": "Aktif (132 Maç Mevcut)"
+      "status": "Aktif (133 Maç Mevcut)"
     },
     {
       "slug": "konya",
@@ -173,11 +173,11 @@
     },
     {
       "slug": "kutahya",
-      "status": "Aktif (17 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (17 Maç Mevcut)"
     },
     {
       "slug": "malatya",
-      "status": "Aktif (66 Maç Mevcut)"
+      "status": "Aktif (70 Maç Mevcut)"
     },
     {
       "slug": "manisa",
@@ -213,7 +213,7 @@
     },
     {
       "slug": "rize",
-      "status": "Puan Durumu Var (2 Tablo)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Puan Durumu Var (2 Tablo)"
     },
     {
       "slug": "sakarya",
@@ -269,11 +269,11 @@
     },
     {
       "slug": "zonguldak",
-      "status": "Aktif (2 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (2 Maç Mevcut)"
     },
     {
       "slug": "aksaray",
-      "status": "Aktif (16 Maç Mevcut)"
+      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (16 Maç Mevcut)"
     },
     {
       "slug": "bayburt",
@@ -309,7 +309,7 @@
     },
     {
       "slug": "yalova",
-      "status": "Önbellek: kaynak yeni veri döndürmedi — Aktif (20 Maç Mevcut)"
+      "status": "Aktif (20 Maç Mevcut)"
     },
     {
       "slug": "karabuk",

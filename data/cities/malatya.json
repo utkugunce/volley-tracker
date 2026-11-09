@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-08T12:25:53.851940",
+  "updated_at": "2026-11-09T19:18:32.111138",
   "city": "Malatya",
   "slug": "malatya",
   "title": "TVF Malatya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 66,
+  "total_matches": 70,
   "source": "https://malatya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -297,6 +297,85 @@
       {
         "rank": 16,
         "team": "Özel Malatya Kanguru Kolleji",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      }
+    ],
+    "Genç Kızlar 1. Ligi - Final Grubu": [
+      {
+        "rank": 1,
+        "team": "Akçadağ Fatih Fen Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Akmercan Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Battalgazi Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 4,
+        "team": "Beydağı Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 5,
+        "team": "Malatya Spor Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 6,
+        "team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+        "played": 0,
+        "won": 0,
+        "lost": 0,
+        "points": 0,
+        "sets_won": 0,
+        "sets_lost": 0,
+        "form": []
+      },
+      {
+        "rank": 7,
+        "team": "Şehit Serdal Toprak Anadolu Lisesi",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -2647,11 +2726,147 @@
           "has_diff": false
         }
       }
+    },
+    {
+      "id": "malatya-20261110-067",
+      "city": "Malatya",
+      "date": "2026-11-10",
+      "time": "09:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "1",
+      "home_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+      "away_team": "Akmercan Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261110-068",
+      "city": "Malatya",
+      "date": "2026-11-10",
+      "time": "11:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "2",
+      "home_team": "Şehit Serdal Toprak Anadolu Lisesi",
+      "away_team": "Özel Yeşilyurt Doğa Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261110-069",
+      "city": "Malatya",
+      "date": "2026-11-10",
+      "time": "13:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "3",
+      "home_team": "Akçadağ Fatih Fen Lisesi",
+      "away_team": "Battalgazi Anadolu Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "malatya-20261110-070",
+      "city": "Malatya",
+      "date": "2026-11-10",
+      "time": "15:30",
+      "hall": "Orduzu Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Final Grubu",
+      "match_no": "4",
+      "home_team": "Beydağı Anadolu Lisesi",
+      "away_team": "Malatya Spor Lisesi",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     }
   ],
-  "last_attempt_at": "2026-11-08T09:25:53.868502+00:00",
-  "last_success_at": "2026-11-08T09:25:53.868502+00:00",
-  "content_changed_at": "2026-11-08T09:25:53.868502+00:00",
+  "last_attempt_at": "2026-11-09T19:18:32.112030+00:00",
+  "last_success_at": "2026-11-09T19:18:32.112030+00:00",
+  "content_changed_at": "2026-11-09T19:18:32.112030+00:00",
   "volleybox_synced_matches": 0,
-  "volleybox_sync_updated_at": "2026-11-08T12:33:16.968464"
+  "volleybox_sync_updated_at": "2026-11-09T19:20:22.253499"
 }
