@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T18:11:29.028380",
+  "updated_at": "2026-11-09T15:02:16.376406",
   "city": "Yalova",
   "slug": "yalova",
   "title": "TVF Yalova Genç & Yıldız Kızlar Süper Lig",
@@ -81,85 +81,6 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 12,
-        "form": []
-      }
-    ],
-    "Yıldız Kızlar Süper Lig - 1. Grup": [
-      {
-        "rank": 1,
-        "team": "Altın Manşet Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 2,
-        "team": "Atakent Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Yalova Elit Akademi Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 4,
-        "team": "Gençlik Ve Spor İl Müdürlüğü Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 5,
-        "team": "Koru Akademi Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 6,
-        "team": "Yalova Gençlik Merkezi Spor Kulübü",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 7,
-        "team": "Yalova Voleybol Spor Kulübü U16",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
         "form": []
       }
     ]
@@ -1029,9 +950,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-08T12:26:12.139892+03:00",
-  "last_success_at": "2026-11-07T15:11:29.077550+00:00",
-  "content_changed_at": "2026-11-07T15:11:29.077550+00:00",
+  "last_attempt_at": "2026-11-09T12:02:16.396380+00:00",
+  "last_success_at": "2026-11-09T12:02:16.396380+00:00",
+  "content_changed_at": "2026-11-09T12:02:16.396380+00:00",
   "volleybox_synced_matches": 20,
-  "volleybox_sync_updated_at": "2026-11-08T12:33:23.434711"
+  "volleybox_sync_updated_at": "2026-11-09T15:09:49.773539"
 }
