@@ -156,17 +156,6 @@
     "Genç Kızlar Süper Lig - Final Grubu": [
       {
         "rank": 1,
-        "team": "Mecitözü Doğuş Spor Kulübü U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "form": []
-      },
-      {
-        "rank": 2,
         "team": "Osmancık Belediyespor U18",
         "played": 1,
         "won": 1,
@@ -174,10 +163,12 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 1,
-        "form": []
+        "form": [
+          "W"
+        ]
       },
       {
-        "rank": 3,
+        "rank": 2,
         "team": "Çorum Arena Spor U18",
         "played": 1,
         "won": 0,
@@ -185,7 +176,22 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 3,
-        "form": []
+        "form": [
+          "L"
+        ]
+      },
+      {
+        "rank": 3,
+        "team": "Mecitözü Doğuş Spor Kulübü U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": [
+          "W"
+        ]
       },
       {
         "rank": 4,
@@ -196,7 +202,9 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 3,
-        "form": []
+        "form": [
+          "L"
+        ]
       }
     ]
   },

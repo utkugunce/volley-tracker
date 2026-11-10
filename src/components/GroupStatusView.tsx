@@ -670,7 +670,7 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
 
                                     {/* Durum Rozeti */}
                                     <td className="py-2.5 px-3 sm:px-4 text-right">
-                                      <div className="inline-flex items-center justify-end">
+                                      <div className="inline-flex flex-col items-end gap-1">
                                         <span
                                           className="px-2.5 py-1 rounded-lg text-xs font-bold tracking-wide border whitespace-nowrap"
                                           style={{
@@ -681,6 +681,12 @@ export const GroupStatusView: React.FC<GroupStatusViewProps> = ({
                                         >
                                           {g.statusLabel}
                                         </span>
+                                        {g.champion && (
+                                          <span className="inline-flex items-center gap-1 text-[10px] font-bold text-amber-300 bg-amber-500/10 border border-amber-500/30 px-1.5 py-0.5 rounded" title={`Şampiyon: ${g.champion}`}>
+                                            <Trophy size={10} className="text-amber-400" />
+                                            <span>{g.champion}</span>
+                                          </span>
+                                        )}
                                       </div>
                                     </td>
                                   </tr>

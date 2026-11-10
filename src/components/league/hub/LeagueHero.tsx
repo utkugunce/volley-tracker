@@ -36,6 +36,16 @@ export function LeagueHero({ handleDownloadCalendar, handleDownloadCsv, league, 
             <span>{league.season} Sezonu</span>
           </span>
 
+          {league.volleyboxMapping?.status_override === "finished" && (
+            <span className="inline-flex items-center gap-1.5 font-bold px-2.5 py-1 rounded-md bg-[#B79BFF]/15 text-[#B79BFF] border border-[#B79BFF]/30">
+              <Trophy size={12} className="text-[#B79BFF]" />
+              <span>Lig Tamamlandı</span>
+              {league.volleyboxMapping.champion && (
+                <span className="text-white font-extrabold ml-1">· Şampiyon: {league.volleyboxMapping.champion}</span>
+              )}
+            </span>
+          )}
+
           {league.volleyboxMapping?.volleybox_url && (
             <a
               href={league.volleyboxMapping.volleybox_url}
@@ -130,13 +140,13 @@ export function LeagueHero({ handleDownloadCalendar, handleDownloadCsv, league, 
 
           <div className="bg-surface-muted p-3 rounded-xl border border-line">
             <span className="text-[10px] font-bold text-ink-3 uppercase tracking-wider block">
-              Lider Takım
+              {league.volleyboxMapping?.champion ? "Şampiyon" : "Lider Takım"}
             </span>
-            <span className="text-sm font-bold text-ink truncate mt-1 block" title={league.stats.leaderTeam?.name}>
-              {league.stats.leaderTeam ? league.stats.leaderTeam.name : "-"}
+            <span className="text-sm font-bold text-ink truncate mt-1 block" title={league.volleyboxMapping?.champion || league.stats.leaderTeam?.name}>
+              {league.volleyboxMapping?.champion || (league.stats.leaderTeam ? league.stats.leaderTeam.name : "-")}
             </span>
             <span className="text-[10px] text-primary font-mono font-bold">
-              {league.stats.leaderTeam ? `${league.stats.leaderTeam.points} Puan` : ""}
+              {league.volleyboxMapping?.champion ? "🏆 2026/27 İl Şampiyonu" : league.stats.leaderTeam ? `${league.stats.leaderTeam.points} Puan` : ""}
             </span>
           </div>
 
