@@ -6,7 +6,7 @@ describe("User Provided Volleybox Team Mappings", () => {
   const testCases: Array<{ name: string; city: string; expectedId: string; category?: string }> = [
     { name: "Biga Ada Spor Kulübü", city: "Çanakkale", expectedId: "t44823" },
     { name: "Barbaros Spor Kulübü", city: "Çanakkale", expectedId: "t44830" },
-    { name: "Çanakkale Belediyespor U16", city: "Çanakkale", expectedId: "t54646" },
+    { name: "Çanakkale Belediyespor - B U16", city: "Çanakkale", expectedId: "t54646" },
     { name: "Biga Gelişim Spor Kulübü", city: "Çanakkale", expectedId: "t44828" },
     { name: "Biga Çiçeklidede Spor Kulübü", city: "Çanakkale", expectedId: "t44825" },
     { name: "Eskişehir Beyhan Rıfat Çıkılıoğlu A.L. Spor Kulübü", city: "Eskişehir", expectedId: "t43244" },
@@ -35,6 +35,8 @@ describe("User Provided Volleybox Team Mappings", () => {
     { name: "VAKIF AKADEMİ", city: "Konya", category: "Genç Kızlar Süper Lig", expectedId: "t42729" },
     { name: "Nilüfer Belediyespor - B U16", city: "Bursa", category: "Yıldız Kızlar Süper Lig", expectedId: "t2202" },
     { name: "Bursa Fethiye 1973 Spor Kulübü - B U16", city: "Bursa", category: "Yıldız Kızlar Süper Lig", expectedId: "t54290" },
+    { name: "Nallıhan Belediyesi Çayırhan Spor Kulübü U18", city: "Ankara", category: "Genç Kızlar 1. Ligi", expectedId: "t55598" },
+    { name: "Çayırhan", city: "Ankara", category: "Genç Kızlar 1. Ligi", expectedId: "t55598" },
   ];
 
   for (const tc of testCases) {

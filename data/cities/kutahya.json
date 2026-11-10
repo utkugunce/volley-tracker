@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:25:52.855189",
+  "updated_at": "2026-11-10T15:24:30.690429",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -123,11 +123,11 @@
       {
         "rank": 1,
         "team": "Kütahya Belediyespor U18",
-        "played": 1,
-        "won": 1,
+        "played": 2,
+        "won": 2,
         "lost": 0,
-        "points": 3,
-        "sets_won": 3,
+        "points": 6,
+        "sets_won": 6,
         "sets_lost": 1,
         "form": []
       },
@@ -145,156 +145,156 @@
       {
         "rank": 3,
         "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
-        "played": 0,
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Genç Kızlar Süper Lig - Yarı Final B Grubu": [
       {
         "rank": 1,
-        "team": "Kütahya Belediyespor - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
+        "team": "Kütahya Belediyespor - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - A Grubu": [
       {
         "rank": 1,
-        "team": "Kütahya Belediyespor - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
+        "team": "Kütahya Belediyespor - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - B Grubu": [
       {
         "rank": 1,
-        "team": "Kütahya Belediyespor - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
+        "team": "Kütahya Belediyespor - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - Yarı Final A Grubu": [
       {
         "rank": 1,
-        "team": "Kütahya Belediyespor - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
+        "team": "Kütahya Belediyespor - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - Yarı Final B Grubu": [
       {
         "rank": 1,
-        "team": "Kütahya Belediyespor - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
+        "team": "Kütahya Belediyespor - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ],
     "Genç Kızlar 1. Ligi - Final Grubu": [
       {
         "rank": 1,
-        "team": "Kütahya Belediyespor - B U18",
-        "played": 0,
-        "won": 0,
+        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
+        "played": 1,
+        "won": 1,
         "lost": 0,
-        "points": 0,
-        "sets_won": 0,
+        "points": 3,
+        "sets_won": 3,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
-        "team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-        "played": 0,
+        "team": "Kütahya Belediyespor - B U18",
+        "played": 1,
         "won": 0,
-        "lost": 0,
+        "lost": 1,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       }
     ]
@@ -916,22 +916,7 @@
         "15-25",
         "25-10"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "kutahya-20261108-015",
@@ -946,11 +931,15 @@
       "match_no": "2",
       "home_team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK - B U18",
       "away_team": "Kütahya Belediyespor U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "14-25",
+        "14-25",
+        "14-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415180",
@@ -1028,11 +1017,15 @@
       "match_no": "1",
       "home_team": "Kütahya Belediyespor - B U18",
       "away_team": "Kütahya Gençlik ve Spor İl Müdürlüğü SK U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "0 - 3",
+      "home_score": 0,
+      "away_score": 3,
+      "set_scores": [
+        "15-25",
+        "12-25",
+        "15-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415181",
@@ -1057,9 +1050,7 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T14:19:41.578561+03:00",
-  "last_success_at": "2026-11-08T09:25:52.871997+00:00",
-  "content_changed_at": "2026-11-08T09:25:52.871997+00:00",
-  "volleybox_synced_matches": 16,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.544937"
+  "last_attempt_at": "2026-11-10T12:24:30.696523+00:00",
+  "last_success_at": "2026-11-10T12:24:30.696523+00:00",
+  "content_changed_at": "2026-11-10T12:24:30.696523+00:00"
 }

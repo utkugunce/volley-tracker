@@ -106,5 +106,11 @@ describe("teamData utility", () => {
     expect(hasBTeam).toBe(true);
   });
 
-
+  it("resolves Nallıhan Belediyesi Çayırhan Spor Kulübü U18 with Volleybox mapping in Ankara", () => {
+    const team = getTeamDetailsBySlug("nallihan-belediyesi-cayirhan-spor-kulubu-u18", "ankara");
+    expect(team).not.toBeNull();
+    expect(team?.teamName).toBe("Nallıhan Belediyesi Çayırhan Spor Kulübü U18");
+    expect(team?.mapping).toBeDefined();
+    expect(team?.mapping?.volleybox_url).toContain("t55598");
+  });
 });

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:25:58.410370",
+  "updated_at": "2026-11-10T15:24:37.377592",
   "city": "Muğla",
   "slug": "mugla",
   "title": "TVF Muğla Genç & Yıldız Kızlar Süper Lig",
@@ -186,24 +186,24 @@
     "Genç Kızlar Süper Lig - D Grubu": [
       {
         "rank": 1,
-        "team": "Fethiye Zirve Spor Kulübü U18",
-        "played": 2,
-        "won": 2,
+        "team": "Muğlatürk Fethiye Zirve Spor Kulübü",
+        "played": 3,
+        "won": 3,
         "lost": 0,
-        "points": 6,
-        "sets_won": 6,
+        "points": 9,
+        "sets_won": 9,
         "sets_lost": 0,
         "form": []
       },
       {
         "rank": 2,
         "team": "Fethiye Voleybol Spor Kulübü U18",
-        "played": 2,
+        "played": 3,
         "won": 2,
-        "lost": 0,
+        "lost": 1,
         "points": 6,
         "sets_won": 6,
-        "sets_lost": 0,
+        "sets_lost": 3,
         "form": []
       },
       {
@@ -732,22 +732,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "mugla-20261108-007",
@@ -766,22 +751,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "mugla-20261010-008",
@@ -983,22 +953,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "mugla-20261108-013",
@@ -1017,22 +972,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "mugla-20261007-014",
@@ -1223,22 +1163,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "mugla-20261009-019",
@@ -1251,7 +1176,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "1",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Fethiye Anka Spor U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1261,29 +1186,7 @@
         "25-13",
         "25-16"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "408229",
-        "url": "https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-u18-fethiye-anka-spor-u18-c408229",
-        "host_name": "Muğlatürk Fethiye Zirve Spor Kulübü U18",
-        "guest_name": "Fethiye Anka Spor U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-09",
-        "vb_time": "19:00",
-        "vb_hall": "Fethiye Beşkaza Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-09",
-          "vb_time": "19:00",
-          "vb_hall": "Fethiye Beşkaza Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "mugla-20261010-020",
@@ -1341,7 +1244,7 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "3",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Dalaman Master Akademi Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -1351,29 +1254,7 @@
         "25-11",
         "25-6"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "411834",
-        "url": "https://women.volleybox.net/tr/fethiye-zirve-spor-kulubu-u18-dalaman-master-akademi-spor-kulubu-u18-c411834",
-        "host_name": "Muğlatürk Fethiye Zirve Spor Kulübü U18",
-        "guest_name": "Dalaman Master Akademi Spor Kulübü U18",
-        "score": "3 - 0",
-        "has_score": true,
-        "vb_date": "2026-10-23",
-        "vb_time": "20:00",
-        "vb_hall": "Fethiye Eski Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-10-23",
-          "vb_time": "20:00",
-          "vb_hall": "Fethiye Eski Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "mugla-20261025-022",
@@ -1437,22 +1318,7 @@
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "mugla-20261109-024",
@@ -1465,28 +1331,17 @@
       "gender": "Kız",
       "group": "D Grubu",
       "match_no": "6",
-      "home_team": "Fethiye Zirve Spor Kulübü U18",
+      "home_team": "Muğlatürk Fethiye Zirve Spor Kulübü",
       "away_team": "Fethiye Voleybol Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-19",
+        "25-17",
+        "25-14"
+      ],
+      "status": "finished"
     },
     {
       "id": "mugla-20261018-025",
@@ -1956,29 +1811,7 @@
         "17-25",
         "18-25"
       ],
-      "status": "finished",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415198",
-        "url": "https://women.volleybox.net/tr/yesil-marmaris-spor-kulubu-u18-marmaris-belediyesi-gsk-u18-c415198",
-        "host_name": "Yeşil Marmaris Spor Kulübü U18",
-        "guest_name": "Marmaris Belediyesi GSK U18",
-        "score": "0 - 3",
-        "has_score": true,
-        "vb_date": "2026-11-01",
-        "vb_time": "17:30",
-        "vb_hall": "Amiral Orhan Aydın Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-01",
-          "vb_time": "17:30",
-          "vb_hall": "Amiral Orhan Aydın Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "finished"
     },
     {
       "id": "mugla-20261017-036",
@@ -2161,9 +1994,7 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T14:19:48.119218+03:00",
-  "last_success_at": "2026-11-08T09:25:58.452602+00:00",
-  "content_changed_at": "2026-11-08T09:25:58.452602+00:00",
-  "volleybox_synced_matches": 32,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.607645"
+  "last_attempt_at": "2026-11-10T12:24:37.384766+00:00",
+  "last_success_at": "2026-11-10T12:24:37.384766+00:00",
+  "content_changed_at": "2026-11-10T12:24:37.384766+00:00"
 }

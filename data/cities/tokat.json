@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T16:01:35.171527+03:00",
+  "updated_at": "2026-11-10T15:26:37.684330",
   "city": "Tokat",
   "slug": "tokat",
   "title": "TVF Tokat Genç & Yıldız Kızlar Süper Lig",
@@ -22,13 +22,36 @@
     ],
     "halls": [
       "Tümü",
+      "Hüseyin Akbaş",
       "Merkez Spor Salonu"
     ]
   },
   "standings": {
-    "Genç Kızlar 1. Ligi - 1. Grup": [
+    "Genç Kızlar 1. Ligi - Gurup Birinciliği": [
       {
         "rank": 1,
+        "team": "TOKAT SPOR LİSESİ",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "TOKAT VOLEYBOL AKADEMİ",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "MEKTEBİM SPOR KULÜBÜ",
         "played": 0,
         "won": 0,
@@ -39,30 +62,8 @@
         "form": []
       },
       {
-        "rank": 2,
-        "team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
-        "played": 0,
-        "won": 0,
-        "lost": 0,
-        "points": 0,
-        "sets_won": 0,
-        "sets_lost": 0,
-        "form": []
-      },
-      {
         "rank": 4,
-        "team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
+        "team": "ÖZEL ŞEHİR KOLEJİ",
         "played": 0,
         "won": 0,
         "lost": 0,
@@ -75,82 +76,31 @@
   },
   "matches": [
     {
-      "id": "tokat-20261108-001",
+      "id": "tokat-20261109-001",
       "city": "Tokat",
-      "date": "2026-11-08",
-      "time": "16:00",
-      "hall": "Merkez Spor Salonu",
-      "category": "Genç Kızlar 1. Ligi",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "1",
-      "home_team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
-      "away_team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "tokat-20261108-002",
-      "city": "Tokat",
-      "date": "2026-11-08",
+      "date": "2026-11-09",
       "time": "18:00",
-      "hall": "Merkez Spor Salonu",
+      "hall": "Hüseyin Akbaş",
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "2",
-      "home_team": "MEKTEBİM SPOR KULÜBÜ",
-      "away_team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415780",
-        "url": "https://women.volleybox.net/tr/tokat-mektebim-spor-kulubu-u18-tokat-ozel-sehir-koleji-spor-kulubu-u18-c415780",
-        "host_name": "Tokat Mektebim Spor Kulübü U18",
-        "guest_name": "Tokat Özel Şehir Koleji Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-08",
-        "vb_time": "18:00",
-        "vb_hall": "Malatya Merkez Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-08",
-          "vb_time": "18:00",
-          "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
-        }
-      }
+      "group": "Gurup Birinciliği",
+      "match_no": "1",
+      "home_team": "TOKAT SPOR LİSESİ",
+      "away_team": "TOKAT VOLEYBOL AKADEMİ",
+      "score": "3 - 1",
+      "home_score": 3,
+      "away_score": 1,
+      "set_scores": [
+        "25-18",
+        "13-25",
+        "25-21",
+        "25-20"
+      ],
+      "status": "finished"
     },
     {
-      "id": "tokat-20261115-003",
+      "id": "tokat-20261115-002",
       "city": "Tokat",
       "date": "2026-11-15",
       "time": "18:00",
@@ -158,40 +108,18 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "3",
-      "home_team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
-      "away_team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
+      "group": "Gurup Birinciliği",
+      "match_no": "2",
+      "home_team": "TOKAT SPOR LİSESİ",
+      "away_team": "ÖZEL ŞEHİR KOLEJİ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415781",
-        "url": "https://women.volleybox.net/tr/tokat-spor-lisesi-u18-tokat-ozel-sehir-koleji-spor-kulubu-u18-c415781",
-        "host_name": "Tokat Spor Lisesi U18",
-        "guest_name": "Tokat Özel Şehir Koleji Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-15",
-        "vb_time": "18:00",
-        "vb_hall": "Malatya Merkez Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-15",
-          "vb_time": "18:00",
-          "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "upcoming"
     },
     {
-      "id": "tokat-20261115-004",
+      "id": "tokat-20261115-003",
       "city": "Tokat",
       "date": "2026-11-15",
       "time": "19:30",
@@ -199,33 +127,18 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "4",
-      "home_team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
+      "group": "Gurup Birinciliği",
+      "match_no": "3",
+      "home_team": "TOKAT VOLEYBOL AKADEMİ",
       "away_team": "MEKTEBİM SPOR KULÜBÜ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
-      "id": "tokat-20261122-005",
+      "id": "tokat-20261122-004",
       "city": "Tokat",
       "date": "2026-11-22",
       "time": "16:00",
@@ -233,40 +146,18 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "5",
-      "home_team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
+      "group": "Gurup Birinciliği",
+      "match_no": "4",
+      "home_team": "TOKAT SPOR LİSESİ",
       "away_team": "MEKTEBİM SPOR KULÜBÜ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415783",
-        "url": "https://women.volleybox.net/tr/tokat-spor-lisesi-u18-tokat-mektebim-spor-kulubu-u18-c415783",
-        "host_name": "Tokat Spor Lisesi U18",
-        "guest_name": "Tokat Mektebim Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-22",
-        "vb_time": "16:00",
-        "vb_hall": "Malatya Merkez Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-22",
-          "vb_time": "16:00",
-          "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "upcoming"
     },
     {
-      "id": "tokat-20261122-006",
+      "id": "tokat-20261122-005",
       "city": "Tokat",
       "date": "2026-11-22",
       "time": "17:30",
@@ -274,30 +165,34 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
-      "match_no": "6",
-      "home_team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
-      "away_team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
+      "group": "Gurup Birinciliği",
+      "match_no": "5",
+      "home_team": "ÖZEL ŞEHİR KOLEJİ",
+      "away_team": "TOKAT VOLEYBOL AKADEMİ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
+    },
+    {
+      "id": "tokat-20261125-006",
+      "city": "Tokat",
+      "date": "2026-11-25",
+      "time": "17:30",
+      "hall": "Merkez Spor Salonu",
+      "category": "Genç Kızlar 1. Ligi",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "Gurup Birinciliği",
+      "match_no": "6",
+      "home_team": "MEKTEBİM SPOR KULÜBÜ",
+      "away_team": "ÖZEL ŞEHİR KOLEJİ",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming"
     },
     {
       "id": "tokat-20261129-007",
@@ -308,30 +203,15 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
+      "group": "Gurup Birinciliği",
       "match_no": "7",
-      "home_team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
-      "away_team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
+      "home_team": "TOKAT VOLEYBOL AKADEMİ",
+      "away_team": "TOKAT SPOR LİSESİ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tokat-20261129-008",
@@ -342,37 +222,15 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
+      "group": "Gurup Birinciliği",
       "match_no": "8",
-      "home_team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
+      "home_team": "ÖZEL ŞEHİR KOLEJİ",
       "away_team": "MEKTEBİM SPOR KULÜBÜ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415786",
-        "url": "https://women.volleybox.net/tr/tokat-ozel-sehir-koleji-spor-kulubu-u18-tokat-mektebim-spor-kulubu-u18-c415786",
-        "host_name": "Tokat Özel Şehir Koleji Spor Kulübü U18",
-        "guest_name": "Tokat Mektebim Spor Kulübü U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-11-29",
-        "vb_time": "19:30",
-        "vb_hall": "Malatya Merkez Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-11-29",
-          "vb_time": "19:30",
-          "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tokat-20261206-009",
@@ -383,37 +241,15 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
+      "group": "Gurup Birinciliği",
       "match_no": "9",
-      "home_team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
-      "away_team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
+      "home_team": "ÖZEL ŞEHİR KOLEJİ",
+      "away_team": "TOKAT SPOR LİSESİ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415787",
-        "url": "https://women.volleybox.net/tr/tokat-ozel-sehir-koleji-spor-kulubu-u18-tokat-spor-lisesi-u18-c415787",
-        "host_name": "Tokat Özel Şehir Koleji Spor Kulübü U18",
-        "guest_name": "Tokat Spor Lisesi U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-12-06",
-        "vb_time": "13:00",
-        "vb_hall": "Malatya Merkez Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-12-06",
-          "vb_time": "13:00",
-          "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tokat-20261206-010",
@@ -424,30 +260,15 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
+      "group": "Gurup Birinciliği",
       "match_no": "10",
       "home_team": "MEKTEBİM SPOR KULÜBÜ",
-      "away_team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
+      "away_team": "TOKAT VOLEYBOL AKADEMİ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tokat-20261213-011",
@@ -458,37 +279,15 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
+      "group": "Gurup Birinciliği",
       "match_no": "11",
       "home_team": "MEKTEBİM SPOR KULÜBÜ",
-      "away_team": "TOKAT SPOR LİSESİ SPOR KULÜBÜ",
+      "away_team": "TOKAT SPOR LİSESİ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": true,
-        "match_id": "415789",
-        "url": "https://women.volleybox.net/tr/tokat-mektebim-spor-kulubu-u18-tokat-spor-lisesi-u18-c415789",
-        "host_name": "Tokat Mektebim Spor Kulübü U18",
-        "guest_name": "Tokat Spor Lisesi U18",
-        "score": null,
-        "has_score": false,
-        "vb_date": "2026-12-13",
-        "vb_time": "16:00",
-        "vb_hall": "Malatya Merkez Spor Salonu",
-        "discrepancy": {
-          "has_diff": false,
-          "date_diff": false,
-          "time_diff": false,
-          "hall_diff": false,
-          "vb_date": "2026-12-13",
-          "vb_time": "16:00",
-          "vb_hall": "Malatya Merkez Spor Salonu",
-          "details": null
-        }
-      }
+      "status": "upcoming"
     },
     {
       "id": "tokat-20261213-012",
@@ -499,33 +298,18 @@
       "category": "Genç Kızlar 1. Ligi",
       "age_group": "Genç",
       "gender": "Kız",
-      "group": "1. Grup",
+      "group": "Gurup Birinciliği",
       "match_no": "12",
-      "home_team": "TOKAT VOLEYBOL AKADEMİ SPOR KULÜBÜ",
-      "away_team": "TOKAT ÖZEL ŞEHİR KOLEJİ",
+      "home_team": "TOKAT VOLEYBOL AKADEMİ",
+      "away_team": "ÖZEL ŞEHİR KOLEJİ",
       "score": "- : -",
       "home_score": null,
       "away_score": null,
       "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
+      "status": "upcoming"
     }
   ],
-  "volleybox_synced_matches": 6,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.691055",
-  "last_attempt_at": "2026-11-10T14:19:53.999670+03:00"
+  "last_attempt_at": "2026-11-10T12:26:37.686205+00:00",
+  "last_success_at": "2026-11-10T12:26:37.686205+00:00",
+  "content_changed_at": "2026-11-10T12:26:37.686205+00:00"
 }
