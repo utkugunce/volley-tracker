@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:19:33.903439+03:00",
+  "updated_at": "2026-11-10T16:40:54.887609+00:00",
   "city": "İstanbul",
   "slug": "istanbul",
   "title": "TVF İstanbul Genç & Yıldız Ligleri",
@@ -8027,6 +8027,7 @@
         "0-25"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "411787",
@@ -9372,9 +9373,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:19:34.184849+00:00",
-  "last_success_at": "2026-11-10T11:19:34.184849+00:00",
-  "content_changed_at": "2026-11-10T11:19:34.184849+00:00",
+  "last_attempt_at": "2026-11-10T16:40:54.908413+00:00",
+  "last_success_at": "2026-11-10T16:40:54.908413+00:00",
+  "content_changed_at": "2026-11-10T16:40:54.908413+00:00",
   "volleybox_synced_matches": 135,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:11.842029"
+  "volleybox_sync_updated_at": "2026-11-10T16:43:05.251046"
 }

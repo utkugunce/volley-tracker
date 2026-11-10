@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:24:40.096902",
+  "updated_at": "2026-11-10T16:41:29.573619",
   "city": "Samsun",
   "slug": "samsun",
   "title": "TVF Samsun Genç & Yıldız Kızlar Süper Lig",
@@ -789,7 +789,22 @@
         "25-0"
       ],
       "status": "finished",
-      "forfeit": true
+      "forfeit": true,
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "samsun-20261101-014",
@@ -2321,6 +2336,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "403003",
@@ -2342,8 +2358,7 @@
           "vb_hall": "Terme Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "samsun-20261025-050",
@@ -2987,7 +3002,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T12:24:40.106197+00:00",
-  "last_success_at": "2026-11-10T12:24:40.106197+00:00",
-  "content_changed_at": "2026-11-10T12:24:40.106197+00:00"
+  "last_attempt_at": "2026-11-10T16:41:29.575400+00:00",
+  "last_success_at": "2026-11-10T16:41:29.575400+00:00",
+  "content_changed_at": "2026-11-10T12:24:40.106197+00:00",
+  "volleybox_synced_matches": 63,
+  "volleybox_sync_updated_at": "2026-11-10T16:43:05.645156"
 }

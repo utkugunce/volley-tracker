@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:24:27.454271",
+  "updated_at": "2026-11-10T16:40:50.058852",
   "city": "Hatay",
   "slug": "hatay",
   "title": "TVF Hatay Genç & Yıldız Kızlar Süper Lig",
@@ -754,6 +754,7 @@
         "0-25"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "401076",
@@ -775,8 +776,7 @@
           "vb_hall": "TOKİ Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "hatay-20261006-014",
@@ -982,6 +982,7 @@
         "0-25"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "401081",
@@ -1003,8 +1004,7 @@
           "vb_hall": "TOKİ Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "hatay-20261107-019",
@@ -2426,6 +2426,7 @@
         "0-25"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "401114",
@@ -2659,7 +2660,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T12:24:27.484850+00:00",
-  "last_success_at": "2026-11-10T12:24:27.484850+00:00",
-  "content_changed_at": "2026-11-10T12:24:27.484850+00:00"
+  "last_attempt_at": "2026-11-10T16:40:50.060481+00:00",
+  "last_success_at": "2026-11-10T16:40:50.060481+00:00",
+  "content_changed_at": "2026-11-10T16:40:50.060481+00:00",
+  "volleybox_synced_matches": 56,
+  "volleybox_sync_updated_at": "2026-11-10T16:43:05.309370"
 }

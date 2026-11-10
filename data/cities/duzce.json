@@ -29,7 +29,7 @@
     "Genç Kızlar Süper Lig - 1. Grup": [
       {
         "rank": 1,
-        "team": "Düzce Voleybol SK - A U18",
+        "team": "Düzce Voleybol SK U18",
         "played": 3,
         "won": 3,
         "lost": 0,
@@ -177,7 +177,7 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "1",
-      "home_team": "Düzce Voleybol SK - A U18",
+      "home_team": "Düzce Voleybol SK U18",
       "away_team": "Düzce 1907 Spor Kulübü U18",
       "score": "3 - 2",
       "home_score": 3,
@@ -309,7 +309,7 @@
       "group": "1. Grup",
       "match_no": "4",
       "home_team": "Düzce Atletik Spor Kulübü U18",
-      "away_team": "Düzce Voleybol SK - A U18",
+      "away_team": "Düzce Voleybol SK U18",
       "score": "0 - 3",
       "home_score": 0,
       "away_score": 3,
@@ -346,7 +346,7 @@
       "gender": "Kız",
       "group": "1. Grup",
       "match_no": "5",
-      "home_team": "Düzce Voleybol SK - A U18",
+      "home_team": "Düzce Voleybol SK U18",
       "away_team": "Düzce UltrAslan Spor Kulübü U18",
       "score": "3 - 0",
       "home_score": 3,
@@ -419,9 +419,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:20:04.823100+00:00",
+  "last_attempt_at": "2026-11-10T16:41:51.315393+00:00",
   "last_success_at": "2026-11-10T11:20:04.823100+00:00",
   "content_changed_at": "2026-11-10T11:20:04.823100+00:00",
   "volleybox_synced_matches": 3,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.134763"
+  "volleybox_sync_updated_at": "2026-11-10T16:43:05.631730"
 }

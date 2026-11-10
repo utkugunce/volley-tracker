@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T15:24:30.690429",
+  "updated_at": "2026-11-10T16:41:09.932641",
   "city": "Kütahya",
   "slug": "kutahya",
   "title": "TVF Kütahya Genç & Yıldız Kızlar Süper Lig",
@@ -687,6 +687,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "408170",
@@ -708,8 +709,7 @@
           "vb_hall": "Kütahya Yeni Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "kutahya-20261101-010",
@@ -780,6 +780,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "408172",
@@ -801,8 +802,7 @@
           "vb_hall": "Kütahya Yeni Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "kutahya-20261031-012",
@@ -873,6 +873,7 @@
         "25-0"
       ],
       "status": "finished",
+      "forfeit": true,
       "volleybox": {
         "synced": true,
         "match_id": "408177",
@@ -894,8 +895,7 @@
           "vb_hall": "Kütahya Yeni Spor Salonu",
           "details": null
         }
-      },
-      "forfeit": true
+      }
     },
     {
       "id": "kutahya-20261107-014",
@@ -919,7 +919,22 @@
         "15-25",
         "25-10"
       ],
-      "status": "finished"
+      "status": "finished",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
     },
     {
       "id": "kutahya-20261108-015",
@@ -1053,7 +1068,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T12:24:30.696523+00:00",
-  "last_success_at": "2026-11-10T12:24:30.696523+00:00",
-  "content_changed_at": "2026-11-10T12:24:30.696523+00:00"
+  "last_attempt_at": "2026-11-10T16:41:09.933373+00:00",
+  "last_success_at": "2026-11-10T16:41:09.933373+00:00",
+  "content_changed_at": "2026-11-10T12:24:30.696523+00:00",
+  "volleybox_synced_matches": 16,
+  "volleybox_sync_updated_at": "2026-11-10T16:43:05.502512"
 }

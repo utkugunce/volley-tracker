@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:19:24.189829",
+  "updated_at": "2026-11-10T16:40:36.157470",
   "city": "Çorum",
   "slug": "corum",
   "title": "TVF Çorum Genç & Yıldız Kızlar Süper Lig",
@@ -156,32 +156,6 @@
     "Genç Kızlar Süper Lig - Final Grubu": [
       {
         "rank": 1,
-        "team": "Osmancık Belediyespor U18",
-        "played": 1,
-        "won": 1,
-        "lost": 0,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 1,
-        "form": [
-          "W"
-        ]
-      },
-      {
-        "rank": 2,
-        "team": "Çorum Arena Spor U18",
-        "played": 1,
-        "won": 0,
-        "lost": 1,
-        "points": 0,
-        "sets_won": 1,
-        "sets_lost": 3,
-        "form": [
-          "L"
-        ]
-      },
-      {
-        "rank": 3,
         "team": "Mecitözü Doğuş Spor Kulübü U18",
         "played": 1,
         "won": 1,
@@ -189,9 +163,29 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 1,
-        "form": [
-          "W"
-        ]
+        "form": []
+      },
+      {
+        "rank": 2,
+        "team": "Osmancık Belediyespor U18",
+        "played": 1,
+        "won": 1,
+        "lost": 0,
+        "points": 3,
+        "sets_won": 3,
+        "sets_lost": 1,
+        "form": []
+      },
+      {
+        "rank": 3,
+        "team": "Çorum Arena Spor U18",
+        "played": 1,
+        "won": 0,
+        "lost": 1,
+        "points": 0,
+        "sets_won": 1,
+        "sets_lost": 3,
+        "form": []
       },
       {
         "rank": 4,
@@ -202,9 +196,7 @@
         "points": 0,
         "sets_won": 1,
         "sets_lost": 3,
-        "form": [
-          "L"
-        ]
+        "form": []
       }
     ]
   },
@@ -800,9 +792,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-10T11:19:24.263673+00:00",
-  "last_success_at": "2026-11-10T11:19:24.263673+00:00",
-  "content_changed_at": "2026-11-10T11:19:24.263673+00:00",
+  "last_attempt_at": "2026-11-10T16:40:36.158117+00:00",
+  "last_success_at": "2026-11-10T16:40:36.158117+00:00",
+  "content_changed_at": "2026-11-10T16:40:36.158117+00:00",
   "volleybox_synced_matches": 13,
-  "volleybox_sync_updated_at": "2026-11-10T14:21:12.100949"
+  "volleybox_sync_updated_at": "2026-11-10T16:43:05.612176"
 }
