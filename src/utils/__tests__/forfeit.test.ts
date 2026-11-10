@@ -49,6 +49,40 @@ describe("Forfeit (Hükmen) Maç Tespiti", () => {
     expect(isForfeitMatch(match)).toBe(true);
   });
 
+  it("İki noktalı ('25:0'), parantezli ('(25-0)') ve virgüllü set formatlarını hükmen tespit etmelidir", () => {
+    const matchColons = {
+      set_scores: ["25:0", "25:0", "25:0"],
+      status: "finished",
+    };
+    expect(isForfeitMatch(matchColons)).toBe(true);
+
+    const matchParens = {
+      set_scores: ["(25-0)", "(25-0)", "(25-0)"],
+      status: "finished",
+    };
+    expect(isForfeitMatch(matchParens)).toBe(true);
+
+    const matchSingleString = {
+      set_scores: ["25-0, 25-0, 25-0"],
+      status: "finished",
+    };
+    expect(isForfeitMatch(matchSingleString)).toBe(true);
+  });
+
+  it("forfeit: true olarak açıkça işaretlenmiş maçları hükmen tespit etmelidir", () => {
+    const match = {
+      forfeit: true,
+      home_score: 3,
+      away_score: 0,
+      status: "finished",
+    };
+    const info = getMatchForfeitInfo(match);
+    expect(info.isForfeit).toBe(true);
+    expect(info.label).toBe("Hükmen");
+    expect(info.winner).toBe("home");
+    expect(info.forfeitedBy).toBe("away");
+  });
+
   it("Takım adında TVF (H) ibaresi olan bitmiş maçları hükmen tespit etmelidir", () => {
     const match = {
       home_team: "Başakşehir Belediyesi SK",

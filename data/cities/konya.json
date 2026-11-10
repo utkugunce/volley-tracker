@@ -1153,7 +1153,8 @@
           "vb_hall": "75. Yıl Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "konya-20261108-015",
@@ -1686,7 +1687,8 @@
           "vb_hall": "Kadınhanı Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "konya-20261112-027",
@@ -1948,7 +1950,8 @@
           "vb_hall": "Konya Büyükşehir Belediyesi Spor ve Kongre Merkezi",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "konya-20261025-033",

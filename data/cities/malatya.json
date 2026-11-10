@@ -431,7 +431,8 @@
         "0-25",
         "0-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "forfeit": true
     },
     {
       "id": "malatya-20261008-003",
@@ -502,7 +503,8 @@
         "25-0",
         "25-0"
       ],
-      "status": "finished"
+      "status": "finished",
+      "forfeit": true
     },
     {
       "id": "malatya-20261010-006",

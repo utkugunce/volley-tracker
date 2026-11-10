@@ -25,16 +25,39 @@ export function getMatchForfeitInfo(
     status?: string | null;
     home_score?: number | null;
     away_score?: number | null;
+    forfeit?: boolean | null;
   } | null
 ): MatchForfeitInfo {
   if (!match) {
     return { isForfeit: false, label: "" };
   }
 
+  // Açıkça forfeit olarak işaretlenmiş maçlar
+  if (match.forfeit) {
+    const homeScore = match.home_score ?? 0;
+    const awayScore = match.away_score ?? 0;
+    return {
+      isForfeit: true,
+      winner: homeScore >= awayScore ? "home" : "away",
+      forfeitedBy: homeScore >= awayScore ? "away" : "home",
+      label: "Hükmen",
+      reason: "Hükmen sonuçlandı",
+    };
+  }
+
   const rawSets = match.set_scores || [];
-  const cleanSets = rawSets
-    .filter((s) => typeof s === "string" && s.trim().length > 0)
-    .map((s) => s.replace(/\s+/g, ""));
+  const cleanSets: string[] = [];
+  for (const s of rawSets) {
+    if (typeof s !== "string" || !s.trim()) continue;
+    const parts = s.match(/\d+[\s:–-]+\d+/g);
+    if (parts && parts.length > 1) {
+      for (const p of parts) {
+        cleanSets.push(p.replace(/\s+/g, "").replace(":", "-").replace("–", "-"));
+      }
+    } else {
+      cleanSets.push(s.replace(/\s+/g, "").replace(":", "-").replace("–", "-").replace(/[()]/g, ""));
+    }
+  }
 
   // 1. Kural: 3 setin tamamı 25-0 ise ev sahibi hükmen galip
   const is3ZeroHome = cleanSets.length === 3 && cleanSets.every((s) => s === "25-0");
@@ -132,6 +155,7 @@ export function isForfeitMatch(
     status?: string | null;
     home_score?: number | null;
     away_score?: number | null;
+    forfeit?: boolean | null;
   } | null
 ): boolean {
   return getMatchForfeitInfo(match).isForfeit;

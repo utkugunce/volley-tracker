@@ -788,7 +788,8 @@
         "25-0",
         "25-0"
       ],
-      "status": "finished"
+      "status": "finished",
+      "forfeit": true
     },
     {
       "id": "samsun-20261101-014",
@@ -2341,7 +2342,8 @@
           "vb_hall": "Terme Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "samsun-20261025-050",

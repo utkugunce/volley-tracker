@@ -2753,7 +2753,8 @@
           "vb_hall": "18 Mart Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "canakkale-20261102-054",
@@ -2888,7 +2889,8 @@
           "vb_hall": "Gökçeada Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     }
   ],
   "last_attempt_at": "2026-11-10T11:19:24.008870+00:00",

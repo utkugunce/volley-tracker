@@ -32,6 +32,7 @@ import { slugify } from "@/utils/slugify";
 import { triggerHaptic } from "@/utils/haptics";
 import { getVolleyboxMapping } from "@/utils/volleybox";
 import { formatLeagueCategoryTitle, formatGroupName } from "@/utils/grouping";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 import { trLower } from "@/utils/turkishLocale";
 
 import { EmptyState } from "@/components/arc/empty-state/empty-state";
@@ -125,13 +126,17 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
   const homeWon = isFinished && homeScore > awayScore;
   const awayWon = isFinished && awayScore > homeScore;
+  const forfeitInfo = getMatchForfeitInfo(match);
 
   const getStatusLabel = () => {
     if (isLive) {
       const setsPlayed = match.set_scores ? match.set_scores.length : 0;
       return `Set ${setsPlayed + 1} Oynanıyor`;
     }
-    if (isFinished) return "Maç Tamamlandı";
+    if (isFinished) {
+      if (forfeitInfo.isForfeit) return "Hükmen Sonuçlandı";
+      return "Maç Tamamlandı";
+    }
     if (match.status === "postponed") return "Ertelendi";
     return match.time || "Program";
   };
@@ -345,7 +350,7 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
                 {statusLabel}
               </Badge>
             ) : isFinished ? (
-              <Badge tone="success" size="sm">
+              <Badge tone={forfeitInfo.isForfeit ? "warning" : "success"} size="sm">
                 {statusLabel}
               </Badge>
             ) : (
@@ -409,6 +414,14 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
         {/* 3. Voleybol Set Matrisi Tablosu & Momentum Çubuğu */}
         <SetScoreMatrix match={match} />
+
+        {/* Hükmen Maç Bilgilendirmesi */}
+        {forfeitInfo.isForfeit && (
+          <div className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-3 py-2 text-[11px] text-amber-200/90 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
+            <span>TVF kuralı gereği 25-0 setlerle hükmen sonuçlanmıştır.</span>
+          </div>
+        )}
 
         {/* 4. Bağlamsal Sekmeler (Tabs) */}
         <div className="space-y-3">

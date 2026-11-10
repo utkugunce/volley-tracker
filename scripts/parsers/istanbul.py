@@ -351,6 +351,19 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
                                     else:
                                         set_scores = [p.strip("()") for p in raw_sets.split() if "-" in p]
 
+                                is_forfeit = False
+                                clean_sets = [s.replace(" ", "").replace(":", "-") for s in set_scores]
+                                if (
+                                    clean_sets == ["25-0", "25-0", "25-0"]
+                                    or clean_sets == ["0-25", "0-25", "0-25"]
+                                    or clean_sets.count("25-0") >= 3
+                                    or clean_sets.count("0-25") >= 3
+                                ):
+                                    is_forfeit = True
+                                raw_context = f"{tds[4] if len(tds)>4 else ''} {tds[7] if len(tds)>7 else ''} {raw_sets}"
+                                if bool(re.search(r"[\(\[]\s*h\s*[\)\]]|hükmen|hukmen", raw_context, re.IGNORECASE)):
+                                    is_forfeit = True
+
                                 date_slug = iso_date.replace("-", "") if iso_date != "TBD" else "tbd"
                                 match_id = f"ist-{date_slug}-{match_counter:03d}"
                                 match_counter += 1
@@ -374,6 +387,8 @@ def fetch_istanbul_live_data() -> Dict[str, Any]:
                                     "set_scores": set_scores,
                                     "status": status,
                                 }
+                                if is_forfeit:
+                                    match_obj["forfeit"] = True
                                 all_matches.append(match_obj)
 
                                 # Puan durumu form dizisini güncelle

@@ -7,6 +7,7 @@ import { TeamVolleyboxLink } from "@/components/TeamVolleyboxLink";
 import { downloadIcsFile, generateMatchIcs } from "@/utils/ics";
 import { isMatchPassed } from "@/utils/calendar";
 import { formatGroupName } from "@/utils/grouping";
+import { getMatchForfeitInfo } from "@/utils/forfeit";
 
 export type MatchRowMode = "today" | "results" | "fixtures";
 
@@ -49,6 +50,7 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
   const isLive = match.status === "live";
   const isFinished = match.status === "finished" || (match.home_score !== null && match.home_score !== undefined);
   const isPostponed = match.status === "postponed";
+  const forfeitInfo = getMatchForfeitInfo(match);
   const formattedDate = formatCompactMatchDate(match.date);
   const discrepancy = match.volleybox?.discrepancy;
   const hasDiscrepancy = Boolean(discrepancy?.has_diff) && !isFinished;
@@ -132,9 +134,18 @@ export const CompactMatchRow: React.FC<CompactMatchRowProps> = ({
             <span>CANLI</span>
           </span>
         ) : isFinished ? (
-          <span className="text-[9px] font-bold text-emerald-400 px-1">
-            Bitti
-          </span>
+          forfeitInfo.isForfeit ? (
+            <span
+              className="text-[9px] font-bold text-amber-400 px-1"
+              title={forfeitInfo.reason || "Hükmen tescil"}
+            >
+              Hükmen
+            </span>
+          ) : (
+            <span className="text-[9px] font-bold text-emerald-400 px-1">
+              Bitti
+            </span>
+          )
         ) : isPostponed ? (
           <span className="text-[9px] font-medium text-slate-400 px-1">
             Ertelendi

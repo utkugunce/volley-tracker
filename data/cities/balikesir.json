@@ -867,7 +867,8 @@
         "25-0",
         "25-0"
       ],
-      "status": "finished"
+      "status": "finished",
+      "forfeit": true
     },
     {
       "id": "balikesir-20261101-010",
@@ -890,7 +891,8 @@
         "0-25",
         "0-25"
       ],
-      "status": "finished"
+      "status": "finished",
+      "forfeit": true
     },
     {
       "id": "balikesir-20261004-011",
@@ -2024,7 +2026,8 @@
           "vb_hall": "Ayvalık Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "balikesir-20261110-039",
@@ -2808,7 +2811,8 @@
           "vb_hall": "Neriman Gençer Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "balikesir-20261021-059",

@@ -1967,7 +1967,8 @@
           "vb_hall": "İsmet İnönü Kapalı Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "tekirdag-20261107-038",
@@ -3420,7 +3421,8 @@
           "vb_hall": "Çorlu Spor Salonu",
           "details": null
         }
-      }
+      },
+      "forfeit": true
     },
     {
       "id": "tekirdag-20261017-070",

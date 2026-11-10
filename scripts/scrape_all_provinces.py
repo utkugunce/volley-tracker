@@ -1088,12 +1088,25 @@ def scrape_single_city(city_info):
 
                                 set_scores = re.findall(r"\((\d+-\d+)\)", raw_sets) if raw_sets else []
 
+                                is_forfeit = False
+                                clean_sets = [s.replace(" ", "").replace(":", "-") for s in set_scores]
+                                if (
+                                    clean_sets == ["25-0", "25-0", "25-0"]
+                                    or clean_sets == ["0-25", "0-25", "0-25"]
+                                    or clean_sets.count("25-0") >= 3
+                                    or clean_sets.count("0-25") >= 3
+                                ):
+                                    is_forfeit = True
+                                raw_context = f"{tds[4] if len(tds)>4 else ''} {tds[7] if len(tds)>7 else ''} {raw_sets}"
+                                if bool(re.search(r"[\(\[]\s*h\s*[\)\]]|hükmen|hukmen", raw_context, re.IGNORECASE)):
+                                    is_forfeit = True
+
                                 dedup_key = (iso_date, raw_time, home, away)
                                 if dedup_key in seen_matches:
                                     continue
                                 seen_matches.add(dedup_key)
 
-                                city_matches.append({
+                                match_data = {
                                     "id": match_id,
                                     "city": name,
                                     "date": iso_date,
@@ -1111,7 +1124,10 @@ def scrape_single_city(city_info):
                                     "away_score": int(score_a) if is_finished and score_a.isdigit() else None,
                                     "set_scores": set_scores,
                                     "status": status,
-                                })
+                                }
+                                if is_forfeit:
+                                    match_data["forfeit"] = True
+                                city_matches.append(match_data)
 
     used_cache = False
     data_file_rel = None
