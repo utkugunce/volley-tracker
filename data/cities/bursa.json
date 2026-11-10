@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:25:34.831304",
+  "updated_at": "2026-11-10T14:19:24.259380",
   "city": "Bursa",
   "slug": "bursa",
   "title": "TVF Bursa Genç & Yıldız Kızlar Süper Lig",
@@ -468,45 +468,45 @@
       {
         "rank": 2,
         "team": "DSİ Nilüfer Spor Kulübü U16",
-        "played": 3,
-        "won": 2,
+        "played": 4,
+        "won": 3,
         "lost": 1,
-        "points": 6,
-        "sets_won": 6,
-        "sets_lost": 3,
+        "points": 9,
+        "sets_won": 9,
+        "sets_lost": 4,
         "form": []
       },
       {
         "rank": 3,
         "team": "Akademi16 Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
+        "played": 3,
+        "won": 2,
         "lost": 1,
-        "points": 2,
-        "sets_won": 3,
+        "points": 5,
+        "sets_won": 6,
         "sets_lost": 5,
         "form": []
       },
       {
         "rank": 4,
         "team": "Nilüfer Beşevler Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 1,
-        "sets_won": 2,
-        "sets_lost": 6,
+        "sets_won": 3,
+        "sets_lost": 9,
         "form": []
       },
       {
         "rank": 5,
         "team": "Nilüfer Olimpik Spor Kulübü U16",
-        "played": 2,
+        "played": 3,
         "won": 0,
-        "lost": 2,
+        "lost": 3,
         "points": 0,
         "sets_won": 0,
-        "sets_lost": 6,
+        "sets_lost": 9,
         "form": []
       }
     ],
@@ -3539,11 +3539,15 @@
       "match_no": "7",
       "home_team": "Akademi16 Spor Kulübü U16",
       "away_team": "Nilüfer Olimpik Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-7",
+        "25-16",
+        "25-10"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3573,11 +3577,16 @@
       "match_no": "8",
       "home_team": "Nilüfer Beşevler Spor Kulübü U16",
       "away_team": "DSİ Nilüfer Spor Kulübü U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "1 - 3",
+      "home_score": 1,
+      "away_score": 3,
+      "set_scores": [
+        "18-25",
+        "26-24",
+        "13-25",
+        "17-25"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": false,
         "match_id": null,
@@ -3945,9 +3954,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-08T09:25:34.846525+00:00",
-  "last_success_at": "2026-11-08T09:25:34.846525+00:00",
-  "content_changed_at": "2026-11-08T09:25:34.846525+00:00",
+  "last_attempt_at": "2026-11-10T11:19:24.288981+00:00",
+  "last_success_at": "2026-11-10T11:19:24.288981+00:00",
+  "content_changed_at": "2026-11-10T11:19:24.288981+00:00",
   "volleybox_synced_matches": 72,
-  "volleybox_sync_updated_at": "2026-11-08T12:32:48.690084"
+  "volleybox_sync_updated_at": "2026-11-10T14:21:12.064322"
 }

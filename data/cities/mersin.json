@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T12:25:43.653198",
+  "updated_at": "2026-11-10T14:19:29.418131",
   "city": "Mersin",
   "slug": "mersin",
   "title": "TVF Mersin Genç & Yıldız Kızlar Süper Lig",
@@ -38,11 +38,11 @@
       {
         "rank": 2,
         "team": "MEV Toros Spor Kulübü U18",
-        "played": 5,
-        "won": 5,
+        "played": 6,
+        "won": 6,
         "lost": 0,
-        "points": 15,
-        "sets_won": 15,
+        "points": 18,
+        "sets_won": 18,
         "sets_lost": 1,
         "form": []
       },
@@ -71,12 +71,12 @@
       {
         "rank": 5,
         "team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-        "played": 5,
+        "played": 6,
         "won": 2,
-        "lost": 3,
+        "lost": 4,
         "points": 6,
         "sets_won": 7,
-        "sets_lost": 10,
+        "sets_lost": 13,
         "form": []
       },
       {
@@ -1170,11 +1170,15 @@
       "match_no": "24",
       "home_team": "MEV Toros Spor Kulübü U18",
       "away_team": "Mezitli Belediyesi Gençlik ve Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-13",
+        "25-17",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "415791",
@@ -1322,9 +1326,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-08T09:25:43.684375+00:00",
-  "last_success_at": "2026-11-08T09:25:43.684375+00:00",
-  "content_changed_at": "2026-11-08T09:25:43.684375+00:00",
+  "last_attempt_at": "2026-11-10T11:19:29.470930+00:00",
+  "last_success_at": "2026-11-10T11:19:29.470930+00:00",
+  "content_changed_at": "2026-11-10T11:19:29.470930+00:00",
   "volleybox_synced_matches": 27,
-  "volleybox_sync_updated_at": "2026-11-08T12:33:17.681898"
+  "volleybox_sync_updated_at": "2026-11-10T14:21:12.582032"
 }
