@@ -121,6 +121,7 @@ export interface GroupStatusItem {
   teams: string[];
   tournamentUrl?: string;
   tournamentName?: string;
+  champion?: string | null;
 }
 
 export function evaluateGroupStatus(params: {
@@ -363,6 +364,8 @@ export function computeGroupStatusList(
       synced === 0
     ) {
       statusKey = "teams_only";
+    } else if (mapping?.status_override === "finished") {
+      statusKey = "finished";
     }
 
     const cfg = GROUP_STATUS_CONFIGS[statusKey];
@@ -385,6 +388,7 @@ export function computeGroupStatusList(
       teams: Array.from(item.teamsSet).sort((a, b) => a.localeCompare(b, "tr")),
       tournamentUrl: mapping?.volleybox_url,
       tournamentName: mapping?.matched_as,
+      champion: mapping?.champion || null,
     });
   }
 

@@ -127,7 +127,8 @@ export interface VolleyboxMapping {
   logo_url?: string | null;
   local_logo?: string | null;
   note?: string | null;
-  status_override?: "teams_only" | string;
+  status_override?: "teams_only" | "finished" | string;
+  champion?: string | null;
   verified_at?: string;
 }
 
@@ -141,7 +142,8 @@ export interface VolleyboxLeagueMapping {
   confidence: VolleyboxConfidence;
   season?: string;
   note?: string | null;
-  status_override?: "teams_only" | string;
+  status_override?: "teams_only" | "finished" | string;
+  champion?: string | null;
   verified_at?: string;
 }
 
