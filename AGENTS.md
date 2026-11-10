@@ -52,7 +52,7 @@ if (!authenticatedUser || authenticatedUser.role !== "admin") {
 - Canlı veri güncellemesini kod doğrulamasından ayrı tut. Scraper yalnızca saatlik workflow veya açık veri güncelleme talebiyle çalıştırılır.
 - 81 il taramaları arasında minimum 60 dakika korunur. Kullanıcı açıkça beklemeyi kaldırmadıkça `--force` kullanma; API tetiklemeleri de cooldown'a uyar.
 - Profesyonel ligler bağımsız `pro-volley` projesindedir. Bu repo resmi kulüp altyapı ligleriyle sınırlıdır.
-- Değişiklikleri özellik dalında commit et; PR ve başarılı CI üzerinden birleştir. Doğrudan `main`'e push etme. GitHub dal koruması ayrıca yönetici ayarı gerektirir.
+- **Yayınlama kuralı:** Kod, UI veya altyapı değişikliklerini özellik dalında commit et; PR ve başarılı CI üzerinden birleştir. Yalnızca veri dosyalarını (`data/**`) kapsayan rutin canlı il/fikstür güncellemelerinde doğrulama testleri (`validate_data_files.py`) geçtikten sonra doğrudan `main`'e commit ve push yapılabilir.
 
 ## 🏙️ KURAL: Şehir Allowlist'i (`src/utils/citySlugs.ts`)
 
