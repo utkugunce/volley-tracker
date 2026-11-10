@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-08T12:25:29.543547",
+  "updated_at": "2026-11-10T14:19:28.601722",
   "city": "Antalya",
   "slug": "antalya",
   "title": "TVF Antalya Genç & Yıldız Kızlar Süper Lig",
-  "total_matches": 96,
+  "total_matches": 97,
   "source": "https://antalya.voleyboliltemsilciligi.com",
   "filters": {
     "categories": [
@@ -376,6 +376,17 @@
       },
       {
         "rank": 2,
+        "team": "Net Voleybol Akademi Spor Kulübü U16",
+        "played": 3,
+        "won": 2,
+        "lost": 1,
+        "points": 6,
+        "sets_won": 6,
+        "sets_lost": 3,
+        "form": []
+      },
+      {
+        "rank": 3,
         "team": "Gazipaşa Gençlerbirliği Spor Kulübü U16",
         "played": 1,
         "won": 1,
@@ -383,17 +394,6 @@
         "points": 3,
         "sets_won": 3,
         "sets_lost": 0,
-        "form": []
-      },
-      {
-        "rank": 3,
-        "team": "Net Voleybol Akademi Spor Kulübü U16",
-        "played": 2,
-        "won": 1,
-        "lost": 1,
-        "points": 3,
-        "sets_won": 3,
-        "sets_lost": 3,
         "form": []
       },
       {
@@ -421,12 +421,12 @@
       {
         "rank": 6,
         "team": "Manavgat Belediyespor U16",
-        "played": 3,
+        "played": 4,
         "won": 0,
-        "lost": 3,
+        "lost": 4,
         "points": 0,
         "sets_won": 1,
-        "sets_lost": 9,
+        "sets_lost": 12,
         "form": []
       }
     ]
@@ -1021,13 +1021,47 @@
       "id": "antalya-20261115-014",
       "city": "Antalya",
       "date": "2026-11-15",
+      "time": "10:00",
+      "hall": "Kepez Ç.A.S.S.",
+      "category": "Genç Kızlar Süper Lig",
+      "age_group": "Genç",
+      "gender": "Kız",
+      "group": "A Grubu",
+      "match_no": "14",
+      "home_team": "Antalya Şimşek GSK U18",
+      "away_team": "Akdeniz Bilgi Spor Kulübü U18",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "antalya-20261115-015",
+      "city": "Antalya",
+      "date": "2026-11-15",
       "time": "13:30",
       "hall": "Alanya Atatürk S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "14",
+      "match_no": "15",
       "home_team": "Alanya MASK Spor Kulübü U18",
       "away_team": "Antalya 1907 Spor Kulübü U18",
       "score": "- : -",
@@ -1059,7 +1093,7 @@
       }
     },
     {
-      "id": "antalya-20261118-015",
+      "id": "antalya-20261118-016",
       "city": "Antalya",
       "date": "2026-11-18",
       "time": "14:30",
@@ -1068,42 +1102,8 @@
       "age_group": "Genç",
       "gender": "Kız",
       "group": "A Grubu",
-      "match_no": "15",
-      "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
-      "away_team": "Akdeniz Bilgi Spor Kulübü U18",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
-      "volleybox": {
-        "synced": false,
-        "match_id": null,
-        "url": null,
-        "host_name": null,
-        "guest_name": null,
-        "score": null,
-        "has_score": false,
-        "vb_date": null,
-        "vb_time": null,
-        "vb_hall": null,
-        "discrepancy": {
-          "has_diff": false
-        }
-      }
-    },
-    {
-      "id": "antalya-20261119-016",
-      "city": "Antalya",
-      "date": "2026-11-19",
-      "time": "11:00",
-      "hall": "Kepez Ç.A.S.S.",
-      "category": "Genç Kızlar Süper Lig",
-      "age_group": "Genç",
-      "gender": "Kız",
-      "group": "A Grubu",
       "match_no": "16",
-      "home_team": "Antalya Şimşek GSK U18",
+      "home_team": "Gazipaşa Gençlerbirliği Spor Kulübü U18",
       "away_team": "Akdeniz Bilgi Spor Kulübü U18",
       "score": "- : -",
       "home_score": null,
@@ -1728,7 +1728,7 @@
       "id": "antalya-20261119-031",
       "city": "Antalya",
       "date": "2026-11-19",
-      "time": "12:30",
+      "time": "11:00",
       "hall": "Kepez Ç.A.S.S.",
       "category": "Genç Kızlar Süper Lig",
       "age_group": "Genç",
@@ -2641,7 +2641,7 @@
       "id": "antalya-20261117-052",
       "city": "Antalya",
       "date": "2026-11-17",
-      "time": "11:00",
+      "time": "13:00",
       "hall": "Kemer B.T.S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -2784,7 +2784,7 @@
       "gender": "Kız",
       "group": "A Grubu",
       "match_no": "24",
-      "home_team": "Antalya Açı Koleji Spor Kulübü U16",
+      "home_team": "Sistem Eğitim Spor Kulübü U16",
       "away_team": "Antalya Şimşek GSK U16",
       "score": "- : -",
       "home_score": null,
@@ -3877,7 +3877,41 @@
       }
     },
     {
-      "id": "antalya-20260919-082",
+      "id": "antalya-20261128-082",
+      "city": "Antalya",
+      "date": "2026-11-28",
+      "time": "11:00",
+      "hall": "Döşemealtı S.S.",
+      "category": "Yıldız Kızlar Süper Lig",
+      "age_group": "Yıldız",
+      "gender": "Kız",
+      "group": "B Grubu",
+      "match_no": "26",
+      "home_team": "Antalya DSİ Spor Kulübü U16",
+      "away_team": "07 Anka Spor Kulübü U16",
+      "score": "- : -",
+      "home_score": null,
+      "away_score": null,
+      "set_scores": [],
+      "status": "upcoming",
+      "volleybox": {
+        "synced": false,
+        "match_id": null,
+        "url": null,
+        "host_name": null,
+        "guest_name": null,
+        "score": null,
+        "has_score": false,
+        "vb_date": null,
+        "vb_time": null,
+        "vb_hall": null,
+        "discrepancy": {
+          "has_diff": false
+        }
+      }
+    },
+    {
+      "id": "antalya-20260919-083",
       "city": "Antalya",
       "date": "2026-09-19",
       "time": "10:30",
@@ -3922,7 +3956,7 @@
       }
     },
     {
-      "id": "antalya-20260919-083",
+      "id": "antalya-20260919-084",
       "city": "Antalya",
       "date": "2026-09-19",
       "time": "12:00",
@@ -3967,7 +4001,7 @@
       }
     },
     {
-      "id": "antalya-20260920-084",
+      "id": "antalya-20260920-085",
       "city": "Antalya",
       "date": "2026-09-20",
       "time": "10:30",
@@ -4012,7 +4046,7 @@
       }
     },
     {
-      "id": "antalya-20260920-085",
+      "id": "antalya-20260920-086",
       "city": "Antalya",
       "date": "2026-09-20",
       "time": "12:00",
@@ -4057,7 +4091,7 @@
       }
     },
     {
-      "id": "antalya-20261025-086",
+      "id": "antalya-20261025-087",
       "city": "Antalya",
       "date": "2026-10-25",
       "time": "10:00",
@@ -4102,7 +4136,7 @@
       }
     },
     {
-      "id": "antalya-20261025-087",
+      "id": "antalya-20261025-088",
       "city": "Antalya",
       "date": "2026-10-25",
       "time": "11:30",
@@ -4147,7 +4181,7 @@
       }
     },
     {
-      "id": "antalya-20261107-088",
+      "id": "antalya-20261107-089",
       "city": "Antalya",
       "date": "2026-11-07",
       "time": "12:30",
@@ -4193,7 +4227,7 @@
       }
     },
     {
-      "id": "antalya-20261108-089",
+      "id": "antalya-20261108-090",
       "city": "Antalya",
       "date": "2026-11-08",
       "time": "10:00",
@@ -4205,11 +4239,15 @@
       "match_no": "8",
       "home_team": "Net Voleybol Akademi Spor Kulübü U16",
       "away_team": "Manavgat Belediyespor U16",
-      "score": "- : -",
-      "home_score": null,
-      "away_score": null,
-      "set_scores": [],
-      "status": "upcoming",
+      "score": "3 - 0",
+      "home_score": 3,
+      "away_score": 0,
+      "set_scores": [
+        "25-22",
+        "25-22",
+        "25-21"
+      ],
+      "status": "finished",
       "volleybox": {
         "synced": true,
         "match_id": "407993",
@@ -4234,10 +4272,10 @@
       }
     },
     {
-      "id": "antalya-20261115-090",
+      "id": "antalya-20261115-091",
       "city": "Antalya",
       "date": "2026-11-15",
-      "time": "11:00",
+      "time": "10:00",
       "hall": "Alanya Atatürk S.S.",
       "category": "Yıldız Kızlar Süper Lig",
       "age_group": "Yıldız",
@@ -4268,7 +4306,7 @@
       }
     },
     {
-      "id": "antalya-20261116-091",
+      "id": "antalya-20261116-092",
       "city": "Antalya",
       "date": "2026-11-16",
       "time": "11:00",
@@ -4302,7 +4340,7 @@
       }
     },
     {
-      "id": "antalya-20261118-092",
+      "id": "antalya-20261118-093",
       "city": "Antalya",
       "date": "2026-11-18",
       "time": "11:00",
@@ -4336,7 +4374,7 @@
       }
     },
     {
-      "id": "antalya-20261119-093",
+      "id": "antalya-20261119-094",
       "city": "Antalya",
       "date": "2026-11-19",
       "time": "11:00",
@@ -4370,7 +4408,7 @@
       }
     },
     {
-      "id": "antalya-20261121-094",
+      "id": "antalya-20261121-095",
       "city": "Antalya",
       "date": "2026-11-21",
       "time": "18:00",
@@ -4404,7 +4442,7 @@
       }
     },
     {
-      "id": "antalya-20261122-095",
+      "id": "antalya-20261122-096",
       "city": "Antalya",
       "date": "2026-11-22",
       "time": "11:00",
@@ -4438,7 +4476,7 @@
       }
     },
     {
-      "id": "antalya-20261129-096",
+      "id": "antalya-20261129-097",
       "city": "Antalya",
       "date": "2026-11-29",
       "time": "11:00",
@@ -4472,9 +4510,9 @@
       }
     }
   ],
-  "last_attempt_at": "2026-11-08T09:25:29.564223+00:00",
-  "last_success_at": "2026-11-08T09:25:29.564223+00:00",
-  "content_changed_at": "2026-11-08T09:25:29.564223+00:00",
+  "last_attempt_at": "2026-11-10T11:19:28.682946+00:00",
+  "last_success_at": "2026-11-10T11:19:28.682946+00:00",
+  "content_changed_at": "2026-11-10T11:19:28.682946+00:00",
   "volleybox_synced_matches": 70,
-  "volleybox_sync_updated_at": "2026-11-08T12:32:45.710656"
+  "volleybox_sync_updated_at": "2026-11-10T14:21:11.965165"
 }
