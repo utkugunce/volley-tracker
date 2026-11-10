@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Analytics } from "@vercel/analytics/next";
-import { ShieldCheck, Cookie, X } from "lucide-react";
+import { Cookie } from "lucide-react";
 
 export const CONSENT_KEY = "av-analytics-consent";
 
@@ -93,11 +93,11 @@ export function CookieConsentBanner() {
     <aside
       role="region"
       aria-label="Çerez ve Gizlilik Tercihleri"
-      className="mx-2 mb-20 md:mb-0 md:mx-0 md:fixed md:bottom-4 md:inset-x-auto md:right-4 md:max-w-md z-50 rounded-2xl p-3 bg-slate-950/95 border border-slate-800 backdrop-blur-md shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-300 no-print"
+      className="fixed inset-x-2 bottom-[calc(4rem+env(safe-area-inset-bottom,0px))] z-50 rounded-2xl border border-line bg-surface/95 p-3 shadow-2xl backdrop-blur-md animate-in fade-in slide-in-from-bottom-2 duration-300 no-print md:inset-x-auto md:bottom-4 md:right-4 md:max-w-md"
     >
-      <div className="flex items-center gap-3 text-xs">
+      <div className="grid grid-cols-[auto_1fr] items-center gap-x-3 gap-y-2 text-xs sm:flex sm:gap-3">
         <Cookie size={16} className="text-primary shrink-0" aria-hidden="true" />
-        <p className="flex-1 min-w-0 text-slate-300 leading-snug">
+        <p className="min-w-0 text-ink-2 sm:flex-1">
           Yalnızca anonim kullanım analitiği.{" "}
           <Link
             href="/gizlilik"
@@ -107,20 +107,22 @@ export function CookieConsentBanner() {
             Gizlilik
           </Link>
         </p>
-        <button
-          type="button"
-          onClick={handleReject}
-          className="shrink-0 px-3 py-2 rounded-xl font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700 border border-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400"
-        >
-          Reddet
-        </button>
-        <button
-          type="button"
-          onClick={handleAccept}
-          className="shrink-0 px-3 py-2 rounded-xl font-bold text-primary-fg bg-primary hover:bg-primary-hover transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-        >
-          Kabul
-        </button>
+        <div className="col-span-2 grid grid-cols-2 gap-2 sm:flex sm:shrink-0">
+          <button
+            type="button"
+            onClick={handleReject}
+            className="min-h-11 rounded-xl border border-line bg-surface-muted px-3 py-2 font-semibold text-ink-2 transition-colors duration-300 hover:bg-surface-raised hover:text-ink focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            Reddet
+          </button>
+          <button
+            type="button"
+            onClick={handleAccept}
+            className="min-h-11 rounded-xl bg-primary px-3 py-2 font-semibold text-primary-fg transition-colors duration-300 hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            Kabul
+          </button>
+        </div>
       </div>
     </aside>
   );

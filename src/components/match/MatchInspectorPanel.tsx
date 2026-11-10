@@ -426,6 +426,9 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
         {/* 4. Bağlamsal Sekmeler (Tabs) */}
         <div className="space-y-3">
           <SegmentedControl
+            semantics="tabs"
+            idPrefix="match-inspector"
+            label="Maç detay bölümleri"
             options={[
               { value: "overview", label: "Genel Bakış" },
               { value: "h2h", label: "H2H & Form" },
@@ -437,7 +440,12 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
           {/* Sekme 1: Genel Bakış */}
           {activeTab === "overview" && (
-            <div className="space-y-2.5">
+            <div
+              id="match-inspector-overview-panel"
+              role="tabpanel"
+              aria-labelledby="match-inspector-overview-tab"
+              className="space-y-2.5"
+            >
               {/* Salon Konumu & Yol Tarifi */}
               <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-2">
                 <div className="flex items-center justify-between text-[11px] font-semibold text-white">
@@ -584,7 +592,12 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
           {/* Sekme 2: H2H & Form */}
           {activeTab === "h2h" && (
-            <div className="space-y-2.5">
+            <div
+              id="match-inspector-h2h-panel"
+              role="tabpanel"
+              aria-labelledby="match-inspector-h2h-tab"
+              className="space-y-2.5"
+            >
               {/* Takımların Form Grafiği (Son 5 Maç) */}
               <div className="bg-surface rounded-xl border border-line/70 p-3 space-y-3">
                 <div className="text-[11px] font-semibold text-white flex items-center gap-1.5">
@@ -704,7 +717,12 @@ const MatchInspectorPanelContent: React.FC<Omit<MatchInspectorPanelProps, "match
 
           {/* Sekme 3: Grup Durumu (Mini Puan Durumu) */}
           {activeTab === "standings" && (
-            <div className="bg-surface rounded-xl border border-line/70 overflow-hidden space-y-2">
+            <div
+              id="match-inspector-standings-panel"
+              role="tabpanel"
+              aria-labelledby="match-inspector-standings-tab"
+              className="bg-surface rounded-xl border border-line/70 overflow-hidden space-y-2"
+            >
               <div className="p-3 pb-0 flex items-center justify-between text-[11px] font-semibold text-white">
                 <span className="flex items-center gap-1.5">
                   <Trophy size={13} className="text-primary" />

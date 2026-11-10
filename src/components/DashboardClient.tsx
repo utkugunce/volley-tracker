@@ -2,7 +2,6 @@
 
 import React, { useState, useMemo } from "react";
 import { Header } from "@/components/Header";
-import { CityTabBar } from "@/components/CityTabBar";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { PrimaryTeamWidget } from "@/components/PrimaryTeamWidget";
 import { AppShell } from "@/components/layout/AppShell";
@@ -209,15 +208,6 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
               onOpenSearch={() => setIsSearchOpen(true)}
             />
 
-            {/* 2. Üst İl Sekmeleri (Fikstür, Sonuçlar ve Puan Durumu sayfalarında gösterilir) */}
-            {false && activeMainTab !== "home" && (
-              <CityTabBar
-                currentCitySlug={currentCitySlug}
-                onSelectCity={handleSelectCity}
-                cities={citiesList}
-                totalMatchesAcrossAll={totalMatchesAcrossAll}
-              />
-            )}
           </>
         }
         leftSidebar={
@@ -395,7 +385,7 @@ export const DashboardClient: React.FC<DashboardClientProps> = ({
             setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);
             setStatusFilter("all");
-            handleSelectTab(activeMainTab === "today" && !showOnlyFavorites && filters.statusFilter === "all" ? "home" : "today");
+            handleSelectTab("today");
           } else if (tab === "live") {
             setIsLeaguesMenuOpen(false);
             setShowOnlyFavorites(false);

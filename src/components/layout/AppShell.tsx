@@ -82,7 +82,7 @@ export const AppShell: React.FC<AppShellProps> = ({
 
   const sidebarStyle = {
     top: `${headerHeight + 12}px`,
-    height: `calc(100vh - ${headerHeight + 24}px)`,
+    height: `calc(100dvh - ${headerHeight + 24}px)`,
   };
 
   const activeRightSidebar = rightSidebar ?? inspector;
@@ -91,11 +91,11 @@ export const AppShell: React.FC<AppShellProps> = ({
 
   const mainColClass =
     hasLeft && hasRight
-      ? "lg:col-span-7 xl:col-span-7"
+      ? "lg:col-span-9 xl:col-span-7"
       : hasLeft
       ? "lg:col-span-9 xl:col-span-9"
       : hasRight
-      ? "lg:col-span-9 xl:col-span-9"
+      ? "lg:col-span-12 xl:col-span-9"
       : "lg:col-span-12";
 
   // Sol sidebar bileşeni onToggleCollapse prop'unu kabul ediyorsa aktar
@@ -110,7 +110,7 @@ export const AppShell: React.FC<AppShellProps> = ({
     <div
       ref={rootRef}
       data-section={section}
-      className={`min-h-screen flex flex-col pb-20 lg:pb-0 bg-[var(--portal-background)] text-ink font-sans antialiased selection:bg-selected-strong selection:text-white ${className}`}
+      className={`min-h-dvh flex flex-col pb-20 lg:pb-0 bg-[var(--portal-background)] text-ink font-sans antialiased selection:bg-selected-strong selection:text-white ${className}`}
       style={{
         "--portal-background": ThemeTokens.background,
         "--portal-panel": ThemeTokens.panel,
@@ -127,7 +127,7 @@ export const AppShell: React.FC<AppShellProps> = ({
           <button
             type="button"
             onClick={handleToggleLeftCollapse}
-            className="hidden lg:inline-flex fixed left-3 top-20 z-30 items-center gap-2 px-3 py-2 rounded-xl bg-surface/95 backdrop-blur-md hover:bg-surface-raised border border-primary/40 text-primary hover:text-white shadow-xl transition-all active:scale-95 cursor-pointer text-xs font-bold animate-in fade-in-50 duration-200"
+            className="hidden lg:inline-flex fixed left-3 top-20 z-30 items-center gap-2 px-3 py-2 rounded-xl bg-surface/95 backdrop-blur-md hover:bg-surface-raised border border-primary/40 text-primary hover:text-white shadow-xl transition-[transform,background-color,color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] cursor-pointer text-xs font-bold animate-in fade-in-50"
             title="Lig Ağacını Göster"
             aria-label="Lig Ağacını Göster"
           >
@@ -141,7 +141,7 @@ export const AppShell: React.FC<AppShellProps> = ({
             <aside
               aria-label="Lig Navigasyonu"
               style={sidebarStyle}
-              className={`${hasRight ? "lg:col-span-2 xl:col-span-2" : "lg:col-span-3 xl:col-span-3"} hidden lg:block sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg transition-all duration-300`}
+              className={`${hasRight ? "lg:col-span-3 xl:col-span-2" : "lg:col-span-3 xl:col-span-3"} hidden lg:block sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]`}
             >
               {renderedLeftSidebar}
             </aside>
@@ -150,7 +150,7 @@ export const AppShell: React.FC<AppShellProps> = ({
           <main
             id="main-content"
             aria-label="Ana Maç Akışı ve İçerik"
-            className={`w-full col-span-1 min-w-0 py-2 sm:py-3 space-y-4 transition-all duration-300 ease-in-out ${mainColClass}`}
+            className={`w-full col-span-1 min-w-0 py-2 sm:py-3 space-y-4 transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${mainColClass}`}
           >
             {children}
           </main>
@@ -159,7 +159,7 @@ export const AppShell: React.FC<AppShellProps> = ({
             <aside
               aria-label="Maç Detay Paneli"
               style={sidebarStyle}
-              className="hidden lg:block lg:col-span-3 xl:col-span-3 sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg transition-all duration-300"
+              className="hidden xl:block xl:col-span-3 sticky overflow-y-auto custom-scrollbar bg-[var(--portal-panel)] border border-[var(--portal-border)] rounded-2xl my-3 shadow-lg transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
               {activeRightSidebar}
             </aside>

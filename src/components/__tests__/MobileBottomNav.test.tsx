@@ -33,8 +33,21 @@ describe("MobileBottomNav Component", () => {
       />
     );
 
-    fireEvent.click(screen.getByText("Maçlar"));
+    const matchesButton = screen.getByText("Maçlar").closest("button")!;
+    expect(matchesButton).toHaveAttribute("aria-pressed", "false");
+    fireEvent.click(matchesButton);
     expect(onSelectTab).toHaveBeenCalledWith("matches");
+  });
+
+  it("exposes the active item semantically and provides mobile touch targets", () => {
+    render(<MobileBottomNav activeTab="today" onSelectTab={vi.fn()} />);
+
+    const matchesButton = screen.getByText("Maçlar").closest("button")!;
+    const liveButton = screen.getByText("Canlı").closest("button")!;
+    expect(matchesButton).toHaveAttribute("aria-pressed", "true");
+    expect(liveButton).toHaveAttribute("aria-pressed", "false");
+    expect(matchesButton.className).toContain("min-h-11");
+    expect(matchesButton.className).toContain("duration-300");
   });
 
   it("calls onSelectTab when other tabs are clicked", () => {

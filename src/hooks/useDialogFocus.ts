@@ -3,7 +3,7 @@ import { useEffect, type RefObject } from "react";
 /** Contain keyboard focus while a mobile modal is open and return it to its trigger. */
 export function useDialogFocus(open: boolean, ref: RefObject<HTMLElement | null>) {
   useEffect(() => {
-    if (!open || window.matchMedia?.("(min-width: 1024px)").matches) return;
+    if (!open || window.matchMedia?.("(min-width: 1280px)").matches) return;
     const dialog = ref.current;
     if (!dialog) return;
     const previous = document.activeElement as HTMLElement | null;

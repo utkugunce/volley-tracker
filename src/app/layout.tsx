@@ -108,10 +108,12 @@ export default function RootLayout({
     <html
       lang="tr"
       data-theme="dark"
+      data-scroll-behavior="smooth"
       className={`${manrope.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {/* Tema/dil tercihini ilk boyamadan önce uygular (yanıp sönme olmaz). */}
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
